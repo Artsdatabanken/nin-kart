@@ -20,7 +20,9 @@
     "@storybook/addon-actions": "^3.2.16",
     "@storybook/addon-knobs": "^3.2.16",
     "@storybook/addon-links": "^3.2.16",
+    "@storybook/addon-storyshots": "^3.2.16",
     "@storybook/react": "^3.2.16",
+    "react-test-renderer": "^16.2.0",
     "storybook-addon-material-ui": "^0.8.2"
   }
 }
