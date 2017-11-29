@@ -11,7 +11,12 @@ storiesOf('Kontakt', module)
     return (
       <div style={{ padding: '40px', width: '350px' }}>
         <Paper zDepth={3}>
-          <Kontakt />
+          <Kontakt
+            firma="Evenrude"
+            kontaktperson="Ole i'Dole"
+            telefon="+47 99 55 11 45"
+            epost="ole@idole.com"
+          />
         </Paper>
       </div>
     )

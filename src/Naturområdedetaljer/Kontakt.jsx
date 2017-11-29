@@ -10,20 +10,20 @@ class Kontakt extends Component {
     return (
       <div>
         <ListItem
-          primaryText="Evenrude"
+          primaryText={this.props.firma}
           secondaryText="Firma"
           leftIcon={<CommunicationBusiness />}
         />
         <ListItem
-          primaryText="Ole i'Dole"
+          primaryText={this.props.kontaktperson}
           secondaryText="Kontaktperson"
           leftIcon={<SocialPerson />}
         />
         <ListItem leftIcon={<CommunicationContactMail />} secondaryText="Epost">
-          <a href="mailto:ole@idole.com">ole@idole.com</a>
+          <a href={"mailto:"+this.props.epost}>{this.props.epost}</a>
         </ListItem>
         <ListItem
-          primaryText={<a href="tel:+47 99 55 11 45">+47 99 55 11 45</a>}
+          primaryText={<a href={"tel:"+this.props.telefon}>{this.props.telefon}</a>}
           secondaryText="Telefon"
           leftIcon={<CommunicationCall />}
         />

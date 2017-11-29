@@ -8,7 +8,7 @@ class Bestiller extends Component {
     return (
       <List>
         <Subheader>Bestiller</Subheader>
-        <Kontakt />
+        <Kontakt {...this.props}/>
       </List>
     )
   }

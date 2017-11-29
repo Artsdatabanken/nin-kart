@@ -10,7 +10,7 @@ class Naturområdedetaljer extends Component {
       <Paper>
         <Naturnivå />
         <Detaljer />
-        <Kartlegging />
+        <Kartlegging {...this.props.kartlegging} />
       </Paper>
     )
   }

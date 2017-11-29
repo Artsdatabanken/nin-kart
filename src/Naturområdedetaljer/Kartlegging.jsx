@@ -7,7 +7,7 @@ class Kartlegging extends Component {
     return (
       <div>
         <ListItem>Kartlegging</ListItem>
-        <Bestiller />
+        <Bestiller {...this.props.bestiller}  />
       </div>
     )
   }
