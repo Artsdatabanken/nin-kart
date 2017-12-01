@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { List, ListItem } from 'material-ui/List'
+import { ListItem } from 'material-ui/List'
 import SocialPerson from 'material-ui/svg-icons/social/person'
 import CommunicationBusiness from 'material-ui/svg-icons/communication/business'
 import CommunicationCall from 'material-ui/svg-icons/communication/call'
@@ -10,20 +10,20 @@ class Kontakt extends Component {
     return (
       <div>
         <ListItem
-          primaryText={this.props.firma}
+          primaryText={this.props.company}
           secondaryText="Firma"
           leftIcon={<CommunicationBusiness />}
         />
         <ListItem
-          primaryText={this.props.kontaktperson}
+          primaryText={this.props.contactPerson}
           secondaryText="Kontaktperson"
           leftIcon={<SocialPerson />}
         />
         <ListItem leftIcon={<CommunicationContactMail />} secondaryText="Epost">
-          <a href={"mailto:"+this.props.epost}>{this.props.epost}</a>
+          <a href={"mailto:"+this.props.email}>{this.props.email}</a>
         </ListItem>
         <ListItem
-          primaryText={<a href={"tel:"+this.props.telefon}>{this.props.telefon}</a>}
+          primaryText={<a href={"tel:"+this.props.phone}>{this.props.phone}</a>}
           secondaryText="Telefon"
           leftIcon={<CommunicationCall />}
         />

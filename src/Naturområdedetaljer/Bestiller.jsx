@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { List, ListItem } from 'material-ui/List'
+import { List } from 'material-ui/List'
 import Subheader from 'material-ui/Subheader'
 import Kontakt from './Kontakt'
 
