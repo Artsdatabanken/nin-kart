@@ -13,6 +13,7 @@ jest.mock("./backend", () => ({
     getToken: jest.fn(),
     getNatureAreaByLocalId: jest.fn(),
     getMetadataByNatureAreaLocalId: jest.fn(),
+    getAreaSummary: jest.fn(),
 }));
 
 // it('renders without crashing', () => {
