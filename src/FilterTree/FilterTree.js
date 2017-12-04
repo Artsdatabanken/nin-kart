@@ -1,5 +1,7 @@
 import React from "react";
 import {List, ListItem} from 'material-ui/List';
+//import Chip from 'material-ui/Chip';
+import Checkbox from 'material-ui/Checkbox';
 
 function FilterTree(props) {
 
@@ -15,6 +17,7 @@ function FilterTree(props) {
                 nodes.push({
                     id: key,
                     name: obj.Name,
+                    count: obj.Count || obj.NatureAreaCount,
                     children: mapApi(obj[props.childname])
                 })
             }
@@ -31,6 +34,12 @@ function FilterTree(props) {
                 <ListItem
                     key={node.id}
                     primaryText={node.name}
+                    secondaryText={node.count}
+                    leftCheckbox={<Checkbox />}
+                    primaryTogglesNestedList={true}
+                    // rightIconButton={
+                    //     <Chip>{node.count}</Chip>
+                    // }
                     //initiallyOpen //optional
                     nestedItems={mapStructure(node.children)}
                 />
