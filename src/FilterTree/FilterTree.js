@@ -2,30 +2,28 @@ import React from "react";
 import {List, ListItem} from 'material-ui/List';
 
 function FilterTree(props) {
-    var fylker = [];
 
-    for (var key in props.items) {
-        // skip loop if the property is from prototype
-        if (!props.items.hasOwnProperty(key)) continue;
+    const mapApi = (apiNodes) => {
+        if (apiNodes) {
+            let nodes = [];
+            for (let key in apiNodes) {
+                // skip loop if the property is from prototype
+                if (!apiNodes.hasOwnProperty(key)) continue;
 
-        var children = [];
-        var obj = props.items[key];
-        for (var prop in obj.Areas) {
-            //skip loop if the property is from prototype
-            if(!obj.Areas.hasOwnProperty(prop)) continue;
+                let obj = apiNodes[key];
 
-            children.push({
-                id: prop,
-                name: obj.Areas[prop].Name
-            })
+                nodes.push({
+                    id: key,
+                    name: obj.Name,
+                    children: mapApi(obj[props.childname])
+                })
+            }
+            return nodes;
         }
 
-        fylker.push({
-            id: key,
-            name: obj.Name,
-            children: children
-        })
-    }
+    };
+
+    let areas = mapApi(props.items[props.childname]);
 
     const mapStructure = (nodes) => {
         if (nodes) {
@@ -42,7 +40,7 @@ function FilterTree(props) {
 
     return (
          <List>
-            {mapStructure(fylker)}
+            {mapStructure(areas)}
         </List>
     );
 }
