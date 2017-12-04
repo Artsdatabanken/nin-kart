@@ -8,7 +8,7 @@ class App extends Component {
       <div className="App">
           <MuiThemeProvider>
             <NaturomradeDetaljer
-                natureAreaId={'3e9bdc8b-3b7a-490c-bac6-ac5d3b0ccf27'}/>
+                natureAreaId={'3b06e6f4-402b-4844-87bc-9a7c7a872cb2'}/>
           </MuiThemeProvider>
       </div>
     );
