@@ -35,7 +35,7 @@ function FilterTree(props) {
                     key={node.id}
                     primaryText={node.name}
                     secondaryText={node.count}
-                    leftCheckbox={<Checkbox />}
+                    //leftCheckbox={<Checkbox />}
                     primaryTogglesNestedList={true}
                     // rightIconButton={
                     //     <Chip>{node.count}</Chip>
