@@ -182,15 +182,6 @@ exports[`Storyshots Bestiller Ole i'Dole 1`] = `
                         <div
                           style={
                             Object {
-                              "muiPrepared": true,
-                            }
-                          }
-                        >
-                          Evenrude
-                        </div>
-                        <div
-                          style={
-                            Object {
                               "WebkitBoxOrient": null,
                               "WebkitLineClamp": null,
                               "color": "rgba(0, 0, 0, 0.54)",
@@ -300,15 +291,6 @@ exports[`Storyshots Bestiller Ole i'Dole 1`] = `
                         <div
                           style={
                             Object {
-                              "muiPrepared": true,
-                            }
-                          }
-                        >
-                          Ole i'Dole
-                        </div>
-                        <div
-                          style={
-                            Object {
                               "WebkitBoxOrient": null,
                               "WebkitLineClamp": null,
                               "color": "rgba(0, 0, 0, 0.54)",
@@ -391,10 +373,8 @@ exports[`Storyshots Bestiller Ole i'Dole 1`] = `
                         }
                       >
                         <a
-                          href="mailto:ole@idole.com"
-                        >
-                          ole@idole.com
-                        </a>
+                          href="mailto:undefined"
+                        />
                         <svg
                           onMouseEnter={[Function]}
                           onMouseLeave={[Function]}
@@ -530,15 +510,13 @@ exports[`Storyshots Bestiller Ole i'Dole 1`] = `
                           />
                         </svg>
                         <a
-                          href="tel:+47 99 55 11 45"
+                          href="tel:undefined"
                           style={
                             Object {
                               "muiPrepared": true,
                             }
                           }
-                        >
-                          +47 99 55 11 45
-                        </a>
+                        />
                         <div
                           style={
                             Object {
@@ -565,6 +543,3699 @@ exports[`Storyshots Bestiller Ole i'Dole 1`] = `
                   </span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      className="Resizer vertical "
+      onClick={[Function]}
+      onDoubleClick={[Function]}
+      onMouseDown={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "cursor": "col-resize",
+          "marginRight": -6,
+          "width": 10,
+          "zIndex": 1,
+        }
+      }
+    />
+    <div
+      className="Pane vertical Pane2  "
+      style={
+        Object {
+          "flex": "none",
+          "outline": "none",
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        className="sb-addon-material-ui-theme_sidebar"
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots FactList default 1`] = `
+<div
+  style={
+    Object {
+      "background": "#ffffff",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    className="SplitPane  vertical "
+    style={
+      Object {
+        "MozUserSelect": "text",
+        "WebkitUserSelect": "text",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "row",
+        "height": "100%",
+        "left": 0,
+        "msUserSelect": "text",
+        "outline": "none",
+        "overflow": "hidden",
+        "position": "absolute",
+        "right": 0,
+        "userSelect": "text",
+      }
+    }
+  >
+    <div
+      className="Pane vertical Pane1  "
+      style={
+        Object {
+          "flex": 1,
+          "outline": "none",
+          "overflowX": "auto",
+          "overflowY": "auto",
+          "position": "relative",
+        }
+      }
+    >
+      <div>
+        <div
+          style={
+            Object {
+              "muiPrepared": true,
+              "padding": "8px 0px 8px 0px",
+            }
+          }
+        >
+          <div>
+            <span
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              open={null}
+              style={
+                Object {
+                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                  "background": "none",
+                  "backgroundColor": null,
+                  "border": 10,
+                  "boxSizing": "border-box",
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "fontFamily": "Roboto, sans-serif",
+                  "fontSize": 16,
+                  "fontWeight": "inherit",
+                  "lineHeight": "16px",
+                  "margin": 0,
+                  "muiPrepared": true,
+                  "outline": "none",
+                  "padding": 0,
+                  "position": "relative",
+                  "textDecoration": "none",
+                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                  "verticalAlign": null,
+                }
+              }
+              tabIndex={0}
+            >
+              <div
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  style={
+                    Object {
+                      "marginLeft": 0,
+                      "muiPrepared": true,
+                      "paddingBottom": 16,
+                      "paddingLeft": 16,
+                      "paddingRight": 16,
+                      "paddingTop": 20,
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "muiPrepared": true,
+                      }
+                    }
+                  >
+                    Canis Lupus
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "WebkitBoxOrient": null,
+                        "WebkitLineClamp": null,
+                        "color": "rgba(0, 0, 0, 0.54)",
+                        "display": null,
+                        "fontSize": 14,
+                        "height": 16,
+                        "lineHeight": "16px",
+                        "margin": 0,
+                        "marginTop": 4,
+                        "muiPrepared": true,
+                        "overflow": "hidden",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
+                  >
+                    Ulv
+                  </div>
+                </div>
+              </div>
+            </span>
+          </div>
+          <div>
+            <span
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              open={null}
+              style={
+                Object {
+                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                  "background": "none",
+                  "backgroundColor": null,
+                  "border": 10,
+                  "boxSizing": "border-box",
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "fontFamily": "Roboto, sans-serif",
+                  "fontSize": 16,
+                  "fontWeight": "inherit",
+                  "lineHeight": "16px",
+                  "margin": 0,
+                  "muiPrepared": true,
+                  "outline": "none",
+                  "padding": 0,
+                  "position": "relative",
+                  "textDecoration": "none",
+                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                  "verticalAlign": null,
+                }
+              }
+              tabIndex={0}
+            >
+              <div
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  style={
+                    Object {
+                      "marginLeft": 0,
+                      "muiPrepared": true,
+                      "paddingBottom": 16,
+                      "paddingLeft": 16,
+                      "paddingRight": 16,
+                      "paddingTop": 20,
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "muiPrepared": true,
+                      }
+                    }
+                  >
+                    Ovis aries
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "WebkitBoxOrient": null,
+                        "WebkitLineClamp": null,
+                        "color": "rgba(0, 0, 0, 0.54)",
+                        "display": null,
+                        "fontSize": 14,
+                        "height": 16,
+                        "lineHeight": "16px",
+                        "margin": 0,
+                        "marginTop": 4,
+                        "muiPrepared": true,
+                        "overflow": "hidden",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
+                  >
+                    Sau
+                  </div>
+                </div>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      className="Resizer vertical "
+      onClick={[Function]}
+      onDoubleClick={[Function]}
+      onMouseDown={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "cursor": "col-resize",
+          "marginRight": -6,
+          "width": 10,
+          "zIndex": 1,
+        }
+      }
+    />
+    <div
+      className="Pane vertical Pane2  "
+      style={
+        Object {
+          "flex": "none",
+          "outline": "none",
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        className="sb-addon-material-ui-theme_sidebar"
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots FilterTree default 1`] = `
+<div
+  style={
+    Object {
+      "background": "#ffffff",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    className="SplitPane  vertical "
+    style={
+      Object {
+        "MozUserSelect": "text",
+        "WebkitUserSelect": "text",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "row",
+        "height": "100%",
+        "left": 0,
+        "msUserSelect": "text",
+        "outline": "none",
+        "overflow": "hidden",
+        "position": "absolute",
+        "right": 0,
+        "userSelect": "text",
+      }
+    }
+  >
+    <div
+      className="Pane vertical Pane1  "
+      style={
+        Object {
+          "flex": 1,
+          "outline": "none",
+          "overflowX": "auto",
+          "overflowY": "auto",
+          "position": "relative",
+        }
+      }
+    >
+      <div>
+        <div>
+          <div
+            style={
+              Object {
+                "muiPrepared": true,
+                "padding": "8px 0px 8px 0px",
+              }
+            }
+          >
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Natursystem
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      99779
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "muiPrepared": true,
+                "padding": "8px 0px 8px 0px",
+              }
+            }
+          >
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Østfold
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      7116
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Akershus
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      1791
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Oslo
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      208
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Hedmark
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      2133
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Oppland
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      9436
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Buskerud
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      1684
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Vestfold
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      1524
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Telemark
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      1902
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Aust-Agder
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      3019
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Vest-Agder
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      4761
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Rogaland
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      5386
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Hordaland
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      4355
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Sogn og Fjordane
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      1290
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Møre og Romsdal
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      5500
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Sør-Trøndelag
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      2299
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Nord-Trøndelag
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      5201
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Nordland
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      13312
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Troms
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      2821
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 56,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 4,
+                          "textDecoration": "none",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "currentColor",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Finnmark
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      5851
+                    </div>
+                  </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -769,15 +4440,6 @@ exports[`Storyshots Kontakt Ole i'Dole 1`] = `
                       <div
                         style={
                           Object {
-                            "muiPrepared": true,
-                          }
-                        }
-                      >
-                        Evenrude
-                      </div>
-                      <div
-                        style={
-                          Object {
                             "WebkitBoxOrient": null,
                             "WebkitLineClamp": null,
                             "color": "rgba(0, 0, 0, 0.54)",
@@ -887,15 +4549,6 @@ exports[`Storyshots Kontakt Ole i'Dole 1`] = `
                       <div
                         style={
                           Object {
-                            "muiPrepared": true,
-                          }
-                        }
-                      >
-                        Ole i'Dole
-                      </div>
-                      <div
-                        style={
-                          Object {
                             "WebkitBoxOrient": null,
                             "WebkitLineClamp": null,
                             "color": "rgba(0, 0, 0, 0.54)",
@@ -978,10 +4631,8 @@ exports[`Storyshots Kontakt Ole i'Dole 1`] = `
                       }
                     >
                       <a
-                        href="mailto:ole@idole.com"
-                      >
-                        ole@idole.com
-                      </a>
+                        href="mailto:undefined"
+                      />
                       <svg
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
@@ -1117,15 +4768,13 @@ exports[`Storyshots Kontakt Ole i'Dole 1`] = `
                         />
                       </svg>
                       <a
-                        href="tel:+47 99 55 11 45"
+                        href="tel:undefined"
                         style={
                           Object {
                             "muiPrepared": true,
                           }
                         }
-                      >
-                        +47 99 55 11 45
-                      </a>
+                      />
                       <div
                         style={
                           Object {
@@ -1260,68 +4909,798 @@ exports[`Storyshots Naturområdedetaljer naturområdedetaljer 1`] = `
           }
         >
           <div>
-            <span
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onTouchEnd={[Function]}
-              onTouchStart={[Function]}
-              open={null}
-              style={
-                Object {
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "background": "none",
-                  "backgroundColor": null,
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "color": "rgba(0, 0, 0, 0.87)",
-                  "cursor": "pointer",
-                  "display": "block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 16,
-                  "fontWeight": "inherit",
-                  "lineHeight": "16px",
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "padding": 0,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                }
-              }
-              tabIndex={0}
-            >
-              <div
-                onMouseDown={[Function]}
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
-                onMouseUp={[Function]}
                 onTouchEnd={[Function]}
                 onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
               >
                 <div
-                  style={
-                    Object {
-                      "marginLeft": 0,
-                      "muiPrepared": true,
-                      "paddingBottom": 16,
-                      "paddingLeft": 16,
-                      "paddingRight": 16,
-                      "paddingTop": 16,
-                      "position": "relative",
-                    }
-                  }
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
                 >
-                  Naturnivå
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 72,
+                        "paddingRight": 16,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <svg
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      style={
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.87)",
+                          "display": "block",
+                          "fill": "#757575",
+                          "height": 24,
+                          "left": 4,
+                          "margin": 12,
+                          "muiPrepared": true,
+                          "position": "absolute",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "userSelect": "none",
+                          "width": 24,
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"
+                      />
+                    </svg>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      Fylke
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </span>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 72,
+                        "paddingRight": 16,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <svg
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      style={
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.87)",
+                          "display": "block",
+                          "fill": "#757575",
+                          "height": 24,
+                          "left": 4,
+                          "margin": 12,
+                          "muiPrepared": true,
+                          "position": "absolute",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "userSelect": "none",
+                          "width": 24,
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M22.17 9.17c0-3.87-3.13-7-7-7s-7 3.13-7 7c0 3.47 2.52 6.34 5.83 6.89V20H6v-3h1v-4c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v4h1v5h16v-2h-3v-3.88c3.47-.41 6.17-3.36 6.17-6.95zM4.5 11c.83 0 1.5-.67 1.5-1.5S5.33 8 4.5 8 3 8.67 3 9.5 3.67 11 4.5 11z"
+                      />
+                    </svg>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      Kommune
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 72,
+                        "paddingRight": 16,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <svg
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      style={
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.87)",
+                          "display": "block",
+                          "fill": "#757575",
+                          "height": 24,
+                          "left": 4,
+                          "margin": 12,
+                          "muiPrepared": true,
+                          "position": "absolute",
+                          "top": 12,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "userSelect": "none",
+                          "width": 24,
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                      />
+                    </svg>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      Verneområde
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "muiPrepared": true,
+                "padding": "8px 0px 8px 0px",
+              }
+            }
+          >
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 16,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      Natursystem
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      Naturnivå
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 16,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      1:5000
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      Kartleggingsmålestokk
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 16,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      2011-06-01T00:00:00
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      Kartlagt
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 16,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "muiPrepared": true,
+                        }
+                      }
+                    >
+                      LC
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      Rødlistekategori
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "backgroundColor": null,
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "cursor": "pointer",
+                    "display": "block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "inherit",
+                    "lineHeight": "16px",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "padding": 0,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "muiPrepared": true,
+                        "paddingBottom": 16,
+                        "paddingLeft": 16,
+                        "paddingRight": 16,
+                        "paddingTop": 20,
+                        "position": "relative",
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "WebkitBoxOrient": null,
+                          "WebkitLineClamp": null,
+                          "color": "rgba(0, 0, 0, 0.54)",
+                          "display": null,
+                          "fontSize": 14,
+                          "height": 16,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "marginTop": 4,
+                          "muiPrepared": true,
+                          "overflow": "hidden",
+                          "textOverflow": "ellipsis",
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      Vurderingsenhet
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
           </div>
           <div>
             <span
@@ -1382,7 +5761,7 @@ exports[`Storyshots Naturområdedetaljer naturområdedetaljer 1`] = `
                     }
                   }
                 >
-                  Detaljer
+                  V06.4-6_BK kalkfattig myr (tidligere prosjektvariabel som omfattet tue, fastmatte og mykmatte utforminger i en "prosjektgrunntype"). Tek endret til fastmatte. Kan evt feltsjekkes. Rondvassbu.
                 </div>
               </div>
             </span>
@@ -1568,7 +5947,7 @@ exports[`Storyshots Naturområdedetaljer naturområdedetaljer 1`] = `
                             }
                           }
                         >
-                          Evenrude
+                          Miljødirektoratet
                         </div>
                         <div
                           style={
@@ -1686,7 +6065,7 @@ exports[`Storyshots Naturområdedetaljer naturområdedetaljer 1`] = `
                             }
                           }
                         >
-                          Ole i'Dole
+                          kjepet (Kjetil Pettersson)
                         </div>
                         <div
                           style={
@@ -1773,9 +6152,9 @@ exports[`Storyshots Naturområdedetaljer naturområdedetaljer 1`] = `
                         }
                       >
                         <a
-                          href="mailto:ole@idole.com"
+                          href="mailto:kjetil.pettersson@miljodir.no"
                         >
-                          ole@idole.com
+                          kjetil.pettersson@miljodir.no
                         </a>
                         <svg
                           onMouseEnter={[Function]}
@@ -1912,14 +6291,14 @@ exports[`Storyshots Naturområdedetaljer naturområdedetaljer 1`] = `
                           />
                         </svg>
                         <a
-                          href="tel:+47 99 55 11 45"
+                          href="tel:92605760"
                           style={
                             Object {
                               "muiPrepared": true,
                             }
                           }
                         >
-                          +47 99 55 11 45
+                          92605760
                         </a>
                         <div
                           style={

@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
-import { List, ListItem } from 'material-ui/List'
+import { ListItem } from 'material-ui/List'
 
 class Naturnivå extends Component {
   render() {
-    return <ListItem>Naturnivå</ListItem>
+    return <ListItem
+        primaryText={this.props.level}
+        secondaryText="Naturnivå"
+    />
   }
 }
 

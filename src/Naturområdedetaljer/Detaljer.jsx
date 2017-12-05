@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { ListItem } from 'material-ui/List'
 
 class Detaljer extends Component {
+
   render() {
-    return <ListItem>Detaljer</ListItem>
+    return <ListItem>{this.props.description}</ListItem>
   }
 }
 
