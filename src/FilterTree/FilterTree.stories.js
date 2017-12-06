@@ -10,8 +10,8 @@ const dummyItems = {"Areas":{"1":{"Name":"Østfold","NatureAreaCount":7116,"Area
 storiesOf('FilterTree', module)
     .addDecorator(muiTheme())
     .add('default', () => <div>
-            <FilterTree items={dummyNatureAreas.NatureAreaTypes} childname={"Codes"}/>
-            <FilterTree items={dummyItems} childname={"Areas"}/>
+            <FilterTree items={dummyNatureAreas.NatureAreaTypes} childname={"Codes"} filterCode={"natureAreaIds"}/>
+            <FilterTree items={dummyItems} childname={"Areas"} filterCode={"areaIds"}/>
     </div>
     )
 

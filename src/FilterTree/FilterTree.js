@@ -1,11 +1,41 @@
 import React from "react";
 import {List, ListItem} from 'material-ui/List';
-//import Chip from 'material-ui/Chip';
 import Checkbox from 'material-ui/Checkbox';
 
-function FilterTree(props) {
+class FilterTree extends React.Component {
 
-    const mapApi = (apiNodes) => {
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedIds: [],
+        };
+
+        this.handleCheckChange = this.handleCheckChange.bind(this);
+    }
+
+    handleCheckChange(event) {
+        const value = event.target.checked;
+        const name = event.target.name;
+
+        this.updateFilter(value, 'selectedIds', name);
+    }
+
+    updateFilter = (add, type, code) => {
+        if (type === undefined) {
+            return;
+        }
+        if (add === true) {
+            this.setState({
+                [type]: [...this.state[type], code]
+            })
+        } else {
+            this.setState((prevState) => ({
+                [type]: prevState[type].filter(i => i !== code)
+            }));
+        }
+    };
+
+    mapApi = (apiNodes) => {
         if (apiNodes) {
             let nodes = [];
             for (let key in apiNodes) {
@@ -18,40 +48,44 @@ function FilterTree(props) {
                     id: key,
                     name: obj.Name,
                     count: obj.Count || obj.NatureAreaCount,
-                    children: mapApi(obj[props.childname])
+                    children: this.mapApi(obj[this.props.childname])
                 })
             }
             return nodes;
         }
-
     };
 
-    let areas = mapApi(props.items[props.childname]);
+    areas = this.mapApi(this.props.items[this.props.childname]);
 
-    const mapStructure = (nodes) => {
+    mapStructure = (nodes) => {
         if (nodes) {
             return nodes.map(node => (
                 <ListItem
                     key={node.id}
                     primaryText={node.name}
                     secondaryText={node.count}
-                    //leftCheckbox={<Checkbox />}
+                    leftCheckbox={<Checkbox
+                        name={node.id}
+                        checked={this.state['selectedIds'].indexOf(node.id) >= 0}
+                        onCheck={this.handleCheckChange}/>}
                     primaryTogglesNestedList={true}
                     // rightIconButton={
                     //     <Chip>{node.count}</Chip>
                     // }
                     //initiallyOpen //optional
-                    nestedItems={mapStructure(node.children)}
+                    nestedItems={this.mapStructure(node.children)}
                 />
             ));
         }
     };
 
-    return (
-         <List>
-            {mapStructure(areas)}
-        </List>
-    );
+    render() {
+        return (
+            <List>
+                {this.mapStructure(this.areas)}
+            </List>
+        );
+    }
 }
 
 export default FilterTree;

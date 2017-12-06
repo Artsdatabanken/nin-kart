@@ -44,6 +44,21 @@ class Backend {
                 .then(json => resolve(json));
         });
     }
+    static async getNatureAreaSummary(filter) {
+        return new Promise((resolve, reject) => {
+            fetch(
+                `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetNatureAreaSummary/`,
+                {
+                    method: "POST",
+                    body: filter
+                }
+            )
+                .then(result => result.json())
+                .then(json => resolve(json));
+        });
+    }
+
+
 
     static NatureLevelNames = Object.freeze({
         0: "Udefinert",
