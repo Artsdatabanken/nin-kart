@@ -1,64 +1,64 @@
 
 class Backend {
-    static async getToken() {
+
+    static async postFilterPromise(url, filter) {
         return new Promise((resolve, reject) => {
-            fetch(`https://www.norgeskart.no/ws/gkt.py`)
+            fetch(
+                url,
+                {
+                    method: "POST",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(filter),
+                }
+            )
                 .then(result => result.json())
                 .then(json => resolve(json));
         });
+    }
+
+    static async getPromise(url) {
+        return new Promise((resolve, reject) => {
+            fetch(url)
+                .then(result => result.json())
+                .then(json => resolve(json));
+        });
+    }
+
+    static async getToken() {
+        return this.getPromise(`https://www.norgeskart.no/ws/gkt.py`);
     }
 
     static async getNatureAreaByLocalId(localId) {
-        return new Promise((resolve, reject) => {
-            fetch(
-                `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetNatureAreaByLocalId/${
-                    localId
-                    }`
-            )
-                .then(result => result.json())
-                .then(json => resolve(json));
-        });
+        return this.getPromise(
+            `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetNatureAreaByLocalId/${localId}`);
     }
     static async getMetadataByNatureAreaLocalId(localId) {
-        return new Promise((resolve, reject) => {
-            fetch(
-                `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetMetadataByNatureAreaLocalId/${
-                    localId
-                    }`
-            )
-                .then(result => result.json())
-                .then(json => resolve(json));
-        });
+        return this.getPromise(
+            `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetMetadataByNatureAreaLocalId/${localId}`);
+    }
+
+    static async countsByRedlistTheme(filter) {
+        let url = `https://adb-nin-api.azurewebsites.net/api/CountsByRedlistTheme`;
+        return this.postFilterPromise(url, filter);
+    }
+
+    static async countsByRedlistCategory(filter) {
+        let url = `https://adb-nin-api.azurewebsites.net/api/CountsByRedlistCategory`;
+        return this.postFilterPromise(url, filter);
     }
 
     static async getAreaSummary(filter) {
-        return new Promise((resolve, reject) => {
-            fetch(
-                `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetAreaSummary/`,
-                {
-                    method: "POST",
-                    body: filter
-                }
-            )
-                .then(result => result.json())
-                .then(json => resolve(json));
-        });
+        let url = `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetAreaSummary/`;
+        return this.postFilterPromise(url, filter);
     }
+
     static async getNatureAreaSummary(filter) {
-        return new Promise((resolve, reject) => {
-            fetch(
-                `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetNatureAreaSummary/`,
-                {
-                    method: "POST",
-                    body: filter
-                }
-            )
-                .then(result => result.json())
-                .then(json => resolve(json));
-        });
+        let url = `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetNatureAreaSummary/`;
+        return this.postFilterPromise(url, filter);
     }
-
-
 
     static NatureLevelNames = Object.freeze({
         0: "Udefinert",
