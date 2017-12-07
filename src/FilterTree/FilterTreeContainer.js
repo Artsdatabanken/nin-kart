@@ -96,7 +96,7 @@ class FilterTreeContainer extends React.Component {
     render() {
         return (
             <FilterTree
-                natureAreas={this.state.natureAreas}
+                areaItems={this.state.areaItems}
                 redlistTheme={this.state.redlistTheme}
                 redlistCategories={this.state.redlistCategories}
                 handleCheckChange={this.handleCheckChange}
