@@ -15,11 +15,13 @@ class FilterTreeTopic extends React.Component {
 
     }
 
+//    mapStructure = (nodes, parentId) => {
     mapStructure = (nodes) => {
         if (nodes) {
             return nodes.map(node => (
                 <ListItem
                     key={node.id}
+                    //data-parent={parentId}
                     primaryText={node.name}
                     secondaryText={node.count}
                     leftCheckbox={<Checkbox
@@ -32,6 +34,7 @@ class FilterTreeTopic extends React.Component {
                     //     <Chip>{node.count}</Chip>
                     // }
                     //initiallyOpen //optional
+                    //nestedItems={this.mapStructure(node.children, node.id)}
                     nestedItems={this.mapStructure(node.children)}
                 />
             ));
