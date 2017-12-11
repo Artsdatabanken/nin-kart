@@ -33,22 +33,28 @@ const dummySliderValues = {
     ]
 };
 
-// material-ui støtter ikke range, bruk evt denne: https://github.com/davidchin/react-input-range
-
 export default class RangeSliderContainer extends Component {
-    state = {
-        sliderValues: "",
-        sliderValue: [0,1],
-        min: 0,
-        max: 1
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            sliderValues: "",
+            sliderValue: [0,10],
+            min: 0,
+            max: 10,
+            enabled: false
+        };
+        this.handleSlider = this.handleSlider.bind(this);
+        this.handleCheckChange = this.handleCheckChange.bind(this);
+
+    }
 
     componentDidMount() {
         // todo: get values from api
         this.setState({
             sliderValues: dummySliderValues,
-            max: dummySliderValues.values.length-1
-
+            min: 0,
+            max: dummySliderValues.values.length-1,
+            sliderValue: [0, dummySliderValues.values.length-1]
         });
     }
 
@@ -56,9 +62,14 @@ export default class RangeSliderContainer extends Component {
         this.setState({sliderValue: value});
     };
 
+    handleCheckChange = (event, isInputChecked) => {
+        this.setState({enabled: isInputChecked});
+    };
+
     render() {
         return (
             <RangeSlider
+                enabled={this.state.enabled}
                 name={this.state.sliderValues.name}
                 code={this.state.sliderValues.code}
                 min={this.state.min}
@@ -69,7 +80,9 @@ export default class RangeSliderContainer extends Component {
                 minStepDescription={this.state.sliderValues.values ? this.state.sliderValues.values[this.state.sliderValue[0]].description : ""}
                 maxStepName={this.state.sliderValues.values ? this.state.sliderValues.values[this.state.sliderValue[1]].value : ""}
                 maxStepDescription={this.state.sliderValues.values ? this.state.sliderValues.values[this.state.sliderValue[1]].description : ""}
-                onChange={this.handleSlider}
+                handleSlider={this.handleSlider}
+                handleCheckChange={this.handleCheckChange}
+
             />
         );
     }

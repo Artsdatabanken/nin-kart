@@ -36,11 +36,15 @@ const dummySliderValues = {
 // material-ui støtter ikke range, bruk evt denne: https://github.com/davidchin/react-input-range
 
 export default class StepSliderContainer extends Component {
-    state = {
-        sliderValues: "",
-        sliderValue: 0,
-        max: 1
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            sliderValues: "",
+            sliderValue: 0,
+            max: 1
+        };
+
+    }
 
     componentDidMount() {
         // todo: get values from api

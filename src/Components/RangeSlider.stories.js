@@ -36,12 +36,13 @@ let sliderValues = {
     ]
 };
 
-
+// jest.mock('material-ui/internal/EnhancedSwitch');
 
 storiesOf('Rangeslider', module)
     .addDecorator(muiTheme())
     .add('default', () =>
         <RangeSlider
+            enabled={true}
             name={sliderValues.name}
             code={sliderValues.code}
             min={0}
@@ -52,6 +53,8 @@ storiesOf('Rangeslider', module)
             minStepDescription={""}
             maxStepName={""}
             maxStepDescription={""}
-            onChange={action('change')}
+            handleCheckChange={action('change')}
+            handleSlider={action('slider')}
+            isSelected={() => {return true}}
         />
     );
