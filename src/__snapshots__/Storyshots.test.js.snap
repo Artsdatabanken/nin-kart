@@ -3446,6 +3446,250 @@ exports[`Storyshots NatureAreaDetails NatureAreaDetails 1`] = `
 </div>
 `;
 
+exports[`Storyshots Rangeslider default 1`] = `
+<div
+  style={
+    Object {
+      "background": "#ffffff",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    className="SplitPane  vertical "
+    style={
+      Object {
+        "MozUserSelect": "text",
+        "WebkitUserSelect": "text",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "row",
+        "height": "100%",
+        "left": 0,
+        "msUserSelect": "text",
+        "outline": "none",
+        "overflow": "hidden",
+        "position": "absolute",
+        "right": 0,
+        "userSelect": "text",
+      }
+    }
+  >
+    <div
+      className="Pane vertical Pane1  "
+      style={
+        Object {
+          "flex": 1,
+          "outline": "none",
+          "overflowX": "auto",
+          "overflowY": "auto",
+          "position": "relative",
+        }
+      }
+    >
+      <div>
+        <div>
+          <div
+            style={
+              Object {
+                "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+                "backgroundColor": "#ffffff",
+                "borderRadius": 2,
+                "boxShadow": "0 3px 10px rgba(0, 0, 0, 0.16),
+                       0 3px 10px rgba(0, 0, 0, 0.23)",
+                "boxSizing": "border-box",
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "inline-block",
+                "fontFamily": "Roboto, sans-serif",
+                "margin": 20,
+                "muiPrepared": true,
+                "padding": 10,
+                "textAlign": "left",
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "width": 500,
+              }
+            }
+          >
+            <h2>
+              GrøftingsIntensitet (7GR)
+            </h2>
+            <p>
+              <span>
+                
+              </span>
+            </p>
+            <p>
+              <span>
+                
+              </span>
+            </p>
+            <div
+              className="rc-slider"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchStart={[Function]}
+              style={undefined}
+            >
+              <div
+                className="rc-slider-rail"
+                style={Object {}}
+              />
+              <div
+                className="rc-slider-track rc-slider-track-1"
+                style={
+                  Object {
+                    "left": "0%",
+                    "visibility": "visible",
+                    "width": "100%",
+                  }
+                }
+              />
+              <div
+                className="rc-slider-step"
+              >
+                <span
+                  className="rc-slider-dot rc-slider-dot-active"
+                  style={
+                    Object {
+                      "left": "0%",
+                    }
+                  }
+                />
+                <span
+                  className="rc-slider-dot rc-slider-dot-active"
+                  style={
+                    Object {
+                      "left": "20%",
+                    }
+                  }
+                />
+                <span
+                  className="rc-slider-dot rc-slider-dot-active"
+                  style={
+                    Object {
+                      "left": "40%",
+                    }
+                  }
+                />
+                <span
+                  className="rc-slider-dot rc-slider-dot-active"
+                  style={
+                    Object {
+                      "left": "60%",
+                    }
+                  }
+                />
+                <span
+                  className="rc-slider-dot rc-slider-dot-active"
+                  style={
+                    Object {
+                      "left": "80%",
+                    }
+                  }
+                />
+                <span
+                  className="rc-slider-dot rc-slider-dot-active"
+                  style={
+                    Object {
+                      "left": "100%",
+                    }
+                  }
+                />
+              </div>
+              <div
+                aria-disabled={false}
+                aria-valuemax={5}
+                aria-valuemin={0}
+                aria-valuenow={0}
+                className="rc-slider-handle rc-slider-handle-1"
+                role="slider"
+                style={
+                  Object {
+                    "left": "0%",
+                  }
+                }
+                tabIndex="0"
+              />
+              <div
+                aria-disabled={false}
+                aria-valuemax={5}
+                aria-valuemin={0}
+                aria-valuenow={5}
+                className="rc-slider-handle rc-slider-handle-2"
+                role="slider"
+                style={
+                  Object {
+                    "left": "100%",
+                  }
+                }
+                tabIndex="0"
+              />
+              <div
+                className="rc-slider-mark"
+              />
+            </div>
+            <p>
+              <span>
+                
+              </span>
+            </p>
+            <p>
+              <span>
+                
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      className="Resizer vertical "
+      onClick={[Function]}
+      onDoubleClick={[Function]}
+      onMouseDown={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "cursor": "col-resize",
+          "marginRight": -6,
+          "width": 10,
+          "zIndex": 1,
+        }
+      }
+    />
+    <div
+      className="Pane vertical Pane2  "
+      style={
+        Object {
+          "flex": "none",
+          "outline": "none",
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        className="sb-addon-material-ui-theme_sidebar"
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Stepslider default 1`] = `
 <div
   style={
