@@ -69,6 +69,18 @@ class SelectionPage extends React.Component {
             )
     };
 
+    redlistThemeFetch = function(filter) {
+        backend.countsByRedlistTheme(filter)
+            .then(data =>
+                this.setState({
+                    obj: data[0],
+                    children: data[0].children,
+                    parentId: 0,
+                    id: data[0].id,
+                })
+            )
+    };
+
 
 
 
@@ -76,14 +88,22 @@ class SelectionPage extends React.Component {
         return (
             <div>
                 <DigDownListContainer
-                    name={"Taxons"}
-                    filterCode={"TaxonIds"}
+                name={"Taxons"}
+                filterCode={"TaxonIds"}
+                id={0}
+                dataFetchFunction={this.taxonFetch}
+                handleCheckChange={this.handleCheckChange}
+                isSelected={this.isSelected}
+                filter={this.state.TaxonIds}
+            />
+                <DigDownListContainer
+                    name={"Rødlistetema"}
+                    filterCode={"redlistThemeIds"}
                     id={0}
-                    dataFetchFunction={this.taxonFetch}
+                    dataFetchFunction={this.redlistThemeFetch}
                     handleCheckChange={this.handleCheckChange}
                     isSelected={this.isSelected}
-                    filter={this.state.TaxonIds}
-                    children={this.state.children}
+                    filter={this.state.redlistCategoryIds}
                 />
             </div>
 

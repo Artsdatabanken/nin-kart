@@ -87,7 +87,7 @@ class Backend {
     }
 
     static async getAreaSummary(filter) {
-        let url = `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetAreaSummary/`;
+        let url = `https://adb-nin-api.azurewebsites.net/api/AreaSummary`;
         return this.postFilterPromise(url, filter);
     }
 
