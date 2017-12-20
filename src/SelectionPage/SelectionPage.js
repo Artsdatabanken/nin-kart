@@ -1,9 +1,66 @@
 import React from 'react';
 import DigDownListContainer from "../DigDownList/DigDownListContainer";
 import backend from "../backend";
+import TopBar from '../TopBar/TopBar'
 
 class SelectionPage extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            id: props.id,
+            obj: "",
+            children: [],
 
+            // filter:
+            areaIds: [],
+            natureAreaIds: [],
+            redlistThemeIds: [],
+            redlistCategoryIds: [],
+            TaxonIds: [],
+        };
+
+        this.handleDataFetch = this.taxonFetch.bind(this);
+        this.handleCheckChange = this.handleCheckChange.bind(this);
+        this.isSelected = this.isSelected.bind(this);
+    }
+
+    handleCheckChange = function(event) {
+        event.stopPropagation();
+        const add = event.target.checked;
+        const name = event.target.name;
+        const filtercode = event.target.alt;
+
+        console.log(filtercode + ", add: " + add + " " + name);
+        this.updateFilter(add, filtercode, name);
+    };
+
+    isSelected(selectedIds, nodeId) {
+        return this.state[selectedIds].indexOf(""+nodeId) >= 0
+    }
+    updateTree() {
+        // let filter = {
+        //     Municipalities: this.state.areaIds,
+        //     NatureAreaTypeCodes: this.state.natureAreaIds,
+        //     RedlistCategories: this.state.redlistCategoryIds,
+        // };
+
+        //this.goFetch(filter)
+    }
+
+    updateFilter = (add, type, code) => {
+        if (type === undefined) {
+            return;
+        }
+        if (add === true) {
+            this.setState({
+                [type]: [...this.state[type], code]
+            }, () => this.updateTree())
+        } else {
+            this.setState((prevState) => ({
+                [type]: prevState[type].filter(i => i !== code)
+            }),() => this.updateTree());
+        }
+    };
 
     taxonFetch = function(taxonId) {
         backend.loadTaxonTree(taxonId)
@@ -18,17 +75,25 @@ class SelectionPage extends React.Component {
     };
 
 
+
+
     render() {
         return (
             <div>
-
+                <TopBar
+                    onClick={id => this.handleDataFetch(id)}
+                    name={this.props.name}
+                    parentId={this.state.parentId}
+                />
                 <DigDownListContainer
                     name={"Taxons"}
                     filterCode={"TaxonIds"}
                     id={0}
-                    dataFetchFunction={this.taxonFetch}
+                    dataFetchFunction={this.handleDataFetch}
                     handleCheckChange={this.handleCheckChange}
                     isSelected={this.isSelected}
+                    filter={this.state.TaxonIds}
+                    children={this.state.children}
                 />
             </div>
 
