@@ -3,12 +3,13 @@ import ReactMapGL from 'react-map-gl';
 
 class Mapbox extends Component {
     render() {
+        const {latitude, longitude, zoom} = this.props
         return <ReactMapGL
-        width={400}
-        height={400}
-        latitude={37.7577}
-        longitude={-122.4376}
-        zoom={8}
+        width={window.innerWidth}
+        height={window.innerHeight}
+        latitude={latitude}
+        longitude={longitude}
+        zoom={zoom}
         onViewportChange={(viewport) => {
           const {width, height, latitude, longitude, zoom} = viewport;
           // Optionally call `setState` and use the state to update the map.

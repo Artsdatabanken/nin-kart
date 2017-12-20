@@ -6,7 +6,7 @@ class Kart extends Component {
     render() {
         return (
             <div>
-                <Mapbox />
+                <Mapbox {...props} />
             </div>
         );
     }
