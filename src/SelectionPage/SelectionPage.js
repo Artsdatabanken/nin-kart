@@ -1,16 +1,11 @@
 import React from 'react';
 import DigDownListContainer from "../DigDownList/DigDownListContainer";
 import backend from "../backend";
-import TopBar from '../TopBar/TopBar'
 
 class SelectionPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            id: props.id,
-            obj: "",
-            children: [],
-
             // filter:
             areaIds: [],
             natureAreaIds: [],
@@ -19,7 +14,7 @@ class SelectionPage extends React.Component {
             TaxonIds: [],
         };
 
-        this.handleDataFetch = this.taxonFetch.bind(this);
+        // this.handleDataFetch = this.taxonFetch.bind(this);
         this.handleCheckChange = this.handleCheckChange.bind(this);
         this.isSelected = this.isSelected.bind(this);
     }
@@ -80,16 +75,11 @@ class SelectionPage extends React.Component {
     render() {
         return (
             <div>
-                <TopBar
-                    onClick={id => this.handleDataFetch(id)}
-                    name={this.props.name}
-                    parentId={this.state.parentId}
-                />
                 <DigDownListContainer
                     name={"Taxons"}
                     filterCode={"TaxonIds"}
                     id={0}
-                    dataFetchFunction={this.handleDataFetch}
+                    dataFetchFunction={this.taxonFetch}
                     handleCheckChange={this.handleCheckChange}
                     isSelected={this.isSelected}
                     filter={this.state.TaxonIds}
