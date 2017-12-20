@@ -25,7 +25,7 @@ class FilterTreeTopic extends React.Component {
                     primaryText={node.name}
                     secondaryText={node.count}
                     leftCheckbox={<Checkbox
-                        name={node.id}
+                        name={"" + node.id}
                         alt={this.props.filterCode}
                         checked={this.isSelected(this.props.filterCode, node.id)}
                         onCheck={this.handleCheckChange}/>}

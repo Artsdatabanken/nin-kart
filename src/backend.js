@@ -1,3 +1,4 @@
+import { request } from "graphql-request";
 
 class Backend {
 
@@ -29,6 +30,41 @@ class Backend {
 
     static async getToken() {
         return this.getPromise(`https://www.norgeskart.no/ws/gkt.py`);
+    }
+
+    static async loadTaxonTree(taxonId) {
+        const taxonTreeQuery = `
+        query treeNodes($ids: [Int]!) {
+            taxonTreeNodes(taxonIds: $ids) {
+            id
+            #count
+            popularName
+            scientificName
+            scientificNameAuthor
+            parentId
+            children {
+              id
+            #count
+              aggreggatedCount
+            #parentId
+              scientificName
+            #scientificNameAuthor
+              popularName
+            }
+          }
+        }`;
+        const variables = {
+            ids: [taxonId]
+        };
+
+        return new Promise((resolve, reject) => {
+            request(
+                //"//ogapi.artsdatabanken.no/graph",
+                "https://adb-og-api.azurewebsites.net/graph",
+                taxonTreeQuery,
+                variables
+            ).then(json => resolve(json));
+        });
     }
 
     static async getNatureAreaByLocalId(localId) {

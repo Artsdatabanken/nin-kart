@@ -8,6 +8,8 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
+    "graphql-request": "^1.4.0",
+    "react-responsive": "^4.0.0",
     "react-scripts": "1.0.17"
   },
   "scripts": {
