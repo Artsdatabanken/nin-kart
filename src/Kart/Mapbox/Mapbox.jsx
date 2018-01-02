@@ -1,18 +1,40 @@
 import React, { Component } from 'react';
 import ReactMapGL, {Marker} from 'react-map-gl';
+import backend from "../../backend";
+import NatureAreaDetails from '../../Naturområdedetaljer/NatureAreaDetails'
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 class Mapbox extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            natureArea: "",
+            metadata: "",
+
             viewport: {
                 width: window.innerWidth,
-                height: window.innerHeight,
+                height: 500, //window.innerHeight,
                 latitude: props.latitude,
                 longitude: props.longitude,
                 zoom: props.zoom
             }
         }
+    }
+
+    goFetch(id) {
+        backend.getNatureAreaByLocalId(id)
+            .then(data => {
+                    this.setState({
+                        natureArea: data
+                    })
+                }
+            );
+        backend.getMetadataByNatureAreaLocalId(id)
+            .then(data =>
+                this.setState({
+                    metadata: data
+                })
+            )
     }
 
   _onViewportChange = viewport =>
@@ -21,7 +43,13 @@ class Mapbox extends Component {
   })
 
   onClick = point => {
-    alert(point.lngLat)
+        let localId = "";
+        if (point.features && point.features[0] && point.features[0].properties && point.features[0].properties.localId) {
+            localId = point.features[0].properties.localId;
+            this.goFetch(localId)
+
+        }
+    //alert(point.lngLat + "\n" + localId)
   }
 
    onHover = point => {
@@ -29,7 +57,7 @@ class Mapbox extends Component {
    }
 
     render() {
-        return <ReactMapGL
+        return                 <MuiThemeProvider><ReactMapGL
         {...this.state.viewport}
         onClick={this.onClick}
         onHover={this.onHover}
@@ -41,6 +69,11 @@ class Mapbox extends Component {
                 <div>Are you here?</div>
             </Marker>
         </ReactMapGL>
+            <NatureAreaDetails
+                natureArea={this.state.natureArea}
+                metadata={this.state.metadata}
+            />
+        </MuiThemeProvider>
     }
 }
 
