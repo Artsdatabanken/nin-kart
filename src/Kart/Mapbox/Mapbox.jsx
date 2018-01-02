@@ -35,6 +35,7 @@ class Mapbox extends Component {
         onHover={this.onHover}
         onViewportChange={viewport => this._onViewportChange(viewport)}
         mapboxApiAccessToken="pk.eyJ1IjoiYmpyZXBwZW4iLCJhIjoiY2ltZGFkMW11MDAwdnZpbHVsamhsZzB1dSJ9.oZBI8rZR8YSsXoyIM0vLYg"
+        mapStyle="mapbox://styles/bjreppen/cjbxoxrvdeej42smmvf4ibbb0"
       >
             <Marker latitude={63.4139} longitude={10.4064} offsetLeft={-20} offsetTop={-10}>
                 <div>Are you here?</div>
