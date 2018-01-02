@@ -6,6 +6,8 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import FilterTreeContainer from './FilterTree/FilterTreeContainer'
 import StepSliderContainer from './Components/StepSliderContainer'
 import RangeSliderContainer from './Components/RangeSliderContainer'
+import DigDownListContainer from "./DigDownList/DigDownListContainer";
+import SelectionPage from "./SelectionPage/SelectionPage";
 
 class App extends Component {
     render() {
@@ -15,6 +17,10 @@ class App extends Component {
                     <BrowserRouter>
                         <Switch>
                             <Route path="/tree" exact component={FilterTreeContainer} />
+                            <Route path="/select" exact component={SelectionPage} />
+                            <Route path="/digdown/:id"
+                                   exact
+                                   component={DigDownListContainer} />
                             <Route path="/details" exact
                                    render={() => <NatureAreaDetailContainer
                                        natureAreaId={'3b06e6f4-402b-4844-87bc-9a7c7a872cb2'}/>} />
@@ -30,6 +36,6 @@ class App extends Component {
     }
 }
 
-const RedirectToDefault = () => <Redirect from="/" to="/tree" />;
+const RedirectToDefault = () => <Redirect from="/" to="/select" />;
 
 export default App;

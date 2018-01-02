@@ -2312,6 +2312,13 @@ create-react-class@15.x, create-react-class@^15.5.2:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
+cross-fetch@0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-0.0.8.tgz#01ed94dc407df2c00f1807fde700a7cfa48a205c"
+  dependencies:
+    node-fetch "1.7.3"
+    whatwg-fetch "2.0.3"
+
 cross-spawn@5.1.0, cross-spawn@^5.0.1, cross-spawn@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
@@ -2387,6 +2394,10 @@ css-loader@0.28.7, css-loader@^0.28.7:
     postcss-modules-values "^1.1.0"
     postcss-value-parser "^3.3.0"
     source-list-map "^2.0.0"
+
+css-mediaquery@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/css-mediaquery/-/css-mediaquery-0.1.2.tgz#6a2c37344928618631c54bd33cedd301da18bea0"
 
 css-select@^1.1.0:
   version "1.2.0"
@@ -3766,9 +3777,17 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
+<<<<<<< HEAD
+graphql-request@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-1.4.0.tgz#f5b067c83070296d93fb45760e83dfad0d9f537a"
+  dependencies:
+    cross-fetch "0.0.8"
+=======
 grid-index@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/grid-index/-/grid-index-1.0.0.tgz#ad2c5d54ce5b35437faff1d70a9aeb3d1d261110"
+>>>>>>> 667716e150528ee204798d4fe0b7dd3719fcb049
 
 growly@^1.3.0:
   version "1.3.0"
@@ -4058,7 +4077,7 @@ https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
 
-hyphenate-style-name@^1.0.1, hyphenate-style-name@^1.0.2:
+hyphenate-style-name@^1.0.0, hyphenate-style-name@^1.0.1, hyphenate-style-name@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.2.tgz#31160a36930adaf1fc04c6074f7eb41465d4ec4b"
 
@@ -5394,6 +5413,13 @@ map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
 
+<<<<<<< HEAD
+matchmediaquery@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/matchmediaquery/-/matchmediaquery-0.2.1.tgz#223c7005793de03e47ce92b13285a72c44ada2cf"
+  dependencies:
+    css-mediaquery "^0.1.2"
+=======
 mapbox-gl-supported@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/mapbox-gl-supported/-/mapbox-gl-supported-1.2.0.tgz#cbd34df894206cadda9a33c8d9a4609f26bb1989"
@@ -5433,6 +5459,7 @@ mapbox-gl@0.40.1:
     unflowify "^1.0.0"
     vt-pbf "^3.0.1"
     webworkify "^1.4.0"
+>>>>>>> 667716e150528ee204798d4fe0b7dd3719fcb049
 
 material-colors@^1.2.1:
   version "1.2.5"
@@ -5673,7 +5700,7 @@ node-dir@^0.1.10:
   dependencies:
     minimatch "^3.0.2"
 
-node-fetch@^1.0.1:
+node-fetch@1.7.3, node-fetch@^1.0.1:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-1.7.3.tgz#980f6f72d85211a5347c6b2bc18c5b84c3eb47ef"
   dependencies:
@@ -6915,6 +6942,13 @@ react-modal@^3.1.2:
 react-onclickoutside@^6.5.0:
   version "6.7.0"
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.7.0.tgz#997a4d533114c9a0a104913638aa26afc084f75c"
+
+react-responsive@^4.0.0:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/react-responsive/-/react-responsive-4.0.3.tgz#1dccb135d21329a5b1e3bdfaa4e96b157647b265"
+  dependencies:
+    hyphenate-style-name "^1.0.0"
+    matchmediaquery "^0.2.1"
 
 react-router-dom@^4.2.2:
   version "4.2.2"
