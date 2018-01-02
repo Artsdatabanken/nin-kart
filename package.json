@@ -7,6 +7,7 @@
     "rc-slider": "^8.5.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-map-gl": "^3.1.5",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17"
   },
@@ -24,6 +25,7 @@
     "@storybook/addon-links": "^3.2.16",
     "@storybook/addon-storyshots": "^3.2.16",
     "@storybook/react": "^3.2.16",
+    "jest-cli": "^21.2.1",
     "react-test-renderer": "^16.2.0",
     "storybook-addon-material-ui": "^0.8.2",
     "jest-cli": "^22.0.0"
