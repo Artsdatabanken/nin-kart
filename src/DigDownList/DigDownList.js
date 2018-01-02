@@ -6,9 +6,6 @@ import Checkbox from 'material-ui/Checkbox';
 function DigDownList(props) {
     return (
         <List>
-            <ListItem
-                primaryText={props.name}
-                />
             {props.items.length ? (
                 props.items.map(item => (
                     <ListItem

@@ -6,6 +6,9 @@ class SelectionPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            // data-cache
+            redlistTheme: "",
+
             // filter:
             areaIds: [],
             natureAreaIds: [],
@@ -70,6 +73,7 @@ class SelectionPage extends React.Component {
     };
 
     redlistThemeFetch = function(filter) {
+        //if (!this.state.obj)
         backend.countsByRedlistTheme(filter)
             .then(data =>
                 this.setState({

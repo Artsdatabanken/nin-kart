@@ -92,7 +92,8 @@ class Backend {
     }
 
     static async getNatureAreaSummary(filter) {
-        let url = `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetNatureAreaSummary/`;
+        //let url = `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetNatureAreaSummary/`;
+        let url = `https://adb-nin-api.azurewebsites.net/api/NatureAreaSummary`;
         return this.postFilterPromise(url, filter);
     }
 
