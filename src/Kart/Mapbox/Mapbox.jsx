@@ -27,7 +27,8 @@ class Mapbox extends Component {
         onClick={this.onClick}
         onViewportChange={viewport => this._onViewportChange(viewport)}
         mapboxApiAccessToken="pk.eyJ1IjoiYmpyZXBwZW4iLCJhIjoiY2ltZGFkMW11MDAwdnZpbHVsamhsZzB1dSJ9.oZBI8rZR8YSsXoyIM0vLYg"
-      />
+        mapStyle="mapbox://styles/bjreppen/cjbxoxrvdeej42smmvf4ibbb0"
+        />
     }
 }
 
