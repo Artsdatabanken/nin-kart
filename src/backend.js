@@ -1,3 +1,4 @@
+import { request } from "graphql-request";
 
 class Backend {
 
@@ -31,6 +32,41 @@ class Backend {
         return this.getPromise(`https://www.norgeskart.no/ws/gkt.py`);
     }
 
+    static async loadTaxonTree(taxonId) {
+        const taxonTreeQuery = `
+        query treeNodes($ids: [Int]!) {
+            taxonTreeNodes(taxonIds: $ids) {
+            id
+            #count
+            popularName
+            scientificName
+            scientificNameAuthor
+            parentId
+            children {
+              id
+            #count
+              aggreggatedCount
+            #parentId
+              scientificName
+            #scientificNameAuthor
+              popularName
+            }
+          }
+        }`;
+        const variables = {
+            ids: [taxonId]
+        };
+
+        return new Promise((resolve, reject) => {
+            request(
+                //"//ogapi.artsdatabanken.no/graph",
+                "https://adb-og-api.azurewebsites.net/graph",
+                taxonTreeQuery,
+                variables
+            ).then(json => resolve(json));
+        });
+    }
+
     static async getNatureAreaByLocalId(localId) {
         return this.getPromise(
             `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetNatureAreaByLocalId/${localId}`);
@@ -51,12 +87,13 @@ class Backend {
     }
 
     static async getAreaSummary(filter) {
-        let url = `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetAreaSummary/`;
+        let url = `https://adb-nin-api.azurewebsites.net/api/AreaSummary`;
         return this.postFilterPromise(url, filter);
     }
 
     static async getNatureAreaSummary(filter) {
-        let url = `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetNatureAreaSummary/`;
+        //let url = `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetNatureAreaSummary/`;
+        let url = `https://adb-nin-api.azurewebsites.net/api/NatureAreaSummary`;
         return this.postFilterPromise(url, filter);
     }
 
