@@ -57,22 +57,27 @@ class Mapbox extends Component {
    }
 
     render() {
-        return                 <MuiThemeProvider><ReactMapGL
-        {...this.state.viewport}
-        onClick={this.onClick}
-        onHover={this.onHover}
-        onViewportChange={viewport => this._onViewportChange(viewport)}
-        mapboxApiAccessToken="pk.eyJ1IjoiYmpyZXBwZW4iLCJhIjoiY2ltZGFkMW11MDAwdnZpbHVsamhsZzB1dSJ9.oZBI8rZR8YSsXoyIM0vLYg"
-        mapStyle="mapbox://styles/bjreppen/cjbxoxrvdeej42smmvf4ibbb0"
-      >
-            <Marker latitude={63.4139} longitude={10.4064} offsetLeft={-20} offsetTop={-10}>
-                <div>Are you here?</div>
-            </Marker>
-        </ReactMapGL>
-            <NatureAreaDetails
-                natureArea={this.state.natureArea}
-                metadata={this.state.metadata}
-            />
+        return <MuiThemeProvider>
+            <div>
+            <ReactMapGL
+                {...this.state.viewport}
+                onClick={this.onClick}
+                onHover={this.onHover}
+                onViewportChange={viewport => this._onViewportChange(viewport)}
+                //mapboxApiAccessToken="pk.eyJ1IjoiYmpyZXBwZW4iLCJhIjoiY2ltZGFkMW11MDAwdnZpbHVsamhsZzB1dSJ9.oZBI8rZR8YSsXoyIM0vLYg"
+                mapboxApiAccessToken="pk.eyJ1IjoiYW11bmRuIiwiYSI6ImNqYnhweHFjMTJxczczMnBwN3Jmaml2c2wifQ.oPYPvVXUxTztCvw0E2QZ9A"
+                //mapStyle="mapbox://styles/bjreppen/cjbxoxrvdeej42smmvf4ibbb0"
+                mapStyle="mapbox://styles/amundn/cjbxq1m6redp82sqzgt72edqf"
+              >
+                <Marker latitude={63.4139} longitude={10.4064} offsetLeft={-20} offsetTop={-10}>
+                    <div>Are you here?</div>
+                </Marker>
+            </ReactMapGL>
+                <NatureAreaDetails
+                    natureArea={this.state.natureArea}
+                    metadata={this.state.metadata}
+                />
+            </div>
         </MuiThemeProvider>
     }
 }

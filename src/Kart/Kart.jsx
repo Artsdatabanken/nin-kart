@@ -1,4 +1,4 @@
-import Mapbox from './Mapbox/Kart'
+import Mapbox from './Mapbox/Mapbox'
 
 import React, { Component } from 'react';
 
@@ -6,7 +6,7 @@ class Kart extends Component {
     render() {
         return (
             <div>
-                <Mapbox {...props} />
+                <Mapbox {...this.props} />
             </div>
         );
     }
