@@ -3,6 +3,10 @@ import ReactMapGL, {Marker} from 'react-map-gl';
 import backend from "../../backend";
 import NatureAreaDetails from '../../Naturområdedetaljer/NatureAreaDetails'
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
+import IconButton from 'material-ui/IconButton';
+import ActionHome from 'material-ui/svg-icons/action/home';
 
 class Mapbox extends Component {
     constructor(props) {
@@ -10,16 +14,18 @@ class Mapbox extends Component {
         this.state = {
             natureArea: "",
             metadata: "",
+            open: false,
 
             viewport: {
                 width: window.innerWidth,
-                height: 500, //window.innerHeight,
+                height: window.innerHeight,
                 latitude: props.latitude,
                 longitude: props.longitude,
                 zoom: props.zoom
             }
         }
     }
+    handleToggle = () => this.setState({open: !this.state.open});
 
     goFetch(id) {
         backend.getNatureAreaByLocalId(id)
@@ -47,7 +53,7 @@ class Mapbox extends Component {
         if (point.features && point.features[0] && point.features[0].properties && point.features[0].properties.localId) {
             localId = point.features[0].properties.localId;
             this.goFetch(localId)
-
+            this.setState({open: true});
         }
     //alert(point.lngLat + "\n" + localId)
   }
@@ -59,6 +65,7 @@ class Mapbox extends Component {
     render() {
         return <MuiThemeProvider>
             <div>
+
             <ReactMapGL
                 {...this.state.viewport}
                 onClick={this.onClick}
@@ -72,11 +79,18 @@ class Mapbox extends Component {
                 <Marker latitude={63.4139} longitude={10.4064} offsetLeft={-20} offsetTop={-10}>
                     <div>Are you here?</div>
                 </Marker>
+                <IconButton
+                    onClick={this.handleToggle}>
+                    <ActionHome />
+                </IconButton>
             </ReactMapGL>
-                <NatureAreaDetails
-                    natureArea={this.state.natureArea}
-                    metadata={this.state.metadata}
-                />
+                <Drawer open={this.state.open}>
+                    <MenuItem onClick={this.handleToggle}>Lukk</MenuItem>
+                        <NatureAreaDetails
+                            natureArea={this.state.natureArea}
+                            metadata={this.state.metadata}
+                        />
+                </Drawer>
             </div>
         </MuiThemeProvider>
     }
