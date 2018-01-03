@@ -6,7 +6,7 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import IconButton from 'material-ui/IconButton';
-import ActionHome from 'material-ui/svg-icons/action/home';
+import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 
 class Mapbox extends Component {
     constructor(props) {
@@ -81,7 +81,7 @@ class Mapbox extends Component {
                 </Marker>
                 <IconButton
                     onClick={this.handleToggle}>
-                    <ActionHome />
+                    <NavigationMenu />
                 </IconButton>
             </ReactMapGL>
                 <Drawer open={this.state.open}>
