@@ -13,7 +13,6 @@ class Kart extends Component {
             natureArea: "",
             metadata: "",
             open: false,
-
         }
     }
 
