@@ -15,8 +15,8 @@ const layerSelector = {
     // buildings: /building/,
     // roads: /bridge|road|tunnel/,
     // labels: /label|place|poi/,
-    "NA-M": /naturomrade-NA-M/,
-    "Alle naturområder": /naturomrade-all-4326/
+    "NA-M": /NA_M/,
+    "Alle naturområder": /naturomrader5/
 };
 
 // Layer color class by type
