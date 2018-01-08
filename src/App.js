@@ -8,6 +8,7 @@ import StepSliderContainer from './Components/StepSliderContainer'
 import RangeSliderContainer from './Components/RangeSliderContainer'
 import DigDownListContainer from "./DigDownList/DigDownListContainer";
 import SelectionPage from "./SelectionPage/SelectionPage";
+import Kart from "./Kart/Kart";
 
 class App extends Component {
     render() {
@@ -16,6 +17,9 @@ class App extends Component {
                 <MuiThemeProvider>
                     <BrowserRouter>
                         <Switch>
+                            <Route path="/map" exact
+                                   render={() => <Kart
+                                       latitude={63} longitude={10} zoom={4} />} />
                             <Route path="/tree" exact component={FilterTreeContainer} />
                             <Route path="/select" exact component={SelectionPage} />
                             <Route path="/digdown/:id"
