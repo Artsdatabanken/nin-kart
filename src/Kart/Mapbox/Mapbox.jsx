@@ -66,8 +66,8 @@ class Mapbox extends Component {
                 onHover={this.onHover}
                 onViewportChange={viewport => this._onViewportChange(viewport)}
                 mapboxApiAccessToken="pk.eyJ1IjoiYXJ0c2RhdGFiYW5rZW4iLCJhIjoiY2pjNjg2MzVzMHhycjJ3bnM5MHc4MHVzOCJ9.fLnCRyg-hCuTClyim1r-JQ"
-                mapStyle="mapbox://styles/artsdatabanken/cjc68pztl4sud2sp0s4wyy58q"
-                //mapStyle={mapStyle}
+                //mapStyle="mapbox://styles/artsdatabanken/cjc68pztl4sud2sp0s4wyy58q"
+                mapStyle={mapStyle}
 
 
             >
