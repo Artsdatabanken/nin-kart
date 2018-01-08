@@ -90,15 +90,15 @@
     "mapbox:trackposition": true
   },
   "center": [
-    14.705704938279382,
-    67.27891047715957
+    13.638041570732184,
+    71.1449760339622
   ],
-  "zoom": 12.447198373540319,
+  "zoom": 4.775408407089775,
   "bearing": 0,
   "pitch": 0,
   "sources": {
     "composite": {
-      "url": "mapbox://mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v7,amundn.ctx9cbsb",
+      "url": "mapbox://mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v7,amundn.ctx9cbsb,artsdatabanken.bthj0gsg",
       "type": "vector"
     }
   },
@@ -14095,6 +14095,50 @@
       }
     },
     {
+      "id": "kalk",
+      "type": "fill",
+      "metadata": {},
+      "source": "composite",
+      "source-layer": "kalk",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": {
+          "base": 1,
+          "type": "exponential",
+          "property": "KALKINNHOLD_HOVEDBERGART",
+          "stops": [
+            [
+              0,
+              "hsla(0, 0%, 0%, 0)"
+            ],
+            [
+              1,
+              "hsla(0, 6%, 94%, 0.6)"
+            ],
+            [
+              2,
+              "hsla(0, 19%, 88%, 0.6)"
+            ],
+            [
+              3,
+              "hsla(0, 35%, 80%, 0.6)"
+            ],
+            [
+              4,
+              "hsla(0, 59%, 63%, 0.6)"
+            ],
+            [
+              5,
+              "hsla(0, 84%, 32%, 0.6)"
+            ]
+          ],
+          "default": "hsl(0, 4%, 94%)"
+        }
+      }
+    },
+    {
       "id": "naturomrader5",
       "type": "fill",
       "source": "composite",
@@ -14155,7 +14199,7 @@
   ],
   "created": "2018-01-08T13:25:52.670Z",
   "id": "cjc68pztl4sud2sp0s4wyy58q",
-  "modified": "2018-01-08T13:40:24.093Z",
+  "modified": "2018-01-08T14:06:03.316Z",
   "owner": "artsdatabanken",
   "visibility": "private",
   "draft": false

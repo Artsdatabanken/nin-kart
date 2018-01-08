@@ -5,7 +5,7 @@ import MAP_STYLE from '../naturtypekart_style.json';
 const defaultMapStyle = fromJS(MAP_STYLE);
 
 //const categories = ['labels', 'roads', 'buildings', 'parks', 'water', 'background', 'naturomrade-NA-M'];
-const categories = ['NA-M', 'Alle naturområder'];
+const categories = ['NA-M', 'Kalk', 'Alle naturområder'];
 
 // Layer id patterns by category
 const layerSelector = {
@@ -16,6 +16,7 @@ const layerSelector = {
     // roads: /bridge|road|tunnel/,
     // labels: /label|place|poi/,
     "NA-M": /NA_M/,
+    "Kalk": /kalk/,
     "Alle naturområder": /naturomrader5/
 };
 
@@ -45,6 +46,7 @@ export default class StyleControls extends PureComponent {
                 // labels: true,
                 // background: true,
                 "NA-M": true,
+                "Kalk": false,
                 "Alle naturområder": true
 
             },
@@ -55,6 +57,7 @@ export default class StyleControls extends PureComponent {
                 // roads: '#ffffff',
                 // labels: '#78888a',
                 // background: '#EBF0F0',
+                "kalk": '#000000',
                 "NA-M": '#003399',
                 "Alle naturområder": '#999999'
             }
