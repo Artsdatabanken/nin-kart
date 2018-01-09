@@ -90,15 +90,15 @@
     "mapbox:trackposition": true
   },
   "center": [
-    13.638041570732184,
-    71.1449760339622
+    22.7154523329707,
+    67.29390772259111
   ],
-  "zoom": 4.775408407089775,
+  "zoom": 3.556247033442418,
   "bearing": 0,
   "pitch": 0,
   "sources": {
     "composite": {
-      "url": "mapbox://mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v7,amundn.ctx9cbsb,artsdatabanken.bthj0gsg",
+      "url": "mapbox://mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v7,artsdatabanken.bthj0gsg,amundn.ctx9cbsb,artsdatabanken.dz9161rw,artsdatabanken.7hhxtxe3",
       "type": "vector"
     }
   },
@@ -14097,12 +14097,9 @@
     {
       "id": "kalk",
       "type": "fill",
-      "metadata": {},
       "source": "composite",
       "source-layer": "kalk",
-      "layout": {
-        "visibility": "visible"
-      },
+      "layout": {},
       "paint": {
         "fill-color": {
           "base": 1,
@@ -14139,6 +14136,92 @@
       }
     },
     {
+      "id": "soner2017-4326-6fcqhb",
+      "type": "fill",
+      "source": "composite",
+      "source-layer": "soner2017_4326-6fcqhb",
+      "maxzoom": 10,
+      "filter": [
+        "==",
+        "$type",
+        "Polygon"
+      ],
+      "layout": {},
+      "paint": {
+        "fill-color": {
+          "base": 1,
+          "type": "exponential",
+          "property": "6SO",
+          "stops": [
+            [
+              1,
+              "#fdc26e"
+            ],
+            [
+              2,
+              "#fdfa40"
+            ],
+            [
+              3,
+              "#a5fea4"
+            ],
+            [
+              4,
+              "#4de600"
+            ],
+            [
+              5,
+              "#309afd"
+            ]
+          ]
+        },
+        "fill-opacity": 0.7
+      }
+    },
+    {
+      "id": "seksjoner2017-4326-c6e9g5",
+      "type": "fill",
+      "source": "composite",
+      "source-layer": "Seksjoner2017_4326-c6e9g5",
+      "maxzoom": 10,
+      "filter": [
+        "==",
+        "$type",
+        "Polygon"
+      ],
+      "layout": {},
+      "paint": {
+        "fill-color": {
+          "base": 1,
+          "type": "exponential",
+          "property": "6SE",
+          "stops": [
+            [
+              1,
+              "#0f27ff"
+            ],
+            [
+              2,
+              "#0f8cff"
+            ],
+            [
+              3,
+              "#0ffcff"
+            ],
+            [
+              4,
+              "#8cfcff"
+            ],
+            [
+              5,
+              "#cafcff"
+            ]
+          ]
+        },
+        "fill-opacity": 0.7
+      }
+    },
+    {
       "id": "naturomrader5",
       "type": "fill",
       "source": "composite",
@@ -14148,7 +14231,7 @@
       },
       "paint": {
         "fill-color": "hsla(120, 78%, 41%, 0.75)",
-        "fill-outline-color": "hsl(232, 12%, 2%)"
+        "fill-outline-color": "hsla(120, 84%, 47%, 0.75)"
       }
     },
     {
@@ -14165,7 +14248,7 @@
       },
       "paint": {
         "fill-color": "hsla(251, 79%, 68%, 0.8)",
-        "fill-outline-color": "hsl(0, 22%, 22%)"
+        "fill-outline-color": "hsla(251, 59%, 69%, 0.8)"
       }
     },
     {
@@ -14174,18 +14257,27 @@
       "source": "composite",
       "source-layer": "naturomrader5",
       "filter": [
-        "any",
+        "all",
         [
-          "has",
-          "RKAT_CR"
+          "all",
+          [
+            "has",
+            "RKAT_CR"
+          ],
+          [
+            "has",
+            "RKAT_EN"
+          ],
+          [
+            "has",
+            "RKAT_NT"
+          ]
         ],
         [
-          "has",
-          "RKAT_EN"
-        ],
-        [
-          "has",
-          "RKAT_NT"
+          "in",
+          "$type",
+          "LineString",
+          "Polygon"
         ]
       ],
       "layout": {
@@ -14193,13 +14285,13 @@
       },
       "paint": {
         "fill-color": "hsla(0, 97%, 48%, 0.92)",
-        "fill-outline-color": "hsl(0, 83%, 10%)"
+        "fill-outline-color": "hsla(0, 86%, 64%, 0.91)"
       }
     }
   ],
   "created": "2018-01-08T13:25:52.670Z",
   "id": "cjc68pztl4sud2sp0s4wyy58q",
-  "modified": "2018-01-08T14:06:03.316Z",
+  "modified": "2018-01-09T08:43:48.495Z",
   "owner": "artsdatabanken",
   "visibility": "private",
   "draft": false
