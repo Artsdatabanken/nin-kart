@@ -14295,6 +14295,7 @@
       "source": "composite",
       "source-layer": "naturomrader5",
       "layout": {},
+      "interactive": true,
       "paint": {
         "fill-color": "hsla(120, 78%, 41%, 0.75)",
         "fill-outline-color": "hsla(120, 84%, 47%, 0.75)"

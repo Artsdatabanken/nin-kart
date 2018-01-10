@@ -40,6 +40,6 @@ class App extends Component {
     }
 }
 
-const RedirectToDefault = () => <Redirect from="/" to="/select" />;
+const RedirectToDefault = () => <Redirect from="/" to="/map" />;
 
 export default App;

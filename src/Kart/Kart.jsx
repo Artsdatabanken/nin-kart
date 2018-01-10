@@ -16,13 +16,13 @@ class Kart extends Component {
         }
     }
 
-    onClick = localId => {
-        // let localId = "";
-        // if (point.features && point.features[0] && point.features[0].properties && point.features[0].properties.localId) {
-        //     localId = point.features[0].properties.localId;
+    onClick = point => {
+        let localId = "";
+        if (point.features && point.features[0] && point.features[0].properties && point.features[0].properties.localId) {
+            localId = point.features[0].properties.localId;
             this.goFetch(localId);
             this.setState({open: true});
-        //}
+        }
         //alert(point.lngLat + "\n" + localId)
     };
 
