@@ -5,7 +5,7 @@ import MAP_STYLE from '../naturtypekart_style.json';
 const defaultMapStyle = fromJS(MAP_STYLE);
 
 //const categories = ['labels', 'roads', 'buildings', 'parks', 'water', 'background', 'naturomrade-NA-M'];
-const categories = ['NA-M', 'Kalk', 'Alle naturområder'];
+const categories = ['NA-M', 'Kalk', 'Alle naturområder', 'Rødlistede', 'Bioklimatiske soner', 'Seksjoner'];
 
 // Layer id patterns by category
 const layerSelector = {
@@ -17,7 +17,10 @@ const layerSelector = {
     // labels: /label|place|poi/,
     "NA-M": /NA_M/,
     "Kalk": /kalk/,
-    "Alle naturområder": /naturomrader5/
+    "Alle naturområder": /naturomrader5/,
+    "Rødlistede": /Rodlistede/,
+    "Bioklimatiske soner": /soner2017-4326-6fcqhb/,
+    "Seksjoner": /seksjoner2017-4326-c6e9g5/,
 };
 
 // Layer color class by type
@@ -25,7 +28,8 @@ const colorClass = {
     line: 'line-color',
     fill: 'fill-color',
     background: 'background-color',
-    symbol: 'text-color'
+    symbol: 'text-color',
+    //composite: 'fill-color',
 };
 
 const defaultContainer = ({children}) => <div className="control-panel">{children}</div>;
@@ -47,7 +51,10 @@ export default class StyleControls extends PureComponent {
                 // background: true,
                 "NA-M": true,
                 "Kalk": false,
-                "Alle naturområder": true
+                "Alle naturområder": true,
+                "Rødlistede": false,
+                "Bioklimatiske soner": false,
+                "Seksjoner": false,
 
             },
             color: {
@@ -57,9 +64,12 @@ export default class StyleControls extends PureComponent {
                 // roads: '#ffffff',
                 // labels: '#78888a',
                 // background: '#EBF0F0',
-                "kalk": '#000000',
+                "kalk": undefined,
                 "NA-M": '#003399',
-                "Alle naturområder": '#999999'
+                "Alle naturområder": undefined,
+                "Rødlistede": undefined,
+                "Bioklimatiske soner":undefined,
+                "Seksjoner":undefined,
             }
         };
     }
@@ -85,20 +95,27 @@ export default class StyleControls extends PureComponent {
         const layers = this._defaultLayers
             .filter(layer => {
                 const id = layer.get('id');
+                //console.log(id);
                 return categories.every(name => visibility[name] || !layerSelector[name].test(id));
             })
             .map(layer => {
                 const id = layer.get('id');
                 const type = layer.get('type');
                 const category = categories.find(name => layerSelector[name].test(id));
-                if (category && colorClass[type]) {
+                //console.log(id + ", " + type + ", " + category);
+                if (category && colorClass[type] && color[category]) {
+                    //console.log("paint " + id + ", " + type + ", " + category);
                     return layer.setIn(['paint', colorClass[type]], color[category]);
                 }
+                // else {
+                //     return layer.setIn(['layout', "visibility"], visibility[id]);
+                // }
                 return layer;
             });
 
         this.props.onChange(defaultMapStyle.set('layers', layers));
     }
+
 
     _renderLayerControl(name) {
         const {visibility, color} = this.state;

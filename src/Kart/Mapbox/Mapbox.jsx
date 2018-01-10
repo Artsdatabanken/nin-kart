@@ -52,6 +52,13 @@ class Mapbox extends Component {
         //console.log(point.lngLat)
        //console.log(this.map.getMap());//.getMap().width);
    };
+    onClick = e => {
+        // const pos = e.center
+        // const r = this.map.queryRenderedFeatures([pos.x, pos.y])
+        // console.warn(r)
+
+        this.props.onClick(e);
+    };
 
     render() {
         const {viewport, mapStyle} = this.state;
@@ -62,7 +69,7 @@ class Mapbox extends Component {
             <ReactMapGL
                 {...viewport}
                 ref={(map) => { this.map = map; }}
-                onClick={this.props.onClick}
+                onClick={this.onClick}
                 onHover={this.onHover}
                 onViewportChange={viewport => this._onViewportChange(viewport)}
                 mapboxApiAccessToken="pk.eyJ1IjoiYXJ0c2RhdGFiYW5rZW4iLCJhIjoiY2pjNjg2MzVzMHhycjJ3bnM5MHc4MHVzOCJ9.fLnCRyg-hCuTClyim1r-JQ"
