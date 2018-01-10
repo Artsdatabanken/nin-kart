@@ -53,11 +53,11 @@ class Mapbox extends Component {
        //console.log(this.map.getMap());//.getMap().width);
    };
     onClick = e => {
-        // const pos = e.center
-        // const r = this.map.queryRenderedFeatures([pos.x, pos.y])
-        // console.warn(r)
-
-        this.props.onClick(e);
+        const pos = e.center;
+        const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y]);
+        if (r[0] && r[0].properties && r[0].properties.localId) {
+            this.props.onClick(r[0].properties.localId);
+        }
     };
 
     render() {
