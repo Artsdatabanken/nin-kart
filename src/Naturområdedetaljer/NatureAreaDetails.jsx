@@ -15,7 +15,7 @@ const NatureAreaDetails = props =>
               {id:2, secondary: 'Kartleggingsmålestokk', primary: props.metadata.surveyScale},
               {id:3, secondary: 'Kartlagt', primary: props.metadata.surveyedFrom},
               {id:4, secondary: 'Rødlistekategori', primary: props.natureArea.rødlisteKategori ? props.natureArea.rødlisteKategori.code : ""},
-              {id:5, secondary: 'Vurderingsenhet', primary: props.natureArea.rødlisteKategori ? props.natureArea.rødlisteKategori.vurderingsenhet : ""},
+              {id:5, secondary: 'Vurderingsenhet', primary: props.natureArea.rødlisteKategori && props.natureArea.rødlisteKategori.vurderingsenhet ? props.natureArea.rødlisteKategori.vurderingsenhet.code : ""},
               // {id:6, secondary: 'Naturtype', primary: props.natureArea.parameters ? props.natureArea.rødlisteKategori.vurderingsenhet : ""}
           ]}/>
 
