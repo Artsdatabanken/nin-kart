@@ -14,13 +14,23 @@
         "name": "POI labels  (scalerank 1)",
         "collapsed": true
       },
+      "f687f11d778ea9a47615d3f139a85ec5": {
+        "name": "Artsdatabanken"
+      },
       "1444934749452.0452": {
         "name": "Wetlands",
         "collapsed": true
       },
+      "f71d3b7ccf4f9f98b523aff70c28f70a": {
+        "name": "NGU"
+      },
       "1444855786460.0557": {
         "name": "Roads",
         "collapsed": true
+      },
+      "9067cf3f32bb715cfb887e5a5057c6f6": {
+        "name": "NINA",
+        "collapsed": false
       },
       "1444933575858.6992": {
         "name": "Highway shields",
@@ -41,6 +51,9 @@
       "1444933358918.2366": {
         "name": "POI labels (scalerank 2)",
         "collapsed": true
+      },
+      "c83d5cc35cec2345819561c92926437e": {
+        "name": "Kartverket"
       },
       "1444933808272.805": {
         "name": "Water labels",
@@ -90,15 +103,16 @@
     "mapbox:trackposition": true
   },
   "center": [
-    13.638041570732184,
-    71.1449760339622
+    14.657543447817261,
+    67.34426463298357
   ],
-  "zoom": 4.775408407089775,
+  "zoom": 9.93234095553127,
   "bearing": 0,
   "pitch": 0,
   "sources": {
     "composite": {
-      "url": "mapbox://mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v7,amundn.ctx9cbsb,artsdatabanken.bthj0gsg",
+      "url": "mapbox://mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v7,artsdatabanken.bthj0gsg,artsdatabanken.9fqc3l9i,artsdatabanken.dz9161rw,artsdatabanken.7hhxtxe3,artsdatabanken.7676pvsx,amundn.ctx9cbsb,artsdatabanken.dvgg79j0,artsdatabanken.6j8o5925",
+
       "type": "vector"
     }
   },
@@ -14097,12 +14111,12 @@
     {
       "id": "kalk",
       "type": "fill",
-      "metadata": {},
+      "metadata": {
+        "mapbox:group": "f71d3b7ccf4f9f98b523aff70c28f70a"
+      },
       "source": "composite",
       "source-layer": "kalk",
-      "layout": {
-        "visibility": "visible"
-      },
+      "layout": { },
       "paint": {
         "fill-color": {
           "base": 1,
@@ -14139,67 +14153,202 @@
       }
     },
     {
-      "id": "naturomrader5",
+      "id": "ultramafisk",
       "type": "fill",
+      "metadata": {
+        "mapbox:group": "f71d3b7ccf4f9f98b523aff70c28f70a"
+      },
       "source": "composite",
-      "source-layer": "naturomrader5",
+      "source-layer": "ultramafisk",
+      "filter": [
+        "==",
+        "$type",
+        "Polygon"
+      ],
       "layout": {
-        "visibility": "visible"
+
       },
       "paint": {
-        "fill-color": "hsla(120, 78%, 41%, 0.75)",
-        "fill-outline-color": "hsl(232, 12%, 2%)"
+        "fill-color": "hsl(329, 100%, 70%)"
       }
     },
     {
-      "id": "NA_M",
+      "id": "soner2017-4326-6fcqhb",
       "type": "fill",
+      "metadata": {
+        "mapbox:group": "9067cf3f32bb715cfb887e5a5057c6f6"
+      },
       "source": "composite",
-      "source-layer": "naturomrader5",
+      "source-layer": "soner2017_4326-6fcqhb",
+      "maxzoom": 10,
       "filter": [
-        "has",
-        "NA_M"
+        "==",
+        "$type",
+        "Polygon"
       ],
       "layout": {
-        "visibility": "visible"
+
       },
       "paint": {
-        "fill-color": "hsla(251, 79%, 68%, 0.8)",
-        "fill-outline-color": "hsl(0, 22%, 22%)"
+        "fill-color": {
+          "base": 1,
+          "type": "exponential",
+          "property": "6SO",
+          "stops": [
+            [
+              1,
+              "#fdc26e"
+            ],
+            [
+              2,
+              "#fdfa40"
+            ],
+            [
+              3,
+              "#a5fea4"
+            ],
+            [
+              4,
+              "#4de600"
+            ],
+            [
+              5,
+              "#309afd"
+            ]
+          ]
+        },
+        "fill-opacity": 0.5
       }
     },
+    {
+      "id": "seksjoner2017-4326-c6e9g5",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "9067cf3f32bb715cfb887e5a5057c6f6"
+      },
+      "source": "composite",
+      "source-layer": "Seksjoner2017_4326-c6e9g5",
+      "maxzoom": 10,
+      "filter": [
+        "==",
+        "$type",
+        "Polygon"
+      ],
+      "layout": {
+
+      },
+      "paint": {
+        "fill-color": {
+          "base": 1,
+          "type": "exponential",
+          "property": "6SE",
+          "stops": [
+            [
+              1,
+              "#0f27ff"
+            ],
+            [
+              2,
+              "#0f8cff"
+            ],
+            [
+              3,
+              "#0ffcff"
+            ],
+            [
+              4,
+              "#8cfcff"
+            ],
+            [
+              5,
+              "#cafcff"
+            ]
+          ]
+        },
+        "fill-opacity": 0.5
+      }
+    },
+    {
+      "id": "n50-snoisbre-by0xuw",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "c83d5cc35cec2345819561c92926437e"
+      },
+      "source": "composite",
+      "source-layer": "N50_SnoIsbre-by0xuw",
+      "filter": [
+        "==",
+        "$type",
+        "Polygon"
+      ],
+      "layout": {
+      },
+      "paint": {
+        "fill-color": "hsl(184, 99%, 96%)"
+      }
+    },
+    {
+      "id": "naturomrader6",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "f687f11d778ea9a47615d3f139a85ec5"
+      },
+      "source": "composite",
+      "source-layer": "naturomrader6",
+      "layout": {},
+      "interactive": true,
+      "paint": {
+        "fill-color": "hsla(120, 78%, 41%, 0.75)",
+        "fill-outline-color": "hsla(120, 84%, 47%, 0.75)"
+      }
+    },
+
     {
       "id": "Rodlistede",
       "type": "fill",
+      "metadata": {
+        "mapbox:group": "f687f11d778ea9a47615d3f139a85ec5"
+      },
       "source": "composite",
-      "source-layer": "naturomrader5",
+      "source-layer": "naturomrader6",
       "filter": [
-        "any",
+        "all",
         [
-          "has",
-          "RKAT_CR"
+          "any",
+          [
+            "has",
+            "RKAT_CR"
+          ],
+          [
+            "has",
+            "RKAT_EN"
+          ],
+          [
+            "has",
+            "RKAT_NT"
+          ],
+          [
+            "has",
+            "RKAT_RE"
+          ]
         ],
         [
-          "has",
-          "RKAT_EN"
-        ],
-        [
-          "has",
-          "RKAT_NT"
+          "in",
+          "$type",
+          "LineString",
+          "Polygon"
         ]
       ],
-      "layout": {
-        "visibility": "visible"
-      },
+      "layout": {},
       "paint": {
         "fill-color": "hsla(0, 97%, 48%, 0.92)",
-        "fill-outline-color": "hsl(0, 83%, 10%)"
+        "fill-outline-color": "hsla(0, 86%, 64%, 0.91)"
       }
     }
   ],
   "created": "2018-01-08T13:25:52.670Z",
   "id": "cjc68pztl4sud2sp0s4wyy58q",
-  "modified": "2018-01-08T14:06:03.316Z",
+  "modified": "2018-01-10T07:54:24.912Z",
   "owner": "artsdatabanken",
   "visibility": "private",
   "draft": false

@@ -20,7 +20,6 @@ class Mapbox extends Component {
         }
     }
 
-
     componentDidMount() {
         window.addEventListener('resize', this._resize);
         this._resize();
@@ -41,35 +40,42 @@ class Mapbox extends Component {
 
     _onStyleChange = mapStyle => {
         this.setState({mapStyle});
-
-        // forsøk på å sette den endrede stilen i kartet
-        //if (this.map) this.map.getMap().setStyle(mapStyle);
     };
 
     _onViewportChange = viewport => this.setState({viewport});
 
-   onHover = point => {
-        //console.log(point.lngLat)
-       //console.log(this.map.getMap());//.getMap().width);
+   onHover = e => {
+       // const pos = e.center;
+       // const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y]);
+       //  //console.log(point.lngLat)
+       // if (r[0]) {
+       //     this.map.getMap().setFilter("naturomrader5_hover", ["==", "name", r[0].name]);
+       // }
    };
+
+
+    // onClick = e => {
+    //     const pos = e.center;
+    //     const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y]);
+    //     if (r[0] && r[0].properties && r[0].properties.localId) {
+    //         this.props.onClick(r[0].properties.localId);
+    //     }
+    // };
 
     render() {
         const {viewport, mapStyle} = this.state;
 
         return (
-            <div>
-
             <ReactMapGL
                 {...viewport}
                 ref={(map) => { this.map = map; }}
                 onClick={this.props.onClick}
                 onHover={this.onHover}
+                onMouseMove={this.onMouseMove}
                 onViewportChange={viewport => this._onViewportChange(viewport)}
                 mapboxApiAccessToken="pk.eyJ1IjoiYXJ0c2RhdGFiYW5rZW4iLCJhIjoiY2pjNjg2MzVzMHhycjJ3bnM5MHc4MHVzOCJ9.fLnCRyg-hCuTClyim1r-JQ"
                 //mapStyle="mapbox://styles/artsdatabanken/cjc68pztl4sud2sp0s4wyy58q"
                 mapStyle={mapStyle}
-
-
             >
                 <ControlPanel
                     containerComponent={this.props.containerComponent}
@@ -83,8 +89,6 @@ class Mapbox extends Component {
                     <NavigationMenu />
                 </IconButton>
             </ReactMapGL>
-
-            </div>
         );
     }
 }
