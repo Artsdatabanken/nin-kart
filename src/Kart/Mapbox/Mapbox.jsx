@@ -45,15 +45,27 @@ class Mapbox extends Component {
     _onViewportChange = viewport => this.setState({viewport});
 
    onHover = e => {
-        //console.log(point.lngLat)
+       // const pos = e.center;
+       // const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y]);
+       //  //console.log(point.lngLat)
+       // if (r[0]) {
+       //     this.map.getMap().setFilter("naturomrader5_hover", ["==", "name", r[0].name]);
+       // }
    };
+
+
+    // onClick = e => {
+    //     const pos = e.center;
+    //     const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y]);
+    //     if (r[0] && r[0].properties && r[0].properties.localId) {
+    //         this.props.onClick(r[0].properties.localId);
+    //     }
+    // };
 
     render() {
         const {viewport, mapStyle} = this.state;
 
         return (
-            <div>
-
             <ReactMapGL
                 {...viewport}
                 ref={(map) => { this.map = map; }}
@@ -64,8 +76,6 @@ class Mapbox extends Component {
                 mapboxApiAccessToken="pk.eyJ1IjoiYXJ0c2RhdGFiYW5rZW4iLCJhIjoiY2pjNjg2MzVzMHhycjJ3bnM5MHc4MHVzOCJ9.fLnCRyg-hCuTClyim1r-JQ"
                 //mapStyle="mapbox://styles/artsdatabanken/cjc68pztl4sud2sp0s4wyy58q"
                 mapStyle={mapStyle}
-
-
             >
                 <ControlPanel
                     containerComponent={this.props.containerComponent}
@@ -79,8 +89,6 @@ class Mapbox extends Component {
                     <NavigationMenu />
                 </IconButton>
             </ReactMapGL>
-
-            </div>
         );
     }
 }

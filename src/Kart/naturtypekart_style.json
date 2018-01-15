@@ -111,7 +111,8 @@
   "pitch": 0,
   "sources": {
     "composite": {
-      "url": "mapbox://mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v7,artsdatabanken.bthj0gsg,artsdatabanken.9fqc3l9i,artsdatabanken.dz9161rw,artsdatabanken.7hhxtxe3,amundn.ctx9cbsb,artsdatabanken.bhgi74f2",
+      "url": "mapbox://mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v7,artsdatabanken.bthj0gsg,artsdatabanken.9fqc3l9i,artsdatabanken.dz9161rw,artsdatabanken.7hhxtxe3,artsdatabanken.7676pvsx,amundn.ctx9cbsb,artsdatabanken.dvgg79j0,artsdatabanken.6j8o5925",
+
       "type": "vector"
     }
   },
@@ -14287,13 +14288,13 @@
       }
     },
     {
-      "id": "naturomrader5",
+      "id": "naturomrader6",
       "type": "fill",
       "metadata": {
         "mapbox:group": "f687f11d778ea9a47615d3f139a85ec5"
       },
       "source": "composite",
-      "source-layer": "naturomrader5",
+      "source-layer": "naturomrader6",
       "layout": {},
       "interactive": true,
       "paint": {
@@ -14301,24 +14302,7 @@
         "fill-outline-color": "hsla(120, 84%, 47%, 0.75)"
       }
     },
-    {
-      "id": "NA_M",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "f687f11d778ea9a47615d3f139a85ec5"
-      },
-      "source": "composite",
-      "source-layer": "naturomrader5",
-      "filter": [
-        "has",
-        "NA_M"
-      ],
-      "layout": {},
-      "paint": {
-        "fill-color": "hsla(251, 79%, 68%, 0.8)",
-        "fill-outline-color": "hsla(251, 59%, 69%, 0.8)"
-      }
-    },
+
     {
       "id": "Rodlistede",
       "type": "fill",
@@ -14326,7 +14310,7 @@
         "mapbox:group": "f687f11d778ea9a47615d3f139a85ec5"
       },
       "source": "composite",
-      "source-layer": "naturomrader5",
+      "source-layer": "naturomrader6",
       "filter": [
         "all",
         [

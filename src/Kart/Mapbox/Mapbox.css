@@ -13,3 +13,8 @@
     color: #6b6b76;
     outline: none;
 }
+
+input[type="color" i] {
+    position: absolute;
+    right: 10px;
+}

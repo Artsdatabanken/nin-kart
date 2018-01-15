@@ -9,6 +9,7 @@ import RangeSliderContainer from './Components/RangeSliderContainer'
 import DigDownListContainer from "./DigDownList/DigDownListContainer";
 import SelectionPage from "./SelectionPage/SelectionPage";
 import Kart from "./Kart/Kart";
+import "./App.css";
 
 class App extends Component {
     render() {
