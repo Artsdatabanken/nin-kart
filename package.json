@@ -3,21 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "graphql-request": "^1.4.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
     "material-ui": "^0.20.0",
+    "prettier": "^1.10.2",
     "rc-slider": "^8.5.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-map-gl": "^3.1.5",
-    "react-router-dom": "^4.2.2",
-    "graphql-request": "^1.4.0",
     "react-responsive": "^4.0.0",
-    "react-scripts": "1.0.17"
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
+    "precommit": "lint-staged",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public -o build/storybook"
   },
@@ -30,5 +33,13 @@
     "jest-cli": "^22.0.0",
     "react-test-renderer": "^16.2.0",
     "storybook-addon-material-ui": "^0.8.2"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": ["prettier --write", "git add"]
+  },
+  "prettier": {
+    "semi": false,
+    "trailingComma": "es5",
+    "singleQuote": true
   }
 }
