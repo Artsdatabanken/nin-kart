@@ -7,7 +7,6 @@ import FilterTreeContainer from './FilterTree/FilterTreeContainer'
 import DigDownListContainer from './DigDownList/DigDownListContainer'
 import Kode from './Kodetre/Kode'
 import Kart from './Kart/Kart'
-import './App.css'
 
 class App extends Component {
   render() {
