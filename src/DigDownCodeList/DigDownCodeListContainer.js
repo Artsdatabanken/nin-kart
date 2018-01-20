@@ -6,7 +6,7 @@ class DigDownCodeListContainer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      id: props.id,
+      kode: props.kode,
       obj: '',
       children: [],
     }
@@ -14,13 +14,13 @@ class DigDownCodeListContainer extends React.Component {
   }
 
   componentDidMount() {
-    this.handleDataFetch(this.state.id)
+    this.handleDataFetch(this.state.kode)
   }
+
   componentWillReceiveProps(nextProps) {
     this.setState({
-      id: nextProps.id,
+      kode: nextProps.kode,
     })
-    //this.handleDataFetch(this.state.id);
   }
 
   render() {
@@ -37,7 +37,7 @@ class DigDownCodeListContainer extends React.Component {
           key={this.props.filterCode}
           filterCode={this.props.filterCode}
           filter={this.props.filter}
-          onClick={id => this.handleDataFetch(id)}
+          onClick={kode => this.handleDataFetch(kode)}
           onCheck={this.props.handleCheckChange}
           isSelected={this.props.isSelected}
         />
