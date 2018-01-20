@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 
 import NatureAreaDetailContainer from './Naturområdedetaljer/NatureAreaDetailContainer'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import FilterTreeContainer from './FilterTree/FilterTreeContainer'
 import DigDownListContainer from './DigDownList/DigDownListContainer'
 import Kode from './Kodetre/Kode'
 import Kart from './Kart/Kart'
@@ -20,7 +19,6 @@ class App extends Component {
                 exact
                 render={() => <Kart latitude={63} longitude={10} zoom={4} />}
               />
-              <Route path="/tree" exact component={FilterTreeContainer} />
               <Route path="/kode/:kode" exact component={Kode} />
               <Route
                 path="/digdown/:id"
