@@ -16,7 +16,7 @@ class App extends Component {
           <BrowserRouter>
             <Switch>
               <Route
-                path="/map"
+                path="/"
                 exact
                 render={() => <Kart latitude={63} longitude={10} zoom={4} />}
               />
