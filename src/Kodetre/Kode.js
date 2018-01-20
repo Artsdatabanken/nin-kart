@@ -88,7 +88,7 @@ class Kode extends React.Component {
     return (
       <div>
         <DigDownCodeListContainer
-          name={'Tilgjengelige lag'}
+          name={'Kodetre'}
           filterCode={'filterCodes'}
           kode={this.props.match.params.kode}
           dataFetchFunction={this.codeCount}

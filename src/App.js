@@ -1,15 +1,22 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import { getMuiTheme, MuiThemeProvider } from 'material-ui/styles'
 import Kode from './Kodetre/Kode'
 import Kart from './Kart/Kart'
+
+const muiTheme = getMuiTheme({
+  palette: {
+    primary1Color: '#63AD82',
+    accent1Color: '#D43C00',
+  },
+})
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <MuiThemeProvider>
+        <MuiThemeProvider muiTheme={muiTheme}>
           <BrowserRouter>
             <Switch>
               <Route
