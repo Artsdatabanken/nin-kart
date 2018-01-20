@@ -4,6 +4,7 @@ import Checkbox from 'material-ui/Checkbox'
 import Chip from 'material-ui/Chip'
 
 function Kodeliste(props) {
+  console.log(props)
   return (
     <List>
       {props.items.length ? (
@@ -12,8 +13,8 @@ function Kodeliste(props) {
             key={item.kode}
             primaryTogglesNestedList={true}
             rightAvatar={<Chip>{item.antall}</Chip>}
-            primaryText={item.navn || item.scientificName}
-            secondaryText={item.kode || item.popularName}
+            primaryText={item.navn}
+            secondaryText={item.kode}
             onClick={() => props.onClick(item.kode)}
             leftAvatar={
               <Checkbox
