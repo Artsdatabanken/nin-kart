@@ -3,7 +3,7 @@ import { List, ListItem } from 'material-ui/List'
 import Checkbox from 'material-ui/Checkbox'
 import Chip from 'material-ui/Chip'
 
-function DigDownCodeList(props) {
+function Kodeliste(props) {
   return (
     <List>
       {props.items.length ? (
@@ -15,7 +15,7 @@ function DigDownCodeList(props) {
             primaryText={item.navn || item.scientificName}
             secondaryText={item.kode || item.popularName}
             onClick={() => props.onClick(item.kode)}
-            leftCheckbox={
+            leftAvatar={
               <Checkbox
                 key={item.kode}
                 name={'' + item.kode}
@@ -33,4 +33,4 @@ function DigDownCodeList(props) {
   )
 }
 
-export default DigDownCodeList
+export default Kodeliste

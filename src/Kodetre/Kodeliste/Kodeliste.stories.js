@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import DigDownCodeList from './DigDownCodeList'
+import Kodeliste from './Kodeliste'
 import { muiTheme } from 'storybook-addon-material-ui'
 import { action } from '@storybook/addon-actions/dist/index'
 
@@ -46,7 +46,7 @@ var dummyItems = [
 storiesOf('DigDownCodeList', module)
   .addDecorator(muiTheme())
   .add('default', () => (
-    <DigDownCodeList
+    <Kodeliste
       items={dummyItems}
       isSelected={action('selection')}
       onClick={action('click')}

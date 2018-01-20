@@ -1,5 +1,5 @@
 import React from 'react'
-import DigDownCodeListContainer from '../DigDownCodeList/DigDownCodeListContainer'
+import KodelisteContainer from './Kodeliste/KodelisteContainer'
 import backend from '../backend'
 
 class Kode extends React.Component {
@@ -87,7 +87,7 @@ class Kode extends React.Component {
   render() {
     return (
       <div>
-        <DigDownCodeListContainer
+        <KodelisteContainer
           name={'Kodetre'}
           filterCode={'filterCodes'}
           kode={this.props.match.params.kode}

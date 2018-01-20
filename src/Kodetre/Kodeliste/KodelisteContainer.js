@@ -1,8 +1,8 @@
 import React from 'react'
-import DigDownList from './DigDownCodeList'
-import TopBar from '../TopBar/TopBar'
+import Kodeliste from './Kodeliste'
+import TopBar from '../../TopBar/TopBar'
 
-class DigDownCodeListContainer extends React.Component {
+class KodelisteContainer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -31,7 +31,7 @@ class DigDownCodeListContainer extends React.Component {
           name={this.props.name}
           parentId={this.state.parentId}
         />
-        <DigDownList
+        <Kodeliste
           name={this.props.name}
           items={this.state.children}
           key={this.props.filterCode}
@@ -47,4 +47,4 @@ class DigDownCodeListContainer extends React.Component {
   }
 }
 
-export default DigDownCodeListContainer
+export default KodelisteContainer
