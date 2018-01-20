@@ -4,10 +4,8 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import NatureAreaDetailContainer from './Naturområdedetaljer/NatureAreaDetailContainer'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import FilterTreeContainer from './FilterTree/FilterTreeContainer'
-import StepSliderContainer from './Components/StepSliderContainer'
-import RangeSliderContainer from './Components/RangeSliderContainer'
 import DigDownListContainer from './DigDownList/DigDownListContainer'
-import SelectionPage from './SelectionPage/CodeSelectionPage'
+import Kode from './Kodetre/Kode'
 import Kart from './Kart/Kart'
 import './App.css'
 
@@ -24,7 +22,7 @@ class App extends Component {
                 render={() => <Kart latitude={63} longitude={10} zoom={4} />}
               />
               <Route path="/tree" exact component={FilterTreeContainer} />
-              <Route path="/select/:code" exact component={SelectionPage} />
+              <Route path="/kode/:kode" exact component={Kode} />
               <Route
                 path="/digdown/:id"
                 exact
@@ -39,17 +37,7 @@ class App extends Component {
                   />
                 )}
               />
-              <Route
-                path="/range"
-                exact
-                render={() => (
-                  <div>
-                    <StepSliderContainer />
-                    <RangeSliderContainer />
-                  </div>
-                )}
-              />
-              <Route component={RedirectToDefault} />
+              {false && <Route component={RedirectToDefault} />}{' '}
             </Switch>
           </BrowserRouter>
         </MuiThemeProvider>

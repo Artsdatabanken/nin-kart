@@ -1,22 +1,25 @@
 import React from 'react'
-import DigDownCodeListContainer from '../DigDownCodeList/DigDownCodeListContainer'
+import DigDownListContainer from '../DigDownList/DigDownListContainer'
 import backend from '../backend'
 
-class CodeSelectionPage extends React.Component {
+class SelectionPage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      // code: "Root",
+      // data-cache
+      redlistTheme: '',
 
       // filter:
-      filterCodes: [],
+      areaIds: [],
+      natureAreaIds: [],
+      redlistThemeIds: [],
+      redlistCategoryIds: [],
+      TaxonIds: [],
     }
 
     // this.handleDataFetch = this.taxonFetch.bind(this);
     this.handleCheckChange = this.handleCheckChange.bind(this)
     this.isSelected = this.isSelected.bind(this)
-    this.handleGoToCode = this.handleGoToCode.bind(this)
-    this.handleGoBack = this.handleGoBack.bind(this)
   }
 
   handleCheckChange = function(event) {
@@ -62,24 +65,25 @@ class CodeSelectionPage extends React.Component {
     }
   }
 
-  handleGoToCode(code) {
-    this.props.history.push(`/select/${code}`)
-  }
-  handleGoBack() {
-    this.props.history.goBack()
-  }
-  // componentWillReceiveProps(nextProps) {
-  //     this.setState({code: nextProps.match.params.code});
-  // }
-
-  codeCount = function(code) {
-    this.props.handleGoToCode(code)
-    backend.codeNameCount(code).then(data =>
+  taxonFetch = function(taxonId) {
+    backend.loadTaxonTree(taxonId).then(data =>
       this.setState({
-        obj: data,
-        children: data,
-        parentId: 'Root',
-        id: code,
+        obj: data.taxonTreeNodes[0],
+        children: data.taxonTreeNodes[0].children,
+        parentId: data.taxonTreeNodes[0].parentId,
+        id: taxonId,
+      })
+    )
+  }
+
+  redlistThemeFetch = function(filter) {
+    //if (!this.state.obj)
+    backend.countsByRedlistTheme(filter).then(data =>
+      this.setState({
+        obj: data[0],
+        children: data[0].children,
+        parentId: 0,
+        id: data[0].id,
       })
     )
   }
@@ -87,21 +91,27 @@ class CodeSelectionPage extends React.Component {
   render() {
     return (
       <div>
-        <DigDownCodeListContainer
-          name={'Tilgjengelige lag'}
-          filterCode={'filterCodes'}
-          id={this.props.match.params.code}
-          //id={this.state.code}
-          dataFetchFunction={this.codeCount}
-          handleGoToCode={this.handleGoToCode}
-          handleGoBack={this.handleGoBack}
+        <DigDownListContainer
+          name={'Taxons'}
+          filterCode={'TaxonIds'}
+          id={0}
+          dataFetchFunction={this.taxonFetch}
           handleCheckChange={this.handleCheckChange}
           isSelected={this.isSelected}
-          filter={this.state.filterCodes}
+          filter={this.state.TaxonIds}
+        />
+        <DigDownListContainer
+          name={'Rødlistetema'}
+          filterCode={'redlistThemeIds'}
+          id={0}
+          dataFetchFunction={this.redlistThemeFetch}
+          handleCheckChange={this.handleCheckChange}
+          isSelected={this.isSelected}
+          filter={this.state.redlistCategoryIds}
         />
       </div>
     )
   }
 }
 
-export default CodeSelectionPage
+export default SelectionPage
