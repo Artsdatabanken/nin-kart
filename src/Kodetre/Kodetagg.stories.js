@@ -15,16 +15,16 @@ const tagger = [
   {
     kode: 'NE',
     navn: 'Ikke evaluert',
-    color: '#fff',
-    backgroundColor: '#1F8C6D',
+    color: '#111',
+    backgroundColor: '#eee',
     forklaring:
       'Arten har av ukjente årsaker ikke blitt evaluert/vurdert. Det kan være flere årsaker til dette, for eksempel at arten er relativt nyoppdaget og derfor mangler anerkjennelse som egen art av IUCN eller den er utdødd for så lenge siden at den ikke er interessant å kategorisere.',
   },
   {
     kode: 'DD',
     navn: 'Mangelfullt datagrunnlag',
-    color: '#fff',
-    backgroundColor: '#1F8C6D',
+    color: '#111',
+    backgroundColor: '#eee',
     forklaring:
       'I denne kategorien havner arter som mangler nødvendig informasjon til å vurdere trusselbildet. Som oftest er dette arter som allikevel ville havnet på rødlista, dersom kunnskapen om dem var tilstrekkelig.',
   },
