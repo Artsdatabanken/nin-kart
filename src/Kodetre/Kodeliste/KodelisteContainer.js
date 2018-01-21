@@ -1,25 +1,28 @@
 import React from 'react'
 import Kodeliste from './Kodeliste'
 import TopBar from '../../TopBar/TopBar'
+import backend from '../../backend'
 
 class KodelisteContainer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      kode: props.kode,
       children: [],
+      meta: {},
     }
-    this.handleDataFetch = props.dataFetchFunction.bind(this)
   }
 
   componentDidMount() {
-    this.handleDataFetch(this.state.kode)
+    this.fetchData(this.props.kode)
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({
-      kode: nextProps.kode,
-    })
+    this.fetchData(nextProps.kode)
+  }
+
+  fetchData(kode) {
+    backend.hentKode(kode).then(data => this.setState({ children: data }))
+    backend.hentKodeMeta(kode).then(data => this.setState({ meta: data }))
   }
 
   render() {
@@ -33,10 +36,11 @@ class KodelisteContainer extends React.Component {
         />
         <Kodeliste
           items={this.state.children}
-          key={this.props.filterCode}
+          meta={this.state.meta}
+          xkey={this.props.filterCode}
           filterCode={this.props.filterCode}
           filter={this.props.filter}
-          onClick={kode => this.handleDataFetch(kode)}
+          onClick={this.props.onGoToCode}
           onCheck={this.props.onCheckChange}
           isSelected={this.props.isSelected}
         />

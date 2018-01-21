@@ -19,8 +19,13 @@ class Backend {
   static async getPromise(url) {
     return new Promise((resolve, reject) => {
       fetch(url)
-        .then(result => result.json())
+        .then(result => {
+          console.log(url)
+          console.log(result)
+          return result.json()
+        })
         .then(json => resolve(json))
+        .catch(err => console.error(url, err))
     })
   }
 
@@ -63,10 +68,14 @@ class Backend {
     })
   }
 
-  static async codeNameCount(code) {
+  static async hentKode(kode) {
     return this.getPromise(
-      `https://adb-nin-memapi.azurewebsites.net/v1/Kodetre?node=${code}`
+      `https://adb-nin-memapi.azurewebsites.net/v1/Kodetre?node=${kode}`
     )
+  }
+
+  static async hentKodeMeta(kode) {
+    return this.getPromise(`/kode/${kode}.json`)
   }
 
   static async getNatureAreaByLocalId(localId) {

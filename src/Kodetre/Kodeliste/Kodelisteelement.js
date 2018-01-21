@@ -1,5 +1,5 @@
 import React from 'react'
-import Avatar from 'material-ui/Avatar'
+import { SvgIcon, Avatar } from 'material-ui'
 import { ListItem } from 'material-ui/List'
 
 class Kodelisteelement extends React.Component {
@@ -9,7 +9,10 @@ class Kodelisteelement extends React.Component {
     return (
       <ListItem
         key={item.kode}
-        leftAvatar={meta && meta.image && <Avatar src={meta.image} />}
+        leftAvatar={
+          meta &&
+          meta.image && <Avatar backgroundColor="#00000000" src={meta.image} />
+        }
         rightAvatar=""
         primaryText={item.navn}
         secondaryText={item.kode}

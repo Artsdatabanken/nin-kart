@@ -1,7 +1,6 @@
 import React from 'react'
 import { List } from 'material-ui/List'
 import Kodelisteelement from './Kodelisteelement'
-import meta from '../../data/kode/NA.json'
 
 function Kodeliste(props) {
   return (
@@ -10,7 +9,7 @@ function Kodeliste(props) {
         <Kodelisteelement
           key={item.kode}
           {...item}
-          meta={meta[item.kode]}
+          meta={props.meta[item.kode]}
           checked={props.isSelected(props.filterCode, item.kode)}
           onClick={props.onClick}
         />
