@@ -20,8 +20,6 @@ class Backend {
     return new Promise((resolve, reject) => {
       fetch(url)
         .then(result => {
-          console.log(url)
-          console.log(result)
           return result.json()
         })
         .then(json => resolve(json))

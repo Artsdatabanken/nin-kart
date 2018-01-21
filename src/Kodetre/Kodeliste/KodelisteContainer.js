@@ -26,7 +26,6 @@ class KodelisteContainer extends React.Component {
   }
 
   render() {
-    console.log(this.props.kode)
     return (
       <div>
         <TopBar
