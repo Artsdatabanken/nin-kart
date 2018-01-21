@@ -1,5 +1,5 @@
 import React from 'react'
-import { SvgIcon, Avatar } from 'material-ui'
+import { Avatar } from 'material-ui'
 import { ListItem } from 'material-ui/List'
 
 class Kodelisteelement extends React.Component {
