@@ -7,7 +7,6 @@ class KodelisteContainer extends React.Component {
     super(props)
     this.state = {
       kode: props.kode,
-      obj: '',
       children: [],
     }
     this.handleDataFetch = props.dataFetchFunction.bind(this)
@@ -24,21 +23,21 @@ class KodelisteContainer extends React.Component {
   }
 
   render() {
+    console.log(this.props.kode)
     return (
       <div>
         <TopBar
-          onClick={this.props.handleGoBack}
-          name={this.props.name}
+          onGoBack={this.props.onGoBack}
+          title={this.props.kode}
           parentId={this.state.parentId}
         />
         <Kodeliste
-          name={this.props.name}
           items={this.state.children}
           key={this.props.filterCode}
           filterCode={this.props.filterCode}
           filter={this.props.filter}
           onClick={kode => this.handleDataFetch(kode)}
-          onCheck={this.props.handleCheckChange}
+          onCheck={this.props.onCheckChange}
           isSelected={this.props.isSelected}
         />
         {this.props.filter.map(item => <span key={item}>{item + ','}</span>)}
