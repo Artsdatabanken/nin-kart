@@ -1,5 +1,5 @@
 import React from 'react'
-import DigDownCodeListContainer from '../DigDownCodeList/DigDownCodeListContainer'
+import KodelisteContainer from './Kodeliste/KodelisteContainer'
 import backend from '../backend'
 
 class Kode extends React.Component {
@@ -73,13 +73,12 @@ class Kode extends React.Component {
   // }
 
   codeCount = function(kode) {
-    this.props.handleGoToCode(kode)
+    this.props.onGoToCode(kode)
     backend.codeNameCount(kode).then(data =>
       this.setState({
         obj: data,
         children: data,
         parentId: 'Root',
-        id: kode,
       })
     )
   }
@@ -87,14 +86,14 @@ class Kode extends React.Component {
   render() {
     return (
       <div>
-        <DigDownCodeListContainer
-          name={'Tilgjengelige lag'}
+        <KodelisteContainer
+          name={this.props.match.params.kode}
           filterCode={'filterCodes'}
           kode={this.props.match.params.kode}
           dataFetchFunction={this.codeCount}
-          handleGoToCode={this.handleGoToCode}
-          handleGoBack={this.handleGoBack}
-          handleCheckChange={this.handleCheckChange}
+          onGoToCode={this.handleGoToCode}
+          onGoBack={this.handleGoBack}
+          onCheckChange={this.handleCheckChange}
           isSelected={this.isSelected}
           filter={this.state.filterCodes}
         />

@@ -1,13 +1,12 @@
 import React from 'react'
-import DigDownList from './DigDownCodeList'
-import TopBar from '../TopBar/TopBar'
+import Kodeliste from './Kodeliste'
+import TopBar from '../../TopBar/TopBar'
 
-class DigDownCodeListContainer extends React.Component {
+class KodelisteContainer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       kode: props.kode,
-      obj: '',
       children: [],
     }
     this.handleDataFetch = props.dataFetchFunction.bind(this)
@@ -24,21 +23,21 @@ class DigDownCodeListContainer extends React.Component {
   }
 
   render() {
+    console.log(this.props.kode)
     return (
       <div>
         <TopBar
-          onClick={this.props.handleGoBack}
-          name={this.props.name}
+          onGoBack={this.props.onGoBack}
+          title={this.props.kode}
           parentId={this.state.parentId}
         />
-        <DigDownList
-          name={this.props.name}
+        <Kodeliste
           items={this.state.children}
           key={this.props.filterCode}
           filterCode={this.props.filterCode}
           filter={this.props.filter}
           onClick={kode => this.handleDataFetch(kode)}
-          onCheck={this.props.handleCheckChange}
+          onCheck={this.props.onCheckChange}
           isSelected={this.props.isSelected}
         />
         {this.props.filter.map(item => <span key={item}>{item + ','}</span>)}
@@ -47,4 +46,4 @@ class DigDownCodeListContainer extends React.Component {
   }
 }
 
-export default DigDownCodeListContainer
+export default KodelisteContainer
