@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { muiTheme } from 'storybook-addon-material-ui'
 import Kodetagg from './Kodetagg'
-import rødlistekoder from '../data/kode/rødliste'
+import rødlistekoder from '../../public/kode/rødliste'
 
 storiesOf('Kodetagg', module)
   .addDecorator(muiTheme())

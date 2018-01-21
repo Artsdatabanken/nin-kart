@@ -1,6 +1,5 @@
 import React from 'react'
 import KodelisteContainer from './Kodeliste/KodelisteContainer'
-import backend from '../backend'
 
 class Kode extends React.Component {
   constructor(props) {
@@ -68,36 +67,19 @@ class Kode extends React.Component {
     this.props.history.goBack()
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //     this.setState({code: nextProps.match.params.code});
-  // }
-
-  codeCount = function(kode) {
-    this.props.onGoToCode(kode)
-    backend.codeNameCount(kode).then(data =>
-      this.setState({
-        obj: data,
-        children: data,
-        parentId: 'Root',
-      })
-    )
-  }
-
   render() {
     return (
-      <div>
-        <KodelisteContainer
-          name={this.props.match.params.kode}
-          filterCode={'filterCodes'}
-          kode={this.props.match.params.kode}
-          dataFetchFunction={this.codeCount}
-          onGoToCode={this.handleGoToCode}
-          onGoBack={this.handleGoBack}
-          onCheckChange={this.handleCheckChange}
-          isSelected={this.isSelected}
-          filter={this.state.filterCodes}
-        />
-      </div>
+      <KodelisteContainer
+        name={this.props.match.params.kode}
+        filterCode={'filterCodes'}
+        kode={this.props.match.params.kode}
+        dataFetchFunction={this.codeCount}
+        onGoToCode={this.handleGoToCode}
+        onGoBack={this.handleGoBack}
+        onCheckChange={this.handleCheckChange}
+        isSelected={this.isSelected}
+        filter={this.state.filterCodes}
+      />
     )
   }
 }
