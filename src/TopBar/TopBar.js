@@ -4,7 +4,6 @@ import IconButton from 'material-ui/IconButton'
 import Search from 'material-ui/svg-icons/action/search'
 import NavigationBack from 'material-ui/svg-icons/navigation/arrow-back'
 import MoreVert from 'material-ui/svg-icons/navigation/more-vert'
-import FlatButton from 'material-ui/FlatButton'
 
 class TopBar extends Component {
   constructor(props) {

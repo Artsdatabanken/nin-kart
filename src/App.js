@@ -5,9 +5,6 @@ import { getMuiTheme, MuiThemeProvider } from 'material-ui/styles'
 import Kode from './Kodetre/Kode'
 import Kart from './Kart/Kart'
 
-const cyan700 = '#0070ff'
-const grey400 = '#404040'
-
 const muiTheme = getMuiTheme({
   palette: {
     primary1Color: '#63AD82',
