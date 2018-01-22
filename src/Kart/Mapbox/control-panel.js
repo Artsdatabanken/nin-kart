@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { fromJS } from 'immutable'
 import MAP_STYLE from '../naturtypekart_style.json'
+import Paper from 'material-ui/Paper'
 
 const defaultMapStyle = fromJS(MAP_STYLE)
 
@@ -17,7 +18,9 @@ const colorClass = {
 }
 
 const defaultContainer = ({ children }) => (
-  <div className="control-panel">{children}</div>
+  <Paper zDepth={3} rounded={true} className="control-panel">
+    {children}
+  </Paper>
 )
 
 export default class StyleControls extends PureComponent {

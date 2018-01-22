@@ -69,6 +69,16 @@ class Backend {
     })
   }
 
+  static async searchTaxons(searchStr) {
+    return new Promise((resolve, reject) => {
+      fetch(
+        `https://artskart.artsdatabanken.no/appapi/api/data/SearchTaxons?maxCount=15&name=${searchStr}`
+      )
+        .then(result => result.json())
+        .then(json => resolve(json))
+    })
+  }
+
   static async hentKode(kode) {
     return this.getPromise(
       `https://adb-nin-memapi.azurewebsites.net/v1/Kodetre?node=${kode}`
