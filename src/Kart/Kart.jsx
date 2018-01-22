@@ -126,7 +126,7 @@ class Kart extends Component {
             onClick={this.onClick}
             handleToggle={this.handleToggle}
           />
-          <Drawer open={this.state.open}>
+          <Drawer openSecondary={true} open={this.state.open}>
             <MenuItem onClick={this.handleToggle}>Lukk</MenuItem>
             <NatureAreaDetails
               natureArea={this.state.natureArea}

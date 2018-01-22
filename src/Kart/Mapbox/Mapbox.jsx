@@ -86,6 +86,13 @@ class Mapbox extends Component {
 
   render() {
     const { viewport, mapStyle } = this.state
+    const styles = {
+      hamburger: {
+        float: 'right',
+        right: 10,
+        top: 10,
+      },
+    }
 
     return (
       <ReactMapGL
@@ -114,7 +121,7 @@ class Mapbox extends Component {
           <div />
         </Marker>
 
-        <IconButton onClick={this.props.handleToggle}>
+        <IconButton style={styles.hamburger} onClick={this.props.handleToggle}>
           <NavigationMenu />
         </IconButton>
       </ReactMapGL>

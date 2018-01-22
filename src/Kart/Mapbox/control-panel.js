@@ -185,12 +185,12 @@ export default class StyleControls extends PureComponent {
 
     return (
       <div key={name} className="input">
-        <label>{name}</label>
         <input
           type="checkbox"
           checked={visibility[name]}
           onChange={this._onVisibilityChange.bind(this, name)}
         />
+        <label>{name}</label>
         <input
           type="color"
           value={color[name]}
@@ -206,19 +206,21 @@ export default class StyleControls extends PureComponent {
 
     return (
       <Container>
-        <h3>Kartlag</h3>
-        <p>Her kan du slå av/på lag og endre farger</p>
-        <input
-          value={this.state.newLayer}
-          onChange={evt => this.prepareNewLayer(evt)}
-        />
-        <input
-          type="button"
-          onClick={this._onClickAddLayer.bind(this)}
-          value="+"
-        />
-        <hr />
-        {this.state.categories.map(name => this._renderLayerControl(name))}
+        <div>
+          <h3>Kartlag</h3>
+          <p>Her kan du slå av/på lag og endre farger</p>
+          <input
+            value={this.state.newLayer}
+            onChange={evt => this.prepareNewLayer(evt)}
+          />
+          <input
+            type="button"
+            onClick={this._onClickAddLayer.bind(this)}
+            value="+"
+          />
+          <hr />
+          {this.state.categories.map(name => this._renderLayerControl(name))}
+        </div>
       </Container>
     )
   }
