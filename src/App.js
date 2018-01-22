@@ -7,10 +7,17 @@ import Kart from './Kart/Kart'
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: '#63AD82',
-    accent1Color: '#D43C00',
+    primary1Color: '#795548',
+    primary2Color: '#D7CCC8',
+    primary3Color: '#5D4037',
+    accent1Color: '#FF9800',
+    textColor: '#212121',
+    secondaryTextColor: '#757575',
+    borderColor: '#BDBDBD',
   },
 })
+
+console.log(JSON.stringify(muiTheme.palette))
 
 class App extends Component {
   render() {
