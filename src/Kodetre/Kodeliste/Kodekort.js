@@ -9,7 +9,7 @@ import {
 } from 'material-ui/Card'
 import { IconButton, FlatButton } from 'material-ui'
 import InfoOutline from 'material-ui/svg-icons/action/info-outline'
-import Star from 'material-ui/svg-icons/toggle/star'
+//import Star from 'material-ui/svg-icons/toggle/star'
 import StarBorder from 'material-ui/svg-icons/toggle/star-border'
 import Share from 'material-ui/svg-icons/social/share'
 
