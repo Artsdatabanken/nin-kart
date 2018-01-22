@@ -1,0 +1,25 @@
+{
+  "forelder": {
+    "kode": "NA",
+    "tittel": "Natursystem",
+    "avatar": "https://artsdatabanken.no/Media/F21489?mode=540x540"
+  },
+  "selv": {
+    "kode": "NA_F",
+    "tittel": "Limniske vannmasser",
+    "avatar": "https://www.artsdatabanken.no/Media/F21300?mode=320x320",
+    "infoUrl": "https://www.artsdatabanken.no/Pages/172053",
+    "media": "https://www.artsdatabanken.no/Media/F8102?mode=480x480",
+    "beskrivelse": "Limniske vannmasser (vannmassesystemer i ferskvann) omfatter økosystemer av flytende, svevende og svømmende organismer i de frie vannmassene i elver og innsjøer"
+  },
+  "barn": {
+    "NA_F1": {
+      "image": "https://www.artsdatabanken.no/Media/F1182?mode=1920x1920"
+    },
+    "NA_F2": {
+      "image": "https://www.artsdatabanken.no/Media/F8102?mode=1920x1920"
+    }
+  },
+  "relasjon": [
+  ]
+}
