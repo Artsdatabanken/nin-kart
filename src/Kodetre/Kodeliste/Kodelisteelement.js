@@ -2,22 +2,36 @@ import React from 'react'
 import { Avatar } from 'material-ui'
 import { ListItem } from 'material-ui/List'
 
-const metaDefault = {}
-
 class Kodelisteelement extends React.Component {
   render() {
     const item = this.props
-    const meta = this.props.meta || metaDefault
+    const meta = this.props.meta
+    const avatarStyle = this.props.hideCircle ? { borderRadius: 0 } : {}
     return (
       <ListItem
         key={item.kode}
         leftAvatar={
-          meta.image && <Avatar backgroundColor="#00000000" src={meta.image} />
+          this.props.ikon === 'text' ? (
+            <Avatar
+              color={meta.color}
+              backgroundColor={meta.backgroundColor}
+              size={30}
+            >
+              {meta.kode}
+            </Avatar>
+          ) : (
+            meta.image && (
+              <Avatar
+                style={avatarStyle}
+                backgroundColor="#00000000"
+                src={meta.image}
+              />
+            )
+          )
         }
-        rightAvatar=""
         primaryText={item.navn}
         secondaryText={item.kode}
-        onClick={() => item.onClick(item.kode)}
+        onClick={() => item.onGoToCode(item.kode)}
       />
     )
   }

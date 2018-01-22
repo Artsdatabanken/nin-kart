@@ -23,7 +23,10 @@ class Backend {
           return result.json()
         })
         .then(json => resolve(json))
-        .catch(err => console.error(url, err))
+        .catch(err => {
+          console.error(url, err)
+          return {}
+        })
     })
   }
 
