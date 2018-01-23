@@ -68,12 +68,18 @@ class Mapbox extends Component {
   _onViewportChange = viewport => this.setState({ viewport })
 
   onHover = e => {
-    // const pos = e.center;
-    // const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y]);
-    //  //console.log(point.lngLat)
-    // if (r[0]) {
-    //     this.map.getMap().setFilter("naturomrader5_hover", ["==", "name", r[0].name]);
-    // }
+    const pos = e.center
+    const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y])
+    if (r[0]) {
+      //console.log(r[0].properties.localId);
+      this.map
+        .getMap()
+        .setFilter('naturomrader6-hover', [
+          '==',
+          'localId',
+          r[0].properties.localId,
+        ])
+    }
   }
 
   // onClick = e => {
