@@ -43,11 +43,14 @@ var dummyItems = [
   },
 ]
 
-storiesOf('DigDownCodeList', module)
+const meta = { barn: [], selv: {}, forelder: {}, relasjon: [] }
+
+storiesOf('Kodeliste', module)
   .addDecorator(muiTheme())
   .add('default', () => (
     <Kodeliste
       items={dummyItems}
+      meta={meta}
       isSelected={action('selection')}
       onClick={action('click')}
       onCheck={action('check')}
