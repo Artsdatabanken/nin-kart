@@ -20,9 +20,7 @@ const dummyMeta = {
 class KodelisteContainer extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      children: [],
-    }
+    this.state = {}
   }
 
   componentDidMount() {
@@ -35,22 +33,25 @@ class KodelisteContainer extends React.Component {
 
   fetchData(kode) {
     this.setState({ meta: dummyMeta, children: [] })
-    backend.hentKode(kode).then(data => this.setState({ children: data }))
+    backend.hentKode(kode).then(data => this.setState({ data: data }))
     backend.hentKodeMeta(kode).then(data => this.setState({ meta: data }))
   }
 
   render() {
+    console.log(this.state.data)
+    const data = this.state.data
+    if (!data) return null
     return (
       <div>
         <TopBar
           onGoBack={this.props.onGoBack}
-          title={this.props.kode}
+          title={data.kode}
           parentId={this.state.parentId}
         />
         {this.state.meta && (
           <Kodeliste
-            kode={this.props.kode}
-            items={this.state.children}
+            kode={data.kode}
+            items={data.barn}
             meta={this.state.meta}
             filterCode={this.props.filterCode}
             filter={this.props.filter}
