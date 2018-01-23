@@ -68,7 +68,6 @@ class Kode extends React.Component {
   }
 
   render() {
-    console.log('render')
     return (
       <KodelisteContainer
         name={this.props.match.params.kode}

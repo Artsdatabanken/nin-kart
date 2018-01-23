@@ -31,7 +31,7 @@ class App extends Component {
                 exact
                 render={() => <Kart latitude={63} longitude={10} zoom={4} />}
               />
-              <Route path="/kode/:kode" exact component={Kode} />
+              <Route path="/kode/:kode?" exact component={Kode} />
               {false && <Route component={RedirectToDefault} />}{' '}
             </Switch>
           </BrowserRouter>
