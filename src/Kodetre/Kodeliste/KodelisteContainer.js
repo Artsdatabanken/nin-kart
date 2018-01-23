@@ -32,13 +32,12 @@ class KodelisteContainer extends React.Component {
   }
 
   fetchData(kode) {
-    this.setState({ meta: dummyMeta, children: [] })
-    backend.hentKode(kode).then(data => this.setState({ data: data }))
+    this.setState({ meta: dummyMeta, data: null })
+    backend.hentKode(kode || '').then(data => this.setState({ data: data }))
     backend.hentKodeMeta(kode).then(data => this.setState({ meta: data }))
   }
 
   render() {
-    console.log(this.state.data)
     const data = this.state.data
     if (!data) return null
     return (
