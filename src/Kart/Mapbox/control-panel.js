@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react'
 import { fromJS } from 'immutable'
 import MAP_STYLE from '../naturtypekart_style.json'
-import Paper from 'material-ui/Paper'
+import Popover from 'material-ui/Popover'
+import IconButton from 'material-ui/IconButton'
+import LayerIcon from 'material-ui/svg-icons/action/reorder'
 
 const defaultMapStyle = fromJS(MAP_STYLE)
 
@@ -17,17 +19,18 @@ const colorClass = {
   //composite: 'fill-color',
 }
 
-const defaultContainer = ({ children }) => (
-  <Paper zDepth={3} rounded={true} className="control-panel">
-    {children}
-  </Paper>
-)
+// const defaultContainer = ({ children }) => (
+//   <Paper zDepth={3} rounded={true} className="control-panel">
+//     {children}
+//   </Paper>
+// )
 
 export default class StyleControls extends PureComponent {
   constructor(props) {
     super(props)
 
     this.state = {
+      open: false,
       newLayer: '',
       categories: [
         'Kalk',
@@ -203,28 +206,56 @@ export default class StyleControls extends PureComponent {
       </div>
     )
   }
+  handleClick = event => {
+    // This prevents ghost click.
+    event.preventDefault()
+
+    this.setState({
+      open: true,
+      anchorEl: event.currentTarget,
+    })
+  }
+
+  handleRequestClose = () => {
+    this.setState({
+      open: false,
+    })
+  }
 
   render() {
-    const Container = this.props.containerComponent || defaultContainer
+    //const Container = this.props.containerComponent || defaultContainer
 
     return (
-      <Container>
-        <div>
-          <h3>Kartlag</h3>
-          <p>Her kan du slå av/på lag og endre farger</p>
-          <input
-            value={this.state.newLayer}
-            onChange={evt => this.prepareNewLayer(evt)}
-          />
-          <input
-            type="button"
-            onClick={this._onClickAddLayer.bind(this)}
-            value="+"
-          />
-          <hr />
-          {this.state.categories.map(name => this._renderLayerControl(name))}
-        </div>
-      </Container>
+      <div>
+        <IconButton tooltip="Kartlag" onClick={this.handleClick}>
+          <LayerIcon />
+        </IconButton>
+
+        <Popover
+          className="control-panel"
+          open={this.state.open}
+          anchorEl={this.state.anchorEl}
+          anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
+          targetOrigin={{ horizontal: 'left', vertical: 'top' }}
+          onRequestClose={this.handleRequestClose}
+        >
+          <div>
+            <h3>Kartlag</h3>
+            <p>Her kan du slå av/på lag og endre farger</p>
+            <input
+              value={this.state.newLayer}
+              onChange={evt => this.prepareNewLayer(evt)}
+            />
+            <input
+              type="button"
+              onClick={this._onClickAddLayer.bind(this)}
+              value="+"
+            />
+            <hr />
+            {this.state.categories.map(name => this._renderLayerControl(name))}
+          </div>
+        </Popover>
+      </div>
     )
   }
 }

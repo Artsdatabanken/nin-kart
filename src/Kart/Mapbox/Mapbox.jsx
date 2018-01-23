@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ReactMapGL, { Marker } from 'react-map-gl'
 import ControlPanel from './control-panel'
 import IconButton from 'material-ui/IconButton'
-import NavigationMenu from 'material-ui/svg-icons/navigation/menu'
+import InfoIcon from 'material-ui/svg-icons/action/info-outline'
 import './Mapbox.css'
 
 class Mapbox extends Component {
@@ -95,8 +95,9 @@ class Mapbox extends Component {
     const styles = {
       hamburger: {
         float: 'right',
-        right: 10,
-        top: 10,
+        position: 'absolute',
+        right: 0,
+        top: 0,
       },
     }
 
@@ -127,8 +128,12 @@ class Mapbox extends Component {
           <div />
         </Marker>
 
-        <IconButton style={styles.hamburger} onClick={this.props.handleToggle}>
-          <NavigationMenu />
+        <IconButton
+          style={styles.hamburger}
+          onClick={this.props.handleToggle}
+          tooltip="Info"
+        >
+          <InfoIcon />
         </IconButton>
       </ReactMapGL>
     )
