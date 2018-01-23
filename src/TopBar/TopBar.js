@@ -4,7 +4,7 @@ import IconButton from 'material-ui/IconButton'
 import Search from 'material-ui/svg-icons/action/search'
 import NavigationBack from 'material-ui/svg-icons/navigation/arrow-back'
 import MoreVert from 'material-ui/svg-icons/navigation/more-vert'
-import KodeSøk from '../KodeSøk/KodeSøk'
+import FinnKode from '../FinnKode/FinnKode'
 
 class TopBar extends Component {
   constructor(props) {
@@ -36,7 +36,7 @@ class TopBar extends Component {
         <AppBar
           title={
             this.state.showSearch ? (
-              <KodeSøk
+              <FinnKode
                 onClick={this.handleSearchClick}
                 onAbort={this.handleSearchButtonClick}
                 onKeyDown={this.handleKeyDown}

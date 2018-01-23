@@ -8,7 +8,7 @@ const dataSourceConfig = {
   value: 'Id',
 }
 
-export default class KodeSøk extends Component {
+export default class FinnKode extends Component {
   constructor(props) {
     super(props)
     this.state = {
