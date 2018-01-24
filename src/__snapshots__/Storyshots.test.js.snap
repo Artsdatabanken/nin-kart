@@ -1601,6 +1601,243 @@ exports[`Storyshots FactList default 1`] = `
 </div>
 `;
 
+exports[`Storyshots FinnKode default 1`] = `
+<div
+  style={
+    Object {
+      "background": "#ffffff",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    className="SplitPane  vertical "
+    style={
+      Object {
+        "MozUserSelect": "text",
+        "WebkitUserSelect": "text",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "row",
+        "height": "100%",
+        "left": 0,
+        "msUserSelect": "text",
+        "outline": "none",
+        "overflow": "hidden",
+        "position": "absolute",
+        "right": 0,
+        "userSelect": "text",
+      }
+    }
+  >
+    <div
+      className="Pane vertical Pane1  "
+      style={
+        Object {
+          "flex": 1,
+          "outline": "none",
+          "overflowX": "auto",
+          "overflowY": "auto",
+          "position": "relative",
+        }
+      }
+    >
+      <div>
+        <div
+          style={
+            Object {
+              "display": "inline-block",
+              "muiPrepared": true,
+              "position": "relative",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            className={undefined}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "cursor": "auto",
+                "display": "inline-block",
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": 16,
+                "height": 72,
+                "lineHeight": "24px",
+                "muiPrepared": true,
+                "position": "relative",
+                "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "width": "100%",
+              }
+            }
+          >
+            <label
+              className={undefined}
+              htmlFor="1"
+              onClick={undefined}
+              style={
+                Object {
+                  "color": "white",
+                  "lineHeight": "22px",
+                  "muiPrepared": true,
+                  "pointerEvents": "none",
+                  "position": "absolute",
+                  "top": 38,
+                  "transform": "scale(1) translate(0, 0)",
+                  "transformOrigin": "left top",
+                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                  "userSelect": "none",
+                  "zIndex": 1,
+                }
+              }
+            >
+              Fritekstsøk
+            </label>
+            <div
+              style={
+                Object {
+                  "bottom": 12,
+                  "color": "white",
+                  "muiPrepared": true,
+                  "opacity": 0,
+                  "position": "absolute",
+                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                }
+              }
+            >
+              Søk på alt mulig
+            </div>
+            <input
+              autoComplete="off"
+              autoFocus={true}
+              disabled={false}
+              id="1"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              open={false}
+              style={
+                Object {
+                  "WebkitOpacity": 1,
+                  "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+                  "appearance": "textfield",
+                  "backgroundColor": "rgba(0,0,0,0)",
+                  "border": "none",
+                  "boxSizing": "border-box",
+                  "color": "white",
+                  "cursor": "inherit",
+                  "font": "inherit",
+                  "height": "100%",
+                  "marginTop": 14,
+                  "muiPrepared": true,
+                  "outline": "none",
+                  "padding": 0,
+                  "position": "relative",
+                  "width": "100%",
+                }
+              }
+              type="text"
+              value=""
+            />
+            <div>
+              <hr
+                aria-hidden="true"
+                style={
+                  Object {
+                    "borderBottomStyle": "solid",
+                    "borderBottomWidth": 1,
+                    "borderColor": "#e0e0e0",
+                    "borderLeft": "none",
+                    "borderRight": "none",
+                    "borderTop": "none",
+                    "bottom": 8,
+                    "boxSizing": "content-box",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "position": "absolute",
+                    "width": "100%",
+                  }
+                }
+              />
+              <hr
+                aria-hidden="true"
+                style={
+                  Object {
+                    "borderBottomStyle": "solid",
+                    "borderBottomWidth": 2,
+                    "borderColor": "#00bcd4",
+                    "borderLeft": "none",
+                    "borderRight": "none",
+                    "borderTop": "none",
+                    "bottom": 8,
+                    "boxSizing": "content-box",
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "position": "absolute",
+                    "transform": "scaleX(0)",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "width": "100%",
+                  }
+                }
+              />
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+    <span
+      className="Resizer vertical "
+      onClick={[Function]}
+      onDoubleClick={[Function]}
+      onMouseDown={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "cursor": "col-resize",
+          "marginRight": -6,
+          "width": 10,
+          "zIndex": 1,
+        }
+      }
+    />
+    <div
+      className="Pane vertical Pane2  "
+      style={
+        Object {
+          "flex": "none",
+          "outline": "none",
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        className="sb-addon-material-ui-theme_sidebar"
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Kart Mapbox default 1`] = `
 <div>
   <div
