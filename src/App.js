@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { getMuiTheme, MuiThemeProvider } from 'material-ui/styles'
 import Kode from './Kodetre/Kode'
 import Kart from './Kart/Kart'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 const muiTheme = getMuiTheme({
   palette: {

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ReactMapGL, { Marker } from 'react-map-gl'
 import ControlPanel from './control-panel'
 import IconButton from 'material-ui/IconButton'
-import NavigationMenu from 'material-ui/svg-icons/navigation/menu'
+import InfoIcon from 'material-ui/svg-icons/action/info-outline'
 import './Mapbox.css'
 
 class Mapbox extends Component {
@@ -68,12 +68,18 @@ class Mapbox extends Component {
   _onViewportChange = viewport => this.setState({ viewport })
 
   onHover = e => {
-    // const pos = e.center;
-    // const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y]);
-    //  //console.log(point.lngLat)
-    // if (r[0]) {
-    //     this.map.getMap().setFilter("naturomrader5_hover", ["==", "name", r[0].name]);
-    // }
+    const pos = e.center
+    const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y])
+    if (r[0]) {
+      //console.log(r[0].properties.localId);
+      this.map
+        .getMap()
+        .setFilter('naturomrader6-hover', [
+          '==',
+          'localId',
+          r[0].properties.localId,
+        ])
+    }
   }
 
   // onClick = e => {
@@ -86,6 +92,14 @@ class Mapbox extends Component {
 
   render() {
     const { viewport, mapStyle } = this.state
+    const styles = {
+      hamburger: {
+        float: 'right',
+        position: 'absolute',
+        right: 0,
+        top: 0,
+      },
+    }
 
     return (
       <ReactMapGL
@@ -114,8 +128,12 @@ class Mapbox extends Component {
           <div />
         </Marker>
 
-        <IconButton onClick={this.props.handleToggle}>
-          <NavigationMenu />
+        <IconButton
+          style={styles.hamburger}
+          onClick={this.props.handleToggle}
+          tooltip="Info"
+        >
+          <InfoIcon />
         </IconButton>
       </ReactMapGL>
     )

@@ -1,20 +1,19 @@
-
 .control-panel {
-    position: absolute;
-    top: 0;
-    right: 0;
-    max-width: 320px;
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    padding: 12px 24px;
-    margin: 20px;
-    font-size: 13px;
-    line-height: 2;
-    color: #6b6b76;
-    outline: none;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  max-width: 320px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  padding: 12px 24px;
+  margin: 20px;
+  font-size: 13px;
+  line-height: 2;
+  color: #6b6b76;
+  outline: none;
 }
 
-input[type="color" i] {
-    position: absolute;
-    right: 10px;
+input[type='color' i] {
+  position: absolute;
+  right: 10px;
 }

@@ -6,6 +6,7 @@ import MenuItem from 'material-ui/MenuItem'
 import React, { Component } from 'react'
 import backend from '../backend'
 import FilterTree from '../FilterTree/FilterTree'
+import CloseIcon from 'material-ui/svg-icons/content/clear'
 
 class Kart extends Component {
   constructor(props) {
@@ -126,8 +127,10 @@ class Kart extends Component {
             onClick={this.onClick}
             handleToggle={this.handleToggle}
           />
-          <Drawer open={this.state.open}>
-            <MenuItem onClick={this.handleToggle}>Lukk</MenuItem>
+          <Drawer openSecondary={true} open={this.state.open}>
+            <MenuItem onClick={this.handleToggle}>
+              <CloseIcon />
+            </MenuItem>
             <NatureAreaDetails
               natureArea={this.state.natureArea}
               metadata={this.state.metadata}
