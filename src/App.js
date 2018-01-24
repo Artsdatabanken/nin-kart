@@ -9,17 +9,10 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: '#795548',
-    primary2Color: '#D7CCC8',
-    primary3Color: '#5D4037',
-    accent1Color: '#FF9800',
-    textColor: '#212121',
-    secondaryTextColor: '#757575',
-    borderColor: '#BDBDBD',
+    primary1Color: '#c9862a',
+    accent1Color: '#4d4b4a',
   },
 })
-
-//console.log(JSON.stringify(muiTheme.palette))
 
 class App extends Component {
   render() {
