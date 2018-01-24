@@ -128,11 +128,7 @@ class Mapbox extends Component {
           <div />
         </Marker>
 
-        <IconButton
-          style={styles.hamburger}
-          onClick={this.props.handleToggle}
-          tooltip="Info"
-        >
+        <IconButton style={styles.hamburger} onClick={this.props.handleToggle}>
           <InfoIcon />
         </IconButton>
       </ReactMapGL>

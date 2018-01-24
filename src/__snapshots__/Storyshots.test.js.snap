@@ -1882,133 +1882,82 @@ exports[`Storyshots Kart Mapbox default 1`] = `
           }
         }
       >
-        <div
-          className="control-panel"
-        >
-          <h3>
-            Kartlag
-          </h3>
-          <p>
-            Her kan du slå av/på lag og endre farger
-          </p>
-          <input
-            onChange={[Function]}
-            value=""
-          />
-          <input
+        <div>
+          <button
+            disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOut={[Function]}
+            onTouchStart={[Function]}
+            style={
+              Object {
+                "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                "background": "none",
+                "border": 10,
+                "boxSizing": "border-box",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": 0,
+                "fontWeight": "inherit",
+                "height": 48,
+                "margin": 0,
+                "muiPrepared": true,
+                "outline": "none",
+                "overflow": "visible",
+                "padding": 12,
+                "position": "relative",
+                "textDecoration": "none",
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "verticalAlign": null,
+                "width": 48,
+              }
+            }
+            tabIndex={0}
             type="button"
-            value="+"
+          >
+            <div
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+            >
+              <svg
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                style={
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "display": "inline-block",
+                    "fill": "currentColor",
+                    "height": 24,
+                    "muiPrepared": true,
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "userSelect": "none",
+                    "width": 24,
+                  }
+                }
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
+                />
+              </svg>
+            </div>
+          </button>
+          <div
+            style={
+              Object {
+                "display": "none",
+              }
+            }
           />
-          <hr />
-          <div
-            className="input"
-          >
-            <label>
-              Kalk
-            </label>
-            <input
-              checked={false}
-              onChange={[Function]}
-              type="checkbox"
-            />
-            <input
-              disabled={true}
-              onChange={[Function]}
-              type="color"
-              value={undefined}
-            />
-          </div>
-          <div
-            className="input"
-          >
-            <label>
-              Alle naturområder
-            </label>
-            <input
-              checked={false}
-              onChange={[Function]}
-              type="checkbox"
-            />
-            <input
-              disabled={true}
-              onChange={[Function]}
-              type="color"
-              value={undefined}
-            />
-          </div>
-          <div
-            className="input"
-          >
-            <label>
-              Rødlistede
-            </label>
-            <input
-              checked={false}
-              onChange={[Function]}
-              type="checkbox"
-            />
-            <input
-              disabled={true}
-              onChange={[Function]}
-              type="color"
-              value={undefined}
-            />
-          </div>
-          <div
-            className="input"
-          >
-            <label>
-              Bioklimatiske soner
-            </label>
-            <input
-              checked={false}
-              onChange={[Function]}
-              type="checkbox"
-            />
-            <input
-              disabled={true}
-              onChange={[Function]}
-              type="color"
-              value={undefined}
-            />
-          </div>
-          <div
-            className="input"
-          >
-            <label>
-              Seksjoner
-            </label>
-            <input
-              checked={false}
-              onChange={[Function]}
-              type="checkbox"
-            />
-            <input
-              disabled={true}
-              onChange={[Function]}
-              type="color"
-              value={undefined}
-            />
-          </div>
-          <div
-            className="input"
-          >
-            <label>
-              Ultramafisk
-            </label>
-            <input
-              checked={false}
-              onChange={[Function]}
-              type="checkbox"
-            />
-            <input
-              disabled={true}
-              onChange={[Function]}
-              type="color"
-              value={undefined}
-            />
-          </div>
         </div>
         <div
           className="mapboxgl-marker "
@@ -2041,6 +1990,7 @@ exports[`Storyshots Kart Mapbox default 1`] = `
               "boxSizing": "border-box",
               "cursor": "pointer",
               "display": "inline-block",
+              "float": "right",
               "fontFamily": "Roboto, sans-serif",
               "fontSize": 0,
               "fontWeight": "inherit",
@@ -2050,8 +2000,10 @@ exports[`Storyshots Kart Mapbox default 1`] = `
               "outline": "none",
               "overflow": "visible",
               "padding": 12,
-              "position": "relative",
+              "position": "absolute",
+              "right": 0,
               "textDecoration": "none",
+              "top": 0,
               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
               "verticalAlign": null,
               "width": 48,
@@ -2085,7 +2037,7 @@ exports[`Storyshots Kart Mapbox default 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
               />
             </svg>
           </div>
