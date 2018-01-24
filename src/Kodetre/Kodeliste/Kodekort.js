@@ -58,7 +58,10 @@ class Kodekort extends React.Component {
           <IconButton style={{ float: 'right' }}>
             <StarBorder />
           </IconButton>
-          <FlatButton label="Vis i kart" />
+          <FlatButton
+            label="Vis i kart"
+            onClick={() => this.props.onAddLayer(this.props.kode)}
+          />
         </CardActions>
       </Card>
     )

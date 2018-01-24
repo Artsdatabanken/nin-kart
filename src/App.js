@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 
 import { getMuiTheme, MuiThemeProvider } from 'material-ui/styles'
-import Kode from './Kodetre/Kode'
-import Kart from './Kart/Kart'
+//import Kode from './Kodetre/Kode'
+//import Kart from './Kart/Kart'
+import Grunnkart from './Grunnkart/Grunnkart'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 const muiTheme = getMuiTheme({
@@ -18,7 +19,7 @@ const muiTheme = getMuiTheme({
   },
 })
 
-console.log(JSON.stringify(muiTheme.palette))
+//console.log(JSON.stringify(muiTheme.palette))
 
 class App extends Component {
   render() {
@@ -27,13 +28,8 @@ class App extends Component {
         <MuiThemeProvider muiTheme={muiTheme}>
           <BrowserRouter>
             <Switch>
-              <Route
-                path="/"
-                exact
-                render={() => <Kart latitude={63} longitude={10} zoom={4} />}
-              />
-              <Route path="/kode/:kode?" exact component={Kode} />
-              {false && <Route component={RedirectToDefault} />}{' '}
+              <Route path="/:kode?" exact component={Grunnkart} />
+              <Route component={RedirectToDefault} />}
             </Switch>
           </BrowserRouter>
         </MuiThemeProvider>
@@ -42,6 +38,6 @@ class App extends Component {
   }
 }
 
-const RedirectToDefault = () => <Redirect from="/" to="/map" />
+const RedirectToDefault = () => <Redirect from="/" to="/ROT" />
 
 export default App
