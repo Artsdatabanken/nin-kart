@@ -60,7 +60,7 @@ class Kode extends React.Component {
   }
 
   handleGoToCode(kode) {
-    this.props.history.push(`/kode/${kode}`)
+    this.props.history.push(`/${kode}`)
   }
 
   handleGoBack() {
@@ -70,11 +70,12 @@ class Kode extends React.Component {
   render() {
     return (
       <KodelisteContainer
-        name={this.props.match.params.kode}
+        name={this.props.kode}
         filterCode={'filterCodes'}
-        kode={this.props.match.params.kode}
+        kode={this.props.kode}
         dataFetchFunction={this.codeCount}
         onGoToCode={this.handleGoToCode}
+        onAddLayer={this.props.onAddLayer}
         onGoBack={this.handleGoBack}
         onCheckChange={this.handleCheckChange}
         isSelected={this.isSelected}

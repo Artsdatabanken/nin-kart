@@ -8,9 +8,14 @@ import Relasjon from './Relasjon'
 function Kodeliste(props) {
   return (
     <div style={{ maxWidth: '500px' }}>
-      <Kodekort {...props.meta} onGoToCode={props.onGoToCode} />
+      <Kodekort
+        {...props.meta}
+        onGoToCode={props.onGoToCode}
+        onAddLayer={props.onAddLayer}
+        kode={props.kode}
+      />
       <Tabs>
-        <Tab label="Underkoder">
+        <Tab label="Innhold">
           <List>
             {props.items.map(item => (
               <Kodelisteelement

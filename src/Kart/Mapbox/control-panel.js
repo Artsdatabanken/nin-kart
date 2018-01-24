@@ -251,8 +251,15 @@ export default class StyleControls extends PureComponent {
               onClick={this._onClickAddLayer.bind(this)}
               value="+"
             />
+
             <hr />
             {this.state.categories.map(name => this._renderLayerControl(name))}
+
+            <input
+              type="button"
+              onClick={this.props.handleShowKodetre}
+              value="Legg til lag"
+            />
           </div>
         </Popover>
       </div>

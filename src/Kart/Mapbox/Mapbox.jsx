@@ -118,6 +118,7 @@ class Mapbox extends Component {
         <ControlPanel
           containerComponent={this.props.containerComponent}
           onChange={this._onStyleChange}
+          handleShowKodetre={this.props.handleShowKodetre}
         />
         <Marker
           latitude={63.4139}

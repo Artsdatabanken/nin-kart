@@ -16,7 +16,7 @@ class FilterTreeTopic extends React.Component {
     if (nodes) {
       return nodes.map(node => (
         <ListItem
-          key={node.id}
+          key={node.code}
           //data-parent={parentId}
           primaryText={node.name}
           secondaryText={node.count}
@@ -24,7 +24,7 @@ class FilterTreeTopic extends React.Component {
             <Checkbox
               name={'' + node.code}
               alt={this.props.filterCode}
-              checked={this.isSelected(this.props.filterCode, node.id)}
+              checked={this.isSelected(this.props.filterCode, node.code)}
               onCheck={this.handleCheckChange}
             />
           }
