@@ -227,7 +227,7 @@ export default class StyleControls extends PureComponent {
 
     return (
       <div>
-        <IconButton onClick={this.handleClick}>
+        <IconButton tooltip="Kartlag" onClick={this.handleClick}>
           <LayerIcon />
         </IconButton>
 
