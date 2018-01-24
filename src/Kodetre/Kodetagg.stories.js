@@ -11,6 +11,7 @@ storiesOf('Kodetagg', module)
       <div style={{ padding: 8 }}>
         {rødlistekoder.tagger.map(tag => (
           <Kodetagg
+            key={tag.kode}
             kode={tag.kode}
             navn={tag.navn}
             color={tag.color}

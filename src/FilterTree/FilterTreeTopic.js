@@ -16,7 +16,7 @@ class FilterTreeTopic extends React.Component {
     if (nodes) {
       return nodes.map(node => (
         <ListItem
-          key={node.code}
+          key={node.id}
           //data-parent={parentId}
           primaryText={node.name}
           secondaryText={node.count}
@@ -44,6 +44,7 @@ class FilterTreeTopic extends React.Component {
     return (
       <List>
         <ListItem
+          key={this.props.code}
           primaryText={this.props.name}
           primaryTogglesNestedList={true}
           nestedItems={this.mapStructure(this.props.items)}
