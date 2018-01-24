@@ -61,7 +61,8 @@ class Mapbox extends Component {
     })
   }
 
-  _onStyleChange = mapStyle => {
+  handleStyleChange = mapStyle => {
+    console.log(mapStyle)
     this.setState({ mapStyle })
   }
 
@@ -117,7 +118,7 @@ class Mapbox extends Component {
       >
         <ControlPanel
           containerComponent={this.props.containerComponent}
-          onChange={this._onStyleChange}
+          onChange={this.handleStyleChange}
           handleShowKodetre={this.props.handleShowKodetre}
         />
         <Marker

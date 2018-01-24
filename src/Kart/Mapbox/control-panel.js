@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { fromJS } from 'immutable'
-import MAP_STYLE from '../naturtypekart_style.json'
+//import MAP_STYLE from '../naturtypekart_style.json'
+import MAP_STYLE from '../style.json'
 import Popover from 'material-ui/Popover'
 import IconButton from 'material-ui/IconButton'
 import LayerIcon from 'material-ui/svg-icons/action/reorder'
@@ -76,8 +77,8 @@ export default class StyleControls extends PureComponent {
         // buildings: /building/,
         // roads: /bridge|road|tunnel/,
         // labels: /label|place|poi/,
-        Kalk: /kalk/,
-        'Alle naturområder': /naturomrader6/,
+        Kalk: /ngu-kalk/,
+        'Alle naturområder': /nin/,
         Rødlistede: /Rodlistede/,
         'Bioklimatiske soner': /soner2017-4326-6fcqhb/,
         Seksjoner: /seksjoner2017-4326-c6e9g5/,
