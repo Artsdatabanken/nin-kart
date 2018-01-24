@@ -42,9 +42,9 @@ class Grunnkart extends Component {
     return (
       <div>
         <Kart
-          latitude={63}
+          latitude={65.5}
           longitude={10}
-          zoom={4}
+          zoom={4.7}
           handleShowKodetre={this.handleShowKodetre}
         />
 

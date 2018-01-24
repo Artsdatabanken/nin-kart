@@ -7,7 +7,8 @@
     "mapbox:origin": "dark-v9",
     "mapbox:groups": {
       "6fa234a5fa8602f243af9cb4889b8563": {
-        "name": "Heldekkende"
+        "name": "Heldekkende",
+        "collapsed": true
       },
       "1444934828655.3389": {
         "name": "Aeroways",
@@ -18,14 +19,16 @@
         "collapsed": true
       },
       "03a92a3bd5f3aff11b8161d87a673083": {
-        "name": "Rodliste-nin"
+        "name": "Rodliste-nin",
+        "collapsed": false
       },
       "1444855786460.0557": {
         "name": "Roads",
         "collapsed": true
       },
       "e2b71692bc04afd1758eeb1dee5834f7": {
-        "name": "Landskapsdel"
+        "name": "Landskapsdel",
+        "collapsed": true
       },
       "1444934295202.7542": {
         "name": "Admin boundaries",
@@ -33,7 +36,7 @@
       },
       "3afd45247876a7e9c84d7a87b54589a3": {
         "name": "Natursystemer",
-        "collapsed": false
+        "collapsed": true
       },
       "1444856151690.9143": {
         "name": "State labels",
@@ -84,14 +87,15 @@
         "collapsed": true
       },
       "050bbb04b276404916bdd465baa96a92": {
-        "name": "Rodliste-eksternt"
+        "name": "Rodliste-eksternt",
+        "collapsed": false
       }
     }
   },
-  "center": [18.73319768386773, 65.53849151442242],
-  "zoom": 4.354084765143836,
+  "center": [10.422503378109354, 59.675186905090385],
+  "zoom": 6.08942642478307,
   "bearing": 0,
-  "pitch": 0,
+  "pitch": 10.499999999999995,
   "sources": {
     "composite": {
       "url":
@@ -3456,6 +3460,308 @@
       }
     },
     {
+      "id": "ngu-kalk",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "6fa234a5fa8602f243af9cb4889b8563"
+      },
+      "source": "composite",
+      "source-layer": "kalk",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": {
+          "base": 1,
+          "type": "exponential",
+          "property": "KALKINNHOLD_HOVEDBERGART",
+          "stops": [
+            [0, "hsla(0, 0%, 0%, 0)"],
+            [1, "hsla(0, 6%, 94%, 0.6)"],
+            [2, "hsla(0, 19%, 88%, 0.6)"],
+            [3, "hsla(0, 35%, 80%, 0.6)"],
+            [4, "hsla(0, 59%, 63%, 0.6)"],
+            [5, "hsla(0, 84%, 32%, 0.6)"]
+          ],
+          "default": "hsl(0, 4%, 94%)"
+        }
+      }
+    },
+    {
+      "id": "ngu-ultramafisk",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "6fa234a5fa8602f243af9cb4889b8563"
+      },
+      "source": "composite",
+      "source-layer": "ultramafisk",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": "hsl(329, 100%, 70%)"
+      }
+    },
+    {
+      "id": "nina-bioklimatiskeSeksjoner",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "6fa234a5fa8602f243af9cb4889b8563"
+      },
+      "source": "composite",
+      "source-layer": "Seksjoner2017_4326-c6e9g5",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": {
+          "base": 1,
+          "type": "exponential",
+          "property": "6SE",
+          "stops": [
+            [1, "#0f27ff"],
+            [2, "#0f8cff"],
+            [3, "#0ffcff"],
+            [4, "#8cfcff"],
+            [5, "#cafcff"]
+          ]
+        },
+        "fill-opacity": 0.7
+      }
+    },
+    {
+      "id": "nina-bioklimatiskeSoner",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "6fa234a5fa8602f243af9cb4889b8563"
+      },
+      "source": "composite",
+      "source-layer": "soner2017_4326-6fcqhb",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": {
+          "base": 1,
+          "type": "exponential",
+          "property": "6SO",
+          "stops": [
+            [1, "#fdc26e"],
+            [2, "#fdfa40"],
+            [3, "#a5fea4"],
+            [4, "#4de600"],
+            [5, "#309afd"]
+          ]
+        }
+      }
+    },
+    {
+      "id": "ar50-ld-12",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "e2b71692bc04afd1758eeb1dee5834f7"
+      },
+      "source": "composite",
+      "source-layer": "AR50_LD_12",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": "hsl(36, 21%, 27%)",
+        "fill-outline-color": "hsl(40, 33%, 46%)"
+      }
+    },
+    {
+      "id": "n50-ld-2",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "e2b71692bc04afd1758eeb1dee5834f7"
+      },
+      "source": "composite",
+      "source-layer": "N50_LD_2",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": "hsl(222, 27%, 56%)",
+        "fill-outline-color": "hsl(230, 41%, 45%)"
+      }
+    },
+    {
+      "id": "n50-ld-1",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "e2b71692bc04afd1758eeb1dee5834f7"
+      },
+      "source": "composite",
+      "source-layer": "N50_LD_1",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": "hsl(205, 20%, 44%)",
+        "fill-outline-color": "hsl(205, 46%, 52%)"
+      }
+    },
+    {
+      "id": "nin",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "3afd45247876a7e9c84d7a87b54589a3"
+      },
+      "source": "composite",
+      "source-layer": "naturomrader6",
+      "layout": {},
+      "paint": {
+        "fill-color": "hsl(120, 22%, 24%)",
+        "fill-outline-color": "hsl(146, 26%, 49%)"
+      }
+    },
+    {
+      "id": "ar50-snoisbre",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "3afd45247876a7e9c84d7a87b54589a3"
+      },
+      "source": "composite",
+      "source-layer": "AR50_SnoIsbre",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": "hsl(173, 9%, 53%)",
+        "fill-outline-color": "hsl(173, 31%, 61%)"
+      }
+    },
+    {
+      "id": "ar50-snoisbre_EN",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "050bbb04b276404916bdd465baa96a92"
+      },
+      "source": "composite",
+      "source-layer": "AR50_SnoIsbre",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": "hsl(353, 87%, 45%)",
+        "fill-opacity": 1
+      }
+    },
+    {
+      "id": "n50-innsjo_NT",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "050bbb04b276404916bdd465baa96a92"
+      },
+      "source": "composite",
+      "source-layer": "N50_LD_2",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": "#ed6c26",
+        "fill-opacity": 1
+      }
+    },
+    {
+      "id": "n50-elvbekk_NT",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "050bbb04b276404916bdd465baa96a92"
+      },
+      "source": "composite",
+      "source-layer": "N50_LD_1",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": "#ed6c26"
+      }
+    },
+    {
+      "id": "ar50-myr_NT",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "050bbb04b276404916bdd465baa96a92"
+      },
+      "source": "composite",
+      "source-layer": "AR50_Myr",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": "#ed6c26",
+        "fill-opacity": 1
+      }
+    },
+    {
+      "id": "nin-rodliste_RE",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
+      },
+      "source": "composite",
+      "source-layer": "naturomrader6",
+      "filter": ["has", "RKAT_RE"],
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": "#5a5b5d"
+      }
+    },
+    {
+      "id": "nin-rodliste_NT",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
+      },
+      "source": "composite",
+      "source-layer": "naturomrader6",
+      "filter": ["has", "RKAT_NT"],
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": "#ed6c26"
+      }
+    },
+    {
+      "id": "nin-rodliste_EN",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
+      },
+      "source": "composite",
+      "source-layer": "naturomrader6",
+      "filter": ["has", "RKAT_EN"],
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": "hsl(353, 87%, 45%)",
+        "fill-opacity": 1
+      }
+    },
+    {
+      "id": "nin-rodliste_CR",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
+      },
+      "source": "composite",
+      "source-layer": "naturomrader6",
+      "filter": ["has", "RKAT_CR"],
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": "hsl(0, 72%, 35%)"
+      }
+    },
+    {
       "id": "waterway-label",
       "type": "symbol",
       "source": "composite",
@@ -4769,298 +5075,11 @@
         "text-color": "hsl(0, 0%, 45%)",
         "text-halo-blur": 0
       }
-    },
-    {
-      "id": "ngu-kalk",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "6fa234a5fa8602f243af9cb4889b8563"
-      },
-      "source": "composite",
-      "source-layer": "kalk",
-      "layout": {
-        "visibility": "none"
-      },
-      "paint": {
-        "fill-color": {
-          "base": 1,
-          "type": "exponential",
-          "property": "KALKINNHOLD_HOVEDBERGART",
-          "stops": [
-            [0, "hsla(0, 0%, 0%, 0)"],
-            [1, "hsla(0, 6%, 94%, 0.6)"],
-            [2, "hsla(0, 19%, 88%, 0.6)"],
-            [3, "hsla(0, 35%, 80%, 0.6)"],
-            [4, "hsla(0, 59%, 63%, 0.6)"],
-            [5, "hsla(0, 84%, 32%, 0.6)"]
-          ],
-          "default": "hsl(0, 4%, 94%)"
-        }
-      }
-    },
-    {
-      "id": "ngu-ultramafisk",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "6fa234a5fa8602f243af9cb4889b8563"
-      },
-      "source": "composite",
-      "source-layer": "ultramafisk",
-      "layout": {
-        "visibility": "none"
-      },
-      "paint": {
-        "fill-color": "hsl(329, 100%, 70%)"
-      }
-    },
-    {
-      "id": "nina-bioklimatiskeSeksjoner",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "6fa234a5fa8602f243af9cb4889b8563"
-      },
-      "source": "composite",
-      "source-layer": "Seksjoner2017_4326-c6e9g5",
-      "layout": {
-        "visibility": "none"
-      },
-      "paint": {
-        "fill-color": {
-          "base": 1,
-          "type": "exponential",
-          "property": "6SE",
-          "stops": [
-            [1, "#0f27ff"],
-            [2, "#0f8cff"],
-            [3, "#0ffcff"],
-            [4, "#8cfcff"],
-            [5, "#cafcff"]
-          ]
-        },
-        "fill-opacity": 0.7
-      }
-    },
-    {
-      "id": "nina-bioklimatiskeSoner",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "6fa234a5fa8602f243af9cb4889b8563"
-      },
-      "source": "composite",
-      "source-layer": "soner2017_4326-6fcqhb",
-      "layout": {
-        "visibility": "none"
-      },
-      "paint": {
-        "fill-color": {
-          "base": 1,
-          "type": "exponential",
-          "property": "6SO",
-          "stops": [
-            [1, "#fdc26e"],
-            [2, "#fdfa40"],
-            [3, "#a5fea4"],
-            [4, "#4de600"],
-            [5, "#309afd"]
-          ]
-        }
-      }
-    },
-    {
-      "id": "ar50-ld-12",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "e2b71692bc04afd1758eeb1dee5834f7"
-      },
-      "source": "composite",
-      "source-layer": "AR50_LD_12",
-      "layout": {
-        "visibility": "none"
-      },
-      "paint": {
-        "fill-color": "hsl(36, 21%, 27%)",
-        "fill-outline-color": "hsl(40, 33%, 46%)"
-      }
-    },
-    {
-      "id": "n50-ld-2",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "e2b71692bc04afd1758eeb1dee5834f7"
-      },
-      "source": "composite",
-      "source-layer": "N50_LD_2",
-      "layout": {
-        "visibility": "none"
-      },
-      "paint": {
-        "fill-color": "hsl(222, 27%, 56%)",
-        "fill-outline-color": "hsl(230, 41%, 45%)"
-      }
-    },
-    {
-      "id": "n50-ld-1",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "e2b71692bc04afd1758eeb1dee5834f7"
-      },
-      "source": "composite",
-      "source-layer": "N50_LD_1",
-      "layout": {
-        "visibility": "none"
-      },
-      "paint": {
-        "fill-color": "hsl(205, 20%, 44%)",
-        "fill-outline-color": "hsl(205, 46%, 52%)"
-      }
-    },
-    {
-      "id": "nin",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "3afd45247876a7e9c84d7a87b54589a3"
-      },
-      "source": "composite",
-      "source-layer": "naturomrader6",
-      "layout": {
-        "visibility": "none"
-      },
-      "paint": {
-        "fill-color": "hsl(120, 22%, 24%)",
-        "fill-outline-color": "hsl(146, 26%, 49%)"
-      }
-    },
-    {
-      "id": "ar50-snoisbre",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "3afd45247876a7e9c84d7a87b54589a3"
-      },
-      "source": "composite",
-      "source-layer": "AR50_SnoIsbre",
-      "layout": {
-        "visibility": "none"
-      },
-      "paint": {
-        "fill-color": "hsl(173, 9%, 53%)",
-        "fill-outline-color": "hsl(173, 31%, 61%)"
-      }
-    },
-    {
-      "id": "ar50-snoisbre_EN",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "050bbb04b276404916bdd465baa96a92"
-      },
-      "source": "composite",
-      "source-layer": "AR50_SnoIsbre",
-      "layout": {},
-      "paint": {
-        "fill-color": "hsl(353, 87%, 45%)",
-        "fill-opacity": 1
-      }
-    },
-    {
-      "id": "n50-innsjo_NT",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "050bbb04b276404916bdd465baa96a92"
-      },
-      "source": "composite",
-      "source-layer": "N50_LD_2",
-      "layout": {},
-      "paint": {
-        "fill-color": "#ed6c26"
-      }
-    },
-    {
-      "id": "n50-elvbekk_NT",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "050bbb04b276404916bdd465baa96a92"
-      },
-      "source": "composite",
-      "source-layer": "N50_LD_1",
-      "layout": {},
-      "paint": {
-        "fill-color": "#ed6c26"
-      }
-    },
-    {
-      "id": "ar50-myr_NT",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "050bbb04b276404916bdd465baa96a92"
-      },
-      "source": "composite",
-      "source-layer": "AR50_Myr",
-      "layout": {},
-      "paint": {
-        "fill-color": "#ed6c26",
-        "fill-opacity": 1
-      }
-    },
-    {
-      "id": "nin-rodliste_RE",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
-      },
-      "source": "composite",
-      "source-layer": "naturomrader6",
-      "filter": ["has", "RKAT_RE"],
-      "layout": {},
-      "paint": {
-        "fill-color": "#5a5b5d"
-      }
-    },
-    {
-      "id": "nin-rodliste_NT",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
-      },
-      "source": "composite",
-      "source-layer": "naturomrader6",
-      "filter": ["has", "RKAT_NT"],
-      "layout": {},
-      "paint": {
-        "fill-color": "#ed6c26"
-      }
-    },
-    {
-      "id": "nin-rodliste_EN",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
-      },
-      "source": "composite",
-      "source-layer": "naturomrader6",
-      "filter": ["has", "RKAT_EN"],
-      "layout": {},
-      "paint": {
-        "fill-color": "hsl(353, 87%, 45%)",
-        "fill-opacity": 1
-      }
-    },
-    {
-      "id": "nin-rodliste_CR",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
-      },
-      "source": "composite",
-      "source-layer": "naturomrader6",
-      "filter": ["has", "RKAT_CR"],
-      "layout": {},
-      "paint": {
-        "fill-color": "hsl(0, 72%, 35%)"
-      }
     }
   ],
   "created": "2018-01-11T12:18:47.816Z",
   "id": "cjcagna820mra2sp2elhqrjag",
-  "modified": "2018-01-17T14:54:03.576Z",
+  "modified": "2018-01-24T16:40:05.624Z",
   "owner": "artsdatabanken",
   "visibility": "private",
   "draft": false
