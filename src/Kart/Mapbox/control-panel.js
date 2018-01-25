@@ -1,17 +1,7 @@
 import React, { PureComponent } from 'react'
 import { Paper } from 'material-ui'
-import IconButton from 'material-ui/IconButton'
-import MenuIcon from 'material-ui/svg-icons/navigation/menu'
 
 export default class Kontrollpanel extends PureComponent {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      open: false,
-    }
-  }
-
   renderLayerControl(name) {
     return (
       <div key={name} className="input">
@@ -30,29 +20,10 @@ export default class Kontrollpanel extends PureComponent {
       </div>
     )
   }
-  handleClick = event => {
-    // This prevents ghost click.
-    event.preventDefault()
-
-    this.setState({
-      open: true,
-      anchorEl: event.currentTarget,
-    })
-  }
-
-  handleRequestClose = () => {
-    this.setState({
-      open: false,
-    })
-  }
 
   render() {
     return (
       <div>
-        <IconButton tooltip="Meny" onClick={this.handleClick}>
-          <MenuIcon />
-        </IconButton>
-
         <Paper
           zDepth={3}
           style={{ width: 480, position: 'absolute', right: 8, top: 8 }}
@@ -61,12 +32,7 @@ export default class Kontrollpanel extends PureComponent {
           <hr />
           {this.props.categories &&
             this.props.categories.map(name => this.renderLayerControl(name))}
-
-          <input
-            type="button"
-            onClick={this.props.onShowKodetre}
-            value="Legg til lag"
-          />
+          <p />
         </Paper>
       </div>
     )

@@ -98,16 +98,11 @@ class Mapbox extends Component {
         minZoom={4}
       >
         <Kontrollpanel
-          containerComponent={this.props.containerComponent}
-          onChange={this.props.handleStyleChange}
-          handleShowKodetre={this.props.handleShowKodetre}
           handleVisibilityChange={this.props.handleVisibilityChange}
           handleColorChange={this.props.handleColorChange}
-          newLayer={this.props.newLayer}
           categories={this.props.categories}
           visibility={this.props.visibility}
           color={this.props.color}
-          layerSelector={this.props.layerSelector}
         />
       </ReactMapGL>
     )

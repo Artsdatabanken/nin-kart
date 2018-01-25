@@ -125,17 +125,12 @@ class Kart extends Component {
           <Mapbox
             {...this.props}
             onClick={this.onClick}
-            handleToggle={this.handleToggle}
-            handleShowKodetre={this.props.handleShowKodetre}
             handleVisibilityChange={this.props.handleVisibilityChange}
             handleColorChange={this.props.handleColorChange}
-            newLayer={this.props.newLayer}
             categories={this.props.categories}
             visibility={this.props.visibility}
             color={this.props.color}
-            layerSelector={this.props.layerSelector}
             mapStyle={this.props.mapStyle}
-            handleStyleChange={this.props.handleStyleChange}
           />
           <Drawer openSecondary={true} open={this.state.open}>
             <MenuItem onClick={this.handleToggle}>
