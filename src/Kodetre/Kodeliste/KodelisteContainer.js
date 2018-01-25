@@ -46,6 +46,8 @@ class KodelisteContainer extends React.Component {
       <div>
         <TopBar
           onGoBack={this.props.onGoBack}
+          toggleShowKodeListe={this.props.toggleShowKodeListe}
+          showKodeListe={this.props.showKodeListe}
           title={data.kode}
           parentId={this.state.parentId}
           onSearchResults={items => {
@@ -75,7 +77,8 @@ class KodelisteContainer extends React.Component {
             />
           </List>
         ) : (
-          this.state.meta && (
+          this.state.meta &&
+          this.props.showKodeListe && (
             <Kodeliste
               data={data}
               meta={this.state.meta}

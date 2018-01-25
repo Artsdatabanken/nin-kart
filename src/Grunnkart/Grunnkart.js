@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import Kart from '../Kart/Kart'
 import Kode from '../Kodetre/Kode'
-import { IconButton, Paper, AppBar } from 'material-ui'
-import ActionSearch from 'material-ui/svg-icons/action/search'
+import { Paper } from 'material-ui'
 import { fromJS } from 'immutable'
 import MAP_STYLE from '../Kart/style.json'
 
@@ -20,6 +19,7 @@ class Grunnkart extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      showKodeListe: false,
       mapStyle: '',
       kode: '',
       open: true,
@@ -61,6 +61,7 @@ class Grunnkart extends Component {
     this.handleAddLayer = this.handleAddLayer.bind(this)
     this.handleColorChange = this.handleColorChange.bind(this)
     this.handleVisibilityChange = this.handleVisibilityChange.bind(this)
+    this.toggleShowKodeListe = this.toggleShowKodeListe.bind(this)
   }
 
   makeLayer(name, code, visibel, source) {
@@ -117,6 +118,10 @@ class Grunnkart extends Component {
     this.updateMapStyle({ ...this.state, visibility })
   }
 
+  toggleShowKodeListe() {
+    this.setState({ showKodeListe: !this.state.showKodeListe })
+  }
+
   startUpdateMapStyle() {
     this.updateMapStyle({ ...this.state })
   }
@@ -162,22 +167,6 @@ class Grunnkart extends Component {
   render() {
     return (
       <div>
-        <AppBar
-          style={{
-            position: 'absolute',
-            top: 8,
-            left: 8,
-            width: 500,
-          }}
-        >
-          <IconButton
-            onClick={this.handleMenu}
-            color="inherit"
-            style={{ top: 8 }}
-          >
-            <ActionSearch />
-          </IconButton>
-        </AppBar>
         <Kart
           latitude={65.5}
           longitude={10}
@@ -195,13 +184,15 @@ class Grunnkart extends Component {
             style={{
               position: 'absolute',
               left: 8,
-              top: 80,
+              top: 10,
             }}
           >
             <Kode
               kode={this.props.match.params.kode}
               history={this.props.history}
               onAddLayer={this.handleAddLayer}
+              toggleShowKodeListe={this.toggleShowKodeListe}
+              showKodeListe={this.state.showKodeListe}
             />
           </Paper>
         )}
