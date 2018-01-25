@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import ReactMapGL from 'react-map-gl'
 import ControlPanel from './control-panel'
-import IconButton from 'material-ui/IconButton'
-import InfoIcon from 'material-ui/svg-icons/action/info-outline'
 import './Mapbox.css'
 
 class Mapbox extends Component {
