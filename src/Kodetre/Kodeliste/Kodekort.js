@@ -62,7 +62,7 @@ class Kodekort extends React.Component {
           </IconButton>
           <FlatButton
             label="Vis i kart"
-            onClick={() => this.props.onAddLayer(this.props.kode)}
+            onClick={() => this.props.onAddLayer(data.kode)}
           />
         </CardActions>
       </Card>
