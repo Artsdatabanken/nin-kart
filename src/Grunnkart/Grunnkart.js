@@ -23,7 +23,6 @@ class Grunnkart extends Component {
       mapStyle: '',
       kode: '',
       open: true,
-      newLayer: '',
       categories: [
         'Kalk',
         'Alle naturområder',
@@ -59,12 +58,9 @@ class Grunnkart extends Component {
       },
     }
 
-    this.handleShowKodetre = this.handleShowKodetre.bind(this)
     this.handleAddLayer = this.handleAddLayer.bind(this)
     this.handleColorChange = this.handleColorChange.bind(this)
     this.handleVisibilityChange = this.handleVisibilityChange.bind(this)
-    this.startUpdateMapStyle = this.startUpdateMapStyle.bind(this)
-    this.handleStyleChange = this.handleStyleChange.bind(this)
   }
 
   makeLayer(name, code, visibel, source) {
@@ -150,26 +146,9 @@ class Grunnkart extends Component {
     this.handleStyleChange(defaultMapStyle.set('layers', layers))
   }
 
-  handleShowKodetre = event => {
-    // This prevents ghost click.
-    event.preventDefault()
-
-    this.setState({
-      open: true,
-      anchorEl: event.currentTarget,
-    })
-  }
-
-  handleRequestClose = () => {
-    this.setState({
-      open: false,
-    })
-  }
-
   handleAddLayer(kode) {
     this.setState({
       kode: kode,
-      newLayer: kode,
     })
     this.addLayer(kode)
     console.log(kode)
@@ -177,7 +156,6 @@ class Grunnkart extends Component {
 
   componentDidMount() {
     this._defaultLayers = defaultMapStyle.get('layers')
-
     this.updateMapStyle({ ...this.state })
   }
 
@@ -204,17 +182,12 @@ class Grunnkart extends Component {
           latitude={65.5}
           longitude={10}
           zoom={4.7}
-          handleShowKodetre={this.handleShowKodetre}
           handleVisibilityChange={this.handleVisibilityChange}
           handleColorChange={this.handleColorChange}
-          newLayer={this.state.newLayer}
           categories={this.state.categories}
           visibility={this.state.visibility}
           color={this.state.color}
-          layerSelector={this.state.layerSelector}
-          defaultMapStyle={defaultMapStyle}
           mapStyle={this.state.mapStyle}
-          handleStyleChange={this.handleStyleChange}
         />
         {this.state.open && (
           <Paper

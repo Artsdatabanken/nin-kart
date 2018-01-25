@@ -8,26 +8,29 @@ import Relasjon from './Relasjon'
 function Kodeliste(props) {
   return (
     <div style={{ maxWidth: '500px' }}>
-      <Kodekort
-        {...props.meta}
-        onGoToCode={props.onGoToCode}
-        onAddLayer={props.onAddLayer}
-        kode={props.kode}
-      />
+      {props.data && (
+        <Kodekort
+          {...props.meta}
+          onGoToCode={props.onGoToCode}
+          onAddLayer={props.onAddLayer}
+          data={props.data}
+        />
+      )}
       <Tabs>
         <Tab label="Innhold">
           <List>
-            {props.items.map(item => (
-              <Kodelisteelement
-                key={item.kode}
-                {...item}
-                meta={props.meta.barn[item.kode] || {}}
-                checked={props.isSelected(props.filterCode, item.kode)}
-                onGoToCode={props.onGoToCode}
-                hideCircle={props.meta.selv.fristilAvatar}
-                ikon={props.meta.selv.ikon}
-              />
-            ))}
+            {props.data &&
+              props.data.barn.map(item => (
+                <Kodelisteelement
+                  key={item.kode}
+                  {...item}
+                  meta={props.meta.barn[item.kode] || {}}
+                  checked={props.isSelected(props.filterCode, item.kode)}
+                  onGoToCode={props.onGoToCode}
+                  hideCircle={props.meta.selv.fristilAvatar}
+                  ikon={props.meta.selv.ikon}
+                />
+              ))}
           </List>
         </Tab>
         <Tab label="Statistikk">følg med her...</Tab>

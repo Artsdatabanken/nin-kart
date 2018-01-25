@@ -77,8 +77,7 @@ class KodelisteContainer extends React.Component {
         ) : (
           this.state.meta && (
             <Kodeliste
-              kode={data.kode}
-              items={data.barn}
+              data={data}
               meta={this.state.meta}
               filterCode={this.props.filterCode}
               filter={this.props.filter}

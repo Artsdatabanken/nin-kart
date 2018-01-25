@@ -9,27 +9,29 @@ import {
 } from 'material-ui/Card'
 import { IconButton, FlatButton } from 'material-ui'
 import InfoOutline from 'material-ui/svg-icons/action/info-outline'
-//import Star from 'material-ui/svg-icons/toggle/star'
 import StarBorder from 'material-ui/svg-icons/toggle/star-border'
 import Share from 'material-ui/svg-icons/social/share'
 
 class Kodekort extends React.Component {
   render() {
-    const { forelder, selv } = this.props
+    const { data, forelder, selv } = this.props
     return (
       <Card>
         <CardHeader
           titleStyle={{ fontSize: 20 }}
-          title={forelder.tittel}
-          subtitle={forelder.kode}
+          title={data.forelder ? data.forelder.navn : ''}
+          subtitle={data.forelder ? data.forelder.kode : ''}
           subtitleColor="#03f"
           avatar={forelder.avatar}
-          style={{ cursor: 'pointer' }}
-          onClick={() => this.props.onGoToCode(forelder.kode)}
+          style={{
+            cursor: 'pointer',
+            display: data.forelder ? 'block' : 'none',
+          }}
+          onClick={() => this.props.onGoToCode(data.forelder.kode)}
         />
         <CardMedia
           overlay={
-            <CardTitle title={selv.tittel} subtitle={selv.kode}>
+            <CardTitle title={data.navn} subtitle={data.kode}>
               <IconButton
                 href={selv.infoUrl}
                 style={{
@@ -60,7 +62,7 @@ class Kodekort extends React.Component {
           </IconButton>
           <FlatButton
             label="Vis i kart"
-            onClick={() => this.props.onAddLayer(this.props.kode)}
+            onClick={() => this.props.onAddLayer(data.kode)}
           />
         </CardActions>
       </Card>
