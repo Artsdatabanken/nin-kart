@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react'
 import { fromJS } from 'immutable'
-import MAP_STYLE from '../naturtypekart_style.json'
-import Popover from 'material-ui/Popover'
+//import MAP_STYLE from '../naturtypekart_style.json'
+import MAP_STYLE from '../style.json'
+import { Paper } from 'material-ui'
 import IconButton from 'material-ui/IconButton'
-import LayerIcon from 'material-ui/svg-icons/action/reorder'
+import MenuIcon from 'material-ui/svg-icons/navigation/menu'
 
 const defaultMapStyle = fromJS(MAP_STYLE)
 
@@ -76,8 +77,8 @@ export default class StyleControls extends PureComponent {
         // buildings: /building/,
         // roads: /bridge|road|tunnel/,
         // labels: /label|place|poi/,
-        Kalk: /kalk/,
-        'Alle naturområder': /naturomrader6/,
+        Kalk: /ngu-kalk/,
+        'Alle naturområder': /nin/,
         Rødlistede: /Rodlistede/,
         'Bioklimatiske soner': /soner2017-4326-6fcqhb/,
         Seksjoner: /seksjoner2017-4326-c6e9g5/,
@@ -155,7 +156,6 @@ export default class StyleControls extends PureComponent {
 
       .filter(layer => {
         const id = layer.get('id')
-        //console.log(id);
         return this.state.categories.every(
           name => visibility[name] || !layerSelector[name].test(id)
         )
@@ -166,9 +166,7 @@ export default class StyleControls extends PureComponent {
         const category = this.state.categories.find(name =>
           layerSelector[name].test(id)
         )
-        //console.log(id + ", " + type + ", " + category);
         if (category && colorClass[type] && color[category]) {
-          //console.log("paint " + id + ", " + type + ", " + category);
           return layer.setIn(['paint', colorClass[type]], color[category])
         }
         // else {
@@ -227,41 +225,34 @@ export default class StyleControls extends PureComponent {
 
     return (
       <div>
-        <IconButton tooltip="Kartlag" onClick={this.handleClick}>
-          <LayerIcon />
+        <IconButton tooltip="Meny" onClick={this.handleClick}>
+          <MenuIcon />
         </IconButton>
 
-        <Popover
-          className="control-panel"
-          open={this.state.open}
-          anchorEl={this.state.anchorEl}
-          anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
-          targetOrigin={{ horizontal: 'left', vertical: 'top' }}
-          onRequestClose={this.handleRequestClose}
+        <Paper
+          zDepth={3}
+          style={{ width: 480, position: 'absolute', right: 8, top: 8 }}
         >
-          <div>
-            <h3>Kartlag</h3>
-            <p>Her kan du slå av/på lag og endre farger</p>
-            <input
-              value={this.state.newLayer}
-              onChange={evt => this.prepareNewLayer(evt)}
-            />
-            <input
-              type="button"
-              onClick={this._onClickAddLayer.bind(this)}
-              value="+"
-            />
+          <h3>Kartlag</h3>
+          <input
+            value={this.state.newLayer}
+            onChange={evt => this.prepareNewLayer(evt)}
+          />
+          <input
+            type="button"
+            onClick={this._onClickAddLayer.bind(this)}
+            value="+"
+          />
 
-            <hr />
-            {this.state.categories.map(name => this._renderLayerControl(name))}
+          <hr />
+          {this.state.categories.map(name => this._renderLayerControl(name))}
 
-            <input
-              type="button"
-              onClick={this.props.handleShowKodetre}
-              value="Legg til lag"
-            />
-          </div>
-        </Popover>
+          <input
+            type="button"
+            onClick={this.props.onShowKodetre}
+            value="Legg til lag"
+          />
+        </Paper>
       </div>
     )
   }

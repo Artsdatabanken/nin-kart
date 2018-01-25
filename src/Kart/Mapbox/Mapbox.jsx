@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import ReactMapGL, { Marker } from 'react-map-gl'
+import ReactMapGL from 'react-map-gl'
 import ControlPanel from './control-panel'
-import IconButton from 'material-ui/IconButton'
-import InfoIcon from 'material-ui/svg-icons/action/info-outline'
 import './Mapbox.css'
 
 class Mapbox extends Component {
@@ -61,11 +59,11 @@ class Mapbox extends Component {
     })
   }
 
-  _onStyleChange = mapStyle => {
+  handleStyleChange = mapStyle => {
     this.setState({ mapStyle })
   }
 
-  _onViewportChange = viewport => this.setState({ viewport })
+  handleViewportChange = viewport => this.setState({ viewport })
 
   onHover = e => {
     const pos = e.center
@@ -92,14 +90,6 @@ class Mapbox extends Component {
 
   render() {
     const { viewport, mapStyle } = this.state
-    const styles = {
-      hamburger: {
-        float: 'right',
-        position: 'absolute',
-        right: 0,
-        top: 0,
-      },
-    }
 
     return (
       <ReactMapGL
@@ -110,32 +100,17 @@ class Mapbox extends Component {
         onClick={this.props.onClick}
         onHover={this.onHover}
         onMouseMove={this.onMouseMove}
-        onViewportChange={viewport => this._onViewportChange(viewport)}
+        onViewportChange={viewport => this.handleViewportChange(viewport)}
         mapboxApiAccessToken="pk.eyJ1IjoiYXJ0c2RhdGFiYW5rZW4iLCJhIjoiY2pjNjg2MzVzMHhycjJ3bnM5MHc4MHVzOCJ9.fLnCRyg-hCuTClyim1r-JQ"
         //mapStyle="mapbox://styles/artsdatabanken/cjc68pztl4sud2sp0s4wyy58q"
         mapStyle={mapStyle}
+        minZoom={4}
       >
         <ControlPanel
           containerComponent={this.props.containerComponent}
-          onChange={this._onStyleChange}
-          handleShowKodetre={this.props.handleShowKodetre}
+          onChange={this.handleStyleChange}
+          onShowKodetre={this.props.onShowKodetre}
         />
-        <Marker
-          latitude={63.4139}
-          longitude={10.4064}
-          offsetLeft={-20}
-          offsetTop={-10}
-        >
-          <div />
-        </Marker>
-
-        <IconButton
-          style={styles.hamburger}
-          onClick={this.props.handleToggle}
-          tooltip="Info"
-        >
-          <InfoIcon />
-        </IconButton>
       </ReactMapGL>
     )
   }
