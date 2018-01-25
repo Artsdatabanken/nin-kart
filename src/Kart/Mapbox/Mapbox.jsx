@@ -72,11 +72,7 @@ class Mapbox extends Component {
       //console.log(r[0].properties.localId);
       this.map
         .getMap()
-        .setFilter('naturomrader6-hover', [
-          '==',
-          'localId',
-          r[0].properties.localId,
-        ])
+        .setFilter('nin-hover', ['==', 'localId', r[0].properties.localId])
     }
   }
 
