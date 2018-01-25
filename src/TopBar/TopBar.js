@@ -3,7 +3,8 @@ import AppBar from 'material-ui/AppBar'
 import IconButton from 'material-ui/IconButton'
 import Search from 'material-ui/svg-icons/action/search'
 import NavigationBack from 'material-ui/svg-icons/navigation/arrow-back'
-import MoreVert from 'material-ui/svg-icons/navigation/more-vert'
+import CloseIcon from 'material-ui/svg-icons/navigation/close'
+import Hamburger from 'material-ui/svg-icons/action/reorder'
 import FinnKode from '../FinnKode/FinnKode'
 
 class TopBar extends Component {
@@ -56,8 +57,8 @@ class TopBar extends Component {
               <IconButton onClick={this.handleSearchButtonClick}>
                 <Search />
               </IconButton>
-              <IconButton>
-                <MoreVert />
+              <IconButton onClick={this.props.toggleShowKodeListe}>
+                {this.props.showKodeListe ? <CloseIcon /> : <Hamburger />}
               </IconButton>
             </React.Fragment>
           }

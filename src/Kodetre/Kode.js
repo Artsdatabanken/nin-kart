@@ -77,6 +77,8 @@ class Kode extends React.Component {
         onGoToCode={this.handleGoToCode}
         onAddLayer={this.props.onAddLayer}
         onGoBack={this.handleGoBack}
+        toggleShowKodeListe={this.props.toggleShowKodeListe}
+        showKodeListe={this.props.showKodeListe}
         onCheckChange={this.handleCheckChange}
         isSelected={this.isSelected}
         filter={this.state.filterCodes}
