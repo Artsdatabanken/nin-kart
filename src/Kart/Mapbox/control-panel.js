@@ -3,7 +3,7 @@ import { Paper } from 'material-ui'
 import IconButton from 'material-ui/IconButton'
 import MenuIcon from 'material-ui/svg-icons/navigation/menu'
 
-export default class StyleControls extends PureComponent {
+export default class Kontrollpanel extends PureComponent {
   constructor(props) {
     super(props)
 
@@ -59,7 +59,8 @@ export default class StyleControls extends PureComponent {
         >
           <h3>Kartlag</h3>
           <hr />
-          {this.props.categories.map(name => this.renderLayerControl(name))}
+          {this.props.categories &&
+            this.props.categories.map(name => this.renderLayerControl(name))}
 
           <input
             type="button"

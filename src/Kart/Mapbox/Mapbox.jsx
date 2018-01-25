@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactMapGL from 'react-map-gl'
-import ControlPanel from './control-panel'
+import Kontrollpanel from './control-panel'
 import './Mapbox.css'
 
 class Mapbox extends Component {
@@ -97,7 +97,7 @@ class Mapbox extends Component {
         mapStyle={this.props.mapStyle}
         minZoom={4}
       >
-        <ControlPanel
+        <Kontrollpanel
           containerComponent={this.props.containerComponent}
           onChange={this.props.handleStyleChange}
           handleShowKodetre={this.props.handleShowKodetre}
