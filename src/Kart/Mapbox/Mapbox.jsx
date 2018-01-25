@@ -7,7 +7,6 @@ class Mapbox extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      mapStyle: '',
       viewport: {
         width: window.innerWidth,
         height: window.innerHeight,
@@ -59,10 +58,6 @@ class Mapbox extends Component {
     })
   }
 
-  handleStyleChange = mapStyle => {
-    this.setState({ mapStyle })
-  }
-
   handleViewportChange = viewport => this.setState({ viewport })
 
   onHover = e => {
@@ -85,7 +80,7 @@ class Mapbox extends Component {
   // };
 
   render() {
-    const { viewport, mapStyle } = this.state
+    const { viewport } = this.state
 
     return (
       <ReactMapGL
@@ -99,13 +94,20 @@ class Mapbox extends Component {
         onViewportChange={viewport => this.handleViewportChange(viewport)}
         mapboxApiAccessToken="pk.eyJ1IjoiYXJ0c2RhdGFiYW5rZW4iLCJhIjoiY2pjNjg2MzVzMHhycjJ3bnM5MHc4MHVzOCJ9.fLnCRyg-hCuTClyim1r-JQ"
         //mapStyle="mapbox://styles/artsdatabanken/cjc68pztl4sud2sp0s4wyy58q"
-        mapStyle={mapStyle}
+        mapStyle={this.props.mapStyle}
         minZoom={4}
       >
         <ControlPanel
           containerComponent={this.props.containerComponent}
-          onChange={this.handleStyleChange}
-          onShowKodetre={this.props.onShowKodetre}
+          onChange={this.props.handleStyleChange}
+          handleShowKodetre={this.props.handleShowKodetre}
+          handleVisibilityChange={this.props.handleVisibilityChange}
+          handleColorChange={this.props.handleColorChange}
+          newLayer={this.props.newLayer}
+          categories={this.props.categories}
+          visibility={this.props.visibility}
+          color={this.props.color}
+          layerSelector={this.props.layerSelector}
         />
       </ReactMapGL>
     )
