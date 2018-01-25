@@ -17,7 +17,6 @@ const muiTheme = getMuiTheme({
   },
 })
 
-console.log(muiTheme)
 class App extends Component {
   render() {
     return (

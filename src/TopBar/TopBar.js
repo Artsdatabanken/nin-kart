@@ -10,14 +10,12 @@ class TopBar extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      classes: props.classes,
-      taxon: props.taxon,
-      showSearch: false,
+      showSearchField: false,
     }
   }
 
   handleSearchButtonClick = () => {
-    this.setState({ showSearch: !this.state.showSearch })
+    this.setState({ showSearchField: !this.state.showSearchField })
   }
 
   handleSearchClick = taxonId => {
@@ -30,16 +28,19 @@ class TopBar extends Component {
     }
   }
 
+  handleSearchResults = items => {
+    this.setState({ items })
+  }
+
   render() {
     return (
       <div>
         <AppBar
           title={
-            this.state.showSearch ? (
+            this.state.showSearchField ? (
               <FinnKode
-                onClick={this.handleSearchClick}
-                onAbort={this.handleSearchButtonClick}
-                onKeyDown={this.handleKeyDown}
+                onSearchResults={this.props.onSearchResults}
+                onBlur={() => this.setState({ showSearchField: false })}
               />
             ) : (
               this.props.title
@@ -53,10 +54,10 @@ class TopBar extends Component {
           iconElementRight={
             <React.Fragment>
               <IconButton onClick={this.handleSearchButtonClick}>
-                <Search color="#ffffff" />
+                <Search />
               </IconButton>
               <IconButton>
-                <MoreVert color="#ffffff" />
+                <MoreVert />
               </IconButton>
             </React.Fragment>
           }
