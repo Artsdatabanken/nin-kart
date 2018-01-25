@@ -23,7 +23,6 @@ class Grunnkart extends Component {
       mapStyle: '',
       kode: '',
       open: true,
-      newLayer: '',
       categories: [
         'Kalk',
         'Alle naturområder',
@@ -150,7 +149,6 @@ class Grunnkart extends Component {
   handleAddLayer(kode) {
     this.setState({
       kode: kode,
-      newLayer: kode,
     })
     this.addLayer(kode)
     console.log(kode)
