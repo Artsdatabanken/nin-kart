@@ -62,11 +62,10 @@ class Mapbox extends Component {
   }
 
   handleStyleChange = mapStyle => {
-    console.log(mapStyle)
     this.setState({ mapStyle })
   }
 
-  _onViewportChange = viewport => this.setState({ viewport })
+  handleViewportChange = viewport => this.setState({ viewport })
 
   onHover = e => {
     const pos = e.center
@@ -93,14 +92,6 @@ class Mapbox extends Component {
 
   render() {
     const { viewport, mapStyle } = this.state
-    const styles = {
-      hamburger: {
-        float: 'right',
-        position: 'absolute',
-        right: 0,
-        top: 0,
-      },
-    }
 
     return (
       <ReactMapGL
@@ -111,7 +102,7 @@ class Mapbox extends Component {
         onClick={this.props.onClick}
         onHover={this.onHover}
         onMouseMove={this.onMouseMove}
-        onViewportChange={viewport => this._onViewportChange(viewport)}
+        onViewportChange={viewport => this.handleViewportChange(viewport)}
         mapboxApiAccessToken="pk.eyJ1IjoiYXJ0c2RhdGFiYW5rZW4iLCJhIjoiY2pjNjg2MzVzMHhycjJ3bnM5MHc4MHVzOCJ9.fLnCRyg-hCuTClyim1r-JQ"
         //mapStyle="mapbox://styles/artsdatabanken/cjc68pztl4sud2sp0s4wyy58q"
         mapStyle={mapStyle}
@@ -120,15 +111,8 @@ class Mapbox extends Component {
         <ControlPanel
           containerComponent={this.props.containerComponent}
           onChange={this.handleStyleChange}
-          handleShowKodetre={this.props.handleShowKodetre}
+          onShowKodetre={this.props.onShowKodetre}
         />
-        <IconButton
-          style={styles.hamburger}
-          onClick={this.props.handleToggle}
-          tooltip="Info"
-        >
-          <InfoIcon />
-        </IconButton>
       </ReactMapGL>
     )
   }

@@ -126,7 +126,7 @@ class Kart extends Component {
             {...this.props}
             onClick={this.onClick}
             handleToggle={this.handleToggle}
-            handleShowKodetre={this.props.handleShowKodetre}
+            onShowKodetre={this.props.onShowKodetre}
           />
           <Drawer openSecondary={true} open={this.state.open}>
             <MenuItem onClick={this.handleToggle}>

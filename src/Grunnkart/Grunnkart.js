@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import Kart from '../Kart/Kart'
 import Kode from '../Kodetre/Kode'
-import Popover from 'material-ui/Popover'
+import { IconButton, Paper, AppBar } from 'material-ui'
+import ActionSearch from 'material-ui/svg-icons/action/search'
 
 class Grunnkart extends Component {
   constructor(props) {
     super(props)
     this.state = {
       kode: '',
-      open: false,
+      open: true,
     }
 
     this.handleShowKodetre = this.handleShowKodetre.bind(this)
@@ -41,26 +42,44 @@ class Grunnkart extends Component {
   render() {
     return (
       <div>
+        <AppBar
+          style={{
+            position: 'absolute',
+            top: 8,
+            left: 8,
+            width: 500,
+          }}
+        >
+          <IconButton
+            onClick={this.handleMenu}
+            color="inherit"
+            style={{ top: 8 }}
+          >
+            <ActionSearch />
+          </IconButton>
+        </AppBar>
         <Kart
           latitude={65.5}
           longitude={10}
           zoom={4.7}
-          handleShowKodetre={this.handleShowKodetre}
+          onShowKodetre={this.handleShowKodetre}
         />
-
-        <Popover
-          open={this.state.open}
-          anchorEl={this.state.anchorEl}
-          anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
-          targetOrigin={{ horizontal: 'left', vertical: 'top' }}
-          onRequestClose={this.handleRequestClose}
-        >
-          <Kode
-            kode={this.props.match.params.kode}
-            history={this.props.history}
-            onAddLayer={this.handleAddLayer}
-          />
-        </Popover>
+        {this.state.open && (
+          <Paper
+            zDepth={3}
+            style={{
+              position: 'absolute',
+              left: 8,
+              top: 80,
+            }}
+          >
+            <Kode
+              kode={this.props.match.params.kode}
+              history={this.props.history}
+              onAddLayer={this.handleAddLayer}
+            />
+          </Paper>
+        )}
       </div>
     )
   }

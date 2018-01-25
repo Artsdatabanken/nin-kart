@@ -1946,7 +1946,7 @@ exports[`Storyshots Kart Mapbox default 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
+                  d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
                 />
               </svg>
             </div>
@@ -1954,94 +1954,151 @@ exports[`Storyshots Kart Mapbox default 1`] = `
           <div
             style={
               Object {
-                "display": "none",
+                "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+                "backgroundColor": "#ffffff",
+                "borderRadius": 2,
+                "boxShadow": "0 10px 30px rgba(0, 0, 0, 0.19),
+                       0 6px 10px rgba(0, 0, 0, 0.23)",
+                "boxSizing": "border-box",
+                "color": "rgba(0, 0, 0, 0.87)",
+                "fontFamily": "Roboto, sans-serif",
+                "muiPrepared": true,
+                "position": "absolute",
+                "right": 8,
+                "top": 8,
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "width": 480,
               }
             }
-          />
-        </div>
-        <div
-          className="mapboxgl-marker "
-          style={
-            Object {
-              "left": 501.24785777777765,
-              "position": "absolute",
-              "top": 353.1052623812617,
-            }
-          }
-        >
-          <div />
-        </div>
-        <button
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOut={[Function]}
-          onTouchStart={[Function]}
-          style={
-            Object {
-              "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-              "background": "none",
-              "border": 10,
-              "boxSizing": "border-box",
-              "cursor": "pointer",
-              "display": "inline-block",
-              "float": "right",
-              "fontFamily": "Roboto, sans-serif",
-              "fontSize": 0,
-              "fontWeight": "inherit",
-              "height": 48,
-              "margin": 0,
-              "muiPrepared": true,
-              "outline": "none",
-              "overflow": "visible",
-              "padding": 12,
-              "position": "absolute",
-              "right": 0,
-              "textDecoration": "none",
-              "top": 0,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "verticalAlign": null,
-              "width": 48,
-            }
-          }
-          tabIndex={0}
-          type="button"
-        >
-          <div
-            onMouseDown={[Function]}
-            onMouseLeave={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
           >
-            <svg
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              style={
-                Object {
-                  "color": "rgba(0, 0, 0, 0.87)",
-                  "display": "inline-block",
-                  "fill": "currentColor",
-                  "height": 24,
-                  "muiPrepared": true,
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "userSelect": "none",
-                  "width": 24,
-                }
-              }
-              viewBox="0 0 24 24"
+            <h3>
+              Kartlag
+            </h3>
+            <input
+              onChange={[Function]}
+              value=""
+            />
+            <input
+              onClick={[Function]}
+              type="button"
+              value="+"
+            />
+            <hr />
+            <div
+              className="input"
             >
-              <path
-                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+              <input
+                checked={false}
+                onChange={[Function]}
+                type="checkbox"
               />
-            </svg>
+              <label>
+                Kalk
+              </label>
+              <input
+                disabled={true}
+                onChange={[Function]}
+                type="color"
+                value={undefined}
+              />
+            </div>
+            <div
+              className="input"
+            >
+              <input
+                checked={false}
+                onChange={[Function]}
+                type="checkbox"
+              />
+              <label>
+                Alle naturområder
+              </label>
+              <input
+                disabled={true}
+                onChange={[Function]}
+                type="color"
+                value={undefined}
+              />
+            </div>
+            <div
+              className="input"
+            >
+              <input
+                checked={false}
+                onChange={[Function]}
+                type="checkbox"
+              />
+              <label>
+                Rødlistede
+              </label>
+              <input
+                disabled={true}
+                onChange={[Function]}
+                type="color"
+                value={undefined}
+              />
+            </div>
+            <div
+              className="input"
+            >
+              <input
+                checked={false}
+                onChange={[Function]}
+                type="checkbox"
+              />
+              <label>
+                Bioklimatiske soner
+              </label>
+              <input
+                disabled={true}
+                onChange={[Function]}
+                type="color"
+                value={undefined}
+              />
+            </div>
+            <div
+              className="input"
+            >
+              <input
+                checked={false}
+                onChange={[Function]}
+                type="checkbox"
+              />
+              <label>
+                Seksjoner
+              </label>
+              <input
+                disabled={true}
+                onChange={[Function]}
+                type="color"
+                value={undefined}
+              />
+            </div>
+            <div
+              className="input"
+            >
+              <input
+                checked={false}
+                onChange={[Function]}
+                type="checkbox"
+              />
+              <label>
+                Ultramafisk
+              </label>
+              <input
+                disabled={true}
+                onChange={[Function]}
+                type="color"
+                value={undefined}
+              />
+            </div>
+            <input
+              onClick={undefined}
+              type="button"
+              value="Legg til lag"
+            />
           </div>
-        </button>
+        </div>
       </div>
     </div>
   </div>
