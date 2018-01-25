@@ -85,6 +85,12 @@ class Backend {
     )
   }
 
+  static async søkKode(q) {
+    return this.getPromise(
+      `https://adb-nin-memapi.azurewebsites.net/v1/Koder?q=${q}`
+    )
+  }
+
   static async hentKodeMeta(kode) {
     return this.getPromise(`/kode/${kode}.json`)
   }

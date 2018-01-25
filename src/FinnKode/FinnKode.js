@@ -1,52 +1,54 @@
 import React, { Component } from 'react'
-import AutoComplete from 'material-ui/AutoComplete'
+import { TextField } from 'material-ui'
 import getNext from '../componentid'
 import backend from '../backend'
-
-const dataSourceConfig = {
-  text: 'ScientificName',
-  value: 'Id',
-}
+import PropTypes from 'prop-types'
 
 export default class FinnKode extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      dataSource: [],
+    this.queryNumber = 0
+  }
+
+  handleChange = (e, q) => {
+    if (q.length < 3) {
+      this.props.onSearchResults(null)
+      return
     }
+    this.queryNumber++
+    const currentQuery = this.queryNumber
+    backend.søkKode(q).then(items => {
+      if (currentQuery !== this.queryNumber) return // Abort stale query
+      this.props.onSearchResults(items)
+    })
   }
 
-  handleSelection = (chosenRequest, index) => {
-    this.props.onClick(chosenRequest.Id)
+  handleBlur = () => {
+    this.props.onBlur()
   }
 
-  handleUpdateInput = searchStr => {
-    backend.searchTaxons(searchStr).then(items =>
-      this.setState({
-        dataSource: items,
-      })
-    )
+  onKeyDown = e => {
+    if (e.keyCode === 27) {
+      this.handleBlur()
+      e.stopPropagation()
+    }
   }
 
   render() {
     return (
-      <AutoComplete
-        inputStyle={{ color: 'white' }}
-        floatingLabelStyle={{ color: 'white' }}
-        hintStyle={{ color: 'white' }}
-        autoFocus
+      <TextField
+        onBlur={this.handleBlur}
+        onKeyDown={this.onKeyDown}
         id={getNext()}
-        hintText="Søk på alt mulig"
-        filter={AutoComplete.caseInsensitiveFilter}
-        dataSource={this.state.dataSource}
-        dataSourceConfig={dataSourceConfig}
-        onUpdateInput={this.handleUpdateInput}
-        onNewRequest={this.handleSelection}
-        onKeyDown={this.props.onKeyDown}
-        onClose={this.props.onAbort}
-        floatingLabelText="Fritekstsøk"
+        hintText="Søk..."
+        onChange={this.handleChange}
         fullWidth={true}
+        autoFocus
       />
     )
   }
+}
+
+FinnKode.propTypes = {
+  onSearchResults: PropTypes.func,
 }
