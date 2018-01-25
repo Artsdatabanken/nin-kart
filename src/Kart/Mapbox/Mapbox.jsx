@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import ReactMapGL from 'react-map-gl'
-import ControlPanel from './control-panel'
+import Kontrollpanel from './control-panel'
 import './Mapbox.css'
 
 class Mapbox extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      mapStyle: '',
       viewport: {
         width: window.innerWidth,
         height: window.innerHeight,
@@ -59,10 +58,6 @@ class Mapbox extends Component {
     })
   }
 
-  handleStyleChange = mapStyle => {
-    this.setState({ mapStyle })
-  }
-
   handleViewportChange = viewport => this.setState({ viewport })
 
   onHover = e => {
@@ -72,11 +67,7 @@ class Mapbox extends Component {
       //console.log(r[0].properties.localId);
       this.map
         .getMap()
-        .setFilter('naturomrader6-hover', [
-          '==',
-          'localId',
-          r[0].properties.localId,
-        ])
+        .setFilter('nin-hover', ['==', 'localId', r[0].properties.localId])
     }
   }
 
@@ -89,7 +80,7 @@ class Mapbox extends Component {
   // };
 
   render() {
-    const { viewport, mapStyle } = this.state
+    const { viewport } = this.state
 
     return (
       <ReactMapGL
@@ -103,13 +94,20 @@ class Mapbox extends Component {
         onViewportChange={viewport => this.handleViewportChange(viewport)}
         mapboxApiAccessToken="pk.eyJ1IjoiYXJ0c2RhdGFiYW5rZW4iLCJhIjoiY2pjNjg2MzVzMHhycjJ3bnM5MHc4MHVzOCJ9.fLnCRyg-hCuTClyim1r-JQ"
         //mapStyle="mapbox://styles/artsdatabanken/cjc68pztl4sud2sp0s4wyy58q"
-        mapStyle={mapStyle}
+        mapStyle={this.props.mapStyle}
         minZoom={4}
       >
-        <ControlPanel
+        <Kontrollpanel
           containerComponent={this.props.containerComponent}
-          onChange={this.handleStyleChange}
-          onShowKodetre={this.props.onShowKodetre}
+          onChange={this.props.handleStyleChange}
+          handleShowKodetre={this.props.handleShowKodetre}
+          handleVisibilityChange={this.props.handleVisibilityChange}
+          handleColorChange={this.props.handleColorChange}
+          newLayer={this.props.newLayer}
+          categories={this.props.categories}
+          visibility={this.props.visibility}
+          color={this.props.color}
+          layerSelector={this.props.layerSelector}
         />
       </ReactMapGL>
     )

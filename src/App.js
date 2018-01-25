@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 
 import { getMuiTheme, MuiThemeProvider } from 'material-ui/styles'
-//import Kode from './Kodetre/Kode'
-//import Kart from './Kart/Kart'
 import Grunnkart from './Grunnkart/Grunnkart'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
