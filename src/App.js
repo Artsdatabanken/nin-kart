@@ -7,11 +7,17 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 
 const muiTheme = getMuiTheme({
   palette: {
+    primary1Color: '#f46c22',
+    accent1Color: '#9c9c9c',
+    accent2Color: '#c07541',
+    /*    alternateTextColor: '#999',
     primary1Color: '#ffffff',
-    alternateTextColor: '#222222',
-    primary3Color: '#c9862a',
-    accent1Color: '#4d4b4a',
+    primary2Color: '#9f9',
+    primary3Color: '#99f',
+//    primary3Color: '#c9862a',
+    accent1Color: '#9c9c9c',
     action: { active: 'rgba(255,255,255,0.87)' },
+  */
   },
   appBar: { height: 48 },
 })

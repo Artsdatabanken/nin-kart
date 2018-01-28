@@ -36,7 +36,7 @@ export default class FinnKode extends Component {
         onBlur={this.props.onBlur}
         onKeyDown={this.onKeyDown}
         id={getNext()}
-        hintText="Søk i Økologisk grunnkart..."
+        hintText="Søk i økologisk grunnkart..."
         onChange={this.handleChange}
         fullWidth={true}
         autoFocus

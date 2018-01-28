@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Kart from '../Kart/Kart'
 import Kode from '../Kodetre/Kode'
-import { Paper } from 'material-ui'
 import { fromJS } from 'immutable'
 import MAP_STYLE from '../Kart/style.json'
 
@@ -179,9 +178,9 @@ class Grunnkart extends Component {
           mapStyle={this.state.mapStyle}
         />
         {this.state.open && (
-          <Paper
-            zDepth={3}
+          <div
             style={{
+              backgroundColor: 'red',
               position: 'absolute',
               left: 8,
               top: 10,
@@ -195,7 +194,7 @@ class Grunnkart extends Component {
               toggleShowKodeListe={this.toggleShowKodeListe}
               showKodeListe={this.state.showKodeListe}
             />
-          </Paper>
+          </div>
         )}
       </div>
     )

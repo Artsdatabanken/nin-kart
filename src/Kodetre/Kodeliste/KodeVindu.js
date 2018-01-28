@@ -1,17 +1,18 @@
 import React from 'react'
-import { List } from 'material-ui/List'
 import Kodelisteelement from './Kodelisteelement'
 import Kodekort from './Kodekort'
 import StatistikkContainer from '../Statistikk/StatistikkContainer'
-import { Tabs, Tab } from 'material-ui/Tabs'
+import { Paper, List, Tabs, Tab } from 'material-ui'
 import Relasjon from './Relasjon'
 import FetchContainer from '../../FetchContainer'
 
 function KodeVindu(props) {
   return (
     <FetchContainer>
-      <div
+      <Paper
+        zDepth={4}
         style={{
+          height: '100%',
           position: 'fixed',
           left: 0,
           top: 0,
@@ -45,14 +46,14 @@ function KodeVindu(props) {
                 ))}
             </List>
           </Tab>
-          <Tab label="Statistikk">
+          <Tab label="Informasjon">
             <StatistikkContainer dataUrl={'/kode/' + props.data.kode} />
           </Tab>
-          <Tab label="Relatert">
+          <Tab label="Se også">
             <Relasjon relasjon={props.meta.relasjon} />
           </Tab>
         </Tabs>
-      </div>
+      </Paper>
     </FetchContainer>
   )
 }

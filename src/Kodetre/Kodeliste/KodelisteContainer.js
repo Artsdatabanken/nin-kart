@@ -65,19 +65,18 @@ class KodelisteContainer extends React.Component {
                 }}
               />
             ) : (
-              this.state.meta && (
-                //this.props.showKodeListe &&
-                <KodeVindu
-                  data={data}
-                  meta={this.state.meta}
-                  filterCode={this.props.filterCode}
-                  filter={this.props.filter}
-                  onGoToCode={this.props.onGoToCode}
-                  onAddLayer={this.props.onAddLayer}
-                  onCheck={this.props.onCheckChange}
-                  isSelected={this.props.isSelected}
-                />
-              )
+              //  this.state.meta &&
+              //this.props.showKodeListe &&
+              <KodeVindu
+                data={data}
+                meta={this.state.meta}
+                filterCode={this.props.filterCode}
+                filter={this.props.filter}
+                onGoToCode={this.props.onGoToCode}
+                onAddLayer={this.props.onAddLayer}
+                onCheck={this.props.onCheckChange}
+                isSelected={this.props.isSelected}
+              />
             )}
           </div>
         )}
