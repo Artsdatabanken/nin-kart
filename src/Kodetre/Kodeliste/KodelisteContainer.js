@@ -1,4 +1,5 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
 import KodeVindu from './KodeVindu'
 import TopBar from '../../TopBar/TopBar'
 import backend from '../../backend'
@@ -42,35 +43,45 @@ class KodelisteContainer extends React.Component {
     const data = this.state.data
     if (!data) return null
     return (
-      <div>
-        <TopBar
-          onGoBack={this.props.onGoBack}
-          toggleShowKodeListe={this.props.toggleShowKodeListe}
-          showKodeListe={this.props.showKodeListe}
-          title={data.kode}
-          parentId={this.state.parentId}
-          onSearchResults={items => {
-            this.setState({ searchResults: items })
-          }}
-        />
-        {this.state.searchResults ? (
-          <ResultatListe searchResults={this.state.searchResults} />
-        ) : (
-          this.state.meta && (
-            //this.props.showKodeListe &&
-            <KodeVindu
-              data={data}
-              meta={this.state.meta}
-              filterCode={this.props.filterCode}
-              filter={this.props.filter}
-              onGoToCode={this.props.onGoToCode}
-              onAddLayer={this.props.onAddLayer}
-              onCheck={this.props.onCheckChange}
-              isSelected={this.props.isSelected}
+      <Route
+        render={({ history }) => (
+          <div>
+            <TopBar
+              onGoBack={this.props.onGoBack}
+              toggleShowKodeListe={this.props.toggleShowKodeListe}
+              showKodeListe={this.props.showKodeListe}
+              title={data.kode}
+              parentId={this.state.parentId}
+              onSearchResults={items => {
+                this.setState({ searchResults: items })
+              }}
             />
-          )
+            {this.state.searchResults ? (
+              <ResultatListe
+                searchResults={this.state.searchResults}
+                onClick={kode => {
+                  history.push('/' + kode)
+                  this.setState({ searchResults: null })
+                }}
+              />
+            ) : (
+              this.state.meta && (
+                //this.props.showKodeListe &&
+                <KodeVindu
+                  data={data}
+                  meta={this.state.meta}
+                  filterCode={this.props.filterCode}
+                  filter={this.props.filter}
+                  onGoToCode={this.props.onGoToCode}
+                  onAddLayer={this.props.onAddLayer}
+                  onCheck={this.props.onCheckChange}
+                  isSelected={this.props.isSelected}
+                />
+              )
+            )}
+          </div>
         )}
-      </div>
+      />
     )
   }
 }
