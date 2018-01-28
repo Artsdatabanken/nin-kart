@@ -23,7 +23,7 @@ class App extends Component {
           <BrowserRouter>
             <Switch>
               <Route path="/:kode?" exact component={Grunnkart} />
-              {false && <Route component={RedirectToDefault} />}
+              {true && <Route component={RedirectToDefault} />}
             </Switch>
           </BrowserRouter>
         </MuiThemeProvider>

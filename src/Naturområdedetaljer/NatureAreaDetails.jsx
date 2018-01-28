@@ -4,7 +4,7 @@ import Detaljer from './Detaljer'
 import Kartlegging from './Kartlegging'
 import Omrader from './Omrader'
 import backend from '../backend'
-import FactList from '../FactList/FactList'
+import FactList from './FactList'
 
 const NatureAreaDetails = props => (
   <Paper>

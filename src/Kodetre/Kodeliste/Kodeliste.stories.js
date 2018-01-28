@@ -43,13 +43,14 @@ var dummyItems = [
   },
 ]
 
+const dummy = { data: { kode: 'NA', barn: dummyItems } }
 const meta = { barn: [], selv: {}, forelder: {}, relasjon: [] }
 
 storiesOf('Kodeliste', module)
   .addDecorator(muiTheme())
   .add('default', () => (
     <Kodeliste
-      items={dummyItems}
+      data={dummy}
       meta={meta}
       isSelected={action('selection')}
       onClick={action('click')}

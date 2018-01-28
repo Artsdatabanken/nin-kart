@@ -91,7 +91,6 @@ class KodelisteContainer extends React.Component {
             />
           )
         )}
-        {this.props.filter.map(item => <span key={item}>{item + ','}</span>)}
       </div>
     )
   }
