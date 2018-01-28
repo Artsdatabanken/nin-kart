@@ -23,13 +23,9 @@ export default class FinnKode extends Component {
     })
   }
 
-  handleBlur = () => {
-    this.props.onBlur()
-  }
-
   onKeyDown = e => {
     if (e.keyCode === 27) {
-      this.handleBlur()
+      this.props.onBlur()
       e.stopPropagation()
     }
   }
@@ -37,13 +33,15 @@ export default class FinnKode extends Component {
   render() {
     return (
       <TextField
-        onBlur={this.handleBlur}
+        onBlur={this.props.onBlur}
         onKeyDown={this.onKeyDown}
         id={getNext()}
-        hintText="Søk..."
+        hintText="Søk i Økologisk grunnkart..."
         onChange={this.handleChange}
         fullWidth={true}
         autoFocus
+        underlineShow={false}
+        style={{ height: 48, cursor: 'text' }}
       />
     )
   }

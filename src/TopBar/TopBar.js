@@ -38,7 +38,7 @@ class TopBar extends Component {
       <div>
         <AppBar
           title={
-            this.state.showSearchField ? (
+            true || this.state.showSearchField ? (
               <FinnKode
                 onSearchResults={this.props.onSearchResults}
                 onBlur={() => this.setState({ showSearchField: false })}
@@ -48,18 +48,26 @@ class TopBar extends Component {
             )
           }
           iconElementLeft={
-            <IconButton onClick={this.props.onGoBack}>
-              <NavigationBack />
-            </IconButton>
+            this.props.showKodeListe ? (
+              <IconButton onClick={this.props.onGoBack}>
+                <NavigationBack />
+              </IconButton>
+            ) : (
+              <IconButton onClick={this.props.onMainMenu}>
+                <Hamburger />
+              </IconButton>
+            )
           }
           iconElementRight={
             <React.Fragment>
               <IconButton onClick={this.handleSearchButtonClick}>
                 <Search />
               </IconButton>
-              <IconButton onClick={this.props.toggleShowKodeListe}>
-                {this.props.showKodeListe ? <CloseIcon /> : <Hamburger />}
-              </IconButton>
+              {this.props.showKodeListe && (
+                <IconButton onClick={this.props.toggleShowKodeListe}>
+                  <CloseIcon />
+                </IconButton>
+              )}
             </React.Fragment>
           }
         />

@@ -185,6 +185,7 @@ class Grunnkart extends Component {
               position: 'absolute',
               left: 8,
               top: 10,
+              width: 400,
             }}
           >
             <Kode
