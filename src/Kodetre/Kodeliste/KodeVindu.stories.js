@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import KodeVindu from './Kodeliste'
+import KodeVindu from './KodeVindu'
 import { muiTheme } from 'storybook-addon-material-ui'
 import { action } from '@storybook/addon-actions/dist/index'
 
