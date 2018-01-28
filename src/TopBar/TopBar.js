@@ -4,7 +4,7 @@ import IconButton from 'material-ui/IconButton'
 import Search from 'material-ui/svg-icons/action/search'
 import NavigationBack from 'material-ui/svg-icons/navigation/arrow-back'
 import CloseIcon from 'material-ui/svg-icons/navigation/close'
-import Hamburger from 'material-ui/svg-icons/action/reorder'
+import Hamburger from 'material-ui/svg-icons/navigation/menu'
 import FinnKode from '../FinnKode/FinnKode'
 
 class TopBar extends Component {

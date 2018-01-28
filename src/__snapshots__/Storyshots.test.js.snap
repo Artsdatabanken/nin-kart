@@ -313,7 +313,7 @@ exports[`Storyshots App Bar down into tree 1`] = `
                     viewBox="0 0 24 24"
                   >
                     <path
-                      d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
+                      d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
                     />
                   </svg>
                 </div>
@@ -677,7 +677,7 @@ exports[`Storyshots App Bar root 1`] = `
                     viewBox="0 0 24 24"
                   >
                     <path
-                      d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
+                      d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
                     />
                   </svg>
                 </div>
