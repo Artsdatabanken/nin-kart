@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import Kodeliste from './Kodeliste'
+import KodeVindu from './KodeVindu'
 import { muiTheme } from 'storybook-addon-material-ui'
 import { action } from '@storybook/addon-actions/dist/index'
 
@@ -46,10 +46,10 @@ var dummyItems = [
 const dummy = { data: { kode: 'NA', barn: dummyItems } }
 const meta = { barn: [], selv: {}, forelder: {}, relasjon: [] }
 
-storiesOf('Kodeliste', module)
+storiesOf('KodeVindu', module)
   .addDecorator(muiTheme())
   .add('default', () => (
-    <Kodeliste
+    <KodeVindu
       data={dummy}
       meta={meta}
       isSelected={action('selection')}

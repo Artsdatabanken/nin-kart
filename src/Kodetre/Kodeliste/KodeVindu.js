@@ -7,10 +7,18 @@ import { Tabs, Tab } from 'material-ui/Tabs'
 import Relasjon from './Relasjon'
 import FetchContainer from '../../FetchContainer'
 
-function Kodeliste(props) {
+function KodeVindu(props) {
   return (
     <FetchContainer>
-      <div style={{ maxWidth: '500px' }}>
+      <div
+        style={{
+          position: 'fixed',
+          left: 0,
+          top: 0,
+          width: 416,
+          overflow: 'auto',
+        }}
+      >
         {props.data && (
           <Kodekort
             {...props.meta}
@@ -49,4 +57,4 @@ function Kodeliste(props) {
   )
 }
 
-export default Kodeliste
+export default KodeVindu

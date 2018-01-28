@@ -9,12 +9,14 @@ const muiTheme = getMuiTheme({
   palette: {
     primary1Color: '#ffffff',
     alternateTextColor: '#222222',
-    //    primary1Color: '#c9862a',
+    primary3Color: '#c9862a',
     accent1Color: '#4d4b4a',
     action: { active: 'rgba(255,255,255,0.87)' },
   },
+  appBar: { height: 48 },
 })
 
+console.log(muiTheme)
 class App extends Component {
   render() {
     return (
@@ -23,7 +25,7 @@ class App extends Component {
           <BrowserRouter>
             <Switch>
               <Route path="/:kode?" exact component={Grunnkart} />
-              {true && <Route component={RedirectToDefault} />}
+              {false && <Route component={RedirectToDefault} />}
             </Switch>
           </BrowserRouter>
         </MuiThemeProvider>

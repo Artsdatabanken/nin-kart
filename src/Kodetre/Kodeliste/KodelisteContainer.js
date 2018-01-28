@@ -1,9 +1,8 @@
 import React from 'react'
-import Kodeliste from './Kodeliste'
+import KodeVindu from './KodeVindu'
 import TopBar from '../../TopBar/TopBar'
 import backend from '../../backend'
-import { List, ListItem, Avatar } from 'material-ui'
-import { Route } from 'react-router-dom'
+import ResultatListe from './ResultatListe'
 
 const dummyMeta = {
   forelder: {
@@ -14,7 +13,7 @@ const dummyMeta = {
   selv: {
     kode: 'Kode',
     tittel: 'Tittel',
-    media: 'https://artsdatabanken.no/Media/F21489?mode=540x540',
+    media: 'https://artsdatabanken.no/Media/F4763?mode=512x512',
   },
   barn: {},
   relasjon: [],
@@ -55,31 +54,11 @@ class KodelisteContainer extends React.Component {
           }}
         />
         {this.state.searchResults ? (
-          <List style={{ overflow: 'auto', maxHeight: 600 }}>
-            <Route
-              render={({ history }) =>
-                this.state.searchResults.map(item => (
-                  <ListItem
-                    style={{ width: 500, pointer: 'hand' }}
-                    onClick={() => {
-                      history.push('/' + item.code)
-                      this.setState({ searchResults: null })
-                    }}
-                    key={item.code}
-                    primaryText={item.name}
-                    secondaryText={item.code}
-                    leftAvatar={
-                      <Avatar src="https://www.artsdatabanken.no/Media/F1698?mode=480x480" />
-                    }
-                  />
-                ))
-              }
-            />
-          </List>
+          <ResultatListe searchResults={this.state.searchResults} />
         ) : (
-          this.state.meta &&
-          this.props.showKodeListe && (
-            <Kodeliste
+          this.state.meta && (
+            //this.props.showKodeListe &&
+            <KodeVindu
               data={data}
               meta={this.state.meta}
               filterCode={this.props.filterCode}
