@@ -1,12 +1,14 @@
 import React from 'react'
 import {
+  FloatingActionButton,
   Card,
   CardActions,
   CardHeader,
   CardMedia,
   CardTitle,
   CardText,
-} from 'material-ui/Card'
+} from 'material-ui'
+import ContentAdd from 'material-ui/svg-icons/content/add'
 import { IconButton, FlatButton } from 'material-ui'
 import InfoOutline from 'material-ui/svg-icons/action/info-outline'
 import StarBorder from 'material-ui/svg-icons/toggle/star-border'
@@ -52,6 +54,17 @@ class Kodekort extends React.Component {
           subtitle={data.kode}
           subtitleColor={muiTheme.palette.primary1Color}
         >
+          <FloatingActionButton
+            style={{
+              position: 'absolute',
+              left: 340,
+              top: -26,
+            }}
+            onClick={() => this.props.onAddLayer(data.kode)}
+          >
+            <ContentAdd />
+          </FloatingActionButton>
+
           <IconButton
             href={selv.infoUrl}
             style={{
@@ -88,10 +101,6 @@ class Kodekort extends React.Component {
           >
             {this.state.favorite ? <Star /> : <StarBorder />}
           </IconButton>
-          <FlatButton
-            label="Vis i kart"
-            onClick={() => this.props.onAddLayer(data.kode)}
-          />
         </CardActions>
       </Card>
     )
