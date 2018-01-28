@@ -18,7 +18,6 @@ class FetchContainer extends React.Component {
   state = { loading: 0 }
 
   render() {
-    const isloading = this.state.loading > 0
     const childrenWithProps = React.Children.map(this.props.children, child =>
       React.cloneElement(child, {
         isloading: this.state.loading > 0 ? 'true' : undefined,
