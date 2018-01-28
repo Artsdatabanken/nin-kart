@@ -37,6 +37,7 @@ class TopBar extends Component {
     return (
       <div>
         <AppBar
+          style={{ backgroundColor: '#ffffff' }}
           title={
             true || this.state.showSearchField ? (
               <FinnKode
@@ -54,18 +55,18 @@ class TopBar extends Component {
               </IconButton>
             ) : (
               <IconButton onClick={this.props.onMainMenu}>
-                <Hamburger />
+                <Hamburger color="#5f5f5f" />
               </IconButton>
             )
           }
           iconElementRight={
             <React.Fragment>
               <IconButton onClick={this.handleSearchButtonClick}>
-                <Search />
+                <Search color="#b4b4b4" />
               </IconButton>
               {this.props.showKodeListe && (
                 <IconButton onClick={this.props.toggleShowKodeListe}>
-                  <CloseIcon />
+                  <CloseIcon color="#b4b4b4" />
                 </IconButton>
               )}
             </React.Fragment>

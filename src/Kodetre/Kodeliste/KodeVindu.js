@@ -7,7 +7,6 @@ import Relasjon from './Relasjon'
 import FetchContainer from '../../FetchContainer'
 
 function KodeVindu(props) {
-  console.log(props.data)
   return (
     <FetchContainer>
       <Paper
@@ -47,10 +46,10 @@ function KodeVindu(props) {
                 ))}
             </List>
           </Tab>
-          <Tab label="Statistikk">
+          <Tab label="Informasjon">
             <StatistikkContainer dataUrl={'/kode/' + props.data.kode} />
           </Tab>
-          <Tab label="Relatert">
+          <Tab label="Se også">
             <Relasjon relasjon={props.meta.relasjon} />
           </Tab>
         </Tabs>

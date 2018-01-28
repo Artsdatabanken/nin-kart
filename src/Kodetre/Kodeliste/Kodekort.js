@@ -9,7 +9,7 @@ import {
   CardText,
 } from 'material-ui'
 import ContentAdd from 'material-ui/svg-icons/content/add'
-import { IconButton, FlatButton } from 'material-ui'
+import { IconButton } from 'material-ui'
 import InfoOutline from 'material-ui/svg-icons/action/info-outline'
 import StarBorder from 'material-ui/svg-icons/toggle/star-border'
 import Star from 'material-ui/svg-icons/toggle/star'
@@ -47,12 +47,12 @@ class Kodekort extends React.Component {
         </CardMedia>
         <CardTitle
           style={{
-            backgroundColor: muiTheme.palette.primary3Color,
+            backgroundColor: muiTheme.palette.accent2Color,
           }}
           title={data.navn}
-          titleColor={muiTheme.palette.primary1Color}
+          titleColor={muiTheme.palette.alternateTextColor}
           subtitle={data.kode}
-          subtitleColor={muiTheme.palette.primary1Color}
+          subtitleColor={muiTheme.palette.alternateTextColor}
         >
           <FloatingActionButton
             style={{
@@ -65,16 +65,35 @@ class Kodekort extends React.Component {
             <ContentAdd />
           </FloatingActionButton>
 
-          <IconButton
-            href={selv.infoUrl}
+          <CardActions
             style={{
               position: 'absolute',
+              bottom: 0,
               right: 0,
-              top: 12,
             }}
           >
-            <InfoOutline color="#eee" />
-          </IconButton>
+            <IconButton
+              href={selv.infoUrl}
+              style={{
+                float: 'right',
+              }}
+            >
+              <InfoOutline color="#eee" />
+            </IconButton>
+            <IconButton style={{ float: 'right' }}>
+              <Share color="#eee" />
+            </IconButton>
+            <IconButton
+              style={{ float: 'right' }}
+              onClick={() => this.toggleFavorite(data.kode)}
+            >
+              {this.state.favorite ? (
+                <Star color="#eee" />
+              ) : (
+                <StarBorder color="#eee" />
+              )}
+            </IconButton>
+          </CardActions>
         </CardTitle>
         {false && (
           <CardHeader
@@ -91,17 +110,6 @@ class Kodekort extends React.Component {
           />
         )}
         <CardText>{selv.beskrivelse}</CardText>
-        <CardActions>
-          <IconButton style={{ float: 'right' }}>
-            <Share />
-          </IconButton>
-          <IconButton
-            style={{ float: 'right' }}
-            onClick={() => this.toggleFavorite(data.kode)}
-          >
-            {this.state.favorite ? <Star /> : <StarBorder />}
-          </IconButton>
-        </CardActions>
       </Card>
     )
   }
