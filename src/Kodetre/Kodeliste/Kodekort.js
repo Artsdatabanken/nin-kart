@@ -17,7 +17,6 @@ class Kodekort extends React.Component {
   state = {}
 
   componentWillReceiveProps(nextProps, props) {
-    console.log(props, nextProps)
     this.setState({ favorite: this.isFavorite(nextProps.data.kode) })
   }
 

@@ -96,6 +96,7 @@ const dummyMeta = {
 }
 
 jest.mock('./backend', () => ({
+  hentKode: jest.fn(),
   getToken: jest.fn(),
   getNatureAreaByLocalId: jest.fn(),
   getMetadataByNatureAreaLocalId: jest.fn(),
