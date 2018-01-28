@@ -19,10 +19,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --coverage",
     "precommit": "lint-staged",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public -o build/storybook"
+    "build-storybook": "build-storybook -s public -o build/storybook",
+    "report-coverage": "coveralls < coverage/lcov.info"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.16",
@@ -35,14 +36,15 @@
     "storybook-addon-material-ui": "^0.8.2"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "prettier --write",
-      "git add"
-    ]
+    "src/**/*.{js,jsx,json,css}": ["prettier --write", "git add"]
   },
   "prettier": {
     "semi": false,
     "trailingComma": "es5",
     "singleQuote": true
+  },
+  "jest": {
+    "coverageReporters": ["lcov"],
+    "collectCoverageFrom": ["src/**/*.{js}", "!src/**/__tests__/*.{js}"]
   }
 }
