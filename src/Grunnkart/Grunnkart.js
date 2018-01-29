@@ -3,7 +3,7 @@ import Kart from '../Kart/Kart'
 import Kode from '../Kodetre/Kode'
 import { fromJS } from 'immutable'
 import MAP_STYLE from '../Kart/style.json'
-
+import MainDrawer from './MainDrawer'
 const defaultMapStyle = fromJS(MAP_STYLE)
 
 // Layer color class by type
@@ -22,6 +22,7 @@ class Grunnkart extends Component {
       mapStyle: '',
       kode: '',
       open: true,
+      showMainDrawer: false,
       categories: [
         'Kalk',
         'Alle naturområder',
@@ -60,7 +61,7 @@ class Grunnkart extends Component {
     this.handleAddLayer = this.handleAddLayer.bind(this)
     this.handleColorChange = this.handleColorChange.bind(this)
     this.handleVisibilityChange = this.handleVisibilityChange.bind(this)
-    this.toggleShowKodeListe = this.toggleShowKodeListe.bind(this)
+    this.handleToggleShowKodeListe = this.handleToggleShowKodeListe.bind(this)
   }
 
   makeLayer(name, code, visibel, source) {
@@ -117,7 +118,7 @@ class Grunnkart extends Component {
     this.updateMapStyle({ ...this.state, visibility })
   }
 
-  toggleShowKodeListe() {
+  handleToggleShowKodeListe() {
     this.setState({ showKodeListe: !this.state.showKodeListe })
   }
 
@@ -177,25 +178,35 @@ class Grunnkart extends Component {
           color={this.state.color}
           mapStyle={this.state.mapStyle}
         />
-        {this.state.open && (
-          <div
-            style={{
-              backgroundColor: 'red',
-              position: 'absolute',
-              left: 8,
-              top: 10,
-              width: 400,
-            }}
-          >
-            <Kode
-              kode={this.props.match.params.kode}
-              history={this.props.history}
-              onAddLayer={this.handleAddLayer}
-              toggleShowKodeListe={this.toggleShowKodeListe}
-              showKodeListe={this.state.showKodeListe}
-            />
-          </div>
-        )}
+        <MainDrawer
+          open={this.state.showMainDrawer}
+          onToggleMainDrawer={() =>
+            this.setState({ showMainDrawer: !this.state.showMainDrawer })
+          }
+        />
+        {this.state.open &&
+          !this.state.showMainDrawer && (
+            <div
+              style={{
+                backgroundColor: 'red',
+                position: 'absolute',
+                left: 8,
+                top: 10,
+                width: 400,
+              }}
+            >
+              <Kode
+                kode={this.props.match.params.kode}
+                history={this.props.history}
+                onAddLayer={this.handleAddLayer}
+                onToggleShowKodeListe={this.handleToggleShowKodeListe}
+                onToggleMainDrawer={() =>
+                  this.setState({ showMainDrawer: !this.state.showMainDrawer })
+                }
+                showKodeListe={this.state.showKodeListe}
+              />
+            </div>
+          )}
       </div>
     )
   }

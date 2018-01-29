@@ -1905,7 +1905,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                 <div
                   style={
                     Object {
-                      "paddingBottom": 8,
+                      "paddingBottom": 0,
                     }
                   }
                 >
@@ -2081,7 +2081,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                     <div
                       style={
                         Object {
-                          "bottom": 0,
+                          "bottom": -10,
                           "muiPrepared": true,
                           "padding": 8,
                           "position": "absolute",
@@ -2301,16 +2301,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                       </button>
                     </div>
                   </div>
-                  <div
-                    style={
-                      Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontSize": 14,
-                        "muiPrepared": true,
-                        "padding": 16,
-                      }
-                    }
-                  />
                 </div>
               </div>
               <div
