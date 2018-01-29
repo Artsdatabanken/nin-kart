@@ -54,7 +54,7 @@ class TopBar extends Component {
                 <NavigationBack />
               </IconButton>
             ) : (
-              <IconButton onClick={this.props.onMainMenu}>
+              <IconButton onClick={this.props.onToggleMainDrawer}>
                 <Hamburger color="#5f5f5f" />
               </IconButton>
             )

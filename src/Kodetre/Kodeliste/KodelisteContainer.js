@@ -48,7 +48,8 @@ class KodelisteContainer extends React.Component {
           <div>
             <TopBar
               onGoBack={this.props.onGoBack}
-              toggleShowKodeListe={this.props.toggleShowKodeListe}
+              onToggleShowKodeListe={this.props.onToggleShowKodeListe}
+              onToggleMainDrawer={this.props.onToggleMainDrawer}
               showKodeListe={this.props.showKodeListe}
               title={data.kode}
               parentId={this.state.parentId}
@@ -63,9 +64,8 @@ class KodelisteContainer extends React.Component {
                   history.push('/' + kode)
                   this.setState({ searchResults: null })
                 }}
-              />
+              /> //  this.state.meta &&
             ) : (
-              //  this.state.meta &&
               //this.props.showKodeListe &&
               <KodeVindu
                 data={data}

@@ -37,7 +37,7 @@ class Kodekort extends React.Component {
   render() {
     const { data, forelder, selv, muiTheme } = this.props
     return (
-      <Card>
+      <Card containerStyle={{ paddingBottom: 0 }}>
         <CardMedia>
           <img
             src={selv.media}
@@ -68,7 +68,7 @@ class Kodekort extends React.Component {
           <CardActions
             style={{
               position: 'absolute',
-              bottom: 0,
+              bottom: -10,
               right: 0,
             }}
           >
@@ -109,7 +109,7 @@ class Kodekort extends React.Component {
             onClick={() => this.props.onGoToCode(data.forelder.kode)}
           />
         )}
-        <CardText>{selv.beskrivelse}</CardText>
+        {false && <CardText>{selv.beskrivelse}</CardText>}
       </Card>
     )
   }
