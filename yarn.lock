@@ -7270,8 +7270,8 @@ react-inspector@^2.2.2:
     is-dom "^1.0.9"
 
 react-map-gl@^3.1.5:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/react-map-gl/-/react-map-gl-3.2.0.tgz#44871578c7ea3094d387ce65fcac3a3e2099b445"
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/react-map-gl/-/react-map-gl-3.2.1.tgz#5fd5d35e7746cb8e03a814c31c6bed28c7c4abc6"
   dependencies:
     babel-runtime "^6.23.0"
     bowser "^1.2.0"
