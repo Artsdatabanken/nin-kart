@@ -184,28 +184,29 @@ class Grunnkart extends Component {
             this.setState({ showMainDrawer: !this.state.showMainDrawer })
           }
         />
-        {this.state.open && (
-          <div
-            style={{
-              backgroundColor: 'red',
-              position: 'absolute',
-              left: 8,
-              top: 10,
-              width: 400,
-            }}
-          >
-            <Kode
-              kode={this.props.match.params.kode}
-              history={this.props.history}
-              onAddLayer={this.handleAddLayer}
-              onToggleShowKodeListe={this.handleToggleShowKodeListe}
-              onToggleMainDrawer={() =>
-                this.setState({ showMainDrawer: !this.state.showMainDrawer })
-              }
-              showKodeListe={this.state.showKodeListe}
-            />
-          </div>
-        )}
+        {this.state.open &&
+          !this.state.showMainDrawer && (
+            <div
+              style={{
+                backgroundColor: 'red',
+                position: 'absolute',
+                left: 8,
+                top: 10,
+                width: 400,
+              }}
+            >
+              <Kode
+                kode={this.props.match.params.kode}
+                history={this.props.history}
+                onAddLayer={this.handleAddLayer}
+                onToggleShowKodeListe={this.handleToggleShowKodeListe}
+                onToggleMainDrawer={() =>
+                  this.setState({ showMainDrawer: !this.state.showMainDrawer })
+                }
+                showKodeListe={this.state.showKodeListe}
+              />
+            </div>
+          )}
       </div>
     )
   }

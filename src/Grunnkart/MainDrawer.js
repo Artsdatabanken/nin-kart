@@ -9,8 +9,12 @@ class MainDrawer extends Component {
         open={this.props.open}
         onRequestChange={this.props.onToggleMainDrawer}
       >
-        <MenuItem>Menu Item</MenuItem>
-        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Basiskart</MenuItem>
+        <MenuItem>Aktive kartlag</MenuItem>
+        <MenuItem>Del eller bygg inn kartet</MenuItem>
+        <MenuItem>Skriv ut</MenuItem>
+        <MenuItem>Send tilbakemeldinger</MenuItem>
+        <MenuItem>Søkeinnstillinger</MenuItem>
       </Drawer>
     )
   }
