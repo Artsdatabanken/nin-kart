@@ -37,7 +37,10 @@
     "storybook-addon-material-ui": "^0.8.2"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": ["prettier --write", "git add"]
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "prettier": {
     "semi": false,
@@ -45,7 +48,12 @@
     "singleQuote": true
   },
   "jest": {
-    "coverageReporters": ["lcov"],
-    "collectCoverageFrom": ["src/**/*.{js}", "!src/**/__tests__/*.{js}"]
+    "coverageReporters": [
+      "lcov"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js}",
+      "!src/**/__tests__/*.{js}"
+    ]
   }
 }
