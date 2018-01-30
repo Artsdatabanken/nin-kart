@@ -5,38 +5,37 @@ import Flag from 'material-ui/svg-icons/content/flag'
 import Favorite from 'material-ui/svg-icons/action/favorite'
 
 class Omrader extends Component {
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.areas) {
+      for (let j = 0; j < nextProps.areas.length; j++) {
+        let area = nextProps.areas[j]
+        switch (area.type) {
+          case 2:
+            this.setState({ fylke: area.name })
+            break
+          case 1:
+            this.setState({ kommune: area.name })
+            break
+          case 3:
+            this.setState({ verneomrade: area.name })
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.areas) {
-            for (let j = 0; j < nextProps.areas.length; j++) {
-                let area = nextProps.areas[j];
-                switch (area.type) {
-                    case 1:
-                        this.setState({fylke: area.name});
-                        break;
-                    case 2:
-                        this.setState({kommune: area.name});
-                        break;
-                    case 3:
-                        this.setState({verneomrade: area.name});
+            // if (area.code && area.code.indexOf("Naturbase ") === 0 ) {
+            //     vm.conservationAreaCode(config.factSheetBaseUrl + area.code.substr(10));
+            // }
 
-                        // if (area.code && area.code.indexOf("Naturbase ") === 0 ) {
-                        //     vm.conservationAreaCode(config.factSheetBaseUrl + area.code.substr(10));
-                        // }
-
-                        break;
-                    default:
-                        break;
-                }
-            }
+            break
+          default:
+            break
         }
+      }
     }
+  }
 
-    state = {
-        fylke: "",
-        kommune: "",
-        verneomrade: ""
-    };
+  state = {
+    fylke: '',
+    kommune: '',
+    verneomrade: '',
+  }
 
   render() {
     return (
@@ -52,10 +51,10 @@ class Omrader extends Component {
           leftIcon={<Nature />}
         />
         <ListItem
-            primaryText={this.state.verneomrade}
-            secondaryText="Verneområde"
-            leftIcon={<Favorite />}>
-        </ListItem>
+          primaryText={this.state.verneomrade}
+          secondaryText="Verneområde"
+          leftIcon={<Favorite />}
+        />
       </div>
     )
   }

@@ -11,12 +11,14 @@ export default class Kontrollpanel extends PureComponent {
           onChange={this.props.handleVisibilityChange.bind(this, name)}
         />
         <label>{name}</label>
-        <input
-          type="color"
-          value={this.props.color[name]}
-          disabled={!this.props.visibility[name]}
-          onChange={this.props.handleColorChange.bind(this, name)}
-        />
+        {this.props.color[name] && (
+          <input
+            type="color"
+            value={this.props.color[name]}
+            disabled={!this.props.visibility[name]}
+            onChange={this.props.handleColorChange.bind(this, name)}
+          />
+        )}
       </div>
     )
   }

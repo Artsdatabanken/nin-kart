@@ -24,7 +24,6 @@ class Grunnkart extends Component {
       open: true,
       showMainDrawer: false,
       categories: [
-        'Kalk',
         'Alle naturområder',
         'Rødlistede',
         'Bioklimatiske soner',
@@ -32,7 +31,6 @@ class Grunnkart extends Component {
         'Ultramafisk',
       ],
       visibility: {
-        Kalk: false,
         'Alle naturområder': false,
         Rødlistede: false,
         'Bioklimatiske soner': false,
@@ -40,7 +38,6 @@ class Grunnkart extends Component {
         Ultramafisk: false,
       },
       color: {
-        kalk: undefined,
         'Alle naturområder': undefined,
         Rødlistede: undefined,
         'Bioklimatiske soner': undefined,
@@ -49,7 +46,6 @@ class Grunnkart extends Component {
       },
       // Layer id patterns by category
       layerSelector: {
-        Kalk: /ngu-kalk/,
         'Alle naturområder': /nin/,
         Rødlistede: /Rodlistede/,
         'Bioklimatiske soner': /soner2017-4326-6fcqhb/,
@@ -64,9 +60,9 @@ class Grunnkart extends Component {
     this.handleToggleShowKodeListe = this.handleToggleShowKodeListe.bind(this)
   }
 
-  makeLayer(name, code, visibel, source) {
+  makeLayer(name, code, visible, source) {
     const color = { ...this.state.color, [name]: '#003399' }
-    const visibility = { ...this.state.visibility, [name]: visibel }
+    const visibility = { ...this.state.visibility, [name]: visible }
     const layerSelector = {
       ...this.state.layerSelector,
       [name]: new RegExp(code),
@@ -92,9 +88,45 @@ class Grunnkart extends Component {
     })
   }
 
-  addLayer(code) {
+  makeRangeLayer(name, kode, visible, source, property) {
+    const color = { ...this.state.color, [name]: undefined }
+    const visibility = { ...this.state.visibility, [name]: visible }
+    const layerSelector = {
+      ...this.state.layerSelector,
+      [name]: new RegExp(kode),
+    }
+    const categories = [...this.state.categories, ...[name]]
+    this.setState({ categories, visibility, color, layerSelector })
+
+    return fromJS({
+      id: name,
+      type: 'fill',
+      metadata: {},
+      source: 'composite',
+      'source-layer': source,
+      layout: {},
+      paint: {
+        'fill-color': {
+          base: 1,
+          type: 'exponential',
+          property: property,
+          stops: [
+            [0, 'hsla(0, 0%, 0%, 0)'],
+            [1, 'hsla(0, 6%, 94%, 0.6)'],
+            [2, 'hsla(0, 19%, 88%, 0.6)'],
+            [3, 'hsla(0, 35%, 80%, 0.6)'],
+            [4, 'hsla(0, 59%, 63%, 0.6)'],
+            [5, 'hsla(0, 84%, 32%, 0.6)'],
+          ],
+          default: 'hsl(0, 4%, 94%)',
+        },
+      },
+    })
+  }
+
+  addLayer(name, code) {
     this._defaultLayers = this._defaultLayers.push(
-      this.makeLayer(code, code, true, 'naturomrader6')
+      this.makeLayer(name, code, true, 'naturomrader6')
     )
     this.updateMapStyle({ ...this.state })
   }
@@ -151,16 +183,16 @@ class Grunnkart extends Component {
     this.handleStyleChange(defaultMapStyle.set('layers', layers))
   }
 
-  handleAddLayer(kode) {
+  handleAddLayer(navn, kode) {
     this.setState({
       kode: kode,
     })
-    this.addLayer(kode)
+    this.addLayer(navn, kode)
     console.log(kode)
   }
 
   componentDidMount() {
-    this._defaultLayers = defaultMapStyle.get('layers')
+    this._defaultLayers = defaultMapStyle.get('layers') //.push(this.makeRangeLayer('Kalk', 'ngu-kalk', false, 'kalk', 'KALKINNHOLD_HOVEDBERGART'))
     this.updateMapStyle({ ...this.state })
   }
 

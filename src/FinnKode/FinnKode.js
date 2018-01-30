@@ -11,7 +11,7 @@ export default class FinnKode extends Component {
   }
 
   handleChange = (e, q) => {
-    if (q.length < 3) {
+    if (q.length < 2) {
       this.props.onSearchResults(null)
       return
     }
