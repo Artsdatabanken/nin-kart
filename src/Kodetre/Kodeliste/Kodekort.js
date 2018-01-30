@@ -51,7 +51,12 @@ class Kodekort extends React.Component {
           }}
           title={data.navn}
           titleColor={muiTheme.palette.alternateTextColor}
-          subtitle={data.kode}
+          subtitle={
+            <div onClick={() => this.props.onGoToCode(data.forelder.kode)}>
+              {data.forelder ? data.forelder.navn : ''}
+            </div>
+          }
+          subtitleStyle={{ 'text-decoration': 'underline', cursor: 'pointer' }}
           subtitleColor={muiTheme.palette.alternateTextColor}
         >
           <FloatingActionButton
