@@ -1967,12 +1967,20 @@ exports[`Storyshots KodeVindu default 1`] = `
                       style={
                         Object {
                           "color": "#ffffff",
+                          "cursor": "pointer",
                           "display": "block",
                           "fontSize": 14,
                           "muiPrepared": true,
+                          "text-decoration": "underline",
                         }
                       }
-                    />
+                    >
+                      <div
+                        onClick={[Function]}
+                      >
+                        
+                      </div>
+                    </span>
                     <div
                       className={undefined}
                       style={
