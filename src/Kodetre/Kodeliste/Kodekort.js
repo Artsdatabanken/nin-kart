@@ -60,7 +60,7 @@ class Kodekort extends React.Component {
               left: 340,
               top: -26,
             }}
-            onClick={() => this.props.onAddLayer(data.kode)}
+            onClick={() => this.props.onAddLayer(data.navn, data.kode)}
           >
             <ContentAdd />
           </FloatingActionButton>

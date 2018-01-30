@@ -23,6 +23,7 @@ function KodeVindu(props) {
         {props.data && (
           <Kodekort
             {...props.meta}
+            {...props.info}
             onGoToCode={props.onGoToCode}
             onAddLayer={props.onAddLayer}
             data={props.data}
