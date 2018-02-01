@@ -24,6 +24,7 @@ class Kart extends Component {
       natureAreas: '',
       metadata: '',
       open: false,
+      pointInfo: {},
     }
 
     this.isSelected = this.isSelected.bind(this)
@@ -42,6 +43,7 @@ class Kart extends Component {
   }
 
   onClick = point => {
+    this.goFetchPointInfo(point.lngLat)
     let localId = ''
     if (
       point.features &&
@@ -52,8 +54,23 @@ class Kart extends Component {
       localId = point.features[0].properties.localId
       this.goFetchInfo(localId)
       this.setState({ open: true })
+    } else {
+      this.setState({
+        natureArea: '',
+        natureArea: '',
+      })
     }
     //alert(point.lngLat + "\n" + localId)
+  }
+
+  goFetchPointInfo(lngLat) {
+    backend.hentPunktInfo(lngLat).then(
+      data =>
+        this.setState({
+          pointInfo: data,
+        })
+      // alert(JSON.stringify(data))
+    )
   }
 
   goFetchInfo(id) {
@@ -139,6 +156,7 @@ class Kart extends Component {
             <NatureAreaDetails
               natureArea={this.state.natureArea}
               metadata={this.state.metadata}
+              pointInfo={this.state.pointInfo}
             />
             <FilterTree
               natureAreas={this.state.natureAreas}

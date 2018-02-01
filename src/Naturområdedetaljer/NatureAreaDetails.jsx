@@ -5,11 +5,16 @@ import Kartlegging from './Kartlegging'
 import Omrader from './Omrader'
 import backend from '../backend'
 import FactList from './FactList'
+import PointInfo from './PointInfo'
 
 const NatureAreaDetails = props => (
   <Paper>
     <Omrader areas={props.natureArea.areas} />
     {/*<Naturniva level={backend.NatureLevelNames[props.natureArea.nivå]}/>*/}
+    <PointInfo 
+      pointInfo={props.pointInfo}
+    />
+    
     <FactList
       items={[
         {

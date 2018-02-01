@@ -101,6 +101,14 @@ class Backend {
     )
   }
 
+  static async hentPunktInfo(lngLat) {
+    return this.getPromise(
+      `https://adb-nin-raster.azurewebsites.net/v1/point/${lngLat[0]}/${
+        lngLat[1]
+      }`
+    )
+  }
+
   static async hentKodeMeta(kode) {
     return this.getPromise(`/kode/${kode}.json`)
   }
