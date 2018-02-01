@@ -1,7 +1,7 @@
 import React from 'react'
 import { Paper } from 'material-ui'
 import Detaljer from './Detaljer'
-import Kartlegging from './Kartlegging'
+//import Kartlegging from './Kartlegging'
 import Omrader from './Omrader'
 import backend from '../backend'
 import FactList from './FactList'
@@ -70,6 +70,8 @@ function getNatureAreaFacts(props) {
             secondary: props.natureArea.rødlisteKategori.vurderingsenhet.code,
           })
         }
+        break
+      default:
         break
     }
   }

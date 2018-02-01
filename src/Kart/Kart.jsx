@@ -5,7 +5,7 @@ import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
 import React, { Component } from 'react'
 import backend from '../backend'
-import FilterTree from '../FilterTree/FilterTree'
+//import FilterTree from '../FilterTree/FilterTree'
 import CloseIcon from 'material-ui/svg-icons/content/clear'
 
 class Kart extends Component {
