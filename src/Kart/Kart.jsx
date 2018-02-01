@@ -68,6 +68,7 @@ class Kart extends Component {
       data =>
         this.setState({
           pointInfo: data,
+          open: true,
         })
       // alert(JSON.stringify(data))
     )
