@@ -1971,7 +1971,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                           "display": "block",
                           "fontSize": 14,
                           "muiPrepared": true,
-                          "text-decoration": "underline",
+                          "textDecoration": "underline",
                         }
                       }
                     >
