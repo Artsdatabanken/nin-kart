@@ -28,6 +28,12 @@ class Omrader extends Component {
             break
         }
       }
+    } else {
+      this.setState({
+        fylke: null,
+        kommune: null,
+        verneomrade: null,
+      })
     }
   }
 
@@ -38,25 +44,27 @@ class Omrader extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <ListItem
-          primaryText={this.state.fylke}
-          secondaryText="Fylke"
-          leftIcon={<Flag />}
-        />
-        <ListItem
-          primaryText={this.state.kommune}
-          secondaryText="Kommune"
-          leftIcon={<Nature />}
-        />
-        <ListItem
-          primaryText={this.state.verneomrade}
-          secondaryText="Verneområde"
-          leftIcon={<Favorite />}
-        />
-      </div>
-    )
+    if (this.state.fylke && this.state.kommune && this.state.verneomrade)
+      return (
+        <div>
+          <ListItem
+            primaryText={this.state.fylke}
+            secondaryText="Fylke"
+            leftIcon={<Flag />}
+          />
+          <ListItem
+            primaryText={this.state.kommune}
+            secondaryText="Kommune"
+            leftIcon={<Nature />}
+          />
+          <ListItem
+            primaryText={this.state.verneomrade}
+            secondaryText="Verneområde"
+            leftIcon={<Favorite />}
+          />
+        </div>
+      )
+    return <div />
   }
 }
 

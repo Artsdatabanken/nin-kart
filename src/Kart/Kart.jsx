@@ -57,7 +57,7 @@ class Kart extends Component {
     } else {
       this.setState({
         natureArea: '',
-        natureArea: '',
+        metadata: '',
       })
     }
     //alert(point.lngLat + "\n" + localId)
@@ -77,11 +77,13 @@ class Kart extends Component {
     backend.getNatureAreaByLocalId(id).then(data => {
       this.setState({
         natureArea: data,
+        localId: '',
       })
     })
     backend.getMetadataByNatureAreaLocalId(id).then(data =>
       this.setState({
         metadata: data,
+        localId: '',
       })
     )
   }
@@ -158,11 +160,11 @@ class Kart extends Component {
               metadata={this.state.metadata}
               pointInfo={this.state.pointInfo}
             />
-            <FilterTree
+            {/* <FilterTree
               natureAreas={this.state.natureAreas}
               handleCheckChange={this.handleCheckChange}
               isSelected={this.isSelected}
-            />
+            /> */}
           </Drawer>
         </div>
       </MuiThemeProvider>
