@@ -9,7 +9,34 @@ class MainDrawer extends Component {
         open={this.props.open}
         onRequestChange={this.props.onToggleMainDrawer}
       >
-        <MenuItem>Basiskart</MenuItem>
+        <MenuItem
+          onClick={() => {
+            this.props.handleChangeBaseMap('')
+          }}
+        >
+          Basiskart
+        </MenuItem>
+        <MenuItem
+          onClick={() => {
+            this.props.handleChangeBaseMap('dark')
+          }}
+        >
+          Basiskart - Mørk
+        </MenuItem>
+        <MenuItem
+          onClick={() => {
+            this.props.handleChangeBaseMap('vintage')
+          }}
+        >
+          Basiskart - Gammel
+        </MenuItem>
+        <MenuItem
+          onClick={() => {
+            this.props.handleChangeBaseMap('satellite')
+          }}
+        >
+          Flyfoto
+        </MenuItem>
         <MenuItem>Aktive kartlag</MenuItem>
         <MenuItem>Del eller bygg inn kartet</MenuItem>
         <MenuItem>Skriv ut</MenuItem>
