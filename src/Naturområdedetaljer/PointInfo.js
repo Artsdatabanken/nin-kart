@@ -10,6 +10,8 @@ function PointInfo(props) {
             primaryText={props.pointInfo[key].name || key}
             secondaryText={props.pointInfo[key].value}
             key={key}
+            href={props.pointInfo[key].article}
+            style={props.pointInfo[key].article ? { color: 'RoyalBlue' } : null}
           />
         ))}
       </List>
