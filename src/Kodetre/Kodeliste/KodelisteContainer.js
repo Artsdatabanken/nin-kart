@@ -37,7 +37,6 @@ class KodelisteContainer extends React.Component {
     this.setState({ meta: dummyMeta, data: null })
     backend.hentKode(kode || '').then(data => this.setState({ data: data }))
     backend.hentKodeMeta(kode).then(data => this.setState({ meta: data }))
-    backend.hentKodeInfo(kode).then(data => this.setState({ info: data }))
   }
 
   render() {
@@ -65,13 +64,11 @@ class KodelisteContainer extends React.Component {
                   history.push('/' + kode)
                   this.setState({ searchResults: null })
                 }}
-              /> //  this.state.meta &&
+              />
             ) : (
-              //this.props.showKodeListe &&
               <KodeVindu
                 data={data}
-                meta={this.state.meta}
-                info={this.state.info}
+                meta={this.state.meta || {}}
                 filterCode={this.props.filterCode}
                 filter={this.props.filter}
                 onGoToCode={this.props.onGoToCode}

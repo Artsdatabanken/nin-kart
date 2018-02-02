@@ -91,13 +91,9 @@ class Backend {
     )
   }
 
-  static async hentKodeInfo(kode) {
-    let kortKode = kode
-    if (kode && kode.indexOf('_') > 0) {
-      kortKode = kode.substr(kode.indexOf('_') + 1)
-    }
+  static async hentKodeMeta(kode) {
     return this.getPromise(
-      `http://data.beta.artsdatabanken.no/api/Graph/NiN2.0/${kortKode}`
+      `https://adb-kode.firebaseio.com/data/${kode || 'ROT'}.json`
     )
   }
 
