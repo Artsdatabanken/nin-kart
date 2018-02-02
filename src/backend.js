@@ -91,26 +91,10 @@ class Backend {
     )
   }
 
-  static async hentKodeInfo(kode) {
-    let kortKode = kode
-    if (kode && kode.indexOf('_') > 0) {
-      kortKode = kode.substr(kode.indexOf('_') + 1)
-    }
-    return this.getPromise(
-      `http://data.beta.artsdatabanken.no/api/Graph/NiN2.0/${kortKode}`
-    )
-  }
-
-  static async hentPunktInfo(lngLat) {
-    return this.getPromise(
-      `https://adb-nin-raster.azurewebsites.net/v1/point/${lngLat[0]}/${
-        lngLat[1]
-      }`
-    )
-  }
-
   static async hentKodeMeta(kode) {
-    return this.getPromise(`/kode/${kode}.json`)
+    return this.getPromise(
+      `https://adb-kode.firebaseio.com/data/${kode || 'ROT'}.json`
+    )
   }
 
   static async getNatureAreaByLocalId(localId) {

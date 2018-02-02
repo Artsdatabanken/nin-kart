@@ -59,6 +59,7 @@ class FetchContainer extends React.Component {
 
   handleFetch = (description, url, callback) => {
     this.flashMessage(`Loading ${description}...`)
+    console.log(url)
     this.setState(increment)
     fetch(url)
       .then(checkStatus)
