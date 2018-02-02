@@ -2,9 +2,19 @@ import React, { Component } from 'react'
 import Kart from '../Kart/Kart'
 import Kode from '../Kodetre/Kode'
 import { fromJS } from 'immutable'
-import MAP_STYLE from '../Kart/style.json'
 import MainDrawer from './MainDrawer'
-const defaultMapStyle = fromJS(MAP_STYLE)
+import {
+  defaultMapStyle,
+  darkMapStyle,
+  vintageMapStyle,
+  satelliteStyle,
+  Kalk,
+  Ultramafisk,
+  Seksjoner,
+  Soner,
+  NiN,
+  NiNHover,
+} from '../Kart/Mapbox/MapStyle'
 
 // Layer color class by type
 const colorClass = {
@@ -18,6 +28,7 @@ class Grunnkart extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      baseMapStyle: defaultMapStyle,
       showKodeListe: false,
       mapStyle: '',
       kode: '',
@@ -29,6 +40,7 @@ class Grunnkart extends Component {
         'Bioklimatiske soner',
         'Seksjoner',
         'Ultramafisk',
+        'Kalk',
       ],
       visibility: {
         'Alle naturområder': false,
@@ -36,6 +48,7 @@ class Grunnkart extends Component {
         'Bioklimatiske soner': false,
         Seksjoner: false,
         Ultramafisk: false,
+        Kalk: false,
       },
       color: {
         'Alle naturområder': undefined,
@@ -43,14 +56,16 @@ class Grunnkart extends Component {
         'Bioklimatiske soner': undefined,
         Seksjoner: undefined,
         Ultramafisk: undefined,
+        Kalk: undefined,
       },
       // Layer id patterns by category
       layerSelector: {
         'Alle naturområder': /nin/,
         Rødlistede: /Rodlistede/,
-        'Bioklimatiske soner': /soner2017-4326-6fcqhb/,
-        Seksjoner: /seksjoner2017-4326-c6e9g5/,
+        'Bioklimatiske soner': /soner/,
+        Seksjoner: /seksjoner/,
         Ultramafisk: /ultramafisk/,
+        Kalk: /kalk/,
       },
     }
 
@@ -58,6 +73,7 @@ class Grunnkart extends Component {
     this.handleColorChange = this.handleColorChange.bind(this)
     this.handleVisibilityChange = this.handleVisibilityChange.bind(this)
     this.handleToggleShowKodeListe = this.handleToggleShowKodeListe.bind(this)
+    this.setBaseMap = this.setBaseMap.bind(this)
   }
 
   makeLayer(name, code, visible, source) {
@@ -88,44 +104,8 @@ class Grunnkart extends Component {
     })
   }
 
-  makeRangeLayer(name, kode, visible, source, property) {
-    const color = { ...this.state.color, [name]: undefined }
-    const visibility = { ...this.state.visibility, [name]: visible }
-    const layerSelector = {
-      ...this.state.layerSelector,
-      [name]: new RegExp(kode),
-    }
-    const categories = [...this.state.categories, ...[name]]
-    this.setState({ categories, visibility, color, layerSelector })
-
-    return fromJS({
-      id: name,
-      type: 'fill',
-      metadata: {},
-      source: 'composite',
-      'source-layer': source,
-      layout: {},
-      paint: {
-        'fill-color': {
-          base: 1,
-          type: 'exponential',
-          property: property,
-          stops: [
-            [0, 'hsla(0, 0%, 0%, 0)'],
-            [1, 'hsla(0, 6%, 94%, 0.6)'],
-            [2, 'hsla(0, 19%, 88%, 0.6)'],
-            [3, 'hsla(0, 35%, 80%, 0.6)'],
-            [4, 'hsla(0, 59%, 63%, 0.6)'],
-            [5, 'hsla(0, 84%, 32%, 0.6)'],
-          ],
-          default: 'hsl(0, 4%, 94%)',
-        },
-      },
-    })
-  }
-
   addLayer(name, code) {
-    this._defaultLayers = this._defaultLayers.push(
+    this.layers = this.layers.push(
       this.makeLayer(name, code, true, 'naturomrader6')
     )
     this.updateMapStyle({ ...this.state })
@@ -159,7 +139,7 @@ class Grunnkart extends Component {
   }
 
   updateMapStyle({ visibility, color, layerSelector }) {
-    const layers = this._defaultLayers
+    const layers = this.layers
 
       .filter(layer => {
         const id = layer.get('id')
@@ -180,7 +160,7 @@ class Grunnkart extends Component {
         return layer
       })
 
-    this.handleStyleChange(defaultMapStyle.set('layers', layers))
+    this.handleStyleChange(this.state.baseMapStyle.set('layers', layers))
   }
 
   handleAddLayer(navn, kode) {
@@ -191,9 +171,49 @@ class Grunnkart extends Component {
     console.log(kode)
   }
 
-  componentDidMount() {
-    this._defaultLayers = defaultMapStyle.get('layers') //.push(this.makeRangeLayer('Kalk', 'ngu-kalk', false, 'kalk', 'KALKINNHOLD_HOVEDBERGART'))
+  setBaseMap(type) {
+    let newStyle = defaultMapStyle
+    switch (type) {
+      case 'dark': {
+        newStyle = darkMapStyle
+        break
+      }
+      case 'vintage': {
+        newStyle = vintageMapStyle
+        break
+      }
+      case 'satellite': {
+        newStyle = satelliteStyle
+        break
+      }
+      default: {
+        break
+      }
+    }
+    this.setState(
+      {
+        baseMapStyle: newStyle,
+      },
+      () => {
+        this.addCustomLayers()
+      }
+    )
+  }
+
+  addCustomLayers() {
+    this.layers = this.state.baseMapStyle
+      .get('layers')
+      .push(Kalk)
+      .push(Ultramafisk)
+      .push(Seksjoner)
+      .push(Soner)
+      .push(NiN)
+      .push(NiNHover)
     this.updateMapStyle({ ...this.state })
+  }
+
+  componentDidMount() {
+    this.addCustomLayers()
   }
 
   render() {
@@ -211,6 +231,7 @@ class Grunnkart extends Component {
           mapStyle={this.state.mapStyle}
         />
         <MainDrawer
+          handleChangeBaseMap={this.setBaseMap}
           open={this.state.showMainDrawer}
           onToggleMainDrawer={() =>
             this.setState({ showMainDrawer: !this.state.showMainDrawer })

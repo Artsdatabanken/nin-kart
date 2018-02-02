@@ -56,7 +56,7 @@ class Kodekort extends React.Component {
               {data.forelder ? data.forelder.navn : ''}
             </div>
           }
-          subtitleStyle={{ 'text-decoration': 'underline', cursor: 'pointer' }}
+          subtitleStyle={{ textDecoration: 'underline', cursor: 'pointer' }}
           subtitleColor={muiTheme.palette.alternateTextColor}
         >
           <FloatingActionButton
