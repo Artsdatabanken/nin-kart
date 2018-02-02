@@ -2,15 +2,16 @@ import React from 'react'
 import { Paper } from 'material-ui'
 import Detaljer from './Detaljer'
 //import Kartlegging from './Kartlegging'
-import Omrader from './Omrader'
+//import Omrader from './Omrader'
 import backend from '../backend'
 import FactList from './FactList'
 import PointInfo from './PointInfo'
 
 const NatureAreaDetails = props => (
   <Paper>
-    <Omrader areas={props.natureArea.areas} />
+    {/* <Omrader areas={props.admEnhetInfo} /> */}
     {/*<Naturniva level={backend.NatureLevelNames[props.natureArea.nivå]}/>*/}
+    <PointInfo pointInfo={props.admEnhetInfo} />
     <PointInfo pointInfo={props.pointInfo} />
 
     <FactList items={getNatureAreaFacts(props)} />

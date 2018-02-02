@@ -11,6 +11,9 @@ const dummyItems = {
     value: 'litt kalkfattig',
     name: 'Kalkinnhold',
   },
+  Kommunenavn: {
+    value: 'Bodø',
+  },
 }
 
 storiesOf('PointInfo', module)
