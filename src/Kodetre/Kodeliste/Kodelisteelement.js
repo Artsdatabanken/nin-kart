@@ -6,28 +6,18 @@ class Kodelisteelement extends React.Component {
   render() {
     const item = this.props
     const meta = this.props.meta
-    const avatarStyle = this.props.hideCircle ? { borderRadius: 0 } : {}
     return (
       <ListItem
         key={item.kode}
         leftAvatar={
-          this.props.ikon === 'text' ? (
-            <Avatar
-              color={meta.color}
-              backgroundColor={meta.backgroundColor}
-              size={30}
-            >
-              {meta.kode}
-            </Avatar>
-          ) : (
-            meta.image && (
-              <Avatar
-                style={avatarStyle}
-                backgroundColor="#00000000"
-                src={meta.image}
-              />
-            )
-          )
+          <Avatar
+            style={meta.utenRamme ? { borderRadius: 0 } : {}}
+            color={meta.color}
+            backgroundColor={meta.backgroundColor || '#00000000'}
+            src={meta.image}
+          >
+            {meta.kode}
+          </Avatar>
         }
         primaryText={item.navn}
         secondaryText={item.kode}

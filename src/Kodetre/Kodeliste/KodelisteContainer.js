@@ -4,6 +4,7 @@ import KodeVindu from './KodeVindu'
 import TopBar from '../../TopBar/TopBar'
 import backend from '../../backend'
 import ResultatListe from './ResultatListe'
+import rename from '../../rename'
 
 const dummyMeta = {
   forelder: {
@@ -35,7 +36,10 @@ class KodelisteContainer extends React.Component {
 
   fetchData(kode) {
     this.setState({ meta: dummyMeta, data: null })
-    backend.hentKode(kode || '').then(data => this.setState({ data: data }))
+    backend
+      .hentKode(kode || '')
+      .then(data => rename(data))
+      .then(data => this.setState({ data: data }))
     backend.hentKodeMeta(kode).then(data => this.setState({ meta: data }))
   }
 

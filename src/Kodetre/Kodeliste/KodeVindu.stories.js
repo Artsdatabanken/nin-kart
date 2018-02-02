@@ -44,7 +44,12 @@ var dummyItems = [
 ]
 
 const dummy = { data: { kode: 'NA', barn: dummyItems } }
-const meta = { barn: [], selv: {}, forelder: {}, relasjon: [] }
+const meta = {
+  barn: [],
+  selv: {},
+  forelder: {},
+  relasjon: [{ kode: 'kode', tittel: 'tittel', avatar: 'avatar' }],
+}
 
 storiesOf('KodeVindu', module)
   .addDecorator(muiTheme())

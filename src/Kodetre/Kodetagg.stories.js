@@ -95,6 +95,7 @@ storiesOf('Kodetagg', module)
             navn={tag.navn}
             color={tag.color}
             backgroundColor={tag.backgroundColor}
+            forklaring={tag.forklaring}
           />
         ))}
       </div>

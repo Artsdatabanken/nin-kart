@@ -3,7 +3,6 @@ import {
   FloatingActionButton,
   Card,
   CardActions,
-  CardHeader,
   CardMedia,
   CardTitle,
   CardText,
@@ -35,7 +34,7 @@ class Kodekort extends React.Component {
   isFavorite = kode => this.getFavorites().indexOf(kode) >= 0
 
   render() {
-    const { data, forelder, muiTheme } = this.props
+    const { data, muiTheme } = this.props
     const selv = this.props.selv || {}
     return (
       <Card containerStyle={{ paddingBottom: 0 }}>
@@ -101,20 +100,6 @@ class Kodekort extends React.Component {
             </IconButton>
           </CardActions>
         </CardTitle>
-        {false && (
-          <CardHeader
-            titleStyle={{ fontSize: 20 }}
-            title={data.forelder ? data.forelder.navn : ''}
-            subtitle={data.forelder ? data.forelder.kode : ''}
-            subtitleColor="#03f"
-            avatar={forelder.avatar}
-            style={{
-              cursor: 'pointer',
-              display: data.forelder ? 'block' : 'none',
-            }}
-            onClick={() => this.props.onGoToCode(data.forelder.kode)}
-          />
-        )}
         {false && <CardText>{selv.beskrivelse}</CardText>}
       </Card>
     )
