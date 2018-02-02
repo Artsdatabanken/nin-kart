@@ -91,11 +91,13 @@ class Kart extends Component {
   }
 
   fixStedsnavn(data) {
-    return {
-      Stedsnavn: {
-        value: data.placename,
-      },
-    }
+    if (data.placename)
+      return {
+        Stedsnavn: {
+          value: data.placename,
+        },
+      }
+    return null
   }
 
   goFetchPointInfo(lngLat) {
