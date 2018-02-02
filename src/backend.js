@@ -97,6 +97,14 @@ class Backend {
     )
   }
 
+  static async hentRasterPunktInfo(lngLat) {
+    return this.getPromise(
+      `https://adb-nin-raster.azurewebsites.net/v1/point/${lngLat[0]}/${
+        lngLat[1]
+      }`
+    )
+  }
+
   static async getNatureAreaByLocalId(localId) {
     return this.getPromise(
       `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetNatureAreaByLocalId/${localId}`

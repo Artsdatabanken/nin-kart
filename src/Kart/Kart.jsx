@@ -64,13 +64,11 @@ class Kart extends Component {
   }
 
   goFetchPointInfo(lngLat) {
-    backend.hentPunktInfo(lngLat).then(
-      data =>
-        this.setState({
-          pointInfo: data,
-          open: true,
-        })
-      // alert(JSON.stringify(data))
+    backend.hentRasterPunktInfo(lngLat).then(data =>
+      this.setState({
+        pointInfo: data,
+        open: true,
+      })
     )
   }
 
