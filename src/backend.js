@@ -97,12 +97,6 @@ class Backend {
     )
   }
 
-  static async hentPunktInfo(lngLat) {
-    return this.getPromise(
-      `https://adb-kode.firebaseio.com/data/${kode || 'ROT'}.json`
-    )
-  }
-
   static async getNatureAreaByLocalId(localId) {
     return this.getPromise(
       `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetNatureAreaByLocalId/${localId}`
