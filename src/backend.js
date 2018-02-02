@@ -99,14 +99,8 @@ class Backend {
 
   static async hentPunktInfo(lngLat) {
     return this.getPromise(
-      `https://adb-nin-raster.azurewebsites.net/v1/point/${lngLat[0]}/${
-        lngLat[1]
-      }`
+      `https://adb-kode.firebaseio.com/data/${kode || 'ROT'}.json`
     )
-  }
-
-  static async hentKodeMeta(kode) {
-    return this.getPromise(`/kode/${kode}.json`)
   }
 
   static async getNatureAreaByLocalId(localId) {
