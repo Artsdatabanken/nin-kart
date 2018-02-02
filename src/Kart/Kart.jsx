@@ -27,6 +27,7 @@ class Kart extends Component {
       pointInfo: {},
       admEnhetInfo: '',
       lngLat: null,
+      stedsnavnInfo: null,
     }
 
     this.isSelected = this.isSelected.bind(this)
@@ -48,9 +49,10 @@ class Kart extends Component {
     this.goFetchPointInfo(point.lngLat)
     this.setState({
       lngLat: {
-        Lat: { value: point.lngLat[1] },
-        Lon: { value: point.lngLat[0] },
+        Lat: { value: Number.parseFloat(point.lngLat[1]).toPrecision(7) },
+        Lon: { value: Number.parseFloat(point.lngLat[0]).toPrecision(7) },
       },
+      open: true,
     })
     let localId = ''
     if (
@@ -61,7 +63,6 @@ class Kart extends Component {
     ) {
       localId = point.features[0].properties.localId
       this.goFetchInfo(localId)
-      this.setState({ open: true })
     } else {
       this.setState({
         natureArea: '',
@@ -73,7 +74,7 @@ class Kart extends Component {
 
   fixAdmEnhet(data) {
     if (!data.match(/fylkesnavn = '(.*)'/)) return null
-    var admEnhetInfo = {
+    return {
       Fylkesnavn: {
         value: data.match(/fylkesnavn = '(.*)'/)[1],
       },
@@ -87,20 +88,30 @@ class Kart extends Component {
         value: data.match(/kommunenummer = '(.*)'/)[1],
       },
     }
-    return admEnhetInfo
+  }
+
+  fixStedsnavn(data) {
+    return {
+      Stedsnavn: {
+        value: data.placename,
+      },
+    }
   }
 
   goFetchPointInfo(lngLat) {
     backend.hentRasterPunktInfo(lngLat).then(data =>
       this.setState({
         pointInfo: data,
-        open: true,
       })
     )
     backend.hentAdmEnhetInfo(lngLat).then(data =>
       this.setState({
         admEnhetInfo: this.fixAdmEnhet(data),
-        open: true,
+      })
+    )
+    backend.HentStedsnavnInfo(lngLat).then(data =>
+      this.setState({
+        stedsnavnInfo: this.fixStedsnavn(data),
       })
     )
   }
@@ -193,6 +204,7 @@ class Kart extends Component {
               pointInfo={this.state.pointInfo}
               admEnhetInfo={this.state.admEnhetInfo}
               lngLat={this.state.lngLat}
+              stedsnavnInfo={this.state.stedsnavnInfo}
             />
             {/* <FilterTree
               natureAreas={this.state.natureAreas}

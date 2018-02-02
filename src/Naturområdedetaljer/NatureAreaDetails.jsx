@@ -12,6 +12,7 @@ const NatureAreaDetails = props => (
     {/* <Omrader areas={props.admEnhetInfo} /> */}
     {/*<Naturniva level={backend.NatureLevelNames[props.natureArea.nivå]}/>*/}
     <PointInfo pointInfo={props.lngLat} />
+    <PointInfo pointInfo={props.stedsnavnInfo} />
     <PointInfo pointInfo={props.admEnhetInfo} />
     <PointInfo pointInfo={props.pointInfo} />
 

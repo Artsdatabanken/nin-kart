@@ -118,15 +118,28 @@ class Backend {
       }`
     )
   }
+  static CreateBboxFromPoint(lngLat, radius) {
+    return {
+      minx: lngLat[1] - radius,
+      miny: lngLat[0] - radius,
+      maxx: Number.parseFloat(lngLat[1]) + Number.parseFloat(radius),
+      maxy: Number.parseFloat(lngLat[0]) + Number.parseFloat(radius),
+    }
+  }
 
   static async hentAdmEnhetInfo(lngLat) {
-    var minx = lngLat[1] - 0.000001
-    var miny = lngLat[0] - 0.000001
-    var maxx = lngLat[1] + 0.000001
-    var maxy = lngLat[0] + 0.000001
+    var bbox = this.CreateBboxFromPoint(lngLat, 0.000001)
     return this.getTextPromise(
       `https://openwms.statkart.no/skwms1/wms.adm_enheter?request=GetFeatureinfo&service=WMS&version=1.3.0&Layers=Kommuner&crs=epsg:4258&format=image/png&width=3&height=3&QUERY_LAYERS=kommuner&i=2&j=2
-      &bbox=${minx},${miny},${maxx},${maxy}`
+      &bbox=${bbox.minx},${bbox.miny},${bbox.maxx},${bbox.maxy}`
+    )
+  }
+
+  static async HentStedsnavnInfo(lngLat) {
+    return this.getPromise(
+      `https://www.norgeskart.no/ws/elev.py?lat=${lngLat[1]}&lon=${
+        lngLat[0]
+      }&epsg=4258`
     )
   }
 
