@@ -125,7 +125,7 @@ class Backend {
     var maxx = lngLat[1] + 0.000001
     var maxy = lngLat[0] + 0.000001
     return this.getTextPromise(
-      `http://openwms.statkart.no/skwms1/wms.adm_enheter?request=GetFeatureinfo&service=WMS&version=1.3.0&Layers=Kommuner&crs=epsg:4258&format=image/png&width=3&height=3&QUERY_LAYERS=kommuner&i=2&j=2
+      `https://openwms.statkart.no/skwms1/wms.adm_enheter?request=GetFeatureinfo&service=WMS&version=1.3.0&Layers=Kommuner&crs=epsg:4258&format=image/png&width=3&height=3&QUERY_LAYERS=kommuner&i=2&j=2
       &bbox=${minx},${miny},${maxx},${maxy}`
     )
   }
