@@ -35,7 +35,8 @@ class Kodekort extends React.Component {
   isFavorite = kode => this.getFavorites().indexOf(kode) >= 0
 
   render() {
-    const { data, forelder, selv, muiTheme } = this.props
+    const { data, forelder, muiTheme } = this.props
+    const selv = this.props.selv || {}
     return (
       <Card containerStyle={{ paddingBottom: 0 }}>
         <CardMedia>

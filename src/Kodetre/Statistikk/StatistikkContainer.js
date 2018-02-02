@@ -9,9 +9,10 @@ class StatistikkContainer extends Component {
   }
 
   componentDidMount() {
-    //   this.context.fetchJson('Statistikk', this.props.dataUrl, json =>
-    this.context.fetchJson('Statistikk', '/kode/TAX.json', json =>
-      this.receiveData(json)
+    this.context.fetchJson(
+      'Statistikk',
+      `https://adb-kode.firebaseio.com/data/TAX.json`,
+      json => this.receiveData(json)
     )
   }
 
