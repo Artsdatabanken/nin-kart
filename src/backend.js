@@ -30,6 +30,20 @@ class Backend {
     })
   }
 
+  static async getTextPromise(url) {
+    return new Promise((resolve, reject) => {
+      fetch(url)
+        .then(result => {
+          return result.text()
+        })
+        .then(text => resolve(text))
+        .catch(err => {
+          console.error(url, err)
+          return {}
+        })
+    })
+  }
+
   static async getToken() {
     return this.getPromise(`https://www.norgeskart.no/ws/gkt.py`)
   }
@@ -102,6 +116,17 @@ class Backend {
       `https://adb-nin-raster.azurewebsites.net/v1/point/${lngLat[0]}/${
         lngLat[1]
       }`
+    )
+  }
+
+  static async hentAdmEnhetInfo(lngLat) {
+    var minx = lngLat[1] - 0.000001
+    var miny = lngLat[0] - 0.000001
+    var maxx = lngLat[1] + 0.000001
+    var maxy = lngLat[0] + 0.000001
+    return this.getTextPromise(
+      `http://openwms.statkart.no/skwms1/wms.adm_enheter?request=GetFeatureinfo&service=WMS&version=1.3.0&Layers=Kommuner&crs=epsg:4258&format=image/png&width=3&height=3&QUERY_LAYERS=kommuner&i=2&j=2
+      &bbox=${minx},${miny},${maxx},${maxy}`
     )
   }
 

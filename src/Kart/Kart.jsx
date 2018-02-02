@@ -25,6 +25,7 @@ class Kart extends Component {
       metadata: '',
       open: false,
       pointInfo: {},
+      admEnhetInfo: '',
     }
 
     this.isSelected = this.isSelected.bind(this)
@@ -63,10 +64,35 @@ class Kart extends Component {
     //alert(point.lngLat + "\n" + localId)
   }
 
+  fixAdmEnhet(data) {
+    if (!data.match(/fylkesnavn = '(.*)'/)) return null
+    var admEnhetInfo = {
+      Fylkesnavn: {
+        value: data.match(/fylkesnavn = '(.*)'/)[1],
+      },
+      Fylkesnummer: {
+        value: data.match(/fylkesnummer = '(.*)'/)[1],
+      },
+      Kommunenavn: {
+        value: data.match(/navn_norsk = '(.*)'/)[1],
+      },
+      Kommunenummer: {
+        value: data.match(/kommunenummer = '(.*)'/)[1],
+      },
+    }
+    return admEnhetInfo
+  }
+
   goFetchPointInfo(lngLat) {
     backend.hentRasterPunktInfo(lngLat).then(data =>
       this.setState({
         pointInfo: data,
+        open: true,
+      })
+    )
+    backend.hentAdmEnhetInfo(lngLat).then(data =>
+      this.setState({
+        admEnhetInfo: this.fixAdmEnhet(data),
         open: true,
       })
     )
@@ -158,6 +184,7 @@ class Kart extends Component {
               natureArea={this.state.natureArea}
               metadata={this.state.metadata}
               pointInfo={this.state.pointInfo}
+              admEnhetInfo={this.state.admEnhetInfo}
             />
             {/* <FilterTree
               natureAreas={this.state.natureAreas}
