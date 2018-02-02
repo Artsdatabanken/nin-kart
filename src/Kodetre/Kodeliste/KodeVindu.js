@@ -6,7 +6,9 @@ import { Paper, List, Tabs, Tab } from 'material-ui'
 import Relasjon from './Relasjon'
 import FetchContainer from '../../FetchContainer'
 
-function KodeVindu(props) {
+const KodeVindu = props => {
+  const selv = props.selv || {}
+  console.log(selv)
   return (
     <FetchContainer>
       <Paper
@@ -23,7 +25,6 @@ function KodeVindu(props) {
         {props.data && (
           <Kodekort
             {...props.meta}
-            {...props.info}
             onGoToCode={props.onGoToCode}
             onAddLayer={props.onAddLayer}
             data={props.data}
@@ -34,24 +35,28 @@ function KodeVindu(props) {
             <List>
               {props.data &&
                 props.data.barn &&
-                props.data.barn.map(item => (
-                  <Kodelisteelement
-                    key={item.kode}
-                    {...item}
-                    meta={props.meta.barn[item.kode] || {}}
-                    checked={props.isSelected(props.filterCode, item.kode)}
-                    onGoToCode={props.onGoToCode}
-                    hideCircle={props.meta.selv.fristilAvatar}
-                    ikon={props.meta.selv.ikon}
-                  />
-                ))}
+                props.data.barn.map(item => {
+                  const barn = props.meta.barn || {}
+                  const barnet = barn[item.kode] || {}
+                  return (
+                    <Kodelisteelement
+                      key={item.kode}
+                      {...item}
+                      meta={barnet}
+                      checked={props.isSelected(props.filterCode, item.kode)}
+                      onGoToCode={props.onGoToCode}
+                      hideCircle={selv.fristilAvatar}
+                      ikon={selv.ikon}
+                    />
+                  )
+                })}
             </List>
           </Tab>
           <Tab label="Informasjon">
             <StatistikkContainer dataUrl={'/kode/' + props.data.kode} />
           </Tab>
           <Tab label="Se også">
-            <Relasjon relasjon={props.meta.relasjon} />
+            <Relasjon relasjon={props.meta.relasjon || []} />
           </Tab>
         </Tabs>
       </Paper>
