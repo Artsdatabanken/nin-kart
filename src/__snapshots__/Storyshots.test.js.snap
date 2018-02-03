@@ -1912,6 +1912,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                   <div
                     style={
                       Object {
+                        "height": 300,
                         "muiPrepared": true,
                         "position": "relative",
                       }
@@ -1929,7 +1930,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                         src={undefined}
                         style={
                           Object {
-                            "maxHeight": 500,
+                            "height": 300,
                             "maxWidth": "100%",
                             "minWidth": "100%",
                             "muiPrepared": true,
