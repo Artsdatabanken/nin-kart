@@ -13,6 +13,12 @@
   outline: none;
 }
 
+.mapboxgl-ctrl-logo {
+  position: fixed;
+  left: 426px;
+  bottom: 5px;
+}
+
 input[type='color' i] {
   position: absolute;
   right: 10px;
