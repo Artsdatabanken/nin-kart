@@ -38,11 +38,11 @@ class Kodekort extends React.Component {
     const selv = this.props.selv || {}
     return (
       <Card containerStyle={{ paddingBottom: 0 }}>
-        <CardMedia>
+        <CardMedia style={{ height: 300 }}>
           <img
             src={selv.media}
             alt=""
-            style={{ maxHeight: 500, objectFit: 'cover' }}
+            style={{ height: 300, objectFit: 'cover' }}
           />
         </CardMedia>
         <CardTitle
