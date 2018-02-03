@@ -42,7 +42,7 @@ class Kodekort extends React.Component {
           <img
             src={selv.media}
             alt=""
-            style={{ maxHeight: 300, objectFit: 'cover' }}
+            style={{ height: 300, objectFit: 'cover' }}
           />
         </CardMedia>
         <CardTitle
