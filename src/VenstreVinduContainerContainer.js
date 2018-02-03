@@ -1,7 +1,7 @@
 import React from 'react'
-import KodelisteContainer from './Kodeliste/KodelisteContainer'
+import VenstreVinduContainer from './VenstreVinduContainer'
 
-class Kode extends React.Component {
+class VenstreVinduContainerContainer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -69,7 +69,7 @@ class Kode extends React.Component {
 
   render() {
     return (
-      <KodelisteContainer
+      <VenstreVinduContainer
         name={this.props.kode}
         filterCode={'filterCodes'}
         kode={this.props.kode}
@@ -77,7 +77,6 @@ class Kode extends React.Component {
         onGoToCode={this.handleGoToCode}
         onAddLayer={this.props.onAddLayer}
         onGoBack={this.handleGoBack}
-        onToggleShowKodeListe={this.props.onToggleShowKodeListe}
         onToggleMainDrawer={this.props.onToggleMainDrawer}
         showKodeListe={this.props.showKodeListe}
         onCheckChange={this.handleCheckChange}
@@ -88,4 +87,4 @@ class Kode extends React.Component {
   }
 }
 
-export default Kode
+export default VenstreVinduContainerContainer

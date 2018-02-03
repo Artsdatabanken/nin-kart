@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Kart from '../Kart/Kart'
-import Kode from '../Kodetre/Kode'
 import { fromJS } from 'immutable'
 import MainDrawer from './MainDrawer'
 import {
@@ -15,6 +14,7 @@ import {
   NiN,
   NiNHover,
 } from '../Kart/Mapbox/MapStyle'
+import VenstreVinduContainerContainer from '../VenstreVinduContainerContainer'
 
 // Layer color class by type
 const colorClass = {
@@ -29,7 +29,6 @@ class Grunnkart extends Component {
     super(props)
     this.state = {
       baseMapStyle: defaultMapStyle,
-      showKodeListe: false,
       mapStyle: '',
       kode: '',
       open: true,
@@ -72,7 +71,6 @@ class Grunnkart extends Component {
     this.handleAddLayer = this.handleAddLayer.bind(this)
     this.handleColorChange = this.handleColorChange.bind(this)
     this.handleVisibilityChange = this.handleVisibilityChange.bind(this)
-    this.handleToggleShowKodeListe = this.handleToggleShowKodeListe.bind(this)
     this.setBaseMap = this.setBaseMap.bind(this)
   }
 
@@ -128,10 +126,6 @@ class Grunnkart extends Component {
     }
     this.setState({ visibility })
     this.updateMapStyle({ ...this.state, visibility })
-  }
-
-  handleToggleShowKodeListe() {
-    this.setState({ showKodeListe: !this.state.showKodeListe })
   }
 
   startUpdateMapStyle() {
@@ -248,15 +242,13 @@ class Grunnkart extends Component {
                 width: 400,
               }}
             >
-              <Kode
+              <VenstreVinduContainerContainer
                 kode={this.props.match.params.kode}
                 history={this.props.history}
                 onAddLayer={this.handleAddLayer}
-                onToggleShowKodeListe={this.handleToggleShowKodeListe}
                 onToggleMainDrawer={() =>
                   this.setState({ showMainDrawer: !this.state.showMainDrawer })
                 }
-                showKodeListe={this.state.showKodeListe}
               />
             </div>
           )}

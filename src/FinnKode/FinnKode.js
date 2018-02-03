@@ -11,15 +11,13 @@ export default class FinnKode extends Component {
   }
 
   handleChange = (e, q) => {
-    if (q.length < 2) {
-      this.props.onSearchResults(null)
-      return
-    }
     this.queryNumber++
+    this.props.onSearchResults(null)
     const currentQuery = this.queryNumber
     backend.søkKode(q).then(items => {
       if (currentQuery !== this.queryNumber) return // Abort stale query
-      this.props.onSearchResults(items)
+      if (items.error) this.props.onSearchResults(null)
+      else this.props.onSearchResults(items)
     })
   }
 

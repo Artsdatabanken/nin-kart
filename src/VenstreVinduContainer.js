@@ -1,10 +1,10 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import KodeVindu from './KodeVindu'
-import TopBar from '../../TopBar/TopBar'
-import backend from '../../backend'
-import ResultatListe from './ResultatListe'
-import rename from '../../rename'
+import KodeVindu from './Kodetre/Kodeliste/KodeVindu'
+import TopBar from './TopBar/TopBar'
+import backend from './backend'
+import ResultatListe from './Kodetre/Kodeliste/ResultatListe'
+import rename from './rename'
 
 const dummyMeta = {
   forelder: {
@@ -20,10 +20,12 @@ const dummyMeta = {
   barn: {},
   relasjon: [],
 }
-class KodelisteContainer extends React.Component {
+
+// Alt som dukker opp i vinduet på venstre side av skjermen
+class VenstreVinduContainer extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = { mode: 'none' }
   }
 
   componentDidMount() {
@@ -45,6 +47,7 @@ class KodelisteContainer extends React.Component {
 
   render() {
     const data = this.state.data
+    console.log(this.state.mode)
     if (!data) return null
     return (
       <Route
@@ -52,24 +55,32 @@ class KodelisteContainer extends React.Component {
           <div>
             <TopBar
               onGoBack={this.props.onGoBack}
-              onToggleShowKodeListe={this.props.onToggleShowKodeListe}
+              onExitToRoot={() => this.setState({ mode: 'none' })}
               onToggleMainDrawer={this.props.onToggleMainDrawer}
-              showKodeListe={this.props.showKodeListe}
+              isAtRoot={this.state.mode === 'none'}
               title={data.kode}
               parentId={this.state.parentId}
               onSearchResults={items => {
-                this.setState({ searchResults: items })
+                console.log(items)
+                this.setState({
+                  mode: items ? 'results' : 'none',
+                  searchResults: items,
+                })
               }}
             />
-            {this.state.searchResults ? (
+            {this.state.mode === 'results' && (
               <ResultatListe
                 searchResults={this.state.searchResults}
                 onClick={kode => {
                   history.push('/' + kode)
-                  this.setState({ searchResults: null })
+                  this.setState({
+                    mode: 'kode',
+                    searchResults: null,
+                  })
                 }}
               />
-            ) : (
+            )}
+            {this.state.mode === 'kode' && (
               <KodeVindu
                 data={data}
                 meta={this.state.meta || {}}
@@ -88,4 +99,4 @@ class KodelisteContainer extends React.Component {
   }
 }
 
-export default KodelisteContainer
+export default VenstreVinduContainer
