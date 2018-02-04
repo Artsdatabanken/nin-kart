@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactMapGL from 'react-map-gl'
-import Kontrollpanel from './control-panel'
+import Kontrollpanel from './Kontrollpanel'
 import './Mapbox.css'
 
 class Mapbox extends Component {
@@ -98,8 +98,8 @@ class Mapbox extends Component {
         minZoom={4}
       >
         <Kontrollpanel
-          handleVisibilityChange={this.props.handleVisibilityChange}
-          handleColorChange={this.props.handleColorChange}
+          onVisibilityChange={this.props.onVisibilityChange}
+          onColorChange={this.props.onColorChange}
           categories={this.props.categories}
           visibility={this.props.visibility}
           color={this.props.color}

@@ -118,10 +118,10 @@ class Grunnkart extends Component {
     this.updateMapStyle({ ...this.state, color })
   }
 
-  handleVisibilityChange(name, event) {
+  handleVisibilityChange(name, visible) {
     const visibility = {
       ...this.state.visibility,
-      [name]: event.target.checked,
+      [name]: visible,
     }
     this.setState({ visibility })
     this.updateMapStyle({ ...this.state, visibility })
@@ -216,8 +216,8 @@ class Grunnkart extends Component {
           latitude={65.5}
           longitude={10}
           zoom={4.7}
-          handleVisibilityChange={this.handleVisibilityChange}
-          handleColorChange={this.handleColorChange}
+          onVisibilityChange={this.handleVisibilityChange}
+          onColorChange={this.handleColorChange}
           categories={this.state.categories}
           visibility={this.state.visibility}
           color={this.state.color}

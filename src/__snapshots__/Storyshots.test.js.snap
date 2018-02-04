@@ -1963,8 +1963,14 @@ exports[`Storyshots Kart Mapbox default 1`] = `
             <h3>
               Kartlag
             </h3>
-            <hr />
-            <p />
+            <div
+              style={
+                Object {
+                  "muiPrepared": true,
+                  "padding": "8px 0px 8px 0px",
+                }
+              }
+            />
           </div>
         </div>
       </div>

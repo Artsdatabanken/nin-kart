@@ -189,8 +189,8 @@ class Kart extends Component {
           <Mapbox
             {...this.props}
             onClick={this.onClick}
-            handleVisibilityChange={this.props.handleVisibilityChange}
-            handleColorChange={this.props.handleColorChange}
+            onVisibilityChange={this.props.onVisibilityChange}
+            onColorChange={this.props.onColorChange}
             categories={this.props.categories}
             visibility={this.props.visibility}
             color={this.props.color}
