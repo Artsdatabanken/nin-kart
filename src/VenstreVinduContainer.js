@@ -1,96 +1,70 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
-import KodeVindu from './Kodetre/Kodeliste/KodeVindu'
+import KodeVinduContainer from './Kodetre/Kodeliste/KodeVinduContainer'
 import TopBar from './TopBar/TopBar'
-import backend from './backend'
 import ResultatListe from './Kodetre/Kodeliste/ResultatListe'
-import rename from './rename'
-
-const dummyMeta = {
-  forelder: {
-    kode: 'Kode forelder',
-    tittel: 'Tittel forelder',
-    avatar: 'https://www.artsdatabanken.no/Media/F16592?mode=480x480',
-  },
-  selv: {
-    kode: 'Kode',
-    tittel: 'Tittel',
-    media: 'https://artsdatabanken.no/Media/F4763?mode=512x512',
-  },
-  barn: {},
-  relasjon: [],
-}
+import { Route, Switch } from 'react-router-dom'
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { mode: 'none' }
-  }
-
-  componentDidMount() {
-    this.fetchData(this.props.kode)
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.fetchData(nextProps.kode)
-  }
-
-  fetchData(kode) {
-    this.setState({ meta: dummyMeta, data: null })
-    backend
-      .hentKode(kode || '')
-      .then(data => rename(data))
-      .then(data => this.setState({ data: data }))
-    backend.hentKodeMeta(kode).then(data => this.setState({ meta: data }))
-  }
+  state = {}
 
   render() {
-    const data = this.state.data
-    console.log(this.state.mode)
-    if (!data) return null
     return (
       <Route
-        render={({ history }) => (
+        render={({ match, history }) => (
           <div>
             <TopBar
-              onGoBack={this.props.onGoBack}
-              onExitToRoot={() => this.setState({ mode: 'none' })}
+              onGoBack={() => history.goBack()}
+              onExitToRoot={() => {
+                console.log('exit2root')
+                this.setState({ searchResults: null })
+                history.push('/')
+                console.log('exited2root')
+              }}
               onToggleMainDrawer={this.props.onToggleMainDrawer}
-              isAtRoot={this.state.mode === 'none'}
-              title={data.kode}
+              isAtRoot={match.path === '/'}
+              title={'data.kode'}
               parentId={this.state.parentId}
               onSearchResults={items => {
-                console.log(items)
                 this.setState({
-                  mode: items ? 'results' : 'none',
                   searchResults: items,
                 })
               }}
             />
-            {this.state.mode === 'results' && (
-              <ResultatListe
-                searchResults={this.state.searchResults}
-                onClick={kode => {
-                  history.push('/' + kode)
-                  this.setState({
-                    mode: 'kode',
-                    searchResults: null,
-                  })
-                }}
+            {this.state.searchResults ? (
+              <Route
+                render={({ match, history }) => (
+                  <ResultatListe
+                    searchResults={this.state.searchResults}
+                    onClick={kode => {
+                      console.log('onclick')
+                      this.setState({ searchResults: null })
+                      history.push('/lag/' + kode)
+                      console.log('onclicked')
+                    }}
+                  />
+                )}
               />
-            )}
-            {this.state.mode === 'kode' && (
-              <KodeVindu
-                data={data}
-                meta={this.state.meta || {}}
-                filterCode={this.props.filterCode}
-                filter={this.props.filter}
-                onGoToCode={this.props.onGoToCode}
-                onAddLayer={this.props.onAddLayer}
-                onCheck={this.props.onCheckChange}
-                isSelected={this.props.isSelected}
-              />
+            ) : (
+              <Switch>
+                <Route
+                  path="/lag/:kode?"
+                  render={({ match, history }) => (
+                    <KodeVinduContainer
+                      kode={match.params.kode}
+                      filterCode={this.props.filterCode}
+                      filter={this.props.filter}
+                      onGoToCode={kode => {
+                        history.push('/lag/' + kode)
+                        this.setState({ searchResults: null })
+                      }}
+                      onAddLayer={this.props.onAddLayer}
+                      onCheck={this.props.onCheckChange}
+                      isSelected={this.props.isSelected}
+                    />
+                  )}
+                />
+              </Switch>
             )}
           </div>
         )}

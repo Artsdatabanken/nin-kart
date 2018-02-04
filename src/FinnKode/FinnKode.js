@@ -5,10 +5,7 @@ import backend from '../backend'
 import PropTypes from 'prop-types'
 
 export default class FinnKode extends Component {
-  constructor(props) {
-    super(props)
-    this.queryNumber = 0
-  }
+  queryNumber = 0
 
   handleChange = (e, q) => {
     this.queryNumber++

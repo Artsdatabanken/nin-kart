@@ -31,7 +31,6 @@ class Grunnkart extends Component {
       baseMapStyle: defaultMapStyle,
       mapStyle: '',
       kode: '',
-      open: true,
       showMainDrawer: false,
       categories: [
         'Alle naturområder',
@@ -231,27 +230,24 @@ class Grunnkart extends Component {
             this.setState({ showMainDrawer: !this.state.showMainDrawer })
           }
         />
-        {this.state.open &&
-          !this.state.showMainDrawer && (
-            <div
-              style={{
-                backgroundColor: 'red',
-                position: 'absolute',
-                left: 8,
-                top: 10,
-                width: 400,
-              }}
-            >
-              <VenstreVinduContainerContainer
-                kode={this.props.match.params.kode}
-                history={this.props.history}
-                onAddLayer={this.handleAddLayer}
-                onToggleMainDrawer={() =>
-                  this.setState({ showMainDrawer: !this.state.showMainDrawer })
-                }
-              />
-            </div>
-          )}
+        {!this.state.showMainDrawer && (
+          <div
+            style={{
+              backgroundColor: 'red',
+              position: 'absolute',
+              left: 8,
+              top: 10,
+              width: 400,
+            }}
+          >
+            <VenstreVinduContainerContainer
+              onAddLayer={this.handleAddLayer}
+              onToggleMainDrawer={() =>
+                this.setState({ showMainDrawer: !this.state.showMainDrawer })
+              }
+            />
+          </div>
+        )}
       </div>
     )
   }

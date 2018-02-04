@@ -1,5 +1,6 @@
 import React from 'react'
 import VenstreVinduContainer from './VenstreVinduContainer'
+import { Route } from 'react-router-dom'
 
 class VenstreVinduContainerContainer extends React.Component {
   constructor(props) {
@@ -8,11 +9,8 @@ class VenstreVinduContainerContainer extends React.Component {
       filterCodes: [],
     }
 
-    // this.handleDataFetch = this.taxonFetch.bind(this);
     this.handleCheckChange = this.handleCheckChange.bind(this)
     this.isSelected = this.isSelected.bind(this)
-    this.handleGoToCode = this.handleGoToCode.bind(this)
-    this.handleGoBack = this.handleGoBack.bind(this)
   }
 
   handleCheckChange = function(event) {
@@ -59,32 +57,26 @@ class VenstreVinduContainerContainer extends React.Component {
     }
   }
 
-  handleGoToCode(kode) {
-    this.props.history.push(`/${kode}`)
-  }
-
-  handleGoBack() {
-    this.props.history.goBack()
-  }
-
   render() {
     return (
-      <VenstreVinduContainer
-        name={this.props.kode}
-        filterCode={'filterCodes'}
-        kode={this.props.kode}
-        dataFetchFunction={this.codeCount}
-        onGoToCode={this.handleGoToCode}
-        onAddLayer={this.props.onAddLayer}
-        onGoBack={this.handleGoBack}
-        onToggleMainDrawer={this.props.onToggleMainDrawer}
-        showKodeListe={this.props.showKodeListe}
-        onCheckChange={this.handleCheckChange}
-        isSelected={this.isSelected}
-        filter={this.state.filterCodes}
+      <Route
+        render={({ history }) => (
+          <VenstreVinduContainer
+            name={this.props.kode}
+            filterCode={'filterCodes'}
+            kode={this.props.kode}
+            dataFetchFunction={this.codeCount}
+            onAddLayer={this.props.onAddLayer}
+            onGoBack={this.handleGoBack}
+            onToggleMainDrawer={this.props.onToggleMainDrawer}
+            showKodeListe={this.props.showKodeListe}
+            onCheckChange={this.handleCheckChange}
+            isSelected={this.isSelected}
+            filter={this.state.filterCodes}
+          />
+        )}
       />
     )
   }
 }
-
 export default VenstreVinduContainerContainer
