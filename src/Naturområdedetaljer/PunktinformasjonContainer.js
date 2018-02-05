@@ -79,8 +79,22 @@ class PunktinformasjonContainer extends Component {
     const kommunenavn = data.match(/navn_norsk = '(.*)'/)[1]
     const kommunekode = 'GEO_KO-' + data.match(/kommunenummer = '(.*)'/)[1]
     return {
-      [kommunekode]: { value: kommunenavn, name: 'Kommune' },
-      [fylkeskode]: { value: fylkesnavn, name: 'Fylke' },
+      [kommunekode]: {
+        value: kommunenavn,
+        name: 'Kommune',
+        dataorigin: 'Kartverket',
+        homepage: 'https://kartverket.no/',
+        logo:
+          'https://www.kartverket.no/ImageVault/publishedmedia/sbmee5jt1ys7ky0huw32/Kartverket_staende.jpg',
+      },
+      [fylkeskode]: {
+        value: fylkesnavn,
+        name: 'Fylke',
+        dataorigin: 'Kartverket',
+        homepage: 'https://kartverket.no/',
+        logo:
+          'https://www.kartverket.no/ImageVault/publishedmedia/sbmee5jt1ys7ky0huw32/Kartverket_staende.jpg',
+      },
     }
   }
 
@@ -90,6 +104,10 @@ class PunktinformasjonContainer extends Component {
         ['GEO_SN-' + data.stedsnummer]: {
           name: 'Stedsnavn',
           value: data.placename,
+          dataorigin: 'Kartverket',
+          homepage: 'https://kartverket.no/',
+          logo:
+            'https://www.kartverket.no/ImageVault/publishedmedia/sbmee5jt1ys7ky0huw32/Kartverket_staende.jpg',
         },
       }
     return null

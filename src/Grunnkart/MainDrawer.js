@@ -12,6 +12,7 @@ class MainDrawer extends Component {
       >
         <MenuItem
           onClick={() => {
+            this.props.onToggleMainDrawer()
             this.props.handleChangeBaseMap('')
           }}
         >
@@ -19,6 +20,7 @@ class MainDrawer extends Component {
         </MenuItem>
         <MenuItem
           onClick={() => {
+            this.props.onToggleMainDrawer()
             this.props.handleChangeBaseMap('dark')
           }}
         >
@@ -26,6 +28,7 @@ class MainDrawer extends Component {
         </MenuItem>
         <MenuItem
           onClick={() => {
+            this.props.onToggleMainDrawer()
             this.props.handleChangeBaseMap('vintage')
           }}
         >
@@ -33,12 +36,17 @@ class MainDrawer extends Component {
         </MenuItem>
         <MenuItem
           onClick={() => {
+            this.props.onToggleMainDrawer()
             this.props.handleChangeBaseMap('satellite')
           }}
         >
           Flyfoto
         </MenuItem>
-        <MenuItem>
+        <MenuItem
+          onClick={() => {
+            this.props.onToggleMainDrawer()
+          }}
+        >
           <Link to="/kontrollpanel">Aktive kartlag</Link>
         </MenuItem>
         <MenuItem>Del eller bygg inn kartet</MenuItem>
@@ -49,5 +57,4 @@ class MainDrawer extends Component {
     )
   }
 }
-
 export default MainDrawer

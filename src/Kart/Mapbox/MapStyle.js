@@ -85,6 +85,29 @@ export const Soner = fromJS({
   },
 })
 
+export const Rodliste = fromJS({
+  id: 'Rodlistede',
+  type: 'fill',
+  source: 'composite',
+  'source-layer': 'naturomrader6',
+  filter: [
+    'all',
+    [
+      'any',
+      ['has', 'RKAT_CR'],
+      ['has', 'RKAT_EN'],
+      ['has', 'RKAT_NT'],
+      ['has', 'RKAT_RE'],
+    ],
+    ['in', '$type', 'LineString', 'Polygon'],
+  ],
+  layout: {},
+  paint: {
+    'fill-color': 'hsla(0, 97%, 48%, 0.92)',
+    'fill-outline-color': 'hsla(0, 86%, 64%, 0.91)',
+  },
+})
+
 export const NiN = fromJS({
   id: 'nin',
   type: 'fill',

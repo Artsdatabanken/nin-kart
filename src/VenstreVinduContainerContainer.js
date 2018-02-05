@@ -62,14 +62,9 @@ class VenstreVinduContainerContainer extends React.Component {
       <Route
         render={({ history }) => (
           <VenstreVinduContainer
-            name={this.props.kode}
             filterCode={'filterCodes'}
-            kode={this.props.kode}
-            dataFetchFunction={this.codeCount}
             onAddLayer={this.props.onAddLayer}
-            onGoBack={this.handleGoBack}
             onToggleMainDrawer={this.props.onToggleMainDrawer}
-            showKodeListe={this.props.showKodeListe}
             onCheckChange={this.handleCheckChange}
             isSelected={this.isSelected}
             filter={this.state.filterCodes}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ListItem } from 'material-ui'
+import { ListItem, Avatar } from 'material-ui'
 import InfoOutline from 'material-ui/svg-icons/action/info-outline'
 
 function PointInfo(props) {
@@ -11,8 +11,17 @@ function PointInfo(props) {
           return (
             <ListItem
               primaryText={item.value}
-              secondaryText={(item.name || item.kode) + ' (' + key + ')'}
+              secondaryText={
+                item.name || item.kode
+                  ? (item.name || item.kode) + ' (' + key + ')'
+                  : key
+              }
               key={key}
+              leftAvatar={
+                <a target="_blank" href={item.homepage}>
+                  <Avatar src={item.logo} title={item.dataorigin} />
+                </a>
+              }
               rightAvatar={
                 item.article && (
                   <a target="_blank" href={item.article /*'/kode/LKM_'+key*/}>
