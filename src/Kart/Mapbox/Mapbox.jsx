@@ -83,7 +83,6 @@ class Mapbox extends Component {
 
   render() {
     const { viewport } = this.state
-    const { lng, lat } = this.props.match
     return (
       <ReactMapGL
         {...viewport}
