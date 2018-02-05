@@ -5166,6 +5166,134 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
 </div>
 `;
 
+exports[`Storyshots Resultatliste default 1`] = `
+<div
+  style={
+    Object {
+      "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+      "backgroundColor": "#ffffff",
+      "borderRadius": 2,
+      "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
+             0 1px 4px rgba(0, 0, 0, 0.12)",
+      "boxSizing": "border-box",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "fontFamily": "Roboto, sans-serif",
+      "muiPrepared": true,
+      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "maxHeight": 600,
+        "muiPrepared": true,
+        "overflow": "auto",
+        "padding": "8px 0px 8px 0px",
+      }
+    }
+  >
+    <div>
+      <span
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        open={null}
+        style={
+          Object {
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "background": "none",
+            "backgroundColor": null,
+            "border": 10,
+            "boxSizing": "border-box",
+            "color": "rgba(0, 0, 0, 0.87)",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": 16,
+            "fontWeight": "inherit",
+            "lineHeight": "16px",
+            "margin": 0,
+            "muiPrepared": true,
+            "outline": "none",
+            "padding": 0,
+            "pointer": "hand",
+            "position": "relative",
+            "textDecoration": "none",
+            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "verticalAlign": null,
+            "width": 500,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+        >
+          <div
+            style={
+              Object {
+                "marginLeft": 0,
+                "muiPrepared": true,
+                "paddingBottom": 20,
+                "paddingLeft": 72,
+                "paddingRight": 16,
+                "paddingTop": 20,
+                "position": "relative",
+              }
+            }
+          >
+            <img
+              className={undefined}
+              size={40}
+              src="https://www.artsdatabanken.no/Media/F1698?mode=480x480"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "rgb(188, 188, 188)",
+                  "borderRadius": "50%",
+                  "color": "#ffffff",
+                  "display": "inline-flex",
+                  "fontSize": 20,
+                  "height": 40,
+                  "justifyContent": "center",
+                  "left": 16,
+                  "muiPrepared": true,
+                  "position": "absolute",
+                  "top": 8,
+                  "userSelect": "none",
+                  "width": 40,
+                }
+              }
+            />
+            <div
+              style={
+                Object {
+                  "muiPrepared": true,
+                }
+              }
+            >
+              Kalk
+            </div>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Statistikk arter 1`] = `
 <div
   style={
