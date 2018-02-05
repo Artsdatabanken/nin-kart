@@ -4287,13 +4287,45 @@ exports[`Storyshots PointInfo default 1`] = `
                     "marginLeft": 0,
                     "muiPrepared": true,
                     "paddingBottom": 16,
-                    "paddingLeft": 16,
+                    "paddingLeft": 72,
                     "paddingRight": 16,
                     "paddingTop": 20,
                     "position": "relative",
                   }
                 }
               >
+                <a
+                  href={undefined}
+                  style={
+                    Object {
+                      "left": 16,
+                      "position": "absolute",
+                      "top": 16,
+                    }
+                  }
+                  target="_blank"
+                >
+                  <div
+                    className={undefined}
+                    size={40}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "rgb(188, 188, 188)",
+                        "borderRadius": "50%",
+                        "color": "#ffffff",
+                        "display": "inline-flex",
+                        "fontSize": 20,
+                        "height": 40,
+                        "justifyContent": "center",
+                        "muiPrepared": true,
+                        "userSelect": "none",
+                        "width": 40,
+                      }
+                    }
+                    title={undefined}
+                  />
+                </a>
                 <div
                   style={
                     Object {
@@ -4322,7 +4354,7 @@ exports[`Storyshots PointInfo default 1`] = `
                     }
                   }
                 >
-                  undefined (Høyde)
+                  Høyde
                 </div>
               </div>
             </div>
@@ -4380,13 +4412,45 @@ exports[`Storyshots PointInfo default 1`] = `
                     "marginLeft": 0,
                     "muiPrepared": true,
                     "paddingBottom": 16,
-                    "paddingLeft": 16,
+                    "paddingLeft": 72,
                     "paddingRight": 16,
                     "paddingTop": 20,
                     "position": "relative",
                   }
                 }
               >
+                <a
+                  href={undefined}
+                  style={
+                    Object {
+                      "left": 16,
+                      "position": "absolute",
+                      "top": 16,
+                    }
+                  }
+                  target="_blank"
+                >
+                  <div
+                    className={undefined}
+                    size={40}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "rgb(188, 188, 188)",
+                        "borderRadius": "50%",
+                        "color": "#ffffff",
+                        "display": "inline-flex",
+                        "fontSize": 20,
+                        "height": 40,
+                        "justifyContent": "center",
+                        "muiPrepared": true,
+                        "userSelect": "none",
+                        "width": 40,
+                      }
+                    }
+                    title={undefined}
+                  />
+                </a>
                 <div
                   style={
                     Object {
@@ -4473,13 +4537,45 @@ exports[`Storyshots PointInfo default 1`] = `
                     "marginLeft": 0,
                     "muiPrepared": true,
                     "paddingBottom": 16,
-                    "paddingLeft": 16,
+                    "paddingLeft": 72,
                     "paddingRight": 16,
                     "paddingTop": 20,
                     "position": "relative",
                   }
                 }
               >
+                <a
+                  href={undefined}
+                  style={
+                    Object {
+                      "left": 16,
+                      "position": "absolute",
+                      "top": 16,
+                    }
+                  }
+                  target="_blank"
+                >
+                  <div
+                    className={undefined}
+                    size={40}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "rgb(188, 188, 188)",
+                        "borderRadius": "50%",
+                        "color": "#ffffff",
+                        "display": "inline-flex",
+                        "fontSize": 20,
+                        "height": 40,
+                        "justifyContent": "center",
+                        "muiPrepared": true,
+                        "userSelect": "none",
+                        "width": 40,
+                      }
+                    }
+                    title={undefined}
+                  />
+                </a>
                 <div
                   style={
                     Object {
@@ -4508,7 +4604,7 @@ exports[`Storyshots PointInfo default 1`] = `
                     }
                   }
                 >
-                  undefined (Kommunenavn)
+                  Kommunenavn
                 </div>
               </div>
             </div>
@@ -4663,13 +4759,45 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                       "marginLeft": 0,
                       "muiPrepared": true,
                       "paddingBottom": 16,
-                      "paddingLeft": 16,
+                      "paddingLeft": 72,
                       "paddingRight": 16,
                       "paddingTop": 20,
                       "position": "relative",
                     }
                   }
                 >
+                  <a
+                    href={undefined}
+                    style={
+                      Object {
+                        "left": 16,
+                        "position": "absolute",
+                        "top": 16,
+                      }
+                    }
+                    target="_blank"
+                  >
+                    <div
+                      className={undefined}
+                      size={40}
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "rgb(188, 188, 188)",
+                          "borderRadius": "50%",
+                          "color": "#ffffff",
+                          "display": "inline-flex",
+                          "fontSize": 20,
+                          "height": 40,
+                          "justifyContent": "center",
+                          "muiPrepared": true,
+                          "userSelect": "none",
+                          "width": 40,
+                        }
+                      }
+                      title={undefined}
+                    />
+                  </a>
                   <div
                     style={
                       Object {
@@ -4689,7 +4817,7 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                       }
                     }
                   >
-                    undefined (name)
+                    name
                   </div>
                 </div>
               </div>
@@ -4747,13 +4875,45 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                       "marginLeft": 0,
                       "muiPrepared": true,
                       "paddingBottom": 16,
-                      "paddingLeft": 16,
+                      "paddingLeft": 72,
                       "paddingRight": 16,
                       "paddingTop": 20,
                       "position": "relative",
                     }
                   }
                 >
+                  <a
+                    href={undefined}
+                    style={
+                      Object {
+                        "left": 16,
+                        "position": "absolute",
+                        "top": 16,
+                      }
+                    }
+                    target="_blank"
+                  >
+                    <div
+                      className={undefined}
+                      size={40}
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "rgb(188, 188, 188)",
+                          "borderRadius": "50%",
+                          "color": "#ffffff",
+                          "display": "inline-flex",
+                          "fontSize": 20,
+                          "height": 40,
+                          "justifyContent": "center",
+                          "muiPrepared": true,
+                          "userSelect": "none",
+                          "width": 40,
+                        }
+                      }
+                      title={undefined}
+                    />
+                  </a>
                   <div
                     style={
                       Object {
@@ -4773,7 +4933,7 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                       }
                     }
                   >
-                    undefined (value)
+                    value
                   </div>
                 </div>
               </div>

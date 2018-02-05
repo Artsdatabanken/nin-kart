@@ -12,6 +12,7 @@ import {
   Seksjoner,
   Soner,
   NiN,
+  Rodliste,
   NiNHover,
 } from '../Kart/Mapbox/MapStyle'
 import VenstreVinduContainerContainer from '../VenstreVinduContainerContainer'
@@ -86,9 +87,6 @@ class Grunnkart extends Component {
     return fromJS({
       id: code,
       type: 'fill',
-      metadata: {
-        'mapbox:group': 'f687f11d778ea9a47615d3f139a85ec5',
-      },
       source: 'composite',
       'source-layer': source,
       interactive: true,
@@ -136,7 +134,6 @@ class Grunnkart extends Component {
 
       .filter(layer => {
         const id = layer.get('id')
-        //console.log(id);
         return this.state.categories.every(
           name => visibility[name] || !layerSelector[name].test(id)
         )
@@ -161,7 +158,6 @@ class Grunnkart extends Component {
       kode: kode,
     })
     this.addLayer(navn, kode)
-    console.log(kode)
   }
 
   setBaseMap(type) {
@@ -201,6 +197,7 @@ class Grunnkart extends Component {
       .push(Seksjoner)
       .push(Soner)
       .push(NiN)
+      .push(Rodliste)
       .push(NiNHover)
     this.updateMapStyle({ ...this.state })
   }
