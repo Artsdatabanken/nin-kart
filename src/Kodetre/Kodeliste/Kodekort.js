@@ -100,7 +100,6 @@ class Kodekort extends React.Component {
             </IconButton>
           </CardActions>
         </CardTitle>
-        {false && <CardText>{selv.beskrivelse}</CardText>}
       </Card>
     )
   }
