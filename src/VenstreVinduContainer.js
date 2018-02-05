@@ -49,6 +49,7 @@ class VenstreVinduContainer extends React.Component {
                   path="/lag/:kode?"
                   render={({ match, history }) => (
                     <KodeVinduContainer
+                      style={{ height: '100vh' }}
                       kode={match.params.kode}
                       filterCode={this.props.filterCode}
                       filter={this.props.filter}
@@ -81,9 +82,12 @@ class VenstreVinduContainer extends React.Component {
                 />
 
                 <Route
-                  path="/punkt/:lngLat"
+                  path="/punkt/:lng,:lat"
                   render={({ match, history }) => (
-                    <PunktinformasjonContainer lngLat={match.params.lngLat} />
+                    <PunktinformasjonContainer
+                      lng={match.params.lng}
+                      lat={match.params.lat}
+                    />
                   )}
                 />
               </Switch>

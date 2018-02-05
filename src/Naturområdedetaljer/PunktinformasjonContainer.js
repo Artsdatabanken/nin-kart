@@ -18,20 +18,25 @@ class PunktinformasjonContainer extends Component {
       redlistTheme: '',
 
       pointInfo: {},
-      admEnhetInfo: '',
+      admEnhet: '',
       stedsnavn: null,
     }
   }
 
+  componentWillReceiveProps(props) {
+    this.fetch(props.lng, props.lat)
+  }
   componentDidMount() {
+    this.fetch(this.props.lng, this.props.lat)
+  }
+
+  fetch(lng, lat) {
     this.goFetch(this.props.natureAreaId)
-    const lngLat = this.props.lngLat.split(',')
-    console.log(lngLat)
-    this.goFetchPointInfo(lngLat)
+    this.goFetchPointInfo(lng, lat)
     this.setState({
       lngLat: {
-        Lat: { value: Number.parseFloat(lngLat[1]).toPrecision(7) },
-        Lon: { value: Number.parseFloat(lngLat[0]).toPrecision(7) },
+        Lat: { value: Number.parseFloat(lat).toPrecision(7) },
+        Lon: { value: Number.parseFloat(lng).toPrecision(7) },
       },
     })
     this.goFetchInfo(this.props.localId)
@@ -69,44 +74,39 @@ class PunktinformasjonContainer extends Component {
 
   fixAdmEnhet(data) {
     if (!data.match(/fylkesnavn = '(.*)'/)) return null
+    const fylkesnavn = data.match(/fylkesnavn = '(.*)'/)[1]
+    const fylkeskode = 'GEO_FY-' + data.match(/fylkesnummer = '(.*)'/)[1]
+    const kommunenavn = data.match(/navn_norsk = '(.*)'/)[1]
+    const kommunekode = 'GEO_KO-' + data.match(/kommunenummer = '(.*)'/)[1]
     return {
-      Fylkesnavn: {
-        value: data.match(/fylkesnavn = '(.*)'/)[1],
-      },
-      Fylkesnummer: {
-        value: data.match(/fylkesnummer = '(.*)'/)[1],
-      },
-      Kommunenavn: {
-        value: data.match(/navn_norsk = '(.*)'/)[1],
-      },
-      Kommunenummer: {
-        value: data.match(/kommunenummer = '(.*)'/)[1],
-      },
+      [kommunekode]: { value: kommunenavn, name: 'Kommune' },
+      [fylkeskode]: { value: fylkesnavn, name: 'Fylke' },
     }
   }
 
   fixStedsnavn(data) {
     if (data.placename)
       return {
-        Stedsnavn: {
+        ['GEO_SN-' + data.stedsnummer]: {
+          name: 'Stedsnavn',
           value: data.placename,
         },
       }
     return null
   }
 
-  goFetchPointInfo(lngLat) {
-    backend.hentRasterPunkt(lngLat).then(data =>
+  goFetchPointInfo(lng, lat) {
+    backend.hentRasterPunkt(lng, lat).then(data => {
       this.setState({
         pointInfo: data,
       })
-    )
-    backend.hentAdmEnhet(lngLat).then(data =>
+    })
+    backend.hentAdmEnhet(lng, lat).then(data =>
       this.setState({
-        admEnhetInfo: this.fixAdmEnhet(data),
+        admEnhet: this.fixAdmEnhet(data),
       })
     )
-    backend.hentStedsnavn(lngLat).then(data =>
+    backend.hentStedsnavn(lng, lat).then(data =>
       this.setState({
         stedsnavn: this.fixStedsnavn(data),
       })
@@ -119,7 +119,7 @@ class PunktinformasjonContainer extends Component {
         natureArea={this.state.natureArea}
         metadata={this.state.metadata}
         pointInfo={this.state.pointInfo}
-        admEnhetInfo={this.state.admEnhetInfo}
+        admEnhet={this.state.admEnhet}
         stedsnavn={this.state.stedsnavn}
       />
     )

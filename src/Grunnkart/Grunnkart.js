@@ -234,6 +234,7 @@ class Grunnkart extends Component {
               left: 8,
               top: 10,
               width: 400,
+              zIndex: 2,
             }}
           >
             <VenstreVinduContainerContainer

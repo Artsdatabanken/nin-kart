@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
-import ReactMapGL from 'react-map-gl'
-import './Mapbox.css'
+import ReactMapGL, { Marker } from 'react-map-gl'
+import 'mapbox-gl/dist/mapbox-gl.css'
+import Place from 'material-ui/svg-icons/maps/place'
+import { withRouter } from 'react-router'
+import { Route, Switch } from 'react-router-dom'
 
 class Mapbox extends Component {
   constructor(props) {
@@ -80,13 +83,15 @@ class Mapbox extends Component {
 
   render() {
     const { viewport } = this.state
-
+    const { lng, lat } = this.props.match
+    console.log(lng, lat)
     return (
       <ReactMapGL
         {...viewport}
         ref={map => {
           this.map = map
         }}
+        style={{ cursor: 'crosshair' }}
         onClick={this.props.onClick}
         onHover={this.onHover}
         onMouseMove={this.onMouseMove}
@@ -95,9 +100,25 @@ class Mapbox extends Component {
         //mapStyle="mapbox://styles/artsdatabanken/cjc68pztl4sud2sp0s4wyy58q"
         mapStyle={this.props.mapStyle}
         minZoom={4}
-      />
+      >
+        <Switch>
+          <Route
+            path="/punkt/:lng,:lat"
+            render={({ match, history }) => (
+              <Marker
+                latitude={parseFloat(match.params.lat)}
+                longitude={parseFloat(match.params.lng)}
+                offsetLeft={-12}
+                offsetTop={-24}
+              >
+                <Place style={{ color: '#fff' }} />
+              </Marker>
+            )}
+          />
+        </Switch>
+      </ReactMapGL>
     )
   }
 }
 
-export default Mapbox
+export default withRouter(Mapbox)

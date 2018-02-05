@@ -111,35 +111,31 @@ class Backend {
     )
   }
 
-  static async hentRasterPunkt(lngLat) {
+  static async hentRasterPunkt(lng, lat) {
     return this.getPromise(
-      `https://adb-nin-raster.azurewebsites.net/v1/point/${lngLat[0]}/${
-        lngLat[1]
-      }`
+      `https://adb-nin-raster.azurewebsites.net/v1/point/${lng}/${lat}`
     )
   }
-  static CreateBboxFromPoint(lngLat, radius) {
+  static CreateBboxFromPoint(lng, lat, radius) {
     return {
-      minx: lngLat[1] - radius,
-      miny: lngLat[0] - radius,
-      maxx: Number.parseFloat(lngLat[1]) + Number.parseFloat(radius),
-      maxy: Number.parseFloat(lngLat[0]) + Number.parseFloat(radius),
+      minx: lat - radius,
+      miny: lng - radius,
+      maxx: Number.parseFloat(lat) + Number.parseFloat(radius),
+      maxy: Number.parseFloat(lng) + Number.parseFloat(radius),
     }
   }
 
-  static async hentAdmEnhet(lngLat) {
-    var bbox = this.CreateBboxFromPoint(lngLat, 0.000001)
+  static async hentAdmEnhet(lng, lat) {
+    var bbox = this.CreateBboxFromPoint(lng, lat, 0.000001)
     return this.getTextPromise(
       `https://openwms.statkart.no/skwms1/wms.adm_enheter?request=GetFeatureinfo&service=WMS&version=1.3.0&Layers=Kommuner&crs=epsg:4258&format=image/png&width=3&height=3&QUERY_LAYERS=kommuner&i=2&j=2
       &bbox=${bbox.minx},${bbox.miny},${bbox.maxx},${bbox.maxy}`
     )
   }
 
-  static async hentStedsnavn(lngLat) {
+  static async hentStedsnavn(lng, lat) {
     return this.getPromise(
-      `https://www.norgeskart.no/ws/elev.py?lat=${lngLat[1]}&lon=${
-        lngLat[0]
-      }&epsg=4258`
+      `https://www.norgeskart.no/ws/elev.py?lat=${lat}&lon=${lng}&epsg=4258`
     )
   }
 
