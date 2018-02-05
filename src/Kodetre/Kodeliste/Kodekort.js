@@ -5,7 +5,6 @@ import {
   CardActions,
   CardMedia,
   CardTitle,
-  CardText,
 } from 'material-ui'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 import { IconButton } from 'material-ui'
@@ -100,7 +99,6 @@ class Kodekort extends React.Component {
             </IconButton>
           </CardActions>
         </CardTitle>
-        {false && <CardText>{selv.beskrivelse}</CardText>}
       </Card>
     )
   }

@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import ReactMapGL from 'react-map-gl'
-import Kontrollpanel from './control-panel'
-import './Mapbox.css'
+import ReactMapGL, { Marker } from 'react-map-gl'
+import 'mapbox-gl/dist/mapbox-gl.css'
+import Place from 'material-ui/svg-icons/maps/place'
+import { withRouter } from 'react-router'
+import { Route, Switch } from 'react-router-dom'
 
 class Mapbox extends Component {
   constructor(props) {
@@ -81,13 +83,13 @@ class Mapbox extends Component {
 
   render() {
     const { viewport } = this.state
-
     return (
       <ReactMapGL
         {...viewport}
         ref={map => {
           this.map = map
         }}
+        style={{ cursor: 'crosshair' }}
         onClick={this.props.onClick}
         onHover={this.onHover}
         onMouseMove={this.onMouseMove}
@@ -97,16 +99,24 @@ class Mapbox extends Component {
         mapStyle={this.props.mapStyle}
         minZoom={4}
       >
-        <Kontrollpanel
-          handleVisibilityChange={this.props.handleVisibilityChange}
-          handleColorChange={this.props.handleColorChange}
-          categories={this.props.categories}
-          visibility={this.props.visibility}
-          color={this.props.color}
-        />
+        <Switch>
+          <Route
+            path="/punkt/:lng,:lat"
+            render={({ match, history }) => (
+              <Marker
+                latitude={parseFloat(match.params.lat)}
+                longitude={parseFloat(match.params.lng)}
+                offsetLeft={-12}
+                offsetTop={-24}
+              >
+                <Place style={{ color: '#fff' }} />
+              </Marker>
+            )}
+          />
+        </Switch>
       </ReactMapGL>
     )
   }
 }
 
-export default Mapbox
+export default withRouter(Mapbox)

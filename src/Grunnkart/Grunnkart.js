@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Kart from '../Kart/Kart'
-import Kode from '../Kodetre/Kode'
 import { fromJS } from 'immutable'
 import MainDrawer from './MainDrawer'
 import {
@@ -15,6 +14,7 @@ import {
   NiN,
   NiNHover,
 } from '../Kart/Mapbox/MapStyle'
+import VenstreVinduContainerContainer from '../VenstreVinduContainerContainer'
 
 // Layer color class by type
 const colorClass = {
@@ -29,10 +29,8 @@ class Grunnkart extends Component {
     super(props)
     this.state = {
       baseMapStyle: defaultMapStyle,
-      showKodeListe: false,
       mapStyle: '',
       kode: '',
-      open: true,
       showMainDrawer: false,
       categories: [
         'Alle naturområder',
@@ -72,7 +70,6 @@ class Grunnkart extends Component {
     this.handleAddLayer = this.handleAddLayer.bind(this)
     this.handleColorChange = this.handleColorChange.bind(this)
     this.handleVisibilityChange = this.handleVisibilityChange.bind(this)
-    this.handleToggleShowKodeListe = this.handleToggleShowKodeListe.bind(this)
     this.setBaseMap = this.setBaseMap.bind(this)
   }
 
@@ -121,17 +118,13 @@ class Grunnkart extends Component {
     this.updateMapStyle({ ...this.state, color })
   }
 
-  handleVisibilityChange(name, event) {
+  handleVisibilityChange(name, visible) {
     const visibility = {
       ...this.state.visibility,
-      [name]: event.target.checked,
+      [name]: visible,
     }
     this.setState({ visibility })
     this.updateMapStyle({ ...this.state, visibility })
-  }
-
-  handleToggleShowKodeListe() {
-    this.setState({ showKodeListe: !this.state.showKodeListe })
   }
 
   startUpdateMapStyle() {
@@ -223,13 +216,9 @@ class Grunnkart extends Component {
           latitude={65.5}
           longitude={10}
           zoom={4.7}
-          handleVisibilityChange={this.handleVisibilityChange}
-          handleColorChange={this.handleColorChange}
-          categories={this.state.categories}
-          visibility={this.state.visibility}
-          color={this.state.color}
           mapStyle={this.state.mapStyle}
         />
+
         <MainDrawer
           handleChangeBaseMap={this.setBaseMap}
           open={this.state.showMainDrawer}
@@ -237,29 +226,30 @@ class Grunnkart extends Component {
             this.setState({ showMainDrawer: !this.state.showMainDrawer })
           }
         />
-        {this.state.open &&
-          !this.state.showMainDrawer && (
-            <div
-              style={{
-                backgroundColor: 'red',
-                position: 'absolute',
-                left: 8,
-                top: 10,
-                width: 400,
-              }}
-            >
-              <Kode
-                kode={this.props.match.params.kode}
-                history={this.props.history}
-                onAddLayer={this.handleAddLayer}
-                onToggleShowKodeListe={this.handleToggleShowKodeListe}
-                onToggleMainDrawer={() =>
-                  this.setState({ showMainDrawer: !this.state.showMainDrawer })
-                }
-                showKodeListe={this.state.showKodeListe}
-              />
-            </div>
-          )}
+        {!this.state.showMainDrawer && (
+          <div
+            style={{
+              backgroundColor: '#fff',
+              position: 'absolute',
+              left: 8,
+              top: 10,
+              width: 400,
+              zIndex: 2,
+            }}
+          >
+            <VenstreVinduContainerContainer
+              onAddLayer={this.handleAddLayer}
+              onToggleMainDrawer={() =>
+                this.setState({ showMainDrawer: !this.state.showMainDrawer })
+              }
+              onVisibilityChange={this.handleVisibilityChange}
+              onColorChange={this.handleColorChange}
+              categories={this.state.categories}
+              visibility={this.state.visibility}
+              color={this.state.color}
+            />
+          </div>
+        )}
       </div>
     )
   }

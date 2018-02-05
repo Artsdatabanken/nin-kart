@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
 import { getMuiTheme, MuiThemeProvider } from 'material-ui/styles'
 import Grunnkart from './Grunnkart/Grunnkart'
@@ -25,20 +25,13 @@ const muiTheme = getMuiTheme({
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <MuiThemeProvider muiTheme={muiTheme}>
-          <BrowserRouter>
-            <Switch>
-              <Route path="/:kode?" exact component={Grunnkart} />
-              {false && <Route component={RedirectToDefault} />}
-            </Switch>
-          </BrowserRouter>
-        </MuiThemeProvider>
-      </div>
+      <MuiThemeProvider muiTheme={muiTheme}>
+        <BrowserRouter>
+          <Grunnkart />
+        </BrowserRouter>
+      </MuiThemeProvider>
     )
   }
 }
-
-const RedirectToDefault = () => <Redirect from="/" to="/ROT" />
 
 export default App

@@ -17,7 +17,6 @@ const rename = data => {
   Object.keys(replacements).forEach(k => {
     text = text.replace(k, replacements[k])
   })
-  console.log(text)
   return JSON.parse(text)
 }
 

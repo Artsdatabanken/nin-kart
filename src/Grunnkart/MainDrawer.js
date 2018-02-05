@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Drawer, MenuItem } from 'material-ui'
+import { Link } from 'react-router-dom'
 
 class MainDrawer extends Component {
   render() {
@@ -37,7 +38,9 @@ class MainDrawer extends Component {
         >
           Flyfoto
         </MenuItem>
-        <MenuItem>Aktive kartlag</MenuItem>
+        <MenuItem>
+          <Link to="/kontrollpanel">Aktive kartlag</Link>
+        </MenuItem>
         <MenuItem>Del eller bygg inn kartet</MenuItem>
         <MenuItem>Skriv ut</MenuItem>
         <MenuItem>Send tilbakemeldinger</MenuItem>

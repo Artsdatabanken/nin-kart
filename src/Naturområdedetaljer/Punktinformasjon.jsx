@@ -1,5 +1,5 @@
 import React from 'react'
-import { Paper } from 'material-ui'
+import { List } from 'material-ui'
 import Detaljer from './Detaljer'
 //import Kartlegging from './Kartlegging'
 //import Omrader from './Omrader'
@@ -7,32 +7,32 @@ import backend from '../backend'
 import FactList from './FactList'
 import PointInfo from './PointInfo'
 
-const NatureAreaDetails = props => (
-  <Paper>
+const Punktinformasjon = props => (
+  <List>
     {/* <Omrader areas={props.admEnhetInfo} /> */}
     {/*<Naturniva level={backend.NatureLevelNames[props.natureArea.nivå]}/>*/}
     <PointInfo pointInfo={props.lngLat} />
-    <PointInfo pointInfo={props.stedsnavnInfo} />
-    <PointInfo pointInfo={props.admEnhetInfo} />
+    <PointInfo pointInfo={props.stedsnavn} />
+    <PointInfo pointInfo={props.admEnhet} />
     <PointInfo pointInfo={props.pointInfo} />
 
     <FactList items={getNatureAreaFacts(props)} />
 
-    <FactList
-      items={
-        props.natureArea.parameters
-          ? props.natureArea.parameters.map(item => ({
-              id: item.code,
-              primary: item.code,
-              secondary: item.codeDescription,
-            }))
-          : []
-      }
-    />
+    {props.natureArea.parameters && (
+      <FactList
+        items={props.natureArea.parameters.map(item => ({
+          id: item.code,
+          primary: item.code,
+          secondary: item.codeDescription,
+        }))}
+      />
+    )}
 
-    <Detaljer description={props.natureArea.description} />
+    {props.natureArea.description && (
+      <Detaljer description={props.natureArea.description} />
+    )}
     {/* <Kartlegging owner={props.metadata.owner} /> */}
-  </Paper>
+  </List>
 )
 
 function getNatureAreaFacts(props) {
@@ -81,4 +81,4 @@ function getNatureAreaFacts(props) {
   return facts
 }
 
-export default NatureAreaDetails
+export default Punktinformasjon

@@ -8,7 +8,6 @@ import FetchContainer from '../../FetchContainer'
 
 const KodeVindu = props => {
   const selv = props.selv || {}
-  console.log(selv)
   return (
     <FetchContainer>
       <Paper

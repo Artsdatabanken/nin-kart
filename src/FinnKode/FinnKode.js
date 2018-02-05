@@ -5,21 +5,16 @@ import backend from '../backend'
 import PropTypes from 'prop-types'
 
 export default class FinnKode extends Component {
-  constructor(props) {
-    super(props)
-    this.queryNumber = 0
-  }
+  queryNumber = 0
 
   handleChange = (e, q) => {
-    if (q.length < 2) {
-      this.props.onSearchResults(null)
-      return
-    }
     this.queryNumber++
+    this.props.onSearchResults(null)
     const currentQuery = this.queryNumber
     backend.søkKode(q).then(items => {
       if (currentQuery !== this.queryNumber) return // Abort stale query
-      this.props.onSearchResults(items)
+      if (items.error) this.props.onSearchResults(null)
+      else this.props.onSearchResults(items)
     })
   }
 

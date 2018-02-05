@@ -49,13 +49,13 @@ class TopBar extends Component {
             )
           }
           iconElementLeft={
-            this.props.showKodeListe ? (
-              <IconButton onClick={this.props.onGoBack}>
-                <NavigationBack />
-              </IconButton>
-            ) : (
+            this.props.isAtRoot ? (
               <IconButton onClick={this.props.onToggleMainDrawer}>
                 <Hamburger color="#5f5f5f" />
+              </IconButton>
+            ) : (
+              <IconButton onClick={this.props.onGoBack}>
+                <NavigationBack color="#5f5f5f" />
               </IconButton>
             )
           }
@@ -64,10 +64,25 @@ class TopBar extends Component {
               <IconButton onClick={this.handleSearchButtonClick}>
                 <Search color="#b4b4b4" />
               </IconButton>
-              {this.props.showKodeListe && (
-                <IconButton onClick={this.props.toggleShowKodeListe}>
-                  <CloseIcon color="#b4b4b4" />
-                </IconButton>
+              {!this.props.isAtRoot && (
+                <React.Fragment>
+                  <div
+                    style={{
+                      position: 'absolute',
+                      height: 25,
+                      borderLeft: '1px solid #ddd',
+                      marginTop: 12,
+                      top: 0,
+                      right: 55,
+                    }}
+                  />
+                  <IconButton
+                    onClick={this.props.onExitToRoot}
+                    style={{ position: 'relative' }}
+                  >
+                    <CloseIcon color="#b4b4b4" />
+                  </IconButton>
+                </React.Fragment>
               )}
             </React.Fragment>
           }
