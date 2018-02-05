@@ -7,7 +7,7 @@ import backend from '../backend'
 import FactList from './FactList'
 import PointInfo from './PointInfo'
 
-const NatureAreaDetails = props => (
+const Punktinformasjon = props => (
   <Paper>
     {/* <Omrader areas={props.admEnhetInfo} /> */}
     {/*<Naturniva level={backend.NatureLevelNames[props.natureArea.nivå]}/>*/}
@@ -81,4 +81,4 @@ function getNatureAreaFacts(props) {
   return facts
 }
 
-export default NatureAreaDetails
+export default Punktinformasjon

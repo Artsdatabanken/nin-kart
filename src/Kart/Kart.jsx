@@ -1,5 +1,5 @@
 import Mapbox from './Mapbox/Mapbox'
-import NatureAreaDetails from '../Naturområdedetaljer/NatureAreaDetails'
+import Punktinformasjon from '../Naturområdedetaljer/Punktinformasjon'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
@@ -200,7 +200,7 @@ class Kart extends Component {
             <MenuItem onClick={this.handleToggle}>
               <CloseIcon />
             </MenuItem>
-            <NatureAreaDetails
+            <Punktinformasjon
               natureArea={this.state.natureArea}
               metadata={this.state.metadata}
               pointInfo={this.state.pointInfo}
