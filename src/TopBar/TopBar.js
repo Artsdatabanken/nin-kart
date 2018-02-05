@@ -34,7 +34,6 @@ class TopBar extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div>
         <AppBar

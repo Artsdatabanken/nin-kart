@@ -14,9 +14,6 @@ export default class Kontrollpanel extends PureComponent {
         rightAvatar={<Avatar backgroundColor={color} />}
         style={style}
         onClick={e => {
-          console.log(e)
-          e.preventDefault()
-          e.stopPropagation()
           this.props.onVisibilityChange(name, !visible)
         }}
       />

@@ -10,7 +10,6 @@ class VenstreVinduContainer extends React.Component {
   state = {}
 
   render() {
-    console.log(this.props)
     return (
       <Route
         render={({ match, history }) => (
@@ -37,10 +36,8 @@ class VenstreVinduContainer extends React.Component {
                   <ResultatListe
                     searchResults={this.state.searchResults}
                     onClick={kode => {
-                      console.log('onclick')
                       this.setState({ searchResults: null })
                       history.push('/lag/' + kode)
-                      console.log('onclicked')
                     }}
                   />
                 )}
@@ -58,7 +55,12 @@ class VenstreVinduContainer extends React.Component {
                         history.push('/lag/' + kode)
                         this.setState({ searchResults: null })
                       }}
-                      onAddLayer={this.props.onAddLayer}
+                      onAddLayer={() => {
+                        this.props.onAddLayer(
+                          match.params.kode,
+                          match.params.kode
+                        )
+                      }}
                       onCheck={this.props.onCheckChange}
                       isSelected={this.props.isSelected}
                     />
