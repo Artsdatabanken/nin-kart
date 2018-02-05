@@ -5,7 +5,6 @@ import {
   CardActions,
   CardMedia,
   CardTitle,
-  CardText,
 } from 'material-ui'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 import { IconButton } from 'material-ui'
