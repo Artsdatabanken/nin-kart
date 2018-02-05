@@ -111,7 +111,7 @@ class Backend {
     )
   }
 
-  static async hentRasterPunktInfo(lngLat) {
+  static async hentRasterPunkt(lngLat) {
     return this.getPromise(
       `https://adb-nin-raster.azurewebsites.net/v1/point/${lngLat[0]}/${
         lngLat[1]
@@ -127,7 +127,7 @@ class Backend {
     }
   }
 
-  static async hentAdmEnhetInfo(lngLat) {
+  static async hentAdmEnhet(lngLat) {
     var bbox = this.CreateBboxFromPoint(lngLat, 0.000001)
     return this.getTextPromise(
       `https://openwms.statkart.no/skwms1/wms.adm_enheter?request=GetFeatureinfo&service=WMS&version=1.3.0&Layers=Kommuner&crs=epsg:4258&format=image/png&width=3&height=3&QUERY_LAYERS=kommuner&i=2&j=2
@@ -135,7 +135,7 @@ class Backend {
     )
   }
 
-  static async HentStedsnavnInfo(lngLat) {
+  static async hentStedsnavn(lngLat) {
     return this.getPromise(
       `https://www.norgeskart.no/ws/elev.py?lat=${lngLat[1]}&lon=${
         lngLat[0]

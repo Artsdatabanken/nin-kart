@@ -4,6 +4,7 @@ import TopBar from './TopBar/TopBar'
 import ResultatListe from './Kodetre/Kodeliste/ResultatListe'
 import { Route, Switch } from 'react-router-dom'
 import Kontrollpanel from './Kart/Mapbox/Kontrollpanel'
+import PunktinformasjonContainer from './Naturområdedetaljer/PunktinformasjonContainer'
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
@@ -76,6 +77,13 @@ class VenstreVinduContainer extends React.Component {
                       visibility={this.props.visibility}
                       color={this.props.color}
                     />
+                  )}
+                />
+
+                <Route
+                  path="/punkt/:lngLat"
+                  render={({ match, history }) => (
+                    <PunktinformasjonContainer lngLat={match.params.lngLat} />
                   )}
                 />
               </Switch>
