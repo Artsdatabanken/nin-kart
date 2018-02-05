@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import backend from '../backend'
 import Punktinformasjon from './Punktinformasjon'
-import Naturområdeinformasjon from './Naturområdeinformasjon'
-import { ListItem } from 'material-ui'
+import Naturomradeinformasjon from './Naturområdeinformasjon'
+//import { ListItem } from 'material-ui'
 
 class PunktinformasjonContainer extends Component {
   constructor(props) {
@@ -44,7 +44,7 @@ class PunktinformasjonContainer extends Component {
 
     this.goFetchPointInfo(lng, lat)
 
-    if (localId == 'null')
+    if (localId === 'null')
       this.setState({
         natureArea: '',
         localId: '',
@@ -136,8 +136,7 @@ class PunktinformasjonContainer extends Component {
           lngLat={this.state.lngLat}
           title="PunktInfo"
         />
-
-        <Naturområdeinformasjon
+        <Naturomradeinformasjon
           natureArea={this.state.natureArea}
           title="NaturområdeInfo"
         />
