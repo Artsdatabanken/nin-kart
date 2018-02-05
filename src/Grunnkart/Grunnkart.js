@@ -216,13 +216,9 @@ class Grunnkart extends Component {
           latitude={65.5}
           longitude={10}
           zoom={4.7}
-          onVisibilityChange={this.handleVisibilityChange}
-          onColorChange={this.handleColorChange}
-          categories={this.state.categories}
-          visibility={this.state.visibility}
-          color={this.state.color}
           mapStyle={this.state.mapStyle}
         />
+
         <MainDrawer
           handleChangeBaseMap={this.setBaseMap}
           open={this.state.showMainDrawer}
@@ -233,7 +229,7 @@ class Grunnkart extends Component {
         {!this.state.showMainDrawer && (
           <div
             style={{
-              backgroundColor: 'red',
+              backgroundColor: '#fff',
               position: 'absolute',
               left: 8,
               top: 10,
@@ -245,6 +241,11 @@ class Grunnkart extends Component {
               onToggleMainDrawer={() =>
                 this.setState({ showMainDrawer: !this.state.showMainDrawer })
               }
+              onVisibilityChange={this.handleVisibilityChange}
+              onColorChange={this.handleColorChange}
+              categories={this.state.categories}
+              visibility={this.state.visibility}
+              color={this.state.color}
             />
           </div>
         )}

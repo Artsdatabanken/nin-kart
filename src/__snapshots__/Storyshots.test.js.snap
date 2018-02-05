@@ -1938,42 +1938,7 @@ exports[`Storyshots Kart Mapbox default 1`] = `
             "width": 1024,
           }
         }
-      >
-        <div>
-          <div
-            style={
-              Object {
-                "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                "backgroundColor": "#ffffff",
-                "borderRadius": 2,
-                "boxShadow": "0 10px 30px rgba(0, 0, 0, 0.19),
-                       0 6px 10px rgba(0, 0, 0, 0.23)",
-                "boxSizing": "border-box",
-                "color": "rgba(0, 0, 0, 0.87)",
-                "fontFamily": "Roboto, sans-serif",
-                "muiPrepared": true,
-                "position": "absolute",
-                "right": 8,
-                "top": 8,
-                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                "width": 480,
-              }
-            }
-          >
-            <h3>
-              Kartlag
-            </h3>
-            <div
-              style={
-                Object {
-                  "muiPrepared": true,
-                  "padding": "8px 0px 8px 0px",
-                }
-              }
-            />
-          </div>
-        </div>
-      </div>
+      />
     </div>
   </div>
 </div>

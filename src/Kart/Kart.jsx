@@ -185,7 +185,7 @@ class Kart extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <div>
+        <React.Fragment>
           <Mapbox
             {...this.props}
             onClick={this.onClick}
@@ -214,7 +214,7 @@ class Kart extends Component {
               isSelected={this.isSelected}
             /> */}
           </Drawer>
-        </div>
+        </React.Fragment>
       </MuiThemeProvider>
     )
   }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import ReactMapGL from 'react-map-gl'
-import Kontrollpanel from './Kontrollpanel'
 import './Mapbox.css'
 
 class Mapbox extends Component {
@@ -96,15 +95,7 @@ class Mapbox extends Component {
         //mapStyle="mapbox://styles/artsdatabanken/cjc68pztl4sud2sp0s4wyy58q"
         mapStyle={this.props.mapStyle}
         minZoom={4}
-      >
-        <Kontrollpanel
-          onVisibilityChange={this.props.onVisibilityChange}
-          onColorChange={this.props.onColorChange}
-          categories={this.props.categories}
-          visibility={this.props.visibility}
-          color={this.props.color}
-        />
-      </ReactMapGL>
+      />
     )
   }
 }

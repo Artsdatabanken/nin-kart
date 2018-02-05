@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { List, ListItem, Avatar, Paper } from 'material-ui'
+import { List, ListItem, Avatar } from 'material-ui'
 
 export default class Kontrollpanel extends PureComponent {
   renderLayerControl(name) {
@@ -26,18 +26,10 @@ export default class Kontrollpanel extends PureComponent {
 
   render() {
     return (
-      <div>
-        <Paper
-          zDepth={3}
-          style={{ width: 480, position: 'absolute', right: 8, top: 8 }}
-        >
-          <h3>Kartlag</h3>
-          <List>
-            {this.props.categories &&
-              this.props.categories.map(name => this.renderLayerControl(name))}
-          </List>
-        </Paper>
-      </div>
+      <List>
+        {this.props.categories &&
+          this.props.categories.map(name => this.renderLayerControl(name))}
+      </List>
     )
   }
 }
