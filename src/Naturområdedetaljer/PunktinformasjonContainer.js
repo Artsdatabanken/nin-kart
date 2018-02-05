@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import backend from '../backend'
 import Punktinformasjon from './Punktinformasjon'
+import Collapsible from 'react-collapsible'
+import { ListItem } from 'material-ui'
+import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down'
+import HardwareKeyboardArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up'
 
 class PunktinformasjonContainer extends Component {
   constructor(props) {
@@ -133,13 +137,29 @@ class PunktinformasjonContainer extends Component {
 
   render() {
     return (
-      <Punktinformasjon
-        natureArea={this.state.natureArea}
-        metadata={this.state.metadata}
-        pointInfo={this.state.pointInfo}
-        admEnhet={this.state.admEnhet}
-        stedsnavn={this.state.stedsnavn}
-      />
+      <Collapsible
+        trigger={
+          <ListItem
+            primaryText="Punktinformasjon"
+            rightIcon={<HardwareKeyboardArrowDown />}
+          />
+        }
+        triggerWhenOpen={
+          <ListItem
+            primaryText="Punktinformasjon"
+            rightIcon={<HardwareKeyboardArrowUp />}
+          />
+        }
+        easing="ease-in-out"
+      >
+        <Punktinformasjon
+          natureArea={this.state.natureArea}
+          metadata={this.state.metadata}
+          pointInfo={this.state.pointInfo}
+          admEnhet={this.state.admEnhet}
+          stedsnavn={this.state.stedsnavn}
+        />
+      </Collapsible>
     )
   }
 }
