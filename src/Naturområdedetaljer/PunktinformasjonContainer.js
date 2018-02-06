@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import backend from '../backend'
 import Punktinformasjon from './Punktinformasjon'
-import Collapsible from 'react-collapsible'
-import { ListItem } from 'material-ui'
-import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down'
-import HardwareKeyboardArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up'
+import Naturomradeinformasjon from './Naturområdeinformasjon'
+//import { ListItem } from 'material-ui'
 
 class PunktinformasjonContainer extends Component {
   constructor(props) {
@@ -24,45 +22,37 @@ class PunktinformasjonContainer extends Component {
       pointInfo: {},
       admEnhet: '',
       stedsnavn: null,
+      localId: '',
     }
   }
 
   componentWillReceiveProps(props) {
-    this.fetch(props.lng, props.lat)
+    this.fetch(props.lng, props.lat, props.localId)
   }
   componentDidMount() {
-    this.fetch(this.props.lng, this.props.lat)
+    this.fetch(this.props.lng, this.props.lat, this.props.localId)
   }
 
-  fetch(lng, lat) {
-    this.goFetch(this.props.natureAreaId)
-    this.goFetchPointInfo(lng, lat)
+  fetch(lng, lat, localId) {
     this.setState({
       lngLat: {
         Lat: { value: Number.parseFloat(lat).toPrecision(7) },
         Lon: { value: Number.parseFloat(lng).toPrecision(7) },
       },
+      localId: localId,
     })
-    this.goFetchInfo(this.props.localId)
+
+    this.goFetchPointInfo(lng, lat)
+
+    if (localId === 'null')
+      this.setState({
+        natureArea: '',
+        localId: '',
+      })
+    else this.goFetchInfo(localId)
   }
 
   goFetchInfo(id) {
-    if (!id) return
-    backend.getNatureAreaByLocalId(id).then(data => {
-      this.setState({
-        natureArea: data,
-        localId: '',
-      })
-    })
-    backend.getMetadataByNatureAreaLocalId(id).then(data =>
-      this.setState({
-        metadata: data,
-        localId: '',
-      })
-    )
-  }
-
-  goFetch(id) {
     if (!id) return
     backend.getNatureAreaByLocalId(id).then(data => {
       this.setState({
@@ -137,29 +127,20 @@ class PunktinformasjonContainer extends Component {
 
   render() {
     return (
-      <Collapsible
-        trigger={
-          <ListItem
-            primaryText="Punktinformasjon"
-            rightIcon={<HardwareKeyboardArrowDown />}
-          />
-        }
-        triggerWhenOpen={
-          <ListItem
-            primaryText="Punktinformasjon"
-            rightIcon={<HardwareKeyboardArrowUp />}
-          />
-        }
-        easing="ease-in-out"
-      >
+      <div>
         <Punktinformasjon
-          natureArea={this.state.natureArea}
           metadata={this.state.metadata}
           pointInfo={this.state.pointInfo}
           admEnhet={this.state.admEnhet}
           stedsnavn={this.state.stedsnavn}
+          lngLat={this.state.lngLat}
+          title="PunktInfo"
         />
-      </Collapsible>
+        <Naturomradeinformasjon
+          natureArea={this.state.natureArea}
+          title="NaturområdeInfo"
+        />
+      </div>
     )
   }
 }

@@ -82,11 +82,12 @@ class VenstreVinduContainer extends React.Component {
                 />
 
                 <Route
-                  path="/punkt/:lng,:lat"
+                  path="/punkt/:lng,:lat,:localId"
                   render={({ match, history }) => (
                     <PunktinformasjonContainer
                       lng={match.params.lng}
                       lat={match.params.lat}
+                      localId={match.params.localId}
                     />
                   )}
                 />

@@ -13,15 +13,16 @@ class Kart extends Component {
 
   onClick = point => {
     const lngLat = point.lngLat
-    this.props.history.push(`/punkt/${lngLat[0]},${lngLat[1]}`)
-    /*
+
     const localId =
-      (point.features &&
+      point.features &&
       point.features[0] &&
       point.features[0].properties &&
-      point.features[0].properties.localId) || null
-      this.setState({localId: localId})
-    */
+      point.features[0].properties.localId
+        ? point.features[0].properties.localId
+        : null
+
+    this.props.history.push(`/punkt/${lngLat[0]},${lngLat[1]},${localId}`)
   }
 
   isSelected(selectedIds, nodeId) {
