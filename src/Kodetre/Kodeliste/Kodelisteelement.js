@@ -14,7 +14,7 @@ class Kodelisteelement extends React.Component {
             style={meta.utenRamme ? { borderRadius: 0 } : {}}
             color={meta.color}
             backgroundColor={meta.backgroundColor || '#00000000'}
-            src={meta.avatarbilde}
+            src={meta.avatarbilde || meta.foto}
           >
             {meta.kode}
           </Avatar>
