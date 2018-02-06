@@ -11,31 +11,35 @@ import HardwareKeyboardArrowUp from 'material-ui/svg-icons/hardware/keyboard-arr
 import Collapsible from 'react-collapsible'
 
 const Naturområdeinformasjon = props => (
-  <Collapsible
-    trigger={
-      <ListItem
-        primaryText={props.title}
-        rightIcon={<HardwareKeyboardArrowDown />}
-      />
-    }
-    triggerWhenOpen={
-      <ListItem
-        primaryText={props.title}
-        rightIcon={<HardwareKeyboardArrowUp />}
-      />
-    }
-    easing="ease-in-out"
-  >
-    <List>
-      <FactList items={getNatureAreaFacts(props)} />
+  <div>
+    {props.natureArea && (
+      <Collapsible
+        trigger={
+          <ListItem
+            primaryText={props.title}
+            rightIcon={<HardwareKeyboardArrowDown />}
+          />
+        }
+        triggerWhenOpen={
+          <ListItem
+            primaryText={props.title}
+            rightIcon={<HardwareKeyboardArrowUp />}
+          />
+        }
+        easing="ease-in-out"
+      >
+        <List>
+          <FactList items={getNatureAreaFacts(props)} />
 
-      <FactList items={getNatureAreaCodes(props)} />
+          <FactList items={getNatureAreaCodes(props)} />
 
-      <Detaljer description={getNatureAreaDescription(props)} />
+          <Detaljer description={getNatureAreaDescription(props)} />
 
-      {/* <Kartlegging owner={props.metadata.owner} /> */}
-    </List>
-  </Collapsible>
+          {/* <Kartlegging owner={props.metadata.owner} /> */}
+        </List>
+      </Collapsible>
+    )}
+  </div>
 )
 
 function getNatureAreaDescription(props) {

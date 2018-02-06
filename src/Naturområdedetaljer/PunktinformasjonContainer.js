@@ -127,7 +127,7 @@ class PunktinformasjonContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ maxHeight: window.innerHeight - 150, overflow: 'auto' }}>
         <Punktinformasjon
           metadata={this.state.metadata}
           pointInfo={this.state.pointInfo}
