@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { IconButton, ListItem, Drawer, MenuItem } from 'material-ui'
+import muiThemeable from 'material-ui/styles/muiThemeable'
 import NavigationChevronLeftDouble from './NavigationChevronLeftDouble'
 class MainDrawer extends Component {
   render() {
+    console.log(this.props.muiTheme.palette.disabledColor)
     return (
       <Drawer
         docked={false}
@@ -24,7 +26,9 @@ class MainDrawer extends Component {
           }
           rightIcon={
             <IconButton onClick={this.props.onToggleMainDrawer}>
-              <NavigationChevronLeftDouble />
+              <NavigationChevronLeftDouble
+                color={this.props.muiTheme.palette.disabledColor}
+              />
             </IconButton>
           }
           disabled
@@ -70,4 +74,4 @@ class MainDrawer extends Component {
     )
   }
 }
-export default MainDrawer
+export default muiThemeable()(MainDrawer)

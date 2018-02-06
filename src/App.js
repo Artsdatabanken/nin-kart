@@ -9,6 +9,7 @@ import './App.css'
 const muiTheme = getMuiTheme({
   palette: {
     textColor: '#5f5f5f',
+    disabledColor: '#9a9a9a',
     primary1Color: '#927b64', //'#7da2a1',//'#f46c22',
     accent2Color: '#666', //'#7da2a1',//'#9c9c9c',
     accent1Color: '#927b64', //'#c07541',
