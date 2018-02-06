@@ -4401,14 +4401,15 @@ exports[`Storyshots PointInfo default 1`] = `
                     style={
                       Object {
                         "alignItems": "center",
-                        "backgroundColor": "rgb(188, 188, 188)",
-                        "borderRadius": "50%",
+                        "backgroundColor": "rgb(255, 255, 255)",
+                        "borderRadius": null,
                         "color": "#ffffff",
                         "display": "inline-flex",
                         "fontSize": 20,
                         "height": 40,
                         "justifyContent": "center",
                         "muiPrepared": true,
+                        "objectFit": "cover",
                         "userSelect": "none",
                         "width": 40,
                       }
@@ -4526,14 +4527,15 @@ exports[`Storyshots PointInfo default 1`] = `
                     style={
                       Object {
                         "alignItems": "center",
-                        "backgroundColor": "rgb(188, 188, 188)",
-                        "borderRadius": "50%",
+                        "backgroundColor": "rgb(255, 255, 255)",
+                        "borderRadius": null,
                         "color": "#ffffff",
                         "display": "inline-flex",
                         "fontSize": 20,
                         "height": 40,
                         "justifyContent": "center",
                         "muiPrepared": true,
+                        "objectFit": "cover",
                         "userSelect": "none",
                         "width": 40,
                       }
@@ -4651,14 +4653,15 @@ exports[`Storyshots PointInfo default 1`] = `
                     style={
                       Object {
                         "alignItems": "center",
-                        "backgroundColor": "rgb(188, 188, 188)",
-                        "borderRadius": "50%",
+                        "backgroundColor": "rgb(255, 255, 255)",
+                        "borderRadius": null,
                         "color": "#ffffff",
                         "display": "inline-flex",
                         "fontSize": 20,
                         "height": 40,
                         "justifyContent": "center",
                         "muiPrepared": true,
+                        "objectFit": "cover",
                         "userSelect": "none",
                         "width": 40,
                       }
@@ -4985,14 +4988,15 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                             style={
                               Object {
                                 "alignItems": "center",
-                                "backgroundColor": "rgb(188, 188, 188)",
-                                "borderRadius": "50%",
+                                "backgroundColor": "rgb(255, 255, 255)",
+                                "borderRadius": null,
                                 "color": "#ffffff",
                                 "display": "inline-flex",
                                 "fontSize": 20,
                                 "height": 40,
                                 "justifyContent": "center",
                                 "muiPrepared": true,
+                                "objectFit": "cover",
                                 "userSelect": "none",
                                 "width": 40,
                               }
@@ -5101,14 +5105,15 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                             style={
                               Object {
                                 "alignItems": "center",
-                                "backgroundColor": "rgb(188, 188, 188)",
-                                "borderRadius": "50%",
+                                "backgroundColor": "rgb(255, 255, 255)",
+                                "borderRadius": null,
                                 "color": "#ffffff",
                                 "display": "inline-flex",
                                 "fontSize": 20,
                                 "height": 40,
                                 "justifyContent": "center",
                                 "muiPrepared": true,
+                                "objectFit": "cover",
                                 "userSelect": "none",
                                 "width": 40,
                               }
