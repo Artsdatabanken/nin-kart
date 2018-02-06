@@ -8,6 +8,7 @@ import './App.css'
 
 const muiTheme = getMuiTheme({
   palette: {
+    textColor: '#5f5f5f',
     primary1Color: '#927b64', //'#7da2a1',//'#f46c22',
     accent2Color: '#666', //'#7da2a1',//'#9c9c9c',
     accent1Color: '#927b64', //'#c07541',
@@ -21,7 +22,10 @@ const muiTheme = getMuiTheme({
   */
   },
   appBar: { height: 48 },
+  drawer: { width: 320 },
 })
+
+console.log(muiTheme)
 
 class App extends Component {
   render() {

@@ -71,7 +71,7 @@ class Grunnkart extends Component {
     this.handleAddLayer = this.handleAddLayer.bind(this)
     this.handleColorChange = this.handleColorChange.bind(this)
     this.handleVisibilityChange = this.handleVisibilityChange.bind(this)
-    this.setBaseMap = this.setBaseMap.bind(this)
+    this.setBaseMap = this.handleChangeBaseMap.bind(this)
   }
 
   makeLayer(name, code, visible, source) {
@@ -160,7 +160,7 @@ class Grunnkart extends Component {
     this.addLayer(navn, kode)
   }
 
-  setBaseMap(type) {
+  handleChangeBaseMap(type) {
     let newStyle = defaultMapStyle
     switch (type) {
       case 'dark': {
@@ -217,7 +217,7 @@ class Grunnkart extends Component {
         />
 
         <MainDrawer
-          handleChangeBaseMap={this.setBaseMap}
+          onChangeBaseMap={this.handleChangeBaseMap}
           open={this.state.showMainDrawer}
           onToggleMainDrawer={() =>
             this.setState({ showMainDrawer: !this.state.showMainDrawer })

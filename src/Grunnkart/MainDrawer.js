@@ -1,18 +1,36 @@
 import React, { Component } from 'react'
-import { Drawer, MenuItem } from 'material-ui'
-import { Link } from 'react-router-dom'
-
+import { IconButton, ListItem, Drawer, MenuItem } from 'material-ui'
+import NavigationChevronLeftDouble from './NavigationChevronLeftDouble'
 class MainDrawer extends Component {
   render() {
     return (
       <Drawer
         docked={false}
         open={this.props.open}
-        onRequestChange={this.props.onToggleMainDrawer}
+        onRequestChange={open => this.props.onToggleMainDrawer(open)}
+        style={{ paddingLeft: 32 }}
       >
+        <ListItem
+          style={{ borderBottom: '1px solid ' }}
+          leftAvatar={
+            <img
+              alt="logo"
+              style={{ height: '38px' }}
+              src="https://pbs.twimg.com/profile_images/882873307133083648/_1-mmxih_400x400.jpg"
+            />
+          }
+          primaryText={
+            <span style={{ fontSize: 20, fontWeight: 500 }}>Grunnkartet</span>
+          }
+          rightIcon={
+            <IconButton onClick={this.props.onToggleMainDrawer}>
+              <NavigationChevronLeftDouble />
+            </IconButton>
+          }
+          disabled
+        />
         <MenuItem
           onClick={() => {
-            this.props.onToggleMainDrawer()
             this.props.handleChangeBaseMap('')
           }}
         >
@@ -42,16 +60,11 @@ class MainDrawer extends Component {
         >
           Flyfoto
         </MenuItem>
-        <MenuItem
-          onClick={() => {
-            this.props.onToggleMainDrawer()
-          }}
-        >
-          <Link to="/kontrollpanel">Aktive kartlag</Link>
-        </MenuItem>
+        <hr />
         <MenuItem>Del eller bygg inn kartet</MenuItem>
         <MenuItem>Skriv ut</MenuItem>
         <MenuItem>Send tilbakemeldinger</MenuItem>
+        <hr />
         <MenuItem>Søkeinnstillinger</MenuItem>
       </Drawer>
     )
