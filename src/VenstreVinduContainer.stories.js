@@ -9,7 +9,9 @@ storiesOf('VenstreVindu', module)
   .add('Rot', () => {
     return (
       <div style={{ padding: 8 }}>
-        <VenstreVinduContainer />
+        <MemoryRouter>
+          <VenstreVinduContainer />
+        </MemoryRouter>
       </div>
     )
   })
