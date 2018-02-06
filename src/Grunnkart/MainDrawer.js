@@ -27,6 +27,7 @@ class MainDrawer extends Component {
           rightIcon={
             <IconButton onClick={this.props.onToggleMainDrawer}>
               <NavigationChevronLeftDouble
+                viewBox="0 0 28 28"
                 color={this.props.muiTheme.palette.disabledColor}
               />
             </IconButton>
