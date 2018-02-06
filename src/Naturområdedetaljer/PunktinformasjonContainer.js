@@ -78,16 +78,14 @@ class PunktinformasjonContainer extends Component {
         name: 'Kommune',
         dataorigin: 'Kartverket',
         homepage: 'https://kartverket.no/',
-        logo:
-          'https://www.kartverket.no/ImageVault/publishedmedia/sbmee5jt1ys7ky0huw32/Kartverket_staende.jpg',
+        logo: 'https://www.kartverket.no/Content/Images/logo-graphic-512.png',
       },
       [fylkeskode]: {
         value: fylkesnavn,
         name: 'Fylke',
         dataorigin: 'Kartverket',
         homepage: 'https://kartverket.no/',
-        logo:
-          'https://www.kartverket.no/ImageVault/publishedmedia/sbmee5jt1ys7ky0huw32/Kartverket_staende.jpg',
+        logo: 'https://www.kartverket.no/Content/Images/logo-graphic-512.png',
       },
     }
   }
@@ -100,8 +98,7 @@ class PunktinformasjonContainer extends Component {
           value: data.placename,
           dataorigin: 'Kartverket',
           homepage: 'https://kartverket.no/',
-          logo:
-            'https://www.kartverket.no/ImageVault/publishedmedia/sbmee5jt1ys7ky0huw32/Kartverket_staende.jpg',
+          logo: 'https://www.kartverket.no/Content/Images/logo-graphic-512.png',
         },
       }
     return null

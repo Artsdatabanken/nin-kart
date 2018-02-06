@@ -19,7 +19,15 @@ function PointInfo(props) {
               key={key}
               leftAvatar={
                 <a target="_blank" href={item.homepage}>
-                  <Avatar src={item.logo} title={item.dataorigin} />
+                  <Avatar
+                    src={item.logo}
+                    title={item.dataorigin}
+                    style={{
+                      objectFit: 'cover',
+                      backgroundColor: 'rgb(255, 255, 255)',
+                      borderRadius: null,
+                    }}
+                  />
                 </a>
               }
               rightAvatar={
