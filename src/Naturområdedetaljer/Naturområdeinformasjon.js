@@ -14,6 +14,7 @@ const Naturområdeinformasjon = props => (
   <div>
     {props.natureArea && (
       <Collapsible
+        open="True"
         trigger={
           <ListItem
             primaryText={props.title}

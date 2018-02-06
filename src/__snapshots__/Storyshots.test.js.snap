@@ -4793,7 +4793,7 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
           className="Collapsible"
         >
           <span
-            className="Collapsible__trigger is-closed"
+            className="Collapsible__trigger is-open"
             onClick={[Function]}
           >
             <div>
@@ -4877,7 +4877,7 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                       viewBox="0 0 24 24"
                     >
                       <path
-                        d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"
+                        d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
                       />
                     </svg>
                   </div>
@@ -4890,11 +4890,11 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
             onTransitionEnd={[Function]}
             style={
               Object {
-                "WebkitTransition": "height 400ms ease-in-out",
-                "height": 0,
-                "msTransition": "height 400ms ease-in-out",
+                "WebkitTransition": "none",
+                "height": "auto",
+                "msTransition": "none",
                 "overflow": "hidden",
-                "transition": "height 400ms ease-in-out",
+                "transition": "none",
               }
             }
           >
