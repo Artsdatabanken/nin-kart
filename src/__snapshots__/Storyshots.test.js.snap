@@ -4226,7 +4226,7 @@ exports[`Storyshots MainDrawer default 1`] = `
                           Object {
                             "color": "rgba(0, 0, 0, 0.87)",
                             "display": "inline-block",
-                            "fill": "currentColor",
+                            "fill": "rgba(0, 0, 0, 0.3)",
                             "height": 24,
                             "left": -12,
                             "muiPrepared": true,
@@ -4237,7 +4237,7 @@ exports[`Storyshots MainDrawer default 1`] = `
                             "width": 24,
                           }
                         }
-                        viewBox="0 0 24 24"
+                        viewBox="0 0 28 28"
                       >
                         <path
                           d="M11.41 7.41 L10 6 l-6 6 6 6 1.41-1.41 L6.83 12z"
