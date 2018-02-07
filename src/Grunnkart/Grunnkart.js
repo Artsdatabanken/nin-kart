@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import Kart from '../Kart/Kart'
 import { fromJS } from 'immutable'
 import MainDrawer from './MainDrawer'
+import { FloatingActionButton } from 'material-ui'
+import MapsLayers from 'material-ui/svg-icons/maps/layers'
+import { Link } from 'react-router-dom'
 import {
   defaultMapStyle,
   darkMapStyle,
@@ -223,6 +226,13 @@ class Grunnkart extends Component {
             this.setState({ showMainDrawer: !this.state.showMainDrawer })
           }
         />
+        <Link to="/kontrollpanel">
+          <FloatingActionButton
+            style={{ position: 'absolute', bottom: 48, right: 48 }}
+          >
+            <MapsLayers />
+          </FloatingActionButton>
+        </Link>
         {!this.state.showMainDrawer && (
           <div
             style={{
