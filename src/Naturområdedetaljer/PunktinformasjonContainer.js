@@ -79,6 +79,18 @@ class PunktinformasjonContainer extends Component {
     }
   }
 
+  createRødlistePointInfo(name, value) {
+    return {
+      name: name,
+      value: value,
+      logo:
+        'https://pbs.twimg.com/profile_images/882873307133083648/_1-mmxih_400x400.jpg',
+      homepage: 'https://artsdatabanken.no/',
+      dataorigin: 'ADB',
+      article: 'https://www.artsdatabanken.no/rodlistefornaturtyper',
+    }
+  }
+
   getNatureAreaFacts(props) {
     var facts = []
     for (var i in props) {
@@ -109,7 +121,7 @@ class PunktinformasjonContainer extends Component {
           break
         case 'rødlisteKategori':
           facts.push(
-            this.createNatureAreaPointInfo(
+            this.createRødlistePointInfo(
               'Rødlistekategori',
               props.rødlisteKategori.code
             )
