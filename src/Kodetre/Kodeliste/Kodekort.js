@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  FloatingActionButton,
-  Card,
-  CardActions,
-  CardMedia,
-  CardTitle,
-} from 'material-ui'
-import ContentAdd from 'material-ui/svg-icons/content/add'
+import { Card, CardActions, CardMedia, CardTitle } from 'material-ui'
 import { IconButton } from 'material-ui'
 import InfoOutline from 'material-ui/svg-icons/action/info-outline'
 import StarBorder from 'material-ui/svg-icons/toggle/star-border'
@@ -58,17 +51,6 @@ class Kodekort extends React.Component {
           subtitleStyle={{ textDecoration: 'underline', cursor: 'pointer' }}
           subtitleColor={muiTheme.palette.alternateTextColor}
         >
-          <FloatingActionButton
-            style={{
-              position: 'absolute',
-              left: 340,
-              top: -26,
-            }}
-            onClick={() => this.props.onAddLayer(data.navn, data.kode)}
-          >
-            <ContentAdd />
-          </FloatingActionButton>
-
           <CardActions
             style={{
               position: 'absolute',

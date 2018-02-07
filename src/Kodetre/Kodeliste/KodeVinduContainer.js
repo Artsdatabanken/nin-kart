@@ -29,6 +29,7 @@ class KodeVinduContainer extends React.Component {
 
   componentDidMount() {
     this.fetchData(this.props.kode)
+    this.props.onAddLayer()
   }
 
   componentWillUnmount() {
