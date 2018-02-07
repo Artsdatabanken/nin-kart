@@ -25,8 +25,6 @@ const muiTheme = getMuiTheme({
   drawer: { width: 320 },
 })
 
-console.log(muiTheme)
-
 class App extends Component {
   render() {
     return (

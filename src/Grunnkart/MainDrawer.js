@@ -4,7 +4,6 @@ import muiThemeable from 'material-ui/styles/muiThemeable'
 import NavigationChevronLeftDouble from './NavigationChevronLeftDouble'
 class MainDrawer extends Component {
   render() {
-    console.log(this.props.muiTheme.palette.disabledColor)
     return (
       <Drawer
         docked={false}

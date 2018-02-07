@@ -1,10 +1,11 @@
 import React from 'react'
 //import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer'
-//import App from './App';
+import App from './App'
 import backend from './backend'
 import Omrader from './Naturområdedetaljer/Omrader'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import ShallowRenderer from 'react-test-renderer/shallow'
 
 const dummyNatureArea = {
   uniqueId: {
@@ -115,10 +116,9 @@ it('renders without crashing', () => {
   backend.getMetadataByNatureAreaLocalId.mockImplementation(
     success => new Promise((resolve, reject) => resolve(dummyMeta))
   )
-  renderer.create(
-    <MuiThemeProvider>
-      {false && <Omrader areas={dummyNatureArea.areas} />}
-    </MuiThemeProvider>
-  )
+  // in your test:
+  const renderer = new ShallowRenderer()
+  renderer.render(<App />)
+
   //expect(backend.getNatureAreaByLocalId.mock.calls).toHaveLength(1);
 })
