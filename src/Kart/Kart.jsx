@@ -1,5 +1,4 @@
 import Mapbox from './Mapbox/Mapbox'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 
@@ -39,18 +38,16 @@ class Kart extends Component {
 
   render() {
     return (
-      <MuiThemeProvider>
-        <Mapbox
-          {...this.props}
-          onClick={this.onClick}
-          onVisibilityChange={this.props.onVisibilityChange}
-          onColorChange={this.props.onColorChange}
-          categories={this.props.categories}
-          visibility={this.props.visibility}
-          color={this.props.color}
-          mapStyle={this.props.mapStyle}
-        />
-      </MuiThemeProvider>
+      <Mapbox
+        {...this.props}
+        onClick={this.onClick}
+        onVisibilityChange={this.props.onVisibilityChange}
+        onColorChange={this.props.onColorChange}
+        categories={this.props.categories}
+        visibility={this.props.visibility}
+        color={this.props.color}
+        mapStyle={this.props.mapStyle}
+      />
     )
   }
 }

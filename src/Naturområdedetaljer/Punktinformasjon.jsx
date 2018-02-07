@@ -12,7 +12,7 @@ import Collapsible from 'react-collapsible'
 
 const Punktinformasjon = props => (
   <Collapsible
-    open="True"
+    open={true}
     trigger={
       <ListItem
         primaryText={props.title}
