@@ -14,8 +14,6 @@ class PunktinformasjonContainer extends Component {
 
       // api-received data
       natureAreaFacts: null,
-      natureAreaCodes: null,
-      natureAreaDescription: null,
       metadata: null,
       factItems: null,
       areaItems: null,
@@ -62,12 +60,6 @@ class PunktinformasjonContainer extends Component {
       this.setState({
         natureAreaFacts: this.getNatureAreaFacts(data),
       })
-      this.setState({
-        natureAreaCodes: this.getNatureAreaCodes(data),
-      })
-      this.setState({
-        natureAreaDescription: this.getNatureAreaDescription(data),
-      })
     })
     backend.getMetadataByNatureAreaLocalId(id).then(data =>
       this.setState({
@@ -76,26 +68,15 @@ class PunktinformasjonContainer extends Component {
     )
   }
 
-  getNatureAreaDescription(props) {
-    if (props && props.description && props.description !== '')
-      return [
-        {
-          name: 'Beskrivelse',
-          value: props.description,
-        },
-      ]
-  }
-
-  getNatureAreaCodes(props) {
-    var codes = []
-    if (!props) return null
-    for (var i in props.parameters) {
-      codes.push({
-        name: props.parameters[i].code,
-        value: props.parameters[i].codeDescription,
-      })
+  createNatureAreaPointInfo(name, value) {
+    return {
+      name: name,
+      value: value,
+      logo:
+        'https://pbs.twimg.com/profile_images/378800000067455227/3d053db6b9593d47a02ced7709846522_400x400.png',
+      homepage: 'http://www.miljodirektoratet.no/',
+      dataorigin: 'MDIR',
     }
-    return codes
   }
 
   getNatureAreaFacts(props) {
@@ -103,39 +84,64 @@ class PunktinformasjonContainer extends Component {
     for (var i in props) {
       switch (i) {
         case 'nivå':
-          facts.push({
-            name: 'Naturnivå',
-            value: backend.NatureLevelNames[props.nivå],
-          })
+          facts.push(
+            this.createNatureAreaPointInfo(
+              'Naturnivå',
+              backend.NatureLevelNames[props.nivå]
+            )
+          )
           break
         case 'surveyScale':
-          facts.push({
-            name: 'Kartleggingsmålestokk',
-            value: props.metadata.surveyScale,
-          })
+          facts.push(
+            this.createNatureAreaPointInfo(
+              'Kartleggingsmålestokk',
+              props.metadata.surveyScale
+            )
+          )
           break
         case 'surveyedFrom':
-          facts.push({
-            name: 'Kartlagt',
-            value: props.metadata.surveyedFrom,
-          })
+          facts.push(
+            this.createNatureAreaPointInfo(
+              'Kartlagt',
+              props.metadata.surveyedFrom
+            )
+          )
           break
         case 'rødlisteKategori':
-          facts.push({
-            name: 'Rødlistekategori',
-            value: props.rødlisteKategori.code,
-          })
+          facts.push(
+            this.createNatureAreaPointInfo(
+              'Rødlistekategori',
+              props.rødlisteKategori.code
+            )
+          )
           if (props.rødlisteKategori.vurderingsenhet) {
-            facts.push({
-              name: 'Vurderingsenhet',
-              value: props.rødlisteKategori.vurderingsenhet.code,
-            })
+            facts.push(
+              this.createNatureAreaPointInfo(
+                'Vurderingsenhet',
+                props.rødlisteKategori.vurderingsenhet.code
+              )
+            )
           }
           break
         default:
           break
       }
     }
+
+    for (var i in props.parameters) {
+      facts.push(
+        this.createNatureAreaPointInfo(
+          props.parameters[i].code,
+          props.parameters[i].codeDescription
+        )
+      )
+    }
+
+    if (props.description && props.description !== '')
+      facts.push(
+        this.createNatureAreaPointInfo('Beskrivelse', props.description)
+      )
+
     return facts
   }
 
@@ -206,15 +212,12 @@ class PunktinformasjonContainer extends Component {
           lngLat={this.state.lngLat}
           title="PunktInfo"
         />
-        {this.state.natureAreaFacts &&
-          this.state.natureAreaCodes && (
-            <Punktinformasjon
-              natureAreaFacts={this.state.natureAreaFacts}
-              natureAreaCodes={this.state.natureAreaCodes}
-              natureAreaDescription={this.state.natureAreaDescription}
-              title="NaturområdeInfo"
-            />
-          )}
+        {this.state.natureAreaFacts && (
+          <Punktinformasjon
+            natureAreaFacts={this.state.natureAreaFacts}
+            title="NaturområdeInfo"
+          />
+        )}
       </div>
     )
   }

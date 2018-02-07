@@ -42,8 +42,6 @@ const Punktinformasjon = props => (
       <PointInfo pointInfo={props.pointInfo} />
 
       <PointInfo pointInfo={props.natureAreaFacts} excludeCode="true" />
-      <PointInfo pointInfo={props.natureAreaCodes} excludeCode="true" />
-      <PointInfo pointInfo={props.natureAreaDescription} excludeCode="true" />
     </List>
   </Collapsible>
 )
