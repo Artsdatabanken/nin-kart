@@ -68,16 +68,21 @@ class PunktinformasjonContainer extends Component {
     )
   }
 
-  createNatureAreaPointInfo(name, value) {
-    return {
+  createNatureAreaPointInfo(name, value, useDefaultArticle = true) {
+    var natureAreaPointInfo = {
       name: name,
       value: value,
       logo:
         'https://pbs.twimg.com/profile_images/378800000067455227/3d053db6b9593d47a02ced7709846522_400x400.png',
       homepage: 'http://www.miljodirektoratet.no/',
       dataorigin: 'MDIR',
-      article: 'https://www.artsdatabanken.no/Pages/222921',
     }
+
+    if (!useDefaultArticle) return natureAreaPointInfo
+
+    natureAreaPointInfo.article = 'https://www.artsdatabanken.no/Pages/222921'
+
+    return natureAreaPointInfo
   }
 
   createRødlistePointInfo(name, value) {
@@ -153,7 +158,7 @@ class PunktinformasjonContainer extends Component {
 
     if (props.description && props.description !== '')
       facts.push(
-        this.createNatureAreaPointInfo('Beskrivelse', props.description)
+        this.createNatureAreaPointInfo('Beskrivelse', props.description, false)
       )
 
     return facts
