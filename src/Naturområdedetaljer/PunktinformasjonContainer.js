@@ -128,11 +128,11 @@ class PunktinformasjonContainer extends Component {
       }
     }
 
-    for (var i in props.parameters) {
+    for (var y in props.parameters) {
       facts.push(
         this.createNatureAreaPointInfo(
-          props.parameters[i].code,
-          props.parameters[i].codeDescription
+          props.parameters[y].code,
+          props.parameters[y].codeDescription
         )
       )
     }
