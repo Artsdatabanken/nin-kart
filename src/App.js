@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { BrowserRouter } from 'react-router-dom'
-
 import { getMuiTheme, MuiThemeProvider } from 'material-ui/styles'
 import Grunnkart from './Grunnkart/Grunnkart'
 import 'mapbox-gl/dist/mapbox-gl.css'
