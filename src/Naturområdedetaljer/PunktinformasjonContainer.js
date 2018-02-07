@@ -121,6 +121,7 @@ class PunktinformasjonContainer extends Component {
           )
           break
         case 'rødlisteKategori':
+          if (props.rødlisteKategori.code === 'LC') break
           facts.push(
             this.createRødlistePointInfo(
               'Rødlistekategori',
