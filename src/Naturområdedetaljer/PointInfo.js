@@ -13,22 +13,28 @@ function PointInfo(props) {
               primaryText={item.value}
               secondaryText={
                 item.name || item.kode
-                  ? (item.name || item.kode) + ' (' + key + ')'
+                  ? props.excludeCode
+                    ? item.name || item.kode
+                    : (item.name || item.kode) + ' (' + key + ')'
                   : key
               }
               key={key}
               leftAvatar={
-                <a target="_blank" href={item.homepage}>
-                  <Avatar
-                    src={item.logo}
-                    title={item.dataorigin}
-                    style={{
-                      objectFit: 'cover',
-                      backgroundColor: 'rgb(255, 255, 255)',
-                      borderRadius: null,
-                    }}
-                  />
-                </a>
+                item.homepage &&
+                item.logo &&
+                item.dataorigin && (
+                  <a target="_blank" href={item.homepage}>
+                    <Avatar
+                      src={item.logo}
+                      title={item.dataorigin}
+                      style={{
+                        objectFit: 'cover',
+                        backgroundColor: 'rgb(255, 255, 255)',
+                        borderRadius: null,
+                      }}
+                    />
+                  </a>
+                )
               }
               rightAvatar={
                 item.article && (

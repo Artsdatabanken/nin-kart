@@ -10,6 +10,12 @@ import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-a
 import HardwareKeyboardArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up'
 import Collapsible from 'react-collapsible'
 
+function getHeaderStyle() {
+  return {
+    backgroundColor: 'aliceblue',
+  }
+}
+
 const Punktinformasjon = props => (
   <Collapsible
     open={true}
@@ -17,12 +23,14 @@ const Punktinformasjon = props => (
       <ListItem
         primaryText={props.title}
         rightIcon={<HardwareKeyboardArrowDown />}
+        style={getHeaderStyle()}
       />
     }
     triggerWhenOpen={
       <ListItem
         primaryText={props.title}
         rightIcon={<HardwareKeyboardArrowUp />}
+        style={getHeaderStyle()}
       />
     }
     easing="ease-in-out"
@@ -32,6 +40,10 @@ const Punktinformasjon = props => (
       <PointInfo pointInfo={props.stedsnavn} />
       <PointInfo pointInfo={props.admEnhet} />
       <PointInfo pointInfo={props.pointInfo} />
+
+      <PointInfo pointInfo={props.natureAreaFacts} excludeCode="true" />
+      <PointInfo pointInfo={props.natureAreaCodes} excludeCode="true" />
+      <PointInfo pointInfo={props.natureAreaDescription} excludeCode="true" />
     </List>
   </Collapsible>
 )
