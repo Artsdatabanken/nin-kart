@@ -76,6 +76,19 @@ class PunktinformasjonContainer extends Component {
         'https://pbs.twimg.com/profile_images/378800000067455227/3d053db6b9593d47a02ced7709846522_400x400.png',
       homepage: 'http://www.miljodirektoratet.no/',
       dataorigin: 'MDIR',
+      article: 'https://www.artsdatabanken.no/Pages/222921',
+    }
+  }
+
+  createRødlistePointInfo(name, value) {
+    return {
+      name: name,
+      value: value,
+      logo:
+        'https://pbs.twimg.com/profile_images/882873307133083648/_1-mmxih_400x400.jpg',
+      homepage: 'https://artsdatabanken.no/',
+      dataorigin: 'ADB',
+      article: 'https://www.artsdatabanken.no/rodlistefornaturtyper',
     }
   }
 
@@ -108,15 +121,16 @@ class PunktinformasjonContainer extends Component {
           )
           break
         case 'rødlisteKategori':
+          if (props.rødlisteKategori.code === 'LC') break
           facts.push(
-            this.createNatureAreaPointInfo(
+            this.createRødlistePointInfo(
               'Rødlistekategori',
               props.rødlisteKategori.code
             )
           )
           if (props.rødlisteKategori.vurderingsenhet) {
             facts.push(
-              this.createNatureAreaPointInfo(
+              this.createRødlistePointInfo(
                 'Vurderingsenhet',
                 props.rødlisteKategori.vurderingsenhet.code
               )
