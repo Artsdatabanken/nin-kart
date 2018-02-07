@@ -39,3 +39,25 @@ test('createNatureAreaPointInfo'),
       )
     ).toBe(naturAreaExpected)
   }
+
+var getNatureAreaFactsInput = {
+  nivå: 'NA',
+  surveyScale: '1 : 5000',
+  surveyedFrom: 'juleAften',
+  rødlisteKategori: 'LC',
+  parameters: [
+    {
+      code: createNatureAreaPointInfoName,
+      codeDescription: createNatureAreaPointInfoValue,
+    },
+  ],
+  description: 'testdata',
+}
+
+test('getNatureAreaFacts'),
+  () => {
+    expect(
+      punktinformasjonContainer.getNatureAreaFacts(getNatureAreaFactsInput)
+        .length
+    ).toBe(1)
+  }
