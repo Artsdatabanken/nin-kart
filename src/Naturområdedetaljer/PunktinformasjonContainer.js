@@ -76,6 +76,7 @@ class PunktinformasjonContainer extends Component {
         'https://pbs.twimg.com/profile_images/378800000067455227/3d053db6b9593d47a02ced7709846522_400x400.png',
       homepage: 'http://www.miljodirektoratet.no/',
       dataorigin: 'MDIR',
+      article: 'https://www.artsdatabanken.no/Pages/222921',
     }
   }
 
