@@ -128,7 +128,7 @@ class PunktinformasjonContainer extends Component {
           )
           if (props.rødlisteKategori.vurderingsenhet) {
             facts.push(
-              this.createNatureAreaPointInfo(
+              this.createRødlistePointInfo(
                 'Vurderingsenhet',
                 props.rødlisteKategori.vurderingsenhet.code
               )
