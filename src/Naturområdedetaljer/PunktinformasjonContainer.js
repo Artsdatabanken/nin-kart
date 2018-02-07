@@ -16,15 +16,15 @@ class PunktinformasjonContainer extends Component {
       natureAreaFacts: null,
       natureAreaCodes: null,
       natureAreaDescription: null,
-      metadata: '',
-      factItems: [],
-      areaItems: '',
-      redlistTheme: '',
+      metadata: null,
+      factItems: null,
+      areaItems: null,
+      redlistTheme: null,
 
-      pointInfo: {},
-      admEnhet: '',
+      pointInfo: null,
+      admEnhet: null,
       stedsnavn: null,
-      localId: '',
+      localId: null,
     }
   }
 
@@ -48,8 +48,10 @@ class PunktinformasjonContainer extends Component {
 
     if (localId === 'null')
       this.setState({
-        natureArea: '',
-        localId: '',
+        natureAreaFacts: null,
+        natureAreaCodes: null,
+        natureAreaDescription: null,
+        localId: null,
       })
     else this.goFetchInfo(localId)
   }
@@ -204,12 +206,15 @@ class PunktinformasjonContainer extends Component {
           lngLat={this.state.lngLat}
           title="PunktInfo"
         />
-        <Punktinformasjon
-          natureAreaFacts={this.state.natureAreaFacts}
-          natureAreaCodes={this.state.natureAreaCodes}
-          natureAreaDescription={this.state.natureAreaDescription}
-          title="NaturområdeInfo"
-        />
+        {this.state.natureAreaFacts &&
+          this.state.natureAreaCodes && (
+            <Punktinformasjon
+              natureAreaFacts={this.state.natureAreaFacts}
+              natureAreaCodes={this.state.natureAreaCodes}
+              natureAreaDescription={this.state.natureAreaDescription}
+              title="NaturområdeInfo"
+            />
+          )}
       </div>
     )
   }
