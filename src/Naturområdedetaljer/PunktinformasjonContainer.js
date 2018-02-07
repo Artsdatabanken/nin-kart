@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import backend from '../backend'
 import Punktinformasjon from './Punktinformasjon'
-import Naturomradeinformasjon from './Naturområdeinformasjon'
+//import Naturomradeinformasjon from './Naturområdeinformasjon'
 //import { ListItem } from 'material-ui'
 
 class PunktinformasjonContainer extends Component {
@@ -13,7 +13,9 @@ class PunktinformasjonContainer extends Component {
       redlistThemeIds: [],
 
       // api-received data
-      natureArea: '',
+      natureAreaFacts: null,
+      natureAreaCodes: null,
+      natureAreaDescription: null,
       metadata: '',
       factItems: [],
       areaItems: '',
@@ -56,7 +58,13 @@ class PunktinformasjonContainer extends Component {
     if (!id) return
     backend.getNatureAreaByLocalId(id).then(data => {
       this.setState({
-        natureArea: data,
+        natureAreaFacts: this.getNatureAreaFacts(data),
+      })
+      this.setState({
+        natureAreaCodes: this.getNatureAreaCodes(data),
+      })
+      this.setState({
+        natureAreaDescription: this.getNatureAreaDescription(data),
       })
     })
     backend.getMetadataByNatureAreaLocalId(id).then(data =>
@@ -64,6 +72,69 @@ class PunktinformasjonContainer extends Component {
         metadata: data,
       })
     )
+  }
+
+  getNatureAreaDescription(props) {
+    if (props && props.description && props.description !== '')
+      return [
+        {
+          name: 'Beskrivelse',
+          value: props.description,
+        },
+      ]
+  }
+
+  getNatureAreaCodes(props) {
+    var codes = []
+    if (!props) return null
+    for (var i in props.parameters) {
+      codes.push({
+        name: props.parameters[i].code,
+        value: props.parameters[i].codeDescription,
+      })
+    }
+    return codes
+  }
+
+  getNatureAreaFacts(props) {
+    var facts = []
+    for (var i in props) {
+      switch (i) {
+        case 'nivå':
+          facts.push({
+            name: 'Naturnivå',
+            value: backend.NatureLevelNames[props.nivå],
+          })
+          break
+        case 'surveyScale':
+          facts.push({
+            name: 'Kartleggingsmålestokk',
+            value: props.metadata.surveyScale,
+          })
+          break
+        case 'surveyedFrom':
+          facts.push({
+            name: 'Kartlagt',
+            value: props.metadata.surveyedFrom,
+          })
+          break
+        case 'rødlisteKategori':
+          facts.push({
+            name: 'Rødlistekategori',
+            value: props.rødlisteKategori.code,
+          })
+          if (props.rødlisteKategori.vurderingsenhet) {
+            facts.push({
+              name: 'Vurderingsenhet',
+              value: props.rødlisteKategori.vurderingsenhet.code,
+            })
+          }
+          break
+        default:
+          break
+      }
+    }
+    return facts
   }
 
   fixAdmEnhet(data) {
@@ -124,7 +195,7 @@ class PunktinformasjonContainer extends Component {
 
   render() {
     return (
-      <div style={{ maxHeight: window.innerHeight - 150, overflow: 'auto' }}>
+      <div style={{ maxHeight: window.innerHeight * 0.8, overflow: 'auto' }}>
         <Punktinformasjon
           metadata={this.state.metadata}
           pointInfo={this.state.pointInfo}
@@ -133,8 +204,10 @@ class PunktinformasjonContainer extends Component {
           lngLat={this.state.lngLat}
           title="PunktInfo"
         />
-        <Naturomradeinformasjon
-          natureArea={this.state.natureArea}
+        <Punktinformasjon
+          natureAreaFacts={this.state.natureAreaFacts}
+          natureAreaCodes={this.state.natureAreaCodes}
+          natureAreaDescription={this.state.natureAreaDescription}
           title="NaturområdeInfo"
         />
       </div>
