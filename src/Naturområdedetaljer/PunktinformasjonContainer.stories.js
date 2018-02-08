@@ -2,6 +2,8 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import PunktinformasjonContainer from './PunktinformasjonContainer'
 import { muiTheme } from 'storybook-addon-material-ui'
+import { MemoryRouter } from 'react-router-dom'
+
 // import backend from '../backend'
 
 // const dummyNatureArea = {
@@ -76,4 +78,8 @@ var props = {
 
 storiesOf('PunktinformasjonContainer', module)
   .addDecorator(muiTheme())
-  .add('default', () => <PunktinformasjonContainer {...props} />)
+  .add('default', () => (
+    <MemoryRouter>
+      <PunktinformasjonContainer {...props} />
+    </MemoryRouter>
+  ))
