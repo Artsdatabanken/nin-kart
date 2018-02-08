@@ -29,6 +29,9 @@ class PunktinformasjonContainer extends Component {
   componentWillReceiveProps(props) {
     this.fetch(props.lng, props.lat, props.localId)
   }
+  componentDidMount() {
+    this.fetch(this.props.lng, this.props.lat, this.props.localId)
+  }
 
   fetch(lng, lat, localId) {
     this.setState({
