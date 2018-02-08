@@ -6,12 +6,8 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-<!--[![Screenshot](screenshot.png "ratatouille screenshot")](http://ratatouille.surge.sh/)-->
-
 # Ratatouille
 
-...Brief description...
+[![Screenshot](doc/screenshot.png "ratatouille screenshot")](http://ratatouille.surge.sh/)
 
 * [Demo](http://ratatouille.surge.sh/)
-* [Storybook](http://ratatouille.surge.sh/storybook)
-
