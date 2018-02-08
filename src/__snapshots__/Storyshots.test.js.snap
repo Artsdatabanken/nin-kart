@@ -3034,7 +3034,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                                 "muiPrepared": true,
                                 "padding": 16,
                                 "position": "relative",
-                                "xbackgroundColor": "#f5f5f5",
                               }
                             }
                           >
@@ -3048,7 +3047,13 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "muiPrepared": true,
                                 }
                               }
-                            />
+                            >
+                              <a
+                                href="https://jira.artsdatabanken.no/browse/EG-138"
+                              >
+                                JIRA EG-138
+                              </a>
+                            </span>
                             <span
                               style={
                                 Object {
