@@ -1,6 +1,7 @@
 import Mapbox from './Mapbox/Mapbox'
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
+import { Route } from 'react-router-dom'
 
 class Kart extends Component {
   constructor(props) {
@@ -38,16 +39,20 @@ class Kart extends Component {
 
   render() {
     return (
-      <Mapbox
-        {...this.props}
-        onClick={this.onClick}
-        onVisibilityChange={this.props.onVisibilityChange}
-        onMapBoundsChange={this.props.onMapBoundsChange}
-        onColorChange={this.props.onColorChange}
-        categories={this.props.categories}
-        visibility={this.props.visibility}
-        color={this.props.color}
-        mapStyle={this.props.mapStyle}
+      <Route
+        render={() => (
+          <Mapbox
+            {...this.props}
+            onClick={this.onClick}
+            onVisibilityChange={this.props.onVisibilityChange}
+            onMapBoundsChange={this.props.onMapBoundsChange}
+            onColorChange={this.props.onColorChange}
+            categories={this.props.categories}
+            visibility={this.props.visibility}
+            color={this.props.color}
+            mapStyle={this.props.mapStyle}
+          />
+        )}
       />
     )
   }

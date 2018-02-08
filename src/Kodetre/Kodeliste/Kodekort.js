@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  FloatingActionButton,
-  Card,
-  CardActions,
-  CardMedia,
-  CardTitle,
-} from 'material-ui'
-import ContentAdd from 'material-ui/svg-icons/content/add'
+import { Card, CardActions, CardMedia, CardTitle } from 'material-ui'
 import { IconButton } from 'material-ui'
 import InfoOutline from 'material-ui/svg-icons/action/info-outline'
 import StarBorder from 'material-ui/svg-icons/toggle/star-border'
@@ -87,19 +80,6 @@ const Tittelblokk = ({
     subtitleStyle={{ cursor: 'pointer' }}
     subtitleColor={muiTheme.palette.alternateTextColor}
   >
-    {false && (
-      <FloatingActionButton
-        style={{
-          position: 'absolute',
-          left: 340,
-          top: -26,
-        }}
-        onClick={() => onAddLayer(data.navn, data.kode)}
-      >
-        <ContentAdd />
-      </FloatingActionButton>
-    )}
-
     <CardActions
       style={{
         position: 'absolute',

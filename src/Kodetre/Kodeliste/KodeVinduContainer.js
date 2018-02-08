@@ -65,7 +65,6 @@ class KodeVinduContainer extends React.Component {
         filterCode={this.props.filterCode}
         filter={this.props.filter}
         onGoToCode={this.props.onGoToCode}
-        onAddLayer={this.props.onAddLayer}
         onCheck={this.props.onCheckChange}
         isSelected={this.props.isSelected}
       />

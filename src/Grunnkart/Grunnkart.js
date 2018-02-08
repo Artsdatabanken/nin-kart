@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Kart from '../Kart/Kart'
-import { fromJS } from 'immutable'
 import MainDrawer from './MainDrawer'
 import { FloatingActionButton } from 'material-ui'
 import MapsLayers from 'material-ui/svg-icons/maps/layers'
@@ -34,7 +33,6 @@ class Grunnkart extends Component {
     this.state = {
       baseMapStyle: defaultMapStyle,
       mapStyle: '',
-      kode: '',
       showMainDrawer: false,
       categories: [
         'Alle naturområder',
@@ -45,7 +43,7 @@ class Grunnkart extends Component {
         'Kalk',
       ],
       visibility: {
-        'Alle naturområder': false,
+        'Alle naturområder': true,
         Rødlistede: false,
         'Bioklimatiske soner': false,
         Seksjoner: false,
@@ -71,46 +69,9 @@ class Grunnkart extends Component {
       },
     }
 
-    this.handleAddLayer = this.handleAddLayer.bind(this)
     this.handleColorChange = this.handleColorChange.bind(this)
     this.handleVisibilityChange = this.handleVisibilityChange.bind(this)
-    this.setBaseMap = this.handleChangeBaseMap.bind(this)
-  }
-
-  makeLayer(name, code, visible, source) {
-    const color = { ...this.state.color, [name]: '#003399' }
-    const visibility = { ...this.state.visibility, [name]: visible }
-    const layerSelector = {
-      ...this.state.layerSelector,
-      [name]: new RegExp(code),
-    }
-    const categories = [...this.state.categories, ...[name]]
-    this.setState({ categories, visibility, color, layerSelector })
-
-    return fromJS({
-      id: code,
-      type: 'fill',
-      source: 'composite',
-      'source-layer': source,
-      interactive: true,
-      filter: ['has', code],
-      layout: {},
-      paint: {
-        'fill-color': 'hsla(251, 59%, 28%, 0.8)',
-        'fill-outline-color': 'hsla(251, 59%, 69%, 0.8)',
-      },
-    })
-  }
-
-  addLayer(name, code) {
-    this.layers = this.layers.push(
-      this.makeLayer(name, code, true, 'naturomrader6')
-    )
-    this.updateMapStyle({ ...this.state })
-  }
-
-  handleStyleChange = mapStyle => {
-    this.setState({ mapStyle })
+    this.handleChangeBaseMap = this.handleChangeBaseMap.bind(this)
   }
 
   handleColorChange(name, event) {
@@ -126,10 +87,6 @@ class Grunnkart extends Component {
     }
     this.setState({ visibility })
     this.updateMapStyle({ ...this.state, visibility })
-  }
-
-  startUpdateMapStyle() {
-    this.updateMapStyle({ ...this.state })
   }
 
   updateMapStyle({ visibility, color, layerSelector }) {
@@ -153,14 +110,7 @@ class Grunnkart extends Component {
         return layer
       })
 
-    this.handleStyleChange(this.state.baseMapStyle.set('layers', layers))
-  }
-
-  handleAddLayer(navn, kode) {
-    this.setState({
-      kode: kode,
-    })
-    this.addLayer(navn, kode)
+    this.setState({ mapStyle: this.state.baseMapStyle.set('layers', layers) })
   }
 
   handleChangeBaseMap(type) {
@@ -188,6 +138,7 @@ class Grunnkart extends Component {
       },
       () => {
         this.addCustomLayers()
+        this.updateMapStyle({ ...this.state })
       }
     )
   }
@@ -202,11 +153,10 @@ class Grunnkart extends Component {
       .push(NiN)
       .push(Rodliste)
       .push(NiNHover)
-    this.updateMapStyle({ ...this.state })
   }
 
   componentDidMount() {
-    this.addCustomLayers()
+    this.handleChangeBaseMap()
   }
 
   render() {
@@ -223,7 +173,7 @@ class Grunnkart extends Component {
         />
 
         <MainDrawer
-          onChangeBaseMap={this.handleChangeBaseMap}
+          handleChangeBaseMap={this.handleChangeBaseMap}
           open={this.state.showMainDrawer}
           onToggleMainDrawer={() =>
             this.setState({ showMainDrawer: !this.state.showMainDrawer })
@@ -248,7 +198,6 @@ class Grunnkart extends Component {
             }}
           >
             <VenstreVinduContainerContainer
-              onAddLayer={this.handleAddLayer}
               onToggleMainDrawer={() =>
                 this.setState({ showMainDrawer: !this.state.showMainDrawer })
               }

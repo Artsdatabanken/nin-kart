@@ -205,7 +205,7 @@ exports[`Storyshots App Bar down into tree 1`] = `
                 <input
                   autoFocus={true}
                   disabled={false}
-                  id="5"
+                  id="6"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -641,7 +641,7 @@ exports[`Storyshots App Bar root 1`] = `
                 <input
                   autoFocus={true}
                   disabled={false}
-                  id="4"
+                  id="5"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -2661,7 +2661,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                         <input
                           autoFocus={true}
                           disabled={false}
-                          id="3"
+                          id="4"
                           onBlur={[Function]}
                           onChange={[Function]}
                           onFocus={[Function]}
@@ -7548,7 +7548,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                     <input
                       autoFocus={true}
                       disabled={false}
-                      id="6"
+                      id="7"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}

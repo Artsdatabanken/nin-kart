@@ -57,12 +57,6 @@ class VenstreVinduContainer extends React.Component {
                         history.push('/lag/' + kode)
                         this.setState({ searchResults: null })
                       }}
-                      onAddLayer={() => {
-                        this.props.onAddLayer(
-                          match.params.kode,
-                          match.params.kode
-                        )
-                      }}
                       onCheck={this.props.onCheckChange}
                       isSelected={this.props.isSelected}
                       mapbounds={this.props.mapbounds}
