@@ -12,7 +12,15 @@ const replacements = {
   //    "RKAT-5": "RL_NT",
   //    "RKAT-6": "RL_DD",
 }
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1)
+}
+
 const rename = data => {
+  if (data.navn) data.navn = capitalizeFirstLetter(data.navn)
+  if (data.barn)
+    data.barn.forEach(barn => (barn.navn = capitalizeFirstLetter(barn.navn)))
   let text = JSON.stringify(data)
   Object.keys(replacements).forEach(k => {
     text = text.replace(k, replacements[k])
