@@ -23,6 +23,11 @@ class Mapbox extends Component {
     window.addEventListener('resize', this._resize)
     this._resize()
 
+    // const mapInstance = this.map.getMap();
+    // mapInstance.on('style.load', function() {
+    //     mapInstance.addLayer(Kalk);
+    // });
+
     // backend.getToken().then(data => {
     //     let parts = data.split('"');
     //     let t = {
@@ -45,6 +50,36 @@ class Mapbox extends Component {
     //         });
     //     });
     // });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    var currentLocation = nextProps.location.pathname
+    let kodematch = currentLocation.match(/\/lag\/(.*)/)
+    if (kodematch && kodematch.length === 2) {
+      let kode = kodematch[1]
+      if (kode !== this.state.kode) {
+        let map = this.map.getMap()
+        if (map && map.isStyleLoaded()) {
+          if (!map.getLayer(kode)) {
+            map.addLayer({
+              id: kode,
+              type: 'fill',
+              source: 'composite',
+              'source-layer': 'naturomrader6',
+              interactive: true,
+              filter: ['has', kode],
+              layout: {},
+              paint: {
+                'fill-color': 'hsla(251, 59%, 28%, 0.8)',
+                'fill-outline-color': 'hsla(251, 59%, 69%, 0.8)',
+              },
+            })
+            map.removeLayer(this.state.kode)
+            this.setState({ kode: kode })
+          }
+        }
+      }
+    }
   }
 
   componentWillUnmount() {

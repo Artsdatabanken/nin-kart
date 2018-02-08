@@ -25,7 +25,6 @@ const KodeVindu = props => {
           <Kodekort
             {...props.meta}
             onGoToCode={props.onGoToCode}
-            onAddLayer={props.onAddLayer}
             data={props.data}
           />
         )}

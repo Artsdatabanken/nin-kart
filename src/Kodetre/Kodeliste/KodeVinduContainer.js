@@ -29,7 +29,6 @@ class KodeVinduContainer extends React.Component {
 
   componentDidMount() {
     this.fetchData(this.props.kode)
-    this.props.onAddLayer()
   }
 
   componentWillUnmount() {
@@ -66,7 +65,6 @@ class KodeVinduContainer extends React.Component {
         filterCode={this.props.filterCode}
         filter={this.props.filter}
         onGoToCode={this.props.onGoToCode}
-        onAddLayer={this.props.onAddLayer}
         onCheck={this.props.onCheckChange}
         isSelected={this.props.isSelected}
       />

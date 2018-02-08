@@ -63,7 +63,6 @@ class VenstreVinduContainerContainer extends React.Component {
         render={({ history }) => (
           <VenstreVinduContainer
             filterCode={'filterCodes'}
-            onAddLayer={this.props.onAddLayer}
             onToggleMainDrawer={this.props.onToggleMainDrawer}
             onCheckChange={this.handleCheckChange}
             isSelected={this.isSelected}
