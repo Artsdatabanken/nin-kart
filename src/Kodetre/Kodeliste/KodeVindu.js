@@ -2,7 +2,7 @@ import React from 'react'
 import Kodelisteelement from './Kodelisteelement'
 import Kodekort from './Kodekort'
 import StatistikkContainer from '../Statistikk/StatistikkContainer'
-import { Paper, List, ListItem, Tabs, Tab } from 'material-ui'
+import { Paper, List, Tabs, Tab } from 'material-ui'
 import Relasjon from './Relasjon'
 import FetchContainer from '../../FetchContainer'
 

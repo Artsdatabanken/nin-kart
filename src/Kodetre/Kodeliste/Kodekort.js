@@ -4,11 +4,7 @@ import {
   Card,
   CardActions,
   CardMedia,
-  CardText,
   CardTitle,
-  List,
-  ListItem,
-  Subheader,
 } from 'material-ui'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 import { IconButton } from 'material-ui'
