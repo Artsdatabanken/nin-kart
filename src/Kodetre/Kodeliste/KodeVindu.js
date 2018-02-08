@@ -2,12 +2,13 @@ import React from 'react'
 import Kodelisteelement from './Kodelisteelement'
 import Kodekort from './Kodekort'
 import StatistikkContainer from '../Statistikk/StatistikkContainer'
-import { Paper, List, Tabs, Tab } from 'material-ui'
+import { Paper, List, ListItem, Tabs, Tab } from 'material-ui'
 import Relasjon from './Relasjon'
 import FetchContainer from '../../FetchContainer'
 
 const KodeVindu = props => {
-  const selv = props.selv || {}
+  const selv = props.meta.selv || {}
+  console.log(props.meta)
   return (
     <FetchContainer>
       <Paper
@@ -29,8 +30,10 @@ const KodeVindu = props => {
             data={props.data}
           />
         )}
+        {props.meta.ingress && <div>{props.meta.ingress}</div>}
         <Tabs>
           <Tab label="Innhold">
+            <div>{selv.ingress}</div>
             <List>
               {props.data &&
                 props.data.barn &&
