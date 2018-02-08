@@ -10,7 +10,7 @@ function PointInfo(props) {
           const item = props.pointInfo[key]
           return (
             <ListItem
-              primaryText={item.value}
+              primaryText={item.uom ? item.value + ' ' + item.uom : item.value}
               secondaryText={
                 item.name || item.kode
                   ? props.excludeCode
