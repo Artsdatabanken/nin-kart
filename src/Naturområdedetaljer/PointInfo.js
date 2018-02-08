@@ -37,8 +37,11 @@ function PointInfo(props) {
                 )
               }
               rightAvatar={
-                item.article && (
-                  <a target="_blank" href={item.article /*'/kode/LKM_'+key*/}>
+                (item.article || item.metadata) && (
+                  <a
+                    target="_blank"
+                    href={item.article || item.metadata /*'/kode/LKM_'+key*/}
+                  >
                     <InfoOutline style={{ color: '#aaa' }} />
                   </a>
                 )
