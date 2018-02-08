@@ -80,19 +80,6 @@ const Tittelblokk = ({
     subtitleStyle={{ cursor: 'pointer' }}
     subtitleColor={muiTheme.palette.alternateTextColor}
   >
-    {false && (
-      <FloatingActionButton
-        style={{
-          position: 'absolute',
-          left: 340,
-          top: -26,
-        }}
-        onClick={() => onAddLayer(data.navn, data.kode)}
-      >
-        <ContentAdd />
-      </FloatingActionButton>
-    )}
-
     <CardActions
       style={{
         position: 'absolute',
