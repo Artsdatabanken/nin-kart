@@ -77,7 +77,7 @@ class PunktinformasjonContainer extends Component {
 
     var codeSplit = name.split('_')
 
-    if (codeSplit.length == 1)
+    if (codeSplit.length === 1)
       natureAreaPointInfo.article = 'https://www.artsdatabanken.no/Pages/222921'
     else
       natureAreaPointInfo.article =
