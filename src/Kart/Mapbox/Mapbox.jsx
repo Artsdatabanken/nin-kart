@@ -60,7 +60,11 @@ class Mapbox extends Component {
     })
   }
 
-  handleViewportChange = viewport => this.setState({ viewport })
+  handleViewportChange = viewport => {
+    this.setState({ viewport })
+    const bounds = this.map.getMap().getBounds()
+    this.props.onMapBoundsChange(bounds)
+  }
 
   onHover = e => {
     const pos = e.center
