@@ -118,7 +118,7 @@ class Backend {
     var longOrigin
     var eccPrimeSquared
     var n, T, c, aRenamed, m
-    var longTemp = x + 180 - parseInt((x + 180) / 360) * 360 - 180
+    var longTemp = x + 180 - parseInt((x + 180) / 360, 10) * 360 - 180
     var latRad = y * deg2Rad
     var longRad = longTemp * deg2Rad
     var longOriginRad
