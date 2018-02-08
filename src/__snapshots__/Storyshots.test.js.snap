@@ -1678,7 +1678,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
               <div
                 style={
                   Object {
-                    "cursor": "crosshair",
+                    "cursor": "default",
                     "height": 768,
                     "position": "relative",
                     "width": 1024,
@@ -1689,7 +1689,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                   className={undefined}
                   style={
                     Object {
-                      "cursor": "crosshair",
+                      "cursor": "default",
                       "height": 768,
                       "visibility": "visible",
                       "width": 1024,
@@ -2348,7 +2348,7 @@ exports[`Storyshots Kart Mapbox default 1`] = `
     <div
       style={
         Object {
-          "cursor": "crosshair",
+          "cursor": "default",
           "height": 768,
           "position": "relative",
           "width": 1024,
@@ -2359,7 +2359,7 @@ exports[`Storyshots Kart Mapbox default 1`] = `
         className={undefined}
         style={
           Object {
-            "cursor": "crosshair",
+            "cursor": "default",
             "height": 768,
             "visibility": "visible",
             "width": 1024,
