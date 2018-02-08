@@ -5,7 +5,9 @@ import Statistikk from './index'
 class StatistikkContainer extends Component {
   state = { blokker: [] }
   render() {
-    return <Statistikk blokker={this.state.blokker} />
+    return (
+      <Statistikk ingress={this.props.ingress} blokker={this.state.blokker} />
+    )
   }
 
   componentDidMount() {

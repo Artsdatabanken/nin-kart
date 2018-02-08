@@ -49,6 +49,7 @@ const meta = {
   selv: {},
   forelder: {},
   relasjon: [{ kode: 'kode', tittel: 'tittel', avatar: 'avatar' }],
+  ingress: 'ingress-tekst',
 }
 
 storiesOf('KodeVindu', module)

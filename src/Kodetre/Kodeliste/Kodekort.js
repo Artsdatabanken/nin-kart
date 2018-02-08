@@ -42,9 +42,6 @@ class Kodekort extends React.Component {
     return (
       <Card containerStyle={{ paddingBottom: 0 }}>
         <CardMedia
-          overlay2={
-            <CardTitle title="Overlay title" subtitle="Overlay subtitle" />
-          }
           overlay={
             <Tittelblokk
               favorite={this.state.favorite}
@@ -63,10 +60,6 @@ class Kodekort extends React.Component {
             style={{ height: 350, objectFit: 'cover' }}
           />
         </CardMedia>
-        <List>
-          <Subheader>Beskrivelse</Subheader>
-          <ListItem primaryText={data.ingress} />
-        </List>
       </Card>
     )
   }

@@ -8,7 +8,6 @@ import FetchContainer from '../../FetchContainer'
 
 const KodeVindu = props => {
   const selv = props.meta.selv || {}
-  console.log(props.meta)
   return (
     <FetchContainer>
       <Paper
@@ -30,7 +29,6 @@ const KodeVindu = props => {
             data={props.data}
           />
         )}
-        {props.meta.ingress && <div>{props.meta.ingress}</div>}
         <Tabs>
           <Tab label="Innhold">
             <div>{selv.ingress}</div>
@@ -55,7 +53,10 @@ const KodeVindu = props => {
             </List>
           </Tab>
           <Tab label="Informasjon">
-            <StatistikkContainer dataUrl={'/kode/' + props.data.kode} />
+            <StatistikkContainer
+              ingress={props.meta.ingress}
+              dataUrl={'/kode/' + props.data.kode}
+            />
           </Tab>
           <Tab label="Se også">
             <Relasjon relasjon={props.meta.relasjon || []} />
