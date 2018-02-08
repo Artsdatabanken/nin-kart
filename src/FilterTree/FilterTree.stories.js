@@ -600,19 +600,18 @@ const dummyRedlistCategories = [
   { id: '6', code: null, name: 'DD', count: 2825, children: null },
 ]
 
-/* TODO: Test feiler: missing unique key på ListItem
+/* TODO: Test feiler: missing unique key på ListItem*/
 storiesOf('FilterTree', module)
-    .addDecorator(muiTheme())
-    .add('default', () => <div>
-            <span>Dummy-tre, ignorerer checkbox-klikk </span>
-            <FilterTree
-                natureAreas={dummyNatureAreas}
-                redlistTheme={dummyRedlistTheme}
-                redlistCategories={dummyRedlistCategories}
-                handleCheckChange={action('change')}
-                isSelected={action('selection')}
-            />
+  .addDecorator(muiTheme())
+  .add('default', () => (
+    <div>
+      <span>Dummy-tre, ignorerer checkbox-klikk </span>
+      <FilterTree
+        natureAreas={dummyNatureAreas}
+        redlistTheme={dummyRedlistTheme}
+        redlistCategories={dummyRedlistCategories}
+        handleCheckChange={action('change')}
+        isSelected={action('selection')}
+      />
     </div>
-    );
-
-*/
+  ))
