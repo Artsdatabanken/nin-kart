@@ -1,5 +1,5 @@
 import { request } from 'graphql-request'
-
+import rename from './rename'
 class Backend {
   static async postFilterPromise(url, filter) {
     return new Promise((resolve, reject) => {
@@ -79,7 +79,9 @@ class Backend {
         //"https://adb-og-api.azurewebsites.net/graph",
         taxonTreeQuery,
         variables
-      ).then(json => resolve(json))
+      )
+        .then(json => resolve(json))
+        .then(json => rename(json))
     })
   }
 
@@ -116,6 +118,7 @@ class Backend {
       `https://adb-nin-raster.azurewebsites.net/v1/point/${lng}/${lat}`
     )
   }
+
   static CreateBboxFromPoint(lng, lat, radius) {
     return {
       minx: lat - radius,

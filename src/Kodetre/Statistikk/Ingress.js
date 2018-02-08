@@ -4,7 +4,7 @@ import InfoIconButton from './InfoIconButton'
 
 const Ingress = ({ infoUrl, beskrivelse }) => (
   <React.Fragment>
-    <InfoIconButton href={infoUrl} />
+    {infoUrl && <InfoIconButton href={infoUrl} />}
     <CardText>{beskrivelse}</CardText>
   </React.Fragment>
 )
