@@ -3,6 +3,7 @@ import Kart from '../Kart/Kart'
 import MainDrawer from './MainDrawer'
 import { FloatingActionButton } from 'material-ui'
 import MapsLayers from 'material-ui/svg-icons/maps/layers'
+import KatalogIkon from 'material-ui/svg-icons/communication/import-contacts'
 import { Link } from 'react-router-dom'
 import {
   defaultMapStyle,
@@ -179,11 +180,20 @@ class Grunnkart extends Component {
             this.setState({ showMainDrawer: !this.state.showMainDrawer })
           }
         />
-        <Link to="/kontrollpanel">
+        {false && (
+          <Link to="/kontrollpanel">
+            <FloatingActionButton
+              style={{ position: 'absolute', bottom: 48, right: 48 }}
+            >
+              <MapsLayers />
+            </FloatingActionButton>
+          </Link>
+        )}
+        <Link to="/katalog">
           <FloatingActionButton
-            style={{ position: 'absolute', bottom: 48, right: 48 }}
+            style={{ position: 'absolute', bottom: 48, left: 48 }}
           >
-            <MapsLayers />
+            <KatalogIkon />
           </FloatingActionButton>
         </Link>
         {!this.state.showMainDrawer && (
