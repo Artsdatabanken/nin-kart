@@ -600,7 +600,6 @@ const dummyRedlistCategories = [
   { id: '6', code: null, name: 'DD', count: 2825, children: null },
 ]
 
-/* TODO: Test feiler: missing unique key på ListItem*/
 storiesOf('FilterTree', module)
   .addDecorator(muiTheme())
   .add('default', () => (
