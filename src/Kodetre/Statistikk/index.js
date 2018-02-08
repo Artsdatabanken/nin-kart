@@ -10,7 +10,16 @@ class Statistikk extends React.Component {
       return <Blokk key={blokk.key}>{this.renderInnhold(blokk)}</Blokk>
     })
 
-    return <React.Fragment>{blokker}</React.Fragment>
+    return (
+      <React.Fragment>
+        {this.props.ingress && (
+          <Blokk>
+            <Ingress beskrivelse={this.props.ingress} />
+          </Blokk>
+        )}
+        {blokker}
+      </React.Fragment>
+    )
   }
 
   renderInnhold(blokk) {

@@ -10,29 +10,38 @@ function PointInfo(props) {
           const item = props.pointInfo[key]
           return (
             <ListItem
-              primaryText={item.value}
+              primaryText={item.uom ? item.value + ' ' + item.uom : item.value}
               secondaryText={
                 item.name || item.kode
-                  ? (item.name || item.kode) + ' (' + key + ')'
+                  ? props.excludeCode
+                    ? item.name || item.kode
+                    : (item.name || item.kode) + ' (' + key + ')'
                   : key
               }
               key={key}
               leftAvatar={
-                <a target="_blank" href={item.homepage}>
-                  <Avatar
-                    src={item.logo}
-                    title={item.dataorigin}
-                    style={{
-                      objectFit: 'cover',
-                      backgroundColor: 'rgb(255, 255, 255)',
-                      borderRadius: null,
-                    }}
-                  />
-                </a>
+                item.homepage &&
+                item.logo &&
+                item.dataorigin && (
+                  <a target="_blank" href={item.homepage}>
+                    <Avatar
+                      src={item.logo}
+                      title={item.dataorigin}
+                      style={{
+                        objectFit: 'cover',
+                        backgroundColor: 'rgb(255, 255, 255)',
+                        borderRadius: null,
+                      }}
+                    />
+                  </a>
+                )
               }
               rightAvatar={
-                item.article && (
-                  <a target="_blank" href={item.article /*'/kode/LKM_'+key*/}>
+                (item.article || item.metadata) && (
+                  <a
+                    target="_blank"
+                    href={item.article || item.metadata /*'/kode/LKM_'+key*/}
+                  >
                     <InfoOutline style={{ color: '#aaa' }} />
                   </a>
                 )

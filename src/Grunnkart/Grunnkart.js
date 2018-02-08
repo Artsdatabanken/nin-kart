@@ -167,6 +167,9 @@ class Grunnkart extends Component {
           longitude={10}
           zoom={4.7}
           mapStyle={this.state.mapStyle}
+          onMapBoundsChange={bounds => {
+            this.setState({ mapbounds: bounds })
+          }}
         />
 
         <MainDrawer
@@ -202,6 +205,7 @@ class Grunnkart extends Component {
               onColorChange={this.handleColorChange}
               categories={this.state.categories}
               visibility={this.state.visibility}
+              mapbounds={this.state.mapbounds}
               color={this.state.color}
             />
           </div>

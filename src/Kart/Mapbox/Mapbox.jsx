@@ -95,7 +95,11 @@ class Mapbox extends Component {
     })
   }
 
-  handleViewportChange = viewport => this.setState({ viewport })
+  handleViewportChange = viewport => {
+    this.setState({ viewport })
+    const bounds = this.map.getMap().getBounds()
+    this.props.onMapBoundsChange(bounds)
+  }
 
   onHover = e => {
     const pos = e.center
@@ -124,7 +128,7 @@ class Mapbox extends Component {
         ref={map => {
           this.map = map
         }}
-        style={{ cursor: 'crosshair' }}
+        style={{ cursor: 'default' }}
         onClick={this.props.onClick}
         onHover={this.onHover}
         onMouseMove={this.onMouseMove}

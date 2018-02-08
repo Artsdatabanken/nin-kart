@@ -59,6 +59,7 @@ class VenstreVinduContainer extends React.Component {
                       }}
                       onCheck={this.props.onCheckChange}
                       isSelected={this.props.isSelected}
+                      mapbounds={this.props.mapbounds}
                     />
                   )}
                 />

@@ -44,7 +44,7 @@ class KodeVinduContainer extends React.Component {
     this.setState({ meta: dummyMeta, data: null })
     const currentQuery = this.queryNumber
     backend
-      .hentKode(kode || '')
+      .hentKode(kode || '', this.props.mapbounds)
       .then(data => rename(data))
       .then(data => {
         if (currentQuery !== this.queryNumber) return // Abort stale query
