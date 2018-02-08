@@ -29,9 +29,6 @@ class PunktinformasjonContainer extends Component {
   componentWillReceiveProps(props) {
     this.fetch(props.lng, props.lat, props.localId)
   }
-  componentDidMount() {
-    this.fetch(this.props.lng, this.props.lat, this.props.localId)
-  }
 
   fetch(lng, lat, localId) {
     this.setState({
@@ -47,8 +44,6 @@ class PunktinformasjonContainer extends Component {
     if (localId === 'null')
       this.setState({
         natureAreaFacts: null,
-        natureAreaCodes: null,
-        natureAreaDescription: null,
         localId: null,
       })
     else this.goFetchInfo(localId)
@@ -80,7 +75,13 @@ class PunktinformasjonContainer extends Component {
 
     if (!useDefaultArticle) return natureAreaPointInfo
 
-    natureAreaPointInfo.article = 'https://www.artsdatabanken.no/Pages/222921'
+    var codeSplit = name.split('_')
+
+    if (codeSplit.length === 1)
+      natureAreaPointInfo.article = 'https://www.artsdatabanken.no/Pages/222921'
+    else
+      natureAreaPointInfo.article =
+        'https://www.artsdatabanken.no/NiN2.0/' + codeSplit[1]
 
     return natureAreaPointInfo
   }

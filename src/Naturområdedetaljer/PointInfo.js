@@ -10,7 +10,7 @@ function PointInfo(props) {
           const item = props.pointInfo[key]
           return (
             <ListItem
-              primaryText={item.value}
+              primaryText={item.uom ? item.value + ' ' + item.uom : item.value}
               secondaryText={
                 item.name || item.kode
                   ? props.excludeCode
@@ -37,8 +37,11 @@ function PointInfo(props) {
                 )
               }
               rightAvatar={
-                item.article && (
-                  <a target="_blank" href={item.article /*'/kode/LKM_'+key*/}>
+                (item.article || item.metadata) && (
+                  <a
+                    target="_blank"
+                    href={item.article || item.metadata /*'/kode/LKM_'+key*/}
+                  >
                     <InfoOutline style={{ color: '#aaa' }} />
                   </a>
                 )
