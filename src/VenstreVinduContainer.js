@@ -38,7 +38,7 @@ class VenstreVinduContainer extends React.Component {
                     searchResults={this.state.searchResults}
                     onClick={kode => {
                       this.setState({ searchResults: null })
-                      history.push('/lag/' + kode)
+                      history.push('/katalog/' + kode)
                     }}
                   />
                 )}
@@ -46,7 +46,7 @@ class VenstreVinduContainer extends React.Component {
             ) : (
               <Switch>
                 <Route
-                  path="/lag/:kode?"
+                  path="/katalog/:kode?"
                   render={({ match, history }) => (
                     <KodeVinduContainer
                       style={{ height: '100vh' }}
@@ -54,7 +54,7 @@ class VenstreVinduContainer extends React.Component {
                       filterCode={this.props.filterCode}
                       filter={this.props.filter}
                       onGoToCode={kode => {
-                        history.push('/lag/' + kode)
+                        history.push('/katalog/' + kode)
                         this.setState({ searchResults: null })
                       }}
                       onCheck={this.props.onCheckChange}

@@ -54,9 +54,10 @@ class Mapbox extends Component {
 
   componentWillReceiveProps(nextProps) {
     var currentLocation = nextProps.location.pathname
-    let kodematch = currentLocation.match(/\/lag\/(.*)/)
+    let kodematch = currentLocation.match(/\/katalog\/(.*)/)
     if (kodematch && kodematch.length === 2) {
       let kode = kodematch[1]
+      console.warn(kode)
       if (kode !== this.state.kode) {
         let map = this.map.getMap()
         if (map && map.isStyleLoaded()) {

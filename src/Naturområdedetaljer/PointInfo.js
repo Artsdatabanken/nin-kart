@@ -18,7 +18,7 @@ function PointInfo(props) {
                     item.uom ? item.value + ' ' + item.uom : item.value
                   }
                   onClick={() => {
-                    routing.history.push('/lag/' + key)
+                    routing.history.push('/katalog/' + key)
                   }}
                   secondaryText={
                     item.name || item.kode

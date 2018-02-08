@@ -96,15 +96,12 @@ class Backend {
   }
 
   static async hentKode(kode, bounds) {
-    if (!bounds)
-      return this.getPromise(
-        `https://adb-nin-memapi.azurewebsites.net/v1/Kodetre?node=${kode}`
-      )
-    console.log(bounds)
-    var ll = this.Wgs84ToUtm33(bounds._sw.lng, bounds._sw.lat)
-    var ur = this.Wgs84ToUtm33(bounds._ne.lng, bounds._ne.lat)
-
-    const bbox = bounds ? `&bbox=${ll.x},${ll.y},${ur.x},${ur.y}` : ''
+    let bbox = ''
+    if (bounds) {
+      var ll = this.Wgs84ToUtm33(bounds._sw.lng, bounds._sw.lat)
+      var ur = this.Wgs84ToUtm33(bounds._ne.lng, bounds._ne.lat)
+      bbox = `&bbox=${ll.x},${ll.y},${ur.x},${ur.y}`
+    }
     return this.getPromise(
       `https://adb-nin-memapi.azurewebsites.net/v1/Kodetre?node=${kode}${bbox}`
     )
