@@ -96,15 +96,100 @@ class Backend {
   }
 
   static async hentKode(kode, bounds) {
+    if (!bounds)
+      return this.getPromise(
+        `https://adb-nin-memapi.azurewebsites.net/v1/Kodetre?node=${kode}`
+      )
     console.log(bounds)
-    const bbox = bounds
-      ? `&bbox=${bounds._sw.lng},${bounds._sw.lat},${bounds._ne.lng},${
-          bounds._ne.lat
-        }`
-      : ''
+    var ll = this.Wgs84ToUtm33(bounds._sw.lng, bounds._sw.lat)
+    var ur = this.Wgs84ToUtm33(bounds._ne.lng, bounds._ne.lat)
+
+    const bbox = bounds ? `&bbox=${ll.x},${ll.y},${ur.x},${ur.y}` : ''
     return this.getPromise(
       `https://adb-nin-memapi.azurewebsites.net/v1/Kodetre?node=${kode}${bbox}`
     )
+  }
+
+  static Wgs84ToUtm33(x, y) {
+    var deg2Rad = Math.PI / 180
+    var a = 6378137
+    var eccSquared = 0.00669438
+    var k0 = 0.9996
+    var longOrigin
+    var eccPrimeSquared
+    var n, T, c, aRenamed, m
+    var longTemp = x + 180 - parseInt((x + 180) / 360) * 360 - 180
+    var latRad = y * deg2Rad
+    var longRad = longTemp * deg2Rad
+    var longOriginRad
+
+    var zoneNumber = 33
+    //// Handling of "wonky" norwegian zones. Not needed as we pass in zone. Might be nice to hold on to for future reference.
+    //var zoneNumber = (int) (longTemp + 180) / 6 + 1;
+    //if (y >= 56.0 && y < 64.0 && longTemp >= 3.0 && longTemp < 12.0) zoneNumber = 32;
+    //if (y >= 72.0 && y < 84.0)
+    //    if (longTemp >= 0.0 && longTemp < 9.0) zoneNumber = 31;
+    //    else if (longTemp >= 9.0 && longTemp < 21.0) zoneNumber = 33;
+    //    else if (longTemp >= 21.0 && longTemp < 33.0) zoneNumber = 35;
+    //    else if (longTemp >= 33.0 && longTemp < 42.0) zoneNumber = 37;
+
+    longOrigin = (zoneNumber - 1) * 6 - 180 + 3
+    longOriginRad = longOrigin * deg2Rad
+    eccPrimeSquared = eccSquared / (1 - eccSquared)
+    n = a / Math.sqrt(1 - eccSquared * Math.sin(latRad) * Math.sin(latRad))
+    T = Math.tan(latRad) * Math.tan(latRad)
+    c = eccPrimeSquared * Math.cos(latRad) * Math.cos(latRad)
+    aRenamed = Math.cos(latRad) * (longRad - longOriginRad)
+    m =
+      a *
+      ((1 -
+        eccSquared / 4 -
+        3 * eccSquared * eccSquared / 64 -
+        5 * eccSquared * eccSquared * eccSquared / 256) *
+        latRad -
+        (3 * eccSquared / 8 +
+          3 * eccSquared * eccSquared / 32 +
+          45 * eccSquared * eccSquared * eccSquared / 1024) *
+          Math.sin(2 * latRad) +
+        (15 * eccSquared * eccSquared / 256 +
+          45 * eccSquared * eccSquared * eccSquared / 1024) *
+          Math.sin(4 * latRad) -
+        35 * eccSquared * eccSquared * eccSquared / 3072 * Math.sin(6 * latRad))
+    var utmEasting =
+      k0 *
+        n *
+        (aRenamed +
+          (1 - T + c) * aRenamed * aRenamed * aRenamed / 6 +
+          (5 - 18 * T + T * T + 72 * c - 58 * eccPrimeSquared) *
+            aRenamed *
+            aRenamed *
+            aRenamed *
+            aRenamed *
+            aRenamed /
+            120) +
+      500000.0
+    var utmNorthing =
+      k0 *
+      (m +
+        n *
+          Math.tan(latRad) *
+          (aRenamed * aRenamed / 2 +
+            (5 - T + 9 * c + 4 * c * c) *
+              aRenamed *
+              aRenamed *
+              aRenamed *
+              aRenamed /
+              24 +
+            (61 - 58 * T + T * T + 600 * c - 330 * eccPrimeSquared) *
+              aRenamed *
+              aRenamed *
+              aRenamed *
+              aRenamed *
+              aRenamed *
+              aRenamed /
+              720))
+    if (y < 0) utmNorthing += 10000000.0
+    return { x: utmEasting, y: utmNorthing }
   }
 
   static async søkKode(q) {
