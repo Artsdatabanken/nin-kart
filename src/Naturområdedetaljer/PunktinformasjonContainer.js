@@ -102,47 +102,38 @@ class PunktinformasjonContainer extends Component {
   }
 
   getNatureAreaFacts(props) {
-    var facts = []
+    var facts = {}
     for (var i in props) {
       switch (i) {
         case 'nivå':
-          facts.push(
-            this.createNatureAreaPointInfo(
-              'Naturnivå',
-              backend.NatureLevelNames[props.nivå]
-            )
+          facts.NA = this.createNatureAreaPointInfo(
+            'Natursystem',
+            backend.NatureLevelNames[props.nivå]
           )
+
           break
         case 'surveyScale':
-          facts.push(
-            this.createNatureAreaPointInfo(
-              'Kartleggingsmålestokk',
-              props.metadata.surveyScale
-            )
+          facts.Kartleggingsmålestokk = this.createNatureAreaPointInfo(
+            'Kartleggingsmålestokk',
+            props.metadata.surveyScale
           )
           break
         case 'surveyedFrom':
-          facts.push(
-            this.createNatureAreaPointInfo(
-              'Kartlagt',
-              props.metadata.surveyedFrom
-            )
+          facts.Kartlagt = this.createNatureAreaPointInfo(
+            'Kartlagt',
+            props.metadata.surveyedFrom
           )
           break
         case 'rødlisteKategori':
           if (props.rødlisteKategori.code === 'LC') break
-          facts.push(
-            this.createRødlistePointInfo(
-              'Rødlistekategori',
-              props.rødlisteKategori.code
-            )
+          facts.RKAT = this.createRødlistePointInfo(
+            'Rødlistekategori',
+            props.rødlisteKategori.code
           )
           if (props.rødlisteKategori.vurderingsenhet) {
-            facts.push(
-              this.createRødlistePointInfo(
-                'Vurderingsenhet',
-                props.rødlisteKategori.vurderingsenhet.code
-              )
+            facts.Vurderingsenhet = this.createRødlistePointInfo(
+              'Vurderingsenhet',
+              props.rødlisteKategori.vurderingsenhet.code
             )
           }
           break
@@ -152,17 +143,17 @@ class PunktinformasjonContainer extends Component {
     }
 
     for (var y in props.parameters) {
-      facts.push(
-        this.createNatureAreaPointInfo(
-          props.parameters[y].code,
-          props.parameters[y].codeDescription
-        )
+      facts[props.parameters[y].code] = this.createNatureAreaPointInfo(
+        props.parameters[y].code,
+        props.parameters[y].codeDescription
       )
     }
 
     if (props.description && props.description !== '')
-      facts.push(
-        this.createNatureAreaPointInfo('Beskrivelse', props.description, false)
+      facts.Beskrivelse = this.createNatureAreaPointInfo(
+        'Beskrivelse',
+        props.description,
+        false
       )
 
     return facts
