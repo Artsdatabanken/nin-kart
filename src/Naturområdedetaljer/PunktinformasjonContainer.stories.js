@@ -1,18 +1,8 @@
+import React from 'react'
+import { storiesOf } from '@storybook/react'
 import PunktinformasjonContainer from './PunktinformasjonContainer'
+import { muiTheme } from 'storybook-addon-material-ui'
 
-var punktinformasjonContainer = new PunktinformasjonContainer()
-
-test('fixStedsnavn-NullTest', () => {
-  expect(punktinformasjonContainer.fixStedsnavn({ result: 'nada' })).toBe(null)
-})
-
-test('fixStedsnavn', () => {
-  expect(
-    Object.keys(
-      punktinformasjonContainer.fixStedsnavn({
-        placename: 'huttiheita',
-        stedsnummer: 42,
-      })
-    )[0]
-  ).toBe('GEO_SN-42')
-})
+storiesOf('PunktinformasjonContainer', module)
+  .addDecorator(muiTheme())
+  .add('default', () => <PunktinformasjonContainer />)
