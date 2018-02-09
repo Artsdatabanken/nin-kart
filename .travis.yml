@@ -12,6 +12,7 @@ deploy:
   provider: firebase
 after_success:
 - npm run report-coverage
+- firebase deploy --token $FIREBASE_TOKEN --non-interactive
 notifications:
   slack:
     on_success: change
