@@ -3,7 +3,6 @@ import KodeVinduContainer from './Kodetre/Kodeliste/KodeVinduContainer'
 import TopBar from './TopBar/TopBar'
 import ResultatListe from './Kodetre/Kodeliste/ResultatListe'
 import { Route, Switch } from 'react-router-dom'
-import Kontrollpanel from './Kart/Mapbox/Kontrollpanel'
 import PunktinformasjonContainer from './Naturområdedetaljer/PunktinformasjonContainer'
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
@@ -60,18 +59,6 @@ class VenstreVinduContainer extends React.Component {
                       onCheck={this.props.onCheckChange}
                       isSelected={this.props.isSelected}
                       mapbounds={this.props.mapbounds}
-                    />
-                  )}
-                />
-                <Route
-                  path="/kontrollpanel"
-                  render={({ match, history }) => (
-                    <Kontrollpanel
-                      onVisibilityChange={this.props.onVisibilityChange}
-                      onColorChange={this.props.onColorChange}
-                      categories={this.props.categories}
-                      visibility={this.props.visibility}
-                      color={this.props.color}
                     />
                   )}
                 />

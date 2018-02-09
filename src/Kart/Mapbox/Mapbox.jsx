@@ -4,6 +4,7 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 import Place from 'material-ui/svg-icons/maps/place'
 import { withRouter } from 'react-router'
 import { Route, Switch } from 'react-router-dom'
+import backend from '../../backend'
 
 class Mapbox extends Component {
   constructor(props) {
@@ -57,12 +58,11 @@ class Mapbox extends Component {
     let kodematch = currentLocation.match(/\/katalog\/(.*)/)
     if (kodematch && kodematch.length === 2) {
       let kode = kodematch[1]
-      console.warn(kode)
       if (kode !== this.state.kode) {
         let map = this.map.getMap()
         if (map && map.isStyleLoaded()) {
           if (!map.getLayer(kode)) {
-            map.addLayer({
+            let filter = {
               id: kode,
               type: 'fill',
               source: 'composite',
@@ -74,9 +74,18 @@ class Mapbox extends Component {
                 'fill-color': 'hsla(251, 59%, 28%, 0.8)',
                 'fill-outline-color': 'hsla(251, 59%, 69%, 0.8)',
               },
+            }
+            backend.hentKodeMeta(kode).then(data => {
+              if (data) {
+                if (data.filter) {
+                  filter = data.filter
+                }
+              }
+
+              map.addLayer(filter)
+              map.removeLayer(this.state.kode)
+              this.setState({ kode: kode })
             })
-            map.removeLayer(this.state.kode)
-            this.setState({ kode: kode })
           }
         }
       }
