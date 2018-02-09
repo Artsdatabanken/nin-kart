@@ -8,6 +8,6 @@
 
 # Ratatouille
 
-[![Screenshot](doc/screenshot.png "ratatouille screenshot")](http://ratatouille.surge.sh/)
+[![Screenshot](doc/screenshot.png "ratatouille screenshot")](https://grunnkart.firebaseapp.com)
 
-* [Demo](http://ratatouille.surge.sh/)
+* [Demo](https://grunnkart.firebaseapp.com)
