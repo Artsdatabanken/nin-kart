@@ -75,6 +75,42 @@ class Mapbox extends Component {
                 'fill-outline-color': 'hsla(251, 59%, 69%, 0.8)',
               },
             }
+
+            let fylkeMatch = kode.match(/GEO_FY-(.*)/)
+            if (fylkeMatch && fylkeMatch.length === 2) {
+              let fylkeNr = ('0' + fylkeMatch[1]).slice(-2)
+              filter = {
+                id: kode,
+                type: 'fill',
+                source: 'composite',
+                'source-layer': 'FY',
+                filter: ['in', 'FY', '', fylkeNr],
+                layout: {},
+                paint: {
+                  'fill-color': 'hsla(0, 0%, 0%, 0)',
+                  'fill-outline-color': 'hsl(0, 90%, 38%)',
+                },
+              }
+            }
+
+            let kommuneMatch = kode.match(/GEO_KO-(.*)/)
+            if (kommuneMatch && kommuneMatch.length === 2) {
+              let kommuneNr = ('0' + kommuneMatch[1]).slice(-4)
+              filter = {
+                id: kode,
+                type: 'fill',
+                source: 'composite',
+                'source-layer': 'KO',
+                filter: ['in', 'KO', '', kommuneNr],
+                layout: {},
+                paint: {
+                  'fill-color': 'hsla(0, 0%, 0%, 0)',
+                  'fill-outline-color': 'hsl(0, 90%, 38%)',
+                },
+              }
+            }
+
+            // eventuelt filter i firebase overstyrer de generelle filterne
             backend.hentKodeMeta(kode).then(data => {
               if (data) {
                 if (data.filter) {
