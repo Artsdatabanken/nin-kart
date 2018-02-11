@@ -4,62 +4,53 @@ import KodeVindu from './KodeVindu'
 import { muiTheme } from 'storybook-addon-material-ui'
 import { action } from '@storybook/addon-actions/dist/index'
 
-var dummyItems = [
-  {
-    kode: 'NA_F',
-    navn: 'Limniske vannmasser',
-    antall: 3613,
-    harBarn: true,
+var api = {
+  kode: 'NA_H',
+  navn: 'Marine vannmasser',
+  forelder: {
+    kode: 'NA',
+    navn: 'Natursystem',
   },
-  {
-    kode: 'NA_H',
-    navn: 'Marine vannmasser',
-    antall: 247,
-    harBarn: true,
-  },
-  {
-    kode: 'NA_L',
-    navn: 'Ferskvannsbunnsystemer',
-    antall: 3207,
-    harBarn: true,
-  },
-  {
-    kode: 'NA_M',
-    navn: 'Saltvannsbunnsystemer',
-    antall: 2502,
-    harBarn: true,
-  },
-  {
-    kode: 'NA_T',
-    navn: 'Fastmarkssystemer',
-    antall: 72816,
-    harBarn: true,
-  },
-  {
-    kode: 'NA_V',
-    navn: 'Våtmarkssystemer',
-    antall: 20920,
-    harBarn: true,
-  },
-]
+  barn: [
+    {
+      kode: 'NA_H2',
+      navn: 'Sirkulerende vannmasser i fysisk avgrensede saltvannsforekomster',
+      antall: 247,
+      harBarn: true,
+    },
+  ],
+}
 
-const dummy = { data: { kode: 'NA', barn: dummyItems } }
 const meta = {
-  barn: [],
-  selv: {},
-  forelder: {},
-  relasjon: [{ kode: 'kode', tittel: 'tittel', avatar: 'avatar' }],
-  ingress: 'ingress-tekst',
+  barn: {
+    NA_H1: {
+      foto: 'https://artsdatabanken.no/Media/F16499?mode=480x480',
+    },
+    NA_H2: {
+      foto: 'https://artsdatabanken.no/Media/F1200?mode=480x480',
+    },
+    NA_H3: {
+      foto: 'https://artsdatabanken.no/Media/F16499?mode=480x480',
+    },
+    NA_H4: {
+      foto: 'https://artsdatabanken.no/Media/F16499?mode=480x480',
+    },
+  },
+  ingress:
+    'Marine vannmasser omfatter økosystemer av flytende, svevende og svømmende organismer i de frie vannmassene i saltvann (saltholdighet > 0,5 ‰)\n',
+  selv: {
+    foto: 'https://artsdatabanken.no/Media/F16499?mode=480x480',
+    media: 'https://artsdatabanken.no/Media/F16499?mode=480x480',
+  },
 }
 
 storiesOf('KodeVindu', module)
   .addDecorator(muiTheme())
   .add('default', () => (
     <KodeVindu
-      data={dummy}
+      data={api}
       meta={meta}
-      isSelected={action('selection')}
+      onMouseEnter={action('mouseEnter')}
       onClick={action('click')}
-      onCheck={action('check')}
     />
   ))

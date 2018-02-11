@@ -50,14 +50,11 @@ class VenstreVinduContainer extends React.Component {
                     <KodeVinduContainer
                       style={{ height: '100vh' }}
                       kode={match.params.kode}
-                      filterCode={this.props.filterCode}
-                      filter={this.props.filter}
                       onGoToCode={kode => {
                         history.push('/katalog/' + kode)
                         this.setState({ searchResults: null })
                       }}
-                      onCheck={this.props.onCheckChange}
-                      isSelected={this.props.isSelected}
+                      onMouseEnter={this.props.onMouseEnter}
                       mapbounds={this.props.mapbounds}
                     />
                   )}

@@ -2,8 +2,7 @@ import React from 'react'
 import Kodelisteelement from './Kodelisteelement'
 import Kodekort from './Kodekort'
 import StatistikkContainer from '../Statistikk/StatistikkContainer'
-import { Paper, List, Tabs, Tab } from 'material-ui'
-import Relasjon from './Relasjon'
+import { Paper, List } from 'material-ui'
 import FetchContainer from '../../FetchContainer'
 
 const KodeVindu = props => {
@@ -28,39 +27,32 @@ const KodeVindu = props => {
             data={props.data}
           />
         )}
-        <Tabs>
-          <Tab label="Innhold">
-            <div>{selv.ingress}</div>
-            <List>
-              {props.data &&
-                props.data.barn &&
-                props.data.barn.map(item => {
-                  const barn = props.meta.barn || {}
-                  const barnet = barn[item.kode] || {}
-                  return (
-                    <Kodelisteelement
-                      key={item.kode}
-                      {...item}
-                      meta={barnet}
-                      checked={props.isSelected(props.filterCode, item.kode)}
-                      onGoToCode={props.onGoToCode}
-                      hideCircle={selv.fristilAvatar}
-                      ikon={selv.ikon}
-                    />
-                  )
-                })}
-            </List>
-          </Tab>
-          <Tab label="Informasjon">
-            <StatistikkContainer
-              ingress={props.meta.ingress}
-              dataUrl={'/kode/' + props.data.kode}
-            />
-          </Tab>
-          <Tab label="Se også">
-            <Relasjon relasjon={props.meta.relasjon || []} />
-          </Tab>
-        </Tabs>
+        <div>{selv.ingress}</div>
+        <List>
+          {props.data &&
+            props.data.barn &&
+            props.data.barn.map(item => {
+              const barn = props.meta.barn || {}
+              const barnet = barn[item.kode] || {}
+              return (
+                <Kodelisteelement
+                  key={item.kode}
+                  {...item}
+                  meta={barnet}
+                  onGoToCode={props.onGoToCode}
+                  onMouseEnter={props.onMouseEnter}
+                  hideCircle={selv.fristilAvatar}
+                  ikon={selv.ikon}
+                />
+              )
+            })}
+        </List>
+        {false && (
+          <StatistikkContainer
+            ingress={props.meta.ingress}
+            dataUrl={'/kode/' + props.data.kode}
+          />
+        )}
       </Paper>
     </FetchContainer>
   )
