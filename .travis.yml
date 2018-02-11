@@ -10,6 +10,7 @@ script:
 - yarn build-storybook
 deploy:
   provider: firebase
+  skip_cleanup: true
 after_success:
 - npm run report-coverage
 notifications:
