@@ -2953,7 +2953,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             style={
                               Object {
                                 "alignItems": "center",
-                                "backgroundColor": "#228822",
+                                "backgroundColor": "#292",
                                 "borderRadius": "50%",
                                 "color": "#fff",
                                 "display": "inline-flex",
@@ -5428,6 +5428,680 @@ exports[`Storyshots Resultatliste default 1`] = `
         </div>
       </div>
     </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Slice default 1`] = `
+<div
+  style={
+    Object {
+      "background": "#ffffff",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    className="SplitPane  vertical "
+    style={
+      Object {
+        "MozUserSelect": "text",
+        "WebkitUserSelect": "text",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "row",
+        "height": "100%",
+        "left": 0,
+        "msUserSelect": "text",
+        "outline": "none",
+        "overflow": "hidden",
+        "position": "absolute",
+        "right": 0,
+        "userSelect": "text",
+      }
+    }
+  >
+    <div
+      className="Pane vertical Pane1  "
+      style={
+        Object {
+          "flex": 1,
+          "outline": "none",
+          "overflowX": "auto",
+          "overflowY": "auto",
+          "position": "relative",
+        }
+      }
+    >
+      <div>
+        <div
+          style={
+            Object {
+              "WebkitTransform": "rotate(45deg)",
+              "backgroundColor": "red",
+              "borderRadius": "50%",
+              "clip": "rect(0px, 300px, 300px, 150px)",
+              "height": 300,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "transform": "rotate(45deg)",
+              "transition": "all 1s",
+              "width": 300,
+              "zIndex": 2,
+            }
+          }
+        />
+        <div
+          style={
+            Object {
+              "WebkitTransform": "rotate(90deg)",
+              "backgroundColor": "pink",
+              "border": "24px solid wheat",
+              "borderRadius": "50%",
+              "clip": "auto",
+              "height": 300,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "transform": "90deg",
+              "transition": "all 1s",
+              "width": 300,
+            }
+          }
+        />
+      </div>
+    </div>
+    <span
+      className="Resizer vertical "
+      onClick={[Function]}
+      onDoubleClick={[Function]}
+      onMouseDown={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "cursor": "col-resize",
+          "marginRight": -6,
+          "width": 10,
+          "zIndex": 1,
+        }
+      }
+    />
+    <div
+      className="Pane vertical Pane2  "
+      style={
+        Object {
+          "flex": "none",
+          "outline": "none",
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        className="sb-addon-material-ui-theme_sidebar"
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Slice do 1`] = `
+<div
+  style={
+    Object {
+      "background": "#ffffff",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    className="SplitPane  vertical "
+    style={
+      Object {
+        "MozUserSelect": "text",
+        "WebkitUserSelect": "text",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "row",
+        "height": "100%",
+        "left": 0,
+        "msUserSelect": "text",
+        "outline": "none",
+        "overflow": "hidden",
+        "position": "absolute",
+        "right": 0,
+        "userSelect": "text",
+      }
+    }
+  >
+    <div
+      className="Pane vertical Pane1  "
+      style={
+        Object {
+          "flex": 1,
+          "outline": "none",
+          "overflowX": "auto",
+          "overflowY": "auto",
+          "position": "relative",
+        }
+      }
+    >
+      <div>
+        <div>
+          <div
+            className="wrapper"
+            style={
+              Object {
+                "position": "relative",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "WebkitTransform": "rotate(undefineddeg)",
+                  "backgroundColor": undefined,
+                  "borderRadius": "50%",
+                  "clip": "auto",
+                  "height": 300,
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "transform": "rotate(undefineddeg)",
+                  "transition": "all 1s",
+                  "width": 300,
+                  "zIndex": undefined,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "WebkitTransform": "rotate(-5deg)",
+                    "backgroundColor": undefined,
+                    "borderRadius": "50%",
+                    "clip": "auto",
+                    "height": 300,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 0,
+                    "transform": "rotate(-5deg)",
+                    "transition": "all 1s",
+                    "width": 300,
+                    "zIndex": undefined,
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "WebkitTransform": "rotate(257deg)",
+                      "backgroundColor": "#D1A917",
+                      "border": "37px solid white",
+                      "borderRadius": "50%",
+                      "clip": "auto",
+                      "height": 300,
+                      "left": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "transform": "257deg",
+                      "transition": "all 1s",
+                      "width": 300,
+                    }
+                  }
+                />
+              </div>
+              <div
+                style={
+                  Object {
+                    "WebkitTransform": "rotate(52deg)",
+                    "backgroundColor": undefined,
+                    "borderRadius": "50%",
+                    "clip": "rect(0px, 300px, 300px, 150px)",
+                    "height": 300,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 0,
+                    "transform": "rotate(52deg)",
+                    "transition": "all 1s",
+                    "width": 300,
+                    "zIndex": 20,
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "WebkitTransform": "rotate(272deg)",
+                      "backgroundColor": "#2C9DC2",
+                      "border": "37px solid white",
+                      "borderRadius": "50%",
+                      "clip": "rect(0px, 300px, 300px, 150px)",
+                      "height": 300,
+                      "left": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "transform": "272deg",
+                      "transition": "all 1s",
+                      "width": 300,
+                    }
+                  }
+                />
+              </div>
+              <div
+                style={
+                  Object {
+                    "WebkitTransform": "rotate(119deg)",
+                    "backgroundColor": undefined,
+                    "borderRadius": "50%",
+                    "clip": "rect(0px, 300px, 300px, 150px)",
+                    "height": 300,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 0,
+                    "transform": "rotate(119deg)",
+                    "transition": "all 1s",
+                    "width": 300,
+                    "zIndex": 25,
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "WebkitTransform": "rotate(277deg)",
+                      "backgroundColor": "#D12A6A",
+                      "border": "37px solid white",
+                      "borderRadius": "50%",
+                      "clip": "rect(0px, 300px, 300px, 150px)",
+                      "height": 300,
+                      "left": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "transform": "277deg",
+                      "transition": "all 1s",
+                      "width": 300,
+                    }
+                  }
+                />
+              </div>
+              <div
+                style={
+                  Object {
+                    "WebkitTransform": "rotate(186deg)",
+                    "backgroundColor": undefined,
+                    "borderRadius": "50%",
+                    "clip": "rect(0px, 300px, 300px, 150px)",
+                    "height": 300,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 0,
+                    "transform": "rotate(186deg)",
+                    "transition": "all 1s",
+                    "width": 300,
+                    "zIndex": 30,
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "WebkitTransform": "rotate(282deg)",
+                      "backgroundColor": "#535353",
+                      "border": "37px solid white",
+                      "borderRadius": "50%",
+                      "clip": "rect(0px, 300px, 300px, 150px)",
+                      "height": 300,
+                      "left": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "transform": "282deg",
+                      "transition": "all 1s",
+                      "width": 300,
+                    }
+                  }
+                />
+              </div>
+              <div
+                style={
+                  Object {
+                    "WebkitTransform": "rotate(268deg)",
+                    "backgroundColor": undefined,
+                    "borderRadius": "50%",
+                    "clip": "rect(0px, 300px, 300px, 150px)",
+                    "height": 300,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 0,
+                    "transform": "rotate(268deg)",
+                    "transition": "all 1s",
+                    "width": 300,
+                    "zIndex": 20,
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "WebkitTransform": "rotate(272deg)",
+                      "backgroundColor": "#AC6946",
+                      "border": "37px solid white",
+                      "borderRadius": "50%",
+                      "clip": "rect(0px, 300px, 300px, 150px)",
+                      "height": 300,
+                      "left": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "transform": "272deg",
+                      "transition": "all 1s",
+                      "width": 300,
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "WebkitClip": "auto",
+                "background": "white",
+                "borderRadius": "50%",
+                "clip": "auto",
+                "display": "block",
+                "height": "155px",
+                "left": "74px",
+                "position": "relative",
+                "top": "74px",
+                "transition": "all 1s",
+                "width": "155px",
+                "zIndex": 2147483647,
+              }
+            }
+          />
+          <div
+            style={
+              Object {
+                "WebkitClip": "auto",
+                "background": "white",
+                "border": "10px solid rgba(255,255,255,0.5)",
+                "borderRadius": "50%",
+                "clip": "auto",
+                "display": "block",
+                "height": "175px",
+                "left": "74px",
+                "position": "relative",
+                "top": "74px",
+                "transition": "all 1s",
+                "width": "175px",
+                "zIndex": 2147483647,
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+    <span
+      className="Resizer vertical "
+      onClick={[Function]}
+      onDoubleClick={[Function]}
+      onMouseDown={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "cursor": "col-resize",
+          "marginRight": -6,
+          "width": 10,
+          "zIndex": 1,
+        }
+      }
+    />
+    <div
+      className="Pane vertical Pane2  "
+      style={
+        Object {
+          "flex": "none",
+          "outline": "none",
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        className="sb-addon-material-ui-theme_sidebar"
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Slice donut 1`] = `
+<div
+  style={
+    Object {
+      "background": "#ffffff",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    className="SplitPane  vertical "
+    style={
+      Object {
+        "MozUserSelect": "text",
+        "WebkitUserSelect": "text",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "row",
+        "height": "100%",
+        "left": 0,
+        "msUserSelect": "text",
+        "outline": "none",
+        "overflow": "hidden",
+        "position": "absolute",
+        "right": 0,
+        "userSelect": "text",
+      }
+    }
+  >
+    <div
+      className="Pane vertical Pane1  "
+      style={
+        Object {
+          "flex": 1,
+          "outline": "none",
+          "overflowX": "auto",
+          "overflowY": "auto",
+          "position": "relative",
+        }
+      }
+    >
+      <div>
+        <div
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "WebkitTransform": "rotate(0deg)",
+                "backgroundColor": "red",
+                "borderRadius": "50%",
+                "clip": "rect(0px, 300px, 300px, 150px)",
+                "height": 300,
+                "left": 0,
+                "position": "absolute",
+                "top": 0,
+                "transform": "rotate(0deg)",
+                "transition": "all 1s",
+                "width": 300,
+                "zIndex": 2,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "WebkitTransform": "rotate(300deg)",
+                  "backgroundColor": "red",
+                  "border": "37px solid brown",
+                  "borderRadius": "50%",
+                  "clip": "auto",
+                  "height": 300,
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "transform": "300deg",
+                  "transition": "all 1s",
+                  "width": 300,
+                }
+              }
+            />
+          </div>
+          <div
+            style={
+              Object {
+                "WebkitTransform": "rotate(120deg)",
+                "backgroundColor": undefined,
+                "borderRadius": "50%",
+                "clip": "rect(0px, 300px, 300px, 150px)",
+                "height": 300,
+                "left": 0,
+                "position": "absolute",
+                "top": 0,
+                "transform": "rotate(120deg)",
+                "transition": "all 1s",
+                "width": 300,
+                "zIndex": undefined,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "WebkitTransform": "rotate(300deg)",
+                  "backgroundColor": "green",
+                  "border": "37px solid brown",
+                  "borderRadius": "50%",
+                  "clip": "rect(0px, 300px, 300px, 150px)",
+                  "height": 300,
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "transform": "300deg",
+                  "transition": "all 1s",
+                  "width": 300,
+                }
+              }
+            />
+          </div>
+          <div
+            style={
+              Object {
+                "WebkitTransform": "rotate(240deg)",
+                "backgroundColor": undefined,
+                "borderRadius": "50%",
+                "clip": "rect(0px, 300px, 300px, 150px)",
+                "height": 300,
+                "left": 0,
+                "position": "absolute",
+                "top": 0,
+                "transform": "rotate(240deg)",
+                "transition": "all 1s",
+                "width": 300,
+                "zIndex": undefined,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "WebkitTransform": "rotate(300deg)",
+                  "backgroundColor": "yellow",
+                  "border": "37px solid brown",
+                  "borderRadius": "50%",
+                  "clip": "rect(0px, 300px, 300px, 150px)",
+                  "height": 300,
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "transform": "300deg",
+                  "transition": "all 1s",
+                  "width": 300,
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      className="Resizer vertical "
+      onClick={[Function]}
+      onDoubleClick={[Function]}
+      onMouseDown={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "cursor": "col-resize",
+          "marginRight": -6,
+          "width": 10,
+          "zIndex": 1,
+        }
+      }
+    />
+    <div
+      className="Pane vertical Pane2  "
+      style={
+        Object {
+          "flex": "none",
+          "outline": "none",
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        className="sb-addon-material-ui-theme_sidebar"
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
   </div>
 </div>
 `;
