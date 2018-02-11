@@ -75,7 +75,7 @@ class Grunnkart extends Component {
         <Kart
           latitude={65.5}
           longitude={10}
-          zoom={4.7}
+          zoom={4.3}
           mapStyle={this.state.mapStyle}
           onMapBoundsChange={bounds => {
             this.setState({ mapbounds: bounds })

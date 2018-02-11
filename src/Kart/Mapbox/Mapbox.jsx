@@ -87,8 +87,22 @@ class Mapbox extends Component {
                 filter: ['in', 'FY', '', fylkeNr],
                 layout: {},
                 paint: {
-                  'fill-color': 'hsla(0, 0%, 0%, 0)',
-                  'fill-outline-color': 'hsl(0, 90%, 38%)',
+                  'fill-outline-color': {
+                    base: 1,
+                    stops: [
+                      [0, 'hsla(0, 0%, 0%, 70%)'],
+                      [7, 'hsla(0, 0%, 0%, 70%)'],
+                      [10, 'hsla(0, 0%, 0%, 0%)'],
+                    ],
+                  },
+                  'fill-color': {
+                    base: 1,
+                    stops: [
+                      [0, 'hsla(0, 0%, 100%, 20%)'],
+                      [7, 'hsla(0, 0%, 100%, 20%)'],
+                      [10, 'hsla(0, 0%, 0%, 0%)'],
+                    ],
+                  },
                 },
               }
             }
@@ -104,8 +118,8 @@ class Mapbox extends Component {
                 filter: ['in', 'KO', '', kommuneNr],
                 layout: {},
                 paint: {
-                  'fill-color': 'hsla(0, 0%, 0%, 0)',
-                  'fill-outline-color': 'hsl(0, 90%, 38%)',
+                  'fill-color': 'hsla(0, 0%, 100%, 50%)',
+                  'fill-outline-color': 'hsla(0, 0%, 100%, 90%)',
                 },
               }
             }
@@ -114,11 +128,10 @@ class Mapbox extends Component {
             backend.hentKodeMeta(kode).then(data => {
               if (data) {
                 if (data.filter) {
-                  filter = data.filter
+                  //            filter = data.filter
                 }
               }
 
-              console.log(filter)
               map.addLayer(filter)
               map.removeLayer(this.state.kode)
               this.setState({ kode: kode })

@@ -2974,7 +2974,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                                 "borderRadius": "50%",
                                 "color": "#fff",
                                 "display": "inline-flex",
-                                "fontSize": 16,
+                                "fontSize": 14,
                                 "height": 32,
                                 "justifyContent": "center",
                                 "marginRight": -4,
