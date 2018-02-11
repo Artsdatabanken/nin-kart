@@ -116,7 +116,7 @@ class Grunnkart extends Component {
                 console.log(e, v)
                 console.log(e.target)
                 console.log(e.target.value)
-                this.setState({ highlight: 1 })
+                //                this.setState({ highlight: 1 })
               }}
             />
           </div>

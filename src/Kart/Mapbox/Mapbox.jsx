@@ -118,8 +118,22 @@ class Mapbox extends Component {
                 filter: ['in', 'KO', '', kommuneNr],
                 layout: {},
                 paint: {
-                  'fill-color': 'hsla(0, 0%, 100%, 50%)',
-                  'fill-outline-color': 'hsla(0, 0%, 100%, 90%)',
+                  'fill-outline-color': {
+                    base: 1,
+                    stops: [
+                      [0, 'hsla(0, 0%, 0%, 60%)'],
+                      [9, 'hsla(0, 0%, 0%, 20%)'],
+                      [11, 'hsla(0, 0%, 0%, 0%)'],
+                    ],
+                  },
+                  'fill-color': {
+                    base: 1,
+                    stops: [
+                      [0, 'hsla(0, 0%, 100%, 60%)'],
+                      [9, 'hsla(0, 0%, 100%, 20%)'],
+                      [12, 'hsla(0, 0%, 0%, 0%)'],
+                    ],
+                  },
                 },
               }
             }
@@ -128,7 +142,7 @@ class Mapbox extends Component {
             backend.hentKodeMeta(kode).then(data => {
               if (data) {
                 if (data.filter) {
-                  //            filter = data.filter
+                  filter = data.filter
                 }
               }
 
