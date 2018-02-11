@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Kart from '../Kart/Kart'
 import MainDrawer from './MainDrawer'
 import { FloatingActionButton } from 'material-ui'
 import KatalogIkon from 'material-ui/svg-icons/communication/import-contacts'
@@ -12,7 +11,9 @@ import {
   NiN,
   NiNHover,
 } from '../Kart/Mapbox/MapStyle'
+import { withRouter } from 'react-router'
 import VenstreVinduContainer from '../VenstreVinduContainer'
+import Kart from '../Kart/Kart'
 
 class Grunnkart extends Component {
   constructor(props) {
@@ -56,12 +57,12 @@ class Grunnkart extends Component {
   }
 
   addCustomLayers() {
-    this.layers = this.state.baseMapStyle
+    const layers = this.state.baseMapStyle
       .get('layers')
       .push(NiN)
       .push(NiNHover)
     this.setState({
-      mapStyle: this.state.baseMapStyle.set('layers', this.layers),
+      mapStyle: this.state.baseMapStyle.set('layers', layers),
     })
   }
 
@@ -70,6 +71,10 @@ class Grunnkart extends Component {
   }
 
   render() {
+    var currentLocation = this.props.location.pathname
+    let kodematch = currentLocation.match(/\/katalog\/(.*)/)
+    const kode = kodematch && kodematch.length === 2 ? kodematch[1] : null
+    console.log('kode', kode)
     return (
       <div>
         <Kart
@@ -77,6 +82,8 @@ class Grunnkart extends Component {
           longitude={10}
           zoom={4.3}
           mapStyle={this.state.mapStyle}
+          aktivKode={kode}
+          opplystKode={this.state.opplystKode}
           onMapBoundsChange={bounds => {
             this.setState({ mapbounds: bounds })
           }}
@@ -112,12 +119,7 @@ class Grunnkart extends Component {
                 this.setState({ showMainDrawer: !this.state.showMainDrawer })
               }
               mapbounds={this.state.mapbounds}
-              onMouseEnter={(e, v) => {
-                console.log(e, v)
-                console.log(e.target)
-                console.log(e.target.value)
-                //                this.setState({ highlight: 1 })
-              }}
+              onMouseEnter={kode => this.setState({ opplystKode: kode })}
             />
           </div>
         )}
@@ -126,4 +128,4 @@ class Grunnkart extends Component {
   }
 }
 
-export default Grunnkart
+export default withRouter(Grunnkart)

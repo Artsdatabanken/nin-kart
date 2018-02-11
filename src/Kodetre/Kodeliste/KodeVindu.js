@@ -31,8 +31,8 @@ const KodeVindu = props => {
         )}
         <div>{selv.ingress}</div>
         <List>
-          <Subheader>Undernivå av {navn}</Subheader>
           <Kodeliste
+            title={`Undernivå av ${navn}`}
             apidata={props.data.barn}
             metadata={props.meta.barn}
             onGoToCode={props.onGoToCode}
@@ -41,8 +41,8 @@ const KodeVindu = props => {
 
           {false && (
             <React.Fragment>
-              <Subheader>Diagnostiske arter</Subheader>
               <Kodeliste
+                title={`Diagnostiske arter`}
                 apidata={props.data.barn}
                 metadata={props.meta.barn}
                 onGoToCode={props.onGoToCode}
@@ -65,21 +65,26 @@ const KodeVindu = props => {
   )
 }
 
-const Kodeliste = ({ apidata, metadata, onGoToCode, onMouseEnter }) => {
-  if (!apidata) return null
-  return apidata.map(item => {
-    const metabarn = metadata || {}
-    const metabarnet = metabarn[item.kode] || {}
-    return (
-      <Kodelisteelement
-        key={item.kode}
-        {...item}
-        meta={metabarnet}
-        onGoToCode={onGoToCode}
-        onMouseEnter={onMouseEnter}
-      />
-    )
-  })
+const Kodeliste = ({ title, apidata, metadata, onGoToCode, onMouseEnter }) => {
+  if (!apidata || !apidata.length > 0) return null
+  return (
+    <React.Fragment>
+      <Subheader>{title}</Subheader>
+      {apidata.map(item => {
+        const metabarn = metadata || {}
+        const metabarnet = metabarn[item.kode] || {}
+        return (
+          <Kodelisteelement
+            key={item.kode}
+            {...item}
+            meta={metabarnet}
+            onGoToCode={onGoToCode}
+            onMouseEnter={onMouseEnter}
+          />
+        )
+      })}
+    </React.Fragment>
+  )
 }
 
 export default KodeVindu
