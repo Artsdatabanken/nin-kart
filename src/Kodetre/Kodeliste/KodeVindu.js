@@ -2,11 +2,12 @@ import React from 'react'
 import Kodelisteelement from './Kodelisteelement'
 import Kodekort from './Kodekort'
 import StatistikkContainer from '../Statistikk/StatistikkContainer'
-import { Paper, List } from 'material-ui'
+import { Paper, List, Subheader } from 'material-ui'
 import FetchContainer from '../../FetchContainer'
 
 const KodeVindu = props => {
   const selv = props.meta.selv || {}
+  if (!props.data) return null
   return (
     <FetchContainer>
       <Paper
@@ -29,33 +30,53 @@ const KodeVindu = props => {
         )}
         <div>{selv.ingress}</div>
         <List>
-          {props.data &&
-            props.data.barn &&
-            props.data.barn.map(item => {
-              const barn = props.meta.barn || {}
-              const barnet = barn[item.kode] || {}
-              return (
-                <Kodelisteelement
-                  key={item.kode}
-                  {...item}
-                  meta={barnet}
-                  onGoToCode={props.onGoToCode}
-                  onMouseEnter={props.onMouseEnter}
-                  hideCircle={selv.fristilAvatar}
-                  ikon={selv.ikon}
-                />
-              )
-            })}
-        </List>
-        {false && (
-          <StatistikkContainer
-            ingress={props.meta.ingress}
-            dataUrl={'/kode/' + props.data.kode}
+          <Subheader>Undernivå av {props.data.navn.toLowerCase()}</Subheader>
+          <Kodeliste
+            apidata={props.data}
+            metadata={props.meta}
+            onGoToCode={props.onGoToCode}
+            onMouseEnter={props.onMouseEnter}
           />
-        )}
+
+          {false && (
+            <React.Fragment>
+              <Subheader>Diagnostiske arter</Subheader>
+              <Kodeliste
+                apidata={props.data}
+                metadata={props.meta}
+                onGoToCode={props.onGoToCode}
+                onMouseEnter={props.onMouseEnter}
+              />
+            </React.Fragment>
+          )}
+          {false && (
+            <React.Fragment>
+              <Subheader>Om {props.data.navn.toLowerCase()}</Subheader>
+              <StatistikkContainer
+                ingress={props.meta.ingress}
+                dataUrl={'/kode/' + props.data.kode}
+              />
+            </React.Fragment>
+          )}
+        </List>
       </Paper>
     </FetchContainer>
   )
 }
+
+const Kodeliste = ({ apidata, metadata, onGoToCode, onMouseEnter }) =>
+  apidata.barn.map(item => {
+    const metabarn = metadata.barn || {}
+    const metabarnet = metabarn[item.kode] || {}
+    return (
+      <Kodelisteelement
+        key={item.kode}
+        {...item}
+        meta={metabarnet}
+        onGoToCode={onGoToCode}
+        onMouseEnter={onMouseEnter}
+      />
+    )
+  })
 
 export default KodeVindu

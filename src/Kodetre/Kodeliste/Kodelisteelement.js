@@ -30,7 +30,7 @@ const rotkoder = {
     color: '#fff',
   },
   GO: {
-    backgroundColor: '#c58',
+    backgroundColor: '#555',
     color: '#fff',
   },
 }
@@ -49,11 +49,12 @@ class Kodelisteelement extends React.Component {
       .replace('LKM', 'MV')
       .replace('RTEM', 'RT')
     const rotmeta = rotkoder[rotkode]
-    if (!rotmeta) console.log(meta.kode, this.props.kode, rotkode)
-    console.log(meta)
+    if (!rotmeta)
+      console.warn('Mangler rotkode', meta.kode, this.props.kode, rotkode)
     return (
       <ListItem
         key={item.kode}
+        onMouseEnter={this.props.onMouseEnter}
         leftAvatar={
           <Avatar
             style={meta.utenRamme ? { borderRadius: 0 } : {}}
@@ -68,7 +69,7 @@ class Kodelisteelement extends React.Component {
         secondaryText={`${(item.antall * 0.15).toFixed(1)} km² i ${
           item.antall
         } områder`}
-        onClick={() => item.onGoToCode(item.kode)}
+        onClick={() => this.props.onGoToCode(item.kode)}
         rightAvatar={
           <Chip>
             <Avatar
