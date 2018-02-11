@@ -77,6 +77,7 @@ class Kodelisteelement extends React.Component {
               style={{
                 color: rotmeta.color,
                 backgroundColor: rotmeta.backgroundColor,
+                fontSize: 14,
               }}
             >
               {rotkode}

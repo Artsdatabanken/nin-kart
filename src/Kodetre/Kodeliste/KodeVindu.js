@@ -7,6 +7,7 @@ import FetchContainer from '../../FetchContainer'
 
 const KodeVindu = props => {
   const selv = props.meta.selv || {}
+  const navn = (selv.navn || props.data.navn || ' type').toLowerCase() // TODO: navn i meta
   if (!props.data) return null
   return (
     <FetchContainer>
@@ -30,10 +31,10 @@ const KodeVindu = props => {
         )}
         <div>{selv.ingress}</div>
         <List>
-          <Subheader>Undernivå av {props.data.navn.toLowerCase()}</Subheader>
+          <Subheader>Undernivå av {navn}</Subheader>
           <Kodeliste
-            apidata={props.data}
-            metadata={props.meta}
+            apidata={props.data.barn}
+            metadata={props.meta.barn}
             onGoToCode={props.onGoToCode}
             onMouseEnter={props.onMouseEnter}
           />
@@ -42,8 +43,8 @@ const KodeVindu = props => {
             <React.Fragment>
               <Subheader>Diagnostiske arter</Subheader>
               <Kodeliste
-                apidata={props.data}
-                metadata={props.meta}
+                apidata={props.data.barn}
+                metadata={props.meta.barn}
                 onGoToCode={props.onGoToCode}
                 onMouseEnter={props.onMouseEnter}
               />
@@ -51,7 +52,7 @@ const KodeVindu = props => {
           )}
           {false && (
             <React.Fragment>
-              <Subheader>Om {props.data.navn.toLowerCase()}</Subheader>
+              <Subheader>Om {navn}</Subheader>
               <StatistikkContainer
                 ingress={props.meta.ingress}
                 dataUrl={'/kode/' + props.data.kode}
@@ -64,9 +65,10 @@ const KodeVindu = props => {
   )
 }
 
-const Kodeliste = ({ apidata, metadata, onGoToCode, onMouseEnter }) =>
-  apidata.barn.map(item => {
-    const metabarn = metadata.barn || {}
+const Kodeliste = ({ apidata, metadata, onGoToCode, onMouseEnter }) => {
+  if (!apidata) return null
+  return apidata.map(item => {
+    const metabarn = metadata || {}
     const metabarnet = metabarn[item.kode] || {}
     return (
       <Kodelisteelement
@@ -78,5 +80,6 @@ const Kodeliste = ({ apidata, metadata, onGoToCode, onMouseEnter }) =>
       />
     )
   })
+}
 
 export default KodeVindu

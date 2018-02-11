@@ -21,7 +21,11 @@ class KodeVinduContainer extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.fetchData(nextProps.kode)
+    if (
+      this.props.kode !== nextProps.kode ||
+      this.props.mapbounds !== nextProps.mapbounds
+    )
+      this.fetchData(nextProps.kode)
   }
 
   fetchData(kode) {
