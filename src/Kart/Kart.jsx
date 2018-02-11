@@ -4,13 +4,6 @@ import { withRouter } from 'react-router'
 import { Route } from 'react-router-dom'
 
 class Kart extends Component {
-  constructor(props) {
-    super(props)
-
-    this.isSelected = this.isSelected.bind(this)
-    this.handleCheckChange = this.handleCheckChange.bind(this)
-  }
-
   onClick = point => {
     const lngLat = point.lngLat
 
@@ -23,18 +16,6 @@ class Kart extends Component {
         : null
 
     this.props.history.push(`/punkt/${lngLat[0]},${lngLat[1]},${localId}`)
-  }
-
-  isSelected(selectedIds, nodeId) {
-    return this.state[selectedIds].indexOf(nodeId) >= 0
-  }
-
-  handleCheckChange(event) {
-    const value = event.target.checked
-    const name = event.target.name
-    const filtercode = event.target.alt
-
-    this.updateFilter(value, filtercode, name)
   }
 
   render() {
