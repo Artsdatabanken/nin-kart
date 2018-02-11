@@ -118,6 +118,7 @@ class Mapbox extends Component {
                 }
               }
 
+              console.log(filter)
               map.addLayer(filter)
               map.removeLayer(this.state.kode)
               this.setState({ kode: kode })

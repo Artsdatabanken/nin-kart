@@ -2818,10 +2818,27 @@ exports[`Storyshots KodeVindu default 1`] = `
                 style={
                   Object {
                     "muiPrepared": true,
-                    "padding": "8px 0px 8px 0px",
+                    "padding": "0px 0px 8px 0px",
                   }
                 }
               >
+                <div
+                  style={
+                    Object {
+                      "boxSizing": "border-box",
+                      "color": "rgba(0, 0, 0, 0.54)",
+                      "fontSize": 14,
+                      "fontWeight": 500,
+                      "lineHeight": "48px",
+                      "muiPrepared": true,
+                      "paddingLeft": 16,
+                      "width": "100%",
+                    }
+                  }
+                >
+                  Undernivå av 
+                  marine vannmasser
+                </div>
                 <div>
                   <span
                     disabled={false}

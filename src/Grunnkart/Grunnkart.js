@@ -12,7 +12,7 @@ import {
   NiN,
   NiNHover,
 } from '../Kart/Mapbox/MapStyle'
-import VenstreVinduContainerContainer from '../VenstreVinduContainerContainer'
+import VenstreVinduContainer from '../VenstreVinduContainer'
 
 class Grunnkart extends Component {
   constructor(props) {
@@ -107,11 +107,17 @@ class Grunnkart extends Component {
               zIndex: 2,
             }}
           >
-            <VenstreVinduContainerContainer
+            <VenstreVinduContainer
               onToggleMainDrawer={() =>
                 this.setState({ showMainDrawer: !this.state.showMainDrawer })
               }
               mapbounds={this.state.mapbounds}
+              onMouseEnter={(e, v) => {
+                console.log(e, v)
+                console.log(e.target)
+                console.log(e.target.value)
+                this.setState({ highlight: 1 })
+              }}
             />
           </div>
         )}
