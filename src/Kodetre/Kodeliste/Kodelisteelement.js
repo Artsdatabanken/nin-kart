@@ -54,7 +54,7 @@ class Kodelisteelement extends React.Component {
     return (
       <ListItem
         key={item.kode}
-        onMouseEnter={this.props.onMouseEnter}
+        onMouseEnter={() => this.props.onMouseEnter(kode)}
         leftAvatar={
           <Avatar
             style={meta.utenRamme ? { borderRadius: 0 } : {}}

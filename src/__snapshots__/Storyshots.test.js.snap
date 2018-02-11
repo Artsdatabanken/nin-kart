@@ -2818,7 +2818,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                 style={
                   Object {
                     "muiPrepared": true,
-                    "padding": "0px 0px 8px 0px",
+                    "padding": "8px 0px 8px 0px",
                   }
                 }
               >
@@ -2836,8 +2836,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                     }
                   }
                 >
-                  Undernivå av 
-                  marine vannmasser
+                  Undernivå av marine vannmasser
                 </div>
                 <div>
                   <span
@@ -5653,7 +5652,7 @@ exports[`Storyshots Statistikk arter 1`] = `
                   }
                 >
                   <img
-                    alt=""
+                    alt="illustrasjon"
                     src="https://www.artsdatabanken.no/Media/F16019?mode=1920x1920"
                     style={
                       Object {
@@ -5725,7 +5724,7 @@ exports[`Storyshots Statistikk arter 1`] = `
                   }
                 >
                   <img
-                    alt=""
+                    alt="illustrasjon"
                     src="https://www.artsdatabanken.no/Media/F16154?mode=1920x1920"
                     style={
                       Object {
