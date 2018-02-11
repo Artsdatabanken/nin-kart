@@ -2953,7 +2953,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             style={
                               Object {
                                 "alignItems": "center",
-                                "backgroundColor": "#292",
+                                "backgroundColor": "#228822",
                                 "borderRadius": "50%",
                                 "color": "#fff",
                                 "display": "inline-flex",
