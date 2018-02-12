@@ -6,6 +6,7 @@ import { withRouter } from 'react-router'
 import { Route, Switch } from 'react-router-dom'
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import hentLag from './style-lookup'
+import MapboxPanHandler from './MapboxPanHandler'
 
 class Mapbox extends Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class Mapbox extends Component {
         zoom: props.zoom,
       },
     }
+    this.onPanEnd = this.onPanEnd.bind(this)
   }
 
   componentDidMount() {
@@ -76,8 +78,6 @@ class Mapbox extends Component {
 
   handleViewportChange = viewport => {
     this.setState({ viewport })
-    const bounds = this.map.getMap().getBounds()
-    this.props.onMapBoundsChange(bounds)
   }
 
   onHover = e => {
@@ -99,8 +99,16 @@ class Mapbox extends Component {
   //     }
   // };
 
+  onPanEnd = e => {
+    // TODO: We should update bounds also after zoom
+    var bounds = this.map.getMap().getBounds()
+    this.props.onMapBoundsChange(bounds)
+    this.updateBounds = true
+  }
+
   render() {
     const { viewport } = this.state
+    const mapControls = new MapboxPanHandler({ onPanEnd: this.onPanEnd })
     return (
       <ReactMapGL
         {...viewport}
@@ -119,6 +127,7 @@ class Mapbox extends Component {
         //mapStyle="mapbox://styles/artsdatabanken/cjc68pztl4sud2sp0s4wyy58q"
         mapStyle={this.props.mapStyle}
         minZoom={4}
+        mapControls={mapControls}
       >
         <Switch>
           <Route
