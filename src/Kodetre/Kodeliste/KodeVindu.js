@@ -2,7 +2,7 @@ import React from 'react'
 import Kodelisteelement from './Kodelisteelement'
 import Kodekort from './Kodekort'
 import StatistikkContainer from '../Statistikk/StatistikkContainer'
-import { Paper, List, Subheader } from 'material-ui'
+import { Paper, List, ListItem, Subheader } from 'material-ui'
 import FetchContainer from '../../FetchContainer'
 
 const KodeVindu = props => {
@@ -29,10 +29,10 @@ const KodeVindu = props => {
             data={props.data}
           />
         )}
-        <div>{selv.ingress}</div>
+        <ListItem primaryText={props.meta.ingress} />
         <List>
           <Kodeliste
-            title={`Undernivå av ${navn}`}
+            title={`Undernivåer av ${navn}`}
             apidata={props.data.barn}
             metadata={props.meta.barn}
             onGoToCode={props.onGoToCode}

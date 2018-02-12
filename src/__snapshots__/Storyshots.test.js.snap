@@ -2813,7 +2813,79 @@ exports[`Storyshots KodeVindu default 1`] = `
                   </div>
                 </div>
               </div>
-              <div />
+              <div>
+                <span
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  open={null}
+                  style={
+                    Object {
+                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                      "background": "none",
+                      "backgroundColor": null,
+                      "border": 10,
+                      "boxSizing": "border-box",
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "cursor": "pointer",
+                      "display": "block",
+                      "fontFamily": "Roboto, sans-serif",
+                      "fontSize": 16,
+                      "fontWeight": "inherit",
+                      "lineHeight": "16px",
+                      "margin": 0,
+                      "muiPrepared": true,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "relative",
+                      "textDecoration": "none",
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "verticalAlign": null,
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  <div
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                  >
+                    <div
+                      style={
+                        Object {
+                          "marginLeft": 0,
+                          "muiPrepared": true,
+                          "paddingBottom": 16,
+                          "paddingLeft": 16,
+                          "paddingRight": 16,
+                          "paddingTop": 16,
+                          "position": "relative",
+                        }
+                      }
+                    >
+                      <div
+                        style={
+                          Object {
+                            "muiPrepared": true,
+                          }
+                        }
+                      >
+                        Marine vannmasser omfatter økosystemer av flytende, svevende og svømmende organismer i de frie vannmassene i saltvann (saltholdighet &gt; 0,5 ‰)
+                        
+                      </div>
+                    </div>
+                  </div>
+                </span>
+              </div>
               <div
                 style={
                   Object {
@@ -2836,7 +2908,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                     }
                   }
                 >
-                  Undernivå av marine vannmasser
+                  Undernivåer av marine vannmasser
                 </div>
                 <div>
                   <span
@@ -2921,47 +2993,15 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         />
-                        <div
-                          className={undefined}
-                          disabled={undefined}
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          onKeyDown={[Function]}
-                          onKeyUp={[Function]}
-                          onMouseDown={[Function]}
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          onMouseUp={[Function]}
-                          onTouchEnd={[Function]}
-                          onTouchStart={[Function]}
+                        <span
                           style={
                             Object {
-                              "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                              "backgroundColor": "rgb(224, 224, 224)",
-                              "border": 10,
-                              "borderRadius": 16,
-                              "boxShadow": null,
-                              "boxSizing": "border-box",
-                              "cursor": "default",
-                              "display": "flex",
-                              "fontFamily": "Roboto, sans-serif",
-                              "fontSize": "inherit",
-                              "fontWeight": "inherit",
-                              "margin": 0,
-                              "muiPrepared": true,
-                              "outline": "none",
-                              "padding": 0,
+                              "display": "inline-flex",
                               "position": "absolute",
                               "right": 16,
-                              "textDecoration": "none",
                               "top": 16,
-                              "verticalAlign": null,
-                              "whiteSpace": "nowrap",
-                              "width": "fit-content",
                             }
                           }
-                          tabIndex={0}
                         >
                           <div
                             className={undefined}
@@ -2976,7 +3016,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                                 "fontSize": 14,
                                 "height": 32,
                                 "justifyContent": "center",
-                                "marginRight": -4,
                                 "muiPrepared": true,
                                 "userSelect": "none",
                                 "width": 32,
@@ -2985,24 +3024,65 @@ exports[`Storyshots KodeVindu default 1`] = `
                           >
                             NA
                           </div>
-                          <span
+                          <div
+                            className={undefined}
+                            disabled={undefined}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            onTouchEnd={[Function]}
+                            onTouchStart={[Function]}
                             style={
                               Object {
-                                "color": "rgba(0, 0, 0, 0.87)",
-                                "fontSize": 14,
-                                "fontWeight": 400,
-                                "lineHeight": "32px",
+                                "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                                "backgroundColor": "rgb(224, 224, 224)",
+                                "border": 10,
+                                "borderRadius": 16,
+                                "boxShadow": null,
+                                "boxSizing": "border-box",
+                                "cursor": "default",
+                                "display": "flex",
+                                "fontFamily": "Roboto, sans-serif",
+                                "fontSize": "inherit",
+                                "fontWeight": "inherit",
+                                "margin": 0,
                                 "muiPrepared": true,
-                                "paddingLeft": 12,
-                                "paddingRight": 12,
-                                "userSelect": "none",
+                                "outline": "none",
+                                "padding": 0,
+                                "position": "relative",
+                                "textDecoration": "none",
+                                "verticalAlign": null,
                                 "whiteSpace": "nowrap",
+                                "width": "fit-content",
                               }
                             }
+                            tabIndex={0}
                           >
-                            H2
-                          </span>
-                        </div>
+                            <span
+                              style={
+                                Object {
+                                  "color": "rgba(0, 0, 0, 0.87)",
+                                  "fontSize": 14,
+                                  "fontWeight": 400,
+                                  "lineHeight": "32px",
+                                  "muiPrepared": true,
+                                  "paddingLeft": 12,
+                                  "paddingRight": 12,
+                                  "userSelect": "none",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              H2
+                            </span>
+                          </div>
+                        </span>
                         <div
                           style={
                             Object {
