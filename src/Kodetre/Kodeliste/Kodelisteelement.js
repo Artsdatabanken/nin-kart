@@ -20,7 +20,10 @@ const rotkoder = {
     backgroundColor: '#f9e400',
     color: '#111',
   },
-  TX: { backgroundColor: '#228822', color: '#fff' },
+  TX: {
+    backgroundColor: '#228822',
+    color: '#fff',
+  },
   RL: {
     backgroundColor: '#e94f34',
     color: '#fff',
@@ -40,7 +43,15 @@ class Kodelisteelement extends React.Component {
     const item = this.props
     const meta = this.props.meta
     const kode = this.props.kode
-    const parts = kode.split('_') || [item.kode]
+    let parts = []
+    if (kode.indexOf('_') >= 0) {
+      parts = kode.split('_')
+    } else if (kode.indexOf('-') >= 0) {
+      parts = kode.split('-')
+    } else {
+      parts = [item.kode]
+    }
+
     const rotkode = parts[0]
       .replace('GEO', 'GO')
       .replace('MIV', 'MI')
@@ -48,9 +59,11 @@ class Kodelisteelement extends React.Component {
       .replace('BeSys0', 'BS')
       .replace('LKM', 'MV')
       .replace('RTEM', 'RT')
-    const rotmeta = rotkoder[rotkode]
-    if (!rotmeta)
+    let rotmeta = rotkoder[rotkode]
+    if (!rotmeta) {
       console.warn('Mangler rotkode', meta.kode, this.props.kode, rotkode)
+      rotmeta = rotkoder['MV'] // use this as default for unknown codes instead of blowing up
+    }
     return (
       <ListItem
         key={item.kode}
@@ -71,7 +84,7 @@ class Kodelisteelement extends React.Component {
         } områder`}
         onClick={() => this.props.onGoToCode(item.kode)}
         rightAvatar={
-          <Chip>
+          <span style={{ display: 'inline-flex' }}>
             <Avatar
               size={32}
               style={{
@@ -82,8 +95,8 @@ class Kodelisteelement extends React.Component {
             >
               {rotkode}
             </Avatar>
-            {parts[1]}
-          </Chip>
+            <Chip>{parts[1]}</Chip>
+          </span>
         }
       />
     )

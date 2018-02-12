@@ -196,9 +196,7 @@ class Backend {
   }
 
   static async hentKodeMeta(kode) {
-    return this.getPromise(
-      `https://adb-kode.firebaseio.com/data/${kode || 'ROT'}.json`
-    )
+    return this.getPromise(`https://adb-kode.firebaseio.com/data/${kode}.json`)
   }
 
   static async hentRasterPunkt(lng, lat) {
