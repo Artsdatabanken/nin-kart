@@ -8,10 +8,6 @@ class Kart extends Component {
     const lngLat = point.lngLat
 
     if (point.features && point.features[0] && point.features[0].properties) {
-      // const localId = point.features[0].properties.localId
-      // ? point.features[0].properties.localId
-      // : null
-
       this.props.setLocalId(point.features[0].properties.localId)
     }
     this.props.history.push(`/punkt/${lngLat[0]},${lngLat[1]}`)
