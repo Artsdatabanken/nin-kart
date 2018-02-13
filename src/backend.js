@@ -95,18 +95,6 @@ class Backend {
     })
   }
 
-  static async hentKode(kode, bounds) {
-    let bbox = ''
-    if (bounds) {
-      var ll = this.Wgs84ToUtm33(bounds._sw.lng, bounds._sw.lat)
-      var ur = this.Wgs84ToUtm33(bounds._ne.lng, bounds._ne.lat)
-      bbox = `&bbox=${ll.x},${ll.y},${ur.x},${ur.y}`
-    }
-    return this.getPromise(
-      `https://adb-nin-memapi.azurewebsites.net/v1/Kodetre?node=${kode}${bbox}`
-    )
-  }
-
   static Wgs84ToUtm33(x, y) {
     var deg2Rad = Math.PI / 180
     var a = 6378137
@@ -192,6 +180,18 @@ class Backend {
   static async søkKode(q) {
     return this.getPromise(
       `https://adb-nin-memapi.azurewebsites.net/v1/Koder?q=${q}`
+    )
+  }
+
+  static async hentKode(kode, bounds) {
+    let bbox = ''
+    if (bounds) {
+      var ll = this.Wgs84ToUtm33(bounds._sw.lng, bounds._sw.lat)
+      var ur = this.Wgs84ToUtm33(bounds._ne.lng, bounds._ne.lat)
+      bbox = `&bbox=${ll.x},${ll.y},${ur.x},${ur.y}`
+    }
+    return this.getPromise(
+      `https://adb-nin-memapi.azurewebsites.net/v1/Kodetre?node=${kode}${bbox}`
     )
   }
 

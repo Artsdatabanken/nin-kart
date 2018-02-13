@@ -8,7 +8,7 @@ import FetchContainer from '../../FetchContainer'
 const KodeVindu = props => {
   const selv = props.meta.selv || {}
   const navn = (selv.navn || props.data.navn || ' type').toLowerCase() // TODO: navn i meta
-  if (!props.data) return null
+  //if (!props.data) return null
   return (
     <FetchContainer>
       <Paper
@@ -22,7 +22,7 @@ const KodeVindu = props => {
           overflow: 'auto',
         }}
       >
-        {props.data && (
+        {props.meta && (
           <Kodekort
             {...props.meta}
             onGoToCode={props.onGoToCode}
@@ -44,7 +44,7 @@ const KodeVindu = props => {
               <Kodeliste
                 title={`Diagnostiske arter`}
                 apidata={props.data.barn}
-                metadata={props.meta.barn}
+                metadata={props.meta}
                 onGoToCode={props.onGoToCode}
                 onMouseEnter={props.onMouseEnter}
               />
@@ -66,17 +66,27 @@ const KodeVindu = props => {
 }
 
 const Kodeliste = ({ title, apidata, metadata, onGoToCode, onMouseEnter }) => {
-  if (!apidata || !apidata.length > 0) return null
+  if (!metadata) return null
   return (
     <React.Fragment>
       <Subheader>{title}</Subheader>
-      {apidata.map(item => {
-        const metabarn = metadata || {}
-        const metabarnet = metabarn[item.kode] || {}
+      {Object.keys(metadata).map(item => {
+        const apibarn = apidata
+          ? apidata[
+              apidata
+                .map(apiItem => {
+                  return apiItem.kode
+                })
+                .indexOf(item)
+            ] || {}
+          : {}
+        const metabarnet = metadata[item] || {}
+        const kode = item.toString()
         return (
           <Kodelisteelement
-            key={item.kode}
-            {...item}
+            kode={kode}
+            key={kode}
+            {...apibarn}
             meta={metabarnet}
             onGoToCode={onGoToCode}
             onMouseEnter={onMouseEnter}

@@ -29,14 +29,15 @@ class Mapbox extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (
-      nextProps.opplystKode !== this.props.opplystKode ||
-      nextProps.aktivKode !== this.props.aktivKode
-    )
-      this.handleStyleUpdate(nextProps.aktivKode, nextProps.opplystKode)
-  }
+    if (nextProps.opplystKode !== this.props.opplystKode) {
+      this.updateOpplystKode(nextProps.opplystKode)
+    }
 
-  handleStyleUpdate(kode, opplystKode) {
+    if (nextProps.aktivKode !== this.props.aktivKode) {
+      this.updateAktivKode(nextProps.aktivKode)
+    }
+  }
+  updateAktivKode(kode) {
     let map = this.map.getMap()
     if (!map || !map.isStyleLoaded()) return
 
@@ -46,9 +47,13 @@ class Mapbox extends Component {
       let lag = hentLag(map, kode)
       if (lag) map.addLayer(lag)
     }
+  }
 
-    console.log('rmv opplyst')
-    map.removeLayer('opplyst')
+  updateOpplystKode(opplystKode) {
+    let map = this.map.getMap()
+    if (!map || !map.isStyleLoaded()) return
+
+    // Ikke nødvendig å fjerne det gamle, blir overskrevet
     if (opplystKode) {
       let opplystLag = hentLag(map, opplystKode)
       if (!opplystLag || !opplystLag.paint) return
@@ -61,6 +66,11 @@ class Mapbox extends Component {
     //    } catch (error) {
     //     console.log(error) // TODO: Make it not fail on Sør- og Nord-trøndelag
     //  }
+  }
+
+  handleStyleUpdate(kode, opplystKode) {
+    this.updateAktivKode(kode)
+    this.updateOpplystKode(opplystKode)
   }
 
   componentWillUnmount() {
