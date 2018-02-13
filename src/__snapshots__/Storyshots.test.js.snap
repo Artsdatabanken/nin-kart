@@ -1897,7 +1897,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
               </div>
             </div>
             <a
-              href="/katalog"
+              href="/katalog/ROT"
               onClick={[Function]}
             >
               <div
