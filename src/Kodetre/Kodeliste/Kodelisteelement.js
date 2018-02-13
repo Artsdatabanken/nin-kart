@@ -78,10 +78,14 @@ class Kodelisteelement extends React.Component {
             {meta.kode}
           </Avatar>
         }
-        primaryText={item.navn}
-        secondaryText={`${(item.antall * 0.15).toFixed(1)} km² i ${
-          item.antall
-        } områder`}
+        primaryText={
+          rotkode === 'TX'
+            ? meta.navn ? meta.navn + ' (' + meta.navnSci + ')' : meta.navnSci
+            : meta.navn || item.navn || item.kode
+        }
+        secondaryText={`${((item.antall || 0) * 0.15).toFixed(
+          1
+        )} km² i ${item.antall || '0'} områder`}
         onClick={() => this.props.onGoToCode(item.kode)}
         rightAvatar={
           <span style={{ display: 'inline-flex' }}>

@@ -99,7 +99,7 @@ class Grunnkart extends Component {
     var currentLocation = this.props.location.pathname
     let kodematch = currentLocation.match(/\/katalog\/(.*)/)
     const kode = kodematch && kodematch.length === 2 ? kodematch[1] : null
-    console.log('kode', kode)
+    //console.log('kode', kode)
     return (
       <div>
         <Kart
@@ -120,7 +120,7 @@ class Grunnkart extends Component {
             this.setState({ showMainDrawer: !this.state.showMainDrawer })
           }
         />
-        <Link to="/katalog">
+        <Link to="/katalog/ROT">
           <FloatingActionButton
             style={{ position: 'absolute', bottom: 48, left: 48 }}
           >
