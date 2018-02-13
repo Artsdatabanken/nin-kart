@@ -22,6 +22,7 @@ class Grunnkart extends Component {
       baseMapStyle: defaultMapStyle,
       mapStyle: '',
       showMainDrawer: false,
+      pointProperties: null,
     }
 
     this.handleChangeBaseMap = this.handleChangeBaseMap.bind(this)
@@ -86,6 +87,10 @@ class Grunnkart extends Component {
     this.setState({ mapbounds: bounds })
   }, 50)
 
+  setLocalId(localId) {
+    this.setState({ localId: localId })
+  }
+
   componentDidMount() {
     this.handleChangeBaseMap()
   }
@@ -105,6 +110,7 @@ class Grunnkart extends Component {
           aktivKode={kode}
           opplystKode={this.state.opplystKode}
           onMapBoundsChange={bounds => this.setMapBounds(bounds)}
+          setLocalId={localId => this.setLocalId(localId)}
         />
 
         <MainDrawer
@@ -138,6 +144,7 @@ class Grunnkart extends Component {
               }
               mapbounds={this.state.mapbounds}
               onMouseEnter={kode => this.setState({ opplystKode: kode })}
+              localId={this.state.localId}
             />
           </div>
         )}
