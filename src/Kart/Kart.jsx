@@ -7,15 +7,10 @@ class Kart extends Component {
   onClick = point => {
     const lngLat = point.lngLat
 
-    const localId =
-      point.features &&
-      point.features[0] &&
-      point.features[0].properties &&
-      point.features[0].properties.localId
-        ? point.features[0].properties.localId
-        : null
-
-    this.props.history.push(`/punkt/${lngLat[0]},${lngLat[1]},${localId}`)
+    if (point.features && point.features[0] && point.features[0].properties) {
+      this.props.setLocalId(point.features[0].properties.localId)
+    }
+    this.props.history.push(`/punkt/${lngLat[0]},${lngLat[1]}`)
   }
 
   render() {

@@ -182,7 +182,6 @@ class Backend {
       `https://adb-nin-memapi.azurewebsites.net/v1/Koder?q=${q}`
     )
   }
-
   static async hentKode(kode, bounds) {
     let bbox = ''
     if (bounds) {
@@ -193,8 +192,6 @@ class Backend {
     return this.getPromise(
       `https://adb-nin-memapi.azurewebsites.net/v1/Kodetre?node=${kode}${bbox}`
     )
-  }
-
   static async hentKodeMeta(kode) {
     return this.getPromise(`https://adb-kode.firebaseio.com/data/${kode}.json`)
   }
