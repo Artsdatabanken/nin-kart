@@ -29,7 +29,8 @@ const KodeVindu = props => {
             data={props.data}
           />
         )}
-        <ListItem primaryText={props.meta.ingress} />
+        {props.meta.ingress && <ListItem primaryText={props.meta.ingress} />}
+
         <List>
           <Kodeliste
             title={`Undernivåer av ${navn}`}

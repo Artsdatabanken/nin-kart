@@ -15,7 +15,9 @@ function PointInfo(props) {
               return (
                 <ListItem
                   primaryText={
-                    item.uom ? item.value + ' ' + item.uom : item.value
+                    item.uom
+                      ? item.value.toFixed(1) + ' ' + item.uom
+                      : item.value
                   }
                   onClick={() => {
                     routing.history.push('/katalog/' + key)

@@ -92,8 +92,8 @@ class Kodelisteelement extends React.Component {
             <Avatar
               size={32}
               style={{
-                color: rotmeta.color,
-                backgroundColor: rotmeta.backgroundColor,
+                color: meta.textColor,
+                backgroundColor: meta.color,
                 fontSize: 14,
               }}
             >
