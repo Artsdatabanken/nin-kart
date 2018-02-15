@@ -79,9 +79,8 @@ class Kodelisteelement extends React.Component {
           </Avatar>
         }
         primaryText={
-          rotkode === 'TX'
-            ? meta.navn ? meta.navn + ' (' + meta.navnSci + ')' : meta.navnSci
-            : meta.navn || item.navn || item.kode
+          (meta.navn || item.navn || item.kode) +
+          (meta.navnSci ? ` (${meta.navnSci})` : '')
         }
         secondaryText={`${((item.antall || 0) * 0.15).toFixed(
           1
