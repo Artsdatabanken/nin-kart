@@ -1,6 +1,6 @@
 const replacements = {
   Rødlistekategorier: 'Rødliste',
-  Rotnivå: 'Natur',
+  Rotnivå: 'Katalog',
   //    'RKAT': "RL",
   //    'MIV' : "MV",
   '"EN"': '"Truet"',
