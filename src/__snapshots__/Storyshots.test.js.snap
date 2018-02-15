@@ -3009,9 +3009,9 @@ exports[`Storyshots KodeVindu default 1`] = `
                             style={
                               Object {
                                 "alignItems": "center",
-                                "backgroundColor": "#228822",
+                                "backgroundColor": undefined,
                                 "borderRadius": "50%",
-                                "color": "#fff",
+                                "color": undefined,
                                 "display": "inline-flex",
                                 "fontSize": 14,
                                 "height": 32,
@@ -3216,9 +3216,9 @@ exports[`Storyshots KodeVindu default 1`] = `
                             style={
                               Object {
                                 "alignItems": "center",
-                                "backgroundColor": "#228822",
+                                "backgroundColor": undefined,
                                 "borderRadius": "50%",
-                                "color": "#fff",
+                                "color": undefined,
                                 "display": "inline-flex",
                                 "fontSize": 14,
                                 "height": 32,
@@ -3423,9 +3423,9 @@ exports[`Storyshots KodeVindu default 1`] = `
                             style={
                               Object {
                                 "alignItems": "center",
-                                "backgroundColor": "#228822",
+                                "backgroundColor": undefined,
                                 "borderRadius": "50%",
-                                "color": "#fff",
+                                "color": undefined,
                                 "display": "inline-flex",
                                 "fontSize": 14,
                                 "height": 32,
@@ -3630,9 +3630,9 @@ exports[`Storyshots KodeVindu default 1`] = `
                             style={
                               Object {
                                 "alignItems": "center",
-                                "backgroundColor": "#228822",
+                                "backgroundColor": undefined,
                                 "borderRadius": "50%",
-                                "color": "#fff",
+                                "color": undefined,
                                 "display": "inline-flex",
                                 "fontSize": 14,
                                 "height": 32,
