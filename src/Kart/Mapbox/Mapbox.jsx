@@ -67,8 +67,9 @@ class Mapbox extends Component {
     if (kode) {
       let taxonMatch = kode.match(/TX_(.*)/)
       this.setState({ showTaxonGrid: taxonMatch })
-      if (taxonMatch && Number(taxonMatch[1] < 3)) {
-        let url = backend.TaxonBaseUrl + `${taxonMatch[1]}.png`
+      if (taxonMatch) {
+        let url = backend.getKodeUtbredelseUrl(kode)
+
         let kilde = {
           type: 'image',
           url: url,

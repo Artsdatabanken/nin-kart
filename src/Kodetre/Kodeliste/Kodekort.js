@@ -6,6 +6,7 @@ import StarBorder from 'material-ui/svg-icons/toggle/star-border'
 import Star from 'material-ui/svg-icons/toggle/star'
 import Share from 'material-ui/svg-icons/social/share'
 import muiThemeable from 'material-ui/styles/muiThemeable'
+import backend from '../../backend'
 
 class Kodekort extends React.Component {
   state = { expanded: false }
@@ -28,6 +29,7 @@ class Kodekort extends React.Component {
   render() {
     const { data, muiTheme } = this.props
     const selv = this.props.selv || {}
+    const foto = selv.foto ? selv.foto : backend.getKodeFotoUrl(this.props.kode)
     return (
       <Card containerStyle={{ paddingBottom: 0 }}>
         <CardMedia
@@ -43,11 +45,7 @@ class Kodekort extends React.Component {
             />
           }
         >
-          <img
-            src={selv.foto}
-            alt=""
-            style={{ height: 350, objectFit: 'cover' }}
-          />
+          <img src={foto} alt="" style={{ height: 350, objectFit: 'cover' }} />
         </CardMedia>
       </Card>
     )

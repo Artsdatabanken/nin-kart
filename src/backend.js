@@ -275,7 +275,21 @@ class Backend {
     7: 'Egenskapsområde',
   })
 
-  static TaxonBaseUrl = 'https://grunnkart.firebaseapp.com/'
+  static getKodeFotoUrl(kode, small) {
+    const smallFolder = '40'
+    const largeFolder = '408'
+    if (kode)
+      return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/cover%2F${
+        small ? smallFolder : largeFolder
+      }%2F${kode}.jpg?alt=media`
+  }
+
+  static getKodeUtbredelseUrl(kode) {
+    if (kode) {
+      return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/utbredelse%2F${kode}.png?alt=media`
+    }
+  }
+
 }
 
 export default Backend
