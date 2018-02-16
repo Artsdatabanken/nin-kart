@@ -9,8 +9,6 @@ import hentLag from './style-lookup'
 import backend from '../../backend'
 import DeckGL, { GridLayer } from 'deck.gl'
 
-import smallTaxons from './29850_4326.json'
-
 const LIGHT_SETTINGS = {
   lightsPosition: [9.5, 56, 5000, -2, 57, 8000],
   ambientRatio: 0.2,
@@ -19,11 +17,27 @@ const LIGHT_SETTINGS = {
   lightsStrength: [1.0, 0.0, 2.0, 0.0],
   numberOfLights: 2,
 }
+const colorScale = r => [r * 255, 140, 200 * (1 - r)]
 
 class Mapbox extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      utbredelsesData: [
+        {
+          g: [10.00499, 59.04227],
+          n: 20,
+        },
+        {
+          g: [10.00499, 59.14227],
+          n: 10,
+        },
+        {
+          g: [11.00499, 59.14227],
+          n: 50,
+        },
+      ],
+
       showTaxonGrid: false,
       viewport: {
         width: window.innerWidth,
@@ -52,6 +66,14 @@ class Mapbox extends Component {
     }
   }
   updateAktivKode(kode) {
+    if (kode) {
+      let taxonMatch = kode.match(/TX_(.*)/)
+      if (taxonMatch) {
+        backend.getKodeUtbredelse(kode).then(data => {
+          this.setState({ utbredelsesData: data })
+        })
+      }
+    }
     let map = this.map.getMap()
     if (!map || !map.isStyleLoaded()) {
       console.log(
@@ -157,17 +179,19 @@ class Mapbox extends Component {
 
     const taxonLayer = new GridLayer({
       id: 'taxonLayer',
-      data: smallTaxons.features,
+      data: this.state.utbredelsesData,
       cellSize: 500000 * (1 / (viewport.zoom * viewport.zoom * viewport.zoom)),
       elevationScale: 20,
       extruded: true,
       lightSettings: LIGHT_SETTINGS,
       getPosition: function(e) {
-        return e.geometry.coordinates
+        return e.g
       },
-      // getElevationValue : function(e) {
-      //     return e.length
-      // }
+      getElevationValue: function(points) {
+        var count = 0
+        points.forEach(i => (count += i.n))
+        return count
+      },
     })
 
     return (
@@ -190,7 +214,7 @@ class Mapbox extends Component {
         minZoom={4}
       >
         {this.state.showTaxonGrid && (
-          <DeckGL {...viewport} layers={[taxonLayer]} />
+          <DeckGL {...viewport} layers={[taxonLayer]} colorScale={colorScale} />
         )}
         <Switch>
           <Route

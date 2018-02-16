@@ -290,6 +290,13 @@ class Backend {
     }
   }
 
+  static getKodeUtbredelse(kode) {
+    if (kode) {
+      return this.getPromise(
+        `https://bboxcode.firebaseio.com/observations/${kode}.json`
+      )
+    }
+  }
 }
 
 export default Backend
