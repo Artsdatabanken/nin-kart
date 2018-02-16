@@ -1,6 +1,7 @@
 import React from 'react'
-import { Chip, Avatar } from 'material-ui'
+import { Avatar } from 'material-ui'
 import { ListItem } from 'material-ui/List'
+import Kodetagg from '../Kodetagg'
 
 const rotkoder = {
   NA: { backgroundColor: '#228822', color: '#fff' },
@@ -79,28 +80,24 @@ class Kodelisteelement extends React.Component {
           </Avatar>
         }
         primaryText={
-          (meta.navn || item.navn || item.kode) +
-          (meta.navnSci ? ` (${meta.navnSci})` : '')
+          <span>
+            {(meta.navn || item.navn || item.kode) +
+              (meta.navnSci ? ` (${meta.navnSci})` : '')}
+            <span style={{ display: 'inline-flex' }}>
+              &nbsp;<Kodetagg
+                kode={item.kode}
+                navn={parts[1]}
+                color="#222"
+                backgroundColor="#ccc"
+              />
+            </span>
+          </span>
         }
         secondaryText={`${((item.antall || 0) * 0.15).toFixed(
           1
         )} km² i ${item.antall || '0'} områder`}
         onClick={() => this.props.onGoToCode(item.kode)}
-        rightAvatar={
-          <span style={{ display: 'inline-flex' }}>
-            <Avatar
-              size={32}
-              style={{
-                color: meta.textColor,
-                backgroundColor: meta.color,
-                fontSize: 14,
-              }}
-            >
-              {rotkode}
-            </Avatar>
-            <Chip>{parts[1]}</Chip>
-          </span>
-        }
+        rightAvatar={<Avatar backgroundColor={meta.color} />}
       />
     )
   }
