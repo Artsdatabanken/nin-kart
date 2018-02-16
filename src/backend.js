@@ -275,7 +275,7 @@ class Backend {
     7: 'Egenskapsområde',
   })
 
-  static TaxonBaseUrl = 'http://localhost:3000/'
+  static TaxonBaseUrl = 'https://grunnkart.firebaseapp.com/'
 }
 
 export default Backend
