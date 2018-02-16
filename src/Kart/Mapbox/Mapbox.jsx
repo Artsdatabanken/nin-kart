@@ -6,17 +6,33 @@ import { withRouter } from 'react-router'
 import { Route, Switch } from 'react-router-dom'
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import hentLag from './style-lookup'
+import backend from '../../backend'
+import DeckGL, { GridLayer } from 'deck.gl'
+
+import smallTaxons from './29850_4326.json'
+
+const LIGHT_SETTINGS = {
+  lightsPosition: [9.5, 56, 5000, -2, 57, 8000],
+  ambientRatio: 0.2,
+  diffuseRatio: 0.5,
+  specularRatio: 0.3,
+  lightsStrength: [1.0, 0.0, 2.0, 0.0],
+  numberOfLights: 2,
+}
 
 class Mapbox extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      showTaxonGrid: false,
       viewport: {
         width: window.innerWidth,
         height: window.innerHeight,
         latitude: props.latitude,
         longitude: props.longitude,
         zoom: props.zoom,
+        pitch: props.pitch,
+        bearing: props.bearing,
       },
     }
   }
@@ -37,13 +53,39 @@ class Mapbox extends Component {
   }
   updateAktivKode(kode) {
     let map = this.map.getMap()
-    if (!map || !map.isStyleLoaded()) return
+    if (!map || !map.isStyleLoaded()) {
+      console.log(
+        'kode: ' +
+          kode +
+          ' mapstyle loaded: ' +
+          (map ? map.isStyleLoaded() : false)
+      )
+      return
+    }
 
-    // try {
     map.removeLayer(this.props.aktivKode)
     if (kode) {
-      let lag = hentLag(map, kode)
-      if (lag) map.addLayer(lag)
+      let taxonMatch = kode.match(/TX_(.*)/)
+      this.setState({ showTaxonGrid: taxonMatch })
+      if (taxonMatch && Number(taxonMatch[1] < 3)) {
+        let url = backend.TaxonBaseUrl + `${taxonMatch[1]}.png`
+        let kilde = {
+          type: 'image',
+          url: url,
+          coordinates: [
+            [-2.12900722, 71.87414651],
+            [32.7256258, 71.87414651],
+            [32.7256258, 57.36940657],
+            [-2.12900722, 57.36940657],
+          ],
+        }
+
+        map.removeSource('tx_overlay') // remove if it exist
+        map.addSource('tx_overlay', kilde)
+
+        let lag = hentLag(map, kode)
+        if (lag) map.addLayer(lag)
+      }
     }
   }
 
@@ -111,6 +153,22 @@ class Mapbox extends Component {
 
   render() {
     const { viewport } = this.state
+
+    const taxonLayer = new GridLayer({
+      id: 'taxonLayer',
+      data: smallTaxons.features,
+      cellSize: 500000 * (1 / (viewport.zoom * viewport.zoom * viewport.zoom)),
+      elevationScale: 20,
+      extruded: true,
+      lightSettings: LIGHT_SETTINGS,
+      getPosition: function(e) {
+        return e.geometry.coordinates
+      },
+      // getElevationValue : function(e) {
+      //     return e.length
+      // }
+    })
+
     return (
       <ReactMapGL
         {...viewport}
@@ -130,6 +188,9 @@ class Mapbox extends Component {
         mapStyle={this.props.mapStyle}
         minZoom={4}
       >
+        {this.state.showTaxonGrid && (
+          <DeckGL {...viewport} layers={[taxonLayer]} />
+        )}
         <Switch>
           <Route
             path="/punkt/:lng,:lat"

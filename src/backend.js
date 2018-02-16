@@ -274,6 +274,8 @@ class Backend {
     6: 'Livsmedium',
     7: 'Egenskapsområde',
   })
+
+  static TaxonBaseUrl = 'http://localhost:3000/'
 }
 
 export default Backend
