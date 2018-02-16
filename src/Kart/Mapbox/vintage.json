@@ -38,7 +38,8 @@
     },
     "tx_overlay": {
       "type": "image",
-      "url": "https://grunnkart.firebaseapp.com/3624_alpha.png",
+      "url":
+        "https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/utbredelse%2FTX_0.png?alt=media",
       "coordinates": [
         [-2.12900722, 71.87414651],
         [32.7256258, 71.87414651],
