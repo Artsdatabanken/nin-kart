@@ -69,6 +69,7 @@ class Mapbox extends Component {
       this.setState({ showTaxonGrid: taxonMatch })
       if (taxonMatch) {
         let url = backend.getKodeUtbredelseUrl(kode)
+
         let kilde = {
           type: 'image',
           url: url,
