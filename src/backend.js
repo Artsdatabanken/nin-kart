@@ -274,6 +274,8 @@ class Backend {
     6: 'Livsmedium',
     7: 'Egenskapsområde',
   })
+
+  static TaxonBaseUrl = 'https://grunnkart.firebaseapp.com/'
 }
 
 export default Backend

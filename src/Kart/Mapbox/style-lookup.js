@@ -74,6 +74,19 @@ function hentLag(map, kode) {
     }
   }
 
+  let taxonMatch = kode.match(/TX_(.*)/)
+  if (taxonMatch) {
+    return {
+      id: kode,
+      source: 'tx_overlay',
+      type: 'raster',
+      paint: {
+        'raster-contrast': 1,
+        'raster-opacity': 0.5,
+      },
+    }
+  }
+
   let filter = {
     id: kode,
     type: 'fill',

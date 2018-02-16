@@ -16,7 +16,7 @@ function PointInfo(props) {
                 <ListItem
                   primaryText={
                     item.uom
-                      ? item.value.toFixed(1) + ' ' + item.uom
+                      ? Number(item.value).toFixed(1) + ' ' + item.uom
                       : item.value
                   }
                   onClick={() => {
