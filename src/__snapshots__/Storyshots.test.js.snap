@@ -2993,97 +2993,29 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         />
-                        <span
+                        <div
+                          className={undefined}
+                          size={40}
                           style={
                             Object {
+                              "alignItems": "center",
+                              "backgroundColor": "rgb(188, 188, 188)",
+                              "borderRadius": "50%",
+                              "color": "#ffffff",
                               "display": "inline-flex",
+                              "fontSize": 20,
+                              "height": 40,
+                              "justifyContent": "center",
+                              "muiPrepared": true,
                               "position": "absolute",
                               "right": 16,
                               "top": 16,
+                              "userSelect": "none",
+                              "width": 40,
                             }
                           }
-                        >
-                          <div
-                            className={undefined}
-                            size={32}
-                            style={
-                              Object {
-                                "alignItems": "center",
-                                "backgroundColor": undefined,
-                                "borderRadius": "50%",
-                                "color": undefined,
-                                "display": "inline-flex",
-                                "fontSize": 14,
-                                "height": 32,
-                                "justifyContent": "center",
-                                "muiPrepared": true,
-                                "userSelect": "none",
-                                "width": 32,
-                              }
-                            }
-                          >
-                            NA
-                          </div>
-                          <div
-                            className={undefined}
-                            disabled={undefined}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={[Function]}
-                            onKeyUp={[Function]}
-                            onMouseDown={[Function]}
-                            onMouseEnter={[Function]}
-                            onMouseLeave={[Function]}
-                            onMouseUp={[Function]}
-                            onTouchEnd={[Function]}
-                            onTouchStart={[Function]}
-                            style={
-                              Object {
-                                "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                                "backgroundColor": "rgb(224, 224, 224)",
-                                "border": 10,
-                                "borderRadius": 16,
-                                "boxShadow": null,
-                                "boxSizing": "border-box",
-                                "cursor": "default",
-                                "display": "flex",
-                                "fontFamily": "Roboto, sans-serif",
-                                "fontSize": "inherit",
-                                "fontWeight": "inherit",
-                                "margin": 0,
-                                "muiPrepared": true,
-                                "outline": "none",
-                                "padding": 0,
-                                "position": "relative",
-                                "textDecoration": "none",
-                                "verticalAlign": null,
-                                "whiteSpace": "nowrap",
-                                "width": "fit-content",
-                              }
-                            }
-                            tabIndex={0}
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "fontSize": 14,
-                                  "fontWeight": 400,
-                                  "lineHeight": "32px",
-                                  "muiPrepared": true,
-                                  "paddingLeft": 12,
-                                  "paddingRight": 12,
-                                  "userSelect": "none",
-                                  "whiteSpace": "nowrap",
-                                }
-                              }
-                            >
-                              H1
-                            </span>
-                          </div>
-                        </span>
-                        <div
+                        />
+                        <span
                           style={
                             Object {
                               "muiPrepared": true,
@@ -3091,7 +3023,61 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         >
                           NA_H1
-                        </div>
+                          <span
+                            style={
+                              Object {
+                                "display": "inline-flex",
+                              }
+                            }
+                          >
+                             
+                            <div
+                              style={
+                                Object {
+                                  "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
+                                  "backgroundColor": "rgb(224, 224, 224)",
+                                  "border": "10px",
+                                  "borderRadius": "16px",
+                                  "boxSizing": "border-box",
+                                  "cursor": "default",
+                                  "display": "flex",
+                                  "flexWrap": "wrap",
+                                  "fontSize": "10px",
+                                  "fontWeight": "inherit",
+                                  "height": 18,
+                                  "margin": "0px",
+                                  "marginLeft": "12px",
+                                  "outline": "none",
+                                  "padding": 2,
+                                  "paddingLeft": "6px",
+                                  "paddingRight": "6px",
+                                  "position": "relative",
+                                  "textDecoration": "none",
+                                  "whiteSpace": "nowrap",
+                                  "width": "fit-content",
+                                }
+                              }
+                            >
+                              <div
+                                styles={
+                                  Object {
+                                    "color": "rgba(95, 95, 95, 0.87)",
+                                    "fontSize": 8,
+                                    "fontWeight": 400,
+                                    "lineHeight": 12,
+                                    "margin": 2,
+                                    "paddingLeft": "12px",
+                                    "paddingRight": "12px",
+                                    "userSelect": "none",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                NA_H1
+                              </div>
+                            </div>
+                          </span>
+                        </span>
                         <div
                           style={
                             Object {
@@ -3200,97 +3186,29 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         />
-                        <span
+                        <div
+                          className={undefined}
+                          size={40}
                           style={
                             Object {
+                              "alignItems": "center",
+                              "backgroundColor": "rgb(188, 188, 188)",
+                              "borderRadius": "50%",
+                              "color": "#ffffff",
                               "display": "inline-flex",
+                              "fontSize": 20,
+                              "height": 40,
+                              "justifyContent": "center",
+                              "muiPrepared": true,
                               "position": "absolute",
                               "right": 16,
                               "top": 16,
+                              "userSelect": "none",
+                              "width": 40,
                             }
                           }
-                        >
-                          <div
-                            className={undefined}
-                            size={32}
-                            style={
-                              Object {
-                                "alignItems": "center",
-                                "backgroundColor": undefined,
-                                "borderRadius": "50%",
-                                "color": undefined,
-                                "display": "inline-flex",
-                                "fontSize": 14,
-                                "height": 32,
-                                "justifyContent": "center",
-                                "muiPrepared": true,
-                                "userSelect": "none",
-                                "width": 32,
-                              }
-                            }
-                          >
-                            NA
-                          </div>
-                          <div
-                            className={undefined}
-                            disabled={undefined}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={[Function]}
-                            onKeyUp={[Function]}
-                            onMouseDown={[Function]}
-                            onMouseEnter={[Function]}
-                            onMouseLeave={[Function]}
-                            onMouseUp={[Function]}
-                            onTouchEnd={[Function]}
-                            onTouchStart={[Function]}
-                            style={
-                              Object {
-                                "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                                "backgroundColor": "rgb(224, 224, 224)",
-                                "border": 10,
-                                "borderRadius": 16,
-                                "boxShadow": null,
-                                "boxSizing": "border-box",
-                                "cursor": "default",
-                                "display": "flex",
-                                "fontFamily": "Roboto, sans-serif",
-                                "fontSize": "inherit",
-                                "fontWeight": "inherit",
-                                "margin": 0,
-                                "muiPrepared": true,
-                                "outline": "none",
-                                "padding": 0,
-                                "position": "relative",
-                                "textDecoration": "none",
-                                "verticalAlign": null,
-                                "whiteSpace": "nowrap",
-                                "width": "fit-content",
-                              }
-                            }
-                            tabIndex={0}
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "fontSize": 14,
-                                  "fontWeight": 400,
-                                  "lineHeight": "32px",
-                                  "muiPrepared": true,
-                                  "paddingLeft": 12,
-                                  "paddingRight": 12,
-                                  "userSelect": "none",
-                                  "whiteSpace": "nowrap",
-                                }
-                              }
-                            >
-                              H2
-                            </span>
-                          </div>
-                        </span>
-                        <div
+                        />
+                        <span
                           style={
                             Object {
                               "muiPrepared": true,
@@ -3298,7 +3216,61 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         >
                           Sirkulerende vannmasser i fysisk avgrensede saltvannsforekomster
-                        </div>
+                          <span
+                            style={
+                              Object {
+                                "display": "inline-flex",
+                              }
+                            }
+                          >
+                             
+                            <div
+                              style={
+                                Object {
+                                  "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
+                                  "backgroundColor": "rgb(224, 224, 224)",
+                                  "border": "10px",
+                                  "borderRadius": "16px",
+                                  "boxSizing": "border-box",
+                                  "cursor": "default",
+                                  "display": "flex",
+                                  "flexWrap": "wrap",
+                                  "fontSize": "10px",
+                                  "fontWeight": "inherit",
+                                  "height": 18,
+                                  "margin": "0px",
+                                  "marginLeft": "12px",
+                                  "outline": "none",
+                                  "padding": 2,
+                                  "paddingLeft": "6px",
+                                  "paddingRight": "6px",
+                                  "position": "relative",
+                                  "textDecoration": "none",
+                                  "whiteSpace": "nowrap",
+                                  "width": "fit-content",
+                                }
+                              }
+                            >
+                              <div
+                                styles={
+                                  Object {
+                                    "color": "rgba(95, 95, 95, 0.87)",
+                                    "fontSize": 8,
+                                    "fontWeight": 400,
+                                    "lineHeight": 12,
+                                    "margin": 2,
+                                    "paddingLeft": "12px",
+                                    "paddingRight": "12px",
+                                    "userSelect": "none",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                NA_H2
+                              </div>
+                            </div>
+                          </span>
+                        </span>
                         <div
                           style={
                             Object {
@@ -3407,97 +3379,29 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         />
-                        <span
+                        <div
+                          className={undefined}
+                          size={40}
                           style={
                             Object {
+                              "alignItems": "center",
+                              "backgroundColor": "rgb(188, 188, 188)",
+                              "borderRadius": "50%",
+                              "color": "#ffffff",
                               "display": "inline-flex",
+                              "fontSize": 20,
+                              "height": 40,
+                              "justifyContent": "center",
+                              "muiPrepared": true,
                               "position": "absolute",
                               "right": 16,
                               "top": 16,
+                              "userSelect": "none",
+                              "width": 40,
                             }
                           }
-                        >
-                          <div
-                            className={undefined}
-                            size={32}
-                            style={
-                              Object {
-                                "alignItems": "center",
-                                "backgroundColor": undefined,
-                                "borderRadius": "50%",
-                                "color": undefined,
-                                "display": "inline-flex",
-                                "fontSize": 14,
-                                "height": 32,
-                                "justifyContent": "center",
-                                "muiPrepared": true,
-                                "userSelect": "none",
-                                "width": 32,
-                              }
-                            }
-                          >
-                            NA
-                          </div>
-                          <div
-                            className={undefined}
-                            disabled={undefined}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={[Function]}
-                            onKeyUp={[Function]}
-                            onMouseDown={[Function]}
-                            onMouseEnter={[Function]}
-                            onMouseLeave={[Function]}
-                            onMouseUp={[Function]}
-                            onTouchEnd={[Function]}
-                            onTouchStart={[Function]}
-                            style={
-                              Object {
-                                "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                                "backgroundColor": "rgb(224, 224, 224)",
-                                "border": 10,
-                                "borderRadius": 16,
-                                "boxShadow": null,
-                                "boxSizing": "border-box",
-                                "cursor": "default",
-                                "display": "flex",
-                                "fontFamily": "Roboto, sans-serif",
-                                "fontSize": "inherit",
-                                "fontWeight": "inherit",
-                                "margin": 0,
-                                "muiPrepared": true,
-                                "outline": "none",
-                                "padding": 0,
-                                "position": "relative",
-                                "textDecoration": "none",
-                                "verticalAlign": null,
-                                "whiteSpace": "nowrap",
-                                "width": "fit-content",
-                              }
-                            }
-                            tabIndex={0}
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "fontSize": 14,
-                                  "fontWeight": 400,
-                                  "lineHeight": "32px",
-                                  "muiPrepared": true,
-                                  "paddingLeft": 12,
-                                  "paddingRight": 12,
-                                  "userSelect": "none",
-                                  "whiteSpace": "nowrap",
-                                }
-                              }
-                            >
-                              H3
-                            </span>
-                          </div>
-                        </span>
-                        <div
+                        />
+                        <span
                           style={
                             Object {
                               "muiPrepared": true,
@@ -3505,7 +3409,61 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         >
                           NA_H3
-                        </div>
+                          <span
+                            style={
+                              Object {
+                                "display": "inline-flex",
+                              }
+                            }
+                          >
+                             
+                            <div
+                              style={
+                                Object {
+                                  "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
+                                  "backgroundColor": "rgb(224, 224, 224)",
+                                  "border": "10px",
+                                  "borderRadius": "16px",
+                                  "boxSizing": "border-box",
+                                  "cursor": "default",
+                                  "display": "flex",
+                                  "flexWrap": "wrap",
+                                  "fontSize": "10px",
+                                  "fontWeight": "inherit",
+                                  "height": 18,
+                                  "margin": "0px",
+                                  "marginLeft": "12px",
+                                  "outline": "none",
+                                  "padding": 2,
+                                  "paddingLeft": "6px",
+                                  "paddingRight": "6px",
+                                  "position": "relative",
+                                  "textDecoration": "none",
+                                  "whiteSpace": "nowrap",
+                                  "width": "fit-content",
+                                }
+                              }
+                            >
+                              <div
+                                styles={
+                                  Object {
+                                    "color": "rgba(95, 95, 95, 0.87)",
+                                    "fontSize": 8,
+                                    "fontWeight": 400,
+                                    "lineHeight": 12,
+                                    "margin": 2,
+                                    "paddingLeft": "12px",
+                                    "paddingRight": "12px",
+                                    "userSelect": "none",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                NA_H3
+                              </div>
+                            </div>
+                          </span>
+                        </span>
                         <div
                           style={
                             Object {
@@ -3614,97 +3572,29 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         />
-                        <span
+                        <div
+                          className={undefined}
+                          size={40}
                           style={
                             Object {
+                              "alignItems": "center",
+                              "backgroundColor": "rgb(188, 188, 188)",
+                              "borderRadius": "50%",
+                              "color": "#ffffff",
                               "display": "inline-flex",
+                              "fontSize": 20,
+                              "height": 40,
+                              "justifyContent": "center",
+                              "muiPrepared": true,
                               "position": "absolute",
                               "right": 16,
                               "top": 16,
+                              "userSelect": "none",
+                              "width": 40,
                             }
                           }
-                        >
-                          <div
-                            className={undefined}
-                            size={32}
-                            style={
-                              Object {
-                                "alignItems": "center",
-                                "backgroundColor": undefined,
-                                "borderRadius": "50%",
-                                "color": undefined,
-                                "display": "inline-flex",
-                                "fontSize": 14,
-                                "height": 32,
-                                "justifyContent": "center",
-                                "muiPrepared": true,
-                                "userSelect": "none",
-                                "width": 32,
-                              }
-                            }
-                          >
-                            NA
-                          </div>
-                          <div
-                            className={undefined}
-                            disabled={undefined}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={[Function]}
-                            onKeyUp={[Function]}
-                            onMouseDown={[Function]}
-                            onMouseEnter={[Function]}
-                            onMouseLeave={[Function]}
-                            onMouseUp={[Function]}
-                            onTouchEnd={[Function]}
-                            onTouchStart={[Function]}
-                            style={
-                              Object {
-                                "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                                "backgroundColor": "rgb(224, 224, 224)",
-                                "border": 10,
-                                "borderRadius": 16,
-                                "boxShadow": null,
-                                "boxSizing": "border-box",
-                                "cursor": "default",
-                                "display": "flex",
-                                "fontFamily": "Roboto, sans-serif",
-                                "fontSize": "inherit",
-                                "fontWeight": "inherit",
-                                "margin": 0,
-                                "muiPrepared": true,
-                                "outline": "none",
-                                "padding": 0,
-                                "position": "relative",
-                                "textDecoration": "none",
-                                "verticalAlign": null,
-                                "whiteSpace": "nowrap",
-                                "width": "fit-content",
-                              }
-                            }
-                            tabIndex={0}
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "fontSize": 14,
-                                  "fontWeight": 400,
-                                  "lineHeight": "32px",
-                                  "muiPrepared": true,
-                                  "paddingLeft": 12,
-                                  "paddingRight": 12,
-                                  "userSelect": "none",
-                                  "whiteSpace": "nowrap",
-                                }
-                              }
-                            >
-                              H4
-                            </span>
-                          </div>
-                        </span>
-                        <div
+                        />
+                        <span
                           style={
                             Object {
                               "muiPrepared": true,
@@ -3712,7 +3602,61 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         >
                           NA_H4
-                        </div>
+                          <span
+                            style={
+                              Object {
+                                "display": "inline-flex",
+                              }
+                            }
+                          >
+                             
+                            <div
+                              style={
+                                Object {
+                                  "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
+                                  "backgroundColor": "rgb(224, 224, 224)",
+                                  "border": "10px",
+                                  "borderRadius": "16px",
+                                  "boxSizing": "border-box",
+                                  "cursor": "default",
+                                  "display": "flex",
+                                  "flexWrap": "wrap",
+                                  "fontSize": "10px",
+                                  "fontWeight": "inherit",
+                                  "height": 18,
+                                  "margin": "0px",
+                                  "marginLeft": "12px",
+                                  "outline": "none",
+                                  "padding": 2,
+                                  "paddingLeft": "6px",
+                                  "paddingRight": "6px",
+                                  "position": "relative",
+                                  "textDecoration": "none",
+                                  "whiteSpace": "nowrap",
+                                  "width": "fit-content",
+                                }
+                              }
+                            >
+                              <div
+                                styles={
+                                  Object {
+                                    "color": "rgba(95, 95, 95, 0.87)",
+                                    "fontSize": 8,
+                                    "fontWeight": 400,
+                                    "lineHeight": 12,
+                                    "margin": 2,
+                                    "paddingLeft": "12px",
+                                    "paddingRight": "12px",
+                                    "userSelect": "none",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                NA_H4
+                              </div>
+                            </div>
+                          </span>
+                        </span>
                         <div
                           style={
                             Object {
@@ -3841,883 +3785,406 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
           <div
             style={
               Object {
+                "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
+                "backgroundColor": "rgb(224, 224, 224)",
+                "border": "10px",
+                "borderRadius": "16px",
+                "boxSizing": "border-box",
+                "cursor": "default",
                 "display": "flex",
                 "flexWrap": "wrap",
+                "fontSize": "10px",
+                "fontWeight": "inherit",
+                "height": 18,
+                "margin": "0px",
+                "marginLeft": "12px",
+                "outline": "none",
                 "padding": 2,
+                "paddingLeft": "6px",
+                "paddingRight": "6px",
+                "position": "relative",
+                "textDecoration": "none",
+                "whiteSpace": "nowrap",
+                "width": "fit-content",
               }
             }
           >
             <div
-              className={undefined}
-              disabled={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseUp={[Function]}
-              onTouchEnd={[Function]}
-              onTouchStart={[Function]}
-              style={
-                Object {
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "backgroundColor": "rgb(224, 224, 224)",
-                  "border": 10,
-                  "borderRadius": 16,
-                  "boxShadow": null,
-                  "boxSizing": "border-box",
-                  "cursor": "default",
-                  "display": "flex",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": "inherit",
-                  "fontWeight": "inherit",
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "padding": 0,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "verticalAlign": null,
-                  "whiteSpace": "nowrap",
-                  "width": "fit-content",
-                }
-              }
               styles={
                 Object {
-                  "margin": 4,
+                  "color": "rgba(95, 95, 95, 0.87)",
+                  "fontSize": 8,
+                  "fontWeight": 400,
+                  "lineHeight": 12,
+                  "margin": 2,
+                  "paddingLeft": "12px",
+                  "paddingRight": "12px",
+                  "userSelect": "none",
+                  "whiteSpace": "nowrap",
                 }
               }
-              tabIndex={0}
             >
-              <div
-                className={undefined}
-                color="#111"
-                size={32}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#eee",
-                    "borderRadius": "50%",
-                    "color": "#111",
-                    "display": "inline-flex",
-                    "fontSize": 16,
-                    "height": 32,
-                    "justifyContent": "center",
-                    "marginRight": -4,
-                    "muiPrepared": true,
-                    "userSelect": "none",
-                    "width": 32,
-                  }
-                }
-              >
-                <b>
-                  NE
-                </b>
-              </div>
-              <span
-                style={
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "fontSize": 14,
-                    "fontWeight": 400,
-                    "lineHeight": "32px",
-                    "muiPrepared": true,
-                    "paddingLeft": 12,
-                    "paddingRight": 12,
-                    "userSelect": "none",
-                    "whiteSpace": "nowrap",
-                  }
-                }
-              >
-                Ikke evaluert
-              </span>
+              NE
             </div>
           </div>
           <div
             style={
               Object {
+                "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
+                "backgroundColor": "rgb(224, 224, 224)",
+                "border": "10px",
+                "borderRadius": "16px",
+                "boxSizing": "border-box",
+                "cursor": "default",
                 "display": "flex",
                 "flexWrap": "wrap",
+                "fontSize": "10px",
+                "fontWeight": "inherit",
+                "height": 18,
+                "margin": "0px",
+                "marginLeft": "12px",
+                "outline": "none",
                 "padding": 2,
+                "paddingLeft": "6px",
+                "paddingRight": "6px",
+                "position": "relative",
+                "textDecoration": "none",
+                "whiteSpace": "nowrap",
+                "width": "fit-content",
               }
             }
           >
             <div
-              className={undefined}
-              disabled={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseUp={[Function]}
-              onTouchEnd={[Function]}
-              onTouchStart={[Function]}
-              style={
-                Object {
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "backgroundColor": "rgb(224, 224, 224)",
-                  "border": 10,
-                  "borderRadius": 16,
-                  "boxShadow": null,
-                  "boxSizing": "border-box",
-                  "cursor": "default",
-                  "display": "flex",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": "inherit",
-                  "fontWeight": "inherit",
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "padding": 0,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "verticalAlign": null,
-                  "whiteSpace": "nowrap",
-                  "width": "fit-content",
-                }
-              }
               styles={
                 Object {
-                  "margin": 4,
+                  "color": "rgba(95, 95, 95, 0.87)",
+                  "fontSize": 8,
+                  "fontWeight": 400,
+                  "lineHeight": 12,
+                  "margin": 2,
+                  "paddingLeft": "12px",
+                  "paddingRight": "12px",
+                  "userSelect": "none",
+                  "whiteSpace": "nowrap",
                 }
               }
-              tabIndex={0}
             >
-              <div
-                className={undefined}
-                color="#111"
-                size={32}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#eee",
-                    "borderRadius": "50%",
-                    "color": "#111",
-                    "display": "inline-flex",
-                    "fontSize": 16,
-                    "height": 32,
-                    "justifyContent": "center",
-                    "marginRight": -4,
-                    "muiPrepared": true,
-                    "userSelect": "none",
-                    "width": 32,
-                  }
-                }
-              >
-                <b>
-                  DD
-                </b>
-              </div>
-              <span
-                style={
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "fontSize": 14,
-                    "fontWeight": 400,
-                    "lineHeight": "32px",
-                    "muiPrepared": true,
-                    "paddingLeft": 12,
-                    "paddingRight": 12,
-                    "userSelect": "none",
-                    "whiteSpace": "nowrap",
-                  }
-                }
-              >
-                Mangelfullt datagrunnlag
-              </span>
+              DD
             </div>
           </div>
           <div
             style={
               Object {
+                "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
+                "backgroundColor": "rgb(224, 224, 224)",
+                "border": "10px",
+                "borderRadius": "16px",
+                "boxSizing": "border-box",
+                "cursor": "default",
                 "display": "flex",
                 "flexWrap": "wrap",
+                "fontSize": "10px",
+                "fontWeight": "inherit",
+                "height": 18,
+                "margin": "0px",
+                "marginLeft": "12px",
+                "outline": "none",
                 "padding": 2,
+                "paddingLeft": "6px",
+                "paddingRight": "6px",
+                "position": "relative",
+                "textDecoration": "none",
+                "whiteSpace": "nowrap",
+                "width": "fit-content",
               }
             }
           >
             <div
-              className={undefined}
-              disabled={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseUp={[Function]}
-              onTouchEnd={[Function]}
-              onTouchStart={[Function]}
-              style={
-                Object {
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "backgroundColor": "rgb(224, 224, 224)",
-                  "border": 10,
-                  "borderRadius": 16,
-                  "boxShadow": null,
-                  "boxSizing": "border-box",
-                  "cursor": "default",
-                  "display": "flex",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": "inherit",
-                  "fontWeight": "inherit",
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "padding": 0,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "verticalAlign": null,
-                  "whiteSpace": "nowrap",
-                  "width": "fit-content",
-                }
-              }
               styles={
                 Object {
-                  "margin": 4,
+                  "color": "rgba(95, 95, 95, 0.87)",
+                  "fontSize": 8,
+                  "fontWeight": 400,
+                  "lineHeight": 12,
+                  "margin": 2,
+                  "paddingLeft": "12px",
+                  "paddingRight": "12px",
+                  "userSelect": "none",
+                  "whiteSpace": "nowrap",
                 }
               }
-              tabIndex={0}
             >
-              <div
-                className={undefined}
-                color="#fff"
-                size={32}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#006666",
-                    "borderRadius": "50%",
-                    "color": "#fff",
-                    "display": "inline-flex",
-                    "fontSize": 16,
-                    "height": 32,
-                    "justifyContent": "center",
-                    "marginRight": -4,
-                    "muiPrepared": true,
-                    "userSelect": "none",
-                    "width": 32,
-                  }
-                }
-              >
-                <b>
-                  LC
-                </b>
-              </div>
-              <span
-                style={
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "fontSize": 14,
-                    "fontWeight": 400,
-                    "lineHeight": "32px",
-                    "muiPrepared": true,
-                    "paddingLeft": 12,
-                    "paddingRight": 12,
-                    "userSelect": "none",
-                    "whiteSpace": "nowrap",
-                  }
-                }
-              >
-                Livskraftig
-              </span>
+              LC
             </div>
           </div>
           <div
             style={
               Object {
+                "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
+                "backgroundColor": "rgb(224, 224, 224)",
+                "border": "10px",
+                "borderRadius": "16px",
+                "boxSizing": "border-box",
+                "cursor": "default",
                 "display": "flex",
                 "flexWrap": "wrap",
+                "fontSize": "10px",
+                "fontWeight": "inherit",
+                "height": 18,
+                "margin": "0px",
+                "marginLeft": "12px",
+                "outline": "none",
                 "padding": 2,
+                "paddingLeft": "6px",
+                "paddingRight": "6px",
+                "position": "relative",
+                "textDecoration": "none",
+                "whiteSpace": "nowrap",
+                "width": "fit-content",
               }
             }
           >
             <div
-              className={undefined}
-              disabled={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseUp={[Function]}
-              onTouchEnd={[Function]}
-              onTouchStart={[Function]}
-              style={
-                Object {
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "backgroundColor": "rgb(224, 224, 224)",
-                  "border": 10,
-                  "borderRadius": 16,
-                  "boxShadow": null,
-                  "boxSizing": "border-box",
-                  "cursor": "default",
-                  "display": "flex",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": "inherit",
-                  "fontWeight": "inherit",
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "padding": 0,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "verticalAlign": null,
-                  "whiteSpace": "nowrap",
-                  "width": "fit-content",
-                }
-              }
               styles={
                 Object {
-                  "margin": 4,
+                  "color": "rgba(95, 95, 95, 0.87)",
+                  "fontSize": 8,
+                  "fontWeight": 400,
+                  "lineHeight": 12,
+                  "margin": 2,
+                  "paddingLeft": "12px",
+                  "paddingRight": "12px",
+                  "userSelect": "none",
+                  "whiteSpace": "nowrap",
                 }
               }
-              tabIndex={0}
             >
-              <div
-                className={undefined}
-                color="#99cc99"
-                size={32}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#006666",
-                    "borderRadius": "50%",
-                    "color": "#99cc99",
-                    "display": "inline-flex",
-                    "fontSize": 16,
-                    "height": 32,
-                    "justifyContent": "center",
-                    "marginRight": -4,
-                    "muiPrepared": true,
-                    "userSelect": "none",
-                    "width": 32,
-                  }
-                }
-              >
-                <b>
-                  NT
-                </b>
-              </div>
-              <span
-                style={
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "fontSize": 14,
-                    "fontWeight": 400,
-                    "lineHeight": "32px",
-                    "muiPrepared": true,
-                    "paddingLeft": 12,
-                    "paddingRight": 12,
-                    "userSelect": "none",
-                    "whiteSpace": "nowrap",
-                  }
-                }
-              >
-                Nær truet
-              </span>
+              NT
             </div>
           </div>
           <div
             style={
               Object {
+                "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
+                "backgroundColor": "rgb(224, 224, 224)",
+                "border": "10px",
+                "borderRadius": "16px",
+                "boxSizing": "border-box",
+                "cursor": "default",
                 "display": "flex",
                 "flexWrap": "wrap",
+                "fontSize": "10px",
+                "fontWeight": "inherit",
+                "height": 18,
+                "margin": "0px",
+                "marginLeft": "12px",
+                "outline": "none",
                 "padding": 2,
+                "paddingLeft": "6px",
+                "paddingRight": "6px",
+                "position": "relative",
+                "textDecoration": "none",
+                "whiteSpace": "nowrap",
+                "width": "fit-content",
               }
             }
           >
             <div
-              className={undefined}
-              disabled={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseUp={[Function]}
-              onTouchEnd={[Function]}
-              onTouchStart={[Function]}
-              style={
-                Object {
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "backgroundColor": "rgb(224, 224, 224)",
-                  "border": 10,
-                  "borderRadius": 16,
-                  "boxShadow": null,
-                  "boxSizing": "border-box",
-                  "cursor": "default",
-                  "display": "flex",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": "inherit",
-                  "fontWeight": "inherit",
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "padding": 0,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "verticalAlign": null,
-                  "whiteSpace": "nowrap",
-                  "width": "fit-content",
-                }
-              }
               styles={
                 Object {
-                  "margin": 4,
+                  "color": "rgba(95, 95, 95, 0.87)",
+                  "fontSize": 8,
+                  "fontWeight": 400,
+                  "lineHeight": 12,
+                  "margin": 2,
+                  "paddingLeft": "12px",
+                  "paddingRight": "12px",
+                  "userSelect": "none",
+                  "whiteSpace": "nowrap",
                 }
               }
-              tabIndex={0}
             >
-              <div
-                className={undefined}
-                color="#f8f2b1"
-                size={32}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#cc9900",
-                    "borderRadius": "50%",
-                    "color": "#f8f2b1",
-                    "display": "inline-flex",
-                    "fontSize": 16,
-                    "height": 32,
-                    "justifyContent": "center",
-                    "marginRight": -4,
-                    "muiPrepared": true,
-                    "userSelect": "none",
-                    "width": 32,
-                  }
-                }
-              >
-                <b>
-                  VU
-                </b>
-              </div>
-              <span
-                style={
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "fontSize": 14,
-                    "fontWeight": 400,
-                    "lineHeight": "32px",
-                    "muiPrepared": true,
-                    "paddingLeft": 12,
-                    "paddingRight": 12,
-                    "userSelect": "none",
-                    "whiteSpace": "nowrap",
-                  }
-                }
-              >
-                Sårbar
-              </span>
+              VU
             </div>
           </div>
           <div
             style={
               Object {
+                "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
+                "backgroundColor": "rgb(224, 224, 224)",
+                "border": "10px",
+                "borderRadius": "16px",
+                "boxSizing": "border-box",
+                "cursor": "default",
                 "display": "flex",
                 "flexWrap": "wrap",
+                "fontSize": "10px",
+                "fontWeight": "inherit",
+                "height": 18,
+                "margin": "0px",
+                "marginLeft": "12px",
+                "outline": "none",
                 "padding": 2,
+                "paddingLeft": "6px",
+                "paddingRight": "6px",
+                "position": "relative",
+                "textDecoration": "none",
+                "whiteSpace": "nowrap",
+                "width": "fit-content",
               }
             }
           >
             <div
-              className={undefined}
-              disabled={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseUp={[Function]}
-              onTouchEnd={[Function]}
-              onTouchStart={[Function]}
-              style={
-                Object {
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "backgroundColor": "rgb(224, 224, 224)",
-                  "border": 10,
-                  "borderRadius": 16,
-                  "boxShadow": null,
-                  "boxSizing": "border-box",
-                  "cursor": "default",
-                  "display": "flex",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": "inherit",
-                  "fontWeight": "inherit",
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "padding": 0,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "verticalAlign": null,
-                  "whiteSpace": "nowrap",
-                  "width": "fit-content",
-                }
-              }
               styles={
                 Object {
-                  "margin": 4,
+                  "color": "rgba(95, 95, 95, 0.87)",
+                  "fontSize": 8,
+                  "fontWeight": 400,
+                  "lineHeight": 12,
+                  "margin": 2,
+                  "paddingLeft": "12px",
+                  "paddingRight": "12px",
+                  "userSelect": "none",
+                  "whiteSpace": "nowrap",
                 }
               }
-              tabIndex={0}
             >
-              <div
-                className={undefined}
-                color="#ffcc99"
-                size={32}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#cc6633",
-                    "borderRadius": "50%",
-                    "color": "#ffcc99",
-                    "display": "inline-flex",
-                    "fontSize": 16,
-                    "height": 32,
-                    "justifyContent": "center",
-                    "marginRight": -4,
-                    "muiPrepared": true,
-                    "userSelect": "none",
-                    "width": 32,
-                  }
-                }
-              >
-                <b>
-                  EN
-                </b>
-              </div>
-              <span
-                style={
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "fontSize": 14,
-                    "fontWeight": 400,
-                    "lineHeight": "32px",
-                    "muiPrepared": true,
-                    "paddingLeft": 12,
-                    "paddingRight": 12,
-                    "userSelect": "none",
-                    "whiteSpace": "nowrap",
-                  }
-                }
-              >
-                Sterkt truet
-              </span>
+              EN
             </div>
           </div>
           <div
             style={
               Object {
+                "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
+                "backgroundColor": "rgb(224, 224, 224)",
+                "border": "10px",
+                "borderRadius": "16px",
+                "boxSizing": "border-box",
+                "cursor": "default",
                 "display": "flex",
                 "flexWrap": "wrap",
+                "fontSize": "10px",
+                "fontWeight": "inherit",
+                "height": 18,
+                "margin": "0px",
+                "marginLeft": "12px",
+                "outline": "none",
                 "padding": 2,
+                "paddingLeft": "6px",
+                "paddingRight": "6px",
+                "position": "relative",
+                "textDecoration": "none",
+                "whiteSpace": "nowrap",
+                "width": "fit-content",
               }
             }
           >
             <div
-              className={undefined}
-              disabled={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseUp={[Function]}
-              onTouchEnd={[Function]}
-              onTouchStart={[Function]}
-              style={
-                Object {
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "backgroundColor": "rgb(224, 224, 224)",
-                  "border": 10,
-                  "borderRadius": 16,
-                  "boxShadow": null,
-                  "boxSizing": "border-box",
-                  "cursor": "default",
-                  "display": "flex",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": "inherit",
-                  "fontWeight": "inherit",
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "padding": 0,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "verticalAlign": null,
-                  "whiteSpace": "nowrap",
-                  "width": "fit-content",
-                }
-              }
               styles={
                 Object {
-                  "margin": 4,
+                  "color": "rgba(95, 95, 95, 0.87)",
+                  "fontSize": 8,
+                  "fontWeight": 400,
+                  "lineHeight": 12,
+                  "margin": 2,
+                  "paddingLeft": "12px",
+                  "paddingRight": "12px",
+                  "userSelect": "none",
+                  "whiteSpace": "nowrap",
                 }
               }
-              tabIndex={0}
             >
-              <div
-                className={undefined}
-                color="#ffcccc"
-                size={32}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#cc3333",
-                    "borderRadius": "50%",
-                    "color": "#ffcccc",
-                    "display": "inline-flex",
-                    "fontSize": 16,
-                    "height": 32,
-                    "justifyContent": "center",
-                    "marginRight": -4,
-                    "muiPrepared": true,
-                    "userSelect": "none",
-                    "width": 32,
-                  }
-                }
-              >
-                <b>
-                  CR
-                </b>
-              </div>
-              <span
-                style={
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "fontSize": 14,
-                    "fontWeight": 400,
-                    "lineHeight": "32px",
-                    "muiPrepared": true,
-                    "paddingLeft": 12,
-                    "paddingRight": 12,
-                    "userSelect": "none",
-                    "whiteSpace": "nowrap",
-                  }
-                }
-              >
-                Kritisk truet
-              </span>
+              CR
             </div>
           </div>
           <div
             style={
               Object {
+                "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
+                "backgroundColor": "rgb(224, 224, 224)",
+                "border": "10px",
+                "borderRadius": "16px",
+                "boxSizing": "border-box",
+                "cursor": "default",
                 "display": "flex",
                 "flexWrap": "wrap",
+                "fontSize": "10px",
+                "fontWeight": "inherit",
+                "height": 18,
+                "margin": "0px",
+                "marginLeft": "12px",
+                "outline": "none",
                 "padding": 2,
+                "paddingLeft": "6px",
+                "paddingRight": "6px",
+                "position": "relative",
+                "textDecoration": "none",
+                "whiteSpace": "nowrap",
+                "width": "fit-content",
               }
             }
           >
             <div
-              className={undefined}
-              disabled={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseUp={[Function]}
-              onTouchEnd={[Function]}
-              onTouchStart={[Function]}
-              style={
-                Object {
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "backgroundColor": "rgb(224, 224, 224)",
-                  "border": 10,
-                  "borderRadius": 16,
-                  "boxShadow": null,
-                  "boxSizing": "border-box",
-                  "cursor": "default",
-                  "display": "flex",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": "inherit",
-                  "fontWeight": "inherit",
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "padding": 0,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "verticalAlign": null,
-                  "whiteSpace": "nowrap",
-                  "width": "fit-content",
-                }
-              }
               styles={
                 Object {
-                  "margin": 4,
+                  "color": "rgba(95, 95, 95, 0.87)",
+                  "fontSize": 8,
+                  "fontWeight": 400,
+                  "lineHeight": 12,
+                  "margin": 2,
+                  "paddingLeft": "12px",
+                  "paddingRight": "12px",
+                  "userSelect": "none",
+                  "whiteSpace": "nowrap",
                 }
               }
-              tabIndex={0}
             >
-              <div
-                className={undefined}
-                color="#fff"
-                size={32}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#000",
-                    "borderRadius": "50%",
-                    "color": "#fff",
-                    "display": "inline-flex",
-                    "fontSize": 16,
-                    "height": 32,
-                    "justifyContent": "center",
-                    "marginRight": -4,
-                    "muiPrepared": true,
-                    "userSelect": "none",
-                    "width": 32,
-                  }
-                }
-              >
-                <b>
-                  EW
-                </b>
-              </div>
-              <span
-                style={
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "fontSize": 14,
-                    "fontWeight": 400,
-                    "lineHeight": "32px",
-                    "muiPrepared": true,
-                    "paddingLeft": 12,
-                    "paddingRight": 12,
-                    "userSelect": "none",
-                    "whiteSpace": "nowrap",
-                  }
-                }
-              >
-                Utryddet i vill tilstand
-              </span>
+              EW
             </div>
           </div>
           <div
             style={
               Object {
+                "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
+                "backgroundColor": "rgb(224, 224, 224)",
+                "border": "10px",
+                "borderRadius": "16px",
+                "boxSizing": "border-box",
+                "cursor": "default",
                 "display": "flex",
                 "flexWrap": "wrap",
+                "fontSize": "10px",
+                "fontWeight": "inherit",
+                "height": 18,
+                "margin": "0px",
+                "marginLeft": "12px",
+                "outline": "none",
                 "padding": 2,
+                "paddingLeft": "6px",
+                "paddingRight": "6px",
+                "position": "relative",
+                "textDecoration": "none",
+                "whiteSpace": "nowrap",
+                "width": "fit-content",
               }
             }
           >
             <div
-              className={undefined}
-              disabled={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseUp={[Function]}
-              onTouchEnd={[Function]}
-              onTouchStart={[Function]}
-              style={
-                Object {
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "backgroundColor": "rgb(224, 224, 224)",
-                  "border": 10,
-                  "borderRadius": 16,
-                  "boxShadow": null,
-                  "boxSizing": "border-box",
-                  "cursor": "default",
-                  "display": "flex",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": "inherit",
-                  "fontWeight": "inherit",
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "padding": 0,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "verticalAlign": null,
-                  "whiteSpace": "nowrap",
-                  "width": "fit-content",
-                }
-              }
               styles={
                 Object {
-                  "margin": 4,
+                  "color": "rgba(95, 95, 95, 0.87)",
+                  "fontSize": 8,
+                  "fontWeight": 400,
+                  "lineHeight": 12,
+                  "margin": 2,
+                  "paddingLeft": "12px",
+                  "paddingRight": "12px",
+                  "userSelect": "none",
+                  "whiteSpace": "nowrap",
                 }
               }
-              tabIndex={0}
             >
-              <div
-                className={undefined}
-                color="#cc3333"
-                size={32}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#000",
-                    "borderRadius": "50%",
-                    "color": "#cc3333",
-                    "display": "inline-flex",
-                    "fontSize": 16,
-                    "height": 32,
-                    "justifyContent": "center",
-                    "marginRight": -4,
-                    "muiPrepared": true,
-                    "userSelect": "none",
-                    "width": 32,
-                  }
-                }
-              >
-                <b>
-                  EX
-                </b>
-              </div>
-              <span
-                style={
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "fontSize": 14,
-                    "fontWeight": 400,
-                    "lineHeight": "32px",
-                    "muiPrepared": true,
-                    "paddingLeft": 12,
-                    "paddingRight": 12,
-                    "userSelect": "none",
-                    "whiteSpace": "nowrap",
-                  }
-                }
-              >
-                Utryddet
-              </span>
+              EX
             </div>
           </div>
         </div>
