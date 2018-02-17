@@ -166,7 +166,7 @@ class Mapbox extends Component {
 
   onHover = e => {
     const pos = e.center
-    return
+    /*
     const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y])
     // TODO:
     if (r[0]) {
@@ -175,6 +175,7 @@ class Mapbox extends Component {
         .getMap()
         .setFilter('nin-hover', ['==', 'localId', r[0].properties.localId])
     }
+    */
   }
 
   // onClick = e => {
