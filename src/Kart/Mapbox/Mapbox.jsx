@@ -165,8 +165,8 @@ class Mapbox extends Component {
   }
 
   onHover = e => {
-    const pos = e.center
     /*
+    const pos = e.center
     const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y])
     // TODO:
     if (r[0]) {
