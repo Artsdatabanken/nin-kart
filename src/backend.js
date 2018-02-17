@@ -195,6 +195,7 @@ class Backend {
   }
 
   static async hentKodeMeta(kode) {
+    kode = kode || 'ROT'
     return this.getPromise(`https://adb-kode.firebaseio.com/data/${kode}.json`)
   }
 
@@ -289,7 +290,6 @@ class Backend {
       return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/utbredelse%2F${kode}.png?alt=media`
     }
   }
-
 }
 
 export default Backend

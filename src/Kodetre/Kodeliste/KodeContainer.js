@@ -32,7 +32,7 @@ class KodeContainer extends React.Component {
     this.queryNumber++
     const currentQuery = this.queryNumber
     backend
-      .hentKode(kode || 'ROT', this.props.mapbounds)
+      .hentKode(kode, this.props.mapbounds)
       .then(data => rename(data))
       .then(data => {
         if (currentQuery !== this.queryNumber) return // Abort stale query

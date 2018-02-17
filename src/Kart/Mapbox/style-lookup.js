@@ -100,7 +100,6 @@ function hentLag(map, kode) {
       'fill-outline-color': 'hsla(128, 88%, 29%, 0.8)',
     },
   }
-  console.log(naLayer)
   return naLayer
 }
 

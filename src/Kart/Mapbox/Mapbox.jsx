@@ -60,7 +60,7 @@ class Mapbox extends Component {
   }
 
   updateAktivKode(kode, opplystKode) {
-    console.log(kode, opplystKode)
+    kode = kode || 'ROT'
     let map = this.map.getMap()
     if (!map || !map.isStyleLoaded()) return
 
@@ -88,6 +88,7 @@ class Mapbox extends Component {
       let lag = hentLag(map, kode)
       if (lag) map.addLayer(lag)
     }
+
     if (this.state.meta) {
       map.removeLayer('n50-ld-1')
       map.removeLayer('n50-ld-2')
@@ -106,17 +107,16 @@ class Mapbox extends Component {
         let lag = hentLag(map, kode)
         if (lag && lag.type === 'fill') {
           let fillColor = Color(barn.color).alpha(0.35)
-          if (kode === opplystKode) {
-            console.log(
-              fillColor.rgbaString(),
-              fillColor.lightness(100).rgbaString()
-            )
+          const isHighlighted = kode === opplystKode
+          if (isHighlighted) {
             fillColor = fillColor.lightness(90).saturate(90)
             //            fillColor = Color('#ff8000')
           }
           //            .saturate(4.0)
           lag.paint['fill-color'] = fillColor.rgbaString()
-          const outlineColor = fillColor.darken(0.5)
+          const outlineColor = isHighlighted
+            ? fillColor.darken(0.5)
+            : fillColor.darken(0.9)
           lag.paint['fill-outline-color'] = outlineColor.rgbaString()
           map.addLayer(lag, 'building')
         }
@@ -130,12 +130,10 @@ class Mapbox extends Component {
 
   queryNumber = 0
   tempHackFetchMeta(kode) {
-    console.log('fetch', kode)
     this.queryNumber++
     const currentQuery = this.queryNumber
     backend.hentKodeMeta(kode).then(data => {
       if (currentQuery !== this.queryNumber) return // Abort stale query
-      //this.updateAktivKode(this.props.aktivKode, data)
       this.setState({ meta: data })
     })
   }
