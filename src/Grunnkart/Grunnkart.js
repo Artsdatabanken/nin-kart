@@ -99,7 +99,6 @@ class Grunnkart extends Component {
     var currentLocation = this.props.location.pathname
     let kodematch = currentLocation.match(/\/katalog\/(.*)/)
     const kode = kodematch && kodematch.length === 2 ? kodematch[1] : null
-    //console.log('kode', kode)
     return (
       <div>
         <Kart
