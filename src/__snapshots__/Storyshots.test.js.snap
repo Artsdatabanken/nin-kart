@@ -2500,8 +2500,8 @@ exports[`Storyshots KodeVindu default 1`] = `
                         src="https://artsdatabanken.no/Media/F16499?mode=480x480"
                         style={
                           Object {
-                            "height": 350,
                             "maxWidth": "100%",
+                            "minHeight": 144,
                             "minWidth": "100%",
                             "muiPrepared": true,
                             "objectFit": "cover",
