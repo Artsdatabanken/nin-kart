@@ -18,7 +18,7 @@ const KodeVindu = props => {
           position: 'fixed',
           left: 0,
           top: 0,
-          width: 416,
+          width: 408,
           overflow: 'auto',
         }}
       >
@@ -38,6 +38,7 @@ const KodeVindu = props => {
             metadata={props.meta.barn}
             onGoToCode={props.onGoToCode}
             onMouseEnter={props.onMouseEnter}
+            onMouseLeave={props.onMouseLeave}
           />
 
           {false && (
@@ -66,7 +67,14 @@ const KodeVindu = props => {
   )
 }
 
-const Kodeliste = ({ title, apidata, metadata, onGoToCode, onMouseEnter }) => {
+const Kodeliste = ({
+  title,
+  apidata,
+  metadata,
+  onGoToCode,
+  onMouseEnter,
+  onMouseLeave,
+}) => {
   if (!metadata) return null
   return (
     <React.Fragment>
@@ -91,6 +99,7 @@ const Kodeliste = ({ title, apidata, metadata, onGoToCode, onMouseEnter }) => {
             meta={metabarnet}
             onGoToCode={onGoToCode}
             onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
           />
         )
       })}

@@ -10,6 +10,7 @@ import backend from '../../backend'
 import DeckGL, { GridLayer } from 'deck.gl'
 
 import smallTaxons from './29850_4326.json'
+import Color from 'color'
 
 const LIGHT_SETTINGS = {
   lightsPosition: [9.5, 56, 5000, -2, 57, 8000],
@@ -40,83 +41,113 @@ class Mapbox extends Component {
   componentDidMount() {
     window.addEventListener('resize', this._resize)
     this._resize()
+    this.tempHackFetchMeta(this.props.aktivKode)
+  }
+
+  componentDidUpdate() {
+    this.updateAktivKode(this.props.aktivKode, this.props.opplystKode)
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.opplystKode !== this.props.opplystKode) {
-      this.updateOpplystKode(nextProps.opplystKode)
+      //      this.updateAktivKode(nextProps.aktivKode, nextProps.opplystKode)
     }
 
     if (nextProps.aktivKode !== this.props.aktivKode) {
-      this.updateAktivKode(nextProps.aktivKode)
-    }
-  }
-  updateAktivKode(kode) {
-    let map = this.map.getMap()
-    if (!map || !map.isStyleLoaded()) {
-      console.log(
-        'kode: ' +
-          kode +
-          ' mapstyle loaded: ' +
-          (map ? map.isStyleLoaded() : false)
-      )
-      return
-    }
-
-    map.removeLayer(this.props.aktivKode)
-    if (kode) {
-      let taxonMatch = kode.match(/TX_(.*)/)
-      this.setState({ showTaxonGrid: taxonMatch })
-      if (taxonMatch) {
-        let url = backend.getKodeUtbredelseUrl(kode)
-
-        let kilde = {
-          type: 'image',
-          url: url,
-          coordinates: [
-            [-2.12900722, 71.87414651],
-            [32.7256258, 71.87414651],
-            [32.7256258, 57.36940657],
-            [-2.12900722, 57.36940657],
-          ],
-        }
-
-        map.removeSource('tx_overlay') // remove if it exist
-        map.addSource('tx_overlay', kilde)
-
-        let lag = hentLag(map, kode)
-        if (lag) map.addLayer(lag)
-      }
+      //    this.updateAktivKode(nextProps.aktivKode, nextProps.opplystKode)
+      this.tempHackFetchMeta(nextProps.aktivKode)
     }
   }
 
-  updateOpplystKode(opplystKode) {
+  updateAktivKode(kode, opplystKode) {
+    console.log(kode, opplystKode)
     let map = this.map.getMap()
     if (!map || !map.isStyleLoaded()) return
 
-    // Ikke nødvendig å fjerne det gamle, blir overskrevet
-    if (opplystKode) {
-      let opplystLag = hentLag(map, opplystKode)
-      if (!opplystLag || !opplystLag.paint) return
-      opplystLag.paint['fill-color'] = 'rgba(255,255,255,50%)'
-      opplystLag.paint['fill-outline-color'] = 'rgba(255,255,255,80%)'
-      opplystLag.id = 'opplyst'
-      console.log('add', opplystKode)
-      map.addLayer(opplystLag)
+    map.removeLayer(this.props.aktivKode)
+    let taxonMatch = kode.match(/TX_(.*)/)
+    if (this.state.enableDeck !== taxonMatch)
+      this.setState({ enableDeck: taxonMatch })
+    if (taxonMatch) {
+      let url = backend.getKodeUtbredelseUrl(kode)
+
+      let kilde = {
+        type: 'image',
+        url: url,
+        coordinates: [
+          [-2.12900722, 71.87414651],
+          [32.7256258, 71.87414651],
+          [32.7256258, 57.36940657],
+          [-2.12900722, 57.36940657],
+        ],
+      }
+
+      map.removeSource('tx_overlay') // remove if it exist
+      map.addSource('tx_overlay', kilde)
+
+      let lag = hentLag(map, kode)
+      if (lag) map.addLayer(lag)
     }
-    //    } catch (error) {
-    //     console.log(error) // TODO: Make it not fail on Sør- og Nord-trøndelag
-    //  }
+    if (this.state.meta) {
+      map.removeLayer('n50-ld-1')
+      map.removeLayer('n50-ld-2')
+      map.removeLayer('ar50-ld-12')
+      map.removeLayer('nin')
+      map.removeLayer('ar50-snoisbre')
+      map.removeLayer('ar50-snoisbre_EN')
+      map.removeLayer('nin-hover')
+      map.removeLayer('naturomrader6')
+      map.removeLayer('naturomrader6-hover')
+      map.removeLayer('Rodlistede')
+      //      console.log(map.getStyle().layers)
+      Object.keys(this.state.meta.barn).forEach(kode => {
+        const barn = this.state.meta.barn[kode]
+        map.removeLayer(kode)
+        let lag = hentLag(map, kode)
+        if (lag && lag.type === 'fill') {
+          let fillColor = Color(barn.color).alpha(0.35)
+          if (kode === opplystKode) {
+            console.log(
+              fillColor.rgbaString(),
+              fillColor.lightness(100).rgbaString()
+            )
+            fillColor = fillColor.lightness(90).saturate(90)
+            //            fillColor = Color('#ff8000')
+          }
+          //            .saturate(4.0)
+          lag.paint['fill-color'] = fillColor.rgbaString()
+          const outlineColor = fillColor.darken(0.5)
+          lag.paint['fill-outline-color'] = outlineColor.rgbaString()
+          map.addLayer(lag, 'building')
+        }
+      })
+      //      console.log(map.getStyle().layers)
+    } else if (kode) {
+      let lag = hentLag(map, kode)
+      if (lag) map.addLayer(lag)
+    }
+  }
+
+  queryNumber = 0
+  tempHackFetchMeta(kode) {
+    console.log('fetch', kode)
+    this.queryNumber++
+    const currentQuery = this.queryNumber
+    backend.hentKodeMeta(kode).then(data => {
+      if (currentQuery !== this.queryNumber) return // Abort stale query
+      //this.updateAktivKode(this.props.aktivKode, data)
+      this.setState({ meta: data })
+    })
   }
 
   handleStyleUpdate(kode, opplystKode) {
-    this.updateAktivKode(kode)
-    this.updateOpplystKode(opplystKode)
+    this.updateAktivKode(kode, opplystKode)
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this._resize)
   }
+
   _resize = () => {
     this.setState({
       viewport: {
@@ -134,14 +165,17 @@ class Mapbox extends Component {
   }
 
   onHover = e => {
+    /*
     const pos = e.center
     const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y])
+    // TODO:
     if (r[0]) {
       //console.log(r[0].properties.localId);
       this.map
         .getMap()
         .setFilter('nin-hover', ['==', 'localId', r[0].properties.localId])
     }
+    */
   }
 
   // onClick = e => {
@@ -189,7 +223,7 @@ class Mapbox extends Component {
         mapStyle={this.props.mapStyle}
         minZoom={4}
       >
-        {this.state.showTaxonGrid && (
+        {this.state.enableDeck && (
           <DeckGL {...viewport} layers={[taxonLayer]} />
         )}
         <Switch>

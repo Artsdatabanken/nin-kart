@@ -53,6 +53,7 @@ class KodeContainer extends React.Component {
         meta={this.state.meta || {}}
         onGoToCode={this.props.onGoToCode}
         onMouseEnter={this.props.onMouseEnter}
+        onMouseLeave={this.props.onMouseLeave}
       />
     )
   }

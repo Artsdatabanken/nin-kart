@@ -69,6 +69,7 @@ class Kodelisteelement extends React.Component {
       <ListItem
         key={item.kode}
         onMouseEnter={() => this.props.onMouseEnter(kode)}
+        onMouseLeave={() => this.props.onMouseLeave(kode)}
         leftAvatar={
           <Avatar
             style={meta.utenRamme ? { borderRadius: 0 } : {}}
@@ -97,7 +98,17 @@ class Kodelisteelement extends React.Component {
           1
         )} km² i ${item.antall || '0'} områder`}
         onClick={() => this.props.onGoToCode(item.kode)}
-        rightAvatar={<Avatar backgroundColor={meta.color} />}
+        rightAvatar={
+          <span style={{ display: 'inline-flex' }}>
+            <Avatar
+              size={32}
+              style={{
+                color: meta.textColor,
+                backgroundColor: meta.color,
+              }}
+            />
+          </span>
+        }
       />
     )
   }
