@@ -2971,7 +2971,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       >
                         <img
                           className={undefined}
-                          color={undefined}
+                          color="#ff0000"
                           size={40}
                           src="https://artsdatabanken.no/Media/F16499?mode=480x480"
                           style={
@@ -2979,7 +2979,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "alignItems": "center",
                               "backgroundColor": "#00000000",
                               "borderRadius": "50%",
-                              "color": "#ffffff",
+                              "color": "#ff0000",
                               "display": "inline-flex",
                               "fontSize": 20,
                               "height": 40,
@@ -3004,21 +3004,15 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         >
                           <div
-                            className={undefined}
-                            size={32}
+                            onClick={[Function]}
                             style={
                               Object {
-                                "alignItems": "center",
-                                "backgroundColor": undefined,
+                                "backgroundImage": "linear-gradient(to bottom, #ff0000, #ff0000), url(checkerboard.png)",
                                 "borderRadius": "50%",
-                                "color": undefined,
-                                "display": "inline-flex",
-                                "fontSize": 16,
-                                "height": 32,
-                                "justifyContent": "center",
-                                "muiPrepared": true,
-                                "userSelect": "none",
-                                "width": 32,
+                                "height": "40px",
+                                "right": "14px",
+                                "top": "14px",
+                                "width": "40px",
                               }
                             }
                           />
@@ -3172,7 +3166,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       >
                         <img
                           className={undefined}
-                          color={undefined}
+                          color="#008020"
                           size={40}
                           src="https://artsdatabanken.no/Media/F1200?mode=480x480"
                           style={
@@ -3180,7 +3174,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "alignItems": "center",
                               "backgroundColor": "#00000000",
                               "borderRadius": "50%",
-                              "color": "#ffffff",
+                              "color": "#008020",
                               "display": "inline-flex",
                               "fontSize": 20,
                               "height": 40,
@@ -3205,21 +3199,15 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         >
                           <div
-                            className={undefined}
-                            size={32}
+                            onClick={[Function]}
                             style={
                               Object {
-                                "alignItems": "center",
-                                "backgroundColor": undefined,
+                                "backgroundImage": "linear-gradient(to bottom, #008020, #008020), url(checkerboard.png)",
                                 "borderRadius": "50%",
-                                "color": undefined,
-                                "display": "inline-flex",
-                                "fontSize": 16,
-                                "height": 32,
-                                "justifyContent": "center",
-                                "muiPrepared": true,
-                                "userSelect": "none",
-                                "width": 32,
+                                "height": "40px",
+                                "right": "14px",
+                                "top": "14px",
+                                "width": "40px",
                               }
                             }
                           />
@@ -3373,7 +3361,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       >
                         <img
                           className={undefined}
-                          color={undefined}
+                          color="#808000"
                           size={40}
                           src="https://artsdatabanken.no/Media/F16499?mode=480x480"
                           style={
@@ -3381,7 +3369,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "alignItems": "center",
                               "backgroundColor": "#00000000",
                               "borderRadius": "50%",
-                              "color": "#ffffff",
+                              "color": "#808000",
                               "display": "inline-flex",
                               "fontSize": 20,
                               "height": 40,
@@ -3406,21 +3394,15 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         >
                           <div
-                            className={undefined}
-                            size={32}
+                            onClick={[Function]}
                             style={
                               Object {
-                                "alignItems": "center",
-                                "backgroundColor": undefined,
+                                "backgroundImage": "linear-gradient(to bottom, #808000, #808000), url(checkerboard.png)",
                                 "borderRadius": "50%",
-                                "color": undefined,
-                                "display": "inline-flex",
-                                "fontSize": 16,
-                                "height": 32,
-                                "justifyContent": "center",
-                                "muiPrepared": true,
-                                "userSelect": "none",
-                                "width": 32,
+                                "height": "40px",
+                                "right": "14px",
+                                "top": "14px",
+                                "width": "40px",
                               }
                             }
                           />
@@ -3574,7 +3556,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       >
                         <img
                           className={undefined}
-                          color={undefined}
+                          color="#40cf00"
                           size={40}
                           src="https://artsdatabanken.no/Media/F16499?mode=480x480"
                           style={
@@ -3582,7 +3564,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "alignItems": "center",
                               "backgroundColor": "#00000000",
                               "borderRadius": "50%",
-                              "color": "#ffffff",
+                              "color": "#40cf00",
                               "display": "inline-flex",
                               "fontSize": 20,
                               "height": 40,
@@ -3607,21 +3589,15 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         >
                           <div
-                            className={undefined}
-                            size={32}
+                            onClick={[Function]}
                             style={
                               Object {
-                                "alignItems": "center",
-                                "backgroundColor": undefined,
+                                "backgroundImage": "linear-gradient(to bottom, #40cf00, #40cf00), url(checkerboard.png)",
                                 "borderRadius": "50%",
-                                "color": undefined,
-                                "display": "inline-flex",
-                                "fontSize": 16,
-                                "height": 32,
-                                "justifyContent": "center",
-                                "muiPrepared": true,
-                                "userSelect": "none",
-                                "width": 32,
+                                "height": "40px",
+                                "right": "14px",
+                                "top": "14px",
+                                "width": "40px",
                               }
                             }
                           />
@@ -4537,6 +4513,125 @@ exports[`Storyshots MainDrawer default 1`] = `
     </div>
   </div>
 </div>
+`;
+
+exports[`Storyshots PaintSwatch collection 1`] = `
+Array [
+  <div>
+    <div
+        onClick={[Function]}
+        style={
+            Object {
+                "backgroundImage": "linear-gradient(to bottom, rgba(0,0,255,1), rgba(0,0,255,1)), url(checkerboard.png)",
+                "borderRadius": "50%",
+                "height": "40px",
+                "right": "14px",
+                "top": "14px",
+                "width": "40px",
+              }
+        }
+    />
+    <p>
+        100
+        % alpha
+    </p>
+</div>,
+  <div>
+    <div
+        onClick={[Function]}
+        style={
+            Object {
+                "backgroundImage": "linear-gradient(to bottom, rgba(0,0,255,0.8), rgba(0,0,255,0.8)), url(checkerboard.png)",
+                "borderRadius": "50%",
+                "height": "40px",
+                "right": "14px",
+                "top": "14px",
+                "width": "40px",
+              }
+        }
+    />
+    <p>
+        80
+        % alpha
+    </p>
+</div>,
+  <div>
+    <div
+        onClick={[Function]}
+        style={
+            Object {
+                "backgroundImage": "linear-gradient(to bottom, rgba(0,0,255,0.6), rgba(0,0,255,0.6)), url(checkerboard.png)",
+                "borderRadius": "50%",
+                "height": "40px",
+                "right": "14px",
+                "top": "14px",
+                "width": "40px",
+              }
+        }
+    />
+    <p>
+        60
+        % alpha
+    </p>
+</div>,
+  <div>
+    <div
+        onClick={[Function]}
+        style={
+            Object {
+                "backgroundImage": "linear-gradient(to bottom, rgba(0,0,255,0.4), rgba(0,0,255,0.4)), url(checkerboard.png)",
+                "borderRadius": "50%",
+                "height": "40px",
+                "right": "14px",
+                "top": "14px",
+                "width": "40px",
+              }
+        }
+    />
+    <p>
+        40
+        % alpha
+    </p>
+</div>,
+  <div>
+    <div
+        onClick={[Function]}
+        style={
+            Object {
+                "backgroundImage": "linear-gradient(to bottom, rgba(0,0,255,0.2), rgba(0,0,255,0.2)), url(checkerboard.png)",
+                "borderRadius": "50%",
+                "height": "40px",
+                "right": "14px",
+                "top": "14px",
+                "width": "40px",
+              }
+        }
+    />
+    <p>
+        20
+        % alpha
+    </p>
+</div>,
+  <div>
+    <div
+        onClick={[Function]}
+        style={
+            Object {
+                "backgroundImage": "linear-gradient(to bottom, rgba(0,0,255,0), rgba(0,0,255,0)), url(checkerboard.png)",
+                "borderRadius": "50%",
+                "height": "40px",
+                "right": "14px",
+                "top": "14px",
+                "width": "40px",
+              }
+        }
+    />
+    <p>
+        0
+        % alpha
+    </p>
+</div>,
+]
 `;
 
 exports[`Storyshots PointInfo default 1`] = `

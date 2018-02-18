@@ -2,6 +2,7 @@ import React from 'react'
 import { Avatar } from 'material-ui'
 import { ListItem } from 'material-ui/List'
 import Kodetagg from '../Kodetagg'
+import PaintSwatch from './PaintSwatch'
 
 const rotkoder = {
   NA: { backgroundColor: '#228822', color: '#fff' },
@@ -100,13 +101,7 @@ class Kodelisteelement extends React.Component {
         onClick={() => this.props.onGoToCode(item.kode)}
         rightAvatar={
           <span style={{ display: 'inline-flex' }}>
-            <Avatar
-              size={32}
-              style={{
-                color: meta.textColor,
-                backgroundColor: meta.color,
-              }}
-            />
+            <PaintSwatch color={meta.color} />
           </span>
         }
       />
@@ -115,3 +110,4 @@ class Kodelisteelement extends React.Component {
 }
 
 export default Kodelisteelement
+//                color: meta.textColor,
