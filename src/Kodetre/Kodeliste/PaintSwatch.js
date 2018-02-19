@@ -1,5 +1,5 @@
 import React from 'react'
-import checkboard from './checkerboard.png'
+import { Checkboard } from 'react-color/lib/components/common'
 
 const PaintSwatch = ({ color, onClick }) => (
   <div
@@ -12,9 +12,10 @@ const PaintSwatch = ({ color, onClick }) => (
       height: '40px',
       width: '40px',
       borderRadius: '50%',
-      backgroundImage: `linear-gradient(to bottom, ${color}, ${color}), url(${checkboard})`,
     }}
-  />
+  >
+    <Checkboard borderRadius="50%" white={color} />
+  </div>
 )
 
 export default PaintSwatch
