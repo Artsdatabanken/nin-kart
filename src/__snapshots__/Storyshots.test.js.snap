@@ -2902,7 +2902,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       >
                         <img
                           className={undefined}
-                          color="#ff0000"
+                          color="rgba(0,0,255,1.0)"
                           size={40}
                           src="https://artsdatabanken.no/Media/F16499?mode=480x480"
                           style={
@@ -2910,7 +2910,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "alignItems": "center",
                               "backgroundColor": "#00000000",
                               "borderRadius": "50%",
-                              "color": "#ff0000",
+                              "color": "rgba(0,0,255,1.0)",
                               "display": "inline-flex",
                               "fontSize": 20,
                               "height": 40,
@@ -2939,35 +2939,40 @@ exports[`Storyshots KodeVindu default 1`] = `
                             style={
                               Object {
                                 "borderRadius": "50%",
-                                "height": "40px",
+                                "height": "28px",
                                 "right": "14px",
                                 "top": "14px",
-                                "width": "40px",
+                                "width": "28px",
                               }
                             }
                           >
                             <div
                               style={
                                 Object {
-                                  "MozBorderRadius": "50%",
-                                  "MozBoxShadow": undefined,
-                                  "OBorderRadius": "50%",
-                                  "OBoxShadow": undefined,
-                                  "WebkitBorderRadius": "50%",
-                                  "WebkitBoxShadow": undefined,
-                                  "background": "url(null) center left",
-                                  "borderRadius": "50%",
-                                  "bottom": "0px",
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "10%",
+                                  "bottom": 0,
                                   "boxShadow": undefined,
-                                  "left": "0px",
-                                  "msBorderRadius": "50%",
-                                  "msBoxShadow": undefined,
+                                  "left": 0,
                                   "position": "absolute",
-                                  "right": "0px",
-                                  "top": "0px",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                            />
+                            >
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": "rgba(0,0,255,1.0)",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
+                              />
+                            </div>
                           </div>
                         </span>
                         <span
@@ -3119,7 +3124,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       >
                         <img
                           className={undefined}
-                          color="#008020"
+                          color="rgba(96,96,255,0.8)"
                           size={40}
                           src="https://artsdatabanken.no/Media/F1200?mode=480x480"
                           style={
@@ -3127,7 +3132,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "alignItems": "center",
                               "backgroundColor": "#00000000",
                               "borderRadius": "50%",
-                              "color": "#008020",
+                              "color": "rgba(96,96,255,0.8)",
                               "display": "inline-flex",
                               "fontSize": 20,
                               "height": 40,
@@ -3156,35 +3161,40 @@ exports[`Storyshots KodeVindu default 1`] = `
                             style={
                               Object {
                                 "borderRadius": "50%",
-                                "height": "40px",
+                                "height": "28px",
                                 "right": "14px",
                                 "top": "14px",
-                                "width": "40px",
+                                "width": "28px",
                               }
                             }
                           >
                             <div
                               style={
                                 Object {
-                                  "MozBorderRadius": "50%",
-                                  "MozBoxShadow": undefined,
-                                  "OBorderRadius": "50%",
-                                  "OBoxShadow": undefined,
-                                  "WebkitBorderRadius": "50%",
-                                  "WebkitBoxShadow": undefined,
-                                  "background": "url(null) center left",
-                                  "borderRadius": "50%",
-                                  "bottom": "0px",
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "10%",
+                                  "bottom": 0,
                                   "boxShadow": undefined,
-                                  "left": "0px",
-                                  "msBorderRadius": "50%",
-                                  "msBoxShadow": undefined,
+                                  "left": 0,
                                   "position": "absolute",
-                                  "right": "0px",
-                                  "top": "0px",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                            />
+                            >
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": "rgba(96,96,255,0.8)",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
+                              />
+                            </div>
                           </div>
                         </span>
                         <span
@@ -3336,7 +3346,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       >
                         <img
                           className={undefined}
-                          color="#808000"
+                          color="rgba(96,96,255,0.6)"
                           size={40}
                           src="https://artsdatabanken.no/Media/F16499?mode=480x480"
                           style={
@@ -3344,7 +3354,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "alignItems": "center",
                               "backgroundColor": "#00000000",
                               "borderRadius": "50%",
-                              "color": "#808000",
+                              "color": "rgba(96,96,255,0.6)",
                               "display": "inline-flex",
                               "fontSize": 20,
                               "height": 40,
@@ -3373,35 +3383,40 @@ exports[`Storyshots KodeVindu default 1`] = `
                             style={
                               Object {
                                 "borderRadius": "50%",
-                                "height": "40px",
+                                "height": "28px",
                                 "right": "14px",
                                 "top": "14px",
-                                "width": "40px",
+                                "width": "28px",
                               }
                             }
                           >
                             <div
                               style={
                                 Object {
-                                  "MozBorderRadius": "50%",
-                                  "MozBoxShadow": undefined,
-                                  "OBorderRadius": "50%",
-                                  "OBoxShadow": undefined,
-                                  "WebkitBorderRadius": "50%",
-                                  "WebkitBoxShadow": undefined,
-                                  "background": "url(null) center left",
-                                  "borderRadius": "50%",
-                                  "bottom": "0px",
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "10%",
+                                  "bottom": 0,
                                   "boxShadow": undefined,
-                                  "left": "0px",
-                                  "msBorderRadius": "50%",
-                                  "msBoxShadow": undefined,
+                                  "left": 0,
                                   "position": "absolute",
-                                  "right": "0px",
-                                  "top": "0px",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                            />
+                            >
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": "rgba(96,96,255,0.6)",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
+                              />
+                            </div>
                           </div>
                         </span>
                         <span
@@ -3553,7 +3568,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       >
                         <img
                           className={undefined}
-                          color="#40cf00"
+                          color="rgba(96,96,255,0.4)"
                           size={40}
                           src="https://artsdatabanken.no/Media/F16499?mode=480x480"
                           style={
@@ -3561,7 +3576,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "alignItems": "center",
                               "backgroundColor": "#00000000",
                               "borderRadius": "50%",
-                              "color": "#40cf00",
+                              "color": "rgba(96,96,255,0.4)",
                               "display": "inline-flex",
                               "fontSize": 20,
                               "height": 40,
@@ -3590,35 +3605,40 @@ exports[`Storyshots KodeVindu default 1`] = `
                             style={
                               Object {
                                 "borderRadius": "50%",
-                                "height": "40px",
+                                "height": "28px",
                                 "right": "14px",
                                 "top": "14px",
-                                "width": "40px",
+                                "width": "28px",
                               }
                             }
                           >
                             <div
                               style={
                                 Object {
-                                  "MozBorderRadius": "50%",
-                                  "MozBoxShadow": undefined,
-                                  "OBorderRadius": "50%",
-                                  "OBoxShadow": undefined,
-                                  "WebkitBorderRadius": "50%",
-                                  "WebkitBoxShadow": undefined,
-                                  "background": "url(null) center left",
-                                  "borderRadius": "50%",
-                                  "bottom": "0px",
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "10%",
+                                  "bottom": 0,
                                   "boxShadow": undefined,
-                                  "left": "0px",
-                                  "msBorderRadius": "50%",
-                                  "msBoxShadow": undefined,
+                                  "left": 0,
                                   "position": "absolute",
-                                  "right": "0px",
-                                  "top": "0px",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                            />
+                            >
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": "rgba(96,96,255,0.4)",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
+                              />
+                            </div>
                           </div>
                         </span>
                         <span
@@ -4542,35 +4562,40 @@ Array [
         style={
             Object {
                 "borderRadius": "50%",
-                "height": "40px",
+                "height": "28px",
                 "right": "14px",
                 "top": "14px",
-                "width": "40px",
+                "width": "28px",
               }
         }
     >
         <div
             style={
                 Object {
-                    "MozBorderRadius": "50%",
-                    "MozBoxShadow": undefined,
-                    "OBorderRadius": "50%",
-                    "OBoxShadow": undefined,
-                    "WebkitBorderRadius": "50%",
-                    "WebkitBoxShadow": undefined,
-                    "background": "url(null) center left",
-                    "borderRadius": "50%",
-                    "bottom": "0px",
+                    "backgroundImage": "url(null)",
+                    "borderRadius": "10%",
+                    "bottom": 0,
                     "boxShadow": undefined,
-                    "left": "0px",
-                    "msBorderRadius": "50%",
-                    "msBoxShadow": undefined,
+                    "left": 0,
                     "position": "absolute",
-                    "right": "0px",
-                    "top": "0px",
+                    "right": 0,
+                    "top": 0,
                   }
             }
-        />
+        >
+            <div
+                style={
+                    Object {
+                        "backgroundColor": "rgba(0,0,255,1)",
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                }
+            />
+        </div>
     </div>
     <p>
         100
@@ -4583,35 +4608,40 @@ Array [
         style={
             Object {
                 "borderRadius": "50%",
-                "height": "40px",
+                "height": "28px",
                 "right": "14px",
                 "top": "14px",
-                "width": "40px",
+                "width": "28px",
               }
         }
     >
         <div
             style={
                 Object {
-                    "MozBorderRadius": "50%",
-                    "MozBoxShadow": undefined,
-                    "OBorderRadius": "50%",
-                    "OBoxShadow": undefined,
-                    "WebkitBorderRadius": "50%",
-                    "WebkitBoxShadow": undefined,
-                    "background": "url(null) center left",
-                    "borderRadius": "50%",
-                    "bottom": "0px",
+                    "backgroundImage": "url(null)",
+                    "borderRadius": "10%",
+                    "bottom": 0,
                     "boxShadow": undefined,
-                    "left": "0px",
-                    "msBorderRadius": "50%",
-                    "msBoxShadow": undefined,
+                    "left": 0,
                     "position": "absolute",
-                    "right": "0px",
-                    "top": "0px",
+                    "right": 0,
+                    "top": 0,
                   }
             }
-        />
+        >
+            <div
+                style={
+                    Object {
+                        "backgroundColor": "rgba(0,0,255,0.8)",
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                }
+            />
+        </div>
     </div>
     <p>
         80
@@ -4624,35 +4654,40 @@ Array [
         style={
             Object {
                 "borderRadius": "50%",
-                "height": "40px",
+                "height": "28px",
                 "right": "14px",
                 "top": "14px",
-                "width": "40px",
+                "width": "28px",
               }
         }
     >
         <div
             style={
                 Object {
-                    "MozBorderRadius": "50%",
-                    "MozBoxShadow": undefined,
-                    "OBorderRadius": "50%",
-                    "OBoxShadow": undefined,
-                    "WebkitBorderRadius": "50%",
-                    "WebkitBoxShadow": undefined,
-                    "background": "url(null) center left",
-                    "borderRadius": "50%",
-                    "bottom": "0px",
+                    "backgroundImage": "url(null)",
+                    "borderRadius": "10%",
+                    "bottom": 0,
                     "boxShadow": undefined,
-                    "left": "0px",
-                    "msBorderRadius": "50%",
-                    "msBoxShadow": undefined,
+                    "left": 0,
                     "position": "absolute",
-                    "right": "0px",
-                    "top": "0px",
+                    "right": 0,
+                    "top": 0,
                   }
             }
-        />
+        >
+            <div
+                style={
+                    Object {
+                        "backgroundColor": "rgba(0,0,255,0.6)",
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                }
+            />
+        </div>
     </div>
     <p>
         60
@@ -4665,35 +4700,40 @@ Array [
         style={
             Object {
                 "borderRadius": "50%",
-                "height": "40px",
+                "height": "28px",
                 "right": "14px",
                 "top": "14px",
-                "width": "40px",
+                "width": "28px",
               }
         }
     >
         <div
             style={
                 Object {
-                    "MozBorderRadius": "50%",
-                    "MozBoxShadow": undefined,
-                    "OBorderRadius": "50%",
-                    "OBoxShadow": undefined,
-                    "WebkitBorderRadius": "50%",
-                    "WebkitBoxShadow": undefined,
-                    "background": "url(null) center left",
-                    "borderRadius": "50%",
-                    "bottom": "0px",
+                    "backgroundImage": "url(null)",
+                    "borderRadius": "10%",
+                    "bottom": 0,
                     "boxShadow": undefined,
-                    "left": "0px",
-                    "msBorderRadius": "50%",
-                    "msBoxShadow": undefined,
+                    "left": 0,
                     "position": "absolute",
-                    "right": "0px",
-                    "top": "0px",
+                    "right": 0,
+                    "top": 0,
                   }
             }
-        />
+        >
+            <div
+                style={
+                    Object {
+                        "backgroundColor": "rgba(0,0,255,0.4)",
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                }
+            />
+        </div>
     </div>
     <p>
         40
@@ -4706,35 +4746,40 @@ Array [
         style={
             Object {
                 "borderRadius": "50%",
-                "height": "40px",
+                "height": "28px",
                 "right": "14px",
                 "top": "14px",
-                "width": "40px",
+                "width": "28px",
               }
         }
     >
         <div
             style={
                 Object {
-                    "MozBorderRadius": "50%",
-                    "MozBoxShadow": undefined,
-                    "OBorderRadius": "50%",
-                    "OBoxShadow": undefined,
-                    "WebkitBorderRadius": "50%",
-                    "WebkitBoxShadow": undefined,
-                    "background": "url(null) center left",
-                    "borderRadius": "50%",
-                    "bottom": "0px",
+                    "backgroundImage": "url(null)",
+                    "borderRadius": "10%",
+                    "bottom": 0,
                     "boxShadow": undefined,
-                    "left": "0px",
-                    "msBorderRadius": "50%",
-                    "msBoxShadow": undefined,
+                    "left": 0,
                     "position": "absolute",
-                    "right": "0px",
-                    "top": "0px",
+                    "right": 0,
+                    "top": 0,
                   }
             }
-        />
+        >
+            <div
+                style={
+                    Object {
+                        "backgroundColor": "rgba(0,0,255,0.2)",
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                }
+            />
+        </div>
     </div>
     <p>
         20
@@ -4747,35 +4792,40 @@ Array [
         style={
             Object {
                 "borderRadius": "50%",
-                "height": "40px",
+                "height": "28px",
                 "right": "14px",
                 "top": "14px",
-                "width": "40px",
+                "width": "28px",
               }
         }
     >
         <div
             style={
                 Object {
-                    "MozBorderRadius": "50%",
-                    "MozBoxShadow": undefined,
-                    "OBorderRadius": "50%",
-                    "OBoxShadow": undefined,
-                    "WebkitBorderRadius": "50%",
-                    "WebkitBoxShadow": undefined,
-                    "background": "url(null) center left",
-                    "borderRadius": "50%",
-                    "bottom": "0px",
+                    "backgroundImage": "url(null)",
+                    "borderRadius": "10%",
+                    "bottom": 0,
                     "boxShadow": undefined,
-                    "left": "0px",
-                    "msBorderRadius": "50%",
-                    "msBoxShadow": undefined,
+                    "left": 0,
                     "position": "absolute",
-                    "right": "0px",
-                    "top": "0px",
+                    "right": 0,
+                    "top": 0,
                   }
             }
-        />
+        >
+            <div
+                style={
+                    Object {
+                        "backgroundColor": "rgba(0,0,255,0)",
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                }
+            />
+        </div>
     </div>
     <p>
         0

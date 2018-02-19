@@ -38,7 +38,6 @@ class KodeVindu extends React.Component {
             />
           )}
           {props.meta.ingress && <div primaryText={props.meta.ingress} />}
-
           <List>
             {this.state.colorPicker && (
               <ColorPicker

@@ -1,5 +1,6 @@
 import React from 'react'
-import { Checkboard } from 'react-color/lib/components/common'
+import * as checkboard from 'react-color/lib/helpers/checkboard'
+import Checkboard from './Checkboard'
 
 const PaintSwatch = ({ color, onClick }) => (
   <div
@@ -9,12 +10,12 @@ const PaintSwatch = ({ color, onClick }) => (
     style={{
       top: '14px',
       right: '14px',
-      height: '40px',
-      width: '40px',
+      height: '28px',
+      width: '28px',
       borderRadius: '50%',
     }}
   >
-    <Checkboard borderRadius="50%" white={color} />
+    <Checkboard borderRadius="10%" color={color} />
   </div>
 )
 
