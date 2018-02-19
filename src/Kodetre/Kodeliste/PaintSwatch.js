@@ -1,5 +1,4 @@
 import React from 'react'
-import * as checkboard from 'react-color/lib/helpers/checkboard'
 import Checkboard from './Checkboard'
 
 const PaintSwatch = ({ color, onClick }) => (
