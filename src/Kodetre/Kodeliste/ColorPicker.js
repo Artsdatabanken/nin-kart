@@ -2,7 +2,7 @@ import React from 'react'
 import { CustomPicker } from 'react-color'
 import { Alpha, Hue, Saturation } from 'react-color/lib/components/common'
 import { Subheader } from 'material-ui'
-import { Chrome } from 'react-color'
+
 class ColorPicker extends React.Component {
   render() {
     return (
