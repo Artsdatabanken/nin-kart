@@ -1,11 +1,11 @@
 import React from 'react'
-import Kodelisteelement from './Kodelisteelement'
 import Kodekort from './Kodekort'
 import StatistikkContainer from '../Statistikk/StatistikkContainer'
-import { Paper, List, ListItem, Subheader } from 'material-ui'
+import { Paper, List, div, Subheader } from 'material-ui'
 import FetchContainer from '../../FetchContainer'
-import { ChromePicker } from 'react-color'
+import ColorPicker from './ColorPicker'
 import tinycolor from 'tinycolor2'
+import Kodeliste from './Kodeliste'
 
 class KodeVindu extends React.Component {
   handleShowColorpicker = kode => {
@@ -15,7 +15,6 @@ class KodeVindu extends React.Component {
 
   render() {
     const props = this.props
-    console.log(props)
     const selv = props.meta.selv || {}
     const navn = (selv.navn || props.data.navn || ' type').toLowerCase() // TODO: navn i meta
     return (
@@ -38,9 +37,22 @@ class KodeVindu extends React.Component {
               data={props.data}
             />
           )}
-          {props.meta.ingress && <ListItem primaryText={props.meta.ingress} />}
+          {props.meta.ingress && <div primaryText={props.meta.ingress} />}
 
           <List>
+            {this.state.colorPicker && (
+              <ColorPicker
+                color={props.meta.barn[this.state.colorPicker].color}
+                onChangeComplete={color =>
+                  props.onUpdateLayerProp(
+                    this.state.colorPicker,
+                    'color',
+                    tinycolor(color.rgb).toRgbString()
+                  )
+                }
+              />
+            )}
+
             <Kodeliste
               title={`Undernivåer av ${navn}`}
               apidata={props.data.barn}
@@ -73,66 +85,10 @@ class KodeVindu extends React.Component {
               </React.Fragment>
             )}
           </List>
-          {this.state.colorPicker && (
-            <ChromePicker
-              color={props.meta.barn[this.state.colorPicker].color}
-              onChangeComplete={color =>
-                props.onUpdateLayerProp(
-                  this.state.colorPicker,
-                  'color',
-                  tinycolor(color.rgb).toRgbString()
-                )
-              }
-            />
-          )}
         </Paper>
       </FetchContainer>
     )
   }
-}
-
-const Kodeliste = ({
-  title,
-  apidata,
-  metadata,
-  onGoToCode,
-  onMouseEnter,
-  onMouseLeave,
-  onShowColorpicker,
-  onUpdateLayerProp,
-}) => {
-  if (!metadata) return null
-  return (
-    <React.Fragment>
-      <Subheader>{title}</Subheader>
-      {Object.keys(metadata).map(item => {
-        const apibarn = apidata
-          ? apidata[
-              apidata
-                .map(apiItem => {
-                  return apiItem.kode
-                })
-                .indexOf(item)
-            ] || {}
-          : {}
-        const metabarnet = metadata[item] || {}
-        const kode = item.toString()
-        return (
-          <Kodelisteelement
-            kode={kode}
-            key={kode}
-            {...apibarn}
-            meta={metabarnet}
-            onGoToCode={onGoToCode}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-            onUpdateLayerProp={onUpdateLayerProp}
-            onShowColorpicker={() => onShowColorpicker(kode)}
-          />
-        )
-      })}
-    </React.Fragment>
-  )
 }
 
 export default KodeVindu
