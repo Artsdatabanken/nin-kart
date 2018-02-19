@@ -44,6 +44,13 @@ class KodeContainer extends React.Component {
     })
   }
 
+  handleUpdateLayerProp = (kode, key, value) => {
+    let meta = this.state.meta
+    let layer = meta.barn[kode]
+    layer[key] = value
+    this.setState({ meta: meta })
+  }
+
   render() {
     const data = this.state.data
     if (!data) return null
@@ -51,6 +58,7 @@ class KodeContainer extends React.Component {
       <KodeVindu
         data={data}
         meta={this.state.meta || {}}
+        onUpdateLayerProp={this.handleUpdateLayerProp}
         onGoToCode={this.props.onGoToCode}
         onMouseEnter={this.props.onMouseEnter}
         onMouseLeave={this.props.onMouseLeave}
