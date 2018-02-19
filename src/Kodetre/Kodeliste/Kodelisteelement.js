@@ -42,7 +42,6 @@ const rotkoder = {
 
 class Kodelisteelement extends React.Component {
   render() {
-    console.log(this.props.meta.color)
     const item = this.props
     const meta = this.props.meta
     const kode = this.props.kode

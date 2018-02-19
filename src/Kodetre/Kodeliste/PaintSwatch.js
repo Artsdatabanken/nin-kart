@@ -15,7 +15,7 @@ const PaintSwatch = ({ color, onClick }) => (
       borderRadius: '50%',
     }}
   >
-    <Checkboard borderRadius="10%" color={color} />
+    <Checkboard borderRadius="20%" color={color} />
   </div>
 )
 

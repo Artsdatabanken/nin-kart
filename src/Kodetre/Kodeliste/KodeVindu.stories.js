@@ -24,19 +24,19 @@ var api = {
 const meta = {
   barn: {
     NA_H1: {
-      color: 'rgba(0,0,255,1.0)',
+      color: 'rgba(96,96,255,1.0)',
       foto: 'https://artsdatabanken.no/Media/F16499?mode=480x480',
     },
     NA_H2: {
-      color: 'rgba(96,96,255,0.8)',
+      color: 'rgba(96,96,255,0.75)',
       foto: 'https://artsdatabanken.no/Media/F1200?mode=480x480',
     },
     NA_H3: {
-      color: 'rgba(96,96,255,0.6)',
+      color: 'rgba(96,96,255,0.5)',
       foto: 'https://artsdatabanken.no/Media/F16499?mode=480x480',
     },
     NA_H4: {
-      color: 'rgba(96,96,255,0.4)',
+      color: 'rgba(96,96,255,0.25)',
       foto: 'https://artsdatabanken.no/Media/F16499?mode=480x480',
     },
   },

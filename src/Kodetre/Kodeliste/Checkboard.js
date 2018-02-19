@@ -1,19 +1,10 @@
 import React from 'react'
 import * as checkboard from 'react-color/lib/helpers/checkboard'
 
-const Checkboard = ({
-  color,
-  white,
-  grey,
-  size,
-  renderers,
-  borderRadius,
-  boxShadow,
-}) => {
+const Checkboard = ({ color, white, grey, size, renderers, borderRadius }) => {
   const styles = {
     grid: {
       borderRadius,
-      boxShadow,
       position: 'absolute',
       left: 0,
       right: 0,
@@ -31,6 +22,7 @@ const Checkboard = ({
     <div style={styles.grid}>
       <div
         style={{
+          borderRadius,
           backgroundColor: color,
           position: 'absolute',
           top: 0,
