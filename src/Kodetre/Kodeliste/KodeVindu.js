@@ -1,8 +1,7 @@
 import React from 'react'
-import Kodelisteelement from './Kodelisteelement'
 import Kodekort from './Kodekort'
 import StatistikkContainer from '../Statistikk/StatistikkContainer'
-import { Paper, List, ListItem, Subheader } from 'material-ui'
+import { Paper, List, div, Subheader } from 'material-ui'
 import FetchContainer from '../../FetchContainer'
 import ColorPicker from './ColorPicker'
 import tinycolor from 'tinycolor2'
@@ -38,7 +37,7 @@ class KodeVindu extends React.Component {
               data={props.data}
             />
           )}
-          {props.meta.ingress && <ListItem primaryText={props.meta.ingress} />}
+          {props.meta.ingress && <div primaryText={props.meta.ingress} />}
 
           <List>
             {this.state.colorPicker && (

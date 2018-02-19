@@ -1,10 +1,6 @@
 import React from 'react'
 import Kodelisteelement from './Kodelisteelement'
-import Kodekort from './Kodekort'
-import StatistikkContainer from '../Statistikk/StatistikkContainer'
-import { Paper, List, ListItem, Subheader } from 'material-ui'
-import FetchContainer from '../../FetchContainer'
-import tinycolor from 'tinycolor2'
+import { Subheader } from 'material-ui'
 
 const Kodeliste = ({
   title,
