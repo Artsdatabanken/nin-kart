@@ -42,6 +42,13 @@ class KodeVindu extends React.Component {
             {this.state.colorPicker && (
               <ColorPicker
                 color={props.meta.barn[this.state.colorPicker].color}
+                onChange={color =>
+                  props.onUpdateLayerProp(
+                    this.state.colorPicker,
+                    'color',
+                    tinycolor(color.rgb).toRgbString()
+                  )
+                }
                 onChangeComplete={color =>
                   props.onUpdateLayerProp(
                     this.state.colorPicker,
