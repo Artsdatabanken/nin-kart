@@ -3007,7 +3007,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                             onClick={[Function]}
                             style={
                               Object {
-                                "backgroundImage": "linear-gradient(to bottom, #ff0000, #ff0000), url(checkerboard.png)",
                                 "borderRadius": "50%",
                                 "height": "40px",
                                 "right": "14px",
@@ -3015,7 +3014,30 @@ exports[`Storyshots KodeVindu default 1`] = `
                                 "width": "40px",
                               }
                             }
-                          />
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "MozBorderRadius": "50%",
+                                  "MozBoxShadow": undefined,
+                                  "OBorderRadius": "50%",
+                                  "OBoxShadow": undefined,
+                                  "WebkitBorderRadius": "50%",
+                                  "WebkitBoxShadow": undefined,
+                                  "background": "url(null) center left",
+                                  "borderRadius": "50%",
+                                  "bottom": "0px",
+                                  "boxShadow": undefined,
+                                  "left": "0px",
+                                  "msBorderRadius": "50%",
+                                  "msBoxShadow": undefined,
+                                  "position": "absolute",
+                                  "right": "0px",
+                                  "top": "0px",
+                                }
+                              }
+                            />
+                          </div>
                         </span>
                         <span
                           style={
@@ -3202,7 +3224,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                             onClick={[Function]}
                             style={
                               Object {
-                                "backgroundImage": "linear-gradient(to bottom, #008020, #008020), url(checkerboard.png)",
                                 "borderRadius": "50%",
                                 "height": "40px",
                                 "right": "14px",
@@ -3210,7 +3231,30 @@ exports[`Storyshots KodeVindu default 1`] = `
                                 "width": "40px",
                               }
                             }
-                          />
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "MozBorderRadius": "50%",
+                                  "MozBoxShadow": undefined,
+                                  "OBorderRadius": "50%",
+                                  "OBoxShadow": undefined,
+                                  "WebkitBorderRadius": "50%",
+                                  "WebkitBoxShadow": undefined,
+                                  "background": "url(null) center left",
+                                  "borderRadius": "50%",
+                                  "bottom": "0px",
+                                  "boxShadow": undefined,
+                                  "left": "0px",
+                                  "msBorderRadius": "50%",
+                                  "msBoxShadow": undefined,
+                                  "position": "absolute",
+                                  "right": "0px",
+                                  "top": "0px",
+                                }
+                              }
+                            />
+                          </div>
                         </span>
                         <span
                           style={
@@ -3397,7 +3441,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                             onClick={[Function]}
                             style={
                               Object {
-                                "backgroundImage": "linear-gradient(to bottom, #808000, #808000), url(checkerboard.png)",
                                 "borderRadius": "50%",
                                 "height": "40px",
                                 "right": "14px",
@@ -3405,7 +3448,30 @@ exports[`Storyshots KodeVindu default 1`] = `
                                 "width": "40px",
                               }
                             }
-                          />
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "MozBorderRadius": "50%",
+                                  "MozBoxShadow": undefined,
+                                  "OBorderRadius": "50%",
+                                  "OBoxShadow": undefined,
+                                  "WebkitBorderRadius": "50%",
+                                  "WebkitBoxShadow": undefined,
+                                  "background": "url(null) center left",
+                                  "borderRadius": "50%",
+                                  "bottom": "0px",
+                                  "boxShadow": undefined,
+                                  "left": "0px",
+                                  "msBorderRadius": "50%",
+                                  "msBoxShadow": undefined,
+                                  "position": "absolute",
+                                  "right": "0px",
+                                  "top": "0px",
+                                }
+                              }
+                            />
+                          </div>
                         </span>
                         <span
                           style={
@@ -3592,7 +3658,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                             onClick={[Function]}
                             style={
                               Object {
-                                "backgroundImage": "linear-gradient(to bottom, #40cf00, #40cf00), url(checkerboard.png)",
                                 "borderRadius": "50%",
                                 "height": "40px",
                                 "right": "14px",
@@ -3600,7 +3665,30 @@ exports[`Storyshots KodeVindu default 1`] = `
                                 "width": "40px",
                               }
                             }
-                          />
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "MozBorderRadius": "50%",
+                                  "MozBoxShadow": undefined,
+                                  "OBorderRadius": "50%",
+                                  "OBoxShadow": undefined,
+                                  "WebkitBorderRadius": "50%",
+                                  "WebkitBoxShadow": undefined,
+                                  "background": "url(null) center left",
+                                  "borderRadius": "50%",
+                                  "bottom": "0px",
+                                  "boxShadow": undefined,
+                                  "left": "0px",
+                                  "msBorderRadius": "50%",
+                                  "msBoxShadow": undefined,
+                                  "position": "absolute",
+                                  "right": "0px",
+                                  "top": "0px",
+                                }
+                              }
+                            />
+                          </div>
                         </span>
                         <span
                           style={
@@ -4522,7 +4610,6 @@ Array [
         onClick={[Function]}
         style={
             Object {
-                "backgroundImage": "linear-gradient(to bottom, rgba(0,0,255,1), rgba(0,0,255,1)), url(checkerboard.png)",
                 "borderRadius": "50%",
                 "height": "40px",
                 "right": "14px",
@@ -4530,7 +4617,30 @@ Array [
                 "width": "40px",
               }
         }
-    />
+    >
+        <div
+            style={
+                Object {
+                    "MozBorderRadius": "50%",
+                    "MozBoxShadow": undefined,
+                    "OBorderRadius": "50%",
+                    "OBoxShadow": undefined,
+                    "WebkitBorderRadius": "50%",
+                    "WebkitBoxShadow": undefined,
+                    "background": "url(null) center left",
+                    "borderRadius": "50%",
+                    "bottom": "0px",
+                    "boxShadow": undefined,
+                    "left": "0px",
+                    "msBorderRadius": "50%",
+                    "msBoxShadow": undefined,
+                    "position": "absolute",
+                    "right": "0px",
+                    "top": "0px",
+                  }
+            }
+        />
+    </div>
     <p>
         100
         % alpha
@@ -4541,7 +4651,6 @@ Array [
         onClick={[Function]}
         style={
             Object {
-                "backgroundImage": "linear-gradient(to bottom, rgba(0,0,255,0.8), rgba(0,0,255,0.8)), url(checkerboard.png)",
                 "borderRadius": "50%",
                 "height": "40px",
                 "right": "14px",
@@ -4549,7 +4658,30 @@ Array [
                 "width": "40px",
               }
         }
-    />
+    >
+        <div
+            style={
+                Object {
+                    "MozBorderRadius": "50%",
+                    "MozBoxShadow": undefined,
+                    "OBorderRadius": "50%",
+                    "OBoxShadow": undefined,
+                    "WebkitBorderRadius": "50%",
+                    "WebkitBoxShadow": undefined,
+                    "background": "url(null) center left",
+                    "borderRadius": "50%",
+                    "bottom": "0px",
+                    "boxShadow": undefined,
+                    "left": "0px",
+                    "msBorderRadius": "50%",
+                    "msBoxShadow": undefined,
+                    "position": "absolute",
+                    "right": "0px",
+                    "top": "0px",
+                  }
+            }
+        />
+    </div>
     <p>
         80
         % alpha
@@ -4560,7 +4692,6 @@ Array [
         onClick={[Function]}
         style={
             Object {
-                "backgroundImage": "linear-gradient(to bottom, rgba(0,0,255,0.6), rgba(0,0,255,0.6)), url(checkerboard.png)",
                 "borderRadius": "50%",
                 "height": "40px",
                 "right": "14px",
@@ -4568,7 +4699,30 @@ Array [
                 "width": "40px",
               }
         }
-    />
+    >
+        <div
+            style={
+                Object {
+                    "MozBorderRadius": "50%",
+                    "MozBoxShadow": undefined,
+                    "OBorderRadius": "50%",
+                    "OBoxShadow": undefined,
+                    "WebkitBorderRadius": "50%",
+                    "WebkitBoxShadow": undefined,
+                    "background": "url(null) center left",
+                    "borderRadius": "50%",
+                    "bottom": "0px",
+                    "boxShadow": undefined,
+                    "left": "0px",
+                    "msBorderRadius": "50%",
+                    "msBoxShadow": undefined,
+                    "position": "absolute",
+                    "right": "0px",
+                    "top": "0px",
+                  }
+            }
+        />
+    </div>
     <p>
         60
         % alpha
@@ -4579,7 +4733,6 @@ Array [
         onClick={[Function]}
         style={
             Object {
-                "backgroundImage": "linear-gradient(to bottom, rgba(0,0,255,0.4), rgba(0,0,255,0.4)), url(checkerboard.png)",
                 "borderRadius": "50%",
                 "height": "40px",
                 "right": "14px",
@@ -4587,7 +4740,30 @@ Array [
                 "width": "40px",
               }
         }
-    />
+    >
+        <div
+            style={
+                Object {
+                    "MozBorderRadius": "50%",
+                    "MozBoxShadow": undefined,
+                    "OBorderRadius": "50%",
+                    "OBoxShadow": undefined,
+                    "WebkitBorderRadius": "50%",
+                    "WebkitBoxShadow": undefined,
+                    "background": "url(null) center left",
+                    "borderRadius": "50%",
+                    "bottom": "0px",
+                    "boxShadow": undefined,
+                    "left": "0px",
+                    "msBorderRadius": "50%",
+                    "msBoxShadow": undefined,
+                    "position": "absolute",
+                    "right": "0px",
+                    "top": "0px",
+                  }
+            }
+        />
+    </div>
     <p>
         40
         % alpha
@@ -4598,7 +4774,6 @@ Array [
         onClick={[Function]}
         style={
             Object {
-                "backgroundImage": "linear-gradient(to bottom, rgba(0,0,255,0.2), rgba(0,0,255,0.2)), url(checkerboard.png)",
                 "borderRadius": "50%",
                 "height": "40px",
                 "right": "14px",
@@ -4606,7 +4781,30 @@ Array [
                 "width": "40px",
               }
         }
-    />
+    >
+        <div
+            style={
+                Object {
+                    "MozBorderRadius": "50%",
+                    "MozBoxShadow": undefined,
+                    "OBorderRadius": "50%",
+                    "OBoxShadow": undefined,
+                    "WebkitBorderRadius": "50%",
+                    "WebkitBoxShadow": undefined,
+                    "background": "url(null) center left",
+                    "borderRadius": "50%",
+                    "bottom": "0px",
+                    "boxShadow": undefined,
+                    "left": "0px",
+                    "msBorderRadius": "50%",
+                    "msBoxShadow": undefined,
+                    "position": "absolute",
+                    "right": "0px",
+                    "top": "0px",
+                  }
+            }
+        />
+    </div>
     <p>
         20
         % alpha
@@ -4617,7 +4815,6 @@ Array [
         onClick={[Function]}
         style={
             Object {
-                "backgroundImage": "linear-gradient(to bottom, rgba(0,0,255,0), rgba(0,0,255,0)), url(checkerboard.png)",
                 "borderRadius": "50%",
                 "height": "40px",
                 "right": "14px",
@@ -4625,7 +4822,30 @@ Array [
                 "width": "40px",
               }
         }
-    />
+    >
+        <div
+            style={
+                Object {
+                    "MozBorderRadius": "50%",
+                    "MozBoxShadow": undefined,
+                    "OBorderRadius": "50%",
+                    "OBoxShadow": undefined,
+                    "WebkitBorderRadius": "50%",
+                    "WebkitBoxShadow": undefined,
+                    "background": "url(null) center left",
+                    "borderRadius": "50%",
+                    "bottom": "0px",
+                    "boxShadow": undefined,
+                    "left": "0px",
+                    "msBorderRadius": "50%",
+                    "msBoxShadow": undefined,
+                    "position": "absolute",
+                    "right": "0px",
+                    "top": "0px",
+                  }
+            }
+        />
+    </div>
     <p>
         0
         % alpha
