@@ -54,7 +54,10 @@ storiesOf('KodeVindu', module)
     <KodeVindu
       data={api}
       meta={meta}
+      onUpdateLayerProp={action('updateLayerProp')}
       onMouseEnter={action('mouseEnter')}
+      onMouseLeave={action('mouseLeave')}
       onClick={action('click')}
+      onShowColorpicker={action('showColorpicker')}
     />
   ))
