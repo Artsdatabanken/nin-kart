@@ -3063,6 +3063,13 @@ exports[`Storyshots KodeVindu default 1`] = `
                     </div>
                   </span>
                 </div>
+                <div
+                  style={
+                    Object {
+                      "marginLeft": 56,
+                    }
+                  }
+                />
                 <div>
                   <span
                     disabled={false}
@@ -3285,6 +3292,13 @@ exports[`Storyshots KodeVindu default 1`] = `
                     </div>
                   </span>
                 </div>
+                <div
+                  style={
+                    Object {
+                      "marginLeft": 56,
+                    }
+                  }
+                />
                 <div>
                   <span
                     disabled={false}
@@ -3507,6 +3521,13 @@ exports[`Storyshots KodeVindu default 1`] = `
                     </div>
                   </span>
                 </div>
+                <div
+                  style={
+                    Object {
+                      "marginLeft": 56,
+                    }
+                  }
+                />
                 <div>
                   <span
                     disabled={false}
@@ -3729,6 +3750,13 @@ exports[`Storyshots KodeVindu default 1`] = `
                     </div>
                   </span>
                 </div>
+                <div
+                  style={
+                    Object {
+                      "marginLeft": 56,
+                    }
+                  }
+                />
               </div>
             </div>
           </div>
