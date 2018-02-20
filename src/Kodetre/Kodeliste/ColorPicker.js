@@ -33,7 +33,6 @@ const Blokk = ({ height, children }) => (
       marginLeft: 16,
       marginRight: 16,
       marginBottom: 16,
-      marginTop: 16,
       height: height || 10,
       position: 'relative',
     }}
