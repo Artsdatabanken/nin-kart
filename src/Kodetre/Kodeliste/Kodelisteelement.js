@@ -128,13 +128,6 @@ class Kodelisteelement extends React.Component {
                   tinycolor(color.rgb).toRgbString()
                 )
               }
-              onChangeComplete={color =>
-                this.props.onUpdateLayerProp(
-                  this.state.ekspandertKode,
-                  'color',
-                  tinycolor(color.rgb).toRgbString()
-                )
-              }
             />
           )}
         </div>

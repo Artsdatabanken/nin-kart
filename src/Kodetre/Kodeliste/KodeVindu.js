@@ -47,6 +47,7 @@ class KodeVindu extends React.Component {
               onMouseEnter={props.onMouseEnter}
               onMouseLeave={props.onMouseLeave}
               onShowColorpicker={this.handleShowColorpicker}
+              onUpdateLayerProp={props.onUpdateLayerProp}
             />
 
             {false && (
@@ -59,6 +60,7 @@ class KodeVindu extends React.Component {
                   onGoToCode={props.onGoToCode}
                   onMouseEnter={props.onMouseEnter}
                   onMouseLeave={props.onMouseLeave}
+                  onUpdateLayerProp={props.onUpdateLayerProp}
                 />
               </React.Fragment>
             )}
