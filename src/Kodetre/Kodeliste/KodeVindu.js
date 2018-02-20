@@ -3,13 +3,12 @@ import Kodekort from './Kodekort'
 import StatistikkContainer from '../Statistikk/StatistikkContainer'
 import { Paper, List, div, Subheader } from 'material-ui'
 import FetchContainer from '../../FetchContainer'
-import ColorPicker from './ColorPicker'
-import tinycolor from 'tinycolor2'
 import Kodeliste from './Kodeliste'
 
 class KodeVindu extends React.Component {
   handleShowColorpicker = kode => {
-    this.setState({ colorPicker: kode })
+    const nyKode = this.state.ekspandertKode === kode ? null : kode
+    this.setState({ ekspandertKode: nyKode })
   }
   state = {}
 
@@ -39,27 +38,16 @@ class KodeVindu extends React.Component {
           )}
           {props.meta.ingress && <div primaryText={props.meta.ingress} />}
           <List>
-            {this.state.colorPicker && (
-              <ColorPicker
-                color={props.meta.barn[this.state.colorPicker].color}
-                onChangeComplete={color =>
-                  props.onUpdateLayerProp(
-                    this.state.colorPicker,
-                    'color',
-                    tinycolor(color.rgb).toRgbString()
-                  )
-                }
-              />
-            )}
-
             <Kodeliste
               title={`Undernivåer av ${navn}`}
               apidata={props.data.barn}
               metadata={props.meta.barn}
+              ekspandertKode={this.state.ekspandertKode}
               onGoToCode={props.onGoToCode}
               onMouseEnter={props.onMouseEnter}
               onMouseLeave={props.onMouseLeave}
               onShowColorpicker={this.handleShowColorpicker}
+              onUpdateLayerProp={props.onUpdateLayerProp}
             />
 
             {false && (
@@ -68,9 +56,11 @@ class KodeVindu extends React.Component {
                   title={`Diagnostiske arter`}
                   apidata={props.data.barn}
                   metadata={props.meta}
+                  ekspandertKode={this.state.ekspandertKode}
                   onGoToCode={props.onGoToCode}
                   onMouseEnter={props.onMouseEnter}
                   onMouseLeave={props.onMouseLeave}
+                  onUpdateLayerProp={props.onUpdateLayerProp}
                 />
               </React.Fragment>
             )}

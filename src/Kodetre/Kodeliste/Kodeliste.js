@@ -7,6 +7,7 @@ const Kodeliste = ({
   apidata,
   metadata,
   onGoToCode,
+  ekspandertKode,
   onMouseEnter,
   onMouseLeave,
   onShowColorpicker,
@@ -34,6 +35,7 @@ const Kodeliste = ({
             key={kode}
             {...apibarn}
             meta={metabarnet}
+            erEkspandert={kode === ekspandertKode}
             onGoToCode={onGoToCode}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}

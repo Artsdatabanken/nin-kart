@@ -1,8 +1,10 @@
 import React from 'react'
 import { Avatar } from 'material-ui'
 import { ListItem } from 'material-ui/List'
+import tinycolor from 'tinycolor2'
 import Kodetagg from '../Kodetagg'
 import PaintSwatch from './PaintSwatch'
+import ColorPicker from './ColorPicker'
 
 const rotkoder = {
   NA: { backgroundColor: '#228822', color: '#fff' },
@@ -67,52 +69,69 @@ class Kodelisteelement extends React.Component {
       rotmeta = rotkoder['MV'] // use this as default for unknown codes instead of blowing up
     }
     return (
-      <ListItem
-        key={item.kode}
-        onMouseEnter={() => this.props.onMouseEnter(kode)}
-        onMouseLeave={() => {
-          this.props.onMouseLeave(kode)
-        }}
-        leftAvatar={
-          <Avatar
-            style={meta.utenRamme ? { borderRadius: 0 } : {}}
-            color={meta.color}
-            backgroundColor={meta.backgroundColor || '#00000000'}
-            src={meta.avatarbilde || meta.foto}
-          >
-            {meta.kode}
-          </Avatar>
-        }
-        primaryText={
-          <span>
-            {(meta.navn || item.navn || item.kode) +
-              (meta.navnSci ? ` (${meta.navnSci})` : '')}
+      <React.Fragment>
+        <ListItem
+          key={item.kode}
+          onMouseEnter={() => this.props.onMouseEnter(kode)}
+          onMouseLeave={() => {
+            this.props.onMouseLeave(kode)
+          }}
+          leftAvatar={
+            <Avatar
+              style={meta.utenRamme ? { borderRadius: 0 } : {}}
+              color={meta.color}
+              backgroundColor={meta.backgroundColor || '#00000000'}
+              src={meta.avatarbilde || meta.foto}
+            >
+              {meta.kode}
+            </Avatar>
+          }
+          primaryText={
+            <span>
+              {(meta.navn || item.navn || item.kode) +
+                (meta.navnSci ? ` (${meta.navnSci})` : '')}
+              <span style={{ display: 'inline-flex' }}>
+                &nbsp;<Kodetagg
+                  kode={item.kode}
+                  navn={parts[1]}
+                  color="#222"
+                  backgroundColor="#ccc"
+                />
+              </span>
+            </span>
+          }
+          secondaryText={`${((item.antall || 0) * 0.15).toFixed(
+            1
+          )} km² i ${item.antall || '0'} områder`}
+          onClick={() => this.props.onGoToCode(item.kode)}
+          rightAvatar={
             <span style={{ display: 'inline-flex' }}>
-              &nbsp;<Kodetagg
-                kode={item.kode}
-                navn={parts[1]}
-                color="#222"
-                backgroundColor="#ccc"
+              <PaintSwatch
+                color={meta.color}
+                onClick={e => {
+                  e.stopPropagation()
+                  this.props.onShowColorpicker(meta.kode)
+                }}
               />
             </span>
-          </span>
-        }
-        secondaryText={`${((item.antall || 0) * 0.15).toFixed(
-          1
-        )} km² i ${item.antall || '0'} områder`}
-        onClick={() => this.props.onGoToCode(item.kode)}
-        rightAvatar={
-          <span style={{ display: 'inline-flex' }}>
-            <PaintSwatch
+          }
+        />
+        <div style={{ marginLeft: 56 }}>
+          {this.props.erEkspandert && (
+            <ColorPicker
+              style={{ display: 'fixed' }}
               color={meta.color}
-              onClick={e => {
-                e.stopPropagation()
-                this.props.onShowColorpicker(meta.kode)
-              }}
+              onChange={color =>
+                this.props.onUpdateLayerProp(
+                  item.kode,
+                  'color',
+                  tinycolor(color.rgb).toRgbString()
+                )
+              }
             />
-          </span>
-        }
-      />
+          )}
+        </div>
+      </React.Fragment>
     )
   }
 }

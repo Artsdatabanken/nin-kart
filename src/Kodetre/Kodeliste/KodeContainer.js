@@ -14,6 +14,7 @@ class KodeContainer extends React.Component {
 
   componentDidMount() {
     this.fetchData(this.props.kode)
+    this.fetchMeta(this.props.kode)
   }
 
   componentWillUnmount() {
@@ -21,11 +22,20 @@ class KodeContainer extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (
-      this.props.kode !== nextProps.kode ||
-      this.props.mapbounds !== nextProps.mapbounds
-    )
+    if (this.props.kode !== nextProps.kode) {
+      this.fetchMeta(nextProps.kode)
       this.fetchData(nextProps.kode)
+    } else if (this.props.mapbounds !== nextProps.mapbounds)
+      this.fetchData(nextProps.kode)
+  }
+
+  fetchMeta(kode) {
+    this.queryNumber++
+    const currentQuery = this.queryNumber
+    backend.hentKodeMeta(kode).then(data => {
+      if (currentQuery !== this.queryNumber) return // Abort stale query
+      this.setState({ meta: data })
+    })
   }
 
   fetchData(kode) {
@@ -38,10 +48,6 @@ class KodeContainer extends React.Component {
         if (currentQuery !== this.queryNumber) return // Abort stale query
         this.setState({ data: data })
       })
-    backend.hentKodeMeta(kode).then(data => {
-      if (currentQuery !== this.queryNumber) return // Abort stale query
-      this.setState({ meta: data })
-    })
   }
 
   handleUpdateLayerProp = (kode, key, value) => {
