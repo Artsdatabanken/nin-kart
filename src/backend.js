@@ -1,6 +1,6 @@
 import { request } from 'graphql-request'
 import rename from './rename'
-import { wgs84ToUtm33 } from './projection'
+import { wgs84ToUtm33, createBboxFromPoint } from './projection'
 
 class Backend {
   static async postFilterPromise(url, filter) {
