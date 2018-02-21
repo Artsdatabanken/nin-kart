@@ -200,7 +200,7 @@ class PunktinformasjonContainer extends Component {
   }
 
   goFetchPointInfo(lng, lat) {
-    backend.hentRasterPunkt(lng, lat).then(data => {
+    backend.hentPunkt(lng, lat).then(data => {
       this.setState({
         pointInfo: data,
       })

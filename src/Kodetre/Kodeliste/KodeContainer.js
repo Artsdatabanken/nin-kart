@@ -10,7 +10,8 @@ class KodeContainer extends React.Component {
     this.state = {}
   }
 
-  queryNumber = 0
+  dataQueryNumber = 0
+  metaQueryNumber = 0
 
   componentDidMount() {
     this.fetchData(this.props.kode)
@@ -30,22 +31,22 @@ class KodeContainer extends React.Component {
   }
 
   fetchMeta(kode) {
-    this.queryNumber++
-    const currentQuery = this.queryNumber
+    this.metaQueryNumber++
+    const currentQuery = this.metaQueryNumber
     backend.hentKodeMeta(kode).then(data => {
-      if (currentQuery !== this.queryNumber) return // Abort stale query
+      if (currentQuery !== this.metaQueryNumber) return // Abort stale query
       this.setState({ meta: data })
     })
   }
 
   fetchData(kode) {
-    this.queryNumber++
-    const currentQuery = this.queryNumber
+    this.dataQueryNumber++
+    const currentQuery = this.dataQueryNumber
     backend
       .hentKode(kode, this.props.mapbounds)
       .then(data => rename(data))
       .then(data => {
-        if (currentQuery !== this.queryNumber) return // Abort stale query
+        if (currentQuery !== this.dataQueryNumber) return // Abort stale query
         this.setState({ data: data })
       })
   }
@@ -59,7 +60,8 @@ class KodeContainer extends React.Component {
 
   render() {
     const data = this.state.data
-    if (!data) return null
+    const meta = this.state.meta
+    if (!meta) return null
     return (
       <KodeVindu
         data={data}
