@@ -8,8 +8,6 @@ import muiThemeable from 'material-ui/styles/muiThemeable'
 import hentLag from './style-lookup'
 import backend from '../../backend'
 import DeckGL, { GridLayer } from 'deck.gl'
-
-import smallTaxons from './29850_4326.json'
 import Color from 'color'
 
 const LIGHT_SETTINGS = {
@@ -20,11 +18,13 @@ const LIGHT_SETTINGS = {
   lightsStrength: [1.0, 0.0, 2.0, 0.0],
   numberOfLights: 2,
 }
+const colorScale = r => [r * 255, 140, 200 * (1 - r)]
 
 class Mapbox extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      utbredelsesData: [],
       showTaxonGrid: false,
       viewport: {
         width: window.innerWidth,
@@ -50,11 +50,11 @@ class Mapbox extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.opplystKode !== this.props.opplystKode) {
-      //      this.updateAktivKode(nextProps.aktivKode, nextProps.opplystKode)
+      this.updateAktivKode(nextProps.aktivKode, nextProps.opplystKode)
     }
 
     if (nextProps.aktivKode !== this.props.aktivKode) {
-      //    this.updateAktivKode(nextProps.aktivKode, nextProps.opplystKode)
+      this.updateAktivKode(nextProps.aktivKode, nextProps.opplystKode)
       this.tempHackFetchMeta(nextProps.aktivKode)
     }
   }
@@ -62,7 +62,31 @@ class Mapbox extends Component {
   updateAktivKode(kode, opplystKode) {
     kode = kode || 'ROT'
     let map = this.map.getMap()
-    if (!map || !map.isStyleLoaded()) return
+    if (kode && kode !== this.props.aktivKode) {
+      let taxonMatch = kode.match(/TX_(.*)/)
+      if (taxonMatch) {
+        backend.getKodeUtbredelse(kode).then(data => {
+          this.setState({ utbredelsesData: data })
+        })
+      }
+      backend.getKodeBBox(kode).then(data => {
+        if (map && data) {
+          map.fitBounds([[data[2], data[3]], [data[0], data[1]]], {
+            padding: { top: 10, bottom: 25, left: 15, right: 5 },
+          })
+        }
+      })
+    }
+
+    if (!map || !map.isStyleLoaded()) {
+      console.log(
+        'kode: ' +
+          kode +
+          ' mapstyle loaded: ' +
+          (map ? map.isStyleLoaded() : false)
+      )
+      return
+    }
 
     map.removeLayer(this.props.aktivKode)
     let taxonMatch = kode.match(/TX_(.*)/)
@@ -101,26 +125,28 @@ class Mapbox extends Component {
       map.removeLayer('naturomrader6-hover')
       map.removeLayer('Rodlistede')
       //      console.log(map.getStyle().layers)
-      Object.keys(this.state.meta.barn).forEach(kode => {
-        const barn = this.state.meta.barn[kode]
-        map.removeLayer(kode)
-        let lag = hentLag(map, kode)
-        if (lag && lag.type === 'fill') {
-          let fillColor = Color(barn.color).alpha(0.35)
-          const isHighlighted = kode === opplystKode
-          if (isHighlighted) {
-            fillColor = fillColor.lightness(90).saturate(90)
-            //            fillColor = Color('#ff8000')
+      if (this.state.meta.barn) {
+        Object.keys(this.state.meta.barn).forEach(kode => {
+          const barn = this.state.meta.barn[kode]
+          map.removeLayer(kode)
+          let lag = hentLag(map, kode)
+          if (lag && lag.type === 'fill') {
+            let fillColor = Color(barn.color).alpha(0.35)
+            const isHighlighted = kode === opplystKode
+            if (isHighlighted) {
+              fillColor = fillColor.lightness(90).saturate(90)
+              //            fillColor = Color('#ff8000')
+            }
+            //            .saturate(4.0)
+            lag.paint['fill-color'] = fillColor.rgbaString()
+            const outlineColor = isHighlighted
+              ? fillColor.darken(0.5)
+              : fillColor.darken(0.9)
+            lag.paint['fill-outline-color'] = outlineColor.rgbaString()
+            map.addLayer(lag, 'building')
           }
-          //            .saturate(4.0)
-          lag.paint['fill-color'] = fillColor.rgbaString()
-          const outlineColor = isHighlighted
-            ? fillColor.darken(0.5)
-            : fillColor.darken(0.9)
-          lag.paint['fill-outline-color'] = outlineColor.rgbaString()
-          map.addLayer(lag, 'building')
-        }
-      })
+        })
+      }
       //      console.log(map.getStyle().layers)
     } else if (kode) {
       let lag = hentLag(map, kode)
@@ -139,7 +165,7 @@ class Mapbox extends Component {
   }
 
   handleStyleUpdate(kode, opplystKode) {
-    this.updateAktivKode(kode, opplystKode)
+    //this.updateAktivKode(kode, opplystKode)
   }
 
   componentWillUnmount() {
@@ -189,17 +215,19 @@ class Mapbox extends Component {
 
     const taxonLayer = new GridLayer({
       id: 'taxonLayer',
-      data: smallTaxons.features,
+      data: this.state.utbredelsesData,
       cellSize: 500000 * (1 / (viewport.zoom * viewport.zoom * viewport.zoom)),
       elevationScale: 20,
       extruded: true,
       lightSettings: LIGHT_SETTINGS,
       getPosition: function(e) {
-        return e.geometry.coordinates
+        return e.g
       },
-      // getElevationValue : function(e) {
-      //     return e.length
-      // }
+      getElevationValue: function(points) {
+        var count = 0
+        points.forEach(i => (count += i.n))
+        return count
+      },
     })
 
     return (
@@ -221,8 +249,8 @@ class Mapbox extends Component {
         mapStyle={this.props.mapStyle}
         minZoom={4}
       >
-        {this.state.enableDeck && (
-          <DeckGL {...viewport} layers={[taxonLayer]} />
+        {this.state.showTaxonGrid && (
+          <DeckGL {...viewport} layers={[taxonLayer]} colorScale={colorScale} />
         )}
         <Switch>
           <Route

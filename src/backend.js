@@ -203,6 +203,21 @@ class Backend {
       return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/utbredelse%2F${kode}.png?alt=media`
     }
   }
+  static getKodeUtbredelse(kode) {
+    if (kode) {
+      return this.getPromise(
+        `https://bboxcode.firebaseio.com/observations/${kode}.json`
+      )
+    }
+  }
+
+  static getKodeBBox(kode) {
+    if (kode) {
+      return this.getPromise(
+        `https://bboxcode.firebaseio.com/bbox/${kode}.json`
+      )
+    }
+  }
 }
 
 export default Backend
