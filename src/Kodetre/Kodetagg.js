@@ -3,7 +3,6 @@ import muiThemeable from 'material-ui/styles/muiThemeable'
 
 class Kodetagg extends React.Component {
   render() {
-    console.log(this.props.muiTheme)
     const styles = {
       chip: {
         margin: 2,
