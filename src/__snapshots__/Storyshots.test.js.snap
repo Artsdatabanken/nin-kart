@@ -2580,9 +2580,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             >
                               <div
                                 onClick={[Function]}
-                              >
-                                Natursystem
-                              </div>
+                              />
                             </span>
                             <div
                               style={
@@ -2814,9 +2812,15 @@ exports[`Storyshots KodeVindu default 1`] = `
                 </div>
               </div>
               <div
-                primaryText="Marine vannmasser omfatter økosystemer av flytende, svevende og svømmende organismer i de frie vannmassene i saltvann (saltholdighet > 0,5 ‰)
-              "
-              />
+                style={
+                  Object {
+                    "padding": 16,
+                  }
+                }
+              >
+                Marine vannmasser omfatter økosystemer av flytende, svevende og svømmende organismer i de frie vannmassene i saltvann (saltholdighet &gt; 0,5 ‰)
+                
+              </div>
               <div
                 style={
                   Object {
@@ -2839,7 +2843,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                     }
                   }
                 >
-                  Undernivåer av marine vannmasser
+                  Inneholder
                 </div>
                 <div>
                   <span
@@ -2902,7 +2906,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       >
                         <img
                           className={undefined}
-                          color="rgba(96,96,255,1.0)"
+                          color={undefined}
                           size={40}
                           src="https://artsdatabanken.no/Media/F16499?mode=480x480"
                           style={
@@ -2910,7 +2914,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "alignItems": "center",
                               "backgroundColor": "#00000000",
                               "borderRadius": "50%",
-                              "color": "rgba(96,96,255,1.0)",
+                              "color": "#ffffff",
                               "display": "inline-flex",
                               "fontSize": 20,
                               "height": 40,
@@ -2962,7 +2966,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               <div
                                 style={
                                   Object {
-                                    "backgroundColor": "rgba(96,96,255,1.0)",
+                                    "backgroundColor": undefined,
                                     "borderRadius": "20%",
                                     "bottom": 0,
                                     "left": 0,
@@ -2982,7 +2986,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
-                          NA_H1
+                          Havvannmasser
                           <span
                             style={
                               Object {
@@ -2994,42 +2998,31 @@ exports[`Storyshots KodeVindu default 1`] = `
                             <div
                               style={
                                 Object {
-                                  "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
-                                  "backgroundColor": "rgb(224, 224, 224)",
-                                  "border": "10px",
-                                  "borderRadius": "16px",
+                                  "backgroundColor": "#9e9e9e",
+                                  "borderRadius": "8px",
                                   "boxSizing": "border-box",
-                                  "cursor": "default",
                                   "display": "flex",
                                   "flexWrap": "wrap",
-                                  "fontSize": "10px",
-                                  "fontWeight": "inherit",
-                                  "height": 18,
-                                  "margin": "0px",
-                                  "marginLeft": "12px",
+                                  "height": 16,
+                                  "marginLeft": "0px",
+                                  "marginTop": "2px",
                                   "outline": "none",
                                   "padding": 2,
-                                  "paddingLeft": "6px",
-                                  "paddingRight": "6px",
                                   "position": "relative",
-                                  "textDecoration": "none",
-                                  "whiteSpace": "nowrap",
                                   "width": "fit-content",
                                 }
                               }
                             >
                               <div
-                                styles={
+                                style={
                                   Object {
-                                    "color": "rgba(95, 95, 95, 0.87)",
+                                    "color": "rgba(0, 0, 0, 0.87)",
                                     "fontSize": 8,
-                                    "fontWeight": 400,
-                                    "lineHeight": 12,
+                                    "fontWeight": 600,
+                                    "lineHeight": "10px",
                                     "margin": 2,
-                                    "paddingLeft": "12px",
-                                    "paddingRight": "12px",
-                                    "userSelect": "none",
-                                    "whiteSpace": "nowrap",
+                                    "paddingLeft": "2px",
+                                    "paddingRight": "2px",
                                   }
                                 }
                               >
@@ -3057,7 +3050,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
-                          0.0 km² i 0 områder
+                          3.6 km² i 24 områder
                         </div>
                       </div>
                     </div>
@@ -3131,7 +3124,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       >
                         <img
                           className={undefined}
-                          color="rgba(96,96,255,0.75)"
+                          color={undefined}
                           size={40}
                           src="https://artsdatabanken.no/Media/F1200?mode=480x480"
                           style={
@@ -3139,7 +3132,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "alignItems": "center",
                               "backgroundColor": "#00000000",
                               "borderRadius": "50%",
-                              "color": "rgba(96,96,255,0.75)",
+                              "color": "#ffffff",
                               "display": "inline-flex",
                               "fontSize": 20,
                               "height": 40,
@@ -3191,7 +3184,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               <div
                                 style={
                                   Object {
-                                    "backgroundColor": "rgba(96,96,255,0.75)",
+                                    "backgroundColor": undefined,
                                     "borderRadius": "20%",
                                     "bottom": 0,
                                     "left": 0,
@@ -3211,7 +3204,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
-                          Sirkulerende vannmasser i fysisk avgrensede saltvannsforekomster
+                          Vannmasser i fjorder, poller og litoralbasseng
                           <span
                             style={
                               Object {
@@ -3223,42 +3216,31 @@ exports[`Storyshots KodeVindu default 1`] = `
                             <div
                               style={
                                 Object {
-                                  "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
-                                  "backgroundColor": "rgb(224, 224, 224)",
-                                  "border": "10px",
-                                  "borderRadius": "16px",
+                                  "backgroundColor": "#9e9e9e",
+                                  "borderRadius": "8px",
                                   "boxSizing": "border-box",
-                                  "cursor": "default",
                                   "display": "flex",
                                   "flexWrap": "wrap",
-                                  "fontSize": "10px",
-                                  "fontWeight": "inherit",
-                                  "height": 18,
-                                  "margin": "0px",
-                                  "marginLeft": "12px",
+                                  "height": 16,
+                                  "marginLeft": "0px",
+                                  "marginTop": "2px",
                                   "outline": "none",
                                   "padding": 2,
-                                  "paddingLeft": "6px",
-                                  "paddingRight": "6px",
                                   "position": "relative",
-                                  "textDecoration": "none",
-                                  "whiteSpace": "nowrap",
                                   "width": "fit-content",
                                 }
                               }
                             >
                               <div
-                                styles={
+                                style={
                                   Object {
-                                    "color": "rgba(95, 95, 95, 0.87)",
+                                    "color": "rgba(0, 0, 0, 0.87)",
                                     "fontSize": 8,
-                                    "fontWeight": 400,
-                                    "lineHeight": 12,
+                                    "fontWeight": 600,
+                                    "lineHeight": "10px",
                                     "margin": 2,
-                                    "paddingLeft": "12px",
-                                    "paddingRight": "12px",
-                                    "userSelect": "none",
-                                    "whiteSpace": "nowrap",
+                                    "paddingLeft": "2px",
+                                    "paddingRight": "2px",
                                   }
                                 }
                               >
@@ -3360,7 +3342,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       >
                         <img
                           className={undefined}
-                          color="rgba(96,96,255,0.5)"
+                          color={undefined}
                           size={40}
                           src="https://artsdatabanken.no/Media/F16499?mode=480x480"
                           style={
@@ -3368,7 +3350,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "alignItems": "center",
                               "backgroundColor": "#00000000",
                               "borderRadius": "50%",
-                              "color": "rgba(96,96,255,0.5)",
+                              "color": "#ffffff",
                               "display": "inline-flex",
                               "fontSize": 20,
                               "height": 40,
@@ -3420,7 +3402,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               <div
                                 style={
                                   Object {
-                                    "backgroundColor": "rgba(96,96,255,0.5)",
+                                    "backgroundColor": undefined,
                                     "borderRadius": "20%",
                                     "bottom": 0,
                                     "left": 0,
@@ -3440,7 +3422,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
-                          NA_H3
+                          Dypvann i poller og fjorder
                           <span
                             style={
                               Object {
@@ -3452,42 +3434,31 @@ exports[`Storyshots KodeVindu default 1`] = `
                             <div
                               style={
                                 Object {
-                                  "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
-                                  "backgroundColor": "rgb(224, 224, 224)",
-                                  "border": "10px",
-                                  "borderRadius": "16px",
+                                  "backgroundColor": "#9e9e9e",
+                                  "borderRadius": "8px",
                                   "boxSizing": "border-box",
-                                  "cursor": "default",
                                   "display": "flex",
                                   "flexWrap": "wrap",
-                                  "fontSize": "10px",
-                                  "fontWeight": "inherit",
-                                  "height": 18,
-                                  "margin": "0px",
-                                  "marginLeft": "12px",
+                                  "height": 16,
+                                  "marginLeft": "0px",
+                                  "marginTop": "2px",
                                   "outline": "none",
                                   "padding": 2,
-                                  "paddingLeft": "6px",
-                                  "paddingRight": "6px",
                                   "position": "relative",
-                                  "textDecoration": "none",
-                                  "whiteSpace": "nowrap",
                                   "width": "fit-content",
                                 }
                               }
                             >
                               <div
-                                styles={
+                                style={
                                   Object {
-                                    "color": "rgba(95, 95, 95, 0.87)",
+                                    "color": "rgba(0, 0, 0, 0.87)",
                                     "fontSize": 8,
-                                    "fontWeight": 400,
-                                    "lineHeight": 12,
+                                    "fontWeight": 600,
+                                    "lineHeight": "10px",
                                     "margin": 2,
-                                    "paddingLeft": "12px",
-                                    "paddingRight": "12px",
-                                    "userSelect": "none",
-                                    "whiteSpace": "nowrap",
+                                    "paddingLeft": "2px",
+                                    "paddingRight": "2px",
                                   }
                                 }
                               >
@@ -3515,7 +3486,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
-                          0.0 km² i 0 områder
+                          7.0 km² i 47 områder
                         </div>
                       </div>
                     </div>
@@ -3589,7 +3560,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       >
                         <img
                           className={undefined}
-                          color="rgba(96,96,255,0.25)"
+                          color={undefined}
                           size={40}
                           src="https://artsdatabanken.no/Media/F16499?mode=480x480"
                           style={
@@ -3597,7 +3568,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "alignItems": "center",
                               "backgroundColor": "#00000000",
                               "borderRadius": "50%",
-                              "color": "rgba(96,96,255,0.25)",
+                              "color": "#ffffff",
                               "display": "inline-flex",
                               "fontSize": 20,
                               "height": 40,
@@ -3649,7 +3620,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               <div
                                 style={
                                   Object {
-                                    "backgroundColor": "rgba(96,96,255,0.25)",
+                                    "backgroundColor": undefined,
                                     "borderRadius": "20%",
                                     "bottom": 0,
                                     "left": 0,
@@ -3669,7 +3640,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
-                          NA_H4
+                          Sterkt endrede marine vannmasser
                           <span
                             style={
                               Object {
@@ -3681,42 +3652,31 @@ exports[`Storyshots KodeVindu default 1`] = `
                             <div
                               style={
                                 Object {
-                                  "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
-                                  "backgroundColor": "rgb(224, 224, 224)",
-                                  "border": "10px",
-                                  "borderRadius": "16px",
+                                  "backgroundColor": "#9e9e9e",
+                                  "borderRadius": "8px",
                                   "boxSizing": "border-box",
-                                  "cursor": "default",
                                   "display": "flex",
                                   "flexWrap": "wrap",
-                                  "fontSize": "10px",
-                                  "fontWeight": "inherit",
-                                  "height": 18,
-                                  "margin": "0px",
-                                  "marginLeft": "12px",
+                                  "height": 16,
+                                  "marginLeft": "0px",
+                                  "marginTop": "2px",
                                   "outline": "none",
                                   "padding": 2,
-                                  "paddingLeft": "6px",
-                                  "paddingRight": "6px",
                                   "position": "relative",
-                                  "textDecoration": "none",
-                                  "whiteSpace": "nowrap",
                                   "width": "fit-content",
                                 }
                               }
                             >
                               <div
-                                styles={
+                                style={
                                   Object {
-                                    "color": "rgba(95, 95, 95, 0.87)",
+                                    "color": "rgba(0, 0, 0, 0.87)",
                                     "fontSize": 8,
-                                    "fontWeight": 400,
-                                    "lineHeight": 12,
+                                    "fontWeight": 600,
+                                    "lineHeight": "10px",
                                     "margin": 2,
-                                    "paddingLeft": "12px",
-                                    "paddingRight": "12px",
-                                    "userSelect": "none",
-                                    "whiteSpace": "nowrap",
+                                    "paddingLeft": "2px",
+                                    "paddingRight": "2px",
                                   }
                                 }
                               >
@@ -3860,42 +3820,31 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
           <div
             style={
               Object {
-                "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
-                "backgroundColor": "rgb(224, 224, 224)",
-                "border": "10px",
-                "borderRadius": "16px",
+                "backgroundColor": "#9e9e9e",
+                "borderRadius": "8px",
                 "boxSizing": "border-box",
-                "cursor": "default",
                 "display": "flex",
                 "flexWrap": "wrap",
-                "fontSize": "10px",
-                "fontWeight": "inherit",
-                "height": 18,
-                "margin": "0px",
-                "marginLeft": "12px",
+                "height": 16,
+                "marginLeft": "0px",
+                "marginTop": "2px",
                 "outline": "none",
                 "padding": 2,
-                "paddingLeft": "6px",
-                "paddingRight": "6px",
                 "position": "relative",
-                "textDecoration": "none",
-                "whiteSpace": "nowrap",
                 "width": "fit-content",
               }
             }
           >
             <div
-              styles={
+              style={
                 Object {
-                  "color": "rgba(95, 95, 95, 0.87)",
+                  "color": "rgba(0, 0, 0, 0.87)",
                   "fontSize": 8,
-                  "fontWeight": 400,
-                  "lineHeight": 12,
+                  "fontWeight": 600,
+                  "lineHeight": "10px",
                   "margin": 2,
-                  "paddingLeft": "12px",
-                  "paddingRight": "12px",
-                  "userSelect": "none",
-                  "whiteSpace": "nowrap",
+                  "paddingLeft": "2px",
+                  "paddingRight": "2px",
                 }
               }
             >
@@ -3905,42 +3854,31 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
           <div
             style={
               Object {
-                "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
-                "backgroundColor": "rgb(224, 224, 224)",
-                "border": "10px",
-                "borderRadius": "16px",
+                "backgroundColor": "#9e9e9e",
+                "borderRadius": "8px",
                 "boxSizing": "border-box",
-                "cursor": "default",
                 "display": "flex",
                 "flexWrap": "wrap",
-                "fontSize": "10px",
-                "fontWeight": "inherit",
-                "height": 18,
-                "margin": "0px",
-                "marginLeft": "12px",
+                "height": 16,
+                "marginLeft": "0px",
+                "marginTop": "2px",
                 "outline": "none",
                 "padding": 2,
-                "paddingLeft": "6px",
-                "paddingRight": "6px",
                 "position": "relative",
-                "textDecoration": "none",
-                "whiteSpace": "nowrap",
                 "width": "fit-content",
               }
             }
           >
             <div
-              styles={
+              style={
                 Object {
-                  "color": "rgba(95, 95, 95, 0.87)",
+                  "color": "rgba(0, 0, 0, 0.87)",
                   "fontSize": 8,
-                  "fontWeight": 400,
-                  "lineHeight": 12,
+                  "fontWeight": 600,
+                  "lineHeight": "10px",
                   "margin": 2,
-                  "paddingLeft": "12px",
-                  "paddingRight": "12px",
-                  "userSelect": "none",
-                  "whiteSpace": "nowrap",
+                  "paddingLeft": "2px",
+                  "paddingRight": "2px",
                 }
               }
             >
@@ -3950,42 +3888,31 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
           <div
             style={
               Object {
-                "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
-                "backgroundColor": "rgb(224, 224, 224)",
-                "border": "10px",
-                "borderRadius": "16px",
+                "backgroundColor": "#9e9e9e",
+                "borderRadius": "8px",
                 "boxSizing": "border-box",
-                "cursor": "default",
                 "display": "flex",
                 "flexWrap": "wrap",
-                "fontSize": "10px",
-                "fontWeight": "inherit",
-                "height": 18,
-                "margin": "0px",
-                "marginLeft": "12px",
+                "height": 16,
+                "marginLeft": "0px",
+                "marginTop": "2px",
                 "outline": "none",
                 "padding": 2,
-                "paddingLeft": "6px",
-                "paddingRight": "6px",
                 "position": "relative",
-                "textDecoration": "none",
-                "whiteSpace": "nowrap",
                 "width": "fit-content",
               }
             }
           >
             <div
-              styles={
+              style={
                 Object {
-                  "color": "rgba(95, 95, 95, 0.87)",
+                  "color": "rgba(0, 0, 0, 0.87)",
                   "fontSize": 8,
-                  "fontWeight": 400,
-                  "lineHeight": 12,
+                  "fontWeight": 600,
+                  "lineHeight": "10px",
                   "margin": 2,
-                  "paddingLeft": "12px",
-                  "paddingRight": "12px",
-                  "userSelect": "none",
-                  "whiteSpace": "nowrap",
+                  "paddingLeft": "2px",
+                  "paddingRight": "2px",
                 }
               }
             >
@@ -3995,42 +3922,31 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
           <div
             style={
               Object {
-                "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
-                "backgroundColor": "rgb(224, 224, 224)",
-                "border": "10px",
-                "borderRadius": "16px",
+                "backgroundColor": "#9e9e9e",
+                "borderRadius": "8px",
                 "boxSizing": "border-box",
-                "cursor": "default",
                 "display": "flex",
                 "flexWrap": "wrap",
-                "fontSize": "10px",
-                "fontWeight": "inherit",
-                "height": 18,
-                "margin": "0px",
-                "marginLeft": "12px",
+                "height": 16,
+                "marginLeft": "0px",
+                "marginTop": "2px",
                 "outline": "none",
                 "padding": 2,
-                "paddingLeft": "6px",
-                "paddingRight": "6px",
                 "position": "relative",
-                "textDecoration": "none",
-                "whiteSpace": "nowrap",
                 "width": "fit-content",
               }
             }
           >
             <div
-              styles={
+              style={
                 Object {
-                  "color": "rgba(95, 95, 95, 0.87)",
+                  "color": "rgba(0, 0, 0, 0.87)",
                   "fontSize": 8,
-                  "fontWeight": 400,
-                  "lineHeight": 12,
+                  "fontWeight": 600,
+                  "lineHeight": "10px",
                   "margin": 2,
-                  "paddingLeft": "12px",
-                  "paddingRight": "12px",
-                  "userSelect": "none",
-                  "whiteSpace": "nowrap",
+                  "paddingLeft": "2px",
+                  "paddingRight": "2px",
                 }
               }
             >
@@ -4040,42 +3956,31 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
           <div
             style={
               Object {
-                "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
-                "backgroundColor": "rgb(224, 224, 224)",
-                "border": "10px",
-                "borderRadius": "16px",
+                "backgroundColor": "#9e9e9e",
+                "borderRadius": "8px",
                 "boxSizing": "border-box",
-                "cursor": "default",
                 "display": "flex",
                 "flexWrap": "wrap",
-                "fontSize": "10px",
-                "fontWeight": "inherit",
-                "height": 18,
-                "margin": "0px",
-                "marginLeft": "12px",
+                "height": 16,
+                "marginLeft": "0px",
+                "marginTop": "2px",
                 "outline": "none",
                 "padding": 2,
-                "paddingLeft": "6px",
-                "paddingRight": "6px",
                 "position": "relative",
-                "textDecoration": "none",
-                "whiteSpace": "nowrap",
                 "width": "fit-content",
               }
             }
           >
             <div
-              styles={
+              style={
                 Object {
-                  "color": "rgba(95, 95, 95, 0.87)",
+                  "color": "rgba(0, 0, 0, 0.87)",
                   "fontSize": 8,
-                  "fontWeight": 400,
-                  "lineHeight": 12,
+                  "fontWeight": 600,
+                  "lineHeight": "10px",
                   "margin": 2,
-                  "paddingLeft": "12px",
-                  "paddingRight": "12px",
-                  "userSelect": "none",
-                  "whiteSpace": "nowrap",
+                  "paddingLeft": "2px",
+                  "paddingRight": "2px",
                 }
               }
             >
@@ -4085,42 +3990,31 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
           <div
             style={
               Object {
-                "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
-                "backgroundColor": "rgb(224, 224, 224)",
-                "border": "10px",
-                "borderRadius": "16px",
+                "backgroundColor": "#9e9e9e",
+                "borderRadius": "8px",
                 "boxSizing": "border-box",
-                "cursor": "default",
                 "display": "flex",
                 "flexWrap": "wrap",
-                "fontSize": "10px",
-                "fontWeight": "inherit",
-                "height": 18,
-                "margin": "0px",
-                "marginLeft": "12px",
+                "height": 16,
+                "marginLeft": "0px",
+                "marginTop": "2px",
                 "outline": "none",
                 "padding": 2,
-                "paddingLeft": "6px",
-                "paddingRight": "6px",
                 "position": "relative",
-                "textDecoration": "none",
-                "whiteSpace": "nowrap",
                 "width": "fit-content",
               }
             }
           >
             <div
-              styles={
+              style={
                 Object {
-                  "color": "rgba(95, 95, 95, 0.87)",
+                  "color": "rgba(0, 0, 0, 0.87)",
                   "fontSize": 8,
-                  "fontWeight": 400,
-                  "lineHeight": 12,
+                  "fontWeight": 600,
+                  "lineHeight": "10px",
                   "margin": 2,
-                  "paddingLeft": "12px",
-                  "paddingRight": "12px",
-                  "userSelect": "none",
-                  "whiteSpace": "nowrap",
+                  "paddingLeft": "2px",
+                  "paddingRight": "2px",
                 }
               }
             >
@@ -4130,42 +4024,31 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
           <div
             style={
               Object {
-                "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
-                "backgroundColor": "rgb(224, 224, 224)",
-                "border": "10px",
-                "borderRadius": "16px",
+                "backgroundColor": "#9e9e9e",
+                "borderRadius": "8px",
                 "boxSizing": "border-box",
-                "cursor": "default",
                 "display": "flex",
                 "flexWrap": "wrap",
-                "fontSize": "10px",
-                "fontWeight": "inherit",
-                "height": 18,
-                "margin": "0px",
-                "marginLeft": "12px",
+                "height": 16,
+                "marginLeft": "0px",
+                "marginTop": "2px",
                 "outline": "none",
                 "padding": 2,
-                "paddingLeft": "6px",
-                "paddingRight": "6px",
                 "position": "relative",
-                "textDecoration": "none",
-                "whiteSpace": "nowrap",
                 "width": "fit-content",
               }
             }
           >
             <div
-              styles={
+              style={
                 Object {
-                  "color": "rgba(95, 95, 95, 0.87)",
+                  "color": "rgba(0, 0, 0, 0.87)",
                   "fontSize": 8,
-                  "fontWeight": 400,
-                  "lineHeight": 12,
+                  "fontWeight": 600,
+                  "lineHeight": "10px",
                   "margin": 2,
-                  "paddingLeft": "12px",
-                  "paddingRight": "12px",
-                  "userSelect": "none",
-                  "whiteSpace": "nowrap",
+                  "paddingLeft": "2px",
+                  "paddingRight": "2px",
                 }
               }
             >
@@ -4175,42 +4058,31 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
           <div
             style={
               Object {
-                "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
-                "backgroundColor": "rgb(224, 224, 224)",
-                "border": "10px",
-                "borderRadius": "16px",
+                "backgroundColor": "#9e9e9e",
+                "borderRadius": "8px",
                 "boxSizing": "border-box",
-                "cursor": "default",
                 "display": "flex",
                 "flexWrap": "wrap",
-                "fontSize": "10px",
-                "fontWeight": "inherit",
-                "height": 18,
-                "margin": "0px",
-                "marginLeft": "12px",
+                "height": 16,
+                "marginLeft": "0px",
+                "marginTop": "2px",
                 "outline": "none",
                 "padding": 2,
-                "paddingLeft": "6px",
-                "paddingRight": "6px",
                 "position": "relative",
-                "textDecoration": "none",
-                "whiteSpace": "nowrap",
                 "width": "fit-content",
               }
             }
           >
             <div
-              styles={
+              style={
                 Object {
-                  "color": "rgba(95, 95, 95, 0.87)",
+                  "color": "rgba(0, 0, 0, 0.87)",
                   "fontSize": 8,
-                  "fontWeight": 400,
-                  "lineHeight": 12,
+                  "fontWeight": 600,
+                  "lineHeight": "10px",
                   "margin": 2,
-                  "paddingLeft": "12px",
-                  "paddingRight": "12px",
-                  "userSelect": "none",
-                  "whiteSpace": "nowrap",
+                  "paddingLeft": "2px",
+                  "paddingRight": "2px",
                 }
               }
             >
@@ -4220,42 +4092,31 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
           <div
             style={
               Object {
-                "WebkiTapHighlightColor": "rgba(0, 0, 0, 0)",
-                "backgroundColor": "rgb(224, 224, 224)",
-                "border": "10px",
-                "borderRadius": "16px",
+                "backgroundColor": "#9e9e9e",
+                "borderRadius": "8px",
                 "boxSizing": "border-box",
-                "cursor": "default",
                 "display": "flex",
                 "flexWrap": "wrap",
-                "fontSize": "10px",
-                "fontWeight": "inherit",
-                "height": 18,
-                "margin": "0px",
-                "marginLeft": "12px",
+                "height": 16,
+                "marginLeft": "0px",
+                "marginTop": "2px",
                 "outline": "none",
                 "padding": 2,
-                "paddingLeft": "6px",
-                "paddingRight": "6px",
                 "position": "relative",
-                "textDecoration": "none",
-                "whiteSpace": "nowrap",
                 "width": "fit-content",
               }
             }
           >
             <div
-              styles={
+              style={
                 Object {
-                  "color": "rgba(95, 95, 95, 0.87)",
+                  "color": "rgba(0, 0, 0, 0.87)",
                   "fontSize": 8,
-                  "fontWeight": 400,
-                  "lineHeight": 12,
+                  "fontWeight": 600,
+                  "lineHeight": "10px",
                   "margin": 2,
-                  "paddingLeft": "12px",
-                  "paddingRight": "12px",
-                  "userSelect": "none",
-                  "whiteSpace": "nowrap",
+                  "paddingLeft": "2px",
+                  "paddingRight": "2px",
                 }
               }
             >
