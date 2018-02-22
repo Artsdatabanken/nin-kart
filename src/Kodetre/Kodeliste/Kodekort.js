@@ -68,11 +68,7 @@ const Tittelblokk = ({
   <CardTitle
     actAsExpander={true}
     showExpandableButton={true}
-    title={
-      data.navn || (
-        <a href="https://jira.artsdatabanken.no/browse/EG-138">JIRA EG-138</a>
-      )
-    }
+    title={selv.tittel}
     titleColor={muiTheme.palette.alternateTextColor}
     subtitle={
       <div onClick={() => onGoToCode(data.forelder.kode)}>

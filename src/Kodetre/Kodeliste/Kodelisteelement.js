@@ -79,16 +79,16 @@ class Kodelisteelement extends React.Component {
           leftAvatar={
             <Avatar
               style={meta.utenRamme ? { borderRadius: 0 } : {}}
-              color={meta.color}
-              backgroundColor={meta.backgroundColor || '#00000000'}
+              color={meta.tekstFarge}
+              backgroundColor={meta.farge || '#00000000'}
               src={meta.avatarbilde || meta.foto}
             >
-              {meta.kode}
+              {meta.avatarbilde || meta.foto ? null : meta.kode}
             </Avatar>
           }
           primaryText={
             <span>
-              {(meta.navn || item.navn || item.kode) +
+              {(meta.tittel || meta.navn || meta.navnSci) +
                 (meta.navnSci ? ` (${meta.navnSci})` : '')}
               <span style={{ display: 'inline-flex' }}>
                 &nbsp;<Kodetagg
@@ -107,7 +107,7 @@ class Kodelisteelement extends React.Component {
           rightAvatar={
             <span style={{ display: 'inline-flex' }}>
               <PaintSwatch
-                color={meta.color}
+                color={meta.farge}
                 onClick={e => {
                   e.stopPropagation()
                   this.props.onShowColorpicker(meta.kode)

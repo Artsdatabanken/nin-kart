@@ -15,7 +15,7 @@ class KodeVindu extends React.Component {
   render() {
     const props = this.props
     const selv = props.meta.selv || {}
-    const navn = (selv.navn || props.data.navn || ' type').toLowerCase() // TODO: navn i meta
+    const tittel = (selv.tittel || props.data.navn || ' type').toLowerCase()
     return (
       <FetchContainer>
         <Paper
@@ -36,10 +36,12 @@ class KodeVindu extends React.Component {
               data={props.data}
             />
           )}
-          {props.meta.ingress && <div primaryText={props.meta.ingress} />}
+          {props.meta.ingress && (
+            <div style={{ padding: 16 }}>{props.meta.ingress}</div>
+          )}
           <List>
             <Kodeliste
-              title={`Undernivåer av ${navn}`}
+              title={`Inneholder`}
               apidata={props.data.barn}
               metadata={props.meta.barn}
               ekspandertKode={this.state.ekspandertKode}
@@ -66,7 +68,7 @@ class KodeVindu extends React.Component {
             )}
             {false && (
               <React.Fragment>
-                <Subheader>Om {navn}</Subheader>
+                <Subheader>Om {tittel}</Subheader>
                 <StatistikkContainer
                   ingress={props.meta.ingress}
                   dataUrl={'/kode/' + props.data.kode}
