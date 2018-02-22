@@ -23,20 +23,7 @@ class Mapbox extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      utbredelsesData: [
-        {
-          g: [10.00499, 59.04227],
-          n: 20,
-        },
-        {
-          g: [10.00499, 59.14227],
-          n: 10,
-        },
-        {
-          g: [11.00499, 59.14227],
-          n: 50,
-        },
-      ],
+      utbredelsesData: [],
 
       showTaxonGrid: false,
       viewport: {
@@ -66,6 +53,7 @@ class Mapbox extends Component {
     }
   }
   updateAktivKode(kode) {
+    let map = this.map.getMap()
     if (kode) {
       let taxonMatch = kode.match(/TX_(.*)/)
       if (taxonMatch) {
@@ -73,8 +61,15 @@ class Mapbox extends Component {
           this.setState({ utbredelsesData: data })
         })
       }
+      backend.getKodeBBox(kode).then(data => {
+        if (map && data) {
+          map.fitBounds([[data[2], data[3]], [data[0], data[1]]], {
+            padding: { top: 10, bottom: 25, left: 15, right: 5 },
+          })
+        }
+      })
     }
-    let map = this.map.getMap()
+
     if (!map || !map.isStyleLoaded()) {
       console.log(
         'kode: ' +

@@ -297,6 +297,14 @@ class Backend {
       )
     }
   }
+
+  static getKodeBBox(kode) {
+    if (kode) {
+      return this.getPromise(
+        `https://bboxcode.firebaseio.com/bbox/${kode}.json`
+      )
+    }
+  }
 }
 
 export default Backend
