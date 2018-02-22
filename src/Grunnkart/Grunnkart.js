@@ -99,7 +99,6 @@ class Grunnkart extends Component {
     var currentLocation = this.props.location.pathname
     let kodematch = currentLocation.match(/\/katalog\/(.*)/)
     const kode = kodematch && kodematch.length === 2 ? kodematch[1] : null
-    //console.log('kode', kode)
     return (
       <div>
         <Kart
@@ -122,7 +121,7 @@ class Grunnkart extends Component {
             this.setState({ showMainDrawer: !this.state.showMainDrawer })
           }
         />
-        <Link to="/katalog/ROT">
+        <Link to="/katalog/">
           <FloatingActionButton
             style={{ position: 'absolute', bottom: 48, left: 48 }}
           >
@@ -136,7 +135,7 @@ class Grunnkart extends Component {
               position: 'absolute',
               left: 8,
               top: 10,
-              width: 400,
+              width: 392,
               zIndex: 2,
             }}
           >
@@ -146,6 +145,7 @@ class Grunnkart extends Component {
               }
               mapbounds={this.state.mapbounds}
               onMouseEnter={kode => this.setState({ opplystKode: kode })}
+              onMouseLeave={kode => this.setState({ opplystKode: null })}
               localId={this.state.localId}
             />
           </div>

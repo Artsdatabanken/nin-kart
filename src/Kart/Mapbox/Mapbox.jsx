@@ -41,18 +41,26 @@ class Mapbox extends Component {
   componentDidMount() {
     window.addEventListener('resize', this._resize)
     this._resize()
+    this.tempHackFetchMeta(this.props.aktivKode)
+  }
+
+  componentDidUpdate() {
+    this.updateAktivKode(this.props.aktivKode, this.props.opplystKode)
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.opplystKode !== this.props.opplystKode) {
-      this.updateOpplystKode(nextProps.opplystKode)
+      //      this.updateAktivKode(nextProps.aktivKode, nextProps.opplystKode)
     }
 
     if (nextProps.aktivKode !== this.props.aktivKode) {
-      this.updateAktivKode(nextProps.aktivKode)
+      //    this.updateAktivKode(nextProps.aktivKode, nextProps.opplystKode)
+      this.tempHackFetchMeta(nextProps.aktivKode)
     }
   }
-  updateAktivKode(kode) {
+
+  updateAktivKode(kode, opplystKode) {
+    kode = kode || 'ROT'
     let map = this.map.getMap()
     if (kode) {
       let taxonMatch = kode.match(/TX_(.*)/)
@@ -81,59 +89,87 @@ class Mapbox extends Component {
     }
 
     map.removeLayer(this.props.aktivKode)
-    if (kode) {
-      let taxonMatch = kode.match(/TX_(.*)/)
-      this.setState({ showTaxonGrid: taxonMatch })
-      if (taxonMatch) {
-        let url = backend.getKodeUtbredelseUrl(kode)
+    let taxonMatch = kode.match(/TX_(.*)/)
+    if (this.state.enableDeck !== taxonMatch)
+      this.setState({ enableDeck: taxonMatch })
+    if (taxonMatch) {
+      let url = backend.getKodeUtbredelseUrl(kode)
 
-        let kilde = {
-          type: 'image',
-          url: url,
-          coordinates: [
-            [-2.12900722, 71.87414651],
-            [32.7256258, 71.87414651],
-            [32.7256258, 57.36940657],
-            [-2.12900722, 57.36940657],
-          ],
-        }
-
-        map.removeSource('tx_overlay') // remove if it exist
-        map.addSource('tx_overlay', kilde)
-
-        let lag = hentLag(map, kode)
-        if (lag) map.addLayer(lag)
+      let kilde = {
+        type: 'image',
+        url: url,
+        coordinates: [
+          [-2.12900722, 71.87414651],
+          [32.7256258, 71.87414651],
+          [32.7256258, 57.36940657],
+          [-2.12900722, 57.36940657],
+        ],
       }
+
+      map.removeSource('tx_overlay') // remove if it exist
+      map.addSource('tx_overlay', kilde)
+
+      let lag = hentLag(map, kode)
+      if (lag) map.addLayer(lag)
+    }
+
+    if (this.state.meta) {
+      map.removeLayer('n50-ld-1')
+      map.removeLayer('n50-ld-2')
+      map.removeLayer('ar50-ld-12')
+      map.removeLayer('nin')
+      map.removeLayer('ar50-snoisbre')
+      map.removeLayer('ar50-snoisbre_EN')
+      map.removeLayer('nin-hover')
+      map.removeLayer('naturomrader6')
+      map.removeLayer('naturomrader6-hover')
+      map.removeLayer('Rodlistede')
+      //      console.log(map.getStyle().layers)
+      Object.keys(this.state.meta.barn).forEach(kode => {
+        const barn = this.state.meta.barn[kode]
+        map.removeLayer(kode)
+        let lag = hentLag(map, kode)
+        if (lag && lag.type === 'fill') {
+          let fillColor = Color(barn.color).alpha(0.35)
+          const isHighlighted = kode === opplystKode
+          if (isHighlighted) {
+            fillColor = fillColor.lightness(90).saturate(90)
+            //            fillColor = Color('#ff8000')
+          }
+          //            .saturate(4.0)
+          lag.paint['fill-color'] = fillColor.rgbaString()
+          const outlineColor = isHighlighted
+            ? fillColor.darken(0.5)
+            : fillColor.darken(0.9)
+          lag.paint['fill-outline-color'] = outlineColor.rgbaString()
+          map.addLayer(lag, 'building')
+        }
+      })
+      //      console.log(map.getStyle().layers)
+    } else if (kode) {
+      let lag = hentLag(map, kode)
+      if (lag) map.addLayer(lag)
     }
   }
 
-  updateOpplystKode(opplystKode) {
-    let map = this.map.getMap()
-    if (!map || !map.isStyleLoaded()) return
-
-    // Ikke nødvendig å fjerne det gamle, blir overskrevet
-    if (opplystKode) {
-      let opplystLag = hentLag(map, opplystKode)
-      if (!opplystLag || !opplystLag.paint) return
-      opplystLag.paint['fill-color'] = 'rgba(255,255,255,50%)'
-      opplystLag.paint['fill-outline-color'] = 'rgba(255,255,255,80%)'
-      opplystLag.id = 'opplyst'
-      console.log('add', opplystKode)
-      map.addLayer(opplystLag)
-    }
-    //    } catch (error) {
-    //     console.log(error) // TODO: Make it not fail on Sør- og Nord-trøndelag
-    //  }
+  queryNumber = 0
+  tempHackFetchMeta(kode) {
+    this.queryNumber++
+    const currentQuery = this.queryNumber
+    backend.hentKodeMeta(kode).then(data => {
+      if (currentQuery !== this.queryNumber) return // Abort stale query
+      this.setState({ meta: data })
+    })
   }
 
   handleStyleUpdate(kode, opplystKode) {
-    this.updateAktivKode(kode)
-    this.updateOpplystKode(opplystKode)
+    this.updateAktivKode(kode, opplystKode)
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this._resize)
   }
+
   _resize = () => {
     this.setState({
       viewport: {
@@ -151,14 +187,17 @@ class Mapbox extends Component {
   }
 
   onHover = e => {
+    /*
     const pos = e.center
     const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y])
+    // TODO:
     if (r[0]) {
       //console.log(r[0].properties.localId);
       this.map
         .getMap()
         .setFilter('nin-hover', ['==', 'localId', r[0].properties.localId])
     }
+    */
   }
 
   // onClick = e => {

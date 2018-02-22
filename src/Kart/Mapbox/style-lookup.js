@@ -87,7 +87,7 @@ function hentLag(map, kode) {
     }
   }
 
-  let filter = {
+  let naLayer = {
     id: kode,
     type: 'fill',
     source: 'composite',
@@ -97,10 +97,10 @@ function hentLag(map, kode) {
     layout: {},
     paint: {
       'fill-color': 'hsla(251, 59%, 28%, 0.8)',
-      'fill-outline-color': 'hsla(251, 59%, 69%, 0.8)',
+      'fill-outline-color': 'hsla(128, 88%, 29%, 0.8)',
     },
   }
-  return filter
+  return naLayer
 }
 
 export default hentLag

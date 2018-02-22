@@ -1897,7 +1897,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
               </div>
             </div>
             <a
-              href="/katalog/ROT"
+              href="/katalog/"
               onClick={[Function]}
             >
               <div
@@ -2013,7 +2013,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                   "left": 8,
                   "position": "absolute",
                   "top": 10,
-                  "width": 400,
+                  "width": 392,
                   "zIndex": 2,
                 }
               }
@@ -2452,7 +2452,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                   "position": "fixed",
                   "top": 0,
                   "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "width": 416,
+                  "width": 408,
                 }
               }
             >
@@ -2500,8 +2500,8 @@ exports[`Storyshots KodeVindu default 1`] = `
                         src="https://artsdatabanken.no/Media/F16499?mode=480x480"
                         style={
                           Object {
-                            "height": 350,
                             "maxWidth": "100%",
+                            "minHeight": 144,
                             "minWidth": "100%",
                             "muiPrepared": true,
                             "objectFit": "cover",
@@ -2813,79 +2813,10 @@ exports[`Storyshots KodeVindu default 1`] = `
                   </div>
                 </div>
               </div>
-              <div>
-                <span
-                  disabled={false}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
-                  open={null}
-                  style={
-                    Object {
-                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                      "background": "none",
-                      "backgroundColor": null,
-                      "border": 10,
-                      "boxSizing": "border-box",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "cursor": "pointer",
-                      "display": "block",
-                      "fontFamily": "Roboto, sans-serif",
-                      "fontSize": 16,
-                      "fontWeight": "inherit",
-                      "lineHeight": "16px",
-                      "margin": 0,
-                      "muiPrepared": true,
-                      "outline": "none",
-                      "padding": 0,
-                      "position": "relative",
-                      "textDecoration": "none",
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "verticalAlign": null,
-                    }
-                  }
-                  tabIndex={0}
-                >
-                  <div
-                    onMouseDown={[Function]}
-                    onMouseLeave={[Function]}
-                    onMouseUp={[Function]}
-                    onTouchEnd={[Function]}
-                    onTouchStart={[Function]}
-                  >
-                    <div
-                      style={
-                        Object {
-                          "marginLeft": 0,
-                          "muiPrepared": true,
-                          "paddingBottom": 16,
-                          "paddingLeft": 16,
-                          "paddingRight": 16,
-                          "paddingTop": 16,
-                          "position": "relative",
-                        }
-                      }
-                    >
-                      <div
-                        style={
-                          Object {
-                            "muiPrepared": true,
-                          }
-                        }
-                      >
-                        Marine vannmasser omfatter økosystemer av flytende, svevende og svømmende organismer i de frie vannmassene i saltvann (saltholdighet &gt; 0,5 ‰)
-                        
-                      </div>
-                    </div>
-                  </div>
-                </span>
-              </div>
+              <div
+                primaryText="Marine vannmasser omfatter økosystemer av flytende, svevende og svømmende organismer i de frie vannmassene i saltvann (saltholdighet > 0,5 ‰)
+              "
+              />
               <div
                 style={
                   Object {
@@ -2971,7 +2902,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       >
                         <img
                           className={undefined}
-                          color={undefined}
+                          color="rgba(96,96,255,1.0)"
                           size={40}
                           src="https://artsdatabanken.no/Media/F16499?mode=480x480"
                           style={
@@ -2979,7 +2910,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "alignItems": "center",
                               "backgroundColor": "#00000000",
                               "borderRadius": "50%",
-                              "color": "#ffffff",
+                              "color": "rgba(96,96,255,1.0)",
                               "display": "inline-flex",
                               "fontSize": 20,
                               "height": 40,
@@ -2993,28 +2924,57 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         />
-                        <div
-                          className={undefined}
-                          size={40}
+                        <span
                           style={
                             Object {
-                              "alignItems": "center",
-                              "backgroundColor": "rgb(188, 188, 188)",
-                              "borderRadius": "50%",
-                              "color": "#ffffff",
                               "display": "inline-flex",
-                              "fontSize": 20,
-                              "height": 40,
-                              "justifyContent": "center",
-                              "muiPrepared": true,
                               "position": "absolute",
                               "right": 16,
                               "top": 16,
-                              "userSelect": "none",
-                              "width": 40,
                             }
                           }
-                        />
+                        >
+                          <div
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "borderRadius": "50%",
+                                "height": "28px",
+                                "right": "14px",
+                                "top": "14px",
+                                "width": "28px",
+                              }
+                            }
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "20%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
+                                }
+                              }
+                            >
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": "rgba(96,96,255,1.0)",
+                                    "borderRadius": "20%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
+                              />
+                            </div>
+                          </div>
+                        </span>
                         <span
                           style={
                             Object {
@@ -3103,6 +3063,13 @@ exports[`Storyshots KodeVindu default 1`] = `
                     </div>
                   </span>
                 </div>
+                <div
+                  style={
+                    Object {
+                      "marginLeft": 56,
+                    }
+                  }
+                />
                 <div>
                   <span
                     disabled={false}
@@ -3164,7 +3131,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       >
                         <img
                           className={undefined}
-                          color={undefined}
+                          color="rgba(96,96,255,0.75)"
                           size={40}
                           src="https://artsdatabanken.no/Media/F1200?mode=480x480"
                           style={
@@ -3172,7 +3139,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "alignItems": "center",
                               "backgroundColor": "#00000000",
                               "borderRadius": "50%",
-                              "color": "#ffffff",
+                              "color": "rgba(96,96,255,0.75)",
                               "display": "inline-flex",
                               "fontSize": 20,
                               "height": 40,
@@ -3186,28 +3153,57 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         />
-                        <div
-                          className={undefined}
-                          size={40}
+                        <span
                           style={
                             Object {
-                              "alignItems": "center",
-                              "backgroundColor": "rgb(188, 188, 188)",
-                              "borderRadius": "50%",
-                              "color": "#ffffff",
                               "display": "inline-flex",
-                              "fontSize": 20,
-                              "height": 40,
-                              "justifyContent": "center",
-                              "muiPrepared": true,
                               "position": "absolute",
                               "right": 16,
                               "top": 16,
-                              "userSelect": "none",
-                              "width": 40,
                             }
                           }
-                        />
+                        >
+                          <div
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "borderRadius": "50%",
+                                "height": "28px",
+                                "right": "14px",
+                                "top": "14px",
+                                "width": "28px",
+                              }
+                            }
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "20%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
+                                }
+                              }
+                            >
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": "rgba(96,96,255,0.75)",
+                                    "borderRadius": "20%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
+                              />
+                            </div>
+                          </div>
+                        </span>
                         <span
                           style={
                             Object {
@@ -3296,6 +3292,13 @@ exports[`Storyshots KodeVindu default 1`] = `
                     </div>
                   </span>
                 </div>
+                <div
+                  style={
+                    Object {
+                      "marginLeft": 56,
+                    }
+                  }
+                />
                 <div>
                   <span
                     disabled={false}
@@ -3357,7 +3360,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       >
                         <img
                           className={undefined}
-                          color={undefined}
+                          color="rgba(96,96,255,0.5)"
                           size={40}
                           src="https://artsdatabanken.no/Media/F16499?mode=480x480"
                           style={
@@ -3365,7 +3368,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "alignItems": "center",
                               "backgroundColor": "#00000000",
                               "borderRadius": "50%",
-                              "color": "#ffffff",
+                              "color": "rgba(96,96,255,0.5)",
                               "display": "inline-flex",
                               "fontSize": 20,
                               "height": 40,
@@ -3379,28 +3382,57 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         />
-                        <div
-                          className={undefined}
-                          size={40}
+                        <span
                           style={
                             Object {
-                              "alignItems": "center",
-                              "backgroundColor": "rgb(188, 188, 188)",
-                              "borderRadius": "50%",
-                              "color": "#ffffff",
                               "display": "inline-flex",
-                              "fontSize": 20,
-                              "height": 40,
-                              "justifyContent": "center",
-                              "muiPrepared": true,
                               "position": "absolute",
                               "right": 16,
                               "top": 16,
-                              "userSelect": "none",
-                              "width": 40,
                             }
                           }
-                        />
+                        >
+                          <div
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "borderRadius": "50%",
+                                "height": "28px",
+                                "right": "14px",
+                                "top": "14px",
+                                "width": "28px",
+                              }
+                            }
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "20%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
+                                }
+                              }
+                            >
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": "rgba(96,96,255,0.5)",
+                                    "borderRadius": "20%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
+                              />
+                            </div>
+                          </div>
+                        </span>
                         <span
                           style={
                             Object {
@@ -3489,6 +3521,13 @@ exports[`Storyshots KodeVindu default 1`] = `
                     </div>
                   </span>
                 </div>
+                <div
+                  style={
+                    Object {
+                      "marginLeft": 56,
+                    }
+                  }
+                />
                 <div>
                   <span
                     disabled={false}
@@ -3550,7 +3589,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       >
                         <img
                           className={undefined}
-                          color={undefined}
+                          color="rgba(96,96,255,0.25)"
                           size={40}
                           src="https://artsdatabanken.no/Media/F16499?mode=480x480"
                           style={
@@ -3558,7 +3597,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "alignItems": "center",
                               "backgroundColor": "#00000000",
                               "borderRadius": "50%",
-                              "color": "#ffffff",
+                              "color": "rgba(96,96,255,0.25)",
                               "display": "inline-flex",
                               "fontSize": 20,
                               "height": 40,
@@ -3572,28 +3611,57 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         />
-                        <div
-                          className={undefined}
-                          size={40}
+                        <span
                           style={
                             Object {
-                              "alignItems": "center",
-                              "backgroundColor": "rgb(188, 188, 188)",
-                              "borderRadius": "50%",
-                              "color": "#ffffff",
                               "display": "inline-flex",
-                              "fontSize": 20,
-                              "height": 40,
-                              "justifyContent": "center",
-                              "muiPrepared": true,
                               "position": "absolute",
                               "right": 16,
                               "top": 16,
-                              "userSelect": "none",
-                              "width": 40,
                             }
                           }
-                        />
+                        >
+                          <div
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "borderRadius": "50%",
+                                "height": "28px",
+                                "right": "14px",
+                                "top": "14px",
+                                "width": "28px",
+                              }
+                            }
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "20%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
+                                }
+                              }
+                            >
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": "rgba(96,96,255,0.25)",
+                                    "borderRadius": "20%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
+                              />
+                            </div>
+                          </div>
+                        </span>
                         <span
                           style={
                             Object {
@@ -3682,6 +3750,13 @@ exports[`Storyshots KodeVindu default 1`] = `
                     </div>
                   </span>
                 </div>
+                <div
+                  style={
+                    Object {
+                      "marginLeft": 56,
+                    }
+                  }
+                />
               </div>
             </div>
           </div>
@@ -4505,6 +4580,287 @@ exports[`Storyshots MainDrawer default 1`] = `
     </div>
   </div>
 </div>
+`;
+
+exports[`Storyshots PaintSwatch collection 1`] = `
+Array [
+  <div>
+    <div
+        onClick={[Function]}
+        style={
+            Object {
+                "borderRadius": "50%",
+                "height": "28px",
+                "right": "14px",
+                "top": "14px",
+                "width": "28px",
+              }
+        }
+    >
+        <div
+            style={
+                Object {
+                    "backgroundImage": "url(null)",
+                    "borderRadius": "20%",
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+            }
+        >
+            <div
+                style={
+                    Object {
+                        "backgroundColor": "rgba(0,0,255,1)",
+                        "borderRadius": "20%",
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                }
+            />
+        </div>
+    </div>
+    <p>
+        100
+        % alpha
+    </p>
+</div>,
+  <div>
+    <div
+        onClick={[Function]}
+        style={
+            Object {
+                "borderRadius": "50%",
+                "height": "28px",
+                "right": "14px",
+                "top": "14px",
+                "width": "28px",
+              }
+        }
+    >
+        <div
+            style={
+                Object {
+                    "backgroundImage": "url(null)",
+                    "borderRadius": "20%",
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+            }
+        >
+            <div
+                style={
+                    Object {
+                        "backgroundColor": "rgba(0,0,255,0.8)",
+                        "borderRadius": "20%",
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                }
+            />
+        </div>
+    </div>
+    <p>
+        80
+        % alpha
+    </p>
+</div>,
+  <div>
+    <div
+        onClick={[Function]}
+        style={
+            Object {
+                "borderRadius": "50%",
+                "height": "28px",
+                "right": "14px",
+                "top": "14px",
+                "width": "28px",
+              }
+        }
+    >
+        <div
+            style={
+                Object {
+                    "backgroundImage": "url(null)",
+                    "borderRadius": "20%",
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+            }
+        >
+            <div
+                style={
+                    Object {
+                        "backgroundColor": "rgba(0,0,255,0.6)",
+                        "borderRadius": "20%",
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                }
+            />
+        </div>
+    </div>
+    <p>
+        60
+        % alpha
+    </p>
+</div>,
+  <div>
+    <div
+        onClick={[Function]}
+        style={
+            Object {
+                "borderRadius": "50%",
+                "height": "28px",
+                "right": "14px",
+                "top": "14px",
+                "width": "28px",
+              }
+        }
+    >
+        <div
+            style={
+                Object {
+                    "backgroundImage": "url(null)",
+                    "borderRadius": "20%",
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+            }
+        >
+            <div
+                style={
+                    Object {
+                        "backgroundColor": "rgba(0,0,255,0.4)",
+                        "borderRadius": "20%",
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                }
+            />
+        </div>
+    </div>
+    <p>
+        40
+        % alpha
+    </p>
+</div>,
+  <div>
+    <div
+        onClick={[Function]}
+        style={
+            Object {
+                "borderRadius": "50%",
+                "height": "28px",
+                "right": "14px",
+                "top": "14px",
+                "width": "28px",
+              }
+        }
+    >
+        <div
+            style={
+                Object {
+                    "backgroundImage": "url(null)",
+                    "borderRadius": "20%",
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+            }
+        >
+            <div
+                style={
+                    Object {
+                        "backgroundColor": "rgba(0,0,255,0.2)",
+                        "borderRadius": "20%",
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                }
+            />
+        </div>
+    </div>
+    <p>
+        20
+        % alpha
+    </p>
+</div>,
+  <div>
+    <div
+        onClick={[Function]}
+        style={
+            Object {
+                "borderRadius": "50%",
+                "height": "28px",
+                "right": "14px",
+                "top": "14px",
+                "width": "28px",
+              }
+        }
+    >
+        <div
+            style={
+                Object {
+                    "backgroundImage": "url(null)",
+                    "borderRadius": "20%",
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+            }
+        >
+            <div
+                style={
+                    Object {
+                        "backgroundColor": "rgba(0,0,255,0)",
+                        "borderRadius": "20%",
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                }
+            />
+        </div>
+    </div>
+    <p>
+        0
+        % alpha
+    </p>
+</div>,
+]
 `;
 
 exports[`Storyshots PointInfo default 1`] = `

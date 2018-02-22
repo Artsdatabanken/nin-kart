@@ -5,14 +5,12 @@
   "dependencies": {
     "deck.gl": "^5.0.4",
     "graphql-request": "^1.4.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^6.0.0",
     "luma.gl": "^5.0.2",
     "material-ui": "^0.20.0",
-    "prettier": "^1.10.2",
     "rc-slider": "^8.5.0",
     "react": "^16.2.0",
     "react-collapsible": "^2.0.4",
+    "react-color": "^2.13.8",
     "react-dom": "^16.2.0",
     "react-map-gl": "^3.1.5",
     "react-responsive": "^4.0.0",
@@ -30,6 +28,9 @@
     "report-coverage": "coveralls < coverage/lcov.info"
   },
   "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.10.2",
     "@storybook/addon-actions": "^3.2.16",
     "@storybook/addon-knobs": "^3.2.16",
     "@storybook/addon-links": "^3.2.16",
@@ -40,10 +41,7 @@
     "storybook-addon-material-ui": "^0.8.2"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "prettier --write",
-      "git add"
-    ]
+    "src/**/*.{js,jsx,json,css}": ["prettier --write", "git add"]
   },
   "prettier": {
     "semi": false,
@@ -51,12 +49,7 @@
     "singleQuote": true
   },
   "jest": {
-    "coverageReporters": [
-      "lcov"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.{js}",
-      "!src/**/__tests__/*.{js}"
-    ]
+    "coverageReporters": ["lcov"],
+    "collectCoverageFrom": ["src/**/*.{js}", "!src/**/__tests__/*.{js}"]
   }
 }

@@ -1,101 +1,83 @@
 import React from 'react'
-import Kodelisteelement from './Kodelisteelement'
 import Kodekort from './Kodekort'
 import StatistikkContainer from '../Statistikk/StatistikkContainer'
-import { Paper, List, ListItem, Subheader } from 'material-ui'
+import { Paper, List, div, Subheader } from 'material-ui'
 import FetchContainer from '../../FetchContainer'
+import Kodeliste from './Kodeliste'
 
-const KodeVindu = props => {
-  const selv = props.meta.selv || {}
-  const navn = (selv.navn || props.data.navn || ' type').toLowerCase() // TODO: navn i meta
-  //if (!props.data) return null
-  return (
-    <FetchContainer>
-      <Paper
-        zDepth={4}
-        style={{
-          height: '100%',
-          position: 'fixed',
-          left: 0,
-          top: 0,
-          width: 416,
-          overflow: 'auto',
-        }}
-      >
-        {props.meta && (
-          <Kodekort
-            {...props.meta}
-            onGoToCode={props.onGoToCode}
-            data={props.data}
-          />
-        )}
-        {props.meta.ingress && <ListItem primaryText={props.meta.ingress} />}
+class KodeVindu extends React.Component {
+  handleShowColorpicker = kode => {
+    const nyKode = this.state.ekspandertKode === kode ? null : kode
+    this.setState({ ekspandertKode: nyKode })
+  }
+  state = {}
 
-        <List>
-          <Kodeliste
-            title={`Undernivåer av ${navn}`}
-            apidata={props.data.barn}
-            metadata={props.meta.barn}
-            onGoToCode={props.onGoToCode}
-            onMouseEnter={props.onMouseEnter}
-          />
-
-          {false && (
-            <React.Fragment>
-              <Kodeliste
-                title={`Diagnostiske arter`}
-                apidata={props.data.barn}
-                metadata={props.meta}
-                onGoToCode={props.onGoToCode}
-                onMouseEnter={props.onMouseEnter}
-              />
-            </React.Fragment>
+  render() {
+    const props = this.props
+    const selv = props.meta.selv || {}
+    const navn = (selv.navn || props.data.navn || ' type').toLowerCase() // TODO: navn i meta
+    return (
+      <FetchContainer>
+        <Paper
+          zDepth={4}
+          style={{
+            height: '100%',
+            position: 'fixed',
+            left: 0,
+            top: 0,
+            width: 408,
+            overflow: 'auto',
+          }}
+        >
+          {props.meta && (
+            <Kodekort
+              {...props.meta}
+              onGoToCode={props.onGoToCode}
+              data={props.data}
+            />
           )}
-          {false && (
-            <React.Fragment>
-              <Subheader>Om {navn}</Subheader>
-              <StatistikkContainer
-                ingress={props.meta.ingress}
-                dataUrl={'/kode/' + props.data.kode}
-              />
-            </React.Fragment>
-          )}
-        </List>
-      </Paper>
-    </FetchContainer>
-  )
-}
+          {props.meta.ingress && <div primaryText={props.meta.ingress} />}
+          <List>
+            <Kodeliste
+              title={`Undernivåer av ${navn}`}
+              apidata={props.data.barn}
+              metadata={props.meta.barn}
+              ekspandertKode={this.state.ekspandertKode}
+              onGoToCode={props.onGoToCode}
+              onMouseEnter={props.onMouseEnter}
+              onMouseLeave={props.onMouseLeave}
+              onShowColorpicker={this.handleShowColorpicker}
+              onUpdateLayerProp={props.onUpdateLayerProp}
+            />
 
-const Kodeliste = ({ title, apidata, metadata, onGoToCode, onMouseEnter }) => {
-  if (!metadata) return null
-  return (
-    <React.Fragment>
-      <Subheader>{title}</Subheader>
-      {Object.keys(metadata).map(item => {
-        const apibarn = apidata
-          ? apidata[
-              apidata
-                .map(apiItem => {
-                  return apiItem.kode
-                })
-                .indexOf(item)
-            ] || {}
-          : {}
-        const metabarnet = metadata[item] || {}
-        const kode = item.toString()
-        return (
-          <Kodelisteelement
-            kode={kode}
-            key={kode}
-            {...apibarn}
-            meta={metabarnet}
-            onGoToCode={onGoToCode}
-            onMouseEnter={onMouseEnter}
-          />
-        )
-      })}
-    </React.Fragment>
-  )
+            {false && (
+              <React.Fragment>
+                <Kodeliste
+                  title={`Diagnostiske arter`}
+                  apidata={props.data.barn}
+                  metadata={props.meta}
+                  ekspandertKode={this.state.ekspandertKode}
+                  onGoToCode={props.onGoToCode}
+                  onMouseEnter={props.onMouseEnter}
+                  onMouseLeave={props.onMouseLeave}
+                  onUpdateLayerProp={props.onUpdateLayerProp}
+                />
+              </React.Fragment>
+            )}
+            {false && (
+              <React.Fragment>
+                <Subheader>Om {navn}</Subheader>
+                <StatistikkContainer
+                  ingress={props.meta.ingress}
+                  dataUrl={'/kode/' + props.data.kode}
+                />
+              </React.Fragment>
+            )}
+          </List>
+        </Paper>
+      </FetchContainer>
+    )
+  }
 }
 
 export default KodeVindu

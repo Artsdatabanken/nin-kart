@@ -1,5 +1,5 @@
 import React from 'react'
-import KodeVinduContainer from './Kodetre/Kodeliste/KodeVinduContainer'
+import KodeContainer from './Kodetre/Kodeliste/KodeContainer'
 import TopBar from './TopBar/TopBar'
 import ResultatListe from './Kodetre/Kodeliste/ResultatListe'
 import { Route, Switch } from 'react-router-dom'
@@ -47,7 +47,7 @@ class VenstreVinduContainer extends React.Component {
                 <Route
                   path="/katalog/:kode?"
                   render={({ match, history }) => (
-                    <KodeVinduContainer
+                    <KodeContainer
                       style={{ height: '100vh' }}
                       kode={match.params.kode}
                       onGoToCode={kode => {
@@ -55,6 +55,7 @@ class VenstreVinduContainer extends React.Component {
                         this.setState({ searchResults: null })
                       }}
                       onMouseEnter={this.props.onMouseEnter}
+                      onMouseLeave={this.props.onMouseLeave}
                       mapbounds={this.props.mapbounds}
                     />
                   )}

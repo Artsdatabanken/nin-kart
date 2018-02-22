@@ -24,15 +24,19 @@ var api = {
 const meta = {
   barn: {
     NA_H1: {
+      color: 'rgba(96,96,255,1.0)',
       foto: 'https://artsdatabanken.no/Media/F16499?mode=480x480',
     },
     NA_H2: {
+      color: 'rgba(96,96,255,0.75)',
       foto: 'https://artsdatabanken.no/Media/F1200?mode=480x480',
     },
     NA_H3: {
+      color: 'rgba(96,96,255,0.5)',
       foto: 'https://artsdatabanken.no/Media/F16499?mode=480x480',
     },
     NA_H4: {
+      color: 'rgba(96,96,255,0.25)',
       foto: 'https://artsdatabanken.no/Media/F16499?mode=480x480',
     },
   },
@@ -50,7 +54,10 @@ storiesOf('KodeVindu', module)
     <KodeVindu
       data={api}
       meta={meta}
+      onUpdateLayerProp={action('updateLayerProp')}
       onMouseEnter={action('mouseEnter')}
+      onMouseLeave={action('mouseLeave')}
       onClick={action('click')}
+      onShowColorpicker={action('showColorpicker')}
     />
   ))
