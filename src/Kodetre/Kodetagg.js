@@ -1,52 +1,41 @@
 import React from 'react'
-
-const styles = {
-  chip: {
-    margin: 2,
-    fontSize: 8,
-    lineHeight: 12,
-    color: 'rgba(95, 95, 95, 0.87)',
-    fontWeight: 400,
-    paddingLeft: '12px',
-    paddingRight: '12px',
-    userSelect: 'none',
-    whiteSpace: 'nowrap',
-  },
-  wrapper: {
-    padding: 2,
-    display: 'flex',
-    flexWrap: 'wrap',
-    height: 18,
-    marginLeft: '12px',
-    paddingLeft: '6px',
-    paddingRight: '6px',
-
-    border: '10px',
-    boxSizing: 'border-box',
-    WebkiTapHighlightColor: 'rgba(0, 0, 0, 0)',
-    cursor: 'default',
-    textDecoration: 'none',
-    margin: '0px',
-    outline: 'none',
-    fontSize: '10px',
-    fontWeight: 'inherit',
-    position: 'relative',
-    backgroundColor: 'rgb(224, 224, 224)',
-    borderRadius: '16px',
-    whiteSpace: 'nowrap',
-    width: 'fit-content',
-  },
-}
+import muiThemeable from 'material-ui/styles/muiThemeable'
 
 class Kodetagg extends React.Component {
   render() {
+    console.log(this.props.muiTheme)
+    const styles = {
+      chip: {
+        margin: 2,
+        fontSize: 8,
+        lineHeight: '10px',
+        color: this.props.muiTheme.palette.textColor,
+        fontWeight: 600,
+        paddingLeft: '2px',
+        paddingRight: '2px',
+      },
+      wrapper: {
+        padding: 2,
+        display: 'flex',
+        flexWrap: 'wrap',
+        height: 16,
+        boxSizing: 'border-box',
+        marginTop: '2px',
+        marginLeft: '0px',
+        outline: 'none',
+        position: 'relative',
+        backgroundColor: this.props.muiTheme.palette.accent3Color,
+        borderRadius: '8px',
+        width: 'fit-content',
+      },
+    }
     const { kode } = this.props
     return (
       <div style={styles.wrapper}>
-        <div styles={styles.chip}>{kode}</div>
+        <div style={styles.chip}>{kode}</div>
       </div>
     )
   }
 }
 
-export default Kodetagg
+export default muiThemeable()(Kodetagg)
