@@ -131,7 +131,7 @@ class Mapbox extends Component {
           map.removeLayer(kode)
           let lag = hentLag(map, kode)
           if (lag && lag.type === 'fill') {
-            let fillColor = Color(barn.color).alpha(0.35)
+            let fillColor = Color(barn.farge).alpha(0.35)
             const isHighlighted = kode === opplystKode
             if (isHighlighted) {
               fillColor = fillColor.lightness(90).saturate(90)
