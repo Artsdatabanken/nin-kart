@@ -8,6 +8,7 @@ import muiThemeable from 'material-ui/styles/muiThemeable'
 import hentLag from './style-lookup'
 import backend from '../../backend'
 import DeckGL, { GridLayer } from 'deck.gl'
+import Color from 'color'
 
 const LIGHT_SETTINGS = {
   lightsPosition: [9.5, 56, 5000, -2, 57, 8000],
@@ -24,7 +25,6 @@ class Mapbox extends Component {
     super(props)
     this.state = {
       utbredelsesData: [],
-
       showTaxonGrid: false,
       viewport: {
         width: window.innerWidth,
@@ -50,11 +50,11 @@ class Mapbox extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.opplystKode !== this.props.opplystKode) {
-      //      this.updateAktivKode(nextProps.aktivKode, nextProps.opplystKode)
+      this.updateAktivKode(nextProps.aktivKode, nextProps.opplystKode)
     }
 
     if (nextProps.aktivKode !== this.props.aktivKode) {
-      //    this.updateAktivKode(nextProps.aktivKode, nextProps.opplystKode)
+      this.updateAktivKode(nextProps.aktivKode, nextProps.opplystKode)
       this.tempHackFetchMeta(nextProps.aktivKode)
     }
   }
@@ -62,7 +62,7 @@ class Mapbox extends Component {
   updateAktivKode(kode, opplystKode) {
     kode = kode || 'ROT'
     let map = this.map.getMap()
-    if (kode) {
+    if (kode && kode !== this.props.aktivKode) {
       let taxonMatch = kode.match(/TX_(.*)/)
       if (taxonMatch) {
         backend.getKodeUtbredelse(kode).then(data => {
@@ -125,26 +125,28 @@ class Mapbox extends Component {
       map.removeLayer('naturomrader6-hover')
       map.removeLayer('Rodlistede')
       //      console.log(map.getStyle().layers)
-      Object.keys(this.state.meta.barn).forEach(kode => {
-        const barn = this.state.meta.barn[kode]
-        map.removeLayer(kode)
-        let lag = hentLag(map, kode)
-        if (lag && lag.type === 'fill') {
-          let fillColor = Color(barn.color).alpha(0.35)
-          const isHighlighted = kode === opplystKode
-          if (isHighlighted) {
-            fillColor = fillColor.lightness(90).saturate(90)
-            //            fillColor = Color('#ff8000')
+      if (this.state.meta.barn) {
+        Object.keys(this.state.meta.barn).forEach(kode => {
+          const barn = this.state.meta.barn[kode]
+          map.removeLayer(kode)
+          let lag = hentLag(map, kode)
+          if (lag && lag.type === 'fill') {
+            let fillColor = Color(barn.color).alpha(0.35)
+            const isHighlighted = kode === opplystKode
+            if (isHighlighted) {
+              fillColor = fillColor.lightness(90).saturate(90)
+              //            fillColor = Color('#ff8000')
+            }
+            //            .saturate(4.0)
+            lag.paint['fill-color'] = fillColor.rgbaString()
+            const outlineColor = isHighlighted
+              ? fillColor.darken(0.5)
+              : fillColor.darken(0.9)
+            lag.paint['fill-outline-color'] = outlineColor.rgbaString()
+            map.addLayer(lag, 'building')
           }
-          //            .saturate(4.0)
-          lag.paint['fill-color'] = fillColor.rgbaString()
-          const outlineColor = isHighlighted
-            ? fillColor.darken(0.5)
-            : fillColor.darken(0.9)
-          lag.paint['fill-outline-color'] = outlineColor.rgbaString()
-          map.addLayer(lag, 'building')
-        }
-      })
+        })
+      }
       //      console.log(map.getStyle().layers)
     } else if (kode) {
       let lag = hentLag(map, kode)
@@ -163,7 +165,7 @@ class Mapbox extends Component {
   }
 
   handleStyleUpdate(kode, opplystKode) {
-    this.updateAktivKode(kode, opplystKode)
+    //this.updateAktivKode(kode, opplystKode)
   }
 
   componentWillUnmount() {
