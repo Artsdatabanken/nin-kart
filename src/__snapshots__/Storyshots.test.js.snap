@@ -1708,24 +1708,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                       "width": 1024,
                     }
                   }
-                >
-                  <div
-                    id="deckgl-wrapper"
-                  >
-                    <canvas
-                      id="deckgl-overlay"
-                      style={
-                        Object {
-                          "height": 768,
-                          "left": 0,
-                          "position": "absolute",
-                          "top": 0,
-                          "width": 1024,
-                        }
-                      }
-                    />
-                  </div>
-                </div>
+                />
               </div>
             </div>
             <div
@@ -2395,24 +2378,7 @@ exports[`Storyshots Kart Mapbox default 1`] = `
             "width": 1024,
           }
         }
-      >
-        <div
-          id="deckgl-wrapper"
-        >
-          <canvas
-            id="deckgl-overlay"
-            style={
-              Object {
-                "height": 768,
-                "left": 0,
-                "position": "absolute",
-                "top": 0,
-                "width": 1024,
-              }
-            }
-          />
-        </div>
-      </div>
+      />
     </div>
   </div>
 </div>
