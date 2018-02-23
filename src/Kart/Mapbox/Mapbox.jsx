@@ -7,7 +7,7 @@ import { Route, Switch } from 'react-router-dom'
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import hentLag from './style-lookup'
 import backend from '../../backend'
-import DeckGL, { GridLayer } from 'deck.gl'
+import DeckGL, { GridLayer /*, ScatterplotLayer */ } from 'deck.gl'
 import Color from 'color'
 
 const LIGHT_SETTINGS = {
@@ -67,12 +67,13 @@ class Mapbox extends Component {
       let taxonMatch = aktivKode.match(/TX_(.*)/)
       if (taxonMatch) {
         const sciId = parseInt(taxonMatch[1], 36)
-        console.log('TX_' + sciId)
+        //console.log('TX_' + sciId)
 
         backend.getKodeUtbredelse('TX_' + sciId).then(data => {
-          if (data) {
-            this.setState({ utbredelsesData: data })
-          }
+          this.setState({
+            utbredelsesData: data ? data : [],
+            enableDeck: data ? true : false,
+          })
         })
       }
       backend.getKodeBBox(aktivKode).then(data => {
@@ -93,32 +94,12 @@ class Mapbox extends Component {
       )
       return
     }
-    console.log('kode: ' + aktivKode + ' mapstyle loaded: true')
+    //console.log('kode: ' + aktivKode + ' mapstyle loaded: true')
 
     map.removeLayer(this.props.aktivKode)
     let taxonMatch = aktivKode.match(/TX_(.*)/)
     if (this.state.enableDeck !== taxonMatch)
       this.setState({ enableDeck: taxonMatch })
-    if (taxonMatch) {
-      let url = backend.getKodeUtbredelseUrl(aktivKode)
-
-      let kilde = {
-        type: 'image',
-        url: url,
-        coordinates: [
-          [-2.12900722, 71.87414651],
-          [32.7256258, 71.87414651],
-          [32.7256258, 57.36940657],
-          [-2.12900722, 57.36940657],
-        ],
-      }
-
-      map.removeSource('tx_overlay') // remove if it exist
-      map.addSource('tx_overlay', kilde)
-
-      let lag = hentLag(map, aktivKode)
-      if (lag) map.addLayer(lag)
-    }
   }
   updateOpplystKode(aktivKode, opplystKode) {
     let map = this.map.getMap()
@@ -238,6 +219,17 @@ class Mapbox extends Component {
         return count
       },
     })
+
+    // Test scatterplotlayer
+    // const taxonLayer = new ScatterplotLayer({
+    //   id: 'taxonLayer',
+    //   data: this.state.utbredelsesData,
+    //     radiusScale: 30,
+    //     radiusMinPixels: 0.25,
+    //     getPosition: d => [d.g[0], d.g[1], 0],
+    //     getColor: d => ([255, 0, 128]),
+    //     getRadius: d => 1
+    // })
 
     return (
       <ReactMapGL

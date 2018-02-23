@@ -198,11 +198,6 @@ class Backend {
       }%2F${kode}.jpg?alt=media`
   }
 
-  static getKodeUtbredelseUrl(kode) {
-    if (kode) {
-      return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/utbredelse%2F${kode}.png?alt=media`
-    }
-  }
   static getKodeUtbredelse(kode) {
     if (kode) {
       return this.getPromise(
