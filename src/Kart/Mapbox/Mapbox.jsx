@@ -25,7 +25,7 @@ class Mapbox extends Component {
     super(props)
     this.state = {
       utbredelsesData: [],
-      showTaxonGrid: false,
+      enableDeck: false,
       viewport: {
         width: window.innerWidth,
         height: window.innerHeight,
@@ -41,35 +41,41 @@ class Mapbox extends Component {
   componentDidMount() {
     window.addEventListener('resize', this._resize)
     this._resize()
+    this.updateAktivKode(this.props.aktivKode)
     this.tempHackFetchMeta(this.props.aktivKode)
   }
 
   componentDidUpdate() {
-    this.updateAktivKode(this.props.aktivKode, this.props.opplystKode)
+    //this.updateAktivKode(this.props.aktivKode, this.props.opplystKode)
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.opplystKode !== this.props.opplystKode) {
-      this.updateAktivKode(nextProps.aktivKode, nextProps.opplystKode)
+      this.updateOpplystKode(nextProps.aktivKode, nextProps.opplystKode)
     }
 
     if (nextProps.aktivKode !== this.props.aktivKode) {
-      this.updateAktivKode(nextProps.aktivKode, nextProps.opplystKode)
+      this.updateAktivKode(nextProps.aktivKode)
       this.tempHackFetchMeta(nextProps.aktivKode)
     }
   }
 
-  updateAktivKode(kode, opplystKode) {
-    kode = kode || 'ROT'
+  updateAktivKode(aktivKode) {
+    aktivKode = aktivKode || 'ROT'
     let map = this.map.getMap()
-    if (kode && kode !== this.props.aktivKode) {
-      let taxonMatch = kode.match(/TX_(.*)/)
+    if (aktivKode) {
+      let taxonMatch = aktivKode.match(/TX_(.*)/)
       if (taxonMatch) {
-        backend.getKodeUtbredelse(kode).then(data => {
-          this.setState({ utbredelsesData: data })
+        const sciId = parseInt(taxonMatch[1], 36)
+        console.log('TX_' + sciId)
+
+        backend.getKodeUtbredelse('TX_' + sciId).then(data => {
+          if (data) {
+            this.setState({ utbredelsesData: data })
+          }
         })
       }
-      backend.getKodeBBox(kode).then(data => {
+      backend.getKodeBBox(aktivKode).then(data => {
         if (map && data) {
           map.fitBounds([[data[2], data[3]], [data[0], data[1]]], {
             padding: { top: 10, bottom: 25, left: 15, right: 5 },
@@ -81,19 +87,20 @@ class Mapbox extends Component {
     if (!map || !map.isStyleLoaded()) {
       console.log(
         'kode: ' +
-          kode +
+          aktivKode +
           ' mapstyle loaded: ' +
           (map ? map.isStyleLoaded() : false)
       )
       return
     }
+    console.log('kode: ' + aktivKode + ' mapstyle loaded: true')
 
     map.removeLayer(this.props.aktivKode)
-    let taxonMatch = kode.match(/TX_(.*)/)
+    let taxonMatch = aktivKode.match(/TX_(.*)/)
     if (this.state.enableDeck !== taxonMatch)
       this.setState({ enableDeck: taxonMatch })
     if (taxonMatch) {
-      let url = backend.getKodeUtbredelseUrl(kode)
+      let url = backend.getKodeUtbredelseUrl(aktivKode)
 
       let kilde = {
         type: 'image',
@@ -109,10 +116,12 @@ class Mapbox extends Component {
       map.removeSource('tx_overlay') // remove if it exist
       map.addSource('tx_overlay', kilde)
 
-      let lag = hentLag(map, kode)
+      let lag = hentLag(map, aktivKode)
       if (lag) map.addLayer(lag)
     }
-
+  }
+  updateOpplystKode(aktivKode, opplystKode) {
+    let map = this.map.getMap()
     if (this.state.meta) {
       map.removeLayer('n50-ld-1')
       map.removeLayer('n50-ld-2')
@@ -148,8 +157,8 @@ class Mapbox extends Component {
         })
       }
       //      console.log(map.getStyle().layers)
-    } else if (kode) {
-      let lag = hentLag(map, kode)
+    } else if (aktivKode) {
+      let lag = hentLag(map, aktivKode)
       if (lag) map.addLayer(lag)
     }
   }
@@ -249,7 +258,7 @@ class Mapbox extends Component {
         mapStyle={this.props.mapStyle}
         minZoom={4}
       >
-        {this.state.showTaxonGrid && (
+        {this.state.enableDeck && (
           <DeckGL {...viewport} layers={[taxonLayer]} colorScale={colorScale} />
         )}
         <Switch>
