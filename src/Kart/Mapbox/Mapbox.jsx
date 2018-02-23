@@ -25,7 +25,7 @@ class Mapbox extends Component {
     super(props)
     this.state = {
       utbredelsesData: [],
-      showTaxonGrid: true,
+      enableDeck: false,
       viewport: {
         width: window.innerWidth,
         height: window.innerHeight,
@@ -258,7 +258,7 @@ class Mapbox extends Component {
         mapStyle={this.props.mapStyle}
         minZoom={4}
       >
-        {this.state.showTaxonGrid && (
+        {this.state.enableDeck && (
           <DeckGL {...viewport} layers={[taxonLayer]} colorScale={colorScale} />
         )}
         <Switch>
