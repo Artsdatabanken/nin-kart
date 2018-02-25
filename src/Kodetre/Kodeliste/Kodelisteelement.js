@@ -69,15 +69,16 @@ class Kodelisteelement extends React.Component {
           }
         />
         <div style={{ marginLeft: 56 }}>
+          {this.props.erEkspander && console.log(meta.farge)}
           {this.props.erEkspandert && (
             <ColorPicker
               style={{ display: 'fixed' }}
-              color={meta.color}
-              onChange={color =>
+              color={meta.farge}
+              onChange={farge =>
                 this.props.onUpdateLayerProp(
                   item.kode,
-                  'color',
-                  tinycolor(color.rgb).toRgbString()
+                  'farge',
+                  tinycolor(farge.rgb).toRgbString()
                 )
               }
             />
@@ -89,4 +90,3 @@ class Kodelisteelement extends React.Component {
 }
 
 export default Kodelisteelement
-//                color: meta.textColor,
