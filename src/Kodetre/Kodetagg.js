@@ -8,7 +8,7 @@ class Kodetagg extends React.Component {
         margin: 2,
         fontSize: 8,
         lineHeight: '10px',
-        color: this.props.muiTheme.palette.textColor,
+        color: this.props.muiTheme.palette.alternateTextColor,
         fontWeight: 600,
         paddingLeft: '2px',
         paddingRight: '2px',

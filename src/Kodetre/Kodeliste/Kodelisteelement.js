@@ -5,6 +5,7 @@ import tinycolor from 'tinycolor2'
 import Kodetagg from '../Kodetagg'
 import PaintSwatch from './PaintSwatch'
 import ColorPicker from './ColorPicker'
+import VenstreAvatar from './VenstreAvatar'
 
 class Kodelisteelement extends React.Component {
   render() {
@@ -29,14 +30,13 @@ class Kodelisteelement extends React.Component {
             this.props.onMouseLeave(kode)
           }}
           leftAvatar={
-            <Avatar
-              style={meta.utenRamme ? { borderRadius: 0 } : {}}
+            <VenstreAvatar
+              utenRamme={meta.utenRamme}
               color={meta.tekstFarge}
-              backgroundColor={meta.farge || '#00000000'}
-              src={meta.avatarbilde || meta.foto}
-            >
-              {meta.avatarbilde || meta.foto ? null : meta.kode}
-            </Avatar>
+              backgroundColor={meta.farge}
+              imageSrc={meta.avatarbilde || meta.foto}
+              kode={meta.kode}
+            />
           }
           primaryText={
             <span>

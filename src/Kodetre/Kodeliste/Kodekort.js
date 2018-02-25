@@ -12,7 +12,8 @@ class Kodekort extends React.Component {
   state = { expanded: false }
 
   componentWillReceiveProps(nextProps, props) {
-    this.setState({ favorite: this.isFavorite(nextProps.data.kode) })
+    if (nextProps.data && props.data && nextProps.data.kode !== props.data.kode)
+      this.setState({ favorite: this.isFavorite(nextProps.data.kode) })
   }
 
   toggleFavorite = kode => {
