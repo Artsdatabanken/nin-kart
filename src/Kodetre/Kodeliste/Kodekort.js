@@ -90,14 +90,16 @@ const Tittelblokk = ({
         right: 0,
       }}
     >
-      <IconButton
-        href={infoUrl}
-        style={{
-          float: 'right',
-        }}
-      >
-        <InfoOutline color="#eee" />
-      </IconButton>
+      {infoUrl && (
+        <IconButton
+          href={infoUrl}
+          style={{
+            float: 'right',
+          }}
+        >
+          <InfoOutline color="#eee" />
+        </IconButton>
+      )}
       <IconButton style={{ float: 'right' }}>
         <Share color="#eee" />
       </IconButton>
