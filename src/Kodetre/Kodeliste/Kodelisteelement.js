@@ -1,5 +1,4 @@
 import React from 'react'
-import { Avatar } from 'material-ui'
 import { ListItem } from 'material-ui/List'
 import tinycolor from 'tinycolor2'
 import Kodetagg from '../Kodetagg'
