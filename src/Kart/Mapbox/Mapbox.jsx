@@ -45,10 +45,6 @@ class Mapbox extends Component {
     this.tempHackFetchMeta(this.props.aktivKode)
   }
 
-  componentDidUpdate() {
-    //this.updateAktivKode(this.props.aktivKode, this.props.opplystKode)
-  }
-
   componentWillReceiveProps(nextProps) {
     if (nextProps.opplystKode !== this.props.opplystKode) {
       this.updateOpplystKode(nextProps.aktivKode, nextProps.opplystKode)
@@ -61,7 +57,6 @@ class Mapbox extends Component {
   }
 
   updateAktivKode(aktivKode) {
-    aktivKode = aktivKode || 'ROT'
     let map = this.map.getMap()
     if (aktivKode) {
       let taxonMatch = aktivKode.match(/TX_(.*)/)
@@ -76,13 +71,6 @@ class Mapbox extends Component {
           })
         })
       }
-      backend.getKodeBBox(aktivKode).then(data => {
-        if (map && data) {
-          map.fitBounds([[data[2], data[3]], [data[0], data[1]]], {
-            padding: { top: 10, bottom: 25, left: 15, right: 5 },
-          })
-        }
-      })
     }
 
     if (!map || !map.isStyleLoaded()) {
@@ -151,6 +139,14 @@ class Mapbox extends Component {
     backend.hentKodeMeta(kode).then(data => {
       if (currentQuery !== this.queryNumber) return // Abort stale query
       this.setState({ meta: data })
+
+      const bbox = data.bbox
+      let map = this.map.getMap()
+      if (map && bbox) {
+        map.fitBounds([[bbox[2], bbox[3]], [bbox[0], bbox[1]]], {
+          padding: { top: 10, bottom: 25, left: 15, right: 5 },
+        })
+      }
     })
   }
 

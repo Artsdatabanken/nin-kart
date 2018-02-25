@@ -2497,7 +2497,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                     >
                       <img
                         alt=""
-                        src="https://artsdatabanken.no/Media/F16499?mode=480x480"
+                        src={undefined}
                         style={
                           Object {
                             "maxWidth": "100%",
@@ -2564,9 +2564,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "muiPrepared": true,
                                 }
                               }
-                            >
-                              Marine vannmasser
-                            </span>
+                            />
                             <span
                               style={
                                 Object {
@@ -2577,11 +2575,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "muiPrepared": true,
                                 }
                               }
-                            >
-                              <div
-                                onClick={[Function]}
-                              />
-                            </span>
+                            />
                             <div
                               style={
                                 Object {

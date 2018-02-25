@@ -96,8 +96,10 @@ function hentLag(map, kode) {
     filter: ['has', kode],
     layout: {},
     paint: {
-      'fill-color': 'hsla(251, 59%, 28%, 0.8)',
-      'fill-outline-color': 'hsla(128, 88%, 29%, 0.8)',
+      'fill-opacity': 0.13,
+      'fill-pattern': 'shovel',
+      //      'fill-color': 'hsla(251, 59%, 28%, 0.8)',
+      //    'fill-outline-color': 'hsla(128, 88%, 29%, 0.8)',
     },
   }
   return naLayer

@@ -15,7 +15,6 @@ class KodeVindu extends React.Component {
   render() {
     const props = this.props
     const selv = props.meta.selv || {}
-    const tittel = (selv.tittel || props.data.navn || ' type').toLowerCase()
     return (
       <FetchContainer>
         <Paper
@@ -42,7 +41,7 @@ class KodeVindu extends React.Component {
           <List>
             <Kodeliste
               title={`Inneholder`}
-              apidata={props.data.barn}
+              apidata={props.data ? props.data.barn : []}
               metadata={props.meta.barn}
               ekspandertKode={this.state.ekspandertKode}
               onGoToCode={props.onGoToCode}
@@ -68,7 +67,7 @@ class KodeVindu extends React.Component {
             )}
             {false && (
               <React.Fragment>
-                <Subheader>Om {tittel}</Subheader>
+                <Subheader>Om {selv.tittel}</Subheader>
                 <StatistikkContainer
                   ingress={props.meta.ingress}
                   dataUrl={'/kode/' + props.data.kode}
