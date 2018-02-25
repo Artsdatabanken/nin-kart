@@ -2836,7 +2836,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                           style={
                             Object {
                               "alignItems": "center",
-                              "backgroundColor": "#00000000",
+                              "backgroundColor": "transparent",
                               "borderRadius": "50%",
                               "color": "#ffffff",
                               "display": "inline-flex",
@@ -2940,7 +2940,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               <div
                                 style={
                                   Object {
-                                    "color": "rgba(0, 0, 0, 0.87)",
+                                    "color": "#ffffff",
                                     "fontSize": 8,
                                     "fontWeight": 600,
                                     "lineHeight": "10px",
@@ -3054,7 +3054,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                           style={
                             Object {
                               "alignItems": "center",
-                              "backgroundColor": "#00000000",
+                              "backgroundColor": "transparent",
                               "borderRadius": "50%",
                               "color": "#ffffff",
                               "display": "inline-flex",
@@ -3158,7 +3158,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               <div
                                 style={
                                   Object {
-                                    "color": "rgba(0, 0, 0, 0.87)",
+                                    "color": "#ffffff",
                                     "fontSize": 8,
                                     "fontWeight": 600,
                                     "lineHeight": "10px",
@@ -3272,7 +3272,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                           style={
                             Object {
                               "alignItems": "center",
-                              "backgroundColor": "#00000000",
+                              "backgroundColor": "transparent",
                               "borderRadius": "50%",
                               "color": "#ffffff",
                               "display": "inline-flex",
@@ -3376,7 +3376,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               <div
                                 style={
                                   Object {
-                                    "color": "rgba(0, 0, 0, 0.87)",
+                                    "color": "#ffffff",
                                     "fontSize": 8,
                                     "fontWeight": 600,
                                     "lineHeight": "10px",
@@ -3490,7 +3490,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                           style={
                             Object {
                               "alignItems": "center",
-                              "backgroundColor": "#00000000",
+                              "backgroundColor": "transparent",
                               "borderRadius": "50%",
                               "color": "#ffffff",
                               "display": "inline-flex",
@@ -3594,7 +3594,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               <div
                                 style={
                                   Object {
-                                    "color": "rgba(0, 0, 0, 0.87)",
+                                    "color": "#ffffff",
                                     "fontSize": 8,
                                     "fontWeight": 600,
                                     "lineHeight": "10px",
@@ -3762,7 +3762,7 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
             <div
               style={
                 Object {
-                  "color": "rgba(0, 0, 0, 0.87)",
+                  "color": "#ffffff",
                   "fontSize": 8,
                   "fontWeight": 600,
                   "lineHeight": "10px",
@@ -3796,7 +3796,7 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
             <div
               style={
                 Object {
-                  "color": "rgba(0, 0, 0, 0.87)",
+                  "color": "#ffffff",
                   "fontSize": 8,
                   "fontWeight": 600,
                   "lineHeight": "10px",
@@ -3830,7 +3830,7 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
             <div
               style={
                 Object {
-                  "color": "rgba(0, 0, 0, 0.87)",
+                  "color": "#ffffff",
                   "fontSize": 8,
                   "fontWeight": 600,
                   "lineHeight": "10px",
@@ -3864,7 +3864,7 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
             <div
               style={
                 Object {
-                  "color": "rgba(0, 0, 0, 0.87)",
+                  "color": "#ffffff",
                   "fontSize": 8,
                   "fontWeight": 600,
                   "lineHeight": "10px",
@@ -3898,7 +3898,7 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
             <div
               style={
                 Object {
-                  "color": "rgba(0, 0, 0, 0.87)",
+                  "color": "#ffffff",
                   "fontSize": 8,
                   "fontWeight": 600,
                   "lineHeight": "10px",
@@ -3932,7 +3932,7 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
             <div
               style={
                 Object {
-                  "color": "rgba(0, 0, 0, 0.87)",
+                  "color": "#ffffff",
                   "fontSize": 8,
                   "fontWeight": 600,
                   "lineHeight": "10px",
@@ -3966,7 +3966,7 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
             <div
               style={
                 Object {
-                  "color": "rgba(0, 0, 0, 0.87)",
+                  "color": "#ffffff",
                   "fontSize": 8,
                   "fontWeight": 600,
                   "lineHeight": "10px",
@@ -4000,7 +4000,7 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
             <div
               style={
                 Object {
-                  "color": "rgba(0, 0, 0, 0.87)",
+                  "color": "#ffffff",
                   "fontSize": 8,
                   "fontWeight": 600,
                   "lineHeight": "10px",
@@ -4034,7 +4034,7 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
             <div
               style={
                 Object {
-                  "color": "rgba(0, 0, 0, 0.87)",
+                  "color": "#ffffff",
                   "fontSize": 8,
                   "fontWeight": 600,
                   "lineHeight": "10px",
