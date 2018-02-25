@@ -6,42 +6,6 @@ import Kodetagg from '../Kodetagg'
 import PaintSwatch from './PaintSwatch'
 import ColorPicker from './ColorPicker'
 
-const rotkoder = {
-  NA: { backgroundColor: '#228822', color: '#fff' },
-  MI: {
-    backgroundColor: '#f9e400',
-    color: '#111',
-  },
-  BS: {
-    backgroundColor: '#f9e400',
-    color: '#111',
-  },
-  BK: {
-    backgroundColor: '#f9e400',
-    color: '#111',
-  },
-  MV: {
-    backgroundColor: '#f9e400',
-    color: '#111',
-  },
-  TX: {
-    backgroundColor: '#228822',
-    color: '#fff',
-  },
-  RL: {
-    backgroundColor: '#e94f34',
-    color: '#fff',
-  },
-  RT: {
-    backgroundColor: '#e94f34',
-    color: '#fff',
-  },
-  GO: {
-    backgroundColor: '#555',
-    color: '#fff',
-  },
-}
-
 class Kodelisteelement extends React.Component {
   render() {
     const item = this.props
@@ -56,18 +20,6 @@ class Kodelisteelement extends React.Component {
       parts = [item.kode]
     }
 
-    const rotkode = parts[0]
-      .replace('GEO', 'GO')
-      .replace('MIV', 'MI')
-      .replace('RKAT', 'RL')
-      .replace('BeSys0', 'BS')
-      .replace('LKM', 'MV')
-      .replace('RTEM', 'RT')
-    let rotmeta = rotkoder[rotkode]
-    if (!rotmeta) {
-      console.warn('Mangler rotkode', meta.kode, this.props.kode, rotkode)
-      rotmeta = rotkoder['MV'] // use this as default for unknown codes instead of blowing up
-    }
     return (
       <React.Fragment>
         <ListItem

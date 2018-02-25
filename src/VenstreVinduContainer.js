@@ -45,20 +45,24 @@ class VenstreVinduContainer extends React.Component {
             ) : (
               <Switch>
                 <Route
-                  path="/katalog/:kode?"
-                  render={({ match, history }) => (
-                    <KodeContainer
-                      style={{ height: '100vh' }}
-                      kode={match.params.kode}
-                      onGoToCode={kode => {
-                        history.push('/katalog/' + kode)
-                        this.setState({ searchResults: null })
-                      }}
-                      onMouseEnter={this.props.onMouseEnter}
-                      onMouseLeave={this.props.onMouseLeave}
-                      mapbounds={this.props.mapbounds}
-                    />
-                  )}
+                  path="/katalog/:kode*"
+                  render={({ match, history }) => {
+                    return (
+                      <KodeContainer
+                        style={{ height: '100vh' }}
+                        kode={match.params.kode}
+                        onGoToCode={kode => {
+                          const segments = kode.match(/[a-zA-Z]+|[0-9]+/g) || []
+                          const path = segments.join('/')
+                          history.push('/katalog/' + path)
+                          this.setState({ searchResults: null })
+                        }}
+                        onMouseEnter={this.props.onMouseEnter}
+                        onMouseLeave={this.props.onMouseLeave}
+                        mapbounds={this.props.mapbounds}
+                      />
+                    )
+                  }}
                 />
 
                 <Route

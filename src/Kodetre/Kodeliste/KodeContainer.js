@@ -14,7 +14,6 @@ class KodeContainer extends React.Component {
   metaQueryNumber = 0
 
   componentDidMount() {
-    this.fetchData(this.props.kode)
     this.fetchMeta(this.props.kode)
   }
 
@@ -25,17 +24,40 @@ class KodeContainer extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (this.props.kode !== nextProps.kode) {
       this.fetchMeta(nextProps.kode)
-      this.fetchData(nextProps.kode)
     } else if (this.props.mapbounds !== nextProps.mapbounds)
-      this.fetchData(nextProps.kode)
+      this.fetchData(this.state.meta.kode)
   }
+
+  static tempCounter = 0
+  static tempColors = [
+    '#d53e4f',
+    '#f46d43',
+    '#fdae61',
+    '#fee08b',
+    '#e6f598',
+    '#abdda4',
+    '#66c2a5',
+    '#3288bd',
+  ]
 
   fetchMeta(kode) {
     this.metaQueryNumber++
     const currentQuery = this.metaQueryNumber
     backend.hentKodeMeta(kode).then(data => {
       if (currentQuery !== this.metaQueryNumber) return // Abort stale query
+      Object.keys(data.barn).forEach(key => {
+        console.log(key)
+        let v = data.barn[key]
+        if (!v.farge) {
+          const i =
+            KodeContainer.tempCounter++ % KodeContainer.tempColors.length
+          console.log(i)
+          v.farge = KodeContainer.tempColors[i]
+        }
+      })
+      console.log(data)
       this.setState({ meta: data })
+      this.fetchData(data.kode)
     })
   }
 

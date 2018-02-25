@@ -27,9 +27,8 @@ class Kodekort extends React.Component {
   isFavorite = kode => this.getFavorites().indexOf(kode) >= 0
 
   render() {
-    const { data, muiTheme } = this.props
-    const selv = this.props.selv || {}
-    const foto = selv.foto ? selv.foto : backend.getKodeFotoUrl(this.props.kode)
+    const { muiTheme } = this.props
+    const { foto } = this.props
     return (
       <Card containerStyle={{ paddingBottom: 0 }}>
         <CardMedia
@@ -40,13 +39,17 @@ class Kodekort extends React.Component {
               onGoToCode={this.props.onGoToCode}
               onAddLayer={this.props.onAddLayer}
               toggleFavorite={this.toggleFavorite}
-              selv={selv}
-              data={data}
+              kode={this.props.kode}
+              infoUrl={this.props.infoUrl}
+              tittel={this.props.tittel}
+              forelder={this.props.forelder}
             />
           }
         >
           <img
-            src={foto}
+            src={
+              foto ? foto : backend.getKodeFotoUrl(this.props.kode) // TODO
+            }
             alt=""
             style={{ minHeight: 144, objectFit: 'cover' }}
           />
@@ -61,19 +64,21 @@ const Tittelblokk = ({
   onAddLayer,
   toggleFavorite,
   favorite,
-  data,
-  selv,
+  kode,
+  infoUrl,
+  tittel,
+  forelder,
   muiTheme,
 }) => (
   <CardTitle
     actAsExpander={true}
     showExpandableButton={true}
-    title={selv.tittel}
+    title={tittel}
     titleColor={muiTheme.palette.alternateTextColor}
     subtitle={
-      <div onClick={() => onGoToCode(data.forelder.kode)}>
-        {data.forelder ? data.forelder.navn : ''}
-      </div>
+      forelder && (
+        <div onClick={() => onGoToCode(forelder.kode)}>{forelder.tittel}</div>
+      )
     }
     subtitleStyle={{ cursor: 'pointer' }}
     subtitleColor={muiTheme.palette.alternateTextColor}
@@ -86,7 +91,7 @@ const Tittelblokk = ({
       }}
     >
       <IconButton
-        href={selv.infoUrl}
+        href={infoUrl}
         style={{
           float: 'right',
         }}
@@ -98,7 +103,7 @@ const Tittelblokk = ({
       </IconButton>
       <IconButton
         style={{ float: 'right' }}
-        onClick={() => toggleFavorite(data.kode)}
+        onClick={() => toggleFavorite(kode)}
       >
         {favorite ? <Star color="#eee" /> : <StarBorder color="#eee" />}
       </IconButton>

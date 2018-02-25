@@ -117,8 +117,10 @@ class Backend {
   }
 
   static async hentKodeMeta(kode) {
-    kode = kode || 'ROT'
-    return this.getPromise(`https://adb-kode.firebaseio.com/data/${kode}.json`)
+    kode = kode || ''
+    kode = kode.replace('_', '/')
+    kode = kode.replace('-', '/')
+    return this.getPromise(`https://grunnkart.firebaseio.com/${kode}/@.json`)
   }
 
   static async hentPunkt(lng, lat) {
@@ -202,14 +204,6 @@ class Backend {
     if (kode) {
       return this.getPromise(
         `https://bboxcode.firebaseio.com/observations/${kode}.json`
-      )
-    }
-  }
-
-  static getKodeBBox(kode) {
-    if (kode) {
-      return this.getPromise(
-        `https://bboxcode.firebaseio.com/bbox/${kode}.json`
       )
     }
   }
