@@ -145,12 +145,12 @@ class Backend {
 
   static async getNatureAreaByLocalId(localId) {
     return this.getPromise(
-      `http://test.artsdatabanken.no/nin_master/Api/data/GetNatureAreaByLocalId/${localId}`
+      `https://test.artsdatabanken.no/nin_master/Api/data/GetNatureAreaByLocalId/${localId}`
     )
   }
   static async getMetadataByNatureAreaLocalId(localId) {
     return this.getPromise(
-      `http://test.artsdatabanken.no/nin_master/Api/data/GetMetadataByNatureAreaLocalId/${localId}`
+      `https://test.artsdatabanken.no/nin_master/Api/data/GetMetadataByNatureAreaLocalId/${localId}`
     )
   }
 
