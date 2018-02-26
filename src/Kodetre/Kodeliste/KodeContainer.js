@@ -47,16 +47,16 @@ class KodeContainer extends React.Component {
       if (currentQuery !== this.metaQueryNumber) return // Abort stale query
       if (data.barn)
         Object.keys(data.barn).forEach(key => {
-          console.log(key)
+          //console.log(key)
           let v = data.barn[key]
           if (!v.farge) {
             const i =
               KodeContainer.tempCounter++ % KodeContainer.tempColors.length
-            console.log(i)
+            //console.log(i)
             v.farge = KodeContainer.tempColors[i]
           }
         })
-      console.log(data)
+      //console.log(data)
       this.setState({ meta: data })
       this.fetchData(data.kode)
     })
