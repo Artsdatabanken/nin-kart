@@ -45,7 +45,7 @@ class KodeContainer extends React.Component {
     const currentQuery = this.metaQueryNumber
     backend.hentKodeMeta(kode).then(data => {
       if (currentQuery !== this.metaQueryNumber) return // Abort stale query
-      if (data.barn)
+      if (data && data.barn)
         Object.keys(data.barn).forEach(key => {
           //console.log(key)
           let v = data.barn[key]
@@ -57,8 +57,8 @@ class KodeContainer extends React.Component {
           }
         })
       //console.log(data)
-      this.setState({ meta: data })
-      this.fetchData(data.kode)
+      this.setState({ meta: data ? data : '' })
+      if (data) this.fetchData(data.kode)
     })
   }
 
