@@ -143,12 +143,25 @@ class Mapbox extends Component {
       if (currentQuery !== this.queryNumber) return // Abort stale query
       this.setState({ meta: data })
 
-      const bbox = data.bbox
-      let map = this.map.getMap()
-      if (map && bbox) {
-        map.fitBounds([[bbox[2], bbox[3]], [bbox[0], bbox[1]]], {
-          padding: { top: 10, bottom: 25, left: 15, right: 5 },
-        })
+      if (data) {
+        const bbox = data.bbox
+        let map = this.map.getMap()
+        if (map && bbox) {
+          const bounds = [[bbox[2], bbox[3]], [bbox[0], bbox[1]]]
+          map.once('moveend', () =>
+            this.handleViewportChange({
+              ...this.state.viewport,
+              latitude: map.getCenter().lat,
+              longitude: map.getCenter().lng,
+              zoom: map.getZoom(),
+              pitch: map.getPitch(),
+              bearing: map.getBearing(),
+            })
+          )
+          map.fitBounds(bounds, {
+            padding: { top: 10, bottom: 25, left: 400, right: 5 },
+          })
+        }
       }
     })
   }
@@ -172,6 +185,7 @@ class Mapbox extends Component {
   }
 
   handleViewportChange = viewport => {
+    //console.log(viewport);
     this.setState({ viewport })
     const bounds = this.map.getMap().getBounds()
     this.props.onMapBoundsChange(bounds)
