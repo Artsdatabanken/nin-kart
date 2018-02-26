@@ -59,9 +59,9 @@ class Mapbox extends Component {
   updateAktivKode(aktivKode) {
     let map = this.map.getMap()
     if (aktivKode) {
-      let taxonMatch = aktivKode.match(/TX_(.*)/)
+      let taxonMatch = aktivKode.match(/TX\/(.*)/)
       if (taxonMatch) {
-        const sciId = parseInt(taxonMatch[1], 36)
+        const sciId = parseInt(taxonMatch[1].replace('/', ''), 36)
         //console.log('TX_' + sciId)
 
         backend.getKodeUtbredelse('TX_' + sciId).then(data => {
@@ -85,10 +85,13 @@ class Mapbox extends Component {
     //console.log('kode: ' + aktivKode + ' mapstyle loaded: true')
 
     map.removeLayer(this.props.aktivKode)
-    let taxonMatch = aktivKode.match(/TX_(.*)/)
-    if (this.state.enableDeck !== taxonMatch)
-      this.setState({ enableDeck: taxonMatch })
+    if (aktivKode) {
+      let taxonMatch = aktivKode.match(/TX_(.*)/)
+      if (this.state.enableDeck !== taxonMatch)
+        this.setState({ enableDeck: taxonMatch })
+    }
   }
+
   updateOpplystKode(aktivKode, opplystKode) {
     let map = this.map.getMap()
     if (this.state.meta) {
