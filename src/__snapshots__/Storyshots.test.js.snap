@@ -2753,6 +2753,22 @@ exports[`Storyshots KodeVindu default 1`] = `
                   }
                 }
               >
+                <div
+                  style={
+                    Object {
+                      "boxSizing": "border-box",
+                      "color": "rgba(0, 0, 0, 0.54)",
+                      "fontSize": 14,
+                      "fontWeight": 500,
+                      "lineHeight": "48px",
+                      "muiPrepared": true,
+                      "paddingLeft": 16,
+                      "width": "100%",
+                    }
+                  }
+                >
+                  Inneholder
+                </div>
                 <div>
                   <span
                     disabled={false}

@@ -25,6 +25,7 @@ const Kodeliste = ({
   if (!metadata) return null
   return (
     <React.Fragment>
+      <Subheader>{title}</Subheader>
       {sort(metadata).map(item => {
         const apibarn = apidata
           ? apidata[
