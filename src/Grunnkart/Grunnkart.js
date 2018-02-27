@@ -102,11 +102,11 @@ class Grunnkart extends Component {
     return (
       <div>
         <Kart
-          latitude={63.7}
+          latitude={65.4}
           longitude={10.8}
-          zoom={5.4}
-          pitch={42}
-          bearing={9.4}
+          zoom={4.1}
+          pitch={0}
+          bearing={0}
           mapStyle={this.state.mapStyle}
           aktivKode={kode}
           opplystKode={this.state.opplystKode}
