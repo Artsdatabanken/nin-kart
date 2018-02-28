@@ -8,10 +8,10 @@ class ResultatListe extends Component {
         {this.props.searchResults.map(item => (
           <ListItem
             style={{ width: 500, pointer: 'hand' }}
-            onClick={() => this.props.onClick(item.code)}
-            key={item.code}
-            primaryText={item.name}
-            secondaryText={item.code}
+            onClick={() => this.props.onClick(item.kode)}
+            key={item.kode}
+            primaryText={item.navn}
+            secondaryText={item.kode}
             leftAvatar={
               <Avatar src="https://www.artsdatabanken.no/Media/F1698?mode=480x480" />
             }
