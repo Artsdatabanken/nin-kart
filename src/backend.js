@@ -99,7 +99,7 @@ class Backend {
 
   static async søkKode(q) {
     return this.getPromise(
-      `https://adb-nin-memapi.azurewebsites.net/v1/Koder?q=${q}`
+      `https://ninmemapi.artsdatabanken.no/v2/Koder?q=${q}`
     )
   }
 
