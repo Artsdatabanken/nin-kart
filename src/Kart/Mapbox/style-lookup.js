@@ -8,6 +8,8 @@ function getValue(input, kode) {
 // Slår opp stilen fra style.json for lag med spesifikt navn
 function hentLag(map, kode) {
   if (!kode) return null
+  if (['FA', 'LI', 'TX'].indexOf(kode) >= 0) return null // temp: ignorer koder uten definerte lag
+
   let layer = map.getLayer(kode)
   if (layer) return layer
 
@@ -94,7 +96,6 @@ function hentLag(map, kode) {
     'source-layer': 'naturomrader6',
     interactive: true,
     filter: ['has', kode],
-    layout: {},
     paint: {
       'fill-opacity': 0.13,
       //      'fill-pattern': 'shovel',
@@ -102,7 +103,14 @@ function hentLag(map, kode) {
       //    'fill-outline-color': 'hsla(128, 88%, 29%, 0.8)',
     },
   }
+  if (kode === 'NA') {
+    // spesialtilfelle for toppnivå
+    delete naLayer.filter
+    naLayer.paint = {
+      'fill-color': 'hsla(251, 59%, 28%, 0.8)',
+      'fill-outline-color': 'hsla(128, 88%, 29%, 0.8)',
+    }
+  }
   return naLayer
 }
-
 export default hentLag

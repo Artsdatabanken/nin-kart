@@ -61,7 +61,7 @@ class Mapbox extends Component {
     if (aktivKode) {
       let taxonMatch = aktivKode.match(/TX\/(.*)/)
       if (taxonMatch) {
-        const sciId = parseInt(taxonMatch[1].replace('/', ''), 36)
+        const sciId = parseInt(taxonMatch[1].replace(/\//g, ''), 36)
         //console.log('TX_' + sciId)
 
         backend.getKodeUtbredelse('TX_' + sciId).then(data => {
@@ -84,56 +84,89 @@ class Mapbox extends Component {
     }
     //console.log('kode: ' + aktivKode + ' mapstyle loaded: true')
 
-    map.removeLayer(this.props.aktivKode)
     if (aktivKode) {
-      let taxonMatch = aktivKode.match(/TX_(.*)/)
-      if (this.state.enableDeck !== taxonMatch)
+      let taxonMatch = aktivKode.match(/TX\/(.*)/)
+      if (this.state.enableDeck !== taxonMatch) {
         this.setState({ enableDeck: taxonMatch })
+      }
+      const activKodeUnderscore = aktivKode
+        .replace('/', '_')
+        .replace(/\//g, '-')
+      let aktivtLag = hentLag(map, activKodeUnderscore)
+      aktivtLag.id = 'aktivt'
+      if (aktivtLag) {
+        console.log('add aktivt: ', activKodeUnderscore)
+        map.addLayer(aktivtLag, 'opplyst')
+      }
     }
   }
 
   updateOpplystKode(aktivKode, opplystKode) {
     let map = this.map.getMap()
-    if (this.state.meta) {
-      map.removeLayer('n50-ld-1')
-      map.removeLayer('n50-ld-2')
-      map.removeLayer('ar50-ld-12')
-      map.removeLayer('nin')
-      map.removeLayer('ar50-snoisbre')
-      map.removeLayer('ar50-snoisbre_EN')
-      map.removeLayer('nin-hover')
-      map.removeLayer('naturomrader6')
-      map.removeLayer('naturomrader6-hover')
-      map.removeLayer('Rodlistede')
-      //      console.log(map.getStyle().layers)
-      if (this.state.meta.barn) {
-        Object.keys(this.state.meta.barn).forEach(kode => {
-          const barn = this.state.meta.barn[kode]
-          map.removeLayer(kode)
-          let lag = hentLag(map, kode)
-          if (lag && lag.type === 'fill') {
-            let fillColor = Color(barn.farge).alpha(0.35)
-            const isHighlighted = kode === opplystKode
-            if (isHighlighted) {
-              fillColor = fillColor.lightness(90).saturate(90)
-              //            fillColor = Color('#ff8000')
-            }
-            //            .saturate(4.0)
-            lag.paint['fill-color'] = fillColor.rgbaString()
-            const outlineColor = isHighlighted
-              ? fillColor.darken(0.5)
-              : fillColor.darken(0.9)
-            lag.paint['fill-outline-color'] = outlineColor.rgbaString()
-            map.addLayer(lag, 'building')
-          }
-        })
+    if (!map || !map.isStyleLoaded()) return
+    if (opplystKode) {
+      if (this.state.meta.barn && this.state.meta.barn[opplystKode]) {
+        const barn = this.state.meta.barn[opplystKode]
+        let opplystLag = hentLag(map, opplystKode)
+        if (!opplystLag || !opplystLag.paint) return
+        let fillColor = Color(barn.farge || '#ffff00')
+          .alpha(0.35)
+          .lightness(90)
+          .saturate(90)
+        opplystLag.paint['fill-color'] = fillColor.rgbaString()
+        const outlineColor = fillColor.darken(0.5)
+        opplystLag.paint['fill-outline-color'] = outlineColor.rgbaString()
+        opplystLag.id = 'opplyst'
+        console.log('add opplyst: ', opplystKode)
+        map.addLayer(opplystLag)
       }
-      //      console.log(map.getStyle().layers)
-    } else if (aktivKode) {
-      let lag = hentLag(map, aktivKode)
-      if (lag) map.addLayer(lag)
     }
+    // else {
+    //      console.log('fjern opplyst')
+    //      map.removeLayer('opplyst')
+    // }
   }
+
+  //   if (this.state.meta) {
+  //     // map.removeLayer('n50-ld-1')
+  //     // map.removeLayer('n50-ld-2')
+  //     // map.removeLayer('ar50-ld-12')
+  //     // map.removeLayer('nin')
+  //     // map.removeLayer('ar50-snoisbre')
+  //     // map.removeLayer('ar50-snoisbre_EN')
+  //     // map.removeLayer('nin-hover')
+  //     // map.removeLayer('naturomrader6')
+  //     // map.removeLayer('naturomrader6-hover')
+  //     // map.removeLayer('Rodlistede')
+  //     //      console.log(map.getStyle().layers)
+  //     if (this.state.meta.barn) {
+  //       Object.keys(this.state.meta.barn).forEach(kode => {
+  //         const barn = this.state.meta.barn[kode]
+  //         map.removeLayer(kode)
+  //         let lag = hentLag(map, kode)
+  //         if (lag && lag.type === 'fill') {
+  //           let fillColor = Color(barn.farge).alpha(0.35)
+  //           const isHighlighted = kode === opplystKode
+  //           if (isHighlighted) {
+  //             fillColor = fillColor.lightness(90).saturate(90)
+  //             //            fillColor = Color('#ff8000')
+  //           }
+  //           //            .saturate(4.0)
+  //           lag.paint['fill-color'] = fillColor.rgbaString()
+  //           const outlineColor = isHighlighted
+  //             ? fillColor.darken(0.5)
+  //             : fillColor.darken(0.9)
+  //           lag.paint['fill-outline-color'] = outlineColor.rgbaString()
+  //           map.addLayer(lag, 'building')
+  //         }
+  //       })
+  //     }
+  //     //      console.log(map.getStyle().layers)
+  //   } else if (aktivKode) {
+  //     let lag = hentLag(map, aktivKode)
+  //     if (lag) map.addLayer(lag)
+  //   }
+  // }
 
   queryNumber = 0
   tempHackFetchMeta(kode) {

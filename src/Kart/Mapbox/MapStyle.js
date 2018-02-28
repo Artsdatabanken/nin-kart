@@ -133,6 +133,42 @@ export const NiNHover = fromJS({
   },
 })
 
+export const N50ld1 = fromJS({
+  id: 'n50-ld-1',
+  type: 'fill',
+  source: 'composite',
+  'source-layer': 'N50_LD_1',
+  layout: {},
+  paint: {
+    'fill-color': 'hsl(205, 20%, 44%)',
+    'fill-outline-color': 'hsl(205, 46%, 52%)',
+  },
+})
+
+export const N50ld2 = fromJS({
+  id: 'n50-ld-2',
+  type: 'fill',
+  source: 'composite',
+  'source-layer': 'N50_LD_2',
+  layout: {},
+  paint: {
+    'fill-color': 'hsl(222, 27%, 56%)',
+    'fill-outline-color': 'hsl(230, 41%, 45%)',
+  },
+})
+
+export const ar50Snoisbre = fromJS({
+  id: 'ar50-snoisbre',
+  type: 'fill',
+  source: 'composite',
+  'source-layer': 'AR50_SnoIsbre',
+  layout: {},
+  paint: {
+    'fill-color': 'hsl(173, 9%, 53%)',
+    'fill-outline-color': 'hsl(173, 31%, 61%)',
+  },
+})
+
 export const defaultMapStyle = fromJS(MAP_STYLE)
 export const darkMapStyle = fromJS(MAP_STYLE_DARK)
 export const vintageMapStyle = fromJS(MAP_STYLE_VINTAGE)
