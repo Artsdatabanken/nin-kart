@@ -38,6 +38,9 @@ class KodeVindu extends React.Component {
           {props.meta.ingress && (
             <div style={{ padding: 16 }}>{props.meta.ingress}</div>
           )}
+          {props.meta.bbox && (
+            <div style={{ padding: 16 }}>Vis utstrekning i kartet</div>
+          )}
           <List>
             <Kodeliste
               title={`Inneholder`}
