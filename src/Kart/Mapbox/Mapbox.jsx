@@ -93,7 +93,7 @@ class Mapbox extends Component {
       aktivtLag.id = 'aktivt'
       if (aktivtLag) {
         console.log('add aktivt: ', aktivKode)
-        map.addLayer(aktivtLag, 'opplyst')
+        map.addLayer(aktivtLag)
       }
     }
   }

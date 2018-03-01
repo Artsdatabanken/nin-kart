@@ -117,12 +117,10 @@ class Backend {
   }
 
   static async hentKodeMeta(kode) {
-    if (kode) {
-      kode = kode || ''
-      kode = kode.replace('_', '/')
-      kode = kode.replace(/([A-Z])([0-9]+)/, '$1/$2')
-      kode = kode.replace('-', '/')
-    }
+    kode = kode || ''
+    kode = kode.replace('_', '/')
+    kode = kode.replace(/([A-Z])([0-9]+)/, '$1/$2')
+    kode = kode.replace('-', '/')
     return this.getPromise(`https://grunnkart.firebaseio.com/${kode}/@.json`)
   }
 
