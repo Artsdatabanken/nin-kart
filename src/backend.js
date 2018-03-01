@@ -110,16 +110,19 @@ class Backend {
       var ur = wgs84ToUtm33(bounds._ne.lng, bounds._ne.lat)
       bbox = `&bbox=${ll.x},${ll.y},${ur.x},${ur.y}`
     }
-    const url = `https://adb-nin-memapi.azurewebsites.net/v1/Kodetre?node=${kode ||
+    const url = `https://ninmemapi.artsdatabanken.no/v1/StatKodetre?node=${kode ||
       ''}${bbox}`
 
     return this.getPromise(url)
   }
 
   static async hentKodeMeta(kode) {
-    kode = kode || ''
-    kode = kode.replace('_', '/')
-    kode = kode.replace('-', '/')
+    if (kode) {
+      kode = kode || ''
+      kode = kode.replace('_', '/')
+      kode = kode.replace(/([A-Z])([0-9]+)/, '$1/$2')
+      kode = kode.replace('-', '/')
+    }
     return this.getPromise(`https://grunnkart.firebaseio.com/${kode}/@.json`)
   }
 

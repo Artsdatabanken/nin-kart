@@ -89,13 +89,10 @@ class Mapbox extends Component {
       if (this.state.enableDeck !== taxonMatch) {
         this.setState({ enableDeck: taxonMatch })
       }
-      const activKodeUnderscore = aktivKode
-        .replace('/', '_')
-        .replace(/\//g, '-')
-      let aktivtLag = hentLag(map, activKodeUnderscore)
+      let aktivtLag = hentLag(map, aktivKode)
       aktivtLag.id = 'aktivt'
       if (aktivtLag) {
-        console.log('add aktivt: ', activKodeUnderscore)
+        console.log('add aktivt: ', aktivKode)
         map.addLayer(aktivtLag, 'opplyst')
       }
     }
@@ -105,7 +102,11 @@ class Mapbox extends Component {
     let map = this.map.getMap()
     if (!map || !map.isStyleLoaded()) return
     if (opplystKode) {
-      if (this.state.meta.barn && this.state.meta.barn[opplystKode]) {
+      if (
+        this.state.meta &&
+        this.state.meta.barn &&
+        this.state.meta.barn[opplystKode]
+      ) {
         const barn = this.state.meta.barn[opplystKode]
         let opplystLag = hentLag(map, opplystKode)
         if (!opplystLag || !opplystLag.paint) return
