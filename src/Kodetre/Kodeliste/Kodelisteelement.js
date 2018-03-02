@@ -11,6 +11,14 @@ class Kodelisteelement extends React.Component {
     const item = this.props
     const meta = this.props.meta
     const kode = this.props.kode
+    const tittel =
+      meta.tittel.length > 1
+        ? meta.tittel[item.language[0]] +
+          ' (' +
+          meta.tittel[item.language[1]] +
+          ')'
+        : meta.tittel[item.language[0]]
+
     let parts = []
     if (kode.indexOf('_') >= 0) {
       parts = kode.split('_')
@@ -39,7 +47,7 @@ class Kodelisteelement extends React.Component {
           }
           primaryText={
             <span>
-              {(meta.tittel || meta.navn || meta.navnSci) +
+              {(tittel || meta.navn || meta.navnSci) +
                 (meta.navnSci ? ` (${meta.navnSci})` : '')}
               <span style={{ display: 'inline-flex' }}>
                 &nbsp;<Kodetagg

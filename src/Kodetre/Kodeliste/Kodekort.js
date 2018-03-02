@@ -42,7 +42,7 @@ class Kodekort extends React.Component {
               toggleFavorite={this.toggleFavorite}
               kode={this.props.kode}
               infoUrl={this.props.infoUrl}
-              tittel={this.props.tittel}
+              tittel={this.props.tittel[this.props.language[0]]}
               forelder={this.props.forelder}
             />
           }

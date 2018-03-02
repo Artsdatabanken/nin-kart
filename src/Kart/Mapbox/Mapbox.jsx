@@ -54,17 +54,17 @@ class Mapbox extends Component {
       this.updateAktivKode(nextProps.aktivKode)
       this.tempHackFetchMeta(nextProps.aktivKode)
     }
+    if (nextProps.bbox && nextProps.bbox !== this.props.bbox) {
+      this.fitBounds(nextProps.bbox)
+    }
   }
 
   updateAktivKode(aktivKode) {
     let map = this.map.getMap()
     if (aktivKode) {
-      let taxonMatch = aktivKode.match(/TX\/(.*)/)
-      if (taxonMatch) {
-        const sciId = parseInt(taxonMatch[1].replace(/\//g, ''), 36)
-        //console.log('TX_' + sciId)
-
-        backend.getKodeUtbredelse('TX_' + sciId).then(data => {
+      let taxonMatch = aktivKode.match(/TX_(.*)/)
+      if (taxonMatch && taxonMatch.length > 1) {
+        backend.getKodeUtbredelse(aktivKode).then(data => {
           this.setState({
             utbredelsesData: data ? data : [],
             enableDeck: data ? true : false,
@@ -90,8 +90,8 @@ class Mapbox extends Component {
         this.setState({ enableDeck: taxonMatch })
       }
       let aktivtLag = hentLag(map, aktivKode)
-      aktivtLag.id = 'aktivt'
       if (aktivtLag) {
+        aktivtLag.id = 'aktivt'
         console.log('add aktivt: ', aktivKode)
         map.addLayer(aktivtLag)
       }
@@ -179,25 +179,29 @@ class Mapbox extends Component {
 
       if (data) {
         const bbox = data.bbox
-        let map = this.map.getMap()
-        if (map && bbox) {
-          const bounds = [[bbox[2], bbox[3]], [bbox[0], bbox[1]]]
-          map.once('moveend', () =>
-            this.handleViewportChange({
-              ...this.state.viewport,
-              latitude: map.getCenter().lat,
-              longitude: map.getCenter().lng,
-              zoom: map.getZoom(),
-              pitch: map.getPitch(),
-              bearing: map.getBearing(),
-            })
-          )
-          map.fitBounds(bounds, {
-            padding: { top: 10, bottom: 25, left: 400, right: 5 },
-          })
-        }
+        this.fitBounds(bbox)
       }
     })
+  }
+
+  fitBounds(bbox) {
+    let map = this.map.getMap()
+    if (map && bbox) {
+      const bounds = [[bbox[2], bbox[3]], [bbox[0], bbox[1]]]
+      map.once('moveend', () =>
+        this.handleViewportChange({
+          ...this.state.viewport,
+          latitude: map.getCenter().lat,
+          longitude: map.getCenter().lng,
+          zoom: map.getZoom(),
+          pitch: map.getPitch(),
+          bearing: map.getBearing(),
+        })
+      )
+      map.fitBounds(bounds, {
+        padding: { top: 10, bottom: 25, left: 400, right: 5 },
+      })
+    }
   }
 
   handleStyleUpdate(kode, opplystKode) {
@@ -227,16 +231,16 @@ class Mapbox extends Component {
 
   onHover = e => {
     /*
-    const pos = e.center
-    const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y])
-    // TODO:
-    if (r[0]) {
-      //console.log(r[0].properties.localId);
-      this.map
-        .getMap()
-        .setFilter('nin-hover', ['==', 'localId', r[0].properties.localId])
-    }
-    */
+        const pos = e.center
+        const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y])
+        // TODO:
+        if (r[0]) {
+          //console.log(r[0].properties.localId);
+          this.map
+            .getMap()
+            .setFilter('nin-hover', ['==', 'localId', r[0].properties.localId])
+        }
+        */
   }
 
   // onClick = e => {

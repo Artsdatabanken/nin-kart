@@ -34,35 +34,34 @@ const meta = {
   barn: {
     NA_H1: {
       kode: 'NA_H1',
-      tittel: 'Havvannmasser',
-      color: 'rgba(96,96,255,1.0)',
-      foto: 'https://artsdatabanken.no/Media/F16499?mode=480x480',
+      tittel: {
+        nb: 'Havvannmasser',
+      },
     },
     NA_H2: {
-      color: 'rgba(96,96,255,0.75)',
       kode: 'NA_H2',
-      tittel: 'Vannmasser i fjorder, poller og litoralbasseng',
-      foto: 'https://artsdatabanken.no/Media/F1200?mode=480x480',
+      tittel: {
+        nb: 'Sirkulerende vannmasser i fysisk avgrensede saltvannsforekomster',
+      },
     },
     NA_H3: {
       kode: 'NA_H3',
-      tittel: 'Dypvann i poller og fjorder',
-      color: 'rgba(96,96,255,0.5)',
-      foto: 'https://artsdatabanken.no/Media/F16499?mode=480x480',
+      tittel: {
+        nb:
+          'Ikke-sirkulerende marine vannmasser i fysisk avgrensede saltvannsforekomster',
+      },
     },
     NA_H4: {
       kode: 'NA_H4',
-      tittel: 'Sterkt endrede marine vannmasser',
-      color: 'rgba(96,96,255,0.25)',
-      foto: 'https://artsdatabanken.no/Media/F16499?mode=480x480',
+      tittel: {
+        nb: 'Sterkt endrete marine vannmasser',
+      },
     },
   },
-  ingress:
-    'Marine vannmasser omfatter økosystemer av flytende, svevende og svømmende organismer i de frie vannmassene i saltvann (saltholdighet > 0,5 ‰)\n',
-  selv: {
-    tittel: 'Marine vannmasser',
-    foto: 'https://artsdatabanken.no/Media/F16499?mode=480x480',
-    media: 'https://artsdatabanken.no/Media/F16499?mode=480x480',
+  foreldre: ['NA'],
+  kode: 'NA_H',
+  tittel: {
+    nb: 'Marine vannmasser',
   },
 }
 
@@ -77,5 +76,6 @@ storiesOf('KodeVindu', module)
       onMouseLeave={action('mouseLeave')}
       onClick={action('click')}
       onShowColorpicker={action('showColorpicker')}
+      language={['nb', 'la']}
     />
   ))

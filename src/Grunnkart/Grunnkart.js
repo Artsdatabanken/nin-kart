@@ -19,6 +19,7 @@ class Grunnkart extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      language: ['nb', 'la'],
       baseMapStyle: defaultMapStyle,
       mapStyle: '',
       showMainDrawer: false,
@@ -151,6 +152,7 @@ class Grunnkart extends Component {
               mapbounds={this.state.mapbounds}
               onMouseEnter={kode => this.setState({ opplystKode: kode })}
               onMouseLeave={kode => this.setState({ opplystKode: null })}
+              language={this.state.language}
               localId={this.state.localId}
             />
           </div>

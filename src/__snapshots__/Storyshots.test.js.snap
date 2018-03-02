@@ -2497,7 +2497,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                     >
                       <img
                         alt=""
-                        src={undefined}
+                        src="https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/cover%2F408%2FNA_H.jpg?alt=media"
                         style={
                           Object {
                             "maxWidth": "100%",
@@ -2564,7 +2564,9 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "muiPrepared": true,
                                 }
                               }
-                            />
+                            >
+                              Marine vannmasser
+                            </span>
                             <span
                               style={
                                 Object {
@@ -2738,16 +2740,6 @@ exports[`Storyshots KodeVindu default 1`] = `
               <div
                 style={
                   Object {
-                    "padding": 16,
-                  }
-                }
-              >
-                Marine vannmasser omfatter økosystemer av flytende, svevende og svømmende organismer i de frie vannmassene i saltvann (saltholdighet &gt; 0,5 ‰)
-                
-              </div>
-              <div
-                style={
-                  Object {
                     "muiPrepared": true,
                     "padding": "8px 0px 8px 0px",
                   }
@@ -2828,15 +2820,14 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         }
                       >
-                        <img
+                        <div
                           className={undefined}
                           color={undefined}
                           size={40}
-                          src="https://artsdatabanken.no/Media/F16499?mode=480x480"
                           style={
                             Object {
                               "alignItems": "center",
-                              "backgroundColor": "transparent",
+                              "backgroundColor": "rgb(188, 188, 188)",
                               "borderRadius": "50%",
                               "color": "#ffffff",
                               "display": "inline-flex",
@@ -2851,7 +2842,9 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "width": 40,
                             }
                           }
-                        />
+                        >
+                          NA_H1
+                        </div>
                         <span
                           style={
                             Object {
@@ -3046,15 +3039,14 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         }
                       >
-                        <img
+                        <div
                           className={undefined}
                           color={undefined}
                           size={40}
-                          src="https://artsdatabanken.no/Media/F1200?mode=480x480"
                           style={
                             Object {
                               "alignItems": "center",
-                              "backgroundColor": "transparent",
+                              "backgroundColor": "rgb(188, 188, 188)",
                               "borderRadius": "50%",
                               "color": "#ffffff",
                               "display": "inline-flex",
@@ -3069,7 +3061,9 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "width": 40,
                             }
                           }
-                        />
+                        >
+                          NA_H2
+                        </div>
                         <span
                           style={
                             Object {
@@ -3128,7 +3122,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
-                          Vannmasser i fjorder, poller og litoralbasseng
+                          Sirkulerende vannmasser i fysisk avgrensede saltvannsforekomster
                           <span
                             style={
                               Object {
@@ -3264,15 +3258,14 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         }
                       >
-                        <img
+                        <div
                           className={undefined}
                           color={undefined}
                           size={40}
-                          src="https://artsdatabanken.no/Media/F16499?mode=480x480"
                           style={
                             Object {
                               "alignItems": "center",
-                              "backgroundColor": "transparent",
+                              "backgroundColor": "rgb(188, 188, 188)",
                               "borderRadius": "50%",
                               "color": "#ffffff",
                               "display": "inline-flex",
@@ -3287,7 +3280,9 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "width": 40,
                             }
                           }
-                        />
+                        >
+                          NA_H3
+                        </div>
                         <span
                           style={
                             Object {
@@ -3346,7 +3341,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
-                          Dypvann i poller og fjorder
+                          Ikke-sirkulerende marine vannmasser i fysisk avgrensede saltvannsforekomster
                           <span
                             style={
                               Object {
@@ -3482,15 +3477,14 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         }
                       >
-                        <img
+                        <div
                           className={undefined}
                           color={undefined}
                           size={40}
-                          src="https://artsdatabanken.no/Media/F16499?mode=480x480"
                           style={
                             Object {
                               "alignItems": "center",
-                              "backgroundColor": "transparent",
+                              "backgroundColor": "rgb(188, 188, 188)",
                               "borderRadius": "50%",
                               "color": "#ffffff",
                               "display": "inline-flex",
@@ -3505,7 +3499,9 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "width": 40,
                             }
                           }
-                        />
+                        >
+                          NA_H4
+                        </div>
                         <span
                           style={
                             Object {
@@ -3564,7 +3560,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
-                          Sterkt endrede marine vannmasser
+                          Sterkt endrete marine vannmasser
                           <span
                             style={
                               Object {
