@@ -93,6 +93,7 @@ class KodeContainer extends React.Component {
         onGoToCode={this.props.onGoToCode}
         onMouseEnter={this.props.onMouseEnter}
         onMouseLeave={this.props.onMouseLeave}
+        language={this.props.language}
       />
     )
   }

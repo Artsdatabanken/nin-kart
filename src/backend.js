@@ -121,7 +121,10 @@ class Backend {
     kode = kode.replace('_', '/')
     kode = kode.replace(/([A-Z])([0-9]+)/, '$1/$2')
     kode = kode.replace('-', '/')
-    return this.getPromise(`https://grunnkart.firebaseio.com/${kode}/@.json`)
+    //return this.getPromise(`https://grunnkart.firebaseio.com/${kode}/@.json`)
+    return this.getPromise(
+      `https://adbkoder.firebaseio.com/data/${kode}/@.json`
+    )
   }
 
   static async hentPunkt(lng, lat) {

@@ -33,6 +33,7 @@ class KodeVindu extends React.Component {
               {...props.meta}
               onGoToCode={props.onGoToCode}
               data={props.data}
+              language={props.language}
             />
           )}
           {props.meta.ingress && (
@@ -52,6 +53,7 @@ class KodeVindu extends React.Component {
               onMouseLeave={props.onMouseLeave}
               onShowColorpicker={this.handleShowColorpicker}
               onUpdateLayerProp={props.onUpdateLayerProp}
+              language={props.language}
             />
 
             {false && (

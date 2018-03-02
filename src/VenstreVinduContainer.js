@@ -66,6 +66,7 @@ class VenstreVinduContainer extends React.Component {
                         onMouseEnter={this.props.onMouseEnter}
                         onMouseLeave={this.props.onMouseLeave}
                         mapbounds={this.props.mapbounds}
+                        language={this.props.language}
                       />
                     )
                   }}

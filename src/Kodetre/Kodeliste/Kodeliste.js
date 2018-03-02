@@ -21,6 +21,7 @@ const Kodeliste = ({
   onMouseLeave,
   onShowColorpicker,
   onUpdateLayerProp,
+  language,
 }) => {
   if (!metadata) return null
   return (
@@ -51,6 +52,7 @@ const Kodeliste = ({
             onMouseLeave={onMouseLeave}
             onUpdateLayerProp={onUpdateLayerProp}
             onShowColorpicker={() => onShowColorpicker(kode)}
+            language={language}
           />
         )
       })}
