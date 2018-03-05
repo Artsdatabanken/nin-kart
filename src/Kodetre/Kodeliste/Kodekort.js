@@ -79,7 +79,10 @@ const Tittelblokk = ({
     subtitle={
       foreldre &&
       foreldre.map(forelder => (
-        <div onClick={() => onGoToCode(Object.keys(forelder)[0])}>
+        <div
+          key={Object.keys(forelder)[0]}
+          onClick={() => onGoToCode(Object.keys(forelder)[0])}
+        >
           {forelder[Object.keys(forelder)[0]]}
         </div>
       ))
