@@ -133,7 +133,7 @@ class Backend {
     kode = kode || ''
     kode = kode.replace('_', '/')
     kode = kode.replace(/([A-Z])([0-9]+)/, '$1/$2')
-    kode = kode.replace('-', '/')
+    kode = kode.replace(/-/g, '/')
     //return this.getPromise(`https://grunnkart.firebaseio.com/${kode}/@.json`)
     return this.getPromise(
       `https://adbkoder.firebaseio.com/data/${kode}/@.json`

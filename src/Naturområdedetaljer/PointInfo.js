@@ -20,7 +20,9 @@ function PointInfo(props) {
                       : item.value
                   }
                   onClick={() => {
-                    routing.history.push('/katalog/' + key)
+                    const segments = key.match(/[a-zA-Z]+|[0-9]+/g) || []
+                    const path = segments.join('/')
+                    routing.history.push('/katalog/' + path)
                   }}
                   secondaryText={
                     item.name || item.kode
