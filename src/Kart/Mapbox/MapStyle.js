@@ -113,11 +113,10 @@ export const NiN = fromJS({
   type: 'fill',
   source: 'composite',
   'source-layer': 'naturomrader6',
-  layout: {},
   interactive: true,
   paint: {
-    'fill-color': 'hsl(120, 22%, 24%)',
-    'fill-outline-color': 'hsl(146, 26%, 49%)',
+    'fill-color': 'hsla(120, 22%, 24%, 0.1)',
+    'fill-outline-color': 'hsla(146, 26%, 49%, 0.1)',
   },
 })
 export const NiNHover = fromJS({
@@ -126,7 +125,6 @@ export const NiNHover = fromJS({
   source: 'composite',
   'source-layer': 'naturomrader6',
   filter: ['==', 'localId', ''],
-  layout: {},
   paint: {
     'fill-color': 'hsla(120, 78%, 41%, 0.75)',
     'fill-outline-color': 'hsla(120, 84%, 47%, 0.75)',

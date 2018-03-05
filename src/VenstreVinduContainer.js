@@ -36,8 +36,10 @@ class VenstreVinduContainer extends React.Component {
                   <ResultatListe
                     searchResults={this.state.searchResults}
                     onClick={kode => {
+                      const segments = kode.match(/[a-zA-Z]+|[0-9]+/g) || []
+                      const path = segments.join('/')
+                      history.push('/katalog/' + path)
                       this.setState({ searchResults: null })
-                      history.push('/katalog/' + kode)
                     }}
                   />
                 )}
