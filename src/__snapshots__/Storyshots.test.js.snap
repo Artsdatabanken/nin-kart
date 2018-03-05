@@ -2577,7 +2577,13 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "muiPrepared": true,
                                 }
                               }
-                            />
+                            >
+                              <div
+                                onClick={[Function]}
+                              >
+                                N
+                              </div>
+                            </span>
                             <div
                               style={
                                 Object {
@@ -2967,7 +2973,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
-                          3.6 km² i 24 områder
+                          0 km² i 0 områder
                         </div>
                       </div>
                     </div>
@@ -3186,7 +3192,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
-                          37.0 km² i 247 områder
+                          0 km² i 0 områder
                         </div>
                       </div>
                     </div>
@@ -3405,7 +3411,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
-                          7.0 km² i 47 områder
+                          0 km² i 0 områder
                         </div>
                       </div>
                     </div>
@@ -3624,7 +3630,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
-                          0.0 km² i 0 områder
+                          0 km² i 0 områder
                         </div>
                       </div>
                     </div>
