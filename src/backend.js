@@ -110,6 +110,19 @@ class Backend {
       var ur = wgs84ToUtm33(bounds._ne.lng, bounds._ne.lat)
       bbox = `&bbox=${ll.x},${ll.y},${ur.x},${ur.y}`
     }
+    // temp oversett koder..
+    kode = kode || ''
+    kode = kode.replace(/^AO_0*/, 'GEO_FY-')
+    kode = kode.replace(/^AO/, 'GEO_FY')
+    kode = kode.replace(/^TX/, 'TAX')
+    kode = kode.replace(/^_$/, 'ROT')
+    kode = kode.replace(/^RL_/, 'RKAT-')
+    kode = kode.replace(/^RL$/, 'RKAT')
+    kode = kode.replace(/^FA_/, 'SKAT-')
+    kode = kode.replace(/^FA$/, 'SKAT')
+    kode = kode.replace(/^MI_/, '')
+    kode = kode.replace(/^MI$/, 'MIV')
+
     const url = `https://ninmemapi.artsdatabanken.no/v1/StatKodetre?node=${kode ||
       ''}${bbox}`
 
