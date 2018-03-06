@@ -62,7 +62,7 @@ class Mapbox extends Component {
   updateAktivKode(aktivKode) {
     let map = this.map.getMap()
     if (aktivKode) {
-      let taxonMatch = aktivKode.match(/TX_(.*)/)
+      let taxonMatch = aktivKode.match(/AR_(.*)/)
       if (taxonMatch && taxonMatch.length > 1) {
         backend.getKodeUtbredelse(aktivKode).then(data => {
           this.setState({
@@ -85,7 +85,7 @@ class Mapbox extends Component {
     //console.log('kode: ' + aktivKode + ' mapstyle loaded: true')
 
     if (aktivKode) {
-      let taxonMatch = aktivKode.match(/TX\/(.*)/)
+      let taxonMatch = aktivKode.match(/AR\/(.*)/)
       if (this.state.enableDeck !== taxonMatch) {
         this.setState({ enableDeck: taxonMatch })
       }

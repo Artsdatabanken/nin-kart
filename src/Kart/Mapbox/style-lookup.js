@@ -8,7 +8,7 @@ function getValue(input, kode) {
 // Slår opp stilen fra style.json for lag med spesifikt navn
 function hentLag(map, kode) {
   if (!kode) return null
-  if (['FA', 'LI', 'TX'].indexOf(kode) >= 0) return null // temp: ignorer koder uten definerte lag
+  if (['FA', 'LI', 'AR'].indexOf(kode) >= 0) return null // temp: ignorer koder uten definerte lag
 
   let layer = map.getLayer(kode)
   if (layer) return layer
@@ -76,7 +76,7 @@ function hentLag(map, kode) {
     }
   }
 
-  let taxonMatch = kode.match(/TX_(.*)/)
+  let taxonMatch = kode.match(/AR_(.*)/)
   if (taxonMatch) {
     return {
       id: kode,

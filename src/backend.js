@@ -114,7 +114,7 @@ class Backend {
     kode = kode || ''
     kode = kode.replace(/^AO_0*/, 'GEO_FY-')
     kode = kode.replace(/^AO/, 'GEO_FY')
-    kode = kode.replace(/^TX/, 'TAX')
+    kode = kode.replace(/^AR/, 'TAX')
     kode = kode.replace(/^_$/, 'ROT')
     kode = kode.replace(/^RL_/, 'RKAT-')
     kode = kode.replace(/^RL$/, 'RKAT')
