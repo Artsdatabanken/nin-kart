@@ -4,6 +4,7 @@ import StatistikkContainer from '../Statistikk/StatistikkContainer'
 import { Paper, List, div, Subheader } from 'material-ui'
 import FetchContainer from '../../FetchContainer'
 import Kodeliste from './Kodeliste'
+import { RaisedButton } from 'material-ui'
 
 class KodeVindu extends React.Component {
   handleShowColorpicker = kode => {
@@ -40,7 +41,9 @@ class KodeVindu extends React.Component {
             <div style={{ padding: 16 }}>{props.meta.ingress}</div>
           )}
           {props.meta.bbox && (
-            <div style={{ padding: 16 }}>Vis utstrekning i kartet</div>
+            <div style={{ margin: 8 }}>
+              <RaisedButton primary>Vis i kart</RaisedButton>
+            </div>
           )}
           <List>
             <Kodeliste
