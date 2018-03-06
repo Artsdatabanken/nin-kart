@@ -114,7 +114,7 @@ class Backend {
     kode = kode || ''
     kode = kode.replace(/^AO_0*/, 'GEO_FY-')
     kode = kode.replace(/^AO/, 'GEO_FY')
-    kode = kode.replace(/^TX/, 'TAX')
+    kode = kode.replace(/^AR/, 'TAX')
     kode = kode.replace(/^_$/, 'ROT')
     kode = kode.replace(/^RL_/, 'RKAT-')
     kode = kode.replace(/^RL$/, 'RKAT')
@@ -129,14 +129,14 @@ class Backend {
     return this.getPromise(url)
   }
 
-  static async hentKodeMeta(kode) {
-    kode = kode || ''
-    kode = kode.replace('_', '/')
-    kode = kode.replace(/([A-Z])([0-9]+)/, '$1/$2')
-    kode = kode.replace(/-/g, '/')
+  static async hentKodeMeta(path) {
+    path = path || ''
+    // kode = kode.replace('_', '/')
+    // kode = kode.replace(/([A-Z])([0-9]+)/, '$1/$2')
+    // kode = kode.replace(/-/g, '/')
     //return this.getPromise(`https://grunnkart.firebaseio.com/${kode}/@.json`)
     return this.getPromise(
-      `https://adbkoder.firebaseio.com/data/${kode}/@.json`
+      `https://koder-20170305.firebaseio.com/data/${path}/@.json`
     )
   }
 

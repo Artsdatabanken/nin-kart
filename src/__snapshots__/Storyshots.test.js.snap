@@ -2577,13 +2577,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "muiPrepared": true,
                                 }
                               }
-                            >
-                              <div
-                                onClick={[Function]}
-                              >
-                                N
-                              </div>
-                            </span>
+                            />
                             <div
                               style={
                                 Object {

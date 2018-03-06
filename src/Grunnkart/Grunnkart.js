@@ -14,6 +14,7 @@ import {
 import { withRouter } from 'react-router'
 import VenstreVinduContainer from '../VenstreVinduContainer'
 import Kart from '../Kart/Kart'
+import backend from '../backend'
 
 class Grunnkart extends Component {
   constructor(props) {
@@ -27,6 +28,7 @@ class Grunnkart extends Component {
     }
 
     this.handleChangeBaseMap = this.handleChangeBaseMap.bind(this)
+    this.handleUpdateLayerProp = this.handleUpdateLayerProp.bind(this)
   }
 
   handleChangeBaseMap(type) {
@@ -92,6 +94,45 @@ class Grunnkart extends Component {
 
   componentDidMount() {
     this.handleChangeBaseMap()
+    this.fetchMeta(this.props.location.pathname)
+  }
+
+  componentWillReceiveProps(nextProps, props) {
+    this.fetchMeta(nextProps.location.pathname)
+  }
+  static tempCounter = 0
+  static tempColors = [
+    '#d53e4f',
+    '#f46d43',
+    '#fdae61',
+    '#fee08b',
+    '#e6f598',
+    '#abdda4',
+    '#66c2a5',
+    '#3288bd',
+  ]
+
+  fetchMeta(pathname) {
+    var currentLocation = pathname || this.props.location.pathname
+    let kodematch = currentLocation.match(/\/katalog\/(.*)/)
+    const path = kodematch && kodematch.length === 2 ? kodematch[1] : ''
+    backend.hentKodeMeta(path).then(data => {
+      if (data && data.barn)
+        Object.keys(data.barn).forEach(key => {
+          let v = data.barn[key]
+          if (!v.farge) {
+            const i = Grunnkart.tempCounter++ % Grunnkart.tempColors.length
+            v.farge = Grunnkart.tempColors[i]
+          }
+        })
+      this.setState({ meta: data ? data : '' })
+    })
+  }
+  handleUpdateLayerProp = (kode, key, value) => {
+    let meta = this.state.meta
+    let layer = meta.barn[kode]
+    layer[key] = value
+    this.setState({ meta: meta })
   }
 
   render() {
@@ -104,6 +145,8 @@ class Grunnkart extends Component {
             .replace('/', '')
             .replace(/\//g, '-')
         : null
+    const path = kodematch && kodematch.length === 2 ? kodematch[1] : ''
+    console.log(currentLocation)
     return (
       <div>
         <Kart
@@ -114,9 +157,11 @@ class Grunnkart extends Component {
           bearing={0}
           mapStyle={this.state.mapStyle}
           aktivKode={kode}
+          path={path}
           opplystKode={this.state.opplystKode}
           onMapBoundsChange={bounds => this.setMapBounds(bounds)}
           setLocalId={localId => this.setLocalId(localId)}
+          meta={this.state.meta}
         />
 
         <MainDrawer
@@ -153,6 +198,8 @@ class Grunnkart extends Component {
               onMouseLeave={kode => this.setState({ opplystKode: null })}
               language={this.state.language}
               localId={this.state.localId}
+              meta={this.state.meta}
+              handleUpdateLayerProp={this.handleUpdateLayerProp}
             />
           </div>
         )}
