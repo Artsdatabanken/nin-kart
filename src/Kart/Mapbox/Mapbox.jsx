@@ -42,7 +42,6 @@ class Mapbox extends Component {
     window.addEventListener('resize', this._resize)
     this._resize()
     this.updateAktivKode(this.props.aktivKode)
-    this.tempHackFetchMeta(this.props.path)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -52,10 +51,15 @@ class Mapbox extends Component {
 
     if (nextProps.aktivKode !== this.props.aktivKode) {
       this.updateAktivKode(nextProps.aktivKode)
-      this.tempHackFetchMeta(nextProps.path)
     }
-    if (nextProps.bbox && nextProps.bbox !== this.props.bbox) {
-      this.fitBounds(nextProps.bbox)
+
+    if (
+      this.props.meta &&
+      nextProps.meta &&
+      nextProps.meta.bbox &&
+      nextProps.meta.bbox !== this.props.meta.bbox
+    ) {
+      this.fitBounds(nextProps.meta.bbox)
     }
   }
 
@@ -82,7 +86,6 @@ class Mapbox extends Component {
       )
       return
     }
-    //console.log('kode: ' + aktivKode + ' mapstyle loaded: true')
 
     if (aktivKode) {
       let taxonMatch = aktivKode.match(/AR\/(.*)/)
@@ -103,11 +106,11 @@ class Mapbox extends Component {
     if (!map || !map.isStyleLoaded()) return
     if (opplystKode) {
       if (
-        this.state.meta &&
-        this.state.meta.barn &&
-        this.state.meta.barn[opplystKode]
+        this.props.meta &&
+        this.props.meta.barn &&
+        this.props.meta.barn[opplystKode]
       ) {
-        const barn = this.state.meta.barn[opplystKode]
+        const barn = this.props.meta.barn[opplystKode]
         let opplystLag = hentLag(map, opplystKode)
         if (!opplystLag || !opplystLag.paint) return
         let fillColor = Color(barn.farge || '#ffff00')
@@ -122,72 +125,12 @@ class Mapbox extends Component {
         map.addLayer(opplystLag)
       }
     }
-    // else {
-    //      console.log('fjern opplyst')
-    //      map.removeLayer('opplyst')
-    // }
-  }
-
-  //   if (this.state.meta) {
-  //     // map.removeLayer('n50-ld-1')
-  //     // map.removeLayer('n50-ld-2')
-  //     // map.removeLayer('ar50-ld-12')
-  //     // map.removeLayer('nin')
-  //     // map.removeLayer('ar50-snoisbre')
-  //     // map.removeLayer('ar50-snoisbre_EN')
-  //     // map.removeLayer('nin-hover')
-  //     // map.removeLayer('naturomrader6')
-  //     // map.removeLayer('naturomrader6-hover')
-  //     // map.removeLayer('Rodlistede')
-  //     //      console.log(map.getStyle().layers)
-  //     if (this.state.meta.barn) {
-  //       Object.keys(this.state.meta.barn).forEach(kode => {
-  //         const barn = this.state.meta.barn[kode]
-  //         map.removeLayer(kode)
-  //         let lag = hentLag(map, kode)
-  //         if (lag && lag.type === 'fill') {
-  //           let fillColor = Color(barn.farge).alpha(0.35)
-  //           const isHighlighted = kode === opplystKode
-  //           if (isHighlighted) {
-  //             fillColor = fillColor.lightness(90).saturate(90)
-  //             //            fillColor = Color('#ff8000')
-  //           }
-  //           //            .saturate(4.0)
-  //           lag.paint['fill-color'] = fillColor.rgbaString()
-  //           const outlineColor = isHighlighted
-  //             ? fillColor.darken(0.5)
-  //             : fillColor.darken(0.9)
-  //           lag.paint['fill-outline-color'] = outlineColor.rgbaString()
-  //           map.addLayer(lag, 'building')
-  //         }
-  //       })
-  //     }
-  //     //      console.log(map.getStyle().layers)
-  //   } else if (aktivKode) {
-  //     let lag = hentLag(map, aktivKode)
-  //     if (lag) map.addLayer(lag)
-  //   }
-  // }
-
-  queryNumber = 0
-  tempHackFetchMeta(kode) {
-    this.queryNumber++
-    const currentQuery = this.queryNumber
-    backend.hentKodeMeta(kode).then(data => {
-      if (currentQuery !== this.queryNumber) return // Abort stale query
-      this.setState({ meta: data })
-
-      if (data) {
-        const bbox = data.bbox
-        this.fitBounds(bbox)
-      }
-    })
   }
 
   fitBounds(bbox) {
     let map = this.map.getMap()
     if (map && bbox) {
-      const bounds = [[bbox[2], bbox[3]], [bbox[0], bbox[1]]]
+      //const bounds = [[bbox[2], bbox[3]], [bbox[0], bbox[1]]]
       map.once('moveend', () =>
         this.handleViewportChange({
           ...this.state.viewport,
@@ -198,7 +141,7 @@ class Mapbox extends Component {
           bearing: map.getBearing(),
         })
       )
-      map.fitBounds(bounds, {
+      map.fitBounds(bbox, {
         padding: { top: 10, bottom: 25, left: 400, right: 5 },
       })
     }

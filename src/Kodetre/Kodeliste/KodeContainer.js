@@ -11,55 +11,15 @@ class KodeContainer extends React.Component {
   }
 
   dataQueryNumber = 0
-  metaQueryNumber = 0
-
-  componentDidMount() {
-    this.fetchMeta(this.props.path)
-  }
 
   componentWillUnmount() {
     this.queryNumber = 0
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.path !== nextProps.path) {
-      this.fetchMeta(nextProps.path)
-    } else if (this.props.mapbounds !== nextProps.mapbounds)
-      this.fetchData(this.state.meta.kode)
-  }
-
-  static tempCounter = 0
-  static tempColors = [
-    '#d53e4f',
-    '#f46d43',
-    '#fdae61',
-    '#fee08b',
-    '#e6f598',
-    '#abdda4',
-    '#66c2a5',
-    '#3288bd',
-  ]
-
-  fetchMeta(kode) {
-    this.metaQueryNumber++
-    const currentQuery = this.metaQueryNumber
-    backend.hentKodeMeta(kode).then(data => {
-      if (currentQuery !== this.metaQueryNumber) return // Abort stale query
-      if (data && data.barn)
-        Object.keys(data.barn).forEach(key => {
-          //console.log(key)
-          let v = data.barn[key]
-          if (!v.farge) {
-            const i =
-              KodeContainer.tempCounter++ % KodeContainer.tempColors.length
-            //console.log(i)
-            v.farge = KodeContainer.tempColors[i]
-          }
-        })
-      //console.log(data)
-      this.setState({ meta: data ? data : '' })
-      if (data) this.fetchData(data.kode)
-    })
+    if (nextProps.meta && this.props.mapbounds !== nextProps.mapbounds) {
+      this.fetchData(nextProps.meta.kode)
+    }
   }
 
   fetchData(kode) {
@@ -74,22 +34,15 @@ class KodeContainer extends React.Component {
       })
   }
 
-  handleUpdateLayerProp = (kode, key, value) => {
-    let meta = this.state.meta
-    let layer = meta.barn[kode]
-    layer[key] = value
-    this.setState({ meta: meta })
-  }
-
   render() {
     const data = this.state.data
-    const meta = this.state.meta
+    const meta = this.props.meta
     if (!meta) return null
     return (
       <KodeVindu
         data={data}
-        meta={this.state.meta || {}}
-        onUpdateLayerProp={this.handleUpdateLayerProp}
+        meta={meta || {}}
+        onUpdateLayerProp={this.props.handleUpdateLayerProp}
         onGoToCode={this.props.onGoToCode}
         onMouseEnter={this.props.onMouseEnter}
         onMouseLeave={this.props.onMouseLeave}

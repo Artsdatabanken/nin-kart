@@ -31,18 +31,14 @@ class VenstreVinduContainer extends React.Component {
               }}
             />
             {this.state.searchResults ? (
-              <Route
-                render={({ match, history }) => (
-                  <ResultatListe
-                    searchResults={this.state.searchResults}
-                    onClick={kode => {
-                      const segments = kode.match(/[a-zA-Z]+|[0-9]+/g) || []
-                      const path = segments.join('/')
-                      history.push('/katalog/' + path)
-                      this.setState({ searchResults: null })
-                    }}
-                  />
-                )}
+              <ResultatListe
+                searchResults={this.state.searchResults}
+                onClick={kode => {
+                  const segments = kode.match(/[a-zA-Z]+|[0-9]+/g) || []
+                  const path = segments.join('/')
+                  history.push('/katalog/' + path)
+                  this.setState({ searchResults: null })
+                }}
               />
             ) : (
               <Switch>
@@ -70,6 +66,8 @@ class VenstreVinduContainer extends React.Component {
                         onMouseLeave={this.props.onMouseLeave}
                         mapbounds={this.props.mapbounds}
                         language={this.props.language}
+                        meta={this.props.meta}
+                        handleUpdateLayerProp={this.props.handleUpdateLayerProp}
                       />
                     )
                   }}
