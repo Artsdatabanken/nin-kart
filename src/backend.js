@@ -129,14 +129,14 @@ class Backend {
     return this.getPromise(url)
   }
 
-  static async hentKodeMeta(kode) {
-    kode = kode || ''
-    kode = kode.replace('_', '/')
-    kode = kode.replace(/([A-Z])([0-9]+)/, '$1/$2')
-    kode = kode.replace(/-/g, '/')
+  static async hentKodeMeta(path) {
+    path = path || ''
+    // kode = kode.replace('_', '/')
+    // kode = kode.replace(/([A-Z])([0-9]+)/, '$1/$2')
+    // kode = kode.replace(/-/g, '/')
     //return this.getPromise(`https://grunnkart.firebaseio.com/${kode}/@.json`)
     return this.getPromise(
-      `https://adbkoder.firebaseio.com/data/${kode}/@.json`
+      `https://koder-20170305.firebaseio.com/data/${path}/@.json`
     )
   }
 

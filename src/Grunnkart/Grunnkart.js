@@ -104,6 +104,7 @@ class Grunnkart extends Component {
             .replace('/', '')
             .replace(/\//g, '-')
         : null
+    const path = kodematch && kodematch.length === 2 ? kodematch[1] : ''
     return (
       <div>
         <Kart
@@ -114,6 +115,7 @@ class Grunnkart extends Component {
           bearing={0}
           mapStyle={this.state.mapStyle}
           aktivKode={kode}
+          path={path}
           opplystKode={this.state.opplystKode}
           onMapBoundsChange={bounds => this.setMapBounds(bounds)}
           setLocalId={localId => this.setLocalId(localId)}

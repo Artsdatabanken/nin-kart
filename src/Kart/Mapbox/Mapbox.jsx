@@ -42,7 +42,7 @@ class Mapbox extends Component {
     window.addEventListener('resize', this._resize)
     this._resize()
     this.updateAktivKode(this.props.aktivKode)
-    this.tempHackFetchMeta(this.props.aktivKode)
+    this.tempHackFetchMeta(this.props.path)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -52,7 +52,7 @@ class Mapbox extends Component {
 
     if (nextProps.aktivKode !== this.props.aktivKode) {
       this.updateAktivKode(nextProps.aktivKode)
-      this.tempHackFetchMeta(nextProps.aktivKode)
+      this.tempHackFetchMeta(nextProps.path)
     }
     if (nextProps.bbox && nextProps.bbox !== this.props.bbox) {
       this.fitBounds(nextProps.bbox)

@@ -14,7 +14,7 @@ class KodeContainer extends React.Component {
   metaQueryNumber = 0
 
   componentDidMount() {
-    this.fetchMeta(this.props.kode)
+    this.fetchMeta(this.props.path)
   }
 
   componentWillUnmount() {
@@ -22,8 +22,8 @@ class KodeContainer extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.kode !== nextProps.kode) {
-      this.fetchMeta(nextProps.kode)
+    if (this.props.path !== nextProps.path) {
+      this.fetchMeta(nextProps.path)
     } else if (this.props.mapbounds !== nextProps.mapbounds)
       this.fetchData(this.state.meta.kode)
   }

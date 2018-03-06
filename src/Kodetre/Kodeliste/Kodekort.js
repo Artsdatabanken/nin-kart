@@ -43,7 +43,8 @@ class Kodekort extends React.Component {
               kode={this.props.kode}
               infoUrl={this.props.infoUrl}
               tittel={this.props.tittel[this.props.language[0]]}
-              foreldre={this.props.foreldre}
+              overordnet={this.props.overordnet}
+              language={this.props.language}
             />
           }
         >
@@ -68,8 +69,9 @@ const Tittelblokk = ({
   kode,
   infoUrl,
   tittel,
-  foreldre,
+  overordnet,
   muiTheme,
+  language,
 }) => (
   <CardTitle
     actAsExpander={true}
@@ -77,13 +79,13 @@ const Tittelblokk = ({
     title={tittel}
     titleColor={muiTheme.palette.alternateTextColor}
     subtitle={
-      foreldre &&
-      foreldre.map(forelder => (
+      overordnet &&
+      overordnet.map(forelder => (
         <div
           key={Object.keys(forelder)[0]}
           onClick={() => onGoToCode(Object.keys(forelder)[0])}
         >
-          {forelder[Object.keys(forelder)[0]]}
+          {forelder[Object.keys(forelder)[0]].tittel[language[0]]}
         </div>
       ))
     }

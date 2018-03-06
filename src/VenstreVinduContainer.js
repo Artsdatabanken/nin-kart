@@ -52,6 +52,7 @@ class VenstreVinduContainer extends React.Component {
                     return (
                       <KodeContainer
                         style={{ height: '100vh' }}
+                        path={match.params.kode ? match.params.kode : ''}
                         kode={
                           match.params.kode
                             ? match.params.kode
