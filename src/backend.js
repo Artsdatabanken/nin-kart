@@ -194,12 +194,10 @@ class Backend {
   })
 
   static getKodeFotoUrl(kode, small) {
-    const smallFolder = '40'
-    const largeFolder = '408'
+    const pixelSize = small ? '40' : '408'
+    const extension = small ? 'png' : 'png'
     if (kode)
-      return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/cover%2F${
-        small ? smallFolder : largeFolder
-      }%2F${kode}.jpg?alt=media`
+      return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fomslag%2F${pixelSize}%2F${kode}.${extension}?alt=media`
   }
 
   static getKodeUtbredelse(kode) {

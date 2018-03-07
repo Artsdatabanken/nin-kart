@@ -12,7 +12,6 @@ class VenstreVinduContainer extends React.Component {
   tittel(meta) {
     if (!meta) return null
     if (!meta.overordnet) return null
-    console.log('###' + meta)
     if (meta.tittel.nb) return meta.tittel.nb
     return meta.tittel.la
   }
@@ -40,6 +39,7 @@ class VenstreVinduContainer extends React.Component {
             />
             {this.state.searchResults ? (
               <ResultatListe
+                //              query={this.state.query}
                 searchResults={this.state.searchResults}
                 onClick={kode => {
                   const segments = kode.match(/[a-zA-Z]+|[0-9]+/g) || []
