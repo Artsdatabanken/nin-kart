@@ -136,17 +136,7 @@ class Grunnkart extends Component {
   }
 
   render() {
-    var currentLocation = this.props.location.pathname
-    let kodematch = currentLocation.match(/\/katalog\/(.*)/)
-    const kode =
-      kodematch && kodematch.length === 2
-        ? kodematch[1]
-            .replace('/', '_')
-            .replace('/', '')
-            .replace(/\//g, '-')
-        : null
-    const path = kodematch && kodematch.length === 2 ? kodematch[1] : ''
-    console.log(currentLocation)
+    if (!(this.state.meta && this.state.meta.kode)) return null
     return (
       <div>
         <Kart
@@ -156,8 +146,7 @@ class Grunnkart extends Component {
           pitch={0}
           bearing={0}
           mapStyle={this.state.mapStyle}
-          aktivKode={kode}
-          path={path}
+          aktivKode={this.state.meta.kode}
           opplystKode={this.state.opplystKode}
           onMapBoundsChange={bounds => this.setMapBounds(bounds)}
           setLocalId={localId => this.setLocalId(localId)}

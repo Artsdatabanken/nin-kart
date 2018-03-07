@@ -17,16 +17,22 @@ class KodeContainer extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.meta && this.props.mapbounds !== nextProps.mapbounds) {
-      this.fetchData(nextProps.meta.kode)
+    let oldKode =
+      this.props.meta && this.props.meta.kode ? this.props.meta.kode : ''
+    let oldBounds = this.props.mapbounds ? this.props.mapbounds : ''
+    let newKode =
+      nextProps.meta && nextProps.meta.kode ? nextProps.meta.kode : ''
+    let newBounds = nextProps.mapbounds ? nextProps.mapbounds : ''
+    if (oldKode !== newKode || oldBounds !== newBounds) {
+      this.fetchData(newKode, newBounds)
     }
   }
 
-  fetchData(kode) {
+  fetchData(kode, bounds) {
     this.dataQueryNumber++
     const currentQuery = this.dataQueryNumber
     backend
-      .hentKode(kode, this.props.mapbounds)
+      .hentKode(kode, bounds)
       .then(data => rename(data))
       .then(data => {
         if (currentQuery !== this.dataQueryNumber) return // Abort stale query
