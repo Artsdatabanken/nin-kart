@@ -47,6 +47,7 @@ class Kodekort extends React.Component {
               language={this.props.language}
             />
           }
+          style={{ height: 300, maxHeight: 300 }}
         >
           <img
             src={
