@@ -9,6 +9,14 @@ import PunktinformasjonContainer from './Naturområdedetaljer/PunktinformasjonCo
 class VenstreVinduContainer extends React.Component {
   state = {}
 
+  tittel(meta) {
+    if (!meta) return null
+    if (!meta.overordnet) return null
+    console.log('###' + meta)
+    if (meta.tittel.nb) return meta.tittel.nb
+    return meta.tittel.la
+  }
+
   render() {
     return (
       <Route
@@ -22,7 +30,7 @@ class VenstreVinduContainer extends React.Component {
               }}
               onToggleMainDrawer={this.props.onToggleMainDrawer}
               isAtRoot={history.location.pathname === '/'}
-              title={'data.kode'}
+              query={this.tittel(this.props.meta)}
               parentId={this.state.parentId}
               onSearchResults={items => {
                 this.setState({

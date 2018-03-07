@@ -117,6 +117,7 @@ class Grunnkart extends Component {
     let kodematch = currentLocation.match(/\/katalog\/(.*)/)
     const path = kodematch && kodematch.length === 2 ? kodematch[1] : ''
     backend.hentKodeMeta(path).then(data => {
+      console.log('!!!', data)
       if (data && data.barn)
         Object.keys(data.barn).forEach(key => {
           let v = data.barn[key]
@@ -125,6 +126,7 @@ class Grunnkart extends Component {
             v.farge = Grunnkart.tempColors[i]
           }
         })
+      console.log('fetchmeta ok', data)
       this.setState({ meta: data ? data : '' })
     })
   }
