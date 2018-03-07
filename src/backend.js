@@ -110,18 +110,7 @@ class Backend {
       var ur = wgs84ToUtm33(bounds._ne.lng, bounds._ne.lat)
       bbox = `&bbox=${ll.x},${ll.y},${ur.x},${ur.y}`
     }
-    // temp oversett koder..
     kode = kode || ''
-    kode = kode.replace(/^AO_0*/, 'GEO_FY-')
-    kode = kode.replace(/^AO/, 'GEO_FY')
-    kode = kode.replace(/^AR/, 'TAX')
-    kode = kode.replace(/^_$/, 'ROT')
-    kode = kode.replace(/^RL_/, 'RKAT-')
-    kode = kode.replace(/^RL$/, 'RKAT')
-    kode = kode.replace(/^FA_/, 'SKAT-')
-    kode = kode.replace(/^FA$/, 'SKAT')
-    kode = kode.replace(/^MI_/, '')
-    kode = kode.replace(/^MI$/, 'MIV')
 
     const url = `https://ninmemapi.artsdatabanken.no/v1/StatKodetre?node=${kode ||
       ''}${bbox}`
@@ -131,10 +120,6 @@ class Backend {
 
   static async hentKodeMeta(path) {
     path = path || ''
-    // kode = kode.replace('_', '/')
-    // kode = kode.replace(/([A-Z])([0-9]+)/, '$1/$2')
-    // kode = kode.replace(/-/g, '/')
-    //return this.getPromise(`https://grunnkart.firebaseio.com/${kode}/@.json`)
     return this.getPromise(
       `https://koder-20170305.firebaseio.com/data/${path}/@.json`
     )
