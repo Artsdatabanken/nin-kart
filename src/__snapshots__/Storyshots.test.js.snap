@@ -211,7 +211,7 @@ exports[`Storyshots App Bar down into tree 1`] = `
                 </div>
                 <input
                   disabled={false}
-                  id="undefined-kologiskgrunnkart-undefined-14299"
+                  id="3"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -655,7 +655,7 @@ exports[`Storyshots App Bar root 1`] = `
                 </div>
                 <input
                   disabled={false}
-                  id="undefined-kologiskgrunnkart-undefined-35167"
+                  id="2"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -5100,7 +5100,7 @@ exports[`Storyshots SearchBox default 1`] = `
           </div>
           <input
             disabled={false}
-            id="undefined-kologiskgrunnkart-undefined-42309"
+            id="1"
             onBlur={[Function]}
             onChange={[Function]}
             onFocus={[Function]}
@@ -6389,7 +6389,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                     </div>
                     <input
                       disabled={false}
-                      id="undefined-kologiskgrunnkart-undefined-48412"
+                      id="4"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
