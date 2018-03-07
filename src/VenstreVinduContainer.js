@@ -49,13 +49,6 @@ class VenstreVinduContainer extends React.Component {
                       <KodeContainer
                         style={{ height: '100vh' }}
                         path={match.params.kode ? match.params.kode : ''}
-                        kode={
-                          match.params.kode
-                            ? match.params.kode
-                                .replace('/', '_')
-                                .replace(/\//g, '-')
-                            : match.params.kode
-                        }
                         onGoToCode={kode => {
                           const segments = kode.match(/[a-zA-Z]+|[0-9]+/g) || []
                           const path = segments.join('/')
