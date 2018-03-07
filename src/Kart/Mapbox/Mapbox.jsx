@@ -50,7 +50,7 @@ class Mapbox extends Component {
     }
 
     if (nextProps.aktivKode !== this.props.aktivKode) {
-      this.updateAktivKode(nextProps.aktivKode)
+      this.updateAktivKode(nextProps.aktivKode, nextProps.meta.taxonId)
     }
 
     if (
@@ -63,12 +63,12 @@ class Mapbox extends Component {
     }
   }
 
-  updateAktivKode(aktivKode) {
+  updateAktivKode(aktivKode, taxonId) {
     let map = this.map.getMap()
     if (aktivKode) {
       let taxonMatch = aktivKode.match(/AR_(.*)/)
-      if (taxonMatch && taxonMatch.length > 1) {
-        backend.getKodeUtbredelse(aktivKode).then(data => {
+      if (taxonMatch && taxonMatch.length > 1 && taxonId) {
+        backend.getKodeUtbredelse('TX_' + taxonId).then(data => {
           this.setState({
             utbredelsesData: data ? data : [],
             enableDeck: data ? true : false,
@@ -168,8 +168,9 @@ class Mapbox extends Component {
   handleViewportChange = viewport => {
     //console.log(viewport);
     this.setState({ viewport })
+    // Bruk bare bounds dersom zoomnivå > 8
     const bounds = this.map.getMap().getBounds()
-    this.props.onMapBoundsChange(bounds)
+    this.props.onMapBoundsChange(viewport.zoom > 8 ? bounds : undefined)
   }
 
   onHover = e => {
