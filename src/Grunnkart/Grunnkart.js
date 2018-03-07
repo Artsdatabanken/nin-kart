@@ -138,6 +138,7 @@ class Grunnkart extends Component {
   }
 
   render() {
+    console.log('meta', this.state.meta)
     if (!(this.state.meta && this.state.meta.kode)) return null
     return (
       <div>

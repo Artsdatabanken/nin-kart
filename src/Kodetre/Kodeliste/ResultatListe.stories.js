@@ -1,10 +1,9 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import { BrowserRouter } from 'react-router-dom'
 import Resultatliste from './ResultatListe'
 
-const results = [{ code: 'KA', name: 'Kalk' }]
+const results = [{ kode: 'KA', tittel: { nb: 'Kalk' } }]
 
 storiesOf('Resultatliste', module).add('default', () => {
   return (
