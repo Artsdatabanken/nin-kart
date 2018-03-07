@@ -2483,6 +2483,8 @@ exports[`Storyshots KodeVindu default 1`] = `
                   <div
                     style={
                       Object {
+                        "height": 300,
+                        "maxHeight": 300,
                         "muiPrepared": true,
                         "position": "relative",
                       }
