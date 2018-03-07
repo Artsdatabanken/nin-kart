@@ -38,10 +38,13 @@ class TopBar extends Component {
       <AppBar
         style={{ backgroundColor: '#ffffff' }}
         title={
-          <SearchBox
-            query={this.props.query}
-            onSearchResults={this.props.onSearchResults}
-          />
+          <div style={{ lineHeight: '24px' }}>
+            <SearchBox
+              query={this.props.query}
+              tittel={this.props.tittel}
+              onQueryChange={this.props.onQueryChange}
+            />
+          </div>
         }
         iconElementLeft={
           this.props.isAtRoot ? (
