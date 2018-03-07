@@ -5,18 +5,18 @@ import Search from 'material-ui/svg-icons/action/search'
 import NavigationBack from 'material-ui/svg-icons/navigation/arrow-back'
 import CloseIcon from 'material-ui/svg-icons/navigation/close'
 import Hamburger from 'material-ui/svg-icons/navigation/menu'
-import FinnKode from '../FinnKode/FinnKode'
+import SearchBox from '../SearchBox/SearchBox'
 
 class TopBar extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      showSearchField: false,
+      searchHasFocus: false,
     }
   }
 
   handleSearchButtonClick = () => {
-    this.setState({ showSearchField: !this.state.showSearchField })
+    this.setState({ searchHasFocus: !this.state.searchHasFocus })
   }
 
   handleSearchClick = taxonId => {
@@ -39,14 +39,10 @@ class TopBar extends Component {
         <AppBar
           style={{ backgroundColor: '#ffffff' }}
           title={
-            true || this.state.showSearchField ? (
-              <FinnKode
-                onSearchResults={this.props.onSearchResults}
-                onBlur={() => this.setState({ showSearchField: false })}
-              />
-            ) : (
-              this.props.title
-            )
+            <SearchBox
+              query={this.props.query}
+              onSearchResults={this.props.onSearchResults}
+            />
           }
           iconElementLeft={
             this.props.isAtRoot ? (

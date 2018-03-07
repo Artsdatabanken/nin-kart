@@ -7,7 +7,7 @@ class ResultatListe extends Component {
       <List style={{ overflow: 'auto', maxHeight: 600 }}>
         {this.props.searchResults.map(item => (
           <ListItem
-            style={{ width: 500, pointer: 'hand' }}
+            style={{ width: 392, pointer: 'hand' }}
             onClick={() => this.props.onClick(item.kode)}
             key={item.kode}
             primaryText={item.navn}

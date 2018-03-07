@@ -1,8 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { muiTheme } from 'storybook-addon-material-ui'
-import FinnKode from './FinnKode'
+import SearchBox from './SearchBox'
 
-storiesOf('FinnKode', module)
+storiesOf('SearchBox', module)
   .addDecorator(muiTheme())
-  .add('default', () => <FinnKode />)
+  .add('default', () => <SearchBox />)
