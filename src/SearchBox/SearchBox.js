@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { TextField } from 'material-ui'
 import PropTypes from 'prop-types'
+import getNext from '../componentid'
 
 export default class SearchBox extends Component {
   onKeyDown = e => {
@@ -21,6 +22,7 @@ export default class SearchBox extends Component {
       <TextField
         ref={tf => (this.textField = tf)}
         onKeyDown={this.onKeyDown}
+        id={getNext()}
         value={query}
         hintText={tittel ? tittel : 'Økologisk grunnkart'}
         onFocus={this.handleFocus}
