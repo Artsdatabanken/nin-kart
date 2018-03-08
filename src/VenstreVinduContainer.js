@@ -14,10 +14,16 @@ class VenstreVinduContainer extends React.Component {
   queryNumber = 0
 
   handleQueryChange = (e, q) => {
+    if (!q) {
+      this.setState({
+        query: q,
+        error: null,
+        searchResults: null,
+      })
+    }
     this.queryNumber++
     this.setState({
       query: q,
-      searchResults: null,
       error: null,
     })
     const currentQuery = this.queryNumber
