@@ -4966,7 +4966,9 @@ exports[`Storyshots Resultatliste default 1`] = `
                 }
               }
             >
-              KA
+              <span>
+                KA
+              </span>
             </div>
             <div
               className={undefined}
@@ -4998,6 +5000,25 @@ exports[`Storyshots Resultatliste default 1`] = `
             >
               KA
             </div>
+            <span
+              style={
+                Object {
+                  "muiPrepared": true,
+                }
+              }
+            >
+              K
+              <span
+                style={
+                  Object {
+                    "color": "black",
+                  }
+                }
+              >
+                alk
+              </span>
+              
+            </span>
           </div>
         </div>
       </span>
