@@ -42,7 +42,16 @@ class KodeVindu extends React.Component {
           )}
           {props.meta.bbox && (
             <div style={{ margin: 8 }}>
-              <RaisedButton primary>Vis i kart</RaisedButton>
+              <RaisedButton
+                primary
+                onClick={() =>
+                  props.handleFitBounds(
+                    props.meta.bbox ? props.meta.bbox : undefined
+                  )
+                }
+              >
+                Vis i kart
+              </RaisedButton>
             </div>
           )}
           <List>
@@ -59,20 +68,36 @@ class KodeVindu extends React.Component {
               language={props.language}
             />
 
-            {false && (
-              <React.Fragment>
+            {props.meta &&
+              props.meta.relasjon &&
+              props.meta.relasjon.mengdeart && (
                 <Kodeliste
-                  title={`Diagnostiske arter`}
-                  apidata={props.data.barn}
-                  metadata={props.meta}
+                  title={`Mengdearter`}
+                  apidata={props.data ? props.data.barn : []}
+                  metadata={props.meta.relasjon.mengdeart}
                   ekspandertKode={this.state.ekspandertKode}
                   onGoToCode={props.onGoToCode}
                   onMouseEnter={props.onMouseEnter}
                   onMouseLeave={props.onMouseLeave}
                   onUpdateLayerProp={props.onUpdateLayerProp}
                 />
-              </React.Fragment>
-            )}
+              )}
+
+            {props.meta &&
+              props.meta.relasjon &&
+              props.meta.relasjon.tyngdepunktart && (
+                <Kodeliste
+                  title={`Tyngdepunktart`}
+                  apidata={props.data ? props.data.barn : []}
+                  metadata={props.meta.relasjon.tyngdepunktart}
+                  ekspandertKode={this.state.ekspandertKode}
+                  onGoToCode={props.onGoToCode}
+                  onMouseEnter={props.onMouseEnter}
+                  onMouseLeave={props.onMouseLeave}
+                  onUpdateLayerProp={props.onUpdateLayerProp}
+                />
+              )}
+
             {false && (
               <React.Fragment>
                 <Subheader>Om {selv.tittel}</Subheader>
