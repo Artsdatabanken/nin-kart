@@ -88,6 +88,10 @@ class Grunnkart extends Component {
     this.setState({ mapbounds: bounds })
   }, 50)
 
+  setBBox = this.debounce(function(bbox) {
+    this.setState({ bbox: bbox })
+  }, 50)
+
   setLocalId(localId) {
     this.setState({ localId: localId })
   }
@@ -153,6 +157,7 @@ class Grunnkart extends Component {
           onMapBoundsChange={bounds => this.setMapBounds(bounds)}
           setLocalId={localId => this.setLocalId(localId)}
           meta={this.state.meta}
+          bbox={this.state.bbox}
         />
 
         <MainDrawer
@@ -187,6 +192,7 @@ class Grunnkart extends Component {
               mapbounds={this.state.mapbounds}
               onMouseEnter={kode => this.setState({ opplystKode: kode })}
               onMouseLeave={kode => this.setState({ opplystKode: null })}
+              handleFitBounds={bbox => this.setBBox(bbox)}
               language={this.state.language}
               localId={this.state.localId}
               meta={this.state.meta}

@@ -11,8 +11,8 @@ class Kodelisteelement extends React.Component {
     const item = this.props
     const meta = this.props.meta
     const kode = this.props.kode
-    const tittel =
-      Object.keys(meta.tittel).length > 1
+    const tittel = meta.tittel
+      ? Object.keys(meta.tittel).length > 1
         ? meta.tittel[item.language[0]] +
           ' (' +
           meta.tittel[item.language[1]] +
@@ -20,6 +20,7 @@ class Kodelisteelement extends React.Component {
         : meta.tittel[item.language[0]]
           ? meta.tittel[item.language[0]]
           : meta.tittel[item.language[1]]
+      : kode
 
     let parts = []
     if (kode.indexOf('_') >= 0) {

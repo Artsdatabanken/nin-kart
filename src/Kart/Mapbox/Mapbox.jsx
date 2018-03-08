@@ -41,7 +41,10 @@ class Mapbox extends Component {
   componentDidMount() {
     window.addEventListener('resize', this._resize)
     this._resize()
-    this.updateAktivKode(this.props.aktivKode)
+    this.updateAktivKode(
+      this.props.aktivKode,
+      this.props.meta ? this.props.meta.navnSciId : ''
+    )
   }
 
   componentWillReceiveProps(nextProps) {
@@ -50,25 +53,20 @@ class Mapbox extends Component {
     }
 
     if (nextProps.aktivKode !== this.props.aktivKode) {
-      this.updateAktivKode(nextProps.aktivKode, nextProps.meta.taxonId)
+      this.updateAktivKode(nextProps.aktivKode, nextProps.meta.navnSciId)
     }
 
-    if (
-      this.props.meta &&
-      nextProps.meta &&
-      nextProps.meta.bbox &&
-      nextProps.meta.bbox !== this.props.meta.bbox
-    ) {
-      this.fitBounds(nextProps.meta.bbox)
+    if (nextProps.bbox && nextProps.bbox !== this.props.bbox) {
+      this.fitBounds(nextProps.bbox)
     }
   }
 
-  updateAktivKode(aktivKode, taxonId) {
+  updateAktivKode(aktivKode, navnSciId) {
     let map = this.map.getMap()
     if (aktivKode) {
       let taxonMatch = aktivKode.match(/AR_(.*)/)
-      if (taxonMatch && taxonMatch.length > 1 && taxonId) {
-        backend.getKodeUtbredelse('TX_' + taxonId).then(data => {
+      if (taxonMatch && taxonMatch.length > 1 && navnSciId) {
+        backend.getKodeUtbredelse('TX_' + navnSciId).then(data => {
           this.setState({
             utbredelsesData: data ? data : [],
             enableDeck: data ? true : false,

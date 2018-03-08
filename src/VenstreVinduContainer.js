@@ -78,7 +78,11 @@ class VenstreVinduContainer extends React.Component {
                 query={this.state.query}
                 searchResults={this.state.searchResults}
                 onClick={kode => {
-                  const segments = kode.match(/[a-zA-Z]+|[0-9]+/g) || []
+                  //const segments = kode.match(/[a-zA-Z]+|[0-9]+/g) || []
+                  const segments =
+                    kode.match(
+                      /[A-Z][a-zA-Z]+(_[a-z][a-zA-Z]+)*|[0-9]+|[A-Z]/g
+                    ) || [] // tillate _ i kode dersom etterfulgt av liten bokstav..
                   const path = segments.join('/')
                   history.push('/katalog/' + path)
                   this.setState({ query: '', searchResults: null })
@@ -94,13 +98,18 @@ class VenstreVinduContainer extends React.Component {
                         style={{ height: '100vh' }}
                         path={match.params.kode ? match.params.kode : ''}
                         onGoToCode={kode => {
-                          const segments = kode.match(/[a-zA-Z]+|[0-9]+/g) || []
+                          //const segments = kode.match(/[a-zA-Z]+|[0-9]+/g) || []
+                          const segments =
+                            kode.match(
+                              /[A-Z][a-zA-Z]+(_[a-z][a-zA-Z]+)*|[0-9]+|[A-Z]/g
+                            ) || [] // tillate _ i kode dersom etterfulgt av liten bokstav..
                           const path = segments.join('/')
                           history.push('/katalog/' + path)
                           this.setState({ searchResults: null })
                         }}
                         onMouseEnter={this.props.onMouseEnter}
                         onMouseLeave={this.props.onMouseLeave}
+                        handleFitBounds={this.props.handleFitBounds}
                         mapbounds={this.props.mapbounds}
                         language={this.props.language}
                         meta={this.props.meta}
