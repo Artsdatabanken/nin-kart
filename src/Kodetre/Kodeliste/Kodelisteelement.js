@@ -1,5 +1,6 @@
 import React from 'react'
 import { ListItem } from 'material-ui/List'
+import backend from '../../backend'
 import tinycolor from 'tinycolor2'
 import Kodetagg from '../Kodetagg'
 import PaintSwatch from './PaintSwatch'
@@ -44,7 +45,9 @@ class Kodelisteelement extends React.Component {
               utenRamme={meta.utenRamme}
               color={meta.tekstFarge}
               backgroundColor={meta.farge}
-              imageSrc={meta.avatarbilde || meta.foto}
+              imageSrc={backend.getFileStorageUrl(
+                `bilde/avatar/40/${kode}.jpg`
+              )}
               kode={meta.kode}
             />
           }
