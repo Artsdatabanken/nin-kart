@@ -1742,11 +1742,13 @@ exports[`Storyshots KodeVindu default 1`] = `
                         src="https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fomslag%2F408%2FNA_H.png?alt=media"
                         style={
                           Object {
+                            "height": 300,
+                            "maxHeight": 300,
                             "maxWidth": "100%",
                             "minHeight": 144,
                             "minWidth": "100%",
                             "muiPrepared": true,
-                            "objectFit": "cover",
+                            "objectFit": "contain",
                             "verticalAlign": "top",
                             "width": "100%",
                           }
