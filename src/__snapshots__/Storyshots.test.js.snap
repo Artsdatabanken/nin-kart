@@ -2064,14 +2064,15 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         }
                       >
-                        <div
+                        <img
                           className={undefined}
                           color={undefined}
                           size={40}
+                          src="https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2FNA_H1.jpg?alt=media"
                           style={
                             Object {
                               "alignItems": "center",
-                              "backgroundColor": "rgb(188, 188, 188)",
+                              "backgroundColor": "transparent",
                               "borderRadius": "50%",
                               "color": "#ffffff",
                               "display": "inline-flex",
@@ -2086,9 +2087,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "width": 40,
                             }
                           }
-                        >
-                          NA_H1
-                        </div>
+                        />
                         <span
                           style={
                             Object {
@@ -2283,14 +2282,15 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         }
                       >
-                        <div
+                        <img
                           className={undefined}
                           color={undefined}
                           size={40}
+                          src="https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2FNA_H2.jpg?alt=media"
                           style={
                             Object {
                               "alignItems": "center",
-                              "backgroundColor": "rgb(188, 188, 188)",
+                              "backgroundColor": "transparent",
                               "borderRadius": "50%",
                               "color": "#ffffff",
                               "display": "inline-flex",
@@ -2305,9 +2305,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "width": 40,
                             }
                           }
-                        >
-                          NA_H2
-                        </div>
+                        />
                         <span
                           style={
                             Object {
@@ -2502,14 +2500,15 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         }
                       >
-                        <div
+                        <img
                           className={undefined}
                           color={undefined}
                           size={40}
+                          src="https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2FNA_H3.jpg?alt=media"
                           style={
                             Object {
                               "alignItems": "center",
-                              "backgroundColor": "rgb(188, 188, 188)",
+                              "backgroundColor": "transparent",
                               "borderRadius": "50%",
                               "color": "#ffffff",
                               "display": "inline-flex",
@@ -2524,9 +2523,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "width": 40,
                             }
                           }
-                        >
-                          NA_H3
-                        </div>
+                        />
                         <span
                           style={
                             Object {
@@ -2721,14 +2718,15 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         }
                       >
-                        <div
+                        <img
                           className={undefined}
                           color={undefined}
                           size={40}
+                          src="https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2FNA_H4.jpg?alt=media"
                           style={
                             Object {
                               "alignItems": "center",
-                              "backgroundColor": "rgb(188, 188, 188)",
+                              "backgroundColor": "transparent",
                               "borderRadius": "50%",
                               "color": "#ffffff",
                               "display": "inline-flex",
@@ -2743,9 +2741,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "width": 40,
                             }
                           }
-                        >
-                          NA_H4
-                        </div>
+                        />
                         <span
                           style={
                             Object {
