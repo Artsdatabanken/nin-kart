@@ -54,7 +54,12 @@ class Kodekort extends React.Component {
               foto ? foto : backend.getKodeFotoUrl(this.props.kode) // TODO
             }
             alt=""
-            style={{ minHeight: 144, objectFit: 'cover' }}
+            style={{
+              minHeight: 144,
+              height: 300,
+              maxHeight: 300,
+              objectFit: 'contain',
+            }}
           />
         </CardMedia>
       </Card>

@@ -12,12 +12,14 @@ class Kodelisteelement extends React.Component {
     const meta = this.props.meta
     const kode = this.props.kode
     const tittel =
-      meta.tittel.length > 1
+      Object.keys(meta.tittel).length > 1
         ? meta.tittel[item.language[0]] +
           ' (' +
           meta.tittel[item.language[1]] +
           ')'
         : meta.tittel[item.language[0]]
+          ? meta.tittel[item.language[0]]
+          : meta.tittel[item.language[1]]
 
     let parts = []
     if (kode.indexOf('_') >= 0) {
