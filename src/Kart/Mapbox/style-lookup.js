@@ -79,29 +79,56 @@ function hentLag(map, kode) {
     }
   }
 
-  let naLayer = {
-    id: kode,
-    type: 'fill',
-    source: 'composite',
-    'source-layer': 'naturomrader6',
-    interactive: true,
-    filter: ['has', kode],
-    paint: {
-      'fill-opacity': 0.13,
-      //      'fill-pattern': 'shovel',
-      'fill-color': '#FFFF00',
-      'fill-outline-color': '#FF0000',
-    },
-  }
-
-  if (kode === 'NA') {
-    // spesialtilfelle for toppnivå
-    delete naLayer.filter
-    naLayer.paint = {
-      'fill-color': 'hsla(251, 59%, 28%, 0.8)',
-      'fill-outline-color': 'hsla(128, 88%, 29%, 0.8)',
+  if (kode.startsWith('NA')) {
+    let naLayer = {
+      id: kode,
+      type: 'fill',
+      source: 'composite',
+      'source-layer': 'naturomrader6',
+      interactive: true,
+      filter: ['has', kode],
+      paint: {
+        'fill-opacity': 0.13,
+        //      'fill-pattern': 'shovel',
+        'fill-color': '#FFFF00',
+        'fill-outline-color': '#FF0000',
+      },
     }
+
+    if (kode === 'NA') {
+      // spesialtilfelle for toppnivå
+      delete naLayer.filter
+      naLayer.paint = {
+        'fill-color': 'hsla(251, 59%, 28%, 0.8)',
+        'fill-outline-color': 'hsla(128, 88%, 29%, 0.8)',
+      }
+    }
+    return naLayer
   }
-  return naLayer
+  if (kode.startsWith('MI_KA')) {
+    let kaLayer = {
+      id: 'kalk',
+      type: 'fill',
+      source: 'composite',
+      'source-layer': 'kalk',
+      paint: {
+        'fill-color': {
+          base: 1,
+          type: 'exponential',
+          property: 'KALKINNHOLD_HOVEDBERGART',
+          stops: [
+            [0, 'hsla(0, 0%, 0%, 0)'],
+            [1, 'hsla(0, 6%, 94%, 0.6)'],
+            [2, 'hsla(0, 19%, 88%, 0.6)'],
+            [3, 'hsla(0, 35%, 80%, 0.6)'],
+            [4, 'hsla(0, 59%, 63%, 0.6)'],
+            [5, 'hsla(0, 84%, 32%, 0.6)'],
+          ],
+          default: 'hsl(0, 4%, 94%)',
+        },
+      },
+    }
+    return kaLayer
+  }
 }
 export default hentLag

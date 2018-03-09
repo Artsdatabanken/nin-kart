@@ -65,9 +65,14 @@ class Kodelisteelement extends React.Component {
               </span>
             </span>
           }
-          secondaryText={`${
-            this.props.areal ? (Number(this.props.areal) / 1000).toFixed(1) : 0
-          } km² i ${this.props.antallNaturomrader || '0'} områder`}
+          secondaryText={
+            this.props.areal &&
+            `${
+              this.props.areal
+                ? (Number(this.props.areal) / 1000).toFixed(1)
+                : 0
+            } km² i ${this.props.antallNaturomrader || '0'} områder`
+          }
           onClick={() => this.props.onGoToCode(item.kode)}
           rightAvatar={
             <span style={{ display: 'inline-flex' }}>

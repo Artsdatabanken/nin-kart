@@ -2057,7 +2057,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                           Object {
                             "marginLeft": 0,
                             "muiPrepared": true,
-                            "paddingBottom": 16,
+                            "paddingBottom": 20,
                             "paddingLeft": 72,
                             "paddingRight": 56,
                             "paddingTop": 20,
@@ -2084,7 +2084,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "left": 16,
                               "muiPrepared": true,
                               "position": "absolute",
-                              "top": 16,
+                              "top": 8,
                               "userSelect": "none",
                               "width": 40,
                             }
@@ -2096,7 +2096,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "display": "inline-flex",
                               "position": "absolute",
                               "right": 16,
-                              "top": 16,
+                              "top": 8,
                             }
                           }
                         >
@@ -2193,27 +2193,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                             </div>
                           </span>
                         </span>
-                        <div
-                          style={
-                            Object {
-                              "WebkitBoxOrient": null,
-                              "WebkitLineClamp": null,
-                              "color": "rgba(0, 0, 0, 0.54)",
-                              "display": null,
-                              "fontSize": 14,
-                              "height": 16,
-                              "lineHeight": "16px",
-                              "margin": 0,
-                              "marginTop": 4,
-                              "muiPrepared": true,
-                              "overflow": "hidden",
-                              "textOverflow": "ellipsis",
-                              "whiteSpace": "nowrap",
-                            }
-                          }
-                        >
-                          0 km² i 0 områder
-                        </div>
                       </div>
                     </div>
                   </span>
@@ -2276,7 +2255,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                           Object {
                             "marginLeft": 0,
                             "muiPrepared": true,
-                            "paddingBottom": 16,
+                            "paddingBottom": 20,
                             "paddingLeft": 72,
                             "paddingRight": 56,
                             "paddingTop": 20,
@@ -2303,7 +2282,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "left": 16,
                               "muiPrepared": true,
                               "position": "absolute",
-                              "top": 16,
+                              "top": 8,
                               "userSelect": "none",
                               "width": 40,
                             }
@@ -2315,7 +2294,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "display": "inline-flex",
                               "position": "absolute",
                               "right": 16,
-                              "top": 16,
+                              "top": 8,
                             }
                           }
                         >
@@ -2412,27 +2391,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                             </div>
                           </span>
                         </span>
-                        <div
-                          style={
-                            Object {
-                              "WebkitBoxOrient": null,
-                              "WebkitLineClamp": null,
-                              "color": "rgba(0, 0, 0, 0.54)",
-                              "display": null,
-                              "fontSize": 14,
-                              "height": 16,
-                              "lineHeight": "16px",
-                              "margin": 0,
-                              "marginTop": 4,
-                              "muiPrepared": true,
-                              "overflow": "hidden",
-                              "textOverflow": "ellipsis",
-                              "whiteSpace": "nowrap",
-                            }
-                          }
-                        >
-                          0 km² i 0 områder
-                        </div>
                       </div>
                     </div>
                   </span>
@@ -2495,7 +2453,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                           Object {
                             "marginLeft": 0,
                             "muiPrepared": true,
-                            "paddingBottom": 16,
+                            "paddingBottom": 20,
                             "paddingLeft": 72,
                             "paddingRight": 56,
                             "paddingTop": 20,
@@ -2522,7 +2480,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "left": 16,
                               "muiPrepared": true,
                               "position": "absolute",
-                              "top": 16,
+                              "top": 8,
                               "userSelect": "none",
                               "width": 40,
                             }
@@ -2534,7 +2492,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "display": "inline-flex",
                               "position": "absolute",
                               "right": 16,
-                              "top": 16,
+                              "top": 8,
                             }
                           }
                         >
@@ -2631,27 +2589,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                             </div>
                           </span>
                         </span>
-                        <div
-                          style={
-                            Object {
-                              "WebkitBoxOrient": null,
-                              "WebkitLineClamp": null,
-                              "color": "rgba(0, 0, 0, 0.54)",
-                              "display": null,
-                              "fontSize": 14,
-                              "height": 16,
-                              "lineHeight": "16px",
-                              "margin": 0,
-                              "marginTop": 4,
-                              "muiPrepared": true,
-                              "overflow": "hidden",
-                              "textOverflow": "ellipsis",
-                              "whiteSpace": "nowrap",
-                            }
-                          }
-                        >
-                          0 km² i 0 områder
-                        </div>
                       </div>
                     </div>
                   </span>
@@ -2714,7 +2651,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                           Object {
                             "marginLeft": 0,
                             "muiPrepared": true,
-                            "paddingBottom": 16,
+                            "paddingBottom": 20,
                             "paddingLeft": 72,
                             "paddingRight": 56,
                             "paddingTop": 20,
@@ -2741,7 +2678,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "left": 16,
                               "muiPrepared": true,
                               "position": "absolute",
-                              "top": 16,
+                              "top": 8,
                               "userSelect": "none",
                               "width": 40,
                             }
@@ -2753,7 +2690,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "display": "inline-flex",
                               "position": "absolute",
                               "right": 16,
-                              "top": 16,
+                              "top": 8,
                             }
                           }
                         >
@@ -2850,27 +2787,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                             </div>
                           </span>
                         </span>
-                        <div
-                          style={
-                            Object {
-                              "WebkitBoxOrient": null,
-                              "WebkitLineClamp": null,
-                              "color": "rgba(0, 0, 0, 0.54)",
-                              "display": null,
-                              "fontSize": 14,
-                              "height": 16,
-                              "lineHeight": "16px",
-                              "margin": 0,
-                              "marginTop": 4,
-                              "muiPrepared": true,
-                              "overflow": "hidden",
-                              "textOverflow": "ellipsis",
-                              "whiteSpace": "nowrap",
-                            }
-                          }
-                        >
-                          0 km² i 0 områder
-                        </div>
                       </div>
                     </div>
                   </span>

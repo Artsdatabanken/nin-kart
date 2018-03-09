@@ -127,7 +127,7 @@ class PunktinformasjonContainer extends Component {
         case 'rødlisteKategori':
           if (props.rødlisteKategori.code === 'LC') break
           facts[
-            'RKAT-' + props.rødlisteKategori.id
+            'RL_' + props.rødlisteKategori.code
           ] = this.createRødlistePointInfo(
             'Rødlistekategori',
             props.rødlisteKategori.code
@@ -164,9 +164,10 @@ class PunktinformasjonContainer extends Component {
   fixAdmEnhet(data) {
     if (!data.match(/fylkesnavn = '(.*)'/)) return null
     const fylkesnavn = data.match(/fylkesnavn = '(.*)'/)[1]
-    const fylkeskode = 'GEO_FY-' + data.match(/fylkesnummer = '(.*)'/)[1]
+    const fylkeskode = 'AO-' + data.match(/fylkesnummer = '(.*)'/)[1]
     const kommunenavn = data.match(/navn_norsk = '(.*)'/)[1]
-    const kommunekode = 'GEO_KO-' + data.match(/kommunenummer = '(.*)'/)[1]
+    const kommunekode =
+      fylkeskode + '-' + data.match(/kommunenummer = '[0-9]{2}(.*)'/)[1]
     return {
       [kommunekode]: {
         value: kommunenavn,
@@ -198,11 +199,14 @@ class PunktinformasjonContainer extends Component {
       }
     return null
   }
+  fixData(data) {
+    return data
+  }
 
   goFetchPointInfo(lng, lat) {
     backend.hentPunkt(lng, lat).then(data => {
       this.setState({
-        pointInfo: data,
+        pointInfo: this.fixData(data),
       })
     })
     backend.hentAdmEnhet(lng, lat).then(data =>
