@@ -1811,8 +1811,8 @@ exports[`Storyshots KodeVindu default 1`] = `
                   <div
                     style={
                       Object {
-                        "height": 300,
-                        "maxHeight": 300,
+                        "height": 297,
+                        "maxHeight": 297,
                         "muiPrepared": true,
                         "position": "relative",
                       }
@@ -1910,7 +1910,13 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "muiPrepared": true,
                                 }
                               }
-                            />
+                            >
+                              <div
+                                onClick={[Function]}
+                              >
+                                norsk
+                              </div>
+                            </span>
                             <div
                               style={
                                 Object {
@@ -1922,6 +1928,76 @@ exports[`Storyshots KodeVindu default 1`] = `
                                 }
                               }
                             >
+                              <a
+                                disabled={false}
+                                href="http://a.b"
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                onKeyUp={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                onMouseOut={[Function]}
+                                onTouchStart={[Function]}
+                                style={
+                                  Object {
+                                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                                    "background": "none",
+                                    "border": 10,
+                                    "boxSizing": "border-box",
+                                    "cursor": "pointer",
+                                    "display": "inline-block",
+                                    "float": "right",
+                                    "fontFamily": "Roboto, sans-serif",
+                                    "fontSize": 0,
+                                    "fontWeight": "inherit",
+                                    "height": 48,
+                                    "margin": 0,
+                                    "marginRight": 8,
+                                    "muiPrepared": true,
+                                    "outline": "none",
+                                    "overflow": "visible",
+                                    "padding": 12,
+                                    "position": "relative",
+                                    "textDecoration": "none",
+                                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                                    "verticalAlign": "middle",
+                                    "width": 48,
+                                  }
+                                }
+                                tabIndex={0}
+                              >
+                                <div
+                                  onMouseDown={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseUp={[Function]}
+                                  onTouchEnd={[Function]}
+                                  onTouchStart={[Function]}
+                                >
+                                  <svg
+                                    onMouseEnter={[Function]}
+                                    onMouseLeave={[Function]}
+                                    style={
+                                      Object {
+                                        "color": "rgba(0, 0, 0, 0.87)",
+                                        "display": "inline-block",
+                                        "fill": "#eee",
+                                        "height": 24,
+                                        "muiPrepared": true,
+                                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                                        "userSelect": "none",
+                                        "width": 24,
+                                      }
+                                    }
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                                    />
+                                  </svg>
+                                </div>
+                              </a>
                               <button
                                 disabled={false}
                                 onBlur={[Function]}
@@ -2673,204 +2749,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                                 }
                               >
                                 NA_H3
-                              </div>
-                            </div>
-                          </span>
-                        </span>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
-                <div>
-                  <span
-                    disabled={false}
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
-                    onTouchEnd={[Function]}
-                    onTouchStart={[Function]}
-                    open={null}
-                    style={
-                      Object {
-                        "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                        "background": "none",
-                        "backgroundColor": null,
-                        "border": 10,
-                        "boxSizing": "border-box",
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "cursor": "pointer",
-                        "display": "block",
-                        "fontFamily": "Roboto, sans-serif",
-                        "fontSize": 16,
-                        "fontWeight": "inherit",
-                        "lineHeight": "16px",
-                        "margin": 0,
-                        "muiPrepared": true,
-                        "outline": "none",
-                        "padding": 0,
-                        "position": "relative",
-                        "textDecoration": "none",
-                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "verticalAlign": null,
-                      }
-                    }
-                    tabIndex={0}
-                  >
-                    <div
-                      onMouseDown={[Function]}
-                      onMouseLeave={[Function]}
-                      onMouseUp={[Function]}
-                      onTouchEnd={[Function]}
-                      onTouchStart={[Function]}
-                    >
-                      <div
-                        style={
-                          Object {
-                            "marginLeft": 0,
-                            "muiPrepared": true,
-                            "paddingBottom": 20,
-                            "paddingLeft": 72,
-                            "paddingRight": 56,
-                            "paddingTop": 20,
-                            "position": "relative",
-                          }
-                        }
-                      >
-                        <img
-                          className={undefined}
-                          color={undefined}
-                          onError={[Function]}
-                          size={40}
-                          src="https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2FNA_H4.jpg?alt=media"
-                          style={
-                            Object {
-                              "alignItems": "center",
-                              "backgroundColor": "transparent",
-                              "borderRadius": "50%",
-                              "color": "#ffffff",
-                              "display": "inline-flex",
-                              "fontSize": 20,
-                              "height": 40,
-                              "justifyContent": "center",
-                              "left": 16,
-                              "muiPrepared": true,
-                              "position": "absolute",
-                              "top": 8,
-                              "userSelect": "none",
-                              "width": 40,
-                            }
-                          }
-                        />
-                        <span
-                          style={
-                            Object {
-                              "display": "inline-flex",
-                              "position": "absolute",
-                              "right": 16,
-                              "top": 8,
-                            }
-                          }
-                        >
-                          <div
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "borderRadius": "50%",
-                                "height": "28px",
-                                "right": "14px",
-                                "top": "14px",
-                                "width": "28px",
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "backgroundImage": "url(null)",
-                                  "borderRadius": "20%",
-                                  "bottom": 0,
-                                  "left": 0,
-                                  "position": "absolute",
-                                  "right": 0,
-                                  "top": 0,
-                                }
-                              }
-                            >
-                              <div
-                                style={
-                                  Object {
-                                    "backgroundColor": undefined,
-                                    "borderRadius": "20%",
-                                    "bottom": 0,
-                                    "left": 0,
-                                    "position": "absolute",
-                                    "right": 0,
-                                    "top": 0,
-                                  }
-                                }
-                              />
-                            </div>
-                          </div>
-                        </span>
-                        <span
-                          style={
-                            Object {
-                              "muiPrepared": true,
-                            }
-                          }
-                        >
-                          Sterkt endrete marine vannmasser
-                          <span
-                            style={
-                              Object {
-                                "display": "inline-flex",
-                              }
-                            }
-                          >
-                             
-                            <div
-                              style={
-                                Object {
-                                  "backgroundColor": "#9e9e9e",
-                                  "borderRadius": "8px",
-                                  "boxSizing": "border-box",
-                                  "display": "flex",
-                                  "flexWrap": "wrap",
-                                  "height": 16,
-                                  "marginLeft": "0px",
-                                  "marginTop": "2px",
-                                  "outline": "none",
-                                  "padding": 2,
-                                  "position": "relative",
-                                  "width": "fit-content",
-                                }
-                              }
-                            >
-                              <div
-                                style={
-                                  Object {
-                                    "color": "#ffffff",
-                                    "fontSize": 8,
-                                    "fontWeight": 600,
-                                    "lineHeight": "10px",
-                                    "margin": 2,
-                                    "paddingLeft": "2px",
-                                    "paddingRight": "2px",
-                                  }
-                                }
-                              >
-                                NA_H4
                               </div>
                             </div>
                           </span>
