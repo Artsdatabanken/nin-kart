@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Avatar } from 'material-ui'
+import backend from '../../backend'
 
 class VenstreAvatar extends Component {
   render() {
@@ -13,6 +14,11 @@ class VenstreAvatar extends Component {
         color={color}
         backgroundColor={imageSrc ? 'transparent' : backgroundColor}
         src={imageSrc}
+        onError={e => {
+          e.target.src = backend.getFileStorageUrl(
+            `bilde/avatar/40/${'404'}.jpg`
+          )
+        }}
       >
         {imageSrc ? null : kode}
       </Avatar>

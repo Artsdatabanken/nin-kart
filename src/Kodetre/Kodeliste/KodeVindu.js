@@ -73,6 +73,7 @@ class KodeVindu extends React.Component {
               props.meta.relasjon.mengdeart && (
                 <Kodeliste
                   title={`Mengdearter`}
+                  subtitle={`Art med gjennomsnittlig dekning eller biomasseandel større enn 1/8 i et utvalg av enkeltobservasjonsenheter.`}
                   apidata={props.data ? props.data.barn : []}
                   metadata={props.meta.relasjon.mengdeart}
                   ekspandertKode={this.state.ekspandertKode}
@@ -87,7 +88,9 @@ class KodeVindu extends React.Component {
               props.meta.relasjon &&
               props.meta.relasjon.tyngdepunktart && (
                 <Kodeliste
-                  title={`Tyngdepunktart`}
+                  title={`Tyngdepunktarter`}
+                  subtitle={`Art med høyere frekvens og dekning i en aktuell naturtype (hovedtype eller grunntype) enn i et sammenliknbart utvalg typer
+                  (f.eks. andre hovedtyper som tilhører samme hovedtypegruppe eller andre grunntyper som tilhører samme hovedtype`}
                   apidata={props.data ? props.data.barn : []}
                   metadata={props.meta.relasjon.tyngdepunktart}
                   ekspandertKode={this.state.ekspandertKode}
