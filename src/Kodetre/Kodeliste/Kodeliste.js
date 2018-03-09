@@ -13,6 +13,7 @@ function sort(metadata) {
 
 const Kodeliste = ({
   title,
+  subtitle,
   apidata,
   metadata,
   onGoToCode,
@@ -27,6 +28,17 @@ const Kodeliste = ({
   return (
     <React.Fragment>
       <Subheader>{title}</Subheader>
+      {subtitle && (
+        <div
+          style={{
+            padding: '0px 5px 0px 16px',
+            'font-size': '14px',
+            color: 'rgba(95, 95, 95, 0.54)',
+          }}
+        >
+          {subtitle}
+        </div>
+      )}
       {sort(metadata).map(item => {
         const apibarn = apidata
           ? apidata[

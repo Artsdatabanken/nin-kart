@@ -53,6 +53,11 @@ class Kodekort extends React.Component {
             src={
               foto ? foto : backend.getKodeFotoUrl(this.props.kode) // TODO
             }
+            onError={e => {
+              e.target.src = backend.getFileStorageUrl(
+                `bilde/omslag/408/${'sqrt(42)'}.jpg`
+              )
+            }}
             alt=""
             style={{
               minHeight: 144,

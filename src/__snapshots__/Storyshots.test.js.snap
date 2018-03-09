@@ -1739,6 +1739,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                     >
                       <img
                         alt=""
+                        onError={[Function]}
                         src="https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fomslag%2F408%2FNA_H.jpg?alt=media"
                         style={
                           Object {
@@ -2067,6 +2068,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                         <img
                           className={undefined}
                           color={undefined}
+                          onError={[Function]}
                           size={40}
                           src="https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2FNA_H1.jpg?alt=media"
                           style={
@@ -2285,6 +2287,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                         <img
                           className={undefined}
                           color={undefined}
+                          onError={[Function]}
                           size={40}
                           src="https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2FNA_H2.jpg?alt=media"
                           style={
@@ -2503,6 +2506,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                         <img
                           className={undefined}
                           color={undefined}
+                          onError={[Function]}
                           size={40}
                           src="https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2FNA_H3.jpg?alt=media"
                           style={
@@ -2721,6 +2725,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                         <img
                           className={undefined}
                           color={undefined}
+                          onError={[Function]}
                           size={40}
                           src="https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2FNA_H4.jpg?alt=media"
                           style={
