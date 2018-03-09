@@ -92,11 +92,8 @@ const Tittelblokk = ({
     subtitle={
       overordnet &&
       overordnet.map(forelder => (
-        <div
-          key={Object.keys(forelder)[0]}
-          onClick={() => onGoToCode(Object.keys(forelder)[0])}
-        >
-          {forelder[Object.keys(forelder)[0]].tittel[language[0]]}
+        <div key={forelder.kode} onClick={() => onGoToCode(forelder.url)}>
+          {forelder.tittel[language[0]]}
         </div>
       ))
     }

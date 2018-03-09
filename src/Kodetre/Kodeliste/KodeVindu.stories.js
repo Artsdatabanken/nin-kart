@@ -52,7 +52,7 @@ const meta = {
       },
     },
   },
-  overordnet: [{ NA: { kode: 'NA', tittel: { nb: 'norsk' } } }],
+  overordnet: [{ kode: 'NA', tittel: { nb: 'norsk' } }],
   kode: 'NA_H',
   infoUrl: 'http://a.b',
   tittel: {
