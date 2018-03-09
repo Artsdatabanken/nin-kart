@@ -1,8 +1,10 @@
-function getValue(input, kode) {
-  if (!input.startsWith(kode)) return null
-  const value = input.replace(kode, '')
-  if (value.length === 0) return 'ALL'
-  return value.replace('-', '0').slice(-2)
+function getFylke(kode) {
+  if (!kode.startsWith('AO_')) return null
+  let fylkesMatch = kode.match(/AO_([0-9][0-9])(-.*)*/)
+  if (fylkesMatch && fylkesMatch.length === 3 && !fylkesMatch[2]) {
+    return fylkesMatch[1]
+  }
+  return null
 }
 
 // Slår opp stilen fra style.json for lag med spesifikt navn
@@ -13,7 +15,8 @@ function hentLag(map, kode) {
   let layer = map.getLayer(kode)
   if (layer) return layer
 
-  const fylkeNr = getValue(kode, 'GEO_FY')
+  const fylkeNr = getFylke(kode)
+
   if (fylkeNr) {
     const filter =
       fylkeNr === 'ALL' ? ['!=', 'FY', '-1'] : ['in', 'FY', '', fylkeNr]
@@ -45,9 +48,9 @@ function hentLag(map, kode) {
     }
   }
 
-  let kommuneMatch = kode.match(/GEO_KO-(.*)/)
-  if (kommuneMatch && kommuneMatch.length === 2) {
-    let kommuneNr = ('0' + kommuneMatch[1]).slice(-4)
+  let kommuneMatch = kode.match(/AO_([0-9][0-9])-(.*)/)
+  if (kommuneMatch && kommuneMatch.length === 3) {
+    let kommuneNr = '' + (kommuneMatch[1] + kommuneMatch[2])
     return {
       id: kode,
       type: 'fill',
@@ -75,19 +78,6 @@ function hentLag(map, kode) {
       },
     }
   }
-
-  // let taxonMatch = kode.match(/AR_(.*)/)
-  // if (taxonMatch) {
-  //   return {
-  //     id: kode,
-  //     source: 'tx_overlay',
-  //     type: 'raster',
-  //     paint: {
-  //       'raster-contrast': 1,
-  //       'raster-opacity': 0.5,
-  //     },
-  //   }
-  // }
 
   let naLayer = {
     id: kode,
