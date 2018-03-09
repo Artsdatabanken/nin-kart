@@ -32,7 +32,7 @@ const Kodeliste = ({
         <div
           style={{
             padding: '0px 5px 0px 16px',
-            'font-size': '14px',
+            fontSize: '14px',
             color: 'rgba(95, 95, 95, 0.54)',
           }}
         >
