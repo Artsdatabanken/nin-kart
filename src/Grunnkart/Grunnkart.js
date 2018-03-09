@@ -9,7 +9,6 @@ import {
   vintageMapStyle,
   satelliteStyle,
   NiN,
-  //NiNHover,
 } from '../Kart/Mapbox/MapStyle'
 import { withRouter } from 'react-router'
 import VenstreVinduContainer from '../VenstreVinduContainer'
@@ -62,7 +61,6 @@ class Grunnkart extends Component {
 
   addCustomLayers() {
     const layers = this.state.baseMapStyle.get('layers').push(NiN)
-    //.push(NiNHover)
     this.setState({
       mapStyle: this.state.baseMapStyle.set('layers', layers),
     })
@@ -102,7 +100,8 @@ class Grunnkart extends Component {
   }
 
   componentWillReceiveProps(nextProps, props) {
-    this.fetchMeta(nextProps.location.pathname)
+    if (nextProps.location.pathname !== this.props.location.pathname)
+      this.fetchMeta(nextProps.location.pathname)
   }
   static tempCounter = 0
   static tempColors = [
@@ -116,12 +115,21 @@ class Grunnkart extends Component {
     '#3288bd',
   ]
 
-  fetchMeta(pathname) {
-    var currentLocation = pathname || this.props.location.pathname
-    let kodematch = currentLocation.match(/\/katalog\/(.*)/)
-    const path = kodematch && kodematch.length === 2 ? kodematch[1] : ''
-    backend.hentKodeMeta(path).then(data => {
-      console.log('!!!', data)
+  redirectTo(path) {
+    const newUrl = '/katalog/' + path
+    console.log('router videre til ', newUrl)
+    this.props.history.push(newUrl)
+  }
+
+  fetchMeta(url) {
+    url = url.toLowerCase()
+    backend.hentKodeMeta(url).then(data => {
+      if (!data) return this.redirectTo('/katalog')
+      if (data.se) {
+        const newUrl = data.se[Object.keys(data.se)[0]].url
+        this.redirectTo(newUrl)
+        return
+      }
       if (data && data.barn)
         Object.keys(data.barn).forEach(key => {
           let v = data.barn[key]
@@ -130,7 +138,6 @@ class Grunnkart extends Component {
             v.farge = Grunnkart.tempColors[i]
           }
         })
-      console.log('fetchmeta ok', data)
       this.setState({ meta: data ? data : '' })
     })
   }

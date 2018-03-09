@@ -51,15 +51,10 @@ const meta = {
           'Ikke-sirkulerende marine vannmasser i fysisk avgrensede saltvannsforekomster',
       },
     },
-    NA_H4: {
-      kode: 'NA_H4',
-      tittel: {
-        nb: 'Sterkt endrete marine vannmasser',
-      },
-    },
   },
-  foreldre: ['NA'],
+  overordnet: [{ NA: { kode: 'NA', tittel: { nb: 'norsk' } } }],
   kode: 'NA_H',
+  infoUrl: 'http://a.b',
   tittel: {
     nb: 'Marine vannmasser',
   },

@@ -119,9 +119,8 @@ class Backend {
   }
 
   static async hentKodeMeta(path) {
-    path = path || ''
     return this.getPromise(
-      `https://adbkoder.firebaseio.com/data/${path}/@.json`
+      `https://koder-20170305.firebaseio.com/data/${path}/@.json`
     )
   }
 
