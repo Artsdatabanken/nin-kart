@@ -200,7 +200,12 @@ class PunktinformasjonContainer extends Component {
     return null
   }
   fixData(data) {
-    return data
+    var namespaceData = {};
+    for(var code in data) {
+      var newCode = data[code].namespace ? data[code].namespace + "_" + code : code
+      namespaceData[newCode] = data[code];
+    };
+    return namespaceData
   }
 
   goFetchPointInfo(lng, lat) {
