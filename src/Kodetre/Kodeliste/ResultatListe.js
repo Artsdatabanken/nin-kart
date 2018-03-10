@@ -12,7 +12,7 @@ class ResultatListe extends Component {
         <List
           style={{
             overflow: 'auto',
-            maxHeight: 600,
+            maxHeight: 494,
             paddingTop: 0,
             paddingBottom: 0,
           }}
@@ -37,13 +37,15 @@ class ResultatListe extends Component {
                     lineheight: 24,
                     fontWeight: 500,
                   }}
-                  onClick={() => onClick(kode)}
+                  onClick={() => {
+                    onClick(item.kode)
+                  }}
                   key={kode}
-                  primaryText={this.highlightMatch(item.navn, query)}
+                  primaryText={ResultatListe.highlightMatch(item.navn, query)}
                   leftIcon={RotAvatar.for(kode)}
                 >
                   <div style={{ float: 'right' }}>
-                    {this.highlightMatch(kode, query)}
+                    {ResultatListe.highlightMatch(kode, query)}
                   </div>
                 </ListItem>
                 <Divider inset={true} />
@@ -55,26 +57,19 @@ class ResultatListe extends Component {
     )
   }
 
-  highlightMatch(navn, query) {
+  static highlightMatch(navn, query) {
     if (!query) return navn
-    const qsegs = query.toLowerCase().split(' ')
-    const offsets = qsegs.map(q => navn.toLowerCase().indexOf(q))
+    const q = query.toLowerCase().split(' ')[0]
+    const offset = navn.toLowerCase().indexOf(q)
+    if (offset < 0) return navn
+
     let r = []
-    let start = 0
-    for (let i = 0; i < offsets.length; i++) {
-      const offset = offsets[i]
-      if (offset >= 0 && qsegs[i].length > 0) {
-        r.push(navn.substring(start, offsets[i]))
-        const end = offsets[i] + qsegs[i].length
-        r.push(
-          <span key={i} style={{ color: 'black' }}>
-            {navn.substring(offsets[i], end)}
-          </span>
-        )
-        start = end
-      }
-    }
-    r.push(navn.substring(start, navn.length))
+    r.push(navn.substring(0, offset))
+    const end = offset + q.length
+    r.push(
+      <span style={{ color: 'black' }}>{navn.substring(offset, end)}</span>
+    )
+    r.push(navn.substring(end, navn.length))
     return <span>{r}</span>
   }
 }
