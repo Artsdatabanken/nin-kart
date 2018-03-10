@@ -36,6 +36,7 @@ class Kodelisteelement extends React.Component {
       <React.Fragment>
         <ListItem
           key={item.kode}
+          onClick={() => this.props.onGoToCode(meta.url)}
           onMouseEnter={() => this.props.onMouseEnter(kode)}
           onMouseLeave={() => {
             this.props.onMouseLeave(kode)
@@ -73,7 +74,6 @@ class Kodelisteelement extends React.Component {
                 : 0
             } km² i ${this.props.antallNaturomrader || '0'} områder`
           }
-          onClick={() => this.props.onGoToCode(item.kode)}
           rightAvatar={
             <span style={{ display: 'inline-flex' }}>
               <PaintSwatch
@@ -87,7 +87,6 @@ class Kodelisteelement extends React.Component {
           }
         />
         <div style={{ marginLeft: 56 }}>
-          {this.props.erEkspander && console.log(meta.farge)}
           {this.props.erEkspandert && (
             <ColorPicker
               style={{ display: 'fixed' }}

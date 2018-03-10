@@ -124,7 +124,7 @@ class Grunnkart extends Component {
   fetchMeta(url) {
     url = url.toLowerCase()
     backend.hentKodeMeta(url).then(data => {
-      if (!data) return this.redirectTo('/katalog')
+      if (!data) return this.redirectTo('')
       if (data.se) {
         const newUrl = data.se[Object.keys(data.se)[0]].url
         this.redirectTo(newUrl)

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Highlight 1`] = `
+<span>
+  
+  <span
+    style={
+      Object {
+        "color": "black",
+      }
+    }
+  >
+    Ka
+  </span>
+  rmøy
+</span>
+`;

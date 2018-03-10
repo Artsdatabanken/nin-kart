@@ -4768,7 +4768,7 @@ exports[`Storyshots Resultatliste default 1`] = `
   <div
     style={
       Object {
-        "maxHeight": 600,
+        "maxHeight": 494,
         "muiPrepared": true,
         "overflow": "auto",
         "padding": "8px 0px 8px 0px",
@@ -4851,9 +4851,7 @@ exports[`Storyshots Resultatliste default 1`] = `
                 }
               }
             >
-              <span>
-                KA
-              </span>
+              KA
             </div>
             <div
               className={undefined}
