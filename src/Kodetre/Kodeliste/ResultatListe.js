@@ -63,14 +63,14 @@ class ResultatListe extends Component {
     const offset = navn.toLowerCase().indexOf(q)
     if (offset < 0) return navn
 
-    let r = []
-    r.push(navn.substring(0, offset))
     const end = offset + q.length
-    r.push(
-      <span style={{ color: 'black' }}>{navn.substring(offset, end)}</span>
+    return (
+      <React.Fragment>
+        {navn.substring(0, offset)}
+        <span style={{ color: 'black' }}>{navn.substring(offset, end)}</span>
+        {navn.substring(end, navn.length)}
+      </React.Fragment>
     )
-    r.push(navn.substring(end, navn.length))
-    return <span>{r}</span>
   }
 }
 

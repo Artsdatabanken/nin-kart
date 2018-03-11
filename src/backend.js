@@ -17,6 +17,7 @@ class Backend {
   }
 
   static async getPromise(url) {
+    console.log(url)
     return new Promise((resolve, reject) => {
       fetch(url)
         .then(result => {
