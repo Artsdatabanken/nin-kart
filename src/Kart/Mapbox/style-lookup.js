@@ -19,7 +19,7 @@ function hentLag(map, kode) {
 
   if (fylkeNr) {
     const filter =
-      fylkeNr === 'ALL' ? ['!=', 'FY', '-1'] : ['in', 'FY', '', fylkeNr]
+      fylkeNr === 'ALL' ? ['!=', 'AO', '-1'] : ['in', 'AO', '', fylkeNr]
     return {
       id: kode,
       type: 'fill',
