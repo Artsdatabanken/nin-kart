@@ -9,6 +9,7 @@ import hentLag from './style-lookup'
 import backend from '../../backend'
 import DeckGL, { GridLayer /*, ScatterplotLayer */ } from 'deck.gl'
 import Color from 'color'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 const LIGHT_SETTINGS = {
   lightsPosition: [9.5, 56, 5000, -2, 57, 8000],
