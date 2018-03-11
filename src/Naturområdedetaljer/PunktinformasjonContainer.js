@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import backend from '../backend'
 import Punktinformasjon from './Punktinformasjon'
-//import Naturomradeinformasjon from './Naturområdeinformasjon'
-//import { ListItem } from 'material-ui'
 
 class PunktinformasjonContainer extends Component {
   constructor(props) {
@@ -200,11 +198,13 @@ class PunktinformasjonContainer extends Component {
     return null
   }
   fixData(data) {
-    var namespaceData = {};
-    for(var code in data) {
-      var newCode = data[code].namespace ? data[code].namespace + "_" + code : code
-      namespaceData[newCode] = data[code];
-    };
+    var namespaceData = {}
+    for (var code in data) {
+      var newCode = data[code].namespace
+        ? data[code].namespace + '_' + code
+        : code
+      namespaceData[newCode] = data[code]
+    }
     return namespaceData
   }
 
@@ -230,6 +230,7 @@ class PunktinformasjonContainer extends Component {
     return (
       <div style={{ maxHeight: window.innerHeight * 0.8, overflow: 'auto' }}>
         <Punktinformasjon
+          key="AD"
           metadata={this.state.metadata}
           pointInfo={this.state.pointInfo}
           admEnhet={this.state.admEnhet}
@@ -239,6 +240,7 @@ class PunktinformasjonContainer extends Component {
         />
         {this.state.natureAreaFacts && (
           <Punktinformasjon
+            key="NA"
             natureAreaFacts={this.state.natureAreaFacts}
             title="NaturområdeInfo"
           />
