@@ -6,6 +6,10 @@ const map = {
   },
 }
 
-test('lag stiler', () => {
+test('stil NA', () => {
   expect(stylelookup(map, 'NA_T')).toMatchSnapshot()
+})
+
+test('stil MI_KA', () => {
+  expect(stylelookup(map, 'MI_KA')).toMatchSnapshot()
 })
