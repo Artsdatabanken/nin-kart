@@ -12,7 +12,7 @@ import {
 } from '../Kart/Mapbox/MapStyle'
 import { withRouter } from 'react-router'
 import VenstreVinduContainer from '../VenstreVinduContainer'
-import Kart from '../Kart/Kart'
+import Kart from '../Kart'
 import backend from '../backend'
 
 class Grunnkart extends Component {
