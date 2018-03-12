@@ -112,54 +112,58 @@ class KodeVindu extends React.Component {
                   onMouseEnter={props.onMouseEnter}
                   onMouseLeave={props.onMouseLeave}
                   onUpdateLayerProp={props.onUpdateLayerProp}
+                  language={props.language}
                 />
               )}
 
             {props.meta &&
               props.meta.relasjon &&
-              props.meta.relasjon['dominerende mengdeart'] && (
+              props.meta.relasjon.dominerende_mengdeart && (
                 <Kodeliste
                   title={`Dominerende mengdearter`}
                   subtitle={`Art med gjennomsnittlig dekning eller biomasseandel større enn 1/4 i et utvalg av enkeltobservasjonsenheter.`}
                   apidata={props.data ? props.data.barn : []}
-                  metadata={props.meta.relasjon['dominerende mengdeart']}
+                  metadata={props.meta.relasjon.dominerende_mengdeart}
                   ekspandertKode={this.state.ekspandertKode}
                   onGoToCode={props.onGoToCode}
                   onMouseEnter={props.onMouseEnter}
                   onMouseLeave={props.onMouseLeave}
                   onUpdateLayerProp={props.onUpdateLayerProp}
+                  language={props.language}
                 />
               )}
 
             {props.meta &&
               props.meta.relasjon &&
-              props.meta.relasjon['vanlig art'] && (
+              props.meta.relasjon.vanlig_art && (
                 <Kodeliste
                   title={`Vanlige arter`}
                   subtitle={`Art med frekvens større enn 1/8 i et utvalg enkeltobservasjonsenheter. For at en art skal være «vanlig», må den tilfredsstille dette kravet om frekvens > 1/8 i hele naturtypens utbredelsesområde, ikke bare innenfor artens utbredelsesområde.`}
                   apidata={props.data ? props.data.barn : []}
-                  metadata={props.meta.relasjon['vanlig art']}
+                  metadata={props.meta.relasjon.vanlig_art}
                   ekspandertKode={this.state.ekspandertKode}
                   onGoToCode={props.onGoToCode}
                   onMouseEnter={props.onMouseEnter}
                   onMouseLeave={props.onMouseLeave}
                   onUpdateLayerProp={props.onUpdateLayerProp}
+                  language={props.language}
                 />
               )}
 
             {props.meta &&
               props.meta.relasjon &&
-              props.meta.relasjon['konstant art'] && (
+              props.meta.relasjon.konstant_art && (
                 <Kodeliste
                   title={`Konstante arter`}
                   subtitle={`Art med frekvens større enn 4/5 i et utvalg enkeltobservasjonsenheter. Dette er den klassiske definisjonen av «konstant»  som er brukt i vegetasjonsøkologi`}
                   apidata={props.data ? props.data.barn : []}
-                  metadata={props.meta.relasjon['konstant art']}
+                  metadata={props.meta.relasjon.konstant_art}
                   ekspandertKode={this.state.ekspandertKode}
                   onGoToCode={props.onGoToCode}
                   onMouseEnter={props.onMouseEnter}
                   onMouseLeave={props.onMouseLeave}
                   onUpdateLayerProp={props.onUpdateLayerProp}
+                  language={props.language}
                 />
               )}
 
@@ -177,6 +181,7 @@ class KodeVindu extends React.Component {
                   onMouseEnter={props.onMouseEnter}
                   onMouseLeave={props.onMouseLeave}
                   onUpdateLayerProp={props.onUpdateLayerProp}
+                  language={props.language}
                 />
               )}
 
@@ -193,24 +198,24 @@ class KodeVindu extends React.Component {
                   onMouseEnter={props.onMouseEnter}
                   onMouseLeave={props.onMouseLeave}
                   onUpdateLayerProp={props.onUpdateLayerProp}
+                  language={props.language}
                 />
               )}
 
             {props.meta &&
               props.meta.relasjon &&
-              props.meta.relasjon['kjennetegnende tyngdepunktart'] && (
+              props.meta.relasjon.kjennetegnende_tyngdepunktart && (
                 <Kodeliste
                   title={`Kjennetegnende tyngdepunktarter`}
                   subtitle={`Tyngdepunktart som utelukkende eller nesten utelukkende forekommer i en naturtype eller gruppe av naturtyper på et eller annet generaliseringsnivå`}
                   apidata={props.data ? props.data.barn : []}
-                  metadata={
-                    props.meta.relasjon['kjennetegnende tyngdepunktart']
-                  }
+                  metadata={props.meta.relasjon.kjennetegnende_tyngdepunktart}
                   ekspandertKode={this.state.ekspandertKode}
                   onGoToCode={props.onGoToCode}
                   onMouseEnter={props.onMouseEnter}
                   onMouseLeave={props.onMouseLeave}
                   onUpdateLayerProp={props.onUpdateLayerProp}
+                  language={props.language}
                 />
               )}
 
@@ -227,22 +232,24 @@ class KodeVindu extends React.Component {
                   onMouseEnter={props.onMouseEnter}
                   onMouseLeave={props.onMouseLeave}
                   onUpdateLayerProp={props.onUpdateLayerProp}
+                  language={props.language}
                 />
               )}
 
             {props.meta &&
               props.meta.relasjon &&
-              props.meta.relasjon['absolutt skilleart'] && (
+              props.meta.relasjon.absolutt_skilleart && (
                 <Kodeliste
                   title={`Absolutte skillearter`}
                   subtitle={`Art som normalt bare forekommer i én blant to eller flere naturtyper som sammenliknes`}
                   apidata={props.data ? props.data.barn : []}
-                  metadata={props.meta.relasjon['absolutt skilleart']}
+                  metadata={props.meta.relasjon.absolutt_skilleart}
                   ekspandertKode={this.state.ekspandertKode}
                   onGoToCode={props.onGoToCode}
                   onMouseEnter={props.onMouseEnter}
                   onMouseLeave={props.onMouseLeave}
                   onUpdateLayerProp={props.onUpdateLayerProp}
+                  language={props.language}
                 />
               )}
 
