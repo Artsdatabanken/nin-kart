@@ -86,7 +86,7 @@ class KodeVindu extends React.Component {
               })}
 
             <Kodeliste
-              title={`Inneholder`}
+              title={`Innhold`}
               apidata={props.data ? props.data.barn : []}
               metadata={props.meta.barn}
               ekspandertKode={this.state.ekspandertKode}

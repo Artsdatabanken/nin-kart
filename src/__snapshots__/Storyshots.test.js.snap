@@ -2168,7 +2168,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                     }
                   }
                 >
-                  Inneholder
+                  Innhold
                 </div>
                 <div>
                   <span
@@ -2258,7 +2258,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "display": "inline-flex",
                               "position": "absolute",
                               "right": 16,
-                              "top": 8,
+                              "top": 16,
                             }
                           }
                         >
@@ -2317,43 +2317,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                                 "display": "inline-flex",
                               }
                             }
-                          >
-                             
-                            <div
-                              style={
-                                Object {
-                                  "backgroundColor": "#9e9e9e",
-                                  "borderRadius": "8px",
-                                  "boxSizing": "border-box",
-                                  "display": "flex",
-                                  "flexWrap": "wrap",
-                                  "height": 16,
-                                  "marginLeft": "0px",
-                                  "marginTop": "2px",
-                                  "outline": "none",
-                                  "padding": 2,
-                                  "position": "relative",
-                                  "width": "fit-content",
-                                }
-                              }
-                            >
-                              <div
-                                style={
-                                  Object {
-                                    "color": "#ffffff",
-                                    "fontSize": 8,
-                                    "fontWeight": 600,
-                                    "lineHeight": "10px",
-                                    "margin": 2,
-                                    "paddingLeft": "2px",
-                                    "paddingRight": "2px",
-                                  }
-                                }
-                              >
-                                NA_H1
-                              </div>
-                            </div>
-                          </span>
+                          />
                         </span>
                       </div>
                     </div>
@@ -2454,7 +2418,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "display": "inline-flex",
                               "position": "absolute",
                               "right": 16,
-                              "top": 8,
+                              "top": 16,
                             }
                           }
                         >
@@ -2513,43 +2477,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                                 "display": "inline-flex",
                               }
                             }
-                          >
-                             
-                            <div
-                              style={
-                                Object {
-                                  "backgroundColor": "#9e9e9e",
-                                  "borderRadius": "8px",
-                                  "boxSizing": "border-box",
-                                  "display": "flex",
-                                  "flexWrap": "wrap",
-                                  "height": 16,
-                                  "marginLeft": "0px",
-                                  "marginTop": "2px",
-                                  "outline": "none",
-                                  "padding": 2,
-                                  "position": "relative",
-                                  "width": "fit-content",
-                                }
-                              }
-                            >
-                              <div
-                                style={
-                                  Object {
-                                    "color": "#ffffff",
-                                    "fontSize": 8,
-                                    "fontWeight": 600,
-                                    "lineHeight": "10px",
-                                    "margin": 2,
-                                    "paddingLeft": "2px",
-                                    "paddingRight": "2px",
-                                  }
-                                }
-                              >
-                                NA_H2
-                              </div>
-                            </div>
-                          </span>
+                          />
                         </span>
                       </div>
                     </div>
@@ -2650,7 +2578,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "display": "inline-flex",
                               "position": "absolute",
                               "right": 16,
-                              "top": 8,
+                              "top": 16,
                             }
                           }
                         >
@@ -2709,43 +2637,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                                 "display": "inline-flex",
                               }
                             }
-                          >
-                             
-                            <div
-                              style={
-                                Object {
-                                  "backgroundColor": "#9e9e9e",
-                                  "borderRadius": "8px",
-                                  "boxSizing": "border-box",
-                                  "display": "flex",
-                                  "flexWrap": "wrap",
-                                  "height": 16,
-                                  "marginLeft": "0px",
-                                  "marginTop": "2px",
-                                  "outline": "none",
-                                  "padding": 2,
-                                  "position": "relative",
-                                  "width": "fit-content",
-                                }
-                              }
-                            >
-                              <div
-                                style={
-                                  Object {
-                                    "color": "#ffffff",
-                                    "fontSize": 8,
-                                    "fontWeight": 600,
-                                    "lineHeight": "10px",
-                                    "margin": 2,
-                                    "paddingLeft": "2px",
-                                    "paddingRight": "2px",
-                                  }
-                                }
-                              >
-                                NA_H3
-                              </div>
-                            </div>
-                          </span>
+                          />
                         </span>
                       </div>
                     </div>

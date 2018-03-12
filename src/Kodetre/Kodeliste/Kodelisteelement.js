@@ -48,12 +48,14 @@ class Kodelisteelement extends React.Component {
               {(tittel || meta.navn || meta.navnSci) +
                 (meta.navnSci ? ` (${meta.navnSci})` : '')}
               <span style={{ display: 'inline-flex' }}>
-                &nbsp;<Kodetagg
-                  kode={item.kode}
-                  navn={parts[1]}
-                  color="#222"
-                  backgroundColor="#ccc"
-                />
+                {false && (
+                  <Kodetagg
+                    kode={item.kode}
+                    navn={parts[1]}
+                    color="#222"
+                    backgroundColor="#ccc"
+                  />
+                )}
               </span>
             </span>
           }
@@ -66,7 +68,9 @@ class Kodelisteelement extends React.Component {
             } km² i ${this.props.antallNaturomrader || '0'} områder`
           }
           rightAvatar={
-            <span style={{ display: 'inline-flex' }}>
+            <span
+              style={{ display: 'inline-flex', position: 'absolute', top: 16 }}
+            >
               <PaintSwatch
                 color={meta.farge}
                 onClick={e => {
