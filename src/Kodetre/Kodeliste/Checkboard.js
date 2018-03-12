@@ -22,6 +22,7 @@ const Checkboard = ({ color, white, grey, size, renderers, borderRadius }) => {
     <div style={styles.grid}>
       <div
         style={{
+          border: '1px solid hsla(0, 0%, 0%, 0.2)',
           borderRadius,
           backgroundColor: color,
           position: 'absolute',
