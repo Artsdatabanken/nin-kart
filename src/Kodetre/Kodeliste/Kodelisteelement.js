@@ -1,11 +1,10 @@
 import React from 'react'
 import { ListItem } from 'material-ui/List'
-import backend from '../../backend'
 import tinycolor from 'tinycolor2'
 import Kodetagg from '../Kodetagg'
 import PaintSwatch from './PaintSwatch'
 import ColorPicker from './ColorPicker'
-import VenstreAvatar from './VenstreAvatar'
+import Bildeavatar from './Bildeavatar'
 
 class Kodelisteelement extends React.Component {
   render() {
@@ -42,15 +41,7 @@ class Kodelisteelement extends React.Component {
             this.props.onMouseLeave(kode)
           }}
           leftAvatar={
-            <VenstreAvatar
-              utenRamme={meta.utenRamme}
-              color={meta.tekstFarge}
-              backgroundColor={meta.farge}
-              imageSrc={backend.getFileStorageUrl(
-                `bilde/avatar/40/${kode}.jpg`
-              )}
-              kode={meta.kode}
-            />
+            <Bildeavatar utenRamme={meta.utenRamme} kode={meta.kode} />
           }
           primaryText={
             <span>

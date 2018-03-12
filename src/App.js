@@ -11,6 +11,7 @@ const muiTheme = getMuiTheme({
     primary1Color: '#927b64', //'#7da2a1',//'#f46c22',
     accent2Color: '#666', //'#7da2a1',//'#9c9c9c',
     accent1Color: '#927b64', //'#c07541',
+    canvasColor: '#eeeeee',
     /*    alternateTextColor: '#999',
     primary1Color: '#ffffff',
     primary2Color: '#9f9',
@@ -23,7 +24,7 @@ const muiTheme = getMuiTheme({
   appBar: { height: 48 },
   drawer: { width: 320 },
 })
-
+console.log(muiTheme.palette)
 class App extends Component {
   render() {
     return (

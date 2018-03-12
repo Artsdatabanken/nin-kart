@@ -81,9 +81,7 @@ class Backend {
   }
 
   static async hentKodeMeta(path) {
-    return this.getPromise(
-      `https://koder-20170305.firebaseio.com/${path}/@.json`
-    )
+    return this.getPromise(`https://adb-kode.firebaseio.com/${path}/@.json`)
   }
 
   static async hentPunkt(lng, lat) {
@@ -154,10 +152,13 @@ class Backend {
     7: 'Egenskapsområde',
   })
 
-  static getKodeFotoUrl(kode, small) {
-    const pixelSize = small ? '40' : '408'
+  static getFotoOmslag(kode) {
     if (kode)
-      return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fomslag%2F${pixelSize}%2F${kode}.jpg?alt=media`
+      return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fomslag%2F408%2F${kode}.jpg?alt=media`
+  }
+  static getFotoAvatar(kode) {
+    if (kode)
+      return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2F${kode}.jpg?alt=media`
   }
 
   static getFileStorageUrl(path) {

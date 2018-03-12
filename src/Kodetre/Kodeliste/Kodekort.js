@@ -50,20 +50,17 @@ class Kodekort extends React.Component {
           style={{ height: 297, maxHeight: 297 }}
         >
           <img
-            src={
-              foto ? foto : backend.getKodeFotoUrl(this.props.kode) // TODO
-            }
+            src={foto ? foto : backend.getFotoOmslag(this.props.kode)}
             onError={e => {
-              e.target.src = backend.getFileStorageUrl(
-                `bilde/omslag/408/${'sqrt(42)'}.jpg`
-              )
+              const brokenImage = backend.getFotoOmslag('~')
+              if (e.target.src !== brokenImage) e.target.src = brokenImage
             }}
             alt=""
             style={{
-              minHeight: 144,
-              height: 300,
-              maxHeight: 300,
-              objectFit: 'contain',
+              minHeight: 297,
+              height: 297,
+              maxHeight: 297,
+              objectFit: 'cover',
             }}
           />
         </CardMedia>
