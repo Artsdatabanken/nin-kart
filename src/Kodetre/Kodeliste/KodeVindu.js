@@ -46,7 +46,6 @@ class KodeVindu extends React.Component {
           {props.meta.bbox && (
             <div style={{ margin: 8 }}>
               <RaisedButton
-                primary
                 onClick={() =>
                   props.handleFitBounds(
                     props.meta.bbox ? props.meta.bbox : undefined
