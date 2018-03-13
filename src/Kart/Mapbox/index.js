@@ -40,12 +40,14 @@ class Mapbox extends Component {
   }
 
   getFargeKode = kode => {
-    let fargeElement = JSON.parse(localStorage.getItem('customColors')).filter(
-      x => x.kode === kode
-    )
-    return fargeElement && fargeElement[0] && fargeElement[0].farge
-      ? fargeElement[0].farge
-      : this.props.meta.farge
+    let customColors = localStorage.getItem('customColors')
+    if (customColors) {
+      let fargeElement = JSON.parse(customColors).filter(x => x.kode === kode)
+      return fargeElement && fargeElement[0] && fargeElement[0].farge
+        ? fargeElement[0].farge
+        : this.props.meta.farge
+    }
+    return this.props.meta.farge
   }
 
   componentDidMount() {
