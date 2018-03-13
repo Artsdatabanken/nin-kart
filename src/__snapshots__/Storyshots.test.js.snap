@@ -4723,7 +4723,7 @@ exports[`Storyshots Resultatliste default 1`] = `
                 "marginLeft": 0,
                 "muiPrepared": true,
                 "paddingBottom": 11,
-                "paddingLeft": 72,
+                "paddingLeft": 66,
                 "paddingRight": 16,
                 "paddingTop": 11,
                 "position": "relative",
@@ -4739,36 +4739,24 @@ exports[`Storyshots Resultatliste default 1`] = `
             >
               KA
             </div>
-            <div
-              className={undefined}
+            <img
+              alt="KA"
               color="#757575"
-              size={40}
+              src={undefined}
               style={
                 Object {
-                  "alignItems": "center",
-                  "backgroundColor": "rgb(188, 188, 188)",
-                  "borderRadius": "50%",
-                  "color": "#757575",
                   "display": "block",
-                  "fontSize": 13,
                   "height": 24,
-                  "justifyContent": "center",
                   "left": 4,
-                  "lineHeight": "24px",
                   "margin": 12,
-                  "marginBottom": 7,
-                  "marginTop": 7,
-                  "muiPrepared": true,
+                  "marginLeft": 16,
+                  "marginTop": 6,
                   "position": "absolute",
-                  "textAlign": "center",
                   "top": 0,
-                  "userSelect": "none",
                   "width": 24,
                 }
               }
-            >
-              KA
-            </div>
+            />
             K
             <span
               style={
