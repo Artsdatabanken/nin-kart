@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Paper, List, ListItem, Divider } from 'material-ui'
-import RotAvatar from './RotAvatar'
+import Backend from '../../backend'
 
 class ResultatListe extends Component {
   render() {
@@ -19,10 +19,10 @@ class ResultatListe extends Component {
         >
           {searchResults.map(item => {
             const kode = item.kode.toUpperCase()
+            const prefix = kode.substring(0, 2)
             return (
               <React.Fragment key={item.kode}>
                 <ListItem
-                  insetChildren={true}
                   style={{
                     width: 392,
                     height: 38,
@@ -33,6 +33,7 @@ class ResultatListe extends Component {
                   innerDivStyle={{
                     paddingTop: 11,
                     paddingBottom: 11,
+                    paddingLeft: 66,
                     fontSize: 13,
                     lineheight: 24,
                     fontWeight: 500,
@@ -42,7 +43,13 @@ class ResultatListe extends Component {
                   }}
                   key={kode}
                   primaryText={ResultatListe.highlightMatch(item.navn, query)}
-                  leftIcon={RotAvatar.for(kode)}
+                  leftIcon={
+                    <img
+                      style={{ marginTop: 6, marginLeft: 16 }}
+                      alt={prefix}
+                      src={Backend.avatar24px(prefix)}
+                    />
+                  }
                 >
                   <div style={{ float: 'right' }}>
                     {ResultatListe.highlightMatch(kode, query)}

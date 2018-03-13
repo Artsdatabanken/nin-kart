@@ -103,17 +103,6 @@ class Grunnkart extends Component {
     if (nextProps.location.pathname !== this.props.location.pathname)
       this.fetchMeta(nextProps.location.pathname)
   }
-  static tempCounter = 0
-  static tempColors = [
-    '#d53e4f',
-    '#f46d43',
-    '#fdae61',
-    '#fee08b',
-    '#e6f598',
-    '#abdda4',
-    '#66c2a5',
-    '#3288bd',
-  ]
 
   redirectTo(path) {
     const newUrl = '/katalog/' + path
@@ -135,14 +124,6 @@ class Grunnkart extends Component {
         this.redirectTo(newUrl)
         return
       }
-      if (data && data.barn)
-        Object.keys(data.barn).forEach(key => {
-          let v = data.barn[key]
-          if (!v.farge) {
-            const i = Grunnkart.tempCounter++ % Grunnkart.tempColors.length
-            v.farge = Grunnkart.tempColors[i]
-          }
-        })
       this.setState({ meta: data ? data : '' })
     })
   }

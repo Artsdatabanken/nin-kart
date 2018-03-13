@@ -11,9 +11,9 @@ class BildeAvatar extends Component {
           this.props.style,
           utenRamme ? { borderRadius: 0 } : {}
         )}
-        src={backend.getFotoAvatar(kode)}
+        src={backend.avatar40px(kode)}
         onError={e => {
-          const brokenAvatar = backend.getFotoAvatar('~', 40)
+          const brokenAvatar = backend.avatar40px('~', 40)
           if (e.target.src !== brokenAvatar) e.target.src = brokenAvatar
         }}
       />
