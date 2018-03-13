@@ -39,6 +39,15 @@ class Mapbox extends Component {
     }
   }
 
+  getFargeKode = kode => {
+    let fargeElement = JSON.parse(localStorage.getItem('customColors')).filter(
+      x => x.kode === kode
+    )
+    return fargeElement && fargeElement[0] && fargeElement[0].farge
+      ? fargeElement[0].farge
+      : this.props.meta.farge
+  }
+
   componentDidMount() {
     window.addEventListener('resize', this._resize)
     this._resize()
@@ -94,6 +103,14 @@ class Mapbox extends Component {
       let aktivtLag = hentLag(map, aktivKode)
       if (aktivtLag) {
         aktivtLag.id = 'aktivt'
+        //aktivtLag.paint['fill-pattern'] = 'shovel'
+
+        let customColor = this.getFargeKode(aktivKode)
+        let fillColor = customColor
+          ? Color(customColor)
+          : Color(this.props.meta.farge || '#ffff00')
+        aktivtLag.paint['fill-color'] = fillColor.rgbaString()
+
         console.log('add aktivt: ', aktivKode)
         map.addLayer(aktivtLag)
       }
@@ -112,10 +129,13 @@ class Mapbox extends Component {
         const barn = this.props.meta.barn[opplystKode]
         let opplystLag = hentLag(map, opplystKode)
         if (!opplystLag || !opplystLag.paint) return
-        let fillColor = Color(barn.farge || '#ffff00')
-          .alpha(0.35)
-          .lightness(90)
-          .saturate(90)
+        let customColor = this.getFargeKode(opplystKode)
+        let fillColor = customColor
+          ? Color(customColor)
+          : Color(barn.farge || '#ffff00')
+        // .alpha(0.35)
+        // .lightness(90)
+        // .saturate(90)
         opplystLag.paint['fill-color'] = fillColor.rgbaString()
         const outlineColor = fillColor.darken(0.5)
         opplystLag.paint['fill-outline-color'] = outlineColor.rgbaString()

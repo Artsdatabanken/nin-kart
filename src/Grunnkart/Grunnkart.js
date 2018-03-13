@@ -114,11 +114,11 @@ class Grunnkart extends Component {
     url = url.toLowerCase()
     let kodematch = url.match(/\/katalog\/(.*)/)
     if (!kodematch || kodematch.length !== 2) {
-      url = '/katalog/'
+      return
     }
 
     backend.hentKodeMeta(url).then(data => {
-      if (!data && kodematch) return this.redirectTo('')
+      if (!data) return this.redirectTo('')
       if (data && data.se) {
         const newUrl = data.se[Object.keys(data.se)[0]].url
         this.redirectTo(newUrl)
@@ -135,7 +135,8 @@ class Grunnkart extends Component {
   }
 
   render() {
-    if (!(this.state.meta && this.state.meta.kode)) return null
+    const aktivKode =
+      this.state.meta && this.state.meta.kode ? this.state.meta.kode : ''
     return (
       <div>
         <Kart
@@ -145,7 +146,7 @@ class Grunnkart extends Component {
           pitch={0}
           bearing={0}
           mapStyle={this.state.mapStyle}
-          aktivKode={this.state.meta.kode}
+          aktivKode={aktivKode}
           opplystKode={this.state.opplystKode}
           onMapBoundsChange={bounds => this.setMapBounds(bounds)}
           setLocalId={localId => this.setLocalId(localId)}
