@@ -7,6 +7,26 @@ import ColorPicker from './ColorPicker'
 import Bildeavatar from './Bildeavatar'
 
 class Kodelisteelement extends React.Component {
+  setFargeKode(kode, farge) {
+    let farger = JSON.parse(localStorage.getItem('customColors') || '[]')
+    farger = farger.filter(x => x.kode !== kode)
+    farger.push({ kode: kode, farge: farge })
+    localStorage.setItem('customColors', JSON.stringify(farger))
+  }
+  getFargeKode = () => {
+    let kode = this.props.kode
+    if (localStorage) {
+      let customColors = localStorage.getItem('customColors')
+      if (customColors) {
+        let fargeElement = JSON.parse(customColors).filter(x => x.kode === kode)
+        return fargeElement && fargeElement[0] && fargeElement[0].farge
+          ? fargeElement[0].farge
+          : this.props.meta.farge
+      }
+    }
+    return this.props.meta.farge
+  }
+
   render() {
     const item = this.props
     const meta = this.props.meta
@@ -72,7 +92,7 @@ class Kodelisteelement extends React.Component {
               style={{ display: 'inline-flex', position: 'absolute', top: 16 }}
             >
               <PaintSwatch
-                color={meta.farge}
+                color={this.getFargeKode()}
                 onClick={e => {
                   e.stopPropagation()
                   this.props.onShowColorpicker(meta.kode)
@@ -85,14 +105,15 @@ class Kodelisteelement extends React.Component {
           {this.props.erEkspandert && (
             <ColorPicker
               style={{ display: 'fixed' }}
-              color={meta.farge}
-              onChange={farge =>
+              color={this.getFargeKode()}
+              onChange={farge => {
+                this.setFargeKode(item.kode, tinycolor(farge.rgb).toRgbString())
                 this.props.onUpdateLayerProp(
                   item.kode,
                   'farge',
                   tinycolor(farge.rgb).toRgbString()
                 )
-              }
+              }}
             />
           )}
         </div>
