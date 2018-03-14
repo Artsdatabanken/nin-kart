@@ -2463,6 +2463,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                         alt=""
                         onError={[Function]}
                         src={undefined}
+                        srcSet="undefined 1.5x, undefined 2x"
                         style={
                           Object {
                             "height": 297,
