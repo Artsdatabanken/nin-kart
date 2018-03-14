@@ -12,7 +12,6 @@ class ResultatListe extends Component {
         <List
           style={{
             overflow: 'hidden',
-            //overflow: 'auto',
             maxHeight: 494,
             paddingTop: 0,
             paddingBottom: 0,
