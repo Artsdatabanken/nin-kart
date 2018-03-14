@@ -7,6 +7,10 @@ import Kodeliste from './Kodeliste'
 import { RaisedButton } from 'material-ui'
 import { ListItem } from 'material-ui/List'
 import { Avatar } from 'material-ui'
+import Badge from 'material-ui/Badge'
+import IconButton from 'material-ui/IconButton'
+import NaturomraderIcon from 'material-ui/svg-icons/editor/pie-chart-outlined'
+import ArterIcon from 'material-ui/svg-icons/action/fingerprint'
 
 class KodeVindu extends React.Component {
   handleShowColorpicker = kode => {
@@ -42,7 +46,42 @@ class KodeVindu extends React.Component {
           {props.meta.ingress && (
             <div style={{ padding: 16 }}>{props.meta.ingress}</div>
           )}
-
+          {props.data &&
+            props.data.antallArter > 0 && (
+              <Badge
+                badgeContent={props.data.antallArter}
+                primary={true}
+                badgeStyle={{
+                  top: 12,
+                  right: 12,
+                  width: `${Math.max(String(props.data.antallArter).length, 3) *
+                    8}px`,
+                }}
+              >
+                <IconButton tooltip="Antall arter">
+                  <ArterIcon />
+                </IconButton>
+              </Badge>
+            )}
+          {props.data &&
+            props.data.antallNaturomrader > 0 && (
+              <Badge
+                badgeContent={props.data.antallNaturomrader}
+                secondary={true}
+                badgeStyle={{
+                  top: 12,
+                  right: 12,
+                  width: `${Math.max(
+                    String(props.data.antallNaturomrader).length,
+                    3
+                  ) * 8}px`,
+                }}
+              >
+                <IconButton tooltip="Antall naturområder med denne klassifiseringen">
+                  <NaturomraderIcon />
+                </IconButton>
+              </Badge>
+            )}
           {props.meta.bbox && (
             <div style={{ margin: 8 }}>
               <RaisedButton

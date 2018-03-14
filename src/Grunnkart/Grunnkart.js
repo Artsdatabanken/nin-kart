@@ -9,6 +9,7 @@ import {
   vintageMapStyle,
   satelliteStyle,
   NiN,
+  NiNHover,
 } from '../Kart/Mapbox/MapStyle'
 import { withRouter } from 'react-router'
 import VenstreVinduContainer from '../VenstreVinduContainer'
@@ -60,7 +61,10 @@ class Grunnkart extends Component {
   }
 
   addCustomLayers() {
-    const layers = this.state.baseMapStyle.get('layers').push(NiN)
+    const layers = this.state.baseMapStyle
+      .get('layers')
+      .push(NiN)
+      .push(NiNHover)
     this.setState({
       mapStyle: this.state.baseMapStyle.set('layers', layers),
     })

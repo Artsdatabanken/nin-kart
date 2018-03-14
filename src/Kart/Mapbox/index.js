@@ -195,17 +195,15 @@ class Mapbox extends Component {
   }
 
   onHover = e => {
-    /*
-        const pos = e.center
-        const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y])
-        // TODO:
-        if (r[0]) {
-          //console.log(r[0].properties.localId);
-          this.map
-            .getMap()
-            .setFilter('nin-hover', ['==', 'localId', r[0].properties.localId])
-        }
-        */
+    const pos = e.center
+    const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y])
+    // TODO:
+    if (r[0]) {
+      //console.log(r[0].properties.localId);
+      this.map
+        .getMap()
+        .setFilter('nin-hover', ['==', 'localId', r[0].properties.localId])
+    }
   }
 
   // onClick = e => {
