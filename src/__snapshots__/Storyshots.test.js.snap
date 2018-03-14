@@ -5697,158 +5697,1322 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
 `;
 
 exports[`Storyshots Resultatliste default 1`] = `
-<div
-  style={
-    Object {
-      "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-      "backgroundColor": "#ffffff",
-      "borderRadius": 2,
-      "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-             0 1px 4px rgba(0, 0, 0, 0.12)",
-      "boxSizing": "border-box",
-      "color": "rgba(0, 0, 0, 0.87)",
-      "fontFamily": "Roboto, sans-serif",
-      "muiPrepared": true,
-      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-    }
-  }
->
+Array [
   <div
     style={
-      Object {
-        "maxHeight": 494,
-        "muiPrepared": true,
-        "overflow": "auto",
-        "padding": "8px 0px 8px 0px",
-        "paddingBottom": 0,
-        "paddingTop": 0,
-      }
-    }
-  >
-    <div>
-      <span
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
-        open={null}
-        style={
-          Object {
-            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-            "background": "none",
-            "backgroundColor": null,
-            "border": 10,
+        Object {
+            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+            "backgroundColor": "#ffffff",
+            "borderRadius": 2,
+            "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
+                 0 1px 4px rgba(0, 0, 0, 0.12)",
             "boxSizing": "border-box",
             "color": "rgba(0, 0, 0, 0.87)",
-            "cursor": "pointer",
-            "display": "block",
             "fontFamily": "Roboto, sans-serif",
-            "fontSize": 16,
-            "fontWeight": "inherit",
-            "height": 38,
-            "lineHeight": "16px",
-            "margin": 0,
             "muiPrepared": true,
-            "outline": "none",
-            "padding": 0,
-            "paddingBottom": 1,
-            "paddingTop": 0,
-            "pointer": "hand",
-            "position": "relative",
-            "textDecoration": "none",
             "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-            "verticalAlign": null,
-            "width": 392,
           }
-        }
-        tabIndex={0}
-      >
-        <div
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchStart={[Function]}
-        >
-          <div
-            style={
-              Object {
-                "fontSize": 13,
-                "fontWeight": 500,
-                "lineheight": 24,
-                "marginLeft": 0,
+    }
+>
+    <div
+        style={
+            Object {
+                "maxHeight": 494,
                 "muiPrepared": true,
-                "paddingBottom": 11,
-                "paddingLeft": 66,
-                "paddingRight": 16,
-                "paddingTop": 11,
-                "position": "relative",
+                "overflow": "hidden",
+                "padding": "8px 0px 8px 0px",
+                "paddingBottom": 0,
+                "paddingTop": 0,
               }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "float": "right",
-                }
-              }
-            >
-              KA
-            </div>
-            <img
-              alt="KA"
-              color="#757575"
-              src={undefined}
-              style={
-                Object {
-                  "display": "block",
-                  "height": 24,
-                  "left": 4,
-                  "margin": 12,
-                  "marginLeft": 16,
-                  "marginTop": 6,
-                  "position": "absolute",
-                  "top": 0,
-                  "width": 24,
-                }
-              }
-            />
-            K
-            <span
-              style={
-                Object {
-                  "color": "black",
-                }
-              }
-            >
-              alk
-            </span>
-            
-          </div>
-        </div>
-      </span>
-    </div>
-    <hr
-      style={
-        Object {
-          "backgroundColor": "#e0e0e0",
-          "border": "none",
-          "height": 1,
-          "margin": 0,
-          "marginLeft": 72,
-          "marginTop": -1,
-          "muiPrepared": true,
         }
-      }
-    />
-  </div>
-</div>
+    >
+        <div>
+            <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                    Object {
+                        "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                        "background": "none",
+                        "backgroundColor": null,
+                        "border": 10,
+                        "boxSizing": "border-box",
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "fontFamily": "Roboto, sans-serif",
+                        "fontSize": 16,
+                        "fontWeight": "inherit",
+                        "height": 38,
+                        "lineHeight": "16px",
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "outline": "none",
+                        "padding": 0,
+                        "paddingBottom": 1,
+                        "paddingTop": 0,
+                        "pointer": "hand",
+                        "position": "relative",
+                        "textDecoration": "none",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "verticalAlign": null,
+                        "width": 392,
+                      }
+                }
+                tabIndex={0}
+            >
+                <div
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                >
+                    <div
+                        style={
+                            Object {
+                                "fontSize": 13,
+                                "fontWeight": 500,
+                                "lineheight": 24,
+                                "marginLeft": 0,
+                                "muiPrepared": true,
+                                "overflow": "hidden",
+                                "paddingBottom": 11,
+                                "paddingLeft": 66,
+                                "paddingRight": 16,
+                                "paddingTop": 11,
+                                "position": "relative",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                        }
+                    >
+                        <div
+                            style={
+                                Object {
+                                    "float": "right",
+                                  }
+                            }
+                        >
+                            KA
+                        </div>
+                        <img
+                            alt="KA"
+                            color="#757575"
+                            src={undefined}
+                            style={
+                                Object {
+                                    "display": "block",
+                                    "height": 24,
+                                    "left": 4,
+                                    "margin": 12,
+                                    "marginLeft": 16,
+                                    "marginTop": 6,
+                                    "position": "absolute",
+                                    "top": 0,
+                                    "width": 24,
+                                  }
+                            }
+                        />
+                    </div>
+                </div>
+            </span>
+        </div>
+        <hr
+            style={
+                Object {
+                    "backgroundColor": "#e0e0e0",
+                    "border": "none",
+                    "height": 1,
+                    "margin": 0,
+                    "marginLeft": 72,
+                    "marginTop": -1,
+                    "muiPrepared": true,
+                  }
+            }
+        />
+    </div>
+</div>,
+  <div
+    style={
+        Object {
+            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+            "backgroundColor": "#ffffff",
+            "borderRadius": 2,
+            "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
+                 0 1px 4px rgba(0, 0, 0, 0.12)",
+            "boxSizing": "border-box",
+            "color": "rgba(0, 0, 0, 0.87)",
+            "fontFamily": "Roboto, sans-serif",
+            "muiPrepared": true,
+            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          }
+    }
+>
+    <div
+        style={
+            Object {
+                "maxHeight": 494,
+                "muiPrepared": true,
+                "overflow": "hidden",
+                "padding": "8px 0px 8px 0px",
+                "paddingBottom": 0,
+                "paddingTop": 0,
+              }
+        }
+    >
+        <div>
+            <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                    Object {
+                        "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                        "background": "none",
+                        "backgroundColor": null,
+                        "border": 10,
+                        "boxSizing": "border-box",
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "fontFamily": "Roboto, sans-serif",
+                        "fontSize": 16,
+                        "fontWeight": "inherit",
+                        "height": 38,
+                        "lineHeight": "16px",
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "outline": "none",
+                        "padding": 0,
+                        "paddingBottom": 1,
+                        "paddingTop": 0,
+                        "pointer": "hand",
+                        "position": "relative",
+                        "textDecoration": "none",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "verticalAlign": null,
+                        "width": 392,
+                      }
+                }
+                tabIndex={0}
+            >
+                <div
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                >
+                    <div
+                        style={
+                            Object {
+                                "fontSize": 13,
+                                "fontWeight": 500,
+                                "lineheight": 24,
+                                "marginLeft": 0,
+                                "muiPrepared": true,
+                                "overflow": "hidden",
+                                "paddingBottom": 11,
+                                "paddingLeft": 66,
+                                "paddingRight": 16,
+                                "paddingTop": 11,
+                                "position": "relative",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                        }
+                    >
+                        <div
+                            style={
+                                Object {
+                                    "float": "right",
+                                  }
+                            }
+                        >
+                            AR_100270
+                        </div>
+                        <img
+                            alt="AR"
+                            color="#757575"
+                            src={undefined}
+                            style={
+                                Object {
+                                    "display": "block",
+                                    "height": 24,
+                                    "left": 4,
+                                    "margin": 12,
+                                    "marginLeft": 16,
+                                    "marginTop": 6,
+                                    "position": "absolute",
+                                    "top": 0,
+                                    "width": 24,
+                                  }
+                            }
+                        />
+                    </div>
+                </div>
+            </span>
+        </div>
+        <hr
+            style={
+                Object {
+                    "backgroundColor": "#e0e0e0",
+                    "border": "none",
+                    "height": 1,
+                    "margin": 0,
+                    "marginLeft": 72,
+                    "marginTop": -1,
+                    "muiPrepared": true,
+                  }
+            }
+        />
+        <div>
+            <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                    Object {
+                        "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                        "background": "none",
+                        "backgroundColor": null,
+                        "border": 10,
+                        "boxSizing": "border-box",
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "fontFamily": "Roboto, sans-serif",
+                        "fontSize": 16,
+                        "fontWeight": "inherit",
+                        "height": 38,
+                        "lineHeight": "16px",
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "outline": "none",
+                        "padding": 0,
+                        "paddingBottom": 1,
+                        "paddingTop": 0,
+                        "pointer": "hand",
+                        "position": "relative",
+                        "textDecoration": "none",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "verticalAlign": null,
+                        "width": 392,
+                      }
+                }
+                tabIndex={0}
+            >
+                <div
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                >
+                    <div
+                        style={
+                            Object {
+                                "fontSize": 13,
+                                "fontWeight": 500,
+                                "lineheight": 24,
+                                "marginLeft": 0,
+                                "muiPrepared": true,
+                                "overflow": "hidden",
+                                "paddingBottom": 11,
+                                "paddingLeft": 66,
+                                "paddingRight": 16,
+                                "paddingTop": 11,
+                                "position": "relative",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                        }
+                    >
+                        <div
+                            style={
+                                Object {
+                                    "float": "right",
+                                  }
+                            }
+                        >
+                            AR_100271
+                        </div>
+                        <img
+                            alt="AR"
+                            color="#757575"
+                            src={undefined}
+                            style={
+                                Object {
+                                    "display": "block",
+                                    "height": 24,
+                                    "left": 4,
+                                    "margin": 12,
+                                    "marginLeft": 16,
+                                    "marginTop": 6,
+                                    "position": "absolute",
+                                    "top": 0,
+                                    "width": 24,
+                                  }
+                            }
+                        />
+                    </div>
+                </div>
+            </span>
+        </div>
+        <hr
+            style={
+                Object {
+                    "backgroundColor": "#e0e0e0",
+                    "border": "none",
+                    "height": 1,
+                    "margin": 0,
+                    "marginLeft": 72,
+                    "marginTop": -1,
+                    "muiPrepared": true,
+                  }
+            }
+        />
+        <div>
+            <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                    Object {
+                        "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                        "background": "none",
+                        "backgroundColor": null,
+                        "border": 10,
+                        "boxSizing": "border-box",
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "fontFamily": "Roboto, sans-serif",
+                        "fontSize": 16,
+                        "fontWeight": "inherit",
+                        "height": 38,
+                        "lineHeight": "16px",
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "outline": "none",
+                        "padding": 0,
+                        "paddingBottom": 1,
+                        "paddingTop": 0,
+                        "pointer": "hand",
+                        "position": "relative",
+                        "textDecoration": "none",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "verticalAlign": null,
+                        "width": 392,
+                      }
+                }
+                tabIndex={0}
+            >
+                <div
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                >
+                    <div
+                        style={
+                            Object {
+                                "fontSize": 13,
+                                "fontWeight": 500,
+                                "lineheight": 24,
+                                "marginLeft": 0,
+                                "muiPrepared": true,
+                                "overflow": "hidden",
+                                "paddingBottom": 11,
+                                "paddingLeft": 66,
+                                "paddingRight": 16,
+                                "paddingTop": 11,
+                                "position": "relative",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                        }
+                    >
+                        <div
+                            style={
+                                Object {
+                                    "float": "right",
+                                  }
+                            }
+                        >
+                            AR_100342
+                        </div>
+                        <img
+                            alt="AR"
+                            color="#757575"
+                            src={undefined}
+                            style={
+                                Object {
+                                    "display": "block",
+                                    "height": 24,
+                                    "left": 4,
+                                    "margin": 12,
+                                    "marginLeft": 16,
+                                    "marginTop": 6,
+                                    "position": "absolute",
+                                    "top": 0,
+                                    "width": 24,
+                                  }
+                            }
+                        />
+                    </div>
+                </div>
+            </span>
+        </div>
+        <hr
+            style={
+                Object {
+                    "backgroundColor": "#e0e0e0",
+                    "border": "none",
+                    "height": 1,
+                    "margin": 0,
+                    "marginLeft": 72,
+                    "marginTop": -1,
+                    "muiPrepared": true,
+                  }
+            }
+        />
+        <div>
+            <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                    Object {
+                        "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                        "background": "none",
+                        "backgroundColor": null,
+                        "border": 10,
+                        "boxSizing": "border-box",
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "fontFamily": "Roboto, sans-serif",
+                        "fontSize": 16,
+                        "fontWeight": "inherit",
+                        "height": 38,
+                        "lineHeight": "16px",
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "outline": "none",
+                        "padding": 0,
+                        "paddingBottom": 1,
+                        "paddingTop": 0,
+                        "pointer": "hand",
+                        "position": "relative",
+                        "textDecoration": "none",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "verticalAlign": null,
+                        "width": 392,
+                      }
+                }
+                tabIndex={0}
+            >
+                <div
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                >
+                    <div
+                        style={
+                            Object {
+                                "fontSize": 13,
+                                "fontWeight": 500,
+                                "lineheight": 24,
+                                "marginLeft": 0,
+                                "muiPrepared": true,
+                                "overflow": "hidden",
+                                "paddingBottom": 11,
+                                "paddingLeft": 66,
+                                "paddingRight": 16,
+                                "paddingTop": 11,
+                                "position": "relative",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                        }
+                    >
+                        <div
+                            style={
+                                Object {
+                                    "float": "right",
+                                  }
+                            }
+                        >
+                            AR_100343
+                        </div>
+                        <img
+                            alt="AR"
+                            color="#757575"
+                            src={undefined}
+                            style={
+                                Object {
+                                    "display": "block",
+                                    "height": 24,
+                                    "left": 4,
+                                    "margin": 12,
+                                    "marginLeft": 16,
+                                    "marginTop": 6,
+                                    "position": "absolute",
+                                    "top": 0,
+                                    "width": 24,
+                                  }
+                            }
+                        />
+                    </div>
+                </div>
+            </span>
+        </div>
+        <hr
+            style={
+                Object {
+                    "backgroundColor": "#e0e0e0",
+                    "border": "none",
+                    "height": 1,
+                    "margin": 0,
+                    "marginLeft": 72,
+                    "marginTop": -1,
+                    "muiPrepared": true,
+                  }
+            }
+        />
+        <div>
+            <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                    Object {
+                        "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                        "background": "none",
+                        "backgroundColor": null,
+                        "border": 10,
+                        "boxSizing": "border-box",
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "fontFamily": "Roboto, sans-serif",
+                        "fontSize": 16,
+                        "fontWeight": "inherit",
+                        "height": 38,
+                        "lineHeight": "16px",
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "outline": "none",
+                        "padding": 0,
+                        "paddingBottom": 1,
+                        "paddingTop": 0,
+                        "pointer": "hand",
+                        "position": "relative",
+                        "textDecoration": "none",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "verticalAlign": null,
+                        "width": 392,
+                      }
+                }
+                tabIndex={0}
+            >
+                <div
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                >
+                    <div
+                        style={
+                            Object {
+                                "fontSize": 13,
+                                "fontWeight": 500,
+                                "lineheight": 24,
+                                "marginLeft": 0,
+                                "muiPrepared": true,
+                                "overflow": "hidden",
+                                "paddingBottom": 11,
+                                "paddingLeft": 66,
+                                "paddingRight": 16,
+                                "paddingTop": 11,
+                                "position": "relative",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                        }
+                    >
+                        <div
+                            style={
+                                Object {
+                                    "float": "right",
+                                  }
+                            }
+                        >
+                            AR_100344
+                        </div>
+                        <img
+                            alt="AR"
+                            color="#757575"
+                            src={undefined}
+                            style={
+                                Object {
+                                    "display": "block",
+                                    "height": 24,
+                                    "left": 4,
+                                    "margin": 12,
+                                    "marginLeft": 16,
+                                    "marginTop": 6,
+                                    "position": "absolute",
+                                    "top": 0,
+                                    "width": 24,
+                                  }
+                            }
+                        />
+                    </div>
+                </div>
+            </span>
+        </div>
+        <hr
+            style={
+                Object {
+                    "backgroundColor": "#e0e0e0",
+                    "border": "none",
+                    "height": 1,
+                    "margin": 0,
+                    "marginLeft": 72,
+                    "marginTop": -1,
+                    "muiPrepared": true,
+                  }
+            }
+        />
+        <div>
+            <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                    Object {
+                        "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                        "background": "none",
+                        "backgroundColor": null,
+                        "border": 10,
+                        "boxSizing": "border-box",
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "fontFamily": "Roboto, sans-serif",
+                        "fontSize": 16,
+                        "fontWeight": "inherit",
+                        "height": 38,
+                        "lineHeight": "16px",
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "outline": "none",
+                        "padding": 0,
+                        "paddingBottom": 1,
+                        "paddingTop": 0,
+                        "pointer": "hand",
+                        "position": "relative",
+                        "textDecoration": "none",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "verticalAlign": null,
+                        "width": 392,
+                      }
+                }
+                tabIndex={0}
+            >
+                <div
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                >
+                    <div
+                        style={
+                            Object {
+                                "fontSize": 13,
+                                "fontWeight": 500,
+                                "lineheight": 24,
+                                "marginLeft": 0,
+                                "muiPrepared": true,
+                                "overflow": "hidden",
+                                "paddingBottom": 11,
+                                "paddingLeft": 66,
+                                "paddingRight": 16,
+                                "paddingTop": 11,
+                                "position": "relative",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                        }
+                    >
+                        <div
+                            style={
+                                Object {
+                                    "float": "right",
+                                  }
+                            }
+                        >
+                            AR_100345
+                        </div>
+                        <img
+                            alt="AR"
+                            color="#757575"
+                            src={undefined}
+                            style={
+                                Object {
+                                    "display": "block",
+                                    "height": 24,
+                                    "left": 4,
+                                    "margin": 12,
+                                    "marginLeft": 16,
+                                    "marginTop": 6,
+                                    "position": "absolute",
+                                    "top": 0,
+                                    "width": 24,
+                                  }
+                            }
+                        />
+                    </div>
+                </div>
+            </span>
+        </div>
+        <hr
+            style={
+                Object {
+                    "backgroundColor": "#e0e0e0",
+                    "border": "none",
+                    "height": 1,
+                    "margin": 0,
+                    "marginLeft": 72,
+                    "marginTop": -1,
+                    "muiPrepared": true,
+                  }
+            }
+        />
+        <div>
+            <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                    Object {
+                        "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                        "background": "none",
+                        "backgroundColor": null,
+                        "border": 10,
+                        "boxSizing": "border-box",
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "fontFamily": "Roboto, sans-serif",
+                        "fontSize": 16,
+                        "fontWeight": "inherit",
+                        "height": 38,
+                        "lineHeight": "16px",
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "outline": "none",
+                        "padding": 0,
+                        "paddingBottom": 1,
+                        "paddingTop": 0,
+                        "pointer": "hand",
+                        "position": "relative",
+                        "textDecoration": "none",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "verticalAlign": null,
+                        "width": 392,
+                      }
+                }
+                tabIndex={0}
+            >
+                <div
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                >
+                    <div
+                        style={
+                            Object {
+                                "fontSize": 13,
+                                "fontWeight": 500,
+                                "lineheight": 24,
+                                "marginLeft": 0,
+                                "muiPrepared": true,
+                                "overflow": "hidden",
+                                "paddingBottom": 11,
+                                "paddingLeft": 66,
+                                "paddingRight": 16,
+                                "paddingTop": 11,
+                                "position": "relative",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                        }
+                    >
+                        <div
+                            style={
+                                Object {
+                                    "float": "right",
+                                  }
+                            }
+                        >
+                            AR_101157
+                        </div>
+                        <img
+                            alt="AR"
+                            color="#757575"
+                            src={undefined}
+                            style={
+                                Object {
+                                    "display": "block",
+                                    "height": 24,
+                                    "left": 4,
+                                    "margin": 12,
+                                    "marginLeft": 16,
+                                    "marginTop": 6,
+                                    "position": "absolute",
+                                    "top": 0,
+                                    "width": 24,
+                                  }
+                            }
+                        />
+                    </div>
+                </div>
+            </span>
+        </div>
+        <hr
+            style={
+                Object {
+                    "backgroundColor": "#e0e0e0",
+                    "border": "none",
+                    "height": 1,
+                    "margin": 0,
+                    "marginLeft": 72,
+                    "marginTop": -1,
+                    "muiPrepared": true,
+                  }
+            }
+        />
+        <div>
+            <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                    Object {
+                        "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                        "background": "none",
+                        "backgroundColor": null,
+                        "border": 10,
+                        "boxSizing": "border-box",
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "fontFamily": "Roboto, sans-serif",
+                        "fontSize": 16,
+                        "fontWeight": "inherit",
+                        "height": 38,
+                        "lineHeight": "16px",
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "outline": "none",
+                        "padding": 0,
+                        "paddingBottom": 1,
+                        "paddingTop": 0,
+                        "pointer": "hand",
+                        "position": "relative",
+                        "textDecoration": "none",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "verticalAlign": null,
+                        "width": 392,
+                      }
+                }
+                tabIndex={0}
+            >
+                <div
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                >
+                    <div
+                        style={
+                            Object {
+                                "fontSize": 13,
+                                "fontWeight": 500,
+                                "lineheight": 24,
+                                "marginLeft": 0,
+                                "muiPrepared": true,
+                                "overflow": "hidden",
+                                "paddingBottom": 11,
+                                "paddingLeft": 66,
+                                "paddingRight": 16,
+                                "paddingTop": 11,
+                                "position": "relative",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                        }
+                    >
+                        <div
+                            style={
+                                Object {
+                                    "float": "right",
+                                  }
+                            }
+                        >
+                            AR_101158
+                        </div>
+                        <img
+                            alt="AR"
+                            color="#757575"
+                            src={undefined}
+                            style={
+                                Object {
+                                    "display": "block",
+                                    "height": 24,
+                                    "left": 4,
+                                    "margin": 12,
+                                    "marginLeft": 16,
+                                    "marginTop": 6,
+                                    "position": "absolute",
+                                    "top": 0,
+                                    "width": 24,
+                                  }
+                            }
+                        />
+                    </div>
+                </div>
+            </span>
+        </div>
+        <hr
+            style={
+                Object {
+                    "backgroundColor": "#e0e0e0",
+                    "border": "none",
+                    "height": 1,
+                    "margin": 0,
+                    "marginLeft": 72,
+                    "marginTop": -1,
+                    "muiPrepared": true,
+                  }
+            }
+        />
+        <div>
+            <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                    Object {
+                        "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                        "background": "none",
+                        "backgroundColor": null,
+                        "border": 10,
+                        "boxSizing": "border-box",
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "fontFamily": "Roboto, sans-serif",
+                        "fontSize": 16,
+                        "fontWeight": "inherit",
+                        "height": 38,
+                        "lineHeight": "16px",
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "outline": "none",
+                        "padding": 0,
+                        "paddingBottom": 1,
+                        "paddingTop": 0,
+                        "pointer": "hand",
+                        "position": "relative",
+                        "textDecoration": "none",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "verticalAlign": null,
+                        "width": 392,
+                      }
+                }
+                tabIndex={0}
+            >
+                <div
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                >
+                    <div
+                        style={
+                            Object {
+                                "fontSize": 13,
+                                "fontWeight": 500,
+                                "lineheight": 24,
+                                "marginLeft": 0,
+                                "muiPrepared": true,
+                                "overflow": "hidden",
+                                "paddingBottom": 11,
+                                "paddingLeft": 66,
+                                "paddingRight": 16,
+                                "paddingTop": 11,
+                                "position": "relative",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                        }
+                    >
+                        <div
+                            style={
+                                Object {
+                                    "float": "right",
+                                  }
+                            }
+                        >
+                            AR_101159
+                        </div>
+                        <img
+                            alt="AR"
+                            color="#757575"
+                            src={undefined}
+                            style={
+                                Object {
+                                    "display": "block",
+                                    "height": 24,
+                                    "left": 4,
+                                    "margin": 12,
+                                    "marginLeft": 16,
+                                    "marginTop": 6,
+                                    "position": "absolute",
+                                    "top": 0,
+                                    "width": 24,
+                                  }
+                            }
+                        />
+                    </div>
+                </div>
+            </span>
+        </div>
+        <hr
+            style={
+                Object {
+                    "backgroundColor": "#e0e0e0",
+                    "border": "none",
+                    "height": 1,
+                    "margin": 0,
+                    "marginLeft": 72,
+                    "marginTop": -1,
+                    "muiPrepared": true,
+                  }
+            }
+        />
+        <div>
+            <span
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                style={
+                    Object {
+                        "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                        "background": "none",
+                        "backgroundColor": null,
+                        "border": 10,
+                        "boxSizing": "border-box",
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "fontFamily": "Roboto, sans-serif",
+                        "fontSize": 16,
+                        "fontWeight": "inherit",
+                        "height": 38,
+                        "lineHeight": "16px",
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "outline": "none",
+                        "padding": 0,
+                        "paddingBottom": 1,
+                        "paddingTop": 0,
+                        "pointer": "hand",
+                        "position": "relative",
+                        "textDecoration": "none",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "verticalAlign": null,
+                        "width": 392,
+                      }
+                }
+                tabIndex={0}
+            >
+                <div
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                >
+                    <div
+                        style={
+                            Object {
+                                "fontSize": 13,
+                                "fontWeight": 500,
+                                "lineheight": 24,
+                                "marginLeft": 0,
+                                "muiPrepared": true,
+                                "overflow": "hidden",
+                                "paddingBottom": 11,
+                                "paddingLeft": 66,
+                                "paddingRight": 16,
+                                "paddingTop": 11,
+                                "position": "relative",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                        }
+                    >
+                        <div
+                            style={
+                                Object {
+                                    "float": "right",
+                                  }
+                            }
+                        >
+                            AR_101160
+                        </div>
+                        <img
+                            alt="AR"
+                            color="#757575"
+                            src={undefined}
+                            style={
+                                Object {
+                                    "display": "block",
+                                    "height": 24,
+                                    "left": 4,
+                                    "margin": 12,
+                                    "marginLeft": 16,
+                                    "marginTop": 6,
+                                    "position": "absolute",
+                                    "top": 0,
+                                    "width": 24,
+                                  }
+                            }
+                        />
+                    </div>
+                </div>
+            </span>
+        </div>
+        <hr
+            style={
+                Object {
+                    "backgroundColor": "#e0e0e0",
+                    "border": "none",
+                    "height": 1,
+                    "margin": 0,
+                    "marginLeft": 72,
+                    "marginTop": -1,
+                    "muiPrepared": true,
+                  }
+            }
+        />
+    </div>
+</div>,
+]
 `;
 
 exports[`Storyshots SearchBox default 1`] = `
