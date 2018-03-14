@@ -77,6 +77,7 @@ class VenstreVinduContainer extends React.Component {
               <ResultatListe
                 query={this.state.query}
                 searchResults={this.state.searchResults}
+                language={this.props.language}
                 onClick={url => {
                   console.warn('url', url)
                   this.setState({ query: '', searchResults: null })

@@ -19,8 +19,17 @@ function capitalizeFirstLetter(string) {
 
 const rename = data => {
   if (data.navn) data.navn = capitalizeFirstLetter(data.navn)
-  if (Array.isArray(data))
-    data.forEach(barn => (barn.navn = capitalizeFirstLetter(barn.navn)))
+  if (Array.isArray(data)) {
+    data.forEach(barn => {
+      if (typeof barn.navn === 'object' && barn.navn !== null) {
+        Object.keys(barn.navn).forEach(language => {
+          barn.navn[language] = capitalizeFirstLetter(barn.navn[language])
+        })
+      } else {
+        barn.navn = capitalizeFirstLetter(barn.navn)
+      }
+    })
+  }
   if (data.barn)
     data.barn.forEach(barn => (barn.navn = capitalizeFirstLetter(barn.navn)))
   let text = JSON.stringify(data)

@@ -5718,7 +5718,7 @@ exports[`Storyshots Resultatliste default 1`] = `
       Object {
         "maxHeight": 494,
         "muiPrepared": true,
-        "overflow": "auto",
+        "overflow": "hidden",
         "padding": "8px 0px 8px 0px",
         "paddingBottom": 0,
         "paddingTop": 0,
@@ -5784,11 +5784,14 @@ exports[`Storyshots Resultatliste default 1`] = `
                 "lineheight": 24,
                 "marginLeft": 0,
                 "muiPrepared": true,
+                "overflow": "hidden",
                 "paddingBottom": 11,
                 "paddingLeft": 66,
                 "paddingRight": 16,
                 "paddingTop": 11,
                 "position": "relative",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
               }
             }
           >
@@ -5819,17 +5822,6 @@ exports[`Storyshots Resultatliste default 1`] = `
                 }
               }
             />
-            K
-            <span
-              style={
-                Object {
-                  "color": "black",
-                }
-              }
-            >
-              alk
-            </span>
-            
           </div>
         </div>
       </span>

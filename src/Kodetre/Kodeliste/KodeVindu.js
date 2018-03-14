@@ -77,7 +77,7 @@ class KodeVindu extends React.Component {
                   ) * 8}px`,
                 }}
               >
-                <IconButton tooltip="Antall naturområder med denne klassifiseringen">
+                <IconButton tooltip="Antall naturområder">
                   <NaturomraderIcon />
                 </IconButton>
               </Badge>

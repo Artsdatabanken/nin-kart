@@ -4,14 +4,15 @@ import Backend from '../../backend'
 
 class ResultatListe extends Component {
   render() {
-    const { onClick, query, searchResults } = this.props
+    const { onClick, query, searchResults, language } = this.props
     if (!searchResults) return null
     if (!searchResults.length > 0) return null
     return (
       <Paper zDepth={1}>
         <List
           style={{
-            overflow: 'auto',
+            overflow: 'hidden',
+            //overflow: 'auto',
             maxHeight: 494,
             paddingTop: 0,
             paddingBottom: 0,
@@ -20,6 +21,20 @@ class ResultatListe extends Component {
           {searchResults.map(item => {
             const kode = item.kode.toUpperCase()
             const prefix = kode.substring(0, 2)
+            var navn = ''
+            if (language) {
+              if (language.length === 1) {
+                navn = item.navn[language[0]]
+              } else if (language.length === 2) {
+                let primary = item.navn[language[0]]
+                let secondary = item.navn[language[1]]
+                navn =
+                  primary && secondary
+                    ? primary + ' (' + secondary + ')'
+                    : primary ? primary : secondary
+              }
+            }
+
             return (
               <React.Fragment key={item.kode}>
                 <ListItem
@@ -37,12 +52,15 @@ class ResultatListe extends Component {
                     fontSize: 13,
                     lineheight: 24,
                     fontWeight: 500,
+                    whiteSpace: 'nowrap',
+                    textOverflow: 'ellipsis',
+                    overflow: 'hidden',
                   }}
                   onClick={() => {
                     onClick(item.kode)
                   }}
                   key={kode}
-                  primaryText={ResultatListe.highlightMatch(item.navn, query)}
+                  primaryText={ResultatListe.highlightMatch(navn, query)}
                   leftIcon={
                     <img
                       style={{ marginTop: 6, marginLeft: 16 }}
