@@ -153,8 +153,8 @@ class Backend {
     7: 'Egenskapsområde',
   })
 
-  static getFotoOmslag(kode) {
-    return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fomslag%2F408%2F${kode}.jpg?alt=media`
+  static getFotoOmslag(kode, width = 408) {
+    return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fomslag%2F${width}%2F${kode}.jpg?alt=media`
   }
 
   static avatar40px(kode) {

@@ -28,8 +28,11 @@ class Kodekort extends React.Component {
   isFavorite = kode => this.getFavorites().indexOf(kode) >= 0
 
   render() {
-    const { muiTheme } = this.props
-    const { foto } = this.props
+    const { kode, muiTheme } = this.props
+    const srcSet = `${backend.getFotoOmslag(
+      kode,
+      612
+    )} 1.5x, ${backend.getFotoOmslag(kode, 816)} 2x`
     return (
       <Card containerStyle={{ paddingBottom: 0 }}>
         <CardMedia
@@ -50,7 +53,8 @@ class Kodekort extends React.Component {
           style={{ height: 297, maxHeight: 297 }}
         >
           <img
-            src={foto ? foto : backend.getFotoOmslag(this.props.kode)}
+            src={backend.getFotoOmslag(kode)}
+            srcSet={srcSet}
             onError={e => {
               const brokenImage = backend.getFotoOmslag('~')
               if (e.target.src !== brokenImage) e.target.src = brokenImage
