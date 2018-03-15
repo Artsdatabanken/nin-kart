@@ -20,6 +20,7 @@ class VenstreVinduContainer extends React.Component {
         error: null,
         searchResults: null,
       })
+      return
     }
     this.queryNumber++
     this.setState({
