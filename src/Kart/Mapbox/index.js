@@ -41,13 +41,17 @@ class Mapbox extends Component {
 
   getFargeKode = kode => {
     let customColors = localStorage.getItem('customColors')
+    let defaultFarge =
+      this.props.meta && this.props.meta.farge
+        ? this.props.meta.farge
+        : '#888888'
     if (customColors) {
       let fargeElement = JSON.parse(customColors).filter(x => x.kode === kode)
       return fargeElement && fargeElement[0] && fargeElement[0].farge
         ? fargeElement[0].farge
-        : this.props.meta.farge
+        : defaultFarge
     }
-    return this.props.meta.farge
+    return defaultFarge
   }
 
   componentDidMount() {
@@ -75,6 +79,7 @@ class Mapbox extends Component {
 
   updateAktivKode(aktivKode, navnSciId) {
     let map = this.map.getMap()
+
     if (aktivKode) {
       let taxonMatch = aktivKode.match(/AR_(.*)/)
       if (taxonMatch && taxonMatch.length > 1 && navnSciId) {
@@ -96,6 +101,8 @@ class Mapbox extends Component {
       )
       return
     }
+    map.removeLayer('aktivt')
+    console.log('fjernet aktivt')
 
     if (aktivKode) {
       let taxonMatch = aktivKode.match(/AR\/(.*)/)
@@ -107,11 +114,16 @@ class Mapbox extends Component {
         aktivtLag.id = 'aktivt'
         //aktivtLag.paint['fill-pattern'] = 'shovel'
 
-        let customColor = this.getFargeKode(aktivKode)
-        let fillColor = customColor
-          ? Color(customColor)
-          : Color(this.props.meta.farge || '#ffff00')
-        aktivtLag.paint['fill-color'] = fillColor.rgbaString()
+        // let customColor = this.getFargeKode(aktivKode)
+        // let fillColor = customColor
+        //   ? Color(customColor)
+        //   : Color(this.props.meta.farge || '#ffff00')
+
+        //aktivtLag.paint['fill-color'] = fillColor.alpha(0.5).rgbaString()
+        aktivtLag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
+        aktivtLag.paint['fill-color'] = Color('#000000')
+          .alpha(0.1)
+          .rgbaString()
 
         console.log('add aktivt: ', aktivKode)
         map.addLayer(aktivtLag)
@@ -122,6 +134,9 @@ class Mapbox extends Component {
   updateOpplystKode(aktivKode, opplystKode) {
     let map = this.map.getMap()
     if (!map || !map.isStyleLoaded()) return
+    map.removeLayer('opplyst')
+    console.log('fjernet opplyst')
+
     if (opplystKode) {
       if (
         this.props.meta &&
@@ -135,10 +150,9 @@ class Mapbox extends Component {
         let fillColor = customColor
           ? Color(customColor)
           : Color(barn.farge || '#ffff00')
-        // .alpha(0.35)
         // .lightness(90)
         // .saturate(90)
-        opplystLag.paint['fill-color'] = fillColor.rgbaString()
+        opplystLag.paint['fill-color'] = fillColor.alpha(0.7).rgbaString()
         const outlineColor = fillColor.darken(0.5)
         opplystLag.paint['fill-outline-color'] = outlineColor.rgbaString()
         opplystLag.id = 'opplyst'

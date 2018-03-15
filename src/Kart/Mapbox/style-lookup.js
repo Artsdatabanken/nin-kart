@@ -88,7 +88,7 @@ function hentLag(map, kode) {
       interactive: true,
       filter: ['has', kode],
       paint: {
-        'fill-opacity': 0.13,
+        //'fill-opacity': 0.13,
         //      'fill-pattern': 'shovel',
         'fill-color': '#FFFF00',
         'fill-outline-color': '#FF0000',
