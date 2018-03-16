@@ -111,7 +111,7 @@ class Grunnkart extends Component {
   redirectTo(path) {
     const newUrl = '/katalog/' + path
     console.log('router videre til ', newUrl)
-    this.props.history.push(newUrl)
+    this.props.history.replace(newUrl)
   }
 
   fetchMeta(url) {
