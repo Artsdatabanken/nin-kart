@@ -52,16 +52,17 @@ class PunktinformasjonContainer extends Component {
 
   goFetchInfo(id) {
     if (!id) return
-    backend.getNatureAreaByLocalId(id).then(data => {
+    backend.getMetadataByNatureAreaLocalId(id).then(metadata => {
       this.setState({
-        natureAreaFacts: this.getNatureAreaFacts(data),
+        metadata: metadata,
+      })
+      backend.getNatureAreaByLocalId(id).then(data => {
+        data.metadata = metadata
+        this.setState({
+          natureAreaFacts: this.getNatureAreaFacts(data),
+        })
       })
     })
-    backend.getMetadataByNatureAreaLocalId(id).then(data =>
-      this.setState({
-        metadata: data,
-      })
-    )
   }
 
   createNatureAreaPointInfo(name, value, useDefaultArticle = true) {
@@ -98,6 +99,18 @@ class PunktinformasjonContainer extends Component {
       article: 'https://www.artsdatabanken.no/rodlistefornaturtyper',
     }
   }
+  createPointInfo(name, value, url) {
+    var pointInfo = {
+      name: name,
+      value: value,
+      logo:
+        'https://pbs.twimg.com/profile_images/378800000067455227/3d053db6b9593d47a02ced7709846522_400x400.png',
+      homepage: url || 'http://www.miljodirektoratet.no/',
+      dataorigin: 'MDIR',
+    }
+
+    return pointInfo
+  }
 
   getNatureAreaFacts(props) {
     var facts = {}
@@ -110,17 +123,51 @@ class PunktinformasjonContainer extends Component {
           )
 
           break
-        case 'surveyScale':
-          facts.Kartleggingsmålestokk = this.createNatureAreaPointInfo(
-            'Kartleggingsmålestokk',
-            props.metadata.surveyScale
-          )
+        case 'surveyer':
+          if (props.surveyer)
+            facts.Surveyer = this.createPointInfo(
+              'Kartlegger, Kontaktperson',
+              props.surveyer.contactPerson + ', ' + props.surveyer.company,
+              'mailto:' + props.surveyer.email
+            )
           break
-        case 'surveyedFrom':
-          facts.Kartlagt = this.createNatureAreaPointInfo(
-            'Kartlagt',
-            props.metadata.surveyedFrom
-          )
+        case 'metadata':
+          if (props.metadata.owner) {
+            facts.Owner = this.createPointInfo(
+              'Dataeier, kontaktperson',
+              props.metadata.owner.company +
+                ', ' +
+                props.metadata.owner.contactPerson,
+              props.metadata.owner.homesite,
+              'mailto:' + props.metadata.owner.email
+            )
+          }
+          if (props.metadata.program) {
+            facts.Program = this.createPointInfo(
+              'Program',
+              props.metadata.program
+            )
+          }
+          if (props.metadata.projectName) {
+            facts.Project = this.createPointInfo(
+              'Prosjekt',
+              props.metadata.projectName +
+                ', ' +
+                props.metadata.projectDescription
+            )
+          }
+          if (props.metadata.surveyedFrom) {
+            facts.Kartlagt = this.createNatureAreaPointInfo(
+              'Kartlagt',
+              props.metadata.surveyedFrom
+            )
+          }
+          if (props.metadata.surveyScale) {
+            facts.Kartleggingsmålestokk = this.createNatureAreaPointInfo(
+              'Kartleggingsmålestokk',
+              props.metadata.surveyScale
+            )
+          }
           break
         case 'rødlisteKategori':
           if (props.rødlisteKategori.code === 'LC') break
