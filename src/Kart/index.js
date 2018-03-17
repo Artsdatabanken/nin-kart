@@ -1,4 +1,5 @@
-import Mapbox from './Mapbox'
+//import Mapbox from './Mapbox'
+import Tangram from './LeafletTangram'
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 
@@ -14,7 +15,7 @@ class Kart extends Component {
 
   render() {
     return (
-      <Mapbox
+      <Tangram
         {...this.props}
         onClick={this.onClick}
         onVisibilityChange={this.props.onVisibilityChange}
@@ -26,6 +27,20 @@ class Kart extends Component {
         mapStyle={this.props.mapStyle}
       />
     )
+    /*
+    return (
+      <Mapbox
+        {...this.props}
+        onClick={this.onClick}
+        onVisibilityChange={this.props.onVisibilityChange}
+        onMapBoundsChange={this.props.onMapBoundsChange}
+        onColorChange={this.props.onColorChange}
+        categories={this.props.categories}
+        visibility={this.props.visibility}
+        color={this.props.color}
+        mapStyle={this.props.mapStyle}
+    )
+      />*/
   }
 }
 

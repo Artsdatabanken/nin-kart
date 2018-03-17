@@ -1,23 +1,157 @@
 import React from 'react'
 import L from 'leaflet'
-import Tangram from 'tangram'
+//import Tangram from 'tangram'
+import Tangram from 'tangram/dist/tangram.debug'
+
+// -- WEBPACK: Load styles --
+import 'leaflet/dist/leaflet.css'
+import './styles.css'
+
+// -- LEAFLET: Fix Leaflet's icon paths for Webpack --
+// See here: https://github.com/PaulLeCam/react-leaflet/issues/255
+// Used in conjunction with url-loader.
+delete L.Icon.Default.prototype._getIconUrl
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+})
 
 class LeafletTangram extends React.Component {
   componentDidMount() {
-    const map = L.map(this.mapEl)
-    const layer = Tangram.leafletLayer({
-      scene: 'https://mapzen.com/carto/bubble-wrap-style/bubble-wrap.yaml',
+    const options = { zoomControl: false }
+    const map = L.map(this.mapEl, options)
+    var layer = Tangram.leafletLayer({
+      scene: {
+        import: [
+          //          'https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/mapstyle%2Fzinc-style.zip?alt=media&.zip', //'https://www.nextzen.org/carto/cinnabar-style/9/cinnabar-style.zip',
+          //          'https://www.nextzen.org/carto/walkabout-style/7/walkabout-style.zip',
+          //          'https://www.nextzen.org/carto/tron-style/6/tron-style.zip',
+          'https://www.nextzen.org/carto/refill-style/11/refill-style.zip',
+          //'https://www.nextzen.org/carto/bubble-wrap-style/8/bubble-wrap-style.zip',
+          'https://www.nextzen.org/carto/bubble-wrap-style/8/themes/label-10.zip',
+        ],
+        sources: {
+          og: {
+            type: 'MVT',
+            url:
+              'https://a.tiles.mapbox.com/v4/artsdatabanken.bthj0gsg,artsdatabanken.9fqc3l9i,artsdatabanken.7hhxtxe3,artsdatabanken.dz9161rw,artsdatabanken.0n0rw38p,artsdatabanken.0183w0w7,artsdatabanken.0hbp7082,artsdatabanken.7676pvsx,artsdatabanken.6j8o5925,artsdatabanken.6rbfhi3x,artsdatabanken.d1s080yu,artsdatabanken.2v0t4l8r/{z}/{x}/{y}.vector.pbf?access_token=pk.eyJ1IjoiYXJ0c2RhdGFiYW5rZW4iLCJhIjoiY2pjNjg2MzVzMHhycjJ3bnM5MHc4MHVzOCJ9.fLnCRyg-hCuTClyim1r-JQ',
+            max_zoom: 16,
+          },
+          mapzen: {
+            url:
+              'https://{s}.tile.nextzen.org/tilezen/vector/v1/512/all/{z}/{x}/{y}.mvt',
+            url_subdomains: ['a', 'b', 'c', 'd'],
+            url_params: {
+              api_key: 'Tqy6UAn9ShClyvfUon001g',
+            },
+            tile_size: 512,
+            max_zoom: 16,
+          },
+        },
+        layers: {
+          '6SO': {
+            data: {
+              source: 'og',
+              layer: 'Seksjoner2017_4326-c6e9g5',
+            },
+            '6SE-1': {
+              filter: {
+                '6SE': 1,
+              },
+              draw: {
+                _transparent: {
+                  color: [0.9, 0.0, 0.0, 0.5],
+                },
+              },
+            },
+            '6SE-2': {
+              filter: {
+                '6SE': 2,
+              },
+              draw: {
+                _transparent: {
+                  color: [0.9, 0.5, 0.0, 0.5],
+                },
+              },
+            },
+            '6SE-3': {
+              filter: {
+                '6SE': 3,
+              },
+              draw: {
+                _transparent: {
+                  color: [0.9, 0.9, 0.0, 0.5],
+                },
+              },
+            },
+            '6SE-4': {
+              filter: {
+                '6SE': 4,
+              },
+              draw: {
+                _transparent: {
+                  color: [0.5, 0.9, 0.0, 0.5],
+                },
+              },
+            },
+            '6SE-5': {
+              filter: {
+                '6SE': 5,
+              },
+              draw: {
+                _transparent: {
+                  color: [0.0, 0.9, 0.0, 0.5],
+                },
+              },
+            },
+          },
+          naturomrader6: {
+            data: {
+              source: 'og',
+              layer: 'naturomrader6',
+            },
+            draw: {
+              _transparent: {
+                order: 100,
+                width: '2px',
+                color: [0.9, 0.0, 0.0, 0.5],
+              },
+            },
+          },
+        },
+        styles: {
+          _transparent: {
+            base: 'polygons',
+            blend: 'overlay',
+          },
+          _dashes2: {
+            base: 'polygons',
+            //            dash: [1, 1],
+            //            dash_background_color: 'pink',
+          },
+          naturomrader6: {
+            base: 'polygons',
+            //            mix: 'filter-grain',
+          },
+        },
+      },
+
       attribution:
-        '<a href="https://mapzen.com/tangram">Tangram</a> | &copy; OSM contributors | <a href="https://mapzen.com/">Mapzen</a>',
+        '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | <a href="http://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a> | <a href="https://www.nextzen.com/" target="_blank">Nextzen</a>',
     })
     layer.addTo(map)
 
-    map.setView([40.70531887544228, -74.00976419448853], 15)
+    map.setView(
+      [this.props.latitude, this.props.longitude],
+      this.props.zoom * 1.1
+    )
   }
 
   render() {
     return (
       <div
+        style={{ zIndex: 0 }}
         ref={ref => {
           this.mapEl = ref
         }}
