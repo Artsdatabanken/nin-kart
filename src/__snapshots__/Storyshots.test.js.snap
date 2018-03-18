@@ -2728,6 +2728,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                     Object {
                       "color": "rgba(0, 0, 0, 0.54)",
                       "fontSize": 18,
+                      "paddingBottom": 24,
                     }
                   }
                 >

@@ -76,6 +76,7 @@ class KodeVindu extends React.Component {
               <div
                 style={{
                   fontSize: 18,
+                  paddingBottom: 24,
                   color: 'rgba(0, 0, 0, 0.54)',
                 }}
               >
