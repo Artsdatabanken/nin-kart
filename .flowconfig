@@ -1,0 +1,8 @@
+[ignore]
+.*/node_modules/jsonlint-lines-primitives/*
+.*/node_modules/config-chain/*
+
+[libs]
+<PROJECT_ROOT>/flow-typed/
+
+[options]
