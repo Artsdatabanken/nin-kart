@@ -1,34 +1,42 @@
+// @flow
 import React from 'react'
 import KodeVindu from './KodeVindu'
 import backend from '../../backend'
 import rename from '../../rename'
 
+type State = {
+  data: Object,
+}
+
+type Props = {
+  meta: Object,
+  mapbounds: Object,
+  language: string,
+  handleFitBounds: Function,
+  onMouseLeave: Function,
+  onMouseEnter: Function,
+  onGoToCode: Function,
+  handleUpdateLayerProp: Function,
+}
+
 // Informasjon om kode
-class KodeContainer extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
-
+class KodeContainer extends React.Component<Props, State> {
   dataQueryNumber = 0
+  state = { data: {} }
 
-  componentWillUnmount() {
-    this.queryNumber = 0
-  }
-
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Object) {
     let oldKode =
       this.props.meta && this.props.meta.kode ? this.props.meta.kode : ''
     let oldBounds = this.props.mapbounds ? this.props.mapbounds : ''
     let newKode =
       nextProps.meta && nextProps.meta.kode ? nextProps.meta.kode : ''
-    let newBounds = nextProps.mapbounds ? nextProps.mapbounds : ''
+    let newBounds = nextProps.mapbounds
     if (oldKode !== newKode || oldBounds !== newBounds) {
       this.fetchData(newKode, newBounds)
     }
   }
 
-  fetchData(kode, bounds) {
+  fetchData(kode: string, bounds: Object) {
     this.dataQueryNumber++
     const currentQuery = this.dataQueryNumber
     backend

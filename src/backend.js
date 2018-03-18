@@ -1,7 +1,8 @@
+// @flow
 import { wgs84ToUtm33, createBboxFromPoint } from './projection'
 
 class Backend {
-  static async postFilterPromise(url, filter) {
+  static async postFilterPromise(url: string, filter: string) {
     return new Promise((resolve, reject) => {
       fetch(url, {
         method: 'POST',
@@ -16,7 +17,7 @@ class Backend {
     })
   }
 
-  static async getPromise(url) {
+  static async getPromise(url: string) {
     console.log(url)
     return new Promise((resolve, reject) => {
       fetch(url)
@@ -31,7 +32,7 @@ class Backend {
     })
   }
 
-  static async getTextPromise(url) {
+  static async getTextPromise(url: string) {
     return new Promise((resolve, reject) => {
       fetch(url)
         .then(result => {
@@ -49,7 +50,7 @@ class Backend {
     return this.getPromise(`https://www.norgeskart.no/ws/gkt.py`)
   }
 
-  static async searchTaxons(searchStr) {
+  static async searchTaxons(searchStr: string) {
     return new Promise((resolve, reject) => {
       fetch(
         `https://artskart.artsdatabanken.no/appapi/api/data/SearchTaxons?maxCount=15&name=${searchStr}`
@@ -59,13 +60,13 @@ class Backend {
     })
   }
 
-  static async søkKode(q) {
+  static async søkKode(q: string) {
     return this.getPromise(
       `https://ninmemapi.artsdatabanken.no/v2/Koder?q=${q}`
     )
   }
 
-  static async hentKode(kode, bounds) {
+  static async hentKode(kode: string, bounds: Object) {
     let bbox = ''
     if (bounds) {
       var ll = wgs84ToUtm33(bounds._sw.lng, bounds._sw.lat)
@@ -80,18 +81,18 @@ class Backend {
     return this.getPromise(url)
   }
 
-  static async hentKodeMeta(path) {
+  static async hentKodeMeta(path: string) {
     path = path || ''
     return this.getPromise(`https://adbkoder.firebaseio.com/${path}/@.json`)
   }
 
-  static async hentPunkt(lng, lat) {
+  static async hentPunkt(lng: number, lat: number) {
     return this.getPromise(
       `https://adb-nin-raster.azurewebsites.net/v1/point/${lng}/${lat}`
     )
   }
 
-  static async hentAdmEnhet(lng, lat) {
+  static async hentAdmEnhet(lng: number, lat: number) {
     var bbox = createBboxFromPoint(lng, lat, 0.000001)
     return this.getTextPromise(
       `https://openwms.statkart.no/skwms1/wms.adm_enheter?request=GetFeatureinfo&service=WMS&version=1.3.0&Layers=Kommuner&crs=epsg:4258&format=image/png&width=3&height=3&QUERY_LAYERS=kommuner&i=2&j=2
@@ -99,79 +100,79 @@ class Backend {
     )
   }
 
-  static async hentStedsnavn(lng, lat) {
+  static async hentStedsnavn(lng: number, lat: number) {
     return this.getPromise(
       `https://www.norgeskart.no/ws/elev.py?lat=${lat}&lon=${lng}&epsg=4258`
     )
   }
 
-  static async getNatureAreaByLocalId(localId) {
+  static async getNatureAreaByLocalId(localId: string) {
     return this.getPromise(
       `https://test.artsdatabanken.no/nin_master/Api/data/GetNatureAreaByLocalId/${localId}`
     )
   }
-  static async getMetadataByNatureAreaLocalId(localId) {
+  static async getMetadataByNatureAreaLocalId(localId: string) {
     return this.getPromise(
       `https://test.artsdatabanken.no/nin_master/Api/data/GetMetadataByNatureAreaLocalId/${localId}`
     )
   }
 
-  static async natureAreaSummary(filter) {
+  static async natureAreaSummary(filter: string) {
     let url = `https://adb-nin-api.azurewebsites.net/api/NatureAreaSummary`
     return this.postFilterPromise(url, filter)
   }
 
-  static async countsByRedlistTheme(filter) {
+  static async countsByRedlistTheme(filter: string) {
     let url = `https://adb-nin-api.azurewebsites.net/api/CountsByRedlistTheme`
     return this.postFilterPromise(url, filter)
   }
 
-  static async countsByRedlistCategory(filter) {
+  static async countsByRedlistCategory(filter: string) {
     let url = `https://adb-nin-api.azurewebsites.net/api/CountsByRedlistCategory`
     return this.postFilterPromise(url, filter)
   }
 
-  static async getAreaSummary(filter) {
+  static async getAreaSummary(filter: string) {
     let url = `https://adb-nin-api.azurewebsites.net/api/AreaSummary`
     return this.postFilterPromise(url, filter)
   }
 
-  static async getNatureAreaSummary(filter) {
+  static async getNatureAreaSummary(filter: string) {
     //let url = `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetNatureAreaSummary/`;
     let url = `https://adb-nin-api.azurewebsites.net/api/NatureAreaSummary`
     return this.postFilterPromise(url, filter)
   }
 
   static NatureLevelNames = Object.freeze({
-    0: 'Udefinert',
-    1: 'Landskapstype',
-    2: 'Landskapsdel',
-    3: 'Naturkompleks',
-    4: 'Natursystem',
-    5: 'Naturkomponent',
-    6: 'Livsmedium',
-    7: 'Egenskapsområde',
+    '0': 'Udefinert',
+    '1': 'Landskapstype',
+    '2': 'Landskapsdel',
+    '3': 'Naturkompleks',
+    '4': 'Natursystem',
+    '5': 'Naturkomponent',
+    '6': 'Livsmedium',
+    '7': 'Egenskapsområde',
   })
 
-  static getFotoOmslag(kode, width = 408) {
+  static getFotoOmslag(kode: string, width: number = 408) {
     return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fomslag%2F${width}%2F${kode}.jpg?alt=media`
   }
 
-  static avatar40px(kode) {
+  static avatar40px(kode: string) {
     return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2F${kode}.jpg?alt=media`
   }
 
-  static avatar24px(kode) {
+  static avatar24px(kode: string) {
     return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F24%2F${kode}.jpg?alt=media`
   }
 
-  static getFileStorageUrl(path) {
+  static getFileStorageUrl(path: string) {
     return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/${encodeURIComponent(
       path
     )}?alt=media`
   }
 
-  static getKodeUtbredelse(kode) {
+  static getKodeUtbredelse(kode: string) {
     if (kode) {
       return this.getPromise(
         `https://bboxcode.firebaseio.com/observations/${kode}.json`
