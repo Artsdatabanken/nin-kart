@@ -5,8 +5,6 @@ import { Paper, List, div, Subheader } from 'material-ui'
 import FetchContainer from '../../FetchContainer'
 import Kodeliste from './Kodeliste'
 import { RaisedButton } from 'material-ui'
-import { ListItem } from 'material-ui/List'
-import { Avatar } from 'material-ui'
 import Badge from 'material-ui/Badge'
 import IconButton from 'material-ui/IconButton'
 import NaturomraderIcon from 'material-ui/svg-icons/editor/pie-chart-outlined'
@@ -96,34 +94,6 @@ class KodeVindu extends React.Component {
             </div>
           )}
           <List>
-            {props.meta.prosedyrekategori &&
-              Object.keys(props.meta.prosedyrekategori).map(item => {
-                return (
-                  <ListItem
-                    disabled={true}
-                    title={'Prosedyrekategori'}
-                    key={item}
-                    leftAvatar={<Avatar>{item}</Avatar>}
-                  >
-                    {props.meta.prosedyrekategori[item] || 'tom'}
-                  </ListItem>
-                )
-              })}
-
-            {props.meta.definisjonsgrunnlag &&
-              Object.keys(props.meta.definisjonsgrunnlag).map(item => {
-                return (
-                  <ListItem
-                    disabled={true}
-                    title={'Definisjonsgrunnlag'}
-                    key={item}
-                    leftAvatar={<Avatar>{item}</Avatar>}
-                  >
-                    {props.meta.definisjonsgrunnlag[item] || 'tom'}
-                  </ListItem>
-                )
-              })}
-
             <Kodeliste
               title={`Innhold`}
               apidata={props.data ? props.data.barn : []}
@@ -136,6 +106,25 @@ class KodeVindu extends React.Component {
               onUpdateLayerProp={props.onUpdateLayerProp}
               language={props.language}
             />
+
+            {props.meta.prosedyrekategori && (
+              <Kodeliste
+                title={`Definisjon av ` + props.meta.tittel.nb}
+                metadata={{
+                  [props.meta.prosedyrekategori.kode]:
+                    props.meta.prosedyrekategori,
+                  [props.meta.definisjonsgrunnlag.kode]:
+                    props.meta.definisjonsgrunnlag,
+                }}
+                ekspandertKode={this.state.ekspandertKode}
+                onGoToCode={props.onGoToCode}
+                onMouseEnter={props.onMouseEnter}
+                onMouseLeave={props.onMouseLeave}
+                onShowColorpicker={this.handleShowColorpicker}
+                onUpdateLayerProp={props.onUpdateLayerProp}
+                language={props.language}
+              />
+            )}
 
             {props.meta &&
               props.meta.relasjon &&

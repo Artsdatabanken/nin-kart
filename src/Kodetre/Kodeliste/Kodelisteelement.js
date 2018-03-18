@@ -27,6 +27,15 @@ class Kodelisteelement extends React.Component {
     return this.props.meta.farge
   }
 
+  undertekst(areal, antall, undertittel) {
+    if (areal)
+      return `${
+        this.props.areal ? (Number(this.props.areal) / 1000).toFixed(1) : 0
+      } km² i ${antall || '0'} områder`
+    if (undertittel) return this.undertittel.nb
+    return null
+  }
+
   render() {
     const item = this.props
     const meta = this.props.meta
@@ -79,14 +88,11 @@ class Kodelisteelement extends React.Component {
               </span>
             </span>
           }
-          secondaryText={
-            this.props.areal &&
-            `${
-              this.props.areal
-                ? (Number(this.props.areal) / 1000).toFixed(1)
-                : 0
-            } km² i ${this.props.antallNaturomrader || '0'} områder`
-          }
+          secondaryText={this.undertekst(
+            this.props.areal,
+            this.props.antallNaturområder,
+            meta.undertittel
+          )}
           rightAvatar={
             <span
               style={{ display: 'inline-flex', position: 'absolute', top: 16 }}
