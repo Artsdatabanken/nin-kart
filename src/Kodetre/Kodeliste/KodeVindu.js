@@ -20,6 +20,7 @@ class KodeVindu extends React.Component {
   render() {
     const props = this.props
     const selv = props.meta.selv || {}
+    const avatarUtenRamme = props.meta.utenRamme
     return (
       <FetchContainer>
         <Paper
@@ -105,6 +106,7 @@ class KodeVindu extends React.Component {
               onShowColorpicker={this.handleShowColorpicker}
               onUpdateLayerProp={props.onUpdateLayerProp}
               language={props.language}
+              avatarUtenRamme={avatarUtenRamme}
             />
 
             {props.meta.prosedyrekategori && (
