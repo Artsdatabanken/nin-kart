@@ -107,11 +107,11 @@ class Grunnkart extends React.Component<Props, State> {
     }
   }
 
-  setmapBounds = this.debounce(function(bounds) {
+  handleMapBoundsChange = this.debounce(function(bounds) {
     this.setState({ mapBounds: bounds })
   }, 50)
 
-  setBBox = this.debounce(function(bbox) {
+  handleFitBounds = this.debounce(function(bbox) {
     this.setState({ bbox: bbox })
   }, 50)
 
@@ -173,7 +173,7 @@ class Grunnkart extends React.Component<Props, State> {
           mapStyle={this.state.mapStyle}
           aktivKode={aktivKode}
           opplystKode={this.state.opplystKode}
-          onmapBoundsChange={bounds => this.setmapBounds(bounds)}
+          onMapBoundsChange={bounds => this.handleMapBoundsChange(bounds)}
           setLocalId={localId => this.setLocalId(localId)}
           meta={this.state.meta}
           bbox={this.state.bbox}
@@ -186,7 +186,7 @@ class Grunnkart extends React.Component<Props, State> {
             this.setState({ showMainDrawer: !this.state.showMainDrawer })
           }
         />
-        <Link to="/katalog/">
+        <Link to={`/katalog/`}>
           <FloatingActionButton
             style={{ position: 'absolute', bottom: 48, left: 48 }}
           >
@@ -211,7 +211,7 @@ class Grunnkart extends React.Component<Props, State> {
               mapBounds={this.state.mapBounds}
               onMouseEnter={kode => this.setState({ opplystKode: kode })}
               onMouseLeave={kode => this.setState({ opplystKode: '' })}
-              handleFitBounds={bbox => this.setBBox(bbox)}
+              onFitBounds={bbox => this.handleFitBounds(bbox)}
               language={this.state.language}
               localId={this.state.localId}
               meta={this.state.meta}

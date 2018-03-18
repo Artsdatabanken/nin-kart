@@ -12,7 +12,7 @@ type Props = {
   meta: Object,
   mapbounds: Object,
   language: string,
-  handleFitBounds: Function,
+  onFitBounds: Function,
   onMouseLeave: Function,
   onMouseEnter: Function,
   onGoToCode: Function,
@@ -61,7 +61,7 @@ class KodeContainer extends React.Component<Props, State> {
         onGoToCode={this.props.onGoToCode}
         onMouseEnter={this.props.onMouseEnter}
         onMouseLeave={this.props.onMouseLeave}
-        handleFitBounds={this.props.handleFitBounds}
+        onFitBounds={this.props.onFitBounds}
         language={this.props.language}
       />
     )

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card, CardActions, CardMedia, CardTitle } from 'material-ui'
 import { IconButton } from 'material-ui'
-import InfoOutline from 'material-ui/svg-icons/action/info-outline'
 import StarBorder from 'material-ui/svg-icons/toggle/star-border'
 import Star from 'material-ui/svg-icons/toggle/star'
 import Share from 'material-ui/svg-icons/social/share'
@@ -108,16 +107,6 @@ const Tittelblokk = ({
         right: 0,
       }}
     >
-      {infoUrl && (
-        <IconButton
-          href={infoUrl}
-          style={{
-            float: 'right',
-          }}
-        >
-          <InfoOutline color="#eee" />
-        </IconButton>
-      )}
       <IconButton style={{ float: 'right' }}>
         <Share color="#eee" />
       </IconButton>

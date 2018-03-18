@@ -73,10 +73,10 @@ class Kodelisteelement extends React.Component {
             <Bildeavatar utenRamme={avatarUtenRamme} kode={meta.kode} />
           }
           primaryText={
-            <span>
+            <div>
               {(tittel || meta.navn || meta.navnSci) +
                 (meta.navnSci ? ` (${meta.navnSci})` : '')}
-              <span style={{ display: 'inline-flex' }}>
+              <div style={{ display: 'inline-flex' }}>
                 {false && (
                   <Kodetagg
                     kode={item.kode}
@@ -85,8 +85,8 @@ class Kodelisteelement extends React.Component {
                     backgroundColor="#ccc"
                   />
                 )}
-              </span>
-            </span>
+              </div>
+            </div>
           }
           secondaryText={this.undertekst(
             this.props.areal,
@@ -94,7 +94,7 @@ class Kodelisteelement extends React.Component {
             meta.undertittel
           )}
           rightAvatar={
-            <span
+            <div
               style={{ display: 'inline-flex', position: 'absolute', top: 16 }}
             >
               <PaintSwatch
@@ -104,7 +104,7 @@ class Kodelisteelement extends React.Component {
                   this.props.onShowColorpicker(meta.kode)
                 }}
               />
-            </span>
+            </div>
           }
         />
         <div style={{ marginLeft: 56 }}>
