@@ -17,6 +17,20 @@ class ResultatListe extends Component {
     }
   }
 
+  filtrer(kode) {
+    const prefix = kode.substring(0, 2)
+    switch (prefix) {
+      case 'AR':
+        return ''
+      case 'AO':
+        return ''
+      case 'VV':
+        return ''
+      default:
+        return kode.substring(3)
+    }
+  }
+
   render() {
     const { onClick, query, searchResults, language } = this.props
     if (!searchResults) return null
@@ -65,10 +79,14 @@ class ResultatListe extends Component {
                     onClick(item.kode)
                   }}
                   key={kode}
-                  primaryText={ResultatListe.highlightMatch(
-                    navn + ', ' + forelder,
-                    query
-                  )}
+                  primaryText={
+                    <React.Fragment>
+                      <span>{ResultatListe.highlightMatch(navn, query)}</span>
+                      &nbsp;<span style={{ color: '#aaa' }}>
+                        {ResultatListe.highlightMatch(forelder, query)}
+                      </span>
+                    </React.Fragment>
+                  }
                   leftIcon={
                     <img
                       style={{ marginTop: 6, marginLeft: 16 }}
@@ -78,7 +96,7 @@ class ResultatListe extends Component {
                   }
                 >
                   <div style={{ float: 'right' }}>
-                    {ResultatListe.highlightMatch(kode, query)}
+                    {ResultatListe.highlightMatch(this.filtrer(kode), query)}
                   </div>
                 </ListItem>
                 <Divider inset={true} />
