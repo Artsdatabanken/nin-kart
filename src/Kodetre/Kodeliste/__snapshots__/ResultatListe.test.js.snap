@@ -3,7 +3,7 @@
 exports[`Highlight 1`] = `
 <Unknown>
   
-  <div
+  <span
     style={
       Object {
         "color": "black",
@@ -11,7 +11,7 @@ exports[`Highlight 1`] = `
     }
   >
     Ka
-  </div>
+  </span>
   rmøy
 </Unknown>
 `;
