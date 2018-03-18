@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react'
+import React from 'react'
 import MainDrawer from './MainDrawer'
 import { FloatingActionButton } from 'material-ui'
 import KatalogIkon from 'material-ui/svg-icons/communication/import-contacts'

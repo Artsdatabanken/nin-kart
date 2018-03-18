@@ -51,6 +51,7 @@ class KodeContainer extends React.Component<Props, State> {
   render() {
     const data = this.state.data
     const meta = this.props.meta
+    if (!meta) return null
     if (!meta.tittel) return null
     return (
       <KodeVindu
