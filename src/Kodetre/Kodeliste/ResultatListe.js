@@ -100,7 +100,7 @@ class ResultatListe extends Component {
     return (
       <React.Fragment>
         {navn.substring(0, offset)}
-        <div style={{ color: 'black' }}>{navn.substring(offset, end)}</div>
+        <span style={{ color: 'black' }}>{navn.substring(offset, end)}</span>
         {navn.substring(end, navn.length)}
       </React.Fragment>
     )
