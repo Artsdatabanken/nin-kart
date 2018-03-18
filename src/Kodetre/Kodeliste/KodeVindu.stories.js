@@ -80,6 +80,7 @@ const meta = {
       url: 'NA/H/4',
     },
   },
+  infoUrl: 'https://www.artsdatabanken.no/NiN2.0/F1',
   bbox: [[5.176, 58.107], [28.857, 70.144]],
   farge: '#e6f598',
   ingress:

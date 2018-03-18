@@ -1,3 +1,4 @@
+import MediaQuery from 'react-responsive'
 import React from 'react'
 import Kodekort from './Kodekort'
 import StatistikkContainer from '../Statistikk/StatistikkContainer'
@@ -5,10 +6,25 @@ import { Paper, List, div, Subheader } from 'material-ui'
 import FetchContainer from '../../FetchContainer'
 import Kodeliste from './Kodeliste'
 import { RaisedButton } from 'material-ui'
-import Badge from 'material-ui/Badge'
-import IconButton from 'material-ui/IconButton'
 import NaturomraderIcon from 'material-ui/svg-icons/editor/pie-chart-outlined'
 import ArterIcon from 'material-ui/svg-icons/action/fingerprint'
+
+const Fact = ({ tittel, verdi, ikon, synlig }) => {
+  console.log(tittel, verdi, synlig)
+  if (!synlig || !verdi) return null
+  return (
+    <div
+      style={{
+        fontSize: 13,
+        paddingLeft: 24,
+        lineHeight: '1.5em',
+      }}
+    >
+      <span style={{ fontWeight: 700 }}>{tittel}:&nbsp;</span>
+      {verdi}
+    </div>
+  )
+}
 
 class KodeVindu extends React.Component {
   handleShowColorpicker = kode => {
@@ -42,58 +58,61 @@ class KodeVindu extends React.Component {
               language={props.language}
             />
           )}
-          {props.meta.ingress && (
-            <div style={{ padding: 16 }}>{props.meta.ingress}</div>
-          )}
-          {props.data &&
-            props.data.antallArter > 0 && (
-              <Badge
-                badgeContent={props.data.antallArter}
-                primary={true}
-                badgeStyle={{
-                  top: 12,
-                  right: 12,
-                  width: `${Math.max(String(props.data.antallArter).length, 3) *
-                    8}px`,
-                }}
-              >
-                <IconButton tooltip="Antall arter">
-                  <ArterIcon />
-                </IconButton>
-              </Badge>
-            )}
-          {props.data &&
-            props.data.antallNaturomrader > 0 && (
-              <Badge
-                badgeContent={props.data.antallNaturomrader}
-                secondary={true}
-                badgeStyle={{
-                  top: 12,
-                  right: 12,
-                  width: `${Math.max(
-                    String(props.data.antallNaturomrader).length,
-                    3
-                  ) * 8}px`,
-                }}
-              >
-                <IconButton tooltip="Antall naturområder">
-                  <NaturomraderIcon />
-                </IconButton>
-              </Badge>
-            )}
           {props.meta.bbox && (
-            <div style={{ margin: 8 }}>
-              <RaisedButton
-                onClick={() =>
-                  props.handleFitBounds(
-                    props.meta.bbox ? props.meta.bbox : undefined
-                  )
-                }
-              >
-                Vis i kart
-              </RaisedButton>
-            </div>
+            <MediaQuery maxWidth={1224}>
+              <div style={{ float: 'right', marginRight: 24, marginTop: 16 }}>
+                <RaisedButton
+                  onClick={() => props.onFitBounds(props.meta.bbox)}
+                >
+                  Vis i kart
+                </RaisedButton>
+              </div>
+            </MediaQuery>
           )}
+          <div style={{ padding: 24 }}>
+            {(props.meta.ingress ||
+              props.data.antallNaturomrader ||
+              props.data.antallArter) && (
+              <div
+                style={{
+                  fontSize: 18,
+                  color: 'rgba(0, 0, 0, 0.54)',
+                }}
+              >
+                Fakta
+              </div>
+            )}
+            {props.meta.ingress && (
+              <div style={{ fontSize: 13, color: 'rgba(0,0,0,0.87)' }}>
+                {props.meta.ingress}
+                {props.meta.infoUrl && (
+                  <span>
+                    &nbsp;<a
+                      target="top"
+                      style={{ color: 'rgba(0,0,0,0.87)' }}
+                      href={props.meta.infoUrl}
+                    >
+                      Artsdatabanken
+                    </a>
+                  </span>
+                )}
+              </div>
+            )}
+          </div>
+          <Fact
+            tittel="Areal"
+            synlig={props.data.antallNaturomrader}
+            verdi={`${(props.data.antallNaturomrader * 1.3).toFixed(
+              0
+            )} km² (i ${props.data.antallNaturomrader} områder)`}
+            ikon={<NaturomraderIcon />}
+          />
+          <Fact
+            tittel="Truede arter observert"
+            verdi={props.data.antallArter}
+            synlig={props.data.antallArter}
+            ikon={<ArterIcon />}
+          />
           <List>
             <Kodeliste
               title={`Innhold`}
@@ -111,7 +130,7 @@ class KodeVindu extends React.Component {
 
             {props.meta.prosedyrekategori && (
               <Kodeliste
-                title={`Definisjon av ` + props.meta.tittel.nb}
+                title="Definisjon"
                 metadata={{
                   [props.meta.prosedyrekategori.kode]:
                     props.meta.prosedyrekategori,
