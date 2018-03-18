@@ -4,16 +4,15 @@ import Backend from '../../backend'
 
 class ResultatListe extends Component {
   lagSammensattNavn(language, navnObj) {
-    if (language) {
-      if (language.length === 1) {
-        return navnObj[language[0]]
-      } else if (language.length === 2) {
-        let primary = navnObj[language[0]]
-        let secondary = navnObj[language[1]]
-        return primary && secondary
-          ? primary + ' (' + secondary + ')'
-          : primary ? primary : secondary
-      }
+    if (!language) return ''
+    if (language.length === 1) {
+      return navnObj[language[0]]
+    } else if (language.length === 2) {
+      let primary = navnObj[language[0]]
+      let secondary = navnObj[language[1]]
+      return primary && secondary
+        ? primary + ' (' + secondary + ')'
+        : primary ? primary : secondary
     }
   }
 
