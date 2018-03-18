@@ -13,6 +13,7 @@ class Kodelisteelement extends React.Component {
     farger.push({ kode: kode, farge: farge })
     localStorage.setItem('customColors', JSON.stringify(farger))
   }
+
   getFargeKode = () => {
     let kode = this.props.kode
     if (localStorage) {
@@ -38,8 +39,7 @@ class Kodelisteelement extends React.Component {
 
   render() {
     const item = this.props
-    const meta = this.props.meta
-    const kode = this.props.kode
+    const { meta, kode, avatarUtenRamme } = this.props
     const tittel = meta.tittel
       ? Object.keys(meta.tittel).length > 1
         ? meta.tittel[item.language[0]] +
@@ -70,7 +70,7 @@ class Kodelisteelement extends React.Component {
             this.props.onMouseLeave(kode)
           }}
           leftAvatar={
-            <Bildeavatar utenRamme={meta.utenRamme} kode={meta.kode} />
+            <Bildeavatar utenRamme={avatarUtenRamme} kode={meta.kode} />
           }
           primaryText={
             <span>

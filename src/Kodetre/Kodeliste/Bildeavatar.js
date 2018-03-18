@@ -9,7 +9,8 @@ class BildeAvatar extends Component {
       <Avatar
         style={Object.assign(
           this.props.style,
-          utenRamme ? { borderRadius: 0 } : {}
+          utenRamme ? { borderRadius: 0 } : {},
+          { backgroundColor: 'transparent' }
         )}
         src={backend.avatar40px(kode)}
         onError={e => {

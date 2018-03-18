@@ -23,6 +23,7 @@ const Kodeliste = ({
   onShowColorpicker,
   onUpdateLayerProp,
   language,
+  avatarUtenRamme,
 }) => {
   if (!metadata) return null
   return (
@@ -65,6 +66,7 @@ const Kodeliste = ({
             onUpdateLayerProp={onUpdateLayerProp}
             onShowColorpicker={() => onShowColorpicker(kode)}
             language={language}
+            avatarUtenRamme={avatarUtenRamme}
           />
         )
       })}
