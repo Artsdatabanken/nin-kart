@@ -10,3 +10,10 @@
 ::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.5);
 }
+
+.sizebar {
+  -webkit-transition: width 0.5s ease-out;
+  -moz-transition: width 0.5s ease-out;
+  -o-transition: width 0.5s ease-out;
+  transition: width 0.5s ease-out;
+}
