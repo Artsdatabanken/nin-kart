@@ -4,16 +4,29 @@ import Backend from '../../backend'
 
 class ResultatListe extends Component {
   lagSammensattNavn(language, navnObj) {
-    if (language) {
-      if (language.length === 1) {
-        return navnObj[language[0]]
-      } else if (language.length === 2) {
-        let primary = navnObj[language[0]]
-        let secondary = navnObj[language[1]]
-        return primary && secondary
-          ? primary + ' (' + secondary + ')'
-          : primary ? primary : secondary
-      }
+    if (!language) return ''
+    if (language.length === 1) {
+      return navnObj[language[0]]
+    } else if (language.length === 2) {
+      let primary = navnObj[language[0]]
+      let secondary = navnObj[language[1]]
+      return primary && secondary
+        ? primary + ' (' + secondary + ')'
+        : primary ? primary : secondary
+    }
+  }
+
+  filtrer(kode) {
+    const prefix = kode.substring(0, 2)
+    switch (prefix) {
+      case 'AR':
+        return ''
+      case 'AO':
+        return ''
+      case 'VV':
+        return ''
+      default:
+        return kode.substring(3)
     }
   }
 
@@ -65,10 +78,14 @@ class ResultatListe extends Component {
                     onClick(item.kode)
                   }}
                   key={kode}
-                  primaryText={ResultatListe.highlightMatch(
-                    navn + ', ' + forelder,
-                    query
-                  )}
+                  primaryText={
+                    <React.Fragment>
+                      <span>{ResultatListe.highlightMatch(navn, query)}</span>
+                      &nbsp;<span style={{ color: '#aaa' }}>
+                        {ResultatListe.highlightMatch(forelder, query)}
+                      </span>
+                    </React.Fragment>
+                  }
                   leftIcon={
                     <img
                       style={{ marginTop: 6, marginLeft: 16 }}
@@ -78,7 +95,7 @@ class ResultatListe extends Component {
                   }
                 >
                   <div style={{ float: 'right' }}>
-                    {ResultatListe.highlightMatch(kode, query)}
+                    {ResultatListe.highlightMatch(this.filtrer(kode), query)}
                   </div>
                 </ListItem>
                 <Divider inset={true} />

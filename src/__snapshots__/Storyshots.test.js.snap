@@ -5578,7 +5578,7 @@ Array [
                                   }
                             }
                         >
-                            KA
+                            
                         </div>
                         <img
                             alt="KA"
@@ -5598,15 +5598,19 @@ Array [
                                   }
                             }
                         />
-                        <div
+                        <span>
+                            
+                        </span>
+                         
+                        <span
                             style={
                                 Object {
-                                    "muiPrepared": true,
+                                    "color": "#aaa",
                                   }
                             }
                         >
-                            undefined, 
-                        </div>
+                            
+                        </span>
                     </div>
                 </div>
             </span>
@@ -5731,7 +5735,7 @@ Array [
                                   }
                             }
                         >
-                            AR_100270
+                            
                         </div>
                         <img
                             alt="AR"
@@ -5751,15 +5755,19 @@ Array [
                                   }
                             }
                         />
-                        <div
+                        <span>
+                            
+                        </span>
+                         
+                        <span
                             style={
                                 Object {
-                                    "muiPrepared": true,
+                                    "color": "#aaa",
                                   }
                             }
                         >
-                            undefined, undefined
-                        </div>
+                            
+                        </span>
                     </div>
                 </div>
             </span>
@@ -5854,7 +5862,7 @@ Array [
                                   }
                             }
                         >
-                            AR_100271
+                            
                         </div>
                         <img
                             alt="AR"
@@ -5874,15 +5882,19 @@ Array [
                                   }
                             }
                         />
-                        <div
+                        <span>
+                            
+                        </span>
+                         
+                        <span
                             style={
                                 Object {
-                                    "muiPrepared": true,
+                                    "color": "#aaa",
                                   }
                             }
                         >
-                            undefined, undefined
-                        </div>
+                            
+                        </span>
                     </div>
                 </div>
             </span>
@@ -5977,7 +5989,7 @@ Array [
                                   }
                             }
                         >
-                            AR_100342
+                            
                         </div>
                         <img
                             alt="AR"
@@ -5997,15 +6009,19 @@ Array [
                                   }
                             }
                         />
-                        <div
+                        <span>
+                            
+                        </span>
+                         
+                        <span
                             style={
                                 Object {
-                                    "muiPrepared": true,
+                                    "color": "#aaa",
                                   }
                             }
                         >
-                            undefined, undefined
-                        </div>
+                            
+                        </span>
                     </div>
                 </div>
             </span>
@@ -6100,7 +6116,7 @@ Array [
                                   }
                             }
                         >
-                            AR_100343
+                            
                         </div>
                         <img
                             alt="AR"
@@ -6120,15 +6136,19 @@ Array [
                                   }
                             }
                         />
-                        <div
+                        <span>
+                            
+                        </span>
+                         
+                        <span
                             style={
                                 Object {
-                                    "muiPrepared": true,
+                                    "color": "#aaa",
                                   }
                             }
                         >
-                            undefined, undefined
-                        </div>
+                            
+                        </span>
                     </div>
                 </div>
             </span>
@@ -6223,7 +6243,7 @@ Array [
                                   }
                             }
                         >
-                            AR_100344
+                            
                         </div>
                         <img
                             alt="AR"
@@ -6243,15 +6263,19 @@ Array [
                                   }
                             }
                         />
-                        <div
+                        <span>
+                            
+                        </span>
+                         
+                        <span
                             style={
                                 Object {
-                                    "muiPrepared": true,
+                                    "color": "#aaa",
                                   }
                             }
                         >
-                            undefined, undefined
-                        </div>
+                            
+                        </span>
                     </div>
                 </div>
             </span>
@@ -6346,7 +6370,7 @@ Array [
                                   }
                             }
                         >
-                            AR_100345
+                            
                         </div>
                         <img
                             alt="AR"
@@ -6366,15 +6390,19 @@ Array [
                                   }
                             }
                         />
-                        <div
+                        <span>
+                            
+                        </span>
+                         
+                        <span
                             style={
                                 Object {
-                                    "muiPrepared": true,
+                                    "color": "#aaa",
                                   }
                             }
                         >
-                            undefined, undefined
-                        </div>
+                            
+                        </span>
                     </div>
                 </div>
             </span>
@@ -6469,7 +6497,7 @@ Array [
                                   }
                             }
                         >
-                            AR_101157
+                            
                         </div>
                         <img
                             alt="AR"
@@ -6489,15 +6517,19 @@ Array [
                                   }
                             }
                         />
-                        <div
+                        <span>
+                            
+                        </span>
+                         
+                        <span
                             style={
                                 Object {
-                                    "muiPrepared": true,
+                                    "color": "#aaa",
                                   }
                             }
                         >
-                            undefined, undefined
-                        </div>
+                            
+                        </span>
                     </div>
                 </div>
             </span>
@@ -6592,7 +6624,7 @@ Array [
                                   }
                             }
                         >
-                            AR_101158
+                            
                         </div>
                         <img
                             alt="AR"
@@ -6612,15 +6644,19 @@ Array [
                                   }
                             }
                         />
-                        <div
+                        <span>
+                            
+                        </span>
+                         
+                        <span
                             style={
                                 Object {
-                                    "muiPrepared": true,
+                                    "color": "#aaa",
                                   }
                             }
                         >
-                            undefined, undefined
-                        </div>
+                            
+                        </span>
                     </div>
                 </div>
             </span>
@@ -6715,7 +6751,7 @@ Array [
                                   }
                             }
                         >
-                            AR_101159
+                            
                         </div>
                         <img
                             alt="AR"
@@ -6735,15 +6771,19 @@ Array [
                                   }
                             }
                         />
-                        <div
+                        <span>
+                            
+                        </span>
+                         
+                        <span
                             style={
                                 Object {
-                                    "muiPrepared": true,
+                                    "color": "#aaa",
                                   }
                             }
                         >
-                            undefined, undefined
-                        </div>
+                            
+                        </span>
                     </div>
                 </div>
             </span>
@@ -6838,7 +6878,7 @@ Array [
                                   }
                             }
                         >
-                            AR_101160
+                            
                         </div>
                         <img
                             alt="AR"
@@ -6858,15 +6898,19 @@ Array [
                                   }
                             }
                         />
-                        <div
+                        <span>
+                            
+                        </span>
+                         
+                        <span
                             style={
                                 Object {
-                                    "muiPrepared": true,
+                                    "color": "#aaa",
                                   }
                             }
                         >
-                            undefined, undefined
-                        </div>
+                            
+                        </span>
                     </div>
                 </div>
             </span>
