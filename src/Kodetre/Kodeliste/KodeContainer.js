@@ -44,6 +44,12 @@ class KodeContainer extends React.Component<Props, State> {
       .then(data => rename(data))
       .then(data => {
         if (currentQuery !== this.dataQueryNumber) return // Abort stale query
+        let størsteAreal = 0
+        if (data.barn)
+          data.barn.forEach(b => {
+            if (størsteAreal < b.areal) størsteAreal = b.areal
+          })
+        data.størsteAreal = størsteAreal
         this.setState({ data: data })
       })
   }
