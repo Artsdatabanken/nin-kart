@@ -175,7 +175,7 @@ class Backend {
   static getKodeUtbredelse(kode: string) {
     if (kode) {
       return this.getPromise(
-        `https://bboxcode.firebaseio.com/observations/${kode}.json`
+        `https://test.artsdatabanken.no/data/json/observationsGroup/${kode}.json`
       )
     }
   }
