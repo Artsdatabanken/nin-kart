@@ -5,6 +5,7 @@ import Kodetagg from '../Kodetagg'
 import PaintSwatch from './PaintSwatch'
 import ColorPicker from './ColorPicker'
 import Bildeavatar from './Bildeavatar'
+import muiThemeable from 'material-ui/styles/muiThemeable'
 
 class Kodelisteelement extends React.Component {
   setFargeKode(kode, farge) {
@@ -28,13 +29,51 @@ class Kodelisteelement extends React.Component {
     return this.props.meta.farge
   }
 
-  undertekst(areal, antall, undertittel) {
-    if (areal)
-      return `${
-        this.props.areal ? (Number(this.props.areal) / 1000).toFixed(1) : 0
-      } km² i ${antall || '0'} områder`
-    if (undertittel) return this.undertittel.nb
-    return null
+  undertekst(størsteAreal, areal, antall, undertittel) {
+    if (undertittel) return undertittel.nb
+    if (!areal) areal = 0
+    if (!størsteAreal) størsteAreal = 1
+    return (
+      <div>
+        <div
+          style={{
+            position: 'relative',
+            width: 200,
+          }}
+        >
+          <div
+            className="sizebar"
+            style={{
+              marginTop: 4,
+              float: 'left',
+              height: 4,
+              borderTopRightRadius: 10,
+              borderBottomRightRadius: 10,
+              width: `${100.0 * areal / størsteAreal}%`,
+              backgroundColor: this.props.muiTheme.palette.accent3Color,
+            }}
+          />
+        </div>
+        <div
+          style={{
+            display: 'inline',
+            position: 'absolute',
+            right: 52,
+            float: 'right',
+          }}
+        >
+          {this.prettyPrintAreal(this.props.areal)}
+        </div>
+      </div>
+    )
+  }
+
+  prettyPrintAreal(areal) {
+    if (!areal) return null
+    if (areal < 1000) return (Number(areal) / 1000).toFixed(0) + ' m²'
+    areal /= 1000
+    if (areal < 1000) return Number(areal).toFixed(0) + ' km²'
+    return Number(areal / 1000).toFixed(0) + "' km²"
   }
 
   render() {
@@ -89,6 +128,7 @@ class Kodelisteelement extends React.Component {
             </div>
           }
           secondaryText={this.undertekst(
+            this.props.størsteAreal,
             this.props.areal,
             this.props.antallNaturområder,
             meta.undertittel
@@ -128,4 +168,4 @@ class Kodelisteelement extends React.Component {
   }
 }
 
-export default Kodelisteelement
+export default muiThemeable()(Kodelisteelement)

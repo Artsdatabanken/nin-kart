@@ -50,16 +50,6 @@ class Backend {
     return this.getPromise(`https://www.norgeskart.no/ws/gkt.py`)
   }
 
-  static async searchTaxons(searchStr: string) {
-    return new Promise((resolve, reject) => {
-      fetch(
-        `https://artskart.artsdatabanken.no/appapi/api/data/SearchTaxons?maxCount=15&name=${searchStr}`
-      )
-        .then(result => result.json())
-        .then(json => resolve(json))
-    })
-  }
-
   static async søkKode(q: string) {
     return this.getPromise(
       `https://ninmemapi.artsdatabanken.no/v2/Koder?q=${q}`

@@ -201,7 +201,6 @@ class Mapbox extends Component {
   }
 
   handleViewportChange = viewport => {
-    //console.log(viewport);
     this.setState({ viewport })
     // Bruk bare bounds dersom zoomnivå > 8
     const bounds = this.map.getMap().getBounds()

@@ -2877,7 +2877,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                           Object {
                             "marginLeft": 0,
                             "muiPrepared": true,
-                            "paddingBottom": 20,
+                            "paddingBottom": 16,
                             "paddingLeft": 72,
                             "paddingRight": 56,
                             "paddingTop": 20,
@@ -2902,7 +2902,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "left": 16,
                               "muiPrepared": true,
                               "position": "absolute",
-                              "top": 8,
+                              "top": 16,
                               "userSelect": "none",
                               "width": 40,
                             }
@@ -2974,6 +2974,61 @@ exports[`Storyshots KodeVindu default 1`] = `
                               }
                             }
                           />
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "WebkitBoxOrient": null,
+                              "WebkitLineClamp": null,
+                              "color": "rgba(0, 0, 0, 0.54)",
+                              "display": null,
+                              "fontSize": 14,
+                              "height": 16,
+                              "lineHeight": "16px",
+                              "margin": 0,
+                              "marginTop": 4,
+                              "muiPrepared": true,
+                              "overflow": "hidden",
+                              "textOverflow": "ellipsis",
+                              "whiteSpace": "nowrap",
+                            }
+                          }
+                        >
+                          <div
+                            style={
+                              Object {
+                                "position": "relative",
+                                "width": 200,
+                              }
+                            }
+                          >
+                            <div
+                              className="sizebar"
+                              style={
+                                Object {
+                                  "backgroundColor": "#9e9e9e",
+                                  "borderBottomRightRadius": 10,
+                                  "borderTopRightRadius": 10,
+                                  "float": "left",
+                                  "height": 4,
+                                  "marginTop": 4,
+                                  "width": "19.007609851593173%",
+                                }
+                              }
+                            />
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "display": "inline",
+                                "float": "right",
+                                "position": "absolute",
+                                "right": 52,
+                              }
+                            }
+                          >
+                            413 km²
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -3154,7 +3209,41 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
-                          21740.2 km² i 0 områder
+                          <div
+                            style={
+                              Object {
+                                "position": "relative",
+                                "width": 200,
+                              }
+                            }
+                          >
+                            <div
+                              className="sizebar"
+                              style={
+                                Object {
+                                  "backgroundColor": "#9e9e9e",
+                                  "borderBottomRightRadius": 10,
+                                  "borderTopRightRadius": 10,
+                                  "float": "left",
+                                  "height": 4,
+                                  "marginTop": 4,
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "display": "inline",
+                                "float": "right",
+                                "position": "absolute",
+                                "right": 52,
+                              }
+                            }
+                          >
+                            2' km²
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -3218,7 +3307,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                           Object {
                             "marginLeft": 0,
                             "muiPrepared": true,
-                            "paddingBottom": 20,
+                            "paddingBottom": 16,
                             "paddingLeft": 72,
                             "paddingRight": 56,
                             "paddingTop": 20,
@@ -3243,7 +3332,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "left": 16,
                               "muiPrepared": true,
                               "position": "absolute",
-                              "top": 8,
+                              "top": 16,
                               "userSelect": "none",
                               "width": 40,
                             }
@@ -3316,6 +3405,61 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           />
                         </div>
+                        <div
+                          style={
+                            Object {
+                              "WebkitBoxOrient": null,
+                              "WebkitLineClamp": null,
+                              "color": "rgba(0, 0, 0, 0.54)",
+                              "display": null,
+                              "fontSize": 14,
+                              "height": 16,
+                              "lineHeight": "16px",
+                              "margin": 0,
+                              "marginTop": 4,
+                              "muiPrepared": true,
+                              "overflow": "hidden",
+                              "textOverflow": "ellipsis",
+                              "whiteSpace": "nowrap",
+                            }
+                          }
+                        >
+                          <div
+                            style={
+                              Object {
+                                "position": "relative",
+                                "width": 200,
+                              }
+                            }
+                          >
+                            <div
+                              className="sizebar"
+                              style={
+                                Object {
+                                  "backgroundColor": "#9e9e9e",
+                                  "borderBottomRightRadius": 10,
+                                  "borderTopRightRadius": 10,
+                                  "float": "left",
+                                  "height": 4,
+                                  "marginTop": 4,
+                                  "width": "65.059539361111%",
+                                }
+                              }
+                            />
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "display": "inline",
+                                "float": "right",
+                                "position": "absolute",
+                                "right": 52,
+                              }
+                            }
+                          >
+                            1' km²
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </span>
@@ -3378,7 +3522,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                           Object {
                             "marginLeft": 0,
                             "muiPrepared": true,
-                            "paddingBottom": 20,
+                            "paddingBottom": 16,
                             "paddingLeft": 72,
                             "paddingRight": 56,
                             "paddingTop": 20,
@@ -3403,7 +3547,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               "left": 16,
                               "muiPrepared": true,
                               "position": "absolute",
-                              "top": 8,
+                              "top": 16,
                               "userSelect": "none",
                               "width": 40,
                             }
@@ -3475,6 +3619,61 @@ exports[`Storyshots KodeVindu default 1`] = `
                               }
                             }
                           />
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "WebkitBoxOrient": null,
+                              "WebkitLineClamp": null,
+                              "color": "rgba(0, 0, 0, 0.54)",
+                              "display": null,
+                              "fontSize": 14,
+                              "height": 16,
+                              "lineHeight": "16px",
+                              "margin": 0,
+                              "marginTop": 4,
+                              "muiPrepared": true,
+                              "overflow": "hidden",
+                              "textOverflow": "ellipsis",
+                              "whiteSpace": "nowrap",
+                            }
+                          }
+                        >
+                          <div
+                            style={
+                              Object {
+                                "position": "relative",
+                                "width": 200,
+                              }
+                            }
+                          >
+                            <div
+                              className="sizebar"
+                              style={
+                                Object {
+                                  "backgroundColor": "#9e9e9e",
+                                  "borderBottomRightRadius": 10,
+                                  "borderTopRightRadius": 10,
+                                  "float": "left",
+                                  "height": 4,
+                                  "marginTop": 4,
+                                  "width": "76.65251165580509%",
+                                }
+                              }
+                            />
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "display": "inline",
+                                "float": "right",
+                                "position": "absolute",
+                                "right": 52,
+                              }
+                            }
+                          >
+                            2' km²
+                          </div>
                         </div>
                       </div>
                     </div>
