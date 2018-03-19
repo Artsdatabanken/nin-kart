@@ -111,14 +111,7 @@ class Mapbox extends Component {
       let aktivtLag = hentLag(map, aktivKode)
       if (aktivtLag) {
         aktivtLag.id = 'aktivt'
-        //aktivtLag.paint['fill-pattern'] = 'shovel'
 
-        // let customColor = this.getFargeKode(aktivKode)
-        // let fillColor = customColor
-        //   ? Color(customColor)
-        //   : Color(this.props.meta.farge || '#ffff00')
-
-        //aktivtLag.paint['fill-color'] = fillColor.alpha(0.5).rgbaString()
         aktivtLag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
         aktivtLag.paint['fill-color'] = Color('#000000')
           .alpha(0.1)
@@ -149,9 +142,6 @@ class Mapbox extends Component {
         let fillColor = customColor
           ? Color(customColor)
           : Color(barn.farge || '#ffff00')
-        // .lightness(90)
-        // .saturate(90)
-        //opplystLag.paint['fill-color'] = Color('#aaaaaa').rgbaString()
         opplystLag.paint['fill-color'] = fillColor.rgbaString()
         opplystLag.paint['fill-pattern'] = 'shovel'
         const outlineColor = fillColor.darken(0.5)
@@ -165,7 +155,7 @@ class Mapbox extends Component {
 
   fargeleggLag(nextProps) {
     let map = this.map.getMap()
-    //if (!map || !map.isStyleLoaded()) return
+    if (!map) return
 
     if (this.props.meta && this.props.meta.barn) {
       Object.keys(this.props.meta.barn).forEach(kode => {
@@ -179,14 +169,14 @@ class Mapbox extends Component {
         const barn = nextProps.meta.barn[kode]
         let lag = hentLag(map, kode)
         if (!lag || !lag.paint) return
-        let customColor = this.getFargeKode(kode, nextProps.meta)
-        let fillColor = customColor
-          ? Color(customColor)
-          : Color(barn.farge || '#ff2222')
-        lag.paint['fill-color'] = fillColor.alpha(0.7).rgbaString()
-        lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
-        //const outlineColor = fillColor.darken(0.5)
-        //lag.paint['fill-outline-color'] = outlineColor.rgbaString()
+        if (!lag.custom) {
+          let customColor = this.getFargeKode(kode, nextProps.meta)
+          let fillColor = customColor
+            ? Color(customColor)
+            : Color(barn.farge || '#ff2222')
+          lag.paint['fill-color'] = fillColor.alpha(0.7).rgbaString()
+          lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
+        }
         lag.id = 'legend' + kode
         console.log('add lag: ', kode)
         map.addLayer(lag)
@@ -214,10 +204,6 @@ class Mapbox extends Component {
     }
   }
 
-  handleStyleUpdate(kode, opplystKode) {
-    //this.updateAktivKode(kode, opplystKode)
-  }
-
   componentWillUnmount() {
     window.removeEventListener('resize', this._resize)
   }
@@ -233,7 +219,6 @@ class Mapbox extends Component {
   }
 
   handleViewportChange = viewport => {
-    //console.log(viewport);
     this.setState({ viewport })
     // Bruk bare bounds dersom zoomnivå > 8
     const bounds = this.map.getMap().getBounds()
@@ -245,20 +230,11 @@ class Mapbox extends Component {
     const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y])
     // TODO:
     if (r[0]) {
-      //console.log(r[0].properties.localId);
       this.map
         .getMap()
         .setFilter('nin-hover', ['==', 'localId', r[0].properties.localId])
     }
   }
-
-  // onClick = e => {
-  //     const pos = e.center;
-  //     const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y]);
-  //     if (r[0] && r[0].properties && r[0].properties.localId) {
-  //         this.props.onClick(r[0].properties.localId);
-  //     }
-  // };
 
   render() {
     const { viewport } = this.state
@@ -280,17 +256,6 @@ class Mapbox extends Component {
       },
     })
 
-    // Test scatterplotlayer
-    // const taxonLayer = new ScatterplotLayer({
-    //   id: 'taxonLayer',
-    //   data: this.state.utbredelsesData,
-    //     radiusScale: 30,
-    //     radiusMinPixels: 0.25,
-    //     getPosition: d => [d.g[0], d.g[1], 0],
-    //     getColor: d => ([255, 0, 128]),
-    //     getRadius: d => 1
-    // })
-
     return (
       <ReactMapGL
         {...viewport}
@@ -301,9 +266,6 @@ class Mapbox extends Component {
         onClick={this.props.onClick}
         onHover={this.onHover}
         onMouseMove={this.onMouseMove}
-        onLoad={() =>
-          this.handleStyleUpdate(this.props.aktivKode, this.props.opplystKode)
-        }
         onViewportChange={viewport => this.handleViewportChange(viewport)}
         mapboxApiAccessToken="pk.eyJ1IjoiYXJ0c2RhdGFiYW5rZW4iLCJhIjoiY2pjNjg2MzVzMHhycjJ3bnM5MHc4MHVzOCJ9.fLnCRyg-hCuTClyim1r-JQ"
         //mapStyle="mapbox://styles/artsdatabanken/cjc68pztl4sud2sp0s4wyy58q"
