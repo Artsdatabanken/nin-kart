@@ -10,7 +10,7 @@ import NaturomraderIcon from 'material-ui/svg-icons/editor/pie-chart-outlined'
 import ArterIcon from 'material-ui/svg-icons/action/fingerprint'
 
 const Fact = ({ tittel, verdi, ikon, synlig }) => {
-  console.log(tittel, verdi, synlig)
+  //console.log(tittel, verdi, synlig)
   if (!synlig || !verdi) return null
   return (
     <div

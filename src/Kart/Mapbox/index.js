@@ -39,12 +39,10 @@ class Mapbox extends Component {
     }
   }
 
-  getFargeKode = kode => {
+  getFargeKode = (kode, meta) => {
     let customColors = localStorage.getItem('customColors')
-    let defaultFarge =
-      this.props.meta && this.props.meta.farge
-        ? this.props.meta.farge
-        : '#888888'
+    meta = meta || this.props.meta
+    let defaultFarge = meta && meta.farge ? meta.farge : '#888888'
     if (customColors) {
       let fargeElement = JSON.parse(customColors).filter(x => x.kode === kode)
       return fargeElement && fargeElement[0] && fargeElement[0].farge
@@ -70,6 +68,7 @@ class Mapbox extends Component {
 
     if (nextProps.aktivKode !== this.props.aktivKode) {
       this.updateAktivKode(nextProps.aktivKode, nextProps.meta.navnSciId)
+      this.fargeleggLag(nextProps)
     }
 
     if (nextProps.bbox && nextProps.bbox !== this.props.bbox) {
@@ -152,13 +151,46 @@ class Mapbox extends Component {
           : Color(barn.farge || '#ffff00')
         // .lightness(90)
         // .saturate(90)
-        opplystLag.paint['fill-color'] = fillColor.alpha(0.7).rgbaString()
+        //opplystLag.paint['fill-color'] = Color('#aaaaaa').rgbaString()
+        opplystLag.paint['fill-color'] = fillColor.rgbaString()
+        opplystLag.paint['fill-pattern'] = 'shovel'
         const outlineColor = fillColor.darken(0.5)
         opplystLag.paint['fill-outline-color'] = outlineColor.rgbaString()
         opplystLag.id = 'opplyst'
         console.log('add opplyst: ', opplystKode)
         map.addLayer(opplystLag)
       }
+    }
+  }
+
+  fargeleggLag(nextProps) {
+    let map = this.map.getMap()
+    //if (!map || !map.isStyleLoaded()) return
+
+    if (this.props.meta && this.props.meta.barn) {
+      Object.keys(this.props.meta.barn).forEach(kode => {
+        map.removeLayer('legend' + kode)
+        console.log('fjernet ' + kode)
+      })
+    }
+
+    if (nextProps.meta && nextProps.meta.barn) {
+      Object.keys(nextProps.meta.barn).forEach(kode => {
+        const barn = nextProps.meta.barn[kode]
+        let lag = hentLag(map, kode)
+        if (!lag || !lag.paint) return
+        let customColor = this.getFargeKode(kode, nextProps.meta)
+        let fillColor = customColor
+          ? Color(customColor)
+          : Color(barn.farge || '#ff2222')
+        lag.paint['fill-color'] = fillColor.alpha(0.7).rgbaString()
+        lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
+        //const outlineColor = fillColor.darken(0.5)
+        //lag.paint['fill-outline-color'] = outlineColor.rgbaString()
+        lag.id = 'legend' + kode
+        console.log('add lag: ', kode)
+        map.addLayer(lag)
+      })
     }
   }
 

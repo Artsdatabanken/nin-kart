@@ -126,8 +126,8 @@ export const NiNHover = fromJS({
   'source-layer': 'naturomrader6',
   filter: ['==', 'localId', ''],
   paint: {
-    'fill-color': 'hsla(120, 78%, 41%, 0.75)',
-    'fill-outline-color': 'hsla(120, 84%, 47%, 0.75)',
+    'fill-color': 'hsla(251, 58%, 43%, 0.1)',
+    'fill-outline-color': 'hsla(0, 22%, 22%, 0.52)',
   },
 })
 
