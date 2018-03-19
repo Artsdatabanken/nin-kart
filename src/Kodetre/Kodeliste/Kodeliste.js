@@ -14,6 +14,7 @@ function sort(metadata) {
 const Kodeliste = ({
   title,
   subtitle,
+  størsteAreal,
   apidata,
   metadata,
   onGoToCode,
@@ -57,6 +58,7 @@ const Kodeliste = ({
             kode={kode}
             key={kode}
             subkode={item}
+            størsteAreal={størsteAreal}
             {...apibarn}
             meta={metabarnet}
             erEkspandert={kode === ekspandertKode}

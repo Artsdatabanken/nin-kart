@@ -10,7 +10,6 @@ import NaturomraderIcon from 'material-ui/svg-icons/editor/pie-chart-outlined'
 import ArterIcon from 'material-ui/svg-icons/action/fingerprint'
 
 const Fact = ({ tittel, verdi, ikon, synlig }) => {
-  //console.log(tittel, verdi, synlig)
   if (!synlig || !verdi) return null
   return (
     <div
@@ -117,6 +116,7 @@ class KodeVindu extends React.Component {
           <List>
             <Kodeliste
               title={`Innhold`}
+              størsteAreal={props.data.størsteAreal}
               apidata={props.data ? props.data.barn : []}
               metadata={props.meta.barn}
               ekspandertKode={this.state.ekspandertKode}
@@ -133,10 +133,14 @@ class KodeVindu extends React.Component {
               <Kodeliste
                 title="Definisjon"
                 metadata={{
-                  [props.meta.prosedyrekategori.kode]:
-                    props.meta.prosedyrekategori,
-                  [props.meta.definisjonsgrunnlag.kode]:
-                    props.meta.definisjonsgrunnlag,
+                  [props.meta.prosedyrekategori.kode]: {
+                    ...props.meta.prosedyrekategori,
+                    undertittel: { nb: 'Prosedyrekategori' },
+                  },
+                  [props.meta.definisjonsgrunnlag.kode]: {
+                    ...props.meta.definisjonsgrunnlag,
+                    undertittel: { nb: 'Definisjon' },
+                  },
                 }}
                 ekspandertKode={this.state.ekspandertKode}
                 onGoToCode={props.onGoToCode}

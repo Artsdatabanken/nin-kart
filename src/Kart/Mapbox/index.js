@@ -242,16 +242,16 @@ class Mapbox extends Component {
     const taxonLayer = new GridLayer({
       id: 'taxonLayer',
       data: this.state.utbredelsesData,
-      cellSize: 500000 * (1 / (viewport.zoom * viewport.zoom * viewport.zoom)),
+      cellSize: 4000,
       elevationScale: 20,
       extruded: true,
       lightSettings: LIGHT_SETTINGS,
       getPosition: function(e) {
-        return e.g
+        return [e[0], e[1]]
       },
       getElevationValue: function(points) {
         var count = 0
-        points.forEach(i => (count += i.n))
+        points.forEach(i => (count += i[2]))
         return count
       },
     })
