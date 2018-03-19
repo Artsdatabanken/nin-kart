@@ -1,22 +1,30 @@
+// @flow
 import React from 'react'
 import KodeVindu from './KodeVindu'
 import backend from '../../backend'
 import rename from '../../rename'
 
+type State = {
+  data: Object,
+}
+
+type Props = {
+  meta: Object,
+  mapbounds: Object,
+  language: string,
+  onFitBounds: Function,
+  onMouseLeave: Function,
+  onMouseEnter: Function,
+  onGoToCode: Function,
+  handleUpdateLayerProp: Function,
+}
+
 // Informasjon om kode
-class KodeContainer extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
-
+class KodeContainer extends React.Component<Props, State> {
   dataQueryNumber = 0
+  state = { data: {} }
 
-  componentWillUnmount() {
-    this.queryNumber = 0
-  }
-
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Object) {
     let oldKode =
       this.props.meta && this.props.meta.kode ? this.props.meta.kode : ''
     let oldBounds = this.props.mapbounds ? this.props.mapbounds : ''
@@ -28,7 +36,7 @@ class KodeContainer extends React.Component {
     }
   }
 
-  fetchData(kode, bounds) {
+  fetchData(kode: string, bounds: Object) {
     this.dataQueryNumber++
     const currentQuery = this.dataQueryNumber
     backend
@@ -44,6 +52,7 @@ class KodeContainer extends React.Component {
     const data = this.state.data
     const meta = this.props.meta
     if (!meta) return null
+    if (!meta.tittel) return null
     return (
       <KodeVindu
         data={data}
@@ -52,7 +61,7 @@ class KodeContainer extends React.Component {
         onGoToCode={this.props.onGoToCode}
         onMouseEnter={this.props.onMouseEnter}
         onMouseLeave={this.props.onMouseLeave}
-        handleFitBounds={this.props.handleFitBounds}
+        onFitBounds={this.props.onFitBounds}
         language={this.props.language}
       />
     )

@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+// @flow
+import React from 'react'
 import MainDrawer from './MainDrawer'
 import { FloatingActionButton } from 'material-ui'
 import KatalogIkon from 'material-ui/svg-icons/communication/import-contacts'
@@ -16,7 +17,25 @@ import VenstreVinduContainer from '../VenstreVinduContainer'
 import Kart from '../Kart'
 import backend from '../backend'
 
-class Grunnkart extends Component {
+type State = {
+  language: Array<string>,
+  baseMapStyle: Object,
+  mapStyle: string,
+  showMainDrawer: boolean,
+  pointProperties: Object,
+  meta: Object,
+  localId: string,
+  mapBounds: Object,
+  bbox: Object,
+  opplystKode: string,
+}
+
+type Props = {
+  location: Object,
+  history: Object,
+}
+
+class Grunnkart extends React.Component<Props, State> {
   constructor(props) {
     super(props)
     this.state = {
@@ -24,14 +43,16 @@ class Grunnkart extends Component {
       baseMapStyle: defaultMapStyle,
       mapStyle: '',
       showMainDrawer: false,
-      pointProperties: null,
+      pointProperties: {},
+      meta: {},
+      localId: '',
+      mapBounds: {},
+      opplystKode: '',
+      bbox: {},
     }
-
-    this.handleChangeBaseMap = this.handleChangeBaseMap.bind(this)
-    this.handleUpdateLayerProp = this.handleUpdateLayerProp.bind(this)
   }
 
-  handleChangeBaseMap(type) {
+  handleChangeBaseMap = type => {
     let newStyle = defaultMapStyle
     switch (type) {
       case 'dark': {
@@ -86,11 +107,11 @@ class Grunnkart extends Component {
     }
   }
 
-  setMapBounds = this.debounce(function(bounds) {
-    this.setState({ mapbounds: bounds })
+  handleMapBoundsChange = this.debounce(function(bounds) {
+    this.setState({ mapBounds: bounds })
   }, 50)
 
-  setBBox = this.debounce(function(bbox) {
+  handleFitBounds = this.debounce(function(bbox) {
     this.setState({ bbox: bbox })
   }, 50)
 
@@ -111,7 +132,7 @@ class Grunnkart extends Component {
   redirectTo(path) {
     const newUrl = '/katalog/' + path
     console.log('router videre til ', newUrl)
-    this.props.history.push(newUrl)
+    this.props.history.replace(newUrl)
   }
 
   fetchMeta(url) {
@@ -124,7 +145,7 @@ class Grunnkart extends Component {
     backend.hentKodeMeta(url).then(data => {
       if (!data) return this.redirectTo('')
       if (data && data.se) {
-        const newUrl = data.se[Object.keys(data.se)[0]].url
+        const newUrl = data.se[Object.keys(data.se)[0]].sti
         this.redirectTo(newUrl)
         return
       }
@@ -152,7 +173,7 @@ class Grunnkart extends Component {
           mapStyle={this.state.mapStyle}
           aktivKode={aktivKode}
           opplystKode={this.state.opplystKode}
-          onMapBoundsChange={bounds => this.setMapBounds(bounds)}
+          onMapBoundsChange={bounds => this.handleMapBoundsChange(bounds)}
           setLocalId={localId => this.setLocalId(localId)}
           meta={this.state.meta}
           bbox={this.state.bbox}
@@ -165,7 +186,7 @@ class Grunnkart extends Component {
             this.setState({ showMainDrawer: !this.state.showMainDrawer })
           }
         />
-        <Link to="/katalog/">
+        <Link to={`/katalog/`}>
           <FloatingActionButton
             style={{ position: 'absolute', bottom: 48, left: 48 }}
           >
@@ -187,10 +208,10 @@ class Grunnkart extends Component {
               onToggleMainDrawer={() =>
                 this.setState({ showMainDrawer: !this.state.showMainDrawer })
               }
-              mapbounds={this.state.mapbounds}
+              mapBounds={this.state.mapBounds}
               onMouseEnter={kode => this.setState({ opplystKode: kode })}
-              onMouseLeave={kode => this.setState({ opplystKode: null })}
-              handleFitBounds={bbox => this.setBBox(bbox)}
+              onMouseLeave={kode => this.setState({ opplystKode: '' })}
+              onFitBounds={bbox => this.handleFitBounds(bbox)}
               language={this.state.language}
               localId={this.state.localId}
               meta={this.state.meta}

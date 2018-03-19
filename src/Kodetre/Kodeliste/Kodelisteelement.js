@@ -13,6 +13,7 @@ class Kodelisteelement extends React.Component {
     farger.push({ kode: kode, farge: farge })
     localStorage.setItem('customColors', JSON.stringify(farger))
   }
+
   getFargeKode = () => {
     let kode = this.props.kode
     if (localStorage) {
@@ -27,10 +28,18 @@ class Kodelisteelement extends React.Component {
     return this.props.meta.farge
   }
 
+  undertekst(areal, antall, undertittel) {
+    if (areal)
+      return `${
+        this.props.areal ? (Number(this.props.areal) / 1000).toFixed(1) : 0
+      } km² i ${antall || '0'} områder`
+    if (undertittel) return this.undertittel.nb
+    return null
+  }
+
   render() {
     const item = this.props
-    const meta = this.props.meta
-    const kode = this.props.kode
+    const { meta, kode, avatarUtenRamme } = this.props
     const tittel = meta.tittel
       ? Object.keys(meta.tittel).length > 1
         ? meta.tittel[item.language[0]] +
@@ -61,13 +70,13 @@ class Kodelisteelement extends React.Component {
             this.props.onMouseLeave(kode)
           }}
           leftAvatar={
-            <Bildeavatar utenRamme={meta.utenRamme} kode={meta.kode} />
+            <Bildeavatar utenRamme={avatarUtenRamme} kode={meta.kode} />
           }
           primaryText={
-            <span>
+            <div>
               {(tittel || meta.navn || meta.navnSci) +
                 (meta.navnSci ? ` (${meta.navnSci})` : '')}
-              <span style={{ display: 'inline-flex' }}>
+              <div style={{ display: 'inline-flex' }}>
                 {false && (
                   <Kodetagg
                     kode={item.kode}
@@ -76,19 +85,16 @@ class Kodelisteelement extends React.Component {
                     backgroundColor="#ccc"
                   />
                 )}
-              </span>
-            </span>
+              </div>
+            </div>
           }
-          secondaryText={
-            this.props.areal &&
-            `${
-              this.props.areal
-                ? (Number(this.props.areal) / 1000).toFixed(1)
-                : 0
-            } km² i ${this.props.antallNaturomrader || '0'} områder`
-          }
+          secondaryText={this.undertekst(
+            this.props.areal,
+            this.props.antallNaturområder,
+            meta.undertittel
+          )}
           rightAvatar={
-            <span
+            <div
               style={{ display: 'inline-flex', position: 'absolute', top: 16 }}
             >
               <PaintSwatch
@@ -98,7 +104,7 @@ class Kodelisteelement extends React.Component {
                   this.props.onShowColorpicker(meta.kode)
                 }}
               />
-            </span>
+            </div>
           }
         />
         <div style={{ marginLeft: 56 }}>
