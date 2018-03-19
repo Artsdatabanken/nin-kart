@@ -62,7 +62,7 @@ class Kodelisteelement extends React.Component {
             float: 'right',
           }}
         >
-          {this.prettyPrintAreal(this.props.areal)}
+          {false && this.prettyPrintAreal(this.props.areal)}
         </div>
       </div>
     )
