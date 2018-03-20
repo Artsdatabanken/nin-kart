@@ -10,6 +10,7 @@ import backend from '../../backend'
 import DeckGL, { GridLayer /*, ScatterplotLayer */ } from 'deck.gl'
 import Color from 'color'
 import 'mapbox-gl/dist/mapbox-gl.css'
+import localStorageHelper from '../../localStorageHelper'
 
 const LIGHT_SETTINGS = {
   lightsPosition: [9.5, 56, 5000, -2, 57, 8000],
@@ -39,19 +40,6 @@ class Mapbox extends Component {
     }
   }
 
-  getFargeKode = (kode, meta) => {
-    let customColors = localStorage.getItem('customColors')
-    meta = meta || this.props.meta
-    let defaultFarge = meta && meta.farge ? meta.farge : '#888888'
-    if (customColors) {
-      let fargeElement = JSON.parse(customColors).filter(x => x.kode === kode)
-      return fargeElement && fargeElement[0] && fargeElement[0].farge
-        ? fargeElement[0].farge
-        : defaultFarge
-    }
-    return defaultFarge
-  }
-
   componentDidMount() {
     window.addEventListener('resize', this._resize)
     this._resize()
@@ -59,6 +47,8 @@ class Mapbox extends Component {
       this.props.aktivKode,
       this.props.meta ? this.props.meta.navnSciId : ''
     )
+    //let map = this.map.getMap()
+    //map.addControl(new ReactMapGL.NavigationControl());
   }
 
   componentWillReceiveProps(nextProps) {
@@ -138,7 +128,10 @@ class Mapbox extends Component {
         const barn = this.props.meta.barn[opplystKode]
         let opplystLag = hentLag(map, opplystKode)
         if (!opplystLag || !opplystLag.paint) return
-        let customColor = this.getFargeKode(opplystKode)
+        let customColor = localStorageHelper.getFargeKode(
+          opplystKode,
+          this.props.meta
+        )
         let fillColor = customColor
           ? Color(customColor)
           : Color(barn.farge || '#ffff00')
@@ -170,7 +163,10 @@ class Mapbox extends Component {
         let lag = hentLag(map, kode)
         if (!lag || !lag.paint) return
         if (!lag.custom) {
-          let customColor = this.getFargeKode(kode, nextProps.meta)
+          let customColor = localStorageHelper.getFargeKode(
+            kode,
+            nextProps.meta
+          )
           let fillColor = customColor
             ? Color(customColor)
             : Color(barn.farge || '#ff2222')
