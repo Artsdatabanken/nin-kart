@@ -2966,6 +2966,19 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            H1
+                          </div>
                           Havvannmasser
                           <div
                             style={
@@ -3179,6 +3192,19 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            H2
+                          </div>
                           Sirkulerende vannmasser i fysisk avgrensede saltvannsforekomster
                           <div
                             style={
@@ -3392,6 +3418,19 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            H3
+                          </div>
                           Ikke-sirkulerende marine vannmasser i fysisk avgrensede saltvannsforekomster
                           <div
                             style={
@@ -3605,6 +3644,19 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            H4
+                          </div>
                           Sterkt endrete marine vannmasser
                           <div
                             style={
@@ -3777,314 +3829,7 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
               "padding": 8,
             }
           }
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#9e9e9e",
-                "borderRadius": "8px",
-                "boxSizing": "border-box",
-                "display": "flex",
-                "flexWrap": "wrap",
-                "height": 16,
-                "marginLeft": "0px",
-                "marginTop": "2px",
-                "outline": "none",
-                "padding": 2,
-                "position": "relative",
-                "width": "fit-content",
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "color": "#ffffff",
-                  "fontSize": 8,
-                  "fontWeight": 600,
-                  "lineHeight": "10px",
-                  "margin": 2,
-                  "paddingLeft": "2px",
-                  "paddingRight": "2px",
-                }
-              }
-            >
-              NE
-            </div>
-          </div>
-          <div
-            style={
-              Object {
-                "backgroundColor": "#9e9e9e",
-                "borderRadius": "8px",
-                "boxSizing": "border-box",
-                "display": "flex",
-                "flexWrap": "wrap",
-                "height": 16,
-                "marginLeft": "0px",
-                "marginTop": "2px",
-                "outline": "none",
-                "padding": 2,
-                "position": "relative",
-                "width": "fit-content",
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "color": "#ffffff",
-                  "fontSize": 8,
-                  "fontWeight": 600,
-                  "lineHeight": "10px",
-                  "margin": 2,
-                  "paddingLeft": "2px",
-                  "paddingRight": "2px",
-                }
-              }
-            >
-              DD
-            </div>
-          </div>
-          <div
-            style={
-              Object {
-                "backgroundColor": "#9e9e9e",
-                "borderRadius": "8px",
-                "boxSizing": "border-box",
-                "display": "flex",
-                "flexWrap": "wrap",
-                "height": 16,
-                "marginLeft": "0px",
-                "marginTop": "2px",
-                "outline": "none",
-                "padding": 2,
-                "position": "relative",
-                "width": "fit-content",
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "color": "#ffffff",
-                  "fontSize": 8,
-                  "fontWeight": 600,
-                  "lineHeight": "10px",
-                  "margin": 2,
-                  "paddingLeft": "2px",
-                  "paddingRight": "2px",
-                }
-              }
-            >
-              LC
-            </div>
-          </div>
-          <div
-            style={
-              Object {
-                "backgroundColor": "#9e9e9e",
-                "borderRadius": "8px",
-                "boxSizing": "border-box",
-                "display": "flex",
-                "flexWrap": "wrap",
-                "height": 16,
-                "marginLeft": "0px",
-                "marginTop": "2px",
-                "outline": "none",
-                "padding": 2,
-                "position": "relative",
-                "width": "fit-content",
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "color": "#ffffff",
-                  "fontSize": 8,
-                  "fontWeight": 600,
-                  "lineHeight": "10px",
-                  "margin": 2,
-                  "paddingLeft": "2px",
-                  "paddingRight": "2px",
-                }
-              }
-            >
-              NT
-            </div>
-          </div>
-          <div
-            style={
-              Object {
-                "backgroundColor": "#9e9e9e",
-                "borderRadius": "8px",
-                "boxSizing": "border-box",
-                "display": "flex",
-                "flexWrap": "wrap",
-                "height": 16,
-                "marginLeft": "0px",
-                "marginTop": "2px",
-                "outline": "none",
-                "padding": 2,
-                "position": "relative",
-                "width": "fit-content",
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "color": "#ffffff",
-                  "fontSize": 8,
-                  "fontWeight": 600,
-                  "lineHeight": "10px",
-                  "margin": 2,
-                  "paddingLeft": "2px",
-                  "paddingRight": "2px",
-                }
-              }
-            >
-              VU
-            </div>
-          </div>
-          <div
-            style={
-              Object {
-                "backgroundColor": "#9e9e9e",
-                "borderRadius": "8px",
-                "boxSizing": "border-box",
-                "display": "flex",
-                "flexWrap": "wrap",
-                "height": 16,
-                "marginLeft": "0px",
-                "marginTop": "2px",
-                "outline": "none",
-                "padding": 2,
-                "position": "relative",
-                "width": "fit-content",
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "color": "#ffffff",
-                  "fontSize": 8,
-                  "fontWeight": 600,
-                  "lineHeight": "10px",
-                  "margin": 2,
-                  "paddingLeft": "2px",
-                  "paddingRight": "2px",
-                }
-              }
-            >
-              EN
-            </div>
-          </div>
-          <div
-            style={
-              Object {
-                "backgroundColor": "#9e9e9e",
-                "borderRadius": "8px",
-                "boxSizing": "border-box",
-                "display": "flex",
-                "flexWrap": "wrap",
-                "height": 16,
-                "marginLeft": "0px",
-                "marginTop": "2px",
-                "outline": "none",
-                "padding": 2,
-                "position": "relative",
-                "width": "fit-content",
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "color": "#ffffff",
-                  "fontSize": 8,
-                  "fontWeight": 600,
-                  "lineHeight": "10px",
-                  "margin": 2,
-                  "paddingLeft": "2px",
-                  "paddingRight": "2px",
-                }
-              }
-            >
-              CR
-            </div>
-          </div>
-          <div
-            style={
-              Object {
-                "backgroundColor": "#9e9e9e",
-                "borderRadius": "8px",
-                "boxSizing": "border-box",
-                "display": "flex",
-                "flexWrap": "wrap",
-                "height": 16,
-                "marginLeft": "0px",
-                "marginTop": "2px",
-                "outline": "none",
-                "padding": 2,
-                "position": "relative",
-                "width": "fit-content",
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "color": "#ffffff",
-                  "fontSize": 8,
-                  "fontWeight": 600,
-                  "lineHeight": "10px",
-                  "margin": 2,
-                  "paddingLeft": "2px",
-                  "paddingRight": "2px",
-                }
-              }
-            >
-              EW
-            </div>
-          </div>
-          <div
-            style={
-              Object {
-                "backgroundColor": "#9e9e9e",
-                "borderRadius": "8px",
-                "boxSizing": "border-box",
-                "display": "flex",
-                "flexWrap": "wrap",
-                "height": 16,
-                "marginLeft": "0px",
-                "marginTop": "2px",
-                "outline": "none",
-                "padding": 2,
-                "position": "relative",
-                "width": "fit-content",
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "color": "#ffffff",
-                  "fontSize": 8,
-                  "fontWeight": 600,
-                  "lineHeight": "10px",
-                  "margin": 2,
-                  "paddingLeft": "2px",
-                  "paddingRight": "2px",
-                }
-              }
-            >
-              EX
-            </div>
-          </div>
-        </div>
+        />
       </div>
     </div>
     <span

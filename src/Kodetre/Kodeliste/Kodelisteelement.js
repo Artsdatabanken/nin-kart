@@ -90,15 +90,6 @@ class Kodelisteelement extends React.Component {
           : meta.tittel[item.language[1]]
       : kode
 
-    let parts = []
-    if (kode.indexOf('_') >= 0) {
-      parts = kode.split('_')
-    } else if (kode.indexOf('-') >= 0) {
-      parts = kode.split('-')
-    } else {
-      parts = [item.kode]
-    }
-
     return (
       <React.Fragment>
         <ListItem
@@ -113,18 +104,10 @@ class Kodelisteelement extends React.Component {
           }
           primaryText={
             <div>
+              {true && <Kodetagg kode={item.kode} />}
               {(tittel || meta.navn || meta.navnSci) +
                 (meta.navnSci ? ` (${meta.navnSci})` : '')}
-              <div style={{ display: 'inline-flex' }}>
-                {false && (
-                  <Kodetagg
-                    kode={item.kode}
-                    navn={parts[1]}
-                    color="#222"
-                    backgroundColor="#ccc"
-                  />
-                )}
-              </div>
+              <div style={{ display: 'inline-flex' }} />
             </div>
           }
           secondaryText={this.undertekst(
