@@ -6,6 +6,7 @@ import backend from './backend'
 import Omrader from './Naturområdedetaljer/Omrader'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import ShallowRenderer from 'react-test-renderer/shallow'
+import localStorageHelper from './localStorageHelper'
 
 const dummyNatureArea = {
   uniqueId: {
