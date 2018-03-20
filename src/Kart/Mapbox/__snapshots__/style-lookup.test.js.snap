@@ -3,43 +3,17 @@
 exports[`stil MI_KA 1`] = `
 Object {
   "custom": true,
-  "id": "kalk",
+  "filter": Array [
+    "has",
+    "mi_ka",
+  ],
+  "id": "MI_KA",
   "paint": Object {
-    "fill-color": Object {
-      "base": 1,
-      "default": "hsl(0, 4%, 94%)",
-      "property": "KALKINNHOLD_HOVEDBERGART",
-      "stops": Array [
-        Array [
-          0,
-          "hsla(0, 0%, 0%, 0)",
-        ],
-        Array [
-          1,
-          "hsla(0, 6%, 94%, 0.6)",
-        ],
-        Array [
-          2,
-          "hsla(0, 19%, 88%, 0.6)",
-        ],
-        Array [
-          3,
-          "hsla(0, 35%, 80%, 0.6)",
-        ],
-        Array [
-          4,
-          "hsla(0, 59%, 63%, 0.6)",
-        ],
-        Array [
-          5,
-          "hsla(0, 84%, 32%, 0.6)",
-        ],
-      ],
-      "type": "exponential",
-    },
+    "fill-color": "#FFFF00",
+    "fill-outline-color": "#FF0000",
   },
   "source": "composite",
-  "source-layer": "kalk",
+  "source-layer": "mi_ka",
   "type": "fill",
 }
 `;
