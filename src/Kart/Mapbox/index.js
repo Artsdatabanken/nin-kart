@@ -10,6 +10,7 @@ import backend from '../../backend'
 import DeckGL, { GridLayer /*, ScatterplotLayer */ } from 'deck.gl'
 import Color from 'color'
 import 'mapbox-gl/dist/mapbox-gl.css'
+import localStorageHelper from '../../localStorageHelper'
 
 const LIGHT_SETTINGS = {
   lightsPosition: [9.5, 56, 5000, -2, 57, 8000],
@@ -39,21 +40,6 @@ class Mapbox extends Component {
     }
   }
 
-  getFargeKode = kode => {
-    let customColors = localStorage.getItem('customColors')
-    let defaultFarge =
-      this.props.meta && this.props.meta.farge
-        ? this.props.meta.farge
-        : '#888888'
-    if (customColors) {
-      let fargeElement = JSON.parse(customColors).filter(x => x.kode === kode)
-      return fargeElement && fargeElement[0] && fargeElement[0].farge
-        ? fargeElement[0].farge
-        : defaultFarge
-    }
-    return defaultFarge
-  }
-
   componentDidMount() {
     window.addEventListener('resize', this._resize)
     this._resize()
@@ -61,6 +47,8 @@ class Mapbox extends Component {
       this.props.aktivKode,
       this.props.meta ? this.props.meta.navnSciId : ''
     )
+    //let map = this.map.getMap()
+    //map.addControl(new ReactMapGL.NavigationControl());
   }
 
   componentWillReceiveProps(nextProps) {
@@ -70,6 +58,7 @@ class Mapbox extends Component {
 
     if (nextProps.aktivKode !== this.props.aktivKode) {
       this.updateAktivKode(nextProps.aktivKode, nextProps.meta.navnSciId)
+      this.fargeleggLag(nextProps)
     }
 
     if (nextProps.bbox && nextProps.bbox !== this.props.bbox) {
@@ -112,14 +101,7 @@ class Mapbox extends Component {
       let aktivtLag = hentLag(map, aktivKode)
       if (aktivtLag) {
         aktivtLag.id = 'aktivt'
-        //aktivtLag.paint['fill-pattern'] = 'shovel'
 
-        // let customColor = this.getFargeKode(aktivKode)
-        // let fillColor = customColor
-        //   ? Color(customColor)
-        //   : Color(this.props.meta.farge || '#ffff00')
-
-        //aktivtLag.paint['fill-color'] = fillColor.alpha(0.5).rgbaString()
         aktivtLag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
         aktivtLag.paint['fill-color'] = Color('#000000')
           .alpha(0.1)
@@ -146,19 +128,55 @@ class Mapbox extends Component {
         const barn = this.props.meta.barn[opplystKode]
         let opplystLag = hentLag(map, opplystKode)
         if (!opplystLag || !opplystLag.paint) return
-        let customColor = this.getFargeKode(opplystKode)
+        let customColor = localStorageHelper.getFargeKode(
+          opplystKode,
+          this.props.meta
+        )
         let fillColor = customColor
           ? Color(customColor)
           : Color(barn.farge || '#ffff00')
-        // .lightness(90)
-        // .saturate(90)
-        opplystLag.paint['fill-color'] = fillColor.alpha(0.7).rgbaString()
+        opplystLag.paint['fill-color'] = fillColor.rgbaString()
+        opplystLag.paint['fill-pattern'] = 'shovel'
         const outlineColor = fillColor.darken(0.5)
         opplystLag.paint['fill-outline-color'] = outlineColor.rgbaString()
         opplystLag.id = 'opplyst'
         console.log('add opplyst: ', opplystKode)
         map.addLayer(opplystLag)
       }
+    }
+  }
+
+  fargeleggLag(nextProps) {
+    let map = this.map.getMap()
+    if (!map) return
+
+    if (this.props.meta && this.props.meta.barn) {
+      Object.keys(this.props.meta.barn).forEach(kode => {
+        map.removeLayer('legend' + kode)
+        console.log('fjernet ' + kode)
+      })
+    }
+
+    if (nextProps.meta && nextProps.meta.barn) {
+      Object.keys(nextProps.meta.barn).forEach(kode => {
+        const barn = nextProps.meta.barn[kode]
+        let lag = hentLag(map, kode)
+        if (!lag || !lag.paint) return
+        if (!lag.custom) {
+          let customColor = localStorageHelper.getFargeKode(
+            kode,
+            nextProps.meta
+          )
+          let fillColor = customColor
+            ? Color(customColor)
+            : Color(barn.farge || '#ff2222')
+          lag.paint['fill-color'] = fillColor.alpha(0.7).rgbaString()
+          lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
+        }
+        lag.id = 'legend' + kode
+        console.log('add lag: ', kode)
+        map.addLayer(lag)
+      })
     }
   }
 
@@ -180,10 +198,6 @@ class Mapbox extends Component {
         padding: { top: 10, bottom: 25, left: 400, right: 5 },
       })
     }
-  }
-
-  handleStyleUpdate(kode, opplystKode) {
-    //this.updateAktivKode(kode, opplystKode)
   }
 
   componentWillUnmount() {
@@ -212,20 +226,11 @@ class Mapbox extends Component {
     const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y])
     // TODO:
     if (r[0]) {
-      //console.log(r[0].properties.localId);
       this.map
         .getMap()
         .setFilter('nin-hover', ['==', 'localId', r[0].properties.localId])
     }
   }
-
-  // onClick = e => {
-  //     const pos = e.center;
-  //     const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y]);
-  //     if (r[0] && r[0].properties && r[0].properties.localId) {
-  //         this.props.onClick(r[0].properties.localId);
-  //     }
-  // };
 
   render() {
     const { viewport } = this.state
@@ -247,17 +252,6 @@ class Mapbox extends Component {
       },
     })
 
-    // Test scatterplotlayer
-    // const taxonLayer = new ScatterplotLayer({
-    //   id: 'taxonLayer',
-    //   data: this.state.utbredelsesData,
-    //     radiusScale: 30,
-    //     radiusMinPixels: 0.25,
-    //     getPosition: d => [d.g[0], d.g[1], 0],
-    //     getColor: d => ([255, 0, 128]),
-    //     getRadius: d => 1
-    // })
-
     return (
       <ReactMapGL
         {...viewport}
@@ -268,9 +262,6 @@ class Mapbox extends Component {
         onClick={this.props.onClick}
         onHover={this.onHover}
         onMouseMove={this.onMouseMove}
-        onLoad={() =>
-          this.handleStyleUpdate(this.props.aktivKode, this.props.opplystKode)
-        }
         onViewportChange={viewport => this.handleViewportChange(viewport)}
         mapboxApiAccessToken="pk.eyJ1IjoiYXJ0c2RhdGFiYW5rZW4iLCJhIjoiY2pjNjg2MzVzMHhycjJ3bnM5MHc4MHVzOCJ9.fLnCRyg-hCuTClyim1r-JQ"
         //mapStyle="mapbox://styles/artsdatabanken/cjc68pztl4sud2sp0s4wyy58q"

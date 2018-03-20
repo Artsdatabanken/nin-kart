@@ -23,6 +23,7 @@ function hentLag(map, kode) {
     return {
       id: kode,
       type: 'fill',
+      custom: true,
       source: 'composite',
       'source-layer': 'FY',
       filter: filter,
@@ -53,6 +54,7 @@ function hentLag(map, kode) {
     let kommuneNr = '' + (kommuneMatch[1] + kommuneMatch[2])
     return {
       id: kode,
+      custom: true,
       type: 'fill',
       source: 'composite',
       'source-layer': 'KO',
@@ -108,6 +110,7 @@ function hentLag(map, kode) {
   if (kode.startsWith('MI_KA')) {
     let kaLayer = {
       id: 'kalk',
+      custom: true,
       type: 'fill',
       source: 'composite',
       'source-layer': 'kalk',

@@ -2,6 +2,7 @@
 
 exports[`stil MI_KA 1`] = `
 Object {
+  "custom": true,
   "id": "kalk",
   "paint": Object {
     "fill-color": Object {
