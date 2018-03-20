@@ -2,15 +2,6 @@ import React from 'react'
 import Kodelisteelement from './Kodelisteelement'
 import { Subheader } from 'material-ui'
 
-function sort(metadata) {
-  return Object.keys(metadata).sort((a, b) => {
-    const ma = metadata[a]
-    const mb = metadata[b]
-    if (ma.sortering && mb.sortering) return ma.sortering > mb.sortering
-    return ma.kode > mb.kode
-  })
-}
-
 const Kodeliste = ({
   title,
   subtitle,
@@ -41,32 +32,31 @@ const Kodeliste = ({
           {subtitle}
         </div>
       )}
-      {sort(metadata).map(item => {
+      {Kodeliste.sorterNøkler(metadata).map(key => {
         const apibarn = apidata
           ? apidata[
               apidata
                 .map(apiItem => {
                   return apiItem.kode
                 })
-                .indexOf(item)
+                .indexOf(key)
             ] || {}
           : {}
-        const metabarnet = metadata[item] || {}
-        const kode = item.toString()
+        const metabarnet = metadata[key] || {}
         return (
           <Kodelisteelement
-            kode={kode}
-            key={kode}
-            subkode={item}
+            kode={key}
+            key={key}
+            subkode={key}
             størsteAreal={størsteAreal}
             {...apibarn}
             meta={metabarnet}
-            erEkspandert={kode === ekspandertKode}
+            erEkspandert={key === ekspandertKode}
             onGoToCode={onGoToCode}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             onUpdateLayerProp={onUpdateLayerProp}
-            onShowColorpicker={() => onShowColorpicker(kode)}
+            onShowColorpicker={() => onShowColorpicker(key)}
             language={language}
             avatarUtenRamme={avatarUtenRamme}
           />
@@ -74,6 +64,25 @@ const Kodeliste = ({
       })}
     </React.Fragment>
   )
+}
+
+const pad = sti => {
+  // t/4 => 0000t0004
+  return (sti || '')
+    .split(/\//)
+    .map(e => e.padStart(5, '0'))
+    .join()
+}
+
+Kodeliste.sorterNøkler = metadata => {
+  const sortert = Object.keys(metadata).sort((a, b) => {
+    const ma = metadata[a]
+    const mb = metadata[b]
+    if (ma.sortering && mb.sortering)
+      return ma.sortering > mb.sortering ? 1 : -1
+    return pad(ma.sti) >= pad(mb.sti) ? 1 : -1
+  })
+  return sortert
 }
 
 export default Kodeliste
