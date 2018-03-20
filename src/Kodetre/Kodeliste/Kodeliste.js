@@ -71,7 +71,7 @@ const pad = sti => {
   if (!sti) return ''
   return sti
     .split(/\//)
-    .map(e => e.padStart(5, '0'))
+    .map(e => (e || '').padStart(5, '0'))
     .join()
 }
 
