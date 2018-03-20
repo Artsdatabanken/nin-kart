@@ -68,7 +68,8 @@ const Kodeliste = ({
 
 const pad = sti => {
   // t/4 => 0000t0004
-  return (sti || '')
+  if (!sti) return ''
+  return sti
     .split(/\//)
     .map(e => e.padStart(5, '0'))
     .join()
