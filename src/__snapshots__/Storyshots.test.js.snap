@@ -1574,7 +1574,51 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                       "width": 1024,
                     }
                   }
-                />
+                >
+                  <div
+                    className="nav"
+                    style={
+                      Object {
+                        "bottom": 30,
+                        "padding": "10px",
+                        "position": "absolute",
+                        "right": 0,
+                      }
+                    }
+                  >
+                    <div
+                      className="mapboxgl-ctrl mapboxgl-ctrl-group "
+                    >
+                      <button
+                        className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in"
+                        onClick={[Function]}
+                        title="Zoom In"
+                        type="button"
+                      />
+                      <button
+                        className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out"
+                        onClick={[Function]}
+                        title="Zoom Out"
+                        type="button"
+                      />
+                      <button
+                        className="mapboxgl-ctrl-icon mapboxgl-ctrl-compass"
+                        onClick={[Function]}
+                        title="Reset North"
+                        type="button"
+                      >
+                        <span
+                          className="mapboxgl-ctrl-compass-arrow"
+                          style={
+                            Object {
+                              "transform": "rotate(0deg)",
+                            }
+                          }
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -2252,7 +2296,51 @@ exports[`Storyshots Kart Mapbox default 1`] = `
             "width": 1024,
           }
         }
-      />
+      >
+        <div
+          className="nav"
+          style={
+            Object {
+              "bottom": 30,
+              "padding": "10px",
+              "position": "absolute",
+              "right": 0,
+            }
+          }
+        >
+          <div
+            className="mapboxgl-ctrl mapboxgl-ctrl-group "
+          >
+            <button
+              className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in"
+              onClick={[Function]}
+              title="Zoom In"
+              type="button"
+            />
+            <button
+              className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out"
+              onClick={[Function]}
+              title="Zoom Out"
+              type="button"
+            />
+            <button
+              className="mapboxgl-ctrl-icon mapboxgl-ctrl-compass"
+              onClick={[Function]}
+              title="Reset North"
+              type="button"
+            >
+              <span
+                className="mapboxgl-ctrl-compass-arrow"
+                style={
+                  Object {
+                    "transform": "rotate(0deg)",
+                  }
+                }
+              />
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -3028,6 +3116,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "width": "76.65251165580509%",
                                 }
                               }
+                              title="areal: 2' km²"
                             />
                           </div>
                           <div
@@ -3254,6 +3343,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "width": "65.059539361111%",
                                 }
                               }
+                              title="areal: 1' km²"
                             />
                           </div>
                           <div
@@ -3480,6 +3570,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "width": "100%",
                                 }
                               }
+                              title="areal: 2' km²"
                             />
                           </div>
                           <div
@@ -3706,6 +3797,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "width": "19.007609851593173%",
                                 }
                               }
+                              title="areal: 413 km²"
                             />
                           </div>
                           <div

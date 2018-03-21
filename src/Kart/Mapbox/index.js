@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ReactMapGL, { Marker } from 'react-map-gl'
+import ReactMapGL, { Marker, NavigationControl } from 'react-map-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import Place from 'material-ui/svg-icons/maps/place'
 import { withRouter } from 'react-router'
@@ -21,6 +21,13 @@ const LIGHT_SETTINGS = {
   numberOfLights: 2,
 }
 const colorScale = r => [r * 255, 140, 200 * (1 - r)]
+
+const navStyle = {
+  position: 'absolute',
+  bottom: 30,
+  right: 0,
+  padding: '10px',
+}
 
 class Mapbox extends Component {
   constructor(props) {
@@ -47,8 +54,6 @@ class Mapbox extends Component {
       this.props.aktivKode,
       this.props.meta ? this.props.meta.navnSciId : ''
     )
-    //let map = this.map.getMap()
-    //map.addControl(new ReactMapGL.NavigationControl());
   }
 
   componentWillReceiveProps(nextProps) {
@@ -130,8 +135,9 @@ class Mapbox extends Component {
         if (!opplystLag || !opplystLag.paint) return
         let customColor = localStorageHelper.getFargeKode(
           opplystKode,
-          this.props.meta
+          barn || this.props.meta
         )
+
         let fillColor = customColor
           ? Color(customColor)
           : Color(barn.farge || '#ffff00')
@@ -140,8 +146,10 @@ class Mapbox extends Component {
         const outlineColor = fillColor.darken(0.5)
         opplystLag.paint['fill-outline-color'] = outlineColor.rgbaString()
         opplystLag.id = 'opplyst'
-        console.log('add opplyst: ', opplystKode)
-        map.addLayer(opplystLag)
+        map.once('load', () => {
+          console.log('add opplyst: ', opplystKode)
+          map.addLayer(opplystLag)
+        })
       }
     }
   }
@@ -165,8 +173,9 @@ class Mapbox extends Component {
         if (!lag.custom) {
           let customColor = localStorageHelper.getFargeKode(
             kode,
-            nextProps.meta
+            barn || nextProps.meta
           )
+
           let fillColor = customColor
             ? Color(customColor)
             : Color(barn.farge || '#ff2222')
@@ -286,6 +295,11 @@ class Mapbox extends Component {
             )}
           />
         </Switch>
+        <div className="nav" style={navStyle}>
+          <NavigationControl
+            onViewportChange={viewport => this.handleViewportChange(viewport)}
+          />
+        </div>
       </ReactMapGL>
     )
   }

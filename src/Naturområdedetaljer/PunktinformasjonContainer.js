@@ -136,8 +136,9 @@ class PunktinformasjonContainer extends Component {
               props.metadata.owner.company +
                 ', ' +
                 props.metadata.owner.contactPerson,
-              props.metadata.owner.homesite,
-              'mailto:' + props.metadata.owner.email,
+              props.metadata.owner.homesite
+                ? props.metadata.owner.homesite
+                : 'mailto:' + props.metadata.owner.email,
               props.metadata.owner.company
             )
           }
