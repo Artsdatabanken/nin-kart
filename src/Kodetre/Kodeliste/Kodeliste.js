@@ -69,10 +69,10 @@ const Kodeliste = ({
 const pad = sti => {
   // t/4 => 0000t0004
   if (!sti) return ''
-  return sti
-    .split(/\//)
-    .map(e => (e || '').padStart(5, '0'))
-    .join()
+  const e = sti.split(/\//)
+  if (!e) return ''
+  const f = e.map(e => (e || '').padStart(5, '0'))
+  return f.join()
 }
 
 Kodeliste.sorterNøkler = metadata => {
