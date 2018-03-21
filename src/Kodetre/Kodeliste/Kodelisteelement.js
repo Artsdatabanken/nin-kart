@@ -52,6 +52,7 @@ class Kodelisteelement extends React.Component {
               width: `${100.0 * areal / størsteAreal}%`,
               backgroundColor: this.props.muiTheme.palette.accent3Color,
             }}
+            title={'areal: ' + this.prettyPrintAreal(areal)}
           />
         </div>
         <div
