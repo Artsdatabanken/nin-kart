@@ -58,7 +58,7 @@ class Backend {
 
   static async hentKode(kode: string, bounds: Object) {
     let bbox = ''
-    if (bounds) {
+    if (bounds && bounds._sw && bounds._ne) {
       var ll = wgs84ToUtm33(bounds._sw.lng, bounds._sw.lat)
       var ur = wgs84ToUtm33(bounds._ne.lng, bounds._ne.lat)
       bbox = `&bbox=${ll.x},${ll.y},${ur.x},${ur.y}`
@@ -146,15 +146,16 @@ class Backend {
 
   static getCompanyLogo(navn: string) {
     navn = navn || 'MDIR'
+    navn = navn.toLowerCase()
     switch (navn) {
-      case 'MDIR':
+      case 'mdir':
         return 'https://pbs.twimg.com/profile_images/378800000067455227/3d053db6b9593d47a02ced7709846522_400x400.png'
-      case 'ADB':
+      case 'adb':
         return 'https://pbs.twimg.com/profile_images/882873307133083648/_1-mmxih_400x400.jpg'
       case 'biofokus':
         return 'https://www.artsdatabanken.no/Media/F7355'
       default:
-        return 'https://pbs.twimg.com/profile_images/378800000067455227/3d053db6b9593d47a02ced7709846522_400x400.png'
+        return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2F${navn}.jpg?alt=media`
     }
   }
 

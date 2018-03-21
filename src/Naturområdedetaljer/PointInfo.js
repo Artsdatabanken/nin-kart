@@ -3,6 +3,7 @@ import { ListItem, Avatar } from 'material-ui'
 import InfoOutline from 'material-ui/svg-icons/action/info-outline'
 import { Route } from 'react-router-dom'
 import { withRouter } from 'react-router'
+import backend from '../backend'
 
 function PointInfo(props) {
   if (props.pointInfo && Object.keys(props.pointInfo).length > 0)
@@ -39,6 +40,11 @@ function PointInfo(props) {
                       <a target="_blank" href={item.homepage}>
                         <Avatar
                           src={item.logo}
+                          onError={e => {
+                            const brokenAvatar = backend.avatar40px('404', 40)
+                            if (e.target.src !== brokenAvatar)
+                              e.target.src = brokenAvatar
+                          }}
                           title={item.dataorigin}
                           style={{
                             objectFit: 'cover',
