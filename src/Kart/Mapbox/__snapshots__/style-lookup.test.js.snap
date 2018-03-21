@@ -2,7 +2,6 @@
 
 exports[`stil MI_KA 1`] = `
 Object {
-  "custom": true,
   "filter": Array [
     "has",
     "mi_ka",
