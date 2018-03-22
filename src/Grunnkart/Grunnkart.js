@@ -167,7 +167,7 @@ class Grunnkart extends React.Component<Props, State> {
         <Kart
           latitude={65.4}
           longitude={10.8}
-          zoom={4.1}
+          zoom={3}
           pitch={0}
           bearing={0}
           mapStyle={this.state.mapStyle}
