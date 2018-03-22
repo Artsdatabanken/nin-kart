@@ -91,6 +91,11 @@ class ResultatListe extends Component {
                       style={{ marginTop: 6, marginLeft: 16 }}
                       alt={prefix}
                       src={Backend.avatar24px(prefix)}
+                      onError={e => {
+                        const brokenImage = Backend.avatar24px('404')
+                        if (e.target.src !== brokenImage)
+                          e.target.src = brokenImage
+                      }}
                     />
                   }
                 >

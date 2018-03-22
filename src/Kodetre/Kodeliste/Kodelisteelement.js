@@ -52,6 +52,7 @@ class Kodelisteelement extends React.Component {
               width: `${100.0 * areal / størsteAreal}%`,
               backgroundColor: this.props.muiTheme.palette.accent3Color,
             }}
+            title={'areal: ' + this.prettyPrintAreal(areal)}
           />
         </div>
         <div
@@ -94,7 +95,9 @@ class Kodelisteelement extends React.Component {
       <React.Fragment>
         <ListItem
           key={item.kode}
-          onClick={() => this.props.onGoToCode(kode)}
+          onClick={() =>
+            this.props.onGoToCode(meta && meta.sti ? meta.sti : kode)
+          }
           onMouseEnter={() => this.props.onMouseEnter(kode)}
           onMouseLeave={() => {
             this.props.onMouseLeave(kode)

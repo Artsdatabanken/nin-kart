@@ -69,8 +69,7 @@ class PunktinformasjonContainer extends Component {
     var natureAreaPointInfo = {
       name: name,
       value: value,
-      logo:
-        'https://pbs.twimg.com/profile_images/378800000067455227/3d053db6b9593d47a02ced7709846522_400x400.png',
+      logo: backend.getCompanyLogo('MDIR'),
       homepage: 'http://www.miljodirektoratet.no/',
       dataorigin: 'MDIR',
     }
@@ -92,21 +91,19 @@ class PunktinformasjonContainer extends Component {
     return {
       name: name,
       value: value,
-      logo:
-        'https://pbs.twimg.com/profile_images/882873307133083648/_1-mmxih_400x400.jpg',
+      logo: backend.getCompanyLogo('ADB'),
       homepage: 'https://artsdatabanken.no/',
       dataorigin: 'ADB',
       article: 'https://www.artsdatabanken.no/rodlistefornaturtyper',
     }
   }
-  createPointInfo(name, value, url) {
+  createPointInfo(name, value, url, company) {
     var pointInfo = {
       name: name,
       value: value,
-      logo:
-        'https://pbs.twimg.com/profile_images/378800000067455227/3d053db6b9593d47a02ced7709846522_400x400.png',
+      logo: backend.getCompanyLogo(company),
       homepage: url || 'http://www.miljodirektoratet.no/',
-      dataorigin: 'MDIR',
+      dataorigin: company,
     }
 
     return pointInfo
@@ -128,7 +125,8 @@ class PunktinformasjonContainer extends Component {
             facts.Surveyer = this.createPointInfo(
               'Kartlegger, Kontaktperson',
               props.surveyer.contactPerson + ', ' + props.surveyer.company,
-              'mailto:' + props.surveyer.email
+              'mailto:' + props.surveyer.email,
+              props.surveyer.company
             )
           break
         case 'metadata':
@@ -138,14 +136,18 @@ class PunktinformasjonContainer extends Component {
               props.metadata.owner.company +
                 ', ' +
                 props.metadata.owner.contactPerson,
-              props.metadata.owner.homesite,
-              'mailto:' + props.metadata.owner.email
+              props.metadata.owner.homesite
+                ? props.metadata.owner.homesite
+                : 'mailto:' + props.metadata.owner.email,
+              props.metadata.owner.company
             )
           }
           if (props.metadata.program) {
             facts.Program = this.createPointInfo(
               'Program',
-              props.metadata.program
+              props.metadata.program,
+              '',
+              props.metadata.owner ? props.metadata.owner.company : ''
             )
           }
           if (props.metadata.projectName) {
@@ -153,19 +155,25 @@ class PunktinformasjonContainer extends Component {
               'Prosjekt',
               props.metadata.projectName +
                 ', ' +
-                props.metadata.projectDescription
+                props.metadata.projectDescription,
+              '',
+              props.metadata.owner ? props.metadata.owner.company : ''
             )
           }
           if (props.metadata.surveyedFrom) {
             facts.Kartlagt = this.createNatureAreaPointInfo(
               'Kartlagt',
-              props.metadata.surveyedFrom
+              props.metadata.surveyedFrom,
+              '',
+              props.metadata.owner ? props.metadata.owner.company : ''
             )
           }
           if (props.metadata.surveyScale) {
             facts.Kartleggingsmålestokk = this.createNatureAreaPointInfo(
               'Kartleggingsmålestokk',
-              props.metadata.surveyScale
+              props.metadata.surveyScale,
+              '',
+              props.metadata.owner ? props.metadata.owner.company : ''
             )
           }
           break
@@ -189,10 +197,30 @@ class PunktinformasjonContainer extends Component {
       }
     }
 
-    for (var y in props.parameters) {
-      facts[props.parameters[y].code] = this.createNatureAreaPointInfo(
-        props.parameters[y].code,
-        props.parameters[y].codeDescription
+    for (let y in props.parameters) {
+      let param = props.parameters[y]
+      for (let a in param.additionalVariables) {
+        let aVar = param.additionalVariables[a]
+        facts['MI_' + aVar.code] = this.createPointInfo(
+          'MI_' + aVar.code,
+          (aVar.mainTypeDescription ? aVar.mainTypeDescription + ' ' : '') +
+            aVar.codeDescription,
+          aVar.surveyer.homesite
+            ? aVar.surveyer.homesite
+            : aVar.surveyer.email ? 'mailto:' + aVar.surveyer.email : '',
+          aVar.surveyer.company
+        )
+      }
+      for (let c in param.customVariables) {
+        let cVar = param.customVariables[c]
+        facts['MI_' + cVar.code] = this.createPointInfo(
+          'MI_' + cVar.code,
+          cVar.codeDescription
+        )
+      }
+      facts[param.code] = this.createNatureAreaPointInfo(
+        param.code,
+        param.codeDescription
       )
     }
 
