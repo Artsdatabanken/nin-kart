@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "deck.gl": "^5.0.4",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
     "flow-typed": "^2.4.0",
     "graphql-request": "^1.4.0",
     "luma.gl": "^5.0.2",
@@ -23,7 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --coverage",
     "test:watch": "react-scripts test --env=jsdom",
-    "precommit": "lint-staged",
+    "precommit": "pretty-quick --staged",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public -o build/storybook",
     "report-coverage": "coveralls < coverage/lcov.info"
@@ -39,11 +41,9 @@
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
     "prettier": "^1.10.2",
+    "pretty-quick": "^1.4.1",
     "react-test-renderer": "^16.2.0",
     "storybook-addon-material-ui": "^0.8.2"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": ["prettier --write", "git add"]
   },
   "prettier": {
     "semi": false,
