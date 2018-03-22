@@ -20,7 +20,6 @@ const LIGHT_SETTINGS = {
   lightsStrength: [1.0, 0.0, 2.0, 0.0],
   numberOfLights: 2,
 }
-const colorScale = r => [r * 255, 140, 200 * (1 - r)]
 
 class Mapbox extends Component {
   constructor(props) {
@@ -238,8 +237,9 @@ class Mapbox extends Component {
     const taxonLayer = new GridLayer({
       id: 'taxonLayer',
       data: this.state.utbredelsesData,
-      cellSize: 4000,
-      elevationScale: 20,
+      //cellSize: 4000,
+      elevationScale: 200,
+      colorDomain: [0, 200],
       extruded: true,
       lightSettings: LIGHT_SETTINGS,
       getPosition: function(e) {
@@ -250,6 +250,12 @@ class Mapbox extends Component {
         points.forEach(i => (count += i[2]))
         return count
       },
+      // getColorValue:  function(points) {
+      //   // return points[2]
+      //   var count = 0
+      //   points.forEach(i => (count += i[2]))
+      //   return count
+      // }
     })
 
     return (
@@ -269,7 +275,7 @@ class Mapbox extends Component {
         minZoom={4}
       >
         {this.state.enableDeck && (
-          <DeckGL {...viewport} layers={[taxonLayer]} colorScale={colorScale} />
+          <DeckGL {...viewport} layers={[taxonLayer]} />
         )}
         <Switch>
           <Route
