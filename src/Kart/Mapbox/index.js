@@ -146,10 +146,8 @@ class Mapbox extends Component {
         const outlineColor = fillColor.darken(0.5)
         opplystLag.paint['fill-outline-color'] = outlineColor.rgbaString()
         opplystLag.id = 'opplyst'
-        map.once('load', () => {
-          console.log('add opplyst: ', opplystKode)
-          map.addLayer(opplystLag)
-        })
+        console.log('add opplyst: ', opplystKode)
+        map.addLayer(opplystLag)
       }
     }
   }
