@@ -2,15 +2,6 @@ import React from 'react'
 import Kodelisteelement from './Kodelisteelement'
 import { Subheader } from 'material-ui'
 
-function sort(metadata) {
-  return Object.keys(metadata).sort((a, b) => {
-    const ma = metadata[a]
-    const mb = metadata[b]
-    if (ma.sortering && mb.sortering) return ma.sortering > mb.sortering
-    return ma.kode > mb.kode
-  })
-}
-
 const Kodeliste = ({
   title,
   subtitle,
@@ -41,7 +32,7 @@ const Kodeliste = ({
           {subtitle}
         </div>
       )}
-      {sort(metadata).map(item => {
+      {Kodeliste.sorterNøkler(metadata).map(item => {
         const apibarn = apidata
           ? apidata[
               apidata
@@ -74,6 +65,29 @@ const Kodeliste = ({
       })}
     </React.Fragment>
   )
+}
+
+const pad = sti => {
+  // t/4 => 0000t0004
+  if (!sti) return ''
+  const e = sti.split(/\//)
+  if (!e) return ''
+  const f = e.map(e => {
+    if (!e) return ''
+    return e.toString().padStart(5, '0')
+  })
+  return f.join()
+}
+
+Kodeliste.sorterNøkler = metadata => {
+  const sortert = Object.keys(metadata).sort((a, b) => {
+    const ma = metadata[a]
+    const mb = metadata[b]
+    if (ma.sortering && mb.sortering)
+      return ma.sortering > mb.sortering ? 1 : -1
+    return pad(ma.sti) >= pad(mb.sti) ? 1 : -1
+  })
+  return sortert
 }
 
 export default Kodeliste
