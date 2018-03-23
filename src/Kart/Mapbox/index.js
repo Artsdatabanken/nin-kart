@@ -78,8 +78,8 @@ class Mapbox extends Component {
       if (taxonMatch && taxonMatch.length > 1 && navnSciId) {
         backend.getKodeUtbredelse('TX_' + navnSciId).then(data => {
           this.setState({
-            utbredelsesData: data ? data : [],
             enableDeck: data ? true : false,
+            taxonLayer: data ? this.createTaxonLayer(data) : null,
           })
         })
       }
@@ -238,15 +238,13 @@ class Mapbox extends Component {
     }
   }
 
-  render() {
-    const { viewport } = this.state
-
-    const taxonLayer = new GridLayer({
+  createTaxonLayer(data) {
+    return new GridLayer({
       id: 'taxonLayer',
-      data: this.state.utbredelsesData,
+      data: data,
       //cellSize: 4000,
-      elevationScale: 200,
-      colorDomain: [0, 200],
+      elevationScale: 50,
+      //colorDomain: [0, 200],
       extruded: true,
       lightSettings: LIGHT_SETTINGS,
       getPosition: function(e) {
@@ -257,13 +255,16 @@ class Mapbox extends Component {
         points.forEach(i => (count += i[2]))
         return count
       },
-      // getColorValue:  function(points) {
-      //   // return points[2]
-      //   var count = 0
-      //   points.forEach(i => (count += i[2]))
-      //   return count
-      // }
+      getColorValue: function(points) {
+        var count = 0
+        points.forEach(i => (count += i[2]))
+        return count
+      },
     })
+  }
+
+  render() {
+    const { viewport } = this.state
 
     return (
       <ReactMapGL
@@ -282,7 +283,7 @@ class Mapbox extends Component {
         minZoom={4}
       >
         {this.state.enableDeck && (
-          <DeckGL {...viewport} layers={[taxonLayer]} />
+          <DeckGL {...viewport} layers={[this.state.taxonLayer]} />
         )}
         <Switch>
           <Route
