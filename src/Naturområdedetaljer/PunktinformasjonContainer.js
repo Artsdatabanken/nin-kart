@@ -201,8 +201,8 @@ class PunktinformasjonContainer extends Component {
       let param = props.parameters[y]
       for (let a in param.additionalVariables) {
         let aVar = param.additionalVariables[a]
-        facts['MI_' + aVar.code] = this.createPointInfo(
-          'MI_' + aVar.code,
+        facts['BS_' + aVar.code] = this.createPointInfo(
+          'BS_' + aVar.code,
           (aVar.mainTypeDescription ? aVar.mainTypeDescription + ' ' : '') +
             aVar.codeDescription,
           aVar.surveyer.homesite
@@ -213,8 +213,8 @@ class PunktinformasjonContainer extends Component {
       }
       for (let c in param.customVariables) {
         let cVar = param.customVariables[c]
-        facts['MI_' + cVar.code] = this.createPointInfo(
-          'MI_' + cVar.code,
+        facts['BS_' + cVar.code] = this.createPointInfo(
+          'BS_' + cVar.code,
           cVar.codeDescription
         )
       }
