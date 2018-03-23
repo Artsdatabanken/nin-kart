@@ -103,7 +103,7 @@
       "type": "vector"
     },
     "naturomrader": {
-      "url": "mapbox://artsdatabanken.8z9eimla",
+      "url": "mapbox://artsdatabanken.c806eqjj",
       "type": "vector"
     }
   },
@@ -3533,7 +3533,7 @@
         "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
       },
       "source": "naturomrader",
-      "source-layer": "naturomrader8",
+      "source-layer": "naturomrader9",
       "filter": ["has", "rl_re"],
       "layout": {
         "visibility": "none"
@@ -3549,7 +3549,7 @@
         "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
       },
       "source": "naturomrader",
-      "source-layer": "naturomrader8",
+      "source-layer": "naturomrader9",
       "filter": ["has", "rl_nt"],
       "layout": {
         "visibility": "none"
@@ -3565,7 +3565,7 @@
         "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
       },
       "source": "naturomrader",
-      "source-layer": "naturomrader8",
+      "source-layer": "naturomrader9",
       "filter": ["has", "rl_en"],
       "layout": {
         "visibility": "none"
@@ -3582,7 +3582,7 @@
         "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
       },
       "source": "naturomrader",
-      "source-layer": "naturomrader8",
+      "source-layer": "naturomrader9",
       "filter": ["has", "rl_cr"],
       "layout": {
         "visibility": "none"

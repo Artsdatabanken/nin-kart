@@ -86,7 +86,7 @@ function hentLag(map, kode) {
       id: kode,
       type: 'fill',
       source: 'naturomrader',
-      'source-layer': 'naturomrader8',
+      'source-layer': 'naturomrader9',
       interactive: true,
       filter: ['has', kode.toLowerCase()],
       paint: {
