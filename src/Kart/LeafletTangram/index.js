@@ -61,7 +61,8 @@ class LeafletTangram extends React.Component {
               },
               draw: {
                 _transparent: {
-                  color: [0.9, 0.0, 0.0, 0.5],
+                  order: 100,
+                  color: [62 / 255.0, 65 / 255.0, 254 / 255.0, 0.8],
                 },
               },
             },
@@ -71,7 +72,8 @@ class LeafletTangram extends React.Component {
               },
               draw: {
                 _transparent: {
-                  color: [0.9, 0.5, 0.0, 0.5],
+                  order: 100,
+                  color: [98 / 255.0, 129 / 255.0, 254 / 255.0, 0.8],
                 },
               },
             },
@@ -81,7 +83,8 @@ class LeafletTangram extends React.Component {
               },
               draw: {
                 _transparent: {
-                  color: [0.9, 0.9, 0.0, 0.5],
+                  order: 100,
+                  color: [133 / 255.0, 183 / 255.0, 254 / 255.0, 0.8],
                 },
               },
             },
@@ -91,7 +94,8 @@ class LeafletTangram extends React.Component {
               },
               draw: {
                 _transparent: {
-                  color: [0.5, 0.9, 0.0, 0.5],
+                  order: 100,
+                  color: [165 / 255.0, 218 / 255.0, 255 / 255.0, 0.9],
                 },
               },
             },
@@ -101,7 +105,8 @@ class LeafletTangram extends React.Component {
               },
               draw: {
                 _transparent: {
-                  color: [0.0, 0.9, 0.0, 0.5],
+                  order: 100,
+                  color: [202 / 255.0, 245 / 255.0, 254 / 255.0, 0.9],
                 },
               },
             },
@@ -113,9 +118,8 @@ class LeafletTangram extends React.Component {
             },
             draw: {
               _transparent: {
-                order: 100,
-                width: '2px',
-                color: [0.9, 0.0, 0.0, 0.5],
+                width: '1px',
+                color: [0.9, 0.0, 0.0, 1.0],
               },
             },
           },
@@ -123,7 +127,7 @@ class LeafletTangram extends React.Component {
         styles: {
           _transparent: {
             base: 'polygons',
-            blend: 'overlay',
+            blend: 'multiply',
           },
           _dashes2: {
             base: 'polygons',
