@@ -88,16 +88,16 @@ export const Soner = fromJS({
 export const Rodliste = fromJS({
   id: 'Rodlistede',
   type: 'fill',
-  source: 'composite',
-  'source-layer': 'naturomrader6',
+  source: 'naturomrader',
+  'source-layer': 'naturomrader8',
   filter: [
     'all',
     [
       'any',
-      ['has', 'RKAT_CR'],
-      ['has', 'RKAT_EN'],
-      ['has', 'RKAT_NT'],
-      ['has', 'RKAT_RE'],
+      ['has', 'rl_cr'],
+      ['has', 'rl_en'],
+      ['has', 'rl_nt'],
+      ['has', 'rl_re'],
     ],
     ['in', '$type', 'LineString', 'Polygon'],
   ],
@@ -111,8 +111,8 @@ export const Rodliste = fromJS({
 export const NiN = fromJS({
   id: 'nin',
   type: 'fill',
-  source: 'composite',
-  'source-layer': 'naturomrader6',
+  source: 'naturomrader',
+  'source-layer': 'naturomrader8',
   interactive: true,
   paint: {
     'fill-color': 'hsla(120, 22%, 24%, 0.1)',
@@ -122,8 +122,8 @@ export const NiN = fromJS({
 export const NiNHover = fromJS({
   id: 'nin-hover',
   type: 'fill',
-  source: 'composite',
-  'source-layer': 'naturomrader6',
+  source: 'naturomrader',
+  'source-layer': 'naturomrader8',
   filter: ['==', 'localId', ''],
   paint: {
     'fill-color': 'hsla(251, 58%, 43%, 0.1)',
