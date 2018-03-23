@@ -6,7 +6,7 @@ import { Route, Switch } from 'react-router-dom'
 import PunktinformasjonContainer from './Naturområdedetaljer/PunktinformasjonContainer'
 import backend from './backend'
 import rename from './rename'
-import { Snackbar } from 'material-ui'
+import { Snackbar, Paper } from 'material-ui'
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
@@ -74,55 +74,56 @@ class VenstreVinduContainer extends React.Component {
               parentId={this.state.parentId}
               onQueryChange={this.handleQueryChange}
             />
-            {this.state.searchResults ? (
-              <ResultatListe
-                query={this.state.query}
-                searchResults={this.state.searchResults}
-                language={this.props.language}
-                onClick={url => {
-                  console.warn('url', url)
-                  this.setState({ query: '', searchResults: null })
-                  history.push('/katalog/' + url)
+            <Switch>
+              <Route
+                path="/katalog/:kode*"
+                render={({ match, history }) => {
+                  return (
+                    <KodeContainer
+                      style={{ height: '100vh' }}
+                      path={match.params.kode ? match.params.kode : ''}
+                      onGoToCode={url => {
+                        this.setState({ searchResults: null })
+                        console.log(url)
+                        history.push('/katalog/' + url)
+                      }}
+                      onMouseEnter={this.props.onMouseEnter}
+                      onMouseLeave={this.props.onMouseLeave}
+                      onFitBounds={this.props.onFitBounds}
+                      mapBounds={this.props.mapBounds}
+                      //mapBounds={undefined}
+                      language={this.props.language}
+                      meta={this.props.meta}
+                      handleUpdateLayerProp={this.props.handleUpdateLayerProp}
+                    />
+                  )
                 }}
               />
-            ) : (
-              <Switch>
-                <Route
-                  path="/katalog/:kode*"
-                  render={({ match, history }) => {
-                    return (
-                      <KodeContainer
-                        style={{ height: '100vh' }}
-                        path={match.params.kode ? match.params.kode : ''}
-                        onGoToCode={url => {
-                          this.setState({ searchResults: null })
-                          console.log(url)
-                          history.push('/katalog/' + url)
-                        }}
-                        onMouseEnter={this.props.onMouseEnter}
-                        onMouseLeave={this.props.onMouseLeave}
-                        onFitBounds={this.props.onFitBounds}
-                        mapBounds={this.props.mapBounds}
-                        //mapBounds={undefined}
-                        language={this.props.language}
-                        meta={this.props.meta}
-                        handleUpdateLayerProp={this.props.handleUpdateLayerProp}
-                      />
-                    )
+
+              <Route
+                path="/punkt/:lng,:lat"
+                render={({ match, history }) => (
+                  <PunktinformasjonContainer
+                    lng={match.params.lng}
+                    lat={match.params.lat}
+                    localId={this.props.localId}
+                  />
+                )}
+              />
+            </Switch>
+            {this.state.searchResults && (
+              <Paper style={{ position: 'absolute' }} zDepth={2}>
+                <ResultatListe
+                  query={this.state.query}
+                  searchResults={this.state.searchResults}
+                  language={this.props.language}
+                  onClick={url => {
+                    console.warn('url', url)
+                    this.setState({ query: '', searchResults: null })
+                    history.push('/katalog/' + url)
                   }}
                 />
-
-                <Route
-                  path="/punkt/:lng,:lat"
-                  render={({ match, history }) => (
-                    <PunktinformasjonContainer
-                      lng={match.params.lng}
-                      lat={match.params.lat}
-                      localId={this.props.localId}
-                    />
-                  )}
-                />
-              </Switch>
+              </Paper>
             )}
           </div>
         )}
