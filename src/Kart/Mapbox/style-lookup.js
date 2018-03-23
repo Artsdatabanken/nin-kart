@@ -85,10 +85,10 @@ function hentLag(map, kode) {
     let naLayer = {
       id: kode,
       type: 'fill',
-      source: 'composite',
-      'source-layer': 'naturomrader6',
+      source: 'naturomrader',
+      'source-layer': 'naturomrader8',
       interactive: true,
-      filter: ['has', kode],
+      filter: ['has', kode.toLowerCase()],
       paint: {
         //'fill-opacity': 0.13,
         //      'fill-pattern': 'shovel',

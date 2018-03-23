@@ -21,7 +21,7 @@ exports[`stil NA 1`] = `
 Object {
   "filter": Array [
     "has",
-    "NA_T",
+    "na_t",
   ],
   "id": "NA_T",
   "interactive": true,
@@ -29,8 +29,8 @@ Object {
     "fill-color": "#FFFF00",
     "fill-outline-color": "#FF0000",
   },
-  "source": "composite",
-  "source-layer": "naturomrader6",
+  "source": "naturomrader",
+  "source-layer": "naturomrader8",
   "type": "fill",
 }
 `;
