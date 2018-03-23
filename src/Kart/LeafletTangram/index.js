@@ -44,8 +44,9 @@ class LeafletTangram extends React.Component {
             type: 'Raster',
             url2:
               'https://tile.nextzen.com/nextzen/terrain/v1/normal/{z}/{x}/{y}.png',
-            url:
+            url3:
               'https://tile.nextzen.org/tilezen/terrain/v1/256/normal/{z}/{x}/{y}.png?api_key=Tqy6UAn9ShClyvfUon001g',
+            url: 'http://localhost:8081/dummymap/',
           },
           mapzen: {
             url:
@@ -61,7 +62,10 @@ class LeafletTangram extends React.Component {
         },
         lights: {
           point1: {
-            type: 'point',
+            type: 'directional',
+            direction: [0, 1, -0.5],
+            diffuse: 1,
+            ambient: 0.3,
           },
         },
         layers: {
@@ -69,7 +73,7 @@ class LeafletTangram extends React.Component {
             data: { source: 'mapzen' },
             draw: {
               elevation: {
-                order: 0,
+                order: 44440,
               },
             },
           },
@@ -89,9 +93,9 @@ class LeafletTangram extends React.Component {
                         return (h.r * 1. + h.g / 256. + h.b / 65536.);
                     }`,
                 color: `
-                    color.rgb = vec3(unpack(sampleRaster(0)));
-                    color.rgb = (color.rgb - .5) * 20.; // re-scale to a visible range for contrast
-                    color.b=1.0;
+                    color.rgb = 1.0-vec3(sampleRaster(0).r);
+                    color.rgb = (color.rgb - .5)*12. ;
+                    color.a = 0.1;
                     `,
               },
             },
