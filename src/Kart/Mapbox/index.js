@@ -78,7 +78,6 @@ class Mapbox extends Component {
       if (taxonMatch && taxonMatch.length > 1 && navnSciId) {
         backend.getKodeUtbredelse('TX_' + navnSciId).then(data => {
           this.setState({
-            utbredelsesData: data ? data : [],
             enableDeck: data ? true : false,
             taxonLayer: data ? this.createTaxonLayer(data) : null,
           })
