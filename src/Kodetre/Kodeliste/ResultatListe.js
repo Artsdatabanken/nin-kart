@@ -112,18 +112,38 @@ class ResultatListe extends Component {
     )
   }
 
-  static highlightMatch(navn, query) {
-    if (!query) return navn
-    const q = query.toLowerCase().split(' ')[0]
-    const offset = navn.toLowerCase().indexOf(q)
-    if (offset < 0) return navn
+  // Highlight all matches
+  static highlightMatch(text, higlight) {
+    // make array of terms, ordered by longest term
+    let terms = higlight
+      .toLowerCase()
+      .split(' ')
+      .sort(function(a, b) {
+        return b.length - a.length
+      })
+    // make regex OR filter by concatenating terms with |
+    let filter = terms
+      .toString()
+      .toLowerCase()
+      .replace(/,/g, '|')
 
-    const end = offset + q.length
+    // Split on all terms and also include the terms into parts array, ignore case
+    let parts = text.split(new RegExp(`(${filter})`, 'gi'))
     return (
       <React.Fragment>
-        {navn.substring(0, offset)}
-        <span style={{ color: 'black' }}>{navn.substring(offset, end)}</span>
-        {navn.substring(end, navn.length)}
+        {' '}
+        {parts.map((part, i) => (
+          <span
+            key={i}
+            style={
+              terms.indexOf(part.toLowerCase()) >= 0
+                ? { color: 'black', fontWeight: 'bold' }
+                : {}
+            }
+          >
+            {part}
+          </span>
+        ))}{' '}
       </React.Fragment>
     )
   }
