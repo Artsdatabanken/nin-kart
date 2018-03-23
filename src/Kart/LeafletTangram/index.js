@@ -93,9 +93,9 @@ class LeafletTangram extends React.Component {
                         return (h.r * 1. + h.g / 256. + h.b / 65536.);
                     }`,
                 color: `
-                    color.rgb = 1.0-vec3(sampleRaster(0).r);
-                    color.rgb = (color.rgb - .5)*12. ;
-                    color.a = 0.1;
+//                    color.rgb = vec3(sampleRaster(0).r);
+                    color.rgb = vec3(0.4,0.4,1.);
+                    color.a = vec3(sampleRaster(0)).r;
                     `,
               },
             },
