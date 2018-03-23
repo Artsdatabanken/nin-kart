@@ -81,7 +81,7 @@ function hentLag(map, kode) {
     }
   }
 
-  if (kode.startsWith('NA')) {
+  if (['NA', 'BS'].indexOf(kode.substr(0, 2)) >= 0) {
     let naLayer = {
       id: kode,
       type: 'fill',
@@ -97,7 +97,7 @@ function hentLag(map, kode) {
       },
     }
 
-    if (kode === 'NA') {
+    if (kode === 'NA' || kode === 'BS') {
       // spesialtilfelle for toppnivå
       delete naLayer.filter
       naLayer.paint = {
