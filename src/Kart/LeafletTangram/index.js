@@ -214,6 +214,7 @@ class LeafletTangram extends React.Component {
               },
             },
           },
+<<<<<<< HEAD
           naturomrader6: {
             data: {
               source: 'og',
@@ -223,6 +224,49 @@ class LeafletTangram extends React.Component {
               _transparent: {
                 width: '1px',
                 color: [0.9, 0.0, 0.0, 1.0],
+||||||| merged common ancestors
+        },
+        styles: {
+          normals: {
+            base: 'polygons',
+            raster: 'normal',
+          },
+          elevation: {
+            base: 'polygons',
+            raster: 'custom',
+            shaders: {
+              blocks: {
+                global: `
+                    float unpack(vec4 h) {
+                        return (h.r * 1. + h.g / 256. + h.b / 65536.);
+                    }`,
+                color: `
+                    color.rgb = 1.0-vec3(sampleRaster(0).r);
+                    color.rgb = (color.rgb - .5)*12. ;
+                    color.a = 0.1;
+                    `,
+=======
+        },
+        styles: {
+          normals: {
+            base: 'polygons',
+            raster: 'normal',
+          },
+          elevation: {
+            base: 'polygons',
+            raster: 'custom',
+            shaders: {
+              blocks: {
+                global: `
+                    float unpack(vec4 h) {
+                        return (h.r * 1. + h.g / 256. + h.b / 65536.);
+                    }`,
+                color: `
+//                    color.rgb = vec3(sampleRaster(0).r);
+                    color.rgb = vec3(0.4,0.4,1.);
+                    color.a = vec3(sampleRaster(0)).r;
+                    `,
+>>>>>>> ok
               },
             },
           },
