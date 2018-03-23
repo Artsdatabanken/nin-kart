@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stil MI_KA 1`] = `
+Object {
+  "filter": Array [
+    "has",
+    "mi_ka",
+  ],
+  "id": "MI_KA",
+  "paint": Object {
+    "fill-color": "#FFFF00",
+    "fill-outline-color": "#FF0000",
+  },
+  "source": "composite",
+  "source-layer": "mi_ka",
+  "type": "fill",
+}
+`;
+
+exports[`stil NA 1`] = `
+Object {
+  "filter": Array [
+    "has",
+    "na_t",
+  ],
+  "id": "NA_T",
+  "interactive": true,
+  "paint": Object {
+    "fill-color": "#FFFF00",
+    "fill-outline-color": "#FF0000",
+  },
+  "source": "naturomrader",
+  "source-layer": "naturomrader9",
+  "type": "fill",
+}
+`;
