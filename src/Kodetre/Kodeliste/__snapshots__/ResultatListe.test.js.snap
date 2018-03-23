@@ -2,16 +2,25 @@
 
 exports[`Highlight 1`] = `
 <Unknown>
-  
+   
+  <span
+    style={Object {}}
+  />
   <span
     style={
       Object {
         "color": "black",
+        "fontWeight": "bold",
       }
     }
   >
     Ka
   </span>
-  rmøy
+  <span
+    style={Object {}}
+  >
+    rmøy
+  </span>
+   
 </Unknown>
 `;
