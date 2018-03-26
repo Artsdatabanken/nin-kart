@@ -29,7 +29,7 @@ class LeafletTangram extends React.Component {
     //    this.layer.addTo(this.map)
     this.map.setView(
       [this.props.latitude, this.props.longitude],
-      this.props.zoom * 1.1
+      this.props.zoom * 1.8
     )
   }
 
