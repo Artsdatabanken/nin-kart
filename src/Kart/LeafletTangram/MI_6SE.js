@@ -1,5 +1,5 @@
 const seksjoner = {
-  '6SO': {
+  '6SE': {
     data: {
       source: 'og',
       layer: 'Seksjoner2017_4326-c6e9g5',

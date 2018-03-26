@@ -170,11 +170,9 @@ class Grunnkart extends React.Component<Props, State> {
           zoom={3}
           pitch={0}
           bearing={0}
-          mapStyle={this.state.mapStyle}
           aktivKode={aktivKode}
           opplystKode={this.state.opplystKode}
-          onMapBoundsChange={bounds => this.handleMapBoundsChange(bounds)}
-          setLocalId={localId => this.setLocalId(localId)}
+          onMapBoundsChange={this.handleMapBoundsChange}
           meta={this.state.meta}
           bbox={this.state.bbox}
         />
