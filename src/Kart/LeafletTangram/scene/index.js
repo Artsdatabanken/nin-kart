@@ -4,16 +4,15 @@ import imports from './import'
 import { createSources } from './sources'
 import { createStyles } from './styles'
 import { createLights } from './lights'
-import MI_6SE from '../MI_6SE'
 
 const mi_6se = {
   subkoder: [1, 2, 3, 4, 5],
   farger: [
-    [62 / 255.0, 65 / 255.0, 254 / 255.0, 0.8],
-    [98 / 255.0, 129 / 255.0, 254 / 255.0, 0.8],
-    [133 / 255.0, 183 / 255.0, 254 / 255.0, 0.8],
-    [165 / 255.0, 218 / 255.0, 255 / 255.0, 0.9],
-    [202 / 255.0, 245 / 255.0, 254 / 255.0, 0.9],
+    [0.243137, 0.254902, 0.996078, 0.8],
+    [0.384314, 0.505882, 0.996078, 0.8],
+    [0.521569, 0.717647, 0.996078, 0.8],
+    [0.647059, 0.854902, 1, 0.9],
+    [0.792157, 0.960784, 0.996078, 0.9],
   ],
 }
 
@@ -54,8 +53,6 @@ function createLeafletLayer(props) {
       sources: createSources(props.aktivKode),
       lights: createLights(),
       layers: createLayer('6SE', mi_6se),
-      //      layers6: createLayer('6SE'),
-      layers5: MI_6SE,
       layers2: {
         earth: {
           data: { source: 'mapzen' },
