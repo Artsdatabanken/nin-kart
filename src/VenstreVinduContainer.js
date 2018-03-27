@@ -85,14 +85,45 @@ class VenstreVinduContainer extends React.Component {
                 overflowY: !this.state.minimized ? 'scroll' : 'hidden',
                 overflowX: 'hidden',
               }}
-            >
-              <div style={{ overflow: 'hidden' }}>
-                {this.state.error && (
-                  <Snackbar
-                    open={true}
-                    message={'Søk feilet: ' + JSON.stringify(this.state.error)}
-                    autoHideDuration={4000}
-                    onRequestClose={() => this.setState({ error: null })}
+              onToggleMainDrawer={this.props.onToggleMainDrawer}
+              isAtRoot={history.location.pathname === '/'}
+              query={this.state.query}
+              tittel={this.tittel(this.props.meta)}
+              parentId={this.state.parentId}
+              onQueryChange={this.handleQueryChange}
+            />
+            <Switch>
+              <Route
+                path="/katalog/:kode*"
+                render={({ match, history }) => {
+                  return (
+                    <KodeContainer
+                      style={{ height: '100vh' }}
+                      path={match.params.kode ? match.params.kode : ''}
+                      onGoToCode={url => {
+                        this.setState({ searchResults: null })
+                        console.log(url)
+                        history.push('/katalog/' + url)
+                      }}
+                      onMouseEnter={this.props.onMouseEnter}
+                      onMouseLeave={this.props.onMouseLeave}
+                      onFitBounds={this.props.onFitBounds}
+                      mapBounds={this.props.mapBounds}
+                      language={this.props.language}
+                      meta={this.props.meta}
+                      handleUpdateLayerProp={this.props.handleUpdateLayerProp}
+                    />
+                  )
+                }}
+              />
+
+              <Route
+                path="/punkt/:lng,:lat"
+                render={({ match, history }) => (
+                  <PunktinformasjonContainer
+                    lng={match.params.lng}
+                    lat={match.params.lat}
+                    localId={this.props.localId}
                   />
                 )}
                 <TopBar

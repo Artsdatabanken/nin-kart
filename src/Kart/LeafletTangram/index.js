@@ -77,6 +77,7 @@ class LeafletTangram extends React.Component {
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   removeMarker() {
     if (!this.marker) return
     this.map.removeLayer(this.marker)
@@ -430,9 +431,25 @@ class LeafletTangram extends React.Component {
 =======
   onClick = e => {}
 >>>>>>> fix map onclick
+||||||| merged common ancestors
+  onClick = e => {}
+=======
+  removeMarker() {
+    if (!this.marker) return
+    this.map.removeLayer(this.marker)
+  }
+
+  onClick = e => {
+    const latlng = e.leaflet_event.latlng
+    this.removeMarker()
+    this.marker = L.marker([latlng.lat, latlng.lng])
+    this.map.addLayer(this.marker)
+    this.props.onClick(latlng)
+  }
+>>>>>>> show marker
   updateMap(props) {
     if (this.layer) this.map.removeLayer(this.layer)
-    this.layer = createLeafletLayer(props, this.props.onClick)
+    this.layer = createLeafletLayer(props, this.onClick)
     this.map.addLayer(this.layer)
     //    this.layer.addTo(this.map)
   }
