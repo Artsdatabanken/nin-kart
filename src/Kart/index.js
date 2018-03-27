@@ -4,13 +4,10 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 
 class Kart extends Component {
-  onClick = point => {
-    const lngLat = point.lngLat
-
-    if (point.features && point.features[0] && point.features[0].properties) {
-      this.props.setLocalId(point.features[0].properties.localId)
-    }
-    this.props.history.push(`/punkt/${lngLat[0]},${lngLat[1]}`)
+  onClick = e => {
+    console.log(e)
+    const latlng = e.leaflet_event.latlng
+    this.props.history.push(`/punkt/${latlng.lng},${latlng.lat}`)
   }
 
   render() {

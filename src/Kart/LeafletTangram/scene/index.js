@@ -173,12 +173,15 @@ const _def = {
   showDebug: false,
 }
 
-let first = false
-
-function createLeafletLayer(props) {
-  console.log(props)
+function createLeafletLayer(props, onClick) {
   let def = {
     scene: makeScene(props),
+    events: {
+      hover: function(selection) {
+        console.log('Hover!', selection)
+      },
+      click: onClick,
+    },
     attribution:
       '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | <a href="http://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a> | <a href="https://www.nextzen.com/" target="_blank">Nextzen</a>',
   }
@@ -186,8 +189,7 @@ function createLeafletLayer(props) {
   if (props.meta && props.meta.barn)
     def.scene.layers = createLayer(props.meta.kode, props.meta.barn)
 
-  let layer = Tangram.leafletLayer(first ? def : _def)
-  first = false
+  let layer = Tangram.leafletLayer(def)
   return layer
 }
 

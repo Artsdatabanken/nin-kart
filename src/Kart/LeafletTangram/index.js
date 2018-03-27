@@ -23,13 +23,15 @@ class LeafletTangram extends React.Component {
       inertia: true,
       minZoom: 4,
     }
-    this.map = L.map(this.mapEl, options)
-    this.map.setView(
+    let map = L.map(this.mapEl, options)
+    map.setView(
       [this.props.latitude, this.props.longitude],
       this.props.zoom * 1.8
     )
 
-    L.control.zoom({ position: 'bottomright' }).addTo(this.map)
+    L.control.zoom({ position: 'bottomright' }).addTo(map)
+    L.DomUtil.addClass(map._container, 'crosshair-cursor-enabled')
+    this.map = map
   }
 
   componentWillReceiveProps(nextProps) {
@@ -37,16 +39,17 @@ class LeafletTangram extends React.Component {
     this.updateMap(nextProps)
   }
 
+  onClick = e => {}
   updateMap(props) {
     if (this.layer) this.map.removeLayer(this.layer)
-    this.layer = createLeafletLayer(props)
+    this.layer = createLeafletLayer(props, this.props.onClick)
     this.map.addLayer(this.layer)
   }
 
   render() {
     return (
       <div
-        style={{ zIndex: 0 }}
+        style={{ zIndex: 0, cursor: 'default' }}
         ref={ref => {
           this.mapEl = ref
         }}
