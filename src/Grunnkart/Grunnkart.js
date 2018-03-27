@@ -4,14 +4,6 @@ import MainDrawer from './MainDrawer'
 import { FloatingActionButton } from 'material-ui'
 import KatalogIkon from 'material-ui/svg-icons/communication/import-contacts'
 import { Link } from 'react-router-dom'
-import {
-  defaultMapStyle,
-  darkMapStyle,
-  vintageMapStyle,
-  satelliteStyle,
-  NiN,
-  NiNHover,
-} from '../Kart/Mapbox/MapStyle'
 import { withRouter } from 'react-router'
 import VenstreVinduContainer from '../VenstreVinduContainer'
 import Kart from '../Kart'
@@ -19,7 +11,7 @@ import backend from '../backend'
 
 type State = {
   language: Array<string>,
-  baseMapStyle: Object,
+  baseMapStyle: string,
   mapStyle: string,
   showMainDrawer: boolean,
   pointProperties: Object,
@@ -40,7 +32,7 @@ class Grunnkart extends React.Component<Props, State> {
     super(props)
     this.state = {
       language: ['nb', 'la'],
-      baseMapStyle: defaultMapStyle,
+      baseMapStyle: 'aNiceDefault',
       mapStyle: '',
       showMainDrawer: false,
       pointProperties: {},
@@ -53,41 +45,9 @@ class Grunnkart extends React.Component<Props, State> {
   }
 
   handleChangeBaseMap = type => {
-    let newStyle = defaultMapStyle
-    switch (type) {
-      case 'dark': {
-        newStyle = darkMapStyle
-        break
-      }
-      case 'vintage': {
-        newStyle = vintageMapStyle
-        break
-      }
-      case 'satellite': {
-        newStyle = satelliteStyle
-        break
-      }
-      default: {
-        break
-      }
-    }
-    this.setState(
-      {
-        baseMapStyle: newStyle,
-      },
-      () => {
-        this.addCustomLayers()
-      }
-    )
-  }
-
-  addCustomLayers() {
-    const layers = this.state.baseMapStyle
-      .get('layers')
-      .push(NiN)
-      .push(NiNHover)
+    console.log(type)
     this.setState({
-      mapStyle: this.state.baseMapStyle.set('layers', layers),
+      baseMapStyle: type,
     })
   }
 
@@ -131,7 +91,7 @@ class Grunnkart extends React.Component<Props, State> {
         this.redirectTo(newUrl)
         return
       }
-      this.setState({ meta: data ? data : '' })
+      this.setState({ meta: data })
     })
   }
   handleUpdateLayerProp = (kode, key, value) => {

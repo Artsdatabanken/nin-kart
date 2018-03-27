@@ -4,6 +4,8 @@ import { muiTheme } from 'storybook-addon-material-ui'
 import { MemoryRouter } from 'react-router-dom'
 import Grunnkart from './Grunnkart'
 
+jest.mock('../Kart/LeafletTangram', () => 'tangram')
+
 storiesOf('Grunnkart', module)
   .addDecorator(muiTheme())
   .add('Rot', () => {

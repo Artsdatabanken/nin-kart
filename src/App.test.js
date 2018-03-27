@@ -1,12 +1,9 @@
 import React from 'react'
-//import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer'
 import App from './App'
 import backend from './backend'
-import Omrader from './Naturområdedetaljer/Omrader'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import ShallowRenderer from 'react-test-renderer/shallow'
-import localStorageHelper from './localStorageHelper'
+
+jest.mock('./Kart', () => 'tangram')
 
 const dummyNatureArea = {
   uniqueId: {

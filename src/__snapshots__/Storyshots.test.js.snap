@@ -211,7 +211,7 @@ exports[`Storyshots App Bar down into tree 1`] = `
                 </div>
                 <input
                   disabled={false}
-                  id="6"
+                  id="5"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -655,7 +655,7 @@ exports[`Storyshots App Bar root 1`] = `
                 </div>
                 <input
                   disabled={false}
-                  id="5"
+                  id="4"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -1531,96 +1531,68 @@ exports[`Storyshots Grunnkart Rot 1`] = `
           }
         >
           <div>
-            <div
-              style={
+            <tangram
+              aktivKode=""
+              bearing={0}
+              history={
                 Object {
-                  "cursor": "-webkit-grab",
-                  "height": 768,
-                  "position": "relative",
-                  "width": 1024,
+                  "action": "POP",
+                  "block": [Function],
+                  "canGo": [Function],
+                  "createHref": [Function],
+                  "entries": Array [
+                    Object {
+                      "hash": "",
+                      "key": "h318i9",
+                      "pathname": "/",
+                      "search": "",
+                      "state": undefined,
+                    },
+                  ],
+                  "go": [Function],
+                  "goBack": [Function],
+                  "goForward": [Function],
+                  "index": 0,
+                  "length": 1,
+                  "listen": [Function],
+                  "location": Object {
+                    "hash": "",
+                    "key": "h318i9",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  },
+                  "push": [Function],
+                  "replace": [Function],
                 }
               }
-            >
-              <div
-                style={
-                  Object {
-                    "cursor": "default",
-                    "height": 768,
-                    "position": "relative",
-                    "width": 1024,
-                  }
+              latitude={65.4}
+              location={
+                Object {
+                  "hash": "",
+                  "key": "h318i9",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
                 }
-              >
-                <div
-                  className={undefined}
-                  style={
-                    Object {
-                      "cursor": "default",
-                      "height": 768,
-                      "visibility": "visible",
-                      "width": 1024,
-                    }
-                  }
-                />
-                <div
-                  className="overlays"
-                  style={
-                    Object {
-                      "height": 768,
-                      "left": 0,
-                      "overflow": "hidden",
-                      "position": "absolute",
-                      "top": 0,
-                      "width": 1024,
-                    }
-                  }
-                >
-                  <div
-                    className="nav"
-                    style={
-                      Object {
-                        "bottom": 30,
-                        "padding": "10px",
-                        "position": "absolute",
-                        "right": 0,
-                      }
-                    }
-                  >
-                    <div
-                      className="mapboxgl-ctrl mapboxgl-ctrl-group "
-                    >
-                      <button
-                        className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in"
-                        onClick={[Function]}
-                        title="Zoom In"
-                        type="button"
-                      />
-                      <button
-                        className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out"
-                        onClick={[Function]}
-                        title="Zoom Out"
-                        type="button"
-                      />
-                      <button
-                        className="mapboxgl-ctrl-icon mapboxgl-ctrl-compass"
-                        onClick={[Function]}
-                        title="Reset North"
-                        type="button"
-                      >
-                        <span
-                          className="mapboxgl-ctrl-compass-arrow"
-                          style={
-                            Object {
-                              "transform": "rotate(0deg)",
-                            }
-                          }
-                        />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+              }
+              longitude={10.8}
+              match={
+                Object {
+                  "isExact": true,
+                  "params": Object {},
+                  "path": "/",
+                  "url": "/",
+                }
+              }
+              meta={Object {}}
+              onClick={[Function]}
+              onMapBoundsChange={[Function]}
+              opplystKode=""
+              pitch={0}
+              staticContext={undefined}
+              zoom={3}
+            />
             <div
               className={undefined}
               style={
@@ -2094,7 +2066,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                         </div>
                         <input
                           disabled={false}
-                          id="3"
+                          id="2"
                           onBlur={[Function]}
                           onChange={[Function]}
                           onFocus={[Function]}
@@ -2246,101 +2218,6 @@ exports[`Storyshots Grunnkart Rot 1`] = `
           }
         }
       />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Kart Mapbox default 1`] = `
-<div>
-  <div
-    style={
-      Object {
-        "cursor": "-webkit-grab",
-        "height": 768,
-        "position": "relative",
-        "width": 1024,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "cursor": "default",
-          "height": 768,
-          "position": "relative",
-          "width": 1024,
-        }
-      }
-    >
-      <div
-        className={undefined}
-        style={
-          Object {
-            "cursor": "default",
-            "height": 768,
-            "visibility": "visible",
-            "width": 1024,
-          }
-        }
-      />
-      <div
-        className="overlays"
-        style={
-          Object {
-            "height": 768,
-            "left": 0,
-            "overflow": "hidden",
-            "position": "absolute",
-            "top": 0,
-            "width": 1024,
-          }
-        }
-      >
-        <div
-          className="nav"
-          style={
-            Object {
-              "bottom": 30,
-              "padding": "10px",
-              "position": "absolute",
-              "right": 0,
-            }
-          }
-        >
-          <div
-            className="mapboxgl-ctrl mapboxgl-ctrl-group "
-          >
-            <button
-              className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in"
-              onClick={[Function]}
-              title="Zoom In"
-              type="button"
-            />
-            <button
-              className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out"
-              onClick={[Function]}
-              title="Zoom Out"
-              type="button"
-            />
-            <button
-              className="mapboxgl-ctrl-icon mapboxgl-ctrl-compass"
-              onClick={[Function]}
-              title="Reset North"
-              type="button"
-            >
-              <span
-                className="mapboxgl-ctrl-compass-arrow"
-                style={
-                  Object {
-                    "transform": "rotate(0deg)",
-                  }
-                }
-              />
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -7251,7 +7128,7 @@ exports[`Storyshots SearchBox default 1`] = `
           </div>
           <input
             disabled={false}
-            id="4"
+            id="3"
             onBlur={[Function]}
             onChange={[Function]}
             onFocus={[Function]}
@@ -8540,7 +8417,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                     </div>
                     <input
                       disabled={false}
-                      id="7"
+                      id="6"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
