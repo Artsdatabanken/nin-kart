@@ -13371,14 +13371,106 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
           }
         >
           <div>
+<<<<<<< HEAD
             <span
               style={
+||||||| merged common ancestors
+            <tangram
+              aktivKode=""
+              bearing={0}
+              history={
                 Object {
+                  "action": "POP",
+                  "block": [Function],
+                  "canGo": [Function],
+                  "createHref": [Function],
+                  "entries": Array [
+                    Object {
+                      "hash": "",
+                      "key": "h318i9",
+                      "pathname": "/",
+                      "search": "",
+                      "state": undefined,
+                    },
+                  ],
+                  "go": [Function],
+                  "goBack": [Function],
+                  "goForward": [Function],
+                  "index": 0,
+                  "length": 1,
+                  "listen": [Function],
+                  "location": Object {
+                    "hash": "",
+                    "key": "h318i9",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  },
+                  "push": [Function],
+                  "replace": [Function],
+                }
+              }
+              latitude={65.4}
+              location={
+=======
+            <tangram
+              aktivKode=""
+              bearing={0}
+              history={
+                Object {
+                  "action": "POP",
+                  "block": [Function],
+                  "canGo": [Function],
+                  "createHref": [Function],
+                  "entries": Array [
+                    Object {
+                      "hash": "",
+                      "key": "v31f1p",
+                      "pathname": "/",
+                      "search": "",
+                      "state": undefined,
+                    },
+                  ],
+                  "go": [Function],
+                  "goBack": [Function],
+                  "goForward": [Function],
+                  "index": 0,
+                  "length": 1,
+                  "listen": [Function],
+                  "location": Object {
+                    "hash": "",
+                    "key": "v31f1p",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  },
+                  "push": [Function],
+                  "replace": [Function],
+                }
+              }
+              latitude={65.4}
+              location={
+>>>>>>> snapshots
+                Object {
+<<<<<<< HEAD
                   "color": undefined,
                   "float": "left",
                   "fontWeight": 600,
                   "paddingLeft": "2px",
                   "paddingRight": "4px",
+||||||| merged common ancestors
+                  "hash": "",
+                  "key": "h318i9",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+=======
+                  "hash": "",
+                  "key": "v31f1p",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+>>>>>>> snapshots
                 }
               }
               title="NE"

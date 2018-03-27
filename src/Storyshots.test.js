@@ -22,6 +22,5 @@ var localStorageMock = (function() {
   }
 })()
 
-Object.defineProperty(window, 'localStorage', { value: localStorageMock })
-
 initStoryshots()
+global.localStorage = localStorageMock

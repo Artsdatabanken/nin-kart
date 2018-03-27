@@ -1,5 +1,12 @@
 import localStorageHelper from './localStorageHelper'
 
+const localStorageMock = {
+  getItem: jest.fn(),
+  setItem: jest.fn(),
+  clear: jest.fn(),
+}
+global.localStorage = localStorageMock
+
 const dummyMeta = {
   farge: '#B0BB0B',
   barn: { A: { farge: '#fff' } },
