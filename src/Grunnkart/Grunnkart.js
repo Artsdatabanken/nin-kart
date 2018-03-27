@@ -174,7 +174,6 @@ class Grunnkart extends React.Component<Props, State> {
           opplystKode={this.state.opplystKode}
           onMapBoundsChange={this.handleMapBoundsChange}
           meta={this.state.meta}
-          bbox={this.state.bbox}
         />
 
         <MainDrawer
