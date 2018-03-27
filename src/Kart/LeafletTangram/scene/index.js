@@ -173,7 +173,7 @@ const _def = {
   showDebug: false,
 }
 
-let first = true
+let first = false
 
 function createLeafletLayer(props) {
   console.log(props)

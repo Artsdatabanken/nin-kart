@@ -25,21 +25,6 @@ class LeafletTangram extends React.Component {
       keyboard: true,
     }
     this.map = L.map(this.mapEl, options)
-    this.layer = createLeafletLayer(this.props)
-    this.layer.on('init', function() {
-      if (true)
-        this.scene
-          .queryFeatures({
-            //            filter: { $layer: 'transit', kind: 'subway' },
-            group_by: 'BS_6SE',
-          })
-          .then(results => {
-            console.log(Object.keys(results))
-          })
-      this.layer.scene.updateConfig()
-      //      this.layer.scene.rebuildGeometry()
-    })
-    this.map.addLayer(this.layer)
     this.map.setView(
       [this.props.latitude, this.props.longitude],
       this.props.zoom * 1.8
@@ -56,11 +41,11 @@ class LeafletTangram extends React.Component {
     const la = createLeafletLayer(props)
     console.log('la', la)
 
-    if (this.layer.scene.initialized) {
-      if (this.layer) this.map.removeLayer(this.layer)
-      this.map.addLayer(la)
-      this.layer = la
-    }
+    //    if (this.layer.scene.initialized) {
+    if (this.layer) this.map.removeLayer(this.layer)
+    this.map.addLayer(la)
+    this.layer = la
+    //  }
     return
     //    this.layer.scene = makeScene(props)
     console.log('initialized', this.layer.scene.initialized)
