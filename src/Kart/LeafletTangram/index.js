@@ -1,7 +1,7 @@
 import React from 'react'
 import L from 'leaflet'
 //import Tangram from 'tangram'
-import { createLeafletLayer } from './scene'
+import { createLeafletLayer, makeScene } from './scene'
 // -- WEBPACK: Load styles --
 import 'leaflet/dist/leaflet.css'
 import './styles.css'
@@ -18,15 +18,28 @@ L.Icon.Default.mergeOptions({
 
 class LeafletTangram extends React.Component {
   componentDidMount() {
-    const options = { zoomControl: false }
+    const options = {
+      zoomControl: false,
+      inertia: true,
+      minZoom: 4,
+      keyboard: true,
+    }
     this.map = L.map(this.mapEl, options)
-    this.map.on('tangramloaded', e => {
-      this.tangramLayer = e.tangramLayer
-      this.scene = this.tangramLayer.scene
-      this.updateMap(this.props)
+    this.layer = createLeafletLayer(this.props)
+    this.layer.on('init', function() {
+      if (true)
+        this.scene
+          .queryFeatures({
+            //            filter: { $layer: 'transit', kind: 'subway' },
+            group_by: 'BS_6SE',
+          })
+          .then(results => {
+            console.log(Object.keys(results))
+          })
+      this.layer.scene.updateConfig()
+      //      this.layer.scene.rebuildGeometry()
     })
-    //    this.layer = createLayer(this.props)
-    //    this.layer.addTo(this.map)
+    this.map.addLayer(this.layer)
     this.map.setView(
       [this.props.latitude, this.props.longitude],
       this.props.zoom * 1.8
@@ -34,17 +47,40 @@ class LeafletTangram extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if (this.props.meta === nextProps.meta) return
     this.updateMap(nextProps)
   }
 
   updateMap(props) {
-    if (this.layer) this.map.removeLayer(this.layer)
-    this.layer = createLeafletLayer(props)
-    this.map.addLayer(this.layer)
-    //    this.layer.addTo(this.map)
+    //    if (this.layer) this.map.removeLayer(this.layer)
+    const la = createLeafletLayer(props)
+    console.log('la', la)
+
+    if (this.layer.scene.initialized) {
+      if (this.layer) this.map.removeLayer(this.layer)
+      this.map.addLayer(la)
+      this.layer = la
+    }
+    return
+    //    this.layer.scene = makeScene(props)
+    console.log('initialized', this.layer.scene.initialized)
+    this.layer.scene.config_source.layers = la.scene.config_source.layers
+    this.layer.scene = la.scene
+    //    this.layer.scene.config = la.scene.config
+    console.log('updateConfig', la.scene.config)
+    //    if (this.layer.scene.initialized) this.layer.scene.rebuild()
+    if (this.layer.scene.initialized) {
+      console.warn('updateConfig!!!!!')
+      // this.layer.scene.rebuild()
+      //      this.layer.scene.updateConfig()
+    }
   }
 
+  componentWillUpdate() {}
+
   render() {
+    if (this.layer) console.log('initialized', this.layer.scene.initialized)
+    if (this.layer) console.log('render', this.layer.scene)
     return (
       <div
         style={{ zIndex: 0 }}
