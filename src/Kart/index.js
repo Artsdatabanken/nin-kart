@@ -1,8 +1,8 @@
 // @flow
-import React from 'react';
-import { withRouter } from 'react-router';
-import Tangram from './LeafletTangram';
->>>>>>> eject!
+//import Mapbox from './Mapbox'
+import React from 'react'
+import { withRouter } from 'react-router'
+import Tangram from './LeafletTangram'
 
 type State = {}
 

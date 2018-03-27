@@ -24,6 +24,7 @@ class LeafletTangram extends React.Component {
       inertia: true,
       minZoom: 4,
     }
+<<<<<<< HEAD
     let map = L.map(this.mapEl, options)
     map.on('dragstart', function(e) {
       if (e.hard) {
@@ -54,6 +55,13 @@ class LeafletTangram extends React.Component {
       }
     })
     map.setView(
+||||||| merged common ancestors
+    this.map = L.map(this.mapEl, options)
+    this.map.setView(
+=======
+    let map = L.map(this.mapEl, options)
+    map.setView(
+>>>>>>> fix map onclick
       [this.props.latitude, this.props.longitude],
       this.props.zoom * 1.8
     )
@@ -68,6 +76,7 @@ class LeafletTangram extends React.Component {
     this.updateMap(nextProps)
   }
 
+<<<<<<< HEAD
   removeMarker() {
     if (!this.marker) return
     this.map.removeLayer(this.marker)
@@ -417,9 +426,13 @@ class LeafletTangram extends React.Component {
     this.updateMap(nextProps)
   }
 
+||||||| merged common ancestors
+=======
+  onClick = e => {}
+>>>>>>> fix map onclick
   updateMap(props) {
     if (this.layer) this.map.removeLayer(this.layer)
-    this.layer = createLeafletLayer(props)
+    this.layer = createLeafletLayer(props, this.props.onClick)
     this.map.addLayer(this.layer)
     //    this.layer.addTo(this.map)
   }
@@ -427,7 +440,7 @@ class LeafletTangram extends React.Component {
   render() {
     return (
       <div
-        style={{ zIndex: 0 }}
+        style={{ zIndex: 0, cursor: 'default' }}
         ref={ref => {
           this.mapEl = ref
         }}
