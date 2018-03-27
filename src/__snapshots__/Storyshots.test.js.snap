@@ -75,7 +75,137 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                 }
               }
             >
+<<<<<<< HEAD
               Mine kartlag
+||||||| merged common ancestors
+              <div
+                className={undefined}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "cursor": "auto",
+                    "display": "inline-block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "height": 48,
+                    "lineHeight": "24px",
+                    "muiPrepared": true,
+                    "position": "relative",
+                    "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "bottom": 12,
+                      "color": "hsl(0, 0%, 75%)",
+                      "fontSize": "15px",
+                      "muiPrepared": true,
+                      "opacity": 1,
+                      "position": "absolute",
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    }
+                  }
+                >
+                  Økologisk grunnkart
+                </div>
+                <input
+                  disabled={false}
+                  id="6"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  style={
+                    Object {
+                      "WebkitOpacity": 1,
+                      "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+                      "appearance": "textfield",
+                      "backgroundColor": "rgba(0,0,0,0)",
+                      "border": "none",
+                      "color": "black",
+                      "cursor": "inherit",
+                      "font": "inherit",
+                      "fontSize": "15px",
+                      "height": "100%",
+                      "muiPrepared": true,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "relative",
+                      "width": "100%",
+                    }
+                  }
+                  type="text"
+                  value={undefined}
+                />
+              </div>
+=======
+              <div
+                className={undefined}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "cursor": "auto",
+                    "display": "inline-block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "height": 48,
+                    "lineHeight": "24px",
+                    "muiPrepared": true,
+                    "position": "relative",
+                    "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "bottom": 12,
+                      "color": "hsl(0, 0%, 75%)",
+                      "fontSize": "15px",
+                      "muiPrepared": true,
+                      "opacity": 1,
+                      "position": "absolute",
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    }
+                  }
+                >
+                  Økologisk grunnkart
+                </div>
+                <input
+                  disabled={false}
+                  id="5"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  style={
+                    Object {
+                      "WebkitOpacity": 1,
+                      "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+                      "appearance": "textfield",
+                      "backgroundColor": "rgba(0,0,0,0)",
+                      "border": "none",
+                      "color": "black",
+                      "cursor": "inherit",
+                      "font": "inherit",
+                      "fontSize": "15px",
+                      "height": "100%",
+                      "muiPrepared": true,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "relative",
+                      "width": "100%",
+                    }
+                  }
+                  type="text"
+                  value={undefined}
+                />
+              </div>
+>>>>>>> Fjern mapbox
             </div>
             <hr
               style={
@@ -422,6 +552,7 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                   onTouchEnd={[Function]}
                   onTouchStart={[Function]}
                 >
+<<<<<<< HEAD
                   <div
                     style={
                       Object {
@@ -433,6 +564,61 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                         "paddingTop": 20,
                         "position": "relative",
                       }
+||||||| merged common ancestors
+                  Økologisk grunnkart
+                </div>
+                <input
+                  disabled={false}
+                  id="5"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  style={
+                    Object {
+                      "WebkitOpacity": 1,
+                      "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+                      "appearance": "textfield",
+                      "backgroundColor": "rgba(0,0,0,0)",
+                      "border": "none",
+                      "color": "black",
+                      "cursor": "inherit",
+                      "font": "inherit",
+                      "fontSize": "15px",
+                      "height": "100%",
+                      "muiPrepared": true,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "relative",
+                      "width": "100%",
+=======
+                  Økologisk grunnkart
+                </div>
+                <input
+                  disabled={false}
+                  id="4"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  style={
+                    Object {
+                      "WebkitOpacity": 1,
+                      "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+                      "appearance": "textfield",
+                      "backgroundColor": "rgba(0,0,0,0)",
+                      "border": "none",
+                      "color": "black",
+                      "cursor": "inherit",
+                      "font": "inherit",
+                      "fontSize": "15px",
+                      "height": "100%",
+                      "muiPrepared": true,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "relative",
+                      "width": "100%",
+>>>>>>> Fjern mapbox
                     }
                   >
                     <div
@@ -11275,6 +11461,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
+<<<<<<< HEAD
                 <div>
                   <span
                     disabled={false}
@@ -11495,6 +11682,475 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
+||||||| merged common ancestors
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      className="Resizer vertical "
+      onClick={[Function]}
+      onDoubleClick={[Function]}
+      onMouseDown={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "cursor": "col-resize",
+          "marginRight": -6,
+          "width": 10,
+          "zIndex": 1,
+        }
+      }
+    />
+    <div
+      className="Pane vertical Pane2  "
+      style={
+        Object {
+          "flex": "none",
+          "outline": "none",
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        className="sb-addon-material-ui-theme_sidebar"
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Grunnkart Rot 1`] = `
+<div
+  style={
+    Object {
+      "background": "#ffffff",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    className="SplitPane  vertical "
+    style={
+      Object {
+        "MozUserSelect": "text",
+        "WebkitUserSelect": "text",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "row",
+        "height": "100%",
+        "left": 0,
+        "msUserSelect": "text",
+        "outline": "none",
+        "overflow": "hidden",
+        "position": "absolute",
+        "right": 0,
+        "userSelect": "text",
+      }
+    }
+  >
+    <div
+      className="Pane vertical Pane1  "
+      style={
+        Object {
+          "flex": 1,
+          "outline": "none",
+          "overflowX": "auto",
+          "overflowY": "auto",
+          "position": "relative",
+        }
+      }
+    >
+      <div>
+        <div
+          style={
+            Object {
+              "padding": 8,
+            }
+          }
+        >
+          <div>
+            <div
+              style={
+                Object {
+                  "cursor": "-webkit-grab",
+                  "height": 768,
+                  "position": "relative",
+                  "width": 1024,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "cursor": "default",
+                    "height": 768,
+                    "position": "relative",
+                    "width": 1024,
+                  }
+                }
+              >
+                <div
+                  className={undefined}
+                  style={
+                    Object {
+                      "cursor": "default",
+                      "height": 768,
+                      "visibility": "visible",
+                      "width": 1024,
+                    }
+                  }
+                />
+                <div
+                  className="overlays"
+                  style={
+                    Object {
+                      "height": 768,
+                      "left": 0,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "top": 0,
+                      "width": 1024,
+                    }
+                  }
+                >
+                  <div
+                    className="nav"
+                    style={
+                      Object {
+                        "bottom": 30,
+                        "padding": "10px",
+                        "position": "absolute",
+                        "right": 0,
+                      }
+                    }
+                  >
+                    <div
+                      className="mapboxgl-ctrl mapboxgl-ctrl-group "
+                    >
+                      <button
+                        className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in"
+                        onClick={[Function]}
+                        title="Zoom In"
+                        type="button"
+                      />
+                      <button
+                        className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out"
+                        onClick={[Function]}
+                        title="Zoom Out"
+                        type="button"
+                      />
+                      <button
+                        className="mapboxgl-ctrl-icon mapboxgl-ctrl-compass"
+                        onClick={[Function]}
+                        title="Reset North"
+                        type="button"
+                      >
+                        <span
+                          className="mapboxgl-ctrl-compass-arrow"
+                          style={
+                            Object {
+                              "transform": "rotate(0deg)",
+                            }
+                          }
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className={undefined}
+              style={
+                Object {
+                  "paddingLeft": 32,
+                }
+              }
+            >
+              <div
+                className={undefined}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "backgroundColor": "rgba(0, 0, 0, 0.54)",
+                    "height": "100%",
+                    "left": "-100%",
+                    "muiPrepared": true,
+                    "opacity": 0,
+                    "pointerEvents": "none",
+                    "position": "fixed",
+                    "top": 0,
+                    "transform": "translateZ(0)",
+                    "transition": "left 0ms cubic-bezier(0.23, 1, 0.32, 1) 400ms, opacity 400ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "width": "100%",
+                    "willChange": "opacity",
+                    "zIndex": 1200,
+                  }
+                }
+              />
+              <div
+                className={undefined}
+                style={
+                  Object {
+                    "WebkitOverflowScrolling": "touch",
+                    "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+                    "backgroundColor": "#ffffff",
+                    "borderRadius": "0px",
+                    "boxShadow": "0 3px 10px rgba(0, 0, 0, 0.16),
+                           0 3px 10px rgba(0, 0, 0, 0.23)",
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "fontFamily": "Roboto, sans-serif",
+                    "height": "100%",
+                    "left": 0,
+                    "muiPrepared": true,
+                    "overflow": "auto",
+                    "position": "fixed",
+                    "top": 0,
+                    "transform": "translate(-266px, 0)",
+                    "transition": "transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "width": 256,
+                    "zIndex": 1300,
+                  }
+                }
+              >
+=======
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      className="Resizer vertical "
+      onClick={[Function]}
+      onDoubleClick={[Function]}
+      onMouseDown={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "cursor": "col-resize",
+          "marginRight": -6,
+          "width": 10,
+          "zIndex": 1,
+        }
+      }
+    />
+    <div
+      className="Pane vertical Pane2  "
+      style={
+        Object {
+          "flex": "none",
+          "outline": "none",
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        className="sb-addon-material-ui-theme_sidebar"
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Grunnkart Rot 1`] = `
+<div
+  style={
+    Object {
+      "background": "#ffffff",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    className="SplitPane  vertical "
+    style={
+      Object {
+        "MozUserSelect": "text",
+        "WebkitUserSelect": "text",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "row",
+        "height": "100%",
+        "left": 0,
+        "msUserSelect": "text",
+        "outline": "none",
+        "overflow": "hidden",
+        "position": "absolute",
+        "right": 0,
+        "userSelect": "text",
+      }
+    }
+  >
+    <div
+      className="Pane vertical Pane1  "
+      style={
+        Object {
+          "flex": 1,
+          "outline": "none",
+          "overflowX": "auto",
+          "overflowY": "auto",
+          "position": "relative",
+        }
+      }
+    >
+      <div>
+        <div
+          style={
+            Object {
+              "padding": 8,
+            }
+          }
+        >
+          <div>
+            <tangram
+              aktivKode=""
+              bearing={0}
+              history={
+                Object {
+                  "action": "POP",
+                  "block": [Function],
+                  "canGo": [Function],
+                  "createHref": [Function],
+                  "entries": Array [
+                    Object {
+                      "hash": "",
+                      "key": "h318i9",
+                      "pathname": "/",
+                      "search": "",
+                      "state": undefined,
+                    },
+                  ],
+                  "go": [Function],
+                  "goBack": [Function],
+                  "goForward": [Function],
+                  "index": 0,
+                  "length": 1,
+                  "listen": [Function],
+                  "location": Object {
+                    "hash": "",
+                    "key": "h318i9",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  },
+                  "push": [Function],
+                  "replace": [Function],
+                }
+              }
+              latitude={65.4}
+              location={
+                Object {
+                  "hash": "",
+                  "key": "h318i9",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                }
+              }
+              longitude={10.8}
+              match={
+                Object {
+                  "isExact": true,
+                  "params": Object {},
+                  "path": "/",
+                  "url": "/",
+                }
+              }
+              meta={Object {}}
+              onClick={[Function]}
+              onMapBoundsChange={[Function]}
+              opplystKode=""
+              pitch={0}
+              staticContext={undefined}
+              zoom={3}
+            />
+            <div
+              className={undefined}
+              style={
+                Object {
+                  "paddingLeft": 32,
+                }
+              }
+            >
+              <div
+                className={undefined}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "backgroundColor": "rgba(0, 0, 0, 0.54)",
+                    "height": "100%",
+                    "left": "-100%",
+                    "muiPrepared": true,
+                    "opacity": 0,
+                    "pointerEvents": "none",
+                    "position": "fixed",
+                    "top": 0,
+                    "transform": "translateZ(0)",
+                    "transition": "left 0ms cubic-bezier(0.23, 1, 0.32, 1) 400ms, opacity 400ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "width": "100%",
+                    "willChange": "opacity",
+                    "zIndex": 1200,
+                  }
+                }
+              />
+              <div
+                className={undefined}
+                style={
+                  Object {
+                    "WebkitOverflowScrolling": "touch",
+                    "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+                    "backgroundColor": "#ffffff",
+                    "borderRadius": "0px",
+                    "boxShadow": "0 3px 10px rgba(0, 0, 0, 0.16),
+                           0 3px 10px rgba(0, 0, 0, 0.23)",
+                    "boxSizing": "border-box",
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "fontFamily": "Roboto, sans-serif",
+                    "height": "100%",
+                    "left": 0,
+                    "muiPrepared": true,
+                    "overflow": "auto",
+                    "position": "fixed",
+                    "top": 0,
+                    "transform": "translate(-266px, 0)",
+                    "transition": "transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "width": 256,
+                    "zIndex": 1300,
+                  }
+                }
+              >
+>>>>>>> Fjern mapbox
                 <div>
                   <span
                     disabled={false}
@@ -12507,7 +13163,25 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
                         <div
+||||||| merged common ancestors
+                        <input
+                          disabled={false}
+                          id="3"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+=======
+                        <input
+                          disabled={false}
+                          id="2"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+>>>>>>> Fjern mapbox
                           style={
                             Object {
                               "muiPrepared": true,
@@ -12642,6 +13316,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
 </div>
 `;
 
+<<<<<<< HEAD
 exports[`Storyshots Kodetagg Rødliste 1`] = `
 <div
   style={
@@ -13244,6 +13919,198 @@ exports[`Storyshots MainDrawer default 1`] = `
         </div>
       </div>
     </div>
+||||||| merged common ancestors
+exports[`Storyshots Kart Mapbox default 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "cursor": "-webkit-grab",
+        "height": 768,
+        "position": "relative",
+        "width": 1024,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "cursor": "default",
+          "height": 768,
+          "position": "relative",
+          "width": 1024,
+        }
+      }
+    >
+      <div
+        className={undefined}
+        style={
+          Object {
+            "cursor": "default",
+            "height": 768,
+            "visibility": "visible",
+            "width": 1024,
+          }
+        }
+      />
+      <div
+        className="overlays"
+        style={
+          Object {
+            "height": 768,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "width": 1024,
+          }
+        }
+      >
+        <div
+          className="nav"
+          style={
+            Object {
+              "bottom": 30,
+              "padding": "10px",
+              "position": "absolute",
+              "right": 0,
+            }
+          }
+        >
+          <div
+            className="mapboxgl-ctrl mapboxgl-ctrl-group "
+          >
+            <button
+              className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in"
+              onClick={[Function]}
+              title="Zoom In"
+              type="button"
+            />
+            <button
+              className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out"
+              onClick={[Function]}
+              title="Zoom Out"
+              type="button"
+            />
+            <button
+              className="mapboxgl-ctrl-icon mapboxgl-ctrl-compass"
+              onClick={[Function]}
+              title="Reset North"
+              type="button"
+            >
+              <span
+                className="mapboxgl-ctrl-compass-arrow"
+                style={
+                  Object {
+                    "transform": "rotate(0deg)",
+                  }
+                }
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots KodeContainer default 1`] = `
+<div
+  style={
+    Object {
+      "background": "#ffffff",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    className="SplitPane  vertical "
+    style={
+      Object {
+        "MozUserSelect": "text",
+        "WebkitUserSelect": "text",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "row",
+        "height": "100%",
+        "left": 0,
+        "msUserSelect": "text",
+        "outline": "none",
+        "overflow": "hidden",
+        "position": "absolute",
+        "right": 0,
+        "userSelect": "text",
+      }
+    }
+  >
+    <div
+      className="Pane vertical Pane1  "
+      style={
+        Object {
+          "flex": 1,
+          "outline": "none",
+          "overflowX": "auto",
+          "overflowY": "auto",
+          "position": "relative",
+        }
+      }
+    >
+      <div />
+    </div>
+=======
+exports[`Storyshots KodeContainer default 1`] = `
+<div
+  style={
+    Object {
+      "background": "#ffffff",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    className="SplitPane  vertical "
+    style={
+      Object {
+        "MozUserSelect": "text",
+        "WebkitUserSelect": "text",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "row",
+        "height": "100%",
+        "left": 0,
+        "msUserSelect": "text",
+        "outline": "none",
+        "overflow": "hidden",
+        "position": "absolute",
+        "right": 0,
+        "userSelect": "text",
+      }
+    }
+  >
+    <div
+      className="Pane vertical Pane1  "
+      style={
+        Object {
+          "flex": 1,
+          "outline": "none",
+          "overflowX": "auto",
+          "overflowY": "auto",
+          "position": "relative",
+        }
+      }
+    >
+      <div />
+    </div>
+>>>>>>> Fjern mapbox
     <span
       className="Resizer vertical "
       onClick={[Function]}
@@ -20587,6 +21454,7 @@ exports[`Storyshots Tweaks root 1`] = `
                       "position": "relative",
                     }
                   }
+<<<<<<< HEAD
                 >
                   Etiketter med høydeangivelse
                 </div>
@@ -20602,9 +21470,244 @@ exports[`Storyshots Tweaks root 1`] = `
                     "right": 16,
                   }
                 }
+<<<<<<< HEAD
               >
                 50m
               </div>
+||||||| merged common ancestors
+              }
+              tabIndex={0}
+              type="button"
+            >
+=======
+||||||| merged common ancestors
+            }
+        />
+    </div>
+</div>,
+]
+`;
+
+exports[`Storyshots SearchBox default 1`] = `
+<div
+  style={
+    Object {
+      "background": "#ffffff",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    className="SplitPane  vertical "
+    style={
+      Object {
+        "MozUserSelect": "text",
+        "WebkitUserSelect": "text",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "row",
+        "height": "100%",
+        "left": 0,
+        "msUserSelect": "text",
+        "outline": "none",
+        "overflow": "hidden",
+        "position": "absolute",
+        "right": 0,
+        "userSelect": "text",
+      }
+    }
+  >
+    <div
+      className="Pane vertical Pane1  "
+      style={
+        Object {
+          "flex": 1,
+          "outline": "none",
+          "overflowX": "auto",
+          "overflowY": "auto",
+          "position": "relative",
+        }
+      }
+    >
+      <div>
+        <div
+          className={undefined}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "cursor": "auto",
+              "display": "inline-block",
+              "fontFamily": "Roboto, sans-serif",
+              "fontSize": 16,
+              "height": 48,
+              "lineHeight": "24px",
+              "muiPrepared": true,
+              "position": "relative",
+              "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "bottom": 12,
+                "color": "hsl(0, 0%, 75%)",
+                "fontSize": "15px",
+                "muiPrepared": true,
+                "opacity": 1,
+                "position": "absolute",
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              }
+            }
+          >
+            Økologisk grunnkart
+          </div>
+          <input
+            disabled={false}
+            id="4"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            style={
+              Object {
+                "WebkitOpacity": 1,
+                "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+                "appearance": "textfield",
+                "backgroundColor": "rgba(0,0,0,0)",
+                "border": "none",
+                "color": "black",
+                "cursor": "inherit",
+                "font": "inherit",
+                "fontSize": "15px",
+                "height": "100%",
+                "muiPrepared": true,
+                "outline": "none",
+                "padding": 0,
+                "position": "relative",
+                "width": "100%",
+=======
+            }
+        />
+    </div>
+</div>,
+]
+`;
+
+exports[`Storyshots SearchBox default 1`] = `
+<div
+  style={
+    Object {
+      "background": "#ffffff",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    className="SplitPane  vertical "
+    style={
+      Object {
+        "MozUserSelect": "text",
+        "WebkitUserSelect": "text",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "row",
+        "height": "100%",
+        "left": 0,
+        "msUserSelect": "text",
+        "outline": "none",
+        "overflow": "hidden",
+        "position": "absolute",
+        "right": 0,
+        "userSelect": "text",
+      }
+    }
+  >
+    <div
+      className="Pane vertical Pane1  "
+      style={
+        Object {
+          "flex": 1,
+          "outline": "none",
+          "overflowX": "auto",
+          "overflowY": "auto",
+          "position": "relative",
+        }
+      }
+    >
+      <div>
+        <div
+          className={undefined}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "cursor": "auto",
+              "display": "inline-block",
+              "fontFamily": "Roboto, sans-serif",
+              "fontSize": 16,
+              "height": 48,
+              "lineHeight": "24px",
+              "muiPrepared": true,
+              "position": "relative",
+              "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "bottom": 12,
+                "color": "hsl(0, 0%, 75%)",
+                "fontSize": "15px",
+                "muiPrepared": true,
+                "opacity": 1,
+                "position": "absolute",
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              }
+            }
+          >
+            Økologisk grunnkart
+          </div>
+          <input
+            disabled={false}
+            id="3"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            style={
+              Object {
+                "WebkitOpacity": 1,
+                "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+                "appearance": "textfield",
+                "backgroundColor": "rgba(0,0,0,0)",
+                "border": "none",
+                "color": "black",
+                "cursor": "inherit",
+                "font": "inherit",
+                "fontSize": "15px",
+                "height": "100%",
+                "muiPrepared": true,
+                "outline": "none",
+                "padding": 0,
+                "position": "relative",
+                "width": "100%",
+>>>>>>> Fjern mapbox
+              }
+              tabIndex={0}
+              type="button"
+            >
+>>>>>>> Fjern mapbox
               <div
                 style={
                   Object {
@@ -22845,6 +23948,12 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                   <div>
                     <span
                       disabled={false}
+<<<<<<< HEAD
+||||||| merged common ancestors
+                      id="7"
+=======
+                      id="6"
+>>>>>>> Fjern mapbox
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}

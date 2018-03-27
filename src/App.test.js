@@ -1,7 +1,9 @@
 import React from 'react'
-import ShallowRenderer from 'react-test-renderer/shallow'
 import App from './App'
 import backend from './backend'
+import ShallowRenderer from 'react-test-renderer/shallow'
+
+jest.mock('./Kart', () => 'tangram')
 
 const dummyNatureArea = {
   uniqueId: {
