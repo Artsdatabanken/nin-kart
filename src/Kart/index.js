@@ -16,13 +16,11 @@ type Props = {
   bearing: Number,
   aktivKode: String,
   opplystKode: String,
-  onMapBoundsChange: Function,
   meta: Object,
 }
 
 class Kart extends React.Component<Props, State> {
-  onClick = e => {
-    const latlng = e.leaflet_event.latlng
+  onClick = latlng => {
     this.props.history.push(`/punkt/${latlng.lng},${latlng.lat}`)
   }
 

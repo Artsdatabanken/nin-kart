@@ -173,12 +173,12 @@ const _def = {
   showDebug: false,
 }
 
-function createLeafletLayer(props, onClick) {
+function createLeafletLayer(props: Object, onClick: Function) {
   let def = {
     scene: makeScene(props),
     events: {
       hover: function(selection) {
-        console.log('Hover!', selection)
+        //        console.log('Hover!', selection)
       },
       click: onClick,
     },

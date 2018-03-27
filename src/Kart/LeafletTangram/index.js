@@ -24,6 +24,34 @@ class LeafletTangram extends React.Component {
       minZoom: 4,
     }
     let map = L.map(this.mapEl, options)
+    map.on('dragstart', function(e) {
+      if (e.hard) {
+        // moved by bounds
+        console.log('start move by bounds', e)
+      } else {
+        // moved by drag/keyboard
+        console.log('start move by user', e)
+      }
+    })
+    map.on('dragend', e => {
+      if (e.hard) {
+        // moved by bounds
+        console.log('end  move by bounds', e)
+      } else {
+        // moved by drag/keyboard
+        this.removeMarker()
+        this.props.onMapBoundsChange(map.getBounds())
+      }
+    })
+    map.on('zoomend', e => {
+      if (e.hard) {
+        // moved by bounds
+        console.log('end  move by bounds', e)
+      } else {
+        // moved by drag/keyboard
+        this.props.onMapBoundsChange(map.getBounds())
+      }
+    })
     map.setView(
       [this.props.latitude, this.props.longitude],
       this.props.zoom * 1.8
@@ -39,10 +67,21 @@ class LeafletTangram extends React.Component {
     this.updateMap(nextProps)
   }
 
-  onClick = e => {}
+  removeMarker() {
+    if (!this.marker) return
+    this.map.removeLayer(this.marker)
+  }
+
+  onClick = e => {
+    const latlng = e.leaflet_event.latlng
+    this.removeMarker()
+    this.marker = L.marker([latlng.lat, latlng.lng])
+    this.map.addLayer(this.marker)
+    this.props.onClick(latlng)
+  }
   updateMap(props) {
     if (this.layer) this.map.removeLayer(this.layer)
-    this.layer = createLeafletLayer(props, this.props.onClick)
+    this.layer = createLeafletLayer(props, this.onClick)
     this.map.addLayer(this.layer)
   }
 

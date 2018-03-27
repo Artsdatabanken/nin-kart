@@ -58,9 +58,9 @@ class Backend {
 
   static async hentKode(kode: string, bounds: Object) {
     let bbox = ''
-    if (bounds && bounds._sw && bounds._ne) {
-      var ll = wgs84ToUtm33(bounds._sw.lng, bounds._sw.lat)
-      var ur = wgs84ToUtm33(bounds._ne.lng, bounds._ne.lat)
+    if (bounds) {
+      var ll = wgs84ToUtm33(bounds._southWest.lng, bounds._southWest.lat)
+      var ur = wgs84ToUtm33(bounds._northEast.lng, bounds._northEast.lat)
       bbox = `&bbox=${ll.x},${ll.y},${ur.x},${ur.y}`
     }
     kode = kode || ''

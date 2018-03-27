@@ -91,29 +91,11 @@ class Grunnkart extends React.Component<Props, State> {
     })
   }
 
-  debounce(func, wait, immediate) {
-    var timeout
-    return function() {
-      var context = this,
-        args = arguments
-      var later = function() {
-        timeout = null
-        if (!immediate) func.apply(context, args)
-      }
-      var callNow = immediate && !timeout
-      clearTimeout(timeout)
-      timeout = setTimeout(later, wait)
-      if (callNow) func.apply(context, args)
-    }
-  }
-
-  handleMapBoundsChange = this.debounce(function(bounds) {
+  handleMapBoundsChange = bounds => {
+    console.log(bounds)
     this.setState({ mapBounds: bounds })
-  }, 50)
-
-  handleFitBounds = this.debounce(function(bbox) {
-    this.setState({ bbox: bbox })
-  }, 50)
+  }
+  handleFitBounds = bbox => this.setState({ bbox: bbox })
 
   setLocalId(localId) {
     this.setState({ localId: localId })
