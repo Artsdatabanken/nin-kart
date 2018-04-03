@@ -58,7 +58,9 @@ class Grunnkart extends React.Component<Props, State> {
   handleFitBounds = bbox => this.setState({ bbox: bbox })
 
   setLocalId(localId) {
-    this.setState({ localId: localId })
+    if (localId !== this.state.localId) {
+      this.setState({ localId: localId })
+    }
   }
 
   componentDidMount() {

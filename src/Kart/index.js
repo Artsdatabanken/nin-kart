@@ -1,7 +1,7 @@
 // @flow
-import Tangram from './LeafletTangram'
 import React from 'react'
 import { withRouter } from 'react-router'
+import Tangram from './LeafletTangram'
 
 type State = {}
 
