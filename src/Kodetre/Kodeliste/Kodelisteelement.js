@@ -79,7 +79,7 @@ class Kodelisteelement extends React.Component {
 
   render() {
     const item = this.props
-    const { meta, kode, avatarUtenRamme } = this.props
+    const { meta, kode, avatarUtenRamme, areal } = this.props
     const tittel = meta.tittel
       ? Object.keys(meta.tittel).length > 1
         ? meta.tittel[item.language[0]] +
@@ -94,6 +94,7 @@ class Kodelisteelement extends React.Component {
     return (
       <React.Fragment>
         <ListItem
+          innerDivStyle={{ backgroundColor: areal ? '' : '#DDDDDD' }}
           key={item.kode}
           onClick={() =>
             this.props.onGoToCode(meta && meta.sti ? meta.sti : kode)
