@@ -3428,6 +3428,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       <div
                         style={
                           Object {
+                            "backgroundColor": "",
                             "marginLeft": 0,
                             "muiPrepared": true,
                             "paddingBottom": 16,
@@ -3655,6 +3656,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       <div
                         style={
                           Object {
+                            "backgroundColor": "",
                             "marginLeft": 0,
                             "muiPrepared": true,
                             "paddingBottom": 16,
@@ -3882,6 +3884,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       <div
                         style={
                           Object {
+                            "backgroundColor": "",
                             "marginLeft": 0,
                             "muiPrepared": true,
                             "paddingBottom": 16,
@@ -4109,6 +4112,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       <div
                         style={
                           Object {
+                            "backgroundColor": "",
                             "marginLeft": 0,
                             "muiPrepared": true,
                             "paddingBottom": 16,

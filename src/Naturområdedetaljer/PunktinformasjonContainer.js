@@ -42,7 +42,7 @@ class PunktinformasjonContainer extends Component {
 
     this.goFetchPointInfo(lng, lat)
 
-    if (localId === 'null')
+    if (!localId)
       this.setState({
         natureAreaFacts: null,
         localId: null,
@@ -56,12 +56,20 @@ class PunktinformasjonContainer extends Component {
       this.setState({
         metadata: metadata,
       })
-      backend.getNatureAreaByLocalId(id).then(data => {
-        data.metadata = metadata
-        this.setState({
-          natureAreaFacts: this.getNatureAreaFacts(data),
-        })
-      })
+      backend.getNatureAreaByLocalId(id).then(
+        data => {
+          data.metadata = metadata
+          this.setState({
+            natureAreaFacts: this.getNatureAreaFacts(data),
+          })
+        },
+        function(reason) {
+          // failed
+          this.setState({
+            natureAreaFacts: null,
+          })
+        }
+      )
     })
   }
 

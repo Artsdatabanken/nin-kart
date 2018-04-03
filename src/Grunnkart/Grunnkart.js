@@ -116,7 +116,9 @@ class Grunnkart extends React.Component<Props, State> {
   }, 50)
 
   setLocalId(localId) {
-    this.setState({ localId: localId })
+    if (localId !== this.state.localId) {
+      this.setState({ localId: localId })
+    }
   }
 
   componentDidMount() {
