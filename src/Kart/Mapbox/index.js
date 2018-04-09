@@ -9,7 +9,6 @@ import hentLag from './style-lookup'
 import backend from '../../backend'
 import DeckGL, { GridLayer /*, ScatterplotLayer */ } from 'deck.gl'
 import Color from 'color'
-import 'mapbox-gl/dist/mapbox-gl.css'
 import localStorageHelper from '../../localStorageHelper'
 
 const LIGHT_SETTINGS = {
@@ -238,6 +237,11 @@ class Mapbox extends Component {
     }
   }
 
+  onTaxonHover = data => {
+    if (data && data.object && data.object.elevationValue)
+      console.log('Antall: ' + data.object.elevationValue)
+  }
+
   createTaxonLayer(data) {
     return new GridLayer({
       id: 'taxonLayer',
@@ -259,6 +263,10 @@ class Mapbox extends Component {
         var count = 0
         points.forEach(i => (count += i[2]))
         return count
+      },
+      pickable: true,
+      onHover: data => {
+        this.onTaxonHover(data)
       },
     })
   }
