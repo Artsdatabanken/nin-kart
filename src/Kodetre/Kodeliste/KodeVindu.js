@@ -108,7 +108,7 @@ class KodeVindu extends React.Component {
             ikon={<NaturomraderIcon />}
           />
           <Fact
-            tittel="Truede arter observert"
+            tittel="Arter observert"
             verdi={props.data.antallArter}
             synlig={props.data.antallArter}
             ikon={<ArterIcon />}
