@@ -58,6 +58,7 @@ const Kodeliste = ({
             onMouseLeave={onMouseLeave}
             onUpdateLayerProp={onUpdateLayerProp}
             onShowColorpicker={() => onShowColorpicker(kode)}
+            showColor={onShowColorpicker}
             language={language}
             avatarUtenRamme={avatarUtenRamme}
           />

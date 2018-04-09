@@ -94,6 +94,7 @@ class Mapbox extends Component {
       return
     }
     map.removeLayer('aktivt')
+    map.removeLayer('opplyst') // fjern opplyst/hover-lag også når man endrer aktivt
     //console.log('fjernet aktivt')
 
     if (aktivKode) {
