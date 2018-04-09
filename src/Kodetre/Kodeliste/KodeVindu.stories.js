@@ -52,47 +52,47 @@ var api = {
 const meta = {
   barn: {
     NA_H1: {
-      farge: '#abdda4',
+      farge: '#f46d43',
       kode: 'NA_H1',
+      sti: 'NA/H/1',
       tittel: { nb: 'Havvannmasser' },
-      url: 'NA/H/1',
     },
     NA_H2: {
-      farge: '#f46d43',
+      farge: '#fdae61',
       kode: 'NA_H2',
+      sti: 'NA/H/2',
       tittel: {
         nb: 'Sirkulerende vannmasser i fysisk avgrensede saltvannsforekomster',
       },
-      url: 'NA/H/2',
     },
     NA_H3: {
       farge: '#fee08b',
       kode: 'NA_H3',
+      sti: 'NA/H/3',
       tittel: {
         nb:
           'Ikke-sirkulerende marine vannmasser i fysisk avgrensede saltvannsforekomster',
       },
-      url: 'NA/H/3',
     },
     NA_H4: {
-      farge: '#abdda4',
+      farge: '#e6f598',
       kode: 'NA_H4',
+      sti: 'NA/H/4',
       tittel: { nb: 'Sterkt endrete marine vannmasser' },
-      url: 'NA/H/4',
     },
   },
-  infoUrl: 'https://www.artsdatabanken.no/NiN2.0/F1',
   bbox: [[5.176, 58.107], [28.857, 70.144]],
-  farge: '#e6f598',
+  farge: '#d53e4f',
+  infoUrl: 'https://www.artsdatabanken.no/NiN2.0/H',
   ingress:
     'Marine vannmasser omfatter økosystemer av flytende, svevende og svømmende organismer i de frie vannmassene i saltvann (saltholdighet > 0,5 ‰)\n',
   kode: 'NA_H',
   overordnet: [
-    { kode: 'NA', tittel: { nb: 'Natursystem' }, url: 'NA' },
-    { kode: '~', tittel: { nb: 'Økologisk grunnkart' }, url: '' },
+    { kode: 'NA', sti: 'NA', tittel: { nb: 'Natursystem' } },
+    { kode: '~', sti: '', tittel: { nb: 'Økologisk grunnkart' } },
   ],
+  sti: 'NA/H',
   tittel: { nb: 'Marine vannmasser' },
-  url: 'NA/H',
 }
 
 storiesOf('KodeVindu', module)
