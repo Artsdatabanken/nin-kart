@@ -105,7 +105,7 @@ storiesOf('KodeVindu', module)
       onMouseEnter={action('mouseEnter')}
       onMouseLeave={action('mouseLeave')}
       onClick={action('click')}
-      onShowColorpicker={action('showColorpicker')}
+      onFitBounds={action('onFitBounds')}
       language={['nb', 'la']}
     />
   ))
