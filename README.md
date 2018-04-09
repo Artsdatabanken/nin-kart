@@ -8,6 +8,15 @@
 
 # Ratatouille
 
-[![Screenshot](doc/screenshot.png "ratatouille screenshot")](https://grunnkart.firebaseapp.com)
+[![Screenshot](doc/screenshot.png 'ratatouille screenshot')](https://grunnkart.firebaseapp.com)
 
 * [Demo](https://grunnkart.firebaseapp.com)
+
+## Relaterte prosjekter
+
+* [REST API](https://github.com/Artsdatabanken/ogapi)
+* [Metadataflyt](https://github.com/artsdatabanken/kverna)
+* [GIS Dataflyt](https://github.com/artsdatabanken/grunnkart-dataflyt)
+* [Geografisk API](https://github.com/Artsdatabanken/rasterQ) og [deployment](https://github.com/Artsdatabanken/rasterUploader) av dette
+* Verktøy for [rødlisting av naturtyper](https://github.com/Artsdatabanken/natty)
+* [Media dataflyt](https://github.com/Artsdatabanken/ografika)
