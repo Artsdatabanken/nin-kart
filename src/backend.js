@@ -46,10 +46,6 @@ class Backend {
     })
   }
 
-  static async getToken() {
-    return this.getPromise(`https://www.norgeskart.no/ws/gkt.py`)
-  }
-
   static async søkKode(q: string) {
     return this.getPromise(
       `https://ninmemapi.artsdatabanken.no/v2/Koder?q=${q}`
@@ -105,32 +101,6 @@ class Backend {
     return this.getPromise(
       `https://test.artsdatabanken.no/nin_master/Api/data/GetMetadataByNatureAreaLocalId/${localId}`
     )
-  }
-
-  static async natureAreaSummary(filter: string) {
-    let url = `https://adb-nin-api.azurewebsites.net/api/NatureAreaSummary`
-    return this.postFilterPromise(url, filter)
-  }
-
-  static async countsByRedlistTheme(filter: string) {
-    let url = `https://adb-nin-api.azurewebsites.net/api/CountsByRedlistTheme`
-    return this.postFilterPromise(url, filter)
-  }
-
-  static async countsByRedlistCategory(filter: string) {
-    let url = `https://adb-nin-api.azurewebsites.net/api/CountsByRedlistCategory`
-    return this.postFilterPromise(url, filter)
-  }
-
-  static async getAreaSummary(filter: string) {
-    let url = `https://adb-nin-api.azurewebsites.net/api/AreaSummary`
-    return this.postFilterPromise(url, filter)
-  }
-
-  static async getNatureAreaSummary(filter: string) {
-    //let url = `http://it-webadbtest01.it.ntnu.no/nin_master/Api/data/GetNatureAreaSummary/`;
-    let url = `https://adb-nin-api.azurewebsites.net/api/NatureAreaSummary`
-    return this.postFilterPromise(url, filter)
   }
 
   static NatureLevelNames = Object.freeze({

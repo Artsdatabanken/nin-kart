@@ -94,7 +94,7 @@ class Mapbox extends Component {
       return
     }
     map.removeLayer('aktivt')
-    console.log('fjernet aktivt')
+    //console.log('fjernet aktivt')
 
     if (aktivKode) {
       let taxonMatch = aktivKode.match(/AR\/(.*)/)
@@ -106,11 +106,14 @@ class Mapbox extends Component {
         aktivtLag.id = 'aktivt'
 
         aktivtLag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
-        aktivtLag.paint['fill-color'] = Color('#000000')
-          .alpha(0.1)
-          .rgbaString()
+        let customColor = localStorageHelper.getFargeKode(
+          aktivKode,
+          this.props.meta
+        )
+        let fillColor = customColor ? Color(customColor) : Color('#ff2222')
+        aktivtLag.paint['fill-color'] = fillColor.alpha(0.7).rgbaString()
 
-        console.log('add aktivt: ', aktivKode)
+        //console.log('add aktivt: ', aktivKode)
         map.addLayer(aktivtLag)
       }
     }
@@ -120,7 +123,7 @@ class Mapbox extends Component {
     let map = this.map.getMap()
     if (!map || !map.isStyleLoaded()) return
     map.removeLayer('opplyst')
-    console.log('fjernet opplyst')
+    //console.log('fjernet opplyst')
 
     if (opplystKode) {
       if (
@@ -144,7 +147,7 @@ class Mapbox extends Component {
         const outlineColor = fillColor.darken(0.5)
         opplystLag.paint['fill-outline-color'] = outlineColor.rgbaString()
         opplystLag.id = 'opplyst'
-        console.log('add opplyst: ', opplystKode)
+        //console.log('add opplyst: ', opplystKode)
         map.addLayer(opplystLag)
       }
     }
