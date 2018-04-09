@@ -106,9 +106,12 @@ class Mapbox extends Component {
         aktivtLag.id = 'aktivt'
 
         aktivtLag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
-        aktivtLag.paint['fill-color'] = Color('#000000')
-          .alpha(0.1)
-          .rgbaString()
+        let customColor = localStorageHelper.getFargeKode(
+          aktivKode,
+          this.props.meta
+        )
+        let fillColor = customColor ? Color(customColor) : Color('#ff2222')
+        aktivtLag.paint['fill-color'] = fillColor.alpha(0.7).rgbaString()
 
         console.log('add aktivt: ', aktivKode)
         map.addLayer(aktivtLag)
