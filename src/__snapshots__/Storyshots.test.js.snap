@@ -207,7 +207,7 @@ exports[`Storyshots App Bar down into tree 1`] = `
                     }
                   }
                 >
-                  NiN-kart
+                  Natur i Norge
                 </div>
                 <input
                   disabled={false}
@@ -651,7 +651,7 @@ exports[`Storyshots App Bar root 1`] = `
                     }
                   }
                 >
-                  NiN-kart
+                  Natur i Norge
                 </div>
                 <input
                   disabled={false}
@@ -2527,7 +2527,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                             }
                           }
                         >
-                          NiN-kart
+                          Natur i Norge
                         </div>
                         <input
                           disabled={false}
@@ -2984,7 +2984,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               <div
                                 onClick={[Function]}
                               >
-                                NiN-kart
+                                Natur i Norge
                               </div>
                             </span>
                             <div
@@ -4428,7 +4428,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                               <div
                                 onClick={[Function]}
                               >
-                                NiN-kart
+                                Natur i Norge
                               </div>
                             </span>
                             <div
@@ -11681,7 +11681,7 @@ exports[`Storyshots SearchBox default 1`] = `
               }
             }
           >
-            NiN-kart
+            Natur i Norge
           </div>
           <input
             disabled={false}
@@ -12970,7 +12970,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                         }
                       }
                     >
-                      NiN-kart
+                      Natur i Norge
                     </div>
                     <input
                       disabled={false}

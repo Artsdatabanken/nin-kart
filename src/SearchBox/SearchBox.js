@@ -24,7 +24,7 @@ export default class SearchBox extends Component {
         onKeyDown={this.onKeyDown}
         id={getNext()}
         value={query}
-        hintText={tittel ? tittel : 'NiN-kart'}
+        hintText={tittel ? tittel : 'Natur i Norge'}
         onFocus={this.handleFocus}
         onChange={this.props.onQueryChange}
         fullWidth={true}
