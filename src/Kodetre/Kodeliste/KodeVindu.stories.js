@@ -234,9 +234,6 @@ storiesOf('KodeVindu', module)
       language={['nb', 'la']}
     />
   ))
-
-storiesOf('KodeVindu2', module)
-  .addDecorator(muiTheme())
   .add('relasjon', () => (
     <KodeVindu
       data={api2}
