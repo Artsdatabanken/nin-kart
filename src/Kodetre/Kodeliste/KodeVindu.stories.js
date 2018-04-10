@@ -256,7 +256,7 @@ storiesOf('KodeVindu', module)
 
 storiesOf('KodeVindu2', module)
   .addDecorator(muiTheme())
-  .add('default', () => (
+  .add('relasjon', () => (
     <KodeVindu
       data={api2}
       meta={meta2}
