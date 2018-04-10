@@ -10,42 +10,23 @@ var api = {
   antallArter: 11,
   antallNaturomrader: 247,
   areal: 21740243.9505291,
-  størsteAreal: 2174024,
   forelder: { kode: 'NA', navn: 'Naturområder' },
   barn: [
-    {
-      kode: 'NA_H1',
-      navn: 'Havvannmasser',
-      antallArter: 11,
-      antallNaturomrader: 0,
-      areal: 413230,
-      harBarn: true,
-    },
+    { kode: 'NA_H1', navn: 'Havvannmasser', antallArter: 11, harBarn: true },
     {
       kode: 'NA_H2',
       navn: 'Sirkulerende vannmasser i fysisk avgrensede saltvannsforekomster',
       antallArter: 10,
       antallNaturomrader: 247,
-      areal: 2174024,
+      areal: 21740243.9505291,
       harBarn: true,
     },
     {
       kode: 'NA_H3',
       navn:
         'Ikke-sirkulerende marine vannmasser i fysisk avgrensede saltvannsforekomster',
-      antallArter: 0,
-      antallNaturomrader: 0,
-      areal: 1414410,
-      harBarn: false,
     },
-    {
-      kode: 'NA_H4',
-      navn: 'Sterkt endrete marine vannmasser',
-      antallArter: 0,
-      antallNaturomrader: 0,
-      areal: 1666444,
-      harBarn: false,
-    },
+    { kode: 'NA_H4', navn: 'Sterkt endrete marine vannmasser' },
   ],
 }
 

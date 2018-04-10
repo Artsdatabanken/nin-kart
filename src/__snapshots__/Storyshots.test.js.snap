@@ -3428,7 +3428,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       <div
                         style={
                           Object {
-                            "backgroundColor": "",
+                            "backgroundColor": "#DDDDDD",
                             "marginLeft": 0,
                             "muiPrepared": true,
                             "paddingBottom": 16,
@@ -3579,10 +3579,10 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "float": "left",
                                   "height": 4,
                                   "marginTop": 4,
-                                  "width": "19.007609851593173%",
+                                  "width": "0%",
                                 }
                               }
-                              title="areal: 413 km²"
+                              title="areal: null"
                             />
                           </div>
                           <div
@@ -3807,10 +3807,10 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "float": "left",
                                   "height": 4,
                                   "marginTop": 4,
-                                  "width": "100%",
+                                  "width": "2174024395.05291%",
                                 }
                               }
-                              title="areal: 2' km²"
+                              title="areal: 22' km²"
                             />
                           </div>
                           <div
@@ -3884,7 +3884,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       <div
                         style={
                           Object {
-                            "backgroundColor": "",
+                            "backgroundColor": "#DDDDDD",
                             "marginLeft": 0,
                             "muiPrepared": true,
                             "paddingBottom": 16,
@@ -4035,10 +4035,10 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "float": "left",
                                   "height": 4,
                                   "marginTop": 4,
-                                  "width": "65.059539361111%",
+                                  "width": "0%",
                                 }
                               }
-                              title="areal: 1' km²"
+                              title="areal: null"
                             />
                           </div>
                           <div
@@ -4112,7 +4112,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       <div
                         style={
                           Object {
-                            "backgroundColor": "",
+                            "backgroundColor": "#DDDDDD",
                             "marginLeft": 0,
                             "muiPrepared": true,
                             "paddingBottom": 16,
@@ -4263,10 +4263,10 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "float": "left",
                                   "height": 4,
                                   "marginTop": 4,
-                                  "width": "76.65251165580509%",
+                                  "width": "0%",
                                 }
                               }
-                              title="areal: 2' km²"
+                              title="areal: null"
                             />
                           </div>
                           <div
