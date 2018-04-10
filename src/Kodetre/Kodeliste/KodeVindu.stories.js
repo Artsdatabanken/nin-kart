@@ -89,7 +89,7 @@ const meta = {
   kode: 'NA_H',
   overordnet: [
     { kode: 'NA', sti: 'NA', tittel: { nb: 'Natursystem' } },
-    { kode: '~', sti: '', tittel: { nb: 'Økologisk grunnkart' } },
+    { kode: '~', sti: '', tittel: { nb: 'Ratatouille' } },
   ],
   sti: 'NA/H',
   tittel: { nb: 'Marine vannmasser' },
@@ -124,7 +124,7 @@ const meta2 = {
   overordnet: [
     { kode: 'NA_M', sti: 'NA/M', tittel: { nb: 'Saltvannsbunnsystemer' } },
     { kode: 'NA', sti: 'NA', tittel: { nb: 'Natursystem' } },
-    { kode: '~', sti: '', tittel: { nb: 'Økologisk grunnkart' } },
+    { kode: '~', sti: '', tittel: { nb: 'Ratatouille' } },
   ],
   prosedyrekategori: {
     kode: 'NA_HT-PK2',

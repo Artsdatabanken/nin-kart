@@ -207,7 +207,7 @@ exports[`Storyshots App Bar down into tree 1`] = `
                     }
                   }
                 >
-                  Økologisk grunnkart
+                  Ratatouille
                 </div>
                 <input
                   disabled={false}
@@ -651,7 +651,7 @@ exports[`Storyshots App Bar root 1`] = `
                     }
                   }
                 >
-                  Økologisk grunnkart
+                  Ratatouille
                 </div>
                 <input
                   disabled={false}
@@ -2555,7 +2555,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                             }
                           }
                         >
-                          Økologisk grunnkart
+                          Ratatouille
                         </div>
                         <input
                           disabled={false}
@@ -3107,7 +3107,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               <div
                                 onClick={[Function]}
                               >
-                                Økologisk grunnkart
+                                Ratatouille
                               </div>
                             </span>
                             <div
@@ -4551,7 +4551,7 @@ exports[`Storyshots KodeVindu2 relasjon 1`] = `
                               <div
                                 onClick={[Function]}
                               >
-                                Økologisk grunnkart
+                                Ratatouille
                               </div>
                             </span>
                             <div
@@ -11804,7 +11804,7 @@ exports[`Storyshots SearchBox default 1`] = `
               }
             }
           >
-            Økologisk grunnkart
+            Ratatouille
           </div>
           <input
             disabled={false}
@@ -13093,7 +13093,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                         }
                       }
                     >
-                      Økologisk grunnkart
+                      Ratatouille
                     </div>
                     <input
                       disabled={false}
