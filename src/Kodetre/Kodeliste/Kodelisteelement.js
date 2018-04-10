@@ -99,9 +99,11 @@ class Kodelisteelement extends React.Component {
           onClick={() =>
             this.props.onGoToCode(meta && meta.sti ? meta.sti : kode)
           }
-          onMouseEnter={() => this.props.onMouseEnter(kode)}
+          onMouseEnter={() =>
+            this.props.onMouseEnter && this.props.onMouseEnter(kode)
+          }
           onMouseLeave={() => {
-            this.props.onMouseLeave(kode)
+            this.props.onMouseLeave && this.props.onMouseLeave(kode)
           }}
           leftAvatar={
             <Bildeavatar utenRamme={avatarUtenRamme} kode={meta.kode} />
@@ -121,17 +123,25 @@ class Kodelisteelement extends React.Component {
             meta.undertittel
           )}
           rightAvatar={
-            <div
-              style={{ display: 'inline-flex', position: 'absolute', top: 16 }}
-            >
-              <PaintSwatch
-                color={this.getFargeKode()}
-                onClick={e => {
-                  e.stopPropagation()
-                  this.props.onShowColorpicker(meta.kode)
+            this.props.showColor ? (
+              <div
+                style={{
+                  display: 'inline-flex',
+                  position: 'absolute',
+                  top: 16,
                 }}
-              />
-            </div>
+              >
+                <PaintSwatch
+                  color={this.getFargeKode()}
+                  onClick={e => {
+                    e.stopPropagation()
+                    this.props.onShowColorpicker(meta.kode)
+                  }}
+                />
+              </div>
+            ) : (
+              <div />
+            )
           }
         />
         <div style={{ marginLeft: 56 }}>
