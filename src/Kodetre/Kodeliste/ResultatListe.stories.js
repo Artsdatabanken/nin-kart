@@ -90,8 +90,10 @@ const results2 = [
 storiesOf('Resultatliste', module).add('default', () => {
   return (
     <MuiThemeProvider>
-      <Resultatliste searchResults={results1} query="alk" />
-      <Resultatliste searchResults={results2} query="kjø" />
+      <div>
+        <Resultatliste searchResults={results1} query="alk" />
+        <Resultatliste searchResults={results2} query="kjø" />
+      </div>
     </MuiThemeProvider>
   )
 })
