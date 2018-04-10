@@ -32,19 +32,11 @@ var api = {
 
 const meta = {
   barn: {
-    NA_H1: {
-      farge: '#f46d43',
-      kode: 'NA_H1',
-      sti: 'NA/H/1',
-      tittel: { nb: 'Havvannmasser' },
-    },
-    NA_H2: {
-      farge: '#fdae61',
-      kode: 'NA_H2',
-      sti: 'NA/H/2',
-      tittel: {
-        nb: 'Sirkulerende vannmasser i fysisk avgrensede saltvannsforekomster',
-      },
+    NA_H4: {
+      farge: '#e6f598',
+      kode: 'NA_H4',
+      sti: 'NA/H/4',
+      tittel: { nb: 'Sterkt endrete marine vannmasser' },
     },
     NA_H3: {
       farge: '#fee08b',
@@ -55,11 +47,19 @@ const meta = {
           'Ikke-sirkulerende marine vannmasser i fysisk avgrensede saltvannsforekomster',
       },
     },
-    NA_H4: {
-      farge: '#e6f598',
-      kode: 'NA_H4',
-      sti: 'NA/H/4',
-      tittel: { nb: 'Sterkt endrete marine vannmasser' },
+    NA_H2: {
+      farge: '#fdae61',
+      kode: 'NA_H2',
+      sti: 'NA/H/2',
+      tittel: {
+        nb: 'Sirkulerende vannmasser i fysisk avgrensede saltvannsforekomster',
+      },
+    },
+    NA_H1: {
+      farge: '#f46d43',
+      kode: 'NA_H1',
+      sti: 'NA/H/1',
+      tittel: { nb: 'Havvannmasser' },
     },
   },
   bbox: [[5.176, 58.107], [28.857, 70.144]],
