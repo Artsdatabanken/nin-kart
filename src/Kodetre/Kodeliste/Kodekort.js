@@ -3,6 +3,7 @@ import { Card, CardActions, CardMedia, CardTitle } from 'material-ui'
 import { IconButton } from 'material-ui'
 import StarBorder from 'material-ui/svg-icons/toggle/star-border'
 import Star from 'material-ui/svg-icons/toggle/star'
+import Plus from 'material-ui/svg-icons/image/control-point'
 import Share from 'material-ui/svg-icons/social/share'
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import backend from '../../backend'
@@ -42,6 +43,13 @@ class Kodekort extends React.Component {
               onGoToCode={this.props.onGoToCode}
               onAddLayer={this.props.onAddLayer}
               toggleFavorite={this.toggleFavorite}
+              onAddSelected={this.props.onAddSelected}
+              nodeMeta={{
+                farge: this.props.farge,
+                kode: this.props.kode,
+                sti: this.props.sti,
+                tittel: this.props.tittel,
+              }}
               kode={this.props.kode}
               infoUrl={this.props.infoUrl}
               tittel={this.props.tittel[this.props.language[0]]}
@@ -76,8 +84,10 @@ const Tittelblokk = ({
   onGoToCode,
   onAddLayer,
   toggleFavorite,
+  onAddSelected,
   favorite,
   kode,
+  nodeMeta,
   infoUrl,
   tittel,
   overordnet,
@@ -115,6 +125,12 @@ const Tittelblokk = ({
         onClick={() => toggleFavorite(kode)}
       >
         {favorite ? <Star color="#eee" /> : <StarBorder color="#eee" />}
+      </IconButton>
+      <IconButton
+        style={{ float: 'right' }}
+        onClick={() => onAddSelected(nodeMeta)}
+      >
+        <Plus color="#eee" />
       </IconButton>
     </CardActions>
   </CardTitle>

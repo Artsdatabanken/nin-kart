@@ -21,7 +21,7 @@ class MainDrawer extends Component {
             />
           }
           primaryText={
-            <span style={{ fontSize: 20, fontWeight: 500 }}>Grunnkartet</span>
+            <span style={{ fontSize: 20, fontWeight: 500 }}>Natur i Norge</span>
           }
           rightIcon={
             <IconButton onClick={this.props.onToggleMainDrawer}>

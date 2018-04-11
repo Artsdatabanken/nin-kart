@@ -68,6 +68,7 @@ class KodeContainer extends React.Component<Props, State> {
         onMouseEnter={this.props.onMouseEnter}
         onMouseLeave={this.props.onMouseLeave}
         onFitBounds={this.props.onFitBounds}
+        onAddSelected={this.props.onAddSelected}
         language={this.props.language}
       />
     )
