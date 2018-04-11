@@ -51,6 +51,7 @@ class KodeVindu extends React.Component {
             <Kodekort
               {...props.meta}
               onGoToCode={props.onGoToCode}
+              onAddSelected={props.onAddSelected}
               data={props.data}
               language={props.language}
             />

@@ -16,9 +16,11 @@ import { withRouter } from 'react-router'
 import VenstreVinduContainer from '../VenstreVinduContainer'
 import Kart from '../Kart'
 import backend from '../backend'
+import ValgtListe from '../Kodetre/Kodeliste/ValgtListe'
 
 type State = {
   language: Array<string>,
+  valgteKoder: Array<string>,
   baseMapStyle: Object,
   mapStyle: string,
   showMainDrawer: boolean,
@@ -40,6 +42,7 @@ class Grunnkart extends React.Component<Props, State> {
     super(props)
     this.state = {
       language: ['nb', 'la'],
+      valgteKoder: [],
       baseMapStyle: defaultMapStyle,
       mapStyle: '',
       showMainDrawer: false,
@@ -114,6 +117,15 @@ class Grunnkart extends React.Component<Props, State> {
   handleFitBounds = this.debounce(function(bbox) {
     this.setState({ bbox: bbox })
   }, 50)
+
+  addSelected = props => {
+    let koder = this.state.valgteKoder.slice()
+    koder.push([props])
+    this.setState({
+      valgteKoder: koder,
+    })
+    console.log('addSelected:' + props.kode)
+  }
 
   setLocalId(localId) {
     if (localId !== this.state.localId) {
@@ -214,10 +226,32 @@ class Grunnkart extends React.Component<Props, State> {
               onMouseEnter={kode => this.setState({ opplystKode: kode })}
               onMouseLeave={kode => this.setState({ opplystKode: '' })}
               onFitBounds={bbox => this.handleFitBounds(bbox)}
+              onAddSelected={props => this.addSelected(props)}
               language={this.state.language}
               localId={this.state.localId}
               meta={this.state.meta}
               handleUpdateLayerProp={this.handleUpdateLayerProp}
+            />
+          </div>
+        )}
+        {this.state.valgteKoder.length > 0 && (
+          <div
+            style={{
+              backgroundColor: '#fff',
+              position: 'absolute',
+              right: 8,
+              top: 10,
+              width: 392,
+              zIndex: 2,
+            }}
+          >
+            <ValgtListe
+              title={`Valgte koder`}
+              koder={this.state.valgteKoder}
+              onGoToCode={kode => this.redirectTo(kode)}
+              onMouseEnter={kode => this.setState({ opplystKode: kode })}
+              onMouseLeave={() => this.setState({ opplystKode: '' })}
+              language={['nb', 'la']}
             />
           </div>
         )}
