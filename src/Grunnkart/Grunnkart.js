@@ -1,13 +1,14 @@
 // @flow
-import React from 'react'
-import MainDrawer from './MainDrawer'
 import { FloatingActionButton } from 'material-ui'
 import KatalogIkon from 'material-ui/svg-icons/communication/import-contacts'
-import { Link } from 'react-router-dom'
+import React from 'react'
 import { withRouter } from 'react-router'
-import VenstreVinduContainer from '../VenstreVinduContainer'
-import Kart from '../Kart'
+import { Link } from 'react-router-dom'
 import backend from '../backend'
+import Kart from '../Kart'
+import ValgtListe from '../Kodetre/Kodeliste/ValgtListe'
+import VenstreVinduContainer from '../VenstreVinduContainer'
+import MainDrawer from './MainDrawer'
 
 type State = {
   language: Array<string>,
@@ -56,6 +57,15 @@ class Grunnkart extends React.Component<Props, State> {
     this.setState({ mapBounds: bounds })
   }
   handleFitBounds = bbox => this.setState({ bbox: bbox })
+
+  addSelected = props => {
+    let koder = this.state.valgteKoder.slice()
+    koder.push([props])
+    this.setState({
+      valgteKoder: koder,
+    })
+    console.log('addSelected:' + props.kode)
+  }
 
   setLocalId(localId) {
     if (localId !== this.state.localId) {
@@ -153,10 +163,32 @@ class Grunnkart extends React.Component<Props, State> {
               onMouseEnter={kode => this.setState({ opplystKode: kode })}
               onMouseLeave={kode => this.setState({ opplystKode: '' })}
               onFitBounds={bbox => this.handleFitBounds(bbox)}
+              onAddSelected={props => this.addSelected(props)}
               language={this.state.language}
               localId={this.state.localId}
               meta={this.state.meta}
               handleUpdateLayerProp={this.handleUpdateLayerProp}
+            />
+          </div>
+        )}
+        {this.state.valgteKoder.length > 0 && (
+          <div
+            style={{
+              backgroundColor: '#fff',
+              position: 'absolute',
+              right: 8,
+              top: 10,
+              width: 392,
+              zIndex: 2,
+            }}
+          >
+            <ValgtListe
+              title={`Valgte koder`}
+              koder={this.state.valgteKoder}
+              onGoToCode={kode => this.redirectTo(kode)}
+              onMouseEnter={kode => this.setState({ opplystKode: kode })}
+              onMouseLeave={() => this.setState({ opplystKode: '' })}
+              language={['nb', 'la']}
             />
           </div>
         )}
