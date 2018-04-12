@@ -64,6 +64,13 @@ class Mapbox extends Component {
       this.fargeleggLag(nextProps)
     }
 
+    if (nextProps.valgteKoder !== this.props.valgteKoder) {
+      this.visValgteKoder(nextProps)
+    }
+    if (nextProps.fjernKode !== this.props.fjernKode) {
+      this.fjernKode(nextProps.fjernKode)
+    }
+
     if (nextProps.bbox && nextProps.bbox !== this.props.bbox) {
       this.fitBounds(nextProps.bbox)
     }
@@ -184,6 +191,41 @@ class Mapbox extends Component {
         }
         lag.id = 'legend' + kode
         console.log('add lag: ', kode)
+        map.addLayer(lag)
+      })
+    }
+  }
+
+  fjernKode(kode) {
+    let map = this.map.getMap()
+    if (!map) return
+    map.removeLayer(kode)
+  }
+
+  visValgteKoder(nextProps) {
+    let map = this.map.getMap()
+    if (!map) return
+
+    if (nextProps.valgteKoder) {
+      Object.keys(nextProps.valgteKoder).forEach(id => {
+        const item = nextProps.valgteKoder[id]
+        let lag = hentLag(map, item.kode)
+        if (!lag || !lag.paint) return
+        if (!lag.custom) {
+          let customColor = localStorageHelper.getFargeKode(
+            item.kode,
+            item || nextProps.meta
+          )
+
+          let fillColor = customColor
+            ? Color(customColor)
+            : Color(item.farge || '#ff2222')
+          lag.paint['fill-color'] = fillColor.alpha(0.7).rgbaString()
+          lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
+        }
+        let lagId = 'valgt' + item.kode
+        lag.id = lagId
+        console.log('la til valgt lag: ', item.kode)
         map.addLayer(lag)
       })
     }

@@ -42,6 +42,7 @@ class Grunnkart extends React.Component<Props, State> {
       mapBounds: {},
       opplystKode: '',
       bbox: {},
+      ekspandertKode: null,
     }
   }
 
@@ -60,11 +61,19 @@ class Grunnkart extends React.Component<Props, State> {
 
   addSelected = props => {
     let koder = this.state.valgteKoder.slice()
-    koder.push([props])
-    this.setState({
-      valgteKoder: koder,
+    let kodeFinnes = false
+    koder.forEach(barn => {
+      if (barn.kode === props.kode) {
+        kodeFinnes = true // finnes fra før
+      }
     })
-    console.log('addSelected:' + props.kode)
+    if (!kodeFinnes) {
+      koder.push(props)
+      this.setState({
+        valgteKoder: koder,
+      })
+      console.log('addSelected:' + props.kode)
+    }
   }
 
   setLocalId(localId) {
@@ -111,6 +120,36 @@ class Grunnkart extends React.Component<Props, State> {
     let layer = meta.barn[kode]
     layer[key] = value
     this.setState({ meta: meta })
+  }
+  handleUpdateSelectedLayerProp = (kode, key, value) => {
+    let meta = this.state.valgteKoder
+    meta.forEach(barn => {
+      if (barn.kode === kode) {
+        barn[key] = value
+      }
+    })
+    this.setState({ valgteKoder: meta })
+  }
+  handleRemoveSelectedLayer = kode => {
+    let meta = this.state.valgteKoder
+    let remove = -1
+    Object.keys(meta).forEach(id => {
+      if (meta[id].kode === kode) {
+        remove = id
+      }
+    })
+    if (remove >= 0) {
+      meta.splice(remove, 1)
+      this.setState({
+        valgteKoder: meta,
+        fjernKode: 'valgt' + kode,
+      })
+    }
+  }
+
+  handleShowColorpicker = kode => {
+    let nyKode = this.state.ekspandertKode === kode ? null : kode
+    this.setState({ ekspandertKode: nyKode })
   }
 
   render() {
@@ -188,6 +227,10 @@ class Grunnkart extends React.Component<Props, State> {
               onGoToCode={kode => this.redirectTo(kode)}
               onMouseEnter={kode => this.setState({ opplystKode: kode })}
               onMouseLeave={() => this.setState({ opplystKode: '' })}
+              onShowColorpicker={this.handleShowColorpicker}
+              onUpdateLayerProp={this.handleUpdateSelectedLayerProp}
+              onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+              ekspandertKode={this.state.ekspandertKode}
               language={['nb', 'la']}
             />
           </div>
