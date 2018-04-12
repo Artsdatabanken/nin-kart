@@ -7,6 +7,9 @@ const ValgtListe = ({
   subtitle,
   koder,
   onGoToCode,
+  onRemoveSelectedLayer,
+  ekspandertKode,
+  fjernKode,
   onMouseEnter,
   onMouseLeave,
   onShowColorpicker,
@@ -18,17 +21,19 @@ const ValgtListe = ({
     <React.Fragment>
       <Subheader>{title}</Subheader>
       {koder.map(item => {
-        const kode = item[0].kode
+        const kode = item.kode
         return (
           <Kodelisteelement
-            meta={item[0]}
+            meta={item}
+            erEkspandert={kode === ekspandertKode}
             kode={kode}
-            key={kode}
+            key={'valgt' + kode}
             onGoToCode={onGoToCode}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
+            onClose={kode => onRemoveSelectedLayer(kode)}
             onUpdateLayerProp={onUpdateLayerProp}
-            onShowColorpicker={() => onShowColorpicker(kode)}
+            onShowColorpicker={kode => onShowColorpicker(kode)}
             showColor={onShowColorpicker}
             language={language}
           />
