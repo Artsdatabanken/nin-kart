@@ -6,6 +6,7 @@ import PaintSwatch from './PaintSwatch'
 import ColorPicker from './ColorPicker'
 import Bildeavatar from './Bildeavatar'
 import muiThemeable from 'material-ui/styles/muiThemeable'
+import Close from 'material-ui/svg-icons/content/clear'
 
 class Kodelisteelement extends React.Component {
   setFargeKode(kode, farge) {
@@ -141,6 +142,19 @@ class Kodelisteelement extends React.Component {
               </div>
             ) : (
               <div />
+            )
+          }
+          rightIcon={
+            this.props.onClose && (
+              <div
+                onClick={e => {
+                  e.stopPropagation()
+                  this.props.onClose(item.kode)
+                }}
+                style={{ top: '-5px', right: '-16px' }}
+              >
+                <Close style={{ height: '14px', width: '14px' }} />
+              </div>
             )
           }
         />
