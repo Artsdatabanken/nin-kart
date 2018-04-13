@@ -209,24 +209,26 @@ class Mapbox extends Component {
     if (nextProps.valgteKoder) {
       Object.keys(nextProps.valgteKoder).forEach(id => {
         const item = nextProps.valgteKoder[id]
-        let lag = hentLag(map, item.kode)
-        if (!lag || !lag.paint) return
-        if (!lag.custom) {
-          let customColor = localStorageHelper.getFargeKode(
-            item.kode,
-            item || nextProps.meta
-          )
-
-          let fillColor = customColor
-            ? Color(customColor)
-            : Color(item.farge || '#ff2222')
-          lag.paint['fill-color'] = fillColor.alpha(0.7).rgbaString()
-          lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
-        }
         let lagId = 'valgt' + item.kode
-        lag.id = lagId
-        console.log('la til valgt lag: ', item.kode)
-        map.addLayer(lag)
+        if (!map.getLayer(lagId)) {
+          let lag = hentLag(map, item.kode)
+          if (!lag || !lag.paint) return
+          if (!lag.custom) {
+            let customColor = localStorageHelper.getFargeKode(
+              item.kode,
+              item || nextProps.meta
+            )
+
+            let fillColor = customColor
+              ? Color(customColor)
+              : Color(item.farge || '#ff2222')
+            lag.paint['fill-color'] = fillColor.alpha(0.7).rgbaString()
+            lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
+          }
+          lag.id = lagId
+          console.log('la til valgt lag: ', item.kode)
+          map.addLayer(lag)
+        }
       })
     }
   }
