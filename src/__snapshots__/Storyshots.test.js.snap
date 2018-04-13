@@ -2040,6 +2040,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                     }
                   }
                 >
+                  
                   <div
                     className="nav"
                     style={
@@ -2762,6 +2763,7 @@ exports[`Storyshots Kart Mapbox default 1`] = `
           }
         }
       >
+        
         <div
           className="nav"
           style={
