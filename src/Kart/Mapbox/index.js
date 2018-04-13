@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ReactMapGL, { Marker, NavigationControl } from 'react-map-gl'
+import ReactMapGL, { Marker, Popup, NavigationControl } from 'react-map-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import Place from 'material-ui/svg-icons/maps/place'
 import { withRouter } from 'react-router'
@@ -33,6 +33,11 @@ class Mapbox extends Component {
     this.state = {
       utbredelsesData: [],
       enableDeck: false,
+      popup: {
+        lat: 61.8,
+        lon: 9.8,
+        message: '',
+      },
       viewport: {
         width: window.innerWidth,
         height: window.innerHeight,
@@ -286,8 +291,22 @@ class Mapbox extends Component {
   }
 
   onTaxonHover = data => {
-    if (data && data.object && data.object.elevationValue)
-      console.log('Antall: ' + data.object.elevationValue)
+    if (data && data.object && data.object.elevationValue) {
+      this.setState({
+        popup: {
+          lon: data.object.position[0],
+          lat: data.object.position[1],
+          message: 'Antall: ' + data.object.elevationValue,
+        },
+      })
+    } else {
+      this.setState({
+        popup: {
+          message: '',
+        },
+      })
+    }
+    //console.log('Antall: ' + data.object.elevationValue)
   }
 
   createTaxonLayer(data) {
@@ -340,6 +359,17 @@ class Mapbox extends Component {
       >
         {this.state.enableDeck && (
           <DeckGL {...viewport} layers={[this.state.taxonLayer]} />
+        )}
+        {this.state.popup.message && (
+          <Popup
+            latitude={this.state.popup.lat}
+            longitude={this.state.popup.lon}
+            closeButton={false}
+            closeOnClick={false}
+            anchor="top"
+          >
+            <div>{this.state.popup.message}</div>
+          </Popup>
         )}
         <Switch>
           <Route

@@ -2040,6 +2040,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                   "search": "",
                   "state": undefined,
                 }
+<<<<<<< HEAD
               }
               longitude={10.8}
               match={
@@ -2058,6 +2059,152 @@ exports[`Storyshots Grunnkart Rot 1`] = `
               staticContext={undefined}
               zoom={3}
             />
+||||||| merged common ancestors
+              >
+                <div
+                  className={undefined}
+                  style={
+                    Object {
+                      "cursor": "default",
+                      "height": 768,
+                      "visibility": "visible",
+                      "width": 1024,
+                    }
+                  }
+                />
+                <div
+                  className="overlays"
+                  style={
+                    Object {
+                      "height": 768,
+                      "left": 0,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "top": 0,
+                      "width": 1024,
+                    }
+                  }
+                >
+                  <div
+                    className="nav"
+                    style={
+                      Object {
+                        "bottom": 30,
+                        "padding": "10px",
+                        "position": "absolute",
+                        "right": 0,
+                      }
+                    }
+                  >
+                    <div
+                      className="mapboxgl-ctrl mapboxgl-ctrl-group "
+                    >
+                      <button
+                        className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in"
+                        onClick={[Function]}
+                        title="Zoom In"
+                        type="button"
+                      />
+                      <button
+                        className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out"
+                        onClick={[Function]}
+                        title="Zoom Out"
+                        type="button"
+                      />
+                      <button
+                        className="mapboxgl-ctrl-icon mapboxgl-ctrl-compass"
+                        onClick={[Function]}
+                        title="Reset North"
+                        type="button"
+                      >
+                        <span
+                          className="mapboxgl-ctrl-compass-arrow"
+                          style={
+                            Object {
+                              "transform": "rotate(0deg)",
+                            }
+                          }
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+=======
+              >
+                <div
+                  className={undefined}
+                  style={
+                    Object {
+                      "cursor": "default",
+                      "height": 768,
+                      "visibility": "visible",
+                      "width": 1024,
+                    }
+                  }
+                />
+                <div
+                  className="overlays"
+                  style={
+                    Object {
+                      "height": 768,
+                      "left": 0,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "top": 0,
+                      "width": 1024,
+                    }
+                  }
+                >
+                  
+                  <div
+                    className="nav"
+                    style={
+                      Object {
+                        "bottom": 30,
+                        "padding": "10px",
+                        "position": "absolute",
+                        "right": 0,
+                      }
+                    }
+                  >
+                    <div
+                      className="mapboxgl-ctrl mapboxgl-ctrl-group "
+                    >
+                      <button
+                        className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in"
+                        onClick={[Function]}
+                        title="Zoom In"
+                        type="button"
+                      />
+                      <button
+                        className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out"
+                        onClick={[Function]}
+                        title="Zoom Out"
+                        type="button"
+                      />
+                      <button
+                        className="mapboxgl-ctrl-icon mapboxgl-ctrl-compass"
+                        onClick={[Function]}
+                        title="Reset North"
+                        type="button"
+                      >
+                        <span
+                          className="mapboxgl-ctrl-compass-arrow"
+                          style={
+                            Object {
+                              "transform": "rotate(0deg)",
+                            }
+                          }
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+>>>>>>> Viser antall arter i popup på kartet (#277)
             <div
               className={undefined}
               style={
@@ -2688,6 +2835,201 @@ exports[`Storyshots Grunnkart Rot 1`] = `
 </div>
 `;
 
+<<<<<<< HEAD
+||||||| merged common ancestors
+exports[`Storyshots Kart Mapbox default 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "cursor": "-webkit-grab",
+        "height": 768,
+        "position": "relative",
+        "width": 1024,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "cursor": "default",
+          "height": 768,
+          "position": "relative",
+          "width": 1024,
+        }
+      }
+    >
+      <div
+        className={undefined}
+        style={
+          Object {
+            "cursor": "default",
+            "height": 768,
+            "visibility": "visible",
+            "width": 1024,
+          }
+        }
+      />
+      <div
+        className="overlays"
+        style={
+          Object {
+            "height": 768,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "width": 1024,
+          }
+        }
+      >
+        <div
+          className="nav"
+          style={
+            Object {
+              "bottom": 30,
+              "padding": "10px",
+              "position": "absolute",
+              "right": 0,
+            }
+          }
+        >
+          <div
+            className="mapboxgl-ctrl mapboxgl-ctrl-group "
+          >
+            <button
+              className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in"
+              onClick={[Function]}
+              title="Zoom In"
+              type="button"
+            />
+            <button
+              className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out"
+              onClick={[Function]}
+              title="Zoom Out"
+              type="button"
+            />
+            <button
+              className="mapboxgl-ctrl-icon mapboxgl-ctrl-compass"
+              onClick={[Function]}
+              title="Reset North"
+              type="button"
+            >
+              <span
+                className="mapboxgl-ctrl-compass-arrow"
+                style={
+                  Object {
+                    "transform": "rotate(0deg)",
+                  }
+                }
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+=======
+exports[`Storyshots Kart Mapbox default 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "cursor": "-webkit-grab",
+        "height": 768,
+        "position": "relative",
+        "width": 1024,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "cursor": "default",
+          "height": 768,
+          "position": "relative",
+          "width": 1024,
+        }
+      }
+    >
+      <div
+        className={undefined}
+        style={
+          Object {
+            "cursor": "default",
+            "height": 768,
+            "visibility": "visible",
+            "width": 1024,
+          }
+        }
+      />
+      <div
+        className="overlays"
+        style={
+          Object {
+            "height": 768,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": 0,
+            "width": 1024,
+          }
+        }
+      >
+        
+        <div
+          className="nav"
+          style={
+            Object {
+              "bottom": 30,
+              "padding": "10px",
+              "position": "absolute",
+              "right": 0,
+            }
+          }
+        >
+          <div
+            className="mapboxgl-ctrl mapboxgl-ctrl-group "
+          >
+            <button
+              className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in"
+              onClick={[Function]}
+              title="Zoom In"
+              type="button"
+            />
+            <button
+              className="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out"
+              onClick={[Function]}
+              title="Zoom Out"
+              type="button"
+            />
+            <button
+              className="mapboxgl-ctrl-icon mapboxgl-ctrl-compass"
+              onClick={[Function]}
+              title="Reset North"
+              type="button"
+            >
+              <span
+                className="mapboxgl-ctrl-compass-arrow"
+                style={
+                  Object {
+                    "transform": "rotate(0deg)",
+                  }
+                }
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+>>>>>>> Viser antall arter i popup på kartet (#277)
 exports[`Storyshots KodeContainer default 1`] = `
 <div
   style={
