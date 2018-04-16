@@ -104,7 +104,7 @@
     },
 
     "sqrt42": {
-      "url": "http://tiles.artsdatabanken.no/data/sqrt42.json",
+      "url": "https://tiles.artsdatabanken.no/data/sqrt42.json",
       "type": "vector"
     }
   },
