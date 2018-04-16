@@ -88,8 +88,8 @@ export const Soner = fromJS({
 export const Rodliste = fromJS({
   id: 'Rodlistede',
   type: 'fill',
-  source: 'naturomrader',
-  'source-layer': 'naturomrader9',
+  source: 'sqrt42',
+  'source-layer': 'sqrt42',
   filter: [
     'all',
     [
@@ -111,8 +111,8 @@ export const Rodliste = fromJS({
 export const NiN = fromJS({
   id: 'nin',
   type: 'fill',
-  source: 'naturomrader',
-  'source-layer': 'naturomrader9',
+  source: 'sqrt42',
+  'source-layer': 'sqrt42',
   interactive: true,
   paint: {
     'fill-color': 'hsla(120, 22%, 24%, 0.1)',
@@ -122,8 +122,8 @@ export const NiN = fromJS({
 export const NiNHover = fromJS({
   id: 'nin-hover',
   type: 'fill',
-  source: 'naturomrader',
-  'source-layer': 'naturomrader9',
+  source: 'sqrt42',
+  'source-layer': 'sqrt42',
   filter: ['==', 'localId', ''],
   paint: {
     'fill-color': 'hsla(251, 58%, 43%, 0.1)',
