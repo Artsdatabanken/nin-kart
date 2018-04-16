@@ -13,7 +13,3 @@ test('stil NA', () => {
 test('stil MI_KA', () => {
   expect(stylelookup(map, 'MI_KA')).toMatchSnapshot()
 })
-
-test('stil toppNode', () => {
-  expect(stylelookup(map, 'NA')).toMatchSnapshot()
-})
