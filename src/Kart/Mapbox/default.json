@@ -102,8 +102,9 @@
         "mapbox://mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v7,artsdatabanken.bthj0gsg,artsdatabanken.9fqc3l9i,artsdatabanken.7hhxtxe3,artsdatabanken.dz9161rw,artsdatabanken.0n0rw38p,artsdatabanken.0183w0w7,artsdatabanken.0hbp7082,artsdatabanken.6j8o5925,artsdatabanken.6rbfhi3x,artsdatabanken.d1s080yu,artsdatabanken.2v0t4l8r,artsdatabanken.4595bc5z",
       "type": "vector"
     },
-    "naturomrader": {
-      "url": "mapbox://artsdatabanken.c806eqjj",
+
+    "sqrt42": {
+      "url": "http://tiles.artsdatabanken.no/data/sqrt42.json",
       "type": "vector"
     }
   },
@@ -3532,8 +3533,8 @@
       "metadata": {
         "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
       },
-      "source": "naturomrader",
-      "source-layer": "naturomrader9",
+      "source": "sqrt42",
+      "source-layer": "sqrt42",
       "filter": ["has", "rl_re"],
       "layout": {
         "visibility": "none"
@@ -3548,8 +3549,8 @@
       "metadata": {
         "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
       },
-      "source": "naturomrader",
-      "source-layer": "naturomrader9",
+      "source": "sqrt42",
+      "source-layer": "sqrt42",
       "filter": ["has", "rl_nt"],
       "layout": {
         "visibility": "none"
@@ -3564,8 +3565,8 @@
       "metadata": {
         "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
       },
-      "source": "naturomrader",
-      "source-layer": "naturomrader9",
+      "source": "sqrt42",
+      "source-layer": "sqrt42",
       "filter": ["has", "rl_en"],
       "layout": {
         "visibility": "none"
@@ -3581,8 +3582,8 @@
       "metadata": {
         "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
       },
-      "source": "naturomrader",
-      "source-layer": "naturomrader9",
+      "source": "sqrt42",
+      "source-layer": "sqrt42",
       "filter": ["has", "rl_cr"],
       "layout": {
         "visibility": "none"

@@ -4,15 +4,16 @@ exports[`stil MI_KA 1`] = `
 Object {
   "filter": Array [
     "has",
-    "mi_ka",
+    "MI_KA",
   ],
   "id": "MI_KA",
+  "interactive": true,
   "paint": Object {
     "fill-color": "#FFFF00",
     "fill-outline-color": "#FF0000",
   },
-  "source": "composite",
-  "source-layer": "mi_ka",
+  "source": "sqrt42",
+  "source-layer": "sqrt42",
   "type": "fill",
 }
 `;
@@ -21,7 +22,7 @@ exports[`stil NA 1`] = `
 Object {
   "filter": Array [
     "has",
-    "na_t",
+    "NA_T",
   ],
   "id": "NA_T",
   "interactive": true,
@@ -29,8 +30,8 @@ Object {
     "fill-color": "#FFFF00",
     "fill-outline-color": "#FF0000",
   },
-  "source": "naturomrader",
-  "source-layer": "naturomrader9",
+  "source": "sqrt42",
+  "source-layer": "sqrt42",
   "type": "fill",
 }
 `;

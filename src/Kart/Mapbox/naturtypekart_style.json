@@ -7225,13 +7225,13 @@
       }
     },
     {
-      "id": "naturomrader9",
+      "id": "sqrt42",
       "type": "fill",
       "metadata": {
         "mapbox:group": "f687f11d778ea9a47615d3f139a85ec5"
       },
-      "source": "naturomrader",
-      "source-layer": "naturomrader9",
+      "source": "sqrt42",
+      "source-layer": "sqrt42",
       "layout": {},
       "interactive": true,
       "paint": {
@@ -7240,13 +7240,13 @@
       }
     },
     {
-      "id": "naturomrader9-hover",
+      "id": "sqrt42-hover",
       "type": "fill",
       "metadata": {
         "mapbox:group": "f687f11d778ea9a47615d3f139a85ec5"
       },
-      "source": "naturomrader",
-      "source-layer": "naturomrader9",
+      "source": "sqrt42",
+      "source-layer": "sqrt42",
       "filter": ["==", "localId", ""],
       "layout": {},
       "paint": {
@@ -7260,8 +7260,8 @@
       "metadata": {
         "mapbox:group": "f687f11d778ea9a47615d3f139a85ec5"
       },
-      "source": "naturomrader",
-      "source-layer": "naturomrader9",
+      "source": "sqrt42",
+      "source-layer": "sqrt42",
       "filter": [
         "all",
         [
