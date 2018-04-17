@@ -61,7 +61,10 @@ class Mapbox extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.opplystKode !== this.props.opplystKode) {
-      this.updateOpplystKode(nextProps.aktivKode, nextProps.opplystKode)
+      this.updateOpplystKode(
+        nextProps.aktivKode,
+        nextProps.opplystKode.toUpperCase()
+      )
     }
 
     if (nextProps.aktivKode !== this.props.aktivKode) {
@@ -132,7 +135,7 @@ class Mapbox extends Component {
     }
   }
 
-  updateOpplystKode(aktivKode, opplystKode) {
+  updateOpplystKode = backend.debounce(function(aktivKode, opplystKode) {
     let map = this.map.getMap()
     if (!map || !map.isStyleLoaded()) return
     map.removeLayer('opplyst')
@@ -164,7 +167,7 @@ class Mapbox extends Component {
         map.addLayer(opplystLag)
       }
     }
-  }
+  }, 100)
 
   fargeleggLag(nextProps) {
     let map = this.map.getMap()
