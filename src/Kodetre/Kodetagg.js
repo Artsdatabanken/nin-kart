@@ -12,9 +12,10 @@ class Kodetagg extends React.Component {
         color: this.props.muiTheme.palette.accentColor2,
       },
     }
-    const { kode } = this.props
+    const { kode, hele } = this.props
     const prefiks = kode.substring(0, 2)
     if ('NA,MI'.indexOf(prefiks) < 0) return null
+    if (hele) return <div style={styles.chip}>{kode}</div>
     return <div style={styles.chip}>{this.sisteDelAvKoden(kode)}</div>
   }
 
