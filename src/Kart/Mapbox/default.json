@@ -104,7 +104,9 @@
 
     "sqrt42": {
       "type": "vector",
-      "tiles": ["https://tiles.artsdatabanken.no/data/sqrt42/{z}/{x}/{y}.pbf"]
+      "tiles": ["https://tiles.artsdatabanken.no/data/sqrt42/{z}/{x}/{y}.pbf"],
+      "minzoom": 0,
+      "maxzoom": 11
     }
   },
   "sprite": "mapbox://sprites/artsdatabanken/cjcagna820mra2sp2elhqrjag",
