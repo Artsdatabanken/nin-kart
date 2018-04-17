@@ -117,10 +117,11 @@ const Tittelblokk = ({
         right: 0,
       }}
     >
-      <IconButton style={{ float: 'right' }}>
+      <IconButton title={'Del'} style={{ float: 'right' }}>
         <Share color="#eee" />
       </IconButton>
       <IconButton
+        title={'Merk som favoritt'}
         style={{ float: 'right' }}
         onClick={() => toggleFavorite(kode)}
       >
@@ -129,6 +130,7 @@ const Tittelblokk = ({
       <IconButton
         style={{ float: 'right' }}
         onClick={() => onAddSelected(nodeMeta)}
+        title={'Velg'}
       >
         <Plus color="#eee" />
       </IconButton>

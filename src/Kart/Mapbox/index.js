@@ -316,6 +316,7 @@ class Mapbox extends Component {
       //cellSize: 4000,
       elevationScale: 50,
       //colorDomain: [0, 200],
+      //colorRange: [['#edf8fb'],['#bfd3e6'],['#9ebcda'],['#8c96c6'],['#8856a7'],['#810f7c']],
       extruded: true,
       lightSettings: LIGHT_SETTINGS,
       getPosition: function(e) {
