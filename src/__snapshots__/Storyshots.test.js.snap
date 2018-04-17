@@ -3378,6 +3378,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   }
                                 }
                                 tabIndex={0}
+                                title="Del"
                                 type="button"
                               >
                                 <div
@@ -3448,6 +3449,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   }
                                 }
                                 tabIndex={0}
+                                title="Merk som favoritt"
                                 type="button"
                               >
                                 <div
@@ -3518,6 +3520,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   }
                                 }
                                 tabIndex={0}
+                                title="Velg"
                                 type="button"
                               >
                                 <div
@@ -4892,6 +4895,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   }
                                 }
                                 tabIndex={0}
+                                title="Del"
                                 type="button"
                               >
                                 <div
@@ -4962,6 +4966,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   }
                                 }
                                 tabIndex={0}
+                                title="Merk som favoritt"
                                 type="button"
                               >
                                 <div
@@ -5032,6 +5037,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   }
                                 }
                                 tabIndex={0}
+                                title="Velg"
                                 type="button"
                               >
                                 <div

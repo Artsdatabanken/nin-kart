@@ -32,6 +32,7 @@ const ValgtListe = ({
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             onClose={kode => onRemoveSelectedLayer(kode)}
+            visHeleKoden={true}
             onUpdateLayerProp={onUpdateLayerProp}
             onShowColorpicker={kode => onShowColorpicker(kode)}
             showColor={onShowColorpicker}

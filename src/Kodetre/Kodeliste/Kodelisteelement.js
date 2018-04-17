@@ -111,7 +111,9 @@ class Kodelisteelement extends React.Component {
           }
           primaryText={
             <div>
-              {true && <Kodetagg kode={item.kode} />}
+              {true && (
+                <Kodetagg hele={this.props.visHeleKoden} kode={item.kode} />
+              )}
               {(tittel || meta.navn || meta.navnSci) +
                 (meta.navnSci ? ` (${meta.navnSci})` : '')}
               <div style={{ display: 'inline-flex' }} />
