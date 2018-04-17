@@ -3731,7 +3731,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       <div
                         style={
                           Object {
-                            "backgroundColor": "",
+                            "backgroundColor": "#DDDDDD",
                             "marginLeft": 0,
                             "muiPrepared": true,
                             "paddingBottom": 16,
@@ -3882,10 +3882,10 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "float": "left",
                                   "height": 4,
                                   "marginTop": 4,
-                                  "width": "2174024395.05291%",
+                                  "width": "0%",
                                 }
                               }
-                              title="areal: 22' km²"
+                              title="areal: null"
                             />
                           </div>
                           <div

@@ -39,7 +39,7 @@ const Kodeliste = ({
                 .map(apiItem => {
                   return apiItem.kode
                 })
-                .indexOf(item)
+                .indexOf(item.toLowerCase())
             ] || {}
           : {}
         const metabarnet = metadata[item] || {}
