@@ -236,7 +236,7 @@ exports[`Storyshots App Bar down into tree 1`] = `
                     }
                   }
                   type="text"
-                  value={undefined}
+                  value=""
                 />
               </div>
             </div>
@@ -680,7 +680,7 @@ exports[`Storyshots App Bar root 1`] = `
                     }
                   }
                   type="text"
-                  value={undefined}
+                  value=""
                 />
               </div>
             </div>
@@ -12198,7 +12198,7 @@ exports[`Storyshots SearchBox default 1`] = `
               }
             }
             type="text"
-            value={undefined}
+            value=""
           />
         </div>
       </div>

@@ -23,7 +23,7 @@ export default class SearchBox extends Component {
         ref={tf => (this.textField = tf)}
         onKeyDown={this.onKeyDown}
         id={getNext()}
-        value={query}
+        value={query || ''}
         hintText={tittel ? tittel : 'Natur i Norge'}
         onFocus={this.handleFocus}
         onChange={this.props.onQueryChange}
