@@ -5,12 +5,19 @@ import { withRouter } from 'react-router'
 class Kart extends Component {
   onClick = point => {
     const lngLat = point.lngLat
-
-    if (point.features && point.features[0] && point.features[0].properties) {
-      this.props.setLocalId(point.features[0].properties.localId)
-    } else {
+    var found = false
+    if (point.features) {
+      point.features.forEach(feature => {
+        if (feature.properties && feature.properties.localId) {
+          this.props.setLocalId(feature.properties.localId)
+          found = true
+        }
+      })
+    }
+    if (!found) {
       this.props.setLocalId('')
     }
+
     this.props.history.push(`/punkt/${lngLat[0]},${lngLat[1]}`)
   }
 
