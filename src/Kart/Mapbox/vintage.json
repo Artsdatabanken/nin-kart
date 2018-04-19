@@ -32,9 +32,15 @@
   "pitch": 0,
   "sources": {
     "composite": {
-      "url":
-        "mapbox://mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v7,artsdatabanken.bthj0gsg,artsdatabanken.9fqc3l9i,artsdatabanken.7hhxtxe3,artsdatabanken.dz9161rw,artsdatabanken.0n0rw38p,artsdatabanken.0183w0w7,artsdatabanken.0hbp7082,artsdatabanken.7676pvsx,artsdatabanken.6j8o5925,artsdatabanken.6rbfhi3x,artsdatabanken.d1s080yu,artsdatabanken.2v0t4l8r,artsdatabanken.4595bc5z",
+      "url": "mapbox://mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v7",
       "type": "vector"
+    },
+
+    "sqrt42": {
+      "type": "vector",
+      "tiles": ["https://tiles.artsdatabanken.no/data/sqrt42/{z}/{x}/{y}.pbf"],
+      "minzoom": 0,
+      "maxzoom": 11
     }
   },
   "sprite": "mapbox://sprites/artsdatabanken/cjd4hdiai3irt2rqe3am595fk",

@@ -8,6 +8,7 @@ import {
   defaultMapStyle,
   darkMapStyle,
   vintageMapStyle,
+  lightMapStyle,
   satelliteStyle,
   NiN,
   NiNHover,
@@ -65,6 +66,10 @@ class Grunnkart extends React.Component<Props, State> {
       }
       case 'vintage': {
         newStyle = vintageMapStyle
+        break
+      }
+      case 'light': {
+        newStyle = lightMapStyle
         break
       }
       case 'satellite': {
