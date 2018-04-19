@@ -278,22 +278,26 @@ class Mapbox extends Component {
   handleViewportChange = viewport => {
     this.setState({ viewport })
     // Bruk bare bounds dersom zoomnivå > 8
-    const bounds = this.map.getMap().getBounds()
-    this.props.onMapBoundsChange(viewport.zoom > 8 ? bounds : undefined)
+    var bounds = undefined
+    if (viewport.zoom > 8) {
+      bounds = this.map.getMap().getBounds()
+    }
+    this.props.onMapBoundsChange(bounds)
   }
 
-  onHover = e => {
+  onHover = backend.debounce(function(e) {
     const pos = e.center
     const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y])
-    // TODO:
-    if (r[0]) {
-      this.map
-        .getMap()
-        .setFilter('nin-hover', ['==', 'localId', r[0].properties.localId])
-    }
-  }
+    r.forEach(feature => {
+      if (feature.properties && feature.properties.localId) {
+        this.map
+          .getMap()
+          .setFilter('nin-hover', ['==', 'localId', feature.properties.localId])
+      }
+    })
+  }, 50)
 
-  onTaxonHover = data => {
+  onTaxonHover = backend.debounce(function(data) {
     if (data && data.object && data.object.elevationValue) {
       this.setState({
         popup: {
@@ -310,7 +314,7 @@ class Mapbox extends Component {
       })
     }
     //console.log('Antall: ' + data.object.elevationValue)
-  }
+  }, 50)
 
   createTaxonLayer(data) {
     return new GridLayer({
@@ -353,7 +357,7 @@ class Mapbox extends Component {
         }}
         style={{ cursor: 'default' }}
         onClick={this.props.onClick}
-        onHover={this.onHover}
+        onHover={e => this.onHover(e)}
         onMouseMove={this.onMouseMove}
         onViewportChange={viewport => this.handleViewportChange(viewport)}
         mapboxApiAccessToken="pk.eyJ1IjoiYXJ0c2RhdGFiYW5rZW4iLCJhIjoiY2pjNjg2MzVzMHhycjJ3bnM5MHc4MHVzOCJ9.fLnCRyg-hCuTClyim1r-JQ"
