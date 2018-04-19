@@ -59,6 +59,14 @@ class MainDrawer extends Component {
         <MenuItem
           onClick={() => {
             this.props.onToggleMainDrawer()
+            this.props.handleChangeBaseMap('light')
+          }}
+        >
+          Basiskart - Lyst
+        </MenuItem>
+        <MenuItem
+          onClick={() => {
+            this.props.onToggleMainDrawer()
             this.props.handleChangeBaseMap('satellite')
           }}
         >

@@ -1,0 +1,48 @@
+{
+  "version": 8,
+  "name": "Satellite",
+  "metadata": {
+    "mapbox:autocomposite": true,
+    "mapbox:type": "default"
+  },
+  "center": [-118.4106, 33.750013],
+  "zoom": 13,
+  "sources": {
+    "mapbox": {
+      "url": "mapbox://mapbox.satellite",
+      "type": "raster",
+      "tileSize": 256
+    },
+    "sqrt42": {
+      "type": "vector",
+      "tiles": ["https://tiles.artsdatabanken.no/data/sqrt42/{z}/{x}/{y}.pbf"],
+      "minzoom": 0,
+      "maxzoom": 11
+    }
+  },
+  "sprite": "mapbox://sprites/artsdatabanken/cjcagna820mra2sp2elhqrjag",
+  "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "rgb(4,7,14)"
+      },
+      "interactive": true
+    },
+    {
+      "id": "satellite",
+      "type": "raster",
+      "source": "mapbox",
+      "source-layer": "mapbox_satellite_full",
+      "interactive": true
+    }
+  ],
+  "created": "2018-02-01T13:41:48.654Z",
+  "id": "cjd4juxgl3l1m2rqeb5rei8yv",
+  "modified": "2018-02-01T13:41:48.654Z",
+  "owner": "artsdatabanken",
+  "visibility": "private",
+  "draft": false
+}
