@@ -2824,14 +2824,14 @@ decamelize@^1.0.0, decamelize@^1.1.1, decamelize@^1.1.2:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
 
-deck.gl@^5.0.4:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/deck.gl/-/deck.gl-5.1.1.tgz#66601b698be585211984e759e0dd3ee2954ac7fd"
+deck.gl@^5.1.4:
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/deck.gl/-/deck.gl-5.1.4.tgz#1adb33798ec91abb2a1d164adfff4cdb1a1a888d"
   dependencies:
     d3-hexbin "^0.2.1"
     earcut "^2.0.6"
     lodash.flattendeep "^4.4.0"
-    luma.gl "^5.1.2"
+    luma.gl "^5.1.4"
     math.gl "^1.0.0"
     mjolnir.js "^1.0.0"
     prop-types "^15.6.0"
@@ -3926,9 +3926,9 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
-flow-bin@^0.69.0:
-  version "0.69.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.69.0.tgz#053159a684a6051fcbf0b71a2eb19a9679082da6"
+flow-bin@^0.70.0:
+  version "0.70.0"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.70.0.tgz#080ae83a997f2b4ddb3dc2649bf13336825292b5"
 
 flow-remove-types@^1.1.2:
   version "1.2.3"
@@ -6221,9 +6221,9 @@ lru-cache@^4.0.1, lru-cache@^4.1.1:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
 
-luma.gl@^5.0.2, luma.gl@^5.1.2:
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/luma.gl/-/luma.gl-5.1.2.tgz#731eb926290c9daa6d8a152f79343812b50e5b5d"
+luma.gl@^5.1.4, luma.gl@^5.1.6:
+  version "5.1.6"
+  resolved "https://registry.yarnpkg.com/luma.gl/-/luma.gl-5.1.6.tgz#36ce71dae2f25dd10a5e4ea72fbd1829d1d8da41"
   dependencies:
     math.gl "^1.0.0"
     seer "^0.2.4"
