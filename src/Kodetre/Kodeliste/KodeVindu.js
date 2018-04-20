@@ -25,12 +25,6 @@ const Fact = ({ tittel, verdi, ikon, synlig }) => {
 }
 
 class KodeVindu extends React.Component {
-  handleShowColorpicker = kode => {
-    const nyKode = this.state.ekspandertKode === kode ? null : kode
-    this.setState({ ekspandertKode: nyKode })
-  }
-  state = {}
-
   render() {
     const props = this.props
     const avatarUtenRamme = props.meta.utenRamme
@@ -118,11 +112,11 @@ class KodeVindu extends React.Component {
               størsteAreal={props.data.størsteAreal}
               apidata={props.data ? props.data.barn : []}
               metadata={props.meta.barn}
-              ekspandertKode={this.state.ekspandertKode}
+              ekspandertKode={this.props.ekspandertKode}
               onGoToCode={props.onGoToCode}
               onMouseEnter={props.onMouseEnter}
               onMouseLeave={props.onMouseLeave}
-              onShowColorpicker={this.handleShowColorpicker}
+              onShowColorpicker={this.props.onShowColorpicker}
               onUpdateLayerProp={props.onUpdateLayerProp}
               language={props.language}
               avatarUtenRamme={avatarUtenRamme}

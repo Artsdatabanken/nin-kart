@@ -11,8 +11,8 @@ import Close from 'material-ui/svg-icons/content/clear'
 class Kodelisteelement extends React.Component {
   setFargeKode(kode, farge) {
     let farger = JSON.parse(localStorage.getItem('customColors') || '[]')
-    farger = farger.filter(x => x.kode !== kode)
-    farger.push({ kode: kode, farge: farge })
+    farger = farger.filter(x => x.kode.toLowerCase() !== kode.toLowerCase())
+    farger.push({ kode: kode.toLowerCase(), farge: farge })
     localStorage.setItem('customColors', JSON.stringify(farger))
   }
 
@@ -21,7 +21,9 @@ class Kodelisteelement extends React.Component {
     if (localStorage) {
       let customColors = localStorage.getItem('customColors')
       if (customColors) {
-        let fargeElement = JSON.parse(customColors).filter(x => x.kode === kode)
+        let fargeElement = JSON.parse(customColors).filter(
+          x => x.kode.toLowerCase() === kode.toLowerCase()
+        )
         return fargeElement && fargeElement[0] && fargeElement[0].farge
           ? fargeElement[0].farge
           : this.props.meta.farge

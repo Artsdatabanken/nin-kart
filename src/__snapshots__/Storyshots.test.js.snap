@@ -3757,54 +3757,12 @@ exports[`Storyshots KodeVindu default 1`] = `
                         <div
                           style={
                             Object {
-                              "display": "inline-flex",
                               "position": "absolute",
                               "right": 16,
                               "top": 16,
                             }
                           }
-                        >
-                          <div
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "height": "28px",
-                                "right": "14px",
-                                "top": "14px",
-                                "width": "28px",
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "backgroundImage": "url(null)",
-                                  "borderRadius": "50%",
-                                  "bottom": 0,
-                                  "left": 0,
-                                  "position": "absolute",
-                                  "right": 0,
-                                  "top": 0,
-                                }
-                              }
-                            >
-                              <div
-                                style={
-                                  Object {
-                                    "backgroundColor": "#f46d43",
-                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                    "borderRadius": "50%",
-                                    "bottom": 0,
-                                    "left": 0,
-                                    "position": "absolute",
-                                    "right": 0,
-                                    "top": 0,
-                                  }
-                                }
-                              />
-                            </div>
-                          </div>
-                        </div>
+                        />
                         <div
                           style={
                             Object {
@@ -3985,54 +3943,12 @@ exports[`Storyshots KodeVindu default 1`] = `
                         <div
                           style={
                             Object {
-                              "display": "inline-flex",
                               "position": "absolute",
                               "right": 16,
                               "top": 16,
                             }
                           }
-                        >
-                          <div
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "height": "28px",
-                                "right": "14px",
-                                "top": "14px",
-                                "width": "28px",
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "backgroundImage": "url(null)",
-                                  "borderRadius": "50%",
-                                  "bottom": 0,
-                                  "left": 0,
-                                  "position": "absolute",
-                                  "right": 0,
-                                  "top": 0,
-                                }
-                              }
-                            >
-                              <div
-                                style={
-                                  Object {
-                                    "backgroundColor": "#fdae61",
-                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                    "borderRadius": "50%",
-                                    "bottom": 0,
-                                    "left": 0,
-                                    "position": "absolute",
-                                    "right": 0,
-                                    "top": 0,
-                                  }
-                                }
-                              />
-                            </div>
-                          </div>
-                        </div>
+                        />
                         <div
                           style={
                             Object {
@@ -4213,54 +4129,12 @@ exports[`Storyshots KodeVindu default 1`] = `
                         <div
                           style={
                             Object {
-                              "display": "inline-flex",
                               "position": "absolute",
                               "right": 16,
                               "top": 16,
                             }
                           }
-                        >
-                          <div
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "height": "28px",
-                                "right": "14px",
-                                "top": "14px",
-                                "width": "28px",
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "backgroundImage": "url(null)",
-                                  "borderRadius": "50%",
-                                  "bottom": 0,
-                                  "left": 0,
-                                  "position": "absolute",
-                                  "right": 0,
-                                  "top": 0,
-                                }
-                              }
-                            >
-                              <div
-                                style={
-                                  Object {
-                                    "backgroundColor": "#fee08b",
-                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                    "borderRadius": "50%",
-                                    "bottom": 0,
-                                    "left": 0,
-                                    "position": "absolute",
-                                    "right": 0,
-                                    "top": 0,
-                                  }
-                                }
-                              />
-                            </div>
-                          </div>
-                        </div>
+                        />
                         <div
                           style={
                             Object {
@@ -4441,54 +4315,12 @@ exports[`Storyshots KodeVindu default 1`] = `
                         <div
                           style={
                             Object {
-                              "display": "inline-flex",
                               "position": "absolute",
                               "right": 16,
                               "top": 16,
                             }
                           }
-                        >
-                          <div
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "height": "28px",
-                                "right": "14px",
-                                "top": "14px",
-                                "width": "28px",
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "backgroundImage": "url(null)",
-                                  "borderRadius": "50%",
-                                  "bottom": 0,
-                                  "left": 0,
-                                  "position": "absolute",
-                                  "right": 0,
-                                  "top": 0,
-                                }
-                              }
-                            >
-                              <div
-                                style={
-                                  Object {
-                                    "backgroundColor": "#e6f598",
-                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                    "borderRadius": "50%",
-                                    "bottom": 0,
-                                    "left": 0,
-                                    "position": "absolute",
-                                    "right": 0,
-                                    "top": 0,
-                                  }
-                                }
-                              />
-                            </div>
-                          </div>
-                        </div>
+                        />
                         <div
                           style={
                             Object {

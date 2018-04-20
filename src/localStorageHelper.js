@@ -7,7 +7,9 @@ class LocalStorageHelper {
 
     let defaultFarge = meta && meta.farge ? meta.farge : '#888888'
     if (customColors) {
-      let fargeElement = JSON.parse(customColors).filter(x => x.kode === kode)
+      let fargeElement = JSON.parse(customColors).filter(
+        x => x.kode.toLowerCase() === kode.toLowerCase()
+      )
       return fargeElement && fargeElement[0] && fargeElement[0].farge
         ? fargeElement[0].farge
         : defaultFarge
