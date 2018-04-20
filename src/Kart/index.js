@@ -28,10 +28,8 @@ class Kart extends Component {
         onClick={this.onClick}
         onVisibilityChange={this.props.onVisibilityChange}
         onMapBoundsChange={this.props.onMapBoundsChange}
-        onColorChange={this.props.onColorChange}
         categories={this.props.categories}
         visibility={this.props.visibility}
-        color={this.props.color}
         mapStyle={this.props.mapStyle}
       />
     )

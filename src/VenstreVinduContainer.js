@@ -96,6 +96,8 @@ class VenstreVinduContainer extends React.Component {
                       language={this.props.language}
                       meta={this.props.meta}
                       handleUpdateLayerProp={this.props.handleUpdateLayerProp}
+                      onShowColorpicker={this.props.onShowColorpicker}
+                      ekspandertKode={this.props.ekspandertKode}
                     />
                   )
                 }}
