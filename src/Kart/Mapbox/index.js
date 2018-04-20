@@ -72,6 +72,13 @@ class Mapbox extends Component {
       this.fargeleggLag(nextProps)
     }
 
+    if (nextProps.oppdaterFarger === null) {
+      if (nextProps.oppdaterFarger !== this.props.oppdaterFarger) {
+        this.fargeleggLag(nextProps)
+        this.oppdaterValgteKoder(nextProps)
+      }
+    }
+
     if (nextProps.valgteKoder !== this.props.valgteKoder) {
       this.visValgteKoder(nextProps)
     }
@@ -169,7 +176,7 @@ class Mapbox extends Component {
     }
   }, 100)
 
-  fargeleggLag(nextProps) {
+  fargeleggLag = backend.debounce(function(nextProps) {
     let map = this.map.getMap()
     if (!map) return
 
@@ -202,12 +209,28 @@ class Mapbox extends Component {
         map.addLayer(lag)
       })
     }
-  }
+  }, 50)
 
   fjernKode(kode) {
     let map = this.map.getMap()
     if (!map) return
     map.removeLayer(kode)
+  }
+
+  oppdaterValgteKoder(nextProps) {
+    let map = this.map.getMap()
+    if (!map) return
+
+    if (nextProps.valgteKoder) {
+      Object.keys(nextProps.valgteKoder).forEach(id => {
+        const item = nextProps.valgteKoder[id]
+        let lagId = 'valgt' + item.kode
+        if (map.getLayer(lagId)) {
+          map.removeLayer(lagId)
+        }
+      })
+      this.visValgteKoder(nextProps)
+    }
   }
 
   visValgteKoder(nextProps) {

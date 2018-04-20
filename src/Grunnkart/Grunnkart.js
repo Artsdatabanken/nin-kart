@@ -166,7 +166,7 @@ class Grunnkart extends React.Component<Props, State> {
   }
   handleUpdateLayerProp = (kode, key, value) => {
     let meta = this.state.meta
-    let layer = meta.barn[kode]
+    let layer = meta.barn[kode] || meta.barn[kode.toUpperCase()]
     layer[key] = value
     this.setState({ meta: meta })
   }
@@ -221,6 +221,7 @@ class Grunnkart extends React.Component<Props, State> {
           setLocalId={localId => this.setLocalId(localId)}
           meta={this.state.meta}
           bbox={this.state.bbox}
+          oppdaterFarger={this.state.ekspandertKode}
         />
 
         <MainDrawer
@@ -261,6 +262,8 @@ class Grunnkart extends React.Component<Props, State> {
               localId={this.state.localId}
               meta={this.state.meta}
               handleUpdateLayerProp={this.handleUpdateLayerProp}
+              onShowColorpicker={this.handleShowColorpicker}
+              ekspandertKode={this.state.ekspandertKode}
             />
           </div>
         )}
