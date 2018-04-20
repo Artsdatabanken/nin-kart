@@ -176,7 +176,7 @@ class Mapbox extends Component {
     }
   }, 100)
 
-  fargeleggLag = backend.debounce(function(nextProps) {
+  fargeleggLag(nextProps) {
     let map = this.map.getMap()
     if (!map) return
 
@@ -209,7 +209,7 @@ class Mapbox extends Component {
         map.addLayer(lag)
       })
     }
-  }, 50)
+  }
 
   fjernKode(kode) {
     let map = this.map.getMap()
