@@ -52,7 +52,18 @@ class Kodekort extends React.Component {
               }}
               kode={this.props.kode}
               infoUrl={this.props.infoUrl}
-              tittel={this.props.tittel[this.props.language[0]]}
+              tittel={
+                this.props.tittel
+                  ? Object.keys(this.props.tittel).length > 1
+                    ? this.props.tittel[this.props.language[0]] +
+                      ' (' +
+                      this.props.tittel[this.props.language[1]] +
+                      ')'
+                    : this.props.tittel[this.props.language[0]]
+                      ? this.props.tittel[this.props.language[0]]
+                      : this.props.tittel[this.props.language[1]]
+                  : this.props.kode
+              }
               overordnet={this.props.overordnet}
               language={this.props.language}
             />
@@ -103,7 +114,16 @@ const Tittelblokk = ({
       overordnet &&
       overordnet.map(forelder => (
         <div key={forelder.kode} onClick={() => onGoToCode(forelder.sti)}>
-          {forelder.tittel[language[0]]}
+          {forelder.tittel
+            ? Object.keys(forelder.tittel).length > 1
+              ? forelder.tittel[language[0]] +
+                ' (' +
+                forelder.tittel[language[1]] +
+                ')'
+              : forelder.tittel[language[0]]
+                ? forelder.tittel[language[0]]
+                : forelder.tittel[language[1]]
+            : kode}
         </div>
       ))
     }
