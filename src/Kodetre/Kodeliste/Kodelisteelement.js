@@ -7,6 +7,7 @@ import ColorPicker from './ColorPicker'
 import Bildeavatar from './Bildeavatar'
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import Close from 'material-ui/svg-icons/content/clear'
+import InfoOutline from 'material-ui/svg-icons/action/info-outline'
 
 class Kodelisteelement extends React.Component {
   setFargeKode(kode, farge) {
@@ -128,25 +129,43 @@ class Kodelisteelement extends React.Component {
             meta.undertittel
           )}
           rightAvatar={
-            this.props.showColor ? (
+            <div>
               <div
                 style={{
-                  display: 'inline-flex',
+                  color: '#aaa',
                   position: 'absolute',
-                  top: 16,
+                  top: 0,
+                  right: 36,
                 }}
               >
-                <PaintSwatch
-                  color={this.getFargeKode()}
+                <InfoOutline
                   onClick={e => {
                     e.stopPropagation()
-                    this.props.onShowColorpicker(meta.kode)
+                    window.open(meta.infoUrl)
                   }}
                 />
               </div>
-            ) : (
-              <div />
-            )
+              {this.props.showColor ? (
+                <div
+                  style={{
+                    display: 'inline-flex',
+                    position: 'absolute',
+                    top: 0,
+                    right: 0,
+                  }}
+                >
+                  <PaintSwatch
+                    color={this.getFargeKode()}
+                    onClick={e => {
+                      e.stopPropagation()
+                      this.props.onShowColorpicker(meta.kode)
+                    }}
+                  />
+                </div>
+              ) : (
+                <div />
+              )}
+            </div>
           }
           rightIcon={
             this.props.onClose && (
