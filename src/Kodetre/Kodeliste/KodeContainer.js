@@ -11,12 +11,13 @@ type State = {
 type Props = {
   meta: Object,
   mapBounds: Object,
-  language: string,
   onFitBounds: Function,
   onMouseLeave: Function,
   onMouseEnter: Function,
   onGoToCode: Function,
+  onAddSelected: Function,
   handleUpdateLayerProp: Function,
+  onShowColorpicker: Function,
 }
 
 // Informasjon om kode
@@ -71,7 +72,6 @@ class KodeContainer extends React.Component<Props, State> {
         onAddSelected={this.props.onAddSelected}
         onShowColorpicker={this.props.onShowColorpicker}
         ekspandertKode={this.props.ekspandertKode}
-        language={this.props.language}
       />
     )
   }
