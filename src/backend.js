@@ -69,7 +69,7 @@ class Backend {
 
   static async hentKodeMeta(path: string) {
     path = path || ''
-    return this.getPromise(`https://adbkoder.firebaseio.com/${path}/@.json`)
+    return this.getPromise(`https://adb-kode.firebaseio.com/${path}/@.json`)
   }
 
   static async hentPunkt(lng: number, lat: number) {

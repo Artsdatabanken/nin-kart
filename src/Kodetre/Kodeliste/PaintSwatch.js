@@ -14,7 +14,7 @@ const PaintSwatch = ({ color, onClick, muiTheme }) => (
     }}
   >
     <Checkboard
-      borderRadius="50%"
+      borderRadius="0%"
       color={color}
       style={{
         border: '1px solid hsla(0, 0%, 0%, 0.2)',
