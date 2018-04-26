@@ -7,6 +7,7 @@ import Plus from 'material-ui/svg-icons/image/control-point'
 import Share from 'material-ui/svg-icons/social/share'
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import backend from '../../backend'
+import språk from '../../språk'
 
 class Kodekort extends React.Component {
   state = { expanded: false }
@@ -52,20 +53,8 @@ class Kodekort extends React.Component {
               }}
               kode={this.props.kode}
               infoUrl={this.props.infoUrl}
-              tittel={
-                this.props.tittel
-                  ? Object.keys(this.props.tittel).length > 1
-                    ? this.props.tittel[this.props.language[0]] +
-                      ' (' +
-                      this.props.tittel[this.props.language[1]] +
-                      ')'
-                    : this.props.tittel[this.props.language[0]]
-                      ? this.props.tittel[this.props.language[0]]
-                      : this.props.tittel[this.props.language[1]]
-                  : this.props.kode
-              }
+              tittel={språk(this.props.tittel)}
               overordnet={this.props.overordnet}
-              language={this.props.language}
             />
           }
           style={{ height: 297, maxHeight: 297 }}
@@ -103,7 +92,6 @@ const Tittelblokk = ({
   tittel,
   overordnet,
   muiTheme,
-  language,
 }) => (
   <CardTitle
     actAsExpander={true}
@@ -114,16 +102,7 @@ const Tittelblokk = ({
       overordnet &&
       overordnet.map(forelder => (
         <div key={forelder.kode} onClick={() => onGoToCode(forelder.sti)}>
-          {forelder.tittel
-            ? Object.keys(forelder.tittel).length > 1
-              ? forelder.tittel[language[0]] +
-                ' (' +
-                forelder.tittel[language[1]] +
-                ')'
-              : forelder.tittel[language[0]]
-                ? forelder.tittel[language[0]]
-                : forelder.tittel[language[1]]
-            : kode}
+          {språk(forelder.tittel)}
         </div>
       ))
     }

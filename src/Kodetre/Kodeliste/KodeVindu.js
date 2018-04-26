@@ -5,10 +5,9 @@ import { Paper, List, div } from 'material-ui'
 import FetchContainer from '../../FetchContainer'
 import Kodeliste from './Kodeliste'
 import { RaisedButton } from 'material-ui'
-import NaturomraderIcon from 'material-ui/svg-icons/editor/pie-chart-outlined'
-import ArterIcon from 'material-ui/svg-icons/action/fingerprint'
+import Graf from './Graf'
 
-const Fact = ({ tittel, verdi, ikon, synlig }) => {
+const Fact = ({ tittel, verdi, synlig }) => {
   if (!synlig || !verdi) return null
   return (
     <div
@@ -98,13 +97,11 @@ class KodeVindu extends React.Component {
             verdi={`${(props.data.antallNaturomrader * 1.3).toFixed(
               0
             )} km² (i ${props.data.antallNaturomrader} områder)`}
-            ikon={<NaturomraderIcon />}
           />
           <Fact
             tittel="Arter observert"
             verdi={props.data.antallArter}
             synlig={props.data.antallArter}
-            ikon={<ArterIcon />}
           />
           <List>
             <Kodeliste
@@ -121,7 +118,9 @@ class KodeVindu extends React.Component {
               language={props.language}
               avatarUtenRamme={avatarUtenRamme}
             />
-
+            {props.meta.graf && (
+              <Graf graf={props.meta.graf} onGoToCode={props.onGoToCode} />
+            )}
             {props.meta.prosedyrekategori && (
               <Kodeliste
                 title="Definisjon"

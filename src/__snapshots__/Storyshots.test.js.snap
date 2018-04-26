@@ -3757,46 +3757,52 @@ exports[`Storyshots KodeVindu default 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": "#f46d43",
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -3816,7 +3822,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               }
                             }
                           >
-                            H1
+                            1
                           </div>
                           Havvannmasser
                           <div
@@ -3867,7 +3873,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -3885,13 +3891,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div>
                   <span
                     disabled={false}
@@ -3978,46 +3977,52 @@ exports[`Storyshots KodeVindu default 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": "#fdae61",
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -4037,7 +4042,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               }
                             }
                           >
-                            H2
+                            2
                           </div>
                           Sirkulerende vannmasser i fysisk avgrensede saltvannsforekomster
                           <div
@@ -4088,7 +4093,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -4106,13 +4111,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div>
                   <span
                     disabled={false}
@@ -4199,46 +4197,52 @@ exports[`Storyshots KodeVindu default 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": "#fee08b",
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -4258,7 +4262,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               }
                             }
                           >
-                            H3
+                            3
                           </div>
                           Ikke-sirkulerende marine vannmasser i fysisk avgrensede saltvannsforekomster
                           <div
@@ -4309,7 +4313,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -4327,13 +4331,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div>
                   <span
                     disabled={false}
@@ -4420,46 +4417,52 @@ exports[`Storyshots KodeVindu default 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": "#e6f598",
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -4479,7 +4482,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               }
                             }
                           >
-                            H4
+                            4
                           </div>
                           Sterkt endrete marine vannmasser
                           <div
@@ -4530,7 +4533,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -4548,13 +4551,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
               </div>
             </div>
           </div>
@@ -5246,46 +5242,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -5305,7 +5307,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                               }
                             }
                           >
-                            A
+                            DGA
                           </div>
                           normal, strukturerende artsgruppe
                           <div
@@ -5341,13 +5343,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div>
                   <span
                     disabled={false}
@@ -5434,46 +5429,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -5493,7 +5494,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                               }
                             }
                           >
-                            K2
+                            2
                           </div>
                           Med variasjon i artssammensetning betinget av strukturerende artsgruppe
                           <div
@@ -5529,13 +5530,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div
                   style={
                     Object {
@@ -5649,46 +5643,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -5697,7 +5697,20 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          Havsivaks (Bolboschoenus maritimus)
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            _99603
+                          </div>
+                          Bolboschoenus maritimus
                           <div
                             style={
                               Object {
@@ -5746,7 +5759,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -5764,13 +5777,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div
                   style={
                     Object {
@@ -5884,46 +5890,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -5932,7 +5944,20 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          Takrør (Phragmites australis)
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            _100132
+                          </div>
+                          Phragmites australis
                           <div
                             style={
                               Object {
@@ -5981,7 +6006,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -5999,13 +6024,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div
                   style={
                     Object {
@@ -6119,46 +6137,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -6167,7 +6191,20 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          Sjøsivaks (Schoenoplectus lacustris)
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            _99789
+                          </div>
+                          Schoenoplectus lacustris
                           <div
                             style={
                               Object {
@@ -6216,7 +6253,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -6234,13 +6271,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div>
                   <span
                     disabled={false}
@@ -6327,46 +6357,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -6375,7 +6411,20 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          Fjærestarr (Carex salina)
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            _99722
+                          </div>
+                          Carex salina
                           <div
                             style={
                               Object {
@@ -6424,7 +6473,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -6442,13 +6491,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div>
                   <span
                     disabled={false}
@@ -6535,46 +6577,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -6583,7 +6631,20 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          Mjødurt (Filipendula ulmaria)
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            _103310
+                          </div>
+                          Filipendula ulmaria
                           <div
                             style={
                               Object {
@@ -6632,7 +6693,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -6650,13 +6711,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div>
                   <span
                     disabled={false}
@@ -6743,46 +6797,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -6791,7 +6851,20 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          Gul frøstjerne (Thalictrum flavum)
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            _103183
+                          </div>
+                          Thalictrum flavum
                           <div
                             style={
                               Object {
@@ -6840,7 +6913,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -6858,13 +6931,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div>
                   <span
                     disabled={false}
@@ -6951,46 +7017,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -6999,7 +7071,20 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          Kattehale (Lythrum salicaria)
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            _102818
+                          </div>
+                          Lythrum salicaria
                           <div
                             style={
                               Object {
@@ -7048,7 +7133,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -7066,13 +7151,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div>
                   <span
                     disabled={false}
@@ -7159,46 +7237,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -7207,7 +7291,20 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          Fredløs (Lysimachia vulgaris)
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            _101846
+                          </div>
+                          Lysimachia vulgaris
                           <div
                             style={
                               Object {
@@ -7256,7 +7353,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -7274,13 +7371,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div>
                   <span
                     disabled={false}
@@ -7367,46 +7457,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -7415,7 +7511,20 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          Gulldusk (Lysimachia thyrsiflora)
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            _101845
+                          </div>
+                          Lysimachia thyrsiflora
                           <div
                             style={
                               Object {
@@ -7464,7 +7573,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -7482,13 +7591,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div>
                   <span
                     disabled={false}
@@ -7575,46 +7677,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -7623,7 +7731,20 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          Takrør (Phragmites australis)
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            _100132
+                          </div>
+                          Phragmites australis
                           <div
                             style={
                               Object {
@@ -7672,7 +7793,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -7690,13 +7811,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div>
                   <span
                     disabled={false}
@@ -7783,46 +7897,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -7831,7 +7951,20 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          Kjempesøtgras (Glyceria maxima)
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            _100061
+                          </div>
+                          Glyceria maxima
                           <div
                             style={
                               Object {
@@ -7880,7 +8013,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -7898,13 +8031,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div>
                   <span
                     disabled={false}
@@ -7991,46 +8117,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -8039,7 +8171,20 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          Mannasøtgras (Glyceria fluitans)
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            _100058
+                          </div>
+                          Glyceria fluitans
                           <div
                             style={
                               Object {
@@ -8088,7 +8233,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -8106,13 +8251,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div
                   style={
                     Object {
@@ -8227,46 +8365,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -8275,7 +8419,20 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          Pølstarr (Carex mackenziei)
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            _99677
+                          </div>
+                          Carex mackenziei
                           <div
                             style={
                               Object {
@@ -8324,7 +8481,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -8342,13 +8499,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div
                   style={
                     Object {
@@ -8462,46 +8612,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -8510,7 +8666,20 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          Pollsivaks (Schoenoplectus tabernaemontani)
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            _99790
+                          </div>
+                          Schoenoplectus tabernaemontani
                           <div
                             style={
                               Object {
@@ -8559,7 +8728,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -8577,13 +8746,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div>
                   <span
                     disabled={false}
@@ -8670,46 +8832,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -8718,7 +8886,20 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          Saltstarr (Carex ×vacillans)
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            _99737
+                          </div>
+                          Carex ×vacillans
                           <div
                             style={
                               Object {
@@ -8767,7 +8948,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -8785,13 +8966,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div>
                   <span
                     disabled={false}
@@ -8878,46 +9052,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -8926,7 +9106,20 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          Havstarr (Carex paleacea)
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            _99698
+                          </div>
+                          Carex paleacea
                           <div
                             style={
                               Object {
@@ -8975,7 +9168,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -8993,13 +9186,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div>
                   <span
                     disabled={false}
@@ -9086,46 +9272,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -9134,7 +9326,20 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          Havsivaks (Bolboschoenus maritimus)
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            _99603
+                          </div>
+                          Bolboschoenus maritimus
                           <div
                             style={
                               Object {
@@ -9183,7 +9388,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -9201,13 +9406,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
                 <div>
                   <span
                     disabled={false}
@@ -9294,46 +9492,52 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         <div
                           style={
                             Object {
+                              "display": "inline-flex",
                               "position": "absolute",
-                              "right": 16,
-                              "top": 16,
+                              "right": 24,
+                              "top": 24,
                             }
                           }
                         >
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
-                                "color": "#aaa",
-                                "position": "absolute",
-                                "right": 36,
-                                "top": 0,
+                                "height": "28px",
+                                "right": "14px",
+                                "width": "28px",
                               }
                             }
                           >
-                            <svg
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
+                            <div
                               style={
                                 Object {
-                                  "color": "rgba(0, 0, 0, 0.87)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
+                                  "backgroundImage": "url(null)",
+                                  "borderRadius": "12%",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 0,
                                 }
                               }
-                              viewBox="0 0 24 24"
                             >
-                              <path
-                                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": undefined,
+                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
                               />
-                            </svg>
+                            </div>
                           </div>
-                          <div />
                         </div>
                         <div
                           style={
@@ -9342,7 +9546,20 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          Sverdlilje (Iris pseudacorus)
+                          <div
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                          >
+                            _99475
+                          </div>
+                          Iris pseudacorus
                           <div
                             style={
                               Object {
@@ -9391,7 +9608,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                   "width": "0%",
                                 }
                               }
-                              title="areal: null"
+                              title="areal: "
                             />
                           </div>
                           <div
@@ -9409,13 +9626,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                     </div>
                   </span>
                 </div>
-                <div
-                  style={
-                    Object {
-                      "marginLeft": 56,
-                    }
-                  }
-                />
               </div>
             </div>
           </div>
@@ -9515,7 +9725,125 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
               "padding": 8,
             }
           }
-        />
+        >
+          <div
+            style={
+              Object {
+                "color": undefined,
+                "float": "left",
+                "fontWeight": 600,
+                "paddingLeft": "2px",
+                "paddingRight": "4px",
+              }
+            }
+          >
+            NE
+          </div>
+          <div
+            style={
+              Object {
+                "color": undefined,
+                "float": "left",
+                "fontWeight": 600,
+                "paddingLeft": "2px",
+                "paddingRight": "4px",
+              }
+            }
+          >
+            DD
+          </div>
+          <div
+            style={
+              Object {
+                "color": undefined,
+                "float": "left",
+                "fontWeight": 600,
+                "paddingLeft": "2px",
+                "paddingRight": "4px",
+              }
+            }
+          >
+            LC
+          </div>
+          <div
+            style={
+              Object {
+                "color": undefined,
+                "float": "left",
+                "fontWeight": 600,
+                "paddingLeft": "2px",
+                "paddingRight": "4px",
+              }
+            }
+          >
+            NT
+          </div>
+          <div
+            style={
+              Object {
+                "color": undefined,
+                "float": "left",
+                "fontWeight": 600,
+                "paddingLeft": "2px",
+                "paddingRight": "4px",
+              }
+            }
+          >
+            VU
+          </div>
+          <div
+            style={
+              Object {
+                "color": undefined,
+                "float": "left",
+                "fontWeight": 600,
+                "paddingLeft": "2px",
+                "paddingRight": "4px",
+              }
+            }
+          >
+            EN
+          </div>
+          <div
+            style={
+              Object {
+                "color": undefined,
+                "float": "left",
+                "fontWeight": 600,
+                "paddingLeft": "2px",
+                "paddingRight": "4px",
+              }
+            }
+          >
+            CR
+          </div>
+          <div
+            style={
+              Object {
+                "color": undefined,
+                "float": "left",
+                "fontWeight": 600,
+                "paddingLeft": "2px",
+                "paddingRight": "4px",
+              }
+            }
+          >
+            EW
+          </div>
+          <div
+            style={
+              Object {
+                "color": undefined,
+                "float": "left",
+                "fontWeight": 600,
+                "paddingLeft": "2px",
+                "paddingRight": "4px",
+              }
+            }
+          >
+            EX
+          </div>
+        </div>
       </div>
     </div>
     <span
@@ -9844,7 +10172,6 @@ Array [
             Object {
                 "height": "28px",
                 "right": "14px",
-                "top": "14px",
                 "width": "28px",
               }
         }
@@ -9853,7 +10180,7 @@ Array [
             style={
                 Object {
                     "backgroundImage": "url(null)",
-                    "borderRadius": "50%",
+                    "borderRadius": "12%",
                     "bottom": 0,
                     "left": 0,
                     "position": "absolute",
@@ -9867,7 +10194,7 @@ Array [
                     Object {
                         "backgroundColor": "rgba(0,0,255,1)",
                         "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                        "borderRadius": "50%",
+                        "borderRadius": "12%",
                         "bottom": 0,
                         "left": 0,
                         "position": "absolute",
@@ -9890,7 +10217,6 @@ Array [
             Object {
                 "height": "28px",
                 "right": "14px",
-                "top": "14px",
                 "width": "28px",
               }
         }
@@ -9899,7 +10225,7 @@ Array [
             style={
                 Object {
                     "backgroundImage": "url(null)",
-                    "borderRadius": "50%",
+                    "borderRadius": "12%",
                     "bottom": 0,
                     "left": 0,
                     "position": "absolute",
@@ -9913,7 +10239,7 @@ Array [
                     Object {
                         "backgroundColor": "rgba(0,0,255,0.8)",
                         "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                        "borderRadius": "50%",
+                        "borderRadius": "12%",
                         "bottom": 0,
                         "left": 0,
                         "position": "absolute",
@@ -9936,7 +10262,6 @@ Array [
             Object {
                 "height": "28px",
                 "right": "14px",
-                "top": "14px",
                 "width": "28px",
               }
         }
@@ -9945,7 +10270,7 @@ Array [
             style={
                 Object {
                     "backgroundImage": "url(null)",
-                    "borderRadius": "50%",
+                    "borderRadius": "12%",
                     "bottom": 0,
                     "left": 0,
                     "position": "absolute",
@@ -9959,7 +10284,7 @@ Array [
                     Object {
                         "backgroundColor": "rgba(0,0,255,0.6)",
                         "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                        "borderRadius": "50%",
+                        "borderRadius": "12%",
                         "bottom": 0,
                         "left": 0,
                         "position": "absolute",
@@ -9982,7 +10307,6 @@ Array [
             Object {
                 "height": "28px",
                 "right": "14px",
-                "top": "14px",
                 "width": "28px",
               }
         }
@@ -9991,7 +10315,7 @@ Array [
             style={
                 Object {
                     "backgroundImage": "url(null)",
-                    "borderRadius": "50%",
+                    "borderRadius": "12%",
                     "bottom": 0,
                     "left": 0,
                     "position": "absolute",
@@ -10005,7 +10329,7 @@ Array [
                     Object {
                         "backgroundColor": "rgba(0,0,255,0.4)",
                         "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                        "borderRadius": "50%",
+                        "borderRadius": "12%",
                         "bottom": 0,
                         "left": 0,
                         "position": "absolute",
@@ -10028,7 +10352,6 @@ Array [
             Object {
                 "height": "28px",
                 "right": "14px",
-                "top": "14px",
                 "width": "28px",
               }
         }
@@ -10037,7 +10360,7 @@ Array [
             style={
                 Object {
                     "backgroundImage": "url(null)",
-                    "borderRadius": "50%",
+                    "borderRadius": "12%",
                     "bottom": 0,
                     "left": 0,
                     "position": "absolute",
@@ -10051,7 +10374,7 @@ Array [
                     Object {
                         "backgroundColor": "rgba(0,0,255,0.2)",
                         "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                        "borderRadius": "50%",
+                        "borderRadius": "12%",
                         "bottom": 0,
                         "left": 0,
                         "position": "absolute",
@@ -10074,7 +10397,6 @@ Array [
             Object {
                 "height": "28px",
                 "right": "14px",
-                "top": "14px",
                 "width": "28px",
               }
         }
@@ -10083,7 +10405,7 @@ Array [
             style={
                 Object {
                     "backgroundImage": "url(null)",
-                    "borderRadius": "50%",
+                    "borderRadius": "12%",
                     "bottom": 0,
                     "left": 0,
                     "position": "absolute",
@@ -10097,7 +10419,7 @@ Array [
                     Object {
                         "backgroundColor": "rgba(0,0,255,0)",
                         "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                        "borderRadius": "50%",
+                        "borderRadius": "12%",
                         "bottom": 0,
                         "left": 0,
                         "position": "absolute",

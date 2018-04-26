@@ -1,15 +1,28 @@
+// @flow
 import React from 'react'
 import { ListItem } from 'material-ui/List'
-import tinycolor from 'tinycolor2'
 import Kodetagg from '../Kodetagg'
 import PaintSwatch from './PaintSwatch'
-import ColorPicker from './ColorPicker'
 import Bildeavatar from './Bildeavatar'
 import muiThemeable from 'material-ui/styles/muiThemeable'
-import Close from 'material-ui/svg-icons/content/clear'
-import InfoOutline from 'material-ui/svg-icons/action/info-outline'
+import språk from '../../språk'
 
-class Kodelisteelement extends React.Component {
+type State = {}
+
+type Props = {
+  kode: string,
+  meta: Object,
+  avatarUtenRamme: Boolean,
+  størsteAreal: number,
+  areal: number,
+  antallNaturområder: number,
+  muiTheme: Object,
+  onMouseLeave: Function,
+  onMouseEnter: Function,
+  onGoToCode: Function,
+}
+
+class Kodelisteelement extends React.Component<Props, State> {
   setFargeKode(kode, farge) {
     let farger = JSON.parse(localStorage.getItem('customColors') || '[]')
     farger = farger.filter(x => x.kode.toLowerCase() !== kode.toLowerCase())
@@ -74,7 +87,7 @@ class Kodelisteelement extends React.Component {
   }
 
   prettyPrintAreal(areal) {
-    if (!areal) return null
+    if (!areal) return ''
     if (areal < 1000) return (Number(areal) / 1000).toFixed(0) + ' m²'
     areal /= 1000
     if (areal < 1000) return Number(areal).toFixed(0) + ' km²'
@@ -84,120 +97,43 @@ class Kodelisteelement extends React.Component {
   render() {
     const item = this.props
     const { meta, kode, avatarUtenRamme, areal } = this.props
-    const tittel = meta.tittel
-      ? Object.keys(meta.tittel).length > 1
-        ? meta.tittel[item.language[0]] +
-          ' (' +
-          meta.tittel[item.language[1]] +
-          ')'
-        : meta.tittel[item.language[0]]
-          ? meta.tittel[item.language[0]]
-          : meta.tittel[item.language[1]]
-      : kode
 
     return (
-      <React.Fragment>
-        <ListItem
-          innerDivStyle={{ backgroundColor: areal ? '' : '#DDDDDD' }}
-          key={item.kode}
-          onClick={() =>
-            this.props.onGoToCode(meta && meta.sti ? meta.sti : kode)
-          }
-          onMouseEnter={() =>
-            this.props.onMouseEnter && this.props.onMouseEnter(kode)
-          }
-          onMouseLeave={() => {
-            this.props.onMouseLeave && this.props.onMouseLeave(kode)
-          }}
-          leftAvatar={
-            <Bildeavatar utenRamme={avatarUtenRamme} kode={meta.kode} />
-          }
-          primaryText={
-            <div>
-              {true && (
-                <Kodetagg hele={this.props.visHeleKoden} kode={item.kode} />
-              )}
-              {(tittel || meta.navn || meta.navnSci) +
-                (meta.navnSci ? ` (${meta.navnSci})` : '')}
-              <div style={{ display: 'inline-flex' }} />
-            </div>
-          }
-          secondaryText={this.undertekst(
-            this.props.størsteAreal,
-            this.props.areal,
-            this.props.antallNaturområder,
-            meta.undertittel
-          )}
-          rightAvatar={
-            <div>
-              <div
-                style={{
-                  color: '#aaa',
-                  position: 'absolute',
-                  top: 0,
-                  right: 36,
-                }}
-              >
-                <InfoOutline
-                  onClick={e => {
-                    e.stopPropagation()
-                    window.open(meta.infoUrl)
-                  }}
-                />
-              </div>
-              {this.props.showColor ? (
-                <div
-                  style={{
-                    display: 'inline-flex',
-                    position: 'absolute',
-                    top: 0,
-                    right: 0,
-                  }}
-                >
-                  <PaintSwatch
-                    color={this.getFargeKode()}
-                    onClick={e => {
-                      e.stopPropagation()
-                      this.props.onShowColorpicker(meta.kode)
-                    }}
-                  />
-                </div>
-              ) : (
-                <div />
-              )}
-            </div>
-          }
-          rightIcon={
-            this.props.onClose && (
-              <div
-                onClick={e => {
-                  e.stopPropagation()
-                  this.props.onClose(item.kode)
-                }}
-                style={{ top: '-5px', right: '-16px' }}
-              >
-                <Close style={{ height: '14px', width: '14px' }} />
-              </div>
-            )
-          }
-        />
-        <div style={{ marginLeft: 56 }}>
-          {this.props.erEkspandert && (
-            <ColorPicker
-              style={{ display: 'fixed' }}
-              color={this.getFargeKode()}
-              onChange={farge => {
-                this.setFargeKode(item.kode, tinycolor(farge.rgb).toRgbString())
-                this.props.onUpdateLayerProp(
-                  item.kode,
-                  'farge',
-                  tinycolor(farge.rgb).toRgbString()
-                )
-              }}
-            />
-          )}
-        </div>
-      </React.Fragment>
+      <ListItem
+        innerDivStyle={{ backgroundColor: areal ? '' : '#DDDDDD' }}
+        key={item.kode}
+        onClick={() => this.props.onGoToCode(meta.sti)}
+        onMouseEnter={() => this.props.onMouseEnter(kode)}
+        onMouseLeave={() => this.props.onMouseLeave()}
+        leftAvatar={
+          <Bildeavatar utenRamme={avatarUtenRamme} kode={meta.kode} />
+        }
+        primaryText={
+          <div>
+            {true && <Kodetagg hele={false} kode={meta.kode} />}
+            {språk(meta.tittel)}
+            <div style={{ display: 'inline-flex' }} />
+          </div>
+        }
+        secondaryText={this.undertekst(
+          this.props.størsteAreal,
+          this.props.areal,
+          this.props.antallNaturområder,
+          meta.undertittel
+        )}
+        rightAvatar={
+          <div
+            style={{
+              display: 'inline-flex',
+              position: 'absolute',
+              top: 24,
+              right: 24,
+            }}
+          >
+            <PaintSwatch color={this.getFargeKode()} />
+          </div>
+        }
+      />
     )
   }
 }

@@ -196,14 +196,19 @@ class Grunnkart extends React.Component<Props, State> {
           >
             <VenstreVinduContainer
               onToggleMainDrawer={() =>
-                this.setState({ showMainDrawer: !this.state.showMainDrawer })
+                this.setState({
+                  showMainDrawer: !this.state.showMainDrawer,
+                })
               }
               mapBounds={this.state.mapBounds}
               onMouseEnter={kode => this.setState({ opplystKode: kode })}
-              onMouseLeave={kode => this.setState({ opplystKode: '' })}
+              onMouseLeave={kode =>
+                this.setState({
+                  opplystKode: '',
+                })
+              }
               onFitBounds={bbox => this.handleFitBounds(bbox)}
               onAddSelected={props => this.addSelected(props)}
-              language={this.state.language}
               localId={this.state.localId}
               meta={this.state.meta}
               handleUpdateLayerProp={this.handleUpdateLayerProp}
@@ -228,12 +233,15 @@ class Grunnkart extends React.Component<Props, State> {
               koder={this.state.valgteKoder}
               onGoToCode={kode => this.redirectTo(kode)}
               onMouseEnter={kode => this.setState({ opplystKode: kode })}
-              onMouseLeave={() => this.setState({ opplystKode: '' })}
+              onMouseLeave={() =>
+                this.setState({
+                  opplystKode: '',
+                })
+              }
               onShowColorpicker={this.handleShowColorpicker}
               onUpdateLayerProp={this.handleUpdateSelectedLayerProp}
               onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
               ekspandertKode={this.state.ekspandertKode}
-              language={['nb', 'la']}
             />
           </div>
         )}
