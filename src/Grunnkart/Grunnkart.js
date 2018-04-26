@@ -194,10 +194,6 @@ class Grunnkart extends React.Component<Props, State> {
     }
   }
 
-  handleMouseOver(a, b, c) {
-    console.log(a.key)
-  }
-
   handleShowColorpicker = kode => {
     let nyKode = this.state.ekspandertKode === kode ? null : kode
     this.setState({ ekspandertKode: nyKode })
