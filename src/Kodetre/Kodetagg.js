@@ -18,7 +18,7 @@ class Kodetagg extends React.Component {
   }
 
   sisteDelAvKoden(kode) {
-    return kode.match(/[a-z]+|[^a-z]+/gi).pop()
+    return kode.match(/[a-z_]+|[^a-z]+/gi).pop()
   }
 }
 
