@@ -31,23 +31,23 @@ const Kodeliste = ({
           {subtitle}
         </div>
       )}
-      {Kodeliste.sorterNøkler(metadata).map(item => {
+      {Kodeliste.sorterNøkler(metadata).map(kode => {
         const apibarn = apidata
           ? apidata[
               apidata
                 .map(apiItem => {
                   return apiItem.kode
                 })
-                .indexOf(item.toLowerCase())
+                .indexOf(kode.toLowerCase())
             ] || {}
           : {}
-        const metabarnet = metadata[item] || {}
-        const kode = item.toString()
+        const metabarnet = metadata[kode]
+        console.log(kode, kode)
         return (
           <Kodelisteelement
             kode={kode}
             key={kode}
-            subkode={item}
+            subkode={kode}
             størsteAreal={størsteAreal}
             {...apibarn}
             meta={metabarnet}
