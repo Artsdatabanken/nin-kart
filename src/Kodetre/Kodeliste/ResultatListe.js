@@ -1,21 +1,9 @@
 import React, { Component } from 'react'
 import { Paper, List, ListItem, Divider } from 'material-ui'
 import Backend from '../../backend'
+import språk from '../../språk'
 
 class ResultatListe extends Component {
-  lagSammensattNavn(language, navnObj) {
-    if (!language) return ''
-    if (language.length === 1) {
-      return navnObj[language[0]]
-    } else if (language.length === 2) {
-      let primary = navnObj[language[0]]
-      let secondary = navnObj[language[1]]
-      return primary && secondary
-        ? primary + ' (' + secondary + ')'
-        : primary ? primary : secondary
-    }
-  }
-
   filtrer(kode) {
     const prefix = kode.substring(0, 2)
     switch (prefix) {
@@ -31,7 +19,7 @@ class ResultatListe extends Component {
   }
 
   render() {
-    const { onClick, query, searchResults, language } = this.props
+    const { onClick, query, searchResults } = this.props
     if (!searchResults) return null
     if (!searchResults.length > 0) return null
     return (
@@ -47,10 +35,10 @@ class ResultatListe extends Component {
           {searchResults.map(item => {
             const kode = item.kode.toUpperCase()
             const prefix = kode.substring(0, 2)
-            const navn = this.lagSammensattNavn(language, item.navn)
+            const navn = språk(item.navn)
             let forelder = ''
             if (item.forelder && item.forelder.navn) {
-              forelder = this.lagSammensattNavn(language, item.forelder.navn)
+              forelder = språk(item.forelder.navn)
             }
 
             return (

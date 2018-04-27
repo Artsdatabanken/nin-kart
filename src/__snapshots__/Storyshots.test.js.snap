@@ -6421,7 +6421,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           >
                             _99603
                           </div>
-                          Bolboschoenus maritimus
+                          Havsivaks (Bolboschoenus maritimus)
                           <div
                             style={
                               Object {
@@ -6668,7 +6668,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           >
                             _100132
                           </div>
-                          Phragmites australis
+                          Takrør (Phragmites australis)
                           <div
                             style={
                               Object {
@@ -6915,7 +6915,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           >
                             _99789
                           </div>
-                          Schoenoplectus lacustris
+                          Sjøsivaks (Schoenoplectus lacustris)
                           <div
                             style={
                               Object {
@@ -7135,7 +7135,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           >
                             _99722
                           </div>
-                          Carex salina
+                          Fjærestarr (Carex salina)
                           <div
                             style={
                               Object {
@@ -7355,7 +7355,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           >
                             _103310
                           </div>
-                          Filipendula ulmaria
+                          Mjødurt (Filipendula ulmaria)
                           <div
                             style={
                               Object {
@@ -7575,7 +7575,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           >
                             _103183
                           </div>
-                          Thalictrum flavum
+                          Gul frøstjerne (Thalictrum flavum)
                           <div
                             style={
                               Object {
@@ -7795,7 +7795,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           >
                             _102818
                           </div>
-                          Lythrum salicaria
+                          Kattehale (Lythrum salicaria)
                           <div
                             style={
                               Object {
@@ -8015,7 +8015,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           >
                             _101846
                           </div>
-                          Lysimachia vulgaris
+                          Fredløs (Lysimachia vulgaris)
                           <div
                             style={
                               Object {
@@ -8235,7 +8235,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           >
                             _101845
                           </div>
-                          Lysimachia thyrsiflora
+                          Gulldusk (Lysimachia thyrsiflora)
                           <div
                             style={
                               Object {
@@ -8455,7 +8455,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           >
                             _100132
                           </div>
-                          Phragmites australis
+                          Takrør (Phragmites australis)
                           <div
                             style={
                               Object {
@@ -8675,7 +8675,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           >
                             _100061
                           </div>
-                          Glyceria maxima
+                          Kjempesøtgras (Glyceria maxima)
                           <div
                             style={
                               Object {
@@ -8895,7 +8895,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           >
                             _100058
                           </div>
-                          Glyceria fluitans
+                          Mannasøtgras (Glyceria fluitans)
                           <div
                             style={
                               Object {
@@ -9143,7 +9143,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           >
                             _99677
                           </div>
-                          Carex mackenziei
+                          Pølstarr (Carex mackenziei)
                           <div
                             style={
                               Object {
@@ -9390,7 +9390,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           >
                             _99790
                           </div>
-                          Schoenoplectus tabernaemontani
+                          Pollsivaks (Schoenoplectus tabernaemontani)
                           <div
                             style={
                               Object {
@@ -9610,7 +9610,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           >
                             _99737
                           </div>
-                          Carex ×vacillans
+                          Saltstarr (Carex ×vacillans)
                           <div
                             style={
                               Object {
@@ -9830,7 +9830,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           >
                             _99698
                           </div>
-                          Carex paleacea
+                          Havstarr (Carex paleacea)
                           <div
                             style={
                               Object {
@@ -10050,7 +10050,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           >
                             _99603
                           </div>
-                          Bolboschoenus maritimus
+                          Havsivaks (Bolboschoenus maritimus)
                           <div
                             style={
                               Object {
@@ -10270,7 +10270,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           >
                             _99475
                           </div>
-                          Iris pseudacorus
+                          Sverdlilje (Iris pseudacorus)
                           <div
                             style={
                               Object {
@@ -12265,7 +12265,7 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  undefined (undefined)
                 </span>
                  
               </span>
@@ -12281,7 +12281,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  Krok
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "black",
+                      "fontWeight": "bold",
+                    }
+                  }
+                >
+                  kjø
+                </span>
+                <span
+                  style={Object {}}
+                >
+                  rvel (Anthriscus caucalis)
                 </span>
                  
               </span>
@@ -12441,7 +12456,7 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  Hundekjeksslekta (Anthriscus)
                 </span>
                  
               </span>
@@ -12457,7 +12472,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  Hage
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "black",
+                      "fontWeight": "bold",
+                    }
+                  }
+                >
+                  kjø
+                </span>
+                <span
+                  style={Object {}}
+                >
+                  rvel (Anthriscus cerefolium)
                 </span>
                  
               </span>
@@ -12587,7 +12617,7 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  Hundekjeksslekta (Anthriscus)
                 </span>
                  
               </span>
@@ -12603,7 +12633,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  Spansk
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "black",
+                      "fontWeight": "bold",
+                    }
+                  }
+                >
+                  kjø
+                </span>
+                <span
+                  style={Object {}}
+                >
+                  rvelslekta (Myrrhis)
                 </span>
                  
               </span>
@@ -12733,7 +12778,7 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  Skjermplantefamilien (Apiaceae)
                 </span>
                  
               </span>
@@ -12749,7 +12794,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  Spansk 
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "black",
+                      "fontWeight": "bold",
+                    }
+                  }
+                >
+                  kjø
+                </span>
+                <span
+                  style={Object {}}
+                >
+                  rvel (Myrrhis odorata)
                 </span>
                  
               </span>
@@ -12879,7 +12939,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  Spansk
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "black",
+                      "fontWeight": "bold",
+                    }
+                  }
+                >
+                  kjø
+                </span>
+                <span
+                  style={Object {}}
+                >
+                  rvelslekta (Myrrhis)
                 </span>
                  
               </span>
@@ -12895,7 +12970,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  Heste
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "black",
+                      "fontWeight": "bold",
+                    }
+                  }
+                >
+                  kjø
+                </span>
+                <span
+                  style={Object {}}
+                >
+                  rvelslekta (Oenanthe)
                 </span>
                  
               </span>
@@ -13025,7 +13115,7 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  Skjermplantefamilien (Apiaceae)
                 </span>
                  
               </span>
@@ -13041,7 +13131,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  Heste
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "black",
+                      "fontWeight": "bold",
+                    }
+                  }
+                >
+                  kjø
+                </span>
+                <span
+                  style={Object {}}
+                >
+                  rvel (Oenanthe aquatica)
                 </span>
                  
               </span>
@@ -13171,7 +13276,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  Heste
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "black",
+                      "fontWeight": "bold",
+                    }
+                  }
+                >
+                  kjø
+                </span>
+                <span
+                  style={Object {}}
+                >
+                  rvelslekta (Oenanthe)
                 </span>
                  
               </span>
@@ -13187,7 +13307,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  S
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "black",
+                      "fontWeight": "bold",
+                    }
+                  }
+                >
+                  kjø
+                </span>
+                <span
+                  style={Object {}}
+                >
+                  rbuksurtslekta (Cochlearia)
                 </span>
                  
               </span>
@@ -13317,7 +13452,7 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  Korsblomstfamilien (Brassicaceae)
                 </span>
                  
               </span>
@@ -13333,7 +13468,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  Engelsk s
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "black",
+                      "fontWeight": "bold",
+                    }
+                  }
+                >
+                  kjø
+                </span>
+                <span
+                  style={Object {}}
+                >
+                  rbuksurt (Cochlearia anglica)
                 </span>
                  
               </span>
@@ -13463,7 +13613,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  S
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "black",
+                      "fontWeight": "bold",
+                    }
+                  }
+                >
+                  kjø
+                </span>
+                <span
+                  style={Object {}}
+                >
+                  rbuksurtslekta (Cochlearia)
                 </span>
                  
               </span>
@@ -13479,7 +13644,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  Dansk s
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "black",
+                      "fontWeight": "bold",
+                    }
+                  }
+                >
+                  kjø
+                </span>
+                <span
+                  style={Object {}}
+                >
+                  rbuksurt (Cochlearia danica)
                 </span>
                  
               </span>
@@ -13609,7 +13789,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  S
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "black",
+                      "fontWeight": "bold",
+                    }
+                  }
+                >
+                  kjø
+                </span>
+                <span
+                  style={Object {}}
+                >
+                  rbuksurtslekta (Cochlearia)
                 </span>
                  
               </span>
@@ -13625,7 +13820,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  Polars
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "black",
+                      "fontWeight": "bold",
+                    }
+                  }
+                >
+                  kjø
+                </span>
+                <span
+                  style={Object {}}
+                >
+                  rbuksurt (Cochlearia groenlandica)
                 </span>
                  
               </span>
@@ -13755,7 +13965,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                 <span
                   style={Object {}}
                 >
-                  
+                  S
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "black",
+                      "fontWeight": "bold",
+                    }
+                  }
+                >
+                  kjø
+                </span>
+                <span
+                  style={Object {}}
+                >
+                  rbuksurtslekta (Cochlearia)
                 </span>
                  
               </span>
