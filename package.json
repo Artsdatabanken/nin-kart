@@ -50,7 +50,7 @@
     "@storybook/addon-storyshots": "^3.2.16",
     "@storybook/react": "^3.2.16",
     "coveralls": "^3.0.0",
-    "flow-bin": "^0.70.0",
+    "flow-bin": "^0.71.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
     "prettier": "^1.10.2",
