@@ -23,13 +23,6 @@ type Props = {
 }
 
 class Kodelisteelement extends React.Component<Props, State> {
-  setFargeKode(kode, farge) {
-    let farger = JSON.parse(localStorage.getItem('customColors') || '[]')
-    farger = farger.filter(x => x.kode.toLowerCase() !== kode.toLowerCase())
-    farger.push({ kode: kode.toLowerCase(), farge: farge })
-    localStorage.setItem('customColors', JSON.stringify(farger))
-  }
-
   getFargeKode = () => {
     let kode = this.props.kode
     if (localStorage) {
