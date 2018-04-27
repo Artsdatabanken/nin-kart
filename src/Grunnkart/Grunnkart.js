@@ -17,7 +17,7 @@ import { withRouter } from 'react-router'
 import VenstreVinduContainer from '../VenstreVinduContainer'
 import Kart from '../Kart'
 import backend from '../backend'
-import ValgtListe from '../Kodetre/Kodeliste/ValgtListe'
+import AktiveKartlag from '../AktiveKartlag'
 
 type State = {
   valgteKoder: Array<string>,
@@ -281,7 +281,7 @@ class Grunnkart extends React.Component<Props, State> {
               zIndex: 2,
             }}
           >
-            <ValgtListe
+            <AktiveKartlag
               title={`Valgte koder`}
               koder={this.state.valgteKoder}
               onGoToCode={kode => this.redirectTo(kode)}
