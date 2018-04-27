@@ -113,7 +113,7 @@ class ResultatListe extends Component {
     let filter = terms
       .toString()
       .toLowerCase()
-      .replace(/[,\\\/]/g, '|')
+      .replace(/[,\\]/g, '|')
 
     // Split on all terms and also include the terms into parts array, ignore case
     let parts = text.split(new RegExp(`(${filter})`, 'gi'))
