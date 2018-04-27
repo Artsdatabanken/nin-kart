@@ -12216,31 +12216,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="KA"
                 color="#757575"
@@ -12255,25 +12240,19 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
-              <span>
-                 
-                <span
-                  style={Object {}}
-                >
-                  undefined (undefined)
-                </span>
-                 
-              </span>
-               
-              <span
+              <div
                 style={
                   Object {
-                    "color": "#aaa",
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
                   }
                 }
               >
@@ -12299,6 +12278,31 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rvel (Anthriscus caucalis)
                 </span>
                  
+              </div>
+              <span>
+                 
+                <span
+                  style={Object {}}
+                >
+                  undefined (undefined)
+                </span>
+                 
+                 
+                <span
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
+                >
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    
+                  </span>
+                   
+                </span>
               </span>
             </div>
           </div>
@@ -12407,31 +12411,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -12446,11 +12435,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -12459,19 +12467,15 @@ exports[`Storyshots Resultatliste default 1`] = `
                   Hundekjeksslekta (Anthriscus)
                 </span>
                  
-              </span>
-               
-              <span
-                style={
-                  Object {
-                    "color": "#aaa",
-                  }
-                }
-              >
-                 
+                 
                 <span
-                  style={Object {}}
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
                 >
+<<<<<<< HEAD
                   Hage
                 </span>
                 <span
@@ -12488,8 +12492,18 @@ exports[`Storyshots Resultatliste default 1`] = `
                   style={Object {}}
                 >
                   rvel (Anthriscus cerefolium)
+||||||| merged common ancestors
+                  Hundekjeksslekta (Anthriscus)
+=======
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Hundekjeksslekta (Anthriscus)
+                  </span>
+                   
+>>>>>>> Trunker strenger med ellipsis (#313)
                 </span>
-                 
               </span>
             </div>
           </div>
@@ -12568,31 +12582,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -12607,11 +12606,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -12620,19 +12638,15 @@ exports[`Storyshots Resultatliste default 1`] = `
                   Hundekjeksslekta (Anthriscus)
                 </span>
                  
-              </span>
-               
-              <span
-                style={
-                  Object {
-                    "color": "#aaa",
-                  }
-                }
-              >
-                 
+                 
                 <span
-                  style={Object {}}
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
                 >
+<<<<<<< HEAD
                   Spansk
                 </span>
                 <span
@@ -12649,8 +12663,18 @@ exports[`Storyshots Resultatliste default 1`] = `
                   style={Object {}}
                 >
                   rvelslekta (Myrrhis)
+||||||| merged common ancestors
+                  Hundekjeksslekta (Anthriscus)
+=======
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Hundekjeksslekta (Anthriscus)
+                  </span>
+                   
+>>>>>>> Trunker strenger med ellipsis (#313)
                 </span>
-                 
               </span>
             </div>
           </div>
@@ -12729,31 +12753,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -12768,11 +12777,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -12781,19 +12809,15 @@ exports[`Storyshots Resultatliste default 1`] = `
                   Skjermplantefamilien (Apiaceae)
                 </span>
                  
-              </span>
-               
-              <span
-                style={
-                  Object {
-                    "color": "#aaa",
-                  }
-                }
-              >
-                 
+                 
                 <span
-                  style={Object {}}
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
                 >
+<<<<<<< HEAD
                   Spansk 
                 </span>
                 <span
@@ -12810,8 +12834,18 @@ exports[`Storyshots Resultatliste default 1`] = `
                   style={Object {}}
                 >
                   rvel (Myrrhis odorata)
+||||||| merged common ancestors
+                  Skjermplantefamilien (Apiaceae)
+=======
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Skjermplantefamilien (Apiaceae)
+                  </span>
+                   
+>>>>>>> Trunker strenger med ellipsis (#313)
                 </span>
-                 
               </span>
             </div>
           </div>
@@ -12890,31 +12924,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -12929,11 +12948,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -12957,6 +12995,7 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rvelslekta (Myrrhis)
                 </span>
                  
+<<<<<<< HEAD
               </span>
                
               <span
@@ -12972,22 +13011,71 @@ exports[`Storyshots Resultatliste default 1`] = `
                 >
                   Heste
                 </span>
+||||||| merged common ancestors
+              </span>
+               
+              <span
+                style={
+                  Object {
+                    "color": "#aaa",
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  Spansk
+                </span>
+=======
+                 
+>>>>>>> Trunker strenger med ellipsis (#313)
                 <span
                   style={
                     Object {
-                      "color": "black",
-                      "fontWeight": "bold",
+                      "color": "#aaa",
                     }
                   }
                 >
-                  kjø
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Spansk
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "black",
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    kjø
+                  </span>
+                  <span
+                    style={Object {}}
+                  >
+                    rvelslekta (Myrrhis)
+                  </span>
+                   
                 </span>
+<<<<<<< HEAD
                 <span
                   style={Object {}}
                 >
                   rvelslekta (Oenanthe)
                 </span>
                  
+||||||| merged common ancestors
+                <span
+                  style={Object {}}
+                >
+                  rvelslekta (Myrrhis)
+                </span>
+                 
+=======
+>>>>>>> Trunker strenger med ellipsis (#313)
               </span>
             </div>
           </div>
@@ -13066,31 +13154,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -13105,11 +13178,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -13118,19 +13210,15 @@ exports[`Storyshots Resultatliste default 1`] = `
                   Skjermplantefamilien (Apiaceae)
                 </span>
                  
-              </span>
-               
-              <span
-                style={
-                  Object {
-                    "color": "#aaa",
-                  }
-                }
-              >
-                 
+                 
                 <span
-                  style={Object {}}
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
                 >
+<<<<<<< HEAD
                   Heste
                 </span>
                 <span
@@ -13147,8 +13235,18 @@ exports[`Storyshots Resultatliste default 1`] = `
                   style={Object {}}
                 >
                   rvel (Oenanthe aquatica)
+||||||| merged common ancestors
+                  Skjermplantefamilien (Apiaceae)
+=======
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Skjermplantefamilien (Apiaceae)
+                  </span>
+                   
+>>>>>>> Trunker strenger med ellipsis (#313)
                 </span>
-                 
               </span>
             </div>
           </div>
@@ -13227,31 +13325,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -13266,11 +13349,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -13294,6 +13396,7 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rvelslekta (Oenanthe)
                 </span>
                  
+<<<<<<< HEAD
               </span>
                
               <span
@@ -13309,22 +13412,71 @@ exports[`Storyshots Resultatliste default 1`] = `
                 >
                   S
                 </span>
+||||||| merged common ancestors
+              </span>
+               
+              <span
+                style={
+                  Object {
+                    "color": "#aaa",
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  Heste
+                </span>
+=======
+                 
+>>>>>>> Trunker strenger med ellipsis (#313)
                 <span
                   style={
                     Object {
-                      "color": "black",
-                      "fontWeight": "bold",
+                      "color": "#aaa",
                     }
                   }
                 >
+<<<<<<< HEAD
                   kjø
                 </span>
                 <span
                   style={Object {}}
                 >
                   rbuksurtslekta (Cochlearia)
+||||||| merged common ancestors
+                  kjø
                 </span>
-                 
+                <span
+                  style={Object {}}
+                >
+                  rvelslekta (Oenanthe)
+=======
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Heste
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "black",
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    kjø
+                  </span>
+                  <span
+                    style={Object {}}
+                  >
+                    rvelslekta (Oenanthe)
+                  </span>
+                   
+>>>>>>> Trunker strenger med ellipsis (#313)
+                </span>
               </span>
             </div>
           </div>
@@ -13403,31 +13555,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -13442,11 +13579,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -13455,19 +13611,15 @@ exports[`Storyshots Resultatliste default 1`] = `
                   Korsblomstfamilien (Brassicaceae)
                 </span>
                  
-              </span>
-               
-              <span
-                style={
-                  Object {
-                    "color": "#aaa",
-                  }
-                }
-              >
-                 
+                 
                 <span
-                  style={Object {}}
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
                 >
+<<<<<<< HEAD
                   Engelsk s
                 </span>
                 <span
@@ -13484,8 +13636,18 @@ exports[`Storyshots Resultatliste default 1`] = `
                   style={Object {}}
                 >
                   rbuksurt (Cochlearia anglica)
+||||||| merged common ancestors
+                  Korsblomstfamilien (Brassicaceae)
+=======
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Korsblomstfamilien (Brassicaceae)
+                  </span>
+                   
+>>>>>>> Trunker strenger med ellipsis (#313)
                 </span>
-                 
               </span>
             </div>
           </div>
@@ -13564,31 +13726,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -13603,11 +13750,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -13631,6 +13797,7 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rbuksurtslekta (Cochlearia)
                 </span>
                  
+<<<<<<< HEAD
               </span>
                
               <span
@@ -13646,22 +13813,71 @@ exports[`Storyshots Resultatliste default 1`] = `
                 >
                   Dansk s
                 </span>
+||||||| merged common ancestors
+              </span>
+               
+              <span
+                style={
+                  Object {
+                    "color": "#aaa",
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  S
+                </span>
+=======
+                 
+>>>>>>> Trunker strenger med ellipsis (#313)
                 <span
                   style={
                     Object {
-                      "color": "black",
-                      "fontWeight": "bold",
+                      "color": "#aaa",
                     }
                   }
                 >
+<<<<<<< HEAD
                   kjø
                 </span>
                 <span
                   style={Object {}}
                 >
                   rbuksurt (Cochlearia danica)
+||||||| merged common ancestors
+                  kjø
                 </span>
-                 
+                <span
+                  style={Object {}}
+                >
+                  rbuksurtslekta (Cochlearia)
+=======
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    S
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "black",
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    kjø
+                  </span>
+                  <span
+                    style={Object {}}
+                  >
+                    rbuksurtslekta (Cochlearia)
+                  </span>
+                   
+>>>>>>> Trunker strenger med ellipsis (#313)
+                </span>
               </span>
             </div>
           </div>
@@ -13740,31 +13956,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -13779,11 +13980,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -13807,6 +14027,7 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rbuksurtslekta (Cochlearia)
                 </span>
                  
+<<<<<<< HEAD
               </span>
                
               <span
@@ -13822,22 +14043,71 @@ exports[`Storyshots Resultatliste default 1`] = `
                 >
                   Polars
                 </span>
+||||||| merged common ancestors
+              </span>
+               
+              <span
+                style={
+                  Object {
+                    "color": "#aaa",
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  S
+                </span>
+=======
+                 
+>>>>>>> Trunker strenger med ellipsis (#313)
                 <span
                   style={
                     Object {
-                      "color": "black",
-                      "fontWeight": "bold",
+                      "color": "#aaa",
                     }
                   }
                 >
+<<<<<<< HEAD
                   kjø
                 </span>
                 <span
                   style={Object {}}
                 >
                   rbuksurt (Cochlearia groenlandica)
+||||||| merged common ancestors
+                  kjø
                 </span>
-                 
+                <span
+                  style={Object {}}
+                >
+                  rbuksurtslekta (Cochlearia)
+=======
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    S
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "black",
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    kjø
+                  </span>
+                  <span
+                    style={Object {}}
+                  >
+                    rbuksurtslekta (Cochlearia)
+                  </span>
+                   
+>>>>>>> Trunker strenger med ellipsis (#313)
+                </span>
               </span>
             </div>
           </div>
@@ -13916,31 +14186,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -13955,11 +14210,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -13983,6 +14257,7 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rbuksurtslekta (Cochlearia)
                 </span>
                  
+<<<<<<< HEAD
               </span>
                
               <span
@@ -13997,8 +14272,69 @@ exports[`Storyshots Resultatliste default 1`] = `
                   style={Object {}}
                 >
                   
-                </span>
+||||||| merged common ancestors
+              </span>
+               
+              <span
+                style={
+                  Object {
+                    "color": "#aaa",
+                  }
+                }
+              >
                  
+                <span
+                  style={Object {}}
+                >
+                  S
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "black",
+                      "fontWeight": "bold",
+                    }
+                  }
+                >
+                  kjø
+                </span>
+                <span
+                  style={Object {}}
+                >
+                  rbuksurtslekta (Cochlearia)
+=======
+                 
+                <span
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
+                >
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    S
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "black",
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    kjø
+                  </span>
+                  <span
+                    style={Object {}}
+                  >
+                    rbuksurtslekta (Cochlearia)
+                  </span>
+                   
+>>>>>>> Trunker strenger med ellipsis (#313)
+                </span>
               </span>
             </div>
           </div>

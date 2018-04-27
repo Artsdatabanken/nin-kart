@@ -52,8 +52,7 @@ class ResultatListe extends Component {
                     paddingBottom: 1,
                   }}
                   innerDivStyle={{
-                    paddingTop: 11,
-                    paddingBottom: 11,
+                    paddingTop: 14,
                     paddingLeft: 66,
                     fontSize: 13,
                     lineheight: 24,
@@ -68,9 +67,11 @@ class ResultatListe extends Component {
                   key={kode}
                   primaryText={
                     <React.Fragment>
-                      <span>{ResultatListe.highlightMatch(navn, query)}</span>
-                      &nbsp;<span style={{ color: '#aaa' }}>
-                        {ResultatListe.highlightMatch(forelder, query)}
+                      <span>
+                        {ResultatListe.highlightMatch(navn, query)}
+                        &nbsp;<span style={{ color: '#aaa' }}>
+                          {ResultatListe.highlightMatch(forelder, query)}
+                        </span>
                       </span>
                     </React.Fragment>
                   }
@@ -86,11 +87,17 @@ class ResultatListe extends Component {
                       }}
                     />
                   }
-                >
-                  <div style={{ float: 'right' }}>
-                    {ResultatListe.highlightMatch(this.filtrer(kode), query)}
-                  </div>
-                </ListItem>
+                  rightAvatar={
+                    <div
+                      style={{
+                        paddingTop: 6,
+                        fontWeight: 800,
+                      }}
+                    >
+                      {ResultatListe.highlightMatch(this.filtrer(kode), query)}
+                    </div>
+                  }
+                />
                 <Divider inset={true} />
               </React.Fragment>
             )
