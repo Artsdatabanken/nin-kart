@@ -53,8 +53,8 @@ const Kodeliste = ({
             meta={metabarnet}
             erEkspandert={kode === ekspandertKode}
             onGoToCode={onGoToCode}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
+            onMouseEnter={onMouseEnter || noop}
+            onMouseLeave={onMouseLeave || noop}
             onUpdateLayerProp={onUpdateLayerProp}
             onShowColorpicker={() => onShowColorpicker(kode)}
             showColor={onShowColorpicker}
@@ -89,5 +89,7 @@ Kodeliste.sorterNøkler = metadata => {
   })
   return sortert
 }
+
+function noop() {}
 
 export default Kodeliste

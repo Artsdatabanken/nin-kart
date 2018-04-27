@@ -1,8 +1,8 @@
 import React from 'react'
-import Kodelisteelement from './Kodelisteelement'
+import Kartlagelement from './Karglagelement'
 import { Subheader } from 'material-ui'
 
-const ValgtListe = ({
+const AktiveKartlag = ({
   title,
   subtitle,
   koder,
@@ -19,11 +19,11 @@ const ValgtListe = ({
   if (!koder) return null
   return (
     <React.Fragment>
-      <Subheader>{title}</Subheader>
+      <Subheader>Aktive kartlag</Subheader>
       {koder.map(item => {
         const kode = item.kode
         return (
-          <Kodelisteelement
+          <Kartlagelement
             meta={item}
             erEkspandert={kode === ekspandertKode}
             kode={kode}
@@ -44,4 +44,4 @@ const ValgtListe = ({
   )
 }
 
-export default ValgtListe
+export default AktiveKartlag

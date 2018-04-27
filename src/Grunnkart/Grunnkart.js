@@ -228,7 +228,7 @@ class Grunnkart extends React.Component<Props, State> {
               zIndex: 2,
             }}
           >
-            <ValgtListe
+            <AktiveKartlag
               title={`Valgte koder`}
               koder={this.state.valgteKoder}
               onGoToCode={kode => this.redirectTo(kode)}

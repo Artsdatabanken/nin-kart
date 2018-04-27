@@ -1,5 +1,716 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Aktive kartlag default 1`] = `
+<div
+  style={
+    Object {
+      "background": "#ffffff",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    className="SplitPane  vertical "
+    style={
+      Object {
+        "MozUserSelect": "text",
+        "WebkitUserSelect": "text",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "row",
+        "height": "100%",
+        "left": 0,
+        "msUserSelect": "text",
+        "outline": "none",
+        "overflow": "hidden",
+        "position": "absolute",
+        "right": 0,
+        "userSelect": "text",
+      }
+    }
+  >
+    <div
+      className="Pane vertical Pane1  "
+      style={
+        Object {
+          "flex": 1,
+          "outline": "none",
+          "overflowX": "auto",
+          "overflowY": "auto",
+          "position": "relative",
+        }
+      }
+    >
+      <div>
+        <div
+          style={
+            Object {
+              "width": 400,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "boxSizing": "border-box",
+                "color": "rgba(0, 0, 0, 0.54)",
+                "fontSize": 14,
+                "fontWeight": 500,
+                "lineHeight": "48px",
+                "muiPrepared": true,
+                "paddingLeft": 16,
+                "width": "100%",
+              }
+            }
+          >
+            Aktive kartlag
+          </div>
+          <div>
+            <span
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              open={null}
+              style={
+                Object {
+                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                  "background": "none",
+                  "backgroundColor": null,
+                  "border": 10,
+                  "boxSizing": "border-box",
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "fontFamily": "Roboto, sans-serif",
+                  "fontSize": 16,
+                  "fontWeight": "inherit",
+                  "lineHeight": "16px",
+                  "margin": 0,
+                  "muiPrepared": true,
+                  "outline": "none",
+                  "padding": 0,
+                  "position": "relative",
+                  "textDecoration": "none",
+                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                  "verticalAlign": null,
+                }
+              }
+              tabIndex={0}
+            >
+              <div
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  style={
+                    Object {
+                      "backgroundColor": "#DDDDDD",
+                      "marginLeft": 0,
+                      "muiPrepared": true,
+                      "paddingBottom": 16,
+                      "paddingLeft": 72,
+                      "paddingRight": 56,
+                      "paddingTop": 20,
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <div
+                    color="#757575"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "display": "block",
+                        "height": 24,
+                        "margin": 12,
+                        "position": "absolute",
+                        "right": "-16px",
+                        "top": "-5px",
+                        "width": 24,
+                      }
+                    }
+                  >
+                    <svg
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      style={
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.87)",
+                          "display": "inline-block",
+                          "fill": "currentColor",
+                          "height": "14px",
+                          "muiPrepared": true,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "userSelect": "none",
+                          "width": "14px",
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    className={undefined}
+                    onError={[Function]}
+                    size={40}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "transparent",
+                        "borderRadius": "50%",
+                        "color": "#ffffff",
+                        "display": "inline-flex",
+                        "fontSize": 20,
+                        "height": 40,
+                        "justifyContent": "center",
+                        "left": 16,
+                        "muiPrepared": true,
+                        "position": "absolute",
+                        "top": 16,
+                        "userSelect": "none",
+                        "width": 40,
+                      }
+                    }
+                  />
+                  <div
+                    style={
+                      Object {
+                        "position": "absolute",
+                        "right": 16,
+                        "top": 16,
+                      }
+                    }
+                  />
+                  <div
+                    style={
+                      Object {
+                        "muiPrepared": true,
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "color": undefined,
+                          "float": "left",
+                          "fontWeight": 600,
+                          "paddingLeft": "2px",
+                          "paddingRight": "4px",
+                        }
+                      }
+                    />
+                    aabc
+                    <div
+                      style={
+                        Object {
+                          "display": "inline-flex",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "WebkitBoxOrient": null,
+                        "WebkitLineClamp": null,
+                        "color": "rgba(0, 0, 0, 0.54)",
+                        "display": null,
+                        "fontSize": 14,
+                        "height": 16,
+                        "lineHeight": "16px",
+                        "margin": 0,
+                        "marginTop": 4,
+                        "muiPrepared": true,
+                        "overflow": "hidden",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "position": "relative",
+                          "width": 200,
+                        }
+                      }
+                    >
+                      <div
+                        className="sizebar"
+                        style={
+                          Object {
+                            "backgroundColor": "#9e9e9e",
+                            "borderBottomRightRadius": 10,
+                            "borderTopRightRadius": 10,
+                            "float": "left",
+                            "height": 4,
+                            "marginTop": 4,
+                            "width": "0%",
+                          }
+                        }
+                        title="areal: null"
+                      />
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "display": "inline",
+                          "float": "right",
+                          "position": "absolute",
+                          "right": 52,
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </span>
+          </div>
+          <div
+            style={
+              Object {
+                "marginLeft": 56,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "boxSizing": "border-box",
+                  "color": "rgba(0, 0, 0, 0.54)",
+                  "fontSize": 14,
+                  "fontWeight": 500,
+                  "lineHeight": "48px",
+                  "muiPrepared": true,
+                  "paddingLeft": 16,
+                  "width": "100%",
+                }
+              }
+            >
+              Farge
+            </div>
+            <div
+              style={
+                Object {
+                  "height": 256,
+                  "marginBottom": 16,
+                  "marginLeft": 16,
+                  "marginRight": 16,
+                  "position": "relative",
+                }
+              }
+            >
+              <div
+                onMouseDown={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "MozBorderRadius": undefined,
+                    "OBorderRadius": undefined,
+                    "WebkitBorderRadius": undefined,
+                    "background": "hsl(249.99999999999994,100%, 50%)",
+                    "borderRadius": undefined,
+                    "bottom": "0px",
+                    "left": "0px",
+                    "msBorderRadius": undefined,
+                    "position": "absolute",
+                    "right": "0px",
+                    "top": "0px",
+                  }
+                }
+              >
+                <style>
+                  
+                            .saturation-white {
+                              background: -webkit-linear-gradient(to right, #fff, rgba(255,255,255,0));
+                              background: linear-gradient(to right, #fff, rgba(255,255,255,0));
+                            }
+                            .saturation-black {
+                              background: -webkit-linear-gradient(to top, #000, rgba(0,0,0,0));
+                              background: linear-gradient(to top, #000, rgba(0,0,0,0));
+                            }
+                          
+                </style>
+                <div
+                  className="saturation-white"
+                  style={
+                    Object {
+                      "MozBorderRadius": undefined,
+                      "OBorderRadius": undefined,
+                      "WebkitBorderRadius": undefined,
+                      "borderRadius": undefined,
+                      "bottom": "0px",
+                      "left": "0px",
+                      "msBorderRadius": undefined,
+                      "position": "absolute",
+                      "right": "0px",
+                      "top": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="saturation-black"
+                    style={
+                      Object {
+                        "MozBorderRadius": undefined,
+                        "MozBoxShadow": undefined,
+                        "OBorderRadius": undefined,
+                        "OBoxShadow": undefined,
+                        "WebkitBorderRadius": undefined,
+                        "WebkitBoxShadow": undefined,
+                        "borderRadius": undefined,
+                        "bottom": "0px",
+                        "boxShadow": undefined,
+                        "left": "0px",
+                        "msBorderRadius": undefined,
+                        "msBoxShadow": undefined,
+                        "position": "absolute",
+                        "right": "0px",
+                        "top": "0px",
+                      }
+                    }
+                  />
+                  <div
+                    style={
+                      Object {
+                        "cursor": "default",
+                        "left": "66.66666666666667%",
+                        "position": "absolute",
+                        "top": "70%",
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "MozBorderRadius": "6px",
+                          "MozBoxShadow": "inset 0 0 0 1px #fff",
+                          "MozTransform": "translate(-6px, -6px)",
+                          "OBorderRadius": "6px",
+                          "OBoxShadow": "inset 0 0 0 1px #fff",
+                          "OTransform": "translate(-6px, -6px)",
+                          "WebkitBorderRadius": "6px",
+                          "WebkitBoxShadow": "inset 0 0 0 1px #fff",
+                          "WebkitTransform": "translate(-6px, -6px)",
+                          "borderRadius": "6px",
+                          "boxShadow": "inset 0 0 0 1px #fff",
+                          "height": "12px",
+                          "msBorderRadius": "6px",
+                          "msBoxShadow": "inset 0 0 0 1px #fff",
+                          "msTransform": "translate(-6px, -6px)",
+                          "transform": "translate(-6px, -6px)",
+                          "width": "12px",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "height": 10,
+                  "marginBottom": 16,
+                  "marginLeft": 16,
+                  "marginRight": 16,
+                  "position": "relative",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "MozBorderRadius": undefined,
+                    "MozBoxShadow": undefined,
+                    "OBorderRadius": undefined,
+                    "OBoxShadow": undefined,
+                    "WebkitBorderRadius": undefined,
+                    "WebkitBoxShadow": undefined,
+                    "borderRadius": undefined,
+                    "bottom": "0px",
+                    "boxShadow": undefined,
+                    "left": "0px",
+                    "msBorderRadius": undefined,
+                    "msBoxShadow": undefined,
+                    "position": "absolute",
+                    "right": "0px",
+                    "top": "0px",
+                  }
+                }
+              >
+                <div
+                  className="hue-horizontal"
+                  onMouseDown={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "MozBorderRadius": undefined,
+                      "OBorderRadius": undefined,
+                      "WebkitBorderRadius": undefined,
+                      "borderRadius": undefined,
+                      "height": "100%",
+                      "msBorderRadius": undefined,
+                      "padding": "0 2px",
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <style>
+                    
+                                .hue-horizontal {
+                                  background: linear-gradient(to right, #f00 0%, #ff0 17%, #0f0
+                                    33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+                                  background: -webkit-linear-gradient(to right, #f00 0%, #ff0
+                                    17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+                                }
+                    
+                                .hue-vertical {
+                                  background: linear-gradient(to top, #f00 0%, #ff0 17%, #0f0 33%,
+                                    #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+                                  background: -webkit-linear-gradient(to top, #f00 0%, #ff0 17%,
+                                    #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+                                }
+                              
+                  </style>
+                  <div
+                    style={
+                      Object {
+                        "left": "69.44444444444443%",
+                        "position": "absolute",
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "MozBorderRadius": "6px",
+                          "MozBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "MozTransform": "translate(-6px, -1px)",
+                          "OBorderRadius": "6px",
+                          "OBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "OTransform": "translate(-6px, -1px)",
+                          "WebkitBorderRadius": "6px",
+                          "WebkitBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "WebkitTransform": "translate(-6px, -1px)",
+                          "backgroundColor": "rgb(248, 248, 248)",
+                          "borderRadius": "6px",
+                          "boxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "height": "12px",
+                          "msBorderRadius": "6px",
+                          "msBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "msTransform": "translate(-6px, -1px)",
+                          "transform": "translate(-6px, -1px)",
+                          "width": "12px",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "height": 10,
+                  "marginBottom": 16,
+                  "marginLeft": 16,
+                  "marginRight": 16,
+                  "position": "relative",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "MozBorderRadius": undefined,
+                    "OBorderRadius": undefined,
+                    "WebkitBorderRadius": undefined,
+                    "borderRadius": undefined,
+                    "bottom": "0px",
+                    "left": "0px",
+                    "msBorderRadius": undefined,
+                    "position": "absolute",
+                    "right": "0px",
+                    "top": "0px",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "MozBorderRadius": undefined,
+                      "OBorderRadius": undefined,
+                      "WebkitBorderRadius": undefined,
+                      "borderRadius": undefined,
+                      "bottom": "0px",
+                      "left": "0px",
+                      "msBorderRadius": undefined,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "right": "0px",
+                      "top": "0px",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "MozBorderRadius": undefined,
+                        "MozBoxShadow": undefined,
+                        "OBorderRadius": undefined,
+                        "OBoxShadow": undefined,
+                        "WebkitBorderRadius": undefined,
+                        "WebkitBoxShadow": undefined,
+                        "background": "url(null) center left",
+                        "borderRadius": undefined,
+                        "bottom": "0px",
+                        "boxShadow": undefined,
+                        "left": "0px",
+                        "msBorderRadius": undefined,
+                        "msBoxShadow": undefined,
+                        "position": "absolute",
+                        "right": "0px",
+                        "top": "0px",
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  style={
+                    Object {
+                      "MozBorderRadius": undefined,
+                      "MozBoxShadow": undefined,
+                      "OBorderRadius": undefined,
+                      "OBoxShadow": undefined,
+                      "WebkitBorderRadius": undefined,
+                      "WebkitBoxShadow": undefined,
+                      "background": "linear-gradient(to right, rgba(34,25,77, 0) 0%,
+                               rgba(34,25,77, 1) 100%)",
+                      "borderRadius": undefined,
+                      "bottom": "0px",
+                      "boxShadow": undefined,
+                      "left": "0px",
+                      "msBorderRadius": undefined,
+                      "msBoxShadow": undefined,
+                      "position": "absolute",
+                      "right": "0px",
+                      "top": "0px",
+                    }
+                  }
+                />
+                <div
+                  onMouseDown={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "height": "100%",
+                      "margin": "0 3px",
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "left": "100%",
+                        "position": "absolute",
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "MozBorderRadius": "6px",
+                          "MozBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "MozTransform": "translate(-6px, -1px)",
+                          "OBorderRadius": "6px",
+                          "OBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "OTransform": "translate(-6px, -1px)",
+                          "WebkitBorderRadius": "6px",
+                          "WebkitBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "WebkitTransform": "translate(-6px, -1px)",
+                          "backgroundColor": "rgb(248, 248, 248)",
+                          "borderRadius": "6px",
+                          "boxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "height": "12px",
+                          "msBorderRadius": "6px",
+                          "msBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "msTransform": "translate(-6px, -1px)",
+                          "transform": "translate(-6px, -1px)",
+                          "width": "12px",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      className="Resizer vertical "
+      onClick={[Function]}
+      onDoubleClick={[Function]}
+      onMouseDown={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "cursor": "col-resize",
+          "marginRight": -6,
+          "width": 10,
+          "zIndex": 1,
+        }
+      }
+    />
+    <div
+      className="Pane vertical Pane2  "
+      style={
+        Object {
+          "flex": "none",
+          "outline": "none",
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        className="sb-addon-material-ui-theme_sidebar"
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots App Bar down into tree 1`] = `
 <div
   style={
