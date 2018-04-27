@@ -1,5 +1,5 @@
 import React from 'react'
-import Kartlagelement from './Karglagelement'
+import Kartlagelement from './Kartlagelement'
 import { Subheader } from 'material-ui'
 
 const AktiveKartlag = ({

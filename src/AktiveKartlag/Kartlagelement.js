@@ -98,14 +98,10 @@ class Kartlagelement extends React.Component {
           onMouseLeave={() => {
             this.props.onMouseLeave && this.props.onMouseLeave(kode)
           }}
-          leftAvatar={
-            <Bildeavatar utenRamme={avatarUtenRamme} kode={meta.kode} />
-          }
+          leftAvatar={<Bildeavatar utenRamme={avatarUtenRamme} kode={kode} />}
           primaryText={
             <div>
-              {true && (
-                <Kodetagg hele={this.props.visHeleKoden} kode={item.kode} />
-              )}
+              {true && <Kodetagg hele={this.props.visHeleKoden} kode={kode} />}
               {(tittel || meta.navn || meta.navnSci) +
                 (meta.navnSci ? ` (${meta.navnSci})` : '')}
               <div style={{ display: 'inline-flex' }} />

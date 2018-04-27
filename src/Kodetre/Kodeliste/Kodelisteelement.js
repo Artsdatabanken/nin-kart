@@ -98,12 +98,10 @@ class Kodelisteelement extends React.Component<Props, State> {
         onClick={() => this.props.onGoToCode(meta.sti)}
         onMouseEnter={() => this.props.onMouseEnter(kode)}
         onMouseLeave={() => this.props.onMouseLeave()}
-        leftAvatar={
-          <Bildeavatar utenRamme={avatarUtenRamme} kode={meta.kode} />
-        }
+        leftAvatar={<Bildeavatar utenRamme={avatarUtenRamme} kode={kode} />}
         primaryText={
           <div>
-            {true && <Kodetagg hele={false} kode={meta.kode} />}
+            {true && <Kodetagg hele={false} kode={kode} />}
             {språk(meta.tittel)}
             <div style={{ display: 'inline-flex' }} />
           </div>
