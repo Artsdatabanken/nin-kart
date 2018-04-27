@@ -11999,31 +11999,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="KA"
                 color="#757575"
@@ -12038,25 +12023,19 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
-              <span>
-                 
-                <span
-                  style={Object {}}
-                >
-                  undefined (undefined)
-                </span>
-                 
-              </span>
-               
-              <span
+              <div
                 style={
                   Object {
-                    "color": "#aaa",
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
                   }
                 }
               >
@@ -12067,6 +12046,31 @@ exports[`Storyshots Resultatliste default 1`] = `
                   
                 </span>
                  
+              </div>
+              <span>
+                 
+                <span
+                  style={Object {}}
+                >
+                  undefined (undefined)
+                </span>
+                 
+                 
+                <span
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
+                >
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    
+                  </span>
+                   
+                </span>
               </span>
             </div>
           </div>
@@ -12175,31 +12179,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -12214,11 +12203,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -12242,22 +12250,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rvel (Anthriscus caucalis)
                 </span>
                  
-              </span>
-               
-              <span
-                style={
-                  Object {
-                    "color": "#aaa",
-                  }
-                }
-              >
-                 
+                 
                 <span
-                  style={Object {}}
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
                 >
-                  Hundekjeksslekta (Anthriscus)
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Hundekjeksslekta (Anthriscus)
+                  </span>
+                   
                 </span>
-                 
               </span>
             </div>
           </div>
@@ -12336,31 +12344,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -12375,11 +12368,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -12403,22 +12415,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rvel (Anthriscus cerefolium)
                 </span>
                  
-              </span>
-               
-              <span
-                style={
-                  Object {
-                    "color": "#aaa",
-                  }
-                }
-              >
-                 
+                 
                 <span
-                  style={Object {}}
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
                 >
-                  Hundekjeksslekta (Anthriscus)
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Hundekjeksslekta (Anthriscus)
+                  </span>
+                   
                 </span>
-                 
               </span>
             </div>
           </div>
@@ -12497,31 +12509,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -12536,11 +12533,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -12564,22 +12580,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rvelslekta (Myrrhis)
                 </span>
                  
-              </span>
-               
-              <span
-                style={
-                  Object {
-                    "color": "#aaa",
-                  }
-                }
-              >
-                 
+                 
                 <span
-                  style={Object {}}
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
                 >
-                  Skjermplantefamilien (Apiaceae)
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Skjermplantefamilien (Apiaceae)
+                  </span>
+                   
                 </span>
-                 
               </span>
             </div>
           </div>
@@ -12658,31 +12674,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -12697,11 +12698,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -12725,37 +12745,37 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rvel (Myrrhis odorata)
                 </span>
                  
-              </span>
-               
-              <span
-                style={
-                  Object {
-                    "color": "#aaa",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  Spansk
-                </span>
+                 
                 <span
                   style={
                     Object {
-                      "color": "black",
-                      "fontWeight": "bold",
+                      "color": "#aaa",
                     }
                   }
                 >
-                  kjø
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Spansk
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "black",
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    kjø
+                  </span>
+                  <span
+                    style={Object {}}
+                  >
+                    rvelslekta (Myrrhis)
+                  </span>
+                   
                 </span>
-                <span
-                  style={Object {}}
-                >
-                  rvelslekta (Myrrhis)
-                </span>
-                 
               </span>
             </div>
           </div>
@@ -12834,31 +12854,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -12873,11 +12878,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -12901,22 +12925,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rvelslekta (Oenanthe)
                 </span>
                  
-              </span>
-               
-              <span
-                style={
-                  Object {
-                    "color": "#aaa",
-                  }
-                }
-              >
-                 
+                 
                 <span
-                  style={Object {}}
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
                 >
-                  Skjermplantefamilien (Apiaceae)
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Skjermplantefamilien (Apiaceae)
+                  </span>
+                   
                 </span>
-                 
               </span>
             </div>
           </div>
@@ -12995,31 +13019,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -13034,11 +13043,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -13062,37 +13090,37 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rvel (Oenanthe aquatica)
                 </span>
                  
-              </span>
-               
-              <span
-                style={
-                  Object {
-                    "color": "#aaa",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  Heste
-                </span>
+                 
                 <span
                   style={
                     Object {
-                      "color": "black",
-                      "fontWeight": "bold",
+                      "color": "#aaa",
                     }
                   }
                 >
-                  kjø
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Heste
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "black",
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    kjø
+                  </span>
+                  <span
+                    style={Object {}}
+                  >
+                    rvelslekta (Oenanthe)
+                  </span>
+                   
                 </span>
-                <span
-                  style={Object {}}
-                >
-                  rvelslekta (Oenanthe)
-                </span>
-                 
               </span>
             </div>
           </div>
@@ -13171,31 +13199,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -13210,11 +13223,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -13238,22 +13270,22 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rbuksurtslekta (Cochlearia)
                 </span>
                  
-              </span>
-               
-              <span
-                style={
-                  Object {
-                    "color": "#aaa",
-                  }
-                }
-              >
-                 
+                 
                 <span
-                  style={Object {}}
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
                 >
-                  Korsblomstfamilien (Brassicaceae)
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Korsblomstfamilien (Brassicaceae)
+                  </span>
+                   
                 </span>
-                 
               </span>
             </div>
           </div>
@@ -13332,31 +13364,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -13371,11 +13388,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -13399,37 +13435,37 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rbuksurt (Cochlearia anglica)
                 </span>
                  
-              </span>
-               
-              <span
-                style={
-                  Object {
-                    "color": "#aaa",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  S
-                </span>
+                 
                 <span
                   style={
                     Object {
-                      "color": "black",
-                      "fontWeight": "bold",
+                      "color": "#aaa",
                     }
                   }
                 >
-                  kjø
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    S
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "black",
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    kjø
+                  </span>
+                  <span
+                    style={Object {}}
+                  >
+                    rbuksurtslekta (Cochlearia)
+                  </span>
+                   
                 </span>
-                <span
-                  style={Object {}}
-                >
-                  rbuksurtslekta (Cochlearia)
-                </span>
-                 
               </span>
             </div>
           </div>
@@ -13508,31 +13544,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -13547,11 +13568,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -13575,37 +13615,37 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rbuksurt (Cochlearia danica)
                 </span>
                  
-              </span>
-               
-              <span
-                style={
-                  Object {
-                    "color": "#aaa",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  S
-                </span>
+                 
                 <span
                   style={
                     Object {
-                      "color": "black",
-                      "fontWeight": "bold",
+                      "color": "#aaa",
                     }
                   }
                 >
-                  kjø
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    S
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "black",
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    kjø
+                  </span>
+                  <span
+                    style={Object {}}
+                  >
+                    rbuksurtslekta (Cochlearia)
+                  </span>
+                   
                 </span>
-                <span
-                  style={Object {}}
-                >
-                  rbuksurtslekta (Cochlearia)
-                </span>
-                 
               </span>
             </div>
           </div>
@@ -13684,31 +13724,16 @@ exports[`Storyshots Resultatliste default 1`] = `
                   "marginLeft": 0,
                   "muiPrepared": true,
                   "overflow": "hidden",
-                  "paddingBottom": 11,
+                  "paddingBottom": 20,
                   "paddingLeft": 66,
-                  "paddingRight": 16,
-                  "paddingTop": 11,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
                   "position": "relative",
                   "textOverflow": "ellipsis",
                   "whiteSpace": "nowrap",
                 }
               }
             >
-              <div
-                style={
-                  Object {
-                    "float": "right",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  
-                </span>
-                 
-              </div>
               <img
                 alt="AR"
                 color="#757575"
@@ -13723,11 +13748,30 @@ exports[`Storyshots Resultatliste default 1`] = `
                     "marginLeft": 16,
                     "marginTop": 6,
                     "position": "absolute",
-                    "top": 0,
+                    "top": 4,
                     "width": 24,
                   }
                 }
               />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
               <span>
                  
                 <span
@@ -13751,37 +13795,37 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rbuksurt (Cochlearia groenlandica)
                 </span>
                  
-              </span>
-               
-              <span
-                style={
-                  Object {
-                    "color": "#aaa",
-                  }
-                }
-              >
-                 
-                <span
-                  style={Object {}}
-                >
-                  S
-                </span>
+                 
                 <span
                   style={
                     Object {
-                      "color": "black",
-                      "fontWeight": "bold",
+                      "color": "#aaa",
                     }
                   }
                 >
-                  kjø
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    S
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "black",
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    kjø
+                  </span>
+                  <span
+                    style={Object {}}
+                  >
+                    rbuksurtslekta (Cochlearia)
+                  </span>
+                   
                 </span>
-                <span
-                  style={Object {}}
-                >
-                  rbuksurtslekta (Cochlearia)
-                </span>
-                 
               </span>
             </div>
           </div>
