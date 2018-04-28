@@ -11352,6 +11352,9 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
           <span
             className="Collapsible__trigger is-open"
             onClick={[Function]}
+            onKeyPress={[Function]}
+            style={null}
+            tabIndex={null}
           >
             <div>
               <span
@@ -11740,6 +11743,9 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
             <span
               className="Collapsible__trigger is-open"
               onClick={[Function]}
+              onKeyPress={[Function]}
+              style={null}
+              tabIndex={null}
             >
               <div>
                 <span
