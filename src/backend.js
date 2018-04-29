@@ -133,6 +133,7 @@ class Backend {
     '7': 'Egenskapsområde',
   })
 
+  // TODO: Pek på assets
   static getCompanyLogo(navn: string) {
     navn = navn || 'MDIR'
     navn = navn.toLowerCase()
