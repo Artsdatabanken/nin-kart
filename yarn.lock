@@ -16,27 +16,6 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-"@deck.gl/core@^5.2.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@deck.gl/core/-/core-5.2.0.tgz#ab93187803bf9195e4ea8c50a5a4a81c01ea36c7"
-  dependencies:
-    d3-hexbin "^0.2.1"
-    earcut "^2.0.6"
-    lodash.flattendeep "^4.4.0"
-    luma.gl ">=5.2.0"
-    math.gl "^1.1.3"
-    mjolnir.js "^1.0.0"
-    probe.gl "^1.0.0"
-    seer "^0.2.4"
-    viewport-mercator-project "^5.1.0"
-
-"@deck.gl/react@^5.2.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@deck.gl/react/-/react-5.2.0.tgz#15af6b68988ab2de43ca019d42f08a124e613fd5"
-  dependencies:
-    "@deck.gl/core" "^5.2.0"
-    prop-types "^15.6.0"
-
 "@mapbox/geojson-area@0.2.2":
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@mapbox/geojson-area/-/geojson-area-0.2.2.tgz#18d7814aa36bf23fbbcc379f8e26a22927debf10"
@@ -2914,11 +2893,18 @@ decamelize@^1.0.0, decamelize@^1.1.1, decamelize@^1.1.2:
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
 
 deck.gl@^5.1.4:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/deck.gl/-/deck.gl-5.2.0.tgz#1df1bdcbb44e4cf82c0cce694102b2dc2e3a4499"
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/deck.gl/-/deck.gl-5.1.4.tgz#1adb33798ec91abb2a1d164adfff4cdb1a1a888d"
   dependencies:
-    "@deck.gl/core" "^5.2.0"
-    "@deck.gl/react" "^5.2.0"
+    d3-hexbin "^0.2.1"
+    earcut "^2.0.6"
+    lodash.flattendeep "^4.4.0"
+    luma.gl "^5.1.4"
+    math.gl "^1.0.0"
+    mjolnir.js "^1.0.0"
+    prop-types "^15.6.0"
+    seer "^0.2.4"
+    viewport-mercator-project "^5.0.0"
 
 decode-uri-component@^0.2.0:
   version "0.2.0"
@@ -6370,12 +6356,11 @@ lru-cache@^4.1.1:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
 
-luma.gl@>=5.2.0, luma.gl@^5.1.6:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/luma.gl/-/luma.gl-5.2.0.tgz#337e93626423a9e850378a26c9d84de5dcb2513b"
+luma.gl@^5.1.4, luma.gl@^5.1.6:
+  version "5.1.6"
+  resolved "https://registry.yarnpkg.com/luma.gl/-/luma.gl-5.1.6.tgz#36ce71dae2f25dd10a5e4ea72fbd1829d1d8da41"
   dependencies:
-    math.gl "^1.1.0"
-    probe.gl "^1.0.0"
+    math.gl "^1.0.0"
     seer "^0.2.4"
     webgl-debug "^2.0.0"
 
@@ -6502,7 +6487,7 @@ math-expression-evaluator@^1.2.14:
   version "1.2.17"
   resolved "https://registry.yarnpkg.com/math-expression-evaluator/-/math-expression-evaluator-1.2.17.tgz#de819fdbcd84dccd8fae59c6aeb79615b9d266ac"
 
-math.gl@^1.1.0, math.gl@^1.1.3:
+math.gl@^1.0.0, math.gl@^1.1.0, math.gl@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/math.gl/-/math.gl-1.1.3.tgz#360fe48d221e6cb1c648ae7007d405381d0f4fe6"
   dependencies:
@@ -7791,8 +7776,8 @@ preserve@^0.2.0:
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
 prettier@^1.10.2:
-  version "1.12.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.12.1.tgz#c1ad20e803e7749faf905a409d2367e06bbe7325"
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.10.2.tgz#1af8356d1842276a99a5b5529c82dd9e9ad3cc93"
 
 pretty-bytes@^4.0.2:
   version "4.0.2"
@@ -7839,12 +7824,6 @@ pretty-quick@^1.4.1:
 private@^0.1.6, private@^0.1.7, private@^0.1.8, private@~0.1.5:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
-
-probe.gl@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/probe.gl/-/probe.gl-1.0.0.tgz#b4dea632ffc8393d633e0980cb5026b5b7821400"
-  dependencies:
-    babel-runtime "^6.11.6"
 
 process-nextick-args@~1.0.6:
   version "1.0.7"
@@ -8131,8 +8110,8 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     strip-json-comments "~2.0.1"
 
 react-collapsible@^2.0.4:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/react-collapsible/-/react-collapsible-2.2.0.tgz#257abef5b96a330d9249810761cac29a3d82f268"
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/react-collapsible/-/react-collapsible-2.0.4.tgz#fb1761eda57599a045d602534e31cb23a6c3f52a"
 
 react-color@^2.11.4:
   version "2.13.8"
@@ -8199,8 +8178,8 @@ react-docgen@^2.20.0:
     recast "^0.12.6"
 
 react-dom@^16.2.0:
-  version "16.3.2"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.3.2.tgz#cb90f107e09536d683d84ed5d4888e9640e0e4df"
+  version "16.2.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.2.0.tgz#69003178601c0ca19b709b33a83369fe6124c044"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -8252,10 +8231,6 @@ react-inspector@^2.2.2:
     babel-runtime "^6.26.0"
     is-dom "^1.0.9"
 
-react-is@^16.3.2:
-  version "16.3.2"
-  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.3.2.tgz#f4d3d0e2f5fbb6ac46450641eb2e25bf05d36b22"
-
 react-map-gl@^3.1.5:
   version "3.2.7"
   resolved "https://registry.yarnpkg.com/react-map-gl/-/react-map-gl-3.2.7.tgz#dcc4f21b7231b4d883192d2a9e24fa2b00c219a1"
@@ -8289,8 +8264,8 @@ react-onclickoutside@^6.5.0:
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.7.1.tgz#6a5b5b8b4eae6b776259712c89c8a2b36b17be93"
 
 react-responsive@^4.0.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/react-responsive/-/react-responsive-4.1.0.tgz#01d129a35729c8f0373e79871cc8d5ecf6e22765"
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/react-responsive/-/react-responsive-4.0.5.tgz#60990c47524d739ba6c44e9351303c34a0409373"
   dependencies:
     hyphenate-style-name "^1.0.0"
     matchmediaquery "^0.2.1"
@@ -8381,13 +8356,12 @@ react-style-proptype@^3.0.0:
     prop-types "^15.5.4"
 
 react-test-renderer@^16.2.0:
-  version "16.3.2"
-  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.3.2.tgz#3d1ed74fda8db42521fdf03328e933312214749a"
+  version "16.2.0"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.2.0.tgz#bddf259a6b8fcd8555f012afc8eacc238872a211"
   dependencies:
     fbjs "^0.8.16"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
-    react-is "^16.3.2"
 
 react-textarea-autosize@^5.2.1:
   version "5.2.1"
@@ -8417,8 +8391,8 @@ react-treebeard@^2.1.0:
     velocity-react "^1.3.1"
 
 react@^16.2.0:
-  version "16.3.2"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.3.2.tgz#fdc8420398533a1e58872f59091b272ce2f91ea9"
+  version "16.2.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.2.0.tgz#a31bd2dab89bff65d42134fa187f24d054c273ba"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -10246,7 +10220,7 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-viewport-mercator-project@^5.1.0:
+viewport-mercator-project@^5.0.0, viewport-mercator-project@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/viewport-mercator-project/-/viewport-mercator-project-5.1.0.tgz#68bc5586988c2808d1456e1eff950d424eccec16"
   dependencies:
