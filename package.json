@@ -8,7 +8,6 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
     "flow-typed": "^2.4.0",
-    "graphql-request": "^1.4.0",
     "luma.gl": "^5.1.6",
     "material-ui": "^0.20.0",
     "object-assign": "4.1.1",
