@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@artsdatabanken/typesystem": "^3.0.0",
     "babel-polyfill": "^6.26.0",
     "deck.gl": "^5.1.4",
     "eslint-config-prettier": "^2.9.0",
