@@ -63,12 +63,6 @@ test('createNatureAreaPointInfo', () => {
   ).toBe(naturAreaExpected.article)
 })
 
-test('getNatureAreaFacts', () => {
-  expect(
-    punktinformasjonContainer.getNatureAreaFacts(getNatureAreaFactsInput).length
-  ).toBe(undefined)
-})
-
 test('createRødlistePointInfo', () => {
   expect(
     punktinformasjonContainer.createRødlistePointInfo(

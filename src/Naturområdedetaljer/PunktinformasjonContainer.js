@@ -53,23 +53,7 @@ class PunktinformasjonContainer extends Component {
   goFetchInfo(id) {
     if (!id) return
     backend.getMetadataByNatureAreaLocalId(id).then(metadata => {
-      this.setState({
-        metadata: metadata,
-      })
-      backend.getNatureAreaByLocalId(id).then(
-        data => {
-          data.metadata = metadata
-          this.setState({
-            natureAreaFacts: this.getNatureAreaFacts(data),
-          })
-        },
-        function(reason) {
-          // failed
-          this.setState({
-            natureAreaFacts: null,
-          })
-        }
-      )
+      this.getNatureAreaFacts(metadata)
     })
   }
 
@@ -137,51 +121,55 @@ class PunktinformasjonContainer extends Component {
               props.surveyer.company
             )
           break
-        case 'metadata':
-          if (props.metadata.owner) {
+        case 'owner':
+          if (props.owner) {
             facts.Owner = this.createPointInfo(
               'Dataeier, kontaktperson',
-              props.metadata.owner.company +
-                ', ' +
-                props.metadata.owner.contactPerson,
-              props.metadata.owner.homesite
-                ? props.metadata.owner.homesite
-                : 'mailto:' + props.metadata.owner.email,
-              props.metadata.owner.company
+              props.owner.company + ', ' + props.owner.contactPerson,
+              props.owner.homesite
+                ? props.owner.homesite
+                : 'mailto:' + props.owner.email,
+              props.owner.company
             )
           }
-          if (props.metadata.program) {
+          break
+        case 'program':
+          if (props.program) {
             facts.Program = this.createPointInfo(
               'Program',
-              props.metadata.program,
+              props.program.name,
               '',
-              props.metadata.owner ? props.metadata.owner.company : ''
+              props.owner ? props.owner.company : ''
             )
           }
-          if (props.metadata.projectName) {
+          break
+        case 'project':
+          if (props.projectName) {
             facts.Project = this.createPointInfo(
               'Prosjekt',
-              props.metadata.projectName +
-                ', ' +
-                props.metadata.projectDescription,
+              props.project.name + ', ' + props.project.description,
               '',
-              props.metadata.owner ? props.metadata.owner.company : ''
+              props.owner ? props.owner.company : ''
             )
           }
-          if (props.metadata.surveyedFrom) {
+          break
+        case 'surveyedFrom':
+          if (props.surveyedFrom) {
             facts.Kartlagt = this.createNatureAreaPointInfo(
               'Kartlagt',
-              props.metadata.surveyedFrom,
+              props.surveyedFrom,
               '',
-              props.metadata.owner ? props.metadata.owner.company : ''
+              props.owner ? props.owner.company : ''
             )
           }
-          if (props.metadata.surveyScale) {
+          break
+        case 'surveyScale':
+          if (props.surveyScale) {
             facts.Kartleggingsmålestokk = this.createNatureAreaPointInfo(
               'Kartleggingsmålestokk',
-              props.metadata.surveyScale,
+              props.surveyScale,
               '',
-              props.metadata.owner ? props.metadata.owner.company : ''
+              props.owner ? props.owner.company : ''
             )
           }
           break
@@ -205,31 +193,24 @@ class PunktinformasjonContainer extends Component {
       }
     }
 
-    for (let y in props.parameters) {
-      let param = props.parameters[y]
-      for (let a in param.additionalVariables) {
-        let aVar = param.additionalVariables[a]
-        facts['BS_' + aVar.code] = this.createPointInfo(
-          'BS_' + aVar.code,
-          (aVar.mainTypeDescription ? aVar.mainTypeDescription + ' ' : '') +
-            aVar.codeDescription,
-          aVar.surveyer.homesite
-            ? aVar.surveyer.homesite
-            : aVar.surveyer.email ? 'mailto:' + aVar.surveyer.email : '',
-          aVar.surveyer.company
-        )
+    for (let code in props.codes) {
+      let param = props.codes[code]
+      if (Array.isArray(param.beskrivelsesvariabler)) {
+        for (let a in param.beskrivelsesvariabler) {
+          let bv = 'BS_' + param.beskrivelsesvariabler[a]
+          backend
+            .getCodeTitle(bv)
+            .then(result => this.AddCodeTitleToFacts(result, bv))
+        }
+      } else if (param.beskrivelsesvariabler) {
+        let bv1 = 'BS_' + param.beskrivelsesvariabler
+        backend
+          .getCodeTitle(bv1)
+          .then(result => this.AddCodeTitleToFacts(result, bv1))
       }
-      for (let c in param.customVariables) {
-        let cVar = param.customVariables[c]
-        facts['BS_' + cVar.code] = this.createPointInfo(
-          'BS_' + cVar.code,
-          cVar.codeDescription
-        )
-      }
-      facts[param.code] = this.createNatureAreaPointInfo(
-        param.code,
-        param.codeDescription
-      )
+      backend
+        .getCodeTitle(code)
+        .then(result => this.AddNatureareaCodeTitleToFacts(result, code))
     }
 
     if (props.description && props.description !== '')
@@ -239,7 +220,25 @@ class PunktinformasjonContainer extends Component {
         false
       )
 
-    return facts
+    this.setState({
+      natureAreaFacts: facts,
+    })
+  }
+
+  AddCodeTitleToFacts(result, bv) {
+    let facts = this.state.natureAreaFacts
+    facts[bv] = this.createPointInfo(bv, result)
+    this.setState({
+      natureAreaFacts: facts,
+    })
+  }
+
+  AddNatureareaCodeTitleToFacts(result, bv, useDefaultArticle = true) {
+    let facts = this.state.natureAreaFacts
+    facts[bv] = this.createNatureAreaPointInfo(bv, result, useDefaultArticle)
+    this.setState({
+      natureAreaFacts: facts,
+    })
   }
 
   fixAdmEnhet(data) {
