@@ -218,9 +218,10 @@ class Mapbox extends Component {
           })
         }
         map.off('styledata', addLayers)
-      } else {
-        console.log('Fortsatt ikke klar...')
       }
+      // else {
+      //   console.log('Fortsatt ikke klar...')
+      // }
     }
 
     map.on('styledata', addLayers)

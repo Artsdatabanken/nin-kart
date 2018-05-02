@@ -1,5 +1,4 @@
 import localStorageHelper from './localStorageHelper'
-import Color from 'color'
 
 const dummyMeta = {
   farge: '#B0BB0B',
