@@ -144,7 +144,7 @@ class PunktinformasjonContainer extends Component {
           }
           break
         case 'project':
-          if (props.projectName) {
+          if (props.project.name) {
             facts.Project = this.createPointInfo(
               'Prosjekt',
               props.project.name + ', ' + props.project.description,

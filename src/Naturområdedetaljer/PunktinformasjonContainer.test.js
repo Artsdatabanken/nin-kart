@@ -94,3 +94,35 @@ test('createPointInfo', () => {
 test('fetch-noLocalid', () => {
   expect(punktinformasjonContainer.fetch(1, 1, undefined)).toBe(undefined)
 })
+
+let props = {
+  nivå: '',
+  surveyer: {
+    contactPerson: 'testContact',
+    company: 'testCompany',
+    email: 'testMail',
+  },
+  owner: {
+    contactPerson: 'testContact',
+    company: 'testCompany',
+    email: 'testMail',
+    homesite: 'testHomesite',
+  },
+  program: {
+    name: 'testName',
+  },
+  project: {
+    name: 'projectName',
+    description: 'testDescription',
+  },
+  surveyedFrom: 'testSurveyedFrom',
+  surveyScale: 'testSurveyScale',
+  rødlisteKategori: {
+    code: 'LC',
+  },
+  description: 'testDescription',
+}
+
+test('getNatureAreaFacts', () => {
+  expect(punktinformasjonContainer.getNatureAreaFacts(props)).toBe(undefined)
+})
