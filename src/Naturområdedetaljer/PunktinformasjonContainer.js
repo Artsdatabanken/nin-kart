@@ -47,10 +47,13 @@ class PunktinformasjonContainer extends Component {
         natureAreaFacts: null,
         localId: null,
       })
-    else this.goFetchInfo(localId)
+    else if (localId !== this.state.localId) this.goFetchInfo(localId)
   }
 
   goFetchInfo(id) {
+    this.setState({
+      natureAreaFacts: null,
+    })
     if (!id) return
     backend.getMetadataByNatureAreaLocalId(id).then(metadata => {
       this.getNatureAreaFacts(metadata)
