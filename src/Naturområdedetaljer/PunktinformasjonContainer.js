@@ -101,90 +101,81 @@ class PunktinformasjonContainer extends Component {
     return pointInfo
   }
 
+  MetadataDictionary = {
+    surveyer: 'Kartlegger, Kontaktperson',
+    owner: 'Dataeier, kontaktperson',
+    program: 'Program',
+    project: 'Prosjekt',
+    nivå: 'Natursystem',
+    surveyedFrom: 'Kartlagt',
+    surveyScale: 'Kartleggingsmålestokk',
+    rødlisteKategori: 'RødlisteKategori',
+  }
+
   getNatureAreaFacts(props) {
     var facts = {}
     for (var i in props) {
       switch (i) {
         case 'nivå':
           facts.NA = this.createNatureAreaPointInfo(
-            'Natursystem',
+            this.MetadataDictionary[i],
             backend.NatureLevelNames[props.nivå]
           )
-
           break
         case 'surveyer':
-          if (props.surveyer)
-            facts.Surveyer = this.createPointInfo(
-              'Kartlegger, Kontaktperson',
-              props.surveyer.contactPerson + ', ' + props.surveyer.company,
-              'mailto:' + props.surveyer.email,
-              props.surveyer.company
-            )
+          facts.Surveyer = this.createPointInfo(
+            this.MetadataDictionary[i],
+            props[i].contactPerson + ', ' + props[i].company,
+            'mailto:' + props[i].email,
+            props[i].company
+          )
           break
         case 'owner':
-          if (props.owner) {
-            facts.Owner = this.createPointInfo(
-              'Dataeier, kontaktperson',
-              props.owner.company + ', ' + props.owner.contactPerson,
-              props.owner.homesite
-                ? props.owner.homesite
-                : 'mailto:' + props.owner.email,
-              props.owner.company
-            )
-          }
+          facts.Owner = this.createPointInfo(
+            this.MetadataDictionary[i],
+            props[i].company + ', ' + props[i].contactPerson,
+            props[i].homesite ? props[i].homesite : 'mailto:' + props[i].email,
+            props[i].company
+          )
           break
         case 'program':
-          if (props.program) {
-            facts.Program = this.createPointInfo(
-              'Program',
-              props.program.name,
-              '',
-              props.owner ? props.owner.company : ''
-            )
-          }
+          facts.Program = this.createPointInfo(
+            this.MetadataDictionary[i],
+            props[i].name,
+            '',
+            props.owner ? props.owner.company : ''
+          )
           break
         case 'project':
-          if (props.project.name) {
+          if (props[i].name) {
             facts.Project = this.createPointInfo(
-              'Prosjekt',
-              props.project.name + ', ' + props.project.description,
+              this.MetadataDictionary[i],
+              props[i].name + ', ' + props[i].description,
               '',
               props.owner ? props.owner.company : ''
             )
           }
           break
         case 'surveyedFrom':
-          if (props.surveyedFrom) {
-            facts.Kartlagt = this.createNatureAreaPointInfo(
-              'Kartlagt',
-              props.surveyedFrom,
-              '',
-              props.owner ? props.owner.company : ''
-            )
-          }
-          break
         case 'surveyScale':
-          if (props.surveyScale) {
-            facts.Kartleggingsmålestokk = this.createNatureAreaPointInfo(
-              'Kartleggingsmålestokk',
-              props.surveyScale,
-              '',
-              props.owner ? props.owner.company : ''
-            )
-          }
+          facts.Kartlagt = this.createNatureAreaPointInfo(
+            this.MetadataDictionary[i],
+            props[i],
+            '',
+            props.owner ? props.owner.company : ''
+          )
           break
         case 'rødlisteKategori':
-          if (props.rødlisteKategori.code === 'LC') break
-          facts[
-            'RL_' + props.rødlisteKategori.code
-          ] = this.createRødlistePointInfo(
-            'Rødlistekategori',
-            props.rødlisteKategori.code
+          if (props[i].code === 'LC') break
+          let key = 'RL_' + props[i].code
+          facts[key] = this.createRødlistePointInfo(
+            this.MetadataDictionary[i],
+            props[i].code
           )
-          if (props.rødlisteKategori.vurderingsenhet) {
+          if (props[i].vurderingsenhet) {
             facts.Vurderingsenhet = this.createRødlistePointInfo(
               'Vurderingsenhet',
-              props.rødlisteKategori.vurderingsenhet.code
+              props[i].vurderingsenhet.code
             )
           }
           break
