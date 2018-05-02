@@ -92,14 +92,20 @@ class Backend {
     )
   }
 
-  static async getNatureAreaByLocalId(localId: string) {
-    return this.getPromise(
-      `https://test.artsdatabanken.no/nin_master/Api/data/GetNatureAreaByLocalId/${localId}`
-    )
-  }
+  // static async getNatureAreaByLocalId(localId: string) {
+  //   return this.getPromise(
+  //     `https://test.artsdatabanken.no/nin_master/Api/data/GetNatureAreaByLocalId/${localId}`
+  //   )
+  // }
   static async getMetadataByNatureAreaLocalId(localId: string) {
     return this.getPromise(
-      `https://test.artsdatabanken.no/nin_master/Api/data/GetMetadataByNatureAreaLocalId/${localId}`
+      `https://bboxcode.firebaseio.com/metadata/${localId}.json`
+      // `https://test.artsdatabanken.no/nin_master/Api/data/GetMetadataByNatureAreaLocalId/${localId}`
+    )
+  }
+  static async getCodeTitle(code: string) {
+    return this.getPromise(
+      `https://bboxcode.firebaseio.com/titles/${code}.json`
     )
   }
 
