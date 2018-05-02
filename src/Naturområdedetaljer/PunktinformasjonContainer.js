@@ -191,17 +191,17 @@ class PunktinformasjonContainer extends Component {
           let bv = 'BS_' + param.beskrivelsesvariabler[a]
           backend
             .getCodeTitle(bv)
-            .then(result => this.AddCodeTitleToFacts(result, bv))
+            .then(result => this.AddTitleToFacts(result, bv))
         }
       } else if (param.beskrivelsesvariabler) {
         let bv1 = 'BS_' + param.beskrivelsesvariabler
         backend
           .getCodeTitle(bv1)
-          .then(result => this.AddCodeTitleToFacts(result, bv1))
+          .then(result => this.AddTitleToFacts(result, bv1))
       }
       backend
         .getCodeTitle(code)
-        .then(result => this.AddNatureareaCodeTitleToFacts(result, code))
+        .then(result => this.AddTitleToFacts(result, code, true))
     }
 
     if (props.description && props.description !== '')
@@ -216,19 +216,12 @@ class PunktinformasjonContainer extends Component {
     })
   }
 
-  AddCodeTitleToFacts(result, bv) {
+  AddTitleToFacts(result, bv, natureInfo = false, useDefaultArticle = true) {
     let facts = {}
     if (this.state.natureAreaFacts) facts = this.state.natureAreaFacts
-    facts[bv] = this.createPointInfo(bv, result)
-    this.setState({
-      natureAreaFacts: facts,
-    })
-  }
-
-  AddNatureareaCodeTitleToFacts(result, bv, useDefaultArticle = true) {
-    let facts = {}
-    if (this.state.natureAreaFacts) facts = this.state.natureAreaFacts
-    facts[bv] = this.createNatureAreaPointInfo(bv, result, useDefaultArticle)
+    if (natureInfo)
+      facts[bv] = this.createNatureAreaPointInfo(bv, result, useDefaultArticle)
+    else facts[bv] = this.createPointInfo(bv, result)
     this.setState({
       natureAreaFacts: facts,
     })
