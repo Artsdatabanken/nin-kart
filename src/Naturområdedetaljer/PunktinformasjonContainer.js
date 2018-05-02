@@ -101,90 +101,81 @@ class PunktinformasjonContainer extends Component {
     return pointInfo
   }
 
+  MetadataDictionary = {
+    surveyer: 'Kartlegger, Kontaktperson',
+    owner: 'Dataeier, kontaktperson',
+    program: 'Program',
+    project: 'Prosjekt',
+    nivå: 'Natursystem',
+    surveyedFrom: 'Kartlagt',
+    surveyScale: 'Kartleggingsmålestokk',
+    rødlisteKategori: 'RødlisteKategori',
+  }
+
   getNatureAreaFacts(props) {
     var facts = {}
     for (var i in props) {
       switch (i) {
         case 'nivå':
-          facts.NA = this.createNatureAreaPointInfo(
-            'Natursystem',
-            backend.NatureLevelNames[props.nivå]
+          this.AddTitleToFacts(
+            {
+              description: backend.NatureLevelNames[props.nivå],
+            },
+            'NA',
+            true
           )
-
           break
         case 'surveyer':
-          if (props.surveyer)
-            facts.Surveyer = this.createPointInfo(
-              'Kartlegger, Kontaktperson',
-              props.surveyer.contactPerson + ', ' + props.surveyer.company,
-              'mailto:' + props.surveyer.email,
-              props.surveyer.company
-            )
-          break
         case 'owner':
-          if (props.owner) {
-            facts.Owner = this.createPointInfo(
-              'Dataeier, kontaktperson',
-              props.owner.company + ', ' + props.owner.contactPerson,
-              props.owner.homesite
-                ? props.owner.homesite
-                : 'mailto:' + props.owner.email,
-              props.owner.company
-            )
-          }
+          this.AddTitleToFacts(
+            {
+              description: props[i].company + ', ' + props[i].contactPerson,
+              url: props[i].homesite
+                ? props[i].homesite
+                : 'mailto:' + props[i].email,
+              company: props[i].company,
+            },
+            this.MetadataDictionary[i]
+          )
           break
         case 'program':
-          if (props.program) {
-            facts.Program = this.createPointInfo(
-              'Program',
-              props.program.name,
-              '',
-              props.owner ? props.owner.company : ''
-            )
-          }
-          break
         case 'project':
-          if (props.project.name) {
-            facts.Project = this.createPointInfo(
-              'Prosjekt',
-              props.project.name + ', ' + props.project.description,
-              '',
-              props.owner ? props.owner.company : ''
+          if (props[i].name) {
+            this.AddTitleToFacts(
+              {
+                description: props[i].description
+                  ? props[i].name + ', ' + props[i].description
+                  : props[i].name,
+                url: '',
+                company: props.owner ? props.owner.company : '',
+              },
+              this.MetadataDictionary[i]
             )
           }
           break
         case 'surveyedFrom':
-          if (props.surveyedFrom) {
-            facts.Kartlagt = this.createNatureAreaPointInfo(
-              'Kartlagt',
-              props.surveyedFrom,
-              '',
-              props.owner ? props.owner.company : ''
-            )
-          }
-          break
         case 'surveyScale':
-          if (props.surveyScale) {
-            facts.Kartleggingsmålestokk = this.createNatureAreaPointInfo(
-              'Kartleggingsmålestokk',
-              props.surveyScale,
-              '',
-              props.owner ? props.owner.company : ''
-            )
-          }
+          this.AddTitleToFacts(
+            {
+              description: props.surveyedFrom
+                ? props.surveyedFrom
+                : props.surveyScale,
+            },
+            this.MetadataDictionary[i],
+            true
+          )
           break
         case 'rødlisteKategori':
-          if (props.rødlisteKategori.code === 'LC') break
-          facts[
-            'RL_' + props.rødlisteKategori.code
-          ] = this.createRødlistePointInfo(
-            'Rødlistekategori',
-            props.rødlisteKategori.code
+          if (props[i].code === 'LC') break
+          let key = 'RL_' + props[i].code
+          facts[key] = this.createRødlistePointInfo(
+            this.MetadataDictionary[i],
+            props[i].code
           )
-          if (props.rødlisteKategori.vurderingsenhet) {
+          if (props[i].vurderingsenhet) {
             facts.Vurderingsenhet = this.createRødlistePointInfo(
               'Vurderingsenhet',
-              props.rødlisteKategori.vurderingsenhet.code
+              props[i].vurderingsenhet.code
             )
           }
           break
@@ -200,17 +191,19 @@ class PunktinformasjonContainer extends Component {
           let bv = 'BS_' + param.beskrivelsesvariabler[a]
           backend
             .getCodeTitle(bv)
-            .then(result => this.AddCodeTitleToFacts(result, bv))
+            .then(result => this.AddTitleToFacts({ description: result }, bv))
         }
       } else if (param.beskrivelsesvariabler) {
         let bv1 = 'BS_' + param.beskrivelsesvariabler
         backend
           .getCodeTitle(bv1)
-          .then(result => this.AddCodeTitleToFacts(result, bv1))
+          .then(result => this.AddTitleToFacts({ description: result }, bv1))
       }
       backend
         .getCodeTitle(code)
-        .then(result => this.AddNatureareaCodeTitleToFacts(result, code))
+        .then(result =>
+          this.AddTitleToFacts({ description: result }, code, true)
+        )
     }
 
     if (props.description && props.description !== '')
@@ -219,25 +212,20 @@ class PunktinformasjonContainer extends Component {
         props.description,
         false
       )
-
-    this.setState({
-      natureAreaFacts: facts,
-    })
   }
 
-  AddCodeTitleToFacts(result, bv) {
+  AddTitleToFacts(value, code, natureInfo = false) {
     let facts = {}
     if (this.state.natureAreaFacts) facts = this.state.natureAreaFacts
-    facts[bv] = this.createPointInfo(bv, result)
-    this.setState({
-      natureAreaFacts: facts,
-    })
-  }
-
-  AddNatureareaCodeTitleToFacts(result, bv, useDefaultArticle = true) {
-    let facts = {}
-    if (this.state.natureAreaFacts) facts = this.state.natureAreaFacts
-    facts[bv] = this.createNatureAreaPointInfo(bv, result, useDefaultArticle)
+    if (natureInfo)
+      facts[code] = this.createNatureAreaPointInfo(code, value.description)
+    else
+      facts[code] = this.createPointInfo(
+        code,
+        value.description,
+        value.url,
+        value.company
+      )
     this.setState({
       natureAreaFacts: facts,
     })
