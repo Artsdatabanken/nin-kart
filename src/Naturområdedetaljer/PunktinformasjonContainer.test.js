@@ -39,6 +39,14 @@ var rødlisteExpected = {
   article: 'https://www.artsdatabanken.no/rodlistefornaturtyper',
 }
 
+var pointInfoExpected = {
+  name: 'name',
+  value: 'value',
+  logo: backend.getCompanyLogo('ADB'),
+  homepage: 'http://www.miljodirektoratet.no/',
+  dataorigin: 'ADB',
+}
+
 test('fixStedsnavn-NullTest', () => {
   expect(punktinformasjonContainer.fixStedsnavn({ result: 'nada' })).toBe(null)
 })
@@ -70,6 +78,17 @@ test('createRødlistePointInfo', () => {
       rødlisteExpected.value
     ).homepage
   ).toBe(rødlisteExpected.homepage)
+})
+
+test('createPointInfo', () => {
+  expect(
+    punktinformasjonContainer.createPointInfo(
+      pointInfoExpected.name,
+      pointInfoExpected.value,
+      '',
+      pointInfoExpected.dataorigin
+    ).dataorigin
+  ).toBe(rødlisteExpected.dataorigin)
 })
 
 test('fetch-noLocalid', () => {
