@@ -39,6 +39,14 @@ var rødlisteExpected = {
   article: 'https://www.artsdatabanken.no/rodlistefornaturtyper',
 }
 
+var pointInfoExpected = {
+  name: 'name',
+  value: 'value',
+  logo: backend.getCompanyLogo('ADB'),
+  homepage: 'http://www.miljodirektoratet.no/',
+  dataorigin: 'ADB',
+}
+
 test('fixStedsnavn-NullTest', () => {
   expect(punktinformasjonContainer.fixStedsnavn({ result: 'nada' })).toBe(null)
 })
@@ -63,12 +71,6 @@ test('createNatureAreaPointInfo', () => {
   ).toBe(naturAreaExpected.article)
 })
 
-test('getNatureAreaFacts', () => {
-  expect(
-    punktinformasjonContainer.getNatureAreaFacts(getNatureAreaFactsInput).length
-  ).toBe(undefined)
-})
-
 test('createRødlistePointInfo', () => {
   expect(
     punktinformasjonContainer.createRødlistePointInfo(
@@ -76,4 +78,51 @@ test('createRødlistePointInfo', () => {
       rødlisteExpected.value
     ).homepage
   ).toBe(rødlisteExpected.homepage)
+})
+
+test('createPointInfo', () => {
+  expect(
+    punktinformasjonContainer.createPointInfo(
+      pointInfoExpected.name,
+      pointInfoExpected.value,
+      '',
+      pointInfoExpected.dataorigin
+    ).dataorigin
+  ).toBe(rødlisteExpected.dataorigin)
+})
+
+test('fetch-noLocalid', () => {
+  expect(punktinformasjonContainer.fetch(1, 1, undefined)).toBe(undefined)
+})
+
+let props = {
+  nivå: '',
+  surveyer: {
+    contactPerson: 'testContact',
+    company: 'testCompany',
+    email: 'testMail',
+  },
+  owner: {
+    contactPerson: 'testContact',
+    company: 'testCompany',
+    email: 'testMail',
+    homesite: 'testHomesite',
+  },
+  program: {
+    name: 'testName',
+  },
+  project: {
+    name: 'projectName',
+    description: 'testDescription',
+  },
+  surveyedFrom: 'testSurveyedFrom',
+  surveyScale: 'testSurveyScale',
+  rødlisteKategori: {
+    code: 'LC',
+  },
+  description: 'testDescription',
+}
+
+test('getNatureAreaFacts', () => {
+  expect(punktinformasjonContainer.getNatureAreaFacts(props)).toBe(undefined)
 })
