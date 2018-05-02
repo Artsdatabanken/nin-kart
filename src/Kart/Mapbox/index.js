@@ -133,8 +133,10 @@ class Mapbox extends Component {
           aktivKode,
           this.props.meta
         )
-        let fillColor = customColor ? Color(customColor) : Color('#ff2222')
-        aktivtLag.paint['fill-color'] = fillColor.alpha(0.7).rgbaString()
+        let fillColor = customColor
+          ? Color(customColor)
+          : Color('#ff2222').alpha(0.7)
+        aktivtLag.paint['fill-color'] = fillColor.rgbaString()
 
         //console.log('add aktivt: ', aktivKode)
         map.addLayer(aktivtLag)
@@ -164,7 +166,7 @@ class Mapbox extends Component {
 
         let fillColor = customColor
           ? Color(customColor)
-          : Color(barn.farge || '#ffff00')
+          : Color(barn.farge || '#ffff00').alpha(0.7)
         opplystLag.paint['fill-color'] = fillColor.rgbaString()
         opplystLag.paint['fill-pattern'] = 'shovel'
         const outlineColor = fillColor.darken(0.5)
@@ -187,28 +189,41 @@ class Mapbox extends Component {
       })
     }
 
-    if (nextProps.meta && nextProps.meta.barn) {
-      Object.keys(nextProps.meta.barn).forEach(kode => {
-        const barn = nextProps.meta.barn[kode]
-        let lag = hentLag(map, kode)
-        if (!lag || !lag.paint) return
-        if (!lag.custom) {
-          let customColor = localStorageHelper.getFargeKode(
-            kode,
-            barn || nextProps.meta
-          )
+    var addLayers = () => {
+      if (map.isStyleLoaded()) {
+        if (
+          nextProps.meta &&
+          nextProps.meta.barn &&
+          nextProps.meta.kode !== '~'
+        ) {
+          Object.keys(nextProps.meta.barn).forEach(kode => {
+            const barn = nextProps.meta.barn[kode]
+            let lag = hentLag(map, kode)
+            if (!lag || !lag.paint) return
+            if (!lag.custom) {
+              let customColor = localStorageHelper.getFargeKode(
+                kode,
+                barn || nextProps.meta
+              )
 
-          let fillColor = customColor
-            ? Color(customColor)
-            : Color(barn.farge || '#ff2222')
-          lag.paint['fill-color'] = fillColor.alpha(0.7).rgbaString()
-          lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
+              let fillColor = customColor
+                ? Color(customColor)
+                : Color(barn.farge || '#ff2222').alpha(0.7)
+              lag.paint['fill-color'] = fillColor.rgbaString()
+              lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
+            }
+            lag.id = 'legend' + kode
+            console.log('add lag: ', kode)
+            map.addLayer(lag)
+          })
         }
-        lag.id = 'legend' + kode
-        console.log('add lag: ', kode)
-        map.addLayer(lag)
-      })
+        map.off('styledata', addLayers)
+      } else {
+        console.log('Fortsatt ikke klar...')
+      }
     }
+
+    map.on('styledata', addLayers)
   }
 
   fjernKode(kode) {
@@ -252,8 +267,8 @@ class Mapbox extends Component {
 
             let fillColor = customColor
               ? Color(customColor)
-              : Color(item.farge || '#ff2222')
-            lag.paint['fill-color'] = fillColor.alpha(0.7).rgbaString()
+              : Color(item.farge || '#ff2222').alpha(0.7)
+            lag.paint['fill-color'] = fillColor.rgbaString()
             lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
           }
           lag.id = lagId

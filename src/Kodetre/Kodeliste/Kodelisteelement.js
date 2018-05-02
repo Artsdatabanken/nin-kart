@@ -101,7 +101,7 @@ class Kodelisteelement extends React.Component<Props, State> {
         leftAvatar={<Bildeavatar utenRamme={avatarUtenRamme} kode={kode} />}
         primaryText={
           <div>
-            {true && <Kodetagg hele={false} kode={kode} />}
+            {true && <Kodetagg hele={false} kode={kode.toUpperCase()} />}
             {språk(meta.tittel)}
             <div style={{ display: 'inline-flex' }} />
           </div>
@@ -121,7 +121,12 @@ class Kodelisteelement extends React.Component<Props, State> {
               right: 24,
             }}
           >
-            <PaintSwatch color={this.getFargeKode()} />
+            <PaintSwatch
+              color={this.getFargeKode()}
+              onClick={e => {
+                e.stopPropagation()
+              }}
+            />
           </div>
         }
       />
