@@ -304,6 +304,13 @@ class PunktinformasjonContainer extends Component {
   render() {
     return (
       <div style={{ maxHeight: window.innerHeight * 0.8, overflow: 'auto' }}>
+        {this.state.natureAreaFacts && (
+          <Punktinformasjon
+            key="NA"
+            natureAreaFacts={this.state.natureAreaFacts}
+            title="NaturområdeInfo"
+          />
+        )}
         <Punktinformasjon
           key="AD"
           metadata={this.state.metadata}
@@ -313,13 +320,6 @@ class PunktinformasjonContainer extends Component {
           lngLat={this.state.lngLat}
           title="PunktInfo"
         />
-        {this.state.natureAreaFacts && (
-          <Punktinformasjon
-            key="NA"
-            natureAreaFacts={this.state.natureAreaFacts}
-            title="NaturområdeInfo"
-          />
-        )}
       </div>
     )
   }
