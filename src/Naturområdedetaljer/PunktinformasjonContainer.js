@@ -226,7 +226,8 @@ class PunktinformasjonContainer extends Component {
   }
 
   AddCodeTitleToFacts(result, bv) {
-    let facts = this.state.natureAreaFacts
+    let facts = {}
+    if (this.state.natureAreaFacts) facts = this.state.natureAreaFacts
     facts[bv] = this.createPointInfo(bv, result)
     this.setState({
       natureAreaFacts: facts,
@@ -234,7 +235,8 @@ class PunktinformasjonContainer extends Component {
   }
 
   AddNatureareaCodeTitleToFacts(result, bv, useDefaultArticle = true) {
-    let facts = this.state.natureAreaFacts
+    let facts = {}
+    if (this.state.natureAreaFacts) facts = this.state.natureAreaFacts
     facts[bv] = this.createNatureAreaPointInfo(bv, result, useDefaultArticle)
     this.setState({
       natureAreaFacts: facts,
