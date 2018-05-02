@@ -117,9 +117,12 @@ class PunktinformasjonContainer extends Component {
     for (var i in props) {
       switch (i) {
         case 'nivå':
-          facts.NA = this.createNatureAreaPointInfo(
-            this.MetadataDictionary[i],
-            backend.NatureLevelNames[props.nivå]
+          this.AddTitleToFacts(
+            {
+              description: backend.NatureLevelNames[props.nivå],
+            },
+            'NA',
+            true
           )
           break
         case 'surveyer':
@@ -154,9 +157,9 @@ class PunktinformasjonContainer extends Component {
         case 'surveyScale':
           this.AddTitleToFacts(
             {
-              description: this.MetadataDictionary[i],
-              url: '',
-              company: props.owner ? props.owner.company : '',
+              description: props.surveyedFrom
+                ? props.surveyedFrom
+                : props.surveyScale,
             },
             this.MetadataDictionary[i],
             true
