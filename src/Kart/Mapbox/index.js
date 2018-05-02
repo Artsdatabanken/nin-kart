@@ -139,7 +139,7 @@ class Mapbox extends Component {
         aktivtLag.paint['fill-color'] = fillColor.rgbaString()
 
         //console.log('add aktivt: ', aktivKode)
-        map.addLayer(aktivtLag)
+        this.addBehindSymbols(map, aktivtLag)
       }
     }
   }
@@ -173,10 +173,24 @@ class Mapbox extends Component {
         opplystLag.paint['fill-outline-color'] = outlineColor.rgbaString()
         opplystLag.id = 'opplyst'
         //console.log('add opplyst: ', opplystKode)
-        map.addLayer(opplystLag)
+        this.addBehindSymbols(map, opplystLag)
       }
     }
   }, 100)
+
+  addBehindSymbols(map, lag) {
+    var layers = map.getStyle().layers
+    // Find the index of the first symbol layer in the map style
+    var firstSymbolId
+    for (var i = 0; i < layers.length; i++) {
+      if (layers[i].type === 'symbol') {
+        firstSymbolId = layers[i].id
+        break
+      }
+    }
+
+    map.addLayer(lag, firstSymbolId)
+  }
 
   fargeleggLag(nextProps) {
     let map = this.map.getMap()
@@ -214,7 +228,7 @@ class Mapbox extends Component {
             }
             lag.id = 'legend' + kode
             console.log('add lag: ', kode)
-            map.addLayer(lag)
+            this.addBehindSymbols(map, lag)
           })
         }
         map.off('styledata', addLayers)
@@ -274,7 +288,7 @@ class Mapbox extends Component {
           }
           lag.id = lagId
           console.log('la til valgt lag: ', item.kode)
-          map.addLayer(lag)
+          this.addBehindSymbols(map, lag)
         }
       })
     }
