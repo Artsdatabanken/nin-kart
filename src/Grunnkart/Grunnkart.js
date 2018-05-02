@@ -6,7 +6,6 @@ import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
 import backend from '../backend'
 import Kart from '../Kart'
-import ValgtListe from '../Kodetre/Kodeliste/ValgtListe'
 import VenstreVinduContainer from '../VenstreVinduContainer'
 import MainDrawer from './MainDrawer'
 
