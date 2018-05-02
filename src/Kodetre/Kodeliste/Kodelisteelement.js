@@ -6,6 +6,7 @@ import PaintSwatch from './PaintSwatch'
 import Bildeavatar from './Bildeavatar'
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import språk from '../../språk'
+import prettyprint from '../../prettyprint'
 
 type State = {}
 
@@ -62,7 +63,7 @@ class Kodelisteelement extends React.Component<Props, State> {
               width: `${100.0 * areal / størsteAreal}%`,
               backgroundColor: this.props.muiTheme.palette.accent3Color,
             }}
-            title={'areal: ' + this.prettyPrintAreal(areal)}
+            title={'areal: ' + prettyprint.prettyPrintAreal(areal)}
           />
         </div>
         <div
@@ -73,18 +74,10 @@ class Kodelisteelement extends React.Component<Props, State> {
             float: 'right',
           }}
         >
-          {false && this.prettyPrintAreal(this.props.areal)}
+          {false && prettyprint.prettyPrintAreal(this.props.areal)}
         </div>
       </div>
     )
-  }
-
-  prettyPrintAreal(areal) {
-    if (!areal) return ''
-    if (areal < 1000) return (Number(areal) / 1000).toFixed(0) + ' m²'
-    areal /= 1000
-    if (areal < 1000) return Number(areal).toFixed(0) + ' km²'
-    return Number(areal / 1000).toFixed(0) + "' km²"
   }
 
   render() {
