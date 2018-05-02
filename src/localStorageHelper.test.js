@@ -5,6 +5,8 @@ const dummyMeta = {
 }
 
 test('default-farge', () => {
-  expect(localStorageHelper.getFargeKode('dummy')).toBe('#888888')
-  expect(localStorageHelper.getFargeKode('dummy', dummyMeta)).toBe('#B0BB0B')
+  expect(localStorageHelper.getFargeKode('dummy').values.rgb[0]).toBe(136)
+  expect(
+    localStorageHelper.getFargeKode('dummy', dummyMeta).values.rgb[0]
+  ).toBe(176)
 })

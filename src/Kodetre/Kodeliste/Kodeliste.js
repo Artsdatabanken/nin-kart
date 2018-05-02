@@ -42,7 +42,6 @@ const Kodeliste = ({
             ] || {}
           : {}
         const metabarnet = metadata[kode]
-        console.log(kode, kode)
         return (
           <Kodelisteelement
             kode={kode}

@@ -1,3 +1,5 @@
+import Color from 'color'
+
 class LocalStorageHelper {
   static getFargeKode(kode, meta) {
     var customColors = undefined
@@ -5,7 +7,9 @@ class LocalStorageHelper {
       customColors = localStorage.getItem('customColors')
     }
 
-    let defaultFarge = meta && meta.farge ? meta.farge : '#888888'
+    let defaultFarge = Color(meta && meta.farge ? meta.farge : '#888888').alpha(
+      0.7
+    )
     if (customColors) {
       let fargeElement = JSON.parse(customColors).filter(
         x => x.kode.toLowerCase() === kode.toLowerCase()
@@ -17,4 +21,5 @@ class LocalStorageHelper {
     return defaultFarge
   }
 }
+
 export default LocalStorageHelper
