@@ -71,3 +71,7 @@ test('createRødlistePointInfo', () => {
     ).homepage
   ).toBe(rødlisteExpected.homepage)
 })
+
+test('fetch-noLocalid', () => {
+  expect(punktinformasjonContainer.fetch(1, 1, undefined)).toBe(undefined)
+})
