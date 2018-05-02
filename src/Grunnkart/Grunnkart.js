@@ -89,10 +89,15 @@ class Grunnkart extends React.Component<Props, State> {
   }
 
   addCustomLayers() {
+    var origlayers = this.state.baseMapStyle.get('layers')
+    var firstSymbolId = origlayers.findIndex(function(obj) {
+      return obj.get('type') === 'symbol'
+    })
+
     const layers = this.state.baseMapStyle
       .get('layers')
-      .push(NiN)
-      .push(NiNHover)
+      .splice(firstSymbolId, 0, NiN)
+      .splice(firstSymbolId, 0, NiNHover)
     this.setState({
       mapStyle: this.state.baseMapStyle.set('layers', layers),
     })
