@@ -16,10 +16,6 @@ backend.default.hentStedsnavn.mockReturnValue(
   new Promise((resolve, reject) => resolve({}))
 )
 
-backend.default.getNatureAreaByLocalId.mockReturnValue(
-  new Promise((resolve, reject) => resolve({}))
-)
-
 backend.default.getMetadataByNatureAreaLocalId.mockReturnValue(
   new Promise((resolve, reject) => resolve({}))
 )
