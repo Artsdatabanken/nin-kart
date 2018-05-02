@@ -47,10 +47,13 @@ class PunktinformasjonContainer extends Component {
         natureAreaFacts: null,
         localId: null,
       })
-    else this.goFetchInfo(localId)
+    else if (localId !== this.state.localId) this.goFetchInfo(localId)
   }
 
   goFetchInfo(id) {
+    this.setState({
+      natureAreaFacts: null,
+    })
     if (!id) return
     backend.getMetadataByNatureAreaLocalId(id).then(metadata => {
       this.getNatureAreaFacts(metadata)
@@ -301,6 +304,13 @@ class PunktinformasjonContainer extends Component {
   render() {
     return (
       <div style={{ maxHeight: window.innerHeight * 0.8, overflow: 'auto' }}>
+        {this.state.natureAreaFacts && (
+          <Punktinformasjon
+            key="NA"
+            natureAreaFacts={this.state.natureAreaFacts}
+            title="NaturområdeInfo"
+          />
+        )}
         <Punktinformasjon
           key="AD"
           metadata={this.state.metadata}
@@ -310,13 +320,6 @@ class PunktinformasjonContainer extends Component {
           lngLat={this.state.lngLat}
           title="PunktInfo"
         />
-        {this.state.natureAreaFacts && (
-          <Punktinformasjon
-            key="NA"
-            natureAreaFacts={this.state.natureAreaFacts}
-            title="NaturområdeInfo"
-          />
-        )}
       </div>
     )
   }
