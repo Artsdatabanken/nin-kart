@@ -25,9 +25,11 @@ function VectorPointInfo(props) {
               if (key.startsWith('NA_')) {
                 return (
                   <Collapsible
+                    key={key + '_' + 'Collapsible'}
                     open={true}
                     trigger={
                       <ListItem
+                        key={key + '_' + props.pointInfo[key].value + 'Closed'}
                         primaryText={props.pointInfo[key].value}
                         secondaryText={
                           props.pointInfo[key].part
@@ -40,6 +42,7 @@ function VectorPointInfo(props) {
                     }
                     triggerWhenOpen={
                       <ListItem
+                        key={key + '_' + props.pointInfo[key].value + 'Open'}
                         primaryText={props.pointInfo[key].value}
                         secondaryText={
                           props.pointInfo[key].part
@@ -52,8 +55,9 @@ function VectorPointInfo(props) {
                     }
                     easing="ease-in-out"
                   >
-                    <List>
+                    <List key={key + '_CodeAndArticle'}>
                       <ListItem
+                        key={key + '_Kode'}
                         secondaryText={props.pointInfo[key].name}
                         primaryText="Kode"
                         onClick={() => {
@@ -63,6 +67,7 @@ function VectorPointInfo(props) {
                         }}
                       />
                       <ListItem
+                        key={key + '_Artikkel'}
                         secondaryText={props.pointInfo[key].article}
                         primaryText="Artikkel"
                         onClick={e => {
@@ -75,6 +80,7 @@ function VectorPointInfo(props) {
                           open={true}
                           trigger={
                             <ListItem
+                              key={key + '_BeskrivelsesvariablerClosed'}
                               primaryText="Beskrivelsesvariabler"
                               rightIcon={<HardwareKeyboardArrowDown />}
                               style={getHeaderStyle()}
@@ -82,6 +88,7 @@ function VectorPointInfo(props) {
                           }
                           triggerWhenOpen={
                             <ListItem
+                              key={key + '_BeskrivelsesvariablerOpen'}
                               primaryText="Beskrivelsesvariabler"
                               rightIcon={<HardwareKeyboardArrowUp />}
                               style={getHeaderStyle()}
@@ -89,7 +96,7 @@ function VectorPointInfo(props) {
                           }
                           easing="ease-in-out"
                         >
-                          <List>
+                          <List key={key + '_Beskrivelsesvariabler'}>
                             <PointInfo pointInfo={props.pointInfo[key].codes} />
                           </List>
                         </Collapsible>
