@@ -118,9 +118,10 @@ let props = {
   surveyedFrom: 'testSurveyedFrom',
   surveyScale: 'testSurveyScale',
   rødlisteKategori: {
-    code: 'LC',
+    code: 'NOT_LC',
   },
   description: 'testDescription',
+  codes: { Not_Code: {} },
 }
 
 test('getNatureAreaFacts', () => {
