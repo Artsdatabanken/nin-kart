@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import backend from '../backend'
 import Punktinformasjon from './Punktinformasjon'
+import VektorPunktinformasjon from './VektorPunktinformasjon'
 
 class PunktinformasjonContainer extends Component {
   constructor(props) {
@@ -60,16 +61,17 @@ class PunktinformasjonContainer extends Component {
     })
   }
 
-  createNatureAreaPointInfo(name, value, useDefaultArticle = true) {
+  createNatureAreaPointInfo(name, value, part) {
     var natureAreaPointInfo = {
       name: name,
       value: value,
       logo: backend.getCompanyLogo('MDIR'),
       homepage: 'http://www.miljodirektoratet.no/',
       dataorigin: 'MDIR',
+      part: part,
     }
 
-    if (!useDefaultArticle) return natureAreaPointInfo
+    //if (!useDefaultArticle) return natureAreaPointInfo
 
     var codeSplit = name.split('_')
 
@@ -188,32 +190,42 @@ class PunktinformasjonContainer extends Component {
     }
 
     for (let code in props.codes) {
+      backend
+        .getCodeTitle(code)
+        .then(result =>
+          this.AddTitleToFacts(
+            { description: result, part: props.codes[code].andel },
+            code,
+            true
+          )
+        )
       let param = props.codes[code]
       if (Array.isArray(param.beskrivelsesvariabler)) {
         for (let a in param.beskrivelsesvariabler) {
           let bv = 'BS_' + param.beskrivelsesvariabler[a]
           backend
             .getCodeTitle(bv)
-            .then(result => this.AddTitleToFacts({ description: result }, bv))
+            .then(result =>
+              this.AddTitleToFacts(
+                { description: result, parentCode: code },
+                bv
+              )
+            )
         }
       } else if (param.beskrivelsesvariabler) {
         let bv1 = 'BS_' + param.beskrivelsesvariabler
         backend
           .getCodeTitle(bv1)
-          .then(result => this.AddTitleToFacts({ description: result }, bv1))
+          .then(result =>
+            this.AddTitleToFacts({ description: result, parentCode: code }, bv1)
+          )
       }
-      backend
-        .getCodeTitle(code)
-        .then(result =>
-          this.AddTitleToFacts({ description: result }, code, true)
-        )
     }
 
     if (props.description && props.description !== '')
       facts.Beskrivelse = this.createNatureAreaPointInfo(
         'Beskrivelse',
-        props.description,
-        false
+        props.description
       )
   }
 
@@ -230,9 +242,20 @@ class PunktinformasjonContainer extends Component {
     else title = value.description
 
     if (this.state.natureAreaFacts) facts = this.state.natureAreaFacts
-    if (natureInfo) facts[key] = this.createNatureAreaPointInfo(code, title)
-    else {
-      facts[key] = this.createPointInfo(code, title, value.url, value.company)
+    if (natureInfo) {
+      facts[key] = this.createNatureAreaPointInfo(code, title, value.part)
+    } else {
+      if (value.parentCode) {
+        if (!facts[value.parentCode]) facts[value.parentCode] = {}
+        if (!facts[value.parentCode].codes) facts[value.parentCode].codes = {}
+        facts[value.parentCode].codes[key] = this.createPointInfo(
+          code,
+          title,
+          value.url,
+          value.company
+        )
+      } else
+        facts[key] = this.createPointInfo(code, title, value.url, value.company)
     }
     this.setState({
       natureAreaFacts: facts,
@@ -310,7 +333,7 @@ class PunktinformasjonContainer extends Component {
     return (
       <div style={{ maxHeight: window.innerHeight * 0.8, overflow: 'auto' }}>
         {this.state.natureAreaFacts && (
-          <Punktinformasjon
+          <VektorPunktinformasjon
             key="NA"
             natureAreaFacts={this.state.natureAreaFacts}
             title="NaturområdeInfo"
