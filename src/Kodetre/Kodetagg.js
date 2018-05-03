@@ -1,5 +1,6 @@
 import React from 'react'
 import muiThemeable from 'material-ui/styles/muiThemeable'
+import typesystem from '@artsdatabanken/typesystem'
 
 class Kodetagg extends React.Component {
   render() {
@@ -18,8 +19,7 @@ class Kodetagg extends React.Component {
   }
 
   sisteDelAvKoden(kode) {
-    //console.warn(kode)
-    return kode ? kode.match(/[A-Z]+|[_-]|[^A-Z]+/gi).pop() : ''
+    return typesystem.splittKode(kode).pop()
   }
 }
 
