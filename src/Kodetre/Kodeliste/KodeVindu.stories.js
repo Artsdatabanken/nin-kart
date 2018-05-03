@@ -114,7 +114,7 @@ const meta2 = {
         'Med variasjon i artssammensetning betinget av strukturerende artsgruppe',
     },
   },
-  relasjon: {
+  graf: {
     dominerende_mengdeart: {
       AR_100132: {
         kode: 'AR_100132',
