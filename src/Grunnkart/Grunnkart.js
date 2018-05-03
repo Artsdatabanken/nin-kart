@@ -96,8 +96,8 @@ class Grunnkart extends React.Component<Props, State> {
 
     const layers = this.state.baseMapStyle
       .get('layers')
-      .splice(firstSymbolId, 0, NiN)
       .splice(firstSymbolId, 0, NiNHover)
+      .splice(firstSymbolId, 0, NiN)
     this.setState({
       mapStyle: this.state.baseMapStyle.set('layers', layers),
     })
