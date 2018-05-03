@@ -218,17 +218,22 @@ class PunktinformasjonContainer extends Component {
   }
 
   AddTitleToFacts(value, code, natureInfo = false) {
+    if (!value.description) return
     let facts = {}
+    let title = ''
+    let key = code
+    if (value.description.parent) {
+      code = value.description.parent
+    }
+
+    if (value.description.title) title = value.description.title
+    else title = value.description
+
     if (this.state.natureAreaFacts) facts = this.state.natureAreaFacts
-    if (natureInfo)
-      facts[code] = this.createNatureAreaPointInfo(code, value.description)
-    else
-      facts[code] = this.createPointInfo(
-        code,
-        value.description,
-        value.url,
-        value.company
-      )
+    if (natureInfo) facts[key] = this.createNatureAreaPointInfo(code, title)
+    else {
+      facts[key] = this.createPointInfo(code, title, value.url, value.company)
+    }
     this.setState({
       natureAreaFacts: facts,
     })
