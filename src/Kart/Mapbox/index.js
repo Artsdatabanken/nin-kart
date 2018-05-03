@@ -156,21 +156,11 @@ class Mapbox extends Component {
         this.props.meta.barn &&
         this.props.meta.barn[opplystKode]
       ) {
-        const barn = this.props.meta.barn[opplystKode]
         let opplystLag = hentLag(map, opplystKode)
         if (!opplystLag || !opplystLag.paint) return
-        let customColor = localStorageHelper.getFargeKode(
-          opplystKode,
-          barn || this.props.meta
-        )
 
-        let fillColor = customColor
-          ? Color(customColor)
-          : Color(barn.farge || '#ffff00').alpha(0.7)
         opplystLag.paint['fill-color'] = 'cyan'
-        //opplystLag.paint['fill-pattern'] = 'shovel'
-        const outlineColor = fillColor.darken(0.5)
-        opplystLag.paint['fill-outline-color'] = outlineColor.rgbaString()
+        opplystLag.paint['fill-outline-color'] = 'cyan'
         opplystLag.id = 'opplyst'
         //console.log('add opplyst: ', opplystKode)
         this.addBehindSymbols(map, opplystLag)
@@ -341,11 +331,20 @@ class Mapbox extends Component {
   onHover = backend.debounce(function(e) {
     const pos = e.center
     const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y])
+    this.map.getMap().setFilter('nin-hover', ['==', 'localId', ''])
     r.forEach(feature => {
-      if (feature.properties && feature.properties.localId) {
-        this.map
-          .getMap()
-          .setFilter('nin-hover', ['==', 'localId', feature.properties.localId])
+      if (feature.layer.id === 'nin') {
+        if (feature.properties && feature.properties.localId) {
+          this.map
+            .getMap()
+            .setFilter('nin-hover', [
+              '==',
+              'localId',
+              feature.properties.localId,
+            ])
+          console.log('Filter set to ' + feature.properties.localId)
+          return
+        }
       }
     })
   }, 50)
