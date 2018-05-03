@@ -8,9 +8,20 @@ import Share from 'material-ui/svg-icons/social/share'
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import backend from '../../backend'
 import språk from '../../språk'
+import BildeDialog from './BildeDialog'
 
 class Kodekort extends React.Component {
-  state = { expanded: false }
+  state = {
+    expanded: false,
+    visBilde: false,
+  }
+
+  handleClose = () => {
+    this.setState({ visBilde: false })
+  }
+  handleOpen = () => {
+    this.setState({ visBilde: true })
+  }
 
   componentWillReceiveProps(nextProps, props) {
     if (nextProps.data && props.data && nextProps.data.kode !== props.data.kode)
@@ -37,6 +48,7 @@ class Kodekort extends React.Component {
     return (
       <Card containerStyle={{ paddingBottom: 0 }}>
         <CardMedia
+          onClick={() => this.handleOpen()}
           overlay={
             <Tittelblokk
               favorite={this.state.favorite}
@@ -74,6 +86,12 @@ class Kodekort extends React.Component {
               objectFit: 'cover',
             }}
           />
+          <BildeDialog
+            kode={kode}
+            tittel={språk(this.props.tittel)}
+            visBilde={this.state.visBilde}
+            handleClose={this.handleClose}
+          />
         </CardMedia>
       </Card>
     )
@@ -101,7 +119,13 @@ const Tittelblokk = ({
     subtitle={
       overordnet &&
       overordnet.map(forelder => (
-        <div key={forelder.kode} onClick={() => onGoToCode(forelder.sti)}>
+        <div
+          key={forelder.kode}
+          onClick={e => {
+            e.stopPropagation()
+            onGoToCode(forelder.sti)
+          }}
+        >
           {språk(forelder.tittel)}
         </div>
       ))
@@ -116,19 +140,32 @@ const Tittelblokk = ({
         right: 0,
       }}
     >
-      <IconButton title={'Del'} style={{ float: 'right' }}>
+      <IconButton
+        title={'Del'}
+        style={{ float: 'right' }}
+        onClick={e => {
+          e.stopPropagation()
+          console.log('todo')
+        }}
+      >
         <Share color="#eee" />
       </IconButton>
       <IconButton
         title={'Merk som favoritt'}
         style={{ float: 'right' }}
-        onClick={() => toggleFavorite(kode)}
+        onClick={e => {
+          e.stopPropagation()
+          toggleFavorite(kode)
+        }}
       >
         {favorite ? <Star color="#eee" /> : <StarBorder color="#eee" />}
       </IconButton>
       <IconButton
         style={{ float: 'right' }}
-        onClick={() => onAddSelected(nodeMeta)}
+        onClick={e => {
+          e.stopPropagation()
+          onAddSelected(nodeMeta)
+        }}
         title={'Velg'}
       >
         <Plus color="#eee" />
