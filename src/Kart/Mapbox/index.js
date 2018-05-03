@@ -167,8 +167,8 @@ class Mapbox extends Component {
         let fillColor = customColor
           ? Color(customColor)
           : Color(barn.farge || '#ffff00').alpha(0.7)
-        opplystLag.paint['fill-color'] = fillColor.rgbaString()
-        opplystLag.paint['fill-pattern'] = 'shovel'
+        opplystLag.paint['fill-color'] = 'cyan'
+        //opplystLag.paint['fill-pattern'] = 'shovel'
         const outlineColor = fillColor.darken(0.5)
         opplystLag.paint['fill-outline-color'] = outlineColor.rgbaString()
         opplystLag.id = 'opplyst'
