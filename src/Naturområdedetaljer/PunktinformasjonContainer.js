@@ -218,6 +218,7 @@ class PunktinformasjonContainer extends Component {
   }
 
   AddTitleToFacts(value, code, natureInfo = false) {
+    if (!value.description) return
     let facts = {}
     let description = ''
     if (value.description.parent) {
