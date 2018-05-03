@@ -342,12 +342,10 @@ class Mapbox extends Component {
               'localId',
               feature.properties.localId,
             ])
-          console.log('Filter set to ' + feature.properties.localId)
-          return
         }
       }
     })
-  }, 50)
+  }, 20)
 
   onTaxonHover = backend.debounce(function(data) {
     if (data && data.object && data.object.elevationValue) {
