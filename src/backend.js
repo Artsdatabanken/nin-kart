@@ -109,6 +109,19 @@ class Backend {
     )
   }
 
+  static async getImageAttribution(kode: string) {
+    return {
+      license: {
+        name: 'CC BY-SA 3.0',
+        url: 'https://creativecommons.org/licenses/by-sa/3.0/deed.en',
+      },
+      attribution: {
+        name: 'Wikipedia',
+        url: 'https://no.wikipedia.org/wiki/Portal:Forside',
+      },
+    }
+  }
+
   static NatureLevelNames = Object.freeze({
     '0': 'Udefinert',
     '1': 'Landskapstype',
