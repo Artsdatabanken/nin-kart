@@ -23,9 +23,8 @@ export const NiNHover = fromJS({
   'source-layer': 'sqrt42',
   filter: ['==', 'localId', ''],
   paint: {
-    'fill-color': 'hsla(251, 58%, 43%, 0.2)',
+    'fill-color': 'cyan',
     'fill-outline-color': 'hsla(0, 22%, 22%, 0.52)',
-    'fill-pattern': 'shovel',
   },
 })
 
