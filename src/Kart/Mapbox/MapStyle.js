@@ -24,7 +24,7 @@ export const NiNHover = fromJS({
   filter: ['==', 'localId', ''],
   paint: {
     'fill-color': 'cyan',
-    'fill-outline-color': 'cyan',
+    'fill-outline-color': 'magenta',
   },
 })
 
