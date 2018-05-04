@@ -160,7 +160,7 @@ class Mapbox extends Component {
         if (!opplystLag || !opplystLag.paint) return
 
         opplystLag.paint['fill-color'] = 'cyan'
-        opplystLag.paint['fill-outline-color'] = 'cyan'
+        opplystLag.paint['fill-outline-color'] = 'magenta'
         opplystLag.id = 'opplyst'
         //console.log('add opplyst: ', opplystKode)
         this.addBehindSymbols(map, opplystLag)
