@@ -32,9 +32,10 @@ function VectorPointInfo(props) {
                         key={key + '_' + props.pointInfo[key].value + 'Closed'}
                         primaryText={props.pointInfo[key].value}
                         secondaryText={
-                          props.pointInfo[key].part
+                          'Andel: ' +
+                          (props.pointInfo[key].part
                             ? props.pointInfo[key].part * 10 + '%'
-                            : '100%'
+                            : '100%')
                         }
                         rightIcon={<HardwareKeyboardArrowDown />}
                         style={getHeaderStyle()}
@@ -45,9 +46,10 @@ function VectorPointInfo(props) {
                         key={key + '_' + props.pointInfo[key].value + 'Open'}
                         primaryText={props.pointInfo[key].value}
                         secondaryText={
-                          props.pointInfo[key].part
+                          'Andel: ' +
+                          (props.pointInfo[key].part
                             ? props.pointInfo[key].part * 10 + '%'
-                            : '100%'
+                            : '100%')
                         }
                         rightIcon={<HardwareKeyboardArrowUp />}
                         style={getHeaderStyle()}
