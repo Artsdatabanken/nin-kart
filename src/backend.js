@@ -105,7 +105,7 @@ class Backend {
   }
   static async getCodeTitle(code: string) {
     return this.getPromise(
-      `https://bboxcode.firebaseio.com/titles/${code}.json`
+      `https://bboxcode.firebaseio.com/titles/${code.toUpperCase()}.json`
     )
   }
 
