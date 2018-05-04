@@ -53,10 +53,7 @@ class Mapbox extends Component {
   componentDidMount() {
     window.addEventListener('resize', this._resize)
     this._resize()
-    this.updateAktivKode(
-      this.props.aktivKode,
-      this.props.meta ? this.props.meta.navnSciId : ''
-    )
+    this.updateAktivKode(this.props.aktivKode)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -68,7 +65,7 @@ class Mapbox extends Component {
     }
 
     if (nextProps.aktivKode !== this.props.aktivKode) {
-      this.updateAktivKode(nextProps.aktivKode, nextProps.meta.navnSciId)
+      this.updateAktivKode(nextProps.aktivKode)
       this.fargeleggLag(nextProps)
     }
 
@@ -91,13 +88,13 @@ class Mapbox extends Component {
     }
   }
 
-  updateAktivKode(aktivKode, navnSciId) {
+  updateAktivKode(aktivKode) {
     let map = this.map.getMap()
 
     if (aktivKode) {
-      let taxonMatch = aktivKode.match(/AR_(.*)/)
-      if (taxonMatch && taxonMatch.length > 1 && navnSciId) {
-        backend.getKodeUtbredelse('TX_' + navnSciId).then(data => {
+      let oldTaxonLookupId = aktivKode.replace('AR', 'TX')
+      if (oldTaxonLookupId) {
+        backend.getKodeUtbredelse(oldTaxonLookupId).then(data => {
           this.setState({
             enableDeck: data ? true : false,
             taxonLayer: data ? this.createTaxonLayer(data) : null,
