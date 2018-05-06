@@ -6,6 +6,7 @@
     "@artsdatabanken/typesystem": "^3.0.0",
     "babel-polyfill": "^6.26.0",
     "deck.gl": "^5.1.4",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
     "flow-typed": "^2.4.0",
@@ -38,12 +39,13 @@
     "@storybook/addon-storyshots": "^3.2.16",
     "@storybook/react": "^3.2.16",
     "coveralls": "^3.0.0",
+    "enzyme": "^3.3.0",
     "flow-bin": "^0.71.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
     "prettier": "^1.10.2",
     "pretty-quick": "^1.4.1",
-    "react-test-renderer": "^16.2.0",
+    "react-test-renderer": "^16.3.2",
     "storybook-addon-material-ui": "^0.8.2"
   },
   "prettier": {
