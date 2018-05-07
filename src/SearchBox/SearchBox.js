@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import getNext from '../componentid'
 
 export default class SearchBox extends Component {
-  onKeyDown = e => {
+  handleKeyDown = e => {
     if (e.keyCode === 27) {
       this.props.onQueryChange(e, '')
       this.textField.blur()
@@ -21,7 +21,7 @@ export default class SearchBox extends Component {
     return (
       <TextField
         ref={tf => (this.textField = tf)}
-        onKeyDown={this.onKeyDown}
+        onKeyDown={this.handleKeyDown}
         id={getNext()}
         value={query || ''}
         hintText={tittel ? tittel : 'Natur i Norge'}

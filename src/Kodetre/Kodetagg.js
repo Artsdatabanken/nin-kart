@@ -13,9 +13,9 @@ class Kodetagg extends React.Component {
         color: this.props.muiTheme.palette.accentColor2,
       },
     }
-    const { kode, hele } = this.props
-    if (hele) return <div style={styles.chip}>{kode}</div>
-    return <div style={styles.chip}>{this.sisteDelAvKoden(kode)}</div>
+    const { kode } = this.props
+    const tekst = this.props.hele ? kode : this.sisteDelAvKoden(kode)
+    return <div style={styles.chip}>{tekst}</div>
   }
 
   sisteDelAvKoden(kode) {

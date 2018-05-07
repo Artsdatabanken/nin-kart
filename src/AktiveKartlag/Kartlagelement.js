@@ -102,8 +102,7 @@ class Kartlagelement extends React.Component {
           primaryText={
             <div>
               {true && <Kodetagg hele={this.props.visHeleKoden} kode={kode} />}
-              {(tittel || meta.navn || meta.navnSci) +
-                (meta.navnSci ? ` (${meta.navnSci})` : '')}
+              {tittel}
               <div style={{ display: 'inline-flex' }} />
             </div>
           }
