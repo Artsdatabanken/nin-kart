@@ -89,14 +89,25 @@ storiesOf('Kodetagg', module)
     return (
       <div style={{ padding: 8 }}>
         {rødlistekoder.tagger.map(tag => (
-          <Kodetagg
-            key={tag.kode}
-            kode={tag.kode}
-            navn={tag.navn}
-            color={tag.color}
-            backgroundColor={tag.backgroundColor}
-            forklaring={tag.forklaring}
-          />
+          <div>
+            <Kodetagg
+              key={tag.kode}
+              kode={tag.kode}
+              navn={tag.navn}
+              color={tag.color}
+              backgroundColor={tag.backgroundColor}
+              forklaring={tag.forklaring}
+            />
+            <Kodetagg
+              hele={true}
+              key={tag.kode}
+              kode={tag.kode}
+              navn={tag.navn}
+              color={tag.color}
+              backgroundColor={tag.backgroundColor}
+              forklaring={tag.forklaring}
+            />
+          </div>
         ))}
       </div>
     )
