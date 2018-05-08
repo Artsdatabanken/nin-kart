@@ -410,7 +410,7 @@ class Mapbox extends Component {
         mapboxApiAccessToken="pk.eyJ1IjoiYXJ0c2RhdGFiYW5rZW4iLCJhIjoiY2pjNjg2MzVzMHhycjJ3bnM5MHc4MHVzOCJ9.fLnCRyg-hCuTClyim1r-JQ"
         //mapStyle="mapbox://styles/artsdatabanken/cjc68pztl4sud2sp0s4wyy58q"
         mapStyle={this.props.mapStyle}
-        minZoom={4}
+        minZoom={3}
       >
         {this.state.enableDeck && (
           <DeckGL {...viewport} layers={[this.state.taxonLayer]} />
