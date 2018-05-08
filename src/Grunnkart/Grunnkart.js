@@ -154,6 +154,7 @@ class Grunnkart extends React.Component<Props, State> {
     url = url.toLowerCase()
     let kodematch = url.match(/\/katalog\/(.*)/)
     if (!kodematch || kodematch.length !== 2) {
+      this.setState({ meta: '' })
       return
     }
 
