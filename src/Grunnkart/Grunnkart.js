@@ -160,7 +160,7 @@ class Grunnkart extends React.Component<Props, State> {
 
     backend.hentKodeMeta(url).then(data => {
       if (!data) return this.redirectTo('')
-      if (data && data.se) {
+      if (data.se) {
         const newUrl = data.se[Object.keys(data.se)[0]].sti
         this.redirectTo(newUrl)
         return
