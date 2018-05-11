@@ -52,7 +52,7 @@
     "@storybook/react": "^3.2.16",
     "coveralls": "^3.0.0",
     "enzyme": "^3.3.0",
-    "flow-bin": "^0.71.0",
+    "flow-bin": "^0.72.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
     "prettier": "^1.10.2",
