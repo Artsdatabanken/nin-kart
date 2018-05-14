@@ -25,6 +25,11 @@ function VectorPointInfo(props) {
               if (key.startsWith('NA_')) {
                 return (
                   <Collapsible
+                    open={
+                      Object.keys(props.pointInfo).filter(function(k) {
+                        return ~k.indexOf('NA_')
+                      }).length === 1
+                    }
                     key={key + '_Collapsible'}
                     trigger={
                       <ListItem
