@@ -26,7 +26,6 @@ function VectorPointInfo(props) {
                 return (
                   <Collapsible
                     key={key + '_Collapsible'}
-                    open={true}
                     trigger={
                       <ListItem
                         key={key + '_' + props.pointInfo[key].value + 'Closed'}
@@ -79,7 +78,6 @@ function VectorPointInfo(props) {
                       />
                       {props.pointInfo[key].codes && (
                         <Collapsible
-                          open={true}
                           trigger={
                             <ListItem
                               key={key + '_BeskrivelsesvariablerClosed'}
