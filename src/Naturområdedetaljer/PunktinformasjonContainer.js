@@ -293,7 +293,7 @@ class PunktinformasjonContainer extends Component {
     var parseString = require('xml2js').parseString
     parseString(data, function(err, result) {
       let fields = result.FeatureInfoResponse.FIELDS[0].$
-      let id = parseInt(fields.IID.substring(2))
+      let id = parseInt(fields.IID.substring(2), 10)
       extractedData = {
         ['VV_' + id]: {
           name: 'Verneområde',
