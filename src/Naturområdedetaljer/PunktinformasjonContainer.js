@@ -17,6 +17,7 @@ class PunktinformasjonContainer extends Component {
       factItems: null,
       areaItems: null,
       redlistTheme: null,
+      verneomrade: null,
 
       pointInfo: null,
       admEnhet: null,
@@ -287,6 +288,28 @@ class PunktinformasjonContainer extends Component {
     }
   }
 
+  fixVerneområde(data) {
+    let extractedData = {}
+    var parseString = require('xml2js').parseString
+    parseString(data, function(err, result) {
+      if (!result.FeatureInfoResponse.FIELDS) return
+      let fields = result.FeatureInfoResponse.FIELDS[0].$
+      let id = parseInt(fields.IID.substring(2), 10)
+      extractedData = {
+        ['VV_' + id]: {
+          name: 'Verneområde',
+          value: fields.Omradenavn,
+          dataorigin: 'MDIR',
+          homepage: 'http://www.miljodirektoratet.no/',
+          logo:
+            'https://pbs.twimg.com/profile_images/378800000067455227/3d053db6b9593d47a02ced7709846522_400x400.png',
+          article: 'http://faktaark.naturbase.no/?id=' + fields.IID
+        },
+      }
+    })
+    return extractedData
+  }
+
   fixStedsnavn(data) {
     if (data.placename)
       return {
@@ -327,6 +350,11 @@ class PunktinformasjonContainer extends Component {
         stedsnavn: this.fixStedsnavn(data),
       })
     )
+    backend.hentVerneområde(lng, lat).then(data =>
+      this.setState({
+        verneomrade: this.fixVerneområde(data),
+      })
+    )
   }
 
   render() {
@@ -345,6 +373,7 @@ class PunktinformasjonContainer extends Component {
           pointInfo={this.state.pointInfo}
           admEnhet={this.state.admEnhet}
           stedsnavn={this.state.stedsnavn}
+          verneomrade={this.state.verneomrade}
           lngLat={this.state.lngLat}
           title="PunktInfo"
         />

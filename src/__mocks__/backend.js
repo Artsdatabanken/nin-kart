@@ -12,6 +12,10 @@ backend.default.hentAdmEnhet.mockReturnValue(
   new Promise((resolve, reject) => resolve(''))
 )
 
+backend.default.hentVerneområde.mockReturnValue(
+  new Promise((resolve, reject) => resolve(''))
+)
+
 backend.default.hentStedsnavn.mockReturnValue(
   new Promise((resolve, reject) => resolve({}))
 )
