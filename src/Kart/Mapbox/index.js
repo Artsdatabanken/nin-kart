@@ -72,7 +72,7 @@ class Mapbox extends Component {
     if (nextProps.oppdaterFarger === null) {
       if (nextProps.oppdaterFarger !== this.props.oppdaterFarger) {
         this.fargeleggLag(nextProps)
-        this.oppdaterValgteKoder(nextProps)
+        this.oppdaterValgteKoder(this.props, nextProps)
       }
     }
 
@@ -234,7 +234,7 @@ class Mapbox extends Component {
     map.removeLayer(kode)
   }
 
-  oppdaterValgteKoder(nextProps) {
+  oppdaterValgteKoder(props, nextProps) {
     let map = this.map.getMap()
     if (!map) return
 
@@ -246,7 +246,7 @@ class Mapbox extends Component {
           map.removeLayer(lagId)
         }
       })
-      this.visValgteKoder(nextProps)
+      this.visValgteKoder(props, nextProps)
     }
   }
 
