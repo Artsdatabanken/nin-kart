@@ -19,7 +19,7 @@ const AktiveKartlag = ({
   return (
     koder && (
       <React.Fragment>
-        <Subheader>Aktive kartlag</Subheader>
+        <Subheader>{title}</Subheader>
         {koder.map(item => {
           const kode = item.kode
           return (

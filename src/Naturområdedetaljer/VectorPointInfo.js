@@ -136,7 +136,7 @@ function VectorPointInfo(props) {
                     item.homepage &&
                     item.logo &&
                     item.dataorigin && (
-                      <a target="_blank" href={item.homepage}>
+                      <a target="_blank" rel="noopener" href={item.homepage}>
                         <Avatar
                           src={item.logo}
                           onError={e => {
