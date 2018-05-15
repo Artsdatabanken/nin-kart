@@ -80,11 +80,38 @@ class Backend {
     )
   }
 
-  static async hentAdmEnhet(lng: number, lat: number) {
+  static async createGetFeatureInfoCall(
+    wmsUri,
+    lng,
+    lat,
+    layers,
+    infoFormat = 'text/plain'
+  ) {
     var bbox = createBboxFromPoint(lng, lat, 0.000001)
     return this.getTextPromise(
-      `https://openwms.statkart.no/skwms1/wms.adm_enheter?request=GetFeatureinfo&service=WMS&version=1.3.0&Layers=Kommuner&crs=epsg:4258&format=image/png&width=3&height=3&QUERY_LAYERS=kommuner&i=2&j=2
-      &bbox=${bbox.minx},${bbox.miny},${bbox.maxx},${bbox.maxy}`
+      wmsUri +
+        `?request=GetFeatureinfo&service=WMS&version=1.3.0&Layers=${layers}&crs=epsg:4258&format=image/png&width=3&height=3&QUERY_LAYERS=${layers}&i=2&j=2&bbox=${
+          bbox.minx
+        },${bbox.miny},${bbox.maxx},${bbox.maxy}&INFO_FORMAT=${infoFormat}`
+    )
+  }
+
+  static async hentAdmEnhet(lng: number, lat: number) {
+    return this.createGetFeatureInfoCall(
+      'https://openwms.statkart.no/skwms1/wms.adm_enheter',
+      lng,
+      lat,
+      'kommuner'
+    )
+  }
+
+  static async hentVerneområde(lng: number, lat: number) {
+    return this.createGetFeatureInfoCall(
+      'http://wms.miljodirektoratet.no/arcgis/services/vern/mapserver/WMSServer',
+      lat,
+      lng,
+      'naturvern_omrade',
+      'text/xml'
     )
   }
 

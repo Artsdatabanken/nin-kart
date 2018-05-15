@@ -39,6 +39,7 @@ const Punktinformasjon = props => (
       {/* <PointInfo pointInfo={props.lngLat} /> */}
       <PointInfo pointInfo={props.stedsnavn} />
       <PointInfo pointInfo={props.admEnhet} />
+      <PointInfo pointInfo={props.verneomrade} />
       <PointInfo pointInfo={props.pointInfo} />
 
       <PointInfo pointInfo={props.natureAreaFacts} excludeCode="true" />
