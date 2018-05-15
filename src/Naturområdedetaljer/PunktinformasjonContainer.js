@@ -302,7 +302,8 @@ class PunktinformasjonContainer extends Component {
           dataorigin: 'MDIR',
           homepage: 'http://www.miljodirektoratet.no/',
           logo:
-            'https://pbs.twimg.com/profile_images/378800000067455227/3d053db6b9593d47a02ced7709846522_400x400.png', //backend.getCompanyLogo('MDIR'),
+            'https://pbs.twimg.com/profile_images/378800000067455227/3d053db6b9593d47a02ced7709846522_400x400.png',
+          article: 'http://faktaark.naturbase.no/?id=' + fields.IID
         },
       }
     })
