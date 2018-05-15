@@ -66,6 +66,7 @@ class VenstreVinduContainer extends React.Component {
               onExitToRoot={() => {
                 this.setState({ searchResults: null })
                 history.push('/')
+                this.props.onExitToRoot()
               }}
               onToggleMainDrawer={this.props.onToggleMainDrawer}
               isAtRoot={history.location.pathname === '/'}
@@ -75,33 +76,35 @@ class VenstreVinduContainer extends React.Component {
               onQueryChange={this.handleQueryChange}
             />
             <Switch>
-              <Route
-                path="/katalog/:kode*"
-                render={({ match, history }) => {
-                  return (
-                    <KodeContainer
-                      style={{ height: '100vh' }}
-                      path={match.params.kode ? match.params.kode : ''}
-                      onGoToCode={url => {
-                        this.setState({ searchResults: null })
-                        console.log(url)
-                        history.push('/katalog/' + url)
-                      }}
-                      onMouseEnter={this.props.onMouseEnter}
-                      onMouseLeave={this.props.onMouseLeave}
-                      onFitBounds={this.props.onFitBounds}
-                      onAddSelected={this.props.onAddSelected}
-                      mapBounds={this.props.mapBounds}
-                      //mapBounds={undefined}
-                      language={this.props.language}
-                      meta={this.props.meta}
-                      handleUpdateLayerProp={this.props.handleUpdateLayerProp}
-                      onShowColorpicker={this.props.onShowColorpicker}
-                      ekspandertKode={this.props.ekspandertKode}
-                    />
-                  )
-                }}
-              />
+              {!this.props.visValgte && (
+                <Route
+                  path="/katalog/:kode*"
+                  render={({ match, history }) => {
+                    return (
+                      <KodeContainer
+                        style={{ height: '100vh' }}
+                        path={match.params.kode ? match.params.kode : ''}
+                        onGoToCode={url => {
+                          this.setState({ searchResults: null })
+                          console.log(url)
+                          history.push('/katalog/' + url)
+                        }}
+                        onMouseEnter={this.props.onMouseEnter}
+                        onMouseLeave={this.props.onMouseLeave}
+                        onFitBounds={this.props.onFitBounds}
+                        onAddSelected={this.props.onAddSelected}
+                        mapBounds={this.props.mapBounds}
+                        //mapBounds={undefined}
+                        language={this.props.language}
+                        meta={this.props.meta}
+                        handleUpdateLayerProp={this.props.handleUpdateLayerProp}
+                        onShowColorpicker={this.props.onShowColorpicker}
+                        ekspandertKode={this.props.ekspandertKode}
+                      />
+                    )
+                  }}
+                />
+              )}
 
               <Route
                 path="/punkt/:lng,:lat"

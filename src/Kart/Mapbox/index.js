@@ -76,8 +76,8 @@ class Mapbox extends Component {
       }
     }
 
-    if (nextProps.valgteKoder !== this.props.valgteKoder) {
-      this.visValgteKoder(nextProps)
+    if (nextProps.valgteKoder.length !== this.props.valgteKoder.length) {
+      this.visValgteKoder(this.props, nextProps)
     }
     if (nextProps.fjernKode !== this.props.fjernKode) {
       this.fjernKode(nextProps.fjernKode)
@@ -250,11 +250,15 @@ class Mapbox extends Component {
     }
   }
 
-  visValgteKoder(nextProps) {
+  visValgteKoder(props, nextProps) {
     let map = this.map.getMap()
     if (!map) return
 
-    if (nextProps.valgteKoder) {
+    if (
+      nextProps &&
+      nextProps.valgteKoder &&
+      nextProps.valgteKoder.length > 0
+    ) {
       Object.keys(nextProps.valgteKoder).forEach(id => {
         const item = nextProps.valgteKoder[id]
         let lagId = 'valgt' + item.kode
@@ -277,6 +281,12 @@ class Mapbox extends Component {
           console.log('la til valgt lag: ', item.kode)
           this.addBehindSymbols(map, lag)
         }
+      })
+    } else if (props && props.valgteKoder && props.valgteKoder.length > 0) {
+      Object.keys(props.valgteKoder).forEach(id => {
+        const item = props.valgteKoder[id]
+        let lagId = 'valgt' + item.kode
+        map.removeLayer(lagId)
       })
     }
   }
@@ -328,7 +338,8 @@ class Mapbox extends Component {
   onHover = backend.debounce(function(e) {
     const pos = e.center
     const r = this.map.getMap().queryRenderedFeatures([pos.x, pos.y])
-    this.map.getMap().setFilter('nin-hover', ['==', 'localId', ''])
+
+    let filterHasBeenSet = false
     r.forEach(feature => {
       if (feature.layer.id === 'nin') {
         if (feature.properties && feature.properties.localId) {
@@ -339,9 +350,13 @@ class Mapbox extends Component {
               'localId',
               feature.properties.localId,
             ])
+          filterHasBeenSet = true
         }
       }
     })
+    if (!filterHasBeenSet) {
+      this.map.getMap().setFilter('nin-hover', ['==', 'localId', ''])
+    }
   }, 20)
 
   onTaxonHover = backend.debounce(function(data) {

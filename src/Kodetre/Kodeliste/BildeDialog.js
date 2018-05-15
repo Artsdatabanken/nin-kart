@@ -75,13 +75,21 @@ export default class BildeDialog extends React.Component {
               <CardTitle
                 title="Lisens"
                 children={
-                  <a href={this.state.credit.license.url} target="new">
+                  <a
+                    href={this.state.credit.license.url}
+                    rel="noopener"
+                    target="new"
+                  >
                     {this.state.credit.license.name}
                   </a>
                 }
               />
               <CardText>
-                <a href={this.state.credit.attribution.url} target="new">
+                <a
+                  href={this.state.credit.attribution.url}
+                  rel="noopener"
+                  target="new"
+                >
                   {this.state.credit.attribution.name}
                 </a>
               </CardText>

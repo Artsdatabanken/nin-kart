@@ -81,6 +81,7 @@ class KodeVindu extends React.Component {
                   <span>
                     &nbsp;<a
                       target="top"
+                      rel="noopener"
                       style={{ color: 'rgba(0,0,0,0.87)' }}
                       href={props.meta.infoUrl}
                     >

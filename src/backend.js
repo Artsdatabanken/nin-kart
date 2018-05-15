@@ -22,7 +22,9 @@ class Backend {
     return new Promise((resolve, reject) => {
       fetch(url)
         .then(result => {
-          return result.json()
+          if (result && result.status === 200) {
+            return result.json()
+          }
         })
         .then(json => resolve(json))
         .catch(err => {
