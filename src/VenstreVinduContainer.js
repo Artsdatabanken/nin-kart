@@ -1,12 +1,12 @@
+import { Paper, Snackbar } from 'material-ui'
 import React from 'react'
-import KodeContainer from './Kodetre/Kodeliste/KodeContainer'
-import TopBar from './TopBar/TopBar'
-import ResultatListe from './Kodetre/Kodeliste/ResultatListe'
 import { Route, Switch } from 'react-router-dom'
-import PunktinformasjonContainer from './Naturområdedetaljer/PunktinformasjonContainer'
 import backend from './backend'
+import KodeContainer from './Kodetre/Kodeliste/KodeContainer'
+import ResultatListe from './Kodetre/Kodeliste/ResultatListe'
+import PunktinformasjonContainer from './Naturområdedetaljer/PunktinformasjonContainer'
 import rename from './rename'
-import { Snackbar, Paper } from 'material-ui'
+import TopBar from './TopBar/TopBar'
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
@@ -66,6 +66,7 @@ class VenstreVinduContainer extends React.Component {
               onExitToRoot={() => {
                 this.setState({ searchResults: null })
                 history.push('/')
+                this.props.onExitToRoot()
               }}
               onToggleMainDrawer={this.props.onToggleMainDrawer}
               isAtRoot={history.location.pathname === '/'}
@@ -75,32 +76,35 @@ class VenstreVinduContainer extends React.Component {
               onQueryChange={this.handleQueryChange}
             />
             <Switch>
-              <Route
-                path="/katalog/:kode*"
-                render={({ match, history }) => {
-                  return (
-                    <KodeContainer
-                      style={{ height: '100vh' }}
-                      path={match.params.kode ? match.params.kode : ''}
-                      onGoToCode={url => {
-                        this.setState({ searchResults: null })
-                        console.log(url)
-                        history.push('/katalog/' + url)
-                      }}
-                      onMouseEnter={this.props.onMouseEnter}
-                      onMouseLeave={this.props.onMouseLeave}
-                      onFitBounds={this.props.onFitBounds}
-                      onAddSelected={this.props.onAddSelected}
-                      mapBounds={this.props.mapBounds}
-                      language={this.props.language}
-                      meta={this.props.meta}
-                      handleUpdateLayerProp={this.props.handleUpdateLayerProp}
-                      onShowColorpicker={this.props.onShowColorpicker}
-                      ekspandertKode={this.props.ekspandertKode}
-                    />
-                  )
-                }}
-              />
+              {!this.props.visValgte && (
+                <Route
+                  path="/katalog/:kode*"
+                  render={({ match, history }) => {
+                    return (
+                      <KodeContainer
+                        style={{ height: '100vh' }}
+                        path={match.params.kode ? match.params.kode : ''}
+                        onGoToCode={url => {
+                          this.setState({ searchResults: null })
+                          console.log(url)
+                          history.push('/katalog/' + url)
+                        }}
+                        onMouseEnter={this.props.onMouseEnter}
+                        onMouseLeave={this.props.onMouseLeave}
+                        onFitBounds={this.props.onFitBounds}
+                        onAddSelected={this.props.onAddSelected}
+                        mapBounds={this.props.mapBounds}
+                        //mapBounds={undefined}
+                        language={this.props.language}
+                        meta={this.props.meta}
+                        handleUpdateLayerProp={this.props.handleUpdateLayerProp}
+                        onShowColorpicker={this.props.onShowColorpicker}
+                        ekspandertKode={this.props.ekspandertKode}
+                      />
+                    )
+                  }}
+                />
+              )}
 
               <Route
                 path="/punkt/:lng,:lat"
