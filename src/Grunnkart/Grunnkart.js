@@ -46,7 +46,7 @@ class Grunnkart extends React.Component<Props, State> {
       baseMapStyle: defaultMapStyle,
       mapStyle: '',
       showMainDrawer: false,
-      visValgte: true,
+      visValgte: false,
       pointProperties: {},
       meta: {},
       localId: '',
@@ -55,6 +55,7 @@ class Grunnkart extends React.Component<Props, State> {
       bbox: {},
       ekspandertKode: null,
     }
+    this.redirectTo('')
   }
 
   handleChangeBaseMap = type => {
@@ -135,12 +136,6 @@ class Grunnkart extends React.Component<Props, State> {
       valgteKoder: koder,
       visValgte: true,
     })
-  }
-
-  setLocalId(localId) {
-    if (localId !== this.state.localId) {
-      this.setState({ localId: localId })
-    }
   }
 
   componentDidMount() {
@@ -231,7 +226,18 @@ class Grunnkart extends React.Component<Props, State> {
           valgteKoder={this.state.visValgte ? this.state.valgteKoder : []}
           fjernKode={this.state.fjernKode}
           onMapBoundsChange={bounds => this.handleMapBoundsChange(bounds)}
-          setLocalId={localId => this.setLocalId(localId)}
+          setLocalId={localId => {
+            if (localId !== this.state.localId) {
+              this.setState({
+                localId: localId,
+                visValgte: false,
+              })
+            } else if (this.state.visValgte) {
+              this.setState({
+                visValgte: false,
+              })
+            }
+          }}
           meta={this.state.meta}
           bbox={this.state.bbox}
           oppdaterFarger={this.state.ekspandertKode}
@@ -287,7 +293,7 @@ class Grunnkart extends React.Component<Props, State> {
             <div
               style={{
                 position: 'absolute',
-                right: 8,
+                left: 8,
                 top: 10,
                 width: 392,
                 zIndex: 2,
@@ -324,11 +330,13 @@ class Grunnkart extends React.Component<Props, State> {
                   />
                 )}
               </div>
-              <div style={{ float: 'right', paddingTop: 10 }}>
+              <div style={{ float: 'left', paddingTop: 10 }}>
                 <Link
                   to={`/katalog/`}
                   onClick={e =>
                     this.setState({
+                      opplystKode: '',
+                      meta: {},
                       visValgte: false,
                     })
                   }
