@@ -112,7 +112,9 @@ class Mapbox extends Component {
       )
       return
     }
+    console.log('fjern aktivt')
     map.removeLayer('aktivt')
+    console.log('fjern opplyst')
     map.removeLayer('opplyst') // fjern opplyst/hover-lag også når man endrer aktivt
     //console.log('fjernet aktivt')
 
@@ -144,8 +146,8 @@ class Mapbox extends Component {
   updateOpplystKode = backend.debounce(function(aktivKode, opplystKode) {
     let map = this.map.getMap()
     if (!map || !map.isStyleLoaded()) return
+    console.log('fjern opplyst')
     map.removeLayer('opplyst')
-    //console.log('fjernet opplyst')
 
     if (opplystKode) {
       if (
@@ -175,7 +177,7 @@ class Mapbox extends Component {
         break
       }
     }
-
+    console.log('add : ', lag.id)
     map.addLayer(lag, firstSymbolId)
   }
 
@@ -185,14 +187,15 @@ class Mapbox extends Component {
 
     if (this.props.meta && this.props.meta.barn) {
       Object.keys(this.props.meta.barn).forEach(kode => {
+        console.log('fjern: legend' + kode)
         map.removeLayer('legend' + kode)
-        console.log('fjernet ' + kode)
       })
     }
 
     var addLayers = () => {
       if (map.isStyleLoaded()) {
         if (
+          !nextProps.valgteKoder.length &&
           nextProps.meta &&
           nextProps.meta.barn &&
           nextProps.meta.kode !== '~'
@@ -214,7 +217,7 @@ class Mapbox extends Component {
               lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
             }
             lag.id = 'legend' + kode
-            console.log('add lag: ', kode)
+            //console.log('add lag: ', kode)
             this.addBehindSymbols(map, lag)
           })
         }
@@ -231,6 +234,8 @@ class Mapbox extends Component {
   fjernKode(kode) {
     let map = this.map.getMap()
     if (!map) return
+    console.log('fjern: ', kode)
+
     map.removeLayer(kode)
   }
 
@@ -243,6 +248,7 @@ class Mapbox extends Component {
         const item = nextProps.valgteKoder[id]
         let lagId = 'valgt' + item.kode
         if (map.getLayer(lagId)) {
+          console.log('fjern: ', lagId)
           map.removeLayer(lagId)
         }
       })
@@ -278,7 +284,7 @@ class Mapbox extends Component {
             lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
           }
           lag.id = lagId
-          console.log('la til valgt lag: ', item.kode)
+          //console.log('la til valgt lag: ', item.kode)
           this.addBehindSymbols(map, lag)
         }
       })
