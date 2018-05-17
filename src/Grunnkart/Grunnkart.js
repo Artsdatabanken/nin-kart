@@ -118,12 +118,14 @@ class Grunnkart extends React.Component<Props, State> {
       this.setState({ meta: data })
     })
   }
+
   handleUpdateLayerProp = (kode, key, value) => {
     let meta = this.state.meta
     let layer = meta.barn[kode] || meta.barn[kode.toUpperCase()]
     layer[key] = value
     this.setState({ meta: meta })
   }
+
   handleUpdateSelectedLayerProp = (kode, key, value) => {
     let meta = this.state.valgteKoder
     meta.forEach(barn => {
