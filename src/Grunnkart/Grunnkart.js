@@ -169,15 +169,20 @@ class Grunnkart extends React.Component<Props, State> {
         this.redirectTo(newUrl)
         return
       }
+      if (data.barn && Object.keys(data.barn).length > 100) {
+        data.barn = { mange: { tittel: { nb: 'TODO i grunnkart.js' } } }
+      }
       this.setState({ meta: data ? data : '' })
     })
   }
+
   handleUpdateLayerProp = (kode, key, value) => {
     let meta = this.state.meta
     let layer = meta.barn[kode] || meta.barn[kode.toUpperCase()]
     layer[key] = value
     this.setState({ meta: meta })
   }
+
   handleUpdateSelectedLayerProp = (kode, key, value) => {
     let meta = this.state.valgteKoder
     meta.forEach(barn => {

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import backend from '../backend'
 import Punktinformasjon from './Punktinformasjon'
 import VektorPunktinformasjon from './VektorPunktinformasjon'
+import xml2js from 'xml2js'
 
 class PunktinformasjonContainer extends Component {
   constructor(props) {
@@ -290,7 +291,7 @@ class PunktinformasjonContainer extends Component {
 
   fixVerneområde(data) {
     let extractedData = {}
-    var parseString = require('xml2js').parseString
+    var parseString = xml2js.parseString
     parseString(data, function(err, result) {
       if (!result.FeatureInfoResponse.FIELDS) return
       let fields = result.FeatureInfoResponse.FIELDS[0].$
@@ -303,7 +304,7 @@ class PunktinformasjonContainer extends Component {
           homepage: 'http://www.miljodirektoratet.no/',
           logo:
             'https://pbs.twimg.com/profile_images/378800000067455227/3d053db6b9593d47a02ced7709846522_400x400.png',
-          article: 'http://faktaark.naturbase.no/?id=' + fields.IID
+          article: 'http://faktaark.naturbase.no/?id=' + fields.IID,
         },
       }
     })

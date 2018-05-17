@@ -44,6 +44,7 @@ class KodeContainer extends React.Component<Props, State> {
       .hentKode(kode, bounds)
       .then(data => rename(data))
       .then(data => {
+        if (!data) data = {}
         if (currentQuery !== this.dataQueryNumber) return // Abort stale query
         let størsteAreal = 0
         if (data.barn)
