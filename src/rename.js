@@ -18,6 +18,7 @@ function capitalizeFirstLetter(string) {
 }
 
 const rename = data => {
+  if (!data) return
   if (data.navn) data.navn = capitalizeFirstLetter(data.navn)
   if (Array.isArray(data)) {
     data.forEach(barn => {
