@@ -55,7 +55,7 @@ class Grunnkart extends React.Component<Props, State> {
       bbox: {},
       ekspandertKode: null,
     }
-    this.redirectTo('')
+    //this.redirectTo('')
   }
 
   handleChangeBaseMap = type => {
