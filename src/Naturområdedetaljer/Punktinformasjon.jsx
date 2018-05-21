@@ -1,14 +1,9 @@
-import React from 'react'
 import { List, ListItem } from 'material-ui'
-//import Detaljer from './Detaljer'
-//import Kartlegging from './Kartlegging'
-//import Omrader from './Omrader'
-//import backend from '../backend'
-//import FactList from './FactList'
-import PointInfo from './PointInfo'
 import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down'
 import HardwareKeyboardArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up'
+import React from 'react'
 import Collapsible from 'react-collapsible'
+import PointInfo from './PointInfo'
 
 function getHeaderStyle() {
   return {

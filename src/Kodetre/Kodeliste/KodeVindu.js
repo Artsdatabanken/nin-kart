@@ -1,11 +1,10 @@
-import MediaQuery from 'react-responsive'
+import { List, Paper, RaisedButton } from 'material-ui'
 import React from 'react'
-import Kodekort from './Kodekort'
-import { Paper, List, div } from 'material-ui'
+import MediaQuery from 'react-responsive'
 import FetchContainer from '../../FetchContainer'
-import Kodeliste from './Kodeliste'
-import { RaisedButton } from 'material-ui'
 import Graf from './Graf'
+import Kodekort from './Kodekort'
+import Kodeliste from './Kodeliste'
 
 const Fact = ({ tittel, verdi, synlig }) => {
   if (!synlig || !verdi) return null
@@ -25,6 +24,7 @@ const Fact = ({ tittel, verdi, synlig }) => {
 
 class KodeVindu extends React.Component {
   render() {
+    console.log('kodevindu')
     const props = this.props
     const avatarUtenRamme = props.meta.utenRamme
     return (
