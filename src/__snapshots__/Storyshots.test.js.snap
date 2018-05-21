@@ -12074,6 +12074,267 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                   }
                 }
               >
+                <svg
+                  className={undefined}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={undefined}
+                  version="1.1"
+                  viewBox="0 0 400 72"
+                >
+                  <rect
+                    clipPath="url(#THE_KEY-idClip)"
+                    height={72}
+                    style={
+                      Object {
+                        "fill": "url(#THE_KEY-idGradient)",
+                      }
+                    }
+                    width={400}
+                    x="0"
+                    y="0"
+                  />
+                  <defs>
+                    <clipPath
+                      id="THE_KEY-idClip"
+                    >
+                      <rect
+                        height="6.4"
+                        rx="4"
+                        ry="4"
+                        width="115"
+                        x="72"
+                        y="15"
+                      />
+                      <rect
+                        height="6.4"
+                        rx="3"
+                        ry="3"
+                        width="175"
+                        x="72"
+                        y="35"
+                      />
+                      <circle
+                        cx="38"
+                        cy="30"
+                        r="24"
+                      />
+                    </clipPath>
+                    <linearGradient
+                      id="THE_KEY-idGradient"
+                    >
+                      <stop
+                        offset="0%"
+                        stopColor="#f3f3f3"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-2; 1"
+                        />
+                      </stop>
+                      <stop
+                        offset="50%"
+                        stopColor="#ecebeb"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-1.5; 1.5"
+                        />
+                      </stop>
+                      <stop
+                        offset="100%"
+                        stopColor="#f3f3f3"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-1; 2"
+                        />
+                      </stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <svg
+                  className={undefined}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={undefined}
+                  version="1.1"
+                  viewBox="0 0 400 72"
+                >
+                  <rect
+                    clipPath="url(#THE_KEY-idClip)"
+                    height={72}
+                    style={
+                      Object {
+                        "fill": "url(#THE_KEY-idGradient)",
+                      }
+                    }
+                    width={400}
+                    x="0"
+                    y="0"
+                  />
+                  <defs>
+                    <clipPath
+                      id="THE_KEY-idClip"
+                    >
+                      <rect
+                        height="6.4"
+                        rx="4"
+                        ry="4"
+                        width="115"
+                        x="72"
+                        y="15"
+                      />
+                      <rect
+                        height="6.4"
+                        rx="3"
+                        ry="3"
+                        width="175"
+                        x="72"
+                        y="35"
+                      />
+                      <circle
+                        cx="38"
+                        cy="30"
+                        r="24"
+                      />
+                    </clipPath>
+                    <linearGradient
+                      id="THE_KEY-idGradient"
+                    >
+                      <stop
+                        offset="0%"
+                        stopColor="#f3f3f3"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-2; 1"
+                        />
+                      </stop>
+                      <stop
+                        offset="50%"
+                        stopColor="#ecebeb"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-1.5; 1.5"
+                        />
+                      </stop>
+                      <stop
+                        offset="100%"
+                        stopColor="#f3f3f3"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-1; 2"
+                        />
+                      </stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <svg
+                  className={undefined}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={undefined}
+                  version="1.1"
+                  viewBox="0 0 400 72"
+                >
+                  <rect
+                    clipPath="url(#THE_KEY-idClip)"
+                    height={72}
+                    style={
+                      Object {
+                        "fill": "url(#THE_KEY-idGradient)",
+                      }
+                    }
+                    width={400}
+                    x="0"
+                    y="0"
+                  />
+                  <defs>
+                    <clipPath
+                      id="THE_KEY-idClip"
+                    >
+                      <rect
+                        height="6.4"
+                        rx="4"
+                        ry="4"
+                        width="115"
+                        x="72"
+                        y="15"
+                      />
+                      <rect
+                        height="6.4"
+                        rx="3"
+                        ry="3"
+                        width="175"
+                        x="72"
+                        y="35"
+                      />
+                      <circle
+                        cx="38"
+                        cy="30"
+                        r="24"
+                      />
+                    </clipPath>
+                    <linearGradient
+                      id="THE_KEY-idGradient"
+                    >
+                      <stop
+                        offset="0%"
+                        stopColor="#f3f3f3"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-2; 1"
+                        />
+                      </stop>
+                      <stop
+                        offset="50%"
+                        stopColor="#ecebeb"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-1.5; 1.5"
+                        />
+                      </stop>
+                      <stop
+                        offset="100%"
+                        stopColor="#f3f3f3"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-1; 2"
+                        />
+                      </stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
                 <div>
                   <span
                     disabled={false}
@@ -12242,6 +12503,93 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                     </div>
                   </span>
                 </div>
+                <svg
+                  className={undefined}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={undefined}
+                  version="1.1"
+                  viewBox="0 0 400 72"
+                >
+                  <rect
+                    clipPath="url(#THE_KEY-idClip)"
+                    height={72}
+                    style={
+                      Object {
+                        "fill": "url(#THE_KEY-idGradient)",
+                      }
+                    }
+                    width={400}
+                    x="0"
+                    y="0"
+                  />
+                  <defs>
+                    <clipPath
+                      id="THE_KEY-idClip"
+                    >
+                      <rect
+                        height="6.4"
+                        rx="4"
+                        ry="4"
+                        width="115"
+                        x="72"
+                        y="15"
+                      />
+                      <rect
+                        height="6.4"
+                        rx="3"
+                        ry="3"
+                        width="175"
+                        x="72"
+                        y="35"
+                      />
+                      <circle
+                        cx="38"
+                        cy="30"
+                        r="24"
+                      />
+                    </clipPath>
+                    <linearGradient
+                      id="THE_KEY-idGradient"
+                    >
+                      <stop
+                        offset="0%"
+                        stopColor="#f3f3f3"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-2; 1"
+                        />
+                      </stop>
+                      <stop
+                        offset="50%"
+                        stopColor="#ecebeb"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-1.5; 1.5"
+                        />
+                      </stop>
+                      <stop
+                        offset="100%"
+                        stopColor="#f3f3f3"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-1; 2"
+                        />
+                      </stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
               </div>
             </div>
           </div>
@@ -12440,7 +12788,7 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                           }
                         }
                       >
-                        PunktInfo
+                        NaturområdeInfo
                       </div>
                     </div>
                   </div>
@@ -12471,6 +12819,573 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                     }
                   }
                 />
+              </div>
+            </div>
+          </div>
+          <div
+            className="Collapsible"
+          >
+            <span
+              className="Collapsible__trigger is-open"
+              onClick={[Function]}
+            >
+              <div>
+                <span
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  open={null}
+                  style={
+                    Object {
+                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                      "backgroundColor": "aliceblue",
+                      "border": 10,
+                      "boxSizing": "border-box",
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "cursor": "pointer",
+                      "display": "block",
+                      "fontFamily": "Roboto, sans-serif",
+                      "fontSize": 16,
+                      "fontWeight": "inherit",
+                      "lineHeight": "16px",
+                      "margin": 0,
+                      "muiPrepared": true,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "relative",
+                      "textDecoration": "none",
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "verticalAlign": null,
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  <div
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                  >
+                    <div
+                      style={
+                        Object {
+                          "marginLeft": 0,
+                          "muiPrepared": true,
+                          "paddingBottom": 16,
+                          "paddingLeft": 16,
+                          "paddingRight": 56,
+                          "paddingTop": 16,
+                          "position": "relative",
+                        }
+                      }
+                    >
+                      <svg
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        style={
+                          Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "display": "block",
+                            "fill": "#757575",
+                            "height": 24,
+                            "margin": 12,
+                            "muiPrepared": true,
+                            "position": "absolute",
+                            "right": 4,
+                            "top": 0,
+                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                            "userSelect": "none",
+                            "width": 24,
+                          }
+                        }
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+                        />
+                      </svg>
+                      <div
+                        style={
+                          Object {
+                            "muiPrepared": true,
+                          }
+                        }
+                      >
+                        PunktInfo
+                      </div>
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </span>
+            <div
+              className="Collapsible__contentOuter"
+              onTransitionEnd={[Function]}
+              style={
+                Object {
+                  "WebkitTransition": "none",
+                  "height": "auto",
+                  "msTransition": "none",
+                  "overflow": "hidden",
+                  "transition": "none",
+                }
+              }
+            >
+              <div
+                className="Collapsible__contentInner"
+              >
+                <div
+                  style={
+                    Object {
+                      "muiPrepared": true,
+                      "padding": "8px 0px 8px 0px",
+                    }
+                  }
+                >
+                  <svg
+                    className={undefined}
+                    preserveAspectRatio="xMidYMid meet"
+                    style={undefined}
+                    version="1.1"
+                    viewBox="0 0 400 72"
+                  >
+                    <rect
+                      clipPath="url(#THE_KEY-idClip)"
+                      height={72}
+                      style={
+                        Object {
+                          "fill": "url(#THE_KEY-idGradient)",
+                        }
+                      }
+                      width={400}
+                      x="0"
+                      y="0"
+                    />
+                    <defs>
+                      <clipPath
+                        id="THE_KEY-idClip"
+                      >
+                        <rect
+                          height="6.4"
+                          rx="4"
+                          ry="4"
+                          width="115"
+                          x="72"
+                          y="15"
+                        />
+                        <rect
+                          height="6.4"
+                          rx="3"
+                          ry="3"
+                          width="175"
+                          x="72"
+                          y="35"
+                        />
+                        <circle
+                          cx="38"
+                          cy="30"
+                          r="24"
+                        />
+                      </clipPath>
+                      <linearGradient
+                        id="THE_KEY-idGradient"
+                      >
+                        <stop
+                          offset="0%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-2; 1"
+                          />
+                        </stop>
+                        <stop
+                          offset="50%"
+                          stopColor="#ecebeb"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1.5; 1.5"
+                          />
+                        </stop>
+                        <stop
+                          offset="100%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1; 2"
+                          />
+                        </stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <svg
+                    className={undefined}
+                    preserveAspectRatio="xMidYMid meet"
+                    style={undefined}
+                    version="1.1"
+                    viewBox="0 0 400 72"
+                  >
+                    <rect
+                      clipPath="url(#THE_KEY-idClip)"
+                      height={72}
+                      style={
+                        Object {
+                          "fill": "url(#THE_KEY-idGradient)",
+                        }
+                      }
+                      width={400}
+                      x="0"
+                      y="0"
+                    />
+                    <defs>
+                      <clipPath
+                        id="THE_KEY-idClip"
+                      >
+                        <rect
+                          height="6.4"
+                          rx="4"
+                          ry="4"
+                          width="115"
+                          x="72"
+                          y="15"
+                        />
+                        <rect
+                          height="6.4"
+                          rx="3"
+                          ry="3"
+                          width="175"
+                          x="72"
+                          y="35"
+                        />
+                        <circle
+                          cx="38"
+                          cy="30"
+                          r="24"
+                        />
+                      </clipPath>
+                      <linearGradient
+                        id="THE_KEY-idGradient"
+                      >
+                        <stop
+                          offset="0%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-2; 1"
+                          />
+                        </stop>
+                        <stop
+                          offset="50%"
+                          stopColor="#ecebeb"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1.5; 1.5"
+                          />
+                        </stop>
+                        <stop
+                          offset="100%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1; 2"
+                          />
+                        </stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <svg
+                    className={undefined}
+                    preserveAspectRatio="xMidYMid meet"
+                    style={undefined}
+                    version="1.1"
+                    viewBox="0 0 400 72"
+                  >
+                    <rect
+                      clipPath="url(#THE_KEY-idClip)"
+                      height={72}
+                      style={
+                        Object {
+                          "fill": "url(#THE_KEY-idGradient)",
+                        }
+                      }
+                      width={400}
+                      x="0"
+                      y="0"
+                    />
+                    <defs>
+                      <clipPath
+                        id="THE_KEY-idClip"
+                      >
+                        <rect
+                          height="6.4"
+                          rx="4"
+                          ry="4"
+                          width="115"
+                          x="72"
+                          y="15"
+                        />
+                        <rect
+                          height="6.4"
+                          rx="3"
+                          ry="3"
+                          width="175"
+                          x="72"
+                          y="35"
+                        />
+                        <circle
+                          cx="38"
+                          cy="30"
+                          r="24"
+                        />
+                      </clipPath>
+                      <linearGradient
+                        id="THE_KEY-idGradient"
+                      >
+                        <stop
+                          offset="0%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-2; 1"
+                          />
+                        </stop>
+                        <stop
+                          offset="50%"
+                          stopColor="#ecebeb"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1.5; 1.5"
+                          />
+                        </stop>
+                        <stop
+                          offset="100%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1; 2"
+                          />
+                        </stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <svg
+                    className={undefined}
+                    preserveAspectRatio="xMidYMid meet"
+                    style={undefined}
+                    version="1.1"
+                    viewBox="0 0 400 72"
+                  >
+                    <rect
+                      clipPath="url(#THE_KEY-idClip)"
+                      height={72}
+                      style={
+                        Object {
+                          "fill": "url(#THE_KEY-idGradient)",
+                        }
+                      }
+                      width={400}
+                      x="0"
+                      y="0"
+                    />
+                    <defs>
+                      <clipPath
+                        id="THE_KEY-idClip"
+                      >
+                        <rect
+                          height="6.4"
+                          rx="4"
+                          ry="4"
+                          width="115"
+                          x="72"
+                          y="15"
+                        />
+                        <rect
+                          height="6.4"
+                          rx="3"
+                          ry="3"
+                          width="175"
+                          x="72"
+                          y="35"
+                        />
+                        <circle
+                          cx="38"
+                          cy="30"
+                          r="24"
+                        />
+                      </clipPath>
+                      <linearGradient
+                        id="THE_KEY-idGradient"
+                      >
+                        <stop
+                          offset="0%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-2; 1"
+                          />
+                        </stop>
+                        <stop
+                          offset="50%"
+                          stopColor="#ecebeb"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1.5; 1.5"
+                          />
+                        </stop>
+                        <stop
+                          offset="100%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1; 2"
+                          />
+                        </stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <svg
+                    className={undefined}
+                    preserveAspectRatio="xMidYMid meet"
+                    style={undefined}
+                    version="1.1"
+                    viewBox="0 0 400 72"
+                  >
+                    <rect
+                      clipPath="url(#THE_KEY-idClip)"
+                      height={72}
+                      style={
+                        Object {
+                          "fill": "url(#THE_KEY-idGradient)",
+                        }
+                      }
+                      width={400}
+                      x="0"
+                      y="0"
+                    />
+                    <defs>
+                      <clipPath
+                        id="THE_KEY-idClip"
+                      >
+                        <rect
+                          height="6.4"
+                          rx="4"
+                          ry="4"
+                          width="115"
+                          x="72"
+                          y="15"
+                        />
+                        <rect
+                          height="6.4"
+                          rx="3"
+                          ry="3"
+                          width="175"
+                          x="72"
+                          y="35"
+                        />
+                        <circle
+                          cx="38"
+                          cy="30"
+                          r="24"
+                        />
+                      </clipPath>
+                      <linearGradient
+                        id="THE_KEY-idGradient"
+                      >
+                        <stop
+                          offset="0%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-2; 1"
+                          />
+                        </stop>
+                        <stop
+                          offset="50%"
+                          stopColor="#ecebeb"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1.5; 1.5"
+                          />
+                        </stop>
+                        <stop
+                          offset="100%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1; 2"
+                          />
+                        </stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
