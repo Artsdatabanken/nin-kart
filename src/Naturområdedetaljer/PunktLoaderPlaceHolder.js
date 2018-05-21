@@ -10,9 +10,9 @@ const PunktLoaderPlaceHolder = props => (
     secondaryColor="#ecebeb"
     {...props}
   >
-    <rect x="72" y="15" rx="4" ry="4" width="115" height="6.4" />
-    <rect x="72" y="35" rx="3" ry="3" width="175" height="6.4" />
-    <circle cx="38" cy="30" r="24" />
+    <rect key={1} x="72" y="15" rx="4" ry="4" width="115" height="6.4" />
+    <rect key={2} x="72" y="35" rx="3" ry="3" width="175" height="6.4" />
+    <circle key={3} cx="38" cy="30" r="24" />
   </ContentLoader>
 )
 

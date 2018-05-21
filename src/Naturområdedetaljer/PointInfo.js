@@ -76,7 +76,7 @@ function PointInfo(props) {
         )}
       />
     )
-  return <PunktLoaderPlaceHolder />
+  return <PunktLoaderPlaceHolder uniquekey="THE_KEY" />
 }
 
 export default withRouter(PointInfo)
