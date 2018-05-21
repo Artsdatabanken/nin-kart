@@ -1,9 +1,10 @@
-import React from 'react'
-import { ListItem, Avatar } from 'material-ui'
+import { Avatar, ListItem } from 'material-ui'
 import InfoOutline from 'material-ui/svg-icons/action/info-outline'
-import { Route } from 'react-router-dom'
+import React from 'react'
 import { withRouter } from 'react-router'
+import { Route } from 'react-router-dom'
 import backend from '../backend'
+import PunktLoaderPlaceHolder from './PunktLoaderPlaceHolder'
 
 function PointInfo(props) {
   if (props.pointInfo && Object.keys(props.pointInfo).length > 0)
@@ -75,7 +76,7 @@ function PointInfo(props) {
         )}
       />
     )
-  return null
+  return <PunktLoaderPlaceHolder />
 }
 
 export default withRouter(PointInfo)

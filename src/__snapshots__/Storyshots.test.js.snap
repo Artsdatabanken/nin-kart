@@ -2827,6 +2827,231 @@ exports[`Storyshots ColorPicker default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Fakta default 1`] = `
+<div
+  style={
+    Object {
+      "background": "#ffffff",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    className="SplitPane  vertical "
+    style={
+      Object {
+        "MozUserSelect": "text",
+        "WebkitUserSelect": "text",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "row",
+        "height": "100%",
+        "left": 0,
+        "msUserSelect": "text",
+        "outline": "none",
+        "overflow": "hidden",
+        "position": "absolute",
+        "right": 0,
+        "userSelect": "text",
+      }
+    }
+  >
+    <div
+      className="Pane vertical Pane1  "
+      style={
+        Object {
+          "flex": 1,
+          "outline": "none",
+          "overflowX": "auto",
+          "overflowY": "auto",
+          "position": "relative",
+        }
+      }
+    >
+      <div>
+        <div
+          style={
+            Object {
+              "width": 400,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "lineHeight": "26px",
+              }
+            }
+          >
+            Steinodden
+            <span
+              style={
+                Object {
+                  "backgroundColor": "#abdda4",
+                  "borderRadius": "12px",
+                  "cursor": "pointer",
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                  "padding": 2,
+                  "paddingLeft": 12,
+                  "paddingRight": 6,
+                }
+              }
+            >
+              <span
+                onClick={undefined}
+                style={
+                  Object {
+                    "margin": 2,
+                    "paddingLeft": 2,
+                    "paddingRight": 2,
+                  }
+                }
+              >
+                Plante- og dyrefredningsområde
+              </span>
+            </span>
+             er et naturvernområde som ligger i
+            <span
+              style={
+                Object {
+                  "backgroundColor": "#fdae61",
+                  "borderRadius": "12px",
+                  "cursor": "pointer",
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                  "padding": 2,
+                  "paddingLeft": 12,
+                  "paddingRight": 6,
+                }
+              }
+            >
+              <span
+                onClick={undefined}
+                style={
+                  Object {
+                    "margin": 2,
+                    "paddingLeft": 2,
+                    "paddingRight": 2,
+                  }
+                }
+              >
+                Naturvernområder i Vest-Agder fylke
+              </span>
+            </span>
+            . 
+            Steinodden
+             har et totalareal på  
+            234.741
+             daa]() og ble vernet 23-12-
+            <span
+              style={
+                Object {
+                  "backgroundColor": "#fee08b",
+                  "borderRadius": "12px",
+                  "cursor": "pointer",
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                  "padding": 2,
+                  "paddingLeft": 12,
+                  "paddingRight": 6,
+                }
+              }
+            >
+              <span
+                onClick={undefined}
+                style={
+                  Object {
+                    "margin": 2,
+                    "paddingLeft": 2,
+                    "paddingRight": 2,
+                  }
+                }
+              >
+                Vernet i år 1987
+              </span>
+            </span>
+            .  
+            Steinodden
+             forvaltes av
+            <span
+              style={
+                Object {
+                  "backgroundColor": "#fee08b",
+                  "borderRadius": "12px",
+                  "cursor": "pointer",
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                  "padding": 2,
+                  "paddingLeft": 12,
+                  "paddingRight": 6,
+                }
+              }
+            >
+              <span
+                onClick={undefined}
+                style={
+                  Object {
+                    "margin": 2,
+                    "paddingLeft": 2,
+                    "paddingRight": 2,
+                  }
+                }
+              >
+                Fylkesmann
+              </span>
+            </span>
+            .   
+            Området er vurdert truet.
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      className="Resizer vertical "
+      onClick={[Function]}
+      onDoubleClick={[Function]}
+      onMouseDown={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "cursor": "col-resize",
+          "marginRight": -6,
+          "width": 10,
+          "zIndex": 1,
+        }
+      }
+    />
+    <div
+      className="Pane vertical Pane2  "
+      style={
+        Object {
+          "flex": "none",
+          "outline": "none",
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        className="sb-addon-material-ui-theme_sidebar"
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Grunnkart Rot 1`] = `
 <div
   style={
@@ -11747,6 +11972,267 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                   }
                 }
               >
+                <svg
+                  className={undefined}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={undefined}
+                  version="1.1"
+                  viewBox="0 0 400 72"
+                >
+                  <rect
+                    clipPath="url(#06gvvaipyfz)"
+                    height={72}
+                    style={
+                      Object {
+                        "fill": "url(#o8fbhj5l36n)",
+                      }
+                    }
+                    width={400}
+                    x="0"
+                    y="0"
+                  />
+                  <defs>
+                    <clipPath
+                      id="06gvvaipyfz"
+                    >
+                      <rect
+                        height="6.4"
+                        rx="4"
+                        ry="4"
+                        width="115"
+                        x="72"
+                        y="15"
+                      />
+                      <rect
+                        height="6.4"
+                        rx="3"
+                        ry="3"
+                        width="175"
+                        x="72"
+                        y="35"
+                      />
+                      <circle
+                        cx="38"
+                        cy="30"
+                        r="24"
+                      />
+                    </clipPath>
+                    <linearGradient
+                      id="o8fbhj5l36n"
+                    >
+                      <stop
+                        offset="0%"
+                        stopColor="#f3f3f3"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-2; 1"
+                        />
+                      </stop>
+                      <stop
+                        offset="50%"
+                        stopColor="#ecebeb"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-1.5; 1.5"
+                        />
+                      </stop>
+                      <stop
+                        offset="100%"
+                        stopColor="#f3f3f3"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-1; 2"
+                        />
+                      </stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <svg
+                  className={undefined}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={undefined}
+                  version="1.1"
+                  viewBox="0 0 400 72"
+                >
+                  <rect
+                    clipPath="url(#x2vlzlisuu)"
+                    height={72}
+                    style={
+                      Object {
+                        "fill": "url(#rot15pl5xj)",
+                      }
+                    }
+                    width={400}
+                    x="0"
+                    y="0"
+                  />
+                  <defs>
+                    <clipPath
+                      id="x2vlzlisuu"
+                    >
+                      <rect
+                        height="6.4"
+                        rx="4"
+                        ry="4"
+                        width="115"
+                        x="72"
+                        y="15"
+                      />
+                      <rect
+                        height="6.4"
+                        rx="3"
+                        ry="3"
+                        width="175"
+                        x="72"
+                        y="35"
+                      />
+                      <circle
+                        cx="38"
+                        cy="30"
+                        r="24"
+                      />
+                    </clipPath>
+                    <linearGradient
+                      id="rot15pl5xj"
+                    >
+                      <stop
+                        offset="0%"
+                        stopColor="#f3f3f3"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-2; 1"
+                        />
+                      </stop>
+                      <stop
+                        offset="50%"
+                        stopColor="#ecebeb"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-1.5; 1.5"
+                        />
+                      </stop>
+                      <stop
+                        offset="100%"
+                        stopColor="#f3f3f3"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-1; 2"
+                        />
+                      </stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <svg
+                  className={undefined}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={undefined}
+                  version="1.1"
+                  viewBox="0 0 400 72"
+                >
+                  <rect
+                    clipPath="url(#jvvcrr332o)"
+                    height={72}
+                    style={
+                      Object {
+                        "fill": "url(#72s06d8vt5f)",
+                      }
+                    }
+                    width={400}
+                    x="0"
+                    y="0"
+                  />
+                  <defs>
+                    <clipPath
+                      id="jvvcrr332o"
+                    >
+                      <rect
+                        height="6.4"
+                        rx="4"
+                        ry="4"
+                        width="115"
+                        x="72"
+                        y="15"
+                      />
+                      <rect
+                        height="6.4"
+                        rx="3"
+                        ry="3"
+                        width="175"
+                        x="72"
+                        y="35"
+                      />
+                      <circle
+                        cx="38"
+                        cy="30"
+                        r="24"
+                      />
+                    </clipPath>
+                    <linearGradient
+                      id="72s06d8vt5f"
+                    >
+                      <stop
+                        offset="0%"
+                        stopColor="#f3f3f3"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-2; 1"
+                        />
+                      </stop>
+                      <stop
+                        offset="50%"
+                        stopColor="#ecebeb"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-1.5; 1.5"
+                        />
+                      </stop>
+                      <stop
+                        offset="100%"
+                        stopColor="#f3f3f3"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-1; 2"
+                        />
+                      </stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
                 <div>
                   <span
                     disabled={false}
@@ -11915,6 +12401,93 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                     </div>
                   </span>
                 </div>
+                <svg
+                  className={undefined}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={undefined}
+                  version="1.1"
+                  viewBox="0 0 400 72"
+                >
+                  <rect
+                    clipPath="url(#2ahxlgst32i)"
+                    height={72}
+                    style={
+                      Object {
+                        "fill": "url(#9ijos99259)",
+                      }
+                    }
+                    width={400}
+                    x="0"
+                    y="0"
+                  />
+                  <defs>
+                    <clipPath
+                      id="2ahxlgst32i"
+                    >
+                      <rect
+                        height="6.4"
+                        rx="4"
+                        ry="4"
+                        width="115"
+                        x="72"
+                        y="15"
+                      />
+                      <rect
+                        height="6.4"
+                        rx="3"
+                        ry="3"
+                        width="175"
+                        x="72"
+                        y="35"
+                      />
+                      <circle
+                        cx="38"
+                        cy="30"
+                        r="24"
+                      />
+                    </clipPath>
+                    <linearGradient
+                      id="9ijos99259"
+                    >
+                      <stop
+                        offset="0%"
+                        stopColor="#f3f3f3"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-2; 1"
+                        />
+                      </stop>
+                      <stop
+                        offset="50%"
+                        stopColor="#ecebeb"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-1.5; 1.5"
+                        />
+                      </stop>
+                      <stop
+                        offset="100%"
+                        stopColor="#f3f3f3"
+                        stopOpacity={1}
+                      >
+                        <animate
+                          attributeName="offset"
+                          dur="2s"
+                          repeatCount="indefinite"
+                          values="-1; 2"
+                        />
+                      </stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
               </div>
             </div>
           </div>
@@ -12113,7 +12686,7 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                           }
                         }
                       >
-                        PunktInfo
+                        NaturområdeInfo
                       </div>
                     </div>
                   </div>
@@ -12144,6 +12717,573 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                     }
                   }
                 />
+              </div>
+            </div>
+          </div>
+          <div
+            className="Collapsible"
+          >
+            <span
+              className="Collapsible__trigger is-open"
+              onClick={[Function]}
+            >
+              <div>
+                <span
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  open={null}
+                  style={
+                    Object {
+                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                      "backgroundColor": "aliceblue",
+                      "border": 10,
+                      "boxSizing": "border-box",
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "cursor": "pointer",
+                      "display": "block",
+                      "fontFamily": "Roboto, sans-serif",
+                      "fontSize": 16,
+                      "fontWeight": "inherit",
+                      "lineHeight": "16px",
+                      "margin": 0,
+                      "muiPrepared": true,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "relative",
+                      "textDecoration": "none",
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "verticalAlign": null,
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  <div
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                  >
+                    <div
+                      style={
+                        Object {
+                          "marginLeft": 0,
+                          "muiPrepared": true,
+                          "paddingBottom": 16,
+                          "paddingLeft": 16,
+                          "paddingRight": 56,
+                          "paddingTop": 16,
+                          "position": "relative",
+                        }
+                      }
+                    >
+                      <svg
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        style={
+                          Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "display": "block",
+                            "fill": "#757575",
+                            "height": 24,
+                            "margin": 12,
+                            "muiPrepared": true,
+                            "position": "absolute",
+                            "right": 4,
+                            "top": 0,
+                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                            "userSelect": "none",
+                            "width": 24,
+                          }
+                        }
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+                        />
+                      </svg>
+                      <div
+                        style={
+                          Object {
+                            "muiPrepared": true,
+                          }
+                        }
+                      >
+                        PunktInfo
+                      </div>
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </span>
+            <div
+              className="Collapsible__contentOuter"
+              onTransitionEnd={[Function]}
+              style={
+                Object {
+                  "WebkitTransition": "none",
+                  "height": "auto",
+                  "msTransition": "none",
+                  "overflow": "hidden",
+                  "transition": "none",
+                }
+              }
+            >
+              <div
+                className="Collapsible__contentInner"
+              >
+                <div
+                  style={
+                    Object {
+                      "muiPrepared": true,
+                      "padding": "8px 0px 8px 0px",
+                    }
+                  }
+                >
+                  <svg
+                    className={undefined}
+                    preserveAspectRatio="xMidYMid meet"
+                    style={undefined}
+                    version="1.1"
+                    viewBox="0 0 400 72"
+                  >
+                    <rect
+                      clipPath="url(#pun1jo13fq)"
+                      height={72}
+                      style={
+                        Object {
+                          "fill": "url(#yzl10tub6l)",
+                        }
+                      }
+                      width={400}
+                      x="0"
+                      y="0"
+                    />
+                    <defs>
+                      <clipPath
+                        id="pun1jo13fq"
+                      >
+                        <rect
+                          height="6.4"
+                          rx="4"
+                          ry="4"
+                          width="115"
+                          x="72"
+                          y="15"
+                        />
+                        <rect
+                          height="6.4"
+                          rx="3"
+                          ry="3"
+                          width="175"
+                          x="72"
+                          y="35"
+                        />
+                        <circle
+                          cx="38"
+                          cy="30"
+                          r="24"
+                        />
+                      </clipPath>
+                      <linearGradient
+                        id="yzl10tub6l"
+                      >
+                        <stop
+                          offset="0%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-2; 1"
+                          />
+                        </stop>
+                        <stop
+                          offset="50%"
+                          stopColor="#ecebeb"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1.5; 1.5"
+                          />
+                        </stop>
+                        <stop
+                          offset="100%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1; 2"
+                          />
+                        </stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <svg
+                    className={undefined}
+                    preserveAspectRatio="xMidYMid meet"
+                    style={undefined}
+                    version="1.1"
+                    viewBox="0 0 400 72"
+                  >
+                    <rect
+                      clipPath="url(#yc7f219fyqc)"
+                      height={72}
+                      style={
+                        Object {
+                          "fill": "url(#aw0ny0xbf1t)",
+                        }
+                      }
+                      width={400}
+                      x="0"
+                      y="0"
+                    />
+                    <defs>
+                      <clipPath
+                        id="yc7f219fyqc"
+                      >
+                        <rect
+                          height="6.4"
+                          rx="4"
+                          ry="4"
+                          width="115"
+                          x="72"
+                          y="15"
+                        />
+                        <rect
+                          height="6.4"
+                          rx="3"
+                          ry="3"
+                          width="175"
+                          x="72"
+                          y="35"
+                        />
+                        <circle
+                          cx="38"
+                          cy="30"
+                          r="24"
+                        />
+                      </clipPath>
+                      <linearGradient
+                        id="aw0ny0xbf1t"
+                      >
+                        <stop
+                          offset="0%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-2; 1"
+                          />
+                        </stop>
+                        <stop
+                          offset="50%"
+                          stopColor="#ecebeb"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1.5; 1.5"
+                          />
+                        </stop>
+                        <stop
+                          offset="100%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1; 2"
+                          />
+                        </stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <svg
+                    className={undefined}
+                    preserveAspectRatio="xMidYMid meet"
+                    style={undefined}
+                    version="1.1"
+                    viewBox="0 0 400 72"
+                  >
+                    <rect
+                      clipPath="url(#96axon0phb)"
+                      height={72}
+                      style={
+                        Object {
+                          "fill": "url(#omurp34c6ji)",
+                        }
+                      }
+                      width={400}
+                      x="0"
+                      y="0"
+                    />
+                    <defs>
+                      <clipPath
+                        id="96axon0phb"
+                      >
+                        <rect
+                          height="6.4"
+                          rx="4"
+                          ry="4"
+                          width="115"
+                          x="72"
+                          y="15"
+                        />
+                        <rect
+                          height="6.4"
+                          rx="3"
+                          ry="3"
+                          width="175"
+                          x="72"
+                          y="35"
+                        />
+                        <circle
+                          cx="38"
+                          cy="30"
+                          r="24"
+                        />
+                      </clipPath>
+                      <linearGradient
+                        id="omurp34c6ji"
+                      >
+                        <stop
+                          offset="0%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-2; 1"
+                          />
+                        </stop>
+                        <stop
+                          offset="50%"
+                          stopColor="#ecebeb"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1.5; 1.5"
+                          />
+                        </stop>
+                        <stop
+                          offset="100%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1; 2"
+                          />
+                        </stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <svg
+                    className={undefined}
+                    preserveAspectRatio="xMidYMid meet"
+                    style={undefined}
+                    version="1.1"
+                    viewBox="0 0 400 72"
+                  >
+                    <rect
+                      clipPath="url(#sbi2ib2fl5)"
+                      height={72}
+                      style={
+                        Object {
+                          "fill": "url(#c5bj0brhu8)",
+                        }
+                      }
+                      width={400}
+                      x="0"
+                      y="0"
+                    />
+                    <defs>
+                      <clipPath
+                        id="sbi2ib2fl5"
+                      >
+                        <rect
+                          height="6.4"
+                          rx="4"
+                          ry="4"
+                          width="115"
+                          x="72"
+                          y="15"
+                        />
+                        <rect
+                          height="6.4"
+                          rx="3"
+                          ry="3"
+                          width="175"
+                          x="72"
+                          y="35"
+                        />
+                        <circle
+                          cx="38"
+                          cy="30"
+                          r="24"
+                        />
+                      </clipPath>
+                      <linearGradient
+                        id="c5bj0brhu8"
+                      >
+                        <stop
+                          offset="0%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-2; 1"
+                          />
+                        </stop>
+                        <stop
+                          offset="50%"
+                          stopColor="#ecebeb"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1.5; 1.5"
+                          />
+                        </stop>
+                        <stop
+                          offset="100%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1; 2"
+                          />
+                        </stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <svg
+                    className={undefined}
+                    preserveAspectRatio="xMidYMid meet"
+                    style={undefined}
+                    version="1.1"
+                    viewBox="0 0 400 72"
+                  >
+                    <rect
+                      clipPath="url(#unyjqtgbrg)"
+                      height={72}
+                      style={
+                        Object {
+                          "fill": "url(#rhlvs9rxmz)",
+                        }
+                      }
+                      width={400}
+                      x="0"
+                      y="0"
+                    />
+                    <defs>
+                      <clipPath
+                        id="unyjqtgbrg"
+                      >
+                        <rect
+                          height="6.4"
+                          rx="4"
+                          ry="4"
+                          width="115"
+                          x="72"
+                          y="15"
+                        />
+                        <rect
+                          height="6.4"
+                          rx="3"
+                          ry="3"
+                          width="175"
+                          x="72"
+                          y="35"
+                        />
+                        <circle
+                          cx="38"
+                          cy="30"
+                          r="24"
+                        />
+                      </clipPath>
+                      <linearGradient
+                        id="rhlvs9rxmz"
+                      >
+                        <stop
+                          offset="0%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-2; 1"
+                          />
+                        </stop>
+                        <stop
+                          offset="50%"
+                          stopColor="#ecebeb"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1.5; 1.5"
+                          />
+                        </stop>
+                        <stop
+                          offset="100%"
+                          stopColor="#f3f3f3"
+                          stopOpacity={1}
+                        >
+                          <animate
+                            attributeName="offset"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            values="-1; 2"
+                          />
+                        </stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
