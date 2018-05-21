@@ -11980,11 +11980,11 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                   viewBox="0 0 400 72"
                 >
                   <rect
-                    clipPath="url(#lmn-idClip)"
+                    clipPath="url(#THE_KEY-idClip)"
                     height={72}
                     style={
                       Object {
-                        "fill": "url(#lmn-idGradient)",
+                        "fill": "url(#THE_KEY-idGradient)",
                       }
                     }
                     width={400}
@@ -11993,7 +11993,7 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                   />
                   <defs>
                     <clipPath
-                      id="lmn-idClip"
+                      id="THE_KEY-idClip"
                     >
                       <rect
                         height="6.4"
@@ -12018,7 +12018,7 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                       />
                     </clipPath>
                     <linearGradient
-                      id="lmn-idGradient"
+                      id="THE_KEY-idGradient"
                     >
                       <stop
                         offset="0%"
@@ -12067,11 +12067,11 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                   viewBox="0 0 400 72"
                 >
                   <rect
-                    clipPath="url(#lmn-idClip)"
+                    clipPath="url(#THE_KEY-idClip)"
                     height={72}
                     style={
                       Object {
-                        "fill": "url(#lmn-idGradient)",
+                        "fill": "url(#THE_KEY-idGradient)",
                       }
                     }
                     width={400}
@@ -12080,7 +12080,7 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                   />
                   <defs>
                     <clipPath
-                      id="lmn-idClip"
+                      id="THE_KEY-idClip"
                     >
                       <rect
                         height="6.4"
@@ -12105,7 +12105,7 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                       />
                     </clipPath>
                     <linearGradient
-                      id="lmn-idGradient"
+                      id="THE_KEY-idGradient"
                     >
                       <stop
                         offset="0%"
@@ -12154,11 +12154,11 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                   viewBox="0 0 400 72"
                 >
                   <rect
-                    clipPath="url(#lmn-idClip)"
+                    clipPath="url(#THE_KEY-idClip)"
                     height={72}
                     style={
                       Object {
-                        "fill": "url(#lmn-idGradient)",
+                        "fill": "url(#THE_KEY-idGradient)",
                       }
                     }
                     width={400}
@@ -12167,7 +12167,7 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                   />
                   <defs>
                     <clipPath
-                      id="lmn-idClip"
+                      id="THE_KEY-idClip"
                     >
                       <rect
                         height="6.4"
@@ -12192,7 +12192,7 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                       />
                     </clipPath>
                     <linearGradient
-                      id="lmn-idGradient"
+                      id="THE_KEY-idGradient"
                     >
                       <stop
                         offset="0%"
@@ -12409,11 +12409,11 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                   viewBox="0 0 400 72"
                 >
                   <rect
-                    clipPath="url(#lmn-idClip)"
+                    clipPath="url(#THE_KEY-idClip)"
                     height={72}
                     style={
                       Object {
-                        "fill": "url(#lmn-idGradient)",
+                        "fill": "url(#THE_KEY-idGradient)",
                       }
                     }
                     width={400}
@@ -12422,7 +12422,7 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                   />
                   <defs>
                     <clipPath
-                      id="lmn-idClip"
+                      id="THE_KEY-idClip"
                     >
                       <rect
                         height="6.4"
@@ -12447,7 +12447,7 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                       />
                     </clipPath>
                     <linearGradient
-                      id="lmn-idGradient"
+                      id="THE_KEY-idGradient"
                     >
                       <stop
                         offset="0%"
@@ -12856,11 +12856,11 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                     viewBox="0 0 400 72"
                   >
                     <rect
-                      clipPath="url(#lmn-idClip)"
+                      clipPath="url(#THE_KEY-idClip)"
                       height={72}
                       style={
                         Object {
-                          "fill": "url(#lmn-idGradient)",
+                          "fill": "url(#THE_KEY-idGradient)",
                         }
                       }
                       width={400}
@@ -12869,7 +12869,7 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                     />
                     <defs>
                       <clipPath
-                        id="lmn-idClip"
+                        id="THE_KEY-idClip"
                       >
                         <rect
                           height="6.4"
@@ -12894,7 +12894,7 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                         />
                       </clipPath>
                       <linearGradient
-                        id="lmn-idGradient"
+                        id="THE_KEY-idGradient"
                       >
                         <stop
                           offset="0%"
@@ -12943,11 +12943,11 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                     viewBox="0 0 400 72"
                   >
                     <rect
-                      clipPath="url(#lmn-idClip)"
+                      clipPath="url(#THE_KEY-idClip)"
                       height={72}
                       style={
                         Object {
-                          "fill": "url(#lmn-idGradient)",
+                          "fill": "url(#THE_KEY-idGradient)",
                         }
                       }
                       width={400}
@@ -12956,7 +12956,7 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                     />
                     <defs>
                       <clipPath
-                        id="lmn-idClip"
+                        id="THE_KEY-idClip"
                       >
                         <rect
                           height="6.4"
@@ -12981,7 +12981,7 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                         />
                       </clipPath>
                       <linearGradient
-                        id="lmn-idGradient"
+                        id="THE_KEY-idGradient"
                       >
                         <stop
                           offset="0%"
@@ -13030,11 +13030,11 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                     viewBox="0 0 400 72"
                   >
                     <rect
-                      clipPath="url(#lmn-idClip)"
+                      clipPath="url(#THE_KEY-idClip)"
                       height={72}
                       style={
                         Object {
-                          "fill": "url(#lmn-idGradient)",
+                          "fill": "url(#THE_KEY-idGradient)",
                         }
                       }
                       width={400}
@@ -13043,7 +13043,7 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                     />
                     <defs>
                       <clipPath
-                        id="lmn-idClip"
+                        id="THE_KEY-idClip"
                       >
                         <rect
                           height="6.4"
@@ -13068,7 +13068,7 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                         />
                       </clipPath>
                       <linearGradient
-                        id="lmn-idGradient"
+                        id="THE_KEY-idGradient"
                       >
                         <stop
                           offset="0%"
@@ -13117,11 +13117,11 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                     viewBox="0 0 400 72"
                   >
                     <rect
-                      clipPath="url(#lmn-idClip)"
+                      clipPath="url(#THE_KEY-idClip)"
                       height={72}
                       style={
                         Object {
-                          "fill": "url(#lmn-idGradient)",
+                          "fill": "url(#THE_KEY-idGradient)",
                         }
                       }
                       width={400}
@@ -13130,7 +13130,7 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                     />
                     <defs>
                       <clipPath
-                        id="lmn-idClip"
+                        id="THE_KEY-idClip"
                       >
                         <rect
                           height="6.4"
@@ -13155,7 +13155,7 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                         />
                       </clipPath>
                       <linearGradient
-                        id="lmn-idGradient"
+                        id="THE_KEY-idGradient"
                       >
                         <stop
                           offset="0%"
@@ -13204,11 +13204,11 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                     viewBox="0 0 400 72"
                   >
                     <rect
-                      clipPath="url(#lmn-idClip)"
+                      clipPath="url(#THE_KEY-idClip)"
                       height={72}
                       style={
                         Object {
-                          "fill": "url(#lmn-idGradient)",
+                          "fill": "url(#THE_KEY-idGradient)",
                         }
                       }
                       width={400}
@@ -13217,7 +13217,7 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                     />
                     <defs>
                       <clipPath
-                        id="lmn-idClip"
+                        id="THE_KEY-idClip"
                       >
                         <rect
                           height="6.4"
@@ -13242,7 +13242,7 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                         />
                       </clipPath>
                       <linearGradient
-                        id="lmn-idGradient"
+                        id="THE_KEY-idGradient"
                       >
                         <stop
                           offset="0%"
