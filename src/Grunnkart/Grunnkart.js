@@ -106,9 +106,6 @@ class Grunnkart extends React.Component<Props, State> {
       mapStyle: this.state.baseMapStyle.set('layers', layers),
     })
   }
-  _method() {
-    return true
-  }
 
   handleMapBoundsChange = backend.debounce(function(bounds) {
     this.setState({ mapBounds: bounds })
@@ -216,6 +213,18 @@ class Grunnkart extends React.Component<Props, State> {
     let nyKode = this.state.ekspandertKode === kode ? null : kode
     this.setState({ ekspandertKode: nyKode })
   }
+  handleToggleVisible = kode => {
+    let meta = this.state.valgteKoder
+    Object.keys(meta).forEach(id => {
+      if (meta[id].kode === kode) {
+        meta[id].skjul = !meta[id].skjul
+      }
+    })
+    this.setState({
+      valgteKoder: meta,
+      skjul: this.state.skjul ? false : true,
+    })
+  }
 
   render() {
     const aktivKode =
@@ -248,6 +257,7 @@ class Grunnkart extends React.Component<Props, State> {
           }}
           meta={this.state.meta}
           bbox={this.state.bbox}
+          oppdaterSkjulLag={this.state.skjul}
           oppdaterFarger={this.state.ekspandertKode}
         />
 
@@ -332,6 +342,7 @@ class Grunnkart extends React.Component<Props, State> {
                       })
                     }
                     onShowColorpicker={this.handleShowColorpicker}
+                    onToggleVisible={this.handleToggleVisible}
                     onUpdateLayerProp={this.handleUpdateSelectedLayerProp}
                     onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
                     ekspandertKode={this.state.ekspandertKode}

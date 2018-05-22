@@ -8,6 +8,7 @@ import Bildeavatar from '../Kodetre/Kodeliste/Bildeavatar'
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import Close from 'material-ui/svg-icons/content/clear'
 import språk from '../språk'
+import Toggle from 'material-ui/Toggle'
 
 class Kartlagelement extends React.Component {
   setFargeKode(kode, farge) {
@@ -114,20 +115,39 @@ class Kartlagelement extends React.Component {
           )}
           rightAvatar={
             this.props.showColor ? (
-              <div
-                style={{
-                  display: 'inline-flex',
-                  position: 'absolute',
-                  top: 16,
-                }}
-              >
-                <PaintSwatch
-                  color={this.getFargeKode()}
-                  onClick={e => {
-                    e.stopPropagation()
-                    this.props.onShowColorpicker(meta.kode)
+              <div>
+                <div
+                  style={{
+                    display: 'inline-flex',
+                    position: 'absolute',
+                    right: 40,
+                    top: 16,
                   }}
-                />
+                >
+                  <Toggle
+                    toggled={this.props.skjul}
+                    onClick={e => {
+                      e.stopPropagation()
+                      this.props.onToggleVisible(meta.kode)
+                    }}
+                  />
+                </div>
+                <div
+                  style={{
+                    display: 'inline-flex',
+                    position: 'absolute',
+                    right: 0,
+                    top: 16,
+                  }}
+                >
+                  <PaintSwatch
+                    color={this.getFargeKode()}
+                    onClick={e => {
+                      e.stopPropagation()
+                      this.props.onShowColorpicker(meta.kode)
+                    }}
+                  />
+                </div>
               </div>
             ) : (
               <div />
