@@ -11,7 +11,7 @@
     "eslint-plugin-prettier": "^2.6.0",
     "flow-typed": "^2.4.0",
     "luma.gl": "^5.1.6",
-    "material-ui": "^0.20.0",
+    "material-ui": "^0.20.1",
     "rc-slider": "^8.5.0",
     "react": "^16.2.0",
     "react-collapsible": "^2.0.4",
