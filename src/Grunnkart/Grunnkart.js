@@ -45,7 +45,7 @@ class Grunnkart extends React.Component<Props, State> {
       bbox: {},
       ekspandertKode: null,
     }
-    this.redirectTo('')
+    this.redirectTo(props.location.pathname.replace('/katalog/', ''))
   }
 
   handleChangeBaseMap = type => {
@@ -53,6 +53,9 @@ class Grunnkart extends React.Component<Props, State> {
     this.setState({
       baseMapStyle: type,
     })
+  }
+  _method() {
+    return true
   }
 
   handleMapBoundsChange = bounds => {
