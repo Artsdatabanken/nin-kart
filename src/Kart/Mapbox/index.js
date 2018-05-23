@@ -69,6 +69,10 @@ class Mapbox extends Component {
       this.fargeleggLag(nextProps)
     }
 
+    if (nextProps.oppdaterSkjulLag !== this.props.oppdaterSkjulLag) {
+      this.oppdaterValgteKoder(this.props, nextProps)
+    }
+
     if (nextProps.oppdaterFarger === null) {
       if (nextProps.oppdaterFarger !== this.props.oppdaterFarger) {
         this.fargeleggLag(nextProps)
@@ -268,6 +272,9 @@ class Mapbox extends Component {
       Object.keys(nextProps.valgteKoder).forEach(id => {
         const item = nextProps.valgteKoder[id]
         let lagId = 'valgt' + item.kode
+        if (item.skjul) {
+          return
+        }
         if (!map.getLayer(lagId)) {
           let lag = hentLag(map, item.kode)
           if (!lag || !lag.paint) return

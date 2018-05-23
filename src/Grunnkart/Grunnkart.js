@@ -1,13 +1,13 @@
 // @flow
-import { FloatingActionButton } from 'material-ui';
-import KatalogIkon from 'material-ui/svg-icons/communication/import-contacts';
-import React from 'react';
-import { withRouter } from 'react-router';
-import { Link } from 'react-router-dom';
-import backend from '../backend';
-import Kart from '../Kart';
-import VenstreVinduContainer from '../VenstreVinduContainer';
-import MainDrawer from './MainDrawer';
+import { FloatingActionButton } from 'material-ui'
+import KatalogIkon from 'material-ui/svg-icons/communication/import-contacts'
+import React from 'react'
+import { withRouter } from 'react-router'
+import { Link } from 'react-router-dom'
+import backend from '../backend'
+import Kart from '../Kart'
+import VenstreVinduContainer from '../VenstreVinduContainer'
+import MainDrawer from './MainDrawer'
 
 type State = {
   language: Array<string>,
@@ -53,9 +53,6 @@ class Grunnkart extends React.Component<Props, State> {
     this.setState({
       baseMapStyle: type,
     })
-  }
-  _method() {
-    return true
   }
 
   handleMapBoundsChange = bounds => {
@@ -159,6 +156,18 @@ class Grunnkart extends React.Component<Props, State> {
     let nyKode = this.state.ekspandertKode === kode ? null : kode
     this.setState({ ekspandertKode: nyKode })
   }
+  handleToggleVisible = kode => {
+    let meta = this.state.valgteKoder
+    Object.keys(meta).forEach(id => {
+      if (meta[id].kode === kode) {
+        meta[id].skjul = !meta[id].skjul
+      }
+    })
+    this.setState({
+      valgteKoder: meta,
+      skjul: this.state.skjul ? false : true,
+    })
+  }
 
   render() {
     const aktivKode =
@@ -258,6 +267,7 @@ class Grunnkart extends React.Component<Props, State> {
                       })
                     }
                     onShowColorpicker={this.handleShowColorpicker}
+                    onToggleVisible={this.handleToggleVisible}
                     onUpdateLayerProp={this.handleUpdateSelectedLayerProp}
                     onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
                     ekspandertKode={this.state.ekspandertKode}
