@@ -420,7 +420,6 @@ ShallowWrapper {
           "opacity": 0.9,
           "rippleBackgroundColor": "#616161",
         },
-        "userAgent": undefined,
         "zIndex": Object {
           "appBar": 1100,
           "dialog": 1500,
@@ -848,7 +847,6 @@ ShallowWrapper {
             "opacity": 0.9,
             "rippleBackgroundColor": "#616161",
           },
-          "userAgent": undefined,
           "zIndex": Object {
             "appBar": 1100,
             "dialog": 1500,
@@ -1300,7 +1298,6 @@ ShallowWrapper {
           "opacity": 0.9,
           "rippleBackgroundColor": "#616161",
         },
-        "userAgent": undefined,
         "zIndex": Object {
           "appBar": 1100,
           "dialog": 1500,
@@ -1729,7 +1726,6 @@ ShallowWrapper {
             "opacity": 0.9,
             "rippleBackgroundColor": "#616161",
           },
-          "userAgent": undefined,
           "zIndex": Object {
             "appBar": 1100,
             "dialog": 1500,
@@ -2184,7 +2180,6 @@ ShallowWrapper {
           "opacity": 0.9,
           "rippleBackgroundColor": "#616161",
         },
-        "userAgent": undefined,
         "zIndex": Object {
           "appBar": 1100,
           "dialog": 1500,
@@ -2614,7 +2609,6 @@ ShallowWrapper {
             "opacity": 0.9,
             "rippleBackgroundColor": "#616161",
           },
-          "userAgent": undefined,
           "zIndex": Object {
             "appBar": 1100,
             "dialog": 1500,
@@ -3070,7 +3064,6 @@ ShallowWrapper {
           "opacity": 0.9,
           "rippleBackgroundColor": "#616161",
         },
-        "userAgent": undefined,
         "zIndex": Object {
           "appBar": 1100,
           "dialog": 1500,
@@ -3501,7 +3494,6 @@ ShallowWrapper {
             "opacity": 0.9,
             "rippleBackgroundColor": "#616161",
           },
-          "userAgent": undefined,
           "zIndex": Object {
             "appBar": 1100,
             "dialog": 1500,

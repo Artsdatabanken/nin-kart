@@ -36,9 +36,27 @@
       "type": "vector"
     },
 
-    "sqrt42": {
+    "NA": {
       "type": "vector",
-      "tiles": ["https://tiles.artsdatabanken.no/data/sqrt42/{z}/{x}/{y}.pbf"],
+      "tiles": ["https://tiles.artsdatabanken.no/data/NA/{z}/{x}/{y}.pbf"],
+      "minzoom": 0,
+      "maxzoom": 11
+    },
+    "AO": {
+      "type": "vector",
+      "tiles": ["https://tiles.artsdatabanken.no/data/AO/{z}/{x}/{y}.pbf"],
+      "minzoom": 0,
+      "maxzoom": 11
+    },
+    "MI": {
+      "type": "vector",
+      "tiles": ["https://tiles.artsdatabanken.no/data/MI/{z}/{x}/{y}.pbf"],
+      "minzoom": 0,
+      "maxzoom": 11
+    },
+    "VV": {
+      "type": "vector",
+      "tiles": ["https://tiles.artsdatabanken.no/data/VV/{z}/{x}/{y}.pbf"],
       "minzoom": 0,
       "maxzoom": 11
     }

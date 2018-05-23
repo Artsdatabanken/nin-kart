@@ -12,8 +12,8 @@ Object {
     "fill-color": "#FFFF00",
     "fill-outline-color": "#FF0000",
   },
-  "source": "sqrt42",
-  "source-layer": "sqrt42",
+  "source": "MI",
+  "source-layer": "MI",
   "type": "fill",
 }
 `;
@@ -30,8 +30,8 @@ Object {
     "fill-color": "#FFFF00",
     "fill-outline-color": "#FF0000",
   },
-  "source": "sqrt42",
-  "source-layer": "sqrt42",
+  "source": "NA",
+  "source-layer": "NA",
   "type": "fill",
 }
 `;

@@ -7225,13 +7225,13 @@
       }
     },
     {
-      "id": "sqrt42",
+      "id": "NA",
       "type": "fill",
       "metadata": {
         "mapbox:group": "f687f11d778ea9a47615d3f139a85ec5"
       },
-      "source": "sqrt42",
-      "source-layer": "sqrt42",
+      "source": "NA",
+      "source-layer": "NA",
       "layout": {},
       "interactive": true,
       "paint": {
@@ -7240,13 +7240,13 @@
       }
     },
     {
-      "id": "sqrt42-hover",
+      "id": "NA-hover",
       "type": "fill",
       "metadata": {
         "mapbox:group": "f687f11d778ea9a47615d3f139a85ec5"
       },
-      "source": "sqrt42",
-      "source-layer": "sqrt42",
+      "source": "NA",
+      "source-layer": "NA",
       "filter": ["==", "localId", ""],
       "layout": {},
       "paint": {
@@ -7260,8 +7260,8 @@
       "metadata": {
         "mapbox:group": "f687f11d778ea9a47615d3f139a85ec5"
       },
-      "source": "sqrt42",
-      "source-layer": "sqrt42",
+      "source": "NA",
+      "source-layer": "NA",
       "filter": [
         "all",
         [

@@ -101,10 +101,27 @@
       "url": "mapbox://mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v7",
       "type": "vector"
     },
-
-    "sqrt42": {
+    "NA": {
       "type": "vector",
-      "tiles": ["https://tiles.artsdatabanken.no/data/sqrt42/{z}/{x}/{y}.pbf"],
+      "tiles": ["https://tiles.artsdatabanken.no/data/NA/{z}/{x}/{y}.pbf"],
+      "minzoom": 0,
+      "maxzoom": 11
+    },
+    "AO": {
+      "type": "vector",
+      "tiles": ["https://tiles.artsdatabanken.no/data/AO/{z}/{x}/{y}.pbf"],
+      "minzoom": 0,
+      "maxzoom": 11
+    },
+    "MI": {
+      "type": "vector",
+      "tiles": ["https://tiles.artsdatabanken.no/data/MI/{z}/{x}/{y}.pbf"],
+      "minzoom": 0,
+      "maxzoom": 11
+    },
+    "VV": {
+      "type": "vector",
+      "tiles": ["https://tiles.artsdatabanken.no/data/VV/{z}/{x}/{y}.pbf"],
       "minzoom": 0,
       "maxzoom": 11
     }
@@ -3526,71 +3543,6 @@
       "paint": {
         "fill-color": "#ed6c26",
         "fill-opacity": 1
-      }
-    },
-    {
-      "id": "nin-rodliste_RE",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
-      },
-      "source": "sqrt42",
-      "source-layer": "sqrt42",
-      "filter": ["has", "rl_re"],
-      "layout": {
-        "visibility": "none"
-      },
-      "paint": {
-        "fill-color": "#5a5b5d"
-      }
-    },
-    {
-      "id": "nin-rodliste_NT",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
-      },
-      "source": "sqrt42",
-      "source-layer": "sqrt42",
-      "filter": ["has", "rl_nt"],
-      "layout": {
-        "visibility": "none"
-      },
-      "paint": {
-        "fill-color": "#ed6c26"
-      }
-    },
-    {
-      "id": "nin-rodliste_EN",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
-      },
-      "source": "sqrt42",
-      "source-layer": "sqrt42",
-      "filter": ["has", "rl_en"],
-      "layout": {
-        "visibility": "none"
-      },
-      "paint": {
-        "fill-color": "hsl(353, 87%, 45%)",
-        "fill-opacity": 1
-      }
-    },
-    {
-      "id": "nin-rodliste_CR",
-      "type": "fill",
-      "metadata": {
-        "mapbox:group": "03a92a3bd5f3aff11b8161d87a673083"
-      },
-      "source": "sqrt42",
-      "source-layer": "sqrt42",
-      "filter": ["has", "rl_cr"],
-      "layout": {
-        "visibility": "none"
-      },
-      "paint": {
-        "fill-color": "hsl(0, 72%, 35%)"
       }
     },
     {
