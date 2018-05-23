@@ -8,8 +8,8 @@ import MAP_STYLE_SATELLITE from './satellite.json'
 export const NiN = fromJS({
   id: 'nin',
   type: 'fill',
-  source: 'sqrt42',
-  'source-layer': 'sqrt42',
+  source: 'NA',
+  'source-layer': 'NA',
   interactive: true,
   paint: {
     'fill-color': 'hsla(120, 22%, 24%, 0.1)',
@@ -19,8 +19,8 @@ export const NiN = fromJS({
 export const NiNHover = fromJS({
   id: 'nin-hover',
   type: 'fill',
-  source: 'sqrt42',
-  'source-layer': 'sqrt42',
+  source: 'NA',
+  'source-layer': 'NA',
   filter: ['==', 'localId', ''],
   paint: {
     'fill-color': 'cyan',
