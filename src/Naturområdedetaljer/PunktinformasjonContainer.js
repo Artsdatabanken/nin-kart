@@ -189,6 +189,8 @@ class PunktinformasjonContainer extends Component {
       }
     }
 
+    if (!props) return
+
     for (let code in props.codes) {
       backend
         .getCodeTitle(code)
