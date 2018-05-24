@@ -4,6 +4,8 @@ import backend from '../backend'
 import Punktinformasjon from './Punktinformasjon'
 import VektorPunktinformasjon from './VektorPunktinformasjon'
 
+let oldLonLat = []
+
 class PunktinformasjonContainer extends Component {
   constructor(props) {
     super(props)
@@ -43,7 +45,16 @@ class PunktinformasjonContainer extends Component {
       localId: localId,
     })
 
-    this.goFetchPointInfo(lng, lat)
+    if (
+      Number.parseFloat(lng).toPrecision(7) !== oldLonLat[0] &&
+      Number.parseFloat(lat).toPrecision(7) !== oldLonLat[1]
+    ) {
+      this.goFetchPointInfo(lng, lat)
+      oldLonLat = [
+        Number.parseFloat(lng).toPrecision(7),
+        Number.parseFloat(lat).toPrecision(7),
+      ]
+    }
 
     if (!localId)
       this.setState({
