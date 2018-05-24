@@ -26,7 +26,6 @@ class KodeContainer extends React.Component<Props, State> {
   state = { data: {} }
 
   componentWillReceiveProps(nextProps: Object) {
-    return
     let oldKode =
       this.props.meta && this.props.meta.kode ? this.props.meta.kode : ''
     let oldBounds = this.props.mapBounds ? this.props.mapBounds : ''
