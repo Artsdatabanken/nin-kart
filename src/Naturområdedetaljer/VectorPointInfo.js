@@ -114,7 +114,7 @@ function VectorPointInfo(props) {
               const item = props.pointInfo[key]
               return (
                 <ListItem
-                  primaryText={
+                  secondaryText={
                     item.uom
                       ? Number(item.value).toFixed(1) + ' ' + item.uom
                       : item.value
@@ -124,13 +124,7 @@ function VectorPointInfo(props) {
                     const path = segments.join('/')
                     routing.history.push('/katalog/' + path)
                   }}
-                  secondaryText={
-                    item.name || item.kode
-                      ? props.excludeCode
-                        ? item.name || item.kode
-                        : (item.name || item.kode) + ' (' + key + ')'
-                      : key
-                  }
+                  primaryText={item.name || item.kode}
                   key={key}
                   leftAvatar={
                     item.homepage &&
