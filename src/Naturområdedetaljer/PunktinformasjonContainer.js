@@ -129,6 +129,8 @@ class PunktinformasjonContainer extends Component {
   }
 
   getNatureAreaFacts(props) {
+    if (!props) return
+
     var facts = {}
     for (var i in props) {
       switch (i) {
@@ -200,9 +202,8 @@ class PunktinformasjonContainer extends Component {
       }
     }
 
-    if (!props) return
-
     for (let code in props.codes) {
+      let param = props.codes[code]
       backend
         .getCodeTitle(code)
         .then(result =>
@@ -210,29 +211,10 @@ class PunktinformasjonContainer extends Component {
             { description: result, part: props.codes[code].andel },
             code,
             true
+          ).then(
+            this.ImportBeskrivelsesVariabler(param.beskrivelsesvariabler, code)
           )
         )
-      let param = props.codes[code]
-      if (Array.isArray(param.beskrivelsesvariabler)) {
-        for (let a in param.beskrivelsesvariabler) {
-          let bv = 'BS_' + param.beskrivelsesvariabler[a]
-          backend
-            .getCodeTitle(bv)
-            .then(result =>
-              this.AddTitleToFacts(
-                { description: result, parentCode: code },
-                bv
-              )
-            )
-        }
-      } else if (param.beskrivelsesvariabler) {
-        let bv1 = 'BS_' + param.beskrivelsesvariabler
-        backend
-          .getCodeTitle(bv1)
-          .then(result =>
-            this.AddTitleToFacts({ description: result, parentCode: code }, bv1)
-          )
-      }
     }
 
     if (props.description && props.description !== '')
@@ -242,36 +224,63 @@ class PunktinformasjonContainer extends Component {
       )
   }
 
+  ImportBeskrivelsesVariabler(beskrivelsesvariabler, code) {
+    if (Array.isArray(beskrivelsesvariabler)) {
+      for (let a in beskrivelsesvariabler) {
+        let bv = 'BS_' + beskrivelsesvariabler[a]
+        backend
+          .getCodeTitle(bv)
+          .then(result =>
+            this.AddTitleToFacts({ description: result, parentCode: code }, bv)
+          )
+      }
+    } else if (beskrivelsesvariabler) {
+      let bv1 = 'BS_' + beskrivelsesvariabler
+      backend
+        .getCodeTitle(bv1)
+        .then(result =>
+          this.AddTitleToFacts({ description: result, parentCode: code }, bv1)
+        )
+    }
+  }
+
   AddTitleToFacts(value, code, natureInfo = false) {
     if (!value.description) return
-    let facts = {}
-    let title = ''
-    let key = code
-    if (value.description.parent) {
-      code = value.description.parent
-    }
+    return new Promise((resolve, reject) => {
+      let title = ''
+      let key = code
+      if (value.description.parent) {
+        code = value.description.parent
+      }
 
-    if (value.description.title) title = value.description.title
-    else title = value.description
+      if (value.description.title) title = value.description.title
+      else title = value.description
 
-    if (this.state.natureAreaFacts) facts = this.state.natureAreaFacts
-    if (natureInfo) {
-      facts[key] = this.createNatureAreaPointInfo(code, title, value.part)
-    } else {
-      if (value.parentCode) {
-        if (!facts[value.parentCode]) facts[value.parentCode] = {}
-        if (!facts[value.parentCode].codes) facts[value.parentCode].codes = {}
-        facts[value.parentCode].codes[key] = this.createPointInfo(
-          code,
-          title,
-          value.url,
-          value.company
-        )
-      } else
-        facts[key] = this.createPointInfo(code, title, value.url, value.company)
-    }
-    this.setState({
-      natureAreaFacts: facts,
+      let facts = this.state.natureAreaFacts ? this.state.natureAreaFacts : {}
+
+      if (natureInfo) {
+        facts[key] = this.createNatureAreaPointInfo(code, title, value.part)
+      } else {
+        if (value.parentCode) {
+          if (!facts[value.parentCode].codes) facts[value.parentCode].codes = {}
+          facts[value.parentCode].codes[key] = this.createPointInfo(
+            code,
+            title,
+            value.url,
+            value.company
+          )
+        } else
+          facts[key] = this.createPointInfo(
+            code,
+            title,
+            value.url,
+            value.company
+          )
+      }
+
+      this.setState({
+        natureAreaFacts: facts,
+      })
     })
   }
 
