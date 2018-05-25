@@ -356,7 +356,12 @@ class PunktinformasjonContainer extends Component {
   }
 
   goFetchPointInfo(lng, lat) {
-    this.setState({ pointInfo: null, admEnhet: null, verneomrade: null })
+    this.setState({
+      pointInfo: null,
+      admEnhet: null,
+      stedsnavn: null,
+      verneomrade: null,
+    })
     backend.hentPunkt(lng, lat).then(data => {
       this.setState({
         pointInfo: this.fixData(data),
@@ -382,11 +387,13 @@ class PunktinformasjonContainer extends Component {
   render() {
     return (
       <div style={{ maxHeight: window.innerHeight * 0.8, overflow: 'auto' }}>
-        <VektorPunktinformasjon
-          key="NA"
-          natureAreaFacts={this.state.natureAreaFacts}
-          title="NaturområdeInfo"
-        />
+        {this.state.natureAreaFacts && (
+          <VektorPunktinformasjon
+            key="NA"
+            natureAreaFacts={this.state.natureAreaFacts}
+            title="NaturområdeInfo"
+          />
+        )}
         <Punktinformasjon
           key="AD"
           metadata={this.state.metadata}

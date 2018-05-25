@@ -4,7 +4,7 @@ import React from 'react'
 import { withRouter } from 'react-router'
 import { Route } from 'react-router-dom'
 import backend from '../backend'
-import PunktLoaderPlaceHolder from './PunktLoaderPlaceHolder'
+// import PunktLoaderPlaceHolder from './PunktLoaderPlaceHolder'
 
 function PointInfo(props) {
   if (props.pointInfo && Object.keys(props.pointInfo).length > 0)
@@ -72,7 +72,7 @@ function PointInfo(props) {
         )}
       />
     )
-  return <PunktLoaderPlaceHolder uniquekey="THE_KEY" />
+  return null
 }
 
 export default withRouter(PointInfo)
