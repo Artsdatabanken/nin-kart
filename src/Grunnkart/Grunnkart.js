@@ -17,10 +17,11 @@ import { withRouter } from 'react-router'
 import VenstreVinduContainer from '../VenstreVinduContainer'
 import Kart from '../Kart'
 import backend from '../backend'
-import AktiveKartlag from '../AktiveKartlag'
+import AktiveKartlag from '../AktiveKartlag/index'
 
 type State = {
   valgteKoder: Array<string>,
+  fjernKode: Array<string>,
   baseMapStyle: Object,
   mapStyle: string,
   showMainDrawer: boolean,
@@ -43,6 +44,7 @@ class Grunnkart extends React.Component<Props, State> {
     super(props)
     this.state = {
       valgteKoder: [],
+      fjernKode: [],
       baseMapStyle: defaultMapStyle,
       mapStyle: '',
       showMainDrawer: false,
@@ -123,18 +125,43 @@ class Grunnkart extends React.Component<Props, State> {
   addSelected = props => {
     let koder = this.state.valgteKoder.slice()
     let kodeFinnes = false
-    koder.forEach(barn => {
-      if (barn.kode === props.kode) {
+    koder.forEach(valgtKode => {
+      if (valgtKode.kode === props.kode) {
         kodeFinnes = true // finnes fra før
       }
     })
     if (!kodeFinnes) {
-      koder.push(props)
+      // Object.keys(props.barn).forEach(kode => {
+      //   koder.push(
+      //       {farge: props.barn[kode].farge,
+      //       kode: kode,
+      //       sti: props.barn[kode].sti,
+      //       tittel: props.barn[kode].tittel,
+      //       forelder: props.kode,
+      //   })
+      // })
+      if (props.barn) {
+        Object.keys(props.barn).forEach(kode => {
+          const item = props.barn[kode]
+          item.kode = kode
+          item.vis = true
+        })
+      }
+      koder.push({
+        // Forelder
+        farge: props.farge,
+        kode: props.kode,
+        sti: props.sti,
+        tittel: props.tittel,
+        vis: true,
+        barn: props.barn,
+      })
       console.log('addSelected:' + props.kode)
     }
     this.setState({
       valgteKoder: koder,
       visValgte: true,
+      fjernKode: [],
     })
   }
 
@@ -185,9 +212,9 @@ class Grunnkart extends React.Component<Props, State> {
 
   handleUpdateSelectedLayerProp = (kode, key, value) => {
     let meta = this.state.valgteKoder
-    meta.forEach(barn => {
-      if (barn.kode === kode) {
-        barn[key] = value
+    meta.forEach(item => {
+      if (item.kode === kode) {
+        item[key] = value
       }
     })
     this.setState({ valgteKoder: meta })
@@ -201,10 +228,14 @@ class Grunnkart extends React.Component<Props, State> {
       }
     })
     if (remove >= 0) {
+      const removeLayers = ['valgt' + kode]
+      Object.keys(meta[remove].barn).forEach(barnKode => {
+        removeLayers.push('valgt' + barnKode)
+      })
       meta.splice(remove, 1)
       this.setState({
         valgteKoder: meta,
-        fjernKode: 'valgt' + kode,
+        fjernKode: removeLayers,
       })
     }
   }
@@ -216,13 +247,26 @@ class Grunnkart extends React.Component<Props, State> {
   handleToggleVisible = kode => {
     let meta = this.state.valgteKoder
     Object.keys(meta).forEach(id => {
-      if (meta[id].kode === kode) {
-        meta[id].skjul = !meta[id].skjul
+      const forelder = meta[id]
+      let overstyrBarn = false
+      if (forelder.kode === kode) {
+        forelder.vis = !forelder.vis
+        overstyrBarn = true
+      }
+      if (forelder.barn) {
+        Object.keys(forelder.barn).forEach(barnId => {
+          const barn = forelder.barn[barnId]
+          if (overstyrBarn) {
+            barn.vis = forelder.vis
+          } else if (barn.kode === kode) {
+            barn.vis = !barn.vis
+          }
+        })
       }
     })
     this.setState({
       valgteKoder: meta,
-      skjul: this.state.skjul ? false : true,
+      vis: this.state.vis ? false : true,
     })
   }
 
@@ -241,7 +285,7 @@ class Grunnkart extends React.Component<Props, State> {
           aktivKode={!this.state.visValgte ? aktivKode : ''}
           opplystKode={!this.state.visValgte ? this.state.opplystKode : ''}
           valgteKoder={this.state.visValgte ? this.state.valgteKoder : []}
-          fjernKode={this.state.fjernKode}
+          fjernKode={this.state.fjernKode ? this.state.fjernKode : []}
           onMapBoundsChange={bounds => this.handleMapBoundsChange(bounds)}
           setLocalId={localId => {
             if (localId !== this.state.localId) {
@@ -257,7 +301,7 @@ class Grunnkart extends React.Component<Props, State> {
           }}
           meta={this.state.meta}
           bbox={this.state.bbox}
-          oppdaterSkjulLag={this.state.skjul}
+          oppdaterSkjulLag={this.state.vis}
           oppdaterFarger={this.state.ekspandertKode}
         />
 

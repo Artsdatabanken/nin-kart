@@ -114,40 +114,44 @@ class Kartlagelement extends React.Component {
             meta.undertittel
           )}
           rightAvatar={
-            this.props.showColor ? (
+            this.props.showColor || this.props.onToggleVisible ? (
               <div>
-                <div
-                  style={{
-                    display: 'inline-flex',
-                    position: 'absolute',
-                    right: 40,
-                    top: 16,
-                  }}
-                >
-                  <Toggle
-                    toggled={this.props.skjul}
-                    onClick={e => {
-                      e.stopPropagation()
-                      this.props.onToggleVisible(meta.kode)
+                {this.props.onToggleVisible && (
+                  <div
+                    style={{
+                      display: 'inline-flex',
+                      position: 'absolute',
+                      right: 40,
+                      top: 16,
                     }}
-                  />
-                </div>
-                <div
-                  style={{
-                    display: 'inline-flex',
-                    position: 'absolute',
-                    right: 0,
-                    top: 16,
-                  }}
-                >
-                  <PaintSwatch
-                    color={this.getFargeKode()}
-                    onClick={e => {
-                      e.stopPropagation()
-                      this.props.onShowColorpicker(meta.kode)
+                  >
+                    <Toggle
+                      toggled={this.props.vis}
+                      onClick={e => {
+                        e.stopPropagation()
+                        this.props.onToggleVisible(meta.kode)
+                      }}
+                    />
+                  </div>
+                )}
+                {this.props.showColor && (
+                  <div
+                    style={{
+                      display: 'inline-flex',
+                      position: 'absolute',
+                      right: 0,
+                      top: 16,
                     }}
-                  />
-                </div>
+                  >
+                    <PaintSwatch
+                      color={this.getFargeKode()}
+                      onClick={e => {
+                        e.stopPropagation()
+                        this.props.onShowColorpicker(meta.kode)
+                      }}
+                    />
+                  </div>
+                )}
               </div>
             ) : (
               <div />

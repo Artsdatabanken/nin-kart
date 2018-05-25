@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { muiTheme } from 'storybook-addon-material-ui'
 import { action } from '@storybook/addon-actions/dist/index'
-import AktiveKartlag from '.'
+import AktiveKartlag from './index'
 
 const koder = [{ tittel: { nb: 'aabc' } }]
 
@@ -15,7 +15,10 @@ storiesOf('Aktive kartlag', module)
         onUpdateLayerProp={action('updateLayerProp')}
         onMouseEnter={action('mouseEnter')}
         onMouseLeave={action('mouseLeave')}
-        onClick={action('click')}
+        onGoToCode={action('onGoToCode')}
+        onShowColorpicker={action('onShowColorpicker')}
+        onToggleVisible={action('onToggleVisible')}
+        onRemoveSelectedLayer={action('onRemoveSelectedLayer')}
       />
     </div>
   ))

@@ -62,6 +62,7 @@ class Kodekort extends React.Component {
                 kode: this.props.kode,
                 sti: this.props.sti,
                 tittel: this.props.tittel,
+                barn: this.props.barn,
               }}
               kode={this.props.kode}
               infoUrl={this.props.infoUrl}

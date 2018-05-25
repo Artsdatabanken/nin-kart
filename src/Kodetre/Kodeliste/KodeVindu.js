@@ -24,7 +24,7 @@ const Fact = ({ tittel, verdi, synlig }) => {
 
 class KodeVindu extends React.Component {
   render() {
-    console.log('kodevindu')
+    //console.log('kodevindu')
     const props = this.props
     const avatarUtenRamme = props.meta.utenRamme
     return (
