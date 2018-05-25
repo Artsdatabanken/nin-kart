@@ -127,3 +127,12 @@ let props = {
 test('getNatureAreaFacts', () => {
   expect(punktinformasjonContainer.getNatureAreaFacts(props)).toBe(undefined)
 })
+
+test('ImportBeskrivelsesVariabler', () => {
+  expect(
+    punktinformasjonContainer.ImportBeskrivelsesVariabler(
+      'successor',
+      'predecessor'
+    )
+  ).toBe(undefined)
+})
