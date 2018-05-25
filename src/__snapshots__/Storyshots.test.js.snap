@@ -11326,7 +11326,7 @@ exports[`Storyshots PointInfo default 1`] = `
                     }
                   }
                 >
-                  42
+                  Høyde
                 </div>
                 <div
                   style={
@@ -11347,7 +11347,7 @@ exports[`Storyshots PointInfo default 1`] = `
                     }
                   }
                 >
-                  Høyde
+                  42
                 </div>
               </div>
             </div>
@@ -11416,32 +11416,32 @@ exports[`Storyshots PointInfo default 1`] = `
                   style={
                     Object {
                       "muiPrepared": true,
+                    }
+                  }
+                >
+                  Kalkinnhold
+                </div>
+                <div
+                  style={
+                    Object {
+                      "WebkitBoxOrient": null,
+                      "WebkitLineClamp": null,
+                      "color": "rgba(0, 0, 0, 0.54)",
+                      "display": null,
+                      "fontSize": 14,
+                      "height": 16,
+                      "lineHeight": "16px",
+                      "margin": 0,
+                      "marginTop": 4,
+                      "muiPrepared": true,
+                      "overflow": "hidden",
+                      "textOverflow": "ellipsis",
+                      "whiteSpace": "nowrap",
                     }
                   }
                 >
                   litt kalkfattig
                 </div>
-                <div
-                  style={
-                    Object {
-                      "WebkitBoxOrient": null,
-                      "WebkitLineClamp": null,
-                      "color": "rgba(0, 0, 0, 0.54)",
-                      "display": null,
-                      "fontSize": 14,
-                      "height": 16,
-                      "lineHeight": "16px",
-                      "margin": 0,
-                      "marginTop": 4,
-                      "muiPrepared": true,
-                      "overflow": "hidden",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  Kalkinnhold (KA)
-                </div>
               </div>
             </div>
           </span>
@@ -11512,7 +11512,7 @@ exports[`Storyshots PointInfo default 1`] = `
                     }
                   }
                 >
-                  Bodø
+                  Kommunenavn
                 </div>
                 <div
                   style={
@@ -11533,7 +11533,7 @@ exports[`Storyshots PointInfo default 1`] = `
                     }
                   }
                 >
-                  Kommunenavn
+                  Bodø
                 </div>
               </div>
             </div>
@@ -12062,7 +12062,7 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                             "paddingBottom": 16,
                             "paddingLeft": 16,
                             "paddingRight": 16,
-                            "paddingTop": 20,
+                            "paddingTop": 16,
                             "position": "relative",
                           }
                         }
@@ -12070,19 +12070,7 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                         <div
                           style={
                             Object {
-                              "WebkitBoxOrient": null,
-                              "WebkitLineClamp": null,
-                              "color": "rgba(0, 0, 0, 0.54)",
-                              "display": null,
-                              "fontSize": 14,
-                              "height": 16,
-                              "lineHeight": "16px",
-                              "margin": 0,
-                              "marginTop": 4,
                               "muiPrepared": true,
-                              "overflow": "hidden",
-                              "textOverflow": "ellipsis",
-                              "whiteSpace": "nowrap",
                             }
                           }
                         >
@@ -12146,7 +12134,7 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                             "paddingBottom": 16,
                             "paddingLeft": 16,
                             "paddingRight": 16,
-                            "paddingTop": 20,
+                            "paddingTop": 16,
                             "position": "relative",
                           }
                         }
@@ -12154,19 +12142,7 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
                         <div
                           style={
                             Object {
-                              "WebkitBoxOrient": null,
-                              "WebkitLineClamp": null,
-                              "color": "rgba(0, 0, 0, 0.54)",
-                              "display": null,
-                              "fontSize": 14,
-                              "height": 16,
-                              "lineHeight": "16px",
-                              "margin": 0,
-                              "marginTop": 4,
                               "muiPrepared": true,
-                              "overflow": "hidden",
-                              "textOverflow": "ellipsis",
-                              "whiteSpace": "nowrap",
                             }
                           }
                         >
@@ -16305,33 +16281,24 @@ exports[`Storyshots VectorPointInfo default 1`] = `
                 <div
                   style={
                     Object {
+                      "WebkitBoxOrient": null,
+                      "WebkitLineClamp": null,
+                      "color": "rgba(0, 0, 0, 0.54)",
+                      "display": null,
+                      "fontSize": 14,
+                      "height": 16,
+                      "lineHeight": "16px",
+                      "margin": 0,
+                      "marginTop": 4,
                       "muiPrepared": true,
+                      "overflow": "hidden",
+                      "textOverflow": "ellipsis",
+                      "whiteSpace": "nowrap",
                     }
                   }
                 >
                   42
                 </div>
-                <div
-                  style={
-                    Object {
-                      "WebkitBoxOrient": null,
-                      "WebkitLineClamp": null,
-                      "color": "rgba(0, 0, 0, 0.54)",
-                      "display": null,
-                      "fontSize": 14,
-                      "height": 16,
-                      "lineHeight": "16px",
-                      "margin": 0,
-                      "marginTop": 4,
-                      "muiPrepared": true,
-                      "overflow": "hidden",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  Høyde
-                </div>
               </div>
             </div>
           </span>
@@ -16399,32 +16366,32 @@ exports[`Storyshots VectorPointInfo default 1`] = `
                   style={
                     Object {
                       "muiPrepared": true,
+                    }
+                  }
+                >
+                  Kalkinnhold
+                </div>
+                <div
+                  style={
+                    Object {
+                      "WebkitBoxOrient": null,
+                      "WebkitLineClamp": null,
+                      "color": "rgba(0, 0, 0, 0.54)",
+                      "display": null,
+                      "fontSize": 14,
+                      "height": 16,
+                      "lineHeight": "16px",
+                      "margin": 0,
+                      "marginTop": 4,
+                      "muiPrepared": true,
+                      "overflow": "hidden",
+                      "textOverflow": "ellipsis",
+                      "whiteSpace": "nowrap",
                     }
                   }
                 >
                   litt kalkfattig
                 </div>
-                <div
-                  style={
-                    Object {
-                      "WebkitBoxOrient": null,
-                      "WebkitLineClamp": null,
-                      "color": "rgba(0, 0, 0, 0.54)",
-                      "display": null,
-                      "fontSize": 14,
-                      "height": 16,
-                      "lineHeight": "16px",
-                      "margin": 0,
-                      "marginTop": 4,
-                      "muiPrepared": true,
-                      "overflow": "hidden",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  Kalkinnhold (KA)
-                </div>
               </div>
             </div>
           </span>
@@ -16491,15 +16458,6 @@ exports[`Storyshots VectorPointInfo default 1`] = `
                 <div
                   style={
                     Object {
-                      "muiPrepared": true,
-                    }
-                  }
-                >
-                  Bodø
-                </div>
-                <div
-                  style={
-                    Object {
                       "WebkitBoxOrient": null,
                       "WebkitLineClamp": null,
                       "color": "rgba(0, 0, 0, 0.54)",
@@ -16516,7 +16474,7 @@ exports[`Storyshots VectorPointInfo default 1`] = `
                     }
                   }
                 >
-                  Kommunenavn
+                  Bodø
                 </div>
               </div>
             </div>
