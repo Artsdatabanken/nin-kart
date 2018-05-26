@@ -3,9 +3,6 @@ import Checkboard from './Checkboard'
 
 const PaintSwatch = ({ color, onClick, muiTheme }) => (
   <div
-    onClick={e => {
-      onClick(e)
-    }}
     style={{
       right: '14px',
       height: '28px',
