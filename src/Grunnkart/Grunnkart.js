@@ -247,7 +247,6 @@ class Grunnkart extends React.Component<Props, State> {
           meta={this.state.meta}
           bbox={this.state.bbox}
           oppdaterSkjulLag={this.state.skjul}
-          oppdaterFarger={this.state.ekspandertKode}
         />
 
         <MainDrawer

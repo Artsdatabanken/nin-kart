@@ -66,7 +66,101 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                 "width": "100%",
               }
             }
-          />
+          >
+            <button
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "border": 10,
+                  "borderRadius": 2,
+                  "boxSizing": "border-box",
+                  "color": "#00bcd4",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "float": "right",
+                  "fontFamily": "Roboto, sans-serif",
+                  "fontSize": "inherit",
+                  "fontWeight": "inherit",
+                  "height": 36,
+                  "lineHeight": "36px",
+                  "margin": 8,
+                  "minWidth": 88,
+                  "muiPrepared": true,
+                  "outline": "none",
+                  "overflow": "hidden",
+                  "padding": 0,
+                  "position": "relative",
+                  "textAlign": "center",
+                  "textDecoration": "none",
+                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                  "userSelect": "none",
+                  "verticalAlign": null,
+                }
+              }
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+              >
+                <span
+                  style={
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": 500,
+                      "letterSpacing": 0,
+                      "muiPrepared": true,
+                      "paddingLeft": 16,
+                      "paddingRight": 8,
+                      "position": "relative",
+                      "textTransform": "uppercase",
+                      "verticalAlign": "middle",
+                    }
+                  }
+                >
+                  Katalog
+                </span>
+                <svg
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "display": "inline-block",
+                      "fill": "#00bcd4",
+                      "height": 24,
+                      "marginLeft": 0,
+                      "marginRight": 12,
+                      "muiPrepared": true,
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "userSelect": "none",
+                      "verticalAlign": "middle",
+                      "width": 24,
+                    }
+                  }
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
           <div>
             <span
               disabled={false}
@@ -127,43 +221,6 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                     }
                   }
                 >
-                  <div
-                    color="#757575"
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "display": "block",
-                        "height": 24,
-                        "margin": 12,
-                        "position": "absolute",
-                        "right": "-16px",
-                        "top": "-5px",
-                        "width": 24,
-                      }
-                    }
-                  >
-                    <svg
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      style={
-                        Object {
-                          "color": "rgba(0, 0, 0, 0.87)",
-                          "display": "inline-block",
-                          "fill": "currentColor",
-                          "height": "14px",
-                          "muiPrepared": true,
-                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "userSelect": "none",
-                          "width": "14px",
-                        }
-                      }
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                      />
-                    </svg>
-                  </div>
                   <div
                     className={undefined}
                     onError={[Function]}
@@ -254,7 +311,6 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                         className="sizebar"
                         style={
                           Object {
-                            "backgroundColor": "#9e9e9e",
                             "borderBottomRightRadius": 10,
                             "borderTopRightRadius": 10,
                             "float": "left",
@@ -263,7 +319,7 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                             "width": "0%",
                           }
                         }
-                        title="areal: null"
+                        title="areal: "
                       />
                     </div>
                     <div
@@ -664,99 +720,191 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                 </div>
               </div>
             </div>
-          </div>
-          <button
-            disabled={false}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            onTouchStart={[Function]}
-            style={
-              Object {
-                "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                "backgroundColor": "rgba(0, 0, 0, 0)",
-                "border": 10,
-                "borderRadius": 2,
-                "boxSizing": "border-box",
-                "color": "#00bcd4",
-                "cursor": "pointer",
-                "display": "inline-block",
-                "fontFamily": "Roboto, sans-serif",
-                "fontSize": "inherit",
-                "fontWeight": "inherit",
-                "height": 36,
-                "lineHeight": "36px",
-                "margin": 24,
-                "minWidth": 88,
-                "muiPrepared": true,
-                "outline": "none",
-                "overflow": "hidden",
-                "padding": 0,
-                "position": "relative",
-                "textAlign": "center",
-                "textDecoration": "none",
-                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                "userSelect": "none",
-                "verticalAlign": null,
-              }
-            }
-            tabIndex={0}
-            type="button"
-          >
-            <div
-              onMouseDown={[Function]}
+            <button
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              onMouseUp={[Function]}
-              onTouchEnd={[Function]}
               onTouchStart={[Function]}
+              style={
+                Object {
+                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "border": 10,
+                  "borderRadius": 2,
+                  "boxSizing": "border-box",
+                  "color": "#00bcd4",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fontFamily": "Roboto, sans-serif",
+                  "fontSize": "inherit",
+                  "fontWeight": "inherit",
+                  "height": 36,
+                  "lineHeight": "36px",
+                  "margin": 0,
+                  "minWidth": 88,
+                  "muiPrepared": true,
+                  "outline": "none",
+                  "overflow": "hidden",
+                  "padding": 0,
+                  "position": "relative",
+                  "textAlign": "center",
+                  "textDecoration": "none",
+                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                  "userSelect": "none",
+                  "verticalAlign": null,
+                }
+              }
+              tabIndex={0}
+              type="button"
             >
-              <span
-                style={
-                  Object {
-                    "fontSize": 14,
-                    "fontWeight": 500,
-                    "letterSpacing": 0,
-                    "muiPrepared": true,
-                    "paddingLeft": 16,
-                    "paddingRight": 8,
-                    "position": "relative",
-                    "textTransform": "uppercase",
-                    "verticalAlign": "middle",
-                  }
-                }
-              >
-                Katalog
-              </span>
-              <svg
-                onMouseEnter={[Function]}
+              <div
+                onMouseDown={[Function]}
                 onMouseLeave={[Function]}
-                style={
-                  Object {
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "display": "inline-block",
-                    "fill": "#00bcd4",
-                    "height": 24,
-                    "marginLeft": 0,
-                    "marginRight": 12,
-                    "muiPrepared": true,
-                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "userSelect": "none",
-                    "verticalAlign": "middle",
-                    "width": 24,
-                  }
-                }
-                viewBox="0 0 24 24"
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
               >
-                <path
-                  d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "display": "inline-block",
+                      "fill": "#00bcd4",
+                      "height": 24,
+                      "marginLeft": 12,
+                      "marginRight": 0,
+                      "muiPrepared": true,
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "userSelect": "none",
+                      "verticalAlign": "middle",
+                      "width": 24,
+                    }
+                  }
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                  />
+                </svg>
+                <span
+                  style={
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": 500,
+                      "letterSpacing": 0,
+                      "muiPrepared": true,
+                      "paddingLeft": 8,
+                      "paddingRight": 16,
+                      "position": "relative",
+                      "textTransform": "uppercase",
+                      "verticalAlign": "middle",
+                    }
+                  }
+                >
+                  Fjern
+                </span>
+              </div>
+            </button>
+            <button
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "border": 10,
+                  "borderRadius": 2,
+                  "boxSizing": "border-box",
+                  "color": "#00bcd4",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fontFamily": "Roboto, sans-serif",
+                  "fontSize": "inherit",
+                  "fontWeight": "inherit",
+                  "height": 36,
+                  "lineHeight": "36px",
+                  "margin": 0,
+                  "minWidth": 88,
+                  "muiPrepared": true,
+                  "outline": "none",
+                  "overflow": "hidden",
+                  "padding": 0,
+                  "position": "relative",
+                  "textAlign": "center",
+                  "textDecoration": "none",
+                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                  "userSelect": "none",
+                  "verticalAlign": null,
+                }
+              }
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+              >
+                <svg
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "display": "inline-block",
+                      "fill": "#00bcd4",
+                      "height": 24,
+                      "marginLeft": 12,
+                      "marginRight": 0,
+                      "muiPrepared": true,
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "userSelect": "none",
+                      "verticalAlign": "middle",
+                      "width": 24,
+                    }
+                  }
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                  />
+                </svg>
+                <span
+                  style={
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": 500,
+                      "letterSpacing": 0,
+                      "muiPrepared": true,
+                      "paddingLeft": 8,
+                      "paddingRight": 16,
+                      "position": "relative",
+                      "textTransform": "uppercase",
+                      "verticalAlign": "middle",
+                    }
+                  }
+                >
+                  Info
+                </span>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -3653,99 +3801,100 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                     }
                   >
                     Aktiverte lag
-                  </div>
-                  <button
-                    disabled={false}
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
-                    onTouchStart={[Function]}
-                    style={
-                      Object {
-                        "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                        "backgroundColor": "rgba(0, 0, 0, 0)",
-                        "border": 10,
-                        "borderRadius": 2,
-                        "boxSizing": "border-box",
-                        "color": "#00bcd4",
-                        "cursor": "pointer",
-                        "display": "inline-block",
-                        "fontFamily": "Roboto, sans-serif",
-                        "fontSize": "inherit",
-                        "fontWeight": "inherit",
-                        "height": 36,
-                        "lineHeight": "36px",
-                        "margin": 24,
-                        "minWidth": 88,
-                        "muiPrepared": true,
-                        "outline": "none",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "relative",
-                        "textAlign": "center",
-                        "textDecoration": "none",
-                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "userSelect": "none",
-                        "verticalAlign": null,
-                      }
-                    }
-                    tabIndex={0}
-                    type="button"
-                  >
-                    <div
-                      onMouseDown={[Function]}
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseEnter={[Function]}
                       onMouseLeave={[Function]}
-                      onMouseUp={[Function]}
-                      onTouchEnd={[Function]}
                       onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "backgroundColor": "rgba(0, 0, 0, 0)",
+                          "border": 10,
+                          "borderRadius": 2,
+                          "boxSizing": "border-box",
+                          "color": "#00bcd4",
+                          "cursor": "pointer",
+                          "display": "inline-block",
+                          "float": "right",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": "inherit",
+                          "fontWeight": "inherit",
+                          "height": 36,
+                          "lineHeight": "36px",
+                          "margin": 8,
+                          "minWidth": 88,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "hidden",
+                          "padding": 0,
+                          "position": "relative",
+                          "textAlign": "center",
+                          "textDecoration": "none",
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "userSelect": "none",
+                          "verticalAlign": null,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
                     >
-                      <span
-                        style={
-                          Object {
-                            "fontSize": 14,
-                            "fontWeight": 500,
-                            "letterSpacing": 0,
-                            "muiPrepared": true,
-                            "paddingLeft": 16,
-                            "paddingRight": 8,
-                            "position": "relative",
-                            "textTransform": "uppercase",
-                            "verticalAlign": "middle",
-                          }
-                        }
-                      >
-                        Katalog
-                      </span>
-                      <svg
-                        onMouseEnter={[Function]}
+                      <div
+                        onMouseDown={[Function]}
                         onMouseLeave={[Function]}
-                        style={
-                          Object {
-                            "color": "rgba(0, 0, 0, 0.87)",
-                            "display": "inline-block",
-                            "fill": "#00bcd4",
-                            "height": 24,
-                            "marginLeft": 0,
-                            "marginRight": 12,
-                            "muiPrepared": true,
-                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                            "userSelect": "none",
-                            "verticalAlign": "middle",
-                            "width": 24,
-                          }
-                        }
-                        viewBox="0 0 24 24"
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
                       >
-                        <path
-                          d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z"
-                        />
-                      </svg>
-                    </div>
-                  </button>
+                        <span
+                          style={
+                            Object {
+                              "fontSize": 14,
+                              "fontWeight": 500,
+                              "letterSpacing": 0,
+                              "muiPrepared": true,
+                              "paddingLeft": 16,
+                              "paddingRight": 8,
+                              "position": "relative",
+                              "textTransform": "uppercase",
+                              "verticalAlign": "middle",
+                            }
+                          }
+                        >
+                          Katalog
+                        </span>
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "#00bcd4",
+                              "height": 24,
+                              "marginLeft": 0,
+                              "marginRight": 12,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "verticalAlign": "middle",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
                 </div>
                 <div
                   style={
@@ -4388,7 +4537,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -4608,7 +4756,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -4828,7 +4975,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -5048,7 +5194,6 @@ exports[`Storyshots KodeVindu default 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -5634,7 +5779,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -5881,7 +6025,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -6101,7 +6244,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -6321,7 +6463,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -6541,7 +6682,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -6761,7 +6901,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -7008,7 +7147,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -7255,7 +7393,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -7502,7 +7639,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -7722,7 +7858,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -7942,7 +8077,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -8162,7 +8296,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -8382,7 +8515,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -8602,7 +8734,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -8822,7 +8953,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -9042,7 +9172,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -9262,7 +9391,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -9482,7 +9610,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                           }
                         >
                           <div
-                            onClick={[Function]}
                             style={
                               Object {
                                 "height": "28px",
@@ -10284,7 +10411,6 @@ exports[`Storyshots PaintSwatch collection 1`] = `
 Array [
   <div>
     <div
-        onClick={[Function]}
         style={
             Object {
                 "height": "28px",
@@ -10329,7 +10455,6 @@ Array [
 </div>,
   <div>
     <div
-        onClick={[Function]}
         style={
             Object {
                 "height": "28px",
@@ -10374,7 +10499,6 @@ Array [
 </div>,
   <div>
     <div
-        onClick={[Function]}
         style={
             Object {
                 "height": "28px",
@@ -10419,7 +10543,6 @@ Array [
 </div>,
   <div>
     <div
-        onClick={[Function]}
         style={
             Object {
                 "height": "28px",
@@ -10464,7 +10587,6 @@ Array [
 </div>,
   <div>
     <div
-        onClick={[Function]}
         style={
             Object {
                 "height": "28px",
@@ -10509,7 +10631,6 @@ Array [
 </div>,
   <div>
     <div
-        onClick={[Function]}
         style={
             Object {
                 "height": "28px",

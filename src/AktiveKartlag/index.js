@@ -21,7 +21,17 @@ const AktiveKartlag = ({
 }) => {
   return (
     <React.Fragment>
-      <Subheader>{title}</Subheader>
+      <Subheader>
+        {title}
+        <FlatButton
+          style={{ margin: 8, float: 'right' }}
+          label="Katalog"
+          labelPosition="before"
+          primary={true}
+          icon={<MapsLayers />}
+          onClick={() => history.replace('/katalog/')}
+        />
+      </Subheader>
       {koder.map(item => {
         const kode = item.kode
         return (
@@ -44,14 +54,6 @@ const AktiveKartlag = ({
           />
         )
       })}
-      <FlatButton
-        style={{ margin: 24 }}
-        label="Katalog"
-        labelPosition="before"
-        primary={true}
-        icon={<MapsLayers />}
-        onClick={() => history.replace('/katalog/')}
-      />
     </React.Fragment>
   )
 }
