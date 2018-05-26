@@ -97,7 +97,7 @@ class Mapbox extends Component {
 
     if (aktivKode) {
       let oldTaxonLookupId = aktivKode.replace('AR', 'TX')
-      if (oldTaxonLookupId) {
+      if (false && oldTaxonLookupId) {
         backend.getKodeUtbredelse(oldTaxonLookupId).then(data => {
           this.setState({
             enableDeck: data ? true : false,
