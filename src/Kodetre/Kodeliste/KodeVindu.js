@@ -2,29 +2,13 @@ import { List, Paper, RaisedButton } from 'material-ui'
 import React from 'react'
 import MediaQuery from 'react-responsive'
 import FetchContainer from '../../FetchContainer'
+import Fakta from './Fakta'
 import Graf from './Graf'
 import Kodekort from './Kodekort'
 import Kodeliste from './Kodeliste'
 
-const Fact = ({ tittel, verdi, synlig }) => {
-  if (!synlig || !verdi) return null
-  return (
-    <div
-      style={{
-        fontSize: 13,
-        paddingLeft: 24,
-        lineHeight: '1.5em',
-      }}
-    >
-      <span style={{ fontWeight: 700 }}>{tittel}:&nbsp;</span>
-      {verdi}
-    </div>
-  )
-}
-
 class KodeVindu extends React.Component {
   render() {
-    console.log('kodevindu')
     const props = this.props
     const avatarUtenRamme = props.meta.utenRamme
     return (
@@ -44,7 +28,8 @@ class KodeVindu extends React.Component {
             <Kodekort
               {...props.meta}
               onGoToCode={props.onGoToCode}
-              onAddSelected={props.onAddSelected}
+              isActiveLayer={props.isActiveLayer}
+              onToggleLayer={props.onToggleLayer}
               data={props.data}
               language={props.language}
             />
@@ -92,15 +77,15 @@ class KodeVindu extends React.Component {
               </div>
             )}
           </div>
-          <Fact
+          <Fakta
             tittel="Areal"
             synlig={props.data.antallNaturomrader}
             verdi={`${(props.data.antallNaturomrader * 1.3).toFixed(
               0
             )} km² (i ${props.data.antallNaturomrader} områder)`}
           />
-          <Fact
-            tittel="Arter observert"
+          <Fakta
+            tittel="Observerte arter"
             verdi={props.data.antallArter}
             synlig={props.data.antallArter}
           />
@@ -110,34 +95,14 @@ class KodeVindu extends React.Component {
               størsteAreal={props.data.størsteAreal}
               apidata={props.data ? props.data.barn : []}
               metadata={props.meta.barn}
-              ekspandertKode={this.props.ekspandertKode}
               onGoToCode={props.onGoToCode}
               onMouseEnter={props.onMouseEnter}
               onMouseLeave={props.onMouseLeave}
-              onShowColorpicker={this.props.onShowColorpicker}
-              onUpdateLayerProp={props.onUpdateLayerProp}
               language={props.language}
               avatarUtenRamme={avatarUtenRamme}
             />
             {props.meta.graf && (
               <Graf graf={props.meta.graf} onGoToCode={props.onGoToCode} />
-            )}
-            {props.meta.prosedyrekategori && (
-              <Kodeliste
-                title="Definisjon"
-                metadata={{
-                  [props.meta.prosedyrekategori.kode]: {
-                    ...props.meta.prosedyrekategori,
-                    undertittel: { nb: 'Prosedyrekategori' },
-                  },
-                  [props.meta.definisjonsgrunnlag.kode]: {
-                    ...props.meta.definisjonsgrunnlag,
-                    undertittel: { nb: 'Definisjon' },
-                  },
-                }}
-                onGoToCode={props.onGoToCode}
-                language={props.language}
-              />
             )}
           </List>
         </Paper>

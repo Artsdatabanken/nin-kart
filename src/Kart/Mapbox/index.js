@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
-import ReactMapGL, { Marker, Popup, NavigationControl } from 'react-map-gl'
+import Color from 'color'
+import DeckGL, { GridLayer /*, ScatterplotLayer */ } from 'deck.gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
+import muiThemeable from 'material-ui/styles/muiThemeable'
 import Place from 'material-ui/svg-icons/maps/place'
+import React, { Component } from 'react'
+import ReactMapGL, { Marker, NavigationControl, Popup } from 'react-map-gl'
 import { withRouter } from 'react-router'
 import { Route, Switch } from 'react-router-dom'
-import muiThemeable from 'material-ui/styles/muiThemeable'
-import hentLag from './style-lookup'
 import backend from '../../backend'
-import DeckGL, { GridLayer /*, ScatterplotLayer */ } from 'deck.gl'
-import Color from 'color'
 import localStorageHelper from '../../localStorageHelper'
+import hentLag from './style-lookup'
 
 const LIGHT_SETTINGS = {
   lightsPosition: [9.5, 56, 5000, -2, 57, 8000],

@@ -1,23 +1,21 @@
 // @flow
 import React from 'react'
-import MainDrawer from './MainDrawer'
-import { FloatingActionButton } from 'material-ui'
-import KatalogIkon from 'material-ui/svg-icons/communication/import-contacts'
+import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
+import AktiveKartlag from '../AktiveKartlag'
+import Kart from '../Kart'
 import {
-  defaultMapStyle,
-  darkMapStyle,
-  vintageMapStyle,
-  lightMapStyle,
-  satelliteStyle,
   NiN,
   NiNHover,
+  darkMapStyle,
+  defaultMapStyle,
+  lightMapStyle,
+  satelliteStyle,
+  vintageMapStyle,
 } from '../Kart/Mapbox/MapStyle'
-import { withRouter } from 'react-router'
 import VenstreVinduContainer from '../VenstreVinduContainer'
-import Kart from '../Kart'
 import backend from '../backend'
-import AktiveKartlag from '../AktiveKartlag'
+import MainDrawer from './MainDrawer'
 
 type State = {
   valgteKoder: Array<string>,
@@ -120,18 +118,11 @@ class Grunnkart extends React.Component<Props, State> {
       visValgte: true,
     })
   }
-  addSelected = props => {
-    let koder = this.state.valgteKoder.slice()
-    let kodeFinnes = false
-    koder.forEach(barn => {
-      if (barn.kode === props.kode) {
-        kodeFinnes = true // finnes fra før
-      }
-    })
-    if (!kodeFinnes) {
-      koder.push(props)
-      console.log('addSelected:' + props.kode)
-    }
+
+  handleToggleLayer = (kode, state) => {
+    const koder = state
+      ? [...this.state.valgteKoder, this.state.meta]
+      : this.state.valgteKoder.filter(barn => barn.kode !== kode)
     this.setState({
       valgteKoder: koder,
       visValgte: true,
@@ -192,6 +183,7 @@ class Grunnkart extends React.Component<Props, State> {
     })
     this.setState({ valgteKoder: meta })
   }
+
   handleRemoveSelectedLayer = kode => {
     let meta = this.state.valgteKoder
     let remove = -1
@@ -213,6 +205,7 @@ class Grunnkart extends React.Component<Props, State> {
     let nyKode = this.state.ekspandertKode === kode ? null : kode
     this.setState({ ekspandertKode: nyKode })
   }
+
   handleToggleVisible = kode => {
     let meta = this.state.valgteKoder
     Object.keys(meta).forEach(id => {
@@ -222,11 +215,12 @@ class Grunnkart extends React.Component<Props, State> {
     })
     this.setState({
       valgteKoder: meta,
-      skjul: this.state.skjul ? false : true,
+      skjul: !this.state.skjul,
     })
   }
 
   render() {
+    const erAktivert = this.state.valgteKoder.includes(this.state.meta)
     const aktivKode =
       this.state.meta && this.state.meta.kode ? this.state.meta.kode : ''
     return (
@@ -245,14 +239,9 @@ class Grunnkart extends React.Component<Props, State> {
           onMapBoundsChange={bounds => this.handleMapBoundsChange(bounds)}
           setLocalId={localId => {
             if (localId !== this.state.localId) {
-              this.setState({
-                localId: localId,
-                visValgte: false,
-              })
+              this.setState({ localId: localId, visValgte: false })
             } else if (this.state.visValgte) {
-              this.setState({
-                visValgte: false,
-              })
+              this.setState({ visValgte: false })
             }
           }}
           meta={this.state.meta}
@@ -269,73 +258,66 @@ class Grunnkart extends React.Component<Props, State> {
           }
         />
 
-        {!this.state.showMainDrawer &&
-          !this.state.visValgte && (
-            <div
-              style={{
-                backgroundColor: '#fff',
-                position: 'absolute',
-                left: 8,
-                top: 10,
-                width: 392,
-                zIndex: 2,
-              }}
-            >
-              <VenstreVinduContainer
-                onToggleMainDrawer={() =>
-                  this.setState({
-                    showMainDrawer: !this.state.showMainDrawer,
-                  })
-                }
-                mapBounds={this.state.mapBounds}
-                onMouseEnter={kode => this.setState({ opplystKode: kode })}
-                onMouseLeave={kode =>
-                  this.setState({
-                    opplystKode: '',
-                  })
-                }
-                onFitBounds={bbox => this.handleFitBounds(bbox)}
-                onAddSelected={props => this.addSelected(props)}
-                onExitToRoot={props => this.visValgte()}
-                localId={this.state.localId}
-                meta={this.state.meta}
-                handleUpdateLayerProp={this.handleUpdateLayerProp}
-                onShowColorpicker={this.handleShowColorpicker}
-                ekspandertKode={this.state.ekspandertKode}
-                visValgte={this.state.visValgte}
-              />
-            </div>
-          )}
-        {this.state.visValgte && (
+        {!this.state.showMainDrawer && (
+          <div
+            style={{
+              backgroundColor: '#fff',
+              position: 'absolute',
+              left: 8,
+              top: 10,
+              width: 392,
+              zIndex: 2,
+            }}
+          >
+            <VenstreVinduContainer
+              onToggleMainDrawer={() =>
+                this.setState({
+                  showMainDrawer: !this.state.showMainDrawer,
+                })
+              }
+              mapBounds={this.state.mapBounds}
+              onMouseEnter={kode => this.setState({ opplystKode: kode })}
+              onMouseLeave={kode =>
+                this.setState({
+                  opplystKode: '',
+                })
+              }
+              onFitBounds={bbox => this.handleFitBounds(bbox)}
+              isActiveLayer={erAktivert}
+              onToggleLayer={this.handleToggleLayer}
+              onExitToRoot={props => this.visValgte()}
+              localId={this.state.localId}
+              meta={this.state.meta}
+              visValgte={this.state.visValgte}
+            />
+          </div>
+        )}
+        {true && (
           <div>
             <div
               style={{
                 position: 'absolute',
-                left: 8,
-                top: 10,
+                right: 0,
+                top: 0,
                 width: 392,
                 zIndex: 2,
               }}
             >
-              <div
-                style={{
-                  backgroundColor: '#fff',
-                }}
-              >
-                {this.state.valgteKoder.length > 0 && (
+              <div style={{ backgroundColor: '#fff' }}>
+                {
                   <AktiveKartlag
-                    style={{
-                      backgroundColor: '#fff',
-                    }}
-                    title={`Valgte koder (${this.state.valgteKoder.length})`}
+                    style={{ backgroundColor: '#fff' }}
+                    title="Aktiverte lag"
                     koder={this.state.valgteKoder}
                     onGoToCode={kode => {
-                      this.setState({
-                        visValgte: false,
-                      })
+                      this.setState({ visValgte: false })
                       this.redirectTo(kode)
                     }}
-                    onMouseEnter={kode => this.setState({ opplystKode: kode })}
+                    onMouseEnter={kode =>
+                      this.setState({
+                        opplystKode: kode,
+                      })
+                    }
                     onMouseLeave={() =>
                       this.setState({
                         opplystKode: '',
@@ -347,7 +329,7 @@ class Grunnkart extends React.Component<Props, State> {
                     onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
                     ekspandertKode={this.state.ekspandertKode}
                   />
-                )}
+                }
               </div>
               <div style={{ float: 'left', paddingTop: 10 }}>
                 <Link
@@ -359,13 +341,7 @@ class Grunnkart extends React.Component<Props, State> {
                       visValgte: false,
                     })
                   }
-                >
-                  <FloatingActionButton
-                  //style={{ position: 'absolute', bottom: 48, left: 48 }}
-                  >
-                    <KatalogIkon />
-                  </FloatingActionButton>
-                </Link>
+                />
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
+import { Subheader } from 'material-ui'
 import React from 'react'
 import Kodelisteelement from './Kodelisteelement'
-import { Subheader } from 'material-ui'
 
 const Kodeliste = ({
   title,
@@ -9,11 +9,8 @@ const Kodeliste = ({
   apidata,
   metadata,
   onGoToCode,
-  ekspandertKode,
   onMouseEnter,
   onMouseLeave,
-  onShowColorpicker,
-  onUpdateLayerProp,
   avatarUtenRamme,
 }) => {
   if (!metadata) return null
@@ -50,13 +47,9 @@ const Kodeliste = ({
             størsteAreal={størsteAreal}
             {...apibarn}
             meta={metabarnet}
-            erEkspandert={kode === ekspandertKode}
             onGoToCode={onGoToCode}
             onMouseEnter={onMouseEnter || noop}
             onMouseLeave={onMouseLeave || noop}
-            onUpdateLayerProp={onUpdateLayerProp}
-            onShowColorpicker={() => onShowColorpicker(kode)}
-            showColor={onShowColorpicker}
             avatarUtenRamme={avatarUtenRamme}
           />
         )
