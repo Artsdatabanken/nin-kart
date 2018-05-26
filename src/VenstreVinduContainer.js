@@ -1,12 +1,12 @@
 import { Paper, Snackbar } from 'material-ui'
 import React from 'react'
+import { withRouter } from 'react-router'
 import { Route, Switch } from 'react-router-dom'
-import backend from './backend'
 import KodeContainer from './Kodetre/Kodeliste/KodeContainer'
 import ResultatListe from './Kodetre/Kodeliste/ResultatListe'
 import PunktinformasjonContainer from './Naturområdedetaljer/PunktinformasjonContainer'
-import rename from './rename'
 import TopBar from './TopBar/TopBar'
+import backend from './backend'
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
@@ -27,9 +27,9 @@ class VenstreVinduContainer extends React.Component {
       query: q,
       error: null,
     })
+    this.props.history.replace('/')
     const currentQuery = this.queryNumber
     backend.søkKode(q).then(items => {
-      items = rename(items)
       if (currentQuery !== this.queryNumber) return // Abort stale query
       if (items.error) {
         this.setState({ error: items.error })
@@ -76,35 +76,30 @@ class VenstreVinduContainer extends React.Component {
               onQueryChange={this.handleQueryChange}
             />
             <Switch>
-              {!this.props.visValgte && (
-                <Route
-                  path="/katalog/:kode*"
-                  render={({ match, history }) => {
-                    return (
-                      <KodeContainer
-                        style={{ height: '100vh' }}
-                        path={match.params.kode ? match.params.kode : ''}
-                        onGoToCode={url => {
-                          this.setState({ searchResults: null })
-                          console.log(url)
-                          history.push('/katalog/' + url)
-                        }}
-                        onMouseEnter={this.props.onMouseEnter}
-                        onMouseLeave={this.props.onMouseLeave}
-                        onFitBounds={this.props.onFitBounds}
-                        onAddSelected={this.props.onAddSelected}
-                        mapBounds={this.props.mapBounds}
-                        //mapBounds={undefined}
-                        language={this.props.language}
-                        meta={this.props.meta}
-                        handleUpdateLayerProp={this.props.handleUpdateLayerProp}
-                        onShowColorpicker={this.props.onShowColorpicker}
-                        ekspandertKode={this.props.ekspandertKode}
-                      />
-                    )
-                  }}
-                />
-              )}
+              <Route
+                path="/katalog/:kode*"
+                render={({ match, history }) => {
+                  return (
+                    <KodeContainer
+                      style={{ height: '100vh' }}
+                      path={match.params.kode ? match.params.kode : ''}
+                      onGoToCode={url => {
+                        this.setState({ searchResults: null })
+                        console.log(url)
+                        history.push('/katalog/' + url)
+                      }}
+                      onMouseEnter={this.props.onMouseEnter}
+                      onMouseLeave={this.props.onMouseLeave}
+                      onFitBounds={this.props.onFitBounds}
+                      isActiveLayer={this.props.isActiveLayer}
+                      onToggleLayer={this.props.onToggleLayer}
+                      mapBounds={this.props.mapBounds}
+                      language={this.props.language}
+                      meta={this.props.meta}
+                    />
+                  )
+                }}
+              />
 
               <Route
                 path="/punkt/:lng,:lat"
@@ -138,4 +133,4 @@ class VenstreVinduContainer extends React.Component {
   }
 }
 
-export default VenstreVinduContainer
+export default withRouter(VenstreVinduContainer)
