@@ -1,8 +1,7 @@
 // @flow
 import React from 'react'
-import KodeVindu from './KodeVindu'
 import backend from '../../backend'
-import rename from '../../rename'
+import KodeVindu from './KodeVindu'
 
 type State = {
   data: Object,
@@ -15,9 +14,7 @@ type Props = {
   onMouseLeave: Function,
   onMouseEnter: Function,
   onGoToCode: Function,
-  onAddSelected: Function,
-  handleUpdateLayerProp: Function,
-  onShowColorpicker: Function,
+  onToggleLayer: Function,
 }
 
 // Informasjon om kode
@@ -40,20 +37,17 @@ class KodeContainer extends React.Component<Props, State> {
   fetchData(kode: string, bounds: Object) {
     this.dataQueryNumber++
     const currentQuery = this.dataQueryNumber
-    backend
-      .hentKode(kode, bounds)
-      .then(data => rename(data))
-      .then(data => {
-        if (!data) data = {}
-        if (currentQuery !== this.dataQueryNumber) return // Abort stale query
-        let størsteAreal = 0
-        if (data.barn)
-          data.barn.forEach(b => {
-            if (størsteAreal < b.areal) størsteAreal = b.areal
-          })
-        data.størsteAreal = størsteAreal
-        this.setState({ data: data })
-      })
+    backend.hentKode(kode, bounds).then(data => {
+      if (!data) data = {}
+      if (currentQuery !== this.dataQueryNumber) return // Abort stale query
+      let størsteAreal = 0
+      if (data.barn)
+        data.barn.forEach(b => {
+          if (størsteAreal < b.areal) størsteAreal = b.areal
+        })
+      data.størsteAreal = størsteAreal
+      this.setState({ data: data })
+    })
   }
 
   render() {
@@ -65,14 +59,12 @@ class KodeContainer extends React.Component<Props, State> {
       <KodeVindu
         data={data}
         meta={meta || {}}
-        onUpdateLayerProp={this.props.handleUpdateLayerProp}
         onGoToCode={this.props.onGoToCode}
         onMouseEnter={this.props.onMouseEnter}
         onMouseLeave={this.props.onMouseLeave}
         onFitBounds={this.props.onFitBounds}
-        onAddSelected={this.props.onAddSelected}
-        onShowColorpicker={this.props.onShowColorpicker}
-        ekspandertKode={this.props.ekspandertKode}
+        isActiveLayer={this.props.isActiveLayer}
+        onToggleLayer={this.props.onToggleLayer}
       />
     )
   }

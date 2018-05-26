@@ -226,10 +226,10 @@ storiesOf('KodeVindu', module)
     <KodeVindu
       data={api}
       meta={meta}
-      onUpdateLayerProp={action('updateLayerProp')}
       onMouseEnter={action('mouseEnter')}
       onMouseLeave={action('mouseLeave')}
       onClick={action('click')}
+      isActiveLayer={true}
       onFitBounds={action('onFitBounds')}
       language={['nb', 'la']}
     />
@@ -238,10 +238,10 @@ storiesOf('KodeVindu', module)
     <KodeVindu
       data={api2}
       meta={meta2}
-      onUpdateLayerProp={action('updateLayerProp')}
       onMouseEnter={action('mouseEnter')}
       onMouseLeave={action('mouseLeave')}
       onClick={action('click')}
+      isActiveLayer={true}
       onFitBounds={action('onFitBounds')}
       language={['nb', 'la']}
     />
