@@ -260,6 +260,8 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                       }
                     }
                   >
+                    aabc
+                    <br />
                     <div
                       style={
                         Object {
@@ -268,14 +270,6 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                           "fontWeight": 600,
                           "paddingLeft": "2px",
                           "paddingRight": "4px",
-                        }
-                      }
-                    />
-                    aabc
-                    <div
-                      style={
-                        Object {
-                          "display": "inline-flex",
                         }
                       }
                     />
