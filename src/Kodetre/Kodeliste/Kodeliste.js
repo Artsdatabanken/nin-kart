@@ -39,13 +39,15 @@ const Kodeliste = ({
             ] || {}
           : {}
         const metabarnet = metadata[kode]
+        console.log(kode)
+        console.log(apibarn)
+        console.log(metadata)
         return (
           <Kodelisteelement
-            kode={kode}
             key={kode}
-            subkode={kode}
             størsteAreal={størsteAreal}
             {...apibarn}
+            kode={kode}
             meta={metabarnet}
             onGoToCode={onGoToCode}
             onMouseEnter={onMouseEnter || noop}

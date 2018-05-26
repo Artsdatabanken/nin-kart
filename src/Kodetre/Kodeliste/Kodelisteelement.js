@@ -1,12 +1,12 @@
 // @flow
-import React from 'react'
 import { ListItem } from 'material-ui/List'
-import Kodetagg from '../Kodetagg'
-import PaintSwatch from './PaintSwatch'
-import Bildeavatar from './Bildeavatar'
 import muiThemeable from 'material-ui/styles/muiThemeable'
-import språk from '../../språk'
+import React from 'react'
 import prettyprint from '../../prettyprint'
+import språk from '../../språk'
+import Kodetagg from '../Kodetagg'
+import Bildeavatar from './Bildeavatar'
+import PaintSwatch from './PaintSwatch'
 
 type State = {}
 
@@ -81,13 +81,12 @@ class Kodelisteelement extends React.Component<Props, State> {
   }
 
   render() {
-    const item = this.props
     const { meta, kode, avatarUtenRamme, areal } = this.props
-
+    console.warn(this.props)
     return (
       <ListItem
         innerDivStyle={{ backgroundColor: areal ? '' : '#DDDDDD' }}
-        key={item.kode}
+        key={kode}
         onClick={() => this.props.onGoToCode(meta.sti)}
         onMouseEnter={() => this.props.onMouseEnter(kode)}
         onMouseLeave={() => this.props.onMouseLeave()}
