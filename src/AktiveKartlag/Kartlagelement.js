@@ -125,7 +125,7 @@ class Kartlagelement extends React.Component {
                   }}
                 >
                   <Toggle
-                    toggled={this.props.skjul}
+                    toggled={!this.props.skjul}
                     onClick={e => {
                       e.stopPropagation()
                       this.props.onToggleVisible(meta.kode)
