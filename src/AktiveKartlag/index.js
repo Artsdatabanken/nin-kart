@@ -39,13 +39,12 @@ const AktiveKartlag = ({
             meta={item}
             erEkspandert={kode === ekspandertKode}
             kode={kode}
-            key={'valgt' + kode}
+            key={kode}
             skjul={item.skjul}
             onGoToCode={onGoToCode}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
-            onClose={kode => onRemoveSelectedLayer(kode)}
-            visHeleKoden={true}
+            onRemove={kode => onRemoveSelectedLayer(kode)}
             onUpdateLayerProp={onUpdateLayerProp}
             onShowColorpicker={kode => onShowColorpicker(kode)}
             onToggleVisible={kode => onToggleVisible(kode)}

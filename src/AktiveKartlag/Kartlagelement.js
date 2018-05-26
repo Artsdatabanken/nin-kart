@@ -94,9 +94,9 @@ class Kartlagelement extends React.Component {
           leftAvatar={<Bildeavatar utenRamme={avatarUtenRamme} kode={kode} />}
           primaryText={
             <div>
-              {true && <Kodetagg hele={this.props.visHeleKoden} kode={kode} />}
               {tittel}
-              <div style={{ display: 'inline-flex' }} />
+              <br />
+              <Kodetagg hele={true} kode={kode} />
             </div>
           }
           secondaryText={this.undertekst(
@@ -156,8 +156,7 @@ class Kartlagelement extends React.Component {
               label="Fjern"
               primary={true}
               onClick={e => {
-                e.stopPropagation()
-                this.props.onClose(item.kode)
+                this.props.onRemove(item.kode)
               }}
               icon={<ActionDelete />}
             />
@@ -165,9 +164,7 @@ class Kartlagelement extends React.Component {
             <FlatButton
               label="Info"
               primary={true}
-              onClick={() =>
-                this.props.onGoToCode(meta && meta.sti ? meta.sti : kode)
-              }
+              onClick={() => this.props.onGoToCode(meta.sti)}
               icon={<ActionInfo />}
             />
           </div>
