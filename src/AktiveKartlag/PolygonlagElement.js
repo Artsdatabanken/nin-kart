@@ -21,6 +21,7 @@ class PolygonlagElement extends React.Component {
     farger.push({ kode: kode, farge: farge })
     localStorage.setItem('customColors', JSON.stringify(farger))
   }
+
   undertekst(størsteAreal, areal, antall, undertittel) {
     if (undertittel) return undertittel.nb
     if (!areal) areal = 0
@@ -59,12 +60,11 @@ class PolygonlagElement extends React.Component {
   }
 
   render() {
-    const item = this.props
     const {
+      kode,
       farge,
       tittel,
       undertittel,
-      kode,
       avatarUtenRamme,
       sti,
     } = this.props
@@ -72,7 +72,7 @@ class PolygonlagElement extends React.Component {
       <KartlagElement
         farge={farge}
         onClick={this.props.onClick}
-        key={item.kode}
+        key={kode}
         erEkspandert={this.props.erEkspandert}
         onMouseEnter={() =>
           this.props.onMouseEnter && this.props.onMouseEnter(kode)
@@ -129,8 +129,8 @@ class PolygonlagElement extends React.Component {
           color={farge}
           onChange={farge => {
             const rgbString = tinycolor(farge.rgb).toRgbString()
-            this.setFargeKode(item.kode, rgbString)
-            this.props.onUpdateLayerProp(item.kode, 'farge', rgbString)
+            this.setFargeKode(kode, rgbString)
+            this.props.onUpdateLayerProp(kode, 'farge', rgbString)
           }}
         />
 
@@ -138,7 +138,7 @@ class PolygonlagElement extends React.Component {
           label="Fjern"
           primary={true}
           onClick={e => {
-            this.props.onRemove(item.kode)
+            this.props.onRemove(kode)
           }}
           icon={<ActionDelete />}
         />
