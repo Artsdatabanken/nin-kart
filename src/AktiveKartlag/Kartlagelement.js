@@ -47,7 +47,6 @@ class Kartlagelement extends React.Component {
   }
 
   render() {
-    console.log(this.props.kode, this.props.farge)
     const item = this.props
     const { meta, farge, kode, avatarUtenRamme, areal } = this.props
     const tittel = språk(meta.tittel)
