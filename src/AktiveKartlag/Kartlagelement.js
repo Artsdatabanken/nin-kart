@@ -1,17 +1,11 @@
-import { FlatButton, ListItem } from 'material-ui'
+import { ListItem } from 'material-ui'
 import Toggle from 'material-ui/Toggle'
 import muiThemeable from 'material-ui/styles/muiThemeable'
-import ActionDelete from 'material-ui/svg-icons/action/delete'
-import ActionInfo from 'material-ui/svg-icons/action/info'
 import React from 'react'
 import { withRouter } from 'react-router'
-import tinycolor from 'tinycolor2'
 import Bildeavatar from '../Kodetre/Kodeliste/Bildeavatar'
 import PaintSwatch from '../Kodetre/Kodeliste/PaintSwatch'
-import Kodetagg from '../Kodetre/Kodetagg'
 import PrettyPrint from '../prettyprint'
-import språk from '../språk'
-import ColorPicker from './ColorPicker'
 
 class Kartlagelement extends React.Component {
   setFargeKode(kode, farge) {
@@ -27,12 +21,11 @@ class Kartlagelement extends React.Component {
       let customColors = localStorage.getItem('customColors')
       if (customColors) {
         let fargeElement = JSON.parse(customColors).filter(x => x.kode === kode)
-        return fargeElement && fargeElement[0] && fargeElement[0].farge
-          ? fargeElement[0].farge
-          : this.props.meta.farge
+        if (fargeElement && fargeElement[0] && fargeElement[0].farge)
+          return fargeElement[0].farge
       }
     }
-    return this.props.meta.farge
+    return this.props.farge
   }
 
   undertekst(størsteAreal, areal, antall, undertittel) {
@@ -73,15 +66,21 @@ class Kartlagelement extends React.Component {
   }
 
   render() {
+    console.log(this.props.kode, this.props.farge)
     const item = this.props
-    const { meta, kode, avatarUtenRamme, areal } = this.props
-    const tittel = språk(meta.tittel)
+    const {
+      tittel,
+      undertittel,
+      kode,
+      erEkspandert,
+      avatarUtenRamme,
+    } = this.props
     const farge = this.getFargeKode()
+    console.log(farge)
     return (
       <React.Fragment>
         <ListItem
           onClick={this.props.onClick}
-          innerDivStyle={{ backgroundColor: areal ? '' : '#DDDDDD' }}
           key={item.kode}
           onMouseEnter={() =>
             this.props.onMouseEnter && this.props.onMouseEnter(kode)
@@ -90,19 +89,8 @@ class Kartlagelement extends React.Component {
             this.props.onMouseLeave && this.props.onMouseLeave(kode)
           }}
           leftAvatar={<Bildeavatar utenRamme={avatarUtenRamme} kode={kode} />}
-          primaryText={
-            <div>
-              {tittel}
-              <br />
-              <Kodetagg hele={true} kode={kode} />
-            </div>
-          }
-          secondaryText={this.undertekst(
-            this.props.størsteAreal,
-            this.props.areal,
-            this.props.antallNaturområder,
-            meta.undertittel
-          )}
+          primaryText={tittel}
+          secondaryText={undertittel}
           rightAvatar={
             <div>
               <div
@@ -110,14 +98,14 @@ class Kartlagelement extends React.Component {
                   display: 'inline-flex',
                   position: 'absolute',
                   right: 40,
-                  top: 16,
+                  top: 8,
                 }}
               >
                 <Toggle
                   toggled={!this.props.skjul}
                   onClick={e => {
                     e.stopPropagation()
-                    this.props.onToggleVisible(meta.kode)
+                    this.props.onToggleVisible(kode)
                   }}
                 />
               </div>
@@ -126,40 +114,17 @@ class Kartlagelement extends React.Component {
                   display: 'inline-flex',
                   position: 'absolute',
                   right: 0,
-                  top: 16,
+                  top: 8,
                 }}
               >
-                <PaintSwatch color={farge} />
+                <PaintSwatch farge={farge} />
               </div>
             </div>
           }
         />
-        {this.props.erEkspandert && (
+        {erEkspandert && (
           <div style={{ marginLeft: 24, marginBottom: 24 }}>
-            <ColorPicker
-              color={farge}
-              onChange={farge => {
-                const rgbString = tinycolor(farge.rgb).toRgbString()
-                this.setFargeKode(item.kode, rgbString)
-                this.props.onUpdateLayerProp(item.kode, 'farge', rgbString)
-              }}
-            />
-
-            <FlatButton
-              label="Fjern"
-              primary={true}
-              onClick={e => {
-                this.props.onRemove(item.kode)
-              }}
-              icon={<ActionDelete />}
-            />
-
-            <FlatButton
-              label="Info"
-              primary={true}
-              onClick={() => this.props.history.replace(meta.sti)}
-              icon={<ActionInfo />}
-            />
+            {this.props.children}
           </div>
         )}
       </React.Fragment>

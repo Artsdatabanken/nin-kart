@@ -210,7 +210,6 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                 <div
                   style={
                     Object {
-                      "backgroundColor": "#DDDDDD",
                       "marginLeft": 0,
                       "muiPrepared": true,
                       "paddingBottom": 16,
@@ -252,7 +251,252 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                         "top": 16,
                       }
                     }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "display": "inline-flex",
+                          "position": "absolute",
+                          "right": 40,
+                          "top": 8,
+                        }
+                      }
+                    />
+                    <div
+                      style={
+                        Object {
+                          "display": "inline-flex",
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 8,
+                        }
+                      }
+                    >
+                      <div
+                        style={
+                          Object {
+                            "height": "28px",
+                            "right": "14px",
+                            "width": "28px",
+                          }
+                        }
+                      >
+                        <div
+                          style={
+                            Object {
+                              "backgroundImage": "url(null)",
+                              "borderRadius": "12%",
+                              "bottom": 0,
+                              "left": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                            }
+                          }
+                        >
+                          <div
+                            style={
+                              Object {
+                                "backgroundColor": undefined,
+                                "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                "borderRadius": "12%",
+                                "bottom": 0,
+                                "left": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                              }
+                            }
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "muiPrepared": true,
+                      }
+                    }
+                  >
+                    Etiketter
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "WebkitBoxOrient": null,
+                        "WebkitLineClamp": null,
+                        "color": "rgba(0, 0, 0, 0.54)",
+                        "display": null,
+                        "fontSize": 14,
+                        "height": 16,
+                        "lineHeight": "16px",
+                        "margin": 0,
+                        "marginTop": 4,
+                        "muiPrepared": true,
+                        "overflow": "hidden",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
+                  >
+                    Verneområder, stedsnavn
+                  </div>
+                </div>
+              </div>
+            </span>
+          </div>
+          <div>
+            <span
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              open={null}
+              style={
+                Object {
+                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                  "background": "none",
+                  "backgroundColor": null,
+                  "border": 10,
+                  "boxSizing": "border-box",
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "fontFamily": "Roboto, sans-serif",
+                  "fontSize": 16,
+                  "fontWeight": "inherit",
+                  "lineHeight": "16px",
+                  "margin": 0,
+                  "muiPrepared": true,
+                  "outline": "none",
+                  "padding": 0,
+                  "position": "relative",
+                  "textDecoration": "none",
+                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                  "verticalAlign": null,
+                }
+              }
+              tabIndex={0}
+            >
+              <div
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  style={
+                    Object {
+                      "marginLeft": 0,
+                      "muiPrepared": true,
+                      "paddingBottom": 16,
+                      "paddingLeft": 72,
+                      "paddingRight": 56,
+                      "paddingTop": 20,
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <div
+                    className={undefined}
+                    onError={[Function]}
+                    size={40}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "transparent",
+                        "borderRadius": "50%",
+                        "color": "#ffffff",
+                        "display": "inline-flex",
+                        "fontSize": 20,
+                        "height": 40,
+                        "justifyContent": "center",
+                        "left": 16,
+                        "muiPrepared": true,
+                        "position": "absolute",
+                        "top": 16,
+                        "userSelect": "none",
+                        "width": 40,
+                      }
+                    }
                   />
+                  <div
+                    style={
+                      Object {
+                        "position": "absolute",
+                        "right": 16,
+                        "top": 16,
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "display": "inline-flex",
+                          "position": "absolute",
+                          "right": 40,
+                          "top": 8,
+                        }
+                      }
+                    />
+                    <div
+                      style={
+                        Object {
+                          "display": "inline-flex",
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 8,
+                        }
+                      }
+                    >
+                      <div
+                        style={
+                          Object {
+                            "height": "28px",
+                            "right": "14px",
+                            "width": "28px",
+                          }
+                        }
+                      >
+                        <div
+                          style={
+                            Object {
+                              "backgroundImage": "url(null)",
+                              "borderRadius": "12%",
+                              "bottom": 0,
+                              "left": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                            }
+                          }
+                        >
+                          <div
+                            style={
+                              Object {
+                                "backgroundColor": undefined,
+                                "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                "borderRadius": "12%",
+                                "bottom": 0,
+                                "left": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                              }
+                            }
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div
                     style={
                       Object {
@@ -331,390 +575,8 @@ exports[`Storyshots Aktive kartlag default 1`] = `
               </div>
             </span>
           </div>
-          <div
-            style={
-              Object {
-                "marginLeft": 56,
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "boxSizing": "border-box",
-                  "color": "rgba(0, 0, 0, 0.54)",
-                  "fontSize": 14,
-                  "fontWeight": 500,
-                  "lineHeight": "48px",
-                  "muiPrepared": true,
-                  "paddingLeft": 16,
-                  "width": "100%",
-                }
-              }
-            >
-              Farge
-            </div>
-            <div
-              style={
-                Object {
-                  "height": 256,
-                  "marginBottom": 16,
-                  "marginLeft": 16,
-                  "marginRight": 16,
-                  "position": "relative",
-                }
-              }
-            >
-              <div
-                onMouseDown={[Function]}
-                onTouchMove={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "MozBorderRadius": undefined,
-                    "OBorderRadius": undefined,
-                    "WebkitBorderRadius": undefined,
-                    "background": "hsl(249.99999999999994,100%, 50%)",
-                    "borderRadius": undefined,
-                    "bottom": "0px",
-                    "left": "0px",
-                    "msBorderRadius": undefined,
-                    "position": "absolute",
-                    "right": "0px",
-                    "top": "0px",
-                  }
-                }
-              >
-                <style>
-                  
-                            .saturation-white {
-                              background: -webkit-linear-gradient(to right, #fff, rgba(255,255,255,0));
-                              background: linear-gradient(to right, #fff, rgba(255,255,255,0));
-                            }
-                            .saturation-black {
-                              background: -webkit-linear-gradient(to top, #000, rgba(0,0,0,0));
-                              background: linear-gradient(to top, #000, rgba(0,0,0,0));
-                            }
-                          
-                </style>
-                <div
-                  className="saturation-white"
-                  style={
-                    Object {
-                      "MozBorderRadius": undefined,
-                      "OBorderRadius": undefined,
-                      "WebkitBorderRadius": undefined,
-                      "borderRadius": undefined,
-                      "bottom": "0px",
-                      "left": "0px",
-                      "msBorderRadius": undefined,
-                      "position": "absolute",
-                      "right": "0px",
-                      "top": "0px",
-                    }
-                  }
-                >
-                  <div
-                    className="saturation-black"
-                    style={
-                      Object {
-                        "MozBorderRadius": undefined,
-                        "MozBoxShadow": undefined,
-                        "OBorderRadius": undefined,
-                        "OBoxShadow": undefined,
-                        "WebkitBorderRadius": undefined,
-                        "WebkitBoxShadow": undefined,
-                        "borderRadius": undefined,
-                        "bottom": "0px",
-                        "boxShadow": undefined,
-                        "left": "0px",
-                        "msBorderRadius": undefined,
-                        "msBoxShadow": undefined,
-                        "position": "absolute",
-                        "right": "0px",
-                        "top": "0px",
-                      }
-                    }
-                  />
-                  <div
-                    style={
-                      Object {
-                        "cursor": "default",
-                        "left": "66.66666666666667%",
-                        "position": "absolute",
-                        "top": "70%",
-                      }
-                    }
-                  >
-                    <div
-                      style={
-                        Object {
-                          "MozBorderRadius": "6px",
-                          "MozBoxShadow": "inset 0 0 0 1px #fff",
-                          "MozTransform": "translate(-6px, -6px)",
-                          "OBorderRadius": "6px",
-                          "OBoxShadow": "inset 0 0 0 1px #fff",
-                          "OTransform": "translate(-6px, -6px)",
-                          "WebkitBorderRadius": "6px",
-                          "WebkitBoxShadow": "inset 0 0 0 1px #fff",
-                          "WebkitTransform": "translate(-6px, -6px)",
-                          "borderRadius": "6px",
-                          "boxShadow": "inset 0 0 0 1px #fff",
-                          "height": "12px",
-                          "msBorderRadius": "6px",
-                          "msBoxShadow": "inset 0 0 0 1px #fff",
-                          "msTransform": "translate(-6px, -6px)",
-                          "transform": "translate(-6px, -6px)",
-                          "width": "12px",
-                        }
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              style={
-                Object {
-                  "height": 10,
-                  "marginBottom": 16,
-                  "marginLeft": 16,
-                  "marginRight": 16,
-                  "position": "relative",
-                }
-              }
-            >
-              <div
-                style={
-                  Object {
-                    "MozBorderRadius": undefined,
-                    "MozBoxShadow": undefined,
-                    "OBorderRadius": undefined,
-                    "OBoxShadow": undefined,
-                    "WebkitBorderRadius": undefined,
-                    "WebkitBoxShadow": undefined,
-                    "borderRadius": undefined,
-                    "bottom": "0px",
-                    "boxShadow": undefined,
-                    "left": "0px",
-                    "msBorderRadius": undefined,
-                    "msBoxShadow": undefined,
-                    "position": "absolute",
-                    "right": "0px",
-                    "top": "0px",
-                  }
-                }
-              >
-                <div
-                  className="hue-horizontal"
-                  onMouseDown={[Function]}
-                  onTouchMove={[Function]}
-                  onTouchStart={[Function]}
-                  style={
-                    Object {
-                      "MozBorderRadius": undefined,
-                      "OBorderRadius": undefined,
-                      "WebkitBorderRadius": undefined,
-                      "borderRadius": undefined,
-                      "height": "100%",
-                      "msBorderRadius": undefined,
-                      "padding": "0 2px",
-                      "position": "relative",
-                    }
-                  }
-                >
-                  <style>
-                    
-                                .hue-horizontal {
-                                  background: linear-gradient(to right, #f00 0%, #ff0 17%, #0f0
-                                    33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
-                                  background: -webkit-linear-gradient(to right, #f00 0%, #ff0
-                                    17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
-                                }
-                    
-                                .hue-vertical {
-                                  background: linear-gradient(to top, #f00 0%, #ff0 17%, #0f0 33%,
-                                    #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
-                                  background: -webkit-linear-gradient(to top, #f00 0%, #ff0 17%,
-                                    #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
-                                }
-                              
-                  </style>
-                  <div
-                    style={
-                      Object {
-                        "left": "69.44444444444443%",
-                        "position": "absolute",
-                      }
-                    }
-                  >
-                    <div
-                      style={
-                        Object {
-                          "MozBorderRadius": "6px",
-                          "MozBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                          "MozTransform": "translate(-6px, -1px)",
-                          "OBorderRadius": "6px",
-                          "OBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                          "OTransform": "translate(-6px, -1px)",
-                          "WebkitBorderRadius": "6px",
-                          "WebkitBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                          "WebkitTransform": "translate(-6px, -1px)",
-                          "backgroundColor": "rgb(248, 248, 248)",
-                          "borderRadius": "6px",
-                          "boxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                          "height": "12px",
-                          "msBorderRadius": "6px",
-                          "msBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                          "msTransform": "translate(-6px, -1px)",
-                          "transform": "translate(-6px, -1px)",
-                          "width": "12px",
-                        }
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              style={
-                Object {
-                  "height": 10,
-                  "marginBottom": 16,
-                  "marginLeft": 16,
-                  "marginRight": 16,
-                  "position": "relative",
-                }
-              }
-            >
-              <div
-                style={
-                  Object {
-                    "MozBorderRadius": undefined,
-                    "OBorderRadius": undefined,
-                    "WebkitBorderRadius": undefined,
-                    "borderRadius": undefined,
-                    "bottom": "0px",
-                    "left": "0px",
-                    "msBorderRadius": undefined,
-                    "position": "absolute",
-                    "right": "0px",
-                    "top": "0px",
-                  }
-                }
-              >
-                <div
-                  style={
-                    Object {
-                      "MozBorderRadius": undefined,
-                      "OBorderRadius": undefined,
-                      "WebkitBorderRadius": undefined,
-                      "borderRadius": undefined,
-                      "bottom": "0px",
-                      "left": "0px",
-                      "msBorderRadius": undefined,
-                      "overflow": "hidden",
-                      "position": "absolute",
-                      "right": "0px",
-                      "top": "0px",
-                    }
-                  }
-                >
-                  <div
-                    style={
-                      Object {
-                        "MozBorderRadius": undefined,
-                        "MozBoxShadow": undefined,
-                        "OBorderRadius": undefined,
-                        "OBoxShadow": undefined,
-                        "WebkitBorderRadius": undefined,
-                        "WebkitBoxShadow": undefined,
-                        "background": "url(null) center left",
-                        "borderRadius": undefined,
-                        "bottom": "0px",
-                        "boxShadow": undefined,
-                        "left": "0px",
-                        "msBorderRadius": undefined,
-                        "msBoxShadow": undefined,
-                        "position": "absolute",
-                        "right": "0px",
-                        "top": "0px",
-                      }
-                    }
-                  />
-                </div>
-                <div
-                  style={
-                    Object {
-                      "MozBorderRadius": undefined,
-                      "MozBoxShadow": undefined,
-                      "OBorderRadius": undefined,
-                      "OBoxShadow": undefined,
-                      "WebkitBorderRadius": undefined,
-                      "WebkitBoxShadow": undefined,
-                      "background": "linear-gradient(to right, rgba(34,25,77, 0) 0%,
-                               rgba(34,25,77, 1) 100%)",
-                      "borderRadius": undefined,
-                      "bottom": "0px",
-                      "boxShadow": undefined,
-                      "left": "0px",
-                      "msBorderRadius": undefined,
-                      "msBoxShadow": undefined,
-                      "position": "absolute",
-                      "right": "0px",
-                      "top": "0px",
-                    }
-                  }
-                />
-                <div
-                  onMouseDown={[Function]}
-                  onTouchMove={[Function]}
-                  onTouchStart={[Function]}
-                  style={
-                    Object {
-                      "height": "100%",
-                      "margin": "0 3px",
-                      "position": "relative",
-                    }
-                  }
-                >
-                  <div
-                    style={
-                      Object {
-                        "left": "100%",
-                        "position": "absolute",
-                      }
-                    }
-                  >
-                    <div
-                      style={
-                        Object {
-                          "MozBorderRadius": "6px",
-                          "MozBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                          "MozTransform": "translate(-6px, -1px)",
-                          "OBorderRadius": "6px",
-                          "OBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                          "OTransform": "translate(-6px, -1px)",
-                          "WebkitBorderRadius": "6px",
-                          "WebkitBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                          "WebkitTransform": "translate(-6px, -1px)",
-                          "backgroundColor": "rgb(248, 248, 248)",
-                          "borderRadius": "6px",
-                          "boxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                          "height": "12px",
-                          "msBorderRadius": "6px",
-                          "msBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                          "msTransform": "translate(-6px, -1px)",
-                          "transform": "translate(-6px, -1px)",
-                          "width": "12px",
-                        }
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button
+          <div>
+            <span
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -723,38 +585,34 @@ exports[`Storyshots Aktive kartlag default 1`] = `
               onKeyUp={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
+              onTouchEnd={[Function]}
               onTouchStart={[Function]}
+              open={null}
               style={
                 Object {
                   "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "background": "none",
+                  "backgroundColor": null,
                   "border": 10,
-                  "borderRadius": 2,
                   "boxSizing": "border-box",
-                  "color": "#00bcd4",
+                  "color": "rgba(0, 0, 0, 0.87)",
                   "cursor": "pointer",
-                  "display": "inline-block",
+                  "display": "block",
                   "fontFamily": "Roboto, sans-serif",
-                  "fontSize": "inherit",
+                  "fontSize": 16,
                   "fontWeight": "inherit",
-                  "height": 36,
-                  "lineHeight": "36px",
+                  "lineHeight": "16px",
                   "margin": 0,
-                  "minWidth": 88,
                   "muiPrepared": true,
                   "outline": "none",
-                  "overflow": "hidden",
                   "padding": 0,
                   "position": "relative",
-                  "textAlign": "center",
                   "textDecoration": "none",
                   "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "userSelect": "none",
                   "verticalAlign": null,
                 }
               }
               tabIndex={0}
-              type="button"
             >
               <div
                 onMouseDown={[Function]}
@@ -763,50 +621,147 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                 onTouchEnd={[Function]}
                 onTouchStart={[Function]}
               >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
+                <div
                   style={
                     Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "#00bcd4",
-                      "height": 24,
-                      "marginLeft": 12,
-                      "marginRight": 0,
+                      "marginLeft": 0,
                       "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "verticalAlign": "middle",
-                      "width": 24,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
-                  />
-                </svg>
-                <span
-                  style={
-                    Object {
-                      "fontSize": 14,
-                      "fontWeight": 500,
-                      "letterSpacing": 0,
-                      "muiPrepared": true,
-                      "paddingLeft": 8,
-                      "paddingRight": 16,
+                      "paddingBottom": 16,
+                      "paddingLeft": 72,
+                      "paddingRight": 56,
+                      "paddingTop": 20,
                       "position": "relative",
-                      "textTransform": "uppercase",
-                      "verticalAlign": "middle",
                     }
                   }
                 >
-                  Fjern
-                </span>
+                  <div
+                    className={undefined}
+                    onError={[Function]}
+                    size={40}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "transparent",
+                        "borderRadius": "50%",
+                        "color": "#ffffff",
+                        "display": "inline-flex",
+                        "fontSize": 20,
+                        "height": 40,
+                        "justifyContent": "center",
+                        "left": 16,
+                        "muiPrepared": true,
+                        "position": "absolute",
+                        "top": 16,
+                        "userSelect": "none",
+                        "width": 40,
+                      }
+                    }
+                  />
+                  <div
+                    style={
+                      Object {
+                        "position": "absolute",
+                        "right": 16,
+                        "top": 16,
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "display": "inline-flex",
+                          "position": "absolute",
+                          "right": 40,
+                          "top": 8,
+                        }
+                      }
+                    />
+                    <div
+                      style={
+                        Object {
+                          "display": "inline-flex",
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 8,
+                        }
+                      }
+                    >
+                      <div
+                        style={
+                          Object {
+                            "height": "28px",
+                            "right": "14px",
+                            "width": "28px",
+                          }
+                        }
+                      >
+                        <div
+                          style={
+                            Object {
+                              "backgroundImage": "url(null)",
+                              "borderRadius": "12%",
+                              "bottom": 0,
+                              "left": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                            }
+                          }
+                        >
+                          <div
+                            style={
+                              Object {
+                                "backgroundColor": "#404040",
+                                "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                "borderRadius": "12%",
+                                "bottom": 0,
+                                "left": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                              }
+                            }
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "muiPrepared": true,
+                      }
+                    }
+                  >
+                    Bakgrunnskart
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "WebkitBoxOrient": null,
+                        "WebkitLineClamp": null,
+                        "color": "rgba(0, 0, 0, 0.54)",
+                        "display": null,
+                        "fontSize": 14,
+                        "height": 16,
+                        "lineHeight": "16px",
+                        "margin": 0,
+                        "marginTop": 4,
+                        "muiPrepared": true,
+                        "overflow": "hidden",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
+                  >
+                    Mørk grå
+                  </div>
+                </div>
               </div>
-            </button>
-            <button
+            </span>
+          </div>
+          <div>
+            <span
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -815,38 +770,34 @@ exports[`Storyshots Aktive kartlag default 1`] = `
               onKeyUp={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
+              onTouchEnd={[Function]}
               onTouchStart={[Function]}
+              open={null}
               style={
                 Object {
                   "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "background": "none",
+                  "backgroundColor": null,
                   "border": 10,
-                  "borderRadius": 2,
                   "boxSizing": "border-box",
-                  "color": "#00bcd4",
+                  "color": "rgba(0, 0, 0, 0.87)",
                   "cursor": "pointer",
-                  "display": "inline-block",
+                  "display": "block",
                   "fontFamily": "Roboto, sans-serif",
-                  "fontSize": "inherit",
+                  "fontSize": 16,
                   "fontWeight": "inherit",
-                  "height": 36,
-                  "lineHeight": "36px",
+                  "lineHeight": "16px",
                   "margin": 0,
-                  "minWidth": 88,
                   "muiPrepared": true,
                   "outline": "none",
-                  "overflow": "hidden",
                   "padding": 0,
                   "position": "relative",
-                  "textAlign": "center",
                   "textDecoration": "none",
                   "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "userSelect": "none",
                   "verticalAlign": null,
                 }
               }
               tabIndex={0}
-              type="button"
             >
               <div
                 onMouseDown={[Function]}
@@ -855,49 +806,144 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                 onTouchEnd={[Function]}
                 onTouchStart={[Function]}
               >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
+                <div
                   style={
                     Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "#00bcd4",
-                      "height": 24,
-                      "marginLeft": 12,
-                      "marginRight": 0,
+                      "marginLeft": 0,
                       "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "verticalAlign": "middle",
-                      "width": 24,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
-                  />
-                </svg>
-                <span
-                  style={
-                    Object {
-                      "fontSize": 14,
-                      "fontWeight": 500,
-                      "letterSpacing": 0,
-                      "muiPrepared": true,
-                      "paddingLeft": 8,
-                      "paddingRight": 16,
+                      "paddingBottom": 16,
+                      "paddingLeft": 72,
+                      "paddingRight": 56,
+                      "paddingTop": 20,
                       "position": "relative",
-                      "textTransform": "uppercase",
-                      "verticalAlign": "middle",
                     }
                   }
                 >
-                  Info
-                </span>
+                  <div
+                    className={undefined}
+                    onError={[Function]}
+                    size={40}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "transparent",
+                        "borderRadius": "50%",
+                        "color": "#ffffff",
+                        "display": "inline-flex",
+                        "fontSize": 20,
+                        "height": 40,
+                        "justifyContent": "center",
+                        "left": 16,
+                        "muiPrepared": true,
+                        "position": "absolute",
+                        "top": 16,
+                        "userSelect": "none",
+                        "width": 40,
+                      }
+                    }
+                  />
+                  <div
+                    style={
+                      Object {
+                        "position": "absolute",
+                        "right": 16,
+                        "top": 16,
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "display": "inline-flex",
+                          "position": "absolute",
+                          "right": 40,
+                          "top": 8,
+                        }
+                      }
+                    />
+                    <div
+                      style={
+                        Object {
+                          "display": "inline-flex",
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 8,
+                        }
+                      }
+                    >
+                      <div
+                        style={
+                          Object {
+                            "height": "28px",
+                            "right": "14px",
+                            "width": "28px",
+                          }
+                        }
+                      >
+                        <div
+                          style={
+                            Object {
+                              "backgroundImage": "url(null)",
+                              "borderRadius": "12%",
+                              "bottom": 0,
+                              "left": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                            }
+                          }
+                        >
+                          <div
+                            style={
+                              Object {
+                                "backgroundColor": undefined,
+                                "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                "borderRadius": "12%",
+                                "bottom": 0,
+                                "left": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                              }
+                            }
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "muiPrepared": true,
+                      }
+                    }
+                  >
+                    Terreng
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "WebkitBoxOrient": null,
+                        "WebkitLineClamp": null,
+                        "color": "rgba(0, 0, 0, 0.54)",
+                        "display": null,
+                        "fontSize": 14,
+                        "height": 16,
+                        "lineHeight": "16px",
+                        "margin": 0,
+                        "marginTop": 4,
+                        "muiPrepared": true,
+                        "overflow": "hidden",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
+                  >
+                    2.5x overdrevet
+                  </div>
+                </div>
               </div>
-            </button>
+            </span>
           </div>
         </div>
       </div>
@@ -3889,6 +3935,561 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                       </div>
                     </button>
                   </div>
+                  <div>
+                    <span
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      open={null}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "backgroundColor": null,
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "color": "rgba(0, 0, 0, 0.87)",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 16,
+                          "fontWeight": "inherit",
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "padding": 0,
+                          "position": "relative",
+                          "textDecoration": "none",
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                        }
+                      }
+                      tabIndex={0}
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 0,
+                              "muiPrepared": true,
+                              "paddingBottom": 16,
+                              "paddingLeft": 72,
+                              "paddingRight": 56,
+                              "paddingTop": 20,
+                              "position": "relative",
+                            }
+                          }
+                        >
+                          <div
+                            className={undefined}
+                            onError={[Function]}
+                            size={40}
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "backgroundColor": "transparent",
+                                "borderRadius": "50%",
+                                "color": "#ffffff",
+                                "display": "inline-flex",
+                                "fontSize": 20,
+                                "height": 40,
+                                "justifyContent": "center",
+                                "left": 16,
+                                "muiPrepared": true,
+                                "position": "absolute",
+                                "top": 16,
+                                "userSelect": "none",
+                                "width": 40,
+                              }
+                            }
+                          />
+                          <div
+                            style={
+                              Object {
+                                "position": "absolute",
+                                "right": 16,
+                                "top": 16,
+                              }
+                            }
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "display": "inline-flex",
+                                  "position": "absolute",
+                                  "right": 40,
+                                  "top": 8,
+                                }
+                              }
+                            />
+                            <div
+                              style={
+                                Object {
+                                  "display": "inline-flex",
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 8,
+                                }
+                              }
+                            >
+                              <div
+                                style={
+                                  Object {
+                                    "height": "28px",
+                                    "right": "14px",
+                                    "width": "28px",
+                                  }
+                                }
+                              >
+                                <div
+                                  style={
+                                    Object {
+                                      "backgroundImage": "url(null)",
+                                      "borderRadius": "12%",
+                                      "bottom": 0,
+                                      "left": 0,
+                                      "position": "absolute",
+                                      "right": 0,
+                                      "top": 0,
+                                    }
+                                  }
+                                >
+                                  <div
+                                    style={
+                                      Object {
+                                        "backgroundColor": undefined,
+                                        "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                        "borderRadius": "12%",
+                                        "bottom": 0,
+                                        "left": 0,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 0,
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "muiPrepared": true,
+                              }
+                            }
+                          >
+                            Etiketter
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "WebkitBoxOrient": null,
+                                "WebkitLineClamp": null,
+                                "color": "rgba(0, 0, 0, 0.54)",
+                                "display": null,
+                                "fontSize": 14,
+                                "height": 16,
+                                "lineHeight": "16px",
+                                "margin": 0,
+                                "marginTop": 4,
+                                "muiPrepared": true,
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            Verneområder, stedsnavn
+                          </div>
+                        </div>
+                      </div>
+                    </span>
+                  </div>
+                  <div>
+                    <span
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      open={null}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "backgroundColor": null,
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "color": "rgba(0, 0, 0, 0.87)",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 16,
+                          "fontWeight": "inherit",
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "padding": 0,
+                          "position": "relative",
+                          "textDecoration": "none",
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                        }
+                      }
+                      tabIndex={0}
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 0,
+                              "muiPrepared": true,
+                              "paddingBottom": 16,
+                              "paddingLeft": 72,
+                              "paddingRight": 56,
+                              "paddingTop": 20,
+                              "position": "relative",
+                            }
+                          }
+                        >
+                          <div
+                            className={undefined}
+                            onError={[Function]}
+                            size={40}
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "backgroundColor": "transparent",
+                                "borderRadius": "50%",
+                                "color": "#ffffff",
+                                "display": "inline-flex",
+                                "fontSize": 20,
+                                "height": 40,
+                                "justifyContent": "center",
+                                "left": 16,
+                                "muiPrepared": true,
+                                "position": "absolute",
+                                "top": 16,
+                                "userSelect": "none",
+                                "width": 40,
+                              }
+                            }
+                          />
+                          <div
+                            style={
+                              Object {
+                                "position": "absolute",
+                                "right": 16,
+                                "top": 16,
+                              }
+                            }
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "display": "inline-flex",
+                                  "position": "absolute",
+                                  "right": 40,
+                                  "top": 8,
+                                }
+                              }
+                            />
+                            <div
+                              style={
+                                Object {
+                                  "display": "inline-flex",
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 8,
+                                }
+                              }
+                            >
+                              <div
+                                style={
+                                  Object {
+                                    "height": "28px",
+                                    "right": "14px",
+                                    "width": "28px",
+                                  }
+                                }
+                              >
+                                <div
+                                  style={
+                                    Object {
+                                      "backgroundImage": "url(null)",
+                                      "borderRadius": "12%",
+                                      "bottom": 0,
+                                      "left": 0,
+                                      "position": "absolute",
+                                      "right": 0,
+                                      "top": 0,
+                                    }
+                                  }
+                                >
+                                  <div
+                                    style={
+                                      Object {
+                                        "backgroundColor": "#404040",
+                                        "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                        "borderRadius": "12%",
+                                        "bottom": 0,
+                                        "left": 0,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 0,
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "muiPrepared": true,
+                              }
+                            }
+                          >
+                            Bakgrunnskart
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "WebkitBoxOrient": null,
+                                "WebkitLineClamp": null,
+                                "color": "rgba(0, 0, 0, 0.54)",
+                                "display": null,
+                                "fontSize": 14,
+                                "height": 16,
+                                "lineHeight": "16px",
+                                "margin": 0,
+                                "marginTop": 4,
+                                "muiPrepared": true,
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            Mørk grå
+                          </div>
+                        </div>
+                      </div>
+                    </span>
+                  </div>
+                  <div>
+                    <span
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      open={null}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "backgroundColor": null,
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "color": "rgba(0, 0, 0, 0.87)",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 16,
+                          "fontWeight": "inherit",
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "padding": 0,
+                          "position": "relative",
+                          "textDecoration": "none",
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                        }
+                      }
+                      tabIndex={0}
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 0,
+                              "muiPrepared": true,
+                              "paddingBottom": 16,
+                              "paddingLeft": 72,
+                              "paddingRight": 56,
+                              "paddingTop": 20,
+                              "position": "relative",
+                            }
+                          }
+                        >
+                          <div
+                            className={undefined}
+                            onError={[Function]}
+                            size={40}
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "backgroundColor": "transparent",
+                                "borderRadius": "50%",
+                                "color": "#ffffff",
+                                "display": "inline-flex",
+                                "fontSize": 20,
+                                "height": 40,
+                                "justifyContent": "center",
+                                "left": 16,
+                                "muiPrepared": true,
+                                "position": "absolute",
+                                "top": 16,
+                                "userSelect": "none",
+                                "width": 40,
+                              }
+                            }
+                          />
+                          <div
+                            style={
+                              Object {
+                                "position": "absolute",
+                                "right": 16,
+                                "top": 16,
+                              }
+                            }
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "display": "inline-flex",
+                                  "position": "absolute",
+                                  "right": 40,
+                                  "top": 8,
+                                }
+                              }
+                            />
+                            <div
+                              style={
+                                Object {
+                                  "display": "inline-flex",
+                                  "position": "absolute",
+                                  "right": 0,
+                                  "top": 8,
+                                }
+                              }
+                            >
+                              <div
+                                style={
+                                  Object {
+                                    "height": "28px",
+                                    "right": "14px",
+                                    "width": "28px",
+                                  }
+                                }
+                              >
+                                <div
+                                  style={
+                                    Object {
+                                      "backgroundImage": "url(null)",
+                                      "borderRadius": "12%",
+                                      "bottom": 0,
+                                      "left": 0,
+                                      "position": "absolute",
+                                      "right": 0,
+                                      "top": 0,
+                                    }
+                                  }
+                                >
+                                  <div
+                                    style={
+                                      Object {
+                                        "backgroundColor": undefined,
+                                        "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                        "borderRadius": "12%",
+                                        "bottom": 0,
+                                        "left": 0,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 0,
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "muiPrepared": true,
+                              }
+                            }
+                          >
+                            Terreng
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "WebkitBoxOrient": null,
+                                "WebkitLineClamp": null,
+                                "color": "rgba(0, 0, 0, 0.54)",
+                                "display": null,
+                                "fontSize": 14,
+                                "height": 16,
+                                "lineHeight": "16px",
+                                "margin": 0,
+                                "marginTop": 4,
+                                "muiPrepared": true,
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            2.5x overdrevet
+                          </div>
+                        </div>
+                      </div>
+                    </span>
+                  </div>
                 </div>
                 <div
                   style={
@@ -4555,7 +5156,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               <div
                                 style={
                                   Object {
-                                    "backgroundColor": "#f46d43",
+                                    "backgroundColor": undefined,
                                     "border": "1px solid hsla(0, 0%, 0%, 0.2)",
                                     "borderRadius": "12%",
                                     "bottom": 0,
@@ -4774,7 +5375,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               <div
                                 style={
                                   Object {
-                                    "backgroundColor": "#fdae61",
+                                    "backgroundColor": undefined,
                                     "border": "1px solid hsla(0, 0%, 0%, 0.2)",
                                     "borderRadius": "12%",
                                     "bottom": 0,
@@ -4993,7 +5594,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               <div
                                 style={
                                   Object {
-                                    "backgroundColor": "#fee08b",
+                                    "backgroundColor": undefined,
                                     "border": "1px solid hsla(0, 0%, 0%, 0.2)",
                                     "borderRadius": "12%",
                                     "bottom": 0,
@@ -5212,7 +5813,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               <div
                                 style={
                                   Object {
-                                    "backgroundColor": "#e6f598",
+                                    "backgroundColor": undefined,
                                     "border": "1px solid hsla(0, 0%, 0%, 0.2)",
                                     "borderRadius": "12%",
                                     "bottom": 0,
@@ -10429,7 +11030,7 @@ Array [
             <div
                 style={
                     Object {
-                        "backgroundColor": "rgba(0,0,255,1)",
+                        "backgroundColor": undefined,
                         "border": "1px solid hsla(0, 0%, 0%, 0.2)",
                         "borderRadius": "12%",
                         "bottom": 0,
@@ -10473,7 +11074,7 @@ Array [
             <div
                 style={
                     Object {
-                        "backgroundColor": "rgba(0,0,255,0.8)",
+                        "backgroundColor": undefined,
                         "border": "1px solid hsla(0, 0%, 0%, 0.2)",
                         "borderRadius": "12%",
                         "bottom": 0,
@@ -10517,7 +11118,7 @@ Array [
             <div
                 style={
                     Object {
-                        "backgroundColor": "rgba(0,0,255,0.6)",
+                        "backgroundColor": undefined,
                         "border": "1px solid hsla(0, 0%, 0%, 0.2)",
                         "borderRadius": "12%",
                         "bottom": 0,
@@ -10561,7 +11162,7 @@ Array [
             <div
                 style={
                     Object {
-                        "backgroundColor": "rgba(0,0,255,0.4)",
+                        "backgroundColor": undefined,
                         "border": "1px solid hsla(0, 0%, 0%, 0.2)",
                         "borderRadius": "12%",
                         "bottom": 0,
@@ -10605,7 +11206,7 @@ Array [
             <div
                 style={
                     Object {
-                        "backgroundColor": "rgba(0,0,255,0.2)",
+                        "backgroundColor": undefined,
                         "border": "1px solid hsla(0, 0%, 0%, 0.2)",
                         "borderRadius": "12%",
                         "bottom": 0,
@@ -10649,7 +11250,7 @@ Array [
             <div
                 style={
                     Object {
-                        "backgroundColor": "rgba(0,0,255,0)",
+                        "backgroundColor": undefined,
                         "border": "1px solid hsla(0, 0%, 0%, 0.2)",
                         "borderRadius": "12%",
                         "bottom": 0,

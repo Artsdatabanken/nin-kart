@@ -173,14 +173,12 @@ class Grunnkart extends React.Component<Props, State> {
     this.setState({ meta: meta })
   }
 
-  handleUpdateSelectedLayerProp = (kode, key, value) => {
-    let meta = this.state.valgteKoder
-    meta.forEach(barn => {
-      if (barn.kode === kode) {
-        barn[key] = value
-      }
-    })
-    this.setState({ valgteKoder: meta })
+  handleUpdateSelectedLayerProp = (kode, propNavn, verdi) => {
+    console.log(kode, propNavn, verdi)
+    let valgte = this.state.valgteKoder
+    const barn = valgte.find(barn => barn.kode === kode)
+    barn[propNavn] = verdi
+    this.setState({ valgteKoder: valgte })
   }
 
   handleRemoveSelectedLayer = kode => {
