@@ -82,7 +82,6 @@ class Kodelisteelement extends React.Component<Props, State> {
 
   render() {
     const { meta, kode, avatarUtenRamme, areal } = this.props
-    console.warn(this.props)
     return (
       <ListItem
         innerDivStyle={{ backgroundColor: areal ? '' : '#DDDDDD' }}
