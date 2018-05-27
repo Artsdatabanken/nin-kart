@@ -8,32 +8,12 @@ import tinycolor from 'tinycolor2'
 import Bildeavatar from '../Kodetre/Kodeliste/Bildeavatar'
 import PaintSwatch from '../Kodetre/Kodeliste/PaintSwatch'
 import Kodetagg from '../Kodetre/Kodetagg'
+import localStorageHelper from '../localStorageHelper'
 import PrettyPrint from '../prettyprint'
 import språk from '../språk'
 import ColorPicker from './ColorPicker'
 
 class Kartlagelement extends React.Component {
-  setFargeKode(kode, farge) {
-    let farger = JSON.parse(localStorage.getItem('customColors') || '[]')
-    farger = farger.filter(x => x.kode !== kode)
-    farger.push({ kode: kode, farge: farge })
-    localStorage.setItem('customColors', JSON.stringify(farger))
-  }
-
-  getFargeKode = () => {
-    let kode = this.props.kode
-    if (localStorage) {
-      let customColors = localStorage.getItem('customColors')
-      if (customColors) {
-        let fargeElement = JSON.parse(customColors).filter(x => x.kode === kode)
-        return fargeElement && fargeElement[0] && fargeElement[0].farge
-          ? fargeElement[0].farge
-          : this.props.meta.farge
-      }
-    }
-    return this.props.meta.farge
-  }
-
   undertekst(størsteAreal, areal, antall, undertittel) {
     if (undertittel) return undertittel.nb
     if (!areal) areal = 0
@@ -75,7 +55,6 @@ class Kartlagelement extends React.Component {
     const item = this.props
     const { meta, kode, avatarUtenRamme, areal } = this.props
     const tittel = språk(meta.tittel)
-    const farge = this.getFargeKode()
     return (
       <React.Fragment>
         <ListItem
@@ -132,7 +111,7 @@ class Kartlagelement extends React.Component {
                     top: 16,
                   }}
                 >
-                  <PaintSwatch color={farge} />
+                  <PaintSwatch color={meta.farge} />
                 </div>
               </div>
             ) : (
@@ -144,10 +123,10 @@ class Kartlagelement extends React.Component {
           <div style={{ marginLeft: 56 }}>
             <ColorPicker
               style={{ display: 'fixed' }}
-              color={farge}
+              color={meta.farge}
               onChange={farge => {
                 const rgbString = tinycolor(farge.rgb).toRgbString()
-                this.setFargeKode(item.kode, rgbString)
+                localStorageHelper.settFargeKode(item.kode, rgbString)
                 this.props.onUpdateLayerProp(item.kode, 'farge', rgbString)
               }}
             />
