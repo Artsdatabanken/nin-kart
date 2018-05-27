@@ -1,12 +1,16 @@
-import { ListItem } from 'material-ui'
+import { FlatButton, ListItem } from 'material-ui'
 import Toggle from 'material-ui/Toggle'
 import muiThemeable from 'material-ui/styles/muiThemeable'
+import ActionDelete from 'material-ui/svg-icons/action/delete'
+import ActionInfo from 'material-ui/svg-icons/action/info'
 import React from 'react'
 import { withRouter } from 'react-router'
+import tinycolor from 'tinycolor2'
 import Bildeavatar from '../Kodetre/Kodeliste/Bildeavatar'
 import PaintSwatch from '../Kodetre/Kodeliste/PaintSwatch'
 import localStorageHelper from '../localStorageHelper'
 import PrettyPrint from '../prettyprint'
+import ColorPicker from './ColorPicker'
 
 class Kartlagelement extends React.Component {
   undertekst(størsteAreal, areal, antall, undertittel) {
@@ -48,8 +52,15 @@ class Kartlagelement extends React.Component {
 
   render() {
     const item = this.props
-    const { meta, farge, kode, avatarUtenRamme, areal } = this.props
-    const tittel = språk(meta.tittel)
+    const {
+      meta,
+      tittel,
+      undertittel,
+      farge,
+      kode,
+      avatarUtenRamme,
+      erEkspandert,
+    } = this.props
     return (
       <React.Fragment>
         <ListItem
@@ -99,7 +110,7 @@ class Kartlagelement extends React.Component {
           <div style={{ marginLeft: 24, marginBottom: 24 }}>
             <ColorPicker
               style={{ display: 'fixed' }}
-              color={meta.farge}
+              color={farge}
               onChange={farge => {
                 const rgbString = tinycolor(farge.rgb).toRgbString()
                 localStorageHelper.settFargeKode(item.kode, rgbString)
