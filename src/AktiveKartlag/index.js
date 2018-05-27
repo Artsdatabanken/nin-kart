@@ -2,7 +2,10 @@ import { FlatButton, Subheader } from 'material-ui'
 import MapsLayers from 'material-ui/svg-icons/maps/layers'
 import React from 'react'
 import { withRouter } from 'react-router'
-import Kartlagelement from './Kartlagelement'
+import BakgrunnskartElement from './BakgrunnskartElement'
+import EtiketterElement from './EtiketterElement'
+import PolygonlagElement from './PolygonlagElement'
+import TerrenglagElement from './TerrenglagElement'
 
 class AktiveKartlag extends React.Component {
   state = { ekspandertKode: null }
@@ -37,7 +40,7 @@ class AktiveKartlag extends React.Component {
           />
         </Subheader>
 
-        <Kartlagelement
+        <EtiketterElement
           key="etiketter"
           kode="Stedsnavn, verneområder"
           meta={{ tittel: { nb: 'Etiketter' } }}
@@ -54,10 +57,10 @@ class AktiveKartlag extends React.Component {
         {koder.map(item => {
           const kode = item.kode
           return (
-            <Kartlagelement
+            <PolygonlagElement
+              {...item}
               key={kode}
               kode={kode}
-              meta={item}
               erEkspandert={kode === this.state.ekspandertKode}
               skjul={item.skjul}
               onMouseEnter={onMouseEnter}
@@ -70,7 +73,7 @@ class AktiveKartlag extends React.Component {
             />
           )
         })}
-        <Kartlagelement
+        <BakgrunnskartElement
           key="basemap"
           kode="Mørk grå"
           meta={{ tittel: { nb: 'Bakgrunnskart' } }}
@@ -81,6 +84,20 @@ class AktiveKartlag extends React.Component {
           onRemove={kode => onRemoveSelectedLayer('basemap')}
           onUpdateLayerProp={onUpdateLayerProp}
           onClick={() => this.handleClick('basemap')}
+          onToggleVisible={kode => onToggleVisible(kode)}
+          language={language}
+        />
+        <TerrenglagElement
+          key="terreng"
+          kode="2.5x overdrevet"
+          meta={{ tittel: { nb: '3D terreng' } }}
+          erEkspandert={'terreng' === this.state.ekspandertKode}
+          skjul={false}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          onRemove={kode => onRemoveSelectedLayer('terreng')}
+          onUpdateLayerProp={onUpdateLayerProp}
+          onClick={() => this.handleClick('terreng')}
           onToggleVisible={kode => onToggleVisible(kode)}
           language={language}
         />

@@ -1,18 +1,12 @@
-import { FlatButton, ListItem } from 'material-ui'
+import { ListItem } from 'material-ui'
 import Toggle from 'material-ui/Toggle'
 import muiThemeable from 'material-ui/styles/muiThemeable'
-import ActionDelete from 'material-ui/svg-icons/action/delete'
-import ActionInfo from 'material-ui/svg-icons/action/info'
 import React from 'react'
 import { withRouter } from 'react-router'
-import tinycolor from 'tinycolor2'
 import Bildeavatar from '../Kodetre/Kodeliste/Bildeavatar'
 import PaintSwatch from '../Kodetre/Kodeliste/PaintSwatch'
-import Kodetagg from '../Kodetre/Kodetagg'
 import localStorageHelper from '../localStorageHelper'
 import PrettyPrint from '../prettyprint'
-import språk from '../språk'
-import ColorPicker from './ColorPicker'
 
 class Kartlagelement extends React.Component {
   undertekst(størsteAreal, areal, antall, undertittel) {
@@ -53,6 +47,7 @@ class Kartlagelement extends React.Component {
   }
 
   render() {
+    console.log(this.props.kode, this.props.farge)
     const item = this.props
     const { meta, farge, kode, avatarUtenRamme, areal } = this.props
     const tittel = språk(meta.tittel)
@@ -60,7 +55,6 @@ class Kartlagelement extends React.Component {
       <React.Fragment>
         <ListItem
           onClick={this.props.onClick}
-          innerDivStyle={{ backgroundColor: areal ? '' : '#DDDDDD' }}
           key={item.kode}
           onMouseEnter={() =>
             this.props.onMouseEnter && this.props.onMouseEnter(kode)
@@ -69,19 +63,8 @@ class Kartlagelement extends React.Component {
             this.props.onMouseLeave && this.props.onMouseLeave(kode)
           }}
           leftAvatar={<Bildeavatar utenRamme={avatarUtenRamme} kode={kode} />}
-          primaryText={
-            <div>
-              {tittel}
-              <br />
-              <Kodetagg hele={true} kode={kode} />
-            </div>
-          }
-          secondaryText={this.undertekst(
-            this.props.størsteAreal,
-            this.props.areal,
-            this.props.antallNaturområder,
-            meta.undertittel
-          )}
+          primaryText={tittel}
+          secondaryText={undertittel}
           rightAvatar={
             <div>
               <div
@@ -89,14 +72,14 @@ class Kartlagelement extends React.Component {
                   display: 'inline-flex',
                   position: 'absolute',
                   right: 40,
-                  top: 16,
+                  top: 8,
                 }}
               >
                 <Toggle
                   toggled={!this.props.skjul}
                   onClick={e => {
                     e.stopPropagation()
-                    this.props.onToggleVisible(meta.kode)
+                    this.props.onToggleVisible(kode)
                   }}
                 />
               </div>
@@ -105,15 +88,15 @@ class Kartlagelement extends React.Component {
                   display: 'inline-flex',
                   position: 'absolute',
                   right: 0,
-                  top: 16,
+                  top: 8,
                 }}
               >
-                <PaintSwatch color={farge} />
+                <PaintSwatch farge={farge} />
               </div>
             </div>
           }
         />
-        {this.props.erEkspandert && (
+        {erEkspandert && (
           <div style={{ marginLeft: 24, marginBottom: 24 }}>
             <ColorPicker
               style={{ display: 'fixed' }}
