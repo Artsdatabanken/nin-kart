@@ -1,24 +1,24 @@
-import Color from 'color'
-
 class LocalStorageHelper {
-  static getFargeKode(kode, meta) {
-    var customColors = undefined
-    if (window.localStorage) {
-      customColors = localStorage.getItem('customColors')
-    }
+  static overrideFarger(meta) {
+    if (!meta.barn) meta.barn = {}
+    if (!window.localStorage) return
+    const customColors = JSON.parse(localStorage.getItem('customColors'))
+    const table = customColors.reduce((all, c) => {
+      all[c.kode] = c.farge
+      return all
+    }, {})
+    Object.keys(meta.barn).forEach(kode => {
+      if (kode in table) meta.barn[kode].farge = table[kode]
+    })
+    if (meta.kode in table) meta.farge = table[meta.kode]
+  }
 
-    let defaultFarge = Color(meta && meta.farge ? meta.farge : '#888888').alpha(
-      0.7
-    )
-    if (customColors) {
-      let fargeElement = JSON.parse(customColors).filter(
-        x => x.kode.toLowerCase() === kode.toLowerCase()
-      )
-      return fargeElement && fargeElement[0] && fargeElement[0].farge
-        ? fargeElement[0].farge
-        : defaultFarge
-    }
-    return defaultFarge
+  static settFargeKode(kode, farge) {
+    console.warn(kode, farge)
+    let farger = JSON.parse(localStorage.getItem('customColors') || '[]')
+    farger = farger.filter(x => x.kode !== kode)
+    farger.push({ kode: kode, farge: farge })
+    localStorage.setItem('customColors', JSON.stringify(farger))
   }
 }
 

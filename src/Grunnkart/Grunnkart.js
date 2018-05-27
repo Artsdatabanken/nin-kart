@@ -15,6 +15,7 @@ import {
 } from '../Kart/Mapbox/MapStyle'
 import VenstreVinduContainer from '../VenstreVinduContainer'
 import backend from '../backend'
+import localStorageHelper from '../localStorageHelper'
 import MainDrawer from './MainDrawer'
 
 type State = {
@@ -163,6 +164,7 @@ class Grunnkart extends React.Component<Props, State> {
       if (data.barn && Object.keys(data.barn).length > 100) {
         data.barn = { mange: { tittel: { nb: 'TODO i grunnkart.js' } } }
       }
+      localStorageHelper.overrideFarger(data)
       this.setState({ meta: data ? data : '' })
     })
   }
@@ -175,6 +177,7 @@ class Grunnkart extends React.Component<Props, State> {
   }
 
   handleUpdateSelectedLayerProp = (kode, key, value) => {
+    console.error(kode, key, value)
     let meta = this.state.valgteKoder
     meta.forEach(barn => {
       if (barn.kode === kode) {
