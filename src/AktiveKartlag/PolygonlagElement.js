@@ -1,13 +1,10 @@
 import { FlatButton } from 'material-ui'
-import Toggle from 'material-ui/Toggle'
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import ActionDelete from 'material-ui/svg-icons/action/delete'
 import ActionInfo from 'material-ui/svg-icons/action/info'
 import React from 'react'
 import { withRouter } from 'react-router'
 import tinycolor from 'tinycolor2'
-import Bildeavatar from '../Kodetre/Kodeliste/Bildeavatar'
-import PaintSwatch from '../Kodetre/Kodeliste/PaintSwatch'
 import Kodetagg from '../Kodetre/Kodetagg'
 import PrettyPrint from '../prettyprint'
 import språk from '../språk'
@@ -71,6 +68,7 @@ class PolygonlagElement extends React.Component {
     return (
       <KartlagElement
         farge={farge}
+        avatarUtenRamme={avatarUtenRamme}
         onClick={this.props.onClick}
         key={item.kode}
         erEkspandert={this.props.erEkspandert}
@@ -80,7 +78,7 @@ class PolygonlagElement extends React.Component {
         onMouseLeave={() => {
           this.props.onMouseLeave && this.props.onMouseLeave(kode)
         }}
-        leftAvatar={<Bildeavatar utenRamme={avatarUtenRamme} kode={kode} />}
+        onToggleVisible={this.props.onToggleVisible}
         tittel={
           <div>
             {språk(tittel)}
@@ -94,36 +92,6 @@ class PolygonlagElement extends React.Component {
           this.props.antallNaturområder,
           undertittel
         )}
-        rightAvatar={
-          <div>
-            <div
-              style={{
-                display: 'inline-flex',
-                position: 'absolute',
-                right: 40,
-                top: 16,
-              }}
-            >
-              <Toggle
-                toggled={!this.props.skjul}
-                onClick={e => {
-                  e.stopPropagation()
-                  this.props.onToggleVisible(kode)
-                }}
-              />
-            </div>
-            <div
-              style={{
-                display: 'inline-flex',
-                position: 'absolute',
-                right: 0,
-                top: 16,
-              }}
-            >
-              <PaintSwatch farge={farge} />
-            </div>
-          </div>
-        }
       >
         <ColorPicker
           color={farge}
