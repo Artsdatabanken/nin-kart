@@ -8,13 +8,6 @@ import PaintSwatch from '../Kodetre/Kodeliste/PaintSwatch'
 import PrettyPrint from '../prettyprint'
 
 class Kartlagelement extends React.Component {
-  setFargeKode(kode, farge) {
-    let farger = JSON.parse(localStorage.getItem('customColors') || '[]')
-    farger = farger.filter(x => x.kode !== kode)
-    farger.push({ kode: kode, farge: farge })
-    localStorage.setItem('customColors', JSON.stringify(farger))
-  }
-
   getFargeKode = () => {
     let kode = this.props.kode
     if (localStorage) {
@@ -66,7 +59,6 @@ class Kartlagelement extends React.Component {
   }
 
   render() {
-    console.log(this.props.kode, this.props.farge)
     const item = this.props
     const {
       tittel,
@@ -76,7 +68,6 @@ class Kartlagelement extends React.Component {
       avatarUtenRamme,
     } = this.props
     const farge = this.getFargeKode()
-    console.log(farge)
     return (
       <React.Fragment>
         <ListItem
