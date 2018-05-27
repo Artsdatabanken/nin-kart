@@ -39,9 +39,6 @@ const Kodeliste = ({
             ] || {}
           : {}
         const metabarnet = metadata[kode]
-        console.log(kode)
-        console.log(apibarn)
-        console.log(metadata)
         return (
           <Kodelisteelement
             key={kode}

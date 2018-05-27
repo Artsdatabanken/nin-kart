@@ -4882,7 +4882,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               <div
                                 style={
                                   Object {
-                                    "backgroundColor": "#f46d43",
+                                    "backgroundColor": undefined,
                                     "border": "1px solid hsla(0, 0%, 0%, 0.2)",
                                     "borderRadius": "12%",
                                     "bottom": 0,
@@ -5101,7 +5101,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               <div
                                 style={
                                   Object {
-                                    "backgroundColor": "#fdae61",
+                                    "backgroundColor": undefined,
                                     "border": "1px solid hsla(0, 0%, 0%, 0.2)",
                                     "borderRadius": "12%",
                                     "bottom": 0,
@@ -5320,7 +5320,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               <div
                                 style={
                                   Object {
-                                    "backgroundColor": "#fee08b",
+                                    "backgroundColor": undefined,
                                     "border": "1px solid hsla(0, 0%, 0%, 0.2)",
                                     "borderRadius": "12%",
                                     "bottom": 0,
@@ -5539,7 +5539,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                               <div
                                 style={
                                   Object {
-                                    "backgroundColor": "#e6f598",
+                                    "backgroundColor": undefined,
                                     "border": "1px solid hsla(0, 0%, 0%, 0.2)",
                                     "borderRadius": "12%",
                                     "bottom": 0,

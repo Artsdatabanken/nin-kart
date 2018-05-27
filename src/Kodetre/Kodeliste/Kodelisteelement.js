@@ -24,22 +24,6 @@ type Props = {
 }
 
 class Kodelisteelement extends React.Component<Props, State> {
-  getFargeKode = () => {
-    let kode = this.props.kode
-    if (localStorage) {
-      let customColors = localStorage.getItem('customColors')
-      if (customColors) {
-        let fargeElement = JSON.parse(customColors).filter(
-          x => x.kode.toLowerCase() === kode.toLowerCase()
-        )
-        return fargeElement && fargeElement[0] && fargeElement[0].farge
-          ? fargeElement[0].farge
-          : this.props.meta.farge
-      }
-    }
-    return this.props.meta.farge
-  }
-
   undertekst(størsteAreal, areal, antall, undertittel) {
     if (undertittel) return undertittel.nb
     if (!areal) areal = 0
@@ -81,8 +65,7 @@ class Kodelisteelement extends React.Component<Props, State> {
   }
 
   render() {
-    const { meta, kode, avatarUtenRamme, areal } = this.props
-    console.warn(this.props)
+    const { meta, kode, farge, avatarUtenRamme, areal } = this.props
     return (
       <ListItem
         innerDivStyle={{ backgroundColor: areal ? '' : '#DDDDDD' }}
@@ -114,7 +97,7 @@ class Kodelisteelement extends React.Component<Props, State> {
             }}
           >
             <PaintSwatch
-              color={this.getFargeKode()}
+              color={farge}
               onClick={e => {
                 e.stopPropagation()
               }}

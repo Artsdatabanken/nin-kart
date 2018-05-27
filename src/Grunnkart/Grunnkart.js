@@ -118,6 +118,7 @@ class Grunnkart extends React.Component<Props, State> {
   }
 
   handleUpdateSelectedLayerProp = (kode, key, value) => {
+    console.error(kode, key, value)
     let meta = this.state.valgteKoder
     meta.forEach(barn => {
       if (barn.kode === kode) {
