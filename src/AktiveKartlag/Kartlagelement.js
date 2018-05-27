@@ -1,18 +1,26 @@
-import { FlatButton, ListItem } from 'material-ui'
+import { ListItem } from 'material-ui'
 import Toggle from 'material-ui/Toggle'
 import muiThemeable from 'material-ui/styles/muiThemeable'
-import ActionDelete from 'material-ui/svg-icons/action/delete'
-import ActionInfo from 'material-ui/svg-icons/action/info'
 import React from 'react'
 import { withRouter } from 'react-router'
-import tinycolor from 'tinycolor2'
 import Bildeavatar from '../Kodetre/Kodeliste/Bildeavatar'
 import PaintSwatch from '../Kodetre/Kodeliste/PaintSwatch'
-import localStorageHelper from '../localStorageHelper'
 import PrettyPrint from '../prettyprint'
-import ColorPicker from './ColorPicker'
 
 class Kartlagelement extends React.Component {
+  getFargeKode = () => {
+    let kode = this.props.kode
+    if (localStorage) {
+      let customColors = localStorage.getItem('customColors')
+      if (customColors) {
+        let fargeElement = JSON.parse(customColors).filter(x => x.kode === kode)
+        if (fargeElement && fargeElement[0] && fargeElement[0].farge)
+          return fargeElement[0].farge
+      }
+    }
+    return this.props.farge
+  }
+
   undertekst(størsteAreal, areal, antall, undertittel) {
     if (undertittel) return undertittel.nb
     if (!areal) areal = 0
@@ -53,14 +61,13 @@ class Kartlagelement extends React.Component {
   render() {
     const item = this.props
     const {
-      meta,
       tittel,
       undertittel,
-      farge,
       kode,
-      avatarUtenRamme,
       erEkspandert,
+      avatarUtenRamme,
     } = this.props
+    const farge = this.getFargeKode()
     return (
       <React.Fragment>
         <ListItem
@@ -108,31 +115,7 @@ class Kartlagelement extends React.Component {
         />
         {erEkspandert && (
           <div style={{ marginLeft: 24, marginBottom: 24 }}>
-            <ColorPicker
-              style={{ display: 'fixed' }}
-              color={farge}
-              onChange={farge => {
-                const rgbString = tinycolor(farge.rgb).toRgbString()
-                localStorageHelper.settFargeKode(item.kode, rgbString)
-                this.props.onUpdateLayerProp(item.kode, 'farge', rgbString)
-              }}
-            />
-
-            <FlatButton
-              label="Fjern"
-              primary={true}
-              onClick={e => {
-                this.props.onRemove(item.kode)
-              }}
-              icon={<ActionDelete />}
-            />
-
-            <FlatButton
-              label="Info"
-              primary={true}
-              onClick={() => this.props.history.replace(meta.sti)}
-              icon={<ActionInfo />}
-            />
+            {this.props.children}
           </div>
         )}
       </React.Fragment>
