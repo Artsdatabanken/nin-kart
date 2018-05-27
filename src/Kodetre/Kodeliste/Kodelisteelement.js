@@ -65,7 +65,7 @@ class Kodelisteelement extends React.Component<Props, State> {
   }
 
   render() {
-    const { meta, kode, farge, avatarUtenRamme, areal } = this.props
+    const { meta, kode, avatarUtenRamme, areal } = this.props
     return (
       <ListItem
         innerDivStyle={{ backgroundColor: areal ? '' : '#DDDDDD' }}
@@ -97,7 +97,7 @@ class Kodelisteelement extends React.Component<Props, State> {
             }}
           >
             <PaintSwatch
-              color={farge}
+              color={meta.farge}
               onClick={e => {
                 e.stopPropagation()
               }}

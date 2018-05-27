@@ -52,7 +52,6 @@ class Grunnkart extends React.Component<Props, State> {
       mapBounds: {},
       opplystKode: '',
       bbox: {},
-      ekspandertKode: null,
     }
     this.redirectTo(props.location.pathname.replace('/katalog/', ''))
   }
@@ -204,11 +203,6 @@ class Grunnkart extends React.Component<Props, State> {
     }
   }
 
-  handleShowColorpicker = kode => {
-    let nyKode = this.state.ekspandertKode === kode ? null : kode
-    this.setState({ ekspandertKode: nyKode })
-  }
-
   handleToggleVisible = kode => {
     let meta = this.state.valgteKoder
     Object.keys(meta).forEach(id => {
@@ -325,11 +319,9 @@ class Grunnkart extends React.Component<Props, State> {
                         opplystKode: '',
                       })
                     }
-                    onShowColorpicker={this.handleShowColorpicker}
                     onToggleVisible={this.handleToggleVisible}
                     onUpdateLayerProp={this.handleUpdateSelectedLayerProp}
                     onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                    ekspandertKode={this.state.ekspandertKode}
                   />
                 }
               </div>

@@ -4,6 +4,7 @@ import muiThemeable from 'material-ui/styles/muiThemeable'
 import ActionDelete from 'material-ui/svg-icons/action/delete'
 import ActionInfo from 'material-ui/svg-icons/action/info'
 import React from 'react'
+import { withRouter } from 'react-router'
 import tinycolor from 'tinycolor2'
 import Bildeavatar from '../Kodetre/Kodeliste/Bildeavatar'
 import PaintSwatch from '../Kodetre/Kodeliste/PaintSwatch'
@@ -53,15 +54,12 @@ class Kartlagelement extends React.Component {
 
   render() {
     const item = this.props
-    const { meta, kode, avatarUtenRamme, areal } = this.props
+    const { meta, farge, kode, avatarUtenRamme, areal } = this.props
     const tittel = språk(meta.tittel)
     return (
       <React.Fragment>
         <ListItem
-          onClick={e => {
-            e.stopPropagation()
-            this.props.onShowColorpicker(meta.kode)
-          }}
+          onClick={this.props.onClick}
           innerDivStyle={{ backgroundColor: areal ? '' : '#DDDDDD' }}
           key={item.kode}
           onMouseEnter={() =>
@@ -85,42 +83,38 @@ class Kartlagelement extends React.Component {
             meta.undertittel
           )}
           rightAvatar={
-            this.props.showColor ? (
-              <div>
-                <div
-                  style={{
-                    display: 'inline-flex',
-                    position: 'absolute',
-                    right: 40,
-                    top: 16,
+            <div>
+              <div
+                style={{
+                  display: 'inline-flex',
+                  position: 'absolute',
+                  right: 40,
+                  top: 16,
+                }}
+              >
+                <Toggle
+                  toggled={!this.props.skjul}
+                  onClick={e => {
+                    e.stopPropagation()
+                    this.props.onToggleVisible(meta.kode)
                   }}
-                >
-                  <Toggle
-                    toggled={!this.props.skjul}
-                    onClick={e => {
-                      e.stopPropagation()
-                      this.props.onToggleVisible(meta.kode)
-                    }}
-                  />
-                </div>
-                <div
-                  style={{
-                    display: 'inline-flex',
-                    position: 'absolute',
-                    right: 0,
-                    top: 16,
-                  }}
-                >
-                  <PaintSwatch color={meta.farge} />
-                </div>
+                />
               </div>
-            ) : (
-              <div />
-            )
+              <div
+                style={{
+                  display: 'inline-flex',
+                  position: 'absolute',
+                  right: 0,
+                  top: 16,
+                }}
+              >
+                <PaintSwatch color={farge} />
+              </div>
+            </div>
           }
         />
         {this.props.erEkspandert && (
-          <div style={{ marginLeft: 56 }}>
+          <div style={{ marginLeft: 24, marginBottom: 24 }}>
             <ColorPicker
               style={{ display: 'fixed' }}
               color={meta.farge}
@@ -143,7 +137,7 @@ class Kartlagelement extends React.Component {
             <FlatButton
               label="Info"
               primary={true}
-              onClick={() => this.props.onGoToCode(meta.sti)}
+              onClick={() => this.props.history.replace(meta.sti)}
               icon={<ActionInfo />}
             />
           </div>
@@ -153,4 +147,4 @@ class Kartlagelement extends React.Component {
   }
 }
 
-export default muiThemeable()(Kartlagelement)
+export default muiThemeable()(withRouter(Kartlagelement))
