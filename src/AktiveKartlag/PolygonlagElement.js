@@ -70,7 +70,8 @@ class PolygonlagElement extends React.Component {
         farge={farge}
         avatarUtenRamme={avatarUtenRamme}
         onClick={this.props.onClick}
-        key={item.kode}
+        key={item.key}
+        kode={item.kode}
         erEkspandert={this.props.erEkspandert}
         onMouseEnter={() =>
           this.props.onMouseEnter && this.props.onMouseEnter(kode)
@@ -78,7 +79,8 @@ class PolygonlagElement extends React.Component {
         onMouseLeave={() => {
           this.props.onMouseLeave && this.props.onMouseLeave(kode)
         }}
-        onToggleVisible={this.props.onToggleVisible}
+        vis={this.props.vis}
+        onToggleVisible={kode => this.props.onToggleVisible(kode)}
         tittel={
           <div>
             {språk(tittel)}

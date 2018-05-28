@@ -5,7 +5,6 @@ import backend from '../../backend'
 import språk from '../../språk'
 import BildeDialog from './BildeDialog'
 import Tittelblokk from './Tittelblokk'
-import { muiTheme } from 'storybook-addon-material-ui'
 
 class Kodekort extends React.Component {
   state = {
@@ -43,31 +42,7 @@ class Kodekort extends React.Component {
     )} 1.5x, ${backend.getFotoOmslag(kode, 816)} 2x`
     return (
       <Card containerStyle={{ paddingBottom: 0 }}>
-        <CardMedia
-          onClick={() => this.handleOpen()}
-          overlay={
-            <Tittelblokk
-              favorite={this.state.favorite}
-              muiTheme={muiTheme}
-              onGoToCode={this.props.onGoToCode}
-              onAddLayer={this.props.onAddLayer}
-              toggleFavorite={this.toggleFavorite}
-              onAddSelected={this.props.onAddSelected}
-              nodeMeta={{
-                farge: this.props.farge,
-                kode: this.props.kode,
-                sti: this.props.sti,
-                tittel: this.props.tittel,
-                barn: this.props.barn,
-              }}
-              kode={this.props.kode}
-              infoUrl={this.props.infoUrl}
-              tittel={språk(this.props.tittel)}
-              overordnet={this.props.overordnet}
-            />
-          }
-          style={{ height: 297, maxHeight: 297 }}
-        >
+        <CardMedia overlay={null} style={{ height: 297, maxHeight: 297 }}>
           <img
             onClick={() => this.handleOpen()}
             src={backend.getFotoOmslag(kode)}

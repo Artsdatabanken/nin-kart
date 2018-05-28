@@ -98,7 +98,7 @@ class Kartlagelement extends React.Component {
                       toggled={this.props.vis}
                       onClick={e => {
                         e.stopPropagation()
-                        this.props.onToggleVisible(kode)
+                        this.props.onToggleVisible(item.kode)
                       }}
                     />
                   </div>

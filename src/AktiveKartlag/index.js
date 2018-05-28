@@ -6,7 +6,6 @@ import BakgrunnskartElement from './BakgrunnskartElement'
 import EtiketterElement from './EtiketterElement'
 import PolygonlagElement from './PolygonlagElement'
 import TerrenglagElement from './TerrenglagElement'
-import Kartlagelement from './Kartlagelement'
 
 class AktiveKartlag extends React.Component {
   state = { ekspandertKode: null }
@@ -19,13 +18,9 @@ class AktiveKartlag extends React.Component {
     const {
       title,
       koder,
-      onGoToCode,
       onRemoveSelectedLayer,
-      ekspandertKode,
-      fjernKode,
       onMouseEnter,
       onMouseLeave,
-      onShowColorpicker,
       onToggleVisible,
       onUpdateLayerProp,
       language,
@@ -62,7 +57,7 @@ class AktiveKartlag extends React.Component {
             kode="Stedsnavn, verneområder"
             meta={{ tittel: { nb: 'Etiketter' } }}
             erEkspandert={'etiketter' === this.state.ekspandertKode}
-            skjul={false}
+            vis={true}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             onRemove={kode => onRemoveSelectedLayer('etiketter')}
@@ -75,54 +70,36 @@ class AktiveKartlag extends React.Component {
             const kode = forelder.kode
             return (
               <React.Fragment key={kode}>
-                <Kartlagelement
-                  meta={forelder}
-                  erEkspandert={kode === ekspandertKode}
-                  kode={kode}
+                <PolygonlagElement
+                  {...forelder}
                   key={'valgt' + kode}
-                  vis={forelder.vis ? true : false}
-                  onGoToCode={onGoToCode}
+                  kode={kode}
+                  erEkspandert={kode === this.state.ekspandertKode}
+                  vis={forelder.vis}
                   onMouseEnter={onMouseEnter}
                   onMouseLeave={onMouseLeave}
-                  onClose={kode => onRemoveSelectedLayer(kode)}
-                  visHeleKoden={true}
+                  onRemove={kode => onRemoveSelectedLayer(kode)}
                   onUpdateLayerProp={onUpdateLayerProp}
-                  onShowColorpicker={kode => onShowColorpicker(kode)}
-                  onToggleVisible={kode => onToggleVisible(kode)}
+                  onClick={() => this.handleClick(kode)}
+                  onToggleVisible={onToggleVisible}
                   language={language}
                 />
                 {forelder.barnArray.map(item => {
                   const kode = item.kode
                   return (
                     <React.Fragment key={kode}>
-                      <Kartlagelement
-                        meta={item}
-                        erEkspandert={kode === ekspandertKode}
-                        kode={kode}
-                        key={'valgt' + kode}
-                        vis={item.vis ? true : false}
-                        onGoToCode={onGoToCode}
-                        onMouseEnter={onMouseEnter}
-                        onMouseLeave={onMouseLeave}
-                        visHeleKoden={true}
-                        onUpdateLayerProp={onUpdateLayerProp}
-                        onShowColorpicker={kode => onShowColorpicker(kode)}
-                        onToggleVisible={kode => onToggleVisible(kode)}
-                        showColor={onShowColorpicker}
-                        language={language}
-                      />
                       <PolygonlagElement
                         {...item}
-                        key={kode}
+                        key={'valgt' + kode}
                         kode={kode}
                         erEkspandert={kode === this.state.ekspandertKode}
-                        skjul={item.skjul}
+                        vis={item.vis}
                         onMouseEnter={onMouseEnter}
                         onMouseLeave={onMouseLeave}
                         onRemove={kode => onRemoveSelectedLayer(kode)}
                         onUpdateLayerProp={onUpdateLayerProp}
                         onClick={() => this.handleClick(kode)}
-                        onToggleVisible={kode => onToggleVisible(kode)}
+                        onToggleVisible={onToggleVisible}
                         language={language}
                       />
                     </React.Fragment>
@@ -136,7 +113,7 @@ class AktiveKartlag extends React.Component {
             kode="Mørk grå"
             meta={{ tittel: { nb: 'Bakgrunnskart' } }}
             erEkspandert={'basemap' === this.state.ekspandertKode}
-            skjul={false}
+            vis={true}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             onRemove={kode => onRemoveSelectedLayer('basemap')}
@@ -150,7 +127,7 @@ class AktiveKartlag extends React.Component {
             kode="2.5x overdrevet"
             meta={{ tittel: { nb: '3D terreng' } }}
             erEkspandert={'terreng' === this.state.ekspandertKode}
-            skjul={false}
+            vis={true}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             onRemove={kode => onRemoveSelectedLayer('terreng')}
