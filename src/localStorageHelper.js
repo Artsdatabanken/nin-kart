@@ -2,7 +2,9 @@ class LocalStorageHelper {
   static overrideFarger(meta) {
     if (!meta.barn) meta.barn = {}
     if (!window.localStorage) return
-    const customColors = JSON.parse(localStorage.getItem('customColors'))
+    const customString = localStorage.getItem('customColors')
+    if (!customString) return
+    const customColors = JSON.parse(customString)
     const table = customColors.reduce((all, c) => {
       all[c.kode] = c.farge
       return all
