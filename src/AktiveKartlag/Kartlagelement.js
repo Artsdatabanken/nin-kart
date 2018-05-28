@@ -21,43 +21,6 @@ class Kartlagelement extends React.Component {
     return this.props.farge
   }
 
-  undertekst(størsteAreal, areal, antall, undertittel) {
-    if (undertittel) return undertittel.nb
-    if (!areal) areal = 0
-    if (!størsteAreal) størsteAreal = 1
-    return (
-      <div>
-        <div
-          style={{
-            position: 'relative',
-            width: 200,
-          }}
-        >
-          <div
-            className="sizebar"
-            style={{
-              marginTop: 4,
-              float: 'left',
-              height: 4,
-              borderTopRightRadius: 10,
-              borderBottomRightRadius: 10,
-              width: `${100.0 * areal / størsteAreal}%`,
-            }}
-            title={'areal: ' + PrettyPrint.prettyPrintAreal(areal)}
-          />
-        </div>
-        <div
-          style={{
-            display: 'inline',
-            position: 'absolute',
-            right: 52,
-            float: 'right',
-          }}
-        />
-      </div>
-    )
-  }
-
   render() {
     const item = this.props
     const {
