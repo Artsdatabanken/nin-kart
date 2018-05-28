@@ -118,8 +118,8 @@ class PunktinformasjonContainer extends Component {
   }
 
   MetadataDictionary = {
-    surveyer: 'Kartlegger, Kontaktperson',
-    owner: 'Dataeier, kontaktperson',
+    surveyer: 'Kartlegger',
+    owner: 'Dataeier',
     program: 'Program',
     project: 'Prosjekt',
     nivå: 'Natursystem',
@@ -135,67 +135,47 @@ class PunktinformasjonContainer extends Component {
     for (var i in props) {
       switch (i) {
         case 'nivå':
-          this.AddTitleToFacts(
-            {
-              description: backend.NatureLevelNames[props.nivå],
-            },
-            'NA',
-            true
-          )
           break
         case 'surveyer':
         case 'owner':
-          this.AddTitleToFacts(
-            {
-              description: props[i].company + ', ' + props[i].contactPerson,
-              url: props[i].homesite
-                ? props[i].homesite
-                : 'mailto:' + props[i].email,
-              company: props[i].company,
-            },
-            this.MetadataDictionary[i]
-          )
+          facts[this.MetadataDictionary[i]] = {
+            value: props[i].company + ', ' + props[i].contactPerson,
+            logo: backend.getCompanyLogo('MDIR'),
+            homepage: 'http://www.miljodirektoratet.no/',
+            dataorigin: 'MDIR',
+            url: props[i].homesite
+              ? props[i].homesite
+              : 'mailto:' + props[i].email,
+            name: this.MetadataDictionary[i],
+          }
           break
         case 'program':
         case 'project':
           if (props[i].name) {
-            this.AddTitleToFacts(
-              {
-                description: props[i].description
-                  ? props[i].name + ', ' + props[i].description
-                  : props[i].name,
-                url: '',
-                company: props.owner ? props.owner.company : '',
-              },
-              this.MetadataDictionary[i]
-            )
+            facts[this.MetadataDictionary[i]] = {
+              value: props[i].description
+                ? props[i].name + ', ' + props[i].description
+                : props[i].name,
+              logo: backend.getCompanyLogo('MDIR'),
+              homepage: 'http://www.miljodirektoratet.no/',
+              dataorigin: 'MDIR',
+              url: '',
+              name: this.MetadataDictionary[i],
+            }
           }
           break
         case 'surveyedFrom':
         case 'surveyScale':
-          this.AddTitleToFacts(
-            {
-              description: props.surveyedFrom
-                ? props.surveyedFrom
-                : props.surveyScale,
-            },
-            this.MetadataDictionary[i],
-            true
-          )
+          facts[this.MetadataDictionary[i]] = {
+            value: props.surveyedFrom ? props.surveyedFrom : props.surveyScale,
+            name: this.MetadataDictionary[i],
+            logo: backend.getCompanyLogo('MDIR'),
+            homepage: 'http://www.miljodirektoratet.no/',
+            dataorigin: 'MDIR',
+          }
+
           break
         case 'rødlisteKategori':
-          if (props[i].code === 'LC') break
-          let key = 'RL_' + props[i].code
-          facts[key] = this.createRødlistePointInfo(
-            this.MetadataDictionary[i],
-            props[i].code
-          )
-          if (props[i].vurderingsenhet) {
-            facts.Vurderingsenhet = this.createRødlistePointInfo(
-              'Vurderingsenhet',
-              props[i].vurderingsenhet.code
-            )
-          }
           break
         default:
           break
@@ -204,17 +184,28 @@ class PunktinformasjonContainer extends Component {
 
     for (let code in props.codes) {
       let param = props.codes[code]
-      backend
-        .getCodeTitle(code)
-        .then(result =>
-          this.AddTitleToFacts(
-            { description: result, part: props.codes[code].andel },
-            code,
-            true
-          ).then(
-            this.ImportBeskrivelsesVariabler(param.beskrivelsesvariabler, code)
-          )
-        )
+
+      facts[code] = this.createNatureAreaPointInfo(
+        code,
+        param.tittel,
+        param.andel
+      )
+      if (!param.beskrivelsesvariabler) continue
+      if (!Array.isArray(param.beskrivelsesvariabler)) {
+        code.beskrivelsesvariabler = [param.beskrivelsesvariabler]
+      }
+      for (let value in param.beskrivelsesvariabler) {
+        let beskrivelsesvariabel = param.beskrivelsesvariabler[value]
+        let keyName = Object.keys(beskrivelsesvariabel)[0]
+        beskrivelsesvariabel = beskrivelsesvariabel[keyName]
+        if (beskrivelsesvariabel.forfader) {
+          if (!facts[code].codes) facts[code].codes = {}
+          facts[code].codes[keyName] = {
+            value: beskrivelsesvariabel.tittel,
+            name: beskrivelsesvariabel.forfader,
+          }
+        }
+      }
     }
 
     if (props.description && props.description !== '')
@@ -222,65 +213,9 @@ class PunktinformasjonContainer extends Component {
         'Beskrivelse',
         props.description
       )
-  }
 
-  ImportBeskrivelsesVariabler(beskrivelsesvariabler, code) {
-    if (Array.isArray(beskrivelsesvariabler)) {
-      for (let a in beskrivelsesvariabler) {
-        let bv = 'BS_' + beskrivelsesvariabler[a]
-        backend
-          .getCodeTitle(bv)
-          .then(result =>
-            this.AddTitleToFacts({ description: result, parentCode: code }, bv)
-          )
-      }
-    } else if (beskrivelsesvariabler) {
-      let bv1 = 'BS_' + beskrivelsesvariabler
-      backend
-        .getCodeTitle(bv1)
-        .then(result =>
-          this.AddTitleToFacts({ description: result, parentCode: code }, bv1)
-        )
-    }
-  }
-
-  AddTitleToFacts(value, code, natureInfo = false) {
-    if (!value.description) return
-    return new Promise((resolve, reject) => {
-      let title = ''
-      let key = code
-      if (value.description.parent) {
-        code = value.description.parent
-      }
-
-      if (value.description.title) title = value.description.title
-      else title = value.description
-
-      let facts = this.state.natureAreaFacts ? this.state.natureAreaFacts : {}
-
-      if (natureInfo) {
-        facts[key] = this.createNatureAreaPointInfo(code, title, value.part)
-      } else {
-        if (value.parentCode) {
-          if (!facts[value.parentCode].codes) facts[value.parentCode].codes = {}
-          facts[value.parentCode].codes[key] = this.createPointInfo(
-            code,
-            title,
-            value.url,
-            value.company
-          )
-        } else
-          facts[key] = this.createPointInfo(
-            code,
-            title,
-            value.url,
-            value.company
-          )
-      }
-
-      this.setState({
-        natureAreaFacts: facts,
-      })
+    this.setState({
+      natureAreaFacts: facts,
     })
   }
 
