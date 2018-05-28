@@ -156,6 +156,7 @@ class Grunnkart extends React.Component<Props, State> {
       })
       console.log('addSelected:' + props.kode)
     }
+  }
   handleToggleLayer = (kode, state) => {
     const koder = state
       ? [...this.state.valgteKoder, this.state.meta]

@@ -98,7 +98,7 @@ class Kartlagelement extends React.Component {
                       toggled={this.props.vis}
                       onClick={e => {
                         e.stopPropagation()
-                        this.props.onToggleVisible(meta.kode)
+                        this.props.onToggleVisible(kode)
                       }}
                     />
                   </div>
@@ -109,31 +109,16 @@ class Kartlagelement extends React.Component {
                       display: 'inline-flex',
                       position: 'absolute',
                       right: 0,
-                      top: 16,
+                      top: 8,
                     }}
                   >
-                    <PaintSwatch
-                      color={this.getFargeKode()}
-                      onClick={e => {
-                        e.stopPropagation()
-                        this.props.onShowColorpicker(meta.kode)
-                      }}
-                    />
+                    <PaintSwatch farge={farge} />
                   </div>
                 )}
-
               </div>
-              <div
-                style={{
-                  display: 'inline-flex',
-                  position: 'absolute',
-                  right: 0,
-                  top: 8,
-                }}
-              >
-                <PaintSwatch farge={farge} />
-              </div>
-            </div>
+            ) : (
+              <div />
+            )
           }
         />
         {erEkspandert && (

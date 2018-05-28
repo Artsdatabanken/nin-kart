@@ -5,6 +5,7 @@ import backend from '../../backend'
 import språk from '../../språk'
 import BildeDialog from './BildeDialog'
 import Tittelblokk from './Tittelblokk'
+import { muiTheme } from 'storybook-addon-material-ui'
 
 class Kodekort extends React.Component {
   state = {
