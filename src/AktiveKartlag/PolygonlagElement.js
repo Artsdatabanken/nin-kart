@@ -1,5 +1,4 @@
 import { FlatButton } from 'material-ui'
-import muiThemeable from 'material-ui/styles/muiThemeable'
 import ActionDelete from 'material-ui/svg-icons/action/delete'
 import ActionInfo from 'material-ui/svg-icons/action/info'
 import React from 'react'
@@ -116,4 +115,4 @@ class PolygonlagElement extends React.Component {
   }
 }
 
-export default muiThemeable()(withRouter(PolygonlagElement))
+export default withRouter(PolygonlagElement)

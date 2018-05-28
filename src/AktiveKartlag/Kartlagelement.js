@@ -1,25 +1,11 @@
 import { ListItem } from 'material-ui'
 import Toggle from 'material-ui/Toggle'
-import muiThemeable from 'material-ui/styles/muiThemeable'
 import React from 'react'
 import { withRouter } from 'react-router'
 import Bildeavatar from '../Kodetre/Kodeliste/Bildeavatar'
 import PaintSwatch from '../Kodetre/Kodeliste/PaintSwatch'
 
 class Kartlagelement extends React.Component {
-  getFargeKode = () => {
-    let kode = this.props.kode
-    if (localStorage) {
-      let customColors = localStorage.getItem('customColors')
-      if (customColors) {
-        let fargeElement = JSON.parse(customColors).filter(x => x.kode === kode)
-        if (fargeElement && fargeElement[0] && fargeElement[0].farge)
-          return fargeElement[0].farge
-      }
-    }
-    return this.props.farge
-  }
-
   render() {
     const item = this.props
     const {
@@ -27,9 +13,9 @@ class Kartlagelement extends React.Component {
       undertittel,
       kode,
       erEkspandert,
+      farge,
       avatarUtenRamme,
     } = this.props
-    const farge = this.getFargeKode()
     return (
       <React.Fragment>
         <ListItem
@@ -85,4 +71,4 @@ class Kartlagelement extends React.Component {
   }
 }
 
-export default muiThemeable()(withRouter(Kartlagelement))
+export default withRouter(Kartlagelement)
