@@ -75,6 +75,20 @@ class VenstreVinduContainer extends React.Component {
               parentId={this.state.parentId}
               onQueryChange={this.handleQueryChange}
             />
+            {this.state.searchResults && (
+              <Paper style={{ position: 'absolute' }} zDepth={2}>
+                <ResultatListe
+                  query={this.state.query}
+                  searchResults={this.state.searchResults}
+                  language={this.props.language}
+                  onClick={url => {
+                    console.warn('url', url)
+                    this.setState({ query: '', searchResults: null })
+                    history.push('/katalog/' + url)
+                  }}
+                />
+              </Paper>
+            )}
             <Switch>
               <Route
                 path="/katalog/:kode*"
@@ -100,6 +114,12 @@ class VenstreVinduContainer extends React.Component {
                   )
                 }}
               />
+              <Route
+                path="/lag"
+                render={({ match, history }) => {
+                  return 'lag'
+                }}
+              />
 
               <Route
                 path="/punkt/:lng,:lat"
@@ -112,20 +132,6 @@ class VenstreVinduContainer extends React.Component {
                 )}
               />
             </Switch>
-            {this.state.searchResults && (
-              <Paper style={{ position: 'absolute' }} zDepth={2}>
-                <ResultatListe
-                  query={this.state.query}
-                  searchResults={this.state.searchResults}
-                  language={this.props.language}
-                  onClick={url => {
-                    console.warn('url', url)
-                    this.setState({ query: '', searchResults: null })
-                    history.push('/katalog/' + url)
-                  }}
-                />
-              </Paper>
-            )}
           </div>
         )}
       />
