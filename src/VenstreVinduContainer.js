@@ -117,7 +117,7 @@ class VenstreVinduContainer extends React.Component {
                   }}
                 />
                 <Route
-                  path="/"
+                  path="/lag"
                   render={({ match, history }) => {
                     return (
                       <AktiveKartlag
@@ -137,11 +137,13 @@ class VenstreVinduContainer extends React.Component {
                 <Route
                   path="/punkt/:lng,:lat"
                   render={({ match, history }) => (
-                    <PunktinformasjonContainer
-                      lng={match.params.lng}
-                      lat={match.params.lat}
-                      localId={this.props.localId}
-                    />
+                    <div>
+                      <PunktinformasjonContainer
+                        lng={match.params.lng}
+                        lat={match.params.lat}
+                        localId={this.props.localId}
+                      />
+                    </div>
                   )}
                 />
               </Switch>
