@@ -5,7 +5,6 @@ import React from 'react'
 import { withRouter } from 'react-router'
 import Bildeavatar from '../Kodetre/Kodeliste/Bildeavatar'
 import PaintSwatch from '../Kodetre/Kodeliste/PaintSwatch'
-import PrettyPrint from '../prettyprint'
 
 class Kartlagelement extends React.Component {
   getFargeKode = () => {
