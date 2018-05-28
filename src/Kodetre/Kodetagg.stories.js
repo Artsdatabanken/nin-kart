@@ -100,7 +100,7 @@ storiesOf('Kodetagg', module)
             />
             <Kodetagg
               hele={true}
-              key={tag.kode}
+              key={'H' + tag.kode}
               kode={tag.kode}
               navn={tag.navn}
               color={tag.color}

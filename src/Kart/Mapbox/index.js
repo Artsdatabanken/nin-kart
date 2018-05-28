@@ -1,15 +1,14 @@
-import React, { Component } from 'react'
-import ReactMapGL, { Marker, Popup, NavigationControl } from 'react-map-gl'
+import Color from 'color'
+import DeckGL, { GridLayer /*, ScatterplotLayer */ } from 'deck.gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
+import muiThemeable from 'material-ui/styles/muiThemeable'
 import Place from 'material-ui/svg-icons/maps/place'
+import React, { Component } from 'react'
+import ReactMapGL, { Marker, NavigationControl, Popup } from 'react-map-gl'
 import { withRouter } from 'react-router'
 import { Route, Switch } from 'react-router-dom'
-import muiThemeable from 'material-ui/styles/muiThemeable'
-import hentLag from './style-lookup'
 import backend from '../../backend'
-import DeckGL, { GridLayer /*, ScatterplotLayer */ } from 'deck.gl'
-import Color from 'color'
-import localStorageHelper from '../../localStorageHelper'
+import hentLag from './style-lookup'
 
 const LIGHT_SETTINGS = {
   lightsPosition: [9.5, 56, 5000, -2, 57, 8000],
@@ -118,11 +117,8 @@ class Mapbox extends Component {
       )
       return
     }
-    console.log('fjern aktivt')
     map.removeLayer('aktivt')
-    console.log('fjern opplyst')
     map.removeLayer('opplyst') // fjern opplyst/hover-lag også når man endrer aktivt
-    //console.log('fjernet aktivt')
 
     if (aktivKode) {
       let taxonMatch = aktivKode.match(/AR\/(.*)/)
@@ -134,16 +130,10 @@ class Mapbox extends Component {
         aktivtLag.id = 'aktivt'
 
         aktivtLag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
-        let customColor = localStorageHelper.getFargeKode(
-          aktivKode,
-          this.props.meta
-        )
-        let fillColor = customColor
-          ? Color(customColor)
-          : Color('#ff2222').alpha(0.7)
+        let fillColor =
+          Color(this.props.meta.farge) || Color('#ff2222').alpha(0.7)
         aktivtLag.paint['fill-color'] = fillColor.rgbaString()
 
-        //console.log('add aktivt: ', aktivKode)
         this.addBehindSymbols(map, aktivtLag)
       }
     }
@@ -152,7 +142,6 @@ class Mapbox extends Component {
   updateOpplystKode = backend.debounce(function(aktivKode, opplystKode) {
     let map = this.map.getMap()
     if (!map || !map.isStyleLoaded()) return
-    console.log('fjern opplyst')
     map.removeLayer('opplyst')
 
     if (opplystKode) {
@@ -167,7 +156,6 @@ class Mapbox extends Component {
         opplystLag.paint['fill-color'] = 'cyan'
         opplystLag.paint['fill-outline-color'] = 'magenta'
         opplystLag.id = 'opplyst'
-        //console.log('add opplyst: ', opplystKode)
         this.addBehindSymbols(map, opplystLag)
       }
     }
@@ -183,7 +171,6 @@ class Mapbox extends Component {
         break
       }
     }
-    console.log('add : ', lag.id)
     map.addLayer(lag, firstSymbolId)
   }
 
@@ -193,7 +180,6 @@ class Mapbox extends Component {
 
     if (this.props.meta && this.props.meta.barn) {
       Object.keys(this.props.meta.barn).forEach(kode => {
-        console.log('fjern: legend' + kode)
         map.removeLayer('legend' + kode)
       })
     }
@@ -210,28 +196,15 @@ class Mapbox extends Component {
             const barn = nextProps.meta.barn[kode]
             let lag = hentLag(map, kode)
             if (!lag || !lag.paint) return
-            if (!lag.custom) {
-              let customColor = localStorageHelper.getFargeKode(
-                kode,
-                barn || nextProps.meta
-              )
-
-              let fillColor = customColor
-                ? Color(customColor)
-                : Color(barn.farge || '#ff2222').alpha(0.7)
-              lag.paint['fill-color'] = fillColor.rgbaString()
-              lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
-            }
+            let fillColor = Color(barn.farge || '#ff2222').alpha(0.7)
+            lag.paint['fill-color'] = fillColor.rgbaString()
+            lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
             lag.id = 'legend' + kode
-            //console.log('add lag: ', kode)
             this.addBehindSymbols(map, lag)
           })
         }
         map.off('styledata', addLayers)
       }
-      // else {
-      //   console.log('Fortsatt ikke klar...')
-      // }
     }
 
     map.on('styledata', addLayers)
@@ -257,7 +230,6 @@ class Mapbox extends Component {
 
         let lagId = 'valgt' + forelder.kode
         if (map.getLayer(lagId)) {
-          console.log('fjern: ', lagId)
           map.removeLayer(lagId)
         }
 
@@ -287,6 +259,7 @@ class Mapbox extends Component {
       nextProps.valgteKoder.length > 0
     ) {
       Object.keys(nextProps.valgteKoder).forEach(id => {
+
         const forelder = nextProps.valgteKoder[id]
 
         if (forelder.barn) {
@@ -297,24 +270,15 @@ class Mapbox extends Component {
             if (!item.vis) {
               return
             }
-            if (!map.getLayer(lagId)) {
-              let lag = hentLag(map, kode)
-              if (!lag || !lag.paint) return
-              if (!lag.custom) {
-                let customColor = localStorageHelper.getFargeKode(
-                  kode,
-                  item || nextProps.meta
-                )
+ if (!map.getLayer(lagId)) {
+          let lag = hentLag(map, item.kode)
+          if (!lag || !lag.paint) return
 
-                let fillColor = customColor
-                  ? Color(customColor)
-                  : Color(item.farge || '#ff2222').alpha(0.7)
-                lag.paint['fill-color'] = fillColor.rgbaString()
-                lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
-              }
-              lag.id = lagId
-              //console.log('la til valgt lag: ', kode)
-              this.addBehindSymbols(map, lag)
+          let fillColor = Color(item.farge || '#ff2222').alpha(0.7)
+          lag.paint['fill-color'] = fillColor.rgbaString()
+          lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
+          lag.id = lagId
+          this.addBehindSymbols(map, lag)
             }
           })
         }
@@ -414,7 +378,6 @@ class Mapbox extends Component {
         },
       })
     }
-    //console.log('Antall: ' + data.object.elevationValue)
   }, 50)
 
   createTaxonLayer(data) {

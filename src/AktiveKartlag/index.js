@@ -1,10 +1,22 @@
+import { FlatButton, Subheader } from 'material-ui'
+import MapsLayers from 'material-ui/svg-icons/maps/layers'
 import React from 'react'
-import Kartlagelement from './Kartlagelement'
-import { Subheader } from 'material-ui'
+import { withRouter } from 'react-router'
+import BakgrunnskartElement from './BakgrunnskartElement'
+import EtiketterElement from './EtiketterElement'
+import PolygonlagElement from './PolygonlagElement'
+import TerrenglagElement from './TerrenglagElement'
 
-const AktiveKartlag = ({
+class AktiveKartlag extends React.Component {
+  state = { ekspandertKode: null }
+  handleClick = kode => {
+    kode = this.state.ekspandertKode === kode ? null : kode
+    this.setState({ ekspandertKode: kode })
+  }
+
+  render() {
+    const {
   title,
-  subtitle,
   koder,
   onGoToCode,
   onRemoveSelectedLayer,
@@ -16,7 +28,9 @@ const AktiveKartlag = ({
   onToggleVisible,
   onUpdateLayerProp,
   language,
-}) => {
+            history,
+
+} = this.props
   koder.map(forelder => {
     forelder.barnArray = []
     if (forelder.barn) {
@@ -32,7 +46,30 @@ const AktiveKartlag = ({
   return (
     koder && (
       <React.Fragment key={title}>
-        <Subheader>{title}</Subheader>
+        <Subheader>{title}
+      <FlatButton
+            style={{ margin: 8, float: 'right' }}
+            label="Katalog"
+            labelPosition="before"
+            primary={true}
+            icon={<MapsLayers />}
+            onClick={() => history.replace('/katalog/')}
+          />
+    </Subheader>
+     <EtiketterElement
+          key="etiketter"
+          kode="Stedsnavn, verneområder"
+          meta={{ tittel: { nb: 'Etiketter' } }}
+          erEkspandert={'etiketter' === this.state.ekspandertKode}
+          skjul={false}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          onRemove={kode => onRemoveSelectedLayer('etiketter')}
+          onUpdateLayerProp={onUpdateLayerProp}
+          onClick={() => this.handleClick('etiketter')}
+          onToggleVisible={kode => onToggleVisible(kode)}
+          language={language}
+        />
         {koder.map(forelder => {
           const kode = forelder.kode
           return (
@@ -73,15 +110,57 @@ const AktiveKartlag = ({
                       showColor={onShowColorpicker}
                       language={language}
                     />
+                         <PolygonlagElement
+              {...item}
+              key={kode}
+              kode={kode}
+              erEkspandert={kode === this.state.ekspandertKode}
+              skjul={item.skjul}
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+              onRemove={kode => onRemoveSelectedLayer(kode)}
+              onUpdateLayerProp={onUpdateLayerProp}
+              onClick={() => this.handleClick(kode)}
+              onToggleVisible={kode => onToggleVisible(kode)}
+              language={language}
+            />
                   </React.Fragment>
                 )
               })}
             </React.Fragment>
+
           )
         })}
+        <BakgrunnskartElement
+          key="basemap"
+          kode="Mørk grå"
+          meta={{ tittel: { nb: 'Bakgrunnskart' } }}
+          erEkspandert={'basemap' === this.state.ekspandertKode}
+          skjul={false}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          onRemove={kode => onRemoveSelectedLayer('basemap')}
+          onUpdateLayerProp={onUpdateLayerProp}
+          onClick={() => this.handleClick('basemap')}
+          onToggleVisible={kode => onToggleVisible(kode)}
+          language={language}
+        />
+        <TerrenglagElement
+          key="terreng"
+          kode="2.5x overdrevet"
+          meta={{ tittel: { nb: '3D terreng' } }}
+          erEkspandert={'terreng' === this.state.ekspandertKode}
+          skjul={false}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          onRemove={kode => onRemoveSelectedLayer('terreng')}
+          onUpdateLayerProp={onUpdateLayerProp}
+          onClick={() => this.handleClick('terreng')}
+          onToggleVisible={kode => onToggleVisible(kode)}
+          language={language}
+        />
       </React.Fragment>
     )
-  )
+  }
 }
-
-export default AktiveKartlag
+export default withRouter(AktiveKartlag)

@@ -1,18 +1,13 @@
-import React from 'react'
-import { Card, CardActions, CardMedia, CardTitle } from 'material-ui'
-import { IconButton } from 'material-ui'
-import StarBorder from 'material-ui/svg-icons/toggle/star-border'
-import Star from 'material-ui/svg-icons/toggle/star'
-import Plus from 'material-ui/svg-icons/image/control-point'
-import Share from 'material-ui/svg-icons/social/share'
+import { Card, CardMedia } from 'material-ui'
 import muiThemeable from 'material-ui/styles/muiThemeable'
+import React from 'react'
 import backend from '../../backend'
 import språk from '../../språk'
 import BildeDialog from './BildeDialog'
+import Tittelblokk from './Tittelblokk'
 
 class Kodekort extends React.Component {
   state = {
-    expanded: false,
     visBilde: false,
   }
 
@@ -40,7 +35,7 @@ class Kodekort extends React.Component {
   isFavorite = kode => this.getFavorites().indexOf(kode) >= 0
 
   render() {
-    const { kode, muiTheme } = this.props
+    const { kode } = this.props
     const srcSet = `${backend.getFotoOmslag(
       kode,
       612
@@ -73,6 +68,7 @@ class Kodekort extends React.Component {
           style={{ height: 297, maxHeight: 297 }}
         >
           <img
+            onClick={() => this.handleOpen()}
             src={backend.getFotoOmslag(kode)}
             srcSet={srcSet}
             onError={e => {
@@ -94,85 +90,18 @@ class Kodekort extends React.Component {
             handleClose={this.handleClose}
           />
         </CardMedia>
+        <Tittelblokk
+          tittel={språk(this.props.tittel)}
+          onGoToCode={this.props.onGoToCode}
+          onToggleLayer={(event, state) =>
+            this.props.onToggleLayer(kode, state)
+          }
+          isActiveLayer={this.props.isActiveLayer}
+          overordnet={this.props.overordnet}
+        />
       </Card>
     )
   }
 }
-
-const Tittelblokk = ({
-  onGoToCode,
-  onAddLayer,
-  toggleFavorite,
-  onAddSelected,
-  favorite,
-  kode,
-  nodeMeta,
-  infoUrl,
-  tittel,
-  overordnet,
-  muiTheme,
-}) => (
-  <CardTitle
-    actAsExpander={true}
-    showExpandableButton={true}
-    title={tittel}
-    titleColor={muiTheme.palette.alternateTextColor}
-    subtitle={
-      overordnet &&
-      overordnet.map(forelder => (
-        <div
-          key={forelder.kode}
-          onClick={e => {
-            e.stopPropagation()
-            onGoToCode(forelder.sti)
-          }}
-        >
-          {språk(forelder.tittel)}
-        </div>
-      ))
-    }
-    subtitleStyle={{ cursor: 'pointer' }}
-    subtitleColor={muiTheme.palette.alternateTextColor}
-  >
-    <CardActions
-      style={{
-        position: 'absolute',
-        bottom: -8,
-        right: 0,
-      }}
-    >
-      <IconButton
-        title={'Del'}
-        style={{ float: 'right' }}
-        onClick={e => {
-          e.stopPropagation()
-          console.log('todo')
-        }}
-      >
-        <Share color="#eee" />
-      </IconButton>
-      <IconButton
-        title={'Merk som favoritt'}
-        style={{ float: 'right' }}
-        onClick={e => {
-          e.stopPropagation()
-          toggleFavorite(kode)
-        }}
-      >
-        {favorite ? <Star color="#eee" /> : <StarBorder color="#eee" />}
-      </IconButton>
-      <IconButton
-        style={{ float: 'right' }}
-        onClick={e => {
-          e.stopPropagation()
-          onAddSelected(nodeMeta)
-        }}
-        title={'Velg'}
-      >
-        <Plus color="#eee" />
-      </IconButton>
-    </CardActions>
-  </CardTitle>
-)
 
 export default muiThemeable()(Kodekort)

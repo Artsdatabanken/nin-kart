@@ -1,12 +1,12 @@
 // @flow
-import React from 'react'
 import { ListItem } from 'material-ui/List'
-import Kodetagg from '../Kodetagg'
-import PaintSwatch from './PaintSwatch'
-import Bildeavatar from './Bildeavatar'
 import muiThemeable from 'material-ui/styles/muiThemeable'
-import språk from '../../språk'
+import React from 'react'
 import prettyprint from '../../prettyprint'
+import språk from '../../språk'
+import Kodetagg from '../Kodetagg'
+import Bildeavatar from './Bildeavatar'
+import PaintSwatch from './PaintSwatch'
 
 type State = {}
 
@@ -24,22 +24,6 @@ type Props = {
 }
 
 class Kodelisteelement extends React.Component<Props, State> {
-  getFargeKode = () => {
-    let kode = this.props.kode
-    if (localStorage) {
-      let customColors = localStorage.getItem('customColors')
-      if (customColors) {
-        let fargeElement = JSON.parse(customColors).filter(
-          x => x.kode.toLowerCase() === kode.toLowerCase()
-        )
-        return fargeElement && fargeElement[0] && fargeElement[0].farge
-          ? fargeElement[0].farge
-          : this.props.meta.farge
-      }
-    }
-    return this.props.meta.farge
-  }
-
   undertekst(størsteAreal, areal, antall, undertittel) {
     if (undertittel) return undertittel.nb
     if (!areal) areal = 0
@@ -81,13 +65,11 @@ class Kodelisteelement extends React.Component<Props, State> {
   }
 
   render() {
-    const item = this.props
     const { meta, kode, avatarUtenRamme, areal } = this.props
-
     return (
       <ListItem
         innerDivStyle={{ backgroundColor: areal ? '' : '#DDDDDD' }}
-        key={item.kode}
+        key={kode}
         onClick={() => this.props.onGoToCode(meta.sti)}
         onMouseEnter={() => this.props.onMouseEnter(kode)}
         onMouseLeave={() => this.props.onMouseLeave()}
@@ -115,7 +97,7 @@ class Kodelisteelement extends React.Component<Props, State> {
             }}
           >
             <PaintSwatch
-              color={this.getFargeKode()}
+              color={meta.farge}
               onClick={e => {
                 e.stopPropagation()
               }}
