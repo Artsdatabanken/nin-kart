@@ -2,6 +2,7 @@ import { Paper, Snackbar } from 'material-ui'
 import React from 'react'
 import { withRouter } from 'react-router'
 import { Route, Switch } from 'react-router-dom'
+import AktiveKartlag from './AktiveKartlag'
 import KodeContainer from './Kodetre/Kodeliste/KodeContainer'
 import ResultatListe from './Kodetre/Kodeliste/ResultatListe'
 import PunktinformasjonContainer from './Naturområdedetaljer/PunktinformasjonContainer'
@@ -89,49 +90,62 @@ class VenstreVinduContainer extends React.Component {
                 />
               </Paper>
             )}
-            <Switch>
-              <Route
-                path="/katalog/:kode*"
-                render={({ match, history }) => {
-                  return (
-                    <KodeContainer
-                      style={{ height: '100vh' }}
-                      path={match.params.kode ? match.params.kode : ''}
-                      onGoToCode={url => {
-                        this.setState({ searchResults: null })
-                        console.log(url)
-                        history.push('/katalog/' + url)
-                      }}
-                      onMouseEnter={this.props.onMouseEnter}
-                      onMouseLeave={this.props.onMouseLeave}
-                      onFitBounds={this.props.onFitBounds}
-                      isActiveLayer={this.props.isActiveLayer}
-                      onToggleLayer={this.props.onToggleLayer}
-                      mapBounds={this.props.mapBounds}
-                      language={this.props.language}
-                      meta={this.props.meta}
-                    />
-                  )
-                }}
-              />
-              <Route
-                path="/lag"
-                render={({ match, history }) => {
-                  return 'lag'
-                }}
-              />
+            {!this.state.searchResults && (
+              <Switch>
+                <Route
+                  path="/katalog/:kode*"
+                  render={({ match, history }) => {
+                    return (
+                      <KodeContainer
+                        style={{ height: '100vh' }}
+                        path={match.params.kode ? match.params.kode : ''}
+                        onGoToCode={url => {
+                          this.setState({ searchResults: null })
+                          console.log(url)
+                          history.push('/katalog/' + url)
+                        }}
+                        onMouseEnter={this.props.onMouseEnter}
+                        onMouseLeave={this.props.onMouseLeave}
+                        onFitBounds={this.props.onFitBounds}
+                        isActiveLayer={this.props.isActiveLayer}
+                        onToggleLayer={this.props.onToggleLayer}
+                        mapBounds={this.props.mapBounds}
+                        language={this.props.language}
+                        meta={this.props.meta}
+                      />
+                    )
+                  }}
+                />
+                <Route
+                  path="/"
+                  render={({ match, history }) => {
+                    return (
+                      <AktiveKartlag
+                        style={{ backgroundColor: '#fff' }}
+                        title="Aktiverte lag"
+                        koder={this.props.valgteKoder}
+                        onMouseEnter={this.props.onMouseEnter}
+                        onMouseLeave={this.props.onMouseLeave}
+                        onToggleVisible={this.props.onToggleVisible}
+                        onUpdateLayerProp={this.props.onUpdateLayerProp}
+                        onRemoveSelectedLayer={this.props.onRemoveSelectedLayer}
+                      />
+                    )
+                  }}
+                />
 
-              <Route
-                path="/punkt/:lng,:lat"
-                render={({ match, history }) => (
-                  <PunktinformasjonContainer
-                    lng={match.params.lng}
-                    lat={match.params.lat}
-                    localId={this.props.localId}
-                  />
-                )}
-              />
-            </Switch>
+                <Route
+                  path="/punkt/:lng,:lat"
+                  render={({ match, history }) => (
+                    <PunktinformasjonContainer
+                      lng={match.params.lng}
+                      lat={match.params.lat}
+                      localId={this.props.localId}
+                    />
+                  )}
+                />
+              </Switch>
+            )}
           </div>
         )}
       />

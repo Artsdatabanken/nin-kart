@@ -1,8 +1,6 @@
 // @flow
 import React from 'react'
 import { withRouter } from 'react-router'
-import { Link } from 'react-router-dom'
-import AktiveKartlag from '../AktiveKartlag'
 import Kart from '../Kart'
 import {
   NiN,
@@ -53,7 +51,7 @@ class Grunnkart extends React.Component<Props, State> {
       opplystKode: '',
       bbox: {},
     }
-    this.redirectTo(props.location.pathname.replace('/katalog/', ''))
+    //    this.redirectTo(props.location.pathname.replace('/katalog/', ''))
   }
 
   handleChangeBaseMap = type => {
@@ -263,12 +261,15 @@ class Grunnkart extends React.Component<Props, State> {
             }}
           >
             <VenstreVinduContainer
+              valgteKoder={this.state.valgteKoder}
               onToggleMainDrawer={() =>
                 this.setState({
                   showMainDrawer: !this.state.showMainDrawer,
                 })
               }
               mapBounds={this.state.mapBounds}
+              onToggleVisible={this.handleToggleVisible}
+              onUpdateLayerProp={this.handleUpdateLayerProp}
               onMouseEnter={kode => this.setState({ opplystKode: kode })}
               onMouseLeave={kode =>
                 this.setState({
@@ -283,58 +284,6 @@ class Grunnkart extends React.Component<Props, State> {
               meta={this.state.meta}
               visValgte={this.state.visValgte}
             />
-          </div>
-        )}
-        {true && (
-          <div>
-            <div
-              style={{
-                position: 'absolute',
-                right: 0,
-                top: 0,
-                width: 392,
-                zIndex: 2,
-              }}
-            >
-              <div style={{ backgroundColor: '#fff' }}>
-                {
-                  <AktiveKartlag
-                    style={{ backgroundColor: '#fff' }}
-                    title="Aktiverte lag"
-                    koder={this.state.valgteKoder}
-                    onGoToCode={kode => {
-                      this.setState({ visValgte: false })
-                      this.redirectTo(kode)
-                    }}
-                    onMouseEnter={kode =>
-                      this.setState({
-                        opplystKode: kode,
-                      })
-                    }
-                    onMouseLeave={() =>
-                      this.setState({
-                        opplystKode: '',
-                      })
-                    }
-                    onToggleVisible={this.handleToggleVisible}
-                    onUpdateLayerProp={this.handleUpdateSelectedLayerProp}
-                    onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                  />
-                }
-              </div>
-              <div style={{ float: 'left', paddingTop: 10 }}>
-                <Link
-                  to={`/katalog/`}
-                  onClick={e =>
-                    this.setState({
-                      opplystKode: '',
-                      meta: {},
-                      visValgte: false,
-                    })
-                  }
-                />
-              </div>
-            </div>
           </div>
         )}
       </div>
