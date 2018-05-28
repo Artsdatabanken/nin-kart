@@ -4483,7 +4483,48 @@ exports[`Storyshots Innstilling default 1`] = `
     >
       <div>
         <div>
-          innstilling
+          <div
+            style={
+              Object {
+                "color": "rgba(0, 0, 0, 0.3)",
+                "fontSize": "12px",
+                "position": "relative",
+              }
+            }
+          >
+            Eye distance
+          </div>
+          <div
+            style={
+              Object {
+                "display": "inline-block",
+                "left": "8px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "float": "left",
+                  "position": "relative",
+                  "top": "2px",
+                }
+              }
+            />
+            <div
+              style={
+                Object {
+                  "float": "left",
+                  "paddingBottom": "8px",
+                  "paddingLeft": "16px",
+                  "position": "relative",
+                  "width": "310px",
+                }
+              }
+            >
+              children
+            </div>
+          </div>
         </div>
       </div>
     </div>
