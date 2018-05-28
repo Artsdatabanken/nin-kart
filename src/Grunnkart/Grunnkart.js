@@ -52,7 +52,6 @@ class Grunnkart extends React.Component<Props, State> {
       mapBounds: {},
       opplystKode: '',
       bbox: {},
-      ekspandertKode: null,
     }
     this.redirectTo(props.location.pathname.replace('/katalog/', ''))
   }
@@ -176,15 +175,12 @@ class Grunnkart extends React.Component<Props, State> {
     this.setState({ meta: meta })
   }
 
-  handleUpdateSelectedLayerProp = (kode, key, value) => {
-    console.error(kode, key, value)
-    let meta = this.state.valgteKoder
-    meta.forEach(barn => {
-      if (barn.kode === kode) {
-        barn[key] = value
-      }
-    })
-    this.setState({ valgteKoder: meta })
+  handleUpdateSelectedLayerProp = (kode, propNavn, verdi) => {
+    console.log(kode, propNavn, verdi)
+    let valgte = this.state.valgteKoder
+    const barn = valgte.find(barn => barn.kode === kode)
+    barn[propNavn] = verdi
+    this.setState({ valgteKoder: valgte })
   }
 
   handleRemoveSelectedLayer = kode => {
@@ -202,11 +198,6 @@ class Grunnkart extends React.Component<Props, State> {
         fjernKode: 'valgt' + kode,
       })
     }
-  }
-
-  handleShowColorpicker = kode => {
-    let nyKode = this.state.ekspandertKode === kode ? null : kode
-    this.setState({ ekspandertKode: nyKode })
   }
 
   handleToggleVisible = kode => {
@@ -325,11 +316,9 @@ class Grunnkart extends React.Component<Props, State> {
                         opplystKode: '',
                       })
                     }
-                    onShowColorpicker={this.handleShowColorpicker}
                     onToggleVisible={this.handleToggleVisible}
                     onUpdateLayerProp={this.handleUpdateSelectedLayerProp}
                     onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                    ekspandertKode={this.state.ekspandertKode}
                   />
                 }
               </div>
