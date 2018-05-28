@@ -22,17 +22,6 @@ class Kodekort extends React.Component {
       this.setState({ favorite: this.isFavorite(nextProps.data.kode) })
   }
 
-  toggleFavorite = kode => {
-    let favs = JSON.parse(localStorage.getItem('favorite') || '[]')
-    if (this.state.favorite) favs = favs.filter(x => x !== kode)
-    else favs.push(kode)
-    localStorage.setItem('favorite', JSON.stringify(favs))
-    this.setState({ favorite: !this.state.favorite })
-  }
-
-  getFavorites = () => JSON.parse(localStorage.getItem('favorite') || '[]')
-  isFavorite = kode => this.getFavorites().indexOf(kode) >= 0
-
   render() {
     const { kode } = this.props
     const srcSet = `${backend.getFotoOmslag(
