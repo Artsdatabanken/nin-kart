@@ -5,4 +5,6 @@ import Innstilling from './Innstilling'
 
 storiesOf('Innstilling', module)
   .addDecorator(muiTheme())
-  .add('default', () => <Innstilling />)
+  .add('default', () => (
+    <Innstilling title="Eye distance">children</Innstilling>
+  ))

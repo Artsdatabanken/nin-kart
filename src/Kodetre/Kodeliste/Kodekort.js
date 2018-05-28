@@ -1,5 +1,4 @@
 import { Card, CardMedia } from 'material-ui'
-import muiThemeable from 'material-ui/styles/muiThemeable'
 import React from 'react'
 import backend from '../../backend'
 import språk from '../../språk'
@@ -80,4 +79,4 @@ class Kodekort extends React.Component {
   }
 }
 
-export default muiThemeable()(Kodekort)
+export default Kodekort
