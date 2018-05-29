@@ -128,15 +128,15 @@ class Backend {
   // }
   static async getMetadataByNatureAreaLocalId(localId: string) {
     return this.getPromise(
-      `https://bboxcode.firebaseio.com/metadata/${localId}.json`
+      `https://bboxcode.firebaseio.com/metadata2/${localId}.json`
       // `https://test.artsdatabanken.no/nin_master/Api/data/GetMetadataByNatureAreaLocalId/${localId}`
     )
   }
-  static async getCodeTitle(code: string) {
-    return this.getPromise(
-      `https://bboxcode.firebaseio.com/titles/${code.toUpperCase()}.json`
-    )
-  }
+  // static async getCodeTitle(code: string) {
+  //   return this.getPromise(
+  //     `https://bboxcode.firebaseio.com/titles/${code.toUpperCase()}.json`
+  //   )
+  // }
 
   static async getImageAttribution(kode: string) {
     return {
