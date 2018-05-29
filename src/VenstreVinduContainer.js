@@ -7,6 +7,7 @@ import KodeContainer from './Kodetre/Kodeliste/KodeContainer'
 import ResultatListe from './Kodetre/Kodeliste/ResultatListe'
 import PunktinformasjonContainer from './Naturområdedetaljer/PunktinformasjonContainer'
 import TopBar from './TopBar/TopBar'
+import Tweaks from './Tweaks'
 import backend from './backend'
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
@@ -117,7 +118,8 @@ class VenstreVinduContainer extends React.Component {
                   }}
                 />
                 <Route
-                  path="/lag"
+                  exact
+                  path="/"
                   render={({ match, history }) => {
                     return (
                       <AktiveKartlag
@@ -134,6 +136,16 @@ class VenstreVinduContainer extends React.Component {
                   }}
                 />
 
+                <Route
+                  path="/lag/:kode"
+                  render={({ match, history }) => (
+                    <Tweaks
+                      kode={this.props.valgteKoder.find(
+                        k => k.kode === match.params.kode
+                      )}
+                    />
+                  )}
+                />
                 <Route
                   path="/punkt/:lng,:lat"
                   render={({ match, history }) => (

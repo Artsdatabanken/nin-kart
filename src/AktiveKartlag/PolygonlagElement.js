@@ -64,6 +64,7 @@ class PolygonlagElement extends React.Component {
         avatarUtenRamme={avatarUtenRamme}
         onClick={this.props.onClick}
         key={item.kode}
+        kode={item.kode}
         erEkspandert={this.props.erEkspandert}
         onMouseEnter={() =>
           this.props.onMouseEnter && this.props.onMouseEnter(kode)

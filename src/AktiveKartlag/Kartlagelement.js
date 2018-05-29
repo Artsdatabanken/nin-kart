@@ -19,7 +19,7 @@ class Kartlagelement extends React.Component {
     return (
       <React.Fragment>
         <ListItem
-          onClick={this.props.onClick}
+          onClick={() => this.props.history.replace('/lag/' + kode)}
           key={item.kode}
           onMouseEnter={() =>
             this.props.onMouseEnter && this.props.onMouseEnter(kode)

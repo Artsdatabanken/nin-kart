@@ -5,7 +5,10 @@ const Label = ({ children, muiTheme }) => (
   <div
     style={{
       position: 'relative',
-      fontSize: '12px',
+      float: 'left',
+      left: 16,
+      fontSize: 16,
+      fontWeight: 500,
       color: muiTheme.palette.disabledColor,
     }}
   >
