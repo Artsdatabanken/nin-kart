@@ -108,7 +108,7 @@ class PolygonlagElement extends React.Component {
         <FlatButton
           label="Info"
           primary={true}
-          onClick={() => this.props.history.replace(sti)}
+          onClick={() => this.props.history.push(sti)}
           icon={<ActionInfo />}
         />
       </KartlagElement>
