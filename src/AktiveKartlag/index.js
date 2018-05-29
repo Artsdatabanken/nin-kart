@@ -8,10 +8,8 @@ import PolygonlagElement from './PolygonlagElement'
 import TerrenglagElement from './TerrenglagElement'
 
 class AktiveKartlag extends React.Component {
-  state = { ekspandertKode: null }
   handleClick = kode => {
-    kode = this.state.ekspandertKode === kode ? null : kode
-    this.setState({ ekspandertKode: kode })
+    this.props.history.replace('/lag/terreng')
   }
 
   render() {
@@ -44,7 +42,6 @@ class AktiveKartlag extends React.Component {
           key="etiketter"
           kode="Stedsnavn, verneområder"
           meta={{ tittel: { nb: 'Etiketter' } }}
-          erEkspandert={'etiketter' === this.state.ekspandertKode}
           skjul={false}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
@@ -61,7 +58,6 @@ class AktiveKartlag extends React.Component {
               {...item}
               key={kode}
               kode={kode}
-              erEkspandert={kode === this.state.ekspandertKode}
               skjul={item.skjul}
               onMouseEnter={onMouseEnter}
               onMouseLeave={onMouseLeave}
@@ -77,7 +73,6 @@ class AktiveKartlag extends React.Component {
           key="basemap"
           kode="Mørk grå"
           meta={{ tittel: { nb: 'Bakgrunnskart' } }}
-          erEkspandert={'basemap' === this.state.ekspandertKode}
           skjul={false}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
@@ -91,7 +86,6 @@ class AktiveKartlag extends React.Component {
           key="terreng"
           kode="2.5x overdrevet"
           meta={{ tittel: { nb: '3D terreng' } }}
-          erEkspandert={'terreng' === this.state.ekspandertKode}
           skjul={false}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
