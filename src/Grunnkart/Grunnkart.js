@@ -63,6 +63,7 @@ class Grunnkart extends React.Component<Props, State> {
       visValgte: true,
     })
   }
+
   addSelected = props => {
     let koder = this.state.valgteKoder.slice()
     let kodeFinnes = false
@@ -72,15 +73,6 @@ class Grunnkart extends React.Component<Props, State> {
       }
     })
     if (!kodeFinnes) {
-      // Object.keys(props.barn).forEach(kode => {
-      //   koder.push(
-      //       {farge: props.barn[kode].farge,
-      //       kode: kode,
-      //       sti: props.barn[kode].sti,
-      //       tittel: props.barn[kode].tittel,
-      //       forelder: props.kode,
-      //   })
-      // })
       if (props.barn) {
         Object.keys(props.barn).forEach(kode => {
           const item = props.barn[kode]
@@ -97,19 +89,26 @@ class Grunnkart extends React.Component<Props, State> {
         vis: true,
         barn: props.barn,
       })
-      console.log('addSelected:' + props.kode)
+      //console.log('addSelected:' + props.kode)
+
+      this.setState({
+        valgteKoder: koder,
+        visValgte: true,
+        fjernKode: [],
+      })
     }
   }
   handleToggleLayer = (kode, state) => {
-    const koder = state
-      ? [...this.state.valgteKoder, this.state.meta]
-      : this.state.valgteKoder.filter(barn => barn.kode !== kode)
+    if (state) this.addSelected(this.state.meta)
+    else {
+      const koder = this.state.valgteKoder.filter(barn => barn.kode !== kode)
+      this.setState({
+        valgteKoder: koder,
+        visValgte: true,
+        fjernKode: [kode],
+      })
+    }
 
-    this.setState({
-      valgteKoder: koder,
-      visValgte: true,
-      fjernKode: [],
-    })
     this.props.history.push('/')
   }
 
@@ -218,9 +217,6 @@ class Grunnkart extends React.Component<Props, State> {
     const erAktivert = !!this.state.valgteKoder.find(
       vk => vk.kode === this.state.meta.kode
     )
-    console.log(erAktivert)
-    console.log(this.state.meta)
-    console.warn(this.state.valgteKoder)
     const aktivKode =
       this.state.meta && this.state.meta.kode ? this.state.meta.kode : ''
     return (
