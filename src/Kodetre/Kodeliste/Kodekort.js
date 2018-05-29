@@ -1,5 +1,4 @@
 import { Card, CardMedia } from 'material-ui'
-import muiThemeable from 'material-ui/styles/muiThemeable'
 import React from 'react'
 import backend from '../../backend'
 import språk from '../../språk'
@@ -22,17 +21,6 @@ class Kodekort extends React.Component {
     if (nextProps.data && props.data && nextProps.data.kode !== props.data.kode)
       this.setState({ favorite: this.isFavorite(nextProps.data.kode) })
   }
-
-  toggleFavorite = kode => {
-    let favs = JSON.parse(localStorage.getItem('favorite') || '[]')
-    if (this.state.favorite) favs = favs.filter(x => x !== kode)
-    else favs.push(kode)
-    localStorage.setItem('favorite', JSON.stringify(favs))
-    this.setState({ favorite: !this.state.favorite })
-  }
-
-  getFavorites = () => JSON.parse(localStorage.getItem('favorite') || '[]')
-  isFavorite = kode => this.getFavorites().indexOf(kode) >= 0
 
   render() {
     const { kode } = this.props
@@ -80,4 +68,4 @@ class Kodekort extends React.Component {
   }
 }
 
-export default muiThemeable()(Kodekort)
+export default Kodekort

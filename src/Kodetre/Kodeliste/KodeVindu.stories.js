@@ -1,8 +1,8 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
-import KodeVindu from './KodeVindu'
-import { muiTheme } from 'storybook-addon-material-ui'
 import { action } from '@storybook/addon-actions/dist/index'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
+import { muiTheme } from 'storybook-addon-material-ui'
+import KodeVindu from './KodeVindu'
 
 var api = {
   kode: 'NA_H',
@@ -34,6 +34,7 @@ const meta = {
   barn: {
     NA_H4: {
       farge: '#e6f598',
+      avatarUtenRamme: true,
       kode: 'NA_H4',
       sti: 'NA/H/4',
       tittel: { nb: 'Sterkt endrete marine vannmasser' },
