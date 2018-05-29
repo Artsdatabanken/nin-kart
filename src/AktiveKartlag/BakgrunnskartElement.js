@@ -5,12 +5,12 @@ class BakgrunnskartElement extends Component {
   render() {
     return (
       <KartlagElement
+        kode="bakgrunnskart"
         tittel="Bakgrunnskart"
         undertittel="Mørk grå"
         farge="#404040"
-      >
-        abc
-      </KartlagElement>
+        onToggleVisible={this.props.onToggleVisible}
+      />
     )
   }
 }
