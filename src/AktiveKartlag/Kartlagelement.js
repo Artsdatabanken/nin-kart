@@ -1,8 +1,8 @@
 import { ListItem } from 'material-ui'
 import Toggle from 'material-ui/Toggle'
+import Reorder from 'material-ui/svg-icons/action/reorder'
 import React from 'react'
 import { withRouter } from 'react-router'
-import Bildeavatar from '../Kodetre/Kodeliste/Bildeavatar'
 import PaintSwatch from '../Kodetre/Kodeliste/PaintSwatch'
 
 class Kartlagelement extends React.Component {
@@ -27,7 +27,11 @@ class Kartlagelement extends React.Component {
           onMouseLeave={() => {
             this.props.onMouseLeave && this.props.onMouseLeave(kode)
           }}
-          leftAvatar={<Bildeavatar utenRamme={avatarUtenRamme} kode={kode} />}
+          leftAvatar={
+            <div style={{ marginTop: 8 }}>
+              <Reorder />
+            </div>
+          }
           primaryText={tittel}
           secondaryText={undertittel}
           rightAvatar={
