@@ -1,9 +1,65 @@
-import React from 'react'
 import { storiesOf } from '@storybook/react'
+import React from 'react'
+import { MemoryRouter } from 'react-router-dom'
 import { muiTheme } from 'storybook-addon-material-ui'
 import VektorPunktinformasjon from './VektorPunktinformasjon'
-import { MemoryRouter } from 'react-router-dom'
 
+const props = {
+  pointInfo: {
+    'Dataeier, kontaktperson': {
+      name: 'Dataeier, kontaktperson',
+      value: 'Miljødirektoratet, kjepet (Kjetil Pettersson)',
+      logo:
+        'https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2Fmiljødirektoratet.jpg?alt=media',
+      homepage: 'mailto:kjetil.pettersson@miljodir.no',
+      dataorigin: 'Miljødirektoratet',
+    },
+    Program: {
+      name: 'Program',
+      value: 'RUTE_2016_NORGE_1, Rutekartlegging utenfor verneområder 2016.',
+      logo:
+        'https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2Fmiljødirektoratet.jpg?alt=media',
+      homepage: 'http://www.miljodirektoratet.no/',
+      dataorigin: 'Miljødirektoratet',
+    },
+    Prosjekt: {
+      name: 'Prosjekt',
+      value:
+        ' RUT_16_BIOREG_06-ST2_LEINSTR_1, Arealdekkende kartlegging etter NiN 2.0 i pressområder med rødlistede naturtyper. Leinstrand/Tiller (Sør-Trøndelag ,06-ST2, 119 ruter), Bioreg AS',
+      logo:
+        'https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2Fmiljødirektoratet.jpg?alt=media',
+      homepage: 'http://www.miljodirektoratet.no/',
+      dataorigin: 'Miljødirektoratet',
+    },
+    Kartleggingsmålestokk: {
+      name: 'Kartleggingsmålestokk',
+      value: '1:5000',
+      logo:
+        'https://pbs.twimg.com/profile_images/378800000067455227/3d053db6b9593d47a02ced7709846522_400x400.png',
+      homepage: 'http://www.miljodirektoratet.no/',
+      dataorigin: 'MDIR',
+      article: 'https://www.artsdatabanken.no/Pages/222921',
+    },
+    'Kartlegger, Kontaktperson': {
+      name: 'Kartlegger, Kontaktperson',
+      value: 'Rambøll, Geir Frode Langelo',
+      logo:
+        'https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2Frambøll.jpg?alt=media',
+      homepage: 'mailto:geir.frode.langelo@ramboll.no',
+      dataorigin: 'Rambøll',
+    },
+    NA_T38: {
+      name: 'NA_T38',
+      value: 'Treplantasje',
+      logo:
+        'https://pbs.twimg.com/profile_images/378800000067455227/3d053db6b9593d47a02ced7709846522_400x400.png',
+      homepage: 'http://www.miljodirektoratet.no/',
+      dataorigin: 'MDIR',
+      part: 1,
+      article: 'https://www.artsdatabanken.no/NiN2.0/T38',
+    },
+  },
+}
 const dummyNatureArea = {
   uniqueId: {
     localId: '3e9bdc8b-3b7a-490c-bac6-ac5d3b0ccf27',
@@ -92,10 +148,6 @@ const dummyMeta = {
   surveyScale: '1:5000',
   resolution: null,
 }
-const dummyPointData = {
-  name: { testNameKey: 'testNameValue' },
-  value: { testValueKey: 'testValueValue' },
-}
 
 storiesOf('VektorPunktinformasjon', module)
   .addDecorator(muiTheme())
@@ -105,7 +157,7 @@ storiesOf('VektorPunktinformasjon', module)
         <VektorPunktinformasjon
           natureArea={dummyNatureArea}
           metadata={dummyMeta}
-          pointInfo={dummyPointData}
+          pointInfo={props.pointInfo}
         />
       </MemoryRouter>
     )

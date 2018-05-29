@@ -96,12 +96,7 @@ class Kodelisteelement extends React.Component<Props, State> {
               right: 24,
             }}
           >
-            <PaintSwatch
-              color={meta.farge}
-              onClick={e => {
-                e.stopPropagation()
-              }}
-            />
+            <PaintSwatch color={meta.farge} />
           </div>
         }
       />

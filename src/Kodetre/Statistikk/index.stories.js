@@ -1,5 +1,5 @@
-import React from 'react'
 import { storiesOf } from '@storybook/react'
+import React from 'react'
 import { muiTheme } from 'storybook-addon-material-ui'
 import Statistikk from './'
 
@@ -9,6 +9,7 @@ var taxJson = [
     type: 'ingress',
     bilde: 'https://www.artsdatabanken.no/Media/F819?mode=1920x1920',
     infoUrl: 'https://www.artsdatabanken.no/Pages/205713',
+    ingress: 'ingress',
     beskrivelse:
       '43 705 arter er påvist i Norge, og 65 % av artene finnes i dyreriket. Insektene utgjør den største gruppen med over 18 000 arter. Fortsatt er mange arter uoppdaget og vi regner med at det finnes omkring 60 000 arter i Norge.',
   },

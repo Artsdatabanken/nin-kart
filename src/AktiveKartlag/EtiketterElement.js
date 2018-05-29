@@ -4,9 +4,12 @@ import KartlagElement from './Kartlagelement'
 class EtiketterElement extends Component {
   render() {
     return (
-      <KartlagElement tittel="Etiketter" undertittel="Verneområder, stedsnavn">
-        abc
-      </KartlagElement>
+      <KartlagElement
+        kode="etikett"
+        tittel="Etiketter"
+        undertittel="Verneområder, stedsnavn"
+        onToggleVisible={this.props.onToggleVisible}
+      />
     )
   }
 }

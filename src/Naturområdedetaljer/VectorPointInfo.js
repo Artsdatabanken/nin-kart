@@ -1,12 +1,12 @@
-import React from 'react'
-import { ListItem, Avatar, List } from 'material-ui'
+import { Avatar, List, ListItem } from 'material-ui'
 import InfoOutline from 'material-ui/svg-icons/action/info-outline'
-import { Route } from 'react-router-dom'
-import { withRouter } from 'react-router'
-import backend from '../backend'
 import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down'
 import HardwareKeyboardArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up'
+import React from 'react'
 import Collapsible from 'react-collapsible'
+import { withRouter } from 'react-router'
+import { Route } from 'react-router-dom'
+import backend from '../backend'
 import PointInfo from './PointInfo'
 
 function getHeaderStyle() {
@@ -16,6 +16,7 @@ function getHeaderStyle() {
 }
 
 function VectorPointInfo(props) {
+  console.log(JSON.stringify(props))
   if (props.pointInfo && Object.keys(props.pointInfo).length > 0)
     return (
       <Route
