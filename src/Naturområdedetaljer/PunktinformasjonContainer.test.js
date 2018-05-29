@@ -121,18 +121,22 @@ let props = {
     code: 'NOT_LC',
   },
   description: 'testDescription',
-  codes: { Not_Code: {} },
+  codes: {
+    Not_Code: {
+      andel: 10,
+      beskrivelsesvariabler: [
+        { besk1: { forfader: 'forfader', tittel: 'tittel' } },
+      ],
+    },
+  },
 }
 
 test('getNatureAreaFacts', () => {
   expect(punktinformasjonContainer.getNatureAreaFacts(props)).toBe(undefined)
 })
 
-test('ImportBeskrivelsesVariabler', () => {
-  expect(
-    punktinformasjonContainer.ImportBeskrivelsesVariabler(
-      'successor',
-      'predecessor'
-    )
-  ).toBe(undefined)
-})
+// props.codes['Not_Code'].beskrivelsesvariabler = 'nada'
+
+// test('getNatureAreaFactsNoBeskrivelsesVariabler', () => {
+//   expect(punktinformasjonContainer.getNatureAreaFacts(props)).toBe(undefined)
+// })
