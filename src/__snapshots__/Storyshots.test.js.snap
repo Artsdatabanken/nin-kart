@@ -223,6 +223,7 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                   <div
                     style={
                       Object {
+                        "cursor": "-webkit-grab",
                         "left": 16,
                         "marginTop": 8,
                         "position": "absolute",
@@ -417,6 +418,7 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                   <div
                     style={
                       Object {
+                        "cursor": "-webkit-grab",
                         "left": 16,
                         "marginTop": 8,
                         "position": "absolute",
@@ -655,6 +657,7 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                   <div
                     style={
                       Object {
+                        "cursor": "-webkit-grab",
                         "left": 16,
                         "marginTop": 8,
                         "position": "absolute",
@@ -849,6 +852,7 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                   <div
                     style={
                       Object {
+                        "cursor": "-webkit-grab",
                         "left": 16,
                         "marginTop": 8,
                         "position": "absolute",
@@ -3932,6 +3936,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                         <div
                           style={
                             Object {
+                              "cursor": "-webkit-grab",
                               "left": 16,
                               "marginTop": 8,
                               "position": "absolute",
@@ -4126,6 +4131,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                         <div
                           style={
                             Object {
+                              "cursor": "-webkit-grab",
                               "left": 16,
                               "marginTop": 8,
                               "position": "absolute",
@@ -4320,6 +4326,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                         <div
                           style={
                             Object {
+                              "cursor": "-webkit-grab",
                               "left": 16,
                               "marginTop": 8,
                               "position": "absolute",
@@ -16720,6 +16727,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                     <div
                       style={
                         Object {
+                          "cursor": "-webkit-grab",
                           "left": 16,
                           "marginTop": 8,
                           "position": "absolute",
@@ -16914,6 +16922,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                     <div
                       style={
                         Object {
+                          "cursor": "-webkit-grab",
                           "left": 16,
                           "marginTop": 8,
                           "position": "absolute",
@@ -17108,6 +17117,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                     <div
                       style={
                         Object {
+                          "cursor": "-webkit-grab",
                           "left": 16,
                           "marginTop": 8,
                           "position": "absolute",
@@ -17785,6 +17795,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                     <div
                       style={
                         Object {
+                          "cursor": "-webkit-grab",
                           "left": 16,
                           "marginTop": 8,
                           "position": "absolute",
@@ -17979,6 +17990,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                     <div
                       style={
                         Object {
+                          "cursor": "-webkit-grab",
                           "left": 16,
                           "marginTop": 8,
                           "position": "absolute",
@@ -18173,6 +18185,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                     <div
                       style={
                         Object {
+                          "cursor": "-webkit-grab",
                           "left": 16,
                           "marginTop": 8,
                           "position": "absolute",
