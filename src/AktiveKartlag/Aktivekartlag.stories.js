@@ -5,7 +5,6 @@ import { action } from '@storybook/addon-actions/dist/index'
 import { MemoryRouter } from 'react-router-dom'
 import AktiveKartlag from '.'
 
-
 const koder = [{ tittel: { nb: 'aabc' } }]
 
 storiesOf('Aktive kartlag', module)
@@ -13,15 +12,16 @@ storiesOf('Aktive kartlag', module)
   .add('default', () => (
     <div style={{ width: 400 }}>
       <MemoryRouter>
-      <AktiveKartlag
-        koder={koder}
-        onUpdateLayerProp={action('updateLayerProp')}
-        onMouseEnter={action('mouseEnter')}
-        onMouseLeave={action('mouseLeave')}
-        onGoToCode={action('onGoToCode')}
-        onShowColorpicker={action('onShowColorpicker')}
-        onToggleVisible={action('onToggleVisible')}
-        onRemoveSelectedLayer={action('onRemoveSelectedLayer')}
+        <AktiveKartlag
+          koder={koder}
+          onUpdateLayerProp={action('updateLayerProp')}
+          onMouseEnter={action('mouseEnter')}
+          onMouseLeave={action('mouseLeave')}
+          onClick={action('click')}
+          onShowColorpicker={action('onShowColorpicker')}
+          onToggleVisible={action('onToggleVisible')}
+          onRemoveSelectedLayer={action('onRemoveSelectedLayer')}
+        />
       </MemoryRouter>
     </div>
   ))
