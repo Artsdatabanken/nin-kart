@@ -55,7 +55,6 @@ class AktiveKartlag extends React.Component {
             key="etiketter"
             kode="Stedsnavn, verneområder"
             meta={{ tittel: { nb: 'Etiketter' } }}
-            erEkspandert={'etiketter' === this.state.ekspandertKode}
             vis={true}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
@@ -73,7 +72,6 @@ class AktiveKartlag extends React.Component {
                   {...forelder}
                   key={'valgt' + kode}
                   kode={kode}
-                  erEkspandert={kode === this.state.ekspandertKode}
                   vis={forelder.vis}
                   onMouseEnter={onMouseEnter}
                   onMouseLeave={onMouseLeave}
@@ -91,7 +89,6 @@ class AktiveKartlag extends React.Component {
                         {...item}
                         key={'valgt' + kode}
                         kode={kode}
-                        erEkspandert={kode === this.state.ekspandertKode}
                         vis={item.vis}
                         onMouseEnter={onMouseEnter}
                         onMouseLeave={onMouseLeave}
@@ -111,7 +108,6 @@ class AktiveKartlag extends React.Component {
             key="basemap"
             kode="Mørk grå"
             meta={{ tittel: { nb: 'Bakgrunnskart' } }}
-            erEkspandert={'basemap' === this.state.ekspandertKode}
             vis={true}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
@@ -125,7 +121,6 @@ class AktiveKartlag extends React.Component {
             key="terreng"
             kode="2.5x overdrevet"
             meta={{ tittel: { nb: '3D terreng' } }}
-            erEkspandert={'terreng' === this.state.ekspandertKode}
             vis={true}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
