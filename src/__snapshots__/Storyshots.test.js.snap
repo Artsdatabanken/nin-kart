@@ -221,28 +221,38 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                   }
                 >
                   <div
-                    className={undefined}
-                    onError={[Function]}
-                    size={40}
                     style={
                       Object {
-                        "alignItems": "center",
-                        "backgroundColor": "transparent",
-                        "borderRadius": "50%",
-                        "color": "#ffffff",
-                        "display": "inline-flex",
-                        "fontSize": 20,
-                        "height": 40,
-                        "justifyContent": "center",
+                        "cursor": "-webkit-grab",
                         "left": 16,
-                        "muiPrepared": true,
+                        "marginTop": 8,
                         "position": "absolute",
                         "top": 16,
-                        "userSelect": "none",
-                        "width": 40,
                       }
                     }
-                  />
+                  >
+                    <svg
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      style={
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.87)",
+                          "display": "inline-block",
+                          "fill": "currentColor",
+                          "height": 24,
+                          "muiPrepared": true,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "userSelect": "none",
+                          "width": 24,
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
+                      />
+                    </svg>
+                  </div>
                   <div
                     style={
                       Object {
@@ -406,28 +416,38 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                   }
                 >
                   <div
-                    className={undefined}
-                    onError={[Function]}
-                    size={40}
                     style={
                       Object {
-                        "alignItems": "center",
-                        "backgroundColor": "transparent",
-                        "borderRadius": "50%",
-                        "color": "#ffffff",
-                        "display": "inline-flex",
-                        "fontSize": 20,
-                        "height": 40,
-                        "justifyContent": "center",
+                        "cursor": "-webkit-grab",
                         "left": 16,
-                        "muiPrepared": true,
+                        "marginTop": 8,
                         "position": "absolute",
                         "top": 16,
-                        "userSelect": "none",
-                        "width": 40,
                       }
                     }
-                  />
+                  >
+                    <svg
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      style={
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.87)",
+                          "display": "inline-block",
+                          "fill": "currentColor",
+                          "height": 24,
+                          "muiPrepared": true,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "userSelect": "none",
+                          "width": 24,
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
+                      />
+                    </svg>
+                  </div>
                   <div
                     style={
                       Object {
@@ -635,28 +655,38 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                   }
                 >
                   <div
-                    className={undefined}
-                    onError={[Function]}
-                    size={40}
                     style={
                       Object {
-                        "alignItems": "center",
-                        "backgroundColor": "transparent",
-                        "borderRadius": "50%",
-                        "color": "#ffffff",
-                        "display": "inline-flex",
-                        "fontSize": 20,
-                        "height": 40,
-                        "justifyContent": "center",
+                        "cursor": "-webkit-grab",
                         "left": 16,
-                        "muiPrepared": true,
+                        "marginTop": 8,
                         "position": "absolute",
                         "top": 16,
-                        "userSelect": "none",
-                        "width": 40,
                       }
                     }
-                  />
+                  >
+                    <svg
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      style={
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.87)",
+                          "display": "inline-block",
+                          "fill": "currentColor",
+                          "height": 24,
+                          "muiPrepared": true,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "userSelect": "none",
+                          "width": 24,
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
+                      />
+                    </svg>
+                  </div>
                   <div
                     style={
                       Object {
@@ -820,28 +850,38 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                   }
                 >
                   <div
-                    className={undefined}
-                    onError={[Function]}
-                    size={40}
                     style={
                       Object {
-                        "alignItems": "center",
-                        "backgroundColor": "transparent",
-                        "borderRadius": "50%",
-                        "color": "#ffffff",
-                        "display": "inline-flex",
-                        "fontSize": 20,
-                        "height": 40,
-                        "justifyContent": "center",
+                        "cursor": "-webkit-grab",
                         "left": 16,
-                        "muiPrepared": true,
+                        "marginTop": 8,
                         "position": "absolute",
                         "top": 16,
-                        "userSelect": "none",
-                        "width": 40,
                       }
                     }
-                  />
+                  >
+                    <svg
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      style={
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.87)",
+                          "display": "inline-block",
+                          "fill": "currentColor",
+                          "height": 24,
+                          "muiPrepared": true,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "userSelect": "none",
+                          "width": 24,
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
+                      />
+                    </svg>
+                  </div>
                   <div
                     style={
                       Object {
@@ -4829,28 +4869,38 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                         }
                       >
                         <div
-                          className={undefined}
-                          onError={[Function]}
-                          size={40}
                           style={
                             Object {
-                              "alignItems": "center",
-                              "backgroundColor": "transparent",
-                              "borderRadius": "50%",
-                              "color": "#ffffff",
-                              "display": "inline-flex",
-                              "fontSize": 20,
-                              "height": 40,
-                              "justifyContent": "center",
+                              "cursor": "-webkit-grab",
                               "left": 16,
-                              "muiPrepared": true,
+                              "marginTop": 8,
                               "position": "absolute",
                               "top": 16,
-                              "userSelect": "none",
-                              "width": 40,
                             }
                           }
-                        />
+                        >
+                          <svg
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            style={
+                              Object {
+                                "color": "rgba(0, 0, 0, 0.87)",
+                                "display": "inline-block",
+                                "fill": "currentColor",
+                                "height": 24,
+                                "muiPrepared": true,
+                                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                                "userSelect": "none",
+                                "width": 24,
+                              }
+                            }
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
+                            />
+                          </svg>
+                        </div>
                         <div
                           style={
                             Object {
@@ -5014,28 +5064,38 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                         }
                       >
                         <div
-                          className={undefined}
-                          onError={[Function]}
-                          size={40}
                           style={
                             Object {
-                              "alignItems": "center",
-                              "backgroundColor": "transparent",
-                              "borderRadius": "50%",
-                              "color": "#ffffff",
-                              "display": "inline-flex",
-                              "fontSize": 20,
-                              "height": 40,
-                              "justifyContent": "center",
+                              "cursor": "-webkit-grab",
                               "left": 16,
-                              "muiPrepared": true,
+                              "marginTop": 8,
                               "position": "absolute",
                               "top": 16,
-                              "userSelect": "none",
-                              "width": 40,
                             }
                           }
-                        />
+                        >
+                          <svg
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            style={
+                              Object {
+                                "color": "rgba(0, 0, 0, 0.87)",
+                                "display": "inline-block",
+                                "fill": "currentColor",
+                                "height": 24,
+                                "muiPrepared": true,
+                                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                                "userSelect": "none",
+                                "width": 24,
+                              }
+                            }
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
+                            />
+                          </svg>
+                        </div>
                         <div
                           style={
                             Object {
@@ -5833,28 +5893,38 @@ exports[`Storyshots KodeVindu default 1`] = `
                         }
                       >
                         <div
-                          className={undefined}
-                          onError={[Function]}
-                          size={40}
                           style={
                             Object {
-                              "alignItems": "center",
-                              "backgroundColor": "transparent",
-                              "borderRadius": "50%",
-                              "color": "#ffffff",
-                              "display": "inline-flex",
-                              "fontSize": 20,
-                              "height": 40,
-                              "justifyContent": "center",
+                              "cursor": "-webkit-grab",
                               "left": 16,
-                              "muiPrepared": true,
+                              "marginTop": 8,
                               "position": "absolute",
                               "top": 16,
-                              "userSelect": "none",
-                              "width": 40,
                             }
                           }
-                        />
+                        >
+                          <svg
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            style={
+                              Object {
+                                "color": "rgba(0, 0, 0, 0.87)",
+                                "display": "inline-block",
+                                "fill": "currentColor",
+                                "height": 24,
+                                "muiPrepared": true,
+                                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                                "userSelect": "none",
+                                "width": 24,
+                              }
+                            }
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
+                            />
+                          </svg>
+                        </div>
                         <div
                           style={
                             Object {
@@ -17808,28 +17878,38 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                     }
                   >
                     <div
-                      className={undefined}
-                      onError={[Function]}
-                      size={40}
                       style={
                         Object {
-                          "alignItems": "center",
-                          "backgroundColor": "transparent",
-                          "borderRadius": "50%",
-                          "color": "#ffffff",
-                          "display": "inline-flex",
-                          "fontSize": 20,
-                          "height": 40,
-                          "justifyContent": "center",
+                          "cursor": "-webkit-grab",
                           "left": 16,
-                          "muiPrepared": true,
+                          "marginTop": 8,
                           "position": "absolute",
                           "top": 16,
-                          "userSelect": "none",
-                          "width": 40,
                         }
                       }
-                    />
+                    >
+                      <svg
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        style={
+                          Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "display": "inline-block",
+                            "fill": "currentColor",
+                            "height": 24,
+                            "muiPrepared": true,
+                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                            "userSelect": "none",
+                            "width": 24,
+                          }
+                        }
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
+                        />
+                      </svg>
+                    </div>
                     <div
                       style={
                         Object {
@@ -17993,28 +18073,38 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                     }
                   >
                     <div
-                      className={undefined}
-                      onError={[Function]}
-                      size={40}
                       style={
                         Object {
-                          "alignItems": "center",
-                          "backgroundColor": "transparent",
-                          "borderRadius": "50%",
-                          "color": "#ffffff",
-                          "display": "inline-flex",
-                          "fontSize": 20,
-                          "height": 40,
-                          "justifyContent": "center",
+                          "cursor": "-webkit-grab",
                           "left": 16,
-                          "muiPrepared": true,
+                          "marginTop": 8,
                           "position": "absolute",
                           "top": 16,
-                          "userSelect": "none",
-                          "width": 40,
                         }
                       }
-                    />
+                    >
+                      <svg
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        style={
+                          Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "display": "inline-block",
+                            "fill": "currentColor",
+                            "height": 24,
+                            "muiPrepared": true,
+                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                            "userSelect": "none",
+                            "width": 24,
+                          }
+                        }
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
+                        />
+                      </svg>
+                    </div>
                     <div
                       style={
                         Object {
@@ -18178,28 +18268,38 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                     }
                   >
                     <div
-                      className={undefined}
-                      onError={[Function]}
-                      size={40}
                       style={
                         Object {
-                          "alignItems": "center",
-                          "backgroundColor": "transparent",
-                          "borderRadius": "50%",
-                          "color": "#ffffff",
-                          "display": "inline-flex",
-                          "fontSize": 20,
-                          "height": 40,
-                          "justifyContent": "center",
+                          "cursor": "-webkit-grab",
                           "left": 16,
-                          "muiPrepared": true,
+                          "marginTop": 8,
                           "position": "absolute",
                           "top": 16,
-                          "userSelect": "none",
-                          "width": 40,
                         }
                       }
-                    />
+                    >
+                      <svg
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        style={
+                          Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "display": "inline-block",
+                            "fill": "currentColor",
+                            "height": 24,
+                            "muiPrepared": true,
+                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                            "userSelect": "none",
+                            "width": 24,
+                          }
+                        }
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
+                        />
+                      </svg>
+                    </div>
                     <div
                       style={
                         Object {
@@ -18846,28 +18946,38 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                     }
                   >
                     <div
-                      className={undefined}
-                      onError={[Function]}
-                      size={40}
                       style={
                         Object {
-                          "alignItems": "center",
-                          "backgroundColor": "transparent",
-                          "borderRadius": "50%",
-                          "color": "#ffffff",
-                          "display": "inline-flex",
-                          "fontSize": 20,
-                          "height": 40,
-                          "justifyContent": "center",
+                          "cursor": "-webkit-grab",
                           "left": 16,
-                          "muiPrepared": true,
+                          "marginTop": 8,
                           "position": "absolute",
                           "top": 16,
-                          "userSelect": "none",
-                          "width": 40,
                         }
                       }
-                    />
+                    >
+                      <svg
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        style={
+                          Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "display": "inline-block",
+                            "fill": "currentColor",
+                            "height": 24,
+                            "muiPrepared": true,
+                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                            "userSelect": "none",
+                            "width": 24,
+                          }
+                        }
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
+                        />
+                      </svg>
+                    </div>
                     <div
                       style={
                         Object {
@@ -19031,28 +19141,38 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                     }
                   >
                     <div
-                      className={undefined}
-                      onError={[Function]}
-                      size={40}
                       style={
                         Object {
-                          "alignItems": "center",
-                          "backgroundColor": "transparent",
-                          "borderRadius": "50%",
-                          "color": "#ffffff",
-                          "display": "inline-flex",
-                          "fontSize": 20,
-                          "height": 40,
-                          "justifyContent": "center",
+                          "cursor": "-webkit-grab",
                           "left": 16,
-                          "muiPrepared": true,
+                          "marginTop": 8,
                           "position": "absolute",
                           "top": 16,
-                          "userSelect": "none",
-                          "width": 40,
                         }
                       }
-                    />
+                    >
+                      <svg
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        style={
+                          Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "display": "inline-block",
+                            "fill": "currentColor",
+                            "height": 24,
+                            "muiPrepared": true,
+                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                            "userSelect": "none",
+                            "width": 24,
+                          }
+                        }
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
+                        />
+                      </svg>
+                    </div>
                     <div
                       style={
                         Object {
@@ -19216,28 +19336,38 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                     }
                   >
                     <div
-                      className={undefined}
-                      onError={[Function]}
-                      size={40}
                       style={
                         Object {
-                          "alignItems": "center",
-                          "backgroundColor": "transparent",
-                          "borderRadius": "50%",
-                          "color": "#ffffff",
-                          "display": "inline-flex",
-                          "fontSize": 20,
-                          "height": 40,
-                          "justifyContent": "center",
+                          "cursor": "-webkit-grab",
                           "left": 16,
-                          "muiPrepared": true,
+                          "marginTop": 8,
                           "position": "absolute",
                           "top": 16,
-                          "userSelect": "none",
-                          "width": 40,
                         }
                       }
-                    />
+                    >
+                      <svg
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        style={
+                          Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "display": "inline-block",
+                            "fill": "currentColor",
+                            "height": 24,
+                            "muiPrepared": true,
+                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                            "userSelect": "none",
+                            "width": 24,
+                          }
+                        }
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
+                        />
+                      </svg>
+                    </div>
                     <div
                       style={
                         Object {
