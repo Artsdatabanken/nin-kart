@@ -7,6 +7,7 @@ class TerrenglagElement extends Component {
         kode="terreng"
         tittel="Terreng"
         undertittel="2.5x overdrevet"
+        onToggleVisible={this.props.onToggleVisible}
       />
     )
   }
