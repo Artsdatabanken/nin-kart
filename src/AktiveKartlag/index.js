@@ -9,7 +9,7 @@ import TerrenglagElement from './TerrenglagElement'
 
 class AktiveKartlag extends React.Component {
   handleClick = kode => {
-    this.props.history.push('/lag/${kode}')
+    this.props.history.push(`/lag/${kode}`)
   }
 
   render() {
