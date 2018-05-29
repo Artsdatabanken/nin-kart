@@ -165,6 +165,7 @@ class Grunnkart extends React.Component<Props, State> {
       visValgte: true,
       fjernKode: [],
     })
+    this.props.history.push('/')
   }
 
   componentDidMount() {
@@ -273,7 +274,12 @@ class Grunnkart extends React.Component<Props, State> {
   }
 
   render() {
-    const erAktivert = this.state.valgteKoder.includes(this.state.meta)
+    const erAktivert = !!this.state.valgteKoder.find(
+      vk => vk.kode === this.state.meta.kode
+    )
+    console.log(erAktivert)
+    console.log(this.state.meta)
+    console.warn(this.state.valgteKoder)
     const aktivKode =
       this.state.meta && this.state.meta.kode ? this.state.meta.kode : ''
     return (
