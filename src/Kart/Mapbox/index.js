@@ -78,11 +78,13 @@ class Mapbox extends Component {
       }
     }
 
+    // todo: bør sjekke mer enn lengden
     if (nextProps.valgteKoder.length !== this.props.valgteKoder.length) {
       this.visValgteKoder(this.props, nextProps)
     }
-    if (nextProps.fjernKode !== this.props.fjernKode) {
-      this.fjernKode(nextProps.fjernKode)
+    // todo: bør sjekke mer enn lengden
+    if (nextProps.fjernKode.length !== this.props.fjernKode.length) {
+      this.fjernKoder(nextProps.fjernKode)
     }
 
     if (nextProps.bbox && nextProps.bbox !== this.props.bbox) {
@@ -95,7 +97,7 @@ class Mapbox extends Component {
 
     if (aktivKode) {
       let oldTaxonLookupId = aktivKode.replace('AR', 'TX')
-      if (false && oldTaxonLookupId) {
+      if (oldTaxonLookupId && oldTaxonLookupId.indexOf('TX') === 0) {
         backend.getKodeUtbredelse(oldTaxonLookupId).then(data => {
           this.setState({
             enableDeck: data ? true : false,
@@ -207,11 +209,14 @@ class Mapbox extends Component {
     map.on('styledata', addLayers)
   }
 
-  fjernKode(kode) {
+  fjernKoder(koder) {
+    if (!koder || koder.length === 0) return
     let map = this.map.getMap()
     if (!map) return
-
-    map.removeLayer(kode)
+    koder.forEach(lagId => {
+      console.log('fjern: ', lagId)
+      map.removeLayer(lagId)
+    })
   }
 
   oppdaterValgteKoder(props, nextProps) {
@@ -220,10 +225,23 @@ class Mapbox extends Component {
 
     if (nextProps.valgteKoder) {
       Object.keys(nextProps.valgteKoder).forEach(id => {
-        const item = nextProps.valgteKoder[id]
-        let lagId = 'valgt' + item.kode
+        const forelder = nextProps.valgteKoder[id]
+
+        let lagId = 'valgt' + forelder.kode
         if (map.getLayer(lagId)) {
           map.removeLayer(lagId)
+        }
+
+        if (forelder.barn) {
+          Object.keys(forelder.barn).forEach(barnId => {
+            const item = forelder.barn[barnId]
+
+            let lagId = 'valgt' + item.kode
+            if (map.getLayer(lagId)) {
+              console.log('fjern: ', lagId)
+              map.removeLayer(lagId)
+            }
+          })
         }
       })
       this.visValgteKoder(props, nextProps)
@@ -240,12 +258,18 @@ class Mapbox extends Component {
       nextProps.valgteKoder.length > 0
     ) {
       Object.keys(nextProps.valgteKoder).forEach(id => {
-        const item = nextProps.valgteKoder[id]
-        let lagId = 'valgt' + item.kode
-        if (item.skjul) {
-          return
-        }
-        if (!map.getLayer(lagId)) {
+
+        const forelder = nextProps.valgteKoder[id]
+
+        if (forelder.barn) {
+          Object.keys(forelder.barn).forEach(kode => {
+            const item = forelder.barn[kode]
+
+            let lagId = 'valgt' + kode
+            if (!item.vis) {
+              return
+            }
+ if (!map.getLayer(lagId)) {
           let lag = hentLag(map, item.kode)
           if (!lag || !lag.paint) return
 
@@ -254,13 +278,17 @@ class Mapbox extends Component {
           lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
           lag.id = lagId
           this.addBehindSymbols(map, lag)
+            }
+          })
         }
       })
     } else if (props && props.valgteKoder && props.valgteKoder.length > 0) {
       Object.keys(props.valgteKoder).forEach(id => {
-        const item = props.valgteKoder[id]
-        let lagId = 'valgt' + item.kode
-        map.removeLayer(lagId)
+        const forelder = props.valgteKoder[id]
+        Object.keys(forelder.barn).forEach(kode => {
+          let lagId = 'valgt' + kode
+          map.removeLayer(lagId)
+        })
       })
     }
   }

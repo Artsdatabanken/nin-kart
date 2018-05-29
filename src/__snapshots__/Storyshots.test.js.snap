@@ -272,55 +272,6 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                         }
                       }
                     />
-                    <div
-                      style={
-                        Object {
-                          "display": "inline-flex",
-                          "position": "absolute",
-                          "right": 0,
-                          "top": 8,
-                        }
-                      }
-                    >
-                      <div
-                        style={
-                          Object {
-                            "height": "28px",
-                            "right": "14px",
-                            "width": "28px",
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "backgroundImage": "url(null)",
-                              "borderRadius": "12%",
-                              "bottom": 0,
-                              "left": 0,
-                              "position": "absolute",
-                              "right": 0,
-                              "top": 0,
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "backgroundColor": undefined,
-                                "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                "borderRadius": "12%",
-                                "bottom": 0,
-                                "left": 0,
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 0,
-                              }
-                            }
-                          />
-                        </div>
-                      </div>
-                    </div>
                   </div>
                   <div
                     style={
@@ -467,55 +418,6 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                         }
                       }
                     />
-                    <div
-                      style={
-                        Object {
-                          "display": "inline-flex",
-                          "position": "absolute",
-                          "right": 0,
-                          "top": 8,
-                        }
-                      }
-                    >
-                      <div
-                        style={
-                          Object {
-                            "height": "28px",
-                            "right": "14px",
-                            "width": "28px",
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "backgroundImage": "url(null)",
-                              "borderRadius": "12%",
-                              "bottom": 0,
-                              "left": 0,
-                              "position": "absolute",
-                              "right": 0,
-                              "top": 0,
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "backgroundColor": undefined,
-                                "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                "borderRadius": "12%",
-                                "bottom": 0,
-                                "left": 0,
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 0,
-                              }
-                            }
-                          />
-                        </div>
-                      </div>
-                    </div>
                   </div>
                   <div
                     style={
@@ -706,55 +608,6 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                         }
                       }
                     />
-                    <div
-                      style={
-                        Object {
-                          "display": "inline-flex",
-                          "position": "absolute",
-                          "right": 0,
-                          "top": 8,
-                        }
-                      }
-                    >
-                      <div
-                        style={
-                          Object {
-                            "height": "28px",
-                            "right": "14px",
-                            "width": "28px",
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "backgroundImage": "url(null)",
-                              "borderRadius": "12%",
-                              "bottom": 0,
-                              "left": 0,
-                              "position": "absolute",
-                              "right": 0,
-                              "top": 0,
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "backgroundColor": "#404040",
-                                "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                "borderRadius": "12%",
-                                "bottom": 0,
-                                "left": 0,
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 0,
-                              }
-                            }
-                          />
-                        </div>
-                      </div>
-                    </div>
                   </div>
                   <div
                     style={
@@ -901,55 +754,6 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                         }
                       }
                     />
-                    <div
-                      style={
-                        Object {
-                          "display": "inline-flex",
-                          "position": "absolute",
-                          "right": 0,
-                          "top": 8,
-                        }
-                      }
-                    >
-                      <div
-                        style={
-                          Object {
-                            "height": "28px",
-                            "right": "14px",
-                            "width": "28px",
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "backgroundImage": "url(null)",
-                              "borderRadius": "12%",
-                              "bottom": 0,
-                              "left": 0,
-                              "position": "absolute",
-                              "right": 0,
-                              "top": 0,
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "backgroundColor": undefined,
-                                "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                "borderRadius": "12%",
-                                "bottom": 0,
-                                "left": 0,
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 0,
-                              }
-                            }
-                          />
-                        </div>
-                      </div>
-                    </div>
                   </div>
                   <div
                     style={
@@ -3985,55 +3789,6 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                               }
                             }
                           />
-                          <div
-                            style={
-                              Object {
-                                "display": "inline-flex",
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 8,
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "height": "28px",
-                                  "right": "14px",
-                                  "width": "28px",
-                                }
-                              }
-                            >
-                              <div
-                                style={
-                                  Object {
-                                    "backgroundImage": "url(null)",
-                                    "borderRadius": "12%",
-                                    "bottom": 0,
-                                    "left": 0,
-                                    "position": "absolute",
-                                    "right": 0,
-                                    "top": 0,
-                                  }
-                                }
-                              >
-                                <div
-                                  style={
-                                    Object {
-                                      "backgroundColor": undefined,
-                                      "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                      "borderRadius": "12%",
-                                      "bottom": 0,
-                                      "left": 0,
-                                      "position": "absolute",
-                                      "right": 0,
-                                      "top": 0,
-                                    }
-                                  }
-                                />
-                              </div>
-                            </div>
-                          </div>
                         </div>
                         <div
                           style={
@@ -4180,55 +3935,6 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                               }
                             }
                           />
-                          <div
-                            style={
-                              Object {
-                                "display": "inline-flex",
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 8,
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "height": "28px",
-                                  "right": "14px",
-                                  "width": "28px",
-                                }
-                              }
-                            >
-                              <div
-                                style={
-                                  Object {
-                                    "backgroundImage": "url(null)",
-                                    "borderRadius": "12%",
-                                    "bottom": 0,
-                                    "left": 0,
-                                    "position": "absolute",
-                                    "right": 0,
-                                    "top": 0,
-                                  }
-                                }
-                              >
-                                <div
-                                  style={
-                                    Object {
-                                      "backgroundColor": "#404040",
-                                      "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                      "borderRadius": "12%",
-                                      "bottom": 0,
-                                      "left": 0,
-                                      "position": "absolute",
-                                      "right": 0,
-                                      "top": 0,
-                                    }
-                                  }
-                                />
-                              </div>
-                            </div>
-                          </div>
                         </div>
                         <div
                           style={
@@ -4375,55 +4081,6 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                               }
                             }
                           />
-                          <div
-                            style={
-                              Object {
-                                "display": "inline-flex",
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 8,
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "height": "28px",
-                                  "right": "14px",
-                                  "width": "28px",
-                                }
-                              }
-                            >
-                              <div
-                                style={
-                                  Object {
-                                    "backgroundImage": "url(null)",
-                                    "borderRadius": "12%",
-                                    "bottom": 0,
-                                    "left": 0,
-                                    "position": "absolute",
-                                    "right": 0,
-                                    "top": 0,
-                                  }
-                                }
-                              >
-                                <div
-                                  style={
-                                    Object {
-                                      "backgroundColor": undefined,
-                                      "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                      "borderRadius": "12%",
-                                      "bottom": 0,
-                                      "left": 0,
-                                      "position": "absolute",
-                                      "right": 0,
-                                      "top": 0,
-                                    }
-                                  }
-                                />
-                              </div>
-                            </div>
-                          </div>
                         </div>
                         <div
                           style={
@@ -11594,6 +11251,295 @@ exports[`Storyshots PointInfo default 1`] = `
 </div>
 `;
 
+exports[`Storyshots PolygonlagElement default 1`] = `
+<div
+  style={
+    Object {
+      "background": "#ffffff",
+      "bottom": 0,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    className="SplitPane  vertical "
+    style={
+      Object {
+        "MozUserSelect": "text",
+        "WebkitUserSelect": "text",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "row",
+        "height": "100%",
+        "left": 0,
+        "msUserSelect": "text",
+        "outline": "none",
+        "overflow": "hidden",
+        "position": "absolute",
+        "right": 0,
+        "userSelect": "text",
+      }
+    }
+  >
+    <div
+      className="Pane vertical Pane1  "
+      style={
+        Object {
+          "flex": 1,
+          "outline": "none",
+          "overflowX": "auto",
+          "overflowY": "auto",
+          "position": "relative",
+        }
+      }
+    >
+      <div>
+        <div
+          style={
+            Object {
+              "width": 400,
+            }
+          }
+        >
+          <div>
+            <span
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              open={null}
+              style={
+                Object {
+                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                  "background": "none",
+                  "backgroundColor": null,
+                  "border": 10,
+                  "boxSizing": "border-box",
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "cursor": "pointer",
+                  "display": "block",
+                  "fontFamily": "Roboto, sans-serif",
+                  "fontSize": 16,
+                  "fontWeight": "inherit",
+                  "lineHeight": "16px",
+                  "margin": 0,
+                  "muiPrepared": true,
+                  "outline": "none",
+                  "padding": 0,
+                  "position": "relative",
+                  "textDecoration": "none",
+                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                  "verticalAlign": null,
+                }
+              }
+              tabIndex={0}
+            >
+              <div
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  style={
+                    Object {
+                      "marginLeft": 0,
+                      "muiPrepared": true,
+                      "paddingBottom": 16,
+                      "paddingLeft": 72,
+                      "paddingRight": 56,
+                      "paddingTop": 20,
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "cursor": "-webkit-grab",
+                        "left": 16,
+                        "marginTop": 8,
+                        "position": "absolute",
+                        "top": 16,
+                      }
+                    }
+                  >
+                    <svg
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      style={
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.87)",
+                          "display": "inline-block",
+                          "fill": "currentColor",
+                          "height": 24,
+                          "muiPrepared": true,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "userSelect": "none",
+                          "width": 24,
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "position": "absolute",
+                        "right": 16,
+                        "top": 16,
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "display": "inline-flex",
+                          "position": "absolute",
+                          "right": 40,
+                          "top": 8,
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "muiPrepared": true,
+                      }
+                    }
+                  >
+                    Natursystem
+                    <br />
+                    <div
+                      style={
+                        Object {
+                          "color": undefined,
+                          "float": "left",
+                          "fontWeight": 600,
+                          "paddingLeft": "2px",
+                          "paddingRight": "4px",
+                        }
+                      }
+                    >
+                      NA
+                    </div>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "WebkitBoxOrient": null,
+                        "WebkitLineClamp": null,
+                        "color": "rgba(0, 0, 0, 0.54)",
+                        "display": null,
+                        "fontSize": 14,
+                        "height": 16,
+                        "lineHeight": "16px",
+                        "margin": 0,
+                        "marginTop": 4,
+                        "muiPrepared": true,
+                        "overflow": "hidden",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "position": "relative",
+                          "width": 200,
+                        }
+                      }
+                    >
+                      <div
+                        className="sizebar"
+                        style={
+                          Object {
+                            "borderBottomRightRadius": 10,
+                            "borderTopRightRadius": 10,
+                            "float": "left",
+                            "height": 4,
+                            "marginTop": 4,
+                            "width": "0%",
+                          }
+                        }
+                        title="areal: "
+                      />
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "display": "inline",
+                          "float": "right",
+                          "position": "absolute",
+                          "right": 52,
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      className="Resizer vertical "
+      onClick={[Function]}
+      onDoubleClick={[Function]}
+      onMouseDown={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "cursor": "col-resize",
+          "marginRight": -6,
+          "width": 10,
+          "zIndex": 1,
+        }
+      }
+    />
+    <div
+      className="Pane vertical Pane2  "
+      style={
+        Object {
+          "flex": "none",
+          "outline": "none",
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        className="sb-addon-material-ui-theme_sidebar"
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
 <div
   style={
@@ -16776,55 +16722,6 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                           }
                         }
                       />
-                      <div
-                        style={
-                          Object {
-                            "display": "inline-flex",
-                            "position": "absolute",
-                            "right": 0,
-                            "top": 8,
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "height": "28px",
-                              "right": "14px",
-                              "width": "28px",
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "backgroundImage": "url(null)",
-                                "borderRadius": "12%",
-                                "bottom": 0,
-                                "left": 0,
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 0,
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "backgroundColor": undefined,
-                                  "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                  "borderRadius": "12%",
-                                  "bottom": 0,
-                                  "left": 0,
-                                  "position": "absolute",
-                                  "right": 0,
-                                  "top": 0,
-                                }
-                              }
-                            />
-                          </div>
-                        </div>
-                      </div>
                     </div>
                     <div
                       style={
@@ -16971,55 +16868,6 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                           }
                         }
                       />
-                      <div
-                        style={
-                          Object {
-                            "display": "inline-flex",
-                            "position": "absolute",
-                            "right": 0,
-                            "top": 8,
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "height": "28px",
-                              "right": "14px",
-                              "width": "28px",
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "backgroundImage": "url(null)",
-                                "borderRadius": "12%",
-                                "bottom": 0,
-                                "left": 0,
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 0,
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "backgroundColor": "#404040",
-                                  "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                  "borderRadius": "12%",
-                                  "bottom": 0,
-                                  "left": 0,
-                                  "position": "absolute",
-                                  "right": 0,
-                                  "top": 0,
-                                }
-                              }
-                            />
-                          </div>
-                        </div>
-                      </div>
                     </div>
                     <div
                       style={
@@ -17166,55 +17014,6 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                           }
                         }
                       />
-                      <div
-                        style={
-                          Object {
-                            "display": "inline-flex",
-                            "position": "absolute",
-                            "right": 0,
-                            "top": 8,
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "height": "28px",
-                              "right": "14px",
-                              "width": "28px",
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "backgroundImage": "url(null)",
-                                "borderRadius": "12%",
-                                "bottom": 0,
-                                "left": 0,
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 0,
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "backgroundColor": undefined,
-                                  "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                  "borderRadius": "12%",
-                                  "bottom": 0,
-                                  "left": 0,
-                                  "position": "absolute",
-                                  "right": 0,
-                                  "top": 0,
-                                }
-                              }
-                            />
-                          </div>
-                        </div>
-                      </div>
                     </div>
                     <div
                       style={
@@ -17844,55 +17643,6 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                           }
                         }
                       />
-                      <div
-                        style={
-                          Object {
-                            "display": "inline-flex",
-                            "position": "absolute",
-                            "right": 0,
-                            "top": 8,
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "height": "28px",
-                              "right": "14px",
-                              "width": "28px",
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "backgroundImage": "url(null)",
-                                "borderRadius": "12%",
-                                "bottom": 0,
-                                "left": 0,
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 0,
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "backgroundColor": undefined,
-                                  "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                  "borderRadius": "12%",
-                                  "bottom": 0,
-                                  "left": 0,
-                                  "position": "absolute",
-                                  "right": 0,
-                                  "top": 0,
-                                }
-                              }
-                            />
-                          </div>
-                        </div>
-                      </div>
                     </div>
                     <div
                       style={
@@ -18039,55 +17789,6 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                           }
                         }
                       />
-                      <div
-                        style={
-                          Object {
-                            "display": "inline-flex",
-                            "position": "absolute",
-                            "right": 0,
-                            "top": 8,
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "height": "28px",
-                              "right": "14px",
-                              "width": "28px",
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "backgroundImage": "url(null)",
-                                "borderRadius": "12%",
-                                "bottom": 0,
-                                "left": 0,
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 0,
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "backgroundColor": "#404040",
-                                  "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                  "borderRadius": "12%",
-                                  "bottom": 0,
-                                  "left": 0,
-                                  "position": "absolute",
-                                  "right": 0,
-                                  "top": 0,
-                                }
-                              }
-                            />
-                          </div>
-                        </div>
-                      </div>
                     </div>
                     <div
                       style={
@@ -18234,55 +17935,6 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                           }
                         }
                       />
-                      <div
-                        style={
-                          Object {
-                            "display": "inline-flex",
-                            "position": "absolute",
-                            "right": 0,
-                            "top": 8,
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "height": "28px",
-                              "right": "14px",
-                              "width": "28px",
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "backgroundImage": "url(null)",
-                                "borderRadius": "12%",
-                                "bottom": 0,
-                                "left": 0,
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 0,
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "backgroundColor": undefined,
-                                  "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                  "borderRadius": "12%",
-                                  "bottom": 0,
-                                  "left": 0,
-                                  "position": "absolute",
-                                  "right": 0,
-                                  "top": 0,
-                                }
-                              }
-                            />
-                          </div>
-                        </div>
-                      </div>
                     </div>
                     <div
                       style={
