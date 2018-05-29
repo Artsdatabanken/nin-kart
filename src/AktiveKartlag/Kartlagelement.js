@@ -28,42 +28,38 @@ class Kartlagelement extends React.Component {
           primaryText={tittel}
           secondaryText={undertittel}
           rightAvatar={
-            this.props.showColor || this.props.onToggleVisible ? (
-              <div>
-                {this.props.onToggleVisible && (
-                  <div
-                    style={{
-                      display: 'inline-flex',
-                      position: 'absolute',
-                      right: 40,
-                      top: 8,
+            <div>
+              {this.props.onToggleVisible && (
+                <div
+                  style={{
+                    display: 'inline-flex',
+                    position: 'absolute',
+                    right: 40,
+                    top: 8,
+                  }}
+                >
+                  <Toggle
+                    toggled={this.props.vis}
+                    onClick={e => {
+                      e.stopPropagation()
+                      this.props.onToggleVisible(item.kode)
                     }}
-                  >
-                    <Toggle
-                      toggled={this.props.vis}
-                      onClick={e => {
-                        e.stopPropagation()
-                        this.props.onToggleVisible(item.kode)
-                      }}
-                    />
-                  </div>
-                )}
-                {this.props.showColor && (
-                  <div
-                    style={{
-                      display: 'inline-flex',
-                      position: 'absolute',
-                      right: 0,
-                      top: 8,
-                    }}
-                  >
-                    <PaintSwatch farge={farge} />
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div />
-            )
+                  />
+                </div>
+              )}
+              {
+                <div
+                  style={{
+                    display: 'inline-flex',
+                    position: 'absolute',
+                    right: 0,
+                    top: 8,
+                  }}
+                >
+                  <PaintSwatch farge={farge} />
+                </div>
+              }
+            </div>
           }
         />
         {erEkspandert && (
