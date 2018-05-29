@@ -9,7 +9,7 @@ import TerrenglagElement from './TerrenglagElement'
 
 class AktiveKartlag extends React.Component {
   handleClick = kode => {
-    this.props.history.replace('/lag/terreng')
+    this.props.history.push(`/lag/${kode}`)
   }
 
   render() {
@@ -24,6 +24,7 @@ class AktiveKartlag extends React.Component {
       language,
       history,
     } = this.props
+
     koder.map(forelder => {
       forelder.barnArray = []
       if (forelder.barn) {
@@ -47,7 +48,7 @@ class AktiveKartlag extends React.Component {
               labelPosition="before"
               primary={true}
               icon={<MapsLayers />}
-              onClick={() => history.replace('/katalog/')}
+              onClick={() => history.push('/katalog/')}
             />
           </Subheader>
           <EtiketterElement

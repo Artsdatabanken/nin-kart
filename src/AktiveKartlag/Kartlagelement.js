@@ -1,25 +1,18 @@
 import { ListItem } from 'material-ui'
 import Toggle from 'material-ui/Toggle'
+import Reorder from 'material-ui/svg-icons/action/reorder'
 import React from 'react'
 import { withRouter } from 'react-router'
-import Bildeavatar from '../Kodetre/Kodeliste/Bildeavatar'
 import PaintSwatch from '../Kodetre/Kodeliste/PaintSwatch'
 
 class Kartlagelement extends React.Component {
   render() {
     const item = this.props
-    const {
-      tittel,
-      undertittel,
-      kode,
-      erEkspandert,
-      farge,
-      avatarUtenRamme,
-    } = this.props
+    const { tittel, undertittel, kode, erEkspandert, farge } = this.props
     return (
       <React.Fragment>
         <ListItem
-          onClick={() => this.props.history.replace('/lag/' + kode)}
+          onClick={() => this.props.history.push('/lag/' + kode)}
           key={item.kode}
           onMouseEnter={() =>
             this.props.onMouseEnter && this.props.onMouseEnter(kode)
@@ -27,7 +20,11 @@ class Kartlagelement extends React.Component {
           onMouseLeave={() => {
             this.props.onMouseLeave && this.props.onMouseLeave(kode)
           }}
-          leftAvatar={<Bildeavatar utenRamme={avatarUtenRamme} kode={kode} />}
+          leftAvatar={
+            <div style={{ cursor: '-webkit-grab', marginTop: 8 }}>
+              <Reorder />
+            </div>
+          }
           primaryText={tittel}
           secondaryText={undertittel}
           rightAvatar={
