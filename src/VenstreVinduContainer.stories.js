@@ -11,7 +11,7 @@ storiesOf('VenstreVindu', module)
     return (
       <div style={{ padding: 8 }}>
         <MemoryRouter>
-          <VenstreVinduContainer />
+          <VenstreVinduContainer valgteKoder={[]} />
         </MemoryRouter>
       </div>
     )
@@ -21,6 +21,7 @@ storiesOf('VenstreVindu', module)
       <div style={{ padding: 8 }}>
         <MemoryRouter>
           <VenstreVinduContainer
+            valgteKoder={[]}
             onToggleMainDrawer={action('onToggleMainDrawer')}
             onMouseEnter={action('onMouseEnter')}
             onMouseLeave={action('onMouseLeave')}

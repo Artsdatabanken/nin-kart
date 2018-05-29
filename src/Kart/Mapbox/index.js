@@ -1,7 +1,6 @@
 import Color from 'color'
 import DeckGL, { GridLayer /*, ScatterplotLayer */ } from 'deck.gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
-import muiThemeable from 'material-ui/styles/muiThemeable'
 import Place from 'material-ui/svg-icons/maps/place'
 import React, { Component } from 'react'
 import ReactMapGL, { Marker, NavigationControl, Popup } from 'react-map-gl'
@@ -468,4 +467,4 @@ class Mapbox extends Component {
   }
 }
 
-export default muiThemeable()(withRouter(Mapbox))
+export default withRouter(Mapbox)

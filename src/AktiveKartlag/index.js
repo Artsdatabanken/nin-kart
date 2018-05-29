@@ -8,10 +8,8 @@ import PolygonlagElement from './PolygonlagElement'
 import TerrenglagElement from './TerrenglagElement'
 
 class AktiveKartlag extends React.Component {
-  state = { ekspandertKode: null }
   handleClick = kode => {
-    kode = this.state.ekspandertKode === kode ? null : kode
-    this.setState({ ekspandertKode: kode })
+    this.props.history.replace('/lag/terreng')
   }
 
   render() {

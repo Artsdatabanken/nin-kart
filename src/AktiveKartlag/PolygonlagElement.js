@@ -1,5 +1,4 @@
 import { FlatButton } from 'material-ui'
-import muiThemeable from 'material-ui/styles/muiThemeable'
 import ActionDelete from 'material-ui/svg-icons/action/delete'
 import ActionInfo from 'material-ui/svg-icons/action/info'
 import React from 'react'
@@ -12,12 +11,6 @@ import ColorPicker from './ColorPicker'
 import KartlagElement from './Kartlagelement'
 
 class PolygonlagElement extends React.Component {
-  setFargeKode(kode, farge) {
-    let farger = JSON.parse(localStorage.getItem('customColors') || '[]')
-    farger = farger.filter(x => x.kode !== kode)
-    farger.push({ kode: kode, farge: farge })
-    localStorage.setItem('customColors', JSON.stringify(farger))
-  }
   undertekst(størsteAreal, areal, antall, undertittel) {
     if (undertittel) return undertittel.nb
     if (!areal) areal = 0
@@ -124,4 +117,4 @@ class PolygonlagElement extends React.Component {
   }
 }
 
-export default muiThemeable()(withRouter(PolygonlagElement))
+export default withRouter(PolygonlagElement)
