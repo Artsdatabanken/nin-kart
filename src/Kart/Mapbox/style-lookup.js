@@ -3,12 +3,29 @@ function hentLag(map, kode) {
   if (!kode) return null
   if (['FA', 'LI', 'AR'].indexOf(kode) >= 0) return null // temp: ignorer koder uten definerte lag
 
-  let prefix = kode.split('_')[0]
+  // Behold denne som eksempel på hvordan vi kan identifisere rasterlag
+  // let prefix =
+  //   kode.startsWith('BS') && !kode.startsWith('BS_6')
+  //     ? 'NA'
+  //     : kode.startsWith('BS_6')
+  //       ? 'BS_' + kode.split('_')[1]
+  //       : kode.split('_')[0]
 
-  if (prefix === 'BS') prefix = 'NA' // BS-koder ligger som tagger på NA-laget
+  let prefix =
+    kode.startsWith('BS') && !kode.startsWith('BS_6')
+      ? 'NA'
+      : kode.split('_')[0]
 
   let layer = map.getLayer(kode)
   if (layer) return layer
+
+  if (prefix.startsWith('BS_6')) {
+    return {
+      id: prefix,
+      type: 'raster',
+      source: prefix,
+    }
+  }
 
   let naLayer = {
     id: kode,

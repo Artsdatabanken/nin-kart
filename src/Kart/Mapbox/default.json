@@ -125,20 +125,22 @@
       "minzoom": 0,
       "maxzoom": 11
     },
-    "seksjoner2017": {
+    "BS": {
+      "type": "vector",
+      "tiles": ["https://tiles.artsdatabanken.no/data/BS/{z}/{x}/{y}.pbf"],
+      "minzoom": 0,
+      "maxzoom": 11
+    },
+    "BS_6SE": {
       "type": "raster",
-      "tiles": [
-        "https://tiles.artsdatabanken.no/data/seksjoner2017/{z}/{x}/{y}.png"
-      ],
+      "tiles": ["https://tiles.artsdatabanken.no/data/BS_6SE/{z}/{x}/{y}.png"],
       "tileSize": 256,
       "minzoom": 1,
       "maxzoom": 7
     },
-    "soner2017": {
+    "BS_6SO": {
       "type": "raster",
-      "tiles": [
-        "https://tiles.artsdatabanken.no/data/soner2017/{z}/{x}/{y}.png"
-      ],
+      "tiles": ["https://tiles.artsdatabanken.no/data/BS_6SO/{z}/{x}/{y}.png"],
       "tileSize": 256,
       "minzoom": 1,
       "maxzoom": 7
