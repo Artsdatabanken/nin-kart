@@ -125,17 +125,14 @@ class Mapbox extends Component {
         this.setState({ enableDeck: taxonMatch })
       }
       let aktivtLag = hentLag(map, aktivKode)
+      aktivtLag.id = 'aktivt'
       if (aktivtLag) {
-        if (aktivtLag.type === 'raster') {
-          this.addBehindSymbols(map, aktivtLag)
-          return
+        if (aktivtLag.type !== 'raster') {
+          aktivtLag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
+          let fillColor =
+            Color(this.props.meta.farge) || Color('#ff2222').alpha(0.7)
+          aktivtLag.paint['fill-color'] = fillColor.rgbaString()
         }
-        aktivtLag.id = 'aktivt'
-
-        aktivtLag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
-        let fillColor =
-          Color(this.props.meta.farge) || Color('#ff2222').alpha(0.7)
-        aktivtLag.paint['fill-color'] = fillColor.rgbaString()
 
         this.addBehindSymbols(map, aktivtLag)
       }
