@@ -3621,6 +3621,9 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                 Object {
                   "backgroundColor": "#fff",
                   "left": 8,
+                  "maxHeight": 758,
+                  "overflowY": "auto",
+                  "paddingBottom": 8,
                   "position": "absolute",
                   "top": 10,
                   "width": 392,

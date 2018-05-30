@@ -320,8 +320,11 @@ class Grunnkart extends React.Component<Props, State> {
               position: 'absolute',
               left: 8,
               top: 10,
+              paddingBottom: 8,
               width: 392,
               zIndex: 2,
+              maxHeight: window.innerHeight - 10,
+              overflowY: 'auto',
             }}
           >
             <VenstreVinduContainer
