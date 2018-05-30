@@ -3,6 +3,14 @@ function hentLag(map, kode) {
   if (!kode) return null
   if (['FA', 'LI', 'AR'].indexOf(kode) >= 0) return null // temp: ignorer koder uten definerte lag
 
+  // Behold denne som eksempel på hvordan vi kan identifisere rasterlag
+  // let prefix =
+  //   kode.startsWith('BS') && !kode.startsWith('BS_6')
+  //     ? 'NA'
+  //     : kode.startsWith('BS_6')
+  //       ? 'BS_' + kode.split('_')[1]
+  //       : kode.split('_')[0]
+
   let prefix =
     kode.startsWith('BS') && !kode.startsWith('BS_6')
       ? 'NA'
@@ -11,13 +19,13 @@ function hentLag(map, kode) {
   let layer = map.getLayer(kode)
   if (layer) return layer
 
-  // if (prefix.startsWith('BS_6')) {
-  //   return {
-  //     id: 'prefix',
-  //     type: 'raster',
-  //     source: 'prefix',
-  //   }
-  // }
+  if (prefix.startsWith('BS_6')) {
+    return {
+      id: prefix,
+      type: 'raster',
+      source: prefix,
+    }
+  }
 
   let naLayer = {
     id: kode,
