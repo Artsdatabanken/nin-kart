@@ -13,7 +13,6 @@ class AktiveKartlag extends React.Component {
 
   render() {
     const {
-      title,
       koder,
       onRemoveSelectedLayer,
       onMouseEnter,
