@@ -125,13 +125,14 @@ class Mapbox extends Component {
         this.setState({ enableDeck: taxonMatch })
       }
       let aktivtLag = hentLag(map, aktivKode)
+      aktivtLag.id = 'aktivt'
       if (aktivtLag) {
-        aktivtLag.id = 'aktivt'
-
-        aktivtLag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
-        let fillColor =
-          Color(this.props.meta.farge) || Color('#ff2222').alpha(0.7)
-        aktivtLag.paint['fill-color'] = fillColor.rgbaString()
+        if (aktivtLag.type !== 'raster') {
+          aktivtLag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
+          let fillColor =
+            Color(this.props.meta.farge) || Color('#ff2222').alpha(0.7)
+          aktivtLag.paint['fill-color'] = fillColor.rgbaString()
+        }
 
         this.addBehindSymbols(map, aktivtLag)
       }
@@ -258,7 +259,6 @@ class Mapbox extends Component {
       nextProps.valgteKoder.length > 0
     ) {
       Object.keys(nextProps.valgteKoder).forEach(id => {
-
         const forelder = nextProps.valgteKoder[id]
 
         if (forelder.barn) {
@@ -269,15 +269,15 @@ class Mapbox extends Component {
             if (!item.vis) {
               return
             }
- if (!map.getLayer(lagId)) {
-          let lag = hentLag(map, item.kode)
-          if (!lag || !lag.paint) return
+            if (!map.getLayer(lagId)) {
+              let lag = hentLag(map, item.kode)
+              if (!lag || !lag.paint) return
 
-          let fillColor = Color(item.farge || '#ff2222').alpha(0.7)
-          lag.paint['fill-color'] = fillColor.rgbaString()
-          lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
-          lag.id = lagId
-          this.addBehindSymbols(map, lag)
+              let fillColor = Color(item.farge || '#ff2222').alpha(0.7)
+              lag.paint['fill-color'] = fillColor.rgbaString()
+              lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
+              lag.id = lagId
+              this.addBehindSymbols(map, lag)
             }
           })
         }
