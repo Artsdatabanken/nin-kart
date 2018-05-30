@@ -99,7 +99,7 @@ class VenstreVinduContainer extends React.Component {
                     return (
                       <KodeContainer
                         style={{ height: '100vh' }}
-                        path={match.params.kode ? match.params.kode : ''}
+                        path={match.params.kode || ''}
                         onGoToCode={url => {
                           this.setState({ searchResults: null })
                           console.log(url)
@@ -123,7 +123,7 @@ class VenstreVinduContainer extends React.Component {
                   render={({ match, history }) => {
                     return (
                       <AktiveKartlag
-                        style={{ backgroundColor: '#fff' }}
+                        style={{ backgroundColor: '#eee' }}
                         title="Aktiverte lag"
                         koder={this.props.valgteKoder}
                         onMouseEnter={this.props.onMouseEnter}
@@ -149,13 +149,11 @@ class VenstreVinduContainer extends React.Component {
                 <Route
                   path="/punkt/:lng,:lat"
                   render={({ match, history }) => (
-                    <div>
-                      <PunktinformasjonContainer
-                        lng={match.params.lng}
-                        lat={match.params.lat}
-                        localId={this.props.localId}
-                      />
-                    </div>
+                    <PunktinformasjonContainer
+                      lng={match.params.lng}
+                      lat={match.params.lat}
+                      localId={this.props.localId}
+                    />
                   )}
                 />
               </Switch>
