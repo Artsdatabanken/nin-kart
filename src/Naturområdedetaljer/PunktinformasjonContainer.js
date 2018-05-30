@@ -192,7 +192,7 @@ class PunktinformasjonContainer extends Component {
       )
       if (!param.beskrivelsesvariabler) continue
       if (!Array.isArray(param.beskrivelsesvariabler)) {
-        code.beskrivelsesvariabler = [param.beskrivelsesvariabler]
+        param.beskrivelsesvariabler = [param.beskrivelsesvariabler]
       }
       for (let value in param.beskrivelsesvariabler) {
         let beskrivelsesvariabel = param.beskrivelsesvariabler[value]
