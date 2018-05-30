@@ -128,8 +128,7 @@ class Backend {
   // }
   static async getMetadataByNatureAreaLocalId(localId: string) {
     return this.getPromise(
-      `https://bboxcode.firebaseio.com/metadata2/${localId}.json`
-      // `https://test.artsdatabanken.no/nin_master/Api/data/GetMetadataByNatureAreaLocalId/${localId}`
+      `http://it-webadbtest01.it.ntnu.no/data/json/ninMetadata/${localId.toUpperCase()}.json`
     )
   }
   // static async getCodeTitle(code: string) {
