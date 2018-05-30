@@ -124,6 +124,24 @@
       "tiles": ["https://tiles.artsdatabanken.no/data/VV/{z}/{x}/{y}.pbf"],
       "minzoom": 0,
       "maxzoom": 11
+    },
+    "seksjoner2017": {
+      "type": "raster",
+      "tiles": [
+        "https://tiles.artsdatabanken.no/data/seksjoner2017/{z}/{x}/{y}.png"
+      ],
+      "tileSize": 256,
+      "minzoom": 1,
+      "maxzoom": 7
+    },
+    "soner2017": {
+      "type": "raster",
+      "tiles": [
+        "https://tiles.artsdatabanken.no/data/soner2017/{z}/{x}/{y}.png"
+      ],
+      "tileSize": 256,
+      "minzoom": 1,
+      "maxzoom": 7
     }
   },
   "sprite": "mapbox://sprites/artsdatabanken/cjcagna820mra2sp2elhqrjag",
