@@ -25,7 +25,7 @@ const Innstilling = ({ tittel, undertittel, icon, children, muiTheme }) => (
           float: 'left',
           paddingLeft: '16px',
           paddingBottom: '8px',
-          width: '310px',
+          width: '328px',
         }}
       >
         {children}
