@@ -1,6 +1,6 @@
 export default function språk(meta) {
   const keys = Object.keys(meta)
-  if (!keys || keys.length == 0) return ''
+  if (!keys || keys.length === 0) return ''
 
   if (keys.length === 1) return meta[keys[0]]
   else if (meta.la) {
