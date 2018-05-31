@@ -115,10 +115,14 @@ class Grunnkart extends React.Component<Props, State> {
 
   visValgte = () => {
     this.setState({
-      visValgte: this.state.valgteKoder && this.state.valgteKoder.length > 0,
+      visValgte: true,
     })
   }
-
+  visKatalog = () => {
+    this.setState({
+      visValgte: false,
+    })
+  }
   addSelected = props => {
     let koder = this.state.valgteKoder.slice()
     let kodeFinnes = false
@@ -340,10 +344,10 @@ class Grunnkart extends React.Component<Props, State> {
               isActiveLayer={erAktivert}
               onToggleLayer={this.handleToggleLayer}
               onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-              onExitToRoot={props => this.visValgte()}
+              onExitToRoot={this.visValgte}
+              visKatalog={this.visKatalog}
               localId={this.state.localId}
               meta={this.state.meta}
-              visValgte={this.state.visValgte}
             />
           </div>
         )}

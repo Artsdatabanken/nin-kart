@@ -144,6 +144,7 @@ class VenstreVinduContainer extends React.Component {
                         onMouseLeave={this.props.onMouseLeave}
                         onToggleVisible={this.props.onToggleVisible}
                         onRemoveSelectedLayer={this.props.onRemoveSelectedLayer}
+                        visKatalog={this.props.visKatalog}
                       />
                     )
                   }}

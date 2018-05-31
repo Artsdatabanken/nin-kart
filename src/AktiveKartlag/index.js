@@ -114,7 +114,10 @@ class AktiveKartlag extends React.Component {
           label="Katalog"
           primary
           style={{ margin: 16, float: 'right' }}
-          onClick={() => history.push('/katalog/')}
+          onClick={() => {
+            history.push('/katalog/')
+            this.props.visKatalog()
+          }}
         />
       </div>
     )
