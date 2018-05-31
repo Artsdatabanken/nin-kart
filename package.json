@@ -56,7 +56,12 @@
     "singleQuote": true
   },
   "jest": {
-    "coverageReporters": ["lcov"],
-    "collectCoverageFrom": ["src/**/*.{js}", "!src/**/__tests__/*.{js}"]
+    "coverageReporters": [
+      "lcov"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js}",
+      "!src/**/__tests__/*.{js}"
+    ]
   }
 }
