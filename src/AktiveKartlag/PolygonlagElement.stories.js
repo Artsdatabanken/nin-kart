@@ -106,7 +106,6 @@ storiesOf('PolygonlagElement', module)
           onMouseEnter={action('mouseEnter')}
           onMouseLeave={action('mouseLeave')}
           onRemove={action('onRemove')}
-          onUpdateLayerProp={action('onUpdateLayerProp')}
           onClick={action('onClick')}
           onToggleVisible={action('onToggleVisible')}
         />

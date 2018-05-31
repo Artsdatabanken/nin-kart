@@ -30,7 +30,6 @@ storiesOf('VenstreVindu', module)
             onExitToRoot={action('onExitToRoot')}
             localId={''}
             meta={''}
-            handleUpdateLayerProp={action('handleUpdateLayerProp')}
             onShowColorpicker={action('onShowColorpicker')}
             ekspandertKode={''}
             visValgte={false}

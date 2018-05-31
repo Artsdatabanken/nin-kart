@@ -115,7 +115,7 @@ class Grunnkart extends React.Component<Props, State> {
 
   visValgte = () => {
     this.setState({
-      visValgte: true,
+      visValgte: this.state.valgteKoder && this.state.valgteKoder.length > 0,
     })
   }
 
@@ -143,6 +143,7 @@ class Grunnkart extends React.Component<Props, State> {
         tittel: props.tittel,
         vis: true,
         barn: props.barn,
+        removable: true,
       })
       //console.log('addSelected:' + props.kode)
 
@@ -204,13 +205,6 @@ class Grunnkart extends React.Component<Props, State> {
       localStorageHelper.overrideFarger(data)
       this.setState({ meta: data ? data : '' })
     })
-  }
-
-  handleUpdateLayerProp = (kode, key, value) => {
-    let meta = this.state.meta
-    let layer = meta.barn[kode] || meta.barn[kode.toUpperCase()]
-    layer[key] = value
-    this.setState({ meta: meta })
   }
 
   handleUpdateSelectedLayerProp = (kode, propNavn, verdi) => {
@@ -336,7 +330,6 @@ class Grunnkart extends React.Component<Props, State> {
               }
               mapBounds={this.state.mapBounds}
               onToggleVisible={this.handleToggleVisible}
-              onUpdateLayerProp={this.handleUpdateLayerProp}
               onMouseEnter={kode => this.setState({ opplystKode: kode })}
               onMouseLeave={kode =>
                 this.setState({
@@ -346,6 +339,7 @@ class Grunnkart extends React.Component<Props, State> {
               onFitBounds={bbox => this.handleFitBounds(bbox)}
               isActiveLayer={erAktivert}
               onToggleLayer={this.handleToggleLayer}
+              onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
               onExitToRoot={props => this.visValgte()}
               localId={this.state.localId}
               meta={this.state.meta}

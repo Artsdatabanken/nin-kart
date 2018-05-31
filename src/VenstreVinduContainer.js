@@ -50,6 +50,20 @@ class VenstreVinduContainer extends React.Component {
     return meta.tittel.la
   }
 
+  finnValgtKodeElement(kode) {
+    var item = undefined
+    Object.keys(this.props.valgteKoder).forEach(id => {
+      const forelder = this.props.valgteKoder[id]
+      if (forelder.kode === kode) item = forelder
+
+      Object.keys(forelder.barn).forEach(barnId => {
+        const barn = forelder.barn[barnId]
+        if (barn.kode === kode) item = barn
+      })
+    })
+    return item
+  }
+
   render() {
     return (
       <Route
@@ -129,7 +143,6 @@ class VenstreVinduContainer extends React.Component {
                         onMouseEnter={this.props.onMouseEnter}
                         onMouseLeave={this.props.onMouseLeave}
                         onToggleVisible={this.props.onToggleVisible}
-                        onUpdateLayerProp={this.props.onUpdateLayerProp}
                         onRemoveSelectedLayer={this.props.onRemoveSelectedLayer}
                       />
                     )
@@ -140,9 +153,19 @@ class VenstreVinduContainer extends React.Component {
                   path="/lag/:kode"
                   render={({ match, history }) => (
                     <Tweaks
-                      kode={this.props.valgteKoder.find(
-                        k => k.kode === match.params.kode
-                      )}
+                      kode={match.params.kode}
+                      onRemoveSelectedLayer={this.props.onRemoveSelectedLayer}
+                      koder={this.props.valgteKoder}
+                      onGoToCode={sti => {
+                        this.setState({ searchResults: null })
+                        history.push('/katalog/' + sti)
+                      }}
+                      item={this.finnValgtKodeElement(match.params.kode)}
+                      onExitToRoot={() => {
+                        this.setState({ searchResults: null })
+                        history.push('/')
+                        this.props.onExitToRoot()
+                      }}
                     />
                   )}
                 />
