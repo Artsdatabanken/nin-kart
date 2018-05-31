@@ -18,7 +18,6 @@ class AktiveKartlag extends React.Component {
       onMouseEnter,
       onMouseLeave,
       onToggleVisible,
-      onUpdateLayerProp,
       language,
       history,
     } = this.props
@@ -46,7 +45,6 @@ class AktiveKartlag extends React.Component {
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           onRemove={kode => onRemoveSelectedLayer('etiketter')}
-          onUpdateLayerProp={onUpdateLayerProp}
           onClick={() => this.handleClick('etiketter')}
           onToggleVisible={kode => onToggleVisible(kode)}
           language={language}
@@ -63,7 +61,6 @@ class AktiveKartlag extends React.Component {
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
                 onRemove={kode => onRemoveSelectedLayer(kode)}
-                onUpdateLayerProp={onUpdateLayerProp}
                 onClick={() => this.handleClick(kode)}
                 onToggleVisible={onToggleVisible}
                 language={language}
@@ -79,7 +76,6 @@ class AktiveKartlag extends React.Component {
                     onMouseEnter={onMouseEnter}
                     onMouseLeave={onMouseLeave}
                     onRemove={kode => onRemoveSelectedLayer(kode)}
-                    onUpdateLayerProp={onUpdateLayerProp}
                     onClick={() => this.handleClick(kode)}
                     onToggleVisible={onToggleVisible}
                     language={language}
@@ -97,7 +93,6 @@ class AktiveKartlag extends React.Component {
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           onRemove={kode => onRemoveSelectedLayer('basemap')}
-          onUpdateLayerProp={onUpdateLayerProp}
           onClick={() => this.handleClick('basemap')}
           onToggleVisible={kode => onToggleVisible(kode)}
           language={language}
@@ -110,7 +105,6 @@ class AktiveKartlag extends React.Component {
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           onRemove={kode => onRemoveSelectedLayer('terreng')}
-          onUpdateLayerProp={onUpdateLayerProp}
           onClick={() => this.handleClick('terreng')}
           onToggleVisible={kode => onToggleVisible(kode)}
           language={language}
@@ -120,7 +114,10 @@ class AktiveKartlag extends React.Component {
           label="Katalog"
           primary
           style={{ margin: 16, float: 'right' }}
-          onClick={() => history.push('/katalog/')}
+          onClick={() => {
+            history.push('/katalog/')
+            this.props.visKatalog()
+          }}
         />
       </div>
     )

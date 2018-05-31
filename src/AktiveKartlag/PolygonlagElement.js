@@ -1,13 +1,8 @@
-import { FlatButton } from 'material-ui'
-import ActionDelete from 'material-ui/svg-icons/action/delete'
-import ActionInfo from 'material-ui/svg-icons/action/info'
 import React from 'react'
 import { withRouter } from 'react-router'
-import tinycolor from 'tinycolor2'
 import Kodetagg from '../Kodetre/Kodetagg'
 import PrettyPrint from '../prettyprint'
 import språk from '../språk'
-import ColorPicker from './ColorPicker'
 import KartlagElement from './Kartlagelement'
 
 class PolygonlagElement extends React.Component {
@@ -50,14 +45,7 @@ class PolygonlagElement extends React.Component {
 
   render() {
     const item = this.props
-    const {
-      farge,
-      tittel,
-      undertittel,
-      kode,
-      avatarUtenRamme,
-      sti,
-    } = this.props
+    const { farge, tittel, undertittel, kode, avatarUtenRamme } = this.props
     return (
       <KartlagElement
         farge={farge}
@@ -87,32 +75,7 @@ class PolygonlagElement extends React.Component {
           this.props.antallNaturområder,
           undertittel
         )}
-      >
-        <ColorPicker
-          color={farge}
-          onChange={farge => {
-            const rgbString = tinycolor(farge.rgb).toRgbString()
-            this.setFargeKode(item.kode, rgbString)
-            this.props.onUpdateLayerProp(item.kode, 'farge', rgbString)
-          }}
-        />
-
-        <FlatButton
-          label="Fjern"
-          primary={true}
-          onClick={e => {
-            this.props.onRemove(item.kode)
-          }}
-          icon={<ActionDelete />}
-        />
-
-        <FlatButton
-          label="Info"
-          primary={true}
-          onClick={() => this.props.history.push(sti)}
-          icon={<ActionInfo />}
-        />
-      </KartlagElement>
+      />
     )
   }
 }
