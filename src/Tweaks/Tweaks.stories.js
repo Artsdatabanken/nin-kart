@@ -6,6 +6,7 @@ storiesOf('Tweaks', module)
   .addDecorator(muiTheme())
   .add('root', () => (
     <div style={{ width: 400 }}>
-      <Tweaks />
+      <Tweaks kode={'terreng'} />
+      <Tweaks kode={'NA'} />
     </div>
   ))
