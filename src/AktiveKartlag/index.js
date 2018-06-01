@@ -55,7 +55,7 @@ class AktiveKartlag extends React.Component {
             <React.Fragment key={kode}>
               <PolygonlagElement
                 {...forelder}
-                key={'valgt' + kode}
+                key={kode}
                 kode={kode}
                 vis={forelder.vis}
                 onMouseEnter={onMouseEnter}
@@ -70,7 +70,7 @@ class AktiveKartlag extends React.Component {
                 return (
                   <PolygonlagElement
                     {...item}
-                    key={'valgt' + kode}
+                    key={kode}
                     kode={kode}
                     vis={item.vis}
                     onMouseEnter={onMouseEnter}

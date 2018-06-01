@@ -3,10 +3,12 @@ import React, { Component } from 'react'
 
 class Overskrift extends Component {
   render() {
+    const muiTheme = this.props.muiTheme
     return (
       <div
         style={{
-          color: this.props.muiTheme.palette.accent1Color,
+          color: muiTheme.palette.accent1Color,
+          fontFamily: muiTheme.fontFamily,
           fontWeight: 500,
           paddingTop: 8,
           paddingBottom: 16,

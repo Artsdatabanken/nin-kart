@@ -1,6 +1,5 @@
 import { Slider } from 'material-ui'
 import React from 'react'
-//import getNext from '../../../componentid'
 import Innstilling from './Innstilling'
 
 const SliderSetting = ({
@@ -23,7 +22,6 @@ const SliderSetting = ({
       step={step || 0.01}
       value={value}
       onChange={(event, value) => onChange(value)}
-      //      id={getNext()}
     />
   </Innstilling>
 )

@@ -15954,6 +15954,7 @@ exports[`Storyshots Tweaks root 1`] = `
               style={
                 Object {
                   "color": "#ff4081",
+                  "fontFamily": "Roboto, sans-serif",
                   "fontWeight": 500,
                   "paddingBottom": 16,
                   "paddingLeft": 16,
@@ -15980,6 +15981,7 @@ exports[`Storyshots Tweaks root 1`] = `
                   Object {
                     "color": "rgba(0, 0, 0, 0.3)",
                     "float": "left",
+                    "fontFamily": "Roboto, sans-serif",
                     "fontSize": 16,
                     "fontWeight": 500,
                     "left": 16,
@@ -16173,6 +16175,7 @@ exports[`Storyshots Tweaks root 1`] = `
               style={
                 Object {
                   "color": "#ff4081",
+                  "fontFamily": "Roboto, sans-serif",
                   "fontWeight": 500,
                   "paddingBottom": 16,
                   "paddingLeft": 16,
@@ -16188,6 +16191,7 @@ exports[`Storyshots Tweaks root 1`] = `
                   Object {
                     "color": "rgba(0, 0, 0, 0.3)",
                     "float": "left",
+                    "fontFamily": "Roboto, sans-serif",
                     "fontSize": 16,
                     "fontWeight": 500,
                     "left": 16,
@@ -16261,6 +16265,7 @@ exports[`Storyshots Tweaks root 1`] = `
                   Object {
                     "color": "rgba(0, 0, 0, 0.3)",
                     "float": "left",
+                    "fontFamily": "Roboto, sans-serif",
                     "fontSize": 16,
                     "fontWeight": 500,
                     "left": 16,
@@ -16464,6 +16469,7 @@ exports[`Storyshots Tweaks root 1`] = `
               style={
                 Object {
                   "color": "#ff4081",
+                  "fontFamily": "Roboto, sans-serif",
                   "fontWeight": 500,
                   "paddingBottom": 16,
                   "paddingLeft": 16,
