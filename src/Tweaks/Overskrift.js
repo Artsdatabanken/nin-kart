@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 
 class Overskrift extends Component {
   render() {
-    const muiTheme = this.props.muiThemeable
+    const muiTheme = this.props.muiTheme
     return (
       <div
         style={{

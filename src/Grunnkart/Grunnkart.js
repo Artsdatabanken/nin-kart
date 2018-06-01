@@ -149,7 +149,6 @@ class Grunnkart extends React.Component<Props, State> {
         barn: props.barn,
         removable: true,
       })
-      //console.log('addSelected:' + props.kode)
 
       this.setState({
         valgteKoder: koder,
@@ -212,12 +211,7 @@ class Grunnkart extends React.Component<Props, State> {
   }
 
   handleUpdateSelectedLayerProp = (kode, propNavn, verdi) => {
-    console.log(kode, propNavn, verdi)
     let valgte = this.state.valgteKoder
-    //valgte.forEach(item => {
-    //  if (item.kode === kode) {
-    //    item[propNavn] = verdi
-    //  }
     const barn = valgte.find(barn => barn.kode === kode)
     barn[propNavn] = verdi
     this.setState({ valgteKoder: valgte })
