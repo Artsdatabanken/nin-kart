@@ -21,6 +21,7 @@
     "react-responsive": "^4.0.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.1.0",
+    "typeface-roboto": "^0.0.54",
     "xml2js": "^0.4.19"
   },
   "scripts": {

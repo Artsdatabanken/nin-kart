@@ -16,7 +16,6 @@ function getHeaderStyle() {
 }
 
 function VectorPointInfo(props) {
-  console.log(JSON.stringify(props))
   if (props.pointInfo && Object.keys(props.pointInfo).length > 0)
     return (
       <Route

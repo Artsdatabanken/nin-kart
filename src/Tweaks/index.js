@@ -1,6 +1,6 @@
 import React from 'react'
-import Terreng from './Terreng'
 import Polygon from './Polygon'
+import Terreng from './Terreng'
 
 class Tweaks extends React.Component {
   state = {}
@@ -31,7 +31,6 @@ class Tweaks extends React.Component {
   }
 
   render() {
-    console.log(this.props.kode)
     return (
       <div style={{ marginTop: 16, marginBottom: 16, marginLeft: 16 }}>
         {this.props.kode === 'terreng' && (
