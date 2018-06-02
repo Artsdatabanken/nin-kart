@@ -1,20 +1,27 @@
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import React from 'react'
 import Label from './Label'
-const Innstilling = ({ tittel, undertittel, icon, children, muiTheme }) => (
+const Innstilling = ({
+  tittel,
+  undertittel,
+  icon,
+  disabled,
+  children,
+  muiTheme,
+}) => (
   <div>
     {undertittel && (
       <div
         style={{
           position: 'absolute',
-          right: 32,
+          right: 16,
           color: muiTheme.palette.disabledColor,
         }}
       >
         {undertittel}
       </div>
     )}
-    {true && <Label>{tittel}</Label>}
+    <Label disabled={disabled}>{tittel}</Label>
     <div style={{ position: 'absolute', top: '2px', float: 'left' }}>
       {icon}
     </div>

@@ -13,9 +13,19 @@ const SliderSetting = ({
   step,
   onChange,
 }) => (
-  <Innstilling tittel={tittel} undertittel={undertittel} icon={icon}>
+  <Innstilling
+    tittel={tittel}
+    undertittel={undertittel}
+    icon={icon}
+    disabled={disabled}
+  >
     <Slider
-      sliderStyle={{ marginTop: '6px', marginBottom: '0px' }}
+      sliderStyle={{
+        width: 302,
+        marginLeft: 40,
+        marginTop: 8,
+        marginBottom: 0,
+      }}
       disabled={disabled}
       min={min || 0}
       max={max || 1}

@@ -30,18 +30,20 @@ class Tweaks extends React.Component {
     this.setState({ [key]: value })
   }
 
-  render() {
-    return (
-      <div style={{ marginTop: 16, marginBottom: 16, marginLeft: 16 }}>
-        {this.props.kode === 'terreng' && (
+  seksjon(kategori) {
+    console.log(kategori)
+    switch (kategori) {
+      case 'terreng':
+        return (
           <Terreng
             vertikaltOverdriv={this.state.vertikaltOverdriv}
             visKontur={this.state.visKontur}
             konturintervall={this.state.konturintervall}
             onUpdateLayerProp={this.handleUpdateLayerProp}
           />
-        )}
-        {this.props.kode !== 'terreng' && (
+        )
+      default:
+        return (
           <Polygon
             onRemove={this.props.onRemoveSelectedLayer}
             item={this.props.item}
@@ -52,9 +54,12 @@ class Tweaks extends React.Component {
             onGoToCode={this.props.onGoToCode}
             onExitToRoot={this.props.onExitToRoot}
           />
-        )}
-      </div>
-    )
+        )
+    }
+  }
+
+  render() {
+    return <div style={{ padding: 16 }}>{this.seksjon(this.props.kode)}</div>
   }
 }
 

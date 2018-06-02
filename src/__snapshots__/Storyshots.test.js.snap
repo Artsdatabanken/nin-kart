@@ -974,7 +974,7 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                         }
                       }
                     >
-                      2.5x overdrevet
+                      2.5x overdrevet, kontur 50m
                     </div>
                   </div>
                 </div>
@@ -4566,7 +4566,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                               }
                             }
                           >
-                            2.5x overdrevet
+                            2.5x overdrevet, kontur 50m
                           </div>
                         </div>
                       </div>
@@ -15944,9 +15944,7 @@ exports[`Storyshots Tweaks root 1`] = `
           <div
             style={
               Object {
-                "marginBottom": 16,
-                "marginLeft": 16,
-                "marginTop": 16,
+                "padding": 16,
               }
             }
           >
@@ -15957,7 +15955,6 @@ exports[`Storyshots Tweaks root 1`] = `
                   "fontFamily": "Roboto, sans-serif",
                   "fontWeight": 500,
                   "paddingBottom": 16,
-                  "paddingLeft": 16,
                   "paddingTop": 8,
                 }
               }
@@ -15970,7 +15967,7 @@ exports[`Storyshots Tweaks root 1`] = `
                   Object {
                     "color": "rgba(0, 0, 0, 0.3)",
                     "position": "absolute",
-                    "right": 32,
+                    "right": 16,
                   }
                 }
               >
@@ -15979,12 +15976,12 @@ exports[`Storyshots Tweaks root 1`] = `
               <div
                 style={
                   Object {
-                    "color": "rgba(0, 0, 0, 0.3)",
+                    "color": "rgba(0, 0, 0, 0.87)",
                     "float": "left",
                     "fontFamily": "Roboto, sans-serif",
                     "fontSize": 16,
-                    "fontWeight": 500,
-                    "left": 16,
+                    "fontWeight": 400,
+                    "left": 56,
                     "position": "relative",
                   }
                 }
@@ -16061,13 +16058,14 @@ exports[`Storyshots Tweaks root 1`] = `
                         Object {
                           "cursor": "default",
                           "height": 18,
-                          "marginBottom": "0px",
-                          "marginTop": "6px",
+                          "marginBottom": 0,
+                          "marginLeft": 40,
+                          "marginTop": 8,
                           "muiPrepared": true,
                           "position": "relative",
                           "touchCallout": "none",
                           "userSelect": "none",
-                          "width": "100%",
+                          "width": 302,
                         }
                       }
                     >
@@ -16174,77 +16172,130 @@ exports[`Storyshots Tweaks root 1`] = `
             <div
               style={
                 Object {
-                  "color": "#ff4081",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontWeight": 500,
-                  "paddingBottom": 16,
-                  "paddingLeft": 16,
-                  "paddingTop": 8,
+                  "display": "block",
+                  "height": 48,
                 }
               }
             >
-              Kontur (trinndelt høydevisualisering)
-            </div>
-            <div>
               <div
                 style={
                   Object {
-                    "color": "rgba(0, 0, 0, 0.3)",
-                    "float": "left",
-                    "fontFamily": "Roboto, sans-serif",
-                    "fontSize": 16,
-                    "fontWeight": 500,
-                    "left": 16,
-                    "position": "relative",
-                  }
-                }
-              >
-                Konturlinjer
-              </div>
-              <div
-                style={
-                  Object {
-                    "float": "left",
-                    "position": "absolute",
-                    "top": "2px",
+                    "float": "right",
                   }
                 }
               />
               <div
                 style={
                   Object {
-                    "display": "inline-block",
-                    "left": "8px",
+                    "width": 260,
                   }
                 }
               >
                 <div
                   style={
                     Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
                       "float": "left",
-                      "paddingBottom": "8px",
-                      "paddingLeft": "16px",
+                      "fontFamily": "Roboto, sans-serif",
+                      "fontSize": 16,
+                      "fontWeight": 400,
+                      "left": 56,
                       "position": "relative",
-                      "width": "328px",
                     }
                   }
                 >
-                  <span
-                    style={
-                      Object {
-                        "float": "right",
-                      }
+                  Etiketter med høydeangivelse av topper
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "color": "#ff4081",
+                  "fontFamily": "Roboto, sans-serif",
+                  "fontWeight": 500,
+                  "paddingBottom": 16,
+                  "paddingTop": 8,
+                }
+              }
+            >
+              Kontur (trinndelt høydevisualisering)
+            </div>
+            <div
+              style={
+                Object {
+                  "display": "block",
+                  "height": 48,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "float": "right",
+                  }
+                }
+              />
+              <div
+                style={
+                  Object {
+                    "width": 260,
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "float": "left",
+                      "fontFamily": "Roboto, sans-serif",
+                      "fontSize": 16,
+                      "fontWeight": 400,
+                      "left": 56,
+                      "position": "relative",
                     }
-                  />
-                  <div
-                    style={
-                      Object {
-                        "color": "rgba(0, 0, 0, 0.3)",
-                        "left": 24,
-                        "position": "relative",
-                      }
+                  }
+                >
+                  Konturlinjer
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "display": "block",
+                  "height": 48,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "float": "right",
+                  }
+                }
+              />
+              <div
+                style={
+                  Object {
+                    "width": 260,
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "float": "left",
+                      "fontFamily": "Roboto, sans-serif",
+                      "fontSize": 16,
+                      "fontWeight": 400,
+                      "left": 56,
+                      "position": "relative",
                     }
-                  />
+                  }
+                >
+                  Etiketter med høydeangivelse
                 </div>
               </div>
             </div>
@@ -16254,7 +16305,7 @@ exports[`Storyshots Tweaks root 1`] = `
                   Object {
                     "color": "rgba(0, 0, 0, 0.3)",
                     "position": "absolute",
-                    "right": 32,
+                    "right": 16,
                   }
                 }
               >
@@ -16263,12 +16314,12 @@ exports[`Storyshots Tweaks root 1`] = `
               <div
                 style={
                   Object {
-                    "color": "rgba(0, 0, 0, 0.3)",
+                    "color": "rgba(0, 0, 0, 0.87)",
                     "float": "left",
                     "fontFamily": "Roboto, sans-serif",
                     "fontSize": 16,
-                    "fontWeight": 500,
-                    "left": 16,
+                    "fontWeight": 400,
+                    "left": 56,
                     "position": "relative",
                   }
                 }
@@ -16345,13 +16396,14 @@ exports[`Storyshots Tweaks root 1`] = `
                         Object {
                           "cursor": "default",
                           "height": 18,
-                          "marginBottom": "0px",
-                          "marginTop": "6px",
+                          "marginBottom": 0,
+                          "marginLeft": 40,
+                          "marginTop": 8,
                           "muiPrepared": true,
                           "position": "relative",
                           "touchCallout": "none",
                           "userSelect": "none",
-                          "width": "100%",
+                          "width": 302,
                         }
                       }
                     >
@@ -16459,9 +16511,7 @@ exports[`Storyshots Tweaks root 1`] = `
           <div
             style={
               Object {
-                "marginBottom": 16,
-                "marginLeft": 16,
-                "marginTop": 16,
+                "padding": 16,
               }
             }
           >
@@ -16472,7 +16522,6 @@ exports[`Storyshots Tweaks root 1`] = `
                   "fontFamily": "Roboto, sans-serif",
                   "fontWeight": 500,
                   "paddingBottom": 16,
-                  "paddingLeft": 16,
                   "paddingTop": 8,
                 }
               }
@@ -18422,7 +18471,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                           }
                         }
                       >
-                        2.5x overdrevet
+                        2.5x overdrevet, kontur 50m
                       </div>
                     </div>
                   </div>
@@ -19605,7 +19654,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                           }
                         }
                       >
-                        2.5x overdrevet
+                        2.5x overdrevet, kontur 50m
                       </div>
                     </div>
                   </div>
