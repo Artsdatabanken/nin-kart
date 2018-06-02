@@ -15641,6 +15641,7 @@ exports[`Storyshots Tweaks root 1`] = `
                         Mørk
                       </div>
                       <img
+                        alt="Mørk"
                         src="thumb_mørk.jpg"
                       />
                     </div>
@@ -15726,6 +15727,7 @@ exports[`Storyshots Tweaks root 1`] = `
                         Lys
                       </div>
                       <img
+                        alt="Lys"
                         src="thumb_lys.jpg"
                       />
                     </div>
@@ -15811,6 +15813,7 @@ exports[`Storyshots Tweaks root 1`] = `
                         Flyfoto
                       </div>
                       <img
+                        alt="Flyfoto"
                         src="thumb_flyfoto.jpg"
                       />
                     </div>
@@ -15896,6 +15899,7 @@ exports[`Storyshots Tweaks root 1`] = `
                         Gammelt
                       </div>
                       <img
+                        alt="Gammelt"
                         src="thumb_vintage.jpg"
                       />
                     </div>
