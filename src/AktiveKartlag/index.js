@@ -1,4 +1,4 @@
-import { RaisedButton, Subheader } from 'material-ui'
+import { Divider, RaisedButton, Subheader } from 'material-ui'
 import MapsLayers from 'material-ui/svg-icons/maps/layers'
 import React from 'react'
 import { withRouter } from 'react-router'
@@ -36,6 +36,7 @@ class AktiveKartlag extends React.Component {
     return (
       <div style={{ position: 'relative', top: 8 }}>
         <Subheader>Mine kartlag</Subheader>
+        <Divider />
         {koder.map(forelder => {
           const kode = forelder.kode
           return (
