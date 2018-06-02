@@ -3,7 +3,6 @@ import MapsLayers from 'material-ui/svg-icons/maps/layers'
 import React from 'react'
 import { withRouter } from 'react-router'
 import BakgrunnskartElement from './BakgrunnskartElement'
-import EtiketterElement from './EtiketterElement'
 import PolygonlagElement from './PolygonlagElement'
 import TerrenglagElement from './TerrenglagElement'
 class AktiveKartlag extends React.Component {
@@ -37,18 +36,6 @@ class AktiveKartlag extends React.Component {
     return (
       <div style={{ position: 'relative', top: 8 }}>
         <Subheader>Mine kartlag</Subheader>
-        <EtiketterElement
-          key="etiketter"
-          kode="Stedsnavn, verneområder"
-          meta={{ tittel: { nb: 'Etiketter' } }}
-          vis={true}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          onRemove={kode => onRemoveSelectedLayer('etiketter')}
-          onClick={() => this.handleClick('etiketter')}
-          onToggleVisible={kode => onToggleVisible(kode)}
-          language={language}
-        />
         {koder.map(forelder => {
           const kode = forelder.kode
           return (
