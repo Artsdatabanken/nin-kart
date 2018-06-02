@@ -13,12 +13,12 @@ const KartPreview = ({ thumb, tittel, checked }) => (
     innerDivStyle={{ padding: 0, marginBottom: 16, backgroundImage: thumb }}
   >
     <Label style={{ left: 0, paddingBottom: 8 }}>{tittel}</Label>
-    <img src={thumb} />
+    <img src={thumb} alt={tittel} />
   </ListItem>
 )
 class Bakgrunnskart extends Component {
   render() {
-    const { tema = 'Mørk' } = this.props
+    //    const { tema = 'Mørk' } = this.props
     return (
       <React.Fragment>
         <Overskrift>Bakgrunnskart</Overskrift>
