@@ -12,7 +12,6 @@ class Overskrift extends Component {
           fontWeight: 500,
           paddingTop: 8,
           paddingBottom: 16,
-          paddingLeft: 16,
         }}
       >
         {this.props.children}

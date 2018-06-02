@@ -99,7 +99,6 @@ class AktiveKartlag extends React.Component {
         />
         <TerrenglagElement
           key="terreng"
-          kode="2.5x overdrevet"
           meta={{ tittel: { nb: '3D terreng' } }}
           vis={true}
           onMouseEnter={onMouseEnter}
