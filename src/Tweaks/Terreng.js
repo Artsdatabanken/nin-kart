@@ -5,7 +5,6 @@ import React, { Component } from 'react'
 import Overskrift from './Overskrift'
 import SliderSetting from './SliderSetting'
 import Veksle from './Veksle'
-
 class Terreng extends Component {
   render() {
     const {

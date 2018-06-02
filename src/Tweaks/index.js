@@ -1,7 +1,7 @@
 import React from 'react'
+import Bakgrunnskart from './Bakgrunnskart'
 import Polygon from './Polygon'
 import Terreng from './Terreng'
-
 class Tweaks extends React.Component {
   state = {}
 
@@ -33,12 +33,16 @@ class Tweaks extends React.Component {
   seksjon(kategori) {
     console.log(kategori)
     switch (kategori) {
+      case 'bakgrunnskart':
+        return <Bakgrunnskart onUpdateLayerProp={this.handleUpdateLayerProp} />
       case 'terreng':
         return (
           <Terreng
             vertikaltOverdriv={this.state.vertikaltOverdriv}
             visKontur={this.state.visKontur}
+            visEtikettTopp={this.state.visEtikettTopp}
             konturintervall={this.state.konturintervall}
+            visEtikettKontur={this.state.visEtikettKontur}
             onUpdateLayerProp={this.handleUpdateLayerProp}
           />
         )
