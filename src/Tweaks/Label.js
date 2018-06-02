@@ -1,7 +1,7 @@
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import React from 'react'
 
-const Label = ({ children, disabled, muiTheme }) => (
+const Label = ({ children, style, disabled, muiTheme }) => (
   <div
     style={{
       position: 'relative',
@@ -13,6 +13,7 @@ const Label = ({ children, disabled, muiTheme }) => (
       color: disabled
         ? muiTheme.palette.disabledColor
         : muiTheme.palette.textColor,
+      ...style,
     }}
   >
     {children}
