@@ -6,7 +6,7 @@ class TerrenglagElement extends Component {
     const konturintervall = 50
     const visKontur = true
     let r = []
-    if (vertikaltOverdriv != 1) r.push(vertikaltOverdriv + 'x overdrevet')
+    if (vertikaltOverdriv !== 1) r.push(vertikaltOverdriv + 'x overdrevet')
     if (visKontur) r.push('kontur ' + konturintervall + 'm')
     return r.join(', ')
   }
