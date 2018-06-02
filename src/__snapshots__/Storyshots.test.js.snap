@@ -77,6 +77,19 @@ exports[`Storyshots Aktive kartlag default 1`] = `
             >
               Mine kartlag
             </div>
+            <hr
+              style={
+                Object {
+                  "backgroundColor": "#e0e0e0",
+                  "border": "none",
+                  "height": 1,
+                  "margin": 0,
+                  "marginLeft": 0,
+                  "marginTop": -1,
+                  "muiPrepared": true,
+                }
+              }
+            />
             <div>
               <span
                 disabled={false}
@@ -3979,6 +3992,19 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                   >
                     Mine kartlag
                   </div>
+                  <hr
+                    style={
+                      Object {
+                        "backgroundColor": "#e0e0e0",
+                        "border": "none",
+                        "height": 1,
+                        "margin": 0,
+                        "marginLeft": 0,
+                        "marginTop": -1,
+                        "muiPrepared": true,
+                      }
+                    }
+                  />
                   <div>
                     <span
                       disabled={false}
@@ -18631,6 +18657,19 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
               >
                 Mine kartlag
               </div>
+              <hr
+                style={
+                  Object {
+                    "backgroundColor": "#e0e0e0",
+                    "border": "none",
+                    "height": 1,
+                    "margin": 0,
+                    "marginLeft": 0,
+                    "marginTop": -1,
+                    "muiPrepared": true,
+                  }
+                }
+              />
               <div>
                 <span
                   disabled={false}
@@ -19596,6 +19635,19 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
               >
                 Mine kartlag
               </div>
+              <hr
+                style={
+                  Object {
+                    "backgroundColor": "#e0e0e0",
+                    "border": "none",
+                    "height": 1,
+                    "margin": 0,
+                    "marginLeft": 0,
+                    "marginTop": -1,
+                    "muiPrepared": true,
+                  }
+                }
+              />
               <div>
                 <span
                   disabled={false}
