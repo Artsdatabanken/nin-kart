@@ -15966,6 +15966,7 @@ exports[`Storyshots Tweaks root 1`] = `
                 style={
                   Object {
                     "color": "rgba(0, 0, 0, 0.3)",
+                    "fontFamily": "Roboto, sans-serif",
                     "position": "absolute",
                     "right": 16,
                   }
@@ -16304,6 +16305,7 @@ exports[`Storyshots Tweaks root 1`] = `
                 style={
                   Object {
                     "color": "rgba(0, 0, 0, 0.3)",
+                    "fontFamily": "Roboto, sans-serif",
                     "position": "absolute",
                     "right": 16,
                   }

@@ -13,6 +13,7 @@ const Innstilling = ({
     {undertittel && (
       <div
         style={{
+          fontFamily: muiTheme.fontFamily,
           position: 'absolute',
           right: 16,
           color: muiTheme.palette.disabledColor,
