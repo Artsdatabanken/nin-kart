@@ -18,6 +18,7 @@ class TerrenglagElement extends Component {
         tittel="Terreng"
         undertittel={this.undertittel()}
         onToggleVisible={this.props.onToggleVisible}
+        kanFlyttes={false}
       />
     )
   }
