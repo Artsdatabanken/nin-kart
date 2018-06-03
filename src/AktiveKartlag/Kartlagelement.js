@@ -9,7 +9,7 @@ import PaintSwatch from '../Kodetre/Kodeliste/PaintSwatch'
 class Kartlagelement extends React.Component {
   render() {
     const item = this.props
-    const { tittel, undertittel, kode, farge } = this.props
+    const { tittel, undertittel, kode, farge, kanFlyttes = true } = this.props
     return (
       <React.Fragment>
         <ListItem
@@ -56,13 +56,15 @@ class Kartlagelement extends React.Component {
           primaryText={tittel}
           secondaryText={undertittel}
           rightAvatar={
-            <div
-              style={{ cursor: '-webkit-grab', marginTop: 8, marginLeft: 8 }}
-            >
-              <Reorder
-                style={{ color: this.props.muiTheme.palette.disabledColor }}
-              />
-            </div>
+            kanFlyttes && (
+              <div
+                style={{ cursor: '-webkit-grab', marginTop: 8, marginLeft: 8 }}
+              >
+                <Reorder
+                  style={{ color: this.props.muiTheme.palette.disabledColor }}
+                />
+              </div>
+            )
           }
         >
           <div style={{ position: 'absolute', left: 280, top: 24 }}>
