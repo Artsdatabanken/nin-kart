@@ -127,7 +127,7 @@ class Mapbox extends Component {
       let aktivtLag = hentLag(map, aktivKode)
       aktivtLag.id = 'aktivt'
       if (aktivtLag) {
-        if (aktivtLag.type !== 'raster') {
+        if (aktivtLag.type === 'vector' || 'fill') {
           aktivtLag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
           let fillColor =
             Color(this.props.meta.farge) || Color('#ff2222').alpha(0.7)
@@ -151,11 +151,11 @@ class Mapbox extends Component {
         this.props.meta.barn[opplystKode]
       ) {
         let opplystLag = hentLag(map, opplystKode)
-        if (!opplystLag || !opplystLag.paint) return
-
-        opplystLag.paint['fill-color'] = 'cyan'
-        opplystLag.paint['fill-outline-color'] = 'magenta'
-        opplystLag.id = 'opplyst'
+        if (opplystLag && opplystLag.paint) {
+          opplystLag.paint['fill-color'] = 'cyan'
+          opplystLag.paint['fill-outline-color'] = 'magenta'
+          opplystLag.id = 'opplyst'
+        }
         this.addBehindSymbols(map, opplystLag)
       }
     }
