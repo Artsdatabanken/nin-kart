@@ -14,7 +14,6 @@ storiesOf('Aktive kartlag', module)
       <MemoryRouter>
         <AktiveKartlag
           koder={koder}
-          onUpdateLayerProp={action('updateLayerProp')}
           onMouseEnter={action('mouseEnter')}
           onMouseLeave={action('mouseLeave')}
           onToggleVisible={action('onToggleVisible')}

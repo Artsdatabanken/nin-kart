@@ -1,9 +1,8 @@
-import { RaisedButton, Subheader } from 'material-ui'
+import { Divider, RaisedButton, Subheader } from 'material-ui'
 import MapsLayers from 'material-ui/svg-icons/maps/layers'
 import React from 'react'
 import { withRouter } from 'react-router'
 import BakgrunnskartElement from './BakgrunnskartElement'
-import EtiketterElement from './EtiketterElement'
 import PolygonlagElement from './PolygonlagElement'
 import TerrenglagElement from './TerrenglagElement'
 class AktiveKartlag extends React.Component {
@@ -18,7 +17,6 @@ class AktiveKartlag extends React.Component {
       onMouseEnter,
       onMouseLeave,
       onToggleVisible,
-      onUpdateLayerProp,
       language,
       history,
     } = this.props
@@ -38,32 +36,19 @@ class AktiveKartlag extends React.Component {
     return (
       <div style={{ position: 'relative', top: 8 }}>
         <Subheader>Mine kartlag</Subheader>
-        <EtiketterElement
-          key="etiketter"
-          kode="Stedsnavn, verneområder"
-          meta={{ tittel: { nb: 'Etiketter' } }}
-          vis={true}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          onRemove={kode => onRemoveSelectedLayer('etiketter')}
-          onUpdateLayerProp={onUpdateLayerProp}
-          onClick={() => this.handleClick('etiketter')}
-          onToggleVisible={kode => onToggleVisible(kode)}
-          language={language}
-        />
+        <Divider />
         {koder.map(forelder => {
           const kode = forelder.kode
           return (
             <React.Fragment key={kode}>
               <PolygonlagElement
                 {...forelder}
-                key={'valgt' + kode}
+                key={kode}
                 kode={kode}
                 vis={forelder.vis}
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
                 onRemove={kode => onRemoveSelectedLayer(kode)}
-                onUpdateLayerProp={onUpdateLayerProp}
                 onClick={() => this.handleClick(kode)}
                 onToggleVisible={onToggleVisible}
                 language={language}
@@ -73,13 +58,12 @@ class AktiveKartlag extends React.Component {
                 return (
                   <PolygonlagElement
                     {...item}
-                    key={'valgt' + kode}
+                    key={kode}
                     kode={kode}
                     vis={item.vis}
                     onMouseEnter={onMouseEnter}
                     onMouseLeave={onMouseLeave}
                     onRemove={kode => onRemoveSelectedLayer(kode)}
-                    onUpdateLayerProp={onUpdateLayerProp}
                     onClick={() => this.handleClick(kode)}
                     onToggleVisible={onToggleVisible}
                     language={language}
@@ -97,20 +81,17 @@ class AktiveKartlag extends React.Component {
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           onRemove={kode => onRemoveSelectedLayer('basemap')}
-          onUpdateLayerProp={onUpdateLayerProp}
           onClick={() => this.handleClick('basemap')}
           onToggleVisible={kode => onToggleVisible(kode)}
           language={language}
         />
         <TerrenglagElement
           key="terreng"
-          kode="2.5x overdrevet"
           meta={{ tittel: { nb: '3D terreng' } }}
           vis={true}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           onRemove={kode => onRemoveSelectedLayer('terreng')}
-          onUpdateLayerProp={onUpdateLayerProp}
           onClick={() => this.handleClick('terreng')}
           onToggleVisible={kode => onToggleVisible(kode)}
           language={language}
@@ -120,7 +101,10 @@ class AktiveKartlag extends React.Component {
           label="Katalog"
           primary
           style={{ margin: 16, float: 'right' }}
-          onClick={() => history.push('/katalog/')}
+          onClick={() => {
+            history.push('/katalog/')
+            this.props.visKatalog()
+          }}
         />
       </div>
     )

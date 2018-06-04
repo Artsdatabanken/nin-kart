@@ -77,211 +77,6 @@ exports[`Storyshots Aktive kartlag default 1`] = `
             >
               Mine kartlag
             </div>
-            <div>
-              <span
-                disabled={false}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                open={null}
-                style={
-                  Object {
-                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                    "background": "none",
-                    "backgroundColor": null,
-                    "border": 10,
-                    "boxSizing": "border-box",
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "cursor": "pointer",
-                    "display": "block",
-                    "fontFamily": "Roboto, sans-serif",
-                    "fontSize": 16,
-                    "fontWeight": "inherit",
-                    "lineHeight": "16px",
-                    "margin": 0,
-                    "muiPrepared": true,
-                    "outline": "none",
-                    "padding": 0,
-                    "position": "relative",
-                    "textDecoration": "none",
-                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "verticalAlign": null,
-                  }
-                }
-                tabIndex={0}
-              >
-                <div
-                  onMouseDown={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
-                >
-                  <div
-                    style={
-                      Object {
-                        "marginLeft": 0,
-                        "muiPrepared": true,
-                        "paddingBottom": 16,
-                        "paddingLeft": 72,
-                        "paddingRight": 56,
-                        "paddingTop": 20,
-                        "position": "relative",
-                      }
-                    }
-                  >
-                    <div
-                      style={
-                        Object {
-                          "left": 280,
-                          "position": "absolute",
-                          "top": 24,
-                        }
-                      }
-                    />
-                    <div
-                      style={
-                        Object {
-                          "left": 16,
-                          "position": "absolute",
-                          "top": 16,
-                        }
-                      }
-                    >
-                      <div
-                        style={
-                          Object {
-                            "display": "inline-flex",
-                            "position": "absolute",
-                            "right": 40,
-                            "top": 8,
-                          }
-                        }
-                      />
-                      <div
-                        style={
-                          Object {
-                            "display": "inline-flex",
-                            "position": "absolute",
-                            "rxight": 0,
-                            "top": 8,
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "height": "28px",
-                              "right": "14px",
-                              "width": "28px",
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "backgroundImage": "url(null)",
-                                "borderRadius": "12%",
-                                "bottom": 0,
-                                "left": 0,
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 0,
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "backgroundColor": undefined,
-                                  "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                  "borderRadius": "12%",
-                                  "bottom": 0,
-                                  "left": 0,
-                                  "position": "absolute",
-                                  "right": 0,
-                                  "top": 0,
-                                }
-                              }
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "cursor": "-webkit-grab",
-                          "marginLeft": 8,
-                          "marginTop": 8,
-                          "position": "absolute",
-                          "right": 16,
-                          "top": 16,
-                        }
-                      }
-                    >
-                      <svg
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
-                        style={
-                          Object {
-                            "color": "rgba(0, 0, 0, 0.3)",
-                            "display": "inline-block",
-                            "fill": "currentColor",
-                            "height": 24,
-                            "muiPrepared": true,
-                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                            "userSelect": "none",
-                            "width": 24,
-                          }
-                        }
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
-                        />
-                      </svg>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "muiPrepared": true,
-                        }
-                      }
-                    >
-                      Etiketter
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "WebkitBoxOrient": null,
-                          "WebkitLineClamp": null,
-                          "color": "rgba(0, 0, 0, 0.54)",
-                          "display": null,
-                          "fontSize": 14,
-                          "height": 16,
-                          "lineHeight": "16px",
-                          "margin": 0,
-                          "marginTop": 4,
-                          "muiPrepared": true,
-                          "overflow": "hidden",
-                          "textOverflow": "ellipsis",
-                          "whiteSpace": "nowrap",
-                        }
-                      }
-                    >
-                      Verneområder, stedsnavn
-                    </div>
-                  </div>
-                </div>
-              </span>
-            </div>
             <hr
               style={
                 Object {
@@ -610,7 +405,7 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                         "muiPrepared": true,
                         "paddingBottom": 16,
                         "paddingLeft": 72,
-                        "paddingRight": 56,
+                        "paddingRight": 16,
                         "paddingTop": 20,
                         "position": "relative",
                       }
@@ -693,40 +488,6 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "cursor": "-webkit-grab",
-                          "marginLeft": 8,
-                          "marginTop": 8,
-                          "position": "absolute",
-                          "right": 16,
-                          "top": 16,
-                        }
-                      }
-                    >
-                      <svg
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
-                        style={
-                          Object {
-                            "color": "rgba(0, 0, 0, 0.3)",
-                            "display": "inline-block",
-                            "fill": "currentColor",
-                            "height": 24,
-                            "muiPrepared": true,
-                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                            "userSelect": "none",
-                            "width": 24,
-                          }
-                        }
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
-                        />
-                      </svg>
                     </div>
                     <div
                       style={
@@ -828,7 +589,7 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                         "muiPrepared": true,
                         "paddingBottom": 16,
                         "paddingLeft": 72,
-                        "paddingRight": 56,
+                        "paddingRight": 16,
                         "paddingTop": 20,
                         "position": "relative",
                       }
@@ -915,40 +676,6 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                     <div
                       style={
                         Object {
-                          "cursor": "-webkit-grab",
-                          "marginLeft": 8,
-                          "marginTop": 8,
-                          "position": "absolute",
-                          "right": 16,
-                          "top": 16,
-                        }
-                      }
-                    >
-                      <svg
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
-                        style={
-                          Object {
-                            "color": "rgba(0, 0, 0, 0.3)",
-                            "display": "inline-block",
-                            "fill": "currentColor",
-                            "height": 24,
-                            "muiPrepared": true,
-                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                            "userSelect": "none",
-                            "width": 24,
-                          }
-                        }
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
-                        />
-                      </svg>
-                    </div>
-                    <div
-                      style={
-                        Object {
                           "muiPrepared": true,
                         }
                       }
@@ -974,7 +701,7 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                         }
                       }
                     >
-                      2.5x overdrevet
+                      2.5x overdrevet, kontur 50m
                     </div>
                   </div>
                 </div>
@@ -3931,211 +3658,6 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                   >
                     Mine kartlag
                   </div>
-                  <div>
-                    <span
-                      disabled={false}
-                      onBlur={[Function]}
-                      onClick={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      onKeyUp={[Function]}
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      onTouchEnd={[Function]}
-                      onTouchStart={[Function]}
-                      open={null}
-                      style={
-                        Object {
-                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                          "background": "none",
-                          "backgroundColor": null,
-                          "border": 10,
-                          "boxSizing": "border-box",
-                          "color": "rgba(0, 0, 0, 0.87)",
-                          "cursor": "pointer",
-                          "display": "block",
-                          "fontFamily": "Roboto, sans-serif",
-                          "fontSize": 16,
-                          "fontWeight": "inherit",
-                          "lineHeight": "16px",
-                          "margin": 0,
-                          "muiPrepared": true,
-                          "outline": "none",
-                          "padding": 0,
-                          "position": "relative",
-                          "textDecoration": "none",
-                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "verticalAlign": null,
-                        }
-                      }
-                      tabIndex={0}
-                    >
-                      <div
-                        onMouseDown={[Function]}
-                        onMouseLeave={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchEnd={[Function]}
-                        onTouchStart={[Function]}
-                      >
-                        <div
-                          style={
-                            Object {
-                              "marginLeft": 0,
-                              "muiPrepared": true,
-                              "paddingBottom": 16,
-                              "paddingLeft": 72,
-                              "paddingRight": 56,
-                              "paddingTop": 20,
-                              "position": "relative",
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "left": 280,
-                                "position": "absolute",
-                                "top": 24,
-                              }
-                            }
-                          />
-                          <div
-                            style={
-                              Object {
-                                "left": 16,
-                                "position": "absolute",
-                                "top": 16,
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "display": "inline-flex",
-                                  "position": "absolute",
-                                  "right": 40,
-                                  "top": 8,
-                                }
-                              }
-                            />
-                            <div
-                              style={
-                                Object {
-                                  "display": "inline-flex",
-                                  "position": "absolute",
-                                  "rxight": 0,
-                                  "top": 8,
-                                }
-                              }
-                            >
-                              <div
-                                style={
-                                  Object {
-                                    "height": "28px",
-                                    "right": "14px",
-                                    "width": "28px",
-                                  }
-                                }
-                              >
-                                <div
-                                  style={
-                                    Object {
-                                      "backgroundImage": "url(null)",
-                                      "borderRadius": "12%",
-                                      "bottom": 0,
-                                      "left": 0,
-                                      "position": "absolute",
-                                      "right": 0,
-                                      "top": 0,
-                                    }
-                                  }
-                                >
-                                  <div
-                                    style={
-                                      Object {
-                                        "backgroundColor": undefined,
-                                        "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                        "borderRadius": "12%",
-                                        "bottom": 0,
-                                        "left": 0,
-                                        "position": "absolute",
-                                        "right": 0,
-                                        "top": 0,
-                                      }
-                                    }
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "cursor": "-webkit-grab",
-                                "marginLeft": 8,
-                                "marginTop": 8,
-                                "position": "absolute",
-                                "right": 16,
-                                "top": 16,
-                              }
-                            }
-                          >
-                            <svg
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
-                              style={
-                                Object {
-                                  "color": "rgba(0, 0, 0, 0.3)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
-                                }
-                              }
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
-                              />
-                            </svg>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "muiPrepared": true,
-                              }
-                            }
-                          >
-                            Etiketter
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "WebkitBoxOrient": null,
-                                "WebkitLineClamp": null,
-                                "color": "rgba(0, 0, 0, 0.54)",
-                                "display": null,
-                                "fontSize": 14,
-                                "height": 16,
-                                "lineHeight": "16px",
-                                "margin": 0,
-                                "marginTop": 4,
-                                "muiPrepared": true,
-                                "overflow": "hidden",
-                                "textOverflow": "ellipsis",
-                                "whiteSpace": "nowrap",
-                              }
-                            }
-                          >
-                            Verneområder, stedsnavn
-                          </div>
-                        </div>
-                      </div>
-                    </span>
-                  </div>
                   <hr
                     style={
                       Object {
@@ -4202,7 +3724,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                               "muiPrepared": true,
                               "paddingBottom": 16,
                               "paddingLeft": 72,
-                              "paddingRight": 56,
+                              "paddingRight": 16,
                               "paddingTop": 20,
                               "position": "relative",
                             }
@@ -4285,40 +3807,6 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                                 </div>
                               </div>
                             </div>
-                          </div>
-                          <div
-                            style={
-                              Object {
-                                "cursor": "-webkit-grab",
-                                "marginLeft": 8,
-                                "marginTop": 8,
-                                "position": "absolute",
-                                "right": 16,
-                                "top": 16,
-                              }
-                            }
-                          >
-                            <svg
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
-                              style={
-                                Object {
-                                  "color": "rgba(0, 0, 0, 0.3)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
-                                }
-                              }
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
-                              />
-                            </svg>
                           </div>
                           <div
                             style={
@@ -4420,7 +3908,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                               "muiPrepared": true,
                               "paddingBottom": 16,
                               "paddingLeft": 72,
-                              "paddingRight": 56,
+                              "paddingRight": 16,
                               "paddingTop": 20,
                               "position": "relative",
                             }
@@ -4507,40 +3995,6 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                           <div
                             style={
                               Object {
-                                "cursor": "-webkit-grab",
-                                "marginLeft": 8,
-                                "marginTop": 8,
-                                "position": "absolute",
-                                "right": 16,
-                                "top": 16,
-                              }
-                            }
-                          >
-                            <svg
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
-                              style={
-                                Object {
-                                  "color": "rgba(0, 0, 0, 0.3)",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": 24,
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": 24,
-                                }
-                              }
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
-                              />
-                            </svg>
-                          </div>
-                          <div
-                            style={
-                              Object {
                                 "muiPrepared": true,
                               }
                             }
@@ -4566,7 +4020,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                               }
                             }
                           >
-                            2.5x overdrevet
+                            2.5x overdrevet, kontur 50m
                           </div>
                         </div>
                       </div>
@@ -15944,20 +15398,398 @@ exports[`Storyshots Tweaks root 1`] = `
           <div
             style={
               Object {
-                "marginBottom": 16,
-                "marginLeft": 16,
-                "marginTop": 16,
+                "padding": 16,
               }
             }
           >
             <div
               style={
                 Object {
-                  "color": "#ff4081",
+                  "boxSizing": "border-box",
+                  "color": "rgba(0, 0, 0, 0.54)",
+                  "fontSize": 14,
                   "fontWeight": 500,
-                  "paddingBottom": 16,
+                  "lineHeight": "48px",
+                  "muiPrepared": true,
                   "paddingLeft": 16,
-                  "paddingTop": 8,
+                  "width": "100%",
+                }
+              }
+            >
+              Bakgrunnskart
+            </div>
+            <div
+              style={
+                Object {
+                  "muiPrepared": true,
+                  "padding": "8px 0px 8px 0px",
+                }
+              }
+            >
+              <div>
+                <span
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  open={null}
+                  style={
+                    Object {
+                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                      "background": "none",
+                      "backgroundColor": null,
+                      "border": 10,
+                      "boxSizing": "border-box",
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "cursor": "pointer",
+                      "display": "block",
+                      "fontFamily": "Roboto, sans-serif",
+                      "fontSize": 16,
+                      "fontWeight": "inherit",
+                      "lineHeight": "16px",
+                      "margin": 0,
+                      "muiPrepared": true,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "relative",
+                      "textDecoration": "none",
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "verticalAlign": null,
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  <div
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                  >
+                    <div
+                      style={
+                        Object {
+                          "backgroundImage": "thumb_mørk.jpg",
+                          "marginBottom": 16,
+                          "marginLeft": 0,
+                          "muiPrepared": true,
+                          "padding": 0,
+                          "paddingBottom": 16,
+                          "paddingLeft": 16,
+                          "paddingRight": 16,
+                          "paddingTop": 16,
+                          "position": "relative",
+                        }
+                      }
+                    >
+                      <div
+                        style={
+                          Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "float": "left",
+                            "fontFamily": "Roboto, sans-serif",
+                            "fontSize": 16,
+                            "fontWeight": 400,
+                            "left": 0,
+                            "paddingBottom": 8,
+                            "position": "relative",
+                          }
+                        }
+                      >
+                        Mørk
+                      </div>
+                      <img
+                        alt="Mørk"
+                        src="thumb_mørk.jpg"
+                      />
+                    </div>
+                  </div>
+                </span>
+              </div>
+              <div>
+                <span
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  open={null}
+                  style={
+                    Object {
+                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                      "background": "none",
+                      "backgroundColor": null,
+                      "border": 10,
+                      "boxSizing": "border-box",
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "cursor": "pointer",
+                      "display": "block",
+                      "fontFamily": "Roboto, sans-serif",
+                      "fontSize": 16,
+                      "fontWeight": "inherit",
+                      "lineHeight": "16px",
+                      "margin": 0,
+                      "muiPrepared": true,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "relative",
+                      "textDecoration": "none",
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "verticalAlign": null,
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  <div
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                  >
+                    <div
+                      style={
+                        Object {
+                          "backgroundImage": "thumb_lys.jpg",
+                          "marginBottom": 16,
+                          "marginLeft": 0,
+                          "muiPrepared": true,
+                          "padding": 0,
+                          "paddingBottom": 16,
+                          "paddingLeft": 16,
+                          "paddingRight": 16,
+                          "paddingTop": 16,
+                          "position": "relative",
+                        }
+                      }
+                    >
+                      <div
+                        style={
+                          Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "float": "left",
+                            "fontFamily": "Roboto, sans-serif",
+                            "fontSize": 16,
+                            "fontWeight": 400,
+                            "left": 0,
+                            "paddingBottom": 8,
+                            "position": "relative",
+                          }
+                        }
+                      >
+                        Lys
+                      </div>
+                      <img
+                        alt="Lys"
+                        src="thumb_lys.jpg"
+                      />
+                    </div>
+                  </div>
+                </span>
+              </div>
+              <div>
+                <span
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  open={null}
+                  style={
+                    Object {
+                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                      "background": "none",
+                      "backgroundColor": null,
+                      "border": 10,
+                      "boxSizing": "border-box",
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "cursor": "pointer",
+                      "display": "block",
+                      "fontFamily": "Roboto, sans-serif",
+                      "fontSize": 16,
+                      "fontWeight": "inherit",
+                      "lineHeight": "16px",
+                      "margin": 0,
+                      "muiPrepared": true,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "relative",
+                      "textDecoration": "none",
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "verticalAlign": null,
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  <div
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                  >
+                    <div
+                      style={
+                        Object {
+                          "backgroundImage": "thumb_flyfoto.jpg",
+                          "marginBottom": 16,
+                          "marginLeft": 0,
+                          "muiPrepared": true,
+                          "padding": 0,
+                          "paddingBottom": 16,
+                          "paddingLeft": 16,
+                          "paddingRight": 16,
+                          "paddingTop": 16,
+                          "position": "relative",
+                        }
+                      }
+                    >
+                      <div
+                        style={
+                          Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "float": "left",
+                            "fontFamily": "Roboto, sans-serif",
+                            "fontSize": 16,
+                            "fontWeight": 400,
+                            "left": 0,
+                            "paddingBottom": 8,
+                            "position": "relative",
+                          }
+                        }
+                      >
+                        Flyfoto
+                      </div>
+                      <img
+                        alt="Flyfoto"
+                        src="thumb_flyfoto.jpg"
+                      />
+                    </div>
+                  </div>
+                </span>
+              </div>
+              <div>
+                <span
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  open={null}
+                  style={
+                    Object {
+                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                      "background": "none",
+                      "backgroundColor": null,
+                      "border": 10,
+                      "boxSizing": "border-box",
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "cursor": "pointer",
+                      "display": "block",
+                      "fontFamily": "Roboto, sans-serif",
+                      "fontSize": 16,
+                      "fontWeight": "inherit",
+                      "lineHeight": "16px",
+                      "margin": 0,
+                      "muiPrepared": true,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "relative",
+                      "textDecoration": "none",
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "verticalAlign": null,
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  <div
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                  >
+                    <div
+                      style={
+                        Object {
+                          "backgroundImage": "thumb_vintage.jpg",
+                          "marginBottom": 16,
+                          "marginLeft": 0,
+                          "muiPrepared": true,
+                          "padding": 0,
+                          "paddingBottom": 16,
+                          "paddingLeft": 16,
+                          "paddingRight": 16,
+                          "paddingTop": 16,
+                          "position": "relative",
+                        }
+                      }
+                    >
+                      <div
+                        style={
+                          Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "float": "left",
+                            "fontFamily": "Roboto, sans-serif",
+                            "fontSize": 16,
+                            "fontWeight": 400,
+                            "left": 0,
+                            "paddingBottom": 8,
+                            "position": "relative",
+                          }
+                        }
+                      >
+                        Gammelt
+                      </div>
+                      <img
+                        alt="Gammelt"
+                        src="thumb_vintage.jpg"
+                      />
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "padding": 16,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "boxSizing": "border-box",
+                  "color": "rgba(0, 0, 0, 0.54)",
+                  "fontSize": 14,
+                  "fontWeight": 500,
+                  "lineHeight": "48px",
+                  "muiPrepared": true,
+                  "paddingLeft": 16,
+                  "width": "100%",
                 }
               }
             >
@@ -15968,8 +15800,9 @@ exports[`Storyshots Tweaks root 1`] = `
                 style={
                   Object {
                     "color": "rgba(0, 0, 0, 0.3)",
+                    "fontFamily": "Roboto, sans-serif",
                     "position": "absolute",
-                    "right": 32,
+                    "right": 16,
                   }
                 }
               >
@@ -15978,11 +15811,12 @@ exports[`Storyshots Tweaks root 1`] = `
               <div
                 style={
                   Object {
-                    "color": "rgba(0, 0, 0, 0.3)",
+                    "color": "rgba(0, 0, 0, 0.87)",
                     "float": "left",
+                    "fontFamily": "Roboto, sans-serif",
                     "fontSize": 16,
-                    "fontWeight": 500,
-                    "left": 16,
+                    "fontWeight": 400,
+                    "left": 56,
                     "position": "relative",
                   }
                 }
@@ -16059,13 +15893,14 @@ exports[`Storyshots Tweaks root 1`] = `
                         Object {
                           "cursor": "default",
                           "height": 18,
-                          "marginBottom": "0px",
-                          "marginTop": "6px",
+                          "marginBottom": 0,
+                          "marginLeft": 40,
+                          "marginTop": 8,
                           "muiPrepared": true,
                           "position": "relative",
                           "touchCallout": "none",
                           "userSelect": "none",
-                          "width": "100%",
+                          "width": 302,
                         }
                       }
                     >
@@ -16172,75 +16007,133 @@ exports[`Storyshots Tweaks root 1`] = `
             <div
               style={
                 Object {
-                  "color": "#ff4081",
-                  "fontWeight": 500,
-                  "paddingBottom": 16,
-                  "paddingLeft": 16,
-                  "paddingTop": 8,
+                  "display": "block",
+                  "height": 48,
                 }
               }
             >
-              Kontur (trinndelt høydevisualisering)
-            </div>
-            <div>
               <div
                 style={
                   Object {
-                    "color": "rgba(0, 0, 0, 0.3)",
-                    "float": "left",
-                    "fontSize": 16,
-                    "fontWeight": 500,
-                    "left": 16,
-                    "position": "relative",
-                  }
-                }
-              >
-                Konturlinjer
-              </div>
-              <div
-                style={
-                  Object {
-                    "float": "left",
-                    "position": "absolute",
-                    "top": "2px",
+                    "float": "right",
                   }
                 }
               />
               <div
                 style={
                   Object {
-                    "display": "inline-block",
-                    "left": "8px",
+                    "width": 260,
                   }
                 }
               >
                 <div
                   style={
                     Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
                       "float": "left",
-                      "paddingBottom": "8px",
-                      "paddingLeft": "16px",
+                      "fontFamily": "Roboto, sans-serif",
+                      "fontSize": 16,
+                      "fontWeight": 400,
+                      "left": 56,
                       "position": "relative",
-                      "width": "328px",
                     }
                   }
                 >
-                  <span
-                    style={
-                      Object {
-                        "float": "right",
-                      }
+                  Etiketter med høydeangivelse av topper
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "boxSizing": "border-box",
+                  "color": "rgba(0, 0, 0, 0.54)",
+                  "fontSize": 14,
+                  "fontWeight": 500,
+                  "lineHeight": "48px",
+                  "muiPrepared": true,
+                  "paddingLeft": 16,
+                  "width": "100%",
+                }
+              }
+            >
+              Kontur (trinndelt høydevisualisering)
+            </div>
+            <div
+              style={
+                Object {
+                  "display": "block",
+                  "height": 48,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "float": "right",
+                  }
+                }
+              />
+              <div
+                style={
+                  Object {
+                    "width": 260,
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "float": "left",
+                      "fontFamily": "Roboto, sans-serif",
+                      "fontSize": 16,
+                      "fontWeight": 400,
+                      "left": 56,
+                      "position": "relative",
                     }
-                  />
-                  <div
-                    style={
-                      Object {
-                        "color": "rgba(0, 0, 0, 0.3)",
-                        "left": 24,
-                        "position": "relative",
-                      }
+                  }
+                >
+                  Konturlinjer
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "display": "block",
+                  "height": 48,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "float": "right",
+                  }
+                }
+              />
+              <div
+                style={
+                  Object {
+                    "width": 260,
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "float": "left",
+                      "fontFamily": "Roboto, sans-serif",
+                      "fontSize": 16,
+                      "fontWeight": 400,
+                      "left": 56,
+                      "position": "relative",
                     }
-                  />
+                  }
+                >
+                  Etiketter med høydeangivelse
                 </div>
               </div>
             </div>
@@ -16249,8 +16142,9 @@ exports[`Storyshots Tweaks root 1`] = `
                 style={
                   Object {
                     "color": "rgba(0, 0, 0, 0.3)",
+                    "fontFamily": "Roboto, sans-serif",
                     "position": "absolute",
-                    "right": 32,
+                    "right": 16,
                   }
                 }
               >
@@ -16259,11 +16153,12 @@ exports[`Storyshots Tweaks root 1`] = `
               <div
                 style={
                   Object {
-                    "color": "rgba(0, 0, 0, 0.3)",
+                    "color": "rgba(0, 0, 0, 0.87)",
                     "float": "left",
+                    "fontFamily": "Roboto, sans-serif",
                     "fontSize": 16,
-                    "fontWeight": 500,
-                    "left": 16,
+                    "fontWeight": 400,
+                    "left": 56,
                     "position": "relative",
                   }
                 }
@@ -16340,13 +16235,14 @@ exports[`Storyshots Tweaks root 1`] = `
                         Object {
                           "cursor": "default",
                           "height": 18,
-                          "marginBottom": "0px",
-                          "marginTop": "6px",
+                          "marginBottom": 0,
+                          "marginLeft": 40,
+                          "marginTop": 8,
                           "muiPrepared": true,
                           "position": "relative",
                           "touchCallout": "none",
                           "userSelect": "none",
-                          "width": "100%",
+                          "width": 302,
                         }
                       }
                     >
@@ -16450,6 +16346,590 @@ exports[`Storyshots Tweaks root 1`] = `
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            style={
+              Object {
+                "padding": 16,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "boxSizing": "border-box",
+                  "color": "rgba(0, 0, 0, 0.54)",
+                  "fontSize": 14,
+                  "fontWeight": 500,
+                  "lineHeight": "48px",
+                  "muiPrepared": true,
+                  "paddingLeft": 16,
+                  "width": "100%",
+                }
+              }
+            >
+              N
+            </div>
+            <div
+              style={
+                Object {
+                  "boxSizing": "border-box",
+                  "color": "rgba(0, 0, 0, 0.54)",
+                  "fontSize": 14,
+                  "fontWeight": 500,
+                  "lineHeight": "48px",
+                  "muiPrepared": true,
+                  "paddingLeft": 16,
+                  "width": "100%",
+                }
+              }
+            >
+              Farge
+            </div>
+            <div
+              style={
+                Object {
+                  "height": 256,
+                  "marginBottom": 16,
+                  "marginLeft": 16,
+                  "marginRight": 16,
+                  "position": "relative",
+                }
+              }
+            >
+              <div
+                onMouseDown={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "MozBorderRadius": undefined,
+                    "OBorderRadius": undefined,
+                    "WebkitBorderRadius": undefined,
+                    "background": "hsl(249.99999999999994,100%, 50%)",
+                    "borderRadius": undefined,
+                    "bottom": "0px",
+                    "left": "0px",
+                    "msBorderRadius": undefined,
+                    "position": "absolute",
+                    "right": "0px",
+                    "top": "0px",
+                  }
+                }
+              >
+                <style>
+                  
+                            .saturation-white {
+                              background: -webkit-linear-gradient(to right, #fff, rgba(255,255,255,0));
+                              background: linear-gradient(to right, #fff, rgba(255,255,255,0));
+                            }
+                            .saturation-black {
+                              background: -webkit-linear-gradient(to top, #000, rgba(0,0,0,0));
+                              background: linear-gradient(to top, #000, rgba(0,0,0,0));
+                            }
+                          
+                </style>
+                <div
+                  className="saturation-white"
+                  style={
+                    Object {
+                      "MozBorderRadius": undefined,
+                      "OBorderRadius": undefined,
+                      "WebkitBorderRadius": undefined,
+                      "borderRadius": undefined,
+                      "bottom": "0px",
+                      "left": "0px",
+                      "msBorderRadius": undefined,
+                      "position": "absolute",
+                      "right": "0px",
+                      "top": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="saturation-black"
+                    style={
+                      Object {
+                        "MozBorderRadius": undefined,
+                        "MozBoxShadow": undefined,
+                        "OBorderRadius": undefined,
+                        "OBoxShadow": undefined,
+                        "WebkitBorderRadius": undefined,
+                        "WebkitBoxShadow": undefined,
+                        "borderRadius": undefined,
+                        "bottom": "0px",
+                        "boxShadow": undefined,
+                        "left": "0px",
+                        "msBorderRadius": undefined,
+                        "msBoxShadow": undefined,
+                        "position": "absolute",
+                        "right": "0px",
+                        "top": "0px",
+                      }
+                    }
+                  />
+                  <div
+                    style={
+                      Object {
+                        "cursor": "default",
+                        "left": "66.66666666666667%",
+                        "position": "absolute",
+                        "top": "70%",
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "MozBorderRadius": "6px",
+                          "MozBoxShadow": "inset 0 0 0 1px #fff",
+                          "MozTransform": "translate(-6px, -6px)",
+                          "OBorderRadius": "6px",
+                          "OBoxShadow": "inset 0 0 0 1px #fff",
+                          "OTransform": "translate(-6px, -6px)",
+                          "WebkitBorderRadius": "6px",
+                          "WebkitBoxShadow": "inset 0 0 0 1px #fff",
+                          "WebkitTransform": "translate(-6px, -6px)",
+                          "borderRadius": "6px",
+                          "boxShadow": "inset 0 0 0 1px #fff",
+                          "height": "12px",
+                          "msBorderRadius": "6px",
+                          "msBoxShadow": "inset 0 0 0 1px #fff",
+                          "msTransform": "translate(-6px, -6px)",
+                          "transform": "translate(-6px, -6px)",
+                          "width": "12px",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "height": 10,
+                  "marginBottom": 16,
+                  "marginLeft": 16,
+                  "marginRight": 16,
+                  "position": "relative",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "MozBorderRadius": undefined,
+                    "MozBoxShadow": undefined,
+                    "OBorderRadius": undefined,
+                    "OBoxShadow": undefined,
+                    "WebkitBorderRadius": undefined,
+                    "WebkitBoxShadow": undefined,
+                    "borderRadius": undefined,
+                    "bottom": "0px",
+                    "boxShadow": undefined,
+                    "left": "0px",
+                    "msBorderRadius": undefined,
+                    "msBoxShadow": undefined,
+                    "position": "absolute",
+                    "right": "0px",
+                    "top": "0px",
+                  }
+                }
+              >
+                <div
+                  className="hue-horizontal"
+                  onMouseDown={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "MozBorderRadius": undefined,
+                      "OBorderRadius": undefined,
+                      "WebkitBorderRadius": undefined,
+                      "borderRadius": undefined,
+                      "height": "100%",
+                      "msBorderRadius": undefined,
+                      "padding": "0 2px",
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <style>
+                    
+                                .hue-horizontal {
+                                  background: linear-gradient(to right, #f00 0%, #ff0 17%, #0f0
+                                    33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+                                  background: -webkit-linear-gradient(to right, #f00 0%, #ff0
+                                    17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+                                }
+                    
+                                .hue-vertical {
+                                  background: linear-gradient(to top, #f00 0%, #ff0 17%, #0f0 33%,
+                                    #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+                                  background: -webkit-linear-gradient(to top, #f00 0%, #ff0 17%,
+                                    #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+                                }
+                              
+                  </style>
+                  <div
+                    style={
+                      Object {
+                        "left": "69.44444444444443%",
+                        "position": "absolute",
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "MozBorderRadius": "6px",
+                          "MozBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "MozTransform": "translate(-6px, -1px)",
+                          "OBorderRadius": "6px",
+                          "OBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "OTransform": "translate(-6px, -1px)",
+                          "WebkitBorderRadius": "6px",
+                          "WebkitBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "WebkitTransform": "translate(-6px, -1px)",
+                          "backgroundColor": "rgb(248, 248, 248)",
+                          "borderRadius": "6px",
+                          "boxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "height": "12px",
+                          "msBorderRadius": "6px",
+                          "msBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "msTransform": "translate(-6px, -1px)",
+                          "transform": "translate(-6px, -1px)",
+                          "width": "12px",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "height": 10,
+                  "marginBottom": 16,
+                  "marginLeft": 16,
+                  "marginRight": 16,
+                  "position": "relative",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "MozBorderRadius": undefined,
+                    "OBorderRadius": undefined,
+                    "WebkitBorderRadius": undefined,
+                    "borderRadius": undefined,
+                    "bottom": "0px",
+                    "left": "0px",
+                    "msBorderRadius": undefined,
+                    "position": "absolute",
+                    "right": "0px",
+                    "top": "0px",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "MozBorderRadius": undefined,
+                      "OBorderRadius": undefined,
+                      "WebkitBorderRadius": undefined,
+                      "borderRadius": undefined,
+                      "bottom": "0px",
+                      "left": "0px",
+                      "msBorderRadius": undefined,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "right": "0px",
+                      "top": "0px",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "MozBorderRadius": undefined,
+                        "MozBoxShadow": undefined,
+                        "OBorderRadius": undefined,
+                        "OBoxShadow": undefined,
+                        "WebkitBorderRadius": undefined,
+                        "WebkitBoxShadow": undefined,
+                        "background": "url(null) center left",
+                        "borderRadius": undefined,
+                        "bottom": "0px",
+                        "boxShadow": undefined,
+                        "left": "0px",
+                        "msBorderRadius": undefined,
+                        "msBoxShadow": undefined,
+                        "position": "absolute",
+                        "right": "0px",
+                        "top": "0px",
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  style={
+                    Object {
+                      "MozBorderRadius": undefined,
+                      "MozBoxShadow": undefined,
+                      "OBorderRadius": undefined,
+                      "OBoxShadow": undefined,
+                      "WebkitBorderRadius": undefined,
+                      "WebkitBoxShadow": undefined,
+                      "background": "linear-gradient(to right, rgba(34,25,77, 0) 0%,
+                               rgba(34,25,77, 1) 100%)",
+                      "borderRadius": undefined,
+                      "bottom": "0px",
+                      "boxShadow": undefined,
+                      "left": "0px",
+                      "msBorderRadius": undefined,
+                      "msBoxShadow": undefined,
+                      "position": "absolute",
+                      "right": "0px",
+                      "top": "0px",
+                    }
+                  }
+                />
+                <div
+                  onMouseDown={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "height": "100%",
+                      "margin": "0 3px",
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "left": "100%",
+                        "position": "absolute",
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "MozBorderRadius": "6px",
+                          "MozBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "MozTransform": "translate(-6px, -1px)",
+                          "OBorderRadius": "6px",
+                          "OBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "OTransform": "translate(-6px, -1px)",
+                          "WebkitBorderRadius": "6px",
+                          "WebkitBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "WebkitTransform": "translate(-6px, -1px)",
+                          "backgroundColor": "rgb(248, 248, 248)",
+                          "borderRadius": "6px",
+                          "boxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "height": "12px",
+                          "msBorderRadius": "6px",
+                          "msBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
+                          "msTransform": "translate(-6px, -1px)",
+                          "transform": "translate(-6px, -1px)",
+                          "width": "12px",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "border": 10,
+                  "borderRadius": 2,
+                  "boxSizing": "border-box",
+                  "color": "#00bcd4",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fontFamily": "Roboto, sans-serif",
+                  "fontSize": "inherit",
+                  "fontWeight": "inherit",
+                  "height": 36,
+                  "lineHeight": "36px",
+                  "margin": 0,
+                  "minWidth": 88,
+                  "muiPrepared": true,
+                  "outline": "none",
+                  "overflow": "hidden",
+                  "padding": 0,
+                  "position": "relative",
+                  "textAlign": "center",
+                  "textDecoration": "none",
+                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                  "userSelect": "none",
+                  "verticalAlign": null,
+                }
+              }
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+              >
+                <svg
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "display": "inline-block",
+                      "fill": "#00bcd4",
+                      "height": 24,
+                      "marginLeft": 12,
+                      "marginRight": 0,
+                      "muiPrepared": true,
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "userSelect": "none",
+                      "verticalAlign": "middle",
+                      "width": 24,
+                    }
+                  }
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                  />
+                </svg>
+                <span
+                  style={
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": 500,
+                      "letterSpacing": 0,
+                      "muiPrepared": true,
+                      "paddingLeft": 8,
+                      "paddingRight": 16,
+                      "position": "relative",
+                      "textTransform": "uppercase",
+                      "verticalAlign": "middle",
+                    }
+                  }
+                >
+                  Fjern
+                </span>
+              </div>
+            </button>
+            <button
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "border": 10,
+                  "borderRadius": 2,
+                  "boxSizing": "border-box",
+                  "color": "#00bcd4",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fontFamily": "Roboto, sans-serif",
+                  "fontSize": "inherit",
+                  "fontWeight": "inherit",
+                  "height": 36,
+                  "lineHeight": "36px",
+                  "margin": 0,
+                  "minWidth": 88,
+                  "muiPrepared": true,
+                  "outline": "none",
+                  "overflow": "hidden",
+                  "padding": 0,
+                  "position": "relative",
+                  "textAlign": "center",
+                  "textDecoration": "none",
+                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                  "userSelect": "none",
+                  "verticalAlign": null,
+                }
+              }
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+              >
+                <svg
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "display": "inline-block",
+                      "fill": "#00bcd4",
+                      "height": 24,
+                      "marginLeft": 12,
+                      "marginRight": 0,
+                      "muiPrepared": true,
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "userSelect": "none",
+                      "verticalAlign": "middle",
+                      "width": 24,
+                    }
+                  }
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                  />
+                </svg>
+                <span
+                  style={
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": 500,
+                      "letterSpacing": 0,
+                      "muiPrepared": true,
+                      "paddingLeft": 8,
+                      "paddingRight": 16,
+                      "position": "relative",
+                      "textTransform": "uppercase",
+                      "verticalAlign": "middle",
+                    }
+                  }
+                >
+                  Info
+                </span>
+              </div>
+            </button>
           </div>
         </div>
       </div>
@@ -17198,211 +17678,6 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
               >
                 Mine kartlag
               </div>
-              <div>
-                <span
-                  disabled={false}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
-                  open={null}
-                  style={
-                    Object {
-                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                      "background": "none",
-                      "backgroundColor": null,
-                      "border": 10,
-                      "boxSizing": "border-box",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "cursor": "pointer",
-                      "display": "block",
-                      "fontFamily": "Roboto, sans-serif",
-                      "fontSize": 16,
-                      "fontWeight": "inherit",
-                      "lineHeight": "16px",
-                      "margin": 0,
-                      "muiPrepared": true,
-                      "outline": "none",
-                      "padding": 0,
-                      "position": "relative",
-                      "textDecoration": "none",
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "verticalAlign": null,
-                    }
-                  }
-                  tabIndex={0}
-                >
-                  <div
-                    onMouseDown={[Function]}
-                    onMouseLeave={[Function]}
-                    onMouseUp={[Function]}
-                    onTouchEnd={[Function]}
-                    onTouchStart={[Function]}
-                  >
-                    <div
-                      style={
-                        Object {
-                          "marginLeft": 0,
-                          "muiPrepared": true,
-                          "paddingBottom": 16,
-                          "paddingLeft": 72,
-                          "paddingRight": 56,
-                          "paddingTop": 20,
-                          "position": "relative",
-                        }
-                      }
-                    >
-                      <div
-                        style={
-                          Object {
-                            "left": 280,
-                            "position": "absolute",
-                            "top": 24,
-                          }
-                        }
-                      />
-                      <div
-                        style={
-                          Object {
-                            "left": 16,
-                            "position": "absolute",
-                            "top": 16,
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "display": "inline-flex",
-                              "position": "absolute",
-                              "right": 40,
-                              "top": 8,
-                            }
-                          }
-                        />
-                        <div
-                          style={
-                            Object {
-                              "display": "inline-flex",
-                              "position": "absolute",
-                              "rxight": 0,
-                              "top": 8,
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "height": "28px",
-                                "right": "14px",
-                                "width": "28px",
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "backgroundImage": "url(null)",
-                                  "borderRadius": "12%",
-                                  "bottom": 0,
-                                  "left": 0,
-                                  "position": "absolute",
-                                  "right": 0,
-                                  "top": 0,
-                                }
-                              }
-                            >
-                              <div
-                                style={
-                                  Object {
-                                    "backgroundColor": undefined,
-                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                    "borderRadius": "12%",
-                                    "bottom": 0,
-                                    "left": 0,
-                                    "position": "absolute",
-                                    "right": 0,
-                                    "top": 0,
-                                  }
-                                }
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "cursor": "-webkit-grab",
-                            "marginLeft": 8,
-                            "marginTop": 8,
-                            "position": "absolute",
-                            "right": 16,
-                            "top": 16,
-                          }
-                        }
-                      >
-                        <svg
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          style={
-                            Object {
-                              "color": "rgba(0, 0, 0, 0.3)",
-                              "display": "inline-block",
-                              "fill": "currentColor",
-                              "height": 24,
-                              "muiPrepared": true,
-                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                              "userSelect": "none",
-                              "width": 24,
-                            }
-                          }
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
-                          />
-                        </svg>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "muiPrepared": true,
-                          }
-                        }
-                      >
-                        Etiketter
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "WebkitBoxOrient": null,
-                            "WebkitLineClamp": null,
-                            "color": "rgba(0, 0, 0, 0.54)",
-                            "display": null,
-                            "fontSize": 14,
-                            "height": 16,
-                            "lineHeight": "16px",
-                            "margin": 0,
-                            "marginTop": 4,
-                            "muiPrepared": true,
-                            "overflow": "hidden",
-                            "textOverflow": "ellipsis",
-                            "whiteSpace": "nowrap",
-                          }
-                        }
-                      >
-                        Verneområder, stedsnavn
-                      </div>
-                    </div>
-                  </div>
-                </span>
-              </div>
               <hr
                 style={
                   Object {
@@ -17469,7 +17744,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                           "muiPrepared": true,
                           "paddingBottom": 16,
                           "paddingLeft": 72,
-                          "paddingRight": 56,
+                          "paddingRight": 16,
                           "paddingTop": 20,
                           "position": "relative",
                         }
@@ -17552,40 +17827,6 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "cursor": "-webkit-grab",
-                            "marginLeft": 8,
-                            "marginTop": 8,
-                            "position": "absolute",
-                            "right": 16,
-                            "top": 16,
-                          }
-                        }
-                      >
-                        <svg
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          style={
-                            Object {
-                              "color": "rgba(0, 0, 0, 0.3)",
-                              "display": "inline-block",
-                              "fill": "currentColor",
-                              "height": 24,
-                              "muiPrepared": true,
-                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                              "userSelect": "none",
-                              "width": 24,
-                            }
-                          }
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
-                          />
-                        </svg>
                       </div>
                       <div
                         style={
@@ -17687,7 +17928,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                           "muiPrepared": true,
                           "paddingBottom": 16,
                           "paddingLeft": 72,
-                          "paddingRight": 56,
+                          "paddingRight": 16,
                           "paddingTop": 20,
                           "position": "relative",
                         }
@@ -17774,40 +18015,6 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                       <div
                         style={
                           Object {
-                            "cursor": "-webkit-grab",
-                            "marginLeft": 8,
-                            "marginTop": 8,
-                            "position": "absolute",
-                            "right": 16,
-                            "top": 16,
-                          }
-                        }
-                      >
-                        <svg
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          style={
-                            Object {
-                              "color": "rgba(0, 0, 0, 0.3)",
-                              "display": "inline-block",
-                              "fill": "currentColor",
-                              "height": 24,
-                              "muiPrepared": true,
-                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                              "userSelect": "none",
-                              "width": 24,
-                            }
-                          }
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
-                          />
-                        </svg>
-                      </div>
-                      <div
-                        style={
-                          Object {
                             "muiPrepared": true,
                           }
                         }
@@ -17833,7 +18040,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                           }
                         }
                       >
-                        2.5x overdrevet
+                        2.5x overdrevet, kontur 50m
                       </div>
                     </div>
                   </div>
@@ -18381,211 +18588,6 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
               >
                 Mine kartlag
               </div>
-              <div>
-                <span
-                  disabled={false}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
-                  open={null}
-                  style={
-                    Object {
-                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                      "background": "none",
-                      "backgroundColor": null,
-                      "border": 10,
-                      "boxSizing": "border-box",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "cursor": "pointer",
-                      "display": "block",
-                      "fontFamily": "Roboto, sans-serif",
-                      "fontSize": 16,
-                      "fontWeight": "inherit",
-                      "lineHeight": "16px",
-                      "margin": 0,
-                      "muiPrepared": true,
-                      "outline": "none",
-                      "padding": 0,
-                      "position": "relative",
-                      "textDecoration": "none",
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "verticalAlign": null,
-                    }
-                  }
-                  tabIndex={0}
-                >
-                  <div
-                    onMouseDown={[Function]}
-                    onMouseLeave={[Function]}
-                    onMouseUp={[Function]}
-                    onTouchEnd={[Function]}
-                    onTouchStart={[Function]}
-                  >
-                    <div
-                      style={
-                        Object {
-                          "marginLeft": 0,
-                          "muiPrepared": true,
-                          "paddingBottom": 16,
-                          "paddingLeft": 72,
-                          "paddingRight": 56,
-                          "paddingTop": 20,
-                          "position": "relative",
-                        }
-                      }
-                    >
-                      <div
-                        style={
-                          Object {
-                            "left": 280,
-                            "position": "absolute",
-                            "top": 24,
-                          }
-                        }
-                      />
-                      <div
-                        style={
-                          Object {
-                            "left": 16,
-                            "position": "absolute",
-                            "top": 16,
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "display": "inline-flex",
-                              "position": "absolute",
-                              "right": 40,
-                              "top": 8,
-                            }
-                          }
-                        />
-                        <div
-                          style={
-                            Object {
-                              "display": "inline-flex",
-                              "position": "absolute",
-                              "rxight": 0,
-                              "top": 8,
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "height": "28px",
-                                "right": "14px",
-                                "width": "28px",
-                              }
-                            }
-                          >
-                            <div
-                              style={
-                                Object {
-                                  "backgroundImage": "url(null)",
-                                  "borderRadius": "12%",
-                                  "bottom": 0,
-                                  "left": 0,
-                                  "position": "absolute",
-                                  "right": 0,
-                                  "top": 0,
-                                }
-                              }
-                            >
-                              <div
-                                style={
-                                  Object {
-                                    "backgroundColor": undefined,
-                                    "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                    "borderRadius": "12%",
-                                    "bottom": 0,
-                                    "left": 0,
-                                    "position": "absolute",
-                                    "right": 0,
-                                    "top": 0,
-                                  }
-                                }
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "cursor": "-webkit-grab",
-                            "marginLeft": 8,
-                            "marginTop": 8,
-                            "position": "absolute",
-                            "right": 16,
-                            "top": 16,
-                          }
-                        }
-                      >
-                        <svg
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          style={
-                            Object {
-                              "color": "rgba(0, 0, 0, 0.3)",
-                              "display": "inline-block",
-                              "fill": "currentColor",
-                              "height": 24,
-                              "muiPrepared": true,
-                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                              "userSelect": "none",
-                              "width": 24,
-                            }
-                          }
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
-                          />
-                        </svg>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "muiPrepared": true,
-                          }
-                        }
-                      >
-                        Etiketter
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "WebkitBoxOrient": null,
-                            "WebkitLineClamp": null,
-                            "color": "rgba(0, 0, 0, 0.54)",
-                            "display": null,
-                            "fontSize": 14,
-                            "height": 16,
-                            "lineHeight": "16px",
-                            "margin": 0,
-                            "marginTop": 4,
-                            "muiPrepared": true,
-                            "overflow": "hidden",
-                            "textOverflow": "ellipsis",
-                            "whiteSpace": "nowrap",
-                          }
-                        }
-                      >
-                        Verneområder, stedsnavn
-                      </div>
-                    </div>
-                  </div>
-                </span>
-              </div>
               <hr
                 style={
                   Object {
@@ -18652,7 +18654,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                           "muiPrepared": true,
                           "paddingBottom": 16,
                           "paddingLeft": 72,
-                          "paddingRight": 56,
+                          "paddingRight": 16,
                           "paddingTop": 20,
                           "position": "relative",
                         }
@@ -18735,40 +18737,6 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "cursor": "-webkit-grab",
-                            "marginLeft": 8,
-                            "marginTop": 8,
-                            "position": "absolute",
-                            "right": 16,
-                            "top": 16,
-                          }
-                        }
-                      >
-                        <svg
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          style={
-                            Object {
-                              "color": "rgba(0, 0, 0, 0.3)",
-                              "display": "inline-block",
-                              "fill": "currentColor",
-                              "height": 24,
-                              "muiPrepared": true,
-                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                              "userSelect": "none",
-                              "width": 24,
-                            }
-                          }
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
-                          />
-                        </svg>
                       </div>
                       <div
                         style={
@@ -18870,7 +18838,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                           "muiPrepared": true,
                           "paddingBottom": 16,
                           "paddingLeft": 72,
-                          "paddingRight": 56,
+                          "paddingRight": 16,
                           "paddingTop": 20,
                           "position": "relative",
                         }
@@ -18957,40 +18925,6 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                       <div
                         style={
                           Object {
-                            "cursor": "-webkit-grab",
-                            "marginLeft": 8,
-                            "marginTop": 8,
-                            "position": "absolute",
-                            "right": 16,
-                            "top": 16,
-                          }
-                        }
-                      >
-                        <svg
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          style={
-                            Object {
-                              "color": "rgba(0, 0, 0, 0.3)",
-                              "display": "inline-block",
-                              "fill": "currentColor",
-                              "height": 24,
-                              "muiPrepared": true,
-                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                              "userSelect": "none",
-                              "width": 24,
-                            }
-                          }
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
-                          />
-                        </svg>
-                      </div>
-                      <div
-                        style={
-                          Object {
                             "muiPrepared": true,
                           }
                         }
@@ -19016,7 +18950,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                           }
                         }
                       >
-                        2.5x overdrevet
+                        2.5x overdrevet, kontur 50m
                       </div>
                     </div>
                   </div>

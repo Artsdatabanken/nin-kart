@@ -1,22 +1,9 @@
-import muiThemeable from 'material-ui/styles/muiThemeable'
+import { Subheader } from 'material-ui'
 import React, { Component } from 'react'
-
 class Overskrift extends Component {
   render() {
-    return (
-      <div
-        style={{
-          color: this.props.muiTheme.palette.accent1Color,
-          fontWeight: 500,
-          paddingTop: 8,
-          paddingBottom: 16,
-          paddingLeft: 16,
-        }}
-      >
-        {this.props.children}
-      </div>
-    )
+    return <Subheader>{this.props.children}</Subheader>
   }
 }
 
-export default muiThemeable()(Overskrift)
+export default Overskrift

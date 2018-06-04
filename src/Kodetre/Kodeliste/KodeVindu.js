@@ -1,3 +1,4 @@
+import typesystem from '@artsdatabanken/typesystem'
 import { List, Paper, RaisedButton } from 'material-ui'
 import React from 'react'
 import MediaQuery from 'react-responsive'
@@ -6,7 +7,6 @@ import Fakta from './Fakta'
 import Graf from './Graf'
 import Kodekort from './Kodekort'
 import Kodeliste from './Kodeliste'
-
 class KodeVindu extends React.Component {
   render() {
     const props = this.props
@@ -59,7 +59,7 @@ class KodeVindu extends React.Component {
                 Fakta
               </div>
             )}
-            {props.meta.ingress && (
+            {(props.meta.ingress || props.meta.infoUrl) && (
               <div style={{ fontSize: 13, color: 'rgba(0,0,0,0.87)' }}>
                 {props.meta.ingress}
                 {props.meta.infoUrl && (
@@ -70,7 +70,11 @@ class KodeVindu extends React.Component {
                       style={{ color: 'rgba(0,0,0,0.87)' }}
                       href={props.meta.infoUrl}
                     >
-                      Artsdatabanken
+                      {typesystem.capitalizeTittel(
+                        new URL(props.meta.infoUrl).host
+                          .split('.')
+                          .splice(-2, 1)[0]
+                      )}
                     </a>
                   </span>
                 )}

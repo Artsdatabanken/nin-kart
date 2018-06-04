@@ -1,5 +1,5 @@
 // @flow
-import { wgs84ToUtm33, createBboxFromPoint } from './projection'
+import { createBboxFromPoint, wgs84ToUtm33 } from './projection'
 
 class Backend {
   static async postFilterPromise(url: string, filter: string) {
@@ -18,7 +18,6 @@ class Backend {
   }
 
   static async getPromise(url: string) {
-    //console.log(url)
     return new Promise((resolve, reject) => {
       fetch(url)
         .then(result => {
