@@ -127,7 +127,7 @@ class Mapbox extends Component {
       let aktivtLag = hentLag(map, aktivKode)
       aktivtLag.id = 'aktivt'
       if (aktivtLag) {
-        if (aktivtLag.type === 'vector' || 'fill') {
+        if (aktivtLag.type === 'vector' || aktivtLag.type === 'fill') {
           aktivtLag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
           let fillColor =
             Color(this.props.meta.farge) || Color('#ff2222').alpha(0.7)
