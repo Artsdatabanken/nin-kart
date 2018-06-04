@@ -35,3 +35,11 @@ Object {
   "type": "fill",
 }
 `;
+
+exports[`stil RASTER 1`] = `
+Object {
+  "id": "BS_6SO-RASTER",
+  "source": "BS_6SO-RASTER",
+  "type": "raster",
+}
+`;
