@@ -133,7 +133,9 @@
     },
     "BS_6SE-RASTER": {
       "type": "raster",
-      "tiles": ["https://tiles.artsdatabanken.no/data/BS_6SE-RASTER.png"],
+      "tiles": [
+        "https://tiles.artsdatabanken.no/data/BS_6SE-RASTER/{z}/{x}/{y}.png"
+      ],
       "tileSize": 256,
       "minzoom": 1,
       "maxzoom": 7
