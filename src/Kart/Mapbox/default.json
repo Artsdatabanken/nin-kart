@@ -131,19 +131,32 @@
       "minzoom": 0,
       "maxzoom": 11
     },
-    "BS_6SE": {
+    "BS_6SE-RASTER": {
       "type": "raster",
-      "tiles": ["https://tiles.artsdatabanken.no/data/BS_6SE/{z}/{x}/{y}.png"],
+      "tiles": [
+        "https://tiles.artsdatabanken.no/data/BS_6SE-RASTER/{z}/{x}/{y}.png"
+      ],
       "tileSize": 256,
       "minzoom": 1,
       "maxzoom": 7
     },
-    "BS_6SO": {
+    "BS_6SO-RASTER": {
       "type": "raster",
-      "tiles": ["https://tiles.artsdatabanken.no/data/BS_6SO/{z}/{x}/{y}.png"],
+      "tiles": [
+        "https://tiles.artsdatabanken.no/data/BS_6SO-RASTER/{z}/{x}/{y}.png"
+      ],
       "tileSize": 256,
       "minzoom": 1,
       "maxzoom": 7
+    },
+    "hoyde_mapbox": {
+      "type": "raster-dem",
+      "tiles": [
+        "https://tiles.artsdatabanken.no/data/hoyde_mapbox/{z}/{x}/{y}.png"
+      ],
+      "tileSize": 256,
+      "minzoom": 1,
+      "maxzoom": 10
     }
   },
 <<<<<<< HEAD:src/Kart/Mapbox/default.json
