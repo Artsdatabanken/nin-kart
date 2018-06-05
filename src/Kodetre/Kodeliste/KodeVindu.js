@@ -1,7 +1,6 @@
 import typesystem from '@artsdatabanken/typesystem'
 import { List, Paper, RaisedButton } from 'material-ui'
 import React from 'react'
-import MediaQuery from 'react-responsive'
 import FetchContainer from '../../FetchContainer'
 import Fakta from './Fakta'
 import Graf from './Graf'
@@ -35,15 +34,11 @@ class KodeVindu extends React.Component {
             />
           )}
           {props.meta.bbox && (
-            <MediaQuery maxWidth={1224}>
-              <div style={{ float: 'right', marginRight: 24, marginTop: 16 }}>
-                <RaisedButton
-                  onClick={() => props.onFitBounds(props.meta.bbox)}
-                >
-                  Vis i kart
-                </RaisedButton>
-              </div>
-            </MediaQuery>
+            <div style={{ float: 'right', marginRight: 24, marginTop: 16 }}>
+              <RaisedButton onClick={() => props.onFitBounds(props.meta.bbox)}>
+                Vis i kart
+              </RaisedButton>
+            </div>
           )}
           <div style={{ padding: 24 }}>
             {(props.meta.ingress ||

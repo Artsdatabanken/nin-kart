@@ -306,44 +306,30 @@ class Grunnkart extends React.Component<Props, State> {
         />
 
         {!this.state.showMainDrawer && (
-          <div
-            style={{
-              backgroundColor: '#fff',
-              position: 'absolute',
-              left: 8,
-              top: 10,
-              paddingBottom: 8,
-              width: 392,
-              zIndex: 2,
-              maxHeight: window.innerHeight - 10,
-              overflowY: 'auto',
-            }}
-          >
-            <VenstreVinduContainer
-              valgteKoder={this.state.valgteKoder}
-              onToggleMainDrawer={() =>
-                this.setState({
-                  showMainDrawer: !this.state.showMainDrawer,
-                })
-              }
-              mapBounds={this.state.mapBounds}
-              onToggleVisible={this.handleToggleVisible}
-              onMouseEnter={kode => this.setState({ opplystKode: kode })}
-              onMouseLeave={kode =>
-                this.setState({
-                  opplystKode: '',
-                })
-              }
-              onFitBounds={bbox => this.handleFitBounds(bbox)}
-              isActiveLayer={erAktivert}
-              onToggleLayer={this.handleToggleLayer}
-              onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-              onExitToRoot={this.visValgte}
-              visKatalog={this.visKatalog}
-              localId={this.state.localId}
-              meta={this.state.meta}
-            />
-          </div>
+          <VenstreVinduContainer
+            valgteKoder={this.state.valgteKoder}
+            onToggleMainDrawer={() =>
+              this.setState({
+                showMainDrawer: !this.state.showMainDrawer,
+              })
+            }
+            mapBounds={this.state.mapBounds}
+            onToggleVisible={this.handleToggleVisible}
+            onMouseEnter={kode => this.setState({ opplystKode: kode })}
+            onMouseLeave={kode =>
+              this.setState({
+                opplystKode: '',
+              })
+            }
+            onFitBounds={bbox => this.handleFitBounds(bbox)}
+            isActiveLayer={erAktivert}
+            onToggleLayer={this.handleToggleLayer}
+            onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+            onExitToRoot={this.visValgte}
+            visKatalog={this.visKatalog}
+            localId={this.state.localId}
+            meta={this.state.meta}
+          />
         )}
       </div>
     )
