@@ -5,12 +5,20 @@ import ColorPicker from './ColorPicker'
 import { FlatButton } from 'material-ui'
 import ActionDelete from 'material-ui/svg-icons/action/delete'
 import ActionInfo from 'material-ui/svg-icons/action/info'
+import ZoomIn from 'material-ui/svg-icons/action/zoom-in'
 import tinycolor from 'tinycolor2'
 import språk from '../språk'
 
 class Polygon extends Component {
   render() {
-    const { onRemove, item, farge, onGoToCode, onExitToRoot } = this.props
+    const {
+      onRemove,
+      item,
+      farge,
+      onGoToCode,
+      onExitToRoot,
+      onFitBounds,
+    } = this.props
     return (
       <React.Fragment>
         {!item && onExitToRoot && onExitToRoot()}
@@ -54,6 +62,20 @@ class Polygon extends Component {
                 }
               }}
               icon={<ActionInfo />}
+            />
+          )}
+
+        {item &&
+          item.bbox && (
+            <FlatButton
+              label={'Vis i kart'}
+              primary={true}
+              onClick={() => {
+                if (item && item.bbox) {
+                  onFitBounds(item.bbox)
+                }
+              }}
+              icon={<ZoomIn />}
             />
           )}
       </React.Fragment>

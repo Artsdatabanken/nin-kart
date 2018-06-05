@@ -182,6 +182,7 @@ class VenstreVinduContainer extends React.Component {
                           history.push('/')
                           this.props.onExitToRoot()
                         }}
+                        onFitBounds={this.props.onFitBounds}
                       />
                     )}
                   />
