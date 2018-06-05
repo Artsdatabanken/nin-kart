@@ -148,6 +148,7 @@ class Grunnkart extends React.Component<Props, State> {
         vis: true,
         barn: props.barn,
         removable: true,
+        bbox: props.bbox,
       })
 
       this.setState({
