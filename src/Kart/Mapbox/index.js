@@ -302,7 +302,6 @@ class Mapbox extends Component {
   fitBounds(bbox) {
     let map = this.map.getMap()
     if (map && bbox) {
-      //const bounds = [[bbox[2], bbox[3]], [bbox[0], bbox[1]]]
       map.once('moveend', () =>
         this.handleViewportChange({
           ...this.state.viewport,
@@ -313,7 +312,9 @@ class Mapbox extends Component {
           bearing: map.getBearing(),
         })
       )
-      map.fitBounds(bbox, {
+      const mb = [[bbox[2], bbox[3]], [bbox[0], bbox[1]]]
+      console.log(mb)
+      map.fitBounds(mb, {
         padding: { top: 10, bottom: 25, left: 400, right: 5 },
       })
     }
