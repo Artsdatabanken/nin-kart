@@ -57,6 +57,7 @@ class Tweaks extends React.Component {
             setFargeKode={this.setFargeKode}
             onGoToCode={this.props.onGoToCode}
             onExitToRoot={this.props.onExitToRoot}
+            onFitBounds={this.props.onFitBounds}
           />
         )
     }
