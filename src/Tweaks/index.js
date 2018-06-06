@@ -10,6 +10,7 @@ class Tweaks extends React.Component {
     farger = farger.filter(x => x.kode !== kode)
     farger.push({ kode: kode, farge: farge })
     localStorage.setItem('customColors', JSON.stringify(farger))
+    this.updateColor(kode, farge)
   }
 
   getFargeKode = () => {
@@ -58,6 +59,7 @@ class Tweaks extends React.Component {
             onGoToCode={this.props.onGoToCode}
             onExitToRoot={this.props.onExitToRoot}
             onFitBounds={this.props.onFitBounds}
+            updateColor={this.props.updateColor}
           />
         )
     }
