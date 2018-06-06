@@ -31,7 +31,6 @@ storiesOf('VenstreVindu', module)
             localId={''}
             meta={''}
             onShowColorpicker={action('onShowColorpicker')}
-            ekspandertKode={''}
             visValgte={false}
           />
         </MemoryRouter>
