@@ -71,11 +71,9 @@ class Mapbox extends Component {
       this.oppdaterValgteKoder(this.props, nextProps)
     }
 
-    if (nextProps.oppdaterFarger === null) {
-      if (nextProps.oppdaterFarger !== this.props.oppdaterFarger) {
-        this.fargeleggLag(nextProps)
-        this.oppdaterValgteKoder(this.props, nextProps)
-      }
+    if (nextProps.oppdaterFarger !== this.props.oppdaterFarger) {
+      this.fargeleggLag(nextProps)
+      this.oppdaterValgteKoder(this.props, nextProps)
     }
 
     // todo: bør sjekke mer enn lengden

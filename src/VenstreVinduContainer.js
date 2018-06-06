@@ -9,6 +9,7 @@ import PunktinformasjonContainer from './Naturområdedetaljer/PunktinformasjonCo
 import TopBar from './TopBar/TopBar'
 import Tweaks from './Tweaks'
 import backend from './backend'
+import språk from './språk'
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
@@ -43,11 +44,11 @@ class VenstreVinduContainer extends React.Component {
     })
   }
 
-  tittel(meta) {
-    if (!meta) return null
-    if (!meta.overordnet) return null
-    if (meta.tittel.nb) return meta.tittel.nb
-    return meta.tittel.la
+  tittel(meta, currentItem) {
+    if (meta && meta.tittel) {
+      return språk(meta.tittel)
+    }
+    return null
   }
 
   finnValgtKodeElement(kode) {
@@ -61,6 +62,7 @@ class VenstreVinduContainer extends React.Component {
         if (barn.kode === kode) item = barn
       })
     })
+
     return item
   }
 
@@ -183,6 +185,7 @@ class VenstreVinduContainer extends React.Component {
                           this.props.onExitToRoot()
                         }}
                         onFitBounds={this.props.onFitBounds}
+                        updateColor={this.props.updateColor}
                       />
                     )}
                   />
