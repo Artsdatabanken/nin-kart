@@ -5,11 +5,11 @@ import { withRouter } from 'react-router'
 import BakgrunnskartElement from './BakgrunnskartElement'
 import PolygonlagElement from './PolygonlagElement'
 import TerrenglagElement from './TerrenglagElement'
-class AktiveKartlag extends React.Component {
-  handleClick = kode => {
-    this.props.history.push(`/lag/${kode}`)
-  }
+import Collapsible from 'react-collapsible'
+import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down'
+import HardwareKeyboardArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up'
 
+class AktiveKartlag extends React.Component {
   render() {
     const {
       koder,
@@ -41,35 +41,57 @@ class AktiveKartlag extends React.Component {
           const kode = forelder.kode
           return (
             <React.Fragment key={kode}>
-              <PolygonlagElement
-                {...forelder}
-                key={kode}
-                kode={kode}
-                vis={forelder.vis}
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
-                onRemove={kode => onRemoveSelectedLayer(kode)}
-                onClick={() => this.handleClick(kode)}
-                onToggleVisible={onToggleVisible}
-                language={language}
-              />
-              {forelder.barnArray.map(item => {
-                const kode = item.kode
-                return (
+              <Collapsible
+                open={true}
+                trigger={
                   <PolygonlagElement
-                    {...item}
+                    {...forelder}
                     key={kode}
                     kode={kode}
-                    vis={item.vis}
+                    vis={forelder.vis}
+                    onMouseEnter={onMouseEnter}
+                    onMouseLeave={onMouseLeave}
+                    onRemove={kode => onRemoveSelectedLayer(kode)}
+                    onToggleVisible={onToggleVisible}
+                    language={language}
+                    rightIcon={<HardwareKeyboardArrowDown />}
+                  />
+                }
+                triggerWhenOpen={
+                  <PolygonlagElement
+                    {...forelder}
+                    key={kode}
+                    kode={kode}
+                    vis={forelder.vis}
                     onMouseEnter={onMouseEnter}
                     onMouseLeave={onMouseLeave}
                     onRemove={kode => onRemoveSelectedLayer(kode)}
                     onClick={() => this.handleClick(kode)}
                     onToggleVisible={onToggleVisible}
                     language={language}
+                    rightIcon={<HardwareKeyboardArrowUp />}
                   />
-                )
-              })}
+                }
+                easing="ease-in-out"
+              >
+                {forelder.barnArray.map(item => {
+                  const kode = item.kode
+                  return (
+                    <PolygonlagElement
+                      {...item}
+                      key={kode}
+                      kode={kode}
+                      vis={item.vis}
+                      onMouseEnter={onMouseEnter}
+                      onMouseLeave={onMouseLeave}
+                      onRemove={kode => onRemoveSelectedLayer(kode)}
+                      onClick={() => this.handleClick(kode)}
+                      onToggleVisible={onToggleVisible}
+                      language={language}
+                    />
+                  )
+                })}
+              </Collapsible>
             </React.Fragment>
           )
         })}

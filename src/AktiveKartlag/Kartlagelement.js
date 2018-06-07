@@ -13,7 +13,6 @@ class Kartlagelement extends React.Component {
     return (
       <React.Fragment>
         <ListItem
-          onClick={() => this.props.history.push('/lag/' + kode)}
           key={item.kode}
           onMouseEnter={() =>
             this.props.onMouseEnter && this.props.onMouseEnter(kode)
@@ -22,7 +21,7 @@ class Kartlagelement extends React.Component {
             this.props.onMouseLeave && this.props.onMouseLeave(kode)
           }}
           leftAvatar={
-            <div>
+            <div onClick={() => this.props.history.push('/lag/' + kode)}>
               {this.props.onToggleVisible && (
                 <div
                   style={{
@@ -55,8 +54,9 @@ class Kartlagelement extends React.Component {
           }
           primaryText={tittel}
           secondaryText={undertittel}
+          rightIcon={this.props.rightIcon}
           rightAvatar={
-            kanFlyttes && (
+            !this.props.rightIcon && kanFlyttes ? (
               <div
                 style={{ cursor: '-webkit-grab', marginTop: 8, marginLeft: 8 }}
               >
@@ -64,7 +64,7 @@ class Kartlagelement extends React.Component {
                   style={{ color: this.props.muiTheme.palette.disabledColor }}
                 />
               </div>
-            )
+            ) : null
           }
         >
           <div style={{ position: 'absolute', left: 280, top: 24 }}>

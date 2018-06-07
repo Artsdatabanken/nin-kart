@@ -90,268 +90,287 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                 }
               }
             />
-            <div>
+            <div
+              className="Collapsible"
+            >
               <span
-                disabled={false}
-                onBlur={[Function]}
+                className="Collapsible__trigger is-open"
                 onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                open={null}
-                style={
-                  Object {
-                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                    "background": "none",
-                    "backgroundColor": null,
-                    "border": 10,
-                    "boxSizing": "border-box",
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "cursor": "pointer",
-                    "display": "block",
-                    "fontFamily": "Roboto, sans-serif",
-                    "fontSize": 16,
-                    "fontWeight": "inherit",
-                    "lineHeight": "16px",
-                    "margin": 0,
-                    "muiPrepared": true,
-                    "outline": "none",
-                    "padding": 0,
-                    "position": "relative",
-                    "textDecoration": "none",
-                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "verticalAlign": null,
-                  }
-                }
-                tabIndex={0}
               >
-                <div
-                  onMouseDown={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
-                >
-                  <div
+                <div>
+                  <span
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                    open={null}
                     style={
                       Object {
-                        "marginLeft": 0,
+                        "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                        "background": "none",
+                        "backgroundColor": null,
+                        "border": 10,
+                        "boxSizing": "border-box",
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "cursor": "pointer",
+                        "display": "block",
+                        "fontFamily": "Roboto, sans-serif",
+                        "fontSize": 16,
+                        "fontWeight": "inherit",
+                        "lineHeight": "16px",
+                        "margin": 0,
                         "muiPrepared": true,
-                        "paddingBottom": 16,
-                        "paddingLeft": 72,
-                        "paddingRight": 56,
-                        "paddingTop": 20,
+                        "outline": "none",
+                        "padding": 0,
                         "position": "relative",
+                        "textDecoration": "none",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "verticalAlign": null,
                       }
                     }
+                    tabIndex={0}
                   >
                     <div
-                      style={
-                        Object {
-                          "left": 280,
-                          "position": "absolute",
-                          "top": 24,
-                        }
-                      }
-                    />
-                    <div
-                      style={
-                        Object {
-                          "left": 16,
-                          "position": "absolute",
-                          "top": 16,
-                        }
-                      }
+                      onMouseDown={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
                     >
                       <div
                         style={
                           Object {
-                            "display": "inline-flex",
-                            "position": "absolute",
-                            "right": 40,
-                            "top": 8,
-                          }
-                        }
-                      />
-                      <div
-                        style={
-                          Object {
-                            "display": "inline-flex",
-                            "position": "absolute",
-                            "rxight": 0,
-                            "top": 8,
+                            "marginLeft": 0,
+                            "muiPrepared": true,
+                            "paddingBottom": 16,
+                            "paddingLeft": 72,
+                            "paddingRight": 56,
+                            "paddingTop": 20,
+                            "position": "relative",
                           }
                         }
                       >
                         <div
                           style={
                             Object {
-                              "height": "28px",
-                              "right": "14px",
-                              "width": "28px",
+                              "left": 280,
+                              "position": "absolute",
+                              "top": 24,
+                            }
+                          }
+                        />
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "block",
+                              "fill": "#757575",
+                              "height": 24,
+                              "margin": 12,
+                              "muiPrepared": true,
+                              "position": "absolute",
+                              "right": 4,
+                              "top": 12,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+                          />
+                        </svg>
+                        <div
+                          onClick={[Function]}
+                          style={
+                            Object {
+                              "left": 16,
+                              "position": "absolute",
+                              "top": 16,
                             }
                           }
                         >
                           <div
                             style={
                               Object {
-                                "backgroundImage": "url(null)",
-                                "borderRadius": "12%",
-                                "bottom": 0,
-                                "left": 0,
+                                "display": "inline-flex",
                                 "position": "absolute",
-                                "right": 0,
-                                "top": 0,
+                                "right": 40,
+                                "top": 8,
+                              }
+                            }
+                          />
+                          <div
+                            style={
+                              Object {
+                                "display": "inline-flex",
+                                "position": "absolute",
+                                "rxight": 0,
+                                "top": 8,
                               }
                             }
                           >
                             <div
                               style={
                                 Object {
-                                  "backgroundColor": undefined,
-                                  "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                                  "borderRadius": "12%",
-                                  "bottom": 0,
-                                  "left": 0,
-                                  "position": "absolute",
-                                  "right": 0,
-                                  "top": 0,
+                                  "height": "28px",
+                                  "right": "14px",
+                                  "width": "28px",
                                 }
                               }
+                            >
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundImage": "url(null)",
+                                    "borderRadius": "12%",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  }
+                                }
+                              >
+                                <div
+                                  style={
+                                    Object {
+                                      "backgroundColor": undefined,
+                                      "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+                                      "borderRadius": "12%",
+                                      "bottom": 0,
+                                      "left": 0,
+                                      "position": "absolute",
+                                      "right": 0,
+                                      "top": 0,
+                                    }
+                                  }
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "muiPrepared": true,
+                            }
+                          }
+                        >
+                          aabc
+                          <br />
+                          <span
+                            style={
+                              Object {
+                                "color": undefined,
+                                "float": "left",
+                                "fontWeight": 600,
+                                "paddingLeft": "2px",
+                                "paddingRight": "4px",
+                              }
+                            }
+                            title={undefined}
+                          />
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "WebkitBoxOrient": null,
+                              "WebkitLineClamp": null,
+                              "color": "rgba(0, 0, 0, 0.54)",
+                              "display": null,
+                              "fontSize": 14,
+                              "height": 16,
+                              "lineHeight": "16px",
+                              "margin": 0,
+                              "marginTop": 4,
+                              "muiPrepared": true,
+                              "overflow": "hidden",
+                              "textOverflow": "ellipsis",
+                              "whiteSpace": "nowrap",
+                            }
+                          }
+                        >
+                          <div
+                            style={
+                              Object {
+                                "position": "relative",
+                                "width": 200,
+                              }
+                            }
+                          >
+                            <div
+                              className="sizebar"
+                              style={
+                                Object {
+                                  "borderBottomRightRadius": 10,
+                                  "borderTopRightRadius": 10,
+                                  "float": "left",
+                                  "height": 4,
+                                  "marginTop": 4,
+                                  "width": "0%",
+                                }
+                              }
+                              title="areal: "
                             />
                           </div>
+                          <div
+                            style={
+                              Object {
+                                "display": "inline",
+                                "float": "right",
+                                "position": "absolute",
+                                "right": 52,
+                              }
+                            }
+                          />
                         </div>
                       </div>
                     </div>
-                    <div
-                      style={
-                        Object {
-                          "cursor": "-webkit-grab",
-                          "marginLeft": 8,
-                          "marginTop": 8,
-                          "position": "absolute",
-                          "right": 16,
-                          "top": 16,
-                        }
-                      }
-                    >
-                      <svg
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
-                        style={
-                          Object {
-                            "color": "rgba(0, 0, 0, 0.3)",
-                            "display": "inline-block",
-                            "fill": "currentColor",
-                            "height": 24,
-                            "muiPrepared": true,
-                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                            "userSelect": "none",
-                            "width": 24,
-                          }
-                        }
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"
-                        />
-                      </svg>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "muiPrepared": true,
-                        }
-                      }
-                    >
-                      aabc
-                      <br />
-                      <div
-                        style={
-                          Object {
-                            "color": undefined,
-                            "float": "left",
-                            "fontWeight": 600,
-                            "paddingLeft": "2px",
-                            "paddingRight": "4px",
-                          }
-                        }
-                      />
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "WebkitBoxOrient": null,
-                          "WebkitLineClamp": null,
-                          "color": "rgba(0, 0, 0, 0.54)",
-                          "display": null,
-                          "fontSize": 14,
-                          "height": 16,
-                          "lineHeight": "16px",
-                          "margin": 0,
-                          "marginTop": 4,
-                          "muiPrepared": true,
-                          "overflow": "hidden",
-                          "textOverflow": "ellipsis",
-                          "whiteSpace": "nowrap",
-                        }
-                      }
-                    >
-                      <div
-                        style={
-                          Object {
-                            "position": "relative",
-                            "width": 200,
-                          }
-                        }
-                      >
-                        <div
-                          className="sizebar"
-                          style={
-                            Object {
-                              "borderBottomRightRadius": 10,
-                              "borderTopRightRadius": 10,
-                              "float": "left",
-                              "height": 4,
-                              "marginTop": 4,
-                              "width": "0%",
-                            }
-                          }
-                          title="areal: "
-                        />
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "display": "inline",
-                            "float": "right",
-                            "position": "absolute",
-                            "right": 52,
-                          }
-                        }
-                      />
-                    </div>
-                  </div>
+                  </span>
                 </div>
+                <hr
+                  style={
+                    Object {
+                      "backgroundColor": "#e0e0e0",
+                      "border": "none",
+                      "height": 1,
+                      "margin": 0,
+                      "marginLeft": 0,
+                      "marginTop": -1,
+                      "muiPrepared": true,
+                    }
+                  }
+                />
               </span>
-            </div>
-            <hr
-              style={
-                Object {
-                  "backgroundColor": "#e0e0e0",
-                  "border": "none",
-                  "height": 1,
-                  "margin": 0,
-                  "marginLeft": 0,
-                  "marginTop": -1,
-                  "muiPrepared": true,
+              <div
+                className="Collapsible__contentOuter"
+                onTransitionEnd={[Function]}
+                style={
+                  Object {
+                    "WebkitTransition": "none",
+                    "height": "auto",
+                    "msTransition": "none",
+                    "overflow": "hidden",
+                    "transition": "none",
+                  }
                 }
-              }
-            />
+              >
+                <div
+                  className="Collapsible__contentInner"
+                />
+              </div>
+            </div>
             <div>
               <span
                 disabled={false}
@@ -421,6 +440,7 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                       }
                     />
                     <div
+                      onClick={[Function]}
                       style={
                         Object {
                           "left": 16,
@@ -605,6 +625,7 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                       }
                     />
                     <div
+                      onClick={[Function]}
                       style={
                         Object {
                           "left": 16,
@@ -4419,6 +4440,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                             }
                           />
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
                                 "left": 16,
@@ -4538,6 +4560,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                             }
                           />
                           <div
+                            onClick={[Function]}
                             style={
                               Object {
                                 "left": 16,
@@ -6008,7 +6031,23 @@ exports[`Storyshots KodeVindu default 1`] = `
                         }
                       }
                     >
-                      Marine vannmasser
+                      <div>
+                        Marine vannmasser
+                        <span
+                          style={
+                            Object {
+                              "color": undefined,
+                              "float": "left",
+                              "fontWeight": 600,
+                              "paddingLeft": "2px",
+                              "paddingRight": "4px",
+                            }
+                          }
+                          title="NA_H"
+                        >
+                          H
+                        </span>
+                      </div>
                     </span>
                     <span
                       style={
@@ -6025,11 +6064,37 @@ exports[`Storyshots KodeVindu default 1`] = `
                         onClick={[Function]}
                       >
                         Natursystem
+                        <span
+                          style={
+                            Object {
+                              "color": undefined,
+                              "float": "left",
+                              "fontWeight": 600,
+                              "paddingLeft": "2px",
+                              "paddingRight": "4px",
+                            }
+                          }
+                          title="NA"
+                        >
+                          NA
+                        </span>
                       </div>
                       <div
                         onClick={[Function]}
                       >
                         Natur i Norge
+                        <span
+                          style={
+                            Object {
+                              "color": undefined,
+                              "float": "left",
+                              "fontWeight": 600,
+                              "paddingLeft": "2px",
+                              "paddingRight": "4px",
+                            }
+                          }
+                          title="~"
+                        />
                       </div>
                     </span>
                     <div
@@ -6399,7 +6464,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -6409,9 +6474,10 @@ exports[`Storyshots KodeVindu default 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="NA_H1"
                           >
                             1
-                          </div>
+                          </span>
                           Havvannmasser
                           <div
                             style={
@@ -6618,7 +6684,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -6628,9 +6694,10 @@ exports[`Storyshots KodeVindu default 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="NA_H2"
                           >
                             2
-                          </div>
+                          </span>
                           Sirkulerende vannmasser i fysisk avgrensede saltvannsforekomster
                           <div
                             style={
@@ -6837,7 +6904,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -6847,9 +6914,10 @@ exports[`Storyshots KodeVindu default 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="NA_H3"
                           >
                             3
-                          </div>
+                          </span>
                           Ikke-sirkulerende marine vannmasser i fysisk avgrensede saltvannsforekomster
                           <div
                             style={
@@ -7056,7 +7124,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -7066,9 +7134,10 @@ exports[`Storyshots KodeVindu default 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="NA_H4"
                           >
                             4
-                          </div>
+                          </span>
                           Sterkt endrete marine vannmasser
                           <div
                             style={
@@ -7339,7 +7408,23 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         }
                       }
                     >
-                      Helofytt-saltvannssump
+                      <div>
+                        Helofytt-saltvannssump
+                        <span
+                          style={
+                            Object {
+                              "color": undefined,
+                              "float": "left",
+                              "fontWeight": 600,
+                              "paddingLeft": "2px",
+                              "paddingRight": "4px",
+                            }
+                          }
+                          title="NA_M8"
+                        >
+                          8
+                        </span>
+                      </div>
                     </span>
                     <span
                       style={
@@ -7356,16 +7441,56 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         onClick={[Function]}
                       >
                         Saltvannsbunnsystemer
+                        <span
+                          style={
+                            Object {
+                              "color": undefined,
+                              "float": "left",
+                              "fontWeight": 600,
+                              "paddingLeft": "2px",
+                              "paddingRight": "4px",
+                            }
+                          }
+                          title="NA_M"
+                        >
+                          M
+                        </span>
                       </div>
                       <div
                         onClick={[Function]}
                       >
                         Natursystem
+                        <span
+                          style={
+                            Object {
+                              "color": undefined,
+                              "float": "left",
+                              "fontWeight": 600,
+                              "paddingLeft": "2px",
+                              "paddingRight": "4px",
+                            }
+                          }
+                          title="NA"
+                        >
+                          NA
+                        </span>
                       </div>
                       <div
                         onClick={[Function]}
                       >
                         Natur i Norge
+                        <span
+                          style={
+                            Object {
+                              "color": undefined,
+                              "float": "left",
+                              "fontWeight": 600,
+                              "paddingLeft": "2px",
+                              "paddingRight": "4px",
+                            }
+                          }
+                          title="~"
+                        />
                       </div>
                     </span>
                     <div
@@ -7736,7 +7861,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -7746,9 +7871,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="AR_100132"
                           >
                             100132
-                          </div>
+                          </span>
                           Takrør (Phragmites australis)
                           <div
                             style={
@@ -7982,7 +8108,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -7992,9 +8118,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="AR_99790"
                           >
                             99790
-                          </div>
+                          </span>
                           Pollsivaks (Schoenoplectus tabernaemontani)
                           <div
                             style={
@@ -8201,7 +8328,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -8211,9 +8338,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="AR_99737"
                           >
                             99737
-                          </div>
+                          </span>
                           Saltstarr (Carex ×vacillans)
                           <div
                             style={
@@ -8420,7 +8548,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -8430,9 +8558,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="AR_99698"
                           >
                             99698
-                          </div>
+                          </span>
                           Havstarr (Carex paleacea)
                           <div
                             style={
@@ -8639,7 +8768,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -8649,9 +8778,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="AR_99603"
                           >
                             99603
-                          </div>
+                          </span>
                           Havsivaks (Bolboschoenus maritimus)
                           <div
                             style={
@@ -8858,7 +8988,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -8868,9 +8998,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="AR_99475"
                           >
                             99475
-                          </div>
+                          </span>
                           Sverdlilje (Iris pseudacorus)
                           <div
                             style={
@@ -9104,7 +9235,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -9114,9 +9245,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="AR_99603"
                           >
                             99603
-                          </div>
+                          </span>
                           Havsivaks (Bolboschoenus maritimus)
                           <div
                             style={
@@ -9350,7 +9482,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -9360,9 +9492,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="AR_99677"
                           >
                             99677
-                          </div>
+                          </span>
                           Pølstarr (Carex mackenziei)
                           <div
                             style={
@@ -9596,7 +9729,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -9606,9 +9739,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="AR_99789"
                           >
                             99789
-                          </div>
+                          </span>
                           Sjøsivaks (Schoenoplectus lacustris)
                           <div
                             style={
@@ -9815,7 +9949,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -9825,9 +9959,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="AR_99722"
                           >
                             99722
-                          </div>
+                          </span>
                           Fjærestarr (Carex salina)
                           <div
                             style={
@@ -10034,7 +10169,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -10044,9 +10179,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="AR_103310"
                           >
                             103310
-                          </div>
+                          </span>
                           Mjødurt (Filipendula ulmaria)
                           <div
                             style={
@@ -10253,7 +10389,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -10263,9 +10399,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="AR_103183"
                           >
                             103183
-                          </div>
+                          </span>
                           Gul frøstjerne (Thalictrum flavum)
                           <div
                             style={
@@ -10472,7 +10609,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -10482,9 +10619,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="AR_102818"
                           >
                             102818
-                          </div>
+                          </span>
                           Kattehale (Lythrum salicaria)
                           <div
                             style={
@@ -10691,7 +10829,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -10701,9 +10839,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="AR_101846"
                           >
                             101846
-                          </div>
+                          </span>
                           Fredløs (Lysimachia vulgaris)
                           <div
                             style={
@@ -10910,7 +11049,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -10920,9 +11059,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="AR_101845"
                           >
                             101845
-                          </div>
+                          </span>
                           Gulldusk (Lysimachia thyrsiflora)
                           <div
                             style={
@@ -11129,7 +11269,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -11139,9 +11279,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="AR_100132"
                           >
                             100132
-                          </div>
+                          </span>
                           Takrør (Phragmites australis)
                           <div
                             style={
@@ -11348,7 +11489,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -11358,9 +11499,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="AR_100061"
                           >
                             100061
-                          </div>
+                          </span>
                           Kjempesøtgras (Glyceria maxima)
                           <div
                             style={
@@ -11567,7 +11709,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                             }
                           }
                         >
-                          <div
+                          <span
                             style={
                               Object {
                                 "color": undefined,
@@ -11577,9 +11719,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                                 "paddingRight": "4px",
                               }
                             }
+                            title="AR_100058"
                           >
                             100058
-                          </div>
+                          </span>
                           Mannasøtgras (Glyceria fluitans)
                           <div
                             style={
@@ -11748,7 +11891,7 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
           }
         >
           <div>
-            <div
+            <span
               style={
                 Object {
                   "color": undefined,
@@ -11758,10 +11901,11 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
                   "paddingRight": "4px",
                 }
               }
+              title="NE"
             >
               NE
-            </div>
-            <div
+            </span>
+            <span
               style={
                 Object {
                   "color": undefined,
@@ -11771,12 +11915,13 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
                   "paddingRight": "4px",
                 }
               }
+              title="NE"
             >
               NE
-            </div>
+            </span>
           </div>
           <div>
-            <div
+            <span
               style={
                 Object {
                   "color": undefined,
@@ -11786,10 +11931,11 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
                   "paddingRight": "4px",
                 }
               }
+              title="DD"
             >
               DD
-            </div>
-            <div
+            </span>
+            <span
               style={
                 Object {
                   "color": undefined,
@@ -11799,12 +11945,13 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
                   "paddingRight": "4px",
                 }
               }
+              title="DD"
             >
               DD
-            </div>
+            </span>
           </div>
           <div>
-            <div
+            <span
               style={
                 Object {
                   "color": undefined,
@@ -11814,10 +11961,11 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
                   "paddingRight": "4px",
                 }
               }
+              title="LC"
             >
               LC
-            </div>
-            <div
+            </span>
+            <span
               style={
                 Object {
                   "color": undefined,
@@ -11827,12 +11975,13 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
                   "paddingRight": "4px",
                 }
               }
+              title="LC"
             >
               LC
-            </div>
+            </span>
           </div>
           <div>
-            <div
+            <span
               style={
                 Object {
                   "color": undefined,
@@ -11842,10 +11991,11 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
                   "paddingRight": "4px",
                 }
               }
+              title="NT"
             >
               NT
-            </div>
-            <div
+            </span>
+            <span
               style={
                 Object {
                   "color": undefined,
@@ -11855,12 +12005,13 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
                   "paddingRight": "4px",
                 }
               }
+              title="NT"
             >
               NT
-            </div>
+            </span>
           </div>
           <div>
-            <div
+            <span
               style={
                 Object {
                   "color": undefined,
@@ -11870,10 +12021,11 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
                   "paddingRight": "4px",
                 }
               }
+              title="VU"
             >
               VU
-            </div>
-            <div
+            </span>
+            <span
               style={
                 Object {
                   "color": undefined,
@@ -11883,12 +12035,13 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
                   "paddingRight": "4px",
                 }
               }
+              title="VU"
             >
               VU
-            </div>
+            </span>
           </div>
           <div>
-            <div
+            <span
               style={
                 Object {
                   "color": undefined,
@@ -11898,10 +12051,11 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
                   "paddingRight": "4px",
                 }
               }
+              title="EN"
             >
               EN
-            </div>
-            <div
+            </span>
+            <span
               style={
                 Object {
                   "color": undefined,
@@ -11911,12 +12065,13 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
                   "paddingRight": "4px",
                 }
               }
+              title="EN"
             >
               EN
-            </div>
+            </span>
           </div>
           <div>
-            <div
+            <span
               style={
                 Object {
                   "color": undefined,
@@ -11926,10 +12081,11 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
                   "paddingRight": "4px",
                 }
               }
+              title="CR"
             >
               CR
-            </div>
-            <div
+            </span>
+            <span
               style={
                 Object {
                   "color": undefined,
@@ -11939,12 +12095,13 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
                   "paddingRight": "4px",
                 }
               }
+              title="CR"
             >
               CR
-            </div>
+            </span>
           </div>
           <div>
-            <div
+            <span
               style={
                 Object {
                   "color": undefined,
@@ -11954,10 +12111,11 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
                   "paddingRight": "4px",
                 }
               }
+              title="EW"
             >
               EW
-            </div>
-            <div
+            </span>
+            <span
               style={
                 Object {
                   "color": undefined,
@@ -11967,12 +12125,13 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
                   "paddingRight": "4px",
                 }
               }
+              title="EW"
             >
               EW
-            </div>
+            </span>
           </div>
           <div>
-            <div
+            <span
               style={
                 Object {
                   "color": undefined,
@@ -11982,10 +12141,11 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
                   "paddingRight": "4px",
                 }
               }
+              title="EX"
             >
               EX
-            </div>
-            <div
+            </span>
+            <span
               style={
                 Object {
                   "color": undefined,
@@ -11995,9 +12155,10 @@ exports[`Storyshots Kodetagg Rødliste 1`] = `
                   "paddingRight": "4px",
                 }
               }
+              title="EX"
             >
               EX
-            </div>
+            </span>
           </div>
         </div>
       </div>
@@ -13078,6 +13239,7 @@ exports[`Storyshots PolygonlagElement default 1`] = `
                     }
                   />
                   <div
+                    onClick={[Function]}
                     style={
                       Object {
                         "left": 16,
@@ -13189,7 +13351,7 @@ exports[`Storyshots PolygonlagElement default 1`] = `
                   >
                     Natursystem
                     <br />
-                    <div
+                    <span
                       style={
                         Object {
                           "color": undefined,
@@ -13199,9 +13361,10 @@ exports[`Storyshots PolygonlagElement default 1`] = `
                           "paddingRight": "4px",
                         }
                       }
+                      title="NA"
                     >
                       NA
-                    </div>
+                    </span>
                   </div>
                   <div
                     style={
@@ -19730,6 +19893,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                           }
                         />
                         <div
+                          onClick={[Function]}
                           style={
                             Object {
                               "left": 16,
@@ -19914,6 +20078,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                           }
                         />
                         <div
+                          onClick={[Function]}
                           style={
                             Object {
                               "left": 16,
@@ -20656,6 +20821,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                           }
                         />
                         <div
+                          onClick={[Function]}
                           style={
                             Object {
                               "left": 16,
@@ -20840,6 +21006,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                           }
                         />
                         <div
+                          onClick={[Function]}
                           style={
                             Object {
                               "left": 16,
