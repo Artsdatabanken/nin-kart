@@ -26,7 +26,7 @@ class PolygonlagElement extends React.Component {
               height: 4,
               borderTopRightRadius: 10,
               borderBottomRightRadius: 10,
-              width: `${100.0 * areal / størsteAreal}%`,
+              width: `${(100.0 * areal) / størsteAreal}%`,
             }}
             title={'areal: ' + PrettyPrint.prettyPrintAreal(areal)}
           />
@@ -45,7 +45,14 @@ class PolygonlagElement extends React.Component {
 
   render() {
     const item = this.props
-    const { farge, tittel, undertittel, kode, avatarUtenRamme } = this.props
+    const {
+      farge,
+      tittel,
+      undertittel,
+      kode,
+      avatarUtenRamme,
+      rightIcon,
+    } = this.props
     return (
       <KartlagElement
         farge={farge}
@@ -53,6 +60,7 @@ class PolygonlagElement extends React.Component {
         onClick={this.props.onClick}
         key={item.key}
         kode={item.kode}
+        rightIcon={rightIcon}
         erEkspandert={this.props.erEkspandert}
         onMouseEnter={() =>
           this.props.onMouseEnter && this.props.onMouseEnter(kode)

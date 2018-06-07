@@ -15,7 +15,11 @@ class Kodetagg extends React.Component {
     }
     const { kode } = this.props
     const tekst = this.props.hele ? kode : this.sisteDelAvKoden(kode)
-    return <div style={styles.chip}>{tekst}</div>
+    return (
+      <span title={kode} style={styles.chip}>
+        {tekst}
+      </span>
+    )
   }
 
   sisteDelAvKoden(kode) {

@@ -56,6 +56,7 @@ class Kodekort extends React.Component {
         </CardMedia>
         <Tittelblokk
           tittel={språk(this.props.tittel)}
+          kode={this.props.kode}
           onGoToCode={this.props.onGoToCode}
           onToggleLayer={(event, state) =>
             this.props.onToggleLayer(kode, state)
