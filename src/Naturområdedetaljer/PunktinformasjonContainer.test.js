@@ -91,9 +91,9 @@ test('createPointInfo', () => {
   ).toBe(rødlisteExpected.dataorigin)
 })
 
-// test('fetch-noLocalid', () => {
-//   expect(punktinformasjonContainer.fetch(1, 1, undefined)).toBe(undefined)
-// })
+test('fetch-noLocalid', () => {
+  expect(punktinformasjonContainer.fetch(1, 1, undefined)).toBe(undefined)
+})
 
 let props = {
   nivå: '',
