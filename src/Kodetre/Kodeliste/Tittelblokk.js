@@ -1,6 +1,7 @@
 //@flow
 import { CardActions, CardTitle, Toggle } from 'material-ui'
 import React from 'react'
+import KodeTagg from '../Kodetagg'
 import språk from '../../språk'
 
 type Props = {
@@ -17,9 +18,15 @@ const Tittelblokk = ({
   isActiveLayer,
   tittel,
   overordnet,
+  kode,
 }: Props) => (
   <CardTitle
-    title={tittel}
+    title={
+      <div>
+        {tittel}
+        <KodeTagg hele={false} kode={kode.toUpperCase()} />
+      </div>
+    }
     subtitle={
       overordnet &&
       overordnet.map(forelder => (
@@ -31,6 +38,7 @@ const Tittelblokk = ({
           }}
         >
           {språk(forelder.tittel)}
+          <KodeTagg hele={false} kode={forelder.kode.toUpperCase()} />
         </div>
       ))
     }

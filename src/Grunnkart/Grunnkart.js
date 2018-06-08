@@ -29,6 +29,7 @@ type State = {
   mapBounds: Object,
   bbox: Object,
   opplystKode: string,
+  refresh: boolean,
 }
 
 type Props = {
@@ -52,6 +53,7 @@ class Grunnkart extends React.Component<Props, State> {
       mapBounds: {},
       opplystKode: '',
       bbox: {},
+      refresh: false,
     }
     //    this.redirectTo(props.location.pathname.replace('/katalog/', ''))
   }
@@ -265,6 +267,29 @@ class Grunnkart extends React.Component<Props, State> {
     })
   }
 
+  updateColor(kode, farge) {
+    let meta = this.state.valgteKoder
+    Object.keys(meta).forEach(id => {
+      const forelder = meta[id]
+
+      if (forelder.kode === kode) {
+        forelder.farge = farge
+      }
+      if (forelder.barn) {
+        Object.keys(forelder.barn).forEach(barnId => {
+          const barn = forelder.barn[barnId]
+          if (barn.kode === kode) {
+            barn.farge = farge
+          }
+        })
+      }
+    })
+    this.setState({
+      valgteKoder: meta,
+      refresh: !this.state.refresh,
+    })
+  }
+
   render() {
     const erAktivert = !!this.state.valgteKoder.find(
       vk => vk.kode === this.state.meta.kode
@@ -295,7 +320,7 @@ class Grunnkart extends React.Component<Props, State> {
           meta={this.state.meta}
           bbox={this.state.bbox}
           oppdaterSkjulLag={this.state.vis}
-          oppdaterFarger={this.state.ekspandertKode}
+          oppdaterFarger={this.state.refresh}
         />
 
         <MainDrawer
@@ -330,6 +355,7 @@ class Grunnkart extends React.Component<Props, State> {
             visKatalog={this.visKatalog}
             localId={this.state.localId}
             meta={this.state.meta}
+            updateColor={(kode, farge) => this.updateColor(kode, farge)}
           />
         )}
       </div>
