@@ -52,7 +52,7 @@ class Kartlagelement extends React.Component {
               </div>
             </div>
           }
-          primaryText={<div style={{ paddingRight: 35 }}>{tittel}</div>}
+          primaryText={<div style={{ paddingRight: 43 }}>{tittel}</div>}
           secondaryText={undertittel}
           rightIcon={this.props.rightIcon}
           rightAvatar={

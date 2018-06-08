@@ -264,7 +264,7 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                           style={
                             Object {
                               "muiPrepared": true,
-                              "paddingRight": 35,
+                              "paddingRight": 43,
                             }
                           }
                         >
@@ -516,7 +516,7 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                       style={
                         Object {
                           "muiPrepared": true,
-                          "paddingRight": 35,
+                          "paddingRight": 43,
                         }
                       }
                     >
@@ -702,7 +702,7 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                       style={
                         Object {
                           "muiPrepared": true,
-                          "paddingRight": 35,
+                          "paddingRight": 43,
                         }
                       }
                     >
@@ -3839,7 +3839,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                             style={
                               Object {
                                 "muiPrepared": true,
-                                "paddingRight": 35,
+                                "paddingRight": 43,
                               }
                             }
                           >
@@ -4025,7 +4025,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                             style={
                               Object {
                                 "muiPrepared": true,
-                                "paddingRight": 35,
+                                "paddingRight": 43,
                               }
                             }
                           >
@@ -11892,7 +11892,7 @@ exports[`Storyshots PolygonlagElement default 1`] = `
                     style={
                       Object {
                         "muiPrepared": true,
-                        "paddingRight": 35,
+                        "paddingRight": 43,
                       }
                     }
                   >
@@ -18211,7 +18211,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                           style={
                             Object {
                               "muiPrepared": true,
-                              "paddingRight": 35,
+                              "paddingRight": 43,
                             }
                           }
                         >
@@ -18397,7 +18397,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                           style={
                             Object {
                               "muiPrepared": true,
-                              "paddingRight": 35,
+                              "paddingRight": 43,
                             }
                           }
                         >
@@ -19141,7 +19141,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                           style={
                             Object {
                               "muiPrepared": true,
-                              "paddingRight": 35,
+                              "paddingRight": 43,
                             }
                           }
                         >
@@ -19327,7 +19327,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                           style={
                             Object {
                               "muiPrepared": true,
-                              "paddingRight": 35,
+                              "paddingRight": 43,
                             }
                           }
                         >
