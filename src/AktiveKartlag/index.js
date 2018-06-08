@@ -88,6 +88,7 @@ class AktiveKartlag extends React.Component {
                       onClick={() => this.handleClick(kode)}
                       onToggleVisible={onToggleVisible}
                       language={language}
+                      indent={15}
                     />
                   )
                 })}
