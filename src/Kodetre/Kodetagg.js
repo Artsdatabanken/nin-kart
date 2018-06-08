@@ -23,7 +23,7 @@ class Kodetagg extends React.Component {
   }
 
   sisteDelAvKoden(kode) {
-    return typesystem.splittKode(kode).pop()
+    return typesystem.splittKodeMalestokk(kode).pop()
   }
 }
 

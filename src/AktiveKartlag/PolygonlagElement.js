@@ -69,6 +69,7 @@ class PolygonlagElement extends React.Component {
           this.props.onMouseLeave && this.props.onMouseLeave(kode)
         }}
         vis={this.props.vis}
+        indent={this.props.indent}
         onToggleVisible={kode => this.props.onToggleVisible(kode)}
         tittel={
           <div>
