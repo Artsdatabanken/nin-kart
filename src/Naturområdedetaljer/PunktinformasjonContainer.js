@@ -32,12 +32,22 @@ class PunktinformasjonContainer extends Component {
   componentWillReceiveProps(props) {
     this.fetch(props.lng, props.lat, props.localId)
   }
+
   componentDidMount() {
+    this.mounted = true
     this.fetch(this.props.lng, this.props.lat, this.props.localId)
   }
 
+  componentWillUnmount() {
+    this.mounted = false
+  }
+
+  TrySetState(newState) {
+    if (this.mounted) this.setState(newState)
+  }
+
   fetch(lng, lat, localId) {
-    this.setState({
+    this.TrySetState({
       lngLat: {
         Lat: { value: Number.parseFloat(lat).toPrecision(7) },
         Lon: { value: Number.parseFloat(lng).toPrecision(7) },
@@ -57,7 +67,7 @@ class PunktinformasjonContainer extends Component {
     }
 
     if (!localId)
-      this.setState({
+      this.TrySetState({
         natureAreaFacts: null,
         localId: null,
       })
@@ -65,7 +75,7 @@ class PunktinformasjonContainer extends Component {
   }
 
   goFetchInfo(id) {
-    this.setState({ natureAreaFacts: null, metadata: null })
+    this.TrySetState({ natureAreaFacts: null, metadata: null })
     if (!id) return
     backend.getMetadataByNatureAreaLocalId(id).then(metadata => {
       this.getNatureAreaFacts(metadata)
@@ -214,7 +224,7 @@ class PunktinformasjonContainer extends Component {
         props.description
       )
 
-    this.setState({
+    this.TrySetState({
       natureAreaFacts: facts,
     })
   }
@@ -291,32 +301,32 @@ class PunktinformasjonContainer extends Component {
   }
 
   goFetchPointInfo(lng, lat) {
-    this.setState({
+    this.TrySetState({
       pointInfo: null,
       admEnhet: null,
       stedsnavn: null,
       verneomrade: null,
     })
     backend.hentPunkt(lng, lat).then(data => {
-      this.setState({
+      this.TrySetState({
         pointInfo: this.fixData(data),
       })
     })
-    backend.hentAdmEnhet(lng, lat).then(data =>
-      this.setState({
+    backend.hentAdmEnhet(lng, lat).then(data => {
+      this.TrySetState({
         admEnhet: this.fixAdmEnhet(data),
       })
-    )
-    backend.hentStedsnavn(lng, lat).then(data =>
-      this.setState({
+    })
+    backend.hentStedsnavn(lng, lat).then(data => {
+      this.TrySetState({
         stedsnavn: this.fixStedsnavn(data),
       })
-    )
-    backend.hentVerneområde(lng, lat).then(data =>
-      this.setState({
+    })
+    backend.hentVerneområde(lng, lat).then(data => {
+      this.TrySetState({
         verneomrade: this.fixVerneområde(data),
       })
-    )
+    })
   }
 
   render() {

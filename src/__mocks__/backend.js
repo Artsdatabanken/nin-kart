@@ -13,7 +13,11 @@ backend.default.hentAdmEnhet.mockReturnValue(
 )
 
 backend.default.hentVerneområde.mockReturnValue(
-  new Promise((resolve, reject) => resolve(''))
+  new Promise((resolve, reject) =>
+    resolve(
+      '<FeatureInfoResponse xmlns:esri_wms="http://www.esri.com/wms" xmlns="http://www.esri.com/wms"/>'
+    )
+  )
 )
 
 backend.default.hentStedsnavn.mockReturnValue(
