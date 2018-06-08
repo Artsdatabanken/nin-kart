@@ -1,9 +1,9 @@
-import Mapbox from './Mapbox'
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
+import Mapbox from './Mapbox'
 
 class Kart extends Component {
-  onClick = point => {
+  handleClick = point => {
     const lngLat = point.lngLat
     var found = false
     if (point.features) {
@@ -25,7 +25,7 @@ class Kart extends Component {
     return (
       <Mapbox
         {...this.props}
-        onClick={this.onClick}
+        onClick={this.handleClick}
         onVisibilityChange={this.props.onVisibilityChange}
         onMapBoundsChange={this.props.onMapBoundsChange}
         categories={this.props.categories}
