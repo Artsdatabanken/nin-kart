@@ -44,15 +44,15 @@ class Kartlagelement extends React.Component {
                 style={{
                   display: 'inline-flex',
                   position: 'absolute',
-                  rxight: 0,
                   top: 8,
+                  left: this.props.indent || 0,
                 }}
               >
                 <PaintSwatch farge={farge} />
               </div>
             </div>
           }
-          primaryText={tittel}
+          primaryText={<div style={{ paddingRight: 43 }}>{tittel}</div>}
           secondaryText={undertittel}
           rightIcon={this.props.rightIcon}
           rightAvatar={

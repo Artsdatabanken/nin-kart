@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@artsdatabanken/typesystem": "^3.0.0",
+    "@artsdatabanken/typesystem": "^3.3.0",
     "babel-polyfill": "^6.26.0",
     "deck.gl": "^5.1.4",
     "enzyme-adapter-react-16": "^1.1.1",
