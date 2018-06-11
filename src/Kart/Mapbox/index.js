@@ -289,7 +289,9 @@ class Mapbox extends Component {
       let lag = hentLag(map, item.kode)
       if (!lag || !lag.paint) return
 
-      let fillColor = Color(item.farge || '#ff2222').alpha(0.7)
+      let fillColor = item.farge
+        ? Color(item.farge)
+        : Color('#ff2222').alpha(0.7)
       lag.paint['fill-color'] = fillColor.rgbaString()
       lag.paint['fill-outline-color'] = Color('#ffffff').rgbaString()
       lag.id = lagId
