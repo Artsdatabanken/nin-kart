@@ -4617,6 +4617,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                       }
                     >
                       <div
+                        className="hoverUnderline"
                         onClick={[Function]}
                       >
                         Natursystem
@@ -4636,6 +4637,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                         </span>
                       </div>
                       <div
+                        className="hoverUnderline"
                         onClick={[Function]}
                       >
                         Natur i Norge
@@ -5984,6 +5986,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                       }
                     >
                       <div
+                        className="hoverUnderline"
                         onClick={[Function]}
                       >
                         Saltvannsbunnsystemer
@@ -6003,6 +6006,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         </span>
                       </div>
                       <div
+                        className="hoverUnderline"
                         onClick={[Function]}
                       >
                         Natursystem
@@ -6022,6 +6026,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                         </span>
                       </div>
                       <div
+                        className="hoverUnderline"
                         onClick={[Function]}
                       >
                         Natur i Norge

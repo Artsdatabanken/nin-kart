@@ -31,6 +31,7 @@ const Tittelblokk = ({
       overordnet &&
       overordnet.map(forelder => (
         <div
+          className={'hoverUnderline'}
           key={forelder.kode}
           onClick={e => {
             e.stopPropagation()
