@@ -73,17 +73,29 @@ class Grunnkart extends React.Component<Props, State> {
   addSelected = props => {
     let koder = this.state.valgteKoder.slice()
     let kodeFinnes = false
+    let kodeFinnesHosBarn = false
+    let verdiPaaEksisterendeKode = false
     koder.forEach(valgtKode => {
       if (valgtKode.kode === props.kode) {
         kodeFinnes = true // finnes fra før
       }
     })
     if (!kodeFinnes) {
+      // sjekk om kode finnes som barn av annen forelder
+      koder.forEach(valgtKode => {
+        Object.keys(valgtKode.barn).forEach(id => {
+          if (valgtKode.barn[id].kode === props.kode) {
+            kodeFinnesHosBarn = true // finnes fra før
+            verdiPaaEksisterendeKode = valgtKode.barn[id].vis
+          }
+        })
+      })
+
       if (props.barn) {
         Object.keys(props.barn).forEach(kode => {
           const item = props.barn[kode]
           item.kode = kode
-          item.vis = true
+          item.vis = kodeFinnesHosBarn ? verdiPaaEksisterendeKode : true
         })
       }
       koder.push({
@@ -92,7 +104,7 @@ class Grunnkart extends React.Component<Props, State> {
         kode: props.kode,
         sti: props.sti,
         tittel: props.tittel,
-        vis: true,
+        vis: kodeFinnesHosBarn ? verdiPaaEksisterendeKode : true,
         barn: props.barn,
         removable: true,
         bbox: props.bbox,
@@ -182,13 +194,16 @@ class Grunnkart extends React.Component<Props, State> {
     }
   }
 
-  handleToggleVisible = kode => {
+  handleToggleVisible = (kode, overstyr, verdi) => {
     let meta = this.state.valgteKoder
+    let overstyrteBarneKoder = []
+    let overstyrtVerdi = false
     Object.keys(meta).forEach(id => {
       const forelder = meta[id]
       let overstyrBarn = false
       if (forelder.kode === kode) {
-        forelder.vis = !forelder.vis
+        forelder.vis = overstyr ? verdi : !forelder.vis
+        overstyrtVerdi = forelder.vis
         overstyrBarn = true
       }
       if (forelder.barn) {
@@ -196,12 +211,24 @@ class Grunnkart extends React.Component<Props, State> {
           const barn = forelder.barn[barnId]
           if (overstyrBarn) {
             barn.vis = forelder.vis
+            overstyrteBarneKoder.push(barn.kode)
           } else if (barn.kode === kode) {
-            barn.vis = !barn.vis
+            barn.vis = overstyr ? verdi : !barn.vis
           }
         })
       }
     })
+    // sjekk om noen av barna som ble overstyrt også finnes som foreldre i lista
+    if (overstyrteBarneKoder.length > 0) {
+      Object.keys(meta).forEach(id => {
+        const forelder = meta[id]
+        if (overstyrteBarneKoder.indexOf(forelder.kode) >= 0) {
+          // recursive call with the toggled code
+          this.handleToggleVisible(forelder.kode, true, overstyrtVerdi)
+        }
+      })
+    }
+
     this.setState({
       valgteKoder: meta,
       vis: !this.state.vis,
