@@ -106,7 +106,7 @@ class Backend {
 
   static async hentVerneområde(lng: number, lat: number) {
     return this.createGetFeatureInfoCall(
-      'http://wms.miljodirektoratet.no/arcgis/services/vern/mapserver/WMSServer',
+      'https://kart.miljodirektoratet.no/arcgis/services/vern/mapserver/WMSServer',
       lat,
       lng,
       'naturvern_omrade',
