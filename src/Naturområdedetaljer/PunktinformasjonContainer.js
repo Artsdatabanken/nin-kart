@@ -260,11 +260,11 @@ class PunktinformasjonContainer extends Component {
     parseString(data, function(err, result) {
       if (!result.FeatureInfoResponse.FIELDS) return
       let fields = result.FeatureInfoResponse.FIELDS[0].$
-      let id = parseInt(fields.IID.substring(2), 10)
+      let id = parseInt(fields.naturvernId.substring(2), 10)
       extractedData = {
         ['VV_' + id]: {
           name: 'Verneområde',
-          value: fields.Omradenavn,
+          value: fields.navn,
           dataorigin: 'MDIR',
           homepage: 'http://www.miljodirektoratet.no/',
           logo:
