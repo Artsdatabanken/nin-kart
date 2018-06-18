@@ -49,7 +49,7 @@ class Backend {
 
   static async søkKode(q: string) {
     return this.getPromise(
-      `https://ninmemapi.artsdatabanken.no/v2/Koder?q=${q}`
+      `https://test.artsdatabanken.no/ogapi/v2/Koder?q=${q}`
     )
   }
 
@@ -62,7 +62,7 @@ class Backend {
     }
     kode = kode || ''
 
-    const url = `https://ninmemapi.artsdatabanken.no/v1/StatKodetre?node=${kode ||
+    const url = `https://test.artsdatabanken.no/ogapi/v1/StatKodetre?node=${kode ||
       ''}${bbox}`
 
     return this.getPromise(url)
