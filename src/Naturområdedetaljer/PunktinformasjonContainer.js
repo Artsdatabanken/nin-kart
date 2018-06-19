@@ -78,7 +78,7 @@ class PunktinformasjonContainer extends Component {
     this.TrySetState({ natureAreaFacts: null, metadata: null })
     if (!id) return
     backend.getMetadataByNatureAreaLocalId(id).then(metadata => {
-      this.getNatureAreaFacts(metadata)
+      this.getNatureAreaFacts(metadata, id)
     })
   }
 
@@ -138,18 +138,32 @@ class PunktinformasjonContainer extends Component {
     rødlisteKategori: 'RødlisteKategori',
   }
 
-  getNatureAreaFacts(props) {
+  getNatureAreaFacts(props, id) {
     if (!props) return
 
-    var facts = {}
+    var facts = {
+      LokalId: {
+        value: id,
+        name: 'Naturområde',
+        logo: backend.getCompanyLogo('MDIR'),
+        homepage: 'http://www.miljodirektoratet.no/',
+        dataorigin: 'MDIR',
+        // url: props[i].homesite ? props[i].homesite : 'mailto:' + props[i].email,
+        // name: this.MetadataDictionary[i],
+      },
+    }
     for (var i in props) {
       switch (i) {
         case 'nivå':
           break
         case 'surveyer':
         case 'owner':
+          let value = 'Ukjent'
+          if (props[i].company !== null && props[i].contactPerson !== null) {
+            value = props[i].company + ', ' + props[i].contactPerson
+          }
           facts[this.MetadataDictionary[i]] = {
-            value: props[i].company + ', ' + props[i].contactPerson,
+            value: value,
             logo: backend.getCompanyLogo('MDIR'),
             homepage: 'http://www.miljodirektoratet.no/',
             dataorigin: 'MDIR',
