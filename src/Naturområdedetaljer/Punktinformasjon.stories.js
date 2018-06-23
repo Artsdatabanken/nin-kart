@@ -1,8 +1,7 @@
-import React from 'react'
 import { storiesOf } from '@storybook/react'
+import React from 'react'
 import { muiTheme } from 'storybook-addon-material-ui'
 import Punktinformasjon from './Punktinformasjon'
-import { MemoryRouter } from 'react-router-dom'
 
 const dummyNatureArea = {
   uniqueId: {
@@ -101,12 +100,10 @@ storiesOf('Punktinformasjon', module)
   .addDecorator(muiTheme())
   .add('Punktinformasjon', () => {
     return (
-      <MemoryRouter>
-        <Punktinformasjon
-          natureArea={dummyNatureArea}
-          metadata={dummyMeta}
-          pointInfo={dummyPointData}
-        />
-      </MemoryRouter>
+      <Punktinformasjon
+        natureArea={dummyNatureArea}
+        metadata={dummyMeta}
+        pointInfo={dummyPointData}
+      />
     )
   })

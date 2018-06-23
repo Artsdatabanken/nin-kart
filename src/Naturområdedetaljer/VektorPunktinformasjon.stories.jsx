@@ -1,6 +1,5 @@
 import { storiesOf } from '@storybook/react'
 import React from 'react'
-import { MemoryRouter } from 'react-router-dom'
 import { muiTheme } from 'storybook-addon-material-ui'
 import VektorPunktinformasjon from './VektorPunktinformasjon'
 
@@ -153,12 +152,10 @@ storiesOf('VektorPunktinformasjon', module)
   .addDecorator(muiTheme())
   .add('VektorPunktinformasjon', () => {
     return (
-      <MemoryRouter>
-        <VektorPunktinformasjon
-          natureArea={dummyNatureArea}
-          metadata={dummyMeta}
-          pointInfo={props.pointInfo}
-        />
-      </MemoryRouter>
+      <VektorPunktinformasjon
+        natureArea={dummyNatureArea}
+        metadata={dummyMeta}
+        pointInfo={props.pointInfo}
+      />
     )
   })

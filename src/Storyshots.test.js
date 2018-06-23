@@ -4,6 +4,16 @@ jest.mock('material-ui/internal/Tooltip')
 jest.mock('material-ui/MenuItem')
 jest.mock('./backend')
 
+jest.mock('react-router-dom/withRouter', () => x => x)
+jest.mock('react-router-dom/Route', () => 'Route')
+jest.mock('react-router-dom/Switch', () => 'Switch')
+jest.mock('react-router', () => ({
+  Route: 'div',
+
+  withRouter: x => x,
+  Switch: 'div',
+}))
+
 var localStorageMock = (function() {
   var store = {}
   return {
