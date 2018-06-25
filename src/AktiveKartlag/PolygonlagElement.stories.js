@@ -1,8 +1,7 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
-import { muiTheme } from 'storybook-addon-material-ui'
 import { action } from '@storybook/addon-actions/dist/index'
-import { MemoryRouter } from 'react-router-dom'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
+import { muiTheme } from 'storybook-addon-material-ui'
 import PolygonlagElement from './PolygonlagElement'
 
 const forelder = {
@@ -97,18 +96,16 @@ storiesOf('PolygonlagElement', module)
   .addDecorator(muiTheme())
   .add('default', () => (
     <div style={{ width: 400 }}>
-      <MemoryRouter>
-        <PolygonlagElement
-          {...forelder}
-          key={'valgt' + forelder.kode}
-          kode={forelder.kode}
-          vis={true}
-          onMouseEnter={action('mouseEnter')}
-          onMouseLeave={action('mouseLeave')}
-          onRemove={action('onRemove')}
-          onClick={action('onClick')}
-          onToggleVisible={action('onToggleVisible')}
-        />
-      </MemoryRouter>
+      <PolygonlagElement
+        {...forelder}
+        key={'valgt' + forelder.kode}
+        kode={forelder.kode}
+        vis={true}
+        onMouseEnter={action('mouseEnter')}
+        onMouseLeave={action('mouseLeave')}
+        onRemove={action('onRemove')}
+        onClick={action('onClick')}
+        onToggleVisible={action('onToggleVisible')}
+      />
     </div>
   ))

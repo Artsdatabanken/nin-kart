@@ -2,7 +2,6 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import PointInfo from './PointInfo'
 import { muiTheme } from 'storybook-addon-material-ui'
-import { MemoryRouter } from 'react-router-dom'
 
 const dummyItems = {
   Høyde: {
@@ -19,8 +18,4 @@ const dummyItems = {
 
 storiesOf('PointInfo', module)
   .addDecorator(muiTheme())
-  .add('default', () => (
-    <MemoryRouter>
-      <PointInfo pointInfo={dummyItems} />
-    </MemoryRouter>
-  ))
+  .add('default', () => <PointInfo pointInfo={dummyItems} />)
