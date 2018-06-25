@@ -281,8 +281,10 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                                   "paddingRight": "4px",
                                 }
                               }
-                              title={undefined}
-                            />
+                              title="TST"
+                            >
+                              TST
+                            </span>
                           </div>
                         </div>
                         <div
