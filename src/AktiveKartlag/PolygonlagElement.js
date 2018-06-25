@@ -58,7 +58,7 @@ class PolygonlagElement extends React.Component {
         farge={farge}
         avatarUtenRamme={avatarUtenRamme}
         onClick={this.props.onClick}
-        key={item.key}
+        key={item.kode}
         kode={item.kode}
         rightIcon={rightIcon}
         erEkspandert={this.props.erEkspandert}

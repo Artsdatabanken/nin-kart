@@ -32,7 +32,6 @@ class Tweaks extends React.Component {
   }
 
   seksjon(kategori) {
-    console.log(kategori)
     switch (kategori) {
       case 'bakgrunnskart':
         return <Bakgrunnskart onUpdateLayerProp={this.handleUpdateLayerProp} />
