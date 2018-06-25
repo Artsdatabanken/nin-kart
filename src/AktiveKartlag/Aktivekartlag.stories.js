@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions/dist/index'
 import { MemoryRouter } from 'react-router-dom'
 import AktiveKartlag from '.'
 
-const koder = [{ tittel: { nb: 'aabc' } }]
+const koder = [{ kode: 'TST', tittel: { nb: 'aabc' } }]
 
 storiesOf('Aktive kartlag', module)
   .addDecorator(muiTheme())

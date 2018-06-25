@@ -21,7 +21,6 @@ class Polygon extends Component {
     } = this.props
     return (
       <React.Fragment>
-        {!item && onExitToRoot && onExitToRoot()}
         <Overskrift>
           {item && item.tittel ? språk(item.tittel) : 'Polygon'}
         </Overskrift>
