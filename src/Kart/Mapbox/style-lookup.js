@@ -14,7 +14,7 @@ function hentLag(map, kode) {
   }
 
   let prefix =
-    kode.startsWith('BS') && !kode.startsWith('BS_6')
+    kode.startsWith('RL') || (kode.startsWith('BS') && !kode.startsWith('BS_6'))
       ? 'NA'
       : kode.split('_')[0]
 
