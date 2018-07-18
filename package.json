@@ -5,7 +5,7 @@
   "dependencies": {
     "@artsdatabanken/typesystem": "^3.3.0",
     "babel-polyfill": "^6.26.0",
-    "deck.gl": "^5.1.4",
+    "deck.gl": "^6.0.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
