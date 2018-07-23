@@ -75,9 +75,8 @@ class VenstreVinduContainer extends React.Component {
           left: 8,
           top: 10,
           paddingBottom: 8,
-          width: 392,
+          width: window.innerWidth < 600 ? window.innerWidth - 16 : 392 - 8,
           zIndex: 2,
-          maxHeight: window.innerHeight - 10,
           overflowY: this.state.searchResults === null ? 'auto' : 'initial',
         }}
       >
@@ -127,7 +126,6 @@ class VenstreVinduContainer extends React.Component {
                     render={({ match, history }) => {
                       return (
                         <KodeContainer
-                          style={{ height: '100vh' }}
                           path={match.params.kode || ''}
                           onGoToCode={url => {
                             this.setState({ searchResults: null })
