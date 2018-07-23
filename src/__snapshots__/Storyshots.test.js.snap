@@ -3516,6 +3516,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
               style={
                 Object {
                   "backgroundColor": "#fff",
+                  "height": 768,
                   "left": 8,
                   "overflowY": "initial",
                   "paddingBottom": 8,
@@ -5950,7 +5951,7 @@ exports[`Storyshots KodeVindu default 1`] = `
                   "boxSizing": "border-box",
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "Roboto, sans-serif",
-                  "height": "100%",
+                  "height": 768,
                   "left": 0,
                   "muiPrepared": true,
                   "overflow": "auto",
@@ -7329,7 +7330,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                   "boxSizing": "border-box",
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "Roboto, sans-serif",
-                  "height": "100%",
+                  "height": 768,
                   "left": 0,
                   "muiPrepared": true,
                   "overflow": "auto",
@@ -20467,6 +20468,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": 768,
                 "left": 8,
                 "overflowY": "initial",
                 "paddingBottom": 8,
@@ -21396,6 +21398,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": 768,
                 "left": 8,
                 "overflowY": "initial",
                 "paddingBottom": 8,
