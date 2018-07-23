@@ -36,10 +36,6 @@ class ResultatListe extends Component {
             const kode = item.kode.toUpperCase()
             const prefix = kode.substring(0, 2)
             const navn = språk(item.navn)
-            let forelder = ''
-            if (item.forelder && item.forelder.navn) {
-              forelder = språk(item.forelder.navn)
-            }
 
             return (
               <React.Fragment key={item.kode}>
@@ -67,12 +63,7 @@ class ResultatListe extends Component {
                   key={kode}
                   primaryText={
                     <React.Fragment>
-                      <span>
-                        {ResultatListe.highlightMatch(navn, query)}
-                        &nbsp;<span style={{ color: '#aaa' }}>
-                          {ResultatListe.highlightMatch(forelder, query)}
-                        </span>
-                      </span>
+                      <span>{ResultatListe.highlightMatch(navn, query)}</span>
                     </React.Fragment>
                   }
                   leftIcon={

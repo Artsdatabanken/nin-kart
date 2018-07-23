@@ -12767,22 +12767,6 @@ exports[`Storyshots Resultatliste default 1`] = `
                   K
                 </span>
                  
-                 
-                <span
-                  style={
-                    Object {
-                      "color": "#aaa",
-                    }
-                  }
-                >
-                   
-                  <span
-                    style={Object {}}
-                  >
-                    
-                  </span>
-                   
-                </span>
               </span>
             </div>
           </div>
@@ -12962,22 +12946,6 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rvel (Anthriscus caucalis)
                 </span>
                  
-                 
-                <span
-                  style={
-                    Object {
-                      "color": "#aaa",
-                    }
-                  }
-                >
-                   
-                  <span
-                    style={Object {}}
-                  >
-                    Hundekjeksslekta (Anthriscus)
-                  </span>
-                   
-                </span>
               </span>
             </div>
           </div>
@@ -13127,22 +13095,6 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rvel (Anthriscus cerefolium)
                 </span>
                  
-                 
-                <span
-                  style={
-                    Object {
-                      "color": "#aaa",
-                    }
-                  }
-                >
-                   
-                  <span
-                    style={Object {}}
-                  >
-                    Hundekjeksslekta (Anthriscus)
-                  </span>
-                   
-                </span>
               </span>
             </div>
           </div>
@@ -13292,22 +13244,6 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rvelslekta (Myrrhis)
                 </span>
                  
-                 
-                <span
-                  style={
-                    Object {
-                      "color": "#aaa",
-                    }
-                  }
-                >
-                   
-                  <span
-                    style={Object {}}
-                  >
-                    Skjermplantefamilien (Apiaceae)
-                  </span>
-                   
-                </span>
               </span>
             </div>
           </div>
@@ -13457,37 +13393,6 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rvel (Myrrhis odorata)
                 </span>
                  
-                 
-                <span
-                  style={
-                    Object {
-                      "color": "#aaa",
-                    }
-                  }
-                >
-                   
-                  <span
-                    style={Object {}}
-                  >
-                    Spansk
-                  </span>
-                  <span
-                    style={
-                      Object {
-                        "color": "black",
-                        "fontWeight": "bold",
-                      }
-                    }
-                  >
-                    kjø
-                  </span>
-                  <span
-                    style={Object {}}
-                  >
-                    rvelslekta (Myrrhis)
-                  </span>
-                   
-                </span>
               </span>
             </div>
           </div>
@@ -13637,22 +13542,6 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rvelslekta (Oenanthe)
                 </span>
                  
-                 
-                <span
-                  style={
-                    Object {
-                      "color": "#aaa",
-                    }
-                  }
-                >
-                   
-                  <span
-                    style={Object {}}
-                  >
-                    Skjermplantefamilien (Apiaceae)
-                  </span>
-                   
-                </span>
               </span>
             </div>
           </div>
@@ -13802,37 +13691,6 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rvel (Oenanthe aquatica)
                 </span>
                  
-                 
-                <span
-                  style={
-                    Object {
-                      "color": "#aaa",
-                    }
-                  }
-                >
-                   
-                  <span
-                    style={Object {}}
-                  >
-                    Heste
-                  </span>
-                  <span
-                    style={
-                      Object {
-                        "color": "black",
-                        "fontWeight": "bold",
-                      }
-                    }
-                  >
-                    kjø
-                  </span>
-                  <span
-                    style={Object {}}
-                  >
-                    rvelslekta (Oenanthe)
-                  </span>
-                   
-                </span>
               </span>
             </div>
           </div>
@@ -13982,22 +13840,6 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rbuksurtslekta (Cochlearia)
                 </span>
                  
-                 
-                <span
-                  style={
-                    Object {
-                      "color": "#aaa",
-                    }
-                  }
-                >
-                   
-                  <span
-                    style={Object {}}
-                  >
-                    Korsblomstfamilien (Brassicaceae)
-                  </span>
-                   
-                </span>
               </span>
             </div>
           </div>
@@ -14147,37 +13989,6 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rbuksurt (Cochlearia anglica)
                 </span>
                  
-                 
-                <span
-                  style={
-                    Object {
-                      "color": "#aaa",
-                    }
-                  }
-                >
-                   
-                  <span
-                    style={Object {}}
-                  >
-                    S
-                  </span>
-                  <span
-                    style={
-                      Object {
-                        "color": "black",
-                        "fontWeight": "bold",
-                      }
-                    }
-                  >
-                    kjø
-                  </span>
-                  <span
-                    style={Object {}}
-                  >
-                    rbuksurtslekta (Cochlearia)
-                  </span>
-                   
-                </span>
               </span>
             </div>
           </div>
@@ -14327,37 +14138,6 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rbuksurt (Cochlearia danica)
                 </span>
                  
-                 
-                <span
-                  style={
-                    Object {
-                      "color": "#aaa",
-                    }
-                  }
-                >
-                   
-                  <span
-                    style={Object {}}
-                  >
-                    S
-                  </span>
-                  <span
-                    style={
-                      Object {
-                        "color": "black",
-                        "fontWeight": "bold",
-                      }
-                    }
-                  >
-                    kjø
-                  </span>
-                  <span
-                    style={Object {}}
-                  >
-                    rbuksurtslekta (Cochlearia)
-                  </span>
-                   
-                </span>
               </span>
             </div>
           </div>
@@ -14507,37 +14287,6 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rbuksurt (Cochlearia groenlandica)
                 </span>
                  
-                 
-                <span
-                  style={
-                    Object {
-                      "color": "#aaa",
-                    }
-                  }
-                >
-                   
-                  <span
-                    style={Object {}}
-                  >
-                    S
-                  </span>
-                  <span
-                    style={
-                      Object {
-                        "color": "black",
-                        "fontWeight": "bold",
-                      }
-                    }
-                  >
-                    kjø
-                  </span>
-                  <span
-                    style={Object {}}
-                  >
-                    rbuksurtslekta (Cochlearia)
-                  </span>
-                   
-                </span>
               </span>
             </div>
           </div>
