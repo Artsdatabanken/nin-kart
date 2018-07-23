@@ -19,7 +19,7 @@ class KodeVindu extends React.Component {
             position: 'fixed',
             left: 0,
             top: 0,
-            width: '100%',
+            width: window.innerWidth < 600 ? window.innerWidth : 392 + 8,
             overflow: 'auto',
           }}
         >
