@@ -14040,8 +14040,418 @@ exports[`Storyshots PunktinformasjonContainer default 1`] = `
                       "padding": "8px 0px 8px 0px",
                     }
                   }
+<<<<<<< HEAD
                 />
               </div>
+||||||| merged common ancestors
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      className="Resizer vertical "
+      onClick={[Function]}
+      onDoubleClick={[Function]}
+      onMouseDown={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "cursor": "col-resize",
+          "marginRight": -6,
+          "width": 10,
+          "zIndex": 1,
+        }
+      }
+    />
+    <div
+      className="Pane vertical Pane2  "
+      style={
+        Object {
+          "flex": "none",
+          "outline": "none",
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        className="sb-addon-material-ui-theme_sidebar"
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Resultatliste default 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+        "backgroundColor": "#ffffff",
+        "borderRadius": 2,
+        "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
+               0 1px 4px rgba(0, 0, 0, 0.12)",
+        "boxSizing": "border-box",
+        "color": "rgba(0, 0, 0, 0.87)",
+        "fontFamily": "Roboto, sans-serif",
+        "muiPrepared": true,
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "maxHeight": 494,
+          "muiPrepared": true,
+          "overflow": "hidden",
+          "padding": "8px 0px 8px 0px",
+          "paddingBottom": 0,
+          "paddingTop": 0,
+        }
+      }
+    >
+      <div>
+        <span
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          open={null}
+          style={
+            Object {
+              "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+              "background": "none",
+              "backgroundColor": null,
+              "border": 10,
+              "boxSizing": "border-box",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "cursor": "pointer",
+              "display": "block",
+              "fontFamily": "Roboto, sans-serif",
+              "fontSize": 16,
+              "fontWeight": "inherit",
+              "height": 38,
+              "lineHeight": "16px",
+              "margin": 0,
+              "muiPrepared": true,
+              "outline": "none",
+              "padding": 0,
+              "paddingBottom": 1,
+              "paddingTop": 0,
+              "pointer": "hand",
+              "position": "relative",
+              "textDecoration": "none",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "verticalAlign": null,
+              "width": 392,
+            }
+          }
+          tabIndex={0}
+        >
+          <div
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+          >
+            <div
+              style={
+                Object {
+                  "fontSize": 13,
+                  "fontWeight": 500,
+                  "lineheight": 24,
+                  "marginLeft": 0,
+                  "muiPrepared": true,
+                  "overflow": "hidden",
+                  "paddingBottom": 20,
+                  "paddingLeft": 66,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
+                  "position": "relative",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+              <img
+                alt="KA"
+                color="#757575"
+                onError={[Function]}
+                src={undefined}
+                style={
+                  Object {
+                    "display": "block",
+                    "height": 24,
+                    "left": 4,
+                    "margin": 12,
+                    "marginLeft": 16,
+                    "marginTop": 6,
+                    "position": "absolute",
+                    "top": 4,
+                    "width": 24,
+                  }
+                }
+              />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
+              <span>
+                 
+                <span
+                  style={Object {}}
+                >
+                  K
+                </span>
+                 
+                 
+                <span
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
+                >
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    
+                  </span>
+                   
+                </span>
+              </span>
+=======
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      className="Resizer vertical "
+      onClick={[Function]}
+      onDoubleClick={[Function]}
+      onMouseDown={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "cursor": "col-resize",
+          "marginRight": -6,
+          "width": 10,
+          "zIndex": 1,
+        }
+      }
+    />
+    <div
+      className="Pane vertical Pane2  "
+      style={
+        Object {
+          "flex": "none",
+          "outline": "none",
+          "position": "relative",
+          "width": 0,
+        }
+      }
+    >
+      <div
+        className="sb-addon-material-ui-theme_sidebar"
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Resultatliste default 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+        "backgroundColor": "#ffffff",
+        "borderRadius": 2,
+        "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
+               0 1px 4px rgba(0, 0, 0, 0.12)",
+        "boxSizing": "border-box",
+        "color": "rgba(0, 0, 0, 0.87)",
+        "fontFamily": "Roboto, sans-serif",
+        "muiPrepared": true,
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "maxHeight": 494,
+          "muiPrepared": true,
+          "overflow": "hidden",
+          "padding": "8px 0px 8px 0px",
+          "paddingBottom": 0,
+          "paddingTop": 0,
+        }
+      }
+    >
+      <div>
+        <span
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          open={null}
+          style={
+            Object {
+              "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+              "background": "none",
+              "backgroundColor": null,
+              "border": 10,
+              "boxSizing": "border-box",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "cursor": "pointer",
+              "display": "block",
+              "fontFamily": "Roboto, sans-serif",
+              "fontSize": 16,
+              "fontWeight": "inherit",
+              "height": 38,
+              "lineHeight": "16px",
+              "margin": 0,
+              "muiPrepared": true,
+              "outline": "none",
+              "padding": 0,
+              "paddingBottom": 1,
+              "paddingTop": 0,
+              "pointer": "hand",
+              "position": "relative",
+              "textDecoration": "none",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "verticalAlign": null,
+              "width": 392,
+            }
+          }
+          tabIndex={0}
+        >
+          <div
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+          >
+            <div
+              style={
+                Object {
+                  "fontSize": 13,
+                  "fontWeight": 500,
+                  "lineheight": 24,
+                  "marginLeft": 0,
+                  "muiPrepared": true,
+                  "overflow": "hidden",
+                  "paddingBottom": 20,
+                  "paddingLeft": 66,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
+                  "position": "relative",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+              <img
+                alt="KA"
+                color="#757575"
+                onError={[Function]}
+                src={undefined}
+                style={
+                  Object {
+                    "display": "block",
+                    "height": 24,
+                    "left": 4,
+                    "margin": 12,
+                    "marginLeft": 16,
+                    "marginTop": 6,
+                    "position": "absolute",
+                    "top": 4,
+                    "width": 24,
+                  }
+                }
+              />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+              </div>
+              <span>
+                 
+                <span
+                  style={Object {}}
+                >
+                  K
+                </span>
+                 
+              </span>
+>>>>>>> Fixes #460 (#471)
             </div>
           </div>
         </div>
@@ -14240,6 +14650,276 @@ exports[`Storyshots Resultatliste default 1`] = `
                   rvel (Anthriscus caucalis)
                 </span>
                  
+<<<<<<< HEAD
+||||||| merged common ancestors
+                 
+                <span
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
+                >
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Hundekjeksslekta (Anthriscus)
+                  </span>
+                   
+                </span>
+              </span>
+            </div>
+          </div>
+        </span>
+      </div>
+      <hr
+        style={
+          Object {
+            "backgroundColor": "#e0e0e0",
+            "border": "none",
+            "height": 1,
+            "margin": 0,
+            "marginLeft": 72,
+            "marginTop": -1,
+            "muiPrepared": true,
+          }
+        }
+      />
+      <div>
+        <span
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          open={null}
+          style={
+            Object {
+              "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+              "background": "none",
+              "backgroundColor": null,
+              "border": 10,
+              "boxSizing": "border-box",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "cursor": "pointer",
+              "display": "block",
+              "fontFamily": "Roboto, sans-serif",
+              "fontSize": 16,
+              "fontWeight": "inherit",
+              "height": 38,
+              "lineHeight": "16px",
+              "margin": 0,
+              "muiPrepared": true,
+              "outline": "none",
+              "padding": 0,
+              "paddingBottom": 1,
+              "paddingTop": 0,
+              "pointer": "hand",
+              "position": "relative",
+              "textDecoration": "none",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "verticalAlign": null,
+              "width": 392,
+            }
+          }
+          tabIndex={0}
+        >
+          <div
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+          >
+            <div
+              style={
+                Object {
+                  "fontSize": 13,
+                  "fontWeight": 500,
+                  "lineheight": 24,
+                  "marginLeft": 0,
+                  "muiPrepared": true,
+                  "overflow": "hidden",
+                  "paddingBottom": 20,
+                  "paddingLeft": 66,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
+                  "position": "relative",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+              <img
+                alt="AR"
+                color="#757575"
+                onError={[Function]}
+                src={undefined}
+                style={
+                  Object {
+                    "display": "block",
+                    "height": 24,
+                    "left": 4,
+                    "margin": 12,
+                    "marginLeft": 16,
+                    "marginTop": 6,
+                    "position": "absolute",
+                    "top": 4,
+                    "width": 24,
+                  }
+                }
+              />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+=======
+              </span>
+            </div>
+          </div>
+        </span>
+      </div>
+      <hr
+        style={
+          Object {
+            "backgroundColor": "#e0e0e0",
+            "border": "none",
+            "height": 1,
+            "margin": 0,
+            "marginLeft": 72,
+            "marginTop": -1,
+            "muiPrepared": true,
+          }
+        }
+      />
+      <div>
+        <span
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          open={null}
+          style={
+            Object {
+              "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+              "background": "none",
+              "backgroundColor": null,
+              "border": 10,
+              "boxSizing": "border-box",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "cursor": "pointer",
+              "display": "block",
+              "fontFamily": "Roboto, sans-serif",
+              "fontSize": 16,
+              "fontWeight": "inherit",
+              "height": 38,
+              "lineHeight": "16px",
+              "margin": 0,
+              "muiPrepared": true,
+              "outline": "none",
+              "padding": 0,
+              "paddingBottom": 1,
+              "paddingTop": 0,
+              "pointer": "hand",
+              "position": "relative",
+              "textDecoration": "none",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "verticalAlign": null,
+              "width": 392,
+            }
+          }
+          tabIndex={0}
+        >
+          <div
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+          >
+            <div
+              style={
+                Object {
+                  "fontSize": 13,
+                  "fontWeight": 500,
+                  "lineheight": 24,
+                  "marginLeft": 0,
+                  "muiPrepared": true,
+                  "overflow": "hidden",
+                  "paddingBottom": 20,
+                  "paddingLeft": 66,
+                  "paddingRight": 56,
+                  "paddingTop": 14,
+                  "position": "relative",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+              <img
+                alt="AR"
+                color="#757575"
+                onError={[Function]}
+                src={undefined}
+                style={
+                  Object {
+                    "display": "block",
+                    "height": 24,
+                    "left": 4,
+                    "margin": 12,
+                    "marginLeft": 16,
+                    "marginTop": 6,
+                    "position": "absolute",
+                    "top": 4,
+                    "width": 24,
+                  }
+                }
+              />
+              <div
+                style={
+                  Object {
+                    "fontWeight": 800,
+                    "paddingTop": 6,
+                    "position": "absolute",
+                    "right": 16,
+                    "top": 8,
+                  }
+                }
+              >
+                 
+                <span
+                  style={Object {}}
+                >
+                  
+                </span>
+                 
+>>>>>>> Fixes #460 (#471)
               </div>
               <span>
                  
@@ -14249,6 +14929,7 @@ exports[`Storyshots Resultatliste default 1`] = `
                   K
                 </span>
                  
+<<<<<<< HEAD
                  
                 <span
                   style={
@@ -14265,6 +14946,25 @@ exports[`Storyshots Resultatliste default 1`] = `
                   </span>
                    
                 </span>
+||||||| merged common ancestors
+                 
+                <span
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
+                >
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Hundekjeksslekta (Anthriscus)
+                  </span>
+                   
+                </span>
+=======
+>>>>>>> Fixes #460 (#471)
               </span>
             </div>
           </div>
@@ -14440,6 +15140,7 @@ exports[`Storyshots Resultatliste default 1`] = `
 <<<<<<< HEAD
                   Hage
                 </span>
+<<<<<<< HEAD
                 <span
                   style={
                     Object {
@@ -14466,6 +15167,27 @@ exports[`Storyshots Resultatliste default 1`] = `
                    
 >>>>>>> Trunker strenger med ellipsis (#313)
                 </span>
+||||||| merged common ancestors
+                 
+                 
+                <span
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
+                >
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Skjermplantefamilien (Apiaceae)
+                  </span>
+                   
+                </span>
+=======
+                 
+>>>>>>> Fixes #460 (#471)
               </span>
             </div>
           </div>
@@ -14611,6 +15333,7 @@ exports[`Storyshots Resultatliste default 1`] = `
 <<<<<<< HEAD
                   Spansk
                 </span>
+<<<<<<< HEAD
                 <span
                   style={
                     Object {
@@ -14637,6 +15360,42 @@ exports[`Storyshots Resultatliste default 1`] = `
                    
 >>>>>>> Trunker strenger med ellipsis (#313)
                 </span>
+||||||| merged common ancestors
+                 
+                 
+                <span
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
+                >
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Spansk
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "black",
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    kjø
+                  </span>
+                  <span
+                    style={Object {}}
+                  >
+                    rvelslekta (Myrrhis)
+                  </span>
+                   
+                </span>
+=======
+                 
+>>>>>>> Fixes #460 (#471)
               </span>
             </div>
           </div>
@@ -14782,6 +15541,7 @@ exports[`Storyshots Resultatliste default 1`] = `
 <<<<<<< HEAD
                   Spansk 
                 </span>
+<<<<<<< HEAD
                 <span
                   style={
                     Object {
@@ -14808,6 +15568,27 @@ exports[`Storyshots Resultatliste default 1`] = `
                    
 >>>>>>> Trunker strenger med ellipsis (#313)
                 </span>
+||||||| merged common ancestors
+                 
+                 
+                <span
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
+                >
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Skjermplantefamilien (Apiaceae)
+                  </span>
+                   
+                </span>
+=======
+                 
+>>>>>>> Fixes #460 (#471)
               </span>
             </div>
           </div>
@@ -14984,6 +15765,7 @@ exports[`Storyshots Resultatliste default 1`] = `
                 }
               >
                  
+<<<<<<< HEAD
                 <span
                   style={Object {}}
                 >
@@ -15038,6 +15820,40 @@ exports[`Storyshots Resultatliste default 1`] = `
                  
 =======
 >>>>>>> Trunker strenger med ellipsis (#313)
+||||||| merged common ancestors
+                 
+                <span
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
+                >
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Heste
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "black",
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    kjø
+                  </span>
+                  <span
+                    style={Object {}}
+                  >
+                    rvelslekta (Oenanthe)
+                  </span>
+                   
+                </span>
+=======
+>>>>>>> Fixes #460 (#471)
               </span>
             </div>
           </div>
@@ -15183,6 +15999,7 @@ exports[`Storyshots Resultatliste default 1`] = `
 <<<<<<< HEAD
                   Heste
                 </span>
+<<<<<<< HEAD
                 <span
                   style={
                     Object {
@@ -15209,6 +16026,27 @@ exports[`Storyshots Resultatliste default 1`] = `
                    
 >>>>>>> Trunker strenger med ellipsis (#313)
                 </span>
+||||||| merged common ancestors
+                 
+                 
+                <span
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
+                >
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    Korsblomstfamilien (Brassicaceae)
+                  </span>
+                   
+                </span>
+=======
+                 
+>>>>>>> Fixes #460 (#471)
               </span>
             </div>
           </div>
@@ -15385,6 +16223,7 @@ exports[`Storyshots Resultatliste default 1`] = `
                 }
               >
                  
+<<<<<<< HEAD
                 <span
                   style={Object {}}
                 >
@@ -15439,6 +16278,40 @@ exports[`Storyshots Resultatliste default 1`] = `
                    
 >>>>>>> Trunker strenger med ellipsis (#313)
                 </span>
+||||||| merged common ancestors
+                 
+                <span
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
+                >
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    S
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "black",
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    kjø
+                  </span>
+                  <span
+                    style={Object {}}
+                  >
+                    rbuksurtslekta (Cochlearia)
+                  </span>
+                   
+                </span>
+=======
+>>>>>>> Fixes #460 (#471)
               </span>
             </div>
           </div>
@@ -15584,6 +16457,7 @@ exports[`Storyshots Resultatliste default 1`] = `
 <<<<<<< HEAD
                   Engelsk s
                 </span>
+<<<<<<< HEAD
                 <span
                   style={
                     Object {
@@ -15610,6 +16484,42 @@ exports[`Storyshots Resultatliste default 1`] = `
                    
 >>>>>>> Trunker strenger med ellipsis (#313)
                 </span>
+||||||| merged common ancestors
+                 
+                 
+                <span
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
+                >
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    S
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "black",
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    kjø
+                  </span>
+                  <span
+                    style={Object {}}
+                  >
+                    rbuksurtslekta (Cochlearia)
+                  </span>
+                   
+                </span>
+=======
+                 
+>>>>>>> Fixes #460 (#471)
               </span>
             </div>
           </div>
@@ -15786,6 +16696,7 @@ exports[`Storyshots Resultatliste default 1`] = `
                 }
               >
                  
+<<<<<<< HEAD
                 <span
                   style={Object {}}
                 >
@@ -15840,6 +16751,40 @@ exports[`Storyshots Resultatliste default 1`] = `
                    
 >>>>>>> Trunker strenger med ellipsis (#313)
                 </span>
+||||||| merged common ancestors
+                 
+                <span
+                  style={
+                    Object {
+                      "color": "#aaa",
+                    }
+                  }
+                >
+                   
+                  <span
+                    style={Object {}}
+                  >
+                    S
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "black",
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    kjø
+                  </span>
+                  <span
+                    style={Object {}}
+                  >
+                    rbuksurtslekta (Cochlearia)
+                  </span>
+                   
+                </span>
+=======
+>>>>>>> Fixes #460 (#471)
               </span>
             </div>
           </div>
