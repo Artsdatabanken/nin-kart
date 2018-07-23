@@ -15,7 +15,7 @@ class KodeVindu extends React.Component {
         <Paper
           zDepth={4}
           style={{
-            height: '100%',
+            height: window.innerHeight,
             position: 'fixed',
             left: 0,
             top: 0,
