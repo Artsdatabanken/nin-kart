@@ -77,7 +77,6 @@ class VenstreVinduContainer extends React.Component {
           paddingBottom: 8,
           width: 392,
           zIndex: 2,
-          maxHeight: window.innerHeight - 10,
           overflowY: this.state.searchResults === null ? 'auto' : 'initial',
         }}
       >
