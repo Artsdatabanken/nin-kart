@@ -127,7 +127,6 @@ class VenstreVinduContainer extends React.Component {
                     render={({ match, history }) => {
                       return (
                         <KodeContainer
-                          style={{ height: '100vh' }}
                           path={match.params.kode || ''}
                           onGoToCode={url => {
                             this.setState({ searchResults: null })
