@@ -4112,9 +4112,9 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
-flow-bin@^0.75.0:
-  version "0.75.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.75.0.tgz#b96d1ee99d3b446a3226be66b4013224ce9df260"
+flow-bin@^0.76.0:
+  version "0.76.0"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.76.0.tgz#eb00036991c3abc106743fcbc7ee321f02aa4faa"
 
 flow-remove-types@^1.1.2:
   version "1.2.3"
@@ -8258,6 +8258,13 @@ react-material-color-picker@^1.1.2:
   resolved "https://registry.yarnpkg.com/react-material-color-picker/-/react-material-color-picker-1.1.2.tgz#178978ae2bf48f0ce5a4404efc0527354ab7a84c"
   dependencies:
     babel-runtime "^6.5.0"
+    prop-types "^15.6.0"
+
+react-meta-tags@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/react-meta-tags/-/react-meta-tags-0.4.1.tgz#bbb2bc7a5b8b7faa73569b742517f9075d692db6"
+  dependencies:
+    babel-runtime "^6.26.0"
     prop-types "^15.6.0"
 
 react-modal@^3.1.10:

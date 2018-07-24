@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { getMuiTheme, MuiThemeProvider } from 'material-ui/styles'
 import Grunnkart from './Grunnkart/Grunnkart'
 import './App.css'
+import MetaTags from 'react-meta-tags'
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -27,11 +28,19 @@ const muiTheme = getMuiTheme({
 class App extends Component {
   render() {
     return (
-      <MuiThemeProvider muiTheme={muiTheme}>
-        <BrowserRouter>
-          <Grunnkart />
-        </BrowserRouter>
-      </MuiThemeProvider>
+      <div class="wrapper">
+        <MetaTags>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0"
+          />
+        </MetaTags>
+        <MuiThemeProvider muiTheme={muiTheme}>
+          <BrowserRouter>
+            <Grunnkart />
+          </BrowserRouter>
+        </MuiThemeProvider>
+      </div>
     )
   }
 }
