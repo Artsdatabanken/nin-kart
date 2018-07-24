@@ -8264,13 +8264,6 @@ react-material-color-picker@^1.1.2:
     babel-runtime "^6.5.0"
     prop-types "^15.6.0"
 
-react-meta-tags@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/react-meta-tags/-/react-meta-tags-0.4.1.tgz#bbb2bc7a5b8b7faa73569b742517f9075d692db6"
-  dependencies:
-    babel-runtime "^6.26.0"
-    prop-types "^15.6.0"
-
 react-modal@^3.1.10:
   version "3.1.11"
   resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-3.1.11.tgz#95c8223fcee7013258ad2d149c38c9f870c89958"

@@ -20,7 +20,6 @@
     "react-device-detect": "^1.5.8",
     "react-dom": "^16.2.0",
     "react-map-gl": "^3.1.5",
-    "react-meta-tags": "^0.4.1",
     "react-responsive": "^5.0.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.1.0",
