@@ -8,6 +8,7 @@ import { withRouter } from 'react-router'
 import { Route, Switch } from 'react-router-dom'
 import backend from '../../backend'
 import hentLag from './style-lookup'
+import { isMobile } from 'react-device-detect'
 
 const LIGHT_SETTINGS = {
   lightsPosition: [9.5, 56, 5000, -2, 57, 8000],
@@ -464,11 +465,13 @@ class Mapbox extends Component {
             )}
           />
         </Switch>
-        <div className="nav" style={navStyle}>
-          <NavigationControl
-            onViewportChange={viewport => this.handleViewportChange(viewport)}
-          />
-        </div>
+        {!isMobile && (
+          <div className="nav" style={navStyle}>
+            <NavigationControl
+              onViewportChange={viewport => this.handleViewportChange(viewport)}
+            />
+          </div>
+        )}
       </ReactMapGL>
     )
   }
