@@ -62,6 +62,27 @@ class TopBar extends Component {
             <IconButton onClick={this.handleSearchButtonClick}>
               <Search color="#b4b4b4" />
             </IconButton>
+            <IconButton onClick={this.props.invertMinimized}>
+              {this.props.minimized ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                >
+                  <path d="M5 8l4 4 4-4z" />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                >
+                  <path d="M9 6l-4 4h8z" />
+                </svg>
+              )}
+            </IconButton>
             {!this.props.isAtRoot && (
               <React.Fragment>
                 <div
