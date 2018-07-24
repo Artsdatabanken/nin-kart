@@ -82,8 +82,7 @@ class VenstreVinduContainer extends React.Component {
                 width:
                   window.innerWidth < 600 ? window.innerWidth - 16 : 392 - 8,
                 zIndex: 2,
-                overflowY:
-                  this.state.searchResults === null ? 'auto' : 'initial',
+                overflow: 'scroll',
               }}
             >
               <div style={{ backgroundColor: '#fff' }}>
