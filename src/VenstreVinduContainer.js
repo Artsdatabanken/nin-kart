@@ -78,14 +78,22 @@ class VenstreVinduContainer extends React.Component {
                 left: 8,
                 top: 10,
                 paddingBottom: 8,
-                height: this.state.minimized ? 48 : window.innerHeight,
+                height: this.state.minimized ? 42 : window.innerHeight,
                 width:
                   window.innerWidth < 600 ? window.innerWidth - 16 : 392 - 8,
                 zIndex: 2,
-                overflow: 'scroll',
+                overflowY: !this.state.minimized ? 'scroll' : 'hidden',
+                overflowX: 'hidden',
               }}
             >
-              <div style={{ backgroundColor: '#fff' }}>
+              <div
+                style={{ overflow: 'hidden' }}
+                // style={{
+                //   backgroundColor: '#fff',
+                //   overflowY: this.state.minimized ? 'hidden' : 'scroll',
+                //   overflowX: 'hidden',
+                // }}
+              >
                 {this.state.error && (
                   <Snackbar
                     open={true}
@@ -115,10 +123,13 @@ class VenstreVinduContainer extends React.Component {
                 />
               </div>
               <div
-                style={{
-                  opacity: this.state.minimized ? 0 : 1,
-                  backgroundColor: '#fff',
-                }}
+                style={{ overflow: 'hidden' }}
+                // style={{
+                //   opacity: this.state.minimized ? 0 : 1,
+                //   backgroundColor: '#fff',
+                //   overflowY: this.state.minimized ? 'hidden' : 'scroll',
+                //   overflowX: 'hidden',
+                // }}
               >
                 {this.state.searchResults && (
                   <Paper style={{ position: 'absolute' }} zDepth={2}>
