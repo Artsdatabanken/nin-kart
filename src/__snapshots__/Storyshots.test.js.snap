@@ -3635,7 +3635,8 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                     "backgroundColor": "#fff",
                     "height": 768,
                     "left": 8,
-                    "overflowY": "initial",
+                    "overflowX": "hidden",
+                    "overflowY": "scroll",
                     "paddingBottom": 8,
                     "position": "absolute",
                     "top": 10,
@@ -3647,7 +3648,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                 <div
                   style={
                     Object {
-                      "backgroundColor": "#fff",
+                      "overflow": "hidden",
                     }
                   }
                 >
@@ -4161,8 +4162,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                 <div
                   style={
                     Object {
-                      "backgroundColor": "#fff",
-                      "opacity": 1,
+                      "overflow": "hidden",
                     }
                   }
                 >
@@ -6748,13 +6748,8 @@ exports[`Storyshots KodeVindu default 1`] = `
                   "boxSizing": "border-box",
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "Roboto, sans-serif",
-                  "left": 0,
                   "muiPrepared": true,
-                  "overflow": "auto",
-                  "position": "fixed",
-                  "top": 0,
                   "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "width": 400,
                 }
               }
             >
@@ -8126,13 +8121,8 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
                   "boxSizing": "border-box",
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "Roboto, sans-serif",
-                  "left": 0,
                   "muiPrepared": true,
-                  "overflow": "auto",
-                  "position": "fixed",
-                  "top": 0,
                   "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "width": 400,
                 }
               }
             >
@@ -21266,7 +21256,8 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                   "backgroundColor": "#fff",
                   "height": 768,
                   "left": 8,
-                  "overflowY": "initial",
+                  "overflowX": "hidden",
+                  "overflowY": "scroll",
                   "paddingBottom": 8,
                   "position": "absolute",
                   "top": 10,
@@ -21278,7 +21269,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
               <div
                 style={
                   Object {
-                    "backgroundColor": "#fff",
+                    "overflow": "hidden",
                   }
                 }
               >
@@ -21619,8 +21610,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
               <div
                 style={
                   Object {
-                    "backgroundColor": "#fff",
-                    "opacity": 1,
+                    "overflow": "hidden",
                   }
                 }
               >
@@ -22271,7 +22261,8 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                   "backgroundColor": "#fff",
                   "height": 768,
                   "left": 8,
-                  "overflowY": "initial",
+                  "overflowX": "hidden",
+                  "overflowY": "scroll",
                   "paddingBottom": 8,
                   "position": "absolute",
                   "top": 10,
@@ -22283,7 +22274,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
               <div
                 style={
                   Object {
-                    "backgroundColor": "#fff",
+                    "overflow": "hidden",
                   }
                 }
               >
@@ -22624,8 +22615,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
               <div
                 style={
                   Object {
-                    "backgroundColor": "#fff",
-                    "opacity": 1,
+                    "overflow": "hidden",
                   }
                 }
               >

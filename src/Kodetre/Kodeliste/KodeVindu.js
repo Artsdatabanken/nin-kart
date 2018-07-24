@@ -12,16 +12,7 @@ class KodeVindu extends React.Component {
     const avatarUtenRamme = props.meta.utenRamme
     return (
       <FetchContainer>
-        <Paper
-          zDepth={4}
-          style={{
-            position: 'fixed',
-            left: 0,
-            top: 0,
-            width: window.innerWidth < 600 ? window.innerWidth : 392 + 8,
-            overflow: 'auto',
-          }}
-        >
+        <Paper zDepth={4}>
           {props.meta && (
             <Kodekort
               {...props.meta}
