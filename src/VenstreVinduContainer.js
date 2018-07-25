@@ -80,13 +80,19 @@ class VenstreVinduContainer extends React.Component {
                 paddingBottom: 8,
                 height: this.state.minimized ? 42 : window.innerHeight,
                 width:
-                  window.innerWidth < 600 ? window.innerWidth - 16 : 392 - 8,
+                  window.innerWidth < 600 ? window.innerWidth - 16 : 392 - 16,
                 zIndex: 2,
                 overflowY: !this.state.minimized ? 'scroll' : 'hidden',
                 overflowX: 'hidden',
               }}
             >
-              <div style={{ overflow: 'hidden' }}>
+              <div
+                style={{
+                  overflow: 'hidden',
+                  width:
+                    window.innerWidth < 600 ? window.innerWidth - 16 : 392 - 8,
+                }}
+              >
                 {this.state.error && (
                   <Snackbar
                     open={true}
