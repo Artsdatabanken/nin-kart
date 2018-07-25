@@ -3499,7 +3499,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                     "paddingBottom": 8,
                     "position": "absolute",
                     "top": 10,
-                    "width": 384,
+                    "width": 376,
                     "zIndex": 2,
                   }
                 }
@@ -3508,6 +3508,7 @@ exports[`Storyshots Grunnkart Rot 1`] = `
                   style={
                     Object {
                       "overflow": "hidden",
+                      "width": 384,
                     }
                   }
                 >
@@ -17688,7 +17689,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                   "paddingBottom": 8,
                   "position": "absolute",
                   "top": 10,
-                  "width": 384,
+                  "width": 376,
                   "zIndex": 2,
                 }
               }
@@ -17697,6 +17698,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                 style={
                   Object {
                     "overflow": "hidden",
+                    "width": 384,
                   }
                 }
               >
@@ -18693,7 +18695,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                   "paddingBottom": 8,
                   "position": "absolute",
                   "top": 10,
-                  "width": 384,
+                  "width": 376,
                   "zIndex": 2,
                 }
               }
@@ -18702,6 +18704,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                 style={
                   Object {
                     "overflow": "hidden",
+                    "width": 384,
                   }
                 }
               >
