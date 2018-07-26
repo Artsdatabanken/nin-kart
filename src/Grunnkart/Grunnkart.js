@@ -1,13 +1,13 @@
 // @flow
 import React from 'react'
 import { withRouter } from 'react-router'
-import { Link } from 'react-router-dom'
 import backend from '../backend'
 import Kart from '../Kart'
 import VenstreVinduContainer from '../VenstreVinduContainer'
 import MainDrawer from './MainDrawer'
 
 type State = {
+  valgteKoder: Array<string>,
   language: Array<string>,
   baseMapStyle: string,
   mapStyle: string,
@@ -31,6 +31,7 @@ class Grunnkart extends React.Component<Props, State> {
   constructor(props) {
     super(props)
     this.state = {
+      valgteKoder: [],
       language: ['nb', 'la'],
       baseMapStyle: 'aNiceDefault',
       mapStyle: '',

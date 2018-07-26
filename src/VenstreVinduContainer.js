@@ -3,13 +3,13 @@ import React from 'react'
 import { withRouter } from 'react-router'
 import { Route, Switch } from 'react-router-dom'
 import AktiveKartlag from './AktiveKartlag'
+import backend from './backend'
 import KodeContainer from './Kodetre/Kodeliste/KodeContainer'
 import ResultatListe from './Kodetre/Kodeliste/ResultatListe'
 import PunktinformasjonContainer from './Naturområdedetaljer/PunktinformasjonContainer'
+import språk from './språk'
 import TopBar from './TopBar/TopBar'
 import Tweaks from './Tweaks'
-import backend from './backend'
-import språk from './språk'
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
@@ -80,50 +80,25 @@ class VenstreVinduContainer extends React.Component {
                 paddingBottom: 8,
                 height: this.state.minimized ? 42 : window.innerHeight,
                 width:
-                  window.innerWidth < 600 ? window.innerWidth - 16 : 392 - 8,
+                  window.innerWidth < 600 ? window.innerWidth - 16 : 392 - 16,
                 zIndex: 2,
                 overflowY: !this.state.minimized ? 'scroll' : 'hidden',
                 overflowX: 'hidden',
               }}
-              onToggleMainDrawer={this.props.onToggleMainDrawer}
-              isAtRoot={history.location.pathname === '/'}
-              query={this.state.query}
-              tittel={this.tittel(this.props.meta)}
-              parentId={this.state.parentId}
-              onQueryChange={this.handleQueryChange}
-            />
-            <Switch>
-              <Route
-                path="/katalog/:kode*"
-                render={({ match, history }) => {
-                  return (
-                    <KodeContainer
-                      style={{ height: '100vh' }}
-                      path={match.params.kode ? match.params.kode : ''}
-                      onGoToCode={url => {
-                        this.setState({ searchResults: null })
-                        console.log(url)
-                        history.push('/katalog/' + url)
-                      }}
-                      onMouseEnter={this.props.onMouseEnter}
-                      onMouseLeave={this.props.onMouseLeave}
-                      onFitBounds={this.props.onFitBounds}
-                      mapBounds={this.props.mapBounds}
-                      language={this.props.language}
-                      meta={this.props.meta}
-                      handleUpdateLayerProp={this.props.handleUpdateLayerProp}
-                    />
-                  )
+            >
+              <div
+                style={{
+                  overflow: 'hidden',
+                  width:
+                    window.innerWidth < 600 ? window.innerWidth - 16 : 392 - 8,
                 }}
-              />
-
-              <Route
-                path="/punkt/:lng,:lat"
-                render={({ match, history }) => (
-                  <PunktinformasjonContainer
-                    lng={match.params.lng}
-                    lat={match.params.lat}
-                    localId={this.props.localId}
+              >
+                {this.state.error && (
+                  <Snackbar
+                    open={true}
+                    message={'Søk feilet: ' + JSON.stringify(this.state.error)}
+                    autoHideDuration={4000}
+                    onRequestClose={() => this.setState({ error: null })}
                   />
                 )}
                 <TopBar

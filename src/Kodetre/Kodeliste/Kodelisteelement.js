@@ -44,7 +44,7 @@ class Kodelisteelement extends React.Component<Props, State> {
               height: 4,
               borderTopRightRadius: 10,
               borderBottomRightRadius: 10,
-              width: `${100.0 * areal / størsteAreal}%`,
+              width: `${(100.0 * areal) / størsteAreal}%`,
               backgroundColor: this.props.muiTheme.palette.accent3Color,
             }}
             title={'areal: ' + prettyprint.prettyPrintAreal(areal)}

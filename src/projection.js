@@ -25,28 +25,29 @@ function wgs84ToUtm33(latitude, longitude) {
     a *
     ((1 -
       eccSquared / 4 -
-      3 * eccSquared * eccSquared / 64 -
-      5 * eccSquared * eccSquared * eccSquared / 256) *
+      (3 * eccSquared * eccSquared) / 64 -
+      (5 * eccSquared * eccSquared * eccSquared) / 256) *
       latRad -
-      (3 * eccSquared / 8 +
-        3 * eccSquared * eccSquared / 32 +
-        45 * eccSquared * eccSquared * eccSquared / 1024) *
+      ((3 * eccSquared) / 8 +
+        (3 * eccSquared * eccSquared) / 32 +
+        (45 * eccSquared * eccSquared * eccSquared) / 1024) *
         Math.sin(2 * latRad) +
-      (15 * eccSquared * eccSquared / 256 +
-        45 * eccSquared * eccSquared * eccSquared / 1024) *
+      ((15 * eccSquared * eccSquared) / 256 +
+        (45 * eccSquared * eccSquared * eccSquared) / 1024) *
         Math.sin(4 * latRad) -
-      35 * eccSquared * eccSquared * eccSquared / 3072 * Math.sin(6 * latRad))
+      ((35 * eccSquared * eccSquared * eccSquared) / 3072) *
+        Math.sin(6 * latRad))
   var utmEasting =
     k0 *
       n *
       (aRenamed +
-        (1 - T + c) * aRenamed * aRenamed * aRenamed / 6 +
-        (5 - 18 * T + T * T + 72 * c - 58 * eccPrimeSquared) *
+        ((1 - T + c) * aRenamed * aRenamed * aRenamed) / 6 +
+        ((5 - 18 * T + T * T + 72 * c - 58 * eccPrimeSquared) *
           aRenamed *
           aRenamed *
           aRenamed *
           aRenamed *
-          aRenamed /
+          aRenamed) /
           120) +
     500000.0
   var utmNorthing =
@@ -54,20 +55,20 @@ function wgs84ToUtm33(latitude, longitude) {
     (m +
       n *
         Math.tan(latRad) *
-        (aRenamed * aRenamed / 2 +
-          (5 - T + 9 * c + 4 * c * c) *
+        ((aRenamed * aRenamed) / 2 +
+          ((5 - T + 9 * c + 4 * c * c) *
             aRenamed *
             aRenamed *
             aRenamed *
-            aRenamed /
+            aRenamed) /
             24 +
-          (61 - 58 * T + T * T + 600 * c - 330 * eccPrimeSquared) *
+          ((61 - 58 * T + T * T + 600 * c - 330 * eccPrimeSquared) *
             aRenamed *
             aRenamed *
             aRenamed *
             aRenamed *
             aRenamed *
-            aRenamed /
+            aRenamed) /
             720))
   if (longitude < 0) utmNorthing += 10000000.0
   return { x: utmEasting, y: utmNorthing }
