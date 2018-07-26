@@ -16,6 +16,7 @@ type Props = {
   pitch: Number,
   bearing: Number,
   aktivKode: String,
+  aktiveLag: Array<string>,
   opplystKode: String,
   meta: Object,
 }

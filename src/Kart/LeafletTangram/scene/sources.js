@@ -33,8 +33,9 @@ const sources = {
     url: 'http://localhost:8081/dummymap/',
   },
   mapzen: {
-    url:
-      'https://{s}.tile.nextzen.org/tilezen/vector/v1/512/all/{z}/{x}/{y}.mvt',
+    type: 'MVT',
+    url: 'http://tiles.artsdatabanken.no/data/openstreetmap/{z}/{x}/{y}.pbf',
+    //    'https://{s}.tile.nextzen.org/tilezen/vector/v1/512/all/{z}/{x}/{y}.mvt',
     url_subdomains: ['a', 'b', 'c', 'd'],
     url_params: {
       api_key: 'Tqy6UAn9ShClyvfUon001g',
@@ -46,6 +47,7 @@ const sources = {
 }
 
 function createSources(aktivKode) {
+  console.log(aktivKode)
   return sources
 }
 

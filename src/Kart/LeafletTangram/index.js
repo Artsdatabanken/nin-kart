@@ -78,6 +78,7 @@ class LeafletTangram extends React.Component {
     this.map.addLayer(this.marker)
     this.props.onClick(latlng)
   }
+
   updateMap(props) {
     if (this.layer) this.map.removeLayer(this.layer)
     this.layer = createLeafletLayer(props, this.onClick)

@@ -49,7 +49,7 @@ function createLayer(kode, meta) {
 function makeScene(props) {
   return {
     import: imports,
-    sources: createSources(props.aktivKode),
+    sources: createSources(props.aktiveLag),
     lights: createLights(),
     layers: {},
     layers2: {
