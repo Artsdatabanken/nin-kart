@@ -1,5 +1,3 @@
-
-
 const autoprefixer = require('autoprefixer')
 const path = require('path')
 const webpack = require('webpack')
@@ -105,7 +103,7 @@ module.exports = {
   },
   module: {
     strictExportPresence: true,
-    noParse: /tangram\/dist\/tangram/,
+    noParse: [/tangram\/dist\/tangram/, /tangram\\dist\\tangram/],
     rules: [
       // TODO: Disable require.ensure as it's not a standard language feature.
       // We are waiting for https://github.com/facebookincubator/create-react-app/issues/2176.
