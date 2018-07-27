@@ -10,6 +10,20 @@ sources:
         type: MVT
         url: 'http://tiles.artsdatabanken.no/data/openstreetmap/{z}/{x}/{y}.pbf'
         max_zoom: 14
+    BS: 
+        type: 'MVT'
+        url: 'http://tiles.artsdatabanken.no/data/NA/{z}/{x}/{y}.pbf'
+        max_zoom: 13
+    
+    MI: 
+        type: 'MVT'
+        url: 'http://tiles.artsdatabanken.no/data/MI/{z}/{x}/{y}.pbf'
+        max_zoom: 8
+    
+    NA: 
+        type: 'MVT'
+        url: 'http://tiles.artsdatabanken.no/data/NA/{z}/{x}/{y}.pbf'
+        max_zoom: 13
 
 cameras:
     cam:
@@ -23,6 +37,14 @@ lights:
         ambient: .5
 
 layers:
+    NA:
+        data:
+            source: NA
+            layer: NA
+        draw:
+            water:
+                order: 10
+                color: [0.224, 1, 0.224, 1.00]
     water:
         data:
             source: osm
