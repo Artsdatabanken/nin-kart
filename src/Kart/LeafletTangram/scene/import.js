@@ -1,3 +1,3 @@
-const imports = ['/cawl-style.zip']
+const imports = ['/style.yaml']
 
 export default imports
