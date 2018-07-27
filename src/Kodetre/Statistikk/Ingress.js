@@ -1,11 +1,12 @@
+import Typography from '@material-ui/core/Typography'
 import React from 'react'
-import { CardText } from 'material-ui/Card'
 import InfoIconButton from './InfoIconButton'
 
 const Ingress = ({ infoUrl, beskrivelse }) => (
   <React.Fragment>
     {infoUrl && <InfoIconButton href={infoUrl} />}
-    <CardText>{beskrivelse}</CardText>
+
+    <Typography>{beskrivelse}</Typography>
   </React.Fragment>
 )
 

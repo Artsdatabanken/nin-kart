@@ -1,4 +1,4 @@
-import { Card, CardMedia } from 'material-ui'
+import { Card, CardMedia } from '@material-ui/core'
 import React from 'react'
 import backend from '../../backend'
 import språk from '../../språk'

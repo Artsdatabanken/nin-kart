@@ -1,7 +1,7 @@
 import initStoryshots from '@storybook/addon-storyshots'
 
-jest.mock('material-ui/internal/Tooltip')
-jest.mock('material-ui/MenuItem')
+jest.mock('@material-ui/core/internal/Tooltip')
+jest.mock('@material-ui/core/MenuItem')
 jest.mock('./backend')
 
 var localStorageMock = (function() {

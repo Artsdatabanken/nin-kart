@@ -1,8 +1,8 @@
-import muiThemeable from 'material-ui/styles/muiThemeable'
-import SwapVert from 'material-ui/svg-icons/action/swap-vert'
-import Landscape from 'material-ui/svg-icons/image/landscape'
+import { withTheme } from '@material-ui/core/styles'
+import Landscape from '@material-ui/icons/Landscape'
+import SwapVert from '@material-ui/icons/SwapVert'
 import React, { Component } from 'react'
-import Overskrift from './Overskrift'
+import Overskrift from '../Overskrift'
 import SliderSetting from './SliderSetting'
 import Veksle from './Veksle'
 class Terreng extends Component {
@@ -30,19 +30,19 @@ class Terreng extends Component {
         />
         <Veksle
           tittel="Etiketter med høydeangivelse av topper"
-          toggled={visEtikettTopp}
+          checked={visEtikettTopp}
           onClick={() => onUpdateLayerProp('visEtikettTopp', !visEtikettTopp)}
         />
         <Overskrift>Kontur (trinndelt høydevisualisering)</Overskrift>
         <Veksle
           tittel="Konturlinjer"
-          toggled={visKontur}
+          checked={visKontur}
           onClick={() => onUpdateLayerProp('visKontur', !visKontur)}
         />
         <Veksle
           tittel="Etiketter med høydeangivelse"
           disabled={!visKontur}
-          toggled={visEtikettKontur}
+          checked={visEtikettKontur}
           onClick={() =>
             onUpdateLayerProp('visEtikettKontur', !visEtikettKontur)
           }
@@ -63,4 +63,4 @@ class Terreng extends Component {
   }
 }
 
-export default muiThemeable()(Terreng)
+export default withTheme()(Terreng)

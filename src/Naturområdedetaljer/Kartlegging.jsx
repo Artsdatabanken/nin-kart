@@ -1,5 +1,5 @@
+import { ListItem } from '@material-ui/core/List'
 import React, { Component } from 'react'
-import { ListItem } from 'material-ui/List'
 import Bestiller from './Bestiller'
 
 class Kartlegging extends Component {
@@ -7,7 +7,7 @@ class Kartlegging extends Component {
     return (
       <div>
         <ListItem>Kartlegging</ListItem>
-        <Bestiller {...this.props.owner}  />
+        <Bestiller {...this.props.owner} />
       </div>
     )
   }

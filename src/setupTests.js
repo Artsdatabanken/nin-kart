@@ -3,5 +3,7 @@ import Adapter from 'enzyme-adapter-react-16'
 
 configure({ adapter: new Adapter() })
 
-jest.mock('material-ui/internal/EnhancedSwitch')
-jest.mock('material-ui/internal/Tooltip')
+jest.mock('@material-ui/core/internal/EnhancedSwitch')
+jest.mock('@material-ui/core/internal/Tooltip')
+
+jest.mock('./Kart/LeafletTangram', () => 'tangram')

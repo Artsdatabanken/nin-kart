@@ -1,8 +1,8 @@
+import { ListItem } from '@material-ui/core/List'
+import Favorite from '@material-ui/icons/action/favorite'
+import Flag from '@material-ui/icons/content/flag'
+import Nature from '@material-ui/icons/image/nature-people'
 import React, { Component } from 'react'
-import { ListItem } from 'material-ui/List'
-import Nature from 'material-ui/svg-icons/image/nature-people'
-import Flag from 'material-ui/svg-icons/content/flag'
-import Favorite from 'material-ui/svg-icons/action/favorite'
 
 class Omrader extends Component {
   componentWillReceiveProps(nextProps) {

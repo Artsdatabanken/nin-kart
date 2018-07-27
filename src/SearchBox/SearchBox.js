@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { TextField } from 'material-ui'
+import { TextField } from '@material-ui/core'
 import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import getNext from '../componentid'
 
 export default class SearchBox extends Component {

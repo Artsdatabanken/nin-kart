@@ -1,14 +1,14 @@
+import Typography from '@material-ui/core/Typography'
 import React from 'react'
-import { CardTitle, CardText } from 'material-ui/Card'
 import InfoIconButton from './InfoIconButton'
 
 const Tekstboks = ({ tittel, beskrivelse, infoUrl }) => (
   <React.Fragment>
-    <CardTitle>{tittel}</CardTitle>
-    <CardText>
+    <Typography>{tittel}</Typography>
+    <Typography>
       <InfoIconButton href={infoUrl} />
       {beskrivelse}
-    </CardText>
+    </Typography>
   </React.Fragment>
 )
 

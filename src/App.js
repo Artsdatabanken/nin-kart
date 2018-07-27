@@ -1,10 +1,10 @@
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'
 import React, { Component } from 'react'
 import { BrowserRouter } from 'react-router-dom'
-import { getMuiTheme, MuiThemeProvider } from 'material-ui/styles'
-import Grunnkart from './Grunnkart/Grunnkart'
 import './App.css'
+import Grunnkart from './Grunnkart/Grunnkart'
 
-const muiTheme = getMuiTheme({
+const theme = createMuiTheme({
   palette: {
     textColor: '#5f5f5f',
     disabledColor: '#9a9a9a',
@@ -19,7 +19,7 @@ const muiTheme = getMuiTheme({
 class App extends Component {
   render() {
     return (
-      <MuiThemeProvider muiTheme={muiTheme}>
+      <MuiThemeProvider theme={theme}>
         <BrowserRouter>
           <Grunnkart />
         </BrowserRouter>

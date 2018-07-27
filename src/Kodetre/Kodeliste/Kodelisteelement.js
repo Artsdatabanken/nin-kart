@@ -1,6 +1,8 @@
 // @flow
-import { ListItem } from 'material-ui/List'
-import muiThemeable from 'material-ui/styles/muiThemeable'
+import { ListItem, ListItemSecondaryAction } from '@material-ui/core'
+import ListItemText from '@material-ui/core/ListItemText'
+import { withTheme } from '@material-ui/core/styles'
+import { Avatar } from 'material-ui'
 import React from 'react'
 import prettyprint from '../../prettyprint'
 import språk from '../../språk'
@@ -17,7 +19,7 @@ type Props = {
   størsteAreal: number,
   areal: number,
   antallNaturområder: number,
-  muiTheme: Object,
+  theme: Object,
   onMouseLeave: Function,
   onMouseEnter: Function,
   onGoToCode: Function,
@@ -45,7 +47,7 @@ class Kodelisteelement extends React.Component<Props, State> {
               borderTopRightRadius: 10,
               borderBottomRightRadius: 10,
               width: `${(100.0 * areal) / størsteAreal}%`,
-              backgroundColor: this.props.muiTheme.palette.accent3Color,
+              backgroundColor: this.props.theme.palette.secondary.main,
             }}
             title={'areal: ' + prettyprint.prettyPrintAreal(areal)}
           />
@@ -73,21 +75,11 @@ class Kodelisteelement extends React.Component<Props, State> {
         onClick={() => this.props.onGoToCode(meta.sti)}
         onMouseEnter={() => this.props.onMouseEnter(kode)}
         onMouseLeave={() => this.props.onMouseLeave()}
-        leftAvatar={<Bildeavatar utenRamme={avatarUtenRamme} kode={kode} />}
-        primaryText={
-          <div>
-            {true && <Kodetagg hele={false} kode={kode.toUpperCase()} />}
-            {språk(meta.tittel)}
-            <div style={{ display: 'inline-flex' }} />
-          </div>
-        }
-        secondaryText={this.undertekst(
-          this.props.størsteAreal,
-          this.props.areal,
-          this.props.antallNaturområder,
-          meta.undertittel
-        )}
-        rightAvatar={
+      >
+        <Avatar>
+          <Bildeavatar utenRamme={avatarUtenRamme} kode={kode} />
+        </Avatar>
+        <ListItemSecondaryAction>
           <div
             style={{
               display: 'inline-flex',
@@ -98,10 +90,25 @@ class Kodelisteelement extends React.Component<Props, State> {
           >
             <PaintSwatch color={meta.farge} />
           </div>
-        }
-      />
+        </ListItemSecondaryAction>
+        <ListItemText
+          primary={
+            <div>
+              {true && <Kodetagg hele={false} kode={kode.toUpperCase()} />}
+              {språk(meta.tittel)}
+              <div style={{ display: 'inline-flex' }} />
+            </div>
+          }
+          secondary={this.undertekst(
+            this.props.størsteAreal,
+            this.props.areal,
+            this.props.antallNaturområder,
+            meta.undertittel
+          )}
+        />
+      </ListItem>
     )
   }
 }
 
-export default muiThemeable()(Kodelisteelement)
+export default withTheme()(Kodelisteelement)

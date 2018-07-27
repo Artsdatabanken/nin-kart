@@ -1,12 +1,12 @@
-import { List, ListItem } from 'material-ui'
-import muiThemeable from 'material-ui/styles/muiThemeable'
+import { List, ListItem } from '@material-ui/core'
 import React, { Component } from 'react'
-import Overskrift from './Overskrift'
-import thumb_mørk from './bakgrunn/thumb_mørk.jpg'
-import thumb_lys from './bakgrunn/thumb_lys.jpg'
+import Overskrift from '../Overskrift'
 import thumb_flyfoto from './bakgrunn/thumb_flyfoto.jpg'
+import thumb_lys from './bakgrunn/thumb_lys.jpg'
+import thumb_mørk from './bakgrunn/thumb_mørk.jpg'
 import thumb_vintage from './bakgrunn/thumb_vintage.jpg'
 import Label from './Label'
+import { withTheme } from '@material-ui/core/styles'
 
 const KartPreview = ({ thumb, tittel, checked }) => (
   <ListItem
@@ -33,4 +33,4 @@ class Bakgrunnskart extends Component {
   }
 }
 
-export default muiThemeable()(Bakgrunnskart)
+export default withTheme()(Bakgrunnskart)

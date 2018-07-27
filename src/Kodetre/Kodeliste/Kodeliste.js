@@ -1,7 +1,6 @@
-import { Subheader } from 'material-ui'
 import React from 'react'
+import Overskrift from '../../Overskrift'
 import Kodelisteelement from './Kodelisteelement'
-
 const Kodeliste = ({
   title,
   subtitle,
@@ -16,7 +15,7 @@ const Kodeliste = ({
   if (!metadata) return null
   return (
     <React.Fragment>
-      <Subheader>{title}</Subheader>
+      <Overskrift>{title}</Overskrift>
       {subtitle && (
         <div
           style={{

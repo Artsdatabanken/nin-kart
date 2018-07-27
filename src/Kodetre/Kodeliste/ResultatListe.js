@@ -1,5 +1,5 @@
+import { Divider, List, ListItem, ListItemText, Paper } from '@material-ui/core'
 import React, { Component } from 'react'
-import { Paper, List, ListItem, Divider } from 'material-ui'
 import Backend from '../../backend'
 import språk from '../../språk'
 
@@ -8,9 +8,7 @@ class ResultatListe extends Component {
     const prefix = kode.substring(0, 2)
     switch (prefix) {
       case 'AR':
-        return ''
       case 'AO':
-        return ''
       case 'VV':
         return ''
       default:
@@ -61,11 +59,6 @@ class ResultatListe extends Component {
                     onClick(item.kode)
                   }}
                   key={kode}
-                  primaryText={
-                    <React.Fragment>
-                      <span>{ResultatListe.highlightMatch(navn, query)}</span>
-                    </React.Fragment>
-                  }
                   leftIcon={
                     <img
                       style={{ marginTop: 6, marginLeft: 16 }}
@@ -88,7 +81,11 @@ class ResultatListe extends Component {
                       {ResultatListe.highlightMatch(this.filtrer(kode), query)}
                     </div>
                   }
-                />
+                >
+                  <ListItemText>
+                    {ResultatListe.highlightMatch(navn, query)}
+                  </ListItemText>
+                </ListItem>
                 <Divider inset={true} />
               </React.Fragment>
             )

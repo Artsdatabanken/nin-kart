@@ -1,6 +1,6 @@
-import React from 'react'
-import muiThemeable from 'material-ui/styles/muiThemeable'
 import typesystem from '@artsdatabanken/typesystem'
+import { withTheme } from '@material-ui/core/styles'
+import React from 'react'
 
 class Kodetagg extends React.Component {
   render() {
@@ -10,7 +10,7 @@ class Kodetagg extends React.Component {
         paddingLeft: '2px',
         paddingRight: '4px',
         float: 'left',
-        color: this.props.muiTheme.palette.accentColor2,
+        color: this.props.theme.palette.secondary.main,
       },
     }
     const { kode } = this.props
@@ -27,4 +27,4 @@ class Kodetagg extends React.Component {
   }
 }
 
-export default muiThemeable()(Kodetagg)
+export default withTheme()(Kodetagg)

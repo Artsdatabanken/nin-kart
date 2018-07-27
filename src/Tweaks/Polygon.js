@@ -1,13 +1,13 @@
-import muiThemeable from 'material-ui/styles/muiThemeable'
+import Button from '@material-ui/core/Button'
+import { withTheme } from '@material-ui/core/styles'
+import ActionDelete from '@material-ui/icons/Delete'
+import ActionInfo from '@material-ui/icons/Info'
+import ZoomIn from '@material-ui/icons/ZoomIn'
 import React, { Component } from 'react'
-import Overskrift from './Overskrift'
-import ColorPicker from './ColorPicker'
-import { FlatButton } from 'material-ui'
-import ActionDelete from 'material-ui/svg-icons/action/delete'
-import ActionInfo from 'material-ui/svg-icons/action/info'
-import ZoomIn from 'material-ui/svg-icons/action/zoom-in'
 import tinycolor from 'tinycolor2'
+import Overskrift from '../Overskrift'
 import språk from '../språk'
+import ColorPicker from './ColorPicker'
 
 class Polygon extends Component {
   render() {
@@ -37,9 +37,9 @@ class Polygon extends Component {
 
         {item &&
           item.removable && (
-            <FlatButton
+            <Button
               label="Fjern"
-              primary={true}
+              color="primary"
               onClick={e => {
                 if (item && item.kode) {
                   onRemove(item.kode)
@@ -52,9 +52,9 @@ class Polygon extends Component {
 
         {item &&
           item.sti && (
-            <FlatButton
+            <Button
               label="Info"
-              primary={true}
+              color="primary"
               onClick={() => {
                 if (item && item.sti) {
                   onGoToCode(item.sti)
@@ -66,9 +66,9 @@ class Polygon extends Component {
 
         {item &&
           item.bbox && (
-            <FlatButton
+            <Button
               label={'Vis i kart'}
-              primary={true}
+              color="primary"
               onClick={() => {
                 if (item && item.bbox) {
                   onFitBounds(item.bbox)
@@ -82,4 +82,4 @@ class Polygon extends Component {
   }
 }
 
-export default muiThemeable()(Polygon)
+export default withTheme()(Polygon)

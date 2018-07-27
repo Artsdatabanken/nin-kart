@@ -1,8 +1,9 @@
 //@flow
-import { CardActions, CardTitle, Toggle } from 'material-ui'
+import { CardActions, Switch } from '@material-ui/core'
+import Typography from '@material-ui/core/Typography'
 import React from 'react'
-import KodeTagg from '../Kodetagg'
 import språk from '../../språk'
+import KodeTagg from '../Kodetagg'
 
 type Props = {
   tittel: String,
@@ -20,42 +21,40 @@ const Tittelblokk = ({
   overordnet,
   kode,
 }: Props) => (
-  <CardTitle
-    title={
-      <div>
-        {tittel}
-        <KodeTagg hele={false} kode={kode.toUpperCase()} />
-      </div>
-    }
-    subtitle={
-      overordnet &&
-      overordnet.map(forelder => (
-        <div
-          className={'hoverUnderline'}
-          key={forelder.kode}
-          onClick={e => {
-            e.stopPropagation()
-            onGoToCode(forelder.sti)
-          }}
-        >
-          {språk(forelder.tittel)}
-          <KodeTagg hele={false} kode={forelder.kode.toUpperCase()} />
-        </div>
-      ))
-    }
-    subtitleStyle={{ cursor: 'pointer' }}
-  >
+  <div>
+    <Typography gutterBottom variant="headline" component="h2">
+      {tittel}
+      <KodeTagg hele={false} kode={kode.toUpperCase()} />
+    </Typography>
+    {overordnet && (
+      <Typography gutterBottom component="p">
+        {overordnet.map(forelder => (
+          <div
+            className={'hoverUnderline'}
+            key={forelder.kode}
+            onClick={e => {
+              e.stopPropagation()
+              onGoToCode(forelder.sti)
+            }}
+          >
+            {språk(forelder.tittel)}
+            <KodeTagg hele={false} kode={forelder.kode.toUpperCase()} />
+          </div>
+        ))}
+      </Typography>
+    )}
+
     <CardActions>
       {overordnet && (
-        <Toggle
+        <Switch
           onToggle={onToggleLayer}
-          toggled={isActiveLayer}
+          checked={isActiveLayer}
           label="Kartlag aktivt"
           labelPosition="left"
         />
       )}
     </CardActions>
-  </CardTitle>
+  </div>
 )
 
 export default Tittelblokk

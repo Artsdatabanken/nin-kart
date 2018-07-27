@@ -1,7 +1,8 @@
 import React from 'react'
+import ShallowRenderer from 'react-test-renderer/shallow'
 import App from './App'
 import backend from './backend'
-import ShallowRenderer from 'react-test-renderer/shallow'
+const jest = require('jest')
 
 jest.mock('./Kart', () => 'tangram')
 

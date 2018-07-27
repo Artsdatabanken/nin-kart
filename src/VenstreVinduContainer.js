@@ -1,4 +1,4 @@
-import { Paper, Snackbar } from 'material-ui'
+import { Paper, Snackbar } from '@material-ui/core'
 import React from 'react'
 import { withRouter } from 'react-router'
 import { Route, Switch } from 'react-router-dom'

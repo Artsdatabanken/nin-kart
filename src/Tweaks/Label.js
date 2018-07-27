@@ -1,4 +1,4 @@
-import muiThemeable from 'material-ui/styles/muiThemeable'
+import { withTheme } from '@material-ui/core/styles'
 import React from 'react'
 
 const Label = ({ children, style, disabled, muiTheme }) => (
@@ -20,4 +20,4 @@ const Label = ({ children, style, disabled, muiTheme }) => (
   </div>
 )
 
-export default muiThemeable()(Label)
+export default withTheme()(Label)

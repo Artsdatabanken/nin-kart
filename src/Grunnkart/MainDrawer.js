@@ -1,9 +1,10 @@
+import { Drawer, IconButton, ListItem, MenuItem } from '@material-ui/core'
+import { withTheme } from '@material-ui/core/styles'
 import React, { Component } from 'react'
-import { IconButton, ListItem, Drawer, MenuItem } from 'material-ui'
-import muiThemeable from 'material-ui/styles/muiThemeable'
 import NavigationChevronLeftDouble from './NavigationChevronLeftDouble'
 class MainDrawer extends Component {
   render() {
+    console.log(this.props)
     return (
       <Drawer
         docked={false}
@@ -27,7 +28,7 @@ class MainDrawer extends Component {
             <IconButton onClick={this.props.onToggleMainDrawer}>
               <NavigationChevronLeftDouble
                 viewBox="0 0 28 28"
-                color={this.props.muiTheme.palette.disabledColor}
+                color={this.props.theme.palette.action.disabled}
               />
             </IconButton>
           }
@@ -82,4 +83,4 @@ class MainDrawer extends Component {
     )
   }
 }
-export default muiThemeable()(MainDrawer)
+export default withTheme()(MainDrawer)

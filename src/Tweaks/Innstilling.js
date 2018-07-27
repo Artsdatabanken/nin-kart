@@ -1,4 +1,4 @@
-import muiThemeable from 'material-ui/styles/muiThemeable'
+import { withTheme } from '@material-ui/core/styles'
 import React from 'react'
 import Label from './Label'
 const Innstilling = ({
@@ -42,4 +42,4 @@ const Innstilling = ({
   </div>
 )
 
-export default muiThemeable()(Innstilling)
+export default withTheme()(Innstilling)

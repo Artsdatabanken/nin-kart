@@ -1,13 +1,13 @@
-import React from 'react'
-import Dialog from 'material-ui/Dialog'
+import Button from '@material-ui/core/Button'
 import {
   Card,
   CardHeader,
   CardMedia,
-  CardTitle,
   CardText,
-} from 'material-ui/Card'
-import FlatButton from 'material-ui/FlatButton'
+  CardTitle,
+} from '@material-ui/core/Card'
+import Dialog from '@material-ui/core/Dialog'
+import React from 'react'
 import backend from '../../backend'
 
 export default class BildeDialog extends React.Component {
@@ -32,9 +32,9 @@ export default class BildeDialog extends React.Component {
       612
     )} 1.5x, ${backend.getFotoOmslag(kode, 816)} 2x`
     const actions = [
-      <FlatButton
+      <Button
         label="Lukk"
-        primary={true}
+        color="primary"
         keyboardFocused={true}
         onClick={this.props.handleClose}
       />,

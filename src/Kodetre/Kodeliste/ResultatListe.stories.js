@@ -1,6 +1,6 @@
-import React from 'react'
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
 import { storiesOf } from '@storybook/react'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import React from 'react'
 import Resultatliste from './ResultatListe'
 
 const results1 = [{ kode: 'KA', navn: 'Kalk' }]

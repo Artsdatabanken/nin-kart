@@ -1,9 +1,9 @@
-import React from 'react'
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
+import { action } from '@storybook/addon-actions/dist/index'
 import { storiesOf } from '@storybook/react'
+import React from 'react'
 import { muiTheme } from 'storybook-addon-material-ui'
 import MainDrawer from './MainDrawer'
-import { action } from '@storybook/addon-actions/dist/index'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 storiesOf('MainDrawer', module)
   .addDecorator(muiTheme())

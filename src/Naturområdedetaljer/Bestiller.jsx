@@ -1,14 +1,14 @@
+import { List } from '@material-ui/core/List'
 import React, { Component } from 'react'
-import { List } from 'material-ui/List'
-import Subheader from 'material-ui/Subheader'
+import Overskrift from '../Overskrift'
 import Kontakt from './Kontakt'
 
 class Bestiller extends Component {
   render() {
     return (
       <List>
-        <Subheader>Bestiller</Subheader>
-        <Kontakt {...this.props}/>
+        <Overskrift>Bestiller</Overskrift>
+        <Kontakt {...this.props} />
       </List>
     )
   }

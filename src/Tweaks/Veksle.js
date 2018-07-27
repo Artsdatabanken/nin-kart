@@ -1,5 +1,5 @@
-import { Toggle } from 'material-ui'
-import muiThemeable from 'material-ui/styles/muiThemeable'
+import { withTheme } from '@material-ui/core/styles'
+import Switch from '@material-ui/core/Switch'
 import React from 'react'
 import Label from './Label'
 
@@ -10,7 +10,7 @@ const Veksle = ({ tittel, icon, toggled, disabled, onClick, muiTheme }) => (
         float: 'right',
       }}
     >
-      <Toggle toggled={toggled} disabled={disabled} onClick={onClick} />
+      <Switch checked={toggled} disabled={disabled} onClick={onClick} />
     </div>
     <div style={{ width: 260 }}>
       <Label disabled={disabled}>{tittel}</Label>
@@ -18,4 +18,4 @@ const Veksle = ({ tittel, icon, toggled, disabled, onClick, muiTheme }) => (
   </div>
 )
 
-export default muiThemeable()(Veksle)
+export default withTheme()(Veksle)

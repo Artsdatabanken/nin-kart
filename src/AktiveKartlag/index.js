@@ -1,13 +1,14 @@
-import { Divider, RaisedButton, Subheader } from 'material-ui'
-import MapsLayers from 'material-ui/svg-icons/maps/layers'
+import { Button, Divider } from '@material-ui/core'
+import HardwareKeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown'
+import HardwareKeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp'
+import MapsLayers from '@material-ui/icons/Layers'
 import React from 'react'
+import Collapsible from 'react-collapsible'
 import { withRouter } from 'react-router'
+import Overskrift from '../Overskrift'
 import BakgrunnskartElement from './BakgrunnskartElement'
 import PolygonlagElement from './PolygonlagElement'
 import TerrenglagElement from './TerrenglagElement'
-import Collapsible from 'react-collapsible'
-import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down'
-import HardwareKeyboardArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up'
 
 class AktiveKartlag extends React.Component {
   render() {
@@ -35,7 +36,7 @@ class AktiveKartlag extends React.Component {
 
     return (
       <div style={{ position: 'relative', top: 8 }}>
-        <Subheader>Mine kartlag</Subheader>
+        <Overskrift>Mine kartlag</Overskrift>
         <Divider />
         {koder.map(forelder => {
           const kode = forelder.kode
@@ -119,7 +120,7 @@ class AktiveKartlag extends React.Component {
           onToggleVisible={kode => onToggleVisible(kode)}
           language={language}
         />
-        <RaisedButton
+        <Button
           icon={<MapsLayers />}
           label="Katalog"
           primary
