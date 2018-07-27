@@ -5,44 +5,40 @@ import { createLights } from './lights'
 import { createSources } from './sources'
 import { createStyles } from './styles'
 
-function createSubLayers(kode, barn, data) {
+function createSubLayers(kode, barn) {
   let r = {}
-  r.data = data
+  const prefix = kode.substring(0, 2)
+  r.data = { source: prefix, layer: prefix }
   Object.keys(barn).forEach(subkode => {
     console.log(kode, subkode)
     let frag = subkode[subkode.length - 1]
     if (parseInt(frag, 10)) frag = parseInt(frag, 10)
     const sub = {
-      filter: { [tempHackKode(kode)]: frag },
-      draw: { _transparent: { order: 100, color: barn[subkode].farge } },
+      filter: { [subkode]: true },
+      draw: {
+        _transparent: {
+          order: 100,
+          color: barn[subkode].farge,
+        },
+      },
     }
-    console.log(sub.filter)
     r[subkode] = sub
   })
   console.log('r', r)
   return { [kode]: r }
 }
 
-function tempHackKode(kode) {
-  const subst = kodeMap[kode]
-  if (subst) return subst
-  return kode.toLowerCase()
-}
-
-const kodeMap = {
-  BS_6SE: '6SE',
-}
-
 const layerMap = {
-  BS_6SE: { source: 'bs_6se', layer: 'Seksjoner2017_4326-c6e9g5' },
-  NA: { source: 'na', layer: 'naturomrader8-10tcn5' },
-  MI_KA: { source: 'mi_ka', layer: 'mi_ka-07l592' },
+  BS: { source: 'BS', layer: 'BS' },
+  NA: { source: 'NA', layer: 'NA' },
+  MI: { source: 'MI', layer: 'MI' },
 }
 
 function createLayer(kode, meta) {
-  const data = layerMap[kode]
-  const r = createSubLayers(kode, meta, data)
-  console.log(r)
+  const prefix = kode.substring(0, 2)
+  const source = layerMap[prefix]
+  let r = createSubLayers(kode, meta, source)
+  console.log('r', r)
   return r
 }
 
@@ -52,12 +48,6 @@ function makeScene(props) {
     sources: createSources(props.aktiveLag),
     lights: createLights(),
     layers: {},
-    layers2: {
-      earth: {
-        data: { source: 'mapzen' },
-        draw: { elevation: { order: 44440 } },
-      },
-    },
     styles: createStyles(),
   }
 }
