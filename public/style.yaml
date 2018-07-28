@@ -3,27 +3,7 @@ import:
 
 scene:
     background:
-        color: '#555'
-
-sources:
-    osm:
-        type: MVT
-        url: 'http://tiles.artsdatabanken.no/data/openstreetmap/{z}/{x}/{y}.pbf'
-        max_zoom: 14
-    BS: 
-        type: 'MVT'
-        url: 'http://tiles.artsdatabanken.no/data/NA/{z}/{x}/{y}.pbf'
-        max_zoom: 13
-    
-    MI: 
-        type: 'MVT'
-        url: 'http://tiles.artsdatabanken.no/data/MI/{z}/{x}/{y}.pbf'
-        max_zoom: 8
-    
-    NA: 
-        type: 'MVT'
-        url: 'http://tiles.artsdatabanken.no/data/NA/{z}/{x}/{y}.pbf'
-        max_zoom: 13
+        color: '#fff'
 
 cameras:
     cam:
@@ -36,15 +16,13 @@ lights:
         diffuse: .7
         ambient: .5
 
+sources:
+    osm:
+        type: MVT
+        url: 'http://tiles.artsdatabanken.no/data/openstreetmap/{z}/{x}/{y}.pbf'
+        max_zoom: 14
+
 layers:
-    NA:
-        data:
-            source: NA
-            layer: NA
-        draw:
-            water:
-                order: 10
-                color: [0.224, 1, 0.224, 1.00]
     water:
         data:
             source: osm
@@ -52,7 +30,7 @@ layers:
         draw:
             water:
                 order: 10
-                color: [0.224, 0.224, 0.224, 1.00]
+                color: [0.4, 0.4, 0.4, 1.0]
     waterway:
         data:
             source: osm
@@ -60,53 +38,35 @@ layers:
         draw:
             lines:
                 order: 11
-                color: '#353535'
+                color: [0.4, 0.4, 0.4, 1.0]
                 width: 1.3px
-    landuse:
-        data:
-            source: osm
-            layer: landuse
-            filter:
-                class: residential
-        draw:
-            landuse:
-                order: 5
-                color: [0.349, 0.349, 0.349, 1.00]
-    park:
-        data:
-            source: osm
-            layer: park
-        draw:
-            park:
-                order: 5
-                color: [0.290, 0.290, 0.290, 1.00]
-    boundary:
-        data:
-            source: osm
-            layer: boundary
-        draw:
-            lines:
-                order: 30
-                color: [0.388, 0.388, 0.388, 1.00]
-                width: 1.2px
     transportation:
         data:
             source: osm
             layer: transportation
         draw:
             lines:
-                order: 30
-                color: [0.314, 0.314, 0.314, 1.00]
+                order: 200
+                color: [0.3, 0.3, 0.3, 1.0]
                 width: 1.2px
+    boundary:
+        data:
+            source: osm
+            layer: boundary
+        draw:
+            boundary:
+                order: 150
+                color: [0.5, 0.5, 0.5, 0.8]
+                width: 3.2px
 styles:
     water:
         base: polygons
         mix: filter-grain
-    landuse:
-        base: polygons
-        mix: filter-grain
-    park:
-        base: polygons
-        mix: filter-grain
+        shaders:
+            defines:
+                GRAIN_AMOUNT: .8
+                NUM_OCTAVES: 3
     boundary:
         base: lines
+        blend: overlay
+        dash: [2, 0.5]

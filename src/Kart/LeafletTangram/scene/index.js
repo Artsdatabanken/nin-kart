@@ -5,20 +5,23 @@ import { createLights } from './lights'
 import { createSources } from './sources'
 import { createStyles } from './styles'
 
-function createSubLayers(kode, barn) {
+function createLayer(kode, barn) {
   let r = {}
   const prefix = kode.substring(0, 2)
   r.data = { source: prefix, layer: prefix }
   Object.keys(barn).forEach(subkode => {
-    console.log(kode, subkode)
-    let frag = subkode[subkode.length - 1]
-    if (parseInt(frag, 10)) frag = parseInt(frag, 10)
+    console.log(kode, subkode, barn[subkode].farge)
     const sub = {
       filter: { [subkode]: true },
       draw: {
-        _transparent: {
+        _multiply: {
           order: 100,
           color: barn[subkode].farge,
+        },
+        lines: {
+          order: 90,
+          color: '#888',
+          width: '5m',
         },
       },
     }
@@ -26,20 +29,6 @@ function createSubLayers(kode, barn) {
   })
   console.log('r', r)
   return { [kode]: r }
-}
-
-const layerMap = {
-  BS: { source: 'BS', layer: 'BS' },
-  NA: { source: 'NA', layer: 'NA' },
-  MI: { source: 'MI', layer: 'MI' },
-}
-
-function createLayer(kode, meta) {
-  const prefix = kode.substring(0, 2)
-  const source = layerMap[prefix]
-  let r = createSubLayers(kode, meta, source)
-  console.log('r', r)
-  return r
 }
 
 function makeScene(props) {

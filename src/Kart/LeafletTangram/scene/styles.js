@@ -20,18 +20,9 @@ const styles = {
       },
     },
   },
-  _transparent: {
+  _multiply: {
     base: 'polygons',
     blend: 'multiply',
-  },
-  _dashes2: {
-    base: 'polygons',
-    //            dash: [1, 1],
-    //            dash_background_color: 'pink',
-  },
-  naturomrader6: {
-    base: 'polygons',
-    //            mix: 'filter-grain',
   },
 }
 
