@@ -1,7 +1,6 @@
 import { action } from '@storybook/addon-actions/dist/index'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
-import { muiTheme } from 'storybook-addon-material-ui'
 import KodeVindu from './KodeVindu'
 
 var api = {
@@ -222,7 +221,6 @@ const meta2 = {
 }
 
 storiesOf('KodeVindu', module)
-  .addDecorator(muiTheme())
   .add('default', () => (
     <KodeVindu
       data={api}

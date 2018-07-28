@@ -1,12 +1,13 @@
+import CardMedia from '@material-ui/core/CardMedia'
+import Typography from '@material-ui/core/Typography'
 import React from 'react'
-import { CardMedia, CardText } from 'material-ui/Card'
 
 const Illustrasjon = ({ bilde, beskrivelse }) => (
   <React.Fragment>
     <CardMedia>
       <img src={bilde} alt="illustrasjon" style={{ objectFit: 'cover' }} />
     </CardMedia>
-    <CardText>{beskrivelse}</CardText>
+    <Typography>{beskrivelse}</Typography>
   </React.Fragment>
 )
 

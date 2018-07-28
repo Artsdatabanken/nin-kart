@@ -1,17 +1,15 @@
 import React, { Component } from 'react'
-import { Avatar } from 'material-ui'
 import backend from '../../backend'
 
 class BildeAvatar extends Component {
   render() {
     const { kode, utenRamme } = this.props
     return (
-      <Avatar
-        style={Object.assign(
-          this.props.style,
-          utenRamme ? { borderRadius: 0 } : {},
-          { backgroundColor: 'transparent' }
-        )}
+      <img
+        alt="fargevelger"
+        style={Object.assign(utenRamme ? { borderRadius: 0 } : {}, {
+          backgroundColor: 'transparent',
+        })}
         src={backend.avatar40px(kode)}
         onError={e => {
           const brokenAvatar = backend.avatar40px('~', 40)

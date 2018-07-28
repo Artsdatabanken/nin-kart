@@ -1,5 +1,5 @@
 import typesystem from '@artsdatabanken/typesystem'
-import { List, Paper, RaisedButton } from 'material-ui'
+import { Button, List, Paper } from '@material-ui/core'
 import React from 'react'
 import FetchContainer from '../../FetchContainer'
 import Fakta from './Fakta'
@@ -25,9 +25,9 @@ class KodeVindu extends React.Component {
           )}
           {props.meta.bbox && (
             <div style={{ float: 'right', marginRight: 24, marginTop: 16 }}>
-              <RaisedButton onClick={() => props.onFitBounds(props.meta.bbox)}>
+              <Button onClick={() => props.onFitBounds(props.meta.bbox)}>
                 Vis i kart
-              </RaisedButton>
+              </Button>
             </div>
           )}
           <div style={{ padding: 24 }}>

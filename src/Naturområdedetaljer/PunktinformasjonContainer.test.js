@@ -33,7 +33,6 @@ var getNatureAreaFactsInput = {
 var rødlisteExpected = {
   name: 'name',
   value: 'value',
-  logo: backend.getCompanyLogo('ADB'),
   homepage: 'https://artsdatabanken.no/',
   dataorigin: 'ADB',
   article: 'https://www.artsdatabanken.no/rodlistefornaturtyper',
@@ -42,7 +41,6 @@ var rødlisteExpected = {
 var pointInfoExpected = {
   name: 'name',
   value: 'value',
-  logo: backend.getCompanyLogo('ADB'),
   homepage: 'http://www.miljodirektoratet.no/',
   dataorigin: 'ADB',
 }

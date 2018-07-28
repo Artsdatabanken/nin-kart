@@ -1,14 +1,15 @@
 import React from 'react'
 import { CustomPicker } from 'react-color'
-import { Alpha, Hue, Saturation } from 'react-color/lib/components/common'
-import { Subheader } from 'material-ui'
 import ChromePointer from 'react-color/lib/components/chrome/ChromePointer'
 import ChromePointerCircle from 'react-color/lib/components/chrome/ChromePointerCircle'
+import { Alpha, Hue, Saturation } from 'react-color/lib/components/common'
+import Overskrift from '../Overskrift'
+
 class ColorPicker extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Subheader>Farge</Subheader>
+        <Overskrift>Farge</Overskrift>
         <Blokk height={256}>
           <Saturation
             pointer={ChromePointerCircle}

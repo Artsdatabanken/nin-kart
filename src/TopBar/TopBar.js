@@ -1,10 +1,10 @@
+import AppBar from '@material-ui/core/AppBar'
+import IconButton from '@material-ui/core/IconButton'
+import Search from '@material-ui/icons/Search'
+import NavigationBack from '@material-ui/icons/ArrowBack'
+import CloseIcon from '@material-ui/icons/Close'
+import Hamburger from '@material-ui/icons/Menu'
 import React, { Component } from 'react'
-import AppBar from 'material-ui/AppBar'
-import IconButton from 'material-ui/IconButton'
-import Search from 'material-ui/svg-icons/action/search'
-import NavigationBack from 'material-ui/svg-icons/navigation/arrow-back'
-import CloseIcon from 'material-ui/svg-icons/navigation/close'
-import Hamburger from 'material-ui/svg-icons/navigation/menu'
 import SearchBox from '../SearchBox/SearchBox'
 
 class TopBar extends Component {

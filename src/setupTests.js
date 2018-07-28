@@ -3,5 +3,38 @@ import Adapter from 'enzyme-adapter-react-16'
 
 configure({ adapter: new Adapter() })
 
-jest.mock('material-ui/internal/EnhancedSwitch')
-jest.mock('material-ui/internal/Tooltip')
+//jest.mock('@material-ui/core/Tooltip')
+jest.mock('@material-ui/lab/Slider')
+jest.mock('@material-ui/core/Button')
+jest.mock('@material-ui/core/Drawer')
+jest.mock('@material-ui/core/TextField', () => 'TextField')
+jest.mock('@material-ui/core/Tooltip')
+jest.mock('@material-ui/core/MenuItem')
+
+jest.mock('backend', () => () => ({
+  raw: () => {},
+}))
+jest.mock('./Kart/LeafletTangram', () => 'tangram')
+jest.mock('tangram/dist/tangram.debug', () => 'tangram')
+
+jest.mock('./backend')
+
+var localStorageMock = (function() {
+  var store = {}
+  return {
+    getItem: function(key) {
+      return store[key]
+    },
+    setItem: function(key, value) {
+      store[key] = value.toString()
+    },
+    clear: function() {
+      store = {}
+    },
+    removeItem: function(key) {
+      delete store[key]
+    },
+  }
+})()
+
+global.localStorage = localStorageMock

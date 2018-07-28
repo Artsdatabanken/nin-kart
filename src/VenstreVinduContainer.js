@@ -1,15 +1,15 @@
-import { Paper, Snackbar } from 'material-ui'
+import { Paper, Snackbar } from '@material-ui/core'
 import React from 'react'
 import { withRouter } from 'react-router'
 import { Route, Switch } from 'react-router-dom'
 import AktiveKartlag from './AktiveKartlag'
+import backend from './backend'
 import KodeContainer from './Kodetre/Kodeliste/KodeContainer'
 import ResultatListe from './Kodetre/Kodeliste/ResultatListe'
 import PunktinformasjonContainer from './Naturområdedetaljer/PunktinformasjonContainer'
+import språk from './språk'
 import TopBar from './TopBar/TopBar'
 import Tweaks from './Tweaks'
-import backend from './backend'
-import språk from './språk'
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {

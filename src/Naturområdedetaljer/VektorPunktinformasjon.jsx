@@ -1,14 +1,14 @@
+import { List, ListItem } from '@material-ui/core'
+import HardwareKeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown'
+import HardwareKeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp'
 import React from 'react'
-import { List, ListItem } from 'material-ui'
+import Collapsible from 'react-collapsible'
 //import Detaljer from './Detaljer'
 //import Kartlegging from './Kartlegging'
 //import Omrader from './Omrader'
 //import backend from '../backend'
 //import FactList from './FactList'
 import VectorPointInfo from './VectorPointInfo'
-import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down'
-import HardwareKeyboardArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up'
-import Collapsible from 'react-collapsible'
 
 function getHeaderStyle() {
   return {

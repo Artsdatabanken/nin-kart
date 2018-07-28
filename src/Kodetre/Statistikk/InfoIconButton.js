@@ -1,6 +1,6 @@
+import { IconButton } from '@material-ui/core'
+import InfoOutline from '@material-ui/icons/InfoOutlined'
 import React from 'react'
-import { IconButton } from 'material-ui'
-import InfoOutline from 'material-ui/svg-icons/action/info-outline'
 
 const InfoIconButton = ({ href }) => {
   return (

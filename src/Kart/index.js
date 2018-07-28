@@ -1,38 +1,33 @@
-import React, { Component } from 'react'
+// @flow
+//import Mapbox from './Mapbox'
+import React from 'react'
 import { withRouter } from 'react-router'
-import Mapbox from './Mapbox'
+import Tangram from './LeafletTangram'
 
-class Kart extends Component {
-  handleClick = point => {
-    const lngLat = point.lngLat
-    var found = false
-    if (point.features) {
-      point.features.forEach(feature => {
-        if (feature.properties && feature.properties.localId) {
-          this.props.setLocalId(feature.properties.localId)
-          found = true
-        }
-      })
-    }
-    if (!found) {
-      this.props.setLocalId('')
-    }
+type State = {}
 
-    this.props.history.push(`/punkt/${lngLat[0]},${lngLat[1]}`)
+type Props = {
+  history: Object,
+  onMapBoundsChange: Function,
+  mapStyle: String,
+  latitude: Number,
+  longitude: Number,
+  zoom: Number,
+  pitch: Number,
+  bearing: Number,
+  aktivKode: String,
+  aktiveLag: Array<string>,
+  opplystKode: String,
+  meta: Object,
+}
+
+class Kart extends React.Component<Props, State> {
+  onClick = latlng => {
+    this.props.history.push(`/punkt/${latlng.lng},${latlng.lat}`)
   }
 
   render() {
-    return (
-      <Mapbox
-        {...this.props}
-        onClick={this.handleClick}
-        onVisibilityChange={this.props.onVisibilityChange}
-        onMapBoundsChange={this.props.onMapBoundsChange}
-        categories={this.props.categories}
-        visibility={this.props.visibility}
-        mapStyle={this.props.mapStyle}
-      />
-    )
+    return <Tangram {...this.props} onClick={this.onClick} />
   }
 }
 

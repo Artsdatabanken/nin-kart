@@ -1,5 +1,5 @@
+import { SvgIcon } from '@material-ui/core'
 import React from 'react'
-import { SvgIcon } from 'material-ui'
 
 const NavigationChevronLeftDouble = props => (
   <SvgIcon {...props} style={{ position: 'relative', left: -12, top: -12 }}>

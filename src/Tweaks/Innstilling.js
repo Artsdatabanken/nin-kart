@@ -1,4 +1,4 @@
-import muiThemeable from 'material-ui/styles/muiThemeable'
+import { withTheme } from '@material-ui/core/styles'
 import React from 'react'
 import Label from './Label'
 const Innstilling = ({
@@ -7,16 +7,16 @@ const Innstilling = ({
   icon,
   disabled,
   children,
-  muiTheme,
+  theme,
 }) => (
   <div>
     {undertittel && (
       <div
         style={{
-          fontFamily: muiTheme.fontFamily,
+          fontFamily: theme.typography.fontFamily,
           position: 'absolute',
           right: 16,
-          color: muiTheme.palette.disabledColor,
+          color: theme.palette.text.disabled,
         }}
       >
         {undertittel}
@@ -42,4 +42,4 @@ const Innstilling = ({
   </div>
 )
 
-export default muiThemeable()(Innstilling)
+export default withTheme()(Innstilling)

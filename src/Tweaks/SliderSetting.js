@@ -1,4 +1,4 @@
-import { Slider } from 'material-ui'
+import { Slider } from '@material-ui/lab'
 import React from 'react'
 import Innstilling from './Innstilling'
 

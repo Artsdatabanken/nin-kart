@@ -1,0 +1,72 @@
+import:
+    - https://tangrams.github.io/blocks/filter/grain.yaml
+
+scene:
+    background:
+        color: '#fff'
+
+cameras:
+    cam:
+        type: flat
+
+lights:
+    dir:
+        type: directional
+        direction: [.1, .5, -1]
+        diffuse: .7
+        ambient: .5
+
+sources:
+    osm:
+        type: MVT
+        url: 'http://tiles.artsdatabanken.no/data/openstreetmap/{z}/{x}/{y}.pbf'
+        max_zoom: 14
+
+layers:
+    water:
+        data:
+            source: osm
+            layer: water
+        draw:
+            water:
+                order: 10
+                color: [0.4, 0.4, 0.4, 1.0]
+    waterway:
+        data:
+            source: osm
+            layer: waterway
+        draw:
+            lines:
+                order: 11
+                color: [0.4, 0.4, 0.4, 1.0]
+                width: 1.3px
+    transportation:
+        data:
+            source: osm
+            layer: transportation
+        draw:
+            lines:
+                order: 200
+                color: [0.3, 0.3, 0.3, 1.0]
+                width: 1.2px
+    boundary:
+        data:
+            source: osm
+            layer: boundary
+        draw:
+            boundary:
+                order: 150
+                color: [0.5, 0.5, 0.5, 0.8]
+                width: 3.2px
+styles:
+    water:
+        base: polygons
+        mix: filter-grain
+        shaders:
+            defines:
+                GRAIN_AMOUNT: .8
+                NUM_OCTAVES: 3
+    boundary:
+        base: lines
+        blend: overlay
+        dash: [2, 0.5]

@@ -1,25 +1,15 @@
 // @flow
 import React from 'react'
 import { withRouter } from 'react-router'
-import Kart from '../Kart'
-import {
-  NiN,
-  NiNHover,
-  darkMapStyle,
-  defaultMapStyle,
-  lightMapStyle,
-  satelliteStyle,
-  vintageMapStyle,
-} from '../Kart/Mapbox/MapStyle'
-import VenstreVinduContainer from '../VenstreVinduContainer'
 import backend from '../backend'
-import localStorageHelper from '../localStorageHelper'
+import Kart from '../Kart'
+import VenstreVinduContainer from '../VenstreVinduContainer'
 import MainDrawer from './MainDrawer'
 
 type State = {
   valgteKoder: Array<string>,
-  fjernKode: Array<string>,
-  baseMapStyle: Object,
+  language: Array<string>,
+  baseMapStyle: string,
   mapStyle: string,
   showMainDrawer: boolean,
   visValgte: boolean,
@@ -42,8 +32,8 @@ class Grunnkart extends React.Component<Props, State> {
     super(props)
     this.state = {
       valgteKoder: [],
-      fjernKode: [],
-      baseMapStyle: defaultMapStyle,
+      language: ['nb', 'la'],
+      baseMapStyle: 'aNiceDefault',
       mapStyle: '',
       showMainDrawer: false,
       visValgte: false,
@@ -59,61 +49,17 @@ class Grunnkart extends React.Component<Props, State> {
   }
 
   handleChangeBaseMap = type => {
-    let newStyle = defaultMapStyle
-    switch (type) {
-      case 'dark': {
-        newStyle = darkMapStyle
-        break
-      }
-      case 'vintage': {
-        newStyle = vintageMapStyle
-        break
-      }
-      case 'light': {
-        newStyle = lightMapStyle
-        break
-      }
-      case 'satellite': {
-        newStyle = satelliteStyle
-        break
-      }
-      default: {
-        break
-      }
-    }
-    this.setState(
-      {
-        baseMapStyle: newStyle,
-      },
-      () => {
-        this.addCustomLayers()
-      }
-    )
-  }
-
-  addCustomLayers() {
-    var origlayers = this.state.baseMapStyle.get('layers')
-    var firstSymbolId = origlayers.findIndex(function(obj) {
-      return obj.get('type') === 'symbol'
-    })
-
-    const layers = this.state.baseMapStyle
-      .get('layers')
-      //.splice(firstSymbolId, 0, NiNHover)
-      .splice(firstSymbolId, 0, NiN)
-      .push(NiNHover)
     this.setState({
-      mapStyle: this.state.baseMapStyle.set('layers', layers),
+      baseMapStyle: type,
     })
   }
 
-  handleMapBoundsChange = backend.debounce(function(bounds) {
+  handleMapBoundsChange = bounds => {
+    console.log(bounds)
     this.setState({ mapBounds: bounds })
-  }, 50)
+  }
 
-  handleFitBounds = backend.debounce(function(bbox) {
-    this.setState({ bbox: bbox })
-  }, 50)
+  handleFitBounds = bbox => this.setState({ bbox: bbox })
 
   visValgte = () => {
     this.setState({
@@ -126,64 +72,31 @@ class Grunnkart extends React.Component<Props, State> {
     })
   }
   addSelected = props => {
-    let koder = this.state.valgteKoder.slice()
-    let kodeFinnes = false
-    let kodeFinnesHosBarn = false
-    let verdiPaaEksisterendeKode = false
-    koder.forEach(valgtKode => {
-      if (valgtKode.kode === props.kode) {
-        kodeFinnes = true // finnes fra før
-      }
+    let koder = this.state.valgteKoder
+    koder.push({
+      farge: props.farge,
+      kode: props.kode,
+      sti: props.sti,
+      tittel: props.tittel,
+      barn: props.barn,
+      bbox: props.bbox,
     })
-    if (!kodeFinnes) {
-      // sjekk om kode finnes som barn av annen forelder
-      koder.forEach(valgtKode => {
-        Object.keys(valgtKode.barn).forEach(id => {
-          if (valgtKode.barn[id].kode === props.kode) {
-            kodeFinnesHosBarn = true // finnes fra før
-            verdiPaaEksisterendeKode = valgtKode.barn[id].vis
-          }
-        })
-      })
 
-      if (props.barn) {
-        Object.keys(props.barn).forEach(kode => {
-          const item = props.barn[kode]
-          item.kode = kode
-          item.vis = kodeFinnesHosBarn ? verdiPaaEksisterendeKode : true
-        })
-      }
-      koder.push({
-        // Forelder
-        farge: props.farge,
-        kode: props.kode,
-        sti: props.sti,
-        tittel: props.tittel,
-        vis: kodeFinnesHosBarn ? verdiPaaEksisterendeKode : true,
-        barn: props.barn,
-        removable: true,
-        bbox: props.bbox,
-      })
-
-      this.setState({
-        valgteKoder: koder,
-        visValgte: true,
-        fjernKode: [],
-      })
-    }
+    this.setState({
+      valgteKoder: koder,
+      visValgte: true,
+    })
   }
-  handleToggleLayer = (kode, state) => {
-    if (state) this.addSelected(this.state.meta)
+
+  handleToggleLayer = (kode, enabled) => {
+    if (enabled) this.addSelected(this.state.meta)
     else {
       const koder = this.state.valgteKoder.filter(barn => barn.kode !== kode)
       this.setState({
         valgteKoder: koder,
         visValgte: true,
-        fjernKode: [kode],
       })
     }
-
-    this.props.history.push('/')
   }
 
   componentDidMount() {
@@ -217,11 +130,7 @@ class Grunnkart extends React.Component<Props, State> {
         this.redirectTo(newUrl)
         return
       }
-      if (data.barn && Object.keys(data.barn).length > 100) {
-        data.barn = { mange: { tittel: { nb: 'TODO i grunnkart.js' } } }
-      }
-      localStorageHelper.overrideFarger(data)
-      this.setState({ meta: data ? data : '' })
+      this.setState({ meta: data })
     })
   }
 
@@ -233,63 +142,25 @@ class Grunnkart extends React.Component<Props, State> {
   }
 
   handleRemoveSelectedLayer = kode => {
-    let meta = this.state.valgteKoder
-    let remove = -1
-    Object.keys(meta).forEach(id => {
-      if (meta[id].kode === kode) {
-        remove = id
-      }
+    let aktive = this.state.valgteKoder
+    delete aktive[kode]
+    this.setState({
+      valgteKoder: aktive,
     })
-    if (remove >= 0) {
-      const removeLayers = ['valgt' + kode]
-      Object.keys(meta[remove].barn).forEach(barnKode => {
-        removeLayers.push('valgt' + barnKode)
-      })
-      meta.splice(remove, 1)
-      this.setState({
-        valgteKoder: meta,
-        fjernKode: removeLayers,
-      })
-    }
   }
 
   handleToggleVisible = (kode, overstyr, verdi) => {
-    let meta = this.state.valgteKoder
-    let overstyrteBarneKoder = []
-    let overstyrtVerdi = false
-    Object.keys(meta).forEach(id => {
-      const forelder = meta[id]
-      let overstyrBarn = false
+    console.log('handleToggleVisible')
+    let aktive = this.state.valgteKoder
+    Object.keys(aktive).forEach(id => {
+      const forelder = aktive[id]
       if (forelder.kode === kode) {
         forelder.vis = overstyr ? verdi : !forelder.vis
-        overstyrtVerdi = forelder.vis
-        overstyrBarn = true
-      }
-      if (forelder.barn) {
-        Object.keys(forelder.barn).forEach(barnId => {
-          const barn = forelder.barn[barnId]
-          if (overstyrBarn) {
-            barn.vis = forelder.vis
-            overstyrteBarneKoder.push(barn.kode)
-          } else if (barn.kode === kode) {
-            barn.vis = overstyr ? verdi : !barn.vis
-          }
-        })
       }
     })
-    // sjekk om noen av barna som ble overstyrt også finnes som foreldre i lista
-    if (overstyrteBarneKoder.length > 0) {
-      Object.keys(meta).forEach(id => {
-        const forelder = meta[id]
-        if (overstyrteBarneKoder.indexOf(forelder.kode) >= 0) {
-          // recursive call with the toggled code
-          this.handleToggleVisible(forelder.kode, true, overstyrtVerdi)
-        }
-      })
-    }
 
     this.setState({
-      valgteKoder: meta,
+      valgteKoder: aktive,
       vis: !this.state.vis,
     })
   }
@@ -331,23 +202,11 @@ class Grunnkart extends React.Component<Props, State> {
           zoom={3}
           pitch={0}
           bearing={0}
-          mapStyle={this.state.mapStyle}
-          aktivKode={!this.state.visValgte ? aktivKode : ''}
-          opplystKode={!this.state.visValgte ? this.state.opplystKode : ''}
-          valgteKoder={this.state.visValgte ? this.state.valgteKoder : []}
-          fjernKode={this.state.fjernKode ? this.state.fjernKode : []}
-          onMapBoundsChange={bounds => this.handleMapBoundsChange(bounds)}
-          setLocalId={localId => {
-            if (localId !== this.state.localId) {
-              this.setState({ localId: localId, visValgte: false })
-            } else if (this.state.visValgte) {
-              this.setState({ visValgte: false })
-            }
-          }}
+          aktivKode={aktivKode}
+          aktiveLag={this.state.valgteKoder}
+          opplystKode={this.state.opplystKode}
+          onMapBoundsChange={this.handleMapBoundsChange}
           meta={this.state.meta}
-          bbox={this.state.bbox}
-          oppdaterSkjulLag={this.state.vis}
-          oppdaterFarger={this.state.refresh}
         />
 
         <MainDrawer

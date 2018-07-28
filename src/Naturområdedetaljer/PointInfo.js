@@ -1,5 +1,5 @@
-import { Avatar, ListItem } from 'material-ui'
-import InfoOutline from 'material-ui/svg-icons/action/info-outline'
+import { Avatar, ListItem } from '@material-ui/core'
+import InfoOutline from '@material-ui/icons/InfoOutlined'
 import React from 'react'
 import { withRouter } from 'react-router'
 import { Route } from 'react-router-dom'

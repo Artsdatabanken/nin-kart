@@ -1,19 +1,19 @@
-import React from 'react'
-import muiThemeable from 'material-ui/styles/muiThemeable'
 import typesystem from '@artsdatabanken/typesystem'
+import { withTheme } from '@material-ui/core/styles'
+import React from 'react'
 
 class Kodetagg extends React.Component {
   render() {
+    const { kode } = this.props
     const styles = {
       chip: {
         fontWeight: 600,
         paddingLeft: '2px',
         paddingRight: '4px',
         float: 'left',
-        color: this.props.muiTheme.palette.accentColor2,
+        color: this.props.theme.palette.secondary.main,
       },
     }
-    const { kode } = this.props
     const tekst = this.props.hele ? kode : this.sisteDelAvKoden(kode)
     return (
       <span title={kode} style={styles.chip}>
@@ -27,4 +27,4 @@ class Kodetagg extends React.Component {
   }
 }
 
-export default muiThemeable()(Kodetagg)
+export default withTheme()(Kodetagg)
