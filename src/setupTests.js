@@ -5,6 +5,7 @@ configure({ adapter: new Adapter() })
 
 //jest.mock('@material-ui/core/Tooltip')
 jest.mock('@material-ui/lab/Slider')
+jest.mock('@material-ui/core/Button')
 jest.mock('@material-ui/core/Drawer')
 jest.mock('@material-ui/core/TextField', () => 'TextField')
 jest.mock('@material-ui/core/Tooltip')

@@ -160,22 +160,6 @@ class Backend {
     '7': 'Egenskapsområde',
   })
 
-  // TODO: Pek på assets
-  static getCompanyLogo(navn: string) {
-    navn = navn || 'MDIR'
-    navn = navn.toLowerCase()
-    switch (navn) {
-      case 'mdir':
-        return 'https://pbs.twimg.com/profile_images/378800000067455227/3d053db6b9593d47a02ced7709846522_400x400.png'
-      case 'adb':
-        return 'https://pbs.twimg.com/profile_images/882873307133083648/_1-mmxih_400x400.jpg'
-      case 'biofokus':
-        return 'https://www.artsdatabanken.no/Media/F7355'
-      default:
-        return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2F${navn}.jpg?alt=media`
-    }
-  }
-
   static getFotoOmslag(kode: string, width: number = 408) {
     return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fomslag%2F${width}%2F${kode}.jpg?alt=media`
   }

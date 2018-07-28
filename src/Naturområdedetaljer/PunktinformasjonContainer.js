@@ -86,7 +86,6 @@ class PunktinformasjonContainer extends Component {
     var natureAreaPointInfo = {
       name: name,
       value: value,
-      logo: backend.getCompanyLogo('MDIR'),
       homepage: 'http://www.miljodirektoratet.no/',
       dataorigin: 'MDIR',
       part: part,
@@ -109,7 +108,6 @@ class PunktinformasjonContainer extends Component {
     return {
       name: name,
       value: value,
-      logo: backend.getCompanyLogo('ADB'),
       homepage: 'https://artsdatabanken.no/',
       dataorigin: 'ADB',
       article: 'https://www.artsdatabanken.no/rodlistefornaturtyper',
@@ -119,7 +117,6 @@ class PunktinformasjonContainer extends Component {
     var pointInfo = {
       name: name,
       value: value,
-      logo: backend.getCompanyLogo(company),
       homepage: url || 'http://www.miljodirektoratet.no/',
       dataorigin: company,
     }
@@ -145,7 +142,6 @@ class PunktinformasjonContainer extends Component {
       LokalId: {
         value: id,
         name: 'Naturområde',
-        logo: backend.getCompanyLogo('MDIR'),
         homepage: 'http://www.miljodirektoratet.no/',
         dataorigin: 'MDIR',
         // url: props[i].homesite ? props[i].homesite : 'mailto:' + props[i].email,
@@ -164,7 +160,6 @@ class PunktinformasjonContainer extends Component {
           }
           facts[this.MetadataDictionary[i]] = {
             value: value,
-            logo: backend.getCompanyLogo('MDIR'),
             homepage: 'http://www.miljodirektoratet.no/',
             dataorigin: 'MDIR',
             url: props[i].homesite
@@ -180,7 +175,6 @@ class PunktinformasjonContainer extends Component {
               value: props[i].description
                 ? props[i].name + ', ' + props[i].description
                 : props[i].name,
-              logo: backend.getCompanyLogo('MDIR'),
               homepage: 'http://www.miljodirektoratet.no/',
               dataorigin: 'MDIR',
               url: '',
@@ -193,7 +187,6 @@ class PunktinformasjonContainer extends Component {
           facts[this.MetadataDictionary[i]] = {
             value: props.surveyedFrom ? props.surveyedFrom : props.surveyScale,
             name: this.MetadataDictionary[i],
-            logo: backend.getCompanyLogo('MDIR'),
             homepage: 'http://www.miljodirektoratet.no/',
             dataorigin: 'MDIR',
           }

@@ -54,7 +54,6 @@ class Polygon extends Component {
         {item &&
           item.sti && (
             <Button
-              label="Info"
               color="primary"
               onClick={() => {
                 if (item && item.sti) {
@@ -62,13 +61,14 @@ class Polygon extends Component {
                 }
               }}
               icon={<ActionInfo />}
-            />
+            >
+              Info
+            </Button>
           )}
 
         {item &&
           item.bbox && (
             <Button
-              label={'Vis i kart'}
               color="primary"
               onClick={() => {
                 if (item && item.bbox) {
@@ -76,7 +76,9 @@ class Polygon extends Component {
                 }
               }}
               icon={<ZoomIn />}
-            />
+            >
+              Vis i kart
+            </Button>
           )}
       </React.Fragment>
     )
