@@ -1,7 +1,7 @@
-import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { muiTheme } from 'storybook-addon-material-ui'
+import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
+import { muiTheme } from 'storybook-addon-material-ui'
 import Grunnkart from './Grunnkart'
 
 storiesOf('Grunnkart', module)
@@ -9,9 +9,7 @@ storiesOf('Grunnkart', module)
   .add('Rot', () => {
     return (
       <div style={{ padding: 8 }}>
-        <MemoryRouter>
-          <Grunnkart />
-        </MemoryRouter>
+        <MemoryRouter>{false && <Grunnkart />}</MemoryRouter>
       </div>
     )
   })
