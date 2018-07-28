@@ -33,51 +33,16 @@ class MainDrawer extends Component {
           }
           disabled
         />
-        <MenuItem
-          onClick={() => {
-            this.props.handleChangeBaseMap('')
-          }}
-        >
-          Basiskart
-        </MenuItem>
-        <MenuItem
-          onClick={() => {
-            this.props.onToggleMainDrawer()
-            this.props.handleChangeBaseMap('dark')
-          }}
-        >
-          Basiskart - Mørk
-        </MenuItem>
-        <MenuItem
-          onClick={() => {
-            this.props.onToggleMainDrawer()
-            this.props.handleChangeBaseMap('vintage')
-          }}
-        >
-          Basiskart - Gammel
-        </MenuItem>
-        <MenuItem
-          onClick={() => {
-            this.props.onToggleMainDrawer()
-            this.props.handleChangeBaseMap('light')
-          }}
-        >
-          Basiskart - Lyst
-        </MenuItem>
-        <MenuItem
-          onClick={() => {
-            this.props.onToggleMainDrawer()
-            this.props.handleChangeBaseMap('satellite')
-          }}
-        >
-          Flyfoto
-        </MenuItem>
         <hr />
         <MenuItem>Del eller bygg inn kartet</MenuItem>
         <MenuItem>Skriv ut</MenuItem>
-        <MenuItem>Send tilbakemeldinger</MenuItem>
-        <hr />
-        <MenuItem>Søkeinnstillinger</MenuItem>
+        <MenuItem
+          onClick={() => {
+            window.open('https://github.com/Artsdatabanken/ratatouille/issues')
+          }}
+        >
+          Send tilbakemeldinger
+        </MenuItem>
       </Drawer>
     )
   }

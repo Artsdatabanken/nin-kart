@@ -11,7 +11,6 @@ storiesOf('MainDrawer', module)
     <MuiThemeProvider>
       <div>
         <MainDrawer
-          handleChangeBaseMap={action('handleChangeBaseMap')}
           open={true}
           onToggleMainDrawer={action('onToggleMainDrawer')}
         />

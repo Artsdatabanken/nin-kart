@@ -9,7 +9,6 @@ import MainDrawer from './MainDrawer'
 type State = {
   valgteKoder: Array<string>,
   language: Array<string>,
-  baseMapStyle: string,
   mapStyle: string,
   showMainDrawer: boolean,
   visValgte: boolean,
@@ -33,7 +32,6 @@ class Grunnkart extends React.Component<Props, State> {
     this.state = {
       valgteKoder: [],
       language: ['nb', 'la'],
-      baseMapStyle: 'aNiceDefault',
       mapStyle: '',
       showMainDrawer: false,
       visValgte: false,
@@ -46,12 +44,6 @@ class Grunnkart extends React.Component<Props, State> {
       refresh: false,
     }
     //    this.redirectTo(props.location.pathname.replace('/katalog/', ''))
-  }
-
-  handleChangeBaseMap = type => {
-    this.setState({
-      baseMapStyle: type,
-    })
   }
 
   handleMapBoundsChange = bounds => {
@@ -100,7 +92,6 @@ class Grunnkart extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    this.handleChangeBaseMap()
     this.fetchMeta(this.props.location.pathname)
   }
 
@@ -210,7 +201,6 @@ class Grunnkart extends React.Component<Props, State> {
         />
 
         <MainDrawer
-          handleChangeBaseMap={this.handleChangeBaseMap}
           open={this.state.showMainDrawer}
           onToggleMainDrawer={() =>
             this.setState({ showMainDrawer: !this.state.showMainDrawer })
