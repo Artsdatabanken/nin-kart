@@ -4,6 +4,7 @@ import React from 'react'
 
 class Kodetagg extends React.Component {
   render() {
+    const { kode } = this.props
     const styles = {
       chip: {
         fontWeight: 600,
@@ -13,7 +14,6 @@ class Kodetagg extends React.Component {
         color: this.props.theme.palette.secondary.main,
       },
     }
-    const { kode } = this.props
     const tekst = this.props.hele ? kode : this.sisteDelAvKoden(kode)
     return (
       <span title={kode} style={styles.chip}>

@@ -1,8 +1,11 @@
 // @flow
-import { ListItem, ListItemSecondaryAction } from '@material-ui/core'
+import {
+  ListItem,
+  ListItemIcon,
+  ListItemSecondaryAction,
+} from '@material-ui/core'
 import ListItemText from '@material-ui/core/ListItemText'
 import { withTheme } from '@material-ui/core/styles'
-import { Avatar } from 'material-ui'
 import React from 'react'
 import prettyprint from '../../prettyprint'
 import språk from '../../språk'
@@ -76,9 +79,9 @@ class Kodelisteelement extends React.Component<Props, State> {
         onMouseEnter={() => this.props.onMouseEnter(kode)}
         onMouseLeave={() => this.props.onMouseLeave()}
       >
-        <Avatar>
+        <ListItemIcon>
           <Bildeavatar utenRamme={avatarUtenRamme} kode={kode} />
-        </Avatar>
+        </ListItemIcon>
         <ListItemSecondaryAction>
           <div
             style={{

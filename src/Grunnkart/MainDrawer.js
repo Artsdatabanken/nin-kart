@@ -4,7 +4,6 @@ import React, { Component } from 'react'
 import NavigationChevronLeftDouble from './NavigationChevronLeftDouble'
 class MainDrawer extends Component {
   render() {
-    console.log(this.props)
     return (
       <Drawer
         docked={false}

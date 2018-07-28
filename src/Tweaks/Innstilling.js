@@ -7,16 +7,16 @@ const Innstilling = ({
   icon,
   disabled,
   children,
-  muiTheme,
+  theme,
 }) => (
   <div>
     {undertittel && (
       <div
         style={{
-          fontFamily: muiTheme.fontFamily,
+          fontFamily: theme.typography.fontFamily,
           position: 'absolute',
           right: 16,
-          color: muiTheme.palette.disabledColor,
+          color: theme.palette.text.disabled,
         }}
       >
         {undertittel}

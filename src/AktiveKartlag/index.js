@@ -122,14 +122,15 @@ class AktiveKartlag extends React.Component {
         />
         <Button
           icon={<MapsLayers />}
-          label="Katalog"
           primary
           style={{ margin: 16, float: 'right' }}
           onClick={() => {
             history.push('/katalog/')
             this.props.visKatalog()
           }}
-        />
+        >
+          Katalog
+        </Button>
       </div>
     )
   }

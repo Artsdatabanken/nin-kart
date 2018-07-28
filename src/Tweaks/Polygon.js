@@ -38,7 +38,6 @@ class Polygon extends Component {
         {item &&
           item.removable && (
             <Button
-              label="Fjern"
               color="primary"
               onClick={e => {
                 if (item && item.kode) {
@@ -47,7 +46,9 @@ class Polygon extends Component {
                 }
               }}
               icon={<ActionDelete />}
-            />
+            >
+              Fjern
+            </Button>
           )}
 
         {item &&

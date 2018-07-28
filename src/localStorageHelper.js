@@ -4,6 +4,7 @@ class LocalStorageHelper {
     customColors = localStorage.getItem('customColors')
     return customColors
   }
+
   static settFargeKode(kode, farge) {
     let farger = JSON.parse(localStorage.getItem('customColors') || '[]')
     farger = farger.filter(x => x.kode !== kode)

@@ -49,7 +49,6 @@ class Grunnkart extends React.Component<Props, State> {
   }
 
   handleChangeBaseMap = type => {
-    console.log(type)
     this.setState({
       baseMapStyle: type,
     })

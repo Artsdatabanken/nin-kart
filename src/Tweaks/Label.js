@@ -1,18 +1,18 @@
 import { withTheme } from '@material-ui/core/styles'
 import React from 'react'
 
-const Label = ({ children, style, disabled, muiTheme }) => (
+const Label = ({ children, style, disabled, theme }) => (
   <div
     style={{
       position: 'relative',
       float: 'left',
       left: 56,
-      fontFamily: muiTheme.fontFamily,
+      fontFamily: theme.typography.fontFamily,
       fontSize: 16,
       fontWeight: 400,
       color: disabled
-        ? muiTheme.palette.disabledColor
-        : muiTheme.palette.textColor,
+        ? theme.palette.text.disabled
+        : theme.palette.text.primary,
       ...style,
     }}
   >
