@@ -23,15 +23,16 @@ class Kodekort extends React.Component {
 
   render() {
     const { kode } = this.props
-    const srcSet = `${backend.getFotoOmslag(
-      kode,
-      612
-    )} 1.5x, ${backend.getFotoOmslag(kode, 816)} 2x`
     return (
       <Card containerStyle={{ padding: 0 }}>
         <CardMedia
           overlay={null}
-          style={{ height: 297, maxHeight: 297 }}
+          style={{
+            height: 297,
+            maxHeight: 297,
+            minHeight: 297,
+            objectFit: 'cover',
+          }}
           onClick={() => this.handleOpen()}
           image={backend.getFotoOmslag(kode)}
           onError={e => {
@@ -39,12 +40,6 @@ class Kodekort extends React.Component {
             if (e.target.src !== brokenImage) e.target.src = brokenImage
           }}
           alt=""
-          style={{
-            minHeight: 297,
-            height: 297,
-            maxHeight: 297,
-            objectFit: 'cover',
-          }}
         />
         <Tittelblokk
           tittel={språk(this.props.tittel)}
