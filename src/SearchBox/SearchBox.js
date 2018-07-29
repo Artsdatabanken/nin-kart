@@ -1,4 +1,4 @@
-import { TextField } from '@material-ui/core'
+import Input from '@material-ui/core/Input'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import getNext from '../componentid'
@@ -19,7 +19,7 @@ export default class SearchBox extends Component {
   render() {
     const { query, tittel } = this.props
     return (
-      <TextField
+      <Input
         ref={tf => (this.textField = tf)}
         onKeyDown={this.handleKeyDown}
         id={getNext()}

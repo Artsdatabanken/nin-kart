@@ -1,11 +1,29 @@
-import AppBar from '@material-ui/core/AppBar'
+import { AppBar, Toolbar } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
-import Search from '@material-ui/icons/Search'
+import { withStyles } from '@material-ui/core/styles'
 import NavigationBack from '@material-ui/icons/ArrowBack'
 import CloseIcon from '@material-ui/icons/Close'
 import Hamburger from '@material-ui/icons/Menu'
+import Search from '@material-ui/icons/Search'
 import React, { Component } from 'react'
 import SearchBox from '../SearchBox/SearchBox'
+
+const styles = {
+  root: {
+    position: 'absolute',
+    left: 8,
+    top: 8,
+    width: 392,
+    backgroundColor: '#fff',
+  },
+  toolbar: {
+    padding: 0,
+  },
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20,
+  },
+}
 
 class TopBar extends Component {
   constructor(props) {
@@ -34,80 +52,39 @@ class TopBar extends Component {
   }
 
   render() {
+    const { classes } = this.props
     return (
-      <AppBar
-        style={{ backgroundColor: '#ffffff' }}
-        title={
-          <div style={{ lineHeight: '24px' }}>
-            <SearchBox
-              query={this.props.query}
-              tittel={this.props.tittel}
-              onQueryChange={this.props.onQueryChange}
-            />
-          </div>
-        }
-        iconElementLeft={
-          this.props.isAtRoot ? (
+      <AppBar position="sticky" className={classes.root}>
+        <Toolbar variant="dense" className={classes.toolbar}>
+          {this.props.isAtRoot ? (
             <IconButton onClick={this.props.onToggleMainDrawer}>
-              <Hamburger color="#5f5f5f" />
+              <Hamburger />
             </IconButton>
           ) : (
             <IconButton onClick={this.props.onGoBack}>
-              <NavigationBack color="#5f5f5f" />
+              <NavigationBack />
             </IconButton>
-          )
-        }
-        iconElementRight={
-          <React.Fragment>
-            <IconButton onClick={this.handleSearchButtonClick}>
-              <Search color="#b4b4b4" />
+          )}
+          <SearchBox
+            query={this.props.query}
+            tittel={this.props.tittel}
+            onQueryChange={this.props.onQueryChange}
+          />
+          <IconButton onClick={this.handleSearchButtonClick}>
+            <Search color="#b4b4b4" />
+          </IconButton>
+          {!this.props.isAtRoot && (
+            <IconButton
+              onClick={this.props.onExitToRoot}
+              style={{ position: 'relative' }}
+            >
+              <CloseIcon color="#b4b4b4" />
             </IconButton>
-            <IconButton onClick={this.props.invertMinimized}>
-              {this.props.minimized ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                >
-                  <path d="M5 8l4 4 4-4z" />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                >
-                  <path d="M9 6l-4 4h8z" />
-                </svg>
-              )}
-            </IconButton>
-            {!this.props.isAtRoot && (
-              <React.Fragment>
-                <div
-                  style={{
-                    position: 'absolute',
-                    height: 25,
-                    borderLeft: '1px solid #ddd',
-                    marginTop: 12,
-                    top: 0,
-                    right: 55,
-                  }}
-                />
-                <IconButton
-                  onClick={this.props.onExitToRoot}
-                  style={{ position: 'relative' }}
-                >
-                  <CloseIcon color="#b4b4b4" />
-                </IconButton>
-              </React.Fragment>
-            )}
-          </React.Fragment>
-        }
-      />
+          )}
+        </Toolbar>
+      </AppBar>
     )
   }
 }
 
-export default TopBar
+export default withStyles(styles)(TopBar)
