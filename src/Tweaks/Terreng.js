@@ -1,8 +1,8 @@
+import { ListSubheader } from '@material-ui/core'
 import { withTheme } from '@material-ui/core/styles'
 import Landscape from '@material-ui/icons/Landscape'
 import SwapVert from '@material-ui/icons/SwapVert'
 import React, { Component } from 'react'
-import Overskrift from '../Overskrift'
 import SliderSetting from './SliderSetting'
 import Veksle from './Veksle'
 class Terreng extends Component {
@@ -17,7 +17,7 @@ class Terreng extends Component {
     } = this.props
     return (
       <React.Fragment>
-        <Overskrift>Terreng</Overskrift>
+        <ListSubheader>Terreng</ListSubheader>
         <SliderSetting
           value={vertikaltOverdriv}
           min={1}
@@ -33,7 +33,7 @@ class Terreng extends Component {
           checked={visEtikettTopp}
           onClick={() => onUpdateLayerProp('visEtikettTopp', !visEtikettTopp)}
         />
-        <Overskrift>Kontur (trinndelt høydevisualisering)</Overskrift>
+        <ListSubheader>Kontur (trinndelt høydevisualisering)</ListSubheader>
         <Veksle
           tittel="Konturlinjer"
           checked={visKontur}

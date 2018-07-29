@@ -26,7 +26,6 @@ type Props = {
 class Kodelisteelement extends React.Component<Props, State> {
   render() {
     const { meta, kode, avatarUtenRamme, areal } = this.props
-    console.warn(meta.farge)
     return (
       <React.Fragment>
         <ListItem
@@ -36,6 +35,7 @@ class Kodelisteelement extends React.Component<Props, State> {
           onMouseEnter={() => this.props.onMouseEnter(kode)}
           onMouseLeave={() => this.props.onMouseLeave()}
           style={{ zIndex: 0 }}
+          button={true}
         >
           <VolumIndikator
             størsteAreal={this.props.størsteAreal}

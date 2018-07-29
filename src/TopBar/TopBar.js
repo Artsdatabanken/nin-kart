@@ -10,7 +10,7 @@ import SearchBox from '../SearchBox/SearchBox'
 
 const styles = {
   root: {
-    position: 'absolute',
+    position: 'fixed',
     left: 8,
     top: 8,
     width: 392,

@@ -140,22 +140,6 @@ class Grunnkart extends React.Component<Props, State> {
     })
   }
 
-  handleToggleVisible = (kode, overstyr, verdi) => {
-    console.log('handleToggleVisible')
-    let aktive = this.state.valgteKoder
-    Object.keys(aktive).forEach(id => {
-      const forelder = aktive[id]
-      if (forelder.kode === kode) {
-        forelder.vis = overstyr ? verdi : !forelder.vis
-      }
-    })
-
-    this.setState({
-      valgteKoder: aktive,
-      vis: !this.state.vis,
-    })
-  }
-
   updateColor(kode, farge) {
     let meta = this.state.valgteKoder
     Object.keys(meta).forEach(id => {
@@ -216,7 +200,6 @@ class Grunnkart extends React.Component<Props, State> {
               })
             }
             mapBounds={this.state.mapBounds}
-            onToggleVisible={this.handleToggleVisible}
             onMouseEnter={kode => this.setState({ opplystKode: kode })}
             onMouseLeave={kode =>
               this.setState({

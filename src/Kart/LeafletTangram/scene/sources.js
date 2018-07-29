@@ -1,4 +1,9 @@
 const sources = {
+  AO: {
+    type: 'MVT',
+    url: 'http://tiles.artsdatabanken.no/data/AO/{z}/{x}/{y}.pbf',
+    max_zoom: 11,
+  },
   BS: {
     type: 'MVT',
     url: 'http://tiles.artsdatabanken.no/data/NA/{z}/{x}/{y}.pbf',

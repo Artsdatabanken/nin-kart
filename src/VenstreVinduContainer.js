@@ -75,10 +75,10 @@ class VenstreVinduContainer extends React.Component {
               backgroundColor: '#f5f5f5',
               position: 'absolute',
               left: 0,
-              top: 0,
-              height: '100%',
-              width: window.innerWidth < 600 ? window.innerWidth : 408,
               padding: 0,
+              paddingTop: 48,
+              height: '100vw',
+              width: window.innerWidth < 600 ? window.innerWidth : 408,
               zIndex: -10,
               overflowY: 'auto',
               overflowX: 'hidden',
@@ -138,11 +138,9 @@ class VenstreVinduContainer extends React.Component {
                   return (
                     <AktiveKartlag
                       style={{ backgroundColor: '#eee' }}
-                      title="Aktiverte lag"
                       koder={this.props.valgteKoder}
                       onMouseEnter={this.props.onMouseEnter}
                       onMouseLeave={this.props.onMouseLeave}
-                      onToggleVisible={this.props.onToggleVisible}
                       onRemoveSelectedLayer={this.props.onRemoveSelectedLayer}
                       visKatalog={this.props.visKatalog}
                     />

@@ -107,7 +107,6 @@ storiesOf('PolygonlagElement', module)
           onMouseLeave={action('mouseLeave')}
           onRemove={action('onRemove')}
           onClick={action('onClick')}
-          onToggleVisible={action('onToggleVisible')}
         />
       </MemoryRouter>
     </div>

@@ -10,13 +10,12 @@ function createLayer(kode, barn) {
   const prefix = kode.substring(0, 2)
   r.data = { source: prefix, layer: prefix }
   Object.keys(barn).forEach(subkode => {
-    console.log(kode, subkode, barn[subkode].farge)
     const sub = {
       filter: { [subkode]: true },
       draw: {
         _multiply: {
           order: 100,
-          color: barn[subkode].farge,
+          color: barn[subkode].farge || '#f44',
         },
         lines: {
           order: 90,
@@ -27,7 +26,6 @@ function createLayer(kode, barn) {
     }
     r[subkode] = sub
   })
-  console.log('r', r)
   return { [kode]: r }
 }
 
