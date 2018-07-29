@@ -38,13 +38,13 @@ class Kartlagelement extends React.Component {
                 }}
               />
             )}
+          </Avatar>
+          <Avatar>
             <PaintSwatch farge={farge} />
           </Avatar>
           <ListItemText primary={tittel} secondary={undertittel} />
           <ListItemSecondaryAction>
-            <IconButton aria-label="Comments">
-              {this.props.rightIcon}
-            </IconButton>
+            <IconButton>{this.props.rightIcon}</IconButton>
             {!this.props.rightIcon &&
               kanFlyttes && (
                 <Reorder

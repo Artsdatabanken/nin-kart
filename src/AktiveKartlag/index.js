@@ -111,7 +111,7 @@ class AktiveKartlag extends React.Component {
         />
         <TerrenglagElement
           key="terreng"
-          meta={{ tittel: { nb: '3D terreng' } }}
+          meta={{ tittel: { nb: ' 3D terreng' } }}
           vis={true}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
