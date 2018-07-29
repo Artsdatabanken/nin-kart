@@ -88,7 +88,7 @@ class LeafletTangram extends React.Component {
   render() {
     return (
       <div
-        style={{ zIndex: 0, cursor: 'default' }}
+        style={{ zIndex: -100, cursor: 'default' }}
         ref={ref => {
           this.mapEl = ref
         }}

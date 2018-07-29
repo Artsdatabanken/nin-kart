@@ -1,7 +1,7 @@
 import React from 'react'
 import Checkboard from './Checkboard'
 
-const PaintSwatch = ({ farge, onClick, muiTheme }) => (
+const PaintSwatch = ({ color, onClick, muiTheme }) => (
   <div
     style={{
       right: '14px',
@@ -11,7 +11,7 @@ const PaintSwatch = ({ farge, onClick, muiTheme }) => (
   >
     <Checkboard
       borderRadius="12%"
-      color={farge}
+      color={color}
       style={{
         border: '1px solid hsla(0, 0%, 0%, 0.2)',
       }}
