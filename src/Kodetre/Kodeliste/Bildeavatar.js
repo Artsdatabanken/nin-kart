@@ -1,15 +1,27 @@
 import { Avatar } from '@material-ui/core'
+import { withStyles } from '@material-ui/core/styles'
 import React, { Component } from 'react'
 import backend from '../../backend'
+
+const styles = {
+  utenRamme: {
+    borderRadius: 0,
+  },
+  img: {
+    objectFit: 'contain',
+  },
+}
+
 class BildeAvatar extends Component {
   render() {
-    const { kode, utenRamme } = this.props
+    const { classes, kode, utenRamme } = this.props
     return (
       <Avatar
-        alt="fargevelger"
-        style={Object.assign(utenRamme ? { borderRadius: 0 } : {}, {
-          backgroundColor: 'transparent',
-        })}
+        alt="logo"
+        classes={{
+          root: utenRamme && classes.utenRamme,
+          img: classes.img,
+        }}
         src={backend.avatar40px(kode)}
         onError={e => {
           const brokenAvatar = backend.avatar40px('~', 40)
@@ -20,4 +32,4 @@ class BildeAvatar extends Component {
   }
 }
 
-export default BildeAvatar
+export default withStyles(styles)(BildeAvatar)

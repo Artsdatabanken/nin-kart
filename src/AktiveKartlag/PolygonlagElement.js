@@ -70,7 +70,6 @@ class PolygonlagElement extends React.Component {
         }}
         vis={this.props.vis}
         indent={this.props.indent}
-        onToggleVisible={kode => this.props.onToggleVisible(kode)}
         tittel={
           <div>
             {språk(tittel)}

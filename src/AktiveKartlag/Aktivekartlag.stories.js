@@ -16,7 +16,6 @@ storiesOf('Aktive kartlag', module)
           koder={koder}
           onMouseEnter={action('mouseEnter')}
           onMouseLeave={action('mouseLeave')}
-          onToggleVisible={action('onToggleVisible')}
           onRemoveSelectedLayer={action('onRemoveSelectedLayer')}
         />
       </MemoryRouter>

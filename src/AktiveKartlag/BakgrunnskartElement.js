@@ -9,7 +9,6 @@ class BakgrunnskartElement extends Component {
         tittel="Bakgrunnskart"
         undertittel="Mørk grå"
         farge="#404040"
-        onToggleVisible={this.props.onToggleVisible}
         kanFlyttes={false}
       />
     )

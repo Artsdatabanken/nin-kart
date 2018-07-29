@@ -1,15 +1,14 @@
+import { ListSubheader } from '@material-ui/core'
 import React from 'react'
 import { CustomPicker } from 'react-color'
 import ChromePointer from 'react-color/lib/components/chrome/ChromePointer'
 import ChromePointerCircle from 'react-color/lib/components/chrome/ChromePointerCircle'
 import { Alpha, Hue, Saturation } from 'react-color/lib/components/common'
-import Overskrift from '../Overskrift'
-
 class ColorPicker extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Overskrift>Farge</Overskrift>
+        <ListSubheader>Farge</ListSubheader>
         <Blokk height={256}>
           <Saturation
             pointer={ChromePointerCircle}

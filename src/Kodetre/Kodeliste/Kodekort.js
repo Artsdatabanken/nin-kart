@@ -26,12 +26,11 @@ class Kodekort extends React.Component {
     return (
       <Card containerStyle={{ padding: 0 }}>
         <CardMedia
-          overlay={null}
+          overlay={'abc'}
           style={{
             height: 297,
-            maxHeight: 297,
             minHeight: 297,
-            objectFit: 'cover',
+            maxHeight: 297,
           }}
           onClick={() => this.handleOpen()}
           image={backend.getFotoOmslag(kode)}

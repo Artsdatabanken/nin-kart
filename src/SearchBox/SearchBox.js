@@ -17,7 +17,6 @@ export default class SearchBox extends Component {
 
   render() {
     const { query, tittel } = this.props
-    console.log(query, tittel)
     return (
       <Input
         ref={tf => (this.Input = tf)}

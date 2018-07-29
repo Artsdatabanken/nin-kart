@@ -3,7 +3,6 @@ import {
   Divider,
   IconButton,
   ListItem,
-  ListItemSecondaryAction,
   ListItemText,
 } from '@material-ui/core'
 import { withTheme } from '@material-ui/core/styles'
@@ -15,12 +14,11 @@ import PaintSwatch from '../Kodetre/Kodeliste/PaintSwatch'
 
 class Kartlagelement extends React.Component {
   render() {
-    const item = this.props
     const { tittel, undertittel, kode, farge, kanFlyttes = true } = this.props
     return (
       <React.Fragment>
         <ListItem
-          key={item.kode}
+          key={kode}
           onMouseEnter={() =>
             this.props.onMouseEnter && this.props.onMouseEnter(kode)
           }
@@ -28,30 +26,27 @@ class Kartlagelement extends React.Component {
             this.props.onMouseLeave && this.props.onMouseLeave(kode)
           }}
         >
-          <Avatar>
-            {this.props.onToggleVisible && (
-              <Switch
-                checked={this.props.vis}
-                onClick={e => {
-                  e.stopPropagation()
-                  this.props.onToggleVisible(item.kode)
-                }}
-              />
-            )}
-          </Avatar>
-          <Avatar>
+          <Switch
+            checked={this.props.vis}
+            onClick={e => {
+              e.stopPropagation()
+            }}
+          />
+          <ListItemText primary={tittel} secondary={undertittel} />
+          <Avatar style={{ float: 'left' }}>
             <PaintSwatch farge={farge} />
           </Avatar>
-          <ListItemText primary={tittel} secondary={undertittel} />
-          <ListItemSecondaryAction>
-            <IconButton>{this.props.rightIcon}</IconButton>
-            {!this.props.rightIcon &&
-              kanFlyttes && (
-                <Reorder
-                  style={{ color: this.props.theme.palette.action.disabled }}
-                />
-              )}
-          </ListItemSecondaryAction>
+          {kanFlyttes && (
+            <IconButton
+              aria-label="Reorder"
+              style={{
+                cursor: '-webkit-grab',
+                color: this.props.theme.palette.action.disabled,
+              }}
+            >
+              <Reorder />
+            </IconButton>
+          )}
         </ListItem>
         <Divider />
       </React.Fragment>

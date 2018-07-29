@@ -1,12 +1,11 @@
-import { List, ListItem } from '@material-ui/core'
+import { List, ListItem, ListSubheader } from '@material-ui/core'
+import { withTheme } from '@material-ui/core/styles'
 import React, { Component } from 'react'
-import Overskrift from '../Overskrift'
 import thumb_flyfoto from './bakgrunn/thumb_flyfoto.jpg'
 import thumb_lys from './bakgrunn/thumb_lys.jpg'
 import thumb_mørk from './bakgrunn/thumb_mørk.jpg'
 import thumb_vintage from './bakgrunn/thumb_vintage.jpg'
 import Label from './Label'
-import { withTheme } from '@material-ui/core/styles'
 
 const KartPreview = ({ thumb, tittel, checked }) => (
   <ListItem
@@ -21,7 +20,7 @@ class Bakgrunnskart extends Component {
     //    const { tema = 'Mørk' } = this.props
     return (
       <React.Fragment>
-        <Overskrift>Bakgrunnskart</Overskrift>
+        <ListSubheader>Bakgrunnskart</ListSubheader>
         <List>
           <KartPreview thumb={thumb_mørk} tittel="Mørk" />
           <KartPreview thumb={thumb_lys} tittel="Lys" />

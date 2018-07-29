@@ -1,3 +1,4 @@
+import { ListSubheader } from '@material-ui/core'
 import Button from '@material-ui/core/Button'
 import { withTheme } from '@material-ui/core/styles'
 import ActionDelete from '@material-ui/icons/Delete'
@@ -5,7 +6,6 @@ import ActionInfo from '@material-ui/icons/Info'
 import ZoomIn from '@material-ui/icons/ZoomIn'
 import React, { Component } from 'react'
 import tinycolor from 'tinycolor2'
-import Overskrift from '../Overskrift'
 import språk from '../språk'
 import ColorPicker from './ColorPicker'
 
@@ -21,9 +21,9 @@ class Polygon extends Component {
     } = this.props
     return (
       <React.Fragment>
-        <Overskrift>
+        <ListSubheader>
           {item && item.tittel ? språk(item.tittel) : 'Polygon'}
-        </Overskrift>
+        </ListSubheader>
         {item &&
           item.kode && (
             <ColorPicker

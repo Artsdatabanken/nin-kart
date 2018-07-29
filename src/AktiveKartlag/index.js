@@ -1,11 +1,7 @@
-import { Button, Divider } from '@material-ui/core'
-import HardwareKeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown'
-import HardwareKeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp'
+import { Button, Divider, ListSubheader } from '@material-ui/core'
 import MapsLayers from '@material-ui/icons/Layers'
 import React from 'react'
-import Collapsible from 'react-collapsible'
 import { withRouter } from 'react-router'
-import Overskrift from '../Overskrift'
 import BakgrunnskartElement from './BakgrunnskartElement'
 import PolygonlagElement from './PolygonlagElement'
 import TerrenglagElement from './TerrenglagElement'
@@ -17,7 +13,6 @@ class AktiveKartlag extends React.Component {
       onRemoveSelectedLayer,
       onMouseEnter,
       onMouseLeave,
-      onToggleVisible,
       language,
       history,
     } = this.props
@@ -36,65 +31,21 @@ class AktiveKartlag extends React.Component {
 
     return (
       <div style={{ position: 'relative', top: 8 }}>
-        <Overskrift>Mine kartlag</Overskrift>
+        <ListSubheader>Mine kartlag</ListSubheader>
         <Divider />
         {koder.map(forelder => {
           const kode = forelder.kode
           return (
-            <React.Fragment key={kode}>
-              <Collapsible
-                open={true}
-                trigger={
-                  <PolygonlagElement
-                    {...forelder}
-                    key={kode}
-                    kode={kode}
-                    vis={forelder.vis}
-                    onMouseEnter={onMouseEnter}
-                    onMouseLeave={onMouseLeave}
-                    onRemove={kode => onRemoveSelectedLayer(kode)}
-                    onToggleVisible={onToggleVisible}
-                    language={language}
-                    rightIcon={<HardwareKeyboardArrowDown />}
-                  />
-                }
-                triggerWhenOpen={
-                  <PolygonlagElement
-                    {...forelder}
-                    key={kode}
-                    kode={kode}
-                    vis={forelder.vis}
-                    onMouseEnter={onMouseEnter}
-                    onMouseLeave={onMouseLeave}
-                    onRemove={kode => onRemoveSelectedLayer(kode)}
-                    onClick={() => this.handleClick(kode)}
-                    onToggleVisible={onToggleVisible}
-                    language={language}
-                    rightIcon={<HardwareKeyboardArrowUp />}
-                  />
-                }
-                easing="ease-in-out"
-              >
-                {forelder.barnArray.map(item => {
-                  const kode = item.kode
-                  return (
-                    <PolygonlagElement
-                      {...item}
-                      key={kode}
-                      kode={kode}
-                      vis={item.vis}
-                      onMouseEnter={onMouseEnter}
-                      onMouseLeave={onMouseLeave}
-                      onRemove={kode => onRemoveSelectedLayer(kode)}
-                      onClick={() => this.handleClick(kode)}
-                      onToggleVisible={onToggleVisible}
-                      language={language}
-                      indent={15}
-                    />
-                  )
-                })}
-              </Collapsible>
-            </React.Fragment>
+            <PolygonlagElement
+              {...forelder}
+              key={kode}
+              kode={kode}
+              vis={forelder.vis}
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+              onRemove={kode => onRemoveSelectedLayer(kode)}
+              language={language}
+            />
           )
         })}
         <BakgrunnskartElement
@@ -106,18 +57,16 @@ class AktiveKartlag extends React.Component {
           onMouseLeave={onMouseLeave}
           onRemove={kode => onRemoveSelectedLayer('basemap')}
           onClick={() => this.handleClick('basemap')}
-          onToggleVisible={kode => onToggleVisible(kode)}
           language={language}
         />
         <TerrenglagElement
           key="terreng"
-          meta={{ tittel: { nb: ' 3D terreng' } }}
+          meta={{ tittel: { nb: '3D terreng' } }}
           vis={true}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           onRemove={kode => onRemoveSelectedLayer('terreng')}
           onClick={() => this.handleClick('terreng')}
-          onToggleVisible={kode => onToggleVisible(kode)}
           language={language}
         />
         <Button
