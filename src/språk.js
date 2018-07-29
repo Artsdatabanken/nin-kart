@@ -1,4 +1,5 @@
 export default function språk(meta) {
+  if (!meta) return ''
   const keys = Object.keys(meta)
   if (!keys || keys.length === 0) return ''
 

@@ -1,22 +1,22 @@
 import typesystem from '@artsdatabanken/typesystem'
-import { withTheme } from '@material-ui/core/styles'
+import { withStyles, withTheme } from '@material-ui/core/styles'
 import React from 'react'
 
+const styles = {
+  chip: {
+    fontWeight: 600,
+    paddingLeft: '2px',
+    paddingRight: '4px',
+    float: 'left',
+    //        color: this.props.theme.palette.secondary.main,
+  },
+}
 class Kodetagg extends React.Component {
   render() {
     const { kode } = this.props
-    const styles = {
-      chip: {
-        fontWeight: 600,
-        paddingLeft: '2px',
-        paddingRight: '4px',
-        float: 'left',
-        color: this.props.theme.palette.secondary.main,
-      },
-    }
-    const tekst = this.props.hele ? kode : this.sisteDelAvKoden(kode)
+    const tekst = this.props.hele ? kode.slice(3) : this.sisteDelAvKoden(kode)
     return (
-      <span title={kode} style={styles.chip}>
+      <span title={kode} className={styles.chip}>
         {tekst}
       </span>
     )
@@ -27,4 +27,4 @@ class Kodetagg extends React.Component {
   }
 }
 
-export default withTheme()(Kodetagg)
+export default withStyles(styles)(withTheme()(Kodetagg))

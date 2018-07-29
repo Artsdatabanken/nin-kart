@@ -76,11 +76,10 @@ class VenstreVinduContainer extends React.Component {
               position: 'absolute',
               left: 0,
               top: 0,
-              //                paddingBottom: 8,
               height: '100%',
               width: window.innerWidth < 600 ? window.innerWidth : 408,
               padding: 0,
-              zIndex: 2,
+              zIndex: -10,
               overflowY: 'auto',
               overflowX: 'hidden',
             }}

@@ -1,11 +1,11 @@
+import { Avatar } from '@material-ui/core'
 import React, { Component } from 'react'
 import backend from '../../backend'
-
 class BildeAvatar extends Component {
   render() {
     const { kode, utenRamme } = this.props
     return (
-      <img
+      <Avatar
         alt="fargevelger"
         style={Object.assign(utenRamme ? { borderRadius: 0 } : {}, {
           backgroundColor: 'transparent',
