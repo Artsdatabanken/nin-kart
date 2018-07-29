@@ -19,9 +19,11 @@ const styles = {
   toolbar: {
     padding: 0,
   },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
+  darkButton: {
+    color: '#616161',
+  },
+  lightButton: {
+    color: '#b4b4b4',
   },
 }
 
@@ -57,11 +59,17 @@ class TopBar extends Component {
       <AppBar position="sticky" className={classes.root}>
         <Toolbar variant="dense" className={classes.toolbar}>
           {this.props.isAtRoot ? (
-            <IconButton onClick={this.props.onToggleMainDrawer}>
+            <IconButton
+              onClick={this.props.onToggleMainDrawer}
+              className={classes.darkButton}
+            >
               <Hamburger />
             </IconButton>
           ) : (
-            <IconButton onClick={this.props.onGoBack}>
+            <IconButton
+              onClick={this.props.onGoBack}
+              className={classes.darkButton}
+            >
               <NavigationBack />
             </IconButton>
           )}
@@ -70,15 +78,18 @@ class TopBar extends Component {
             tittel={this.props.tittel}
             onQueryChange={this.props.onQueryChange}
           />
-          <IconButton onClick={this.handleSearchButtonClick}>
-            <Search color="#b4b4b4" />
+          <IconButton
+            onClick={this.handleSearchButtonClick}
+            className={classes.lightButton}
+          >
+            <Search />
           </IconButton>
           {!this.props.isAtRoot && (
             <IconButton
               onClick={this.props.onExitToRoot}
-              style={{ position: 'relative' }}
+              className={classes.lightButton}
             >
-              <CloseIcon color="#b4b4b4" />
+              <CloseIcon />
             </IconButton>
           )}
         </Toolbar>
