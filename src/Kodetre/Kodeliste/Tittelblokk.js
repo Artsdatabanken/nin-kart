@@ -4,7 +4,6 @@ import { Avatar, Chip, withStyles } from '@material-ui/core'
 import Typography from '@material-ui/core/Typography'
 import React from 'react'
 import språk from '../../språk'
-import KodeTagg from '../Kodetagg'
 
 type Props = {
   tittel: String,
