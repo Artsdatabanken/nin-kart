@@ -1,8 +1,20 @@
-import { Card, CardMedia } from '@material-ui/core'
+import {
+  Button,
+  Card,
+  CardActions,
+  CardMedia,
+  withStyles,
+} from '@material-ui/core'
 import React from 'react'
 import backend from '../../backend'
 import språk from '../../språk'
 import Tittelblokk from './Tittelblokk'
+
+const styles = {
+  pos: {
+    marginBottom: 12,
+  },
+}
 
 class Kodekort extends React.Component {
   state = {
@@ -22,15 +34,19 @@ class Kodekort extends React.Component {
   }
 
   render() {
-    const { kode } = this.props
+    const {
+      kode,
+      bbox,
+      overordnet,
+      onFitBounds,
+      classes,
+      isActiveLayer,
+    } = this.props
     return (
-      <Card containerStyle={{ padding: 0 }}>
+      <Card>
         <CardMedia
-          overlay={'abc'}
           style={{
-            height: 297,
             minHeight: 297,
-            maxHeight: 297,
           }}
           onClick={() => this.handleOpen()}
           image={backend.getFotoOmslag(kode)}
@@ -44,12 +60,26 @@ class Kodekort extends React.Component {
           tittel={språk(this.props.tittel)}
           kode={this.props.kode}
           onGoToCode={this.props.onGoToCode}
-          onToggleLayer={(event, state) =>
-            this.props.onToggleLayer(kode, state)
-          }
-          isActiveLayer={this.props.isActiveLayer}
-          overordnet={this.props.overordnet}
+          overordnet={overordnet}
         />
+        <CardActions>
+          {overordnet && (
+            <Button
+              variant="contained"
+              color="primary"
+              className={classes.button}
+              onClick={(event, state) => this.props.onToggleLayer(kode, state)}
+              disabled={isActiveLayer}
+            >
+              Aktivér
+            </Button>
+          )}
+          {bbox && (
+            <Button variant="text" onClick={() => onFitBounds(bbox)}>
+              Zoom til
+            </Button>
+          )}
+        </CardActions>
       </Card>
     )
   }
@@ -64,4 +94,4 @@ class Kodekort extends React.Component {
           />
 
 */
-export default Kodekort
+export default withStyles(styles)(Kodekort)

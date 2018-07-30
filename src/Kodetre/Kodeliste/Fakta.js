@@ -10,7 +10,10 @@ const Fakta = ({ tittel, verdi, synlig }) => {
         lineHeight: '1.5em',
       }}
     >
-      <span style={{ fontWeight: 700 }}>{tittel}:&nbsp;</span>
+      <span style={{ fontWeight: 700 }}>
+        {tittel}
+        :&nbsp;
+      </span>
       {verdi}
     </div>
   )
