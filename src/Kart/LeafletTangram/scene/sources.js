@@ -1,22 +1,22 @@
 const sources = {
   AO: {
     type: 'MVT',
-    url: 'http://tiles.artsdatabanken.no/data/AO/{z}/{x}/{y}.pbf',
+    url: 'https://tiles.artsdatabanken.no/data/AO/{z}/{x}/{y}.pbf',
     max_zoom: 11,
   },
   BS: {
     type: 'MVT',
-    url: 'http://tiles.artsdatabanken.no/data/NA/{z}/{x}/{y}.pbf',
+    url: 'https://tiles.artsdatabanken.no/data/NA/{z}/{x}/{y}.pbf',
     max_zoom: 13,
   },
   MI: {
     type: 'MVT',
-    url: 'http://tiles.artsdatabanken.no/data/MI/{z}/{x}/{y}.pbf',
+    url: 'https://tiles.artsdatabanken.no/data/MI/{z}/{x}/{y}.pbf',
     max_zoom: 8,
   },
   NA: {
     type: 'MVT',
-    url: 'http://tiles.artsdatabanken.no/data/NA/{z}/{x}/{y}.pbf',
+    url: 'https://tiles.artsdatabanken.no/data/NA/{z}/{x}/{y}.pbf',
     max_zoom: 13,
   },
   'terrain-normals': {
@@ -28,7 +28,7 @@ const sources = {
   },
   mapzen: {
     type: 'MVT',
-    url: 'http://tiles.artsdatabanken.no/data/openstreetmap/{z}/{x}/{y}.pbf',
+    url: 'https://tiles.artsdatabanken.no/data/openstreetmap/{z}/{x}/{y}.pbf',
     tile_size: 512,
     max_zoom: 16,
     rasters: ['terrain-normals'],
