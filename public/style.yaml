@@ -19,7 +19,7 @@ lights:
 sources:
     osm:
         type: MVT
-        url: 'http://tiles.artsdatabanken.no/data/openstreetmap/{z}/{x}/{y}.pbf'
+        url: 'https://tiles.artsdatabanken.no/data/openstreetmap/{z}/{x}/{y}.pbf'
         max_zoom: 14
 
 layers:
