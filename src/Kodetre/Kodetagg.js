@@ -13,7 +13,7 @@ const styles = {
 }
 class Kodetagg extends React.Component {
   render() {
-    const { kode } = this.props
+    const kode = this.props.kode.toUpperCase()
     const tekst = this.props.hele ? kode.slice(3) : this.sisteDelAvKoden(kode)
     return (
       <span title={kode} className={styles.chip}>

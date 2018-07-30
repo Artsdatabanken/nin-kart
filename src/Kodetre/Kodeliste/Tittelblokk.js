@@ -1,5 +1,6 @@
 //@flow
-import { CardActions, Switch } from '@material-ui/core'
+import typesystem from '@artsdatabanken/typesystem'
+import { Avatar, Chip, withStyles } from '@material-ui/core'
 import Typography from '@material-ui/core/Typography'
 import React from 'react'
 import språk from '../../språk'
@@ -13,6 +14,12 @@ type Props = {
   overordnet: Object,
 }
 
+const styles = {
+  pos: {
+    marginBottom: 12,
+  },
+}
+
 const Tittelblokk = ({
   onGoToCode,
   onToggleLayer,
@@ -20,41 +27,42 @@ const Tittelblokk = ({
   tittel,
   overordnet,
   kode,
+  classes,
 }: Props) => (
-  <div>
+  <div style={{ padding: 24 }}>
+    <div style={{ position: 'relative', top: -68, float: 'right' }}>
+      <Chip
+        label={kode.slice(3) + ' ' + tittel}
+        clickable={true}
+        avatar={<Avatar>{kode.slice(0, 2)}</Avatar>}
+      />
+    </div>
     <Typography gutterBottom variant="headline" component="h2">
       {tittel}
-      <KodeTagg hele={false} kode={kode.toUpperCase()} />
     </Typography>
-    {overordnet && (
-      <Typography gutterBottom component="p">
-        {overordnet.map(forelder => (
-          <div
-            className={'hoverUnderline'}
-            key={forelder.kode}
-            onClick={e => {
-              e.stopPropagation()
-              onGoToCode(forelder.sti)
-            }}
-          >
-            {språk(forelder.tittel)}
-            <KodeTagg hele={false} kode={forelder.kode.toUpperCase()} />
-          </div>
-        ))}
-      </Typography>
-    )}
+    <Typography className={classes.pos} color="textSecondary">
+      Feil:
+      {typesystem.hentNivaa(kode).slice(0, 1)}
+      <br />
+      {JSON.stringify(typesystem.hentNivaa(kode))}
+      {JSON.stringify(typesystem.splittKode(kode))}
+    </Typography>
 
-    <CardActions>
-      {overordnet && (
-        <Switch
-          onToggle={onToggleLayer}
-          checked={isActiveLayer}
-          label="Kartlag aktivt"
-          labelPosition="left"
+    {overordnet &&
+      overordnet.map(forelder => (
+        <Chip
+          key={forelder.kode}
+          label={forelder.kode.slice(3) + ' ' + språk(forelder.tittel)}
+          clickable={true}
+          onClick={e => {
+            e.stopPropagation()
+            onGoToCode(forelder.sti)
+          }}
+          avatar={<Avatar>{forelder.kode.substring(0, 2)}</Avatar>}
+          style={{ margin: 4 }}
         />
-      )}
-    </CardActions>
+      ))}
   </div>
 )
 
-export default Tittelblokk
+export default withStyles(styles)(Tittelblokk)

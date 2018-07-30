@@ -71,7 +71,7 @@ class AktiveKartlag extends React.Component {
         />
         <Button
           icon={<MapsLayers />}
-          primary
+          color="primary"
           style={{ margin: 16, float: 'right' }}
           onClick={() => {
             history.push('/katalog/')

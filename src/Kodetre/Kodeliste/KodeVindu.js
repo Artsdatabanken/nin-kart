@@ -1,5 +1,5 @@
 import typesystem from '@artsdatabanken/typesystem'
-import { Button, List, Paper } from '@material-ui/core'
+import { List, Paper } from '@material-ui/core'
 import React from 'react'
 import FetchContainer from '../../FetchContainer'
 import Fakta from './Fakta'
@@ -19,16 +19,10 @@ class KodeVindu extends React.Component {
               onGoToCode={props.onGoToCode}
               isActiveLayer={props.isActiveLayer}
               onToggleLayer={props.onToggleLayer}
+              onFitBounds={props.onFitBounds}
               data={props.data}
               language={props.language}
             />
-          )}
-          {props.meta.bbox && (
-            <div style={{ float: 'right', marginRight: 24, marginTop: 16 }}>
-              <Button onClick={() => props.onFitBounds(props.meta.bbox)}>
-                Vis i kart
-              </Button>
-            </div>
           )}
           <div style={{ padding: 24 }}>
             {(props.meta.ingress ||
@@ -49,7 +43,8 @@ class KodeVindu extends React.Component {
                 {props.meta.ingress}
                 {props.meta.infoUrl && (
                   <span>
-                    &nbsp;<a
+                    &nbsp;
+                    <a
                       target="top"
                       rel="noopener"
                       style={{ color: 'rgba(0,0,0,0.87)' }}
