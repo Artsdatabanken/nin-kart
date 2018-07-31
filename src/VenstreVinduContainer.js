@@ -73,14 +73,15 @@ class VenstreVinduContainer extends React.Component {
           <div
             style={{
               backgroundColor: '#f5f5f5',
-              position: 'absolute',
+              position: 'fixed',
+              top: 0,
               left: 0,
               padding: 0,
               paddingTop: 48,
-              height: '100vw',
+              bottom: 0,
               width: window.innerWidth < 600 ? window.innerWidth : 408,
               zIndex: -10,
-              overflowY: 'auto',
+              overflowY: 'scroll',
               overflowX: 'hidden',
             }}
           >
@@ -182,7 +183,16 @@ class VenstreVinduContainer extends React.Component {
               />
             </Switch>
             {this.state.searchResults && (
-              <Paper style={{ position: 'absolute', top: 72 }} zDepth={2}>
+              <Paper
+                style={{
+                  position: 'absolute',
+                  top: 56,
+                  left: 8,
+                  zOrder: 1000,
+                  backgroundColor: 'red',
+                }}
+                zDepth={2}
+              >
                 <ResultatListe
                   query={this.state.query}
                   searchResults={this.state.searchResults}

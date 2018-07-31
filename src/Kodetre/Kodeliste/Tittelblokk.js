@@ -40,11 +40,7 @@ const Tittelblokk = ({
       {tittel}
     </Typography>
     <Typography className={classes.pos} color="textSecondary">
-      Feil:
       {typesystem.hentNivaa(kode).slice(0, 1)}
-      <br />
-      {JSON.stringify(typesystem.hentNivaa(kode))}
-      {JSON.stringify(typesystem.splittKode(kode))}
     </Typography>
 
     {overordnet &&

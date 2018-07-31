@@ -1256,11 +1256,7 @@ exports[`Storyshots KodeVindu default 1`] = `
           <p
             className="MuiTypography-root-218 MuiTypography-body1-227 MuiTypography-colorTextSecondary-241 Tittelblokk-pos-207"
           >
-            Feil:
-            naturmangfold
-            <br />
-            ["naturmangfold"]
-            ["NA","H"]
+            hovedtypegruppe
           </p>
           <div
             className="MuiChip-root-208 MuiChip-clickable-209"
@@ -1941,11 +1937,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           <p
             className="MuiTypography-root-325 MuiTypography-body1-334 MuiTypography-colorTextSecondary-348 Tittelblokk-pos-314"
           >
-            Feil:
-            hovedtypegruppe
-            <br />
-            ["hovedtypegruppe","naturmangfold"]
-            ["NA","M","8"]
+            hovedtype
           </p>
           <div
             className="MuiChip-root-315 MuiChip-clickable-316"
@@ -7463,13 +7455,14 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
       style={
         Object {
           "backgroundColor": "#f5f5f5",
-          "height": "100vw",
+          "bottom": 0,
           "left": 0,
           "overflowX": "hidden",
-          "overflowY": "auto",
+          "overflowY": "scroll",
           "padding": 0,
           "paddingTop": 48,
-          "position": "absolute",
+          "position": "fixed",
+          "top": 0,
           "width": 408,
           "zIndex": -10,
         }
@@ -7861,13 +7854,14 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
       style={
         Object {
           "backgroundColor": "#f5f5f5",
-          "height": "100vw",
+          "bottom": 0,
           "left": 0,
           "overflowX": "hidden",
-          "overflowY": "auto",
+          "overflowY": "scroll",
           "padding": 0,
           "paddingTop": 48,
-          "position": "absolute",
+          "position": "fixed",
+          "top": 0,
           "width": 408,
           "zIndex": -10,
         }
