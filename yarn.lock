@@ -3,8 +3,8 @@
 
 
 "@artsdatabanken/typesystem@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@artsdatabanken/typesystem/-/typesystem-4.0.0.tgz#a3e9d9e18503e68014d1330306e344a08263a209"
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@artsdatabanken/typesystem/-/typesystem-4.0.1.tgz#59fd79535602b77d6cd7b438baa2b8ed35be7066"
 
 "@babel/code-frame@^7.0.0-beta.35":
   version "7.0.0-beta.54"
