@@ -1,72 +1,131 @@
 import:
-    - https://tangrams.github.io/blocks/filter/grain.yaml
+  - https://tangrams.github.io/blocks/filter/grain.yaml
 
 scene:
-    background:
-        color: '#fff'
+  background:
+    color: '#fff'
 
 cameras:
-    cam:
-        type: flat
+  cam:
+    type: flat
 
 lights:
-    dir:
-        type: directional
-        direction: [.1, .5, -1]
-        diffuse: .7
-        ambient: .5
+  dir:
+    type: directional
+    direction: [.1, .5, -1]
+    diffuse: .7
+    ambient: .5
 
 sources:
-    osm:
-        type: MVT
-        url: 'https://tiles.artsdatabanken.no/data/openstreetmap/{z}/{x}/{y}.pbf'
-        max_zoom: 14
+  osm:
+    type: MVT
+    url: 'https://tiles.artsdatabanken.no/data/openstreetmap/{z}/{x}/{y}.pbf'
+    max_zoom: 14
+  # This source should be dynamically created and set on the multiply-layer
+  NA_I1:
+    type: Raster
+    url: 'https://tiles.artsdatabanken.no/data/NA_I1/{z}/{x}/{y}.png'
+    rasters: [MI_KA-A]
+    max_zoom: 7
+  RL_NT:
+    type: Raster
+    url: 'https://tiles.artsdatabanken.no/data/RL_NT/{z}/{x}/{y}.png'
+    max_zoom: 7
+  MI_KA-A:
+    type: Raster
+    url: 'https://tiles.artsdatabanken.no/data/MI_KA-A/{z}/{x}/{y}.png'
+    max_zoom: 7
+  MI_KA-F:
+    type: Raster
+    url: 'https://tiles.artsdatabanken.no/data/MI_KA-F/{z}/{x}/{y}.png'
+    max_zoom: 7
 
 layers:
-    water:
-        data:
-            source: osm
-            layer: water
-        draw:
-            water:
-                order: 10
-                color: [0.4, 0.4, 0.4, 1.0]
-    waterway:
-        data:
-            source: osm
-            layer: waterway
-        draw:
-            lines:
-                order: 11
-                color: [0.4, 0.4, 0.4, 1.0]
-                width: 1.3px
-    transportation:
-        data:
-            source: osm
-            layer: transportation
-        draw:
-            lines:
-                order: 200
-                color: [0.3, 0.3, 0.3, 1.0]
-                width: 1.2px
-    boundary:
-        data:
-            source: osm
-            layer: boundary
-        draw:
-            boundary:
-                order: 150
-                color: [0.5, 0.5, 0.5, 0.8]
-                width: 3.2px
+  multiply:
+    # The source should be dynamically set to reflect the currently active layers
+    data: { source: NA_I1 }
+    draw:
+      multiply-rasters:
+        order: 0
+  water:
+    data:
+      source: osm
+      layer: water
+    draw:
+      water:
+        order: 10
+        color: [0.4, 0.4, 0.4, 1.0]
+  waterway:
+    data:
+      source: osm
+      layer: waterway
+    draw:
+      lines:
+        order: 11
+        color: [0.4, 0.4, 0.4, 1.0]
+        width: 1.3px
+  transportation:
+    data:
+      source: osm
+      layer: transportation
+    draw:
+      lines:
+        order: 200
+        color: [0.3, 0.3, 0.3, 1.0]
+        width: 1.2px
+  boundary:
+    data:
+      source: osm
+      layer: boundary
+    draw:
+      boundary:
+        order: 150
+        color: [0.5, 0.5, 0.5, 0.8]
+        width: 3.2px
 styles:
-    water:
-        base: polygons
-        mix: filter-grain
-        shaders:
-            defines:
-                GRAIN_AMOUNT: .8
-                NUM_OCTAVES: 3
-    boundary:
-        base: lines
-        blend: overlay
-        dash: [2, 0.5]
+  water:
+    base: polygons
+    mix: filter-grain
+    shaders:
+      defines:
+        GRAIN_AMOUNT: .8
+        NUM_OCTAVES: 3
+  boundary:
+    base: lines
+    blend: overlay
+    dash: [2, 0.5]
+
+  multiply-rasters:
+    base: polygons
+    raster: color
+    shaders:
+      blocks:
+        filter: |
+          float intensity = sampleRaster(0).r * sampleRaster(1).r;
+          float intensityRed, intensityGreen, intensityBlue = 0.0;
+
+          // This should be read from a texture
+          if(intensity < 0.2) {
+              intensityBlue = 0.5;
+          }
+          else if(intensity < 0.4) {
+              intensityBlue = 1.0;
+          }
+          else if(intensity < 0.6) {
+              intensityGreen = 1.0;
+              intensityBlue = 1.0;                   
+          }
+          else if(intensity < 0.6) {
+              intensityGreen = 1.0;
+          }
+          else if(intensity < 0.8) {
+              intensityRed = 1.0;
+              intensityGreen = 1.0;
+          }
+          else {
+              intensityRed = 1.0;
+          }
+
+          float alpha= 1.0;
+          if(intensity == 0.0) alpha = 0.0;
+          color = vec4(intensityRed, intensityGreen, intensityBlue, alpha);
