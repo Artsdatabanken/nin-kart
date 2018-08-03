@@ -102,30 +102,12 @@ styles:
       blocks:
         filter: |
           float intensity = sampleRaster(0).r * sampleRaster(1).r;
-          float intensityRed, intensityGreen, intensityBlue = 0.0;
-
-          // This should be read from a texture
-          if(intensity < 0.2) {
-              intensityBlue = 0.5;
-          }
-          else if(intensity < 0.4) {
-              intensityBlue = 1.0;
-          }
-          else if(intensity < 0.6) {
-              intensityGreen = 1.0;
-              intensityBlue = 1.0;                   
-          }
-          else if(intensity < 0.6) {
-              intensityGreen = 1.0;
-          }
-          else if(intensity < 0.8) {
-              intensityRed = 1.0;
-              intensityGreen = 1.0;
-          }
-          else {
-              intensityRed = 1.0;
-          }
+          float intensityRed = (intensity-0.5) / 0.5 * 255.0;
+          float intensityBlue = 0.0;
+          float intensityGreen = (intensity*255.0) * -1.0 + 255.0;
 
           float alpha= 1.0;
+
           if(intensity == 0.0) alpha = 0.0;
+          
           color = vec4(intensityRed, intensityGreen, intensityBlue, alpha);
