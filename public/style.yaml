@@ -107,12 +107,12 @@ styles:
           if(i == 0.){
             a = 0.;
           }
-          else if(i <= 0.5) { 
-            g = i / 0.5 * 255.;
-            b = 255. - g;
+          else if(i <= .5) { 
+            g = i / .5;
+            b = 1. - g;
           }
           else {
-            r = i * 255.;
-            g = 255. - r;
+            r = (i - .5) / .5;
+            g = 1. - r;
           }
           color = vec4(r, g, b, a);
