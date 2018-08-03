@@ -101,13 +101,13 @@ styles:
     shaders:
       blocks:
         filter: |
+          float alpha, intensityRed, intensityGreen, intensityBlue = 0.0;
           float intensity = sampleRaster(0).r * sampleRaster(1).r;
-          float intensityRed = (intensity-0.5) / 0.5 * 255.0;
-          float intensityBlue = 0.0;
-          float intensityGreen = (intensity*255.0) * -1.0 + 255.0;
 
-          float alpha= 1.0;
-
-          if(intensity == 0.0) alpha = 0.0;
+          if(intensity != 0.0) { 
+            intensityRed = (intensity-0.5) / 0.5 * 255.0;
+            intensityGreen = (intensity*255.0) * -1.0 + 255.0;
+            alpha= 1.0;
+            };
           
           color = vec4(intensityRed, intensityGreen, intensityBlue, alpha);
