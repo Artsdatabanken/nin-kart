@@ -15,7 +15,7 @@ function createLayer(kode, barn) {
       draw: {
         _multiply: {
           order: 100,
-          color: barn[subkode].farge || '#f44',
+          color: barn[subkode].farge || '#f6c',
         },
         lines: {
           order: 90,
@@ -52,8 +52,11 @@ function createLeafletLayer(props: Object, onClick: Function) {
       '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | <a href="http://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a> | <a href="https://www.nextzen.com/" target="_blank">Nextzen</a>',
   }
 
-  if (props.meta && props.meta.barn)
-    def.scene.layers = createLayer(props.meta.kode, props.meta.barn)
+  if (props.meta)
+    def.scene.layers = createLayer(
+      props.meta.kode,
+      props.meta.barn || { [props.meta.kode]: props.meta }
+    )
 
   let layer = Tangram.leafletLayer(def)
   return layer
