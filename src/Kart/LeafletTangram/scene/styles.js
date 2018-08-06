@@ -22,7 +22,6 @@ const styles = {
   },
   _multiply: {
     base: 'polygons',
-    blend: 'multiply',
   },
 }
 
