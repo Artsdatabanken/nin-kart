@@ -24,7 +24,7 @@ sources:
   # This source should be dynamically created and set on the multiply-layer
   multiply:
     type: Raster
-    url: 'https://tiles.artsdatabanken.no/data/NA_I1/{z}/{x}/{y}.png'
+    url: 'https://tiles.artsdatabanken.no/data/NA_T1/{z}/{x}/{y}.png'
     rasters: [MI_KA-A]
     max_zoom: 11
   RL_NT:
@@ -97,8 +97,8 @@ styles:
 
   tricolor:
     base: polygons
-    raster: color
     blend: multiply
+    raster: color
     shaders:
       blocks:
         filter: |
