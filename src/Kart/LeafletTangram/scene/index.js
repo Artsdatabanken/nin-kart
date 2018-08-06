@@ -9,7 +9,6 @@ function createLayer(kode, barn) {
   let r = {}
   const prefix = kode.substring(0, 2)
   r.data = { source: prefix, layer: prefix }
-  console.log('lag', barn)
   Object.keys(barn).forEach(subkode => {
     const sub = {
       filter: { [subkode]: true },
@@ -27,7 +26,6 @@ function createLayer(kode, barn) {
     }
     r[subkode] = sub
   })
-  console.log('lag', r)
   return { [kode]: r }
 }
 
