@@ -46,7 +46,7 @@ layers:
     data: { source: NA_I1 }
     draw:
       multiply-rasters:
-        order: 0
+        order: 100
   water:
     data:
       source: osm
@@ -98,33 +98,15 @@ styles:
   multiply-rasters:
     base: polygons
     raster: color
+    blend: multiply
     shaders:
       blocks:
         filter: |
-          float r, g, b = 0.;
-          float a = 1.;
-          float i = sampleRaster(0).r * sampleRaster(1).r;
-          if(i == 0.){
-            a = 0.;
-          }
-          // Up to cyan
-          else if(i <= .25) { 
-            b = 1.;
-            g = i / .25;
-          }
-          // Up to green
-          else if(i <= .5) { 
-            g = 1.;
-            b = 1. - ((i - .25) / .25);
-          }
-          // Up to yellow
-          else if(i <= .75) { 
-            g = 1. ;
-            r = (i - .5) / .25;            
-          }
-          // Up to red
-          else {
-            r = 1.;
-            g = 1. - ((i - .75) / .25) ;
-          }
-          color = vec4(r, g, b, a);
+          vec3 colorx = vec3(0.392157,1,0.015686);
+          vec3 colory = vec3(0.015686,0.768627,1);
+          vec3 color_overlap = vec3(0.975,0.,0.);
+          vec3 transparent = vec3(1.);
+          float x = sampleRaster(0).r;
+          float y = sampleRaster(1).r;
+          vec3 cx = mix(colorx * x + colory * y, color_overlap, x * y);
+          color = vec4(mix(transparent,cx, x + y),1.);
