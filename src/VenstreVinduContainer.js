@@ -177,7 +177,6 @@ class VenstreVinduContainer extends React.Component {
                   <PunktinformasjonContainer
                     lng={match.params.lng}
                     lat={match.params.lat}
-                    localId={this.props.localId}
                   />
                 )}
               />

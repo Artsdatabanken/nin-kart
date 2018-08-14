@@ -28,7 +28,6 @@ storiesOf('VenstreVindu', module)
             onFitBounds={action('onFitBounds')}
             onAddSelected={action('onAddSelected')}
             onExitToRoot={action('onExitToRoot')}
-            localId={''}
             meta={''}
             onShowColorpicker={action('onShowColorpicker')}
             visValgte={false}

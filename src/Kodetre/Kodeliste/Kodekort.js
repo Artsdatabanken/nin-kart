@@ -72,7 +72,7 @@ class Kodekort extends React.Component {
               variant="contained"
               color="primary"
               className={classes.button}
-              onClick={(event, state) => this.props.onToggleLayer(kode, state)}
+              onClick={() => this.props.onToggleLayer(kode, true)}
               disabled={isActiveLayer}
             >
               Aktivér

@@ -17,18 +17,6 @@ class AktiveKartlag extends React.Component {
       history,
     } = this.props
 
-    koder.map(forelder => {
-      forelder.barnArray = []
-      if (forelder.barn) {
-        Object.keys(forelder.barn).forEach(kode => {
-          const item = forelder.barn[kode]
-          item.kode = kode
-          forelder.barnArray.push(item)
-        })
-      }
-      return null
-    })
-
     return (
       <div style={{ position: 'relative', top: 8 }}>
         <ListSubheader>Mine kartlag</ListSubheader>
@@ -75,7 +63,6 @@ class AktiveKartlag extends React.Component {
           style={{ margin: 16, float: 'right' }}
           onClick={() => {
             history.push('/katalog/')
-            this.props.visKatalog()
           }}
         >
           Katalog
