@@ -52,7 +52,6 @@ class Grunnkart extends React.Component<Props, State> {
   handleFitBounds = bbox => this.setState({ bbox: bbox })
 
   addSelected = props => {
-    console.error('addSelected')
     let koder = this.state.valgteKoder
     koder.push({
       farge: props.farge,

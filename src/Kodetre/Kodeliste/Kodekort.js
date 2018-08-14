@@ -97,7 +97,7 @@ class Kodekort extends React.Component {
               this.setState({ leggerTil: false })
             }}
             message={
-              <span id="message-id">
+              <span>
                 Kartlag <b>{kode}</b> aktiveres
               </span>
             }
