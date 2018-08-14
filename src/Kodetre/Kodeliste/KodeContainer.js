@@ -22,13 +22,11 @@ class KodeContainer extends React.Component<Props, State> {
   dataQueryNumber = 0
   state = { data: {} }
 
-  componentWillReceiveProps(nextProps: Object) {
-    let oldKode =
-      this.props.meta && this.props.meta.kode ? this.props.meta.kode : ''
-    let oldBounds = this.props.mapBounds ? this.props.mapBounds : ''
-    let newKode =
-      nextProps.meta && nextProps.meta.kode ? nextProps.meta.kode : ''
-    let newBounds = nextProps.mapBounds ? nextProps.mapBounds : ''
+  componentDidUpdate(prevProps: Object, prevState: Object) {
+    let oldKode = this.props.meta.kode
+    let oldBounds = this.props.mapBounds
+    let newKode = this.props.meta.kode
+    let newBounds = this.props.mapBounds
     if (oldKode !== newKode || oldBounds !== newBounds) {
       this.fetchData(newKode, newBounds)
     }

@@ -28,9 +28,13 @@ class Kodekort extends React.Component {
     this.setState({ visBilde: true })
   }
 
-  componentWillReceiveProps(nextProps, props) {
-    if (nextProps.data && props.data && nextProps.data.kode !== props.data.kode)
-      this.setState({ favorite: this.isFavorite(nextProps.data.kode) })
+  componentDidUpdate(prevProps, prevState) {
+    if (
+      this.props.data &&
+      prevProps.data &&
+      this.props.data.kode !== prevProps.data.kode
+    )
+      this.setState({ favorite: this.isFavorite(this.props.data.kode) })
   }
 
   render() {

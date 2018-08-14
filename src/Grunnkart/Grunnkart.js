@@ -95,9 +95,9 @@ class Grunnkart extends React.Component<Props, State> {
     this.fetchMeta(this.props.location.pathname)
   }
 
-  componentWillReceiveProps(nextProps, props) {
-    if (nextProps.location.pathname !== this.props.location.pathname)
-      this.fetchMeta(nextProps.location.pathname)
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.location.pathname !== prevProps.location.pathname)
+      this.fetchMeta(this.props.location.pathname)
   }
 
   redirectTo(path) {
