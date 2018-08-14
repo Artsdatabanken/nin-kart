@@ -10,6 +10,7 @@ type Props = {
   history: Object,
   onMapBoundsChange: Function,
   mapStyle: String,
+  bounds: Array<Number>,
   latitude: Number,
   longitude: Number,
   zoom: Number,

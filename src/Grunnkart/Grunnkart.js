@@ -14,7 +14,9 @@ type State = {
   visValgte: boolean,
   pointProperties: Object,
   meta: Object,
-  mapBounds: Object,
+  localId: string,
+  fitBounds: Object,
+  actualBounds: Object,
   bbox: Object,
   opplystKode: string,
   refresh: boolean,
@@ -36,20 +38,24 @@ class Grunnkart extends React.Component<Props, State> {
       visValgte: false,
       pointProperties: {},
       meta: {},
-      mapBounds: {},
       opplystKode: '',
-      bbox: {},
       refresh: false,
     }
     //    this.redirectTo(props.location.pathname.replace('/katalog/', ''))
   }
 
-  handleMapBoundsChange = bounds => {
-    console.log(bounds)
-    this.setState({ mapBounds: bounds })
+  handleActualBoundsChange = bounds => {
+    console.log('!!!!!', bounds)
+    this.setState({ actualBounds: bounds, fitBounds: null })
   }
 
-  handleFitBounds = bbox => this.setState({ bbox: bbox })
+  handleFitBounds = bbox => {
+    this.setState({ fitBounds: bbox })
+  }
+
+  handleBoundsChange = bbox => {
+    this.setState({ actualBounds: bbox })
+  }
 
   addSelected = props => {
     let koder = this.state.valgteKoder
@@ -59,7 +65,6 @@ class Grunnkart extends React.Component<Props, State> {
       sti: props.sti,
       tittel: props.tittel,
       barn: props.barn,
-      bbox: props.bbox,
     })
     console.log(koder)
 
@@ -151,6 +156,7 @@ class Grunnkart extends React.Component<Props, State> {
     return (
       <div>
         <Kart
+          bounds={this.state.fitBounds}
           latitude={65.4}
           longitude={10.8}
           zoom={3}
@@ -159,7 +165,7 @@ class Grunnkart extends React.Component<Props, State> {
           aktivKode={aktivKode}
           aktiveLag={this.state.valgteKoder}
           opplystKode={this.state.opplystKode}
-          onMapBoundsChange={this.handleMapBoundsChange}
+          onMapBoundsChange={this.handleActualBoundsChange}
           meta={this.state.meta}
         />
 
@@ -178,14 +184,14 @@ class Grunnkart extends React.Component<Props, State> {
                 showMainDrawer: !this.state.showMainDrawer,
               })
             }
-            mapBounds={this.state.mapBounds}
+            mapBounds={this.state.actualBounds}
             onMouseEnter={kode => this.setState({ opplystKode: kode })}
             onMouseLeave={kode =>
               this.setState({
                 opplystKode: '',
               })
             }
-            onFitBounds={bbox => this.handleFitBounds(bbox)}
+            onFitBounds={this.handleFitBounds}
             isActiveLayer={erAktivert}
             onToggleLayer={this.handleToggleLayer}
             onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
