@@ -61,9 +61,9 @@ class LeafletTangram extends React.Component {
     this.map = map
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.meta === nextProps.meta) return
-    this.updateMap(nextProps)
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.meta === prevProps.meta) return
+    this.updateMap(this.props)
   }
 
   removeMarker() {
