@@ -1,7 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router'
 import Kodetagg from '../Kodetre/Kodetagg'
-import PrettyPrint from '../prettyprint'
 import språk from '../språk'
 import KartlagElement from './Kartlagelement'
 
@@ -28,7 +27,6 @@ class PolygonlagElement extends React.Component {
               borderBottomRightRadius: 10,
               width: `${(100.0 * areal) / størsteAreal}%`,
             }}
-            title={'areal: ' + PrettyPrint.prettyPrintAreal(areal)}
           />
         </div>
         <div

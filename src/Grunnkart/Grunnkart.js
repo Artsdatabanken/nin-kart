@@ -70,7 +70,6 @@ class Grunnkart extends React.Component<Props, State> {
   }
 
   handleToggleLayer = (kode, enabled) => {
-    console.error('handleToggleLayer', kode, enabled)
     if (enabled) this.addSelected(this.state.meta)
     else {
       const koder = this.state.valgteKoder.filter(barn => barn.kode !== kode)

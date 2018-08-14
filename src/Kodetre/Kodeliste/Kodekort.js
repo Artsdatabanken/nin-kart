@@ -3,9 +3,13 @@ import {
   Card,
   CardActions,
   CardMedia,
+  IconButton,
+  Snackbar,
   withStyles,
 } from '@material-ui/core'
+import ArrowForward from '@material-ui/icons/ArrowForward'
 import React from 'react'
+import { withRouter } from 'react-router'
 import backend from '../../backend'
 import språk from '../../språk'
 import Tittelblokk from './Tittelblokk'
@@ -27,24 +31,21 @@ class Kodekort extends React.Component {
   handleOpen = () => {
     this.setState({ visBilde: true })
   }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (
-      this.props.data &&
-      prevProps.data &&
-      this.props.data.kode !== prevProps.data.kode
-    )
-      this.setState({ favorite: this.isFavorite(this.props.data.kode) })
+  handleAktiver = () => {
+    this.props.onToggleLayer(this.props.kode, true)
+    this.setState({ leggerTil: true })
   }
 
   render() {
     const {
       kode,
       bbox,
+      tittel,
       overordnet,
       onFitBounds,
       classes,
       isActiveLayer,
+      onGoToCode,
     } = this.props
     return (
       <Card>
@@ -61,9 +62,9 @@ class Kodekort extends React.Component {
           alt=""
         />
         <Tittelblokk
-          tittel={språk(this.props.tittel)}
-          kode={this.props.kode}
-          onGoToCode={this.props.onGoToCode}
+          tittel={språk(tittel)}
+          kode={kode}
+          onGoToCode={onGoToCode}
           overordnet={overordnet}
         />
         <CardActions>
@@ -72,7 +73,7 @@ class Kodekort extends React.Component {
               variant="contained"
               color="primary"
               className={classes.button}
-              onClick={() => this.props.onToggleLayer(kode, true)}
+              onClick={this.handleAktiver}
               disabled={isActiveLayer}
             >
               Aktivér
@@ -84,6 +85,35 @@ class Kodekort extends React.Component {
             </Button>
           )}
         </CardActions>
+        {this.state.leggerTil && (
+          <Snackbar
+            open={true}
+            autoHideDuration={5000}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            onClose={() => {
+              this.setState({ leggerTil: false })
+            }}
+            message={
+              <span id="message-id">
+                Kartlag <b>{kode}</b> aktiveres
+              </span>
+            }
+            action={[
+              <IconButton
+                key="close"
+                aria-label="Close"
+                color="inherit"
+                className={classes.close}
+                onClick={() => this.props.history.push('/')}
+              >
+                <ArrowForward />
+              </IconButton>,
+            ]}
+          />
+        )}
       </Card>
     )
   }
@@ -98,4 +128,4 @@ class Kodekort extends React.Component {
           />
 
 */
-export default withStyles(styles)(Kodekort)
+export default withRouter(withStyles(styles)(Kodekort))
