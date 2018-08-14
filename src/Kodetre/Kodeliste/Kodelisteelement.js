@@ -1,12 +1,18 @@
 // @flow
 import { ListItem, ListItemSecondaryAction } from '@material-ui/core'
 import ListItemText from '@material-ui/core/ListItemText'
-import { withTheme } from '@material-ui/core/styles'
+import { withStyles, withTheme } from '@material-ui/core/styles'
 import React from 'react'
 import språk from '../../språk'
 import Bildeavatar from './Bildeavatar'
 import PaintSwatch from './PaintSwatch'
 import VolumIndikator from './VolumIndikator'
+
+const styles = {
+  disabled: {
+    backgroundColor: '#ddd',
+  },
+}
 
 type State = {}
 
@@ -29,7 +35,6 @@ class Kodelisteelement extends React.Component<Props, State> {
     return (
       <React.Fragment>
         <ListItem
-          innerDivStyle={{ backgroundColor: areal ? '' : '#DDDDDD' }}
           key={kode}
           onClick={() => this.props.onGoToCode(meta.sti)}
           onMouseEnter={() => this.props.onMouseEnter(kode)}
@@ -52,7 +57,7 @@ class Kodelisteelement extends React.Component<Props, State> {
                 right: 24,
               }}
             >
-              <PaintSwatch color={meta.farge} />
+              {areal && <PaintSwatch color={meta.farge} />}
             </div>
           </ListItemSecondaryAction>
           <ListItemText primary={språk(meta.tittel)} secondary={kode} />
@@ -62,4 +67,4 @@ class Kodelisteelement extends React.Component<Props, State> {
   }
 }
 
-export default withTheme()(Kodelisteelement)
+export default withStyles(styles)(withTheme()(Kodelisteelement))

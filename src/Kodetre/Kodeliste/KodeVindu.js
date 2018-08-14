@@ -12,7 +12,7 @@ class KodeVindu extends React.Component {
     const avatarUtenRamme = props.meta.utenRamme
     return (
       <FetchContainer>
-        <Paper zDepth={4}>
+        <Paper elevation={4}>
           {props.meta && (
             <Kodekort
               {...props.meta}

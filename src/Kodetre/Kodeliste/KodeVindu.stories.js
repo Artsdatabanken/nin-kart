@@ -1,6 +1,7 @@
 import { action } from '@storybook/addon-actions/dist/index'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
+import { MemoryRouter } from 'react-router-dom'
 import KodeVindu from './KodeVindu'
 
 var api = {
@@ -222,26 +223,30 @@ const meta2 = {
 
 storiesOf('KodeVindu', module)
   .add('default', () => (
-    <KodeVindu
-      data={api}
-      meta={meta}
-      onMouseEnter={action('mouseEnter')}
-      onMouseLeave={action('mouseLeave')}
-      onClick={action('click')}
-      isActiveLayer={true}
-      onFitBounds={action('onFitBounds')}
-      language={['nb', 'la']}
-    />
+    <MemoryRouter>
+      <KodeVindu
+        data={api}
+        meta={meta}
+        onMouseEnter={action('mouseEnter')}
+        onMouseLeave={action('mouseLeave')}
+        onClick={action('click')}
+        isActiveLayer={true}
+        onFitBounds={action('onFitBounds')}
+        language={['nb', 'la']}
+      />
+    </MemoryRouter>
   ))
   .add('relasjon', () => (
-    <KodeVindu
-      data={api2}
-      meta={meta2}
-      onMouseEnter={action('mouseEnter')}
-      onMouseLeave={action('mouseLeave')}
-      onClick={action('click')}
-      isActiveLayer={true}
-      onFitBounds={action('onFitBounds')}
-      language={['nb', 'la']}
-    />
+    <MemoryRouter>
+      <KodeVindu
+        data={api2}
+        meta={meta2}
+        onMouseEnter={action('mouseEnter')}
+        onMouseLeave={action('mouseLeave')}
+        onClick={action('click')}
+        isActiveLayer={true}
+        onFitBounds={action('onFitBounds')}
+        language={['nb', 'la']}
+      />
+    </MemoryRouter>
   ))

@@ -14,7 +14,6 @@ type State = {
   visValgte: boolean,
   pointProperties: Object,
   meta: Object,
-  localId: string,
   mapBounds: Object,
   bbox: Object,
   opplystKode: string,
@@ -37,7 +36,6 @@ class Grunnkart extends React.Component<Props, State> {
       visValgte: false,
       pointProperties: {},
       meta: {},
-      localId: '',
       mapBounds: {},
       opplystKode: '',
       bbox: {},
@@ -53,16 +51,6 @@ class Grunnkart extends React.Component<Props, State> {
 
   handleFitBounds = bbox => this.setState({ bbox: bbox })
 
-  visValgte = () => {
-    this.setState({
-      visValgte: true,
-    })
-  }
-  visKatalog = () => {
-    this.setState({
-      visValgte: false,
-    })
-  }
   addSelected = props => {
     let koder = this.state.valgteKoder
     koder.push({
@@ -73,10 +61,10 @@ class Grunnkart extends React.Component<Props, State> {
       barn: props.barn,
       bbox: props.bbox,
     })
+    console.log(koder)
 
     this.setState({
       valgteKoder: koder,
-      visValgte: true,
     })
   }
 
@@ -86,7 +74,6 @@ class Grunnkart extends React.Component<Props, State> {
       const koder = this.state.valgteKoder.filter(barn => barn.kode !== kode)
       this.setState({
         valgteKoder: koder,
-        visValgte: true,
       })
     }
   }
@@ -148,14 +135,6 @@ class Grunnkart extends React.Component<Props, State> {
       if (forelder.kode === kode) {
         forelder.farge = farge
       }
-      if (forelder.barn) {
-        Object.keys(forelder.barn).forEach(barnId => {
-          const barn = forelder.barn[barnId]
-          if (barn.kode === kode) {
-            barn.farge = farge
-          }
-        })
-      }
     })
     this.setState({
       valgteKoder: meta,
@@ -210,9 +189,7 @@ class Grunnkart extends React.Component<Props, State> {
             isActiveLayer={erAktivert}
             onToggleLayer={this.handleToggleLayer}
             onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-            onExitToRoot={this.visValgte}
-            visKatalog={this.visKatalog}
-            localId={this.state.localId}
+            onExitToRoot={() => this.props.history.replace('/')}
             meta={this.state.meta}
             updateColor={(kode, farge) => this.updateColor(kode, farge)}
           />

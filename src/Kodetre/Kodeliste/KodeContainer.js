@@ -23,8 +23,8 @@ class KodeContainer extends React.Component<Props, State> {
   state = { data: {} }
 
   componentDidUpdate(prevProps: Object, prevState: Object) {
-    let oldKode = this.props.meta.kode
-    let oldBounds = this.props.mapBounds
+    let oldKode = prevProps.meta.kode
+    let oldBounds = prevProps.mapBounds
     let newKode = this.props.meta.kode
     let newBounds = this.props.mapBounds
     if (oldKode !== newKode || oldBounds !== newBounds) {
