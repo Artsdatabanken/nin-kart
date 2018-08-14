@@ -47,7 +47,6 @@ exports[`Storyshots Aktive kartlag default 1`] = `
             onTouchEnd={[Function]}
             onTouchMove={[Function]}
             onTouchStart={[Function]}
-            role={undefined}
             tabIndex={null}
           >
             <span
@@ -57,18 +56,10 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                 className="MuiSwitch-icon-21"
               />
               <input
-                autoFocus={undefined}
                 checked={false}
                 className="MuiSwitchBase-input-32"
-                disabled={undefined}
-                id={undefined}
-                name={undefined}
                 onChange={[Function]}
-                readOnly={undefined}
-                required={undefined}
-                tabIndex={undefined}
                 type="checkbox"
-                value={undefined}
               />
             </span>
             <span
@@ -219,7 +210,6 @@ exports[`Storyshots Aktive kartlag default 1`] = `
             <svg
               aria-hidden="true"
               className="MuiSvgIcon-root-84"
-              color={undefined}
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -262,7 +252,6 @@ exports[`Storyshots Aktive kartlag default 1`] = `
             onTouchEnd={[Function]}
             onTouchMove={[Function]}
             onTouchStart={[Function]}
-            role={undefined}
             tabIndex={null}
           >
             <span
@@ -272,18 +261,10 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                 className="MuiSwitch-icon-21"
               />
               <input
-                autoFocus={undefined}
                 checked={false}
                 className="MuiSwitchBase-input-32"
-                disabled={undefined}
-                id={undefined}
-                name={undefined}
                 onChange={[Function]}
-                readOnly={undefined}
-                required={undefined}
-                tabIndex={undefined}
                 type="checkbox"
-                value={undefined}
               />
             </span>
             <span
@@ -381,7 +362,6 @@ exports[`Storyshots Aktive kartlag default 1`] = `
             onTouchEnd={[Function]}
             onTouchMove={[Function]}
             onTouchStart={[Function]}
-            role={undefined}
             tabIndex={null}
           >
             <span
@@ -391,18 +371,10 @@ exports[`Storyshots Aktive kartlag default 1`] = `
                 className="MuiSwitch-icon-21"
               />
               <input
-                autoFocus={undefined}
                 checked={false}
                 className="MuiSwitchBase-input-32"
-                disabled={undefined}
-                id={undefined}
-                name={undefined}
                 onChange={[Function]}
-                readOnly={undefined}
-                required={undefined}
-                tabIndex={undefined}
                 type="checkbox"
-                value={undefined}
               />
             </span>
             <span
@@ -495,7 +467,6 @@ exports[`Storyshots App Bar down into tree 1`] = `
         className="MuiButtonBase-root-754 MuiIconButton-root-748 TopBar-darkButton-707"
         disabled={false}
         onBlur={[Function]}
-        onClick={undefined}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
@@ -514,7 +485,6 @@ exports[`Storyshots App Bar down into tree 1`] = `
           <svg
             aria-hidden="true"
             className="MuiSvgIcon-root-757"
-            color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -535,23 +505,12 @@ exports[`Storyshots App Bar down into tree 1`] = `
         className="MuiInput-root-771 MuiInput-fullWidth-778"
       >
         <input
-          aria-invalid={undefined}
-          autoComplete={undefined}
-          autoFocus={undefined}
           className="MuiInput-input-779"
-          defaultValue={undefined}
-          disabled={undefined}
-          id={undefined}
-          name={undefined}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
-          onKeyUp={undefined}
           placeholder="Natur i Norge"
-          readOnly={undefined}
-          required={undefined}
-          rows={undefined}
           type="text"
           value=""
         />
@@ -579,7 +538,6 @@ exports[`Storyshots App Bar down into tree 1`] = `
           <svg
             aria-hidden="true"
             className="MuiSvgIcon-root-757"
-            color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -600,7 +558,6 @@ exports[`Storyshots App Bar down into tree 1`] = `
         className="MuiButtonBase-root-754 MuiIconButton-root-748 TopBar-lightButton-708"
         disabled={false}
         onBlur={[Function]}
-        onClick={undefined}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
@@ -619,7 +576,6 @@ exports[`Storyshots App Bar down into tree 1`] = `
           <svg
             aria-hidden="true"
             className="MuiSvgIcon-root-757"
-            color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -653,7 +609,6 @@ exports[`Storyshots App Bar root 1`] = `
         className="MuiButtonBase-root-675 MuiIconButton-root-669 TopBar-darkButton-628"
         disabled={false}
         onBlur={[Function]}
-        onClick={undefined}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
@@ -672,7 +627,6 @@ exports[`Storyshots App Bar root 1`] = `
           <svg
             aria-hidden="true"
             className="MuiSvgIcon-root-678"
-            color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -693,23 +647,12 @@ exports[`Storyshots App Bar root 1`] = `
         className="MuiInput-root-692 MuiInput-fullWidth-699"
       >
         <input
-          aria-invalid={undefined}
-          autoComplete={undefined}
-          autoFocus={undefined}
           className="MuiInput-input-700"
-          defaultValue={undefined}
-          disabled={undefined}
-          id={undefined}
-          name={undefined}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
-          onKeyUp={undefined}
           placeholder="Natur i Norge"
-          readOnly={undefined}
-          required={undefined}
-          rows={undefined}
           type="text"
           value=""
         />
@@ -737,7 +680,6 @@ exports[`Storyshots App Bar root 1`] = `
           <svg
             aria-hidden="true"
             className="MuiSvgIcon-root-678"
-            color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -758,7 +700,6 @@ exports[`Storyshots App Bar root 1`] = `
         className="MuiButtonBase-root-675 MuiIconButton-root-669 TopBar-lightButton-629"
         disabled={false}
         onBlur={[Function]}
-        onClick={undefined}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
@@ -777,7 +718,6 @@ exports[`Storyshots App Bar root 1`] = `
           <svg
             aria-hidden="true"
             className="MuiSvgIcon-root-678"
-            color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -843,15 +783,15 @@ exports[`Storyshots ColorPicker default 1`] = `
     >
       <style>
         
-                  .saturation-white {
-                    background: -webkit-linear-gradient(to right, #fff, rgba(255,255,255,0));
-                    background: linear-gradient(to right, #fff, rgba(255,255,255,0));
-                  }
-                  .saturation-black {
-                    background: -webkit-linear-gradient(to top, #000, rgba(0,0,0,0));
-                    background: linear-gradient(to top, #000, rgba(0,0,0,0));
-                  }
-                
+          .saturation-white {
+            background: -webkit-linear-gradient(to right, #fff, rgba(255,255,255,0));
+            background: linear-gradient(to right, #fff, rgba(255,255,255,0));
+          }
+          .saturation-black {
+            background: -webkit-linear-gradient(to top, #000, rgba(0,0,0,0));
+            background: linear-gradient(to top, #000, rgba(0,0,0,0));
+          }
+        
       </style>
       <div
         className="saturation-white"
@@ -981,20 +921,20 @@ exports[`Storyshots ColorPicker default 1`] = `
       >
         <style>
           
-                      .hue-horizontal {
-                        background: linear-gradient(to right, #f00 0%, #ff0 17%, #0f0
-                          33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
-                        background: -webkit-linear-gradient(to right, #f00 0%, #ff0
-                          17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
-                      }
+            .hue-horizontal {
+              background: linear-gradient(to right, #f00 0%, #ff0 17%, #0f0
+                33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+              background: -webkit-linear-gradient(to right, #f00 0%, #ff0
+                17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+            }
+
+            .hue-vertical {
+              background: linear-gradient(to top, #f00 0%, #ff0 17%, #0f0 33%,
+                #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+              background: -webkit-linear-gradient(to top, #f00 0%, #ff0 17%,
+                #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+            }
           
-                      .hue-vertical {
-                        background: linear-gradient(to top, #f00 0%, #ff0 17%, #0f0 33%,
-                          #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
-                        background: -webkit-linear-gradient(to top, #f00 0%, #ff0 17%,
-                          #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
-                      }
-                    
         </style>
         <div
           style={
@@ -1109,7 +1049,7 @@ exports[`Storyshots ColorPicker default 1`] = `
             "WebkitBorderRadius": undefined,
             "WebkitBoxShadow": undefined,
             "background": "linear-gradient(to right, rgba(34,25,77, 0) 0%,
-                     rgba(34,25,77, 1) 100%)",
+           rgba(34,25,77, 1) 100%)",
             "borderRadius": undefined,
             "bottom": "0px",
             "boxShadow": undefined,
@@ -1194,8 +1134,6 @@ exports[`Storyshots KodeVindu default 1`] = `
   <div>
     <div
       className="MuiPaper-root-176 MuiPaper-elevation2-180 MuiPaper-rounded-177"
-      isloading={undefined}
-      message={undefined}
       zDepth={4}
     >
       <div
@@ -1206,7 +1144,6 @@ exports[`Storyshots KodeVindu default 1`] = `
           className="MuiCardMedia-root-205"
           onClick={[Function]}
           onError={[Function]}
-          src={undefined}
           style={
             Object {
               "minHeight": 297,
@@ -1231,7 +1168,6 @@ exports[`Storyshots KodeVindu default 1`] = `
           >
             <div
               className="MuiChip-root-208 MuiChip-clickable-211"
-              onClick={undefined}
               onKeyDown={[Function]}
               role="button"
               tabIndex={0}
@@ -1336,7 +1272,7 @@ exports[`Storyshots KodeVindu default 1`] = `
           }
         >
           Marine vannmasser omfatter økosystemer av flytende, svevende og svømmende organismer i de frie vannmassene i saltvann (saltholdighet &gt; 0,5 ‰)
-          
+
           <span>
              
             <a
@@ -1875,8 +1811,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
   <div>
     <div
       className="MuiPaper-root-293 MuiPaper-elevation2-297 MuiPaper-rounded-294"
-      isloading={undefined}
-      message={undefined}
       zDepth={4}
     >
       <div
@@ -1887,7 +1821,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           className="MuiCardMedia-root-322"
           onClick={[Function]}
           onError={[Function]}
-          src={undefined}
           style={
             Object {
               "minHeight": 297,
@@ -1912,7 +1845,6 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           >
             <div
               className="MuiChip-root-325 MuiChip-clickable-328"
-              onClick={undefined}
               onKeyDown={[Function]}
               role="button"
               tabIndex={0}
@@ -2040,7 +1972,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           }
         >
           Helofytt-saltvannssump omfatter tette bestander av makrohelofytter, det vil si storvokste sumpplanter med røttene i sublitoral bunn (som ikke tørrlegges ved lavvann), i vannstrandbeltet eller noe opp i landstrandbeltet.
-          
+
           <span>
              
             <a
@@ -4534,268 +4466,268 @@ exports[`Storyshots PaintSwatch collection 1`] = `
 Array [
   <div>
     <div
-        style={
-            Object {
-                "height": "28px",
-                "right": "14px",
-                "width": "28px",
-              }
+      style={
+        Object {
+          "height": "28px",
+          "right": "14px",
+          "width": "28px",
         }
+      }
     >
+      <div
+        style={
+          Object {
+            "backgroundImage": "url(null)",
+            "borderRadius": "12%",
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
         <div
-            style={
-                Object {
-                    "backgroundImage": "url(null)",
-                    "borderRadius": "12%",
-                    "bottom": 0,
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  }
+          style={
+            Object {
+              "backgroundColor": "rgba(0,0,255,1)",
+              "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+              "borderRadius": "12%",
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
-        >
-            <div
-                style={
-                    Object {
-                        "backgroundColor": "rgba(0,0,255,1)",
-                        "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                        "borderRadius": "12%",
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      }
-                }
-            />
-        </div>
+          }
+        />
+      </div>
     </div>
     <p>
-        100
-        % alpha
+      100
+      % alpha
     </p>
-</div>,
+  </div>,
   <div>
     <div
-        style={
-            Object {
-                "height": "28px",
-                "right": "14px",
-                "width": "28px",
-              }
+      style={
+        Object {
+          "height": "28px",
+          "right": "14px",
+          "width": "28px",
         }
+      }
     >
+      <div
+        style={
+          Object {
+            "backgroundImage": "url(null)",
+            "borderRadius": "12%",
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
         <div
-            style={
-                Object {
-                    "backgroundImage": "url(null)",
-                    "borderRadius": "12%",
-                    "bottom": 0,
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  }
+          style={
+            Object {
+              "backgroundColor": "rgba(0,0,255,0.8)",
+              "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+              "borderRadius": "12%",
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
-        >
-            <div
-                style={
-                    Object {
-                        "backgroundColor": "rgba(0,0,255,0.8)",
-                        "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                        "borderRadius": "12%",
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      }
-                }
-            />
-        </div>
+          }
+        />
+      </div>
     </div>
     <p>
-        80
-        % alpha
+      80
+      % alpha
     </p>
-</div>,
+  </div>,
   <div>
     <div
-        style={
-            Object {
-                "height": "28px",
-                "right": "14px",
-                "width": "28px",
-              }
+      style={
+        Object {
+          "height": "28px",
+          "right": "14px",
+          "width": "28px",
         }
+      }
     >
+      <div
+        style={
+          Object {
+            "backgroundImage": "url(null)",
+            "borderRadius": "12%",
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
         <div
-            style={
-                Object {
-                    "backgroundImage": "url(null)",
-                    "borderRadius": "12%",
-                    "bottom": 0,
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  }
+          style={
+            Object {
+              "backgroundColor": "rgba(0,0,255,0.6)",
+              "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+              "borderRadius": "12%",
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
-        >
-            <div
-                style={
-                    Object {
-                        "backgroundColor": "rgba(0,0,255,0.6)",
-                        "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                        "borderRadius": "12%",
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      }
-                }
-            />
-        </div>
+          }
+        />
+      </div>
     </div>
     <p>
-        60
-        % alpha
+      60
+      % alpha
     </p>
-</div>,
+  </div>,
   <div>
     <div
-        style={
-            Object {
-                "height": "28px",
-                "right": "14px",
-                "width": "28px",
-              }
+      style={
+        Object {
+          "height": "28px",
+          "right": "14px",
+          "width": "28px",
         }
+      }
     >
+      <div
+        style={
+          Object {
+            "backgroundImage": "url(null)",
+            "borderRadius": "12%",
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
         <div
-            style={
-                Object {
-                    "backgroundImage": "url(null)",
-                    "borderRadius": "12%",
-                    "bottom": 0,
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  }
+          style={
+            Object {
+              "backgroundColor": "rgba(0,0,255,0.4)",
+              "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+              "borderRadius": "12%",
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
-        >
-            <div
-                style={
-                    Object {
-                        "backgroundColor": "rgba(0,0,255,0.4)",
-                        "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                        "borderRadius": "12%",
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      }
-                }
-            />
-        </div>
+          }
+        />
+      </div>
     </div>
     <p>
-        40
-        % alpha
+      40
+      % alpha
     </p>
-</div>,
+  </div>,
   <div>
     <div
-        style={
-            Object {
-                "height": "28px",
-                "right": "14px",
-                "width": "28px",
-              }
+      style={
+        Object {
+          "height": "28px",
+          "right": "14px",
+          "width": "28px",
         }
+      }
     >
+      <div
+        style={
+          Object {
+            "backgroundImage": "url(null)",
+            "borderRadius": "12%",
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
         <div
-            style={
-                Object {
-                    "backgroundImage": "url(null)",
-                    "borderRadius": "12%",
-                    "bottom": 0,
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  }
+          style={
+            Object {
+              "backgroundColor": "rgba(0,0,255,0.2)",
+              "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+              "borderRadius": "12%",
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
-        >
-            <div
-                style={
-                    Object {
-                        "backgroundColor": "rgba(0,0,255,0.2)",
-                        "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                        "borderRadius": "12%",
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      }
-                }
-            />
-        </div>
+          }
+        />
+      </div>
     </div>
     <p>
-        20
-        % alpha
+      20
+      % alpha
     </p>
-</div>,
+  </div>,
   <div>
     <div
-        style={
-            Object {
-                "height": "28px",
-                "right": "14px",
-                "width": "28px",
-              }
+      style={
+        Object {
+          "height": "28px",
+          "right": "14px",
+          "width": "28px",
         }
+      }
     >
+      <div
+        style={
+          Object {
+            "backgroundImage": "url(null)",
+            "borderRadius": "12%",
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
         <div
-            style={
-                Object {
-                    "backgroundImage": "url(null)",
-                    "borderRadius": "12%",
-                    "bottom": 0,
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  }
+          style={
+            Object {
+              "backgroundColor": "rgba(0,0,255,0)",
+              "border": "1px solid hsla(0, 0%, 0%, 0.2)",
+              "borderRadius": "12%",
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
-        >
-            <div
-                style={
-                    Object {
-                        "backgroundColor": "rgba(0,0,255,0)",
-                        "border": "1px solid hsla(0, 0%, 0%, 0.2)",
-                        "borderRadius": "12%",
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
-                      }
-                }
-            />
-        </div>
+          }
+        />
+      </div>
     </div>
     <p>
-        0
-        % alpha
+      0
+      % alpha
     </p>
-</div>,
+  </div>,
 ]
 `;
 
@@ -4804,28 +4736,22 @@ exports[`Storyshots PointInfo default 1`] = `
   <li
     className="MuiListItem-root-565 MuiListItem-default-568 MuiListItem-gutters-572"
     disabled={false}
-    leftAvatar={undefined}
     onClick={[Function]}
     primaryText="Høyde"
-    rightAvatar={undefined}
     secondaryText={42}
   />
   <li
     className="MuiListItem-root-565 MuiListItem-default-568 MuiListItem-gutters-572"
     disabled={false}
-    leftAvatar={undefined}
     onClick={[Function]}
     primaryText="Kalkinnhold"
-    rightAvatar={undefined}
     secondaryText="litt kalkfattig"
   />
   <li
     className="MuiListItem-root-565 MuiListItem-default-568 MuiListItem-gutters-572"
     disabled={false}
-    leftAvatar={undefined}
     onClick={[Function]}
     primaryText="Kommunenavn"
-    rightAvatar={undefined}
     secondaryText="Bodø"
   />
 </div>
@@ -4862,7 +4788,6 @@ exports[`Storyshots PolygonlagElement default 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
-          role={undefined}
           tabIndex={null}
         >
           <span
@@ -4872,18 +4797,10 @@ exports[`Storyshots PolygonlagElement default 1`] = `
               className="MuiSwitch-icon-102 MuiSwitch-iconChecked-103"
             />
             <input
-              autoFocus={undefined}
               checked={true}
               className="MuiSwitchBase-input-113"
-              disabled={undefined}
-              id={undefined}
-              name={undefined}
               onChange={[Function]}
-              readOnly={undefined}
-              required={undefined}
-              tabIndex={undefined}
               type="checkbox"
-              value={undefined}
             />
           </span>
           <span
@@ -5034,7 +4951,6 @@ exports[`Storyshots PolygonlagElement default 1`] = `
           <svg
             aria-hidden="true"
             className="MuiSvgIcon-root-165"
-            color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -5074,7 +4990,6 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
       <li
         className="MuiListItem-root-575 MuiListItem-default-578 MuiListItem-gutters-582"
         disabled={false}
-        primaryText={undefined}
         rightIcon={<pure(KeyboardArrowUp) />}
         style={
           Object {
@@ -5105,20 +5020,14 @@ exports[`Storyshots Punktinformasjon Punktinformasjon 1`] = `
           <li
             className="MuiListItem-root-575 MuiListItem-default-578 MuiListItem-gutters-582"
             disabled={false}
-            leftAvatar={undefined}
             onClick={[Function]}
             primaryText="name"
-            rightAvatar={undefined}
-            secondaryText={undefined}
           />
           <li
             className="MuiListItem-root-575 MuiListItem-default-578 MuiListItem-gutters-582"
             disabled={false}
-            leftAvatar={undefined}
             onClick={[Function]}
             primaryText="value"
-            rightAvatar={undefined}
-            secondaryText={undefined}
           />
         </ul>
       </div>
@@ -5221,7 +5130,6 @@ exports[`Storyshots Resultatliste default 1`] = `
           <img
             alt="KA"
             onError={[Function]}
-            src={undefined}
             style={
               Object {
                 "marginLeft": 16,
@@ -5240,13 +5148,15 @@ exports[`Storyshots Resultatliste default 1`] = `
               }
             }
           >
-            <Unknown>
+            <React.Fragment>
                
               <span
                 style={Object {}}
-              />
+              >
+                
+              </span>
                
-            </Unknown>
+            </React.Fragment>
           </div>
         }
         style={
@@ -5314,7 +5224,6 @@ exports[`Storyshots Resultatliste default 1`] = `
           <img
             alt="AR"
             onError={[Function]}
-            src={undefined}
             style={
               Object {
                 "marginLeft": 16,
@@ -5333,13 +5242,15 @@ exports[`Storyshots Resultatliste default 1`] = `
               }
             }
           >
-            <Unknown>
+            <React.Fragment>
                
               <span
                 style={Object {}}
-              />
+              >
+                
+              </span>
                
-            </Unknown>
+            </React.Fragment>
           </div>
         }
         style={
@@ -5405,7 +5316,6 @@ exports[`Storyshots Resultatliste default 1`] = `
           <img
             alt="AR"
             onError={[Function]}
-            src={undefined}
             style={
               Object {
                 "marginLeft": 16,
@@ -5424,13 +5334,15 @@ exports[`Storyshots Resultatliste default 1`] = `
               }
             }
           >
-            <Unknown>
+            <React.Fragment>
                
               <span
                 style={Object {}}
-              />
+              >
+                
+              </span>
                
-            </Unknown>
+            </React.Fragment>
           </div>
         }
         style={
@@ -5496,7 +5408,6 @@ exports[`Storyshots Resultatliste default 1`] = `
           <img
             alt="AR"
             onError={[Function]}
-            src={undefined}
             style={
               Object {
                 "marginLeft": 16,
@@ -5515,13 +5426,15 @@ exports[`Storyshots Resultatliste default 1`] = `
               }
             }
           >
-            <Unknown>
+            <React.Fragment>
                
               <span
                 style={Object {}}
-              />
+              >
+                
+              </span>
                
-            </Unknown>
+            </React.Fragment>
           </div>
         }
         style={
@@ -5587,7 +5500,6 @@ exports[`Storyshots Resultatliste default 1`] = `
           <img
             alt="AR"
             onError={[Function]}
-            src={undefined}
             style={
               Object {
                 "marginLeft": 16,
@@ -5606,13 +5518,15 @@ exports[`Storyshots Resultatliste default 1`] = `
               }
             }
           >
-            <Unknown>
+            <React.Fragment>
                
               <span
                 style={Object {}}
-              />
+              >
+                
+              </span>
                
-            </Unknown>
+            </React.Fragment>
           </div>
         }
         style={
@@ -5678,7 +5592,6 @@ exports[`Storyshots Resultatliste default 1`] = `
           <img
             alt="AR"
             onError={[Function]}
-            src={undefined}
             style={
               Object {
                 "marginLeft": 16,
@@ -5697,13 +5610,15 @@ exports[`Storyshots Resultatliste default 1`] = `
               }
             }
           >
-            <Unknown>
+            <React.Fragment>
                
               <span
                 style={Object {}}
-              />
+              >
+                
+              </span>
                
-            </Unknown>
+            </React.Fragment>
           </div>
         }
         style={
@@ -5769,7 +5684,6 @@ exports[`Storyshots Resultatliste default 1`] = `
           <img
             alt="AR"
             onError={[Function]}
-            src={undefined}
             style={
               Object {
                 "marginLeft": 16,
@@ -5788,13 +5702,15 @@ exports[`Storyshots Resultatliste default 1`] = `
               }
             }
           >
-            <Unknown>
+            <React.Fragment>
                
               <span
                 style={Object {}}
-              />
+              >
+                
+              </span>
                
-            </Unknown>
+            </React.Fragment>
           </div>
         }
         style={
@@ -5860,7 +5776,6 @@ exports[`Storyshots Resultatliste default 1`] = `
           <img
             alt="AR"
             onError={[Function]}
-            src={undefined}
             style={
               Object {
                 "marginLeft": 16,
@@ -5879,13 +5794,15 @@ exports[`Storyshots Resultatliste default 1`] = `
               }
             }
           >
-            <Unknown>
+            <React.Fragment>
                
               <span
                 style={Object {}}
-              />
+              >
+                
+              </span>
                
-            </Unknown>
+            </React.Fragment>
           </div>
         }
         style={
@@ -5951,7 +5868,6 @@ exports[`Storyshots Resultatliste default 1`] = `
           <img
             alt="AR"
             onError={[Function]}
-            src={undefined}
             style={
               Object {
                 "marginLeft": 16,
@@ -5970,13 +5886,15 @@ exports[`Storyshots Resultatliste default 1`] = `
               }
             }
           >
-            <Unknown>
+            <React.Fragment>
                
               <span
                 style={Object {}}
-              />
+              >
+                
+              </span>
                
-            </Unknown>
+            </React.Fragment>
           </div>
         }
         style={
@@ -6042,7 +5960,6 @@ exports[`Storyshots Resultatliste default 1`] = `
           <img
             alt="AR"
             onError={[Function]}
-            src={undefined}
             style={
               Object {
                 "marginLeft": 16,
@@ -6061,13 +5978,15 @@ exports[`Storyshots Resultatliste default 1`] = `
               }
             }
           >
-            <Unknown>
+            <React.Fragment>
                
               <span
                 style={Object {}}
-              />
+              >
+                
+              </span>
                
-            </Unknown>
+            </React.Fragment>
           </div>
         }
         style={
@@ -6133,7 +6052,6 @@ exports[`Storyshots Resultatliste default 1`] = `
           <img
             alt="AR"
             onError={[Function]}
-            src={undefined}
             style={
               Object {
                 "marginLeft": 16,
@@ -6152,13 +6070,15 @@ exports[`Storyshots Resultatliste default 1`] = `
               }
             }
           >
-            <Unknown>
+            <React.Fragment>
                
               <span
                 style={Object {}}
-              />
+              >
+                
+              </span>
                
-            </Unknown>
+            </React.Fragment>
           </div>
         }
         style={
@@ -6216,23 +6136,12 @@ exports[`Storyshots SearchBox default 1`] = `
     className="MuiInput-root-613 MuiInput-fullWidth-620"
   >
     <input
-      aria-invalid={undefined}
-      autoComplete={undefined}
-      autoFocus={undefined}
       className="MuiInput-input-621"
-      defaultValue={undefined}
-      disabled={undefined}
-      id={undefined}
-      name={undefined}
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      onKeyUp={undefined}
       placeholder="Natur i Norge"
-      readOnly={undefined}
-      required={undefined}
-      rows={undefined}
       type="text"
       value=""
     />
@@ -6286,7 +6195,6 @@ exports[`Storyshots Statistikk arter 1`] = `
           <svg
             aria-hidden="true"
             className="MuiSvgIcon-root-524"
-            color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -6323,8 +6231,6 @@ exports[`Storyshots Statistikk arter 1`] = `
     >
       <div
         className="MuiCardMedia-root-563"
-        src={undefined}
-        style={undefined}
       >
         <img
           alt="illustrasjon"
@@ -6353,8 +6259,6 @@ exports[`Storyshots Statistikk arter 1`] = `
     >
       <div
         className="MuiCardMedia-root-563"
-        src={undefined}
-        style={undefined}
       >
         <img
           alt="illustrasjon"
@@ -6417,7 +6321,6 @@ exports[`Storyshots Statistikk arter 1`] = `
             <svg
               aria-hidden="true"
               className="MuiSvgIcon-root-524"
-              color={undefined}
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -6650,7 +6553,6 @@ exports[`Storyshots Tweaks root 1`] = `
           <svg
             aria-hidden="true"
             className="MuiSvgIcon-root-808"
-            color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -6715,7 +6617,6 @@ exports[`Storyshots Tweaks root 1`] = `
               onTouchEnd={[Function]}
               onTouchMove={[Function]}
               onTouchStart={[Function]}
-              role={undefined}
               tabIndex={null}
             >
               <span
@@ -6725,18 +6626,10 @@ exports[`Storyshots Tweaks root 1`] = `
                   className="MuiSwitch-icon-816"
                 />
                 <input
-                  autoFocus={undefined}
                   checked={false}
                   className="MuiSwitchBase-input-827"
-                  disabled={undefined}
-                  id={undefined}
-                  name={undefined}
                   onChange={[Function]}
-                  readOnly={undefined}
-                  required={undefined}
-                  tabIndex={undefined}
                   type="checkbox"
-                  value={undefined}
                 />
               </span>
               <span
@@ -6808,7 +6701,6 @@ exports[`Storyshots Tweaks root 1`] = `
               onTouchEnd={[Function]}
               onTouchMove={[Function]}
               onTouchStart={[Function]}
-              role={undefined}
               tabIndex={null}
             >
               <span
@@ -6818,18 +6710,10 @@ exports[`Storyshots Tweaks root 1`] = `
                   className="MuiSwitch-icon-816"
                 />
                 <input
-                  autoFocus={undefined}
                   checked={false}
                   className="MuiSwitchBase-input-827"
-                  disabled={undefined}
-                  id={undefined}
-                  name={undefined}
                   onChange={[Function]}
-                  readOnly={undefined}
-                  required={undefined}
-                  tabIndex={undefined}
                   type="checkbox"
-                  value={undefined}
                 />
               </span>
               <span
@@ -6896,7 +6780,6 @@ exports[`Storyshots Tweaks root 1`] = `
               onTouchEnd={[Function]}
               onTouchMove={[Function]}
               onTouchStart={[Function]}
-              role={undefined}
               tabIndex={null}
             >
               <span
@@ -6906,18 +6789,11 @@ exports[`Storyshots Tweaks root 1`] = `
                   className="MuiSwitch-icon-816"
                 />
                 <input
-                  autoFocus={undefined}
                   checked={false}
                   className="MuiSwitchBase-input-827"
                   disabled={false}
-                  id={undefined}
-                  name={undefined}
                   onChange={[Function]}
-                  readOnly={undefined}
-                  required={undefined}
-                  tabIndex={undefined}
                   type="checkbox"
-                  value={undefined}
                 />
               </span>
               <span
@@ -6993,7 +6869,6 @@ exports[`Storyshots Tweaks root 1`] = `
           <svg
             aria-hidden="true"
             className="MuiSvgIcon-root-808"
-            color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -7078,15 +6953,15 @@ exports[`Storyshots Tweaks root 1`] = `
         >
           <style>
             
-                      .saturation-white {
-                        background: -webkit-linear-gradient(to right, #fff, rgba(255,255,255,0));
-                        background: linear-gradient(to right, #fff, rgba(255,255,255,0));
-                      }
-                      .saturation-black {
-                        background: -webkit-linear-gradient(to top, #000, rgba(0,0,0,0));
-                        background: linear-gradient(to top, #000, rgba(0,0,0,0));
-                      }
-                    
+          .saturation-white {
+            background: -webkit-linear-gradient(to right, #fff, rgba(255,255,255,0));
+            background: linear-gradient(to right, #fff, rgba(255,255,255,0));
+          }
+          .saturation-black {
+            background: -webkit-linear-gradient(to top, #000, rgba(0,0,0,0));
+            background: linear-gradient(to top, #000, rgba(0,0,0,0));
+          }
+        
           </style>
           <div
             className="saturation-white"
@@ -7216,20 +7091,20 @@ exports[`Storyshots Tweaks root 1`] = `
           >
             <style>
               
-                          .hue-horizontal {
-                            background: linear-gradient(to right, #f00 0%, #ff0 17%, #0f0
-                              33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
-                            background: -webkit-linear-gradient(to right, #f00 0%, #ff0
-                              17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
-                          }
-              
-                          .hue-vertical {
-                            background: linear-gradient(to top, #f00 0%, #ff0 17%, #0f0 33%,
-                              #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
-                            background: -webkit-linear-gradient(to top, #f00 0%, #ff0 17%,
-                              #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
-                          }
-                        
+            .hue-horizontal {
+              background: linear-gradient(to right, #f00 0%, #ff0 17%, #0f0
+                33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+              background: -webkit-linear-gradient(to right, #f00 0%, #ff0
+                17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+            }
+
+            .hue-vertical {
+              background: linear-gradient(to top, #f00 0%, #ff0 17%, #0f0 33%,
+                #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+              background: -webkit-linear-gradient(to top, #f00 0%, #ff0 17%,
+                #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+            }
+          
             </style>
             <div
               style={
@@ -7344,7 +7219,7 @@ exports[`Storyshots Tweaks root 1`] = `
                 "WebkitBorderRadius": undefined,
                 "WebkitBoxShadow": undefined,
                 "background": "linear-gradient(to right, rgba(34,25,77, 0) 0%,
-                         rgba(34,25,77, 1) 100%)",
+           rgba(34,25,77, 1) 100%)",
                 "borderRadius": undefined,
                 "bottom": "0px",
                 "boxShadow": undefined,
@@ -7415,28 +7290,20 @@ exports[`Storyshots VectorPointInfo default 1`] = `
   <li
     className="MuiListItem-root-603 MuiListItem-default-606 MuiListItem-gutters-610"
     disabled={false}
-    leftAvatar={undefined}
     onClick={[Function]}
-    primaryText={undefined}
-    rightAvatar={undefined}
     secondaryText={42}
   />
   <li
     className="MuiListItem-root-603 MuiListItem-default-606 MuiListItem-gutters-610"
     disabled={false}
-    leftAvatar={undefined}
     onClick={[Function]}
     primaryText="Kalkinnhold"
-    rightAvatar={undefined}
     secondaryText="litt kalkfattig"
   />
   <li
     className="MuiListItem-root-603 MuiListItem-default-606 MuiListItem-gutters-610"
     disabled={false}
-    leftAvatar={undefined}
     onClick={[Function]}
-    primaryText={undefined}
-    rightAvatar={undefined}
     secondaryText="Bodø"
   />
 </div>
@@ -7497,7 +7364,6 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
               <svg
                 aria-hidden="true"
                 className="MuiSvgIcon-root-1041"
-                color={undefined}
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -7518,23 +7384,12 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
             className="MuiInput-root-1055 MuiInput-fullWidth-1062"
           >
             <input
-              aria-invalid={undefined}
-              autoComplete={undefined}
-              autoFocus={undefined}
               className="MuiInput-input-1063"
-              defaultValue={undefined}
-              disabled={undefined}
-              id={undefined}
-              name={undefined}
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              onKeyUp={undefined}
               placeholder="Natur i Norge"
-              readOnly={undefined}
-              required={undefined}
-              rows={undefined}
               type="text"
               value=""
             />
@@ -7562,7 +7417,6 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
               <svg
                 aria-hidden="true"
                 className="MuiSvgIcon-root-1041"
-                color={undefined}
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -7619,7 +7473,6 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
               onTouchEnd={[Function]}
               onTouchMove={[Function]}
               onTouchStart={[Function]}
-              role={undefined}
               tabIndex={null}
             >
               <span
@@ -7629,18 +7482,10 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                   className="MuiSwitch-icon-1088"
                 />
                 <input
-                  autoFocus={undefined}
                   checked={false}
                   className="MuiSwitchBase-input-1099"
-                  disabled={undefined}
-                  id={undefined}
-                  name={undefined}
                   onChange={[Function]}
-                  readOnly={undefined}
-                  required={undefined}
-                  tabIndex={undefined}
                   type="checkbox"
-                  value={undefined}
                 />
               </span>
               <span
@@ -7738,7 +7583,6 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
               onTouchEnd={[Function]}
               onTouchMove={[Function]}
               onTouchStart={[Function]}
-              role={undefined}
               tabIndex={null}
             >
               <span
@@ -7748,18 +7592,10 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                   className="MuiSwitch-icon-1088"
                 />
                 <input
-                  autoFocus={undefined}
                   checked={false}
                   className="MuiSwitchBase-input-1099"
-                  disabled={undefined}
-                  id={undefined}
-                  name={undefined}
                   onChange={[Function]}
-                  readOnly={undefined}
-                  required={undefined}
-                  tabIndex={undefined}
                   type="checkbox"
-                  value={undefined}
                 />
               </span>
               <span
@@ -7877,7 +7713,6 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
             className="MuiButtonBase-root-893 MuiIconButton-root-887 TopBar-darkButton-846"
             disabled={false}
             onBlur={[Function]}
-            onClick={undefined}
             onFocus={[Function]}
             onKeyDown={[Function]}
             onKeyUp={[Function]}
@@ -7896,7 +7731,6 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
               <svg
                 aria-hidden="true"
                 className="MuiSvgIcon-root-896"
-                color={undefined}
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -7917,23 +7751,12 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
             className="MuiInput-root-910 MuiInput-fullWidth-917"
           >
             <input
-              aria-invalid={undefined}
-              autoComplete={undefined}
-              autoFocus={undefined}
               className="MuiInput-input-918"
-              defaultValue={undefined}
-              disabled={undefined}
-              id={undefined}
-              name={undefined}
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              onKeyUp={undefined}
               placeholder="Natur i Norge"
-              readOnly={undefined}
-              required={undefined}
-              rows={undefined}
               type="text"
               value=""
             />
@@ -7961,7 +7784,6 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
               <svg
                 aria-hidden="true"
                 className="MuiSvgIcon-root-896"
-                color={undefined}
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -8018,7 +7840,6 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
               onTouchEnd={[Function]}
               onTouchMove={[Function]}
               onTouchStart={[Function]}
-              role={undefined}
               tabIndex={null}
             >
               <span
@@ -8028,18 +7849,10 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                   className="MuiSwitch-icon-943"
                 />
                 <input
-                  autoFocus={undefined}
                   checked={false}
                   className="MuiSwitchBase-input-954"
-                  disabled={undefined}
-                  id={undefined}
-                  name={undefined}
                   onChange={[Function]}
-                  readOnly={undefined}
-                  required={undefined}
-                  tabIndex={undefined}
                   type="checkbox"
-                  value={undefined}
                 />
               </span>
               <span
@@ -8137,7 +7950,6 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
               onTouchEnd={[Function]}
               onTouchMove={[Function]}
               onTouchStart={[Function]}
-              role={undefined}
               tabIndex={null}
             >
               <span
@@ -8147,18 +7959,10 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                   className="MuiSwitch-icon-943"
                 />
                 <input
-                  autoFocus={undefined}
                   checked={false}
                   className="MuiSwitchBase-input-954"
-                  disabled={undefined}
-                  id={undefined}
-                  name={undefined}
                   onChange={[Function]}
-                  readOnly={undefined}
-                  required={undefined}
-                  tabIndex={undefined}
                   type="checkbox"
-                  value={undefined}
                 />
               </span>
               <span

@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Highlight 1`] = `
-<Unknown>
+<React.Fragment>
    
   <span
     style={Object {}}
-  />
+  >
+    
+  </span>
   <span
     style={
       Object {
@@ -22,5 +24,5 @@ exports[`Highlight 1`] = `
     rmøy
   </span>
    
-</Unknown>
+</React.Fragment>
 `;
