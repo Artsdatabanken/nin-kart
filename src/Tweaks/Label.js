@@ -4,7 +4,7 @@ import React from 'react'
 const Label = ({ children, style, disabled, theme }) => (
   <div
     style={{
-      position: 'relative',
+      position: 'absolute',
       float: 'left',
       left: 56,
       fontFamily: theme.typography.fontFamily,

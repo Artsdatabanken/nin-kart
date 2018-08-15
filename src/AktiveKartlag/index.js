@@ -39,8 +39,7 @@ function listeElement(forelder, props) {
     case 'terreng':
       return (
         <TerrenglagElement
-          key="terreng"
-          meta={{ tittel: { nb: '3D terreng' } }}
+          key={kode}
           erSynlig={true}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
@@ -50,9 +49,8 @@ function listeElement(forelder, props) {
     case 'bakgrunnskart':
       return (
         <BakgrunnskartElement
-          key="basemap"
+          key={kode}
           tema="Mørk grå"
-          meta={{ tittel: { nb: 'Bakgrunnskart' } }}
           erSynlig={true}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}

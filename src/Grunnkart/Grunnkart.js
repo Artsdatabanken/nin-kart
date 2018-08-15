@@ -257,11 +257,19 @@ const standardLag = [
     kode: 'bakgrunnskart',
     tittel: { nb: 'Bakgrunnskart' },
     erSynlig: true,
+    kommunegrense: true,
+    fylkesgrense: true,
+    landegrense: false,
   },
   {
     kode: 'terreng',
     tittel: { nb: '3D terreng' },
     erSynlig: false,
+    vertikaltOverdriv: 2.0,
+    visKontur: true,
+    visEtikettTopp: true,
+    konturintervall: 100.0,
+    visEtikettKontur: true,
   },
 ]
 /*

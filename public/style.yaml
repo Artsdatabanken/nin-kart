@@ -41,12 +41,6 @@ sources:
     max_zoom: 11
 
 layers:
-  multiply:
-    # The source should be dynamically set to reflect the currently active layers
-    data: { source: multiply }
-    draw:
-      multiply-rasters:
-        order: 0
   water:
     data:
       source: osm
@@ -73,15 +67,6 @@ layers:
         order: 200
         color: [0.3, 0.3, 0.3, 1.0]
         width: 1.2px
-  boundary:
-    data:
-      source: osm
-      layer: boundary
-    draw:
-      boundary:
-        order: 150
-        color: [0.5, 0.5, 0.5, 0.8]
-        width: 3.2px
 styles:
   water:
     base: polygons
@@ -92,6 +77,7 @@ styles:
         NUM_OCTAVES: 3
   boundary:
     base: lines
+    order: 150
     blend: overlay
     dash: [2, 0.5]
 

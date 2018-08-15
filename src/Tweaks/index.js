@@ -1,5 +1,5 @@
 import React from 'react'
-import Bakgrunnskart from './Bakgrunnskart'
+import Bakgrunnskart from './bakgrunn/Bakgrunnskart'
 import Polygon from './Polygon'
 import Terreng from './Terreng'
 class Tweaks extends React.Component {
@@ -10,23 +10,18 @@ class Tweaks extends React.Component {
       case 'bakgrunnskart':
         return <Bakgrunnskart {...this.props} />
       case 'terreng':
-        return (
-          <Terreng
-            {...this.props}
-            vertikaltOverdriv={this.state.vertikaltOverdriv}
-            visKontur={this.state.visKontur}
-            visEtikettTopp={this.state.visEtikettTopp}
-            konturintervall={this.state.konturintervall}
-            visEtikettKontur={this.state.visEtikettKontur}
-          />
-        )
+        return <Terreng {...this.props} />
       default:
-        return <Polygon {...this.props} {...this.props.item} />
+        return <Polygon {...this.props} />
     }
   }
 
   render() {
-    return <div style={{ padding: 16 }}>{this.seksjon(this.props.kode)}</div>
+    return (
+      <div style={{ padding: 16, ...this.props.style }}>
+        {this.seksjon(this.props.kode)}
+      </div>
+    )
   }
 }
 
