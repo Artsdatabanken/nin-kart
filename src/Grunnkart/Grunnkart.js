@@ -300,7 +300,6 @@ class Grunnkart extends React.Component<Props, State> {
     this.state = {
       aktiveLag: standardLag,
       showMainDrawer: false,
-      meta: {},
       opplystKode: '',
     }
     //    this.redirectTo(props.location.pathname.replace('/katalog/', ''))
@@ -363,7 +362,7 @@ class Grunnkart extends React.Component<Props, State> {
     url = url.toLowerCase()
     let kodematch = url.match(/\/katalog\/(.*)/)
     if (!kodematch || kodematch.length !== 2) {
-      this.setState({ meta: '' })
+      this.setState({ meta: null })
       return
     }
 
@@ -399,9 +398,11 @@ class Grunnkart extends React.Component<Props, State> {
   }
 
   render() {
-    const erAktivert = !!this.state.aktiveLag.find(
-      vk => vk.kode === this.state.meta.kode
-    )
+    let erAktivert = false
+    if (this.state.meta)
+      erAktivert = !!this.state.aktiveLag.find(
+        vk => vk.kode === this.state.meta.kode
+      )
     return (
       <div>
         <Kart
@@ -412,6 +413,7 @@ class Grunnkart extends React.Component<Props, State> {
           pitch={0}
           bearing={0}
           aktiveLag={this.state.aktiveLag}
+          meta={this.state.meta}
           opplystKode={this.state.opplystKode}
           onMapBoundsChange={this.handleActualBoundsChange}
         />
@@ -443,7 +445,7 @@ class Grunnkart extends React.Component<Props, State> {
             onToggleLayer={this.handleToggleLayer}
             onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
             onExitToRoot={() => this.props.history.replace('/')}
-            meta={this.state.meta}
+            meta={this.state.meta || {}}
             onUpdateLayerProp={this.handleUpdateLayerProp}
           />
         )}
