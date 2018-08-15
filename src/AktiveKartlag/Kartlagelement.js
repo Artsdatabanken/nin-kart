@@ -14,10 +14,19 @@ import PaintSwatch from '../Kodetre/Kodeliste/PaintSwatch'
 
 class Kartlagelement extends React.Component {
   render() {
-    const { tittel, undertittel, kode, farge, kanFlyttes = true } = this.props
+    const {
+      tittel,
+      undertittel,
+      kode,
+      farge,
+      kanFlyttes = true,
+      onClick,
+    } = this.props
     return (
       <React.Fragment>
         <ListItem
+          button={true}
+          onClick={onClick}
           key={kode}
           onMouseEnter={() =>
             this.props.onMouseEnter && this.props.onMouseEnter(kode)
@@ -27,14 +36,14 @@ class Kartlagelement extends React.Component {
           }}
         >
           <Switch
-            checked={this.props.vis}
+            checked={this.props.erSynlig}
             onClick={e => {
               e.stopPropagation()
             }}
           />
           <ListItemText primary={tittel} secondary={undertittel} />
           <Avatar style={{ float: 'left' }}>
-            <PaintSwatch farge={farge} />
+            <PaintSwatch color={farge} />
           </Avatar>
           {kanFlyttes && (
             <IconButton

@@ -5,6 +5,7 @@ import ActionDelete from '@material-ui/icons/Delete'
 import ActionInfo from '@material-ui/icons/Info'
 import ZoomIn from '@material-ui/icons/ZoomIn'
 import React, { Component } from 'react'
+import { withRouter } from 'react-router'
 import tinycolor from 'tinycolor2'
 import språk from '../språk'
 import ColorPicker from './ColorPicker'
@@ -12,77 +13,65 @@ import ColorPicker from './ColorPicker'
 class Polygon extends Component {
   render() {
     const {
-      onRemove,
-      item,
+      onRemoveSelectedLayer,
+      kode,
       farge,
-      onGoToCode,
-      onExitToRoot,
+      history,
+      tittel,
+      onUpdateLayerProp,
+      bbox,
       onFitBounds,
+      kanSlettes,
     } = this.props
     return (
       <React.Fragment>
-        <ListSubheader>
-          {item && item.tittel ? språk(item.tittel) : 'Polygon'}
-        </ListSubheader>
-        {item &&
-          item.kode && (
-            <ColorPicker
-              color={farge}
-              onChange={farge => {
-                const rgbString = tinycolor(farge.rgb).toRgbString()
-                this.props.setFargeKode(item.kode, rgbString)
-              }}
-            />
-          )}
+        <ListSubheader>{tittel ? språk(tittel) : 'Polygon'}</ListSubheader>
+        {
+          <ColorPicker
+            color={farge}
+            onChange={farge => {
+              const rgbString = tinycolor(farge.rgb).toRgbString()
+              onUpdateLayerProp(kode, 'farge', rgbString)
+            }}
+          />
+        }
 
-        {item &&
-          item.removable && (
-            <Button
-              color="primary"
-              onClick={e => {
-                if (item && item.kode) {
-                  onRemove(item.kode)
-                  onExitToRoot()
-                }
-              }}
-              icon={<ActionDelete />}
-            >
-              Fjern
-            </Button>
-          )}
+        {kanSlettes && (
+          <Button
+            color="primary"
+            onClick={e => {
+              onRemoveSelectedLayer(kode)
+            }}
+            icon={<ActionDelete />}
+          >
+            Fjern
+          </Button>
+        )}
 
-        {item &&
-          item.sti && (
-            <Button
-              color="primary"
-              onClick={() => {
-                if (item && item.sti) {
-                  onGoToCode(item.sti)
-                }
-              }}
-              icon={<ActionInfo />}
-            >
-              Info
-            </Button>
-          )}
+        <Button
+          color="primary"
+          onClick={() => {
+            history.push('/katalog/' + kode)
+          }}
+          icon={<ActionInfo />}
+        >
+          Info
+        </Button>
 
-        {item &&
-          item.bbox && (
-            <Button
-              color="primary"
-              onClick={() => {
-                if (item && item.bbox) {
-                  onFitBounds(item.bbox)
-                }
-              }}
-              icon={<ZoomIn />}
-            >
-              Vis i kart
-            </Button>
-          )}
+        {bbox && (
+          <Button
+            color="primary"
+            onClick={() => {
+              onFitBounds(bbox)
+            }}
+            icon={<ZoomIn />}
+          >
+            Vis i kart
+          </Button>
+        )}
       </React.Fragment>
     )
   }
 }
 
-export default withTheme()(Polygon)
+export default withRouter(withTheme()(Polygon))

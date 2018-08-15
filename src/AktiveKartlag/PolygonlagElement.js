@@ -1,6 +1,5 @@
 import React from 'react'
 import { withRouter } from 'react-router'
-import Kodetagg from '../Kodetre/Kodetagg'
 import språk from '../språk'
 import KartlagElement from './Kartlagelement'
 
@@ -43,44 +42,19 @@ class PolygonlagElement extends React.Component {
 
   render() {
     const item = this.props
-    const {
-      farge,
-      tittel,
-      undertittel,
-      kode,
-      avatarUtenRamme,
-      rightIcon,
-    } = this.props
+    const { tittel, kode } = this.props
     return (
       <KartlagElement
-        farge={farge}
-        avatarUtenRamme={avatarUtenRamme}
-        onClick={this.props.onClick}
+        {...this.props}
         key={item.kode}
-        kode={item.kode}
-        rightIcon={rightIcon}
-        erEkspandert={this.props.erEkspandert}
         onMouseEnter={() =>
           this.props.onMouseEnter && this.props.onMouseEnter(kode)
         }
         onMouseLeave={() => {
           this.props.onMouseLeave && this.props.onMouseLeave(kode)
         }}
-        vis={this.props.vis}
-        indent={this.props.indent}
-        tittel={
-          <div>
-            {språk(tittel)}
-            <br />
-            <Kodetagg hele={true} kode={kode} />
-          </div>
-        }
-        undertittel={this.undertekst(
-          this.props.størsteAreal,
-          this.props.areal,
-          this.props.antallNaturområder,
-          undertittel
-        )}
+        tittel={språk(tittel)}
+        undertittel={kode}
       />
     )
   }

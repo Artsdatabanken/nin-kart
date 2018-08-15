@@ -53,14 +53,9 @@ class VenstreVinduContainer extends React.Component {
 
   finnValgtKodeElement(kode) {
     var item = undefined
-    Object.keys(this.props.valgteKoder).forEach(id => {
-      const forelder = this.props.valgteKoder[id]
+    Object.keys(this.props.aktiveLag).forEach(id => {
+      const forelder = this.props.aktiveLag[id]
       if (forelder.kode === kode) item = forelder
-
-      Object.keys(forelder.barn).forEach(barnId => {
-        const barn = forelder.barn[barnId]
-        if (barn.kode === kode) item = barn
-      })
     })
 
     return item
@@ -77,7 +72,6 @@ class VenstreVinduContainer extends React.Component {
               top: 0,
               left: 0,
               padding: 0,
-              paddingTop: 48,
               bottom: 0,
               width: window.innerWidth < 600 ? window.innerWidth : 408,
               zIndex: -10,
@@ -138,12 +132,14 @@ class VenstreVinduContainer extends React.Component {
                 render={({ match, history }) => {
                   return (
                     <AktiveKartlag
-                      style={{ backgroundColor: '#eee' }}
-                      koder={this.props.valgteKoder}
+                      style={{
+                        backgroundColor: '#eee',
+                        paddingTop: 48,
+                      }}
+                      koder={this.props.aktiveLag}
                       onMouseEnter={this.props.onMouseEnter}
                       onMouseLeave={this.props.onMouseLeave}
                       onRemoveSelectedLayer={this.props.onRemoveSelectedLayer}
-                      visKatalog={this.props.visKatalog}
                     />
                   )
                 }}
@@ -153,21 +149,15 @@ class VenstreVinduContainer extends React.Component {
                 path="/lag/:kode"
                 render={({ match, history }) => (
                   <Tweaks
+                    style={{
+                      paddingTop: 48,
+                    }}
                     kode={match.params.kode}
-                    onRemoveSelectedLayer={this.props.onRemoveSelectedLayer}
-                    koder={this.props.valgteKoder}
-                    onGoToCode={sti => {
-                      this.setState({ searchResults: null })
-                      history.push('/katalog/' + sti)
-                    }}
+                    koder={this.props.aktiveLag}
                     item={this.finnValgtKodeElement(match.params.kode)}
-                    onExitToRoot={() => {
-                      this.setState({ searchResults: null })
-                      history.push('/')
-                      this.props.onExitToRoot()
-                    }}
                     onFitBounds={this.props.onFitBounds}
-                    updateColor={this.props.updateColor}
+                    onUpdateLayerProp={this.props.onUpdateLayerProp}
+                    onRemoveSelectedLayer={this.props.onRemoveSelectedLayer}
                   />
                 )}
               />
