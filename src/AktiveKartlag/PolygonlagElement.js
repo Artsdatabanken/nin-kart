@@ -66,8 +66,7 @@ class PolygonlagElement extends React.Component {
         onMouseLeave={() => {
           this.props.onMouseLeave && this.props.onMouseLeave(kode)
         }}
-        vis={this.props.vis}
-        indent={this.props.indent}
+        erSynlig={this.props.erSynlig}
         tittel={
           <div>
             {språk(tittel)}

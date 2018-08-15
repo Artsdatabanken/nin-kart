@@ -27,38 +27,27 @@ class Tweaks extends React.Component {
     return this.props.farge
   }
 
-  handleUpdateLayerProp = (key, value) => {
-    this.setState({ [key]: value })
-  }
-
   seksjon(kategori) {
     switch (kategori) {
       case 'bakgrunnskart':
-        return <Bakgrunnskart onUpdateLayerProp={this.handleUpdateLayerProp} />
+        return <Bakgrunnskart {...this.props} />
       case 'terreng':
         return (
           <Terreng
+            {...this.props}
             vertikaltOverdriv={this.state.vertikaltOverdriv}
             visKontur={this.state.visKontur}
             visEtikettTopp={this.state.visEtikettTopp}
             konturintervall={this.state.konturintervall}
             visEtikettKontur={this.state.visEtikettKontur}
-            onUpdateLayerProp={this.handleUpdateLayerProp}
           />
         )
       default:
         return (
           <Polygon
-            onRemove={this.props.onRemoveSelectedLayer}
-            item={this.props.item}
-            kode={this.props.kode}
-            koder={this.props.koder}
+            {...this.props}
             farge={this.getFargeKode()}
             setFargeKode={this.setFargeKode}
-            onGoToCode={this.props.onGoToCode}
-            onExitToRoot={this.props.onExitToRoot}
-            onFitBounds={this.props.onFitBounds}
-            updateColor={this.props.updateColor}
           />
         )
     }

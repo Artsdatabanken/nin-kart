@@ -8,55 +8,15 @@ import TerrenglagElement from './TerrenglagElement'
 
 class AktiveKartlag extends React.Component {
   render() {
-    const {
-      koder,
-      onRemoveSelectedLayer,
-      onMouseEnter,
-      onMouseLeave,
-      language,
-      history,
-    } = this.props
+    const { koder, history } = this.props
 
     return (
       <div style={{ position: 'relative', top: 8 }}>
         <ListSubheader>Mine kartlag</ListSubheader>
         <Divider />
         {koder.map(forelder => {
-          const kode = forelder.kode
-          return (
-            <PolygonlagElement
-              {...forelder}
-              key={kode}
-              kode={kode}
-              vis={forelder.vis}
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
-              onRemove={kode => onRemoveSelectedLayer(kode)}
-              language={language}
-            />
-          )
+          return listeElement(forelder, this.props)
         })}
-        <BakgrunnskartElement
-          key="basemap"
-          kode="Mørk grå"
-          meta={{ tittel: { nb: 'Bakgrunnskart' } }}
-          vis={true}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          onRemove={kode => onRemoveSelectedLayer('basemap')}
-          onClick={() => this.handleClick('basemap')}
-          language={language}
-        />
-        <TerrenglagElement
-          key="terreng"
-          meta={{ tittel: { nb: '3D terreng' } }}
-          vis={true}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          onRemove={kode => onRemoveSelectedLayer('terreng')}
-          onClick={() => this.handleClick('terreng')}
-          language={language}
-        />
         <Button
           icon={<MapsLayers />}
           color="primary"
@@ -71,4 +31,46 @@ class AktiveKartlag extends React.Component {
     )
   }
 }
+
+function listeElement(forelder, props) {
+  const kode = forelder.kode
+  const { history, onRemoveSelectedLayer, onMouseEnter, onMouseLeave } = props
+  switch (kode) {
+    case 'terreng':
+      return (
+        <TerrenglagElement
+          key="terreng"
+          meta={{ tittel: { nb: '3D terreng' } }}
+          erSynlig={true}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          onClick={() => history.push('/lag/' + kode)}
+        />
+      )
+    case 'bakgrunn':
+      return (
+        <BakgrunnskartElement
+          key="basemap"
+          kode="Mørk grå"
+          meta={{ tittel: { nb: 'Bakgrunnskart' } }}
+          erSynlig={true}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          onClick={() => history.push('/lag/' + kode)}
+        />
+      )
+    default:
+      return (
+        <PolygonlagElement
+          {...forelder}
+          key={kode}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          onRemove={kode => onRemoveSelectedLayer(kode)}
+          onClick={() => history.push('/lag/' + kode)}
+        />
+      )
+  }
+}
+
 export default withRouter(AktiveKartlag)

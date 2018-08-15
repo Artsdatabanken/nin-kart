@@ -41,12 +41,12 @@ sources:
     max_zoom: 7
 
 layers:
-  multiply:
-    # The source should be dynamically set to reflect the currently active layers
-    data: { source: NA_I1 }
-    draw:
-      multiply-rasters:
-        order: 100
+  #  multiply:
+  #    # The source should be dynamically set to reflect the currently active layers
+  #    data: { source: NA_I1 }
+  #    draw:
+  #      multiply-rasters:
+  #        order: 100
   water:
     data:
       source: osm

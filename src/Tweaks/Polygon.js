@@ -12,7 +12,7 @@ import ColorPicker from './ColorPicker'
 class Polygon extends Component {
   render() {
     const {
-      onRemove,
+      onRemoveSelectedLayer,
       item,
       farge,
       onGoToCode,
@@ -41,7 +41,7 @@ class Polygon extends Component {
               color="primary"
               onClick={e => {
                 if (item && item.kode) {
-                  onRemove(item.kode)
+                  onRemoveSelectedLayer(item.kode)
                   onExitToRoot()
                 }
               }}

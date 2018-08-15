@@ -28,6 +28,7 @@ class Kart extends React.Component<Props, State> {
   }
 
   render() {
+    console.log('*!* kart: ', this.props.aktiveLag)
     return <Tangram {...this.props} onClick={this.onClick} />
   }
 }

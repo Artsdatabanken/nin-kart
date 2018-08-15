@@ -56,11 +56,6 @@ class VenstreVinduContainer extends React.Component {
     Object.keys(this.props.valgteKoder).forEach(id => {
       const forelder = this.props.valgteKoder[id]
       if (forelder.kode === kode) item = forelder
-
-      Object.keys(forelder.barn).forEach(barnId => {
-        const barn = forelder.barn[barnId]
-        if (barn.kode === kode) item = barn
-      })
     })
 
     return item
@@ -143,7 +138,6 @@ class VenstreVinduContainer extends React.Component {
                       onMouseEnter={this.props.onMouseEnter}
                       onMouseLeave={this.props.onMouseLeave}
                       onRemoveSelectedLayer={this.props.onRemoveSelectedLayer}
-                      visKatalog={this.props.visKatalog}
                     />
                   )
                 }}
@@ -168,6 +162,7 @@ class VenstreVinduContainer extends React.Component {
                     }}
                     onFitBounds={this.props.onFitBounds}
                     updateColor={this.props.updateColor}
+                    onUpdateLayerProp={this.props.onUpdateLayerProp}
                   />
                 )}
               />
