@@ -1,5 +1,4 @@
 // @flow
-//import Mapbox from './Mapbox'
 import React from 'react'
 import { withRouter } from 'react-router'
 import LeafletTangram from './LeafletTangram'
