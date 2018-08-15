@@ -70,8 +70,14 @@ class LeafletTangram extends React.Component {
         this.map.flyToBounds(c)
       }
     }
-    if (this.props.aktiveLag === prevProps.aktiveLag) return
-    this.updateMap(this.props)
+
+    if (this.props.aktiveLag !== prevProps.aktiveLag) {
+      this.updateMap(this.props)
+      return
+    }
+    if (this.props.meta !== prevProps.meta) {
+      this.updateMap(this.props)
+    }
   }
 
   removeMarker() {

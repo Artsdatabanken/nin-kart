@@ -25,7 +25,6 @@ function lagBakgrunnskart(lag) {
   if (lag.landegrense) bg.land = bakgrunnskartTemplate.land
   if (lag.fylkesgrense) bg.fylke = bakgrunnskartTemplate.fylke
   if (lag.kommunegrense) bg.kommune = bg.kommune = bakgrunnskartTemplate.kommune
-  console.log(JSON.stringify(bg))
   return bg
 }
 
@@ -95,7 +94,11 @@ function makeScene(props) {
   }
 }
 
-function createLeafletLayer(props: Object, onClick: Function) {
+function createLeafletLayer(
+  props: Object,
+  onClick: Function,
+  iKatalog: boolean
+) {
   let def = {
     scene: makeScene(props),
     events: {
@@ -108,9 +111,9 @@ function createLeafletLayer(props: Object, onClick: Function) {
       '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | <a href="http://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a> | <a href="https://www.nextzen.com/" target="_blank">Nextzen</a>',
   }
 
-  if (props.aktivKode)
+  if (props.meta)
     def.scene.layers = lagLagForKatalog(
-      props.aktivKode,
+      props.meta.kode,
       props.meta.barn || { [props.meta.kode]: props.meta }
     )
   else def.scene.layers = lagLagForAktive(props.aktiveLag)
