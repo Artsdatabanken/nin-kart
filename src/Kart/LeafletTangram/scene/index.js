@@ -2,33 +2,61 @@
 import Tangram from 'tangram/dist/tangram.debug'
 import imports from './import'
 import { createLights } from './lights'
+import bakgrunnskartTemplate from './mal/bakgrunnskart'
 import { createSources } from './sources'
 import { createStyles } from './styles'
+
+function lagLag(lag) {
+  switch (lag.kode) {
+    case 'bakgrunnskart':
+      return lagBakgrunnskart(lag)
+    default:
+      return lagPolygonlag(lag)
+  }
+}
+
+function lagBakgrunnskart(lag) {
+  const bg = {
+    data: {
+      source: 'osm',
+      layer: 'boundary',
+    },
+  }
+  if (lag.landegrense) bg.land = bakgrunnskartTemplate.land
+  if (lag.fylkesgrense) bg.fylke = bakgrunnskartTemplate.fylke
+  if (lag.kommunegrense) bg.kommune = bg.kommune = bakgrunnskartTemplate.kommune
+  console.log(JSON.stringify(bg))
+  return bg
+}
+
+function lagPolygonlag(lag) {
+  const kode = lag.kode
+  const prefix = kode.substring(0, 2)
+  return {
+    data: {
+      source: prefix,
+      layer: prefix,
+    },
+    filter: { [kode]: true },
+    draw: {
+      _multiply: {
+        order: 100,
+        color: lag.farge || '#f6c',
+      },
+      lines: {
+        order: 90,
+        color: '#888',
+        width: '5m',
+      },
+    },
+  }
+}
 
 function lagLagForAktive(aktive) {
   let r = {}
   aktive.forEach(lag => {
-    const kode = lag.kode
-    const prefix = kode.substring(0, 2)
-    const sub = {
-      data: {
-        source: prefix,
-        layer: prefix,
-      },
-      filter: { [kode]: true },
-      draw: {
-        _multiply: {
-          order: 100,
-          color: lag.farge || '#f6c',
-        },
-        lines: {
-          order: 90,
-          color: '#888',
-          width: '5m',
-        },
-      },
-    }
-    r[kode] = sub
+    const sub = lagLag(lag)
+    r[lag.kode] = sub
   })
   return r
 }
@@ -72,7 +100,7 @@ function createLeafletLayer(props: Object, onClick: Function) {
     scene: makeScene(props),
     events: {
       hover: function(selection) {
-        console.log('Hover!', selection)
+        //        console.log('Hover!', selection)
       },
       click: onClick,
     },

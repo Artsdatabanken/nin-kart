@@ -150,11 +150,11 @@ class VenstreVinduContainer extends React.Component {
                 render={({ match, history }) => (
                   <Tweaks
                     style={{
-                      paddingTop: 48,
+                      marginTop: 48,
                     }}
                     kode={match.params.kode}
                     koder={this.props.aktiveLag}
-                    item={this.finnValgtKodeElement(match.params.kode)}
+                    {...this.finnValgtKodeElement(match.params.kode)}
                     onFitBounds={this.props.onFitBounds}
                     onUpdateLayerProp={this.props.onUpdateLayerProp}
                     onRemoveSelectedLayer={this.props.onRemoveSelectedLayer}
