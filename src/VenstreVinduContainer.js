@@ -72,7 +72,6 @@ class VenstreVinduContainer extends React.Component {
               top: 0,
               left: 0,
               padding: 0,
-              paddingTop: 48,
               bottom: 0,
               width: window.innerWidth < 600 ? window.innerWidth : 408,
               zIndex: -10,
@@ -133,7 +132,10 @@ class VenstreVinduContainer extends React.Component {
                 render={({ match, history }) => {
                   return (
                     <AktiveKartlag
-                      style={{ backgroundColor: '#eee' }}
+                      style={{
+                        backgroundColor: '#eee',
+                        paddingTop: 48,
+                      }}
                       koder={this.props.aktiveLag}
                       onMouseEnter={this.props.onMouseEnter}
                       onMouseLeave={this.props.onMouseLeave}
@@ -147,6 +149,9 @@ class VenstreVinduContainer extends React.Component {
                 path="/lag/:kode"
                 render={({ match, history }) => (
                   <Tweaks
+                    style={{
+                      paddingTop: 48,
+                    }}
                     kode={match.params.kode}
                     koder={this.props.aktiveLag}
                     item={this.finnValgtKodeElement(match.params.kode)}

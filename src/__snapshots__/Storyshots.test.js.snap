@@ -616,7 +616,7 @@ exports[`Storyshots ColorPicker default 1`] = `
   <div
     style={
       Object {
-        "height": 10,
+        "height": 14,
         "marginBottom": 16,
         "marginLeft": 16,
         "marginRight": 16,
@@ -693,160 +693,22 @@ exports[`Storyshots ColorPicker default 1`] = `
               Object {
                 "MozBorderRadius": "6px",
                 "MozBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                "MozTransform": "translate(-6px, -1px)",
+                "MozTransform": "translate(-7px, -1px)",
                 "OBorderRadius": "6px",
                 "OBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                "OTransform": "translate(-6px, -1px)",
+                "OTransform": "translate(-7px, -1px)",
                 "WebkitBorderRadius": "6px",
                 "WebkitBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                "WebkitTransform": "translate(-6px, -1px)",
+                "WebkitTransform": "translate(-7px, -1px)",
                 "backgroundColor": "rgb(248, 248, 248)",
                 "borderRadius": "6px",
                 "boxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                "height": "12px",
+                "height": "14px",
                 "msBorderRadius": "6px",
                 "msBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                "msTransform": "translate(-6px, -1px)",
-                "transform": "translate(-6px, -1px)",
-                "width": "12px",
-              }
-            }
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "height": 10,
-        "marginBottom": 16,
-        "marginLeft": 16,
-        "marginRight": 16,
-        "position": "relative",
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "MozBorderRadius": undefined,
-          "OBorderRadius": undefined,
-          "WebkitBorderRadius": undefined,
-          "borderRadius": undefined,
-          "bottom": "0px",
-          "left": "0px",
-          "msBorderRadius": undefined,
-          "position": "absolute",
-          "right": "0px",
-          "top": "0px",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "MozBorderRadius": undefined,
-            "OBorderRadius": undefined,
-            "WebkitBorderRadius": undefined,
-            "borderRadius": undefined,
-            "bottom": "0px",
-            "left": "0px",
-            "msBorderRadius": undefined,
-            "overflow": "hidden",
-            "position": "absolute",
-            "right": "0px",
-            "top": "0px",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "MozBorderRadius": undefined,
-              "MozBoxShadow": undefined,
-              "OBorderRadius": undefined,
-              "OBoxShadow": undefined,
-              "WebkitBorderRadius": undefined,
-              "WebkitBoxShadow": undefined,
-              "background": "url(null) center left",
-              "borderRadius": undefined,
-              "bottom": "0px",
-              "boxShadow": undefined,
-              "left": "0px",
-              "msBorderRadius": undefined,
-              "msBoxShadow": undefined,
-              "position": "absolute",
-              "right": "0px",
-              "top": "0px",
-            }
-          }
-        />
-      </div>
-      <div
-        style={
-          Object {
-            "MozBorderRadius": undefined,
-            "MozBoxShadow": undefined,
-            "OBorderRadius": undefined,
-            "OBoxShadow": undefined,
-            "WebkitBorderRadius": undefined,
-            "WebkitBoxShadow": undefined,
-            "background": "linear-gradient(to right, rgba(34,25,77, 0) 0%,
-           rgba(34,25,77, 1) 100%)",
-            "borderRadius": undefined,
-            "bottom": "0px",
-            "boxShadow": undefined,
-            "left": "0px",
-            "msBorderRadius": undefined,
-            "msBoxShadow": undefined,
-            "position": "absolute",
-            "right": "0px",
-            "top": "0px",
-          }
-        }
-      />
-      <div
-        onMouseDown={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        style={
-          Object {
-            "height": "100%",
-            "margin": "0 3px",
-            "position": "relative",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "left": "100%",
-              "position": "absolute",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "MozBorderRadius": "6px",
-                "MozBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                "MozTransform": "translate(-6px, -1px)",
-                "OBorderRadius": "6px",
-                "OBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                "OTransform": "translate(-6px, -1px)",
-                "WebkitBorderRadius": "6px",
-                "WebkitBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                "WebkitTransform": "translate(-6px, -1px)",
-                "backgroundColor": "rgb(248, 248, 248)",
-                "borderRadius": "6px",
-                "boxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                "height": "12px",
-                "msBorderRadius": "6px",
-                "msBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                "msTransform": "translate(-6px, -1px)",
-                "transform": "translate(-6px, -1px)",
-                "width": "12px",
+                "msTransform": "translate(-7px, -1px)",
+                "transform": "translate(-7px, -1px)",
+                "width": "14px",
               }
             }
           />
@@ -889,7 +751,9 @@ exports[`Storyshots KodeVindu default 1`] = `
           onError={[Function]}
           style={
             Object {
+              "backgroundSize": "contain",
               "minHeight": 297,
+              "xmarginTop": 24,
             }
           }
         />
@@ -1389,7 +1253,9 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           onError={[Function]}
           style={
             Object {
+              "backgroundSize": "contain",
               "minHeight": 297,
+              "xmarginTop": 24,
             }
           }
         />
@@ -5780,7 +5646,7 @@ exports[`Storyshots Tweaks root 1`] = `
       <div
         style={
           Object {
-            "height": 10,
+            "height": 14,
             "marginBottom": 16,
             "marginLeft": 16,
             "marginRight": 16,
@@ -5857,160 +5723,22 @@ exports[`Storyshots Tweaks root 1`] = `
                   Object {
                     "MozBorderRadius": "6px",
                     "MozBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                    "MozTransform": "translate(-6px, -1px)",
+                    "MozTransform": "translate(-7px, -1px)",
                     "OBorderRadius": "6px",
                     "OBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                    "OTransform": "translate(-6px, -1px)",
+                    "OTransform": "translate(-7px, -1px)",
                     "WebkitBorderRadius": "6px",
                     "WebkitBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                    "WebkitTransform": "translate(-6px, -1px)",
+                    "WebkitTransform": "translate(-7px, -1px)",
                     "backgroundColor": "rgb(248, 248, 248)",
                     "borderRadius": "6px",
                     "boxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                    "height": "12px",
+                    "height": "14px",
                     "msBorderRadius": "6px",
                     "msBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                    "msTransform": "translate(-6px, -1px)",
-                    "transform": "translate(-6px, -1px)",
-                    "width": "12px",
-                  }
-                }
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        style={
-          Object {
-            "height": 10,
-            "marginBottom": 16,
-            "marginLeft": 16,
-            "marginRight": 16,
-            "position": "relative",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "MozBorderRadius": undefined,
-              "OBorderRadius": undefined,
-              "WebkitBorderRadius": undefined,
-              "borderRadius": undefined,
-              "bottom": "0px",
-              "left": "0px",
-              "msBorderRadius": undefined,
-              "position": "absolute",
-              "right": "0px",
-              "top": "0px",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "MozBorderRadius": undefined,
-                "OBorderRadius": undefined,
-                "WebkitBorderRadius": undefined,
-                "borderRadius": undefined,
-                "bottom": "0px",
-                "left": "0px",
-                "msBorderRadius": undefined,
-                "overflow": "hidden",
-                "position": "absolute",
-                "right": "0px",
-                "top": "0px",
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "MozBorderRadius": undefined,
-                  "MozBoxShadow": undefined,
-                  "OBorderRadius": undefined,
-                  "OBoxShadow": undefined,
-                  "WebkitBorderRadius": undefined,
-                  "WebkitBoxShadow": undefined,
-                  "background": "url(null) center left",
-                  "borderRadius": undefined,
-                  "bottom": "0px",
-                  "boxShadow": undefined,
-                  "left": "0px",
-                  "msBorderRadius": undefined,
-                  "msBoxShadow": undefined,
-                  "position": "absolute",
-                  "right": "0px",
-                  "top": "0px",
-                }
-              }
-            />
-          </div>
-          <div
-            style={
-              Object {
-                "MozBorderRadius": undefined,
-                "MozBoxShadow": undefined,
-                "OBorderRadius": undefined,
-                "OBoxShadow": undefined,
-                "WebkitBorderRadius": undefined,
-                "WebkitBoxShadow": undefined,
-                "background": "linear-gradient(to right, rgba(102,102,102, 0) 0%,
-           rgba(102,102,102, 1) 100%)",
-                "borderRadius": undefined,
-                "bottom": "0px",
-                "boxShadow": undefined,
-                "left": "0px",
-                "msBorderRadius": undefined,
-                "msBoxShadow": undefined,
-                "position": "absolute",
-                "right": "0px",
-                "top": "0px",
-              }
-            }
-          />
-          <div
-            onMouseDown={[Function]}
-            onTouchMove={[Function]}
-            onTouchStart={[Function]}
-            style={
-              Object {
-                "height": "100%",
-                "margin": "0 3px",
-                "position": "relative",
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "left": "100%",
-                  "position": "absolute",
-                }
-              }
-            >
-              <div
-                style={
-                  Object {
-                    "MozBorderRadius": "6px",
-                    "MozBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                    "MozTransform": "translate(-6px, -1px)",
-                    "OBorderRadius": "6px",
-                    "OBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                    "OTransform": "translate(-6px, -1px)",
-                    "WebkitBorderRadius": "6px",
-                    "WebkitBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                    "WebkitTransform": "translate(-6px, -1px)",
-                    "backgroundColor": "rgb(248, 248, 248)",
-                    "borderRadius": "6px",
-                    "boxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                    "height": "12px",
-                    "msBorderRadius": "6px",
-                    "msBoxShadow": "0 1px 4px 0 rgba(0, 0, 0, 0.37)",
-                    "msTransform": "translate(-6px, -1px)",
-                    "transform": "translate(-6px, -1px)",
-                    "width": "12px",
+                    "msTransform": "translate(-7px, -1px)",
+                    "transform": "translate(-7px, -1px)",
+                    "width": "14px",
                   }
                 }
               />
@@ -6065,7 +5793,6 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
           "overflowX": "hidden",
           "overflowY": "scroll",
           "padding": 0,
-          "paddingTop": 48,
           "position": "fixed",
           "top": 0,
           "width": 408,
@@ -6213,7 +5940,6 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
           "overflowX": "hidden",
           "overflowY": "scroll",
           "padding": 0,
-          "paddingTop": 48,
           "position": "fixed",
           "top": 0,
           "width": 408,

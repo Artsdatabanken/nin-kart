@@ -52,6 +52,8 @@ class Kodekort extends React.Component {
         <CardMedia
           style={{
             minHeight: 297,
+            xmarginTop: 24,
+            backgroundSize: 'contain',
           }}
           onClick={() => this.handleOpen()}
           image={backend.getFotoOmslag(kode)}
