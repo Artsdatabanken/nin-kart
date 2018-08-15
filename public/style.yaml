@@ -22,31 +22,31 @@ sources:
     url: 'https://tiles.artsdatabanken.no/data/openstreetmap/{z}/{x}/{y}.pbf'
     max_zoom: 14
   # This source should be dynamically created and set on the multiply-layer
-  NA_I1:
+  multiply:
     type: Raster
-    url: 'https://tiles.artsdatabanken.no/data/NA_I1/{z}/{x}/{y}.png'
+    url: 'https://tiles.artsdatabanken.no/data/NA_T1/{z}/{x}/{y}.png'
     rasters: [MI_KA-A]
-    max_zoom: 7
+    max_zoom: 11
   RL_NT:
     type: Raster
     url: 'https://tiles.artsdatabanken.no/data/RL_NT/{z}/{x}/{y}.png'
-    max_zoom: 7
+    max_zoom: 11
   MI_KA-A:
     type: Raster
     url: 'https://tiles.artsdatabanken.no/data/MI_KA-A/{z}/{x}/{y}.png'
-    max_zoom: 7
+    max_zoom: 11
   MI_KA-F:
     type: Raster
     url: 'https://tiles.artsdatabanken.no/data/MI_KA-F/{z}/{x}/{y}.png'
-    max_zoom: 7
+    max_zoom: 11
 
 layers:
-  #  multiply:
-  #    # The source should be dynamically set to reflect the currently active layers
-  #    data: { source: NA_I1 }
-  #    draw:
-  #      multiply-rasters:
-  #        order: 100
+  multiply:
+    # The source should be dynamically set to reflect the currently active layers
+    data: { source: multiply }
+    draw:
+      multiply-rasters:
+        order: 0
   water:
     data:
       source: osm
@@ -95,10 +95,10 @@ styles:
     blend: overlay
     dash: [2, 0.5]
 
-  multiply-rasters:
+  tricolor:
     base: polygons
-    raster: color
     blend: multiply
+    raster: color
     shaders:
       blocks:
         filter: |
@@ -110,3 +110,37 @@ styles:
           float y = sampleRaster(1).r;
           vec3 cx = mix(colorx * x + colory * y, color_overlap, x * y);
           color = vec4(mix(transparent,cx, x + y),1.);
+  rainbows:
+    base: polygons
+    blend: 'overlay'
+    raster: color
+    shaders:
+      blocks:
+        filter: |
+          float r, g, b = 0.;
+          float a = 1.;
+          float i = sampleRaster(0).r * sampleRaster(1).r;
+          if(i == 0.){
+            a = 0.;
+          }
+          // Up to cyan
+          else if(i <= .25) {
+            b = 1.;
+            g = i / .25;
+          }
+          // Up to green
+          else if(i <= .5) {
+            g = 1.;
+            b = 1. - ((i - .25) / .25);
+          }
+          // Up to yellow
+          else if(i <= .75) {
+            g = 1. ;
+            r = (i - .5) / .25;
+          }
+          // Up to red
+          else {
+            r = 1.;
+            g = 1. - ((i - .75) / .25) ;
+          }
+          color = vec4(r, g, b, a);
