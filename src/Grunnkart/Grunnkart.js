@@ -7,7 +7,7 @@ import VenstreVinduContainer from '../VenstreVinduContainer'
 import MainDrawer from './MainDrawer'
 
 type State = {
-  valgteKoder: Array<Object>,
+  aktiveLag: Array<Object>,
   showMainDrawer: boolean,
   meta: Object,
   fitBounds: Object,
@@ -251,6 +251,7 @@ const standardLag = [
       },
     },
     erSynlig: true,
+    kanSlettes: true,
   },
   {
     kode: 'bakgrunnskart',
@@ -263,12 +264,33 @@ const standardLag = [
     erSynlig: false,
   },
 ]
+/*
+function setFargeKode(kode, farge) {
+  let farger = JSON.parse(localStorage.getItem('customColors') || '[]')
+  farger = farger.filter(x => x.kode !== kode)
+  farger.push({ kode: kode, farge: farge })
+  localStorage.setItem('customColors', JSON.stringify(farger))
+  this.updateColor(kode, farge)
+}
 
+function getFargeKode(kode) {
+  if (localStorage) {
+    let customColors = localStorage.getItem('customColors')
+    if (customColors) {
+      let fargeElement = JSON.parse(customColors).filter(x => x.kode === kode)
+      return fargeElement && fargeElement[0] && fargeElement[0].farge
+        ? fargeElement[0].farge
+        : this.props.farge
+    }
+  }
+  return this.props.farge
+}
+*/
 class Grunnkart extends React.Component<Props, State> {
   constructor(props) {
     super(props)
     this.state = {
-      valgteKoder: standardLag,
+      aktiveLag: standardLag,
       showMainDrawer: false,
       meta: {},
       opplystKode: '',
@@ -289,28 +311,27 @@ class Grunnkart extends React.Component<Props, State> {
   }
 
   addSelected = props => {
-    let koder = this.state.valgteKoder
+    let koder = this.state.aktiveLag
     koder.push({
       farge: props.farge,
       kode: props.kode,
       tittel: props.tittel,
       barn: props.barn,
       erSynlig: true,
+      kanSlettes: true,
     })
 
-    console.log(JSON.stringify(koder))
-
     this.setState({
-      valgteKoder: koder,
+      aktiveLag: koder,
     })
   }
 
   handleToggleLayer = (kode, enabled) => {
     if (enabled) this.addSelected(this.state.meta)
     else {
-      const koder = this.state.valgteKoder.filter(barn => barn.kode !== kode)
+      const koder = this.state.aktiveLag.filter(barn => barn.kode !== kode)
       this.setState({
-        valgteKoder: koder,
+        aktiveLag: koder,
       })
     }
   }
@@ -349,49 +370,30 @@ class Grunnkart extends React.Component<Props, State> {
     })
   }
 
-  handleUpdateSelectedLayerProp = (kode, propNavn, verdi) => {
-    let valgte = this.state.valgteKoder
-    const barn = valgte.find(barn => barn.kode === kode)
-    barn[propNavn] = verdi
-    this.setState({ valgteKoder: valgte })
-  }
-
   handleRemoveSelectedLayer = kode => {
-    let aktive = this.state.valgteKoder
-    delete aktive[kode]
-    this.setState({
-      valgteKoder: aktive,
-    })
-  }
-
-  updateColor(kode, farge) {
-    let meta = this.state.valgteKoder
-    Object.keys(meta).forEach(id => {
-      const forelder = meta[id]
-
-      if (forelder.kode === kode) {
-        forelder.farge = farge
+    let aktive = this.state.aktiveLag
+    for (let i = 0; i < aktive.length; i++)
+      if (aktive[i].kode === kode) {
+        aktive.splice(i, 1)
+        break
       }
-    })
     this.setState({
-      valgteKoder: meta,
+      aktiveLag: aktive,
     })
+    this.props.history.push('/')
   }
 
   handleUpdateLayerProp = (kode, key, value) => {
-    const aktive = this.state.valgteKoder
+    const aktive = this.state.aktiveLag
     const aktivt = aktive.find(x => x.kode === kode)
-    if (!aktivt) return
     aktivt[key] = value
-    this.setState({ valgteKoder: aktive })
+    this.setState({ aktiveLag: [...aktive] })
   }
 
   render() {
-    const erAktivert = !!this.state.valgteKoder.find(
+    const erAktivert = !!this.state.aktiveLag.find(
       vk => vk.kode === this.state.meta.kode
     )
-    const aktivKode =
-      this.state.meta && this.state.meta.kode ? this.state.meta.kode : ''
     return (
       <div>
         <Kart
@@ -401,11 +403,9 @@ class Grunnkart extends React.Component<Props, State> {
           zoom={3}
           pitch={0}
           bearing={0}
-          aktivKode={aktivKode}
-          aktiveLag={this.state.valgteKoder}
+          aktiveLag={this.state.aktiveLag}
           opplystKode={this.state.opplystKode}
           onMapBoundsChange={this.handleActualBoundsChange}
-          meta={this.state.meta}
         />
 
         <MainDrawer
@@ -417,7 +417,7 @@ class Grunnkart extends React.Component<Props, State> {
 
         {!this.state.showMainDrawer && (
           <VenstreVinduContainer
-            valgteKoder={this.state.valgteKoder}
+            aktiveLag={this.state.aktiveLag}
             onToggleMainDrawer={() =>
               this.setState({
                 showMainDrawer: !this.state.showMainDrawer,
@@ -436,7 +436,6 @@ class Grunnkart extends React.Component<Props, State> {
             onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
             onExitToRoot={() => this.props.history.replace('/')}
             meta={this.state.meta}
-            updateColor={(kode, farge) => this.updateColor(kode, farge)}
             onUpdateLayerProp={this.handleUpdateLayerProp}
           />
         )}

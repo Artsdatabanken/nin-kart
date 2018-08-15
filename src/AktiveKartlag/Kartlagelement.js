@@ -43,7 +43,7 @@ class Kartlagelement extends React.Component {
           />
           <ListItemText primary={tittel} secondary={undertittel} />
           <Avatar style={{ float: 'left' }}>
-            <PaintSwatch farge={farge} />
+            <PaintSwatch color={farge} />
           </Avatar>
           {kanFlyttes && (
             <IconButton

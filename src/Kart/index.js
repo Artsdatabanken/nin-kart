@@ -2,7 +2,7 @@
 //import Mapbox from './Mapbox'
 import React from 'react'
 import { withRouter } from 'react-router'
-import Tangram from './LeafletTangram'
+import LeafletTangram from './LeafletTangram'
 
 type State = {}
 
@@ -16,7 +16,6 @@ type Props = {
   zoom: Number,
   pitch: Number,
   bearing: Number,
-  aktivKode: String,
   aktiveLag: Array<string>,
   opplystKode: String,
   meta: Object,
@@ -28,8 +27,7 @@ class Kart extends React.Component<Props, State> {
   }
 
   render() {
-    console.log('*!* kart: ', this.props.aktiveLag)
-    return <Tangram {...this.props} onClick={this.onClick} />
+    return <LeafletTangram {...this.props} onClick={this.onClick} />
   }
 }
 

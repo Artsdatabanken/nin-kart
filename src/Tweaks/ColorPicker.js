@@ -1,9 +1,9 @@
 import { ListSubheader } from '@material-ui/core'
 import React from 'react'
 import { CustomPicker } from 'react-color'
-import ChromePointer from 'react-color/lib/components/chrome/ChromePointer'
 import ChromePointerCircle from 'react-color/lib/components/chrome/ChromePointerCircle'
 import { Alpha, Hue, Saturation } from 'react-color/lib/components/common'
+import ChromePointer from 'react-color/lib/components/slider/SliderPointer'
 class ColorPicker extends React.Component {
   render() {
     return (
@@ -16,12 +16,14 @@ class ColorPicker extends React.Component {
             {...this.props}
           />
         </Blokk>
-        <Blokk>
-          <Hue pointer={ChromePointer} {...this.props} />
+        <Blokk height={14}>
+          <Hue pointer={ChromePointer} height={14} {...this.props} />
         </Blokk>
-        <Blokk>
-          <Alpha pointer={ChromePointer} {...this.props} />
-        </Blokk>
+        {false && (
+          <Blokk>
+            <Alpha pointer={ChromePointer} {...this.props} />
+          </Blokk>
+        )}
       </React.Fragment>
     )
   }

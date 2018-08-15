@@ -47,11 +47,11 @@ function listeElement(forelder, props) {
           onClick={() => history.push('/lag/' + kode)}
         />
       )
-    case 'bakgrunn':
+    case 'bakgrunnskart':
       return (
         <BakgrunnskartElement
           key="basemap"
-          kode="Mørk grå"
+          tema="Mørk grå"
           meta={{ tittel: { nb: 'Bakgrunnskart' } }}
           erSynlig={true}
           onMouseEnter={onMouseEnter}
