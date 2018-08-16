@@ -17,7 +17,7 @@ class KodeVindu extends React.Component {
             <Kodekort
               {...props.meta}
               onGoToCode={props.onGoToCode}
-              isActiveLayer={props.isActiveLayer}
+              erAktivert={props.erAktivert}
               onToggleLayer={props.onToggleLayer}
               onFitBounds={props.onFitBounds}
               data={props.data}

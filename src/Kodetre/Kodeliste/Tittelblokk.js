@@ -9,7 +9,7 @@ type Props = {
   tittel: String,
   onGoToCode: Function,
   onToggleLayer: Function,
-  isActiveLayer: Boolean,
+  erAktivert: Boolean,
   overordnet: Object,
 }
 
@@ -22,7 +22,7 @@ const styles = {
 const Tittelblokk = ({
   onGoToCode,
   onToggleLayer,
-  isActiveLayer,
+  erAktivert,
   tittel,
   overordnet,
   kode,

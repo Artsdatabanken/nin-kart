@@ -44,7 +44,7 @@ class Kodekort extends React.Component {
       overordnet,
       onFitBounds,
       classes,
-      isActiveLayer,
+      erAktivert,
       onGoToCode,
     } = this.props
     return (
@@ -76,7 +76,7 @@ class Kodekort extends React.Component {
               color="primary"
               className={classes.button}
               onClick={this.handleAktiver}
-              disabled={isActiveLayer}
+              disabled={erAktivert}
             >
               Aktivér
             </Button>
