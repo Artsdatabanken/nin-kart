@@ -1,4 +1,5 @@
 // @flow
+import typesystem from '@artsdatabanken/typesystem'
 import React from 'react'
 import { withRouter } from 'react-router'
 import backend from '../backend'
@@ -358,6 +359,14 @@ class Grunnkart extends React.Component<Props, State> {
     this.props.history.replace(newUrl)
   }
 
+  // AO_01/02 => ao/01/02
+  kodeTilRelativUrl(kode) {
+    return typesystem
+      .splittKode(kode)
+      .join('/')
+      .toLowerCase()
+  }
+
   fetchMeta(url) {
     url = url.toLowerCase()
     let kodematch = url.match(/\/katalog\/(.*)/)
@@ -373,6 +382,12 @@ class Grunnkart extends React.Component<Props, State> {
         this.redirectTo(newUrl)
         return
       }
+      const sti = this.kodeTilRelativUrl(data.kode)
+      data.sti = sti
+      if (!data.barn) data.barn = {}
+      Object.keys(data.barn).forEach(
+        kode => (data.barn[kode].sti = this.kodeTilRelativUrl(kode))
+      )
       this.setState({ meta: data })
     })
   }
