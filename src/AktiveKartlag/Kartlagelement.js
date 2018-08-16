@@ -38,6 +38,11 @@ class Kartlagelement extends React.Component {
           <Switch
             checked={this.props.erSynlig}
             onClick={e => {
+              this.props.onUpdateLayerProp(
+                kode,
+                'erSynlig',
+                !this.props.erSynlig
+              )
               e.stopPropagation()
             }}
           />

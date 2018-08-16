@@ -39,34 +39,6 @@ sources:
     type: Raster
     url: 'https://tiles.artsdatabanken.no/data/MI_KA-F/{z}/{x}/{y}.png'
     max_zoom: 11
-
-layers:
-  water:
-    data:
-      source: osm
-      layer: water
-    draw:
-      water:
-        order: 10
-        color: [0.4, 0.4, 0.4, 1.0]
-  waterway:
-    data:
-      source: osm
-      layer: waterway
-    draw:
-      lines:
-        order: 11
-        color: [0.4, 0.4, 0.4, 1.0]
-        width: 1.3px
-  transportation:
-    data:
-      source: osm
-      layer: transportation
-    draw:
-      lines:
-        order: 200
-        color: [0.3, 0.3, 0.3, 1.0]
-        width: 1.2px
 styles:
   water:
     base: polygons

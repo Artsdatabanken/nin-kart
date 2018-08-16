@@ -31,8 +31,9 @@ const Innstilling = ({
         style={{
           position: 'relative',
           float: 'left',
-          paddingLeft: '16px',
+          paddingLeft: '32px',
           paddingBottom: '8px',
+          paddingTop: '16px',
           width: '328px',
         }}
       >

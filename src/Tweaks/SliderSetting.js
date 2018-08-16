@@ -20,12 +20,6 @@ const SliderSetting = ({
     disabled={disabled}
   >
     <Slider
-      sliderStyle={{
-        width: 302,
-        marginLeft: 40,
-        marginTop: 8,
-        marginBottom: 0,
-      }}
       disabled={disabled}
       min={min || 0}
       max={max || 1}

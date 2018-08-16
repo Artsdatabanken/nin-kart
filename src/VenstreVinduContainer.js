@@ -133,12 +133,12 @@ class VenstreVinduContainer extends React.Component {
                   return (
                     <AktiveKartlag
                       style={{
-                        backgroundColor: '#eee',
                         paddingTop: 48,
                       }}
                       koder={this.props.aktiveLag}
                       onMouseEnter={this.props.onMouseEnter}
                       onMouseLeave={this.props.onMouseLeave}
+                      onUpdateLayerProp={this.props.onUpdateLayerProp}
                       onRemoveSelectedLayer={this.props.onRemoveSelectedLayer}
                     />
                   )

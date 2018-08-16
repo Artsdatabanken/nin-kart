@@ -1,6 +1,5 @@
 import React from 'react'
 import { withRouter } from 'react-router'
-import språk from '../språk'
 import KartlagElement from './Kartlagelement'
 
 class PolygonlagElement extends React.Component {
@@ -41,22 +40,7 @@ class PolygonlagElement extends React.Component {
   }
 
   render() {
-    const item = this.props
-    const { tittel, kode } = this.props
-    return (
-      <KartlagElement
-        {...this.props}
-        key={item.kode}
-        onMouseEnter={() =>
-          this.props.onMouseEnter && this.props.onMouseEnter(kode)
-        }
-        onMouseLeave={() => {
-          this.props.onMouseLeave && this.props.onMouseLeave(kode)
-        }}
-        tittel={språk(tittel)}
-        undertittel={kode}
-      />
-    )
+    return <KartlagElement {...this.props} undertittel={this.props.kode} />
   }
 }
 
