@@ -6,16 +6,16 @@ import bakgrunnskartTemplate from './mal/bakgrunnskart'
 import { createSources } from './sources'
 import { createStyles } from './styles'
 
-function lagLag(lag) {
+function lagLag(lag, r) {
   switch (lag.kode) {
     case 'bakgrunnskart':
-      return lagBakgrunnskart(lag)
+      return lagBakgrunnskart(lag, r)
     default:
-      return lagPolygonlag(lag)
+      return lagPolygonlag(lag, r)
   }
 }
 
-function lagBakgrunnskart(lag) {
+function lagBakgrunnskart(lag, r) {
   const bg = {
     data: {
       source: 'osm',
@@ -25,13 +25,16 @@ function lagBakgrunnskart(lag) {
   if (lag.landegrense) bg.land = bakgrunnskartTemplate.land
   if (lag.fylkesgrense) bg.fylke = bakgrunnskartTemplate.fylke
   if (lag.kommunegrense) bg.kommune = bg.kommune = bakgrunnskartTemplate.kommune
-  return bg
+  r[lag.kode] = bg
+  if (lag.transport) r['transport'] = bakgrunnskartTemplate.transport
+  if (lag.vann) r['vann'] = bakgrunnskartTemplate.vann
+  if (lag.vannvei) r['vannvei'] = bakgrunnskartTemplate.vannvei
 }
 
-function lagPolygonlag(lag) {
+function lagPolygonlag(lag, r) {
   const kode = lag.kode
   const prefix = kode.substring(0, 2)
-  return {
+  r[kode] = {
     data: {
       source: prefix,
       layer: prefix,
@@ -54,8 +57,7 @@ function lagPolygonlag(lag) {
 function lagLagForAktive(aktive) {
   let r = {}
   aktive.forEach(lag => {
-    const sub = lagLag(lag)
-    r[lag.kode] = sub
+    if (lag.erSynlig) lagLag(lag, r)
   })
   return r
 }

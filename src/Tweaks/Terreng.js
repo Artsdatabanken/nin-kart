@@ -25,7 +25,7 @@ class Terreng extends Component {
           max={5}
           step={0.1}
           tittel="Vertikal overdrivelse"
-          undertittel={vertikaltOverdriv + 'x'}
+          undertittel={vertikaltOverdriv.toFixed(1) + 'x'}
           icon={<SwapVert />}
           onChange={v => onUpdateLayerProp(kode, 'vertikaltOverdriv', v)}
         />

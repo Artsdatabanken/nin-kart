@@ -8,6 +8,8 @@ const Veksle = ({ tittel, icon, toggled, disabled, onClick, muiTheme }) => (
     <div
       style={{
         float: 'right',
+        position: 'relative',
+        top: -16,
       }}
     >
       <Switch checked={toggled} disabled={disabled} onClick={onClick} />

@@ -36,6 +36,54 @@ class Bakgrunnskart extends Component {
                     <ListItemText primary="Tema" secondary="Lyse gråtoner" />
                   </ListItem>
                 </List>
+                <ListSubheader>TODO</ListSubheader>
+                <List>
+                  <ListItem>
+                    <ListItemText primary="Vann" />
+                    <ListItemSecondaryAction>
+                      <Switch
+                        onChange={() =>
+                          this.props.onUpdateLayerProp(
+                            'bakgrunnskart',
+                            'vann',
+                            !this.props.vann
+                          )
+                        }
+                        checked={this.props.vann}
+                      />
+                    </ListItemSecondaryAction>
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary="Vannveier" />
+                    <ListItemSecondaryAction>
+                      <Switch
+                        onChange={() =>
+                          this.props.onUpdateLayerProp(
+                            'bakgrunnskart',
+                            'vannvei',
+                            !this.props.vannvei
+                          )
+                        }
+                        checked={this.props.vannvei}
+                      />
+                    </ListItemSecondaryAction>
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary="Transport" />
+                    <ListItemSecondaryAction>
+                      <Switch
+                        onChange={() =>
+                          this.props.onUpdateLayerProp(
+                            'bakgrunnskart',
+                            'transport',
+                            !this.props.transport
+                          )
+                        }
+                        checked={this.props.transport}
+                      />
+                    </ListItemSecondaryAction>
+                  </ListItem>
+                </List>
                 <ListSubheader>Administrative grenser</ListSubheader>
                 <List>
                   <ListItem>
