@@ -1,11 +1,11 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
-import { muiTheme } from 'storybook-addon-material-ui'
 import { action } from '@storybook/addon-actions/dist/index'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
+import { muiTheme } from 'storybook-addon-material-ui'
 import AktiveKartlag from '.'
 
-const koder = [{ kode: 'TST', tittel: { nb: 'aabc' } }]
+const koder = [{ kode: 'TST', tittel: 'aabc' }]
 
 storiesOf('Aktive kartlag', module)
   .addDecorator(muiTheme())
