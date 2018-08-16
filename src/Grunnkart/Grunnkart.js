@@ -247,7 +247,7 @@ class Grunnkart extends React.Component<Props, State> {
               })
             }
             onFitBounds={this.handleFitBounds}
-            isActiveLayer={erAktivert}
+            erAktivert={erAktivert}
             onToggleLayer={this.handleToggleLayer}
             onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
             onExitToRoot={() => this.props.history.replace('/')}

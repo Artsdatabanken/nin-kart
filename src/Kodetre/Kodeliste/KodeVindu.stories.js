@@ -230,7 +230,7 @@ storiesOf('KodeVindu', module)
         onMouseEnter={action('mouseEnter')}
         onMouseLeave={action('mouseLeave')}
         onClick={action('click')}
-        isActiveLayer={true}
+        erAktivert={true}
         onFitBounds={action('onFitBounds')}
         language={['nb', 'la']}
       />
@@ -244,7 +244,7 @@ storiesOf('KodeVindu', module)
         onMouseEnter={action('mouseEnter')}
         onMouseLeave={action('mouseLeave')}
         onClick={action('click')}
-        isActiveLayer={true}
+        erAktivert={true}
         onFitBounds={action('onFitBounds')}
         language={['nb', 'la']}
       />

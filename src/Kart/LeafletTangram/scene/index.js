@@ -1,5 +1,4 @@
 // @flow
-import Tangram from 'tangram/dist/tangram.debug'
 import imports from './import'
 import { createLights } from './lights'
 import bakgrunnskartTemplate from './mal/bakgrunnskart'
@@ -96,32 +95,15 @@ function makeScene(props) {
   }
 }
 
-function createLeafletLayer(
-  props: Object,
-  onClick: Function,
-  iKatalog: boolean
-) {
-  let def = {
-    scene: makeScene(props),
-    events: {
-      hover: function(selection) {
-        //        console.log('Hover!', selection)
-      },
-      click: onClick,
-    },
-    attribution:
-      '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | <a href="http://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a> | <a href="https://www.nextzen.com/" target="_blank">Nextzen</a>',
-  }
-
+function createScene(props: Object, onClick: Function) {
+  let scene = makeScene(props)
   if (props.meta)
-    def.scene.layers = lagLagForKatalog(
+    scene.layers = lagLagForKatalog(
       props.meta.kode,
       props.meta.barn || { [props.meta.kode]: props.meta }
     )
-  else def.scene.layers = lagLagForAktive(props.aktiveLag)
-
-  let layer = Tangram.leafletLayer(def)
-  return layer
+  else scene.layers = lagLagForAktive(props.aktiveLag)
+  return scene
 }
 
-export { makeScene, createLeafletLayer }
+export { makeScene, createScene }
