@@ -240,12 +240,8 @@ class Grunnkart extends React.Component<Props, State> {
               })
             }
             mapBounds={this.state.actualBounds}
-            onMouseEnter={kode => this.setState({ opplystKode: kode })}
-            onMouseLeave={kode =>
-              this.setState({
-                opplystKode: '',
-              })
-            }
+            onMouseEnter={this.handleMouseEnter}
+            onMouseLeave={this.handleMouseLeave}
             onFitBounds={this.handleFitBounds}
             erAktivert={erAktivert}
             onToggleLayer={this.handleToggleLayer}
@@ -257,6 +253,16 @@ class Grunnkart extends React.Component<Props, State> {
         )}
       </div>
     )
+  }
+
+  handleMouseEnter = kode => {
+    console.log('enter', kode)
+    this.setState({ opplystKode: kode })
+  }
+
+  handleMouseLeave = kode => {
+    console.log('leave', kode)
+    this.setState({ opplystKode: '' })
   }
 }
 
