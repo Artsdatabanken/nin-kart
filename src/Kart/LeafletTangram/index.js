@@ -2,9 +2,9 @@ import L from 'leaflet'
 // -- WEBPACK: Load styles --
 import 'leaflet/dist/leaflet.css'
 import React from 'react'
-import { createLeafletLayer } from './scene'
+import Tangram from 'tangram'
+import { createScene } from './scene'
 import './styles.css'
-
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
 // See here: https://github.com/PaulLeCam/react-leaflet/issues/255
 // Used in conjunction with url-loader.
@@ -59,6 +59,7 @@ class LeafletTangram extends React.Component {
     L.control.zoom({ position: 'bottomright' }).addTo(map)
     L.DomUtil.addClass(map._container, 'crosshair-cursor-enabled')
     this.map = map
+    this.updateMap(this.props)
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -69,8 +70,14 @@ class LeafletTangram extends React.Component {
         this.map.flyToBounds(c)
       }
     }
-    if (this.props.meta === prevProps.meta) return
-    this.updateMap(this.props)
+
+    if (this.props.aktiveLag !== prevProps.aktiveLag) {
+      this.updateMap(this.props)
+      return
+    }
+    if (this.props.meta !== prevProps.meta) {
+      this.updateMap(this.props)
+    }
   }
 
   removeMarker() {
@@ -87,9 +94,24 @@ class LeafletTangram extends React.Component {
   }
 
   updateMap(props) {
-    if (this.layer) this.map.removeLayer(this.layer)
-    this.layer = createLeafletLayer(props, this.onClick)
-    this.map.addLayer(this.layer)
+    let scene = createScene(props)
+    if (this.layer) {
+      this.layer.scene.load(scene)
+    } else {
+      let def = {
+        scene: scene,
+        events: {
+          hover: function(selection) {
+            //        console.log('Hover!', selection)
+          },
+          click: this.onClick,
+        },
+        attribution: '<a href="https://artsdatabanken.no">Artsdatabanken</a>',
+      }
+
+      this.layer = Tangram.leafletLayer(def)
+      this.map.addLayer(this.layer)
+    }
   }
 
   render() {

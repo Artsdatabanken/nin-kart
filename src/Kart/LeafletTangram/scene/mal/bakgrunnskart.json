@@ -1,0 +1,74 @@
+{
+  "land": {
+    "filter": {
+      "admin_level": 2
+    },
+    "draw": {
+      "boundary": {
+        "dash": [2, 0.2],
+        "width": "6.2px",
+        "color": [0.1, 0.1, 0.1, 0.2]
+      }
+    }
+  },
+  "fylke": {
+    "filter": {
+      "admin_level": 4
+    },
+    "draw": {
+      "boundary": {
+        "width": "4.2px",
+        "color": [0.1, 0.1, 0.1, 0.3]
+      }
+    }
+  },
+  "kommune": {
+    "filter": {
+      "admin_level": 7
+    },
+    "draw": {
+      "boundary": {
+        "width": "2.2px",
+        "color": [0.1, 0.1, 0.1, 0.3]
+      }
+    }
+  },
+  "vann": {
+    "data": {
+      "source": "osm",
+      "layer": "water"
+    },
+    "draw": {
+      "polygons": {
+        "order": 10,
+        "color": [0.4, 0.4, 0.4, 1.0]
+      }
+    }
+  },
+  "vannvei": {
+    "data": {
+      "source": "osm",
+      "layer": "waterway"
+    },
+    "draw": {
+      "lines": {
+        "order": 11,
+        "color": [0.4, 0.4, 0.4, 1.0],
+        "width": "1.3px"
+      }
+    }
+  },
+  "transport": {
+    "data": {
+      "source": "osm",
+      "layer": "transportation"
+    },
+    "draw": {
+      "lines": {
+        "order": 200,
+        "color": [0.3, 0.3, 0.3, 1.0],
+        "width": "1.2px"
+      }
+    }
+  }
+}

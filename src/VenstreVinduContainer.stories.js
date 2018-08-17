@@ -1,9 +1,9 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
-import { muiTheme } from 'storybook-addon-material-ui'
-import { MemoryRouter } from 'react-router-dom'
-import VenstreVinduContainer from './VenstreVinduContainer'
 import { action } from '@storybook/addon-actions/dist/index'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
+import { MemoryRouter } from 'react-router-dom'
+import { muiTheme } from 'storybook-addon-material-ui'
+import VenstreVinduContainer from './VenstreVinduContainer'
 
 storiesOf('VenstreVindu', module)
   .addDecorator(muiTheme())
@@ -11,7 +11,7 @@ storiesOf('VenstreVindu', module)
     return (
       <div style={{ padding: 8 }}>
         <MemoryRouter>
-          <VenstreVinduContainer valgteKoder={[]} />
+          <VenstreVinduContainer aktiveLag={[]} />
         </MemoryRouter>
       </div>
     )
@@ -21,7 +21,7 @@ storiesOf('VenstreVindu', module)
       <div style={{ padding: 8 }}>
         <MemoryRouter>
           <VenstreVinduContainer
-            valgteKoder={[]}
+            aktiveLag={[]}
             onToggleMainDrawer={action('onToggleMainDrawer')}
             onMouseEnter={action('onMouseEnter')}
             onMouseLeave={action('onMouseLeave')}

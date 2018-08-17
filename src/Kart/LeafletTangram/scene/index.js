@@ -1,11 +1,67 @@
 // @flow
-import Tangram from 'tangram/dist/tangram.debug'
 import imports from './import'
 import { createLights } from './lights'
+import bakgrunnskartTemplate from './mal/bakgrunnskart'
 import { createSources } from './sources'
 import { createStyles } from './styles'
 
-function createLayer(kode, barn) {
+function lagLag(lag, r) {
+  switch (lag.kode) {
+    case 'bakgrunnskart':
+      return lagBakgrunnskart(lag, r)
+    default:
+      return lagPolygonlag(lag, r)
+  }
+}
+
+function lagBakgrunnskart(lag, r) {
+  const bg = {
+    data: {
+      source: 'osm',
+      layer: 'boundary',
+    },
+  }
+  if (lag.landegrense) bg.land = bakgrunnskartTemplate.land
+  if (lag.fylkesgrense) bg.fylke = bakgrunnskartTemplate.fylke
+  if (lag.kommunegrense) bg.kommune = bg.kommune = bakgrunnskartTemplate.kommune
+  r[lag.kode] = bg
+  if (lag.transport) r['transport'] = bakgrunnskartTemplate.transport
+  if (lag.vann) r['vann'] = bakgrunnskartTemplate.vann
+  if (lag.vannvei) r['vannvei'] = bakgrunnskartTemplate.vannvei
+}
+
+function lagPolygonlag(lag, r) {
+  const kode = lag.kode
+  const prefix = kode.substring(0, 2)
+  r[kode] = {
+    data: {
+      source: prefix,
+      layer: prefix,
+    },
+    filter: { [kode]: true },
+    draw: {
+      _multiply: {
+        order: 100,
+        color: lag.farge || '#f6c',
+      },
+      lines: {
+        order: 90,
+        color: '#888',
+        width: '5m',
+      },
+    },
+  }
+}
+
+function lagLagForAktive(aktive) {
+  let r = {}
+  aktive.forEach(lag => {
+    if (lag.erSynlig) lagLag(lag, r)
+  })
+  return r
+}
+
+function lagLagForKatalog(kode, barn) {
   let r = {}
   const prefix = kode.substring(0, 2)
   r.data = { source: prefix, layer: prefix }
@@ -39,27 +95,15 @@ function makeScene(props) {
   }
 }
 
-function createLeafletLayer(props: Object, onClick: Function) {
-  let def = {
-    scene: makeScene(props),
-    events: {
-      hover: function(selection) {
-        //        console.log('Hover!', selection)
-      },
-      click: onClick,
-    },
-    attribution:
-      '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | <a href="http://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a> | <a href="https://www.nextzen.com/" target="_blank">Nextzen</a>',
-  }
-
+function createScene(props: Object, onClick: Function) {
+  let scene = makeScene(props)
   if (props.meta)
-    def.scene.layers = createLayer(
+    scene.layers = lagLagForKatalog(
       props.meta.kode,
       props.meta.barn || { [props.meta.kode]: props.meta }
     )
-
-  let layer = Tangram.leafletLayer(def)
-  return layer
+  else scene.layers = lagLagForAktive(props.aktiveLag)
+  return scene
 }
 
-export { makeScene, createLeafletLayer }
+export { makeScene, createScene }

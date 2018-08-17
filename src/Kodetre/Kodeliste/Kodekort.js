@@ -44,7 +44,7 @@ class Kodekort extends React.Component {
       overordnet,
       onFitBounds,
       classes,
-      isActiveLayer,
+      erAktivert,
       onGoToCode,
     } = this.props
     return (
@@ -52,6 +52,8 @@ class Kodekort extends React.Component {
         <CardMedia
           style={{
             minHeight: 297,
+            xmarginTop: 24,
+            backgroundSize: 'contain',
           }}
           onClick={() => this.handleOpen()}
           image={backend.getFotoOmslag(kode)}
@@ -74,7 +76,7 @@ class Kodekort extends React.Component {
               color="primary"
               className={classes.button}
               onClick={this.handleAktiver}
-              disabled={isActiveLayer}
+              disabled={erAktivert}
             >
               Aktivér
             </Button>

@@ -20,6 +20,12 @@ const styles = {
       },
     },
   },
+  boundary: {
+    base: 'lines',
+    order: 150,
+    blend: 'overlay',
+    dash: [2, 0.5],
+  },
   _multiply: {
     base: 'polygons',
     blend: 'multiply',

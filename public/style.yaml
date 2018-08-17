@@ -22,66 +22,23 @@ sources:
     url: 'https://tiles.artsdatabanken.no/data/openstreetmap/{z}/{x}/{y}.pbf'
     max_zoom: 14
   # This source should be dynamically created and set on the multiply-layer
-  NA_I1:
+  multiply:
     type: Raster
-    url: 'https://tiles.artsdatabanken.no/data/NA_I1/{z}/{x}/{y}.png'
+    url: 'https://tiles.artsdatabanken.no/data/NA_T1/{z}/{x}/{y}.png'
     rasters: [MI_KA-A]
-    max_zoom: 7
+    max_zoom: 11
   RL_NT:
     type: Raster
     url: 'https://tiles.artsdatabanken.no/data/RL_NT/{z}/{x}/{y}.png'
-    max_zoom: 7
+    max_zoom: 11
   MI_KA-A:
     type: Raster
     url: 'https://tiles.artsdatabanken.no/data/MI_KA-A/{z}/{x}/{y}.png'
-    max_zoom: 7
+    max_zoom: 11
   MI_KA-F:
     type: Raster
     url: 'https://tiles.artsdatabanken.no/data/MI_KA-F/{z}/{x}/{y}.png'
-    max_zoom: 7
-
-layers:
-  multiply:
-    # The source should be dynamically set to reflect the currently active layers
-    data: { source: NA_I1 }
-    draw:
-      multiply-rasters:
-        order: 100
-  water:
-    data:
-      source: osm
-      layer: water
-    draw:
-      water:
-        order: 10
-        color: [0.4, 0.4, 0.4, 1.0]
-  waterway:
-    data:
-      source: osm
-      layer: waterway
-    draw:
-      lines:
-        order: 11
-        color: [0.4, 0.4, 0.4, 1.0]
-        width: 1.3px
-  transportation:
-    data:
-      source: osm
-      layer: transportation
-    draw:
-      lines:
-        order: 200
-        color: [0.3, 0.3, 0.3, 1.0]
-        width: 1.2px
-  boundary:
-    data:
-      source: osm
-      layer: boundary
-    draw:
-      boundary:
-        order: 150
-        color: [0.5, 0.5, 0.5, 0.8]
-        width: 3.2px
+    max_zoom: 11
 styles:
   water:
     base: polygons
@@ -92,13 +49,14 @@ styles:
         NUM_OCTAVES: 3
   boundary:
     base: lines
+    order: 150
     blend: overlay
     dash: [2, 0.5]
 
-  multiply-rasters:
+  tricolor:
     base: polygons
-    raster: color
     blend: multiply
+    raster: color
     shaders:
       blocks:
         filter: |
@@ -110,3 +68,37 @@ styles:
           float y = sampleRaster(1).r;
           vec3 cx = mix(colorx * x + colory * y, color_overlap, x * y);
           color = vec4(mix(transparent,cx, x + y),1.);
+  rainbows:
+    base: polygons
+    blend: 'overlay'
+    raster: color
+    shaders:
+      blocks:
+        filter: |
+          float r, g, b = 0.;
+          float a = 1.;
+          float i = sampleRaster(0).r * sampleRaster(1).r;
+          if(i == 0.){
+            a = 0.;
+          }
+          // Up to cyan
+          else if(i <= .25) {
+            b = 1.;
+            g = i / .25;
+          }
+          // Up to green
+          else if(i <= .5) {
+            g = 1.;
+            b = 1. - ((i - .25) / .25);
+          }
+          // Up to yellow
+          else if(i <= .75) {
+            g = 1. ;
+            r = (i - .5) / .25;
+          }
+          // Up to red
+          else {
+            r = 1.;
+            g = 1. - ((i - .75) / .25) ;
+          }
+          color = vec4(r, g, b, a);

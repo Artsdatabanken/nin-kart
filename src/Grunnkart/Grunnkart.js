@@ -1,25 +1,20 @@
 // @flow
+import typesystem from '@artsdatabanken/typesystem'
 import React from 'react'
 import { withRouter } from 'react-router'
 import backend from '../backend'
 import Kart from '../Kart'
+import språk from '../språk'
 import VenstreVinduContainer from '../VenstreVinduContainer'
 import MainDrawer from './MainDrawer'
 
 type State = {
-  valgteKoder: Array<string>,
-  language: Array<string>,
-  mapStyle: string,
+  aktiveLag: Array<Object>,
   showMainDrawer: boolean,
-  visValgte: boolean,
-  pointProperties: Object,
   meta: Object,
-  localId: string,
   fitBounds: Object,
   actualBounds: Object,
-  bbox: Object,
   opplystKode: string,
-  refresh: boolean,
 }
 
 type Props = {
@@ -27,25 +22,82 @@ type Props = {
   history: Object,
 }
 
+const standardLag = [
+  {
+    farge: '#fc61fd',
+    kode: 'AO_50',
+    tittel: 'Trøndelag',
+    barn: {
+      'AO_50-01': {
+        farge: '#f49943',
+        sti: 'ao/50/01',
+        tittel: 'Trondheim',
+      },
+      'AO_50-04': {
+        farge: '#f4c543',
+        sti: 'ao/50/04',
+        tittel: 'Steinkjer',
+      },
+    },
+    erSynlig: true,
+    kanSlettes: true,
+  },
+  {
+    kode: 'bakgrunnskart',
+    tittel: 'Bakgrunnskart',
+    erSynlig: true,
+    transport: true,
+    vann: true,
+    vannvei: true,
+    kommunegrense: true,
+    fylkesgrense: true,
+    landegrense: false,
+  },
+  {
+    kode: 'terreng',
+    tittel: '3D terreng',
+    erSynlig: false,
+    vertikaltOverdriv: 2.0,
+    visKontur: true,
+    visEtikettTopp: true,
+    konturintervall: 100.0,
+    visEtikettKontur: true,
+  },
+]
+/*
+function setFargeKode(kode, farge) {
+  let farger = JSON.parse(localStorage.getItem('customColors') || '[]')
+  farger = farger.filter(x => x.kode !== kode)
+  farger.push({ kode: kode, farge: farge })
+  localStorage.setItem('customColors', JSON.stringify(farger))
+  this.updateColor(kode, farge)
+}
+
+function getFargeKode(kode) {
+  if (localStorage) {
+    let customColors = localStorage.getItem('customColors')
+    if (customColors) {
+      let fargeElement = JSON.parse(customColors).filter(x => x.kode === kode)
+      return fargeElement && fargeElement[0] && fargeElement[0].farge
+        ? fargeElement[0].farge
+        : this.props.farge
+    }
+  }
+  return this.props.farge
+}
+*/
 class Grunnkart extends React.Component<Props, State> {
   constructor(props) {
     super(props)
     this.state = {
-      valgteKoder: [],
-      language: ['nb', 'la'],
-      mapStyle: '',
+      aktiveLag: standardLag,
       showMainDrawer: false,
-      visValgte: false,
-      pointProperties: {},
-      meta: {},
       opplystKode: '',
-      refresh: false,
     }
     //    this.redirectTo(props.location.pathname.replace('/katalog/', ''))
   }
 
   handleActualBoundsChange = bounds => {
-    console.log('!!!!!', bounds)
     this.setState({ actualBounds: bounds, fitBounds: null })
   }
 
@@ -58,27 +110,27 @@ class Grunnkart extends React.Component<Props, State> {
   }
 
   addSelected = props => {
-    let koder = this.state.valgteKoder
+    let koder = this.state.aktiveLag
     koder.push({
       farge: props.farge,
       kode: props.kode,
-      sti: props.sti,
-      tittel: props.tittel,
+      tittel: språk(props.tittel),
       barn: props.barn,
+      erSynlig: true,
+      kanSlettes: true,
     })
-    console.log(koder)
 
     this.setState({
-      valgteKoder: koder,
+      aktiveLag: koder,
     })
   }
 
   handleToggleLayer = (kode, enabled) => {
     if (enabled) this.addSelected(this.state.meta)
     else {
-      const koder = this.state.valgteKoder.filter(barn => barn.kode !== kode)
+      const koder = this.state.aktiveLag.filter(barn => barn.kode !== kode)
       this.setState({
-        valgteKoder: koder,
+        aktiveLag: koder,
       })
     }
   }
@@ -98,11 +150,19 @@ class Grunnkart extends React.Component<Props, State> {
     this.props.history.replace(newUrl)
   }
 
+  // AO_01/02 => ao/01/02
+  kodeTilRelativUrl(kode) {
+    return typesystem
+      .splittKode(kode)
+      .join('/')
+      .toLowerCase()
+  }
+
   fetchMeta(url) {
     url = url.toLowerCase()
     let kodematch = url.match(/\/katalog\/(.*)/)
     if (!kodematch || kodematch.length !== 2) {
-      this.setState({ meta: '' })
+      this.setState({ meta: null })
       return
     }
 
@@ -113,46 +173,42 @@ class Grunnkart extends React.Component<Props, State> {
         this.redirectTo(newUrl)
         return
       }
+      const sti = this.kodeTilRelativUrl(data.kode)
+      data.sti = sti
+      if (!data.barn) data.barn = {}
+      Object.keys(data.barn).forEach(
+        kode => (data.barn[kode].sti = this.kodeTilRelativUrl(kode))
+      )
       this.setState({ meta: data })
     })
   }
 
-  handleUpdateSelectedLayerProp = (kode, propNavn, verdi) => {
-    let valgte = this.state.valgteKoder
-    const barn = valgte.find(barn => barn.kode === kode)
-    barn[propNavn] = verdi
-    this.setState({ valgteKoder: valgte })
-  }
-
   handleRemoveSelectedLayer = kode => {
-    let aktive = this.state.valgteKoder
-    delete aktive[kode]
+    let aktive = this.state.aktiveLag
+    for (let i = 0; i < aktive.length; i++)
+      if (aktive[i].kode === kode) {
+        aktive.splice(i, 1)
+        break
+      }
     this.setState({
-      valgteKoder: aktive,
+      aktiveLag: aktive,
     })
+    this.props.history.push('/')
   }
 
-  updateColor(kode, farge) {
-    let meta = this.state.valgteKoder
-    Object.keys(meta).forEach(id => {
-      const forelder = meta[id]
-
-      if (forelder.kode === kode) {
-        forelder.farge = farge
-      }
-    })
-    this.setState({
-      valgteKoder: meta,
-      refresh: !this.state.refresh,
-    })
+  handleUpdateLayerProp = (kode, key, value) => {
+    const aktive = this.state.aktiveLag
+    const aktivt = aktive.find(x => x.kode === kode)
+    aktivt[key] = value
+    this.setState({ aktiveLag: [...aktive] })
   }
 
   render() {
-    const erAktivert = !!this.state.valgteKoder.find(
-      vk => vk.kode === this.state.meta.kode
-    )
-    const aktivKode =
-      this.state.meta && this.state.meta.kode ? this.state.meta.kode : ''
+    let erAktivert = false
+    if (this.state.meta)
+      erAktivert = !!this.state.aktiveLag.find(
+        vk => vk.kode === this.state.meta.kode
+      )
     return (
       <div>
         <Kart
@@ -162,11 +218,10 @@ class Grunnkart extends React.Component<Props, State> {
           zoom={3}
           pitch={0}
           bearing={0}
-          aktivKode={aktivKode}
-          aktiveLag={this.state.valgteKoder}
+          aktiveLag={this.state.aktiveLag}
+          meta={this.state.meta}
           opplystKode={this.state.opplystKode}
           onMapBoundsChange={this.handleActualBoundsChange}
-          meta={this.state.meta}
         />
 
         <MainDrawer
@@ -178,7 +233,7 @@ class Grunnkart extends React.Component<Props, State> {
 
         {!this.state.showMainDrawer && (
           <VenstreVinduContainer
-            valgteKoder={this.state.valgteKoder}
+            aktiveLag={this.state.aktiveLag}
             onToggleMainDrawer={() =>
               this.setState({
                 showMainDrawer: !this.state.showMainDrawer,
@@ -192,12 +247,12 @@ class Grunnkart extends React.Component<Props, State> {
               })
             }
             onFitBounds={this.handleFitBounds}
-            isActiveLayer={erAktivert}
+            erAktivert={erAktivert}
             onToggleLayer={this.handleToggleLayer}
             onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
             onExitToRoot={() => this.props.history.replace('/')}
-            meta={this.state.meta}
-            updateColor={(kode, farge) => this.updateColor(kode, farge)}
+            meta={this.state.meta || {}}
+            onUpdateLayerProp={this.handleUpdateLayerProp}
           />
         )}
       </div>
