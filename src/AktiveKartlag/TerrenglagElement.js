@@ -17,7 +17,6 @@ class TerrenglagElement extends Component {
         kode="terreng"
         tittel="Terreng"
         undertittel={this.undertittel()}
-        kanFlyttes={false}
         {...this.props}
       />
     )
