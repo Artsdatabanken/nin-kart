@@ -62,6 +62,12 @@ class LeafletTangram extends React.Component {
     this.updateMap(this.props)
   }
 
+  erEndret(prevProps) {
+    if (this.props.aktiveLag !== prevProps.aktiveLag) return true
+    if (this.props.meta !== prevProps.meta) return true
+    if (this.props.opplystKode !== prevProps.opplystKode) return true
+  }
+
   componentDidUpdate(prevProps, prevState) {
     if (this.props.bounds !== prevProps.bounds) {
       const b = this.props.bounds
@@ -71,12 +77,9 @@ class LeafletTangram extends React.Component {
       }
     }
 
-    if (this.props.aktiveLag !== prevProps.aktiveLag) {
+    if (this.erEndret(prevProps)) {
       this.updateMap(this.props)
       return
-    }
-    if (this.props.meta !== prevProps.meta) {
-      this.updateMap(this.props)
     }
   }
 

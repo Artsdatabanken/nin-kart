@@ -1,13 +1,12 @@
 import {
   Avatar,
   Divider,
-  IconButton,
   ListItem,
+  ListItemSecondaryAction,
   ListItemText,
 } from '@material-ui/core'
 import { withTheme } from '@material-ui/core/styles'
 import Switch from '@material-ui/core/Switch'
-import Reorder from '@material-ui/icons/Reorder'
 import React from 'react'
 import { withRouter } from 'react-router'
 import PaintSwatch from '../Kodetre/Kodeliste/PaintSwatch'
@@ -19,20 +18,19 @@ class Kartlagelement extends React.Component {
       undertittel,
       kode,
       farge,
-      kanFlyttes = true,
+      onMouseLeave,
+      onMouseEnter,
       onClick,
     } = this.props
     return (
       <React.Fragment>
         <ListItem
           button={true}
-          onClick={onClick}
+          onClick={() => onClick(kode)}
           key={kode}
-          onMouseEnter={() =>
-            this.props.onMouseEnter && this.props.onMouseEnter(kode)
-          }
+          onMouseEnter={() => onMouseEnter(kode)}
           onMouseLeave={() => {
-            this.props.onMouseLeave && this.props.onMouseLeave(kode)
+            onMouseLeave(kode)
           }}
         >
           <Switch
@@ -47,20 +45,15 @@ class Kartlagelement extends React.Component {
             }}
           />
           <ListItemText primary={tittel} secondary={undertittel} />
-          <Avatar style={{ float: 'left' }}>
-            <PaintSwatch color={farge} />
-          </Avatar>
-          {kanFlyttes && (
-            <IconButton
-              aria-label="Reorder"
-              style={{
-                cursor: '-webkit-grab',
-                color: this.props.theme.palette.action.disabled,
-              }}
-            >
-              <Reorder />
-            </IconButton>
-          )}
+          <ListItemSecondaryAction>
+            <Avatar>
+              {farge ? (
+                <PaintSwatch color={farge} />
+              ) : (
+                <img src={'/' + kode + '.png'} alt="farge" />
+              )}
+            </Avatar>
+          </ListItemSecondaryAction>
         </ListItem>
         <Divider />
       </React.Fragment>

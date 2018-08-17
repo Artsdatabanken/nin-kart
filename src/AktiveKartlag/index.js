@@ -20,13 +20,12 @@ class AktiveKartlag extends React.Component {
           <Button
             variant="outlined"
             icon={<MapsLayers />}
-            color="primary"
             style={{ margin: 24 }}
             onClick={() => {
               history.push('/katalog/')
             }}
           >
-            Legg til flere
+            Legg til kartlag
           </Button>
         </List>
       </div>

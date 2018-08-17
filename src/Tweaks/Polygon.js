@@ -7,7 +7,6 @@ import ZoomIn from '@material-ui/icons/ZoomIn'
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import tinycolor from 'tinycolor2'
-import språk from '../språk'
 import ColorPicker from './ColorPicker'
 
 class Polygon extends Component {
@@ -25,7 +24,7 @@ class Polygon extends Component {
     } = this.props
     return (
       <React.Fragment>
-        <ListSubheader>{tittel ? språk(tittel) : 'Polygon'}</ListSubheader>
+        <ListSubheader>{tittel}</ListSubheader>
         {
           <ColorPicker
             color={farge}

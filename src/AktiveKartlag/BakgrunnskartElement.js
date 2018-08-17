@@ -8,8 +8,6 @@ class BakgrunnskartElement extends Component {
         kode="bakgrunnskart"
         tittel="Bakgrunnskart"
         undertittel="Mørk grå"
-        farge="#404040"
-        kanFlyttes={false}
         {...this.props}
       />
     )

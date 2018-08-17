@@ -51,7 +51,7 @@ const standardLag = [
     vannvei: true,
     kommunegrense: true,
     fylkesgrense: true,
-    landegrense: false,
+    landegrense: true,
   },
   {
     kode: 'terreng',
@@ -219,8 +219,8 @@ class Grunnkart extends React.Component<Props, State> {
           pitch={0}
           bearing={0}
           aktiveLag={this.state.aktiveLag}
-          meta={this.state.meta}
           opplystKode={this.state.opplystKode}
+          meta={this.state.meta}
           onMapBoundsChange={this.handleActualBoundsChange}
         />
 
@@ -240,12 +240,8 @@ class Grunnkart extends React.Component<Props, State> {
               })
             }
             mapBounds={this.state.actualBounds}
-            onMouseEnter={kode => this.setState({ opplystKode: kode })}
-            onMouseLeave={kode =>
-              this.setState({
-                opplystKode: '',
-              })
-            }
+            onMouseEnter={this.handleMouseEnter}
+            onMouseLeave={this.handleMouseLeave}
             onFitBounds={this.handleFitBounds}
             erAktivert={erAktivert}
             onToggleLayer={this.handleToggleLayer}
@@ -257,6 +253,14 @@ class Grunnkart extends React.Component<Props, State> {
         )}
       </div>
     )
+  }
+
+  handleMouseEnter = kode => {
+    this.setState({ opplystKode: kode })
+  }
+
+  handleMouseLeave = kode => {
+    this.setState({ opplystKode: '' })
   }
 }
 
