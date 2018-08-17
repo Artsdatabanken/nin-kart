@@ -185,13 +185,8 @@ class Grunnkart extends React.Component<Props, State> {
 
   handleRemoveSelectedLayer = kode => {
     let aktive = this.state.aktiveLag
-    for (let i = 0; i < aktive.length; i++)
-      if (aktive[i].kode === kode) {
-        aktive.splice(i, 1)
-        break
-      }
     this.setState({
-      aktiveLag: aktive,
+      aktiveLag: aktive.filter(e => e.kode !== kode),
     })
     this.props.history.push('/')
   }
