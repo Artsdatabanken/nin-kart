@@ -33,6 +33,17 @@ class AktiveKartlag extends React.Component {
   }
 }
 
+function finnType(kode) {
+  switch (kode) {
+    case 'terreng':
+      return TerrenglagElement
+    case 'bakgrunn':
+      return BakgrunnskartElement
+    default:
+      return PolygonlagElement
+  }
+}
+
 function listeElement(forelder, props) {
   const kode = forelder.kode
   const {
@@ -48,41 +59,18 @@ function listeElement(forelder, props) {
     onMouseLeave,
     onUpdateLayerProp,
   }
-  switch (kode) {
-    case 'terreng':
-      return (
-        <TerrenglagElement
-          {...forelder}
-          {...subProps}
-          key={kode}
-          onClick={() => history.push('/lag/' + kode)}
-        />
-      )
-    case 'bakgrunnskart':
-      return (
-        <BakgrunnskartElement
-          {...forelder}
-          {...subProps}
-          key={kode}
-          tema="Mørk grå"
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          onClick={() => history.push('/lag/' + kode)}
-        />
-      )
-    default:
-      return (
-        <PolygonlagElement
-          {...forelder}
-          {...subProps}
-          key={kode}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          onRemove={kode => onRemoveSelectedLayer(kode)}
-          onClick={() => history.push('/lag/' + kode)}
-        />
-      )
-  }
+  const Type = finnType(kode)
+  return (
+    <Type
+      {...forelder}
+      {...subProps}
+      key={kode}
+      onClick={() => history.push('/lag/' + kode)}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onRemove={kode => onRemoveSelectedLayer(kode)}
+    />
+  )
 }
 
 export default withRouter(AktiveKartlag)

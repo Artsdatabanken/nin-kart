@@ -16,20 +16,44 @@ function lagLag(lag, dimAlleUnntatt, iKatalog, r) {
   }
 }
 
+function bakgrunnskartlag(kode, erSynlig, style, farge, lag) {
+  let mal = bakgrunnskartTemplate[kode]
+  mal.draw[style].color = farge
+  if (erSynlig) lag[kode + '_'] = mal
+}
+
 function lagBakgrunnskart(lag, r) {
-  const bg = {
+  const grenser = {
     data: {
       source: 'osm',
       layer: 'boundary',
     },
   }
-  if (lag.landegrense) bg.land = bakgrunnskartTemplate.land
-  if (lag.fylkesgrense) bg.fylke = bakgrunnskartTemplate.fylke
-  if (lag.kommunegrense) bg.kommune = bg.kommune = bakgrunnskartTemplate.kommune
-  r[lag.kode] = bg
-  if (lag.transport) r['transport'] = bakgrunnskartTemplate.transport
-  if (lag.vann) r['vann'] = bakgrunnskartTemplate.vann
-  if (lag.vannvei) r['vannvei'] = bakgrunnskartTemplate.vannvei
+  bakgrunnskartlag(
+    'land',
+    lag.kommunegrense,
+    'boundary',
+    lag.kommunegrensefarge,
+    grenser
+  )
+  bakgrunnskartlag(
+    'land',
+    lag.fylkesgrense,
+    'boundary',
+    lag.fylkesgrensefarge,
+    grenser
+  )
+  bakgrunnskartlag(
+    'land',
+    lag.landegrense,
+    'boundary',
+    lag.landegrensefarge,
+    grenser
+  )
+  r[lag.kode] = grenser
+  bakgrunnskartlag('vann', lag.vann, 'polygons', lag.vannfarge, r)
+  bakgrunnskartlag('vannvei', lag.vann, 'lines', lag.vannfarge, r)
+  bakgrunnskartlag('transport', lag.transport, 'lines', lag.transportfarge, r)
 }
 
 function lagPolygonlag(lag, dimAlleUntatt, r) {
@@ -101,13 +125,21 @@ function lagLagForKatalog(kode, barn, dimAlleUnntatt) {
 }
 
 function makeScene(props) {
-  return {
+  const r = {
     import: imports,
     sources: createSources(props.aktiveLag),
     lights: createLights(),
     layers: {},
     styles: createStyles(),
   }
+
+  const bakgrunn = props.aktiveLag[0] //fy
+  if (bakgrunn.land)
+    r.scene = {
+      background: { color: bakgrunn.landfarge },
+    }
+
+  return r
 }
 
 function createScene(props: Object, onClick: Function) {

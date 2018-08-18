@@ -3,7 +3,7 @@ import:
 
 scene:
   background:
-    color: '#fff'
+    color: '#eee'
 
 cameras:
   cam:
