@@ -26,8 +26,12 @@ const styles = {
     blend: 'overlay',
     dash: [2, 0.5],
   },
-  _multiply: {
+  mu_polygons: {
     base: 'polygons',
+    blend: 'multiply',
+  },
+  mu_lines: {
+    base: 'lines',
     blend: 'multiply',
   },
 }

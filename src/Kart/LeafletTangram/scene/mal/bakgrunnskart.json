@@ -64,7 +64,7 @@
       "layer": "transportation"
     },
     "draw": {
-      "lines": {
+      "mu_lines": {
         "order": 200,
         "color": [0.3, 0.3, 0.3, 1.0],
         "width": "1.2px"

@@ -23,7 +23,7 @@ type Props = {
 }
 
 const standardLag = [
-  {
+  /*  {
     farge: '#fc61fd',
     kode: 'AO_50',
     tittel: 'Trøndelag',
@@ -41,14 +41,18 @@ const standardLag = [
     },
     erSynlig: true,
     kanSlettes: true,
-  },
+  },*/
   {
     kode: 'bakgrunnskart',
     tittel: 'Bakgrunnskart',
+    tema: 'Mørk grå',
     erSynlig: true,
+    land: true,
+    landfarge: '#eee',
     transport: true,
+    transportfarge: '#555',
     vann: true,
-    vannvei: true,
+    vannfarge: '#666',
     kommunegrense: true,
     fylkesgrense: true,
     landegrense: true,

@@ -1,4 +1,5 @@
 import {
+  Avatar,
   List,
   ListItem,
   ListItemSecondaryAction,
@@ -10,6 +11,7 @@ import { withTheme } from '@material-ui/core/styles'
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import { Route, Switch as RouteSwitch } from 'react-router-dom'
+import PaintSwatch from '../../Kodetre/Kodeliste/PaintSwatch'
 import Tema from './Tema'
 
 class Bakgrunnskart extends Component {
@@ -33,54 +35,65 @@ class Bakgrunnskart extends Component {
                       this.props.history.push('/lag/bakgrunnskart/tema')
                     }
                   >
-                    <ListItemText primary="Tema" secondary="Lyse gråtoner" />
+                    <ListItemText primary="Tema" secondary="Tilpasset" />
                   </ListItem>
                 </List>
-                <ListSubheader>TODO</ListSubheader>
+                <ListSubheader>Utseende</ListSubheader>
                 <List>
                   <ListItem>
+                    <Switch
+                      onChange={() =>
+                        this.props.onUpdateLayerProp(
+                          'bakgrunnskart',
+                          'vann',
+                          !this.props.vann
+                        )
+                      }
+                      checked={this.props.vann}
+                    />
                     <ListItemText primary="Vann" />
                     <ListItemSecondaryAction>
-                      <Switch
-                        onChange={() =>
-                          this.props.onUpdateLayerProp(
-                            'bakgrunnskart',
-                            'vann',
-                            !this.props.vann
-                          )
-                        }
-                        checked={this.props.vann}
-                      />
+                      <Avatar>
+                        <PaintSwatch color={this.props.vannfarge} />
+                      </Avatar>
                     </ListItemSecondaryAction>
                   </ListItem>
                   <ListItem>
-                    <ListItemText primary="Vannveier" />
+                    <Switch
+                      onChange={() =>
+                        this.props.onUpdateLayerProp(
+                          'bakgrunnskart',
+                          'land',
+                          !this.props.land
+                        )
+                      }
+                      checked={this.props.land}
+                    />
+                    <ListItemText primary="Land" />
                     <ListItemSecondaryAction>
-                      <Switch
-                        onChange={() =>
-                          this.props.onUpdateLayerProp(
-                            'bakgrunnskart',
-                            'vannvei',
-                            !this.props.vannvei
-                          )
-                        }
-                        checked={this.props.vannvei}
-                      />
+                      <ListItemSecondaryAction>
+                        <Avatar>
+                          <PaintSwatch color={this.props.landfarge} />
+                        </Avatar>
+                      </ListItemSecondaryAction>
                     </ListItemSecondaryAction>
                   </ListItem>
                   <ListItem>
+                    <Switch
+                      onChange={() =>
+                        this.props.onUpdateLayerProp(
+                          'bakgrunnskart',
+                          'transport',
+                          !this.props.transport
+                        )
+                      }
+                      checked={this.props.transport}
+                    />
                     <ListItemText primary="Transport" />
                     <ListItemSecondaryAction>
-                      <Switch
-                        onChange={() =>
-                          this.props.onUpdateLayerProp(
-                            'bakgrunnskart',
-                            'transport',
-                            !this.props.transport
-                          )
-                        }
-                        checked={this.props.transport}
-                      />
+                      <Avatar>
+                        <PaintSwatch color={this.props.transportfarge} />
+                      </Avatar>
                     </ListItemSecondaryAction>
                   </ListItem>
                 </List>

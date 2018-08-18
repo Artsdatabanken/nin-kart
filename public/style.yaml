@@ -1,10 +1,6 @@
 import:
   - https://tangrams.github.io/blocks/filter/grain.yaml
 
-scene:
-  background:
-    color: '#fff'
-
 cameras:
   cam:
     type: flat
