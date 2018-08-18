@@ -19,7 +19,7 @@ function lagLag(lag, dimAlleUnntatt, iKatalog, r) {
 function bakgrunnskartlag(kode, erSynlig, style, farge, lag) {
   let mal = bakgrunnskartTemplate[kode]
   mal.draw[style].color = farge
-  if (erSynlig) lag[kode + '_'] = mal
+  if (erSynlig) lag[kode] = mal
 }
 
 function lagBakgrunnskart(lag, r) {
@@ -53,7 +53,13 @@ function lagBakgrunnskart(lag, r) {
   r[lag.kode] = grenser
   bakgrunnskartlag('vann', lag.vann, 'polygons', lag.vannfarge, r)
   bakgrunnskartlag('vannvei', lag.vann, 'lines', lag.vannfarge, r)
-  bakgrunnskartlag('transport', lag.transport, 'lines', lag.transportfarge, r)
+  bakgrunnskartlag(
+    'transport',
+    lag.transport,
+    'mu_lines',
+    lag.transportfarge,
+    r
+  )
 }
 
 function lagPolygonlag(lag, dimAlleUntatt, r) {
@@ -66,11 +72,11 @@ function lagPolygonlag(lag, dimAlleUntatt, r) {
     },
     filter: { [kode]: true },
     draw: {
-      _multiply: {
+      mu_polygons: {
         order: 100,
         color: lag.farge || '#f6c',
       },
-      lines: {
+      mu_lines: {
         order: 90,
         color: '#888',
         width: '5m',
@@ -103,19 +109,19 @@ function lagLagForKatalog(kode, barn, dimAlleUnntatt) {
     const sub = {
       filter: { [subkode]: true },
       draw: {
-        _multiply: {
+        mu_polygons: {
           order: 100,
           color: farge,
         },
-        lines: {
-          order: 190,
-          color: '#666',
-          width: '0.5px',
+        mu_lines: {
+          order: 100,
+          color: farge,
+          width: [[0, '2.5px'], [8, '1px']],
         },
       },
     }
     if (subkode === dimAlleUnntatt) {
-      const lines = sub.draw.lines
+      const lines = sub.draw.mu_lines
       lines.width = '1.5px'
       lines.color = '#333'
     }
