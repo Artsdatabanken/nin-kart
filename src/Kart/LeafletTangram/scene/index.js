@@ -166,4 +166,21 @@ function createScene(props: Object, onClick: Function) {
   return scene
 }
 
-export { makeScene, createScene }
+function updateScene(scene: Object, props: Object, onClick: Function) {
+  const dimAlleUnntatt = props.opplystKode
+  const iKatalog = !!props.meta
+  if (iKatalog) {
+    scene.layers = lagLagForKatalog(
+      props.meta.kode,
+      props.meta.barn || { [props.meta.kode]: props.meta },
+      dimAlleUnntatt
+    )
+  }
+  scene.layers = Object.assign(
+    scene.layers,
+    lagLagForAktive(props.aktiveLag, iKatalog, dimAlleUnntatt)
+  )
+  return scene
+}
+
+export { createScene, updateScene }
