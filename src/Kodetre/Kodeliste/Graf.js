@@ -51,15 +51,19 @@ const titler = {
 
 class Graf extends Component {
   render() {
-    return Object.keys(this.props.graf).map(kant => {
+    const { graf, onGoToCode, onMouseEnter, onMouseLeave, data } = this.props
+    return Object.keys(graf).map(kant => {
       const x = titler[kant] || { title: kant }
       return (
         <Kodeliste
           key={kant}
-          onGoToCode={this.props.onGoToCode}
+          onGoToCode={onGoToCode}
           title={x.title}
           subtitle={x.subtitle}
-          metadata={this.props.graf[kant]}
+          metadata={graf[kant]}
+          apidata={data ? data.barn : []}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
         />
       )
     })

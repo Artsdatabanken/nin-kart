@@ -86,7 +86,13 @@ class KodeVindu extends React.Component {
               avatarUtenRamme={avatarUtenRamme}
             />
             {props.meta.graf && (
-              <Graf graf={props.meta.graf} onGoToCode={props.onGoToCode} />
+              <Graf
+                graf={props.meta.graf}
+                apidata={props.data ? props.data.barn : []}
+                onGoToCode={props.onGoToCode}
+                onMouseEnter={props.onMouseEnter}
+                onMouseLeave={props.onMouseLeave}
+              />
             )}
           </List>
         </Paper>
