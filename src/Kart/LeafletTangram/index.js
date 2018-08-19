@@ -31,12 +31,6 @@ class LeafletTangram extends React.Component {
         // moved by drag/keyboard
         console.log('start move by user', e)
       }
-      if (this.layer) {
-        console.log(this.layer.scene.background)
-        this.layer.scene.background.color[0] += 0.01
-        if (this.layer.scene.background.color[0] > 1)
-          this.layer.scene.background.color[0] = 0.0
-      }
     })
     map.on('dragend', e => {
       if (e.hard) {
@@ -133,21 +127,15 @@ class LeafletTangram extends React.Component {
 
   updateScene_(props) {
     if (!this.layer.scene.initialized) {
-      console.log('not initialized')
-      console.warn('dirty = true')
       this.dirty = true
       return
     }
     this.forceUpdate(props)
   }
   forceUpdate(props) {
-    console.log('load scene')
-    console.log(this.config)
     this.dirty = false
     updateScene(this.config, props)
     this.layer.scene.load(this.config)
-    //      this.layer.scene.background.color[0] = 0.1
-    //    this.layer.scene.updateConfig()
   }
 
   render() {
