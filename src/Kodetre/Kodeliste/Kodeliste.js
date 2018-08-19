@@ -46,8 +46,8 @@ const Kodeliste = ({
             kode={kode}
             meta={metabarnet}
             onGoToCode={onGoToCode}
-            onMouseEnter={onMouseEnter || noop}
-            onMouseLeave={onMouseLeave || noop}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
             avatarUtenRamme={avatarUtenRamme}
           />
         )
@@ -79,7 +79,5 @@ Kodeliste.sorterNøkler = metadata => {
   })
   return sortert
 }
-
-function noop() {}
 
 export default Kodeliste

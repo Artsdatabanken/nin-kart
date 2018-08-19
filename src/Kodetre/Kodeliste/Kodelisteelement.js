@@ -36,7 +36,7 @@ class Kodelisteelement extends React.Component<Props, State> {
       <React.Fragment>
         <ListItem
           key={kode}
-          onClick={() => this.props.onGoToCode(meta.sti)}
+          onClick={() => this.props.onGoToCode(kode)}
           onMouseEnter={() => this.props.onMouseEnter(kode)}
           onMouseLeave={() => this.props.onMouseLeave()}
           style={{ zIndex: 0 }}
