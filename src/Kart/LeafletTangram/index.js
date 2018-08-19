@@ -3,7 +3,7 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import React from 'react'
 import Tangram from 'tangram'
-import { createScene } from './scene'
+import { createScene, updateScene } from './scene'
 import './styles.css'
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
 // See here: https://github.com/PaulLeCam/react-leaflet/issues/255
@@ -59,7 +59,7 @@ class LeafletTangram extends React.Component {
     L.control.zoom({ position: 'bottomright' }).addTo(map)
     L.DomUtil.addClass(map._container, 'crosshair-cursor-enabled')
     this.map = map
-    this.updateMap(this.props)
+    this.createScene(this.props)
   }
 
   erEndret(prevProps) {
@@ -78,7 +78,7 @@ class LeafletTangram extends React.Component {
     }
 
     if (this.erEndret(prevProps)) {
-      this.updateMap(this.props)
+      this.updateScene_(this.props)
       return
     }
   }
@@ -96,25 +96,46 @@ class LeafletTangram extends React.Component {
     this.props.onClick(latlng)
   }
 
-  updateMap(props) {
-    let scene = createScene(props)
-    if (this.layer) {
-      this.layer.scene.load(scene)
-    } else {
-      let def = {
-        scene: scene,
-        events: {
-          hover: function(selection) {
-            //        console.log('Hover!', selection)
-          },
-          click: this.onClick,
-        },
-        attribution: '<a href="https://artsdatabanken.no">Artsdatabanken</a>',
-      }
-
-      this.layer = Tangram.leafletLayer(def)
-      this.map.addLayer(this.layer)
+  handleLoad = e => {
+    console.log('scene loaded:', e)
+    //    debugger
+    if (this.dirty) {
+      console.warn('was dirty')
+      this.forceUpdate(this.props)
     }
+  }
+
+  createScene(props) {
+    this.config = createScene(props)
+    let def = {
+      scene: this.config,
+      events: {
+        hover: function(selection) {
+          //        console.log('Hover!', selection)
+        },
+        click: this.onClick,
+      },
+      attribution: '<a href="https://artsdatabanken.no">Artsdatabanken</a>',
+    }
+
+    this.layer = Tangram.leafletLayer(def)
+    this.map.addLayer(this.layer)
+    this.layer.scene.subscribe({
+      load: e => this.handleLoad(e),
+    })
+  }
+
+  updateScene_(props) {
+    if (!this.layer.scene.initialized) {
+      this.dirty = true
+      return
+    }
+    this.forceUpdate(props)
+  }
+  forceUpdate(props) {
+    this.dirty = false
+    updateScene(this.config, props)
+    this.layer.scene.load(this.config)
   }
 
   render() {
