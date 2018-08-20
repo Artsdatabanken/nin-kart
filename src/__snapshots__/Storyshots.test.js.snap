@@ -912,18 +912,7 @@ exports[`Storyshots KodeVindu default 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-270"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-271"
           >
@@ -983,18 +972,7 @@ exports[`Storyshots KodeVindu default 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-270"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-271"
           >
@@ -1054,18 +1032,7 @@ exports[`Storyshots KodeVindu default 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-270"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-271"
           >
@@ -1125,18 +1092,7 @@ exports[`Storyshots KodeVindu default 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-270"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-271"
           >
@@ -1447,18 +1403,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-388"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-389"
           >
@@ -1534,18 +1479,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-388"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-389"
           >
@@ -1605,18 +1539,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-388"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-389"
           >
@@ -1676,18 +1599,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-388"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-389"
           >
@@ -1747,18 +1659,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-388"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-389"
           >
@@ -1818,18 +1719,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-388"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-389"
           >
@@ -1905,18 +1795,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-388"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-389"
           >
@@ -1992,18 +1871,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-388"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-389"
           >
@@ -2079,18 +1947,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-388"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-389"
           >
@@ -2150,18 +2007,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-388"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-389"
           >
@@ -2221,18 +2067,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-388"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-389"
           >
@@ -2292,18 +2127,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-388"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-389"
           >
@@ -2363,18 +2187,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-388"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-389"
           >
@@ -2434,18 +2247,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-388"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-389"
           >
@@ -2505,18 +2307,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-388"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-389"
           >
@@ -2576,18 +2367,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-388"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-389"
           >
@@ -2647,18 +2427,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-388"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-389"
           >
@@ -2718,18 +2487,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           />
           <div
             className="MuiListItemSecondaryAction-root-388"
-          >
-            <div
-              style={
-                Object {
-                  "display": "inline-flex",
-                  "position": "absolute",
-                  "right": 24,
-                  "top": -16,
-                }
-              }
-            />
-          </div>
+          />
           <div
             className="MuiListItemText-root-389"
           >

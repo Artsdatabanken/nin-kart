@@ -49,16 +49,7 @@ class Kodelisteelement extends React.Component<Props, State> {
           />
           <Bildeavatar utenRamme={avatarUtenRamme} kode={kode} />
           <ListItemSecondaryAction>
-            <div
-              style={{
-                display: 'inline-flex',
-                position: 'absolute',
-                top: -16,
-                right: 24,
-              }}
-            >
-              {areal && <PaintSwatch color={erOpplyst ? '#f00' : meta.farge} />}
-            </div>
+            {areal && <PaintSwatch color={erOpplyst ? '#f00' : meta.farge} />}
           </ListItemSecondaryAction>
           <ListItemText primary={språk(meta.tittel)} secondary={kode} />
         </ListItem>
