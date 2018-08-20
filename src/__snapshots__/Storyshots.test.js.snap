@@ -102,6 +102,11 @@ exports[`Storyshots Aktive kartlag default 1`] = `
           >
             <div
               className="MuiAvatar-root-81 MuiAvatar-colorDefault-82"
+              style={
+                Object {
+                  "right": 20,
+                }
+              }
             >
               <img
                 alt="farge"
@@ -3406,6 +3411,11 @@ exports[`Storyshots PolygonlagElement default 1`] = `
       >
         <div
           className="MuiAvatar-root-159 MuiAvatar-colorDefault-160"
+          style={
+            Object {
+              "right": 20,
+            }
+          }
         >
           <div
             style={
