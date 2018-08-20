@@ -114,7 +114,6 @@ function lagLagForKatalog(kode, barn, dimAlleUnntatt) {
   r.data = { source: prefix, layer: prefix }
   Object.keys(barn).forEach(subkode => {
     let farge = masser(subkode, barn[subkode].farge || '#f6c', dimAlleUnntatt)
-    console.log(kode, barn[subkode].farge, farge, dimAlleUnntatt)
     const sub = {
       filter: { [subkode]: true },
       draw: {
@@ -131,7 +130,7 @@ function lagLagForKatalog(kode, barn, dimAlleUnntatt) {
     }
     if (subkode === dimAlleUnntatt) {
       const lines = sub.draw.mu_lines
-      lines.width = '1.5px'
+      lines.width = '3px'
       //      lines.color = '#333'
     }
     r[subkode] = sub
