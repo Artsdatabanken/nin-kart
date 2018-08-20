@@ -1,5 +1,4 @@
 // @flow
-import color from 'tinycolor2'
 import imports from './import'
 import { createLights } from './lights'
 import bakgrunnskartTemplate from './mal/bakgrunnskart'
@@ -93,23 +92,32 @@ function lagLagForAktive(aktive, iKatalog, dimAlleUnntatt) {
   return r
 }
 
+function hack(prefix) {
+  // Fordi data ikke alltid ligger der man skulle tro.
+  switch (prefix) {
+    case 'BS':
+    case 'RL':
+      return 'NA'
+    default:
+      return prefix
+  }
+}
+
 function masser(kode, farge, dimAlleUnntatt) {
-  if (!dimAlleUnntatt) return farge
-  const col = new color(farge)
-  if (dimAlleUnntatt === kode) return col.darken(20).toHexString()
-  return col.brighten(10).toHexString()
+  if (dimAlleUnntatt === kode) return '#f00'
+  return farge
 }
 
 function lagLagForKatalog(kode, barn, dimAlleUnntatt) {
   let r = {}
-  const prefix = kode.substring(0, 2)
+  const prefix = hack(kode.substring(0, 2))
   r.data = { source: prefix, layer: prefix }
   Object.keys(barn).forEach(subkode => {
     let farge = masser(subkode, barn[subkode].farge || '#f6c', dimAlleUnntatt)
     const sub = {
       filter: { [subkode]: true },
       draw: {
-        mu_polygons: {
+        polygons: {
           order: 100,
           color: farge,
         },
@@ -122,8 +130,8 @@ function lagLagForKatalog(kode, barn, dimAlleUnntatt) {
     }
     if (subkode === dimAlleUnntatt) {
       const lines = sub.draw.mu_lines
-      lines.width = '1.5px'
-      lines.color = '#333'
+      lines.width = '3px'
+      //      lines.color = '#333'
     }
     r[subkode] = sub
   })

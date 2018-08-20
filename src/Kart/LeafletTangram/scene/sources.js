@@ -5,12 +5,6 @@ const sources = {
     max_zoom: 11,
     bounds: [4.704237, 57.960319, 31.16815, 70.907624],
   },
-  BS: {
-    type: 'MVT',
-    url: 'https://tiles.artsdatabanken.no/data/NA/{z}/{x}/{y}.pbf',
-    bounds: [4.704237, 57.960319, 31.16815, 70.907624],
-    max_zoom: 13,
-  },
   MI: {
     type: 'MVT',
     url: 'https://tiles.artsdatabanken.no/data/MI/{z}/{x}/{y}.pbf',

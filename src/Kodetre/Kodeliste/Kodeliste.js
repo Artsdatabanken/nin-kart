@@ -10,6 +10,7 @@ const Kodeliste = ({
   onGoToCode,
   onMouseEnter,
   onMouseLeave,
+  opplystKode,
   avatarUtenRamme,
 }) => {
   if (!metadata) return null
@@ -48,6 +49,7 @@ const Kodeliste = ({
             onGoToCode={onGoToCode}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
+            erOpplyst={kode === opplystKode}
             avatarUtenRamme={avatarUtenRamme}
           />
         )

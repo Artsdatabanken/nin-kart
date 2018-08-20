@@ -82,6 +82,7 @@ class KodeVindu extends React.Component {
               onGoToCode={props.onGoToCode}
               onMouseEnter={props.onMouseEnter}
               onMouseLeave={props.onMouseLeave}
+              opplystKode={props.opplystKode}
               language={props.language}
               avatarUtenRamme={avatarUtenRamme}
             />
@@ -92,6 +93,7 @@ class KodeVindu extends React.Component {
                 onGoToCode={props.onGoToCode}
                 onMouseEnter={props.onMouseEnter}
                 onMouseLeave={props.onMouseLeave}
+                opplystKode={props.opplystKode}
               />
             )}
           </List>
