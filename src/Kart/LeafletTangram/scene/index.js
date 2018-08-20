@@ -117,7 +117,7 @@ function lagLagForKatalog(kode, barn, dimAlleUnntatt) {
     const sub = {
       filter: { [subkode]: true },
       draw: {
-        polygons: {
+        mu_polygons: {
           order: 100,
           color: farge,
         },
