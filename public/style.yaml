@@ -5,13 +5,6 @@ cameras:
   cam:
     type: flat
 
-lights:
-  dir:
-    type: directional
-    direction: [.1, .5, -1]
-    diffuse: .7
-    ambient: .5
-
 sources:
   osm:
     type: MVT
@@ -23,18 +16,7 @@ sources:
     url: 'https://tiles.artsdatabanken.no/data/NA_T1/{z}/{x}/{y}.png'
     rasters: [MI_KA-A]
     max_zoom: 11
-  RL_NT:
-    type: Raster
-    url: 'https://tiles.artsdatabanken.no/data/RL_NT/{z}/{x}/{y}.png'
-    max_zoom: 11
-  MI_KA-A:
-    type: Raster
-    url: 'https://tiles.artsdatabanken.no/data/MI_KA-A/{z}/{x}/{y}.png'
-    max_zoom: 11
-  MI_KA-F:
-    type: Raster
-    url: 'https://tiles.artsdatabanken.no/data/MI_KA-F/{z}/{x}/{y}.png'
-    max_zoom: 11
+
 styles:
   water:
     base: polygons
