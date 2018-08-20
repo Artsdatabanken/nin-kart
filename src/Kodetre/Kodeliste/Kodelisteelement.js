@@ -31,7 +31,7 @@ type Props = {
 
 class Kodelisteelement extends React.Component<Props, State> {
   render() {
-    const { meta, kode, avatarUtenRamme, areal } = this.props
+    const { meta, kode, avatarUtenRamme, erOpplyst, areal } = this.props
     return (
       <React.Fragment>
         <ListItem
@@ -57,7 +57,7 @@ class Kodelisteelement extends React.Component<Props, State> {
                 right: 24,
               }}
             >
-              {areal && <PaintSwatch color={meta.farge} />}
+              {areal && <PaintSwatch color={erOpplyst ? '#f00' : meta.farge} />}
             </div>
           </ListItemSecondaryAction>
           <ListItemText primary={språk(meta.tittel)} secondary={kode} />

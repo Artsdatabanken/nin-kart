@@ -196,9 +196,11 @@ class Grunnkart extends React.Component<Props, State> {
       const sti = this.kodeTilRelativUrl(data.kode)
       data.sti = sti
       if (!data.barn) data.barn = {}
-      Object.keys(data.barn).forEach(
-        kode => (data.barn[kode].sti = this.kodeTilRelativUrl(kode))
-      )
+      Object.keys(data.barn).forEach(kode => {
+        const barn = data.barn[kode]
+        barn.sti = this.kodeTilRelativUrl(kode)
+        //        barn.farge = new color(barn.farge).darken(10).toHexString()
+      })
       this.setState({ meta: data })
     })
   }
@@ -259,6 +261,7 @@ class Grunnkart extends React.Component<Props, State> {
             onMouseLeave={this.handleMouseLeave}
             onFitBounds={this.handleFitBounds}
             erAktivert={erAktivert}
+            opplystKode={this.state.opplystKode}
             onToggleLayer={this.handleToggleLayer}
             onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
             onExitToRoot={() => this.props.history.replace('/')}

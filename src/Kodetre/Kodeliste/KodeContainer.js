@@ -62,6 +62,7 @@ class KodeContainer extends React.Component<Props, State> {
         onMouseLeave={this.props.onMouseLeave}
         onFitBounds={this.props.onFitBounds}
         erAktivert={this.props.erAktivert}
+        opplystKode={this.props.opplystKode}
         onToggleLayer={this.props.onToggleLayer}
       />
     )
