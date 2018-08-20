@@ -148,10 +148,10 @@ function makeScene(props) {
   }
 
   const bakgrunn = props.aktiveLag[0] //fy
-  if (bakgrunn.land)
-    r.scene = {
-      background: { color: bakgrunn.landfarge },
-    }
+
+  r.scene = {
+    background: { color: bakgrunn.land ? bakgrunn.landfarge : '#ccc' },
+  }
 
   return r
 }
