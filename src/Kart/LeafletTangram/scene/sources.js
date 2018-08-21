@@ -37,4 +37,20 @@ function createSources(aktivKode) {
   return sources
 }
 
-export { createSources }
+function lagSource(kode) {
+  const prefix = hack(kode.substring(0, 2))
+  return { source: prefix, layer: prefix }
+}
+
+function hack(prefix) {
+  // HACK: Fordi data ikke alltid ligger der man skulle tro.
+  switch (prefix) {
+    case 'BS':
+    case 'RL':
+      return 'NA'
+    default:
+      return prefix
+  }
+}
+
+export { createSources, lagSource }
