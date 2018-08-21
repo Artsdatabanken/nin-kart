@@ -5,31 +5,29 @@ import { createLights } from './lights'
 import { createSources, lagSource } from './sources'
 import { createStyles } from './styles'
 
-function lagAktiveLag(aktive, iKatalog, opplystKode) {
-  let layers = {}
+function lagAktiveLag(aktive, iKatalog, opplystKode, layers) {
   aktive.forEach(lag => lagEttLag(lag, opplystKode, iKatalog, layers))
-  return layers
 }
 
-function lagEttLag(lag, opplystKode, iKatalog, r) {
+function lagEttLag(lag, opplystKode, viserKatalog, layers) {
   if (!lag.erSynlig) return
   switch (lag.kode) {
     case 'bakgrunnskart':
-      lagBakgrunnskart(lag, r)
+      lagBakgrunnskart(lag, layers)
       break
     default:
-      if (!iKatalog) lagPolygonlag(lag, opplystKode, r)
+      if (!viserKatalog) lagPolygonlag(lag, opplystKode, layers)
   }
 }
 
-function lagKatalogLag(forelderkode, barn, opplystKode) {
+function lagKatalogLag(forelderkode, barn, opplystKode, layers) {
   let layer = {
     data: lagSource(forelderkode),
   }
-  Object.keys(barn).forEach(kode => {
-    layer[kode] = lagDrawblokk(kode, barn[kode].farge, opplystKode)
-  })
-  return { [forelderkode]: layer }
+  Object.keys(barn).forEach(
+    kode => (layer[kode] = lagDrawblokk(kode, barn[kode].farge, opplystKode))
+  )
+  layers[forelderkode] = layer
 }
 
 function lagDrawblokk(kode, farge, opplystKode) {
@@ -80,18 +78,16 @@ function lagToppnivå(props) {
 
 function createScene(props: Object, onClick: Function) {
   let config = lagToppnivå(props)
-  const iKatalog = !!props.meta
-  if (iKatalog) {
-    config.layers = lagKatalogLag(
+  const viserKatalog = !!props.meta
+  if (viserKatalog) {
+    lagKatalogLag(
       props.meta.kode,
       props.meta.barn || { [props.meta.kode]: props.meta },
-      props.opplystKode
+      props.opplystKode,
+      config.layers
     )
   }
-  config.layers = Object.assign(
-    config.layers,
-    lagAktiveLag(props.aktiveLag, iKatalog, props.opplystKode)
-  )
+  lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config.layers)
   return config
 }
 
