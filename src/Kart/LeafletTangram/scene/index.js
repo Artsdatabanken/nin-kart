@@ -1,177 +1,94 @@
 // @flow
+import { lagBakgrunnskart } from './bakgrunnskart'
 import imports from './import'
 import { createLights } from './lights'
-import bakgrunnskartTemplate from './mal/bakgrunnskart'
-import { createSources } from './sources'
+import { createSources, lagSource } from './sources'
 import { createStyles } from './styles'
 
-function lagLag(lag, dimAlleUnntatt, iKatalog, r) {
+function lagAktiveLag(aktive, iKatalog, opplystKode, layers) {
+  aktive.forEach(lag => lagEttLag(lag, opplystKode, iKatalog, layers))
+}
+
+function lagEttLag(lag, opplystKode, viserKatalog, layers) {
+  if (!lag.erSynlig) return
   switch (lag.kode) {
     case 'bakgrunnskart':
-      lagBakgrunnskart(lag, r)
+      lagBakgrunnskart(lag, layers)
       break
     default:
-      if (!iKatalog) lagPolygonlag(lag, dimAlleUnntatt, r)
+      if (!viserKatalog) lagPolygonlag(lag, opplystKode, layers)
   }
 }
 
-function bakgrunnskartlag(kode, erSynlig, style, farge, lag) {
-  let mal = bakgrunnskartTemplate[kode]
-  mal.draw[style].color = farge
-  if (erSynlig) lag[kode] = mal
-}
-
-function lagBakgrunnskart(lag, r) {
-  const grenser = {
-    data: {
-      source: 'osm',
-      layer: 'boundary',
-    },
+function lagKatalogLag(forelderkode, barn, opplystKode, layers) {
+  let layer = {
+    data: lagSource(forelderkode),
   }
-  bakgrunnskartlag(
-    'land',
-    lag.kommunegrense,
-    'boundary',
-    lag.kommunegrensefarge,
-    grenser
+  Object.keys(barn).forEach(
+    kode => (layer[kode] = lagDrawblokk(kode, barn[kode].farge, opplystKode))
   )
-  bakgrunnskartlag(
-    'land',
-    lag.fylkesgrense,
-    'boundary',
-    lag.fylkesgrensefarge,
-    grenser
-  )
-  bakgrunnskartlag(
-    'land',
-    lag.landegrense,
-    'boundary',
-    lag.landegrensefarge,
-    grenser
-  )
-  r[lag.kode] = grenser
-  bakgrunnskartlag('vann', lag.vann, 'polygons', lag.vannfarge, r)
-  bakgrunnskartlag('vannvei', lag.vann, 'lines', lag.vannfarge, r)
-  bakgrunnskartlag(
-    'transport',
-    lag.transport,
-    'mu_lines',
-    lag.transportfarge,
-    r
-  )
+  layers[forelderkode] = layer
 }
 
-function lagPolygonlag(lag, dimAlleUntatt, r) {
-  const kode = lag.kode
-  const prefix = kode.substring(0, 2)
-  r[kode] = {
-    data: {
-      source: prefix,
-      layer: prefix,
-    },
+function lagDrawblokk(kode, farge, opplystKode) {
+  farge = opplystKode === kode ? '#f00' : farge
+  const layer = {
     filter: { [kode]: true },
     draw: {
       mu_polygons: {
         order: 100,
-        color: lag.farge || '#f6c',
+        color: farge,
       },
       mu_lines: {
-        order: 90,
-        color: '#888',
-        width: '5m',
+        order: 100,
+        color: farge,
+        width: [[0, '2.5px'], [8, '1px']],
       },
     },
   }
-}
-
-function lagLagForAktive(aktive, iKatalog, dimAlleUnntatt) {
-  let r = {}
-  aktive.forEach(lag => {
-    if (lag.erSynlig) lagLag(lag, dimAlleUnntatt, iKatalog, r)
-  })
-  return r
-}
-
-function hack(prefix) {
-  // Fordi data ikke alltid ligger der man skulle tro.
-  switch (prefix) {
-    case 'BS':
-    case 'RL':
-      return 'NA'
-    default:
-      return prefix
+  if (kode === opplystKode) {
+    const lines = layer.draw.mu_lines
+    lines.width = '3px'
   }
+  return layer
 }
 
-function masser(kode, farge, dimAlleUnntatt) {
-  if (dimAlleUnntatt === kode) return '#f00'
-  return farge
+function lagPolygonlag(lag, opplystKode, layers) {
+  const { kode, farge } = lag
+  const layer = lagDrawblokk(kode, farge, opplystKode)
+  layer.data = lagSource(kode)
+  layers[kode] = layer
 }
 
-function lagLagForKatalog(kode, barn, dimAlleUnntatt) {
-  let r = {}
-  const prefix = hack(kode.substring(0, 2))
-  r.data = { source: prefix, layer: prefix }
-  Object.keys(barn).forEach(subkode => {
-    let farge = masser(subkode, barn[subkode].farge || '#f6c', dimAlleUnntatt)
-    const sub = {
-      filter: { [subkode]: true },
-      draw: {
-        mu_polygons: {
-          order: 100,
-          color: farge,
-        },
-        mu_lines: {
-          order: 100,
-          color: farge,
-          width: [[0, '2.5px'], [8, '1px']],
-        },
-      },
-    }
-    if (subkode === dimAlleUnntatt) {
-      const lines = sub.draw.mu_lines
-      lines.width = '3px'
-      //      lines.color = '#333'
-    }
-    r[subkode] = sub
-  })
-  return { [kode]: r }
-}
-
-function makeScene(props) {
-  const r = {
+function lagToppnivå(props) {
+  const bakgrunn = props.aktiveLag[0] //fy
+  const config = {
     import: imports,
     sources: createSources(props.aktiveLag),
     lights: createLights(),
     layers: {},
     styles: createStyles(),
+    scene: {
+      background: { color: bakgrunn.land ? bakgrunn.landfarge : '#ccc' },
+    },
   }
 
-  const bakgrunn = props.aktiveLag[0] //fy
-
-  r.scene = {
-    background: { color: bakgrunn.land ? bakgrunn.landfarge : '#ccc' },
-  }
-
-  return r
+  return config
 }
 
 function createScene(props: Object, onClick: Function) {
-  let scene = makeScene(props)
-  const dimAlleUnntatt = props.opplystKode
-  const iKatalog = !!props.meta
-  if (iKatalog) {
-    scene.layers = lagLagForKatalog(
+  let config = lagToppnivå(props)
+  const viserKatalog = !!props.meta
+  if (viserKatalog) {
+    lagKatalogLag(
       props.meta.kode,
       props.meta.barn || { [props.meta.kode]: props.meta },
-      dimAlleUnntatt
+      props.opplystKode,
+      config.layers
     )
   }
-  scene.layers = Object.assign(
-    scene.layers,
-    lagLagForAktive(props.aktiveLag, iKatalog, dimAlleUnntatt)
-  )
-  return scene
+  lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config.layers)
+  return config
 }
 
-export { makeScene, createScene }
+export { createScene }
