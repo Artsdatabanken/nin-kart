@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Fakta = ({ tittel, verdi, synlig }) => {
-  if (!synlig || !verdi) return null
+  if (!verdi) return null
   return (
     <div
       style={{
