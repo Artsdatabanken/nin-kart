@@ -242,33 +242,31 @@ class Grunnkart extends React.Component<Props, State> {
         />
 
         <MainDrawer
-          open={this.state.showMainDrawer}
-          onToggleMainDrawer={() =>
+          erÅpen={this.state.showMainDrawer}
+          toggleDrawer={() =>
             this.setState({ showMainDrawer: !this.state.showMainDrawer })
           }
         />
 
-        {!this.state.showMainDrawer && (
-          <VenstreVinduContainer
-            aktiveLag={this.state.aktiveLag}
-            onToggleMainDrawer={() =>
-              this.setState({
-                showMainDrawer: !this.state.showMainDrawer,
-              })
-            }
-            mapBounds={this.state.actualBounds}
-            onMouseEnter={this.handleMouseEnter}
-            onMouseLeave={this.handleMouseLeave}
-            onFitBounds={this.handleFitBounds}
-            erAktivert={erAktivert}
-            opplystKode={this.state.opplystKode}
-            onToggleLayer={this.handleToggleLayer}
-            onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-            onExitToRoot={() => this.props.history.replace('/')}
-            meta={this.state.meta || {}}
-            onUpdateLayerProp={this.handleUpdateLayerProp}
-          />
-        )}
+        <VenstreVinduContainer
+          aktiveLag={this.state.aktiveLag}
+          onToggleMainDrawer={() =>
+            this.setState({
+              showMainDrawer: !this.state.showMainDrawer,
+            })
+          }
+          mapBounds={this.state.actualBounds}
+          onMouseEnter={this.handleMouseEnter}
+          onMouseLeave={this.handleMouseLeave}
+          onFitBounds={this.handleFitBounds}
+          erAktivert={erAktivert}
+          opplystKode={this.state.opplystKode}
+          onToggleLayer={this.handleToggleLayer}
+          onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+          onExitToRoot={() => this.props.history.replace('/')}
+          meta={this.state.meta || {}}
+          onUpdateLayerProp={this.handleUpdateLayerProp}
+        />
       </div>
     )
   }
