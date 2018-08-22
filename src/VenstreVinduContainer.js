@@ -1,4 +1,4 @@
-import { Paper, Snackbar } from '@material-ui/core'
+import { Snackbar } from '@material-ui/core'
 import React from 'react'
 import { withRouter } from 'react-router'
 import { Route, Switch } from 'react-router-dom'
@@ -79,29 +79,31 @@ class VenstreVinduContainer extends React.Component {
               overflowX: 'hidden',
             }}
           >
-            {this.state.error && (
-              <Snackbar
-                open={true}
-                message={'Søk feilet: ' + JSON.stringify(this.state.error)}
-                autoHideDuration={4000}
-                onRequestClose={() => this.setState({ error: null })}
-              />
-            )}
             <TopBar
               onGoBack={() => history.goBack()}
               onExitToRoot={() => {
                 this.setState({ searchResults: null })
                 history.push('/')
-                this.props.onExitToRoot()
               }}
               onToggleMainDrawer={this.props.onToggleMainDrawer}
               isAtRoot={history.location.pathname === '/'}
               query={this.state.query}
               tittel={this.tittel(this.props.meta)}
-              parentId={this.state.parentId}
               onQueryChange={this.handleQueryChange}
-              minimized={this.state.minimized}
-            />
+            >
+              {this.state.searchResults && (
+                <ResultatListe
+                  query={this.state.query}
+                  searchResults={this.state.searchResults}
+                  language={this.props.language}
+                  onClick={url => {
+                    console.warn('url', url)
+                    this.setState({ query: '', searchResults: null })
+                    history.push('/katalog/' + url)
+                  }}
+                />
+              )}
+            </TopBar>
             <Switch>
               <Route
                 path="/katalog/:kode*"
@@ -172,28 +174,13 @@ class VenstreVinduContainer extends React.Component {
                 )}
               />
             </Switch>
-            {this.state.searchResults && (
-              <Paper
-                style={{
-                  position: 'absolute',
-                  top: 56,
-                  left: 8,
-                  zOrder: 1000,
-                  backgroundColor: 'red',
-                }}
-                zDepth={2}
-              >
-                <ResultatListe
-                  query={this.state.query}
-                  searchResults={this.state.searchResults}
-                  language={this.props.language}
-                  onClick={url => {
-                    console.warn('url', url)
-                    this.setState({ query: '', searchResults: null })
-                    history.push('/katalog/' + url)
-                  }}
-                />
-              </Paper>
+            {this.state.error && (
+              <Snackbar
+                open={true}
+                message={'Søk feilet: ' + JSON.stringify(this.state.error)}
+                autoHideDuration={4000}
+                onRequestClose={() => this.setState({ error: null })}
+              />
             )}
           </div>
         )}

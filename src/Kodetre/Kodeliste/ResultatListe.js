@@ -1,4 +1,12 @@
-import { Divider, List, ListItem, ListItemText, Paper } from '@material-ui/core'
+import {
+  Avatar,
+  Divider,
+  List,
+  ListItem,
+  ListItemSecondaryAction,
+  ListItemText,
+  Paper,
+} from '@material-ui/core'
 import React, { Component } from 'react'
 import Backend from '../../backend'
 import språk from '../../språk'
@@ -21,13 +29,10 @@ class ResultatListe extends Component {
     if (!searchResults) return null
     if (!searchResults.length > 0) return null
     return (
-      <Paper zDepth={1}>
+      <Paper elevation={1}>
         <List
           style={{
             overflow: 'hidden',
-            maxHeight: 494,
-            paddingTop: 0,
-            paddingBottom: 0,
           }}
         >
           {searchResults.map(item => {
@@ -39,29 +44,16 @@ class ResultatListe extends Component {
               <React.Fragment key={item.kode}>
                 <ListItem
                   style={{
-                    width: 392,
                     height: 38,
-                    pointer: 'hand',
-                    paddingTop: 0,
-                    paddingBottom: 1,
-                  }}
-                  innerDivStyle={{
-                    paddingTop: 14,
-                    paddingLeft: 66,
-                    fontSize: 13,
-                    lineheight: 24,
-                    fontWeight: 500,
-                    whiteSpace: 'nowrap',
-                    textOverflow: 'ellipsis',
-                    overflow: 'hidden',
+                    cursor: 'pointer',
                   }}
                   onClick={() => {
                     onClick(item.kode)
                   }}
                   key={kode}
-                  leftIcon={
+                >
+                  <Avatar style={{ width: 24, height: 24 }}>
                     <img
-                      style={{ marginTop: 6, marginLeft: 16 }}
                       alt={prefix}
                       src={Backend.avatar24px(prefix)}
                       onError={e => {
@@ -70,21 +62,32 @@ class ResultatListe extends Component {
                           e.target.src = brokenImage
                       }}
                     />
-                  }
-                  rightAvatar={
-                    <div
-                      style={{
-                        paddingTop: 6,
-                        fontWeight: 800,
-                      }}
-                    >
-                      {ResultatListe.highlightMatch(this.filtrer(kode), query)}
-                    </div>
-                  }
-                >
-                  <ListItemText>
+                  </Avatar>
+                  <ListItemText
+                    style={{
+                      whiteSpace: 'nowrap',
+                      textOverflow: 'ellipsis',
+                      overflow: 'hidden',
+                      fontSize: 9,
+                      fontWeight: 500,
+                    }}
+                  >
                     {ResultatListe.highlightMatch(navn, query)}
                   </ListItemText>
+                  <ListItemSecondaryAction>
+                    <ListItemText>
+                      <div
+                        style={{
+                          fontWeight: 800,
+                        }}
+                      >
+                        {ResultatListe.highlightMatch(
+                          this.filtrer(kode),
+                          query
+                        )}
+                      </div>
+                    </ListItemText>
+                  </ListItemSecondaryAction>
                 </ListItem>
                 <Divider inset={true} />
               </React.Fragment>
@@ -126,7 +129,7 @@ class ResultatListe extends Component {
           >
             {part}
           </span>
-        ))}{' '}
+        ))}
       </React.Fragment>
     )
   }

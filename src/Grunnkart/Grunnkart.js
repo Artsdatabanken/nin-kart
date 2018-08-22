@@ -98,7 +98,6 @@ class Grunnkart extends React.Component<Props, State> {
       showMainDrawer: false,
       opplystKode: '',
     }
-    //    this.redirectTo(props.location.pathname.replace('/katalog/', ''))
   }
 
   handleActualBoundsChange = bounds => {
@@ -228,6 +227,30 @@ class Grunnkart extends React.Component<Props, State> {
       )
     return (
       <div>
+        <MainDrawer
+          erÅpen={this.state.showMainDrawer}
+          toggleDrawer={() =>
+            this.setState({ showMainDrawer: !this.state.showMainDrawer })
+          }
+        />
+
+        <VenstreVinduContainer
+          aktiveLag={this.state.aktiveLag}
+          mapBounds={this.state.actualBounds}
+          onMouseEnter={this.handleMouseEnter}
+          onMouseLeave={this.handleMouseLeave}
+          onToggleMainDrawer={() =>
+            this.setState({ showMainDrawer: !this.state.showMainDrawer })
+          }
+          onFitBounds={this.handleFitBounds}
+          erAktivert={erAktivert}
+          opplystKode={this.state.opplystKode}
+          onToggleLayer={this.handleToggleLayer}
+          onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+          meta={this.state.meta || {}}
+          onUpdateLayerProp={this.handleUpdateLayerProp}
+        />
+
         <Kart
           bounds={this.state.fitBounds}
           latitude={65.4}
@@ -239,33 +262,6 @@ class Grunnkart extends React.Component<Props, State> {
           opplystKode={this.state.opplystKode}
           meta={this.state.meta}
           onMapBoundsChange={this.handleActualBoundsChange}
-        />
-
-        <MainDrawer
-          erÅpen={this.state.showMainDrawer}
-          toggleDrawer={() =>
-            this.setState({ showMainDrawer: !this.state.showMainDrawer })
-          }
-        />
-
-        <VenstreVinduContainer
-          aktiveLag={this.state.aktiveLag}
-          onToggleMainDrawer={() =>
-            this.setState({
-              showMainDrawer: !this.state.showMainDrawer,
-            })
-          }
-          mapBounds={this.state.actualBounds}
-          onMouseEnter={this.handleMouseEnter}
-          onMouseLeave={this.handleMouseLeave}
-          onFitBounds={this.handleFitBounds}
-          erAktivert={erAktivert}
-          opplystKode={this.state.opplystKode}
-          onToggleLayer={this.handleToggleLayer}
-          onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-          onExitToRoot={() => this.props.history.replace('/')}
-          meta={this.state.meta || {}}
-          onUpdateLayerProp={this.handleUpdateLayerProp}
         />
       </div>
     )

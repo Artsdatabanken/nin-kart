@@ -1,3 +1,4 @@
+// @flow
 import { AppBar, Toolbar } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
 import { withStyles } from '@material-ui/core/styles'
@@ -5,7 +6,8 @@ import NavigationBack from '@material-ui/icons/ArrowBack'
 import CloseIcon from '@material-ui/icons/Close'
 import Hamburger from '@material-ui/icons/Menu'
 import Search from '@material-ui/icons/Search'
-import React, { Component } from 'react'
+import React from 'react'
+import { withRouter } from 'react-router-dom'
 import SearchBox from '../SearchBox/SearchBox'
 
 const styles = {
@@ -27,16 +29,35 @@ const styles = {
   },
 }
 
-class TopBar extends Component {
+type State = {
+  harFokus: boolean,
+  items: Array<Object>,
+}
+
+type Props = {
+  tittel: string,
+  query: string,
+  onClick: Function,
+  onQueryChange: Function,
+  harFokus: Boolean,
+  isAtRoot: Boolean,
+  onToggleMainDrawer: Function,
+  onExitToRoot: Function,
+  classes: Object,
+  children: Object,
+}
+
+class TopBar extends React.Component<Props, State> {
   constructor(props) {
     super(props)
     this.state = {
-      searchHasFocus: false,
+      harFokus: false,
+      items: null,
     }
   }
 
   handleSearchButtonClick = () => {
-    this.setState({ searchHasFocus: !this.state.searchHasFocus })
+    this.setState({ harFokus: !this.state.harFokus })
   }
 
   handleSearchClick = taxonId => {
@@ -93,9 +114,10 @@ class TopBar extends Component {
             </IconButton>
           )}
         </Toolbar>
+        {this.props.children}
       </AppBar>
     )
   }
 }
 
-export default withStyles(styles)(TopBar)
+export default withRouter(withStyles(styles)(TopBar))
