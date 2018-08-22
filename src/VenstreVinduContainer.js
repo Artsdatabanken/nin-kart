@@ -75,7 +75,7 @@ class VenstreVinduContainer extends React.Component {
               bottom: 0,
               width: window.innerWidth < 600 ? window.innerWidth : 408,
               zIndex: -10,
-              overflowY: 'scroll',
+              overflowY: 'auto',
               overflowX: 'hidden',
             }}
           >
