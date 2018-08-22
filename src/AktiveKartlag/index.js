@@ -65,7 +65,10 @@ function listeElement(forelder, props) {
       {...forelder}
       {...subProps}
       key={kode}
-      onClick={() => history.push('/lag/' + kode)}
+      onClick={() => {
+        onMouseLeave()
+        history.push('/lag/' + kode)
+      }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onRemove={kode => onRemoveSelectedLayer(kode)}
