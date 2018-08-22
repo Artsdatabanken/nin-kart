@@ -21,7 +21,6 @@ export default class SearchBox extends Component {
       <Input
         ref={tf => (this.Input = tf)}
         onKeyDown={this.handleKeyDown}
-        //        id={getNext()}
         value={query || ''}
         placeholder={tittel ? tittel : 'Natur i Norge'}
         onFocus={this.handleFocus}

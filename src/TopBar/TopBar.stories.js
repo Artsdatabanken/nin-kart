@@ -1,6 +1,7 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
+import { MemoryRouter } from 'react-router-dom'
 import { muiTheme } from 'storybook-addon-material-ui'
 import AppBar from './TopBar'
 
@@ -15,5 +16,13 @@ const dummyTaxon = [
 
 storiesOf('App Bar', module)
   .addDecorator(muiTheme())
-  .add('root', () => <AppBar taxon={dummyTaxon} onClick={action('click')} />)
-  .add('down into tree', () => <AppBar taxon={dummyTaxon} />)
+  .add('root', () => (
+    <MemoryRouter>
+      <AppBar taxon={dummyTaxon} onClick={action('click')} />
+    </MemoryRouter>
+  ))
+  .add('down into tree', () => (
+    <MemoryRouter>
+      <AppBar taxon={dummyTaxon} />
+    </MemoryRouter>
+  ))

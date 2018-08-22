@@ -60,7 +60,7 @@ class Kodekort extends React.Component {
             const brokenImage = backend.getFotoOmslag('~')
             if (e.target.src !== brokenImage) e.target.src = brokenImage
           }}
-          alt=""
+          alt={'foto av' + tittel}
         />
         <Tittelblokk
           tittel={språk(tittel)}
