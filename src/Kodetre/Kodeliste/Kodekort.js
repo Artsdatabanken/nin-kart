@@ -37,7 +37,7 @@ class Kodekort extends React.Component {
   }
 
   styles(prefix) {
-    if (prefix == 'AO')
+    if (prefix === 'AO')
       return {
         minHeight: 297,
         marginTop: 72,
