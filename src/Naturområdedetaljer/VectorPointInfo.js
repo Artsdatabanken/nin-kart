@@ -3,11 +3,12 @@ import InfoOutline from '@material-ui/icons/InfoOutlined'
 import HardwareKeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown'
 import HardwareKeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp'
 import React from 'react'
-import Collapsible from 'react-collapsible'
 import { withRouter } from 'react-router'
 import { Route } from 'react-router-dom'
 import backend from '../backend'
 import PointInfo from './PointInfo'
+
+const Collapsible = () => <div />
 
 function getHeaderStyle() {
   return {
