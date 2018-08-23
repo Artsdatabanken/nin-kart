@@ -7,6 +7,7 @@ import Kart from '../Kart'
 import språk from '../språk'
 import VenstreVinduContainer from '../VenstreVinduContainer'
 import MainDrawer from './MainDrawer'
+import standardlag from './standardlag.json'
 
 type State = {
   aktiveLag: Array<Object>,
@@ -22,52 +23,6 @@ type Props = {
   history: Object,
 }
 
-const standardLag = [
-  /*  {
-    farge: '#fc61fd',
-    kode: 'AO_50',
-    tittel: 'Trøndelag',
-    barn: {
-      'AO_50-01': {
-        farge: '#f49943',
-        sti: 'ao/50/01',
-        tittel: 'Trondheim',
-      },
-      'AO_50-04': {
-        farge: '#f4c543',
-        sti: 'ao/50/04',
-        tittel: 'Steinkjer',
-      },
-    },
-    erSynlig: true,
-    kanSlettes: true,
-  },*/
-  {
-    kode: 'bakgrunnskart',
-    tittel: 'Bakgrunnskart',
-    tema: 'Mørk grå',
-    erSynlig: true,
-    land: true,
-    landfarge: '#eee',
-    transport: true,
-    transportfarge: '#555',
-    vann: true,
-    vannfarge: '#666',
-    kommunegrense: true,
-    fylkesgrense: true,
-    landegrense: true,
-  },
-  {
-    kode: 'terreng',
-    tittel: '3D terreng',
-    erSynlig: false,
-    vertikaltOverdriv: 2.0,
-    visKontur: true,
-    visEtikettTopp: true,
-    konturintervall: 100.0,
-    visEtikettKontur: true,
-  },
-]
 /*
 function setFargeKode(kode, farge) {
   let farger = JSON.parse(localStorage.getItem('customColors') || '[]')
@@ -94,9 +49,12 @@ class Grunnkart extends React.Component<Props, State> {
   constructor(props) {
     super(props)
     this.state = {
-      aktiveLag: standardLag,
+      aktiveLag: standardlag,
       showMainDrawer: false,
       opplystKode: '',
+      actualBounds: null,
+      fitBounds: null,
+      meta: null,
     }
   }
 
@@ -256,8 +214,6 @@ class Grunnkart extends React.Component<Props, State> {
           latitude={65.4}
           longitude={10.8}
           zoom={3}
-          pitch={0}
-          bearing={0}
           aktiveLag={this.state.aktiveLag}
           opplystKode={this.state.opplystKode}
           meta={this.state.meta}

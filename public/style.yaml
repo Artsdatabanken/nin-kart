@@ -1,5 +1,5 @@
-import:
-  - https://tangrams.github.io/blocks/filter/grain.yaml
+? import
+#  - https://tangrams.github.io/blocks/filter/grain.yaml
 
 cameras:
   cam:
@@ -16,6 +16,11 @@ sources:
     url: 'https://tiles.artsdatabanken.no/data/NA_T1/{z}/{x}/{y}.png'
     rasters: [MI_KA-A]
     max_zoom: 11
+  VV:
+    type: MVT
+    url: https://tiles.artsdatabanken.no/data/VV/{z}/{x}/{y}.pbf
+    bounds: [4.704237, 57.960319, 31.16815, 70.907624]
+    max_zoom: 13
 
 styles:
   water:
