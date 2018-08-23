@@ -8,6 +8,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import tinycolor from 'tinycolor2'
 import ColorPicker from './ColorPicker'
+import Veksle from './Veksle'
 
 class Polygon extends Component {
   render() {
@@ -19,22 +20,25 @@ class Polygon extends Component {
       tittel,
       onUpdateLayerProp,
       bbox,
+      visEtiketter,
       onFitBounds,
       kanSlettes,
     } = this.props
     return (
       <React.Fragment>
         <ListSubheader>{tittel}</ListSubheader>
-        {
-          <ColorPicker
-            color={farge}
-            onChange={farge => {
-              const rgbString = tinycolor(farge.rgb).toRgbString()
-              onUpdateLayerProp(kode, 'farge', rgbString)
-            }}
-          />
-        }
-
+        <Veksle
+          tittel="Etiketter"
+          checked={visEtiketter}
+          onClick={() => onUpdateLayerProp(kode, 'visEtiketter', !visEtiketter)}
+        />{' '}
+        <ColorPicker
+          color={farge}
+          onChange={farge => {
+            const rgbString = tinycolor(farge.rgb).toRgbString()
+            onUpdateLayerProp(kode, 'farge', rgbString)
+          }}
+        />
         {kanSlettes && (
           <Button
             color="primary"
@@ -46,7 +50,6 @@ class Polygon extends Component {
             Fjern
           </Button>
         )}
-
         <Button
           color="primary"
           onClick={() => {
@@ -56,7 +59,6 @@ class Polygon extends Component {
         >
           Info
         </Button>
-
         {bbox && (
           <Button
             color="primary"

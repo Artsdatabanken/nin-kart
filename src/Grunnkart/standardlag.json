@@ -1,0 +1,27 @@
+[
+  {
+    "kode": "bakgrunnskart",
+    "tittel": "Bakgrunnskart",
+    "tema": "Mørk grå",
+    "erSynlig": true,
+    "land": true,
+    "landfarge": "#eee",
+    "transport": true,
+    "transportfarge": "#888",
+    "vann": true,
+    "vannfarge": "#aaa",
+    "kommunegrense": true,
+    "fylkesgrense": true,
+    "landegrense": true
+  },
+  {
+    "kode": "terreng",
+    "tittel": "3D terreng",
+    "erSynlig": false,
+    "vertikaltOverdriv": 2.0,
+    "visKontur": true,
+    "visEtikettTopp": true,
+    "konturintervall": 100.0,
+    "visEtikettKontur": true
+  }
+]

@@ -17,6 +17,12 @@ const sources = {
     bounds: [4.704237, 57.960319, 31.16815, 70.907624],
     max_zoom: 13,
   },
+  VV: {
+    type: 'MVT',
+    url: 'https://tiles.artsdatabanken.no/data/VV/{z}/{x}/{y}.pbf',
+    bounds: [4.704237, 57.960319, 31.16815, 70.907624],
+    max_zoom: 13,
+  },
   'terrain-normals': {
     type: 'Raster',
     url2: 'https://tile.nextzen.com/nextzen/terrain/v1/normal/{z}/{x}/{y}.png',
