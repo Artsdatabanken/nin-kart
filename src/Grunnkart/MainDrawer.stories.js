@@ -12,9 +12,13 @@ storiesOf('MainDrawer', module)
     <MuiThemeProvider>
       <MemoryRouter>
         <div>
+          asdf
           <MainDrawer
+            xerÅpen={true}
             open={true}
-            onToggleMainDrawer={action('onToggleMainDrawer')}
+            xonOpen={action('onOpen')}
+            xonClose={action('onClose')}
+            xonToggleMainDrawer={action('onToggleMainDrawer')}
           />
         </div>
       </MemoryRouter>

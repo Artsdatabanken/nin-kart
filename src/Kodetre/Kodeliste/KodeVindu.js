@@ -1,11 +1,58 @@
 import typesystem from '@artsdatabanken/typesystem'
-import { List, Paper } from '@material-ui/core'
+import { List, ListItemText, ListSubheader, Paper } from '@material-ui/core'
 import React from 'react'
 import FetchContainer from '../../FetchContainer'
 import Fakta from './Fakta'
 import Graf from './Graf'
 import Kodekort from './Kodekort'
 import Kodeliste from './Kodeliste'
+
+const F = ({ ingress, infoUrl, antallNaturomrader, antallArter }) => (
+  <React.Fragment>
+    <ListSubheader>Fakta</ListSubheader>
+    <ListItemText>
+      <div
+        style={{
+          fontSize: 13,
+          color: 'rgba(0,0,0,0.87)',
+          paddingLeft: 24,
+        }}
+      >
+        {ingress}
+        {infoUrl && (
+          <span>
+            &nbsp;
+            <a
+              target="top"
+              rel="noopener"
+              style={{ color: 'rgba(0,0,0,0.87)' }}
+              href={infoUrl}
+            >
+              {typesystem.capitalizeTittel(
+                new URL(infoUrl).host.split('.').splice(-2, 1)[0]
+              )}
+            </a>
+          </span>
+        )}
+      </div>
+    </ListItemText>
+    {false && (
+      <ListItemText>
+        Skogsmark utgjør med 531 kvm 3.3% av kartlagte natursystemer i Norge
+      </ListItemText>
+    )}
+    <ListItemText>
+      <Fakta
+        tittel="Areal"
+        verdi={`${(antallNaturomrader * 1.3).toFixed(
+          0
+        )} km² (i ${antallNaturomrader} områder)`}
+      />
+      <Fakta tittel="Observerte arter" verdi={antallArter} />
+    </ListItemText>
+  </React.Fragment>
+)
+
 class KodeVindu extends React.Component {
   render() {
     const props = this.props
@@ -24,56 +71,12 @@ class KodeVindu extends React.Component {
               language={props.language}
             />
           )}
-          <div style={{ padding: 24 }}>
-            {(props.meta.ingress ||
-              props.data.antallNaturomrader ||
-              props.data.antallArter) && (
-              <div
-                style={{
-                  fontSize: 18,
-                  paddingBottom: 24,
-                  color: 'rgba(0, 0, 0, 0.54)',
-                }}
-              >
-                Fakta
-              </div>
-            )}
-            {(props.meta.ingress || props.meta.infoUrl) && (
-              <div style={{ fontSize: 13, color: 'rgba(0,0,0,0.87)' }}>
-                {props.meta.ingress}
-                {props.meta.infoUrl && (
-                  <span>
-                    &nbsp;
-                    <a
-                      target="top"
-                      rel="noopener"
-                      style={{ color: 'rgba(0,0,0,0.87)' }}
-                      href={props.meta.infoUrl}
-                    >
-                      {typesystem.capitalizeTittel(
-                        new URL(props.meta.infoUrl).host
-                          .split('.')
-                          .splice(-2, 1)[0]
-                      )}
-                    </a>
-                  </span>
-                )}
-              </div>
-            )}
-          </div>
-          <Fakta
-            tittel="Areal"
-            synlig={props.data.antallNaturomrader}
-            verdi={`${(props.data.antallNaturomrader * 1.3).toFixed(
-              0
-            )} km² (i ${props.data.antallNaturomrader} områder)`}
-          />
-          <Fakta
-            tittel="Observerte arter"
-            verdi={props.data.antallArter}
-            synlig={props.data.antallArter}
-          />
           <List>
+            <F
+              ingress={props.meta.ingress}
+              antallNaturomrader={props.data.antallNaturomrader}
+              antallArter={props.data.antallArter}
+            />
             <Kodeliste
               title={`Innhold`}
               størsteAreal={props.data.størsteAreal}

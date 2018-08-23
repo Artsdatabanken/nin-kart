@@ -2,7 +2,6 @@ import { List, ListItem } from '@material-ui/core'
 import HardwareKeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown'
 import HardwareKeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp'
 import React from 'react'
-import Collapsible from 'react-collapsible'
 import PointInfo from './PointInfo'
 
 function getHeaderStyle() {
@@ -10,6 +9,8 @@ function getHeaderStyle() {
     backgroundColor: 'aliceblue',
   }
 }
+
+const Collapsible = () => <div />
 
 const Punktinformasjon = props => (
   <Collapsible

@@ -1,5 +1,5 @@
-import React from 'react'
 import { storiesOf } from '@storybook/react'
+import React from 'react'
 import { muiTheme } from 'storybook-addon-material-ui'
 import Kodetagg from './Kodetagg'
 
@@ -89,7 +89,7 @@ storiesOf('Kodetagg', module)
     return (
       <div style={{ padding: 8 }}>
         {rødlistekoder.tagger.map(tag => (
-          <div>
+          <div key={tag.kode}>
             <Kodetagg
               key={tag.kode}
               kode={tag.kode}
