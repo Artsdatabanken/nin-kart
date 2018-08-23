@@ -36,6 +36,19 @@ class Kodekort extends React.Component {
     this.setState({ leggerTil: true })
   }
 
+  styles(prefix) {
+    if (prefix === 'AO')
+      return {
+        minHeight: 297,
+        marginTop: 72,
+        backgroundSize: 'contain',
+      }
+    return {
+      minHeight: 297,
+      backgroundSize: 'cover',
+    }
+  }
+
   render() {
     const {
       kode,
@@ -50,10 +63,7 @@ class Kodekort extends React.Component {
     return (
       <Card>
         <CardMedia
-          style={{
-            minHeight: 297,
-            backgroundSize: 'cover',
-          }}
+          style={this.styles(kode.substring(0, 2))}
           onClick={() => this.handleOpen()}
           image={backend.getFotoOmslag(kode)}
           onError={e => {
