@@ -8,7 +8,7 @@ const styles = {
     borderRadius: 0,
   },
   img: {
-    objectFit: 'contains',
+    objectFit: 'contain',
   },
 }
 

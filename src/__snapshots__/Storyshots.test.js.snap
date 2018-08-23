@@ -810,6 +810,15 @@ exports[`Storyshots KodeVindu default 1`] = `
           <span
             className="MuiTypography-root-238 MuiTypography-subheading-245 MuiListItemText-primary-278"
           >
+            Skogsmark utgjør med 531 kvm, 3.3% av kartlagte natursystemer i Norge
+          </span>
+        </div>
+        <div
+          className="MuiListItemText-root-275"
+        >
+          <span
+            className="MuiTypography-root-238 MuiTypography-subheading-245 MuiListItemText-primary-278"
+          >
             <div
               style={
                 Object {
@@ -1270,6 +1279,15 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
               Helofytt-saltvannssump omfatter tette bestander av makrohelofytter, det vil si storvokste sumpplanter med røttene i sublitoral bunn (som ikke tørrlegges ved lavvann), i vannstrandbeltet eller noe opp i landstrandbeltet.
 
             </div>
+          </span>
+        </div>
+        <div
+          className="MuiListItemText-root-394"
+        >
+          <span
+            className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+          >
+            Skogsmark utgjør med 531 kvm, 3.3% av kartlagte natursystemer i Norge
           </span>
         </div>
         <div
