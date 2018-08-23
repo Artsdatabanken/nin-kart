@@ -51,7 +51,7 @@ const Tittelblokk = ({
           clickable={true}
           onClick={e => {
             e.stopPropagation()
-            onGoToCode(forelder.sti)
+            onGoToCode(forelder.kode)
           }}
           avatar={<Avatar>{forelder.kode.substring(0, 2)}</Avatar>}
           style={{ margin: 4 }}
