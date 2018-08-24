@@ -12,18 +12,21 @@ import PolygonlagElement from '../AktiveKartlag/PolygonlagElement'
 import ColorPicker from './ColorPicker'
 import Veksle from './Veksle'
 
-const Barneliste = ({ barn }) => {
+const Barneliste = ({ barn, onUpdateLayerProp }) => {
   return Object.keys(barn).map(i => {
     const node = barn[i]
+    const kode = node.kode
     return (
       <PolygonlagElement
-        key={node.kode}
-        kode={node.kode}
+        key={kode}
+        kode={kode}
         erSynlig={node.erSynlig}
         tittel={node.tittel}
-        undertittel={node.kode}
+        undertittel={kode}
         farge={node.farge}
-        onUpdateLayerProp={() => {}}
+        onUpdateLayerProp={() =>
+          onUpdateLayerProp(i, 'erSynlig', !node.erSynlig)
+        }
         onMouseLeave={() => {}}
         onMouseEnter={() => {}}
         onClick={() => {}}
@@ -52,21 +55,27 @@ class Polygon extends Component {
       <React.Fragment>
         <ListSubheader>{tittel}</ListSubheader>
         <Veksle
+          tittel="Vis etiketter"
+          toggled={visEtiketter}
+          onClick={() => onUpdateLayerProp(kode, 'visEtiketter', !visEtiketter)}
+        />
+        <Veksle
           tittel={'Vis ' + undernivå}
           toggled={visBarn}
           onClick={() => onUpdateLayerProp(kode, 'visBarn', !visBarn)}
-        />
-        <Veksle
-          tittel="Vis Etiketter"
-          toggled={visEtiketter}
-          onClick={() => onUpdateLayerProp(kode, 'visEtiketter', !visEtiketter)}
         />
         {visBarn ? (
           <List>
             <ListSubheader style={{ textTransform: 'capitalize' }}>
               {undernivå}
             </ListSubheader>
-            <Barneliste barn={barn} />
+            <Barneliste
+              barn={barn}
+              onUpdateLayerProp={(index, felt, verdi) => {
+                barn[index][felt] = verdi
+                onUpdateLayerProp(kode, 'barn', barn)
+              }}
+            />
           </List>
         ) : (
           <ColorPicker

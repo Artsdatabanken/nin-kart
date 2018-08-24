@@ -84,7 +84,7 @@ class Grunnkart extends React.Component<Props, State> {
   }
   addSelected = props => {
     let koder = this.state.aktiveLag
-    koder.push({
+    const nyttLag = {
       farge: props.farge,
       kode: props.kode,
       tittel: språk(props.tittel),
@@ -92,8 +92,8 @@ class Grunnkart extends React.Component<Props, State> {
       visBarn: Object.keys(props.barn).length > 0,
       erSynlig: true,
       kanSlettes: true,
-    })
-    console.log(koder)
+    }
+    koder.push(nyttLag)
 
     this.setState({
       aktiveLag: koder,

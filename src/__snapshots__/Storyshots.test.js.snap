@@ -5045,7 +5045,7 @@ exports[`Storyshots Tweaks root 1`] = `
               }
             }
           >
-            Vis hovedtypegrupper
+            Vis etiketter
           </div>
         </div>
       </div>
@@ -5126,7 +5126,7 @@ exports[`Storyshots Tweaks root 1`] = `
               }
             }
           >
-            Vis Etiketter
+            Vis hovedtypegrupper
           </div>
         </div>
       </div>
