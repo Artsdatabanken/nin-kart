@@ -123,8 +123,9 @@ class Polygon extends Component {
 
   navnPåUndernivå(kode) {
     const nivåer = typesystem.hentNivaa(kode + '-1')
-    if (!nivåer) return 'underelementer'
-    return nivåer[0] + 'r'
+    if (nivåer.length <= 0) return 'underelementer'
+    const nivå = nivåer[0]
+    return nivå.endsWith('e') ? nivå + 'r' : nivå
   }
 }
 

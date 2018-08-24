@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 import Bakgrunnskart from './bakgrunn/Bakgrunnskart'
 import Polygon from './Polygon'
 import Terreng from './Terreng'
+
 class Tweaks extends React.Component {
   state = {}
 
@@ -18,18 +19,8 @@ class Tweaks extends React.Component {
   }
 
   render() {
-    const { style, kode, koder, history } = this.props
-    if (!this.erAktiv(koder, kode)) {
-      // Laget er ikke lenger aktivt.  Browser refresh?
-      history.replace('/')
-      return null
-    }
+    const { style, kode } = this.props
     return <div style={{ padding: 16, ...style }}>{this.seksjon(kode)}</div>
-  }
-
-  erAktiv(koder, kode) {
-    for (let n of koder || []) if (n.kode === kode) return true
-    return false
   }
 }
 

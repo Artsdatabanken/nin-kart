@@ -93,7 +93,7 @@ class Grunnkart extends React.Component<Props, State> {
       erSynlig: true,
       kanSlettes: true,
     }
-    koder.push(nyttLag)
+    koder.unshift(nyttLag)
 
     this.setState({
       aktiveLag: koder,

@@ -15,12 +15,25 @@ const item = {
 
 storiesOf('Tweaks', module)
   .addDecorator(muiTheme())
-  .add('root', () => (
+  .add('NA', () => (
     <MemoryRouter>
       <div style={{ width: 400 }}>
-        <Tweaks kode={'bakgrunnskart'} {...item} />
-        <Tweaks kode={'terreng'} {...item} />
         <Tweaks kode={'NA'} {...item} />
+      </div>
+    </MemoryRouter>
+  ))
+  .add('bakgrunn', () => (
+    <MemoryRouter>
+      <div style={{ width: 400 }}>
+        <Tweaks kode={'bakgrunnskart'} />
+        <Tweaks kode={'terreng'} />
+      </div>
+    </MemoryRouter>
+  ))
+  .add('terreng', () => (
+    <MemoryRouter>
+      <div style={{ width: 400 }}>
+        <Tweaks kode={'terreng'} />
       </div>
     </MemoryRouter>
   ))
