@@ -8,7 +8,7 @@ class ColorPicker extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <ListSubheader>Farge</ListSubheader>
+        <ListSubheader>{this.props.tittel}</ListSubheader>
         <Blokk height={256}>
           <Saturation
             pointer={ChromePointerCircle}

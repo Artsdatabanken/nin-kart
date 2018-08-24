@@ -416,9 +416,7 @@ exports[`Storyshots ColorPicker default 1`] = `
 <div>
   <li
     className="MuiListSubheader-root-774 MuiListSubheader-sticky-779 MuiListSubheader-gutters-777"
-  >
-    Farge
-  </li>
+  />
   <div
     style={
       Object {
@@ -4720,7 +4718,7 @@ exports[`Storyshots Tweaks NA 1`] = `
       <li
         className="MuiListSubheader-root-780 MuiListSubheader-sticky-785 MuiListSubheader-gutters-783"
       >
-        Farge
+        Fyllfarge
       </li>
       <div
         style={

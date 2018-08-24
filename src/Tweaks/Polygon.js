@@ -8,32 +8,10 @@ import ZoomIn from '@material-ui/icons/ZoomIn'
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import tinycolor from 'tinycolor2'
-import PolygonlagElement from '../AktiveKartlag/PolygonlagElement'
+import Barneliste from './Barneliste'
 import ColorPicker from './ColorPicker'
 import Veksle from './Veksle'
 
-const Barneliste = ({ barn, onUpdateLayerProp }) => {
-  return Object.keys(barn).map(i => {
-    const node = barn[i]
-    const kode = node.kode
-    return (
-      <PolygonlagElement
-        key={kode}
-        kode={kode}
-        erSynlig={node.erSynlig}
-        tittel={node.tittel}
-        undertittel={kode}
-        farge={node.farge}
-        onUpdateLayerProp={() =>
-          onUpdateLayerProp(i, 'erSynlig', !node.erSynlig)
-        }
-        onMouseLeave={() => {}}
-        onMouseEnter={() => {}}
-        onClick={() => {}}
-      />
-    )
-  })
-}
 class Polygon extends Component {
   render() {
     const {
@@ -49,6 +27,7 @@ class Polygon extends Component {
       kanSlettes,
       barn,
       visBarn,
+      lag,
     } = this.props
     const undernivå = this.navnPåUndernivå(kode)
     return (
@@ -70,6 +49,8 @@ class Polygon extends Component {
               {undernivå}
             </ListSubheader>
             <Barneliste
+              forelderkode={kode}
+              aktivtBarn={lag}
               barn={barn}
               onUpdateLayerProp={(index, felt, verdi) => {
                 barn[index][felt] = verdi
@@ -79,6 +60,7 @@ class Polygon extends Component {
           </List>
         ) : (
           <ColorPicker
+            tittel={'Fyllfarge'}
             color={farge}
             onChange={farge => {
               const rgbString = tinycolor(farge.rgb).toRgbString()

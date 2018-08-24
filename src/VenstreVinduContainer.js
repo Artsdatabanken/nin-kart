@@ -147,10 +147,11 @@ class VenstreVinduContainer extends React.Component {
               />
 
               <Route
-                path="/lag/:kode"
+                path="/lag/:kode/:lag?"
                 render={({ match, history }) => (
                   <TweakContainer
                     kode={match.params.kode}
+                    lag={match.params.lag}
                     koder={this.props.aktiveLag}
                     {...this.finnValgtKodeElement(match.params.kode)}
                     onFitBounds={this.props.onFitBounds}
