@@ -40,7 +40,29 @@ class PolygonlagElement extends React.Component {
   }
 
   render() {
-    return <KartlagElement {...this.props} undertittel={this.props.kode} />
+    const {
+      tittel,
+      erSynlig,
+      farge,
+      kode,
+      onClick,
+      onMouseEnter,
+      onMouseLeave,
+      onUpdateLayerProp,
+    } = this.props
+    return (
+      <KartlagElement
+        tittel={tittel}
+        undertittel={this.props.kode}
+        erSynlig={erSynlig}
+        farge={farge}
+        kode={kode}
+        onClick={onClick}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        onUpdateLayerProp={onUpdateLayerProp}
+      />
+    )
   }
 }
 

@@ -1,7 +1,9 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import Bakgrunnskart from './bakgrunn/Bakgrunnskart'
 import Polygon from './Polygon'
 import Terreng from './Terreng'
+
 class Tweaks extends React.Component {
   state = {}
 
@@ -17,12 +19,9 @@ class Tweaks extends React.Component {
   }
 
   render() {
-    return (
-      <div style={{ padding: 16, ...this.props.style }}>
-        {this.seksjon(this.props.kode)}
-      </div>
-    )
+    const { style, kode } = this.props
+    return <div style={{ padding: 16, ...style }}>{this.seksjon(kode)}</div>
   }
 }
 
-export default Tweaks
+export default withRouter(Tweaks)

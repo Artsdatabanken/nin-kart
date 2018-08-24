@@ -6,21 +6,34 @@ import Tweaks from './'
 
 const item = {
   farge: '#666',
-  kode: 'NA',
+  koder: [{ kode: 'NA' }],
   sti: 'na',
   tittel: 'Natursystem',
-  vis: true,
+  erSynlig: true,
   kanSlettes: true,
 }
 
 storiesOf('Tweaks', module)
   .addDecorator(muiTheme())
-  .add('root', () => (
+  .add('NA', () => (
+    <MemoryRouter>
+      <div style={{ width: 400 }}>
+        <Tweaks kode={'NA'} {...item} />
+      </div>
+    </MemoryRouter>
+  ))
+  .add('bakgrunn', () => (
     <MemoryRouter>
       <div style={{ width: 400 }}>
         <Tweaks kode={'bakgrunnskart'} />
         <Tweaks kode={'terreng'} />
-        <Tweaks kode={'NA'} item={item} />
+      </div>
+    </MemoryRouter>
+  ))
+  .add('terreng', () => (
+    <MemoryRouter>
+      <div style={{ width: 400 }}>
+        <Tweaks kode={'terreng'} />
       </div>
     </MemoryRouter>
   ))
