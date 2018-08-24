@@ -1,5 +1,5 @@
-import React from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
 function increment(state) {
   return { loading: state.loading + 1 }
 }
@@ -25,11 +25,7 @@ class FetchContainer extends React.Component {
       })
     )
 
-    return (
-      <div>
-        <div>{childrenWithProps}</div>
-      </div>
-    )
+    return <React.Fragment>{childrenWithProps}</React.Fragment>
   }
 
   static childContextTypes = {

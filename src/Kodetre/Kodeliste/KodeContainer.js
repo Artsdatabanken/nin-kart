@@ -15,6 +15,8 @@ type Props = {
   onMouseEnter: Function,
   onGoToCode: Function,
   onToggleLayer: Function,
+  erAktivert: Boolean,
+  opplystKode: String,
 }
 
 // Informasjon om kode

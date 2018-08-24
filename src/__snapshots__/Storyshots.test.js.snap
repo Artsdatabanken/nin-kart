@@ -661,1830 +661,1834 @@ exports[`Storyshots Grunnkart Rot 1`] = `
 exports[`Storyshots KodeContainer default 1`] = `<div />`;
 
 exports[`Storyshots KodeVindu default 1`] = `
-<div>
-  <div>
+<div
+  className="MuiPaper-root-186 MuiPaper-elevation4-192"
+  style={
+    Object {
+      "position": "relative",
+      "top": -72,
+    }
+  }
+>
+  <div
+    className="MuiPaper-root-186 MuiPaper-elevation1-189 MuiPaper-rounded-187 MuiCard-root-214"
+  >
     <div
-      className="MuiPaper-root-186 MuiPaper-elevation4-192 MuiPaper-rounded-187"
+      alt="foto av[object Object]"
+      className="MuiCardMedia-root-215"
+      onClick={[Function]}
+      onError={[Function]}
+      style={
+        Object {
+          "backgroundSize": "cover",
+          "minHeight": 297,
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "padding": 24,
+        }
+      }
     >
       <div
-        className="MuiPaper-root-186 MuiPaper-elevation1-189 MuiPaper-rounded-187 MuiCard-root-214"
+        style={
+          Object {
+            "float": "right",
+            "position": "relative",
+            "top": -68,
+          }
+        }
       >
         <div
-          alt="foto av[object Object]"
-          className="MuiCardMedia-root-215"
-          onClick={[Function]}
-          onError={[Function]}
-          style={
-            Object {
-              "backgroundSize": "cover",
-              "minHeight": 297,
-            }
-          }
-        />
-        <div
-          style={
-            Object {
-              "padding": 24,
-            }
-          }
+          className="MuiChip-root-218 MuiChip-clickable-221"
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           <div
-            style={
-              Object {
-                "float": "right",
-                "position": "relative",
-                "top": -68,
-              }
-            }
+            className="MuiAvatar-root-235 MuiAvatar-colorDefault-236 MuiChip-avatar-227"
           >
-            <div
-              className="MuiChip-root-218 MuiChip-clickable-221"
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <div
-                className="MuiAvatar-root-235 MuiAvatar-colorDefault-236 MuiChip-avatar-227"
-              >
-                NA
-              </div>
-              <span
-                className="MuiChip-label-231"
-              >
-                H Marine vannmasser
-              </span>
-            </div>
+            NA
           </div>
-          <h2
-            className="MuiTypography-root-238 MuiTypography-headline-243 MuiTypography-gutterBottom-255"
+          <span
+            className="MuiChip-label-231"
           >
-            Marine vannmasser
-          </h2>
-          <p
-            className="MuiTypography-root-238 MuiTypography-body1-247 MuiTypography-colorTextSecondary-261 Tittelblokk-pos-217"
-          >
-            hovedtypegruppe
-          </p>
-          <div
-            className="MuiChip-root-218 MuiChip-clickable-221"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="button"
-            style={
-              Object {
-                "margin": 4,
-              }
-            }
-            tabIndex={0}
-          >
-            <div
-              className="MuiAvatar-root-235 MuiAvatar-colorDefault-236 MuiChip-avatar-227"
-            >
-              NA
-            </div>
-            <span
-              className="MuiChip-label-231"
-            >
-               Natursystem
-            </span>
-          </div>
-          <div
-            className="MuiChip-root-218 MuiChip-clickable-221"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="button"
-            style={
-              Object {
-                "margin": 4,
-              }
-            }
-            tabIndex={0}
-          >
-            <div
-              className="MuiAvatar-root-235 MuiAvatar-colorDefault-236 MuiChip-avatar-227"
-            >
-              ~
-            </div>
-            <span
-              className="MuiChip-label-231"
-            >
-               Natur i Norge
-            </span>
-          </div>
+            H Marine vannmasser
+          </span>
         </div>
-        <div
-          className="MuiCardActions-root-263"
-        />
       </div>
-      <ul
-        className="MuiList-root-265 MuiList-padding-266"
+      <h2
+        className="MuiTypography-root-238 MuiTypography-headline-243 MuiTypography-gutterBottom-255"
       >
-        <li
-          className="MuiListSubheader-root-269 MuiListSubheader-sticky-274 MuiListSubheader-gutters-272"
-        >
-          Fakta
-        </li>
-        <div
-          className="MuiListItemText-root-275"
-        >
-          <span
-            className="MuiTypography-root-238 MuiTypography-subheading-245 MuiListItemText-primary-278"
-          >
-            <div
-              style={
-                Object {
-                  "color": "rgba(0,0,0,0.87)",
-                  "fontSize": 13,
-                  "paddingLeft": 24,
-                }
-              }
-            >
-              Marine vannmasser omfatter økosystemer av flytende, svevende og svømmende organismer i de frie vannmassene i saltvann (saltholdighet &gt; 0,5 ‰)
-
-            </div>
-          </span>
-        </div>
-        <div
-          className="MuiListItemText-root-275"
-        >
-          <span
-            className="MuiTypography-root-238 MuiTypography-subheading-245 MuiListItemText-primary-278"
-          >
-            <div
-              style={
-                Object {
-                  "fontSize": 13,
-                  "lineHeight": "1.5em",
-                  "paddingLeft": 24,
-                }
-              }
-            >
-              <span
-                style={
-                  Object {
-                    "fontWeight": 700,
-                  }
-                }
-              >
-                Areal
-                : 
-              </span>
-              321 km² (i 247 områder)
-            </div>
-            <div
-              style={
-                Object {
-                  "fontSize": 13,
-                  "lineHeight": "1.5em",
-                  "paddingLeft": 24,
-                }
-              }
-            >
-              <span
-                style={
-                  Object {
-                    "fontWeight": 700,
-                  }
-                }
-              >
-                Observerte arter
-                : 
-              </span>
-              11
-            </div>
-          </span>
-        </div>
-        <li
-          className="MuiListSubheader-root-269 MuiListSubheader-sticky-274 MuiListSubheader-gutters-272"
-        >
-          Innhold
-        </li>
-        <div
-          className="MuiButtonBase-root-292 MuiListItem-root-282 MuiListItem-default-285 MuiListItem-gutters-289 MuiListItem-button-290"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
+        Marine vannmasser
+      </h2>
+      <p
+        className="MuiTypography-root-238 MuiTypography-body1-247 MuiTypography-colorTextSecondary-261 Tittelblokk-pos-217"
+      >
+        hovedtypegruppe
+      </p>
+      <div
+        className="MuiChip-root-218 MuiChip-clickable-221"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        style={
+          Object {
+            "margin": 4,
           }
-          tabIndex="0"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-235"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-297"
-          />
-          <div
-            className="MuiListItemText-root-275"
-          >
-            <span
-              className="MuiTypography-root-238 MuiTypography-subheading-245 MuiListItemText-primary-278"
-            >
-              Havvannmasser
-            </span>
-            <p
-              className="MuiTypography-root-238 MuiTypography-body1-247 MuiTypography-colorTextSecondary-261 MuiListItemText-secondary-279"
-            >
-              NA_H1
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-298"
-          />
-        </div>
+        }
+        tabIndex={0}
+      >
         <div
-          className="MuiButtonBase-root-292 MuiListItem-root-282 MuiListItem-default-285 MuiListItem-gutters-289 MuiListItem-button-290"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
+          className="MuiAvatar-root-235 MuiAvatar-colorDefault-236 MuiChip-avatar-227"
         >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-235"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-297"
-          />
-          <div
-            className="MuiListItemText-root-275"
-          >
-            <span
-              className="MuiTypography-root-238 MuiTypography-subheading-245 MuiListItemText-primary-278"
-            >
-              Sirkulerende vannmasser i fysisk avgrensede saltvannsforekomster
-            </span>
-            <p
-              className="MuiTypography-root-238 MuiTypography-body1-247 MuiTypography-colorTextSecondary-261 MuiListItemText-secondary-279"
-            >
-              NA_H2
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-298"
-          />
+          NA
         </div>
+        <span
+          className="MuiChip-label-231"
+        >
+           Natursystem
+        </span>
+      </div>
+      <div
+        className="MuiChip-root-218 MuiChip-clickable-221"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        style={
+          Object {
+            "margin": 4,
+          }
+        }
+        tabIndex={0}
+      >
         <div
-          className="MuiButtonBase-root-292 MuiListItem-root-282 MuiListItem-default-285 MuiListItem-gutters-289 MuiListItem-button-290"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
+          className="MuiAvatar-root-235 MuiAvatar-colorDefault-236 MuiChip-avatar-227"
         >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-235"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-297"
-          />
-          <div
-            className="MuiListItemText-root-275"
-          >
-            <span
-              className="MuiTypography-root-238 MuiTypography-subheading-245 MuiListItemText-primary-278"
-            >
-              Ikke-sirkulerende marine vannmasser i fysisk avgrensede saltvannsforekomster
-            </span>
-            <p
-              className="MuiTypography-root-238 MuiTypography-body1-247 MuiTypography-colorTextSecondary-261 MuiListItemText-secondary-279"
-            >
-              NA_H3
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-298"
-          />
+          ~
         </div>
-        <div
-          className="MuiButtonBase-root-292 MuiListItem-root-282 MuiListItem-default-285 MuiListItem-gutters-289 MuiListItem-button-290"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
+        <span
+          className="MuiChip-label-231"
         >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-235"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-297"
-          />
-          <div
-            className="MuiListItemText-root-275"
-          >
-            <span
-              className="MuiTypography-root-238 MuiTypography-subheading-245 MuiListItemText-primary-278"
-            >
-              Sterkt endrete marine vannmasser
-            </span>
-            <p
-              className="MuiTypography-root-238 MuiTypography-body1-247 MuiTypography-colorTextSecondary-261 MuiListItemText-secondary-279"
-            >
-              NA_H4
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-298"
-          />
-        </div>
-      </ul>
+           Natur i Norge
+        </span>
+      </div>
     </div>
+    <div
+      className="MuiCardActions-root-263"
+    />
   </div>
+  <ul
+    className="MuiList-root-265 MuiList-padding-266"
+  >
+    <li
+      className="MuiListSubheader-root-269 MuiListSubheader-sticky-274 MuiListSubheader-gutters-272"
+    >
+      Fakta
+    </li>
+    <div
+      className="MuiListItemText-root-275"
+    >
+      <span
+        className="MuiTypography-root-238 MuiTypography-subheading-245 MuiListItemText-primary-278"
+      >
+        <div
+          style={
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+              "fontSize": 13,
+              "paddingLeft": 24,
+            }
+          }
+        >
+          Marine vannmasser omfatter økosystemer av flytende, svevende og svømmende organismer i de frie vannmassene i saltvann (saltholdighet &gt; 0,5 ‰)
+
+        </div>
+      </span>
+    </div>
+    <div
+      className="MuiListItemText-root-275"
+    >
+      <span
+        className="MuiTypography-root-238 MuiTypography-subheading-245 MuiListItemText-primary-278"
+      >
+        <div
+          style={
+            Object {
+              "fontSize": 13,
+              "lineHeight": "1.5em",
+              "paddingLeft": 24,
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontWeight": 700,
+              }
+            }
+          >
+            Areal
+            : 
+          </span>
+          321 km² (i 247 områder)
+        </div>
+        <div
+          style={
+            Object {
+              "fontSize": 13,
+              "lineHeight": "1.5em",
+              "paddingLeft": 24,
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontWeight": 700,
+              }
+            }
+          >
+            Observerte arter
+            : 
+          </span>
+          11
+        </div>
+      </span>
+    </div>
+    <li
+      className="MuiListSubheader-root-269 MuiListSubheader-sticky-274 MuiListSubheader-gutters-272"
+    >
+      Innhold
+    </li>
+    <div
+      className="MuiButtonBase-root-292 MuiListItem-root-282 MuiListItem-default-285 MuiListItem-gutters-289 MuiListItem-button-290"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-235"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-297"
+      />
+      <div
+        className="MuiListItemText-root-275"
+      >
+        <span
+          className="MuiTypography-root-238 MuiTypography-subheading-245 MuiListItemText-primary-278"
+        >
+          Havvannmasser
+        </span>
+        <p
+          className="MuiTypography-root-238 MuiTypography-body1-247 MuiTypography-colorTextSecondary-261 MuiListItemText-secondary-279"
+        >
+          NA_H1
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-298"
+      />
+    </div>
+    <div
+      className="MuiButtonBase-root-292 MuiListItem-root-282 MuiListItem-default-285 MuiListItem-gutters-289 MuiListItem-button-290"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-235"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-297"
+      />
+      <div
+        className="MuiListItemText-root-275"
+      >
+        <span
+          className="MuiTypography-root-238 MuiTypography-subheading-245 MuiListItemText-primary-278"
+        >
+          Sirkulerende vannmasser i fysisk avgrensede saltvannsforekomster
+        </span>
+        <p
+          className="MuiTypography-root-238 MuiTypography-body1-247 MuiTypography-colorTextSecondary-261 MuiListItemText-secondary-279"
+        >
+          NA_H2
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-298"
+      />
+    </div>
+    <div
+      className="MuiButtonBase-root-292 MuiListItem-root-282 MuiListItem-default-285 MuiListItem-gutters-289 MuiListItem-button-290"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-235"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-297"
+      />
+      <div
+        className="MuiListItemText-root-275"
+      >
+        <span
+          className="MuiTypography-root-238 MuiTypography-subheading-245 MuiListItemText-primary-278"
+        >
+          Ikke-sirkulerende marine vannmasser i fysisk avgrensede saltvannsforekomster
+        </span>
+        <p
+          className="MuiTypography-root-238 MuiTypography-body1-247 MuiTypography-colorTextSecondary-261 MuiListItemText-secondary-279"
+        >
+          NA_H3
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-298"
+      />
+    </div>
+    <div
+      className="MuiButtonBase-root-292 MuiListItem-root-282 MuiListItem-default-285 MuiListItem-gutters-289 MuiListItem-button-290"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-235"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-297"
+      />
+      <div
+        className="MuiListItemText-root-275"
+      >
+        <span
+          className="MuiTypography-root-238 MuiTypography-subheading-245 MuiListItemText-primary-278"
+        >
+          Sterkt endrete marine vannmasser
+        </span>
+        <p
+          className="MuiTypography-root-238 MuiTypography-body1-247 MuiTypography-colorTextSecondary-261 MuiListItemText-secondary-279"
+        >
+          NA_H4
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-298"
+      />
+    </div>
+  </ul>
 </div>
 `;
 
 exports[`Storyshots KodeVindu relasjon 1`] = `
-<div>
-  <div>
+<div
+  className="MuiPaper-root-305 MuiPaper-elevation4-311"
+  style={
+    Object {
+      "position": "relative",
+      "top": -72,
+    }
+  }
+>
+  <div
+    className="MuiPaper-root-305 MuiPaper-elevation1-308 MuiPaper-rounded-306 MuiCard-root-333"
+  >
     <div
-      className="MuiPaper-root-305 MuiPaper-elevation4-311 MuiPaper-rounded-306"
+      alt="foto av[object Object]"
+      className="MuiCardMedia-root-334"
+      onClick={[Function]}
+      onError={[Function]}
+      style={
+        Object {
+          "backgroundSize": "cover",
+          "minHeight": 297,
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "padding": 24,
+        }
+      }
     >
       <div
-        className="MuiPaper-root-305 MuiPaper-elevation1-308 MuiPaper-rounded-306 MuiCard-root-333"
+        style={
+          Object {
+            "float": "right",
+            "position": "relative",
+            "top": -68,
+          }
+        }
       >
         <div
-          alt="foto av[object Object]"
-          className="MuiCardMedia-root-334"
-          onClick={[Function]}
-          onError={[Function]}
-          style={
-            Object {
-              "backgroundSize": "cover",
-              "minHeight": 297,
-            }
-          }
-        />
-        <div
-          style={
-            Object {
-              "padding": 24,
-            }
-          }
+          className="MuiChip-root-337 MuiChip-clickable-340"
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           <div
-            style={
-              Object {
-                "float": "right",
-                "position": "relative",
-                "top": -68,
-              }
-            }
+            className="MuiAvatar-root-354 MuiAvatar-colorDefault-355 MuiChip-avatar-346"
           >
-            <div
-              className="MuiChip-root-337 MuiChip-clickable-340"
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <div
-                className="MuiAvatar-root-354 MuiAvatar-colorDefault-355 MuiChip-avatar-346"
-              >
-                NA
-              </div>
-              <span
-                className="MuiChip-label-350"
-              >
-                M8 Helofytt-saltvannssump
-              </span>
-            </div>
+            NA
           </div>
-          <h2
-            className="MuiTypography-root-357 MuiTypography-headline-362 MuiTypography-gutterBottom-374"
+          <span
+            className="MuiChip-label-350"
           >
-            Helofytt-saltvannssump
-          </h2>
-          <p
-            className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 Tittelblokk-pos-336"
-          >
-            hovedtype
-          </p>
-          <div
-            className="MuiChip-root-337 MuiChip-clickable-340"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="button"
-            style={
-              Object {
-                "margin": 4,
-              }
-            }
-            tabIndex={0}
-          >
-            <div
-              className="MuiAvatar-root-354 MuiAvatar-colorDefault-355 MuiChip-avatar-346"
-            >
-              NA
-            </div>
-            <span
-              className="MuiChip-label-350"
-            >
-              M Saltvannsbunnsystemer
-            </span>
-          </div>
-          <div
-            className="MuiChip-root-337 MuiChip-clickable-340"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="button"
-            style={
-              Object {
-                "margin": 4,
-              }
-            }
-            tabIndex={0}
-          >
-            <div
-              className="MuiAvatar-root-354 MuiAvatar-colorDefault-355 MuiChip-avatar-346"
-            >
-              NA
-            </div>
-            <span
-              className="MuiChip-label-350"
-            >
-               Natursystem
-            </span>
-          </div>
-          <div
-            className="MuiChip-root-337 MuiChip-clickable-340"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="button"
-            style={
-              Object {
-                "margin": 4,
-              }
-            }
-            tabIndex={0}
-          >
-            <div
-              className="MuiAvatar-root-354 MuiAvatar-colorDefault-355 MuiChip-avatar-346"
-            >
-              ~
-            </div>
-            <span
-              className="MuiChip-label-350"
-            >
-               Natur i Norge
-            </span>
-          </div>
+            M8 Helofytt-saltvannssump
+          </span>
         </div>
-        <div
-          className="MuiCardActions-root-382"
-        />
       </div>
-      <ul
-        className="MuiList-root-384 MuiList-padding-385"
+      <h2
+        className="MuiTypography-root-357 MuiTypography-headline-362 MuiTypography-gutterBottom-374"
       >
-        <li
-          className="MuiListSubheader-root-388 MuiListSubheader-sticky-393 MuiListSubheader-gutters-391"
-        >
-          Fakta
-        </li>
-        <div
-          className="MuiListItemText-root-394"
-        >
-          <span
-            className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-          >
-            <div
-              style={
-                Object {
-                  "color": "rgba(0,0,0,0.87)",
-                  "fontSize": 13,
-                  "paddingLeft": 24,
-                }
-              }
-            >
-              Helofytt-saltvannssump omfatter tette bestander av makrohelofytter, det vil si storvokste sumpplanter med røttene i sublitoral bunn (som ikke tørrlegges ved lavvann), i vannstrandbeltet eller noe opp i landstrandbeltet.
-
-            </div>
-          </span>
-        </div>
-        <div
-          className="MuiListItemText-root-394"
-        >
-          <span
-            className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-          >
-            <div
-              style={
-                Object {
-                  "fontSize": 13,
-                  "lineHeight": "1.5em",
-                  "paddingLeft": 24,
-                }
-              }
-            >
-              <span
-                style={
-                  Object {
-                    "fontWeight": 700,
-                  }
-                }
-              >
-                Areal
-                : 
-              </span>
-              495 km² (i 381 områder)
-            </div>
-            <div
-              style={
-                Object {
-                  "fontSize": 13,
-                  "lineHeight": "1.5em",
-                  "paddingLeft": 24,
-                }
-              }
-            >
-              <span
-                style={
-                  Object {
-                    "fontWeight": 700,
-                  }
-                }
-              >
-                Observerte arter
-                : 
-              </span>
-              1
-            </div>
-          </span>
-        </div>
-        <li
-          className="MuiListSubheader-root-388 MuiListSubheader-sticky-393 MuiListSubheader-gutters-391"
-        >
-          Dominerende mengdearter
-        </li>
-        <div
-          style={
-            Object {
-              "color": "rgba(95, 95, 95, 0.54)",
-              "fontSize": "14px",
-              "padding": "0px 5px 0px 16px",
-            }
+        Helofytt-saltvannssump
+      </h2>
+      <p
+        className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 Tittelblokk-pos-336"
+      >
+        hovedtype
+      </p>
+      <div
+        className="MuiChip-root-337 MuiChip-clickable-340"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        style={
+          Object {
+            "margin": 4,
           }
-        >
-          Art med gjennomsnittlig dekning eller biomasseandel større enn 1/4 i et utvalg av enkeltobservasjonsenheter.
-        </div>
+        }
+        tabIndex={0}
+      >
         <div
-          className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
+          className="MuiAvatar-root-354 MuiAvatar-colorDefault-355 MuiChip-avatar-346"
         >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-354"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-416"
-          />
-          <div
-            className="MuiListItemText-root-394"
-          >
-            <span
-              className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-            >
-              Takrør (Phragmites australis)
-            </span>
-            <p
-              className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
-            >
-              AR_100132
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-417"
-          />
+          NA
         </div>
-        <li
-          className="MuiListSubheader-root-388 MuiListSubheader-sticky-393 MuiListSubheader-gutters-391"
+        <span
+          className="MuiChip-label-350"
         >
-          Kjennetegnende tyngdepunktarter
-        </li>
+          M Saltvannsbunnsystemer
+        </span>
+      </div>
+      <div
+        className="MuiChip-root-337 MuiChip-clickable-340"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        style={
+          Object {
+            "margin": 4,
+          }
+        }
+        tabIndex={0}
+      >
         <div
-          style={
-            Object {
-              "color": "rgba(95, 95, 95, 0.54)",
-              "fontSize": "14px",
-              "padding": "0px 5px 0px 16px",
-            }
-          }
+          className="MuiAvatar-root-354 MuiAvatar-colorDefault-355 MuiChip-avatar-346"
         >
-          Tyngdepunktart som utelukkende eller nesten utelukkende forekommer i en naturtype eller gruppe av naturtyper på et eller annet generaliseringsnivå
+          NA
         </div>
+        <span
+          className="MuiChip-label-350"
+        >
+           Natursystem
+        </span>
+      </div>
+      <div
+        className="MuiChip-root-337 MuiChip-clickable-340"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        style={
+          Object {
+            "margin": 4,
+          }
+        }
+        tabIndex={0}
+      >
         <div
-          className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
+          className="MuiAvatar-root-354 MuiAvatar-colorDefault-355 MuiChip-avatar-346"
         >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-354"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-416"
-          />
-          <div
-            className="MuiListItemText-root-394"
-          >
-            <span
-              className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-            >
-              Pollsivaks (Schoenoplectus tabernaemontani)
-            </span>
-            <p
-              className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
-            >
-              AR_99790
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-417"
-          />
+          ~
         </div>
-        <div
-          className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
+        <span
+          className="MuiChip-label-350"
         >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-354"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-416"
-          />
-          <div
-            className="MuiListItemText-root-394"
-          >
-            <span
-              className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-            >
-              Saltstarr (Carex ×vacillans)
-            </span>
-            <p
-              className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
-            >
-              AR_99737
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-417"
-          />
-        </div>
-        <div
-          className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-354"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-416"
-          />
-          <div
-            className="MuiListItemText-root-394"
-          >
-            <span
-              className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-            >
-              Havstarr (Carex paleacea)
-            </span>
-            <p
-              className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
-            >
-              AR_99698
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-417"
-          />
-        </div>
-        <div
-          className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-354"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-416"
-          />
-          <div
-            className="MuiListItemText-root-394"
-          >
-            <span
-              className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-            >
-              Havsivaks (Bolboschoenus maritimus)
-            </span>
-            <p
-              className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
-            >
-              AR_99603
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-417"
-          />
-        </div>
-        <div
-          className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-354"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-416"
-          />
-          <div
-            className="MuiListItemText-root-394"
-          >
-            <span
-              className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-            >
-              Sverdlilje (Iris pseudacorus)
-            </span>
-            <p
-              className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
-            >
-              AR_99475
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-417"
-          />
-        </div>
-        <li
-          className="MuiListSubheader-root-388 MuiListSubheader-sticky-393 MuiListSubheader-gutters-391"
-        >
-          Mengdearter
-        </li>
-        <div
-          style={
-            Object {
-              "color": "rgba(95, 95, 95, 0.54)",
-              "fontSize": "14px",
-              "padding": "0px 5px 0px 16px",
-            }
-          }
-        >
-          Art med gjennomsnittlig dekning eller biomasseandel større enn 1/8 i et utvalg av enkeltobservasjonsenheter.
-        </div>
-        <div
-          className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-354"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-416"
-          />
-          <div
-            className="MuiListItemText-root-394"
-          >
-            <span
-              className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-            >
-              Havsivaks (Bolboschoenus maritimus)
-            </span>
-            <p
-              className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
-            >
-              AR_99603
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-417"
-          />
-        </div>
-        <li
-          className="MuiListSubheader-root-388 MuiListSubheader-sticky-393 MuiListSubheader-gutters-391"
-        >
-          Tyngdepunktarter
-        </li>
-        <div
-          style={
-            Object {
-              "color": "rgba(95, 95, 95, 0.54)",
-              "fontSize": "14px",
-              "padding": "0px 5px 0px 16px",
-            }
-          }
-        >
-          Art med høyere frekvens og dekning i en aktuell naturtype (hovedtype eller grunntype) enn i et sammenliknbart utvalg typer (f.eks. andre hovedtyper som tilhører samme hovedtypegruppe eller andre grunntyper som tilhører samme hovedtype
-        </div>
-        <div
-          className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-354"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-416"
-          />
-          <div
-            className="MuiListItemText-root-394"
-          >
-            <span
-              className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-            >
-              Pølstarr (Carex mackenziei)
-            </span>
-            <p
-              className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
-            >
-              AR_99677
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-417"
-          />
-        </div>
-        <li
-          className="MuiListSubheader-root-388 MuiListSubheader-sticky-393 MuiListSubheader-gutters-391"
-        >
-          Vanlige arter
-        </li>
-        <div
-          style={
-            Object {
-              "color": "rgba(95, 95, 95, 0.54)",
-              "fontSize": "14px",
-              "padding": "0px 5px 0px 16px",
-            }
-          }
-        >
-          Art med frekvens større enn 1/8 i et utvalg enkeltobservasjonsenheter. For at en art skal være «vanlig», må den tilfredsstille dette kravet om frekvens &gt; 1/8 i hele naturtypens utbredelsesområde, ikke bare innenfor artens utbredelsesområde.
-        </div>
-        <div
-          className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-354"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-416"
-          />
-          <div
-            className="MuiListItemText-root-394"
-          >
-            <span
-              className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-            >
-              Sjøsivaks (Schoenoplectus lacustris)
-            </span>
-            <p
-              className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
-            >
-              AR_99789
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-417"
-          />
-        </div>
-        <div
-          className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-354"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-416"
-          />
-          <div
-            className="MuiListItemText-root-394"
-          >
-            <span
-              className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-            >
-              Fjærestarr (Carex salina)
-            </span>
-            <p
-              className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
-            >
-              AR_99722
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-417"
-          />
-        </div>
-        <div
-          className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-354"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-416"
-          />
-          <div
-            className="MuiListItemText-root-394"
-          >
-            <span
-              className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-            >
-              Mjødurt (Filipendula ulmaria)
-            </span>
-            <p
-              className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
-            >
-              AR_103310
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-417"
-          />
-        </div>
-        <div
-          className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-354"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-416"
-          />
-          <div
-            className="MuiListItemText-root-394"
-          >
-            <span
-              className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-            >
-              Gul frøstjerne (Thalictrum flavum)
-            </span>
-            <p
-              className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
-            >
-              AR_103183
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-417"
-          />
-        </div>
-        <div
-          className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-354"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-416"
-          />
-          <div
-            className="MuiListItemText-root-394"
-          >
-            <span
-              className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-            >
-              Kattehale (Lythrum salicaria)
-            </span>
-            <p
-              className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
-            >
-              AR_102818
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-417"
-          />
-        </div>
-        <div
-          className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-354"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-416"
-          />
-          <div
-            className="MuiListItemText-root-394"
-          >
-            <span
-              className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-            >
-              Fredløs (Lysimachia vulgaris)
-            </span>
-            <p
-              className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
-            >
-              AR_101846
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-417"
-          />
-        </div>
-        <div
-          className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-354"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-416"
-          />
-          <div
-            className="MuiListItemText-root-394"
-          >
-            <span
-              className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-            >
-              Gulldusk (Lysimachia thyrsiflora)
-            </span>
-            <p
-              className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
-            >
-              AR_101845
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-417"
-          />
-        </div>
-        <div
-          className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-354"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-416"
-          />
-          <div
-            className="MuiListItemText-root-394"
-          >
-            <span
-              className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-            >
-              Takrør (Phragmites australis)
-            </span>
-            <p
-              className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
-            >
-              AR_100132
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-417"
-          />
-        </div>
-        <div
-          className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-354"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-416"
-          />
-          <div
-            className="MuiListItemText-root-394"
-          >
-            <span
-              className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-            >
-              Kjempesøtgras (Glyceria maxima)
-            </span>
-            <p
-              className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
-            >
-              AR_100061
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-417"
-          />
-        </div>
-        <div
-          className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          style={
-            Object {
-              "zIndex": 0,
-            }
-          }
-          tabIndex="0"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "#eee",
-                "height": 56,
-                "left": 0,
-                "position": "absolute",
-                "top": 6,
-                "width": "0%",
-                "zIndex": -1,
-              }
-            }
-          />
-          <div
-            className="MuiAvatar-root-354"
-            onError={[Function]}
-          />
-          <div
-            className="MuiListItemSecondaryAction-root-416"
-          />
-          <div
-            className="MuiListItemText-root-394"
-          >
-            <span
-              className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
-            >
-              Mannasøtgras (Glyceria fluitans)
-            </span>
-            <p
-              className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
-            >
-              AR_100058
-            </p>
-          </div>
-          <span
-            className="MuiTouchRipple-root-417"
-          />
-        </div>
-      </ul>
+           Natur i Norge
+        </span>
+      </div>
     </div>
+    <div
+      className="MuiCardActions-root-382"
+    />
   </div>
+  <ul
+    className="MuiList-root-384 MuiList-padding-385"
+  >
+    <li
+      className="MuiListSubheader-root-388 MuiListSubheader-sticky-393 MuiListSubheader-gutters-391"
+    >
+      Fakta
+    </li>
+    <div
+      className="MuiListItemText-root-394"
+    >
+      <span
+        className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+      >
+        <div
+          style={
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+              "fontSize": 13,
+              "paddingLeft": 24,
+            }
+          }
+        >
+          Helofytt-saltvannssump omfatter tette bestander av makrohelofytter, det vil si storvokste sumpplanter med røttene i sublitoral bunn (som ikke tørrlegges ved lavvann), i vannstrandbeltet eller noe opp i landstrandbeltet.
+
+        </div>
+      </span>
+    </div>
+    <div
+      className="MuiListItemText-root-394"
+    >
+      <span
+        className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+      >
+        <div
+          style={
+            Object {
+              "fontSize": 13,
+              "lineHeight": "1.5em",
+              "paddingLeft": 24,
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontWeight": 700,
+              }
+            }
+          >
+            Areal
+            : 
+          </span>
+          495 km² (i 381 områder)
+        </div>
+        <div
+          style={
+            Object {
+              "fontSize": 13,
+              "lineHeight": "1.5em",
+              "paddingLeft": 24,
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontWeight": 700,
+              }
+            }
+          >
+            Observerte arter
+            : 
+          </span>
+          1
+        </div>
+      </span>
+    </div>
+    <li
+      className="MuiListSubheader-root-388 MuiListSubheader-sticky-393 MuiListSubheader-gutters-391"
+    >
+      Dominerende mengdearter
+    </li>
+    <div
+      style={
+        Object {
+          "color": "rgba(95, 95, 95, 0.54)",
+          "fontSize": "14px",
+          "padding": "0px 5px 0px 16px",
+        }
+      }
+    >
+      Art med gjennomsnittlig dekning eller biomasseandel større enn 1/4 i et utvalg av enkeltobservasjonsenheter.
+    </div>
+    <div
+      className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-354"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-416"
+      />
+      <div
+        className="MuiListItemText-root-394"
+      >
+        <span
+          className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+        >
+          Takrør (Phragmites australis)
+        </span>
+        <p
+          className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
+        >
+          AR_100132
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-417"
+      />
+    </div>
+    <li
+      className="MuiListSubheader-root-388 MuiListSubheader-sticky-393 MuiListSubheader-gutters-391"
+    >
+      Kjennetegnende tyngdepunktarter
+    </li>
+    <div
+      style={
+        Object {
+          "color": "rgba(95, 95, 95, 0.54)",
+          "fontSize": "14px",
+          "padding": "0px 5px 0px 16px",
+        }
+      }
+    >
+      Tyngdepunktart som utelukkende eller nesten utelukkende forekommer i en naturtype eller gruppe av naturtyper på et eller annet generaliseringsnivå
+    </div>
+    <div
+      className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-354"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-416"
+      />
+      <div
+        className="MuiListItemText-root-394"
+      >
+        <span
+          className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+        >
+          Pollsivaks (Schoenoplectus tabernaemontani)
+        </span>
+        <p
+          className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
+        >
+          AR_99790
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-417"
+      />
+    </div>
+    <div
+      className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-354"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-416"
+      />
+      <div
+        className="MuiListItemText-root-394"
+      >
+        <span
+          className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+        >
+          Saltstarr (Carex ×vacillans)
+        </span>
+        <p
+          className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
+        >
+          AR_99737
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-417"
+      />
+    </div>
+    <div
+      className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-354"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-416"
+      />
+      <div
+        className="MuiListItemText-root-394"
+      >
+        <span
+          className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+        >
+          Havstarr (Carex paleacea)
+        </span>
+        <p
+          className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
+        >
+          AR_99698
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-417"
+      />
+    </div>
+    <div
+      className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-354"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-416"
+      />
+      <div
+        className="MuiListItemText-root-394"
+      >
+        <span
+          className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+        >
+          Havsivaks (Bolboschoenus maritimus)
+        </span>
+        <p
+          className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
+        >
+          AR_99603
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-417"
+      />
+    </div>
+    <div
+      className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-354"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-416"
+      />
+      <div
+        className="MuiListItemText-root-394"
+      >
+        <span
+          className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+        >
+          Sverdlilje (Iris pseudacorus)
+        </span>
+        <p
+          className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
+        >
+          AR_99475
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-417"
+      />
+    </div>
+    <li
+      className="MuiListSubheader-root-388 MuiListSubheader-sticky-393 MuiListSubheader-gutters-391"
+    >
+      Mengdearter
+    </li>
+    <div
+      style={
+        Object {
+          "color": "rgba(95, 95, 95, 0.54)",
+          "fontSize": "14px",
+          "padding": "0px 5px 0px 16px",
+        }
+      }
+    >
+      Art med gjennomsnittlig dekning eller biomasseandel større enn 1/8 i et utvalg av enkeltobservasjonsenheter.
+    </div>
+    <div
+      className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-354"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-416"
+      />
+      <div
+        className="MuiListItemText-root-394"
+      >
+        <span
+          className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+        >
+          Havsivaks (Bolboschoenus maritimus)
+        </span>
+        <p
+          className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
+        >
+          AR_99603
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-417"
+      />
+    </div>
+    <li
+      className="MuiListSubheader-root-388 MuiListSubheader-sticky-393 MuiListSubheader-gutters-391"
+    >
+      Tyngdepunktarter
+    </li>
+    <div
+      style={
+        Object {
+          "color": "rgba(95, 95, 95, 0.54)",
+          "fontSize": "14px",
+          "padding": "0px 5px 0px 16px",
+        }
+      }
+    >
+      Art med høyere frekvens og dekning i en aktuell naturtype (hovedtype eller grunntype) enn i et sammenliknbart utvalg typer (f.eks. andre hovedtyper som tilhører samme hovedtypegruppe eller andre grunntyper som tilhører samme hovedtype
+    </div>
+    <div
+      className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-354"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-416"
+      />
+      <div
+        className="MuiListItemText-root-394"
+      >
+        <span
+          className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+        >
+          Pølstarr (Carex mackenziei)
+        </span>
+        <p
+          className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
+        >
+          AR_99677
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-417"
+      />
+    </div>
+    <li
+      className="MuiListSubheader-root-388 MuiListSubheader-sticky-393 MuiListSubheader-gutters-391"
+    >
+      Vanlige arter
+    </li>
+    <div
+      style={
+        Object {
+          "color": "rgba(95, 95, 95, 0.54)",
+          "fontSize": "14px",
+          "padding": "0px 5px 0px 16px",
+        }
+      }
+    >
+      Art med frekvens større enn 1/8 i et utvalg enkeltobservasjonsenheter. For at en art skal være «vanlig», må den tilfredsstille dette kravet om frekvens &gt; 1/8 i hele naturtypens utbredelsesområde, ikke bare innenfor artens utbredelsesområde.
+    </div>
+    <div
+      className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-354"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-416"
+      />
+      <div
+        className="MuiListItemText-root-394"
+      >
+        <span
+          className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+        >
+          Sjøsivaks (Schoenoplectus lacustris)
+        </span>
+        <p
+          className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
+        >
+          AR_99789
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-417"
+      />
+    </div>
+    <div
+      className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-354"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-416"
+      />
+      <div
+        className="MuiListItemText-root-394"
+      >
+        <span
+          className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+        >
+          Fjærestarr (Carex salina)
+        </span>
+        <p
+          className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
+        >
+          AR_99722
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-417"
+      />
+    </div>
+    <div
+      className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-354"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-416"
+      />
+      <div
+        className="MuiListItemText-root-394"
+      >
+        <span
+          className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+        >
+          Mjødurt (Filipendula ulmaria)
+        </span>
+        <p
+          className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
+        >
+          AR_103310
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-417"
+      />
+    </div>
+    <div
+      className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-354"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-416"
+      />
+      <div
+        className="MuiListItemText-root-394"
+      >
+        <span
+          className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+        >
+          Gul frøstjerne (Thalictrum flavum)
+        </span>
+        <p
+          className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
+        >
+          AR_103183
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-417"
+      />
+    </div>
+    <div
+      className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-354"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-416"
+      />
+      <div
+        className="MuiListItemText-root-394"
+      >
+        <span
+          className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+        >
+          Kattehale (Lythrum salicaria)
+        </span>
+        <p
+          className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
+        >
+          AR_102818
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-417"
+      />
+    </div>
+    <div
+      className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-354"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-416"
+      />
+      <div
+        className="MuiListItemText-root-394"
+      >
+        <span
+          className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+        >
+          Fredløs (Lysimachia vulgaris)
+        </span>
+        <p
+          className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
+        >
+          AR_101846
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-417"
+      />
+    </div>
+    <div
+      className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-354"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-416"
+      />
+      <div
+        className="MuiListItemText-root-394"
+      >
+        <span
+          className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+        >
+          Gulldusk (Lysimachia thyrsiflora)
+        </span>
+        <p
+          className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
+        >
+          AR_101845
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-417"
+      />
+    </div>
+    <div
+      className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-354"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-416"
+      />
+      <div
+        className="MuiListItemText-root-394"
+      >
+        <span
+          className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+        >
+          Takrør (Phragmites australis)
+        </span>
+        <p
+          className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
+        >
+          AR_100132
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-417"
+      />
+    </div>
+    <div
+      className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-354"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-416"
+      />
+      <div
+        className="MuiListItemText-root-394"
+      >
+        <span
+          className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+        >
+          Kjempesøtgras (Glyceria maxima)
+        </span>
+        <p
+          className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
+        >
+          AR_100061
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-417"
+      />
+    </div>
+    <div
+      className="MuiButtonBase-root-411 MuiListItem-root-401 MuiListItem-default-404 MuiListItem-gutters-408 MuiListItem-button-409"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "zIndex": 0,
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "height": 56,
+            "left": 0,
+            "position": "absolute",
+            "top": 6,
+            "width": "0%",
+            "zIndex": -1,
+          }
+        }
+      />
+      <div
+        className="MuiAvatar-root-354"
+        onError={[Function]}
+      />
+      <div
+        className="MuiListItemSecondaryAction-root-416"
+      />
+      <div
+        className="MuiListItemText-root-394"
+      >
+        <span
+          className="MuiTypography-root-357 MuiTypography-subheading-364 MuiListItemText-primary-397"
+        >
+          Mannasøtgras (Glyceria fluitans)
+        </span>
+        <p
+          className="MuiTypography-root-357 MuiTypography-body1-366 MuiTypography-colorTextSecondary-380 MuiListItemText-secondary-398"
+        >
+          AR_100058
+        </p>
+      </div>
+      <span
+        className="MuiTouchRipple-root-417"
+      />
+    </div>
+  </ul>
 </div>
 `;
 
@@ -5950,9 +5954,12 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
       <div
         style={
           Object {
-            "paddingTop": 72,
+            "height": 70,
           }
         }
+      />
+      <div
+        style={Object {}}
       >
         <ul
           className="MuiList-root-1067 MuiList-padding-1068"
@@ -6096,9 +6103,12 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
       <div
         style={
           Object {
-            "paddingTop": 72,
+            "height": 70,
           }
         }
+      />
+      <div
+        style={Object {}}
       >
         <ul
           className="MuiList-root-978 MuiList-padding-979"
