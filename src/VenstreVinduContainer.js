@@ -9,7 +9,7 @@ import ResultatListe from './Kodetre/Kodeliste/ResultatListe'
 import PunktinformasjonContainer from './Naturområdedetaljer/PunktinformasjonContainer'
 import språk from './språk'
 import TopBar from './TopBar/TopBar'
-import Tweaks from './Tweaks'
+import TweakContainer from './Tweaks/TweakContainer'
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
@@ -73,7 +73,7 @@ class VenstreVinduContainer extends React.Component {
               left: 0,
               padding: 0,
               bottom: 0,
-              width: window.innerWidth < 600 ? window.innerWidth : 408,
+              width: 408,
               zIndex: -10,
               overflowY: 'auto',
               overflowX: 'hidden',
@@ -104,6 +104,7 @@ class VenstreVinduContainer extends React.Component {
                 />
               )}
             </TopBar>
+            <div style={{ height: 70 }} />
             <Switch>
               <Route
                 path="/katalog/:kode*"
@@ -135,9 +136,6 @@ class VenstreVinduContainer extends React.Component {
                 render={({ match, history }) => {
                   return (
                     <AktiveKartlag
-                      style={{
-                        paddingTop: 72,
-                      }}
                       koder={this.props.aktiveLag}
                       onMouseEnter={this.props.onMouseEnter}
                       onMouseLeave={this.props.onMouseLeave}
@@ -151,10 +149,7 @@ class VenstreVinduContainer extends React.Component {
               <Route
                 path="/lag/:kode"
                 render={({ match, history }) => (
-                  <Tweaks
-                    style={{
-                      marginTop: 72,
-                    }}
+                  <TweakContainer
                     kode={match.params.kode}
                     koder={this.props.aktiveLag}
                     {...this.finnValgtKodeElement(match.params.kode)}

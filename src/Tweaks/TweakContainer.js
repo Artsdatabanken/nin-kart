@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router'
 import Tweaks from './'
 
 class TweakContainer extends React.Component {
@@ -9,7 +10,7 @@ class TweakContainer extends React.Component {
       history.replace('/')
       return null
     }
-    return <Tweaks props />
+    return <Tweaks {...props} />
   }
 
   erAktiv(koder, kode) {

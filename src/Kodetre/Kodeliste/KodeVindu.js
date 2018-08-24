@@ -59,7 +59,14 @@ class KodeVindu extends React.Component {
     const avatarUtenRamme = props.meta.utenRamme
     return (
       <FetchContainer>
-        <Paper elevation={4}>
+        <Paper
+          square={true}
+          elevation={4}
+          style={{
+            position: 'relative',
+            top: -72,
+          }}
+        >
           {props.meta && (
             <Kodekort
               {...props.meta}
