@@ -28,8 +28,7 @@ class Tweaks extends React.Component {
   }
 
   erAktiv(koder, kode) {
-    return true
-    for (let n of koder) if (n.kode === kode) return true
+    for (let n of koder || []) if (n.kode === kode) return true
     return false
   }
 }
