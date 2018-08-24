@@ -136,7 +136,7 @@ class VenstreVinduContainer extends React.Component {
                   return (
                     <AktiveKartlag
                       style={{
-                        paddingTop: 48,
+                        paddingTop: 72,
                       }}
                       koder={this.props.aktiveLag}
                       onMouseEnter={this.props.onMouseEnter}
@@ -153,7 +153,7 @@ class VenstreVinduContainer extends React.Component {
                 render={({ match, history }) => (
                   <Tweaks
                     style={{
-                      marginTop: 48,
+                      marginTop: 72,
                     }}
                     kode={match.params.kode}
                     koder={this.props.aktiveLag}

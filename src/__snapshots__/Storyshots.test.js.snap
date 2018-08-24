@@ -4965,7 +4965,9 @@ exports[`Storyshots Tweaks root 1`] = `
     >
       <li
         className="MuiListSubheader-root-780 MuiListSubheader-sticky-785 MuiListSubheader-gutters-783"
-      />
+      >
+        Natursystem
+      </li>
       <div
         style={
           Object {
@@ -5043,11 +5045,91 @@ exports[`Storyshots Tweaks root 1`] = `
               }
             }
           >
-            Etiketter
+            Vis hovedtypegrupper
           </div>
         </div>
       </div>
-       
+      <div
+        style={
+          Object {
+            "display": "block",
+            "height": 48,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "float": "right",
+              "position": "relative",
+              "top": -16,
+            }
+          }
+        >
+          <span
+            className="MuiSwitch-root-793"
+          >
+            <span
+              className="MuiButtonBase-root-812 MuiIconButton-root-806 MuiSwitchBase-root-802 MuiSwitch-switchBase-796 MuiSwitch-colorSecondary-799"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={null}
+            >
+              <span
+                className="MuiIconButton-label-811"
+              >
+                <span
+                  className="MuiSwitch-icon-794"
+                />
+                <input
+                  checked={false}
+                  className="MuiSwitchBase-input-805"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+              </span>
+              <span
+                className="MuiTouchRipple-root-815"
+              />
+            </span>
+            <span
+              className="MuiSwitch-bar-801"
+            />
+          </span>
+        </div>
+        <div
+          style={
+            Object {
+              "width": 260,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "rgba(0, 0, 0, 0.87)",
+                "float": "left",
+                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                "fontSize": 16,
+                "fontWeight": 400,
+                "left": 56,
+                "position": "absolute",
+              }
+            }
+          >
+            Vis Etiketter
+          </div>
+        </div>
+      </div>
       <li
         className="MuiListSubheader-root-780 MuiListSubheader-sticky-785 MuiListSubheader-gutters-783"
       >
@@ -5073,7 +5155,7 @@ exports[`Storyshots Tweaks root 1`] = `
               "MozBorderRadius": undefined,
               "OBorderRadius": undefined,
               "WebkitBorderRadius": undefined,
-              "background": "hsl(249.99999999999994,100%, 50%)",
+              "background": "hsl(0,100%, 50%)",
               "borderRadius": undefined,
               "bottom": "0px",
               "left": "0px",
@@ -5139,9 +5221,9 @@ exports[`Storyshots Tweaks root 1`] = `
               style={
                 Object {
                   "cursor": "default",
-                  "left": "66.66666666666667%",
+                  "left": "0%",
                   "position": "absolute",
-                  "top": "70%",
+                  "top": "60%",
                 }
               }
             >
@@ -5242,7 +5324,7 @@ exports[`Storyshots Tweaks root 1`] = `
             <div
               style={
                 Object {
-                  "left": "69.44444444444443%",
+                  "left": "0%",
                   "position": "absolute",
                 }
               }
@@ -5432,7 +5514,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
       <div
         style={
           Object {
-            "paddingTop": 48,
+            "paddingTop": 72,
           }
         }
       >
@@ -5578,7 +5660,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
       <div
         style={
           Object {
-            "paddingTop": 48,
+            "paddingTop": 72,
           }
         }
       >
