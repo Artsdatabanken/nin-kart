@@ -7,8 +7,8 @@ import Terreng from './Terreng'
 class Tweaks extends React.Component {
   state = {}
 
-  seksjon(kategori) {
-    switch (kategori) {
+  seksjon(kode) {
+    switch (kode) {
       case 'bakgrunnskart':
         return <Bakgrunnskart {...this.props} />
       case 'terreng':
