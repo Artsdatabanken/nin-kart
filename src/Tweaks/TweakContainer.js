@@ -6,7 +6,7 @@ class TweakContainer extends React.Component {
   render() {
     const { history, match, ...props } = this.props
     if (!this.erAktiv(props.koder, props.kode)) {
-      // Laget er ikke lenger aktivt.  Browser refresh?
+      // Laget er ikke lenger aktivt.  Url fra annen sesjon?
       history.replace('/')
       return null
     }

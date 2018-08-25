@@ -5,6 +5,7 @@ const VolumIndikator = ({ areal, størsteAreal, theme }) => {
   return (
     <div
       style={{
+        transition: 'width 0.5s ease-out',
         position: 'absolute',
         top: 6,
         left: 0,

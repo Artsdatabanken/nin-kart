@@ -12,7 +12,6 @@ const VolumViz = ({ areal, størsteAreal, theme }) => {
         }}
       >
         <div
-          className="sizebar"
           style={{
             marginTop: 4,
             float: 'left',
