@@ -18,8 +18,8 @@ const Bakgrunnskartlag = ({
   history,
 }) => (
   <ListItem
-    button={true}
     onClick={() => history.push('/lag/bakgrunnskart/' + lagNavn)}
+    button={true}
   >
     <Switch
       onChange={() => onUpdateLayerProp('bakgrunnskart', lagNavn, !erSynlig)}
@@ -27,7 +27,7 @@ const Bakgrunnskartlag = ({
     />
     <ListItemText primary={tittel} />
     <ListItemSecondaryAction>
-      <Avatar button={true}>
+      <Avatar>
         <PaintSwatch color={farge} />
       </Avatar>
     </ListItemSecondaryAction>
