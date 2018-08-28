@@ -12,6 +12,7 @@ import React from 'react'
 import { withRouter } from 'react-router'
 import backend from '../../backend'
 import språk from '../../språk'
+import Tagger from './Tagger'
 import Tittelblokk from './Tittelblokk'
 
 const styles = {
@@ -97,6 +98,7 @@ class Kodekort extends React.Component {
             </Button>
           )}
         </CardActions>
+        <Tagger overordnet={overordnet} onGoToCode={onGoToCode} />
         {this.state.leggerTil && (
           <Snackbar
             open={true}
@@ -132,12 +134,11 @@ class Kodekort extends React.Component {
 }
 
 /*
-          <BildeDialog
-            kode={kode}
-            tittel={språk(this.props.tittel)}
-            visBilde={this.state.visBilde}
-            handleClose={this.handleClose}
-          />
-
+  <BildeDialog
+    kode={kode}
+    tittel={språk(this.props.tittel)}
+    visBilde={this.state.visBilde}
+    handleClose={this.handleClose}
+  />
 */
 export default withRouter(withStyles(styles)(Kodekort))

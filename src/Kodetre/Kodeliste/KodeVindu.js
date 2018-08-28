@@ -1,84 +1,11 @@
-import typesystem from '@artsdatabanken/typesystem'
-import { List, ListItemText, ListSubheader, Paper } from '@material-ui/core'
+import { List, Paper } from '@material-ui/core'
 import React from 'react'
 import FetchContainer from '../../FetchContainer'
-import prettyprint from '../../prettyprint'
 import språk from '../../språk'
 import Graf from './Graf'
 import Kodekort from './Kodekort'
 import Kodeliste from './Kodeliste'
-
-const Fakta2 = ({
-  tittel,
-  toppnavn,
-  ingress,
-  stats,
-  infoUrl,
-  arealVindu,
-  arterVindu,
-  geometrierVindu,
-}) => (
-  <React.Fragment>
-    <ListSubheader>Fakta</ListSubheader>
-    <ListItemText>
-      <div
-        style={{
-          fontSize: 13,
-          color: 'rgba(0,0,0,0.87)',
-          paddingLeft: 16,
-        }}
-      >
-        {ingress}
-        {infoUrl && (
-          <span>
-            &nbsp;
-            <a
-              target="top"
-              rel="noopener"
-              style={{ color: 'rgba(0,0,0,0.87)' }}
-              href={infoUrl}
-            >
-              {typesystem.capitalizeTittel(
-                new URL(infoUrl).host.split('.').splice(-2, 1)[0]
-              )}
-            </a>
-          </span>
-        )}
-      </div>
-    </ListItemText>
-    {stats.areal && (
-      <ListItemText>
-        <div
-          style={{
-            paddingTop: 16,
-            fontSize: 13,
-            color: 'rgba(0,0,0,0.87)',
-            paddingLeft: 16,
-          }}
-        >
-          Det er kartlagt <b>{prettyprint.prettyPrintAreal(stats.areal)}</b>
-          &nbsp;med&nbsp;
-          {tittel.toLowerCase()}
-          .&nbsp;
-          {toppnavn && (
-            <span>
-              Dette utgjør&nbsp;
-              <b>{((100 * stats.areal) / stats.arealPrefix).toFixed(1)} %</b> av
-              kartlagte&nbsp;
-              {toppnavn.toLowerCase()}.
-            </span>
-          )}
-          {stats.arter && (
-            <span>
-              &nbsp;Det er observert <b>{stats.arter}</b> ulike arter i områder
-              som er kartlagt som {tittel.toLowerCase()}.
-            </span>
-          )}
-        </div>
-      </ListItemText>
-    )}
-  </React.Fragment>
-)
+import Statistikk from './Statistikk'
 
 class KodeVindu extends React.Component {
   render() {
@@ -106,10 +33,11 @@ class KodeVindu extends React.Component {
             />
           )}
           <List>
-            <Fakta2
+            <Statistikk
               tittel={språk(props.meta.tittel)}
               toppnavn={this.toppnivåNavn(props.meta.overordnet)}
               ingress={props.meta.ingress}
+              infoUrl={props.meta.infoUrl}
               stats={props.meta.stats || {}}
               arealVindu={999999}
               arterVindu={props.data.antallArter}

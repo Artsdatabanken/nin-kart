@@ -3,11 +3,9 @@ import typesystem from '@artsdatabanken/typesystem'
 import { Avatar, Chip, withStyles } from '@material-ui/core'
 import Typography from '@material-ui/core/Typography'
 import React from 'react'
-import språk from '../../språk'
 
 type Props = {
   tittel: String,
-  onGoToCode: Function,
   onToggleLayer: Function,
   erAktivert: Boolean,
   overordnet: Object,
@@ -25,11 +23,9 @@ const styles = {
 }
 
 const Tittelblokk = ({
-  onGoToCode,
   onToggleLayer,
   erAktivert,
   tittel,
-  overordnet,
   kode,
   classes,
 }: Props) => (
@@ -52,21 +48,6 @@ const Tittelblokk = ({
     <Typography className={classes.h2} color="textSecondary">
       {typesystem.hentNivaa(kode).slice(0, 1)}
     </Typography>
-
-    {overordnet &&
-      overordnet.map(forelder => (
-        <Chip
-          key={forelder.kode}
-          label={forelder.kode.slice(3) + ' ' + språk(forelder.tittel)}
-          clickable={true}
-          onClick={e => {
-            e.stopPropagation()
-            onGoToCode(forelder.kode)
-          }}
-          avatar={<Avatar>{forelder.kode.substring(0, 2)}</Avatar>}
-          style={{ margin: 4 }}
-        />
-      ))}
   </div>
 )
 
