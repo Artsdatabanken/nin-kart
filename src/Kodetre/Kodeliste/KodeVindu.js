@@ -2,12 +2,22 @@ import typesystem from '@artsdatabanken/typesystem'
 import { List, ListItemText, ListSubheader, Paper } from '@material-ui/core'
 import React from 'react'
 import FetchContainer from '../../FetchContainer'
-import Fakta from './Fakta'
+import prettyprint from '../../prettyprint'
+import språk from '../../språk'
 import Graf from './Graf'
 import Kodekort from './Kodekort'
 import Kodeliste from './Kodeliste'
 
-const F = ({ ingress, infoUrl, antallNaturomrader, antallArter }) => (
+const Fakta2 = ({
+  tittel,
+  toppnavn,
+  ingress,
+  stats,
+  infoUrl,
+  arealVindu,
+  arterVindu,
+  geometrierVindu,
+}) => (
   <React.Fragment>
     <ListSubheader>Fakta</ListSubheader>
     <ListItemText>
@@ -15,7 +25,7 @@ const F = ({ ingress, infoUrl, antallNaturomrader, antallArter }) => (
         style={{
           fontSize: 13,
           color: 'rgba(0,0,0,0.87)',
-          paddingLeft: 24,
+          paddingLeft: 16,
         }}
       >
         {ingress}
@@ -36,20 +46,37 @@ const F = ({ ingress, infoUrl, antallNaturomrader, antallArter }) => (
         )}
       </div>
     </ListItemText>
-    {false && (
+    {stats.areal && (
       <ListItemText>
-        Skogsmark utgjør med 531 kvm 3.3% av kartlagte natursystemer i Norge
+        <div
+          style={{
+            paddingTop: 16,
+            fontSize: 13,
+            color: 'rgba(0,0,0,0.87)',
+            paddingLeft: 16,
+          }}
+        >
+          Det er kartlagt <b>{prettyprint.prettyPrintAreal(stats.areal)}</b>
+          &nbsp;med&nbsp;
+          {tittel.toLowerCase()}
+          .&nbsp;
+          {toppnavn && (
+            <span>
+              Dette utgjør&nbsp;
+              <b>{((100 * stats.areal) / stats.arealPrefix).toFixed(1)} %</b> av
+              kartlagte&nbsp;
+              {toppnavn.toLowerCase()}.
+            </span>
+          )}
+          {stats.arter && (
+            <span>
+              &nbsp;Det er observert <b>{stats.arter}</b> ulike arter i områder
+              som er kartlagt som {tittel.toLowerCase()}.
+            </span>
+          )}
+        </div>
       </ListItemText>
     )}
-    <ListItemText>
-      <Fakta
-        tittel="Areal"
-        verdi={`${(antallNaturomrader * 1.3).toFixed(
-          0
-        )} km² (i ${antallNaturomrader} områder)`}
-      />
-      <Fakta tittel="Observerte arter" verdi={antallArter} />
-    </ListItemText>
   </React.Fragment>
 )
 
@@ -79,10 +106,14 @@ class KodeVindu extends React.Component {
             />
           )}
           <List>
-            <F
+            <Fakta2
+              tittel={språk(props.meta.tittel)}
+              toppnavn={this.toppnivåNavn(props.meta.overordnet)}
               ingress={props.meta.ingress}
-              antallNaturomrader={props.data.antallNaturomrader}
-              antallArter={props.data.antallArter}
+              stats={props.meta.stats || {}}
+              arealVindu={999999}
+              arterVindu={props.data.antallArter}
+              geometrierVindu={props.data.antallNaturomrader}
             />
             <Kodeliste
               title={`Innhold`}
@@ -110,6 +141,13 @@ class KodeVindu extends React.Component {
         </Paper>
       </FetchContainer>
     )
+  }
+
+  toppnivåNavn(forfedre) {
+    console.log(forfedre)
+    if (forfedre.length < 2) return null
+    console.log(forfedre[forfedre.length - 2])
+    return språk(forfedre[forfedre.length - 2].tittel)
   }
 }
 

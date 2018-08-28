@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Divider,
   ListItem,
   ListItemSecondaryAction,
@@ -46,13 +45,11 @@ class Kartlagelement extends React.Component {
           />
           <ListItemText primary={tittel} secondary={undertittel} />
           <ListItemSecondaryAction>
-            <Avatar style={{ right: 20 }}>
-              {farge ? (
-                <PaintSwatch color={farge} />
-              ) : (
-                <img src={'/' + kode + '.png'} alt="farge" />
-              )}
-            </Avatar>
+            {farge ? (
+              <PaintSwatch color={farge} />
+            ) : (
+              <img src={'/' + kode + '.png'} alt="farge" />
+            )}
           </ListItemSecondaryAction>
         </ListItem>
         <Divider />
