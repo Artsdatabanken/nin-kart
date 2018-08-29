@@ -62,7 +62,7 @@ const Statistikk = ({
           }}
         >
           Det er kartlagt <b>{prettyprint.prettyPrintAreal(stats.areal)}</b>
-          &nbsp;med&nbsp;
+          &nbsp;
           {tittel.toLowerCase()}
           .&nbsp;
           {toppnavn && (
