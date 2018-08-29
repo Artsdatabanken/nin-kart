@@ -61,9 +61,9 @@ function lagDrawblokk(kode, farge, opplystKode, visEtiketter) {
       text_source: ['title', 'function() {  return Object.keys(feature)[0]}'],
       font: {
         family: 'Roboto',
-        fill: '#fff',
-        stroke: { color: '#666', width: 2 },
-        size: '13px',
+        fill: '#333',
+        stroke: { color: '#eee', width: 2 },
+        size: '14px',
       },
     }
   }

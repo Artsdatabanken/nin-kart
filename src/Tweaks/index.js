@@ -20,7 +20,7 @@ class Tweaks extends React.Component {
 
   render() {
     const { style, kode } = this.props
-    return <div style={{ padding: 16, ...style }}>{this.seksjon(kode)}</div>
+    return <div style={{ ...style }}>{this.seksjon(kode)}</div>
   }
 }
 

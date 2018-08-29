@@ -95,8 +95,8 @@ class TopBar extends React.Component<Props, State> {
             </IconButton>
           )}
           <SearchBox
-            query={this.props.query}
-            tittel={this.props.tittel}
+            query={this.props.query || this.props.tittel}
+            //            tittel={this.props.tittel}
             onQueryChange={this.props.onQueryChange}
           />
           <IconButton

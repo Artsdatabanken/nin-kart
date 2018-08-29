@@ -1,57 +1,11 @@
-import typesystem from '@artsdatabanken/typesystem'
-import { List, ListItemText, ListSubheader, Paper } from '@material-ui/core'
+import { List } from '@material-ui/core'
 import React from 'react'
 import FetchContainer from '../../FetchContainer'
-import Fakta from './Fakta'
+import språk from '../../språk'
 import Graf from './Graf'
 import Kodekort from './Kodekort'
 import Kodeliste from './Kodeliste'
-
-const F = ({ ingress, infoUrl, antallNaturomrader, antallArter }) => (
-  <React.Fragment>
-    <ListSubheader>Fakta</ListSubheader>
-    <ListItemText>
-      <div
-        style={{
-          fontSize: 13,
-          color: 'rgba(0,0,0,0.87)',
-          paddingLeft: 24,
-        }}
-      >
-        {ingress}
-        {infoUrl && (
-          <span>
-            &nbsp;
-            <a
-              target="top"
-              rel="noopener"
-              style={{ color: 'rgba(0,0,0,0.87)' }}
-              href={infoUrl}
-            >
-              {typesystem.capitalizeTittel(
-                new URL(infoUrl).host.split('.').splice(-2, 1)[0]
-              )}
-            </a>
-          </span>
-        )}
-      </div>
-    </ListItemText>
-    {false && (
-      <ListItemText>
-        Skogsmark utgjør med 531 kvm 3.3% av kartlagte natursystemer i Norge
-      </ListItemText>
-    )}
-    <ListItemText>
-      <Fakta
-        tittel="Areal"
-        verdi={`${(antallNaturomrader * 1.3).toFixed(
-          0
-        )} km² (i ${antallNaturomrader} områder)`}
-      />
-      <Fakta tittel="Observerte arter" verdi={antallArter} />
-    </ListItemText>
-  </React.Fragment>
-)
+import Statistikk from './Statistikk'
 
 class KodeVindu extends React.Component {
   render() {
@@ -59,15 +13,15 @@ class KodeVindu extends React.Component {
     const avatarUtenRamme = props.meta.utenRamme
     return (
       <FetchContainer>
-        <Paper
-          square={true}
-          elevation={4}
-          style={{
-            position: 'relative',
-            top: -72,
-          }}
-        >
-          {props.meta && (
+        {props.meta && (
+          <div
+            square="true"
+            elevation={4}
+            style={{
+              position: 'relative',
+              top: -72,
+            }}
+          >
             <Kodekort
               {...props.meta}
               onGoToCode={props.onGoToCode}
@@ -77,39 +31,51 @@ class KodeVindu extends React.Component {
               data={props.data}
               language={props.language}
             />
-          )}
-          <List>
-            <F
-              ingress={props.meta.ingress}
-              antallNaturomrader={props.data.antallNaturomrader}
-              antallArter={props.data.antallArter}
-            />
-            <Kodeliste
-              title={`Innhold`}
-              størsteAreal={props.data.størsteAreal}
-              apidata={props.data ? props.data.barn : []}
-              metadata={props.meta.barn}
-              onGoToCode={props.onGoToCode}
-              onMouseEnter={props.onMouseEnter}
-              onMouseLeave={props.onMouseLeave}
-              opplystKode={props.opplystKode}
-              language={props.language}
-              avatarUtenRamme={avatarUtenRamme}
-            />
-            {props.meta.graf && (
-              <Graf
-                graf={props.meta.graf}
+            <List>
+              {props.meta.prefiks !== 'AO' && (
+                <Statistikk
+                  tittel={språk(props.meta.tittel)}
+                  toppnavn={this.toppnivåNavn(props.meta.overordnet)}
+                  ingress={props.meta.ingress}
+                  infoUrl={props.meta.infoUrl}
+                  stats={props.meta.stats || {}}
+                  arealVindu={999999}
+                  arterVindu={props.data.antallArter}
+                  geometrierVindu={props.data.antallNaturomrader}
+                />
+              )}
+              <Kodeliste
+                title={`Innhold`}
+                størsteAreal={props.data.størsteAreal}
                 apidata={props.data ? props.data.barn : []}
+                metadata={props.meta.barn}
                 onGoToCode={props.onGoToCode}
                 onMouseEnter={props.onMouseEnter}
                 onMouseLeave={props.onMouseLeave}
                 opplystKode={props.opplystKode}
+                language={props.language}
+                avatarUtenRamme={avatarUtenRamme}
               />
-            )}
-          </List>
-        </Paper>
+              {props.meta.graf && (
+                <Graf
+                  graf={props.meta.graf}
+                  apidata={props.data ? props.data.barn : []}
+                  onGoToCode={props.onGoToCode}
+                  onMouseEnter={props.onMouseEnter}
+                  onMouseLeave={props.onMouseLeave}
+                  opplystKode={props.opplystKode}
+                />
+              )}
+            </List>
+          </div>
+        )}
       </FetchContainer>
     )
+  }
+
+  toppnivåNavn(forfedre) {
+    if (forfedre.length < 2) return null
+    return språk(forfedre[forfedre.length - 2].tittel)
   }
 }
 

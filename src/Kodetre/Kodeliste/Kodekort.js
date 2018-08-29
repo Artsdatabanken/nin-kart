@@ -53,8 +53,10 @@ class Kodekort extends React.Component {
   render() {
     const {
       kode,
+      prefiks,
       bbox,
       tittel,
+      nivå,
       overordnet,
       onFitBounds,
       classes,
@@ -62,7 +64,7 @@ class Kodekort extends React.Component {
       onGoToCode,
     } = this.props
     return (
-      <Card>
+      <Card square={true}>
         <CardMedia
           style={this.styles(kode.substring(0, 2))}
           onClick={() => this.handleOpen()}
@@ -75,7 +77,9 @@ class Kodekort extends React.Component {
         />
         <Tittelblokk
           tittel={språk(tittel)}
+          nivå={nivå}
           kode={kode}
+          prefiks={prefiks}
           onGoToCode={onGoToCode}
           overordnet={overordnet}
         />
@@ -83,7 +87,7 @@ class Kodekort extends React.Component {
           {overordnet && (
             <Button
               variant="contained"
-              color="primary"
+              _color="primary"
               className={classes.button}
               onClick={this.handleAktiver}
               disabled={erAktivert}
@@ -132,12 +136,11 @@ class Kodekort extends React.Component {
 }
 
 /*
-          <BildeDialog
-            kode={kode}
-            tittel={språk(this.props.tittel)}
-            visBilde={this.state.visBilde}
-            handleClose={this.handleClose}
-          />
-
+  <BildeDialog
+    kode={kode}
+    tittel={språk(this.props.tittel)}
+    visBilde={this.state.visBilde}
+    handleClose={this.handleClose}
+  />
 */
 export default withRouter(withStyles(styles)(Kodekort))

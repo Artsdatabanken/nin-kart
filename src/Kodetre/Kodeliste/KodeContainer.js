@@ -9,6 +9,7 @@ type State = {
 
 type Props = {
   meta: Object,
+  kode: String,
   mapBounds: Object,
   onFitBounds: Function,
   onMouseLeave: Function,
@@ -25,9 +26,9 @@ class KodeContainer extends React.Component<Props, State> {
   state = { data: {} }
 
   componentDidUpdate(prevProps: Object, prevState: Object) {
-    let oldKode = prevProps.meta.kode
+    let oldKode = prevProps.kode
     let oldBounds = prevProps.mapBounds
-    let newKode = this.props.meta.kode
+    let newKode = this.props.kode
     let newBounds = this.props.mapBounds
     if (oldKode !== newKode || oldBounds !== newBounds) {
       this.fetchData(newKode, newBounds)
@@ -54,7 +55,7 @@ class KodeContainer extends React.Component<Props, State> {
     const data = this.state.data
     const meta = this.props.meta
     if (!meta) return null
-    if (!meta.tittel) return null
+    console.log(meta)
     return (
       <KodeVindu
         data={data}

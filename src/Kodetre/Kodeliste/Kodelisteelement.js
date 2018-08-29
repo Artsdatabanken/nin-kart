@@ -20,6 +20,7 @@ type Props = {
   kode: string,
   meta: Object,
   avatarUtenRamme: Boolean,
+  erOpplyst: Boolean,
   størsteAreal: number,
   areal: number,
   antallNaturområder: number,
@@ -31,7 +32,7 @@ type Props = {
 
 class Kodelisteelement extends React.Component<Props, State> {
   render() {
-    const { meta, kode, avatarUtenRamme, erOpplyst, areal } = this.props
+    const { meta, kode, avatarUtenRamme, erOpplyst } = this.props
     return (
       <React.Fragment>
         <ListItem
@@ -49,7 +50,7 @@ class Kodelisteelement extends React.Component<Props, State> {
           />
           <Bildeavatar utenRamme={avatarUtenRamme} kode={kode} />
           <ListItemSecondaryAction>
-            {areal && <PaintSwatch color={erOpplyst ? '#f00' : meta.farge} />}
+            <PaintSwatch color={erOpplyst ? '#f00' : meta.farge} />
           </ListItemSecondaryAction>
           <ListItemText primary={språk(meta.tittel)} secondary={kode} />
         </ListItem>

@@ -1,4 +1,4 @@
-import { Snackbar } from '@material-ui/core'
+import { Divider, Snackbar } from '@material-ui/core'
 import React from 'react'
 import { withRouter } from 'react-router'
 import { Route, Switch } from 'react-router-dom'
@@ -92,16 +92,19 @@ class VenstreVinduContainer extends React.Component {
               onQueryChange={this.handleQueryChange}
             >
               {this.state.searchResults && (
-                <ResultatListe
-                  query={this.state.query}
-                  searchResults={this.state.searchResults}
-                  language={this.props.language}
-                  onClick={url => {
-                    console.warn('url', url)
-                    this.setState({ query: '', searchResults: null })
-                    history.push('/katalog/' + url)
-                  }}
-                />
+                <React.Fragment>
+                  <Divider />
+                  <ResultatListe
+                    query={this.state.query}
+                    searchResults={this.state.searchResults}
+                    language={this.props.language}
+                    onClick={url => {
+                      console.warn('url', url)
+                      this.setState({ query: '', searchResults: null })
+                      history.push('/katalog/' + url)
+                    }}
+                  />
+                </React.Fragment>
               )}
             </TopBar>
             <div style={{ height: 70 }} />
