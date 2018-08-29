@@ -12,7 +12,6 @@ import React from 'react'
 import { withRouter } from 'react-router'
 import backend from '../../backend'
 import språk from '../../språk'
-import Tagger from './Tagger'
 import Tittelblokk from './Tittelblokk'
 
 const styles = {
@@ -54,8 +53,10 @@ class Kodekort extends React.Component {
   render() {
     const {
       kode,
+      prefiks,
       bbox,
       tittel,
+      nivå,
       overordnet,
       onFitBounds,
       classes,
@@ -63,7 +64,7 @@ class Kodekort extends React.Component {
       onGoToCode,
     } = this.props
     return (
-      <Card>
+      <Card square={true}>
         <CardMedia
           style={this.styles(kode.substring(0, 2))}
           onClick={() => this.handleOpen()}
@@ -76,7 +77,9 @@ class Kodekort extends React.Component {
         />
         <Tittelblokk
           tittel={språk(tittel)}
+          nivå={nivå}
           kode={kode}
+          prefiks={prefiks}
           onGoToCode={onGoToCode}
           overordnet={overordnet}
         />
@@ -84,7 +87,7 @@ class Kodekort extends React.Component {
           {overordnet && (
             <Button
               variant="contained"
-              color="primary"
+              _color="primary"
               className={classes.button}
               onClick={this.handleAktiver}
               disabled={erAktivert}
@@ -98,7 +101,6 @@ class Kodekort extends React.Component {
             </Button>
           )}
         </CardActions>
-        <Tagger overordnet={overordnet} onGoToCode={onGoToCode} />
         {this.state.leggerTil && (
           <Snackbar
             open={true}

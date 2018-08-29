@@ -1,4 +1,4 @@
-import { List, Paper } from '@material-ui/core'
+import { List } from '@material-ui/core'
 import React from 'react'
 import FetchContainer from '../../FetchContainer'
 import språk from '../../språk'
@@ -13,15 +13,15 @@ class KodeVindu extends React.Component {
     const avatarUtenRamme = props.meta.utenRamme
     return (
       <FetchContainer>
-        <Paper
-          square={true}
-          elevation={4}
-          style={{
-            position: 'relative',
-            top: -72,
-          }}
-        >
-          {props.meta && (
+        {props.meta && (
+          <div
+            square="true"
+            elevation={4}
+            style={{
+              position: 'relative',
+              top: -72,
+            }}
+          >
             <Kodekort
               {...props.meta}
               onGoToCode={props.onGoToCode}
@@ -31,50 +31,50 @@ class KodeVindu extends React.Component {
               data={props.data}
               language={props.language}
             />
-          )}
-          <List>
-            <Statistikk
-              tittel={språk(props.meta.tittel)}
-              toppnavn={this.toppnivåNavn(props.meta.overordnet)}
-              ingress={props.meta.ingress}
-              infoUrl={props.meta.infoUrl}
-              stats={props.meta.stats || {}}
-              arealVindu={999999}
-              arterVindu={props.data.antallArter}
-              geometrierVindu={props.data.antallNaturomrader}
-            />
-            <Kodeliste
-              title={`Innhold`}
-              størsteAreal={props.data.størsteAreal}
-              apidata={props.data ? props.data.barn : []}
-              metadata={props.meta.barn}
-              onGoToCode={props.onGoToCode}
-              onMouseEnter={props.onMouseEnter}
-              onMouseLeave={props.onMouseLeave}
-              opplystKode={props.opplystKode}
-              language={props.language}
-              avatarUtenRamme={avatarUtenRamme}
-            />
-            {props.meta.graf && (
-              <Graf
-                graf={props.meta.graf}
+            <List>
+              {props.meta.prefiks !== 'AO' && (
+                <Statistikk
+                  tittel={språk(props.meta.tittel)}
+                  toppnavn={this.toppnivåNavn(props.meta.overordnet)}
+                  ingress={props.meta.ingress}
+                  infoUrl={props.meta.infoUrl}
+                  stats={props.meta.stats || {}}
+                  arealVindu={999999}
+                  arterVindu={props.data.antallArter}
+                  geometrierVindu={props.data.antallNaturomrader}
+                />
+              )}
+              <Kodeliste
+                title={`Innhold`}
+                størsteAreal={props.data.størsteAreal}
                 apidata={props.data ? props.data.barn : []}
+                metadata={props.meta.barn}
                 onGoToCode={props.onGoToCode}
                 onMouseEnter={props.onMouseEnter}
                 onMouseLeave={props.onMouseLeave}
                 opplystKode={props.opplystKode}
+                language={props.language}
+                avatarUtenRamme={avatarUtenRamme}
               />
-            )}
-          </List>
-        </Paper>
+              {props.meta.graf && (
+                <Graf
+                  graf={props.meta.graf}
+                  apidata={props.data ? props.data.barn : []}
+                  onGoToCode={props.onGoToCode}
+                  onMouseEnter={props.onMouseEnter}
+                  onMouseLeave={props.onMouseLeave}
+                  opplystKode={props.opplystKode}
+                />
+              )}
+            </List>
+          </div>
+        )}
       </FetchContainer>
     )
   }
 
   toppnivåNavn(forfedre) {
-    console.log(forfedre)
     if (forfedre.length < 2) return null
-    console.log(forfedre[forfedre.length - 2])
     return språk(forfedre[forfedre.length - 2].tittel)
   }
 }

@@ -1,4 +1,5 @@
-import { Avatar, Chip } from '@material-ui/core'
+import { withStyles } from '@material-ui/core'
+import Typography from '@material-ui/core/Typography'
 import React from 'react'
 import språk from '../../språk'
 
@@ -12,7 +13,35 @@ type Props = {
   classes: Object,
 }
 
-const Tagger = ({ overordnet, onGoToCode }: Props) => {
+const styles = {
+  typo: { color: '#fff' },
+  link: { cursor: 'pointer' },
+}
+
+const Tagger = ({ overordnet, onGoToCode, classes }: Props) => {
+  if (!overordnet) return null
+  const r = overordnet.map(forelder => (
+    <React.Fragment key={forelder.kode}>
+      {forelder.kode.length > 1 && <span>&nbsp;»&nbsp;</span>}
+      <span
+        className={classes.link}
+        onClick={e => {
+          e.stopPropagation()
+          onGoToCode(forelder.kode)
+        }}
+      >
+        {språk(forelder.tittel)}
+      </span>
+    </React.Fragment>
+  ))
+  return (
+    <Typography className={classes.typo} variant="body2">
+      {r.reverse()}
+    </Typography>
+  )
+}
+/*
+const Tagger_ = ({ overordnet, onGoToCode }: Props) => {
   if (!overordnet) return null
   return overordnet.map(forelder => (
     <Chip
@@ -28,4 +57,5 @@ const Tagger = ({ overordnet, onGoToCode }: Props) => {
     />
   ))
 }
-export default Tagger
+*/
+export default withStyles(styles)(Tagger)

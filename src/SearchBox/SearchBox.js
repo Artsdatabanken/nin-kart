@@ -16,13 +16,12 @@ export default class SearchBox extends Component {
   }
 
   render() {
-    const { query, tittel } = this.props
     return (
       <Input
         ref={tf => (this.Input = tf)}
         onKeyDown={this.handleKeyDown}
-        value={query || ''}
-        placeholder={tittel ? tittel : 'Natur i Norge'}
+        value={this.props.query || ''}
+        placeholder={'Søk i Natur i Norge'}
         onFocus={this.handleFocus}
         onChange={this.props.onQueryChange}
         fullWidth={true}

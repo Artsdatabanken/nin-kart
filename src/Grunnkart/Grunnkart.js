@@ -172,6 +172,9 @@ class Grunnkart extends React.Component<Props, State> {
         barn.sti = this.kodeTilRelativUrl(kode)
         //        barn.farge = new color(barn.farge).darken(10).toHexString()
       })
+      data.nivå = typesystem.hentNivaa(data.kode).slice(0, 1)
+      data.prefiks = data.kode.substring(0, 2)
+      console.log()
       this.setState({ meta: data })
     })
   }
@@ -219,7 +222,7 @@ class Grunnkart extends React.Component<Props, State> {
           opplystKode={this.state.opplystKode}
           onToggleLayer={this.handleToggleLayer}
           onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-          meta={this.state.meta || {}}
+          meta={this.state.meta}
           onUpdateLayerProp={this.handleUpdateLayerProp}
         />
 
