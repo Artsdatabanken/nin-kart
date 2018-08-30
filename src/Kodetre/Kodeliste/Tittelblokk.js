@@ -6,16 +6,16 @@ import React from 'react'
 import Tagger from './Tagger'
 
 type Props = {
-  tittel: String.isRequired,
-  onToggleLayer: Function.isRequired,
-  onGoToCode: Function.isRequired,
-  erAktivert: Boolean.isRequired,
-  overordnet: Object.isRequired,
-  kode: String.isRequired,
-  prefiks: String.Required.isRequired,
-  nivå: String.isRequired,
-  classes: Object.isRequired,
-  theme: Object.isRequired,
+  tittel: String,
+  onToggleLayer: Function,
+  onGoToCode: Function,
+  erAktivert: Boolean,
+  overordnet: Object,
+  kode: String,
+  prefiks: String,
+  nivå: String,
+  classes: Object,
+  theme: Object,
 }
 
 const farger = {
