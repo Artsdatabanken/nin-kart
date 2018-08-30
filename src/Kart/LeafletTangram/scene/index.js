@@ -116,8 +116,7 @@ function createScene(props: Object, onClick: Function) {
       props.meta.kode,
       props.meta.barn || { [props.meta.kode]: props.meta },
       props.opplystKode,
-      config.layers,
-      true
+      config.layers
     )
   }
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config.layers)

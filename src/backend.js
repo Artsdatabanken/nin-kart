@@ -80,11 +80,11 @@ class Backend {
   }
 
   static async createGetFeatureInfoCall(
-    wmsUri,
-    lng,
-    lat,
-    layers,
-    infoFormat = 'text/plain'
+    wmsUri: string,
+    lng: Number,
+    lat: Number,
+    layers: Object,
+    infoFormat: string = 'text/plain'
   ) {
     var bbox = createBboxFromPoint(lng, lat, 0.000001)
     return this.getTextPromise(
