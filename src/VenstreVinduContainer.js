@@ -6,7 +6,7 @@ import AktiveKartlag from './AktiveKartlag'
 import backend from './backend'
 import KodeContainer from './Kodetre/Kodeliste/KodeContainer'
 import ResultatListe from './Kodetre/Kodeliste/ResultatListe'
-import PunktinformasjonContainer from './Naturområdedetaljer/PunktinformasjonContainer'
+import BorreContainer from './Borring/BorreContainer'
 import språk from './språk'
 import TopBar from './TopBar/TopBar'
 import TweakContainer from './Tweaks/TweakContainer'
@@ -166,7 +166,7 @@ class VenstreVinduContainer extends React.Component {
               <Route
                 path="/punkt/:lng,:lat"
                 render={({ match, history }) => (
-                  <PunktinformasjonContainer
+                  <BorreContainer
                     lng={match.params.lng}
                     lat={match.params.lat}
                   />

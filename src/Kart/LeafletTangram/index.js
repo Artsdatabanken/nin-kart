@@ -88,7 +88,7 @@ class LeafletTangram extends React.Component {
     this.map.removeLayer(this.marker)
   }
 
-  onClick = e => {
+  handleClick = e => {
     const latlng = e.leaflet_event.latlng
     this.removeMarker()
     this.marker = L.marker([latlng.lat, latlng.lng])
@@ -107,7 +107,7 @@ class LeafletTangram extends React.Component {
           hover: function(selection) {
             //        console.log('Hover!', selection)
           },
-          click: this.onClick,
+          click: this.handleClick,
         },
         attribution: '<a href="https://artsdatabanken.no">Artsdatabanken</a>',
       }
