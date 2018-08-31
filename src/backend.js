@@ -75,7 +75,7 @@ class Backend {
 
   static async hentPunkt(lng: number, lat: number) {
     return this.getPromise(
-      `https://adb-nin-raster.azurewebsites.net/v1/point/${lng}/${lat}`
+      `https://vector.artsdatabanken.no/ogapi/codes/${lng}/${lat}`
     )
   }
 
