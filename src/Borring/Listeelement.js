@@ -15,8 +15,9 @@ const Listeelement = ({ kode, primary, secondary, history }) => {
   const farge = farger[prefix]
   const bgFarge = tinycolor(farge)
     .lighten(40)
-    .setAlpha(0.85)
+    .setAlpha(0.95)
     .toHslString()
+  const avatar = false
   return (
     <React.Fragment>
       <div
@@ -24,12 +25,8 @@ const Listeelement = ({ kode, primary, secondary, history }) => {
           width: '100%',
           height: '100%',
           objectFit: 'cover',
-          background1:
-            'linear-gradient(270deg, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 100%, 0.9) 90%), url(kode/' +
-            kode +
-            '.jpg)',
           background:
-            'linear-gradient(300deg, hsla(0, 0%, 0%, 0.0) 0%, ' +
+            'linear-gradient(300deg, hsla(0, 0%, 100%, 0.3) 0%, ' +
             bgFarge +
             ' 50%), url("/kode/' +
             kode +
@@ -40,14 +37,16 @@ const Listeelement = ({ kode, primary, secondary, history }) => {
           button={true}
           onClick={() => history.push(`/katalog/` + kode)}
         >
-          <Avatar
-            style={{
-              backgroundColor: farger[prefix],
-              color: 'white',
-            }}
-          >
-            {prefix}
-          </Avatar>
+          {avatar && (
+            <Avatar
+              style={{
+                backgroundColor: farger[prefix],
+                color: 'white',
+              }}
+            >
+              {prefix}
+            </Avatar>
+          )}
           <ListItemText
             style={{ color: 'white' }}
             primary={primary}
@@ -56,15 +55,17 @@ const Listeelement = ({ kode, primary, secondary, history }) => {
           <div style={{ position: 'absolute', right: 8, bottom: 8 }}>
             {kode.length > 3 && (
               <Chip
-                avatarx={
-                  <Avatar
-                    style={{
-                      backgroundColor: farger[prefix],
-                      color: 'white',
-                    }}
-                  >
-                    {prefix}
-                  </Avatar>
+                avatar={
+                  !avatar && (
+                    <Avatar
+                      style={{
+                        backgroundColor: farger[prefix],
+                        color: 'white',
+                      }}
+                    >
+                      {prefix}
+                    </Avatar>
+                  )
                 }
                 label={kode.substring(3)}
               />

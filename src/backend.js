@@ -75,7 +75,7 @@ class Backend {
 
   static async hentPunkt(lng: number, lat: number) {
     return this.getPromise(
-      `https://adb-nin-raster.azurewebsites.net/v1/point/${lng}/${lat}`
+      `https://vector.artsdatabanken.no/ogapi/codes/${lng}/${lat}`
     )
   }
 
@@ -92,25 +92,6 @@ class Backend {
         `?request=GetFeatureinfo&service=WMS&version=1.3.0&Layers=${layers}&crs=epsg:4258&format=image/png&width=3&height=3&QUERY_LAYERS=${layers}&i=2&j=2&bbox=${
           bbox.minx
         },${bbox.miny},${bbox.maxx},${bbox.maxy}&INFO_FORMAT=${infoFormat}`
-    )
-  }
-
-  static async hentAdmEnhet(lng: number, lat: number) {
-    return this.createGetFeatureInfoCall(
-      'https://openwms.statkart.no/skwms1/wms.adm_enheter',
-      lng,
-      lat,
-      'kommuner'
-    )
-  }
-
-  static async hentVerneområde(lng: number, lat: number) {
-    return this.createGetFeatureInfoCall(
-      'https://kart.miljodirektoratet.no/arcgis/services/vern/mapserver/WMSServer',
-      lat,
-      lng,
-      'naturvern_omrade',
-      'text/xml'
     )
   }
 

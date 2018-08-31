@@ -1,0 +1,32 @@
+{
+  "MI_KA-F": {
+    "tittel": "Kalkinnhold",
+    "value": "Litt kalkrik",
+    "ids": ["10230"]
+  },
+  "AO_50-01": {
+    "tittel": "Trøndelag",
+    "value": "Trondheim",
+    "ids": ["41235"]
+  },
+  "BS_6SE-3": {
+    "tittel": "Bioklimatiske seksjoner",
+    "value": "Svakt oseanisk seksjon (o1)",
+    "ids": ["4216"]
+  },
+  "AO_50": {
+    "tittel": "Fylke & kommune",
+    "value": "Trøndelag",
+    "ids": ["40952"]
+  },
+  "BS_6SO-2": {
+    "tittel": "Bioklimatiske soner",
+    "value": "Sørboreal sone (sb)",
+    "ids": ["1381"]
+  },
+  "NA_T32-C-3": {
+    "tittel": "Semi-naturlig eng",
+    "value": "Intermediær eng med mindre hevdpreg",
+    "ids": ["5DBB745C-9E51-4450-A66F-5F8F4033464D"]
+  }
+}
