@@ -1,6 +1,8 @@
+import { List, ListSubheader } from '@material-ui/core'
 import React, { Component } from 'react'
 import backend from '../backend'
 import Kommune from './Kommune'
+import Mockup from './Mockup'
 
 class BorreContainer extends Component {
   state = {}
@@ -59,13 +61,18 @@ class BorreContainer extends Component {
   }
 
   render() {
-    console.log(this.state)
+    if (!this.props.lat) return null
     return (
-      <div style={{ maxHeight: window.innerHeight * 0.8, overflow: 'auto' }}>
+      <List>
+        <ListSubheader>
+          Punktet {parseFloat(this.props.lat).toFixed(4)}° N{' '}
+          {parseFloat(this.props.lng).toFixed(4)}° Ø
+        </ListSubheader>
         {this.state.kommune && (
           <Kommune {...this.state.kommune} {...this.state.sted} />
         )}
-      </div>
+        <Mockup />
+      </List>
     )
   }
 }
