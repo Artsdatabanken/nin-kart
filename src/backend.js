@@ -95,25 +95,6 @@ class Backend {
     )
   }
 
-  static async hentAdmEnhet(lng: number, lat: number) {
-    return this.createGetFeatureInfoCall(
-      'https://openwms.statkart.no/skwms1/wms.adm_enheter',
-      lng,
-      lat,
-      'kommuner'
-    )
-  }
-
-  static async hentVerneområde(lng: number, lat: number) {
-    return this.createGetFeatureInfoCall(
-      'https://kart.miljodirektoratet.no/arcgis/services/vern/mapserver/WMSServer',
-      lat,
-      lng,
-      'naturvern_omrade',
-      'text/xml'
-    )
-  }
-
   static async hentStedsnavn(lng: number, lat: number) {
     return this.getPromise(
       `https://www.norgeskart.no/ws/elev.py?lat=${lat}&lon=${lng}&epsg=4258`

@@ -1,4 +1,3 @@
-import { ListSubheader } from '@material-ui/core'
 import { withTheme } from '@material-ui/core/styles'
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
@@ -9,7 +8,6 @@ class Borring extends Component {
     const { innhold } = this.props
     return (
       <React.Fragment>
-        <ListSubheader>_tittel_</ListSubheader>
         {Object.keys(innhold.barn).map(kode => {
           const node = innhold.barn[kode]
           const r = oppsummer(node)
