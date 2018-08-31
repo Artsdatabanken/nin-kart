@@ -1,6 +1,6 @@
-import { ListItem, ListItemText } from '@material-ui/core'
 import React from 'react'
 import { withRouter } from 'react-router'
+import Listeelement from './Listeelement'
 
 const Kommune = props => {
   let primær = props.placename ? props.placename : props.kommune
@@ -9,12 +9,12 @@ const Kommune = props => {
     : props.fylkesnavn
   if (props.elevation) primær += formatElevation(props.elevation)
   return (
-    <ListItem
-      button={true}
-      onClick={() => props.history.push(`/katalog/` + props.knr)}
-    >
-      <ListItemText primary={primær} secondary={sekundær} />
-    </ListItem>
+    <Listeelement
+      kode="AO"
+      kode2={props.knr}
+      primary={primær}
+      secondary={sekundær}
+    />
   )
 }
 

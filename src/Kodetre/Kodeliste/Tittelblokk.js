@@ -3,6 +3,7 @@ import { Avatar, Chip, withStyles } from '@material-ui/core'
 import { withTheme } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import React from 'react'
+import farger from '../../farger'
 import Tagger from './Tagger'
 
 type Props = {
@@ -16,16 +17,6 @@ type Props = {
   nivå: String,
   classes: Object,
   theme: Object,
-}
-
-const farger = {
-  AO: 'hsl(0, 0%, 50%)',
-  BS: 'hsl(240, 40%, 50%)',
-  MI: 'hsl(32, 40%, 50%)',
-  NA: 'hsl(120, 40%, 50%)',
-  OR: 'hsl(0, 0%, 50%)',
-  RL: 'hsl(12, 40%, 50%)',
-  VV: 'hsl(300, 40%, 50%)',
 }
 
 const styles = {
