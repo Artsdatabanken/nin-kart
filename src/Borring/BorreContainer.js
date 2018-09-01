@@ -92,7 +92,7 @@ class BorreContainer extends Component {
           Punktet {parseFloat(this.props.lat).toFixed(4)}° N{' '}
           {parseFloat(this.props.lng).toFixed(4)}° Ø
         </ListSubheader>
-        {true && <Mockup />}
+        {false && <Mockup />}
         {this.state.borrehull && <Borring innhold={this.state.borrehull} />}
       </List>
     )
