@@ -3,7 +3,6 @@ import { List, ListSubheader } from '@material-ui/core'
 import React, { Component } from 'react'
 import backend from '../backend'
 import Borring from './Borring'
-import Kommune from './Kommune'
 import Mockup from './Mockup'
 
 class BorreContainer extends Component {
@@ -19,7 +18,10 @@ class BorreContainer extends Component {
   }
 
   //TODO: Fjern denne når APIet leverer på nytt format
-  mapPunktHack(data) {
+  mapPunktHack(data, sted) {
+    if (!data) return
+    data = this.hackInnSted(sted, data)
+
     let r = {}
     Object.keys(data).forEach(kode => {
       const node = data[kode]
@@ -37,8 +39,29 @@ class BorreContainer extends Component {
       s.tittel = node.value
     })
 
-    console.log(JSON.stringify(r))
     return r
+  }
+
+  hackInnSted(sted, data) {
+    if (!sted) return data
+    const r = {}
+    Object.keys(data).forEach(key => {
+      const node = data[key]
+      if (key.substring(0, 2) === 'AO') {
+        if (sted.placename) {
+          r[key] = {
+            key: node.value + ', ' + node.key,
+            value: sted.placename + this.formatElevation(sted.elevation),
+          }
+        }
+      } else r[key] = node
+    })
+    return r
+  }
+
+  formatElevation(elevation) {
+    if (elevation < 0) return ' (' + -elevation + ' muh)'
+    return ' (' + elevation + ' moh)'
   }
 
   fetch(lng, lat) {
@@ -47,14 +70,16 @@ class BorreContainer extends Component {
       sted: null,
     })
     backend.hentPunkt(lng, lat).then(data => {
+      this.data = data
       this.setState({
-        borrehull: this.mapPunktHack(data),
+        borrehull: this.mapPunktHack(this.data, this.sted),
       })
     })
 
     backend.hentStedsnavn(lng, lat).then(data => {
+      this.sted = data
       this.setState({
-        sted: data,
+        borrehull: this.mapPunktHack(this.data, this.sted),
       })
     })
   }
@@ -67,10 +92,7 @@ class BorreContainer extends Component {
           Punktet {parseFloat(this.props.lat).toFixed(4)}° N{' '}
           {parseFloat(this.props.lng).toFixed(4)}° Ø
         </ListSubheader>
-        {this.state.kommune && (
-          <Kommune {...this.state.kommune} {...this.state.sted} />
-        )}
-        {false && <Mockup />}
+        {true && <Mockup />}
         {this.state.borrehull && <Borring innhold={this.state.borrehull} />}
       </List>
     )
