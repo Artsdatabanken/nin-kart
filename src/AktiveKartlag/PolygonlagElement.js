@@ -9,6 +9,7 @@ class PolygonlagElement extends React.Component {
       erSynlig,
       farge,
       kode,
+      visKoder,
       onClick,
       onMouseEnter,
       onMouseLeave,
@@ -17,7 +18,7 @@ class PolygonlagElement extends React.Component {
     return (
       <KartlagElement
         tittel={tittel}
-        undertittel={this.props.kode}
+        undertittel={visKoder && kode}
         erSynlig={erSynlig}
         farge={farge}
         kode={kode}

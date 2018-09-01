@@ -9,6 +9,7 @@ import React from 'react'
 import { withRouter } from 'react-router'
 import tinycolor from 'tinycolor2'
 import farger from '../farger'
+import { SettingsContext } from '../SettingsContext'
 
 const Listeelement = ({ kode, primary, secondary, history }) => {
   const prefix = kode.substring(0, 2)
@@ -52,25 +53,33 @@ const Listeelement = ({ kode, primary, secondary, history }) => {
             primary={primary}
             secondary={secondary}
           />
-          <div style={{ position: 'absolute', right: 8, bottom: 8 }}>
-            {kode.length > 3 && (
-              <Chip
-                avatar={
-                  !avatar && (
-                    <Avatar
-                      style={{
-                        backgroundColor: farger[prefix],
-                        color: 'white',
-                      }}
-                    >
-                      {prefix}
-                    </Avatar>
-                  )
-                }
-                label={kode.substring(3)}
-              />
-            )}
-          </div>
+          <SettingsContext.Consumer>
+            {context => {
+              return (
+                context.visKoder && (
+                  <div style={{ position: 'absolute', right: 8, bottom: 8 }}>
+                    {kode.length > 3 && (
+                      <Chip
+                        avatar={
+                          !avatar && (
+                            <Avatar
+                              style={{
+                                backgroundColor: farger[prefix],
+                                color: 'white',
+                              }}
+                            >
+                              {prefix}
+                            </Avatar>
+                          )
+                        }
+                        label={kode.substring(3)}
+                      />
+                    )}
+                  </div>
+                )
+              )
+            }}
+          </SettingsContext.Consumer>
         </ListItem>
       </div>
       <Divider />

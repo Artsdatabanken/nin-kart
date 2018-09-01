@@ -114,7 +114,7 @@ class Kodekort extends React.Component {
             }}
             message={
               <span>
-                Kartlag <b>{kode}</b> aktiveres
+                Aktiverer <b>{språk(tittel)}</b>
               </span>
             }
             action={[

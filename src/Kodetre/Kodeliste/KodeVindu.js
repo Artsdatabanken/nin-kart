@@ -1,6 +1,7 @@
 import { List } from '@material-ui/core'
 import React from 'react'
 import FetchContainer from '../../FetchContainer'
+import { SettingsContext } from '../../SettingsContext'
 import språk from '../../språk'
 import Graf from './Graf'
 import Kodekort from './Kodekort'
@@ -44,18 +45,23 @@ class KodeVindu extends React.Component {
                   geometrierVindu={props.data.antallNaturomrader}
                 />
               )}
-              <Kodeliste
-                title={`Innhold`}
-                størsteAreal={props.data.størsteAreal}
-                apidata={props.data ? props.data.barn : []}
-                metadata={props.meta.barn}
-                onGoToCode={props.onGoToCode}
-                onMouseEnter={props.onMouseEnter}
-                onMouseLeave={props.onMouseLeave}
-                opplystKode={props.opplystKode}
-                language={props.language}
-                avatarUtenRamme={avatarUtenRamme}
-              />
+              <SettingsContext.Consumer>
+                {context => (
+                  <Kodeliste
+                    title={`Innhold`}
+                    størsteAreal={props.data.størsteAreal}
+                    apidata={props.data ? props.data.barn : []}
+                    metadata={props.meta.barn}
+                    onGoToCode={props.onGoToCode}
+                    onMouseEnter={props.onMouseEnter}
+                    onMouseLeave={props.onMouseLeave}
+                    opplystKode={props.opplystKode}
+                    language={props.language}
+                    avatarUtenRamme={avatarUtenRamme}
+                    visKode={context.visKoder}
+                  />
+                )}
+              </SettingsContext.Consumer>
               {props.meta.graf && (
                 <Graf
                   graf={props.meta.graf}
