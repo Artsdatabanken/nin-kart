@@ -12,6 +12,7 @@ const Kodeliste = ({
   onMouseLeave,
   opplystKode,
   avatarUtenRamme,
+  visKode,
 }) => {
   if (!metadata) return null
   return (
@@ -45,6 +46,7 @@ const Kodeliste = ({
             størsteAreal={størsteAreal}
             {...apibarn}
             kode={kode}
+            visKode={visKode}
             meta={metabarnet}
             onGoToCode={onGoToCode}
             onMouseEnter={onMouseEnter}

@@ -2,6 +2,7 @@ import { Button, List, ListSubheader } from '@material-ui/core'
 import MapsLayers from '@material-ui/icons/Layers'
 import React from 'react'
 import { withRouter } from 'react-router'
+import { SettingsContext } from '../SettingsContext'
 import BakgrunnskartElement from './BakgrunnskartElement'
 import PolygonlagElement from './PolygonlagElement'
 import TerrenglagElement from './TerrenglagElement'
@@ -14,9 +15,14 @@ class AktiveKartlag extends React.Component {
       <div style={{ ...style }}>
         <List>
           <ListSubheader>Mine kartlag</ListSubheader>
-          {koder.map(forelder => {
-            return listeElement(forelder, this.props)
-          })}
+          <SettingsContext.Consumer>
+            {context =>
+              koder.map(forelder => {
+                return listeElement(forelder, this.props, context.visKoder)
+              })
+            }
+          </SettingsContext.Consumer>
+
           <Button
             variant="outlined"
             icon={<MapsLayers />}
@@ -44,7 +50,7 @@ function finnType(kode) {
   }
 }
 
-function listeElement(forelder, props) {
+function listeElement(forelder, props, visKoder) {
   const kode = forelder.kode
   const {
     history,
@@ -65,6 +71,7 @@ function listeElement(forelder, props) {
       {...forelder}
       {...subProps}
       key={kode}
+      visKoder={visKoder}
       onClick={() => {
         onMouseLeave()
         history.push('/lag/' + kode)

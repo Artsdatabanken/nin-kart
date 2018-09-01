@@ -4,6 +4,7 @@ import React from 'react'
 import { withRouter } from 'react-router'
 import backend from '../backend'
 import Kart from '../Kart'
+import { SettingsContext } from '../SettingsContext'
 import språk from '../språk'
 import VenstreVinduContainer from '../VenstreVinduContainer'
 import MainDrawer from './MainDrawer'
@@ -16,6 +17,7 @@ type State = {
   fitBounds: Object,
   actualBounds: Object,
   opplystKode: string,
+  visKoder: boolean,
 }
 
 type Props = {
@@ -55,6 +57,7 @@ class Grunnkart extends React.Component<Props, State> {
       actualBounds: null,
       fitBounds: null,
       meta: null,
+      visKoder: false,
     }
   }
 
@@ -82,6 +85,7 @@ class Grunnkart extends React.Component<Props, State> {
       }
     })
   }
+
   addSelected = props => {
     let koder = this.state.aktiveLag
     const nyttLag = {
@@ -174,7 +178,6 @@ class Grunnkart extends React.Component<Props, State> {
       })
       data.nivå = typesystem.hentNivaa(data.kode).slice(0, 1)
       data.prefiks = data.kode.substring(0, 2)
-      console.log()
       this.setState({ meta: data })
     })
   }
@@ -194,6 +197,11 @@ class Grunnkart extends React.Component<Props, State> {
     this.setState({ aktiveLag: [...aktive] })
   }
 
+  handleUpdateSetting = (key, value) => {
+    console.log({ [key]: value })
+    this.setState({ [key]: value })
+  }
+
   render() {
     let erAktivert = false
     if (this.state.meta)
@@ -201,12 +209,14 @@ class Grunnkart extends React.Component<Props, State> {
         vk => vk.kode === this.state.meta.kode
       )
     return (
-      <div>
+      <SettingsContext.Provider value={{ visKoder: this.state.visKoder }}>
         <MainDrawer
           erÅpen={this.state.showMainDrawer}
           toggleDrawer={() =>
             this.setState({ showMainDrawer: !this.state.showMainDrawer })
           }
+          visKoder={this.state.visKoder}
+          onUpdateSetting={this.handleUpdateSetting}
         />
 
         <VenstreVinduContainer
@@ -236,7 +246,7 @@ class Grunnkart extends React.Component<Props, State> {
           meta={this.state.meta}
           onMapBoundsChange={this.handleActualBoundsChange}
         />
-      </div>
+      </SettingsContext.Provider>
     )
   }
 
