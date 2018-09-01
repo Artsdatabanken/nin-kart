@@ -12,7 +12,12 @@ class Borring extends Component {
           const node = innhold.barn[kode]
           const r = oppsummer(node)
           return (
-            <Listeelement kode={r.kode} primary={r.verdi} secondary={r.nivå} />
+            <Listeelement
+              key={r.kode}
+              kode={r.kode}
+              primary={r.verdi}
+              secondary={r.nivå}
+            />
           )
         })}
       </React.Fragment>
@@ -23,7 +28,6 @@ class Borring extends Component {
 function oppsummer(node) {
   let r = {}
   oppsummer2(node, r)
-  console.log(r)
   return r
 }
 
