@@ -215,7 +215,6 @@ class Grunnkart extends React.Component<Props, State> {
       <React.Fragment>
         <SettingsContext.Consumer>
           {context => {
-            console.log('context', context)
             return (
               <MainDrawer
                 erÅpen={this.state.showMainDrawer}

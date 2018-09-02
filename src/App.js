@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import './App.css'
 import Grunnkart from './Grunnkart/Grunnkart'
-import { SettingsContext } from './SettingsContext'
+import SettingsContainer from './SettingsContainer'
 
 const theme = createMuiTheme({
   palette: {
@@ -33,17 +33,9 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={theme}>
         <BrowserRouter>
-          <SettingsContext.Provider
-            value={{
-              visKoder: this.state.visKoder,
-              updateValue: (key, value) => {
-                this.setState({ [key]: value })
-                localStorage.setItem(key, value)
-              },
-            }}
-          >
+          <SettingsContainer>
             <Grunnkart />
-          </SettingsContext.Provider>
+          </SettingsContainer>
         </BrowserRouter>
       </MuiThemeProvider>
     )

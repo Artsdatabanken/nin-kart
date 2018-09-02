@@ -1,3 +1,5 @@
+import tinycolor from 'tinycolor2'
+
 const farger = {
   AO: 'hsl(0, 0%, 50%)',
   BS: 'hsl(240, 40%, 50%)',

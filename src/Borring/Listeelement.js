@@ -12,7 +12,6 @@ import farger from '../farger'
 import { SettingsContext } from '../SettingsContext'
 
 const Listeelement = ({ kode, primary, secondary, history, geom_id }) => {
-  console.log(geom_id)
   const prefix = kode.substring(0, 2)
   const farge = farger[prefix]
   const bgFarge = tinycolor(farge)
