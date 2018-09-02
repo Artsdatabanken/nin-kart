@@ -41,7 +41,6 @@ const Statistikk = ({
               <a
                 target="top"
                 rel="noopener"
-                xstyle={{ color: 'rgba(0,0,0,0.87)' }}
                 className={classes.color}
                 href={infoUrl}
               >
