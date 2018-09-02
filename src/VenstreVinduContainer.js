@@ -4,9 +4,10 @@ import { withRouter } from 'react-router'
 import { Route, Switch } from 'react-router-dom'
 import AktiveKartlag from './AktiveKartlag'
 import backend from './backend'
+import BorreContainer from './Borring/BorreContainer'
 import KodeContainer from './Kodetre/Kodeliste/KodeContainer'
 import ResultatListe from './Kodetre/Kodeliste/ResultatListe'
-import BorreContainer from './Borring/BorreContainer'
+import SpesifiktObjekt from './SpesifiktObjekt'
 import språk from './språk'
 import TopBar from './TopBar/TopBar'
 import TweakContainer from './Tweaks/TweakContainer'
@@ -169,6 +170,15 @@ class VenstreVinduContainer extends React.Component {
                   <BorreContainer
                     lng={match.params.lng}
                     lat={match.params.lat}
+                  />
+                )}
+              />
+              <Route
+                path="/detaljer/:prefiks/:geom_id"
+                render={({ match, history }) => (
+                  <SpesifiktObjekt
+                    prefiks={match.params.prefiks}
+                    geom_id={match.params.geom_id}
                   />
                 )}
               />

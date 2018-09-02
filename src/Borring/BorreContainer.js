@@ -37,8 +37,9 @@ class BorreContainer extends Component {
       s.kode = kode
       prev.tittel = node.key
       s.tittel = node.value
+      if (node.ids && node.ids.length > 0) s.geom_id = node.ids[0]
     })
-
+    console.log(r)
     return r
   }
 
@@ -100,4 +101,3 @@ class BorreContainer extends Component {
 }
 
 export default BorreContainer
-// http://test.artsdatabanken.no/data/json/ninMetadata/5DBB745C-9E51-4450-A66F-5F8F4033464D.json

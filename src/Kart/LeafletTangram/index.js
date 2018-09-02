@@ -60,6 +60,11 @@ class LeafletTangram extends React.Component {
     L.DomUtil.addClass(map._container, 'crosshair-cursor-enabled')
     this.map = map
     this.updateMap(this.props)
+    this.icon = L.icon({
+      iconUrl: '/marker.png',
+      iconSize: [0.5 * 53, 0.5 * 53],
+      iconAnchor: [0.5 * 0.5 * 53, 0.5 * 0.5 * 53],
+    })
   }
 
   erEndret(prevProps) {
@@ -91,7 +96,7 @@ class LeafletTangram extends React.Component {
   handleClick = e => {
     const latlng = e.leaflet_event.latlng
     this.removeMarker()
-    this.marker = L.marker([latlng.lat, latlng.lng])
+    this.marker = L.marker([latlng.lat, latlng.lng], { icon: this.icon })
     this.map.addLayer(this.marker)
     this.props.onClick(latlng)
   }
