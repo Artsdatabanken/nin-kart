@@ -17,6 +17,7 @@ class Borring extends Component {
               kode={r.kode}
               primary={r.verdi}
               secondary={r.nivå}
+              geom_id={r.geom_id}
             />
           )
         })}
@@ -35,6 +36,7 @@ function oppsummer2(node, r) {
   if (!node.barn) {
     r.verdi = node.tittel
     r.kode = node.kode
+    r.geom_id = node.geom_id
     return
   }
 
