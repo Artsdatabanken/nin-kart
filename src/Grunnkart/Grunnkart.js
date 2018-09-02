@@ -199,6 +199,9 @@ class Grunnkart extends React.Component<Props, State> {
 
   handleUpdateSetting = (key, value) => {
     console.log({ [key]: value })
+
+    console.log('_', this.props)
+    console.log(this.context)
     this.setState({ [key]: value })
   }
 
@@ -209,15 +212,22 @@ class Grunnkart extends React.Component<Props, State> {
         vk => vk.kode === this.state.meta.kode
       )
     return (
-      <SettingsContext.Provider value={{ visKoder: this.state.visKoder }}>
-        <MainDrawer
-          erÅpen={this.state.showMainDrawer}
-          toggleDrawer={() =>
-            this.setState({ showMainDrawer: !this.state.showMainDrawer })
-          }
-          visKoder={this.state.visKoder}
-          onUpdateSetting={this.handleUpdateSetting}
-        />
+      <React.Fragment>
+        <SettingsContext.Consumer>
+          {context => {
+            console.log('context', context)
+            return (
+              <MainDrawer
+                erÅpen={this.state.showMainDrawer}
+                toggleDrawer={() =>
+                  this.setState({ showMainDrawer: !this.state.showMainDrawer })
+                }
+                visKoder={context.visKoder}
+                onUpdateSetting={context.updateValue}
+              />
+            )
+          }}
+        </SettingsContext.Consumer>
 
         <VenstreVinduContainer
           aktiveLag={this.state.aktiveLag}
@@ -246,7 +256,7 @@ class Grunnkart extends React.Component<Props, State> {
           meta={this.state.meta}
           onMapBoundsChange={this.handleActualBoundsChange}
         />
-      </SettingsContext.Provider>
+      </React.Fragment>
     )
   }
 
