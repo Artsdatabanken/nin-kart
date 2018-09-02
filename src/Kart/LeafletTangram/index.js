@@ -62,8 +62,8 @@ class LeafletTangram extends React.Component {
     this.updateMap(this.props)
     this.icon = L.icon({
       iconUrl: '/marker.png',
-      iconSize: [0.5 * 53, 0.5 * 53],
-      iconAnchor: [0.5 * 0.5 * 53, 0.5 * 0.5 * 53],
+      iconSize: [26.5, 26.5],
+      iconAnchor: [13.25, 13.25],
     })
   }
 

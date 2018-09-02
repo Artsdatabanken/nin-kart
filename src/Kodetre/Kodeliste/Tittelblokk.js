@@ -21,20 +21,18 @@ type Props = {
 
 const styles = {
   block: {
-    _backgroundColor: '#4a8',
     padding: '16px 24px 20px',
   },
   h1: {
-    color: '#fff',
+    color: '#eee',
     marginTop: 0,
     marginBottom: 0,
-    xfontSize: 18,
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     width: '100%',
   },
   nivå: {
-    color: '#fff',
+    color: '#eee',
     textTransform: 'capitalize',
   },
 }
@@ -52,7 +50,10 @@ const Tittelblokk = ({
   theme,
 }: Props) => {
   return (
-    <div className={classes.block} style={{ backgroundColor: farger[prefiks] }}>
+    <div
+      className={classes.block}
+      style={{ backgroundColor: farger.mørk[prefiks] }}
+    >
       {false && (
         <div
           style={{ position: 'relative', top: -72, right: -10, float: 'right' }}

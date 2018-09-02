@@ -1,13 +1,29 @@
 import { List, ListItem, ListItemText, ListSubheader } from '@material-ui/core'
+import { withStyles } from '@material-ui/core/styles'
 import { Component, default as React } from 'react'
-import { withRouter } from 'react-router'
+
+const styles = {
+  li: {
+    fontSize: 13,
+    color: 'rgba(0,0,0,0.87)',
+    paddingLeft: 16,
+  },
+}
 
 class NA extends Component {
   render() {
-    const { codes, onClick, ...om } = this.props
+    const { classes, description, codes, onClick, ...om } = this.props
     return (
       <React.Fragment>
         <List>
+          {description && (
+            <ListItem>
+              <ListItemText
+                classes={{ primary: classes.li }}
+                primary={description}
+              />
+            </ListItem>
+          )}
           <ListSubheader>Naturtyper</ListSubheader>
           {codes &&
             Object.keys(codes).map(kode => {
@@ -55,13 +71,8 @@ const Eier = props => (
   </React.Fragment>
 )
 
-const Prosjekt = ({ prosjekt, program, målestokk, beskrivelse }) => (
+const Prosjekt = ({ prosjekt, program, målestokk }) => (
   <React.Fragment>
-    {beskrivelse && (
-      <ListItem>
-        <ListItemText primary={beskrivelse} />
-      </ListItem>
-    )}
     <ListItem>
       <ListItemText primary={målestokk} secondary="Kartlagt i målestokk" />
     </ListItem>
@@ -89,10 +100,9 @@ const Om = props => (
         prosjekt={props.project}
         program={props.program}
         målestokk={props.surveyScale}
-        beskrivelse={props.description}
       />
     )}
   </React.Fragment>
 )
 
-export default withRouter(NA)
+export default withStyles(styles)(NA)

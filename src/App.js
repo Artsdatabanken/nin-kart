@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import './App.css'
 import Grunnkart from './Grunnkart/Grunnkart'
+import SettingsContainer from './SettingsContainer'
 
 const theme = createMuiTheme({
   palette: {
@@ -23,11 +24,18 @@ const theme = createMuiTheme({
 })
 
 class App extends Component {
+  state = { visKoder: false }
+  componentDidMount() {
+    this.setState({ visKoder: localStorage.getItem('visKoder') === 'true' })
+  }
+
   render() {
     return (
       <MuiThemeProvider theme={theme}>
         <BrowserRouter>
-          <Grunnkart />
+          <SettingsContainer>
+            <Grunnkart />
+          </SettingsContainer>
         </BrowserRouter>
       </MuiThemeProvider>
     )

@@ -39,7 +39,6 @@ class BorreContainer extends Component {
       s.tittel = node.value
       if (node.ids && node.ids.length > 0) s.geom_id = node.ids[0]
     })
-    console.log(r)
     return r
   }
 
@@ -94,7 +93,7 @@ class BorreContainer extends Component {
           {parseFloat(this.props.lng).toFixed(4)}° Ø
         </ListSubheader>
         {false && <Mockup />}
-        {this.state.borrehull && <Borring innhold={this.state.borrehull} />}
+        {this.state.borrehull && <Borring barn={this.state.borrehull.barn} />}
       </List>
     )
   }

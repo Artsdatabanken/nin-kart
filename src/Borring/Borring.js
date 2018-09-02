@@ -5,11 +5,12 @@ import Listeelement from './Listeelement'
 
 class Borring extends Component {
   render() {
-    const { innhold } = this.props
+    const { barn } = this.props
+    if (!barn) return null
     return (
       <React.Fragment>
-        {Object.keys(innhold.barn).map(kode => {
-          const node = innhold.barn[kode]
+        {Object.keys(barn).map(kode => {
+          const node = barn[kode]
           const r = oppsummer(node)
           return (
             <Listeelement
