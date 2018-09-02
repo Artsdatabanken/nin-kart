@@ -113,13 +113,13 @@ exports[`Storyshots Aktive kartlag default 1`] = `
 exports[`Storyshots App Bar down into tree 1`] = `
 <div>
   <header
-    className="MuiPaper-root-838 MuiPaper-elevation4-844 MuiAppBar-root-830 MuiAppBar-positionSticky-833 MuiAppBar-colorPrimary-836 TopBar-root-826"
+    className="MuiPaper-root-520 MuiPaper-elevation4-526 MuiAppBar-root-512 MuiAppBar-positionSticky-515 MuiAppBar-colorPrimary-518 TopBar-root-508"
   >
     <div
-      className="MuiToolbar-root-865 MuiToolbar-dense-868 MuiToolbar-gutters-866 TopBar-toolbar-827"
+      className="MuiToolbar-root-547 MuiToolbar-dense-550 MuiToolbar-gutters-548 TopBar-toolbar-509"
     >
       <button
-        className="MuiButtonBase-root-875 MuiIconButton-root-869 TopBar-darkButton-828"
+        className="MuiButtonBase-root-557 MuiIconButton-root-551 TopBar-darkButton-510"
         disabled={false}
         onBlur={[Function]}
         onFocus={[Function]}
@@ -135,11 +135,11 @@ exports[`Storyshots App Bar down into tree 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-874"
+          className="MuiIconButton-label-556"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-878"
+            className="MuiSvgIcon-root-560"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -153,14 +153,14 @@ exports[`Storyshots App Bar down into tree 1`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-885"
+          className="MuiTouchRipple-root-567"
         />
       </button>
       <div
-        className="MuiInput-root-892 MuiInput-fullWidth-899"
+        className="MuiInput-root-574 MuiInput-fullWidth-581"
       >
         <input
-          className="MuiInput-input-900"
+          className="MuiInput-input-582"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -171,7 +171,7 @@ exports[`Storyshots App Bar down into tree 1`] = `
         />
       </div>
       <button
-        className="MuiButtonBase-root-875 MuiIconButton-root-869 TopBar-lightButton-829"
+        className="MuiButtonBase-root-557 MuiIconButton-root-551 TopBar-lightButton-511"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -188,11 +188,11 @@ exports[`Storyshots App Bar down into tree 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-874"
+          className="MuiIconButton-label-556"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-878"
+            className="MuiSvgIcon-root-560"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -206,11 +206,11 @@ exports[`Storyshots App Bar down into tree 1`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-885"
+          className="MuiTouchRipple-root-567"
         />
       </button>
       <button
-        className="MuiButtonBase-root-875 MuiIconButton-root-869 TopBar-lightButton-829"
+        className="MuiButtonBase-root-557 MuiIconButton-root-551 TopBar-lightButton-511"
         disabled={false}
         onBlur={[Function]}
         onFocus={[Function]}
@@ -226,11 +226,11 @@ exports[`Storyshots App Bar down into tree 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-874"
+          className="MuiIconButton-label-556"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-878"
+            className="MuiSvgIcon-root-560"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -244,7 +244,7 @@ exports[`Storyshots App Bar down into tree 1`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-885"
+          className="MuiTouchRipple-root-567"
         />
       </button>
     </div>
@@ -255,13 +255,13 @@ exports[`Storyshots App Bar down into tree 1`] = `
 exports[`Storyshots App Bar root 1`] = `
 <div>
   <header
-    className="MuiPaper-root-759 MuiPaper-elevation4-765 MuiAppBar-root-751 MuiAppBar-positionSticky-754 MuiAppBar-colorPrimary-757 TopBar-root-747"
+    className="MuiPaper-root-441 MuiPaper-elevation4-447 MuiAppBar-root-433 MuiAppBar-positionSticky-436 MuiAppBar-colorPrimary-439 TopBar-root-429"
   >
     <div
-      className="MuiToolbar-root-786 MuiToolbar-dense-789 MuiToolbar-gutters-787 TopBar-toolbar-748"
+      className="MuiToolbar-root-468 MuiToolbar-dense-471 MuiToolbar-gutters-469 TopBar-toolbar-430"
     >
       <button
-        className="MuiButtonBase-root-796 MuiIconButton-root-790 TopBar-darkButton-749"
+        className="MuiButtonBase-root-478 MuiIconButton-root-472 TopBar-darkButton-431"
         disabled={false}
         onBlur={[Function]}
         onFocus={[Function]}
@@ -277,11 +277,11 @@ exports[`Storyshots App Bar root 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-795"
+          className="MuiIconButton-label-477"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-799"
+            className="MuiSvgIcon-root-481"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -295,14 +295,14 @@ exports[`Storyshots App Bar root 1`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-806"
+          className="MuiTouchRipple-root-488"
         />
       </button>
       <div
-        className="MuiInput-root-813 MuiInput-fullWidth-820"
+        className="MuiInput-root-495 MuiInput-fullWidth-502"
       >
         <input
-          className="MuiInput-input-821"
+          className="MuiInput-input-503"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -313,7 +313,7 @@ exports[`Storyshots App Bar root 1`] = `
         />
       </div>
       <button
-        className="MuiButtonBase-root-796 MuiIconButton-root-790 TopBar-lightButton-750"
+        className="MuiButtonBase-root-478 MuiIconButton-root-472 TopBar-lightButton-432"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -330,11 +330,11 @@ exports[`Storyshots App Bar root 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-795"
+          className="MuiIconButton-label-477"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-799"
+            className="MuiSvgIcon-root-481"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -348,11 +348,11 @@ exports[`Storyshots App Bar root 1`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-806"
+          className="MuiTouchRipple-root-488"
         />
       </button>
       <button
-        className="MuiButtonBase-root-796 MuiIconButton-root-790 TopBar-lightButton-750"
+        className="MuiButtonBase-root-478 MuiIconButton-root-472 TopBar-lightButton-432"
         disabled={false}
         onBlur={[Function]}
         onFocus={[Function]}
@@ -368,11 +368,11 @@ exports[`Storyshots App Bar root 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-795"
+          className="MuiIconButton-label-477"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-799"
+            className="MuiSvgIcon-root-481"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -386,7 +386,7 @@ exports[`Storyshots App Bar root 1`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-806"
+          className="MuiTouchRipple-root-488"
         />
       </button>
     </div>
@@ -406,227 +406,14 @@ exports[`Storyshots Borring default 1`] = `
         "width": 408,
       }
     }
-  >
-    <div
-      style={
-        Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.3) 0%, hsla(240, 40%, 90%, 0.95) 50%), url(\\"/kode/BS_6SO-5.jpg\\")",
-          "height": "100%",
-          "objectFit": "cover",
-          "width": "100%",
-        }
-      }
-    >
-      <div
-        className="MuiButtonBase-root-174 MuiListItem-root-163 MuiListItem-default-166 MuiListItem-gutters-170 MuiListItem-button-171"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        <div
-          className="MuiListItemText-root-177"
-          style={
-            Object {
-              "color": "white",
-            }
-          }
-        >
-          <span
-            className="MuiTypography-root-183 MuiTypography-subheading-190 MuiListItemText-primary-180"
-          >
-            Lavalpin sone (la)
-          </span>
-          <p
-            className="MuiTypography-root-183 MuiTypography-body1-192 MuiTypography-colorTextSecondary-206 MuiListItemText-secondary-181"
-          >
-            Bioklimatiske soner
-          </p>
-        </div>
-        <span
-          className="MuiTouchRipple-root-208"
-        />
-      </div>
-    </div>
-    <hr
-      className="MuiDivider-root-215"
-    />
-    <div
-      style={
-        Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.3) 0%, hsla(300, 40%, 90%, 0.95) 50%), url(\\"/kode/VV_261.jpg\\")",
-          "height": "100%",
-          "objectFit": "cover",
-          "width": "100%",
-        }
-      }
-    >
-      <div
-        className="MuiButtonBase-root-174 MuiListItem-root-163 MuiListItem-default-166 MuiListItem-gutters-170 MuiListItem-button-171"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        <div
-          className="MuiListItemText-root-177"
-          style={
-            Object {
-              "color": "white",
-            }
-          }
-        >
-          <span
-            className="MuiTypography-root-183 MuiTypography-subheading-190 MuiListItemText-primary-180"
-          >
-            Børgefjell/Byrkije
-          </span>
-          <p
-            className="MuiTypography-root-183 MuiTypography-body1-192 MuiTypography-colorTextSecondary-206 MuiListItemText-secondary-181"
-          >
-            Naturvernområde
-          </p>
-        </div>
-        <span
-          className="MuiTouchRipple-root-208"
-        />
-      </div>
-    </div>
-    <hr
-      className="MuiDivider-root-215"
-    />
-    <div
-      style={
-        Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.3) 0%, hsla(0, 0%, 90%, 0.95) 50%), url(\\"/kode/AO_18-26.jpg\\")",
-          "height": "100%",
-          "objectFit": "cover",
-          "width": "100%",
-        }
-      }
-    >
-      <div
-        className="MuiButtonBase-root-174 MuiListItem-root-163 MuiListItem-default-166 MuiListItem-gutters-170 MuiListItem-button-171"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        <div
-          className="MuiListItemText-root-177"
-          style={
-            Object {
-              "color": "white",
-            }
-          }
-        >
-          <span
-            className="MuiTypography-root-183 MuiTypography-subheading-190 MuiListItemText-primary-180"
-          >
-            Hattfjelldal
-          </span>
-          <p
-            className="MuiTypography-root-183 MuiTypography-body1-192 MuiTypography-colorTextSecondary-206 MuiListItemText-secondary-181"
-          >
-            Nordland
-          </p>
-        </div>
-        <span
-          className="MuiTouchRipple-root-208"
-        />
-      </div>
-    </div>
-    <hr
-      className="MuiDivider-root-215"
-    />
-    <div
-      style={
-        Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.3) 0%, hsla(32, 40%, 90%, 0.95) 50%), url(\\"/kode/MI_KA-B.jpg\\")",
-          "height": "100%",
-          "objectFit": "cover",
-          "width": "100%",
-        }
-      }
-    >
-      <div
-        className="MuiButtonBase-root-174 MuiListItem-root-163 MuiListItem-default-166 MuiListItem-gutters-170 MuiListItem-button-171"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        <div
-          className="MuiListItemText-root-177"
-          style={
-            Object {
-              "color": "white",
-            }
-          }
-        >
-          <span
-            className="MuiTypography-root-183 MuiTypography-subheading-190 MuiListItemText-primary-180"
-          >
-            Temmelig kalkfattig
-          </span>
-          <p
-            className="MuiTypography-root-183 MuiTypography-body1-192 MuiTypography-colorTextSecondary-206 MuiListItemText-secondary-181"
-          >
-            Kalkinnhold
-          </p>
-        </div>
-        <span
-          className="MuiTouchRipple-root-208"
-        />
-      </div>
-    </div>
-    <hr
-      className="MuiDivider-root-215"
-    />
-  </div>
+  />
 </div>
 `;
 
 exports[`Storyshots ColorPicker default 1`] = `
 <div>
   <li
-    className="MuiListSubheader-root-905 MuiListSubheader-sticky-910 MuiListSubheader-gutters-908"
+    className="MuiListSubheader-root-587 MuiListSubheader-sticky-592 MuiListSubheader-gutters-590"
   />
   <div
     style={
@@ -3916,7 +3703,7 @@ exports[`Storyshots MainDrawer default 1`] = `
 <div>
   <div>
     <div
-      className="SwipeArea-root-289 SwipeArea-anchorLeft-290"
+      className="SwipeArea-root-157 SwipeArea-anchorLeft-158"
       style={
         Object {
           "width": 20,
@@ -4206,10 +3993,10 @@ exports[`Storyshots PolygonlagElement default 1`] = `
     }
   >
     <li
-      className="MuiListItem-container-88"
+      className="MuiListItem-container-12"
     >
       <div
-        className="MuiButtonBase-root-98 MuiListItem-root-87 MuiListItem-default-90 MuiListItem-gutters-94 MuiListItem-button-95 MuiListItem-secondaryAction-96"
+        className="MuiButtonBase-root-22 MuiListItem-root-11 MuiListItem-default-14 MuiListItem-gutters-18 MuiListItem-button-19 MuiListItem-secondaryAction-20"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -4226,10 +4013,10 @@ exports[`Storyshots PolygonlagElement default 1`] = `
         tabIndex="0"
       >
         <span
-          className="MuiSwitch-root-101"
+          className="MuiSwitch-root-25"
         >
           <span
-            className="MuiButtonBase-root-98 MuiIconButton-root-114 MuiSwitchBase-root-110 MuiSwitch-switchBase-104 MuiSwitch-colorSecondary-107 MuiSwitchBase-checked-111 MuiSwitch-checked-105"
+            className="MuiButtonBase-root-22 MuiIconButton-root-38 MuiSwitchBase-root-34 MuiSwitch-switchBase-28 MuiSwitch-colorSecondary-31 MuiSwitchBase-checked-35 MuiSwitch-checked-29"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -4244,41 +4031,41 @@ exports[`Storyshots PolygonlagElement default 1`] = `
             tabIndex={null}
           >
             <span
-              className="MuiIconButton-label-119"
+              className="MuiIconButton-label-43"
             >
               <span
-                className="MuiSwitch-icon-102 MuiSwitch-iconChecked-103"
+                className="MuiSwitch-icon-26 MuiSwitch-iconChecked-27"
               />
               <input
                 checked={true}
-                className="MuiSwitchBase-input-113"
+                className="MuiSwitchBase-input-37"
                 onChange={[Function]}
                 type="checkbox"
               />
             </span>
             <span
-              className="MuiTouchRipple-root-120"
+              className="MuiTouchRipple-root-44"
             />
           </span>
           <span
-            className="MuiSwitch-bar-109"
+            className="MuiSwitch-bar-33"
           />
         </span>
         <div
-          className="MuiListItemText-root-127"
+          className="MuiListItemText-root-51"
         >
           <span
-            className="MuiTypography-root-133 MuiTypography-subheading-140 MuiListItemText-primary-130"
+            className="MuiTypography-root-57 MuiTypography-subheading-64 MuiListItemText-primary-54"
           >
             Trøndelag
           </span>
         </div>
         <span
-          className="MuiTouchRipple-root-120"
+          className="MuiTouchRipple-root-44"
         />
       </div>
       <div
-        className="MuiListItemSecondaryAction-root-158"
+        className="MuiListItemSecondaryAction-root-82"
       >
         <div
           style={
@@ -4321,7 +4108,7 @@ exports[`Storyshots PolygonlagElement default 1`] = `
       </div>
     </li>
     <hr
-      className="MuiDivider-root-159"
+      className="MuiDivider-root-83"
     />
   </div>
 </div>
@@ -4330,10 +4117,10 @@ exports[`Storyshots PolygonlagElement default 1`] = `
 exports[`Storyshots Resultatliste default 1`] = `
 <div>
   <div
-    className="MuiPaper-root-512 MuiPaper-elevation1-515 MuiPaper-rounded-513"
+    className="MuiPaper-root-164 MuiPaper-elevation1-167 MuiPaper-rounded-165"
   >
     <ul
-      className="MuiList-root-539 MuiList-padding-540"
+      className="MuiList-root-225 MuiList-padding-226"
       style={
         Object {
           "overflow": "hidden",
@@ -4341,10 +4128,10 @@ exports[`Storyshots Resultatliste default 1`] = `
       }
     >
       <li
-        className="MuiListItem-container-544"
+        className="MuiListItem-container-232"
       >
         <div
-          className="MuiListItem-root-543 MuiListItem-default-546 MuiListItem-gutters-550 MuiListItem-secondaryAction-552"
+          className="MuiListItem-root-231 MuiListItem-default-234 MuiListItem-gutters-238 MuiListItem-secondaryAction-240"
           disabled={false}
           onClick={[Function]}
           style={
@@ -4355,7 +4142,7 @@ exports[`Storyshots Resultatliste default 1`] = `
           }
         >
           <div
-            className="MuiAvatar-root-554 MuiAvatar-colorDefault-555"
+            className="MuiAvatar-root-260 MuiAvatar-colorDefault-261"
             style={
               Object {
                 "height": 24,
@@ -4369,7 +4156,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             />
           </div>
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
             style={
               Object {
                 "fontSize": 9,
@@ -4381,7 +4168,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             }
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
                
               <span
@@ -4393,13 +4180,13 @@ exports[`Storyshots Resultatliste default 1`] = `
           </div>
         </div>
         <div
-          className="MuiListItemSecondaryAction-root-588"
+          className="MuiListItemSecondaryAction-root-263"
         >
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
               <div
                 style={
@@ -4420,15 +4207,15 @@ exports[`Storyshots Resultatliste default 1`] = `
         </div>
       </li>
       <hr
-        className="MuiDivider-root-589 MuiDivider-inset-591"
+        className="MuiDivider-root-271 MuiDivider-inset-273"
       />
     </ul>
   </div>
   <div
-    className="MuiPaper-root-512 MuiPaper-elevation1-515 MuiPaper-rounded-513"
+    className="MuiPaper-root-164 MuiPaper-elevation1-167 MuiPaper-rounded-165"
   >
     <ul
-      className="MuiList-root-539 MuiList-padding-540"
+      className="MuiList-root-225 MuiList-padding-226"
       style={
         Object {
           "overflow": "hidden",
@@ -4436,10 +4223,10 @@ exports[`Storyshots Resultatliste default 1`] = `
       }
     >
       <li
-        className="MuiListItem-container-544"
+        className="MuiListItem-container-232"
       >
         <div
-          className="MuiListItem-root-543 MuiListItem-default-546 MuiListItem-gutters-550 MuiListItem-secondaryAction-552"
+          className="MuiListItem-root-231 MuiListItem-default-234 MuiListItem-gutters-238 MuiListItem-secondaryAction-240"
           disabled={false}
           onClick={[Function]}
           style={
@@ -4450,7 +4237,7 @@ exports[`Storyshots Resultatliste default 1`] = `
           }
         >
           <div
-            className="MuiAvatar-root-554 MuiAvatar-colorDefault-555"
+            className="MuiAvatar-root-260 MuiAvatar-colorDefault-261"
             style={
               Object {
                 "height": 24,
@@ -4464,7 +4251,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             />
           </div>
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
             style={
               Object {
                 "fontSize": 9,
@@ -4476,7 +4263,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             }
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
                
               <span
@@ -4503,13 +4290,13 @@ exports[`Storyshots Resultatliste default 1`] = `
           </div>
         </div>
         <div
-          className="MuiListItemSecondaryAction-root-588"
+          className="MuiListItemSecondaryAction-root-263"
         >
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
               <div
                 style={
@@ -4530,13 +4317,13 @@ exports[`Storyshots Resultatliste default 1`] = `
         </div>
       </li>
       <hr
-        className="MuiDivider-root-589 MuiDivider-inset-591"
+        className="MuiDivider-root-271 MuiDivider-inset-273"
       />
       <li
-        className="MuiListItem-container-544"
+        className="MuiListItem-container-232"
       >
         <div
-          className="MuiListItem-root-543 MuiListItem-default-546 MuiListItem-gutters-550 MuiListItem-secondaryAction-552"
+          className="MuiListItem-root-231 MuiListItem-default-234 MuiListItem-gutters-238 MuiListItem-secondaryAction-240"
           disabled={false}
           onClick={[Function]}
           style={
@@ -4547,7 +4334,7 @@ exports[`Storyshots Resultatliste default 1`] = `
           }
         >
           <div
-            className="MuiAvatar-root-554 MuiAvatar-colorDefault-555"
+            className="MuiAvatar-root-260 MuiAvatar-colorDefault-261"
             style={
               Object {
                 "height": 24,
@@ -4561,7 +4348,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             />
           </div>
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
             style={
               Object {
                 "fontSize": 9,
@@ -4573,7 +4360,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             }
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
                
               <span
@@ -4600,13 +4387,13 @@ exports[`Storyshots Resultatliste default 1`] = `
           </div>
         </div>
         <div
-          className="MuiListItemSecondaryAction-root-588"
+          className="MuiListItemSecondaryAction-root-263"
         >
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
               <div
                 style={
@@ -4627,13 +4414,13 @@ exports[`Storyshots Resultatliste default 1`] = `
         </div>
       </li>
       <hr
-        className="MuiDivider-root-589 MuiDivider-inset-591"
+        className="MuiDivider-root-271 MuiDivider-inset-273"
       />
       <li
-        className="MuiListItem-container-544"
+        className="MuiListItem-container-232"
       >
         <div
-          className="MuiListItem-root-543 MuiListItem-default-546 MuiListItem-gutters-550 MuiListItem-secondaryAction-552"
+          className="MuiListItem-root-231 MuiListItem-default-234 MuiListItem-gutters-238 MuiListItem-secondaryAction-240"
           disabled={false}
           onClick={[Function]}
           style={
@@ -4644,7 +4431,7 @@ exports[`Storyshots Resultatliste default 1`] = `
           }
         >
           <div
-            className="MuiAvatar-root-554 MuiAvatar-colorDefault-555"
+            className="MuiAvatar-root-260 MuiAvatar-colorDefault-261"
             style={
               Object {
                 "height": 24,
@@ -4658,7 +4445,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             />
           </div>
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
             style={
               Object {
                 "fontSize": 9,
@@ -4670,7 +4457,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             }
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
                
               <span
@@ -4697,13 +4484,13 @@ exports[`Storyshots Resultatliste default 1`] = `
           </div>
         </div>
         <div
-          className="MuiListItemSecondaryAction-root-588"
+          className="MuiListItemSecondaryAction-root-263"
         >
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
               <div
                 style={
@@ -4724,13 +4511,13 @@ exports[`Storyshots Resultatliste default 1`] = `
         </div>
       </li>
       <hr
-        className="MuiDivider-root-589 MuiDivider-inset-591"
+        className="MuiDivider-root-271 MuiDivider-inset-273"
       />
       <li
-        className="MuiListItem-container-544"
+        className="MuiListItem-container-232"
       >
         <div
-          className="MuiListItem-root-543 MuiListItem-default-546 MuiListItem-gutters-550 MuiListItem-secondaryAction-552"
+          className="MuiListItem-root-231 MuiListItem-default-234 MuiListItem-gutters-238 MuiListItem-secondaryAction-240"
           disabled={false}
           onClick={[Function]}
           style={
@@ -4741,7 +4528,7 @@ exports[`Storyshots Resultatliste default 1`] = `
           }
         >
           <div
-            className="MuiAvatar-root-554 MuiAvatar-colorDefault-555"
+            className="MuiAvatar-root-260 MuiAvatar-colorDefault-261"
             style={
               Object {
                 "height": 24,
@@ -4755,7 +4542,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             />
           </div>
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
             style={
               Object {
                 "fontSize": 9,
@@ -4767,7 +4554,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             }
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
                
               <span
@@ -4794,13 +4581,13 @@ exports[`Storyshots Resultatliste default 1`] = `
           </div>
         </div>
         <div
-          className="MuiListItemSecondaryAction-root-588"
+          className="MuiListItemSecondaryAction-root-263"
         >
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
               <div
                 style={
@@ -4821,13 +4608,13 @@ exports[`Storyshots Resultatliste default 1`] = `
         </div>
       </li>
       <hr
-        className="MuiDivider-root-589 MuiDivider-inset-591"
+        className="MuiDivider-root-271 MuiDivider-inset-273"
       />
       <li
-        className="MuiListItem-container-544"
+        className="MuiListItem-container-232"
       >
         <div
-          className="MuiListItem-root-543 MuiListItem-default-546 MuiListItem-gutters-550 MuiListItem-secondaryAction-552"
+          className="MuiListItem-root-231 MuiListItem-default-234 MuiListItem-gutters-238 MuiListItem-secondaryAction-240"
           disabled={false}
           onClick={[Function]}
           style={
@@ -4838,7 +4625,7 @@ exports[`Storyshots Resultatliste default 1`] = `
           }
         >
           <div
-            className="MuiAvatar-root-554 MuiAvatar-colorDefault-555"
+            className="MuiAvatar-root-260 MuiAvatar-colorDefault-261"
             style={
               Object {
                 "height": 24,
@@ -4852,7 +4639,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             />
           </div>
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
             style={
               Object {
                 "fontSize": 9,
@@ -4864,7 +4651,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             }
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
                
               <span
@@ -4891,13 +4678,13 @@ exports[`Storyshots Resultatliste default 1`] = `
           </div>
         </div>
         <div
-          className="MuiListItemSecondaryAction-root-588"
+          className="MuiListItemSecondaryAction-root-263"
         >
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
               <div
                 style={
@@ -4918,13 +4705,13 @@ exports[`Storyshots Resultatliste default 1`] = `
         </div>
       </li>
       <hr
-        className="MuiDivider-root-589 MuiDivider-inset-591"
+        className="MuiDivider-root-271 MuiDivider-inset-273"
       />
       <li
-        className="MuiListItem-container-544"
+        className="MuiListItem-container-232"
       >
         <div
-          className="MuiListItem-root-543 MuiListItem-default-546 MuiListItem-gutters-550 MuiListItem-secondaryAction-552"
+          className="MuiListItem-root-231 MuiListItem-default-234 MuiListItem-gutters-238 MuiListItem-secondaryAction-240"
           disabled={false}
           onClick={[Function]}
           style={
@@ -4935,7 +4722,7 @@ exports[`Storyshots Resultatliste default 1`] = `
           }
         >
           <div
-            className="MuiAvatar-root-554 MuiAvatar-colorDefault-555"
+            className="MuiAvatar-root-260 MuiAvatar-colorDefault-261"
             style={
               Object {
                 "height": 24,
@@ -4949,7 +4736,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             />
           </div>
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
             style={
               Object {
                 "fontSize": 9,
@@ -4961,7 +4748,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             }
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
                
               <span
@@ -4988,13 +4775,13 @@ exports[`Storyshots Resultatliste default 1`] = `
           </div>
         </div>
         <div
-          className="MuiListItemSecondaryAction-root-588"
+          className="MuiListItemSecondaryAction-root-263"
         >
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
               <div
                 style={
@@ -5015,13 +4802,13 @@ exports[`Storyshots Resultatliste default 1`] = `
         </div>
       </li>
       <hr
-        className="MuiDivider-root-589 MuiDivider-inset-591"
+        className="MuiDivider-root-271 MuiDivider-inset-273"
       />
       <li
-        className="MuiListItem-container-544"
+        className="MuiListItem-container-232"
       >
         <div
-          className="MuiListItem-root-543 MuiListItem-default-546 MuiListItem-gutters-550 MuiListItem-secondaryAction-552"
+          className="MuiListItem-root-231 MuiListItem-default-234 MuiListItem-gutters-238 MuiListItem-secondaryAction-240"
           disabled={false}
           onClick={[Function]}
           style={
@@ -5032,7 +4819,7 @@ exports[`Storyshots Resultatliste default 1`] = `
           }
         >
           <div
-            className="MuiAvatar-root-554 MuiAvatar-colorDefault-555"
+            className="MuiAvatar-root-260 MuiAvatar-colorDefault-261"
             style={
               Object {
                 "height": 24,
@@ -5046,7 +4833,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             />
           </div>
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
             style={
               Object {
                 "fontSize": 9,
@@ -5058,7 +4845,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             }
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
                
               <span
@@ -5085,13 +4872,13 @@ exports[`Storyshots Resultatliste default 1`] = `
           </div>
         </div>
         <div
-          className="MuiListItemSecondaryAction-root-588"
+          className="MuiListItemSecondaryAction-root-263"
         >
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
               <div
                 style={
@@ -5112,13 +4899,13 @@ exports[`Storyshots Resultatliste default 1`] = `
         </div>
       </li>
       <hr
-        className="MuiDivider-root-589 MuiDivider-inset-591"
+        className="MuiDivider-root-271 MuiDivider-inset-273"
       />
       <li
-        className="MuiListItem-container-544"
+        className="MuiListItem-container-232"
       >
         <div
-          className="MuiListItem-root-543 MuiListItem-default-546 MuiListItem-gutters-550 MuiListItem-secondaryAction-552"
+          className="MuiListItem-root-231 MuiListItem-default-234 MuiListItem-gutters-238 MuiListItem-secondaryAction-240"
           disabled={false}
           onClick={[Function]}
           style={
@@ -5129,7 +4916,7 @@ exports[`Storyshots Resultatliste default 1`] = `
           }
         >
           <div
-            className="MuiAvatar-root-554 MuiAvatar-colorDefault-555"
+            className="MuiAvatar-root-260 MuiAvatar-colorDefault-261"
             style={
               Object {
                 "height": 24,
@@ -5143,7 +4930,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             />
           </div>
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
             style={
               Object {
                 "fontSize": 9,
@@ -5155,7 +4942,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             }
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
                
               <span
@@ -5182,13 +4969,13 @@ exports[`Storyshots Resultatliste default 1`] = `
           </div>
         </div>
         <div
-          className="MuiListItemSecondaryAction-root-588"
+          className="MuiListItemSecondaryAction-root-263"
         >
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
               <div
                 style={
@@ -5209,13 +4996,13 @@ exports[`Storyshots Resultatliste default 1`] = `
         </div>
       </li>
       <hr
-        className="MuiDivider-root-589 MuiDivider-inset-591"
+        className="MuiDivider-root-271 MuiDivider-inset-273"
       />
       <li
-        className="MuiListItem-container-544"
+        className="MuiListItem-container-232"
       >
         <div
-          className="MuiListItem-root-543 MuiListItem-default-546 MuiListItem-gutters-550 MuiListItem-secondaryAction-552"
+          className="MuiListItem-root-231 MuiListItem-default-234 MuiListItem-gutters-238 MuiListItem-secondaryAction-240"
           disabled={false}
           onClick={[Function]}
           style={
@@ -5226,7 +5013,7 @@ exports[`Storyshots Resultatliste default 1`] = `
           }
         >
           <div
-            className="MuiAvatar-root-554 MuiAvatar-colorDefault-555"
+            className="MuiAvatar-root-260 MuiAvatar-colorDefault-261"
             style={
               Object {
                 "height": 24,
@@ -5240,7 +5027,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             />
           </div>
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
             style={
               Object {
                 "fontSize": 9,
@@ -5252,7 +5039,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             }
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
                
               <span
@@ -5279,13 +5066,13 @@ exports[`Storyshots Resultatliste default 1`] = `
           </div>
         </div>
         <div
-          className="MuiListItemSecondaryAction-root-588"
+          className="MuiListItemSecondaryAction-root-263"
         >
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
               <div
                 style={
@@ -5306,13 +5093,13 @@ exports[`Storyshots Resultatliste default 1`] = `
         </div>
       </li>
       <hr
-        className="MuiDivider-root-589 MuiDivider-inset-591"
+        className="MuiDivider-root-271 MuiDivider-inset-273"
       />
       <li
-        className="MuiListItem-container-544"
+        className="MuiListItem-container-232"
       >
         <div
-          className="MuiListItem-root-543 MuiListItem-default-546 MuiListItem-gutters-550 MuiListItem-secondaryAction-552"
+          className="MuiListItem-root-231 MuiListItem-default-234 MuiListItem-gutters-238 MuiListItem-secondaryAction-240"
           disabled={false}
           onClick={[Function]}
           style={
@@ -5323,7 +5110,7 @@ exports[`Storyshots Resultatliste default 1`] = `
           }
         >
           <div
-            className="MuiAvatar-root-554 MuiAvatar-colorDefault-555"
+            className="MuiAvatar-root-260 MuiAvatar-colorDefault-261"
             style={
               Object {
                 "height": 24,
@@ -5337,7 +5124,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             />
           </div>
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
             style={
               Object {
                 "fontSize": 9,
@@ -5349,7 +5136,7 @@ exports[`Storyshots Resultatliste default 1`] = `
             }
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
                
               <span
@@ -5376,13 +5163,13 @@ exports[`Storyshots Resultatliste default 1`] = `
           </div>
         </div>
         <div
-          className="MuiListItemSecondaryAction-root-588"
+          className="MuiListItemSecondaryAction-root-263"
         >
           <div
-            className="MuiListItemText-root-557"
+            className="MuiListItemText-root-242"
           >
             <span
-              className="MuiTypography-root-563 MuiTypography-subheading-570 MuiListItemText-primary-560"
+              className="MuiTypography-root-196 MuiTypography-subheading-203 MuiListItemText-primary-245"
             >
               <div
                 style={
@@ -5403,7 +5190,7 @@ exports[`Storyshots Resultatliste default 1`] = `
         </div>
       </li>
       <hr
-        className="MuiDivider-root-589 MuiDivider-inset-591"
+        className="MuiDivider-root-271 MuiDivider-inset-273"
       />
     </ul>
   </div>
@@ -5413,10 +5200,10 @@ exports[`Storyshots Resultatliste default 1`] = `
 exports[`Storyshots SearchBox default 1`] = `
 <div>
   <div
-    className="MuiInput-root-672 MuiInput-fullWidth-679"
+    className="MuiInput-root-354 MuiInput-fullWidth-361"
   >
     <input
-      className="MuiInput-input-680"
+      className="MuiInput-input-362"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -5439,15 +5226,15 @@ exports[`Storyshots Spesifikt område NA 1`] = `
     }
   >
     <ul
-      className="MuiList-root-685 MuiList-padding-686"
+      className="MuiList-root-367 MuiList-padding-368"
     >
       <li
-        className="MuiListSubheader-root-689 MuiListSubheader-sticky-694 MuiListSubheader-gutters-692"
+        className="MuiListSubheader-root-371 MuiListSubheader-sticky-376 MuiListSubheader-gutters-374"
       >
         Naturtyper
       </li>
       <div
-        className="MuiButtonBase-root-706 MuiListItem-root-695 MuiListItem-default-698 MuiListItem-gutters-702 MuiListItem-button-703"
+        className="MuiButtonBase-root-388 MuiListItem-root-377 MuiListItem-default-380 MuiListItem-gutters-384 MuiListItem-button-385"
         onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -5462,25 +5249,25 @@ exports[`Storyshots Spesifikt område NA 1`] = `
         tabIndex="0"
       >
         <div
-          className="MuiListItemText-root-709"
+          className="MuiListItemText-root-391"
         >
           <span
-            className="MuiTypography-root-715 MuiTypography-subheading-722 MuiListItemText-primary-712"
+            className="MuiTypography-root-397 MuiTypography-subheading-404 MuiListItemText-primary-394"
           >
             80% Åker
           </span>
           <p
-            className="MuiTypography-root-715 MuiTypography-body1-724 MuiTypography-colorTextSecondary-738 MuiListItemText-secondary-713"
+            className="MuiTypography-root-397 MuiTypography-body1-406 MuiTypography-colorTextSecondary-420 MuiListItemText-secondary-395"
           >
             NA_T44
           </p>
         </div>
         <span
-          className="MuiTouchRipple-root-740"
+          className="MuiTouchRipple-root-422"
         />
       </div>
       <div
-        className="MuiButtonBase-root-706 MuiListItem-root-695 MuiListItem-default-698 MuiListItem-gutters-702 MuiListItem-button-703"
+        className="MuiButtonBase-root-388 MuiListItem-root-377 MuiListItem-default-380 MuiListItem-gutters-384 MuiListItem-button-385"
         onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -5495,25 +5282,25 @@ exports[`Storyshots Spesifikt område NA 1`] = `
         tabIndex="0"
       >
         <div
-          className="MuiListItemText-root-709"
+          className="MuiListItemText-root-391"
         >
           <span
-            className="MuiTypography-root-715 MuiTypography-subheading-722 MuiListItemText-primary-712"
+            className="MuiTypography-root-397 MuiTypography-subheading-404 MuiListItemText-primary-394"
           >
             10% Sterkt endret og ny fastmark i langsom suksesjon
           </span>
           <p
-            className="MuiTypography-root-715 MuiTypography-body1-724 MuiTypography-colorTextSecondary-738 MuiListItemText-secondary-713"
+            className="MuiTypography-root-397 MuiTypography-body1-406 MuiTypography-colorTextSecondary-420 MuiListItemText-secondary-395"
           >
             NA_T39
           </p>
         </div>
         <span
-          className="MuiTouchRipple-root-740"
+          className="MuiTouchRipple-root-422"
         />
       </div>
       <div
-        className="MuiButtonBase-root-706 MuiListItem-root-695 MuiListItem-default-698 MuiListItem-gutters-702 MuiListItem-button-703"
+        className="MuiButtonBase-root-388 MuiListItem-root-377 MuiListItem-default-380 MuiListItem-gutters-384 MuiListItem-button-385"
         onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -5528,61 +5315,61 @@ exports[`Storyshots Spesifikt område NA 1`] = `
         tabIndex="0"
       >
         <div
-          className="MuiListItemText-root-709"
+          className="MuiListItemText-root-391"
         >
           <span
-            className="MuiTypography-root-715 MuiTypography-subheading-722 MuiListItemText-primary-712"
+            className="MuiTypography-root-397 MuiTypography-subheading-404 MuiListItemText-primary-394"
           >
             10% Treplantasje
           </span>
           <p
-            className="MuiTypography-root-715 MuiTypography-body1-724 MuiTypography-colorTextSecondary-738 MuiListItemText-secondary-713"
+            className="MuiTypography-root-397 MuiTypography-body1-406 MuiTypography-colorTextSecondary-420 MuiListItemText-secondary-395"
           >
             NA_T38
           </p>
         </div>
         <span
-          className="MuiTouchRipple-root-740"
+          className="MuiTouchRipple-root-422"
         />
       </div>
       <li
-        className="MuiListSubheader-root-689 MuiListSubheader-sticky-694 MuiListSubheader-gutters-692"
+        className="MuiListSubheader-root-371 MuiListSubheader-sticky-376 MuiListSubheader-gutters-374"
       >
         Om kartleggingen
       </li>
       <li
-        className="MuiListItem-root-695 MuiListItem-default-698 MuiListItem-gutters-702"
+        className="MuiListItem-root-377 MuiListItem-default-380 MuiListItem-gutters-384"
         disabled={false}
       >
         <div
-          className="MuiListItemText-root-709"
+          className="MuiListItemText-root-391"
         >
           <span
-            className="MuiTypography-root-715 MuiTypography-subheading-722 MuiListItemText-primary-712"
+            className="MuiTypography-root-397 MuiTypography-subheading-404 MuiListItemText-primary-394"
           >
             Geir Frode Langelo, Rambøll
           </span>
           <p
-            className="MuiTypography-root-715 MuiTypography-body1-724 MuiTypography-colorTextSecondary-738 MuiListItemText-secondary-713"
+            className="MuiTypography-root-397 MuiTypography-body1-406 MuiTypography-colorTextSecondary-420 MuiListItemText-secondary-395"
           >
             Kartlegger
           </p>
         </div>
       </li>
       <li
-        className="MuiListItem-root-695 MuiListItem-default-698 MuiListItem-gutters-702"
+        className="MuiListItem-root-377 MuiListItem-default-380 MuiListItem-gutters-384"
         disabled={false}
       >
         <div
-          className="MuiListItemText-root-709"
+          className="MuiListItemText-root-391"
         >
           <span
-            className="MuiTypography-root-715 MuiTypography-subheading-722 MuiListItemText-primary-712"
+            className="MuiTypography-root-397 MuiTypography-subheading-404 MuiListItemText-primary-394"
           >
             kjepet (Kjetil Pettersson), Miljødirektoratet
           </span>
           <p
-            className="MuiTypography-root-715 MuiTypography-body1-724 MuiTypography-colorTextSecondary-738 MuiListItemText-secondary-713"
+            className="MuiTypography-root-397 MuiTypography-body1-406 MuiTypography-colorTextSecondary-420 MuiListItemText-secondary-395"
           >
             Dataeier
           </p>
@@ -5591,57 +5378,57 @@ exports[`Storyshots Spesifikt område NA 1`] = `
        
       
       <li
-        className="MuiListItem-root-695 MuiListItem-default-698 MuiListItem-gutters-702"
+        className="MuiListItem-root-377 MuiListItem-default-380 MuiListItem-gutters-384"
         disabled={false}
       >
         <div
-          className="MuiListItemText-root-709"
+          className="MuiListItemText-root-391"
         >
           <span
-            className="MuiTypography-root-715 MuiTypography-subheading-722 MuiListItemText-primary-712"
+            className="MuiTypography-root-397 MuiTypography-subheading-404 MuiListItemText-primary-394"
           >
             1:5000
           </span>
           <p
-            className="MuiTypography-root-715 MuiTypography-body1-724 MuiTypography-colorTextSecondary-738 MuiListItemText-secondary-713"
+            className="MuiTypography-root-397 MuiTypography-body1-406 MuiTypography-colorTextSecondary-420 MuiListItemText-secondary-395"
           >
             Kartlagt i målestokk
           </p>
         </div>
       </li>
       <li
-        className="MuiListItem-root-695 MuiListItem-default-698 MuiListItem-gutters-702"
+        className="MuiListItem-root-377 MuiListItem-default-380 MuiListItem-gutters-384"
         disabled={false}
       >
         <div
-          className="MuiListItemText-root-709"
+          className="MuiListItemText-root-391"
         >
           <span
-            className="MuiTypography-root-715 MuiTypography-subheading-722 MuiListItemText-primary-712"
+            className="MuiTypography-root-397 MuiTypography-subheading-404 MuiListItemText-primary-394"
           >
              RUT_16_BIOREG_06-ST2_LEINSTR_1, Arealdekkende kartlegging etter NiN 2.0 i pressområder med rødlistede naturtyper. Leinstrand/Tiller (Sør-Trøndelag ,06-ST2, 119 ruter), Bioreg AS
           </span>
           <p
-            className="MuiTypography-root-715 MuiTypography-body1-724 MuiTypography-colorTextSecondary-738 MuiListItemText-secondary-713"
+            className="MuiTypography-root-397 MuiTypography-body1-406 MuiTypography-colorTextSecondary-420 MuiListItemText-secondary-395"
           >
             Prosjekt
           </p>
         </div>
       </li>
       <li
-        className="MuiListItem-root-695 MuiListItem-default-698 MuiListItem-gutters-702"
+        className="MuiListItem-root-377 MuiListItem-default-380 MuiListItem-gutters-384"
         disabled={false}
       >
         <div
-          className="MuiListItemText-root-709"
+          className="MuiListItemText-root-391"
         >
           <span
-            className="MuiTypography-root-715 MuiTypography-subheading-722 MuiListItemText-primary-712"
+            className="MuiTypography-root-397 MuiTypography-subheading-404 MuiListItemText-primary-394"
           >
             RUTE_2016_NORGE_1, Rutekartlegging utenfor verneområder 2016.
           </span>
           <p
-            className="MuiTypography-root-715 MuiTypography-body1-724 MuiTypography-colorTextSecondary-738 MuiListItemText-secondary-713"
+            className="MuiTypography-root-397 MuiTypography-body1-406 MuiTypography-colorTextSecondary-420 MuiListItemText-secondary-395"
           >
             Program
           </p>
@@ -5662,7 +5449,7 @@ exports[`Storyshots Statistikk arter 1`] = `
     }
   >
     <div
-      className="MuiPaper-root-595 MuiPaper-elevation1-598 MuiPaper-rounded-596 MuiCard-root-594"
+      className="MuiPaper-root-277 MuiPaper-elevation1-280 MuiPaper-rounded-278 MuiCard-root-276"
       style={
         Object {
           "marginTop": 8,
@@ -5671,7 +5458,7 @@ exports[`Storyshots Statistikk arter 1`] = `
       }
     >
       <a
-        className="MuiButtonBase-root-628 MuiIconButton-root-622"
+        className="MuiButtonBase-root-310 MuiIconButton-root-304"
         href="https://www.artsdatabanken.no/Pages/205713"
         onBlur={[Function]}
         onFocus={[Function]}
@@ -5693,11 +5480,11 @@ exports[`Storyshots Statistikk arter 1`] = `
         tabIndex="0"
       >
         <span
-          className="MuiIconButton-label-627"
+          className="MuiIconButton-label-309"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-631"
+            className="MuiSvgIcon-root-313"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -5714,17 +5501,17 @@ exports[`Storyshots Statistikk arter 1`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-638"
+          className="MuiTouchRipple-root-320"
         />
       </a>
       <p
-        className="MuiTypography-root-645 MuiTypography-body1-654"
+        className="MuiTypography-root-327 MuiTypography-body1-336"
       >
         43 705 arter er påvist i Norge, og 65 % av artene finnes i dyreriket. Insektene utgjør den største gruppen med over 18 000 arter. Fortsatt er mange arter uoppdaget og vi regner med at det finnes omkring 60 000 arter i Norge.
       </p>
     </div>
     <div
-      className="MuiPaper-root-595 MuiPaper-elevation1-598 MuiPaper-rounded-596 MuiCard-root-594"
+      className="MuiPaper-root-277 MuiPaper-elevation1-280 MuiPaper-rounded-278 MuiCard-root-276"
       style={
         Object {
           "marginTop": 8,
@@ -5733,7 +5520,7 @@ exports[`Storyshots Statistikk arter 1`] = `
       }
     >
       <div
-        className="MuiCardMedia-root-670"
+        className="MuiCardMedia-root-352"
       >
         <img
           alt="illustrasjon"
@@ -5746,13 +5533,13 @@ exports[`Storyshots Statistikk arter 1`] = `
         />
       </div>
       <p
-        className="MuiTypography-root-645 MuiTypography-body1-654"
+        className="MuiTypography-root-327 MuiTypography-body1-336"
       >
         Prosentvis fordelingen av de påviste artene mellom rikene: dyreriket (Animalia), soppriket (Fungi), planteriket (Plantae), det gule riket (Chromista), protistriket (Protozoa), alveolatriket (Alveolata) og slimriket (Amoebozoa).
       </p>
     </div>
     <div
-      className="MuiPaper-root-595 MuiPaper-elevation1-598 MuiPaper-rounded-596 MuiCard-root-594"
+      className="MuiPaper-root-277 MuiPaper-elevation1-280 MuiPaper-rounded-278 MuiCard-root-276"
       style={
         Object {
           "marginTop": 8,
@@ -5761,7 +5548,7 @@ exports[`Storyshots Statistikk arter 1`] = `
       }
     >
       <div
-        className="MuiCardMedia-root-670"
+        className="MuiCardMedia-root-352"
       >
         <img
           alt="illustrasjon"
@@ -5774,13 +5561,13 @@ exports[`Storyshots Statistikk arter 1`] = `
         />
       </div>
       <p
-        className="MuiTypography-root-645 MuiTypography-body1-654"
+        className="MuiTypography-root-327 MuiTypography-body1-336"
       >
         Totalt antall nye arter for Norge fordelt på seks grupper. Artene er funnet gjennom kartleggingsprosjekter støttet av Artsdatabanken (Artsprosjektet). Antall nye arter i Norge, som også er nye for vitenskapen, er vist i nedre del av søylene.
       </p>
     </div>
     <div
-      className="MuiPaper-root-595 MuiPaper-elevation1-598 MuiPaper-rounded-596 MuiCard-root-594"
+      className="MuiPaper-root-277 MuiPaper-elevation1-280 MuiPaper-rounded-278 MuiCard-root-276"
       style={
         Object {
           "marginTop": 8,
@@ -5789,15 +5576,15 @@ exports[`Storyshots Statistikk arter 1`] = `
       }
     >
       <p
-        className="MuiTypography-root-645 MuiTypography-body1-654"
+        className="MuiTypography-root-327 MuiTypography-body1-336"
       >
         Hva betyr påvist i Norge?
       </p>
       <p
-        className="MuiTypography-root-645 MuiTypography-body1-654"
+        className="MuiTypography-root-327 MuiTypography-body1-336"
       >
         <a
-          className="MuiButtonBase-root-628 MuiIconButton-root-622"
+          className="MuiButtonBase-root-310 MuiIconButton-root-304"
           href="https://www.artsdatabanken.no/Pages/205723"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -5819,11 +5606,11 @@ exports[`Storyshots Statistikk arter 1`] = `
           tabIndex="0"
         >
           <span
-            className="MuiIconButton-label-627"
+            className="MuiIconButton-label-309"
           >
             <svg
               aria-hidden="true"
-              className="MuiSvgIcon-root-631"
+              className="MuiSvgIcon-root-313"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -5840,7 +5627,7 @@ exports[`Storyshots Statistikk arter 1`] = `
             </svg>
           </span>
           <span
-            className="MuiTouchRipple-root-638"
+            className="MuiTouchRipple-root-320"
           />
         </a>
         Påvist i Norge innebærer at arten er dokumentert med funn på norsk territorium.
@@ -5863,7 +5650,7 @@ exports[`Storyshots Tweaks NA 1`] = `
       style={Object {}}
     >
       <li
-        className="MuiListSubheader-root-911 MuiListSubheader-sticky-916 MuiListSubheader-gutters-914"
+        className="MuiListSubheader-root-593 MuiListSubheader-sticky-598 MuiListSubheader-gutters-596"
       >
         Natursystem
       </li>
@@ -5885,10 +5672,10 @@ exports[`Storyshots Tweaks NA 1`] = `
           }
         >
           <span
-            className="MuiSwitch-root-917"
+            className="MuiSwitch-root-599"
           >
             <span
-              className="MuiButtonBase-root-936 MuiIconButton-root-930 MuiSwitchBase-root-926 MuiSwitch-switchBase-920 MuiSwitch-colorSecondary-923"
+              className="MuiButtonBase-root-618 MuiIconButton-root-612 MuiSwitchBase-root-608 MuiSwitch-switchBase-602 MuiSwitch-colorSecondary-605"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -5903,24 +5690,24 @@ exports[`Storyshots Tweaks NA 1`] = `
               tabIndex={null}
             >
               <span
-                className="MuiIconButton-label-935"
+                className="MuiIconButton-label-617"
               >
                 <span
-                  className="MuiSwitch-icon-918"
+                  className="MuiSwitch-icon-600"
                 />
                 <input
                   checked={false}
-                  className="MuiSwitchBase-input-929"
+                  className="MuiSwitchBase-input-611"
                   onChange={[Function]}
                   type="checkbox"
                 />
               </span>
               <span
-                className="MuiTouchRipple-root-939"
+                className="MuiTouchRipple-root-621"
               />
             </span>
             <span
-              className="MuiSwitch-bar-925"
+              className="MuiSwitch-bar-607"
             />
           </span>
         </div>
@@ -5966,10 +5753,10 @@ exports[`Storyshots Tweaks NA 1`] = `
           }
         >
           <span
-            className="MuiSwitch-root-917"
+            className="MuiSwitch-root-599"
           >
             <span
-              className="MuiButtonBase-root-936 MuiIconButton-root-930 MuiSwitchBase-root-926 MuiSwitch-switchBase-920 MuiSwitch-colorSecondary-923"
+              className="MuiButtonBase-root-618 MuiIconButton-root-612 MuiSwitchBase-root-608 MuiSwitch-switchBase-602 MuiSwitch-colorSecondary-605"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -5984,24 +5771,24 @@ exports[`Storyshots Tweaks NA 1`] = `
               tabIndex={null}
             >
               <span
-                className="MuiIconButton-label-935"
+                className="MuiIconButton-label-617"
               >
                 <span
-                  className="MuiSwitch-icon-918"
+                  className="MuiSwitch-icon-600"
                 />
                 <input
                   checked={false}
-                  className="MuiSwitchBase-input-929"
+                  className="MuiSwitchBase-input-611"
                   onChange={[Function]}
                   type="checkbox"
                 />
               </span>
               <span
-                className="MuiTouchRipple-root-939"
+                className="MuiTouchRipple-root-621"
               />
             </span>
             <span
-              className="MuiSwitch-bar-925"
+              className="MuiSwitch-bar-607"
             />
           </span>
         </div>
@@ -6030,7 +5817,7 @@ exports[`Storyshots Tweaks NA 1`] = `
         </div>
       </div>
       <li
-        className="MuiListSubheader-root-911 MuiListSubheader-sticky-916 MuiListSubheader-gutters-914"
+        className="MuiListSubheader-root-593 MuiListSubheader-sticky-598 MuiListSubheader-gutters-596"
       >
         Fyllfarge
       </li>
@@ -6277,7 +6064,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
       style={Object {}}
     >
       <li
-        className="MuiListSubheader-root-946 MuiListSubheader-sticky-951 MuiListSubheader-gutters-949"
+        className="MuiListSubheader-root-628 MuiListSubheader-sticky-633 MuiListSubheader-gutters-631"
       >
         Terreng
       </li>
@@ -6320,7 +6107,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-952"
+            className="MuiSvgIcon-root-634"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -6373,10 +6160,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
           }
         >
           <span
-            className="MuiSwitch-root-959"
+            className="MuiSwitch-root-641"
           >
             <span
-              className="MuiButtonBase-root-978 MuiIconButton-root-972 MuiSwitchBase-root-968 MuiSwitch-switchBase-962 MuiSwitch-colorSecondary-965"
+              className="MuiButtonBase-root-660 MuiIconButton-root-654 MuiSwitchBase-root-650 MuiSwitch-switchBase-644 MuiSwitch-colorSecondary-647"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -6391,24 +6178,24 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
               tabIndex={null}
             >
               <span
-                className="MuiIconButton-label-977"
+                className="MuiIconButton-label-659"
               >
                 <span
-                  className="MuiSwitch-icon-960"
+                  className="MuiSwitch-icon-642"
                 />
                 <input
                   checked={false}
-                  className="MuiSwitchBase-input-971"
+                  className="MuiSwitchBase-input-653"
                   onChange={[Function]}
                   type="checkbox"
                 />
               </span>
               <span
-                className="MuiTouchRipple-root-981"
+                className="MuiTouchRipple-root-663"
               />
             </span>
             <span
-              className="MuiSwitch-bar-967"
+              className="MuiSwitch-bar-649"
             />
           </span>
         </div>
@@ -6437,7 +6224,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
         </div>
       </div>
       <li
-        className="MuiListSubheader-root-946 MuiListSubheader-sticky-951 MuiListSubheader-gutters-949"
+        className="MuiListSubheader-root-628 MuiListSubheader-sticky-633 MuiListSubheader-gutters-631"
       >
         Kontur (trinndelt høydevisualisering)
       </li>
@@ -6459,10 +6246,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
           }
         >
           <span
-            className="MuiSwitch-root-959"
+            className="MuiSwitch-root-641"
           >
             <span
-              className="MuiButtonBase-root-978 MuiIconButton-root-972 MuiSwitchBase-root-968 MuiSwitch-switchBase-962 MuiSwitch-colorSecondary-965"
+              className="MuiButtonBase-root-660 MuiIconButton-root-654 MuiSwitchBase-root-650 MuiSwitch-switchBase-644 MuiSwitch-colorSecondary-647"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -6477,24 +6264,24 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
               tabIndex={null}
             >
               <span
-                className="MuiIconButton-label-977"
+                className="MuiIconButton-label-659"
               >
                 <span
-                  className="MuiSwitch-icon-960"
+                  className="MuiSwitch-icon-642"
                 />
                 <input
                   checked={false}
-                  className="MuiSwitchBase-input-971"
+                  className="MuiSwitchBase-input-653"
                   onChange={[Function]}
                   type="checkbox"
                 />
               </span>
               <span
-                className="MuiTouchRipple-root-981"
+                className="MuiTouchRipple-root-663"
               />
             </span>
             <span
-              className="MuiSwitch-bar-967"
+              className="MuiSwitch-bar-649"
             />
           </span>
         </div>
@@ -6540,10 +6327,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
           }
         >
           <span
-            className="MuiSwitch-root-959"
+            className="MuiSwitch-root-641"
           >
             <span
-              className="MuiButtonBase-root-978 MuiIconButton-root-972 MuiSwitchBase-root-968 MuiSwitch-switchBase-962 MuiSwitch-colorSecondary-965"
+              className="MuiButtonBase-root-660 MuiIconButton-root-654 MuiSwitchBase-root-650 MuiSwitch-switchBase-644 MuiSwitch-colorSecondary-647"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -6558,25 +6345,25 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
               tabIndex={null}
             >
               <span
-                className="MuiIconButton-label-977"
+                className="MuiIconButton-label-659"
               >
                 <span
-                  className="MuiSwitch-icon-960"
+                  className="MuiSwitch-icon-642"
                 />
                 <input
                   checked={false}
-                  className="MuiSwitchBase-input-971"
+                  className="MuiSwitchBase-input-653"
                   disabled={false}
                   onChange={[Function]}
                   type="checkbox"
                 />
               </span>
               <span
-                className="MuiTouchRipple-root-981"
+                className="MuiTouchRipple-root-663"
               />
             </span>
             <span
-              className="MuiSwitch-bar-967"
+              className="MuiSwitch-bar-649"
             />
           </span>
         </div>
@@ -6643,7 +6430,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-952"
+            className="MuiSvgIcon-root-634"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -6696,7 +6483,7 @@ exports[`Storyshots Tweaks terreng 1`] = `
       style={Object {}}
     >
       <li
-        className="MuiListSubheader-root-988 MuiListSubheader-sticky-993 MuiListSubheader-gutters-991"
+        className="MuiListSubheader-root-670 MuiListSubheader-sticky-675 MuiListSubheader-gutters-673"
       >
         Terreng
       </li>
@@ -6739,7 +6526,7 @@ exports[`Storyshots Tweaks terreng 1`] = `
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-994"
+            className="MuiSvgIcon-root-676"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -6792,10 +6579,10 @@ exports[`Storyshots Tweaks terreng 1`] = `
           }
         >
           <span
-            className="MuiSwitch-root-1001"
+            className="MuiSwitch-root-683"
           >
             <span
-              className="MuiButtonBase-root-1020 MuiIconButton-root-1014 MuiSwitchBase-root-1010 MuiSwitch-switchBase-1004 MuiSwitch-colorSecondary-1007"
+              className="MuiButtonBase-root-702 MuiIconButton-root-696 MuiSwitchBase-root-692 MuiSwitch-switchBase-686 MuiSwitch-colorSecondary-689"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -6810,24 +6597,24 @@ exports[`Storyshots Tweaks terreng 1`] = `
               tabIndex={null}
             >
               <span
-                className="MuiIconButton-label-1019"
+                className="MuiIconButton-label-701"
               >
                 <span
-                  className="MuiSwitch-icon-1002"
+                  className="MuiSwitch-icon-684"
                 />
                 <input
                   checked={false}
-                  className="MuiSwitchBase-input-1013"
+                  className="MuiSwitchBase-input-695"
                   onChange={[Function]}
                   type="checkbox"
                 />
               </span>
               <span
-                className="MuiTouchRipple-root-1023"
+                className="MuiTouchRipple-root-705"
               />
             </span>
             <span
-              className="MuiSwitch-bar-1009"
+              className="MuiSwitch-bar-691"
             />
           </span>
         </div>
@@ -6856,7 +6643,7 @@ exports[`Storyshots Tweaks terreng 1`] = `
         </div>
       </div>
       <li
-        className="MuiListSubheader-root-988 MuiListSubheader-sticky-993 MuiListSubheader-gutters-991"
+        className="MuiListSubheader-root-670 MuiListSubheader-sticky-675 MuiListSubheader-gutters-673"
       >
         Kontur (trinndelt høydevisualisering)
       </li>
@@ -6878,10 +6665,10 @@ exports[`Storyshots Tweaks terreng 1`] = `
           }
         >
           <span
-            className="MuiSwitch-root-1001"
+            className="MuiSwitch-root-683"
           >
             <span
-              className="MuiButtonBase-root-1020 MuiIconButton-root-1014 MuiSwitchBase-root-1010 MuiSwitch-switchBase-1004 MuiSwitch-colorSecondary-1007"
+              className="MuiButtonBase-root-702 MuiIconButton-root-696 MuiSwitchBase-root-692 MuiSwitch-switchBase-686 MuiSwitch-colorSecondary-689"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -6896,24 +6683,24 @@ exports[`Storyshots Tweaks terreng 1`] = `
               tabIndex={null}
             >
               <span
-                className="MuiIconButton-label-1019"
+                className="MuiIconButton-label-701"
               >
                 <span
-                  className="MuiSwitch-icon-1002"
+                  className="MuiSwitch-icon-684"
                 />
                 <input
                   checked={false}
-                  className="MuiSwitchBase-input-1013"
+                  className="MuiSwitchBase-input-695"
                   onChange={[Function]}
                   type="checkbox"
                 />
               </span>
               <span
-                className="MuiTouchRipple-root-1023"
+                className="MuiTouchRipple-root-705"
               />
             </span>
             <span
-              className="MuiSwitch-bar-1009"
+              className="MuiSwitch-bar-691"
             />
           </span>
         </div>
@@ -6959,10 +6746,10 @@ exports[`Storyshots Tweaks terreng 1`] = `
           }
         >
           <span
-            className="MuiSwitch-root-1001"
+            className="MuiSwitch-root-683"
           >
             <span
-              className="MuiButtonBase-root-1020 MuiIconButton-root-1014 MuiSwitchBase-root-1010 MuiSwitch-switchBase-1004 MuiSwitch-colorSecondary-1007"
+              className="MuiButtonBase-root-702 MuiIconButton-root-696 MuiSwitchBase-root-692 MuiSwitch-switchBase-686 MuiSwitch-colorSecondary-689"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -6977,25 +6764,25 @@ exports[`Storyshots Tweaks terreng 1`] = `
               tabIndex={null}
             >
               <span
-                className="MuiIconButton-label-1019"
+                className="MuiIconButton-label-701"
               >
                 <span
-                  className="MuiSwitch-icon-1002"
+                  className="MuiSwitch-icon-684"
                 />
                 <input
                   checked={false}
-                  className="MuiSwitchBase-input-1013"
+                  className="MuiSwitchBase-input-695"
                   disabled={false}
                   onChange={[Function]}
                   type="checkbox"
                 />
               </span>
               <span
-                className="MuiTouchRipple-root-1023"
+                className="MuiTouchRipple-root-705"
               />
             </span>
             <span
-              className="MuiSwitch-bar-1009"
+              className="MuiSwitch-bar-691"
             />
           </span>
         </div>
@@ -7062,7 +6849,7 @@ exports[`Storyshots Tweaks terreng 1`] = `
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-994"
+            className="MuiSvgIcon-root-676"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -7128,13 +6915,13 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
       }
     >
       <header
-        className="MuiPaper-root-1131 MuiPaper-elevation4-1137 MuiAppBar-root-1123 MuiAppBar-positionSticky-1126 MuiAppBar-colorPrimary-1129 TopBar-root-1119"
+        className="MuiPaper-root-813 MuiPaper-elevation4-819 MuiAppBar-root-805 MuiAppBar-positionSticky-808 MuiAppBar-colorPrimary-811 TopBar-root-801"
       >
         <div
-          className="MuiToolbar-root-1158 MuiToolbar-dense-1161 MuiToolbar-gutters-1159 TopBar-toolbar-1120"
+          className="MuiToolbar-root-840 MuiToolbar-dense-843 MuiToolbar-gutters-841 TopBar-toolbar-802"
         >
           <button
-            className="MuiButtonBase-root-1168 MuiIconButton-root-1162 TopBar-darkButton-1121"
+            className="MuiButtonBase-root-850 MuiIconButton-root-844 TopBar-darkButton-803"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -7151,11 +6938,11 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
             type="button"
           >
             <span
-              className="MuiIconButton-label-1167"
+              className="MuiIconButton-label-849"
             >
               <svg
                 aria-hidden="true"
-                className="MuiSvgIcon-root-1171"
+                className="MuiSvgIcon-root-853"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -7169,14 +6956,14 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
               </svg>
             </span>
             <span
-              className="MuiTouchRipple-root-1178"
+              className="MuiTouchRipple-root-860"
             />
           </button>
           <div
-            className="MuiInput-root-1185 MuiInput-fullWidth-1192"
+            className="MuiInput-root-867 MuiInput-fullWidth-874"
           >
             <input
-              className="MuiInput-input-1193"
+              className="MuiInput-input-875"
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
@@ -7187,7 +6974,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
             />
           </div>
           <button
-            className="MuiButtonBase-root-1168 MuiIconButton-root-1162 TopBar-lightButton-1122"
+            className="MuiButtonBase-root-850 MuiIconButton-root-844 TopBar-lightButton-804"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -7204,11 +6991,11 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
             type="button"
           >
             <span
-              className="MuiIconButton-label-1167"
+              className="MuiIconButton-label-849"
             >
               <svg
                 aria-hidden="true"
-                className="MuiSvgIcon-root-1171"
+                className="MuiSvgIcon-root-853"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -7222,7 +7009,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
               </svg>
             </span>
             <span
-              className="MuiTouchRipple-root-1178"
+              className="MuiTouchRipple-root-860"
             />
           </button>
         </div>
@@ -7238,10 +7025,10 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
         style={Object {}}
       >
         <ul
-          className="MuiList-root-1198 MuiList-padding-1199"
+          className="MuiList-root-880 MuiList-padding-881"
         >
           <li
-            className="MuiListSubheader-root-1202 MuiListSubheader-sticky-1207 MuiListSubheader-gutters-1205"
+            className="MuiListSubheader-root-884 MuiListSubheader-sticky-889 MuiListSubheader-gutters-887"
           >
             Mine kartlag
           </li>
@@ -7278,13 +7065,13 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
       }
     >
       <header
-        className="MuiPaper-root-1042 MuiPaper-elevation4-1048 MuiAppBar-root-1034 MuiAppBar-positionSticky-1037 MuiAppBar-colorPrimary-1040 TopBar-root-1030"
+        className="MuiPaper-root-724 MuiPaper-elevation4-730 MuiAppBar-root-716 MuiAppBar-positionSticky-719 MuiAppBar-colorPrimary-722 TopBar-root-712"
       >
         <div
-          className="MuiToolbar-root-1069 MuiToolbar-dense-1072 MuiToolbar-gutters-1070 TopBar-toolbar-1031"
+          className="MuiToolbar-root-751 MuiToolbar-dense-754 MuiToolbar-gutters-752 TopBar-toolbar-713"
         >
           <button
-            className="MuiButtonBase-root-1079 MuiIconButton-root-1073 TopBar-darkButton-1032"
+            className="MuiButtonBase-root-761 MuiIconButton-root-755 TopBar-darkButton-714"
             disabled={false}
             onBlur={[Function]}
             onFocus={[Function]}
@@ -7300,11 +7087,11 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
             type="button"
           >
             <span
-              className="MuiIconButton-label-1078"
+              className="MuiIconButton-label-760"
             >
               <svg
                 aria-hidden="true"
-                className="MuiSvgIcon-root-1082"
+                className="MuiSvgIcon-root-764"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -7318,14 +7105,14 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
               </svg>
             </span>
             <span
-              className="MuiTouchRipple-root-1089"
+              className="MuiTouchRipple-root-771"
             />
           </button>
           <div
-            className="MuiInput-root-1096 MuiInput-fullWidth-1103"
+            className="MuiInput-root-778 MuiInput-fullWidth-785"
           >
             <input
-              className="MuiInput-input-1104"
+              className="MuiInput-input-786"
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
@@ -7336,7 +7123,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
             />
           </div>
           <button
-            className="MuiButtonBase-root-1079 MuiIconButton-root-1073 TopBar-lightButton-1033"
+            className="MuiButtonBase-root-761 MuiIconButton-root-755 TopBar-lightButton-715"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -7353,11 +7140,11 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
             type="button"
           >
             <span
-              className="MuiIconButton-label-1078"
+              className="MuiIconButton-label-760"
             >
               <svg
                 aria-hidden="true"
-                className="MuiSvgIcon-root-1082"
+                className="MuiSvgIcon-root-764"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -7371,7 +7158,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
               </svg>
             </span>
             <span
-              className="MuiTouchRipple-root-1089"
+              className="MuiTouchRipple-root-771"
             />
           </button>
         </div>
@@ -7387,10 +7174,10 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
         style={Object {}}
       >
         <ul
-          className="MuiList-root-1109 MuiList-padding-1110"
+          className="MuiList-root-791 MuiList-padding-792"
         >
           <li
-            className="MuiListSubheader-root-1113 MuiListSubheader-sticky-1118 MuiListSubheader-gutters-1116"
+            className="MuiListSubheader-root-795 MuiListSubheader-sticky-800 MuiListSubheader-gutters-798"
           >
             Mine kartlag
           </li>

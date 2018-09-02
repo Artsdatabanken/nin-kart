@@ -11,4 +11,16 @@ const farger = {
   VV: 'hsl(300, 40%, 50%)',
 }
 
-export default farger
+const palett = {
+  lys: {},
+  mørk: farger,
+}
+Object.keys(farger).forEach(prefiks => {
+  const lysFarge = tinycolor(farger[prefiks])
+    .lighten(40)
+    .setAlpha(0.95)
+    .toHslString()
+  palett.lys[prefiks] = lysFarge
+})
+
+export default palett

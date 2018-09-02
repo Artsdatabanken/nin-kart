@@ -7,17 +7,12 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 import { withRouter } from 'react-router'
-import tinycolor from 'tinycolor2'
 import farger from '../farger'
 import { SettingsContext } from '../SettingsContext'
 
 const Listeelement = ({ kode, primary, secondary, history, geom_id }) => {
   const prefix = kode.substring(0, 2)
-  const farge = farger[prefix]
-  const bgFarge = tinycolor(farge)
-    .lighten(40)
-    .setAlpha(0.95)
-    .toHslString()
+  const bgFarge = farger.lys[prefix]
   const avatar = false
   return (
     <React.Fragment>
