@@ -9,7 +9,7 @@ import { withStyles, withTheme } from '@material-ui/core/styles'
 import React from 'react'
 import språk from '../../språk'
 import Bildeavatar from './Bildeavatar'
-import PaintSwatch from './PaintSwatch'
+import Checkboard from './Checkboard'
 import VolumIndikator from './VolumIndikator'
 
 const styles = {
@@ -56,8 +56,14 @@ class Kodelisteelement extends React.Component<Props, State> {
           />
           <Bildeavatar kode={kode} />
           <ListItemSecondaryAction style={{ paddingRight: 8 }}>
-            <Avatar style={{ width: 24, height: 24 }}>
-              <PaintSwatch color={erOpplyst ? '#f00' : meta.farge} />
+            <Avatar
+              style={{
+                width: 24,
+                height: 24,
+                filter: 'drop-shadow(1px 1px 1px #666)',
+              }}
+            >
+              <Checkboard color={erOpplyst ? '#f00' : meta.farge} />
             </Avatar>
           </ListItemSecondaryAction>
           <ListItemText
