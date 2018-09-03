@@ -9,8 +9,9 @@ class Borring extends Component {
     if (!barn) return null
     return (
       <React.Fragment>
-        {Object.keys(barn).map(kode => {
+        {['AO', 'NA', 'RL', 'VV', 'BS', 'MI'].map(kode => {
           const node = barn[kode]
+          if (!node) return null
           const r = oppsummer(node)
           return (
             <Listeelement

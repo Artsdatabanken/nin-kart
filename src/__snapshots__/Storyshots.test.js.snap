@@ -793,9 +793,15 @@ exports[`Storyshots KodeVindu default 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-336"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-336 MuiAvatar-colorDefault-337"
+        style={
+          Object {
+            "backgroundColor": "hsl(120, 40%, 50%)",
+          }
+        }
+      >
+        1
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-339"
       >
@@ -888,9 +894,15 @@ exports[`Storyshots KodeVindu default 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-336"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-336 MuiAvatar-colorDefault-337"
+        style={
+          Object {
+            "backgroundColor": "hsl(120, 40%, 50%)",
+          }
+        }
+      >
+        2
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-339"
       >
@@ -983,9 +995,15 @@ exports[`Storyshots KodeVindu default 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-336"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-336 MuiAvatar-colorDefault-337"
+        style={
+          Object {
+            "backgroundColor": "hsl(120, 40%, 50%)",
+          }
+        }
+      >
+        3
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-339"
       >
@@ -1078,9 +1096,15 @@ exports[`Storyshots KodeVindu default 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-336"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-336 MuiAvatar-colorDefault-337"
+        style={
+          Object {
+            "backgroundColor": "hsl(120, 40%, 50%)",
+          }
+        }
+      >
+        4
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-339"
       >
@@ -1299,9 +1323,15 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-445"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-445 MuiAvatar-colorDefault-446"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        100132
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-448"
       >
@@ -1410,9 +1440,15 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-445"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-445 MuiAvatar-colorDefault-446"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        99790
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-448"
       >
@@ -1505,9 +1541,15 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-445"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-445 MuiAvatar-colorDefault-446"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        99737
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-448"
       >
@@ -1600,9 +1642,15 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-445"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-445 MuiAvatar-colorDefault-446"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        99698
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-448"
       >
@@ -1695,9 +1743,15 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-445"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-445 MuiAvatar-colorDefault-446"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        99603
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-448"
       >
@@ -1790,9 +1844,15 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-445"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-445 MuiAvatar-colorDefault-446"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        99475
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-448"
       >
@@ -1901,9 +1961,15 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-445"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-445 MuiAvatar-colorDefault-446"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        99603
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-448"
       >
@@ -2012,9 +2078,15 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-445"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-445 MuiAvatar-colorDefault-446"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        99677
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-448"
       >
@@ -2123,9 +2195,15 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-445"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-445 MuiAvatar-colorDefault-446"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        99789
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-448"
       >
@@ -2218,9 +2296,15 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-445"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-445 MuiAvatar-colorDefault-446"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        99722
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-448"
       >
@@ -2313,9 +2397,15 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-445"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-445 MuiAvatar-colorDefault-446"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        103310
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-448"
       >
@@ -2408,9 +2498,15 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-445"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-445 MuiAvatar-colorDefault-446"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        103183
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-448"
       >
@@ -2503,9 +2599,15 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-445"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-445 MuiAvatar-colorDefault-446"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        102818
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-448"
       >
@@ -2598,9 +2700,15 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-445"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-445 MuiAvatar-colorDefault-446"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        101846
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-448"
       >
@@ -2693,9 +2801,15 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-445"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-445 MuiAvatar-colorDefault-446"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        101845
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-448"
       >
@@ -2788,9 +2902,15 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-445"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-445 MuiAvatar-colorDefault-446"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        100132
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-448"
       >
@@ -2883,9 +3003,15 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-445"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-445 MuiAvatar-colorDefault-446"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        100061
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-448"
       >
@@ -2978,9 +3104,15 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         }
       />
       <div
-        className="MuiAvatar-root-445"
-        onError={[Function]}
-      />
+        className="MuiAvatar-root-445 MuiAvatar-colorDefault-446"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        100058
+      </div>
       <div
         className="MuiListItemSecondaryAction-root-448"
       >
@@ -3317,7 +3449,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.3) 0%, hsla(0, 0%, 90%, 0.95) 50%), url(\\"/kode/AO.jpg\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(0, 0%, 90%, 0.95) 50%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",
@@ -3370,7 +3502,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.3) 0%, hsla(300, 40%, 90%, 0.95) 50%), url(\\"/kode/VV.jpg\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(300, 40%, 90%, 0.95) 50%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",
@@ -3423,7 +3555,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.3) 0%, hsla(190, 40%, 90%, 0.95) 50%), url(\\"/kode/LA_NF.jpg\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(190, 40%, 90%, 0.95) 50%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",
@@ -3476,7 +3608,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.3) 0%, hsla(120, 40%, 90%, 0.95) 50%), url(\\"/kode/NA_T44.jpg\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(120, 40%, 90%, 0.95) 50%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",
@@ -3529,7 +3661,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.3) 0%, hsla(240, 40%, 90%, 0.95) 50%), url(\\"/kode/BS_6.jpg\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(240, 40%, 90%, 0.95) 50%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",
@@ -3582,7 +3714,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.3) 0%, hsla(240, 40%, 90%, 0.95) 50%), url(\\"/kode/BS_7.jpg\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(240, 40%, 90%, 0.95) 50%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",
@@ -3635,7 +3767,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.3) 0%, hsla(12, 40%, 90%, 0.95) 50%), url(\\"/kode/RL_VU.jpg\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(12, 40%, 90%, 0.95) 50%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",

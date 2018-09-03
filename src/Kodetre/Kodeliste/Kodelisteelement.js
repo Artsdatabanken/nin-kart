@@ -1,6 +1,9 @@
 // @flow
-import { ListItem, ListItemSecondaryAction } from '@material-ui/core'
-import ListItemText from '@material-ui/core/ListItemText'
+import {
+  ListItem,
+  ListItemSecondaryAction,
+  ListItemText,
+} from '@material-ui/core'
 import { withStyles, withTheme } from '@material-ui/core/styles'
 import React from 'react'
 import språk from '../../språk'
