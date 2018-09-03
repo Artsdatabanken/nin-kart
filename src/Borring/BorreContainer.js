@@ -21,7 +21,6 @@ class BorreContainer extends Component {
   mapPunktHack(data, sted) {
     if (!data) return
     data = this.hackInnSted(sted, data)
-
     let r = {}
     Object.keys(data).forEach(kode => {
       const node = data[kode]
@@ -30,7 +29,7 @@ class BorreContainer extends Component {
       let prev = r
       nivå.forEach(n => {
         if (!s.barn) s.barn = {}
-        s.barn[n] = {}
+        if (!s.barn[n]) s.barn[n] = {}
         prev = s
         s = s.barn[n]
       })
@@ -46,13 +45,16 @@ class BorreContainer extends Component {
     if (!sted) return data
     const r = {}
     Object.keys(data).forEach(key => {
-      const node = data[key]
+      let node = data[key]
+      while (node.barn) node = node.barn[0]
       if (key.substring(0, 2) === 'AO') {
         if (sted.placename) {
+          console.log(r[key])
           r[key] = {
             key: node.value + ', ' + node.key,
             value: sted.placename + this.formatElevation(sted.elevation),
           }
+          console.log(r[key])
         }
       } else r[key] = node
     })

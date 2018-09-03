@@ -7,9 +7,9 @@ const VolumIndikator = ({ areal, størsteAreal, theme }) => {
       style={{
         transition: 'width 0.5s ease-out',
         position: 'absolute',
-        top: 6,
+        top: 0,
         left: 0,
-        height: 56,
+        height: '100%',
         width: `${(80.0 * areal) / størsteAreal}%`,
         backgroundColor: '#eee',
         zIndex: -1,

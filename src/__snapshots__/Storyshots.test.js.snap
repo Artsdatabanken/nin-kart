@@ -757,7 +757,7 @@ exports[`Storyshots KodeVindu default 1`] = `
       Innhold
     </li>
     <div
-      className="MuiButtonBase-root-331 MuiListItem-root-307 MuiListItem-default-310 MuiListItem-gutters-314 MuiListItem-button-315"
+      className="MuiButtonBase-root-331 MuiListItem-root-307 MuiListItem-default-310 MuiListItem-dense-311 MuiListItem-gutters-314 MuiListItem-button-315"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -782,10 +782,10 @@ exports[`Storyshots KodeVindu default 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -845,10 +845,10 @@ exports[`Storyshots KodeVindu default 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-318"
+        className="MuiListItemText-root-318 MuiListItemText-dense-320"
       >
         <span
-          className="MuiTypography-root-272 MuiTypography-subheading-279 MuiListItemText-primary-321"
+          className="MuiTypography-root-272 MuiTypography-subheading-279 MuiListItemText-primary-321 MuiListItemText-textDense-323"
         >
           Havvannmasser
         </span>
@@ -858,7 +858,7 @@ exports[`Storyshots KodeVindu default 1`] = `
       />
     </div>
     <div
-      className="MuiButtonBase-root-331 MuiListItem-root-307 MuiListItem-default-310 MuiListItem-gutters-314 MuiListItem-button-315"
+      className="MuiButtonBase-root-331 MuiListItem-root-307 MuiListItem-default-310 MuiListItem-dense-311 MuiListItem-gutters-314 MuiListItem-button-315"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -883,10 +883,10 @@ exports[`Storyshots KodeVindu default 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -946,10 +946,10 @@ exports[`Storyshots KodeVindu default 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-318"
+        className="MuiListItemText-root-318 MuiListItemText-dense-320"
       >
         <span
-          className="MuiTypography-root-272 MuiTypography-subheading-279 MuiListItemText-primary-321"
+          className="MuiTypography-root-272 MuiTypography-subheading-279 MuiListItemText-primary-321 MuiListItemText-textDense-323"
         >
           Sirkulerende vannmasser i fysisk avgrensede saltvannsforekomster
         </span>
@@ -959,7 +959,7 @@ exports[`Storyshots KodeVindu default 1`] = `
       />
     </div>
     <div
-      className="MuiButtonBase-root-331 MuiListItem-root-307 MuiListItem-default-310 MuiListItem-gutters-314 MuiListItem-button-315"
+      className="MuiButtonBase-root-331 MuiListItem-root-307 MuiListItem-default-310 MuiListItem-dense-311 MuiListItem-gutters-314 MuiListItem-button-315"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -984,10 +984,10 @@ exports[`Storyshots KodeVindu default 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -1047,10 +1047,10 @@ exports[`Storyshots KodeVindu default 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-318"
+        className="MuiListItemText-root-318 MuiListItemText-dense-320"
       >
         <span
-          className="MuiTypography-root-272 MuiTypography-subheading-279 MuiListItemText-primary-321"
+          className="MuiTypography-root-272 MuiTypography-subheading-279 MuiListItemText-primary-321 MuiListItemText-textDense-323"
         >
           Ikke-sirkulerende marine vannmasser i fysisk avgrensede saltvannsforekomster
         </span>
@@ -1060,7 +1060,7 @@ exports[`Storyshots KodeVindu default 1`] = `
       />
     </div>
     <div
-      className="MuiButtonBase-root-331 MuiListItem-root-307 MuiListItem-default-310 MuiListItem-gutters-314 MuiListItem-button-315"
+      className="MuiButtonBase-root-331 MuiListItem-root-307 MuiListItem-default-310 MuiListItem-dense-311 MuiListItem-gutters-314 MuiListItem-button-315"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -1085,10 +1085,10 @@ exports[`Storyshots KodeVindu default 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -1148,10 +1148,10 @@ exports[`Storyshots KodeVindu default 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-318"
+        className="MuiListItemText-root-318 MuiListItemText-dense-320"
       >
         <span
-          className="MuiTypography-root-272 MuiTypography-subheading-279 MuiListItemText-primary-321"
+          className="MuiTypography-root-272 MuiTypography-subheading-279 MuiListItemText-primary-321 MuiListItemText-textDense-323"
         >
           Sterkt endrete marine vannmasser
         </span>
@@ -1287,7 +1287,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
       Art med gjennomsnittlig dekning eller biomasseandel større enn 1/4 i et utvalg av enkeltobservasjonsenheter.
     </div>
     <div
-      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-gutters-423 MuiListItem-button-424"
+      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-dense-420 MuiListItem-gutters-423 MuiListItem-button-424"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -1312,10 +1312,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -1375,10 +1375,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-427"
+        className="MuiListItemText-root-427 MuiListItemText-dense-429"
       >
         <span
-          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430"
+          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430 MuiListItemText-textDense-432"
         >
           Takrør (Phragmites australis)
         </span>
@@ -1404,7 +1404,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
       Tyngdepunktart som utelukkende eller nesten utelukkende forekommer i en naturtype eller gruppe av naturtyper på et eller annet generaliseringsnivå
     </div>
     <div
-      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-gutters-423 MuiListItem-button-424"
+      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-dense-420 MuiListItem-gutters-423 MuiListItem-button-424"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -1429,10 +1429,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -1492,10 +1492,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-427"
+        className="MuiListItemText-root-427 MuiListItemText-dense-429"
       >
         <span
-          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430"
+          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430 MuiListItemText-textDense-432"
         >
           Pollsivaks (Schoenoplectus tabernaemontani)
         </span>
@@ -1505,7 +1505,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
       />
     </div>
     <div
-      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-gutters-423 MuiListItem-button-424"
+      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-dense-420 MuiListItem-gutters-423 MuiListItem-button-424"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -1530,10 +1530,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -1593,10 +1593,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-427"
+        className="MuiListItemText-root-427 MuiListItemText-dense-429"
       >
         <span
-          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430"
+          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430 MuiListItemText-textDense-432"
         >
           Saltstarr (Carex ×vacillans)
         </span>
@@ -1606,7 +1606,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
       />
     </div>
     <div
-      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-gutters-423 MuiListItem-button-424"
+      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-dense-420 MuiListItem-gutters-423 MuiListItem-button-424"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -1631,10 +1631,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -1694,10 +1694,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-427"
+        className="MuiListItemText-root-427 MuiListItemText-dense-429"
       >
         <span
-          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430"
+          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430 MuiListItemText-textDense-432"
         >
           Havstarr (Carex paleacea)
         </span>
@@ -1707,7 +1707,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
       />
     </div>
     <div
-      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-gutters-423 MuiListItem-button-424"
+      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-dense-420 MuiListItem-gutters-423 MuiListItem-button-424"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -1732,10 +1732,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -1795,10 +1795,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-427"
+        className="MuiListItemText-root-427 MuiListItemText-dense-429"
       >
         <span
-          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430"
+          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430 MuiListItemText-textDense-432"
         >
           Havsivaks (Bolboschoenus maritimus)
         </span>
@@ -1808,7 +1808,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
       />
     </div>
     <div
-      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-gutters-423 MuiListItem-button-424"
+      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-dense-420 MuiListItem-gutters-423 MuiListItem-button-424"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -1833,10 +1833,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -1896,10 +1896,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-427"
+        className="MuiListItemText-root-427 MuiListItemText-dense-429"
       >
         <span
-          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430"
+          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430 MuiListItemText-textDense-432"
         >
           Sverdlilje (Iris pseudacorus)
         </span>
@@ -1925,7 +1925,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
       Art med gjennomsnittlig dekning eller biomasseandel større enn 1/8 i et utvalg av enkeltobservasjonsenheter.
     </div>
     <div
-      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-gutters-423 MuiListItem-button-424"
+      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-dense-420 MuiListItem-gutters-423 MuiListItem-button-424"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -1950,10 +1950,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -2013,10 +2013,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-427"
+        className="MuiListItemText-root-427 MuiListItemText-dense-429"
       >
         <span
-          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430"
+          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430 MuiListItemText-textDense-432"
         >
           Havsivaks (Bolboschoenus maritimus)
         </span>
@@ -2042,7 +2042,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
       Art med høyere frekvens og dekning i en aktuell naturtype (hovedtype eller grunntype) enn i et sammenliknbart utvalg typer (f.eks. andre hovedtyper som tilhører samme hovedtypegruppe eller andre grunntyper som tilhører samme hovedtype
     </div>
     <div
-      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-gutters-423 MuiListItem-button-424"
+      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-dense-420 MuiListItem-gutters-423 MuiListItem-button-424"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -2067,10 +2067,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -2130,10 +2130,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-427"
+        className="MuiListItemText-root-427 MuiListItemText-dense-429"
       >
         <span
-          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430"
+          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430 MuiListItemText-textDense-432"
         >
           Pølstarr (Carex mackenziei)
         </span>
@@ -2159,7 +2159,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
       Art med frekvens større enn 1/8 i et utvalg enkeltobservasjonsenheter. For at en art skal være «vanlig», må den tilfredsstille dette kravet om frekvens &gt; 1/8 i hele naturtypens utbredelsesområde, ikke bare innenfor artens utbredelsesområde.
     </div>
     <div
-      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-gutters-423 MuiListItem-button-424"
+      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-dense-420 MuiListItem-gutters-423 MuiListItem-button-424"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -2184,10 +2184,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -2247,10 +2247,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-427"
+        className="MuiListItemText-root-427 MuiListItemText-dense-429"
       >
         <span
-          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430"
+          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430 MuiListItemText-textDense-432"
         >
           Sjøsivaks (Schoenoplectus lacustris)
         </span>
@@ -2260,7 +2260,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
       />
     </div>
     <div
-      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-gutters-423 MuiListItem-button-424"
+      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-dense-420 MuiListItem-gutters-423 MuiListItem-button-424"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -2285,10 +2285,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -2348,10 +2348,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-427"
+        className="MuiListItemText-root-427 MuiListItemText-dense-429"
       >
         <span
-          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430"
+          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430 MuiListItemText-textDense-432"
         >
           Fjærestarr (Carex salina)
         </span>
@@ -2361,7 +2361,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
       />
     </div>
     <div
-      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-gutters-423 MuiListItem-button-424"
+      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-dense-420 MuiListItem-gutters-423 MuiListItem-button-424"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -2386,10 +2386,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -2449,10 +2449,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-427"
+        className="MuiListItemText-root-427 MuiListItemText-dense-429"
       >
         <span
-          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430"
+          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430 MuiListItemText-textDense-432"
         >
           Mjødurt (Filipendula ulmaria)
         </span>
@@ -2462,7 +2462,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
       />
     </div>
     <div
-      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-gutters-423 MuiListItem-button-424"
+      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-dense-420 MuiListItem-gutters-423 MuiListItem-button-424"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -2487,10 +2487,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -2550,10 +2550,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-427"
+        className="MuiListItemText-root-427 MuiListItemText-dense-429"
       >
         <span
-          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430"
+          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430 MuiListItemText-textDense-432"
         >
           Gul frøstjerne (Thalictrum flavum)
         </span>
@@ -2563,7 +2563,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
       />
     </div>
     <div
-      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-gutters-423 MuiListItem-button-424"
+      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-dense-420 MuiListItem-gutters-423 MuiListItem-button-424"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -2588,10 +2588,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -2651,10 +2651,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-427"
+        className="MuiListItemText-root-427 MuiListItemText-dense-429"
       >
         <span
-          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430"
+          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430 MuiListItemText-textDense-432"
         >
           Kattehale (Lythrum salicaria)
         </span>
@@ -2664,7 +2664,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
       />
     </div>
     <div
-      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-gutters-423 MuiListItem-button-424"
+      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-dense-420 MuiListItem-gutters-423 MuiListItem-button-424"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -2689,10 +2689,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -2752,10 +2752,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-427"
+        className="MuiListItemText-root-427 MuiListItemText-dense-429"
       >
         <span
-          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430"
+          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430 MuiListItemText-textDense-432"
         >
           Fredløs (Lysimachia vulgaris)
         </span>
@@ -2765,7 +2765,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
       />
     </div>
     <div
-      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-gutters-423 MuiListItem-button-424"
+      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-dense-420 MuiListItem-gutters-423 MuiListItem-button-424"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -2790,10 +2790,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -2853,10 +2853,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-427"
+        className="MuiListItemText-root-427 MuiListItemText-dense-429"
       >
         <span
-          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430"
+          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430 MuiListItemText-textDense-432"
         >
           Gulldusk (Lysimachia thyrsiflora)
         </span>
@@ -2866,7 +2866,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
       />
     </div>
     <div
-      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-gutters-423 MuiListItem-button-424"
+      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-dense-420 MuiListItem-gutters-423 MuiListItem-button-424"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -2891,10 +2891,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -2954,10 +2954,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-427"
+        className="MuiListItemText-root-427 MuiListItemText-dense-429"
       >
         <span
-          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430"
+          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430 MuiListItemText-textDense-432"
         >
           Takrør (Phragmites australis)
         </span>
@@ -2967,7 +2967,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
       />
     </div>
     <div
-      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-gutters-423 MuiListItem-button-424"
+      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-dense-420 MuiListItem-gutters-423 MuiListItem-button-424"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -2992,10 +2992,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -3055,10 +3055,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-427"
+        className="MuiListItemText-root-427 MuiListItemText-dense-429"
       >
         <span
-          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430"
+          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430 MuiListItemText-textDense-432"
         >
           Kjempesøtgras (Glyceria maxima)
         </span>
@@ -3068,7 +3068,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
       />
     </div>
     <div
-      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-gutters-423 MuiListItem-button-424"
+      className="MuiButtonBase-root-440 MuiListItem-root-416 MuiListItem-default-419 MuiListItem-dense-420 MuiListItem-gutters-423 MuiListItem-button-424"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -3093,10 +3093,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         style={
           Object {
             "backgroundColor": "#eee",
-            "height": 56,
+            "height": "100%",
             "left": 0,
             "position": "absolute",
-            "top": 6,
+            "top": 0,
             "transition": "width 0.5s ease-out",
             "width": "0%",
             "zIndex": -1,
@@ -3156,10 +3156,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         </div>
       </div>
       <div
-        className="MuiListItemText-root-427"
+        className="MuiListItemText-root-427 MuiListItemText-dense-429"
       >
         <span
-          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430"
+          className="MuiTypography-root-381 MuiTypography-subheading-388 MuiListItemText-primary-430 MuiListItemText-textDense-432"
         >
           Mannasøtgras (Glyceria fluitans)
         </span>
@@ -5460,6 +5460,10 @@ exports[`Storyshots Spesifikt område NA 1`] = `
       >
         Om kartleggingen
       </li>
+      <h1>
+        _
+        _
+      </h1>
       <li
         className="MuiListItem-root-640 MuiListItem-default-643 MuiListItem-gutters-647"
         disabled={false}

@@ -93,6 +93,7 @@ const Prosjekt = ({ prosjekt, program, målestokk }) => (
 
 const Om = props => (
   <React.Fragment>
+    <h1>_{props.geom_id}_</h1>
     {props.surveyer && <Kartlegger {...props.surveyer} />}
     {props.owner && <Eier {...props.owner} />}{' '}
     {props.project && (

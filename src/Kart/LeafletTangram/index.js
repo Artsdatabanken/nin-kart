@@ -61,9 +61,9 @@ class LeafletTangram extends React.Component {
     this.map = map
     this.updateMap(this.props)
     this.icon = L.icon({
-      iconUrl: '/marker.png',
-      iconSize: [26.5, 26.5],
-      iconAnchor: [13.25, 13.25],
+      iconUrl: '/marker/baseline_place_black_18dp.png',
+      iconSize: [36, 36],
+      iconAnchor: [17, 35],
     })
   }
 
@@ -96,7 +96,7 @@ class LeafletTangram extends React.Component {
   handleClick = e => {
     const latlng = e.leaflet_event.latlng
     this.removeMarker()
-    this.marker = L.marker([latlng.lat, latlng.lng], { icon: this.icon })
+    this.marker = L.marker([latlng.lat, latlng.lng], { icoxn: this.icon })
     this.map.addLayer(this.marker)
     this.props.onClick(latlng)
   }

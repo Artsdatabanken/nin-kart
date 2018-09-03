@@ -22,8 +22,8 @@ Object.keys(farger).forEach(prefiks => {
     .setAlpha(0.95)
     .toHslString()
   palett.medium[prefiks] = tinycolor(farger[prefiks])
-    .lighten(20)
-    .setAlpha(0.95)
+    .lighten(10)
+    //    .setAlpha(0.95)
     .toHslString()
 })
 
