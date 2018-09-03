@@ -46,8 +46,9 @@ class BorreContainer extends Component {
     const r = {}
     Object.keys(data).forEach(key => {
       let node = data[key]
-      while (node.barn) node = node.barn[0]
-      if (key.substring(0, 2) === 'AO') {
+      if (key.substring(0, 2) === 'AO' && key.indexOf('-') > 0) {
+        console.log(node)
+        while (node.barn) node = node.barn[0]
         if (sted.placename) {
           console.log(r[key])
           r[key] = {
@@ -58,6 +59,7 @@ class BorreContainer extends Component {
         }
       } else r[key] = node
     })
+    console.log('r', r)
     return r
   }
 
