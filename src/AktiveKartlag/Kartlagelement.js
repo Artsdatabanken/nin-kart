@@ -1,11 +1,14 @@
 import {
+  Avatar,
   Divider,
+  IconButton,
   ListItem,
+  ListItemAvatar,
   ListItemSecondaryAction,
   ListItemText,
 } from '@material-ui/core'
 import { withTheme } from '@material-ui/core/styles'
-import Switch from '@material-ui/core/Switch'
+import { Visibility, VisibilityOff } from '@material-ui/icons'
 import React from 'react'
 import { withRouter } from 'react-router'
 import PaintSwatch from '../Kodetre/Kodeliste/PaintSwatch'
@@ -23,7 +26,6 @@ class Kartlagelement extends React.Component {
     } = this.props
     return (
       <React.Fragment>
-        <Divider />
         <ListItem
           button={true}
           dense={true}
@@ -34,23 +36,32 @@ class Kartlagelement extends React.Component {
             onMouseLeave(kode)
           }}
         >
-          <Switch
-            checked={this.props.erSynlig}
-            onClick={e => {
-              this.props.onUpdateLayerProp(
-                kode,
-                'erSynlig',
-                !this.props.erSynlig
-              )
-              e.stopPropagation()
-            }}
-          />
+          <ListItemAvatar>
+            <IconButton
+              onClick={e => {
+                this.props.onUpdateLayerProp(
+                  kode,
+                  'erSynlig',
+                  !this.props.erSynlig
+                )
+                e.stopPropagation()
+              }}
+            >
+              {this.props.erSynlig ? (
+                <Visibility style={{ color: '#333' }} />
+              ) : (
+                <VisibilityOff style={{ color: '#aaa' }} />
+              )}
+            </IconButton>
+          </ListItemAvatar>
           <ListItemText primary={tittel} secondary={undertittel} />
-          <ListItemSecondaryAction>
+          <ListItemSecondaryAction style={{ paddingRight: 8 }}>
             {farge ? (
               <PaintSwatch color={farge} />
             ) : (
-              <img src={'/' + kode + '.png'} alt="farge" />
+              <Avatar>
+                <img src={'/' + kode + '.png'} alt="farge" />
+              </Avatar>
             )}
           </ListItemSecondaryAction>
         </ListItem>

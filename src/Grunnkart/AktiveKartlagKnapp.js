@@ -1,8 +1,8 @@
 // @flow
-import { PropTypes } from '@material-ui/core'
-import Button from '@material-ui/core/Button'
+import { AppBar, IconButton, Toolbar, Typography } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
-import LayersIcon from '@material-ui/icons/Layers'
+import { ExpandLess } from '@material-ui/icons'
+import PropTypes from 'prop-types'
 import React from 'react'
 import { withRouter } from 'react-router'
 
@@ -16,24 +16,41 @@ type Props = {
 const styles = {
   button: {
     position: 'absolute',
-    top: 16,
-    right: 16,
+    bottom: 28,
+    right: 52,
   },
 }
 
 class AktiveKartlagKnapp extends React.Component<Props, State> {
   render() {
-    const { classes, onClick } = this.props
+    const { onClick } = this.props
     return (
-      <Button
-        variant="fab"
-        color="primary"
-        aria-label="Add"
-        className={classes.button}
-        onClick={onClick}
+      <div
+        style={{
+          backgroundColor: '#fff',
+          position: 'absolute',
+          width: 208,
+          right: 0,
+          bottom: 0,
+          boxShadow:
+            '0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)',
+        }}
       >
-        <LayersIcon />
-      </Button>
+        <AppBar position="static" color="primary">
+          <Toolbar
+            variant="dense"
+            style={{ paddingRight: 0, cursor: 'pointer' }}
+            onClick={onClick}
+          >
+            <Typography style={{ flexGrow: 1 }} variant="title" color="inherit">
+              Aktive kartlag
+            </Typography>
+            <IconButton color="inherit">
+              <ExpandLess />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+      </div>
     )
   }
 }
