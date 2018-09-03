@@ -5605,15 +5605,14 @@ exports[`Storyshots Spesifikt område NA 1`] = `
           className="MuiTouchRipple-root-714"
         />
       </div>
+      <h1>
+        lokalId: 
+      </h1>
       <li
         className="MuiListSubheader-root-663 MuiListSubheader-sticky-668 MuiListSubheader-gutters-666"
       >
         Om kartleggingen
       </li>
-      <h1>
-        _
-        _
-      </h1>
       <li
         className="MuiListItem-root-669 MuiListItem-default-672 MuiListItem-gutters-676"
         disabled={false}
