@@ -1,5 +1,6 @@
 // @flow
 import {
+  Avatar,
   ListItem,
   ListItemSecondaryAction,
   ListItemText,
@@ -36,7 +37,7 @@ type Props = {
 
 class Kodelisteelement extends React.Component<Props, State> {
   render() {
-    const { meta, kode, avatarUtenRamme, erOpplyst, visKode } = this.props
+    const { meta, kode, erOpplyst, visKode } = this.props
     return (
       <React.Fragment>
         <ListItem
@@ -53,9 +54,11 @@ class Kodelisteelement extends React.Component<Props, State> {
             areal={this.props.areal}
             theme={this.props.theme}
           />
-          <Bildeavatar utenRamme={avatarUtenRamme} kode={kode} />
-          <ListItemSecondaryAction>
-            <PaintSwatch color={erOpplyst ? '#f00' : meta.farge} />
+          <Bildeavatar kode={kode} />
+          <ListItemSecondaryAction style={{ paddingRight: 8 }}>
+            <Avatar style={{ width: 24, height: 24 }}>
+              <PaintSwatch color={erOpplyst ? '#f00' : meta.farge} />
+            </Avatar>
           </ListItemSecondaryAction>
           <ListItemText
             primary={språk(meta.tittel)}

@@ -16,7 +16,7 @@ const styles = {
 
 class BildeAvatar extends Component {
   render() {
-    const { classes, utenRamme } = this.props
+    const { classes } = this.props
     const kode = this.props.kode.replace('-VV', '') // HACK verneområder under kommune
     const prefiks = kode.substring(0, 2)
     const parts = typesystem.splittKode(kode)
@@ -26,7 +26,7 @@ class BildeAvatar extends Component {
         <Avatar
           alt="logo"
           classes={{
-            root: utenRamme && classes.utenRamme,
+            root: classes.utenRamme,
             img: classes.img,
           }}
           src={backend.avatar40px(kode)}

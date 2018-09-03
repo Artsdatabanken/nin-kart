@@ -56,13 +56,13 @@ class Kartlagelement extends React.Component {
           </ListItemAvatar>
           <ListItemText primary={tittel} secondary={undertittel} />
           <ListItemSecondaryAction style={{ paddingRight: 8 }}>
-            {farge ? (
-              <PaintSwatch color={farge} />
-            ) : (
-              <Avatar>
+            <Avatar>
+              {farge ? (
+                <PaintSwatch color={farge} />
+              ) : (
                 <img src={'/' + kode + '.png'} alt="farge" />
-              </Avatar>
-            )}
+              )}
+            </Avatar>
           </ListItemSecondaryAction>
         </ListItem>
         <Divider />
