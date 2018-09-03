@@ -50,11 +50,9 @@ const Listeelement = ({ kode, primary, secondary, history, geom_id }) => {
           <SettingsContext.Consumer>
             {context => {
               return (
-                context.visKoder && (
-                  <div style={{ position: 'absolute', right: 8, bottom: 8 }}>
-                    <Flis kode={kode} />
-                  </div>
-                )
+                <div style={{ position: 'absolute', right: 8, bottom: 8 }}>
+                  <Flis kode={kode} visKoder={context.visKoder} />
+                </div>
               )
             }}
           </SettingsContext.Consumer>

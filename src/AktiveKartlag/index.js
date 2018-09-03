@@ -1,5 +1,5 @@
-import { Button, List, ListSubheader } from '@material-ui/core'
-import MapsLayers from '@material-ui/icons/Layers'
+import { Button, List, ListSubheader, withStyles } from '@material-ui/core'
+import { Close, Style } from '@material-ui/icons/'
 import React from 'react'
 import { withRouter } from 'react-router'
 import { SettingsContext } from '../SettingsContext'
@@ -7,32 +7,51 @@ import BakgrunnskartElement from './BakgrunnskartElement'
 import PolygonlagElement from './PolygonlagElement'
 import TerrenglagElement from './TerrenglagElement'
 
+const styles = theme => ({
+  button: {
+    margin: theme.spacing.unit,
+  },
+})
+
 class AktiveKartlag extends React.Component {
   render() {
-    const { koder, history, style } = this.props
+    const { koder, history, style, classes } = this.props
 
     return (
       <div style={{ ...style }}>
         <List>
-          <ListSubheader>Mine kartlag</ListSubheader>
+          <ListSubheader>Aktive kartlag</ListSubheader>
           <SettingsContext.Consumer>
-            {context =>
-              koder.map(forelder => {
-                return listeElement(forelder, this.props, context.visKoder)
-              })
-            }
+            {context => (
+              <React.Fragment>
+                {koder.map(forelder => {
+                  return listeElement(forelder, this.props, context.visKoder)
+                })}
+                <div style={{ paddxing: 16 }}>
+                  <Button
+                    variant="outlined"
+                    className={classes.button}
+                    onClick={() => {
+                      history.push('/katalog/')
+                    }}
+                  >
+                    <Style />
+                    &nbsp;Åpne katalog
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    className={classes.button}
+                    onClick={() => {
+                      context.onUpdateValue('visAktiveLag', false)
+                    }}
+                  >
+                    Lukk&nbsp;
+                    <Close />
+                  </Button>
+                </div>
+              </React.Fragment>
+            )}
           </SettingsContext.Consumer>
-
-          <Button
-            variant="outlined"
-            icon={<MapsLayers />}
-            style={{ padding: 24 }}
-            onClick={() => {
-              history.push('/katalog/')
-            }}
-          >
-            Legg til kartlag
-          </Button>
         </List>
       </div>
     )
@@ -83,4 +102,4 @@ function listeElement(forelder, props, visKoder) {
   )
 }
 
-export default withRouter(AktiveKartlag)
+export default withStyles(styles)(withRouter(AktiveKartlag))

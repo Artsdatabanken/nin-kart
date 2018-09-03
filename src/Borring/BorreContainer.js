@@ -69,6 +69,8 @@ class BorreContainer extends Component {
   }
 
   fetch(lng, lat) {
+    this.data = null
+    this.sted = null
     this.setState({
       borrehull: null,
       sted: null,

@@ -2,11 +2,13 @@
 import typesystem from '@artsdatabanken/typesystem'
 import React from 'react'
 import { withRouter } from 'react-router'
+import AktiveKartlag from '../AktiveKartlag/'
 import backend from '../backend'
 import Kart from '../Kart'
 import { SettingsContext } from '../SettingsContext'
 import språk from '../språk'
 import VenstreVinduContainer from '../VenstreVinduContainer'
+import AktiveKartlagKnapp from './AktiveKartlagKnapp'
 import MainDrawer from './MainDrawer'
 import standardlag from './standardlag.json'
 
@@ -197,14 +199,6 @@ class Grunnkart extends React.Component<Props, State> {
     this.setState({ aktiveLag: [...aktive] })
   }
 
-  handleUpdateSetting = (key, value) => {
-    console.log({ [key]: value })
-
-    console.log('_', this.props)
-    console.log(this.context)
-    this.setState({ [key]: value })
-  }
-
   render() {
     let erAktivert = false
     if (this.state.meta)
@@ -216,14 +210,46 @@ class Grunnkart extends React.Component<Props, State> {
         <SettingsContext.Consumer>
           {context => {
             return (
-              <MainDrawer
-                erÅpen={this.state.showMainDrawer}
-                toggleDrawer={() =>
-                  this.setState({ showMainDrawer: !this.state.showMainDrawer })
-                }
-                visKoder={context.visKoder}
-                onUpdateSetting={context.updateValue}
-              />
+              <React.Fragment>
+                <MainDrawer
+                  erÅpen={this.state.showMainDrawer}
+                  toggleDrawer={() =>
+                    this.setState({
+                      showMainDrawer: !this.state.showMainDrawer,
+                    })
+                  }
+                  visKoder={context.visKoder}
+                  onUpdateSetting={context.onUpdateValue}
+                />
+                {context.visAktiveLag ? (
+                  <div
+                    style={{
+                      backgroundColor: '#fff',
+                      position: 'absolute',
+                      width: 408,
+                      right: 0,
+                      top: 0,
+                    }}
+                  >
+                    <AktiveKartlag
+                      koder={this.state.aktiveLag}
+                      onMouseEnter={this.handleMouseEnter}
+                      onMouseLeave={this.handleMouseLeave}
+                      onUpdateLayerProp={this.handleUpdateLayerProp}
+                      onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                    />
+                  </div>
+                ) : (
+                  <AktiveKartlagKnapp
+                    onClick={() =>
+                      context.onUpdateValue(
+                        'visAktiveLag',
+                        !context.visAktiveLag
+                      )
+                    }
+                  />
+                )}
+              </React.Fragment>
             )
           }}
         </SettingsContext.Consumer>
