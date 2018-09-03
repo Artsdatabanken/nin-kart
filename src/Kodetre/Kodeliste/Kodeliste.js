@@ -52,7 +52,6 @@ const Kodeliste = ({
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             erOpplyst={kode === opplystKode}
-            avatarUtenRamme={avatarUtenRamme}
           />
         )
       })}

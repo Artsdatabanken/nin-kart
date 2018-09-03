@@ -86,6 +86,7 @@ class VenstreVinduContainer extends React.Component {
           <React.Fragment>
             <div style={{ height: 70 }} />
             <Switch>
+              <Route path="/kart" render={({ match, history }) => null} />
               <Route
                 path="/katalog/:kode*"
                 render={({ match, history }) => {
@@ -169,7 +170,7 @@ class VenstreVinduContainer extends React.Component {
               onGoBack={() => history.goBack()}
               onExitToRoot={() => {
                 this.setState({ searchResults: null })
-                history.push('/')
+                history.push('/kart')
               }}
               onToggleMainDrawer={this.props.onToggleMainDrawer}
               isAtRoot={history.location.pathname === '/'}

@@ -41,7 +41,7 @@ class Kodekort extends React.Component {
     if (prefix === 'AO')
       return {
         minHeight: 297,
-        marginTop: 72,
+        marginTop: 142,
         marginBottom: 16,
         filter: 'drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.2)',
         backgroundSize: 'contain',

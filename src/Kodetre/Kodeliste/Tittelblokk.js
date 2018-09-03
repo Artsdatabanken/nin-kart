@@ -52,7 +52,7 @@ const Tittelblokk = ({
   return (
     <div
       className={classes.block}
-      style={{ backgroundColor: farger.mørk[prefiks] || 'hsl(16, 100%, 50%)' }}
+      style={{ backgroundColor: farger.mørk[prefiks] || 'hsl(16, 0%, 50%)' }}
     >
       {false && (
         <div
