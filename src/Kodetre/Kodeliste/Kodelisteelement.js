@@ -1,6 +1,5 @@
 // @flow
 import {
-  Avatar,
   ListItem,
   ListItemSecondaryAction,
   ListItemText,
