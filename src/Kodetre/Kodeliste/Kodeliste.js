@@ -15,6 +15,7 @@ const Kodeliste = ({
   visKode,
 }) => {
   if (!metadata) return null
+  if (Object.keys(metadata) <= 0) return null
   return (
     <React.Fragment>
       <ListSubheader>{title}</ListSubheader>

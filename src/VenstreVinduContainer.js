@@ -10,7 +10,7 @@ import språk from './språk'
 import TopBar from './TopBar/TopBar'
 import TweakContainer from './Tweaks/TweakContainer'
 
-const Panel = ({ children }) => (
+const Panel = ({ style, children }) => (
   <div
     style={{
       backgroundColor: '#f5f5f5',
@@ -18,11 +18,13 @@ const Panel = ({ children }) => (
       top: 0,
       left: 0,
       padding: 0,
+      paddingTop: 72,
       bottom: 0,
       width: 408,
       zIndex: -10,
       overflowY: 'auto',
       overflowX: 'hidden',
+      ...style,
     }}
   >
     {children}
@@ -91,7 +93,7 @@ class VenstreVinduContainer extends React.Component {
                 path="/katalog/:kode*"
                 render={({ match, history }) => {
                   return (
-                    <Panel>
+                    <Panel style={{ paddingTop: 0 }}>
                       <KodeContainer
                         path={match.params.kode || ''}
                         onGoToCode={url => {
