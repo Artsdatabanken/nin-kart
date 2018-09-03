@@ -56,7 +56,7 @@ class LeafletTangram extends React.Component {
       this.props.zoom * 1.8
     )
 
-    L.control.zoom({ position: 'bottomright' }).addTo(map)
+    L.control.zoom({ position: 'topright' }).addTo(map)
     L.DomUtil.addClass(map._container, 'crosshair-cursor-enabled')
     this.map = map
     this.updateMap(this.props)

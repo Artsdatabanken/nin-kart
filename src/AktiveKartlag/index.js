@@ -1,5 +1,14 @@
-import { Button, List, ListSubheader, withStyles } from '@material-ui/core'
-import { Close, Style } from '@material-ui/icons/'
+import {
+  AppBar,
+  Button,
+  IconButton,
+  List,
+  Toolbar,
+  Typography,
+  withStyles,
+} from '@material-ui/core'
+import { ExpandMore } from '@material-ui/icons'
+import { Style } from '@material-ui/icons/'
 import React from 'react'
 import { withRouter } from 'react-router'
 import { SettingsContext } from '../SettingsContext'
@@ -15,14 +24,33 @@ const styles = theme => ({
 
 class AktiveKartlag extends React.Component {
   render() {
-    const { koder, history, style, classes } = this.props
+    const { koder, history, classes } = this.props
 
     return (
-      <div style={{ ...style }}>
-        <List>
-          <ListSubheader>Aktive kartlag</ListSubheader>
-          <SettingsContext.Consumer>
-            {context => (
+      <SettingsContext.Consumer>
+        {context => (
+          <React.Fragment>
+            <AppBar position="static" color="primary">
+              <Toolbar
+                variant="dense"
+                style={{ paddingRight: 0, cursor: 'pointer' }}
+                onClick={() => {
+                  context.onUpdateValue('visAktiveLag', false)
+                }}
+              >
+                <Typography
+                  style={{ flexGrow: 1 }}
+                  variant="title"
+                  color="inherit"
+                >
+                  Aktive kartlag
+                </Typography>
+                <IconButton color="inherit">
+                  <ExpandMore />
+                </IconButton>
+              </Toolbar>
+            </AppBar>
+            <List>
               <React.Fragment>
                 {koder.map(forelder => {
                   return listeElement(forelder, this.props, context.visKoder)
@@ -36,24 +64,14 @@ class AktiveKartlag extends React.Component {
                     }}
                   >
                     <Style />
-                    &nbsp;Åpne katalog
-                  </Button>
-                  <Button
-                    variant="outlined"
-                    className={classes.button}
-                    onClick={() => {
-                      context.onUpdateValue('visAktiveLag', false)
-                    }}
-                  >
-                    Lukk&nbsp;
-                    <Close />
+                    &nbsp;Katalog
                   </Button>
                 </div>
               </React.Fragment>
-            )}
-          </SettingsContext.Consumer>
-        </List>
-      </div>
+            </List>
+          </React.Fragment>
+        )}
+      </SettingsContext.Consumer>
     )
   }
 }
