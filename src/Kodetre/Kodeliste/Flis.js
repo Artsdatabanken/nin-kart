@@ -6,7 +6,7 @@ import farger from '../../farger'
 
 class Flis extends Component {
   render() {
-    const { kode } = this.props
+    const { kode, visKoder } = this.props
     const prefiks = kode.substring(0, 2)
     const parts = typesystem.splittKode(kode)
     if (prefiks === 'AO' && parts.length > 1)
@@ -31,6 +31,7 @@ class Flis extends Component {
           />
         </div>
       )
+    if (!visKoder) return null
     return (
       <Chip
         style={{

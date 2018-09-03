@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { SettingsContext } from './SettingsContext'
 
 class SetingsContainer extends Component {
-  state = { visKoder: false }
+  state = { visKoder: false, visAktiveLag: false }
   componentDidMount() {
     this.setState({ visKoder: localStorage.getItem('visKoder') === 'true' })
   }
@@ -12,9 +12,13 @@ class SetingsContainer extends Component {
       <SettingsContext.Provider
         value={{
           visKoder: this.state.visKoder,
-          updateValue: (key, value) => {
+          visAktiveLag: this.state.visAktiveLag,
+          onUpdateValue: (key, value) => {
             this.setState({ [key]: value })
             localStorage.setItem(key, value)
+          },
+          onToggleAktiveLag: () => {
+            this.setState({ visAktiveLag: !this.state.visAktiveLag })
           },
         }}
       >

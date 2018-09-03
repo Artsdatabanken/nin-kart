@@ -1,8 +1,6 @@
 import { Divider, Snackbar } from '@material-ui/core'
 import React from 'react'
-import { withRouter } from 'react-router'
-import { Route, Switch } from 'react-router-dom'
-import AktiveKartlag from './AktiveKartlag'
+import { Route, Switch, withRouter } from 'react-router-dom'
 import backend from './backend'
 import BorreContainer from './Borring/BorreContainer'
 import KodeContainer from './Kodetre/Kodeliste/KodeContainer'
@@ -11,6 +9,25 @@ import SpesifiktObjekt from './SpesifiktObjekt'
 import språk from './språk'
 import TopBar from './TopBar/TopBar'
 import TweakContainer from './Tweaks/TweakContainer'
+
+const Panel = ({ children }) => (
+  <div
+    style={{
+      backgroundColor: '#f5f5f5',
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      padding: 0,
+      bottom: 0,
+      width: 408,
+      zIndex: -10,
+      overflowY: 'auto',
+      overflowX: 'hidden',
+    }}
+  >
+    {children}
+  </div>
+)
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
@@ -66,20 +83,90 @@ class VenstreVinduContainer extends React.Component {
     return (
       <Route
         render={({ match, history }) => (
-          <div
-            style={{
-              backgroundColor: '#f5f5f5',
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              padding: 0,
-              bottom: 0,
-              width: 408,
-              zIndex: -10,
-              overflowY: 'auto',
-              overflowX: 'hidden',
-            }}
-          >
+          <React.Fragment>
+            <div style={{ height: 70 }} />
+            <Switch>
+              <Route
+                path="/katalog/:kode*"
+                render={({ match, history }) => {
+                  return (
+                    <Panel>
+                      <KodeContainer
+                        path={match.params.kode || ''}
+                        onGoToCode={url => {
+                          this.setState({ searchResults: null })
+                          console.log(url)
+                          history.push('/katalog/' + url)
+                        }}
+                        onMouseEnter={this.props.onMouseEnter}
+                        onMouseLeave={this.props.onMouseLeave}
+                        onFitBounds={this.props.onFitBounds}
+                        erAktivert={this.props.erAktivert}
+                        opplystKode={this.props.opplystKode}
+                        onToggleLayer={this.props.onToggleLayer}
+                        mapBounds={this.props.mapBounds}
+                        language={this.props.language}
+                        meta={this.props.meta}
+                      />
+                    </Panel>
+                  )
+                }}
+              />
+              <Route
+                exact
+                path="/"
+                render={({ match, history }) => {
+                  return null
+                }}
+              />
+
+              <Route
+                path="/lag/:kode/:lag?"
+                render={({ match, history }) => (
+                  <Panel>
+                    <TweakContainer
+                      kode={match.params.kode}
+                      lag={match.params.lag}
+                      koder={this.props.aktiveLag}
+                      {...this.finnValgtKodeElement(match.params.kode)}
+                      onFitBounds={this.props.onFitBounds}
+                      onUpdateLayerProp={this.props.onUpdateLayerProp}
+                      onRemoveSelectedLayer={this.props.onRemoveSelectedLayer}
+                    />
+                  </Panel>
+                )}
+              />
+              <Route
+                path="/punkt/:lng,:lat"
+                render={({ match, history }) => (
+                  <Panel>
+                    <BorreContainer
+                      lng={match.params.lng}
+                      lat={match.params.lat}
+                    />
+                  </Panel>
+                )}
+              />
+              <Route
+                path="/detaljer/:prefiks/:geom_id"
+                render={({ match, history }) => (
+                  <Panel>
+                    <SpesifiktObjekt
+                      prefiks={match.params.prefiks}
+                      geom_id={match.params.geom_id}
+                    />
+                  </Panel>
+                )}
+              />
+            </Switch>
+            {this.state.error && (
+              <Snackbar
+                open={true}
+                message={'Søk feilet: ' + JSON.stringify(this.state.error)}
+                autoHideDuration={4000}
+                onRequestClose={() => this.setState({ error: null })}
+              />
+            )}
             <TopBar
               onGoBack={() => history.goBack()}
               onExitToRoot={() => {
@@ -108,90 +195,7 @@ class VenstreVinduContainer extends React.Component {
                 </React.Fragment>
               )}
             </TopBar>
-            <div style={{ height: 70 }} />
-            <Switch>
-              <Route
-                path="/katalog/:kode*"
-                render={({ match, history }) => {
-                  return (
-                    <KodeContainer
-                      path={match.params.kode || ''}
-                      onGoToCode={url => {
-                        this.setState({ searchResults: null })
-                        console.log(url)
-                        history.push('/katalog/' + url)
-                      }}
-                      onMouseEnter={this.props.onMouseEnter}
-                      onMouseLeave={this.props.onMouseLeave}
-                      onFitBounds={this.props.onFitBounds}
-                      erAktivert={this.props.erAktivert}
-                      opplystKode={this.props.opplystKode}
-                      onToggleLayer={this.props.onToggleLayer}
-                      mapBounds={this.props.mapBounds}
-                      language={this.props.language}
-                      meta={this.props.meta}
-                    />
-                  )
-                }}
-              />
-              <Route
-                exact
-                path="/"
-                render={({ match, history }) => {
-                  return (
-                    <AktiveKartlag
-                      koder={this.props.aktiveLag}
-                      onMouseEnter={this.props.onMouseEnter}
-                      onMouseLeave={this.props.onMouseLeave}
-                      onUpdateLayerProp={this.props.onUpdateLayerProp}
-                      onRemoveSelectedLayer={this.props.onRemoveSelectedLayer}
-                    />
-                  )
-                }}
-              />
-
-              <Route
-                path="/lag/:kode/:lag?"
-                render={({ match, history }) => (
-                  <TweakContainer
-                    kode={match.params.kode}
-                    lag={match.params.lag}
-                    koder={this.props.aktiveLag}
-                    {...this.finnValgtKodeElement(match.params.kode)}
-                    onFitBounds={this.props.onFitBounds}
-                    onUpdateLayerProp={this.props.onUpdateLayerProp}
-                    onRemoveSelectedLayer={this.props.onRemoveSelectedLayer}
-                  />
-                )}
-              />
-              <Route
-                path="/punkt/:lng,:lat"
-                render={({ match, history }) => (
-                  <BorreContainer
-                    lng={match.params.lng}
-                    lat={match.params.lat}
-                  />
-                )}
-              />
-              <Route
-                path="/detaljer/:prefiks/:geom_id"
-                render={({ match, history }) => (
-                  <SpesifiktObjekt
-                    prefiks={match.params.prefiks}
-                    geom_id={match.params.geom_id}
-                  />
-                )}
-              />
-            </Switch>
-            {this.state.error && (
-              <Snackbar
-                open={true}
-                message={'Søk feilet: ' + JSON.stringify(this.state.error)}
-                autoHideDuration={4000}
-                onRequestClose={() => this.setState({ error: null })}
-              />
-            )}
-          </div>
+          </React.Fragment>
         )}
       />
     )
