@@ -13,14 +13,18 @@ const farger = {
 
 const palett = {
   lys: {},
+  medium: {},
   mørk: farger,
 }
 Object.keys(farger).forEach(prefiks => {
-  const lysFarge = tinycolor(farger[prefiks])
+  palett.lys[prefiks] = tinycolor(farger[prefiks])
     .lighten(40)
     .setAlpha(0.95)
     .toHslString()
-  palett.lys[prefiks] = lysFarge
+  palett.medium[prefiks] = tinycolor(farger[prefiks])
+    .lighten(20)
+    .setAlpha(0.95)
+    .toHslString()
 })
 
 export default palett

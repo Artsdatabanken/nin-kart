@@ -140,6 +140,10 @@ class Backend {
     return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fomslag%2F${width}%2F${kode}.jpg?alt=media`
   }
 
+  static getFotoBanner(kode: string, width: number = 408) {
+    return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fbanner%2F${width}%2F${kode}.jpg?alt=media`
+  }
+
   static avatar40px(kode: string) {
     return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2F${kode}.jpg?alt=media`
   }
