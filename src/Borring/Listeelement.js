@@ -1,14 +1,9 @@
-import {
-  Avatar,
-  Chip,
-  Divider,
-  ListItem,
-  ListItemText,
-} from '@material-ui/core'
+import { Avatar, Divider, ListItem, ListItemText } from '@material-ui/core'
 import React from 'react'
 import { withRouter } from 'react-router'
 import backend from '../backend'
 import farger from '../farger'
+import Flis from '../Kodetre/Kodeliste/Flis'
 import { SettingsContext } from '../SettingsContext'
 
 const Listeelement = ({ kode, primary, secondary, history, geom_id }) => {
@@ -57,23 +52,7 @@ const Listeelement = ({ kode, primary, secondary, history, geom_id }) => {
               return (
                 context.visKoder && (
                   <div style={{ position: 'absolute', right: 8, bottom: 8 }}>
-                    {kode.length > 3 && (
-                      <Chip
-                        avatar={
-                          !avatar && (
-                            <Avatar
-                              style={{
-                                backgroundColor: farger.medium[prefix],
-                                color: 'white',
-                              }}
-                            >
-                              {prefix}
-                            </Avatar>
-                          )
-                        }
-                        label={kode.substring(3)}
-                      />
-                    )}
+                    <Flis kode={kode} />
                   </div>
                 )
               )

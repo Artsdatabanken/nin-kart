@@ -40,6 +40,7 @@ class Kodelisteelement extends React.Component<Props, State> {
     return (
       <React.Fragment>
         <ListItem
+          dense={true}
           key={kode}
           onClick={() => this.props.onGoToCode(kode)}
           onMouseEnter={() => this.props.onMouseEnter(kode)}
