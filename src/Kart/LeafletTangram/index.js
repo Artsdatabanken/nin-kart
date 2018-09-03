@@ -96,7 +96,7 @@ class LeafletTangram extends React.Component {
   handleClick = e => {
     const latlng = e.leaflet_event.latlng
     this.removeMarker()
-    this.marker = L.marker([latlng.lat, latlng.lng], { icoxn: this.icon })
+    this.marker = L.marker([latlng.lat, latlng.lng], { icon: this.icon })
     this.map.addLayer(this.marker)
     this.props.onClick(latlng)
   }

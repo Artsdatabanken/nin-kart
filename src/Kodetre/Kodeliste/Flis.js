@@ -13,9 +13,17 @@ class Flis extends Component {
       return (
         <div style={{ paddingBottom: 4, paddingRight: 8 }}>
           <img
+            ref={el => (this.logo = el)}
+            onLoad={() => {
+              this.logo.style.opacity = 1
+            }}
             alt="logo"
             src={backend.avatar40px(kode)}
-            style={{ filter: 'drop-shadow(2px 2px 2px #666)' }}
+            style={{
+              opacity: 0,
+              filter: 'drop-shadow(2px 2px 2px #666)',
+              animation: 'fadein 3s ease',
+            }}
             onError={e => {
               const brokenAvatar = backend.avatar40px('~', 40)
               if (e.target.src !== brokenAvatar) e.target.src = brokenAvatar
