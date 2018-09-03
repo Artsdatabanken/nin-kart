@@ -1,6 +1,6 @@
 import { Divider, Snackbar } from '@material-ui/core'
 import React from 'react'
-import { Route, Switch, withRouter } from 'react-router-dom'
+import { Redirect, Route, Switch, withRouter } from 'react-router-dom'
 import backend from './backend'
 import BorreContainer from './Borring/BorreContainer'
 import KodeContainer from './Kodetre/Kodeliste/KodeContainer'
@@ -112,13 +112,6 @@ class VenstreVinduContainer extends React.Component {
                   )
                 }}
               />
-              <Route
-                exact
-                path="/"
-                render={({ match, history }) => {
-                  return null
-                }}
-              />
 
               <Route
                 path="/lag/:kode/:lag?"
@@ -157,6 +150,11 @@ class VenstreVinduContainer extends React.Component {
                     />
                   </Panel>
                 )}
+              />
+              <Route
+                exact
+                path="/"
+                component={() => <Redirect to="/katalog/" />}
               />
             </Switch>
             {this.state.error && (

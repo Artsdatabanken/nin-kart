@@ -23,8 +23,10 @@ class Kartlagelement extends React.Component {
     } = this.props
     return (
       <React.Fragment>
+        <Divider />
         <ListItem
           button={true}
+          dense={true}
           onClick={() => onClick(kode)}
           key={kode}
           onMouseEnter={() => onMouseEnter(kode)}
