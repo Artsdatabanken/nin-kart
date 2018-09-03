@@ -24,7 +24,13 @@ class NAContainer extends Component {
   handleClick = kode => this.props.history.push(`/katalog/${kode}`)
 
   render() {
-    return <NA {...this.state.data} onClick={this.handleClick} />
+    return (
+      <NA
+        {...this.state.data}
+        geom_id={this.props.geom_id}
+        onClick={this.handleClick}
+      />
+    )
   }
 }
 

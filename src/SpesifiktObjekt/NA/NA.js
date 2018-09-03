@@ -41,6 +41,7 @@ class NA extends Component {
                 </ListItem>
               )
             })}
+          <h1>lokalId: {this.props.geom_id}</h1>
           <ListSubheader>Om kartleggingen</ListSubheader>
           <Om {...om} />
         </List>
@@ -93,7 +94,6 @@ const Prosjekt = ({ prosjekt, program, målestokk }) => (
 
 const Om = props => (
   <React.Fragment>
-    <h1>_{props.geom_id}_</h1>
     {props.surveyer && <Kartlegger {...props.surveyer} />}
     {props.owner && <Eier {...props.owner} />}{' '}
     {props.project && (
