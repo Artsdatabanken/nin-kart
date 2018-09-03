@@ -7,7 +7,7 @@ import {
 } from '@material-ui/core'
 import { default as React } from 'react'
 import { withRouter } from 'react-router'
-import PaintSwatch from '../../Kodetre/Kodeliste/PaintSwatch'
+import Checkboard from '../../Kodetre/Kodeliste/Checkboard'
 
 const Bakgrunnskartlag = ({
   onUpdateLayerProp,
@@ -28,7 +28,7 @@ const Bakgrunnskartlag = ({
     <ListItemText primary={tittel} />
     <ListItemSecondaryAction>
       <Avatar>
-        <PaintSwatch color={farge} />
+        <Checkboard color={farge} />
       </Avatar>
     </ListItemSecondaryAction>
   </ListItem>
