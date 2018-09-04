@@ -23,10 +23,16 @@ storiesOf('Tweaks', module)
     </MemoryRouter>
   ))
   .add('bakgrunn', () => (
-    <MemoryRouter>
+    <MemoryRouter initialEntries={['/lag/bakgrunnskart/transport']}>
       <div style={{ width: 400 }}>
         <Tweaks kode={'bakgrunnskart'} />
-        <Tweaks kode={'terreng'} />
+      </div>
+    </MemoryRouter>
+  ))
+  .add('bakgrunn tema', () => (
+    <MemoryRouter initialEntries={['/lag/bakgrunnskart/tema']}>
+      <div style={{ width: 400 }}>
+        <Tweaks kode={'bakgrunnskart'} />
       </div>
     </MemoryRouter>
   ))

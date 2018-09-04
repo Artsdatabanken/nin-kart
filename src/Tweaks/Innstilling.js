@@ -23,7 +23,7 @@ const Innstilling = ({
       </div>
     )}
     <Label disabled={disabled}>{tittel}</Label>
-    <div style={{ position: 'absolute', top: '2px', float: 'left' }}>
+    <div style={{ position: 'relative', top: '2px', float: 'left' }}>
       {icon}
     </div>
     <div style={{ display: 'inline-block', left: '8px' }}>

@@ -4,15 +4,11 @@ import bkmal from './mal/bakgrunnskart'
 function bakgrunnskartlag(kode, erSynlig, style, farge, lag) {
   if (!erSynlig) return
   let mal = bkmal[kode]
-  if (mal.draw) {
-    console.log(JSON.stringify(mal))
-    mal.draw[style].color = farge
-  }
+  if (mal.draw) mal.draw[style].color = farge
   lag[kode] = mal
 }
 
 function lagBakgrunnskart(lag, r) {
-  console.log(lag)
   const grenser = {
     data: {
       source: 'osm',
