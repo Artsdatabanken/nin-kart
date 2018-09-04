@@ -51,10 +51,30 @@
       "layer": "waterway"
     },
     "draw": {
-      "mu_lines": {
+      "lines": {
         "order": 11,
         "color": [0.4, 0.4, 0.4, 1.0],
         "width": "1.3px"
+      }
+    }
+  },
+  "transport_navn": {
+    "data": {
+      "source": "osm",
+      "layer": "transportation_name"
+    },
+    "draw": {
+      "text": {
+        "text_source": "name",
+        "font": {
+          "family": "Roboto",
+          "fill": "#555",
+          "size": 12,
+          "stroke": {
+            "color": [0.9, 0.9, 0.9, 1.0],
+            "width": "1.0px"
+          }
+        }
       }
     }
   },

@@ -4,7 +4,10 @@ import bkmal from './mal/bakgrunnskart'
 function bakgrunnskartlag(kode, erSynlig, style, farge, lag) {
   if (!erSynlig) return
   let mal = bkmal[kode]
-  if (mal.draw) mal.draw[style].color = farge
+  if (mal.draw) {
+    console.log(JSON.stringify(mal))
+    mal.draw[style].color = farge
+  }
   lag[kode] = mal
 }
 
@@ -38,13 +41,20 @@ function lagBakgrunnskart(lag, r) {
     grenser
   )
   r[lag.kode] = grenser
-  /*  bakgrunnskartlag('vann', lag.vann, 'polygons', lag.vannfarge, r)
+  bakgrunnskartlag('vann', lag.vann, 'polygons', lag.vannfarge, r)
   bakgrunnskartlag('vannvei', lag.vann, 'lines', lag.vannfarge, r)
-*/
+
   bakgrunnskartlag(
     'transport',
     lag.transport,
     'mu_lines',
+    lag.transportfarge,
+    r
+  )
+  bakgrunnskartlag(
+    'transport_navn',
+    true || lag.transport_navn,
+    'text',
     lag.transportfarge,
     r
   )
