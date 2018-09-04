@@ -22,11 +22,15 @@ const Bakgrunnskartlag = ({
     button={true}
   >
     <Switch
+      onClick={e => e.stopPropagation()}
       onChange={() => onUpdateLayerProp('bakgrunnskart', lagNavn, !erSynlig)}
       checked={erSynlig}
     />
     <ListItemText primary={tittel} />
-    <ListItemSecondaryAction>
+    <ListItemSecondaryAction
+      onClick={() => history.push('/lag/bakgrunnskart/' + lagNavn)}
+      style={{ cursor: 'pointer' }}
+    >
       <Avatar>
         <Checkboard color={farge} />
       </Avatar>
