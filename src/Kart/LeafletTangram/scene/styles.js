@@ -34,6 +34,20 @@ const styles = {
     base: 'lines',
     blend: 'multiply',
   },
+  road_names: {
+    base: 'text',
+    draw: {
+      font: {
+        family: 'Roboto',
+        size: '12px',
+        fill: 'black',
+        stroke: {
+          color: 'white',
+          width: '1px',
+        },
+      },
+    },
+  },
 }
 
 function createStyles() {
