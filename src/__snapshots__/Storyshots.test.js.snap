@@ -7169,13 +7169,6 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
     <div
       style={
         Object {
-          "height": 70,
-        }
-      }
-    />
-    <div
-      style={
-        Object {
           "backgroundColor": "#f5f5f5",
           "bottom": 0,
           "left": 0,
@@ -7342,13 +7335,6 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
       }
     }
   >
-    <div
-      style={
-        Object {
-          "height": 70,
-        }
-      }
-    />
     <div
       style={
         Object {

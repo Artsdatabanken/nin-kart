@@ -86,7 +86,6 @@ class VenstreVinduContainer extends React.Component {
       <Route
         render={({ match, history }) => (
           <React.Fragment>
-            <div style={{ height: 70 }} />
             <Switch>
               <Route path="/kart" render={({ match, history }) => null} />
               <Route
