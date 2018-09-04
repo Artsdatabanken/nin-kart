@@ -4,7 +4,7 @@ import bkmal from './mal/bakgrunnskart'
 function bakgrunnskartlag(kode, erSynlig, style, farge, lag) {
   if (!erSynlig) return
   let mal = bkmal[kode]
-  mal.draw[style].color = farge
+  if (mal.draw) mal.draw[style].color = farge
   lag[kode] = mal
 }
 
@@ -38,8 +38,9 @@ function lagBakgrunnskart(lag, r) {
     grenser
   )
   r[lag.kode] = grenser
-  bakgrunnskartlag('vann', lag.vann, 'polygons', lag.vannfarge, r)
+  /*  bakgrunnskartlag('vann', lag.vann, 'polygons', lag.vannfarge, r)
   bakgrunnskartlag('vannvei', lag.vann, 'lines', lag.vannfarge, r)
+*/
   bakgrunnskartlag(
     'transport',
     lag.transport,
@@ -47,7 +48,6 @@ function lagBakgrunnskart(lag, r) {
     lag.transportfarge,
     r
   )
-  console.log(r)
 }
 
 export { lagBakgrunnskart }
