@@ -9,6 +9,7 @@ function bakgrunnskartlag(kode, erSynlig, style, farge, lag) {
 }
 
 function lagBakgrunnskart(lag, r) {
+  console.log(lag)
   const grenser = {
     data: {
       source: 'osm',
@@ -16,14 +17,14 @@ function lagBakgrunnskart(lag, r) {
     },
   }
   bakgrunnskartlag(
-    'land',
+    'kommune',
     lag.kommunegrense,
     'boundary',
     lag.kommunegrensefarge,
     grenser
   )
   bakgrunnskartlag(
-    'land',
+    'fylke',
     lag.fylkesgrense,
     'boundary',
     lag.fylkesgrensefarge,
@@ -46,6 +47,7 @@ function lagBakgrunnskart(lag, r) {
     lag.transportfarge,
     r
   )
+  console.log(r)
 }
 
 export { lagBakgrunnskart }
