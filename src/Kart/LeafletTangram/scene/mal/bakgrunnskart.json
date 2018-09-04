@@ -51,7 +51,7 @@
       "layer": "waterway"
     },
     "draw": {
-      "lines": {
+      "mu_lines": {
         "order": 11,
         "color": [0.4, 0.4, 0.4, 1.0],
         "width": "1.3px"
@@ -63,11 +63,260 @@
       "source": "osm",
       "layer": "transportation"
     },
-    "draw": {
-      "mu_lines": {
-        "order": 200,
-        "color": [0.3, 0.3, 0.3, 1.0],
-        "width": "1.2px"
+    "filter": {
+      "$geometry": "line"
+    },
+    "rail": {
+      "filter": {
+        "class": ["rail", "narrow_gauge", "funicular"],
+        "$zoom": {
+          "min": 9
+        }
+      },
+      "major": {
+        "draw": {
+          "lines": {
+            "order": 610,
+            "color": "white",
+            "dash_background_color": "#848484",
+            "dash": [6, 6],
+            "width": [
+              [10, "0.4px"],
+              [12, "0.75px"],
+              [14, "1.3px"],
+              [16, "2.5px"]
+            ],
+            "outline": {
+              "color": "#848484",
+              "width": [
+                [10, "0.3px"],
+                [12, "0.5px"],
+                [14, "1px"],
+                [16, "1.8px"]
+              ]
+            }
+          }
+        }
+      },
+      "ssy": {
+        "filter": {
+          "service": ["spur", "siding", "yard"]
+        },
+        "draw": {
+          "lines": {
+            "dash_background_color": "#d4d4d4",
+            "outline": {
+              "color": "#d4d4d4"
+            }
+          }
+        }
+      }
+    },
+    "motorway": {
+      "filter": {
+        "class": ["motorway"],
+        "$zoom": {
+          "min": 4
+        }
+      },
+      "draw": {
+        "lines": {
+          "order": 600,
+          "color": "#f9b887",
+          "width": [
+            [4, "0.42px"],
+            [6, ".68px"],
+            [8, "0.65px"],
+            [12, "1.7px"],
+            [16, "4.5px"],
+            [20, "11.67px"]
+          ],
+          "cap": "round",
+          "outline": {
+            "color": "#e5995d",
+            "width": [
+              [6, 0],
+              [8, "0.22px"],
+              [12, ".57px"],
+              [16, "1.5px"],
+              [20, "3.9px"]
+            ]
+          }
+        }
+      }
+    },
+    "major": {
+      "filter": {
+        "class": ["trunk", "primary"],
+        "$zoom": {
+          "min": 6
+        }
+      },
+      "road": {
+        "draw": {
+          "lines": {
+            "order": 600,
+            "color": "#fcd09b",
+            "width": [
+              [6, "0.64px"],
+              [8, "1.0px"],
+              [10, "1.0px"],
+              [12, "1.6px"],
+              [16, "4.1px"],
+              [20, "11px"]
+            ],
+            "cap": "round",
+            "outline": {
+              "color": "#d2a167",
+              "width": [[8, "0px"], [12, ".57px"], [16, "1.5px"], [20, "3.9px"]]
+            }
+          }
+        }
+      },
+      "names": {
+        "draw": {
+          "road_names": {
+            "priority": null,
+            "font": {
+              "stroke": {
+                "color": "#fcd09b"
+              }
+            }
+          }
+        }
+      }
+    },
+    "medium": {
+      "filter": {
+        "class": ["secondary", "tertiary"],
+        "$zoom": {
+          "min": 9
+        }
+      },
+      "road": {
+        "draw": {
+          "lines": {
+            "order": 600,
+            "color": "#f4dfbd",
+            "width": [
+              [8, "0.96px"],
+              [10, "1.6px"],
+              [12, "1.37px"],
+              [16, "3.6px"],
+              [20, "9.33px"]
+            ],
+            "cap": "round",
+            "outline": {
+              "color": "#dbc398",
+              "width": [
+                [10, "0px"],
+                [12, ".57px"],
+                [16, "1.5px"],
+                [20, "3.9px"]
+              ]
+            }
+          }
+        }
+      },
+      "names": {
+        "filter": [
+          {
+            "class": "secondary",
+            "$zoom": {
+              "min": 12
+            }
+          },
+          {
+            "class": "tertiary",
+            "$zoom": {
+              "min": 14
+            }
+          }
+        ],
+        "draw": {
+          "road_names": {
+            "priority": 90,
+            "font": {
+              "stroke": {
+                "color": "#f4dfbd"
+              }
+            }
+          }
+        }
+      }
+    },
+    "minor": {
+      "filter": {
+        "class": [
+          "minor",
+          "unclassified",
+          "residential",
+          "retail",
+          "path",
+          "service"
+        ],
+        "$zoom": {
+          "min": 12
+        }
+      },
+      "road": {
+        "draw": {
+          "lines": {
+            "order": 600,
+            "color": "white",
+            "width": [
+              [8, "0.96px"],
+              [10, "1.6px"],
+              [12, "1.37px"],
+              [16, "3.6px"],
+              [20, "9.33px"]
+            ],
+            "cap": "round",
+            "outline": {
+              "color": "#d4d4d4",
+              "width": [
+                [10, "0px"],
+                [12, ".57px"],
+                [16, "1.5px"],
+                [20, "3.9px"]
+              ]
+            }
+          }
+        }
+      },
+      "names": {
+        "filter": [
+          {
+            "class": "minor",
+            "$zoom": {
+              "min": 12
+            }
+          },
+          {
+            "class": "unclassified",
+            "$zoom": {
+              "min": 12
+            }
+          },
+          {
+            "class": "residential",
+            "$zoom": {
+              "min": 14
+            }
+          }
+        ],
+        "draw": {
+          "road_names": {
+            "priority": 100,
+            "font": {
+              "size": "12px",
+              "stroke": {
+                "color": "white",
+                "width": "2.5px"
+              }
+            }
+          }
+        }
       }
     }
   }
