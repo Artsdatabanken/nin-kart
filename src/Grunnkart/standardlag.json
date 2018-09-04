@@ -11,8 +11,11 @@
     "vann": true,
     "vannfarge": "#aaa",
     "kommunegrense": true,
+    "kommunegrensefarge": "rgba(25,25,25,0.40)",
     "fylkesgrense": true,
-    "landegrense": true
+    "fylkesgrensefarge": "rgba(25,25,25,0.20)",
+    "landegrense": true,
+    "landegrensefarge": "rgba(25,25,25,0.20)"
   },
   {
     "kode": "terreng",
