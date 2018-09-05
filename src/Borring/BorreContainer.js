@@ -20,6 +20,7 @@ class BorreContainer extends Component {
   //TODO: Fjern denne når APIet leverer på nytt format
   mapPunktHack(data, sted) {
     if (!data) return
+    console.log(data)
     data = this.hackInnSted(sted, data)
     let r = {}
     Object.keys(data).forEach(kode => {
@@ -36,6 +37,7 @@ class BorreContainer extends Component {
       s.kode = kode
       prev.tittel = node.key
       s.tittel = node.value
+      if (node.andel) s.andel = node.andel
       if (node.ids && node.ids.length > 0) s.geom_id = node.ids[0]
     })
     return r

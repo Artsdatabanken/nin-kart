@@ -54,7 +54,7 @@ class MainDrawer extends Component {
               window.open('https://artsdatabanken.no/Pages/3')
             }}
           >
-            <BildeAvatar kode="OR_ADB" utenRamme />
+            <BildeAvatar kode="OR_AD" utenRamme />
           </div>
           <ListItemText primary="Natur i Norge" />
           <IconButton onClick={toggleDrawer}>

@@ -4,9 +4,15 @@ import { withRouter } from 'react-router'
 import backend from '../backend'
 import farger from '../farger'
 import Flis from '../Kodetre/Kodeliste/Flis'
-import { SettingsContext } from '../SettingsContext'
 
-const Listeelement = ({ kode, primary, secondary, history, geom_id }) => {
+const Listeelement = ({
+  kode,
+  primary,
+  secondary,
+  history,
+  geom_id,
+  visKoder,
+}) => {
   const prefix = kode.substring(0, 2)
   const bgFarge = farger.lys[prefix]
   const avatar = false
@@ -47,15 +53,9 @@ const Listeelement = ({ kode, primary, secondary, history, geom_id }) => {
             primary={primary}
             secondary={secondary}
           />
-          <SettingsContext.Consumer>
-            {context => {
-              return (
-                <div style={{ position: 'absolute', right: 8, bottom: 8 }}>
-                  <Flis kode={kode} visKoder={context.visKoder} />
-                </div>
-              )
-            }}
-          </SettingsContext.Consumer>
+          <div style={{ position: 'absolute', right: 8, bottom: 8 }}>
+            <Flis kode={kode} visKoder={visKoder} />
+          </div>
         </ListItem>
       </div>
       <Divider />
