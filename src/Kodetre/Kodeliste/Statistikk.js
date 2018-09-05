@@ -72,12 +72,13 @@ const Statistikk = ({
               {toppnavn.toLowerCase()}.
             </span>
           )}
-          {stats.arter && (
-            <span>
-              &nbsp;Det er observert <b>{stats.arter}</b> ulike arter i områder
-              som er kartlagt som {tittel.toLowerCase()}.
-            </span>
-          )}
+          {false &&
+            stats.arter && (
+              <span>
+                &nbsp;Det er observert <b>{stats.arter}</b> ulike arter i
+                områder som er kartlagt som {tittel.toLowerCase()}.
+              </span>
+            )}
         </ListItemText>
       </ListItem>
     )}
