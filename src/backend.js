@@ -139,8 +139,12 @@ class Backend {
     '7': 'Egenskapsområde',
   })
 
-  static getFotoOmslag(kode: string, width: number = 408) {
-    return `${storageUrl}bilde%2Fomslag%2F${width}%2F${kode}.jpg?alt=media`
+  static getFotoOmslag(
+    kode: string,
+    width: number = 408,
+    filtype: string = 'jpg'
+  ) {
+    return `${storageUrl}bilde%2Fomslag%2F${width}%2F${kode}.${filtype}?alt=media`
   }
 
   static getFotoBanner(kode: string, width: number = 408) {

@@ -42,9 +42,16 @@ class Kodekort extends React.Component {
     this.setState({ leggerTil: true })
   }
 
+  erTransparent(prefix) {
+    return 'AO,OR'.indexOf(prefix) >= 0
+  }
+
+  filtype(prefix) {
+    return this.erTransparent(prefix) ? 'png' : 'jpg'
+  }
+
   styles(prefix) {
-    // HACK :(
-    if (prefix === 'AO')
+    if (this.erTransparent(prefix))
       return {
         minHeight: 297,
         marginTop: 142,
@@ -76,7 +83,7 @@ class Kodekort extends React.Component {
         <CardMedia
           style={this.styles(kode.substring(0, 2))}
           onClick={() => this.handleOpen()}
-          image={backend.getFotoOmslag(kode)}
+          image={backend.getFotoOmslag(kode, 408, this.filtype(prefiks))}
           onError={e => {
             const brokenImage = backend.getFotoOmslag('~')
             if (e.target.src !== brokenImage) e.target.src = brokenImage
@@ -101,7 +108,7 @@ class Kodekort extends React.Component {
           {overordnet && (
             <Button
               style={{
-                color: farger.medium[prefiks],
+                color: farger.mørk[prefiks],
               }}
               variant="text"
               _color="primary"
@@ -116,7 +123,7 @@ class Kodekort extends React.Component {
           {bbox && (
             <Button
               style={{
-                color: farger.medium[prefiks],
+                color: farger.mørk[prefiks],
               }}
               variant="text"
               onClick={() => onFitBounds(bbox)}
