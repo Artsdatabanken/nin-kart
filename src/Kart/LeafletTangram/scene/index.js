@@ -1,4 +1,5 @@
 // @flow
+import tinycolor from 'tinycolor2'
 import { lagBakgrunnskart } from './bakgrunnskart'
 import imports from './import'
 import { createLights } from './lights'
@@ -37,7 +38,7 @@ function lagKatalogLag(forelderkode, barn, opplystKode, layers) {
 }
 
 function lagDrawblokk(kode, farge, opplystKode, visEtiketter) {
-  farge = opplystKode === kode ? '#f00' : farge
+  farge = opplystKode === kode ? '#f88' : farge
   const layer = {
     filter: { [kode]: true },
     draw: {
@@ -45,16 +46,18 @@ function lagDrawblokk(kode, farge, opplystKode, visEtiketter) {
         order: 100,
         color: farge,
       },
-      mu_lines: {
+      lines: {
         order: 100,
-        color: farge,
-        width: [[0, '2.5px'], [8, '1px']],
+        color: tinycolor(farge)
+          .darken(30)
+          .toHexString(),
+        width: '1.0px',
       },
     },
   }
   if (kode === opplystKode) {
-    const lines = layer.draw.mu_lines
-    lines.width = '3px'
+    const lines = layer.draw.lines
+    lines.width = '2px'
   }
   if (visEtiketter) {
     layer.draw.text = {
