@@ -43,14 +43,12 @@ class VenstreVinduContainer extends React.Component {
       error: null,
       searchResults: null,
     })
-    if (!q) return
+    if (!q) {
+      this.props.history.replace('/kart')
+      return
+    }
 
     this.queryNumber++
-    this.setState({
-      query: q,
-      error: null,
-    })
-    this.props.history.replace('/')
     const currentQuery = this.queryNumber
     backend.søkKode(q).then(items => {
       if (currentQuery !== this.queryNumber) return // Abort stale query
@@ -174,7 +172,7 @@ class VenstreVinduContainer extends React.Component {
                 history.push('/kart')
               }}
               onToggleMainDrawer={this.props.onToggleMainDrawer}
-              isAtRoot={history.location.pathname === '/'}
+              isAtRoot={history.location.pathname === '/kart'} // HACK
               query={this.state.query}
               tittel={this.tittel(this.props.meta)}
               onQueryChange={this.handleQueryChange}
