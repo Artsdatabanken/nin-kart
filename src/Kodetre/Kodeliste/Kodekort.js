@@ -7,16 +7,22 @@ import {
   Snackbar,
   withStyles,
 } from '@material-ui/core'
+import { LibraryAdd, ZoomOutMap } from '@material-ui/icons/'
 import ArrowForward from '@material-ui/icons/ArrowForward'
 import React from 'react'
 import { withRouter } from 'react-router'
 import backend from '../../backend'
+import farger from '../../farger'
 import språk from '../../språk'
 import Tittelblokk from './Tittelblokk'
 
 const styles = {
   pos: {
     marginBottom: 12,
+  },
+  iconSmall: {
+    fontSize: 20,
+    marginRight: 8,
   },
 }
 
@@ -66,7 +72,7 @@ class Kodekort extends React.Component {
       onGoToCode,
     } = this.props
     return (
-      <Card square={true}>
+      <Card square={true} style={{ backgroundColor: '#ccc' }}>
         <CardMedia
           style={this.styles(kode.substring(0, 2))}
           onClick={() => this.handleOpen()}
@@ -85,20 +91,37 @@ class Kodekort extends React.Component {
           onGoToCode={onGoToCode}
           overordnet={overordnet}
         />
-        <CardActions>
+        <CardActions
+          style={{
+            backgroundColor: '#f5f5f5',
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
           {overordnet && (
             <Button
-              variant="contained"
+              style={{
+                color: farger.medium[prefiks],
+              }}
+              variant="text"
               _color="primary"
               className={classes.button}
               onClick={this.handleAktiver}
               disabled={erAktivert}
             >
+              <LibraryAdd className={classes.iconSmall} />
               Aktivér
             </Button>
           )}
           {bbox && (
-            <Button variant="text" onClick={() => onFitBounds(bbox)}>
+            <Button
+              style={{
+                color: farger.medium[prefiks],
+              }}
+              variant="text"
+              onClick={() => onFitBounds(bbox)}
+            >
+              <ZoomOutMap className={classes.iconSmall} />
               Zoom til
             </Button>
           )}
