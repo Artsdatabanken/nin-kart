@@ -7678,9 +7678,9 @@ exports[`Storyshots Tweaks terreng 1`] = `
         <div
           style={
             Object {
-              "float": "left",
+              "left": 24,
               "position": "relative",
-              "top": "2px",
+              "top": -2,
             }
           }
         >
@@ -8001,9 +8001,9 @@ exports[`Storyshots Tweaks terreng 1`] = `
         <div
           style={
             Object {
-              "float": "left",
+              "left": 24,
               "position": "relative",
-              "top": "2px",
+              "top": -2,
             }
           }
         >
