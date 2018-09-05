@@ -7,9 +7,22 @@ import {
   ListItemText,
   Paper,
 } from '@material-ui/core'
+import { withStyles } from '@material-ui/core/styles'
 import React, { Component } from 'react'
 import Backend from '../../backend'
 import språk from '../../språk'
+import Bildeavatar from './Bildeavatar'
+
+const styles = {
+  text: {
+    whiteSpace: 'nowrap',
+    textOverflow: 'ellipsis',
+    overflow: 'hidden',
+    fontSize: 13,
+    width: 240,
+  },
+  inset: { marginLeft: 56 },
+}
 
 class ResultatListe extends Component {
   filtrer(kode) {
@@ -25,7 +38,7 @@ class ResultatListe extends Component {
   }
 
   render() {
-    const { onClick, query, searchResults } = this.props
+    const { onClick, query, searchResults, classes } = this.props
     if (!searchResults) return null
     if (!searchResults.length > 0) return null
     return (
@@ -52,26 +65,22 @@ class ResultatListe extends Component {
                   }}
                   key={kode}
                 >
-                  <Avatar style={{ width: 24, height: 24 }}>
-                    <img
-                      alt={prefix}
-                      src={Backend.avatar24px(prefix)}
-                      onError={e => {
-                        const brokenImage = Backend.avatar24px('404')
-                        if (e.target.src !== brokenImage)
-                          e.target.src = brokenImage
-                      }}
-                    />
-                  </Avatar>
-                  <ListItemText
-                    style={{
-                      whiteSpace: 'nowrap',
-                      textOverflow: 'ellipsis',
-                      overflow: 'hidden',
-                      fontSize: 9,
-                      fontWeight: 500,
-                    }}
-                  >
+                  {true ? (
+                    <Bildeavatar size="small" kode={kode} />
+                  ) : (
+                    <Avatar style={{ width: 24, height: 24 }}>
+                      <img
+                        alt={prefix}
+                        src={Backend.avatar24px(prefix)}
+                        onError={e => {
+                          const brokenImage = Backend.avatar24px('404')
+                          if (e.target.src !== brokenImage)
+                            e.target.src = brokenImage
+                        }}
+                      />
+                    </Avatar>
+                  )}
+                  <ListItemText classes={{ primary: classes.text }}>
                     {ResultatListe.highlightMatch(navn, query)}
                   </ListItemText>
                   <ListItemSecondaryAction>
@@ -89,7 +98,7 @@ class ResultatListe extends Component {
                     </ListItemText>
                   </ListItemSecondaryAction>
                 </ListItem>
-                <Divider inset={true} />
+                <Divider inset={true} classes={{ inset: classes.inset }} />
               </React.Fragment>
             )
           })}
@@ -123,8 +132,8 @@ class ResultatListe extends Component {
             key={i}
             style={
               terms.indexOf(part.toLowerCase()) >= 0
-                ? { color: 'black', fontWeight: 'bold' }
-                : {}
+                ? { color: 'black', fontWeight: 500 }
+                : { color: '#333', fontWeight: 400 }
             }
           >
             {part}
@@ -135,4 +144,4 @@ class ResultatListe extends Component {
   }
 }
 
-export default ResultatListe
+export default withStyles(styles)(ResultatListe)
