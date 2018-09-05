@@ -15,15 +15,15 @@ import Veksle from './Veksle'
 class Polygon extends Component {
   render() {
     const {
-      onRemoveSelectedLayer,
       kode,
       farge,
       history,
       tittel,
-      onUpdateLayerProp,
       bbox,
       visEtiketter,
       onFitBounds,
+      onRemoveSelectedLayer,
+      onUpdateLayerProp,
       kanSlettes,
       barn,
       visBarn,

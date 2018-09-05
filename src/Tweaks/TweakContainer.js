@@ -4,8 +4,8 @@ import Tweaks from './'
 
 class TweakContainer extends React.Component {
   render() {
-    const { history, match, ...props } = this.props
-    if (!this.erAktiv(props.koder, props.kode)) {
+    const { history, match, koder, ...props } = this.props
+    if (!this.erAktiv(koder, props.kode)) {
       // Laget er ikke lenger aktivt.  Url fra annen sesjon?
       history.replace('/')
       return null
