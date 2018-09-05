@@ -24,6 +24,7 @@ const Panel = ({ style, children }) => (
       zIndex: -10,
       overflowY: 'auto',
       overflowX: 'hidden',
+      boxShadow: '0 0 20px rgba(0, 0, 0, 0.3)',
       ...style,
     }}
   >
