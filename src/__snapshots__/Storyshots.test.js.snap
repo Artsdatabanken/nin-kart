@@ -243,6 +243,7 @@ exports[`Storyshots App Bar down into tree 1`] = `
         className="MuiInput-root-884 MuiInput-fullWidth-891"
       >
         <input
+          autoFocus={true}
           className="MuiInput-input-892"
           onBlur={[Function]}
           onChange={[Function]}
@@ -257,7 +258,6 @@ exports[`Storyshots App Bar down into tree 1`] = `
         className="MuiButtonBase-root-867 MuiIconButton-root-861 TopBar-lightButton-821"
         disabled={false}
         onBlur={[Function]}
-        onClick={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
@@ -385,6 +385,7 @@ exports[`Storyshots App Bar root 1`] = `
         className="MuiInput-root-805 MuiInput-fullWidth-812"
       >
         <input
+          autoFocus={true}
           className="MuiInput-input-813"
           onBlur={[Function]}
           onChange={[Function]}
@@ -399,7 +400,6 @@ exports[`Storyshots App Bar root 1`] = `
         className="MuiButtonBase-root-788 MuiIconButton-root-782 TopBar-lightButton-742"
         disabled={false}
         onBlur={[Function]}
-        onClick={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
@@ -5509,6 +5509,7 @@ exports[`Storyshots SearchBox default 1`] = `
     className="MuiInput-root-663 MuiInput-fullWidth-670"
   >
     <input
+      autoFocus={true}
       className="MuiInput-input-671"
       onBlur={[Function]}
       onChange={[Function]}
@@ -8057,23 +8058,6 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
       }
     }
   >
-    <div
-      style={
-        Object {
-          "backgroundColor": "#f5f5f5",
-          "bottom": 0,
-          "left": 0,
-          "overflowX": "hidden",
-          "overflowY": "auto",
-          "padding": 0,
-          "paddingTop": 0,
-          "position": "fixed",
-          "top": 0,
-          "width": 408,
-          "zIndex": -10,
-        }
-      }
-    />
     <header
       className="MuiPaper-root-1395 MuiPaper-elevation4-1401 MuiAppBar-root-1387 MuiAppBar-positionSticky-1390 MuiAppBar-colorPrimary-1393 TopBar-root-1383"
     >
@@ -8111,7 +8095,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                 fill="none"
               />
               <path
-                d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
               />
             </svg>
           </span>
@@ -8123,6 +8107,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
           className="MuiInput-root-1449 MuiInput-fullWidth-1456"
         >
           <input
+            autoFocus={true}
             className="MuiInput-input-1457"
             onBlur={[Function]}
             onChange={[Function]}
@@ -8137,7 +8122,6 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
           className="MuiButtonBase-root-1432 MuiIconButton-root-1426 TopBar-lightButton-1386"
           disabled={false}
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
@@ -8161,45 +8145,6 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
             >
               <path
                 d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-              />
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-            </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root-1442"
-          />
-        </button>
-        <button
-          className="MuiButtonBase-root-1432 MuiIconButton-root-1426 TopBar-lightButton-1386"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex="0"
-          type="button"
-        >
-          <span
-            className="MuiIconButton-label-1431"
-          >
-            <svg
-              aria-hidden="true"
-              className="MuiSvgIcon-root-1435"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
               />
               <path
                 d="M0 0h24v24H0z"
@@ -8226,23 +8171,6 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
       }
     }
   >
-    <div
-      style={
-        Object {
-          "backgroundColor": "#f5f5f5",
-          "bottom": 0,
-          "left": 0,
-          "overflowX": "hidden",
-          "overflowY": "auto",
-          "padding": 0,
-          "paddingTop": 0,
-          "position": "fixed",
-          "top": 0,
-          "width": 408,
-          "zIndex": -10,
-        }
-      }
-    />
     <header
       className="MuiPaper-root-1316 MuiPaper-elevation4-1322 MuiAppBar-root-1308 MuiAppBar-positionSticky-1311 MuiAppBar-colorPrimary-1314 TopBar-root-1304"
     >
@@ -8253,7 +8181,6 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
           className="MuiButtonBase-root-1353 MuiIconButton-root-1347 TopBar-darkButton-1306"
           disabled={false}
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
@@ -8280,7 +8207,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                 fill="none"
               />
               <path
-                d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
               />
             </svg>
           </span>
@@ -8292,6 +8219,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
           className="MuiInput-root-1370 MuiInput-fullWidth-1377"
         >
           <input
+            autoFocus={true}
             className="MuiInput-input-1378"
             onBlur={[Function]}
             onChange={[Function]}
@@ -8306,7 +8234,6 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
           className="MuiButtonBase-root-1353 MuiIconButton-root-1347 TopBar-lightButton-1307"
           disabled={false}
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
@@ -8330,45 +8257,6 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
             >
               <path
                 d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-              />
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-            </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root-1363"
-          />
-        </button>
-        <button
-          className="MuiButtonBase-root-1353 MuiIconButton-root-1347 TopBar-lightButton-1307"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex="0"
-          type="button"
-        >
-          <span
-            className="MuiIconButton-label-1352"
-          >
-            <svg
-              aria-hidden="true"
-              className="MuiSvgIcon-root-1356"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
               />
               <path
                 d="M0 0h24v24H0z"

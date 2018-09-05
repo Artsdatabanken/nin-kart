@@ -3,18 +3,17 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
 export default class SearchBox extends Component {
-  constructor(props) {
-    super(props)
-    this.Input = React.createRef()
-  }
-
   handleKeyDown = e => {
     if (e.keyCode === 27) {
-      this.props.onQueryChange(e, '')
-      console.log(this.Input.current)
-      console.log(this.Input.current.blur)
-      if (this.Input.current.blur) this.Input.current.blur()
-      e.stopPropagation()
+      if (this.props.query) {
+        this.props.onQueryChange({ target: { value: '' } })
+        return
+      }
+
+      if (!this.props.isAtRoot) {
+        this.props.onExitToRoot()
+        e.stopPropagation()
+      }
     }
   }
 
@@ -23,16 +22,17 @@ export default class SearchBox extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <Input
-        ref={this.Input}
         onKeyDown={this.handleKeyDown}
-        value={this.props.query || ''}
+        value={this.props.query || this.props.tittel || ''}
         placeholder={'Søk i Natur i Norge'}
         onFocus={this.handleFocus}
         onChange={this.props.onQueryChange}
         fullWidth={true}
         disableUnderline={true}
+        autoFocus={true}
       />
     )
   }
