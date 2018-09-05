@@ -29,7 +29,6 @@ class Polygon extends Component {
       visBarn,
       lag,
     } = this.props
-    console.log(JSON.stringify(this.props))
     const undernivå = this.navnPåUndernivå(kode)
     return (
       <React.Fragment>
