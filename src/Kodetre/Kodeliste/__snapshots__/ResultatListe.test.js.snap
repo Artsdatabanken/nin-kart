@@ -4,7 +4,12 @@ exports[`Highlight 1`] = `
 <React.Fragment>
    
   <span
-    style={Object {}}
+    style={
+      Object {
+        "color": "#333",
+        "fontWeight": 400,
+      }
+    }
   >
     
   </span>
@@ -12,14 +17,19 @@ exports[`Highlight 1`] = `
     style={
       Object {
         "color": "black",
-        "fontWeight": "bold",
+        "fontWeight": 500,
       }
     }
   >
     Ka
   </span>
   <span
-    style={Object {}}
+    style={
+      Object {
+        "color": "#333",
+        "fontWeight": 400,
+      }
+    }
   >
     rmøy
   </span>

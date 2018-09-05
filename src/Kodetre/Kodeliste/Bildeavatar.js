@@ -6,27 +6,37 @@ import backend from '../../backend'
 import farger from '../../farger'
 
 const styles = {
-  utenRamme: {
-    borderRadius: 0,
-  },
   img: {
     objectFit: 'contain',
+  },
+  big: {},
+  small: { width: 24, height: 24, fontSize: 13 },
+  big_noborder: {
+    borderRadius: 0,
+  },
+  small_noborder: {
+    borderRadius: 0,
+    width: 24,
+    height: 24,
+    fontSize: 13,
   },
 }
 
 class BildeAvatar extends Component {
   render() {
     const { classes } = this.props
+    const size = this.props.size || 'big'
+    console.log(size)
     const kode = this.props.kode.replace('-VV', '') // HACK verneområder under kommune
     const prefiks = kode.substring(0, 2)
     const parts = typesystem.splittKode(kode)
-    const tekst = parts[parts.length - 1]
+    const tekst = prefiks //parts[parts.length - 1]
     if ('AO_OR'.indexOf(prefiks) >= 0 && parts.length > 1)
       return (
         <Avatar
           alt="logo"
           classes={{
-            root: classes.utenRamme,
+            root: classes[size + '_noborder'],
             img: classes.img,
           }}
           src={backend.avatar40px(kode, 'png')}
@@ -37,7 +47,16 @@ class BildeAvatar extends Component {
         />
       )
     return (
-      <Avatar style={{ backgroundColor: farger.mørk[prefiks] }}>{tekst}</Avatar>
+      <Avatar
+        classes={{
+          root: classes[size],
+        }}
+        style={{
+          backgroundColor: farger.mørk[prefiks],
+        }}
+      >
+        {tekst}
+      </Avatar>
     )
   }
 }

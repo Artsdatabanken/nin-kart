@@ -6,7 +6,7 @@ export default class SearchBox extends Component {
   handleKeyDown = e => {
     if (e.keyCode === 27) {
       this.props.onQueryChange(e, '')
-      this.Input.blur()
+      if (this.Input.blur) this.Input.blur()
       e.stopPropagation()
     }
   }
