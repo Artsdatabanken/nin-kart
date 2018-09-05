@@ -1,6 +1,6 @@
 import { Divider, Snackbar } from '@material-ui/core'
 import React from 'react'
-import { Redirect, Route, Switch, withRouter } from 'react-router-dom'
+import { Route, Switch, withRouter } from 'react-router-dom'
 import backend from './backend'
 import BorreContainer from './Borring/BorreContainer'
 import KodeContainer from './Kodetre/Kodeliste/KodeContainer'
@@ -43,13 +43,12 @@ class VenstreVinduContainer extends React.Component {
       error: null,
       searchResults: null,
     })
-    if (!q) {
-      this.props.history.replace('/kart')
-      return
-    }
 
+    console.log('q', q)
     this.queryNumber++
     const currentQuery = this.queryNumber
+    if (!q) return
+
     backend.søkKode(q).then(items => {
       if (currentQuery !== this.queryNumber) return // Abort stale query
       if (items.error) {
@@ -85,7 +84,6 @@ class VenstreVinduContainer extends React.Component {
         render={({ match, history }) => (
           <React.Fragment>
             <Switch>
-              <Route path="/kart" render={({ match, history }) => null} />
               <Route
                 path="/katalog/:kode*"
                 render={({ match, history }) => {
@@ -151,11 +149,6 @@ class VenstreVinduContainer extends React.Component {
                   </Panel>
                 )}
               />
-              <Route
-                exact
-                path="/"
-                component={() => <Redirect to="/katalog/" />}
-              />
             </Switch>
             {this.state.error && (
               <Snackbar
@@ -169,10 +162,10 @@ class VenstreVinduContainer extends React.Component {
               onGoBack={() => history.goBack()}
               onExitToRoot={() => {
                 this.setState({ searchResults: null })
-                history.push('/kart')
+                history.push('/')
               }}
               onToggleMainDrawer={this.props.onToggleMainDrawer}
-              isAtRoot={history.location.pathname === '/kart'} // HACK
+              isAtRoot={history.location.pathname === '/'} // HACK
               query={this.state.query}
               tittel={this.tittel(this.props.meta)}
               onQueryChange={this.handleQueryChange}

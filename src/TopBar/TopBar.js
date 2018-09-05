@@ -30,7 +30,6 @@ const styles = {
 }
 
 type State = {
-  harFokus: boolean,
   items: Array<Object>,
 }
 
@@ -39,7 +38,6 @@ type Props = {
   query: string,
   onClick: Function,
   onQueryChange: Function,
-  harFokus: Boolean,
   isAtRoot: Boolean,
   onToggleMainDrawer: Function,
   onExitToRoot: Function,
@@ -48,32 +46,6 @@ type Props = {
 }
 
 class TopBar extends React.Component<Props, State> {
-  constructor(props) {
-    super(props)
-    this.state = {
-      harFokus: false,
-      items: null,
-    }
-  }
-
-  handleSearchButtonClick = () => {
-    this.setState({ harFokus: !this.state.harFokus })
-  }
-
-  handleSearchClick = taxonId => {
-    this.props.onClick(taxonId)
-  }
-
-  handleKeyDown = e => {
-    if (e.keyCode === 27) {
-      this.handleSearchButtonClick()
-    }
-  }
-
-  handleSearchResults = items => {
-    this.setState({ items })
-  }
-
   render() {
     const { classes } = this.props
     return (
@@ -95,14 +67,13 @@ class TopBar extends React.Component<Props, State> {
             </IconButton>
           )}
           <SearchBox
-            query={this.props.query || this.props.tittel}
-            //            tittel={this.props.tittel}
+            query={this.props.query}
+            tittel={this.props.tittel}
             onQueryChange={this.props.onQueryChange}
+            onExitToRoot={this.props.onExitToRoot}
+            isAtRoot={this.props.isAtRoot}
           />
-          <IconButton
-            onClick={this.handleSearchButtonClick}
-            className={classes.lightButton}
-          >
+          <IconButton className={classes.lightButton}>
             <Search />
           </IconButton>
           {!this.props.isAtRoot && (
