@@ -1,6 +1,7 @@
-import { withTheme } from '@material-ui/core/styles'
+import { withTheme } from '@material-ui/core'
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
+import { SettingsContext } from '../SettingsContext'
 import Listeelement from './Listeelement'
 
 class Borring extends Component {
@@ -8,25 +9,44 @@ class Borring extends Component {
     const { barn } = this.props
     if (!barn) return null
     return (
-      <React.Fragment>
-        {['AO', 'NA', 'RL', 'VV', 'BS', 'MI'].map(kode => {
-          const node = barn[kode]
-          if (!node) return null
-          const r = oppsummer(node)
-          return (
-            <Listeelement
-              key={r.kode}
-              kode={r.kode}
-              primary={r.verdi.map(v => (
-                <div>42% {v}</div>
-              ))}
-              secondary={r.nivå}
-              geom_id={r.geom_id}
-            />
-          )
-        })}
-      </React.Fragment>
+      <SettingsContext.Consumer>
+        {context => {
+          return ['AO', 'NA', 'RL', 'VV', 'BS', 'MI'].map(kode => {
+            const node = barn[kode]
+            if (!node) return <React.Fragment key={kode} />
+            const r = oppsummer(node)
+            console.warn('kode', r.kode)
+            console.error(r.kode, this.map(kode, r.verdi), r.nivå)
+            return (
+              <Listeelement
+                key={r.kode}
+                kode={r.kode}
+                primary={this.map(kode, r.verdi)}
+                secondary={r.nivå}
+                geom_id={r.geom_id}
+                visKoder={context.visKoder}
+              />
+            )
+          })
+        }}
+      </SettingsContext.Consumer>
     )
+  }
+
+  map(kode, verdi) {
+    if (kode === 'NA') {
+      const len = verdi.length
+      const sum = (len * (len + 1)) / 2
+      return verdi.map((v, i) => {
+        console.log(i, sum)
+        return (
+          <div>
+            {((100 * (len - i)) / sum).toFixed(0)}% {v}
+          </div>
+        )
+      })
+    }
+    return verdi[0]
   }
 }
 
@@ -38,7 +58,6 @@ function oppsummer(node) {
 
 function oppsummer2(node, r) {
   if (!node.barn) {
-    console.log(node)
     let v = node.tittel
     if (r.verdi) r.verdi.push(v)
     else r.verdi = [v]
