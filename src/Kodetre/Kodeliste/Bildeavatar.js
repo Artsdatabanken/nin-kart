@@ -26,7 +26,6 @@ class BildeAvatar extends Component {
   render() {
     const { classes } = this.props
     const size = this.props.size || 'big'
-    console.log(size)
     const kode = this.props.kode.replace('-VV', '') // HACK verneområder under kommune
     const prefiks = kode.substring(0, 2)
     const parts = typesystem.splittKode(kode)

@@ -15,20 +15,21 @@ import Veksle from './Veksle'
 class Polygon extends Component {
   render() {
     const {
-      onRemoveSelectedLayer,
       kode,
       farge,
       history,
       tittel,
-      onUpdateLayerProp,
       bbox,
       visEtiketter,
       onFitBounds,
+      onRemoveSelectedLayer,
+      onUpdateLayerProp,
       kanSlettes,
       barn,
       visBarn,
       lag,
     } = this.props
+    console.log(JSON.stringify(this.props))
     const undernivå = this.navnPåUndernivå(kode)
     return (
       <React.Fragment>

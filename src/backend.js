@@ -1,6 +1,9 @@
 // @flow
 import { createBboxFromPoint, wgs84ToUtm33 } from './projection'
 
+const storageUrl =
+  'https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/'
+
 class Backend {
   static async postFilterPromise(url: string, filter: string) {
     return new Promise((resolve, reject) => {
@@ -137,25 +140,23 @@ class Backend {
   })
 
   static getFotoOmslag(kode: string, width: number = 408) {
-    return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fomslag%2F${width}%2F${kode}.jpg?alt=media`
+    return `${storageUrl}bilde%2Fomslag%2F${width}%2F${kode}.jpg?alt=media`
   }
 
   static getFotoBanner(kode: string, width: number = 408) {
-    return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fbanner%2F${width}%2F${kode}.jpg?alt=media`
+    return `${storageUrl}bilde%2Fbanner%2F${width}%2F${kode}.jpg?alt=media`
   }
 
   static avatar40px(kode: string, ext = 'jpg') {
-    return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2F${kode}.${ext}?alt=media`
+    return `${storageUrl}bilde%2Favatar%2F40%2F${kode}.${ext}?alt=media`
   }
 
   static avatar24px(kode: string) {
-    return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F24%2F${kode}.jpg?alt=media`
+    return `${storageUrl}bilde%2Favatar%2F24%2F${kode}.jpg?alt=media`
   }
 
   static getFileStorageUrl(path: string) {
-    return `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/${encodeURIComponent(
-      path
-    )}?alt=media`
+    return `${storageUrl}${encodeURIComponent(path)}?alt=media`
   }
 
   static getKodeUtbredelse(kode: string) {
