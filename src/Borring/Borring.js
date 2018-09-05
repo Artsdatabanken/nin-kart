@@ -17,7 +17,9 @@ class Borring extends Component {
             <Listeelement
               key={r.kode}
               kode={r.kode}
-              primary={r.verdi}
+              primary={r.verdi.map(v => (
+                <div>42% {v}</div>
+              ))}
               secondary={r.nivå}
               geom_id={r.geom_id}
             />
@@ -36,7 +38,10 @@ function oppsummer(node) {
 
 function oppsummer2(node, r) {
   if (!node.barn) {
-    r.verdi = node.tittel
+    console.log(node)
+    let v = node.tittel
+    if (r.verdi) r.verdi.push(v)
+    else r.verdi = [v]
     r.kode = node.kode
     r.geom_id = node.geom_id
     return
