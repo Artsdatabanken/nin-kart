@@ -25,7 +25,7 @@ class Flis extends Component {
               animation: 'fadein 3s ease',
             }}
             onError={e => {
-              const brokenAvatar = backend.avatar40px('~', 40)
+              const brokenAvatar = backend.avatar40px('~', 'png')
               if (e.target.src !== brokenAvatar) e.target.src = brokenAvatar
             }}
           />
