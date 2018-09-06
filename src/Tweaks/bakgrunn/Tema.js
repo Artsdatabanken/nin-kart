@@ -1,4 +1,4 @@
-import { List, ListItem, ListSubheader } from '@material-ui/core'
+import { List, ListItem, ListItemText, ListSubheader } from '@material-ui/core'
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import thumb_flyfoto from './thumb_flyfoto.jpg'
@@ -7,7 +7,10 @@ import thumb_mørk from './thumb_mørk.jpg'
 
 const KartPreview = ({ thumb, tittel, checked, onClick }) => (
   <ListItem button={true} onClick={onClick}>
-    <img style={{ position: 'relative', left: -20 }} src={thumb} alt={tittel} />
+    <ListItemText
+      primary={tittel}
+      secondary={<img style={{ xleft: 8 }} src={thumb} alt={tittel} />}
+    />
   </ListItem>
 )
 
