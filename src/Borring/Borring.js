@@ -39,9 +39,11 @@ class Borring extends Component {
       const sum = (len * (len + 1)) / 2
       return verdi.map((v, i) => {
         console.log(i, sum)
+        const prosent = ((100 * (len - i)) / sum).toFixed(0)
         return (
           <div>
-            {((100 * (len - i)) / sum).toFixed(0)}% {v}
+            {len > 1 && prosent + '% '}
+            {v}
           </div>
         )
       })

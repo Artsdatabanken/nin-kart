@@ -5,17 +5,17 @@
     "tema": "Mørk grå",
     "erSynlig": true,
     "land": true,
-    "landfarge": "#eee",
+    "landfarge": "#f2f2f0",
     "transport": true,
     "transportfarge": "#888",
     "vann": true,
-    "vannfarge": "#aaa",
+    "vannfarge": "#cbd0d3",
     "kommunegrense": true,
     "kommunegrensefarge": "rgba(25,25,25,0.40)",
     "fylkesgrense": true,
     "fylkesgrensefarge": "rgba(25,25,25,0.20)",
     "landegrense": true,
-    "landegrensefarge": "rgba(25,25,25,0.20)"
+    "landegrensefarge": "rgba(25,25,25,0.40)"
   },
   {
     "kode": "terreng",
