@@ -91,6 +91,7 @@ class Grunnkart extends React.Component<Props, State> {
   addSelected = props => {
     let koder = this.state.aktiveLag
     const nyttLag = {
+      type: 'polygon',
       farge: props.farge,
       kode: props.kode,
       tittel: språk(props.tittel),

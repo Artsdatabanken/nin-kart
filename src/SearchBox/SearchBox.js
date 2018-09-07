@@ -22,7 +22,6 @@ export default class SearchBox extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <Input
         onKeyDown={this.handleKeyDown}

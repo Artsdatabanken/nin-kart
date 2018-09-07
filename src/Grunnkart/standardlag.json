@@ -1,6 +1,7 @@
 [
   {
     "kode": "bakgrunnskart",
+    "type": "bakgrunn",
     "tittel": "Basiskart",
     "tema": "Mørk grå",
     "erSynlig": true,
@@ -19,6 +20,7 @@
   },
   {
     "kode": "terreng",
+    "type": "terreng",
     "tittel": "3D terreng",
     "erSynlig": false,
     "vertikaltOverdriv": 2.0,

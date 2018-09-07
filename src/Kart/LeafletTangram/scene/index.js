@@ -3,7 +3,7 @@ import tinycolor from 'tinycolor2'
 import { lagBakgrunnskart } from './bakgrunnskart'
 import imports from './import'
 import { createLights } from './lights'
-import { createSources, lagSource } from './sources'
+import { lagLayerSource, lagSources } from './sources'
 import { createStyles } from './styles'
 
 function lagAktiveLag(aktive, iKatalog, opplystKode, layers) {
@@ -21,26 +21,26 @@ function lagEttLag(lag, opplystKode, viserKatalog, layers) {
   }
 }
 
-function lagKatalogLag(forelderkode, barn, opplystKode, layers) {
+function lagKatalogLag(kode, barn, opplystKode, layers) {
   let layer = {
-    data: lagSource(forelderkode),
+    data: lagLayerSource(kode),
   }
-  Object.keys(barn).forEach(kode => {
-    const visEtiketter = kode === opplystKode
-    layer[kode] = lagDrawblokk(
-      kode,
-      barn[kode].farge,
+  Object.keys(barn).forEach(barnkode => {
+    const visEtiketter = barnkode === opplystKode
+    layer[barnkode] = lagDrawblokk(
+      barnkode,
+      barn[barnkode].farge,
       opplystKode,
       visEtiketter
     )
   })
-  layers[forelderkode] = layer
+  layers[kode] = layer
 }
 
 function lagDrawblokk(kode, farge, opplystKode, visEtiketter) {
   farge = opplystKode === kode ? '#f88' : farge
   const layer = {
-    filter: { [kode]: true },
+    filter: { code: kode },
     draw: {
       mu_polygons: {
         order: 100,
@@ -61,7 +61,7 @@ function lagDrawblokk(kode, farge, opplystKode, visEtiketter) {
   }
   if (visEtiketter) {
     layer.draw.text = {
-      text_source: ['title', 'function() {  return Object.keys(feature)[0]}'],
+      text_source: ['name', 'title'],
       font: {
         family: 'Roboto',
         fill: '#444',
@@ -73,9 +73,16 @@ function lagDrawblokk(kode, farge, opplystKode, visEtiketter) {
   return layer
 }
 
-function lagEttPolygonLag(kode, farge, visEtiketter, opplystKode, layers) {
+function lagEttPolygonLag(
+  forelderkode,
+  kode,
+  farge,
+  visEtiketter,
+  opplystKode,
+  layers
+) {
   const layer = lagDrawblokk(kode, farge, opplystKode, visEtiketter)
-  layer.data = lagSource(kode)
+  layer.data = lagLayerSource(forelderkode)
   layers[kode] = layer
 }
 
@@ -85,6 +92,7 @@ function lagPolygonlag(lag, opplystKode, layers) {
       const barn = lag.barn[i]
       if (barn.erSynlig)
         lagEttPolygonLag(
+          lag.kode,
           barn.kode,
           barn.farge,
           lag.visEtiketter,
@@ -96,11 +104,15 @@ function lagPolygonlag(lag, opplystKode, layers) {
     lagEttPolygonLag(lag.kode, lag.farge, lag.visEtiketter, opplystKode, layers)
 }
 
+function finnLagType(aktiveLag, type) {
+  for (let lag of aktiveLag) if (lag.type === type) return lag
+}
+
 function lagToppnivå(props) {
-  const bakgrunn = props.aktiveLag[0] //fy
+  const bakgrunn = finnLagType(props.aktiveLag, 'bakgrunn')
   const config = {
     import: imports,
-    sources: createSources(props.aktiveLag),
+    sources: lagSources(props.aktiveLag, props.meta && props.meta.kode),
     lights: createLights(),
     layers: {},
     styles: createStyles(),
