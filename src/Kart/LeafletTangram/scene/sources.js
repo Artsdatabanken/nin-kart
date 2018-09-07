@@ -11,9 +11,8 @@ function lagSource(kode, r) {
 function lagSources(aktiveLag, katalogKode) {
   const r = {}
   if (katalogKode) lagSource(katalogKode, r)
-  Object.keys(aktiveLag).forEach(kode => {
-    const lag = aktiveLag[kode]
-    if (lag.type === 'polygon') lagSource(kode, r)
+  aktiveLag.forEach(lag => {
+    if (lag.erSynlig && lag.type === 'polygon') lagSource(lag.kode, r)
   })
   return r
 }

@@ -73,9 +73,16 @@ function lagDrawblokk(kode, farge, opplystKode, visEtiketter) {
   return layer
 }
 
-function lagEttPolygonLag(kode, farge, visEtiketter, opplystKode, layers) {
+function lagEttPolygonLag(
+  forelderkode,
+  kode,
+  farge,
+  visEtiketter,
+  opplystKode,
+  layers
+) {
   const layer = lagDrawblokk(kode, farge, opplystKode, visEtiketter)
-  layer.data = lagLayerSource(kode)
+  layer.data = lagLayerSource(forelderkode)
   layers[kode] = layer
 }
 
@@ -85,6 +92,7 @@ function lagPolygonlag(lag, opplystKode, layers) {
       const barn = lag.barn[i]
       if (barn.erSynlig)
         lagEttPolygonLag(
+          lag.kode,
           barn.kode,
           barn.farge,
           lag.visEtiketter,
@@ -96,8 +104,12 @@ function lagPolygonlag(lag, opplystKode, layers) {
     lagEttPolygonLag(lag.kode, lag.farge, lag.visEtiketter, opplystKode, layers)
 }
 
+function finnLagType(aktiveLag, type) {
+  for (let lag of aktiveLag) if (lag.type === type) return lag
+}
+
 function lagToppnivå(props) {
-  const bakgrunn = props.aktiveLag[0] //fy
+  const bakgrunn = finnLagType(props.aktiveLag, 'bakgrunn')
   const config = {
     import: imports,
     sources: lagSources(props.aktiveLag, props.meta && props.meta.kode),
