@@ -47,7 +47,7 @@ type Props = {
 
 class TopBar extends React.Component<Props, State> {
   render() {
-    const { classes } = this.props
+    const { query, tittel, classes } = this.props
     return (
       <AppBar position="sticky" className={classes.root}>
         <Toolbar variant="dense" className={classes.toolbar}>
@@ -67,8 +67,8 @@ class TopBar extends React.Component<Props, State> {
             </IconButton>
           )}
           <SearchBox
-            query={this.props.query}
-            tittel={this.props.tittel}
+            query={query}
+            tittel={tittel}
             onQueryChange={this.props.onQueryChange}
             onExitToRoot={this.props.onExitToRoot}
             isAtRoot={this.props.isAtRoot}

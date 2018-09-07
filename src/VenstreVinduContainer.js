@@ -45,7 +45,6 @@ class VenstreVinduContainer extends React.Component {
       searchResults: null,
     })
 
-    console.log('q', q)
     this.queryNumber++
     const currentQuery = this.queryNumber
     if (!q) return
@@ -60,6 +59,10 @@ class VenstreVinduContainer extends React.Component {
         })
       }
     })
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.meta !== this.props.meta) this.setState({ query: null })
   }
 
   tittel(meta, currentItem) {
