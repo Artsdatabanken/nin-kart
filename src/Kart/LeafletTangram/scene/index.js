@@ -5,6 +5,7 @@ import imports from './import'
 import { createLights } from './lights'
 import { lagLayerSource, lagSources } from './sources'
 import { createStyles } from './styles'
+import { lagTerreng } from './terreng'
 
 function lagAktiveLag(aktive, iKatalog, opplystKode, layers) {
   aktive.forEach(lag => lagEttLag(lag, opplystKode, iKatalog, layers))
@@ -12,12 +13,18 @@ function lagAktiveLag(aktive, iKatalog, opplystKode, layers) {
 
 function lagEttLag(lag, opplystKode, viserKatalog, layers) {
   if (!lag.erSynlig) return
-  switch (lag.kode) {
-    case 'bakgrunnskart':
+  switch (lag.type) {
+    case 'bakgrunn':
       lagBakgrunnskart(lag, layers)
       break
+    case 'terreng':
+      lagTerreng(lag, layers)
+      break
+    case 'polygon':
+      lagPolygonlag(lag, opplystKode, layers, viserKatalog)
+      return
     default:
-      if (!viserKatalog) lagPolygonlag(lag, opplystKode, layers)
+      console.error('Ukjent lag', lag.type)
   }
 }
 
@@ -34,7 +41,7 @@ function lagKatalogLag(kode, barn, opplystKode, layers) {
       visEtiketter
     )
   })
-  layers[kode] = layer
+  layers[kode + '_kat'] = layer
 }
 
 function lagDrawblokk(kode, farge, opplystKode, visEtiketter) {
@@ -64,8 +71,8 @@ function lagDrawblokk(kode, farge, opplystKode, visEtiketter) {
       text_source: ['name', 'title'],
       font: {
         family: 'Roboto',
-        fill: '#444',
-        stroke: { color: '#aaa', width: 3 },
+        fill: 'hsla(0, 0%, 100%, 1.0)',
+        stroke: { color: 'hsla(0, 0%, 0%, 0.7)', width: 2 },
         size: '13px',
       },
     }
@@ -86,19 +93,25 @@ function lagEttPolygonLag(
   layers[kode] = layer
 }
 
-function lagPolygonlag(lag, opplystKode, layers) {
+function lagPolygonlag(lag, opplystKode, layers, viserKatalog) {
   if (lag.visBarn)
     Object.keys(lag.barn).forEach(i => {
       const barn = lag.barn[i]
-      if (barn.erSynlig)
+      if (barn.erSynlig) {
+        const farge = viserKatalog
+          ? tinycolor(barn.farge)
+              .setAlpha(0.2)
+              .toRgbString()
+          : barn.farge
         lagEttPolygonLag(
           lag.kode,
           barn.kode,
-          barn.farge,
+          farge,
           lag.visEtiketter,
           opplystKode,
           layers
         )
+      }
     })
   else
     lagEttPolygonLag(lag.kode, lag.farge, lag.visEtiketter, opplystKode, layers)

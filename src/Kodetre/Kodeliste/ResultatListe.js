@@ -110,7 +110,7 @@ class ResultatListe extends Component {
   // Highlight all matches
   static highlightMatch(text, higlight) {
     // make array of terms, ordered by longest term
-    let terms = higlight
+    let terms = (higlight || '')
       .toLowerCase()
       .split(' ')
       .sort(function(a, b) {
