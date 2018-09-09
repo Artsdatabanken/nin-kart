@@ -4,7 +4,7 @@
     "layer": "_default"
   },
   "draw": {
-    "terrain": {
+    "terreng": {
       "order": 5
     }
   }
