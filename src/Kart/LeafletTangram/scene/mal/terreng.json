@@ -1,0 +1,11 @@
+{
+  "data": {
+    "source": "normals",
+    "layer": "_default"
+  },
+  "draw": {
+    "terreng": {
+      "order": 5
+    }
+  }
+}

@@ -20,6 +20,7 @@ const SliderSetting = ({
     disabled={disabled}
   >
     <Slider
+      style={{ paddingTop: 0 }}
       disabled={disabled}
       min={min || 0}
       max={max || 1}

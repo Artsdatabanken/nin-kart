@@ -1,7 +1,6 @@
 import { ListSubheader } from '@material-ui/core'
 import { withTheme } from '@material-ui/core/styles'
-import Landscape from '@material-ui/icons/Landscape'
-import SwapVert from '@material-ui/icons/SwapVert'
+import { Close, Landscape, SwapVert } from '@material-ui/icons'
 import React, { Component } from 'react'
 import SliderSetting from './SliderSetting'
 import Veksle from './Veksle'
@@ -21,7 +20,7 @@ class Terreng extends Component {
         <ListSubheader>Terreng</ListSubheader>
         <SliderSetting
           value={vertikaltOverdriv}
-          min={1}
+          min={0}
           max={5}
           step={0.1}
           tittel="Vertikal overdrivelse"
@@ -32,6 +31,7 @@ class Terreng extends Component {
         <Veksle
           tittel="Etiketter med høydeangivelse av topper"
           checked={visEtikettTopp}
+          icon={<Close />}
           onClick={() =>
             onUpdateLayerProp(kode, 'visEtikettTopp', !visEtikettTopp)
           }

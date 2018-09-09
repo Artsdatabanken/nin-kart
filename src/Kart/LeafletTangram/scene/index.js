@@ -3,25 +3,32 @@ import tinycolor from 'tinycolor2'
 import { lagBakgrunnskart } from './bakgrunnskart'
 import imports from './import'
 import { createLights } from './lights'
-import { lagLayerSource, lagSources } from './sources'
+import { lagLayerSource, lagSource } from './sources'
 import { createStyles } from './styles'
+import { lagTerreng } from './terreng'
 
-function lagAktiveLag(aktive, iKatalog, opplystKode, layers) {
-  aktive.forEach(lag => lagEttLag(lag, opplystKode, iKatalog, layers))
+function lagAktiveLag(aktive, iKatalog, opplystKode, config) {
+  aktive.forEach(lag => lagEttLag(lag, opplystKode, iKatalog, config))
 }
 
-function lagEttLag(lag, opplystKode, viserKatalog, layers) {
+function lagEttLag(lag, opplystKode, viserKatalog, config) {
   if (!lag.erSynlig) return
-  switch (lag.kode) {
-    case 'bakgrunnskart':
-      lagBakgrunnskart(lag, layers)
+  switch (lag.type) {
+    case 'bakgrunn':
+      lagBakgrunnskart(lag, config)
       break
+    case 'terreng':
+      lagTerreng(lag, config)
+      break
+    case 'polygon':
+      lagPolygonlag(lag, opplystKode, config, viserKatalog)
+      return
     default:
-      if (!viserKatalog) lagPolygonlag(lag, opplystKode, layers)
+      console.error('Ukjent lag', lag.type)
   }
 }
 
-function lagKatalogLag(kode, barn, opplystKode, layers) {
+function lagKatalogLag(kode, barn, opplystKode, config) {
   let layer = {
     data: lagLayerSource(kode),
   }
@@ -34,7 +41,8 @@ function lagKatalogLag(kode, barn, opplystKode, layers) {
       visEtiketter
     )
   })
-  layers[kode] = layer
+  lagSource(kode, config)
+  config.layers[kode + '_kat'] = layer
 }
 
 function lagDrawblokk(kode, farge, opplystKode, visEtiketter) {
@@ -64,8 +72,8 @@ function lagDrawblokk(kode, farge, opplystKode, visEtiketter) {
       text_source: ['name', 'title'],
       font: {
         family: 'Roboto',
-        fill: '#444',
-        stroke: { color: '#aaa', width: 3 },
+        fill: 'hsla(0, 0%, 100%, 1.0)',
+        stroke: { color: 'hsla(0, 0%, 0%, 0.7)', width: 2 },
         size: '13px',
       },
     }
@@ -79,29 +87,48 @@ function lagEttPolygonLag(
   farge,
   visEtiketter,
   opplystKode,
-  layers
+  config
 ) {
   const layer = lagDrawblokk(kode, farge, opplystKode, visEtiketter)
   layer.data = lagLayerSource(forelderkode)
-  layers[kode] = layer
+  lagSource(forelderkode, config)
+  config.layers[kode] = layer
 }
 
-function lagPolygonlag(lag, opplystKode, layers) {
+function farge(farge, viserKatalog) {
+  farge = viserKatalog
+    ? tinycolor(farge)
+        .lighten(20)
+        .toRgbString()
+    : farge
+  console.log(farge)
+  return farge
+}
+
+function lagPolygonlag(lag, opplystKode, config, viserKatalog) {
   if (lag.visBarn)
     Object.keys(lag.barn).forEach(i => {
       const barn = lag.barn[i]
-      if (barn.erSynlig)
+      if (barn.erSynlig) {
         lagEttPolygonLag(
           lag.kode,
           barn.kode,
-          barn.farge,
+          farge(barn.farge, viserKatalog),
           lag.visEtiketter,
           opplystKode,
-          layers
+          config
         )
+      }
     })
   else
-    lagEttPolygonLag(lag.kode, lag.farge, lag.visEtiketter, opplystKode, layers)
+    lagEttPolygonLag(
+      lag.kode,
+      lag.kode,
+      farge(lag.farge, viserKatalog),
+      lag.visEtiketter,
+      opplystKode,
+      config
+    )
 }
 
 function finnLagType(aktiveLag, type) {
@@ -112,7 +139,7 @@ function lagToppnivå(props) {
   const bakgrunn = finnLagType(props.aktiveLag, 'bakgrunn')
   const config = {
     import: imports,
-    sources: lagSources(props.aktiveLag, props.meta && props.meta.kode),
+    sources: {},
     lights: createLights(),
     layers: {},
     styles: createStyles(),
@@ -131,10 +158,10 @@ function createScene(props: Object, onClick: Function) {
       props.meta.kode,
       props.meta.barn || { [props.meta.kode]: props.meta },
       props.opplystKode,
-      config.layers
+      config
     )
   }
-  lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config.layers)
+  lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config)
   return config
 }
 

@@ -1,5 +1,9 @@
 {
   "land": {
+    "data": {
+      "source": "osm",
+      "layer": "boundary"
+    },
     "filter": {
       "admin_level": 2
     },
@@ -11,6 +15,10 @@
     }
   },
   "fylke": {
+    "data": {
+      "source": "osm",
+      "layer": "boundary"
+    },
     "filter": {
       "admin_level": 4
     },
@@ -22,6 +30,10 @@
     }
   },
   "kommune": {
+    "data": {
+      "source": "osm",
+      "layer": "boundary"
+    },
     "filter": {
       "admin_level": 7
     },
