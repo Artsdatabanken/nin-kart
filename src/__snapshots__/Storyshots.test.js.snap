@@ -7822,7 +7822,7 @@ exports[`Storyshots Tweaks terreng 1`] = `
             className="MuiSwitch-root-1226"
           >
             <span
-              className="MuiButtonBase-root-1245 MuiIconButton-root-1239 MuiSwitchBase-root-1235 MuiSwitch-switchBase-1229 MuiSwitch-colorSecondary-1232"
+              className="MuiButtonBase-root-1245 MuiIconButton-root-1239 MuiSwitchBase-root-1235 MuiSwitch-switchBase-1229 MuiSwitch-colorSecondary-1232 MuiSwitchBase-checked-1236 MuiSwitch-checked-1230"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -7840,10 +7840,10 @@ exports[`Storyshots Tweaks terreng 1`] = `
                 className="MuiIconButton-label-1244"
               >
                 <span
-                  className="MuiSwitch-icon-1227"
+                  className="MuiSwitch-icon-1227 MuiSwitch-iconChecked-1228"
                 />
                 <input
-                  checked={false}
+                  checked={true}
                   className="MuiSwitchBase-input-1238"
                   onChange={[Function]}
                   type="checkbox"
@@ -7883,7 +7883,7 @@ exports[`Storyshots Tweaks terreng 1`] = `
             className="MuiSwitch-root-1226"
           >
             <span
-              className="MuiButtonBase-root-1245 MuiIconButton-root-1239 MuiSwitchBase-root-1235 MuiSwitch-switchBase-1229 MuiSwitch-colorSecondary-1232"
+              className="MuiButtonBase-root-1245 MuiIconButton-root-1239 MuiSwitchBase-root-1235 MuiSwitch-switchBase-1229 MuiSwitch-colorSecondary-1232 MuiSwitchBase-checked-1236 MuiSwitch-checked-1230"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -7901,10 +7901,10 @@ exports[`Storyshots Tweaks terreng 1`] = `
                 className="MuiIconButton-label-1244"
               >
                 <span
-                  className="MuiSwitch-icon-1227"
+                  className="MuiSwitch-icon-1227 MuiSwitch-iconChecked-1228"
                 />
                 <input
-                  checked={false}
+                  checked={true}
                   className="MuiSwitchBase-input-1238"
                   disabled={false}
                   onChange={[Function]}

@@ -101,7 +101,6 @@ function farge(farge, viserKatalog) {
         .lighten(20)
         .toRgbString()
     : farge
-  console.log(farge)
   return farge
 }
 

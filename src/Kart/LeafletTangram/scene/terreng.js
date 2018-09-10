@@ -2,7 +2,6 @@
 import terrengmal from './mal/terreng'
 
 function lagTerreng(lag, config) {
-  console.log(lag)
   config.layers.terreng = terrengmal
   config.sources.normals = {
     type: 'Raster',
