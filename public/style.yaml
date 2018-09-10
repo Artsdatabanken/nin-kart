@@ -12,31 +12,3 @@ sources:
     type: Raster
     url: 'https://tile.nextzen.org/tilezen/terrain/v1/256/terrarium/{z}/{x}/{y}.png?api_key=Tqy6UAn9ShClyvfUon001g'
     max_zoom: 15
-
-styles:
-  xterrain:
-    base: polygons
-    lighting: false
-    raster: normal
-    shaders:
-      uniforms:
-        u_scale: 1 # higher values are more exaggerated
-        #        u_envmap: /treefrog_gray.png
-        u_envmap: /1_gray_lys2.jpg
-      blocks:
-        global: |
-          vec4 terrainEnvmap (in sampler2D _tex, in vec3 _normal) {
-              const vec3 eye = vec3(0.,0.,-1.);
-              vec3 r = reflect(eye, _normal);
-              r.z += 1.0;
-              float m = 2. * length(r);
-              vec2 uv = r.xy / m + .5;
-              return texture2D(_tex, uv);
-          }
-        color: |
-          // color = v_color;
-          normal.z /= u_scale; // turn terrain exaggeration up/down
-          normal = normalize(normal);
-          color = terrainEnvmap(u_envmap, normal);
-
-#          color *= v_color; // apply layer color to envmap

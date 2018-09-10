@@ -1,16 +1,23 @@
 import typesystem from '@artsdatabanken/typesystem'
-import { List, ListSubheader } from '@material-ui/core'
+import { List, ListSubheader, withStyles } from '@material-ui/core'
 import Button from '@material-ui/core/Button'
 import { withTheme } from '@material-ui/core/styles'
+import { ZoomOutMap } from '@material-ui/icons/'
 import ActionDelete from '@material-ui/icons/Delete'
 import ActionInfo from '@material-ui/icons/Info'
-import ZoomIn from '@material-ui/icons/ZoomIn'
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import tinycolor from 'tinycolor2'
 import Barneliste from './Barneliste'
 import ColorPicker from './ColorPicker'
 import Veksle from './Veksle'
+
+const styles = {
+  iconSmall: {
+    fontSize: 20,
+    marginRight: 8,
+  },
+}
 
 class Polygon extends Component {
   render() {
@@ -28,6 +35,7 @@ class Polygon extends Component {
       barn,
       visBarn,
       lag,
+      classes,
     } = this.props
     const undernivå = this.navnPåUndernivå(kode)
     return (
@@ -94,9 +102,9 @@ class Polygon extends Component {
             onClick={() => {
               onFitBounds(bbox)
             }}
-            icon={<ZoomIn />}
           >
-            Vis i kart
+            <ZoomOutMap className={classes.iconSmall} />
+            Zoom til
           </Button>
         )}
       </React.Fragment>
@@ -111,4 +119,4 @@ class Polygon extends Component {
   }
 }
 
-export default withRouter(withTheme()(Polygon))
+export default withStyles(styles)(withRouter(withTheme()(Polygon)))

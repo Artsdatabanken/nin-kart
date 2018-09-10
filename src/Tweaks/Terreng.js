@@ -30,7 +30,7 @@ class Terreng extends Component {
         />
         <Veksle
           tittel="Etiketter med høydeangivelse av topper"
-          checked={visEtikettTopp}
+          toggled={visEtikettTopp}
           icon={<Close />}
           onClick={() =>
             onUpdateLayerProp(kode, 'visEtikettTopp', !visEtikettTopp)
@@ -39,13 +39,13 @@ class Terreng extends Component {
         <ListSubheader>Kontur (trinndelt høydevisualisering)</ListSubheader>
         <Veksle
           tittel="Konturlinjer"
-          checked={visKontur}
+          toggled={visKontur}
           onClick={() => onUpdateLayerProp(kode, 'visKontur', !visKontur)}
         />
         <Veksle
           tittel="Etiketter med høydeangivelse"
           disabled={!visKontur}
-          checked={visEtikettKontur}
+          toggled={visEtikettKontur}
           onClick={() =>
             onUpdateLayerProp(kode, 'visEtikettKontur', !visEtikettKontur)
           }
