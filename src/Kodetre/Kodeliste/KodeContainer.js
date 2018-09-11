@@ -38,7 +38,8 @@ class KodeContainer extends React.Component<Props, State> {
   fetchData(kode: String, bounds: Object) {
     this.dataQueryNumber++
     const currentQuery = this.dataQueryNumber
-    backend.hentKode(kode, bounds).then(data => {
+    if (!kode) return
+    backend.hentStatistikk(kode, bounds).then(data => {
       if (!data) data = {}
       if (currentQuery !== this.dataQueryNumber) return // Abort stale query
       let størsteAreal = 0

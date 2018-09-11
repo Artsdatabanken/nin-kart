@@ -56,18 +56,12 @@ class Backend {
     )
   }
 
-  static async hentKode(kode: string, bounds: Object) {
-    let bbox = ''
-    if (bounds) {
-      var ll = wgs84ToUtm33(bounds._southWest.lng, bounds._southWest.lat)
-      var ur = wgs84ToUtm33(bounds._northEast.lng, bounds._northEast.lat)
-      bbox = `&bbox=${ll.x},${ll.y},${ur.x},${ur.y}`
-    }
-    kode = kode || ''
+  static async hentStatistikk(kode: String, bounds: Object) {
+    var ll = wgs84ToUtm33(bounds._southWest.lng, bounds._southWest.lat)
+    var ur = wgs84ToUtm33(bounds._northEast.lng, bounds._northEast.lat)
+    let bbox = `&bbox=${ll.x},${ll.y},${ur.x},${ur.y}`
 
-    const url = `https://test.artsdatabanken.no/ogapi/v1/StatKodetre?node=${kode ||
-      ''}${bbox}`
-
+    const url = `https://test.artsdatabanken.no/ogapi/v1/StatKodetre?node=${kode}${bbox}`
     return this.getPromise(url)
   }
 
