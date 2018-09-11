@@ -243,7 +243,6 @@ exports[`Storyshots App Bar down into tree 1`] = `
         className="MuiInput-root-884 MuiInput-fullWidth-891"
       >
         <input
-          autoFocus={true}
           className="MuiInput-input-892"
           onBlur={[Function]}
           onChange={[Function]}
@@ -385,7 +384,6 @@ exports[`Storyshots App Bar root 1`] = `
         className="MuiInput-root-805 MuiInput-fullWidth-812"
       >
         <input
-          autoFocus={true}
           className="MuiInput-input-813"
           onBlur={[Function]}
           onChange={[Function]}
@@ -5509,7 +5507,6 @@ exports[`Storyshots SearchBox default 1`] = `
     className="MuiInput-root-663 MuiInput-fullWidth-670"
   >
     <input
-      autoFocus={true}
       className="MuiInput-input-671"
       onBlur={[Function]}
       onChange={[Function]}
@@ -8058,7 +8055,6 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
           className="MuiInput-root-1526 MuiInput-fullWidth-1533"
         >
           <input
-            autoFocus={true}
             className="MuiInput-input-1534"
             onBlur={[Function]}
             onChange={[Function]}
@@ -8170,7 +8166,6 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
           className="MuiInput-root-1447 MuiInput-fullWidth-1454"
         >
           <input
-            autoFocus={true}
             className="MuiInput-input-1455"
             onBlur={[Function]}
             onChange={[Function]}
