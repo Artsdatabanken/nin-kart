@@ -4,7 +4,10 @@ import { SettingsContext } from './SettingsContext'
 class SetingsContainer extends Component {
   state = { visKoder: false, visAktiveLag: false }
   componentDidMount() {
-    this.setState({ visKoder: localStorage.getItem('visKoder') === 'true' })
+    this.setState({
+      visKoder: localStorage.getItem('visKoder') === 'true',
+      sorterPåKode: localStorage.getItem('sorterPåKode') === 'true',
+    })
   }
 
   render() {
@@ -12,6 +15,7 @@ class SetingsContainer extends Component {
       <SettingsContext.Provider
         value={{
           visKoder: this.state.visKoder,
+          sorterPåKode: this.state.sorterPåKode,
           visAktiveLag: this.state.visAktiveLag,
           onUpdateValue: (key, value) => {
             this.setState({ [key]: value })

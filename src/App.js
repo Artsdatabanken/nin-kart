@@ -24,11 +24,6 @@ const theme = createMuiTheme({
 })
 
 class App extends Component {
-  state = { visKoder: false }
-  componentDidMount() {
-    this.setState({ visKoder: localStorage.getItem('visKoder') === 'true' })
-  }
-
   render() {
     return (
       <MuiThemeProvider theme={theme}>

@@ -9,7 +9,7 @@ import { SettingsContext } from '../SettingsContext'
 import språk from '../språk'
 import VenstreVinduContainer from '../VenstreVinduContainer'
 import AktiveKartlagKnapp from './AktiveKartlagKnapp'
-import MainDrawer from './MainDrawer'
+import MainDrawer from '../MainDrawer/MainDrawer'
 import standardlag from './standardlag.json'
 
 type State = {
@@ -20,6 +20,7 @@ type State = {
   actualBounds: Object,
   opplystKode: string,
   visKoder: boolean,
+  sorterPåKode: boolean,
 }
 
 type Props = {
@@ -221,6 +222,7 @@ class Grunnkart extends React.Component<Props, State> {
                     })
                   }
                   visKoder={context.visKoder}
+                  sorterPåKode={context.sorterPåKode}
                   onUpdateSetting={context.onUpdateValue}
                 />
                 {context.visAktiveLag ? (
