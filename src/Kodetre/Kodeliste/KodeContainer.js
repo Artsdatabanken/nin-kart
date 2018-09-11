@@ -35,7 +35,7 @@ class KodeContainer extends React.Component<Props, State> {
     }
   }
 
-  fetchData(kode: string, bounds: Object) {
+  fetchData(kode: String, bounds: Object) {
     this.dataQueryNumber++
     const currentQuery = this.dataQueryNumber
     backend.hentKode(kode, bounds).then(data => {
