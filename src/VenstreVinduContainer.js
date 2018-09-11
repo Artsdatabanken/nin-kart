@@ -83,6 +83,7 @@ class VenstreVinduContainer extends React.Component {
   }
 
   render() {
+    const meta = this.props.meta || {}
     return (
       <Route
         render={({ match, history }) => (
@@ -94,7 +95,7 @@ class VenstreVinduContainer extends React.Component {
                   return (
                     <Panel style={{ paddingTop: 0 }}>
                       <KodeContainer
-                        path={match.params.kode || ''}
+                        kode={meta.kode}
                         onGoToCode={url => {
                           this.setState({ searchResults: null })
                           console.log(url)

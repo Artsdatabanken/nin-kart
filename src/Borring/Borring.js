@@ -15,8 +15,6 @@ class Borring extends Component {
             const node = barn[kode]
             if (!node) return <React.Fragment key={kode} />
             const r = oppsummer(node)
-            console.warn('kode', r.kode)
-            console.error(r.kode, this.map(kode, r.verdi), r.nivå)
             return (
               <Listeelement
                 key={r.kode}
