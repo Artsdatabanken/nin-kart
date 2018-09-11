@@ -8,6 +8,8 @@ import farger from '../../farger'
 const styles = {
   img: {
     objectFit: 'contain',
+    height: 35,
+    filter: 'drop-shadow(1px 1px 1px #666)',
   },
   big: {},
   small: { width: 24, height: 24, fontSize: 13 },
