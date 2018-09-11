@@ -1,5 +1,5 @@
-import React from 'react'
 import { storiesOf } from '@storybook/react'
+import React from 'react'
 import { muiTheme } from 'storybook-addon-material-ui'
 import SearchBox from './SearchBox'
 
