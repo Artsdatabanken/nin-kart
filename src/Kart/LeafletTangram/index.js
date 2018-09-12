@@ -101,8 +101,8 @@ class LeafletTangram extends React.Component {
     this.props.onClick(latlng)
   }
 
-  updateMap(props) {
-    let scene = createScene(props)
+  async updateMap(props) {
+    let scene = await createScene(props)
     if (this.layer) {
       this.layer.scene.load(scene)
     } else {
