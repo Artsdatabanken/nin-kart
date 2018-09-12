@@ -28,7 +28,7 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
   }
 }
 
-function lagKatalogLag(kode, barn, opplystKode, config) {
+async function lagKatalogLag(kode, barn, opplystKode, config) {
   let layer = {
     data: lagLayerSource(kode),
   }
@@ -41,7 +41,7 @@ function lagKatalogLag(kode, barn, opplystKode, config) {
       visEtiketter
     )
   })
-  lagSource(kode, config)
+  await lagSource(kode, config)
   config.layers[kode + '_kat'] = layer
 }
 
@@ -149,11 +149,11 @@ function lagToppnivå(props) {
   return config
 }
 
-function createScene(props: Object, onClick: Function) {
+async function createScene(props: Object, onClick: Function) {
   let config = lagToppnivå(props)
   const viserKatalog = !!props.meta
   if (viserKatalog) {
-    lagKatalogLag(
+    await lagKatalogLag(
       props.meta.kode,
       props.meta.barn || { [props.meta.kode]: props.meta },
       props.opplystKode,
