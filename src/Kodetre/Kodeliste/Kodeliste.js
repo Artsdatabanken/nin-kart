@@ -46,6 +46,7 @@ const Kodeliste = ({
                 ] || {}
               : {}
             const metabarnet = metadata[kode]
+            if (metabarnet.skjul) return null
             return (
               <Kodelisteelement
                 key={kode}
