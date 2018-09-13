@@ -4,7 +4,8 @@ class TerrenglagElement extends Component {
   undertittel() {
     const { vertikaltOverdriv, visKontur, konturintervall } = this.props
     let r = []
-    if (vertikaltOverdriv !== 1) r.push(vertikaltOverdriv + 'x overdrevet')
+    if (vertikaltOverdriv !== 1)
+      r.push(vertikaltOverdriv.toFixed(1) + 'x overdrevet')
     if (visKontur) r.push('kontur ' + konturintervall + 'm')
     return r.join(', ')
   }
