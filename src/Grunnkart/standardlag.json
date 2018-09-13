@@ -22,7 +22,7 @@
     "kode": "terreng",
     "type": "terreng",
     "tittel": "3D terreng",
-    "erSynlig": true,
+    "erSynlig": false,
     "vertikaltOverdriv": 2.0,
     "visKontur": false,
     "visEtikettTopp": false,
