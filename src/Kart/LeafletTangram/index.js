@@ -75,10 +75,9 @@ class LeafletTangram extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.bounds !== prevProps.bounds) {
-      const b = this.props.bounds
-      console.log(b)
-      if (b) {
-        this.map.flyToBounds(b)
+      const bounds = this.props.bounds
+      if (bounds) {
+        this.map.flyToBounds(bounds)
       }
     }
 
