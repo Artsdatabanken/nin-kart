@@ -17,6 +17,7 @@ type Props = {
   nivå: String,
   classes: Object,
   theme: Object,
+  children: Object,
 }
 
 const styles = {
@@ -48,6 +49,7 @@ const Tittelblokk = ({
   onGoToCode,
   classes,
   theme,
+  children,
 }: Props) => {
   return (
     <div
@@ -71,6 +73,7 @@ const Tittelblokk = ({
       </Typography>
       <Typography className={classes.nivå}>{nivå}</Typography>
       <Tagger overordnet={overordnet} onGoToCode={onGoToCode} />
+      {children}
     </div>
   )
 }

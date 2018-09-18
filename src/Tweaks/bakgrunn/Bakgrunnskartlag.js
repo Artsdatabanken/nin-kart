@@ -7,7 +7,6 @@ import {
 } from '@material-ui/core'
 import { default as React } from 'react'
 import { withRouter } from 'react-router'
-import Checkboard from '../../Kodetre/Kodeliste/Checkboard'
 
 const Bakgrunnskartlag = ({
   onUpdateLayerProp,
@@ -31,9 +30,7 @@ const Bakgrunnskartlag = ({
       onClick={() => history.push('/lag/bakgrunnskart/' + lagNavn)}
       style={{ cursor: 'pointer' }}
     >
-      <Avatar>
-        <Checkboard color={farge} />
-      </Avatar>
+      <Avatar style={{ backgroundColor: farge }} />
     </ListItemSecondaryAction>
   </ListItem>
 )
