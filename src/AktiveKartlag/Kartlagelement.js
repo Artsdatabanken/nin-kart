@@ -11,7 +11,6 @@ import { withTheme } from '@material-ui/core/styles'
 import { Visibility, VisibilityOff } from '@material-ui/icons'
 import React from 'react'
 import { withRouter } from 'react-router'
-import Checkboard from '../Kodetre/Kodeliste/Checkboard'
 
 class Kartlagelement extends React.Component {
   render() {
@@ -61,13 +60,10 @@ class Kartlagelement extends React.Component {
                 width: 24,
                 height: 24,
                 filter: 'drop-shadow(1px 1px 1px #666)',
+                backgroundColor: farge,
               }}
             >
-              {farge ? (
-                <Checkboard color={farge} />
-              ) : (
-                <img src={'/' + kode + '.png'} alt="farge" />
-              )}
+              {!farge && <img src={'/' + kode + '.png'} alt="farge" />}
             </Avatar>
           </ListItemSecondaryAction>
         </ListItem>

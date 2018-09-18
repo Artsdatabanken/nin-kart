@@ -1,3 +1,5 @@
+import { withTheme } from '@material-ui/core/styles'
+
 import React from 'react'
 const VolumIndikator = ({ areal, størsteAreal, theme }) => {
   if (!areal) areal = 0
@@ -17,4 +19,4 @@ const VolumIndikator = ({ areal, størsteAreal, theme }) => {
     />
   )
 }
-export default VolumIndikator
+export default withTheme()(VolumIndikator)

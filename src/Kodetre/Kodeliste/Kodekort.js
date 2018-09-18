@@ -97,42 +97,44 @@ class Kodekort extends React.Component {
           prefiks={prefiks}
           onGoToCode={onGoToCode}
           overordnet={overordnet}
-        />
-        <CardActions
-          style={{
-            backgroundColor: '#f5f5f5',
-            display: 'flex',
-            justifyContent: 'center',
-          }}
         >
-          {overordnet && (
-            <Button
-              style={{
-                color: farger.mørk[prefiks],
-              }}
-              variant="text"
-              _color="primary"
-              className={classes.button}
-              onClick={this.handleAktiver}
-              disabled={erAktivert}
-            >
-              <LibraryAdd className={classes.iconSmall} />
-              Aktivér
-            </Button>
-          )}
-          {bbox && (
-            <Button
-              style={{
-                color: farger.mørk[prefiks],
-              }}
-              variant="text"
-              onClick={() => onFitBounds(bbox)}
-            >
-              <ZoomOutMap className={classes.iconSmall} />
-              Zoom til
-            </Button>
-          )}
-        </CardActions>
+          <CardActions
+            style={{
+              xbackgroundColor: '#f5f5f5',
+              xdisplay: 'flex',
+              xjustifyContent: 'center',
+            }}
+          >
+            {overordnet && (
+              <Button
+                style={{
+                  color: farger.mørk[prefiks],
+                }}
+                size="small"
+                variant="contained"
+                _color="primary"
+                className={classes.button}
+                onClick={this.handleAktiver}
+                disabled={erAktivert}
+              >
+                <LibraryAdd className={classes.iconSmall} />
+                Aktivér
+              </Button>
+            )}
+            {bbox && (
+              <Button
+                style={{
+                  color: farger.lys[prefiks],
+                }}
+                variant="text"
+                onClick={() => onFitBounds(bbox)}
+              >
+                <ZoomOutMap className={classes.iconSmall} />
+                Zoom til
+              </Button>
+            )}
+          </CardActions>
+        </Tittelblokk>
         {this.state.leggerTil && (
           <Snackbar
             open={true}
