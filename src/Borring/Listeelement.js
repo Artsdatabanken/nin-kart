@@ -5,14 +5,7 @@ import backend from '../backend'
 import farger from '../farger'
 import Flis from '../Kodetre/Kodeliste/Flis'
 
-const Listeelement = ({
-  kode,
-  primary,
-  secondary,
-  history,
-  geom_id,
-  visKoder,
-}) => {
+const Listeelement = ({ kode, primary, secondary, history, visKoder }) => {
   const prefix = kode.substring(0, 2)
   const bgFarge = farger.lys[prefix]
   const avatar = false
@@ -31,13 +24,7 @@ const Listeelement = ({
             '")',
         }}
       >
-        <ListItem
-          button={true}
-          onClick={() => {
-            if (geom_id) history.push(`/detaljer/${prefix}/${geom_id}`)
-            else history.push(`/katalog/${kode}`)
-          }}
-        >
+        <ListItem button={true}>
           {avatar && (
             <Avatar
               style={{
