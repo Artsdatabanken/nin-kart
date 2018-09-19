@@ -70,14 +70,25 @@ class BorreVindu extends Component {
         </CardMedia>
         <CardActionArea style={{ backgroundColor: '#ccc' }} />
         <CardActions>
-          <Button
-            size="small"
-            variant="contained"
-            color="primary"
-            onClick={this.handleClickKilder}
-          >
-            Kilder
-          </Button>
+          {view ? (
+            <Button
+              size="small"
+              variant="contained"
+              color="primary"
+              onClick={this.handleClickKunnskap}
+            >
+              Kunnskap
+            </Button>
+          ) : (
+            <Button
+              size="small"
+              variant="contained"
+              color="primary"
+              onClick={this.handleClickKilder}
+            >
+              Kilder
+            </Button>
+          )}
           <Button size="small" color="primary">
             Valg
           </Button>
@@ -110,6 +121,10 @@ class BorreVindu extends Component {
     return this.finnGeomHack(barn.NA)
   }
 
+  handleClickKunnskap = () => {
+    const { lat, lng, history } = this.props
+    history.push(`/punkt/${lng},${lat}`)
+  }
   handleClickKilder = () => {
     const { lat, lng, history } = this.props
     history.push(`/punkt/${lng},${lat}/kilde`)

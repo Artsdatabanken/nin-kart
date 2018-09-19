@@ -6,7 +6,6 @@ const styles = {
   li: {
     fontSize: 13,
     color: 'rgba(0,0,0,0.87)',
-    paddingLeft: 16,
   },
 }
 
@@ -16,6 +15,7 @@ class NA extends Component {
     return (
       <React.Fragment>
         <List>
+          <ListSubheader>Natursystem</ListSubheader>
           {description && (
             <ListItem>
               <ListItemText
@@ -24,7 +24,6 @@ class NA extends Component {
               />
             </ListItem>
           )}
-          <ListSubheader>Natursystem</ListSubheader>
           <Om {...om} />
         </List>
       </React.Fragment>

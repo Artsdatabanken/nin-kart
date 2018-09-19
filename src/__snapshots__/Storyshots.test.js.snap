@@ -5642,12 +5642,12 @@ exports[`Storyshots Spesifikt område NA 1`] = `
     <ul
       className="MuiList-root-393 MuiList-padding-394"
     >
-      
       <li
         className="MuiListSubheader-root-397 MuiListSubheader-sticky-402 MuiListSubheader-gutters-400"
       >
         Natursystem
       </li>
+      
       <li
         className="MuiListItem-root-403 MuiListItem-default-406 MuiListItem-gutters-410"
         disabled={false}
