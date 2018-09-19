@@ -9,28 +9,7 @@ import SpesifiktObjekt from './SpesifiktObjekt'
 import språk from './språk'
 import TopBar from './TopBar/TopBar'
 import TweakContainer from './Tweaks/TweakContainer'
-
-const Panel = ({ style, children }) => (
-  <div
-    style={{
-      backgroundColor: '#f5f5f5',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      padding: 0,
-      paddingTop: 72,
-      bottom: 0,
-      width: 408,
-      zIndex: -10,
-      overflowY: 'auto',
-      overflowX: 'hidden',
-      boxShadow: '0 0 20px rgba(0, 0, 0, 0.3)',
-      ...style,
-    }}
-  >
-    {children}
-  </div>
-)
+import Panel from './components/Panel'
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
@@ -82,6 +61,13 @@ class VenstreVinduContainer extends React.Component {
     return item
   }
 
+  handleGotoCode = kode => {
+    console.log(kode)
+    this.setState({ searchResults: null })
+    console.log(kode)
+    this.props.history.push('/katalog/' + kode)
+  }
+
   render() {
     const meta = this.props.meta || {}
     return (
@@ -96,11 +82,7 @@ class VenstreVinduContainer extends React.Component {
                     <Panel style={{ paddingTop: 0 }}>
                       <KodeContainer
                         kode={meta.kode}
-                        onGoToCode={url => {
-                          this.setState({ searchResults: null })
-                          console.log(url)
-                          history.push('/katalog/' + url)
-                        }}
+                        onGoToCode={this.handleGotoCode}
                         onMouseEnter={this.props.onMouseEnter}
                         onMouseLeave={this.props.onMouseLeave}
                         onFitBounds={this.props.onFitBounds}
@@ -135,7 +117,7 @@ class VenstreVinduContainer extends React.Component {
               <Route
                 path="/punkt/:lng,:lat"
                 render={({ match, history }) => (
-                  <Panel>
+                  <Panel style={{ paddingTop: 0 }}>
                     <BorreContainer
                       lng={match.params.lng}
                       lat={match.params.lat}

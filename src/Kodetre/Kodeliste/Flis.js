@@ -11,7 +11,7 @@ class Flis extends Component {
     const parts = typesystem.splittKode(kode)
     if (prefiks === 'AO' && parts.length > 1)
       return (
-        <div style={{ paddingBottom: 4, paddingRight: 8 }}>
+        <div style={{ paddingBottom: 4 }}>
           <img
             ref={el => (this.logo = el)}
             onLoad={() => {
