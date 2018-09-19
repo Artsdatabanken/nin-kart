@@ -24,25 +24,7 @@ class NA extends Component {
               />
             </ListItem>
           )}
-          <ListSubheader>Naturtyper</ListSubheader>
-          {codes &&
-            Object.keys(codes).map(kode => {
-              const node = codes[kode]
-              return (
-                <ListItem key={kode} button={true} onClick={this.props.onClick}>
-                  <ListItemText
-                    primary={
-                      node.andel !== 10
-                        ? `${node.andel * 10}% ${node.tittel}`
-                        : node.tittel
-                    }
-                    secondary={kode}
-                  />
-                </ListItem>
-              )
-            })}
-          <h1>lokalId: {this.props.geom_id}</h1>
-          <ListSubheader>Om kartleggingen</ListSubheader>
+          <ListSubheader>Natursystem</ListSubheader>
           <Om {...om} />
         </List>
       </React.Fragment>
@@ -53,10 +35,7 @@ class NA extends Component {
 const Kartlegger = props => (
   <React.Fragment>
     <ListItem>
-      <ListItemText
-        primary={props.contactPerson + ', ' + props.company}
-        secondary="Kartlegger"
-      />
+      <ListItemText primary={props.company} secondary="Kartlegger" />
     </ListItem>
   </React.Fragment>
 )
@@ -64,10 +43,7 @@ const Kartlegger = props => (
 const Eier = props => (
   <React.Fragment>
     <ListItem>
-      <ListItemText
-        primary={props.contactPerson + ', ' + props.company}
-        secondary="Dataeier"
-      />
+      <ListItemText primary={props.company} secondary="Dataeier" />
     </ListItem>
   </React.Fragment>
 )
@@ -103,6 +79,9 @@ const Om = props => (
         målestokk={props.surveyScale}
       />
     )}
+    <ListItem>
+      <ListItemText primary="lokalId" secondary={props.geom_id} />
+    </ListItem>
   </React.Fragment>
 )
 

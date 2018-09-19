@@ -14,10 +14,13 @@ import { withRouter } from 'react-router'
 import Borring from './Borring'
 import FlatUt from './FlatUt'
 import Sted from './Sted'
+import Kilde from '../Kilde'
 
 const styles = {
   card: {
     maxWidth: 408,
+    height: '100%',
+    backgroundColor: '#eee',
   },
   media: {
     width: 408,
@@ -29,48 +32,43 @@ const styles = {
 
 class BorreVindu extends Component {
   render() {
-    const { lat, lng, barn, classes } = this.props
+    const { lat, lng, barn, view, classes } = this.props
     if (!barn) return null
     const { AO, geom_id, prefix, ...andreBarn } = barn
     const color = 'rgba(240,240,240,1.0)'
-    const bgColor = 'rgba(120,120,120,1.0)'
+    const bgColor = 'rgba(160,160,160,0.95)'
     const dominantKode = 'NA_T4'
     return (
       <Card square={true} className={classes.card}>
-        <CardActionArea>
-          <CardMedia
-            className={classes.media}
-            image={`https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fomslag%2F408%2F${dominantKode}.jpg?alt=media`}
-            title="Bildebeskrivelse?"
+        <CardMedia
+          className={classes.media}
+          image={`https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fomslag%2F408%2F${dominantKode}.jpg?alt=media`}
+          title="Bildebeskrivelse?"
+        >
+          <div
+            style={{
+              position: 'absolute',
+              top: 190,
+              height: 74,
+              width: 376,
+              backgroundColor: bgColor,
+              paddingTop: 8,
+              paddingBottom: 8,
+              paddingLeft: 16,
+              paddingRight: 16,
+            }}
           >
-            {true && (
-              <div
-                style={{
-                  position: 'absolute',
-                  top: 190,
-                  height: 74,
-                  width: 376,
-                  backgroundColor: 'rgba(160,160,160,0.95)',
-                  paddingTop: 8,
-                  paddingBottom: 8,
-                  paddingLeft: 16,
-                  paddingRight: 16,
-                }}
-              >
-                {AO && (
-                  <FlatUt node={AO}>
-                    <Sted />
-                  </FlatUt>
-                )}
-                <Typography style={{ color: color }} variant="body1">
-                  {parseFloat(lat).toFixed(5)}° N {parseFloat(lng).toFixed(5)}°
-                  Ø
-                </Typography>
-              </div>
+            {AO && (
+              <FlatUt node={AO}>
+                <Sted />
+              </FlatUt>
             )}
-          </CardMedia>
-          {false && <CardContent style={{ backgroundColor: bgColor }} />}
-        </CardActionArea>
+            <Typography style={{ color: color }} variant="body1">
+              {parseFloat(lat).toFixed(5)}° N {parseFloat(lng).toFixed(5)}° Ø
+            </Typography>
+          </div>
+        </CardMedia>
+        <CardActionArea style={{ backgroundColor: '#ccc' }} />
         <CardActions>
           <Button
             size="small"
@@ -84,7 +82,13 @@ class BorreVindu extends Component {
             Valg
           </Button>
         </CardActions>
-        <Borring barn={andreBarn} />
+        <CardContent style={{ padding: 0 }}>
+          {view ? (
+            <Kilde geom_id={this.finnGeomId()} prefiks="NA" />
+          ) : (
+            <Borring barn={andreBarn} />
+          )}
+        </CardContent>
       </Card>
     )
   }
@@ -99,12 +103,16 @@ class BorreVindu extends Component {
     }
   }
 
-  handleClickKilder = () => {
-    const { barn, history } = this.props
+  finnGeomId() {
+    const { barn } = this.props
     if (!barn) return
     if (!barn.NA) return
-    const geom_id = this.finnGeomHack(barn.NA)
-    history.push(`/kilde/${geom_id}`)
+    return this.finnGeomHack(barn.NA)
+  }
+
+  handleClickKilder = () => {
+    const { lat, lng, history } = this.props
+    history.push(`/punkt/${lng},${lat}/kilde`)
   }
 }
 
