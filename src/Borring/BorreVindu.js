@@ -29,7 +29,7 @@ const styles = {
 
 class BorreVindu extends Component {
   render() {
-    const { lat, lng, barn, classes, history } = this.props
+    const { lat, lng, barn, classes } = this.props
     if (!barn) return null
     const { AO, geom_id, prefix, ...andreBarn } = barn
     const color = 'rgba(240,240,240,1.0)'
@@ -76,9 +76,7 @@ class BorreVindu extends Component {
             size="small"
             variant="contained"
             color="primary"
-            onClick={() => {
-              if (geom_id) history.push(`/detaljer/${prefix}/${geom_id}`)
-            }}
+            onClick={this.handleClickKilder}
           >
             Kilder
           </Button>
@@ -89,6 +87,24 @@ class BorreVindu extends Component {
         <Borring barn={andreBarn} />
       </Card>
     )
+  }
+
+  finnGeomHack(barn) {
+    if (barn.geom_id) return barn.geom_id
+    if (!barn.barn) return null
+    for (let key of Object.keys(barn.barn)) {
+      const node = barn.barn[key]
+      const geom_id = this.finnGeomHack(node)
+      if (geom_id) return geom_id
+    }
+  }
+
+  handleClickKilder = () => {
+    const { barn, history } = this.props
+    if (!barn) return
+    if (!barn.NA) return
+    const geom_id = this.finnGeomHack(barn.NA)
+    history.push(`/kilde/${geom_id}`)
   }
 }
 

@@ -11,21 +11,23 @@ class Borring extends Component {
     if (!barn) return null
     return (
       <List>
-        <ListSubheader>Beskrivelse av natur</ListSubheader>
+        <ListSubheader>Kunnskap om naturen på punktet</ListSubheader>
         <SettingsContext.Consumer>
           {context => {
             return ['VV', 'AO', 'NA', 'RL', 'BS', 'MI'].map(kode => {
               const node = barn[kode]
               if (!node) return null
               if (!node.barn) return null
-              return Object.keys(node.barn).map(kode2 => {
+              return Object.keys(node.barn).map(subkode => {
+                const kode2 = kode + '_' + subkode
                 return (
                   <Seksjon
-                    key={kode + '_' + kode2}
-                    kode={kode + '_' + kode2}
+                    key={kode2}
+                    kode={kode2}
                     kategori={node.tittel}
-                    node={node.barn[kode2]}
+                    node={node.barn[subkode]}
                     visKoder={context.visKoder}
+                    onClick={() => this.onClick(kode2)}
                   />
                 )
               })
@@ -34,6 +36,11 @@ class Borring extends Component {
         </SettingsContext.Consumer>
       </List>
     )
+  }
+
+  onClick = kode => {
+    const { history } = this.props
+    history.push('/katalog/' + kode)
   }
 }
 
