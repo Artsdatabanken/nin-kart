@@ -505,11 +505,6 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
     >
       <div
         className="MuiCardMedia-root-232 BorreVindu-media-230"
-        style={
-          Object {
-            "backgroundImage": "url(\\"https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fomslag%2F408%2FNA_T4.jpg?alt=media\\")",
-          }
-        }
         title="Bildebeskrivelse?"
       >
         <div
