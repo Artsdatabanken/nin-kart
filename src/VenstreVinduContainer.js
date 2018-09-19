@@ -126,11 +126,11 @@ class VenstreVinduContainer extends React.Component {
                 )}
               />
               <Route
-                path="/detaljer/:prefiks/:geom_id"
+                path="/kilde/:geom_id"
                 render={({ match, history }) => (
                   <Panel>
                     <SpesifiktObjekt
-                      prefiks={match.params.prefiks}
+                      prefiks="NA"
                       geom_id={match.params.geom_id}
                     />
                   </Panel>

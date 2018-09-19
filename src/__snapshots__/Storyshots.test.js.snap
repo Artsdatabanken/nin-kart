@@ -637,12 +637,12 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
         <li
           className="MuiListSubheader-root-279 MuiListSubheader-sticky-284 MuiListSubheader-gutters-282"
         >
-          Beskrivelse av natur
+          Kunnskap om naturen på punktet
         </li>
         <div
           style={
             Object {
-              "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(300, 40%, 90%, 0.95) 50%), url(\\"undefined\\")",
+              "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(300, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
               "height": "100%",
               "objectFit": "cover",
               "width": "100%",
@@ -652,6 +652,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
           <div
             className="MuiButtonBase-root-235 MuiListItem-root-285 MuiListItem-default-288 MuiListItem-gutters-292 MuiListItem-button-293"
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
             onKeyUp={[Function]}
@@ -733,7 +734,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
         <div
           style={
             Object {
-              "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(120, 40%, 90%, 0.95) 50%), url(\\"undefined\\")",
+              "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(120, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
               "height": "100%",
               "objectFit": "cover",
               "width": "100%",
@@ -743,6 +744,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
           <div
             className="MuiButtonBase-root-235 MuiListItem-root-285 MuiListItem-default-288 MuiListItem-gutters-292 MuiListItem-button-293"
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
             onKeyUp={[Function]}
@@ -829,7 +831,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
         <div
           style={
             Object {
-              "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(240, 40%, 90%, 0.95) 50%), url(\\"undefined\\")",
+              "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(240, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
               "height": "100%",
               "objectFit": "cover",
               "width": "100%",
@@ -839,6 +841,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
           <div
             className="MuiButtonBase-root-235 MuiListItem-root-285 MuiListItem-default-288 MuiListItem-gutters-292 MuiListItem-button-293"
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
             onKeyUp={[Function]}
@@ -926,7 +929,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
         <div
           style={
             Object {
-              "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(240, 40%, 90%, 0.95) 50%), url(\\"undefined\\")",
+              "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(240, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
               "height": "100%",
               "objectFit": "cover",
               "width": "100%",
@@ -936,6 +939,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
           <div
             className="MuiButtonBase-root-235 MuiListItem-root-285 MuiListItem-default-288 MuiListItem-gutters-292 MuiListItem-button-293"
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
             onKeyUp={[Function]}
@@ -1030,7 +1034,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
         <div
           style={
             Object {
-              "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(240, 40%, 90%, 0.95) 50%), url(\\"undefined\\")",
+              "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(240, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
               "height": "100%",
               "objectFit": "cover",
               "width": "100%",
@@ -1040,6 +1044,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
           <div
             className="MuiButtonBase-root-235 MuiListItem-root-285 MuiListItem-default-288 MuiListItem-gutters-292 MuiListItem-button-293"
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
             onKeyUp={[Function]}
@@ -1134,7 +1139,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
         <div
           style={
             Object {
-              "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(240, 40%, 90%, 0.95) 50%), url(\\"undefined\\")",
+              "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(240, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
               "height": "100%",
               "objectFit": "cover",
               "width": "100%",
@@ -1144,6 +1149,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
           <div
             className="MuiButtonBase-root-235 MuiListItem-root-285 MuiListItem-default-288 MuiListItem-gutters-292 MuiListItem-button-293"
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
             onKeyUp={[Function]}
@@ -1245,7 +1251,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
         <div
           style={
             Object {
-              "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(32, 40%, 90%, 0.95) 50%), url(\\"undefined\\")",
+              "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(32, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
               "height": "100%",
               "objectFit": "cover",
               "width": "100%",
@@ -1255,6 +1261,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
           <div
             className="MuiButtonBase-root-235 MuiListItem-root-285 MuiListItem-default-288 MuiListItem-gutters-292 MuiListItem-button-293"
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
             onKeyUp={[Function]}
@@ -3930,7 +3937,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(0, 0%, 90%, 0.95) 50%), url(\\"undefined\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(0, 0%, 90%, 0.95) 40%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",
@@ -3991,7 +3998,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(300, 40%, 90%, 0.95) 50%), url(\\"undefined\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(300, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",
@@ -4052,7 +4059,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(190, 40%, 90%, 0.95) 50%), url(\\"undefined\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(190, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",
@@ -4113,7 +4120,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(120, 40%, 90%, 0.95) 50%), url(\\"undefined\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(120, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",
@@ -4174,7 +4181,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(240, 40%, 90%, 0.95) 50%), url(\\"undefined\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(240, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",
@@ -4235,7 +4242,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(240, 40%, 90%, 0.95) 50%), url(\\"undefined\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(240, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",
@@ -4296,7 +4303,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.1) 10%, hsla(12, 40%, 90%, 0.95) 50%), url(\\"undefined\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(12, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",

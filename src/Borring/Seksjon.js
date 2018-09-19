@@ -2,22 +2,17 @@ import React, { Component } from 'react'
 import Listeelement from './Listeelement'
 
 function oppsummer(node) {
-  console.warn('inn', node)
   let r = []
-  //  oppsummer2(node, r)
+  if (!node) return r
   if (node.barn)
     Object.keys(node.barn).forEach(kode => {
       let e = []
       let stack = {}
       oppsummer2(node.barn[kode], stack, e)
-      /*    const segs = typesystem.splittKode(kode)
-    const pre = segs[0] + '_' + segs[1]
-    if (!r[pre]) r[pre] = []*/
       r.push(...e)
     })
   else r.push({ verdi: [node.tittel] })
 
-  console.log('rrr', JSON.stringify(r))
   return r
 }
 
@@ -31,6 +26,8 @@ function hack(kode, nivå, kategori) {
       return 'Regionale komplekse miljøvariable'
     case 'BS_7':
       return 'Tilstandsvariasjon'
+    case 'BS_9':
+      return 'Romlig strukturvariasjon'
     case 'NA_T':
       return 'Fastmarkssystem'
     case 'MI_KA':
@@ -65,9 +62,8 @@ function oppsummer2(node, stack, r) {
 
 class Seksjon extends Component {
   render() {
-    const { node, kode, visKoder, kategori } = this.props
+    const { node, kode, visKoder, kategori, onClick } = this.props
     const r = oppsummer(node)
-    console.log('listee', JSON.stringify(r))
     const na = kode.startsWith('NA')
     const primary = na
       ? r.map(e => <div>{e.verdi[1]}</div>)
@@ -79,6 +75,7 @@ class Seksjon extends Component {
         secondary={primary}
         primary={hack(kode, r.nivå, kategori)}
         visKoder={visKoder}
+        onClick={onClick}
       />
     )
   }
