@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@artsdatabanken/typesystem@^4.0.2":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@artsdatabanken/typesystem/-/typesystem-4.0.2.tgz#feb95456eb365de5e734b1ba84d2215e1c327fe7"
+"@artsdatabanken/typesystem@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@artsdatabanken/typesystem/-/typesystem-5.0.0.tgz#10540cd63d19733497928b9af9f9832d771198fe"
 
 "@babel/code-frame@^7.0.0":
   version "7.0.0"
