@@ -645,7 +645,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
           <li
             className="MuiListSubheader-root-280 MuiListSubheader-sticky-285 MuiListSubheader-gutters-283"
           >
-            Kunnskap om naturen på punktet
+            Kunnskap om naturen i en radius på 10 meter fra punktet
           </li>
           <div
             style={

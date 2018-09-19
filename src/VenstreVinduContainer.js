@@ -3,9 +3,9 @@ import React from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import backend from './backend'
 import BorreContainer from './Borring/BorreContainer'
+import Borrevalg from './Borring/Borrevalg'
 import KodeContainer from './Kodetre/Kodeliste/KodeContainer'
 import ResultatListe from './Kodetre/Kodeliste/ResultatListe'
-import Kilde from './Kilde'
 import språk from './språk'
 import TopBar from './TopBar/TopBar'
 import TweakContainer from './Tweaks/TweakContainer'
@@ -62,9 +62,7 @@ class VenstreVinduContainer extends React.Component {
   }
 
   handleGotoCode = kode => {
-    console.log(kode)
     this.setState({ searchResults: null })
-    console.log(kode)
     this.props.history.push('/katalog/' + kode)
   }
 
@@ -127,10 +125,10 @@ class VenstreVinduContainer extends React.Component {
                 )}
               />
               <Route
-                path="/kilde/:geom_id"
+                path="/punkt/valg"
                 render={({ match, history }) => (
-                  <Panel>
-                    <Kilde prefiks="NA" geom_id={match.params.geom_id} />
+                  <Panel style={{ paddingTop: 0 }}>
+                    <Borrevalg />
                   </Panel>
                 )}
               />

@@ -7,11 +7,12 @@ import Seksjon from './Seksjon'
 class Borring extends Component {
   render() {
     const { barn } = this.props
-    console.log(barn)
     if (!barn) return null
     return (
       <List>
-        <ListSubheader>Kunnskap om naturen på punktet</ListSubheader>
+        <ListSubheader>
+          Kunnskap om naturen i en radius på 10 meter fra punktet
+        </ListSubheader>
         <SettingsContext.Consumer>
           {context => {
             return ['VV', 'AO', 'NA', 'RL', 'BS', 'MI'].map(kode => {
