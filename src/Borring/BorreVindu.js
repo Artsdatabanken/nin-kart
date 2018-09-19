@@ -15,6 +15,7 @@ import Borring from './Borring'
 import FlatUt from './FlatUt'
 import Sted from './Sted'
 import Kilde from '../Kilde'
+import backend from '../backend'
 
 const styles = {
   card: {
@@ -37,12 +38,13 @@ class BorreVindu extends Component {
     const { AO, geom_id, prefix, ...andreBarn } = barn
     const color = 'rgba(240,240,240,1.0)'
     const bgColor = 'rgba(160,160,160,0.95)'
-    const dominantKode = 'NA_T4'
+    const dominantKode = this.finnButikkKode()
+    console.log('dom', dominantKode)
     return (
       <Card square={true} className={classes.card}>
         <CardMedia
           className={classes.media}
-          image={`https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fomslag%2F408%2F${dominantKode}.jpg?alt=media`}
+          image={backend.getFotoOmslag(dominantKode)}
           title="Bildebeskrivelse?"
         >
           <div
@@ -102,6 +104,26 @@ class BorreVindu extends Component {
         </CardContent>
       </Card>
     )
+  }
+
+  finnKodeHack(barn) {
+    if (!barn.barn) return null
+    console.log('baba', barn)
+    for (let key of Object.keys(barn.barn)) {
+      const node = barn.barn[key]
+      const kode = this.finnKodeHack(node)
+      if (kode) return kode
+      if (node.kode) return node.kode
+    }
+    return 'NA'
+  }
+
+  finnButikkKode() {
+    const { barn } = this.props
+    if (!barn.NA) return 'MI_KA'
+    const nabarn = barn.NA.barn
+    if (!nabarn) return 'MI_KA'
+    return this.finnKodeHack(barn.NA)
   }
 
   finnGeomHack(barn) {
