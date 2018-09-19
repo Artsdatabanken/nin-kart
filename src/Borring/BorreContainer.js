@@ -31,10 +31,12 @@ class BorreContainer extends Component {
   }
 
   render() {
-    const { lat, lng } = this.props
+    const { lat, lng, view } = this.props
     if (!lat) return null
     const { data, sted } = this.state
-    return <BorreAdapter data={data} sted={sted} lat={lat} lng={lng} />
+    return (
+      <BorreAdapter data={data} sted={sted} lat={lat} lng={lng} view={view} />
+    )
   }
 }
 

@@ -39,11 +39,11 @@ class BorreAdapter extends Component {
   }
 
   render() {
-    const { data, sted, lat, lng } = this.props
+    const { data, sted, lat, lng, view } = this.props
     if (!lat) return null
     const borrehull = this.mapPunktHack(data, sted)
     const barn = borrehull && borrehull.barn
-    return <BorreVindu lat={lat} lng={lng} barn={barn} />
+    return <BorreVindu lat={lat} lng={lng} view={view} barn={barn} />
   }
 }
 //{false && <Mockup />}

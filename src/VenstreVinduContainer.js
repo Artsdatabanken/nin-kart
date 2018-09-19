@@ -5,7 +5,7 @@ import backend from './backend'
 import BorreContainer from './Borring/BorreContainer'
 import KodeContainer from './Kodetre/Kodeliste/KodeContainer'
 import ResultatListe from './Kodetre/Kodeliste/ResultatListe'
-import SpesifiktObjekt from './SpesifiktObjekt'
+import Kilde from './Kilde'
 import språk from './språk'
 import TopBar from './TopBar/TopBar'
 import TweakContainer from './Tweaks/TweakContainer'
@@ -115,12 +115,13 @@ class VenstreVinduContainer extends React.Component {
                 )}
               />
               <Route
-                path="/punkt/:lng,:lat"
+                path="/punkt/:lng,:lat/:view?"
                 render={({ match, history }) => (
                   <Panel style={{ paddingTop: 0 }}>
                     <BorreContainer
                       lng={match.params.lng}
                       lat={match.params.lat}
+                      view={match.params.view}
                     />
                   </Panel>
                 )}
@@ -129,10 +130,7 @@ class VenstreVinduContainer extends React.Component {
                 path="/kilde/:geom_id"
                 render={({ match, history }) => (
                   <Panel>
-                    <SpesifiktObjekt
-                      prefiks="NA"
-                      geom_id={match.params.geom_id}
-                    />
+                    <Kilde prefiks="NA" geom_id={match.params.geom_id} />
                   </Panel>
                 )}
               />
