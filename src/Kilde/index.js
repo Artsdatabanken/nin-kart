@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import NA from './NA'
-import { ListItem, List, ListSubheader } from '@material-ui/core'
+import { List, ListSubheader } from '@material-ui/core'
 
 const Prefiks = ({ prefiks, geom_id }) => {
   switch (prefiks) {
