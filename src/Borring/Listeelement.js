@@ -14,7 +14,7 @@ const Listeelement = ({
   onClick,
 }) => {
   const prefix = kode.substring(0, 2)
-  const bgFarge = farger.lys[prefix]
+  const bgFarge = farger.lysere[prefix]
   const avatar = false
   return (
     <React.Fragment>
@@ -47,7 +47,7 @@ const Listeelement = ({
             primary={primary}
             secondary={secondary}
           />
-          <div style={{ position: 'absolute', right: 8, bottom: 8 }}>
+          <div style={{ position: 'absolute', right: 8, top: 8 }}>
             <Flis kode={kode} visKoder={visKoder} />
           </div>
         </ListItem>

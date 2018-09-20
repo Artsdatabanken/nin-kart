@@ -20,12 +20,20 @@ function hack(kode, nivå, kategori) {
   switch (kode) {
     case 'BS_1':
       return 'Artssammensetning'
+    case 'BS_2':
+      return 'Geologisk sammensetning'
+    case 'BS_3':
+      return 'Landform'
+    case 'BS_4':
+      return 'Naturgitte objekter'
     case 'BS_5':
       return 'Menneskeskapte objekter'
     case 'BS_6':
       return 'Regionale komplekse miljøvariable'
     case 'BS_7':
       return 'Tilstandsvariasjon'
+    case 'BS_8':
+      return 'Terrengformvariasjon'
     case 'BS_9':
       return 'Romlig strukturvariasjon'
     case 'NA_T':
@@ -38,26 +46,23 @@ function hack(kode, nivå, kategori) {
   }
 }
 
-function oppsummer2(node, stack, r) {
-  stack = Object.assign({}, stack)
-  let v =
-    node.andel && node.andel !== 10
-      ? 10 * node.andel + '% ' + node.tittel
-      : node.tittel
+function oppsummer2(node, stack1, r) {
+  const stack = Object.assign({}, stack1)
+  stack.kode = Object.assign([], stack1.kode)
+  stack.verdi = Object.assign([], stack1.verdi)
   if (!stack.verdi) stack.verdi = []
   if (!stack.kode) stack.kode = []
-  if (node.andel) stack.andel = node.andel
-  if (v) stack.verdi.push(v)
+  if (node.tittel) stack.verdi.push(node.tittel)
+  if (node.andel && node.andel !== 10) stack.verdi.push(node.andel * 10 + '%')
   if (node.kode) stack.kode.push(node.kode)
   stack.geom_id = stack.geom_id || node.geom_id
-  if (!node.barn) {
+  if (node.barn) {
+    Object.keys(node.barn).forEach(kode => {
+      oppsummer2(node.barn[kode], stack, r)
+    })
+  } else {
     r.push(stack)
-    return
   }
-
-  Object.keys(node.barn).forEach(kode => {
-    oppsummer2(node.barn[kode], stack, r)
-  })
 }
 
 class Seksjon extends Component {
@@ -65,9 +70,8 @@ class Seksjon extends Component {
     const { node, kode, visKoder, kategori, onClick } = this.props
     const r = oppsummer(node)
     const na = kode.startsWith('NA')
-    const primary = na
-      ? r.map(e => <div>{e.verdi[1]}</div>)
-      : r.map(e => this.map(e.verdi))
+    if (na) console.log(r)
+    const primary = r.map(e => this.map(e.verdi))
     return (
       <Listeelement
         key={kode}
@@ -81,10 +85,14 @@ class Seksjon extends Component {
   }
 
   map(r) {
-    if (!r[1]) return hack1(r[0])
+    const len = r.length
+    const value = r[len - 1]
+    if (len < 2) return hack1(value)
+    const key = r[len - 2]
+
     return (
       <div>
-        {hack1(r[0])}: <b>{hack2(r[1])}</b>
+        {hack1(key.trim())}: <b>{hack2(value)}</b>
       </div>
     )
   }

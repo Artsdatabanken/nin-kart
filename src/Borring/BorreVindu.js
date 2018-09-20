@@ -20,7 +20,7 @@ import backend from '../backend'
 const styles = {
   card: {
     maxWidth: 408,
-    height: '100%',
+    minHeight: '100%',
     backgroundColor: '#eee',
   },
   media: {
@@ -38,13 +38,13 @@ class BorreVindu extends Component {
     const { AO, geom_id, prefix, ...andreBarn } = barn
     const color = 'rgba(240,240,240,1.0)'
     const bgColor = 'rgba(160,160,160,0.95)'
-    const dominantKode = this.finnButikkKode()
+    const dominant = this.finnButikkKode()
     return (
       <Card square={true} className={classes.card}>
         <CardMedia
           className={classes.media}
-          image={backend.getFotoOmslag(dominantKode)}
-          title="Bildebeskrivelse?"
+          image={backend.getFotoOmslag(dominant.kode)}
+          title={dominant.tittel}
         >
           <div
             style={{
@@ -111,17 +111,17 @@ class BorreVindu extends Component {
       const node = barn.barn[key]
       const kode = this.finnKodeHack(node)
       if (kode) return kode
-      if (node.kode) return node.kode
+      if (node.kode) return { kode: node.kode, tittel: node.tittel }
     }
-    return 'NA'
   }
 
   finnButikkKode() {
     const { barn } = this.props
-    if (!barn.NA) return 'NA'
-    const nabarn = barn.NA.barn
-    if (!nabarn) return 'NA'
-    return this.finnKodeHack(barn.NA)
+    const fallback = { kode: 'NA', tittel: 'Natursystem' }
+    if (!barn.NA) return fallback
+    const r2 = this.finnKodeHack(barn.NA)
+    if (r2) return r2
+    return fallback
   }
 
   finnGeomHack(barn) {

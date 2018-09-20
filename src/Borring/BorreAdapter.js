@@ -46,7 +46,5 @@ class BorreAdapter extends Component {
     return <BorreVindu lat={lat} lng={lng} view={view} barn={barn} />
   }
 }
-//{false && <Mockup />}
-//{false && borrehull && <Borring barn={borrehull.barn} />}
 
 export default BorreAdapter
