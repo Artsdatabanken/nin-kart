@@ -505,7 +505,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
     >
       <div
         className="MuiCardMedia-root-232 BorreVindu-media-230"
-        title="Bildebeskrivelse?"
+        title="Uttørkingseksponerte svært og temmelig kalkfattige berg, bergvegger og knauser"
       >
         <div
           style={
@@ -650,7 +650,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
           <div
             style={
               Object {
-                "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(300, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
+                "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(300, 30%, 90%, 0.95) 40%), url(\\"undefined\\")",
                 "height": "100%",
                 "objectFit": "cover",
                 "width": "100%",
@@ -695,9 +695,9 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
               <div
                 style={
                   Object {
-                    "bottom": 8,
                     "position": "absolute",
                     "right": 8,
+                    "top": 8,
                   }
                 }
               >
@@ -742,7 +742,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
           <div
             style={
               Object {
-                "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(120, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
+                "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(120, 30%, 90%, 0.95) 40%), url(\\"undefined\\")",
                 "height": "100%",
                 "objectFit": "cover",
                 "width": "100%",
@@ -782,19 +782,27 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
                   className="MuiTypography-root-234 MuiTypography-body1-243 MuiTypography-colorTextSecondary-258 MuiListItemText-secondary-301"
                 >
                   <div>
-                    40% Uttørkingseksponerte svært og temmelig kalkfattige berg, bergvegger og knauser
+                    Uttørkingseksponerte svært og temmelig kalkfattige berg, bergvegger og knauser
+                    : 
+                    <b>
+                      40%
+                    </b>
                   </div>
                   <div>
-                    60% Åpen kalkfattig grunnlendt lyngmark
+                    Åpen kalkfattig grunnlendt lyngmark
+                    : 
+                    <b>
+                      60%
+                    </b>
                   </div>
                 </p>
               </div>
               <div
                 style={
                   Object {
-                    "bottom": 8,
                     "position": "absolute",
                     "right": 8,
+                    "top": 8,
                   }
                 }
               >
@@ -839,7 +847,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
           <div
             style={
               Object {
-                "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(240, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
+                "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(240, 30%, 90%, 0.95) 40%), url(\\"undefined\\")",
                 "height": "100%",
                 "objectFit": "cover",
                 "width": "100%",
@@ -879,7 +887,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
                   className="MuiTypography-root-234 MuiTypography-body1-243 MuiTypography-colorTextSecondary-258 MuiListItemText-secondary-301"
                 >
                   <div>
-                    Tresjiktsdekning - total dekning 
+                    Tresjiktsdekning - total dekning
                     : 
                     <b>
                       5 - 10 %
@@ -890,9 +898,9 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
               <div
                 style={
                   Object {
-                    "bottom": 8,
                     "position": "absolute",
                     "right": 8,
+                    "top": 8,
                   }
                 }
               >
@@ -937,7 +945,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
           <div
             style={
               Object {
-                "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(240, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
+                "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(240, 30%, 90%, 0.95) 40%), url(\\"undefined\\")",
                 "height": "100%",
                 "objectFit": "cover",
                 "width": "100%",
@@ -984,10 +992,10 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
                     </b>
                   </div>
                   <div>
-                    Små objekter
+                    Store objekter
                     : 
                     <b>
-                      0 – 1/16
+                      ingen
                     </b>
                   </div>
                 </p>
@@ -995,9 +1003,9 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
               <div
                 style={
                   Object {
-                    "bottom": 8,
                     "position": "absolute",
                     "right": 8,
+                    "top": 8,
                   }
                 }
               >
@@ -1042,7 +1050,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
           <div
             style={
               Object {
-                "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(240, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
+                "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(240, 30%, 90%, 0.95) 40%), url(\\"undefined\\")",
                 "height": "100%",
                 "objectFit": "cover",
                 "width": "100%",
@@ -1100,9 +1108,9 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
               <div
                 style={
                   Object {
-                    "bottom": 8,
                     "position": "absolute",
                     "right": 8,
+                    "top": 8,
                   }
                 }
               >
@@ -1147,7 +1155,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
           <div
             style={
               Object {
-                "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(240, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
+                "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(240, 30%, 90%, 0.95) 40%), url(\\"undefined\\")",
                 "height": "100%",
                 "objectFit": "cover",
                 "width": "100%",
@@ -1212,9 +1220,9 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
               <div
                 style={
                   Object {
-                    "bottom": 8,
                     "position": "absolute",
                     "right": 8,
+                    "top": 8,
                   }
                 }
               >
@@ -1259,7 +1267,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
           <div
             style={
               Object {
-                "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(32, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
+                "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(32, 30%, 90%, 0.95) 40%), url(\\"undefined\\")",
                 "height": "100%",
                 "objectFit": "cover",
                 "width": "100%",
@@ -1304,9 +1312,9 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
               <div
                 style={
                   Object {
-                    "bottom": 8,
                     "position": "absolute",
                     "right": 8,
+                    "top": 8,
                   }
                 }
               >
@@ -3990,9 +3998,9 @@ exports[`Storyshots Listeelement default 1`] = `
         <div
           style={
             Object {
-              "bottom": 8,
               "position": "absolute",
               "right": 8,
+              "top": 8,
             }
           }
         />
@@ -4007,7 +4015,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(300, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(300, 30%, 90%, 0.95) 40%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",
@@ -4051,9 +4059,9 @@ exports[`Storyshots Listeelement default 1`] = `
         <div
           style={
             Object {
-              "bottom": 8,
               "position": "absolute",
               "right": 8,
+              "top": 8,
             }
           }
         />
@@ -4068,7 +4076,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(190, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(190, 30%, 90%, 0.95) 40%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",
@@ -4112,9 +4120,9 @@ exports[`Storyshots Listeelement default 1`] = `
         <div
           style={
             Object {
-              "bottom": 8,
               "position": "absolute",
               "right": 8,
+              "top": 8,
             }
           }
         />
@@ -4129,7 +4137,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(120, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(120, 30%, 90%, 0.95) 40%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",
@@ -4173,9 +4181,9 @@ exports[`Storyshots Listeelement default 1`] = `
         <div
           style={
             Object {
-              "bottom": 8,
               "position": "absolute",
               "right": 8,
+              "top": 8,
             }
           }
         />
@@ -4190,7 +4198,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(240, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(240, 30%, 90%, 0.95) 40%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",
@@ -4234,9 +4242,9 @@ exports[`Storyshots Listeelement default 1`] = `
         <div
           style={
             Object {
-              "bottom": 8,
               "position": "absolute",
               "right": 8,
+              "top": 8,
             }
           }
         />
@@ -4251,7 +4259,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(240, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(240, 30%, 90%, 0.95) 40%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",
@@ -4295,9 +4303,9 @@ exports[`Storyshots Listeelement default 1`] = `
         <div
           style={
             Object {
-              "bottom": 8,
               "position": "absolute",
               "right": 8,
+              "top": 8,
             }
           }
         />
@@ -4312,7 +4320,7 @@ exports[`Storyshots Listeelement default 1`] = `
     <div
       style={
         Object {
-          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(12, 40%, 90%, 0.95) 40%), url(\\"undefined\\")",
+          "background": "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, hsla(12, 30%, 90%, 0.95) 40%), url(\\"undefined\\")",
           "height": "100%",
           "objectFit": "cover",
           "width": "100%",
@@ -4356,9 +4364,9 @@ exports[`Storyshots Listeelement default 1`] = `
         <div
           style={
             Object {
-              "bottom": 8,
               "position": "absolute",
               "right": 8,
+              "top": 8,
             }
           }
         />

@@ -12,11 +12,17 @@ const farger = {
 }
 
 const palett = {
+  lysere: {},
   lys: {},
   medium: {},
   mørk: farger,
 }
 Object.keys(farger).forEach(prefiks => {
+  palett.lysere[prefiks] = tinycolor(farger[prefiks])
+    .desaturate(10)
+    .lighten(40)
+    .setAlpha(0.95)
+    .toHslString()
   palett.lys[prefiks] = tinycolor(farger[prefiks])
     .lighten(40)
     .setAlpha(0.95)
