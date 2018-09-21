@@ -10,15 +10,6 @@ storiesOf('BildeDialog', module)
     <BildeDialog
       kode="NA_T"
       tittel="tittel"
-      visBilde={true}
-      handleClose={action('handleClose')}
-    />
-  ))
-  .add('hidden', () => (
-    <BildeDialog
-      kode="NA_T"
-      tittel="tittel"
-      visBilde={false}
       handleClose={action('handleClose')}
     />
   ))
