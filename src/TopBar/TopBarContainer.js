@@ -22,7 +22,7 @@ class TopBarContainer extends Component<Props, State> {
   queryNumber = 0
   state = { query: '', focused: false }
 
-  componentWillUpdate(prevProps) {
+  componentDidUpdate(prevProps) {
     if (this.props.tittel !== prevProps.tittel && this.state.query)
       this.setState({ query: '' })
   }
