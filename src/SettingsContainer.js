@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { SettingsContext } from './SettingsContext'
 
 class SetingsContainer extends Component {
-  state = { visKoder: false, visAktiveLag: false }
+  state = { visKoder: false, visAktiveLag: false, visHovedmeny: false }
   componentDidMount() {
     this.setState({
       visKoder: localStorage.getItem('visKoder') === 'true',
@@ -14,6 +14,7 @@ class SetingsContainer extends Component {
     return (
       <SettingsContext.Provider
         value={{
+          visHovedmeny: this.state.visHovedMeny,
           visKoder: this.state.visKoder,
           sorterPåKode: this.state.sorterPåKode,
           visAktiveLag: this.state.visAktiveLag,
@@ -23,6 +24,9 @@ class SetingsContainer extends Component {
           },
           onToggleAktiveLag: () => {
             this.setState({ visAktiveLag: !this.state.visAktiveLag })
+          },
+          onToggleHovedmeny: () => {
+            this.setState({ visHovedmeny: !this.state.visHovedmeny })
           },
         }}
       >
