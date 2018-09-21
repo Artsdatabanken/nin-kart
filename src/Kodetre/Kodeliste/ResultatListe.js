@@ -56,6 +56,7 @@ class ResultatListe extends Component {
             return (
               <React.Fragment key={item.kode}>
                 <ListItem
+                  button={true}
                   style={{
                     height: 38,
                     cursor: 'pointer',

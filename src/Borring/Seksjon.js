@@ -69,7 +69,6 @@ class Seksjon extends Component {
   render() {
     const { node, kode, visKoder, kategori, onClick } = this.props
     const r = oppsummer(node)
-    const na = kode.startsWith('NA')
     const primary = r.map(e => this.map(e.verdi))
     return (
       <Listeelement

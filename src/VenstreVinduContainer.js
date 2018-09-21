@@ -1,45 +1,17 @@
-import { Divider, Snackbar } from '@material-ui/core'
+import { Snackbar } from '@material-ui/core'
 import React from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
-import backend from './backend'
 import BorreContainer from './Borring/BorreContainer'
 import Borrevalg from './Borring/Borrevalg'
 import KodeContainer from './Kodetre/Kodeliste/KodeContainer'
-import ResultatListe from './Kodetre/Kodeliste/ResultatListe'
 import språk from './språk'
-import TopBar from './TopBar/TopBar'
 import TweakContainer from './Tweaks/TweakContainer'
 import Panel from './components/Panel'
+import TopBarContainer from './TopBarContainer'
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
-  state = { query: '' }
-  queryNumber = 0
-
-  handleQueryChange = e => {
-    const q = e.target.value
-    this.setState({
-      query: q,
-      error: null,
-      searchResults: null,
-    })
-
-    this.queryNumber++
-    const currentQuery = this.queryNumber
-    if (!q) return
-
-    backend.søkKode(q).then(items => {
-      if (currentQuery !== this.queryNumber) return // Abort stale query
-      if (items.error) {
-        this.setState({ error: items.error })
-      } else {
-        this.setState({
-          searchResults: items,
-        })
-      }
-    })
-  }
-
+  state = { error: '' }
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.meta !== this.props.meta) this.setState({ query: null })
   }
@@ -62,13 +34,11 @@ class VenstreVinduContainer extends React.Component {
   }
 
   handleGotoCode = kode => {
-    this.setState({ searchResults: null })
     this.props.history.push('/katalog/' + kode)
   }
 
   render() {
     const meta = this.props.meta || {}
-    console.log(this.props)
     return (
       <Route
         render={({ match, history }) => (
@@ -142,35 +112,7 @@ class VenstreVinduContainer extends React.Component {
                 onRequestClose={() => this.setState({ error: null })}
               />
             )}
-            <TopBar
-              onGoBack={() => history.goBack()}
-              onExitToRoot={() => {
-                this.setState({ searchResults: null })
-                history.push('/')
-              }}
-              isAtRoot={history.location.pathname === '/'}
-              query={
-                this.state.query // HACK
-              }
-              tittel={this.tittel(this.props.meta)}
-              onQueryChange={this.handleQueryChange}
-            >
-              {this.state.searchResults && (
-                <React.Fragment>
-                  <Divider />
-                  <ResultatListe
-                    query={this.state.query}
-                    searchResults={this.state.searchResults}
-                    language={this.props.language}
-                    onClick={url => {
-                      console.warn('url', url)
-                      this.setState({ query: '', searchResults: null })
-                      history.push('/katalog/' + url)
-                    }}
-                  />
-                </React.Fragment>
-              )}
-            </TopBar>
+            <TopBarContainer tittel={this.tittel(this.props.meta)} />
           </React.Fragment>
         )}
       />
