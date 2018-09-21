@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Divider,
   List,
   ListItem,
@@ -9,7 +8,6 @@ import {
 } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 import React, { Component } from 'react'
-import config from '../../config'
 import språk from '../../språk'
 import Bildeavatar from './Bildeavatar'
 
@@ -50,47 +48,25 @@ class ResultatListe extends Component {
         >
           {searchResults.map(item => {
             const kode = item.kode.toUpperCase()
-            const prefix = kode.substring(0, 2)
             const navn = språk(item.navn)
 
             return (
               <React.Fragment key={item.kode}>
                 <ListItem
                   button={true}
-                  style={{
-                    height: 38,
-                    cursor: 'pointer',
-                  }}
-                  onClick={() => {
+                  style={{ height: 38, cursor: 'pointer' }}
+                  onMouseDown={() => {
                     onClick(item.kode)
                   }}
                   key={kode}
                 >
-                  {true ? (
-                    <Bildeavatar size="small" kode={kode} />
-                  ) : (
-                    <Avatar style={{ width: 24, height: 24 }}>
-                      <img
-                        alt={prefix}
-                        src={config.avatar24px(prefix)}
-                        onError={e => {
-                          const brokenImage = config.avatar24px('404')
-                          if (e.target.src !== brokenImage)
-                            e.target.src = brokenImage
-                        }}
-                      />
-                    </Avatar>
-                  )}
+                  <Bildeavatar size="small" kode={kode} />
                   <ListItemText classes={{ primary: classes.text }}>
                     {ResultatListe.highlightMatch(navn, query)}
                   </ListItemText>
                   <ListItemSecondaryAction>
                     <ListItemText>
-                      <div
-                        style={{
-                          fontWeight: 800,
-                        }}
-                      >
+                      <div style={{ fontWeight: 800 }}>
                         {ResultatListe.highlightMatch(
                           this.filtrer(kode),
                           query

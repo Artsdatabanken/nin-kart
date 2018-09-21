@@ -1,13 +1,35 @@
 import React, { Component } from 'react'
 import { Divider } from '@material-ui/core'
 import { Route, withRouter } from 'react-router-dom'
-import backend from './backend'
-import ResultatListe from './Kodetre/Kodeliste/ResultatListe'
-import TopBar from './TopBar/TopBar'
+import backend from '../backend'
+import ResultatListe from '../Kodetre/Kodeliste/ResultatListe'
+import TopBar from './TopBar'
 
-class TopBarContainer extends Component {
-  state = {}
+type State = {
+  searchResults: Array<Object>,
+  query: string,
+  focused: boolean,
+  onFocus: Function,
+  onBlur: Function,
+  onQueryChange: Function,
+}
+
+type Props = {
+  tittel: string,
+}
+
+class TopBarContainer extends Component<Props, State> {
   queryNumber = 0
+  state = { query: '', focused: false }
+
+  handleFocus = e => {
+    this.setState({ focused: true })
+    if (!this.props.query) this.handleQueryChange(e, this.props.tittel)
+  }
+
+  handleBlur = e => {
+    this.setState({ focused: false, searchResults: null })
+  }
 
   handleQueryChange = e => {
     const q = e.target.value
@@ -35,6 +57,8 @@ class TopBarContainer extends Component {
 
   render() {
     const { tittel } = this.props
+    const { query, focused } = this.state
+    console.log('w', focused, query, tittel)
     return (
       <Route
         render={({ match, history }) => (
@@ -46,9 +70,9 @@ class TopBarContainer extends Component {
                 history.push('/')
               }}
               isAtRoot={history.location.pathname === '/'}
-              query={
-                this.state.query // HACK
-              }
+              query={focused ? query : query || tittel || ''}
+              onFocus={this.handleFocus}
+              onBlur={this.handleBlur}
               tittel={tittel}
               onQueryChange={this.handleQueryChange}
             >

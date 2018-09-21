@@ -17,8 +17,6 @@ const styles = {
     paddingBottom: 2,
   },
   small_noborder: {
-    display: 'block',
-    margin: 'auto',
     borderRadius: 0,
     width: 24,
     height: 24,

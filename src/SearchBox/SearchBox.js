@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
 export default class SearchBox extends Component {
-  state = {}
   constructor(props) {
     super(props)
     this.inputRef = React.createRef()
@@ -18,30 +17,17 @@ export default class SearchBox extends Component {
     })
   }
 
-  handleFocus = e => {
-    this.setState({ focused: true })
-    this.props.onQueryChange(e, this.props.tittel)
-  }
-  handleBlur = e => {
-    this.setState({ focused: false })
-    this.props.onQueryChange(e, this.props.tittel)
-  }
-
   render() {
-    console.log(this.state.focused)
+    const { onFocus, onBlur, onQueryChange, query } = this.props
     return (
       <Input
         inputRef={this.inputRef}
         onKeyDown={this.handleKeyDown}
-        value={
-          this.state.focused
-            ? this.props.query
-            : this.props.query || this.props.tittel || ''
-        }
+        value={query}
         placeholder={'Søk i Natur i Norge'}
-        onFocus={this.handleFocus}
-        onBlur={this.handleBlur}
-        onChange={this.props.onQueryChange}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        onChange={onQueryChange}
         fullWidth={true}
         disableUnderline={true}
       />

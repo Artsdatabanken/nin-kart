@@ -255,7 +255,6 @@ exports[`Storyshots App Bar down into tree 1`] = `
           onKeyDown={[Function]}
           placeholder="Søk i Natur i Norge"
           type="text"
-          value=""
         />
       </div>
       <button
@@ -400,7 +399,6 @@ exports[`Storyshots App Bar root 1`] = `
           onKeyDown={[Function]}
           placeholder="Søk i Natur i Norge"
           type="text"
-          value=""
         />
       </div>
       <button
@@ -4540,7 +4538,6 @@ exports[`Storyshots Resultatliste default 1`] = `
         <div
           className="MuiButtonBase-root-1158 MuiListItem-root-1147 MuiListItem-default-1150 MuiListItem-gutters-1154 MuiListItem-button-1155 MuiListItem-secondaryAction-1156"
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
@@ -4646,7 +4643,6 @@ exports[`Storyshots Resultatliste default 1`] = `
         <div
           className="MuiButtonBase-root-1158 MuiListItem-root-1147 MuiListItem-default-1150 MuiListItem-gutters-1154 MuiListItem-button-1155 MuiListItem-secondaryAction-1156"
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
@@ -4759,7 +4755,6 @@ exports[`Storyshots Resultatliste default 1`] = `
         <div
           className="MuiButtonBase-root-1158 MuiListItem-root-1147 MuiListItem-default-1150 MuiListItem-gutters-1154 MuiListItem-button-1155 MuiListItem-secondaryAction-1156"
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
@@ -4872,7 +4867,6 @@ exports[`Storyshots Resultatliste default 1`] = `
         <div
           className="MuiButtonBase-root-1158 MuiListItem-root-1147 MuiListItem-default-1150 MuiListItem-gutters-1154 MuiListItem-button-1155 MuiListItem-secondaryAction-1156"
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
@@ -4985,7 +4979,6 @@ exports[`Storyshots Resultatliste default 1`] = `
         <div
           className="MuiButtonBase-root-1158 MuiListItem-root-1147 MuiListItem-default-1150 MuiListItem-gutters-1154 MuiListItem-button-1155 MuiListItem-secondaryAction-1156"
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
@@ -5098,7 +5091,6 @@ exports[`Storyshots Resultatliste default 1`] = `
         <div
           className="MuiButtonBase-root-1158 MuiListItem-root-1147 MuiListItem-default-1150 MuiListItem-gutters-1154 MuiListItem-button-1155 MuiListItem-secondaryAction-1156"
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
@@ -5211,7 +5203,6 @@ exports[`Storyshots Resultatliste default 1`] = `
         <div
           className="MuiButtonBase-root-1158 MuiListItem-root-1147 MuiListItem-default-1150 MuiListItem-gutters-1154 MuiListItem-button-1155 MuiListItem-secondaryAction-1156"
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
@@ -5324,7 +5315,6 @@ exports[`Storyshots Resultatliste default 1`] = `
         <div
           className="MuiButtonBase-root-1158 MuiListItem-root-1147 MuiListItem-default-1150 MuiListItem-gutters-1154 MuiListItem-button-1155 MuiListItem-secondaryAction-1156"
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
@@ -5437,7 +5427,6 @@ exports[`Storyshots Resultatliste default 1`] = `
         <div
           className="MuiButtonBase-root-1158 MuiListItem-root-1147 MuiListItem-default-1150 MuiListItem-gutters-1154 MuiListItem-button-1155 MuiListItem-secondaryAction-1156"
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
@@ -5550,7 +5539,6 @@ exports[`Storyshots Resultatliste default 1`] = `
         <div
           className="MuiButtonBase-root-1158 MuiListItem-root-1147 MuiListItem-default-1150 MuiListItem-gutters-1154 MuiListItem-button-1155 MuiListItem-secondaryAction-1156"
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
@@ -5663,7 +5651,6 @@ exports[`Storyshots Resultatliste default 1`] = `
         <div
           className="MuiButtonBase-root-1158 MuiListItem-root-1147 MuiListItem-default-1150 MuiListItem-gutters-1154 MuiListItem-button-1155 MuiListItem-secondaryAction-1156"
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
@@ -5789,7 +5776,6 @@ exports[`Storyshots SearchBox default 1`] = `
       onKeyDown={[Function]}
       placeholder="Søk i Natur i Norge"
       type="text"
-      value=""
     />
   </div>
 </div>

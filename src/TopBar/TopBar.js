@@ -30,14 +30,12 @@ const styles = {
   },
 }
 
-type State = {
-  items: Array<Object>,
-}
-
 type Props = {
   tittel: string,
   query: string,
   onClick: Function,
+  onFocus: Function,
+  onBlur: Function,
   onQueryChange: Function,
   isAtRoot: Boolean,
   onToggleMainDrawer: Function,
@@ -46,9 +44,10 @@ type Props = {
   children: Object,
 }
 
-class TopBar extends React.Component<Props, State> {
+class TopBar extends React.Component<Props> {
   render() {
-    const { query, tittel, classes } = this.props
+    const { query, classes, onFocus, onBlur } = this.props
+    console.log('q', query)
     return (
       <SettingsContext.Consumer>
         {context => (
@@ -71,7 +70,8 @@ class TopBar extends React.Component<Props, State> {
               )}
               <SearchBox
                 query={query}
-                tittel={tittel}
+                onFocus={onFocus}
+                onBlur={onBlur}
                 onQueryChange={this.props.onQueryChange}
                 onExitToRoot={this.props.onExitToRoot}
                 isAtRoot={this.props.isAtRoot}
