@@ -57,21 +57,19 @@ export default class BildeDialog extends React.Component {
           >
             <Card>
               <CardHeader title={kode} subtitle={tittel} />
-              <CardMedia>
-                <img
-                  src={backend.getFotoOmslag(kode)}
-                  srcSet={srcSet}
-                  onError={e => {
-                    const brokenImage = backend.getFotoOmslag('~')
-                    if (e.target.src !== brokenImage) e.target.src = brokenImage
-                  }}
-                  alt=""
-                  style={{
-                    minHeight: 612,
-                    objectFit: 'cover',
-                  }}
-                />
-              </CardMedia>
+              <CardMedia
+                src={backend.getFotoOmslag(kode)}
+                srcSet={srcSet}
+                onError={e => {
+                  const brokenImage = backend.getFotoOmslag('~')
+                  if (e.target.src !== brokenImage) e.target.src = brokenImage
+                }}
+                alt=""
+                style={{
+                  minHeight: 612,
+                  objectFit: 'cover',
+                }}
+              />
               <CardTitle
                 title="Lisens"
                 children={
