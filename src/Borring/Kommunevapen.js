@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import backend from '../backend'
+import config from '../config'
 
 class Kommunevapen extends Component {
   render() {
@@ -11,7 +11,7 @@ class Kommunevapen extends Component {
           this.logo.style.opacity = 1
         }}
         alt="logo"
-        src={backend.getFotoOmslag(kode, 408, 'png')}
+        src={config.getFotoOmslag(kode, 408, 'png')}
         style={{
           opacity: 0,
           width: 56,
@@ -19,7 +19,7 @@ class Kommunevapen extends Component {
           animation: 'fadein 3s ease',
         }}
         onError={e => {
-          const brokenAvatar = backend.avatar40px('~', 'png')
+          const brokenAvatar = config.avatar40px('~', 'png')
           if (e.target.src !== brokenAvatar) e.target.src = brokenAvatar
         }}
       />

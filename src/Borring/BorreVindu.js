@@ -15,7 +15,7 @@ import Borring from './Borring'
 import FlatUt from './FlatUt'
 import Sted from './Sted'
 import Kilde from '../Kilde'
-import backend from '../backend'
+import config from '../config'
 
 const styles = {
   card: {
@@ -43,7 +43,7 @@ class BorreVindu extends Component {
       <Card square={true} className={classes.card}>
         <CardMedia
           className={classes.media}
-          image={backend.getFotoOmslag(dominant.kode)}
+          image={config.getFotoOmslag(dominant.kode)}
           title={dominant.tittel}
         >
           <div

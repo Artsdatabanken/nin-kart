@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core/Card'
 import Dialog from '@material-ui/core/Dialog'
 import React from 'react'
-import backend from '../../backend'
+import config from '../../config'
 
 export default class BildeDialog extends React.Component {
   state = { credit: {} }
@@ -27,10 +27,10 @@ export default class BildeDialog extends React.Component {
 
   render() {
     const { kode, tittel } = this.props
-    const srcSet = `${backend.getFotoOmslag(
+    const srcSet = `${config.getFotoOmslag(
       kode,
       612
-    )} 1.5x, ${backend.getFotoOmslag(kode, 816)} 2x`
+    )} 1.5x, ${config.getFotoOmslag(kode, 816)} 2x`
     const actions = [
       <Button
         label="Lukk"
@@ -58,7 +58,7 @@ export default class BildeDialog extends React.Component {
             <Card>
               <CardHeader title={kode} subtitle={tittel} />
               <CardMedia
-                src={backend.getFotoOmslag(kode)}
+                src={config.getFotoOmslag(kode)}
                 srcSet={srcSet}
                 onError={e => {
                   const brokenImage = backend.getFotoOmslag('~')

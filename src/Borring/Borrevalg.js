@@ -16,7 +16,7 @@ import {
 } from '@material-ui/core'
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
-import backend from '../backend'
+import config from '../config'
 
 const styles = {
   card: {
@@ -41,7 +41,7 @@ class Borrevalg extends Component {
       <Card square={true} className={classes.card}>
         <CardMedia
           className={classes.media}
-          image={backend.getFotoOmslag('NA')}
+          image={config.getFotoOmslag('NA')}
           title="Bildebeskrivelse?"
         >
           <div
