@@ -7,7 +7,7 @@ import KodeContainer from './Kodetre/Kodeliste/KodeContainer'
 import språk from './språk'
 import TweakContainer from './Tweaks/TweakContainer'
 import Panel from './components/Panel'
-import TopBarContainer from './TopBarContainer'
+import TopBarContainer from './TopBar/TopBarContainer'
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {

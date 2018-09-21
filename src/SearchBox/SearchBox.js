@@ -12,22 +12,22 @@ export default class SearchBox extends Component {
     if (e.keyCode !== 27) return
     this.inputRef.current.blur()
     e.stopPropagation()
-    this.props.onQueryChange({ target: { value: '' } })
-  }
-
-  handleFocus = e => {
-    this.props.onQueryChange(e, this.props.tittel)
+    this.props.onQueryChange({
+      target: { value: '' },
+    })
   }
 
   render() {
+    const { onFocus, onBlur, onQueryChange, query } = this.props
     return (
       <Input
         inputRef={this.inputRef}
         onKeyDown={this.handleKeyDown}
-        value={this.props.query || this.props.tittel || ''}
+        value={query}
         placeholder={'Søk i Natur i Norge'}
-        onFocus={this.handleFocus}
-        onChange={this.props.onQueryChange}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        onChange={onQueryChange}
         fullWidth={true}
         disableUnderline={true}
       />
