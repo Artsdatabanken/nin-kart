@@ -1,7 +1,7 @@
 import typesystem from '@artsdatabanken/typesystem'
 import { Avatar, Chip } from '@material-ui/core'
 import React, { Component } from 'react'
-import backend from '../../backend'
+import config from '../../config'
 import farger from '../../farger'
 
 class Flis extends Component {
@@ -18,14 +18,14 @@ class Flis extends Component {
               this.logo.style.opacity = 1
             }}
             alt="logo"
-            src={backend.avatar40px(kode)}
+            src={config.avatar40px(kode)}
             style={{
               opacity: 0,
               filter: 'drop-shadow(2px 2px 2px #666)',
               animation: 'fadein 3s ease',
             }}
             onError={e => {
-              const brokenAvatar = backend.avatar40px('~', 'png')
+              const brokenAvatar = config.avatar40px('~', 'png')
               if (e.target.src !== brokenAvatar) e.target.src = brokenAvatar
             }}
           />

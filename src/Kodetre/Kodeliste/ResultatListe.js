@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 import React, { Component } from 'react'
-import Backend from '../../backend'
+import config from '../../config'
 import språk from '../../språk'
 import Bildeavatar from './Bildeavatar'
 
@@ -71,9 +71,9 @@ class ResultatListe extends Component {
                     <Avatar style={{ width: 24, height: 24 }}>
                       <img
                         alt={prefix}
-                        src={Backend.avatar24px(prefix)}
+                        src={config.avatar24px(prefix)}
                         onError={e => {
-                          const brokenImage = Backend.avatar24px('404')
+                          const brokenImage = config.avatar24px('404')
                           if (e.target.src !== brokenImage)
                             e.target.src = brokenImage
                         }}

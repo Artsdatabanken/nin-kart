@@ -11,7 +11,7 @@ import { LibraryAdd, ZoomOutMap } from '@material-ui/icons/'
 import ArrowForward from '@material-ui/icons/ArrowForward'
 import React from 'react'
 import { withRouter } from 'react-router'
-import backend from '../../backend'
+import config from '../../config'
 import farger from '../../farger'
 import språk from '../../språk'
 import Tittelblokk from './Tittelblokk'
@@ -83,9 +83,9 @@ class Kodekort extends React.Component {
         <CardMedia
           style={this.styles(kode.substring(0, 2))}
           onClick={() => this.handleOpen()}
-          image={backend.getFotoOmslag(kode, 408, this.filtype(prefiks))}
+          image={config.getFotoOmslag(kode, 408, this.filtype(prefiks))}
           onError={e => {
-            const brokenImage = backend.getFotoOmslag('~')
+            const brokenImage = config.getFotoOmslag('~')
             if (e.target.src !== brokenImage) e.target.src = brokenImage
           }}
           alt={'foto av' + tittel}

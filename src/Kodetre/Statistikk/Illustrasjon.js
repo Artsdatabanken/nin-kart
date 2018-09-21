@@ -4,9 +4,7 @@ import React from 'react'
 
 const Illustrasjon = ({ bilde, beskrivelse }) => (
   <React.Fragment>
-    <CardMedia>
-      <img src={bilde} alt="illustrasjon" style={{ objectFit: 'cover' }} />
-    </CardMedia>
+    <CardMedia src={bilde} alt="illustrasjon" />
     <Typography>{beskrivelse}</Typography>
   </React.Fragment>
 )

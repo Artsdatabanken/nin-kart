@@ -1,7 +1,7 @@
 import { Avatar, Divider, ListItem, ListItemText } from '@material-ui/core'
 import React from 'react'
 import { withRouter } from 'react-router'
-import backend from '../backend'
+import config from '../config'
 import farger from '../farger'
 import Flis from '../Kodetre/Kodeliste/Flis'
 
@@ -27,7 +27,7 @@ const Listeelement = ({
             'linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, ' +
             bgFarge +
             ' 40%), url("' +
-            backend.getFotoBanner(prefix) +
+            config.getFotoBanner(prefix) +
             '")',
         }}
       >

@@ -2,7 +2,7 @@ import typesystem from '@artsdatabanken/typesystem'
 import { Avatar } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 import React, { Component } from 'react'
-import backend from '../../backend'
+import config from '../../config'
 import farger from '../../farger'
 
 const styles = {
@@ -40,9 +40,9 @@ class BildeAvatar extends Component {
             root: classes[size + '_noborder'],
             img: classes.img,
           }}
-          src={backend.avatar40px(kode, 'png')}
+          src={config.avatar40px(kode, 'png')}
           onError={e => {
-            const brokenAvatar = backend.avatar40px('~')
+            const brokenAvatar = config.avatar40px('~')
             if (e.target.src !== brokenAvatar) e.target.src = brokenAvatar
           }}
         />
