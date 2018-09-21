@@ -11,13 +11,11 @@ jest.mock('@material-ui/core/TextField', () => 'TextField')
 jest.mock('@material-ui/core/Tooltip')
 jest.mock('@material-ui/core/MenuItem')
 
-jest.mock('backend', () => () => ({
-  raw: () => {},
-}))
+import backend from './backend'
+jest.mock('backend', () => () => ({}))
+
 jest.mock('./Kart/LeafletTangram', () => 'tangram')
 jest.mock('tangram/dist/tangram.debug', () => 'tangram')
-
-jest.mock('./backend')
 
 var localStorageMock = (function() {
   var store = {}

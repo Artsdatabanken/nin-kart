@@ -58,7 +58,6 @@ class TopBarContainer extends Component<Props, State> {
   render() {
     const { tittel } = this.props
     const { query, focused } = this.state
-    console.log('w', focused, query, tittel)
     return (
       <Route
         render={({ match, history }) => (

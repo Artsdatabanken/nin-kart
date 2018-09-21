@@ -486,8 +486,6 @@ exports[`Storyshots App Bar root 1`] = `
 
 exports[`Storyshots BildeDialog default 1`] = `<div />`;
 
-exports[`Storyshots BildeDialog hidden 1`] = `<div />`;
-
 exports[`Storyshots Borring 2 Borring 2 1`] = `
 <div>
   <div

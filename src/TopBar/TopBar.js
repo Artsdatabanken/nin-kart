@@ -47,7 +47,6 @@ type Props = {
 class TopBar extends React.Component<Props> {
   render() {
     const { query, classes, onFocus, onBlur } = this.props
-    console.log('q', query)
     return (
       <SettingsContext.Consumer>
         {context => (

@@ -9,19 +9,18 @@ import {
 import Dialog from '@material-ui/core/Dialog'
 import React from 'react'
 import config from '../../config'
+import backend from '../../backend'
 
 export default class BildeDialog extends React.Component {
   state = { credit: {} }
 
-  componentWillReceiveProps(nextProps: Object) {
-    if (nextProps.visBilde) {
-      this.fetchData(nextProps.kode)
-    }
+  componentDidMount() {
+    this.fetchData(this.props.kode)
   }
 
   fetchData(kode: string, bounds: Object) {
     backend.getImageAttribution(kode).then(data => {
-      this.setState({ credit: data })
+      if (this.isMounted) this.setState({ credit: data })
     })
   }
 
@@ -51,7 +50,7 @@ export default class BildeDialog extends React.Component {
           <Dialog
             actions={actions}
             modal={false}
-            open={this.props.visBilde}
+            open={true}
             onRequestClose={this.props.handleClose}
             contentStyle={customContentStyle}
           >
@@ -61,7 +60,7 @@ export default class BildeDialog extends React.Component {
                 src={config.getFotoOmslag(kode)}
                 srcSet={srcSet}
                 onError={e => {
-                  const brokenImage = backend.getFotoOmslag('~')
+                  const brokenImage = config.getFotoOmslag('~')
                   if (e.target.src !== brokenImage) e.target.src = brokenImage
                 }}
                 alt=""
