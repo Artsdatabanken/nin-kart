@@ -22,6 +22,10 @@ class TopBarContainer extends Component<Props, State> {
   queryNumber = 0
   state = { query: '', focused: false }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.tittel !== prevProps.tittel && this.state.query)
+      this.setState({ query: '' })
+  }
   handleFocus = e => {
     this.setState({ focused: true })
     if (!this.props.query) this.handleQueryChange(e, this.props.tittel)
