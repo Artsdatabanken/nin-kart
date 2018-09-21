@@ -68,6 +68,7 @@ class VenstreVinduContainer extends React.Component {
 
   render() {
     const meta = this.props.meta || {}
+    console.log(this.props)
     return (
       <Route
         render={({ match, history }) => (
@@ -147,9 +148,10 @@ class VenstreVinduContainer extends React.Component {
                 this.setState({ searchResults: null })
                 history.push('/')
               }}
-              onToggleMainDrawer={this.props.onToggleMainDrawer}
-              isAtRoot={history.location.pathname === '/'} // HACK
-              query={this.state.query}
+              isAtRoot={history.location.pathname === '/'}
+              query={
+                this.state.query // HACK
+              }
               tittel={this.tittel(this.props.meta)}
               onQueryChange={this.handleQueryChange}
             >

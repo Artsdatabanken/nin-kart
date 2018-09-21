@@ -70,7 +70,6 @@ class Seksjon extends Component {
     const { node, kode, visKoder, kategori, onClick } = this.props
     const r = oppsummer(node)
     const na = kode.startsWith('NA')
-    if (na) console.log(r)
     const primary = r.map(e => this.map(e.verdi))
     return (
       <Listeelement
