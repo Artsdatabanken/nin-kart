@@ -49,6 +49,7 @@ class VenstreVinduContainer extends React.Component {
                 render={({ match, history }) => {
                   return (
                     <Panel style={{ paddingTop: 0 }}>
+                      <TopBarContainer tittel={this.tittel(this.props.meta)} />
                       <KodeContainer
                         kode={meta.kode}
                         onGoToCode={this.handleGotoCode}
@@ -71,6 +72,12 @@ class VenstreVinduContainer extends React.Component {
                 path="/lag/:kode/:lag?"
                 render={({ match, history }) => (
                   <Panel>
+                    <TopBarContainer
+                      tittel={
+                        'Innstillinger for ' +
+                        (match.params.lag || match.params.kode)
+                      }
+                    />
                     <TweakContainer
                       kode={match.params.kode}
                       lag={match.params.lag}
@@ -87,6 +94,13 @@ class VenstreVinduContainer extends React.Component {
                 path="/punkt/:lng,:lat/:view?"
                 render={({ match, history }) => (
                   <Panel style={{ paddingTop: 0 }}>
+                    <TopBarContainer
+                      tittel={
+                        match.params.lng.substr(0, 8) +
+                        ',' +
+                        match.params.lat.substr(0, 8)
+                      }
+                    />
                     <BorreContainer
                       lng={match.params.lng}
                       lat={match.params.lat}
@@ -99,6 +113,7 @@ class VenstreVinduContainer extends React.Component {
                 path="/punkt/valg"
                 render={({ match, history }) => (
                   <Panel style={{ paddingTop: 0 }}>
+                    <TopBarContainer tittel="Klikk i kart" />
                     <Borrevalg />
                   </Panel>
                 )}
@@ -112,7 +127,6 @@ class VenstreVinduContainer extends React.Component {
                 onRequestClose={() => this.setState({ error: null })}
               />
             )}
-            <TopBarContainer tittel={this.tittel(this.props.meta)} />
           </React.Fragment>
         )}
       />
