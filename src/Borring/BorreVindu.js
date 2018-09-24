@@ -51,7 +51,7 @@ class BorreVindu extends Component {
               position: 'absolute',
               top: 190,
               height: 74,
-              width: 376,
+              width: '100%',
               backgroundColor: bgColor,
               paddingTop: 8,
               paddingBottom: 8,
