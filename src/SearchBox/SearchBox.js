@@ -1,8 +1,14 @@
-import Input from '@material-ui/core/Input'
+import { Input, withStyles } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
-export default class SearchBox extends Component {
+const styles = theme => ({
+  input: {
+    textOverflow: 'ellipsis',
+  },
+})
+
+class SearchBox extends Component {
   constructor(props) {
     super(props)
     this.inputRef = React.createRef()
@@ -18,7 +24,7 @@ export default class SearchBox extends Component {
   }
 
   render() {
-    const { onFocus, onBlur, onQueryChange, query } = this.props
+    const { onFocus, onBlur, onQueryChange, query, classes } = this.props
     return (
       <Input
         inputRef={this.inputRef}
@@ -30,6 +36,7 @@ export default class SearchBox extends Component {
         onChange={onQueryChange}
         fullWidth={true}
         disableUnderline={true}
+        classes={classes}
       />
     )
   }
@@ -38,3 +45,5 @@ export default class SearchBox extends Component {
 SearchBox.propTypes = {
   onSearchResults: PropTypes.func,
 }
+
+export default withStyles(styles)(SearchBox)
