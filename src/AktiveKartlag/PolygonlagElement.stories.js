@@ -4,6 +4,7 @@ import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
 import { muiTheme } from 'storybook-addon-material-ui'
 import PolygonlagElement from './PolygonlagElement'
+import { List } from '@material-ui/core'
 
 const forelder = {
   farge: '#fc61fd',
@@ -30,16 +31,18 @@ storiesOf('PolygonlagElement', module)
   .add('default', () => (
     <div style={{ width: 400 }}>
       <MemoryRouter>
-        <PolygonlagElement
-          {...forelder}
-          key={'valgt' + forelder.kode}
-          kode={forelder.kode}
-          vis={true}
-          onMouseEnter={action('mouseEnter')}
-          onMouseLeave={action('mouseLeave')}
-          onRemove={action('onRemove')}
-          onClick={action('onClick')}
-        />
+        <List>
+          <PolygonlagElement
+            {...forelder}
+            key={'valgt' + forelder.kode}
+            kode={forelder.kode}
+            vis={true}
+            onMouseEnter={action('mouseEnter')}
+            onMouseLeave={action('mouseLeave')}
+            onRemove={action('onRemove')}
+            onClick={action('onClick')}
+          />
+        </List>
       </MemoryRouter>
     </div>
   ))
