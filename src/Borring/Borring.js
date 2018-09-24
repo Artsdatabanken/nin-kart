@@ -10,9 +10,7 @@ class Borring extends Component {
     if (!barn) return null
     return (
       <List>
-        <ListSubheader>
-          Kunnskap om naturen i en radius på 10 meter fra punktet
-        </ListSubheader>
+        <ListSubheader>Kunnskap om naturen i 10 meter radius</ListSubheader>
         <SettingsContext.Consumer>
           {context => {
             return ['VV', 'AO', 'NA', 'RL', 'BS', 'MI'].map(kode => {

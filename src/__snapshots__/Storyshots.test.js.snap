@@ -519,7 +519,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
               "paddingTop": 8,
               "position": "absolute",
               "top": 190,
-              "width": 376,
+              "width": "100%",
             }
           }
         >
@@ -647,7 +647,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
           <li
             className="MuiListSubheader-root-579 MuiListSubheader-sticky-584 MuiListSubheader-gutters-582"
           >
-            Kunnskap om naturen i en radius på 10 meter fra punktet
+            Kunnskap om naturen i 10 meter radius
           </li>
           <div
             style={

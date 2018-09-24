@@ -169,12 +169,4 @@ class Kodekort extends React.Component {
   }
 }
 
-/*
-  <BildeDialog
-    kode={kode}
-    tittel={språk(this.props.tittel)}
-    visBilde={this.state.visBilde}
-    handleClose={this.handleClose}
-  />
-*/
 export default withRouter(withStyles(styles)(Kodekort))
