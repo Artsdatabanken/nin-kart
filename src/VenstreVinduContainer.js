@@ -118,6 +118,7 @@ class VenstreVinduContainer extends React.Component {
                   </Panel>
                 )}
               />
+              <Route render={({ match, history }) => <TopBarContainer />} />
             </Switch>
             {this.state.error && (
               <Snackbar

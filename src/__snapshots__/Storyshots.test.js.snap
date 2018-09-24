@@ -8047,6 +8047,107 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
       }
     }
   >
+    <header
+      className="MuiPaper-root-3204 MuiPaper-elevation4-3210 MuiAppBar-root-3231 MuiAppBar-positionSticky-3234 MuiAppBar-colorPrimary-3238 TopBar-root-3044"
+    >
+      <div
+        className="MuiToolbar-root-3200 MuiToolbar-dense-3203 MuiToolbar-gutters-3201 TopBar-toolbar-3045"
+      >
+        <button
+          className="MuiButtonBase-root-3160 MuiIconButton-root-3163 TopBar-darkButton-3046"
+          disabled={false}
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex="0"
+          type="button"
+        >
+          <span
+            className="MuiIconButton-label-3168"
+          >
+            <svg
+              aria-hidden="true"
+              className="MuiSvgIcon-root-3144"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+              />
+            </svg>
+          </span>
+          <span
+            className="MuiTouchRipple-root-3153"
+          />
+        </button>
+        <div
+          className="MuiInputBase-root-3169 MuiInput-root-3186 MuiInputBase-fullWidth-3178 MuiInput-fullWidth-3193"
+          onClick={[Function]}
+        >
+          <input
+            className="MuiInputBase-input-3179 MuiInput-input-3194 SearchBox-input-3199"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Søk i Natur i Norge"
+            type="text"
+            value=""
+          />
+        </div>
+        <button
+          className="MuiButtonBase-root-3160 MuiIconButton-root-3163 TopBar-lightButton-3047"
+          disabled={false}
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex="0"
+          type="button"
+        >
+          <span
+            className="MuiIconButton-label-3168"
+          >
+            <svg
+              aria-hidden="true"
+              className="MuiSvgIcon-root-3144"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+              />
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+            </svg>
+          </span>
+          <span
+            className="MuiTouchRipple-root-3153"
+          />
+        </button>
+      </div>
+    </header>
     
   </div>
 </div>
@@ -8061,6 +8162,107 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
       }
     }
   >
+    <header
+      className="MuiPaper-root-3008 MuiPaper-elevation4-3014 MuiAppBar-root-3035 MuiAppBar-positionSticky-3038 MuiAppBar-colorPrimary-3042 TopBar-root-2848"
+    >
+      <div
+        className="MuiToolbar-root-3004 MuiToolbar-dense-3007 MuiToolbar-gutters-3005 TopBar-toolbar-2849"
+      >
+        <button
+          className="MuiButtonBase-root-2964 MuiIconButton-root-2967 TopBar-darkButton-2850"
+          disabled={false}
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex="0"
+          type="button"
+        >
+          <span
+            className="MuiIconButton-label-2972"
+          >
+            <svg
+              aria-hidden="true"
+              className="MuiSvgIcon-root-2948"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+              />
+            </svg>
+          </span>
+          <span
+            className="MuiTouchRipple-root-2957"
+          />
+        </button>
+        <div
+          className="MuiInputBase-root-2973 MuiInput-root-2990 MuiInputBase-fullWidth-2982 MuiInput-fullWidth-2997"
+          onClick={[Function]}
+        >
+          <input
+            className="MuiInputBase-input-2983 MuiInput-input-2998 SearchBox-input-3003"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Søk i Natur i Norge"
+            type="text"
+            value=""
+          />
+        </div>
+        <button
+          className="MuiButtonBase-root-2964 MuiIconButton-root-2967 TopBar-lightButton-2851"
+          disabled={false}
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex="0"
+          type="button"
+        >
+          <span
+            className="MuiIconButton-label-2972"
+          >
+            <svg
+              aria-hidden="true"
+              className="MuiSvgIcon-root-2948"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+              />
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+            </svg>
+          </span>
+          <span
+            className="MuiTouchRipple-root-2957"
+          />
+        </button>
+      </div>
+    </header>
     
   </div>
 </div>
