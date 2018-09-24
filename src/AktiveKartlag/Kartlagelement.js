@@ -47,9 +47,13 @@ class Kartlagelement extends React.Component {
               }}
             >
               {this.props.erSynlig ? (
-                <Visibility style={{ color: '#333' }} />
+                <Visibility
+                  style={{ color: '#333', position: 'relative', top: -4 }}
+                />
               ) : (
-                <VisibilityOff style={{ color: '#aaa' }} />
+                <VisibilityOff
+                  style={{ color: '#aaa', position: 'relative', top: -4 }}
+                />
               )}
             </IconButton>
           </ListItemAvatar>

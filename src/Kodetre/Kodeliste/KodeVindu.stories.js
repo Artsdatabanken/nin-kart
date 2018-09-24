@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react'
 import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
 import KodeVindu from './KodeVindu'
+import { Paper } from '@material-ui/core'
 
 var api = {
   kode: 'NA_H',
@@ -224,29 +225,33 @@ const meta2 = {
 storiesOf('KodeVindu', module)
   .add('default', () => (
     <MemoryRouter>
-      <KodeVindu
-        data={api}
-        meta={meta}
-        onMouseEnter={action('mouseEnter')}
-        onMouseLeave={action('mouseLeave')}
-        onClick={action('click')}
-        erAktivert={true}
-        onFitBounds={action('onFitBounds')}
-        language={['nb', 'la']}
-      />
+      <Paper depth={4} style={{ width: 408, margin: 12 }}>
+        <KodeVindu
+          data={api}
+          meta={meta}
+          onMouseEnter={action('mouseEnter')}
+          onMouseLeave={action('mouseLeave')}
+          onClick={action('click')}
+          erAktivert={true}
+          onFitBounds={action('onFitBounds')}
+          language={['nb', 'la']}
+        />
+      </Paper>
     </MemoryRouter>
   ))
   .add('relasjon', () => (
     <MemoryRouter>
-      <KodeVindu
-        data={api2}
-        meta={meta2}
-        onMouseEnter={action('mouseEnter')}
-        onMouseLeave={action('mouseLeave')}
-        onClick={action('click')}
-        erAktivert={true}
-        onFitBounds={action('onFitBounds')}
-        language={['nb', 'la']}
-      />
+      <Paper depth={4} style={{ width: 408, margin: 12 }}>
+        <KodeVindu
+          data={api2}
+          meta={meta2}
+          onMouseEnter={action('mouseEnter')}
+          onMouseLeave={action('mouseLeave')}
+          onClick={action('click')}
+          erAktivert={true}
+          onFitBounds={action('onFitBounds')}
+          language={['nb', 'la']}
+        />
+      </Paper>
     </MemoryRouter>
   ))
