@@ -513,13 +513,14 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
             Object {
               "backgroundColor": "rgba(160,160,160,0.95)",
               "height": 74,
+              "left": 0,
               "paddingBottom": 8,
               "paddingLeft": 16,
               "paddingRight": 16,
               "paddingTop": 8,
-              "position": "absolute",
+              "position": "relative",
+              "right": 0,
               "top": 190,
-              "width": "100%",
             }
           }
         >

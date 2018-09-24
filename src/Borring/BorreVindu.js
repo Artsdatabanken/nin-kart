@@ -48,10 +48,11 @@ class BorreVindu extends Component {
         >
           <div
             style={{
-              position: 'absolute',
+              position: 'relative',
               top: 190,
+              left: 0,
               height: 74,
-              width: '100%',
+              right: 0,
               backgroundColor: bgColor,
               paddingTop: 8,
               paddingBottom: 8,
