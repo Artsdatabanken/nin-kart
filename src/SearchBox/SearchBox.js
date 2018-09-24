@@ -30,6 +30,7 @@ export default class SearchBox extends Component {
         onChange={onQueryChange}
         fullWidth={true}
         disableUnderline={true}
+        style={{ textOverflow: 'ellipsis' }}
       />
     )
   }
