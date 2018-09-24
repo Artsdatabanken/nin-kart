@@ -2,7 +2,7 @@ import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 import Resultatliste from './ResultatListe'
-import { createMuiTheme } from '@material-ui/core'
+import { Paper, createMuiTheme } from '@material-ui/core'
 
 const results1 = [{ kode: 'KA', navn: 'Kalk' }]
 const results2 = [
@@ -91,10 +91,10 @@ const results2 = [
 storiesOf('Resultatliste', module).add('default', () => {
   return (
     <MuiThemeProvider theme={createMuiTheme()}>
-      <div>
+      <Paper style={{ margin: 12, width: 408 }}>
         <Resultatliste searchResults={results1} query="alk" />
         <Resultatliste searchResults={results2} query="kjø" />
-      </div>
+      </Paper>
     </MuiThemeProvider>
   )
 })
