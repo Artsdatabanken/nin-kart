@@ -3,7 +3,6 @@ import {
   Divider,
   IconButton,
   ListItem,
-  ListItemAvatar,
   ListItemSecondaryAction,
   ListItemText,
 } from '@material-ui/core'
