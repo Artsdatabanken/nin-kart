@@ -25,6 +25,7 @@ class TopBarContainer extends Component<Props, State> {
   shouldComponentUpdate(nextProps, nextState) {
     if (this.props.tittel !== nextProps.tittel) return true
     if (this.state.query !== nextState.query) return true
+    if (this.state.searchResults !== nextState.searchResults) return true
     return false
   }
 
@@ -32,6 +33,7 @@ class TopBarContainer extends Component<Props, State> {
     if (this.props.tittel !== prevProps.tittel && this.state.query)
       this.setState({ query: '' })
   }
+
   handleFocus = e => {
     this.setState({ focused: true })
     if (!this.props.query) this.handleQueryChange(e, this.props.tittel)

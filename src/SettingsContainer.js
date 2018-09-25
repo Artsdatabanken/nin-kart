@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 import { SettingsContext } from './SettingsContext'
 
 class SetingsContainer extends Component {
-  state = { visKoder: false, visAktiveLag: false, visHovedmeny: false }
+  state = {
+    visKoder: false,
+    visAktiveLag: false,
+    visHovedmeny: false,
+  }
   componentDidMount() {
     this.setState({
       visKoder: localStorage.getItem('visKoder') === 'true',

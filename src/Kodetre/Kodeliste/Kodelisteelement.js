@@ -22,6 +22,7 @@ type Props = {
   onMouseEnter: Function,
   onGoToCode: Function,
   erOpplyst: Boolean,
+  utenFarge: Boolean,
 }
 
 class Kodelisteelement extends React.Component<Props, State> {
@@ -31,7 +32,6 @@ class Kodelisteelement extends React.Component<Props, State> {
   }
 
   render() {
-    //    console.log(this.props.kode)
     const {
       meta,
       kode,
@@ -42,6 +42,7 @@ class Kodelisteelement extends React.Component<Props, State> {
       onMouseLeave,
       areal,
       størsteAreal,
+      utenFarge,
     } = this.props
     return (
       <ListItem
@@ -55,16 +56,18 @@ class Kodelisteelement extends React.Component<Props, State> {
       >
         <VolumIndikator størsteAreal={størsteAreal} areal={areal} />
         <Bildeavatar kode={kode} />
-        <ListItemSecondaryAction style={{ paddingRight: 8 }}>
-          <Avatar
-            style={{
-              width: 24,
-              height: 24,
-              filter: 'drop-shadow(1px 1px 1px #666)',
-              backgroundColor: erOpplyst ? '#f00' : meta.farge,
-            }}
-          />
-        </ListItemSecondaryAction>
+        {!utenFarge && (
+          <ListItemSecondaryAction style={{ paddingRight: 8 }}>
+            <Avatar
+              style={{
+                width: 24,
+                height: 24,
+                filter: 'drop-shadow(1px 1px 1px #666)',
+                backgroundColor: erOpplyst ? '#f00' : meta.farge,
+              }}
+            />
+          </ListItemSecondaryAction>
+        )}
         <ListItemText
           primary={språk(meta.tittel)}
           secondary={visKode && kode}

@@ -98,6 +98,7 @@ class Kodekort extends React.Component {
             {overordnet && (
               <Button
                 style={{
+                  backgroundColor: '#fff',
                   color: farger.mørk[prefiks],
                 }}
                 size="small"

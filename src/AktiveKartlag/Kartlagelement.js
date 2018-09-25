@@ -35,28 +35,22 @@ class Kartlagelement extends React.Component {
             onMouseLeave(kode)
           }}
         >
-          <ListItemAvatar>
-            <IconButton
-              onClick={e => {
-                this.props.onUpdateLayerProp(
-                  kode,
-                  'erSynlig',
-                  !this.props.erSynlig
-                )
-                e.stopPropagation()
-              }}
-            >
-              {this.props.erSynlig ? (
-                <Visibility
-                  style={{ color: '#333', position: 'relative', top: -4 }}
-                />
-              ) : (
-                <VisibilityOff
-                  style={{ color: '#aaa', position: 'relative', top: -4 }}
-                />
-              )}
-            </IconButton>
-          </ListItemAvatar>
+          <IconButton
+            onClick={e => {
+              this.props.onUpdateLayerProp(
+                kode,
+                'erSynlig',
+                !this.props.erSynlig
+              )
+              e.stopPropagation()
+            }}
+          >
+            {this.props.erSynlig ? (
+              <Visibility style={{ color: '#333' }} />
+            ) : (
+              <VisibilityOff style={{ color: '#aaa' }} />
+            )}
+          </IconButton>
           <ListItemText primary={tittel} secondary={undertittel} />
           <ListItemSecondaryAction style={{ paddingRight: 8 }}>
             <Avatar
@@ -65,10 +59,9 @@ class Kartlagelement extends React.Component {
                 height: 24,
                 filter: 'drop-shadow(1px 1px 1px #666)',
                 backgroundColor: farge,
+                src: !farge && '/' + kode + '.png',
               }}
-            >
-              {!farge && <img src={'/' + kode + '.png'} alt="farge" />}
-            </Avatar>
+            />
           </ListItemSecondaryAction>
         </ListItem>
         <Divider />
