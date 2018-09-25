@@ -14,25 +14,31 @@ class SetingsContainer extends Component {
     return (
       <SettingsContext.Provider
         value={{
-          visHovedmeny: this.state.visHovedMeny,
+          visHovedmeny: this.state.visHovedmeny,
           visKoder: this.state.visKoder,
           sorterPåKode: this.state.sorterPåKode,
           visAktiveLag: this.state.visAktiveLag,
-          onUpdateValue: (key, value) => {
-            this.setState({ [key]: value })
-            localStorage.setItem(key, value)
-          },
-          onToggleAktiveLag: () => {
-            this.setState({ visAktiveLag: !this.state.visAktiveLag })
-          },
-          onToggleHovedmeny: () => {
-            this.setState({ visHovedmeny: !this.state.visHovedmeny })
-          },
+          onUpdateValue: this.handleUpdateValue,
+          onToggleAktiveLag: this.handleToggleAktivelag,
+          onToggleHovedmeny: this.handleToggleHovedmeny,
         }}
       >
         {this.props.children}
       </SettingsContext.Provider>
     )
+  }
+
+  handleUpdateValue = (key, value) => {
+    this.setState({ [key]: value })
+    localStorage.setItem(key, value)
+  }
+
+  handleToggleAktivelag = () =>
+    this.setState({ visAktiveLag: !this.state.visAktiveLag })
+
+  handleToggleHovedmeny = () => {
+    console.log('hoved', !this.state.visHovedmeny)
+    this.setState({ visHovedmeny: !this.state.visHovedmeny })
   }
 }
 
