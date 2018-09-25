@@ -1,5 +1,5 @@
 import typesystem from '@artsdatabanken/typesystem'
-import { ListItem, ListItemText } from '@material-ui/core'
+import { List, ListItem, ListItemText } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 import React from 'react'
 import prettyprint from '../../prettyprint'
@@ -26,7 +26,7 @@ const Statistikk = ({
   geometrierVindu,
   classes,
 }) => (
-  <React.Fragment>
+  <List>
     {ingress && (
       <ListItem>
         <ListItemText
@@ -53,36 +53,39 @@ const Statistikk = ({
         </ListItemText>
       </ListItem>
     )}
-    {stats.areal && (
-      <ListItem>
-        <ListItemText
-          classes={{
-            primary: classes.li,
-          }}
-        >
-          Det er kartlagt <b>{prettyprint.prettyPrintAreal(stats.areal)}</b>
-          &nbsp;
-          {tittel.toLowerCase()}
-          .&nbsp;
-          {toppnavn && (
-            <span>
-              Dette utgjør&nbsp;
-              <b>{((100 * stats.areal) / stats.arealPrefix).toFixed(1)} %</b> av
-              kartlagte&nbsp;
-              {toppnavn.toLowerCase()}.
-            </span>
-          )}
-          {false &&
-            stats.arter && (
+    {stats &&
+      stats.areal && (
+        <ListItem>
+          <ListItemText
+            classes={{
+              primary: classes.li,
+            }}
+          >
+            Det er kartlagt <b>{prettyprint.prettyPrintAreal(stats.areal)}</b>
+            &nbsp;
+            {tittel.toLowerCase()}
+            .&nbsp;
+            {toppnavn && (
               <span>
-                &nbsp;Det er observert <b>{stats.arter}</b> ulike arter i
-                områder som er kartlagt som {tittel.toLowerCase()}.
+                Dette utgjør&nbsp;
+                <b>
+                  {((100 * stats.areal) / stats.arealPrefix).toFixed(1)} %
+                </b>{' '}
+                av kartlagte&nbsp;
+                {toppnavn.toLowerCase()}.
               </span>
             )}
-        </ListItemText>
-      </ListItem>
-    )}
-  </React.Fragment>
+            {false &&
+              stats.arter && (
+                <span>
+                  &nbsp;Det er observert <b>{stats.arter}</b> ulike arter i
+                  områder som er kartlagt som {tittel.toLowerCase()}.
+                </span>
+              )}
+          </ListItemText>
+        </ListItem>
+      )}
+  </List>
 )
 
 export default withStyles(styles)(Statistikk)

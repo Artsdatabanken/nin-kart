@@ -22,6 +22,12 @@ class TopBarContainer extends Component<Props, State> {
   queryNumber = 0
   state = { query: '', focused: false }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    if (this.props.tittel !== nextProps.tittel) return true
+    if (this.state.query !== nextState.query) return true
+    return false
+  }
+
   componentDidUpdate(prevProps) {
     if (this.props.tittel !== prevProps.tittel && this.state.query)
       this.setState({ query: '' })
@@ -59,42 +65,45 @@ class TopBarContainer extends Component<Props, State> {
     })
   }
 
+  handleGoBack = () => this.props.history.goBack()
+  handleExitToRoot = () => {
+    this.setState({ searchResults: null })
+    this.props.history.push('/')
+  }
+
+  handleClickSearchResult = url => {
+    console.warn('url', url)
+    this.setState({ query: '', searchResults: null })
+    this.props.history.push('/katalog/' + url)
+  }
+
   render() {
     const { tittel } = this.props
     const { query, focused } = this.state
     return (
       <Route
         render={({ match, history }) => (
-          <React.Fragment>
-            <TopBar
-              onGoBack={() => history.goBack()}
-              onExitToRoot={() => {
-                this.setState({ searchResults: null })
-                history.push('/')
-              }}
-              isAtRoot={history.location.pathname === '/'}
-              query={focused ? query : query || tittel || ''}
-              onFocus={this.handleFocus}
-              onBlur={this.handleBlur}
-              tittel={tittel}
-              onQueryChange={this.handleQueryChange}
-            >
-              {this.state.searchResults && (
-                <React.Fragment>
-                  <Divider />
-                  <ResultatListe
-                    query={this.state.query}
-                    searchResults={this.state.searchResults}
-                    onClick={url => {
-                      console.warn('url', url)
-                      this.setState({ query: '', searchResults: null })
-                      history.push('/katalog/' + url)
-                    }}
-                  />
-                </React.Fragment>
-              )}
-            </TopBar>
-          </React.Fragment>
+          <TopBar
+            onGoBack={this.handleGoBack}
+            onExitToRoot={this.handleExitToRoot}
+            isAtRoot={history.location.pathname === '/'}
+            query={focused ? query : query || tittel || ''}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
+            tittel={tittel}
+            onQueryChange={this.handleQueryChange}
+          >
+            {this.state.searchResults && (
+              <React.Fragment>
+                <Divider />
+                <ResultatListe
+                  query={this.state.query}
+                  searchResults={this.state.searchResults}
+                  onClick={this.handleClickSearchResult}
+                />
+              </React.Fragment>
+            )}
+          </TopBar>
         )}
       />
     )

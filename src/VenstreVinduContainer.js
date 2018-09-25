@@ -33,7 +33,7 @@ class VenstreVinduContainer extends React.Component {
     return item
   }
 
-  handleGotoCode = kode => {
+  handleGoToCode = kode => {
     this.props.history.push('/katalog/' + kode)
   }
 
@@ -52,7 +52,7 @@ class VenstreVinduContainer extends React.Component {
                       <TopBarContainer tittel={this.tittel(this.props.meta)} />
                       <KodeContainer
                         kode={meta.kode}
-                        onGoToCode={this.handleGotoCode}
+                        onGoToCode={this.handleGoToCode}
                         onMouseEnter={this.props.onMouseEnter}
                         onMouseLeave={this.props.onMouseLeave}
                         onFitBounds={this.props.onFitBounds}
@@ -125,7 +125,7 @@ class VenstreVinduContainer extends React.Component {
                 open={true}
                 message={'Søk feilet: ' + JSON.stringify(this.state.error)}
                 autoHideDuration={4000}
-                onRequestClose={() => this.setState({ error: null })}
+                onRequestClose={this.handleCloseSnackbar}
               />
             )}
           </React.Fragment>
@@ -133,6 +133,7 @@ class VenstreVinduContainer extends React.Component {
       />
     )
   }
+  handleCloseSnackbar = () => this.setState({ error: null })
 }
 
 export default withRouter(VenstreVinduContainer)

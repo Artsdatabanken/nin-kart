@@ -24,7 +24,7 @@ const styles = theme => ({
 
 class AktiveKartlag extends React.Component {
   render() {
-    const { koder, history, classes } = this.props
+    const { koder, classes } = this.props
 
     return (
       <SettingsContext.Consumer>
@@ -34,9 +34,7 @@ class AktiveKartlag extends React.Component {
               <Toolbar
                 variant="dense"
                 style={{ paddingRight: 0, cursor: 'pointer' }}
-                onClick={() => {
-                  context.onUpdateValue('visAktiveLag', false)
-                }}
+                onClick={context.onToggleAktiveLag}
               >
                 <Typography
                   style={{ flexGrow: 1 }}
@@ -55,13 +53,11 @@ class AktiveKartlag extends React.Component {
                 {koder.map(forelder => {
                   return listeElement(forelder, this.props, context.visKoder)
                 })}
-                <div style={{ paddxing: 16 }}>
+                <div>
                   <Button
                     variant="outlined"
                     className={classes.button}
-                    onClick={() => {
-                      history.push('/katalog/')
-                    }}
+                    onClick={this.handleClickKatalog}
                   >
                     <Style />
                     &nbsp;Katalog
@@ -74,6 +70,8 @@ class AktiveKartlag extends React.Component {
       </SettingsContext.Consumer>
     )
   }
+
+  handleClickKatalog = () => this.props.history.push('/katalog/')
 }
 
 function finnType(kode) {

@@ -54,19 +54,28 @@ class KodeContainer extends React.Component<Props, State> {
 
   render() {
     const data = this.state.data
-    const meta = this.props.meta
+    const {
+      meta,
+      onGoToCode,
+      onMouseEnter,
+      onMouseLeave,
+      onFitBounds,
+      erAktivert,
+      opplystKode,
+      onToggleLayer,
+    } = this.props
     if (!meta) return null
     return (
       <KodeVindu
         data={data}
-        meta={meta || {}}
-        onGoToCode={this.props.onGoToCode}
-        onMouseEnter={this.props.onMouseEnter}
-        onMouseLeave={this.props.onMouseLeave}
-        onFitBounds={this.props.onFitBounds}
-        erAktivert={this.props.erAktivert}
-        opplystKode={this.props.opplystKode}
-        onToggleLayer={this.props.onToggleLayer}
+        meta={meta}
+        onGoToCode={onGoToCode}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        onFitBounds={onFitBounds}
+        erAktivert={erAktivert}
+        opplystKode={opplystKode}
+        onToggleLayer={onToggleLayer}
       />
     )
   }

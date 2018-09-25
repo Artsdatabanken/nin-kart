@@ -8,7 +8,7 @@ import {
   MenuItem,
   SwipeableDrawer,
 } from '@material-ui/core'
-import { withStyles, withTheme } from '@material-ui/core/styles'
+import { withStyles } from '@material-ui/core/styles'
 import { Layers, Map } from '@material-ui/icons'
 import { PropTypes } from 'prop-types'
 import React, { Component } from 'react'
@@ -28,7 +28,6 @@ class MainDrawer extends Component {
       classes,
       erÅpen,
       toggleDrawer,
-      history,
       visKoder,
       sorterPåKode,
       onUpdateSetting,
@@ -41,12 +40,7 @@ class MainDrawer extends Component {
         onOpen={toggleDrawer}
       >
         <ListItem>
-          <div
-            className={classes.link}
-            onClick={() => {
-              window.open('https://artsdatabanken.no/Pages/3')
-            }}
-          >
+          <div className={classes.link} onClick={this.handleClickLogo}>
             <BildeAvatar kode="OR_AD" utenRamme />
           </div>
           <ListItemText primary="Natur i Norge" />
@@ -60,13 +54,13 @@ class MainDrawer extends Component {
           onClick={toggleDrawer}
           onKeyDown={toggleDrawer}
         >
-          <ListItem onClick={() => history.push('/')} button>
+          <ListItem onClick={this.handleClickMap} button>
             <ListItemIcon>
               <Map />
             </ListItemIcon>
             <ListItemText primary="Mine kartlag" />
           </ListItem>
-          <ListItem onClick={() => history.push('/katalog/')} button>
+          <ListItem onClick={this.handleClickLayers} button>
             <ListItemIcon>
               <Layers />
             </ListItemIcon>
@@ -80,14 +74,7 @@ class MainDrawer extends Component {
           />
           <Divider />
           <ListSubheader>Bidra</ListSubheader>
-          <ListItem
-            onClick={() => {
-              window.open(
-                'https://github.com/Artsdatabanken/ratatouille/issues'
-              )
-            }}
-            button
-          >
+          <ListItem onClick={this.handleClickBidra} button>
             <ListItemIcon>
               <GitHub />
             </ListItemIcon>
@@ -98,11 +85,15 @@ class MainDrawer extends Component {
       </SwipeableDrawer>
     )
   }
+  handleClickBidra = () =>
+    window.open('https://github.com/Artsdatabanken/ratatouille/issues')
+  handleClickLogo = () => window.open('https://artsdatabanken.no')
+  handleClickLayers = () => this.props.history.push('/katalog/')
+  handleClickMap = () => this.props.history.push('/')
 }
 
 MainDrawer.propTypes = {
   classes: PropTypes.object.isRequired,
-  onUpdateSetting: PropTypes.func.isRequired,
 }
 
-export default withRouter(withStyles(styles)(withTheme()(MainDrawer)))
+export default withRouter(withStyles(styles)(MainDrawer))

@@ -14,7 +14,6 @@ exports[`Storyshots Aktive kartlag default 1`] = `
     >
       <div
         className="MuiToolbar-root-175 MuiToolbar-dense-178 MuiToolbar-gutters-176"
-        onClick={[Function]}
         style={
           Object {
             "cursor": "pointer",
@@ -181,13 +180,7 @@ exports[`Storyshots Aktive kartlag default 1`] = `
       <hr
         className="MuiDivider-root-238"
       />
-      <div
-        style={
-          Object {
-            "paddxing": 16,
-          }
-        }
-      />
+      <div />
     </ul>
   </div>
 </div>
@@ -1700,18 +1693,11 @@ exports[`Storyshots KodeVindu default 1`] = `
         </aside>
         <div
           className="MuiCardActions-root-959"
-          style={
-            Object {
-              "xbackgroundColor": "#f5f5f5",
-              "xdisplay": "flex",
-              "xjustifyContent": "center",
-            }
-          }
         />
       </div>
     </div>
     <ul
-      className="MuiList-root-961 MuiList-padding-962"
+      className="MuiList-root-963 MuiList-padding-964"
     >
       <li
         className="MuiListItem-root-967 MuiListItem-default-970 MuiListItem-gutters-974"
@@ -1721,14 +1707,14 @@ exports[`Storyshots KodeVindu default 1`] = `
           className="MuiListItemText-root-978"
         >
           <span
-            className="MuiTypography-root-931 MuiTypography-subheading-938 MuiListItemText-primary-981 Statistikk-li-965"
+            className="MuiTypography-root-931 MuiTypography-subheading-938 MuiListItemText-primary-981 Statistikk-li-961"
           >
             Marine vannmasser omfatter økosystemer av flytende, svevende og svømmende organismer i de frie vannmassene i saltvann (saltholdighet &gt; 0,5 ‰)
 
             <span>
                
               <a
-                className="Statistikk-color-966"
+                className="Statistikk-color-962"
                 href="https://www.artsdatabanken.no/NiN2.0/H"
                 rel="noopener"
                 target="top"
@@ -1739,6 +1725,10 @@ exports[`Storyshots KodeVindu default 1`] = `
           </span>
         </div>
       </li>
+    </ul>
+    <ul
+      className="MuiList-root-963 MuiList-padding-964"
+    >
       <li
         className="MuiListSubheader-root-984 MuiListSubheader-sticky-989 MuiListSubheader-gutters-987"
       >
@@ -2155,18 +2145,11 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
         </aside>
         <div
           className="MuiCardActions-root-1072"
-          style={
-            Object {
-              "xbackgroundColor": "#f5f5f5",
-              "xdisplay": "flex",
-              "xjustifyContent": "center",
-            }
-          }
         />
       </div>
     </div>
     <ul
-      className="MuiList-root-1074 MuiList-padding-1075"
+      className="MuiList-root-1076 MuiList-padding-1077"
     >
       <li
         className="MuiListItem-root-1080 MuiListItem-default-1083 MuiListItem-gutters-1087"
@@ -2176,14 +2159,14 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           className="MuiListItemText-root-1091"
         >
           <span
-            className="MuiTypography-root-1044 MuiTypography-subheading-1051 MuiListItemText-primary-1094 Statistikk-li-1078"
+            className="MuiTypography-root-1044 MuiTypography-subheading-1051 MuiListItemText-primary-1094 Statistikk-li-1074"
           >
             Helofytt-saltvannssump omfatter tette bestander av makrohelofytter, det vil si storvokste sumpplanter med røttene i sublitoral bunn (som ikke tørrlegges ved lavvann), i vannstrandbeltet eller noe opp i landstrandbeltet.
 
             <span>
                
               <a
-                className="Statistikk-color-1079"
+                className="Statistikk-color-1075"
                 href="https://www.artsdatabanken.no/NiN2.0/M8"
                 rel="noopener"
                 target="top"
@@ -2194,6 +2177,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           </span>
         </div>
       </li>
+    </ul>
+    <ul
+      className="MuiList-root-1076 MuiList-padding-1077"
+    >
       <li
         className="MuiListSubheader-root-1097 MuiListSubheader-sticky-1102 MuiListSubheader-gutters-1100"
       >
@@ -2289,6 +2276,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           className="MuiTouchRipple-root-1115"
         />
       </div>
+    </ul>
+    <ul
+      className="MuiList-root-1076 MuiList-padding-1077"
+    >
       <li
         className="MuiListSubheader-root-1097 MuiListSubheader-sticky-1102 MuiListSubheader-gutters-1100"
       >
@@ -2700,6 +2691,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           className="MuiTouchRipple-root-1115"
         />
       </div>
+    </ul>
+    <ul
+      className="MuiList-root-1076 MuiList-padding-1077"
+    >
       <li
         className="MuiListSubheader-root-1097 MuiListSubheader-sticky-1102 MuiListSubheader-gutters-1100"
       >
@@ -2795,6 +2790,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           className="MuiTouchRipple-root-1115"
         />
       </div>
+    </ul>
+    <ul
+      className="MuiList-root-1076 MuiList-padding-1077"
+    >
       <li
         className="MuiListSubheader-root-1097 MuiListSubheader-sticky-1102 MuiListSubheader-gutters-1100"
       >
@@ -2890,6 +2889,10 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           className="MuiTouchRipple-root-1115"
         />
       </div>
+    </ul>
+    <ul
+      className="MuiList-root-1076 MuiList-padding-1077"
+    >
       <li
         className="MuiListSubheader-root-1097 MuiListSubheader-sticky-1102 MuiListSubheader-gutters-1100"
       >

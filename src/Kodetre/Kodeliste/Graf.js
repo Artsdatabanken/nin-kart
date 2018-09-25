@@ -57,8 +57,8 @@ class Graf extends Component {
       onMouseEnter,
       onMouseLeave,
       opplystKode,
-      data,
     } = this.props
+    if (!graf) return null
     return Object.keys(graf).map(kant => {
       const x = titler[kant] || { title: kant }
       return (
@@ -68,7 +68,6 @@ class Graf extends Component {
           title={x.title}
           subtitle={x.subtitle}
           metadata={graf[kant]}
-          apidata={data ? data.barn : []}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           opplystKode={opplystKode}
