@@ -102,16 +102,13 @@ class LeafletTangram extends React.Component {
   }
 
   async updateMap(props) {
+    if (!props.meta) return
     if (this.layer) {
-      var loadScene = opplysKode(
-        this.layer,
-        this.props.opplystKode,
-        this.props.meta.kode
-      )
-      if (loadScene) this.layer.scene.load(createScene(props))
+      var loadScene = opplysKode(this.layer, props.opplystKode, props.meta.kode)
+      if (loadScene) this.layer.scene.load(await createScene(props))
     } else {
       let def = {
-        scene: createScene(props),
+        scene: await createScene(props),
         events: {
           hover: function(selection) {
             //        console.log('Hover!', selection)
@@ -123,7 +120,6 @@ class LeafletTangram extends React.Component {
 
       this.layer = Tangram.leafletLayer(def)
       this.map.addLayer(this.layer)
-      this.layer.scene.load()
     }
   }
 
