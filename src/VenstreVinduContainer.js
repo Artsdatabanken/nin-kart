@@ -125,7 +125,7 @@ class VenstreVinduContainer extends React.Component {
                 open={true}
                 message={'Søk feilet: ' + JSON.stringify(this.state.error)}
                 autoHideDuration={4000}
-                onRequestClose={() => this.setState({ error: null })}
+                onRequestClose={this.handleCloseSnackbar}
               />
             )}
           </React.Fragment>
@@ -133,6 +133,7 @@ class VenstreVinduContainer extends React.Component {
       />
     )
   }
+  handleCloseSnackbar = () => this.setState({ error: null })
 }
 
 export default withRouter(VenstreVinduContainer)
