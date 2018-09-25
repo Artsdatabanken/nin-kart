@@ -123,6 +123,7 @@ class LeafletTangram extends React.Component {
 
       this.layer = Tangram.leafletLayer(def)
       this.map.addLayer(this.layer)
+      this.layer.scene.load()
     }
   }
 
