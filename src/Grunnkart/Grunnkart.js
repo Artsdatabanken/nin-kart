@@ -9,18 +9,15 @@ import { SettingsContext } from '../SettingsContext'
 import språk from '../språk'
 import VenstreVinduContainer from '../VenstreVinduContainer'
 import AktiveKartlagKnapp from './AktiveKartlagKnapp'
-import MainDrawer from '../MainDrawer/MainDrawer'
 import standardlag from './standardlag.json'
 
 type State = {
   aktiveLag: Array<Object>,
-  showMainDrawer: boolean,
   meta: Object,
   fitBounds: Object,
   actualBounds: Object,
   opplystKode: string,
   visKoder: boolean,
-  sorterPåKode: boolean,
 }
 
 type Props = {
@@ -55,7 +52,6 @@ class Grunnkart extends React.Component<Props, State> {
     super(props)
     this.state = {
       aktiveLag: standardlag,
-      showMainDrawer: false,
       opplystKode: '',
       actualBounds: null,
       fitBounds: null,
@@ -214,17 +210,6 @@ class Grunnkart extends React.Component<Props, State> {
           {context => {
             return (
               <React.Fragment>
-                <MainDrawer
-                  erÅpen={this.state.showMainDrawer}
-                  toggleDrawer={() =>
-                    this.setState({
-                      showMainDrawer: !this.state.showMainDrawer,
-                    })
-                  }
-                  visKoder={context.visKoder}
-                  sorterPåKode={context.sorterPåKode}
-                  onUpdateSetting={context.onUpdateValue}
-                />
                 {context.visAktiveLag ? (
                   <div
                     style={{
@@ -246,14 +231,7 @@ class Grunnkart extends React.Component<Props, State> {
                     />
                   </div>
                 ) : (
-                  <AktiveKartlagKnapp
-                    onClick={() =>
-                      context.onUpdateValue(
-                        'visAktiveLag',
-                        !context.visAktiveLag
-                      )
-                    }
-                  />
+                  <AktiveKartlagKnapp onClick={context.onToggleAktiveLag} />
                 )}
               </React.Fragment>
             )
@@ -265,9 +243,6 @@ class Grunnkart extends React.Component<Props, State> {
           mapBounds={this.state.actualBounds}
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
-          onToggleMainDrawer={() =>
-            this.setState({ showMainDrawer: !this.state.showMainDrawer })
-          }
           onFitBounds={this.handleFitBounds}
           erAktivert={erAktivert}
           opplystKode={this.state.opplystKode}

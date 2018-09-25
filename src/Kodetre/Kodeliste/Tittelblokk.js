@@ -5,11 +5,12 @@ import Typography from '@material-ui/core/Typography'
 import React from 'react'
 import farger from '../../farger'
 import Tagger from './Tagger'
+import PropTypes from 'prop-types'
 
 type Props = {
   tittel: String,
   onToggleLayer: Function,
-  onGoToCode: Function,
+  onGoToCode: PropTypes.func.isRequired,
   erAktivert: Boolean,
   overordnet: Object,
   kode: String,

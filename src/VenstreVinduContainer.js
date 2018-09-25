@@ -33,7 +33,7 @@ class VenstreVinduContainer extends React.Component {
     return item
   }
 
-  handleGotoCode = kode => {
+  handleGoToCode = kode => {
     this.props.history.push('/katalog/' + kode)
   }
 
@@ -52,7 +52,7 @@ class VenstreVinduContainer extends React.Component {
                       <TopBarContainer tittel={this.tittel(this.props.meta)} />
                       <KodeContainer
                         kode={meta.kode}
-                        onGoToCode={this.handleGotoCode}
+                        onGoToCode={this.handleGoToCode}
                         onMouseEnter={this.props.onMouseEnter}
                         onMouseLeave={this.props.onMouseLeave}
                         onFitBounds={this.props.onFitBounds}

@@ -5,7 +5,7 @@ import språk from '../../språk'
 
 type Props = {
   tittel: String,
-  onGoToCode: Function,
+  onGoToCode: PropTypes.func.isRequired,
   onToggleLayer: Function,
   erAktivert: Boolean,
   overordnet: Object,

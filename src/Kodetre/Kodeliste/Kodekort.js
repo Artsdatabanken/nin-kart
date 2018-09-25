@@ -73,7 +73,6 @@ class Kodekort extends React.Component {
       tittel,
       nivå,
       overordnet,
-      onFitBounds,
       classes,
       erAktivert,
       onGoToCode,
@@ -82,12 +81,9 @@ class Kodekort extends React.Component {
       <Card square={true} style={{ backgroundColor: '#ccc' }}>
         <CardMedia
           style={this.styles(kode.substring(0, 2))}
-          onClick={() => this.handleOpen()}
+          onClick={this.handleOpen}
           image={config.getFotoOmslag(kode, 408, this.filtype(prefiks))}
-          onError={e => {
-            const brokenImage = config.getFotoOmslag('~')
-            if (e.target.src !== brokenImage) e.target.src = brokenImage
-          }}
+          onError={this.handleBrokenImage}
           alt={'foto av' + tittel}
         />
         <Tittelblokk
@@ -98,13 +94,7 @@ class Kodekort extends React.Component {
           onGoToCode={onGoToCode}
           overordnet={overordnet}
         >
-          <CardActions
-            style={{
-              xbackgroundColor: '#f5f5f5',
-              xdisplay: 'flex',
-              xjustifyContent: 'center',
-            }}
-          >
+          <CardActions>
             {overordnet && (
               <Button
                 style={{
@@ -112,7 +102,6 @@ class Kodekort extends React.Component {
                 }}
                 size="small"
                 variant="contained"
-                _color="primary"
                 className={classes.button}
                 onClick={this.handleAktiver}
                 disabled={erAktivert}
@@ -127,7 +116,7 @@ class Kodekort extends React.Component {
                   color: farger.lys[prefiks],
                 }}
                 variant="text"
-                onClick={() => onFitBounds(bbox)}
+                onClick={this.handleFitBounds}
               >
                 <ZoomOutMap className={classes.iconSmall} />
                 Zoom til
@@ -143,9 +132,7 @@ class Kodekort extends React.Component {
               vertical: 'bottom',
               horizontal: 'left',
             }}
-            onClose={() => {
-              this.setState({ leggerTil: false })
-            }}
+            onClose={this.handleCloseSnackbar}
             message={
               <span>
                 Aktiverer <b>{språk(tittel)}</b>
@@ -157,7 +144,7 @@ class Kodekort extends React.Component {
                 aria-label="Close"
                 color="inherit"
                 className={classes.close}
-                onClick={() => this.props.history.push('/')}
+                onClick={this.handleClickAktiveLag}
               >
                 <ArrowForward />
               </IconButton>,
@@ -166,6 +153,14 @@ class Kodekort extends React.Component {
         )}
       </Card>
     )
+  }
+
+  handleCloseSnackbar = () => this.setState({ leggerTil: false })
+  handleClickAktiveLag = () => this.props.history.push('/')
+  handleFitBounds = () => this.props.onFitBounds(this.props.bbox)
+  handleBrokenImage = e => {
+    const brokenImage = config.getFotoOmslag('~')
+    if (e.target.src !== brokenImage) e.target.src = brokenImage
   }
 }
 
