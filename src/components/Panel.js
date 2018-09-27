@@ -12,7 +12,7 @@ const Panel = ({ style, children }) => (
       bottom: 0,
       width: 408,
       zIndex: -10,
-      overflowY: 'scroll',
+      overflowY: 'auto',
       overflowX: 'hidden',
       boxShadow: '0 0 20px rgba(0, 0, 0, 0.3)',
       ...style,
