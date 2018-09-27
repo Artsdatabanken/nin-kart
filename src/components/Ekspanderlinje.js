@@ -1,4 +1,4 @@
-import { Typography, IconButton, Paper, withStyles } from '@material-ui/core'
+import { withStyles } from '@material-ui/core'
 import { ExpandLess } from '@material-ui/icons'
 import classNames from 'classnames'
 import React from 'react'
@@ -47,6 +47,7 @@ class Ekspanderlinje extends React.Component {
         )}
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
+        onClick={onSkjul}
       >
         <ExpandLess className={classes.ikon} />
         <div className={classes.tekst}>Skjul</div>

@@ -1,20 +1,8 @@
-import { withRouter } from 'react-router'
-import {
-  AppBar,
-  Avatar,
-  Toolbar,
-  Typography,
-  IconButton,
-  Paper,
-  withStyles,
-} from '@material-ui/core'
-import { ExpandLess } from '@material-ui/icons'
+import { Paper, withStyles } from '@material-ui/core'
 import React from 'react'
 import TopBarContainer from '../TopBar/TopBarContainer'
 import { Panel, Ekspanderlinje } from '../components'
-import BildeAvatar from '../Kodetre/Kodeliste/Bildeavatar'
-
-const Katalog = () => <div style={{ height: 100 }}>asdfasd</div>
+import Boble from './Boble'
 
 const Seksjon = ({ tittel, children }) => (
   <div>
@@ -30,8 +18,8 @@ const Seksjon = ({ tittel, children }) => (
     <div
       style={{
         display: 'flex',
-        fontSize: 15,
         fontWeight: 400,
+        fontSize: 14,
         padding: '10px 20px',
         color: 'hsla(0, 0%, 0%, 0.54)',
       }}
@@ -45,31 +33,6 @@ const Papir = ({ children }) => (
   <Paper elevation={4} style={{ margin: 8 }} square>
     {children}
   </Paper>
-)
-
-const Boble = ({ kode, farge, tittel, onClick }) => (
-  <div
-    onClick={() => onClick(kode)}
-    style={{
-      padding: 8,
-      textAlign: 'center',
-      _alignItems: 'center',
-      _justifyContent: 'center',
-    }}
-  >
-    <div style={{ display: 'inline-block', paddingBottom: 8 }}>
-      <BildeAvatar kode={kode} />
-    </div>
-    <div
-      style={{
-        fontWeight: 400,
-        fontSize: 14,
-        color: 'hsla(0, 0%, 0%, 0.54)',
-      }}
-    >
-      {tittel}
-    </div>
-  </div>
 )
 
 const styles = {}
