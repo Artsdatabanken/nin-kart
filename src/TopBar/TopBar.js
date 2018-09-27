@@ -50,7 +50,7 @@ class TopBar extends React.Component<Props> {
     return (
       <SettingsContext.Consumer>
         {context => (
-          <AppBar position="sticky" className={classes.root}>
+          <AppBar position="sticky" className={classes.root} square={false}>
             <Toolbar variant="dense" className={classes.toolbar}>
               {this.props.isAtRoot ? (
                 <IconButton

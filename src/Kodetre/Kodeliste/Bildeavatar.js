@@ -55,6 +55,7 @@ class BildeAvatar extends Component {
         }}
         style={{
           backgroundColor: farger.mørk[prefiks],
+          filter: 'drop-shadow(1px 1px 1px #666)',
         }}
       >
         {tekst}
