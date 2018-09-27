@@ -9,7 +9,7 @@
     "@material-ui/lab": "^3.0.0-alpha.13",
     "autoprefixer": "9.1.4",
     "babel-core": "6.26.3",
-    "babel-eslint": "9.0.0",
+    "babel-eslint": "10.0.0",
     "babel-jest": "23.4.2",
     "babel-loader": "7.1.5",
     "babel-polyfill": "^6.26.0",
