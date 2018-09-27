@@ -40,7 +40,7 @@ class BorreVindu extends Component {
     const bgColor = 'rgba(160,160,160,0.95)'
     const dominant = this.finnButikkKode()
     return (
-      <Card square={true} className={classes.card}>
+      <Card square={false} className={classes.card}>
         <CardMedia
           className={classes.media}
           image={config.getFotoOmslag(dominant.kode)}

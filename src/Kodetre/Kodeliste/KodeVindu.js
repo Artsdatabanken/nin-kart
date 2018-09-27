@@ -34,7 +34,7 @@ class KodeVindu extends React.Component {
     } = meta
     return (
       <div
-        square="true"
+        square="false"
         elevation={4}
         style={{
           position: 'relative',

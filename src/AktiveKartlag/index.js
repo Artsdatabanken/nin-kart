@@ -20,10 +20,13 @@ const styles = theme => ({
   },
   toolbar: {
     paddingRight: 0,
+    color: 'hsla(0, 0%, 0%, 0.54)',
     cursor: 'pointer',
   },
   tekst: {
     flexGrow: 1,
+    fontSize: 15,
+    fontWeight: 500,
   },
 })
 

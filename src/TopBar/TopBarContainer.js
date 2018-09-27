@@ -101,9 +101,9 @@ class TopBarContainer extends Component<Props, State> {
               tittel={tittel}
               onQueryChange={this.handleQueryChange}
             />
-            <div style={{ width: 408, paddingTop: 57 }}>
+            <div style={{ width: 408, paddingTop: 56, paddingBottom: 0 }}>
               {this.state.searchResults && (
-                <div style={{ marginLeft: 8, marginRight: 8 }}>
+                <div style={{ marginLeft: 8, width: 392, marginBottom: 8 }}>
                   <Divider />
                   <ResultatListe
                     query={this.state.query}
