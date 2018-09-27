@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 import { SettingsContext } from './SettingsContext'
 
-class SetingsContainer extends Component {
+class SettingsContainer extends Component {
   state = {
     visKoder: false,
     visAktiveLag: false,
     visHovedmeny: false,
+    visForside: true,
   }
+
   componentDidMount() {
     this.setState({
       visKoder: localStorage.getItem('visKoder') === 'true',
       sorterPåKode: localStorage.getItem('sorterPåKode') === 'true',
+      visForside: localStorage.getItem('visForside') === 'true',
     })
   }
 
@@ -19,12 +22,14 @@ class SetingsContainer extends Component {
       <SettingsContext.Provider
         value={{
           visHovedmeny: this.state.visHovedmeny,
+          visForside: this.state.visForside,
           visKoder: this.state.visKoder,
           sorterPåKode: this.state.sorterPåKode,
           visAktiveLag: this.state.visAktiveLag,
           onUpdateValue: this.handleUpdateValue,
           onToggleAktiveLag: this.handleToggleAktivelag,
           onToggleHovedmeny: this.handleToggleHovedmeny,
+          onToggleForside: this.handleToggleForside,
         }}
       >
         {this.props.children}
@@ -38,12 +43,16 @@ class SetingsContainer extends Component {
   }
 
   handleToggleAktivelag = () =>
-    this.setState({ visAktiveLag: !this.state.visAktiveLag })
+    this.handleUpdateValue('visAktiveLag', !this.state.visAktiveLag)
 
   handleToggleHovedmeny = () => {
-    console.log('hoved', !this.state.visHovedmeny)
-    this.setState({ visHovedmeny: !this.state.visHovedmeny })
+    this.handleUpdateValue('visHovedmeny', !this.state.visHovedmeny)
+  }
+
+  handleToggleForside = () => {
+    console.log('toggle forside', this.state)
+    this.handleUpdateValue('visForside', !this.state.visForside)
   }
 }
 
-export default SetingsContainer
+export default SettingsContainer

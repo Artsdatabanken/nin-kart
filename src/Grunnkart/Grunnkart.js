@@ -210,24 +210,26 @@ class Grunnkart extends React.Component<Props, State> {
                 ) : (
                   <AktiveKartlagKnapp onClick={context.onToggleAktiveLag} />
                 )}
+
+                <VenstreVinduContainer
+                  aktiveLag={this.state.aktiveLag}
+                  mapBounds={this.state.actualBounds}
+                  onMouseEnter={this.handleMouseEnter}
+                  onMouseLeave={this.handleMouseLeave}
+                  onFitBounds={this.handleFitBounds}
+                  erAktivert={erAktivert}
+                  opplystKode={this.state.opplystKode}
+                  onToggleLayer={this.handleToggleLayer}
+                  onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                  meta={this.state.meta}
+                  onUpdateLayerProp={this.handleUpdateLayerProp}
+                  visForside={context.visForside}
+                  onToggleForside={context.onToggleForside}
+                />
               </React.Fragment>
             )
           }}
         </SettingsContext.Consumer>
-
-        <VenstreVinduContainer
-          aktiveLag={this.state.aktiveLag}
-          mapBounds={this.state.actualBounds}
-          onMouseEnter={this.handleMouseEnter}
-          onMouseLeave={this.handleMouseLeave}
-          onFitBounds={this.handleFitBounds}
-          erAktivert={erAktivert}
-          opplystKode={this.state.opplystKode}
-          onToggleLayer={this.handleToggleLayer}
-          onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-          meta={this.state.meta}
-          onUpdateLayerProp={this.handleUpdateLayerProp}
-        />
 
         <Kart
           bounds={this.state.fitBounds}

@@ -91,7 +91,7 @@ const Forsidemeny = ({ classes, visForside, onVis, onSkjul, onClick }) => {
             <Ekspanderlinje tekst="Skjul" mode="open" onSkjul={onSkjul} />
           </div>
         ) : (
-          <Ekspanderlinje tekst="Vis kartlag" mode="closed" onSkjul={onVis} />
+          <Ekspanderlinje tekst="Se kartlag" mode="closed" onSkjul={onVis} />
         )}
       </TopBarContainer>
     </React.Fragment>

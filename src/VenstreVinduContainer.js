@@ -40,8 +40,9 @@ class VenstreVinduContainer extends React.Component {
   }
 
   render() {
-    console.log(this.state.visForside)
     const meta = this.props.meta || {}
+    const { visForside, onToggleForside } = this.props
+    console.log(this.props)
     return (
       <Route
         render={({ match, history }) => (
@@ -124,9 +125,9 @@ class VenstreVinduContainer extends React.Component {
               <Route
                 render={({ match, history }) => (
                   <ForsideMeny
-                    onVis={this.handleVisForside}
-                    onSkjul={this.handleSkjulForside}
-                    visForside={this.state.visForside}
+                    onVis={onToggleForside}
+                    onSkjul={onToggleForside}
+                    visForside={visForside}
                   />
                 )}
               />
@@ -145,8 +146,6 @@ class VenstreVinduContainer extends React.Component {
     )
   }
   handleCloseSnackbar = () => this.setState({ error: null })
-  handleSkjulForside = () => this.setState({ visForside: false })
-  handleVisForside = () => this.setState({ visForside: true })
 }
 
 export default withRouter(VenstreVinduContainer)
