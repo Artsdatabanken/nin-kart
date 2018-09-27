@@ -473,7 +473,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
     }
   >
     <div
-      className="MuiPaper-root-643 MuiPaper-elevation1-646 MuiCard-root-670 BorreVindu-card-434"
+      className="MuiPaper-root-643 MuiPaper-elevation1-646 MuiPaper-rounded-644 MuiCard-root-670 BorreVindu-card-434"
     >
       <div
         className="MuiCardMedia-root-566 BorreVindu-media-435"
@@ -1697,7 +1697,8 @@ exports[`Storyshots Forsidemeny default 1`] = `
     <div
       style={
         Object {
-          "paddingTop": 57,
+          "paddingBottom": 0,
+          "paddingTop": 56,
           "width": 408,
         }
       }
@@ -1762,7 +1763,7 @@ exports[`Storyshots KodeVindu default 1`] = `
 >
   <div
     elevation={4}
-    square="true"
+    square="false"
     style={
       Object {
         "position": "relative",
@@ -1771,7 +1772,7 @@ exports[`Storyshots KodeVindu default 1`] = `
     }
   >
     <div
-      className="MuiPaper-root-1095 MuiPaper-elevation1-1098 MuiCard-root-1124"
+      className="MuiPaper-root-1095 MuiPaper-elevation1-1098 MuiPaper-rounded-1096 MuiCard-root-1124"
       style={
         Object {
           "backgroundColor": "#ccc",
@@ -2207,7 +2208,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
 >
   <div
     elevation={4}
-    square="true"
+    square="false"
     style={
       Object {
         "position": "relative",
@@ -2216,7 +2217,7 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
     }
   >
     <div
-      className="MuiPaper-root-1208 MuiPaper-elevation1-1211 MuiCard-root-1237"
+      className="MuiPaper-root-1208 MuiPaper-elevation1-1211 MuiPaper-rounded-1209 MuiCard-root-1237"
       style={
         Object {
           "backgroundColor": "#ccc",
@@ -4392,7 +4393,6 @@ exports[`Storyshots Resultatliste default 1`] = `
             <span
               className="MuiTypography-root-1385 MuiTypography-subheading-1392 MuiListItemText-primary-1382 ResultatListe-text-1347"
             >
-               
               <span
                 className="ResultatListe-textnomatch-1352"
               >
@@ -4416,7 +4416,6 @@ exports[`Storyshots Resultatliste default 1`] = `
               <div
                 className="ResultatListe-itemtext-1350"
               >
-                 
                 <span
                   className="ResultatListe-textnomatch-1352"
                 >
@@ -4473,7 +4472,6 @@ exports[`Storyshots Resultatliste default 1`] = `
             <span
               className="MuiTypography-root-1385 MuiTypography-subheading-1392 MuiListItemText-primary-1382 ResultatListe-text-1347"
             >
-               
               <span
                 className="ResultatListe-textnomatch-1352"
               >
@@ -4507,7 +4505,6 @@ exports[`Storyshots Resultatliste default 1`] = `
               <div
                 className="ResultatListe-itemtext-1350"
               >
-                 
                 <span
                   className="ResultatListe-textnomatch-1352"
                 >
@@ -4556,7 +4553,6 @@ exports[`Storyshots Resultatliste default 1`] = `
             <span
               className="MuiTypography-root-1385 MuiTypography-subheading-1392 MuiListItemText-primary-1382 ResultatListe-text-1347"
             >
-               
               <span
                 className="ResultatListe-textnomatch-1352"
               >
@@ -4590,7 +4586,6 @@ exports[`Storyshots Resultatliste default 1`] = `
               <div
                 className="ResultatListe-itemtext-1350"
               >
-                 
                 <span
                   className="ResultatListe-textnomatch-1352"
                 >
@@ -4639,7 +4634,6 @@ exports[`Storyshots Resultatliste default 1`] = `
             <span
               className="MuiTypography-root-1385 MuiTypography-subheading-1392 MuiListItemText-primary-1382 ResultatListe-text-1347"
             >
-               
               <span
                 className="ResultatListe-textnomatch-1352"
               >
@@ -4673,7 +4667,6 @@ exports[`Storyshots Resultatliste default 1`] = `
               <div
                 className="ResultatListe-itemtext-1350"
               >
-                 
                 <span
                   className="ResultatListe-textnomatch-1352"
                 >
@@ -4722,7 +4715,6 @@ exports[`Storyshots Resultatliste default 1`] = `
             <span
               className="MuiTypography-root-1385 MuiTypography-subheading-1392 MuiListItemText-primary-1382 ResultatListe-text-1347"
             >
-               
               <span
                 className="ResultatListe-textnomatch-1352"
               >
@@ -4756,7 +4748,6 @@ exports[`Storyshots Resultatliste default 1`] = `
               <div
                 className="ResultatListe-itemtext-1350"
               >
-                 
                 <span
                   className="ResultatListe-textnomatch-1352"
                 >
@@ -4805,7 +4796,6 @@ exports[`Storyshots Resultatliste default 1`] = `
             <span
               className="MuiTypography-root-1385 MuiTypography-subheading-1392 MuiListItemText-primary-1382 ResultatListe-text-1347"
             >
-               
               <span
                 className="ResultatListe-textnomatch-1352"
               >
@@ -4839,7 +4829,6 @@ exports[`Storyshots Resultatliste default 1`] = `
               <div
                 className="ResultatListe-itemtext-1350"
               >
-                 
                 <span
                   className="ResultatListe-textnomatch-1352"
                 >
@@ -4888,7 +4877,6 @@ exports[`Storyshots Resultatliste default 1`] = `
             <span
               className="MuiTypography-root-1385 MuiTypography-subheading-1392 MuiListItemText-primary-1382 ResultatListe-text-1347"
             >
-               
               <span
                 className="ResultatListe-textnomatch-1352"
               >
@@ -4922,7 +4910,6 @@ exports[`Storyshots Resultatliste default 1`] = `
               <div
                 className="ResultatListe-itemtext-1350"
               >
-                 
                 <span
                   className="ResultatListe-textnomatch-1352"
                 >
@@ -4971,7 +4958,6 @@ exports[`Storyshots Resultatliste default 1`] = `
             <span
               className="MuiTypography-root-1385 MuiTypography-subheading-1392 MuiListItemText-primary-1382 ResultatListe-text-1347"
             >
-               
               <span
                 className="ResultatListe-textnomatch-1352"
               >
@@ -5005,7 +4991,6 @@ exports[`Storyshots Resultatliste default 1`] = `
               <div
                 className="ResultatListe-itemtext-1350"
               >
-                 
                 <span
                   className="ResultatListe-textnomatch-1352"
                 >
@@ -5054,7 +5039,6 @@ exports[`Storyshots Resultatliste default 1`] = `
             <span
               className="MuiTypography-root-1385 MuiTypography-subheading-1392 MuiListItemText-primary-1382 ResultatListe-text-1347"
             >
-               
               <span
                 className="ResultatListe-textnomatch-1352"
               >
@@ -5088,7 +5072,6 @@ exports[`Storyshots Resultatliste default 1`] = `
               <div
                 className="ResultatListe-itemtext-1350"
               >
-                 
                 <span
                   className="ResultatListe-textnomatch-1352"
                 >
@@ -5137,7 +5120,6 @@ exports[`Storyshots Resultatliste default 1`] = `
             <span
               className="MuiTypography-root-1385 MuiTypography-subheading-1392 MuiListItemText-primary-1382 ResultatListe-text-1347"
             >
-               
               <span
                 className="ResultatListe-textnomatch-1352"
               >
@@ -5171,7 +5153,6 @@ exports[`Storyshots Resultatliste default 1`] = `
               <div
                 className="ResultatListe-itemtext-1350"
               >
-                 
                 <span
                   className="ResultatListe-textnomatch-1352"
                 >
@@ -5220,7 +5201,6 @@ exports[`Storyshots Resultatliste default 1`] = `
             <span
               className="MuiTypography-root-1385 MuiTypography-subheading-1392 MuiListItemText-primary-1382 ResultatListe-text-1347"
             >
-               
               <span
                 className="ResultatListe-textnomatch-1352"
               >
@@ -5254,7 +5234,6 @@ exports[`Storyshots Resultatliste default 1`] = `
               <div
                 className="ResultatListe-itemtext-1350"
               >
-                 
                 <span
                   className="ResultatListe-textnomatch-1352"
                 >
@@ -7622,7 +7601,8 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
     <div
       style={
         Object {
-          "paddingTop": 57,
+          "paddingBottom": 0,
+          "paddingTop": 56,
           "width": 408,
         }
       }
@@ -7772,7 +7752,8 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
     <div
       style={
         Object {
-          "paddingTop": 57,
+          "paddingBottom": 0,
+          "paddingTop": 56,
           "width": 408,
         }
       }
