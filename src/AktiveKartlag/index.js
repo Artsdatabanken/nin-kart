@@ -1,6 +1,5 @@
 import {
   AppBar,
-  Button,
   IconButton,
   List,
   Toolbar,
@@ -8,7 +7,6 @@ import {
   withStyles,
 } from '@material-ui/core'
 import { ExpandMore } from '@material-ui/icons'
-import { Style } from '@material-ui/icons/'
 import React from 'react'
 import { withRouter } from 'react-router'
 import { SettingsContext } from '../SettingsContext'
