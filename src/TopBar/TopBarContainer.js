@@ -25,6 +25,7 @@ class TopBarContainer extends Component<Props, State> {
 
   shouldComponentUpdate(nextProps, nextState) {
     if (this.props.tittel !== nextProps.tittel) return true
+    if (this.props.children !== nextProps.children) return true
     if (this.state.query !== nextState.query) return true
     if (this.state.searchResults !== nextState.searchResults) return true
     if (this.state.focused !== nextState.focused) return true
@@ -39,6 +40,7 @@ class TopBarContainer extends Component<Props, State> {
   handleFocus = e => {
     this.setState({ focused: true })
     if (!this.props.query) this.handleQueryChange(e, this.props.tittel)
+    if (this.props.onFocus) this.props.onFocus()
   }
 
   handleBlur = e => {
@@ -97,19 +99,20 @@ class TopBarContainer extends Component<Props, State> {
               onBlur={this.handleBlur}
               tittel={tittel}
               onQueryChange={this.handleQueryChange}
-            >
+            />
+            <div style={{ width: 408, paddingTop: 57 }}>
               {this.state.searchResults && (
-                <React.Fragment>
+                <div style={{ marginLeft: 8, marginRight: 8 }}>
                   <Divider />
                   <ResultatListe
                     query={this.state.query}
                     searchResults={this.state.searchResults}
                     onClick={this.handleClickSearchResult}
                   />
-                </React.Fragment>
+                </div>
               )}
-            </TopBar>
-            {this.state.focused || (true && this.props.children)}
+              {this.props.children}
+            </div>
           </React.Fragment>
         )}
       />

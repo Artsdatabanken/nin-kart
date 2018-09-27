@@ -44,7 +44,7 @@ class ResultatListe extends Component {
     if (!searchResults) return null
     if (!searchResults.length > 0) return null
     return (
-      <Paper elevation={1} square>
+      <Paper elevation={4}>
         <List>
           {searchResults.map(item => {
             const kode = item.kode.toUpperCase()

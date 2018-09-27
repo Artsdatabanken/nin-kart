@@ -1,7 +1,8 @@
 import { withStyles } from '@material-ui/core'
-import { ExpandLess } from '@material-ui/icons'
+import { ExpandLess, ExpandMore } from '@material-ui/icons'
 import classNames from 'classnames'
 import React from 'react'
+import { Paper } from '@material-ui/core'
 
 const styles = {
   hover: {
@@ -12,12 +13,8 @@ const styles = {
   },
   rot: {
     backgroundColor: 'hsl(0, 0%, 96%)',
-    boxShadow: '0 -2px 4px rgba(0,0,0,.2)',
     cursor: 'pointer',
-    position: 'absolute',
-    width: '100%',
     height: 44,
-    bottom: 0,
     display: 'flex',
     flex: 'none',
     alignItems: 'flex-start',
@@ -30,6 +27,19 @@ const styles = {
     lineHeight: '44px',
     textAlign: 'center',
   },
+  open: {
+    width: 408,
+    position: 'absolute',
+    bottom: 0,
+    boxShadow: '0 -2px 4px rgba(0,0,0,.2)',
+  },
+  closed: {
+    marginLeft: 8,
+    marginRight: 8,
+    width: 392,
+    boxShadow: 'hsla(0, 0%, 0%, 0.3) 0px 2px 4px 0px',
+    marginBottom: 8,
+  },
 }
 
 class Ekspanderlinje extends React.Component {
@@ -38,20 +48,22 @@ class Ekspanderlinje extends React.Component {
   state = { hover: false }
 
   render() {
-    const { classes, onSkjul } = this.props
+    const { classes, mode, onSkjul, tekst } = this.props
+    const Ikon = mode === 'open' ? ExpandLess : ExpandMore
     return (
-      <div
+      <Paper
         className={classNames(
           classes.rot,
+          mode && classes[mode],
           this.state.hover ? classes.hover : classes.hovernot
         )}
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
-        onClick={onSkjul}
+        onMouseDown={onSkjul}
       >
-        <ExpandLess className={classes.ikon} />
-        <div className={classes.tekst}>Skjul</div>
-      </div>
+        <Ikon className={classes.ikon} />
+        <div className={classes.tekst}>{tekst}</div>
+      </Paper>
     )
   }
 }

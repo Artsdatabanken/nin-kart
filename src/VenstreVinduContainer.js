@@ -1,5 +1,5 @@
 import ForsideMeny from './Forsidemeny/Forsidemeny'
-import { Snackbar } from '@material-ui/core'
+import { List, ListItem, ListItemText, Snackbar } from '@material-ui/core'
 import React from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import BorreContainer from './Borring/BorreContainer'
@@ -9,10 +9,11 @@ import språk from './språk'
 import TweakContainer from './Tweaks/TweakContainer'
 import Panel from './components/Panel'
 import TopBarContainer from './TopBar/TopBarContainer'
+import Ekspanderlinje from './components/Ekspanderlinje'
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
-  state = { error: '' }
+  state = { error: '', visForside: true }
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.meta !== this.props.meta) this.setState({ query: null })
   }
@@ -39,6 +40,7 @@ class VenstreVinduContainer extends React.Component {
   }
 
   render() {
+    console.log(this.state.visForside)
     const meta = this.props.meta || {}
     return (
       <Route
@@ -119,7 +121,15 @@ class VenstreVinduContainer extends React.Component {
                   </Panel>
                 )}
               />
-              <Route render={({ match, history }) => <ForsideMeny />} />
+              <Route
+                render={({ match, history }) => (
+                  <ForsideMeny
+                    onVis={this.handleVisForside}
+                    onSkjul={this.handleSkjulForside}
+                    visForside={this.state.visForside}
+                  />
+                )}
+              />
             </Switch>
             {this.state.error && (
               <Snackbar
@@ -135,6 +145,8 @@ class VenstreVinduContainer extends React.Component {
     )
   }
   handleCloseSnackbar = () => this.setState({ error: null })
+  handleSkjulForside = () => this.setState({ visForside: false })
+  handleVisForside = () => this.setState({ visForside: true })
 }
 
 export default withRouter(VenstreVinduContainer)
