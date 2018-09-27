@@ -24,29 +24,6 @@ type Props = {
   location: Object,
   history: Object,
 }
-
-/*
-function setFargeKode(kode, farge) {
-  let farger = JSON.parse(localStorage.getItem('customColors') || '[]')
-  farger = farger.filter(x => x.kode !== kode)
-  farger.push({ kode: kode, farge: farge })
-  localStorage.setItem('customColors', JSON.stringify(farger))
-  this.updateColor(kode, farge)
-}
-
-function getFargeKode(kode) {
-  if (localStorage) {
-    let customColors = localStorage.getItem('customColors')
-    if (customColors) {
-      let fargeElement = JSON.parse(customColors).filter(x => x.kode === kode)
-      return fargeElement && fargeElement[0] && fargeElement[0].farge
-        ? fargeElement[0].farge
-        : this.props.farge
-    }
-  }
-  return this.props.farge
-}
-*/
 class Grunnkart extends React.Component<Props, State> {
   constructor(props) {
     super(props)

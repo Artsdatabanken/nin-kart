@@ -16,6 +16,7 @@ type State = {
 
 type Props = {
   tittel: string,
+  inlineResultat: boolean,
 }
 
 class TopBarContainer extends Component<Props, State> {
@@ -26,6 +27,7 @@ class TopBarContainer extends Component<Props, State> {
     if (this.props.tittel !== nextProps.tittel) return true
     if (this.state.query !== nextState.query) return true
     if (this.state.searchResults !== nextState.searchResults) return true
+    if (this.state.focused !== nextState.focused) return true
     return false
   }
 
@@ -85,27 +87,30 @@ class TopBarContainer extends Component<Props, State> {
     return (
       <Route
         render={({ match, history }) => (
-          <TopBar
-            onGoBack={this.handleGoBack}
-            onExitToRoot={this.handleExitToRoot}
-            isAtRoot={history.location.pathname === '/'}
-            query={focused ? query : query || tittel || ''}
-            onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
-            tittel={tittel}
-            onQueryChange={this.handleQueryChange}
-          >
-            {this.state.searchResults && (
-              <React.Fragment>
-                <Divider />
-                <ResultatListe
-                  query={this.state.query}
-                  searchResults={this.state.searchResults}
-                  onClick={this.handleClickSearchResult}
-                />
-              </React.Fragment>
-            )}
-          </TopBar>
+          <React.Fragment>
+            <TopBar
+              onGoBack={this.handleGoBack}
+              onExitToRoot={this.handleExitToRoot}
+              isAtRoot={history.location.pathname === '/'}
+              query={focused ? query : query || tittel || ''}
+              onFocus={this.handleFocus}
+              onBlur={this.handleBlur}
+              tittel={tittel}
+              onQueryChange={this.handleQueryChange}
+            >
+              {this.state.searchResults && (
+                <React.Fragment>
+                  <Divider />
+                  <ResultatListe
+                    query={this.state.query}
+                    searchResults={this.state.searchResults}
+                    onClick={this.handleClickSearchResult}
+                  />
+                </React.Fragment>
+              )}
+            </TopBar>
+            {this.state.focused || (true && this.props.children)}
+          </React.Fragment>
         )}
       />
     )

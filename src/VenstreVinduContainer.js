@@ -1,3 +1,4 @@
+import ForsideMeny from './Forsidemeny/Forsidemeny'
 import { Snackbar } from '@material-ui/core'
 import React from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
@@ -118,7 +119,7 @@ class VenstreVinduContainer extends React.Component {
                   </Panel>
                 )}
               />
-              <Route render={({ match, history }) => <TopBarContainer />} />
+              <Route render={({ match, history }) => <ForsideMeny />} />
             </Switch>
             {this.state.error && (
               <Snackbar

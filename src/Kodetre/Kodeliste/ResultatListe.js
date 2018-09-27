@@ -17,9 +17,13 @@ const styles = {
     textOverflow: 'ellipsis',
     overflow: 'hidden',
     fontSize: 13,
-    width: 240,
+    width: 235,
   },
   inset: { marginLeft: 56 },
+  listitem: { height: 38, cursor: 'pointer' },
+  itemtext: { fontWeight: 800 },
+  textmatch: { color: 'black', fontWeight: 500 },
+  textnomatch: { color: '#333', fontWeight: 400 },
 }
 
 class ResultatListe extends Component {
@@ -40,12 +44,8 @@ class ResultatListe extends Component {
     if (!searchResults) return null
     if (!searchResults.length > 0) return null
     return (
-      <Paper elevation={1}>
-        <List
-          style={{
-            overflow: 'hidden',
-          }}
-        >
+      <Paper elevation={1} square>
+        <List>
           {searchResults.map(item => {
             const kode = item.kode.toUpperCase()
             const navn = språk(item.navn)
@@ -54,7 +54,7 @@ class ResultatListe extends Component {
               <React.Fragment key={item.kode}>
                 <ListItem
                   button={true}
-                  style={{ height: 38, cursor: 'pointer' }}
+                  className={classes.listitem}
                   onMouseDown={() => {
                     onClick(item.kode)
                   }}
@@ -62,14 +62,15 @@ class ResultatListe extends Component {
                 >
                   <Bildeavatar size="small" kode={kode} />
                   <ListItemText classes={{ primary: classes.text }}>
-                    {ResultatListe.highlightMatch(navn, query)}
+                    {ResultatListe.highlightMatch(navn, query, classes)}
                   </ListItemText>
                   <ListItemSecondaryAction>
                     <ListItemText>
-                      <div style={{ fontWeight: 800 }}>
+                      <div className={classes.itemtext}>
                         {ResultatListe.highlightMatch(
                           this.filtrer(kode),
-                          query
+                          query,
+                          classes
                         )}
                       </div>
                     </ListItemText>
@@ -85,7 +86,7 @@ class ResultatListe extends Component {
   }
 
   // Highlight all matches
-  static highlightMatch(text, higlight) {
+  static highlightMatch(text, higlight, classes) {
     // make array of terms, ordered by longest term
     let terms = (higlight || '')
       .toLowerCase()
@@ -107,10 +108,10 @@ class ResultatListe extends Component {
         {parts.map((part, i) => (
           <span
             key={i}
-            style={
+            className={
               terms.indexOf(part.toLowerCase()) >= 0
-                ? { color: 'black', fontWeight: 500 }
-                : { color: '#333', fontWeight: 400 }
+                ? classes.textmatch
+                : classes.textnomatch
             }
           >
             {part}
