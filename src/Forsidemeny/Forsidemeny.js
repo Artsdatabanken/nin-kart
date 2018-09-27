@@ -30,7 +30,7 @@ const Seksjon = ({ tittel, children }) => (
 )
 
 const Papir = ({ children }) => (
-  <Paper elevation={4} style={{ margin: 8 }}>
+  <Paper elevation={4} style={{ marginLeft: 8, marginTop: 8, width: 392 }}>
     {children}
   </Paper>
 )
@@ -40,10 +40,9 @@ const styles = {}
 const Forsidemeny = ({ classes, visForside, onVis, onSkjul, onClick }) => {
   return (
     <React.Fragment>
-      <TopBarContainer removeResultsOnBlur={!visForside}>
-        {visForside ? (
-          <div style={{ width: 408 }}>
-            <Panel style={{ color: 'hsla(0, 0%, 0%, 0.87)' }} />
+      {visForside ? (
+        <Panel style={{ color: 'hsla(0, 0%, 0%, 0.87)', bottom: 44 }}>
+          <TopBarContainer removeResultsOnBlur={!visForside}>
             <Papir>
               <Seksjon tittel="Datakatalog">
                 <div
@@ -60,6 +59,14 @@ const Forsidemeny = ({ classes, visForside, onVis, onSkjul, onClick }) => {
                   <Boble kode="AO" tittel="Administativt område" />
                   <Boble kode="RL" tittel="Truet natur" />
                 </div>
+              </Seksjon>
+            </Papir>
+            <Papir>
+              <Seksjon tittel="Finibus interdum">
+                Praesent metus quam, finibus interdum varius nec, sollicitudin
+                at lacus. Curabitur finibus dictum ultrices. Aenean pretium,
+                ipsum non facilisis lacinia, libero nisi tempor purus, a aliquet
+                elit massa at sem. Ut euismod interdum faucibus.
               </Seksjon>
             </Papir>
             <Papir>
@@ -88,12 +95,14 @@ const Forsidemeny = ({ classes, visForside, onVis, onSkjul, onClick }) => {
                 </div>
               </Seksjon>
             </Papir>
-            <Ekspanderlinje tekst="Skjul" mode="open" onSkjul={onSkjul} />
-          </div>
-        ) : (
+          </TopBarContainer>
+          <Ekspanderlinje tekst="Skjul" mode="open" onSkjul={onSkjul} />
+        </Panel>
+      ) : (
+        <TopBarContainer removeResultsOnBlur={!visForside}>
           <Ekspanderlinje tekst="Se kartlag" mode="closed" onSkjul={onVis} />
-        )}
-      </TopBarContainer>
+        </TopBarContainer>
+      )}
     </React.Fragment>
   )
 }

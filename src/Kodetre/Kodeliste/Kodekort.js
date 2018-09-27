@@ -78,7 +78,7 @@ class Kodekort extends React.Component {
       onGoToCode,
     } = this.props
     return (
-      <Card square={true} style={{ backgroundColor: '#ccc' }}>
+      <Card square={false} style={{ backgroundColor: '#ccc' }}>
         <CardMedia
           style={this.styles(kode.substring(0, 2))}
           onClick={this.handleOpen}

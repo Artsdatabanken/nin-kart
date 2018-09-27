@@ -104,7 +104,6 @@ class ResultatListe extends Component {
     let parts = text.split(new RegExp(`(${filter})`, 'gi'))
     return (
       <React.Fragment>
-        {' '}
         {parts.map((part, i) => (
           <span
             key={i}

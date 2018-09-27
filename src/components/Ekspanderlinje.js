@@ -29,7 +29,7 @@ const styles = {
   },
   open: {
     width: 408,
-    position: 'absolute',
+    position: 'fixed',
     bottom: 0,
     boxShadow: '0 -2px 4px rgba(0,0,0,.2)',
   },
