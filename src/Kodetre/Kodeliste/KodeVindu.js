@@ -54,8 +54,8 @@ class KodeVindu extends React.Component {
         />
         {prefiks !== 'AO' && (
           <Statistikk
-            tittel={'språk(props.meta.tittel)'}
-            toppnavn={'this.toppnivåNavn(props.meta.overordnet)'}
+            tittel={språk(meta.tittel)}
+            toppnavn={this.toppnivåNavn(meta.overordnet)}
             ingress={ingress}
             infoUrl={infoUrl}
             stats={stats}

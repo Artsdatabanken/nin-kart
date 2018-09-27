@@ -71,6 +71,7 @@ class Graf extends Component {
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           opplystKode={opplystKode}
+          utenFarge={true}
         />
       )
     })

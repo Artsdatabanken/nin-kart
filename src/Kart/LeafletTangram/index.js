@@ -4,7 +4,6 @@ import 'leaflet/dist/leaflet.css'
 import React from 'react'
 import Tangram from 'tangram'
 import { createScene } from './scene'
-import { opplysKode } from './highlight'
 import './styles.css'
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
 // See here: https://github.com/PaulLeCam/react-leaflet/issues/255
@@ -102,16 +101,12 @@ class LeafletTangram extends React.Component {
   }
 
   async updateMap(props) {
+    let scene = await createScene(props)
     if (this.layer) {
-      var loadScene = opplysKode(
-        this.layer,
-        this.props.opplystKode,
-        this.props.meta.kode
-      )
-      if (loadScene) this.layer.scene.load(createScene(props))
+      this.layer.scene.load(scene)
     } else {
       let def = {
-        scene: createScene(props),
+        scene: scene,
         events: {
           hover: function(selection) {
             //        console.log('Hover!', selection)

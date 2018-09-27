@@ -36,7 +36,7 @@ class AktiveKartlagKnapp extends React.Component<Props, State> {
             '0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)',
         }}
       >
-        <AppBar position="static" color="primary">
+        <AppBar position="static" color="inherit" square={false}>
           <Toolbar
             variant="dense"
             style={{ paddingRight: 0, cursor: 'pointer' }}

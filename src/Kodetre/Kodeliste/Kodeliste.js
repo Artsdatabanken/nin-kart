@@ -14,6 +14,7 @@ class Kodeliste extends React.Component {
       metadata,
       opplystKode,
       visKode,
+      utenFarge,
     } = this.props
 
     if (!metadata) return null
@@ -59,6 +60,7 @@ class Kodeliste extends React.Component {
                     onMouseEnter={this.onMouseEnter}
                     onMouseLeave={this.onMouseLeave}
                     erOpplyst={opplystKode === kode}
+                    utenFarge={utenFarge}
                   />
                 )
               }

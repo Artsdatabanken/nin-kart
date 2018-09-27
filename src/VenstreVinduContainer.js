@@ -1,3 +1,4 @@
+import ForsideMeny from './Forsidemeny/Forsidemeny'
 import { Snackbar } from '@material-ui/core'
 import React from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
@@ -11,7 +12,7 @@ import TopBarContainer from './TopBar/TopBarContainer'
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
-  state = { error: '' }
+  state = { error: '', visForside: true }
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.meta !== this.props.meta) this.setState({ query: null })
   }
@@ -39,6 +40,7 @@ class VenstreVinduContainer extends React.Component {
 
   render() {
     const meta = this.props.meta || {}
+    const { visForside, onToggleForside } = this.props
     return (
       <Route
         render={({ match, history }) => (
@@ -118,7 +120,15 @@ class VenstreVinduContainer extends React.Component {
                   </Panel>
                 )}
               />
-              <Route render={({ match, history }) => <TopBarContainer />} />
+              <Route
+                render={({ match, history }) => (
+                  <ForsideMeny
+                    onVis={onToggleForside}
+                    onSkjul={onToggleForside}
+                    visForside={visForside}
+                  />
+                )}
+              />
             </Switch>
             {this.state.error && (
               <Snackbar

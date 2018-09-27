@@ -16,6 +16,7 @@ type State = {
 
 type Props = {
   tittel: string,
+  inlineResultat: boolean,
 }
 
 class TopBarContainer extends Component<Props, State> {
@@ -24,7 +25,10 @@ class TopBarContainer extends Component<Props, State> {
 
   shouldComponentUpdate(nextProps, nextState) {
     if (this.props.tittel !== nextProps.tittel) return true
+    if (this.props.children !== nextProps.children) return true
     if (this.state.query !== nextState.query) return true
+    if (this.state.searchResults !== nextState.searchResults) return true
+    if (this.state.focused !== nextState.focused) return true
     return false
   }
 
@@ -32,13 +36,16 @@ class TopBarContainer extends Component<Props, State> {
     if (this.props.tittel !== prevProps.tittel && this.state.query)
       this.setState({ query: '' })
   }
+
   handleFocus = e => {
     this.setState({ focused: true })
     if (!this.props.query) this.handleQueryChange(e, this.props.tittel)
+    if (this.props.onFocus) this.props.onFocus()
   }
 
   handleBlur = e => {
-    this.setState({ focused: false, searchResults: null })
+    this.setState({ focused: false })
+    if (this.props.removeResultsOnBlur) this.setState({ searchResults: null })
   }
 
   handleQueryChange = e => {
@@ -83,27 +90,31 @@ class TopBarContainer extends Component<Props, State> {
     return (
       <Route
         render={({ match, history }) => (
-          <TopBar
-            onGoBack={this.handleGoBack}
-            onExitToRoot={this.handleExitToRoot}
-            isAtRoot={history.location.pathname === '/'}
-            query={focused ? query : query || tittel || ''}
-            onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
-            tittel={tittel}
-            onQueryChange={this.handleQueryChange}
-          >
-            {this.state.searchResults && (
-              <React.Fragment>
-                <Divider />
-                <ResultatListe
-                  query={this.state.query}
-                  searchResults={this.state.searchResults}
-                  onClick={this.handleClickSearchResult}
-                />
-              </React.Fragment>
-            )}
-          </TopBar>
+          <React.Fragment>
+            <TopBar
+              onGoBack={this.handleGoBack}
+              onExitToRoot={this.handleExitToRoot}
+              isAtRoot={history.location.pathname === '/'}
+              query={focused ? query : query || tittel || ''}
+              onFocus={this.handleFocus}
+              onBlur={this.handleBlur}
+              tittel={tittel}
+              onQueryChange={this.handleQueryChange}
+            />
+            <div style={{ width: 408, paddingTop: 57 }}>
+              {this.state.searchResults && (
+                <div style={{ marginLeft: 8, marginRight: 8 }}>
+                  <Divider />
+                  <ResultatListe
+                    query={this.state.query}
+                    searchResults={this.state.searchResults}
+                    onClick={this.handleClickSearchResult}
+                  />
+                </div>
+              )}
+              {this.props.children}
+            </div>
+          </React.Fragment>
         )}
       />
     )
