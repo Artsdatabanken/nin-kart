@@ -182,66 +182,64 @@ class Grunnkart extends React.Component<Props, State> {
         vk => vk.kode === this.state.meta.kode
       )
     return (
-      <React.Fragment>
-        <SettingsContext.Consumer>
-          {context => {
-            return (
-              <React.Fragment>
-                {context.visAktiveLag ? (
-                  <div
-                    style={{
-                      backgroundColor: '#fff',
-                      position: 'absolute',
-                      width: 408,
-                      right: 0,
-                      bottom: 0,
-                      boxShadow:
-                        '0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)',
-                    }}
-                  >
-                    <AktiveKartlag
-                      koder={this.state.aktiveLag}
-                      onMouseEnter={this.handleMouseEnter}
-                      onMouseLeave={this.handleMouseLeave}
-                      onUpdateLayerProp={this.handleUpdateLayerProp}
-                      onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                    />
-                  </div>
-                ) : (
-                  <AktiveKartlagKnapp onClick={context.onToggleAktiveLag} />
-                )}
+      <SettingsContext.Consumer>
+        {context => {
+          return (
+            <React.Fragment>
+              {context.visAktiveLag ? (
+                <div
+                  style={{
+                    backgroundColor: '#fff',
+                    position: 'absolute',
+                    width: 408,
+                    right: 0,
+                    bottom: 0,
+                    boxShadow:
+                      '0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)',
+                  }}
+                >
+                  <AktiveKartlag
+                    koder={this.state.aktiveLag}
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    onUpdateLayerProp={this.handleUpdateLayerProp}
+                    onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                  />
+                </div>
+              ) : (
+                <AktiveKartlagKnapp onClick={context.onToggleAktiveLag} />
+              )}
 
-                <VenstreVinduContainer
-                  aktiveLag={this.state.aktiveLag}
-                  mapBounds={this.state.actualBounds}
-                  onMouseEnter={this.handleMouseEnter}
-                  onMouseLeave={this.handleMouseLeave}
-                  onFitBounds={this.handleFitBounds}
-                  erAktivert={erAktivert}
-                  opplystKode={this.state.opplystKode}
-                  onToggleLayer={this.handleToggleLayer}
-                  onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                  meta={this.state.meta}
-                  onUpdateLayerProp={this.handleUpdateLayerProp}
-                  visForside={context.visForside}
-                  onToggleForside={context.onToggleForside}
-                />
-              </React.Fragment>
-            )
-          }}
-        </SettingsContext.Consumer>
-
-        <Kart
-          bounds={this.state.fitBounds}
-          latitude={65.4}
-          longitude={10.8}
-          zoom={3}
-          aktiveLag={this.state.aktiveLag}
-          opplystKode={this.state.opplystKode}
-          meta={this.state.meta}
-          onMapBoundsChange={this.handleActualBoundsChange}
-        />
-      </React.Fragment>
+              <VenstreVinduContainer
+                aktiveLag={this.state.aktiveLag}
+                mapBounds={this.state.actualBounds}
+                onMouseEnter={this.handleMouseEnter}
+                onMouseLeave={this.handleMouseLeave}
+                onFitBounds={this.handleFitBounds}
+                erAktivert={erAktivert}
+                opplystKode={this.state.opplystKode}
+                onToggleLayer={this.handleToggleLayer}
+                onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                meta={this.state.meta}
+                onUpdateLayerProp={this.handleUpdateLayerProp}
+                visForside={context.visForside}
+                onToggleForside={context.onToggleForside}
+              />
+              <Kart
+                bounds={this.state.fitBounds}
+                latitude={65.4}
+                longitude={10.8}
+                zoom={3}
+                aktiveLag={this.state.aktiveLag}
+                opplystKode={this.state.opplystKode}
+                meta={this.state.meta}
+                onMapBoundsChange={this.handleActualBoundsChange}
+                onMapMove={context.onMapMove}
+              />
+            </React.Fragment>
+          )
+        }}
+      </SettingsContext.Consumer>
     )
   }
 

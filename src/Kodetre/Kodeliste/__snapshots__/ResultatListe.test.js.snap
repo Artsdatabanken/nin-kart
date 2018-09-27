@@ -3,34 +3,13 @@
 exports[`Highlight 1`] = `
 <React.Fragment>
    
-  <span
-    style={
-      Object {
-        "color": "#333",
-        "fontWeight": 400,
-      }
-    }
-  >
+  <span>
     
   </span>
-  <span
-    style={
-      Object {
-        "color": "black",
-        "fontWeight": 500,
-      }
-    }
-  >
+  <span>
     Ka
   </span>
-  <span
-    style={
-      Object {
-        "color": "#333",
-        "fontWeight": 400,
-      }
-    }
-  >
+  <span>
     rmøy
   </span>
 </React.Fragment>

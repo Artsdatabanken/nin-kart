@@ -30,6 +30,7 @@ class SettingsContainer extends Component {
           onToggleAktiveLag: this.handleToggleAktivelag,
           onToggleHovedmeny: this.handleToggleHovedmeny,
           onToggleForside: this.handleToggleForside,
+          onMapMove: this.handleMapMove,
         }}
       >
         {this.props.children}
@@ -37,6 +38,9 @@ class SettingsContainer extends Component {
     )
   }
 
+  handleMapMove = () => {
+    this.handleUpdateValue('visForside', false)
+  }
   handleUpdateValue = (key, value) => {
     this.setState({ [key]: value })
     localStorage.setItem(key, value)

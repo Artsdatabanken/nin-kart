@@ -40,7 +40,7 @@ const styles = {}
 const Forsidemeny = ({ classes, visForside, onVis, onSkjul, onClick }) => {
   return (
     <React.Fragment>
-      <TopBarContainer>
+      <TopBarContainer removeResultsOnBlur={!visForside}>
         {visForside ? (
           <div style={{ width: 408 }}>
             <Panel style={{ color: 'hsla(0, 0%, 0%, 0.87)' }} />

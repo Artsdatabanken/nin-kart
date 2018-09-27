@@ -1,5 +1,5 @@
 import ForsideMeny from './Forsidemeny/Forsidemeny'
-import { List, ListItem, ListItemText, Snackbar } from '@material-ui/core'
+import { Snackbar } from '@material-ui/core'
 import React from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import BorreContainer from './Borring/BorreContainer'
@@ -9,7 +9,6 @@ import språk from './språk'
 import TweakContainer from './Tweaks/TweakContainer'
 import Panel from './components/Panel'
 import TopBarContainer from './TopBar/TopBarContainer'
-import Ekspanderlinje from './components/Ekspanderlinje'
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
@@ -42,7 +41,6 @@ class VenstreVinduContainer extends React.Component {
   render() {
     const meta = this.props.meta || {}
     const { visForside, onToggleForside } = this.props
-    console.log(this.props)
     return (
       <Route
         render={({ match, history }) => (
