@@ -149,18 +149,18 @@ function lagToppnivå(props) {
   return config
 }
 
-function createScene(props: Object, onClick: Function) {
+async function createScene(props: Object, onClick: Function) {
   let config = lagToppnivå(props)
   const viserKatalog = !!props.meta
   if (viserKatalog) {
-    lagKatalogLag(
+    await lagKatalogLag(
       props.meta.kode,
       props.meta.barn || { [props.meta.kode]: props.meta },
-      null,
+      props.opplystKode,
       config
     )
   }
-  lagAktiveLag(props.aktiveLag, viserKatalog, null, config)
+  lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config)
   return config
 }
 
