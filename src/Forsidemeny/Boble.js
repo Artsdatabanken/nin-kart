@@ -8,6 +8,7 @@ const styles = {
   rot: {
     padding: 8,
     textAlign: 'center',
+    cursor: 'pointer',
   },
   hover: {
     backgroundColor: 'hsla(0, 0%, 0%, 0.03)',

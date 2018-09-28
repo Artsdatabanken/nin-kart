@@ -42,10 +42,7 @@ const Forsidemeny = ({ classes, visForside, onVis, onSkjul, onClick }) => {
     <React.Fragment>
       {visForside ? (
         <Panel style={{ color: 'hsla(0, 0%, 0%, 0.87)', bottom: 44 }}>
-          <TopBarContainer
-            removeResultsOnBlur={!visForside}
-            style={{ paddingTop: 56 }}
-          >
+          <TopBarContainer removeResultsOnBlur={!visForside}>
             <Papir>
               <Seksjon tittel="Datakatalog">
                 <div
@@ -103,7 +100,11 @@ const Forsidemeny = ({ classes, visForside, onVis, onSkjul, onClick }) => {
         </Panel>
       ) : (
         <TopBarContainer removeResultsOnBlur={!visForside}>
-          <Ekspanderlinje tekst="Se kartlag" mode="closed" onSkjul={onVis} />
+          <Ekspanderlinje
+            tekst="Tilgjengelige kart"
+            mode="closed"
+            onSkjul={onVis}
+          />
         </TopBarContainer>
       )}
     </React.Fragment>
