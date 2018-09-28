@@ -3,7 +3,7 @@ import tinycolor from 'tinycolor2'
 import { lagBakgrunnskart } from './bakgrunnskart'
 import imports from './import'
 import { createLights } from './lights'
-import { lagLayerSource, lagSource } from './sources'
+import { lagPekerTilSource, lagSource } from './sources'
 import { createStyles } from './styles'
 import { lagTerreng } from './terreng'
 
@@ -28,9 +28,9 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
   }
 }
 
-async function lagKatalogLag(kode, barn, opplystKode, config) {
+function lagKatalogLag(kode, barn, opplystKode, bbox, zoom, config) {
   let layer = {
-    data: lagLayerSource(kode),
+    data: lagPekerTilSource(kode),
   }
   Object.keys(barn).forEach(barnkode => {
     const visEtiketter = barnkode === opplystKode
@@ -41,7 +41,7 @@ async function lagKatalogLag(kode, barn, opplystKode, config) {
       visEtiketter
     )
   })
-  await lagSource(kode, config)
+  lagSource(kode, bbox, zoom, config)
   config.layers[kode + '_kat'] = layer
 }
 
@@ -87,11 +87,13 @@ function lagEttPolygonLag(
   farge,
   visEtiketter,
   opplystKode,
+  bbox,
+  zoom,
   config
 ) {
   const layer = lagDrawblokk(kode, farge, opplystKode, visEtiketter)
-  layer.data = lagLayerSource(forelderkode)
-  lagSource(forelderkode, config)
+  layer.data = lagPekerTilSource(forelderkode)
+  lagSource(forelderkode, bbox, zoom, config)
   config.layers[kode] = layer
 }
 
@@ -115,6 +117,8 @@ function lagPolygonlag(lag, opplystKode, config, viserKatalog) {
           farge(barn.farge, viserKatalog),
           lag.visEtiketter,
           opplystKode,
+          lag.bbox,
+          lag.zoom,
           config
         )
       }
@@ -126,6 +130,8 @@ function lagPolygonlag(lag, opplystKode, config, viserKatalog) {
       farge(lag.farge, viserKatalog),
       lag.visEtiketter,
       opplystKode,
+      lag.bbox,
+      lag.zoom,
       config
     )
 }
@@ -149,14 +155,18 @@ function lagToppnivå(props) {
   return config
 }
 
-async function createScene(props: Object, onClick: Function) {
+function createScene(props: Object, onClick: Function) {
   let config = lagToppnivå(props)
-  const viserKatalog = !!props.meta
+  const meta = props.meta
+  const viserKatalog = !!meta
+  console.log(meta)
   if (viserKatalog) {
-    await lagKatalogLag(
-      props.meta.kode,
-      props.meta.barn || { [props.meta.kode]: props.meta },
+    lagKatalogLag(
+      meta.kode,
+      meta.barn || { [props.meta.kode]: props.meta },
       props.opplystKode,
+      meta.bbox,
+      meta.zoom,
       config
     )
   }
