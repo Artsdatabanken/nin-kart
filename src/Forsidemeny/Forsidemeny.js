@@ -30,7 +30,7 @@ const Seksjon = ({ tittel, children }) => (
 )
 
 const Papir = ({ children }) => (
-  <Paper elevation={4} style={{ marginLeft: 8, marginTop: 8, width: 392 }}>
+  <Paper elevation={4} style={{ marginTop: 8, width: 392 }}>
     {children}
   </Paper>
 )
@@ -42,7 +42,10 @@ const Forsidemeny = ({ classes, visForside, onVis, onSkjul, onClick }) => {
     <React.Fragment>
       {visForside ? (
         <Panel style={{ color: 'hsla(0, 0%, 0%, 0.87)', bottom: 44 }}>
-          <TopBarContainer removeResultsOnBlur={!visForside}>
+          <TopBarContainer
+            removeResultsOnBlur={!visForside}
+            style={{ paddingTop: 56 }}
+          >
             <Papir>
               <Seksjon tittel="Datakatalog">
                 <div

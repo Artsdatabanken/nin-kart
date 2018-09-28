@@ -8,7 +8,6 @@ const Panel = ({ style, children }) => (
       top: 0,
       left: 0,
       padding: 0,
-      paddingTop: 0,
       bottom: 0,
       width: 408,
       zIndex: -10,

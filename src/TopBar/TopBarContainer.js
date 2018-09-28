@@ -85,7 +85,7 @@ class TopBarContainer extends Component<Props, State> {
   }
 
   render() {
-    const { tittel } = this.props
+    const { tittel, style } = this.props
     const { query, focused } = this.state
     return (
       <Route
@@ -101,9 +101,18 @@ class TopBarContainer extends Component<Props, State> {
               tittel={tittel}
               onQueryChange={this.handleQueryChange}
             />
-            <div style={{ width: 408, paddingTop: 56, paddingBottom: 0 }}>
+            <div
+              style={{
+                width: 392,
+                marginLeft: 8,
+                marginRight: 8,
+                _paddingTop: 56,
+                paddingBottom: 0,
+                ...style,
+              }}
+            >
               {this.state.searchResults && (
-                <div style={{ marginLeft: 8, width: 392, marginBottom: 8 }}>
+                <div style={{ width: '100%', marginBottom: 8 }}>
                   <Divider />
                   <ResultatListe
                     query={this.state.query}
