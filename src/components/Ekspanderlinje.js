@@ -34,7 +34,6 @@ const styles = {
     boxShadow: '0 -2px 4px rgba(0,0,0,.2)',
   },
   closed: {
-    _marginLeft: 8,
     marginRight: 8,
     paddingTop: 56,
     width: 392,
