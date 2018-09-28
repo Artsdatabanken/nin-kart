@@ -3,7 +3,7 @@ import tinycolor from 'tinycolor2'
 import { lagBakgrunnskart } from './bakgrunnskart'
 import imports from './import'
 import { createLights } from './lights'
-import { lagLayerSource, lagSource } from './sources'
+import { lagPekerTilSource, lagSource } from './sources'
 import { createStyles } from './styles'
 import { lagTerreng } from './terreng'
 
@@ -28,9 +28,9 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
   }
 }
 
-async function lagKatalogLag(kode, barn, opplystKode, bbox, zoom, config) {
+function lagKatalogLag(kode, barn, opplystKode, bbox, zoom, config) {
   let layer = {
-    data: lagLayerSource(kode),
+    data: lagPekerTilSource(kode),
   }
   Object.keys(barn).forEach(barnkode => {
     const visEtiketter = barnkode === opplystKode
@@ -92,7 +92,7 @@ function lagEttPolygonLag(
   config
 ) {
   const layer = lagDrawblokk(kode, farge, opplystKode, visEtiketter)
-  layer.data = lagLayerSource(forelderkode)
+  layer.data = lagPekerTilSource(forelderkode)
   lagSource(forelderkode, bbox, zoom, config)
   config.layers[kode] = layer
 }
@@ -155,7 +155,7 @@ function lagToppnivå(props) {
   return config
 }
 
-async function createScene(props: Object, onClick: Function) {
+function createScene(props: Object, onClick: Function) {
   let config = lagToppnivå(props)
   const meta = props.meta
   const viserKatalog = !!meta

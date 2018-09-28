@@ -1,20 +1,20 @@
 function lagSource(kode, bbox, zoom, config) {
-  if (!bbox) {
+  if (!bbox || !zoom) {
     console.warn(`No map data for ${kode}`)
     return
   }
-  if (!zoom) zoom = [0, 18]
+  const [ll, ur] = bbox
   config.sources[kode] = {
     type: 'MVT',
     url: `https://nintest.artsdatabanken.no/${kode}/{z}/{x}/{y}`,
-    bounds: [bbox[0][1], bbox[0][0], bbox[1][1], bbox[1][0]],
+    bounds: [ll[1], ll[0], ur[1], ur[0]],
     min_zoom: zoom[0],
     max_zoom: zoom[1],
   }
 }
 
-function lagLayerSource(kode) {
+function lagPekerTilSource(kode) {
   return { source: kode, layer: kode }
 }
 
-export { lagSource, lagLayerSource }
+export { lagSource, lagPekerTilSource }
