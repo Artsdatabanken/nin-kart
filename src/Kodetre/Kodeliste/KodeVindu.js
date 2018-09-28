@@ -16,6 +16,7 @@ class KodeVindu extends React.Component {
       data,
       onMouseEnter,
       onMouseLeave,
+      onToggleLayer,
       opplystKode,
     } = this.props
     if (!meta) return null
@@ -51,6 +52,7 @@ class KodeVindu extends React.Component {
           onGoToCode={onGoToCode}
           erAktivert={erAktivert}
           onFitBounds={onFitBounds}
+          onToggleLayer={onToggleLayer}
         />
         {prefiks !== 'AO' && (
           <Statistikk
