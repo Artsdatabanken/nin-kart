@@ -6,7 +6,7 @@ function lagSource(kode, bbox, zoom, config) {
   const [ll, ur] = bbox
   config.sources[kode] = {
     type: 'MVT',
-    url: `https://nintest.artsdatabanken.no/vector/${kode}/{z}/{x}/{y}`,
+    url: `https://nintest.artsdatabanken.no/polygon/${kode}/{z}/{x}/{y}`,
     bounds: [ll[1], ll[0], ur[1], ur[0]],
     min_zoom: zoom[0],
     max_zoom: zoom[1],

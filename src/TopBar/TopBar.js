@@ -1,4 +1,5 @@
 // @flow
+import classNames from 'classnames'
 import { AppBar, Toolbar } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
 import { withStyles } from '@material-ui/core/styles'
@@ -18,9 +19,13 @@ const styles = {
     top: 8,
     width: 392,
     backgroundColor: '#fff',
+    zIndex: 1,
   },
   toolbar: {
     padding: 0,
+  },
+  squareBottom: {
+    borderRadius: '4px 4px 0 0',
   },
   darkButton: {
     color: '#616161',
@@ -38,6 +43,7 @@ type Props = {
   onBlur: Function,
   onQueryChange: Function,
   isAtRoot: Boolean,
+  hasResults: Boolean,
   onToggleMainDrawer: Function,
   onExitToRoot: Function,
   classes: Object,
@@ -46,11 +52,18 @@ type Props = {
 
 class TopBar extends React.Component<Props> {
   render() {
-    const { query, classes, onFocus, onBlur } = this.props
+    const { query, classes, onFocus, onBlur, hasResults } = this.props
     return (
       <SettingsContext.Consumer>
         {context => (
-          <AppBar position="sticky" className={classes.root} square={false}>
+          <AppBar
+            position="sticky"
+            className={classNames(
+              classes.root,
+              hasResults && classes.squareBottom
+            )}
+            square={false}
+          >
             <Toolbar variant="dense" className={classes.toolbar}>
               {this.props.isAtRoot ? (
                 <IconButton

@@ -1,5 +1,4 @@
 import {
-  Divider,
   List,
   ListItem,
   ListItemSecondaryAction,
@@ -44,8 +43,8 @@ class ResultatListe extends Component {
     if (!searchResults) return null
     if (!searchResults.length > 0) return null
     return (
-      <Paper elevation={4}>
-        <List>
+      <Paper elevation={4} style={{ borderRadius: '0 0 4px 4px' }}>
+        <List style={{ paddingTop: 0, paddingBottom: 0 }}>
           {searchResults.map(item => {
             const kode = item.kode.toUpperCase()
             const navn = språk(item.navn)
@@ -53,6 +52,7 @@ class ResultatListe extends Component {
             return (
               <React.Fragment key={item.kode}>
                 <ListItem
+                  divider={true}
                   button={true}
                   className={classes.listitem}
                   onMouseDown={() => {
@@ -76,7 +76,6 @@ class ResultatListe extends Component {
                     </ListItemText>
                   </ListItemSecondaryAction>
                 </ListItem>
-                <Divider inset={true} classes={{ inset: classes.inset }} />
               </React.Fragment>
             )
           })}
