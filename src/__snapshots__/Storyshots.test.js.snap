@@ -473,7 +473,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
     }
   >
     <div
-      className="MuiPaper-root-643 MuiPaper-elevation1-646 MuiPaper-rounded-644 MuiCard-root-670 BorreVindu-card-434"
+      className="MuiPaper-root-643 MuiPaper-elevation1-646 MuiCard-root-670 BorreVindu-card-434"
     >
       <div
         className="MuiCardMedia-root-566 BorreVindu-media-435"
@@ -1697,9 +1697,11 @@ exports[`Storyshots Forsidemeny default 1`] = `
     <div
       style={
         Object {
+          "_paddingTop": 56,
+          "marginLeft": 8,
+          "marginRight": 8,
           "paddingBottom": 0,
-          "paddingTop": 56,
-          "width": 408,
+          "width": 392,
         }
       }
     >
@@ -7601,9 +7603,11 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
     <div
       style={
         Object {
+          "_paddingTop": 56,
+          "marginLeft": 8,
+          "marginRight": 8,
           "paddingBottom": 0,
-          "paddingTop": 56,
-          "width": 408,
+          "width": 392,
         }
       }
     >
@@ -7752,9 +7756,11 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
     <div
       style={
         Object {
+          "_paddingTop": 56,
+          "marginLeft": 8,
+          "marginRight": 8,
           "paddingBottom": 0,
-          "paddingTop": 56,
-          "width": 408,
+          "width": 392,
         }
       }
     >

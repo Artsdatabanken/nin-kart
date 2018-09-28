@@ -38,7 +38,7 @@ class Borrevalg extends Component {
     const color = 'rgba(240,240,240,1.0)'
     const bgColor = 'rgba(160,160,160,0.95)'
     return (
-      <Card square={true} className={classes.card}>
+      <Card square={false} className={classes.card}>
         <CardMedia
           className={classes.media}
           image={config.getFotoOmslag('NA')}
