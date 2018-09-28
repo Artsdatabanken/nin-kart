@@ -5,7 +5,7 @@ cameras:
 sources:
   osm:
     type: MVT
-    url: 'https://nintest.artsdatabanken.no/openstreetmap/{z}/{x}/{y}'
+    url: 'https://nintest.artsdatabanken.no/basemap/openstreetmap/{z}/{x}/{y}'
     max_zoom: 14
 
   elevation:
