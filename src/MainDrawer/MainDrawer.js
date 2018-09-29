@@ -1,15 +1,22 @@
 import {
   Divider,
   IconButton,
+  List,
   ListItem,
   ListItemIcon,
   ListItemText,
   ListSubheader,
-  MenuItem,
   SwipeableDrawer,
+  ListItemSecondaryAction,
 } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
-import { Layers, Map } from '@material-ui/icons'
+import {
+  CloudUpload,
+  CloudDownload,
+  Layers,
+  Map,
+  Comment,
+} from '@material-ui/icons'
 import { PropTypes } from 'prop-types'
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
@@ -20,6 +27,7 @@ import Innstillinger from './Innstillinger'
 
 const styles = {
   link: { cursor: 'pointer' },
+  heading: { fontSize: 23, fontWeight: 500 },
 }
 
 class MainDrawer extends Component {
@@ -39,54 +47,94 @@ class MainDrawer extends Component {
         onClose={toggleDrawer}
         onOpen={toggleDrawer}
       >
-        <ListItem>
-          <div className={classes.link} onClick={this.handleClickLogo}>
-            <BildeAvatar kode="OR_AD" utenRamme />
+        <List>
+          <ListItem>
+            <ListItemText
+              classes={{ primary: classes.heading }}
+              primary="Natur i Norge"
+            />
+            <ListItemSecondaryAction>
+              <IconButton onClick={toggleDrawer}>
+                <NavigationChevronLeftDouble />
+              </IconButton>
+            </ListItemSecondaryAction>
+          </ListItem>
+          <Divider />
+          <div
+            tabIndex={0}
+            role="button"
+            onClick={toggleDrawer}
+            onKeyDown={toggleDrawer}
+          >
+            <ListItem onClick={this.handleClickMap} button>
+              <ListItemIcon>
+                <Map />
+              </ListItemIcon>
+              <ListItemText primary="Mine kartlag" />
+            </ListItem>
+            <ListItem onClick={this.handleClickLayers} button>
+              <ListItemIcon>
+                <Layers />
+              </ListItemIcon>
+              <ListItemText primary="Kartkatalog" />
+            </ListItem>
+            <ListItem onClick={this.handleClickLastNed} button>
+              <ListItemIcon>
+                <CloudDownload />
+              </ListItemIcon>
+              <ListItemText primary="Laste ned data" />
+            </ListItem>
+            <Divider />
+            <Innstillinger
+              visKoder={visKoder}
+              sorterPåKode={sorterPåKode}
+              onUpdateSetting={onUpdateSetting}
+            />
+            <Divider />
+            <ListSubheader>Bidra</ListSubheader>
+            <ListItem onClick={this.handleClickBidra} button>
+              <ListItemIcon>
+                <Comment />
+              </ListItemIcon>
+              <ListItemText primary="Tilbakemeldinger" />
+            </ListItem>
+            <ListItem onClick={this.handleClickSource} button>
+              <ListItemIcon>
+                <GitHub />
+              </ListItemIcon>
+              <ListItemText primary="Kildekode" />
+            </ListItem>
+            <ListItem onClick={this.handleClickLastOpp} button>
+              <ListItemIcon>
+                <CloudUpload />
+              </ListItemIcon>
+              <ListItemText primary="Levere data" />
+            </ListItem>
+            <Divider />
+            <ListSubheader>Hostes av</ListSubheader>
+            <ListItem onClick={this.handleClickLogo}>
+              <div className={classes.link}>
+                <BildeAvatar kode="OR_AD" size="small" />
+              </div>
+              <ListItemText primary="Artsdatabanken" />
+            </ListItem>
           </div>
-          <ListItemText primary="Natur i Norge" />
-          <IconButton onClick={toggleDrawer}>
-            <NavigationChevronLeftDouble />
-          </IconButton>
-        </ListItem>
-        <div
-          tabIndex={0}
-          role="button"
-          onClick={toggleDrawer}
-          onKeyDown={toggleDrawer}
-        >
-          <ListItem onClick={this.handleClickMap} button>
-            <ListItemIcon>
-              <Map />
-            </ListItemIcon>
-            <ListItemText primary="Mine kartlag" />
-          </ListItem>
-          <ListItem onClick={this.handleClickLayers} button>
-            <ListItemIcon>
-              <Layers />
-            </ListItemIcon>
-            <ListItemText primary="Kartkatalog" />
-          </ListItem>
-          <Divider />
-          <Innstillinger
-            visKoder={visKoder}
-            sorterPåKode={sorterPåKode}
-            onUpdateSetting={onUpdateSetting}
-          />
-          <Divider />
-          <ListSubheader>Bidra</ListSubheader>
-          <ListItem onClick={this.handleClickBidra} button>
-            <ListItemIcon>
-              <GitHub />
-            </ListItemIcon>
-            <ListItemText primary="Send tilbakemeldinger" />
-          </ListItem>
-          <MenuItem />
-        </div>
+        </List>
       </SwipeableDrawer>
     )
   }
   handleClickBidra = () =>
     window.open('https://github.com/Artsdatabanken/ratatouille/issues')
+  handleClickSource = () =>
+    window.open('https://github.com/Artsdatabanken/ratatouille/')
+  handleClickLastNed = () =>
+    window.open(
+      'https://github.com/Artsdatabanken/ratatouille/blob/master/docs/LastNed.md'
+    )
+  handleClickLastOpp = () =>
+    window.open(
+      'https://github.com/Artsdatabanken/ratatouille/blob/master/docs/BidraMedData.md'
+    )
   handleClickLogo = () => window.open('https://artsdatabanken.no')
   handleClickLayers = () => this.props.history.push('/katalog/')
   handleClickMap = () => this.props.history.push('/')

@@ -11,6 +11,8 @@
 [![Screenshot](doc/screenshot.png 'ratatouille screenshot')](https://naturinorge.firebaseapp.com/)
 
 - [Demo](https://naturinorge.firebaseapp.com/)
+- [Laste ned åpne data](docs/LastNed.md)
+- [Bidra med data](docs/BidraMedData.md)
 
 ## Relaterte prosjekter
 
