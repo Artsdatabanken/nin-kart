@@ -8,6 +8,8 @@ const Barneliste = ({
   barn,
   aktivtBarn,
   onUpdateLayerProp,
+  onMouseEnter,
+  onMouseLeave,
   history,
   forelderkode,
 }) => {
@@ -25,8 +27,8 @@ const Barneliste = ({
           onUpdateLayerProp={() =>
             onUpdateLayerProp(i, 'erSynlig', !node.erSynlig)
           }
-          onMouseLeave={() => {}}
-          onMouseEnter={() => {}}
+          onMouseLeave={onMouseLeave}
+          onMouseEnter={() => onMouseEnter(kode)}
           onClick={() => {
             history.push('/lag/' + forelderkode + '/' + kode)
           }}

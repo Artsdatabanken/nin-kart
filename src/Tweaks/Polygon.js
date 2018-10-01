@@ -29,6 +29,8 @@ class Polygon extends Component {
       bbox,
       visEtiketter,
       onFitBounds,
+      onMouseEnter,
+      onMouseLeave,
       onRemoveSelectedLayer,
       onUpdateLayerProp,
       kanSlettes,
@@ -60,6 +62,8 @@ class Polygon extends Component {
               forelderkode={kode}
               aktivtBarn={lag}
               barn={barn}
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
               onUpdateLayerProp={(index, felt, verdi) => {
                 barn[index][felt] = verdi
                 onUpdateLayerProp(kode, 'barn', barn)

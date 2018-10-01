@@ -15,6 +15,7 @@ class PolygonlagElement extends React.Component {
       onMouseLeave,
       onUpdateLayerProp,
     } = this.props
+
     return (
       <KartlagElement
         tittel={tittel}
