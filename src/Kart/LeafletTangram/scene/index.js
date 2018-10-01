@@ -27,25 +27,32 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
   }
 }
 
-function lagKatalogLag(kode, barn, opplystKode, bbox, zoom, config) {
+function lagKatalogLag({ kode, barn, opplystKode, bbox, zoom }, config) {
   let layer = {
     data: lagPekerTilSource(kode),
   }
   Object.keys(barn).forEach(barnkode => {
     const visEtiketter = barnkode === opplystKode
-    layer[barnkode] = lagDrawblokk(
-      barnkode,
-      kode,
-      barn[barnkode].farge,
-      opplystKode,
-      visEtiketter
-    )
+    layer[barnkode] = lagDrawblokk({
+      kode: barnkode,
+      forelderkode: kode,
+      farge: barn[barnkode].farge,
+      opplystKode: opplystKode,
+      visEtiketter: visEtiketter,
+    })
   })
   lagSource(kode, bbox, zoom, config)
   config.layers[kode + '_kat'] = layer
 }
 
-function lagDrawblokk(kode, forelderkode, farge, opplystKode, visEtiketter) {
+function lagDrawblokk({
+  kode,
+  forelderkode,
+  farge,
+  opplystKode,
+  visEtiketter,
+  visualisering = 'polygon',
+}) {
   farge = opplystKode === kode ? '#f88' : farge
   const layer = {
     draw: {
@@ -91,13 +98,13 @@ function lagEttPolygonLag(
   zoom,
   config
 ) {
-  const layer = lagDrawblokk(
-    kode,
-    forelderkode,
-    farge,
-    opplystKode,
-    visEtiketter
-  )
+  const layer = lagDrawblokk({
+    kode: kode,
+    forelderkode: forelderkode,
+    farge: farge,
+    opplystKode: opplystKode,
+    visEtiketter: visEtiketter,
+  })
   layer.data = lagPekerTilSource(forelderkode)
   lagSource(forelderkode, bbox, zoom, config)
   config.layers[kode] = layer
@@ -185,11 +192,13 @@ function updateScene(config: Object, props: Object) {
   const viserKatalog = !!meta
   if (viserKatalog) {
     lagKatalogLag(
-      meta.kode,
-      meta.barn || { [props.meta.kode]: props.meta },
-      props.opplystKode,
-      meta.bbox,
-      meta.zoom,
+      {
+        kode: meta.kode,
+        barn: meta.barn || { [props.meta.kode]: props.meta },
+        opplystKode: props.opplystKode,
+        bbox: meta.bbox,
+        zoom: meta.zoom,
+      },
       config
     )
   }
