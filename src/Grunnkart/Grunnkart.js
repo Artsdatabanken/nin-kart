@@ -64,8 +64,11 @@ class Grunnkart extends React.Component<Props, State> {
 
   addSelected = props => {
     let koder = this.state.aktiveLag
+    const formats = props.formats || { polygon: 'pbf' }
+    const fileFormat = Object.keys(formats)[0]
+    const sourceType = formats[fileFormat]
     const nyttLag = {
-      type: 'polygon',
+      type: fileFormat,
       farge: props.farge,
       kode: props.kode,
       tittel: språk(props.tittel),
@@ -75,6 +78,9 @@ class Grunnkart extends React.Component<Props, State> {
       zoom: props.zoom,
       erSynlig: true,
       kanSlettes: true,
+      formats: formats,
+      fileFormat: fileFormat,
+      sourceType: sourceType,
     }
     koder.unshift(nyttLag)
 

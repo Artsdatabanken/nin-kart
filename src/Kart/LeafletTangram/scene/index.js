@@ -50,13 +50,7 @@ function lagKatalogLag(
 }
 
 function mekkEttLag(
-  forelderkode,
-  kode,
-  farge,
-  visEtiketter,
-  opplystKode,
-  bbox,
-  zoom,
+  { forelderkode, kode, farge, visEtiketter, opplystKode, bbox, zoom },
   config
 ) {
   const viz = draw.polygon
@@ -87,26 +81,30 @@ function mekkSettMedLag(lag, opplystKode, config, viserKatalog) {
       const barn = lag.barn[i]
       if (barn.erSynlig) {
         mekkEttLag(
-          lag.kode,
-          barn.kode,
-          farge(barn.farge, viserKatalog),
-          lag.visEtiketter,
-          opplystKode,
-          lag.bbox,
-          lag.zoom,
+          {
+            forelderkode: lag.kode,
+            kode: barn.kode,
+            farge: farge(barn.farge, viserKatalog),
+            visEtiketter: lag.visEtiketter,
+            opplystKode: opplystKode,
+            bbox: lag.bbox,
+            zoom: lag.zoom,
+          },
           config
         )
       }
     })
   else
     mekkEttLag(
-      lag.kode,
-      lag.kode,
-      farge(lag.farge, viserKatalog),
-      lag.visEtiketter,
-      opplystKode,
-      lag.bbox,
-      lag.zoom,
+      {
+        forelderkode: lag.kode,
+        kode: lag.kode,
+        farge: farge(lag.farge, viserKatalog),
+        visEtiketter: lag.visEtiketter,
+        opplystKode: opplystKode,
+        bbox: lag.bbox,
+        zoom: lag.zoom,
+      },
       config
     )
 }
