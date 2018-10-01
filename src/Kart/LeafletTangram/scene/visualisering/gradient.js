@@ -9,30 +9,7 @@ function draw(args) {
         order: 100,
         color: farge,
       },
-      lines: {
-        order: 100,
-        color: tinycolor(farge)
-          .darken(30)
-          .toHexString(),
-        width: '1.0px',
-      },
     },
-  }
-  if (kode !== forelderkode) layer.filter = { code: kode }
-  if (kode === opplystKode) {
-    const lines = layer.draw.lines
-    lines.width = '2px'
-  }
-  if (visEtiketter) {
-    layer.draw.text = {
-      text_source: ['name', 'title'],
-      font: {
-        family: 'Roboto',
-        fill: 'hsla(0, 0%, 100%, 1.0)',
-        stroke: { color: 'hsla(0, 0%, 0%, 0.7)', width: 2 },
-        size: '13px',
-      },
-    }
   }
   return layer
 }
@@ -42,8 +19,8 @@ function lagSource(kode, bbox, zoom, config) {
     console.warn(`No map data for ${kode}`)
   }
   const source = {
-    type: 'MVT',
-    url: `https://nintest.artsdatabanken.no/polygon/${kode}/{z}/{x}/{y}`,
+    type: 'Raster',
+    url: `https://nintest.artsdatabanken.no/gradient/${kode}/{z}/{x}/{y}`,
   }
   if (bbox) {
     const [ll, ur] = bbox
@@ -53,7 +30,7 @@ function lagSource(kode, bbox, zoom, config) {
     source.min_zoom = zoom[0]
     source.max_zoom = zoom[1]
   }
-
+  console.log(source)
   config.sources[kode] = source
 }
 

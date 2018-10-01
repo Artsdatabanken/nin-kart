@@ -19,11 +19,8 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
     case 'terreng':
       lagTerreng(lag, config)
       break
-    case 'polygon':
-      mekkSettMedLag(lag, opplystKode, config, viserKatalog)
-      return
     default:
-      console.error('Ukjent lag', lag.type)
+      mekkSettMedLag(lag, opplystKode, config, viserKatalog)
   }
 }
 
@@ -50,10 +47,10 @@ function lagKatalogLag(
 }
 
 function mekkEttLag(
-  { forelderkode, kode, farge, visEtiketter, opplystKode, bbox, zoom },
+  { forelderkode, kode, farge, visEtiketter, opplystKode, bbox, zoom, type },
   config
 ) {
-  const viz = draw.polygon
+  const viz = draw[type]
   const layer = viz.draw({
     kode: kode,
     forelderkode: forelderkode,
@@ -89,6 +86,7 @@ function mekkSettMedLag(lag, opplystKode, config, viserKatalog) {
             opplystKode: opplystKode,
             bbox: lag.bbox,
             zoom: lag.zoom,
+            type: lag.type,
           },
           config
         )
@@ -104,6 +102,7 @@ function mekkSettMedLag(lag, opplystKode, config, viserKatalog) {
         opplystKode: opplystKode,
         bbox: lag.bbox,
         zoom: lag.zoom,
+        type: lag.type,
       },
       config
     )
