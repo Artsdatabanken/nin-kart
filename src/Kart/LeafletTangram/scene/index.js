@@ -1,7 +1,6 @@
 // @flow
 import tinycolor from 'tinycolor2'
 import { lagBakgrunnskart } from './bakgrunnskart'
-import imports from './import'
 import { createLights } from './lights'
 import { lagPekerTilSource, lagSource } from './sources'
 import { createStyles } from './styles'
@@ -150,7 +149,6 @@ function finnLagType(aktiveLag, type) {
 function lagToppnivå(props) {
   const bakgrunn = finnLagType(props.aktiveLag, 'bakgrunn')
   const config = {
-    import: imports,
     sources: {
       osm: {
         type: 'MVT',
