@@ -28,13 +28,15 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
 }
 
 function lagKatalogLag({ kode, barn, opplystKode, bbox, zoom }, config) {
-  const viz = draw.polygon
+  //  const viz = draw.polygon
+  const viz = draw.point
   let layer = {
-    data: viz.lagPekerTilSource(kode),
+    //    data: viz.lagPekerTilSource(kode),
   }
   Object.keys(barn).forEach(barnkode => {
     const visEtiketter = barnkode === opplystKode
-    layer[barnkode] = viz.draw({
+    config.layers[barnkode] = viz.draw({
+      //      layer[barnkode] = viz.draw({
       kode: barnkode,
       forelderkode: kode,
       farge: barn[barnkode].farge,
@@ -43,7 +45,8 @@ function lagKatalogLag({ kode, barn, opplystKode, bbox, zoom }, config) {
     })
   })
   viz.lagSource(kode, bbox, zoom, config)
-  config.layers[kode + '_kat'] = layer
+  //  config.layers[kode + '_kat'] = layer
+  console.log(config)
 }
 
 function mekkEttLag(
