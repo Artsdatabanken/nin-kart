@@ -72,6 +72,7 @@ class Grunnkart extends React.Component<Props, State> {
       barn: this.addSelectedBarn(props.barn),
       visBarn: Object.keys(props.barn).length > 0,
       bbox: props.bbox,
+      zoom: props.zoom,
       erSynlig: true,
       kanSlettes: true,
     }

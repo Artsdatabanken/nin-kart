@@ -3,7 +3,7 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import React from 'react'
 import Tangram from 'tangram'
-import { createScene } from './scene'
+import { createScene, updateScene } from './scene'
 import './styles.css'
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
 // See here: https://github.com/PaulLeCam/react-leaflet/issues/255
@@ -59,7 +59,20 @@ class LeafletTangram extends React.Component {
     L.control.zoom({ position: 'topright' }).addTo(map)
     L.DomUtil.addClass(map._container, 'crosshair-cursor-enabled')
     this.map = map
-    this.updateMap(this.props)
+    let def = {
+      scene: createScene(this.props),
+      events: {
+        hover: function(selection) {
+          //        console.log('Hover!', selection)
+        },
+        click: this.handleClick,
+      },
+      attribution: '<a href="https://artsdatabanken.no">Artsdatabanken</a>',
+    }
+
+    this.layer = Tangram.leafletLayer(def)
+    this.map.addLayer(this.layer)
+    //    this.layer.loadScene(this.layer.scene)
     this.icon = L.icon({
       iconUrl: '/marker/baseline_place_black_18dp.png',
       iconSize: [36, 36],
@@ -101,24 +114,8 @@ class LeafletTangram extends React.Component {
   }
 
   updateMap(props) {
-    let scene = createScene(props)
-    if (this.layer) {
-      this.layer.scene.load(scene)
-    } else {
-      let def = {
-        scene: scene,
-        events: {
-          hover: function(selection) {
-            //        console.log('Hover!', selection)
-          },
-          click: this.handleClick,
-        },
-        attribution: '<a href="https://artsdatabanken.no">Artsdatabanken</a>',
-      }
-
-      this.layer = Tangram.leafletLayer(def)
-      this.map.addLayer(this.layer)
-    }
+    updateScene(this.layer.scene.config, props)
+    this.layer.scene.updateConfig({ rebuild: true })
   }
 
   render() {

@@ -36,6 +36,7 @@ function lagKatalogLag(kode, barn, opplystKode, bbox, zoom, config) {
     const visEtiketter = barnkode === opplystKode
     layer[barnkode] = lagDrawblokk(
       barnkode,
+      kode,
       barn[barnkode].farge,
       opplystKode,
       visEtiketter
@@ -45,10 +46,9 @@ function lagKatalogLag(kode, barn, opplystKode, bbox, zoom, config) {
   config.layers[kode + '_kat'] = layer
 }
 
-function lagDrawblokk(kode, farge, opplystKode, visEtiketter) {
+function lagDrawblokk(kode, forelderkode, farge, opplystKode, visEtiketter) {
   farge = opplystKode === kode ? '#f88' : farge
   const layer = {
-    filter: { code: kode },
     draw: {
       mu_polygons: {
         order: 100,
@@ -63,6 +63,7 @@ function lagDrawblokk(kode, farge, opplystKode, visEtiketter) {
       },
     },
   }
+  if (kode !== forelderkode) layer.filter = { code: kode }
   if (kode === opplystKode) {
     const lines = layer.draw.lines
     lines.width = '2px'
@@ -91,7 +92,13 @@ function lagEttPolygonLag(
   zoom,
   config
 ) {
-  const layer = lagDrawblokk(kode, farge, opplystKode, visEtiketter)
+  const layer = lagDrawblokk(
+    kode,
+    forelderkode,
+    farge,
+    opplystKode,
+    visEtiketter
+  )
   layer.data = lagPekerTilSource(forelderkode)
   lagSource(forelderkode, bbox, zoom, config)
   config.layers[kode] = layer
@@ -144,7 +151,19 @@ function lagToppnivå(props) {
   const bakgrunn = finnLagType(props.aktiveLag, 'bakgrunn')
   const config = {
     import: imports,
-    sources: {},
+    sources: {
+      osm: {
+        type: 'MVT',
+        url:
+          'https://nintest.artsdatabanken.no/basemap/openstreetmap/{z}/{x}/{y}',
+        max_zoom: 14,
+      },
+    },
+    cameras: {
+      cam: {
+        type: 'flat',
+      },
+    },
     lights: createLights(),
     layers: {},
     styles: createStyles(),
@@ -152,14 +171,20 @@ function lagToppnivå(props) {
       background: { color: bakgrunn.land ? bakgrunn.landfarge : '#ccc' },
     },
   }
+
   return config
 }
 
-function createScene(props: Object, onClick: Function) {
+function createScene(props: Object) {
   let config = lagToppnivå(props)
+  updateScene(config, props)
+  return config
+}
+
+function updateScene(config: Object, props: Object) {
+  config.layers = {}
   const meta = props.meta
   const viserKatalog = !!meta
-  console.log(meta)
   if (viserKatalog) {
     lagKatalogLag(
       meta.kode,
@@ -174,4 +199,4 @@ function createScene(props: Object, onClick: Function) {
   return config
 }
 
-export { createScene }
+export { createScene, updateScene }

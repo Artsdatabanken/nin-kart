@@ -10,7 +10,7 @@ exports[`Storyshots Aktive kartlag default 1`] = `
     }
   >
     <header
-      className="MuiPaper-root-179 MuiPaper-elevation4-185 MuiPaper-rounded-180 MuiAppBar-root-206 MuiAppBar-positionStatic-210"
+      className="MuiPaper-root-179 MuiPaper-elevation1-182 MuiPaper-rounded-180 MuiAppBar-root-206 MuiAppBar-positionStatic-210"
     >
       <div
         className="MuiToolbar-root-175 MuiToolbar-dense-178 MuiToolbar-gutters-176 withRouter-AktiveKartlag--toolbar-245"
