@@ -38,7 +38,12 @@ class AktiveKartlag extends React.Component {
       <SettingsContext.Consumer>
         {context => (
           <React.Fragment>
-            <AppBar position="static" color="inherit" square={false}>
+            <AppBar
+              position="static"
+              elevation={1}
+              color="inherit"
+              square={false}
+            >
               <Toolbar
                 variant="dense"
                 className={classes.toolbar}
