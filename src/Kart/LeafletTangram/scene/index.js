@@ -27,8 +27,11 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
   }
 }
 
-function lagKatalogLag({ kode, barn, opplystKode, bbox, zoom }, config) {
-  const viz = kode === 'OR' ? draw.point : draw.polygon
+function lagKatalogLag(
+  { kode, barn, opplystKode, bbox, zoom, sourceType, fileFormat },
+  config
+) {
+  const viz = draw[sourceType]
   let layer = {
     data: viz.lagPekerTilSource(kode),
   }
@@ -150,6 +153,10 @@ function updateScene(config: Object, props: Object) {
   const meta = props.meta
   const viserKatalog = !!meta
   if (viserKatalog) {
+    console.log(meta)
+    const formats = meta.formats || { polygon: 'pbf' }
+    const sourceType = Object.keys(formats)[0]
+    const fileFormat = formats[sourceType]
     lagKatalogLag(
       {
         kode: meta.kode,
@@ -157,6 +164,8 @@ function updateScene(config: Object, props: Object) {
         opplystKode: props.opplystKode,
         bbox: meta.bbox,
         zoom: meta.zoom,
+        sourceType: sourceType,
+        fileFormat: fileFormat,
       },
       config
     )
