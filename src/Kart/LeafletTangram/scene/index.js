@@ -2,9 +2,9 @@
 import tinycolor from 'tinycolor2'
 import { lagBakgrunnskart } from './bakgrunnskart'
 import { createLights } from './lights'
-import { lagPekerTilSource, lagSource } from './sources'
 import { createStyles } from './styles'
 import { lagTerreng } from './terreng'
+import draw from './visualisering/'
 
 function lagAktiveLag(aktive, iKatalog, opplystKode, config) {
   aktive.forEach(lag => lagEttLag(lag, opplystKode, iKatalog, config))
@@ -20,7 +20,7 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
       lagTerreng(lag, config)
       break
     case 'polygon':
-      lagPolygonlag(lag, opplystKode, config, viserKatalog)
+      mekkSettMedLag(lag, opplystKode, config, viserKatalog)
       return
     default:
       console.error('Ukjent lag', lag.type)
@@ -28,12 +28,13 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
 }
 
 function lagKatalogLag({ kode, barn, opplystKode, bbox, zoom }, config) {
+  const viz = draw.polygon
   let layer = {
-    data: lagPekerTilSource(kode),
+    data: viz.lagPekerTilSource(kode),
   }
   Object.keys(barn).forEach(barnkode => {
     const visEtiketter = barnkode === opplystKode
-    layer[barnkode] = lagDrawblokk({
+    layer[barnkode] = viz.draw({
       kode: barnkode,
       forelderkode: kode,
       farge: barn[barnkode].farge,
@@ -41,54 +42,11 @@ function lagKatalogLag({ kode, barn, opplystKode, bbox, zoom }, config) {
       visEtiketter: visEtiketter,
     })
   })
-  lagSource(kode, bbox, zoom, config)
+  viz.lagSource(kode, bbox, zoom, config)
   config.layers[kode + '_kat'] = layer
 }
 
-function lagDrawblokk({
-  kode,
-  forelderkode,
-  farge,
-  opplystKode,
-  visEtiketter,
-  visualisering = 'polygon',
-}) {
-  farge = opplystKode === kode ? '#f88' : farge
-  const layer = {
-    draw: {
-      mu_polygons: {
-        order: 100,
-        color: farge,
-      },
-      lines: {
-        order: 100,
-        color: tinycolor(farge)
-          .darken(30)
-          .toHexString(),
-        width: '1.0px',
-      },
-    },
-  }
-  if (kode !== forelderkode) layer.filter = { code: kode }
-  if (kode === opplystKode) {
-    const lines = layer.draw.lines
-    lines.width = '2px'
-  }
-  if (visEtiketter) {
-    layer.draw.text = {
-      text_source: ['name', 'title'],
-      font: {
-        family: 'Roboto',
-        fill: 'hsla(0, 0%, 100%, 1.0)',
-        stroke: { color: 'hsla(0, 0%, 0%, 0.7)', width: 2 },
-        size: '13px',
-      },
-    }
-  }
-  return layer
-}
-
-function lagEttPolygonLag(
+function mekkEttLag(
   forelderkode,
   kode,
   farge,
@@ -98,15 +56,16 @@ function lagEttPolygonLag(
   zoom,
   config
 ) {
-  const layer = lagDrawblokk({
+  const viz = draw.polygon
+  const layer = viz.draw({
     kode: kode,
     forelderkode: forelderkode,
     farge: farge,
     opplystKode: opplystKode,
     visEtiketter: visEtiketter,
   })
-  layer.data = lagPekerTilSource(forelderkode)
-  lagSource(forelderkode, bbox, zoom, config)
+  layer.data = viz.lagPekerTilSource(forelderkode)
+  viz.lagSource(forelderkode, bbox, zoom, config)
   config.layers[kode] = layer
 }
 
@@ -119,12 +78,12 @@ function farge(farge, viserKatalog) {
   return farge
 }
 
-function lagPolygonlag(lag, opplystKode, config, viserKatalog) {
+function mekkSettMedLag(lag, opplystKode, config, viserKatalog) {
   if (lag.visBarn)
     Object.keys(lag.barn).forEach(i => {
       const barn = lag.barn[i]
       if (barn.erSynlig) {
-        lagEttPolygonLag(
+        mekkEttLag(
           lag.kode,
           barn.kode,
           farge(barn.farge, viserKatalog),
@@ -137,7 +96,7 @@ function lagPolygonlag(lag, opplystKode, config, viserKatalog) {
       }
     })
   else
-    lagEttPolygonLag(
+    mekkEttLag(
       lag.kode,
       lag.kode,
       farge(lag.farge, viserKatalog),
