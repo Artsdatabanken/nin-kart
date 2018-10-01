@@ -95,26 +95,21 @@ function listeElement(forelder, props, visKoder) {
     onMouseLeave,
     onUpdateLayerProp,
   } = props
-  const subProps = {
-    onRemoveSelectedLayer,
-    onMouseEnter,
-    onMouseLeave,
-    onUpdateLayerProp,
-  }
   const Type = finnType(kode)
+
   return (
     <Type
-      {...forelder}
-      {...subProps}
       key={kode}
       visKoder={visKoder}
       onClick={() => {
         onMouseLeave()
         history.push('/lag/' + kode)
       }}
+      onUpdateLayerProp={onUpdateLayerProp}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onRemove={kode => onRemoveSelectedLayer(kode)}
+      {...forelder}
     />
   )
 }

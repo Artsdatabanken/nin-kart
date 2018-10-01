@@ -88,6 +88,8 @@ class VenstreVinduContainer extends React.Component {
                       onFitBounds={this.props.onFitBounds}
                       onUpdateLayerProp={this.props.onUpdateLayerProp}
                       onRemoveSelectedLayer={this.props.onRemoveSelectedLayer}
+                      onMouseEnter={this.props.onMouseEnter}
+                      onMouseLeave={this.props.onMouseLeave}
                     />
                   </Panel>
                 )}
