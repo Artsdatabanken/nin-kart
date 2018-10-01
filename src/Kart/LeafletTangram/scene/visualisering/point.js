@@ -30,14 +30,13 @@ function lagSource(kode, bbox, zoom, config) {
   const source = {
     type: 'GeoJSON',
     url: `https://nintest.artsdatabanken.no/point/${kode}.geojson`,
-    //url: `http://localhost:8000/point/${kode}.geojson`,
   }
 
   config.sources[kode] = source
 }
 
 function lagPekerTilSource(kode) {
-  const peker = { source: kode, layer: kode }
+  const peker = { source: kode }
   return peker
 }
 

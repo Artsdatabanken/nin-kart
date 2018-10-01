@@ -1,7 +1,6 @@
 import tinycolor from 'tinycolor2'
 
 function draw(args) {
-  console.log(args)
   let { kode, forelderkode, farge, opplystKode, visEtiketter } = args
   farge = opplystKode === kode ? '#f88' : farge
   const layer = {
