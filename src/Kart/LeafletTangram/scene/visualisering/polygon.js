@@ -1,5 +1,22 @@
 import tinycolor from 'tinycolor2'
 
+function drawAll(
+  { kode, barn, opplystKode, bbox, zoom, sourceType, fileFormat },
+  viz,
+  layer
+) {
+  Object.keys(barn).forEach(barnkode => {
+    const visEtiketter = barnkode === opplystKode
+    layer[barnkode] = draw({
+      kode: barnkode,
+      forelderkode: kode,
+      farge: barn[barnkode].farge,
+      opplystKode: opplystKode,
+      visEtiketter: visEtiketter,
+    })
+  })
+}
+
 function draw(args) {
   let { kode, forelderkode, farge, opplystKode, visEtiketter } = args
   farge = opplystKode === kode ? '#f88' : farge
@@ -61,4 +78,4 @@ function lagPekerTilSource(kode) {
   return { source: kode, layer: kode }
 }
 
-export default { draw, lagSource, lagPekerTilSource }
+export default { drawAll, lagSource, lagPekerTilSource }

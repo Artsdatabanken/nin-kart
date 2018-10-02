@@ -24,26 +24,16 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
   }
 }
 
-function lagKatalogLag(
-  { kode, barn, opplystKode, bbox, zoom, sourceType, fileFormat },
-  config
-) {
-  const viz = draw[sourceType]
+function lagKatalogLag(drawArgs, config) {
+  const viz = draw[drawArgs.sourceType]
   let layer = {
-    data: viz.lagPekerTilSource(kode),
+    data: viz.lagPekerTilSource(drawArgs.kode),
   }
-  Object.keys(barn).forEach(barnkode => {
-    const visEtiketter = barnkode === opplystKode
-    layer[barnkode] = viz.draw({
-      kode: barnkode,
-      forelderkode: kode,
-      farge: barn[barnkode].farge,
-      opplystKode: opplystKode,
-      visEtiketter: visEtiketter,
-    })
-  })
-  viz.lagSource(kode, bbox, zoom, config)
-  config.layers[kode + '_kat'] = layer
+
+  viz.drawAll(drawArgs, viz, layer)
+
+  viz.lagSource(drawArgs.kode, drawArgs.bbox, drawArgs.zoom, config)
+  config.layers[drawArgs.kode + '_kat'] = layer
 }
 
 function mekkEttLag(

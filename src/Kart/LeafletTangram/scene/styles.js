@@ -1,4 +1,14 @@
 const styles = {
+  gradient: {
+    //    base: 'polygons',
+    //    raster: 'custom',
+    shaders: {
+      blocks: {
+        color: 'color = sampleRaster(0);',
+        //        "normal": "normal = normalize(sampleRaster(1).xyz * 2. - 1.); // normal from second raster (normal tiles)"
+      },
+    },
+  },
   po: {
     base: 'points',
     texture: '/marker.png',

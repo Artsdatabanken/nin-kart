@@ -1,3 +1,20 @@
+function drawAll(
+  { kode, barn, opplystKode, bbox, zoom, sourceType, fileFormat },
+  viz,
+  layer
+) {
+  Object.keys(barn).forEach(barnkode => {
+    const visEtiketter = barnkode === opplystKode
+    layer[barnkode] = draw({
+      kode: barnkode,
+      forelderkode: kode,
+      farge: barn[barnkode].farge,
+      opplystKode: opplystKode,
+      visEtiketter: visEtiketter,
+    })
+  })
+}
+
 function draw(args) {
   let { kode, forelderkode, opplystKode, visEtiketter } = args
   const size = opplystKode === kode ? '75%' : '50%'
@@ -40,4 +57,4 @@ function lagPekerTilSource(kode) {
   return peker
 }
 
-export default { draw, lagSource, lagPekerTilSource }
+export default { drawAll, lagSource, lagPekerTilSource }
