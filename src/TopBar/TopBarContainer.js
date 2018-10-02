@@ -91,6 +91,7 @@ class TopBarContainer extends Component<Props, State> {
       <Route
         render={({ match, history }) => {
           const isAtRoot = history.location.pathname === '/'
+          console.log(this.state.searchResults, isAtRoot, focused)
           return (
             <React.Fragment>
               <TopBar
@@ -113,14 +114,14 @@ class TopBarContainer extends Component<Props, State> {
                   ...style,
                 }}
               >
-                {this.state.searchResults && (isAtRoot || focused) ? (
+                {isAtRoot || focused ? (
                   <div
                     style={{
                       width: 392,
                       marginTop: 55,
                       marginBottom: 8,
                       position: isAtRoot ? 'relative' : 'fixed',
-                      zIndex: 2,
+                      zIndex: 10,
                     }}
                   >
                     <Divider inset={false} />

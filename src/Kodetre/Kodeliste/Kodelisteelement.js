@@ -51,7 +51,6 @@ class Kodelisteelement extends React.Component<Props, State> {
         onClick={() => onGoToCode(kode)}
         onMouseEnter={() => onMouseEnter && onMouseEnter(kode)}
         onMouseLeave={() => onMouseLeave && onMouseLeave(kode)}
-        style={{ zIndex: 0 }}
         button={true}
       >
         <VolumIndikator størsteAreal={størsteAreal} areal={areal} />

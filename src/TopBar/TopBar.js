@@ -19,7 +19,7 @@ const styles = {
     top: 8,
     width: 392,
     backgroundColor: '#fff',
-    zIndex: 1,
+    zIndex: 5,
   },
   toolbar: {
     padding: 0,
