@@ -11,7 +11,7 @@ function lagAktiveLag(aktive, iKatalog, opplystKode, config) {
 }
 
 function lagEttLag(lag, opplystKode, viserKatalog, config) {
-  if (!lag.erSynlig) return
+  if (!lag.erSynlig && opplystKode !== lag.kode) return
   switch (lag.type) {
     case 'bakgrunn':
       lagBakgrunnskart(lag, config)
@@ -20,25 +20,20 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
       lagTerreng(lag, config)
       break
     default:
-      mekkSettMedLag(lag, opplystKode, config, viserKatalog)
+      opprettAktivtLag(lag, opplystKode, config, viserKatalog)
   }
 }
 
-function lagKatalogLag(drawArgs, config) {
-  const viz = draw[drawArgs.sourceType]
+function opprettEttLag(drawArgs, config) {
+  const viz = draw[drawArgs.type]
   if (!viz) {
-    console.warn('Unknown viz', drawArgs.sourceType)
+    console.warn('Unknown viz', drawArgs.type)
     return
   }
-  let layer = {
-    data: viz.lagPekerTilSource(drawArgs.kode),
-  }
 
-  viz.drawAll(drawArgs, layer)
-
-  viz.lagSource(drawArgs.kode, drawArgs.bbox, drawArgs.zoom, config)
-  console.log(layer)
-  config.layers[drawArgs.kode] = layer
+  const source = viz.lagSource(drawArgs.kode, drawArgs.bbox, drawArgs.zoom)
+  config.sources[drawArgs.kode] = source
+  config.layers[drawArgs.kode] = viz.drawAll(drawArgs)
 }
 
 function farge(farge, viserKatalog) {
@@ -50,8 +45,7 @@ function farge(farge, viserKatalog) {
   return farge
 }
 
-function mekkSettMedLag(lag, opplystKode, config, viserKatalog) {
-  console.log('lag', lag)
+function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
   let drawArgs = {
     forelderkode: lag.kode,
     kode: lag.kode,
@@ -61,7 +55,6 @@ function mekkSettMedLag(lag, opplystKode, config, viserKatalog) {
     bbox: lag.bbox,
     zoom: lag.zoom,
     type: lag.type,
-    sourceType: lag.sourceType,
     fileFormat: lag.fileFormat,
     visBarn: lag.visBarn,
   }
@@ -70,8 +63,7 @@ function mekkSettMedLag(lag, opplystKode, config, viserKatalog) {
       acc[e.kode] = e
       return acc
     })
-  console.log('mekk', drawArgs)
-  lagKatalogLag(drawArgs, config)
+  opprettEttLag(drawArgs, config)
 }
 
 function finnLagType(aktiveLag, type) {
@@ -116,7 +108,6 @@ function updateScene(config: Object, props: Object) {
   const meta = props.meta
   const viserKatalog = !!meta
   if (viserKatalog) {
-    console.log(meta)
     const formats = meta.formats || { polygon: 'pbf' }
     const sourceType = Object.keys(formats)[0]
     const fileFormat = formats[sourceType]
@@ -126,12 +117,12 @@ function updateScene(config: Object, props: Object) {
       opplystKode: props.opplystKode,
       bbox: meta.bbox,
       zoom: meta.zoom,
-      sourceType: sourceType,
+      type: sourceType,
       fileFormat: fileFormat,
+      visBarn: true,
     }
 
-    console.log('kata', drawArgs)
-    lagKatalogLag(drawArgs, config)
+    opprettEttLag(drawArgs, config)
   }
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config)
   return config

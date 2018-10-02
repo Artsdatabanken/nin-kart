@@ -1,7 +1,15 @@
-function drawAll(
-  { kode, barn, opplystKode, bbox, zoom, sourceType, fileFormat },
-  layer
-) {
+function drawAll({
+  kode,
+  barn,
+  opplystKode,
+  bbox,
+  zoom,
+  sourceType,
+  fileFormat,
+}) {
+  const layer = {
+    data: { source: kode },
+  }
   Object.keys(barn).forEach(barnkode => {
     const visEtiketter = barnkode === opplystKode
     layer[barnkode] = draw({
@@ -12,6 +20,7 @@ function drawAll(
       visEtiketter: visEtiketter,
     })
   })
+  return layer
 }
 
 function draw(args) {
@@ -42,18 +51,12 @@ function draw(args) {
   return layer
 }
 
-function lagSource(kode, bbox, zoom, config) {
+function lagSource(kode, bbox, zoom) {
   const source = {
     type: 'GeoJSON',
     url: `https://nintest.artsdatabanken.no/point/${kode}.geojson`,
   }
-
-  config.sources[kode] = source
+  return source
 }
 
-function lagPekerTilSource(kode) {
-  const peker = { source: kode }
-  return peker
-}
-
-export default { drawAll, lagSource, lagPekerTilSource }
+export default { drawAll, lagSource }
