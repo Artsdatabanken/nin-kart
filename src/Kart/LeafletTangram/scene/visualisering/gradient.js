@@ -1,23 +1,25 @@
-function drawAll(drawArgs, layer) {
-  layer[drawArgs.kode] = {
-    data: { source: drawArgs.forelderkode },
-    draw: {
-      gradient: {
-        order: 0,
+function drawAll(drawArgs) {
+  const layer = {
+    data: { source: drawArgs.kode },
+    [drawArgs.kode]: {
+      data: { source: drawArgs.forelderkode },
+      draw: {
+        gradient: {
+          order: 0,
+        },
       },
     },
   }
   return layer
 }
 
-function lagSource(kode, bbox, zoom, config) {
+function lagSource(kode, bbox, zoom) {
   if (!bbox || !zoom) {
     console.warn(`No map data for ${kode}`)
   }
   const source = {
     type: 'Raster',
     url: `https://nintest.artsdatabanken.no/gradient/${kode}/{z}/{x}/{y}`,
-    //    rasters: ['/gradient'],
   }
 
   if (bbox) {
@@ -28,16 +30,7 @@ function lagSource(kode, bbox, zoom, config) {
     source.min_zoom = zoom[0]
     source.max_zoom = zoom[1]
   }
-  config.sources[kode] = source
-  /*  config.sources.gradient = {
-    type: 'Raster',
-    url: 'gradient.png',
-  }*/
-  console.log(config.sources)
+  return source
 }
 
-function lagPekerTilSource(kode) {
-  return { source: kode }
-}
-
-export default { drawAll, lagSource, lagPekerTilSource }
+export default { drawAll, lagSource }

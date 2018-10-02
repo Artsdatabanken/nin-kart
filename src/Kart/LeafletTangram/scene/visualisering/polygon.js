@@ -1,20 +1,20 @@
 import tinycolor from 'tinycolor2'
 
-function drawAll(
-  {
-    kode,
-    barn,
-    farge,
-    opplystKode,
-    bbox,
-    zoom,
-    sourceType,
-    fileFormat,
-    visBarn,
-    visEtiketter,
-  },
-  layer
-) {
+function drawAll({
+  kode,
+  barn,
+  farge,
+  opplystKode,
+  bbox,
+  zoom,
+  sourceType,
+  fileFormat,
+  visBarn,
+  visEtiketter,
+}) {
+  const layer = {
+    data: { source: kode, layer: kode },
+  }
   if (visBarn)
     Object.keys(barn).forEach(barnkode => {
       const visEtiketter = barnkode === opplystKode
@@ -34,6 +34,7 @@ function drawAll(
       opplystKode: opplystKode,
       visEtiketter: visEtiketter,
     })
+  return layer
 }
 
 function draw(args) {
@@ -73,7 +74,7 @@ function draw(args) {
   return layer
 }
 
-function lagSource(kode, bbox, zoom, config) {
+function lagSource(kode, bbox, zoom) {
   if (!bbox || !zoom) {
     console.warn(`No map data for ${kode}`)
   }
@@ -89,12 +90,7 @@ function lagSource(kode, bbox, zoom, config) {
     source.min_zoom = zoom[0]
     source.max_zoom = zoom[1]
   }
-
-  config.sources[kode] = source
+  return source
 }
 
-function lagPekerTilSource(kode) {
-  return { source: kode, layer: kode }
-}
-
-export default { drawAll, lagSource, lagPekerTilSource }
+export default { drawAll, lagSource }

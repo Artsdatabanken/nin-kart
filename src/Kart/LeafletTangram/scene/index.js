@@ -20,25 +20,20 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
       lagTerreng(lag, config)
       break
     default:
-      mekkSettMedLag(lag, opplystKode, config, viserKatalog)
+      opprettAktivtLag(lag, opplystKode, config, viserKatalog)
   }
 }
 
-function lagKatalogLag(drawArgs, config) {
+function opprettEttLag(drawArgs, config) {
   const viz = draw[drawArgs.sourceType]
   if (!viz) {
     console.warn('Unknown viz', drawArgs.sourceType)
     return
   }
-  let layer = {
-    data: viz.lagPekerTilSource(drawArgs.kode),
-  }
 
-  viz.drawAll(drawArgs, layer)
-
-  viz.lagSource(drawArgs.kode, drawArgs.bbox, drawArgs.zoom, config)
-  console.log(layer)
-  config.layers[drawArgs.kode] = layer
+  const source = viz.lagSource(drawArgs.kode, drawArgs.bbox, drawArgs.zoom)
+  config.sources[drawArgs.kode] = source
+  config.layers[drawArgs.kode] = viz.drawAll(drawArgs)
 }
 
 function farge(farge, viserKatalog) {
@@ -50,7 +45,7 @@ function farge(farge, viserKatalog) {
   return farge
 }
 
-function mekkSettMedLag(lag, opplystKode, config, viserKatalog) {
+function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
   console.log('lag', lag)
   let drawArgs = {
     forelderkode: lag.kode,
@@ -71,7 +66,7 @@ function mekkSettMedLag(lag, opplystKode, config, viserKatalog) {
       return acc
     })
   console.log('mekk', drawArgs)
-  lagKatalogLag(drawArgs, config)
+  opprettEttLag(drawArgs, config)
 }
 
 function finnLagType(aktiveLag, type) {
@@ -116,7 +111,6 @@ function updateScene(config: Object, props: Object) {
   const meta = props.meta
   const viserKatalog = !!meta
   if (viserKatalog) {
-    console.log(meta)
     const formats = meta.formats || { polygon: 'pbf' }
     const sourceType = Object.keys(formats)[0]
     const fileFormat = formats[sourceType]
@@ -128,10 +122,11 @@ function updateScene(config: Object, props: Object) {
       zoom: meta.zoom,
       sourceType: sourceType,
       fileFormat: fileFormat,
+      visBarn: true,
     }
 
     console.log('kata', drawArgs)
-    lagKatalogLag(drawArgs, config)
+    opprettEttLag(drawArgs, config)
   }
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config)
   return config
