@@ -68,7 +68,8 @@ class Grunnkart extends React.Component<Props, State> {
     const sourceType = Object.keys(formats)[0]
     const fileFormat = formats[sourceType]
     const nyttLag = {
-      type: fileFormat,
+      type: sourceType,
+      fileFormat: fileFormat,
       farge: props.farge,
       kode: props.kode,
       tittel: språk(props.tittel),
@@ -79,8 +80,6 @@ class Grunnkart extends React.Component<Props, State> {
       erSynlig: true,
       kanSlettes: true,
       formats: formats,
-      fileFormat: fileFormat,
-      sourceType: sourceType,
     }
     koder.unshift(nyttLag)
 

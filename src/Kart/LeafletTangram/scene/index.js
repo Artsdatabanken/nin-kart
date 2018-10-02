@@ -11,7 +11,7 @@ function lagAktiveLag(aktive, iKatalog, opplystKode, config) {
 }
 
 function lagEttLag(lag, opplystKode, viserKatalog, config) {
-  if (!lag.erSynlig) return
+  if (!lag.erSynlig && opplystKode !== lag.kode) return
   switch (lag.type) {
     case 'bakgrunn':
       lagBakgrunnskart(lag, config)
@@ -25,9 +25,9 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
 }
 
 function opprettEttLag(drawArgs, config) {
-  const viz = draw[drawArgs.sourceType]
+  const viz = draw[drawArgs.type]
   if (!viz) {
-    console.warn('Unknown viz', drawArgs.sourceType)
+    console.warn('Unknown viz', drawArgs.type)
     return
   }
 
@@ -46,7 +46,6 @@ function farge(farge, viserKatalog) {
 }
 
 function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
-  console.log('lag', lag)
   let drawArgs = {
     forelderkode: lag.kode,
     kode: lag.kode,
@@ -56,7 +55,6 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
     bbox: lag.bbox,
     zoom: lag.zoom,
     type: lag.type,
-    sourceType: lag.sourceType,
     fileFormat: lag.fileFormat,
     visBarn: lag.visBarn,
   }
@@ -65,7 +63,6 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
       acc[e.kode] = e
       return acc
     })
-  console.log('mekk', drawArgs)
   opprettEttLag(drawArgs, config)
 }
 
@@ -120,12 +117,11 @@ function updateScene(config: Object, props: Object) {
       opplystKode: props.opplystKode,
       bbox: meta.bbox,
       zoom: meta.zoom,
-      sourceType: sourceType,
+      type: sourceType,
       fileFormat: fileFormat,
       visBarn: true,
     }
 
-    console.log('kata', drawArgs)
     opprettEttLag(drawArgs, config)
   }
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config)
