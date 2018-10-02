@@ -65,8 +65,8 @@ class Grunnkart extends React.Component<Props, State> {
   addSelected = props => {
     let koder = this.state.aktiveLag
     const formats = props.formats || { polygon: 'pbf' }
-    const fileFormat = Object.keys(formats)[0]
-    const sourceType = formats[fileFormat]
+    const sourceType = Object.keys(formats)[0]
+    const fileFormat = formats[sourceType]
     const nyttLag = {
       type: fileFormat,
       farge: props.farge,

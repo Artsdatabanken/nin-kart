@@ -1,4 +1,4 @@
-import { createColorTexture } from '../../../ramp'
+//import { createColorTexture } from '../../../ramp'
 
 const styles = {
   textures: {
@@ -13,14 +13,12 @@ const styles = {
       uniforms: {
         gradient: '/BS_6SE.png',
         //gradient: createColorTexture(document.createElement('canvas')),
-        min: 0.3,
-        max: 0.7,
+        min: 0.1,
+        max: 1.0,
       },
       blocks: {
         color:
           'float v = sampleRaster(0).r; float x = step(min,v);float y=(1.-step(max,v));color = texture2D(gradient, vec2(x*y*v, 0.5));',
-        //        'float v = sampleRaster(0).r; float x = v*step(min,v);float y=(1.-step(max,v));color = texture2D(gradient, vec2(x*y, 0.5));',
-        //        'float v = sampleRaster(0).r; color = smoothstep(vec4(1.,1.,1.,1.), texture2D(gradient, vec2(v, 0.5)), v);', //color.a=0.5;',
       },
     },
   },

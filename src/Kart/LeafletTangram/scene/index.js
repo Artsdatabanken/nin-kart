@@ -26,6 +26,10 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
 
 function lagKatalogLag(drawArgs, config) {
   const viz = draw[drawArgs.sourceType]
+  if (!viz) {
+    console.warn('Unknown viz', drawArgs.sourceType)
+    return
+  }
   let layer = {
     data: viz.lagPekerTilSource(drawArgs.kode),
   }
@@ -33,24 +37,8 @@ function lagKatalogLag(drawArgs, config) {
   viz.drawAll(drawArgs, layer)
 
   viz.lagSource(drawArgs.kode, drawArgs.bbox, drawArgs.zoom, config)
-  config.layers[drawArgs.kode + '_kat'] = layer
-}
-
-function mekkEttLag(
-  { forelderkode, kode, farge, visEtiketter, opplystKode, bbox, zoom, type },
-  config
-) {
-  const viz = draw[type]
-  const layer = viz.draw({
-    kode: kode,
-    forelderkode: forelderkode,
-    farge: farge,
-    opplystKode: opplystKode,
-    visEtiketter: visEtiketter,
-  })
-  layer.data = viz.lagPekerTilSource(forelderkode)
-  viz.lagSource(forelderkode, bbox, zoom, config)
-  config.layers[kode] = layer
+  console.log(layer)
+  config.layers[drawArgs.kode] = layer
 }
 
 function farge(farge, viserKatalog) {
@@ -63,39 +51,25 @@ function farge(farge, viserKatalog) {
 }
 
 function mekkSettMedLag(lag, opplystKode, config, viserKatalog) {
-  if (lag.visBarn)
-    Object.keys(lag.barn).forEach(i => {
-      const barn = lag.barn[i]
-      if (barn.erSynlig) {
-        mekkEttLag(
-          {
-            forelderkode: lag.kode,
-            kode: barn.kode,
-            farge: farge(barn.farge, viserKatalog),
-            visEtiketter: lag.visEtiketter,
-            opplystKode: opplystKode,
-            bbox: lag.bbox,
-            zoom: lag.zoom,
-            type: lag.type,
-          },
-          config
-        )
-      }
-    })
-  else
-    mekkEttLag(
-      {
-        forelderkode: lag.kode,
-        kode: lag.kode,
-        farge: farge(lag.farge, viserKatalog),
-        visEtiketter: lag.visEtiketter,
-        opplystKode: opplystKode,
-        bbox: lag.bbox,
-        zoom: lag.zoom,
-        type: lag.type,
-      },
-      config
-    )
+  let drawArgs = {
+    forelderkode: lag.kode,
+    kode: lag.kode,
+    barn: lag.barn.reduce((acc, e) => {
+      acc[e.kode] = e
+      return acc
+    }),
+    farge: farge(lag.farge, viserKatalog),
+    visEtiketter: lag.visEtiketter,
+    opplystKode: opplystKode,
+    bbox: lag.bbox,
+    zoom: lag.zoom,
+    type: lag.type,
+    sourceType: lag.sourceType,
+    fileFormat: lag.fileFormat,
+    visBarn: lag.visBarn,
+  }
+  console.log('mekk', drawArgs)
+  lagKatalogLag(drawArgs, config)
 }
 
 function finnLagType(aktiveLag, type) {
@@ -144,18 +118,18 @@ function updateScene(config: Object, props: Object) {
     const formats = meta.formats || { polygon: 'pbf' }
     const sourceType = Object.keys(formats)[0]
     const fileFormat = formats[sourceType]
-    lagKatalogLag(
-      {
-        kode: meta.kode,
-        barn: meta.barn || { [props.meta.kode]: props.meta },
-        opplystKode: props.opplystKode,
-        bbox: meta.bbox,
-        zoom: meta.zoom,
-        sourceType: sourceType,
-        fileFormat: fileFormat,
-      },
-      config
-    )
+    const drawArgs = {
+      kode: meta.kode,
+      barn: meta.barn || { [props.meta.kode]: props.meta },
+      opplystKode: props.opplystKode,
+      bbox: meta.bbox,
+      zoom: meta.zoom,
+      sourceType: sourceType,
+      fileFormat: fileFormat,
+    }
+
+    console.log('kata', drawArgs)
+    lagKatalogLag(drawArgs, config)
   }
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config)
   return config
