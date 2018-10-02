@@ -48,11 +48,13 @@ class Polygon extends Component {
           toggled={visEtiketter}
           onClick={() => onUpdateLayerProp(kode, 'visEtiketter', !visEtiketter)}
         />
-        <Veksle
-          tittel={'Vis ' + undernivå}
-          toggled={visBarn}
-          onClick={() => onUpdateLayerProp(kode, 'visBarn', !visBarn)}
-        />
+        {Object.keys(barn).length > 0 && (
+          <Veksle
+            tittel={'Vis ' + undernivå}
+            toggled={visBarn}
+            onClick={() => onUpdateLayerProp(kode, 'visBarn', !visBarn)}
+          />
+        )}
         {visBarn ? (
           <List>
             <ListSubheader style={{ textTransform: 'capitalize' }}>
