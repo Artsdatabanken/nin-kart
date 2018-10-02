@@ -1,16 +1,21 @@
 function lagSource(kode, bbox, zoom, config) {
   if (!bbox || !zoom) {
     console.warn(`No map data for ${kode}`)
-    return
   }
-  const [ll, ur] = bbox
-  config.sources[kode] = {
+  const source = {
     type: 'MVT',
     url: `https://nintest.artsdatabanken.no/polygon/${kode}/{z}/{x}/{y}`,
-    bounds: [ll[1], ll[0], ur[1], ur[0]],
-    min_zoom: zoom[0],
-    max_zoom: zoom[1],
   }
+  if (bbox) {
+    const [ll, ur] = bbox
+    source.bounds = [ll[1], ll[0], ur[1], ur[0]]
+  }
+  if (zoom) {
+    source.min_zoom = zoom[0]
+    source.max_zoom = zoom[1]
+  }
+
+  config.sources[kode] = source
 }
 
 function lagPekerTilSource(kode) {

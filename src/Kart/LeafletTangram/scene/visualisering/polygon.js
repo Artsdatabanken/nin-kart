@@ -1,0 +1,80 @@
+import tinycolor from 'tinycolor2'
+
+function drawAll(
+  { kode, barn, opplystKode, bbox, zoom, sourceType, fileFormat },
+  layer
+) {
+  Object.keys(barn).forEach(barnkode => {
+    const visEtiketter = barnkode === opplystKode
+    layer[barnkode] = draw({
+      kode: barnkode,
+      forelderkode: kode,
+      farge: barn[barnkode].farge,
+      opplystKode: opplystKode,
+      visEtiketter: visEtiketter,
+    })
+  })
+}
+
+function draw(args) {
+  let { kode, forelderkode, farge, opplystKode, visEtiketter } = args
+  farge = opplystKode === kode ? '#f88' : farge
+  const layer = {
+    draw: {
+      mu_polygons: {
+        order: 100,
+        color: farge,
+      },
+      lines: {
+        order: 100,
+        color: tinycolor(farge)
+          .darken(30)
+          .toHexString(),
+        width: '1.0px',
+      },
+    },
+  }
+  if (kode !== forelderkode) layer.filter = { code: kode }
+  if (kode === opplystKode) {
+    const lines = layer.draw.lines
+    lines.width = '2px'
+  }
+  if (visEtiketter) {
+    layer.draw.text = {
+      text_source: ['name', 'title'],
+      font: {
+        family: 'Roboto',
+        fill: 'hsla(0, 0%, 100%, 1.0)',
+        stroke: { color: 'hsla(0, 0%, 0%, 0.7)', width: 2 },
+        size: '13px',
+      },
+    }
+  }
+  return layer
+}
+
+function lagSource(kode, bbox, zoom, config) {
+  if (!bbox || !zoom) {
+    console.warn(`No map data for ${kode}`)
+  }
+  const source = {
+    type: 'MVT',
+    url: `https://nintest.artsdatabanken.no/polygon/${kode}/{z}/{x}/{y}`,
+  }
+  if (bbox) {
+    const [ll, ur] = bbox
+    source.bounds = [ll[1], ll[0], ur[1], ur[0]]
+  }
+  if (zoom) {
+    source.min_zoom = zoom[0]
+    source.max_zoom = zoom[1]
+  }
+
+  config.sources[kode] = source
+}
+
+function lagPekerTilSource(kode) {
+  return { source: kode, layer: kode }
+}
+
+export default { drawAll, lagSource, lagPekerTilSource }
