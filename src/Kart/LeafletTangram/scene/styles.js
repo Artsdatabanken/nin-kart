@@ -1,3 +1,5 @@
+import { createColorTexture } from '../../../ramp'
+
 const styles = {
   textures: {
     gradient: {
@@ -6,17 +8,19 @@ const styles = {
     },
   },
   gradient: {
-    texcoords: true,
     base: 'raster',
-    raster: 'custom',
     shaders: {
       uniforms: {
-        gradient: '/gradient.png',
+        gradient: '/BS_6SE.png',
+        //gradient: createColorTexture(document.createElement('canvas')),
+        min: 0.3,
+        max: 0.7,
       },
       blocks: {
         color:
-          'float v = sampleRaster(0).r; color = v*texture2D(gradient, vec2(v, 0.5));',
-        //        "normal": "normal = normalize(sampleRaster(1).xyz * 2. - 1.); // normal from second raster (normal tiles)"
+          'float v = sampleRaster(0).r; float x = step(min,v);float y=(1.-step(max,v));color = texture2D(gradient, vec2(x*y*v, 0.5));',
+        //        'float v = sampleRaster(0).r; float x = v*step(min,v);float y=(1.-step(max,v));color = texture2D(gradient, vec2(x*y, 0.5));',
+        //        'float v = sampleRaster(0).r; color = smoothstep(vec4(1.,1.,1.,1.), texture2D(gradient, vec2(v, 0.5)), v);', //color.a=0.5;',
       },
     },
   },
