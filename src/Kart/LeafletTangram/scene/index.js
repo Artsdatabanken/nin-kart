@@ -51,13 +51,10 @@ function farge(farge, viserKatalog) {
 }
 
 function mekkSettMedLag(lag, opplystKode, config, viserKatalog) {
+  console.log('lag', lag)
   let drawArgs = {
     forelderkode: lag.kode,
     kode: lag.kode,
-    barn: lag.barn.reduce((acc, e) => {
-      acc[e.kode] = e
-      return acc
-    }),
     farge: farge(lag.farge, viserKatalog),
     visEtiketter: lag.visEtiketter,
     opplystKode: opplystKode,
@@ -68,6 +65,11 @@ function mekkSettMedLag(lag, opplystKode, config, viserKatalog) {
     fileFormat: lag.fileFormat,
     visBarn: lag.visBarn,
   }
+  if (lag.visBarn)
+    drawArgs.barn = lag.barn.reduce((acc, e) => {
+      acc[e.kode] = e
+      return acc
+    })
   console.log('mekk', drawArgs)
   lagKatalogLag(drawArgs, config)
 }

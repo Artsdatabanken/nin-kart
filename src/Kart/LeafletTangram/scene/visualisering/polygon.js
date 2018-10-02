@@ -1,19 +1,39 @@
 import tinycolor from 'tinycolor2'
 
 function drawAll(
-  { kode, barn, opplystKode, bbox, zoom, sourceType, fileFormat },
+  {
+    kode,
+    barn,
+    farge,
+    opplystKode,
+    bbox,
+    zoom,
+    sourceType,
+    fileFormat,
+    visBarn,
+    visEtiketter,
+  },
   layer
 ) {
-  Object.keys(barn).forEach(barnkode => {
-    const visEtiketter = barnkode === opplystKode
-    layer[barnkode] = draw({
-      kode: barnkode,
+  if (visBarn)
+    Object.keys(barn).forEach(barnkode => {
+      const visEtiketter = barnkode === opplystKode
+      layer[barnkode] = draw({
+        kode: barnkode,
+        forelderkode: kode,
+        farge: barn[barnkode].farge,
+        opplystKode: opplystKode,
+        visEtiketter: visEtiketter,
+      })
+    })
+  else
+    layer[kode] = draw({
+      kode: kode,
       forelderkode: kode,
-      farge: barn[barnkode].farge,
+      farge: farge,
       opplystKode: opplystKode,
       visEtiketter: visEtiketter,
     })
-  })
 }
 
 function draw(args) {
