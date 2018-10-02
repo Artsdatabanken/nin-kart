@@ -1,6 +1,5 @@
 function drawAll(
   { kode, barn, opplystKode, bbox, zoom, sourceType, fileFormat },
-  viz,
   layer
 ) {
   Object.keys(barn).forEach(barnkode => {

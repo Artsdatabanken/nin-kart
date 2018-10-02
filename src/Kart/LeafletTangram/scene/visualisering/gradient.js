@@ -1,8 +1,8 @@
-function drawAll(drawArgs, viz, layer) {
+function drawAll(drawArgs, layer) {
   layer[drawArgs.kode] = {
     data: { source: drawArgs.forelderkode },
     draw: {
-      raster: {
+      gradient: {
         order: 0,
       },
     },
@@ -17,6 +17,7 @@ function lagSource(kode, bbox, zoom, config) {
   const source = {
     type: 'Raster',
     url: `https://nintest.artsdatabanken.no/gradient/${kode}/{z}/{x}/{y}`,
+    //    rasters: ['/gradient'],
   }
 
   if (bbox) {
@@ -28,6 +29,11 @@ function lagSource(kode, bbox, zoom, config) {
     source.max_zoom = zoom[1]
   }
   config.sources[kode] = source
+  /*  config.sources.gradient = {
+    type: 'Raster',
+    url: 'gradient.png',
+  }*/
+  console.log(config.sources)
 }
 
 function lagPekerTilSource(kode) {

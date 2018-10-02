@@ -1,10 +1,21 @@
 const styles = {
+  textures: {
+    gradient: {
+      url: 'http://localhost:3000/xxxgradient.png',
+      filtering: 'nearest',
+    },
+  },
   gradient: {
-    //    base: 'polygons',
-    //    raster: 'custom',
+    texcoords: true,
+    base: 'raster',
+    raster: 'custom',
     shaders: {
+      uniforms: {
+        gradient: '/gradient.png',
+      },
       blocks: {
-        color: 'color = sampleRaster(0);',
+        color:
+          'float v = sampleRaster(0).r; color = v*texture2D(gradient, vec2(v, 0.5));',
         //        "normal": "normal = normalize(sampleRaster(1).xyz * 2. - 1.); // normal from second raster (normal tiles)"
       },
     },

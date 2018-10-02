@@ -30,7 +30,7 @@ function lagKatalogLag(drawArgs, config) {
     data: viz.lagPekerTilSource(drawArgs.kode),
   }
 
-  viz.drawAll(drawArgs, viz, layer)
+  viz.drawAll(drawArgs, layer)
 
   viz.lagSource(drawArgs.kode, drawArgs.bbox, drawArgs.zoom, config)
   config.layers[drawArgs.kode + '_kat'] = layer

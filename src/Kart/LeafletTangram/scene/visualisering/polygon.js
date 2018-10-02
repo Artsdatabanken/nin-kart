@@ -2,7 +2,6 @@ import tinycolor from 'tinycolor2'
 
 function drawAll(
   { kode, barn, opplystKode, bbox, zoom, sourceType, fileFormat },
-  viz,
   layer
 ) {
   Object.keys(barn).forEach(barnkode => {
