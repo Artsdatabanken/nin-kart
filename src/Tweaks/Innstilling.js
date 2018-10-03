@@ -1,6 +1,5 @@
 import { withTheme } from '@material-ui/core/styles'
 import React from 'react'
-import Label from './Label'
 import { ListItem, ListItemAvatar, ListItemText } from '@material-ui/core'
 
 const Innstilling = ({
