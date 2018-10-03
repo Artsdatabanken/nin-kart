@@ -69,7 +69,7 @@ class Kodelisteelement extends React.Component<Props, State> {
         )}
         <ListItemText
           primary={språk(meta.tittel)}
-          secondary={visKode && kode}
+          secondary={visKode && kode.substring(3)}
         />
       </ListItem>
     )
