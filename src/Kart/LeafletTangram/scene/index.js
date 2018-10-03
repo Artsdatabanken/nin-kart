@@ -17,7 +17,7 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
       lagBakgrunnskart(lag, config)
       break
     case 'terreng':
-      lagTerreng(lag, config)
+      lagTerreng(lag.terreng, config)
       break
     default:
       opprettAktivtLag(lag, opplystKode, config, viserKatalog)
@@ -127,7 +127,7 @@ function updateScene(config: Object, props: Object) {
       zoom: meta.zoom,
       type: sourceType,
       fileFormat: fileFormat,
-      gradient: { filterMin: 0.2, filterMax: 0.8 },
+      gradient: { filterMin: 0, filterMax: 1 },
       visBarn: true,
     }
 

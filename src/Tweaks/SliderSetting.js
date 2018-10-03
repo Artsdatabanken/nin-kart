@@ -15,19 +15,20 @@ const SliderSetting = ({
 }) => (
   <Innstilling
     tittel={tittel}
-    undertittel={undertittel}
     icon={icon}
     disabled={disabled}
-  >
-    <Slider
-      style={{ paddingLeft: 28, paddingTop: 0 }}
-      disabled={disabled}
-      min={min || 0}
-      max={max || 1}
-      step={step || 0.01}
-      value={value}
-      onChange={(event, value) => onChange(value)}
-    />
-  </Innstilling>
+    verdi={value.toFixed(1)}
+    undertittel={
+      <Slider
+        style={{ paddingLeft: 0, paddingTop: 8 }}
+        disabled={disabled}
+        min={min || 0}
+        max={max || 1}
+        step={step || 0.01}
+        value={value}
+        onChange={(event, value) => onChange(value)}
+      />
+    }
+  />
 )
 export default SliderSetting

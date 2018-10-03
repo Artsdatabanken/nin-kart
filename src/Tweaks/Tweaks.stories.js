@@ -73,6 +73,13 @@ const lag = {
   fylkesgrensefarge: 'rgba(185,185,185,1.0)',
   landegrense: true,
   landegrensefarge: 'rgba(195,195,195,1.0)',
+  terreng: {
+    vertikaltOverdriv: 2.0,
+    visKontur: false,
+    visEtikettTopp: false,
+    konturintervall: 100.0,
+    visEtikettKontur: true,
+  },
 }
 
 const Wrapper = ({ children, url }) => (
@@ -105,7 +112,7 @@ storiesOf('Tweaks', module)
   ))
   .add('terreng', () => (
     <Wrapper>
-      <Tweaks type={'terreng'} />
+      <Tweaks type={'terreng'} terreng={lag.terreng} />
     </Wrapper>
   ))
   .add('polygon', () => (

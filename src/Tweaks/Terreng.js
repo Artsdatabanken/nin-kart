@@ -1,20 +1,25 @@
 import { ListSubheader } from '@material-ui/core'
 import { withTheme } from '@material-ui/core/styles'
-import { Close, Landscape, SwapVert } from '@material-ui/icons'
+import {
+  Label,
+  Equalizer,
+  Close,
+  Landscape,
+  SwapVert,
+} from '@material-ui/icons'
 import React, { Component } from 'react'
 import SliderSetting from './SliderSetting'
 import Veksle from './Veksle'
 class Terreng extends Component {
   render() {
+    const { kode, terreng, onUpdateLayerProp } = this.props
     const {
-      kode,
       vertikaltOverdriv = 2.5,
       konturintervall = 50,
       visKontur = true,
       visEtikettKontur = true,
       visEtikettTopp = false,
-      onUpdateLayerProp,
-    } = this.props
+    } = terreng
     return (
       <React.Fragment>
         <ListSubheader>Terreng</ListSubheader>
@@ -26,28 +31,38 @@ class Terreng extends Component {
           tittel="Vertikal overdrivelse"
           undertittel={vertikaltOverdriv.toFixed(1) + 'x'}
           icon={<SwapVert />}
-          onChange={v => onUpdateLayerProp(kode, 'vertikaltOverdriv', v)}
+          onChange={v =>
+            onUpdateLayerProp(kode, 'terreng.vertikaltOverdriv', v)
+          }
         />
         <Veksle
           tittel="Etiketter med høydeangivelse av topper"
           toggled={visEtikettTopp}
           icon={<Close />}
           onClick={() =>
-            onUpdateLayerProp(kode, 'visEtikettTopp', !visEtikettTopp)
+            onUpdateLayerProp(kode, 'terreng.visEtikettTopp', !visEtikettTopp)
           }
         />
         <ListSubheader>Kontur (trinndelt høydevisualisering)</ListSubheader>
         <Veksle
           tittel="Konturlinjer"
+          icon={<Equalizer />}
           toggled={visKontur}
-          onClick={() => onUpdateLayerProp(kode, 'visKontur', !visKontur)}
+          onClick={() =>
+            onUpdateLayerProp(kode, 'terreng.visKontur', !visKontur)
+          }
         />
         <Veksle
           tittel="Etiketter med høydeangivelse"
+          icon={<Label />}
           disabled={!visKontur}
           toggled={visEtikettKontur}
           onClick={() =>
-            onUpdateLayerProp(kode, 'visEtikettKontur', !visEtikettKontur)
+            onUpdateLayerProp(
+              kode,
+              'terreng.visEtikettKontur',
+              !visEtikettKontur
+            )
           }
         />
         <SliderSetting
@@ -59,7 +74,7 @@ class Terreng extends Component {
           max={1000}
           step={10}
           icon={<Landscape />}
-          onChange={v => onUpdateLayerProp(kode, 'konturintervall', v)}
+          onChange={v => onUpdateLayerProp(kode, 'terreng.konturintervall', v)}
         />
       </React.Fragment>
     )

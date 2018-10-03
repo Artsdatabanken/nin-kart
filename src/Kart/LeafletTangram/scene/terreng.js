@@ -1,7 +1,8 @@
 // @flow
 import terrengmal from './mal/terreng'
 
-function lagTerreng(lag, config) {
+function lagTerreng(drawProps, config) {
+  console.log(drawProps)
   config.layers.terreng = terrengmal
   config.sources.normals = {
     type: 'Raster',
@@ -16,7 +17,7 @@ function lagTerreng(lag, config) {
     raster: 'normal',
     shaders: {
       uniforms: {
-        u_scale: lag.vertikaltOverdriv,
+        u_scale: drawProps.vertikaltOverdriv,
         u_envmap: '/1_gray_lys2.jpg',
       },
       blocks: {

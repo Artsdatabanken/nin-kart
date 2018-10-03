@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import KartlagElement from './Kartlagelement'
 class TerrenglagElement extends Component {
   undertittel() {
-    const { vertikaltOverdriv, visKontur, konturintervall } = this.props
+    const { vertikaltOverdriv, visKontur, konturintervall } = this.props.terreng
     let r = []
     if (vertikaltOverdriv !== 1)
       r.push(vertikaltOverdriv.toFixed(1) + 'x overdrevet')

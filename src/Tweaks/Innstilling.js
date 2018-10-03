@@ -1,44 +1,35 @@
 import { withTheme } from '@material-ui/core/styles'
 import React from 'react'
 import Label from './Label'
+import { ListItem, ListItemAvatar, ListItemText } from '@material-ui/core'
+
 const Innstilling = ({
   tittel,
   undertittel,
+  verdi,
   icon,
   disabled,
   children,
   theme,
 }) => (
-  <div>
-    {undertittel && (
+  <ListItem disabled={disabled}>
+    {verdi && (
       <div
         style={{
           fontFamily: theme.typography.fontFamily,
           position: 'absolute',
-          right: 16,
+          right: 20,
+          top: 10,
           color: theme.palette.text.disabled,
         }}
       >
-        {undertittel}
+        {verdi}
       </div>
     )}
-    <Label disabled={disabled}>{tittel}</Label>
-    <div style={{ position: 'relative', top: -2, left: 24 }}>{icon}</div>
-    <div style={{ display: 'inline-block', left: '8px' }}>
-      <div
-        style={{
-          position: 'relative',
-          float: 'left',
-          paddingLeft: '32px',
-          paddingBottom: '8px',
-          paddingTop: '16px',
-          width: '328px',
-        }}
-      >
-        {children}
-      </div>
-    </div>
-  </div>
+    {icon && <ListItemAvatar>{icon}</ListItemAvatar>}
+    <ListItemText primary={tittel} secondary={undertittel} />
+    {children}
+  </ListItem>
 )
 
 export default withTheme()(Innstilling)
