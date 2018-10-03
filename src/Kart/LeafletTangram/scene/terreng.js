@@ -6,8 +6,8 @@ function lagTerreng(lag, config) {
   config.sources.normals = {
     type: 'Raster',
     url:
-      'https://tile.nextzen.org/tilezen/terrain/v1/256/normal/{z}/{x}/{y}.png?api_key=Tqy6UAn9ShClyvfUon001g',
-    //'https://nintest.artsdatabanken.no/normals/normals/{z}/{x}/{y}',
+      //  'https://tile.nextzen.org/tilezen/terrain/v1/256/normal/{z}/{x}/{y}.png?api_key=Tqy6UAn9ShClyvfUon001g',
+      'https://nintest.artsdatabanken.no/terrain/normals/{z}/{x}/{y}',
     max_zoom: 15,
   }
   config.styles.terreng = {
