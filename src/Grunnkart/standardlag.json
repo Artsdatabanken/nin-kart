@@ -22,11 +22,13 @@
     "kode": "terreng",
     "type": "terreng",
     "tittel": "3D terreng",
-    "erSynlig": false,
-    "vertikaltOverdriv": 2.0,
-    "visKontur": false,
-    "visEtikettTopp": false,
-    "konturintervall": 100.0,
-    "visEtikettKontur": true
+    "erSynlig": true,
+    "terreng": {
+      "vertikaltOverdriv": 2.0,
+      "visKontur": false,
+      "visEtikettTopp": false,
+      "konturintervall": 100.0,
+      "visEtikettKontur": true
+    }
   }
 ]

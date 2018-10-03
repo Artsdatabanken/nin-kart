@@ -9,7 +9,7 @@ import {
 import React from 'react'
 
 const Veksle = ({ tittel, icon, toggled, disabled, onClick, muiTheme }) => (
-  <ListItem>
+  <ListItem disabled={disabled}>
     {icon && <ListItemAvatar>{icon}</ListItemAvatar>}
     <ListItemText primary={tittel} />
     <ListItemSecondaryAction>

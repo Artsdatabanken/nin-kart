@@ -16,6 +16,8 @@ class Tweaks extends React.Component {
         return <Terreng {...this.props} />
       case 'gradient':
         return <Gradient {...this.props} />
+      case 'polygon':
+        return <Polygon {...this.props} />
       default:
         console.error('Unknown ' + type)
         return <Polygon {...this.props} />
