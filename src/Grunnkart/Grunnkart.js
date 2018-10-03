@@ -81,6 +81,10 @@ class Grunnkart extends React.Component<Props, State> {
       kanSlettes: true,
       formats: formats,
     }
+    if (formats.gradient) {
+      nyttLag.gradient = { filterMin: 0.4, filterMax: 0.8 }
+    }
+    console.log(nyttLag)
     koder.unshift(nyttLag)
 
     this.setState({
@@ -174,10 +178,14 @@ class Grunnkart extends React.Component<Props, State> {
     this.props.history.push('/')
   }
 
+  // Supports composite keys i.e. gradient.filterMin
   handleUpdateLayerProp = (kode, key, value) => {
     const aktive = this.state.aktiveLag
-    const aktivt = aktive.find(x => x.kode === kode)
-    aktivt[key] = value
+    let node = aktive.find(x => x.kode === kode)
+    const parts = key.split('.')
+    for (let i = 0; i < parts.length - 1; i++) node = node[parts[i]]
+    const vkey = parts[parts.length - 1]
+    node[vkey] = value
     this.setState({ aktiveLag: [...aktive] })
   }
 

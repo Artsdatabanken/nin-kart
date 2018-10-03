@@ -13,6 +13,26 @@ function drawAll(drawArgs) {
   return layer
 }
 
+function lagStyle({ filterMin, filterMax }) {
+  console.log('gradient', filterMin, filterMax)
+  const gradient = {
+    base: 'raster',
+    shaders: {
+      uniforms: {
+        gradient: '/BS_6SE.png',
+        //gradient: createColorTexture(document.createElement('canvas')),
+        min: filterMin,
+        max: filterMax,
+      },
+      blocks: {
+        color:
+          'float v = sampleRaster(0).r; float x = step(min,v);float y=(1.-step(max,v));color = texture2D(gradient, vec2(x*y*v, 0.5));',
+      },
+    },
+  }
+  return { name: 'gradient', value: gradient }
+}
+
 function lagSource(kode, bbox, zoom) {
   if (!bbox || !zoom) {
     console.warn(`No map data for ${kode}`)
@@ -33,4 +53,4 @@ function lagSource(kode, bbox, zoom) {
   return source
 }
 
-export default { drawAll, lagSource }
+export default { drawAll, lagSource, lagStyle }

@@ -91,7 +91,6 @@ class TopBarContainer extends Component<Props, State> {
       <Route
         render={({ match, history }) => {
           const isAtRoot = history.location.pathname === '/'
-          console.log(this.state.searchResults, isAtRoot, focused)
           return (
             <React.Fragment>
               <TopBar
