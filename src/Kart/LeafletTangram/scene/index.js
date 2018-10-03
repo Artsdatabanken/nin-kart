@@ -32,6 +32,13 @@ function opprettEttLag(drawArgs, config) {
   }
 
   const source = viz.lagSource(drawArgs.kode, drawArgs.bbox, drawArgs.zoom)
+  if (viz.lagStyle) {
+    console.log(drawArgs.type)
+    console.log(drawArgs[drawArgs.type])
+    const style = viz.lagStyle(drawArgs[drawArgs.type])
+    console.log(style)
+    config.styles[style.name] = style.value
+  }
   config.sources[drawArgs.kode] = source
   config.layers[drawArgs.kode] = viz.drawAll(drawArgs)
 }
@@ -57,6 +64,7 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
     type: lag.type,
     fileFormat: lag.fileFormat,
     visBarn: lag.visBarn,
+    gradient: lag.gradient,
   }
   if (lag.visBarn)
     drawArgs.barn = lag.barn.reduce((acc, e) => {
@@ -119,6 +127,7 @@ function updateScene(config: Object, props: Object) {
       zoom: meta.zoom,
       type: sourceType,
       fileFormat: fileFormat,
+      gradient: { filterMin: 0.2, filterMax: 0.8 },
       visBarn: true,
     }
 
