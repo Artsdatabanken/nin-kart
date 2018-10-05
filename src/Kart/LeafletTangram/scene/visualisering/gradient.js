@@ -5,7 +5,7 @@ function drawAll(drawArgs) {
       data: { source: drawArgs.forelderkode },
       draw: {
         gradient: {
-          order: 0,
+          order: 700,
         },
       },
     },
@@ -17,6 +17,7 @@ function lagStyle({ filterMin, filterMax }) {
   console.log('gradient', filterMin, filterMax)
   const gradient = {
     base: 'raster',
+    blend: 'multiply',
     shaders: {
       uniforms: {
         gradient: '/BS_6SE.png',

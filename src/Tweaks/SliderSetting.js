@@ -11,13 +11,14 @@ const SliderSetting = ({
   min,
   max,
   step,
+  decimals = 1,
   onChange,
 }) => (
   <Innstilling
     tittel={tittel}
     icon={icon}
     disabled={disabled}
-    verdi={value.toFixed(1)}
+    verdi={value.toFixed(decimals)}
     undertittel={
       <Slider
         style={{ paddingLeft: 0, paddingTop: 8 }}

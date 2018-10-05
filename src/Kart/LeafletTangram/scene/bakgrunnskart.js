@@ -1,62 +1,32 @@
 // @flow
 import bkmal from './mal/bakgrunnskart'
 
-function bakgrunnskartlag(kode, erSynlig, style, farge, config) {
-  if (!erSynlig) return
+function opprett(kode, lag, config, style) {
+  if (!lag[kode]) return
+  let mal = bkmal[kode]
+  if (mal.draw) mal.draw[style].color = lag[kode + '_farge']
+  config.layers[kode] = mal
+}
+
+function opprettTekst(kode, lag, config, style) {
+  if (!lag[kode]) return
   let mal = bkmal[kode]
 
-  if (mal.draw) mal.draw[style].color = farge
-  //mal.source.osm = lagLayerSource(kode)
+  mal.draw.text.font.fill = lag[kode + '_farge']
   config.layers[kode] = mal
-  /*
-  config.sources.openstreetmap = {
-    type: 'MVT',
-    url: `https://tiles.artsdatabanken.no/data/osm/{z}/{x}/{y}.pbf`,
-    bounds: [-9.676172, 57.958206, 34.687848, 81.028018],
-    //      bounds: [4.704237, 57.960319, 31.16815, 70.907624],
-    max_zoom: 8,
-  }*/
 }
 
 function lagBakgrunnskart(lag, config) {
-  bakgrunnskartlag(
-    'kommune',
-    lag.kommunegrense,
-    'boundary',
-    lag.kommunegrensefarge,
-    config
-  )
-  bakgrunnskartlag(
-    'fylke',
-    lag.fylkesgrense,
-    'boundary',
-    lag.fylkesgrensefarge,
-    config
-  )
-  bakgrunnskartlag(
-    'land',
-    lag.landegrense,
-    'boundary',
-    lag.landegrensefarge,
-    config
-  )
-  bakgrunnskartlag('vann', lag.vann, 'polygons', lag.vannfarge, config)
-  bakgrunnskartlag('vannvei', lag.vann, 'lines', lag.vannfarge, config)
-
-  bakgrunnskartlag(
-    'transport',
-    lag.transport,
-    'mu_lines',
-    lag.transportfarge,
-    config
-  )
-  bakgrunnskartlag(
-    'transport_navn',
-    true || lag.transport_navn,
-    'text',
-    lag.transportfarge,
-    config
-  )
+  if (!lag.erSynlig) return
+  opprett('kommunegrense', lag, config, 'boundary')
+  opprett('fylkesgrense', lag, config, 'boundary')
+  opprett('landegrense', lag, config, 'boundary')
+  opprett('vann', lag, config, 'polygons')
+  opprett('vannvei', lag, config, 'lines')
+  opprett('transport', lag, config, 'mu_lines')
+  opprettTekst('transport_navn', lag, config)
+  opprettTekst('sted_navn', lag, config)
+  opprettTekst('vann_navn', lag, config)
 }
 
 export { lagBakgrunnskart }

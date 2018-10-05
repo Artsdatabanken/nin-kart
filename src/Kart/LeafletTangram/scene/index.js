@@ -79,7 +79,6 @@ function finnLagType(aktiveLag, type) {
 }
 
 function lagToppnivå(props) {
-  const bakgrunn = finnLagType(props.aktiveLag, 'bakgrunn')
   const config = {
     sources: {
       osm: {
@@ -97,11 +96,8 @@ function lagToppnivå(props) {
     lights: createLights(),
     layers: {},
     styles: createStyles(),
-    scene: {
-      background: { color: bakgrunn.land ? bakgrunn.landfarge : '#ccc' },
-    },
+    scene: { background: {} },
   }
-
   return config
 }
 
@@ -112,6 +108,10 @@ function createScene(props: Object) {
 }
 
 function updateScene(config: Object, props: Object) {
+  const bakgrunn = finnLagType(props.aktiveLag, 'bakgrunn')
+  config.scene.background.color = bakgrunn.land
+    ? bakgrunn.land_farge
+    : '#f2f2f2'
   config.layers = {}
   const meta = props.meta
   const viserKatalog = !!meta
