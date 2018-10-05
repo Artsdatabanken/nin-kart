@@ -87,10 +87,10 @@ class Bakgrunnskart extends Component {
                 <ListSubheader>Etiketter</ListSubheader>
                 <Bakgrunnskartlag
                   onUpdateLayerProp={this.props.onUpdateLayerProp}
-                  lagNavn="transport_navn"
-                  tittel="Transport"
-                  erSynlig={this.props.transport_navn}
-                  farge={this.props.transport_navn_farge}
+                  lagNavn="vann_navn"
+                  tittel="Vann"
+                  erSynlig={this.props.vann_navn}
+                  farge={this.props.vann_navn_farge}
                 />
                 <Bakgrunnskartlag
                   onUpdateLayerProp={this.props.onUpdateLayerProp}
@@ -101,10 +101,10 @@ class Bakgrunnskart extends Component {
                 />
                 <Bakgrunnskartlag
                   onUpdateLayerProp={this.props.onUpdateLayerProp}
-                  lagNavn="vann_navn"
-                  tittel="Vann"
-                  erSynlig={this.props.vann_navn}
-                  farge={this.props.vann_navn_farge}
+                  lagNavn="transport_navn"
+                  tittel="Transport"
+                  erSynlig={this.props.transport_navn}
+                  farge={this.props.transport_navn_farge}
                 />
                 <ListSubheader>Administrative grenser</ListSubheader>
                 <ListItem>
