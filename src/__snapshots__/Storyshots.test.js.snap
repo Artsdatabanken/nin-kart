@@ -5504,7 +5504,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
         <li
           className="MuiListSubheader-root-2200 MuiListSubheader-sticky-2205 MuiListSubheader-gutters-2203"
         >
-          Bakgrunnskart
+          Områder
         </li>
         <div
           className="MuiButtonBase-root-2245 MuiListItem-root-2248 MuiListItem-default-2251 MuiListItem-gutters-2255 MuiListItem-button-2256"
@@ -5543,7 +5543,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
         <li
           className="MuiListSubheader-root-2200 MuiListSubheader-sticky-2205 MuiListSubheader-gutters-2203"
         >
-          Utseende
+          Områder
         </li>
         <li
           className="MuiListItem-container-2249"
@@ -5623,6 +5623,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
             style={
               Object {
                 "cursor": "pointer",
+                "paddingRight": 12,
               }
             }
           >
@@ -5714,6 +5715,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
             style={
               Object {
                 "cursor": "pointer",
+                "paddingRight": 12,
               }
             }
           >
@@ -5805,6 +5807,288 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
             style={
               Object {
                 "cursor": "pointer",
+                "paddingRight": 12,
+              }
+            }
+          >
+            <div
+              className="MuiAvatar-root-2280"
+              style={
+                Object {
+                  "backgroundColor": undefined,
+                }
+              }
+            />
+          </div>
+        </li>
+        <li
+          className="MuiListSubheader-root-2200 MuiListSubheader-sticky-2205 MuiListSubheader-gutters-2203"
+        >
+          Etiketter
+        </li>
+        <li
+          className="MuiListItem-container-2249"
+        >
+          <div
+            className="MuiButtonBase-root-2245 MuiListItem-root-2248 MuiListItem-default-2251 MuiListItem-dense-2252 MuiListItem-gutters-2255 MuiListItem-button-2256 MuiListItem-secondaryAction-2257"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            <span
+              className="MuiSwitch-root-2269"
+            >
+              <span
+                childrenClassName=""
+                className="MuiButtonBase-root-2245 MuiIconButton-root-2259 MuiSwitchBase-root-2265 MuiSwitch-switchBase-2272 MuiSwitch-colorSecondary-2275"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={null}
+              >
+                <span
+                  className="MuiIconButton-label-2264"
+                >
+                  <span
+                    className="MuiSwitch-icon-2270"
+                  />
+                  <input
+                    checked={false}
+                    className="MuiSwitchBase-input-2268"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  className="MuiTouchRipple-root-2238"
+                />
+              </span>
+              <span
+                className="MuiSwitch-bar-2277"
+              />
+            </span>
+            <div
+              className="MuiListItemText-root-2232"
+            >
+              <span
+                className="MuiTypography-root-2206 MuiTypography-subheading-2213 MuiListItemText-primary-2235"
+              >
+                Vann
+              </span>
+            </div>
+            <span
+              className="MuiTouchRipple-root-2238"
+            />
+          </div>
+          <div
+            className="MuiListItemSecondaryAction-root-2283"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "paddingRight": 12,
+              }
+            }
+          >
+            <div
+              className="MuiAvatar-root-2280"
+              style={
+                Object {
+                  "backgroundColor": undefined,
+                }
+              }
+            />
+          </div>
+        </li>
+        <li
+          className="MuiListItem-container-2249"
+        >
+          <div
+            className="MuiButtonBase-root-2245 MuiListItem-root-2248 MuiListItem-default-2251 MuiListItem-dense-2252 MuiListItem-gutters-2255 MuiListItem-button-2256 MuiListItem-secondaryAction-2257"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            <span
+              className="MuiSwitch-root-2269"
+            >
+              <span
+                childrenClassName=""
+                className="MuiButtonBase-root-2245 MuiIconButton-root-2259 MuiSwitchBase-root-2265 MuiSwitch-switchBase-2272 MuiSwitch-colorSecondary-2275"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={null}
+              >
+                <span
+                  className="MuiIconButton-label-2264"
+                >
+                  <span
+                    className="MuiSwitch-icon-2270"
+                  />
+                  <input
+                    checked={false}
+                    className="MuiSwitchBase-input-2268"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  className="MuiTouchRipple-root-2238"
+                />
+              </span>
+              <span
+                className="MuiSwitch-bar-2277"
+              />
+            </span>
+            <div
+              className="MuiListItemText-root-2232"
+            >
+              <span
+                className="MuiTypography-root-2206 MuiTypography-subheading-2213 MuiListItemText-primary-2235"
+              >
+                Steder
+              </span>
+            </div>
+            <span
+              className="MuiTouchRipple-root-2238"
+            />
+          </div>
+          <div
+            className="MuiListItemSecondaryAction-root-2283"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "paddingRight": 12,
+              }
+            }
+          >
+            <div
+              className="MuiAvatar-root-2280"
+              style={
+                Object {
+                  "backgroundColor": undefined,
+                }
+              }
+            />
+          </div>
+        </li>
+        <li
+          className="MuiListItem-container-2249"
+        >
+          <div
+            className="MuiButtonBase-root-2245 MuiListItem-root-2248 MuiListItem-default-2251 MuiListItem-dense-2252 MuiListItem-gutters-2255 MuiListItem-button-2256 MuiListItem-secondaryAction-2257"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            <span
+              className="MuiSwitch-root-2269"
+            >
+              <span
+                childrenClassName=""
+                className="MuiButtonBase-root-2245 MuiIconButton-root-2259 MuiSwitchBase-root-2265 MuiSwitch-switchBase-2272 MuiSwitch-colorSecondary-2275"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={null}
+              >
+                <span
+                  className="MuiIconButton-label-2264"
+                >
+                  <span
+                    className="MuiSwitch-icon-2270"
+                  />
+                  <input
+                    checked={false}
+                    className="MuiSwitchBase-input-2268"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  className="MuiTouchRipple-root-2238"
+                />
+              </span>
+              <span
+                className="MuiSwitch-bar-2277"
+              />
+            </span>
+            <div
+              className="MuiListItemText-root-2232"
+            >
+              <span
+                className="MuiTypography-root-2206 MuiTypography-subheading-2213 MuiListItemText-primary-2235"
+              >
+                Transport
+              </span>
+            </div>
+            <span
+              className="MuiTouchRipple-root-2238"
+            />
+          </div>
+          <div
+            className="MuiListItemSecondaryAction-root-2283"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "paddingRight": 12,
               }
             }
           >
@@ -5824,182 +6108,161 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
           Administrative grenser
         </li>
         <li
-          className="MuiListItem-container-2249"
+          className="MuiListItem-root-2248 MuiListItem-default-2251 MuiListItem-dense-2252 MuiListItem-gutters-2255"
+          disabled={false}
         >
-          <div
-            className="MuiListItem-root-2248 MuiListItem-default-2251 MuiListItem-gutters-2255 MuiListItem-secondaryAction-2257"
-            disabled={false}
-          >
-            <div
-              className="MuiListItemText-root-2232"
-            >
-              <span
-                className="MuiTypography-root-2206 MuiTypography-subheading-2213 MuiListItemText-primary-2235"
-              >
-                Land
-              </span>
-            </div>
-          </div>
-          <div
-            className="MuiListItemSecondaryAction-root-2283"
+          <span
+            className="MuiSwitch-root-2269"
           >
             <span
-              className="MuiSwitch-root-2269"
+              childrenClassName=""
+              className="MuiButtonBase-root-2245 MuiIconButton-root-2259 MuiSwitchBase-root-2265 MuiSwitch-switchBase-2272 MuiSwitch-colorSecondary-2275"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={null}
             >
               <span
-                className="MuiButtonBase-root-2245 MuiIconButton-root-2259 MuiSwitchBase-root-2265 MuiSwitch-switchBase-2272 MuiSwitch-colorSecondary-2275"
-                onBlur={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchMove={[Function]}
-                onTouchStart={[Function]}
-                tabIndex={null}
+                className="MuiIconButton-label-2264"
               >
                 <span
-                  className="MuiIconButton-label-2264"
-                >
-                  <span
-                    className="MuiSwitch-icon-2270"
-                  />
-                  <input
-                    checked={false}
-                    className="MuiSwitchBase-input-2268"
-                    onChange={[Function]}
-                    type="checkbox"
-                  />
-                </span>
-                <span
-                  className="MuiTouchRipple-root-2238"
+                  className="MuiSwitch-icon-2270"
+                />
+                <input
+                  checked={false}
+                  className="MuiSwitchBase-input-2268"
+                  onChange={[Function]}
+                  type="checkbox"
                 />
               </span>
               <span
-                className="MuiSwitch-bar-2277"
+                className="MuiTouchRipple-root-2238"
               />
+            </span>
+            <span
+              className="MuiSwitch-bar-2277"
+            />
+          </span>
+          <div
+            className="MuiListItemText-root-2232"
+          >
+            <span
+              className="MuiTypography-root-2206 MuiTypography-subheading-2213 MuiListItemText-primary-2235"
+            >
+              Land
             </span>
           </div>
         </li>
         <li
-          className="MuiListItem-container-2249"
+          className="MuiListItem-root-2248 MuiListItem-default-2251 MuiListItem-dense-2252 MuiListItem-gutters-2255"
+          disabled={false}
         >
-          <div
-            className="MuiListItem-root-2248 MuiListItem-default-2251 MuiListItem-gutters-2255 MuiListItem-secondaryAction-2257"
-            disabled={false}
-          >
-            <div
-              className="MuiListItemText-root-2232"
-            >
-              <span
-                className="MuiTypography-root-2206 MuiTypography-subheading-2213 MuiListItemText-primary-2235"
-              >
-                Fylke
-              </span>
-            </div>
-          </div>
-          <div
-            className="MuiListItemSecondaryAction-root-2283"
+          <span
+            className="MuiSwitch-root-2269"
           >
             <span
-              className="MuiSwitch-root-2269"
+              childrenClassName=""
+              className="MuiButtonBase-root-2245 MuiIconButton-root-2259 MuiSwitchBase-root-2265 MuiSwitch-switchBase-2272 MuiSwitch-colorSecondary-2275"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={null}
             >
               <span
-                className="MuiButtonBase-root-2245 MuiIconButton-root-2259 MuiSwitchBase-root-2265 MuiSwitch-switchBase-2272 MuiSwitch-colorSecondary-2275"
-                onBlur={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchMove={[Function]}
-                onTouchStart={[Function]}
-                tabIndex={null}
+                className="MuiIconButton-label-2264"
               >
                 <span
-                  className="MuiIconButton-label-2264"
-                >
-                  <span
-                    className="MuiSwitch-icon-2270"
-                  />
-                  <input
-                    checked={false}
-                    className="MuiSwitchBase-input-2268"
-                    onChange={[Function]}
-                    type="checkbox"
-                  />
-                </span>
-                <span
-                  className="MuiTouchRipple-root-2238"
+                  className="MuiSwitch-icon-2270"
+                />
+                <input
+                  checked={false}
+                  className="MuiSwitchBase-input-2268"
+                  onChange={[Function]}
+                  type="checkbox"
                 />
               </span>
               <span
-                className="MuiSwitch-bar-2277"
+                className="MuiTouchRipple-root-2238"
               />
+            </span>
+            <span
+              className="MuiSwitch-bar-2277"
+            />
+          </span>
+          <div
+            className="MuiListItemText-root-2232"
+          >
+            <span
+              className="MuiTypography-root-2206 MuiTypography-subheading-2213 MuiListItemText-primary-2235"
+            >
+              Fylke
             </span>
           </div>
         </li>
         <li
-          className="MuiListItem-container-2249"
+          className="MuiListItem-root-2248 MuiListItem-default-2251 MuiListItem-dense-2252 MuiListItem-gutters-2255"
+          disabled={false}
         >
-          <div
-            className="MuiListItem-root-2248 MuiListItem-default-2251 MuiListItem-gutters-2255 MuiListItem-secondaryAction-2257"
-            disabled={false}
-          >
-            <div
-              className="MuiListItemText-root-2232"
-            >
-              <span
-                className="MuiTypography-root-2206 MuiTypography-subheading-2213 MuiListItemText-primary-2235"
-              >
-                Kommune
-              </span>
-            </div>
-          </div>
-          <div
-            className="MuiListItemSecondaryAction-root-2283"
+          <span
+            className="MuiSwitch-root-2269"
           >
             <span
-              className="MuiSwitch-root-2269"
+              childrenClassName=""
+              className="MuiButtonBase-root-2245 MuiIconButton-root-2259 MuiSwitchBase-root-2265 MuiSwitch-switchBase-2272 MuiSwitch-colorSecondary-2275"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={null}
             >
               <span
-                className="MuiButtonBase-root-2245 MuiIconButton-root-2259 MuiSwitchBase-root-2265 MuiSwitch-switchBase-2272 MuiSwitch-colorSecondary-2275"
-                onBlur={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchMove={[Function]}
-                onTouchStart={[Function]}
-                tabIndex={null}
+                className="MuiIconButton-label-2264"
               >
                 <span
-                  className="MuiIconButton-label-2264"
-                >
-                  <span
-                    className="MuiSwitch-icon-2270"
-                  />
-                  <input
-                    checked={false}
-                    className="MuiSwitchBase-input-2268"
-                    onChange={[Function]}
-                    type="checkbox"
-                  />
-                </span>
-                <span
-                  className="MuiTouchRipple-root-2238"
+                  className="MuiSwitch-icon-2270"
+                />
+                <input
+                  checked={false}
+                  className="MuiSwitchBase-input-2268"
+                  onChange={[Function]}
+                  type="checkbox"
                 />
               </span>
               <span
-                className="MuiSwitch-bar-2277"
+                className="MuiTouchRipple-root-2238"
               />
+            </span>
+            <span
+              className="MuiSwitch-bar-2277"
+            />
+          </span>
+          <div
+            className="MuiListItemText-root-2232"
+          >
+            <span
+              className="MuiTypography-root-2206 MuiTypography-subheading-2213 MuiListItemText-primary-2235"
+            >
+              Kommuner
             </span>
           </div>
         </li>

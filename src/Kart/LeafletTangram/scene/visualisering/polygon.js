@@ -43,11 +43,11 @@ function draw(args) {
   const layer = {
     draw: {
       mu_polygons: {
-        order: 100,
+        order: 800,
         color: farge,
       },
       lines: {
-        order: 100,
+        order: 800,
         color: tinycolor(farge)
           .darken(30)
           .toHexString(),

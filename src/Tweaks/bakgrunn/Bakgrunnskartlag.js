@@ -31,7 +31,7 @@ const Bakgrunnskartlag = ({
     <ListItemText primary={tittel} />
     <ListItemSecondaryAction
       onClick={() => history.push('/lag/bakgrunnskart/' + lagNavn)}
-      style={{ cursor: 'pointer' }}
+      style={{ cursor: 'pointer', paddingRight: 12 }}
     >
       <Avatar style={{ backgroundColor: farge }} />
     </ListItemSecondaryAction>

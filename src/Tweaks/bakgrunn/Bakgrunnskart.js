@@ -1,7 +1,7 @@
 import {
+  ListItemAvatar,
   List,
   ListItem,
-  ListItemSecondaryAction,
   ListItemText,
   ListSubheader,
   Switch,
@@ -35,12 +35,12 @@ class Bakgrunnskart extends Component {
                   </ListSubheader>
                   <ColorPicker
                     tittel={'Fyllfarge'}
-                    color={this.props[lag + 'farge']}
+                    color={this.props[lag + '_farge']}
                     onChange={farge => {
                       const rgbString = tinycolor(farge.rgb).toRgbString()
                       this.props.onUpdateLayerProp(
                         kode,
-                        lag + 'farge',
+                        lag + '_farge',
                         rgbString
                       )
                     }}
@@ -53,7 +53,7 @@ class Bakgrunnskart extends Component {
             path="/lag/:kode"
             render={({ match, history }) => (
               <List>
-                <ListSubheader>Bakgrunnskart</ListSubheader>
+                <ListSubheader>Områder</ListSubheader>
                 <ListItem
                   button={true}
                   onClick={() =>
@@ -62,32 +62,53 @@ class Bakgrunnskart extends Component {
                 >
                   <ListItemText primary="Tema" secondary="Tilpasset" />
                 </ListItem>
-                <ListSubheader>Utseende</ListSubheader>
+                <ListSubheader>Områder</ListSubheader>
                 <Bakgrunnskartlag
                   onUpdateLayerProp={this.props.onUpdateLayerProp}
                   lagNavn="vann"
                   tittel="Vann"
                   erSynlig={this.props.vann}
-                  farge={this.props.vannfarge}
+                  farge={this.props.vann_farge}
                 />
                 <Bakgrunnskartlag
                   onUpdateLayerProp={this.props.onUpdateLayerProp}
                   lagNavn="land"
                   tittel="Land"
                   erSynlig={this.props.land}
-                  farge={this.props.landfarge}
+                  farge={this.props.land_farge}
                 />
                 <Bakgrunnskartlag
                   onUpdateLayerProp={this.props.onUpdateLayerProp}
                   lagNavn="transport"
                   tittel="Transport"
                   erSynlig={this.props.transport}
-                  farge={this.props.transportfarge}
+                  farge={this.props.transport_farge}
+                />
+                <ListSubheader>Etiketter</ListSubheader>
+                <Bakgrunnskartlag
+                  onUpdateLayerProp={this.props.onUpdateLayerProp}
+                  lagNavn="vann_navn"
+                  tittel="Vann"
+                  erSynlig={this.props.vann_navn}
+                  farge={this.props.vann_navn_farge}
+                />
+                <Bakgrunnskartlag
+                  onUpdateLayerProp={this.props.onUpdateLayerProp}
+                  lagNavn="sted_navn"
+                  tittel="Steder"
+                  erSynlig={this.props.sted_navn}
+                  farge={this.props.sted_navn_farge}
+                />
+                <Bakgrunnskartlag
+                  onUpdateLayerProp={this.props.onUpdateLayerProp}
+                  lagNavn="transport_navn"
+                  tittel="Transport"
+                  erSynlig={this.props.transport_navn}
+                  farge={this.props.transport_navn_farge}
                 />
                 <ListSubheader>Administrative grenser</ListSubheader>
                 <ListItem>
-                  <ListItemText primary="Land" />
-                  <ListItemSecondaryAction>
+                  <ListItemAvatar>
                     <Switch
                       onChange={() =>
                         this.props.onUpdateLayerProp(
@@ -98,11 +119,11 @@ class Bakgrunnskart extends Component {
                       }
                       checked={this.props.landegrense}
                     />
-                  </ListItemSecondaryAction>
+                  </ListItemAvatar>
+                  <ListItemText primary="Land" />
                 </ListItem>
                 <ListItem>
-                  <ListItemText primary="Fylke" />
-                  <ListItemSecondaryAction>
+                  <ListItemAvatar>
                     <Switch
                       onChange={() =>
                         this.props.onUpdateLayerProp(
@@ -113,11 +134,11 @@ class Bakgrunnskart extends Component {
                       }
                       checked={this.props.fylkesgrense}
                     />
-                  </ListItemSecondaryAction>
+                  </ListItemAvatar>
+                  <ListItemText primary="Fylke" />
                 </ListItem>
                 <ListItem>
-                  <ListItemText primary="Kommune" />
-                  <ListItemSecondaryAction>
+                  <ListItemAvatar>
                     <Switch
                       onChange={() =>
                         this.props.onUpdateLayerProp(
@@ -128,7 +149,8 @@ class Bakgrunnskart extends Component {
                       }
                       checked={this.props.kommunegrense}
                     />
-                  </ListItemSecondaryAction>
+                  </ListItemAvatar>
+                  <ListItemText primary="Kommuner" />
                 </ListItem>
               </List>
             )}

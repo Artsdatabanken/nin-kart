@@ -42,28 +42,47 @@ class Gradient extends Component {
     } = this.props
     const { filterMin, filterMax } = gradient
     const undernivå = this.navnPåUndernivå(kode)
+    const spread = 0.015
     return (
       <React.Fragment>
         <ListSubheader>{tittel}</ListSubheader>
         <SliderSetting
           value={filterMin}
+          decimals={2}
           min={0}
           max={1}
           step={0.005}
           tittel="Minimum"
           undertittel={filterMin.toFixed(2)}
           icon={<SwapVert />}
-          onChange={v => onUpdateLayerProp(kode, 'gradient.filterMin', v)}
+          onChange={v => {
+            onUpdateLayerProp(kode, 'gradient.filterMin', v)
+            if (gradient.filterMax <= gradient.filterMin + spread)
+              onUpdateLayerProp(
+                kode,
+                'gradient.filterMax',
+                Math.min(1.0, gradient.filterMin + spread)
+              )
+          }}
         />
         <SliderSetting
           value={filterMax}
+          decimals={2}
           min={0}
           max={1}
           step={0.005}
           tittel="Maksimum"
           undertittel={filterMax.toFixed(2)}
           icon={<SwapVert />}
-          onChange={v => onUpdateLayerProp(kode, 'gradient.filterMax', v)}
+          onChange={v => {
+            onUpdateLayerProp(kode, 'gradient.filterMax', v)
+            if (gradient.filterMax <= gradient.filterMin + spread)
+              onUpdateLayerProp(
+                kode,
+                'gradient.filterMin',
+                Math.max(0.0, gradient.filterMax - spread)
+              )
+          }}
         />
         <Veksle
           tittel="Vis etiketter"

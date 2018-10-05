@@ -25,6 +25,7 @@ class Terreng extends Component {
         <ListSubheader>Terreng</ListSubheader>
         <SliderSetting
           value={vertikaltOverdriv}
+          decimals={1}
           min={0}
           max={5}
           step={0.1}
