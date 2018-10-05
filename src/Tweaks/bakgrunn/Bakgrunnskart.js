@@ -120,7 +120,7 @@ class Bakgrunnskart extends Component {
                       checked={this.props.landegrense}
                     />
                   </ListItemAvatar>
-                  <ListItemText primary="Land" />
+                  <ListItemText primary="Riksgrense" />
                 </ListItem>
                 <ListItem>
                   <ListItemAvatar>
