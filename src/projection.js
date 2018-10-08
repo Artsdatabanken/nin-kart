@@ -74,13 +74,4 @@ function wgs84ToUtm33(latitude, longitude) {
   return { x: utmEasting, y: utmNorthing }
 }
 
-function createBboxFromPoint(lng, lat, radius) {
-  return {
-    minx: lat - radius,
-    miny: lng - radius,
-    maxx: Number.parseFloat(lat) + Number.parseFloat(radius),
-    maxy: Number.parseFloat(lng) + Number.parseFloat(radius),
-  }
-}
-
-export { wgs84ToUtm33, createBboxFromPoint }
+export { wgs84ToUtm33 }

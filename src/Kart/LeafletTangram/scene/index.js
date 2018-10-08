@@ -5,6 +5,7 @@ import { createLights } from './lights'
 import { createStyles } from './styles'
 import { lagTerreng } from './terreng'
 import draw from './visualisering/'
+import sysconfig from '../../../config'
 
 function lagAktiveLag(aktive, iKatalog, opplystKode, config) {
   aktive.forEach(lag => lagEttLag(lag, opplystKode, iKatalog, config))
@@ -134,7 +135,30 @@ function updateScene(config: Object, props: Object) {
     opprettEttLag(drawArgs, config)
   }
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config)
+  lagTemp(config)
   return config
 }
+function lagTemp(config) {
+  if (!sysconfig.comboSøk) return false
+  const l = {
+    data: { source: 'AND' },
+    OR_MD: {
+      data: { source: 'AND' },
+      draw: {
+        points: {
+          size: 'function() { return (feature.size) * 3 }',
+          texture: '/blue.png',
+          //          'https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2FOR_MD.png?alt=media',
+        },
+      },
+    },
+  }
 
+  config.layers.AND = l
+  config.sources.AND = {
+    type: 'GeoJSON',
+    //    url: `http://localhost:8000/dekning.geojson?kode=MI_KA-A&kode=NA_I1`,
+    url: `http://localhost:8000/dekning.geojson?kode=NA_I1&kode=MI_KA-B`,
+  }
+}
 export { createScene, updateScene }

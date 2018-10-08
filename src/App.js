@@ -8,6 +8,9 @@ import Grunnkart from './Grunnkart/Grunnkart'
 import SettingsContainer from './SettingsContainer'
 
 const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true,
+  },
   palette: {
     primary: {
       // light: will be calculated from palette.primary.main,

@@ -40,7 +40,7 @@ class VenstreVinduContainer extends React.Component {
 
   render() {
     const meta = this.props.meta || {}
-    const { visForside, onToggleForside } = this.props
+    const { visForside, onToggleForside, onAktiver } = this.props
     return (
       <Route
         render={({ match, history }) => (
@@ -125,6 +125,7 @@ class VenstreVinduContainer extends React.Component {
               <Route
                 render={({ match, history }) => (
                   <ForsideMeny
+                    onAktiver={onAktiver}
                     onVis={onToggleForside}
                     onSkjul={onToggleForside}
                     visForside={visForside}

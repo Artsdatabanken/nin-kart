@@ -28,7 +28,7 @@ class Grunnkart extends React.Component<Props, State> {
   constructor(props) {
     super(props)
     this.state = {
-      aktiveLag: standardlag,
+      aktiveLag: JSON.parse(JSON.stringify(standardlag)),
       opplystKode: '',
       actualBounds: null,
       fitBounds: null,
@@ -62,6 +62,19 @@ class Grunnkart extends React.Component<Props, State> {
     })
   }
 
+  handleAktiver = koder => {
+    console.log(koder)
+    this.setState({
+      aktiveLag: JSON.parse(JSON.stringify(standardlag)),
+    })
+    koder.forEach(kode => {
+      this.fetchMeta2('/katalog/' + this.kodeTilRelativUrl(kode)).then(data => {
+        console.log(kode, data)
+        this.addSelected(data)
+      })
+    })
+  }
+
   addSelected = props => {
     let koder = this.state.aktiveLag
     const formats = props.formats || { polygon: 'pbf' }
@@ -82,7 +95,7 @@ class Grunnkart extends React.Component<Props, State> {
       formats: formats,
     }
     if (formats.gradient) {
-      nyttLag.gradient = { filterMin: 0.4, filterMax: 0.8 }
+      nyttLag.gradient = { filterMin: 0, filterMax: 1.0 }
     }
     console.log(nyttLag)
     koder.unshift(nyttLag)
@@ -149,25 +162,33 @@ class Grunnkart extends React.Component<Props, State> {
       return
     }
 
-    backend.hentKodeMeta(url).then(data => {
+    this.fetchMeta2(url).then(data => {
       if (!data) return this.redirectTo('')
       if (data.se) {
         const newUrl = data.se[Object.keys(data.se)[0]].sti
         this.redirectTo(newUrl)
         return
       }
-      const sti = this.kodeTilRelativUrl(data.kode)
-      data.sti = sti
-      if (!data.barn) data.barn = {}
-      Object.keys(data.barn).forEach(kode => {
-        const barn = data.barn[kode]
-        barn.sti = this.kodeTilRelativUrl(kode)
-        //        barn.farge = new color(barn.farge).darken(10).toHexString()
-      })
-      data.nivå = typesystem.hentNivaa(data.kode).slice(0, 1)
-      data.prefiks = data.kode.substring(0, 2)
+      console.warn(data)
       this.setState({ meta: data })
     })
+  }
+
+  async fetchMeta2(url) {
+    const data = await backend.hentKodeMeta(url)
+    if (!data) return
+    if (data.se) return data
+
+    const sti = this.kodeTilRelativUrl(data.kode)
+    data.sti = sti
+    if (!data.barn) data.barn = {}
+    Object.keys(data.barn).forEach(kode => {
+      const barn = data.barn[kode]
+      barn.sti = this.kodeTilRelativUrl(kode)
+    })
+    data.nivå = typesystem.hentNivaa(data.kode).slice(0, 1)
+    data.prefiks = data.kode.substring(0, 2)
+    return data
   }
 
   handleRemoveSelectedLayer = kode => {
@@ -227,6 +248,7 @@ class Grunnkart extends React.Component<Props, State> {
               <VenstreVinduContainer
                 aktiveLag={this.state.aktiveLag}
                 mapBounds={this.state.actualBounds}
+                onAktiver={this.handleAktiver}
                 onMouseEnter={this.handleMouseEnter}
                 onMouseLeave={this.handleMouseLeave}
                 onFitBounds={this.handleFitBounds}
