@@ -5,6 +5,7 @@ import { createLights } from './lights'
 import { createStyles } from './styles'
 import { lagTerreng } from './terreng'
 import draw from './visualisering/'
+import config from '../../../config'
 
 function lagAktiveLag(aktive, iKatalog, opplystKode, config) {
   aktive.forEach(lag => lagEttLag(lag, opplystKode, iKatalog, config))
@@ -138,13 +139,13 @@ function updateScene(config: Object, props: Object) {
   return config
 }
 function lagTemp(config) {
+  if (!config.comboSøk) return false
   const l = {
     data: { source: 'AND' },
     OR_MD: {
       data: { source: 'AND' },
       draw: {
         points: {
-          size_: '50%',
           size: 'function() { return (feature.size) * 3 }',
           texture: '/blue.png',
           //          'https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2FOR_MD.png?alt=media',

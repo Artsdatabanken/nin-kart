@@ -2,6 +2,7 @@ const storageUrl =
   'https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/'
 
 class config {
+  static comboSøk = false
   static getFotoOmslag(
     kode: string,
     width: number = 408,
