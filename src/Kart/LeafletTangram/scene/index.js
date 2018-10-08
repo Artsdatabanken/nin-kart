@@ -5,7 +5,7 @@ import { createLights } from './lights'
 import { createStyles } from './styles'
 import { lagTerreng } from './terreng'
 import draw from './visualisering/'
-import config from '../../../config'
+import sysconfig from '../../../config'
 
 function lagAktiveLag(aktive, iKatalog, opplystKode, config) {
   aktive.forEach(lag => lagEttLag(lag, opplystKode, iKatalog, config))
@@ -139,7 +139,7 @@ function updateScene(config: Object, props: Object) {
   return config
 }
 function lagTemp(config) {
-  if (!config.comboSøk) return false
+  if (!sysconfig.comboSøk) return false
   const l = {
     data: { source: 'AND' },
     OR_MD: {
