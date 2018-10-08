@@ -1,4 +1,4 @@
-import { Paper, withStyles } from '@material-ui/core'
+import { ListItem, ListItemText, Paper, withStyles } from '@material-ui/core'
 import React from 'react'
 import TopBarContainer from '../TopBar/TopBarContainer'
 import { Panel, Ekspanderlinje } from '../components'
@@ -37,7 +37,14 @@ const Papir = ({ children }) => (
 
 const styles = {}
 
-const Forsidemeny = ({ classes, visForside, onVis, onSkjul, onClick }) => {
+const Forsidemeny = ({
+  classes,
+  visForside,
+  onVis,
+  onAktiver,
+  onSkjul,
+  onClick,
+}) => {
   return (
     <React.Fragment>
       {visForside ? (
@@ -62,11 +69,13 @@ const Forsidemeny = ({ classes, visForside, onVis, onSkjul, onClick }) => {
               </Seksjon>
             </Papir>
             <Papir>
-              <Seksjon tittel="Finibus interdum">
-                Praesent metus quam, finibus interdum varius nec, sollicitudin
-                at lacus. Curabitur finibus dictum ultrices. Aenean pretium,
-                ipsum non facilisis lacinia, libero nisi tempor purus, a aliquet
-                elit massa at sem. Ut euismod interdum faucibus.
+              <Seksjon tittel="Bokmerker">
+                <ListItem button onClick={() => onAktiver(['NA_I', 'MI_KA-B'])}>
+                  <ListItemText
+                    primary="Snø og is i temmelig kalkfattige områder"
+                    secondary="NA_I, MI_KA-B"
+                  />
+                </ListItem>
               </Seksjon>
             </Papir>
             <Papir>

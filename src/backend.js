@@ -1,5 +1,5 @@
 // @flow
-import { createBboxFromPoint, wgs84ToUtm33 } from './projection'
+import { wgs84ToUtm33 } from './projection'
 
 class Backend {
   static async postFilterPromise(url: string, filter: string) {
@@ -33,20 +33,6 @@ class Backend {
     })
   }
 
-  static async getTextPromise(url: string) {
-    return new Promise((resolve, reject) => {
-      fetch(url)
-        .then(result => {
-          return result.text()
-        })
-        .then(text => resolve(text))
-        .catch(err => {
-          console.error(url, err)
-          return {}
-        })
-    })
-  }
-
   static async søkKode(q: string) {
     return this.getPromise(
       `https://test.artsdatabanken.no/ogapi/v2/Koder?q=${q}`
@@ -73,22 +59,6 @@ class Backend {
     )
   }
 
-  static async createGetFeatureInfoCall(
-    wmsUri: string,
-    lng: Number,
-    lat: Number,
-    layers: Object,
-    infoFormat: string = 'text/plain'
-  ) {
-    var bbox = createBboxFromPoint(lng, lat, 0.000001)
-    return this.getTextPromise(
-      wmsUri +
-        `?request=GetFeatureinfo&service=WMS&version=1.3.0&Layers=${layers}&crs=epsg:4258&format=image/png&width=3&height=3&QUERY_LAYERS=${layers}&i=2&j=2&bbox=${
-          bbox.minx
-        },${bbox.miny},${bbox.maxx},${bbox.maxy}&INFO_FORMAT=${infoFormat}`
-    )
-  }
-
   static async hentStedsnavn(lng: number, lat: number) {
     return this.getPromise(
       `https://www.norgeskart.no/ws/elev.py?lat=${lat}&lon=${lng}&epsg=4258`
@@ -100,11 +70,6 @@ class Backend {
       `https://test.artsdatabanken.no/data/json/ninMetadata/${localId.toUpperCase()}.json`
     )
   }
-  // static async getCodeTitle(code: string) {
-  //   return this.getPromise(
-  //     `https://bboxcode.firebaseio.com/titles/${code.toUpperCase()}.json`
-  //   )
-  // }
 
   static async getImageAttribution(kode: string) {
     return {
@@ -116,22 +81,6 @@ class Backend {
         name: 'Wikipedia',
         url: 'https://no.wikipedia.org/wiki/Portal:Forside',
       },
-    }
-  }
-
-  static debounce(func, wait, immediate) {
-    var timeout
-    return function() {
-      var context = this,
-        args = arguments
-      var later = function() {
-        timeout = null
-        if (!immediate) func.apply(context, args)
-      }
-      var callNow = immediate && !timeout
-      clearTimeout(timeout)
-      timeout = setTimeout(later, wait)
-      if (callNow) func.apply(context, args)
     }
   }
 }
