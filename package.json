@@ -66,7 +66,6 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --coverage",
     "test:watch": "node scripts/test.js",
-    "precommit": "pretty-quick --staged",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public -o build/storybook",
     "report-coverage": "coveralls < coverage/lcov.info"
@@ -163,5 +162,10 @@
   "contributors": [
     "Bjørn Reppen <bjreppen@gmail.com>",
     "Jarle Pedersen <jarle.pedersen@norconsult.com>"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
 }
