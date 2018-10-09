@@ -12,6 +12,7 @@ const Barneliste = ({
   onMouseLeave,
   history,
   forelderkode,
+  visKoder,
 }) => {
   return Object.keys(barn).map(i => {
     const node = barn[i]
@@ -32,6 +33,7 @@ const Barneliste = ({
           onClick={() => {
             history.push('/lag/' + forelderkode + '/' + kode)
           }}
+          visKoder={visKoder}
         />
         {aktivtBarn === kode && (
           <ColorPicker
