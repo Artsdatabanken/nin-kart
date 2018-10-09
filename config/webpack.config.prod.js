@@ -234,6 +234,7 @@ module.exports = {
   },
   module: {
     strictExportPresence: true,
+    noParse: [/tangram\/dist\/tangram/, /tangram\\dist\\tangram/],
     rules: [
       // Disable require.ensure as it's not a standard language feature.
       { parser: { requireEnsure: false } },
