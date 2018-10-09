@@ -1,4 +1,10 @@
-import { ListItem, ListItemText, Paper, withStyles } from '@material-ui/core'
+import {
+  Typography,
+  ListItem,
+  ListItemText,
+  Paper,
+  withStyles,
+} from '@material-ui/core'
 import React from 'react'
 import TopBarContainer from '../TopBar/TopBarContainer'
 import { Panel, Ekspanderlinje } from '../components'
@@ -6,15 +12,16 @@ import Boble from './Boble'
 
 const Seksjon = ({ tittel, children }) => (
   <div>
-    <div
+    <Typography
       style={{
-        fontSize: 15,
         padding: '10px 20px',
+        fontSize: 15,
         fontWeight: 500,
       }}
+      gutterBottom
     >
       {tittel}
-    </div>
+    </Typography>
     <div
       style={{
         display: 'flex',
@@ -80,10 +87,12 @@ const Forsidemeny = ({
             </Papir>
             <Papir>
               <Seksjon tittel="Finibus interdum">
-                Praesent metus quam, finibus interdum varius nec, sollicitudin
-                at lacus. Curabitur finibus dictum ultrices. Aenean pretium,
-                ipsum non facilisis lacinia, libero nisi tempor purus, a aliquet
-                elit massa at sem. Ut euismod interdum faucibus.
+                <Typography>
+                  Praesent metus quam, finibus interdum varius nec, sollicitudin
+                  at lacus. Curabitur finibus dictum ultrices. Aenean pretium,
+                  ipsum non facilisis lacinia, libero nisi tempor purus, a
+                  aliquet elit massa at sem. Ut euismod interdum faucibus.
+                </Typography>
               </Seksjon>
             </Papir>
             <Papir>

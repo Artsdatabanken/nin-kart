@@ -1,5 +1,5 @@
 import { withRouter } from 'react-router'
-import { withStyles } from '@material-ui/core'
+import { withStyles, Typography } from '@material-ui/core'
 import React from 'react'
 import BildeAvatar from '../Kodetre/Kodeliste/Bildeavatar'
 import classNames from 'classnames'
@@ -35,7 +35,7 @@ class Boble extends React.Component {
         <div style={{ display: 'inline-block', paddingBottom: 8 }}>
           <BildeAvatar kode={kode} />
         </div>
-        <div style={{}}>{tittel}</div>
+        <Typography>{tittel}</Typography>
       </div>
     )
   }
