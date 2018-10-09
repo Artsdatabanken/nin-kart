@@ -34,10 +34,7 @@ function opprettEttLag(drawArgs, config) {
 
   const source = viz.lagSource(drawArgs.kode, drawArgs.bbox, drawArgs.zoom)
   if (viz.lagStyle) {
-    console.log(drawArgs.type)
-    console.log(drawArgs[drawArgs.type])
     const style = viz.lagStyle(drawArgs[drawArgs.type])
-    console.log(style)
     config.styles[style.name] = style.value
   }
   config.sources[drawArgs.kode] = source
@@ -67,11 +64,12 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
     visBarn: lag.visBarn,
     gradient: lag.gradient,
   }
-  if (lag.visBarn)
+  if (lag.visBarn) {
     drawArgs.barn = lag.barn.reduce((acc, e) => {
       acc[e.kode] = e
       return acc
-    })
+    }, {})
+  }
   opprettEttLag(drawArgs, config)
 }
 
@@ -138,8 +136,9 @@ function updateScene(config: Object, props: Object) {
   lagTemp(config)
   return config
 }
+
 function lagTemp(config) {
-  if (!sysconfig.comboSøk) return false
+  if (!sysconfig.feature.comboSøk) return false
   const l = {
     data: { source: 'AND' },
     OR_MD: {
