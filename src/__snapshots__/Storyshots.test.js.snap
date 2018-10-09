@@ -487,7 +487,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
         <div
           style={
             Object {
-              "backgroundColor": "rgba(160,160,160,0.95)",
+              "backgroundColor": "hsla(0, 0%, 30%, 0.65)",
               "height": 74,
               "left": 0,
               "paddingBottom": 8,
@@ -496,7 +496,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
               "paddingTop": 8,
               "position": "relative",
               "right": 0,
-              "top": 190,
+              "top": 191,
             }
           }
         >

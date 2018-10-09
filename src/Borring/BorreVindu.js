@@ -37,7 +37,7 @@ class BorreVindu extends Component {
     if (!barn) return null
     const { AO, geom_id, prefix, ...andreBarn } = barn
     const color = 'rgba(240,240,240,1.0)'
-    const bgColor = 'rgba(160,160,160,0.95)'
+    const bgColor = 'hsla(0, 0%, 30%, 0.65)'
     const dominant = this.finnButikkKode()
     return (
       <Card square={true} className={classes.card}>
@@ -49,7 +49,7 @@ class BorreVindu extends Component {
           <div
             style={{
               position: 'relative',
-              top: 190,
+              top: 191,
               left: 0,
               height: 74,
               right: 0,
