@@ -15,6 +15,7 @@ class NAContainer extends Component {
   }
 
   fetch() {
+    if (!this.props.geom_id) return
     backend.getMetadataByNatureAreaLocalId(this.props.geom_id).then(data => {
       this.setState({
         data: data,
