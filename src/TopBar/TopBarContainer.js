@@ -113,12 +113,12 @@ class TopBarContainer extends Component<Props, State> {
                   ...style,
                 }}
               >
-                {isAtRoot || focused ? (
+                {(isAtRoot || focused) && (
                   <div
                     style={{
                       width: 392,
                       marginTop: 55,
-                      marginBottom: 8,
+                      marginBottom: isAtRoot ? 8 : 0,
                       position: isAtRoot ? 'relative' : 'fixed',
                       zIndex: 10,
                     }}
@@ -129,11 +129,9 @@ class TopBarContainer extends Component<Props, State> {
                       searchResults={this.state.searchResults}
                       onClick={this.handleClickSearchResult}
                     />
+                    {this.props.children}
                   </div>
-                ) : (
-                  <div style={{ height: 55 }} />
                 )}
-                {this.props.children}
               </div>
             </React.Fragment>
           )
