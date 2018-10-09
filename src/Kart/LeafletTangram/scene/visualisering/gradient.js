@@ -14,7 +14,6 @@ function drawAll(drawArgs) {
 }
 
 function lagStyle({ filterMin, filterMax }) {
-  console.log('gradient', filterMin, filterMax)
   const gradient = {
     base: 'raster',
     blend: 'multiply',

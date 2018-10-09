@@ -15,7 +15,7 @@ function drawAll({
   const layer = {
     data: { source: kode, layer: kode },
   }
-  if (visBarn)
+  if (visBarn) {
     Object.keys(barn).forEach(barnkode => {
       const visEtiketter = barnkode === opplystKode
       layer[barnkode] = draw({
@@ -26,7 +26,7 @@ function drawAll({
         visEtiketter: visEtiketter,
       })
     })
-  else
+  } else
     layer[kode] = draw({
       kode: kode,
       forelderkode: kode,

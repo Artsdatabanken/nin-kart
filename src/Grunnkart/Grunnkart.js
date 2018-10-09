@@ -63,13 +63,11 @@ class Grunnkart extends React.Component<Props, State> {
   }
 
   handleAktiver = koder => {
-    console.log(koder)
     this.setState({
       aktiveLag: JSON.parse(JSON.stringify(standardlag)),
     })
     koder.forEach(kode => {
       this.fetchMeta2('/katalog/' + this.kodeTilRelativUrl(kode)).then(data => {
-        console.log(kode, data)
         this.addSelected(data)
       })
     })
@@ -97,11 +95,10 @@ class Grunnkart extends React.Component<Props, State> {
     if (formats.gradient) {
       nyttLag.gradient = { filterMin: 0, filterMax: 1.0 }
     }
-    console.log(nyttLag)
     koder.unshift(nyttLag)
 
     this.setState({
-      aktiveLag: koder,
+      aktiveLag: [...koder],
     })
   }
 
