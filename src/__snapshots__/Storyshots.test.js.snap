@@ -1718,31 +1718,31 @@ exports[`Storyshots Forsidemeny default 1`] = `
         <hr
           className="MuiDivider-root-999"
         />
-      </div>
-      <div
-        className="MuiPaper-root-963 MuiPaper-elevation2-967 MuiPaper-rounded-964 Ekspanderlinje-rot-898 Ekspanderlinje-closed-902 Ekspanderlinje-hovernot-897"
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-      >
-        <svg
-          aria-hidden="true"
-          className="MuiSvgIcon-root-903 Ekspanderlinje-ikon-899"
-          focusable="false"
-          role="presentation"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-          />
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-        </svg>
         <div
-          className="Ekspanderlinje-tekst-900"
+          className="MuiPaper-root-963 MuiPaper-elevation2-967 MuiPaper-rounded-964 Ekspanderlinje-rot-898 Ekspanderlinje-closed-902 Ekspanderlinje-hovernot-897"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
-          Tilgjengelige kart
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-903 Ekspanderlinje-ikon-899"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+          <div
+            className="Ekspanderlinje-tekst-900"
+          >
+            Tilgjengelige kart
+          </div>
         </div>
       </div>
     </div>
@@ -7555,31 +7555,31 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
         <hr
           className="MuiDivider-root-3464"
         />
-      </div>
-      <div
-        className="MuiPaper-root-3428 MuiPaper-elevation2-3432 MuiPaper-rounded-3429 Ekspanderlinje-rot-3363 Ekspanderlinje-closed-3367 Ekspanderlinje-hovernot-3362"
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-      >
-        <svg
-          aria-hidden="true"
-          className="MuiSvgIcon-root-3368 Ekspanderlinje-ikon-3364"
-          focusable="false"
-          role="presentation"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-          />
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-        </svg>
         <div
-          className="Ekspanderlinje-tekst-3365"
+          className="MuiPaper-root-3428 MuiPaper-elevation2-3432 MuiPaper-rounded-3429 Ekspanderlinje-rot-3363 Ekspanderlinje-closed-3367 Ekspanderlinje-hovernot-3362"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
-          Tilgjengelige kart
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-3368 Ekspanderlinje-ikon-3364"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+          <div
+            className="Ekspanderlinje-tekst-3365"
+          >
+            Tilgjengelige kart
+          </div>
         </div>
       </div>
     </div>
@@ -7722,31 +7722,31 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
         <hr
           className="MuiDivider-root-3246"
         />
-      </div>
-      <div
-        className="MuiPaper-root-3210 MuiPaper-elevation2-3214 MuiPaper-rounded-3211 Ekspanderlinje-rot-3145 Ekspanderlinje-closed-3149 Ekspanderlinje-hovernot-3144"
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-      >
-        <svg
-          aria-hidden="true"
-          className="MuiSvgIcon-root-3150 Ekspanderlinje-ikon-3146"
-          focusable="false"
-          role="presentation"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-          />
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-        </svg>
         <div
-          className="Ekspanderlinje-tekst-3147"
+          className="MuiPaper-root-3210 MuiPaper-elevation2-3214 MuiPaper-rounded-3211 Ekspanderlinje-rot-3145 Ekspanderlinje-closed-3149 Ekspanderlinje-hovernot-3144"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
-          Tilgjengelige kart
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-3150 Ekspanderlinje-ikon-3146"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+          <div
+            className="Ekspanderlinje-tekst-3147"
+          >
+            Tilgjengelige kart
+          </div>
         </div>
       </div>
     </div>

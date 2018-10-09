@@ -50,7 +50,7 @@ class VenstreVinduContainer extends React.Component {
                 path="/katalog/:kode*"
                 render={({ match, history }) => {
                   return (
-                    <Panel style={{ paddingTop: 0 }}>
+                    <Panel>
                       <TopBarContainer tittel={this.tittel(this.props.meta)} />
                       <KodeContainer
                         kode={meta.kode}
@@ -73,7 +73,7 @@ class VenstreVinduContainer extends React.Component {
               <Route
                 path="/lag/:kode/:lag?"
                 render={({ match, history }) => (
-                  <Panel>
+                  <Panel style={{ paddingTop: 55 }}>
                     <TopBarContainer
                       tittel={
                         'Innstillinger for ' +
@@ -97,7 +97,7 @@ class VenstreVinduContainer extends React.Component {
               <Route
                 path="/punkt/:lng,:lat/:view?"
                 render={({ match, history }) => (
-                  <Panel style={{ paddingTop: 0 }}>
+                  <Panel>
                     <TopBarContainer
                       tittel={
                         match.params.lng.substr(0, 8) +
@@ -116,7 +116,7 @@ class VenstreVinduContainer extends React.Component {
               <Route
                 path="/punkt/valg"
                 render={({ match, history }) => (
-                  <Panel style={{ paddingTop: 0 }}>
+                  <Panel>
                     <TopBarContainer tittel="Klikk i kart" />
                     <Borrevalg />
                   </Panel>
