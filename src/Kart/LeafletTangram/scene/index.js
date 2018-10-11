@@ -82,8 +82,8 @@ function lagToppnivå(props) {
     sources: {
       osm: {
         type: 'MVT',
-        url:
-          'https://nintest.artsdatabanken.no/basemap/openstreetmap/{z}/{x}/{y}',
+        url: 'https://{s}.artsdatabanken.no/basemap/openstreetmap/{z}/{x}/{y}',
+        url_subdomains: ['nintest', 'rover'],
         max_zoom: 14,
       },
     },

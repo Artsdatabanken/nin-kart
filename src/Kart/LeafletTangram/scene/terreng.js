@@ -6,9 +6,8 @@ function lagTerreng(drawProps, config) {
   config.layers.terreng = terrengmal
   config.sources.normals = {
     type: 'Raster',
-    url:
-      //  'https://tile.nextzen.org/tilezen/terrain/v1/256/normal/{z}/{x}/{y}.png?api_key=Tqy6UAn9ShClyvfUon001g',
-      'https://nintest.artsdatabanken.no/terrain/normals/{z}/{x}/{y}',
+    url: 'https://{s}.artsdatabanken.no/terrain/normals/{z}/{x}/{y}',
+    url_subdomains: ['nintest', 'rover'],
     max_zoom: 15,
   }
   config.styles.terreng = {
