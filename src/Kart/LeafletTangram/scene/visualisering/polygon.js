@@ -80,7 +80,8 @@ function lagSource(kode, bbox, zoom) {
   }
   const source = {
     type: 'MVT',
-    url: `https://nintest.artsdatabanken.no/polygon/${kode}/{z}/{x}/{y}`,
+    url: `https://{s}.artsdatabanken.no/polygon/${kode}/{z}/{x}/{y}`,
+    url_subdomains: ['nintest', 'rover'],
   }
   if (bbox) {
     const [ll, ur] = bbox

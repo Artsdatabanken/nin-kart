@@ -39,7 +39,8 @@ function lagSource(kode, bbox, zoom) {
   }
   const source = {
     type: 'Raster',
-    url: `https://nintest.artsdatabanken.no/gradient/${kode}/{z}/{x}/{y}`,
+    url: `https://{s}.artsdatabanken.no/gradient/${kode}/{z}/{x}/{y}`,
+    url_subdomains: ['nintest', 'rover'],
   }
 
   if (bbox) {
