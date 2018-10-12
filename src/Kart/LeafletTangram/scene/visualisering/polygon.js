@@ -38,7 +38,7 @@ function drawAll({
 }
 
 function draw(args) {
-  let { kode, forelderkode, farge, opplystKode, visEtiketter } = args
+  let { kode, farge, opplystKode, visEtiketter } = args
   farge = opplystKode === kode ? '#f88' : farge
   const layer = {
     draw: {
