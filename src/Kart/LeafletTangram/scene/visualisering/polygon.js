@@ -30,7 +30,7 @@ function drawAll({
     layer[kode] = draw({
       kode: kode,
       forelderkode: kode,
-      farge: farge,
+      farge: barn[kode].farge,
       opplystKode: opplystKode,
       visEtiketter: visEtiketter,
     })
@@ -55,7 +55,7 @@ function draw(args) {
       },
     },
   }
-  if (kode !== forelderkode) layer.filter = { code: kode }
+  layer.filter = { code: kode }
   if (kode === opplystKode) {
     const lines = layer.draw.lines
     lines.width = '2px'

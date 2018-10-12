@@ -120,14 +120,17 @@ function updateScene(config: Object, props: Object) {
     const fileFormat = formats[sourceType]
     const drawArgs = {
       kode: meta.kode,
-      barn: meta.barn || { [props.meta.kode]: props.meta },
+      barn:
+        Object.keys(meta.barn).length > 0
+          ? meta.barn
+          : { [props.meta.kode]: props.meta },
       opplystKode: props.opplystKode,
       bbox: meta.bbox,
       zoom: meta.zoom,
       type: sourceType,
       fileFormat: fileFormat,
       gradient: { filterMin: 0, filterMax: 1 },
-      visBarn: true,
+      visBarn: Object.keys(meta.barn).length > 0,
     }
 
     opprettEttLag(drawArgs, config)
