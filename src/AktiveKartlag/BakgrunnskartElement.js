@@ -3,7 +3,6 @@ import KartlagElement from './Kartlagelement'
 
 class BakgrunnskartElement extends Component {
   render() {
-    console.log('props', this.props)
     return (
       <KartlagElement
         kode="bakgrunnskart"

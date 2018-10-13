@@ -54,7 +54,6 @@ class SettingsContainer extends Component {
   }
 
   handleToggleForside = () => {
-    console.log('toggle forside', this.state)
     this.handleUpdateValue('visForside', !this.state.visForside)
   }
 }

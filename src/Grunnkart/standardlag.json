@@ -1,12 +1,12 @@
-[
-  {
+{
+  "bakgrunnskart": {
     "kode": "bakgrunnskart",
     "type": "bakgrunn",
     "tittel": "Basiskart",
     "tema": "lys",
     "erSynlig": true
   },
-  {
+  "terreng": {
     "kode": "terreng",
     "type": "terreng",
     "tittel": "3D terreng",
@@ -19,4 +19,4 @@
       "visEtikettKontur": true
     }
   }
-]
+}
