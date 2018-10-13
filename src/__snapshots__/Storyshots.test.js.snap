@@ -5484,7 +5484,7 @@ exports[`Storyshots Statistikk arter 1`] = `
 exports[`Storyshots Tweaks bakgrunn 1`] = `
 <div>
   <div
-    className="MuiPaper-root-2340 MuiPaper-elevation1-2343 MuiPaper-rounded-2341"
+    className="MuiPaper-root-2336 MuiPaper-elevation1-2339 MuiPaper-rounded-2337"
     style={
       Object {
         "backgroundColor": "#eee",
@@ -5495,19 +5495,19 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
     }
   >
     <ul
-      className="MuiList-root-2336 MuiList-padding-2337"
+      className="MuiList-root-2332 MuiList-padding-2333"
       style={Object {}}
     >
       <ul
-        className="MuiList-root-2336 MuiList-padding-2337"
+        className="MuiList-root-2332 MuiList-padding-2333"
       >
         <li
-          className="MuiListSubheader-root-2252 MuiListSubheader-sticky-2257 MuiListSubheader-gutters-2255"
+          className="MuiListSubheader-root-2250 MuiListSubheader-sticky-2255 MuiListSubheader-gutters-2253"
         >
           Områder
         </li>
         <div
-          className="MuiButtonBase-root-2297 MuiListItem-root-2300 MuiListItem-default-2303 MuiListItem-gutters-2307 MuiListItem-button-2308"
+          className="MuiButtonBase-root-2295 MuiListItem-root-2298 MuiListItem-default-2301 MuiListItem-gutters-2305 MuiListItem-button-2306"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -5523,33 +5523,28 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
           tabIndex="0"
         >
           <div
-            className="MuiListItemText-root-2284"
+            className="MuiListItemText-root-2282"
           >
             <span
-              className="MuiTypography-root-2258 MuiTypography-subheading-2265 MuiListItemText-primary-2287"
+              className="MuiTypography-root-2256 MuiTypography-subheading-2263 MuiListItemText-primary-2285"
             >
               Tema
             </span>
-            <p
-              className="MuiTypography-root-2258 MuiTypography-body1-2267 MuiTypography-colorTextSecondary-2282 MuiListItemText-secondary-2288"
-            >
-              Tilpasset
-            </p>
           </div>
           <span
-            className="MuiTouchRipple-root-2290"
+            className="MuiTouchRipple-root-2288"
           />
         </div>
         <li
-          className="MuiListSubheader-root-2252 MuiListSubheader-sticky-2257 MuiListSubheader-gutters-2255"
+          className="MuiListSubheader-root-2250 MuiListSubheader-sticky-2255 MuiListSubheader-gutters-2253"
         >
           Områder
         </li>
         <li
-          className="MuiListItem-container-2301"
+          className="MuiListItem-container-2299"
         >
           <div
-            className="MuiButtonBase-root-2297 MuiListItem-root-2300 MuiListItem-default-2303 MuiListItem-dense-2304 MuiListItem-gutters-2307 MuiListItem-button-2308 MuiListItem-secondaryAction-2309"
+            className="MuiButtonBase-root-2295 MuiListItem-root-2298 MuiListItem-default-2301 MuiListItem-gutters-2305 MuiListItem-button-2306 MuiListItem-secondaryAction-2307"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -5565,11 +5560,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
             tabIndex="0"
           >
             <span
-              className="MuiSwitch-root-2321"
+              className="MuiSwitch-root-2319"
             >
               <span
-                childrenClassName=""
-                className="MuiButtonBase-root-2297 MuiIconButton-root-2311 MuiSwitchBase-root-2317 MuiSwitch-switchBase-2324 MuiSwitch-colorSecondary-2327"
+                className="MuiButtonBase-root-2295 MuiIconButton-root-2309 MuiSwitchBase-root-2315 MuiSwitch-switchBase-2322 MuiSwitch-colorSecondary-2325"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -5584,41 +5578,41 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-2316"
+                  className="MuiIconButton-label-2314"
                 >
                   <span
-                    className="MuiSwitch-icon-2322"
+                    className="MuiSwitch-icon-2320"
                   />
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-2320"
+                    className="MuiSwitchBase-input-2318"
                     onChange={[Function]}
                     type="checkbox"
                   />
                 </span>
                 <span
-                  className="MuiTouchRipple-root-2290"
+                  className="MuiTouchRipple-root-2288"
                 />
               </span>
               <span
-                className="MuiSwitch-bar-2329"
+                className="MuiSwitch-bar-2327"
               />
             </span>
             <div
-              className="MuiListItemText-root-2284"
+              className="MuiListItemText-root-2282"
             >
               <span
-                className="MuiTypography-root-2258 MuiTypography-subheading-2265 MuiListItemText-primary-2287"
+                className="MuiTypography-root-2256 MuiTypography-subheading-2263 MuiListItemText-primary-2285"
               >
                 Vann
               </span>
             </div>
             <span
-              className="MuiTouchRipple-root-2290"
+              className="MuiTouchRipple-root-2288"
             />
           </div>
           <div
-            className="MuiListItemSecondaryAction-root-2335"
+            className="MuiListItemSecondaryAction-root-2331"
             onClick={[Function]}
             style={
               Object {
@@ -5628,7 +5622,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
             }
           >
             <div
-              className="MuiAvatar-root-2332"
+              className="MuiAvatar-root-2328"
               style={
                 Object {
                   "backgroundColor": undefined,
@@ -5638,10 +5632,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
           </div>
         </li>
         <li
-          className="MuiListItem-container-2301"
+          className="MuiListItem-container-2299"
         >
           <div
-            className="MuiButtonBase-root-2297 MuiListItem-root-2300 MuiListItem-default-2303 MuiListItem-dense-2304 MuiListItem-gutters-2307 MuiListItem-button-2308 MuiListItem-secondaryAction-2309"
+            className="MuiButtonBase-root-2295 MuiListItem-root-2298 MuiListItem-default-2301 MuiListItem-gutters-2305 MuiListItem-button-2306 MuiListItem-secondaryAction-2307"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -5657,11 +5651,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
             tabIndex="0"
           >
             <span
-              className="MuiSwitch-root-2321"
+              className="MuiSwitch-root-2319"
             >
               <span
-                childrenClassName=""
-                className="MuiButtonBase-root-2297 MuiIconButton-root-2311 MuiSwitchBase-root-2317 MuiSwitch-switchBase-2324 MuiSwitch-colorSecondary-2327"
+                className="MuiButtonBase-root-2295 MuiIconButton-root-2309 MuiSwitchBase-root-2315 MuiSwitch-switchBase-2322 MuiSwitch-colorSecondary-2325"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -5676,41 +5669,41 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-2316"
+                  className="MuiIconButton-label-2314"
                 >
                   <span
-                    className="MuiSwitch-icon-2322"
+                    className="MuiSwitch-icon-2320"
                   />
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-2320"
+                    className="MuiSwitchBase-input-2318"
                     onChange={[Function]}
                     type="checkbox"
                   />
                 </span>
                 <span
-                  className="MuiTouchRipple-root-2290"
+                  className="MuiTouchRipple-root-2288"
                 />
               </span>
               <span
-                className="MuiSwitch-bar-2329"
+                className="MuiSwitch-bar-2327"
               />
             </span>
             <div
-              className="MuiListItemText-root-2284"
+              className="MuiListItemText-root-2282"
             >
               <span
-                className="MuiTypography-root-2258 MuiTypography-subheading-2265 MuiListItemText-primary-2287"
+                className="MuiTypography-root-2256 MuiTypography-subheading-2263 MuiListItemText-primary-2285"
               >
                 Land
               </span>
             </div>
             <span
-              className="MuiTouchRipple-root-2290"
+              className="MuiTouchRipple-root-2288"
             />
           </div>
           <div
-            className="MuiListItemSecondaryAction-root-2335"
+            className="MuiListItemSecondaryAction-root-2331"
             onClick={[Function]}
             style={
               Object {
@@ -5720,7 +5713,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
             }
           >
             <div
-              className="MuiAvatar-root-2332"
+              className="MuiAvatar-root-2328"
               style={
                 Object {
                   "backgroundColor": undefined,
@@ -5730,10 +5723,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
           </div>
         </li>
         <li
-          className="MuiListItem-container-2301"
+          className="MuiListItem-container-2299"
         >
           <div
-            className="MuiButtonBase-root-2297 MuiListItem-root-2300 MuiListItem-default-2303 MuiListItem-dense-2304 MuiListItem-gutters-2307 MuiListItem-button-2308 MuiListItem-secondaryAction-2309"
+            className="MuiButtonBase-root-2295 MuiListItem-root-2298 MuiListItem-default-2301 MuiListItem-gutters-2305 MuiListItem-button-2306 MuiListItem-secondaryAction-2307"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -5749,11 +5742,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
             tabIndex="0"
           >
             <span
-              className="MuiSwitch-root-2321"
+              className="MuiSwitch-root-2319"
             >
               <span
-                childrenClassName=""
-                className="MuiButtonBase-root-2297 MuiIconButton-root-2311 MuiSwitchBase-root-2317 MuiSwitch-switchBase-2324 MuiSwitch-colorSecondary-2327"
+                className="MuiButtonBase-root-2295 MuiIconButton-root-2309 MuiSwitchBase-root-2315 MuiSwitch-switchBase-2322 MuiSwitch-colorSecondary-2325"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -5768,41 +5760,41 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-2316"
+                  className="MuiIconButton-label-2314"
                 >
                   <span
-                    className="MuiSwitch-icon-2322"
+                    className="MuiSwitch-icon-2320"
                   />
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-2320"
+                    className="MuiSwitchBase-input-2318"
                     onChange={[Function]}
                     type="checkbox"
                   />
                 </span>
                 <span
-                  className="MuiTouchRipple-root-2290"
+                  className="MuiTouchRipple-root-2288"
                 />
               </span>
               <span
-                className="MuiSwitch-bar-2329"
+                className="MuiSwitch-bar-2327"
               />
             </span>
             <div
-              className="MuiListItemText-root-2284"
+              className="MuiListItemText-root-2282"
             >
               <span
-                className="MuiTypography-root-2258 MuiTypography-subheading-2265 MuiListItemText-primary-2287"
+                className="MuiTypography-root-2256 MuiTypography-subheading-2263 MuiListItemText-primary-2285"
               >
                 Transport
               </span>
             </div>
             <span
-              className="MuiTouchRipple-root-2290"
+              className="MuiTouchRipple-root-2288"
             />
           </div>
           <div
-            className="MuiListItemSecondaryAction-root-2335"
+            className="MuiListItemSecondaryAction-root-2331"
             onClick={[Function]}
             style={
               Object {
@@ -5812,7 +5804,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
             }
           >
             <div
-              className="MuiAvatar-root-2332"
+              className="MuiAvatar-root-2328"
               style={
                 Object {
                   "backgroundColor": undefined,
@@ -5822,15 +5814,15 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
           </div>
         </li>
         <li
-          className="MuiListSubheader-root-2252 MuiListSubheader-sticky-2257 MuiListSubheader-gutters-2255"
+          className="MuiListSubheader-root-2250 MuiListSubheader-sticky-2255 MuiListSubheader-gutters-2253"
         >
           Etiketter
         </li>
         <li
-          className="MuiListItem-container-2301"
+          className="MuiListItem-container-2299"
         >
           <div
-            className="MuiButtonBase-root-2297 MuiListItem-root-2300 MuiListItem-default-2303 MuiListItem-dense-2304 MuiListItem-gutters-2307 MuiListItem-button-2308 MuiListItem-secondaryAction-2309"
+            className="MuiButtonBase-root-2295 MuiListItem-root-2298 MuiListItem-default-2301 MuiListItem-gutters-2305 MuiListItem-button-2306 MuiListItem-secondaryAction-2307"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -5846,11 +5838,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
             tabIndex="0"
           >
             <span
-              className="MuiSwitch-root-2321"
+              className="MuiSwitch-root-2319"
             >
               <span
-                childrenClassName=""
-                className="MuiButtonBase-root-2297 MuiIconButton-root-2311 MuiSwitchBase-root-2317 MuiSwitch-switchBase-2324 MuiSwitch-colorSecondary-2327"
+                className="MuiButtonBase-root-2295 MuiIconButton-root-2309 MuiSwitchBase-root-2315 MuiSwitch-switchBase-2322 MuiSwitch-colorSecondary-2325"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -5865,41 +5856,41 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-2316"
+                  className="MuiIconButton-label-2314"
                 >
                   <span
-                    className="MuiSwitch-icon-2322"
+                    className="MuiSwitch-icon-2320"
                   />
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-2320"
+                    className="MuiSwitchBase-input-2318"
                     onChange={[Function]}
                     type="checkbox"
                   />
                 </span>
                 <span
-                  className="MuiTouchRipple-root-2290"
+                  className="MuiTouchRipple-root-2288"
                 />
               </span>
               <span
-                className="MuiSwitch-bar-2329"
+                className="MuiSwitch-bar-2327"
               />
             </span>
             <div
-              className="MuiListItemText-root-2284"
+              className="MuiListItemText-root-2282"
             >
               <span
-                className="MuiTypography-root-2258 MuiTypography-subheading-2265 MuiListItemText-primary-2287"
+                className="MuiTypography-root-2256 MuiTypography-subheading-2263 MuiListItemText-primary-2285"
               >
                 Vann
               </span>
             </div>
             <span
-              className="MuiTouchRipple-root-2290"
+              className="MuiTouchRipple-root-2288"
             />
           </div>
           <div
-            className="MuiListItemSecondaryAction-root-2335"
+            className="MuiListItemSecondaryAction-root-2331"
             onClick={[Function]}
             style={
               Object {
@@ -5909,7 +5900,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
             }
           >
             <div
-              className="MuiAvatar-root-2332"
+              className="MuiAvatar-root-2328"
               style={
                 Object {
                   "backgroundColor": undefined,
@@ -5919,10 +5910,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
           </div>
         </li>
         <li
-          className="MuiListItem-container-2301"
+          className="MuiListItem-container-2299"
         >
           <div
-            className="MuiButtonBase-root-2297 MuiListItem-root-2300 MuiListItem-default-2303 MuiListItem-dense-2304 MuiListItem-gutters-2307 MuiListItem-button-2308 MuiListItem-secondaryAction-2309"
+            className="MuiButtonBase-root-2295 MuiListItem-root-2298 MuiListItem-default-2301 MuiListItem-gutters-2305 MuiListItem-button-2306 MuiListItem-secondaryAction-2307"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -5938,11 +5929,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
             tabIndex="0"
           >
             <span
-              className="MuiSwitch-root-2321"
+              className="MuiSwitch-root-2319"
             >
               <span
-                childrenClassName=""
-                className="MuiButtonBase-root-2297 MuiIconButton-root-2311 MuiSwitchBase-root-2317 MuiSwitch-switchBase-2324 MuiSwitch-colorSecondary-2327"
+                className="MuiButtonBase-root-2295 MuiIconButton-root-2309 MuiSwitchBase-root-2315 MuiSwitch-switchBase-2322 MuiSwitch-colorSecondary-2325"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -5957,41 +5947,41 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-2316"
+                  className="MuiIconButton-label-2314"
                 >
                   <span
-                    className="MuiSwitch-icon-2322"
+                    className="MuiSwitch-icon-2320"
                   />
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-2320"
+                    className="MuiSwitchBase-input-2318"
                     onChange={[Function]}
                     type="checkbox"
                   />
                 </span>
                 <span
-                  className="MuiTouchRipple-root-2290"
+                  className="MuiTouchRipple-root-2288"
                 />
               </span>
               <span
-                className="MuiSwitch-bar-2329"
+                className="MuiSwitch-bar-2327"
               />
             </span>
             <div
-              className="MuiListItemText-root-2284"
+              className="MuiListItemText-root-2282"
             >
               <span
-                className="MuiTypography-root-2258 MuiTypography-subheading-2265 MuiListItemText-primary-2287"
+                className="MuiTypography-root-2256 MuiTypography-subheading-2263 MuiListItemText-primary-2285"
               >
                 Steder
               </span>
             </div>
             <span
-              className="MuiTouchRipple-root-2290"
+              className="MuiTouchRipple-root-2288"
             />
           </div>
           <div
-            className="MuiListItemSecondaryAction-root-2335"
+            className="MuiListItemSecondaryAction-root-2331"
             onClick={[Function]}
             style={
               Object {
@@ -6001,7 +5991,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
             }
           >
             <div
-              className="MuiAvatar-root-2332"
+              className="MuiAvatar-root-2328"
               style={
                 Object {
                   "backgroundColor": undefined,
@@ -6011,10 +6001,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
           </div>
         </li>
         <li
-          className="MuiListItem-container-2301"
+          className="MuiListItem-container-2299"
         >
           <div
-            className="MuiButtonBase-root-2297 MuiListItem-root-2300 MuiListItem-default-2303 MuiListItem-dense-2304 MuiListItem-gutters-2307 MuiListItem-button-2308 MuiListItem-secondaryAction-2309"
+            className="MuiButtonBase-root-2295 MuiListItem-root-2298 MuiListItem-default-2301 MuiListItem-gutters-2305 MuiListItem-button-2306 MuiListItem-secondaryAction-2307"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -6030,11 +6020,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
             tabIndex="0"
           >
             <span
-              className="MuiSwitch-root-2321"
+              className="MuiSwitch-root-2319"
             >
               <span
-                childrenClassName=""
-                className="MuiButtonBase-root-2297 MuiIconButton-root-2311 MuiSwitchBase-root-2317 MuiSwitch-switchBase-2324 MuiSwitch-colorSecondary-2327"
+                className="MuiButtonBase-root-2295 MuiIconButton-root-2309 MuiSwitchBase-root-2315 MuiSwitch-switchBase-2322 MuiSwitch-colorSecondary-2325"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -6049,41 +6038,41 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
                 tabIndex={null}
               >
                 <span
-                  className="MuiIconButton-label-2316"
+                  className="MuiIconButton-label-2314"
                 >
                   <span
-                    className="MuiSwitch-icon-2322"
+                    className="MuiSwitch-icon-2320"
                   />
                   <input
                     checked={false}
-                    className="MuiSwitchBase-input-2320"
+                    className="MuiSwitchBase-input-2318"
                     onChange={[Function]}
                     type="checkbox"
                   />
                 </span>
                 <span
-                  className="MuiTouchRipple-root-2290"
+                  className="MuiTouchRipple-root-2288"
                 />
               </span>
               <span
-                className="MuiSwitch-bar-2329"
+                className="MuiSwitch-bar-2327"
               />
             </span>
             <div
-              className="MuiListItemText-root-2284"
+              className="MuiListItemText-root-2282"
             >
               <span
-                className="MuiTypography-root-2258 MuiTypography-subheading-2265 MuiListItemText-primary-2287"
+                className="MuiTypography-root-2256 MuiTypography-subheading-2263 MuiListItemText-primary-2285"
               >
                 Transport
               </span>
             </div>
             <span
-              className="MuiTouchRipple-root-2290"
+              className="MuiTouchRipple-root-2288"
             />
           </div>
           <div
-            className="MuiListItemSecondaryAction-root-2335"
+            className="MuiListItemSecondaryAction-root-2331"
             onClick={[Function]}
             style={
               Object {
@@ -6093,7 +6082,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
             }
           >
             <div
-              className="MuiAvatar-root-2332"
+              className="MuiAvatar-root-2328"
               style={
                 Object {
                   "backgroundColor": undefined,
@@ -6103,20 +6092,19 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
           </div>
         </li>
         <li
-          className="MuiListSubheader-root-2252 MuiListSubheader-sticky-2257 MuiListSubheader-gutters-2255"
+          className="MuiListSubheader-root-2250 MuiListSubheader-sticky-2255 MuiListSubheader-gutters-2253"
         >
           Administrative grenser
         </li>
         <li
-          className="MuiListItem-root-2300 MuiListItem-default-2303 MuiListItem-dense-2304 MuiListItem-gutters-2307"
+          className="MuiListItem-root-2298 MuiListItem-default-2301 MuiListItem-gutters-2305"
           disabled={false}
         >
           <span
-            className="MuiSwitch-root-2321"
+            className="MuiSwitch-root-2319"
           >
             <span
-              childrenClassName=""
-              className="MuiButtonBase-root-2297 MuiIconButton-root-2311 MuiSwitchBase-root-2317 MuiSwitch-switchBase-2324 MuiSwitch-colorSecondary-2327"
+              className="MuiButtonBase-root-2295 MuiIconButton-root-2309 MuiSwitchBase-root-2315 MuiSwitch-switchBase-2322 MuiSwitch-colorSecondary-2325"
               onBlur={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
@@ -6130,46 +6118,45 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
               tabIndex={null}
             >
               <span
-                className="MuiIconButton-label-2316"
+                className="MuiIconButton-label-2314"
               >
                 <span
-                  className="MuiSwitch-icon-2322"
+                  className="MuiSwitch-icon-2320"
                 />
                 <input
                   checked={false}
-                  className="MuiSwitchBase-input-2320"
+                  className="MuiSwitchBase-input-2318"
                   onChange={[Function]}
                   type="checkbox"
                 />
               </span>
               <span
-                className="MuiTouchRipple-root-2290"
+                className="MuiTouchRipple-root-2288"
               />
             </span>
             <span
-              className="MuiSwitch-bar-2329"
+              className="MuiSwitch-bar-2327"
             />
           </span>
           <div
-            className="MuiListItemText-root-2284"
+            className="MuiListItemText-root-2282"
           >
             <span
-              className="MuiTypography-root-2258 MuiTypography-subheading-2265 MuiListItemText-primary-2287"
+              className="MuiTypography-root-2256 MuiTypography-subheading-2263 MuiListItemText-primary-2285"
             >
               Riksgrense
             </span>
           </div>
         </li>
         <li
-          className="MuiListItem-root-2300 MuiListItem-default-2303 MuiListItem-dense-2304 MuiListItem-gutters-2307"
+          className="MuiListItem-root-2298 MuiListItem-default-2301 MuiListItem-gutters-2305"
           disabled={false}
         >
           <span
-            className="MuiSwitch-root-2321"
+            className="MuiSwitch-root-2319"
           >
             <span
-              childrenClassName=""
-              className="MuiButtonBase-root-2297 MuiIconButton-root-2311 MuiSwitchBase-root-2317 MuiSwitch-switchBase-2324 MuiSwitch-colorSecondary-2327"
+              className="MuiButtonBase-root-2295 MuiIconButton-root-2309 MuiSwitchBase-root-2315 MuiSwitch-switchBase-2322 MuiSwitch-colorSecondary-2325"
               onBlur={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
@@ -6183,46 +6170,45 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
               tabIndex={null}
             >
               <span
-                className="MuiIconButton-label-2316"
+                className="MuiIconButton-label-2314"
               >
                 <span
-                  className="MuiSwitch-icon-2322"
+                  className="MuiSwitch-icon-2320"
                 />
                 <input
                   checked={false}
-                  className="MuiSwitchBase-input-2320"
+                  className="MuiSwitchBase-input-2318"
                   onChange={[Function]}
                   type="checkbox"
                 />
               </span>
               <span
-                className="MuiTouchRipple-root-2290"
+                className="MuiTouchRipple-root-2288"
               />
             </span>
             <span
-              className="MuiSwitch-bar-2329"
+              className="MuiSwitch-bar-2327"
             />
           </span>
           <div
-            className="MuiListItemText-root-2284"
+            className="MuiListItemText-root-2282"
           >
             <span
-              className="MuiTypography-root-2258 MuiTypography-subheading-2265 MuiListItemText-primary-2287"
+              className="MuiTypography-root-2256 MuiTypography-subheading-2263 MuiListItemText-primary-2285"
             >
               Fylke
             </span>
           </div>
         </li>
         <li
-          className="MuiListItem-root-2300 MuiListItem-default-2303 MuiListItem-dense-2304 MuiListItem-gutters-2307"
+          className="MuiListItem-root-2298 MuiListItem-default-2301 MuiListItem-gutters-2305"
           disabled={false}
         >
           <span
-            className="MuiSwitch-root-2321"
+            className="MuiSwitch-root-2319"
           >
             <span
-              childrenClassName=""
-              className="MuiButtonBase-root-2297 MuiIconButton-root-2311 MuiSwitchBase-root-2317 MuiSwitch-switchBase-2324 MuiSwitch-colorSecondary-2327"
+              className="MuiButtonBase-root-2295 MuiIconButton-root-2309 MuiSwitchBase-root-2315 MuiSwitch-switchBase-2322 MuiSwitch-colorSecondary-2325"
               onBlur={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
@@ -6236,31 +6222,31 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
               tabIndex={null}
             >
               <span
-                className="MuiIconButton-label-2316"
+                className="MuiIconButton-label-2314"
               >
                 <span
-                  className="MuiSwitch-icon-2322"
+                  className="MuiSwitch-icon-2320"
                 />
                 <input
                   checked={false}
-                  className="MuiSwitchBase-input-2320"
+                  className="MuiSwitchBase-input-2318"
                   onChange={[Function]}
                   type="checkbox"
                 />
               </span>
               <span
-                className="MuiTouchRipple-root-2290"
+                className="MuiTouchRipple-root-2288"
               />
             </span>
             <span
-              className="MuiSwitch-bar-2329"
+              className="MuiSwitch-bar-2327"
             />
           </span>
           <div
-            className="MuiListItemText-root-2284"
+            className="MuiListItemText-root-2282"
           >
             <span
-              className="MuiTypography-root-2258 MuiTypography-subheading-2265 MuiListItemText-primary-2287"
+              className="MuiTypography-root-2256 MuiTypography-subheading-2263 MuiListItemText-primary-2285"
             >
               Kommuner
             </span>
@@ -6275,7 +6261,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
 exports[`Storyshots Tweaks bakgrunn tema 1`] = `
 <div>
   <div
-    className="MuiPaper-root-2594 MuiPaper-elevation1-2597 MuiPaper-rounded-2595"
+    className="MuiPaper-root-2590 MuiPaper-elevation1-2593 MuiPaper-rounded-2591"
     style={
       Object {
         "backgroundColor": "#eee",
@@ -6286,19 +6272,19 @@ exports[`Storyshots Tweaks bakgrunn tema 1`] = `
     }
   >
     <ul
-      className="MuiList-root-2590 MuiList-padding-2591"
+      className="MuiList-root-2586 MuiList-padding-2587"
       style={Object {}}
     >
       <li
-        className="MuiListSubheader-root-2531 MuiListSubheader-sticky-2536 MuiListSubheader-gutters-2534"
+        className="MuiListSubheader-root-2527 MuiListSubheader-sticky-2532 MuiListSubheader-gutters-2530"
       >
         Bakgrunnskart tema
       </li>
       <ul
-        className="MuiList-root-2590 MuiList-padding-2591"
+        className="MuiList-root-2586 MuiList-padding-2587"
       >
         <div
-          className="MuiButtonBase-root-2576 MuiListItem-root-2579 MuiListItem-default-2582 MuiListItem-gutters-2586 MuiListItem-button-2587"
+          className="MuiButtonBase-root-2572 MuiListItem-root-2575 MuiListItem-default-2578 MuiListItem-gutters-2582 MuiListItem-button-2583"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -6314,15 +6300,15 @@ exports[`Storyshots Tweaks bakgrunn tema 1`] = `
           tabIndex="0"
         >
           <div
-            className="MuiListItemText-root-2563"
+            className="MuiListItemText-root-2559"
           >
             <span
-              className="MuiTypography-root-2537 MuiTypography-subheading-2544 MuiListItemText-primary-2566"
+              className="MuiTypography-root-2533 MuiTypography-subheading-2540 MuiListItemText-primary-2562"
             >
               Mørk
             </span>
             <p
-              className="MuiTypography-root-2537 MuiTypography-body1-2546 MuiTypography-colorTextSecondary-2561 MuiListItemText-secondary-2567"
+              className="MuiTypography-root-2533 MuiTypography-body1-2542 MuiTypography-colorTextSecondary-2557 MuiListItemText-secondary-2563"
             >
               <img
                 alt="Mørk"
@@ -6336,11 +6322,11 @@ exports[`Storyshots Tweaks bakgrunn tema 1`] = `
             </p>
           </div>
           <span
-            className="MuiTouchRipple-root-2569"
+            className="MuiTouchRipple-root-2565"
           />
         </div>
         <div
-          className="MuiButtonBase-root-2576 MuiListItem-root-2579 MuiListItem-default-2582 MuiListItem-gutters-2586 MuiListItem-button-2587"
+          className="MuiButtonBase-root-2572 MuiListItem-root-2575 MuiListItem-default-2578 MuiListItem-gutters-2582 MuiListItem-button-2583"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -6356,15 +6342,15 @@ exports[`Storyshots Tweaks bakgrunn tema 1`] = `
           tabIndex="0"
         >
           <div
-            className="MuiListItemText-root-2563"
+            className="MuiListItemText-root-2559"
           >
             <span
-              className="MuiTypography-root-2537 MuiTypography-subheading-2544 MuiListItemText-primary-2566"
+              className="MuiTypography-root-2533 MuiTypography-subheading-2540 MuiListItemText-primary-2562"
             >
               Lys
             </span>
             <p
-              className="MuiTypography-root-2537 MuiTypography-body1-2546 MuiTypography-colorTextSecondary-2561 MuiListItemText-secondary-2567"
+              className="MuiTypography-root-2533 MuiTypography-body1-2542 MuiTypography-colorTextSecondary-2557 MuiListItemText-secondary-2563"
             >
               <img
                 alt="Lys"
@@ -6378,11 +6364,11 @@ exports[`Storyshots Tweaks bakgrunn tema 1`] = `
             </p>
           </div>
           <span
-            className="MuiTouchRipple-root-2569"
+            className="MuiTouchRipple-root-2565"
           />
         </div>
         <div
-          className="MuiButtonBase-root-2576 MuiListItem-root-2579 MuiListItem-default-2582 MuiListItem-gutters-2586 MuiListItem-button-2587"
+          className="MuiButtonBase-root-2572 MuiListItem-root-2575 MuiListItem-default-2578 MuiListItem-gutters-2582 MuiListItem-button-2583"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -6398,15 +6384,15 @@ exports[`Storyshots Tweaks bakgrunn tema 1`] = `
           tabIndex="0"
         >
           <div
-            className="MuiListItemText-root-2563"
+            className="MuiListItemText-root-2559"
           >
             <span
-              className="MuiTypography-root-2537 MuiTypography-subheading-2544 MuiListItemText-primary-2566"
+              className="MuiTypography-root-2533 MuiTypography-subheading-2540 MuiListItemText-primary-2562"
             >
               Flyfoto
             </span>
             <p
-              className="MuiTypography-root-2537 MuiTypography-body1-2546 MuiTypography-colorTextSecondary-2561 MuiListItemText-secondary-2567"
+              className="MuiTypography-root-2533 MuiTypography-body1-2542 MuiTypography-colorTextSecondary-2557 MuiListItemText-secondary-2563"
             >
               <img
                 alt="Flyfoto"
@@ -6420,7 +6406,7 @@ exports[`Storyshots Tweaks bakgrunn tema 1`] = `
             </p>
           </div>
           <span
-            className="MuiTouchRipple-root-2569"
+            className="MuiTouchRipple-root-2565"
           />
         </div>
       </ul>
@@ -6432,7 +6418,7 @@ exports[`Storyshots Tweaks bakgrunn tema 1`] = `
 exports[`Storyshots Tweaks bakgrunn transport 1`] = `
 <div>
   <div
-    className="MuiPaper-root-2414 MuiPaper-elevation1-2417 MuiPaper-rounded-2415"
+    className="MuiPaper-root-2410 MuiPaper-elevation1-2413 MuiPaper-rounded-2411"
     style={
       Object {
         "backgroundColor": "#eee",
@@ -6443,14 +6429,14 @@ exports[`Storyshots Tweaks bakgrunn transport 1`] = `
     }
   >
     <ul
-      className="MuiList-root-2410 MuiList-padding-2411"
+      className="MuiList-root-2406 MuiList-padding-2407"
       style={Object {}}
     >
       <ul
-        className="MuiList-root-2410 MuiList-padding-2411"
+        className="MuiList-root-2406 MuiList-padding-2407"
       >
         <li
-          className="MuiListSubheader-root-2404 MuiListSubheader-sticky-2409 MuiListSubheader-gutters-2407"
+          className="MuiListSubheader-root-2400 MuiListSubheader-sticky-2405 MuiListSubheader-gutters-2403"
           style={
             Object {
               "textTransform": "capitalize",
@@ -6460,7 +6446,7 @@ exports[`Storyshots Tweaks bakgrunn transport 1`] = `
           bakgrunnskart
         </li>
         <li
-          className="MuiListSubheader-root-2404 MuiListSubheader-sticky-2409 MuiListSubheader-gutters-2407"
+          className="MuiListSubheader-root-2400 MuiListSubheader-sticky-2405 MuiListSubheader-gutters-2403"
         >
           Fyllfarge
         </li>
@@ -6695,7 +6681,7 @@ exports[`Storyshots Tweaks bakgrunn transport 1`] = `
 exports[`Storyshots Tweaks polygon 1`] = `
 <div>
   <div
-    className="MuiPaper-root-3057 MuiPaper-elevation1-3060 MuiPaper-rounded-3058"
+    className="MuiPaper-root-3053 MuiPaper-elevation1-3056 MuiPaper-rounded-3054"
     style={
       Object {
         "backgroundColor": "#eee",
@@ -6706,39 +6692,39 @@ exports[`Storyshots Tweaks polygon 1`] = `
     }
   >
     <ul
-      className="MuiList-root-3053 MuiList-padding-3054"
+      className="MuiList-root-3049 MuiList-padding-3050"
       style={Object {}}
     >
       <li
-        className="MuiListSubheader-root-2974 MuiListSubheader-sticky-2979 MuiListSubheader-gutters-2977"
+        className="MuiListSubheader-root-2970 MuiListSubheader-sticky-2975 MuiListSubheader-gutters-2973"
       >
         Aktiv skredmark
       </li>
       <li
-        className="MuiListItem-container-3043"
+        className="MuiListItem-container-3039"
       >
         <div
-          className="MuiListItem-root-3042 MuiListItem-default-3045 MuiListItem-gutters-3049 MuiListItem-secondaryAction-3051"
+          className="MuiListItem-root-3038 MuiListItem-default-3041 MuiListItem-gutters-3045 MuiListItem-secondaryAction-3047"
           disabled={false}
         >
           <div
-            className="MuiListItemText-root-3006"
+            className="MuiListItemText-root-3002"
           >
             <span
-              className="MuiTypography-root-2980 MuiTypography-subheading-2987 MuiListItemText-primary-3009"
+              className="MuiTypography-root-2976 MuiTypography-subheading-2983 MuiListItemText-primary-3005"
             >
               Vis etiketter
             </span>
           </div>
         </div>
         <div
-          className="MuiListItemSecondaryAction-root-3041"
+          className="MuiListItemSecondaryAction-root-3037"
         >
           <span
-            className="MuiSwitch-root-3032"
+            className="MuiSwitch-root-3028"
           >
             <span
-              className="MuiButtonBase-root-3019 MuiIconButton-root-3022 MuiSwitchBase-root-3028 MuiSwitch-switchBase-3035 MuiSwitch-colorSecondary-3038"
+              className="MuiButtonBase-root-3015 MuiIconButton-root-3018 MuiSwitchBase-root-3024 MuiSwitch-switchBase-3031 MuiSwitch-colorSecondary-3034"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -6753,53 +6739,53 @@ exports[`Storyshots Tweaks polygon 1`] = `
               tabIndex={null}
             >
               <span
-                className="MuiIconButton-label-3027"
+                className="MuiIconButton-label-3023"
               >
                 <span
-                  className="MuiSwitch-icon-3033"
+                  className="MuiSwitch-icon-3029"
                 />
                 <input
                   checked={false}
-                  className="MuiSwitchBase-input-3031"
+                  className="MuiSwitchBase-input-3027"
                   onChange={[Function]}
                   type="checkbox"
                 />
               </span>
               <span
-                className="MuiTouchRipple-root-3012"
+                className="MuiTouchRipple-root-3008"
               />
             </span>
             <span
-              className="MuiSwitch-bar-3040"
+              className="MuiSwitch-bar-3036"
             />
           </span>
         </div>
       </li>
       <li
-        className="MuiListItem-container-3043"
+        className="MuiListItem-container-3039"
       >
         <div
-          className="MuiListItem-root-3042 MuiListItem-default-3045 MuiListItem-gutters-3049 MuiListItem-secondaryAction-3051"
+          className="MuiListItem-root-3038 MuiListItem-default-3041 MuiListItem-gutters-3045 MuiListItem-secondaryAction-3047"
           disabled={false}
         >
           <div
-            className="MuiListItemText-root-3006"
+            className="MuiListItemText-root-3002"
           >
             <span
-              className="MuiTypography-root-2980 MuiTypography-subheading-2987 MuiListItemText-primary-3009"
+              className="MuiTypography-root-2976 MuiTypography-subheading-2983 MuiListItemText-primary-3005"
             >
               Vis kartleggingsenhet 1:20000
             </span>
           </div>
         </div>
         <div
-          className="MuiListItemSecondaryAction-root-3041"
+          className="MuiListItemSecondaryAction-root-3037"
         >
           <span
-            className="MuiSwitch-root-3032"
+            className="MuiSwitch-root-3028"
           >
             <span
-              className="MuiButtonBase-root-3019 MuiIconButton-root-3022 MuiSwitchBase-root-3028 MuiSwitch-switchBase-3035 MuiSwitch-colorSecondary-3038"
+              className="MuiButtonBase-root-3015 MuiIconButton-root-3018 MuiSwitchBase-root-3024 MuiSwitch-switchBase-3031 MuiSwitch-colorSecondary-3034"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -6814,30 +6800,30 @@ exports[`Storyshots Tweaks polygon 1`] = `
               tabIndex={null}
             >
               <span
-                className="MuiIconButton-label-3027"
+                className="MuiIconButton-label-3023"
               >
                 <span
-                  className="MuiSwitch-icon-3033"
+                  className="MuiSwitch-icon-3029"
                 />
                 <input
                   checked={false}
-                  className="MuiSwitchBase-input-3031"
+                  className="MuiSwitchBase-input-3027"
                   onChange={[Function]}
                   type="checkbox"
                 />
               </span>
               <span
-                className="MuiTouchRipple-root-3012"
+                className="MuiTouchRipple-root-3008"
               />
             </span>
             <span
-              className="MuiSwitch-bar-3040"
+              className="MuiSwitch-bar-3036"
             />
           </span>
         </div>
       </li>
       <li
-        className="MuiListSubheader-root-2974 MuiListSubheader-sticky-2979 MuiListSubheader-gutters-2977"
+        className="MuiListSubheader-root-2970 MuiListSubheader-sticky-2975 MuiListSubheader-gutters-2973"
       >
         Fyllfarge
       </li>
@@ -7071,7 +7057,7 @@ exports[`Storyshots Tweaks polygon 1`] = `
 exports[`Storyshots Tweaks terreng 1`] = `
 <div>
   <div
-    className="MuiPaper-root-2836 MuiPaper-elevation1-2839 MuiPaper-rounded-2837"
+    className="MuiPaper-root-2832 MuiPaper-elevation1-2835 MuiPaper-rounded-2833"
     style={
       Object {
         "backgroundColor": "#eee",
@@ -7082,16 +7068,16 @@ exports[`Storyshots Tweaks terreng 1`] = `
     }
   >
     <ul
-      className="MuiList-root-2832 MuiList-padding-2833"
+      className="MuiList-root-2828 MuiList-padding-2829"
       style={Object {}}
     >
       <li
-        className="MuiListSubheader-root-2742 MuiListSubheader-sticky-2747 MuiListSubheader-gutters-2745"
+        className="MuiListSubheader-root-2738 MuiListSubheader-sticky-2743 MuiListSubheader-gutters-2741"
       >
         Terreng
       </li>
       <li
-        className="MuiListItem-root-2791 MuiListItem-default-2794 MuiListItem-dense-2795 MuiListItem-gutters-2798"
+        className="MuiListItem-root-2787 MuiListItem-default-2790 MuiListItem-dense-2791 MuiListItem-gutters-2794"
         disabled={false}
       >
         <div
@@ -7110,7 +7096,7 @@ exports[`Storyshots Tweaks terreng 1`] = `
         <svg
           aria-hidden="true"
           childrenClassName=""
-          className="MuiSvgIcon-root-2748"
+          className="MuiSvgIcon-root-2744"
           focusable="false"
           role="presentation"
           viewBox="0 0 24 24"
@@ -7124,29 +7110,29 @@ exports[`Storyshots Tweaks terreng 1`] = `
           />
         </svg>
         <div
-          className="MuiListItemText-root-2785"
+          className="MuiListItemText-root-2781"
         >
           <span
-            className="MuiTypography-root-2759 MuiTypography-subheading-2766 MuiListItemText-primary-2788"
+            className="MuiTypography-root-2755 MuiTypography-subheading-2762 MuiListItemText-primary-2784"
           >
             Vertikal overdrivelse
           </span>
           <p
-            className="MuiTypography-root-2759 MuiTypography-body1-2768 MuiTypography-colorTextSecondary-2783 MuiListItemText-secondary-2789"
+            className="MuiTypography-root-2755 MuiTypography-body1-2764 MuiTypography-colorTextSecondary-2779 MuiListItemText-secondary-2785"
           />
         </div>
       </li>
       <li
-        className="MuiListItem-container-2792"
+        className="MuiListItem-container-2788"
       >
         <div
-          className="MuiListItem-root-2791 MuiListItem-default-2794 MuiListItem-dense-2795 MuiListItem-gutters-2798 MuiListItem-secondaryAction-2800"
+          className="MuiListItem-root-2787 MuiListItem-default-2790 MuiListItem-dense-2791 MuiListItem-gutters-2794 MuiListItem-secondaryAction-2796"
           disabled={false}
         >
           <svg
             aria-hidden="true"
             childrenClassName=""
-            className="MuiSvgIcon-root-2748"
+            className="MuiSvgIcon-root-2744"
             focusable="false"
             role="presentation"
             viewBox="0 0 24 24"
@@ -7160,23 +7146,23 @@ exports[`Storyshots Tweaks terreng 1`] = `
             />
           </svg>
           <div
-            className="MuiListItemText-root-2785"
+            className="MuiListItemText-root-2781"
           >
             <span
-              className="MuiTypography-root-2759 MuiTypography-subheading-2766 MuiListItemText-primary-2788"
+              className="MuiTypography-root-2755 MuiTypography-subheading-2762 MuiListItemText-primary-2784"
             >
               Etiketter med høydeangivelse av topper
             </span>
           </div>
         </div>
         <div
-          className="MuiListItemSecondaryAction-root-2831"
+          className="MuiListItemSecondaryAction-root-2827"
         >
           <span
-            className="MuiSwitch-root-2822"
+            className="MuiSwitch-root-2818"
           >
             <span
-              className="MuiButtonBase-root-2809 MuiIconButton-root-2812 MuiSwitchBase-root-2818 MuiSwitch-switchBase-2825 MuiSwitch-colorSecondary-2828"
+              className="MuiButtonBase-root-2805 MuiIconButton-root-2808 MuiSwitchBase-root-2814 MuiSwitch-switchBase-2821 MuiSwitch-colorSecondary-2824"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -7191,44 +7177,44 @@ exports[`Storyshots Tweaks terreng 1`] = `
               tabIndex={null}
             >
               <span
-                className="MuiIconButton-label-2817"
+                className="MuiIconButton-label-2813"
               >
                 <span
-                  className="MuiSwitch-icon-2823"
+                  className="MuiSwitch-icon-2819"
                 />
                 <input
                   checked={false}
-                  className="MuiSwitchBase-input-2821"
+                  className="MuiSwitchBase-input-2817"
                   onChange={[Function]}
                   type="checkbox"
                 />
               </span>
               <span
-                className="MuiTouchRipple-root-2802"
+                className="MuiTouchRipple-root-2798"
               />
             </span>
             <span
-              className="MuiSwitch-bar-2830"
+              className="MuiSwitch-bar-2826"
             />
           </span>
         </div>
       </li>
       <li
-        className="MuiListSubheader-root-2742 MuiListSubheader-sticky-2747 MuiListSubheader-gutters-2745"
+        className="MuiListSubheader-root-2738 MuiListSubheader-sticky-2743 MuiListSubheader-gutters-2741"
       >
         Kontur (trinndelt høydevisualisering)
       </li>
       <li
-        className="MuiListItem-container-2792"
+        className="MuiListItem-container-2788"
       >
         <div
-          className="MuiListItem-root-2791 MuiListItem-default-2794 MuiListItem-dense-2795 MuiListItem-gutters-2798 MuiListItem-secondaryAction-2800"
+          className="MuiListItem-root-2787 MuiListItem-default-2790 MuiListItem-dense-2791 MuiListItem-gutters-2794 MuiListItem-secondaryAction-2796"
           disabled={false}
         >
           <svg
             aria-hidden="true"
             childrenClassName=""
-            className="MuiSvgIcon-root-2748"
+            className="MuiSvgIcon-root-2744"
             focusable="false"
             role="presentation"
             viewBox="0 0 24 24"
@@ -7242,23 +7228,23 @@ exports[`Storyshots Tweaks terreng 1`] = `
             />
           </svg>
           <div
-            className="MuiListItemText-root-2785"
+            className="MuiListItemText-root-2781"
           >
             <span
-              className="MuiTypography-root-2759 MuiTypography-subheading-2766 MuiListItemText-primary-2788"
+              className="MuiTypography-root-2755 MuiTypography-subheading-2762 MuiListItemText-primary-2784"
             >
               Konturlinjer
             </span>
           </div>
         </div>
         <div
-          className="MuiListItemSecondaryAction-root-2831"
+          className="MuiListItemSecondaryAction-root-2827"
         >
           <span
-            className="MuiSwitch-root-2822"
+            className="MuiSwitch-root-2818"
           >
             <span
-              className="MuiButtonBase-root-2809 MuiIconButton-root-2812 MuiSwitchBase-root-2818 MuiSwitch-switchBase-2825 MuiSwitch-colorSecondary-2828"
+              className="MuiButtonBase-root-2805 MuiIconButton-root-2808 MuiSwitchBase-root-2814 MuiSwitch-switchBase-2821 MuiSwitch-colorSecondary-2824"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -7273,39 +7259,39 @@ exports[`Storyshots Tweaks terreng 1`] = `
               tabIndex={null}
             >
               <span
-                className="MuiIconButton-label-2817"
+                className="MuiIconButton-label-2813"
               >
                 <span
-                  className="MuiSwitch-icon-2823"
+                  className="MuiSwitch-icon-2819"
                 />
                 <input
                   checked={false}
-                  className="MuiSwitchBase-input-2821"
+                  className="MuiSwitchBase-input-2817"
                   onChange={[Function]}
                   type="checkbox"
                 />
               </span>
               <span
-                className="MuiTouchRipple-root-2802"
+                className="MuiTouchRipple-root-2798"
               />
             </span>
             <span
-              className="MuiSwitch-bar-2830"
+              className="MuiSwitch-bar-2826"
             />
           </span>
         </div>
       </li>
       <li
-        className="MuiListItem-container-2792"
+        className="MuiListItem-container-2788"
       >
         <div
-          className="MuiListItem-root-2791 MuiListItem-default-2794 MuiListItem-dense-2795 MuiListItem-gutters-2798 MuiListItem-disabled-2796 MuiListItem-secondaryAction-2800"
+          className="MuiListItem-root-2787 MuiListItem-default-2790 MuiListItem-dense-2791 MuiListItem-gutters-2794 MuiListItem-disabled-2792 MuiListItem-secondaryAction-2796"
           disabled={true}
         >
           <svg
             aria-hidden="true"
             childrenClassName=""
-            className="MuiSvgIcon-root-2748"
+            className="MuiSvgIcon-root-2744"
             focusable="false"
             role="presentation"
             viewBox="0 0 24 24"
@@ -7319,23 +7305,23 @@ exports[`Storyshots Tweaks terreng 1`] = `
             />
           </svg>
           <div
-            className="MuiListItemText-root-2785"
+            className="MuiListItemText-root-2781"
           >
             <span
-              className="MuiTypography-root-2759 MuiTypography-subheading-2766 MuiListItemText-primary-2788"
+              className="MuiTypography-root-2755 MuiTypography-subheading-2762 MuiListItemText-primary-2784"
             >
               Etiketter med høydeangivelse
             </span>
           </div>
         </div>
         <div
-          className="MuiListItemSecondaryAction-root-2831"
+          className="MuiListItemSecondaryAction-root-2827"
         >
           <span
-            className="MuiSwitch-root-2822"
+            className="MuiSwitch-root-2818"
           >
             <span
-              className="MuiButtonBase-root-2809 MuiButtonBase-disabled-2810 MuiIconButton-root-2812 MuiIconButton-disabled-2816 MuiSwitchBase-root-2818 MuiSwitch-switchBase-2825 MuiSwitch-colorSecondary-2828 MuiSwitchBase-checked-2819 MuiSwitch-checked-2826 MuiSwitchBase-disabled-2820 MuiSwitch-disabled-2829"
+              className="MuiButtonBase-root-2805 MuiButtonBase-disabled-2806 MuiIconButton-root-2808 MuiIconButton-disabled-2812 MuiSwitchBase-root-2814 MuiSwitch-switchBase-2821 MuiSwitch-colorSecondary-2824 MuiSwitchBase-checked-2815 MuiSwitch-checked-2822 MuiSwitchBase-disabled-2816 MuiSwitch-disabled-2825"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -7350,14 +7336,14 @@ exports[`Storyshots Tweaks terreng 1`] = `
               tabIndex="-1"
             >
               <span
-                className="MuiIconButton-label-2817"
+                className="MuiIconButton-label-2813"
               >
                 <span
-                  className="MuiSwitch-icon-2823 MuiSwitch-iconChecked-2824"
+                  className="MuiSwitch-icon-2819 MuiSwitch-iconChecked-2820"
                 />
                 <input
                   checked={true}
-                  className="MuiSwitchBase-input-2821"
+                  className="MuiSwitchBase-input-2817"
                   disabled={true}
                   onChange={[Function]}
                   type="checkbox"
@@ -7365,13 +7351,13 @@ exports[`Storyshots Tweaks terreng 1`] = `
               </span>
             </span>
             <span
-              className="MuiSwitch-bar-2830"
+              className="MuiSwitch-bar-2826"
             />
           </span>
         </div>
       </li>
       <li
-        className="MuiListItem-root-2791 MuiListItem-default-2794 MuiListItem-dense-2795 MuiListItem-gutters-2798 MuiListItem-disabled-2796"
+        className="MuiListItem-root-2787 MuiListItem-default-2790 MuiListItem-dense-2791 MuiListItem-gutters-2794 MuiListItem-disabled-2792"
         disabled={true}
       >
         <div
@@ -7390,7 +7376,7 @@ exports[`Storyshots Tweaks terreng 1`] = `
         <svg
           aria-hidden="true"
           childrenClassName=""
-          className="MuiSvgIcon-root-2748"
+          className="MuiSvgIcon-root-2744"
           focusable="false"
           role="presentation"
           viewBox="0 0 24 24"
@@ -7404,15 +7390,15 @@ exports[`Storyshots Tweaks terreng 1`] = `
           />
         </svg>
         <div
-          className="MuiListItemText-root-2785"
+          className="MuiListItemText-root-2781"
         >
           <span
-            className="MuiTypography-root-2759 MuiTypography-subheading-2766 MuiListItemText-primary-2788"
+            className="MuiTypography-root-2755 MuiTypography-subheading-2762 MuiListItemText-primary-2784"
           >
             Intervall mellom konturlinjer
           </span>
           <p
-            className="MuiTypography-root-2759 MuiTypography-body1-2768 MuiTypography-colorTextSecondary-2783 MuiListItemText-secondary-2789"
+            className="MuiTypography-root-2755 MuiTypography-body1-2764 MuiTypography-colorTextSecondary-2779 MuiListItemText-secondary-2785"
           />
         </div>
       </li>
@@ -7431,13 +7417,13 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
     }
   >
     <header
-      className="MuiPaper-root-3558 MuiPaper-elevation4-3564 MuiPaper-rounded-3559 MuiAppBar-root-3585 MuiAppBar-positionSticky-3588 MuiAppBar-colorPrimary-3592 TopBar-root-3354"
+      className="MuiPaper-root-3554 MuiPaper-elevation4-3560 MuiPaper-rounded-3555 MuiAppBar-root-3581 MuiAppBar-positionSticky-3584 MuiAppBar-colorPrimary-3588 TopBar-root-3350"
     >
       <div
-        className="MuiToolbar-root-3554 MuiToolbar-dense-3557 MuiToolbar-gutters-3555 TopBar-toolbar-3355"
+        className="MuiToolbar-root-3550 MuiToolbar-dense-3553 MuiToolbar-gutters-3551 TopBar-toolbar-3351"
       >
         <button
-          className="MuiButtonBase-root-3514 MuiIconButton-root-3517 TopBar-darkButton-3357"
+          className="MuiButtonBase-root-3510 MuiIconButton-root-3513 TopBar-darkButton-3353"
           disabled={false}
           onBlur={[Function]}
           onFocus={[Function]}
@@ -7453,11 +7439,11 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
           type="button"
         >
           <span
-            className="MuiIconButton-label-3522"
+            className="MuiIconButton-label-3518"
           >
             <svg
               aria-hidden="true"
-              className="MuiSvgIcon-root-3498"
+              className="MuiSvgIcon-root-3494"
               focusable="false"
               role="presentation"
               viewBox="0 0 24 24"
@@ -7472,15 +7458,15 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
             </svg>
           </span>
           <span
-            className="MuiTouchRipple-root-3507"
+            className="MuiTouchRipple-root-3503"
           />
         </button>
         <div
-          className="MuiInputBase-root-3523 MuiInput-root-3540 MuiInputBase-fullWidth-3532 MuiInput-fullWidth-3547"
+          className="MuiInputBase-root-3519 MuiInput-root-3536 MuiInputBase-fullWidth-3528 MuiInput-fullWidth-3543"
           onClick={[Function]}
         >
           <input
-            className="MuiInputBase-input-3533 MuiInput-input-3548 SearchBox-input-3553"
+            className="MuiInputBase-input-3529 MuiInput-input-3544 SearchBox-input-3549"
             onBlur={[Function]}
             onChange={[Function]}
             onFocus={[Function]}
@@ -7491,7 +7477,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
           />
         </div>
         <button
-          className="MuiButtonBase-root-3514 MuiIconButton-root-3517 TopBar-lightButton-3358"
+          className="MuiButtonBase-root-3510 MuiIconButton-root-3513 TopBar-lightButton-3354"
           disabled={false}
           onBlur={[Function]}
           onFocus={[Function]}
@@ -7507,11 +7493,11 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
           type="button"
         >
           <span
-            className="MuiIconButton-label-3522"
+            className="MuiIconButton-label-3518"
           >
             <svg
               aria-hidden="true"
-              className="MuiSvgIcon-root-3498"
+              className="MuiSvgIcon-root-3494"
               focusable="false"
               role="presentation"
               viewBox="0 0 24 24"
@@ -7526,7 +7512,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
             </svg>
           </span>
           <span
-            className="MuiTouchRipple-root-3507"
+            className="MuiTouchRipple-root-3503"
           />
         </button>
       </div>
@@ -7553,16 +7539,16 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
         }
       >
         <hr
-          className="MuiDivider-root-3594"
+          className="MuiDivider-root-3590"
         />
         <div
-          className="MuiPaper-root-3558 MuiPaper-elevation2-3562 MuiPaper-rounded-3559 Ekspanderlinje-rot-3467 Ekspanderlinje-closed-3471 Ekspanderlinje-hovernot-3466"
+          className="MuiPaper-root-3554 MuiPaper-elevation2-3558 MuiPaper-rounded-3555 Ekspanderlinje-rot-3463 Ekspanderlinje-closed-3467 Ekspanderlinje-hovernot-3462"
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-3498 Ekspanderlinje-ikon-3468"
+            className="MuiSvgIcon-root-3494 Ekspanderlinje-ikon-3464"
             focusable="false"
             role="presentation"
             viewBox="0 0 24 24"
@@ -7576,7 +7562,7 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
             />
           </svg>
           <p
-            className="MuiTypography-root-3598 MuiTypography-body1-3607 Ekspanderlinje-tekst-3469"
+            className="MuiTypography-root-3594 MuiTypography-body1-3603 Ekspanderlinje-tekst-3465"
           >
             Tilgjengelige kart
           </p>
@@ -7598,13 +7584,13 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
     }
   >
     <header
-      className="MuiPaper-root-3288 MuiPaper-elevation4-3294 MuiPaper-rounded-3289 MuiAppBar-root-3315 MuiAppBar-positionSticky-3318 MuiAppBar-colorPrimary-3322 TopBar-root-3084"
+      className="MuiPaper-root-3284 MuiPaper-elevation4-3290 MuiPaper-rounded-3285 MuiAppBar-root-3311 MuiAppBar-positionSticky-3314 MuiAppBar-colorPrimary-3318 TopBar-root-3080"
     >
       <div
-        className="MuiToolbar-root-3284 MuiToolbar-dense-3287 MuiToolbar-gutters-3285 TopBar-toolbar-3085"
+        className="MuiToolbar-root-3280 MuiToolbar-dense-3283 MuiToolbar-gutters-3281 TopBar-toolbar-3081"
       >
         <button
-          className="MuiButtonBase-root-3244 MuiIconButton-root-3247 TopBar-darkButton-3087"
+          className="MuiButtonBase-root-3240 MuiIconButton-root-3243 TopBar-darkButton-3083"
           disabled={false}
           onBlur={[Function]}
           onFocus={[Function]}
@@ -7620,11 +7606,11 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
           type="button"
         >
           <span
-            className="MuiIconButton-label-3252"
+            className="MuiIconButton-label-3248"
           >
             <svg
               aria-hidden="true"
-              className="MuiSvgIcon-root-3228"
+              className="MuiSvgIcon-root-3224"
               focusable="false"
               role="presentation"
               viewBox="0 0 24 24"
@@ -7639,15 +7625,15 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
             </svg>
           </span>
           <span
-            className="MuiTouchRipple-root-3237"
+            className="MuiTouchRipple-root-3233"
           />
         </button>
         <div
-          className="MuiInputBase-root-3253 MuiInput-root-3270 MuiInputBase-fullWidth-3262 MuiInput-fullWidth-3277"
+          className="MuiInputBase-root-3249 MuiInput-root-3266 MuiInputBase-fullWidth-3258 MuiInput-fullWidth-3273"
           onClick={[Function]}
         >
           <input
-            className="MuiInputBase-input-3263 MuiInput-input-3278 SearchBox-input-3283"
+            className="MuiInputBase-input-3259 MuiInput-input-3274 SearchBox-input-3279"
             onBlur={[Function]}
             onChange={[Function]}
             onFocus={[Function]}
@@ -7658,7 +7644,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
           />
         </div>
         <button
-          className="MuiButtonBase-root-3244 MuiIconButton-root-3247 TopBar-lightButton-3088"
+          className="MuiButtonBase-root-3240 MuiIconButton-root-3243 TopBar-lightButton-3084"
           disabled={false}
           onBlur={[Function]}
           onFocus={[Function]}
@@ -7674,11 +7660,11 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
           type="button"
         >
           <span
-            className="MuiIconButton-label-3252"
+            className="MuiIconButton-label-3248"
           >
             <svg
               aria-hidden="true"
-              className="MuiSvgIcon-root-3228"
+              className="MuiSvgIcon-root-3224"
               focusable="false"
               role="presentation"
               viewBox="0 0 24 24"
@@ -7693,7 +7679,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
             </svg>
           </span>
           <span
-            className="MuiTouchRipple-root-3237"
+            className="MuiTouchRipple-root-3233"
           />
         </button>
       </div>
@@ -7720,16 +7706,16 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
         }
       >
         <hr
-          className="MuiDivider-root-3324"
+          className="MuiDivider-root-3320"
         />
         <div
-          className="MuiPaper-root-3288 MuiPaper-elevation2-3292 MuiPaper-rounded-3289 Ekspanderlinje-rot-3197 Ekspanderlinje-closed-3201 Ekspanderlinje-hovernot-3196"
+          className="MuiPaper-root-3284 MuiPaper-elevation2-3288 MuiPaper-rounded-3285 Ekspanderlinje-rot-3193 Ekspanderlinje-closed-3197 Ekspanderlinje-hovernot-3192"
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-3228 Ekspanderlinje-ikon-3198"
+            className="MuiSvgIcon-root-3224 Ekspanderlinje-ikon-3194"
             focusable="false"
             role="presentation"
             viewBox="0 0 24 24"
@@ -7743,7 +7729,7 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
             />
           </svg>
           <p
-            className="MuiTypography-root-3328 MuiTypography-body1-3337 Ekspanderlinje-tekst-3199"
+            className="MuiTypography-root-3324 MuiTypography-body1-3333 Ekspanderlinje-tekst-3195"
           >
             Tilgjengelige kart
           </p>

@@ -76,10 +76,11 @@ class AktiveKartlag extends React.Component {
 }
 
 function finnType(kode) {
+  console.log(kode)
   switch (kode) {
     case 'terreng':
       return TerrenglagElement
-    case 'bakgrunn':
+    case 'bakgrunnskart':
       return BakgrunnskartElement
     default:
       return PolygonlagElement

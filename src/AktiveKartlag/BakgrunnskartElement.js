@@ -3,11 +3,12 @@ import KartlagElement from './Kartlagelement'
 
 class BakgrunnskartElement extends Component {
   render() {
+    console.log('props', this.props)
     return (
       <KartlagElement
         kode="bakgrunnskart"
         tittel="Bakgrunnskart"
-        undertittel="Mørk grå"
+        undertittel={this.props.tema}
         {...this.props}
       />
     )

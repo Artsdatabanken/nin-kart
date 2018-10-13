@@ -10,6 +10,7 @@ import språk from '../språk'
 import VenstreVinduContainer from '../VenstreVinduContainer'
 import AktiveKartlagKnapp from './AktiveKartlagKnapp'
 import standardlag from './standardlag.json'
+import bakgrunnskarttema from './bakgrunnskarttema'
 
 type State = {
   aktiveLag: Array<Object>,
@@ -27,8 +28,10 @@ type Props = {
 class Grunnkart extends React.Component<Props, State> {
   constructor(props) {
     super(props)
+    const aktive = JSON.parse(JSON.stringify(standardlag))
+    aktive[0] = bakgrunnskarttema[aktive[0].tema] // HACK
     this.state = {
-      aktiveLag: JSON.parse(JSON.stringify(standardlag)),
+      aktiveLag: aktive,
       opplystKode: '',
       actualBounds: null,
       fitBounds: null,
@@ -204,6 +207,10 @@ class Grunnkart extends React.Component<Props, State> {
     for (let i = 0; i < parts.length - 1; i++) node = node[parts[i]]
     const vkey = parts[parts.length - 1]
     node[vkey] = value
+    if (vkey === 'tema')
+      // HACK
+      aktive[0] = JSON.parse(JSON.stringify(bakgrunnskarttema[value]))
+
     this.setState({ aktiveLag: [...aktive] })
   }
 
