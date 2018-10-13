@@ -80,12 +80,7 @@ function finnLagType(aktiveLag, type) {
 function lagToppnivå(props) {
   const config = {
     sources: {
-      osm: {
-        type: 'MVT',
-        url: 'https://{s}.artsdatabanken.no/basemap/openstreetmap/{z}/{x}/{y}',
-        url_subdomains: ['nintest', 'rover'],
-        max_zoom: 14,
-      },
+      osm: sysconfig.createTileSource('basemap/openstreetmap', 'MVT', [0, 14]),
     },
     cameras: {
       cam: {
