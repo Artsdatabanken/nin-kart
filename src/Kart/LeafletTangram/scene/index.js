@@ -8,7 +8,9 @@ import draw from './visualisering/'
 import sysconfig from '../../../config'
 
 function lagAktiveLag(aktive, iKatalog, opplystKode, config) {
-  aktive.forEach(lag => lagEttLag(lag, opplystKode, iKatalog, config))
+  Object.keys(aktive).forEach(kode =>
+    lagEttLag(aktive[kode], opplystKode, iKatalog, config)
+  )
 }
 
 function lagEttLag(lag, opplystKode, viserKatalog, config) {
@@ -73,10 +75,6 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
   opprettEttLag(drawArgs, config)
 }
 
-function finnLagType(aktiveLag, type) {
-  for (let lag of aktiveLag) if (lag.type === type) return lag
-}
-
 function lagToppnivå(props) {
   const config = {
     sources: {
@@ -102,7 +100,7 @@ function createScene(props: Object) {
 }
 
 function updateScene(config: Object, props: Object) {
-  const bakgrunn = finnLagType(props.aktiveLag, 'bakgrunn')
+  const bakgrunn = props.aktiveLag.bakgrunnskart
   config.scene.background.color = bakgrunn.land
     ? bakgrunn.land_farge
     : '#f2f2f2'

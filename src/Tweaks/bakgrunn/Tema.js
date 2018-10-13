@@ -15,9 +15,9 @@ const KartPreview = ({ thumb, tittel, checked, onClick }) => (
 )
 
 class Tema extends Component {
-  handleClick = () => {
+  handleClick = tema => {
+    this.props.onUpdateLayerProp('bakgrunnskart', 'tema', tema)
     this.props.history.push('.')
-    //    this.props.onUpdateLayerProp('bakgrunnskart', 'tema', tittel)
   }
   render() {
     return (
@@ -25,17 +25,17 @@ class Tema extends Component {
         <ListSubheader>Bakgrunnskart tema</ListSubheader>
         <List>
           <KartPreview
-            onClick={this.handleClick}
+            onClick={() => this.handleClick('mørk')}
             thumb={thumb_mørk}
             tittel="Mørk"
           />
           <KartPreview
-            onClick={this.handleClick}
+            onClick={() => this.handleClick('lys')}
             thumb={thumb_lys}
             tittel="Lys"
           />
           <KartPreview
-            onClick={this.handleClick}
+            onClick={() => this.handleClick('flyfoto')}
             thumb={thumb_flyfoto}
             tittel="Flyfoto"
           />

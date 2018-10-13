@@ -79,7 +79,6 @@ class TopBarContainer extends Component<Props, State> {
   }
 
   handleClickSearchResult = url => {
-    console.warn('url', url)
     this.setState({ query: '', searchResults: null })
     this.props.history.push('/katalog/' + url)
   }
