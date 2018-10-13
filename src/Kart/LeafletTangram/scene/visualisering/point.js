@@ -54,8 +54,7 @@ function draw(args) {
 function lagSource(kode, bbox, zoom) {
   const source = {
     type: 'GeoJSON',
-    url: `https://{s}.artsdatabanken.no/point/${kode}.geojson`,
-    url_subdomains: ['nintest', 'rover'],
+    url: `https://nintest.artsdatabanken.no/point/${kode}.geojson`,
   }
   return source
 }

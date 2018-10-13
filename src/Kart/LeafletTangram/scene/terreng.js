@@ -1,15 +1,14 @@
 // @flow
 import terrengmal from './mal/terreng'
+import sysconfig from '../../../config'
 
 function lagTerreng(drawProps, config) {
-  console.log(drawProps)
   config.layers.terreng = terrengmal
-  config.sources.normals = {
-    type: 'Raster',
-    url: 'https://{s}.artsdatabanken.no/terrain/normals/{z}/{x}/{y}',
-    url_subdomains: ['nintest', 'rover'],
-    max_zoom: 15,
-  }
+  config.sources.normals = sysconfig.createTileSource(
+    'terrain/normals',
+    'Raster',
+    [0, 15]
+  )
   config.styles.terreng = {
     base: 'polygons',
     lighting: false,
