@@ -28,8 +28,9 @@ type Props = {
 class Grunnkart extends React.Component<Props, State> {
   constructor(props) {
     super(props)
-    const aktive = JSON.parse(JSON.stringify(standardlag))
+    let aktive = standardlag
     aktive[0] = bakgrunnskarttema[aktive[0].tema] // HACK
+    aktive = JSON.parse(JSON.stringify(aktive))
     this.state = {
       aktiveLag: aktive,
       opplystKode: '',
@@ -169,7 +170,6 @@ class Grunnkart extends React.Component<Props, State> {
         this.redirectTo(newUrl)
         return
       }
-      console.warn(data)
       this.setState({ meta: data })
     })
   }
@@ -210,7 +210,6 @@ class Grunnkart extends React.Component<Props, State> {
     if (vkey === 'tema')
       // HACK
       aktive[0] = JSON.parse(JSON.stringify(bakgrunnskarttema[value]))
-
     this.setState({ aktiveLag: [...aktive] })
   }
 
