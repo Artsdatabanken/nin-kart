@@ -87,11 +87,10 @@ class Seksjon extends Component {
     const value = r[len - 1]
     if (len < 2) return hack1(value)
     const key = r[len - 2]
-
     return (
-      <div key={key}>
+      <span key={key}>
         {hack1(key.trim())}: <b>{hack2(value)}</b>
-      </div>
+      </span>
     )
   }
 }
