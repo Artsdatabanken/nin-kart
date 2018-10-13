@@ -760,20 +760,20 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
                 <p
                   className="MuiTypography-root-540 MuiTypography-body1-549 MuiTypography-colorTextSecondary-564 MuiListItemText-secondary-593"
                 >
-                  <div>
+                  <span>
                     Uttørkingseksponerte svært og temmelig kalkfattige berg, bergvegger og knauser
                     : 
                     <b>
                       40%
                     </b>
-                  </div>
-                  <div>
+                  </span>
+                  <span>
                     Åpen kalkfattig grunnlendt lyngmark
                     : 
                     <b>
                       60%
                     </b>
-                  </div>
+                  </span>
                 </p>
               </div>
               <div
@@ -865,13 +865,13 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
                 <p
                   className="MuiTypography-root-540 MuiTypography-body1-549 MuiTypography-colorTextSecondary-564 MuiListItemText-secondary-593"
                 >
-                  <div>
+                  <span>
                     Tresjiktsdekning - total dekning
                     : 
                     <b>
                       5 - 10 %
                     </b>
-                  </div>
+                  </span>
                 </p>
               </div>
               <div
@@ -963,20 +963,20 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
                 <p
                   className="MuiTypography-root-540 MuiTypography-body1-549 MuiTypography-colorTextSecondary-564 MuiListItemText-secondary-593"
                 >
-                  <div>
+                  <span>
                     Små objekter
                     : 
                     <b>
                       0 – 1/16
                     </b>
-                  </div>
-                  <div>
+                  </span>
+                  <span>
                     Store objekter
                     : 
                     <b>
                       ingen
                     </b>
-                  </div>
+                  </span>
                 </p>
               </div>
               <div
@@ -1068,20 +1068,20 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
                 <p
                   className="MuiTypography-root-540 MuiTypography-body1-549 MuiTypography-colorTextSecondary-564 MuiListItemText-secondary-593"
                 >
-                  <div>
+                  <span>
                     Bioklimatisk sone
                     : 
                     <b>
                       Boreonemoral sone (bn)
                     </b>
-                  </div>
-                  <div>
+                  </span>
+                  <span>
                     Bioklimatisk seksjon
                     : 
                     <b>
                       Overgangsseksjon (oc)
                     </b>
-                  </div>
+                  </span>
                 </p>
               </div>
               <div
@@ -1173,27 +1173,27 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
                 <p
                   className="MuiTypography-root-540 MuiTypography-body1-549 MuiTypography-colorTextSecondary-564 MuiListItemText-secondary-593"
                 >
-                  <div>
+                  <span>
                     Fremmedartsinnslag
                     : 
                     <b>
                       Uten fremmedarter
                     </b>
-                  </div>
-                  <div>
+                  </span>
+                  <span>
                     Spor etter slitasje og slitasjebetinget erosjon
                     : 
                     <b>
                       ingen
                     </b>
-                  </div>
-                  <div>
+                  </span>
+                  <span>
                     Spor etter ferdsel med tunge kjøretøy
                     : 
                     <b>
                       ingen
                     </b>
-                  </div>
+                  </span>
                 </p>
               </div>
               <div
