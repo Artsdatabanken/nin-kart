@@ -19,10 +19,18 @@ function lagTerreng(drawProps, config) {
         u_envmap: '/1_gray_lys2.jpg',
       },
       blocks: {
-        global:
-          'vec4 terrainEnvmap (in sampler2D _tex, in vec3 _normal) {\n    const vec3 eye = vec3(0.,0.,-1.);\n    vec3 r = reflect(eye, _normal);\n    r.z += 1.0;\n    float m = 2. * length(r);\n    vec2 uv = r.xy / m + .5;\n    return texture2D(_tex, uv);\n}\n',
-        color:
-          '// color = v_color;\nnormal.z /= u_scale; // turn terrain exaggeration up/down\nnormal = normalize(normal);\ncolor = terrainEnvmap(u_envmap, normal);\n',
+        global: `vec4 terrainEnvmap (in sampler2D _tex, in vec3 _normal) {
+          const vec3 eye = vec3(0.,0.,-1.);
+          vec3 r = reflect(eye, _normal);
+          r.z += 1.0;
+          float m = 2. * length(r);
+          vec2 uv = r.xy / m + .5;
+          return texture2D(_tex, uv);
+        }`,
+        color: `
+          normal.z /= u_scale; // turn terrain exaggeration up/down
+          normal = normalize(normal);
+          color = 1.1*terrainEnvmap(u_envmap, normal);`,
       },
     },
   }
