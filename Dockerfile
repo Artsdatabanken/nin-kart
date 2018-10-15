@@ -12,7 +12,6 @@ RUN yarn install --frozen-lockfile --no-cache
 COPY . .
 RUN yarn test && \
     yarn build && \
-    yarn prune && \
     yarn cache clean
 
 
