@@ -66,8 +66,8 @@ const Forsidemeny = ({
                     gridGap: '6px',
                   }}
                 >
+                  <Boble kode="LA" tittel="Landskap" />
                   <Boble kode="NA" tittel="Natursystem" />
-                  <Boble kode="BS" tittel="Beskrivelse- system" />
                   <Boble kode="VV" tittel="Naturvern- område" />
                   <Boble kode="MI" tittel="Miljøvariabel" />
                   <Boble kode="AO" tittel="Administativt område" />
