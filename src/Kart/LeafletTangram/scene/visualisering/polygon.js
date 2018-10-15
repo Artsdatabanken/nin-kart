@@ -1,18 +1,8 @@
 import tinycolor from 'tinycolor2'
 import sysconfig from '../../../../config'
 
-function drawAll({
-  kode,
-  barn,
-  farge,
-  opplystKode,
-  bbox,
-  zoom,
-  sourceType,
-  fileFormat,
-  visBarn,
-  visEtiketter,
-}) {
+function drawAll(drawArgs) {
+  const { kode, barn, farge, opplystKode, visBarn, visEtiketter } = drawArgs
   const layer = {
     data: { source: kode, layer: kode },
   }
@@ -31,7 +21,7 @@ function drawAll({
     layer[kode] = draw({
       kode: kode,
       forelderkode: kode,
-      farge: barn[kode].farge,
+      farge: farge,
       opplystKode: opplystKode,
       visEtiketter: visEtiketter,
     })
@@ -39,7 +29,7 @@ function drawAll({
 }
 
 function draw(args) {
-  let { kode, farge, opplystKode, visEtiketter } = args
+  let { kode, forelderkode, farge, opplystKode, visEtiketter } = args
   farge = opplystKode === kode ? '#f88' : farge
   const layer = {
     draw: {
@@ -56,7 +46,7 @@ function draw(args) {
       },
     },
   }
-  layer.filter = { code: kode }
+  if (kode !== forelderkode) layer.filter = { code: kode }
   if (kode === opplystKode) {
     const lines = layer.draw.lines
     lines.width = '2px'

@@ -108,22 +108,20 @@ function updateScene(config: Object, props: Object) {
   const meta = props.meta
   const viserKatalog = !!meta
   if (viserKatalog) {
+    const harBarn = meta.barn && Object.keys(meta.barn).length > 0
     const formats = meta.formats || { polygon: 'pbf' }
     const sourceType = Object.keys(formats)[0]
     const fileFormat = formats[sourceType]
     const drawArgs = {
       kode: meta.kode,
-      barn:
-        Object.keys(meta.barn).length > 0
-          ? meta.barn
-          : { [props.meta.kode]: props.meta },
+      barn: harBarn ? meta.barn : { [props.meta.kode]: props.meta },
       opplystKode: props.opplystKode,
       bbox: meta.bbox,
       zoom: meta.zoom,
       type: sourceType,
       fileFormat: fileFormat,
       gradient: { filterMin: 0, filterMax: 1 },
-      visBarn: Object.keys(meta.barn).length > 0,
+      visBarn: harBarn,
     }
 
     opprettEttLag(drawArgs, config)
