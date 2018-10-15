@@ -7,7 +7,7 @@ class BakgrunnskartElement extends Component {
       <KartlagElement
         kode="bakgrunnskart"
         tittel="Bakgrunnskart"
-        undertittel="Mørk grå"
+        undertittel={this.props.tema}
         {...this.props}
       />
     )

@@ -10,6 +10,7 @@ import språk from '../språk'
 import VenstreVinduContainer from '../VenstreVinduContainer'
 import AktiveKartlagKnapp from './AktiveKartlagKnapp'
 import standardlag from './standardlag.json'
+import bakgrunnskarttema from './bakgrunnskarttema'
 
 type State = {
   aktiveLag: Array<Object>,
@@ -27,8 +28,11 @@ type Props = {
 class Grunnkart extends React.Component<Props, State> {
   constructor(props) {
     super(props)
+    let aktive = standardlag
+    aktive.bakgrunnskart = bakgrunnskarttema[aktive.bakgrunnskart.tema] // HACK
+    aktive = JSON.parse(JSON.stringify(aktive))
     this.state = {
-      aktiveLag: JSON.parse(JSON.stringify(standardlag)),
+      aktiveLag: aktive,
       opplystKode: '',
       actualBounds: null,
       fitBounds: null,
@@ -74,7 +78,7 @@ class Grunnkart extends React.Component<Props, State> {
   }
 
   addSelected = props => {
-    let koder = this.state.aktiveLag
+    let aktive = this.state.aktiveLag
     const formats = props.formats || { polygon: 'pbf' }
     const sourceType = Object.keys(formats)[0]
     const fileFormat = formats[sourceType]
@@ -95,10 +99,10 @@ class Grunnkart extends React.Component<Props, State> {
     if (formats.gradient) {
       nyttLag.gradient = { filterMin: 0, filterMax: 1.0 }
     }
-    koder.unshift(nyttLag)
+    aktive[nyttLag.kode] = nyttLag
 
     this.setState({
-      aktiveLag: [...koder],
+      aktiveLag: Object.assign({}, aktive),
     })
   }
 
@@ -166,7 +170,6 @@ class Grunnkart extends React.Component<Props, State> {
         this.redirectTo(newUrl)
         return
       }
-      console.warn(data)
       this.setState({ meta: data })
     })
   }
@@ -199,20 +202,23 @@ class Grunnkart extends React.Component<Props, State> {
   // Supports composite keys i.e. gradient.filterMin
   handleUpdateLayerProp = (kode, key, value) => {
     const aktive = this.state.aktiveLag
-    let node = aktive.find(x => x.kode === kode)
+    let node = aktive[kode]
     const parts = key.split('.')
     for (let i = 0; i < parts.length - 1; i++) node = node[parts[i]]
     const vkey = parts[parts.length - 1]
     node[vkey] = value
-    this.setState({ aktiveLag: [...aktive] })
+    if (vkey === 'tema')
+      // HACK
+      aktive.bakgrunnskart = JSON.parse(
+        JSON.stringify(bakgrunnskarttema[value])
+      )
+    this.setState({ aktiveLag: Object.assign({}, aktive) })
   }
 
   render() {
     let erAktivert = false
     if (this.state.meta)
-      erAktivert = !!this.state.aktiveLag.find(
-        vk => vk.kode === this.state.meta.kode
-      )
+      erAktivert = !!this.state.aktiveLag[this.state.meta.kode]
     return (
       <SettingsContext.Consumer>
         {context => {

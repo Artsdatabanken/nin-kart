@@ -33,7 +33,6 @@ const styles = theme => ({
 class AktiveKartlag extends React.Component {
   render() {
     const { koder, classes } = this.props
-
     return (
       <SettingsContext.Consumer>
         {context => (
@@ -63,7 +62,8 @@ class AktiveKartlag extends React.Component {
             </AppBar>
             <List>
               <React.Fragment>
-                {koder.map(forelder => {
+                {Object.keys(koder).map(fkode => {
+                  const forelder = koder[fkode]
                   return listeElement(forelder, this.props, context.visKoder)
                 })}
               </React.Fragment>
@@ -79,7 +79,7 @@ function finnType(kode) {
   switch (kode) {
     case 'terreng':
       return TerrenglagElement
-    case 'bakgrunn':
+    case 'bakgrunnskart':
       return BakgrunnskartElement
     default:
       return PolygonlagElement

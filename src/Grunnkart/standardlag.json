@@ -1,30 +1,12 @@
-[
-  {
+{
+  "bakgrunnskart": {
     "kode": "bakgrunnskart",
     "type": "bakgrunn",
     "tittel": "Basiskart",
-    "tema": "Mørk grå",
-    "erSynlig": true,
-    "land": true,
-    "land_farge": "#f2f2f2",
-    "transport": true,
-    "transport_farge": "#fff",
-    "transport_navn": true,
-    "transport_navn_farge": "#333",
-    "sted_navn": true,
-    "sted_navn_farge": "#333",
-    "vann": true,
-    "vann_farge": "#ddd",
-    "vann_navn": true,
-    "vann_navn_farge": "#333",
-    "kommunegrense": true,
-    "kommunegrense_farge": "rgba(175,175,175,1.0)",
-    "fylkesgrense": true,
-    "fylkesgrense_farge": "rgba(185,185,185,1.0)",
-    "landegrense": true,
-    "landegrense_farge": "rgba(195,195,195,1.0)"
+    "tema": "lys",
+    "erSynlig": true
   },
-  {
+  "terreng": {
     "kode": "terreng",
     "type": "terreng",
     "tittel": "3D terreng",
@@ -37,4 +19,4 @@
       "visEtikettKontur": true
     }
   }
-]
+}
