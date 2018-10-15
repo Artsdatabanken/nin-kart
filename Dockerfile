@@ -1,11 +1,25 @@
-FROM halverneus/static-file-server
+FROM node:10
+#FROM mhart/alpine-node:10
+#FROM halverneus/static-file-server
 
-EXPOSE 8080
+EXPOSE 3000
 
 WORKDIR /app
+RUN apt update \
+    && RUN apt install curl
+#RUN apk update \
+#    && RUN apk add --no-cache curl
+RUN curl -o- -L https://yarnpkg.com/install.sh | /bin/bash \
+    && apt remove git curl tar binutils
 COPY package.json yarn.lock ./
-RUN apt-get install yarn
+
+#RUN npm install -g -s --no-progress yarn && \
 RUN yarn install --frozen-lockfile --no-cache --production
-RUN yarn test
-RUN yarn build
+RUN yarn test && \
+    yarn build && \
+    yarn prune && \
+    yarn cache clean
+
+
 COPY . .
+CMD [ "yarn", "start" ]
