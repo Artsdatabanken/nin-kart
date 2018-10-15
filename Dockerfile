@@ -8,7 +8,7 @@ RUN curl -o- -L https://yarnpkg.com/install.sh | /bin/bash
 
 COPY package.json yarn.lock ./
 
-RUN yarn install --frozen-lockfile --no-cache --production
+RUN yarn install --frozen-lockfile --no-cache
 COPY . .
 RUN yarn test && \
     yarn build && \
