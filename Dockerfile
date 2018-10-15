@@ -6,7 +6,7 @@ EXPOSE 3000
 
 WORKDIR /app
 RUN apt update \
-    && apt install curl
+    && apt install -y curl
 #RUN apk update \
 #    && RUN apk add --no-cache curl
 RUN curl -o- -L https://yarnpkg.com/install.sh | /bin/bash \
