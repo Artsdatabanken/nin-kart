@@ -27,7 +27,7 @@ jobs:
     - stage: build docker image
       if: branch = master
       script:
-        - docker login -u "$DOCKER_USERNAME" -p "$DP
+        - docker login -u "$DOCKER_USERNAME" -p "$DP"
         #        - echo "$DP" | docker login -u "$DOCKER_USERNAME" --password-stdin
         - docker build -t ratatouille .
         - docker images
