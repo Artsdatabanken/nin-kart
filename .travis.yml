@@ -7,8 +7,6 @@ cache:
     - node_modules
 script:
   - yarn test
-  - yarn build
-  - yarn build-storybook
 deploy:
   provider: firebase
   skip_cleanup: true
@@ -27,14 +25,9 @@ jobs:
   include:
     - stage: build docker image
       script:
+        - echo $DOCKER_USERNAME $TEST
         - docker login -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD
         - docker build -t ratatouille .
         - docker images
         - docker tag ratatouille $DOCKER_USERNAME/ratatouille
         - docker push $DOCKER_USERNAME/ratatouille
-    - stage: test
-      script: docker run --rm $DOCKER_USERNAME/ratatouille cat hello.txt
-    - script: docker run --rm $DOCKER_USERNAME/ratatouille cat hello.txt
-env:
-  global:
-    secure: LyU20rsDyaCF7X/uCe11l6Wh86u9t9Q7g2P18LG5hcwMeqInX2lQRDtPpn7XVllouMAv3Y11LEWYyO8Xc3wnjzL31/wCaETFA/KudDUNXYO5Vv+RpdIZcDomz+OVWF9GLycOmZurBfoTBK4ZaBuaPWz0EpUHG0EkZIvMfYYBww/XpgC7hi5qJFs6+HGi/3Im0T9GxAuBTwcDq4nz3XrAFyZpuzg6E9e4vwmNHvCAidOSymTZpq/Ivdyr08sKi80f0XZSz3mz5cLzaUuhJrIRxVMxetZQ8lNhflcYsYQuhoNFcTWcJK9GP/s4bLkG7idqrquYrJu3tLqC63gTVJFzMMzIQx1WhKkmX/o85E9YUZQFVNR7OJc5ubacoxPYXPOoAt2ZBGOmfOrEizBXjDJc7Tr2ZUbsTsS/64HOs0sC1ZtXbG4PQbtdgUAwHQqYdcAD5L2yWOLUd+52JjYa3fb9KORfjSutwwaryaP+8wtTu2ASmIN9ZIOPpDp+fZcycoRHzCFRDfMrrTnGj55rZrTorBx5lxSwx61SiIYP7pL1cnQ3bPMkEC3IxHvEtTILa87uYKDCikkEBx/BdMLDqVoZNPJWb2DojYgjZtGX4EBuqdRBb/AHAyrsZez+tPhzjMzXOxkhyttZkZot6LOnPiCxTFmM0b8optZ9fM9wzI6ViG4=
