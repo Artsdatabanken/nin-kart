@@ -9,15 +9,14 @@ directories:
 script:
   - yarn test
 deploy:
-  provider: firebase
+  #  provider: firebase
   skip_cleanup: true
   script:
     - docker login -u="$DOCKER_USERNAME" -p="$DP"
     #        - echo "$DP" | docker login -u "$DOCKER_USERNAME" --password-stdin
     - docker build -t ratatouille .
     - docker images
-    - docker tag ratatouille Artsdatabanken/ratatouille
-    - docker push Artsdatabanken/ratatouille
+    - docker push Artsdatabanken/ratatouille:latest
 after_success:
   - npm run report-coverage
 notifications:
