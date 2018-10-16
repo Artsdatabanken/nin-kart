@@ -11,6 +11,13 @@ script:
 deploy:
   provider: firebase
   skip_cleanup: true
+  script:
+    - docker login -u="$DOCKER_USERNAME" -p="$DP"
+    #        - echo "$DP" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    - docker build -t ratatouille .
+    - docker images
+    - docker tag ratatouille Artsdatabanken/ratatouille
+    - docker push Artsdatabanken/ratatouille
 after_success:
   - npm run report-coverage
 notifications:
@@ -22,14 +29,3 @@ before_install:
   - export PATH=$PATH:`yarn global bin`
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
-jobs:
-  include:
-    - stage: build docker image
-      if: branch = master
-      script:
-        - docker login -u "$DOCKER_USERNAME" -p "$DP"
-        #        - echo "$DP" | docker login -u "$DOCKER_USERNAME" --password-stdin
-        - docker build -t ratatouille .
-        - docker images
-        - docker tag ratatouille Artsdatabanken/ratatouille
-        - docker push Artsdatabanken/ratatouille
