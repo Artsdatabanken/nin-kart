@@ -2,9 +2,10 @@ sudo: true
 language: node_js
 node_js:
   - '10'
-cache:
-  directories:
-    - node_modules
+services:
+  - docker
+directories:
+  - node_modules
 script:
   - yarn test
 deploy:
@@ -25,9 +26,8 @@ jobs:
   include:
     - stage: build docker image
       script:
-        - echo $DOCKER_USERNAME $TEST
-        - docker login -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD
+        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         - docker build -t ratatouille .
         - docker images
-        - docker tag ratatouille $DOCKER_USERNAME/ratatouille
-        - docker push $DOCKER_USERNAME/ratatouille
+        - docker tag ratatouille Artsdatabanken/ratatouille
+        - docker push Artsdatabanken/ratatouille
