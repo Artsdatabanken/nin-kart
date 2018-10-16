@@ -10,11 +10,8 @@ script:
   - yarn test
 deploy:
   skip_cleanup: true
-  script:
-    - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-    - docker build -t ratatouille .
-    - docker images
-    - docker push Artsdatabanken/ratatouille:latest
+  provider: script
+  script: bash ./deploy.sh production $TRAVIS_TAG
 after_success:
   - npm run report-coverage
 notifications:
