@@ -26,7 +26,7 @@ jobs:
   include:
     - stage: build docker image
       script:
-        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        - echo "$DP" | docker login -u "$DOCKER_USERNAME" --password-stdin
         - docker build -t ratatouille .
         - docker images
         - docker tag ratatouille Artsdatabanken/ratatouille
