@@ -1,6 +1,4 @@
 FROM node:10
-#FROM mhart/alpine-node:10
-#FROM halverneus/static-file-server
 
 WORKDIR /app
 RUN apt update && apt install -y --no-install-recommends apt-utils curl
