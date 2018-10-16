@@ -14,4 +14,3 @@ RUN yarn test && \
 
 
 CMD [ "yarn", "start" ]
-EXPOSE 3000
