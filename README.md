@@ -8,9 +8,9 @@
 
 # Ratatouille
 
-[![Screenshot](doc/screenshot.png 'ratatouille screenshot')](https://naturinorge.firebaseapp.com/)
+[![Screenshot](doc/screenshot.png 'ratatouille screenshot')](https://nin.artsdatabanken.no)
 
-- [Demo](https://naturinorge.firebaseapp.com/)
+- [Demo](https://nin.artsdatabanken.no)
 - [Laste ned åpne data](docs/LastNed.md)
 - [Bidra med data](docs/BidraMedData.md)
 
