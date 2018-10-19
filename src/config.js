@@ -10,7 +10,7 @@ class config {
     const source = {
       type: type,
       url: `https://{s}.artsdatabanken.no/${relativePath}/{z}/{x}/{y}`,
-      url_subdomains: ['map'],
+      url_subdomains: ['maps'],
     }
     if (!bbox || !zoom) {
       console.warn(`No map extents for ${relativePath}`)
