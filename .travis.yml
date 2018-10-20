@@ -9,15 +9,15 @@ directories:
 script:
   - yarn test
 deploy:
-  skip_cleanup: true
-  provider: script
-  script: bash ./deploy.sh production $TRAVIS_TAG
+  provider: releases
+  api_key:
+    secure: ayT2LCdMUnxkkzvbArN1779FPY2C6wOZlknG7xKT1HGgjKpebi0pMz+D8bHiLNOI7ahO6R7FCF2ja5dEVaMu8GSujzkKgIkk49tF+87gUSIZ3j/pREC1kQ4SDNX/FxuxkGqStX81pMYEP3vQCDJzpbsXl4+sVS6TjobY3Bz8WHIXR9N0dhcVkdgj5Xz80rIuTW6Xuf8SvECLzBwo/nxSh7fUE9escO210yvbd6DJx6yf+tvap4mLFnw/X0HUOxV7jCku/jwOXcAE6GACteZloxb/RsMvU455bsBoxmKpKLtfp5CDijx5guewvih2/yG+FWJPsIRrRrV7k4eKGaXyRJAajDvfjULlashUihbv7xlxG0jLtXja1WTFveJzqzrXmmQvKvWmBwEzL2aWiXzawPayr3qKn2YDwRDnqW33N22tX/Wy1U3+Z5j0T2YD4PIb63pBMwiiLSDaw1rPPNq4TKlSFX1cUM1X9g8wMU/230qvcUP54dYNx9bGl4HmBVsjNR+B71oRY6zyfdgV7bQZuvlF2RuBuBnCct6oojgKhXQfQh8rwqxEvSSMzfEVjbioo2HOkVAPYEq+1YIRpcNh5u8lSeACsJ14agLrQ/o0xRdsDa4V6pkkmBuBBnU/MvuGCD2bYftV2xbt8z4vdUwmRNGT1aipHeqLaCUMOK0BpeQ=
+  file: build/
 after_success:
   - npm run report-coverage
 notifications:
   slack:
-    on_success: change
-    on_failure: change
+    secure: WBIEVtaymaNBL+abfWB68XBmN78zj5iXqPCR56uSwXeuL8OQNBTqwLjPsMq0VgULwsWb2CpwX9qSGRZDzta7uGHaTApxuneOTipLYr+cRmNwHkee5/KJUVLcrFNmL/Hu1ygtyOnN9xlDSq4pN2JQO3l0WvQntNEf0f9Ant1rC8KKqE+Lh5SXwWI5p730zIUaFAW+c9SAejncflZHaTiDvCpsmSuixMpLnmuKzUq+OWbFREEq0JP5MjH1ugFC6muu/lt0b5AhvyZ/I/Cw6tCXl3Emc3eKv5YH1jJpusJAiNeKOKbD1ytTfCdvZN7MYetM7uyoA+S1MxBpg79NuAQfrPsWVP4vtqbhkWijZn+Rl/0zyZkJakKcUL2MJ5jOyTpJylVYJ6XsY2Ao8zenxFQQMjOvEN8AoellBt5s7gxlZRvzJvi7ebjLUSKkkD9hWaJTq0h5mvcpy/twD4nUIUVcDl4EKIfM0UoCJ2qzOUxYS3wlO9Y1RttR/dQ5VQ3kHgXjjLnPtStnoDKZg03uSqbZrzR0GXbJO9k4BspTwgc/qyjEmfKKDSg3CYkW4P68HslWVEDhxj1qCByCIaGyJmFenSwS/nE6Yj43LTwk1ZJv/D0IlVfOWxi2SSKwFSyafZ4kL/A8NzWE0K2Ox4T30FlQCx1btmCeWc/KEK0hCTjoNEA=
 before_install:
   - yarn global add greenkeeper-lockfile@1
   - export PATH=$PATH:`yarn global bin`
