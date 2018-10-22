@@ -1,27 +1,29 @@
 language: node_js
 node_js:
-  - '10'
+- '10'
 directories:
-  - node_modules
+- node_modules
 script:
-  - yarn test
+- yarn test
 deploy:
   provider: releases
   api_key:
-    secure: Q9wHt7Xszv5HfdL15IvHcb/AO30f/sGNWKmk0wnQWYpQNrko5ci32AxaNEBRXhyLAVYhDKdntu7moxa3GFW4GqJ0xhMAc23n80DGn/XtLS2BGFuNJVn0hD+pDn7r4ND/2rUmf60hKc8A7VJ1Eb1xti2c+btB1SLJiOfiv3yON851XuKvitzOQBZn7LLE0XPa1OWMyRY/q9s7w2Z++yyaO/sts1uxogC4+GtDl+EDZeV4HUnUsOZ9cQAEPb8RtEMe/r4QO0WDHRv8dpf3ujcM3SF/Oe2LM8vr9UsfjS3RlfvbOd9ZSeiGxvq0DeAWfQ8kkeRDG+V3Ik0XGRSNd+eRM3hpDEuY7eRuEMtV6ouUFhVuUaTcnfXW9a3kLkfBsRQXcXn4ZRvotoiu8llemBivH80LIiByWUxuYV92HeL79jDHPXvy5CfN9MQ3qmBxOSxUibiKgHRJBWAZx1esTpsZw6TE92Ie7EGfJRsCUxkLVia1a4utp7/Xv1ZeiZvSAY90yI7mHUzkF7nn+rVxBXM/Dm7wrvBVBFJozT40NNH956TAf/YTuNIfpIfSMETFluM+sCrhakqAbjLv0cfBhhW7HJ3UqtcJfHqjabAr7ZimjmzKjS/8+lR1LwA4xboafHYjC0lrPovSsPFB/oKNLM+yS3Qv+cVgZs1Qo67LozP6qg0=
+    secure: fgepmhVu6OzpSvzsjwd+k4su9TCcroQ/fHpTgOLNkUKPhg6n9K3aegZJgusoBTOCBLffutBg2qSGvO/nKstDpMqKYU2O7q9QB46tlaclrEPT4p3QIG/xfFXshSCQOugex/kzqagWj+2yGxWJJ3HA8ttio3lcW/wUxC8GIUmF764Asgh5xWo/Ftk+Ui/FtYkDciM8+7riiGynI2CGOS5GodQKx360c6jKW2vqzkaRCGqeu5POT/VlGM7uwmpWxDwpinxfeqUnESVRc89coHlVv9yKFC7YDYHa+xDoMgORbpUaeqUs+2WF4gaKwjXqVF8b6Sc6b33/4C+hwmFAW8INMYA+lJXpAnBweS5xsH5s1WzO8s2zwpPgRgvSRrkvv7qN6IIqpFHCJOExN2lbhJfdJMdzgll60UeJsS6LqqoYxlJTxOFAXh8Olp3dYaBu5/Ru9es5cTrWDm8E6qCfcwQ/k/sFh/7v7Thr/ROdCZ5BIqyDFVGsH6tr4/aGogXsNitYQnFrO618JkXO759X6QCrw9431d136O+ft1luVkXJjOjGbKWgBKPur7XLSlpBUPJoPtSqwXsZ9BrAaEi07L1kkTW+nJPsRoZtwFsGW+lkqxoZyQ8daaKWw1euF/2JSunuJgL00mXQL4D/UNfbt1NUyjec+6iJoyZMjDyahPLYNV0=
   file: build/*
+  on:
+    repo: Artsdatabanken/ratatouille
 after_deploy:
   notifications:
     slack:
       template:
-        - release %{repository_slug}
+      - release %{repository_slug}
 after_success:
-  - npm run report-coverage
+- npm run report-coverage
 notifications:
   slack:
     secure: boRuTnFbZmvMYN4U4cqEhd3TAetZrHC2uUNmrLu/oEgKMWRtBQMJATiV/dYuYki1zWz1OeF97dAwAZnJpDCH7S4Sv+Dskn75HUj0NAVKfxR/mH/MiQupNLe4eN3+5FfhzdQW+n8m/rLcnPT5RuAd4+xjUeGc4aAPuYPpi8IMKoIV6aXRSNBpZMGpjQuyV6DZMhUr5Rr/WUD0DwxJSzbXZsNFUdefVBrogeLl9GKcxWapSNSED3tzZyG7MexfiD3cdw6GWpwuAmNjKyTe2BA8aESUvuBcOPSk/z7ZqAxC0GOW8BEikEMowAK+nVUOYL4bbyTBvpa1808Fu9EWBxreBNH9nwG91s+zXLmNFt+cLMp6rozedPG6JuOCT4tDHdqRrrCubNmpNVczn1iY6iyPj1q7Cvk+s+kfugrdedmqr/aYhatnirGGxdAbHAluizkwAzbzP6gnD4i2FdxefJ77hrAI80Y/6wMzPHTWVCgVUZEyBZb6J+1C7JvcEinsnNC0MkOdvGBcCNUHEGc+L/clYhVN5W4CoqP5QxuatZjYhfPlIe4D4v51wgttu4IQN7FztZwvSzSVMKdONtbhFv3jOuyKsm/KQONEBs+7o9exNm5pPR1GLJfpjNO9vJJJ9K3b8ene+L0Irnv0SWu/mpl0+shbAkfrrQX9MJUT3ntXuaM=
 before_install:
-  - yarn global add greenkeeper-lockfile@1
-  - export PATH=$PATH:`yarn global bin`
+- yarn global add greenkeeper-lockfile@1
+- export PATH=$PATH:`yarn global bin`
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
