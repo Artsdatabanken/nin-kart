@@ -8,13 +8,16 @@ script:
 - yarn build
 before_deploy:
   - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+  - echo "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+  - ls -la build
 deploy:
   provider: releases
-  api_key:
-    secure: LUJresNXtsqmDinabl2zeyvFXq5GvPI2NZezhxw2Ru60gUK/qbdKdCA3/i8iY9v2ON04jj7ZoRYDZE+5plKaTtpUaDgyXm7uFWcK9dVCcOAUCOWXdVUMKE9ftD5jzHoBDWgNPjK24MTS8AGMSIlhCMDbiwR7N6iYORE334WT+XiVvBJdkHj1euNLdiLrMTCsKxxCgAs/j5mlqZuTgO+nAuWdIW1oGoUEH/xxNAhdwm9jKMzaO/iifguiapLIzi+c7PnZB4enAZLdFGtVJr26IGD+Nzxo7fTM3a+N3kqiQx7eTSx2qmcmW3vn1ZGzZhA+0xJ6gjDZydOOpuPXogXmaO9z8N43VEUYrvD8LqnJu2f0hcdNN1QodO8+WkX//MVTXfRXqInhk1S9AjShjwsYzJZoDJL6s6vlQ3/hNP0cVkb5n89319K8QBpUYef3Hk+C7kjDDeBrgwCMA81HSp6Wl9RWaX5wnvWHKfwh5YhCidCm08Ix32TLrB/Uan9uj0rd2rYw5Yprl8BUKZZRU6FL5w+QoxUjpe19P07fi2NL/37gXTu759zE4zLaVgzfJ8RIWwOD3DCarevnr4lnIvPcpdTMhiMmgd9ayCPwyyjnZDpJsBMVqO5VVcXKgLPOC7dSBXmO6k6h6NXlh+W1O29nbTE4R/JZTxecFRGNYXriHvE=
+  user: $GITHUB_USERNAME
+  password: $GITHUB_PASSWORD
   file: build/*
   on:
     repo: Artsdatabanken/ratatouille
+  skip_cleanup: true
 after_deploy:
   notifications:
     slack:
