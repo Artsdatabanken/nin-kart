@@ -5,6 +5,7 @@ directories:
 - node_modules
 script:
 - yarn test
+- yarn build
 before_deploy:
   - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 deploy:
