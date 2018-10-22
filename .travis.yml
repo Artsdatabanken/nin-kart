@@ -12,7 +12,7 @@ before_deploy:
 - ls -la build
 deploy:
   provider: releases
-  api_key: d26b7d353abe87c11bbdc3b4ea73794311c524bf
+  api_key: $GITHUB_TOKEN
     file: build/*
   on:
     repo: Artsdatabanken/ratatouille
