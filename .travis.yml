@@ -14,7 +14,6 @@ deploy:
   file: build/*
   on:
     repo: Artsdatabanken/ratatouille
-    tags: true
 after_deploy:
   notifications:
     slack:
