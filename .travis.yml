@@ -9,11 +9,12 @@ script:
 before_deploy:
 - git tag "$(date +'%Y%m%d-%H%M%S')-$(git log --format=%h -1)"
 - ls -la build
+- tar -zcf bundle.tar.gz build/
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
   file_glob: true
-  file: build/*
+  file: bundle.tar.gz
   on:
     repo: Artsdatabanken/ratatouille
   skip_cleanup: true
