@@ -12,9 +12,8 @@ before_deploy:
 - ls -la build
 deploy:
   provider: releases
-  api_key:
-    secure: W+Gc7iOpOG55EVIYya7lDzUibg0IgfVAAtbjxgTbm2msg0e9p3wA+pm4g1xTatjOlVRu8HGD3ZkxAXA0V4XJmQYw3Zu4aa1gGJtQXTsxgOw8LDiy7c89E0ndmL2oVrWwE+kwq7o7sr/j2UkZxdHX/fg2fBDMVDjSUjur1uHFWIqAHwjdFNhwSbzxMCMa5ifKPkuzzAoXwLK67akv6XBWwMA3xBlI8MrJh0jUKplRQXugbPSdCvXlnQR1rENwOAFQbKozuQx0vst6/MirhXAimlnyNZMxtnC9OXXs38YYy6eKgD0qD7vr4EyK0HPHBfCw2SWYIHAewnjciesb0dSK0NsHkq52lPz9HL8y3SwNdD/Y0hI19zUJqUOuQFha32XNPgwuAvmaVUomFQy2xkt8BFJ8keHhbk/UxMM7zYDVJivL3XAjw06y1PMBn+d9B5512yHm5Ms9lRn3qhx62U3VcBsh514BLFh9cZPfHu/3C/EzHHbUF7xR391HL5nJOcGvTQFELM3XkYSAJkGYGCdN5qRL91VK0oURuMfvU5CneI2fZtG+m9DzybibaVXqQt7lW2Y444yxugF2ixrL37bB5b21Qyq4bVEVtvCh0FUuio6/eBOZjmad6JlpzcSVizI7epMM91VTwupXsQ2+DYJzqO3h+oXoZbyozGzOwmtEhsA=
-  file: build/*
+  api_key: d26b7d353abe87c11bbdc3b4ea73794311c524bf
+    file: build/*
   on:
     repo: Artsdatabanken/ratatouille
   skip_cleanup: true
