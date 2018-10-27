@@ -139,6 +139,8 @@ class Grunnkart extends React.Component<Props, State> {
   componentDidUpdate(prevProps, prevState) {
     if (this.props.location.pathname !== prevProps.location.pathname)
       this.fetchMeta(this.props.location.pathname)
+    document.title =
+      (this.state.meta && this.state.meta.tittel.nb) || 'Natur i Norge'
   }
 
   redirectTo(path) {
