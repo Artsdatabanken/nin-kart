@@ -72,11 +72,11 @@
     "report-coverage": "coveralls < coverage/lcov.info"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^4.0.0-alpha.24",
-    "@storybook/addon-links": "^4.0.0-alpha.24",
-    "@storybook/addon-storyshots": "^4.0.0-alpha.24",
-    "@storybook/addons": "^4.0.0-alpha.24",
-    "@storybook/react": "^4.0.0-alpha.24",
+    "@storybook/addon-actions": "^4.0.0",
+    "@storybook/addon-links": "^4.0.0",
+    "@storybook/addon-storyshots": "^4.0.0",
+    "@storybook/addons": "^4.0.0",
+    "@storybook/react": "^4.0.0",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-runtime": "^6.26.0",
     "coveralls": "^3.0.2",
@@ -88,7 +88,7 @@
     "husky": "^1.1.2",
     "lint-staged": "^8.0.2",
     "prettier": "^1.14.3",
-    "pretty-quick": "^1.7.0",
+    "pretty-quick": "^1.8.0",
     "storybook-addon-material-ui": "^0.9.0-alpha.16"
   },
   "bugs": {
