@@ -69,7 +69,7 @@ const Tittelblokk = ({
           <div className={classes.h1}>{tittel}</div>
         </div>
       )}
-      <Typography variant="title" className={classes.h1} gutterBottom>
+      <Typography variant="h6" className={classes.h1} gutterBottom>
         {tittel}
       </Typography>
       <Typography className={classes.nivå}>{nivå}</Typography>

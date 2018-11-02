@@ -55,7 +55,7 @@ function farge(farge, viserKatalog) {
 function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
   let drawArgs = {
     forelderkode: lag.kode,
-    kode: lag.kode,
+    kode: _h(lag.kode),
     farge: farge(lag.farge, viserKatalog),
     visEtiketter: lag.visEtiketter,
     opplystKode: opplystKode,
@@ -67,10 +67,12 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
     gradient: lag.gradient,
   }
   if (lag.visBarn) {
-    drawArgs.barn = lag.barn.reduce((acc, e) => {
-      acc[e.kode] = e
-      return acc
-    }, {})
+    drawArgs.barn = _h2(
+      lag.barn.reduce((acc, e) => {
+        acc[e.kode] = e
+        return acc
+      }, {})
+    )
   }
   opprettEttLag(drawArgs, config)
 }
@@ -113,9 +115,9 @@ function updateScene(config: Object, props: Object) {
     const sourceType = Object.keys(formats)[0]
     const fileFormat = formats[sourceType]
     const drawArgs = {
-      kode: meta.kode,
-      barn: harBarn ? meta.barn : { [props.meta.kode]: props.meta },
-      opplystKode: props.opplystKode,
+      kode: _h(meta.kode),
+      barn: harBarn ? _h2(meta.barn) : { [_h(meta.kode)]: props.meta },
+      opplystKode: _h(props.opplystKode),
       bbox: meta.bbox,
       zoom: meta.zoom,
       type: sourceType,
@@ -129,6 +131,20 @@ function updateScene(config: Object, props: Object) {
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config)
   lagTemp(config)
   return config
+}
+
+function _h(kode) {
+  if (kode.length <= 3) return kode
+  const h = kode.substring(0, 2) + '_' + kode.substring(3)
+  return h
+}
+
+function _h2(koder) {
+  const r = {}
+  Object.keys(koder).forEach(key => {
+    r[_h(key)] = koder[key]
+  })
+  return r
 }
 
 function lagTemp(config) {

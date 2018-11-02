@@ -50,7 +50,7 @@ class AktiveKartlag extends React.Component {
               >
                 <Typography
                   className={classes.tekst}
-                  variant="title"
+                  variant="h6"
                   color="inherit"
                 >
                   Aktive kartlag

@@ -57,7 +57,7 @@ class Borrevalg extends Component {
               paddingRight: 16,
             }}
           >
-            <Typography style={{ color: color }} variant="title">
+            <Typography style={{ color: color }} variant="h6">
               Klikk i kart
             </Typography>
             <Typography style={{ color: color }} variant="body1">

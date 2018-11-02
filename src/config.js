@@ -32,20 +32,37 @@ class config {
     width: number = 408,
     filtype: string = 'jpg'
   ) {
-    return `${storageUrl}bilde%2Fomslag%2F${width}%2F${kode}.${filtype}?alt=media`
+    return `${storageUrl}bilde%2Fomslag%2F${width}%2F${_h(
+      kode
+    )}.${filtype}?alt=media`
   }
 
   static getFotoBanner(kode: string, width: number = 408) {
-    return `${storageUrl}bilde%2Fbanner%2F${width}%2F${kode}.jpg?alt=media`
+    return `${storageUrl}bilde%2Fbanner%2F${width}%2F${_h(kode)}.jpg?alt=media`
   }
 
   static avatar40px(kode: string, ext = 'jpg') {
-    return `${storageUrl}bilde%2Favatar%2F40%2F${kode}.${ext}?alt=media`
+    return `${storageUrl}bilde%2Favatar%2F40%2F${_h(kode)}.${ext}?alt=media`
   }
 
   static avatar24px(kode: string) {
-    return `${storageUrl}bilde%2Favatar%2F24%2F${kode}.jpg?alt=media`
+    return `${storageUrl}bilde%2Favatar%2F24%2F${_h(kode)}.jpg?alt=media`
   }
+
+  static metaUrl(kode: string) {
+    kode = kode
+      .replace('/katalog', '')
+      .split('_')
+      .join('-')
+      .replace('LA_', 'LA-')
+      .toUpperCase()
+    if (kode.length <= 1) kode = '~'
+    return `https://maps.artsdatabanken.no/metabase/meta/${kode}.json`
+  }
+}
+
+function _h(kode) {
+  return kode.replace('-', '_')
 }
 
 export default config
