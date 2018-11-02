@@ -135,7 +135,8 @@ function updateScene(config: Object, props: Object) {
 
 function _h(kode) {
   if (kode.length <= 3) return kode
-  const h = kode.substring(0, 2) + '_' + kode.substring(3)
+  let h = kode.substring(0, 2) + '_' + kode.substring(3)
+  console.log(h)
   return h
 }
 
