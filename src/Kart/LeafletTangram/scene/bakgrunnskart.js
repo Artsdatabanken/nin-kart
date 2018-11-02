@@ -42,7 +42,9 @@ function opprettTekst(kode, lag, config, style) {
   const font = mal.draw.text.font
   font.fill = lag[kode + '_farge']
   font.stroke.color = lag[kode + '_stroke_farge']
+  font.stroke.width = lag[kode + '_stroke_width']
   config.layers[kode] = mal
+  console.log(lag)
 }
 
 function lagBakgrunnskart(lag, config) {

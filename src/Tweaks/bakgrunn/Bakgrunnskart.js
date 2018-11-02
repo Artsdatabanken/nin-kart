@@ -1,3 +1,4 @@
+import SliderSetting from '../SliderSetting'
 import {
   List,
   ListItem,
@@ -49,103 +50,131 @@ class Bakgrunnskart extends Component {
           />
           <Route
             path="/lag/:kode"
-            render={({ match, history }) => (
-              <List>
-                <ListSubheader>Områder</ListSubheader>
-                <ListItem
-                  button={true}
-                  onClick={() =>
-                    this.props.history.push('/lag/bakgrunnskart/tema')
-                  }
-                >
-                  <ListItemText primary="Tema" secondary={this.props.tema} />
-                </ListItem>
-                <ListSubheader>Områder</ListSubheader>
-                <Bakgrunnskartlag
-                  onUpdateLayerProp={this.props.onUpdateLayerProp}
-                  lagNavn="vann"
-                  tittel="Vann"
-                  erSynlig={this.props.vann}
-                  farge={this.props.vann_farge}
-                />
-                <Bakgrunnskartlag
-                  onUpdateLayerProp={onUpdateLayerProp}
-                  lagNavn="land"
-                  tittel="Land"
-                  erSynlig={this.props.land}
-                  farge={this.props.land_farge}
-                />
-                <Bakgrunnskartlag
-                  onUpdateLayerProp={onUpdateLayerProp}
-                  lagNavn="transport"
-                  tittel="Transport"
-                  erSynlig={this.props.transport}
-                  farge={this.props.transport_farge}
-                />
-                <ListSubheader>Etiketter</ListSubheader>
-                <Bakgrunnskartlag
-                  onUpdateLayerProp={onUpdateLayerProp}
-                  lagNavn="vann_navn"
-                  tittel="Vann"
-                  erSynlig={this.props.vann_navn}
-                  farge={this.props.vann_navn_farge}
-                />
-                <Bakgrunnskartlag
-                  onUpdateLayerProp={onUpdateLayerProp}
-                  lagNavn="sted_navn"
-                  tittel="Steder"
-                  erSynlig={this.props.sted_navn}
-                  farge={this.props.sted_navn_farge}
-                />
-                <Bakgrunnskartlag
-                  onUpdateLayerProp={onUpdateLayerProp}
-                  lagNavn="transport_navn"
-                  tittel="Transport"
-                  erSynlig={this.props.transport_navn}
-                  farge={this.props.transport_navn_farge}
-                />
-                <ListSubheader>Administrative grenser</ListSubheader>
-                <ListItem>
-                  <Switch
-                    onChange={() =>
-                      onUpdateLayerProp(
-                        'bakgrunnskart',
-                        'landegrense',
-                        !this.props.landegrense
+            render={({ match, history }) => {
+              const { kode } = match.params
+              return (
+                <List>
+                  <ListSubheader>Områder</ListSubheader>
+                  <ListItem
+                    button={true}
+                    onClick={() =>
+                      this.props.history.push('/lag/bakgrunnskart/tema')
+                    }
+                  >
+                    <ListItemText primary="Tema" secondary={this.props.tema} />
+                  </ListItem>
+                  <ListSubheader>Områder</ListSubheader>
+                  <Bakgrunnskartlag
+                    onUpdateLayerProp={this.props.onUpdateLayerProp}
+                    lagNavn="vann"
+                    tittel="Vann"
+                    erSynlig={this.props.vann}
+                    farge={this.props.vann_farge}
+                  />
+                  <Bakgrunnskartlag
+                    onUpdateLayerProp={onUpdateLayerProp}
+                    lagNavn="land"
+                    tittel="Land"
+                    erSynlig={this.props.land}
+                    farge={this.props.land_farge}
+                  />
+                  <Bakgrunnskartlag
+                    onUpdateLayerProp={onUpdateLayerProp}
+                    lagNavn="transport"
+                    tittel="Transport"
+                    erSynlig={this.props.transport}
+                    farge={this.props.transport_farge}
+                  />
+                  <ListSubheader>Etiketter</ListSubheader>
+                  <Bakgrunnskartlag
+                    onUpdateLayerProp={onUpdateLayerProp}
+                    lagNavn="vann_navn"
+                    tittel="Vann"
+                    erSynlig={this.props.vann_navn}
+                    farge={this.props.vann_navn_farge}
+                  />
+                  <Bakgrunnskartlag
+                    onUpdateLayerProp={onUpdateLayerProp}
+                    lagNavn="sted_navn"
+                    tittel="Steder"
+                    erSynlig={this.props.sted_navn}
+                    farge={this.props.sted_navn_farge}
+                  />
+                  <Bakgrunnskartlag
+                    onUpdateLayerProp={onUpdateLayerProp}
+                    lagNavn="sted_navn_stroke"
+                    tittel="Steder omriss"
+                    erSynlig={this.props.sted_navn}
+                    farge={this.props.sted_navn_stroke_farge}
+                  />
+                  <SliderSetting
+                    value={this.props.sted_navn_stroke_width}
+                    min={0}
+                    max={10}
+                    step={0.2}
+                    tittel="Omriss"
+                    undertittel={
+                      this.props.sted_navn_stroke_width.toFixed(1) + ' pixler'
+                    }
+                    onChange={v =>
+                      onUpdateLayerProp(kode, 'sted_navn_stroke_width', v)
+                    }
+                    onClick={() =>
+                      this.props.history.push(
+                        '/lag/bakgrunnskart/sted_navn_stroke'
                       )
                     }
-                    checked={this.props.landegrense}
                   />
-                  <ListItemText primary="Riksgrense" />
-                </ListItem>
-                <ListItem>
-                  <Switch
-                    onChange={() =>
-                      onUpdateLayerProp(
-                        'bakgrunnskart',
-                        'fylkesgrense',
-                        !this.props.fylkesgrense
-                      )
-                    }
-                    checked={this.props.fylkesgrense}
+                  <Bakgrunnskartlag
+                    onUpdateLayerProp={onUpdateLayerProp}
+                    lagNavn="transport_navn"
+                    tittel="Transport"
+                    erSynlig={this.props.transport_navn}
+                    farge={this.props.transport_navn_farge}
                   />
-                  <ListItemText primary="Fylke" />
-                </ListItem>
-                <ListItem>
-                  <Switch
-                    onChange={() =>
-                      onUpdateLayerProp(
-                        'bakgrunnskart',
-                        'kommunegrense',
-                        !this.props.kommunegrense
-                      )
-                    }
-                    checked={this.props.kommunegrense}
-                  />
-                  <ListItemText primary="Kommuner" />
-                </ListItem>
-              </List>
-            )}
+                  <ListSubheader>Administrative grenser</ListSubheader>
+                  <ListItem>
+                    <Switch
+                      onChange={() =>
+                        onUpdateLayerProp(
+                          'bakgrunnskart',
+                          'landegrense',
+                          !this.props.landegrense
+                        )
+                      }
+                      checked={this.props.landegrense}
+                    />
+                    <ListItemText primary="Riksgrense" />
+                  </ListItem>
+                  <ListItem>
+                    <Switch
+                      onChange={() =>
+                        onUpdateLayerProp(
+                          'bakgrunnskart',
+                          'fylkesgrense',
+                          !this.props.fylkesgrense
+                        )
+                      }
+                      checked={this.props.fylkesgrense}
+                    />
+                    <ListItemText primary="Fylke" />
+                  </ListItem>
+                  <ListItem>
+                    <Switch
+                      onChange={() =>
+                        onUpdateLayerProp(
+                          'bakgrunnskart',
+                          'kommunegrense',
+                          !this.props.kommunegrense
+                        )
+                      }
+                      checked={this.props.kommunegrense}
+                    />
+                    <ListItemText primary="Kommuner" />
+                  </ListItem>
+                </List>
+              )
+            }}
           />
         </RouteSwitch>
       </React.Fragment>
