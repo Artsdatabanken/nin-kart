@@ -15,6 +15,8 @@ import Borring from './Borring'
 import FlatUt from './FlatUt'
 import Sted from './Sted'
 import Kilde from '../Kilde'
+import Veksle from '../Tweaks/Veksle'
+import RemoveRedEye from '@material-ui/icons/RemoveRedEye'
 import config from '../config'
 
 const styles = {
@@ -94,6 +96,12 @@ class BorreVindu extends Component {
           <Button size="small" color="primary" onClick={this.handleClickValg}>
             Valg
           </Button>
+          <Veksle
+            tittel="Vis bare fra aktive kartlag"
+            toggled={false}
+            icon={<RemoveRedEye />}
+            onClick={() => {}}
+          />
         </CardActions>
         <CardContent style={{ padding: 0 }}>
           {view ? (
