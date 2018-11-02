@@ -15,11 +15,11 @@ exports[`Storyshots Aktive kartlag default 1`] = `
       <div
         className="MuiToolbar-root-186 MuiToolbar-dense-189 MuiToolbar-gutters-187 withRouter-AktiveKartlag--toolbar-256"
       >
-        <h2
-          className="MuiTypography-root-133 MuiTypography-title-139 MuiTypography-colorInherit-162 withRouter-AktiveKartlag--tekst-257"
+        <h6
+          className="MuiTypography-root-133 MuiTypography-h6-150 MuiTypography-colorInherit-162 withRouter-AktiveKartlag--tekst-257"
         >
           Aktive kartlag
-        </h2>
+        </h6>
         <button
           className="MuiButtonBase-root-177 MuiIconButton-root-180 MuiIconButton-colorInherit-181"
           disabled={false}
@@ -479,7 +479,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
         className="MuiCardMedia-root-620 BorreVindu-media-471"
         style={
           Object {
-            "backgroundImage": "url(\\"https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fomslag%2F408%2FNA_T1-C-2.jpg?alt=media\\")",
+            "backgroundImage": "url(\\"https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fomslag%2F408%2FNA_T1_C-2.jpg?alt=media\\")",
           }
         }
         title="Uttørkingseksponerte svært og temmelig kalkfattige berg, bergvegger og knauser"
@@ -500,8 +500,8 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
             }
           }
         >
-          <h2
-            className="MuiTypography-root-585 MuiTypography-title-591"
+          <h6
+            className="MuiTypography-root-585 MuiTypography-h6-602"
             style={
               Object {
                 "color": "rgba(230,230,230,1.0)",
@@ -509,7 +509,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
             }
           >
             Spjærevarden
-          </h2>
+          </h6>
           <p
             className="MuiTypography-root-585 MuiTypography-body1-594"
             style={
@@ -544,7 +544,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
               alt="logo"
               onError={[Function]}
               onLoad={[Function]}
-              src="https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fomslag%2F408%2FAO_01-11.png?alt=media"
+              src="https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Fomslag%2F408%2FAO_01_11.png?alt=media"
               style={
                 Object {
                   "animation": "fadein 3s ease",
@@ -1816,11 +1816,11 @@ exports[`Storyshots KodeVindu default 1`] = `
           }
         }
       >
-        <h2
-          className="MuiTypography-root-1305 MuiTypography-title-1311 MuiTypography-gutterBottom-1332 WithTheme-Tittelblokk--h1-1303"
+        <h6
+          className="MuiTypography-root-1305 MuiTypography-h6-1322 MuiTypography-gutterBottom-1332 WithTheme-Tittelblokk--h1-1303"
         >
           Marine vannmasser
-        </h2>
+        </h6>
         <p
           className="MuiTypography-root-1305 MuiTypography-body1-1314 WithTheme-Tittelblokk--nivå-1304"
         />
@@ -2241,11 +2241,11 @@ exports[`Storyshots KodeVindu relasjon 1`] = `
           }
         }
       >
-        <h2
-          className="MuiTypography-root-1427 MuiTypography-title-1433 MuiTypography-gutterBottom-1454 WithTheme-Tittelblokk--h1-1425"
+        <h6
+          className="MuiTypography-root-1427 MuiTypography-h6-1444 MuiTypography-gutterBottom-1454 WithTheme-Tittelblokk--h1-1425"
         >
           Helofytt-saltvannssump
-        </h2>
+        </h6>
         <p
           className="MuiTypography-root-1427 MuiTypography-body1-1436 WithTheme-Tittelblokk--nivå-1426"
         >

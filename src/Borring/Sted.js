@@ -20,7 +20,7 @@ const Sted = props => {
   const color = 'rgba(230,230,230,1.0)'
   return (
     <React.Fragment>
-      <Typography style={{ color: color }} variant="title">
+      <Typography style={{ color: color }} variant="h6">
         {primary}
       </Typography>
       <Typography style={{ color: color }} variant="body1">

@@ -55,7 +55,7 @@ function farge(farge, viserKatalog) {
 function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
   let drawArgs = {
     forelderkode: lag.kode,
-    kode: lag.kode,
+    kode: _h(lag.kode),
     farge: farge(lag.farge, viserKatalog),
     visEtiketter: lag.visEtiketter,
     opplystKode: opplystKode,
@@ -67,10 +67,12 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
     gradient: lag.gradient,
   }
   if (lag.visBarn) {
-    drawArgs.barn = lag.barn.reduce((acc, e) => {
-      acc[e.kode] = e
-      return acc
-    }, {})
+    drawArgs.barn = _h2(
+      lag.barn.reduce((acc, e) => {
+        acc[e.kode] = e
+        return acc
+      }, {})
+    )
   }
   opprettEttLag(drawArgs, config)
 }
@@ -134,7 +136,6 @@ function updateScene(config: Object, props: Object) {
 function _h(kode) {
   if (kode.length <= 3) return kode
   const h = kode.substring(0, 2) + '_' + kode.substring(3)
-  console.log(kode, '=>', h)
   return h
 }
 
@@ -143,7 +144,6 @@ function _h2(koder) {
   Object.keys(koder).forEach(key => {
     r[_h(key)] = koder[key]
   })
-  console.log(koder, '=>', r)
   return r
 }
 
