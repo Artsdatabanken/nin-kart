@@ -2,7 +2,6 @@ import tinycolor from 'tinycolor2'
 import sysconfig from '../../../../config'
 
 function drawAll(drawArgs) {
-  console.log(drawArgs)
   const { kode, barn, farge, opplystKode, visBarn, visEtiketter } = drawArgs
   const layer = {
     data: { source: kode, layer: kode },
