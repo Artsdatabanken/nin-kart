@@ -1,10 +1,12 @@
 import { withStyles } from '@material-ui/core/styles'
 import {
   Card,
+  FormControlLabel,
   CardActions,
   Typography,
   CardActionArea,
   CardContent,
+  Switch,
   Button,
   CardMedia,
   withTheme,
@@ -28,12 +30,13 @@ const styles = {
   media: {
     width: 408,
     height: 280,
-    //    height: 200,
     objectFit: 'cover',
   },
+  bareAktive: { position: 'absolute', right: 0 },
 }
 
 class BorreVindu extends Component {
+  state = { bareAktive: false }
   render() {
     const { lat, lng, barn, view, classes } = this.props
     if (!barn) return null
@@ -93,21 +96,24 @@ class BorreVindu extends Component {
               Kilder
             </Button>
           )}
-          <Button size="small" color="primary" onClick={this.handleClickValg}>
-            Valg
-          </Button>
-          <Veksle
-            tittel="Vis bare fra aktive kartlag"
-            toggled={false}
-            icon={<RemoveRedEye />}
-            onClick={() => {}}
+          <FormControlLabel
+            className={classes.bareAktive}
+            control={
+              <Switch
+                checked={this.state.bareAktive}
+                onClick={() => {
+                  this.setState({ bareAktive: !this.state.bareAktive })
+                }}
+              />
+            }
+            label="Vis bare fra aktive kartlag"
           />
         </CardActions>
         <CardContent style={{ padding: 0 }}>
           {view ? (
             <Kilde geom_id={this.finnGeomId()} prefiks="NA" />
           ) : (
-            <Borring barn={andreBarn} />
+            <Borring barn={this.state.bareAktive ? {} : andreBarn} />
           )}
         </CardContent>
       </Card>
