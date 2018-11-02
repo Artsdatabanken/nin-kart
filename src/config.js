@@ -46,6 +46,13 @@ class config {
   static avatar24px(kode: string) {
     return `${storageUrl}bilde%2Favatar%2F24%2F${kode}.jpg?alt=media`
   }
+
+  static metaUrl(kode: string) {
+    return `https://maps.artsdatabanken.no/metabase/meta${kode
+      .split('_')
+      .join('-')
+      .toUpperCase()}.json`
+  }
 }
 
 export default config

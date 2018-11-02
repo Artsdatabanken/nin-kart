@@ -1,5 +1,6 @@
 // @flow
 import { wgs84ToUtm33 } from './projection'
+import config from './config'
 
 class Backend {
   static async postFilterPromise(url: string, filter: string) {
@@ -49,8 +50,8 @@ class Backend {
   }
 
   static async hentKodeMeta(path: string) {
-    path = path || ''
-    return this.getPromise(`https://adb-kode.firebaseio.com/${path}/@.json`)
+    path = path || '~'
+    return this.getPromise(config.metaUrl(path))
   }
 
   static async hentPunkt(lng: number, lat: number) {
