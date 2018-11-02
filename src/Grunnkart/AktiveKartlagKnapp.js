@@ -53,7 +53,7 @@ class AktiveKartlagKnapp extends React.Component<Props, State> {
                 fontSize: 15,
                 fontWeight: 500,
               }}
-              variant="title"
+              variant="h6"
               color="inherit"
             >
               Aktive kartlag
