@@ -116,14 +116,14 @@ function updateScene(config: Object, props: Object) {
     const fileFormat = formats[sourceType]
     const drawArgs = {
       kode: _h(meta.kode),
-      barn: harBarn ? _h2(meta.barn) : { [_h(meta.kode)]: props.meta },
+      barn: harBarn ? _h2(meta.barn) : { [_h(meta.kode)]: meta },
       opplystKode: _h(props.opplystKode),
       bbox: meta.bbox,
       zoom: meta.zoom,
       type: sourceType,
       fileFormat: fileFormat,
       gradient: { filterMin: 0, filterMax: 1 },
-      visBarn: harBarn,
+      visBarn: true,
     }
 
     opprettEttLag(drawArgs, config)
@@ -136,7 +136,6 @@ function updateScene(config: Object, props: Object) {
 function _h(kode) {
   if (kode.length <= 3) return kode
   let h = kode.substring(0, 2) + '_' + kode.substring(3)
-  console.log(h)
   return h
 }
 

@@ -172,7 +172,7 @@ class Grunnkart extends React.Component<Props, State> {
         this.redirectTo(newUrl)
         return
       }
-      this.setState({ meta: data })
+      this.setState({ meta: data, opplystKode: '' })
     })
   }
 
