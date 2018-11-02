@@ -73,6 +73,10 @@ const lag = {
   fylkesgrensefarge: 'rgba(185,185,185,1.0)',
   landegrense: true,
   landegrensefarge: 'rgba(195,195,195,1.0)',
+  sted_navn: true,
+  sted_navn_farge: '#333',
+  sted_navn_stroke_farge: [0.9, 0.9, 0.9, 0.4],
+  sted_navn_stroke_width: 3,
   terreng: {
     vertikaltOverdriv: 2.0,
     visKontur: false,
@@ -97,7 +101,7 @@ storiesOf('Tweaks', module)
   .addDecorator(muiTheme())
   .add('bakgrunn', () => (
     <Wrapper url="/lag/bakgrunnskart">
-      <Tweaks type={'bakgrunn'} />
+      <Tweaks type={'bakgrunn'} {...lag} />
     </Wrapper>
   ))
   .add('bakgrunn transport', () => (

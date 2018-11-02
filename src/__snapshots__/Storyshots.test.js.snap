@@ -5579,6 +5579,11 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
             >
               Tema
             </span>
+            <p
+              className="MuiTypography-root-2465 MuiTypography-body1-2474 MuiTypography-colorTextSecondary-2498 MuiListItemText-secondary-2504"
+            >
+              Mørk grå
+            </p>
           </div>
           <span
             className="MuiTouchRipple-root-2574"
@@ -5612,7 +5617,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
               className="MuiSwitch-root-2530"
             >
               <span
-                className="MuiButtonBase-root-2506 MuiIconButton-root-2520 MuiPrivateSwitchBase-root-2526 MuiSwitch-switchBase-2533 MuiSwitch-colorSecondary-2536"
+                className="MuiButtonBase-root-2506 MuiIconButton-root-2520 MuiPrivateSwitchBase-root-2526 MuiSwitch-switchBase-2533 MuiSwitch-colorSecondary-2536 MuiPrivateSwitchBase-checked-2527 MuiSwitch-checked-2534"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -5630,10 +5635,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
                   className="MuiIconButton-label-2525"
                 >
                   <span
-                    className="MuiSwitch-icon-2531"
+                    className="MuiSwitch-icon-2531 MuiSwitch-iconChecked-2532"
                   />
                   <input
-                    checked={false}
+                    checked={true}
                     className="MuiPrivateSwitchBase-input-2529"
                     onChange={[Function]}
                     type="checkbox"
@@ -5703,7 +5708,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
               className="MuiSwitch-root-2530"
             >
               <span
-                className="MuiButtonBase-root-2506 MuiIconButton-root-2520 MuiPrivateSwitchBase-root-2526 MuiSwitch-switchBase-2533 MuiSwitch-colorSecondary-2536"
+                className="MuiButtonBase-root-2506 MuiIconButton-root-2520 MuiPrivateSwitchBase-root-2526 MuiSwitch-switchBase-2533 MuiSwitch-colorSecondary-2536 MuiPrivateSwitchBase-checked-2527 MuiSwitch-checked-2534"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -5721,10 +5726,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
                   className="MuiIconButton-label-2525"
                 >
                   <span
-                    className="MuiSwitch-icon-2531"
+                    className="MuiSwitch-icon-2531 MuiSwitch-iconChecked-2532"
                   />
                   <input
-                    checked={false}
+                    checked={true}
                     className="MuiPrivateSwitchBase-input-2529"
                     onChange={[Function]}
                     type="checkbox"
@@ -5794,7 +5799,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
               className="MuiSwitch-root-2530"
             >
               <span
-                className="MuiButtonBase-root-2506 MuiIconButton-root-2520 MuiPrivateSwitchBase-root-2526 MuiSwitch-switchBase-2533 MuiSwitch-colorSecondary-2536"
+                className="MuiButtonBase-root-2506 MuiIconButton-root-2520 MuiPrivateSwitchBase-root-2526 MuiSwitch-switchBase-2533 MuiSwitch-colorSecondary-2536 MuiPrivateSwitchBase-checked-2527 MuiSwitch-checked-2534"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -5812,10 +5817,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
                   className="MuiIconButton-label-2525"
                 >
                   <span
-                    className="MuiSwitch-icon-2531"
+                    className="MuiSwitch-icon-2531 MuiSwitch-iconChecked-2532"
                   />
                   <input
-                    checked={false}
+                    checked={true}
                     className="MuiPrivateSwitchBase-input-2529"
                     onChange={[Function]}
                     type="checkbox"
@@ -5981,7 +5986,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
               className="MuiSwitch-root-2530"
             >
               <span
-                className="MuiButtonBase-root-2506 MuiIconButton-root-2520 MuiPrivateSwitchBase-root-2526 MuiSwitch-switchBase-2533 MuiSwitch-colorSecondary-2536"
+                className="MuiButtonBase-root-2506 MuiIconButton-root-2520 MuiPrivateSwitchBase-root-2526 MuiSwitch-switchBase-2533 MuiSwitch-colorSecondary-2536 MuiPrivateSwitchBase-checked-2527 MuiSwitch-checked-2534"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -5999,10 +6004,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
                   className="MuiIconButton-label-2525"
                 >
                   <span
-                    className="MuiSwitch-icon-2531"
+                    className="MuiSwitch-icon-2531 MuiSwitch-iconChecked-2532"
                   />
                   <input
-                    checked={false}
+                    checked={true}
                     className="MuiPrivateSwitchBase-input-2529"
                     onChange={[Function]}
                     type="checkbox"
@@ -6043,9 +6048,135 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
               className="MuiAvatar-root-2539"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#333",
                 }
               }
+            />
+          </div>
+        </li>
+        <li
+          className="MuiListItem-container-2510"
+        >
+          <div
+            className="MuiButtonBase-root-2506 MuiListItem-root-2509 MuiListItem-default-2512 MuiListItem-gutters-2516 MuiListItem-button-2517 MuiListItem-secondaryAction-2518"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            <span
+              className="MuiSwitch-root-2530"
+            >
+              <span
+                className="MuiButtonBase-root-2506 MuiIconButton-root-2520 MuiPrivateSwitchBase-root-2526 MuiSwitch-switchBase-2533 MuiSwitch-colorSecondary-2536 MuiPrivateSwitchBase-checked-2527 MuiSwitch-checked-2534"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={null}
+              >
+                <span
+                  className="MuiIconButton-label-2525"
+                >
+                  <span
+                    className="MuiSwitch-icon-2531 MuiSwitch-iconChecked-2532"
+                  />
+                  <input
+                    checked={true}
+                    className="MuiPrivateSwitchBase-input-2529"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  className="MuiTouchRipple-root-2574"
+                />
+              </span>
+              <span
+                className="MuiSwitch-bar-2538"
+              />
+            </span>
+            <div
+              className="MuiListItemText-root-2500"
+            >
+              <span
+                className="MuiTypography-root-2465 MuiTypography-subheading-2472 MuiListItemText-primary-2503"
+              >
+                Steder omriss
+              </span>
+            </div>
+            <span
+              className="MuiTouchRipple-root-2574"
+            />
+          </div>
+          <div
+            className="MuiListItemSecondaryAction-root-2542"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "paddingRight": 12,
+              }
+            }
+          >
+            <div
+              className="MuiAvatar-root-2539"
+              style={
+                Object {
+                  "backgroundColor": Array [
+                    0.9,
+                    0.9,
+                    0.9,
+                    0.4,
+                  ],
+                }
+              }
+            />
+          </div>
+        </li>
+        <li
+          className="MuiListItem-root-2509 MuiListItem-default-2512 MuiListItem-gutters-2516"
+          disabled={false}
+        >
+          <div
+            style={
+              Object {
+                "color": "rgba(0, 0, 0, 0.38)",
+                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                "position": "absolute",
+                "right": 20,
+                "top": 10,
+              }
+            }
+          >
+            3.0
+          </div>
+          <div
+            className="MuiListItemText-root-2500"
+          >
+            <span
+              className="MuiTypography-root-2465 MuiTypography-subheading-2472 MuiListItemText-primary-2503"
+            >
+              Omriss
+            </span>
+            <p
+              className="MuiTypography-root-2465 MuiTypography-body1-2474 MuiTypography-colorTextSecondary-2498 MuiListItemText-secondary-2504"
             />
           </div>
         </li>
@@ -6153,7 +6284,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
             className="MuiSwitch-root-2530"
           >
             <span
-              className="MuiButtonBase-root-2506 MuiIconButton-root-2520 MuiPrivateSwitchBase-root-2526 MuiSwitch-switchBase-2533 MuiSwitch-colorSecondary-2536"
+              className="MuiButtonBase-root-2506 MuiIconButton-root-2520 MuiPrivateSwitchBase-root-2526 MuiSwitch-switchBase-2533 MuiSwitch-colorSecondary-2536 MuiPrivateSwitchBase-checked-2527 MuiSwitch-checked-2534"
               onBlur={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
@@ -6170,10 +6301,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
                 className="MuiIconButton-label-2525"
               >
                 <span
-                  className="MuiSwitch-icon-2531"
+                  className="MuiSwitch-icon-2531 MuiSwitch-iconChecked-2532"
                 />
                 <input
-                  checked={false}
+                  checked={true}
                   className="MuiPrivateSwitchBase-input-2529"
                   onChange={[Function]}
                   type="checkbox"
@@ -6205,7 +6336,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
             className="MuiSwitch-root-2530"
           >
             <span
-              className="MuiButtonBase-root-2506 MuiIconButton-root-2520 MuiPrivateSwitchBase-root-2526 MuiSwitch-switchBase-2533 MuiSwitch-colorSecondary-2536"
+              className="MuiButtonBase-root-2506 MuiIconButton-root-2520 MuiPrivateSwitchBase-root-2526 MuiSwitch-switchBase-2533 MuiSwitch-colorSecondary-2536 MuiPrivateSwitchBase-checked-2527 MuiSwitch-checked-2534"
               onBlur={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
@@ -6222,10 +6353,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
                 className="MuiIconButton-label-2525"
               >
                 <span
-                  className="MuiSwitch-icon-2531"
+                  className="MuiSwitch-icon-2531 MuiSwitch-iconChecked-2532"
                 />
                 <input
-                  checked={false}
+                  checked={true}
                   className="MuiPrivateSwitchBase-input-2529"
                   onChange={[Function]}
                   type="checkbox"
@@ -6257,7 +6388,7 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
             className="MuiSwitch-root-2530"
           >
             <span
-              className="MuiButtonBase-root-2506 MuiIconButton-root-2520 MuiPrivateSwitchBase-root-2526 MuiSwitch-switchBase-2533 MuiSwitch-colorSecondary-2536"
+              className="MuiButtonBase-root-2506 MuiIconButton-root-2520 MuiPrivateSwitchBase-root-2526 MuiSwitch-switchBase-2533 MuiSwitch-colorSecondary-2536 MuiPrivateSwitchBase-checked-2527 MuiSwitch-checked-2534"
               onBlur={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
@@ -6274,10 +6405,10 @@ exports[`Storyshots Tweaks bakgrunn 1`] = `
                 className="MuiIconButton-label-2525"
               >
                 <span
-                  className="MuiSwitch-icon-2531"
+                  className="MuiSwitch-icon-2531 MuiSwitch-iconChecked-2532"
                 />
                 <input
-                  checked={false}
+                  checked={true}
                   className="MuiPrivateSwitchBase-input-2529"
                   onChange={[Function]}
                   type="checkbox"
