@@ -66,7 +66,12 @@ function draw(args) {
 }
 
 function lagSource(kode, bbox, zoom) {
-  return sysconfig.createTileSource(`polygon/${kode}`, 'MVT', zoom, bbox)
+  return sysconfig.createTileSource(`polygon/${_h(kode)}`, 'MVT', zoom, bbox)
+}
+
+function _h(kode) {
+  if (kode.length < 4) return kode
+  return kode.substring(0, 2) + '-' + kode.substring(3)
 }
 
 export default { drawAll, lagSource }
