@@ -44,7 +44,6 @@ function opprettTekst(kode, lag, config, style) {
   font.stroke.color = lag[kode + '_stroke_farge']
   font.stroke.width = lag[kode + '_stroke_width']
   config.layers[kode] = mal
-  console.log(lag)
 }
 
 function lagBakgrunnskart(lag, config) {

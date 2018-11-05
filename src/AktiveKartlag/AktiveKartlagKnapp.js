@@ -17,7 +17,7 @@ const styles = {
   button: {
     position: 'absolute',
     bottom: 28,
-    right: 52,
+    left: 0,
   },
 }
 
@@ -29,8 +29,8 @@ class AktiveKartlagKnapp extends React.Component<Props, State> {
         style={{
           backgroundColor: '#fff',
           position: 'absolute',
-          width: 208,
-          right: 0,
+          width: 400,
+          left: 0,
           bottom: 0,
           height: 44,
           boxShadow:
