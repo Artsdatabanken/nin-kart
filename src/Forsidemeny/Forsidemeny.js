@@ -70,9 +70,8 @@ const Forsidemeny = ({
                     <Boble kode="LA" tittel="Landskap" />
                     <Boble kode="NA" tittel="Natursystem" />
                     <Boble kode="VV" tittel="Naturvern- område" />
-                    <Boble kode="MI" tittel="Miljøvariabel" />
-                    <Boble kode="AO" tittel="Administativt område" />
                     <Boble kode="RL" tittel="Truet natur" />
+                    <Boble kode="AO" tittel="Administativt område" />
                   </div>
                 </Seksjon>
               </Papir>

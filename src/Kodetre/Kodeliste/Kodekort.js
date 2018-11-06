@@ -8,7 +8,7 @@ import {
   withStyles,
 } from '@material-ui/core'
 import { LibraryAdd, ZoomOutMap } from '@material-ui/icons/'
-import ArrowForward from '@material-ui/icons/ArrowForward'
+import ArrowBack from '@material-ui/icons/ArrowBack'
 import React from 'react'
 import { withRouter } from 'react-router'
 import config from '../../config'
@@ -131,14 +131,9 @@ class Kodekort extends React.Component {
             autoHideDuration={5000}
             anchorOrigin={{
               vertical: 'bottom',
-              horizontal: 'left',
+              horizontal: 'center',
             }}
             onClose={this.handleCloseSnackbar}
-            message={
-              <span>
-                Aktiverer <b>{språk(tittel)}</b>
-              </span>
-            }
             action={[
               <IconButton
                 key="close"
@@ -147,9 +142,14 @@ class Kodekort extends React.Component {
                 className={classes.close}
                 onClick={this.handleClickAktiveLag}
               >
-                <ArrowForward />
+                <ArrowBack />
               </IconButton>,
             ]}
+            message={
+              <span>
+                Aktiverer <b>{språk(tittel)}</b>
+              </span>
+            }
           />
         )}
       </Card>
