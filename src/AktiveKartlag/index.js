@@ -1,12 +1,4 @@
-import {
-  AppBar,
-  IconButton,
-  List,
-  Toolbar,
-  Typography,
-  withStyles,
-} from '@material-ui/core'
-import { ExpandMore } from '@material-ui/icons'
+import { List, withStyles } from '@material-ui/core'
 import React from 'react'
 import { withRouter } from 'react-router'
 import { SettingsContext } from '../SettingsContext'
@@ -15,20 +7,9 @@ import PolygonlagElement from './PolygonlagElement'
 import TerrenglagElement from './TerrenglagElement'
 import AktiveKartlagKnapp from './AktiveKartlagKnapp'
 
-const styles = theme => ({
-  button: {
-    margin: theme.spacing.unit,
-  },
-  tekst: {
-    flexGrow: 1,
-    fontSize: 15,
-    fontWeight: 500,
-  },
-})
-
 class AktiveKartlag extends React.Component {
   render() {
-    const { koder, erÅpen, classes } = this.props
+    const { koder, erÅpen } = this.props
     return (
       <SettingsContext.Consumer>
         {context => (
@@ -93,4 +74,4 @@ function listeElement(forelder, props, visKoder) {
   )
 }
 
-export default withStyles(styles)(withRouter(AktiveKartlag))
+export default withRouter(AktiveKartlag)
