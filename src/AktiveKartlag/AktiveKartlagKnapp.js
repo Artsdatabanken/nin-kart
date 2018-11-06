@@ -5,9 +5,11 @@ import { ExpandLess, ExpandMore } from '@material-ui/icons'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { withRouter } from 'react-router'
+import Badge from '@material-ui/core/Badge'
 
 type Props = {
   erÅpen: PropTypes.Boolean,
+  antallLag: PropTypes.numeric,
   classes: PropTypes.object.isRequired,
   onClick: PropTypes.func.isRequired,
 }
@@ -24,8 +26,12 @@ const styles = {
     '&:hover': {
       color: 'hsla(0, 0%, 0%, 0.87)',
     },
+    width: '100%',
   },
-
+  badge: {
+    top: 22,
+    left: 20,
+  },
   tekst: {
     fontSize: 15,
     fontWeight: 500,
@@ -37,7 +43,7 @@ const styles = {
 
 class AktiveKartlagKnapp extends React.Component<Props> {
   render() {
-    const { onClick, erÅpen, classes } = this.props
+    const { onClick, erÅpen, antallLag, classes } = this.props
     const Ikon = erÅpen ? ExpandMore : ExpandLess
     return (
       <Paper className={classes.rot} onMouseDown={onClick} square={true}>
@@ -45,6 +51,13 @@ class AktiveKartlagKnapp extends React.Component<Props> {
         <Typography color="inherit" className={classes.tekst}>
           Mine kartlag
         </Typography>
+        {antallLag > 0 && (
+          <Badge
+            className={classes.badge}
+            badgeContent={antallLag}
+            color="primary"
+          />
+        )}
       </Paper>
     )
   }

@@ -17,28 +17,28 @@ function oppsummer(node) {
 }
 
 function hack(kode, nivå, kategori) {
-  switch (kode) {
-    case 'BS_1':
+  switch (kode.replace('_', '-')) {
+    case 'BS-1':
       return 'Artssammensetning'
-    case 'BS_2':
+    case 'BS-2':
       return 'Geologisk sammensetning'
-    case 'BS_3':
+    case 'BS-3':
       return 'Landform'
-    case 'BS_4':
+    case 'BS-4':
       return 'Naturgitte objekter'
-    case 'BS_5':
+    case 'BS-5':
       return 'Menneskeskapte objekter'
-    case 'BS_6':
+    case 'BS-6':
       return 'Regionale komplekse miljøvariable'
-    case 'BS_7':
+    case 'BS-7':
       return 'Tilstandsvariasjon'
-    case 'BS_8':
+    case 'BS-8':
       return 'Terrengformvariasjon'
-    case 'BS_9':
+    case 'BS-9':
       return 'Romlig strukturvariasjon'
-    case 'NA_T':
+    case 'NA-T':
       return 'Fastmarkssystem'
-    case 'MI_KA':
+    case 'MI-KA':
       return 'Kalkinnhold'
     default:
       return kategori
@@ -69,12 +69,12 @@ class Seksjon extends Component {
   render() {
     const { node, kode, visKoder, kategori, onClick } = this.props
     const r = oppsummer(node)
-    const primary = r.map(e => this.map(e.verdi))
+    const secondary = r.map(e => this.map(e.verdi))
     return (
       <Listeelement
         key={kode}
         kode={kode}
-        secondary={primary}
+        secondary={secondary}
         primary={hack(kode, r.nivå, kategori)}
         visKoder={visKoder}
         onClick={onClick}
@@ -88,9 +88,9 @@ class Seksjon extends Component {
     if (len < 2) return hack1(value)
     const key = r[len - 2]
     return (
-      <span key={key}>
+      <div key={key}>
         {hack1(key.trim())}: <b>{hack2(value)}</b>
-      </span>
+      </div>
     )
   }
 }

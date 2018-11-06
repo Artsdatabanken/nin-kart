@@ -10,18 +10,20 @@ import AktiveKartlagKnapp from './AktiveKartlagKnapp'
 class AktiveKartlag extends React.Component {
   render() {
     const { koder, erÅpen } = this.props
+    const keys = Object.keys(koder)
     return (
       <SettingsContext.Consumer>
         {context => (
           <React.Fragment>
             <AktiveKartlagKnapp
               erÅpen={erÅpen}
+              antallLag={keys.length - 2}
               onClick={context.onToggleAktiveLag}
             />
             {erÅpen && (
               <List>
                 <React.Fragment>
-                  {Object.keys(koder).map(fkode => {
+                  {keys.map(fkode => {
                     const forelder = koder[fkode]
                     return listeElement(forelder, this.props, context.visKoder)
                   })}
