@@ -1,5 +1,5 @@
 import { Typography, withStyles } from '@material-ui/core'
-import { ExpandLess, ExpandMore } from '@material-ui/icons'
+import { ExpandLess } from '@material-ui/icons'
 import classNames from 'classnames'
 import React from 'react'
 import { Paper } from '@material-ui/core'
@@ -17,7 +17,16 @@ const styles = {
     },
     pointerEvents: 'auto',
   },
-  ikon: { margin: '8px 22px 8px 14px' },
+  ikon: {
+    margin: '8px 22px 8px 14px',
+    transition: '0.5s',
+  },
+  ikonÅpen: {
+    transform: 'rotate(0deg)',
+  },
+  ikonLukket: {
+    transform: 'rotate(180deg)',
+  },
   tekst: {
     fontSize: 15,
     fontWeight: 500,
@@ -25,11 +34,10 @@ const styles = {
     lineHeight: '44px',
     textAlign: 'center',
   },
-  open: {
-    width: 408,
-    boxShadow: '0 -2px 4px rgba(0,0,0,.2)',
+  åpen: {
+    width: 392,
   },
-  closed: {
+  lukket: {
     width: 392,
     marginBottom: 8,
   },
@@ -41,17 +49,24 @@ const styles = {
 
 class Ekspanderlinje extends React.Component {
   render() {
-    const { classes, mode, onSkjul, tekst } = this.props
-    const erÅpen = mode === 'open'
-    const Ikon = erÅpen ? ExpandLess : ExpandMore
+    const { classes, erÅpen, onSkjul, tekst } = this.props
     return (
       <div className={classes.div}>
         <Paper
           square={erÅpen}
-          className={classNames(classes.rot, mode && classes[mode])}
+          className={classNames(
+            classes.rot,
+            erÅpen ? classes.åpen : classes.lukket
+          )}
           onMouseDown={onSkjul}
         >
-          <Ikon className={classes.ikon} />
+          <ExpandLess
+            color="inherit"
+            className={classNames(
+              classes.ikon,
+              erÅpen ? classes.ikonÅpen : classes.ikonLukket
+            )}
+          />
           <Typography color="inherit" className={classes.tekst}>
             {tekst}
           </Typography>
