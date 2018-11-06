@@ -54,7 +54,7 @@ const Forsidemeny = ({
 }) => {
   return (
     <React.Fragment>
-      <Panel>
+      <Panel transparent={!visForside}>
         {visForside ? (
           <React.Fragment>
             <TopBarContainer>

@@ -227,6 +227,7 @@ class Grunnkart extends React.Component<Props, State> {
               <div
                 style={{
                   position: 'fixed',
+                  pointerEvents: 'none',
                   left: 0,
                   width: 408,
                   border: 1,

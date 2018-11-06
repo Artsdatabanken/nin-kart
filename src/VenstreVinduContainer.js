@@ -83,7 +83,7 @@ class VenstreVinduContainer extends React.Component {
               <Route
                 path="/lag/:kode/:lag?"
                 render={({ match, history }) => (
-                  <Panel style={{ paddingTop: 55 }}>
+                  <Panel padTop>
                     <TopBarContainer
                       tittel={
                         'Innstillinger for ' +
@@ -158,6 +158,7 @@ class VenstreVinduContainer extends React.Component {
                   '0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)',
                 justifyContent: 'flex-end',
                 float: 'bottom',
+                pointerEvents: 'auto',
               }}
             >
               <AktiveKartlag

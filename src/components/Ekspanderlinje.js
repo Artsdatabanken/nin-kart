@@ -15,6 +15,7 @@ const styles = {
     '&:hover': {
       color: 'hsla(0, 0%, 0%, 0.87)',
     },
+    pointerEvents: 'auto',
   },
   ikon: { margin: '8px 22px 8px 14px' },
   tekst: {
