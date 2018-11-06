@@ -94,6 +94,7 @@ class TopBarContainer extends Component<Props, State> {
             <div
               style={{
                 pointerEvents: 'auto',
+                overflowX: 'hidden',
               }}
             >
               <TopBar

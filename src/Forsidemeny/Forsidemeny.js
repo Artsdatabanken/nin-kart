@@ -9,6 +9,7 @@ import React from 'react'
 import TopBarContainer from '../TopBar/TopBarContainer'
 import { Panel, Ekspanderlinje } from '../components'
 import Boble from './Boble'
+import Collapse from '@material-ui/core/Collapse'
 
 const Seksjon = ({ tittel, children }) => (
   <div>
@@ -44,22 +45,20 @@ const Papir = ({ children }) => (
 
 const styles = {}
 
-const Forsidemeny = ({
-  classes,
-  visForside,
-  onVis,
-  onAktiver,
-  onSkjul,
-  onClick,
-}) => {
+const Forsidemeny = ({ classes, visForside, onVis, onAktiver, onClick }) => {
   return (
     <React.Fragment>
       <Panel transparent={!visForside}>
-        {visForside ? (
-          <React.Fragment>
-            <TopBarContainer>
+        <TopBarContainer removeResultsOnBlur={!visForside}>
+          <Collapse in={visForside} collapsedHeight="46px">
+            <React.Fragment>
+              <Ekspanderlinje
+                tekst="Datakatalog"
+                erÅpen={visForside}
+                onSkjul={onVis}
+              />
               <Papir>
-                <Seksjon tittel="Datakatalog">
+                <Seksjon tittexl="Datakatalog">
                   <div
                     style={{
                       display: 'grid',
@@ -117,21 +116,10 @@ const Forsidemeny = ({
                   </div>
                 </Seksjon>
               </Papir>
-            </TopBarContainer>
-          </React.Fragment>
-        ) : (
-          <TopBarContainer removeResultsOnBlur={true}>
-            <Ekspanderlinje
-              tekst="Tilgjengelige kart"
-              mode="closed"
-              onSkjul={onVis}
-            />
-          </TopBarContainer>
-        )}
+            </React.Fragment>
+          </Collapse>
+        </TopBarContainer>
       </Panel>
-      {visForside && (
-        <Ekspanderlinje tekst="Skjul" mode="open" onSkjul={onSkjul} />
-      )}
     </React.Fragment>
   )
 }

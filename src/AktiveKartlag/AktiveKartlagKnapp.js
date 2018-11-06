@@ -1,11 +1,12 @@
 // @flow
 import { Paper, Typography } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
-import { ExpandLess, ExpandMore } from '@material-ui/icons'
+import { ExpandMore } from '@material-ui/icons'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { withRouter } from 'react-router'
 import Badge from '@material-ui/core/Badge'
+import classNames from 'classnames'
 
 type Props = {
   erÅpen: PropTypes.Boolean,
@@ -15,9 +16,17 @@ type Props = {
 }
 
 const styles = {
-  ikon: { margin: '8px 22px 8px 14px' },
+  ikon: {
+    margin: '8px 22px 8px 14px',
+    transition: '0.5s',
+  },
+  åpen: {
+    transform: 'rotate(0deg)',
+  },
+  lukket: {
+    transform: 'rotate(180deg)',
+  },
   rot: {
-    backgroundColor: 'hsl(0, 0%, 96%)',
     cursor: 'pointer',
     display: 'flex',
     flex: 'none',
@@ -26,7 +35,9 @@ const styles = {
     '&:hover': {
       color: 'hsla(0, 0%, 0%, 0.87)',
     },
-    width: '100%',
+    backgroundColor: 'hsl(0, 0%, 96%)',
+    transition: '0.3s',
+    transitionTimingFunction: 'ease-out',
   },
   badge: {
     top: 22,
@@ -44,10 +55,15 @@ const styles = {
 class AktiveKartlagKnapp extends React.Component<Props> {
   render() {
     const { onClick, erÅpen, antallLag, classes } = this.props
-    const Ikon = erÅpen ? ExpandMore : ExpandLess
     return (
       <Paper className={classes.rot} onMouseDown={onClick} square={true}>
-        <Ikon color="inherit" className={classes.ikon} />
+        <ExpandMore
+          color="inherit"
+          className={classNames(
+            classes.ikon,
+            erÅpen ? classes.åpen : classes.lukket
+          )}
+        />
         <Typography color="inherit" className={classes.tekst}>
           Mine kartlag
         </Typography>
@@ -56,7 +72,9 @@ class AktiveKartlagKnapp extends React.Component<Props> {
             className={classes.badge}
             badgeContent={antallLag}
             color="primary"
-          />
+          >
+            &nbsp;
+          </Badge>
         )}
       </Paper>
     )
