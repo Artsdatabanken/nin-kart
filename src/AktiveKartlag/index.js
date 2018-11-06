@@ -1,4 +1,4 @@
-import { List, withStyles } from '@material-ui/core'
+import { List } from '@material-ui/core'
 import React from 'react'
 import { withRouter } from 'react-router'
 import { SettingsContext } from '../SettingsContext'

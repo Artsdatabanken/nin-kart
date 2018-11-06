@@ -50,7 +50,6 @@ class VenstreVinduContainer extends React.Component {
       onMouseLeave,
       onUpdateLayerProp,
       onRemoveSelectedLayer,
-      onToggleAktiveLag,
     } = this.props
     return (
       <Route

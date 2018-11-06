@@ -1,5 +1,5 @@
 // @flow
-import { Paper, IconButton, Toolbar, Typography } from '@material-ui/core'
+import { Paper, Typography } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 import { ExpandLess, ExpandMore } from '@material-ui/icons'
 import PropTypes from 'prop-types'
