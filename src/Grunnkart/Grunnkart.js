@@ -2,18 +2,16 @@
 import typesystem from '@artsdatabanken/typesystem'
 import React from 'react'
 import { withRouter } from 'react-router'
-import AktiveKartlag from '../AktiveKartlag/'
 import backend from '../backend'
 import Kart from '../Kart'
 import { SettingsContext } from '../SettingsContext'
 import språk from '../språk'
 import VenstreVinduContainer from '../VenstreVinduContainer'
-import AktiveKartlagKnapp from './AktiveKartlagKnapp'
 import standardlag from './standardlag.json'
 import bakgrunnskarttema from './bakgrunnskarttema'
 
 type State = {
-  aktiveLag: Array<Object>,
+  aktiveLag: Object,
   meta: Object,
   fitBounds: Object,
   actualBounds: Object,
@@ -226,46 +224,37 @@ class Grunnkart extends React.Component<Props, State> {
         {context => {
           return (
             <React.Fragment>
-              {context.visAktiveLag ? (
-                <div
-                  style={{
-                    backgroundColor: '#fff',
-                    position: 'absolute',
-                    width: 408,
-                    right: 0,
-                    bottom: 0,
-                    boxShadow:
-                      '0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)',
-                  }}
-                >
-                  <AktiveKartlag
-                    koder={this.state.aktiveLag}
-                    onMouseEnter={this.handleMouseEnter}
-                    onMouseLeave={this.handleMouseLeave}
-                    onUpdateLayerProp={this.handleUpdateLayerProp}
-                    onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                  />
-                </div>
-              ) : (
-                <AktiveKartlagKnapp onClick={context.onToggleAktiveLag} />
-              )}
-
-              <VenstreVinduContainer
-                aktiveLag={this.state.aktiveLag}
-                mapBounds={this.state.actualBounds}
-                onAktiver={this.handleAktiver}
-                onMouseEnter={this.handleMouseEnter}
-                onMouseLeave={this.handleMouseLeave}
-                onFitBounds={this.handleFitBounds}
-                erAktivert={erAktivert}
-                opplystKode={this.state.opplystKode}
-                onToggleLayer={this.handleToggleLayer}
-                onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                meta={this.state.meta}
-                onUpdateLayerProp={this.handleUpdateLayerProp}
-                visForside={context.visForside}
-                onToggleForside={context.onToggleForside}
-              />
+              <div
+                style={{
+                  position: 'fixed',
+                  pointerEvents: 'none',
+                  left: 0,
+                  width: 408,
+                  border: 1,
+                  display: 'flex',
+                  height: '100vh',
+                  flexDirection: 'column',
+                }}
+              >
+                <VenstreVinduContainer
+                  aktiveLag={this.state.aktiveLag}
+                  mapBounds={this.state.actualBounds}
+                  onAktiver={this.handleAktiver}
+                  onMouseEnter={this.handleMouseEnter}
+                  onMouseLeave={this.handleMouseLeave}
+                  onFitBounds={this.handleFitBounds}
+                  erAktivert={erAktivert}
+                  opplystKode={this.state.opplystKode}
+                  onToggleLayer={this.handleToggleLayer}
+                  onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                  meta={this.state.meta}
+                  onUpdateLayerProp={this.handleUpdateLayerProp}
+                  visForside={context.visForside}
+                  visAktiveLag={context.visAktiveLag}
+                  onToggleForside={context.onToggleForside}
+                  onToggleAktiveLag={context.onToggleAktiveLag}
+                />
+              </div>
               <Kart
                 bounds={this.state.fitBounds}
                 latitude={65.4}

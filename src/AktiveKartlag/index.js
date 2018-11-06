@@ -1,73 +1,33 @@
-import {
-  AppBar,
-  IconButton,
-  List,
-  Toolbar,
-  Typography,
-  withStyles,
-} from '@material-ui/core'
-import { ExpandMore } from '@material-ui/icons'
+import { List } from '@material-ui/core'
 import React from 'react'
 import { withRouter } from 'react-router'
 import { SettingsContext } from '../SettingsContext'
 import BakgrunnskartElement from './BakgrunnskartElement'
 import PolygonlagElement from './PolygonlagElement'
 import TerrenglagElement from './TerrenglagElement'
-
-const styles = theme => ({
-  button: {
-    margin: theme.spacing.unit,
-  },
-  toolbar: {
-    paddingRight: 0,
-    color: 'hsla(0, 0%, 0%, 0.54)',
-    cursor: 'pointer',
-  },
-  tekst: {
-    flexGrow: 1,
-    fontSize: 15,
-    fontWeight: 500,
-  },
-})
+import AktiveKartlagKnapp from './AktiveKartlagKnapp'
 
 class AktiveKartlag extends React.Component {
   render() {
-    const { koder, classes } = this.props
+    const { koder, erÅpen } = this.props
     return (
       <SettingsContext.Consumer>
         {context => (
           <React.Fragment>
-            <AppBar
-              position="static"
-              elevation={1}
-              color="inherit"
-              square={false}
-            >
-              <Toolbar
-                variant="dense"
-                className={classes.toolbar}
-                onClick={context.onToggleAktiveLag}
-              >
-                <Typography
-                  className={classes.tekst}
-                  variant="h6"
-                  color="inherit"
-                >
-                  Aktive kartlag
-                </Typography>
-                <IconButton color="inherit">
-                  <ExpandMore />
-                </IconButton>
-              </Toolbar>
-            </AppBar>
-            <List>
-              <React.Fragment>
-                {Object.keys(koder).map(fkode => {
-                  const forelder = koder[fkode]
-                  return listeElement(forelder, this.props, context.visKoder)
-                })}
-              </React.Fragment>
-            </List>
+            <AktiveKartlagKnapp
+              erÅpen={erÅpen}
+              onClick={context.onToggleAktiveLag}
+            />
+            {erÅpen && (
+              <List>
+                <React.Fragment>
+                  {Object.keys(koder).map(fkode => {
+                    const forelder = koder[fkode]
+                    return listeElement(forelder, this.props, context.visKoder)
+                  })}
+                </React.Fragment>
+              </List>
+            )}
           </React.Fragment>
         )}
       </SettingsContext.Consumer>
@@ -114,4 +74,4 @@ function listeElement(forelder, props, visKoder) {
   )
 }
 
-export default withStyles(styles)(withRouter(AktiveKartlag))
+export default withRouter(AktiveKartlag)

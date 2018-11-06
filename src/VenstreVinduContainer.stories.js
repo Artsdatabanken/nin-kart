@@ -9,7 +9,14 @@ storiesOf('VenstreVindu', module)
   .addDecorator(muiTheme())
   .add('Rot', () => {
     return (
-      <div style={{ padding: 8 }}>
+      <div
+        style={{
+          padding: 8,
+          width: 408,
+          height: '100%',
+          backgroundColor: 'red',
+        }}
+      >
         <MemoryRouter>
           <VenstreVinduContainer aktiveLag={[]} />
         </MemoryRouter>

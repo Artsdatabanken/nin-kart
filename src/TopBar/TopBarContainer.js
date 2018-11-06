@@ -91,7 +91,11 @@ class TopBarContainer extends Component<Props, State> {
         render={({ match, history }) => {
           const isAtRoot = history.location.pathname === '/'
           return (
-            <React.Fragment>
+            <div
+              style={{
+                pointerEvents: 'auto',
+              }}
+            >
               <TopBar
                 onGoBack={this.handleGoBack}
                 onExitToRoot={this.handleExitToRoot}
@@ -132,7 +136,7 @@ class TopBarContainer extends Component<Props, State> {
                   </div>
                 )}
               </div>
-            </React.Fragment>
+            </div>
           )
         }}
       />
