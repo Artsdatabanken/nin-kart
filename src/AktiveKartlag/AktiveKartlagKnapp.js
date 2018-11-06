@@ -1,52 +1,48 @@
 // @flow
 import { AppBar, IconButton, Toolbar, Typography } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
-import { ExpandLess } from '@material-ui/icons'
+import { ExpandLess, ExpandMore } from '@material-ui/icons'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { withRouter } from 'react-router'
 
-type State = {}
-
 type Props = {
+  erÅpen: PropTypes.Boolean,
   classes: PropTypes.object.isRequired,
   onClick: PropTypes.func.isRequired,
 }
 
 const styles = {
-  button: {
-    position: 'absolute',
-    bottom: 28,
-    left: 0,
+  toolbar: {
+    cursor: 'pointer',
+    color: 'hsla(0, 0%, 0%, 0.54)',
+    '&:hover': {
+      color: 'hsla(0, 0%, 0%, 0.87)',
+    },
   },
+  ikon: { margin: '8px 22px 8px 14px' },
 }
 
-class AktiveKartlagKnapp extends React.Component<Props, State> {
+class AktiveKartlagKnapp extends React.Component<Props> {
   render() {
-    const { onClick } = this.props
+    const { onClick, erÅpen, classes } = this.props
+    const Ikon = erÅpen ? ExpandMore : ExpandLess
     return (
       <div
         style={{
-          backgroundColor: '#fff',
-          position: 'absolute',
-          width: 400,
-          left: 0,
-          bottom: 0,
-          height: 44,
-          boxShadow:
+          xbackgroundColor: '#fff',
+          width: 408,
+          xboxShadow:
             '0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)',
         }}
       >
-        <AppBar position="static" color="inherit" square={false}>
+        <AppBar elevation={1} position="static" color="inherit" square={false}>
           <Toolbar
             variant="dense"
-            style={{
-              paddingRight: 0,
-              color: 'hsla(0, 0%, 0%, 0.54)',
-              cursor: 'pointer',
-            }}
+            className={classes.toolbar}
             onClick={onClick}
           >
+            <Ikon color="inherit" className={classes.ikon} />
             <Typography
               style={{
                 flexGrow: 1,
@@ -58,9 +54,6 @@ class AktiveKartlagKnapp extends React.Component<Props, State> {
             >
               Aktive kartlag
             </Typography>
-            <IconButton color="inherit">
-              <ExpandLess />
-            </IconButton>
           </Toolbar>
         </AppBar>
       </div>

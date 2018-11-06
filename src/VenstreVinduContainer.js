@@ -10,7 +10,6 @@ import TweakContainer from './Tweaks/TweakContainer'
 import Panel from './components/Panel'
 import TopBarContainer from './TopBar/TopBarContainer'
 import AktiveKartlag from './AktiveKartlag/'
-import AktiveKartlagKnapp from './AktiveKartlag/AktiveKartlagKnapp'
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
@@ -153,29 +152,24 @@ class VenstreVinduContainer extends React.Component {
                 onRequestClose={this.handleCloseSnackbar}
               />
             )}
-            {visAktiveLag ? (
-              <div
-                style={{
-                  backgroundColor: '#fff',
-                  position: 'absolute',
-                  width: 400,
-                  left: 0,
-                  bottom: 0,
-                  boxShadow:
-                    '0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)',
-                }}
-              >
-                <AktiveKartlag
-                  koder={this.props.aktiveLag}
-                  onMouseEnter={onMouseEnter}
-                  onMouseLeave={onMouseLeave}
-                  onUpdateLayerProp={onUpdateLayerProp}
-                  onRemoveSelectedLayer={onRemoveSelectedLayer}
-                />
-              </div>
-            ) : (
-              <AktiveKartlagKnapp onClick={onToggleAktiveLag} />
-            )}
+            <div
+              style={{
+                backgroundColor: '#fff',
+                boxShadow:
+                  '0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)',
+                justifyContent: 'flex-end',
+                float: 'bottom',
+              }}
+            >
+              <AktiveKartlag
+                erÅpen={visAktiveLag}
+                koder={this.props.aktiveLag}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+                onUpdateLayerProp={onUpdateLayerProp}
+                onRemoveSelectedLayer={onRemoveSelectedLayer}
+              />
+            </div>
           </React.Fragment>
         )}
       />

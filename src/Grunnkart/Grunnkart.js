@@ -224,24 +224,36 @@ class Grunnkart extends React.Component<Props, State> {
         {context => {
           return (
             <React.Fragment>
-              <VenstreVinduContainer
-                aktiveLag={this.state.aktiveLag}
-                mapBounds={this.state.actualBounds}
-                onAktiver={this.handleAktiver}
-                onMouseEnter={this.handleMouseEnter}
-                onMouseLeave={this.handleMouseLeave}
-                onFitBounds={this.handleFitBounds}
-                erAktivert={erAktivert}
-                opplystKode={this.state.opplystKode}
-                onToggleLayer={this.handleToggleLayer}
-                onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                meta={this.state.meta}
-                onUpdateLayerProp={this.handleUpdateLayerProp}
-                visForside={context.visForside}
-                visAktiveLag={context.visAktiveLag}
-                onToggleForside={context.onToggleForside}
-                onToggleAktiveLag={context.onToggleAktiveLag}
-              />
+              <div
+                style={{
+                  position: 'fixed',
+                  left: 0,
+                  width: 408,
+                  border: 1,
+                  display: 'flex',
+                  height: '100vh',
+                  flexDirection: 'column',
+                }}
+              >
+                <VenstreVinduContainer
+                  aktiveLag={this.state.aktiveLag}
+                  mapBounds={this.state.actualBounds}
+                  onAktiver={this.handleAktiver}
+                  onMouseEnter={this.handleMouseEnter}
+                  onMouseLeave={this.handleMouseLeave}
+                  onFitBounds={this.handleFitBounds}
+                  erAktivert={erAktivert}
+                  opplystKode={this.state.opplystKode}
+                  onToggleLayer={this.handleToggleLayer}
+                  onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                  meta={this.state.meta}
+                  onUpdateLayerProp={this.handleUpdateLayerProp}
+                  visForside={context.visForside}
+                  visAktiveLag={context.visAktiveLag}
+                  onToggleForside={context.onToggleForside}
+                  onToggleAktiveLag={context.onToggleAktiveLag}
+                />
+              </div>
               <Kart
                 bounds={this.state.fitBounds}
                 latitude={65.4}
