@@ -35,6 +35,7 @@ function opprettEttLag(drawArgs, config) {
   }
 
   const source = viz.lagSource(drawArgs.kode, drawArgs.bbox, drawArgs.zoom)
+
   if (viz.lagStyle) {
     const style = viz.lagStyle(drawArgs[drawArgs.type])
     config.styles[style.name] = style.value
