@@ -34,7 +34,7 @@ function opprettEttLag(drawArgs, config) {
     return
   }
 
-  const source = viz.lagSource(drawArgs.kode, drawArgs.bbox, drawArgs.zoom)
+  const source = viz.lagSource(drawArgs.kode, drawArgs.bbox, drawArgs.viz.zoom)
 
   if (viz.lagStyle) {
     const style = viz.lagStyle(drawArgs[drawArgs.type])
@@ -61,9 +61,8 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
     visEtiketter: lag.visEtiketter,
     opplystKode: opplystKode,
     bbox: lag.bbox,
-    zoom: lag.zoom,
     type: lag.type,
-    fileFormat: lag.fileFormat,
+    viz: lag.viz,
     visBarn: lag.visBarn,
     gradient: lag.gradient,
   }
@@ -80,6 +79,13 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
 
 function lagToppnivå(props) {
   const config = {
+    textures: {
+      palette: {
+        url: 'https://maps.artsdatabanken.no/indexed/LA.palette.png',
+        filtering: 'nearest',
+      },
+    },
+
     sources: {
       osm: sysconfig.createTileSource('basemap/openstreetmap', 'MVT', [0, 14]),
     },
@@ -112,21 +118,21 @@ function updateScene(config: Object, props: Object) {
   const viserKatalog = !!meta
   if (viserKatalog) {
     const harBarn = meta.barn && Object.keys(meta.barn).length > 0
-    const formats = meta.formats || { polygon: 'pbf' }
-    const sourceType = Object.keys(formats)[0]
-    const fileFormat = formats[sourceType]
+    const vizs = meta.viz
+    let sourceType = Object.keys(vizs)[0]
+    if (vizs.raster) sourceType = 'raster'
+    if (vizs.polygon) sourceType = 'polygon'
+    const viz = vizs[sourceType]
     const drawArgs = {
       kode: _h(meta.kode),
       barn: harBarn ? _h2(meta.barn) : { [_h(meta.kode)]: meta },
       opplystKode: _h(props.opplystKode),
       bbox: meta.bbox,
-      zoom: meta.zoom,
       type: sourceType,
-      fileFormat: fileFormat,
+      viz: viz,
       gradient: { filterMin: 0, filterMax: 1 },
       visBarn: true,
     }
-
     opprettEttLag(drawArgs, config)
   }
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config)
