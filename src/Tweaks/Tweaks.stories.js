@@ -8,7 +8,6 @@ import Tweaks from './'
 const na = {
   kode: 'NA_T17',
   type: 'polygon',
-  fileFormat: 'pbf',
   farge: 'hsl(105, 26%, 72%)',
   tittel: 'Aktiv skredmark',
   barn: [
@@ -52,7 +51,6 @@ const na = {
 const lag = {
   visBarn: true,
   bbox: [[59.042, 8.717], [70.439, 30.955]],
-  zoom: [0, 12],
   erSynlig: true,
   kanSlettes: true,
   formats: { polygon: 'pbf' },
