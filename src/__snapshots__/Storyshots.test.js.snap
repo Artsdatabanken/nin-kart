@@ -651,7 +651,7 @@ exports[`Storyshots Borring 2 Borring 2 1`] = `
           <span
             className="MuiTypography-root-591 MuiTypography-body1-600 MuiFormControlLabel-label-656"
           >
-            Vis bare fra aktive kartlag
+            Fra mine kartlag
           </span>
         </label>
       </div>
