@@ -19,10 +19,8 @@ function lagStyle() {
   const gradient = {
     base: 'raster',
     blend: 'multiply',
-    texture: 'palette',
     shaders: {
       uniforms: {
-        texture: 'palette',
         palette: 'https://maps.artsdatabanken.no/indexed/LA.palette.png',
       },
       blocks: {
