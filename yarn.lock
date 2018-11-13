@@ -1901,11 +1901,6 @@ ansi-colors@^3.0.0:
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-3.2.1.tgz#9638047e4213f3428a11944a7d4b31cba0a3ff95"
   integrity sha512-Xt+zb6nqgvV9SWAVp0EG3lRsHcbq5DDgqjPPz6pwgtj6RKz65zGXMNa82oJfOSBA/to6GmRP7Dr+6o+kbApTzQ==
 
-ansi-escapes@^1.0.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-1.4.0.tgz#d3a8a83b319aa67793662b13e761c7911422306e"
-  integrity sha1-06ioOzGapneTZisT52HHkRQiMG4=
-
 ansi-escapes@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-3.1.0.tgz#f73207bb81207d75fd6c83f125af26eea378ca30"
@@ -7122,7 +7117,7 @@ js-yaml@^3.11.0, js-yaml@^3.12.0, js-yaml@^3.7.0, js-yaml@^3.9.0:
     argparse "^1.0.7"
     esprima "^4.0.0"
 
-js-yaml@tangrams/js-yaml#read-only:
+"js-yaml@github:tangrams/js-yaml#read-only":
   version "3.5.3"
   resolved "https://codeload.github.com/tangrams/js-yaml/tar.gz/1637976c6f593bed33ed088aedb6d01390a947c0"
   dependencies:
@@ -7326,7 +7321,7 @@ jsx-ast-utils@^2.0.1:
   dependencies:
     array-includes "^3.0.3"
 
-jszip@tangrams/jszip#read-only:
+"jszip@github:tangrams/jszip#read-only":
   version "3.0.0"
   resolved "https://codeload.github.com/tangrams/jszip/tar.gz/856ff081cd4a03884fa04a60f3a1998ca51d7b3c"
   dependencies:
@@ -7482,21 +7477,7 @@ listr-silent-renderer@^1.1.1:
   resolved "https://registry.yarnpkg.com/listr-silent-renderer/-/listr-silent-renderer-1.1.1.tgz#924b5a3757153770bf1a8e3fbf74b8bbf3f9242e"
   integrity sha1-kktaN1cVN3C/Go4/v3S4u/P5JC4=
 
-listr-update-renderer@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/listr-update-renderer/-/listr-update-renderer-0.4.0.tgz#344d980da2ca2e8b145ba305908f32ae3f4cc8a7"
-  integrity sha1-NE2YDaLKLosUW6MFkI8yrj9MyKc=
-  dependencies:
-    chalk "^1.1.3"
-    cli-truncate "^0.2.1"
-    elegant-spinner "^1.0.1"
-    figures "^1.7.0"
-    indent-string "^3.0.0"
-    log-symbols "^1.0.2"
-    log-update "^1.0.2"
-    strip-ansi "^3.0.1"
-
-"listr-update-renderer@https://github.com/okonet/listr-update-renderer/tarball/upgrade-log-update":
+listr-update-renderer@^0.4.0, "listr-update-renderer@https://github.com/okonet/listr-update-renderer/tarball/upgrade-log-update":
   version "0.4.0"
   resolved "https://github.com/okonet/listr-update-renderer/tarball/upgrade-log-update#06073fa93166277607a7814f4e1f83960081414c"
   dependencies:
@@ -7686,14 +7667,6 @@ log-symbols@^2.2.0:
   integrity sha512-VeIAFslyIerEJLXHziedo2basKbMKtTw3vfn5IzG0XTjhAVEJyNHnL2p7vc+wBDSdQuUpNw3M2u6xb9QsAY5Eg==
   dependencies:
     chalk "^2.0.1"
-
-log-update@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/log-update/-/log-update-1.0.2.tgz#19929f64c4093d2d2e7075a1dad8af59c296b8d1"
-  integrity sha1-GZKfZMQJPS0ucHWh2tivWcKWuNE=
-  dependencies:
-    ansi-escapes "^1.0.0"
-    cli-cursor "^1.0.2"
 
 log-update@^2.3.0:
   version "2.3.0"
@@ -11481,9 +11454,10 @@ table@^5.0.2:
     slice-ansi "1.0.0"
     string-width "^2.1.1"
 
-tangram@^0.15.4:
-  version "0.15.4"
-  resolved "https://registry.yarnpkg.com/tangram/-/tangram-0.15.4.tgz#9cb2f598c2a6caf481b3406b51df83f1955bc1a1"
+tangram@^0.15.5:
+  version "0.15.5"
+  resolved "https://registry.yarnpkg.com/tangram/-/tangram-0.15.5.tgz#e06f7b32b2bc2a9c8d1c590542f928dea3e263fa"
+  integrity sha512-dBdjACxN1FrjE0/2REWoTfJ9NG6QX5Ze3o9wkPjSdOnQoX9rZlat19UDbgerLJZ96x2nkXiz6dK2kN1in2DNvg==
   dependencies:
     "@mapbox/vector-tile" "1.3.0"
     brfs "1.4.3"
@@ -11660,7 +11634,7 @@ topo@2.x.x:
   dependencies:
     hoek "4.x.x"
 
-topojson-client@tangrams/topojson-client#read-only:
+"topojson-client@github:tangrams/topojson-client#read-only":
   version "2.1.0"
   resolved "https://codeload.github.com/tangrams/topojson-client/tar.gz/1068f4f2e03ddf8236499bbc896cec98d7a342b7"
   dependencies:
