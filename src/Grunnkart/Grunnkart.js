@@ -194,7 +194,6 @@ class Grunnkart extends React.Component<Props, State> {
 
   handleRemoveSelectedLayer = kode => {
     let aktive = this.state.aktiveLag
-    console.log(aktive)
     delete aktive[kode]
     this.setState({ aktiveLag: aktive })
     this.props.history.push('/')
