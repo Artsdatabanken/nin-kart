@@ -104,7 +104,7 @@ class BorreVindu extends Component {
                 }}
               />
             }
-            label="Vis bare fra aktive kartlag"
+            label="Fra mine kartlag"
           />
         </CardActions>
         <CardContent style={{ padding: 0 }}>

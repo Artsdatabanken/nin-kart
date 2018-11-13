@@ -77,24 +77,25 @@ class Grunnkart extends React.Component<Props, State> {
 
   addSelected = props => {
     let aktive = this.state.aktiveLag
-    const formats = props.formats || { polygon: 'pbf' }
-    const sourceType = Object.keys(formats)[0]
-    const fileFormat = formats[sourceType]
+    const vizs = props.vizs || { polygon: 'pbf' }
+    let sourceType = Object.keys(vizs)[0]
+    if (vizs.indexed) sourceType = 'indexed'
+    if (vizs.polygon) sourceType = 'polygon'
+    const viz = vizs[sourceType]
     const nyttLag = {
       type: sourceType,
-      fileFormat: fileFormat,
+      viz: viz,
       farge: props.farge,
       kode: props.kode,
       tittel: språk(props.tittel),
       barn: this.addSelectedBarn(props.barn),
       visBarn: Object.keys(props.barn).length > 0,
       bbox: props.bbox,
-      zoom: props.zoom,
       erSynlig: true,
       kanSlettes: true,
-      formats: formats,
+      formats: viz,
     }
-    if (formats.gradient) {
+    if (viz.gradient) {
       nyttLag.gradient = { filterMin: 0, filterMax: 1.0 }
     }
     aktive[nyttLag.kode] = nyttLag
@@ -193,9 +194,8 @@ class Grunnkart extends React.Component<Props, State> {
 
   handleRemoveSelectedLayer = kode => {
     let aktive = this.state.aktiveLag
-    this.setState({
-      aktiveLag: aktive.filter(e => e.kode !== kode),
-    })
+    delete aktive[kode]
+    this.setState({ aktiveLag: aktive })
     this.props.history.push('/')
   }
 

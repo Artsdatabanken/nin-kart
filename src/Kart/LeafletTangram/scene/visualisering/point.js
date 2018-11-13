@@ -1,12 +1,4 @@
-function drawAll({
-  kode,
-  barn,
-  opplystKode,
-  bbox,
-  zoom,
-  sourceType,
-  fileFormat,
-}) {
+function drawAll({ kode, barn, opplystKode, bbox, zoom, sourceType }) {
   const layer = {
     data: { source: kode },
   }
