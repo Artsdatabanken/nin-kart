@@ -88,17 +88,6 @@ const Forsidemeny = ({ classes, visForside, onVis, onAktiver, onClick }) => {
                 </Seksjon>
               </Papir>
               <Papir>
-                <Seksjon tittel="Finibus interdum">
-                  <Typography>
-                    Praesent metus quam, finibus interdum varius nec,
-                    sollicitudin at lacus. Curabitur finibus dictum ultrices.
-                    Aenean pretium, ipsum non facilisis lacinia, libero nisi
-                    tempor purus, a aliquet elit massa at sem. Ut euismod
-                    interdum faucibus.
-                  </Typography>
-                </Seksjon>
-              </Papir>
-              <Papir>
                 <Seksjon tittel="Dataleverandører">
                   <div
                     style={{

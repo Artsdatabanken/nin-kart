@@ -77,14 +77,13 @@ class Grunnkart extends React.Component<Props, State> {
 
   addSelected = props => {
     let aktive = this.state.aktiveLag
-    const vizs = props.vizs || { polygon: 'pbf' }
-    let sourceType = Object.keys(vizs)[0]
-    if (vizs.indexed) sourceType = 'indexed'
-    if (vizs.polygon) sourceType = 'polygon'
-    const viz = vizs[sourceType]
+    const viz = props.viz
+    let activeViz = Object.keys(viz)[0]
+    if (viz.indexed) activeViz = 'indexed'
+    if (viz.polygon) activeViz = 'polygon'
     const nyttLag = {
-      type: sourceType,
       viz: viz,
+      activeViz: activeViz,
       farge: props.farge,
       kode: props.kode,
       tittel: språk(props.tittel),
@@ -93,7 +92,6 @@ class Grunnkart extends React.Component<Props, State> {
       bbox: props.bbox,
       erSynlig: true,
       kanSlettes: true,
-      formats: viz,
     }
     if (viz.gradient) {
       nyttLag.gradient = { filterMin: 0, filterMax: 1.0 }

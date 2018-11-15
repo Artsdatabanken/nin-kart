@@ -28,20 +28,20 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
 }
 
 function opprettEttLag(drawArgs, config) {
-  const viz = draw[drawArgs.type]
-  if (!viz) {
-    console.warn('Unknown viz', drawArgs.type)
+  const renderer = draw[drawArgs.activeViz]
+  const viz = drawArgs.viz[drawArgs.activeViz]
+  if (!renderer) {
+    console.warn('Unknown viz', drawArgs.activeViz)
     return
   }
+  const source = renderer.lagSource(drawArgs.kode, drawArgs.bbox, viz.zoom)
 
-  const source = viz.lagSource(drawArgs.kode, drawArgs.bbox, drawArgs.viz.zoom)
-
-  if (viz.lagStyle) {
-    const style = viz.lagStyle(drawArgs[drawArgs.type])
+  if (renderer.lagStyle) {
+    const style = renderer.lagStyle(renderer)
     config.styles[style.name] = style.value
   }
   config.sources[drawArgs.kode] = source
-  config.layers[drawArgs.kode] = viz.drawAll(drawArgs)
+  config.layers[drawArgs.kode] = renderer.drawAll(drawArgs)
 }
 
 function farge(farge, viserKatalog) {
@@ -61,10 +61,9 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
     visEtiketter: lag.visEtiketter,
     opplystKode: opplystKode,
     bbox: lag.bbox,
-    type: lag.type,
+    activeViz: lag.activeViz,
     viz: lag.viz,
     visBarn: lag.visBarn,
-    gradient: lag.gradient,
   }
   if (lag.visBarn) {
     drawArgs.barn = _h2(
@@ -118,17 +117,20 @@ function updateScene(config: Object, props: Object) {
   const viserKatalog = !!meta
   if (viserKatalog) {
     const harBarn = meta.barn && Object.keys(meta.barn).length > 0
-    const vizs = meta.viz
-    let sourceType = Object.keys(vizs)[0]
-    if (vizs.raster) sourceType = 'raster'
-    if (vizs.polygon) sourceType = 'polygon'
-    const viz = vizs[sourceType]
+    const viz = meta.viz
+    if (!viz) {
+      console.warn('No viz in meta')
+      return config
+    }
+    let activeViz = Object.keys(viz)[0]
+    if (viz.indexed) activeViz = 'indexed'
+    if (viz.polygon) activeViz = 'polygon'
     const drawArgs = {
       kode: _h(meta.kode),
       barn: harBarn ? _h2(meta.barn) : { [_h(meta.kode)]: meta },
       opplystKode: _h(props.opplystKode),
       bbox: meta.bbox,
-      type: sourceType,
+      activeViz: activeViz,
       viz: viz,
       gradient: { filterMin: 0, filterMax: 1 },
       visBarn: true,

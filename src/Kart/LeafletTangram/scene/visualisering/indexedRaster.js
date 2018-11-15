@@ -42,7 +42,6 @@ function lagSource(kode, bbox, zoom) {
     zoom,
     bbox
   )
-  console.log('src', JSON.stringify(source))
   return source
 }
 

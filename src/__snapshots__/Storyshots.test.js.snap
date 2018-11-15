@@ -2117,47 +2117,6 @@ exports[`Storyshots Forsidemeny default 1`] = `
                             }
                           }
                         >
-                          Finibus interdum
-                        </p>
-                        <div
-                          style={
-                            Object {
-                              "color": "hsla(0, 0%, 0%, 0.54)",
-                              "display": "flex",
-                              "fontSize": 14,
-                              "fontWeight": 400,
-                              "padding": "10px 20px",
-                            }
-                          }
-                        >
-                          <p
-                            className="MuiTypography-root-1168 MuiTypography-body1-1177"
-                          >
-                            Praesent metus quam, finibus interdum varius nec, sollicitudin at lacus. Curabitur finibus dictum ultrices. Aenean pretium, ipsum non facilisis lacinia, libero nisi tempor purus, a aliquet elit massa at sem. Ut euismod interdum faucibus.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="MuiPaper-root-1128 MuiPaper-elevation4-1134 MuiPaper-rounded-1129"
-                      style={
-                        Object {
-                          "marginTop": 8,
-                          "width": 392,
-                        }
-                      }
-                    >
-                      <div>
-                        <p
-                          className="MuiTypography-root-1168 MuiTypography-body1-1177 MuiTypography-gutterBottom-1195"
-                          style={
-                            Object {
-                              "fontSize": 15,
-                              "fontWeight": 500,
-                              "padding": "10px 20px",
-                            }
-                          }
-                        >
                           Dataleverandører
                         </p>
                         <div
@@ -8658,47 +8617,6 @@ exports[`Storyshots VenstreVindu Complex 1`] = `
                             }
                           }
                         >
-                          Finibus interdum
-                        </p>
-                        <div
-                          style={
-                            Object {
-                              "color": "hsla(0, 0%, 0%, 0.54)",
-                              "display": "flex",
-                              "fontSize": 14,
-                              "fontWeight": 400,
-                              "padding": "10px 20px",
-                            }
-                          }
-                        >
-                          <p
-                            className="MuiTypography-root-4048 MuiTypography-body1-4057"
-                          >
-                            Praesent metus quam, finibus interdum varius nec, sollicitudin at lacus. Curabitur finibus dictum ultrices. Aenean pretium, ipsum non facilisis lacinia, libero nisi tempor purus, a aliquet elit massa at sem. Ut euismod interdum faucibus.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="MuiPaper-root-4008 MuiPaper-elevation4-4014 MuiPaper-rounded-4009"
-                      style={
-                        Object {
-                          "marginTop": 8,
-                          "width": 392,
-                        }
-                      }
-                    >
-                      <div>
-                        <p
-                          className="MuiTypography-root-4048 MuiTypography-body1-4057 MuiTypography-gutterBottom-4075"
-                          style={
-                            Object {
-                              "fontSize": 15,
-                              "fontWeight": 500,
-                              "padding": "10px 20px",
-                            }
-                          }
-                        >
                           Dataleverandører
                         </p>
                         <div
@@ -9455,47 +9373,6 @@ exports[`Storyshots VenstreVindu Rot 1`] = `
                               className="MuiTouchRipple-root-3749"
                             />
                           </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="MuiPaper-root-3646 MuiPaper-elevation4-3652 MuiPaper-rounded-3647"
-                      style={
-                        Object {
-                          "marginTop": 8,
-                          "width": 392,
-                        }
-                      }
-                    >
-                      <div>
-                        <p
-                          className="MuiTypography-root-3686 MuiTypography-body1-3695 MuiTypography-gutterBottom-3713"
-                          style={
-                            Object {
-                              "fontSize": 15,
-                              "fontWeight": 500,
-                              "padding": "10px 20px",
-                            }
-                          }
-                        >
-                          Finibus interdum
-                        </p>
-                        <div
-                          style={
-                            Object {
-                              "color": "hsla(0, 0%, 0%, 0.54)",
-                              "display": "flex",
-                              "fontSize": 14,
-                              "fontWeight": 400,
-                              "padding": "10px 20px",
-                            }
-                          }
-                        >
-                          <p
-                            className="MuiTypography-root-3686 MuiTypography-body1-3695"
-                          >
-                            Praesent metus quam, finibus interdum varius nec, sollicitudin at lacus. Curabitur finibus dictum ultrices. Aenean pretium, ipsum non facilisis lacinia, libero nisi tempor purus, a aliquet elit massa at sem. Ut euismod interdum faucibus.
-                          </p>
                         </div>
                       </div>
                     </div>
