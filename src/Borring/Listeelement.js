@@ -1,9 +1,18 @@
-import { Avatar, Divider, ListItem, ListItemText } from '@material-ui/core'
+import { Typography, Avatar, Divider, ListItem } from '@material-ui/core'
 import React from 'react'
 import { withRouter } from 'react-router'
 import config from '../config'
 import farger from '../farger'
 import Flis from '../Kodetre/Kodeliste/Flis'
+import { withStyles } from '@material-ui/core/styles'
+
+const styles = theme => {
+  return {
+    listitem: {
+      color: 'hsla(0, 0%, 0%, 0.55)',
+    },
+  }
+}
 
 const Listeelement = ({
   kode,
@@ -12,6 +21,7 @@ const Listeelement = ({
   history,
   visKoder,
   onClick,
+  classes,
 }) => {
   const prefix = kode.substring(0, 2)
   const bgFarge = farger.lysere[prefix]
@@ -42,11 +52,12 @@ const Listeelement = ({
               {prefix}
             </Avatar>
           )}
-          <ListItemText
-            style={{ color: 'white' }}
-            primary={primary}
-            secondary={secondary}
-          />
+          <div className={classes.listitem}>
+            <Typography variant="body1" color="inherit">
+              {primary}
+            </Typography>
+            {secondary}
+          </div>
           <div style={{ position: 'absolute', right: 8, top: 8 }}>
             <Flis kode={kode} visKoder={visKoder} />
           </div>
@@ -57,4 +68,4 @@ const Listeelement = ({
   )
 }
 
-export default withRouter(Listeelement)
+export default withRouter(withStyles(styles)(Listeelement))

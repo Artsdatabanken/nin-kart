@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react'
 import React from 'react'
 import Resultatliste from './ResultatListe'
 import { Paper, createMuiTheme } from '@material-ui/core'
+import { muiTheme } from 'storybook-addon-material-ui'
 
 const results1 = [{ kode: 'KA', navn: 'Kalk' }]
 const results2 = [
@@ -88,13 +89,13 @@ const results2 = [
   },
 ]
 
-storiesOf('Resultatliste', module).add('default', () => {
-  return (
-    <MuiThemeProvider theme={createMuiTheme()}>
+storiesOf('Resultatliste', module)
+  .addDecorator(muiTheme())
+  .add('default', () => {
+    return (
       <Paper style={{ margin: 12, width: 408 }}>
         <Resultatliste searchResults={results1} query="alk" />
         <Resultatliste searchResults={results2} query="kjø" />
       </Paper>
-    </MuiThemeProvider>
-  )
-})
+    )
+  })
