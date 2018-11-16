@@ -56,7 +56,7 @@ function farge(farge, viserKatalog) {
 function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
   let drawArgs = {
     forelderkode: lag.kode,
-    kode: _h(lag.kode),
+    kode: lag.kode,
     farge: farge(lag.farge, viserKatalog),
     visEtiketter: lag.visEtiketter,
     opplystKode: opplystKode,
@@ -66,12 +66,10 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
     visBarn: lag.visBarn,
   }
   if (lag.visBarn) {
-    drawArgs.barn = _h2(
-      lag.barn.reduce((acc, e) => {
-        acc[e.kode] = e
-        return acc
-      }, {})
-    )
+    drawArgs.barn = lag.barn.reduce((acc, e) => {
+      acc[e.kode] = e
+      return acc
+    }, {})
   }
   opprettEttLag(drawArgs, config)
 }
@@ -126,9 +124,9 @@ function updateScene(config: Object, props: Object) {
     if (viz.indexed) activeViz = 'indexed'
     if (viz.polygon) activeViz = 'polygon'
     const drawArgs = {
-      kode: _h(meta.kode),
-      barn: harBarn ? _h2(meta.barn) : { [_h(meta.kode)]: meta },
-      opplystKode: _h(props.opplystKode),
+      kode: meta.kode,
+      barn: harBarn ? meta.barn : { [meta.kode]: meta },
+      opplystKode: props.opplystKode,
       bbox: meta.bbox,
       activeViz: activeViz,
       viz: viz,
@@ -140,20 +138,6 @@ function updateScene(config: Object, props: Object) {
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config)
   lagTemp(config)
   return config
-}
-
-function _h(kode) {
-  if (kode.length <= 3) return kode
-  let h = kode.substring(0, 2) + '_' + kode.substring(3)
-  return h
-}
-
-function _h2(koder) {
-  const r = {}
-  Object.keys(koder).forEach(key => {
-    r[_h(key)] = koder[key]
-  })
-  return r
 }
 
 function lagTemp(config) {
