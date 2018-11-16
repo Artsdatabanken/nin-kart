@@ -22,3 +22,5 @@
 - [Geografisk API](https://github.com/Artsdatabanken/rasterQ) og [deployment](https://github.com/Artsdatabanken/rasterUploader) av dette
 - Verktøy for [rødlisting av naturtyper](https://github.com/Artsdatabanken/natty)
 - [Media dataflyt](https://github.com/Artsdatabanken/ografika)
+
+[![Browserstack](doc/Browserstack-logo.svg 'browserstack link')](https://www.browserstack.com)
