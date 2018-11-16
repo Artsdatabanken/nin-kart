@@ -1,4 +1,3 @@
-import 'react-app-polyfill/ie11'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
@@ -40,9 +39,17 @@ class RootBoundary extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <RootBoundary>
-    <App />
-  </RootBoundary>,
-  document.getElementById('root')
-)
+var isIE11 = !!window.MSInputMethodContext && !!document.documentMode
+if (isIE11) {
+  document.open()
+  document.write(
+    '<h1>Internet explorer 11 is sadly not supported.</h1>Report issues on <a href="https://github.com/Artsdatabanken/ratatouille/issues">Github</a></a>'
+  )
+  document.close()
+} else
+  ReactDOM.render(
+    <RootBoundary>
+      <App />
+    </RootBoundary>,
+    document.getElementById('root')
+  )
