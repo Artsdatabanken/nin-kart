@@ -78,6 +78,7 @@ class Grunnkart extends React.Component<Props, State> {
   addSelected = props => {
     let aktive = this.state.aktiveLag
     const viz = props.viz
+    if (!viz) return
     let activeViz = Object.keys(viz)[0]
     if (viz.indexed) activeViz = 'indexed'
     if (viz.polygon) activeViz = 'polygon'
