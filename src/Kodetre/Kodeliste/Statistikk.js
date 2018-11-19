@@ -28,7 +28,6 @@ const Statistikk = ({
 }) => (
   <List>
     <Ingress infoUrl={infoUrl} ingress={ingress} classes={classes} />
-    <Ingress />
     <Stats
       stats={stats}
       toppnavn={toppnavn}
@@ -68,9 +67,9 @@ const Ingress = ({ infoUrl, ingress, classes }) => {
   )
 }
 
-const Stats = ({ stats, classes }) => {
+const Stats = ({ stats, tittel, toppnavn, classes }) => {
   if (!stats) return null
-  const { areal, arealPrefix, arter, tittel, toppnavn } = stats
+  const { areal, arealPrefix, arter } = stats
   if (!areal) return null
   return (
     <ListItem>
