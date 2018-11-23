@@ -15,20 +15,27 @@ function drawAll(drawArgs) {
   return layer
 }
 
-function lagStyle() {
+function lagStyle(viz, drawArgs) {
+  const { kode, opplystKode } = drawArgs
+  const palettKode = opplystKode || kode
   const gradient = {
     base: 'raster',
     blend: 'multiply',
+    filtering: 'nearest',
     shaders: {
       uniforms: {
-        palette: 'https://maps.artsdatabanken.no/indexed/LA.palette.png',
+        palette: `https://maps.artsdatabanken.no/indexed/${palettKode}.palette.png`,
       },
       blocks: {
-        color_:
-          'vec4 v = sampleRaster(0); color.rgb = v.rgb;color.g*=70. + 0.5./512.;//color = texture2D(gradient, vec2(v, 0.5));',
-        color:
-          //  'vec4 id = sampleRaster(0); float v=id.b * 0.5 + id.g *255.*0.5; color = sampleRasterAtPixel(0, vec2(v*255., 0));',
-          'vec4 id = sampleRaster(0); float v=id.b * 0.5 + id.g *255.*0.5; color = texture2D(palette, vec2(v, 0.5));',
+        global: `
+          float unpack(vec4 h) {
+            return (65535. * h.g + 255. * h.b + 0.5) / 512.;
+          }`,
+        color: `
+           float v = unpack(sampleRaster(0));
+           color = texture2D(palette, vec2(v, 0.5));
+//           color.r = 1.-color.r;
+          `,
       },
     },
   }
@@ -36,8 +43,9 @@ function lagStyle() {
 }
 
 function lagSource(kode, bbox, zoom) {
+  const prefix = kode.substring(0, 2)
   const source = sysconfig.createTileSource(
-    `indexed/${kode}`,
+    `indexed/${prefix}`,
     'Raster',
     zoom,
     bbox
