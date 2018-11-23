@@ -34,7 +34,6 @@ function lagStyle(viz, drawArgs) {
         color: `
            float v = unpack(sampleRaster(0));
            color = texture2D(palette, vec2(v, 0.5));
-//           color.r = 1.-color.r;
           `,
       },
     },
