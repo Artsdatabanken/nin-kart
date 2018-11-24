@@ -3,12 +3,9 @@ import {
   Card,
   CardActions,
   CardMedia,
-  IconButton,
-  Snackbar,
   withStyles,
 } from '@material-ui/core'
 import { LibraryAdd, ZoomOutMap } from '@material-ui/icons/'
-import ArrowForward from '@material-ui/icons/ArrowForward'
 import React from 'react'
 import { withRouter } from 'react-router'
 import config from '../../config'
@@ -39,7 +36,6 @@ class Kodekort extends React.Component {
   }
   handleAktiver = () => {
     this.props.onToggleLayer(this.props.kode, true)
-    this.setState({ leggerTil: true })
   }
 
   erTransparent(prefix) {
@@ -125,38 +121,10 @@ class Kodekort extends React.Component {
             )}
           </CardActions>
         </Tittelblokk>
-        {this.state.leggerTil && (
-          <Snackbar
-            open={true}
-            autoHideDuration={5000}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'left',
-            }}
-            onClose={this.handleCloseSnackbar}
-            message={
-              <span>
-                Aktiverer <b>{språk(tittel)}</b>
-              </span>
-            }
-            action={[
-              <IconButton
-                key="close"
-                aria-label="Close"
-                color="inherit"
-                className={classes.close}
-                onClick={this.handleClickAktiveLag}
-              >
-                <ArrowForward />
-              </IconButton>,
-            ]}
-          />
-        )}
       </Card>
     )
   }
 
-  handleCloseSnackbar = () => this.setState({ leggerTil: false })
   handleClickAktiveLag = () => this.props.history.push('/')
   handleFitBounds = () => this.props.onFitBounds(this.props.bbox)
   handleBrokenImage = e => {

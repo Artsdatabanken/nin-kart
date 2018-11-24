@@ -18,11 +18,7 @@ deploy:
   on:
     repo: Artsdatabanken/ratatouille
   skip_cleanup: true
-after_deploy:
-  notifications:
-    slack:
-      template:
-        - release %{repository_slug}
+after_deploy: ../slack.sh ops "deploy ratatouille"
 after_success:
   - npm run report-coverage
 notifications:

@@ -9,6 +9,7 @@ import språk from './språk'
 import TweakContainer from './Tweaks/TweakContainer'
 import Panel from './components/Panel'
 import TopBarContainer from './TopBar/TopBarContainer'
+import AktiveKartlag from './AktiveKartlag/'
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
@@ -40,7 +41,16 @@ class VenstreVinduContainer extends React.Component {
 
   render() {
     const meta = this.props.meta || {}
-    const { visForside, onToggleForside, onAktiver } = this.props
+    const {
+      visForside,
+      onToggleForside,
+      onAktiver,
+      visAktiveLag,
+      onMouseEnter,
+      onMouseLeave,
+      onUpdateLayerProp,
+      onRemoveSelectedLayer,
+    } = this.props
     return (
       <Route
         render={({ match, history }) => (
@@ -55,8 +65,8 @@ class VenstreVinduContainer extends React.Component {
                       <KodeContainer
                         kode={meta.kode}
                         onGoToCode={this.handleGoToCode}
-                        onMouseEnter={this.props.onMouseEnter}
-                        onMouseLeave={this.props.onMouseLeave}
+                        onMouseEnter={onMouseEnter}
+                        onMouseLeave={onMouseLeave}
                         onFitBounds={this.props.onFitBounds}
                         erAktivert={this.props.erAktivert}
                         opplystKode={this.props.opplystKode}
@@ -73,7 +83,7 @@ class VenstreVinduContainer extends React.Component {
               <Route
                 path="/lag/:kode/:lag?"
                 render={({ match, history }) => (
-                  <Panel style={{ paddingTop: 55 }}>
+                  <Panel padTop>
                     <TopBarContainer
                       tittel={
                         'Innstillinger for ' +
@@ -86,10 +96,10 @@ class VenstreVinduContainer extends React.Component {
                       koder={this.props.aktiveLag}
                       {...this.finnValgtKodeElement(match.params.kode)}
                       onFitBounds={this.props.onFitBounds}
-                      onUpdateLayerProp={this.props.onUpdateLayerProp}
-                      onRemoveSelectedLayer={this.props.onRemoveSelectedLayer}
-                      onMouseEnter={this.props.onMouseEnter}
-                      onMouseLeave={this.props.onMouseLeave}
+                      onUpdateLayerProp={onUpdateLayerProp}
+                      onRemoveSelectedLayer={onRemoveSelectedLayer}
+                      onMouseEnter={onMouseEnter}
+                      onMouseLeave={onMouseLeave}
                     />
                   </Panel>
                 )}
@@ -127,7 +137,6 @@ class VenstreVinduContainer extends React.Component {
                   <ForsideMeny
                     onAktiver={onAktiver}
                     onVis={onToggleForside}
-                    onSkjul={onToggleForside}
                     visForside={visForside}
                   />
                 )}
@@ -141,6 +150,25 @@ class VenstreVinduContainer extends React.Component {
                 onRequestClose={this.handleCloseSnackbar}
               />
             )}
+            <div
+              style={{
+                backgroundColor: 'transparent',
+                justifyContent: 'flex-end',
+                float: 'bottom',
+                pointerEvents: 'auto',
+                boxShadow:
+                  '0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)',
+              }}
+            >
+              <AktiveKartlag
+                erÅpen={visAktiveLag}
+                koder={this.props.aktiveLag}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+                onUpdateLayerProp={onUpdateLayerProp}
+                onRemoveSelectedLayer={onRemoveSelectedLayer}
+              />
+            </div>
           </React.Fragment>
         )}
       />

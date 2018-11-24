@@ -8,11 +8,13 @@ function drawAll(drawArgs) {
   }
   if (visBarn) {
     Object.keys(barn).forEach(barnkode => {
+      const dac = barn[barnkode]
+      if (Object.hasOwnProperty('erSynlig') && !dac.erSynlig) return
       const visEtiketter = barnkode === opplystKode
       layer[barnkode] = draw({
         kode: barnkode,
         forelderkode: kode,
-        farge: barn[barnkode].farge,
+        farge: dac.farge,
         opplystKode: opplystKode,
         visEtiketter: visEtiketter,
       })
@@ -66,12 +68,7 @@ function draw(args) {
 }
 
 function lagSource(kode, bbox, zoom) {
-  return sysconfig.createTileSource(`polygon/${_h(kode)}`, 'MVT', zoom, bbox)
-}
-
-function _h(kode) {
-  if (kode.length < 4) return kode
-  return kode.substring(0, 2) + '-' + kode.substring(3)
+  return sysconfig.createTileSource(`polygon/${kode}`, 'MVT', zoom, bbox)
 }
 
 export default { drawAll, lagSource }

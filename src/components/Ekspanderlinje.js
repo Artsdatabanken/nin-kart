@@ -1,25 +1,32 @@
 import { Typography, withStyles } from '@material-ui/core'
-import { ExpandLess, ExpandMore } from '@material-ui/icons'
+import { ExpandLess } from '@material-ui/icons'
 import classNames from 'classnames'
 import React from 'react'
 import { Paper } from '@material-ui/core'
 
 const styles = {
-  hover: {
-    color: 'hsl(0, 0%, 0%)',
-  },
-  hovernot: {
-    color: 'hsla(0, 0%, 0%, 0.54)',
-  },
   rot: {
     backgroundColor: 'hsl(0, 0%, 96%)',
     cursor: 'pointer',
-    height: 44,
     display: 'flex',
     flex: 'none',
     alignItems: 'flex-start',
+    color: 'hsla(0, 0%, 0%, 0.54)',
+    '&:hover': {
+      color: 'hsla(0, 0%, 0%, 0.87)',
+    },
+    pointerEvents: 'auto',
   },
-  ikon: { margin: '8px 22px 8px 14px' },
+  ikon: {
+    margin: '8px 22px 8px 14px',
+    transition: '0.5s',
+  },
+  ikonÅpen: {
+    transform: 'rotate(0deg)',
+  },
+  ikonLukket: {
+    transform: 'rotate(180deg)',
+  },
   tekst: {
     fontSize: 15,
     fontWeight: 500,
@@ -27,41 +34,44 @@ const styles = {
     lineHeight: '44px',
     textAlign: 'center',
   },
-  open: {
-    width: 408,
-    position: 'fixed',
-    bottom: 0,
-    boxShadow: '0 -2px 4px rgba(0,0,0,.2)',
-  },
-  closed: {
+  åpen: {
     width: 392,
-    boxShadow: 'hsla(0, 0%, 0%, 0.3) 0px 2px 4px 0px',
+  },
+  lukket: {
+    width: 392,
     marginBottom: 8,
+  },
+  div: {
+    justifyContent: 'flex-end',
+    float: 'bottom',
   },
 }
 
 class Ekspanderlinje extends React.Component {
-  handleMouseEnter = () => this.setState({ hover: true })
-  handleMouseLeave = () => this.setState({ hover: false })
-  state = { hover: false }
-
   render() {
-    const { classes, mode, onSkjul, tekst } = this.props
-    const Ikon = mode === 'open' ? ExpandLess : ExpandMore
+    const { classes, erÅpen, onSkjul, tekst } = this.props
     return (
-      <Paper
-        className={classNames(
-          classes.rot,
-          mode && classes[mode],
-          this.state.hover ? classes.hover : classes.hovernot
-        )}
-        onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseLeave}
-        onMouseDown={onSkjul}
-      >
-        <Ikon className={classes.ikon} />
-        <Typography className={classes.tekst}>{tekst}</Typography>
-      </Paper>
+      <div className={classes.div}>
+        <Paper
+          square={erÅpen}
+          className={classNames(
+            classes.rot,
+            erÅpen ? classes.åpen : classes.lukket
+          )}
+          onMouseDown={onSkjul}
+        >
+          <ExpandLess
+            color="inherit"
+            className={classNames(
+              classes.ikon,
+              erÅpen ? classes.ikonÅpen : classes.ikonLukket
+            )}
+          />
+          <Typography color="inherit" className={classes.tekst}>
+            {tekst}
+          </Typography>
+        </Paper>
+      </div>
     )
   }
 }

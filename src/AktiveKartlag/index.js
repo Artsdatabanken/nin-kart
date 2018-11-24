@@ -1,73 +1,41 @@
-import {
-  AppBar,
-  IconButton,
-  List,
-  Toolbar,
-  Typography,
-  withStyles,
-} from '@material-ui/core'
-import { ExpandMore } from '@material-ui/icons'
+import { List } from '@material-ui/core'
 import React from 'react'
 import { withRouter } from 'react-router'
 import { SettingsContext } from '../SettingsContext'
 import BakgrunnskartElement from './BakgrunnskartElement'
 import PolygonlagElement from './PolygonlagElement'
 import TerrenglagElement from './TerrenglagElement'
-
-const styles = theme => ({
-  button: {
-    margin: theme.spacing.unit,
-  },
-  toolbar: {
-    paddingRight: 0,
-    color: 'hsla(0, 0%, 0%, 0.54)',
-    cursor: 'pointer',
-  },
-  tekst: {
-    flexGrow: 1,
-    fontSize: 15,
-    fontWeight: 500,
-  },
-})
+import AktiveKartlagKnapp from './AktiveKartlagKnapp'
+import Collapse from '@material-ui/core/Collapse'
 
 class AktiveKartlag extends React.Component {
   render() {
-    const { koder, classes } = this.props
+    const { koder, erÅpen } = this.props
+    const keys = Object.keys(koder)
     return (
       <SettingsContext.Consumer>
         {context => (
           <React.Fragment>
-            <AppBar
-              position="static"
-              elevation={1}
-              color="inherit"
-              square={false}
-            >
-              <Toolbar
-                variant="dense"
-                className={classes.toolbar}
+            <Collapse in={erÅpen} collapsedHeight="40px">
+              <AktiveKartlagKnapp
+                erÅpen={erÅpen}
+                antallLag={keys.length - 2}
                 onClick={context.onToggleAktiveLag}
+              />
+              <List
+                style={{
+                  pointerEvents: 'auto',
+                  backgroundColor: 'white',
+                  boxShadow:
+                    '0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)',
+                }}
               >
-                <Typography
-                  className={classes.tekst}
-                  variant="h6"
-                  color="inherit"
-                >
-                  Aktive kartlag
-                </Typography>
-                <IconButton color="inherit">
-                  <ExpandMore />
-                </IconButton>
-              </Toolbar>
-            </AppBar>
-            <List>
-              <React.Fragment>
-                {Object.keys(koder).map(fkode => {
+                {keys.map(fkode => {
                   const forelder = koder[fkode]
                   return listeElement(forelder, this.props, context.visKoder)
                 })}
-              </React.Fragment>
-            </List>
+              </List>
+            </Collapse>
           </React.Fragment>
         )}
       </SettingsContext.Consumer>
@@ -114,4 +82,4 @@ function listeElement(forelder, props, visKoder) {
   )
 }
 
-export default withStyles(styles)(withRouter(AktiveKartlag))
+export default withRouter(AktiveKartlag)

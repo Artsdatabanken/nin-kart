@@ -39,7 +39,7 @@ class Borring extends Component {
 
   onClick = kode => {
     const { history } = this.props
-    history.push('/' + kode)
+    history.push('/katalog/' + kode)
   }
 }
 

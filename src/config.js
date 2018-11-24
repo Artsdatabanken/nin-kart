@@ -8,6 +8,7 @@ class config {
 
   static createTileSource(relativePath, type, zoom, bbox) {
     const source = {
+      filtering: 'nearest',
       type: type,
       url: `https://{s}.artsdatabanken.no/${relativePath}/{z}/{x}/{y}`,
       url_subdomains: ['maps'],
@@ -21,7 +22,6 @@ class config {
       source.bounds = [ll[1], ll[0], ur[1], ur[0]]
     }
     if (zoom) {
-      source.min_zoom = zoom[0]
       source.max_zoom = zoom[1]
     }
     return source
