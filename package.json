@@ -71,11 +71,11 @@
     "report-coverage": "coveralls < coverage/lcov.info"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^4.0.0",
-    "@storybook/addon-links": "^4.0.0",
-    "@storybook/addon-storyshots": "^4.0.0",
-    "@storybook/addons": "^4.0.0",
-    "@storybook/react": "^4.0.0",
+    "@storybook/addon-actions": "^4.0.8",
+    "@storybook/addon-links": "^4.0.8",
+    "@storybook/addon-storyshots": "^4.0.8",
+    "@storybook/addons": "^4.0.8",
+    "@storybook/react": "^4.0.8",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-runtime": "^6.26.0",
     "coveralls": "^3.0.2",
