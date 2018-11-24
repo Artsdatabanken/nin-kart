@@ -37,7 +37,7 @@ function opprettEttLag(drawArgs, config) {
   const source = renderer.lagSource(drawArgs.kode, drawArgs.bbox, viz.zoom)
 
   if (renderer.lagStyle) {
-    const style = renderer.lagStyle(renderer)
+    const style = renderer.lagStyle(renderer, drawArgs)
     config.styles[style.name] = style.value
   }
   config.sources[drawArgs.kode] = source
@@ -121,8 +121,8 @@ function updateScene(config: Object, props: Object) {
       return config
     }
     let activeViz = Object.keys(viz)[0]
-    if (viz.indexed) activeViz = 'indexed'
     if (viz.polygon) activeViz = 'polygon'
+    if (meta.kode === 'LA-KLG') activeViz = 'indexed'
     const drawArgs = {
       kode: meta.kode,
       barn: harBarn ? meta.barn : { [meta.kode]: meta },

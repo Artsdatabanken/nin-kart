@@ -233,6 +233,7 @@ class Grunnkart extends React.Component<Props, State> {
                   display: 'flex',
                   height: '100vh',
                   flexDirection: 'column',
+                  overflowX: 'hidden',
                 }}
               >
                 <VenstreVinduContainer
