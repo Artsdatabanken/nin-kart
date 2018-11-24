@@ -1,3 +1,4 @@
+import { Typography } from '@material-ui/core'
 import React, { Component } from 'react'
 import Listeelement from './Listeelement'
 
@@ -85,12 +86,17 @@ class Seksjon extends Component {
   map(r) {
     const len = r.length
     const value = r[len - 1]
-    if (len < 2) return hack1(value)
+    if (len < 2)
+      return (
+        <Typography key={value} variant="body2" color="inherit">
+          {hack1(value)}
+        </Typography>
+      )
     const key = r[len - 2]
     return (
-      <div key={key}>
+      <Typography key={key} variant="body2" color="inherit">
         {hack1(key.trim())}: <b>{hack2(value)}</b>
-      </div>
+      </Typography>
     )
   }
 }

@@ -28,20 +28,20 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
 }
 
 function opprettEttLag(drawArgs, config) {
-  const viz = draw[drawArgs.type]
-  if (!viz) {
-    console.warn('Unknown viz', drawArgs.type)
+  const renderer = draw[drawArgs.activeViz]
+  const viz = drawArgs.viz[drawArgs.activeViz]
+  if (!renderer) {
+    console.warn('Unknown viz', drawArgs.activeViz)
     return
   }
+  const source = renderer.lagSource(drawArgs.kode, drawArgs.bbox, viz.zoom)
 
-  const source = viz.lagSource(drawArgs.kode, drawArgs.bbox, drawArgs.viz.zoom)
-
-  if (viz.lagStyle) {
-    const style = viz.lagStyle(drawArgs[drawArgs.type])
+  if (renderer.lagStyle) {
+    const style = renderer.lagStyle(renderer, drawArgs)
     config.styles[style.name] = style.value
   }
   config.sources[drawArgs.kode] = source
-  config.layers[drawArgs.kode] = viz.drawAll(drawArgs)
+  config.layers[drawArgs.kode] = renderer.drawAll(drawArgs)
 }
 
 function farge(farge, viserKatalog) {
@@ -56,23 +56,20 @@ function farge(farge, viserKatalog) {
 function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
   let drawArgs = {
     forelderkode: lag.kode,
-    kode: _h(lag.kode),
+    kode: lag.kode,
     farge: farge(lag.farge, viserKatalog),
     visEtiketter: lag.visEtiketter,
     opplystKode: opplystKode,
     bbox: lag.bbox,
-    type: lag.type,
+    activeViz: lag.activeViz,
     viz: lag.viz,
     visBarn: lag.visBarn,
-    gradient: lag.gradient,
   }
   if (lag.visBarn) {
-    drawArgs.barn = _h2(
-      lag.barn.reduce((acc, e) => {
-        acc[e.kode] = e
-        return acc
-      }, {})
-    )
+    drawArgs.barn = lag.barn.reduce((acc, e) => {
+      acc[e.kode] = e
+      return acc
+    }, {})
   }
   opprettEttLag(drawArgs, config)
 }
@@ -118,17 +115,20 @@ function updateScene(config: Object, props: Object) {
   const viserKatalog = !!meta
   if (viserKatalog) {
     const harBarn = meta.barn && Object.keys(meta.barn).length > 0
-    const vizs = meta.viz
-    let sourceType = Object.keys(vizs)[0]
-    if (vizs.raster) sourceType = 'raster'
-    if (vizs.polygon) sourceType = 'polygon'
-    const viz = vizs[sourceType]
+    const viz = meta.viz
+    if (!viz) {
+      console.warn('No viz in meta')
+      return config
+    }
+    let activeViz = Object.keys(viz)[0]
+    if (viz.polygon) activeViz = 'polygon'
+    if (meta.kode === 'LA-KLG') activeViz = 'indexed'
     const drawArgs = {
-      kode: _h(meta.kode),
-      barn: harBarn ? _h2(meta.barn) : { [_h(meta.kode)]: meta },
-      opplystKode: _h(props.opplystKode),
+      kode: meta.kode,
+      barn: harBarn ? meta.barn : { [meta.kode]: meta },
+      opplystKode: props.opplystKode,
       bbox: meta.bbox,
-      type: sourceType,
+      activeViz: activeViz,
       viz: viz,
       gradient: { filterMin: 0, filterMax: 1 },
       visBarn: true,
@@ -138,20 +138,6 @@ function updateScene(config: Object, props: Object) {
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config)
   lagTemp(config)
   return config
-}
-
-function _h(kode) {
-  if (kode.length <= 3) return kode
-  let h = kode.substring(0, 2) + '_' + kode.substring(3)
-  return h
-}
-
-function _h2(koder) {
-  const r = {}
-  Object.keys(koder).forEach(key => {
-    r[_h(key)] = koder[key]
-  })
-  return r
 }
 
 function lagTemp(config) {

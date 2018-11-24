@@ -77,14 +77,14 @@ class Grunnkart extends React.Component<Props, State> {
 
   addSelected = props => {
     let aktive = this.state.aktiveLag
-    const vizs = props.vizs || { polygon: 'pbf' }
-    let sourceType = Object.keys(vizs)[0]
-    if (vizs.indexed) sourceType = 'indexed'
-    if (vizs.polygon) sourceType = 'polygon'
-    const viz = vizs[sourceType]
+    const viz = props.viz
+    if (!viz) return
+    let activeViz = Object.keys(viz)[0]
+    if (viz.indexed) activeViz = 'indexed'
+    if (viz.polygon) activeViz = 'polygon'
     const nyttLag = {
-      type: sourceType,
       viz: viz,
+      activeViz: activeViz,
       farge: props.farge,
       kode: props.kode,
       tittel: språk(props.tittel),
@@ -93,7 +93,6 @@ class Grunnkart extends React.Component<Props, State> {
       bbox: props.bbox,
       erSynlig: true,
       kanSlettes: true,
-      formats: viz,
     }
     if (viz.gradient) {
       nyttLag.gradient = { filterMin: 0, filterMax: 1.0 }
@@ -194,9 +193,8 @@ class Grunnkart extends React.Component<Props, State> {
 
   handleRemoveSelectedLayer = kode => {
     let aktive = this.state.aktiveLag
-    this.setState({
-      aktiveLag: aktive.filter(e => e.kode !== kode),
-    })
+    delete aktive[kode]
+    this.setState({ aktiveLag: aktive })
     this.props.history.push('/')
   }
 
@@ -235,6 +233,7 @@ class Grunnkart extends React.Component<Props, State> {
                   display: 'flex',
                   height: '100vh',
                   flexDirection: 'column',
+                  overflowX: 'hidden',
                 }}
               >
                 <VenstreVinduContainer
