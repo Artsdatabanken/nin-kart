@@ -18,6 +18,7 @@ class KodeVindu extends React.Component {
       onMouseLeave,
       onToggleLayer,
       opplystKode,
+      onUpdateMetaProp,
     } = this.props
     if (!meta) return null
     const {
@@ -78,6 +79,7 @@ class KodeVindu extends React.Component {
               onMouseLeave={onMouseLeave}
               opplystKode={opplystKode}
               visKode={context.visKoder}
+              onUpdateMetaProp={onUpdateMetaProp}
             />
           )}
         </SettingsContext.Consumer>

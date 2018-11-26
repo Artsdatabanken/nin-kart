@@ -15,6 +15,7 @@ class Kodeliste extends React.Component {
       opplystKode,
       visKode,
       utenFarge,
+      onUpdateMetaProp,
     } = this.props
 
     if (!metadata) return null
@@ -61,6 +62,8 @@ class Kodeliste extends React.Component {
                     onMouseLeave={this.onMouseLeave}
                     erOpplyst={opplystKode === kode}
                     utenFarge={utenFarge}
+                    value={metabarnet.value}
+                    onChange={v => onUpdateMetaProp(kode, 'value', [...v])}
                   />
                 )
               }

@@ -49,6 +49,7 @@ class VenstreVinduContainer extends React.Component {
       onMouseEnter,
       onMouseLeave,
       onUpdateLayerProp,
+      onUpdateMetaProp,
       onRemoveSelectedLayer,
     } = this.props
     return (
@@ -74,6 +75,7 @@ class VenstreVinduContainer extends React.Component {
                         mapBounds={this.props.mapBounds}
                         language={this.props.language}
                         meta={this.props.meta}
+                        onUpdateMetaProp={onUpdateMetaProp}
                       />
                     </Panel>
                   )

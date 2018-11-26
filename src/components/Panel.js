@@ -34,6 +34,7 @@ const Panel = ({ transparent, padTop, classes, style, children }) => (
   >
     <div
       style={{
+        overflowX: 'hidden',
         overflowY: 'auto',
       }}
     >
