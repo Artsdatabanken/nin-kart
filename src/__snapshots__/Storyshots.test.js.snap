@@ -1601,7 +1601,7 @@ exports[`Storyshots Filter default 1`] = `
       style={
         Object {
           "paddingBottom": 16,
-          "width": 392,
+          "width": "100%",
         }
       }
     >
@@ -1610,7 +1610,6 @@ exports[`Storyshots Filter default 1`] = `
           Object {
             "color": "rgba(0,0,0,0.4)",
             "display": "flex",
-            "width": "100%",
           }
         }
       >
@@ -1778,7 +1777,7 @@ exports[`Storyshots Filter default 1`] = `
       style={
         Object {
           "paddingBottom": 16,
-          "width": 392,
+          "width": "100%",
         }
       }
     >
@@ -1787,7 +1786,6 @@ exports[`Storyshots Filter default 1`] = `
           Object {
             "color": "rgba(0,0,0,0.4)",
             "display": "flex",
-            "width": "100%",
           }
         }
       >
@@ -1957,7 +1955,7 @@ exports[`Storyshots Filter default 1`] = `
       style={
         Object {
           "paddingBottom": 16,
-          "width": 392,
+          "width": "100%",
         }
       }
     >
@@ -1966,7 +1964,6 @@ exports[`Storyshots Filter default 1`] = `
           Object {
             "color": "rgba(0,0,0,0.4)",
             "display": "flex",
-            "width": "100%",
           }
         }
       >
@@ -2136,7 +2133,7 @@ exports[`Storyshots Filter default 1`] = `
       style={
         Object {
           "paddingBottom": 16,
-          "width": 392,
+          "width": "100%",
         }
       }
     >
@@ -2145,7 +2142,6 @@ exports[`Storyshots Filter default 1`] = `
           Object {
             "color": "rgba(0,0,0,0.4)",
             "display": "flex",
-            "width": "100%",
           }
         }
       >

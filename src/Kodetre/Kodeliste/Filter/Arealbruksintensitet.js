@@ -1,4 +1,3 @@
-import { Typography } from '@material-ui/core'
 import React, { Component } from 'react'
 import { Nature, LocationCity } from '@material-ui/icons'
 import Filter from './Filter'
