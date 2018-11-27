@@ -7,7 +7,7 @@ function lagTerreng(drawProps, config) {
   config.sources.normals = sysconfig.createTileSource(
     'terrain/normals',
     'Raster',
-    [0, 15]
+    [0, 9]
   )
   config.styles.terreng = {
     base: 'polygons',
@@ -16,7 +16,8 @@ function lagTerreng(drawProps, config) {
     shaders: {
       uniforms: {
         u_scale: drawProps.vertikaltOverdriv,
-        u_envmap: '/1_gray_lys2.jpg',
+        //        u_envmap: '/1_gray_lys2.jpg',
+        u_envmap: '/treefrog.png',
       },
       blocks: {
         global: `vec4 terrainEnvmap (in sampler2D _tex, in vec3 _normal) {

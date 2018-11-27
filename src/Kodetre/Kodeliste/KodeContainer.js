@@ -16,6 +16,7 @@ type Props = {
   onMouseEnter: Function,
   onGoToCode: Function,
   onToggleLayer: Function,
+  onUpdateMetaProp: Function,
   erAktivert: Boolean,
   opplystKode: String,
 }
@@ -63,6 +64,7 @@ class KodeContainer extends React.Component<Props, State> {
       erAktivert,
       opplystKode,
       onToggleLayer,
+      onUpdateMetaProp,
     } = this.props
     if (!meta) return null
     return (
@@ -76,6 +78,7 @@ class KodeContainer extends React.Component<Props, State> {
         erAktivert={erAktivert}
         opplystKode={opplystKode}
         onToggleLayer={onToggleLayer}
+        onUpdateMetaProp={onUpdateMetaProp}
       />
     )
   }

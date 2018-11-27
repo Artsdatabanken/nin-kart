@@ -60,6 +60,7 @@ class Grunnkart extends React.Component<Props, State> {
         farge: node.farge,
         erSynlig: true,
         kanSlettes: true,
+        value: node.value,
       }
     })
   }
@@ -185,6 +186,7 @@ class Grunnkart extends React.Component<Props, State> {
     Object.keys(data.barn).forEach(kode => {
       const barn = data.barn[kode]
       barn.sti = this.kodeTilRelativUrl(kode)
+      barn.value = [0, 100]
     })
     data.nivå = typesystem.hentNivaa(data.kode).slice(0, 1)
     data.prefiks = data.kode.substring(0, 2)
@@ -212,6 +214,18 @@ class Grunnkart extends React.Component<Props, State> {
         JSON.stringify(bakgrunnskarttema[value])
       )
     this.setState({ aktiveLag: Object.assign({}, aktive) })
+  }
+
+  // Supports composite keys i.e. gradient.filterMin
+  handleUpdateMetaProp = (kode, key, value) => {
+    const aktive = this.state.meta
+    let node = aktive.barn[kode]
+    const parts = key.split('.')
+    for (let i = 0; i < parts.length - 1; i++) node = node[parts[i]]
+    const vkey = parts[parts.length - 1]
+    node[vkey] = value
+    aktive.barn[kode] = Object.assign({}, aktive.barn[kode])
+    this.setState({ meta: Object.assign({}, aktive) })
   }
 
   render() {
@@ -249,6 +263,7 @@ class Grunnkart extends React.Component<Props, State> {
                   onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
                   meta={this.state.meta}
                   onUpdateLayerProp={this.handleUpdateLayerProp}
+                  onUpdateMetaProp={this.handleUpdateMetaProp}
                   visForside={context.visForside}
                   visAktiveLag={context.visAktiveLag}
                   onToggleForside={context.onToggleForside}
