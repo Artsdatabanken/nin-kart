@@ -30,13 +30,21 @@ function lagStyle(viz, drawArgs) {
     const range = quantize(ai.value)
     if (range !== '0-4') palettKode += '-AI' + quantize(ai.value)
   }
+  const newPalette = `https://maps.artsdatabanken.no/indexed/${palettKode}.palette.png`
+  console.log(this.palette1, this.palette2, newPalette)
+  if (this.palette1 !== this.palette2 || !this.palette1)
+    this.palette1 = this.palette2 || newPalette
+  this.palette2 = newPalette
+  console.log(this.palette1, this.palette2, newPalette)
   const gradient = {
     base: 'raster',
     blend: 'multiply',
     filtering: 'nearest',
+    animated: true,
     shaders: {
       uniforms: {
-        palette: `https://maps.artsdatabanken.no/indexed/${palettKode}.palette.png`,
+        palette1: this.palette1,
+        palette2: this.palette2,
       },
       blocks: {
         global: `
@@ -56,9 +64,12 @@ function lagStyle(viz, drawArgs) {
         diff += abs(v-rgbaToIndex(sampleRasterAtPixel(0, vec2(currentRasterPixel(0) + off.yz))));
         diff = clamp(diff,0.,1.);
         vec4 border = vec4(0.,0.,0.,0.8);
-        vec4 fill = texture2D(palette, vec2(v/512., 0.5));
+        vec4 fill1 = texture2D(palette1, vec2(v/512., 0.5));
+        vec4 fill2 = texture2D(palette2, vec2(v/512., 0.5));
+        vec4 fill = mix(fill1, fill2, clamp(u_time*2.5,0.,1.));
         float step = clamp((u_map_position.z-8.)*0.08,0.,1.);
         color = mix(fill, border,diff*step);
+
           `,
       },
     },
