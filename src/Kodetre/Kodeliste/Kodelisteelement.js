@@ -9,7 +9,7 @@ import React from 'react'
 import språk from '../../språk'
 import Bildeavatar from './Bildeavatar'
 import VolumIndikator from './VolumIndikator'
-import Arealbruksintensitet from './Filter/Arealbruksintensitet'
+//import Arealbruksintensitet from './Filter/Arealbruksintensitet'
 type State = {}
 
 type Props = {
@@ -76,11 +76,11 @@ class Kodelisteelement extends React.Component<Props, State> {
             secondary={visKode && kode.substring(3)}
           />
         </ListItem>
-        {kode === 'LA-KLG-AI' && (
+        {/*kode === 'LA-KLG-AI' && (
           <ListItem>
             <Arealbruksintensitet value={meta.value} onChange={onChange} />
           </ListItem>
-        )}
+        )*/}
       </React.Fragment>
     )
   }

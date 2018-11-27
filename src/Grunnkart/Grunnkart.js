@@ -90,6 +90,7 @@ class Grunnkart extends React.Component<Props, State> {
       tittel: språk(props.tittel),
       barn: this.addSelectedBarn(props.barn),
       visBarn: Object.keys(props.barn).length > 0,
+      value: [0, 1],
       bbox: props.bbox,
       erSynlig: true,
       kanSlettes: true,
