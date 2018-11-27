@@ -7,7 +7,7 @@ function lagTerreng(drawProps, config) {
   config.sources.normals = sysconfig.createTileSource(
     'terrain/normals',
     'Raster',
-    [0, 15]
+    [0, 9]
   )
   config.styles.terreng = {
     base: 'polygons',
