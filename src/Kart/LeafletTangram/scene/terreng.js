@@ -2,7 +2,9 @@
 import terrengmal from './mal/terreng'
 import sysconfig from '../../../config'
 
-function lagTerreng(drawProps, config) {
+function lagTerreng(drawProps, opplystKode, config) {
+  let vertikaltOverdriv = drawProps.vertikaltOverdriv
+  if (opplystKode && opplystKode !== 'terreng') return
   config.layers.terreng = terrengmal
   config.sources.normals = sysconfig.createTileSource(
     'terrain/normals',
@@ -15,13 +17,17 @@ function lagTerreng(drawProps, config) {
     raster: 'normal',
     shaders: {
       uniforms: {
-        u_scale: drawProps.vertikaltOverdriv,
+        eye1: [0, 0, -1],
+        u_scale: vertikaltOverdriv,
         //        u_envmap: '/1_gray_lys2.jpg',
-        u_envmap: '/treefrog.png',
+        u_envmap: '/treefrog_gray.png',
       },
       blocks: {
         global: `vec4 terrainEnvmap (in sampler2D _tex, in vec3 _normal) {
-          const vec3 eye = vec3(0.,0.,-1.);
+//          const vec3 eye = vec3(0.,0.,-1.);
+          vec3 eye = normalize(
+            vec3(0.,0.,-3.)
+            );
           vec3 r = reflect(eye, _normal);
           r.z += 1.0;
           float m = 2. * length(r);
@@ -31,7 +37,7 @@ function lagTerreng(drawProps, config) {
         color: `
           normal.z /= u_scale; // turn terrain exaggeration up/down
           normal = normalize(normal);
-          color = 1.1*terrainEnvmap(u_envmap, normal);`,
+          color = terrainEnvmap(u_envmap, normal);`,
       },
     },
   }

@@ -24,12 +24,15 @@ function quantize(value) {
 function lagStyle(viz, drawArgs) {
   const { kode, opplystKode } = drawArgs
   const barn = drawArgs.barn
-  console.log(barn)
-  const ai = barn['LA-KLG-AI']
-  let palettKode = opplystKode || kode
-  if (ai) {
-    const range = quantize(ai.value)
-    if (range !== '0-4') palettKode += '-AI' + quantize(ai.value)
+  //  console.log(barn)
+  let palettKode = kode
+  if (opplystKode.startsWith(kode)) {
+    palettKode = opplystKode
+    const ai = barn['LA-KLG-AI']
+    if (ai) {
+      const range = quantize(ai.value)
+      if (range !== '0-4') palettKode += '-AI' + quantize(ai.value)
+    }
   }
   const newPalette = `https://maps.artsdatabanken.no/indexed/${palettKode}.palette.png`
   if (this.palette1 !== this.palette2 || !this.palette1)
