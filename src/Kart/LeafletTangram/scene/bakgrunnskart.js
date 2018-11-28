@@ -47,7 +47,6 @@ function opprettTekst(kode, lag, config, style) {
 }
 
 function lagBakgrunnskart(lag, config) {
-  if (!lag.erSynlig) return
   opprett('kommunegrense', lag, config, 'boundary')
   opprett('fylkesgrense', lag, config, 'boundary')
   opprett('landegrense', lag, config, 'boundary')

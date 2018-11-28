@@ -20,7 +20,7 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
       lagBakgrunnskart(lag, config)
       break
     case 'terreng':
-      lagTerreng(lag.terreng, config)
+      lagTerreng(lag.terreng, opplystKode, config)
       break
     default:
       opprettAktivtLag(lag, opplystKode, config, viserKatalog)
@@ -28,6 +28,8 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
 }
 
 function opprettEttLag(drawArgs, config) {
+  if (drawArgs.opplystKode && !drawArgs.opplystKode.startsWith(drawArgs.kode))
+    return // Hide this layer while highlighting other layer
   const renderer = draw[drawArgs.activeViz]
   const viz = drawArgs.viz[drawArgs.activeViz]
   if (!renderer) {
@@ -76,13 +78,6 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
 
 function lagToppnivå(props) {
   const config = {
-    textures: {
-      palette: {
-        url: 'https://maps.artsdatabanken.no/indexed/LA.palette.png',
-        filtering: 'nearest',
-      },
-    },
-
     sources: {
       osm: sysconfig.createTileSource('basemap/openstreetmap', 'MVT', [0, 14]),
     },
@@ -122,7 +117,7 @@ function updateScene(config: Object, props: Object) {
     }
     let activeViz = Object.keys(viz)[0]
     if (viz.polygon) activeViz = 'polygon'
-    if (meta.kode === 'LA-KLG') activeViz = 'indexed'
+    if (viz.indexed) activeViz = 'indexed'
     const drawArgs = {
       kode: meta.kode,
       barn: harBarn ? meta.barn : { [meta.kode]: meta },
