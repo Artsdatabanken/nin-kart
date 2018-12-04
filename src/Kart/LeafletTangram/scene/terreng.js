@@ -19,8 +19,8 @@ function lagTerreng(drawProps, opplystKode, config) {
       uniforms: {
         eye1: [0, 0, -1],
         u_scale: vertikaltOverdriv,
-        //        u_envmap: '/1_gray_lys2.jpg',
-        u_envmap: '/treefrog_gray.png',
+        u_envmap: '/1_gray_lys2.jpg',
+        //u_envmap: '/treefrog_gray.png',
       },
       blocks: {
         global: `vec4 terrainEnvmap (in sampler2D _tex, in vec3 _normal) {

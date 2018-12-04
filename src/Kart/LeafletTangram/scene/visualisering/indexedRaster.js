@@ -41,7 +41,6 @@ function lagStyle(viz, drawArgs) {
   const gradient = {
     base: 'raster',
     blend: 'multiply',
-    filtering: 'nearest',
     animated: true,
     shaders: {
       uniforms: {
@@ -71,7 +70,6 @@ function lagStyle(viz, drawArgs) {
         vec4 fill = mix(fill1, fill2, clamp(u_time*2.5,0.,1.));
         float step = clamp((u_map_position.z-8.)*0.08,0.,1.);
         color = mix(fill, border,diff*step);
-
           `,
       },
     },
