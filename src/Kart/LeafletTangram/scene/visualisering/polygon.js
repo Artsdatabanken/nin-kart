@@ -4,7 +4,7 @@ import sysconfig from '../../../../config'
 function drawAll(drawArgs) {
   const { kode, barn, farge, opplystKode, visBarn, visEtiketter } = drawArgs
   const layer = {
-    data: { source: kode, layer: kode },
+    data: { source: kode, layer: 'vector4326' },
   }
   if (visBarn) {
     Object.keys(barn).forEach(barnkode => {
@@ -68,7 +68,12 @@ function draw(args) {
 }
 
 function lagSource(kode, bbox, zoom) {
-  return sysconfig.createTileSource(`polygon/${kode}`, 'MVT', zoom, bbox)
+  return sysconfig.createTileSource(
+    `${kode.replace('-', '/')}/vector.3857`,
+    'MVT',
+    zoom,
+    bbox
+  )
 }
 
 export default { drawAll, lagSource }
