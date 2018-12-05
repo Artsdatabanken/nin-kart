@@ -69,7 +69,7 @@ function draw(args) {
 
 function lagSource(kode, bbox, zoom) {
   return sysconfig.createTileSource(
-    `${kode.replace('-', '/')}/vector.3857`,
+    `${kode.replace(/-/g, '/')}/vector.3857`,
     'MVT',
     zoom,
     bbox
