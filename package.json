@@ -31,7 +31,7 @@
     "@storybook/addon-actions": "^4.0.12",
     "@storybook/addon-links": "^4.0.12",
     "@storybook/addons": "^4.0.12",
-    "@storybook/react": "^4.0.8",
+    "@storybook/react": "^4.0.12",
     "coveralls": "^3.0.2",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
