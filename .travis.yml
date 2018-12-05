@@ -23,7 +23,8 @@ after_success:
   - npm run report-coverage
 notifications:
   slack:
-    secure: boRuTnFbZmvMYN4U4cqEhd3TAetZrHC2uUNmrLu/oEgKMWRtBQMJATiV/dYuYki1zWz1OeF97dAwAZnJpDCH7S4Sv+Dskn75HUj0NAVKfxR/mH/MiQupNLe4eN3+5FfhzdQW+n8m/rLcnPT5RuAd4+xjUeGc4aAPuYPpi8IMKoIV6aXRSNBpZMGpjQuyV6DZMhUr5Rr/WUD0DwxJSzbXZsNFUdefVBrogeLl9GKcxWapSNSED3tzZyG7MexfiD3cdw6GWpwuAmNjKyTe2BA8aESUvuBcOPSk/z7ZqAxC0GOW8BEikEMowAK+nVUOYL4bbyTBvpa1808Fu9EWBxreBNH9nwG91s+zXLmNFt+cLMp6rozedPG6JuOCT4tDHdqRrrCubNmpNVczn1iY6iyPj1q7Cvk+s+kfugrdedmqr/aYhatnirGGxdAbHAluizkwAzbzP6gnD4i2FdxefJ77hrAI80Y/6wMzPHTWVCgVUZEyBZb6J+1C7JvcEinsnNC0MkOdvGBcCNUHEGc+L/clYhVN5W4CoqP5QxuatZjYhfPlIe4D4v51wgttu4IQN7FztZwvSzSVMKdONtbhFv3jOuyKsm/KQONEBs+7o9exNm5pPR1GLJfpjNO9vJJJ9K3b8ene+L0Irnv0SWu/mpl0+shbAkfrrQX9MJUT3ntXuaM=
+    on_success: change
+    on_failure: change
 before_install:
   - yarn global add greenkeeper-lockfile@1
   - export PATH=$PATH:`yarn global bin`
