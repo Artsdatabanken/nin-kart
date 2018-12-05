@@ -78,9 +78,8 @@ function lagStyle(viz, drawArgs) {
 }
 
 function lagSource(kode, bbox, zoom) {
-  const prefix = kode.substring(0, 2)
   const source = sysconfig.createTileSource(
-    `indexed/${prefix}`,
+    `${kode.replace(/-/g, '/')}/raster.indexed.3857`,
     'Raster',
     zoom,
     bbox

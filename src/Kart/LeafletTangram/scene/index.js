@@ -124,7 +124,7 @@ function updateScene(config: Object, props: Object) {
     }
     let activeViz = Object.keys(viz)[0]
     if (viz.polygon) activeViz = 'polygon'
-    if (viz.indexed) activeViz = 'indexed'
+    if (viz['raster.indexed']) activeViz = 'raster.indexed'
     const drawArgs = {
       kode: meta.kode,
       barn: harBarn ? meta.barn : { [meta.kode]: meta },
