@@ -22,7 +22,7 @@ type Props = {
 
 class Kart extends React.Component<Props, State> {
   onClick = latlng => {
-    this.props.history.push(`/punkt/${latlng.lng},${latlng.lat}`)
+    this.props.history.push(`?lng=${latlng.lng}&lat=${latlng.lat}`)
   }
 
   render() {
