@@ -8,7 +8,6 @@ script:
   - yarn build
 before_deploy:
   - git tag "$(date +'%Y%m%d-%H%M%S')-$(git log --format=%h -1)"
-  - ls -la build
   - tar --directory=build -zcf bundle.tar.gz .
 deploy:
   provider: releases
@@ -18,7 +17,7 @@ deploy:
   on:
     repo: Artsdatabanken/ratatouille
   skip_cleanup: true
-after_deploy: ../slack.sh ops "deploy ratatouille"
+after_deploy: ./slack.sh ops "deploy ratatouille"
 after_success:
   - npm run report-coverage
 notifications:
