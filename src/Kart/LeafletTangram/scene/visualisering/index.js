@@ -7,5 +7,5 @@ export default {
   polygon: polygonDraw,
   point: pointDraw,
   gradient: gradientDraw,
-  indexed: indexedRasterDraw,
+  'raster.indexed': indexedRasterDraw,
 }

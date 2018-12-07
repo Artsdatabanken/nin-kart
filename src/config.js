@@ -10,7 +10,7 @@ class config {
     const source = {
       filtering: 'nearest',
       type: type,
-      url: `https://{s}.artsdatabanken.no/${relativePath}/{z}/{x}/{y}`,
+      url: `https://{s}.artsdatabanken.no/${relativePath}.mbtiles/{z}/{x}/{y}`,
       url_subdomains: ['maps'],
     }
     if (!bbox || !zoom) {
@@ -51,13 +51,13 @@ class config {
 
   static metaUrl(kode: string) {
     kode = kode
-      .replace('/katalog', '')
+      .replace('/katalog/', '')
       .split('_')
       .join('-')
       .replace('LA_', 'LA-')
       .toUpperCase()
     if (kode.length <= 1) kode = '~'
-    return `https://maps.artsdatabanken.no/metabase/meta/${kode}.json`
+    return `https://maps.artsdatabanken.no/metabase.sqlite/meta/${kode}.json`
   }
 }
 
