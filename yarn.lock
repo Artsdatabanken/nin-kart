@@ -1015,10 +1015,12 @@
 "@mapbox/point-geometry@~0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@mapbox/point-geometry/-/point-geometry-0.1.0.tgz#8a83f9335c7860effa2eeeca254332aa0aeed8f2"
+  integrity sha1-ioP5M1x4YO/6Lu7KJUMyqgru2PI=
 
 "@mapbox/vector-tile@1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@mapbox/vector-tile/-/vector-tile-1.3.0.tgz#c495f972525befccefcd838f45ffa37ef3b70fe8"
+  integrity sha1-xJX5clJb78zvzYOPRf+jfvO3D+g=
   dependencies:
     "@mapbox/point-geometry" "~0.1.0"
 
@@ -3185,9 +3187,13 @@ combined-stream@1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@*, commander@2:
+commander@*:
   version "2.18.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.18.0.tgz#2bf063ddee7c7891176981a2cc798e5754bc6970"
+
+commander@2, commander@^2.14.1, commander@^2.19.0, commander@^2.9.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
 
 commander@2.17.x, commander@~2.17.1:
   version "2.17.1"
@@ -3196,10 +3202,6 @@ commander@2.17.x, commander@~2.17.1:
 commander@^2.11.0:
   version "2.16.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.16.0.tgz#f16390593996ceb4f3eeb020b31d78528f7f8a50"
-
-commander@^2.14.1, commander@^2.19.0, commander@^2.9.0:
-  version "2.19.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
 
 commander@~2.13.0:
   version "2.13.0"
@@ -3336,7 +3338,8 @@ core-js@^1.0.0:
 
 core-js@~2.3.0:
   version "2.3.0"
-  resolved "http://registry.npmjs.org/core-js/-/core-js-2.3.0.tgz#fab83fbb0b2d8dc85fa636c4b9d34c75420c6d65"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.3.0.tgz#fab83fbb0b2d8dc85fa636c4b9d34c75420c6d65"
+  integrity sha1-+rg/uwstjchfpjbEudNMdUIMbWU=
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -3584,6 +3587,7 @@ css-what@2.1:
 csscolorparser@1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/csscolorparser/-/csscolorparser-1.0.3.tgz#b34f391eea4da8f3e98231e2ccd8df9c041f171b"
+  integrity sha1-s085HupNqPPpgjHizNjfnAQfFxs=
 
 cssdb@^3.2.1:
   version "3.2.1"
@@ -4073,6 +4077,7 @@ duplexify@^3.4.2, duplexify@^3.6.0:
 earcut@2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/earcut/-/earcut-2.1.1.tgz#157634e5f3ebb42224e475016e86a5b6ce556b45"
+  integrity sha1-FXY05fPrtCIk5HUBboalts5Va0U=
 
 ecc-jsbn@~0.1.1:
   version "0.1.1"
@@ -4247,7 +4252,8 @@ es5-shim@^4.5.10:
 
 es6-promise@~3.0.2:
   version "3.0.2"
-  resolved "http://registry.npmjs.org/es6-promise/-/es6-promise-3.0.2.tgz#010d5858423a5f118979665f46486a95c6ee2bb6"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-3.0.2.tgz#010d5858423a5f118979665f46486a95c6ee2bb6"
+  integrity sha1-AQ1YWEI6XxGJeWZfRkhqlcbuK7Y=
 
 es6-shim@^0.35.3:
   version "0.35.4"
@@ -4433,6 +4439,7 @@ espree@^4.0.0:
 esprima@^2.6.0:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-2.7.3.tgz#96e3b70d5779f6ad49cd032673d1c312767ba581"
+  integrity sha1-luO3DVd59q1JzQMmc9HDEnZ7pYE=
 
 esprima@^3.1.3:
   version "3.1.3"
@@ -4961,6 +4968,7 @@ follow-redirects@^1.0.0:
 fontfaceobserver@2.0.7:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/fontfaceobserver/-/fontfaceobserver-2.0.7.tgz#e41bfe1f1dd37c159c186f11e777f8a21ef14e99"
+  integrity sha1-5Bv+Hx3TfBWcGG8R53f4oh7xTpk=
 
 for-in@^0.1.3:
   version "0.1.8"
@@ -5124,6 +5132,7 @@ gauge@~2.7.3:
 geojson-vt@2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/geojson-vt/-/geojson-vt-2.4.0.tgz#3c1cf44493f35eb4d2c70c95da6550de66072c05"
+  integrity sha1-PBz0RJPzXrTSxwyV2mVQ3mYHLAU=
 
 get-caller-file@^1.0.1:
   version "1.0.3"
@@ -5160,14 +5169,17 @@ getpass@^0.1.1:
 gl-mat3@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/gl-mat3/-/gl-mat3-1.0.0.tgz#89633219ca429379a16b9185d95d41713453b912"
+  integrity sha1-iWMyGcpCk3mha5GF2V1BcTRTuRI=
 
 gl-mat4@1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/gl-mat4/-/gl-mat4-1.1.4.tgz#1e895b55892e56a896867abd837d38f37a178086"
+  integrity sha1-HolbVYkuVqiWhnq9g30483oXgIY=
 
 gl-shader-errors@1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/gl-shader-errors/-/gl-shader-errors-1.0.3.tgz#d82ba2749762b5b3a066013847478f59529e64b9"
+  integrity sha1-2CuidJditbOgZgE4R0ePWVKeZLk=
 
 glob-base@^0.3.0:
   version "0.3.0"
@@ -5737,6 +5749,7 @@ ignore@^4.0.6:
 immediate@~3.0.5:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/immediate/-/immediate-3.0.6.tgz#9db1dbd0faf8de6fbe0f5dd5e56bb606280de69b"
+  integrity sha1-nbHb0Pr43m++D13V5Wu2BigN5ps=
 
 immer@1.7.2:
   version "1.7.2"
@@ -6622,7 +6635,7 @@ js-yaml@^3.11.0, js-yaml@^3.12.0, js-yaml@^3.7.0, js-yaml@^3.9.0:
     argparse "^1.0.7"
     esprima "^4.0.0"
 
-js-yaml@tangrams/js-yaml#read-only:
+"js-yaml@github:tangrams/js-yaml#read-only":
   version "3.5.3"
   resolved "https://codeload.github.com/tangrams/js-yaml/tar.gz/1637976c6f593bed33ed088aedb6d01390a947c0"
   dependencies:
@@ -6823,6 +6836,7 @@ jsx-ast-utils@^2.0.1:
 jszip@3.1.5:
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/jszip/-/jszip-3.1.5.tgz#e3c2a6c6d706ac6e603314036d43cd40beefdf37"
+  integrity sha512-5W8NUaFRFRqTOL7ZDDrx5qWHJyBXy6velVudIzQUSoqAAYqzSh2Z7/m0Rf1QbmQJccegD0r+YZxBjzqoBiEeJQ==
   dependencies:
     core-js "~2.3.0"
     es6-promise "~3.0.2"
@@ -6937,6 +6951,7 @@ levn@^0.3.0, levn@~0.3.0:
 lie@~3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/lie/-/lie-3.1.1.tgz#9a436b2cc7746ca59de7a41fa469b3efb76bd87e"
+  integrity sha1-mkNrLMd0bKWd56QfpGmz77dr2H4=
   dependencies:
     immediate "~3.0.5"
 
@@ -8046,7 +8061,12 @@ p-try@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.0.0.tgz#85080bb87c64688fa47996fe8f7dfbe8211760b1"
 
-pako@~1.0.2, pako@~1.0.5:
+pako@~1.0.2:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.7.tgz#2473439021b57f1516c82f58be7275ad8ef1bb27"
+  integrity sha512-3HNK5tW4x8o5mO8RuHZp3Ydw9icZXx0RANAOMzlMzx7LVXhMJ4mo3MOBpzyd7r/+RUu8BmndP47LXT+vzjtWcQ==
+
+pako@~1.0.5:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.6.tgz#0101211baa70c4bca4a0f63f2206e97b7dfaf258"
 
@@ -8189,6 +8209,7 @@ path-type@^3.0.0:
 pbf@3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/pbf/-/pbf-3.1.0.tgz#f70004badcb281761eabb1e76c92f179f08189e9"
+  integrity sha512-/hYJmIsTmh7fMkHAWWXJ5b8IKLWdjdlAFb3IHkRBn1XUhIYBChVGfVwmHEAV3UfXTxsP/AKfYTXTS/dCPxJd5w==
   dependencies:
     ieee754 "^1.1.6"
     resolve-protobuf-schema "^2.0.0"
@@ -8902,6 +8923,7 @@ private@^0.1.6, private@^0.1.8, private@~0.1.5:
 process-nextick-args@~1.0.6:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-1.0.7.tgz#150e20b756590ad3f91093f25a4f2ad8bff30ba3"
+  integrity sha1-FQ4gt1ZZCtP5EJPyWk8q2L/zC6M=
 
 process-nextick-args@~2.0.0:
   version "2.0.0"
@@ -8964,6 +8986,7 @@ proto-list@~1.2.1:
 protocol-buffers-schema@^3.3.1:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/protocol-buffers-schema/-/protocol-buffers-schema-3.3.2.tgz#00434f608b4e8df54c59e070efeefc37fb4bb859"
+  integrity sha512-Xdayp8sB/mU+sUV4G7ws8xtYMGdQnxbeIfLjyO9TZZRJdztBGhlmbI5x1qcY4TG5hBkIKGnc28i7nXxaugu88w==
 
 proxy-addr@~2.0.3, proxy-addr@~2.0.4:
   version "2.0.4"
@@ -9485,7 +9508,8 @@ readable-stream@^3.0.6:
 
 readable-stream@~2.0.6:
   version "2.0.6"
-  resolved "http://registry.npmjs.org/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
+  integrity sha1-j5A0HmilPMySh4jaz80Rs265t44=
   dependencies:
     core-util-is "~1.0.0"
     inherits "~2.0.1"
@@ -9777,6 +9801,7 @@ resolve-pathname@^2.2.0:
 resolve-protobuf-schema@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/resolve-protobuf-schema/-/resolve-protobuf-schema-2.1.0.tgz#9ca9a9e69cf192bbdaf1006ec1973948aa4a3758"
+  integrity sha512-kI5ffTiZWmJaS/huM8wZfEMer1eRd7oJQhDuxeCLe3t7N7mX3z94CN0xPxBQxFYQTSNz9T0i+v6inKqSdK8xrQ==
   dependencies:
     protocol-buffers-schema "^3.3.1"
 
@@ -10313,6 +10338,7 @@ split-string@^3.0.1, split-string@^3.0.2:
 sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
+  integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
 sshpk@^1.7.0:
   version "1.14.2"
@@ -10480,6 +10506,7 @@ string_decoder@^1.0.0, string_decoder@^1.1.1, string_decoder@~1.1.1:
 string_decoder@~0.10.x:
   version "0.10.31"
   resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
+  integrity sha1-YuIDvEF2bGwoyfyEMB2rHFMQ+pQ=
 
 stringify-object@^3.2.2:
   version "3.3.0"
@@ -10628,8 +10655,9 @@ table@^4.0.3:
     string-width "^2.1.1"
 
 tangram@^0.16.0:
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/tangram/-/tangram-0.16.0.tgz#e69f044965138c405a8ba7af69898ed1876c7926"
+  version "0.16.1"
+  resolved "https://registry.yarnpkg.com/tangram/-/tangram-0.16.1.tgz#688ab2437f7a5ddfd3605fef1ccb755b4aae5849"
+  integrity sha512-p5193xbY9t3SV4CiYo1hAQL0Xww8j+LA598YENq+wsBUa+IGnuakXXI6fbudIaeL3nbl6OhIcTdXjB5hqMQEHQ==
   dependencies:
     "@mapbox/vector-tile" "1.3.0"
     csscolorparser "1.0.3"
@@ -10784,7 +10812,7 @@ topo@2.x.x:
   dependencies:
     hoek "4.x.x"
 
-topojson-client@tangrams/topojson-client#read-only:
+"topojson-client@github:tangrams/topojson-client#read-only":
   version "2.1.0"
   resolved "https://codeload.github.com/tangrams/topojson-client/tar.gz/1068f4f2e03ddf8236499bbc896cec98d7a342b7"
   dependencies:
@@ -11029,6 +11057,7 @@ use@^3.1.0:
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
+  integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
 util.promisify@1.0.0, util.promisify@^1.0.0, util.promisify@~1.0.0:
   version "1.0.0"

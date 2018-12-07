@@ -39,6 +39,15 @@ class VenstreVinduContainer extends React.Component {
     this.props.history.push('/katalog/' + kode)
   }
 
+  parseQueryString(query) {
+    query = query.substring(1).split('&')
+    return query.reduce((obj, item) => {
+      const [key, value] = item.split('=')
+      obj[key] = value
+      return obj
+    }, {})
+  }
+
   render() {
     const meta = this.props.meta || {}
     const {
@@ -51,131 +60,133 @@ class VenstreVinduContainer extends React.Component {
       onUpdateLayerProp,
       onUpdateMetaProp,
       onRemoveSelectedLayer,
+      location,
     } = this.props
     return (
       <Route
-        render={({ match, history }) => (
-          <React.Fragment>
-            <Switch>
-              <Route
-                path="/katalog/:kode*"
-                render={({ match, history }) => {
-                  return (
-                    <Panel>
-                      <TopBarContainer tittel={this.tittel(this.props.meta)} />
-                      <KodeContainer
-                        kode={meta.kode}
-                        onGoToCode={this.handleGoToCode}
+        render={({ match, history }) => {
+          const args = this.parseQueryString(location.search)
+          if (args.lng) {
+            return (
+              <Panel>
+                <TopBarContainer
+                  tittel={args.lng.substr(0, 8) + ',' + args.lat.substr(0, 8)}
+                />
+                <BorreContainer
+                  lng={args.lng}
+                  lat={args.lat}
+                  view={args.view}
+                />
+              </Panel>
+            )
+          }
+          return (
+            <React.Fragment>
+              <Switch>
+                <Route
+                  path="/katalog/:kode*"
+                  render={({ match, history }) => {
+                    return (
+                      <Panel>
+                        <TopBarContainer
+                          tittel={this.tittel(this.props.meta)}
+                        />
+                        <KodeContainer
+                          kode={meta.kode}
+                          onGoToCode={this.handleGoToCode}
+                          onMouseEnter={onMouseEnter}
+                          onMouseLeave={onMouseLeave}
+                          onFitBounds={this.props.onFitBounds}
+                          erAktivert={this.props.erAktivert}
+                          opplystKode={this.props.opplystKode}
+                          onToggleLayer={this.props.onToggleLayer}
+                          mapBounds={this.props.mapBounds}
+                          language={this.props.language}
+                          meta={this.props.meta}
+                          onUpdateMetaProp={onUpdateMetaProp}
+                        />
+                      </Panel>
+                    )
+                  }}
+                />
+
+                <Route
+                  path="/lag/:kode/:lag?"
+                  render={({ match, history }) => (
+                    <Panel padTop>
+                      <TopBarContainer
+                        tittel={
+                          'Innstillinger for ' +
+                          (match.params.lag || match.params.kode)
+                        }
+                      />
+                      <TweakContainer
+                        kode={match.params.kode}
+                        lag={match.params.lag}
+                        koder={this.props.aktiveLag}
+                        {...this.finnValgtKodeElement(match.params.kode)}
+                        onFitBounds={this.props.onFitBounds}
+                        onUpdateLayerProp={onUpdateLayerProp}
+                        onRemoveSelectedLayer={onRemoveSelectedLayer}
                         onMouseEnter={onMouseEnter}
                         onMouseLeave={onMouseLeave}
-                        onFitBounds={this.props.onFitBounds}
-                        erAktivert={this.props.erAktivert}
-                        opplystKode={this.props.opplystKode}
-                        onToggleLayer={this.props.onToggleLayer}
-                        mapBounds={this.props.mapBounds}
-                        language={this.props.language}
-                        meta={this.props.meta}
-                        onUpdateMetaProp={onUpdateMetaProp}
                       />
                     </Panel>
-                  )
+                  )}
+                />
+                <Route
+                  path="/punkt/valg"
+                  render={({ match, history }) => (
+                    <Panel>
+                      <TopBarContainer tittel="Klikk i kart" />
+                      <Borrevalg />
+                    </Panel>
+                  )}
+                />
+                <Route
+                  render={({ match, history }) => (
+                    <ForsideMeny
+                      onAktiver={onAktiver}
+                      onVis={onToggleForside}
+                      visForside={visForside}
+                    />
+                  )}
+                />
+              </Switch>
+              {this.state.error && (
+                <Snackbar
+                  open={true}
+                  message={'Søk feilet: ' + JSON.stringify(this.state.error)}
+                  autoHideDuration={4000}
+                  onRequestClose={this.handleCloseSnackbar}
+                />
+              )}
+              <div
+                style={{
+                  backgroundColor: 'transparent',
+                  justifyContent: 'flex-end',
+                  float: 'bottom',
+                  pointerEvents: 'auto',
+                  boxShadow:
+                    '0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)',
                 }}
-              />
-
-              <Route
-                path="/lag/:kode/:lag?"
-                render={({ match, history }) => (
-                  <Panel padTop>
-                    <TopBarContainer
-                      tittel={
-                        'Innstillinger for ' +
-                        (match.params.lag || match.params.kode)
-                      }
-                    />
-                    <TweakContainer
-                      kode={match.params.kode}
-                      lag={match.params.lag}
-                      koder={this.props.aktiveLag}
-                      {...this.finnValgtKodeElement(match.params.kode)}
-                      onFitBounds={this.props.onFitBounds}
-                      onUpdateLayerProp={onUpdateLayerProp}
-                      onRemoveSelectedLayer={onRemoveSelectedLayer}
-                      onMouseEnter={onMouseEnter}
-                      onMouseLeave={onMouseLeave}
-                    />
-                  </Panel>
-                )}
-              />
-              <Route
-                path="/punkt/:lng,:lat/:view?"
-                render={({ match, history }) => (
-                  <Panel>
-                    <TopBarContainer
-                      tittel={
-                        match.params.lng.substr(0, 8) +
-                        ',' +
-                        match.params.lat.substr(0, 8)
-                      }
-                    />
-                    <BorreContainer
-                      lng={match.params.lng}
-                      lat={match.params.lat}
-                      view={match.params.view}
-                    />
-                  </Panel>
-                )}
-              />
-              <Route
-                path="/punkt/valg"
-                render={({ match, history }) => (
-                  <Panel>
-                    <TopBarContainer tittel="Klikk i kart" />
-                    <Borrevalg />
-                  </Panel>
-                )}
-              />
-              <Route
-                render={({ match, history }) => (
-                  <ForsideMeny
-                    onAktiver={onAktiver}
-                    onVis={onToggleForside}
-                    visForside={visForside}
-                  />
-                )}
-              />
-            </Switch>
-            {this.state.error && (
-              <Snackbar
-                open={true}
-                message={'Søk feilet: ' + JSON.stringify(this.state.error)}
-                autoHideDuration={4000}
-                onRequestClose={this.handleCloseSnackbar}
-              />
-            )}
-            <div
-              style={{
-                backgroundColor: 'transparent',
-                justifyContent: 'flex-end',
-                float: 'bottom',
-                pointerEvents: 'auto',
-                boxShadow:
-                  '0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)',
-              }}
-            >
-              <AktiveKartlag
-                erÅpen={visAktiveLag}
-                koder={this.props.aktiveLag}
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
-                onUpdateLayerProp={onUpdateLayerProp}
-                onRemoveSelectedLayer={onRemoveSelectedLayer}
-              />
-            </div>
-          </React.Fragment>
-        )}
+              >
+                <AktiveKartlag
+                  erÅpen={visAktiveLag}
+                  koder={this.props.aktiveLag}
+                  onMouseEnter={onMouseEnter}
+                  onMouseLeave={onMouseLeave}
+                  onUpdateLayerProp={onUpdateLayerProp}
+                  onRemoveSelectedLayer={onRemoveSelectedLayer}
+                />
+              </div>
+            </React.Fragment>
+          )
+        }}
       />
     )
   }
+
   handleCloseSnackbar = () => this.setState({ error: null })
 }
 

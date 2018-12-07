@@ -156,11 +156,11 @@ class BorreVindu extends Component {
 
   handleClickKunnskap = () => {
     const { lat, lng, history } = this.props
-    history.push(`/punkt/${lng},${lat}`)
+    history.push(`?lng=${lng}&lat=${lat}`)
   }
   handleClickKilder = () => {
     const { lat, lng, history } = this.props
-    history.push(`/punkt/${lng},${lat}/kilde`)
+    history.push(`?lng=${lng}&lat=${lat}&view=kilde`)
   }
 
   handleClickValg = () => {

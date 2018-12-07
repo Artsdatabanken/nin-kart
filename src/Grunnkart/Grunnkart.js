@@ -81,7 +81,7 @@ class Grunnkart extends React.Component<Props, State> {
     const viz = props.viz
     if (!viz) return
     let activeViz = Object.keys(viz)[0]
-    if (viz.indexed) activeViz = 'indexed'
+    if (viz['raster.indexed']) activeViz = 'raster.indexed'
     if (viz.polygon) activeViz = 'polygon'
     const nyttLag = {
       viz: viz,
@@ -190,6 +190,12 @@ class Grunnkart extends React.Component<Props, State> {
     })
     data.nivå = typesystem.hentNivaa(data.kode).slice(0, 1)
     data.prefiks = data.kode.substring(0, 2)
+
+    // HACK
+    if (data.viz) {
+      if (data.viz.vector) data.viz.polygon = data.viz.vector
+      delete data.viz.vector
+    }
     return data
   }
 

@@ -32,6 +32,10 @@ class Flis extends Component {
         </div>
       )
     if (!visKoder) return null
+    if (visKoder !== 42)
+      return (
+        <div style={{ color: 'rgba(0, 0, 0, 0.4)' }}>{kode.substring(3)} </div>
+      )
     return (
       <Chip
         style={{

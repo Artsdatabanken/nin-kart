@@ -28,8 +28,8 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
 }
 
 function opprettEttLag(drawArgs, config) {
-  if (drawArgs.opplystKode && !drawArgs.opplystKode.startsWith(drawArgs.kode))
-    return // Hide this layer while highlighting other layer
+  if (drawArgs.opplystKode && !opplystKodeErBarnAvAktivtLag(drawArgs)) return // Hide this layer while highlighting other layer
+
   const renderer = draw[drawArgs.activeViz]
   const viz = drawArgs.viz[drawArgs.activeViz]
   if (!renderer) {
@@ -44,6 +44,13 @@ function opprettEttLag(drawArgs, config) {
   }
   config.sources[drawArgs.kode] = source
   config.layers[drawArgs.kode] = renderer.drawAll(drawArgs)
+}
+
+function opplystKodeErBarnAvAktivtLag(drawArgs) {
+  return (
+    drawArgs.opplystKode.startsWith(drawArgs.kode) ||
+    (drawArgs.opplystKode.includes('-C-') && drawArgs.kode.includes('-E-'))
+  )
 }
 
 function farge(farge, viserKatalog) {
@@ -117,7 +124,7 @@ function updateScene(config: Object, props: Object) {
     }
     let activeViz = Object.keys(viz)[0]
     if (viz.polygon) activeViz = 'polygon'
-    if (viz.indexed) activeViz = 'indexed'
+    if (viz['raster.indexed']) activeViz = 'raster.indexed'
     const drawArgs = {
       kode: meta.kode,
       barn: harBarn ? meta.barn : { [meta.kode]: meta },
