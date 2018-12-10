@@ -13,7 +13,6 @@ class Kodeliste extends React.Component {
       apidata,
       metadata,
       opplystKode,
-      visKode,
       utenFarge,
       onUpdateMetaProp,
     } = this.props
@@ -56,7 +55,7 @@ class Kodeliste extends React.Component {
                     meta={metabarnet}
                     størsteAreal={størsteAreal}
                     areal={apibarn.areal}
-                    visKode={visKode}
+                    visKode={context.visKoder}
                     onGoToCode={this.onGoToCode}
                     onMouseEnter={this.onMouseEnter}
                     onMouseLeave={this.onMouseLeave}
@@ -92,6 +91,7 @@ Kodeliste.sorterNøkler = (barn, sorterPåKode) => {
       ? 1
       : -1
   })
+  console.log('sort', sortert)
   return sortert
 }
 

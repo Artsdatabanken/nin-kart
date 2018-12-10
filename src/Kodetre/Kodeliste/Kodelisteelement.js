@@ -1,10 +1,5 @@
 // @flow
-import {
-  Avatar,
-  ListItem,
-  ListItemSecondaryAction,
-  ListItemText,
-} from '@material-ui/core'
+import { ListItem, Typography, ListItemText } from '@material-ui/core'
 import React from 'react'
 import språk from '../../språk'
 import Bildeavatar from './Bildeavatar'
@@ -30,6 +25,7 @@ class Kodelisteelement extends React.Component<Props, State> {
   shouldComponentUpdate(np) {
     if (np.areal !== this.props.areal) return true
     if (np.value !== this.props.value) return true
+    if (np.erOpplyst !== this.props.erOpplyst) return true
     return false
   }
 
@@ -44,8 +40,8 @@ class Kodelisteelement extends React.Component<Props, State> {
       onMouseLeave,
       areal,
       størsteAreal,
-      utenFarge,
     } = this.props
+    console.log('kode', kode, meta)
     return (
       <React.Fragment>
         <ListItem
@@ -57,23 +53,19 @@ class Kodelisteelement extends React.Component<Props, State> {
           button={true}
         >
           <VolumIndikator størsteAreal={størsteAreal} areal={areal} />
-          <Bildeavatar kode={kode} />
-          {!utenFarge && (
-            <ListItemSecondaryAction style={{ paddingRight: 8 }}>
-              <Avatar
-                style={{
-                  width: 24,
-                  height: 24,
-                  filter: 'drop-shadow(1px 1px 1px #666)',
-                  backgroundColor: erOpplyst ? '#f00' : meta.farge,
-                }}
-              />
-            </ListItemSecondaryAction>
+          {true && (
+            <Bildeavatar
+              kode={kode}
+              farge={erOpplyst ? '#a00' : meta.farge}
+              size="small"
+            />
           )}
-          <ListItemText
-            primary={språk(meta.tittel)}
-            secondary={visKode && kode.substring(3)}
-          />
+          <ListItemText style={{ width: '50%' }} primary={språk(meta.tittel)} />
+          {visKode && (
+            <Typography variant="caption" noWrap>
+              {kode}
+            </Typography>
+          )}
         </ListItem>
         {/*kode === 'LA-KLG-AI' && (
           <ListItem>
