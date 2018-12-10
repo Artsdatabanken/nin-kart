@@ -4,7 +4,7 @@ import sysconfig from '../../../../config'
 function drawAll(drawArgs) {
   const { kode, barn, farge, opplystKode, visBarn, visEtiketter } = drawArgs
   const layer = {
-    data: { source: kode, layer: 'vector4326' },
+    data: { source: kode, layer: kode },
   }
   if (visBarn) {
     Object.keys(barn).forEach(barnkode => {
@@ -45,6 +45,12 @@ function draw(args) {
           .darken(30)
           .toHexString(),
         width: '1.0px',
+      },
+      po: {
+        size: 500,
+        collide: true,
+        color: farge,
+        //texture: `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2F${kode}.png?alt=media`,
       },
     },
   }
