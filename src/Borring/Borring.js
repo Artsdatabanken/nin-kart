@@ -16,17 +16,17 @@ class Borring extends Component {
             return ['VV', 'AO', 'LA', 'NA', 'RL'].map(kode => {
               const node = barn[kode]
               if (!node) return null
-              if (!node.barn) return null
-              return Object.keys(node.barn).map(subkode => {
-                const kode2 = kode + '_' + subkode
+              if (!node.values) return null
+              return Object.keys(node.values).map(subkode => {
                 return (
                   <Seksjon
-                    key={kode2}
-                    kode={kode2}
-                    kategori={node.tittel}
-                    node={node.barn[subkode]}
+                    key={subkode}
+                    tittel={node.title}
+                    kode={subkode}
+                    kategori={node.title}
+                    node={node.values[subkode]}
                     visKoder={context.visKoder}
-                    onClick={() => this.onClick(kode2)}
+                    onClick={() => this.onClick(subkode)}
                   />
                 )
               })

@@ -5,15 +5,15 @@ import Listeelement from './Listeelement'
 function oppsummer(node) {
   let r = []
   if (!node) return r
-  if (node.barn)
-    Object.keys(node.barn).forEach(kode => {
+  if (node.values)
+    Object.keys(node.values).forEach(kode => {
       let e = []
       let stack = {}
-      oppsummer2(node.barn[kode], stack, e)
+      oppsummer2(node.values[kode], stack, e, kode)
       r.push(...e)
     })
-  else r.push({ verdi: [node.tittel] })
-
+  else r.push({ verdi: [node.title] })
+  console.log(r)
   return r
 }
 
@@ -47,19 +47,21 @@ function hack(kode, nivå, kategori) {
   }
 }
 
-function oppsummer2(node, stack1, r) {
+function oppsummer2(node, stack1, r, pkode) {
+  console.log(node)
   const stack = Object.assign({}, stack1)
   stack.kode = Object.assign([], stack1.kode)
   stack.verdi = Object.assign([], stack1.verdi)
   if (!stack.verdi) stack.verdi = []
   if (!stack.kode) stack.kode = []
-  if (node.tittel) stack.verdi.push(node.tittel)
-  if (node.andel && node.andel !== 10) stack.verdi.push(node.andel * 10 + '%')
-  if (node.kode) stack.kode.push(node.kode)
+  if (node.title) stack.verdi.push(node.title)
+  if (node.fraction && node.fraction !== 10)
+    stack.verdi.push(node.fraction * 10 + '%')
+  stack.kode.push(pkode)
   stack.geom_id = stack.geom_id || node.geom_id
-  if (node.barn) {
-    Object.keys(node.barn).forEach(kode => {
-      oppsummer2(node.barn[kode], stack, r)
+  if (node.values) {
+    Object.keys(node.values).forEach(kode => {
+      oppsummer2(node.values[kode], stack, r, kode)
     })
   } else {
     r.push(stack)
@@ -68,9 +70,10 @@ function oppsummer2(node, stack1, r) {
 
 class Seksjon extends Component {
   render() {
-    const { node, kode, visKoder, kategori, onClick } = this.props
+    const { tittel, node, kode, visKoder, kategori, onClick } = this.props
     const r = oppsummer(node)
     const secondary = r.map(e => this.map(e.verdi))
+
     return (
       <Listeelement
         key={kode}
@@ -84,6 +87,7 @@ class Seksjon extends Component {
   }
 
   map(r) {
+    console.log('¤¤¤¤¤', r)
     const len = r.length
     const value = r[len - 1]
     if (len < 2)
