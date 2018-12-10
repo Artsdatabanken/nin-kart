@@ -27,7 +27,7 @@ const styles = {
 
 class BildeAvatar extends Component {
   render() {
-    const { classes } = this.props
+    const { farge, classes } = this.props
     const size = this.props.size || 'big'
     const kode = this.props.kode.replace('-VV', '') // HACK verneområder under kommune
     const prefiks = kode.substring(0, 2)
@@ -54,11 +54,11 @@ class BildeAvatar extends Component {
           root: classes[size],
         }}
         style={{
-          backgroundColor: farger.mørk[prefiks],
+          backgroundColor: farge || farger.mørk[prefiks],
           filter: 'drop-shadow(1px 1px 1px #666)',
         }}
       >
-        {tekst}
+        {false && tekst}
       </Avatar>
     )
   }

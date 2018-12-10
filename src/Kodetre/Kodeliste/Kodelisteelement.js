@@ -1,8 +1,9 @@
 // @flow
 import {
+  Chip,
   Avatar,
   ListItem,
-  ListItemSecondaryAction,
+  Typography,
   ListItemText,
 } from '@material-ui/core'
 import React from 'react'
@@ -44,7 +45,6 @@ class Kodelisteelement extends React.Component<Props, State> {
       onMouseLeave,
       areal,
       størsteAreal,
-      utenFarge,
     } = this.props
     return (
       <React.Fragment>
@@ -57,23 +57,18 @@ class Kodelisteelement extends React.Component<Props, State> {
           button={true}
         >
           <VolumIndikator størsteAreal={størsteAreal} areal={areal} />
-          <Bildeavatar kode={kode} />
-          {!utenFarge && (
-            <ListItemSecondaryAction style={{ paddingRight: 8 }}>
-              <Avatar
-                style={{
-                  width: 24,
-                  height: 24,
-                  filter: 'drop-shadow(1px 1px 1px #666)',
-                  backgroundColor: erOpplyst ? '#f00' : meta.farge,
-                }}
-              />
-            </ListItemSecondaryAction>
+          {false && <Bildeavatar kode={kode} />}
+          {true && (
+            <div style={{ _paddingRight: 8 }}>
+              <Bildeavatar kode={kode} farge={meta.farge} size="small" />
+            </div>
           )}
-          <ListItemText
-            primary={språk(meta.tittel)}
-            secondary={visKode && kode.substring(3)}
-          />
+          <ListItemText primary={språk(meta.tittel)} />
+          {visKode && (
+            <Typography variant="caption" style={{ xfloat: 'right' }}>
+              {kode}
+            </Typography>
+          )}
         </ListItem>
         {/*kode === 'LA-KLG-AI' && (
           <ListItem>
