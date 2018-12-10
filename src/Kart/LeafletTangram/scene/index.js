@@ -119,7 +119,7 @@ function updateScene(config: Object, props: Object) {
     const harBarn = meta.barn && Object.keys(meta.barn).length > 0
     const viz = meta.viz
     if (!viz) {
-      console.warn('No viz in meta')
+      console.warn('No map data source found.')
       return config
     }
     let activeViz = Object.keys(viz)[0]

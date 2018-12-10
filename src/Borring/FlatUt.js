@@ -9,20 +9,18 @@ function oppsummer(node) {
 function oppsummer2(node, r, nivå) {
   Object.keys(node).forEach(ckey => {
     switch (ckey) {
-      case 'barn':
-        Object.keys(node.barn).forEach(kode => {
-          oppsummer2(node.barn[kode], r, nivå + 1)
+      case 'values':
+        Object.keys(node.values).forEach(kode => {
+          r.kode = kode
+          oppsummer2(node.values[kode], r, nivå + 1)
         })
-        return
-      case 'kode':
-        if (node[ckey].length > (r[ckey] ? r[ckey.length] : 0))
-          r[ckey] = node[ckey]
         return
       default:
         r[ckey + (nivå > 1 ? nivå : '')] = node[ckey]
         return
     }
   })
+  console.log(r)
 }
 
 class FlatUt extends Component {

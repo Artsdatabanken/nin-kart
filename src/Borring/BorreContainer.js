@@ -21,7 +21,7 @@ class BorreContainer extends Component {
     })
     backend.hentPunkt(lng, lat).then(data => {
       this.setState({
-        data: data,
+        data: data['~'].values,
       })
     })
 
