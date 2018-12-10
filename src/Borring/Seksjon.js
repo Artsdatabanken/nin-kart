@@ -68,7 +68,7 @@ function oppsummer2(node, stack1, r, pkode) {
 
 class Seksjon extends Component {
   render() {
-    const { tittel, node, kode, visKoder, kategori, onClick } = this.props
+    const { node, kode, visKoder, kategori, onClick } = this.props
     const r = oppsummer(node)
     const secondary = r.map(e => this.map(e.verdi))
 
@@ -85,7 +85,6 @@ class Seksjon extends Component {
   }
 
   map(r) {
-    console.log('¤¤¤¤¤', r)
     const len = r.length
     const value = r[len - 1]
     if (len < 2)
