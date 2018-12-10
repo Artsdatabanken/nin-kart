@@ -24,7 +24,6 @@ function quantize(value) {
 function lagStyle(viz, drawArgs) {
   const { kode, opplystKode } = drawArgs
   const barn = drawArgs.barn
-  //  console.log(barn)
   let palettKode = kode
   if (opplystKode.startsWith(kode)) {
     palettKode = opplystKode
