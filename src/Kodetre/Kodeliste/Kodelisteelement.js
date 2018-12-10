@@ -45,7 +45,6 @@ class Kodelisteelement extends React.Component<Props, State> {
       areal,
       størsteAreal,
       utenFarge,
-      onChange,
     } = this.props
     return (
       <React.Fragment>
