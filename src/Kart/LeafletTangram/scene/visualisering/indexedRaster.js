@@ -34,7 +34,12 @@ function lagStyle(viz, drawArgs) {
       if (range !== '0-4') palettKode += '-AI' + quantize(ai.value)
     }
   }
-  const newPalette = `https://maps.artsdatabanken.no/indexed/${palettKode}.palette.png`
+  const newPalette1 = `https://maps.artsdatabanken.no/indexed/${palettKode}.palette.png`
+  const newPalette = `https://maps.artsdatabanken.no/${kode.replace(
+    /-/g,
+    '/'
+  )}/${palettKode}.palette.png`
+
   if (this.palette1 !== this.palette2 || !this.palette1)
     this.palette1 = this.palette2 || newPalette
   this.palette2 = newPalette
@@ -79,8 +84,7 @@ function lagStyle(viz, drawArgs) {
 
 function lagSource(kode, bbox, zoom) {
   const source = sysconfig.createTileSource(
-    //    `${kode.replace(/-/g, '/')}/raster.indexed.3857`,
-    `indexed/${kode}`,
+    `${kode.replace(/-/g, '/')}/raster.indexed.3857`,
     'Raster',
     zoom,
     bbox

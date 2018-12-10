@@ -44,6 +44,7 @@ function opprettEttLag(drawArgs, config) {
   }
   config.sources[drawArgs.kode] = source
   config.layers[drawArgs.kode] = renderer.drawAll(drawArgs)
+  console.log(config.sources)
 }
 
 function opplystKodeErBarnAvAktivtLag(drawArgs) {
