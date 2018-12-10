@@ -196,6 +196,12 @@ class Grunnkart extends React.Component<Props, State> {
       if (data.viz.vector) data.viz.polygon = data.viz.vector
       delete data.viz.vector
     }
+    if (data.kode.substring(0, 2) === 'LA') {
+      if (!this.state.aktiveLag.terreng.wasAutoEnabled) {
+        this.handleUpdateLayerProp('terreng', 'erSynlig', true)
+        this.handleUpdateLayerProp('terreng', 'wasAutoEnabled', true)
+      }
+    }
     return data
   }
 
