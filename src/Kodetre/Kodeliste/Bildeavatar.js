@@ -3,7 +3,6 @@ import { Avatar } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 import React, { Component } from 'react'
 import config from '../../config'
-import farger from '../../farger'
 
 const styles = {
   img: {
@@ -54,7 +53,7 @@ class BildeAvatar extends Component {
           root: classes[size],
         }}
         style={{
-          backgroundColor: farge || farger.mørk[prefiks],
+          backgroundColor: farge,
           filter: 'drop-shadow(1px 1px 1px #666)',
         }}
       >

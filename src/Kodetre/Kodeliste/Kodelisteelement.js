@@ -1,11 +1,5 @@
 // @flow
-import {
-  Chip,
-  Avatar,
-  ListItem,
-  Typography,
-  ListItemText,
-} from '@material-ui/core'
+import { ListItem, Typography, ListItemText } from '@material-ui/core'
 import React from 'react'
 import språk from '../../språk'
 import Bildeavatar from './Bildeavatar'
@@ -31,6 +25,7 @@ class Kodelisteelement extends React.Component<Props, State> {
   shouldComponentUpdate(np) {
     if (np.areal !== this.props.areal) return true
     if (np.value !== this.props.value) return true
+    if (np.erOpplyst !== this.props.erOpplyst) return true
     return false
   }
 
@@ -46,6 +41,7 @@ class Kodelisteelement extends React.Component<Props, State> {
       areal,
       størsteAreal,
     } = this.props
+    console.log('kode', kode, meta)
     return (
       <React.Fragment>
         <ListItem
@@ -57,15 +53,16 @@ class Kodelisteelement extends React.Component<Props, State> {
           button={true}
         >
           <VolumIndikator størsteAreal={størsteAreal} areal={areal} />
-          {false && <Bildeavatar kode={kode} />}
           {true && (
-            <div style={{ _paddingRight: 8 }}>
-              <Bildeavatar kode={kode} farge={meta.farge} size="small" />
-            </div>
+            <Bildeavatar
+              kode={kode}
+              farge={erOpplyst ? '#a00' : meta.farge}
+              size="small"
+            />
           )}
-          <ListItemText primary={språk(meta.tittel)} />
+          <ListItemText style={{ width: '50%' }} primary={språk(meta.tittel)} />
           {visKode && (
-            <Typography variant="caption" style={{ xfloat: 'right' }}>
+            <Typography variant="caption" noWrap>
               {kode}
             </Typography>
           )}
