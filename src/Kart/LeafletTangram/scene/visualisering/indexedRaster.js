@@ -34,7 +34,6 @@ function lagStyle(viz, drawArgs) {
       if (range !== '0-4') palettKode += '-AI' + quantize(ai.value)
     }
   }
-  const newPalette1 = `https://maps.artsdatabanken.no/indexed/${palettKode}.palette.png`
   const newPalette = `https://maps.artsdatabanken.no/${kode.replace(
     /-/g,
     '/'
