@@ -20,7 +20,6 @@ function oppsummer2(node, r, nivå) {
         return
     }
   })
-  console.log(r)
 }
 
 class FlatUt extends Component {

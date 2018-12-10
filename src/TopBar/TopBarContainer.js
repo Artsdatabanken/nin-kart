@@ -89,7 +89,6 @@ class TopBarContainer extends Component<Props, State> {
     return (
       <Route
         render={({ match, history }) => {
-          console.log(history)
           const isAtRoot =
             history.location.pathname + history.location.search === '/'
           return (

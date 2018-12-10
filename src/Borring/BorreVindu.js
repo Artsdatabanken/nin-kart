@@ -118,30 +118,35 @@ class BorreVindu extends Component {
     )
   }
 
-  finnKodeHack(barn) {
-    if (!barn.barn) return null
-    for (let key of Object.keys(barn.barn)) {
-      const node = barn.barn[key]
-      const kode = this.finnKodeHack(node)
+  finnKodeHack(barn, subkey, tittel) {
+    barn = barn.values[subkey]
+    if (!barn.values) return null
+    for (let key of Object.keys(barn.values)) {
+      if (key === 'NA-KLG') continue
+      if (key === 'NA-BS') continue
+      if (key === 'NA-LKM') continue
+      if (key.indexOf('-E-') > 0) return
+      const kode = this.finnKodeHack(barn, key, barn.title)
       if (kode) return kode
-      if (node.kode) return { kode: node.kode, tittel: node.tittel }
+      return { kode: key, tittel: barn.title }
     }
   }
 
   finnButikkKode() {
     const { barn } = this.props
     const fallback = { kode: 'NA', tittel: 'Natursystem' }
-    if (!barn.NA) return fallback
-    const r2 = this.finnKodeHack(barn.NA)
-    if (r2) return r2
+    let r = this.finnKodeHack({ values: barn }, 'NA', 'Natursystem')
+    if (r) return r
+    r = this.finnKodeHack({ values: barn }, 'LA', 'Landskap')
+    if (r) return r
     return fallback
   }
 
   finnGeomHack(barn) {
     if (barn.geom_id) return barn.geom_id
-    if (!barn.barn) return null
-    for (let key of Object.keys(barn.barn)) {
-      const node = barn.barn[key]
+    if (!barn.values) return null
+    for (let key of Object.keys(barn.values)) {
+      const node = barn.values[key]
       const geom_id = this.finnGeomHack(node)
       if (geom_id) return geom_id
     }

@@ -24,7 +24,6 @@ const Listeelement = ({
   classes,
 }) => {
   const prefix = kode.substring(0, 2)
-  console.log('prefix', prefix)
   const bgFarge = farger.lysere[prefix]
   const avatar = false
   return (
