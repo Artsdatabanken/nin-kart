@@ -13,7 +13,6 @@ function oppsummer(node) {
       r.push(...e)
     })
   else r.push({ verdi: [node.title] })
-  console.log(r)
   return r
 }
 
@@ -48,7 +47,6 @@ function hack(kode, nivå, kategori) {
 }
 
 function oppsummer2(node, stack1, r, pkode) {
-  console.log(node)
   const stack = Object.assign({}, stack1)
   stack.kode = Object.assign([], stack1.kode)
   stack.verdi = Object.assign([], stack1.verdi)
@@ -70,7 +68,7 @@ function oppsummer2(node, stack1, r, pkode) {
 
 class Seksjon extends Component {
   render() {
-    const { tittel, node, kode, visKoder, kategori, onClick } = this.props
+    const { node, kode, visKoder, kategori, onClick } = this.props
     const r = oppsummer(node)
     const secondary = r.map(e => this.map(e.verdi))
 
@@ -87,7 +85,6 @@ class Seksjon extends Component {
   }
 
   map(r) {
-    console.log('¤¤¤¤¤', r)
     const len = r.length
     const value = r[len - 1]
     if (len < 2)

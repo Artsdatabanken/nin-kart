@@ -47,7 +47,6 @@ class Kodelisteelement extends React.Component<Props, State> {
       utenFarge,
       onChange,
     } = this.props
-    if (!onChange) console.log('-')
     return (
       <React.Fragment>
         <ListItem
