@@ -10,6 +10,7 @@ import Dialog from '@material-ui/core/Dialog'
 import React from 'react'
 import config from '../../config'
 import backend from '../../backend'
+import * as Sentry from '@sentry/browser'
 
 export default class BildeDialog extends React.Component {
   state = { credit: {} }
@@ -60,8 +61,9 @@ export default class BildeDialog extends React.Component {
                 src={config.getFotoOmslag(kode)}
                 srcSet={srcSet}
                 onError={e => {
-                  const brokenImage = config.getFotoOmslag('~')
-                  if (e.target.src !== brokenImage) e.target.src = brokenImage
+                  Sentry.captureException(e)
+                  //                  const brokenImage = config.getFotoOmslag('~')
+                  //                  if (e.target.src !== brokenImage) e.target.src = brokenImage
                 }}
                 alt=""
                 style={{

@@ -3,6 +3,7 @@ import { Avatar } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 import React, { Component } from 'react'
 import config from '../../config'
+import * as Sentry from '@sentry/browser'
 
 const styles = {
   img: {
@@ -42,8 +43,9 @@ class BildeAvatar extends Component {
           }}
           src={config.avatar40px(kode, 'png')}
           onError={e => {
-            const brokenAvatar = config.avatar40px('~')
-            if (e.target.src !== brokenAvatar) e.target.src = brokenAvatar
+            Sentry.captureException(e)
+            //            const brokenAvatar = config.avatar40px('~')
+            //            if (e.target.src !== brokenAvatar) e.target.src = brokenAvatar
           }}
         />
       )

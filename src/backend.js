@@ -66,12 +66,6 @@ class Backend {
     )
   }
 
-  static async getMetadataByNatureAreaLocalId(localId: string) {
-    return this.getPromise(
-      `https://test.artsdatabanken.no/data/json/ninMetadata/${localId.toUpperCase()}.json`
-    )
-  }
-
   static async getImageAttribution(kode: string) {
     return {
       license: {

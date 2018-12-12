@@ -3,6 +3,7 @@ import { Avatar, Chip } from '@material-ui/core'
 import React, { Component } from 'react'
 import config from '../../config'
 import farger from '../../farger'
+import * as Sentry from '@sentry/browser'
 
 class Flis extends Component {
   render() {
@@ -25,8 +26,9 @@ class Flis extends Component {
               animation: 'fadein 3s ease',
             }}
             onError={e => {
-              const brokenAvatar = config.avatar40px('~', 'png')
-              if (e.target.src !== brokenAvatar) e.target.src = brokenAvatar
+              Sentry.captureException(e)
+              //              const brokenAvatar = config.avatar40px('~', 'png')
+              //              if (e.target.src !== brokenAvatar) e.target.src = brokenAvatar
             }}
           />
         </div>
