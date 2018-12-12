@@ -78,11 +78,11 @@ const Forsidemeny = ({ classes, visForside, onVis, onAktiver, onClick }) => {
                 <Seksjon tittel="Bokmerker">
                   <ListItem
                     button
-                    onClick={() => onAktiver(['NA_I', 'MI_KA-B'])}
+                    onClick={() => onAktiver(['NA-I', 'NA-MI-KA-B'])}
                   >
                     <ListItemText
                       primary="Snø og is i temmelig kalkfattige områder"
-                      secondary="NA_I, MI_KA-B"
+                      secondary="NA-I, MI-KA-B"
                     />
                   </ListItem>
                 </Seksjon>
@@ -96,12 +96,12 @@ const Forsidemeny = ({ classes, visForside, onVis, onAktiver, onClick }) => {
                       gridGap: '10px',
                     }}
                   >
-                    <Boble kode="OR_MD" tittel="Miljødirektoratet" />
-                    <Boble kode="OR_GU" tittel="NGU" />
-                    <Boble kode="OR_NI" tittel="NINA" />
-                    <Boble kode="OR_SB" tittel="SSB" />
-                    <Boble kode="OR_KV" tittel="Kartverket" />
-                    <Boble kode="OR_AD" tittel="Artsdatabanken" />
+                    <Boble kode="OR-MD" tittel="Miljødirektoratet" />
+                    <Boble kode="OR-GU" tittel="NGU" />
+                    <Boble kode="OR-NI" tittel="NINA" />
+                    <Boble kode="OR-SB" tittel="SSB" />
+                    <Boble kode="OR-KV" tittel="Kartverket" />
+                    <Boble kode="OR-AD" tittel="Artsdatabanken" />
                   </div>
                 </Seksjon>
               </Papir>

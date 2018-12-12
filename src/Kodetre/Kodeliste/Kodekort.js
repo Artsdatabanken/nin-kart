@@ -12,6 +12,7 @@ import config from '../../config'
 import farger from '../../farger'
 import språk from '../../språk'
 import Tittelblokk from './Tittelblokk'
+import * as Sentry from '@sentry/browser'
 
 const styles = {
   pos: {
@@ -128,8 +129,9 @@ class Kodekort extends React.Component {
   handleClickAktiveLag = () => this.props.history.push('/')
   handleFitBounds = () => this.props.onFitBounds(this.props.bbox)
   handleBrokenImage = e => {
-    const brokenImage = config.getFotoOmslag('~')
-    if (e.target.src !== brokenImage) e.target.src = brokenImage
+    Sentry.captureException(e)
+    //    const brokenImage = config.getFotoOmslag('~')
+    //    if (e.target.src !== brokenImage) e.target.src = brokenImage
   }
 }
 
