@@ -35,9 +35,7 @@ class Backend {
   }
 
   static async søkKode(q: string) {
-    return this.getPromise(
-      `https://test.artsdatabanken.no/ogapi/v2/Koder?q=${q}`
-    )
+    return this.getPromise(`https://ogapi.artsdatabanken.no/v2/Koder?q=${q}`)
   }
 
   static async hentStatistikk(kode: String, bounds: Object) {
@@ -45,7 +43,7 @@ class Backend {
     var ur = wgs84ToUtm33(bounds._northEast.lng, bounds._northEast.lat)
     let bbox = `&bbox=${ll.x},${ll.y},${ur.x},${ur.y}`
 
-    const url = `https://test.artsdatabanken.no/ogapi/v1/StatKodetre?node=${kode}${bbox}`
+    const url = `https://ogapi.artsdatabanken.no/v1/StatKodetre?node=${kode}${bbox}`
     return this.getPromise(url)
   }
 
