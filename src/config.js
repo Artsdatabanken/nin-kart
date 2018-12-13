@@ -45,7 +45,7 @@ class config {
   static metaUrl(kode: string) {
     kode = kode.replace('/katalog/', '').toUpperCase()
     if (kode.length <= 1) kode = '~'
-    return `https://maps.artsdatabanken.no/metabase.sqlite/meta/${kode}.json`
+    return `https://maps.artsdatabanken.no/metabase.sqlite/meta/${kode}`
   }
 }
 
