@@ -15,28 +15,26 @@ class AktiveKartlag extends React.Component {
     return (
       <SettingsContext.Consumer>
         {context => (
-          <React.Fragment>
-            <Collapse in={erÅpen} collapsedHeight="40px">
-              <AktiveKartlagKnapp
-                erÅpen={erÅpen}
-                antallLag={keys.length - 2}
-                onClick={context.onToggleAktiveLag}
-              />
-              <List
-                style={{
-                  pointerEvents: 'auto',
-                  backgroundColor: 'white',
-                  boxShadow:
-                    '0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)',
-                }}
-              >
-                {keys.map(fkode => {
-                  const forelder = koder[fkode]
-                  return listeElement(forelder, this.props, context.visKoder)
-                })}
-              </List>
-            </Collapse>
-          </React.Fragment>
+          <Collapse in={erÅpen} collapsedHeight="42px">
+            <AktiveKartlagKnapp
+              erÅpen={erÅpen}
+              antallLag={keys.length - 2}
+              onClick={context.onToggleAktiveLag}
+            />
+            <List
+              style={{
+                pointerEvents: 'auto',
+                backgroundColor: 'white',
+                boxShadow:
+                  '0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)',
+              }}
+            >
+              {keys.map(fkode => {
+                const forelder = koder[fkode]
+                return listeElement(forelder, this.props, context.visKoder)
+              })}
+            </List>
+          </Collapse>
         )}
       </SettingsContext.Consumer>
     )

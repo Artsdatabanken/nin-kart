@@ -11,9 +11,3 @@ body {
   height: 100%;
   z-index: 0;
 }
-
-.zzzzxleaflet-bottom {
-  position: absolute;
-  z-index: 0; /* was 1000 */
-  pointer-events: none;
-}
