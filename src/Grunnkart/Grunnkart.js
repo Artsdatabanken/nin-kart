@@ -31,7 +31,6 @@ const styles = {
     backgroundColor: '#f5f5f5',
     color: 'hsla(0, 0%, 0%, 0.87)',
     boxShadow: '0 0 20px rgba(0, 0, 0, 0.3)',
-    flexDirection: 'column',
     _padding: 0,
     position: 'fixed',
     left: 0,
