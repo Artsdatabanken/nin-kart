@@ -120,7 +120,7 @@ class BorreVindu extends Component {
 
   finnKodeHack(barn, subkey, tittel) {
     barn = barn.values[subkey]
-    if (!barn.values) return null
+    if (!barn || !barn.values) return null
     for (let key of Object.keys(barn.values)) {
       if (key === 'NA-KLG') continue
       if (key === 'NA-BS') continue
