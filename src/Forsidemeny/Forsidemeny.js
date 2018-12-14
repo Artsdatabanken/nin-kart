@@ -64,7 +64,7 @@ const Forsidemeny = ({ classes, visForside, onVis, onAktiver, onClick }) => {
           >
             <React.Fragment>
               <Ekspanderlinje
-                tekst="Datakatalog"
+                tekst="Katalog"
                 erÅpen={visForside}
                 onSkjul={onVis}
               />
