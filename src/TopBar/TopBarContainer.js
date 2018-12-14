@@ -111,9 +111,7 @@ class TopBarContainer extends Component<Props, State> {
               />
               <div
                 style={{
-                  width: 392,
-                  marginLeft: 8,
-                  marginRight: 8,
+                  width: 408,
                   paddingBottom: 0,
                   ...style,
                 }}
@@ -121,19 +119,23 @@ class TopBarContainer extends Component<Props, State> {
                 {(isAtRoot || focused) && (
                   <div
                     style={{
-                      width: 392,
+                      width: 408,
                       marginTop: 55,
                       marginBottom: isAtRoot ? 8 : 0,
                       position: isAtRoot ? 'relative' : 'fixed',
                       zIndex: 10,
                     }}
                   >
-                    <Divider inset={false} />
-                    <ResultatListe
-                      query={this.state.query}
-                      searchResults={this.state.searchResults}
-                      onClick={this.handleClickSearchResult}
-                    />
+                    {this.state.searchResults && (
+                      <div style={{ marginLeft: 8, marginRight: 8 }}>
+                        <Divider />
+                        <ResultatListe
+                          query={this.state.query}
+                          searchResults={this.state.searchResults}
+                          onClick={this.handleClickSearchResult}
+                        />
+                      </div>
+                    )}
                     {this.props.children}
                   </div>
                 )}

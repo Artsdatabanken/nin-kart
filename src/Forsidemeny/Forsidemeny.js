@@ -43,47 +43,50 @@ const Papir = ({ children }) => (
   </Paper>
 )
 
-const styles = {}
+const styles = {
+  container: {
+    paddingLeft: 8,
+    paddingTop: 2,
+  },
+}
 
 const Forsidemeny = ({ classes, visForside, onVis, onAktiver, onClick }) => {
   return (
     <React.Fragment>
-      <Panel transparent={!visForside}>
+      <Panel>
         <TopBarContainer removeResultsOnBlur={!visForside}>
-          <Collapse in={visForside} collapsedHeight="46px">
+          <Collapse
+            in={visForside}
+            collapsedHeight="52px"
+            classes={{
+              container: classes.container,
+            }}
+          >
             <React.Fragment>
               <Ekspanderlinje
-                tekst="Datakatalog"
+                tekst="Katalog"
                 erÅpen={visForside}
                 onSkjul={onVis}
               />
-              <Papir>
-                <Seksjon tittexl="Datakatalog">
-                  <div
-                    style={{
-                      display: 'grid',
-                      gridTemplateColumns: 'repeat(3, 1fr)',
-                      gridGap: '6px',
-                    }}
-                  >
-                    <Boble kode="LA" tittel="Landskap" />
-                    <Boble kode="NA" tittel="Natursystem" />
-                    <Boble kode="VV" tittel="Naturvern- område" />
-                    <Boble kode="RL" tittel="Truet natur" />
-                    <Boble kode="AO" tittel="Administativt område" />
-                  </div>
-                </Seksjon>
-              </Papir>
+              <Seksjon>
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(3, 1fr)',
+                    gridGap: '6px',
+                  }}
+                >
+                  <Boble kode="LA" tittel="Landskap" />
+                  <Boble kode="NA" tittel="Natursystem" />
+                  <Boble kode="VV" tittel="Naturvern- område" />
+                  <Boble kode="RL" tittel="Truet natur" />
+                  <Boble kode="AO" tittel="Administativt område" />
+                </div>
+              </Seksjon>
               <Papir>
                 <Seksjon tittel="Bokmerker">
-                  <ListItem
-                    button
-                    onClick={() => onAktiver(['NA-I', 'NA-MI-KA-B'])}
-                  >
-                    <ListItemText
-                      primary="Snø og is i temmelig kalkfattige områder"
-                      secondary="NA-I, MI-KA-B"
-                    />
+                  <ListItem button onClick={() => onAktiver(['LA-KLG'])}>
+                    <ListItemText primary="Landskapskart" secondary="LA-KLG" />
                   </ListItem>
                 </Seksjon>
               </Papir>

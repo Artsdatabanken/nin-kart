@@ -56,7 +56,7 @@ class AktiveKartlagKnapp extends React.Component<Props> {
   render() {
     const { onClick, erÅpen, antallLag, classes } = this.props
     return (
-      <Paper className={classes.rot} onMouseDown={onClick} square={true}>
+      <Paper className={classes.rot} onMouseDown={onClick} square={erÅpen}>
         <ExpandMore
           color="inherit"
           className={classNames(

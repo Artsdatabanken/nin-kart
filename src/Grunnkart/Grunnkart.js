@@ -2,6 +2,8 @@
 import typesystem from '@artsdatabanken/typesystem'
 import React from 'react'
 import { withRouter } from 'react-router'
+import { withStyles } from '@material-ui/core'
+import classNames from 'classnames'
 import backend from '../backend'
 import Kart from '../Kart'
 import { SettingsContext } from '../SettingsContext'
@@ -23,6 +25,33 @@ type Props = {
   location: Object,
   history: Object,
 }
+
+const styles = {
+  rot: {
+    backgroundColor: '#f5f5f5',
+    color: 'hsla(0, 0%, 0%, 0.87)',
+    boxShadow: '0 0 20px rgba(0, 0, 0, 0.3)',
+    _padding: 0,
+    position: 'fixed',
+    left: 0,
+    border: 1,
+    width: 408,
+    height: '100vh',
+    zIndex: -10,
+    _overflow: 'hidden',
+    pointerEvents: 'auto',
+    display: 'flex',
+    flexDirection: 'column',
+    _overflowX: 'hidden',
+  },
+  transparent: {
+    backgroundColor: 'transparent',
+    boxShadow: 'none',
+    pointerEvents: 'none',
+  },
+  padTop: { paddingTop: 55 },
+}
+
 class Grunnkart extends React.Component<Props, State> {
   constructor(props) {
     super(props)
@@ -70,7 +99,7 @@ class Grunnkart extends React.Component<Props, State> {
       aktiveLag: JSON.parse(JSON.stringify(standardlag)),
     })
     koder.forEach(kode => {
-      this.fetchMeta2('/katalog/' + this.kodeTilRelativUrl(kode)).then(data => {
+      this.fetchMeta2('/katalog/' + kode).then(data => {
         this.addSelected(data)
       })
     })
@@ -244,23 +273,21 @@ class Grunnkart extends React.Component<Props, State> {
     let erAktivert = false
     if (this.state.meta)
       erAktivert = !!this.state.aktiveLag[this.state.meta.kode]
+    const { classes, history } = this.props
     return (
       <SettingsContext.Consumer>
         {context => {
+          const transparent =
+            !context.visForside &&
+            (!history.location.search && history.location.pathname === '/')
+          console.log(history)
           return (
             <React.Fragment>
               <div
-                style={{
-                  position: 'fixed',
-                  pointerEvents: 'none',
-                  left: 0,
-                  width: 408,
-                  border: 1,
-                  display: 'flex',
-                  height: '100vh',
-                  flexDirection: 'column',
-                  overflowX: 'hidden',
-                }}
+                className={classNames(
+                  classes.rot,
+                  transparent && classes.transparent
+                )}
               >
                 <VenstreVinduContainer
                   aktiveLag={this.state.aktiveLag}
@@ -309,4 +336,4 @@ class Grunnkart extends React.Component<Props, State> {
   }
 }
 
-export default withRouter(Grunnkart)
+export default withStyles(styles)(withRouter(Grunnkart))
