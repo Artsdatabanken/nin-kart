@@ -5,8 +5,8 @@ class BorreAdapter extends Component {
   hackInnSted(sted, data) {
     if (!sted) return data
     if (!data) return data
+    data.AO = data.AO || {}
     let ao = data.AO
-    if (!ao) return
     ao.sted = sted.placename
     ao.elevasjon = sted.elevation
     return data
@@ -14,7 +14,6 @@ class BorreAdapter extends Component {
 
   render() {
     const { data, sted, lat, lng, view } = this.props
-    if (!lat) return null
     const borrehull = this.hackInnSted(sted, data)
     return <BorreVindu lat={lat} lng={lng} view={view} barn={borrehull} />
   }

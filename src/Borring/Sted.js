@@ -36,7 +36,7 @@ const Sted = props => {
         {formatElevation(elevasjon)}
       </Typography>
       <div style={{ position: 'absolute', left: 334, bottom: 40 }}>
-        <Kommunevapen kode={kode} />
+        {kode && <Kommunevapen kode={kode} />}
       </div>
       <Typography
         style={{

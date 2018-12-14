@@ -12,7 +12,6 @@ import config from '../../config'
 import farger from '../../farger'
 import språk from '../../språk'
 import Tittelblokk from './Tittelblokk'
-import * as Sentry from '@sentry/browser'
 
 const styles = {
   pos: {
@@ -80,7 +79,6 @@ class Kodekort extends React.Component {
           style={this.styles(kode.substring(0, 2))}
           onClick={this.handleOpen}
           image={config.getFotoOmslag(kode, 408, this.filtype(prefiks))}
-          onError={this.handleBrokenImage}
           alt={'foto av' + tittel}
         />
         <Tittelblokk
@@ -128,11 +126,6 @@ class Kodekort extends React.Component {
 
   handleClickAktiveLag = () => this.props.history.push('/')
   handleFitBounds = () => this.props.onFitBounds(this.props.bbox)
-  handleBrokenImage = e => {
-    Sentry.captureException(e)
-    //    const brokenImage = config.getFotoOmslag('~')
-    //    if (e.target.src !== brokenImage) e.target.src = brokenImage
-  }
 }
 
 export default withRouter(withStyles(styles)(Kodekort))

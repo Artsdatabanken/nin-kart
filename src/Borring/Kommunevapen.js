@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import config from '../config'
-import * as Sentry from '@sentry/browser'
 
 class Kommunevapen extends Component {
   render() {
@@ -18,11 +17,6 @@ class Kommunevapen extends Component {
           width: 56,
           filter: 'drop-shadow(3px 3px 2px #444)',
           animation: 'fadein 3s ease',
-        }}
-        onError={e => {
-          Sentry.captureException(e)
-          //          const brokenAvatar = config.avatar40px('~', 'png')
-          //          if (e.target.src !== brokenAvatar) e.target.src = brokenAvatar
         }}
       />
     )
