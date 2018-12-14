@@ -15,23 +15,25 @@ function drawAll(drawArgs) {
   return layer
 }
 
+/*
 function quantize(value) {
   return (
     Math.trunc(value[0] / 25 + 0.25) + '-' + Math.trunc(value[1] / 25 + 0.25)
   )
-}
+}*/
 
 function lagStyle(viz, drawArgs) {
   const { kode, opplystKode } = drawArgs
-  const barn = drawArgs.barn
+  //const barn = drawArgs.barn
   let palettKode = kode
   if (opplystKode.startsWith(kode)) {
     palettKode = opplystKode
-    const ai = barn['LA-KLG-AI']
-    if (ai) {
+    //const ai = barn['LA-KLG-AI']
+    /*    if (ai) {
       const range = quantize(ai.value)
       if (range !== '0-4') palettKode += '-AI' + quantize(ai.value)
     }
+*/
   }
   const newPalette = `https://maps.artsdatabanken.no/${kode.replace(
     /-/g,
@@ -87,6 +89,7 @@ function lagSource(kode, bbox, zoom) {
     zoom,
     bbox
   )
+  source.tile_size = 192
   return source
 }
 
