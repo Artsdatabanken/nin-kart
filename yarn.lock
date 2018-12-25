@@ -3,8 +3,9 @@
 
 
 "@artsdatabanken/typesystem@^7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@artsdatabanken/typesystem/-/typesystem-7.0.0.tgz#5d802028db8fd475dab15ad975281ca98cf88766"
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/@artsdatabanken/typesystem/-/typesystem-7.0.1.tgz#c4fb96b5dff605de1cf27095671460ac4adc6952"
+  integrity sha512-WMITqiTSMWJpaykdi7QMKZPdX8tPeY2sILM0R7eLb8UatP/fmmknMR2paz3w9ojotIXPUYSoOpNW2MlBPmEGzw==
 
 "@babel/code-frame@7.0.0", "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.0.0-beta.35":
   version "7.0.0"
