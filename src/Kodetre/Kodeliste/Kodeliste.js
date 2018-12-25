@@ -91,7 +91,6 @@ Kodeliste.sorterNøkler = (barn, sorterPåKode) => {
       ? 1
       : -1
   })
-  console.log('sort', sortert)
   return sortert
 }
 
