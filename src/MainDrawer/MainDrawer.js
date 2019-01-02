@@ -111,10 +111,10 @@ class MainDrawer extends Component {
               <ListItemText primary="Levere data" />
             </ListItem>
             <Divider />
-            <ListSubheader>Hostes av</ListSubheader>
-            <ListItem onClick={this.handleClickLogo}>
+            <ListSubheader>Driftes av</ListSubheader>
+            <ListItem onClick={this.handleClickLogo} button>
               <div className={classes.link}>
-                <BildeAvatar kode="OR_AD" size="small" />
+                <BildeAvatar kode="OR-AD" size="small" />
               </div>
               <ListItemText primary="Artsdatabanken" />
             </ListItem>
