@@ -30,13 +30,17 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
 function opprettEttLag(drawArgs, config) {
   if (drawArgs.opplystKode && !opplystKodeErBarnAvAktivtLag(drawArgs)) return; // Hide this layer while highlighting other layer
 
-  const renderer = draw[drawArgs.activeViz];
-  const viz = drawArgs.viz[drawArgs.activeViz];
+  const renderer = draw[drawArgs.aktivtKartformat];
+  const kartformat = drawArgs.kartformat[drawArgs.aktivtKartformat];
   if (!renderer) {
-    console.warn("Unknown viz", drawArgs.activeViz);
+    console.warn("Unknown kartformat", drawArgs.aktivtKartformat);
     return;
   }
-  const source = renderer.lagSource(drawArgs.kode, drawArgs.bbox, viz.zoom);
+  const source = renderer.lagSource(
+    drawArgs.kode,
+    drawArgs.bbox,
+    kartformat.zoom
+  );
 
   if (renderer.lagStyle) {
     const style = renderer.lagStyle(renderer, drawArgs);
@@ -70,8 +74,8 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
     visEtiketter: lag.visEtiketter,
     opplystKode: opplystKode,
     bbox: lag.bbox,
-    activeViz: lag.activeViz,
-    viz: lag.viz,
+    aktivtKartformat: lag.aktivtKartformat,
+    kartformat: lag.kartformat,
     visBarn: lag.visBarn
   };
   if (lag.visBarn) {
@@ -117,22 +121,22 @@ function updateScene(config: Object, props: Object) {
   const viserKatalog = !!meta;
   if (viserKatalog) {
     const harBarn = meta.barn && Object.keys(meta.barn).length > 0;
-    const viz = meta.viz;
-    if (!viz) {
+    const kartformat = meta.kartformat;
+    if (!kartformat) {
       console.warn("No map data source found.");
       return config;
     }
-    let activeViz = Object.keys(viz)[0];
-    if (viz.polygon) activeViz = "polygon";
-    if (viz["raster.indexed"]) activeViz = "raster.indexed";
-    if (viz["raster.gradient"]) activeViz = "raster.gradient";
+    let aktivtKartformat = Object.keys(kartformat)[0];
+    if (kartformat.polygon) aktivtKartformat = "polygon";
+    if (kartformat["raster.indexed"]) aktivtKartformat = "raster.indexed";
+    if (kartformat["raster.gradient"]) aktivtKartformat = "raster.gradient";
     const drawArgs = {
       kode: meta.kode,
       barn: harBarn ? meta.barn : { [meta.kode]: meta },
       opplystKode: props.opplystKode,
       bbox: meta.bbox,
-      activeViz: activeViz,
-      viz: viz,
+      aktivtKartformat: aktivtKartformat,
+      kartformat: kartformat,
       visBarn: true,
       filterMin: 0.0,
       filterMax: 1.0
