@@ -1,41 +1,39 @@
-//import { createColorTexture } from '../../../ramp'
-
 const styles = {
   po: {
-    base: 'points',
-    texture: '/marker.png',
+    base: "points",
+    texture: "/marker.png"
   },
   boundary: {
-    base: 'lines',
+    base: "lines",
     order: 150,
-    blend: 'overlay',
+    blend: "overlay"
   },
   mu_polygons: {
-    base: 'polygons',
-    blend: 'multiply',
+    base: "polygons",
+    blend: "multiply"
   },
   mu_lines: {
-    base: 'lines',
-    blend: 'multiply',
+    base: "lines",
+    blend: "multiply"
   },
   road_names: {
-    base: 'text',
+    base: "text",
     draw: {
       font: {
-        family: 'Roboto',
-        size: '12px',
-        fill: 'black',
+        family: "Roboto",
+        size: "12px",
+        fill: "black",
         stroke: {
-          color: 'white',
-          width: '1px',
-        },
-      },
-    },
-  },
-}
+          color: "white",
+          width: "1px"
+        }
+      }
+    }
+  }
+};
 
 function createStyles() {
-  return styles
+  return styles;
 }
 
-export { createStyles }
+export { createStyles };
