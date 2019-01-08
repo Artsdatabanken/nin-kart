@@ -25,13 +25,11 @@ function getSecondary(meta) {
   let { intervall } = meta;
   if (!intervall) return;
   if (!Array.isArray(intervall)) intervall = [intervall];
-  console.log(intervall);
   const items = intervall.map(i => {
     if (!i.minTekst) return "< " + i.maxTekst;
     if (!i.maxTekst) return "> " + i.minTekst;
     return `${i.minTekst} - ${i.maxTekst}`;
   });
-  console.log(items);
   const r = items.join(", ") + " " + intervall[0].måleenhet;
   return r;
 }
