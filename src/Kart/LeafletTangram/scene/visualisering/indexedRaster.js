@@ -1,4 +1,4 @@
-import sysconfig from '../../../../config'
+import sysconfig from "../../../../config";
 
 function drawAll(drawArgs) {
   const layer = {
@@ -7,12 +7,12 @@ function drawAll(drawArgs) {
       data: { source: drawArgs.forelderkode },
       draw: {
         raster: {
-          order: 700,
-        },
-      },
-    },
-  }
-  return layer
+          order: 700
+        }
+      }
+    }
+  };
+  return layer;
 }
 
 /*
@@ -22,12 +22,12 @@ function quantize(value) {
   )
 }*/
 
-function lagStyle(viz, drawArgs) {
-  const { kode, opplystKode } = drawArgs
+function lagStyle(kartformat, drawArgs) {
+  const { kode, opplystKode } = drawArgs;
   //const barn = drawArgs.barn
-  let palettKode = kode
+  let palettKode = kode;
   if (opplystKode.startsWith(kode)) {
-    palettKode = opplystKode
+    palettKode = opplystKode;
     //const ai = barn['LA-KLG-AI']
     /*    if (ai) {
       const range = quantize(ai.value)
@@ -37,20 +37,20 @@ function lagStyle(viz, drawArgs) {
   }
   const newPalette = `https://maps.artsdatabanken.no/${kode.replace(
     /-/g,
-    '/'
-  )}/${palettKode}.palette.png`
+    "/"
+  )}/${palettKode}.palette.png`;
 
   if (this.palette1 !== this.palette2 || !this.palette1)
-    this.palette1 = this.palette2 || newPalette
-  this.palette2 = newPalette
+    this.palette1 = this.palette2 || newPalette;
+  this.palette2 = newPalette;
   const gradient = {
-    base: 'raster',
-    blend: 'multiply',
+    base: "raster",
+    blend: "multiply",
     animated: true,
     shaders: {
       uniforms: {
         palette1: this.palette1,
-        palette2: this.palette2,
+        palette2: this.palette2
       },
       blocks: {
         global: `
@@ -75,22 +75,22 @@ function lagStyle(viz, drawArgs) {
         vec4 fill = mix(fill1, fill2, clamp(u_time*2.5,0.,1.));
         float step = clamp((u_map_position.z-8.)*0.08,0.,1.);
         color = mix(fill, border,diff*step);
-          `,
-      },
-    },
-  }
-  return { name: 'raster', value: gradient }
+          `
+      }
+    }
+  };
+  return { name: "raster", value: gradient };
 }
 
 function lagSource(kode, bbox, zoom) {
   const source = sysconfig.createTileSource(
-    `${kode.replace(/-/g, '/')}/raster.indexed.3857`,
-    'Raster',
+    `${kode.replace(/-/g, "/")}/raster.indexed.3857`,
+    "Raster",
     zoom,
     bbox
-  )
-  source.tile_size = 192
-  return source
+  );
+  source.tile_size = 192;
+  return source;
 }
 
-export default { drawAll, lagSource, lagStyle }
+export default { drawAll, lagSource, lagStyle };

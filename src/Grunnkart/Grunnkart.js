@@ -107,14 +107,14 @@ class Grunnkart extends React.Component<Props, State> {
 
   addSelected = props => {
     let aktive = this.state.aktiveLag;
-    const viz = props.viz;
-    if (!viz) return;
-    let activeViz = Object.keys(viz)[0];
-    if (viz["raster.indexed"]) activeViz = "raster.indexed";
-    if (viz.polygon) activeViz = "polygon";
+    const kartformat = props.kartformat;
+    if (!kartformat) return;
+    let aktivtKartformat = Object.keys(kartformat)[0];
+    if (kartformat["raster.indexed"]) aktivtKartformat = "raster.indexed";
+    if (kartformat.polygon) aktivtKartformat = "polygon";
     const nyttLag = {
-      viz: viz,
-      activeViz: activeViz,
+      kartformat: kartformat,
+      aktivtKartformat: aktivtKartformat,
       farge: props.farge,
       kode: props.kode,
       tittel: språk(props.tittel),
@@ -124,7 +124,7 @@ class Grunnkart extends React.Component<Props, State> {
       erSynlig: true,
       kanSlettes: true
     };
-    if (viz.gradient) {
+    if (kartformat.gradient) {
       nyttLag.gradient = { filterMin: 0, filterMax: 1.0 };
     }
     aktive[nyttLag.kode] = nyttLag;
@@ -221,9 +221,10 @@ class Grunnkart extends React.Component<Props, State> {
     data.prefiks = data.kode.substring(0, 2);
 
     // HACK
-    if (data.viz) {
-      if (data.viz.vector) data.viz.polygon = data.viz.vector;
-      delete data.viz.vector;
+    if (data.kartformat) {
+      if (data.kartformat.vector)
+        data.kartformat.polygon = data.kartformat.vector;
+      delete data.kartformat.vector;
     }
     if (data.kode.substring(0, 2) === "LA") {
       if (!this.state.aktiveLag.terreng.wasAutoEnabled) {

@@ -17,7 +17,7 @@ function drawAll(drawArgs) {
   return layer;
 }
 
-function lagStyle(viz, drawArgs) {
+function lagStyle(kartformat, drawArgs) {
   const { filterMin, filterMax, opplystKode, barn } = drawArgs;
   const steps = Object.keys(barn)
     .map(key => {
