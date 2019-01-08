@@ -63,16 +63,16 @@ function lagStyle(viz, drawArgs) {
       blocks: {
         color: `
           vec4 value = sampleRaster(0);
-          float v = sampleRaster(0).b;
+          float v = sampleRaster(0).r;
           float x = step(min,v);
           float y=(1.-step(max,v));
           color = texture2D(palette, vec2(x*y*v-0.002, 0.5));
           vec4 transparent = vec4(1.,1.,1.,1.);
+  //        color = vec4(v,0,0,1.0);
           color = mix(transparent, color, value.a);
 //          color = texture2D(palette, vec2(255./256.+.5 / 256., 0.));
 //          vec2 pos = gl_FragCoord.xy;
 //          color = texture2D(palette, vec2(pos.x*0.0005,0.5));
-
 `
       }
     }
@@ -81,7 +81,7 @@ function lagStyle(viz, drawArgs) {
 }
 
 function lagSource(kode, bbox, zoom) {
-  kode = "RL-DD";
+  //  kode = "RL-DD"
   const source = sysconfig.createTileSource(
     `${kode.replace(/-/g, "/")}/raster.gradient.3857`,
     "Raster",

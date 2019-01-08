@@ -47,11 +47,6 @@
   "bugs": {
     "url": "https://github.com/Artsdatabanken/ratatouille/issues"
   },
-  "prettier": {
-    "semi": false,
-    "trailingComma": "es5",
-    "singleQuote": true
-  },
   "eslintConfig": {
     "extends": "react-app"
   },
