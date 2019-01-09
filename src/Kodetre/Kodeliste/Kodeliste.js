@@ -1,8 +1,8 @@
-import { List, ListSubheader } from '@material-ui/core'
-import React from 'react'
-import { SettingsContext } from '../../SettingsContext'
-import språk from '../../språk'
-import Kodelisteelement from './Kodelisteelement'
+import { List, ListSubheader } from "@material-ui/core";
+import React from "react";
+import { SettingsContext } from "../../SettingsContext";
+import språk from "../../språk";
+import Kodelisteelement from "./Kodelisteelement";
 
 class Kodeliste extends React.Component {
   render() {
@@ -14,11 +14,11 @@ class Kodeliste extends React.Component {
       metadata,
       opplystKode,
       utenFarge,
-      onUpdateMetaProp,
-    } = this.props
+      onUpdateMetaProp
+    } = this.props;
 
-    if (!metadata) return null
-    if (Object.keys(metadata) <= 0) return null
+    if (!metadata) return null;
+    if (Object.keys(metadata) <= 0) return null;
     return (
       <SettingsContext.Consumer>
         {context => (
@@ -27,9 +27,9 @@ class Kodeliste extends React.Component {
             {subtitle && (
               <div
                 style={{
-                  padding: '0px 5px 0px 16px',
-                  fontSize: '14px',
-                  color: 'rgba(95, 95, 95, 0.54)',
+                  padding: "0px 5px 0px 16px",
+                  fontSize: "14px",
+                  color: "rgba(95, 95, 95, 0.54)"
                 }}
               >
                 {subtitle}
@@ -41,13 +41,13 @@ class Kodeliste extends React.Component {
                   ? apidata[
                       apidata
                         .map(apiItem => {
-                          return apiItem.kode
+                          return apiItem.kode;
                         })
                         .indexOf(kode.toLowerCase())
                     ] || {}
-                  : {}
-                const metabarnet = metadata[kode]
-                if (metabarnet.skjul) return null
+                  : {};
+                const metabarnet = metadata[kode];
+                if (metabarnet.skjul) return null;
                 return (
                   <Kodelisteelement
                     key={kode}
@@ -59,39 +59,39 @@ class Kodeliste extends React.Component {
                     onGoToCode={this.onGoToCode}
                     onMouseEnter={this.onMouseEnter}
                     onMouseLeave={this.onMouseLeave}
-                    erOpplyst={opplystKode === kode}
+                    opplystKode={opplystKode}
                     utenFarge={utenFarge}
                     value={metabarnet.value}
-                    onChange={v => onUpdateMetaProp(kode, 'value', [...v])}
+                    onChange={v => onUpdateMetaProp(kode, "value", [...v])}
                   />
-                )
+                );
               }
             )}
           </List>
         )}
       </SettingsContext.Consumer>
-    )
+    );
   }
-  onGoToCode = kode => this.props.onGoToCode(kode)
+  onGoToCode = kode => this.props.onGoToCode(kode);
   onMouseEnter = kode =>
-    this.props.onMouseEnter && this.props.onMouseEnter(kode)
-  onMouseLeave = () => this.props.onMouseLeave && this.props.onMouseLeave()
+    this.props.onMouseEnter && this.props.onMouseEnter(kode);
+  onMouseLeave = () => this.props.onMouseLeave && this.props.onMouseLeave();
 }
 
 const nøkkel = (node, sorterPåKode) => {
-  if (node.sortering) return node.sortering
-  if (sorterPåKode) return node.sti.split(/\//).map(e => e.padStart(5, '0'))
+  if (node.sortering) return node.sortering;
+  if (sorterPåKode) return node.sti.split(/\//).map(e => e.padStart(5, "0"));
 
-  return språk(node.tittel)
-}
+  return språk(node.tittel);
+};
 
 Kodeliste.sorterNøkler = (barn, sorterPåKode) => {
   const sortert = Object.keys(barn).sort((a, b) => {
     return nøkkel(barn[a], sorterPåKode) >= nøkkel(barn[b], sorterPåKode)
       ? 1
-      : -1
-  })
-  return sortert
-}
+      : -1;
+  });
+  return sortert;
+};
 
-export default Kodeliste
+export default Kodeliste;

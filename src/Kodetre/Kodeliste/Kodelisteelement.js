@@ -4,6 +4,7 @@ import React from "react";
 import språk from "../../språk";
 import Bildeavatar from "./Bildeavatar";
 import VolumIndikator from "./VolumIndikator";
+import opplyst from "../../Kart/LeafletTangram/scene/visualisering/palette/opplyst";
 //import Arealbruksintensitet from './Filter/Arealbruksintensitet'
 type State = {};
 
@@ -17,7 +18,7 @@ type Props = {
   onMouseEnter: Function,
   onChange: Function,
   onGoToCode: Function,
-  erOpplyst: Boolean,
+  opplystKode: string,
   utenFarge: Boolean
 };
 
@@ -38,7 +39,7 @@ class Kodelisteelement extends React.Component<Props, State> {
   shouldComponentUpdate(np) {
     if (np.areal !== this.props.areal) return true;
     if (np.value !== this.props.value) return true;
-    if (np.erOpplyst !== this.props.erOpplyst) return true;
+    if (np.opplystKode !== this.props.opplystKode) return true;
     return false;
   }
 
@@ -46,7 +47,7 @@ class Kodelisteelement extends React.Component<Props, State> {
     const {
       meta,
       kode,
-      erOpplyst,
+      opplystKode,
       visKode,
       onGoToCode,
       onMouseEnter,
@@ -68,7 +69,7 @@ class Kodelisteelement extends React.Component<Props, State> {
           {true && (
             <Bildeavatar
               kode={kode}
-              farge={erOpplyst ? "#a00" : meta.farge}
+              farge={opplyst(kode, opplystKode, meta.farge)}
               size="small"
             />
           )}
