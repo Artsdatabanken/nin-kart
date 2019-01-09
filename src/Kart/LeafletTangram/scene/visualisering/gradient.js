@@ -47,9 +47,6 @@ function lagStyle(kartformat, drawArgs) {
     }
   }
 
-  cmap[255] = "#ff0000";
-  cmap[254] = "#00ff00";
-  cmap[253] = "#0000ff";
   const palette = createPalette(cmap);
   const gradient = {
     base: "raster",
