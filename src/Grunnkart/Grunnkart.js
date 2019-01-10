@@ -215,7 +215,6 @@ class Grunnkart extends React.Component<Props, State> {
     Object.keys(data.barn).forEach(kode => {
       const barn = data.barn[kode];
       barn.sti = this.kodeTilRelativUrl(kode);
-      barn.value = [0, 100];
     });
     data.nivå = typesystem.hentNivaa(data.kode).slice(0, 1);
     data.prefiks = data.kode.substring(0, 2);

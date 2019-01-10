@@ -17,36 +17,48 @@ function drawAll(drawArgs) {
   return layer;
 }
 
-function lagStyle(kartformat, drawArgs) {
-  const { filterMin, filterMax, opplystKode, barn } = drawArgs;
-  const steps = Object.keys(barn)
-    .map(key => {
-      const b = barn[key];
-      const rgba = new tinycolor(b.gradientColor).toRgb();
-      const level = rgba.r;
-      return { level: level, color: b.farge };
-    })
-    .sort((a, b) => a.level < b.level);
+function lagPalett(barna, opplystKode, mode) {
+  let opplystLevel = -1;
+  let steps = [];
+  Object.keys(barna).forEach(key => {
+    const b = barna[key];
+    let levels = b.normalisertVerdi;
+    if (!Array.isArray(levels)) levels = [levels];
+    if (key === opplystKode) opplystLevel = levels;
+    levels.forEach(level => steps.push({ level: level, color: b.farge }));
+  });
+
+  steps = steps.sort((a, b) => a.level - b.level);
+  if (mode === "kontinuerlig") {
+    for (let i = steps.length - 3; i > 0; i -= 2) {
+      steps[i].level = 0.5 * (steps[i].level + steps[i + 1].level);
+      steps.splice(i + 1, 1);
+    }
+  }
+
   const cmap = [];
   for (let i = 0; i < steps.length - 1; i++) {
     const a = steps[i];
     const b = steps[i + 1];
     for (let ci = a.level; ci <= b.level; ci++) {
       const weight = (100 * (ci - a.level)) / (b.level - a.level);
-      const tc = tinycolor.mix(a.color, b.color, weight);
+      let tc = tinycolor.mix(a.color, b.color, weight);
+      if (opplystLevel !== -1) {
+        if (opplystLevel.length < 2)
+          opplystLevel = [opplystLevel[0] - 5, opplystLevel[0] + 5];
+        if (ci < opplystLevel[0] || ci > opplystLevel[1])
+          tc = tc.desaturate(80);
+      }
       cmap[ci] = tc.toHexString();
     }
   }
-  if (opplystKode) {
-    const rgba = new tinycolor(barn[opplystKode].gradientColor).toRgb();
-    const opplystLevel = rgba.r;
-    for (let i = 0; i <= 255; i++) {
-      const dist = Math.abs(opplystLevel - i);
-      const farge = tinycolor(cmap[i]);
-      cmap[i] = farge.desaturate(Math.min(80, 2 * dist)).toHexString();
-    }
-  }
+  return cmap;
+}
 
+function lagStyle(kartformat, drawArgs) {
+  const { filterMin, filterMax, opplystKode, barn } = drawArgs;
+
+  const cmap = lagPalett(barn, opplystKode, 1 > 0 ? "diskret" : "kontinuerlig");
   const palette = createPalette(cmap);
   const gradient = {
     base: "raster",
@@ -65,7 +77,7 @@ function lagStyle(kartformat, drawArgs) {
           float y=(1.-step(max,v));
           color = texture2D(palette, vec2(x*y*v-0.002, 0.5));
           vec4 transparent = vec4(1.,1.,1.,1.);
-  //        color = vec4(v,0,0,1.0);
+//          color = vec4(v,0,0,1.0);
           color = mix(transparent, color, value.a);
 //          color = texture2D(palette, vec2(255./256.+.5 / 256., 0.));
 //          vec2 pos = gl_FragCoord.xy;
