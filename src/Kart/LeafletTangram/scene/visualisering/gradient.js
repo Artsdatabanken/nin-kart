@@ -25,11 +25,9 @@ function lagPalett(barna, opplystKode, mode) {
     let levels = b.normalisertVerdi;
     if (!Array.isArray(levels)) levels = [levels];
     if (key === opplystKode) opplystLevel = levels;
-    console.log(key, levels, b.farge);
     levels.forEach(level => steps.push({ level: level, color: b.farge }));
   });
 
-  console.log(steps);
   steps = steps.sort((a, b) => a.level - b.level);
   if (mode === "kontinuerlig") {
     for (let i = steps.length - 3; i > 0; i -= 2) {
@@ -37,8 +35,6 @@ function lagPalett(barna, opplystKode, mode) {
       steps.splice(i + 1, 1);
     }
   }
-
-  console.log(steps);
 
   const cmap = [];
   for (let i = 0; i < steps.length - 1; i++) {
@@ -62,7 +58,6 @@ function lagPalett(barna, opplystKode, mode) {
 function lagStyle(kartformat, drawArgs) {
   const { filterMin, filterMax, opplystKode, barn } = drawArgs;
 
-  console.log("kf", drawArgs.kartformat["raster.gradient"].visning);
   const cmap = lagPalett(barn, opplystKode, 1 > 0 ? "diskret" : "kontinuerlig");
   const palette = createPalette(cmap);
   const gradient = {
