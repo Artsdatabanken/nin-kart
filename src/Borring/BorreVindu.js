@@ -1,4 +1,4 @@
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles } from "@material-ui/core/styles";
 import {
   Card,
   FormControlLabel,
@@ -9,39 +9,39 @@ import {
   Switch,
   Button,
   CardMedia,
-  withTheme,
-} from '@material-ui/core'
-import React, { Component } from 'react'
-import { withRouter } from 'react-router'
-import Borring from './Borring'
-import FlatUt from './FlatUt'
-import Sted from './Sted'
-import Kilde from '../Kilde'
-import config from '../config'
+  withTheme
+} from "@material-ui/core";
+import React, { Component } from "react";
+import { withRouter } from "react-router";
+import Borring from "./Borring";
+import FlatUt from "./FlatUt";
+import Sted from "./Sted";
+import Kilde from "../Kilde";
+import config from "../config";
 
 const styles = {
   card: {
     maxWidth: 408,
-    minHeight: '100%',
-    backgroundColor: '#eee',
+    minHeight: "100%",
+    backgroundColor: "#eee"
   },
   media: {
     width: 408,
     height: 280,
-    objectFit: 'cover',
+    objectFit: "cover"
   },
-  bareAktive: { position: 'absolute', right: 0 },
-}
+  bareAktive: { position: "absolute", right: 0 }
+};
 
 class BorreVindu extends Component {
-  state = { bareAktive: false }
+  state = { bareAktive: false };
   render() {
-    const { lat, lng, barn, view, classes } = this.props
-    if (!barn) return null
-    const { AO, geom_id, prefix, ...andreBarn } = barn
-    const color = 'rgba(240,240,240,1.0)'
-    const bgColor = 'hsla(0, 0%, 30%, 0.65)'
-    const dominant = this.finnButikkKode()
+    const { lat, lng, barn, view, classes } = this.props;
+    if (!barn) return null;
+    const { AO, prefix, ...andreBarn } = barn;
+    const color = "rgba(240,240,240,1.0)";
+    const bgColor = "hsla(0, 0%, 30%, 0.65)";
+    const dominant = this.finnButikkKode();
     return (
       <Card square={true} className={classes.card}>
         <CardMedia
@@ -51,7 +51,7 @@ class BorreVindu extends Component {
         >
           <div
             style={{
-              position: 'relative',
+              position: "relative",
               top: 191,
               left: 0,
               height: 74,
@@ -60,7 +60,7 @@ class BorreVindu extends Component {
               paddingTop: 8,
               paddingBottom: 8,
               paddingLeft: 16,
-              paddingRight: 16,
+              paddingRight: 16
             }}
           >
             {AO && (
@@ -73,7 +73,7 @@ class BorreVindu extends Component {
             </Typography>
           </div>
         </CardMedia>
-        <CardActionArea style={{ backgroundColor: '#ccc' }} />
+        <CardActionArea style={{ backgroundColor: "#ccc" }} />
         <CardActions>
           {view ? (
             <Button
@@ -100,7 +100,7 @@ class BorreVindu extends Component {
               <Switch
                 checked={this.state.bareAktive}
                 onClick={() => {
-                  this.setState({ bareAktive: !this.state.bareAktive })
+                  this.setState({ bareAktive: !this.state.bareAktive });
                 }}
               />
             }
@@ -115,63 +115,63 @@ class BorreVindu extends Component {
           )}
         </CardContent>
       </Card>
-    )
+    );
   }
 
   finnKodeHack(barn, subkey, tittel) {
-    barn = barn.values[subkey]
-    if (!barn || !barn.values) return null
+    barn = barn.values[subkey];
+    if (!barn || !barn.values) return null;
     for (let key of Object.keys(barn.values)) {
-      if (key === 'NA-KLG') continue
-      if (key === 'NA-BS') continue
-      if (key === 'NA-LKM') continue
-      if (key.indexOf('-E-') > 0) return
-      const kode = this.finnKodeHack(barn, key, barn.title)
-      if (kode) return kode
-      return { kode: key, tittel: barn.title }
+      if (key === "NA-KLG") continue;
+      if (key === "NA-BS") continue;
+      if (key === "NA-LKM") continue;
+      if (key.indexOf("-E-") > 0) return;
+      const kode = this.finnKodeHack(barn, key, barn.title);
+      if (kode) return kode;
+      return { kode: key, tittel: barn.title };
     }
   }
 
   finnButikkKode() {
-    const { barn } = this.props
-    const fallback = { kode: 'NA', tittel: 'Natursystem' }
-    let r = this.finnKodeHack({ values: barn }, 'NA', 'Natursystem')
-    if (r) return r
-    r = this.finnKodeHack({ values: barn }, 'LA', 'Landskap')
-    if (r) return r
-    return fallback
+    const { barn } = this.props;
+    const fallback = { kode: "NA", tittel: "Natursystem" };
+    let r = this.finnKodeHack({ values: barn }, "NA", "Natursystem");
+    if (r) return r;
+    r = this.finnKodeHack({ values: barn }, "LA", "Landskap");
+    if (r) return r;
+    return fallback;
   }
 
   finnGeomHack(barn) {
-    if (barn.geom_id) return barn.geom_id
-    if (!barn.values) return null
+    if (barn.id) return barn.id;
+    if (!barn.values) return null;
     for (let key of Object.keys(barn.values)) {
-      const node = barn.values[key]
-      const geom_id = this.finnGeomHack(node)
-      if (geom_id) return geom_id
+      const node = barn.values[key];
+      const id = this.finnGeomHack(node);
+      if (id) return id;
     }
   }
 
   finnGeomId() {
-    const { barn } = this.props
-    if (!barn) return
-    if (!barn.NA) return
-    return this.finnGeomHack(barn.NA)
+    const { barn } = this.props;
+    if (!barn) return;
+    if (!barn.NA) return;
+    return this.finnGeomHack(barn.NA);
   }
 
   handleClickKunnskap = () => {
-    const { lat, lng, history } = this.props
-    history.push(`?lng=${lng}&lat=${lat}`)
-  }
+    const { lat, lng, history } = this.props;
+    history.push(`?lng=${lng}&lat=${lat}`);
+  };
   handleClickKilder = () => {
-    const { lat, lng, history } = this.props
-    history.push(`?lng=${lng}&lat=${lat}&view=kilde`)
-  }
+    const { lat, lng, history } = this.props;
+    history.push(`?lng=${lng}&lat=${lat}&view=kilde`);
+  };
 
   handleClickValg = () => {
-    const { history } = this.props
-    history.push('/punkt/valg')
-  }
+    const { history } = this.props;
+    history.push("/punkt/valg");
+  };
 }
 
-export default withRouter(withTheme()(withStyles(styles)(BorreVindu)))
+export default withRouter(withTheme()(withStyles(styles)(BorreVindu)));

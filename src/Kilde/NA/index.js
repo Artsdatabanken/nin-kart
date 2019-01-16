@@ -1,28 +1,28 @@
-import { Component, default as React } from 'react'
-import { withRouter } from 'react-router'
-import backend from '../../backend'
-import NA from './NA'
+import { Component, default as React } from "react";
+import { withRouter } from "react-router";
+import backend from "../../backend";
+import NA from "./NA";
 
 class NAContainer extends Component {
-  state = {}
+  state = {};
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.geom_id !== this.props.geom_id) this.fetch()
+    if (prevProps.geom_id !== this.props.geom_id) this.fetch();
   }
 
   componentDidMount() {
-    this.fetch()
+    this.fetch();
   }
 
   fetch() {
-    if (!this.props.geom_id) return
-    backend.getMetadataByNatureAreaLocalId(this.props.geom_id).then(data => {
+    if (!this.props.geom_id) return;
+    backend.hentKildedata(this.props.geom_id).then(data => {
       this.setState({
-        data: data,
-      })
-    })
+        data: data
+      });
+    });
   }
-  handleClick = kode => this.props.history.push(`/katalog/${kode}`)
+  handleClick = kode => this.props.history.push(`/katalog/${kode}`);
 
   render() {
     return (
@@ -31,8 +31,8 @@ class NAContainer extends Component {
         geom_id={this.props.geom_id}
         onClick={this.handleClick}
       />
-    )
+    );
   }
 }
 
-export default withRouter(NAContainer)
+export default withRouter(NAContainer);
