@@ -47,7 +47,8 @@ function lagPalett(barna, opplystKode, mode) {
         if (opplystLevel.length < 2)
           opplystLevel = [opplystLevel[0] - 5, opplystLevel[0] + 5];
         if (ci < opplystLevel[0] || ci > opplystLevel[1])
-          tc = tc.desaturate(80);
+          tc = tc.lighten(20).desaturate(40);
+        else tc = tc.darken(30); //.saturate(40);
       }
       cmap[ci] = tc.toHexString();
     }
