@@ -17,7 +17,7 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
   if (!lag.erSynlig && opplystKode !== lag.kode) return;
   switch (lag.type) {
     case "bakgrunn":
-      lagBakgrunnskart(lag, config);
+      lagBakgrunnskart(lag, opplystKode, config);
       break;
     case "terreng":
       lagTerreng(lag.terreng, opplystKode, config);
@@ -37,7 +37,7 @@ function opprettEttLag(drawArgs, config) {
     return;
   }
   const source = renderer.lagSource(
-    drawArgs.url,
+    kartformat.url,
     drawArgs.bbox,
     kartformat.zoom
   );

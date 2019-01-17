@@ -1,9 +1,9 @@
-const storageUrl = "https://maps.artsdatabanken.no/";
-
 class config {
   static feature = {
     comboSøk: false
   };
+
+  static storageUrl = "https://maps.artsdatabanken.no/";
 
   static createTileSource(relativePath, type, zoom, bbox) {
     const source = {
@@ -31,19 +31,19 @@ class config {
     width: number = 408,
     filtype: string = "jpg"
   ) {
-    return `${storageUrl}${url}/forside_${width}.${filtype}`;
+    return `${config.storageUrl}${url}/forside_${width}.${filtype}`;
   }
 
   static getFotoBanner(url: string, width: number = 408) {
-    return `${storageUrl}${url}/banner_${width}.jpg`;
+    return `${config.storageUrl}${url}/banner_${width}.jpg`;
   }
 
   static avatar40px(url: string, ext = "jpg") {
-    return `${storageUrl}${url}/avatar_40.${ext}`;
+    return `${config.storageUrl}${url}/avatar_40.${ext}`;
   }
 
   static metaUrl(url: string) {
-    return `${storageUrl}${url}/metadata.json`;
+    return `${config.storageUrl}${url}/metadata.json`;
   }
 
   static hackUrl(url) {

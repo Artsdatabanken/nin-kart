@@ -23,6 +23,7 @@ class KodeVindu extends React.Component {
     if (!meta) return null;
     const {
       kode,
+      url,
       prefiks,
       bbox,
       ingress,
@@ -45,6 +46,7 @@ class KodeVindu extends React.Component {
       >
         <Kodekort
           kode={kode}
+          url={url}
           prefiks={prefiks}
           bbox={bbox}
           tittel={tittel}

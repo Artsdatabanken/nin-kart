@@ -23,7 +23,6 @@ class Boble extends React.Component {
   state = { hover: false };
   render() {
     const { kode, url, tittel, classes, history } = this.props;
-    console.log(this.props);
     const fullUrl = `Natur_i_Norge/Datakilde/${config.hackUrl(url || tittel)}`;
     return (
       <div
