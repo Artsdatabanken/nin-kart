@@ -1,54 +1,45 @@
+import config from "../../../../config";
+
 function drawAll({ kode, barn, opplystKode, bbox, zoom, sourceType }) {
   const layer = {
-    data: { source: kode },
-  }
-  Object.keys(barn).forEach(barnkode => {
-    const visEtiketter = barnkode === opplystKode
+    data: { source: kode }
+  };
+  barn.forEach(barnet => {
+    const { kode: barnkode, farge, url } = barnet;
     layer[barnkode] = draw({
       kode: barnkode,
+      url: url,
       forelderkode: kode,
-      farge: barn[barnkode].farge,
-      opplystKode: opplystKode,
-      visEtiketter: visEtiketter,
-    })
-  })
-  return layer
+      farge: farge,
+      opplystKode: opplystKode
+    });
+  });
+  return layer;
 }
 
 function draw(args) {
-  let { kode, forelderkode, opplystKode, visEtiketter } = args
-  const size = opplystKode === kode ? '75%' : '50%'
+  let { kode, url, forelderkode, opplystKode } = args;
+  const size = opplystKode ? (opplystKode === kode ? "75%" : "0%") : "50%";
   const layer = {
-    data: { source: 'OR' },
+    data: { source: kode },
     draw: {
-      po: {
+      points: {
         size: size,
         collide: false,
-        texture: `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2F${kode}.png?alt=media`,
-      },
-    },
-  }
-  if (kode !== forelderkode) layer.filter = { kode: kode }
-  if (visEtiketter) {
-    layer.draw.text = {
-      text_source: ['name', 'title'],
-      font: {
-        family: 'Roboto',
-        fill: 'hsla(0, 0%, 100%, 1.0)',
-        stroke: { color: 'hsla(0, 0%, 0%, 0.7)', width: 2 },
-        size: '13px',
-      },
+        texture: `${config.storageUrl}${url}/avatar_40.png`
+      }
     }
-  }
-  return layer
+  };
+  if (kode !== forelderkode) layer.filter = { kode: kode };
+  return layer;
 }
 
-function lagSource(kode, bbox, zoom) {
+function lagSource(url, bbox, zoom) {
   const source = {
-    type: 'GeoJSON',
-    url: `https://nintest.artsdatabanken.no/point/${kode}.geojson`,
-  }
-  return source
+    type: "GeoJSON",
+    url: url
+  };
+  return source;
 }
 
-export default { drawAll, lagSource }
+export default { drawAll, lagSource };

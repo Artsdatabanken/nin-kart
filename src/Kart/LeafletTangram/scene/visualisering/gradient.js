@@ -85,7 +85,6 @@ function lagStyle(kartformat, drawArgs) {
       }
     }
   };
-  console.log(gradient);
   return { name: "gradient", value: gradient };
 }
 
