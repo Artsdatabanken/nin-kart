@@ -9,7 +9,7 @@ class config {
     const source = {
       filtering: "nearest",
       type: type,
-      url: `https://{s}.artsdatabanken.no/${relativePath}.mbtiles/{z}/{x}/{y}`,
+      url: `${relativePath}/{z}/{x}/{y}`,
       url_subdomains: ["maps"]
     };
     if (!bbox || !zoom) {

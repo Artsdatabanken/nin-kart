@@ -75,7 +75,7 @@ function draw(args) {
 }
 
 function lagSource(url, bbox, zoom) {
-  return sysconfig.createTileSource(`${url}/polygon.3857`, "MVT", zoom, bbox);
+  return sysconfig.createTileSource(url, "MVT", zoom, bbox);
 }
 
 export default { drawAll, lagSource };

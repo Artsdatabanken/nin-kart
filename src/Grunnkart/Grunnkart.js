@@ -95,8 +95,8 @@ class Grunnkart extends React.Component {
     const kartformat = props.kartformat;
     if (!kartformat) return;
     let aktivtKartformat = Object.keys(kartformat)[0];
-    if (kartformat["raster.indexed"]) aktivtKartformat = "raster.indexed";
     if (kartformat.polygon) aktivtKartformat = "polygon";
+    if (kartformat["raster.indexed"]) aktivtKartformat = "raster.indexed";
     const nyttLag = {
       kartformat: kartformat,
       url: props.url,
