@@ -20,8 +20,8 @@ function drawAll(drawArgs) {
 function lagPalett(barna, opplystKode, mode) {
   let opplystLevel = -1;
   let steps = [];
-  Object.keys(barna).forEach(key => {
-    const b = barna[key];
+  barna.forEach(b => {
+    const key = b.kode;
     let levels = b.normalisertVerdi;
     if (!Array.isArray(levels)) levels = [levels];
     if (key === opplystKode) opplystLevel = levels;
@@ -35,7 +35,6 @@ function lagPalett(barna, opplystKode, mode) {
       steps.splice(i + 1, 1);
     }
   }
-
   const cmap = [];
   for (let i = 0; i < steps.length - 1; i++) {
     const a = steps[i];
@@ -47,7 +46,8 @@ function lagPalett(barna, opplystKode, mode) {
         if (opplystLevel.length < 2)
           opplystLevel = [opplystLevel[0] - 5, opplystLevel[0] + 5];
         if (ci < opplystLevel[0] || ci > opplystLevel[1])
-          tc = tc.desaturate(80);
+          tc = tc.lighten(10).desaturate(40);
+        else tc = tc.darken(30); //.saturate(40);
       }
       cmap[ci] = tc.toHexString();
     }
@@ -57,7 +57,6 @@ function lagPalett(barna, opplystKode, mode) {
 
 function lagStyle(kartformat, drawArgs) {
   const { filterMin, filterMax, opplystKode, barn } = drawArgs;
-
   const cmap = lagPalett(barn, opplystKode, 1 > 0 ? "diskret" : "kontinuerlig");
   const palette = createPalette(cmap);
   const gradient = {
@@ -86,13 +85,13 @@ function lagStyle(kartformat, drawArgs) {
       }
     }
   };
+  console.log(gradient);
   return { name: "gradient", value: gradient };
 }
 
-function lagSource(kode, bbox, zoom) {
-  //  kode = "RL-DD"
+function lagSource(url, bbox, zoom) {
   const source = sysconfig.createTileSource(
-    `${kode.replace(/-/g, "/")}/raster.gradient.3857`,
+    `${url}/raster.gradient.3857`,
     "Raster",
     zoom,
     bbox

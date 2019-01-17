@@ -1,43 +1,27 @@
-//@flow
-import { Avatar, Chip, withStyles } from '@material-ui/core'
-import { withTheme } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
-import React from 'react'
-import farger from '../../farger'
-import Tagger from './Tagger'
-import PropTypes from 'prop-types'
-
-type Props = {
-  tittel: String,
-  onToggleLayer: Function,
-  onGoToCode: PropTypes.func.isRequired,
-  erAktivert: Boolean,
-  overordnet: Object,
-  kode: String,
-  prefiks: String,
-  nivå: String,
-  classes: Object,
-  theme: Object,
-  children: Object,
-}
+import { Avatar, Chip, withStyles } from "@material-ui/core";
+import { withTheme } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+import React from "react";
+import farger from "../../farger";
+import Tagger from "./Tagger";
 
 const styles = {
   block: {
-    padding: '16px 24px 20px',
+    padding: "16px 24px 20px"
   },
   h1: {
-    color: '#eee',
+    color: "#eee",
     marginTop: 0,
     marginBottom: 0,
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    width: '100%',
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    width: "100%"
   },
   nivå: {
-    color: '#eee',
-    textTransform: 'capitalize',
-  },
-}
+    color: "#eee",
+    textTransform: "capitalize"
+  }
+};
 
 const Tittelblokk = ({
   onToggleLayer,
@@ -47,22 +31,22 @@ const Tittelblokk = ({
   prefiks,
   nivå,
   overordnet,
-  onGoToCode,
+  onNavigate,
   classes,
   theme,
-  children,
-}: Props) => {
+  children
+}) => {
   return (
     <div
       className={classes.block}
-      style={{ backgroundColor: farger.mørk[prefiks] || 'hsl(16, 0%, 50%)' }}
+      style={{ backgroundColor: farger.mørk[prefiks] || "hsl(16, 0%, 50%)" }}
     >
       {false && (
         <div
-          style={{ position: 'relative', top: -72, right: -10, float: 'right' }}
+          style={{ position: "relative", top: -72, right: -10, float: "right" }}
         >
           <Chip
-            label={kode.slice(3) + ' ' + tittel}
+            label={kode.slice(3) + " " + tittel}
             clickable={true}
             avatar={<Avatar>{kode.slice(0, 2)}</Avatar>}
           />
@@ -73,10 +57,10 @@ const Tittelblokk = ({
         {tittel}
       </Typography>
       <Typography className={classes.nivå}>{nivå}</Typography>
-      <Tagger overordnet={overordnet} onGoToCode={onGoToCode} />
+      <Tagger overordnet={overordnet} onNavigate={onNavigate} />
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default withStyles(styles)(withTheme()(Tittelblokk))
+export default withStyles(styles)(withTheme()(Tittelblokk));

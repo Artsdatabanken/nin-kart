@@ -37,7 +37,7 @@ function opprettEttLag(drawArgs, config) {
     return;
   }
   const source = renderer.lagSource(
-    drawArgs.kode,
+    drawArgs.url,
     drawArgs.bbox,
     kartformat.zoom
   );
@@ -70,6 +70,7 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
   let drawArgs = {
     forelderkode: lag.kode,
     kode: lag.kode,
+    url: lag.url,
     farge: farge(lag.farge, viserKatalog),
     visEtiketter: lag.visEtiketter,
     opplystKode: opplystKode,
@@ -120,7 +121,6 @@ function updateScene(config: Object, props: Object) {
   const meta = props.meta;
   const viserKatalog = !!meta;
   if (viserKatalog) {
-    const harBarn = meta.barn && Object.keys(meta.barn).length > 0;
     const kartformat = meta.kartformat;
     if (!kartformat) {
       console.warn("No map data source found.");
@@ -132,7 +132,8 @@ function updateScene(config: Object, props: Object) {
     if (kartformat["raster.gradient"]) aktivtKartformat = "raster.gradient";
     const drawArgs = {
       kode: meta.kode,
-      barn: harBarn ? meta.barn : { [meta.kode]: meta },
+      url: meta.url,
+      barn: meta.barn && meta.barn.length > 0 ? meta.barn : [meta],
       opplystKode: props.opplystKode,
       bbox: meta.bbox,
       aktivtKartformat: aktivtKartformat,

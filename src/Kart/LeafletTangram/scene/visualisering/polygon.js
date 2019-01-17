@@ -8,8 +8,8 @@ function drawAll(drawArgs) {
     data: { source: kode, layer: kode }
   };
   if (visBarn) {
-    Object.keys(barn).forEach(barnkode => {
-      const dac = barn[barnkode];
+    barn.forEach(dac => {
+      const barnkode = dac.kode;
       if (Object.hasOwnProperty("erSynlig") && !dac.erSynlig) return;
       const visEtiketter = barnkode === opplystKode;
       layer[barnkode] = draw({
@@ -74,13 +74,9 @@ function draw(args) {
   return layer;
 }
 
-function lagSource(kode, bbox, zoom) {
-  return sysconfig.createTileSource(
-    `${kode.replace(/-/g, "/")}/vector.3857`,
-    "MVT",
-    zoom,
-    bbox
-  );
+function lagSource(url, bbox, zoom) {
+  console.log(url, bbox, zoom);
+  return sysconfig.createTileSource(`${url}/polygon.3857`, "MVT", zoom, bbox);
 }
 
 export default { drawAll, lagSource };

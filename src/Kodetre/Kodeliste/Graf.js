@@ -1,81 +1,82 @@
-import React, { Component } from 'react'
-import Kodeliste from './Kodeliste'
+import React, { Component } from "react";
+import Kodeliste from "./Kodeliste";
 
 const titler = {
   mengdeart: {
-    title: 'Mengdearter',
+    title: "Mengdearter",
     subtitle:
-      'Art med gjennomsnittlig dekning eller biomasseandel større enn 1/8 i et utvalg av enkeltobservasjonsenheter.',
+      "Art med gjennomsnittlig dekning eller biomasseandel større enn 1/8 i et utvalg av enkeltobservasjonsenheter."
   },
   dominerende_mengdeart: {
-    title: 'Dominerende mengdearter',
+    title: "Dominerende mengdearter",
     subtitle:
-      'Art med gjennomsnittlig dekning eller biomasseandel større enn 1/4 i et utvalg av enkeltobservasjonsenheter.',
+      "Art med gjennomsnittlig dekning eller biomasseandel større enn 1/4 i et utvalg av enkeltobservasjonsenheter."
   },
   vanlig_art: {
-    title: 'Vanlige arter',
+    title: "Vanlige arter",
     subtitle:
-      'Art med frekvens større enn 1/8 i et utvalg enkeltobservasjonsenheter. For at en art skal være «vanlig», må den tilfredsstille dette kravet om frekvens > 1/8 i hele naturtypens utbredelsesområde, ikke bare innenfor artens utbredelsesområde.',
+      "Art med frekvens større enn 1/8 i et utvalg enkeltobservasjonsenheter. For at en art skal være «vanlig», må den tilfredsstille dette kravet om frekvens > 1/8 i hele naturtypens utbredelsesområde, ikke bare innenfor artens utbredelsesområde."
   },
   konstant_art: {
-    title: 'Konstante arter',
+    title: "Konstante arter",
     subtitle:
-      'Art med frekvens større enn 4/5 i et utvalg enkeltobservasjonsenheter. Dette er den klassiske definisjonen av «konstant»  som er brukt i vegetasjonsøkologi',
+      "Art med frekvens større enn 4/5 i et utvalg enkeltobservasjonsenheter. Dette er den klassiske definisjonen av «konstant»  som er brukt i vegetasjonsøkologi"
   },
   tyngdepunktart: {
-    title: 'Tyngdepunktarter',
+    title: "Tyngdepunktarter",
     subtitle:
-      'Art med høyere frekvens og dekning i en aktuell naturtype (hovedtype eller grunntype) enn i et sammenliknbart utvalg typer (f.eks. andre hovedtyper som tilhører samme hovedtypegruppe eller andre grunntyper som tilhører samme hovedtype',
+      "Art med høyere frekvens og dekning i en aktuell naturtype (hovedtype eller grunntype) enn i et sammenliknbart utvalg typer (f.eks. andre hovedtyper som tilhører samme hovedtypegruppe eller andre grunntyper som tilhører samme hovedtype"
   },
-  'gradient-tyngdepunktart': {
-    title: 'Gradient-tyngdepunktarter',
+  "gradient-tyngdepunktart": {
+    title: "Gradient-tyngdepunktarter",
     subtitle:
-      'Art med høyere frekvens og dekning på et gitt trinn langs en lokal kompleks miljøgradient (LKMg) enn på ethvert annet trinn langs den samme LKMg (gitt at variasjonen langs alle andre lokale komplekse miljøvariabler holdes konstant',
+      "Art med høyere frekvens og dekning på et gitt trinn langs en lokal kompleks miljøgradient (LKMg) enn på ethvert annet trinn langs den samme LKMg (gitt at variasjonen langs alle andre lokale komplekse miljøvariabler holdes konstant"
   },
   kjennetegnende_tyngdepunktart: {
-    title: 'Kjennetegnende tyngdepunktarter',
+    title: "Kjennetegnende tyngdepunktarter",
     subtitle:
-      'Tyngdepunktart som utelukkende eller nesten utelukkende forekommer i en naturtype eller gruppe av naturtyper på et eller annet generaliseringsnivå',
+      "Tyngdepunktart som utelukkende eller nesten utelukkende forekommer i en naturtype eller gruppe av naturtyper på et eller annet generaliseringsnivå"
   },
   skilleart: {
-    title: 'Skilleart',
+    title: "Skilleart",
     subtitle:
-      'Art med høyere frekvens og/eller dekning i én av to eller flere naturtyper som sammenliknes. For skillearter angis hvilke basistrinn langs hvilke LKM’er de er skillearter for, på en standardisert måte. F.eks. betyr «absolutt skilleart[UF∙f|g]» at arten er absolutt skilleart for uttørkingsfare (UF) basistrinn f mot basistrinn g.',
+      "Art med høyere frekvens og/eller dekning i én av to eller flere naturtyper som sammenliknes. For skillearter angis hvilke basistrinn langs hvilke LKM’er de er skillearter for, på en standardisert måte. F.eks. betyr «absolutt skilleart[UF∙f|g]» at arten er absolutt skilleart for uttørkingsfare (UF) basistrinn f mot basistrinn g."
   },
   absolutt_skilleart: {
-    title: 'Absolutte skillearter',
+    title: "Absolutte skillearter",
     subtitle:
-      'Art som normalt bare forekommer i én blant to eller flere naturtyper som sammenliknes',
-  },
-}
+      "Art som normalt bare forekommer i én blant to eller flere naturtyper som sammenliknes"
+  }
+};
 
 class Graf extends Component {
   render() {
     const {
       graf,
-      onGoToCode,
+      onNavigate,
       onMouseEnter,
       onMouseLeave,
-      opplystKode,
-    } = this.props
-    if (!graf) return null
-    return Object.keys(graf).map(kant => {
-      const x = titler[kant] || { title: kant }
+      opplystKode
+    } = this.props;
+    if (!graf) return null;
+    return graf.map(relasjon => {
+      const kant = relasjon.type;
+      const x = titler[kant] || { title: kant };
       return (
         <Kodeliste
           key={kant}
-          onGoToCode={onGoToCode}
+          onNavigate={onNavigate}
           title={x.title}
           subtitle={x.subtitle}
-          metadata={graf[kant]}
+          metadata={relasjon.noder}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           opplystKode={opplystKode}
           utenFarge={true}
         />
-      )
-    })
+      );
+    });
   }
 }
 
-export default Graf
+export default Graf;

@@ -1,4 +1,3 @@
-// @flow
 import typesystem from "@artsdatabanken/typesystem";
 import React from "react";
 import { withRouter } from "react-router";
@@ -11,20 +10,6 @@ import språk from "../språk";
 import VenstreVinduContainer from "../VenstreVinduContainer";
 import standardlag from "./standardlag.json";
 import bakgrunnskarttema from "./bakgrunnskarttema";
-
-type State = {
-  aktiveLag: Object,
-  meta: Object,
-  fitBounds: Object,
-  actualBounds: Object,
-  opplystKode: string,
-  visKoder: boolean
-};
-
-type Props = {
-  location: Object,
-  history: Object
-};
 
 const styles = {
   rot: {
@@ -52,7 +37,7 @@ const styles = {
   padTop: { paddingTop: 55 }
 };
 
-class Grunnkart extends React.Component<Props, State> {
+class Grunnkart extends React.Component {
   constructor(props) {
     super(props);
     let aktive = standardlag;
@@ -81,10 +66,10 @@ class Grunnkart extends React.Component<Props, State> {
   };
 
   addSelectedBarn(barn) {
-    return Object.keys(barn).map(key => {
-      const node = barn[key];
+    return barn.map(node => {
+      const kode = node.kode;
       return {
-        kode: key,
+        kode: kode,
         tittel: språk(node.tittel),
         farge: node.farge,
         erSynlig: true,
@@ -114,12 +99,13 @@ class Grunnkart extends React.Component<Props, State> {
     if (kartformat.polygon) aktivtKartformat = "polygon";
     const nyttLag = {
       kartformat: kartformat,
+      url: props.url,
       aktivtKartformat: aktivtKartformat,
       farge: props.farge,
       kode: props.kode,
       tittel: språk(props.tittel),
       barn: this.addSelectedBarn(props.barn),
-      visBarn: Object.keys(props.barn).length > 0,
+      visBarn: props.barn.length > 0,
       bbox: props.bbox,
       erSynlig: true,
       kanSlettes: true
@@ -177,24 +163,15 @@ class Grunnkart extends React.Component<Props, State> {
     this.props.history.replace(newUrl);
   }
 
-  // AO_01/02 => ao/01/02
-  kodeTilRelativUrl(kode) {
-    return typesystem
-      .splittKode(kode)
-      .join("/")
-      .toLowerCase();
-  }
-
-  fetchMeta(url) {
-    url = url.toLowerCase();
-    let kodematch = url.match(/\/katalog\/(.*)/);
-    if (!kodematch || kodematch.length !== 2) {
+  fetchMeta(location) {
+    let url = location.match(/\/katalog\/(.*)/);
+    if (!url || url.length !== 2) {
       this.setState({ meta: null });
       return;
     }
 
-    this.fetchMeta2(url).then(data => {
-      if (!data) return this.redirectTo("");
+    this.fetchMeta2(url[1]).then(data => {
+      if (!data) return this.redirectTo("Natur_i_Norge");
       if (data.se) {
         const newUrl = data.se[Object.keys(data.se)[0]].sti;
         this.redirectTo(newUrl);
@@ -205,33 +182,27 @@ class Grunnkart extends React.Component<Props, State> {
   }
 
   async fetchMeta2(url) {
-    const data = await backend.hentKodeMeta(url);
-    if (!data) return;
-    if (data.se) return data;
-
-    const sti = this.kodeTilRelativUrl(data.kode);
-    data.sti = sti;
-    if (!data.barn) data.barn = {};
-    Object.keys(data.barn).forEach(kode => {
-      const barn = data.barn[kode];
-      barn.sti = this.kodeTilRelativUrl(kode);
-    });
-    data.nivå = typesystem.hentNivaa(data.kode).slice(0, 1);
-    data.prefiks = data.kode.substring(0, 2);
-
-    // HACK
-    if (data.kartformat) {
-      if (data.kartformat.vector)
-        data.kartformat.polygon = data.kartformat.vector;
-      delete data.kartformat.vector;
+    const meta = await backend.hentKodeMeta(url);
+    if (!meta) return;
+    if (!meta.tittel) {
+      return this.redirectTo("Natur_i_Norge");
     }
-    if (data.kode.substring(0, 2) === "LA") {
+    if (meta.se) return meta;
+    meta.nivå = typesystem.hentNivaa(meta.kode).slice(0, 1);
+    meta.prefiks = meta.kode.substring(0, 2);
+    // HACK
+    if (meta.kartformat) {
+      if (meta.kartformat.vector)
+        meta.kartformat.polygon = meta.kartformat.vector;
+      delete meta.kartformat.vector;
+    }
+    if (meta.kode.substring(0, 2) === "LA") {
       if (!this.state.aktiveLag.terreng.wasAutoEnabled) {
         this.handleUpdateLayerProp("terreng", "erSynlig", true);
         this.handleUpdateLayerProp("terreng", "wasAutoEnabled", true);
       }
     }
-    return data;
+    return meta;
   }
 
   handleRemoveSelectedLayer = kode => {
