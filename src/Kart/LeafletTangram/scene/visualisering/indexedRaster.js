@@ -82,9 +82,9 @@ function lagStyle(kartformat, drawArgs) {
   return { name: "raster", value: gradient };
 }
 
-function lagSource(kode, bbox, zoom) {
+function lagSource(url, bbox, zoom) {
   const source = sysconfig.createTileSource(
-    `${kode.replace(/-/g, "/")}/raster.indexed.3857`,
+    `${url}/raster.indexed.3857`,
     "Raster",
     zoom,
     bbox

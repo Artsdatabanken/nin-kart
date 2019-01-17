@@ -14,7 +14,6 @@ import {
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import Borring from "./Borring";
-import FlatUt from "./FlatUt";
 import Sted from "./Sted";
 import Kilde from "../Kilde";
 import config from "../config";
@@ -46,7 +45,7 @@ class BorreVindu extends Component {
       <Card square={true} className={classes.card}>
         <CardMedia
           className={classes.media}
-          image={config.getFotoOmslag(dominant.kode)}
+          image={config.getFotoOmslag(dominant.url)}
           title={dominant.tittel}
         >
           <div
@@ -64,9 +63,11 @@ class BorreVindu extends Component {
             }}
           >
             {AO && (
-              <FlatUt node={AO}>
-                <Sted />
-              </FlatUt>
+              <Sted
+                values={AO.values}
+                sted={AO.sted}
+                elevasjon={AO.elevasjon}
+              />
             )}
             <Typography style={{ color: color }} variant="body1">
               {parseFloat(lat).toFixed(5)}° N {parseFloat(lng).toFixed(5)}° Ø
@@ -118,7 +119,7 @@ class BorreVindu extends Component {
     );
   }
 
-  finnKodeHack(barn, subkey, tittel) {
+  finnKodeHack(barn, subkey, tittel, url) {
     barn = barn.values[subkey];
     if (!barn || !barn.values) return null;
     for (let key of Object.keys(barn.values)) {
@@ -126,18 +127,27 @@ class BorreVindu extends Component {
       if (key === "NA-BS") continue;
       if (key === "NA-LKM") continue;
       if (key.indexOf("-E-") > 0) return;
-      const kode = this.finnKodeHack(barn, key, barn.title);
+      url = url + "/" + config.hackUrl(barn.title);
+      const kode = this.finnKodeHack(barn, key, barn.title, url);
       if (kode) return kode;
-      return { kode: key, tittel: barn.title };
+      return { kode: key, tittel: barn.title, url: url };
     }
   }
 
   finnButikkKode() {
     const { barn } = this.props;
-    const fallback = { kode: "NA", tittel: "Natursystem" };
-    let r = this.finnKodeHack({ values: barn }, "NA", "Natursystem");
+    const fallback = {
+      url: "Natur_i_Norge/Natursystem",
+      tittel: "Natursystem"
+    };
+    let r = this.finnKodeHack(
+      { values: barn },
+      "NA",
+      "Natursystem",
+      "Natur_i_Norge"
+    );
     if (r) return r;
-    r = this.finnKodeHack({ values: barn }, "LA", "Landskap");
+    r = this.finnKodeHack({ values: barn }, "LA", "Landskap", "Natur_i_Norge");
     if (r) return r;
     return fallback;
   }

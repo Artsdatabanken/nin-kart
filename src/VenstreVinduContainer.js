@@ -1,55 +1,55 @@
-import ForsideMeny from './Forsidemeny/Forsidemeny'
-import { Snackbar } from '@material-ui/core'
-import React from 'react'
-import { Route, Switch, withRouter } from 'react-router-dom'
-import BorreContainer from './Borring/BorreContainer'
-import Borrevalg from './Borring/Borrevalg'
-import KodeContainer from './Kodetre/Kodeliste/KodeContainer'
-import språk from './språk'
-import TweakContainer from './Tweaks/TweakContainer'
-import Panel from './components/Panel'
-import TopBarContainer from './TopBar/TopBarContainer'
-import AktiveKartlag from './AktiveKartlag/'
+import ForsideMeny from "./Forsidemeny/Forsidemeny";
+import { Snackbar } from "@material-ui/core";
+import React from "react";
+import { Route, Switch, withRouter } from "react-router-dom";
+import BorreContainer from "./Borring/BorreContainer";
+import Borrevalg from "./Borring/Borrevalg";
+import KodeContainer from "./Kodetre/Kodeliste/KodeContainer";
+import språk from "./språk";
+import TweakContainer from "./Tweaks/TweakContainer";
+import Panel from "./components/Panel";
+import TopBarContainer from "./TopBar/TopBarContainer";
+import AktiveKartlag from "./AktiveKartlag/";
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
-  state = { error: '', visForside: true }
+  state = { error: "", visForside: true };
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.meta !== this.props.meta) this.setState({ query: null })
+    if (prevProps.meta !== this.props.meta) this.setState({ query: null });
   }
 
   tittel(meta, currentItem) {
     if (meta && meta.tittel) {
-      return språk(meta.tittel)
+      return språk(meta.tittel);
     }
-    return null
+    return null;
   }
 
   finnValgtKodeElement(kode) {
-    var item = undefined
+    var item = undefined;
     Object.keys(this.props.aktiveLag).forEach(id => {
-      const forelder = this.props.aktiveLag[id]
-      if (forelder.kode === kode) item = forelder
-    })
+      const forelder = this.props.aktiveLag[id];
+      if (forelder.kode === kode) item = forelder;
+    });
 
-    return item
+    return item;
   }
 
-  handleGoToCode = kode => {
-    this.props.history.push('/katalog/' + kode)
-  }
+  handleNavigate = url => {
+    this.props.history.push("/katalog/" + url);
+  };
 
   parseQueryString(query) {
-    query = query.substring(1).split('&')
+    query = query.substring(1).split("&");
     return query.reduce((obj, item) => {
-      const [key, value] = item.split('=')
-      obj[key] = value
-      return obj
-    }, {})
+      const [key, value] = item.split("=");
+      obj[key] = value;
+      return obj;
+    }, {});
   }
 
   render() {
-    const meta = this.props.meta || {}
+    const meta = this.props.meta || {};
     const {
       visForside,
       onToggleForside,
@@ -60,17 +60,17 @@ class VenstreVinduContainer extends React.Component {
       onUpdateLayerProp,
       onUpdateMetaProp,
       onRemoveSelectedLayer,
-      location,
-    } = this.props
+      location
+    } = this.props;
     return (
       <Route
         render={({ match, history }) => {
-          const args = this.parseQueryString(location.search)
+          const args = this.parseQueryString(location.search);
           if (args.lng) {
             return (
               <Panel>
                 <TopBarContainer
-                  tittel={args.lng.substr(0, 8) + ',' + args.lat.substr(0, 8)}
+                  tittel={args.lng.substr(0, 8) + "," + args.lat.substr(0, 8)}
                 />
                 <BorreContainer
                   lng={args.lng}
@@ -78,7 +78,7 @@ class VenstreVinduContainer extends React.Component {
                   view={args.view}
                 />
               </Panel>
-            )
+            );
           }
           return (
             <React.Fragment>
@@ -93,7 +93,7 @@ class VenstreVinduContainer extends React.Component {
                         />
                         <KodeContainer
                           kode={meta.kode}
-                          onGoToCode={this.handleGoToCode}
+                          onNavigate={this.handleNavigate}
                           onMouseEnter={onMouseEnter}
                           onMouseLeave={onMouseLeave}
                           onFitBounds={this.props.onFitBounds}
@@ -106,7 +106,7 @@ class VenstreVinduContainer extends React.Component {
                           onUpdateMetaProp={onUpdateMetaProp}
                         />
                       </Panel>
-                    )
+                    );
                   }}
                 />
 
@@ -116,7 +116,7 @@ class VenstreVinduContainer extends React.Component {
                     <Panel padTop>
                       <TopBarContainer
                         tittel={
-                          'Innstillinger for ' +
+                          "Innstillinger for " +
                           (match.params.lag || match.params.kode)
                         }
                       />
@@ -156,18 +156,18 @@ class VenstreVinduContainer extends React.Component {
               {this.state.error && (
                 <Snackbar
                   open={true}
-                  message={'Søk feilet: ' + JSON.stringify(this.state.error)}
+                  message={"Søk feilet: " + JSON.stringify(this.state.error)}
                   autoHideDuration={4000}
                   onRequestClose={this.handleCloseSnackbar}
                 />
               )}
               <div
                 style={{
-                  backgroundColor: 'transparent',
-                  justifyContent: 'flex-end',
-                  float: 'bottom',
-                  pointerEvents: 'auto',
-                  boxShadow: '0px 0px 15px rgba(0, 0, 0, 0.3)',
+                  backgroundColor: "transparent",
+                  justifyContent: "flex-end",
+                  float: "bottom",
+                  pointerEvents: "auto",
+                  boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.3)"
                 }}
               >
                 <AktiveKartlag
@@ -180,13 +180,13 @@ class VenstreVinduContainer extends React.Component {
                 />
               </div>
             </React.Fragment>
-          )
+          );
         }}
       />
-    )
+    );
   }
 
-  handleCloseSnackbar = () => this.setState({ error: null })
+  handleCloseSnackbar = () => this.setState({ error: null });
 }
 
-export default withRouter(VenstreVinduContainer)
+export default withRouter(VenstreVinduContainer);

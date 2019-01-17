@@ -1,16 +1,16 @@
-import React from 'react'
-import { SettingsContext } from '../../SettingsContext'
-import språk from '../../språk'
-import Graf from './Graf'
-import Kodekort from './Kodekort'
-import Kodeliste from './Kodeliste'
-import Statistikk from './Statistikk'
+import React from "react";
+import { SettingsContext } from "../../SettingsContext";
+import språk from "../../språk";
+import Graf from "./Graf";
+import Kodekort from "./Kodekort";
+import Kodeliste from "./Kodeliste";
+import Statistikk from "./Statistikk";
 
 class KodeVindu extends React.Component {
   render() {
     const {
       erAktivert,
-      onGoToCode,
+      onNavigate,
       onFitBounds,
       meta,
       data,
@@ -18,9 +18,9 @@ class KodeVindu extends React.Component {
       onMouseLeave,
       onToggleLayer,
       opplystKode,
-      onUpdateMetaProp,
-    } = this.props
-    if (!meta) return null
+      onUpdateMetaProp
+    } = this.props;
+    if (!meta) return null;
     const {
       kode,
       prefiks,
@@ -32,15 +32,15 @@ class KodeVindu extends React.Component {
       overordnet,
       antallNaturomrader,
       antallArter,
-      stats,
-    } = meta
+      stats
+    } = meta;
     return (
       <div
         square="false"
         elevation={4}
         style={{
-          position: 'relative',
-          top: -72,
+          position: "relative",
+          top: -72
         }}
       >
         <Kodekort
@@ -50,12 +50,12 @@ class KodeVindu extends React.Component {
           tittel={tittel}
           nivå={nivå}
           overordnet={overordnet}
-          onGoToCode={onGoToCode}
+          onNavigate={onNavigate}
           erAktivert={erAktivert}
           onFitBounds={onFitBounds}
           onToggleLayer={onToggleLayer}
         />
-        {prefiks !== 'AO' && (
+        {prefiks !== "AO" && (
           <Statistikk
             tittel={språk(meta.tittel)}
             toppnavn={this.toppnivåNavn(meta.overordnet)}
@@ -74,7 +74,7 @@ class KodeVindu extends React.Component {
               størsteAreal={data.størsteAreal}
               apidata={data.barn}
               metadata={meta.barn}
-              onGoToCode={onGoToCode}
+              onNavigate={onNavigate}
               onMouseEnter={onMouseEnter}
               onMouseLeave={onMouseLeave}
               opplystKode={opplystKode}
@@ -83,15 +83,15 @@ class KodeVindu extends React.Component {
             />
           )}
         </SettingsContext.Consumer>
-        <Graf graf={meta.graf} onGoToCode={onGoToCode} />
+        <Graf graf={meta.graf} onNavigate={onNavigate} />
       </div>
-    )
+    );
   }
 
   toppnivåNavn(forfedre) {
-    if (forfedre.length < 2) return null
-    return språk(forfedre[forfedre.length - 2].tittel)
+    if (forfedre.length < 2) return null;
+    return språk(forfedre[forfedre.length - 2].tittel);
   }
 }
 
-export default KodeVindu
+export default KodeVindu;

@@ -3,21 +3,21 @@ import {
   ListItem,
   ListItemText,
   Paper,
-  withStyles,
-} from '@material-ui/core'
-import React from 'react'
-import TopBarContainer from '../TopBar/TopBarContainer'
-import { Panel, Ekspanderlinje } from '../components'
-import Boble from './Boble'
-import Collapse from '@material-ui/core/Collapse'
+  withStyles
+} from "@material-ui/core";
+import React from "react";
+import TopBarContainer from "../TopBar/TopBarContainer";
+import { Panel, Ekspanderlinje } from "../components";
+import Boble from "./Boble";
+import Collapse from "@material-ui/core/Collapse";
 
 const Seksjon = ({ tittel, children }) => (
   <div>
     <Typography
       style={{
-        padding: '10px 20px',
+        padding: "10px 20px",
         fontSize: 15,
-        fontWeight: 500,
+        fontWeight: 500
       }}
       gutterBottom
     >
@@ -25,30 +25,30 @@ const Seksjon = ({ tittel, children }) => (
     </Typography>
     <div
       style={{
-        display: 'flex',
+        display: "flex",
         fontWeight: 400,
         fontSize: 14,
-        padding: '10px 20px',
-        color: 'hsla(0, 0%, 0%, 0.54)',
+        padding: "10px 20px",
+        color: "hsla(0, 0%, 0%, 0.54)"
       }}
     >
       {children}
     </div>
   </div>
-)
+);
 
 const Papir = ({ children }) => (
   <Paper elevation={4} style={{ marginTop: 8, width: 392 }}>
     {children}
   </Paper>
-)
+);
 
 const styles = {
   container: {
     paddingLeft: 8,
-    paddingTop: 2,
-  },
-}
+    paddingTop: 2
+  }
+};
 
 const Forsidemeny = ({ classes, visForside, onVis, onAktiver, onClick }) => {
   return (
@@ -59,7 +59,7 @@ const Forsidemeny = ({ classes, visForside, onVis, onAktiver, onClick }) => {
             in={visForside}
             collapsedHeight="52px"
             classes={{
-              container: classes.container,
+              container: classes.container
             }}
           >
             <React.Fragment>
@@ -71,21 +71,30 @@ const Forsidemeny = ({ classes, visForside, onVis, onAktiver, onClick }) => {
               <Seksjon>
                 <div
                   style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(3, 1fr)',
-                    gridGap: '6px',
+                    display: "grid",
+                    gridTemplateColumns: "repeat(3, 1fr)",
+                    gridGap: "6px"
                   }}
                 >
                   <Boble kode="LA" tittel="Landskap" />
                   <Boble kode="NA" tittel="Natursystem" />
-                  <Boble kode="VV" tittel="Naturvern- område" />
-                  <Boble kode="RL" tittel="Truet natur" />
-                  <Boble kode="AO" tittel="Administativt område" />
+                  <Boble
+                    kode="VV"
+                    url="Naturvernområde"
+                    tittel="Naturvern- område"
+                  />
+                  <Boble kode="RL" url="Truet_natur" tittel="Truet natur" />
+                  <Boble kode="AO" url="Fylke" tittel="Fylke" />
                 </div>
               </Seksjon>
               <Papir>
                 <Seksjon tittel="Bokmerker">
-                  <ListItem button onClick={() => onAktiver(['LA-KLG'])}>
+                  <ListItem
+                    button
+                    onClick={() =>
+                      onAktiver(["Natur_i_Norge/Landskap/Landskapsgradient"])
+                    }
+                  >
                     <ListItemText primary="Landskapskart" secondary="LA-KLG" />
                   </ListItem>
                 </Seksjon>
@@ -94,15 +103,27 @@ const Forsidemeny = ({ classes, visForside, onVis, onAktiver, onClick }) => {
                 <Seksjon tittel="Dataleverandører">
                   <div
                     style={{
-                      display: 'grid',
-                      gridTemplateColumns: 'repeat(3, 1fr)',
-                      gridGap: '10px',
+                      display: "grid",
+                      gridTemplateColumns: "repeat(3, 1fr)",
+                      gridGap: "10px"
                     }}
                   >
                     <Boble kode="OR-MD" tittel="Miljødirektoratet" />
-                    <Boble kode="OR-GU" tittel="NGU" />
-                    <Boble kode="OR-NI" tittel="NINA" />
-                    <Boble kode="OR-SB" tittel="SSB" />
+                    <Boble
+                      kode="OR-GU"
+                      tittel="NGU"
+                      url="Norges_Geologiske_Undersøkelse"
+                    />
+                    <Boble
+                      kode="OR-NI"
+                      tittel="NINA"
+                      url="Norsk_institutt_for_naturforskning"
+                    />
+                    <Boble
+                      kode="OR-SB"
+                      tittel="SSB"
+                      url="Statistisk_sentralbyrå"
+                    />
                     <Boble kode="OR-KV" tittel="Kartverket" />
                     <Boble kode="OR-AD" tittel="Artsdatabanken" />
                   </div>
@@ -113,6 +134,6 @@ const Forsidemeny = ({ classes, visForside, onVis, onAktiver, onClick }) => {
         </TopBarContainer>
       </Panel>
     </React.Fragment>
-  )
-}
-export default withStyles(styles)(Forsidemeny)
+  );
+};
+export default withStyles(styles)(Forsidemeny);
