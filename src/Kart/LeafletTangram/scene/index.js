@@ -91,7 +91,12 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
 function lagToppnivå(props) {
   const config = {
     sources: {
-      osm: sysconfig.createTileSource("basemap/openstreetmap", "MVT", [0, 14])
+      osm: sysconfig.createTileSource(
+        sysconfig.storageUrl +
+          "Bakgrunnskart/OpenStreetMap/polygon.3857.mbtiles",
+        "MVT",
+        [0, 14]
+      )
     },
     cameras: {
       cam: {

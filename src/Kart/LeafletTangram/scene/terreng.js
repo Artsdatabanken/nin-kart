@@ -1,26 +1,25 @@
-// @flow
-import terrengmal from './mal/terreng'
-import sysconfig from '../../../config'
+import terrengmal from "./mal/terreng";
+import sysconfig from "../../../config";
 
 function lagTerreng(drawProps, opplystKode, config) {
-  let vertikaltOverdriv = drawProps.vertikaltOverdriv
-  if (opplystKode && opplystKode !== 'terreng') return
-  config.layers.terreng = terrengmal
+  let vertikaltOverdriv = drawProps.vertikaltOverdriv;
+  if (opplystKode && opplystKode !== "terreng") return;
+  config.layers.terreng = terrengmal;
   config.sources.normals = sysconfig.createTileSource(
-    'terrain/normals',
-    'Raster',
+    `${sysconfig.storageUrl}Terreng/normaler.3857.mbtiles`,
+    "Raster",
     [0, 9]
-  )
+  );
   config.styles.terreng = {
-    base: 'polygons',
+    base: "polygons",
     lighting: false,
-    raster: 'normal',
+    raster: "normal",
     shaders: {
       uniforms: {
         eye1: [0, 0, -1],
         u_scale: vertikaltOverdriv,
-        u_envmap: '/1_gray_lys2.jpg',
-        //u_envmap: '/treefrog_gray.png',
+        //u_envmap: "/1_gray_lys2.jpg"
+        u_envmap: "/treefrog_gray.png"
       },
       blocks: {
         global: `vec4 terrainEnvmap (in sampler2D _tex, in vec3 _normal) {
@@ -37,10 +36,10 @@ function lagTerreng(drawProps, opplystKode, config) {
         color: `
           normal.z /= u_scale; // turn terrain exaggeration up/down
           normal = normalize(normal);
-          color = terrainEnvmap(u_envmap, normal);`,
-      },
-    },
-  }
+          color = terrainEnvmap(u_envmap, normal);`
+      }
+    }
+  };
 }
 
-export { lagTerreng }
+export { lagTerreng };

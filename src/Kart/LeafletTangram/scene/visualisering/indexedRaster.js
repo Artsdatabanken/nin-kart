@@ -35,10 +35,9 @@ function lagStyle(kartformat, drawArgs) {
     }
 */
   }
-  const newPalette = `https://maps.artsdatabanken.no/${kode.replace(
-    /-/g,
-    "/"
-  )}/${palettKode}.palette.png`;
+  const newPalette = `${sysconfig.storageUrl}${
+    drawArgs.url
+  }/${palettKode}.palette.png`;
 
   if (this.palette1 !== this.palette2 || !this.palette1)
     this.palette1 = this.palette2 || newPalette;
@@ -83,13 +82,8 @@ function lagStyle(kartformat, drawArgs) {
 }
 
 function lagSource(url, bbox, zoom) {
-  const source = sysconfig.createTileSource(
-    `${url}/raster.indexed.3857`,
-    "Raster",
-    zoom,
-    bbox
-  );
-  source.tile_size = 192;
+  const source = sysconfig.createTileSource(url, "Raster", zoom, bbox);
+  //  source.tile_size = 256;
   return source;
 }
 

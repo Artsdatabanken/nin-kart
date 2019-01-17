@@ -12,7 +12,7 @@
     "tittel": "3D terreng",
     "erSynlig": false,
     "terreng": {
-      "vertikaltOverdriv": 4.0,
+      "vertikaltOverdriv": 1.0,
       "visKontur": false,
       "visEtikettTopp": false,
       "konturintervall": 100.0,
