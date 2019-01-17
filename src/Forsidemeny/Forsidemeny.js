@@ -76,15 +76,27 @@ const Forsidemeny = ({ classes, visForside, onVis, onAktiver, onClick }) => {
                     gridGap: "6px"
                   }}
                 >
-                  <Boble kode="LA" tittel="Landskap" />
-                  <Boble kode="NA" tittel="Natursystem" />
+                  <Boble
+                    kode="LA"
+                    tittel="Landskap"
+                    url="Natur_i_Norge/Landskap"
+                  />
+                  <Boble
+                    kode="NA"
+                    tittel="Natursystem"
+                    url="Natur_i_Norge/Natursystem"
+                  />
                   <Boble
                     kode="VV"
-                    url="Naturvernområde"
+                    url="Natur_i_Norge/Naturvernområde"
                     tittel="Naturvern- område"
                   />
-                  <Boble kode="RL" url="Truet_natur" tittel="Truet natur" />
-                  <Boble kode="AO" url="Fylke" tittel="Fylke" />
+                  <Boble
+                    kode="RL"
+                    url="Natur_i_Norge/Truet_natur"
+                    tittel="Truet natur"
+                  />
+                  <Boble kode="AO" url="Natur_i_Norge/Fylke" tittel="Fylke" />
                 </div>
               </Seksjon>
               <Papir>
@@ -108,24 +120,36 @@ const Forsidemeny = ({ classes, visForside, onVis, onAktiver, onClick }) => {
                       gridGap: "10px"
                     }}
                   >
-                    <Boble kode="OR-MD" tittel="Miljødirektoratet" />
+                    <Boble
+                      kode="OR-MD"
+                      tittel="Miljødirektoratet"
+                      url="Natur_i_Norge/Datakilde/Miljødirektoratet"
+                    />
                     <Boble
                       kode="OR-GU"
                       tittel="NGU"
-                      url="Norges_Geologiske_Undersøkelse"
+                      url="Natur_i_Norge/Datakilde/Norges_Geologiske_Undersøkelse"
                     />
                     <Boble
                       kode="OR-NI"
                       tittel="NINA"
-                      url="Norsk_institutt_for_naturforskning"
+                      url="Natur_i_Norge/Datakilde/Norsk_institutt_for_naturforskning"
                     />
                     <Boble
                       kode="OR-SB"
                       tittel="SSB"
-                      url="Statistisk_sentralbyrå"
+                      url="Natur_i_Norge/Datakilde/Statistisk_sentralbyrå"
                     />
-                    <Boble kode="OR-KV" tittel="Kartverket" />
-                    <Boble kode="OR-AD" tittel="Artsdatabanken" />
+                    <Boble
+                      kode="OR-KV"
+                      tittel="Kartverket"
+                      url="Natur_i_Norge/Datakilde/Kartverket"
+                    />
+                    <Boble
+                      kode="OR-AD"
+                      tittel="Artsdatabanken"
+                      url="Natur_i_Norge/Datakilde/Artsdatabanken"
+                    />
                   </div>
                 </Seksjon>
               </Papir>
