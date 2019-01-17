@@ -47,7 +47,6 @@ class Backend {
   }
 
   static async hentKodeMeta(path) {
-    path = path || "~";
     return this.getPromise(config.metaUrl(path));
   }
 

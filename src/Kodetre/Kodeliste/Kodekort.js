@@ -3,47 +3,47 @@ import {
   Card,
   CardActions,
   CardMedia,
-  withStyles,
-} from '@material-ui/core'
-import { LibraryAdd, ZoomOutMap } from '@material-ui/icons/'
-import React from 'react'
-import { withRouter } from 'react-router'
-import config from '../../config'
-import farger from '../../farger'
-import språk from '../../språk'
-import Tittelblokk from './Tittelblokk'
+  withStyles
+} from "@material-ui/core";
+import { LibraryAdd, ZoomOutMap } from "@material-ui/icons/";
+import React from "react";
+import { withRouter } from "react-router";
+import config from "../../config";
+import farger from "../../farger";
+import språk from "../../språk";
+import Tittelblokk from "./Tittelblokk";
 
 const styles = {
   pos: {
-    marginBottom: 12,
+    marginBottom: 12
   },
   iconSmall: {
     fontSize: 20,
-    marginRight: 8,
-  },
-}
+    marginRight: 8
+  }
+};
 
 class Kodekort extends React.Component {
   state = {
-    visBilde: false,
-  }
+    visBilde: false
+  };
 
   handleClose = () => {
-    this.setState({ visBilde: false })
-  }
+    this.setState({ visBilde: false });
+  };
   handleOpen = () => {
-    this.setState({ visBilde: true })
-  }
+    this.setState({ visBilde: true });
+  };
   handleAktiver = () => {
-    this.props.onToggleLayer(this.props.kode, true)
-  }
+    this.props.onToggleLayer(this.props.kode, true);
+  };
 
   erTransparent(prefix) {
-    return 'AO,OR'.indexOf(prefix) >= 0
+    return "AO,OR".indexOf(prefix) >= 0;
   }
 
   filtype(prefix) {
-    return this.erTransparent(prefix) ? 'png' : 'jpg'
+    return this.erTransparent(prefix) ? "png" : "jpg";
   }
 
   styles(prefix) {
@@ -52,13 +52,13 @@ class Kodekort extends React.Component {
         minHeight: 297,
         marginTop: 142,
         marginBottom: 16,
-        filter: 'drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.2)',
-        backgroundSize: 'contain',
-      }
+        filter: "drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.2)",
+        backgroundSize: "contain"
+      };
     return {
       minHeight: 297,
-      backgroundSize: 'cover',
-    }
+      backgroundSize: "cover"
+    };
   }
 
   render() {
@@ -71,30 +71,30 @@ class Kodekort extends React.Component {
       overordnet,
       classes,
       erAktivert,
-      onGoToCode,
-    } = this.props
+      onNavigate
+    } = this.props;
     return (
-      <Card square={false} style={{ backgroundColor: '#ccc' }}>
+      <Card square={false} style={{ backgroundColor: "#ccc" }}>
         <CardMedia
           style={this.styles(kode.substring(0, 2))}
           onClick={this.handleOpen}
           image={config.getFotoOmslag(kode, 408, this.filtype(prefiks))}
-          alt={'foto av' + tittel}
+          alt={"foto av" + tittel}
         />
         <Tittelblokk
           tittel={språk(tittel)}
           nivå={nivå}
           kode={kode}
           prefiks={prefiks}
-          onGoToCode={onGoToCode}
+          onNavigate={onNavigate}
           overordnet={overordnet}
         >
           <CardActions>
             {overordnet && (
               <Button
                 style={{
-                  backgroundColor: '#fff',
-                  color: farger.mørk[prefiks],
+                  backgroundColor: "#fff",
+                  color: farger.mørk[prefiks]
                 }}
                 size="small"
                 variant="contained"
@@ -109,7 +109,7 @@ class Kodekort extends React.Component {
             {bbox && (
               <Button
                 style={{
-                  color: farger.lys[prefiks],
+                  color: farger.lys[prefiks]
                 }}
                 variant="text"
                 onClick={this.handleFitBounds}
@@ -121,11 +121,11 @@ class Kodekort extends React.Component {
           </CardActions>
         </Tittelblokk>
       </Card>
-    )
+    );
   }
 
-  handleClickAktiveLag = () => this.props.history.push('/')
-  handleFitBounds = () => this.props.onFitBounds(this.props.bbox)
+  handleClickAktiveLag = () => this.props.history.push("/");
+  handleFitBounds = () => this.props.onFitBounds(this.props.bbox);
 }
 
-export default withRouter(withStyles(styles)(Kodekort))
+export default withRouter(withStyles(styles)(Kodekort));

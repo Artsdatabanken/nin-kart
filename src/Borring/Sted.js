@@ -2,6 +2,7 @@ import { Typography } from "@material-ui/core";
 import React from "react";
 import { withRouter } from "react-router";
 import Kommunevapen from "./Kommunevapen";
+import config from "../config";
 
 function formatElevation(elevation) {
   if (!elevation) return "";
@@ -9,14 +10,24 @@ function formatElevation(elevation) {
   return elevation + " moh";
 }
 
+function flatten(values) {
+  const fn = Object.values(values)[0];
+  const kn = Object.values(fn.values)[0];
+  return { fylke: fn.title, kommune: kn.title };
+}
+
 const Sted = props => {
-  const { kode, sted, tittel2, tittel3, elevasjon } = props;
-  const primary = sted ? sted : tittel3;
+  const { sted, values, elevasjon } = props;
+  const { fylke, kommune } = flatten(values);
+  const url = `Natur_i_Norge/Fylke_&_kommune/${config.hackUrl(
+    fylke
+  )}/${config.hackUrl(kommune)}`;
+  const primary = sted ? sted : fylke;
   const secondary = sted
-    ? tittel2 === tittel3
-      ? tittel3
-      : tittel3 + " i " + tittel2
-    : tittel2;
+    ? kommune === fylke
+      ? fylke
+      : kommune + " i " + fylke
+    : kommune;
   const color = "rgba(230,230,230,1.0)";
   return (
     <React.Fragment>
@@ -36,7 +47,7 @@ const Sted = props => {
         {formatElevation(elevasjon)}
       </Typography>
       <div style={{ position: "absolute", left: 334, bottom: 48 }}>
-        {kode && <Kommunevapen kode={kode} />}
+        {url && <Kommunevapen url={url} />}
       </div>
       <Typography
         style={{

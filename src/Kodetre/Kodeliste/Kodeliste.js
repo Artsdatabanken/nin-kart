@@ -17,8 +17,7 @@ class Kodeliste extends React.Component {
       onUpdateMetaProp
     } = this.props;
 
-    if (!metadata) return null;
-    if (Object.keys(metadata) <= 0) return null;
+    if (!metadata || metadata.length <= 0) return null;
     return (
       <SettingsContext.Consumer>
         {context => (
@@ -35,8 +34,9 @@ class Kodeliste extends React.Component {
                 {subtitle}
               </div>
             )}
-            {Kodeliste.sorterNøkler(metadata, context.sorterPåKode).map(
-              kode => {
+            {Kodeliste.sorter(metadata, context.sorterPåKode).map(
+              metabarnet => {
+                const kode = metabarnet.kode;
                 const apibarn = apidata
                   ? apidata[
                       apidata
@@ -46,17 +46,17 @@ class Kodeliste extends React.Component {
                         .indexOf(kode.toLowerCase())
                     ] || {}
                   : {};
-                const metabarnet = metadata[kode];
                 if (metabarnet.skjul) return null;
                 return (
                   <Kodelisteelement
                     key={kode}
                     kode={kode}
+                    url={metabarnet.url}
                     meta={metabarnet}
                     størsteAreal={størsteAreal}
                     areal={apibarn.areal}
                     visKode={context.visKoder}
-                    onGoToCode={this.onGoToCode}
+                    onNavigate={this.onNavigate}
                     onMouseEnter={this.onMouseEnter}
                     onMouseLeave={this.onMouseLeave}
                     opplystKode={opplystKode}
@@ -72,7 +72,7 @@ class Kodeliste extends React.Component {
       </SettingsContext.Consumer>
     );
   }
-  onGoToCode = kode => this.props.onGoToCode(kode);
+  onNavigate = url => this.props.onNavigate(url);
   onMouseEnter = kode =>
     this.props.onMouseEnter && this.props.onMouseEnter(kode);
   onMouseLeave = () => this.props.onMouseLeave && this.props.onMouseLeave();
@@ -80,16 +80,14 @@ class Kodeliste extends React.Component {
 
 const nøkkel = (node, sorterPåKode) => {
   if (node.sortering) return node.sortering;
-  if (sorterPåKode) return node.sti.split(/\//).map(e => e.padStart(5, "0"));
+  if (sorterPåKode) return node.kode.split(/-/).map(e => e.padStart(5, "0"));
 
   return språk(node.tittel);
 };
 
-Kodeliste.sorterNøkler = (barn, sorterPåKode) => {
-  const sortert = Object.keys(barn).sort((a, b) => {
-    return nøkkel(barn[a], sorterPåKode) >= nøkkel(barn[b], sorterPåKode)
-      ? 1
-      : -1;
+Kodeliste.sorter = (barn, sorterPåKode) => {
+  const sortert = barn.concat().sort((a, b) => {
+    return nøkkel(a, sorterPåKode) >= nøkkel(b, sorterPåKode) ? 1 : -1;
   });
   return sortert;
 };
