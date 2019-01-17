@@ -39,7 +39,8 @@ class Kodekort extends React.Component {
   };
 
   erTransparent(prefix) {
-    return "AO,OR".indexOf(prefix) >= 0;
+    if (prefix.length <= 2) return false;
+    return "AO-,OR-".indexOf(prefix) >= 0;
   }
 
   filtype(prefix) {
@@ -64,6 +65,7 @@ class Kodekort extends React.Component {
   render() {
     const {
       kode,
+      url,
       prefiks,
       bbox,
       tittel,
@@ -76,9 +78,9 @@ class Kodekort extends React.Component {
     return (
       <Card square={false} style={{ backgroundColor: "#ccc" }}>
         <CardMedia
-          style={this.styles(kode.substring(0, 2))}
+          style={this.styles(kode.substring(0, 3))}
           onClick={this.handleOpen}
-          image={config.getFotoOmslag(kode, 408, this.filtype(prefiks))}
+          image={config.getFotoOmslag(url, 408, this.filtype(prefiks))}
           alt={"foto av" + tittel}
         />
         <Tittelblokk
