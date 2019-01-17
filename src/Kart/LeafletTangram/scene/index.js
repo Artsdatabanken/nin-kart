@@ -1,4 +1,3 @@
-// @flow
 import tinycolor from "tinycolor2";
 import { lagBakgrunnskart } from "./bakgrunnskart";
 import { createLights } from "./lights";

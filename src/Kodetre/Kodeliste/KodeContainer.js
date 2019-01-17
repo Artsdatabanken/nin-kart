@@ -1,4 +1,3 @@
-// @flow
 import React from "react";
 import backend from "../../backend";
 import KodeVindu from "./KodeVindu";

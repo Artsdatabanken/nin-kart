@@ -1,9 +1,8 @@
-// @flow
-import React from 'react'
-import { withRouter } from 'react-router'
-import LeafletTangram from './LeafletTangram'
+import React from "react";
+import { withRouter } from "react-router";
+import LeafletTangram from "./LeafletTangram";
 
-type State = {}
+type State = {};
 
 type Props = {
   history: Object,
@@ -17,17 +16,17 @@ type Props = {
   bearing: Number,
   aktiveLag: Array<string>,
   opplystKode: String,
-  meta: Object,
-}
+  meta: Object
+};
 
 class Kart extends React.Component<Props, State> {
   onClick = latlng => {
-    this.props.history.push(`?lng=${latlng.lng}&lat=${latlng.lat}`)
-  }
+    this.props.history.push(`?lng=${latlng.lng}&lat=${latlng.lat}`);
+  };
 
   render() {
-    return <LeafletTangram {...this.props} onClick={this.onClick} />
+    return <LeafletTangram {...this.props} onClick={this.onClick} />;
   }
 }
 
-export default withRouter(Kart)
+export default withRouter(Kart);
