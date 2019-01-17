@@ -1,4 +1,3 @@
-// @flow
 import bkmal from "./mal/bakgrunnskart";
 
 function override(o, key, value) {
