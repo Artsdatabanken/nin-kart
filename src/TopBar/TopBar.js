@@ -51,7 +51,14 @@ type Props = {
 
 class TopBar extends React.Component<Props> {
   render() {
-    const { query, classes, onFocus, onBlur, hasResults } = this.props;
+    const {
+      query,
+      unknownUrl,
+      classes,
+      onFocus,
+      onBlur,
+      hasResults
+    } = this.props;
     return (
       <SettingsContext.Consumer>
         {context => (
@@ -81,6 +88,7 @@ class TopBar extends React.Component<Props> {
               )}
               <SearchBox
                 query={query}
+                unknownUrl={unknownUrl}
                 onFocus={onFocus}
                 onBlur={onBlur}
                 onQueryChange={this.props.onQueryChange}

@@ -171,7 +171,10 @@ class Grunnkart extends React.Component {
     }
 
     this.fetchMeta2(url[1]).then(data => {
-      if (!data) return this.redirectTo("Natur_i_Norge");
+      if (!data) {
+        this.setState({ unknownUrl: url[1] });
+        return;
+      }
       if (data.se) {
         const newUrl = data.se[Object.keys(data.se)[0]].sti;
         this.redirectTo(newUrl);
@@ -271,6 +274,7 @@ class Grunnkart extends React.Component {
                   onToggleLayer={this.handleToggleLayer}
                   onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
                   meta={this.state.meta}
+                  unknownUrl={this.state.unknownUrl}
                   onUpdateLayerProp={this.handleUpdateLayerProp}
                   onUpdateMetaProp={this.handleUpdateMetaProp}
                   visForside={context.visForside}
