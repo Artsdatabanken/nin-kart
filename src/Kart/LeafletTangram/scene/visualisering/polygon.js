@@ -8,6 +8,7 @@ function drawAll(drawArgs) {
     data: { source: kode, layer: kode }
   };
   if (visBarn) {
+    console.log("barn", barn);
     barn.forEach(dac => {
       const barnkode = dac.kode;
       if (Object.hasOwnProperty("erSynlig") && !dac.erSynlig) return;

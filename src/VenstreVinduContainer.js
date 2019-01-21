@@ -55,6 +55,7 @@ class VenstreVinduContainer extends React.Component {
       onToggleForside,
       onAktiver,
       visAktiveLag,
+      unknownUrl,
       onMouseEnter,
       onMouseLeave,
       onUpdateLayerProp,
@@ -89,7 +90,8 @@ class VenstreVinduContainer extends React.Component {
                     return (
                       <Panel>
                         <TopBarContainer
-                          tittel={this.tittel(this.props.meta)}
+                          tittel={this.tittel(meta)}
+                          unknownUrl={unknownUrl}
                         />
                         <KodeContainer
                           kode={meta.kode}

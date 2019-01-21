@@ -23,10 +23,7 @@ function lagTerreng(drawProps, opplystKode, config) {
       },
       blocks: {
         global: `vec4 terrainEnvmap (in sampler2D _tex, in vec3 _normal) {
-//          const vec3 eye = vec3(0.,0.,-1.);
-          vec3 eye = normalize(
-            vec3(0.,0.,-3.)
-            );
+          const vec3 eye = vec3(0.,0.,-1.);
           vec3 r = reflect(eye, _normal);
           r.z += 1.0;
           float m = 2. * length(r);
