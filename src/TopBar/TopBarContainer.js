@@ -45,8 +45,7 @@ class TopBarContainer extends Component<Props, State> {
   };
 
   handleBlur = e => {
-    this.setState({ focused: false });
-    if (this.props.removeResultsOnBlur) this.setState({ searchResults: null });
+    this.setState({ focused: false, searchResults: null });
   };
 
   handleQueryChange = e => {
@@ -59,7 +58,6 @@ class TopBarContainer extends Component<Props, State> {
 
     this.queryNumber++;
     const currentQuery = this.queryNumber;
-    if (!q) return;
 
     backend.søkKode(q).then(json => {
       if (currentQuery !== this.queryNumber) return; // Abort stale query

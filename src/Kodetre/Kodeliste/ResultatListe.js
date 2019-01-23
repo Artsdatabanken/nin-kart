@@ -19,7 +19,7 @@ const styles = {
   },
   inset: { marginLeft: 56 },
   listitem: { height: 38, cursor: "pointer" },
-  itemtext: { fontWeight: 800 },
+  itemtext: { fontSize: 13, fontWeight: 100 },
   textmatch: { color: "black", fontWeight: 500 },
   textnomatch: { color: "#333", fontWeight: 400 }
 };
@@ -57,7 +57,7 @@ class ResultatListe extends Component {
                   }}
                   key={item.url}
                 >
-                  <Bildeavatar size="small" kode={"xx"} url={item.url} />
+                  <Bildeavatar size="small" kode={item.kode} url={item.url} />
                   <ListItemText classes={{ primary: classes.text }}>
                     {ResultatListe.highlightMatch(navn, query, classes)}
                   </ListItemText>
@@ -65,7 +65,7 @@ class ResultatListe extends Component {
                     <ListItemText>
                       <div className={classes.itemtext}>
                         {ResultatListe.highlightMatch(
-                          this.filtrer("xx"),
+                          this.filtrer(item.kode),
                           query,
                           classes
                         )}
