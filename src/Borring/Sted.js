@@ -19,9 +19,9 @@ function flatten(values) {
 const Sted = props => {
   const { sted, values, elevasjon } = props;
   const { fylke, kommune } = flatten(values);
-  const url = `Natur_i_Norge/Fylke_&_kommune/${config.hackUrl(
-    fylke
-  )}/${config.hackUrl(kommune)}`;
+  const url = `Natur_i_Norge/Fylke/${config.hackUrl(fylke)}/${config.hackUrl(
+    kommune
+  )}`;
   const primary = sted ? sted : fylke;
   const secondary = sted
     ? kommune === fylke
