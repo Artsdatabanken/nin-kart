@@ -64,7 +64,7 @@ class Backend {
 
   static async hentKildedata(id) {
     return this.getPromise(
-      `https://maps.artsdatabanken.no/json/ninMetadata/${id}.json`
+      `https://maps.artsdatabanken.no/Natur_i_Norge/Natursystem/metadata/${id}.json`
     );
   }
 
