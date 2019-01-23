@@ -7,7 +7,6 @@ import {
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import React, { Component } from "react";
-import språk from "../../språk";
 import Bildeavatar from "./Bildeavatar";
 
 const styles = {
@@ -46,21 +45,19 @@ class ResultatListe extends Component {
       <Paper elevation={4} style={{ borderRadius: "0 0 4px 4px" }}>
         <List style={{ paddingTop: 0, paddingBottom: 0 }}>
           {searchResults.map(item => {
-            const kode = item.kode.toUpperCase();
-            const navn = språk(item.navn);
-
+            const navn = item.title;
             return (
-              <React.Fragment key={item.kode}>
+              <React.Fragment key={item.url}>
                 <ListItem
                   divider={true}
                   button={true}
                   className={classes.listitem}
                   onMouseDown={() => {
-                    onClick(item.kode);
+                    onClick(item.url);
                   }}
-                  key={kode}
+                  key={item.url}
                 >
-                  <Bildeavatar size="small" kode={kode} url={item.url} />
+                  <Bildeavatar size="small" kode={"xx"} url={item.url} />
                   <ListItemText classes={{ primary: classes.text }}>
                     {ResultatListe.highlightMatch(navn, query, classes)}
                   </ListItemText>
@@ -68,7 +65,7 @@ class ResultatListe extends Component {
                     <ListItemText>
                       <div className={classes.itemtext}>
                         {ResultatListe.highlightMatch(
-                          this.filtrer(kode),
+                          this.filtrer("xx"),
                           query,
                           classes
                         )}

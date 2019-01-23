@@ -79,11 +79,7 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
     visBarn: lag.visBarn
   };
   if (lag.visBarn) {
-    drawArgs.barn =
-      lag.barn; /*.reduce((acc, e) => {
-      acc[e.kode] = e;
-      return acc;
-    }, {});*/
+    drawArgs.barn = lag.barn;
   }
   opprettEttLag(drawArgs, config);
 }

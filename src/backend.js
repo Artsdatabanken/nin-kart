@@ -34,7 +34,7 @@ class Backend {
   }
 
   static async søkKode(q) {
-    return this.getPromise(`https://ogapi.artsdatabanken.no/v2/Koder?q=${q}`);
+    return this.getPromise(`https://ogapi.artsdatabanken.no/${q}`);
   }
 
   static async hentStatistikk(kode, bounds) {
