@@ -61,13 +61,13 @@ class TopBarContainer extends Component<Props, State> {
     const currentQuery = this.queryNumber;
     if (!q) return;
 
-    backend.søkKode(q).then(items => {
+    backend.søkKode(q).then(json => {
       if (currentQuery !== this.queryNumber) return; // Abort stale query
-      if (items.error) {
-        this.setState({ error: items.error });
+      if (json.error) {
+        this.setState({ error: json.error });
       } else {
         this.setState({
-          searchResults: items
+          searchResults: json.result
         });
       }
     });
