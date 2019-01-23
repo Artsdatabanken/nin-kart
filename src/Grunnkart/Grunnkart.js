@@ -251,9 +251,7 @@ class Grunnkart extends React.Component {
     return (
       <SettingsContext.Consumer>
         {context => {
-          const transparent =
-            !context.visForside &&
-            (!history.location.search && history.location.pathname === "/");
+          const transparent = history.location.pathname === "/";
           return (
             <React.Fragment>
               <div
@@ -265,7 +263,6 @@ class Grunnkart extends React.Component {
                 <VenstreVinduContainer
                   aktiveLag={this.state.aktiveLag}
                   mapBounds={this.state.actualBounds}
-                  onAktiver={this.handleAktiver}
                   onMouseEnter={this.handleMouseEnter}
                   onMouseLeave={this.handleMouseLeave}
                   onFitBounds={this.handleFitBounds}
@@ -277,9 +274,7 @@ class Grunnkart extends React.Component {
                   unknownUrl={this.state.unknownUrl}
                   onUpdateLayerProp={this.handleUpdateLayerProp}
                   onUpdateMetaProp={this.handleUpdateMetaProp}
-                  visForside={context.visForside}
                   visAktiveLag={context.visAktiveLag}
-                  onToggleForside={context.onToggleForside}
                   onToggleAktiveLag={context.onToggleAktiveLag}
                 />
               </div>

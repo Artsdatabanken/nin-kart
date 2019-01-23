@@ -1,20 +1,18 @@
-import React, { Component } from 'react'
-import { SettingsContext } from './SettingsContext'
+import React, { Component } from "react";
+import { SettingsContext } from "./SettingsContext";
 
 class SettingsContainer extends Component {
   state = {
     visKoder: false,
     visAktiveLag: false,
-    visHovedmeny: false,
-    visForside: true,
-  }
+    visHovedmeny: false
+  };
 
   componentDidMount() {
     this.setState({
-      visKoder: localStorage.getItem('visKoder') === 'true',
-      sorterPåKode: localStorage.getItem('sorterPåKode') === 'true',
-      visForside: localStorage.getItem('visForside') === 'true',
-    })
+      visKoder: localStorage.getItem("visKoder") === "true",
+      sorterPåKode: localStorage.getItem("sorterPåKode") === "true"
+    });
   }
 
   render() {
@@ -22,7 +20,6 @@ class SettingsContainer extends Component {
       <SettingsContext.Provider
         value={{
           visHovedmeny: this.state.visHovedmeny,
-          visForside: this.state.visForside,
           visKoder: this.state.visKoder,
           sorterPåKode: this.state.sorterPåKode,
           visAktiveLag: this.state.visAktiveLag,
@@ -30,32 +27,26 @@ class SettingsContainer extends Component {
           onToggleAktiveLag: this.handleToggleAktivelag,
           onToggleHovedmeny: this.handleToggleHovedmeny,
           onToggleForside: this.handleToggleForside,
-          onMapMove: this.handleMapMove,
+          onMapMove: this.handleMapMove
         }}
       >
         {this.props.children}
       </SettingsContext.Provider>
-    )
+    );
   }
 
-  handleMapMove = () => {
-    this.handleUpdateValue('visForside', false)
-  }
+  handleMapMove = () => {};
   handleUpdateValue = (key, value) => {
-    this.setState({ [key]: value })
-    localStorage.setItem(key, value)
-  }
+    this.setState({ [key]: value });
+    localStorage.setItem(key, value);
+  };
 
   handleToggleAktivelag = () =>
-    this.handleUpdateValue('visAktiveLag', !this.state.visAktiveLag)
+    this.handleUpdateValue("visAktiveLag", !this.state.visAktiveLag);
 
   handleToggleHovedmeny = () => {
-    this.handleUpdateValue('visHovedmeny', !this.state.visHovedmeny)
-  }
-
-  handleToggleForside = () => {
-    this.handleUpdateValue('visForside', !this.state.visForside)
-  }
+    this.handleUpdateValue("visHovedmeny", !this.state.visHovedmeny);
+  };
 }
 
-export default SettingsContainer
+export default SettingsContainer;
