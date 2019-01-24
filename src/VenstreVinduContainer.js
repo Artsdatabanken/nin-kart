@@ -35,7 +35,7 @@ class VenstreVinduContainer extends React.Component {
   }
 
   handleNavigate = url => {
-    this.props.history.push("/katalog/" + url);
+    this.props.history.push("/" + url);
   };
 
   parseQueryString(query) {
@@ -81,34 +81,6 @@ class VenstreVinduContainer extends React.Component {
             <React.Fragment>
               <Switch>
                 <Route
-                  path="/katalog/:kode*"
-                  render={({ match, history }) => {
-                    return (
-                      <Panel>
-                        <TopBarContainer
-                          tittel={this.tittel(meta)}
-                          unknownUrl={unknownUrl}
-                        />
-                        <KodeContainer
-                          kode={meta.kode}
-                          onNavigate={this.handleNavigate}
-                          onMouseEnter={onMouseEnter}
-                          onMouseLeave={onMouseLeave}
-                          onFitBounds={this.props.onFitBounds}
-                          erAktivert={this.props.erAktivert}
-                          opplystKode={this.props.opplystKode}
-                          onToggleLayer={this.props.onToggleLayer}
-                          mapBounds={this.props.mapBounds}
-                          language={this.props.language}
-                          meta={this.props.meta}
-                          onUpdateMetaProp={onUpdateMetaProp}
-                        />
-                      </Panel>
-                    );
-                  }}
-                />
-
-                <Route
                   path="/lag/:kode/:lag?"
                   render={({ match, history }) => (
                     <Panel padTop>
@@ -141,13 +113,42 @@ class VenstreVinduContainer extends React.Component {
                     </Panel>
                   )}
                 />
-
+                {false && (
+                  <Route
+                    render={({ match, history }) => (
+                      <Panel>
+                        <TopBarContainer />
+                      </Panel>
+                    )}
+                  />
+                )}{" "}
                 <Route
-                  render={({ match, history }) => (
-                    <Panel>
-                      <TopBarContainer />
-                    </Panel>
-                  )}
+                  path="/:url*"
+                  render={({ match, history }) => {
+                    console.log(match);
+                    return (
+                      <Panel>
+                        <TopBarContainer
+                          tittel={this.tittel(meta)}
+                          unknownUrl={unknownUrl}
+                        />
+                        <KodeContainer
+                          kode={meta.kode}
+                          onNavigate={this.handleNavigate}
+                          onMouseEnter={onMouseEnter}
+                          onMouseLeave={onMouseLeave}
+                          onFitBounds={this.props.onFitBounds}
+                          erAktivert={this.props.erAktivert}
+                          opplystKode={this.props.opplystKode}
+                          onToggleLayer={this.props.onToggleLayer}
+                          mapBounds={this.props.mapBounds}
+                          language={this.props.language}
+                          meta={this.props.meta}
+                          onUpdateMetaProp={onUpdateMetaProp}
+                        />
+                      </Panel>
+                    );
+                  }}
                 />
               </Switch>
               {this.state.error && (

@@ -26,7 +26,7 @@ class Boble extends React.Component {
       <div
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
-        onClick={() => history.push("/katalog/" + url)}
+        onClick={() => history.push("/" + url)}
         className={classNames(
           classes.rot,
           this.state.hover ? classes.hover : classes.hovernot

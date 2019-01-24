@@ -151,6 +151,8 @@ class Grunnkart extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    console.log("prev", prevProps);
+    console.log("props", this.props);
     if (this.props.location.pathname !== prevProps.location.pathname)
       this.fetchMeta(this.props.location.pathname);
     document.title =
@@ -158,14 +160,15 @@ class Grunnkart extends React.Component {
   }
 
   redirectTo(path) {
-    const newUrl = "/katalog/" + path;
+    const newUrl = "/" + path;
     console.log("router videre til ", newUrl);
     this.props.history.replace(newUrl);
   }
 
   fetchMeta(location) {
-    let url = location.match(/\/katalog\/(.*)/);
+    let url = location.match(/\/(.*)/);
     if (!url || url.length !== 2) {
+      console.log("nometa");
       this.setState({ meta: null });
       return;
     }
