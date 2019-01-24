@@ -5,8 +5,7 @@ import classNames from "classnames";
 const styles = {
   rot: {
     height: "100vh",
-    overflowY: "auto",
-    backgroundColor: "#eee"
+    overflowY: "auto"
   },
   padTop: { paddingTop: 55 }
 };

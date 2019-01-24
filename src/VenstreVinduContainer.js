@@ -125,7 +125,6 @@ class VenstreVinduContainer extends React.Component {
                 <Route
                   path="/:url*"
                   render={({ match, history }) => {
-                    console.log(match);
                     return (
                       <Panel>
                         <TopBarContainer
