@@ -37,6 +37,11 @@ const styles = {
   padTop: { paddingTop: 55 }
 };
 
+function isAtRoot(location) {
+  if (location.pathname !== "/") return false;
+  return location.search === "";
+}
+
 class Grunnkart extends React.Component {
   constructor(props) {
     super(props);
@@ -84,7 +89,7 @@ class Grunnkart extends React.Component {
       aktiveLag: JSON.parse(JSON.stringify(standardlag))
     });
     koder.forEach(kode => {
-      this.fetchMeta2("/katalog/" + kode).then(data => {
+      this.downloadMeta("/katalog/" + kode).then(data => {
         this.addSelected(data);
       });
     });
@@ -158,19 +163,17 @@ class Grunnkart extends React.Component {
   }
 
   redirectTo(path) {
-    const newUrl = "/katalog/" + path;
+    const newUrl = "/" + path;
     console.log("router videre til ", newUrl);
     this.props.history.replace(newUrl);
   }
 
   fetchMeta(location) {
-    let url = location.match(/\/katalog\/(.*)/);
-    if (!url || url.length !== 2) {
-      this.setState({ meta: null });
-      return;
-    }
+    let url = location.match(/\/(.*)/);
+    this.setState({ meta: null });
+    if (!url || url.length !== 2) return;
 
-    this.fetchMeta2(url[1]).then(data => {
+    this.downloadMeta(url[1]).then(data => {
       if (!data) {
         this.setState({ unknownUrl: url[1] });
         return;
@@ -184,7 +187,7 @@ class Grunnkart extends React.Component {
     });
   }
 
-  async fetchMeta2(url) {
+  async downloadMeta(url) {
     const meta = await backend.hentKodeMeta(url);
     if (!meta) return;
     if (!meta.tittel) {
@@ -251,7 +254,7 @@ class Grunnkart extends React.Component {
     return (
       <SettingsContext.Consumer>
         {context => {
-          const transparent = history.location.pathname === "/";
+          const transparent = isAtRoot(history.location);
           return (
             <React.Fragment>
               <div

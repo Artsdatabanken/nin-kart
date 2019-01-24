@@ -1,24 +1,24 @@
-import { SettingsContext } from '../SettingsContext'
-import typesystem from '@artsdatabanken/typesystem'
-import { List, ListSubheader, withStyles } from '@material-ui/core'
-import Button from '@material-ui/core/Button'
-import { withTheme } from '@material-ui/core/styles'
-import { ZoomOutMap } from '@material-ui/icons/'
-import ActionDelete from '@material-ui/icons/Delete'
-import ActionInfo from '@material-ui/icons/Info'
-import React, { Component } from 'react'
-import { withRouter } from 'react-router'
-import tinycolor from 'tinycolor2'
-import Barneliste from './Barneliste'
-import ColorPicker from './ColorPicker'
-import Veksle from './Veksle'
+import { SettingsContext } from "../SettingsContext";
+import typesystem from "@artsdatabanken/typesystem";
+import { List, ListSubheader, withStyles } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
+import { withTheme } from "@material-ui/core/styles";
+import { ZoomOutMap } from "@material-ui/icons/";
+import ActionDelete from "@material-ui/icons/Delete";
+import ActionInfo from "@material-ui/icons/Info";
+import React, { Component } from "react";
+import { withRouter } from "react-router";
+import tinycolor from "tinycolor2";
+import Barneliste from "./Barneliste";
+import ColorPicker from "./ColorPicker";
+import Veksle from "./Veksle";
 
 const styles = {
   iconSmall: {
     fontSize: 20,
-    marginRight: 8,
-  },
-}
+    marginRight: 8
+  }
+};
 
 class Polygon extends Component {
   render() {
@@ -38,9 +38,9 @@ class Polygon extends Component {
       barn,
       visBarn,
       lag,
-      classes,
-    } = this.props
-    const undernivå = this.navnPåUndernivå(kode)
+      classes
+    } = this.props;
+    const undernivå = this.navnPåUndernivå(kode);
     return (
       <SettingsContext.Consumer>
         {context => (
@@ -50,19 +50,19 @@ class Polygon extends Component {
               tittel="Vis etiketter"
               toggled={visEtiketter}
               onClick={() =>
-                onUpdateLayerProp(kode, 'visEtiketter', !visEtiketter)
+                onUpdateLayerProp(kode, "visEtiketter", !visEtiketter)
               }
             />
             {Object.keys(barn).length > 0 && (
               <Veksle
-                tittel={'Vis ' + undernivå}
+                tittel={"Vis " + undernivå}
                 toggled={visBarn}
-                onClick={() => onUpdateLayerProp(kode, 'visBarn', !visBarn)}
+                onClick={() => onUpdateLayerProp(kode, "visBarn", !visBarn)}
               />
             )}
             {visBarn ? (
               <List>
-                <ListSubheader style={{ textTransform: 'capitalize' }}>
+                <ListSubheader style={{ textTransform: "capitalize" }}>
                   {undernivå}
                 </ListSubheader>
                 <Barneliste
@@ -73,18 +73,18 @@ class Polygon extends Component {
                   onMouseEnter={onMouseEnter}
                   onMouseLeave={onMouseLeave}
                   onUpdateLayerProp={(index, felt, verdi) => {
-                    barn[index][felt] = verdi
-                    onUpdateLayerProp(kode, 'barn', barn)
+                    barn[index][felt] = verdi;
+                    onUpdateLayerProp(kode, "barn", barn);
                   }}
                 />
               </List>
             ) : (
               <ColorPicker
-                tittel={'Fyllfarge'}
+                tittel={"Fyllfarge"}
                 color={farge}
                 onChange={farge => {
-                  const rgbString = tinycolor(farge.rgb).toRgbString()
-                  onUpdateLayerProp(kode, 'farge', rgbString)
+                  const rgbString = tinycolor(farge.rgb).toRgbString();
+                  onUpdateLayerProp(kode, "farge", rgbString);
                 }}
               />
             )}
@@ -92,7 +92,7 @@ class Polygon extends Component {
               <Button
                 color="primary"
                 onClick={e => {
-                  onRemoveSelectedLayer(kode)
+                  onRemoveSelectedLayer(kode);
                 }}
                 icon={<ActionDelete />}
               >
@@ -102,7 +102,7 @@ class Polygon extends Component {
             <Button
               color="primary"
               onClick={() => {
-                history.push('/katalog/' + kode)
+                history.push("/katalog/" + kode);
               }}
               icon={<ActionInfo />}
             >
@@ -112,7 +112,7 @@ class Polygon extends Component {
               <Button
                 color="primary"
                 onClick={() => {
-                  onFitBounds(bbox)
+                  onFitBounds(bbox);
                 }}
               >
                 <ZoomOutMap className={classes.iconSmall} />
@@ -122,15 +122,15 @@ class Polygon extends Component {
           </React.Fragment>
         )}
       </SettingsContext.Consumer>
-    )
+    );
   }
 
   navnPåUndernivå(kode) {
-    const nivåer = typesystem.hentNivaa(kode + '-1')
-    if (nivåer.length <= 0) return 'underelementer'
-    const nivå = nivåer[0]
-    return nivå.endsWith('e') ? nivå + 'r' : nivå
+    const nivåer = typesystem.hentNivaa(kode + "-1");
+    if (nivåer.length <= 0) return "underelementer";
+    const nivå = nivåer[0];
+    return nivå.endsWith("e") ? nivå + "r" : nivå;
   }
 }
 
-export default withStyles(styles)(withRouter(withTheme()(Polygon)))
+export default withStyles(styles)(withRouter(withTheme()(Polygon)));

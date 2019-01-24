@@ -7,28 +7,22 @@ import {
   ListItemText,
   ListSubheader,
   SwipeableDrawer,
-  ListItemSecondaryAction,
-} from '@material-ui/core'
-import { withStyles } from '@material-ui/core/styles'
-import {
-  CloudUpload,
-  CloudDownload,
-  Layers,
-  Map,
-  Comment,
-} from '@material-ui/icons'
-import { PropTypes } from 'prop-types'
-import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
-import NavigationChevronLeftDouble from '../Grunnkart/NavigationChevronLeftDouble'
-import BildeAvatar from '../Kodetre/Kodeliste/Bildeavatar'
-import GitHub from './GitHub'
-import Innstillinger from './Innstillinger'
+  ListItemSecondaryAction
+} from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
+import { CloudUpload, CloudDownload, Comment } from "@material-ui/icons";
+import { PropTypes } from "prop-types";
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import NavigationChevronLeftDouble from "../Grunnkart/NavigationChevronLeftDouble";
+import BildeAvatar from "../Kodetre/Kodeliste/Bildeavatar";
+import GitHub from "./GitHub";
+import Innstillinger from "./Innstillinger";
 
 const styles = {
-  link: { cursor: 'pointer' },
-  heading: { fontSize: 23, fontWeight: 500 },
-}
+  link: { cursor: "pointer" },
+  heading: { fontSize: 23, fontWeight: 500 }
+};
 
 class MainDrawer extends Component {
   render() {
@@ -38,8 +32,8 @@ class MainDrawer extends Component {
       toggleDrawer,
       visKoder,
       sorterPåKode,
-      onUpdateSetting,
-    } = this.props
+      onUpdateSetting
+    } = this.props;
     return (
       <SwipeableDrawer
         anchor="left"
@@ -66,18 +60,6 @@ class MainDrawer extends Component {
             onClick={toggleDrawer}
             onKeyDown={toggleDrawer}
           >
-            <ListItem onClick={this.handleClickMap} button>
-              <ListItemIcon>
-                <Map />
-              </ListItemIcon>
-              <ListItemText primary="Mine kartlag" />
-            </ListItem>
-            <ListItem onClick={this.handleClickLayers} button>
-              <ListItemIcon>
-                <Layers />
-              </ListItemIcon>
-              <ListItemText primary="Kartkatalog" />
-            </ListItem>
             <ListItem onClick={this.handleClickLastNed} button>
               <ListItemIcon>
                 <CloudDownload />
@@ -114,34 +96,37 @@ class MainDrawer extends Component {
             <ListSubheader>Driftes av</ListSubheader>
             <ListItem onClick={this.handleClickLogo} button>
               <div className={classes.link}>
-                <BildeAvatar kode="OR-AD" size="small" />
+                <BildeAvatar
+                  url="Natur_i_Norge/Datakilde/Artsdatabanken"
+                  kode="OR-AD"
+                  size="small"
+                />
               </div>
               <ListItemText primary="Artsdatabanken" />
             </ListItem>
           </div>
         </List>
       </SwipeableDrawer>
-    )
+    );
   }
   handleClickBidra = () =>
-    window.open('https://github.com/Artsdatabanken/ratatouille/issues')
+    window.open("https://github.com/Artsdatabanken/ratatouille/issues");
   handleClickSource = () =>
-    window.open('https://github.com/Artsdatabanken/ratatouille/')
+    window.open("https://github.com/Artsdatabanken/ratatouille/");
   handleClickLastNed = () =>
     window.open(
-      'https://github.com/Artsdatabanken/ratatouille/blob/master/docs/LastNed.md'
-    )
+      "https://github.com/Artsdatabanken/ratatouille/blob/master/docs/LastNed.md"
+    );
   handleClickLastOpp = () =>
     window.open(
-      'https://github.com/Artsdatabanken/ratatouille/blob/master/docs/BidraMedData.md'
-    )
-  handleClickLogo = () => window.open('https://artsdatabanken.no')
-  handleClickLayers = () => this.props.history.push('/katalog/')
-  handleClickMap = () => this.props.history.push('/')
+      "https://github.com/Artsdatabanken/ratatouille/blob/master/docs/BidraMedData.md"
+    );
+  handleClickLogo = () => window.open("https://artsdatabanken.no");
+  handleClickMap = () => this.props.history.push("/");
 }
 
 MainDrawer.propTypes = {
-  classes: PropTypes.object.isRequired,
-}
+  classes: PropTypes.object.isRequired
+};
 
-export default withRouter(withStyles(styles)(MainDrawer))
+export default withRouter(withStyles(styles)(MainDrawer));

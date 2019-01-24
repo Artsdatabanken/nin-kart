@@ -16,7 +16,7 @@ class Kommunevapen extends Component {
           opacity: 0,
           width: 56,
           filter: "drop-shadow(3px 3px 2px #444)",
-          animation: "fadein 3s ease"
+          animation: "fadein 0.6s ease"
         }}
       />
     );
