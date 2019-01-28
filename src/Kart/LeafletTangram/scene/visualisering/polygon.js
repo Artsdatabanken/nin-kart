@@ -5,13 +5,14 @@ import opplyst from "./palette/opplyst";
 function drawAll(drawArgs) {
   const { kode, barn, farge, opplystKode, visBarn, visEtiketter } = drawArgs;
   const layer = {
-    data: { source: kode, layer: kode }
+    data: { source: kode, layer: sysconfig.hack(kode) }
   };
   if (visBarn) {
     barn.forEach(dac => {
-      const barnkode = dac.kode;
+      let barnkode = dac.kode;
       if (Object.hasOwnProperty("erSynlig") && !dac.erSynlig) return;
       const visEtiketter = barnkode === opplystKode;
+      barnkode = sysconfig.hack(barnkode);
       layer[barnkode] = draw({
         kode: barnkode,
         forelderkode: kode,
@@ -20,14 +21,15 @@ function drawAll(drawArgs) {
         visEtiketter: visEtiketter
       });
     });
-  } else
-    layer[kode] = draw({
-      kode: kode,
+  } else {
+    layer[sysconfig.hack(kode)] = draw({
+      kode: sysconfig.hack(kode),
       forelderkode: kode,
       farge: farge,
       opplystKode: opplystKode,
       visEtiketter: visEtiketter
     });
+  }
   return layer;
 }
 
@@ -55,7 +57,7 @@ function draw(args) {
       }
     }
   };
-  if (kode !== forelderkode) layer.filter = { code: kode };
+  if (kode !== forelderkode) layer.filter = { code: sysconfig.hack(kode) };
   if (kode === opplystKode) {
     const lines = layer.draw.lines;
     lines.width = "2px";

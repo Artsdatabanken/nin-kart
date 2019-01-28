@@ -49,6 +49,11 @@ class config {
   static hackUrl(url) {
     return url.replace(/[/:\s]/g, "_"); // TODO: Bruk metabasen i APIet
   }
+
+  static hack(kode) {
+    if (kode.indexOf("NN-") === 0) return kode.substring(3);
+    return kode;
+  }
 }
 
 export default config;
