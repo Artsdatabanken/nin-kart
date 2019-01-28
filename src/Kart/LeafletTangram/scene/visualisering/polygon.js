@@ -5,13 +5,14 @@ import opplyst from "./palette/opplyst";
 function drawAll(drawArgs) {
   const { kode, barn, farge, opplystKode, visBarn, visEtiketter } = drawArgs;
   const layer = {
-    data: { source: kode, layer: kode }
+    data: { source: kode, layer: hack(kode) }
   };
   if (visBarn) {
     barn.forEach(dac => {
-      const barnkode = dac.kode;
+      let barnkode = dac.kode;
       if (Object.hasOwnProperty("erSynlig") && !dac.erSynlig) return;
       const visEtiketter = barnkode === opplystKode;
+      barnkode = hack(barnkode);
       layer[barnkode] = draw({
         kode: barnkode,
         forelderkode: kode,
@@ -20,14 +21,15 @@ function drawAll(drawArgs) {
         visEtiketter: visEtiketter
       });
     });
-  } else
-    layer[kode] = draw({
-      kode: kode,
+  } else {
+    layer[hack(kode)] = draw({
+      kode: hack(kode),
       forelderkode: kode,
       farge: farge,
       opplystKode: opplystKode,
       visEtiketter: visEtiketter
     });
+  }
   return layer;
 }
 
@@ -55,7 +57,7 @@ function draw(args) {
       }
     }
   };
-  if (kode !== forelderkode) layer.filter = { code: kode };
+  if (kode !== forelderkode) layer.filter = { code: hack(kode) };
   if (kode === opplystKode) {
     const lines = layer.draw.lines;
     lines.width = "2px";
@@ -77,5 +79,10 @@ function draw(args) {
 function lagSource(url, bbox, zoom) {
   return sysconfig.createTileSource(url, "MVT", zoom, bbox);
 }
+
+const hack = kode => {
+  if (kode.indexOf("NN-") === 0) return kode.substring(3);
+  return kode;
+};
 
 export default { drawAll, lagSource };
