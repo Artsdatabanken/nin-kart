@@ -38,17 +38,14 @@ class Kodekort extends React.Component {
     this.props.onToggleLayer(this.props.kode, true);
   };
 
-  erTransparent(prefix) {
-    if (prefix.length <= 2) return false;
-    return "AO-,OR-".indexOf(prefix) >= 0;
+  erTransparent(url) {
+    if (url.startsWith("Fylke")) return true;
+    if (url.startsWith("Datakilde/")) return true;
+    return false;
   }
 
-  filtype(prefix) {
-    return this.erTransparent(prefix) ? "png" : "jpg";
-  }
-
-  styles(prefix) {
-    if (this.erTransparent(prefix))
+  styles(url) {
+    if (this.erTransparent(url))
       return {
         minHeight: 297,
         marginTop: 142,
@@ -78,9 +75,9 @@ class Kodekort extends React.Component {
     return (
       <Card square={false} style={{ backgroundColor: "#ccc" }}>
         <CardMedia
-          style={this.styles(kode.substring(0, 3))}
+          style={this.styles(url)}
           onClick={this.handleOpen}
-          image={config.getFotoOmslag(url, 408, this.filtype(prefiks))}
+          image={config.getFotoOmslag(url, 408)}
           alt={"foto av" + tittel}
         />
         <Tittelblokk
