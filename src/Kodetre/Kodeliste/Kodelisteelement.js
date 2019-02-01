@@ -15,7 +15,7 @@ function getSecondary(meta) {
     if (!i.maxTekst) return "> " + i.minTekst;
     return `${i.tittel ? i.tittel + " " : ""}${i.minTekst} - ${i.maxTekst}`;
   });
-  const r = items.join(", ") + " " + intervall[0].måleenhet;
+  const r = items.join(", ") + " " + (intervall[0].måleenhet || "");
   return r;
 }
 
