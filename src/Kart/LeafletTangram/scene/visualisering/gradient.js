@@ -23,6 +23,7 @@ function lagPalett(barna, opplystKode, mode) {
   barna.forEach(b => {
     const key = b.kode;
     let levels = b.normalisertVerdi;
+    if (levels === undefined) return;
     if (!Array.isArray(levels)) levels = [levels];
     if (key === opplystKode) opplystLevel = levels;
     levels.forEach(level => steps.push({ level: level, color: b.farge }));
@@ -39,16 +40,17 @@ function lagPalett(barna, opplystKode, mode) {
   for (let i = 0; i < steps.length - 1; i++) {
     const a = steps[i];
     const b = steps[i + 1];
-    for (let ci = a.level; ci <= b.level; ci++) {
-      const weight = (100 * (ci - a.level)) / (b.level - a.level);
+    for (let ci = Math.trunc(a.level); ci <= Math.trunc(b.level); ci++) {
+      let weight = (100 * (ci - a.level)) / (b.level - a.level);
+      weight = Math.max(0, Math.min(100, weight));
       let tc = tinycolor.mix(a.color, b.color, weight);
       if (opplystLevel !== -1) {
         if (opplystLevel.length < 2)
           opplystLevel = [opplystLevel[0] - 5, opplystLevel[0] + 5];
 
         if (ci < opplystLevel[0] || ci > opplystLevel[1])
-          tc = tc.lighten(10).desaturate(40);
-        else tc = tc.darken(30); //.saturate(40);
+          tc = tc.lighten(10).desaturate(100);
+        //        else tc = tc.darken(30); //.saturate(40);
       }
       cmap[ci] = tc.toHexString();
     }
@@ -58,7 +60,8 @@ function lagPalett(barna, opplystKode, mode) {
 
 function lagStyle(kartformat, drawArgs) {
   const { filterMin, filterMax, opplystKode, barn } = drawArgs;
-  const cmap = lagPalett(barn, opplystKode, 1 > 0 ? "diskret" : "kontinuerlig");
+  const [visning] = drawArgs.kartformat["raster.gradient"].visning;
+  const cmap = lagPalett(barn, opplystKode, visning || "diskret");
   const palette = createPalette(cmap);
   const gradient = {
     base: "raster",
@@ -72,21 +75,19 @@ function lagStyle(kartformat, drawArgs) {
       blocks: {
         color: `
           vec4 value = sampleRaster(0);
-          float v = sampleRaster(0).r;
-          float x = step(min,v);
-          float y=(1.-step(max,v));
-          color = texture2D(palette, vec2(x*y*v-0.002, 0.5));
+          float v = value.r;
+          float filter = step(min,v) * (step(v,max));
+          v = (255.*value.b+0.5)/256.;
+          color = texture2D(palette, vec2(filter*v, 0.5));
           vec4 transparent = vec4(1.,1.,1.,1.);
-//          color = vec4(v,0,0,1.0);
-          color = mix(transparent, color, value.a);
-//          color = texture2D(palette, vec2(255./256.+.5 / 256., 0.));
-//          vec2 pos = gl_FragCoord.xy;
-//          color = texture2D(palette, vec2(pos.x*0.0005,0.5));
-`
+          color = mix(transparent, color, value.a);`
       }
     }
   };
-  return { name: "gradient", value: gradient };
+  return {
+    name: "gradient",
+    value: gradient
+  };
 }
 
 function lagSource(url, bbox, zoom) {
