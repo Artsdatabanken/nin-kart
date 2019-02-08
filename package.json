@@ -1,6 +1,6 @@
 {
-  "name": "ratatouille",
-  "version": "0.1.0",
+  "name": "nin-innsyn",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@artsdatabanken/typesystem": "^9.0.0",
@@ -44,7 +44,7 @@
     "storybook-addon-material-ui": "^0.9.0-alpha.17"
   },
   "bugs": {
-    "url": "https://github.com/Artsdatabanken/ratatouille/issues"
+    "url": "https://github.com/Artsdatabanken/nin-innsyn/issues"
   },
   "eslintConfig": {
     "extends": "react-app"

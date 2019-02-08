@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - '10'
+  - "10"
 directories:
   - node_modules
 script:
@@ -15,9 +15,9 @@ deploy:
   file_glob: true
   file: bundle.tar.gz
   on:
-    repo: Artsdatabanken/ratatouille
+    repo: Artsdatabanken/nin-innsyn
   skip_cleanup: true
-after_deploy: ./slack.sh ops "deploy ratatouille"
+after_deploy: ./slack.sh ops "deploy nin-innsyn"
 after_success:
   - npm run report-coverage
 notifications:
