@@ -110,16 +110,16 @@ class MainDrawer extends Component {
     );
   }
   handleClickBidra = () =>
-    window.open("https://github.com/Artsdatabanken/ratatouille/issues");
+    window.open("https://github.com/Artsdatabanken/nin-innsyn/issues");
   handleClickSource = () =>
-    window.open("https://github.com/Artsdatabanken/ratatouille/");
+    window.open("https://github.com/Artsdatabanken/nin-innsyn/");
   handleClickLastNed = () =>
     window.open(
-      "https://github.com/Artsdatabanken/ratatouille/blob/master/docs/LastNed.md"
+      "https://github.com/Artsdatabanken/nin-innsyn/blob/master/docs/LastNed.md"
     );
   handleClickLastOpp = () =>
     window.open(
-      "https://github.com/Artsdatabanken/ratatouille/blob/master/docs/BidraMedData.md"
+      "https://github.com/Artsdatabanken/nin-innsyn/blob/master/docs/BidraMedData.md"
     );
   handleClickLogo = () => window.open("https://artsdatabanken.no");
   handleClickMap = () => this.props.history.push("/");
