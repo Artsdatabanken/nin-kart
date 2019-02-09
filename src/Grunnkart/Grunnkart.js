@@ -16,18 +16,15 @@ const styles = {
     backgroundColor: "#f5f5f5",
     color: "hsla(0, 0%, 0%, 0.87)",
     boxShadow: "0 0 20px rgba(0, 0, 0, 0.3)",
-    _padding: 0,
     position: "fixed",
     left: 0,
     border: 1,
     width: 408,
     height: "100vh",
     zIndex: -10,
-    _overflow: "hidden",
     pointerEvents: "auto",
     display: "flex",
-    flexDirection: "column",
-    _overflowX: "hidden"
+    flexDirection: "column"
   },
   transparent: {
     backgroundColor: "transparent",

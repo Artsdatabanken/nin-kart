@@ -59,7 +59,7 @@ class TopBarContainer extends Component<Props, State> {
     this.queryNumber++;
     const currentQuery = this.queryNumber;
 
-    backend.søkKode(q).then(json => {
+    backend.søk(q).then(json => {
       if (currentQuery !== this.queryNumber) return; // Abort stale query
       if (json.error) {
         this.setState({ error: json.error });
@@ -77,7 +77,7 @@ class TopBarContainer extends Component<Props, State> {
     this.props.history.push("/");
   };
 
-  handleClickSearchResult = url => {
+  handleNavigation = url => {
     this.setState({ query: "", searchResults: null });
     this.props.history.push("/" + url);
   };
@@ -133,7 +133,7 @@ class TopBarContainer extends Component<Props, State> {
                         <ResultatListe
                           query={this.state.query}
                           searchResults={this.state.searchResults}
-                          onClick={this.handleClickSearchResult}
+                          onClick={this.handleNavigation}
                         />
                       </div>
                     )}

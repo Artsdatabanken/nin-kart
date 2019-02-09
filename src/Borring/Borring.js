@@ -1,3 +1,4 @@
+import backend from "../backend";
 import { List, ListSubheader, withTheme } from "@material-ui/core";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
@@ -28,7 +29,7 @@ class Borring extends Component {
                       kategori={node.title}
                       node={node}
                       visKoder={context.visKoder}
-                      onClick={() => this.onClick(kode)}
+                      onClick={() => this.handleClick(kode, node)}
                     />
                   );
                 });
@@ -39,9 +40,22 @@ class Borring extends Component {
     );
   }
 
-  onClick = kode => {
+  getInnerMostSingleChild(kode, node) {
+    if (!node.values) return kode;
+    const keys = Object.keys(node.values);
+    if (keys.length !== 1) return kode;
+    return this.getInnerMostSingleChild(keys[0], node.values[keys[0]]);
+  }
+
+  handleClick = (kode, node) => {
+    console.log(node);
+    kode = this.getInnerMostSingleChild(kode, node);
     const { history } = this.props;
-    history.push("/katalog/" + kode);
+    backend.søk(kode).then(json => {
+      // TODO: Mofify lat,lon query API to return URL
+      const hit = json.result[0];
+      history.push("/" + hit.url);
+    });
   };
 }
 
