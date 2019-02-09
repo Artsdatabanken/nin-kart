@@ -9,8 +9,7 @@ class config {
     const source = {
       filtering: "nearest",
       type: type,
-      url: `${relativePath}/{z}/{x}/{y}`,
-      url_subdomains: ["maps"]
+      url: `${relativePath}/{z}/{x}/{y}`
     };
     if (!bbox || !zoom) {
       console.warn(`No map extents for ${relativePath}`);
