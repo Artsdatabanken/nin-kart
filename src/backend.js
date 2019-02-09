@@ -33,7 +33,7 @@ class Backend {
     });
   }
 
-  static async søkKode(q) {
+  static async søk(q) {
     return this.getPromise(`https://ogapi.artsdatabanken.no/${q}`);
   }
 
