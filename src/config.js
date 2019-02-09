@@ -3,7 +3,7 @@ class config {
     comboSøk: false
   };
 
-  static storageUrl = "https://maps.artsdatabanken.no/";
+  static storageUrl = "https://data.artsdatabanken.no/";
 
   static createTileSource(relativePath, type, zoom, bbox) {
     const source = {
