@@ -41,9 +41,9 @@ function opprettEttLag(drawArgs, config) {
     config.styles[style.name] = style.value;
   }
   config.sources[drawArgs.kode] = source;
-  if (drawArgs.kode === "bakgrunnskart")
-    config.layers = Object.assign(config.layers, renderer.drawAll(drawArgs));
-  else config.layers[drawArgs.kode] = renderer.drawAll(drawArgs);
+  // if (drawArgs.kode === "bakgrunnskart")
+  config.layers = Object.assign(config.layers, renderer.drawAll(drawArgs));
+  //  else config.layers[drawArgs.kode] = renderer.drawAll(drawArgs);
 }
 
 function opplystKodeErBarnAvAktivtLag(drawArgs) {
@@ -105,9 +105,11 @@ function createScene(props: Object) {
 
 function updateScene(config: Object, props: Object) {
   const bakgrunn = props.aktiveLag.bakgrunnskart;
-  config.scene.background.color = bakgrunn.kartformat.osm.land
-    ? bakgrunn.kartformat.osm.land_farge
-    : "#f2f2f2";
+  if (bakgrunn.kartformat.osm) {
+    config.scene.background.color = bakgrunn.kartformat.osm.land
+      ? bakgrunn.kartformat.osm.land_farge
+      : "#f2f2f2";
+  }
   config.layers = {};
   const meta = props.meta;
   const viserKatalog = !!meta;
@@ -137,6 +139,7 @@ function updateScene(config: Object, props: Object) {
   }
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config);
   lagTemp(config);
+  console.log(config);
   return config;
 }
 

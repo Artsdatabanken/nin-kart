@@ -3,6 +3,7 @@ import pointDraw from "./point";
 import gradientDraw from "./gradient";
 import indexedRasterDraw from "./indexedRaster";
 import openStreetMap from "./openStreetMap";
+import googleRaster from "./google_raster";
 
 export default {
   polygon: polygonDraw,
@@ -10,5 +11,6 @@ export default {
   gradient: gradientDraw,
   "raster.gradient": gradientDraw,
   "raster.indexed": indexedRasterDraw,
-  osm: openStreetMap
+  osm: openStreetMap,
+  google: googleRaster
 };

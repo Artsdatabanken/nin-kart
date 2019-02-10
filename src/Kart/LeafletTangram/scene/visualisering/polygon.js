@@ -4,9 +4,7 @@ import opplyst from "./palette/opplyst";
 
 function drawAll(drawArgs) {
   const { kode, barn, farge, opplystKode, visBarn, visEtiketter } = drawArgs;
-  const layer = {
-    data: { source: kode, layer: sysconfig.hack(kode) }
-  };
+  const layer = {};
   if (visBarn) {
     barn.forEach(dac => {
       let barnkode = dac.kode;
@@ -30,7 +28,9 @@ function drawAll(drawArgs) {
       visEtiketter: visEtiketter
     });
   }
-  return layer;
+  return {
+    [kode]: { layer, data: { source: kode, layer: sysconfig.hack(kode) } }
+  };
 }
 
 function draw(args) {
