@@ -1,17 +1,19 @@
-import React from 'react'
-import { withRouter } from 'react-router'
-import Tweaks from './'
+import React from "react";
+import { withRouter } from "react-router";
+import Tweaks from "./";
 
 class TweakContainer extends React.Component {
-  render() {
-    const { history, match, koder, ...props } = this.props
-    if (!koder[props.kode]) {
+  componentDidMount() {
+    const { history, kode, koder } = this.props;
+    if (!koder[kode]) {
       // Laget er ikke lenger aktivt.  Url fra annen sesjon?
-      history.replace('/')
-      return null
+      history.replace("/");
     }
-    return <Tweaks {...props} />
+  }
+  render() {
+    const { history, match, koder, ...props } = this.props;
+    return <Tweaks {...props} />;
   }
 }
 
-export default withRouter(TweakContainer)
+export default withRouter(TweakContainer);

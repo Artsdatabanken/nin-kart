@@ -1,7 +1,7 @@
 {
   "landegrense": {
     "data": {
-      "source": "osm",
+      "source": "bakgrunnskart",
       "layer": "boundary"
     },
     "filter": {
@@ -16,7 +16,7 @@
   },
   "fylkesgrense": {
     "data": {
-      "source": "osm",
+      "source": "bakgrunnskart",
       "layer": "boundary"
     },
     "filter": {
@@ -31,7 +31,7 @@
   },
   "kommunegrense": {
     "data": {
-      "source": "osm",
+      "source": "bakgrunnskart",
       "layer": "boundary"
     },
     "filter": {
@@ -46,7 +46,7 @@
   },
   "vann": {
     "data": {
-      "source": "osm",
+      "source": "bakgrunnskart",
       "layer": "water"
     },
     "draw": {
@@ -56,22 +56,9 @@
       }
     }
   },
-  "vannvei": {
-    "data": {
-      "source": "osm",
-      "layer": "waterway"
-    },
-    "draw": {
-      "lines": {
-        "order": 11,
-        "color": [0.4, 0.4, 0.4, 1.0],
-        "width": "1.3px"
-      }
-    }
-  },
   "transport_navn": {
     "data": {
-      "source": "osm",
+      "source": "bakgrunnskart",
       "layer": "transportation_name"
     },
     "draw": {
@@ -91,7 +78,7 @@
   },
   "transport": {
     "data": {
-      "source": "osm",
+      "source": "bakgrunnskart",
       "layer": "transportation"
     },
     "filter": {
@@ -322,7 +309,7 @@
     }
   },
   "sted_navn": {
-    "data": { "source": "osm", "layer": "place" },
+    "data": { "source": "bakgrunnskart", "layer": "place" },
     "draw": {
       "text": {
         "text_source": "name",
@@ -339,7 +326,7 @@
     }
   },
   "vann_navn": {
-    "data": { "source": "osm", "layer": "water_name" },
+    "data": { "source": "bakgrunnskart", "layer": "water_name" },
     "draw": {
       "text": {
         "text_source": "name",

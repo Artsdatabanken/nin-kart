@@ -1,7 +1,7 @@
 {
   "bakgrunnskart": {
-    "kode": "bakgrunnskart",
-    "type": "bakgrunn",
+    "kode": "xxxbakgrunnskart",
+    "type": "xxxbakgrunn",
     "tittel": "Basiskart",
     "tema": "lys",
     "erSynlig": true
@@ -9,6 +9,7 @@
   "terreng": {
     "kode": "terreng",
     "type": "terreng",
+    "aktivtKartformat": "normals",
     "tittel": "3D terreng",
     "erSynlig": false,
     "terreng": {

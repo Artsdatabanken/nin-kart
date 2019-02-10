@@ -153,8 +153,8 @@ class Grunnkart extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.location.pathname !== prevProps.location.pathname)
-      this.fetchMeta(this.props.location.pathname);
+    const path = this.props.location.pathname;
+    if (path !== prevProps.location.pathname) this.fetchMeta(path);
     document.title =
       (this.state.meta && this.state.meta.tittel.nb) || "Natur i Norge";
   }
