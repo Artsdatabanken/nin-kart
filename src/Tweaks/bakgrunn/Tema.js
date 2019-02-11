@@ -1,48 +1,58 @@
-import { List, ListItem, ListItemText, ListSubheader } from '@material-ui/core'
-import React, { Component } from 'react'
-import { withRouter } from 'react-router'
-import thumb_flyfoto from './thumb_flyfoto.jpg'
-import thumb_lys from './thumb_lys.jpg'
-import thumb_mørk from './thumb_mørk.jpg'
+import { List, ListItem, ListItemText } from "@material-ui/core";
+import React, { Component } from "react";
+import { withRouter } from "react-router";
+import thumb_flyfoto from "./satellite.jpg";
+import thumb_lys from "./thumb_lys.jpg";
+import thumb_mørk from "./thumb_mørk.jpg";
+import thumb_hybrid from "./hybrid.jpg";
 
-const KartPreview = ({ thumb, tittel, checked, onClick }) => (
-  <ListItem button={true} onClick={onClick}>
+const KartPreview = ({ thumb, tittel, valgt, onClick }) => (
+  <ListItem button={true} onClick={onClick} selected={valgt}>
     <ListItemText
       primary={tittel}
-      secondary={<img style={{ xleft: 8 }} src={thumb} alt={tittel} />}
+      secondary={<img src={thumb} alt={tittel} />}
     />
   </ListItem>
-)
+);
 
 class Tema extends Component {
   handleClick = tema => {
-    this.props.onUpdateLayerProp('bakgrunnskart', 'tema', tema)
-    this.props.history.push('.')
-  }
+    this.props.onUpdateLayerProp("bakgrunnskart", "aktivtKartformat", tema);
+    this.props.history.push(".");
+  };
   render() {
+    const { valgt } = this.props;
     return (
       <React.Fragment>
-        <ListSubheader>Bakgrunnskart tema</ListSubheader>
         <List>
           <KartPreview
-            onClick={() => this.handleClick('mørk')}
+            onClick={() => this.handleClick("osm_mørk")}
             thumb={thumb_mørk}
-            tittel="Mørk"
+            valgt={valgt === "osm_mørk"}
+            tittel="Mørk (OpenStreetMap)"
           />
           <KartPreview
-            onClick={() => this.handleClick('lys')}
+            onClick={() => this.handleClick("osm_lys")}
             thumb={thumb_lys}
-            tittel="Lys"
+            valgt={valgt === "osm_lys"}
+            tittel="Lys (OpenStreetMap)"
           />
           <KartPreview
-            onClick={() => this.handleClick('flyfoto')}
+            onClick={() => this.handleClick("google_satellite")}
             thumb={thumb_flyfoto}
-            tittel="Flyfoto"
+            valgt={valgt === "google_satellite"}
+            tittel="Flyfoto (Google)"
+          />
+          <KartPreview
+            onClick={() => this.handleClick("google_hybrid")}
+            thumb={thumb_hybrid}
+            valgt={valgt === "google_hybrid"}
+            tittel="Hybrid (Google)"
           />
         </List>
       </React.Fragment>
-    )
+    );
   }
 }
 
-export default withRouter(Tema)
+export default withRouter(Tema);

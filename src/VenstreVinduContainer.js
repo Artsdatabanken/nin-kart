@@ -81,13 +81,16 @@ class VenstreVinduContainer extends React.Component {
             <React.Fragment>
               <Switch>
                 <Route
-                  path="/lag/:kode/:lag?"
+                  path="/visning/:kode/:lag?"
                   render={({ match, history }) => (
                     <Panel padTop>
                       <TopBarContainer
                         tittel={
-                          "Innstillinger for " +
-                          (match.params.lag || match.params.kode)
+                          match.params.lag
+                            ? capitalize(match.params.kode) +
+                              ": " +
+                              capitalize(match.params.lag)
+                            : capitalize(match.params.kode)
                         }
                       />
                       <TweakContainer
@@ -185,5 +188,8 @@ class VenstreVinduContainer extends React.Component {
 
   handleCloseSnackbar = () => this.setState({ error: null });
 }
+
+const capitalize = lower =>
+  lower.replace(/(^|\s)\S/g, c => c.toUpperCase()).replace(/_/g, " ");
 
 export default withRouter(VenstreVinduContainer);

@@ -5,7 +5,7 @@ import {
   CardMedia,
   withStyles
 } from "@material-ui/core";
-import { LibraryAdd, ZoomOutMap } from "@material-ui/icons/";
+import { LibraryAdd, ZoomOutMap, ColorLens } from "@material-ui/icons/";
 import React from "react";
 import { withRouter } from "react-router";
 import config from "../../config";
@@ -92,9 +92,10 @@ class Kodekort extends React.Component {
             {overordnet && (
               <Button
                 style={{
-                  backgroundColor: "#fff",
-                  color: farger.mørk[prefiks]
+                  xbackgroundColor: "#fff",
+                  xcolor: farger.mørk[prefiks]
                 }}
+                xcolor="primary"
                 size="small"
                 variant="contained"
                 className={classes.button}
@@ -105,6 +106,20 @@ class Kodekort extends React.Component {
                 Aktivér
               </Button>
             )}
+            <Button
+              style={{
+                xbackgroundColor: "#fff",
+                color: farger.lys[prefiks]
+              }}
+              xcolor="secondary"
+              className={classes.button}
+              xsize="small"
+              variant="text"
+              onClick={this.handleClickTweaks}
+            >
+              <ColorLens className={classes.iconSmall} />
+              Visning
+            </Button>
             {bbox && (
               <Button
                 style={{
@@ -124,6 +139,7 @@ class Kodekort extends React.Component {
   }
 
   handleClickAktiveLag = () => this.props.history.push("/");
+  handleClickTweaks = () => this.props.history.push("/visning"); // + this.props.history.location.pathname);
   handleFitBounds = () => this.props.onFitBounds(this.props.bbox);
 }
 

@@ -4,9 +4,7 @@ import opplyst from "./palette/opplyst";
 
 function drawAll(drawArgs) {
   const { kode, barn, farge, opplystKode, visBarn, visEtiketter } = drawArgs;
-  const layer = {
-    data: { source: kode, layer: sysconfig.hack(kode) }
-  };
+  const layer = {};
   if (visBarn) {
     barn.forEach(dac => {
       let barnkode = dac.kode;
@@ -30,7 +28,9 @@ function drawAll(drawArgs) {
       visEtiketter: visEtiketter
     });
   }
-  return layer;
+  return {
+    [kode]: { layer, data: { source: kode, layer: sysconfig.hack(kode) } }
+  };
 }
 
 function draw(args) {
@@ -40,12 +40,15 @@ function draw(args) {
     draw: {
       mu_polygons: {
         order: 800,
-        color: farge
+        color: tinycolor(farge)
+          .darken(30)
+          .saturate(60)
+          .toHexString()
       },
       lines: {
         order: 800,
         color: tinycolor(farge)
-          .darken(30)
+          .darken(50)
           .toHexString(),
         width: "1.0px"
       },
@@ -76,7 +79,7 @@ function draw(args) {
   return layer;
 }
 
-function lagSource(url, bbox, zoom) {
+function lagSource({ url, zoom }, bbox) {
   return sysconfig.createTileSource(url, "MVT", zoom, bbox);
 }
 

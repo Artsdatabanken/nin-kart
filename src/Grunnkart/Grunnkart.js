@@ -43,7 +43,7 @@ class Grunnkart extends React.Component {
   constructor(props) {
     super(props);
     let aktive = standardlag;
-    aktive.bakgrunnskart = bakgrunnskarttema[aktive.bakgrunnskart.tema]; // HACK
+    aktive.bakgrunnskart = bakgrunnskarttema;
     aktive = JSON.parse(JSON.stringify(aktive));
     this.state = {
       aktiveLag: aktive,
@@ -153,8 +153,8 @@ class Grunnkart extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.location.pathname !== prevProps.location.pathname)
-      this.fetchMeta(this.props.location.pathname);
+    const path = this.props.location.pathname;
+    if (path !== prevProps.location.pathname) this.fetchMeta(path);
     document.title =
       (this.state.meta && this.state.meta.tittel.nb) || "Natur i Norge";
   }
@@ -223,11 +223,6 @@ class Grunnkart extends React.Component {
     for (let i = 0; i < parts.length - 1; i++) node = node[parts[i]];
     const vkey = parts[parts.length - 1];
     node[vkey] = value;
-    if (vkey === "tema")
-      // HACK
-      aktive.bakgrunnskart = JSON.parse(
-        JSON.stringify(bakgrunnskarttema[value])
-      );
     this.setState({ aktiveLag: Object.assign({}, aktive) });
   };
 

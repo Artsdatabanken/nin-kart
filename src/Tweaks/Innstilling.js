@@ -1,6 +1,6 @@
-import { withTheme } from '@material-ui/core/styles'
-import React from 'react'
-import { ListItem, ListItemAvatar, ListItemText } from '@material-ui/core'
+import { withTheme } from "@material-ui/core/styles";
+import React from "react";
+import { ListItem, ListItemAvatar, ListItemText } from "@material-ui/core";
 
 const Innstilling = ({
   tittel,
@@ -9,17 +9,17 @@ const Innstilling = ({
   icon,
   disabled,
   children,
-  theme,
+  theme
 }) => (
   <ListItem disabled={disabled}>
     {verdi && (
       <div
         style={{
           fontFamily: theme.typography.fontFamily,
-          position: 'absolute',
+          position: "absolute",
           right: 20,
           top: 10,
-          color: theme.palette.text.disabled,
+          color: theme.palette.text.disabled
         }}
       >
         {verdi}
@@ -29,6 +29,6 @@ const Innstilling = ({
     <ListItemText primary={tittel} secondary={undertittel} />
     {children}
   </ListItem>
-)
+);
 
-export default withTheme()(Innstilling)
+export default withTheme()(Innstilling);

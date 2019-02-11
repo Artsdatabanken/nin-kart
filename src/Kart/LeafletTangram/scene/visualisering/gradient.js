@@ -4,9 +4,8 @@ import tinycolor from "tinycolor2";
 
 function drawAll(drawArgs) {
   const layer = {
-    data: { source: drawArgs.kode },
     [drawArgs.kode]: {
-      data: { source: drawArgs.forelderkode },
+      data: { source: drawArgs.kode },
       draw: {
         gradient: {
           order: 700
@@ -60,12 +59,14 @@ function lagPalett(barna, opplystKode, mode) {
 
 function lagStyle(kartformat, drawArgs) {
   const { filterMin, filterMax, opplystKode, barn } = drawArgs;
-  const [visning] = drawArgs.kartformat["raster.gradient"].visning;
+  const [visning] = drawArgs.kartformat.visning;
   const cmap = lagPalett(barn, opplystKode, visning || "diskret");
   const palette = createPalette(cmap);
   const gradient = {
     base: "raster",
-    blend: "multiply",
+    xblend: "multiply",
+    blend: "overlay",
+    fblend: "add",
     shaders: {
       uniforms: {
         palette: palette,
@@ -79,7 +80,10 @@ function lagStyle(kartformat, drawArgs) {
           float filter = step(min,v) * (step(v,max));
           v = (255.*value.b+0.5)/256.;
           color = texture2D(palette, vec2(filter*v, 0.5));
-          vec4 transparent = vec4(1.,1.,1.,1.);
+          vec4 transparent = vec4(color.r,color.g,color.b,0.);
+
+          color = mix(color, transparent, 0.5+0.6*(1.-smoothstep(1.0,0.9995,v)));
+
           color = mix(transparent, color, value.a);`
       }
     }
@@ -90,7 +94,7 @@ function lagStyle(kartformat, drawArgs) {
   };
 }
 
-function lagSource(url, bbox, zoom) {
+function lagSource({ url, zoom }, bbox) {
   const source = sysconfig.createTileSource(url, "Raster", zoom, bbox);
 
   return source;

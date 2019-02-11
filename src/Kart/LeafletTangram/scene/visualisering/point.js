@@ -34,7 +34,7 @@ function draw(args) {
   return layer;
 }
 
-function lagSource(url, bbox, zoom) {
+function lagSource({ url, zoom }, bbox) {
   const source = {
     type: "GeoJSON",
     url: url

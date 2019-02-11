@@ -3,10 +3,10 @@ import {
   ListItem,
   ListItemSecondaryAction,
   ListItemText,
-  Switch,
-} from '@material-ui/core'
-import { default as React } from 'react'
-import { withRouter } from 'react-router'
+  Switch
+} from "@material-ui/core";
+import { default as React } from "react";
+import { withRouter } from "react-router";
 
 const Bakgrunnskartlag = ({
   onUpdateLayerProp,
@@ -14,25 +14,25 @@ const Bakgrunnskartlag = ({
   tittel,
   erSynlig,
   farge,
-  history,
+  history
 }) => (
   <ListItem
-    onClick={() => history.push('/lag/bakgrunnskart/' + lagNavn)}
+    onClick={() => history.push("/visning/bakgrunnskart/" + lagNavn)}
     button={true}
   >
     <Switch
       onClick={e => e.stopPropagation()}
-      onChange={() => onUpdateLayerProp('bakgrunnskart', lagNavn, !erSynlig)}
+      onChange={() => onUpdateLayerProp("bakgrunnskart", lagNavn, !erSynlig)}
       checked={erSynlig}
     />
     <ListItemText primary={tittel} />
     <ListItemSecondaryAction
-      onClick={() => history.push('/lag/bakgrunnskart/' + lagNavn)}
-      style={{ cursor: 'pointer', paddingRight: 12 }}
+      onClick={() => history.push("/visning/bakgrunnskart/" + lagNavn)}
+      style={{ cursor: "pointer", paddingRight: 12 }}
     >
       <Avatar style={{ backgroundColor: farge }} />
     </ListItemSecondaryAction>
   </ListItem>
-)
+);
 
-export default withRouter(Bakgrunnskartlag)
+export default withRouter(Bakgrunnskartlag);

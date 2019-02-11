@@ -1,33 +1,37 @@
-import React from 'react'
-import { withRouter } from 'react-router-dom'
-import Bakgrunnskart from './bakgrunn/Bakgrunnskart'
-import Polygon from './Polygon'
-import Terreng from './Terreng'
-import Gradient from './Gradient'
-import { List } from '@material-ui/core'
+import React from "react";
+import { withRouter } from "react-router-dom";
+import Bakgrunnskart from "./bakgrunn/Bakgrunnskart";
+import Google from "./bakgrunn/Google";
+import Polygon from "./Polygon";
+import Terreng from "./Terreng";
+import Gradient from "./Gradient";
+import { List } from "@material-ui/core";
 
 class Tweaks extends React.Component {
-  state = {}
-  seksjon(type) {
-    switch (type) {
-      case 'bakgrunn':
-        return <Bakgrunnskart {...this.props} />
-      case 'terreng':
-        return <Terreng {...this.props} />
-      case 'gradient':
-        return <Gradient {...this.props} />
-      case 'polygon':
-        return <Polygon {...this.props} />
+  state = {};
+  seksjon(aktivtKartformat) {
+    switch (aktivtKartformat) {
+      case "osm_lys":
+      case "osm_mørk":
+        return <Bakgrunnskart {...this.props} />;
+      case "google_hybrid":
+      case "google_satellite":
+        return <Google {...this.props} />;
+      case "terreng":
+        return <Terreng {...this.props} />;
+      case "gradient":
+        return <Gradient {...this.props} />;
+      case "polygon":
+        return <Polygon {...this.props} />;
       default:
-        console.error('Unknown ' + type)
-        return <Polygon {...this.props} />
+        console.error("Unknown " + aktivtKartformat);
     }
   }
 
   render() {
-    const { style, type } = this.props
-    return <List style={{ ...style }}>{this.seksjon(type)}</List>
+    const { style, aktivtKartformat } = this.props;
+    return <List style={{ ...style }}>{this.seksjon(aktivtKartformat)}</List>;
   }
 }
 
-export default withRouter(Tweaks)
+export default withRouter(Tweaks);

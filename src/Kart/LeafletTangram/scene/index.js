@@ -1,5 +1,4 @@
 import tinycolor from "tinycolor2";
-import { lagBakgrunnskart } from "./bakgrunnskart";
 import { createLights } from "./lights";
 import { createStyles } from "./styles";
 import { lagTerreng } from "./terreng";
@@ -15,9 +14,6 @@ function lagAktiveLag(aktive, iKatalog, opplystKode, config) {
 function lagEttLag(lag, opplystKode, viserKatalog, config) {
   if (!lag.erSynlig && opplystKode !== lag.kode) return;
   switch (lag.type) {
-    case "bakgrunn":
-      lagBakgrunnskart(lag, opplystKode, config);
-      break;
     case "terreng":
       lagTerreng(lag.terreng, opplystKode, config);
       break;
@@ -28,25 +24,21 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
 
 function opprettEttLag(drawArgs, config) {
   if (drawArgs.opplystKode && !opplystKodeErBarnAvAktivtLag(drawArgs)) return; // Hide this layer while highlighting other layer
-
   const renderer = draw[drawArgs.aktivtKartformat];
   const kartformat = drawArgs.kartformat[drawArgs.aktivtKartformat];
+  drawArgs.kartformat = kartformat;
   if (!renderer) {
     console.warn("Unknown kartformat", drawArgs.aktivtKartformat);
     return;
   }
-  const source = renderer.lagSource(
-    kartformat.url,
-    drawArgs.bbox,
-    kartformat.zoom
-  );
+  const source = renderer.lagSource(kartformat, drawArgs.bbox);
 
   if (renderer.lagStyle) {
     const style = renderer.lagStyle(renderer, drawArgs);
     config.styles[style.name] = style.value;
   }
   config.sources[drawArgs.kode] = source;
-  config.layers[drawArgs.kode] = renderer.drawAll(drawArgs);
+  config.layers = Object.assign(config.layers, renderer.drawAll(drawArgs));
 }
 
 function opplystKodeErBarnAvAktivtLag(drawArgs) {
@@ -86,14 +78,7 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
 
 function lagToppnivå(props) {
   const config = {
-    sources: {
-      osm: sysconfig.createTileSource(
-        sysconfig.storageUrl +
-          "Bakgrunnskart/OpenStreetMap/polygon.3857.mbtiles",
-        "MVT",
-        [0, 14]
-      )
-    },
+    sources: {},
     cameras: {
       cam: {
         type: "flat"
@@ -115,9 +100,9 @@ function createScene(props: Object) {
 
 function updateScene(config: Object, props: Object) {
   const bakgrunn = props.aktiveLag.bakgrunnskart;
-  config.scene.background.color = bakgrunn.land
-    ? bakgrunn.land_farge
-    : "#f2f2f2";
+  const bak = bakgrunn.kartformat[bakgrunn.aktivtKartformat];
+  config.scene.background.color = bak.land_farge ? bak.land_farge : "#f2f2f2";
+
   config.layers = {};
   const meta = props.meta;
   const viserKatalog = !!meta;
