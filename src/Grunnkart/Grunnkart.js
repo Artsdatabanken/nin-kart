@@ -96,23 +96,8 @@ class Grunnkart extends React.Component {
     let aktive = this.state.aktiveLag;
     const kartformat = props.kartformat;
     if (!kartformat) return;
-    let aktivtKartformat = Object.keys(kartformat)[0];
     const nyttLag = JSON.parse(JSON.stringify(props));
     nyttLag.visBarn = props.barn.length > 0;
-    /*    const nyttLag = {
-      kartformat: kartformat,
-      url: props.url,
-      aktivtKartformat: aktivtKartformat,
-      farge: props.farge,
-      gradient: props.gradient,
-      kode: props.kode,
-      tittel: språk(props.tittel),
-      barn: this.addSelectedBarn(props.barn),
-      visBarn: props.barn.length > 0,
-      bbox: props.bbox,
-      kanSlettes: true
-    };*/
-    //    nyttLag.tittel = språk(nyttLag.tittel);
     aktive[nyttLag.kode] = nyttLag;
     this.setState({
       aktiveLag: Object.assign({}, aktive)
