@@ -2,7 +2,6 @@ import sysconfig from "../../../../config";
 
 function drawAll(drawArgs) {
   const layer = {
-    data: { source: drawArgs.kode },
     [drawArgs.kode]: {
       data: { source: drawArgs.forelderkode },
       draw: {

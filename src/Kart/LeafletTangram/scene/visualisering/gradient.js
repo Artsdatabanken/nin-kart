@@ -58,14 +58,15 @@ function lagPalett(barna, opplystKode, mode) {
 }
 
 function lagStyle(kartformat, drawArgs) {
+  console.log(kartformat, drawArgs);
   const { filterMin, filterMax, opplystKode, barn } = drawArgs;
   const [visning] = drawArgs.kartformat.visning;
   const cmap = lagPalett(barn, opplystKode, visning || "diskret");
   const palette = createPalette(cmap);
   const gradient = {
     base: "raster",
-    xblend: "multiply",
-    blend: "overlay",
+    blend: "multiply",
+    xblend: "overlay",
     fblend: "add",
     shaders: {
       uniforms: {
@@ -75,16 +76,13 @@ function lagStyle(kartformat, drawArgs) {
       },
       blocks: {
         color: `
-          vec4 value = sampleRaster(0);
-          float v = value.r;
-          float filter = step(min,v) * (step(v,max));
-          v = (255.*value.b+0.5)/256.;
-          color = texture2D(palette, vec2(filter*v, 0.5));
-          vec4 transparent = vec4(color.r,color.g,color.b,0.);
-
-          color = mix(color, transparent, 0.5+0.6*(1.-smoothstep(1.0,0.9995,v)));
-
-          color = mix(transparent, color, value.a);`
+        vec4 value = sampleRaster(0);
+        float v = value.r;
+        float filter = step(min,v) * (step(v,max));
+        v = (255.*value.b+0.5)/256.;
+        color = texture2D(palette, vec2(filter*v, 0.5));
+        vec4 transparent = vec4(1.,1.,1.,1.);
+        color = mix(transparent, color, value.a);`
       }
     }
   };
@@ -95,9 +93,7 @@ function lagStyle(kartformat, drawArgs) {
 }
 
 function lagSource({ url, zoom }, bbox) {
-  const source = sysconfig.createTileSource(url, "Raster", zoom, bbox);
-
-  return source;
+  return sysconfig.createTileSource(url, "Raster", zoom, bbox);
 }
 
 export default { drawAll, lagSource, lagStyle };
