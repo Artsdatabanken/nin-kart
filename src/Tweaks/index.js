@@ -9,10 +9,9 @@ import { List } from "@material-ui/core";
 class Tweaks extends React.Component {
   state = {};
   seksjon(aktivtKartformat) {
-    switch (
-      aktivtKartformat // Fjern type
-    ) {
-      case "bakgrunnskart":
+    switch (aktivtKartformat) {
+      case "osm_lys":
+      case "osm_mørk":
         return <Bakgrunnskart {...this.props} />;
       case "terreng":
         return <Terreng {...this.props} />;
@@ -27,10 +26,8 @@ class Tweaks extends React.Component {
 
   render() {
     console.log(this.props);
-    const { style, aktivtKartformat, type } = this.props;
-    return (
-      <List style={{ ...style }}>{this.seksjon(aktivtKartformat || type)}</List>
-    );
+    const { style, aktivtKartformat } = this.props;
+    return <List style={{ ...style }}>{this.seksjon(aktivtKartformat)}</List>;
   }
 }
 

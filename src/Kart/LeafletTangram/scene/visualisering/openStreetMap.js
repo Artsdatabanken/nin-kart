@@ -1,4 +1,4 @@
-import bkmal from "../mal/openStreetMap";
+import mal from "../mal/openStreetMap";
 import sysconfig from "../../../../config";
 
 function override(o, key, value) {
@@ -6,59 +6,63 @@ function override(o, key, value) {
   o[key] = value;
 }
 
-function recurse(o, style, lag, kode) {
+function recurse(o, style, kf, kode) {
   if (!o) return;
   if (!(o instanceof Object)) return;
   const draw = o.draw;
   if (draw) {
     const dstyle = draw[style];
     if (dstyle) {
-      override(dstyle, "color", lag[kode + "_farge"]);
+      override(dstyle, "color", kf[kode + "_farge"]);
       const outline = draw[style].outline;
       if (outline) {
-        override(outline, "color", lag[kode + "_outline_farge"]);
-        override(outline, "width", outline ? lag[kode + "_outline_width"] : 0);
+        override(outline, "color", kf[kode + "_outline_farge"]);
+        override(outline, "width", outline ? kf[kode + "_outline_width"] : 0);
       }
     }
     return;
   }
   Object.keys(o).forEach(k => {
     const child = o[k];
-    recurse(child, style, lag, kode);
+    recurse(child, style, kf, kode);
   });
 }
 
-function opprett(kode, lag, layer, style) {
-  if (!lag[kode]) return;
-  layer = layer[kode];
-  recurse(layer, style, lag, kode);
+function opprett(kode, kf, layers, style) {
+  if (!kf[kode]) return;
+  const layer = Object.assign({}, mal[kode]);
+  recurse(layer, style, kf, kode);
+  layers[kode] = layer;
 }
 
-function opprettTekst(kode, lag, layer) {
-  if (!lag[kode]) return;
-  layer = layer[kode];
+function opprettTekst(kode, kf, layers) {
+  if (!kf[kode]) {
+    return;
+  }
+  const layer = Object.assign({}, mal[kode]);
   const font = layer.draw.text.font;
-  font.fill = lag[kode + "_farge"];
-  const stroke = lag[kode + "_stroke"];
-  font.stroke.color = lag[kode + "_stroke_farge"];
-  font.stroke.width = stroke ? lag[kode + "_stroke_width"] : 0;
+  font.fill = kf[kode + "_farge"];
+  font.stroke.color = kf[kode + "_stroke_farge"];
+  font.stroke.width = kf[kode + "_stroke_width"];
+  layers[kode] = layer;
 }
 
 function drawAll(drawArgs) {
-  const lag = drawArgs.kartformat.osm;
+  const kf = drawArgs.kartformat[drawArgs.aktivtKartformat];
   const { opplystKode } = drawArgs;
-  const layer = bkmal;
-  opprett("kommunegrense", lag, layer, "boundary");
-  opprett("fylkesgrense", lag, layer, "boundary");
-  opprett("landegrense", lag, layer, "boundary");
-  opprett("vann", lag, layer, "polygons");
-  opprett("transport", lag, layer, "lines");
+  const layers = {};
+  opprett("kommunegrense", kf, layers, "boundary");
+  opprett("fylkesgrense", kf, layers, "boundary");
+  opprett("landegrense", kf, layers, "boundary");
+  opprett("vann", kf, layers, "polygons");
+  opprett("transport", kf, layers, "lines");
   if (!opplystKode) {
-    opprettTekst("transport_navn", lag, layer);
-    opprettTekst("sted_navn", lag, layer);
-    opprettTekst("vann_navn", lag, layer);
+    opprettTekst("transport_navn", kf, layers);
+    opprettTekst("sted_navn", kf, layers);
+    opprettTekst("vann_navn", kf, layers);
   }
-  return layer;
+  console.log(layers);
+  return layers;
 }
 
 function lagSource(url, bbox, zoom) {

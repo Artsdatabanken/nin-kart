@@ -105,11 +105,9 @@ function createScene(props: Object) {
 
 function updateScene(config: Object, props: Object) {
   const bakgrunn = props.aktiveLag.bakgrunnskart;
-  if (bakgrunn.kartformat.osm) {
-    config.scene.background.color = bakgrunn.kartformat.osm.land
-      ? bakgrunn.kartformat.osm.land_farge
-      : "#f2f2f2";
-  }
+  const bak = bakgrunn.kartformat[bakgrunn.aktivtKartformat];
+  config.scene.background.color = bak.land_farge ? bak.land_farge : "#f2f2f2";
+
   config.layers = {};
   const meta = props.meta;
   const viserKatalog = !!meta;

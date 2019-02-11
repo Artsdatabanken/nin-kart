@@ -11,29 +11,36 @@ import Tema from "./Tema";
 
 class Bakgrunnskart extends Component {
   handleUpdateLayerProp = (kode, key, value) => {
-    this.props.onUpdateLayerProp(kode, "kartformat.osm." + key, value);
+    this.props.onUpdateLayerProp(
+      kode,
+      `kartformat.${this.props.aktivtKartformat}.${key}`,
+      value
+    );
   };
 
   render() {
-    const kf = this.props.kartformat.osm;
+    const { aktivtKartformat } = this.props;
+    const kf = this.props.kartformat[aktivtKartformat];
     return (
       <React.Fragment>
         <RouteSwitch>
           <Route
-            path="/lag/:kode/tema"
+            path="/visning/:kode/tema"
             render={({ match, history }) => (
-              <Tema onUpdateLayerProp={this.handleUpdateLayerProp} />
+              <Tema
+                onUpdateLayerProp={this.props.onUpdateLayerProp}
+                valgt={aktivtKartformat}
+              />
             )}
           />
           <Route
-            path="/lag/:kode/:lag"
+            path="/visning/:kode/:lag"
             render={({ match, history }) => {
               const { kode, lag } = match.params;
+              const strokeFarge = kf[lag + "_stroke_farge"];
+              console.log(lag);
               return (
                 <List>
-                  <ListSubheader style={{ textTransform: "capitalize" }}>
-                    {kode}
-                  </ListSubheader>
                   <ColorPicker
                     tittel={"Fyllfarge"}
                     color={kf[lag + "_farge"]}
@@ -46,22 +53,63 @@ class Bakgrunnskart extends Component {
                       );
                     }}
                   />
+                  {kf[lag + "_stroke_farge"] && (
+                    <React.Fragment>
+                      <ListSubheader>Omriss</ListSubheader>
+                      <SliderSetting
+                        value={kf[lag + "_stroke_width"]}
+                        min={0}
+                        max={10}
+                        step={0.2}
+                        tittel={
+                          "Tykkelse: " +
+                          kf.sted_navn_stroke_width.toFixed(1) +
+                          " piksler"
+                        }
+                        onChange={v =>
+                          this.handleUpdateLayerProp(
+                            kode,
+                            lag + "_stroke_width",
+                            v
+                          )
+                        }
+                        onClick={() =>
+                          kf.history.push(
+                            "/visning/bakgrunnskart/sted_navn_stroke"
+                          )
+                        }
+                      />
+                      <ColorPicker
+                        color={kf[lag + "_stroke_farge"]}
+                        onChange={farge => {
+                          const rgbString = tinycolor(farge.rgb).toRgbString();
+                          this.handleUpdateLayerProp(
+                            kode,
+                            lag + "_stroke_farge",
+                            rgbString
+                          );
+                        }}
+                      />
+                    </React.Fragment>
+                  )}
                 </List>
               );
             }}
           />
           <Route
-            path="/lag/:kode"
+            path="/visning/:kode"
             render={({ match, history }) => {
               const { kode } = match.params;
               return (
                 <List>
-                  <ListSubheader>Områder</ListSubheader>
                   <ListItem
                     button={true}
-                    onClick={() => history.push("/lag/bakgrunnskart/tema")}
+                    onClick={() => history.push("/visning/bakgrunnskart/tema")}
                   >
-                    <ListItemText primary="Tema" secondary={kf.tema} />
+                    <ListItemText
+                      primary="Forhåndsdefinert tema"
+                      secondary={kf.tittel}
+                    />
                   </ListItem>
                   <ListSubheader>Områder</ListSubheader>
                   <Bakgrunnskartlag
@@ -102,33 +150,6 @@ class Bakgrunnskart extends Component {
                   />
                   <Bakgrunnskartlag
                     onUpdateLayerProp={this.handleUpdateLayerProp}
-                    lagNavn="sted_navn_stroke"
-                    tittel="Steder omriss"
-                    erSynlig={kf.sted_navn_stroke}
-                    farge={kf.sted_navn_stroke_farge}
-                  />
-                  <SliderSetting
-                    value={kf.sted_navn_stroke_width}
-                    min={0}
-                    max={10}
-                    step={0.2}
-                    tittel="Omriss"
-                    undertittel={
-                      kf.sted_navn_stroke_width.toFixed(1) + " pixler"
-                    }
-                    onChange={v =>
-                      this.handleUpdateLayerProp(
-                        kode,
-                        "sted_navn_stroke_width",
-                        v
-                      )
-                    }
-                    onClick={() =>
-                      kf.history.push("/lag/bakgrunnskart/sted_navn_stroke")
-                    }
-                  />
-                  <Bakgrunnskartlag
-                    onUpdateLayerProp={this.handleUpdateLayerProp}
                     lagNavn="transport_navn"
                     tittel="Transport"
                     erSynlig={kf.transport_navn}
@@ -139,21 +160,21 @@ class Bakgrunnskart extends Component {
                     onUpdateLayerProp={this.handleUpdateLayerProp}
                     lagNavn="landegrense"
                     tittel="Riksgrense"
-                    erSynlig={kf.sted_navn}
+                    erSynlig={kf.landegrense}
                     farge={kf.landegrense_farge}
                   />
                   <Bakgrunnskartlag
                     onUpdateLayerProp={this.handleUpdateLayerProp}
                     lagNavn="fylkesgrense"
                     tittel="Fylkesgrense"
-                    erSynlig={kf.sted_navn}
+                    erSynlig={kf.fylkesgrense}
                     farge={kf.fylkesgrense_farge}
                   />
                   <Bakgrunnskartlag
                     onUpdateLayerProp={this.handleUpdateLayerProp}
                     lagNavn="kommunegrense"
                     tittel="Kommunegrense"
-                    erSynlig={kf.sted_navn}
+                    erSynlig={kf.kommunegrense}
                     farge={kf.kommunegrense_farge}
                   />
                 </List>

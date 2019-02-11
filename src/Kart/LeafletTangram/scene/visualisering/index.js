@@ -11,6 +11,7 @@ export default {
   gradient: gradientDraw,
   "raster.gradient": gradientDraw,
   "raster.indexed": indexedRasterDraw,
-  osm: openStreetMap,
+  osm_lys: openStreetMap,
+  osm_mørk: openStreetMap,
   google: googleRaster
 };

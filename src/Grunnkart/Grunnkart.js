@@ -43,7 +43,7 @@ class Grunnkart extends React.Component {
   constructor(props) {
     super(props);
     let aktive = standardlag;
-    aktive.bakgrunnskart = bakgrunnskarttema[aktive.bakgrunnskart.tema]; // HACK
+    aktive.bakgrunnskart = bakgrunnskarttema;
     aktive = JSON.parse(JSON.stringify(aktive));
     this.state = {
       aktiveLag: aktive,
@@ -222,12 +222,10 @@ class Grunnkart extends React.Component {
     const parts = key.split(".");
     for (let i = 0; i < parts.length - 1; i++) node = node[parts[i]];
     const vkey = parts[parts.length - 1];
+    console.log(kode, key, value);
+    console.log(node[vkey]);
     node[vkey] = value;
-    if (vkey === "tema")
-      // HACK
-      aktive.bakgrunnskart = JSON.parse(
-        JSON.stringify(bakgrunnskarttema[value])
-      );
+    console.log(node[vkey]);
     this.setState({ aktiveLag: Object.assign({}, aktive) });
   };
 
