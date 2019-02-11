@@ -1,6 +1,7 @@
-import React from 'react'
-import { withRouter } from 'react-router'
-import KartlagElement from './Kartlagelement'
+import React from "react";
+import { withRouter } from "react-router";
+import KartlagElement from "./Kartlagelement";
+import språk from "../språk";
 
 class PolygonlagElement extends React.Component {
   render() {
@@ -13,12 +14,12 @@ class PolygonlagElement extends React.Component {
       onClick,
       onMouseEnter,
       onMouseLeave,
-      onUpdateLayerProp,
-    } = this.props
+      onUpdateLayerProp
+    } = this.props;
 
     return (
       <KartlagElement
-        tittel={tittel}
+        tittel={språk(tittel)}
         undertittel={visKoder && kode}
         erSynlig={erSynlig}
         farge={farge}
@@ -28,8 +29,8 @@ class PolygonlagElement extends React.Component {
         onMouseLeave={onMouseLeave}
         onUpdateLayerProp={onUpdateLayerProp}
       />
-    )
+    );
   }
 }
 
-export default withRouter(PolygonlagElement)
+export default withRouter(PolygonlagElement);

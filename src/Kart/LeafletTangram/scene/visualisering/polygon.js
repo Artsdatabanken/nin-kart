@@ -41,8 +41,8 @@ function draw(args) {
       mu_polygons: {
         order: 800,
         color: tinycolor(farge)
-          .darken(30)
-          .saturate(60)
+          //          .darken(30)
+          //        .saturate(60)
           .toHexString()
       },
       lines: {

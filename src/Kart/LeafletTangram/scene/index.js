@@ -112,17 +112,13 @@ function updateScene(config: Object, props: Object) {
       console.warn("No map data source found.");
       return config;
     }
-    let aktivtKartformat = Object.keys(kartformat)[0];
-    if (kartformat.polygon) aktivtKartformat = "polygon";
-    if (kartformat["raster.indexed"]) aktivtKartformat = "raster.indexed";
-    if (kartformat["raster.gradient"]) aktivtKartformat = "raster.gradient";
     const drawArgs = {
       kode: meta.kode,
       url: meta.url,
       barn: meta.barn && meta.barn.length > 0 ? meta.barn : [meta],
       opplystKode: props.opplystKode,
       bbox: meta.bbox,
-      aktivtKartformat: aktivtKartformat,
+      aktivtKartformat: meta.aktivtKartformat,
       kartformat: kartformat,
       visBarn: true,
       filterMin: 0.0,

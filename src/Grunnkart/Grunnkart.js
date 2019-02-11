@@ -97,26 +97,23 @@ class Grunnkart extends React.Component {
     const kartformat = props.kartformat;
     if (!kartformat) return;
     let aktivtKartformat = Object.keys(kartformat)[0];
-    if (kartformat.polygon) aktivtKartformat = "polygon";
-    if (kartformat["raster.indexed"]) aktivtKartformat = "raster.indexed";
-    const nyttLag = {
+    const nyttLag = JSON.parse(JSON.stringify(props));
+    nyttLag.visBarn = props.barn.length > 0;
+    /*    const nyttLag = {
       kartformat: kartformat,
       url: props.url,
       aktivtKartformat: aktivtKartformat,
       farge: props.farge,
+      gradient: props.gradient,
       kode: props.kode,
       tittel: språk(props.tittel),
       barn: this.addSelectedBarn(props.barn),
       visBarn: props.barn.length > 0,
       bbox: props.bbox,
-      erSynlig: true,
       kanSlettes: true
-    };
-    if (kartformat.gradient) {
-      nyttLag.gradient = { filterMin: 0, filterMax: 1.0 };
-    }
+    };*/
+    //    nyttLag.tittel = språk(nyttLag.tittel);
     aktive[nyttLag.kode] = nyttLag;
-
     this.setState({
       aktiveLag: Object.assign({}, aktive)
     });
@@ -193,12 +190,8 @@ class Grunnkart extends React.Component {
     if (meta.se) return meta;
     meta.nivå = typesystem.hentNivaa(meta.kode).slice(0, 1);
     meta.prefiks = meta.kode.substring(0, 2);
-    // HACK
-    if (meta.kartformat) {
-      if (meta.kartformat.vector)
-        meta.kartformat.polygon = meta.kartformat.vector;
-      delete meta.kartformat.vector;
-    }
+    meta.aktivtKartformat = Object.keys(meta.kartformat)[0];
+    meta.erSynlig = true;
     if (meta.kode.substring(0, 2) === "LA") {
       if (!this.state.aktiveLag.terreng.wasAutoEnabled) {
         this.handleUpdateLayerProp("terreng", "erSynlig", true);
