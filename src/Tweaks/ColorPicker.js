@@ -1,9 +1,9 @@
-import { ListSubheader } from '@material-ui/core'
-import React from 'react'
-import { CustomPicker } from 'react-color'
-import ChromePointerCircle from 'react-color/lib/components/chrome/ChromePointerCircle'
-import { Alpha, Hue, Saturation } from 'react-color/lib/components/common'
-import ChromePointer from 'react-color/lib/components/slider/SliderPointer'
+import { ListSubheader } from "@material-ui/core";
+import React from "react";
+import { CustomPicker } from "react-color";
+import ChromePointerCircle from "react-color/lib/components/chrome/ChromePointerCircle";
+import { Alpha, Hue, Saturation } from "react-color/lib/components/common";
+import ChromePointer from "react-color/lib/components/slider/SliderPointer";
 class ColorPicker extends React.Component {
   render() {
     return (
@@ -19,13 +19,13 @@ class ColorPicker extends React.Component {
         <Blokk height={14}>
           <Hue pointer={ChromePointer} height={14} {...this.props} />
         </Blokk>
-        {false && (
+        {this.props.alpha && (
           <Blokk>
             <Alpha pointer={ChromePointer} {...this.props} />
           </Blokk>
         )}
       </React.Fragment>
-    )
+    );
   }
 }
 
@@ -36,11 +36,11 @@ const Blokk = ({ height, children }) => (
       marginRight: 16,
       marginBottom: 16,
       height: height || 10,
-      position: 'relative',
+      position: "relative"
     }}
   >
     {children}
   </div>
-)
+);
 
-export default CustomPicker(ColorPicker)
+export default CustomPicker(ColorPicker);

@@ -26,6 +26,7 @@ function opprettEttLag(drawArgs, config) {
   if (drawArgs.opplystKode && !opplystKodeErBarnAvAktivtLag(drawArgs)) return; // Hide this layer while highlighting other layer
   const renderer = draw[drawArgs.aktivtKartformat];
   const kartformat = drawArgs.kartformat[drawArgs.aktivtKartformat];
+  drawArgs.kartformat = kartformat;
   if (!renderer) {
     console.warn("Unknown kartformat", drawArgs.aktivtKartformat);
     return;

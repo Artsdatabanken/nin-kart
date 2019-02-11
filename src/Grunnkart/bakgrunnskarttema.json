@@ -57,7 +57,8 @@
     },
     "google_satellite": {
       "kode": "bakgrunnskart",
-      "tittel": "Satellitt (Google)"
+      "tittel": "Satellitt (Google)",
+      "tint": "#fff"
     }
   }
 }

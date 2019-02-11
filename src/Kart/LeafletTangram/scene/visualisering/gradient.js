@@ -59,7 +59,7 @@ function lagPalett(barna, opplystKode, mode) {
 
 function lagStyle(kartformat, drawArgs) {
   const { filterMin, filterMax, opplystKode, barn } = drawArgs;
-  const [visning] = drawArgs.kartformat["raster.gradient"].visning;
+  const [visning] = drawArgs.kartformat.visning;
   const cmap = lagPalett(barn, opplystKode, visning || "diskret");
   const palette = createPalette(cmap);
   const gradient = {

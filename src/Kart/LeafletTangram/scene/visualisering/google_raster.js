@@ -1,9 +1,10 @@
 function drawAll(drawArgs) {
+  const { kartformat } = drawArgs;
   return {
     googld: {
       draw: {
         raster: {
-          color: [1.0, 1.0, 1.0, 1.0],
+          color: kartformat.tint,
           order: 0
         }
       },
@@ -16,8 +17,10 @@ function lagSource(url, bbox, zoom) {
   return {
     filtering: "nearest",
     type: "Raster",
+    url4: "https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
+    url3: "https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}",
     url: "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
-    max_zoom: 14
+    max_zoom: 21
   };
 }
 

@@ -48,7 +48,7 @@ function opprettTekst(kode, kf, layers) {
 }
 
 function drawAll(drawArgs) {
-  const kf = drawArgs.kartformat[drawArgs.aktivtKartformat];
+  const kf = drawArgs.kartformat;
   const { opplystKode } = drawArgs;
   const layers = {};
   opprett("kommunegrense", kf, layers, "boundary");
