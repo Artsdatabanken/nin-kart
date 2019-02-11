@@ -61,11 +61,10 @@ function drawAll(drawArgs) {
     opprettTekst("sted_navn", kf, layers);
     opprettTekst("vann_navn", kf, layers);
   }
-  console.log(layers);
   return layers;
 }
 
-function lagSource(url, bbox, zoom) {
+function lagSource({ url, zoom }, bbox) {
   return sysconfig.createTileSource(
     sysconfig.storageUrl + "Bakgrunnskart/OpenStreetMap/polygon.3857.mbtiles",
     "MVT",

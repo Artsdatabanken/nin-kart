@@ -14,6 +14,7 @@ class Tweaks extends React.Component {
       case "osm_lys":
       case "osm_mørk":
         return <Bakgrunnskart {...this.props} />;
+      case "google_hybrid":
       case "google_satellite":
         return <Google {...this.props} />;
       case "terreng":
@@ -28,7 +29,6 @@ class Tweaks extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { style, aktivtKartformat } = this.props;
     return <List style={{ ...style }}>{this.seksjon(aktivtKartformat)}</List>;
   }

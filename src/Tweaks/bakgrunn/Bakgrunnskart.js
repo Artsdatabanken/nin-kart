@@ -37,8 +37,6 @@ class Bakgrunnskart extends Component {
             path="/visning/:kode/:lag"
             render={({ match, history }) => {
               const { kode, lag } = match.params;
-              const strokeFarge = kf[lag + "_stroke_farge"];
-              console.log(lag);
               return (
                 <List>
                   <ColorPicker
@@ -99,7 +97,6 @@ class Bakgrunnskart extends Component {
           <Route
             path="/visning/:kode"
             render={({ match, history }) => {
-              const { kode } = match.params;
               return (
                 <List>
                   <ListItem

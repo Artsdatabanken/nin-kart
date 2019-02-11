@@ -13,5 +13,6 @@ export default {
   "raster.indexed": indexedRasterDraw,
   osm_lys: openStreetMap,
   osm_mørk: openStreetMap,
+  google_hybrid: googleRaster,
   google_satellite: googleRaster
 };

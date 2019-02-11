@@ -31,20 +31,14 @@ function opprettEttLag(drawArgs, config) {
     console.warn("Unknown kartformat", drawArgs.aktivtKartformat);
     return;
   }
-  const source = renderer.lagSource(
-    kartformat.url,
-    drawArgs.bbox,
-    kartformat.zoom
-  );
+  const source = renderer.lagSource(kartformat, drawArgs.bbox);
 
   if (renderer.lagStyle) {
     const style = renderer.lagStyle(renderer, drawArgs);
     config.styles[style.name] = style.value;
   }
   config.sources[drawArgs.kode] = source;
-  // if (drawArgs.kode === "bakgrunnskart")
   config.layers = Object.assign(config.layers, renderer.drawAll(drawArgs));
-  //  else config.layers[drawArgs.kode] = renderer.drawAll(drawArgs);
 }
 
 function opplystKodeErBarnAvAktivtLag(drawArgs) {
@@ -138,7 +132,6 @@ function updateScene(config: Object, props: Object) {
   }
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config);
   lagTemp(config);
-  console.log(config);
   return config;
 }
 

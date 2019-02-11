@@ -58,7 +58,16 @@
     "google_satellite": {
       "kode": "bakgrunnskart",
       "tittel": "Satellitt (Google)",
-      "tint": "#fff"
+      "zoom": [0, 21],
+      "tint": "#fff",
+      "url": "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
+    },
+    "google_hybrid": {
+      "kode": "bakgrunnskart",
+      "tittel": "Hybrid (Google)",
+      "zoom": [0, 21],
+      "tint": "#fff",
+      "url": "https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}"
     }
   }
 }

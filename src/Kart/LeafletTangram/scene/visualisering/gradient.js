@@ -94,7 +94,7 @@ function lagStyle(kartformat, drawArgs) {
   };
 }
 
-function lagSource(url, bbox, zoom) {
+function lagSource({ url, zoom }, bbox) {
   const source = sysconfig.createTileSource(url, "Raster", zoom, bbox);
 
   return source;

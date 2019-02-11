@@ -1,4 +1,3 @@
-import SliderSetting from "../SliderSetting";
 import { List, ListItem, ListItemText, ListSubheader } from "@material-ui/core";
 import { withTheme } from "@material-ui/core/styles";
 import { Component, default as React } from "react";
@@ -6,7 +5,6 @@ import { withRouter } from "react-router";
 import { Route, Switch as RouteSwitch } from "react-router-dom";
 import tinycolor from "tinycolor2";
 import ColorPicker from "../ColorPicker";
-import Bakgrunnskartlag from "./Bakgrunnskartlag";
 import Tema from "./Tema";
 
 class Bakgrunnskart extends Component {
@@ -36,7 +34,7 @@ class Bakgrunnskart extends Component {
           <Route
             path="/visning/:kode/:lag"
             render={({ match, history }) => {
-              const { kode, lag } = match.params;
+              const { kode } = match.params;
               return (
                 <List>
                   <ColorPicker

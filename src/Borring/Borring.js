@@ -48,7 +48,6 @@ class Borring extends Component {
   }
 
   handleClick = (kode, node) => {
-    console.log(node);
     kode = this.getInnerMostSingleChild(kode, node);
     const { history } = this.props;
     backend.søk(kode).then(json => {
