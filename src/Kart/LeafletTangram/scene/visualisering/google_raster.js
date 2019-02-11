@@ -3,7 +3,7 @@ function drawAll(drawArgs) {
     googld: {
       draw: {
         raster: {
-          color: [1.0, 1.0, 1.0, 0.5],
+          color: [1.0, 1.0, 1.0, 1.0],
           order: 0
         }
       },

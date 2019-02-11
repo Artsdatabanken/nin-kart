@@ -8,9 +8,10 @@ import { List } from "@material-ui/core";
 
 class Tweaks extends React.Component {
   state = {};
-  seksjon(type) {
-    console.log(type);
-    switch (type) {
+  seksjon(aktivtKartformat) {
+    switch (
+      aktivtKartformat // Fjern type
+    ) {
       case "bakgrunnskart":
         return <Bakgrunnskart {...this.props} />;
       case "terreng":
@@ -20,13 +21,16 @@ class Tweaks extends React.Component {
       case "polygon":
         return <Polygon {...this.props} />;
       default:
-        console.error("Unknown " + type);
+        console.error("Unknown " + aktivtKartformat);
     }
   }
 
   render() {
-    const { style, type } = this.props;
-    return <List style={{ ...style }}>{this.seksjon(type)}</List>;
+    console.log(this.props);
+    const { style, aktivtKartformat, type } = this.props;
+    return (
+      <List style={{ ...style }}>{this.seksjon(aktivtKartformat || type)}</List>
+    );
   }
 }
 

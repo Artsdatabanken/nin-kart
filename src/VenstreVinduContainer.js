@@ -81,7 +81,7 @@ class VenstreVinduContainer extends React.Component {
             <React.Fragment>
               <Switch>
                 <Route
-                  path="/lag/:kode/:lag?"
+                  path="/visning/:kode/:lag?"
                   render={({ match, history }) => (
                     <Panel padTop>
                       <TopBarContainer
