@@ -34,7 +34,7 @@ function opprettEttLag(drawArgs, config) {
   const source = renderer.lagSource(kartformat, drawArgs.bbox);
 
   if (renderer.lagStyle) {
-    const style = renderer.lagStyle(renderer, drawArgs);
+    const style = renderer.lagStyle(kartformat, drawArgs);
     config.styles[style.name] = style.value;
   }
   config.sources[drawArgs.kode] = source;
@@ -120,9 +120,7 @@ function updateScene(config: Object, props: Object) {
       bbox: meta.bbox,
       aktivtKartformat: meta.aktivtKartformat,
       kartformat: kartformat,
-      visBarn: true,
-      filterMin: 0.0,
-      filterMax: 1.0
+      visBarn: true
     };
     opprettEttLag(drawArgs, config);
   }

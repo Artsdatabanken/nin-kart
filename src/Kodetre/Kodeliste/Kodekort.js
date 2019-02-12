@@ -118,7 +118,7 @@ class Kodekort extends React.Component {
               onClick={this.handleClickTweaks}
             >
               <ColorLens className={classes.iconSmall} />
-              Visning
+              Vis
             </Button>
             {bbox && (
               <Button
@@ -139,7 +139,8 @@ class Kodekort extends React.Component {
   }
 
   handleClickAktiveLag = () => this.props.history.push("/");
-  handleClickTweaks = () => this.props.history.push("/visning"); // + this.props.history.location.pathname);
+  handleClickTweaks = () =>
+    this.props.history.push("/visning" + this.props.history.location.pathname);
   handleFitBounds = () => this.props.onFitBounds(this.props.bbox);
 }
 

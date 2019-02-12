@@ -1,5 +1,10 @@
 import typesystem from "@artsdatabanken/typesystem";
-import { List, ListSubheader, withStyles } from "@material-ui/core";
+import {
+  ListSubheader,
+  ListItem,
+  Divider,
+  withStyles
+} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import { withTheme } from "@material-ui/core/styles";
 import { SwapVert, ZoomOutMap } from "@material-ui/icons/";
@@ -7,11 +12,7 @@ import ActionDelete from "@material-ui/icons/Delete";
 import ActionInfo from "@material-ui/icons/Info";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
-import tinycolor from "tinycolor2";
-import Barneliste from "./Barneliste";
 import SliderSetting from "./SliderSetting";
-import ColorPicker from "./ColorPicker";
-import Veksle from "./Veksle";
 
 const styles = {
   iconSmall: {
@@ -25,139 +26,108 @@ class Gradient extends Component {
     const {
       kode,
       url,
-      farge,
       history,
-      tittel,
       bbox,
-      visEtiketter,
       onFitBounds,
-      onMouseEnter,
-      onMouseLeave,
       onRemoveSelectedLayer,
       onUpdateLayerProp,
       kanSlettes,
-      barn,
-      visBarn,
-      gradient,
+      måleenhet,
+      kartformat,
       classes
     } = this.props;
+    const gradient = kartformat.raster_gradient;
     const { filterMin, filterMax } = gradient;
-    const undernivå = this.navnPåUndernivå(kode);
+    const [rangeMin, rangeMax] = gradient.intervall.original;
+    const step = (rangeMax - rangeMin) / 1000;
+    const decimals = Math.trunc(Math.log10(10000 / rangeMax));
     const spread = 0.015;
     return (
       <React.Fragment>
-        <ListSubheader>{tittel}</ListSubheader>
+        <ListSubheader>Filter</ListSubheader>
         <SliderSetting
           value={filterMin}
           decimals={2}
-          min={0}
-          max={1}
-          step={0.005}
+          min={rangeMin}
+          max={rangeMax}
+          step={step}
           tittel="Minimum"
-          undertittel={filterMin.toFixed(2)}
+          undertittel={filterMin.toFixed(decimals) + " " + måleenhet}
           icon={<SwapVert />}
           onChange={v => {
-            onUpdateLayerProp(kode, "gradient.filterMin", v);
-            if (gradient.filterMax <= gradient.filterMin + spread)
+            this.handleUpdateFilter(kode, "filterMin", v);
+            if (filterMax <= filterMin + spread)
               onUpdateLayerProp(
                 kode,
-                "gradient.filterMax",
-                Math.min(1.0, gradient.filterMin + spread)
+                "filterMax",
+                Math.min(1.0, filterMin + spread)
               );
           }}
         />
         <SliderSetting
           value={filterMax}
           decimals={2}
-          min={0}
-          max={1}
-          step={0.005}
+          min={rangeMin}
+          max={rangeMax}
+          step={step}
           tittel="Maksimum"
-          undertittel={filterMax.toFixed(2)}
+          undertittel={filterMax.toFixed(decimals) + " " + måleenhet}
           icon={<SwapVert />}
           onChange={v => {
-            onUpdateLayerProp(kode, "gradient.filterMax", v);
-            if (gradient.filterMax <= gradient.filterMin + spread)
-              onUpdateLayerProp(
+            this.handleUpdateFilter(kode, "filterMax", v);
+            if (filterMax <= filterMin + spread)
+              this.handleUpdateFilter(
                 kode,
-                "gradient.filterMin",
-                Math.max(0.0, gradient.filterMax - spread)
+                "filterMin",
+                Math.max(0.0, filterMax - spread)
               );
           }}
         />
-        <Veksle
-          tittel="Vis etiketter"
-          toggled={visEtiketter}
-          onClick={() => onUpdateLayerProp(kode, "visEtiketter", !visEtiketter)}
-        />
-        {Object.keys(barn).length > 0 && (
-          <Veksle
-            tittel={"Vis " + undernivå}
-            toggled={visBarn}
-            onClick={() => onUpdateLayerProp(kode, "visBarn", !visBarn)}
-          />
-        )}
-        {visBarn ? (
-          <List>
-            <ListSubheader style={{ textTransform: "capitalize" }}>
-              {undernivå}
-            </ListSubheader>
-            <Barneliste
-              forelderkode={kode}
-              aktivtBarn={"lag"}
-              barn={barn}
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
-              onUpdateLayerProp={(index, felt, verdi) => {
-                barn[index][felt] = verdi;
-                onUpdateLayerProp(kode, "barn", barn);
+        <Divider style={{ marginTop: 24, marginBottom: 8 }} />
+        <ListItem>
+          {kanSlettes && (
+            <Button
+              color="primary"
+              onClick={e => {
+                onRemoveSelectedLayer(kode);
               }}
-            />
-          </List>
-        ) : (
-          <ColorPicker
-            tittel={"Fyllfarge"}
-            color={farge}
-            onChange={farge => {
-              const rgbString = tinycolor(farge.rgb).toRgbString();
-              onUpdateLayerProp(kode, "farge", rgbString);
-            }}
-          />
-        )}
-        {kanSlettes && (
-          <Button
-            color="primary"
-            onClick={e => {
-              onRemoveSelectedLayer(kode);
-            }}
-            icon={<ActionDelete />}
-          >
-            Fjern
-          </Button>
-        )}
-        <Button
-          color="primary"
-          onClick={() => {
-            history.push("/" + url);
-          }}
-          icon={<ActionInfo />}
-        >
-          Info
-        </Button>
-        {bbox && (
+              icon={<ActionDelete />}
+            >
+              Fjern
+            </Button>
+          )}
           <Button
             color="primary"
             onClick={() => {
-              onFitBounds(bbox);
+              history.push("/" + url);
             }}
+            icon={<ActionInfo />}
           >
-            <ZoomOutMap className={classes.iconSmall} />
-            Zoom til
+            Info
           </Button>
-        )}
+          {bbox && (
+            <Button
+              color="primary"
+              onClick={() => {
+                onFitBounds(bbox);
+              }}
+            >
+              <ZoomOutMap className={classes.iconSmall} />
+              Zoom til
+            </Button>
+          )}
+        </ListItem>
       </React.Fragment>
     );
   }
+
+  handleUpdateFilter = (kode, key, value) => {
+    this.props.onUpdateLayerProp(
+      kode,
+      "kartformat.raster_gradient." + key,
+      value
+    );
+  };
 
   navnPåUndernivå(kode) {
     const nivåer = typesystem.hentNivaa(kode + "-1");

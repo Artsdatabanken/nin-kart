@@ -1,3 +1,4 @@
+import språk from "../språk";
 import { SettingsContext } from "../SettingsContext";
 import typesystem from "@artsdatabanken/typesystem";
 import { List, ListSubheader, withStyles } from "@material-ui/core";
@@ -45,7 +46,7 @@ class Polygon extends Component {
       <SettingsContext.Consumer>
         {context => (
           <React.Fragment>
-            <ListSubheader>{tittel}</ListSubheader>
+            <ListSubheader>{språk(tittel)}</ListSubheader>
             <Veksle
               tittel="Vis etiketter"
               toggled={visEtiketter}

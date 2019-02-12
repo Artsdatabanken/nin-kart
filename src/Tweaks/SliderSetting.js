@@ -19,10 +19,10 @@ const SliderSetting = ({
       tittel={tittel}
       icon={icon}
       disabled={disabled}
-      verdi={value.toFixed(decimals)}
+      verdi={undertittel || value.toFixed(decimals)}
       undertittel={
         <Slider
-          style={{ paddingLeft: 0, paddingTop: 8 }}
+          style={{ paddingLeft: 0, paddingTop: 16, paddingBottom: 8 }}
           disabled={disabled}
           min={min || 0}
           max={max || 1}
