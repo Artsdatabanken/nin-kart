@@ -19,7 +19,7 @@ class Tweaks extends React.Component {
         return <Google {...this.props} />;
       case "terreng":
         return <Terreng {...this.props} />;
-      case "gradient":
+      case "raster_gradient":
         return <Gradient {...this.props} />;
       case "polygon":
         return <Polygon {...this.props} />;

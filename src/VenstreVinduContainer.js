@@ -25,12 +25,12 @@ class VenstreVinduContainer extends React.Component {
   }
 
   finnValgtKodeElement(kode) {
-    var item = undefined;
+    var item = this.props.meta;
     Object.keys(this.props.aktiveLag).forEach(id => {
       const forelder = this.props.aktiveLag[id];
       if (forelder.kode === kode) item = forelder;
     });
-
+    console.log("####", item);
     return item;
   }
 

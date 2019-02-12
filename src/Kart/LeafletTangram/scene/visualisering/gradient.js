@@ -35,6 +35,7 @@ function lagPalett(barna, opplystKode, mode) {
       steps.splice(i + 1, 1);
     }
   }
+  console.log(steps);
   const cmap = [];
   for (let i = 0; i < steps.length - 1; i++) {
     const a = steps[i];
@@ -57,9 +58,18 @@ function lagPalett(barna, opplystKode, mode) {
   return cmap;
 }
 
+function normaliserFilter(kartformat) {
+  const { filterMin, filterMax } = kartformat;
+  const [omin, omax] = kartformat.intervall.original;
+  const [nmin, nmax] = kartformat.intervall.normalisertVerdi;
+  return [filterMin, filterMax].map(
+    x => (((x - omin) / (omax - omin)) * (nmax - nmin) + nmin) / 255
+  );
+}
+
 function lagStyle(kartformat, drawArgs) {
-  console.log(kartformat, drawArgs);
-  const { filterMin, filterMax, opplystKode, barn } = drawArgs;
+  const { opplystKode, barn } = drawArgs;
+  let [filterMin, filterMax] = normaliserFilter(kartformat);
   const [visning] = drawArgs.kartformat.visning;
   const cmap = lagPalett(barn, opplystKode, visning || "diskret");
   const palette = createPalette(cmap);
