@@ -184,11 +184,17 @@ class Grunnkart extends React.Component {
       meta.kartformat.raster_indexed = meta.kartformat["raster.indexed"];
       delete meta.kartformat["raster.indexed"];
     }
+
     if (meta.barn && Object.keys(meta.barn).length > 0) {
       const intervall = meta.barn[0].intervall;
       if (intervall) meta.måleenhet = intervall.måleenhet;
     }
     meta.aktivtKartformat = Object.keys(meta.kartformat)[0];
+
+
+
+
+
     if (meta.kartformat.raster_gradient) {
       meta.aktivtKartformat = "raster_gradient";
       const gradient = meta.kartformat.raster_gradient;
