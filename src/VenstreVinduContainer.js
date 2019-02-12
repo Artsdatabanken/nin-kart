@@ -30,7 +30,6 @@ class VenstreVinduContainer extends React.Component {
       const forelder = this.props.aktiveLag[id];
       if (forelder.kode === kode) item = forelder;
     });
-    console.log("####", item);
     return item;
   }
 

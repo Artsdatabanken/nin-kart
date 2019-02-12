@@ -35,7 +35,6 @@ function lagPalett(barna, opplystKode, mode) {
       steps.splice(i + 1, 1);
     }
   }
-  console.log(steps);
   const cmap = [];
   for (let i = 0; i < steps.length - 1; i++) {
     const a = steps[i];
