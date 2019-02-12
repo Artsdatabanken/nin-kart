@@ -4,7 +4,6 @@ import Tweaks from "./";
 
 class TweakContainer extends React.Component {
   componentDidMount() {
-    console.warn(this.props);
     const { history, aktivtKartformat } = this.props;
     if (!aktivtKartformat) {
       // Laget er ikke lenger aktivt.  Url fra annen sesjon?

@@ -1,10 +1,10 @@
 import språk from "../språk";
 import { SettingsContext } from "../SettingsContext";
 import typesystem from "@artsdatabanken/typesystem";
-import { List, ListSubheader, withStyles } from "@material-ui/core";
+import { List, ListItem, ListSubheader, withStyles } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import { withTheme } from "@material-ui/core/styles";
-import { ZoomOutMap } from "@material-ui/icons/";
+import { InfoOutlined, ZoomOutMap } from "@material-ui/icons/";
 import ActionDelete from "@material-ui/icons/Delete";
 import ActionInfo from "@material-ui/icons/Info";
 import React, { Component } from "react";
@@ -89,37 +89,40 @@ class Polygon extends Component {
                 }}
               />
             )}
-            {kanSlettes && (
-              <Button
-                color="primary"
-                onClick={e => {
-                  onRemoveSelectedLayer(kode);
-                }}
-                icon={<ActionDelete />}
-              >
-                Fjern
-              </Button>
-            )}
-            <Button
-              color="primary"
-              onClick={() => {
-                history.push("/katalog/" + kode);
-              }}
-              icon={<ActionInfo />}
-            >
-              Info
-            </Button>
-            {bbox && (
+            <ListItem>
+              {kanSlettes && (
+                <Button
+                  color="primary"
+                  onClick={e => {
+                    onRemoveSelectedLayer(kode);
+                  }}
+                  icon={<ActionDelete />}
+                >
+                  Fjern
+                </Button>
+              )}
               <Button
                 color="primary"
                 onClick={() => {
-                  onFitBounds(bbox);
+                  history.push("/katalog/" + kode);
                 }}
+                icon={<ActionInfo />}
               >
-                <ZoomOutMap className={classes.iconSmall} />
-                Zoom til
+                <InfoOutlined className={classes.iconSmall} />
+                Info
               </Button>
-            )}
+              {bbox && (
+                <Button
+                  color="primary"
+                  onClick={() => {
+                    onFitBounds(bbox);
+                  }}
+                >
+                  <ZoomOutMap className={classes.iconSmall} />
+                  Zoom til
+                </Button>
+              )}
+            </ListItem>
           </React.Fragment>
         )}
       </SettingsContext.Consumer>
