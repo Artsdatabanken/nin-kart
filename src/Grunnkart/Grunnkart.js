@@ -136,6 +136,7 @@ class Grunnkart extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     const path = this.props.location.pathname;
+    if (path.indexOf("/visning") === 0) return;
     if (path !== prevProps.location.pathname) this.fetchMeta(path);
     document.title =
       (this.state.meta && this.state.meta.tittel.nb) || "Natur i Norge";
@@ -175,7 +176,25 @@ class Grunnkart extends React.Component {
     if (meta.se) return meta;
     meta.nivå = typesystem.hentNivaa(meta.kode).slice(0, 1);
     meta.prefiks = meta.kode.substring(0, 2);
-    meta.aktivtKartformat = Object.keys(meta.kartformat)[0];
+    if (meta.kartformat["raster.gradient"]) {
+      meta.kartformat.raster_gradient = meta.kartformat["raster.gradient"];
+      delete meta.kartformat["raster.gradient"];
+    }
+    if (meta.kartformat["raster.indexed"]) {
+      meta.kartformat.raster_indexed = meta.kartformat["raster.indexed"];
+      delete meta.kartformat["raster.indexed"];
+    }
+    if (meta.barn && Object.keys(meta.barn).length > 0)
+      meta.måleenhet = meta.barn[0].intervall.måleenhet;
+    meta.aktivtKartformat = Object.values(meta.kartformat)[0];
+    if (meta.kartformat.raster_gradient) {
+      meta.aktivtKartformat = "raster_gradient";
+      const gradient = meta.kartformat.raster_gradient;
+      gradient.aktivVisning = gradient.visning[0];
+      const intervall = gradient.intervall.original;
+      gradient.filterMin = intervall[0];
+      gradient.filterMax = intervall[1];
+    }
     meta.erSynlig = true;
     if (meta.kode.substring(0, 2) === "LA") {
       if (!this.state.aktiveLag.terreng.wasAutoEnabled) {
@@ -197,6 +216,7 @@ class Grunnkart extends React.Component {
   handleUpdateLayerProp = (kode, key, value) => {
     const aktive = this.state.aktiveLag;
     let node = aktive[kode];
+    if (!node) node = this.state.meta;
     const parts = key.split(".");
     for (let i = 0; i < parts.length - 1; i++) node = node[parts[i]];
     const vkey = parts[parts.length - 1];

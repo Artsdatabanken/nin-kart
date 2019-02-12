@@ -26,7 +26,11 @@ const Innstilling = ({
       </div>
     )}
     {icon && <ListItemAvatar>{icon}</ListItemAvatar>}
-    <ListItemText primary={tittel} secondary={undertittel} />
+    {false && <ListItemText primary={tittel} secondary={undertittel} />}
+    <div style={{ paddingLeft: 8, paddingRight: 8, width: "100%" }}>
+      <div>{tittel}</div>
+      <div>{undertittel}</div>
+    </div>
     {children}
   </ListItem>
 );
