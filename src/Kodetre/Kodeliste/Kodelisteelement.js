@@ -4,7 +4,6 @@ import språk from "../../språk";
 import Bildeavatar from "./Bildeavatar";
 import VolumIndikator from "./VolumIndikator";
 import opplyst from "../../Kart/LeafletTangram/scene/visualisering/palette/opplyst";
-//import Arealbruksintensitet from './Filter/Arealbruksintensitet'
 
 function getSecondary(meta) {
   let { intervall } = meta;
@@ -15,7 +14,7 @@ function getSecondary(meta) {
     if (!i.maxTekst) return "> " + i.minTekst;
     return `${i.tittel ? i.tittel + " " : ""}${i.minTekst} - ${i.maxTekst}`;
   });
-  const r = items.join(", ") + " " + (intervall[0].måleenhet || "");
+  const r = items.join(", ") + " " + (meta.måleenhet || "");
   return r;
 }
 
