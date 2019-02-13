@@ -1,7 +1,13 @@
 import språk from "../språk";
 import { SettingsContext } from "../SettingsContext";
 import typesystem from "@artsdatabanken/typesystem";
-import { List, ListItem, ListSubheader, withStyles } from "@material-ui/core";
+import {
+  List,
+  ListItem,
+  Select,
+  ListSubheader,
+  withStyles
+} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import { withTheme } from "@material-ui/core/styles";
 import { InfoOutlined, ZoomOutMap } from "@material-ui/icons/";
@@ -29,36 +35,57 @@ class Polygon extends Component {
       history,
       tittel,
       bbox,
-      visEtiketter,
       onFitBounds,
       onMouseEnter,
       onMouseLeave,
       onRemoveSelectedLayer,
       onUpdateLayerProp,
+      aktivtKartformat,
       kanSlettes,
       barn,
       visBarn,
       lag,
+      kartformat,
       classes
     } = this.props;
+    const { visEtiketter = false } = kartformat.polygon;
     const undernivå = this.navnPåUndernivå(kode);
     return (
       <SettingsContext.Consumer>
         {context => (
           <React.Fragment>
             <ListSubheader>{språk(tittel)}</ListSubheader>
+            <Select
+              native
+              value={aktivtKartformat}
+              onChange={() =>
+                this.handleUpdateLayerProp(kode, "aktivtKartformat")
+              }
+              inputProps={{
+                name: "age",
+                id: "age-native-simple"
+              }}
+            >
+              {Object.keys(kartformat).map(kf => (
+                <option key={kf} value={kf}>
+                  {kf}
+                </option>
+              ))}
+            </Select>
             <Veksle
               tittel="Vis etiketter"
               toggled={visEtiketter}
               onClick={() =>
-                onUpdateLayerProp(kode, "visEtiketter", !visEtiketter)
+                this.handleUpdateLayerProp(kode, "visEtiketter", !visEtiketter)
               }
             />
             {Object.keys(barn).length > 0 && (
               <Veksle
                 tittel={"Vis " + undernivå}
                 toggled={visBarn}
-                onClick={() => onUpdateLayerProp(kode, "visBarn", !visBarn)}
+                onClick={() =>
+                  this.handleUpdateLayerProp(kode, "visBarn", !visBarn)
+                }
               />
             )}
             {visBarn ? (
@@ -75,7 +102,7 @@ class Polygon extends Component {
                   onMouseLeave={onMouseLeave}
                   onUpdateLayerProp={(index, felt, verdi) => {
                     barn[index][felt] = verdi;
-                    onUpdateLayerProp(kode, "barn", barn);
+                    this.handleUpdateLayerProp(kode, "barn", barn);
                   }}
                 />
               </List>
@@ -85,7 +112,7 @@ class Polygon extends Component {
                 color={farge}
                 onChange={farge => {
                   const rgbString = tinycolor(farge.rgb).toRgbString();
-                  onUpdateLayerProp(kode, "farge", rgbString);
+                  this.handleUpdateLayerProp(kode, "farge", rgbString);
                 }}
               />
             )}
@@ -128,6 +155,10 @@ class Polygon extends Component {
       </SettingsContext.Consumer>
     );
   }
+
+  handleUpdateLayerProp = (kode, key, value) => {
+    this.props.onUpdateLayerProp(kode, "kartformat.polygon." + key, value);
+  };
 
   navnPåUndernivå(kode) {
     const nivåer = typesystem.hentNivaa(kode + "-1");
