@@ -1,32 +1,14 @@
 import typesystem from "@artsdatabanken/typesystem";
-import {
-  ListSubheader,
-  ListItem,
-  Divider,
-  withStyles
-} from "@material-ui/core";
-import Button from "@material-ui/core/Button";
+import { ListSubheader } from "@material-ui/core";
 import { withTheme } from "@material-ui/core/styles";
-import { SwapVert, ZoomOutMap } from "@material-ui/icons/";
+import { SwapVert } from "@material-ui/icons/";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import SliderSetting from "./SliderSetting";
 
 class Gradient extends Component {
   render() {
-    const {
-      kode,
-      url,
-      history,
-      bbox,
-      onFitBounds,
-      onRemoveSelectedLayer,
-      onUpdateLayerProp,
-      kanSlettes,
-      måleenhet,
-      kartformat,
-      classes
-    } = this.props;
+    const { kode, onUpdateLayerProp, måleenhet, kartformat } = this.props;
     const gradient = kartformat.raster_gradient;
     const { filterMin, filterMax } = gradient;
     const [rangeMin, rangeMax] = gradient.intervall.original;

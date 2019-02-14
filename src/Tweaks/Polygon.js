@@ -1,11 +1,7 @@
 import { SettingsContext } from "../SettingsContext";
 import typesystem from "@artsdatabanken/typesystem";
-import { List, ListItem, ListSubheader, withStyles } from "@material-ui/core";
-import Button from "@material-ui/core/Button";
+import { List, ListSubheader, withStyles } from "@material-ui/core";
 import { withTheme } from "@material-ui/core/styles";
-import { InfoOutlined, ZoomOutMap } from "@material-ui/icons/";
-import ActionDelete from "@material-ui/icons/Delete";
-import ActionInfo from "@material-ui/icons/Info";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import tinycolor from "tinycolor2";
@@ -25,15 +21,10 @@ class Polygon extends Component {
       kode,
       farge,
       history,
-      bbox,
-      onFitBounds,
       onMouseEnter,
       onMouseLeave,
-      onRemoveSelectedLayer,
-      kanSlettes,
       barn,
-      lag,
-      classes
+      lag
     } = this.props;
     const { location } = history;
     const undernivå = this.navnPåUndernivå(kode);

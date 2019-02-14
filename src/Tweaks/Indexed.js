@@ -1,15 +1,6 @@
 import typesystem from "@artsdatabanken/typesystem";
-import {
-  ListSubheader,
-  ListItem,
-  Divider,
-  withStyles
-} from "@material-ui/core";
-import Button from "@material-ui/core/Button";
+import { ListSubheader, withStyles } from "@material-ui/core";
 import { withTheme } from "@material-ui/core/styles";
-import { ZoomOutMap } from "@material-ui/icons/";
-import ActionDelete from "@material-ui/icons/Delete";
-import ActionInfo from "@material-ui/icons/Info";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 
@@ -22,16 +13,6 @@ const styles = {
 
 class Indexed extends Component {
   render() {
-    const {
-      kode,
-      url,
-      history,
-      bbox,
-      onFitBounds,
-      onRemoveSelectedLayer,
-      kanSlettes,
-      classes
-    } = this.props;
     return (
       <React.Fragment>
         <ListSubheader>Filter</ListSubheader>

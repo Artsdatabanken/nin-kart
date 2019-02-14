@@ -1,11 +1,6 @@
 import { withTheme } from "@material-ui/core/styles";
 import React from "react";
-import {
-  Avatar,
-  ListItem,
-  ListItemIcon,
-  ListItemText
-} from "@material-ui/core";
+import { ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 
 const Innstilling = ({
   tittel,

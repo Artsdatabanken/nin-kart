@@ -1,9 +1,4 @@
-import {
-  Delete,
-  InfoOutlined,
-  SwapVert,
-  ZoomOutMap
-} from "@material-ui/icons/";
+import { Delete, InfoOutlined, ZoomOutMap } from "@material-ui/icons/";
 import {
   Divider,
   ListItem,
@@ -32,7 +27,6 @@ class Generelt extends Component {
       onRemoveSelectedLayer,
       onFitBounds,
       bbox,
-      url,
       search,
       history,
       onUpdateLayerProp,
