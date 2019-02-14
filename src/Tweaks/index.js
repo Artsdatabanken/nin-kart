@@ -5,7 +5,8 @@ import Google from "./bakgrunn/Google";
 import Polygon from "./Polygon";
 import Terreng from "./Terreng";
 import Gradient from "./Gradient";
-import { List } from "@material-ui/core";
+import Indexed from "./Indexed";
+import Generelt from "./Generelt";
 
 class Tweaks extends React.Component {
   state = {};
@@ -17,10 +18,12 @@ class Tweaks extends React.Component {
       case "google_hybrid":
       case "google_satellite":
         return <Google {...this.props} />;
-      case "terreng":
+      case "normals":
         return <Terreng {...this.props} />;
       case "raster_gradient":
         return <Gradient {...this.props} />;
+      case "raster_indexed":
+        return <Indexed {...this.props} />;
       case "polygon":
         return <Polygon {...this.props} />;
       default:
@@ -29,8 +32,13 @@ class Tweaks extends React.Component {
   }
 
   render() {
-    const { style, aktivtKartformat } = this.props;
-    return <List style={{ ...style }}>{this.seksjon(aktivtKartformat)}</List>;
+    const { aktivtKartformat, history } = this.props;
+    if (!aktivtKartformat) return null;
+    return (
+      <Generelt search={history.location.search} {...this.props}>
+        {this.seksjon(aktivtKartformat)}
+      </Generelt>
+    );
   }
 }
 

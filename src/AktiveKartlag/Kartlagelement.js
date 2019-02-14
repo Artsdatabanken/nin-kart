@@ -1,15 +1,16 @@
+import språk from "../språk";
 import {
   Avatar,
   Divider,
   IconButton,
   ListItem,
   ListItemSecondaryAction,
-  ListItemText,
-} from '@material-ui/core'
-import { withTheme } from '@material-ui/core/styles'
-import { Visibility, VisibilityOff } from '@material-ui/icons'
-import React from 'react'
-import { withRouter } from 'react-router'
+  ListItemText
+} from "@material-ui/core";
+import { withTheme } from "@material-ui/core/styles";
+import { Visibility, VisibilityOff } from "@material-ui/icons";
+import React from "react";
+import { withRouter } from "react-router";
 
 class Kartlagelement extends React.Component {
   render() {
@@ -20,8 +21,8 @@ class Kartlagelement extends React.Component {
       farge,
       onMouseLeave,
       onMouseEnter,
-      onClick,
-    } = this.props
+      onClick
+    } = this.props;
     return (
       <React.Fragment>
         <ListItem
@@ -31,42 +32,42 @@ class Kartlagelement extends React.Component {
           key={kode}
           onMouseEnter={() => onMouseEnter(kode)}
           onMouseLeave={() => {
-            onMouseLeave(kode)
+            onMouseLeave(kode);
           }}
         >
           <IconButton
             onClick={e => {
               this.props.onUpdateLayerProp(
                 kode,
-                'erSynlig',
+                "erSynlig",
                 !this.props.erSynlig
-              )
-              e.stopPropagation()
+              );
+              e.stopPropagation();
             }}
           >
             {this.props.erSynlig ? (
-              <Visibility style={{ color: '#333' }} />
+              <Visibility style={{ color: "#333" }} />
             ) : (
-              <VisibilityOff style={{ color: '#aaa' }} />
+              <VisibilityOff style={{ color: "#aaa" }} />
             )}
           </IconButton>
-          <ListItemText primary={tittel} secondary={undertittel} />
+          <ListItemText primary={språk(tittel)} secondary={undertittel} />
           <ListItemSecondaryAction style={{ paddingRight: 8 }}>
             <Avatar
               style={{
                 width: 24,
                 height: 24,
-                filter: 'drop-shadow(1px 1px 1px #666)',
+                filter: "drop-shadow(1px 1px 1px #666)",
                 backgroundColor: farge,
-                src: !farge && '/' + kode + '.png',
+                src: !farge && "/" + kode + ".png"
               }}
             />
           </ListItemSecondaryAction>
         </ListItem>
         <Divider />
       </React.Fragment>
-    )
+    );
   }
 }
 
-export default withRouter(withTheme()(Kartlagelement))
+export default withRouter(withTheme()(Kartlagelement));

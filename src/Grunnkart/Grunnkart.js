@@ -136,7 +136,6 @@ class Grunnkart extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     const path = this.props.location.pathname;
-    if (path.indexOf("/visning") === 0) return;
     if (path !== prevProps.location.pathname) this.fetchMeta(path);
     document.title =
       (this.state.meta && this.state.meta.tittel.nb) || "Natur i Norge";
@@ -174,8 +173,10 @@ class Grunnkart extends React.Component {
       return this.redirectTo("Natur_i_Norge");
     }
     if (meta.se) return meta;
+    console.log(meta);
     meta.nivå = typesystem.hentNivaa(meta.kode).slice(0, 1);
     meta.prefiks = meta.kode.substring(0, 2);
+    if (!meta.kartformat) meta.kartformat = {};
     if (meta.kartformat["raster.gradient"]) {
       meta.kartformat.raster_gradient = meta.kartformat["raster.gradient"];
       delete meta.kartformat["raster.gradient"];
@@ -190,10 +191,6 @@ class Grunnkart extends React.Component {
       if (intervall) meta.måleenhet = intervall.måleenhet;
     }
     meta.aktivtKartformat = Object.keys(meta.kartformat)[0];
-
-
-
-
 
     if (meta.kartformat.raster_gradient) {
       meta.aktivtKartformat = "raster_gradient";
@@ -221,9 +218,12 @@ class Grunnkart extends React.Component {
   };
 
   // Supports composite keys i.e. gradient.filterMin
-  handleUpdateLayerProp = (kode, key, value) => {
+  handleUpdateLayerProp = (layer, key, value) => {
+    console.log(layer, key, value);
     const aktive = this.state.aktiveLag;
-    let node = aktive[kode];
+    console.log("aktivelag", this.state.aktiveLag);
+    let node = aktive[layer];
+    console.log("node", node);
     if (!node) node = this.state.meta;
     const parts = key.split(".");
     for (let i = 0; i < parts.length - 1; i++) node = node[parts[i]];
