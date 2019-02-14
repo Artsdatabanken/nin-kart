@@ -3,7 +3,7 @@ import React from "react";
 import {
   Avatar,
   ListItem,
-  ListItemAvatar,
+  ListItemIcon,
   ListItemText
 } from "@material-ui/core";
 
@@ -30,11 +30,7 @@ const Innstilling = ({
         {verdi}
       </div>
     )}
-    {icon && (
-      <ListItemAvatar>
-        <Avatar>{icon}</Avatar>
-      </ListItemAvatar>
-    )}
+    {icon && <ListItemIcon>{icon}</ListItemIcon>}
     {false && <ListItemText primary={tittel} secondary={undertittel} />}
     <div style={{ paddingLeft: 8, paddingRight: 8, width: "100%" }}>
       <div>{tittel}</div>
