@@ -140,7 +140,7 @@ class Kodekort extends React.Component {
 
   handleClickAktiveLag = () => this.props.history.push("/");
   handleClickTweaks = () =>
-    this.props.history.push("/visning" + this.props.history.location.pathname);
+    this.props.history.push(this.props.history.location.pathname + "?vis");
   handleFitBounds = () => this.props.onFitBounds(this.props.bbox);
 }
 

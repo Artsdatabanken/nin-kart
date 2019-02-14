@@ -1,13 +1,6 @@
-import språk from "../språk";
 import { SettingsContext } from "../SettingsContext";
 import typesystem from "@artsdatabanken/typesystem";
-import {
-  List,
-  ListItem,
-  Select,
-  ListSubheader,
-  withStyles
-} from "@material-ui/core";
+import { List, ListItem, ListSubheader, withStyles } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import { withTheme } from "@material-ui/core/styles";
 import { InfoOutlined, ZoomOutMap } from "@material-ui/icons/";
@@ -18,7 +11,6 @@ import { withRouter } from "react-router";
 import tinycolor from "tinycolor2";
 import Barneliste from "./Barneliste";
 import ColorPicker from "./ColorPicker";
-import Veksle from "./Veksle";
 
 const styles = {
   iconSmall: {
@@ -33,89 +25,66 @@ class Polygon extends Component {
       kode,
       farge,
       history,
-      tittel,
       bbox,
       onFitBounds,
       onMouseEnter,
       onMouseLeave,
       onRemoveSelectedLayer,
-      onUpdateLayerProp,
-      aktivtKartformat,
       kanSlettes,
       barn,
-      visBarn,
       lag,
-      kartformat,
       classes
     } = this.props;
-    const { visEtiketter = false } = kartformat.polygon;
+    const { location } = history;
     const undernivå = this.navnPåUndernivå(kode);
+    if (location.search.startsWith("?vis_barn")) {
+      const egenskap = location.search.split("=").pop();
+      const barnet = barn[egenskap];
+      console.log(egenskap, barn, barnet);
+      return (
+        <ColorPicker
+          tittel={"Fyllfarge"}
+          color={barnet.farge}
+          onChange={farge => {
+            const rgbString = tinycolor(farge.rgb).toRgbString();
+            this.props.onUpdateLayerProp(
+              lag,
+              "barn." + egenskap + ".farge",
+              rgbString
+            );
+          }}
+        />
+      );
+    }
     return (
       <SettingsContext.Consumer>
         {context => (
           <React.Fragment>
-            <ListSubheader>{språk(tittel)}</ListSubheader>
-            <Select
-              native
-              value={aktivtKartformat}
-              onChange={() =>
-                this.handleUpdateLayerProp(kode, "aktivtKartformat")
-              }
-              inputProps={{
-                name: "age",
-                id: "age-native-simple"
-              }}
-            >
-              {Object.keys(kartformat).map(kf => (
-                <option key={kf} value={kf}>
-                  {kf}
-                </option>
-              ))}
-            </Select>
-            <Veksle
-              tittel="Vis etiketter"
-              toggled={visEtiketter}
-              onClick={() =>
-                this.handleUpdateLayerProp(kode, "visEtiketter", !visEtiketter)
-              }
-            />
-            {Object.keys(barn).length > 0 && (
-              <Veksle
-                tittel={"Vis " + undernivå}
-                toggled={visBarn}
-                onClick={() =>
-                  this.handleUpdateLayerProp(kode, "visBarn", !visBarn)
-                }
-              />
-            )}
-            {visBarn ? (
-              <List>
-                <ListSubheader style={{ textTransform: "capitalize" }}>
-                  {undernivå}
-                </ListSubheader>
-                <Barneliste
-                  forelderkode={kode}
-                  visKoder={context.visKoder}
-                  aktivtBarn={lag}
-                  barn={barn}
-                  onMouseEnter={onMouseEnter}
-                  onMouseLeave={onMouseLeave}
-                  onUpdateLayerProp={(index, felt, verdi) => {
-                    barn[index][felt] = verdi;
-                    this.handleUpdateLayerProp(kode, "barn", barn);
-                  }}
-                />
-              </List>
-            ) : (
-              <ColorPicker
-                tittel={"Fyllfarge"}
-                color={farge}
-                onChange={farge => {
-                  const rgbString = tinycolor(farge.rgb).toRgbString();
-                  this.handleUpdateLayerProp(kode, "farge", rgbString);
+            <List>
+              <ListSubheader style={{ textTransform: "capitalize" }}>
+                {undernivå}
+              </ListSubheader>
+              <Barneliste
+                forelderkode={kode}
+                visKoder={context.visKoder}
+                aktivtBarn={lag}
+                barn={barn}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+                onUpdateLayerProp={(index, felt, verdi) => {
+                  barn[index][felt] = verdi;
+                  this.handleUpdateLayerProp(kode, "barn", barn);
                 }}
               />
-            )}
+            </List>
+            <ColorPicker
+              tittel={"Fyllfarge"}
+              color={farge}
+              onChange={farge => {
+                const rgbString = tinycolor(farge.rgb).toRgbString();
+                this.handleUpdateLayerProp(kode, "farge", rgbString);
+              }}
+            />
             <ListItem>
               {kanSlettes && (
                 <Button

@@ -1,8 +1,8 @@
-import React from 'react'
-import { withRouter } from 'react-router'
-import tinycolor from 'tinycolor2'
-import PolygonlagElement from '../AktiveKartlag/PolygonlagElement'
-import ColorPicker from './ColorPicker'
+import React from "react";
+import { withRouter } from "react-router";
+import tinycolor from "tinycolor2";
+import PolygonlagElement from "../AktiveKartlag/PolygonlagElement";
+import ColorPicker from "./ColorPicker";
 
 const Barneliste = ({
   barn,
@@ -12,11 +12,11 @@ const Barneliste = ({
   onMouseLeave,
   history,
   forelderkode,
-  visKoder,
+  visKoder
 }) => {
   return Object.keys(barn).map(i => {
-    const node = barn[i]
-    const kode = node.kode
+    const node = barn[i];
+    const kode = node.kode;
     return (
       <React.Fragment key={kode}>
         <PolygonlagElement
@@ -26,28 +26,28 @@ const Barneliste = ({
           undertittel={kode}
           farge={node.farge}
           onUpdateLayerProp={() =>
-            onUpdateLayerProp(i, 'erSynlig', !node.erSynlig)
+            onUpdateLayerProp(i, "erSynlig", !node.erSynlig)
           }
           onMouseLeave={onMouseLeave}
           onMouseEnter={() => onMouseEnter(kode)}
           onClick={() => {
-            history.push('/lag/' + forelderkode + '/' + kode)
+            history.push(history.location.pathname + "?vis_barn=" + i);
           }}
           visKoder={visKoder}
         />
         {aktivtBarn === kode && (
           <ColorPicker
-            tittel={'Fyllfarge'}
+            tittel={"Fyllfarge"}
             color={node.farge}
             onChange={farge => {
-              const rgbString = tinycolor(farge.rgb).toRgbString()
-              onUpdateLayerProp(i, 'farge', rgbString)
+              const rgbString = tinycolor(farge.rgb).toRgbString();
+              onUpdateLayerProp(i, "farge", rgbString);
             }}
           />
         )}
       </React.Fragment>
-    )
-  })
-}
+    );
+  });
+};
 
-export default withRouter(Barneliste)
+export default withRouter(Barneliste);

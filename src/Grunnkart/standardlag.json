@@ -2,7 +2,7 @@
   "bakgrunnskart": {
     "kode": "xxxbakgrunnskart",
     "type": "xxxbakgrunn",
-    "tittel": "Basiskart",
+    "tittel": { "nb": "Basiskart" },
     "tema": "flyfoto",
     "erSynlig": true
   },
@@ -10,7 +10,7 @@
     "kode": "terreng",
     "type": "terreng",
     "aktivtKartformat": "normals",
-    "tittel": "3D terreng",
+    "tittel": { "tittel": "3D terreng" },
     "erSynlig": false,
     "terreng": {
       "vertikaltOverdriv": 1.0,
@@ -18,6 +18,11 @@
       "visEtikettTopp": false,
       "konturintervall": 100.0,
       "visEtikettKontur": true
+    },
+    "kartformat": {
+      "normals": {
+        "terreng": {}
+      }
     }
   }
 }

@@ -69,7 +69,7 @@ function listeElement(forelder, props, visKoder) {
       visKoder={visKoder}
       onClick={() => {
         onMouseLeave();
-        history.push("/visning/" + kode);
+        history.push("/" + kode + "?vis");
       }}
       onUpdateLayerProp={onUpdateLayerProp}
       onMouseEnter={onMouseEnter}

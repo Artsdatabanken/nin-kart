@@ -1,6 +1,11 @@
 import { withTheme } from "@material-ui/core/styles";
 import React from "react";
-import { ListItem, ListItemAvatar, ListItemText } from "@material-ui/core";
+import {
+  Avatar,
+  ListItem,
+  ListItemAvatar,
+  ListItemText
+} from "@material-ui/core";
 
 const Innstilling = ({
   tittel,
@@ -25,7 +30,11 @@ const Innstilling = ({
         {verdi}
       </div>
     )}
-    {icon && <ListItemAvatar>{icon}</ListItemAvatar>}
+    {icon && (
+      <ListItemAvatar>
+        <Avatar>{icon}</Avatar>
+      </ListItemAvatar>
+    )}
     {false && <ListItemText primary={tittel} secondary={undertittel} />}
     <div style={{ paddingLeft: 8, paddingRight: 8, width: "100%" }}>
       <div>{tittel}</div>

@@ -17,7 +17,9 @@ const Bakgrunnskartlag = ({
   history
 }) => (
   <ListItem
-    onClick={() => history.push("/visning/bakgrunnskart/" + lagNavn)}
+    onClick={() =>
+      history.push(history.location.pathname + "?vis_farge=" + lagNavn)
+    }
     button={true}
   >
     <Switch
@@ -27,7 +29,9 @@ const Bakgrunnskartlag = ({
     />
     <ListItemText primary={tittel} />
     <ListItemSecondaryAction
-      onClick={() => history.push("/visning/bakgrunnskart/" + lagNavn)}
+      onClick={() =>
+        history.push(history.location.pathname + "?vis_farge=" + lagNavn)
+      }
       style={{ cursor: "pointer", paddingRight: 12 }}
     >
       <Avatar style={{ backgroundColor: farge }} />

@@ -5,7 +5,7 @@ import BorreContainer from "./Borring/BorreContainer";
 import Borrevalg from "./Borring/Borrevalg";
 import KodeContainer from "./Kodetre/Kodeliste/KodeContainer";
 import språk from "./språk";
-import TweakContainer from "./Tweaks/TweakContainer";
+import Tweaks from "./Tweaks/";
 import Panel from "./components/Panel";
 import TopBarContainer from "./TopBar/TopBarContainer";
 import AktiveKartlag from "./AktiveKartlag/";
@@ -61,6 +61,23 @@ class VenstreVinduContainer extends React.Component {
     return (
       <Route
         render={({ match, history }) => {
+          if (location.search && location.search.indexOf("?vis" === 0)) {
+            const node =
+              this.props.aktiveLag[location.pathname.substring(1)] || meta;
+            return (
+              <Panel padTop>
+                <TopBarContainer tittel={språk(node.tittel) + ": Visning"} />
+                <Tweaks
+                  {...node}
+                  onFitBounds={this.props.onFitBounds}
+                  onUpdateLayerProp={onUpdateLayerProp}
+                  onRemoveSelectedLayer={onRemoveSelectedLayer}
+                  onMouseEnter={onMouseEnter}
+                  onMouseLeave={onMouseLeave}
+                />
+              </Panel>
+            );
+          }
           const args = this.parseQueryString(location.search);
           if (args.lng) {
             return (
@@ -79,33 +96,6 @@ class VenstreVinduContainer extends React.Component {
           return (
             <React.Fragment>
               <Switch>
-                <Route
-                  path="/visning/:kode/:lag?"
-                  render={({ match, history }) => (
-                    <Panel padTop>
-                      <TopBarContainer
-                        tittel={
-                          match.params.lag
-                            ? capitalize(match.params.kode) +
-                              ": " +
-                              capitalize(match.params.lag)
-                            : capitalize(match.params.kode)
-                        }
-                      />
-                      <TweakContainer
-                        kode={match.params.kode}
-                        lag={match.params.lag}
-                        koder={this.props.aktiveLag}
-                        {...this.finnValgtKodeElement(match.params.kode)}
-                        onFitBounds={this.props.onFitBounds}
-                        onUpdateLayerProp={onUpdateLayerProp}
-                        onRemoveSelectedLayer={onRemoveSelectedLayer}
-                        onMouseEnter={onMouseEnter}
-                        onMouseLeave={onMouseLeave}
-                      />
-                    </Panel>
-                  )}
-                />
                 <Route
                   path="/punkt/valg"
                   render={({ match, history }) => (
@@ -187,8 +177,5 @@ class VenstreVinduContainer extends React.Component {
 
   handleCloseSnackbar = () => this.setState({ error: null });
 }
-
-const capitalize = lower =>
-  lower.replace(/(^|\s)\S/g, c => c.toUpperCase()).replace(/_/g, " ");
 
 export default withRouter(VenstreVinduContainer);
