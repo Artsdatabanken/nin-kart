@@ -85,40 +85,6 @@ class Polygon extends Component {
                 this.handleUpdateLayerProp(kode, "farge", rgbString);
               }}
             />
-            <ListItem>
-              {kanSlettes && (
-                <Button
-                  color="primary"
-                  onClick={e => {
-                    onRemoveSelectedLayer(kode);
-                  }}
-                  icon={<ActionDelete />}
-                >
-                  Fjern
-                </Button>
-              )}
-              <Button
-                color="primary"
-                onClick={() => {
-                  history.push("/katalog/" + kode);
-                }}
-                icon={<ActionInfo />}
-              >
-                <InfoOutlined className={classes.iconSmall} />
-                Info
-              </Button>
-              {bbox && (
-                <Button
-                  color="primary"
-                  onClick={() => {
-                    onFitBounds(bbox);
-                  }}
-                >
-                  <ZoomOutMap className={classes.iconSmall} />
-                  Zoom til
-                </Button>
-              )}
-            </ListItem>
           </React.Fragment>
         )}
       </SettingsContext.Consumer>

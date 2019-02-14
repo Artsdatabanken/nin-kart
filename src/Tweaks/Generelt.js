@@ -1,6 +1,25 @@
-import { ListSubheader } from "@material-ui/core";
+import {
+  Delete,
+  InfoOutlined,
+  SwapVert,
+  ZoomOutMap
+} from "@material-ui/icons/";
+import {
+  Divider,
+  ListItem,
+  Button,
+  ListSubheader,
+  withStyles
+} from "@material-ui/core";
 import React, { Component } from "react";
 import VizType from "./VizType";
+
+const styles = {
+  iconSmall: {
+    fontSize: 20,
+    marginRight: 8
+  }
+};
 
 class Generelt extends Component {
   render() {
@@ -9,8 +28,15 @@ class Generelt extends Component {
       kartformat,
       aktivtKartformat,
       kode,
+      kanSlettes,
+      onRemoveSelectedLayer,
+      onFitBounds,
+      bbox,
+      url,
       search,
-      onUpdateLayerProp
+      history,
+      onUpdateLayerProp,
+      classes
     } = this.props;
     return (
       <div>
@@ -30,9 +56,43 @@ class Generelt extends Component {
           </React.Fragment>
         )}
         {children}
+        <Divider style={{ marginTop: 24, marginBottom: 8 }} />
+        <ListItem>
+          {kanSlettes && (
+            <Button
+              color="primary"
+              onClick={e => {
+                onRemoveSelectedLayer(kode);
+              }}
+              icon={<Delete />}
+            >
+              Fjern
+            </Button>
+          )}
+          <Button
+            color="primary"
+            onClick={() => {
+              history.push("/katalog/" + kode);
+            }}
+          >
+            <InfoOutlined className={classes.iconSmall} />
+            Info
+          </Button>
+          {bbox && (
+            <Button
+              color="primary"
+              onClick={() => {
+                onFitBounds(bbox);
+              }}
+            >
+              <ZoomOutMap className={classes.iconSmall} />
+              Zoom til
+            </Button>
+          )}
+        </ListItem>
       </div>
     );
   }
 }
 
-export default Generelt;
+export default withStyles(styles)(Generelt);

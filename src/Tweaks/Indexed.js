@@ -35,40 +35,6 @@ class Indexed extends Component {
     return (
       <React.Fragment>
         <ListSubheader>Filter</ListSubheader>
-        <Divider style={{ marginTop: 24, marginBottom: 8 }} />
-        <ListItem>
-          {kanSlettes && (
-            <Button
-              color="primary"
-              onClick={e => {
-                onRemoveSelectedLayer(kode);
-              }}
-              icon={<ActionDelete />}
-            >
-              Fjern
-            </Button>
-          )}
-          <Button
-            color="primary"
-            onClick={() => {
-              history.push("/" + url);
-            }}
-            icon={<ActionInfo />}
-          >
-            Info
-          </Button>
-          {bbox && (
-            <Button
-              color="primary"
-              onClick={() => {
-                onFitBounds(bbox);
-              }}
-            >
-              <ZoomOutMap className={classes.iconSmall} />
-              Zoom til
-            </Button>
-          )}
-        </ListItem>
       </React.Fragment>
     );
   }

@@ -8,18 +8,9 @@ import {
 import Button from "@material-ui/core/Button";
 import { withTheme } from "@material-ui/core/styles";
 import { SwapVert, ZoomOutMap } from "@material-ui/icons/";
-import ActionDelete from "@material-ui/icons/Delete";
-import ActionInfo from "@material-ui/icons/Info";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import SliderSetting from "./SliderSetting";
-
-const styles = {
-  iconSmall: {
-    fontSize: 20,
-    marginRight: 8
-  }
-};
 
 class Gradient extends Component {
   render() {
@@ -83,40 +74,6 @@ class Gradient extends Component {
               );
           }}
         />
-        <Divider style={{ marginTop: 24, marginBottom: 8 }} />
-        <ListItem>
-          {kanSlettes && (
-            <Button
-              color="primary"
-              onClick={e => {
-                onRemoveSelectedLayer(kode);
-              }}
-              icon={<ActionDelete />}
-            >
-              Fjern
-            </Button>
-          )}
-          <Button
-            color="primary"
-            onClick={() => {
-              history.push("/" + url);
-            }}
-            icon={<ActionInfo />}
-          >
-            Info
-          </Button>
-          {bbox && (
-            <Button
-              color="primary"
-              onClick={() => {
-                onFitBounds(bbox);
-              }}
-            >
-              <ZoomOutMap className={classes.iconSmall} />
-              Zoom til
-            </Button>
-          )}
-        </ListItem>
       </React.Fragment>
     );
   }
@@ -137,4 +94,4 @@ class Gradient extends Component {
   }
 }
 
-export default withStyles(styles)(withRouter(withTheme()(Gradient)));
+export default withRouter(withTheme()(Gradient));

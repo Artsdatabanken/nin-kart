@@ -173,8 +173,10 @@ class Grunnkart extends React.Component {
       return this.redirectTo("Natur_i_Norge");
     }
     if (meta.se) return meta;
+    console.log(meta);
     meta.nivå = typesystem.hentNivaa(meta.kode).slice(0, 1);
     meta.prefiks = meta.kode.substring(0, 2);
+    if (!meta.kartformat) meta.kartformat = {};
     if (meta.kartformat["raster.gradient"]) {
       meta.kartformat.raster_gradient = meta.kartformat["raster.gradient"];
       delete meta.kartformat["raster.gradient"];
