@@ -7,7 +7,7 @@ const gaugeHeight = 6;
 function farge(erPå, col) {
   if (erPå) return col;
   //return "#eee";
-  return tinycolor.mix(col, new tinycolor("#eee"), 80).toHexString();
+  return tinycolor.mix(col, new tinycolor("#eee"), 90).toHexString();
 }
 
 export default class LinearGauge extends Component {
@@ -26,8 +26,8 @@ export default class LinearGauge extends Component {
         påFra = 99;
       }
     }
-    if (påFra < antall - 1) påRange.push([trinn[påFra], trinn[antall - 1]]);
-    const [min, max] = påRange[0];
+    if (påFra < antall) påRange.push([trinn[påFra], trinn[antall - 1]]);
+    const [min = 0, max = 0] = påRange[0];
     let ptitle = tittel ? tittel + ": " : "";
     ptitle += min.tittel.nb;
     if (min.tittel.nb !== max.tittel.nb) ptitle += " - " + max.tittel.nb;
