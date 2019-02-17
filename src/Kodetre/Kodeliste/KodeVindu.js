@@ -5,6 +5,7 @@ import Graf from "./Graf";
 import Kodekort from "./Kodekort";
 import Kodeliste from "./Kodeliste";
 import Statistikk from "./Statistikk";
+import Gradienter from "./Gradienter";
 
 class KodeVindu extends React.Component {
   render() {
@@ -85,6 +86,7 @@ class KodeVindu extends React.Component {
             />
           )}
         </SettingsContext.Consumer>
+        <Gradienter gradient={meta.gradient} onNavigate={onNavigate} />
         <Graf graf={meta.graf} onNavigate={onNavigate} />
       </div>
     );
