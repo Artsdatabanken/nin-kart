@@ -28,10 +28,14 @@ export default class LinearGauge extends Component {
     }
     if (påFra < antall - 1) påRange.push([trinn[påFra], trinn[antall - 1]]);
     const [min, max] = påRange[0];
+    let ptitle = tittel ? tittel + ": " : "";
+    ptitle += min.tittel.nb;
+    if (min.tittel.nb !== max.tittel.nb) ptitle += " - " + max.tittel.nb;
+
     return (
       <ListItem button dense onClick={() => onNavigate(url)}>
         <ListItemText
-          primary={tittel + ": " + min.tittel.nb + " - " + max.tittel.nb}
+          primary={ptitle}
           secondary={
             <svg viewBox="-1 -1 102 7.1">
               <rect
