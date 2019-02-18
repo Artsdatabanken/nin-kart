@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import tinycolor from "tinycolor2";
 import { ListItem, ListItemText } from "@material-ui/core";
+import { SettingsContext } from "../../SettingsContext";
 
 const gaugeHeight = 6;
 
+function contrastingColor(color) {
+  const colo = new tinycolor(color);
+  return colo.isLight() ? "rgba(0,0,0,0.67)" : "rgba(255,255,255,0.67)";
+}
+
 function farge(erPå, col) {
   if (erPå) return col;
-  //return "#eee";
   return tinycolor.mix(col, new tinycolor("#eee"), 90).toHexString();
 }
 
@@ -66,33 +71,54 @@ const Gauge = ({ trinn, ranges }) => {
         stroke="rgba(0,0,0,0.67)"
         strokeWidth={0.25}
       />
-      {trinn.map(e => (
-        <g key={e.min}>
-          <rect
-            x={e.min}
-            width={e.max - e.min}
-            y={0}
-            height={gaugeHeight}
-            fill={farge(e.på, e.farge)}
-            stroke="none"
-          >
-            <title>{e.tittel.nb}</title>
-          </rect>
-          {e.max < 100 && (
-            <line
-              x1={e.max}
-              x2={e.max}
-              y1={0}
-              y2={gaugeHeight}
-              strokeWidth="0.5"
-              stroke="rgba(0,0,0,0.37)"
-            />
-          )}
-          {false && !e.på && <Cross min={e.min} max={e.max} />}
-        </g>
-      ))}
+      {trinn.map(e => {
+        const color = farge(e.på, e.farge);
+        return (
+          <g key={e.min}>
+            <rect
+              x={e.min}
+              width={e.max - e.min}
+              y={0}
+              height={gaugeHeight}
+              fill={color}
+              stroke="none"
+            >
+              <title>{e.tittel.nb}</title>
+            </rect>
+            <SettingsContext.Consumer>
+              {context =>
+                context.visKoder && (
+                  <text
+                    x={0.5 * (e.min + e.max)}
+                    y={0.52 * gaugeHeight}
+                    font-size="3.5"
+                    fill={contrastingColor(color)}
+                    dominantBaseline="middle"
+                    textAnchor="middle"
+                  >
+                    {e.kode[e.kode.length - 1].toLowerCase()}
+                  </text>
+                )
+              }
+            </SettingsContext.Consumer>
+
+            {e.max < 100 && (
+              <line
+                x1={e.max}
+                x2={e.max}
+                y1={0}
+                y2={gaugeHeight}
+                strokeWidth="0.5"
+                stroke="rgba(0,0,0,0.37)"
+              />
+            )}
+            {false && !e.på && <Cross min={e.min} max={e.max} />}
+          </g>
+        );
+      })}
       {ranges.map(([min, max]) => (
         <Shadow
+          key={min}
           x1={min.min + 0.2}
           y1={0 + 0.2}
           x2={max.max - 0.4}
