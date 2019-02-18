@@ -27,10 +27,6 @@ export default class LinearGauge extends Component {
       }
     }
     if (påFra < antall) påRange.push([trinn[påFra], trinn[antall - 1]]);
-    const [min = 0, max = 0] = påRange[0];
-    let range = min.tittel.nb;
-    if (min.tittel.nb !== max.tittel.nb) range += " - " + max.tittel.nb;
-
     return (
       <ListItem button dense onClick={() => onNavigate(url)}>
         <ListItemText
@@ -38,7 +34,7 @@ export default class LinearGauge extends Component {
           secondary={
             <div>
               <Gauge trinn={trinn} ranges={påRange} />
-              {range}
+              {beskrivelse(påRange)}
             </div>
           }
         />
@@ -46,6 +42,16 @@ export default class LinearGauge extends Component {
     );
   }
 }
+
+const beskrivelse = ranges => {
+  return ranges
+    .map(([min, max]) => {
+      let range = min.tittel.nb;
+      if (min.tittel.nb !== max.tittel.nb) range += "–" + max.tittel.nb;
+      return range;
+    })
+    .join(", ");
+};
 
 const Gauge = ({ trinn, ranges }) => {
   return (
