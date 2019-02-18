@@ -37,7 +37,7 @@ export default class LinearGauge extends Component {
           primary={tittel}
           secondary={
             <div>
-              <Gauge trinn={trinn} min={min} max={max} />
+              <Gauge trinn={trinn} ranges={påRange} />
               {range}
             </div>
           }
@@ -47,7 +47,7 @@ export default class LinearGauge extends Component {
   }
 }
 
-const Gauge = ({ trinn, min, max }) => {
+const Gauge = ({ trinn, ranges }) => {
   return (
     <svg viewBox="-1 -1 102 7.1">
       <rect
@@ -85,14 +85,16 @@ const Gauge = ({ trinn, min, max }) => {
           {false && !e.på && <Cross min={e.min} max={e.max} />}
         </g>
       ))}
-      <Shadow
-        x1={min.min + 0.2}
-        y1={0 + 0.2}
-        x2={max.max - 0.4}
-        y2={gaugeHeight - 0.2}
-        color1="#bbb"
-        color2="#888"
-      />
+      {ranges.map(([min, max]) => (
+        <Shadow
+          x1={min.min + 0.2}
+          y1={0 + 0.2}
+          x2={max.max - 0.4}
+          y2={gaugeHeight - 0.2}
+          color1="#bbb"
+          color2="#888"
+        />
+      ))}
     </svg>
   );
 };
