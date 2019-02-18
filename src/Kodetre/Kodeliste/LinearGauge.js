@@ -28,66 +28,74 @@ export default class LinearGauge extends Component {
     }
     if (påFra < antall) påRange.push([trinn[påFra], trinn[antall - 1]]);
     const [min = 0, max = 0] = påRange[0];
-    let ptitle = tittel ? tittel + ": " : "";
-    ptitle += min.tittel.nb;
-    if (min.tittel.nb !== max.tittel.nb) ptitle += " - " + max.tittel.nb;
+    let range = min.tittel.nb;
+    if (min.tittel.nb !== max.tittel.nb) range += " - " + max.tittel.nb;
 
     return (
       <ListItem button dense onClick={() => onNavigate(url)}>
         <ListItemText
-          primary={ptitle}
+          primary={tittel}
           secondary={
-            <svg viewBox="-1 -1 102 7.1">
-              <rect
-                x={0}
-                y={0}
-                width={100}
-                height={gaugeHeight}
-                fill="url(#grad1)"
-                style={{ xfilter: "url(#ag)" }}
-                stroke="rgba(0,0,0,0.67)"
-                strokeWidth={0.25}
-              />
-              {trinn.map(e => (
-                <g key={e.min}>
-                  <rect
-                    x={e.min}
-                    width={e.max - e.min}
-                    y={0}
-                    height={gaugeHeight}
-                    fill={farge(e.på, e.farge)}
-                    stroke="none"
-                  >
-                    <title>{e.tittel.nb}</title>
-                  </rect>
-                  {e.max < 100 && (
-                    <line
-                      x1={e.max}
-                      x2={e.max}
-                      y1={0}
-                      y2={gaugeHeight}
-                      strokeWidth="0.5"
-                      stroke="rgba(0,0,0,0.37)"
-                    />
-                  )}
-                  {false && !e.på && <Cross min={e.min} max={e.max} />}
-                </g>
-              ))}
-              <Shadow
-                x1={min.min + 0.2}
-                y1={0 + 0.2}
-                x2={max.max - 0.4}
-                y2={gaugeHeight - 0.2}
-                color1="#bbb"
-                color2="#888"
-              />
-            </svg>
+            <div>
+              <Gauge trinn={trinn} min={min} max={max} />
+              {range}
+            </div>
           }
         />
       </ListItem>
     );
   }
 }
+
+const Gauge = ({ trinn, min, max }) => {
+  return (
+    <svg viewBox="-1 -1 102 7.1">
+      <rect
+        x={0}
+        y={0}
+        width={100}
+        height={gaugeHeight}
+        fill="url(#grad1)"
+        style={{ xfilter: "url(#ag)" }}
+        stroke="rgba(0,0,0,0.67)"
+        strokeWidth={0.25}
+      />
+      {trinn.map(e => (
+        <g key={e.min}>
+          <rect
+            x={e.min}
+            width={e.max - e.min}
+            y={0}
+            height={gaugeHeight}
+            fill={farge(e.på, e.farge)}
+            stroke="none"
+          >
+            <title>{e.tittel.nb}</title>
+          </rect>
+          {e.max < 100 && (
+            <line
+              x1={e.max}
+              x2={e.max}
+              y1={0}
+              y2={gaugeHeight}
+              strokeWidth="0.5"
+              stroke="rgba(0,0,0,0.37)"
+            />
+          )}
+          {false && !e.på && <Cross min={e.min} max={e.max} />}
+        </g>
+      ))}
+      <Shadow
+        x1={min.min + 0.2}
+        y1={0 + 0.2}
+        x2={max.max - 0.4}
+        y2={gaugeHeight - 0.2}
+        color1="#bbb"
+        color2="#888"
+      />
+    </svg>
+  );
+};
 
 const Shadow = ({ x1, x2, y1, y2, color1, color2 }) => {
   return (
