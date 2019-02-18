@@ -65,7 +65,10 @@ class Kodelisteelement extends React.Component {
           />
           {visKode && (
             <Typography variant="caption" noWrap>
-              {kode}
+              {kode
+                .split("-")
+                .slice(-2)
+                .join("-")}
             </Typography>
           )}
         </ListItem>
