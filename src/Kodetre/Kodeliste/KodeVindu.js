@@ -73,7 +73,7 @@ class KodeVindu extends React.Component {
         <SettingsContext.Consumer>
           {context => (
             <Kodeliste
-              title="Innhold"
+              title="Innholder"
               størsteAreal={data.størsteAreal}
               apidata={data.barn}
               metadata={meta.barn}
