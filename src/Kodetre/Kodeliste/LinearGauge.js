@@ -3,11 +3,11 @@ import tinycolor from "tinycolor2";
 import { ListItem, ListItemText } from "@material-ui/core";
 import { SettingsContext } from "../../SettingsContext";
 
-const gaugeHeight = 6;
+const gaugeHeight = 7;
 
 function contrastingColor(color) {
-  const colo = new tinycolor(color);
-  return colo.isLight() ? "rgba(0,0,0,0.67)" : "rgba(255,255,255,0.67)";
+  const luminance = new tinycolor(color).getLuminance();
+  return luminance > 0.5 ? "rgba(0,0,0,0.57)" : "rgba(255,255,255,0.57)";
 }
 
 function farge(erPå, col) {
@@ -37,10 +37,10 @@ export default class LinearGauge extends Component {
         <ListItemText
           primary={tittel}
           secondary={
-            <div>
+            <React.Fragment>
               <Gauge trinn={trinn} ranges={påRange} />
               {beskrivelse(påRange)}
-            </div>
+            </React.Fragment>
           }
         />
       </ListItem>
@@ -60,38 +60,88 @@ const beskrivelse = ranges => {
 
 const Gauge = ({ trinn, ranges }) => {
   return (
-    <svg viewBox="-1 -1 102 7.1">
+    <svg viewBox="-1 -1 102 9.2">
+      <defs>
+        <filter id="f1" x="0" y="0" width="102" height="10">
+          <feOffset result="offOut" in="SourceGraphic" dx="0.051" dy="0.051" />
+          <feGaussianBlur result="blurOut" in="offOut" stdDeviation="0.5" />
+          <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+        </filter>
+        <filter id="f2" x="0" y="0" width="102" height="10">
+          <feGaussianBlur
+            result="blurOut"
+            in="SourceGraphic"
+            stdDeviation="0.5"
+          />
+          <feOffset in="blurOut" dx="0.4" dy="0.4" result="DROPSHADOW" />
+        </filter>
+      </defs>
       <rect
         x={0}
         y={0}
         width={100}
         height={gaugeHeight}
-        fill="url(#grad1)"
-        style={{ xfilter: "url(#ag)" }}
+        fill="#888"
+        filter="url(#f1)"
         stroke="rgba(0,0,0,0.67)"
         strokeWidth={0.25}
       />
       {trinn.map(e => {
         const color = farge(e.på, e.farge);
         return (
-          <g key={e.min}>
-            <rect
-              x={e.min}
-              width={e.max - e.min}
-              y={0}
-              height={gaugeHeight}
-              fill={color}
-              stroke="none"
-            >
-              <title>{e.tittel.nb}</title>
-            </rect>
+          <React.Fragment key={e.min}>
+            {!e.på && (
+              <rect
+                x={e.min}
+                width={e.max - e.min}
+                y={0}
+                height={gaugeHeight}
+                fill={color}
+                filter={e.på && false ? "url(#f2)" : ""}
+                stroke="none"
+              >
+                <title>{e.tittel.nb}</title>
+              </rect>
+            )}
+          </React.Fragment>
+        );
+      })}
+      {true &&
+        ranges.map(([min, max]) => (
+          <Shadow
+            key={min}
+            x1={min.min}
+            y1={0}
+            x2={max.max}
+            y2={gaugeHeight}
+            color1="rgba(128,128,128,0.9)"
+          />
+        ))}
+      {trinn.map(e => {
+        const color = farge(e.på, e.farge);
+        return (
+          <React.Fragment key={e.min}>
+            {e.på && (
+              <rect
+                x={e.min}
+                width={e.max - e.min}
+                y={0}
+                height={gaugeHeight}
+                rx={0}
+                fill={color}
+                stroke="none"
+              >
+                <title>{e.tittel.nb}</title>
+              </rect>
+            )}
             <SettingsContext.Consumer>
               {context =>
                 context.visKoder && (
                   <text
                     x={0.5 * (e.min + e.max)}
-                    y={0.52 * gaugeHeight}
-                    font-size="3.5"
+                    y={0.53 * gaugeHeight}
+                    fontSize={3.8}
+                    fontWeight="500"
                     fill={contrastingColor(color)}
                     dominantBaseline="middle"
                     textAnchor="middle"
@@ -101,7 +151,7 @@ const Gauge = ({ trinn, ranges }) => {
                 )
               }
             </SettingsContext.Consumer>
-
+            ;
             {e.max < 100 && (
               <line
                 x1={e.max}
@@ -112,21 +162,9 @@ const Gauge = ({ trinn, ranges }) => {
                 stroke="rgba(0,0,0,0.37)"
               />
             )}
-            {false && !e.på && <Cross min={e.min} max={e.max} />}
-          </g>
+          </React.Fragment>
         );
       })}
-      {ranges.map(([min, max]) => (
-        <Shadow
-          key={min}
-          x1={min.min + 0.2}
-          y1={0 + 0.2}
-          x2={max.max - 0.4}
-          y2={gaugeHeight - 0.2}
-          color1="#bbb"
-          color2="#888"
-        />
-      ))}
     </svg>
   );
 };
@@ -134,39 +172,15 @@ const Gauge = ({ trinn, ranges }) => {
 const Shadow = ({ x1, x2, y1, y2, color1, color2 }) => {
   return (
     <g>
-      <line x1={x1} y1={y1} x2={x1} y2={y2} stroke={color1} strokeWidth="0.5" />
-      <line x1={x1} y1={y1} x2={x2} y2={y1} stroke={color1} strokeWidth="0.5" />
-      <line x1={x2} y1={y1} x2={x2} y2={y2} stroke={color2} strokeWidth="0.5" />
-      <line x1={x1} y1={y2} x2={x2} y2={y2} stroke={color2} strokeWidth="0.5" />
-    </g>
-  );
-};
-
-const Cross = ({
-  min,
-  max,
-  stroke = "rgba(128,128,128,0.3)",
-  strokeWidth = 0.5
-}) => {
-  return (
-    <g>
-      {false && (
-        <line
-          x1={min}
-          y1={0}
-          x2={max}
-          y2={gaugeHeight}
-          stroke={stroke}
-          strokeWidth={strokeWidth}
-        />
-      )}
-      <line
-        x1={min}
-        y1={gaugeHeight}
-        x2={max}
-        y2={0}
-        stroke={stroke}
-        strokeWidth={strokeWidth}
+      <rect
+        x={x1}
+        y={y1}
+        width={x2 - x1}
+        height={y2 - y1}
+        stroke={color1}
+        fill="rgba(0,0,0,0.8)"
+        strokeWidth="0"
+        filter={"url(#f2)"}
       />
     </g>
   );
