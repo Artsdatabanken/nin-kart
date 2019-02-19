@@ -18,6 +18,14 @@ function getSecondary(meta) {
   return r;
 }
 
+function kodeSuffix(kode, parentkode) {
+  let i = 0;
+  while (parentkode[i] === kode[i]) i++;
+
+  if (kode[i] === "-") i++;
+  return kode.substring(i);
+}
+
 class Kodelisteelement extends React.Component {
   shouldComponentUpdate(np) {
     if (np.areal !== this.props.areal) return true;
@@ -29,6 +37,7 @@ class Kodelisteelement extends React.Component {
   render() {
     const {
       meta,
+      parentkode,
       kode,
       url,
       opplystKode,
@@ -39,6 +48,7 @@ class Kodelisteelement extends React.Component {
       areal,
       størsteAreal
     } = this.props;
+    console.log(this.props);
     return (
       <React.Fragment>
         <ListItem
@@ -54,6 +64,7 @@ class Kodelisteelement extends React.Component {
             <Bildeavatar
               kode={kode}
               url={url}
+              farge0={meta.farge0}
               farge={opplyst(kode, opplystKode, meta.farge)}
               size="small"
             />
@@ -65,10 +76,7 @@ class Kodelisteelement extends React.Component {
           />
           {visKode && (
             <Typography variant="caption" noWrap>
-              {kode
-                .split("-")
-                .slice(-2)
-                .join("-")}
+              {kodeSuffix(kode, parentkode)}
             </Typography>
           )}
         </ListItem>
