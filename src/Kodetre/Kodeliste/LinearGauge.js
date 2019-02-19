@@ -11,6 +11,7 @@ function contrastingColor(color) {
 }
 
 function farge(erPå, col) {
+  console.log(col);
   if (erPå) return col;
   return tinycolor.mix(col, new tinycolor("#eee"), 90).toHexString();
 }
