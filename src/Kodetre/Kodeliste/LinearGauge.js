@@ -60,9 +60,9 @@ const beskrivelse = ranges => {
 
 const Gauge = ({ trinn, ranges }) => {
   return (
-    <svg viewBox="-1 -1 102 9.2">
+    <svg viewBox="-2 -1 104 9.2">
       <defs>
-        <filter id="f1" x="0" y="0" width="102" height="10">
+        <filter id="f1" x="-2" y="0" width="104" height="10">
           <feOffset result="offOut" in="SourceGraphic" dx="0.051" dy="0.051" />
           <feGaussianBlur result="blurOut" in="offOut" stdDeviation="0.5" />
           <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
