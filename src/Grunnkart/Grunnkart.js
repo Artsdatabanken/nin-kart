@@ -174,7 +174,7 @@ class Grunnkart extends React.Component {
     }
     if (meta.se) return meta;
     meta.nivå = typesystem.hentNivaa(meta.kode).slice(0, 1);
-    meta.prefiks = meta.kode.substring(0, 2);
+    meta.prefiks = meta.kode.substring(3, 5);
     if (!meta.kartformat) meta.kartformat = {};
     if (meta.kartformat["raster.gradient"]) {
       meta.kartformat.raster_gradient = meta.kartformat["raster.gradient"];
