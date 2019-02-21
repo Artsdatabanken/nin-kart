@@ -14,9 +14,6 @@ import språk from "../../språk";
 import Tittelblokk from "./Tittelblokk";
 
 const styles = {
-  pos: {
-    marginBottom: 12
-  },
   iconSmall: {
     fontSize: 20,
     marginRight: 8
