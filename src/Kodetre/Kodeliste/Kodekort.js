@@ -20,6 +20,9 @@ const styles = {
   iconSmall: {
     fontSize: 20,
     marginRight: 8
+  },
+  button: {
+    marginRight: 8
   }
 };
 
@@ -92,8 +95,7 @@ class Kodekort extends React.Component {
             {overordnet.length > 0 && (
               <React.Fragment>
                 <Button
-                  xcolor="primary"
-                  size="small"
+                  xsize="small"
                   variant="contained"
                   className={classes.button}
                   onClick={this.handleAktiver}
@@ -106,9 +108,7 @@ class Kodekort extends React.Component {
                   style={{
                     color: farger.lys[prefiks]
                   }}
-                  xcolor="secondary"
                   className={classes.button}
-                  xsize="small"
                   variant="text"
                   onClick={this.handleClickTweaks}
                 >
@@ -120,6 +120,7 @@ class Kodekort extends React.Component {
                     style={{
                       color: farger.lys[prefiks]
                     }}
+                    className={classes.button}
                     variant="text"
                     onClick={this.handleFitBounds}
                   >
