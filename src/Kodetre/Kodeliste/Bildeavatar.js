@@ -26,7 +26,7 @@ const styles = {
 
 class BildeAvatar extends Component {
   render() {
-    const { farge, classes, kode, url } = this.props;
+    const { farge, farge0, classes, kode, url } = this.props;
     const size = this.props.size || "big";
     const prefiks = kode.substring(0, 2);
     const parts = typesystem.splittKode(kode);
@@ -48,7 +48,8 @@ class BildeAvatar extends Component {
           root: classes[size]
         }}
         style={{
-          backgroundColor: farge,
+          backgroundColor: !farge0 && farge,
+          backgroundImage: farge0 && `linear-gradient(${farge}, ${farge0})`,
           filter: "drop-shadow(1px 1px 1px #666)"
         }}
       >

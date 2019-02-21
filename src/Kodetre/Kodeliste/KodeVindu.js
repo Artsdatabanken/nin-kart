@@ -74,6 +74,7 @@ class KodeVindu extends React.Component {
           {context => (
             <Kodeliste
               title="Innholder"
+              parentkode={kode}
               størsteAreal={data.størsteAreal}
               apidata={data.barn}
               metadata={meta.barn}
@@ -87,7 +88,7 @@ class KodeVindu extends React.Component {
           )}
         </SettingsContext.Consumer>
         <Gradienter gradient={meta.gradient} onNavigate={onNavigate} />
-        <Graf graf={meta.graf} onNavigate={onNavigate} />
+        <Graf graf={meta.graf} parentkode={kode} onNavigate={onNavigate} />
       </div>
     );
   }

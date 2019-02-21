@@ -7,13 +7,13 @@ import Kodelisteelement from "./Kodelisteelement";
 class Kodeliste extends React.Component {
   render() {
     const {
+      parentkode,
       title,
       subtitle,
       størsteAreal,
       apidata,
       metadata,
       opplystKode,
-      utenFarge,
       onUpdateMetaProp
     } = this.props;
 
@@ -51,6 +51,7 @@ class Kodeliste extends React.Component {
                   <Kodelisteelement
                     key={kode}
                     kode={kode}
+                    parentkode={parentkode}
                     url={metabarnet.url}
                     meta={metabarnet}
                     størsteAreal={størsteAreal}
@@ -60,7 +61,6 @@ class Kodeliste extends React.Component {
                     onMouseEnter={this.onMouseEnter}
                     onMouseLeave={this.onMouseLeave}
                     opplystKode={opplystKode}
-                    utenFarge={utenFarge}
                     value={metabarnet.value}
                     onChange={v => onUpdateMetaProp(kode, "value", [...v])}
                   />
