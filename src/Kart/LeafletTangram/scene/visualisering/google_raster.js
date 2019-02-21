@@ -5,8 +5,6 @@ function drawAll({ kartformat, opplystKode }) {
     google: {
       draw: {
         googleshade: {
-          //        raster: {
-          //        color: farge(opplystKode, kartformat.tint),
           order: 0
         }
       },
@@ -31,6 +29,8 @@ function lagSource({ url, zoom }, bbox) {
 
 function lagStyle(kartformat, drawArgs) {
   const tint = tinycolor(drawArgs.kartformat.tint);
+  if (drawArgs.opplystKode)
+    tint._a = drawArgs.opplystKode === "bakgrunnskart" ? 1.0 : tint._a * 0.5;
   const tintar = [tint._r / 255, tint._g / 255, tint._b / 255, 1.0 - tint._a];
 
   return {
