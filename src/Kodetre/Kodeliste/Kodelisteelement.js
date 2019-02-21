@@ -49,7 +49,6 @@ class Kodelisteelement extends React.Component {
       areal,
       størsteAreal
     } = this.props;
-    console.log(this.props);
     return (
       <React.Fragment>
         <ListItem

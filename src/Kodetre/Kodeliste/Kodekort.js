@@ -14,11 +14,11 @@ import språk from "../../språk";
 import Tittelblokk from "./Tittelblokk";
 
 const styles = {
-  pos: {
-    marginBottom: 12
-  },
   iconSmall: {
     fontSize: 20,
+    marginRight: 8
+  },
+  button: {
     marginRight: 8
   }
 };
@@ -89,48 +89,43 @@ class Kodekort extends React.Component {
           overordnet={overordnet}
         >
           <CardActions>
-            {overordnet && (
-              <Button
-                style={{
-                  xbackgroundColor: "#fff",
-                  xcolor: farger.mørk[prefiks]
-                }}
-                xcolor="primary"
-                size="small"
-                variant="contained"
-                className={classes.button}
-                onClick={this.handleAktiver}
-                disabled={erAktivert}
-              >
-                <LibraryAdd className={classes.iconSmall} />
-                Aktivér
-              </Button>
-            )}
-            <Button
-              style={{
-                xbackgroundColor: "#fff",
-                color: farger.lys[prefiks]
-              }}
-              xcolor="secondary"
-              className={classes.button}
-              xsize="small"
-              variant="text"
-              onClick={this.handleClickTweaks}
-            >
-              <ColorLens className={classes.iconSmall} />
-              Vis
-            </Button>
-            {bbox && (
-              <Button
-                style={{
-                  color: farger.lys[prefiks]
-                }}
-                variant="text"
-                onClick={this.handleFitBounds}
-              >
-                <ZoomOutMap className={classes.iconSmall} />
-                Zoom til
-              </Button>
+            {overordnet.length > 0 && (
+              <React.Fragment>
+                <Button
+                  xsize="small"
+                  variant="contained"
+                  className={classes.button}
+                  onClick={this.handleAktiver}
+                  disabled={erAktivert}
+                >
+                  <LibraryAdd className={classes.iconSmall} />
+                  Aktivér
+                </Button>
+                <Button
+                  style={{
+                    color: farger.lys[prefiks]
+                  }}
+                  className={classes.button}
+                  variant="text"
+                  onClick={this.handleClickTweaks}
+                >
+                  <ColorLens className={classes.iconSmall} />
+                  Vis
+                </Button>
+                {bbox && (
+                  <Button
+                    style={{
+                      color: farger.lys[prefiks]
+                    }}
+                    className={classes.button}
+                    variant="text"
+                    onClick={this.handleFitBounds}
+                  >
+                    <ZoomOutMap className={classes.iconSmall} />
+                    Zoom til
+                  </Button>
+                )}
+              </React.Fragment>
             )}
           </CardActions>
         </Tittelblokk>
