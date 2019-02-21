@@ -173,7 +173,6 @@ class Grunnkart extends React.Component {
       return this.redirectTo("Natur_i_Norge");
     }
     if (meta.se) return meta;
-    console.log(meta);
     meta.nivå = typesystem.hentNivaa(meta.kode).slice(0, 1);
     meta.prefiks = meta.kode.substring(0, 2);
     if (!meta.kartformat) meta.kartformat = {};
@@ -219,11 +218,8 @@ class Grunnkart extends React.Component {
 
   // Supports composite keys i.e. gradient.filterMin
   handleUpdateLayerProp = (layer, key, value) => {
-    console.log(layer, key, value);
     const aktive = this.state.aktiveLag;
-    console.log("aktivelag", this.state.aktiveLag);
     let node = aktive[layer];
-    console.log("node", node);
     if (!node) node = this.state.meta;
     const parts = key.split(".");
     for (let i = 0; i < parts.length - 1; i++) node = node[parts[i]];

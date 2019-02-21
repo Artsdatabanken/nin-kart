@@ -31,7 +31,6 @@ class Polygon extends Component {
     if (location.search.startsWith("?vis_barn")) {
       const egenskap = location.search.split("=").pop();
       const barnet = barn[egenskap];
-      console.log(egenskap, barn, barnet);
       return (
         <ColorPicker
           tittel={"Fyllfarge"}
