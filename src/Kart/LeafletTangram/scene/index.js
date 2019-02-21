@@ -23,7 +23,6 @@ function lagEttLag(lag, opplystKode, viserKatalog, config) {
 }
 
 function opprettEttLag(drawArgs, config) {
-  if (drawArgs.opplystKode && !opplystKodeErBarnAvAktivtLag(drawArgs)) return; // Hide this layer while highlighting other layer
   const renderer = draw[drawArgs.aktivtKartformat];
   const kartformat = drawArgs.kartformat[drawArgs.aktivtKartformat];
   drawArgs.kartformat = kartformat;
@@ -39,13 +38,6 @@ function opprettEttLag(drawArgs, config) {
   }
   config.sources[drawArgs.kode] = source;
   config.layers = Object.assign(config.layers, renderer.drawAll(drawArgs));
-}
-
-function opplystKodeErBarnAvAktivtLag(drawArgs) {
-  return (
-    drawArgs.opplystKode.startsWith(drawArgs.kode) ||
-    (drawArgs.opplystKode.includes("-C-") && drawArgs.kode.includes("-E-"))
-  );
 }
 
 function farge(farge, viserKatalog) {

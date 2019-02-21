@@ -10,7 +10,6 @@ function drawAll(drawArgs) {
       let barnkode = dac.kode;
       if (Object.hasOwnProperty("erSynlig") && !dac.erSynlig) return;
       const visEtiketter = barnkode === opplystKode;
-      barnkode = sysconfig.hack(barnkode);
       layer[barnkode] = draw({
         kode: barnkode,
         forelderkode: kode,
@@ -21,7 +20,7 @@ function drawAll(drawArgs) {
     });
   } else {
     layer[sysconfig.hack(kode)] = draw({
-      kode: sysconfig.hack(kode),
+      kode: kode,
       forelderkode: kode,
       farge: farge,
       opplystKode: opplystKode,
@@ -56,7 +55,6 @@ function draw(args) {
         size: 500,
         collide: true,
         color: farge
-        //texture: `https://firebasestorage.googleapis.com/v0/b/grunnkart.appspot.com/o/bilde%2Favatar%2F40%2F${kode}.png?alt=media`,
       }
     }
   };

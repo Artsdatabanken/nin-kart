@@ -3,7 +3,7 @@ import sysconfig from "../../../config";
 
 function lagTerreng(drawProps, opplystKode, config) {
   let vertikaltOverdriv = drawProps.vertikaltOverdriv;
-  if (opplystKode && opplystKode !== "terreng") return;
+  if (opplystKode && opplystKode !== "terreng") vertikaltOverdriv *= 0.25;
   config.layers.terreng = terrengmal;
   config.sources.normals = sysconfig.createTileSource(
     `${sysconfig.storageUrl}Terreng/normaler.3857.mbtiles`,
