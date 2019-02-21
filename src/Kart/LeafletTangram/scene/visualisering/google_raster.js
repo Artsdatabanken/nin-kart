@@ -13,12 +13,6 @@ function drawAll({ kartformat, opplystKode }) {
   };
 }
 
-function farge(opplystKode, tint) {
-  if (!opplystKode) return tint;
-  if (opplystKode === "bakgrunnskart") return null;
-  return "hsla(0,0%,100%,0.75)";
-}
-
 function lagSource({ url, zoom }, bbox) {
   return {
     type: "Raster",
