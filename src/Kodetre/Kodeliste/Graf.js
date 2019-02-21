@@ -53,6 +53,7 @@ class Graf extends Component {
   render() {
     const {
       graf,
+      parentkode,
       onNavigate,
       onMouseEnter,
       onMouseLeave,
@@ -65,6 +66,7 @@ class Graf extends Component {
       return (
         <Kodeliste
           key={kant}
+          parentkode={parentkode}
           onNavigate={onNavigate}
           title={x.title}
           subtitle={x.subtitle}
@@ -72,7 +74,6 @@ class Graf extends Component {
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           opplystKode={opplystKode}
-          utenFarge={true}
         />
       );
     });
