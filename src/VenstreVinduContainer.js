@@ -34,6 +34,7 @@ class VenstreVinduContainer extends React.Component {
   }
 
   handleNavigate = url => {
+    console.log("url", url);
     this.props.history.push("/" + url);
   };
 

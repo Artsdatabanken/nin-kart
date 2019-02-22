@@ -2,6 +2,7 @@ import React from "react";
 import { SettingsContext } from "../../SettingsContext";
 import språk from "../../språk";
 import Graf from "./Graf";
+import Flagg from "./Flagg";
 import Kodekort from "./Kodekort";
 import Kodeliste from "./Kodeliste";
 import Statistikk from "./Statistikk";
@@ -58,6 +59,8 @@ class KodeVindu extends React.Component {
           onFitBounds={onFitBounds}
           onToggleLayer={onToggleLayer}
         />
+        <Flagg flagg={meta.flagg} onNavigate={onNavigate} />
+
         {prefiks !== "AO" && (
           <Statistikk
             tittel={språk(meta.tittel)}
