@@ -13,13 +13,7 @@ function lagAktiveLag(aktive, iKatalog, opplystKode, config) {
 
 function lagEttLag(lag, opplystKode, viserKatalog, config) {
   if (!lag.erSynlig && opplystKode !== lag.kode) return;
-  switch (lag.type) {
-    case "terreng":
-      lagTerreng(lag.terreng, opplystKode, config);
-      break;
-    default:
-      opprettAktivtLag(lag, opplystKode, config, viserKatalog);
-  }
+  opprettAktivtLag(lag, opplystKode, config, viserKatalog);
 }
 
 function opprettEttLag(drawArgs, config) {
@@ -66,6 +60,7 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
     drawArgs.barn = lag.barn;
   }
   opprettEttLag(drawArgs, config);
+  if (lag.kanHaTerreng) lagTerreng(lag.terreng, opplystKode, config);
 }
 
 function lagToppnivå(props) {

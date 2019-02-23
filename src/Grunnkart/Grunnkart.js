@@ -233,7 +233,6 @@ class Grunnkart extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     let erAktivert = false;
     if (this.state.meta)
       erAktivert = !!this.state.aktiveLag[this.state.meta.kode];

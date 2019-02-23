@@ -39,7 +39,8 @@
       "fylkesgrense": false,
       "fylkesgrense_farge": "rgba(185,185,185,1.0)",
       "landegrense": false,
-      "landegrense_farge": "rgba(195,195,195,1.0)"
+      "landegrense_farge": "rgba(195,195,195,1.0)",
+      "kanHaTerreng": true
     },
     "osm_mørk": {
       "tittel": "Mørk (OpenStreetMap)",
@@ -65,7 +66,8 @@
       "fylkesgrense": false,
       "fylkesgrense_farge": "hsl(0,0%,30%)",
       "landegrense": false,
-      "landegrense_farge": "hsl(0,0%,30%)"
+      "landegrense_farge": "hsl(0,0%,30%)",
+      "kanHaTerreng": true
     },
     "google_satellite": {
       "kode": "bakgrunnskart",
