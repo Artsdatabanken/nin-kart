@@ -7,6 +7,7 @@ import tinycolor from "tinycolor2";
 import ColorPicker from "../ColorPicker";
 import Bakgrunnskartlag from "./Bakgrunnskartlag";
 import Tema from "./Tema";
+import Terreng from "./Terreng";
 
 class Bakgrunnskart extends Component {
   handleUpdateLayerProp = (lag, key, value) => {
@@ -88,6 +89,11 @@ class Bakgrunnskart extends Component {
         >
           <ListItemText primary="Forhåndsdefinert tema" secondary={kf.tittel} />
         </ListItem>
+        <Terreng
+          kode="bakgrunnskart"
+          terreng={this.props.terreng}
+          onUpdateLayerProp={this.props.onUpdateLayerProp}
+        />
         <ListSubheader>Områder</ListSubheader>
         <Bakgrunnskartlag
           onUpdateLayerProp={this.handleUpdateLayerProp}

@@ -3,6 +3,18 @@
   "aktivtKartformat": "osm_lys",
   "tittel": "Bakgrunnskart",
   "erSynlig": true,
+  "terreng": {
+    "kode": "terreng",
+    "type": "terreng",
+    "aktivtKartformat": "normals",
+    "tittel": { "tittel": "3D terreng" },
+    "erSynlig": false,
+    "vertikaltOverdriv": 1.0,
+    "visKontur": false,
+    "visEtikettTopp": false,
+    "konturintervall": 100.0,
+    "visEtikettKontur": true
+  },
   "kartformat": {
     "osm_lys": {
       "tittel": "Lys (OpenStreetMap)",

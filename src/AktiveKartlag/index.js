@@ -4,7 +4,6 @@ import { withRouter } from "react-router";
 import { SettingsContext } from "../SettingsContext";
 import BakgrunnskartElement from "./BakgrunnskartElement";
 import PolygonlagElement from "./PolygonlagElement";
-import TerrenglagElement from "./TerrenglagElement";
 import AktiveKartlagKnapp from "./AktiveKartlagKnapp";
 import Collapse from "@material-ui/core/Collapse";
 
@@ -43,8 +42,6 @@ class AktiveKartlag extends React.Component {
 
 function finnType(kode) {
   switch (kode) {
-    case "terreng":
-      return TerrenglagElement;
     case "bakgrunnskart":
       return BakgrunnskartElement;
     default:

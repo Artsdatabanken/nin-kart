@@ -8,8 +8,8 @@ import {
   SwapVert
 } from "@material-ui/icons";
 import React, { Component } from "react";
-import SliderSetting from "./SliderSetting";
-import Veksle from "./Veksle";
+import SliderSetting from "../SliderSetting";
+import Veksle from "../Veksle";
 
 class Terreng extends Component {
   render() {
