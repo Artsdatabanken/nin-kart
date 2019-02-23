@@ -34,10 +34,10 @@ class BorreAdapter extends Component {
   }
 
   render() {
-    const { data, sted, lat, lng, view } = this.props;
+    const { data, sted, lat, lng, vis } = this.props;
     const borrehull = this.hackInnSted(sted, data);
     const flattened = this.flattenData(borrehull);
-    return <BorreVindu lat={lat} lng={lng} view={view} barn={flattened} />;
+    return <BorreVindu lat={lat} lng={lng} vis={vis} barn={flattened} />;
   }
 }
 
