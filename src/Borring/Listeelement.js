@@ -1,18 +1,18 @@
-import { Typography, Avatar, Divider, ListItem } from '@material-ui/core'
-import React from 'react'
-import { withRouter } from 'react-router'
-import config from '../config'
-import farger from '../farger'
-import Flis from '../Kodetre/Kodeliste/Flis'
-import { withStyles } from '@material-ui/core/styles'
+import { Typography, Avatar, Divider, ListItem } from "@material-ui/core";
+import React from "react";
+import { withRouter } from "react-router";
+import config from "../config";
+import farger from "../farger";
+import Flis from "../Kodetre/Kodeliste/Flis";
+import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => {
   return {
     listitem: {
-      color: 'hsla(0, 0%, 0%, 0.55)',
-    },
-  }
-}
+      color: "hsla(0, 0%, 0%, 0.55)"
+    }
+  };
+};
 
 const Listeelement = ({
   kode,
@@ -21,24 +21,24 @@ const Listeelement = ({
   history,
   visKoder,
   onClick,
-  classes,
+  classes
 }) => {
-  const prefix = kode.substring(0, 2)
-  const bgFarge = farger.lysere[prefix]
-  const avatar = false
+  const prefix = kode.substring(0, 2);
+  const bgFarge = farger.lysere[prefix];
+  const avatar = false;
   return (
     <React.Fragment>
       <div
         style={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
           background:
-            'linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, ' +
+            "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, " +
             bgFarge +
             ' 40%), url("' +
             config.getFotoBanner(prefix) +
-            '")',
+            '")'
         }}
       >
         <ListItem button={true} onClick={onClick}>
@@ -46,7 +46,7 @@ const Listeelement = ({
             <Avatar
               style={{
                 backgroundColor: farger.mørk[prefix],
-                color: 'black',
+                color: "black"
               }}
             >
               {prefix}
@@ -58,14 +58,14 @@ const Listeelement = ({
             </Typography>
             {secondary}
           </div>
-          <div style={{ position: 'absolute', right: 8, top: 8 }}>
+          <div style={{ position: "absolute", right: 8, top: 8 }}>
             <Flis kode={kode} visKoder={visKoder} />
           </div>
         </ListItem>
       </div>
       <Divider />
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default withRouter(withStyles(styles)(Listeelement))
+export default withRouter(withStyles(styles)(Listeelement));

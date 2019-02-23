@@ -1,76 +1,76 @@
-import { Typography } from '@material-ui/core'
-import React, { Component } from 'react'
-import Listeelement from './Listeelement'
+import { Typography } from "@material-ui/core";
+import React, { Component } from "react";
+import Listeelement from "./Listeelement";
 
 function oppsummer(node) {
-  let r = []
-  if (!node) return r
+  let r = [];
+  if (!node) return r;
   if (node.values)
     Object.keys(node.values).forEach(kode => {
-      let e = []
-      let stack = {}
-      oppsummer2(node.values[kode], stack, e, kode)
-      r.push(...e)
-    })
-  else r.push({ verdi: [node.title] })
-  return r
+      let e = [];
+      let stack = {};
+      oppsummer2(node.values[kode], stack, e, kode);
+      r.push(...e);
+    });
+  else r.push({ verdi: [node.title] });
+  return r;
 }
 
 function hack(kode, nivå, kategori) {
-  switch (kode.replace('_', '-')) {
-    case 'BS-1':
-      return 'Artssammensetning'
-    case 'BS-2':
-      return 'Geologisk sammensetning'
-    case 'BS-3':
-      return 'Landform'
-    case 'BS-4':
-      return 'Naturgitte objekter'
-    case 'BS-5':
-      return 'Menneskeskapte objekter'
-    case 'BS-6':
-      return 'Regionale komplekse miljøvariable'
-    case 'BS-7':
-      return 'Tilstandsvariasjon'
-    case 'BS-8':
-      return 'Terrengformvariasjon'
-    case 'BS-9':
-      return 'Romlig strukturvariasjon'
-    case 'NA-T':
-      return 'Fastmarkssystem'
-    case 'MI-KA':
-      return 'Kalkinnhold'
+  switch (kode.replace("_", "-")) {
+    case "BS-1":
+      return "Artssammensetning";
+    case "BS-2":
+      return "Geologisk sammensetning";
+    case "BS-3":
+      return "Landform";
+    case "BS-4":
+      return "Naturgitte objekter";
+    case "BS-5":
+      return "Menneskeskapte objekter";
+    case "BS-6":
+      return "Regionale komplekse miljøvariable";
+    case "BS-7":
+      return "Tilstandsvariasjon";
+    case "BS-8":
+      return "Terrengformvariasjon";
+    case "BS-9":
+      return "Romlig strukturvariasjon";
+    case "NA-T":
+      return "Fastmarkssystem";
+    case "MI-KA":
+      return "Kalkinnhold";
     default:
-      return kategori
+      return kategori;
     //      return kode + ': ' + nivå + ' - ' + kategori
   }
 }
 
 function oppsummer2(node, stack1, r, pkode) {
-  const stack = Object.assign({}, stack1)
-  stack.kode = Object.assign([], stack1.kode)
-  stack.verdi = Object.assign([], stack1.verdi)
-  if (!stack.verdi) stack.verdi = []
-  if (!stack.kode) stack.kode = []
-  if (node.title) stack.verdi.push(node.title)
+  const stack = Object.assign({}, stack1);
+  stack.kode = Object.assign([], stack1.kode);
+  stack.verdi = Object.assign([], stack1.verdi);
+  if (!stack.verdi) stack.verdi = [];
+  if (!stack.kode) stack.kode = [];
+  if (node.title) stack.verdi.push(node.title);
   if (node.fraction && node.fraction !== 10)
-    stack.verdi.push(node.fraction * 10 + '%')
-  stack.kode.push(pkode)
-  stack.geom_id = stack.geom_id || node.geom_id
+    stack.verdi.push(node.fraction * 10 + "%");
+  stack.kode.push(pkode);
+  stack.geom_id = stack.geom_id || node.geom_id;
   if (node.values) {
     Object.keys(node.values).forEach(kode => {
-      oppsummer2(node.values[kode], stack, r, kode)
-    })
+      oppsummer2(node.values[kode], stack, r, kode);
+    });
   } else {
-    r.push(stack)
+    r.push(stack);
   }
 }
 
 class Seksjon extends Component {
   render() {
-    const { node, kode, visKoder, kategori, onClick } = this.props
-    const r = oppsummer(node)
-    const secondary = r.map(e => this.map(e.verdi))
+    const { node, kode, visKoder, kategori, onClick } = this.props;
+    const r = oppsummer(node);
+    const secondary = r.map(e => this.map(e.verdi));
 
     return (
       <Listeelement
@@ -81,44 +81,44 @@ class Seksjon extends Component {
         visKoder={visKoder}
         onClick={onClick}
       />
-    )
+    );
   }
 
   map(r) {
-    const len = r.length
-    const value = r[len - 1]
+    const len = r.length;
+    const value = r[len - 1];
     if (len < 2)
       return (
         <Typography key={value} variant="body2" color="inherit">
           {hack1(value)}
         </Typography>
-      )
-    const key = r[len - 2]
+      );
+    const key = r[len - 2];
     return (
       <Typography key={key} variant="body2" color="inherit">
         {hack1(key.trim())}: <b>{hack2(value)}</b>
       </Typography>
-    )
+    );
   }
 }
 
 function hack1(s) {
   switch (s) {
-    case 'Bioklimatiske soner':
-      return 'Bioklimatisk sone'
-    case 'Bioklimatiske seksjoner':
-      return 'Bioklimatisk seksjon'
+    case "Bioklimatiske soner":
+      return "Bioklimatisk sone";
+    case "Bioklimatiske seksjoner":
+      return "Bioklimatisk seksjon";
     default:
-      return s
+      return s;
   }
 }
 function hack2(s) {
   switch (s) {
-    case '0':
-      return 'ingen'
+    case "0":
+      return "ingen";
     default:
-      return s.replace(' dekning', '')
+      return s.replace(" dekning", "");
   }
 }
 
-export default Seksjon
+export default Seksjon;

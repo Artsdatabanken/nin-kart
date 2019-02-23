@@ -1,4 +1,4 @@
-import Ekspanderlinje from './Ekspanderlinje'
-import Panel from './Panel'
+import Ekspanderlinje from "./Ekspanderlinje";
+import Panel from "./Panel";
 
-export { Panel, Ekspanderlinje }
+export { Panel, Ekspanderlinje };

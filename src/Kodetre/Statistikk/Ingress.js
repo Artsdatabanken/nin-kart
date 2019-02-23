@@ -1,6 +1,6 @@
-import Typography from '@material-ui/core/Typography'
-import React from 'react'
-import InfoIconButton from './InfoIconButton'
+import Typography from "@material-ui/core/Typography";
+import React from "react";
+import InfoIconButton from "./InfoIconButton";
 
 const Ingress = ({ infoUrl, beskrivelse }) => (
   <React.Fragment>
@@ -8,6 +8,6 @@ const Ingress = ({ infoUrl, beskrivelse }) => (
 
     <Typography>{beskrivelse}</Typography>
   </React.Fragment>
-)
+);
 
-export default Ingress
+export default Ingress;

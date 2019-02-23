@@ -1,8 +1,8 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
-import KodeContainer from './KodeContainer'
-import { muiTheme } from 'storybook-addon-material-ui'
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import KodeContainer from "./KodeContainer";
+import { muiTheme } from "storybook-addon-material-ui";
 
-storiesOf('KodeContainer', module)
+storiesOf("KodeContainer", module)
   .addDecorator(muiTheme())
-  .add('default', () => <KodeContainer />)
+  .add("default", () => <KodeContainer />);

@@ -1,26 +1,26 @@
 function wgs84ToUtm33(latitude, longitude) {
-  var deg2Rad = Math.PI / 180
-  var a = 6378137
-  var eccSquared = 0.00669438
-  var k0 = 0.9996
-  var longOrigin
-  var eccPrimeSquared
-  var n, T, c, aRenamed, m
+  var deg2Rad = Math.PI / 180;
+  var a = 6378137;
+  var eccSquared = 0.00669438;
+  var k0 = 0.9996;
+  var longOrigin;
+  var eccPrimeSquared;
+  var n, T, c, aRenamed, m;
   var longTemp =
-    latitude + 180 - parseInt((latitude + 180) / 360, 10) * 360 - 180
-  var latRad = longitude * deg2Rad
-  var longRad = longTemp * deg2Rad
-  var longOriginRad
+    latitude + 180 - parseInt((latitude + 180) / 360, 10) * 360 - 180;
+  var latRad = longitude * deg2Rad;
+  var longRad = longTemp * deg2Rad;
+  var longOriginRad;
 
-  var zoneNumber = 33
+  var zoneNumber = 33;
 
-  longOrigin = (zoneNumber - 1) * 6 - 180 + 3
-  longOriginRad = longOrigin * deg2Rad
-  eccPrimeSquared = eccSquared / (1 - eccSquared)
-  n = a / Math.sqrt(1 - eccSquared * Math.sin(latRad) * Math.sin(latRad))
-  T = Math.tan(latRad) * Math.tan(latRad)
-  c = eccPrimeSquared * Math.cos(latRad) * Math.cos(latRad)
-  aRenamed = Math.cos(latRad) * (longRad - longOriginRad)
+  longOrigin = (zoneNumber - 1) * 6 - 180 + 3;
+  longOriginRad = longOrigin * deg2Rad;
+  eccPrimeSquared = eccSquared / (1 - eccSquared);
+  n = a / Math.sqrt(1 - eccSquared * Math.sin(latRad) * Math.sin(latRad));
+  T = Math.tan(latRad) * Math.tan(latRad);
+  c = eccPrimeSquared * Math.cos(latRad) * Math.cos(latRad);
+  aRenamed = Math.cos(latRad) * (longRad - longOriginRad);
   m =
     a *
     ((1 -
@@ -36,7 +36,7 @@ function wgs84ToUtm33(latitude, longitude) {
         (45 * eccSquared * eccSquared * eccSquared) / 1024) *
         Math.sin(4 * latRad) -
       ((35 * eccSquared * eccSquared * eccSquared) / 3072) *
-        Math.sin(6 * latRad))
+        Math.sin(6 * latRad));
   var utmEasting =
     k0 *
       n *
@@ -49,7 +49,7 @@ function wgs84ToUtm33(latitude, longitude) {
           aRenamed *
           aRenamed) /
           120) +
-    500000.0
+    500000.0;
   var utmNorthing =
     k0 *
     (m +
@@ -69,9 +69,9 @@ function wgs84ToUtm33(latitude, longitude) {
             aRenamed *
             aRenamed *
             aRenamed) /
-            720))
-  if (longitude < 0) utmNorthing += 10000000.0
-  return { x: utmEasting, y: utmNorthing }
+            720));
+  if (longitude < 0) utmNorthing += 10000000.0;
+  return { x: utmEasting, y: utmNorthing };
 }
 
-export { wgs84ToUtm33 }
+export { wgs84ToUtm33 };

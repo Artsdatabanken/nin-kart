@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
 const Fakta = ({ tittel, verdi, synlig }) => {
-  if (!verdi) return null
+  if (!verdi) return null;
   return (
     <div
       style={{
         fontSize: 13,
         paddingLeft: 24,
-        lineHeight: '1.5em',
+        lineHeight: "1.5em"
       }}
     >
       <span style={{ fontWeight: 700 }}>
@@ -16,7 +16,7 @@ const Fakta = ({ tittel, verdi, synlig }) => {
       </span>
       {verdi}
     </div>
-  )
-}
+  );
+};
 
-export default Fakta
+export default Fakta;

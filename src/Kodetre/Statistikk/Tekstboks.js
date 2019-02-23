@@ -1,6 +1,6 @@
-import Typography from '@material-ui/core/Typography'
-import React from 'react'
-import InfoIconButton from './InfoIconButton'
+import Typography from "@material-ui/core/Typography";
+import React from "react";
+import InfoIconButton from "./InfoIconButton";
 
 const Tekstboks = ({ tittel, beskrivelse, infoUrl }) => (
   <React.Fragment>
@@ -10,6 +10,6 @@ const Tekstboks = ({ tittel, beskrivelse, infoUrl }) => (
       {beskrivelse}
     </Typography>
   </React.Fragment>
-)
+);
 
-export default Tekstboks
+export default Tekstboks;

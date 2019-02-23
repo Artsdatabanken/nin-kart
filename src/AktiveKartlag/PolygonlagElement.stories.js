@@ -1,48 +1,48 @@
-import { action } from '@storybook/addon-actions/dist/index'
-import { storiesOf } from '@storybook/react'
-import React from 'react'
-import { MemoryRouter } from 'react-router-dom'
-import { muiTheme } from 'storybook-addon-material-ui'
-import PolygonlagElement from './PolygonlagElement'
-import { List } from '@material-ui/core'
+import { action } from "@storybook/addon-actions/dist/index";
+import { storiesOf } from "@storybook/react";
+import React from "react";
+import { MemoryRouter } from "react-router-dom";
+import { muiTheme } from "storybook-addon-material-ui";
+import PolygonlagElement from "./PolygonlagElement";
+import { List } from "@material-ui/core";
 
 const forelder = {
-  farge: '#fc61fd',
-  kode: 'AO_50',
-  tittel: 'Trøndelag',
+  farge: "#fc61fd",
+  kode: "AO_50",
+  tittel: "Trøndelag",
   barn: {
-    'AO_50-01': {
-      farge: '#f49943',
-      sti: 'ao/50/01',
-      tittel: 'Trondheim',
+    "AO_50-01": {
+      farge: "#f49943",
+      sti: "ao/50/01",
+      tittel: "Trondheim"
     },
-    'AO_50-04': {
-      farge: '#f4c543',
-      sti: 'ao/50/04',
-      tittel: 'Steinkjer',
-    },
+    "AO_50-04": {
+      farge: "#f4c543",
+      sti: "ao/50/04",
+      tittel: "Steinkjer"
+    }
   },
   erSynlig: true,
-  kanSlettes: true,
-}
+  kanSlettes: true
+};
 
-storiesOf('PolygonlagElement', module)
+storiesOf("PolygonlagElement", module)
   .addDecorator(muiTheme())
-  .add('default', () => (
+  .add("default", () => (
     <div style={{ width: 400 }}>
       <MemoryRouter>
         <List>
           <PolygonlagElement
             {...forelder}
-            key={'valgt' + forelder.kode}
+            key={"valgt" + forelder.kode}
             kode={forelder.kode}
             vis={true}
-            onMouseEnter={action('mouseEnter')}
-            onMouseLeave={action('mouseLeave')}
-            onRemove={action('onRemove')}
-            onClick={action('onClick')}
+            onMouseEnter={action("mouseEnter")}
+            onMouseLeave={action("mouseLeave")}
+            onRemove={action("onRemove")}
+            onClick={action("onClick")}
           />
         </List>
       </MemoryRouter>
     </div>
-  ))
+  ));

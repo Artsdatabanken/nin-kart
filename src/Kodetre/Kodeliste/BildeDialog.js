@@ -1,48 +1,48 @@
-import Button from '@material-ui/core/Button'
+import Button from "@material-ui/core/Button";
 import {
   Card,
   CardHeader,
   CardMedia,
   CardText,
-  CardTitle,
-} from '@material-ui/core/Card'
-import Dialog from '@material-ui/core/Dialog'
-import React from 'react'
-import config from '../../config'
-import backend from '../../backend'
+  CardTitle
+} from "@material-ui/core/Card";
+import Dialog from "@material-ui/core/Dialog";
+import React from "react";
+import config from "../../config";
+import backend from "../../backend";
 
 export default class BildeDialog extends React.Component {
-  state = { credit: {} }
+  state = { credit: {} };
 
   componentDidMount() {
-    this.fetchData(this.props.kode)
+    this.fetchData(this.props.kode);
   }
 
   fetchData(kode: string, bounds: Object) {
     backend.getImageAttribution(kode).then(data => {
-      if (this.isMounted) this.setState({ credit: data })
-    })
+      if (this.isMounted) this.setState({ credit: data });
+    });
   }
 
   render() {
-    const { kode, tittel } = this.props
+    const { kode, tittel } = this.props;
     const srcSet = `${config.getFotoOmslag(
       kode,
       612
-    )} 1.5x, ${config.getFotoOmslag(kode, 816)} 2x`
+    )} 1.5x, ${config.getFotoOmslag(kode, 816)} 2x`;
     const actions = [
       <Button
         label="Lukk"
         color="primary"
         keyboardFocused={true}
         onClick={this.props.handleClose}
-      />,
-    ]
+      />
+    ];
     const customContentStyle = {
-      height: '90%',
-      maxWidth: 'none',
-      overflow: 'auto',
-    }
+      height: "90%",
+      maxWidth: "none",
+      overflow: "auto"
+    };
 
     if (this.state.credit && this.state.credit.license) {
       return (
@@ -62,7 +62,7 @@ export default class BildeDialog extends React.Component {
                 alt=""
                 style={{
                   minHeight: 612,
-                  objectFit: 'cover',
+                  objectFit: "cover"
                 }}
               />
               <CardTitle
@@ -89,8 +89,8 @@ export default class BildeDialog extends React.Component {
             </Card>
           </Dialog>
         </div>
-      )
+      );
     }
-    return null
+    return null;
   }
 }
