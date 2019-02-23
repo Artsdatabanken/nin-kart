@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import KartlagElement from './Kartlagelement'
+import React, { Component } from "react";
+import KartlagElement from "./Kartlagelement";
 
 class BakgrunnskartElement extends Component {
   render() {
@@ -10,8 +10,8 @@ class BakgrunnskartElement extends Component {
         undertittel={this.props.tema}
         {...this.props}
       />
-    )
+    );
   }
 }
 
-export default BakgrunnskartElement
+export default BakgrunnskartElement;

@@ -1,13 +1,17 @@
-import React, { Component } from 'react'
-import KartlagElement from './Kartlagelement'
+import React, { Component } from "react";
+import KartlagElement from "./Kartlagelement";
 class TerrenglagElement extends Component {
   undertittel() {
-    const { vertikaltOverdriv, visKontur, konturintervall } = this.props.terreng
-    let r = []
+    const {
+      vertikaltOverdriv,
+      visKontur,
+      konturintervall
+    } = this.props.terreng;
+    let r = [];
     if (vertikaltOverdriv !== 1)
-      r.push(vertikaltOverdriv.toFixed(1) + 'x overdrevet')
-    if (visKontur) r.push('kontur ' + konturintervall + 'm')
-    return r.join(', ')
+      r.push(vertikaltOverdriv.toFixed(1) + "x overdrevet");
+    if (visKontur) r.push("kontur " + konturintervall + "m");
+    return r.join(", ");
   }
 
   render() {
@@ -18,8 +22,8 @@ class TerrenglagElement extends Component {
         undertittel={this.undertittel()}
         {...this.props}
       />
-    )
+    );
   }
 }
 
-export default TerrenglagElement
+export default TerrenglagElement;

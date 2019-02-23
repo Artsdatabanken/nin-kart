@@ -1,26 +1,26 @@
-import { SettingsContext } from './SettingsContext'
-import MainDrawer from './MainDrawer/MainDrawer'
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'
-import React, { Component } from 'react'
-import { BrowserRouter } from 'react-router-dom'
-import './App.css'
-import Grunnkart from './Grunnkart/Grunnkart'
-import SettingsContainer from './SettingsContainer'
+import { SettingsContext } from "./SettingsContext";
+import MainDrawer from "./MainDrawer/MainDrawer";
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
+import React, { Component } from "react";
+import { BrowserRouter } from "react-router-dom";
+import "./App.css";
+import Grunnkart from "./Grunnkart/Grunnkart";
+import SettingsContainer from "./SettingsContainer";
 
 const theme = createMuiTheme({
   typography: {
-    useNextVariants: true,
+    useNextVariants: true
   },
   palette: {
     primary: {
-      main: '#3a3',
+      main: "#3a3"
     },
     secondary: {
-      main: '#f55',
-      contrastText: '#ffcc00',
-    },
-  },
-})
+      main: "#f55",
+      contrastText: "#ffcc00"
+    }
+  }
+});
 
 class App extends Component {
   render() {
@@ -43,8 +43,8 @@ class App extends Component {
           </SettingsContainer>
         </BrowserRouter>
       </MuiThemeProvider>
-    )
+    );
   }
 }
 
-export default App
+export default App;

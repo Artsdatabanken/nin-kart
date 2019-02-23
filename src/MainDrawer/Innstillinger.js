@@ -4,32 +4,32 @@ import {
   ListItemIcon,
   ListItemText,
   ListSubheader,
-  Switch,
-} from '@material-ui/core'
-import { withStyles, withTheme } from '@material-ui/core/styles'
-import { SortByAlpha } from '@material-ui/icons'
-import classNames from 'classnames'
-import { PropTypes } from 'prop-types'
-import React, { Component } from 'react'
+  Switch
+} from "@material-ui/core";
+import { withStyles, withTheme } from "@material-ui/core/styles";
+import { SortByAlpha } from "@material-ui/icons";
+import classNames from "classnames";
+import { PropTypes } from "prop-types";
+import React, { Component } from "react";
 
 const styles = {
-  link: { cursor: 'pointer' },
+  link: { cursor: "pointer" },
   icon: { fontWeight: 700 },
-  icondisabled: { textDecoration: 'line-through' },
-}
+  icondisabled: { textDecoration: "line-through" }
+};
 
 class Innstillinger extends Component {
   render() {
-    const { classes, visKoder, sorterPåKode, onUpdateSetting } = this.props
+    const { classes, visKoder, sorterPåKode, onUpdateSetting } = this.props;
     return (
       <React.Fragment>
         <ListSubheader>Innstillinger</ListSubheader>
         <ListItem
           button
           onClick={e => {
-            e.preventDefault()
-            e.stopPropagation()
-            onUpdateSetting('visKoder', !visKoder)
+            e.preventDefault();
+            e.stopPropagation();
+            onUpdateSetting("visKoder", !visKoder);
           }}
         >
           <ListItemIcon>
@@ -48,9 +48,9 @@ class Innstillinger extends Component {
         <ListItem
           button
           onClick={e => {
-            e.preventDefault()
-            e.stopPropagation()
-            onUpdateSetting('sorterPåKode', !sorterPåKode)
+            e.preventDefault();
+            e.stopPropagation();
+            onUpdateSetting("sorterPåKode", !sorterPåKode);
           }}
         >
           <ListItemIcon>
@@ -58,12 +58,12 @@ class Innstillinger extends Component {
           </ListItemIcon>
           <ListItemText
             primary="Sorter lister etter"
-            secondary={sorterPåKode ? 'Koder' : 'Navn'}
+            secondary={sorterPåKode ? "Koder" : "Navn"}
           />
         </ListItem>
         <Divider />
       </React.Fragment>
-    )
+    );
   }
 }
 
@@ -71,7 +71,7 @@ Innstillinger.propTypes = {
   visKoder: PropTypes.bool,
   sorterPåKode: PropTypes.bool,
   classes: PropTypes.object.isRequired,
-  onUpdateSetting: PropTypes.func.isRequired,
-}
+  onUpdateSetting: PropTypes.func.isRequired
+};
 
-export default withStyles(styles)(withTheme()(Innstillinger))
+export default withStyles(styles)(withTheme()(Innstillinger));

@@ -1,5 +1,5 @@
-import ResultatListe from './ResultatListe'
+import ResultatListe from "./ResultatListe";
 
-test('Highlight', () => {
-  expect(ResultatListe.highlightMatch('Karmøy', 'ka k', {})).toMatchSnapshot()
-})
+test("Highlight", () => {
+  expect(ResultatListe.highlightMatch("Karmøy", "ka k", {})).toMatchSnapshot();
+});

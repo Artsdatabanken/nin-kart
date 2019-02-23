@@ -1,19 +1,19 @@
-import typesystem from '@artsdatabanken/typesystem'
-import { List, ListItem, ListItemText } from '@material-ui/core'
-import { withStyles } from '@material-ui/core/styles'
-import React from 'react'
-import prettyprint from '../../prettyprint'
+import typesystem from "@artsdatabanken/typesystem";
+import { List, ListItem, ListItemText } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
+import React from "react";
+import prettyprint from "../../prettyprint";
 
 const styles = {
   li: {
     fontSize: 13,
-    color: 'rgba(0,0,0,0.87)',
-    paddingLeft: 16,
+    color: "rgba(0,0,0,0.87)",
+    paddingLeft: 16
   },
   color: {
-    color: 'rgba(0,0,0,0.87)',
-  },
-}
+    color: "rgba(0,0,0,0.87)"
+  }
+};
 
 const Statistikk = ({
   tittel,
@@ -24,7 +24,7 @@ const Statistikk = ({
   arealVindu,
   arterVindu,
   geometrierVindu,
-  classes,
+  classes
 }) => (
   <List>
     <Ingress infoUrl={infoUrl} ingress={ingress} classes={classes} />
@@ -35,15 +35,15 @@ const Statistikk = ({
       classes={classes}
     />
   </List>
-)
+);
 
 const Ingress = ({ infoUrl, ingress, classes }) => {
-  if (!ingress) return null
+  if (!ingress) return null;
   return (
     <ListItem>
       <ListItemText
         classes={{
-          primary: classes.li,
+          primary: classes.li
         }}
       >
         {ingress}
@@ -57,25 +57,25 @@ const Ingress = ({ infoUrl, ingress, classes }) => {
               href={infoUrl}
             >
               {typesystem.capitalizeTittel(
-                new URL(infoUrl).host.split('.').splice(-2, 1)[0]
+                new URL(infoUrl).host.split(".").splice(-2, 1)[0]
               )}
             </a>
           </span>
         )}
       </ListItemText>
     </ListItem>
-  )
-}
+  );
+};
 
 const Stats = ({ stats, tittel, toppnavn, classes }) => {
-  if (!stats) return null
-  const { areal, arealPrefix, arter } = stats
-  if (!areal) return null
+  if (!stats) return null;
+  const { areal, arealPrefix, arter } = stats;
+  if (!areal) return null;
   return (
     <ListItem>
       <ListItemText
         classes={{
-          primary: classes.li,
+          primary: classes.li
         }}
       >
         Det er kartlagt <b>{prettyprint.prettyPrintAreal(areal)}</b>
@@ -98,7 +98,7 @@ const Stats = ({ stats, tittel, toppnavn, classes }) => {
         )}
       </ListItemText>
     </ListItem>
-  )
-}
+  );
+};
 
-export default withStyles(styles)(Statistikk)
+export default withStyles(styles)(Statistikk);

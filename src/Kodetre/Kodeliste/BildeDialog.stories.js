@@ -1,15 +1,15 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
-import { muiTheme } from 'storybook-addon-material-ui'
-import { action } from '@storybook/addon-actions/dist/index'
-import BildeDialog from './BildeDialog'
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import { muiTheme } from "storybook-addon-material-ui";
+import { action } from "@storybook/addon-actions/dist/index";
+import BildeDialog from "./BildeDialog";
 
-storiesOf('BildeDialog', module)
+storiesOf("BildeDialog", module)
   .addDecorator(muiTheme())
-  .add('default', () => (
+  .add("default", () => (
     <BildeDialog
       kode="NA_T"
       tittel="tittel"
-      handleClose={action('handleClose')}
+      handleClose={action("handleClose")}
     />
-  ))
+  ));
