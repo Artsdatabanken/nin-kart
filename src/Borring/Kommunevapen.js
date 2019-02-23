@@ -10,7 +10,7 @@ class Kommunevapen extends Component {
         onLoad={() => {
           this.logo.style.opacity = 1;
         }}
-        alt="logo"
+        alt="kommunevåpen"
         src={config.getFotoOmslag(url, 408, "jpg")}
         style={{
           opacity: 0,
