@@ -35,7 +35,7 @@ const styles = {
 class BorreVindu extends Component {
   state = { bareAktive: false };
   render() {
-    const { lat, lng, barn, view, classes } = this.props;
+    const { lat, lng, barn, vis, classes } = this.props;
     if (!barn) return null;
     const { AO, prefix, ...andreBarn } = barn;
     const color = "rgba(240,240,240,1.0)";
@@ -69,14 +69,11 @@ class BorreVindu extends Component {
                 elevasjon={AO.elevasjon}
               />
             )}
-            <Typography style={{ color: color }} variant="body1">
-              {parseFloat(lat).toFixed(5)}° N {parseFloat(lng).toFixed(5)}° Ø
-            </Typography>
           </div>
         </CardMedia>
         <CardActionArea style={{ backgroundColor: "#ccc" }} />
         <CardActions>
-          {view ? (
+          {vis ? (
             <Button
               size="small"
               variant="contained"
@@ -109,7 +106,7 @@ class BorreVindu extends Component {
           />
         </CardActions>
         <CardContent style={{ padding: 0 }}>
-          {view ? (
+          {vis ? (
             <Kilde geom_id={this.finnGeomId()} prefiks="NA" />
           ) : (
             <Borring barn={this.state.bareAktive ? {} : andreBarn} />
@@ -173,14 +170,10 @@ class BorreVindu extends Component {
     const { lat, lng, history } = this.props;
     history.push(`?lng=${lng}&lat=${lat}`);
   };
+
   handleClickKilder = () => {
     const { lat, lng, history } = this.props;
-    history.push(`?lng=${lng}&lat=${lat}&view=kilde`);
-  };
-
-  handleClickValg = () => {
-    const { history } = this.props;
-    history.push("/punkt/valg");
+    history.push(`?lng=${lng}&lat=${lat}&vis=kilde`);
   };
 }
 

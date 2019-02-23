@@ -23,6 +23,7 @@ class Generelt extends Component {
       kartformat,
       aktivtKartformat,
       kode,
+      url,
       kanSlettes,
       onRemoveSelectedLayer,
       onFitBounds,
@@ -66,7 +67,7 @@ class Generelt extends Component {
           <Button
             color="primary"
             onClick={() => {
-              history.push("/katalog/" + kode);
+              history.push("/" + url);
             }}
           >
             <InfoOutlined className={classes.iconSmall} />

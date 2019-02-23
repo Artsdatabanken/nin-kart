@@ -2,7 +2,6 @@ import { Snackbar } from "@material-ui/core";
 import React from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import BorreContainer from "./Borring/BorreContainer";
-import Borrevalg from "./Borring/Borrevalg";
 import KodeContainer from "./Kodetre/Kodeliste/KodeContainer";
 import språk from "./språk";
 import Tweaks from "./Tweaks/";
@@ -48,8 +47,8 @@ class VenstreVinduContainer extends React.Component {
   }
 
   render() {
-    const meta = this.props.meta || {};
     const {
+      meta,
       visAktiveLag,
       unknownUrl,
       onMouseEnter,
@@ -59,120 +58,93 @@ class VenstreVinduContainer extends React.Component {
       onRemoveSelectedLayer,
       location
     } = this.props;
+    if (location.search && location.search.startsWith("?vis")) {
+      const node = this.props.aktiveLag[location.pathname.substring(1)] || meta;
+      return (
+        <Panel padTop>
+          <TopBarContainer tittel={språk(node.tittel) + ": Visning"} />
+          <Tweaks
+            {...node}
+            onFitBounds={this.props.onFitBounds}
+            onUpdateLayerProp={onUpdateLayerProp}
+            onRemoveSelectedLayer={onRemoveSelectedLayer}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+          />
+        </Panel>
+      );
+    }
+    if (location.search && location.search.startsWith("?lng")) {
+      const { lng, lat, vis } = this.parseQueryString(location.search);
+      return (
+        <Panel>
+          <TopBarContainer
+            tittel={`${parseFloat(lat).toFixed(5)}° N ${parseFloat(lng).toFixed(
+              5
+            )}° Ø`}
+          />
+          <BorreContainer lng={lng} lat={lat} vis={vis} />
+        </Panel>
+      );
+    }
     return (
-      <Route
-        render={({ match, history }) => {
-          if (location.search && location.search.indexOf("?vis" === 0)) {
-            const node =
-              this.props.aktiveLag[location.pathname.substring(1)] || meta;
-            return (
-              <Panel padTop>
-                <TopBarContainer tittel={språk(node.tittel) + ": Visning"} />
-                <Tweaks
-                  {...node}
-                  onFitBounds={this.props.onFitBounds}
-                  onUpdateLayerProp={onUpdateLayerProp}
-                  onRemoveSelectedLayer={onRemoveSelectedLayer}
-                  onMouseEnter={onMouseEnter}
-                  onMouseLeave={onMouseLeave}
-                />
-              </Panel>
-            );
-          }
-          const args = this.parseQueryString(location.search);
-          if (args.lng) {
-            return (
-              <Panel>
-                <TopBarContainer
-                  tittel={args.lng.substr(0, 8) + "," + args.lat.substr(0, 8)}
-                />
-                <BorreContainer
-                  lng={args.lng}
-                  lat={args.lat}
-                  view={args.view}
-                />
-              </Panel>
-            );
-          }
-          return (
-            <React.Fragment>
-              <Switch>
-                <Route
-                  path="/punkt/valg"
-                  render={({ match, history }) => (
-                    <Panel>
-                      <TopBarContainer tittel="Klikk i kart" />
-                      <Borrevalg />
-                    </Panel>
-                  )}
-                />
-                {false && (
-                  <Route
-                    render={({ match, history }) => (
-                      <Panel>
-                        <TopBarContainer />
-                      </Panel>
-                    )}
+      <React.Fragment>
+        <Switch>
+          <Route
+            path="/:url*"
+            render={({ match, history }) => {
+              return (
+                <Panel>
+                  <TopBarContainer
+                    tittel={this.tittel(meta)}
+                    unknownUrl={unknownUrl}
                   />
-                )}
-                <Route
-                  path="/:url*"
-                  render={({ match, history }) => {
-                    return (
-                      <Panel>
-                        <TopBarContainer
-                          tittel={this.tittel(meta)}
-                          unknownUrl={unknownUrl}
-                        />
-                        <KodeContainer
-                          kode={meta.kode}
-                          onNavigate={this.handleNavigate}
-                          onMouseEnter={onMouseEnter}
-                          onMouseLeave={onMouseLeave}
-                          onFitBounds={this.props.onFitBounds}
-                          erAktivert={this.props.erAktivert}
-                          opplystKode={this.props.opplystKode}
-                          onToggleLayer={this.props.onToggleLayer}
-                          mapBounds={this.props.mapBounds}
-                          language={this.props.language}
-                          meta={this.props.meta}
-                          onUpdateMetaProp={onUpdateMetaProp}
-                        />
-                      </Panel>
-                    );
-                  }}
-                />
-              </Switch>
-              {this.state.error && (
-                <Snackbar
-                  open={true}
-                  message={"Søk feilet: " + JSON.stringify(this.state.error)}
-                  autoHideDuration={4000}
-                  onRequestClose={this.handleCloseSnackbar}
-                />
-              )}
-              <div
-                style={{
-                  backgroundColor: "transparent",
-                  justifyContent: "flex-end",
-                  float: "bottom",
-                  pointerEvents: "auto",
-                  boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.3)"
-                }}
-              >
-                <AktiveKartlag
-                  erÅpen={visAktiveLag}
-                  koder={this.props.aktiveLag}
-                  onMouseEnter={onMouseEnter}
-                  onMouseLeave={onMouseLeave}
-                  onUpdateLayerProp={onUpdateLayerProp}
-                  onRemoveSelectedLayer={onRemoveSelectedLayer}
-                />
-              </div>
-            </React.Fragment>
-          );
-        }}
-      />
+                  <KodeContainer
+                    kode={meta && meta.kode}
+                    onNavigate={this.handleNavigate}
+                    onMouseEnter={onMouseEnter}
+                    onMouseLeave={onMouseLeave}
+                    onFitBounds={this.props.onFitBounds}
+                    erAktivert={this.props.erAktivert}
+                    opplystKode={this.props.opplystKode}
+                    onToggleLayer={this.props.onToggleLayer}
+                    mapBounds={this.props.mapBounds}
+                    language={this.props.language}
+                    meta={this.props.meta}
+                    onUpdateMetaProp={onUpdateMetaProp}
+                  />
+                </Panel>
+              );
+            }}
+          />
+        </Switch>
+        {this.state.error && (
+          <Snackbar
+            open={true}
+            message={"Søk feilet: " + JSON.stringify(this.state.error)}
+            autoHideDuration={4000}
+            onRequestClose={this.handleCloseSnackbar}
+          />
+        )}
+        <div
+          style={{
+            backgroundColor: "transparent",
+            justifyContent: "flex-end",
+            float: "bottom",
+            pointerEvents: "auto",
+            boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.3)"
+          }}
+        >
+          <AktiveKartlag
+            erÅpen={visAktiveLag}
+            koder={this.props.aktiveLag}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            onUpdateLayerProp={onUpdateLayerProp}
+            onRemoveSelectedLayer={onRemoveSelectedLayer}
+          />
+        </div>
+      </React.Fragment>
     );
   }
 
