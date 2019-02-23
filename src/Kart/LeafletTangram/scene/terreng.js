@@ -2,6 +2,7 @@ import terrengmal from "./mal/terreng";
 import sysconfig from "../../../config";
 
 function lagTerreng(drawProps, opplystKode, config) {
+  if (!drawProps.erSynlig) return;
   let vertikaltOverdriv = drawProps.vertikaltOverdriv;
   if (opplystKode && opplystKode !== "terreng") vertikaltOverdriv *= 0.25;
   config.layers.terreng = terrengmal;

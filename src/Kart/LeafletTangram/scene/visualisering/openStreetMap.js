@@ -66,9 +66,11 @@ function drawAll(drawArgs) {
 
 function lagSource({ url, zoom }, bbox) {
   return sysconfig.createTileSource(
-    sysconfig.storageUrl + "Bakgrunnskart/OpenStreetMap/polygon.3857.mbtiles",
+    sysconfig.storageUrl + "Basiskart/OpenStreetMap/polygon.3857.mbtiles",
     "MVT",
-    [0, 14]
+    [0, 14],
+    [[57.55323, -11.36801], [81.05195, 35.52711]]
+    //    [[-11.36801, 57.55323], [35.52711, 81.05195]]
   );
 }
 

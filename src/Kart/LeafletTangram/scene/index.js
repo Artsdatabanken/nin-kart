@@ -44,6 +44,7 @@ function farge(farge, viserKatalog) {
 }
 
 function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
+  const viz = lag.kartformat[lag.aktivtKartformat];
   let drawArgs = {
     forelderkode: lag.kode,
     kode: lag.kode,
@@ -54,13 +55,14 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
     bbox: lag.bbox,
     aktivtKartformat: lag.aktivtKartformat,
     kartformat: lag.kartformat,
+    viz: viz,
     visBarn: lag.visBarn
   };
   if (lag.visBarn) {
     drawArgs.barn = lag.barn;
   }
   opprettEttLag(drawArgs, config);
-  if (lag.kanHaTerreng) lagTerreng(lag.terreng, opplystKode, config);
+  if (viz.kanHaTerreng) lagTerreng(lag.terreng, opplystKode, config);
 }
 
 function lagToppnivå(props) {
