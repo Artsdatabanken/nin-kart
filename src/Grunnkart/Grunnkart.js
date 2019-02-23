@@ -8,7 +8,6 @@ import Kart from "../Kart";
 import { SettingsContext } from "../SettingsContext";
 import språk from "../språk";
 import VenstreVinduContainer from "../VenstreVinduContainer";
-import standardlag from "./standardlag.json";
 import bakgrunnskarttema from "./bakgrunnskarttema";
 
 const styles = {
@@ -42,9 +41,9 @@ function isAtRoot(location) {
 class Grunnkart extends React.Component {
   constructor(props) {
     super(props);
-    let aktive = standardlag;
-    aktive.bakgrunnskart = bakgrunnskarttema;
-    aktive = JSON.parse(JSON.stringify(aktive));
+    let aktive = {
+      bakgrunnskart: JSON.parse(JSON.stringify(bakgrunnskarttema))
+    };
     this.state = {
       aktiveLag: aktive,
       opplystKode: "",
@@ -80,17 +79,6 @@ class Grunnkart extends React.Component {
       };
     });
   }
-
-  handleAktiver = koder => {
-    this.setState({
-      aktiveLag: JSON.parse(JSON.stringify(standardlag))
-    });
-    koder.forEach(kode => {
-      this.downloadMeta("/katalog/" + kode).then(data => {
-        this.addSelected(data);
-      });
-    });
-  };
 
   addSelected = props => {
     let aktive = this.state.aktiveLag;
@@ -201,9 +189,13 @@ class Grunnkart extends React.Component {
     }
     meta.erSynlig = true;
     if (meta.kode.substring(0, 2) === "LA") {
-      if (!this.state.aktiveLag.terreng.wasAutoEnabled) {
-        this.handleUpdateLayerProp("terreng", "erSynlig", true);
-        this.handleUpdateLayerProp("terreng", "wasAutoEnabled", true);
+      if (!this.state.aktiveLag.bakgrunnskart.terreng.wasAutoEnabled) {
+        this.handleUpdateLayerProp("bakgrunnskart.terreng", "erSynlig", true);
+        this.handleUpdateLayerProp(
+          "bakgrunnskart.terreng",
+          "wasAutoEnabled",
+          true
+        );
       }
     }
     return meta;
