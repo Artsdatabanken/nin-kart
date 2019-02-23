@@ -3,7 +3,6 @@ import {
   Card,
   FormControlLabel,
   CardActions,
-  Typography,
   CardActionArea,
   CardContent,
   Switch,
@@ -35,10 +34,9 @@ const styles = {
 class BorreVindu extends Component {
   state = { bareAktive: false };
   render() {
-    const { lat, lng, barn, vis, classes } = this.props;
+    const { barn, vis, classes } = this.props;
     if (!barn) return null;
     const { AO, prefix, ...andreBarn } = barn;
-    const color = "rgba(240,240,240,1.0)";
     const bgColor = "hsla(0, 0%, 30%, 0.65)";
     const dominant = this.finnButikkKode();
     return (
