@@ -61,7 +61,9 @@ class VenstreVinduContainer extends React.Component {
       const node = this.props.aktiveLag[location.pathname.substring(1)] || meta;
       return (
         <Panel padTop>
-          <TopBarContainer tittel={språk(node.tittel) + ": Visning"} />
+          <TopBarContainer
+            tittel={node ? språk(node.tittel) + ": Visning" : ""}
+          />
           <Tweaks
             {...node}
             onFitBounds={this.props.onFitBounds}
