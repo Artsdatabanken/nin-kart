@@ -1,3 +1,4 @@
+import språk from "../../språk";
 import React, { Component } from "react";
 import tinycolor from "tinycolor2";
 import { ListItem, ListItemText } from "@material-ui/core";
@@ -19,27 +20,37 @@ export default class LinearGauge extends Component {
   render() {
     const { tittel, trinn, onNavigate, url } = this.props;
     const antall = trinn.length;
-    let påFra = 99;
-    const påRange = [];
+    let påFra = 99,
+      påTil = -1;
     for (let i = 0; i < antall; i++) {
       const t = trinn[i];
       t.min = (100 / antall) * i;
       t.max = (100 / antall) * (i + 1);
+      if (t.på && påTil < i) påTil = i;
       if (t.på && påFra > i) påFra = i;
-      if (!t.på && påFra < i) {
-        påRange.push([trinn[påFra], trinn[i - 1]]);
-        påFra = 99;
-      }
     }
-    if (påFra < antall) påRange.push([trinn[påFra], trinn[antall - 1]]);
+    const påRange = [trinn[påFra], trinn[påTil]];
+    console.log(påRange);
     return (
       <ListItem button dense onClick={() => onNavigate(url)}>
         <ListItemText
           primary={tittel}
           secondary={
             <React.Fragment>
-              <Gauge trinn={trinn} ranges={påRange} />
-              {beskrivelse(påRange)}
+              <Gauge trinn={trinn} range={påRange} />
+              <div style={{ display: "flex", position: "relative", top: -10 }}>
+                <div
+                  style={{
+                    width: "50%",
+                    textAlign: "center"
+                  }}
+                >
+                  {språk(påRange[0].tittel)}
+                </div>
+                <div style={{ width: "50%", textAlign: "center" }}>
+                  {språk(påRange[1].tittel)}
+                </div>
+              </div>
             </React.Fragment>
           }
         />
@@ -48,19 +59,9 @@ export default class LinearGauge extends Component {
   }
 }
 
-const beskrivelse = ranges => {
-  return ranges
-    .map(([min, max]) => {
-      let range = min.tittel.nb;
-      if (min.tittel.nb !== max.tittel.nb) range += "–" + max.tittel.nb;
-      return range;
-    })
-    .join(", ");
-};
-
-const Gauge = ({ trinn, ranges }) => {
+const Gauge = ({ trinn, range }) => {
   return (
-    <svg viewBox="-2 -1 104 9.2">
+    <svg viewBox="-2 -1 104 13">
       <defs>
         <filter id="f1" x="-2" y="0" width="104" height="10">
           <feOffset result="offOut" in="SourceGraphic" dx="0.051" dy="0.051" />
@@ -106,17 +107,45 @@ const Gauge = ({ trinn, ranges }) => {
           </React.Fragment>
         );
       })}
-      {true &&
-        ranges.map(([min, max]) => (
-          <Shadow
-            key={min}
-            x1={min.min}
-            y1={0}
-            x2={max.max}
-            y2={gaugeHeight}
-            color1="rgba(128,128,128,0.9)"
-          />
+      {range &&
+        [range].map(([min, max]) => (
+          <React.Fragment>
+            <Shadow
+              key={min}
+              x1={min.min}
+              y1={0}
+              x2={max.max}
+              y2={gaugeHeight}
+              color1="rgba(128,128,128,0.9)"
+            />
+            <Etikett x1={0.5 * (min.min + min.max)} x2={25} />
+            {min !== max && <Etikett x1={0.5 * (max.min + max.max)} x2={75} />}
+            {false && (
+              <path
+                d={`M${0.5 * (min.min + min.max)} ${gaugeHeight} C ${
+                  min.min
+                } ${gaugeHeight + 5}, 18 ${gaugeHeight}, 18 ${gaugeHeight + 4}`}
+                stroke="rgba(0,0,0,0.37)"
+                strokeWidth={0.5}
+                fill="transparent"
+              />
+            )}
+            {false && (
+              <text
+                x={0}
+                y={gaugeHeight + 4}
+                fontSize={3.8}
+                fontWeight="500"
+                fill="rgba(0,0,0,0.37)"
+                dominantBaseline="hanging"
+                textAnchor="start"
+              >
+                {språk(min.tittel)}
+              </text>
+            )}
+          </React.Fragment>
         ))}
+
       {trinn.map(e => {
         const color = farge(e.på, e.farge);
         return (
@@ -168,6 +197,16 @@ const Gauge = ({ trinn, ranges }) => {
     </svg>
   );
 };
+
+const Etikett = ({ x1, x2 }) => (
+  <path
+    d={`M${x1} ${gaugeHeight} C ${x1} ${gaugeHeight +
+      5}, ${x2} ${gaugeHeight}, ${x2} ${gaugeHeight + 4}`}
+    stroke="rgba(0,0,0,0.37)"
+    strokeWidth={0.5}
+    fill="transparent"
+  />
+);
 
 const Shadow = ({ x1, x2, y1, y2, color1, color2 }) => {
   return (
