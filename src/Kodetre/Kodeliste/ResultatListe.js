@@ -98,7 +98,6 @@ class ResultatListe extends Component {
 
     // Split on all terms and also include the terms into parts array, ignore case
     let parts = text.split(new RegExp(`(${filter})`, "gi"));
-    console.log("parts", parts);
     return (
       <React.Fragment>
         {parts.map((part, i) => (

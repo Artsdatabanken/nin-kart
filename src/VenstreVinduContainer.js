@@ -60,7 +60,7 @@ class VenstreVinduContainer extends React.Component {
     if (location.search && location.search.startsWith("?vis")) {
       const node = this.props.aktiveLag[location.pathname.substring(1)] || meta;
       return (
-        <Panel padTop>
+        <Panel>
           <TopBarContainer
             tittel={node ? språk(node.tittel) + ": Visning" : ""}
           />
