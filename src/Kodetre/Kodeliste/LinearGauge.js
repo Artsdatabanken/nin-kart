@@ -30,7 +30,6 @@ export default class LinearGauge extends Component {
       if (t.på && påFra > i) påFra = i;
     }
     const påRange = [trinn[påFra], trinn[påTil]];
-    console.log(påRange);
     return (
       <ListItem button dense onClick={() => onNavigate(url)}>
         <ListItemText
@@ -47,9 +46,11 @@ export default class LinearGauge extends Component {
                 >
                   {språk(påRange[0].tittel)}
                 </div>
-                <div style={{ width: "50%", textAlign: "center" }}>
-                  {språk(påRange[1].tittel)}
-                </div>
+                {påFra !== påTil && (
+                  <div style={{ width: "50%", textAlign: "center" }}>
+                    {språk(påRange[1].tittel)}
+                  </div>
+                )}
               </div>
             </React.Fragment>
           }
@@ -87,29 +88,9 @@ const Gauge = ({ trinn, range }) => {
         stroke="rgba(0,0,0,0.67)"
         strokeWidth={0.25}
       />
-      {trinn.map(e => {
-        const color = farge(e.på, e.farge);
-        return (
-          <React.Fragment key={e.min}>
-            {!e.på && (
-              <rect
-                x={e.min}
-                width={e.max - e.min}
-                y={0}
-                height={gaugeHeight}
-                fill={color}
-                filter={e.på && false ? "url(#f2)" : ""}
-                stroke="none"
-              >
-                <title>{e.tittel.nb}</title>
-              </rect>
-            )}
-          </React.Fragment>
-        );
-      })}
       {range &&
         [range].map(([min, max]) => (
-          <React.Fragment>
+          <React.Fragment key={min.min}>
             <Shadow
               key={min}
               x1={min.min}
@@ -120,49 +101,50 @@ const Gauge = ({ trinn, range }) => {
             />
             <Etikett x1={0.5 * (min.min + min.max)} x2={25} />
             {min !== max && <Etikett x1={0.5 * (max.min + max.max)} x2={75} />}
-            {false && (
-              <path
-                d={`M${0.5 * (min.min + min.max)} ${gaugeHeight} C ${
-                  min.min
-                } ${gaugeHeight + 5}, 18 ${gaugeHeight}, 18 ${gaugeHeight + 4}`}
-                stroke="rgba(0,0,0,0.37)"
-                strokeWidth={0.5}
-                fill="transparent"
-              />
-            )}
-            {false && (
-              <text
-                x={0}
-                y={gaugeHeight + 4}
-                fontSize={3.8}
-                fontWeight="500"
-                fill="rgba(0,0,0,0.37)"
-                dominantBaseline="hanging"
-                textAnchor="start"
-              >
-                {språk(min.tittel)}
-              </text>
-            )}
           </React.Fragment>
         ))}
 
       {trinn.map(e => {
+        const colorOff = farge(false, e.farge);
         const color = farge(e.på, e.farge);
         return (
           <React.Fragment key={e.min}>
-            {e.på && (
-              <rect
-                x={e.min}
-                width={e.max - e.min}
-                y={0}
-                height={gaugeHeight}
-                rx={0}
-                fill={color}
-                stroke="none"
-              >
-                <title>{e.tittel.nb}</title>
-              </rect>
-            )}
+            <rect
+              x={e.min}
+              width={e.max - e.min}
+              y={0}
+              height={gaugeHeight}
+              rx={0}
+              fill={color}
+              stroke="none"
+            >
+              <title>{e.tittel.nb}</title>
+              <xanimate
+                attributeName="fill"
+                dur="3s"
+                begin="mouseover"
+                end="mouseout"
+                values={`${colorOff}; ${e.farge}; ${color}`}
+                keyTimes="0; 0.5; 1"
+                fill="freeze"
+              />
+              <animate
+                attributeName="fill"
+                dur="0.2s"
+                begin="mouseover"
+                values={`${color}; ${e.farge}`}
+                keyTimes="0; 1"
+                fill="freeze"
+              />
+              <animate
+                attributeName="fill"
+                dur="0.6s"
+                begin="mouseout"
+                values={`${e.farge}; ${color}`}
+                keyTimes="0; 1"
+                fill="freeze"
+              />
+            </rect>
             <SettingsContext.Consumer>
               {context =>
                 context.visKoder && (
@@ -180,7 +162,6 @@ const Gauge = ({ trinn, range }) => {
                 )
               }
             </SettingsContext.Consumer>
-            ;
             {e.max < 100 && (
               <line
                 x1={e.max}
@@ -198,15 +179,46 @@ const Gauge = ({ trinn, range }) => {
   );
 };
 
-const Etikett = ({ x1, x2 }) => (
-  <path
-    d={`M${x1} ${gaugeHeight} C ${x1} ${gaugeHeight +
-      5}, ${x2} ${gaugeHeight}, ${x2} ${gaugeHeight + 4}`}
-    stroke="rgba(0,0,0,0.37)"
-    strokeWidth={0.5}
-    fill="transparent"
-  />
-);
+const Etikett = ({ x1, x2 }) => {
+  const edge = x2 < 50 ? 0 : 100;
+  const start = `M${edge} ${gaugeHeight} C ${edge} ${gaugeHeight +
+    5}, ${x2} ${gaugeHeight}, ${x2} ${gaugeHeight + 4}`;
+  const end = `M${x1} ${gaugeHeight} C ${x1} ${gaugeHeight +
+    5}, ${x2} ${gaugeHeight}, ${x2} ${gaugeHeight + 4}`;
+
+  return (
+    <path
+      d={`M${x1} ${gaugeHeight} C ${x1} ${gaugeHeight +
+        5}, ${x2} ${gaugeHeight}, ${x2} ${gaugeHeight + 4}`}
+      stroke="rgba(0,0,0,0.37)"
+      strokeWidth={0.5}
+      fill="transparent"
+      xlinkHref="#left"
+    >
+      {false && (
+        <animate
+          attributeName="stroke"
+          dur="5000ms"
+          to="#f06d06"
+          fill="freeze"
+        />
+      )}
+      <animate
+        attributeName="d"
+        dur="2440ms"
+        repeatCount="1"
+        keyTimes="0;
+                       1"
+        calcMode="spline"
+        keySplines="0.645, 0.045, 0.355, 1"
+        _values="M 0 7 C 0 12 25 7 25 11;
+      M 15 7 C 15 12 25 7 25 11"
+        values={`${start};
+        ${end}`}
+      />
+    </path>
+  );
+};
 
 const Shadow = ({ x1, x2, y1, y2, color1, color2 }) => {
   return (

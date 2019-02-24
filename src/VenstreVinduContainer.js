@@ -1,6 +1,6 @@
 import { Snackbar } from "@material-ui/core";
 import React from "react";
-import { Route, Switch, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import BorreContainer from "./Borring/BorreContainer";
 import KodeContainer from "./Kodetre/Kodeliste/KodeContainer";
 import språk from "./språk";
@@ -90,35 +90,23 @@ class VenstreVinduContainer extends React.Component {
     }
     return (
       <React.Fragment>
-        <Switch>
-          <Route
-            path="/:url*"
-            render={({ match, history }) => {
-              return (
-                <Panel>
-                  <TopBarContainer
-                    tittel={this.tittel(meta)}
-                    unknownUrl={unknownUrl}
-                  />
-                  <KodeContainer
-                    kode={meta && meta.kode}
-                    onNavigate={this.handleNavigate}
-                    onMouseEnter={onMouseEnter}
-                    onMouseLeave={onMouseLeave}
-                    onFitBounds={this.props.onFitBounds}
-                    erAktivert={this.props.erAktivert}
-                    opplystKode={this.props.opplystKode}
-                    onToggleLayer={this.props.onToggleLayer}
-                    mapBounds={this.props.mapBounds}
-                    language={this.props.language}
-                    meta={this.props.meta}
-                    onUpdateMetaProp={onUpdateMetaProp}
-                  />
-                </Panel>
-              );
-            }}
+        <Panel>
+          <TopBarContainer tittel={this.tittel(meta)} unknownUrl={unknownUrl} />
+          <KodeContainer
+            kode={meta && meta.kode}
+            onNavigate={this.handleNavigate}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            onFitBounds={this.props.onFitBounds}
+            erAktivert={this.props.erAktivert}
+            opplystKode={this.props.opplystKode}
+            onToggleLayer={this.props.onToggleLayer}
+            mapBounds={this.props.mapBounds}
+            language={this.props.language}
+            meta={this.props.meta}
+            onUpdateMetaProp={onUpdateMetaProp}
           />
-        </Switch>
+        </Panel>
         {this.state.error && (
           <Snackbar
             open={true}
