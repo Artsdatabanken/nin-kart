@@ -83,7 +83,7 @@ class TopBarContainer extends Component<Props, State> {
   };
 
   render() {
-    const { tittel, style } = this.props;
+    const { tittel } = this.props;
     const { query, focused } = this.state;
     return (
       <Route
