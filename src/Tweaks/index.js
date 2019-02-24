@@ -32,9 +32,11 @@ class Tweaks extends React.Component {
     const { aktivtKartformat, history } = this.props;
     if (!aktivtKartformat) return null;
     return (
-      <Generelt search={history.location.search} {...this.props}>
-        {this.seksjon(aktivtKartformat)}
-      </Generelt>
+      <div style={{ paddingTop: 55 }}>
+        <Generelt search={history.location.search} {...this.props}>
+          {this.seksjon(aktivtKartformat)}
+        </Generelt>
+      </div>
     );
   }
 }

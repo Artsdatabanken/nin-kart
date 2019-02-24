@@ -6,12 +6,11 @@ const styles = {
   rot: {
     height: "100vh",
     overflowY: "auto"
-  },
-  padTop: { paddingTop: 55 }
+  }
 };
 
-const Panel = ({ padTop, classes, style, children }) => (
-  <div className={classNames(classes.rot, padTop && classes.padTop)}>
+const Panel = ({ classes, style, children }) => (
+  <div className={classNames(classes.rot)}>
     <div
       style={{
         overflowX: "hidden",

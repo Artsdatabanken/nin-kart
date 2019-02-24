@@ -29,8 +29,7 @@ const styles = {
     backgroundColor: "transparent",
     boxShadow: "none",
     pointerEvents: "none"
-  },
-  padTop: { paddingTop: 55 }
+  }
 };
 
 function isAtRoot(location) {
