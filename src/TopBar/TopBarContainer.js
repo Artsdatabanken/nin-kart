@@ -45,7 +45,7 @@ class TopBarContainer extends Component<Props, State> {
   };
 
   handleBlur = e => {
-    //    this.setState({ focused: false, searchResults: null });
+    this.setState({ focused: false, searchResults: null });
   };
 
   handleQueryChange = e => {
