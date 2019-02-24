@@ -16,7 +16,7 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5",
-    "tangram": "^0.17.5"
+    "tangram": "^0.18.0"
   },
   "scripts": {
     "start": "react-scripts start",
