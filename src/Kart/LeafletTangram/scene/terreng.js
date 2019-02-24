@@ -9,7 +9,8 @@ function lagTerreng(drawProps, opplystKode, config) {
   config.sources.normals = sysconfig.createTileSource(
     `${sysconfig.storageUrl}Terreng/normaler.3857.mbtiles`,
     "Raster",
-    [0, 9]
+    [0, 9],
+    [[-90, -180], [90, 180]]
   );
   config.styles.terreng = {
     base: "polygons",
