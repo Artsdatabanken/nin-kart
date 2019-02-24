@@ -1,9 +1,9 @@
 import {
+  Divider,
   List,
   ListItem,
   ListItemSecondaryAction,
-  ListItemText,
-  Paper
+  ListItemText
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import React, { Component } from "react";
@@ -17,7 +17,7 @@ const styles = {
     fontSize: 13,
     width: 235
   },
-  inset: { marginLeft: 56 },
+  inset: { marginLeft: 48 },
   listitem: { height: 38, cursor: "pointer" },
   itemtext: { fontSize: 13, fontWeight: 100 },
   textmatch: { color: "black", fontWeight: 500 },
@@ -42,42 +42,40 @@ class ResultatListe extends Component {
     if (!searchResults) return null;
     if (!searchResults.length > 0) return null;
     return (
-      <Paper elevation={4} style={{ borderRadius: "0 0 4px 4px" }}>
-        <List style={{ paddingTop: 0, paddingBottom: 0 }}>
-          {searchResults.map(item => {
-            const navn = item.title;
-            return (
-              <React.Fragment key={item.url}>
-                <ListItem
-                  divider={true}
-                  button={true}
-                  className={classes.listitem}
-                  onMouseDown={() => {
-                    onClick(item.url);
-                  }}
-                  key={item.url}
-                >
-                  <Bildeavatar size="small" kode={item.kode} url={item.url} />
-                  <ListItemText classes={{ primary: classes.text }}>
-                    {ResultatListe.highlightMatch(navn, query, classes)}
+      <List style={{ paddingTop: 0, paddingBottom: 0 }}>
+        {searchResults.map(item => {
+          const navn = item.title;
+          return (
+            <React.Fragment key={item.url}>
+              <ListItem
+                button={true}
+                className={classes.listitem}
+                onMouseDown={() => {
+                  onClick(item.url);
+                }}
+                key={item.url}
+              >
+                <Bildeavatar size="small" kode={item.kode} url={item.url} />
+                <ListItemText classes={{ primary: classes.text }}>
+                  {ResultatListe.highlightMatch(navn, query, classes)}
+                </ListItemText>
+                <ListItemSecondaryAction>
+                  <ListItemText>
+                    <div className={classes.itemtext}>
+                      {ResultatListe.highlightMatch(
+                        this.filtrer(item.kode),
+                        query,
+                        classes
+                      )}
+                    </div>
                   </ListItemText>
-                  <ListItemSecondaryAction>
-                    <ListItemText>
-                      <div className={classes.itemtext}>
-                        {ResultatListe.highlightMatch(
-                          this.filtrer(item.kode),
-                          query,
-                          classes
-                        )}
-                      </div>
-                    </ListItemText>
-                  </ListItemSecondaryAction>
-                </ListItem>
-              </React.Fragment>
-            );
-          })}
-        </List>
-      </Paper>
+                </ListItemSecondaryAction>
+              </ListItem>
+              <Divider className={classes.inset} />
+            </React.Fragment>
+          );
+        })}
+      </List>
     );
   }
 

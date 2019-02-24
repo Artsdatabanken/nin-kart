@@ -83,7 +83,7 @@ class TopBarContainer extends Component<Props, State> {
   };
 
   render() {
-    const { tittel, style } = this.props;
+    const { tittel } = this.props;
     const { query, focused } = this.state;
     return (
       <Route
@@ -109,38 +109,18 @@ class TopBarContainer extends Component<Props, State> {
                 tittel={tittel}
                 onQueryChange={this.handleQueryChange}
                 hasResults={!!this.state.searchResults}
-              />
-              <div
-                style={{
-                  width: 408,
-                  paddingBottom: 0,
-                  ...style
-                }}
               >
-                {(isAtRoot || focused) && (
-                  <div
-                    style={{
-                      width: 408,
-                      marginTop: 55,
-                      marginBottom: isAtRoot ? 8 : 0,
-                      position: isAtRoot ? "relative" : "fixed",
-                      zIndex: 10
-                    }}
-                  >
-                    {this.state.searchResults && (
-                      <div style={{ marginLeft: 8, marginRight: 8 }}>
-                        <Divider />
-                        <ResultatListe
-                          query={this.state.query}
-                          searchResults={this.state.searchResults}
-                          onClick={this.handleNavigation}
-                        />
-                      </div>
-                    )}
-                    {this.props.children}
+                {this.state.searchResults && (
+                  <div>
+                    {true && <Divider />}
+                    <ResultatListe
+                      query={this.state.query}
+                      searchResults={this.state.searchResults}
+                      onClick={this.handleNavigation}
+                    />
                   </div>
                 )}
-              </div>
+              </TopBar>
             </div>
           );
         }}
