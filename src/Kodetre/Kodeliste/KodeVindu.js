@@ -60,7 +60,6 @@ class KodeVindu extends React.Component {
           onToggleLayer={onToggleLayer}
         />
         <Flagg flagg={meta.flagg} onNavigate={onNavigate} />
-        <Gradienter gradient={meta.gradient} onNavigate={onNavigate} />
 
         {prefiks !== "AO" && (
           <Statistikk
@@ -91,6 +90,7 @@ class KodeVindu extends React.Component {
             />
           )}
         </SettingsContext.Consumer>
+        <Gradienter gradient={meta.gradient} onNavigate={onNavigate} />
         <Graf graf={meta.graf} parentkode={kode} onNavigate={onNavigate} />
       </div>
     );
