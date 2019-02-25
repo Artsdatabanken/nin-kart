@@ -67,16 +67,20 @@ const Gauge = ({ trinn, range }) => {
         <svg viewBox="-2 -1 104 13">
           <defs>
             <filter id="f1" x="-2" y="0" width="104" height="10">
-              <feOffset result="offOut" in="SourceGraphic" dx="0.1" dy="0.1" />
-              <feGaussianBlur result="blurOut" in="offOut" stdDeviation="0.4" />
+              <feDropShadow
+                dx="0.1"
+                dy="0.1"
+                stdDeviation="0.4"
+                floodOpacity="0.3"
+              />
             </filter>
             <filter id="f2" x="0" y="0" width="102" height="10">
-              <feGaussianBlur
-                result="blurOut"
-                in="SourceGraphic"
-                stdDeviation="0.5"
+              <feDropShadow
+                dx="0.7"
+                dy="0.7"
+                stdDeviation="0.4"
+                floodOpacity="0.3"
               />
-              <feOffset in="blurOut" dx="0.8" dy="0.8" result="DROPSHADOW" />
               )}
             </filter>
           </defs>
@@ -118,15 +122,17 @@ const Gauge = ({ trinn, range }) => {
                   y={0}
                   height={gaugeHeight}
                   rx={0}
-                  _fill={color}
                   stroke="none"
                 >
                   <title>{e.tittel.nb}</title>
                   <animate
                     attributeName="fill"
-                    dur="0.5s"
-                    values={`#fff; ${color}`}
-                    keyTimes="0; 1"
+                    dur="0.75s"
+                    values={`${colorOff}; ${e.farge}; ${
+                      e.farge
+                    }; ${color}; ${color}`}
+                    keyTimes={`0; ${e.min * 0.005}; 0.5; ${0.75 +
+                      e.min * 0.0}; 1`}
                     fill="freeze"
                   />
                   <animate
@@ -179,12 +185,6 @@ const Gauge = ({ trinn, range }) => {
 };
 
 const Etikett = ({ x1, x2 }) => {
-  const edge = x2 < 50 ? 0 : 100;
-  const start = `M${edge} ${gaugeHeight} C ${edge} ${gaugeHeight +
-    5}, ${x2} ${gaugeHeight}, ${x2} ${gaugeHeight + 4}`;
-  const end = `M${x1} ${gaugeHeight} C ${x1} ${gaugeHeight +
-    5}, ${x2} ${gaugeHeight}, ${x2} ${gaugeHeight + 4}`;
-
   return (
     <path
       d={`M${x1} ${gaugeHeight} C ${x1} ${gaugeHeight +
@@ -192,17 +192,16 @@ const Etikett = ({ x1, x2 }) => {
       stroke="rgba(0,0,0,0.37)"
       strokeWidth={0.5}
       fill="transparent"
-      xlinkHref="#left"
+      strokeDasharray="100px"
+      strokeDashoffset="100px"
     >
       <animate
-        attributeName="d"
-        dur="440ms"
-        repeatCount="1"
-        keyTimes="0;                       1"
-        calcMode="spline"
-        keySplines="0.645, 0.045, 0.355, 1"
-        values={`${start};
-        ${end}`}
+        begin="0.75s"
+        attributeName="stroke-dashoffset"
+        from="100px"
+        to="0px"
+        dur="0.4s"
+        fill="freeze"
       />
     </path>
   );
