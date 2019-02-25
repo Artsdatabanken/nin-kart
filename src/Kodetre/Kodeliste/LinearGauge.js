@@ -30,7 +30,6 @@ export default class LinearGauge extends Component {
       if (t.på && påFra > i) påFra = i;
     }
     const påRange = [trinn[påFra], trinn[påTil]];
-    console.log(påRange);
     return (
       <ListItem button dense onClick={() => onNavigate(url)}>
         <ListItemText
@@ -47,9 +46,11 @@ export default class LinearGauge extends Component {
                 >
                   {språk(påRange[0].tittel)}
                 </div>
-                <div style={{ width: "50%", textAlign: "center" }}>
-                  {språk(påRange[1].tittel)}
-                </div>
+                {påFra !== påTil && (
+                  <div style={{ width: "50%", textAlign: "center" }}>
+                    {språk(påRange[1].tittel)}
+                  </div>
+                )}
               </div>
             </React.Fragment>
           }
@@ -61,111 +62,107 @@ export default class LinearGauge extends Component {
 
 const Gauge = ({ trinn, range }) => {
   return (
-    <svg viewBox="-2 -1 104 13">
-      <defs>
-        <filter id="f1" x="-2" y="0" width="104" height="10">
-          <feOffset result="offOut" in="SourceGraphic" dx="0.051" dy="0.051" />
-          <feGaussianBlur result="blurOut" in="offOut" stdDeviation="0.5" />
-          <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
-        </filter>
-        <filter id="f2" x="0" y="0" width="102" height="10">
-          <feGaussianBlur
-            result="blurOut"
-            in="SourceGraphic"
-            stdDeviation="0.5"
-          />
-          <feOffset in="blurOut" dx="0.4" dy="0.4" result="DROPSHADOW" />
-        </filter>
-      </defs>
-      <rect
-        x={0}
-        y={0}
-        width={100}
-        height={gaugeHeight}
-        fill="#888"
-        filter="url(#f1)"
-        stroke="rgba(0,0,0,0.67)"
-        strokeWidth={0.25}
-      />
-      {trinn.map(e => {
-        const color = farge(e.på, e.farge);
-        return (
-          <React.Fragment key={e.min}>
-            {!e.på && (
-              <rect
-                x={e.min}
-                width={e.max - e.min}
-                y={0}
-                height={gaugeHeight}
-                fill={color}
-                filter={e.på && false ? "url(#f2)" : ""}
-                stroke="none"
-              >
-                <title>{e.tittel.nb}</title>
-              </rect>
-            )}
-          </React.Fragment>
-        );
-      })}
-      {range &&
-        [range].map(([min, max]) => (
-          <React.Fragment>
-            <Shadow
-              key={min}
-              x1={min.min}
-              y1={0}
-              x2={max.max}
-              y2={gaugeHeight}
-              color1="rgba(128,128,128,0.9)"
-            />
-            <Etikett x1={0.5 * (min.min + min.max)} x2={25} />
-            {min !== max && <Etikett x1={0.5 * (max.min + max.max)} x2={75} />}
-            {false && (
-              <path
-                d={`M${0.5 * (min.min + min.max)} ${gaugeHeight} C ${
-                  min.min
-                } ${gaugeHeight + 5}, 18 ${gaugeHeight}, 18 ${gaugeHeight + 4}`}
-                stroke="rgba(0,0,0,0.37)"
-                strokeWidth={0.5}
-                fill="transparent"
+    <SettingsContext.Consumer>
+      {context => (
+        <svg viewBox="-2 -1 104 13">
+          <defs>
+            <filter id="f1" x="-2" y="0" width="104" height="10">
+              <feDropShadow
+                dx="0.1"
+                dy="0.1"
+                stdDeviation="0.4"
+                floodOpacity="0.3"
               />
-            )}
-            {false && (
-              <text
-                x={0}
-                y={gaugeHeight + 4}
-                fontSize={3.8}
-                fontWeight="500"
-                fill="rgba(0,0,0,0.37)"
-                dominantBaseline="hanging"
-                textAnchor="start"
-              >
-                {språk(min.tittel)}
-              </text>
-            )}
-          </React.Fragment>
-        ))}
-
-      {trinn.map(e => {
-        const color = farge(e.på, e.farge);
-        return (
-          <React.Fragment key={e.min}>
-            {e.på && (
-              <rect
-                x={e.min}
-                width={e.max - e.min}
-                y={0}
-                height={gaugeHeight}
-                rx={0}
-                fill={color}
-                stroke="none"
-              >
-                <title>{e.tittel.nb}</title>
-              </rect>
-            )}
-            <SettingsContext.Consumer>
-              {context =>
-                context.visKoder && (
+            </filter>
+            <filter id="f2" x="0" y="0" width="102" height="10">
+              <feDropShadow
+                dx="0.7"
+                dy="0.7"
+                stdDeviation="0.4"
+                floodOpacity="0.3"
+              />
+              )}
+            </filter>
+          </defs>
+          <rect
+            x={0}
+            y={0}
+            width={100}
+            height={gaugeHeight}
+            fill="#888"
+            filter="url(#f1)"
+            stroke="rgba(0,0,0,0.67)"
+            strokeWidth={0.25}
+          />
+          {range &&
+            [range].map(([min, max]) => (
+              <React.Fragment key={min.min}>
+                <Shadow
+                  key={min}
+                  x1={min.min}
+                  y1={0}
+                  x2={max.max}
+                  y2={gaugeHeight}
+                  color1="rgba(128,128,128,0.9)"
+                />
+                <Etikett x1={0.5 * (min.min + min.max)} x2={25} />
+                {min !== max && (
+                  <Etikett x1={0.5 * (max.min + max.max)} x2={75} />
+                )}
+              </React.Fragment>
+            ))}
+          {trinn.map(e => {
+            const colorOff = farge(false, e.farge);
+            const color = farge(e.på, e.farge);
+            return (
+              <React.Fragment key={e.min}>
+                <rect
+                  x={e.min}
+                  width={e.max - e.min}
+                  y={0}
+                  height={gaugeHeight}
+                  rx={0}
+                  stroke="none"
+                >
+                  <title>{e.tittel.nb}</title>
+                  <animate
+                    attributeName="fill"
+                    dur="0.75s"
+                    values={`${colorOff}; ${e.farge}; ${
+                      e.farge
+                    }; ${color}; ${color}`}
+                    keyTimes={`0; ${e.min * 0.005}; 0.5; ${0.75 +
+                      e.min * 0.0}; 1`}
+                    fill="freeze"
+                  />
+                  <animate
+                    attributeName="fill"
+                    dur="0.2s"
+                    begin="mouseover"
+                    values={`${color}; ${e.farge}`}
+                    keyTimes="0; 1"
+                    fill="freeze"
+                  />
+                  <animate
+                    attributeName="fill"
+                    dur="0.6s"
+                    begin="mouseout"
+                    values={`${e.farge}; ${color}`}
+                    keyTimes="0; 1"
+                    fill="freeze"
+                  />
+                </rect>
+                {e.max < 100 && (
+                  <line
+                    x1={e.max}
+                    x2={e.max}
+                    y1={0}
+                    y2={gaugeHeight}
+                    strokeWidth="0.5"
+                    stroke="rgba(0,0,0,0.37)"
+                  />
+                )}
+                {context.visKoder && (
                   <text
                     x={0.5 * (e.min + e.max)}
                     y={0.53 * gaugeHeight}
@@ -177,36 +174,38 @@ const Gauge = ({ trinn, range }) => {
                   >
                     {e.kode[e.kode.length - 1].toLowerCase()}
                   </text>
-                )
-              }
-            </SettingsContext.Consumer>
-            ;
-            {e.max < 100 && (
-              <line
-                x1={e.max}
-                x2={e.max}
-                y1={0}
-                y2={gaugeHeight}
-                strokeWidth="0.5"
-                stroke="rgba(0,0,0,0.37)"
-              />
-            )}
-          </React.Fragment>
-        );
-      })}
-    </svg>
+                )}
+              </React.Fragment>
+            );
+          })}
+        </svg>
+      )}
+    </SettingsContext.Consumer>
   );
 };
 
-const Etikett = ({ x1, x2 }) => (
-  <path
-    d={`M${x1} ${gaugeHeight} C ${x1} ${gaugeHeight +
-      5}, ${x2} ${gaugeHeight}, ${x2} ${gaugeHeight + 4}`}
-    stroke="rgba(0,0,0,0.37)"
-    strokeWidth={0.5}
-    fill="transparent"
-  />
-);
+const Etikett = ({ x1, x2 }) => {
+  return (
+    <path
+      d={`M${x1} ${gaugeHeight} C ${x1} ${gaugeHeight +
+        5}, ${x2} ${gaugeHeight}, ${x2} ${gaugeHeight + 4}`}
+      stroke="rgba(0,0,0,0.37)"
+      strokeWidth={0.5}
+      fill="transparent"
+      strokeDasharray="100px"
+      strokeDashoffset="100px"
+    >
+      <animate
+        begin="0.75s"
+        attributeName="stroke-dashoffset"
+        from="100px"
+        to="0px"
+        dur="0.4s"
+        fill="freeze"
+      />
+    </path>
+  );
+};
 
 const Shadow = ({ x1, x2, y1, y2, color1, color2 }) => {
   return (
