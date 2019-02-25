@@ -10,7 +10,7 @@ function getSecondary(meta) {
   if (!intervall) return;
   if (!Array.isArray(intervall)) intervall = [intervall];
   const items = intervall.map(i => {
-    if (!i.minTekst) return "< " + i.maxTekst;
+    if (!i.minTekst) return i.maxTekst && "< " + i.maxTekst;
     if (!i.maxTekst) return "> " + i.minTekst;
     return `${i.tittel ? i.tittel + " " : ""}${i.minTekst} - ${i.maxTekst}`;
   });
