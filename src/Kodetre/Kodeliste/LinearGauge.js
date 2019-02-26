@@ -11,7 +11,7 @@ function contrastingColor(color) {
   return luminance > 0.5 ? "rgba(0,0,0,0.57)" : "rgba(255,255,255,0.57)";
 }
 
-function farge(erPå, col) {
+function rutefarge(erPå, col) {
   if (erPå) return col;
   return tinycolor.mix(col, new tinycolor("#eee"), 90).toHexString();
 }
@@ -68,9 +68,9 @@ const Gauge = ({ trinn, range }) => {
           <defs>
             <filter id="f1" x="-2" y="0" width="104" height="10">
               <feDropShadow
-                dx="0.1"
-                dy="0.1"
-                stdDeviation="0.4"
+                dx="0.2"
+                dy="0.2"
+                stdDeviation="0.1"
                 floodOpacity="0.3"
               />
             </filter>
@@ -85,15 +85,19 @@ const Gauge = ({ trinn, range }) => {
             </filter>
           </defs>
           <rect
-            x={0}
-            y={0}
-            width={100}
-            height={gaugeHeight}
-            fill="#888"
+            x={-0.3}
+            width={100.6}
+            y={-0.2}
+            height={gaugeHeight + 0.4}
+            fill="#ccc"
             filter="url(#f1)"
-            stroke="rgba(0,0,0,0.67)"
+            _stroke="rgba(0,0,0,0.37)"
             strokeWidth={0.25}
           />
+          {trinn.map(e => {
+            return !e.på && <Rute {...e} visKoder={context.visKoder} />;
+          })}
+
           {range &&
             [range].map(([min, max]) => (
               <React.Fragment key={min.min}>
@@ -112,75 +116,76 @@ const Gauge = ({ trinn, range }) => {
               </React.Fragment>
             ))}
           {trinn.map(e => {
-            const colorOff = farge(false, e.farge);
-            const color = farge(e.på, e.farge);
-            return (
-              <React.Fragment key={e.min}>
-                <rect
-                  x={e.min}
-                  width={e.max - e.min}
-                  y={0}
-                  height={gaugeHeight}
-                  rx={0}
-                  stroke="none"
-                >
-                  <title>{e.tittel.nb}</title>
-                  <animate
-                    attributeName="fill"
-                    dur="0.75s"
-                    values={`${colorOff}; ${e.farge}; ${
-                      e.farge
-                    }; ${color}; ${color}`}
-                    keyTimes={`0; ${e.min * 0.005}; 0.5; ${0.75 +
-                      e.min * 0.0}; 1`}
-                    fill="freeze"
-                  />
-                  <animate
-                    attributeName="fill"
-                    dur="0.2s"
-                    begin="mouseover"
-                    values={`${color}; ${e.farge}`}
-                    keyTimes="0; 1"
-                    fill="freeze"
-                  />
-                  <animate
-                    attributeName="fill"
-                    dur="0.6s"
-                    begin="mouseout"
-                    values={`${e.farge}; ${color}`}
-                    keyTimes="0; 1"
-                    fill="freeze"
-                  />
-                </rect>
-                {e.max < 100 && (
-                  <line
-                    x1={e.max}
-                    x2={e.max}
-                    y1={0}
-                    y2={gaugeHeight}
-                    strokeWidth="0.5"
-                    stroke="rgba(0,0,0,0.37)"
-                  />
-                )}
-                {context.visKoder && (
-                  <text
-                    x={0.5 * (e.min + e.max)}
-                    y={0.53 * gaugeHeight}
-                    fontSize={3.8}
-                    fontWeight="500"
-                    fill={contrastingColor(color)}
-                    dominantBaseline="middle"
-                    textAnchor="middle"
-                  >
-                    {e.kode[e.kode.length - 1].toLowerCase()}
-                  </text>
-                )}
-              </React.Fragment>
-            );
+            return e.på && <Rute {...e} visKoder={context.visKoder} />;
           })}
         </svg>
       )}
     </SettingsContext.Consumer>
+  );
+};
+
+const Rute = ({ farge, på, visKoder, min, max, tittel, kode }) => {
+  const colorOff = rutefarge(false, farge);
+  const color = rutefarge(på, farge);
+  return (
+    <React.Fragment key={min}>
+      <rect
+        x={min}
+        width={max - min}
+        y={0}
+        height={gaugeHeight}
+        rx={0}
+        stroke="none"
+      >
+        <title>{tittel.nb}</title>
+        <animate
+          attributeName="fill"
+          dur="0.75s"
+          values={`${colorOff}; ${farge}; ${farge}; ${color}; ${color}`}
+          keyTimes={`0; ${min * 0.005}; 0.5; ${0.75 + min * 0.0}; 1`}
+          fill="freeze"
+        />
+        <animate
+          attributeName="fill"
+          dur="0.2s"
+          begin="mouseover"
+          values={`${color}; ${farge}`}
+          keyTimes="0; 1"
+          fill="freeze"
+        />
+        <animate
+          attributeName="fill"
+          dur="0.6s"
+          begin="mouseout"
+          values={`${farge}; ${color}`}
+          keyTimes="0; 1"
+          fill="freeze"
+        />
+      </rect>
+      {max < 100 && (
+        <line
+          x1={max}
+          x2={max}
+          y1={0}
+          y2={gaugeHeight}
+          strokeWidth="0.5"
+          stroke="rgba(0,0,0,0.17)"
+        />
+      )}
+      {visKoder && (
+        <text
+          x={0.5 * (min + max)}
+          y={0.53 * gaugeHeight}
+          fontSize={3.8}
+          fontWeight="500"
+          fill={contrastingColor(color)}
+          dominantBaseline="middle"
+          textAnchor="middle"
+        >
+          {kode[kode.length - 1].toLowerCase()}
+        </text>
+      )}
+    </React.Fragment>
   );
 };
 

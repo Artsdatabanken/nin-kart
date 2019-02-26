@@ -5,33 +5,15 @@ import { lagTerreng } from "./terreng";
 import draw from "./visualisering/";
 import sysconfig from "../../../config";
 
-function lagAktiveLag(aktive, iKatalog, opplystKode, config) {
+function lagAktiveLag(aktive, viserKatalog, opplystKode, config) {
   Object.keys(aktive).forEach(kode =>
-    lagEttLag(aktive[kode], opplystKode, iKatalog, config)
+    lagEttLag(aktive[kode], opplystKode, viserKatalog, config)
   );
 }
 
 function lagEttLag(lag, opplystKode, viserKatalog, config) {
   if (!lag.erSynlig && opplystKode !== lag.kode) return;
   opprettAktivtLag(lag, opplystKode, config, viserKatalog);
-}
-
-function opprettEttLag(drawArgs, config) {
-  const renderer = draw[drawArgs.aktivtKartformat];
-  const kartformat = drawArgs.kartformat[drawArgs.aktivtKartformat];
-  drawArgs.kartformat = kartformat;
-  if (!renderer) {
-    console.warn("Unknown kartformat", drawArgs.aktivtKartformat);
-    return;
-  }
-  const source = renderer.lagSource(kartformat, drawArgs.bbox);
-
-  if (renderer.lagStyle) {
-    const style = renderer.lagStyle(kartformat, drawArgs);
-    config.styles[style.name] = style.value;
-  }
-  config.sources[drawArgs.kode] = source;
-  config.layers = Object.assign(config.layers, renderer.drawAll(drawArgs));
 }
 
 function farge(farge, viserKatalog) {
@@ -65,6 +47,25 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
   if (viz.kanHaTerreng) lagTerreng(lag.terreng, opplystKode, config);
 }
 
+function opprettEttLag(drawArgs, config) {
+  const renderer = draw[drawArgs.aktivtKartformat];
+  const kartformat = drawArgs.kartformat[drawArgs.aktivtKartformat];
+  drawArgs.kartformat = kartformat;
+  console.log(drawArgs.kode, drawArgs.aktivtKartformat, drawArgs.kartformat);
+  if (!renderer) {
+    console.warn("Unknown kartformat", drawArgs.aktivtKartformat);
+    return;
+  }
+  const source = renderer.lagSource(kartformat, drawArgs.bbox);
+
+  if (renderer.lagStyle) {
+    const style = renderer.lagStyle(kartformat, drawArgs);
+    config.styles[style.name] = style.value;
+  }
+  config.sources[drawArgs.kode] = source;
+  config.layers = Object.assign(config.layers, renderer.drawAll(drawArgs));
+}
+
 function lagToppnivå(props) {
   const config = {
     sources: {},
@@ -90,7 +91,7 @@ function createScene(props: Object) {
 function updateScene(config: Object, props: Object) {
   const bakgrunn = props.aktiveLag.bakgrunnskart;
   const bak = bakgrunn.kartformat[bakgrunn.aktivtKartformat];
-  config.scene.background.color = bak.land_farge ? bak.land_farge : "#f2f2f2";
+  config.scene.background.color = bak.land_farge || "#f2f2f2";
 
   config.layers = {};
   const meta = props.meta;
@@ -115,6 +116,7 @@ function updateScene(config: Object, props: Object) {
   }
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config);
   lagTemp(config);
+  console.log(config);
   return config;
 }
 
