@@ -5,13 +5,17 @@ import Bildeavatar from "./Bildeavatar";
 import VolumIndikator from "./VolumIndikator";
 import opplyst from "../../Kart/LeafletTangram/scene/visualisering/palette/opplyst";
 
+function hack(symbol, intervall) {
+  return intervall.match(/[<>]/) ? intervall : symbol + " " + intervall;
+}
+
 function getSecondary(meta) {
   let { intervall } = meta;
   if (!intervall) return;
   if (!Array.isArray(intervall)) intervall = [intervall];
   const items = intervall.map(i => {
-    if (!i.minTekst) return i.maxTekst && "< " + i.maxTekst;
-    if (!i.maxTekst) return "> " + i.minTekst;
+    if (!i.minTekst) return hack("<", i.maxTekst);
+    if (!i.maxTekst) return hack(">", i.minTekst);
     return `${i.tittel ? i.tittel + " " : ""}${i.minTekst} - ${i.maxTekst}`;
   });
   const r = items.join(", ") + " " + (intervall[0].måleenhet || "");
