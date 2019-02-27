@@ -1,7 +1,18 @@
 {
-  "name": "nin-innsyn",
-  "version": "0.2.0",
-  "private": true,
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "bugs": {
+    "url": "https://github.com/Artsdatabanken/nin-innsyn/issues"
+  },
   "dependencies": {
     "@artsdatabanken/typesystem": "^9.1.1",
     "@material-ui/core": "^3.9.2",
@@ -17,16 +28,6 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5",
     "tangram": "^0.18.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --coverage",
-    "eject": "react-scripts eject",
-    "test:watch": "react-scripts test --watch",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public -o build/storybook",
-    "report-coverage": "coveralls < coverage/lcov.info"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^4.1.13",
@@ -44,43 +45,38 @@
     "pretty-quick": "^1.10.0",
     "storybook-addon-material-ui": "^0.9.0-alpha.17"
   },
-  "bugs": {
-    "url": "https://github.com/Artsdatabanken/nin-innsyn/issues"
-  },
   "eslintConfig": {
     "extends": "react-app",
     "plugins": [
       "react-hooks"
     ],
     "rules": {
-      "react-hooks/rules-of-hooks": 2,
-      "react-hooks/exhaustive-deps": 2
+      "react-hooks/exhaustive-deps": 2,
+      "react-hooks/rules-of-hooks": 2
     }
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "jest": {
-    "coverageReporters": [
-      "lcov"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
-  },
-  "contributors": [
-    "Bjørn Reppen <bjreppen@gmail.com>",
-    "Jarle Pedersen <jarle.pedersen@norconsult.com>"
-  ],
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
   },
-  "license": "MIT"
+  "jest": {
+    "coverageReporters": [
+      "lcov"
+    ]
+  },
+  "license": "MIT",
+  "name": "nin-innsyn",
+  "private": true,
+  "scripts": {
+    "build": "react-scripts build",
+    "build-storybook": "build-storybook -s public -o build/storybook",
+    "eject": "react-scripts eject",
+    "report-coverage": "coveralls < coverage/lcov.info",
+    "start": "react-scripts start",
+    "storybook": "start-storybook -p 9009 -s public",
+    "test": "react-scripts test --coverage",
+    "test:watch": "react-scripts test --watch"
+  },
+  "version": "0.2.0"
 }
