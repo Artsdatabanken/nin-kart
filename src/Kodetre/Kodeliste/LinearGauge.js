@@ -6,9 +6,10 @@ import { SettingsContext } from "../../SettingsContext";
 
 const gaugeHeight = 7;
 
-function contrastingColor(color) {
+function contrastingColor(erPå, color) {
   const luminance = new tinycolor(color).getLuminance();
-  return luminance > 0.5 ? "rgba(0,0,0,0.57)" : "rgba(255,255,255,0.57)";
+  const a = erPå ? 0.57 : 0.3;
+  return luminance > 0.5 ? `rgba(0,0,0,${a})` : `rgba(255,255,255,${a})`;
 }
 
 function rutefarge(erPå, col) {
@@ -64,7 +65,7 @@ const Gauge = ({ trinn, range }) => {
   return (
     <SettingsContext.Consumer>
       {context => (
-        <svg viewBox="-2 -1 104 13">
+        <svg viewBox="-3 -1 104 13">
           <defs>
             <filter id="f1" x="-2" y="0" width="104" height="10">
               <feDropShadow
@@ -84,16 +85,6 @@ const Gauge = ({ trinn, range }) => {
               )}
             </filter>
           </defs>
-          <rect
-            x={-0.3}
-            width={100.6}
-            y={-0.2}
-            height={gaugeHeight + 0.4}
-            fill="#ccc"
-            filter="url(#f1)"
-            _stroke="rgba(0,0,0,0.37)"
-            strokeWidth={0.25}
-          />
           {trinn.map(e => {
             return !e.på && <Rute {...e} visKoder={context.visKoder} />;
           })}
@@ -101,14 +92,6 @@ const Gauge = ({ trinn, range }) => {
           {range &&
             [range].map(([min, max]) => (
               <React.Fragment key={min.min}>
-                <Shadow
-                  key={min}
-                  x1={min.min}
-                  y1={0}
-                  x2={max.max}
-                  y2={gaugeHeight}
-                  color1="rgba(128,128,128,0.9)"
-                />
                 <Etikett x1={0.5 * (min.min + min.max)} x2={25} />
                 {min !== max && (
                   <Etikett x1={0.5 * (max.min + max.max)} x2={75} />
@@ -132,17 +115,21 @@ const Rute = ({ farge, på, visKoder, min, max, tittel, kode }) => {
       <rect
         x={min}
         width={max - min}
-        y={0}
-        height={gaugeHeight}
-        rx={0}
-        stroke="none"
+        y={på ? 0 : 0.75}
+        height={på ? gaugeHeight : gaugeHeight - 1.5}
+        rx={på ? 1.5 : 0}
+        stroke={på ? "rgba(99,99,99,0.55)" : "rgba(0,0,0,0.11)"}
+        strokeWidth={0.4}
+        fill={colorOff}
+        filter={på && "url(#f2)"}
       >
         <title>{tittel.nb}</title>
         <animate
           attributeName="fill"
-          dur="0.75s"
+          begin="0.2s"
+          dur="1.3s"
           values={`${colorOff}; ${farge}; ${farge}; ${color}; ${color}`}
-          keyTimes={`0; ${min * 0.005}; 0.5; ${0.75 + min * 0.0}; 1`}
+          keyTimes={`0; ${min * 0.005}; 0.5; ${0.5 + min * 0.005}; 1`}
           fill="freeze"
         />
         <animate
@@ -162,23 +149,13 @@ const Rute = ({ farge, på, visKoder, min, max, tittel, kode }) => {
           fill="freeze"
         />
       </rect>
-      {max < 100 && (
-        <line
-          x1={max}
-          x2={max}
-          y1={0}
-          y2={gaugeHeight}
-          strokeWidth="0.5"
-          stroke="rgba(0,0,0,0.17)"
-        />
-      )}
       {visKoder && (
         <text
           x={0.5 * (min + max)}
           y={0.53 * gaugeHeight}
           fontSize={3.8}
           fontWeight="500"
-          fill={contrastingColor(color)}
+          fill={contrastingColor(på, color)}
           dominantBaseline="middle"
           textAnchor="middle"
         >
@@ -192,8 +169,8 @@ const Rute = ({ farge, på, visKoder, min, max, tittel, kode }) => {
 const Etikett = ({ x1, x2 }) => {
   return (
     <path
-      d={`M${x1} ${gaugeHeight} C ${x1} ${gaugeHeight +
-        5}, ${x2} ${gaugeHeight}, ${x2} ${gaugeHeight + 4}`}
+      d={`M${x1} ${gaugeHeight} C ${x1} ${gaugeHeight + 5}, ${0.5 *
+        (x1 + x2)} ${gaugeHeight + 2}, ${x2} ${gaugeHeight + 4}`}
       stroke="rgba(0,0,0,0.37)"
       strokeWidth={0.5}
       fill="transparent"
@@ -205,26 +182,9 @@ const Etikett = ({ x1, x2 }) => {
         attributeName="stroke-dashoffset"
         from="100px"
         to="0px"
-        dur="0.4s"
+        dur="0.6s"
         fill="freeze"
       />
     </path>
-  );
-};
-
-const Shadow = ({ x1, x2, y1, y2, color1, color2 }) => {
-  return (
-    <g>
-      <rect
-        x={x1}
-        y={y1}
-        width={x2 - x1}
-        height={y2 - y1}
-        stroke={color1}
-        fill="rgba(0,0,0,0.8)"
-        strokeWidth="0"
-        filter={"url(#f2)"}
-      />
-    </g>
   );
 };
