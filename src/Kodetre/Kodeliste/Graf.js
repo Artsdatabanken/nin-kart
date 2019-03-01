@@ -42,6 +42,14 @@ const titler = {
     subtitle:
       "Art med høyere frekvens og/eller dekning i én av to eller flere naturtyper som sammenliknes. For skillearter angis hvilke basistrinn langs hvilke LKM’er de er skillearter for, på en standardisert måte. F.eks. betyr «absolutt skilleart[UF∙f|g]» at arten er absolutt skilleart for uttørkingsfare (UF) basistrinn f mot basistrinn g."
   },
+  "svak_relativ skilleart": {
+    title: "Svak relativ skilleart",
+    subtitle: ""
+  },
+  "sterk_relativ skilleart": {
+    title: "Sterk relativ skilleart",
+    subtitle: ""
+  },
   absolutt_skilleart: {
     title: "Absolutte skillearter",
     subtitle:
