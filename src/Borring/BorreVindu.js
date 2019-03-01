@@ -28,7 +28,7 @@ const styles = {
     height: 280,
     objectFit: "cover"
   },
-  bareAktive: { position: "absolute", right: 0 }
+  bareAktive: { float: "right" }
 };
 
 class BorreVindu extends Component {
@@ -69,8 +69,8 @@ class BorreVindu extends Component {
             )}
           </div>
         </CardMedia>
-        <CardActionArea style={{ backgroundColor: "#ccc" }} />
-        <CardActions>
+        <CardActionArea />
+        <CardActions style={{ marginLeft: 8, display: "block" }}>
           {vis ? (
             <Button
               size="small"
