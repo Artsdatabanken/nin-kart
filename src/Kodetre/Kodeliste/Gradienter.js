@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ListSubheader } from "@material-ui/core";
-import LinearGauge from "./LinearGauge";
+import Gradient from "./LinearGauge";
 
 class Gradienter extends Component {
   render() {
@@ -18,17 +18,16 @@ class Gradienter extends Component {
         {Object.keys(gradient).map(type => {
           const gr = gradient[type];
           return (
-            <div key={type}>
-              <LinearGauge
-                tittel={type}
-                url={gr.url}
-                trinn={gr.trinn}
-                onNavigate={onNavigate}
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
-                opplystKode={opplystKode}
-              />
-            </div>
+            <Gradient
+              key={type}
+              tittel={type}
+              url={gr.url}
+              trinn={gr.trinn}
+              onNavigate={onNavigate}
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+              opplystKode={opplystKode}
+            />
           );
         })}
       </React.Fragment>

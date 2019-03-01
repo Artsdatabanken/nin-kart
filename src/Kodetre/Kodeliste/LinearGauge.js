@@ -17,7 +17,7 @@ function rutefarge(erPå, col) {
   return tinycolor.mix(col, new tinycolor("#eee"), 90).toHexString();
 }
 
-export default class LinearGauge extends Component {
+export default class Gradient extends Component {
   render() {
     const { tittel, trinn, onNavigate, url } = this.props;
     const antall = trinn.length;

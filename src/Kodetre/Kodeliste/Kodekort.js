@@ -73,7 +73,7 @@ class Kodekort extends React.Component {
       onNavigate
     } = this.props;
     return (
-      <Card square={false} style={{ backgroundColor: "#ccc" }}>
+      <Card square={false}>
         <CardMedia
           style={this.styles(url)}
           onClick={this.handleOpen}
@@ -92,7 +92,6 @@ class Kodekort extends React.Component {
             {overordnet.length > 0 && (
               <React.Fragment>
                 <Button
-                  xsize="small"
                   variant="contained"
                   className={classes.button}
                   onClick={this.handleAktiver}
