@@ -92,9 +92,6 @@ class Kodekort extends React.Component {
           <CardActions>
             {overordnet.length > 0 && (
               <React.Fragment>
-                <div style={{ position: "absolute", _left: 100, top: 256 }}>
-                  <Chip label={kode} />
-                </div>
                 <Button
                   variant="contained"
                   className={classes.button}
