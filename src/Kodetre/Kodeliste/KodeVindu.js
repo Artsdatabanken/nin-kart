@@ -1,5 +1,6 @@
 import React from "react";
-import { SettingsContext } from "../../SettingsContext";
+import { Chip } from "@material-ui/core";
+
 import språk from "../../språk";
 import Graf from "./Graf";
 import Flagg from "./Flagg";
@@ -73,23 +74,27 @@ class KodeVindu extends React.Component {
             geometrierVindu={antallNaturomrader}
           />
         )}
-        <SettingsContext.Consumer>
-          {context => (
-            <Kodeliste
-              title="Innholder"
-              parentkode={kode}
-              størsteAreal={data.størsteAreal}
-              apidata={data.barn}
-              metadata={meta.barn}
-              onNavigate={onNavigate}
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
-              opplystKode={opplystKode}
-              visKode={context.visKoder}
-              onUpdateMetaProp={onUpdateMetaProp}
-            />
-          )}
-        </SettingsContext.Consumer>
+        <div
+          style={{
+            paddingLeft: 24,
+            paddingTop: 0,
+            paddingBottom: 0
+          }}
+        >
+          <Chip label={kode} />
+        </div>
+        <Kodeliste
+          title="Innholder"
+          parentkode={kode}
+          størsteAreal={data.størsteAreal}
+          apidata={data.barn}
+          metadata={meta.barn}
+          onNavigate={onNavigate}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          opplystKode={opplystKode}
+          onUpdateMetaProp={onUpdateMetaProp}
+        />
         <Gradienter gradient={meta.gradient} onNavigate={onNavigate} />
         <Graf graf={meta.graf} parentkode={kode} onNavigate={onNavigate} />
       </div>
