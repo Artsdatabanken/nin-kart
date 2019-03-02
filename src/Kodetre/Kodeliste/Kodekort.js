@@ -1,6 +1,5 @@
 import {
   Button,
-  Chip,
   Card,
   CardActions,
   CardMedia,
