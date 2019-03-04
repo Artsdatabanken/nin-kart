@@ -1,4 +1,3 @@
-import typesystem from "@artsdatabanken/typesystem";
 import React from "react";
 import { withRouter } from "react-router";
 import { withStyles } from "@material-ui/core";
