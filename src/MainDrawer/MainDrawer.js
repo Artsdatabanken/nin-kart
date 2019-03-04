@@ -97,7 +97,7 @@ class MainDrawer extends Component {
             <ListItem onClick={this.handleClickLogo} button>
               <div className={classes.link}>
                 <BildeAvatar
-                  url="Natur_i_Norge/Datakilde/Artsdatabanken"
+                  url="Datakilde/Artsdatabanken"
                   kode="OR-AD"
                   size="small"
                 />
