@@ -1,10 +1,14 @@
-import { ListItem, ListItemText } from "@material-ui/core/";
+import {
+  Avatar,
+  ListItem,
+  ListItemText,
+  ListItemAvatar
+} from "@material-ui/core/";
 import React from "react";
 import språk from "../../språk";
 
-const Tagger = ({ farge, overordnet, onNavigate, classes }) => {
-  if (!overordnet) return null;
-  return overordnet.map(item => (
+const Overordnet = ({ farge, overordnet, onNavigate, classes }) => {
+  return overordnet.map((item, i) => (
     <ListItem
       key={item.url}
       dense
@@ -14,9 +18,12 @@ const Tagger = ({ farge, overordnet, onNavigate, classes }) => {
         onNavigate(item.url);
       }}
     >
+      <ListItemAvatar>
+        <Avatar>{overordnet.length - i - 1}</Avatar>
+      </ListItemAvatar>
       <ListItemText primary={språk(item.tittel)} secondary={item.nivå} />
     </ListItem>
   ));
 };
 
-export default Tagger;
+export default Overordnet;

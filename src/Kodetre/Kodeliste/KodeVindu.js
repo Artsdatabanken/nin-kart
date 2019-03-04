@@ -1,6 +1,5 @@
-import Tagger from "./Tagger";
+import Klassifisering from "./Tagger";
 import React, { useState } from "react";
-import { withStyles } from "@material-ui/core";
 import språk from "../../språk";
 import Graf from "./Graf";
 import Flagg from "./Flagg";
@@ -9,21 +8,6 @@ import Kodeliste from "./Kodeliste";
 import Statistikk from "./Statistikk";
 import Gradienter from "./Gradienter";
 import Ekspander from "./Ekspander";
-
-const styles = theme => ({
-  root: {
-    width: "100%"
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    flexBasis: "33.33%",
-    flexShrink: 0
-  },
-  secondaryHeading: {
-    fontSize: theme.typography.pxToRem(15),
-    color: theme.palette.text.secondary
-  }
-});
 
 const KodeVindu = ({
   erAktivert,
@@ -35,8 +19,7 @@ const KodeVindu = ({
   onMouseLeave,
   onToggleLayer,
   opplystKode,
-  onUpdateMetaProp,
-  classes
+  onUpdateMetaProp
 }) => {
   const [expand, setExpand] = useState({
     tagger: false,
@@ -45,7 +28,6 @@ const KodeVindu = ({
     gradient: false,
     flagg: false
   });
-  console.log(expand);
   if (!meta) return null;
   const {
     kode,
@@ -94,10 +76,10 @@ const KodeVindu = ({
         visible={overordnet.length > 0}
         expanded={expand.tagger}
         heading="Klassifisering"
-        heading2={"Nivå " + (overordnet.length + 1)}
+        heading2={"Nivå " + overordnet.length}
         onExpand={() => setExpand({ ...expand, tagger: !expand.tagger })}
       >
-        <Tagger overordnet={overordnet} onNavigate={onNavigate} />
+        <Klassifisering overordnet={overordnet} onNavigate={onNavigate} />
       </Ekspander>
 
       <Ekspander
@@ -172,4 +154,5 @@ function toppnivåNavn(forfedre) {
   if (forfedre.length < 2) return null;
   return språk(forfedre[forfedre.length - 2].tittel);
 }
-export default withStyles(styles)(KodeVindu);
+
+export default KodeVindu;

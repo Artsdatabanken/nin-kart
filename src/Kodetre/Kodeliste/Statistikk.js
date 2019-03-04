@@ -5,10 +5,16 @@ import React from "react";
 import prettyprint from "../../prettyprint";
 
 const styles = {
+  list: { paddingTop: 0 },
   li: {
     fontSize: 13,
     color: "rgba(0,0,0,0.87)",
     paddingLeft: 16
+  },
+  liroot: {
+    backgroundColor: "red",
+    paddingTop: 0,
+    paddingBottom: 0
   },
   color: {
     color: "rgba(0,0,0,0.87)"
@@ -40,7 +46,7 @@ const Statistikk = ({
 const Ingress = ({ infoUrl, ingress, classes }) => {
   if (!ingress) return null;
   return (
-    <ListItem>
+    <ListItem className={classes.list}>
       <ListItemText
         classes={{
           primary: classes.li
@@ -72,10 +78,11 @@ const Stats = ({ stats, tittel, toppnavn, classes }) => {
   const { areal, arealPrefix, arter } = stats;
   if (!areal) return null;
   return (
-    <ListItem>
+    <ListItem className={classes.liroot}>
       <ListItemText
-        classes={{
-          primary: classes.li
+        _classes={{
+          primary: classes.li,
+          root: classes.liroot
         }}
       >
         Det er kartlagt <b>{prettyprint.prettyPrintAreal(areal)}</b>
