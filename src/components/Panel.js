@@ -5,21 +5,13 @@ import classNames from "classnames";
 const styles = {
   rot: {
     height: "100vh",
-    overflowY: "auto"
+    overflowX: "hidden",
+    overflowY: "overlay"
   }
 };
 
 const Panel = ({ classes, style, children }) => (
-  <div className={classNames(classes.rot)}>
-    <div
-      style={{
-        overflowX: "hidden",
-        overflowY: "auto"
-      }}
-    >
-      {children}
-    </div>
-  </div>
+  <div className={classNames(classes.rot)}>{children}</div>
 );
 
 export default withStyles(styles)(Panel);
