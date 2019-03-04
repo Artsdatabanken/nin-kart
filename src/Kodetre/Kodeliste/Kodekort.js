@@ -120,7 +120,7 @@ class Kodekort extends React.Component {
               {bbox && (
                 <Button
                   className={classes.button}
-                  onClick={this.handleFitBounds}
+                  onClick={this.props.onFitBounds}
                 >
                   <ZoomOutMap className={classes.iconSmall} />
                   Zoom til
@@ -136,7 +136,6 @@ class Kodekort extends React.Component {
   handleClickAktiveLag = () => this.props.history.push("/");
   handleClickTweaks = () =>
     this.props.history.push(this.props.history.location.pathname + "?vis");
-  handleFitBounds = () => this.props.onFitBounds(this.props.bbox);
 }
 
 export default withRouter(withStyles(styles)(Kodekort));

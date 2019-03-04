@@ -56,9 +56,7 @@ class Grunnkart extends React.Component {
     this.setState({ actualBounds: bounds, fitBounds: null });
   };
 
-  handleFitBounds = bbox => {
-    this.setState({ fitBounds: bbox });
-  };
+  handleFitBounds = () => this.setState({ fitBounds: this.state.meta.bbox });
 
   handleBoundsChange = bbox => {
     this.setState({ actualBounds: bbox });
