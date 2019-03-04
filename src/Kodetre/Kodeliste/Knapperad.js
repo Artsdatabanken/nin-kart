@@ -9,7 +9,7 @@ const styles = {
     marginRight: 8
   },
   button: {
-    color: "rgba(0,0,0,0.77)",
+    color: "rgba(0,0,0,0.6)",
     marginRight: 8
   },
   cardActions: {
