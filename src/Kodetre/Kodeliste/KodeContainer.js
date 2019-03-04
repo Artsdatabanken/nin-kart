@@ -65,7 +65,6 @@ class KodeContainer extends React.Component<Props, State> {
       onToggleLayer,
       onUpdateMetaProp
     } = this.props;
-    if (!meta) return null;
     return (
       <KodeVindu
         data={data}

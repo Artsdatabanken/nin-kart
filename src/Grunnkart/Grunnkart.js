@@ -56,9 +56,7 @@ class Grunnkart extends React.Component {
     this.setState({ actualBounds: bounds, fitBounds: null });
   };
 
-  handleFitBounds = bbox => {
-    this.setState({ fitBounds: bbox });
-  };
+  handleFitBounds = () => this.setState({ fitBounds: this.state.meta.bbox });
 
   handleBoundsChange = bbox => {
     this.setState({ actualBounds: bbox });
@@ -90,14 +88,8 @@ class Grunnkart extends React.Component {
     });
   };
 
-  handleToggleLayer = (kode, enabled) => {
-    if (enabled) this.addSelected(this.state.meta);
-    else {
-      const koder = this.state.aktiveLag.filter(barn => barn.kode !== kode);
-      this.setState({
-        aktiveLag: koder
-      });
-    }
+  handleToggleLayer = () => {
+    this.addSelected(this.state.meta);
   };
 
   _handleKeyDown = event => {

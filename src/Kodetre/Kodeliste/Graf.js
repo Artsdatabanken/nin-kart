@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Kodeliste from "./Kodeliste";
+import Ekspander from "./Ekspander";
 
 const titler = {
   mengdeart: {
@@ -57,35 +58,42 @@ const titler = {
   }
 };
 
-class Graf extends Component {
-  render() {
-    const {
-      graf,
-      parentkode,
-      onNavigate,
-      onMouseEnter,
-      onMouseLeave,
-      opplystKode
-    } = this.props;
-    if (!graf) return null;
-    return graf.map(relasjon => {
-      const kant = relasjon.type;
-      const x = titler[kant] || { title: kant };
-      return (
+const Graf = ({
+  graf,
+  parentkode,
+  onNavigate,
+  onMouseEnter,
+  onMouseLeave,
+  opplystKode
+}) => {
+  const [expand, setExpand] = useState({});
+  if (!graf) return null;
+  return graf.map(relasjon => {
+    const key = relasjon.type;
+    const x = titler[key] || { title: key };
+    const antall = relasjon.noder.length;
+    return (
+      <Ekspander
+        key={key}
+        expanded={expand[key]}
+        visible={antall > 0}
+        heading={x.title}
+        heading2={antall === 1 ? "1 element" : antall + " elementer"}
+        onExpand={() => setExpand({ ...expand, [key]: !expand[key] })}
+      >
         <Kodeliste
-          key={kant}
           parentkode={parentkode}
           onNavigate={onNavigate}
-          title={x.title}
+          title=""
           subtitle={x.subtitle}
           metadata={relasjon.noder}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           opplystKode={opplystKode}
         />
-      );
-    });
-  }
-}
+      </Ekspander>
+    );
+  });
+};
 
 export default Graf;

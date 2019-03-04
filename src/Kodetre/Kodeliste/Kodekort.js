@@ -1,27 +1,10 @@
-import {
-  Button,
-  Card,
-  CardActions,
-  CardMedia,
-  withStyles
-} from "@material-ui/core";
-import { LibraryAdd, ZoomOutMap, ColorLens } from "@material-ui/icons/";
+import { Card, CardMedia } from "@material-ui/core";
 import React from "react";
-import { withRouter } from "react-router";
 import config from "../../config";
-import farger from "../../farger";
 import språk from "../../språk";
 import Tittelblokk from "./Tittelblokk";
-
-const styles = {
-  iconSmall: {
-    fontSize: 20,
-    marginRight: 8
-  },
-  button: {
-    marginRight: 8
-  }
-};
+import tinycolor from "tinycolor2";
+import Knapperad from "./Knapperad";
 
 class Kodekort extends React.Component {
   state = {
@@ -33,9 +16,6 @@ class Kodekort extends React.Component {
   };
   handleOpen = () => {
     this.setState({ visBilde: true });
-  };
-  handleAktiver = () => {
-    this.props.onToggleLayer(this.props.kode, true);
   };
 
   erTransparent(url) {
@@ -50,12 +30,12 @@ class Kodekort extends React.Component {
         minHeight: 297,
         marginTop: 142,
         marginBottom: 16,
-        filter: "drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.2)",
+        filter: "drop-shadow(rgba(0, 0, 0, 0.5) 5px 5px 4px)",
         backgroundSize: "contain"
       };
     return {
       minHeight: 297,
-      backgroundSize: "cover"
+      _backgroundSize: "cover"
     };
   }
 
@@ -63,6 +43,7 @@ class Kodekort extends React.Component {
     const {
       kode,
       url,
+      farge,
       prefiks,
       bbox,
       tittel,
@@ -70,8 +51,13 @@ class Kodekort extends React.Component {
       overordnet,
       classes,
       erAktivert,
-      onNavigate
+      onNavigate,
+      onFitBounds,
+      onToggleLayer
     } = this.props;
+    const tc = new tinycolor(farge);
+    const kontrastfarge =
+      tc.getLuminance() > 0.6 ? "rgba(0,0,0,0.77)" : "rgba(255,255,255,0.77)";
     return (
       <Card square={false}>
         <CardMedia
@@ -82,60 +68,31 @@ class Kodekort extends React.Component {
         />
         <Tittelblokk
           tittel={språk(tittel)}
+          farge={tc.desaturate(30).toHexString()}
+          chipFarge={tc
+            //            .desaturate(10)
+            .lighten(10)
+            .toHexString()}
+          kontrastfarge={kontrastfarge}
           nivå={nivå}
           kode={kode}
           prefiks={prefiks}
           onNavigate={onNavigate}
           overordnet={overordnet}
-        >
-          <CardActions>
-            {overordnet.length > 0 && (
-              <React.Fragment>
-                <Button
-                  variant="contained"
-                  className={classes.button}
-                  onClick={this.handleAktiver}
-                  disabled={erAktivert}
-                >
-                  <LibraryAdd className={classes.iconSmall} />
-                  Aktivér
-                </Button>
-                <Button
-                  style={{
-                    color: farger.lys[prefiks]
-                  }}
-                  className={classes.button}
-                  variant="text"
-                  onClick={this.handleClickTweaks}
-                >
-                  <ColorLens className={classes.iconSmall} />
-                  Vis
-                </Button>
-                {bbox && (
-                  <Button
-                    style={{
-                      color: farger.lys[prefiks]
-                    }}
-                    className={classes.button}
-                    variant="text"
-                    onClick={this.handleFitBounds}
-                  >
-                    <ZoomOutMap className={classes.iconSmall} />
-                    Zoom til
-                  </Button>
-                )}
-              </React.Fragment>
-            )}
-          </CardActions>
-        </Tittelblokk>
+        />
+        {overordnet.length > 0 && (
+          <Knapperad
+            overordnet={overordnet}
+            classes={classes}
+            erAktivert={erAktivert}
+            bbox={bbox}
+            onFitBounds={onFitBounds}
+            onToggleLayer={onToggleLayer}
+          />
+        )}
       </Card>
     );
   }
-
-  handleClickAktiveLag = () => this.props.history.push("/");
-  handleClickTweaks = () =>
-    this.props.history.push(this.props.history.location.pathname + "?vis");
-  handleFitBounds = () => this.props.onFitBounds(this.props.bbox);
 }
 
-export default withRouter(withStyles(styles)(Kodekort));
+export default Kodekort;

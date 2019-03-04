@@ -2,15 +2,12 @@ import { Avatar, Chip, withStyles } from "@material-ui/core";
 import { withTheme } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
-import farger from "../../farger";
-import Tagger from "./Tagger";
 
 const styles = {
   block: {
     padding: "16px 24px 20px"
   },
   h1: {
-    color: "#eee",
     marginTop: 0,
     marginBottom: 0,
     overflow: "hidden",
@@ -18,7 +15,6 @@ const styles = {
     width: "100%"
   },
   nivå: {
-    color: "#eee",
     textTransform: "capitalize"
   }
 };
@@ -28,6 +24,9 @@ const Tittelblokk = ({
   erAktivert,
   tittel,
   kode,
+  farge,
+  chipFarge,
+  kontrastfarge,
   prefiks,
   nivå,
   overordnet,
@@ -37,29 +36,41 @@ const Tittelblokk = ({
   children
 }) => {
   return (
-    <div
-      className={classes.block}
-      style={{ backgroundColor: farger.mørk[prefiks] || "hsl(16, 0%, 50%)" }}
-    >
-      {false && (
-        <div
-          style={{ position: "relative", top: -72, right: -10, float: "right" }}
+    <React.Fragment>
+      <div style={{ position: "relative", top: -72, right: -10 }} />
+      <div
+        className={classes.block}
+        style={{
+          position: "relative",
+          backgroundColor: farge || "hsl(16, 0%, 50%)"
+        }}
+      >
+        <Chip
+          style={{
+            backgroundColor: chipFarge,
+            position: "absolute",
+            top: -18,
+            boxShadow:
+              "0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)"
+          }}
+          label={kode.slice(3)}
+          clickable={true}
+          avatar={<Avatar>{kode.slice(0, 2)}</Avatar>}
+        />
+        <Typography
+          variant="h6"
+          className={classes.h1}
+          style={{ color: kontrastfarge }}
+          gutterBottom
         >
-          <Chip
-            label={kode.slice(3) + " " + tittel}
-            clickable={true}
-            avatar={<Avatar>{kode.slice(0, 2)}</Avatar>}
-          />
-          <div className={classes.h1}>{tittel}</div>
-        </div>
-      )}
-      <Typography variant="h6" className={classes.h1} gutterBottom>
-        {tittel}
-      </Typography>
-      <Typography className={classes.nivå}>{nivå}</Typography>
-      <Tagger overordnet={overordnet} onNavigate={onNavigate} />
-      {children}
-    </div>
+          {tittel}
+        </Typography>
+        <Typography style={{ color: kontrastfarge }} className={classes.nivå}>
+          {nivå}
+        </Typography>
+        {children}
+      </div>
+    </React.Fragment>
   );
 };
 
