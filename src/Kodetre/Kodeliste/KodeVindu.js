@@ -8,6 +8,7 @@ import Kodeliste from "./Kodeliste";
 import Statistikk from "./Statistikk";
 import Gradienter from "./Gradienter";
 import Ekspander from "./Ekspander";
+import Ingress from "./Ingress";
 
 const KodeVindu = ({
   erAktivert,
@@ -23,6 +24,7 @@ const KodeVindu = ({
 }) => {
   const [expand, setExpand] = useState({
     tagger: false,
+    ingress: false,
     stats: false,
     innhold: false,
     gradient: false,
@@ -83,15 +85,22 @@ const KodeVindu = ({
       </Ekspander>
 
       <Ekspander
-        visible={prefiks !== "AO"}
-        expanded={expand.stats}
+        visible={!!ingress}
+        expanded={expand.ingres}
         heading="Beskrivelse"
+        onExpand={() => setExpand({ ...expand, ingres: !expand.ingres })}
+      >
+        <Ingress beskrivelse={ingress} infoUrl={infoUrl} />
+      </Ekspander>
+      <Ekspander
+        visible={prefiks !== "AO" && !!stats}
+        expanded={expand.stats}
+        heading="Statistikk"
         onExpand={() => setExpand({ ...expand, stats: !expand.stats })}
       >
         <Statistikk
           tittel={språk(meta.tittel)}
           toppnavn={toppnivåNavn(meta.overordnet)}
-          ingress={ingress}
           infoUrl={infoUrl}
           stats={stats}
           arealVindu={antallArter}

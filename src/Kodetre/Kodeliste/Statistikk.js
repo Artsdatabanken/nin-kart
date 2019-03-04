@@ -1,4 +1,3 @@
-import typesystem from "@artsdatabanken/typesystem";
 import { List, ListItem, ListItemText } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import React from "react";
@@ -12,7 +11,6 @@ const styles = {
     paddingLeft: 16
   },
   liroot: {
-    backgroundColor: "red",
     paddingTop: 0,
     paddingBottom: 0
   },
@@ -33,7 +31,6 @@ const Statistikk = ({
   classes
 }) => (
   <List>
-    <Ingress infoUrl={infoUrl} ingress={ingress} classes={classes} />
     <Stats
       stats={stats}
       toppnavn={toppnavn}
@@ -43,36 +40,6 @@ const Statistikk = ({
   </List>
 );
 
-const Ingress = ({ infoUrl, ingress, classes }) => {
-  if (!ingress) return null;
-  return (
-    <ListItem className={classes.list}>
-      <ListItemText
-        classes={{
-          primary: classes.li
-        }}
-      >
-        {ingress}
-        {infoUrl && (
-          <span>
-            &nbsp;
-            <a
-              target="top"
-              rel="noopener"
-              className={classes.color}
-              href={infoUrl}
-            >
-              {typesystem.capitalizeTittel(
-                new URL(infoUrl).host.split(".").splice(-2, 1)[0]
-              )}
-            </a>
-          </span>
-        )}
-      </ListItemText>
-    </ListItem>
-  );
-};
-
 const Stats = ({ stats, tittel, toppnavn, classes }) => {
   if (!stats) return null;
   const { areal, arealPrefix, arter } = stats;
@@ -80,7 +47,7 @@ const Stats = ({ stats, tittel, toppnavn, classes }) => {
   return (
     <ListItem className={classes.liroot}>
       <ListItemText
-        _classes={{
+        classes={{
           primary: classes.li,
           root: classes.liroot
         }}
