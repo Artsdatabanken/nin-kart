@@ -35,7 +35,6 @@ const Tittelblokk = ({
   theme,
   children
 }) => {
-  console.log(farge, chipFarge);
   return (
     <React.Fragment>
       <div style={{ position: "relative", top: -72, right: -10 }} />

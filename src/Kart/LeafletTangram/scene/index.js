@@ -51,7 +51,6 @@ function opprettEttLag(drawArgs, config) {
   const renderer = draw[drawArgs.aktivtKartformat];
   const kartformat = drawArgs.kartformat[drawArgs.aktivtKartformat];
   drawArgs.kartformat = kartformat;
-  console.log(drawArgs.kode, drawArgs.aktivtKartformat, drawArgs.kartformat);
   if (!renderer) {
     console.warn("Unknown kartformat", drawArgs.aktivtKartformat);
     return;

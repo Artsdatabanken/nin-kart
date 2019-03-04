@@ -30,12 +30,12 @@ class Kodekort extends React.Component {
         minHeight: 297,
         marginTop: 142,
         marginBottom: 16,
-        filter: "drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.2)",
+        filter: "drop-shadow(rgba(0, 0, 0, 0.5) 5px 5px 4px)",
         backgroundSize: "contain"
       };
     return {
       minHeight: 297,
-      backgroundSize: "cover"
+      _backgroundSize: "cover"
     };
   }
 
