@@ -30,7 +30,7 @@ class BildeAvatar extends Component {
     const size = this.props.size || "big";
     const prefiks = kode.substring(0, 2);
     const parts = typesystem.splittKode(kode);
-    const tekst = prefiks; //parts[parts.length - 1]
+    const tekst = prefiks;
     if ("AO_OR".indexOf(prefiks) >= 0 && parts.length > 1)
       return (
         <Avatar

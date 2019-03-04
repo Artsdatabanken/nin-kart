@@ -11,11 +11,13 @@ const styles = {
   button: {
     color: "rgba(0,0,0,0.77)",
     marginRight: 8
+  },
+  cardActions: {
+    paddingLeft: 24
   }
 };
 
 const Knapperad = ({
-  overordnet,
   classes,
   erAktivert,
   bbox,
@@ -23,31 +25,30 @@ const Knapperad = ({
   onToggleLayer,
   onFitBounds
 }) => (
-  <CardActions style={{ paddingLeft: 24 }}>
-    {overordnet.length > 0 && (
-      <React.Fragment>
-        <Button
-          className={classes.button}
-          onClick={onToggleLayer}
-          disabled={erAktivert}
-        >
-          <LibraryAdd className={classes.iconSmall} />
-          Aktivér
+  <CardActions className={classes.cardActions}>
+    <React.Fragment>
+      <Button
+        className={classes.button}
+        onClick={onToggleLayer}
+        disabled={erAktivert}
+      >
+        <LibraryAdd className={classes.iconSmall} />
+        Aktivér
+      </Button>
+      <Button
+        className={classes.button}
+        onClick={() => history.push(history.location.pathname + "?vis")}
+      >
+        <ColorLens className={classes.iconSmall} />
+        Vis
+      </Button>
+      {bbox && (
+        <Button className={classes.button} onClick={onFitBounds}>
+          <ZoomOutMap className={classes.iconSmall} />
+          Zoom til
         </Button>
-        <Button
-          className={classes.button}
-          onClick={() => history.push(history.location.pathname + "?vis")}
-        >
-          <ColorLens className={classes.iconSmall} />
-          Vis
-        </Button>
-        {bbox && (
-          <Button className={classes.button} onClick={onFitBounds}>
-            <ZoomOutMap className={classes.iconSmall} />
-            Zoom til
-          </Button>
-        )}
-      </React.Fragment>
+      )}
+    </React.Fragment>
     )}
   </CardActions>
 );

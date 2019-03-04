@@ -80,14 +80,16 @@ class Kodekort extends React.Component {
           onNavigate={onNavigate}
           overordnet={overordnet}
         />
-        <Knapperad
-          overordnet={overordnet}
-          classes={classes}
-          erAktivert={erAktivert}
-          bbox={bbox}
-          onFitBounds={onFitBounds}
-          onToggleLayer={onToggleLayer}
-        />
+        {overordnet.length > 0 && (
+          <Knapperad
+            overordnet={overordnet}
+            classes={classes}
+            erAktivert={erAktivert}
+            bbox={bbox}
+            onFitBounds={onFitBounds}
+            onToggleLayer={onToggleLayer}
+          />
+        )}
       </Card>
     );
   }
