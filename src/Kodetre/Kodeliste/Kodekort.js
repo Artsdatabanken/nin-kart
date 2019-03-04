@@ -1,28 +1,10 @@
-import {
-  Button,
-  Card,
-  CardActions,
-  CardMedia,
-  withStyles
-} from "@material-ui/core";
-import { LibraryAdd, ZoomOutMap, ColorLens } from "@material-ui/icons/";
+import { Card, CardMedia } from "@material-ui/core";
 import React from "react";
-import { withRouter } from "react-router";
 import config from "../../config";
 import språk from "../../språk";
 import Tittelblokk from "./Tittelblokk";
 import tinycolor from "tinycolor2";
-
-const styles = {
-  iconSmall: {
-    fontSize: 20,
-    marginRight: 8
-  },
-  button: {
-    color: "rgba(0,0,0,0.77)",
-    marginRight: 8
-  }
-};
+import Knapperad from "./Knapperad";
 
 class Kodekort extends React.Component {
   state = {
@@ -34,9 +16,6 @@ class Kodekort extends React.Component {
   };
   handleOpen = () => {
     this.setState({ visBilde: true });
-  };
-  handleAktiver = () => {
-    this.props.onToggleLayer(this.props.kode, true);
   };
 
   erTransparent(url) {
@@ -72,7 +51,9 @@ class Kodekort extends React.Component {
       overordnet,
       classes,
       erAktivert,
-      onNavigate
+      onNavigate,
+      onFitBounds,
+      onToggleLayer
     } = this.props;
     const tc = new tinycolor(farge);
     const kontrastfarge =
@@ -99,43 +80,17 @@ class Kodekort extends React.Component {
           onNavigate={onNavigate}
           overordnet={overordnet}
         />
-        <CardActions style={{ paddingLeft: 24 }}>
-          {overordnet.length > 0 && (
-            <React.Fragment>
-              <Button
-                className={classes.button}
-                onClick={this.handleAktiver}
-                disabled={erAktivert}
-              >
-                <LibraryAdd className={classes.iconSmall} />
-                Aktivér
-              </Button>
-              <Button
-                className={classes.button}
-                onClick={this.handleClickTweaks}
-              >
-                <ColorLens className={classes.iconSmall} />
-                Vis
-              </Button>
-              {bbox && (
-                <Button
-                  className={classes.button}
-                  onClick={this.props.onFitBounds}
-                >
-                  <ZoomOutMap className={classes.iconSmall} />
-                  Zoom til
-                </Button>
-              )}
-            </React.Fragment>
-          )}
-        </CardActions>
+        <Knapperad
+          overordnet={overordnet}
+          classes={classes}
+          erAktivert={erAktivert}
+          bbox={bbox}
+          onFitBounds={onFitBounds}
+          onToggleLayer={onToggleLayer}
+        />
       </Card>
     );
   }
-
-  handleClickAktiveLag = () => this.props.history.push("/");
-  handleClickTweaks = () =>
-    this.props.history.push(this.props.history.location.pathname + "?vis");
 }
 
-export default withRouter(withStyles(styles)(Kodekort));
+export default Kodekort;
