@@ -30,6 +30,7 @@ class config {
     width: number = 408,
     filtype: string = "jpg"
   ) {
+    if (url.indexOf("Datakilde") === 0) filtype = "png";
     return `${config.storageUrl}${url}/forside_${width}.${filtype}`;
   }
 
