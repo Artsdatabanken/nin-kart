@@ -1,6 +1,6 @@
+import Tagger from "./Tagger";
 import React from "react";
-import { Chip } from "@material-ui/core";
-
+import { ListSubheader } from "@material-ui/core";
 import språk from "../../språk";
 import Graf from "./Graf";
 import Flagg from "./Flagg";
@@ -27,6 +27,7 @@ class KodeVindu extends React.Component {
     const {
       kode,
       url,
+      farge,
       prefiks,
       bbox,
       ingress,
@@ -49,6 +50,7 @@ class KodeVindu extends React.Component {
       >
         <Kodekort
           kode={kode}
+          farge={farge}
           url={url}
           prefiks={prefiks}
           bbox={bbox}
@@ -60,7 +62,7 @@ class KodeVindu extends React.Component {
           onFitBounds={onFitBounds}
           onToggleLayer={onToggleLayer}
         />
-        <Flagg flagg={meta.flagg} onNavigate={onNavigate} />
+        <Tagger overordnet={overordnet} onNavigate={onNavigate} />
 
         {prefiks !== "AO" && (
           <Statistikk
@@ -74,15 +76,6 @@ class KodeVindu extends React.Component {
             geometrierVindu={antallNaturomrader}
           />
         )}
-        <div
-          style={{
-            paddingLeft: 24,
-            paddingTop: 0,
-            paddingBottom: 0
-          }}
-        >
-          <Chip label={kode} />
-        </div>
         <Kodeliste
           title="Innholder"
           parentkode={kode}
@@ -95,7 +88,13 @@ class KodeVindu extends React.Component {
           opplystKode={opplystKode}
           onUpdateMetaProp={onUpdateMetaProp}
         />
-        <Gradienter gradient={meta.gradient} onNavigate={onNavigate} />
+
+        {(meta.flagg || meta.gradient) && (
+          <React.Fragment>
+            <Flagg flagg={meta.flagg} onNavigate={onNavigate} />
+            <Gradienter gradient={meta.gradient} onNavigate={onNavigate} />
+          </React.Fragment>
+        )}
         <Graf graf={meta.graf} parentkode={kode} onNavigate={onNavigate} />
       </div>
     );

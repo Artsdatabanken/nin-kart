@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { ListSubheader } from "@material-ui/core";
 import Gradient from "./LinearGauge";
 
 class Gradienter extends Component {
@@ -14,7 +13,6 @@ class Gradienter extends Component {
     if (!gradient) return null;
     return (
       <React.Fragment>
-        <ListSubheader>defineres av</ListSubheader>
         {Object.keys(gradient).map(type => {
           const gr = gradient[type];
           return (

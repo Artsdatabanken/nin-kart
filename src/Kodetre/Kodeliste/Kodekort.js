@@ -9,9 +9,9 @@ import { LibraryAdd, ZoomOutMap, ColorLens } from "@material-ui/icons/";
 import React from "react";
 import { withRouter } from "react-router";
 import config from "../../config";
-import farger from "../../farger";
 import språk from "../../språk";
 import Tittelblokk from "./Tittelblokk";
+import tinycolor from "tinycolor2";
 
 const styles = {
   iconSmall: {
@@ -19,6 +19,7 @@ const styles = {
     marginRight: 8
   },
   button: {
+    color: "rgba(0,0,0,0.77)",
     marginRight: 8
   }
 };
@@ -63,6 +64,7 @@ class Kodekort extends React.Component {
     const {
       kode,
       url,
+      farge,
       prefiks,
       bbox,
       tittel,
@@ -72,6 +74,9 @@ class Kodekort extends React.Component {
       erAktivert,
       onNavigate
     } = this.props;
+    const tc = new tinycolor(farge);
+    const kontrastfarge =
+      tc.getLuminance() > 0.6 ? "rgba(0,0,0,0.77)" : "rgba(255,255,255,0.77)";
     return (
       <Card square={false}>
         <CardMedia
@@ -82,52 +87,48 @@ class Kodekort extends React.Component {
         />
         <Tittelblokk
           tittel={språk(tittel)}
+          farge={tc.desaturate(30).toHexString()}
+          chipFarge={tc
+            //            .desaturate(10)
+            .lighten(10)
+            .toHexString()}
+          kontrastfarge={kontrastfarge}
           nivå={nivå}
           kode={kode}
           prefiks={prefiks}
           onNavigate={onNavigate}
           overordnet={overordnet}
-        >
-          <CardActions>
-            {overordnet.length > 0 && (
-              <React.Fragment>
+        />
+        <CardActions style={{ paddingLeft: 24 }}>
+          {overordnet.length > 0 && (
+            <React.Fragment>
+              <Button
+                className={classes.button}
+                onClick={this.handleAktiver}
+                disabled={erAktivert}
+              >
+                <LibraryAdd className={classes.iconSmall} />
+                Aktivér
+              </Button>
+              <Button
+                className={classes.button}
+                onClick={this.handleClickTweaks}
+              >
+                <ColorLens className={classes.iconSmall} />
+                Vis
+              </Button>
+              {bbox && (
                 <Button
-                  variant="contained"
                   className={classes.button}
-                  onClick={this.handleAktiver}
-                  disabled={erAktivert}
+                  onClick={this.handleFitBounds}
                 >
-                  <LibraryAdd className={classes.iconSmall} />
-                  Aktivér
+                  <ZoomOutMap className={classes.iconSmall} />
+                  Zoom til
                 </Button>
-                <Button
-                  style={{
-                    color: farger.lys[prefiks]
-                  }}
-                  className={classes.button}
-                  variant="text"
-                  onClick={this.handleClickTweaks}
-                >
-                  <ColorLens className={classes.iconSmall} />
-                  Vis
-                </Button>
-                {bbox && (
-                  <Button
-                    style={{
-                      color: farger.lys[prefiks]
-                    }}
-                    className={classes.button}
-                    variant="text"
-                    onClick={this.handleFitBounds}
-                  >
-                    <ZoomOutMap className={classes.iconSmall} />
-                    Zoom til
-                  </Button>
-                )}
-              </React.Fragment>
-            )}
-          </CardActions>
-        </Tittelblokk>
+              )}
+            </React.Fragment>
+          )}
+        </CardActions>
       </Card>
     );
   }
