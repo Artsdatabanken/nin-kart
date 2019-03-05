@@ -86,9 +86,9 @@ const KodeVindu = ({
 
       <Ekspander
         visible={!!ingress}
-        expanded={expand.ingres}
+        expanded={expand.ingress}
         heading="Beskrivelse"
-        onExpand={() => setExpand({ ...expand, ingres: !expand.ingres })}
+        onExpand={() => setExpand({ ...expand, ingress: !expand.ingress })}
       >
         <Ingress beskrivelse={ingress} infoUrl={infoUrl} />
       </Ekspander>
