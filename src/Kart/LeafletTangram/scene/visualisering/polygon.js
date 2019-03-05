@@ -18,15 +18,15 @@ function drawAll(drawArgs) {
         visEtiketter: visEtiketter
       });
     });
-  } else {
-    layer[sysconfig.hack(kode)] = draw({
-      kode: kode,
-      forelderkode: kode,
-      farge: farge,
-      opplystKode: opplystKode,
-      visEtiketter: visEtiketter
-    });
   }
+  layer[sysconfig.hack(kode)] = draw({
+    kode: kode,
+    forelderkode: kode,
+    farge: farge,
+    opplystKode: opplystKode,
+    visEtiketter: visEtiketter
+  });
+
   return {
     [kode]: { layer, data: { source: kode, layer: sysconfig.hack(kode) } }
   };
@@ -58,7 +58,8 @@ function draw(args) {
       }
     }
   };
-  if (kode !== forelderkode) layer.filter = { code: sysconfig.hack(kode) };
+  //if (kode !== forelderkode)
+  layer.filter = { code: sysconfig.hack(kode) };
   if (kode === opplystKode) {
     const lines = layer.draw.lines;
     lines.width = "2px";
