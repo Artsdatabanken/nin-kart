@@ -19,7 +19,7 @@ class Borring extends Component {
         <ListSubheader>Kunnskap</ListSubheader>
         {Object.keys(barn).length <= 0 ? (
           <ListItem>
-            <ListItemText primary="Fant ingen opplysninger." />
+            <ListItemText primary="Finner ingen opplysninger." />
           </ListItem>
         ) : (
           <SettingsContext.Consumer>
