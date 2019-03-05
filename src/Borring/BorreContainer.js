@@ -20,9 +20,8 @@ class BorreContainer extends Component {
       sted: null
     });
     backend.hentPunkt(lng, lat).then(data => {
-      if (!data["~"]) return console.error("API failed me.");
       this.setState({
-        data: data["~"].values
+        data: data["~"] ? data["~"].values : {}
       });
     });
 
