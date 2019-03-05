@@ -18,6 +18,7 @@ function flatten(values) {
 
 const Sted = props => {
   const { sted, values, elevasjon } = props;
+  if (!values) return null; // Har du klikket i havet?
   const { fylke, kommune } = flatten(values);
   const url = `/Fylke/${config.hackUrl(fylke)}/${config.hackUrl(kommune)}`;
   const primary = sted ? sted : fylke;
