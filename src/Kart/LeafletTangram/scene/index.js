@@ -104,7 +104,8 @@ function updateScene(config: Object, props: Object) {
     const drawArgs = {
       kode: meta.kode,
       url: meta.url,
-      barn: meta.barn && meta.barn.length > 0 ? meta.barn : [meta],
+      farge: meta.farge,
+      barn: meta.barn,
       opplystKode: props.opplystKode,
       bbox: meta.bbox,
       aktivtKartformat: meta.aktivtKartformat,
