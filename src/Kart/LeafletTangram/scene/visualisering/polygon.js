@@ -33,7 +33,7 @@ function drawAll(drawArgs) {
 }
 
 function draw(args) {
-  let { kode, forelderkode, farge, opplystKode, visEtiketter } = args;
+  let { kode, farge, opplystKode, visEtiketter } = args;
   farge = opplyst(kode, opplystKode, farge);
   const layer = {
     draw: {
