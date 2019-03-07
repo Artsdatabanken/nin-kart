@@ -20,7 +20,7 @@ const styles = {
   }
 };
 
-const Ingress = ({ infoUrl, ingress, classes }) => {
+const Ingress = ({ infoUrl, beskrivelse, classes }) => {
   return (
     <ListItem className={classes.list}>
       <ListItemText
@@ -28,7 +28,7 @@ const Ingress = ({ infoUrl, ingress, classes }) => {
           primary: classes.li
         }}
       >
-        {ingress}
+        {beskrivelse}
         {infoUrl && (
           <span>
             &nbsp;

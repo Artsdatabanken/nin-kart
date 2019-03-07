@@ -5,7 +5,6 @@ import InfoIconButton from "./InfoIconButton";
 const Ingress = ({ infoUrl, beskrivelse }) => (
   <React.Fragment>
     {infoUrl && <InfoIconButton href={infoUrl} />}
-
     <Typography>{beskrivelse}</Typography>
   </React.Fragment>
 );
