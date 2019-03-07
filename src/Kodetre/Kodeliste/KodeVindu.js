@@ -113,9 +113,7 @@ const KodeVindu = ({
         expanded={expand.innhold}
         visible={meta.barn.length > 0}
         heading="Inndelt i"
-        heading2={
-          meta.barn.length === 1 ? "1 type" : meta.barn.length + " typer"
-        }
+        heading2={(antall(meta.barn.length), "type", "typer")}
         onExpand={() => setExpand({ ...expand, innhold: !expand.innhold })}
       >
         <Kodeliste
@@ -136,9 +134,7 @@ const KodeVindu = ({
         expanded={expand.gradient}
         visible={gradientLength > 0}
         heading="Gradienter"
-        heading2={
-          gradientLength === 1 ? "1 element" : gradientLength + " elementer"
-        }
+        heading2={antall(gradientLength, "element", "elementer")}
         onExpand={() => setExpand({ ...expand, gradient: !expand.gradient })}
       >
         <Gradienter gradient={meta.gradient} onNavigate={onNavigate} />
@@ -148,16 +144,26 @@ const KodeVindu = ({
         expanded={expand.flagg}
         visible={flaggLength > 0}
         heading="Egenskaper"
-        heading2={flaggLength === 1 ? "1 element" : flaggLength + " elementer"}
+        heading2={antall(flaggLength, "element", "elementer")}
         onExpand={() => setExpand({ ...expand, flagg: !expand.flagg })}
       >
-        <Flagg flagg={meta.flagg} onNavigate={onNavigate} />
+        <Flagg
+          flagg={meta.flagg}
+          onNavigate={url => {
+            console.warn(url);
+            onNavigate(url);
+          }}
+        />
       </Ekspander>
 
       <Graf graf={meta.graf} parentkode={kode} onNavigate={onNavigate} />
     </div>
   );
 };
+
+function antall(count, singularSuffix, pluralSuffix) {
+  return count + " " + (count === 1 ? singularSuffix : pluralSuffix);
+}
 
 function toppnivåNavn(forfedre) {
   if (forfedre.length < 2) return null;
