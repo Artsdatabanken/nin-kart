@@ -153,19 +153,7 @@ class Grunnkart extends React.Component {
     if (meta.se) return meta;
     meta.prefiks = meta.kode.replace("NN-", "").substring(0, 2);
     if (!meta.kartformat) meta.kartformat = {};
-    if (meta.kartformat["raster.gradient"]) {
-      meta.kartformat.raster_gradient = meta.kartformat["raster.gradient"];
-      delete meta.kartformat["raster.gradient"];
-    }
-    if (meta.kartformat["raster.indexed"]) {
-      meta.kartformat.raster_indexed = meta.kartformat["raster.indexed"];
-      delete meta.kartformat["raster.indexed"];
-    }
 
-    if (meta.barn && Object.keys(meta.barn).length > 0) {
-      const intervall = meta.barn[0].intervall;
-      if (intervall) meta.måleenhet = intervall.måleenhet;
-    }
     meta.aktivtKartformat = Object.keys(meta.kartformat)[0];
 
     if (meta.kartformat.raster_gradient) {

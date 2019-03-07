@@ -7,38 +7,34 @@ import Gradient from "./Gradient";
 import Indexed from "./Indexed";
 import Generelt from "./Generelt";
 
-class Tweaks extends React.Component {
-  state = {};
-  seksjon(aktivtKartformat) {
-    switch (aktivtKartformat) {
-      case "osm_lys":
-      case "osm_mørk":
-        return <Bakgrunnskart {...this.props} />;
-      case "google_hybrid":
-      case "google_satellite":
-        return <Google {...this.props} />;
-      case "raster_gradient":
-        return <Gradient {...this.props} />;
-      case "raster_indexed":
-        return <Indexed {...this.props} />;
-      case "polygon":
-        return <Polygon {...this.props} />;
-      default:
-        console.error("Unknown " + aktivtKartformat);
-    }
+const Seksjon = ({ aktivtKartformat, ...props }) => {
+  switch (aktivtKartformat) {
+    case "osm_lys":
+    case "osm_mørk":
+      return <Bakgrunnskart {...props} />;
+    case "google_hybrid":
+    case "google_satellite":
+      return <Google {...props} />;
+    case "raster_gradient":
+      return <Gradient {...props} />;
+    case "raster_indexed":
+      return <Indexed {...props} />;
+    case "polygon":
+      return <Polygon {...props} />;
+    default:
+      console.error("Unknown " + aktivtKartformat);
   }
+};
 
-  render() {
-    const { aktivtKartformat, history } = this.props;
-    if (!aktivtKartformat) return null;
-    return (
-      <div style={{ paddingTop: 55 }}>
-        <Generelt search={history.location.search} {...this.props}>
-          {this.seksjon(aktivtKartformat)}
-        </Generelt>
-      </div>
-    );
-  }
-}
+const Tweaks = ({ aktivtKartformat, history, ...props }) => {
+  if (!aktivtKartformat) return null;
+  return (
+    <div style={{ paddingTop: 55 }}>
+      <Generelt search={history.location.search} {...props}>
+        <Seksjon aktivtKartformat={aktivtKartformat} {...props} />
+      </Generelt>
+    </div>
+  );
+};
 
 export default withRouter(Tweaks);
