@@ -2,6 +2,8 @@ import { Avatar, Chip } from "@material-ui/core";
 import { withTheme } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
+import SettingsContainer from "../../SettingsContainer";
+import { SettingsContext } from "../../SettingsContext";
 import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles({
@@ -46,43 +48,54 @@ const Tittelblokk = ({
 }) => {
   const classes = useStyles();
   return (
-    <div
-      className={classes.block}
-      style={{
-        position: "relative",
-        backgroundColor: farge || "hsl(16, 0%, 50%)"
-      }}
-    >
-      <Chip
-        className={classes.chip}
-        style={{
-          backgroundColor: chipFarge
-        }}
-        label={kode.slice(3)}
-        clickable={true}
-        avatar={
-          <Avatar
+    <SettingsContainer>
+      <SettingsContext.Consumer>
+        {context => (
+          <div
+            className={classes.block}
             style={{
-              backgroundColor: farge
+              position: "relative",
+              backgroundColor: farge || "hsl(16, 0%, 50%)"
             }}
           >
-            {kode.slice(0, 2)}
-          </Avatar>
-        }
-      />
-      <Typography
-        variant="h6"
-        className={classes.h1}
-        style={{ color: kontrastfarge }}
-        gutterBottom
-      >
-        {tittel}
-      </Typography>
-      <Typography style={{ color: kontrastfarge }} className={classes.nivå}>
-        {nivå}
-      </Typography>
-      {children}
-    </div>
+            {context.visKoder && (
+              <Chip
+                className={classes.chip}
+                style={{
+                  backgroundColor: chipFarge
+                }}
+                label={kode.slice(3)}
+                clickable={true}
+                avatar={
+                  <Avatar
+                    style={{
+                      backgroundColor: farge
+                    }}
+                  >
+                    {kode.slice(0, 2)}
+                  </Avatar>
+                }
+              />
+            )}
+            <Typography
+              variant="h6"
+              className={classes.h1}
+              style={{ color: kontrastfarge }}
+              gutterBottom
+            >
+              {tittel}
+            </Typography>
+            <Typography
+              style={{ color: kontrastfarge }}
+              className={classes.nivå}
+            >
+              {nivå}
+            </Typography>
+            {children}
+          </div>
+        )}
+      </SettingsContext.Consumer>
+    </SettingsContainer>
   );
 };
 
