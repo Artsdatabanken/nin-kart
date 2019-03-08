@@ -1,4 +1,4 @@
-import Klassifisering from "./Tagger";
+import Overordnet from "./Overordnet";
 import React, { useState } from "react";
 import språk from "../../språk";
 import Graf from "./Graf";
@@ -81,7 +81,7 @@ const KodeVindu = ({
         heading2={"Nivå " + overordnet.length}
         onExpand={() => setExpand({ ...expand, tagger: !expand.tagger })}
       >
-        <Klassifisering overordnet={overordnet} onNavigate={onNavigate} />
+        <Overordnet overordnet={overordnet} onNavigate={onNavigate} />
       </Ekspander>
 
       <Ekspander
