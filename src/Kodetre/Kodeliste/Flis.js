@@ -2,7 +2,7 @@ import typesystem from "@artsdatabanken/typesystem";
 import { Avatar, Chip } from "@material-ui/core";
 import React, { Component } from "react";
 import config from "../../config";
-import farger from "../../farger";
+import { palett } from "../../farger";
 
 class Flis extends Component {
   render() {
@@ -40,7 +40,7 @@ class Flis extends Component {
         avatar={
           <Avatar
             style={{
-              backgroundColor: farger.medium[prefiks],
+              backgroundColor: palett.medium[prefiks],
               color: "white"
             }}
           >

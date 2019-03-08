@@ -64,7 +64,9 @@ const Tittelblokk = ({
                 style={{
                   backgroundColor: chipFarge
                 }}
-                label={kode.slice(3)}
+                label={
+                  <span style={{ color: kontrastfarge }}>{kode.slice(3)}</span>
+                }
                 clickable={true}
                 avatar={
                   <Avatar

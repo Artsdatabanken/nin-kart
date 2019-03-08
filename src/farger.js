@@ -42,4 +42,11 @@ Object.keys(farger).forEach(prefiks => {
     .toHslString();
 });
 
-export default palett;
+function kontrastfarge(farge) {
+  const tc = new tinycolor(farge);
+  return tc.getLuminance() > 0.6
+    ? "rgba(0,0,0,0.77)"
+    : "rgba(255,255,255,0.77)";
+}
+
+export { kontrastfarge, palett };

@@ -12,16 +12,17 @@ class Flagg extends Component {
     const { flagg, onNavigate, classes } = this.props;
     if (!flagg) return null;
     return Object.keys(flagg).map(kode => {
-      const { tittel, url } = flagg[kode];
+      const { tittel, url, farge } = flagg[kode];
+      console.log(flagg[kode]);
       const parts = kode.split("-");
-      parts.pop();
-      const avatarkode = parts.pop();
+      let avatarkode = parts.pop();
+      if (avatarkode.length < 2) avatarkode = parts.pop();
       return (
         <Chip
           className={classes.chip}
           key={url}
           avatar={
-            <Avatar>
+            <Avatar style={{ backgroundColor: farge }}>
               {harBilde[avatarkode] ? (
                 <img
                   alt="icon"
