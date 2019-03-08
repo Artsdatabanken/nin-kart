@@ -8,7 +8,7 @@ import React from "react";
 import språk from "../../språk";
 
 const Overordnet = ({ farge, overordnet, onNavigate, classes }) => {
-  return overordnet.map((item, i) => (
+  return overordnet.reverse().map((item, i) => (
     <ListItem
       key={item.url}
       dense
