@@ -2,7 +2,7 @@ import { Typography, Avatar, Divider, ListItem } from "@material-ui/core";
 import React from "react";
 import { withRouter } from "react-router";
 import config from "../config";
-import farger from "../farger";
+import { palett } from "../farger";
 import Flis from "../Kodetre/Kodeliste/Flis";
 import { withStyles } from "@material-ui/core/styles";
 
@@ -24,7 +24,7 @@ const Listeelement = ({
   classes
 }) => {
   const prefix = kode.substring(0, 2);
-  const bgFarge = farger.lysere[prefix];
+  const bgFarge = palett.lysere[prefix];
   const avatar = false;
   return (
     <React.Fragment>
@@ -45,7 +45,7 @@ const Listeelement = ({
           {avatar && (
             <Avatar
               style={{
-                backgroundColor: farger.mørk[prefix],
+                backgroundColor: "farger.mørk[prefix]",
                 color: "black"
               }}
             >
@@ -60,6 +60,7 @@ const Listeelement = ({
           </div>
           <div style={{ position: "absolute", right: 8, top: 8 }}>
             <Flis kode={kode} visKoder={visKoder} />
+            __
           </div>
         </ListItem>
       </div>

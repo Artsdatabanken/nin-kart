@@ -5,6 +5,7 @@ import språk from "../../språk";
 import Tittelblokk from "./Tittelblokk";
 import tinycolor from "tinycolor2";
 import Knapperad from "./Knapperad";
+import { kontrastfarge } from "../../farger";
 
 class Kodekort extends React.Component {
   state = {
@@ -56,8 +57,6 @@ class Kodekort extends React.Component {
       onToggleLayer
     } = this.props;
     const tc = new tinycolor(farge);
-    const kontrastfarge =
-      tc.getLuminance() > 0.6 ? "rgba(0,0,0,0.77)" : "rgba(255,255,255,0.77)";
     return (
       <Card square={false}>
         <CardMedia
@@ -73,7 +72,7 @@ class Kodekort extends React.Component {
             //            .desaturate(10)
             .lighten(10)
             .toHexString()}
-          kontrastfarge={kontrastfarge}
+          kontrastfarge={kontrastfarge(farge)}
           nivå={nivå}
           kode={kode}
           prefiks={prefiks}
