@@ -23,7 +23,7 @@ class Indexed extends Component {
   handleUpdateFilter = (kode, key, value) => {
     this.props.onUpdateLayerProp(
       kode,
-      "kartformat.raster_gradient." + key,
+      "kart.format.raster_gradient." + key,
       value
     );
   };

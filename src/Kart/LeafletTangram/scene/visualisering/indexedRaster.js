@@ -21,7 +21,7 @@ function quantize(value) {
   )
 }*/
 
-function lagStyle(kartformat, drawArgs) {
+function lagStyle(format, drawArgs) {
   const { kode, opplystKode } = drawArgs;
   //const barn = drawArgs.barn
   let palettKode = kode;

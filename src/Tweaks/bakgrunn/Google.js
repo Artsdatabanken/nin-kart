@@ -10,20 +10,21 @@ class Bakgrunnskart extends Component {
   handleUpdateLayerProp = (kode, key, value) => {
     this.props.onUpdateLayerProp(
       kode,
-      `kartformat.${this.props.aktivtKartformat}.${key}`,
+      `kart.format.${this.props.kart.aktivtFormat}.${key}`,
       value
     );
   };
 
   render() {
-    const { aktivtKartformat, location, history } = this.props;
+    const { location, history, kart } = this.props;
     const lag = location.pathname.substring(1);
-    const kf = this.props.kartformat[aktivtKartformat];
+    const aktivtFormat = kart.aktivtFormat;
+    const kf = kart.format[aktivtFormat];
     if (location.search.startsWith("?vis_tema"))
       return (
         <Tema
           onUpdateLayerProp={this.props.onUpdateLayerProp}
-          valgt={aktivtKartformat}
+          valgt={aktivtFormat}
         />
       );
     return (

@@ -7,8 +7,8 @@ import Gradient from "./Gradient";
 import Indexed from "./Indexed";
 import Generelt from "./Generelt";
 
-const Seksjon = ({ aktivtKartformat, ...props }) => {
-  switch (aktivtKartformat) {
+const Seksjon = ({ aktivtFormat, ...props }) => {
+  switch (aktivtFormat) {
     case "osm_lys":
     case "osm_mørk":
       return <Bakgrunnskart {...props} />;
@@ -22,16 +22,17 @@ const Seksjon = ({ aktivtKartformat, ...props }) => {
     case "polygon":
       return <Polygon {...props} />;
     default:
-      console.error("Unknown " + aktivtKartformat);
+      console.error("Unknown " + aktivtFormat);
   }
 };
 
-const Tweaks = ({ aktivtKartformat, history, ...props }) => {
-  if (!aktivtKartformat) return null;
+const Tweaks = ({ history, ...props }) => {
+  const aktivtFormat = props.kart.aktivtFormat;
+  if (!aktivtFormat) return null;
   return (
     <div style={{ paddingTop: 55 }}>
       <Generelt search={history.location.search} {...props}>
-        <Seksjon aktivtKartformat={aktivtKartformat} {...props} />
+        <Seksjon aktivtFormat={aktivtFormat} {...props} />
       </Generelt>
     </div>
   );

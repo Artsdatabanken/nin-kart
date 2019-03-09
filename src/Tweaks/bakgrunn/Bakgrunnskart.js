@@ -13,7 +13,7 @@ class Bakgrunnskart extends Component {
   handleUpdateLayerProp = (lag, key, value) => {
     this.props.onUpdateLayerProp(
       lag,
-      `kartformat.${this.props.aktivtKartformat}.${key}`,
+      `kart.format.${this.props.kart.aktivtFormat}.${key}`,
       value
     );
   };
@@ -21,13 +21,13 @@ class Bakgrunnskart extends Component {
   render() {
     const { history, location } = this.props;
     const lag = location.pathname.substring(1);
-    const { aktivtKartformat } = this.props;
-    const kf = this.props.kartformat[aktivtKartformat];
+    const { aktivtFormat } = this.props.kart;
+    const kf = this.props.kart.format[aktivtFormat];
     if (location.search === "?vis_tema")
       return (
         <Tema
           onUpdateLayerProp={this.props.onUpdateLayerProp}
-          valgt={aktivtKartformat}
+          valgt={aktivtFormat}
         />
       );
     if (location.search.startsWith("?vis_farge")) {

@@ -7,18 +7,18 @@ const navn = {
   raster_indexed: "Klassedelt"
 };
 
-const VizType = ({ lag, aktivtKartformat, kartformat, onUpdateLayerProp }) => (
+const VizType = ({ lag, aktivtFormat, format, onUpdateLayerProp }) => (
   <Select
     style={{ marginLeft: 44 }}
     native
-    value={aktivtKartformat}
-    onChange={e => onUpdateLayerProp(lag, "aktivtKartformat", e.target.value)}
+    value={aktivtFormat}
+    onChange={e => onUpdateLayerProp(lag, "aktivtFormat", e.target.value)}
     inputProps={{
       name: "value",
       id: "value"
     }}
   >
-    {Object.keys(kartformat).map(kf => (
+    {Object.keys(format).map(kf => (
       <option key={kf} value={kf}>
         {navn[kf] || kf}
       </option>
