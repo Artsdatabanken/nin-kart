@@ -107,7 +107,7 @@ function updateScene(config: Object, props: Object) {
       barn: meta.barn,
       opplystKode: props.opplystKode,
       bbox: meta.bbox,
-      aktivtFormat: meta.aktivtFormat,
+      aktivtFormat: meta.kart.aktivtFormat,
       format: meta.kart.format,
       visBarn: true
     };
