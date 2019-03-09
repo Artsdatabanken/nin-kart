@@ -20,9 +20,7 @@ class Kodekort extends React.Component {
   };
 
   erTransparent(url) {
-    console.log(url);
     if (url.startsWith("Fylke")) return true;
-    if (url.startsWith("Naturvernområde")) return true;
     if (url.startsWith("Datakilde/")) return true;
     return false;
   }
@@ -30,11 +28,11 @@ class Kodekort extends React.Component {
   styles(url) {
     if (this.erTransparent(url))
       return {
-        _minHeight: 297,
-        _marginTop: 142,
-        _marginBottom: 16,
+        minHeight: 297,
+        marginTop: 142,
+        marginBottom: 16,
         filter: "drop-shadow(rgba(0, 0, 0, 0.5) 5px 5px 4px)",
-        _backgroundSize: "contain"
+        backgroundSize: "contain"
       };
     return {
       minHeight: 297,
@@ -61,11 +59,10 @@ class Kodekort extends React.Component {
     const tc = new tinycolor(farge);
     return (
       <Card square={false}>
-        <img
+        <CardMedia
           style={this.styles(url)}
           onClick={this.handleOpen}
-          image2={config.getFotoOmslag(url, 408)}
-          src="https://data.artsdatabanken.no/Naturvernomr%C3%A5de/%C3%98rland/omr%C3%A5de.png"
+          image={config.getFotoOmslag(url, 408)}
           alt={"foto av" + tittel}
         />
         <Tittelblokk
