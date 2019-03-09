@@ -1,4 +1,4 @@
-import { List, ListItem, ListItemText } from "@material-ui/core";
+import { ListItem, ListItemText } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import React from "react";
 import prettyprint from "../../prettyprint";
@@ -20,29 +20,14 @@ const styles = {
 };
 
 const Statistikk = ({
-  tittel,
-  toppnavn,
-  ingress,
   stats,
-  infoUrl,
-  arealVindu,
-  arterVindu,
-  geometrierVindu,
-  classes
-}) => (
-  <List>
-    <Stats
-      stats={stats}
-      toppnavn={toppnavn}
-      tittel={tittel}
-      classes={classes}
-    />
-  </List>
-);
-
-const Stats = ({ stats, tittel, toppnavn, classes }) => {
-  if (!stats) return null;
-  const { areal, arealPrefix, arter } = stats;
+  tittel,
+  arealPrefix,
+  toppnavn,
+  classes,
+  ...props
+}) => {
+  const { areal, arter } = stats;
   if (!areal) return null;
   return (
     <ListItem className={classes.liroot}>
