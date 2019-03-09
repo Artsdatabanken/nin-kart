@@ -86,7 +86,9 @@ const Gauge = ({ trinn, range }) => {
             </filter>
           </defs>
           {trinn.map(e => {
-            return !e.på && <Rute {...e} visKoder={context.visKoder} />;
+            return (
+              !e.på && <Rute key={e.kode} {...e} visKoder={context.visKoder} />
+            );
           })}
 
           {range &&
@@ -99,7 +101,9 @@ const Gauge = ({ trinn, range }) => {
               </React.Fragment>
             ))}
           {trinn.map(e => {
-            return e.på && <Rute {...e} visKoder={context.visKoder} />;
+            return (
+              e.på && <Rute key={e.kode} {...e} visKoder={context.visKoder} />
+            );
           })}
         </svg>
       )}
@@ -121,7 +125,7 @@ const Rute = ({ farge, på, visKoder, min, max, tittel, kode }) => {
         stroke={på ? "rgba(99,99,99,0.55)" : "rgba(0,0,0,0.11)"}
         strokeWidth={0.4}
         fill={colorOff}
-        filter={på && "url(#f2)"}
+        filter={på ? "url(#f2)" : null}
       >
         <title>{tittel.nb}</title>
         <animate
