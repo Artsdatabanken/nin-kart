@@ -12,7 +12,7 @@ const VizType = ({ lag, aktivtFormat, format, onUpdateLayerProp }) => (
     style={{ marginLeft: 44 }}
     native
     value={aktivtFormat}
-    onChange={e => onUpdateLayerProp(lag, "aktivtFormat", e.target.value)}
+    onChange={e => onUpdateLayerProp(lag, "kart.aktivtFormat", e.target.value)}
     inputProps={{
       name: "value",
       id: "value"
