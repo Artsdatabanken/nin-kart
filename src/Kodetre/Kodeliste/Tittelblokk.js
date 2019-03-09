@@ -71,7 +71,8 @@ const Tittelblokk = ({
                 avatar={
                   <Avatar
                     style={{
-                      backgroundColor: farge
+                      backgroundColor: farge,
+                      color: kontrastfarge
                     }}
                   >
                     {kode.slice(0, 2)}
