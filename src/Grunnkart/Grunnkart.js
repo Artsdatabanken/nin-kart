@@ -187,8 +187,10 @@ class Grunnkart extends React.Component {
 
   // Supports composite keys i.e. gradient.filterMin
   handleUpdateLayerProp = (layer, key, value) => {
+    console.log(layer, key, value);
     const aktive = this.state.aktiveLag;
     let node = aktive[layer];
+    console.log(node);
     if (!node) node = this.state.meta;
     const parts = key.split(".");
     for (let i = 0; i < parts.length - 1; i++) node = node[parts[i]];
