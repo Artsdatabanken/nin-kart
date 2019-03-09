@@ -27,7 +27,6 @@ class Generelt extends Component {
       onRemoveSelectedLayer,
       onFitBounds,
       bbox,
-      search,
       history,
       onUpdateLayerProp,
       classes
@@ -35,7 +34,7 @@ class Generelt extends Component {
     return (
       <div>
         <div style={{ marginLeft: 24 }} />
-        {search === "?vis" && (
+        {history.location.search === "?vis" && (
           <React.Fragment>
             <ListSubheader>Visualisering</ListSubheader>
             <VizType
@@ -63,15 +62,17 @@ class Generelt extends Component {
               Fjern
             </Button>
           )}
-          <Button
-            color="primary"
-            onClick={() => {
-              history.push("/" + url);
-            }}
-          >
-            <InfoOutlined className={classes.iconSmall} />
-            Info
-          </Button>
+          {url && (
+            <Button
+              color="primary"
+              onClick={() => {
+                history.push("/" + url);
+              }}
+            >
+              <InfoOutlined className={classes.iconSmall} />
+              Info
+            </Button>
+          )}
           {bbox && (
             <Button
               color="primary"
