@@ -8,7 +8,7 @@ import React from "react";
 import språk from "../../språk";
 
 const Overordnet = ({ farge, overordnet, onNavigate, classes }) => {
-  return overordnet.reverse().map((item, i) => (
+  const r = overordnet.map((item, i) => (
     <ListItem
       key={item.url}
       dense
@@ -24,6 +24,8 @@ const Overordnet = ({ farge, overordnet, onNavigate, classes }) => {
       <ListItemText primary={språk(item.tittel)} secondary={item.nivå} />
     </ListItem>
   ));
+  r.reverse();
+  return r;
 };
 
 export default Overordnet;

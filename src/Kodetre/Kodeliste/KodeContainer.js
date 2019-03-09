@@ -31,7 +31,7 @@ class KodeContainer extends React.Component<Props, State> {
     let newKode = this.props.kode;
     let newBounds = this.props.mapBounds;
     if (oldKode !== newKode || oldBounds !== newBounds) {
-      this.fetchData(newKode, newBounds);
+      //      this.fetchData(newKode, newBounds);
     }
   }
 

@@ -46,6 +46,7 @@ const KodeVindu = ({
     antallArter,
     stats
   } = meta;
+  const mor = overordnet[0];
   const gradientLength = meta.gradient
     ? Object.entries(meta.gradient).length
     : 0;
@@ -100,9 +101,10 @@ const KodeVindu = ({
       >
         <Statistikk
           tittel={språk(meta.tittel)}
-          toppnavn={toppnivåNavn(meta.overordnet)}
           infoUrl={infoUrl}
           stats={stats}
+          arealPrefix={mor.areal}
+          toppnavn={mor.tittel.nb}
           arealVindu={antallArter}
           arterVindu={antallArter}
           geometrierVindu={antallNaturomrader}
@@ -163,11 +165,6 @@ const KodeVindu = ({
 
 function antall(count, singularSuffix, pluralSuffix) {
   return count + " " + (count === 1 ? singularSuffix : pluralSuffix);
-}
-
-function toppnivåNavn(forfedre) {
-  if (forfedre.length < 2) return null;
-  return språk(forfedre[forfedre.length - 2].tittel);
 }
 
 export default KodeVindu;
