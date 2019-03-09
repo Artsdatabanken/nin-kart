@@ -18,7 +18,8 @@ const KartPreview = ({ thumb, tittel, valgt, onClick }) => (
 class Tema extends Component {
   handleClick = tema => {
     this.props.onUpdateLayerProp("bakgrunnskart", "kart.aktivtFormat", tema);
-    this.props.history.push(".");
+    const history = this.props.history;
+    history.push(history.location.pathname + "?vis");
   };
   render() {
     const { valgt } = this.props;
