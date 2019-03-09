@@ -26,7 +26,7 @@ function farge(farge, viserKatalog) {
 }
 
 function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
-  const viz = lag.kartformat[lag.aktivtKartformat];
+  const viz = lag.kart.format[lag.kart.aktivtFormat];
   let drawArgs = {
     forelderkode: lag.kode,
     kode: lag.kode,
@@ -35,8 +35,8 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
     visEtiketter: lag.visEtiketter,
     opplystKode: opplystKode,
     bbox: lag.bbox,
-    aktivtKartformat: lag.aktivtKartformat,
-    kartformat: lag.kartformat,
+    aktivtFormat: lag.kart.aktivtFormat,
+    format: lag.kart.format,
     viz: viz,
     visBarn: lag.visBarn
   };
@@ -48,17 +48,17 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
 }
 
 function opprettEttLag(drawArgs, config) {
-  const renderer = draw[drawArgs.aktivtKartformat];
-  const kartformat = drawArgs.kartformat[drawArgs.aktivtKartformat];
-  drawArgs.kartformat = kartformat;
+  const renderer = draw[drawArgs.aktivtFormat];
+  const format = drawArgs.format[drawArgs.aktivtFormat];
+  drawArgs.format = format;
   if (!renderer) {
-    console.warn("Unknown kartformat", drawArgs.aktivtKartformat);
+    console.warn("Unknown kart format", drawArgs.aktivtFormat);
     return;
   }
-  const source = renderer.lagSource(kartformat, drawArgs.bbox);
+  const source = renderer.lagSource(format, drawArgs.bbox);
 
   if (renderer.lagStyle) {
-    const style = renderer.lagStyle(kartformat, drawArgs);
+    const style = renderer.lagStyle(format, drawArgs);
     config.styles[style.name] = style.value;
   }
   config.sources[drawArgs.kode] = source;
@@ -89,15 +89,14 @@ function createScene(props: Object) {
 
 function updateScene(config: Object, props: Object) {
   const bakgrunn = props.aktiveLag.bakgrunnskart;
-  const bak = bakgrunn.kartformat[bakgrunn.aktivtKartformat];
+  const bak = bakgrunn.kart.format[bakgrunn.kart.aktivtFormat];
   config.scene.background.color = bak.land_farge || "#f2f2f2";
 
   config.layers = {};
   const meta = props.meta;
   const viserKatalog = !!meta;
   if (viserKatalog) {
-    const kartformat = meta.kartformat;
-    if (!kartformat) {
+    if (!meta.kart) {
       console.warn("No map data source found.");
       return config;
     }
@@ -108,15 +107,14 @@ function updateScene(config: Object, props: Object) {
       barn: meta.barn,
       opplystKode: props.opplystKode,
       bbox: meta.bbox,
-      aktivtKartformat: meta.aktivtKartformat,
-      kartformat: kartformat,
+      aktivtFormat: meta.aktivtFormat,
+      format: meta.kart.format,
       visBarn: true
     };
     opprettEttLag(drawArgs, config);
   }
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config);
   lagTemp(config);
-  console.log(config);
   return config;
 }
 

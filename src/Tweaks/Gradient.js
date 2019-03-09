@@ -9,8 +9,8 @@ import SliderSetting from "./SliderSetting";
 class Gradient extends Component {
   render() {
     console.log(this.props);
-    const { kode, onUpdateLayerProp, kartformat, måleenhet } = this.props;
-    const gradient = kartformat.raster_gradient;
+    const { kode, onUpdateLayerProp, format, måleenhet } = this.props;
+    const gradient = format.raster_gradient;
     const { filterMin, filterMax } = gradient;
     const [rangeMin, rangeMax] = gradient.intervall.original;
     const step = (rangeMax - rangeMin) / 1000;
@@ -64,7 +64,7 @@ class Gradient extends Component {
   handleUpdateFilter = (kode, key, value) => {
     this.props.onUpdateLayerProp(
       kode,
-      "kartformat.raster_gradient." + key,
+      "kart.format.raster_gradient." + key,
       value
     );
   };

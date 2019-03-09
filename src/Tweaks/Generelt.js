@@ -20,8 +20,7 @@ class Generelt extends Component {
   render() {
     const {
       children,
-      kartformat,
-      aktivtKartformat,
+      kart,
       kode,
       url,
       kanSlettes,
@@ -42,8 +41,8 @@ class Generelt extends Component {
             <VizType
               lag={kode}
               onUpdateLayerProp={onUpdateLayerProp}
-              kartformat={kartformat}
-              aktivtKartformat={aktivtKartformat}
+              format={kart.format}
+              aktivtFormat={kart.aktivtFormat}
             />
             <div style={{ fontSize: 12, paddingTop: 8, paddingLeft: 44 }}>
               Kommer mer fornuftige valg her...

@@ -82,7 +82,7 @@ class Polygon extends Component {
   }
 
   handleUpdateLayerProp = (kode, key, value) => {
-    this.props.onUpdateLayerProp(kode, "kartformat.polygon." + key, value);
+    this.props.onUpdateLayerProp(kode, "kart.format.polygon." + key, value);
   };
 
   navnPåUndernivå(kode) {

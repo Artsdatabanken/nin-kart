@@ -57,19 +57,19 @@ function lagPalett(barna, opplystKode, mode) {
   return cmap;
 }
 
-function normaliserFilter(kartformat) {
-  const { filterMin, filterMax } = kartformat;
-  const [omin, omax] = kartformat.intervall.original;
-  const [nmin, nmax] = kartformat.intervall.normalisertVerdi;
+function normaliserFilter(format) {
+  const { filterMin, filterMax } = format;
+  const [omin, omax] = format.intervall.original;
+  const [nmin, nmax] = format.intervall.normalisertVerdi;
   return [filterMin, filterMax].map(
     x => (((x - omin) / (omax - omin)) * (nmax - nmin) + nmin) / 255
   );
 }
 
-function lagStyle(kartformat, drawArgs) {
+function lagStyle(format, drawArgs) {
   const { opplystKode, barn } = drawArgs;
-  let [filterMin, filterMax] = normaliserFilter(kartformat);
-  const [visning] = drawArgs.kartformat.visning;
+  let [filterMin, filterMax] = normaliserFilter(format);
+  const [visning] = drawArgs.format.visning;
   const cmap = lagPalett(barn, opplystKode, visning || "diskret");
   const palette = createPalette(cmap);
   const gradient = {

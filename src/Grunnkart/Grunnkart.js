@@ -78,8 +78,7 @@ class Grunnkart extends React.Component {
 
   addSelected = props => {
     let aktive = this.state.aktiveLag;
-    const kartformat = props.kartformat;
-    if (!kartformat) return;
+    if (!props.kart) return;
     const nyttLag = JSON.parse(JSON.stringify(props));
     nyttLag.visBarn = props.barn.length > 0;
     aktive[nyttLag.kode] = nyttLag;
@@ -152,13 +151,14 @@ class Grunnkart extends React.Component {
     }
     if (meta.se) return meta;
     meta.prefiks = meta.kode.replace("NN-", "").substring(0, 2);
-    if (!meta.kartformat) meta.kartformat = {};
 
-    meta.aktivtKartformat = Object.keys(meta.kartformat)[0];
-
-    if (meta.kartformat.raster_gradient) {
-      meta.aktivtKartformat = "raster_gradient";
-      const gradient = meta.kartformat.raster_gradient;
+    if (!meta.kart) meta.kart = {};
+    if (!meta.kart.format) meta.kart.format = {};
+    if (!meta.kart.aktivtFormat)
+      meta.kart.aktivtFormat = Object.keys(meta.kart.format)[0];
+    if (meta.kart.format.raster_gradient) {
+      meta.aktivtFormat = "raster_gradient";
+      const gradient = meta.kart.format.raster_gradient;
       gradient.aktivVisning = gradient.visning[0];
       const intervall = gradient.intervall.original;
       gradient.filterMin = intervall[0];
