@@ -31,7 +31,7 @@ const Tweaks = ({ history, ...props }) => {
   if (!aktivtFormat) return null;
   return (
     <div style={{ paddingTop: 55 }}>
-      <Generelt search={history.location.search} {...props}>
+      <Generelt history={history} {...props}>
         <Seksjon aktivtFormat={aktivtFormat} {...props} />
       </Generelt>
     </div>
