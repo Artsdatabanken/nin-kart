@@ -5,6 +5,7 @@ import Google from "./bakgrunn/Google";
 import Polygon from "./Polygon";
 import Gradient from "./Gradient";
 import Indexed from "./Indexed";
+import Ruter from "./Ruter";
 import Generelt from "./Generelt";
 
 const Seksjon = ({ aktivtFormat, ...props }) => {
@@ -21,14 +22,16 @@ const Seksjon = ({ aktivtFormat, ...props }) => {
       return <Indexed {...props} />;
     case "polygon":
       return <Polygon {...props} />;
+    case "ruter":
+      return <Ruter {...props} />;
     default:
       console.error("Unknown " + aktivtFormat);
   }
 };
 
 const Tweaks = ({ history, ...props }) => {
+  if (!props.kart) return null;
   const aktivtFormat = props.kart.aktivtFormat;
-  if (!aktivtFormat) return null;
   return (
     <div style={{ paddingTop: 55 }}>
       <Generelt history={history} {...props}>
