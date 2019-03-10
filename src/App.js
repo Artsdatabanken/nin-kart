@@ -8,16 +8,12 @@ import Grunnkart from "./Grunnkart/Grunnkart";
 import SettingsContainer from "./SettingsContainer";
 
 const theme = createMuiTheme({
-  typography: {
-    useNextVariants: true
-  },
   palette: {
     primary: {
-      main: "#3a3"
+      main: "#ff9800"
     },
     secondary: {
-      main: "#f55",
-      contrastText: "#ffcc00"
+      main: "#2196f3"
     }
   }
 });
