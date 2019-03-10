@@ -79,38 +79,19 @@ class ResultatListe extends Component {
     );
   }
 
-  // Highlight all matches
-  static highlightMatch(text, higlight, classes) {
-    // make array of terms, ordered by longest term
-    let terms = (higlight || "")
-      .toLowerCase()
-      .split(" ")
-      .sort(function(a, b) {
-        return b.length - a.length;
-      });
-    // make regex OR filter by concatenating terms with |
-    let filter = terms
-      .toString()
-      .toLowerCase()
-      .replace(/[,\\]/g, "|");
+  static highlightMatch(text, query, classes) {
+    if (!query) return text;
+    const q = query.toLowerCase().split(" ")[0];
+    const offset = text.toLowerCase().indexOf(q);
+    if (offset < 0) return text;
 
-    // Split on all terms and also include the terms into parts array, ignore case
-    let parts = text.split(new RegExp(`(${filter})`, "gi"));
+    const end = offset + q.length;
     return (
-      <React.Fragment>
-        {parts.map((part, i) => (
-          <span
-            key={i}
-            className={
-              terms.indexOf(part.toLowerCase()) >= 0
-                ? classes.textmatch
-                : classes.textnomatch
-            }
-          >
-            {part}
-          </span>
-        ))}
-      </React.Fragment>
+      <span className={classes.textnomatch}>
+        {text.substring(0, offset)}
+        <span className={classes.textmatch}>{text.substring(offset, end)}</span>
+        {text.substring(end, text.length)}
+      </span>
     );
   }
 }
