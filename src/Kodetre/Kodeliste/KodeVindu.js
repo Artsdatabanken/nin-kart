@@ -46,7 +46,7 @@ const KodeVindu = ({
     antallArter,
     stats
   } = meta;
-  const mor = overordnet[0];
+  const mor = overordnet[0] || { tittel: {} };
   const gradientLength = meta.gradient
     ? Object.entries(meta.gradient).length
     : 0;
