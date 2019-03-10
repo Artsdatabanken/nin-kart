@@ -27,6 +27,7 @@ function farge(farge, viserKatalog) {
 
 function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
   const viz = lag.kart.format[lag.kart.aktivtFormat];
+  if (!viz) return console.warn("No viz");
   let drawArgs = {
     forelderkode: lag.kode,
     kode: lag.kode,
