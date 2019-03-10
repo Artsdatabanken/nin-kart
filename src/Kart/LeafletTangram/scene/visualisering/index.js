@@ -1,16 +1,18 @@
-import polygonDraw from "./polygon";
-import pointDraw from "./point";
-import gradientDraw from "./gradient";
-import indexedRasterDraw from "./indexedRaster";
+import polygon from "./polygon";
+import point from "./point";
+import gradient from "./gradient";
+import indexedRaster from "./indexedRaster";
 import openStreetMap from "./openStreetMap";
 import googleRaster from "./google_raster";
+import ruter from "./ruter";
 
 export default {
-  polygon: polygonDraw,
-  point: pointDraw,
-  gradient: gradientDraw,
-  raster_gradient: gradientDraw,
-  raster_indexed: indexedRasterDraw,
+  polygon: polygon,
+  point: point,
+  gradient: gradient,
+  raster_gradient: gradient,
+  raster_indexed: indexedRaster,
+  ruter: ruter,
   osm_lys: openStreetMap,
   osm_mørk: openStreetMap,
   google_hybrid: googleRaster,
