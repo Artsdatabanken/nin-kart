@@ -45,7 +45,9 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
     drawArgs.barn = lag.barn;
   }
   opprettEttLag(drawArgs, config);
-  if (viz.kanHaTerreng) lagTerreng(lag.terreng, opplystKode, config);
+  if (viz.kanHaTerreng) {
+    lagTerreng(lag.terreng, opplystKode, config);
+  }
 }
 
 function opprettEttLag(drawArgs, config) {
@@ -116,6 +118,7 @@ function updateScene(config: Object, props: Object) {
   }
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config);
   lagTemp(config);
+  console.log(config);
   return config;
 }
 
