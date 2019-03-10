@@ -16,15 +16,10 @@ function drawAll(drawArgs) {
 }
 
 function lagStyle(format, drawArgs) {
-  //  const { opplystKode, barn } = drawArgs;
-  //  const [visning] = drawArgs.format.visning;
-  console.log("da", drawArgs);
   const farge = tinycolor(drawArgs.farge);
-  console.log(farge);
   if (drawArgs.opplystKode)
     farge._a = drawArgs.opplystKode === drawArgs.kode ? 1.0 : 0.5;
   const fargear = [farge._r / 255, farge._g / 255, farge._b / 255, farge._a];
-  console.log(fargear);
   const gradient = {
     base: "raster",
     blend: "multiply",

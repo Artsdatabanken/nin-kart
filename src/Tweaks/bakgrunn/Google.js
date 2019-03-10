@@ -1,12 +1,12 @@
-import { List, ListItem, ListItemText, ListSubheader } from "@material-ui/core";
-import { withTheme } from "@material-ui/core/styles";
+import { List, ListSubheader } from "@material-ui/core";
 import { Component, default as React } from "react";
 import { withRouter } from "react-router";
 import tinycolor from "tinycolor2";
 import ColorPicker from "../ColorPicker";
 import Tema from "./Tema";
+import TemaPreview from "./TemaPreview";
 
-class Bakgrunnskart extends Component {
+class Google extends Component {
   handleUpdateLayerProp = (kode, key, value) => {
     this.props.onUpdateLayerProp(
       kode,
@@ -16,7 +16,7 @@ class Bakgrunnskart extends Component {
   };
 
   render() {
-    const { location, history, kart } = this.props;
+    const { location, kart } = this.props;
     const lag = location.pathname.substring(1);
     const aktivtFormat = kart.aktivtFormat;
     const kf = kart.format[aktivtFormat];
@@ -29,9 +29,8 @@ class Bakgrunnskart extends Component {
       );
     return (
       <List>
-        <ListItem button={true} onClick={() => history.push("?vis_tema")}>
-          <ListItemText primary="Forhåndsdefinert tema" secondary={kf.tittel} />
-        </ListItem>
+        <ListSubheader>Tema</ListSubheader>
+        <TemaPreview type={aktivtFormat} />
         <ListSubheader>Områder</ListSubheader>
         <ColorPicker
           tittel={"Fargetone"}
@@ -47,4 +46,4 @@ class Bakgrunnskart extends Component {
   }
 }
 
-export default withRouter(withTheme()(Bakgrunnskart));
+export default withRouter(Google);

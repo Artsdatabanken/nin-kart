@@ -1,5 +1,5 @@
 import SliderSetting from "../SliderSetting";
-import { List, ListItem, ListItemText, ListSubheader } from "@material-ui/core";
+import { List, ListSubheader } from "@material-ui/core";
 import { withTheme } from "@material-ui/core/styles";
 import { Component, default as React } from "react";
 import { withRouter } from "react-router";
@@ -8,6 +8,7 @@ import ColorPicker from "../ColorPicker";
 import Bakgrunnskartlag from "./Bakgrunnskartlag";
 import Tema from "./Tema";
 import Terreng from "./Terreng";
+import TemaPreview from "./TemaPreview";
 
 class Bakgrunnskart extends Component {
   handleUpdateLayerProp = (lag, key, value) => {
@@ -83,12 +84,8 @@ class Bakgrunnskart extends Component {
 
     return (
       <List>
-        <ListItem
-          button={true}
-          onClick={() => history.push(history.location.pathname + "?vis_tema")}
-        >
-          <ListItemText primary="Forhåndsdefinert tema" secondary={kf.tittel} />
-        </ListItem>
+        <ListSubheader>Tema</ListSubheader>
+        <TemaPreview type={aktivtFormat} />
         <Terreng
           kode="bakgrunnskart"
           terreng={this.props.terreng}

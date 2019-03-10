@@ -31,10 +31,11 @@ class Generelt extends Component {
       onUpdateLayerProp,
       classes
     } = this.props;
+    console.log(this.props);
     return (
       <div>
         <div style={{ marginLeft: 24 }} />
-        {history.location.search === "?vis" && (
+        {history.location.search === "?vis" && kode !== "bakgrunnskart" && (
           <React.Fragment>
             <ListSubheader>Visualisering</ListSubheader>
             <VizType

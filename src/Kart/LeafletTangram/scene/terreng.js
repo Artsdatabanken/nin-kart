@@ -35,7 +35,8 @@ function lagTerreng(drawProps, opplystKode, config) {
         color: `
           normal.z /= u_scale; // turn terrain exaggeration up/down
           normal = normalize(normal);
-          color = terrainEnvmap(u_envmap, normal);`
+          color = terrainEnvmap(u_envmap, normal);
+          color.r *= 0.9;`
       }
     }
   };
