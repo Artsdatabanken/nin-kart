@@ -1,15 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Highlight 1`] = `
-<React.Fragment>
-  <span>
-    
-  </span>
+<span>
+  
   <span>
     Ka
   </span>
-  <span>
-    rmøy
-  </span>
-</React.Fragment>
+  rmøy
+</span>
 `;
