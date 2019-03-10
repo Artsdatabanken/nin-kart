@@ -1,4 +1,5 @@
 import sysconfig from "../../../../config";
+import tinycolor from "tinycolor2";
 
 function drawAll(drawArgs) {
   const layer = {
@@ -17,20 +18,24 @@ function drawAll(drawArgs) {
 function lagStyle(format, drawArgs) {
   //  const { opplystKode, barn } = drawArgs;
   //  const [visning] = drawArgs.format.visning;
+  console.log("da", drawArgs);
+  const farge = tinycolor(drawArgs.farge);
+  console.log(farge);
+  if (drawArgs.opplystKode)
+    farge._a = drawArgs.opplystKode === drawArgs.kode ? 1.0 : 0.5;
+  const fargear = [farge._r / 255, farge._g / 255, farge._b / 255, farge._a];
+  console.log(fargear);
   const gradient = {
     base: "raster",
     blend: "multiply",
-    xblend: "overlay",
-    fblend: "add",
     shaders: {
-      uniforms: {},
+      uniforms: { farge: fargear },
       blocks: {
         color: `
         float value = 1.-sampleRaster(0).r;
-        vec4 transparent = vec4(1.,1.,1.,1.);
+        vec4 transparent = vec4(1.);
         float v = value*value;
-        color = vec4(1., v, v, 1.);
-//        color = mix(transparent, color, value.a);`
+        color = mix(farge, transparent, v);`
       }
     }
   };
