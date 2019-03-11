@@ -26,6 +26,7 @@ const Seksjon = ({ aktivtFormat, ...props }) => {
       return <Polygon {...props} />;
     default:
       console.error("Unknown " + aktivtFormat);
+      return null;
   }
 };
 
