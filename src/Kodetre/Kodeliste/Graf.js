@@ -2,14 +2,6 @@ import React, { useState } from "react";
 import Kodeliste from "./Kodeliste";
 import Ekspander from "./Ekspander";
 import antall from "./antall";
-import {
-  List,
-  ListItem,
-  ListItemText,
-  ListItemSecondaryAction,
-  Avatar,
-  AvatarIcon
-} from "@material-ui/core";
 import { Link } from "@material-ui/icons";
 
 const titler = {
