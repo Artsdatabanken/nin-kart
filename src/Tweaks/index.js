@@ -20,10 +20,10 @@ const Seksjon = ({ aktivtFormat, ...props }) => {
       return <Gradient {...props} />;
     case "raster_indexed":
       return <Indexed {...props} />;
+    case "raster_ruter":
+      return <Ruter {...props} />;
     case "polygon":
       return <Polygon {...props} />;
-    case "ruter":
-      return <Ruter {...props} />;
     default:
       console.error("Unknown " + aktivtFormat);
   }
