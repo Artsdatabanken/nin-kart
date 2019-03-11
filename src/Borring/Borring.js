@@ -62,8 +62,11 @@ class Borring extends Component {
     kode = this.getInnerMostSingleChild(kode, node);
     const { history } = this.props;
     backend.søk(kode).then(json => {
-      // TODO: Mofify lat,lon query API to return URL
-      const hit = json.result[0];
+      // TODO: Mofify lat,lon query API to return URLs
+      let hit = json.result[0];
+      for (const r of json.result) {
+        if (r.kode.endsWith(kode)) hit = r;
+      }
       history.push("/" + hit.url);
     });
   };
