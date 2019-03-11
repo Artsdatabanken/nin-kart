@@ -11,7 +11,6 @@ class AktiveKartlag extends React.Component {
   render() {
     const { koder, erÅpen } = this.props;
     const keys = Object.keys(koder);
-    console.log(keys);
     return (
       <SettingsContext.Consumer>
         {context => (

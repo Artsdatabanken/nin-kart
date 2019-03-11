@@ -9,6 +9,7 @@ import Statistikk from "./Statistikk";
 import Gradienter from "./Gradienter";
 import Ekspander from "./Ekspander";
 import Ingress from "./Ingress";
+import antall from "./antall";
 
 const KodeVindu = ({
   erAktivert,
@@ -158,13 +159,14 @@ const KodeVindu = ({
         />
       </Ekspander>
 
-      <Graf graf={meta.graf} parentkode={kode} onNavigate={onNavigate} />
+      <Graf
+        url={url}
+        graf={meta.graf}
+        parentkode={kode}
+        onNavigate={onNavigate}
+      />
     </div>
   );
 };
-
-function antall(count, singularSuffix, pluralSuffix) {
-  return count + " " + (count === 1 ? singularSuffix : pluralSuffix);
-}
 
 export default KodeVindu;
