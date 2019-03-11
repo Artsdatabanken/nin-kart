@@ -12,7 +12,7 @@ export default {
   gradient: gradient,
   raster_gradient: gradient,
   raster_indexed: indexedRaster,
-  ruter: ruter,
+  raster_ruter: ruter,
   osm_lys: openStreetMap,
   osm_mørk: openStreetMap,
   google_hybrid: googleRaster,
