@@ -6,7 +6,7 @@ function drawAll(drawArgs) {
     [drawArgs.kode]: {
       data: { source: drawArgs.kode },
       draw: {
-        ruter: {
+        ["ruter_" + drawArgs.kode]: {
           order: 700
         }
       }
@@ -35,7 +35,7 @@ function lagStyle(format, drawArgs) {
     }
   };
   return {
-    name: "ruter",
+    name: "ruter_" + drawArgs.kode,
     value: gradient
   };
 }
