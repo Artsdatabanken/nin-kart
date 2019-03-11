@@ -16,9 +16,9 @@ function drawAll(drawArgs) {
 }
 
 function lagStyle(format, drawArgs) {
-  const farge = tinycolor(drawArgs.farge);
-  if (drawArgs.opplystKode)
-    farge._a = drawArgs.opplystKode === drawArgs.kode ? 1.0 : 0.5;
+  let farge = tinycolor(drawArgs.farge);
+  if (drawArgs.opplystKode && drawArgs.opplystKode !== drawArgs.kode)
+    farge = farge.lighten(20);
   const fargear = [farge._r / 255, farge._g / 255, farge._b / 255, farge._a];
   const gradient = {
     base: "raster",
