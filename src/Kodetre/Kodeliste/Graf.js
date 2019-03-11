@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Kodeliste from "./Kodeliste";
 import Ekspander from "./Ekspander";
+import antall from "./antall";
+import { Link } from "@material-ui/icons";
 
 const titler = {
   mengdeart: {
@@ -59,6 +61,7 @@ const titler = {
 };
 
 const Graf = ({
+  url,
   graf,
   parentkode,
   onNavigate,
@@ -71,14 +74,14 @@ const Graf = ({
   return graf.map(relasjon => {
     const key = relasjon.type;
     const x = titler[key] || { title: key };
-    const antall = relasjon.noder.length;
+    const count = relasjon.noder.length;
     return (
       <Ekspander
         key={key}
         expanded={expand[key]}
-        visible={antall > 0}
+        visible={count > 0}
         heading={x.title}
-        heading2={antall === 1 ? "1 element" : antall + " elementer"}
+        heading2={antall(count, "element", "elementer")}
         onExpand={() => setExpand({ ...expand, [key]: !expand[key] })}
       >
         <Kodeliste
@@ -91,6 +94,26 @@ const Graf = ({
           onMouseLeave={onMouseLeave}
           opplystKode={opplystKode}
         />
+        {key === "Datakilde" && (
+          <React.Fragment>
+            <div style={{ paddingLeft: 24, paddingBottom: 24 }}>
+              Åpne data fra{" "}
+              <a target="top" href={"https://data.artsdatabanken.no/" + url}>
+                data.artsdatabanken.no
+              </a>
+              <div
+                style={{
+                  display: "inline",
+                  position: "relative",
+                  left: 10,
+                  top: 8
+                }}
+              >
+                <Link />
+              </div>
+            </div>
+          </React.Fragment>
+        )}
       </Ekspander>
     );
   });
