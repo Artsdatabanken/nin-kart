@@ -11,13 +11,14 @@ class AktiveKartlag extends React.Component {
   render() {
     const { koder, erÅpen } = this.props;
     const keys = Object.keys(koder);
+    console.log(keys);
     return (
       <SettingsContext.Consumer>
         {context => (
           <Collapse in={erÅpen} collapsedHeight="42px">
             <AktiveKartlagKnapp
               erÅpen={erÅpen}
-              antallLag={keys.length - 2}
+              antallLag={keys.length - 1}
               onClick={context.onToggleAktiveLag}
             />
             <List
