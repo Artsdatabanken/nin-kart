@@ -10,6 +10,7 @@ import Gradienter from "./Gradienter";
 import Ekspander from "./Ekspander";
 import Ingress from "./Ingress";
 import antall from "./antall";
+import { SettingsContext } from "../../SettingsContext";
 
 const KodeVindu = ({
   erAktivert,
@@ -53,119 +54,135 @@ const KodeVindu = ({
     : 0;
   const flaggLength = meta.flagg ? Object.entries(meta.flagg).length : 0;
   return (
-    <div
-      square="false"
-      elevation={4}
-      style={{
-        position: "relative",
-        top: -72
+    <SettingsContext.Consumer>
+      {context => {
+        return (
+          <div
+            square="false"
+            elevation={4}
+            style={{
+              position: "relative",
+              top: -72
+            }}
+          >
+            <Kodekort
+              kode={kode}
+              farge={farge}
+              url={url}
+              prefiks={prefiks}
+              bbox={bbox}
+              tittel={tittel}
+              nivå={nivå}
+              overordnet={overordnet}
+              onNavigate={onNavigate}
+              erAktivert={erAktivert}
+              onFitBounds={onFitBounds}
+              onToggleLayer={onToggleLayer}
+            />
+
+            <Ekspander
+              visible={overordnet.length > 0}
+              expanded={expand.tagger}
+              heading="Klassifisering"
+              heading2={"Nivå " + overordnet.length}
+              onExpand={() => setExpand({ ...expand, tagger: !expand.tagger })}
+            >
+              <Overordnet overordnet={overordnet} onNavigate={onNavigate} />
+            </Ekspander>
+
+            <Ekspander
+              visible={!!ingress}
+              expanded={expand.ingress}
+              heading="Beskrivelse"
+              onExpand={() =>
+                setExpand({ ...expand, ingress: !expand.ingress })
+              }
+            >
+              <Ingress beskrivelse={ingress} infoUrl={infoUrl} />
+            </Ekspander>
+            <Ekspander
+              visible={prefiks !== "AO" && !!stats}
+              expanded={expand.stats}
+              heading="Statistikk"
+              onExpand={() => setExpand({ ...expand, stats: !expand.stats })}
+            >
+              <Statistikk
+                tittel={språk(meta.tittel)}
+                infoUrl={infoUrl}
+                stats={stats}
+                arealPrefix={mor.areal}
+                toppnavn={mor.tittel.nb}
+                arealVindu={antallArter}
+                arterVindu={antallArter}
+                geometrierVindu={antallNaturomrader}
+              />
+            </Ekspander>
+
+            <Ekspander
+              expanded={expand.innhold}
+              visible={meta.barn.length > 0}
+              heading="Inndelt i"
+              heading2={(antall(meta.barn.length), "type", "typer")}
+              onExpand={() =>
+                setExpand({ ...expand, innhold: !expand.innhold })
+              }
+            >
+              <Kodeliste
+                title=""
+                parentkode={kode}
+                størsteAreal={data.størsteAreal}
+                apidata={data.barn}
+                metadata={meta.barn}
+                onNavigate={onNavigate}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+                opplystKode={opplystKode}
+                onUpdateMetaProp={onUpdateMetaProp}
+              />
+            </Ekspander>
+
+            <Ekspander
+              expanded={expand.gradient}
+              visible={gradientLength > 0}
+              heading="Gradienter"
+              heading2={antall(gradientLength, "element", "elementer")}
+              onExpand={() =>
+                setExpand({ ...expand, gradient: !expand.gradient })
+              }
+            >
+              <Gradienter
+                gradient={meta.gradient}
+                onNavigate={onNavigate}
+                visKoder={context.visKoder}
+              />
+            </Ekspander>
+
+            <Ekspander
+              expanded={expand.flagg}
+              visible={flaggLength > 0}
+              heading="Egenskaper"
+              heading2={antall(flaggLength, "element", "elementer")}
+              onExpand={() => setExpand({ ...expand, flagg: !expand.flagg })}
+            >
+              <Flagg
+                flagg={meta.flagg}
+                onNavigate={url => {
+                  console.warn(url);
+                  onNavigate(url);
+                }}
+              />
+            </Ekspander>
+
+            <Graf
+              url={url}
+              graf={meta.graf}
+              parentkode={kode}
+              onNavigate={onNavigate}
+            />
+          </div>
+        );
       }}
-    >
-      <Kodekort
-        kode={kode}
-        farge={farge}
-        url={url}
-        prefiks={prefiks}
-        bbox={bbox}
-        tittel={tittel}
-        nivå={nivå}
-        overordnet={overordnet}
-        onNavigate={onNavigate}
-        erAktivert={erAktivert}
-        onFitBounds={onFitBounds}
-        onToggleLayer={onToggleLayer}
-      />
-
-      <Ekspander
-        visible={overordnet.length > 0}
-        expanded={expand.tagger}
-        heading="Klassifisering"
-        heading2={"Nivå " + overordnet.length}
-        onExpand={() => setExpand({ ...expand, tagger: !expand.tagger })}
-      >
-        <Overordnet overordnet={overordnet} onNavigate={onNavigate} />
-      </Ekspander>
-
-      <Ekspander
-        visible={!!ingress}
-        expanded={expand.ingress}
-        heading="Beskrivelse"
-        onExpand={() => setExpand({ ...expand, ingress: !expand.ingress })}
-      >
-        <Ingress beskrivelse={ingress} infoUrl={infoUrl} />
-      </Ekspander>
-      <Ekspander
-        visible={prefiks !== "AO" && !!stats}
-        expanded={expand.stats}
-        heading="Statistikk"
-        onExpand={() => setExpand({ ...expand, stats: !expand.stats })}
-      >
-        <Statistikk
-          tittel={språk(meta.tittel)}
-          infoUrl={infoUrl}
-          stats={stats}
-          arealPrefix={mor.areal}
-          toppnavn={mor.tittel.nb}
-          arealVindu={antallArter}
-          arterVindu={antallArter}
-          geometrierVindu={antallNaturomrader}
-        />
-      </Ekspander>
-
-      <Ekspander
-        expanded={expand.innhold}
-        visible={meta.barn.length > 0}
-        heading="Inndelt i"
-        heading2={(antall(meta.barn.length), "type", "typer")}
-        onExpand={() => setExpand({ ...expand, innhold: !expand.innhold })}
-      >
-        <Kodeliste
-          title=""
-          parentkode={kode}
-          størsteAreal={data.størsteAreal}
-          apidata={data.barn}
-          metadata={meta.barn}
-          onNavigate={onNavigate}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          opplystKode={opplystKode}
-          onUpdateMetaProp={onUpdateMetaProp}
-        />
-      </Ekspander>
-
-      <Ekspander
-        expanded={expand.gradient}
-        visible={gradientLength > 0}
-        heading="Gradienter"
-        heading2={antall(gradientLength, "element", "elementer")}
-        onExpand={() => setExpand({ ...expand, gradient: !expand.gradient })}
-      >
-        <Gradienter gradient={meta.gradient} onNavigate={onNavigate} />
-      </Ekspander>
-
-      <Ekspander
-        expanded={expand.flagg}
-        visible={flaggLength > 0}
-        heading="Egenskaper"
-        heading2={antall(flaggLength, "element", "elementer")}
-        onExpand={() => setExpand({ ...expand, flagg: !expand.flagg })}
-      >
-        <Flagg
-          flagg={meta.flagg}
-          onNavigate={url => {
-            console.warn(url);
-            onNavigate(url);
-          }}
-        />
-      </Ekspander>
-
-      <Graf
-        url={url}
-        graf={meta.graf}
-        parentkode={kode}
-        onNavigate={onNavigate}
-      />
-    </div>
+    </SettingsContext.Consumer>
   );
 };
 

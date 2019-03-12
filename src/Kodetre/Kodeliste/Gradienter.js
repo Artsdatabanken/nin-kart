@@ -6,7 +6,8 @@ const Gradienter = ({
   onNavigate,
   onMouseEnter,
   onMouseLeave,
-  opplystKode
+  opplystKode,
+  visKoder
 }) => {
   return (
     <React.Fragment>
@@ -17,6 +18,8 @@ const Gradienter = ({
             key={type}
             tittel={type}
             url={gr.url}
+            kode={gr.kode}
+            visKoder={visKoder}
             trinn={gr.trinn}
             onNavigate={onNavigate}
             onMouseEnter={onMouseEnter}

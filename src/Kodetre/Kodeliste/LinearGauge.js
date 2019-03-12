@@ -1,8 +1,9 @@
 import språk from "../../språk";
 import React, { Component } from "react";
 import tinycolor from "tinycolor2";
-import { ListItem, ListItemText } from "@material-ui/core";
+import { ListItem, ListItemText, Typography } from "@material-ui/core";
 import { SettingsContext } from "../../SettingsContext";
+import prettyKode from "./prettyKode";
 
 const gaugeHeight = 7;
 
@@ -19,7 +20,7 @@ function rutefarge(erPå, col) {
 
 export default class Gradient extends Component {
   render() {
-    const { tittel, trinn, onNavigate, url } = this.props;
+    const { tittel, trinn, onNavigate, url, kode, visKoder } = this.props;
     const antall = trinn.length;
     let påFra = 99,
       påTil = -1;
@@ -33,6 +34,19 @@ export default class Gradient extends Component {
     const påRange = [trinn[påFra], trinn[påTil]];
     return (
       <ListItem button dense onClick={() => onNavigate(url)}>
+        {visKoder && (
+          <Typography
+            variant="body2"
+            style={{
+              color: "rgba(0,0,0,0.44)",
+              position: "absolute",
+              top: 6,
+              right: 40
+            }}
+          >
+            {prettyKode(kode)}
+          </Typography>
+        )}
         <ListItemText
           primary={tittel}
           secondary={
