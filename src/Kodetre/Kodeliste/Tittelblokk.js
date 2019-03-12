@@ -5,6 +5,7 @@ import React from "react";
 import SettingsContainer from "../../SettingsContainer";
 import { SettingsContext } from "../../SettingsContext";
 import { makeStyles } from "@material-ui/styles";
+import prettyKode from "./prettyKode";
 
 const useStyles = makeStyles({
   block: {
@@ -47,6 +48,7 @@ const Tittelblokk = ({
   children
 }) => {
   const classes = useStyles();
+  const pkode = prettyKode(kode).split(/-(.+)/);
   return (
     <SettingsContainer>
       <SettingsContext.Consumer>
@@ -64,9 +66,7 @@ const Tittelblokk = ({
                 style={{
                   backgroundColor: chipFarge
                 }}
-                label={
-                  <span style={{ color: kontrastfarge }}>{kode.slice(3)}</span>
-                }
+                label={<span style={{ color: kontrastfarge }}>{pkode[1]}</span>}
                 clickable={true}
                 avatar={
                   <Avatar
@@ -75,7 +75,7 @@ const Tittelblokk = ({
                       color: kontrastfarge
                     }}
                   >
-                    {kode.slice(0, 2)}
+                    {pkode[0]}
                   </Avatar>
                 }
               />

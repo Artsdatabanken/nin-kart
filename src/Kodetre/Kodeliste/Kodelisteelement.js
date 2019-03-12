@@ -4,6 +4,7 @@ import språk from "../../språk";
 import Bildeavatar from "./Bildeavatar";
 import VolumIndikator from "./VolumIndikator";
 import opplyst from "../../Kart/LeafletTangram/scene/visualisering/palette/opplyst";
+import prettyKode from "./prettyKode";
 
 function hack(symbol, intervall) {
   return intervall.match(/[<>]/) ? intervall : symbol + " " + intervall;
@@ -28,7 +29,7 @@ function kodeSuffix(kode, parentkode) {
 
   if ("0123456789".indexOf(kode[i]) >= 0) i -= 1;
   if (kode[i] === "-") i++;
-  return kode.substring(i);
+  return prettyKode(kode.substring(i));
 }
 
 class Kodelisteelement extends React.Component {
