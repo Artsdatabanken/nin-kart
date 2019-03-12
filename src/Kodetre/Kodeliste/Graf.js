@@ -3,6 +3,7 @@ import Kodeliste from "./Kodeliste";
 import Ekspander from "./Ekspander";
 import antall from "./antall";
 import { Link } from "@material-ui/icons";
+import { Typography } from "@material-ui/core";
 
 const titler = {
   mengdeart: {
@@ -97,20 +98,22 @@ const Graf = ({
         {key === "Datakilde" && (
           <React.Fragment>
             <div style={{ paddingLeft: 24, paddingBottom: 24 }}>
-              Åpne data fra{" "}
-              <a target="top" href={"https://data.artsdatabanken.no/" + url}>
-                data.artsdatabanken.no
-              </a>
-              <div
-                style={{
-                  display: "inline",
-                  position: "relative",
-                  left: 10,
-                  top: 8
-                }}
-              >
-                <Link />
-              </div>
+              <Typography variant="body1">
+                Åpne data fra{" "}
+                <a target="top" href={"https://data.artsdatabanken.no/" + url}>
+                  data.artsdatabanken.no
+                </a>
+                <div
+                  style={{
+                    display: "inline",
+                    position: "relative",
+                    left: 6,
+                    top: 8
+                  }}
+                >
+                  <Link />
+                </div>
+              </Typography>
             </div>
           </React.Fragment>
         )}
