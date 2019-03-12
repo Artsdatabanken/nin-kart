@@ -60,7 +60,6 @@ const Listeelement = ({
           </div>
           <div style={{ position: "absolute", right: 8, top: 8 }}>
             <Flis kode={kode} visKoder={visKoder} />
-            __
           </div>
         </ListItem>
       </div>
