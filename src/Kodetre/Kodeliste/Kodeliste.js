@@ -80,7 +80,11 @@ class Kodeliste extends React.Component {
 
 const nøkkel = (node, sorterPåKode) => {
   if (node.sortering) return node.sortering;
-  if (sorterPåKode) return node.kode.split(/-/).map(e => e.padStart(5, "0"));
+  if (sorterPåKode)
+    return node.kode
+      .replace("+", "Z")
+      .split(/-/)
+      .map(e => e.padStart(5, "0"));
 
   return språk(node.tittel);
 };
