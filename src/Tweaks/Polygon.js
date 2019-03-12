@@ -24,10 +24,11 @@ class Polygon extends Component {
       onMouseEnter,
       onMouseLeave,
       barn,
-      lag
+      lag,
+      url
     } = this.props;
     const { location } = history;
-    const undernivå = this.navnPåUndernivå(kode);
+    const undernivå = this.navnPåUndernivå(url);
     if (location.search.startsWith("?vis_barn")) {
       const egenskap = location.search.split("=").pop();
       const barnet = barn[egenskap];
@@ -86,7 +87,7 @@ class Polygon extends Component {
   };
 
   navnPåUndernivå(kode) {
-    const nivåer = typesystem.hentNivaa(kode + "-1");
+    const nivåer = typesystem.hentNivaa(kode + "/x");
     if (nivåer.length <= 0) return "underelementer";
     const nivå = nivåer[0];
     return nivå.endsWith("e") ? nivå + "r" : nivå;
