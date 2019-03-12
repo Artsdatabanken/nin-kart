@@ -8,7 +8,6 @@ import SliderSetting from "./SliderSetting";
 
 class Gradient extends Component {
   render() {
-    console.log(this.props);
     const { kode, onUpdateLayerProp, kart, måleenhet } = this.props;
     const gradient = kart.format.raster_gradient;
     const { filterMin, filterMax } = gradient;
