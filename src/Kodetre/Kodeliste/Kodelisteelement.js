@@ -3,7 +3,7 @@ import React from "react";
 import språk from "../../språk";
 import Bildeavatar from "./Bildeavatar";
 import VolumIndikator from "./VolumIndikator";
-import opplyst from "../../Kart/LeafletTangram/scene/visualisering/palette/opplyst";
+import opplyst from "../../palette/opplyst";
 import prettyKode from "./prettyKode";
 
 function hack(symbol, intervall) {

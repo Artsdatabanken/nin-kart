@@ -1,6 +1,6 @@
 import tinycolor from "tinycolor2";
 import sysconfig from "../../../../config";
-import opplyst from "./palette/opplyst";
+import opplyst from "../../../../palette/opplyst";
 
 function drawAll(drawArgs) {
   const { kode, barn, farge, opplystKode, visBarn, visEtiketter } = drawArgs;

@@ -1,4 +1,4 @@
-function createPalette(colorarray) {
+function colorArray2Image(colorarray) {
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d");
   canvas.width = 256;
@@ -14,4 +14,4 @@ function createPalette(colorarray) {
   //  return context.getImageData(0, 0, canvas.width, canvas.height)
 }
 
-export default createPalette;
+export default colorArray2Image;

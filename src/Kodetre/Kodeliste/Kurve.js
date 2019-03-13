@@ -14,7 +14,7 @@ function normaliser(stats) {
 
 const logx = false;
 
-const Kurve = ({ stats }) => {
+const Kurve = ({ stats, gradient }) => {
   let ymax = 0;
   for (const v of stats.fordeling) ymax = Math.max(ymax, v);
   const line =
@@ -121,6 +121,15 @@ const Kurve = ({ stats }) => {
       {false && (
         <image
           xlinkHref="https://bennettfeely.com/gradients/img/gradient.webp"
+          height="100%"
+          width="100%"
+          preserveAspectRatio="none"
+          id="path1"
+        />
+      )}
+      {true && (
+        <image
+          xlinkHref={gradient}
           height="100%"
           width="100%"
           preserveAspectRatio="none"
