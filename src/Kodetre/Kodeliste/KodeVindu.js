@@ -10,6 +10,8 @@ import Gradienter from "./Gradienter";
 import Ekspander from "./Ekspander";
 import Ingress from "./Ingress";
 import antall from "./antall";
+import KurveContainer from "./KurveContainer";
+
 import { SettingsContext } from "../../SettingsContext";
 
 const KodeVindu = ({
@@ -18,6 +20,7 @@ const KodeVindu = ({
   onFitBounds,
   meta,
   data,
+  kurve,
   onMouseEnter,
   onMouseLeave,
   onToggleLayer,
@@ -156,6 +159,26 @@ const KodeVindu = ({
                 visKoder={context.visKoder}
               />
             </Ekspander>
+            {kurve && (
+              <Ekspander
+                expanded={expand.stat1d}
+                visible={true}
+                heading={
+                  "Statistikk: " +
+                  språk(
+                    kurve.gradient.url === meta.url
+                      ? kurve.punkt.tittel
+                      : kurve.gradient.tittel
+                  )
+                }
+                heading2={"graf"}
+                onExpand={() =>
+                  setExpand({ ...expand, stat1d: !expand.stat1d })
+                }
+              >
+                <KurveContainer punkt={kurve.punkt} gradient={kurve.gradient} />
+              </Ekspander>
+            )}
 
             <Ekspander
               expanded={expand.flagg}
