@@ -2,21 +2,6 @@ import { wgs84ToUtm33 } from "./projection";
 import config from "./config";
 
 class Backend {
-  static async postFilterPromise(url, filter) {
-    return new Promise((resolve, reject) => {
-      fetch(url, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(filter)
-      })
-        .then(result => result.json())
-        .then(json => resolve(json));
-    });
-  }
-
   static async getPromise(url) {
     return new Promise((resolve, reject) => {
       fetch(url)

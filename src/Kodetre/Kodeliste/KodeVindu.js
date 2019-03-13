@@ -10,6 +10,8 @@ import Gradienter from "./Gradienter";
 import Ekspander from "./Ekspander";
 import Ingress from "./Ingress";
 import antall from "./antall";
+import KurveContainer from "./KurveContainer";
+
 import { SettingsContext } from "../../SettingsContext";
 
 const KodeVindu = ({
@@ -154,6 +156,19 @@ const KodeVindu = ({
                 gradient={meta.gradient}
                 onNavigate={onNavigate}
                 visKoder={context.visKoder}
+              />
+            </Ekspander>
+            <Ekspander
+              expanded={expand.stat1d}
+              visible={true}
+              heading="Fordeling av Blåbær"
+              heading2={"graf"}
+              onExpand={() => setExpand({ ...expand, stat1d: !expand.stat1d })}
+            >
+              <KurveContainer
+                punkter="Biota/Plantae/Marchantiophyta/Jungermanniopsida"
+                raster_="Natur_i_Norge/Landskap/Landskapsgradient/Kystavstand"
+                raster={meta.url}
               />
             </Ekspander>
 
