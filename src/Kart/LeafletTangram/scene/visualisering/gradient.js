@@ -101,7 +101,7 @@ function lagStyle(format, drawArgs) {
   };
 }
 
-function lagSource({ url, zoom }, bbox) {
+function lagSource({ url, zoom }, { bbox }) {
   return sysconfig.createTileSource(url, "Raster", zoom, bbox);
 }
 

@@ -16,9 +16,10 @@ function drawAll(drawArgs) {
 }
 
 function lagStyle(format, drawArgs) {
-  let farge = tinycolor(drawArgs.farge);
-  if (drawArgs.opplystKode && drawArgs.opplystKode !== drawArgs.kode)
-    farge = farge.lighten(20);
+  let farge = tinycolor(
+    drawArgs.opplystBarn ? drawArgs.opplystBarn.farge : drawArgs.farge
+  );
+  if (drawArgs.opplystKode && !drawArgs.opplystBarn) farge.lighten(20);
   const fargear = [farge._r / 255, farge._g / 255, farge._b / 255, farge._a];
   const gradient = {
     base: "raster",
@@ -40,8 +41,10 @@ function lagStyle(format, drawArgs) {
   };
 }
 
-function lagSource({ url, zoom }, bbox) {
-  return sysconfig.createTileSource(url, "Raster", zoom, bbox);
+function lagSource({ url, zoom }, drawArgs) {
+  if (drawArgs.opplystBarn)
+    url = url.replace(drawArgs.url, drawArgs.opplystBarn.url);
+  return sysconfig.createTileSource(url, "Raster", zoom, drawArgs.bbox);
 }
 
 export default { drawAll, lagSource, lagStyle };

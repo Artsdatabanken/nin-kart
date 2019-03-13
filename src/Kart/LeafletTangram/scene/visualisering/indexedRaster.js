@@ -80,7 +80,7 @@ function lagStyle(format, drawArgs) {
   return { name: "raster", value: gradient };
 }
 
-function lagSource({ url, zoom }, bbox) {
+function lagSource({ url, zoom }, { bbox }) {
   const source = sysconfig.createTileSource(url, "Raster", zoom, bbox);
   //  source.tile_size = 256;
   return source;

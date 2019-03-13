@@ -64,7 +64,7 @@ function drawAll(drawArgs) {
   return layers;
 }
 
-function lagSource({ url, zoom }, bbox) {
+function lagSource({ url, zoom }, { bbox }) {
   return sysconfig.createTileSource(
     sysconfig.storageUrl + "Basiskart/OpenStreetMap/polygon.3857.mbtiles",
     "MVT",
