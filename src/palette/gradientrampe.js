@@ -1,4 +1,5 @@
 import tinycolor from "tinycolor2";
+import colorArray2Image from "./colorArray2Image";
 
 function lagGradientRampe(barna, opplystKode, mode) {
   let opplystLevel = -1;
@@ -38,7 +39,8 @@ function lagGradientRampe(barna, opplystKode, mode) {
       cmap[ci] = tc.toHexString();
     }
   }
-  return cmap;
+  const palette = colorArray2Image(cmap);
+  return palette;
 }
 
 export default lagGradientRampe;

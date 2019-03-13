@@ -1,5 +1,4 @@
 import sysconfig from "../../../../config";
-import createPalette from "./palette";
 import lagGradientrampe from "./palette/gradientrampe";
 
 function drawAll(drawArgs) {
@@ -29,8 +28,7 @@ function lagStyle(format, drawArgs) {
   const { opplystKode, barn } = drawArgs;
   let [filterMin, filterMax] = normaliserFilter(format);
   const [visning] = drawArgs.format.visning;
-  const cmap = lagGradientrampe(barn, opplystKode, visning || "diskret");
-  const palette = createPalette(cmap);
+  const palette = lagGradientrampe(barn, opplystKode, visning || "diskret");
   const gradient = {
     base: "raster",
     blend: "multiply",

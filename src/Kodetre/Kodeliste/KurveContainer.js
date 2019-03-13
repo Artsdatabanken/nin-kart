@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Kurve from "./Kurve";
 import { CircularProgress } from "@material-ui/core";
+import lagGradientrampe from "../../palette/gradientrampe";
 
 const KurveContainer = ({ punkt, gradient }) => {
   const [stats, setStats] = useState();
@@ -19,7 +20,10 @@ const KurveContainer = ({ punkt, gradient }) => {
       });
   }, []);
   if (!stats) return <CircularProgress style={{ margin: 24 }} />;
-  return <Kurve stats={stats} />;
+  console.log(gradient);
+  const palette = lagGradientrampe(gradient.barn, null, "diskret");
+
+  return <Kurve stats={stats} gradient={palette} />;
 };
 
 export default KurveContainer;

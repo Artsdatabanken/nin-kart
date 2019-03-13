@@ -143,16 +143,14 @@ class VenstreVinduContainer extends React.Component {
 }
 
 function finnKurvevariabler(meta, aktiveLag) {
-  let r = {
-    gradient: { url: "Natur_i_Norge/Landskap/Landskapsgradient/Kystavstand" },
-    punkt: { url: "Biota/Plantae/Marchantiophyta/Jungermanniopsida" }
-  };
+  let r = {};
 
   console.log(meta);
   console.log(aktiveLag);
   asn(meta, r);
   for (const lag of Object.values(aktiveLag)) asn(lag, r);
-  return r;
+  if (r.gradient && r.punkt) return r;
+  return null;
 }
 
 function asn(lag, r) {
