@@ -1,5 +1,5 @@
 import sysconfig from "../../../../config";
-import lagGradientrampe from "./palette/gradientrampe";
+import lagGradientrampe from "../../../../palette/gradientrampe";
 
 function drawAll(drawArgs) {
   const layer = {
