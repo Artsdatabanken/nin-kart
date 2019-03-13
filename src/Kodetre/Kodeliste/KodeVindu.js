@@ -20,6 +20,7 @@ const KodeVindu = ({
   onFitBounds,
   meta,
   data,
+  kurve,
   onMouseEnter,
   onMouseLeave,
   onToggleLayer,
@@ -158,19 +159,26 @@ const KodeVindu = ({
                 visKoder={context.visKoder}
               />
             </Ekspander>
-            <Ekspander
-              expanded={expand.stat1d}
-              visible={true}
-              heading="Fordeling av Blåbær"
-              heading2={"graf"}
-              onExpand={() => setExpand({ ...expand, stat1d: !expand.stat1d })}
-            >
-              <KurveContainer
-                punkter="Biota/Plantae/Marchantiophyta/Jungermanniopsida"
-                raster_="Natur_i_Norge/Landskap/Landskapsgradient/Kystavstand"
-                raster={meta.url}
-              />
-            </Ekspander>
+            {kurve && (
+              <Ekspander
+                expanded={expand.stat1d}
+                visible={true}
+                heading={
+                  "Statistikk: " +
+                  språk(
+                    kurve.gradient.url === meta.url
+                      ? kurve.punkt.tittel
+                      : kurve.gradient.tittel
+                  )
+                }
+                heading2={"graf"}
+                onExpand={() =>
+                  setExpand({ ...expand, stat1d: !expand.stat1d })
+                }
+              >
+                <KurveContainer punkt={kurve.punkt} gradient={kurve.gradient} />
+              </Ekspander>
+            )}
 
             <Ekspander
               expanded={expand.flagg}

@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import Kurve from "./Kurve";
 import { CircularProgress } from "@material-ui/core";
 
-const KurveContainer = ({ punkter, raster }) => {
+const KurveContainer = ({ punkt, gradient }) => {
   const [stats, setStats] = useState();
   useEffect(() => {
-    const url = `https://romlig.artsdatabanken.no/statistikk/grid1d?punkter=${punkter}&raster=${raster}`;
+    const url = `https://romlig.artsdatabanken.no/statistikk/grid1d?punkter=${
+      punkt.url
+    }&raster=${gradient.url}`;
     fetch(url)
       .then(result => result.json())
       .then(json => {
@@ -16,7 +18,7 @@ const KurveContainer = ({ punkter, raster }) => {
         return {};
       });
   }, []);
-  if (!stats) return <CircularProgress />;
+  if (!stats) return <CircularProgress style={{ margin: 24 }} />;
   return <Kurve stats={stats} />;
 };
 

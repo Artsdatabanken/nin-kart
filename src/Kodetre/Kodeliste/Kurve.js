@@ -8,8 +8,11 @@ function normaliser(stats) {
     if (v < ymax) ymax2 = Math.max(ymax2, v);
   }
   ymax = 0.5 * (ymax + ymax2);
-  return stats.fordeling.map(y => Math.min(100, (100 * y) / ymax));
+  const r = stats.fordeling.map(y => Math.min(100, (100 * y) / ymax));
+  return r;
 }
+
+const logx = false;
 
 const Kurve = ({ stats }) => {
   let ymax = 0;
@@ -17,7 +20,10 @@ const Kurve = ({ stats }) => {
   const line =
     "0,0 " +
     normaliser(stats)
-      .map((y, i) => `${i},${-50 * Math.log10(y + 1)}`)
+      .map(
+        (y, i) =>
+          `${logx ? Math.log10(i + 1) * 50 : i},${-50 * Math.log10(y + 1)}`
+      )
       .join(" ") +
     " 0,0";
   return (
@@ -112,13 +118,15 @@ const Kurve = ({ stats }) => {
           strokeWidth: 0.5
         }}
       />
-      <image
-        xlinkHref="https://bennettfeely.com/gradients/img/gradient.webp"
-        height="100%"
-        width="100%"
-        preserveAspectRatio="none"
-        id="path1"
-      />
+      {false && (
+        <image
+          xlinkHref="https://bennettfeely.com/gradients/img/gradient.webp"
+          height="100%"
+          width="100%"
+          preserveAspectRatio="none"
+          id="path1"
+        />
+      )}
       <g transform="translate(0,100)">
         <polyline
           points={line}

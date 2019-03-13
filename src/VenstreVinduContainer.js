@@ -88,6 +88,7 @@ class VenstreVinduContainer extends React.Component {
         </Panel>
       );
     }
+    const kurve = finnKurvevariabler(meta, this.props.aktiveLag);
     return (
       <React.Fragment>
         <Panel>
@@ -105,6 +106,7 @@ class VenstreVinduContainer extends React.Component {
             language={this.props.language}
             meta={this.props.meta}
             onUpdateMetaProp={onUpdateMetaProp}
+            kurve={kurve}
           />
         </Panel>
         {this.state.error && (
@@ -138,6 +140,26 @@ class VenstreVinduContainer extends React.Component {
   }
 
   handleCloseSnackbar = () => this.setState({ error: null });
+}
+
+function finnKurvevariabler(meta, aktiveLag) {
+  let r = {
+    gradient: { url: "Natur_i_Norge/Landskap/Landskapsgradient/Kystavstand" },
+    punkt: { url: "Biota/Plantae/Marchantiophyta/Jungermanniopsida" }
+  };
+
+  console.log(meta);
+  console.log(aktiveLag);
+  asn(meta, r);
+  for (const lag of Object.values(aktiveLag)) asn(lag, r);
+  return r;
+}
+
+function asn(lag, r) {
+  if (!lag) return;
+  if (!lag.kart) return;
+  if (lag.kart.format.raster_gradient) r.gradient = lag;
+  if (lag.kart.format.raster_ruter) r.punkt = lag;
 }
 
 export default withRouter(VenstreVinduContainer);
