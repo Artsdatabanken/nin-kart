@@ -7,8 +7,8 @@ function normaliser(stats) {
     ymax = Math.max(ymax, v);
     if (v < ymax) ymax2 = Math.max(ymax2, v);
   }
-  console.log(ymax2, ymax);
-  return stats.fordeling.map(y => Math.min(100, (100 * y) / ymax2));
+  ymax = 0.5 * (ymax + ymax2);
+  return stats.fordeling.map(y => Math.min(100, (100 * y) / ymax));
 }
 
 const Kurve = ({ stats }) => {
