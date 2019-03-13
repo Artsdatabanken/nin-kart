@@ -5,7 +5,45 @@ import antall from "./antall";
 import { Link } from "@material-ui/icons";
 import { Typography } from "@material-ui/core";
 
+const la = {
+  dominerende: {
+    kort: "Dominerende landskapselement",
+    lang:
+      "Landskapselement med gjennomsnittlig arealdekning eller volumandel større enn 1/4 av i et utvalg av enkeltobservasjonsenheter."
+  },
+  vanlig: {
+    kort: "Vanlig forekommende landskapselementer",
+    lang:
+      "Landskapselement (landformer og natursystemer) med frekvens større enn 1/8 i et utvalg enkeltobservasjonsenheter, eller landskapselement med høyere frekvens og dekning i en aktuell landskapstype (hovedtype eller grunntype) enn i et sammenliknbart utvalg typer (f.eks. andre hovedtyper som tilhører samme hovedtypegruppe eller andre grunntyper som tilhører samme hovedtype)."
+  },
+  gradient: {
+    kort: "Gradient-tyngdepunktart",
+    lang:
+      "Landskapselement med høyere frekvens og dekning på et gitt trinn langs en landskapsgradient (KLG) enn på ethvert annet trinn langs den samme KLGen (gitt at variasjonen langs alle landskapsgradienter holdes konstant."
+  },
+  Landskapselement:
+    "Naturlig eller menneskeskapt objekt, enhet eller egenskap, inkludert naturtype-arealenheter på natursystem- og natursystemkompleks-nivåene, som lar seg identifisere og observere på en landskapsrelevant romlig skala."
+};
+
 const titler = {
+  "Gradient-tyngdepunkt for landskapselement": {
+    subtitle: la.gradient.lang
+  },
+  "Gradient-tyngdepunkt i landskap": {
+    subtitle: la.gradient.lang
+  },
+  "Vanlig forekommende i landskap": {
+    subtitle: la.vanlig.lang
+  },
+  "Vanlig forekommende landskapselement": {
+    subtitle: la.vanlig.lang
+  },
+  "Dominerende landskapselement": {
+    subtitle: la.dominerende.lang
+  },
+  "Dominerende i landskap": {
+    subtitle: la.dominerende.lang
+  },
   mengdeart: {
     title: "Mengdearter",
     subtitle:
@@ -81,7 +119,7 @@ const Graf = ({
         key={key}
         expanded={expand[key]}
         visible={count > 0}
-        heading={x.title}
+        heading={x.title || key}
         heading2={antall(count, "element", "elementer")}
         onExpand={() => setExpand({ ...expand, [key]: !expand[key] })}
       >
