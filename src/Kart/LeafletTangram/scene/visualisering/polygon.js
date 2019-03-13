@@ -78,7 +78,7 @@ function draw(args) {
   return layer;
 }
 
-function lagSource({ url, zoom }, bbox) {
+function lagSource({ url, zoom }, { bbox }) {
   return sysconfig.createTileSource(url, "MVT", zoom, bbox);
 }
 

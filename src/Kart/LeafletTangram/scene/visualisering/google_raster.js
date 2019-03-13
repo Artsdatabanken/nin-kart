@@ -13,7 +13,7 @@ function drawAll({ format, opplystKode }) {
   };
 }
 
-function lagSource({ url, zoom }, bbox) {
+function lagSource({ url, zoom }, { bbox }) {
   return {
     type: "Raster",
     url: url,

@@ -39,10 +39,11 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
     aktivtFormat: lag.kart.aktivtFormat,
     format: lag.kart.format,
     viz: viz,
-    visBarn: lag.visBarn
+    visBarn: lag.visBarn || !!lag.barn
   };
-  if (lag.visBarn) {
+  if (drawArgs.visBarn) {
     drawArgs.barn = lag.barn;
+    drawArgs.opplystBarn = lag.barn.find(x => x.kode === opplystKode);
   }
   opprettEttLag(drawArgs, config);
   if (viz.kanHaTerreng) {
@@ -58,7 +59,7 @@ function opprettEttLag(drawArgs, config) {
     console.warn("Unknown kart format", drawArgs.aktivtFormat);
     return;
   }
-  const source = renderer.lagSource(format, drawArgs.bbox);
+  const source = renderer.lagSource(format, drawArgs);
 
   if (renderer.lagStyle) {
     const style = renderer.lagStyle(format, drawArgs);
@@ -98,24 +99,8 @@ function updateScene(config: Object, props: Object) {
   config.layers = {};
   const meta = props.meta;
   const viserKatalog = !!meta;
-  if (viserKatalog) {
-    if (!meta.kart) {
-      console.warn("No map data source found.");
-      return config;
-    }
-    const drawArgs = {
-      kode: meta.kode,
-      url: meta.url,
-      farge: meta.farge,
-      barn: meta.barn,
-      opplystKode: props.opplystKode,
-      bbox: meta.bbox,
-      aktivtFormat: meta.kart.aktivtFormat,
-      format: meta.kart.format,
-      visBarn: true
-    };
-    opprettEttLag(drawArgs, config);
-  }
+
+  if (viserKatalog) opprettAktivtLag(meta, props.opplystKode, config, true);
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config);
   lagTemp(config);
   console.log(config);
