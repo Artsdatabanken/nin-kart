@@ -13,6 +13,7 @@ function hack(symbol, intervall) {
 function getSecondary(meta) {
   let { intervall } = meta;
   if (!intervall) return;
+  if (!(intervall.minTekst || intervall.maxTekst)) return;
   if (!Array.isArray(intervall)) intervall = [intervall];
   const items = intervall.map(i => {
     if (!i.minTekst) return hack("<", i.maxTekst);
