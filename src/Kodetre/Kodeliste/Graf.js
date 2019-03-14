@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Kodeliste from "./Kodeliste";
 import Ekspander from "./Ekspander";
-import antall from "./antall";
 import { Link } from "@material-ui/icons";
 import { Typography } from "@material-ui/core";
 
@@ -120,7 +119,7 @@ const Graf = ({
         expanded={expand[key]}
         visible={count > 0}
         heading={x.title || key}
-        heading2={antall(count, "element", "elementer")}
+        heading2={count}
         onExpand={() => setExpand({ ...expand, [key]: !expand[key] })}
       >
         <Kodeliste

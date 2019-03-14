@@ -9,8 +9,14 @@ import Statistikk from "./Statistikk";
 import Gradienter from "./Gradienter";
 import Ekspander from "./Ekspander";
 import Ingress from "./Ingress";
-import antall from "./antall";
 import Kurver from "./Kurver";
+import {
+  CallSplit,
+  MergeType,
+  DescriptionOutlined,
+  ShowChart,
+  Gradient
+} from "@material-ui/icons/";
 
 import { SettingsContext } from "../../SettingsContext";
 
@@ -82,21 +88,11 @@ const KodeVindu = ({
               onFitBounds={onFitBounds}
               onToggleLayer={onToggleLayer}
             />
-
-            <Ekspander
-              visible={overordnet.length > 0}
-              expanded={expand.tagger}
-              heading="Klassifisering"
-              heading2={"Nivå " + overordnet.length}
-              onExpand={() => setExpand({ ...expand, tagger: !expand.tagger })}
-            >
-              <Overordnet overordnet={overordnet} onNavigate={onNavigate} />
-            </Ekspander>
-
             <Ekspander
               visible={!!ingress}
               expanded={expand.ingress}
               heading="Beskrivelse"
+              icon={<DescriptionOutlined />}
               onExpand={() =>
                 setExpand({ ...expand, ingress: !expand.ingress })
               }
@@ -122,10 +118,21 @@ const KodeVindu = ({
             </Ekspander>
 
             <Ekspander
+              visible={overordnet.length > 0}
+              expanded={expand.tagger}
+              icon={<MergeType style={{ transform: "rotate(-45deg)" }} />}
+              heading="Klassifisering"
+              heading2={overordnet.length}
+              onExpand={() => setExpand({ ...expand, tagger: !expand.tagger })}
+            >
+              <Overordnet overordnet={overordnet} onNavigate={onNavigate} />
+            </Ekspander>
+            <Ekspander
               expanded={expand.innhold}
               visible={meta.barn.length > 0}
               heading={meta.undernivå}
               heading2={meta.barn.length}
+              icon={<CallSplit style={{ transform: "rotate(180deg)" }} />}
               onExpand={() =>
                 setExpand({ ...expand, innhold: !expand.innhold })
               }
@@ -147,8 +154,9 @@ const KodeVindu = ({
             <Ekspander
               expanded={expand.gradient}
               visible={gradientLength > 0}
-              heading="Gradienter"
-              heading2={antall(gradientLength, "element", "elementer")}
+              heading="Gradient"
+              heading2={gradientLength}
+              icon={<Gradient />}
               onExpand={() =>
                 setExpand({ ...expand, gradient: !expand.gradient })
               }
@@ -165,6 +173,7 @@ const KodeVindu = ({
                 visible={true}
                 heading={"Observasjoner"}
                 heading2={"graf"}
+                icon={<ShowChart />}
                 onExpand={() =>
                   setExpand({ ...expand, stat1d: !expand.stat1d })
                 }
@@ -181,7 +190,7 @@ const KodeVindu = ({
               expanded={expand.flagg}
               visible={flaggLength > 0}
               heading="Egenskaper"
-              heading2={antall(flaggLength, "element", "elementer")}
+              heading2={flaggLength}
               onExpand={() => setExpand({ ...expand, flagg: !expand.flagg })}
             >
               <Flagg
