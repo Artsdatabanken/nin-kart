@@ -8,7 +8,7 @@ import {
   ListItemText
 } from "@material-ui/core";
 import { withTheme } from "@material-ui/core/styles";
-import { Visibility, VisibilityOff } from "@material-ui/icons";
+import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
 import React from "react";
 import { withRouter } from "react-router";
 
@@ -46,9 +46,9 @@ class Kartlagelement extends React.Component {
             }}
           >
             {this.props.erSynlig ? (
-              <Visibility style={{ color: "#333" }} />
+              <VisibilityOutlined style={{ color: "#333" }} />
             ) : (
-              <VisibilityOff style={{ color: "#aaa" }} />
+              <VisibilityOffOutlined style={{ color: "#aaa" }} />
             )}
           </IconButton>
           <ListItemText primary={språk(tittel)} secondary={undertittel} />
