@@ -18,10 +18,14 @@ const Overordnet = ({ farge, overordnet, onNavigate, classes }) => {
         onNavigate(item.url);
       }}
     >
-      <ListItemAvatar>
-        <Avatar>{overordnet.length - i - 1}</Avatar>
-      </ListItemAvatar>
-      <ListItemText primary={språk(item.tittel)} secondary={item.nivå} />
+      {true && (
+        <ListItemAvatar>
+          <Avatar style={{ width: 20, height: 20, margin: 0, fontSize: 10 }}>
+            {overordnet.length - i - 1}
+          </Avatar>
+        </ListItemAvatar>
+      )}
+      <ListItemText primary={språk(item.tittel)} _secondary={item.nivå} />
     </ListItem>
   ));
   r.reverse();
