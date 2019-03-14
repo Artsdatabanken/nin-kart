@@ -20,7 +20,19 @@ const KurveContainer = ({ punkt, gradient }) => {
       });
   }, []);
   if (!stats) return <CircularProgress style={{ margin: 24 }} />;
-  console.log(gradient);
+  if (stats.feil)
+    return (
+      <div
+        style={{
+          padding: 24,
+          fontSize: 10,
+          color: "red",
+          wordWrap: "break-word"
+        }}
+      >
+        {stats.feil.melding}
+      </div>
+    );
   const palette = lagGradientrampe(gradient.barn, null, "diskret");
 
   return <Kurve stats={stats} gradient={palette} />;

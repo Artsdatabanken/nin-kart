@@ -10,7 +10,7 @@ import Gradienter from "./Gradienter";
 import Ekspander from "./Ekspander";
 import Ingress from "./Ingress";
 import antall from "./antall";
-import KurveContainer from "./KurveContainer";
+import Kurver from "./Kurver";
 
 import { SettingsContext } from "../../SettingsContext";
 
@@ -163,20 +163,17 @@ const KodeVindu = ({
               <Ekspander
                 expanded={expand.stat1d}
                 visible={true}
-                heading={
-                  "Statistikk: " +
-                  språk(
-                    kurve.gradient.url === meta.url
-                      ? kurve.punkt.tittel
-                      : kurve.gradient.tittel
-                  )
-                }
+                heading={"Observasjoner"}
                 heading2={"graf"}
                 onExpand={() =>
                   setExpand({ ...expand, stat1d: !expand.stat1d })
                 }
               >
-                <KurveContainer punkt={kurve.punkt} gradient={kurve.gradient} />
+                <Kurver
+                  meta={meta}
+                  punkt={kurve.punkt}
+                  gradient={kurve.gradient}
+                />
               </Ekspander>
             )}
 

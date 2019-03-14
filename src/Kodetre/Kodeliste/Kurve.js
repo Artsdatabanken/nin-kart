@@ -25,7 +25,7 @@ const Kurve = ({ stats, gradient }) => {
           `${logx ? Math.log10(i + 1) * 50 : i},${-50 * Math.log10(y + 1)}`
       )
       .join(" ") +
-    " 0,0";
+    " 255,0 0,0";
   return (
     <svg
       style={{ paddingLeft: 6 }}
