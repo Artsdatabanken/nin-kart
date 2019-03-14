@@ -1,7 +1,6 @@
 function prettyKode(kode) {
   kode = kode.replace("NN-NA-LKM-", "");
-  kode = kode.replace("NN-NA-", "");
-  kode = kode.replace("NN-LA-", "");
+  kode = kode.replace("NN-", "");
   kode = kode.replace("AO-", "");
   return kode;
 }
