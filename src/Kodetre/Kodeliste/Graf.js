@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Kodeliste from "./Kodeliste";
 import Ekspander from "./Ekspander";
-import antall from "./antall";
 import { Link } from "@material-ui/icons";
 import { Typography } from "@material-ui/core";
 

@@ -9,14 +9,11 @@ import Statistikk from "./Statistikk";
 import Gradienter from "./Gradienter";
 import Ekspander from "./Ekspander";
 import Ingress from "./Ingress";
-import antall from "./antall";
 import Kurver from "./Kurver";
 import {
   CallSplit,
   MergeType,
-  ArrowUpwardOutlined,
   DescriptionOutlined,
-  TimelineOutlined,
   ShowChart,
   Gradient
 } from "@material-ui/icons/";
@@ -123,7 +120,7 @@ const KodeVindu = ({
             <Ekspander
               visible={overordnet.length > 0}
               expanded={expand.tagger}
-              icon={<MergeType />}
+              icon={<MergeType style={{ transform: "rotate(-45deg)" }} />}
               heading="Klassifisering"
               heading2={overordnet.length}
               onExpand={() => setExpand({ ...expand, tagger: !expand.tagger })}
