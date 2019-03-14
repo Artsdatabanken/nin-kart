@@ -124,8 +124,8 @@ const KodeVindu = ({
             <Ekspander
               expanded={expand.innhold}
               visible={meta.barn.length > 0}
-              heading="Inndelt i"
-              heading2={(antall(meta.barn.length), "type", "typer")}
+              heading={meta.undernivå}
+              heading2={meta.barn.length}
               onExpand={() =>
                 setExpand({ ...expand, innhold: !expand.innhold })
               }
