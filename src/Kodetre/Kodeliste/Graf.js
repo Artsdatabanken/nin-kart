@@ -7,7 +7,7 @@ import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles({
   button: {
-    color: "rgba(0,0,0,0.4)",
+    color: "rgba(0,0,0,0.5)",
     margin: 8
   },
   rightIcon: {
@@ -154,7 +154,7 @@ const Graf = ({
                 window.location = "https://data.artsdatabanken.no/" + url;
               }}
             >
-              Download
+              Last ned åpne data
               <CloudDownload className={classes.rightIcon} />
             </Button>
           </div>
