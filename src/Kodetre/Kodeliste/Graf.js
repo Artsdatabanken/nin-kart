@@ -1,8 +1,19 @@
 import React, { useState } from "react";
 import Kodeliste from "./Kodeliste";
 import Ekspander from "./Ekspander";
-import { Link } from "@material-ui/icons";
-import { Typography } from "@material-ui/core";
+import { CloudDownload } from "@material-ui/icons";
+import { Button } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
+
+const useStyles = makeStyles({
+  button: {
+    color: "rgba(0,0,0,0.4)",
+    margin: 8
+  },
+  rightIcon: {
+    marginLeft: 12
+  }
+});
 
 const la = {
   dominerende: {
@@ -108,6 +119,7 @@ const Graf = ({
   opplystKode
 }) => {
   const [expand, setExpand] = useState({});
+  const classes = useStyles();
   if (!graf) return null;
   return graf.map(relasjon => {
     const key = relasjon.type;
@@ -132,27 +144,20 @@ const Graf = ({
           onMouseLeave={onMouseLeave}
           opplystKode={opplystKode}
         />
-        {key === "Datakilde" && (
-          <React.Fragment>
-            <div style={{ paddingLeft: 24, paddingBottom: 24 }}>
-              <Typography variant="body1">
-                Åpne data fra{" "}
-                <a target="top" href={"https://data.artsdatabanken.no/" + url}>
-                  data.artsdatabanken.no
-                </a>
-                <div
-                  style={{
-                    display: "inline",
-                    position: "relative",
-                    left: 6,
-                    top: 8
-                  }}
-                >
-                  <Link />
-                </div>
-              </Typography>
-            </div>
-          </React.Fragment>
+        {(key === "Datakilde" || key === "Datasett") && (
+          <div style={{ paddingLeft: 24, paddingBottom: 24 }}>
+            <Button
+              variant="contained"
+              color="default"
+              className={classes.button}
+              onClick={() => {
+                window.location = "https://data.artsdatabanken.no/" + url;
+              }}
+            >
+              Download
+              <CloudDownload className={classes.rightIcon} />
+            </Button>
+          </div>
         )}
       </Ekspander>
     );
