@@ -11,11 +11,17 @@ const styles = theme => ({
   root: {
     width: "100%"
   },
+  icon: {
+    position: "relative",
+    top: -2,
+    paddingRight: 6,
+    color: "rgba(0,0,0,0.5)"
+  },
   heading: {
     fontSize: theme.typography.pxToRem(15),
     flexBasis: "90%",
-    _paddingLeft: 24,
-    flexShrink: 1
+    flexShrink: 1,
+    color: "rgba(0,0,0,0.5)"
   },
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
@@ -43,16 +49,7 @@ const Ekspander = ({
   return (
     <ExpansionPanel expanded={expanded} onChange={onExpand}>
       <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-        <div
-          style={{
-            position: "relative",
-            top: -2,
-            paddingRight: 4,
-            color: "rgba(0,0,0,0.4)"
-          }}
-        >
-          {icon || <Link />}
-        </div>
+        <div className={classes.icon}>{icon || <Link />}</div>
         <Typography className={classes.heading}>{heading}</Typography>
         <Typography className={classes.secondaryHeading}>{heading2}</Typography>
       </ExpansionPanelSummary>
