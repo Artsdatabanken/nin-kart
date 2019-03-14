@@ -6,7 +6,7 @@ function drawAll(drawArgs) {
     [drawArgs.kode]: {
       data: { source: drawArgs.kode },
       draw: {
-        gradient: {
+        ["gradient_" + drawArgs.kode]: {
           order: 700
         }
       }
@@ -53,7 +53,7 @@ function lagStyle(format, drawArgs) {
     }
   };
   return {
-    name: "gradient",
+    name: "gradient_" + drawArgs.kode,
     value: gradient
   };
 }
