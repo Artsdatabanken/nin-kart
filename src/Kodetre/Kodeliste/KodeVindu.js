@@ -125,7 +125,7 @@ const KodeVindu = ({
               expanded={expand.tagger}
               icon={<MergeType />}
               heading="Klassifisering"
-              heading2={"Nivå " + overordnet.length}
+              heading2={overordnet.length}
               onExpand={() => setExpand({ ...expand, tagger: !expand.tagger })}
             >
               <Overordnet overordnet={overordnet} onNavigate={onNavigate} />
