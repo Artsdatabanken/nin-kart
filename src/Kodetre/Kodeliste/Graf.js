@@ -120,7 +120,7 @@ const Graf = ({
         expanded={expand[key]}
         visible={count > 0}
         heading={x.title || key}
-        heading2={antall(count, "element", "elementer")}
+        heading2={count}
         onExpand={() => setExpand({ ...expand, [key]: !expand[key] })}
       >
         <Kodeliste

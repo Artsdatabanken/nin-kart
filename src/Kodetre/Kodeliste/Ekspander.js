@@ -4,6 +4,8 @@ import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import Link from "@material-ui/icons/Link";
+import OpenData from "./OpenData";
 
 const styles = theme => ({
   root: {
@@ -12,6 +14,7 @@ const styles = theme => ({
   heading: {
     fontSize: theme.typography.pxToRem(15),
     flexBasis: "90%",
+    _paddingLeft: 24,
     flexShrink: 1
   },
   secondaryHeading: {
@@ -32,12 +35,24 @@ const Ekspander = ({
   classes,
   children,
   heading,
-  heading2
+  heading2,
+  icon
 }) => {
   if (!visible) return null;
+  if (heading === "Datakilde") icon = <OpenData />;
   return (
     <ExpansionPanel expanded={expanded} onChange={onExpand}>
       <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+        <div
+          style={{
+            position: "relative",
+            top: -2,
+            paddingRight: 4,
+            color: "rgba(0,0,0,0.4)"
+          }}
+        >
+          {icon || <Link />}
+        </div>
         <Typography className={classes.heading}>{heading}</Typography>
         <Typography className={classes.secondaryHeading}>{heading2}</Typography>
       </ExpansionPanelSummary>
