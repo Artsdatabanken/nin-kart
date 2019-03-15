@@ -128,7 +128,7 @@ const KodeVindu = ({
               <Overordnet overordnet={overordnet} onNavigate={onNavigate} />
             </Ekspander>
             <Ekspander
-              expanded={expand.innhold}
+              expanded={expand.innhold || overordnet.length === 0}
               visible={meta.barn.length > 0}
               heading={meta.undernivå}
               heading2={meta.barn.length}
