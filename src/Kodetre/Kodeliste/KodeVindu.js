@@ -151,22 +151,30 @@ const KodeVindu = ({
               />
             </Ekspander>
 
-            <Ekspander
-              expanded={expand.gradient}
-              visible={gradientLength > 0}
-              heading="Gradient"
-              heading2={gradientLength}
-              icon={<Gradient />}
-              onExpand={() =>
-                setExpand({ ...expand, gradient: !expand.gradient })
-              }
-            >
-              <Gradienter
-                gradient={meta.gradient}
-                onNavigate={onNavigate}
-                visKoder={context.visKoder}
-              />
-            </Ekspander>
+            {Object.entries(meta.gradient).map(([kode, node]) => {
+              console.log(kode, node);
+              return (
+                <Ekspander
+                  expanded={expand[node.tittel.nb]}
+                  visible={gradientLength > 0}
+                  heading={node.tittel.nb}
+                  heading2={node.barn.length}
+                  icon={<Gradient />}
+                  onExpand={() =>
+                    setExpand({
+                      ...expand,
+                      [node.tittel.nb]: !expand[node.tittel.nb]
+                    })
+                  }
+                >
+                  <Gradienter
+                    gradient={node.barn}
+                    onNavigate={onNavigate}
+                    visKoder={context.visKoder}
+                  />
+                </Ekspander>
+              );
+            })}
             {kurve && (
               <Ekspander
                 expanded={expand.stat1d}
