@@ -52,24 +52,33 @@ class TopBarContainer extends Component<Props, State> {
     const q = e.target.value;
     this.setState({
       query: q,
+      focused: !!q,
       error: null,
       searchResults: null
     });
 
+    if (!q) return;
     this.queryNumber++;
     const currentQuery = this.queryNumber;
-
     backend.søk(q).then(json => {
       if (currentQuery !== this.queryNumber) return; // Abort stale query
-      if (json.error) {
-        this.setState({ error: json.error });
-      } else {
-        this.setState({
-          searchResults: json.result
-        });
-      }
+      if (json.error) return this.setState({ error: json.error });
+      if (this.props.unknownUrl)
+        if (this.handleEksaktKodetreff(q, json.result)) return;
+      this.setState({
+        searchResults: json.result
+      });
     });
   };
+
+  handleEksaktKodetreff(q, result) {
+    const key = q.replace(/[^\w\s]/gi, "-").toUpperCase();
+    console.log(key);
+    console.log(result);
+    const e = result.find(x => key === x.kode);
+    if (e) this.handleNavigation(e.url);
+    return !!e;
+  }
 
   handleGoBack = () => this.props.history.goBack();
   handleExitToRoot = () => {
