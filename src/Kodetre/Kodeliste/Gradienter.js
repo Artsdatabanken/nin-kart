@@ -11,12 +11,12 @@ const Gradienter = ({
 }) => {
   return (
     <React.Fragment>
-      {Object.keys(gradient).map(type => {
-        const gr = gradient[type];
+      {Object.entries(gradient).map(([kode, gr]) => {
+        console.log(kode, gr);
         return (
           <Gradient
-            key={type}
-            tittel={type}
+            key={kode}
+            tittel={gr.tittel.nb}
             url={gr.url}
             kode={gr.kode}
             visKoder={visKoder}
