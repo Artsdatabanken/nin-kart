@@ -151,9 +151,8 @@ const KodeVindu = ({
               />
             </Ekspander>
 
-            {Object.entries(meta.gradient).map(([kode, node]) => {
-              console.log(kode, node);
-              return (
+            {meta.gradient &&
+              Object.entries(meta.gradient).map(([kode, node]) => (
                 <Ekspander
                   expanded={expand[node.tittel.nb]}
                   visible={gradientLength > 0}
@@ -173,8 +172,7 @@ const KodeVindu = ({
                     visKoder={context.visKoder}
                   />
                 </Ekspander>
-              );
-            })}
+              ))}
             {kurve && (
               <Ekspander
                 expanded={expand.stat1d}
