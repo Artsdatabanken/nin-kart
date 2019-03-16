@@ -1,4 +1,4 @@
-import { List, ListSubheader } from "@material-ui/core";
+import { Typography, List, ListSubheader } from "@material-ui/core";
 import React from "react";
 import { SettingsContext } from "../../SettingsContext";
 import språk from "../../språk";
@@ -24,15 +24,15 @@ class Kodeliste extends React.Component {
           <List>
             <ListSubheader>{title}</ListSubheader>
             {subtitle && (
-              <div
+              <Typography
+                variant="body1"
                 style={{
-                  padding: "0px 5px 0px 16px",
-                  fontSize: "14px",
-                  color: "rgba(95, 95, 95, 0.54)"
+                  padding: "0px 8px 8px 16px",
+                  color: "rgba(0,0,0, 0.65)"
                 }}
               >
                 {subtitle}
-              </div>
+              </Typography>
             )}
             {Kodeliste.sorter(metadata, context.sorterPåKode).map(
               metabarnet => {
