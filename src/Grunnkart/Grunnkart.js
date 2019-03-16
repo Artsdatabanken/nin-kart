@@ -215,6 +215,7 @@ class Grunnkart extends React.Component {
     if (this.state.meta)
       erAktivert = !!this.state.aktiveLag[this.state.meta.kode];
     const { classes, history } = this.props;
+
     return (
       <SettingsContext.Consumer>
         {context => {
@@ -235,7 +236,10 @@ class Grunnkart extends React.Component {
                   onFitBounds={this.handleFitBounds}
                   erAktivert={erAktivert}
                   opplystKode={this.state.opplystKode}
-                  onToggleLayer={this.handleToggleLayer}
+                  onToggleLayer={() => {
+                    this.handleToggleLayer();
+                    if (!context.visAktiveLag) context.onToggleAktiveLag();
+                  }}
                   onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
                   meta={this.state.meta}
                   unknownUrl={this.state.unknownUrl}
