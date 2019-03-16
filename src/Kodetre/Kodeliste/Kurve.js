@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 function normaliser(stats, grad = []) {
   let ymax = 0;
@@ -20,6 +20,7 @@ const logx = false;
 
 const Kurve = ({ stats, gradient }) => {
   const [visNormalisert, setVisNormalisert] = useState(true);
+  let animateRef = useRef();
   let ymax = 0;
   for (const v of stats.fordeling) ymax = Math.max(ymax, v);
   const lineNorm =
@@ -42,7 +43,10 @@ const Kurve = ({ stats, gradient }) => {
     " 255,0 0,0";
   return (
     <svg
-      onClick={() => setVisNormalisert(!visNormalisert)}
+      onClick={() => {
+        setVisNormalisert(!visNormalisert);
+        animateRef.current.beginElement();
+      }}
       style={{ paddingLeft: 6 }}
       height="155"
       width="392"
@@ -57,7 +61,7 @@ const Kurve = ({ stats, gradient }) => {
           height="140%"
           filterUnits="objectBoundingBox"
           primitiveUnits="userSpaceOnUse"
-          color-interpolation-filters="linearRGB"
+          colorInterpolationFilters="linearRGB"
         >
           <feColorMatrix
             type="matrix"
@@ -160,7 +164,7 @@ const Kurve = ({ stats, gradient }) => {
       {true && (
         <image
           xlinkHref={gradient}
-          height="100%"
+          height="10"
           width="100%"
           preserveAspectRatio="none"
           id="path1"
@@ -169,7 +173,7 @@ const Kurve = ({ stats, gradient }) => {
       )}
       <g transform="translate(0,100)">
         <polyline
-          points={visNormalisert ? lineNorm : line}
+          id={visNormalisert ? "a" : "b"}
           style={{
             fill: "#ccc",
             stroke: "rgba(0,0,0,0.4)",
@@ -177,14 +181,17 @@ const Kurve = ({ stats, gradient }) => {
             filter: "url(#shadow)"
           }}
         >
-          <animateTransform
-            attributeName="transform"
-            type="scale"
-            from="1 0"
-            to="1 1"
-            begin="0s"
-            dur="0.8s"
+          <animate
+            ref={animateRef}
+            attributeName="points"
+            dur="0.5s"
+            calcMode="spline"
+            keySplines="0.5,0.05,0,0.5"
+            keyTimes="0;1"
             repeatCount="1"
+            from={visNormalisert ? line : lineNorm}
+            to={visNormalisert ? lineNorm : line}
+            fill="freeze"
           />
         </polyline>
       </g>
