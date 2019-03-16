@@ -72,22 +72,22 @@ const titler = {
   konstant_art: {
     title: "Konstante arter",
     subtitle:
-      "Art med frekvens større enn 4/5 i et utvalg enkeltobservasjonsenheter. Dette er den klassiske definisjonen av «konstant»  som er brukt i vegetasjonsøkologi"
+      "Art med frekvens større enn 4/5 i et utvalg enkeltobservasjonsenheter. Dette er den klassiske definisjonen av «konstant»  som er brukt i vegetasjonsøkologi."
   },
   tyngdepunktart: {
     title: "Tyngdepunktarter",
     subtitle:
-      "Art med høyere frekvens og dekning i en aktuell naturtype (hovedtype eller grunntype) enn i et sammenliknbart utvalg typer (f.eks. andre hovedtyper som tilhører samme hovedtypegruppe eller andre grunntyper som tilhører samme hovedtype"
+      "Art med høyere frekvens og dekning i en aktuell naturtype (hovedtype eller grunntype) enn i et sammenliknbart utvalg typer (f.eks. andre hovedtyper som tilhører samme hovedtypegruppe eller andre grunntyper som tilhører samme hovedtype."
   },
   "gradient-tyngdepunktart": {
     title: "Gradient-tyngdepunktarter",
     subtitle:
-      "Art med høyere frekvens og dekning på et gitt trinn langs en lokal kompleks miljøgradient (LKMg) enn på ethvert annet trinn langs den samme LKMg (gitt at variasjonen langs alle andre lokale komplekse miljøvariabler holdes konstant"
+      "Art med høyere frekvens og dekning på et gitt trinn langs en lokal kompleks miljøgradient (LKMg) enn på ethvert annet trinn langs den samme LKMg (gitt at variasjonen langs alle andre lokale komplekse miljøvariabler holdes konstant."
   },
   kjennetegnende_tyngdepunktart: {
     title: "Kjennetegnende tyngdepunktarter",
     subtitle:
-      "Tyngdepunktart som utelukkende eller nesten utelukkende forekommer i en naturtype eller gruppe av naturtyper på et eller annet generaliseringsnivå"
+      "Tyngdepunktart som utelukkende eller nesten utelukkende forekommer i en naturtype eller gruppe av naturtyper på et eller annet generaliseringsnivå."
   },
   skilleart: {
     title: "Skilleart",
@@ -105,7 +105,7 @@ const titler = {
   absolutt_skilleart: {
     title: "Absolutte skillearter",
     subtitle:
-      "Art som normalt bare forekommer i én blant to eller flere naturtyper som sammenliknes"
+      "Art som normalt bare forekommer i én blant to eller flere naturtyper som sammenliknes."
   }
 };
 
