@@ -17,6 +17,7 @@ import {
   ShowChart,
   Gradient
 } from "@material-ui/icons/";
+import KurveContainer from "./KurveContainer";
 
 import { SettingsContext } from "../../SettingsContext";
 
@@ -191,7 +192,20 @@ const KodeVindu = ({
                 />
               </Ekspander>
             )}
-
+            {false && (
+              <KurveContainer
+                key={"a.url"}
+                punkt={{
+                  url:
+                    "Biota/Plantae/Magnoliophyta/Eudicots/Ericales/Primulaceae/Primula/Scandinavica"
+                }}
+                gradient={{
+                  url:
+                    "Natur_i_Norge/Landskap/Landskapsgradient/Arealbruksintensitet/",
+                  barn: []
+                }}
+              />
+            )}
             <Ekspander
               expanded={expand.flagg}
               visible={flaggLength > 0}

@@ -1,25 +1,40 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 
-function normaliser(stats) {
+function normaliser(stats, grad = []) {
   let ymax = 0;
   let ymax2 = 0;
-  for (const v of stats.fordeling) {
+  for (const v of stats) {
     ymax = Math.max(ymax, v);
     if (v < ymax) ymax2 = Math.max(ymax2, v);
   }
-  ymax = 0.5 * (ymax + ymax2);
-  const r = stats.fordeling.map(y => Math.min(100, (100 * y) / ymax));
+  ymax = 0.2 * ymax + 0.8 * ymax2;
+  const r = stats.map(y => Math.min(100, (100 * y) / ymax));
   return r;
+}
+
+function prep(stats, grad) {
+  return stats.map((y, i) => y / (grad[i] || 1));
 }
 
 const logx = false;
 
 const Kurve = ({ stats, gradient }) => {
+  const [visNormalisert, setVisNormalisert] = useState(true);
+  let animateRef = useRef();
   let ymax = 0;
   for (const v of stats.fordeling) ymax = Math.max(ymax, v);
+  const lineNorm =
+    "0,0 " +
+    normaliser(prep(stats.fordeling, stats.grad))
+      .map(
+        (y, i) =>
+          `${logx ? Math.log10(i + 1) * 50 : i},${-50 * Math.log10(y + 1)}`
+      )
+      .join(" ") +
+    " 255,0 0,0";
   const line =
     "0,0 " +
-    normaliser(stats)
+    normaliser(stats.fordeling)
       .map(
         (y, i) =>
           `${logx ? Math.log10(i + 1) * 50 : i},${-50 * Math.log10(y + 1)}`
@@ -28,12 +43,40 @@ const Kurve = ({ stats, gradient }) => {
     " 255,0 0,0";
   return (
     <svg
+      onClick={() => {
+        setVisNormalisert(!visNormalisert);
+        animateRef.current.beginElement();
+      }}
       style={{ paddingLeft: 6 }}
       height="155"
       width="392"
       viewBox="-1 -1 258 101"
     >
       <defs>
+        <filter
+          id="dim"
+          x="-20%"
+          y="-20%"
+          width="140%"
+          height="140%"
+          filterUnits="objectBoundingBox"
+          primitiveUnits="userSpaceOnUse"
+          colorInterpolationFilters="linearRGB"
+        >
+          <feColorMatrix
+            type="matrix"
+            values="0.7 0.1 0.1 0.1 0
+0.1 0.7 0.1 0.1 0
+0.1 0.1 0.7 0 0
+0.1 0.1 0.1 500 -20"
+            x="0%"
+            y="0%"
+            width="100%"
+            height="100%"
+            in="SourceGraphic"
+            result="colormatrix1"
+          />
+        </filter>
         <filter id="shadow">
           <feDropShadow
             id="node_shadow"
@@ -118,27 +161,20 @@ const Kurve = ({ stats, gradient }) => {
           strokeWidth: 0.5
         }}
       />
-      {false && (
-        <image
-          xlinkHref="https://bennettfeely.com/gradients/img/gradient.webp"
-          height="100%"
-          width="100%"
-          preserveAspectRatio="none"
-          id="path1"
-        />
-      )}
       {true && (
         <image
           xlinkHref={gradient}
-          height="100%"
+          height="10"
           width="100%"
           preserveAspectRatio="none"
           id="path1"
+          filter="url(#dim)"
         />
       )}
       <g transform="translate(0,100)">
         <polyline
-          points={line}
+          id={visNormalisert ? "a" : "b"}
+          zpoints={visNormalisert ? lineNorm : line}
           style={{
             fill: "#ccc",
             stroke: "rgba(0,0,0,0.4)",
@@ -146,14 +182,17 @@ const Kurve = ({ stats, gradient }) => {
             filter: "url(#shadow)"
           }}
         >
-          <animateTransform
-            attributeName="transform"
-            type="scale"
-            from="1 0"
-            to="1 1"
-            begin="0s"
-            dur="0.8s"
+          <animate
+            ref={animateRef}
+            attributeName="points"
+            dur="0.5s"
+            calcMode="spline"
+            keySplines="0.5,0.05,0,0.5"
+            keyTimes="0;1"
             repeatCount="1"
+            from={visNormalisert ? line : lineNorm}
+            to={visNormalisert ? lineNorm : line}
+            fill="freeze"
           />
         </polyline>
       </g>
