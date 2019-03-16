@@ -157,7 +157,7 @@ const KodeVindu = ({
                   expanded={expand[node.tittel.nb]}
                   visible={gradientLength > 0}
                   heading={node.tittel.nb}
-                  heading2={node.barn.length}
+                  heading2={Object.values(node.barn).length}
                   icon={<Gradient />}
                   onExpand={() =>
                     setExpand({
@@ -178,7 +178,7 @@ const KodeVindu = ({
                 expanded={expand.stat1d}
                 visible={true}
                 heading={"Observasjoner"}
-                heading2={"graf"}
+                heading2=""
                 icon={<ShowChart />}
                 onExpand={() =>
                   setExpand({ ...expand, stat1d: !expand.stat1d })
