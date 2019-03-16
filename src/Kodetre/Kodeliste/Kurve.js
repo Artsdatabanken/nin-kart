@@ -174,7 +174,6 @@ const Kurve = ({ stats, gradient }) => {
       <g transform="translate(0,100)">
         <polyline
           id={visNormalisert ? "a" : "b"}
-          zpoints={visNormalisert ? lineNorm : line}
           style={{
             fill: "#ccc",
             stroke: "rgba(0,0,0,0.4)",
