@@ -35,7 +35,7 @@ const styles = theme => ({
   },
   panelDetails: {
     display: "block",
-    padding: 0
+    _padding: 0
   }
 });
 

@@ -7,9 +7,9 @@ function normaliser(stats, grad = []) {
     ymax = Math.max(ymax, v);
     if (v < ymax) ymax2 = Math.max(ymax2, v);
   }
-  ymax = 0.2 * ymax + 0.8 * ymax2;
-  const r = stats.map(y => Math.min(100, (100 * y) / ymax));
-  return r;
+  const scaler = 1.0 / (0.2 * ymax + 0.8 * ymax2);
+  const r = stats.map(y => Math.min(100, 100 * y * scaler));
+  return { fordeling: r, max: ymax };
 }
 
 function prep(stats, grad) {
@@ -21,20 +21,16 @@ const logx = false;
 const Kurve = ({ stats, gradient }) => {
   const [visNormalisert, setVisNormalisert] = useState(true);
   let animateRef = useRef();
-  let ymax = 0;
-  for (const v of stats.fordeling) ymax = Math.max(ymax, v);
-  const lineNorm =
-    "0,0 " +
-    normaliser(prep(stats.fordeling, stats.grad))
-      .map(
-        (y, i) =>
-          `${logx ? Math.log10(i + 1) * 50 : i},${-50 * Math.log10(y + 1)}`
-      )
-      .join(" ") +
-    " 255,0 0,0";
+  const lnorm = normaliser(prep(stats.fordeling, stats.grad));
+  const lnormf = lnorm.fordeling.map(
+    (y, i) => `${logx ? Math.log10(i + 1) * 50 : i},${-50 * Math.log10(y + 1)}`
+  );
+  const l = normaliser(stats.fordeling);
+
+  const lineNorm = "0,0 " + lnormf.join(" ") + " 255,0 0,0";
   const line =
     "0,0 " +
-    normaliser(stats.fordeling)
+    l.fordeling
       .map(
         (y, i) =>
           `${logx ? Math.log10(i + 1) * 50 : i},${-50 * Math.log10(y + 1)}`
@@ -48,8 +44,8 @@ const Kurve = ({ stats, gradient }) => {
         animateRef.current.beginElement();
       }}
       style={{ paddingLeft: 6 }}
-      height="155"
-      width="392"
+      height="50%"
+      width="100%"
       viewBox="-1 -1 258 101"
     >
       <defs>
@@ -195,6 +191,10 @@ const Kurve = ({ stats, gradient }) => {
           />
         </polyline>
       </g>
+      <text x="5" y="9" fill="rgba(0,0,0,0.55)" fontSize={9}>
+        {visNormalisert ? "p" : "A"}
+        {false && (visNormalisert ? lnorm.max : l.max)}
+      </text>
       )} />
     </svg>
   );
