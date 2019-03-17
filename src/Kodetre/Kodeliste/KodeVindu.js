@@ -1,5 +1,5 @@
 import Overordnet from "./Overordnet";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import språk from "../../språk";
 import Graf from "./Graf";
 import Flagg from "./Flagg";
@@ -34,14 +34,12 @@ const KodeVindu = ({
   opplystKode,
   onUpdateMetaProp
 }) => {
-  const [expand, setExpand] = useState({
-    tagger: false,
-    ingress: false,
-    stats: false,
-    innhold: false,
-    gradient: false,
-    flagg: false
-  });
+  const initialExpand = () =>
+    JSON.parse(localStorage.getItem("expand") || "{}");
+  const [expand, setExpand] = useState(initialExpand);
+  useEffect(() => {
+    localStorage.setItem("expand", JSON.stringify(expand));
+  }, [expand]);
   if (!meta) return null;
   const {
     kode,
