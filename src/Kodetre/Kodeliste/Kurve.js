@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 
-function normaliser(stats, grad = []) {
+function normaliser(stats) {
   let ymax = 0;
   let ymax2 = 0;
   for (const v of stats) {
@@ -13,19 +13,21 @@ function normaliser(stats, grad = []) {
 }
 
 function prep(stats, grad) {
+  if (!stats) return grad;
   return stats.map((y, i) => y / (grad[i] || 1));
 }
 
 const logx = false;
+const logy = false;
 
-const Kurve = ({ stats, gradient }) => {
+const Kurve = ({ kode, stats, gradient }) => {
   const [visNormalisert, setVisNormalisert] = useState(true);
   let animateRef = useRef();
   const lnorm = normaliser(prep(stats.fordeling, stats.grad));
   const lnormf = lnorm.fordeling.map(
     (y, i) => `${logx ? Math.log10(i + 1) * 50 : i},${-50 * Math.log10(y + 1)}`
   );
-  const l = normaliser(stats.fordeling);
+  const l = normaliser(stats.fordeling || stats.grad);
 
   const lineNorm = "0,0 " + lnormf.join(" ") + " 255,0 0,0";
   const line =
@@ -47,6 +49,7 @@ const Kurve = ({ stats, gradient }) => {
       height="50%"
       width="100%"
       viewBox="-1 -1 258 101"
+      id="path1"
     >
       <defs>
         <filter
@@ -76,80 +79,32 @@ const Kurve = ({ stats, gradient }) => {
         <filter id="shadow">
           <feDropShadow
             id="node_shadow"
-            dx="0"
-            dy="0"
-            stdDeviation="0"
-            floodColor="#777"
+            dx="2"
+            dy="2"
+            stdDeviation="2"
+            floodColor="#aaa"
             floodOpacity="1"
           />
         </filter>
+        <pattern
+          id={kode}
+          _patternUnits="userSpaceOnUse"
+          width="100%"
+          height="100%"
+        >
+          <image
+            xlinkHref={gradient}
+            height="100%"
+            width="100%"
+            preserveAspectRatio="none"
+            filter="url(#dim)"
+          />
+        </pattern>
       </defs>
-      <animate
-        id="animate_node_shadow"
-        xlinkHref="#node_shadow"
-        attributeName="dx"
-        values="0;2"
-        begin="path1.mouseover"
-        end=""
-        dur="0.3s"
-        fill="freeze"
-      />
-      <animate
-        id="animate_node_shadow"
-        xlinkHref="#node_shadow"
-        attributeName="dx"
-        values="2;0"
-        begin="path1.mouseout"
-        end=""
-        dur="0.5s"
-        fill="freeze"
-      />
-      <animate
-        id="animate_node_shadow"
-        xlinkHref="#node_shadow"
-        attributeName="dy"
-        values="0;2"
-        begin="path1.mouseover"
-        end=""
-        dur="0.3s"
-        fill="freeze"
-      />
-      <animate
-        id="animate_node_shadow"
-        xlinkHref="#node_shadow"
-        attributeName="dy"
-        values="2;0"
-        begin="path1.mouseout"
-        end=""
-        dur="0.5s"
-        fill="freeze"
-      />
-      <animate
-        id="animate_node_shadow"
-        xlinkHref="#node_shadow"
-        attributeName="stdDeviation"
-        from="0,0"
-        to="2,2"
-        begin="path1.mouseover"
-        end=""
-        dur="0.3s"
-        fill="freeze"
-      />
-      <animate
-        id="animate_node_shadow"
-        xlinkHref="#node_shadow"
-        attributeName="stdDeviation"
-        from="2,2"
-        to="0,0"
-        begin="path1.mouseout"
-        end=""
-        dur="0.5s"
-        fill="freeze"
-      />
       <rect
         x="-0.5"
         y="0"
-        width="256"
+        width="257"
         height="100"
         style={{
           fill: "#fff",
@@ -157,21 +112,10 @@ const Kurve = ({ stats, gradient }) => {
           strokeWidth: 0.5
         }}
       />
-      {true && (
-        <image
-          xlinkHref={gradient}
-          height="10"
-          width="100%"
-          preserveAspectRatio="none"
-          id="path1"
-          filter="url(#dim)"
-        />
-      )}
       <g transform="translate(0,100)">
         <polyline
-          id={visNormalisert ? "a" : "b"}
           style={{
-            fill: "#ccc",
+            fill: "url(#" + kode + ")",
             stroke: "rgba(0,0,0,0.4)",
             strokeWidth: 0.5,
             filter: "url(#shadow)"

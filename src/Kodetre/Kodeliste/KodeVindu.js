@@ -10,6 +10,7 @@ import Gradienter from "./Gradienter";
 import Ekspander from "./Ekspander";
 import Ingress from "./Ingress";
 import Kurver from "./Kurver";
+import Kurve from "./Kurve";
 import {
   CallSplit,
   MergeType,
@@ -136,7 +137,7 @@ const KodeVindu = ({
                 setExpand({ ...expand, innhold: !expand.innhold })
               }
             >
-              {true && (
+              {false && (
                 <KurveContainer
                   key={"a.url"}
                   punkt={{
@@ -186,6 +187,22 @@ const KodeVindu = ({
                   />
                 </Ekspander>
               ))}
+            {false && meta.kart.format.raster_gradient && (
+              <Ekspander
+                expanded={expand.stat1d}
+                visible={true}
+                heading={"Areal"}
+                heading2=""
+                icon={<ShowChart />}
+                onExpand={() =>
+                  setExpand({ ...expand, stat1d: !expand.stat1d })
+                }
+              >
+                <KurveContainer gradient={meta}>
+                  <Kurve />
+                </KurveContainer>
+              </Ekspander>
+            )}
             {kurve && (
               <Ekspander
                 expanded={expand.stat1d}
