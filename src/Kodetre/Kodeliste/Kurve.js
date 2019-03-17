@@ -18,6 +18,7 @@ function prep(stats, grad) {
 }
 
 const logx = false;
+const logy = false;
 
 const Kurve = ({ kode, stats, gradient }) => {
   const [visNormalisert, setVisNormalisert] = useState(true);
