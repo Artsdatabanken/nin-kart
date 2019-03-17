@@ -136,6 +136,20 @@ const KodeVindu = ({
                 setExpand({ ...expand, innhold: !expand.innhold })
               }
             >
+              {true && (
+                <KurveContainer
+                  key={"a.url"}
+                  punkt={{
+                    url:
+                      "Biota/Plantae/Magnoliophyta/Eudicots/Ericales/Primulaceae/Primula/Scandinavica"
+                  }}
+                  gradient={{
+                    url:
+                      "Natur_i_Norge/Landskap/Landskapsgradient/Arealbruksintensitet/",
+                    barn: []
+                  }}
+                />
+              )}
               <Kodeliste
                 title=""
                 parentkode={kode}
@@ -189,20 +203,6 @@ const KodeVindu = ({
                   gradient={kurve.gradient}
                 />
               </Ekspander>
-            )}
-            {false && (
-              <KurveContainer
-                key={"a.url"}
-                punkt={{
-                  url:
-                    "Biota/Plantae/Magnoliophyta/Eudicots/Ericales/Primulaceae/Primula/Scandinavica"
-                }}
-                gradient={{
-                  url:
-                    "Natur_i_Norge/Landskap/Landskapsgradient/Arealbruksintensitet/",
-                  barn: []
-                }}
-              />
             )}
             <Ekspander
               expanded={expand.flagg}

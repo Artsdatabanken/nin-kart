@@ -1,7 +1,11 @@
 import React from "react";
-import { withStyles, Typography } from "@material-ui/core";
-import ExpansionPanel from "@material-ui/core/ExpansionPanel";
-import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import {
+  ExpansionPanelDetails,
+  ExpansionPanel,
+  Avatar,
+  withStyles,
+  Typography
+} from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Link from "@material-ui/icons/Link";
 import OpenData from "./OpenData";
@@ -29,13 +33,14 @@ const styles = theme => ({
   },
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
-    color: theme.palette.text.secondary,
     lineHeight: "2.6em",
-    whiteSpace: "nowrap"
+    fontWeight: 500,
+    whiteSpace: "nowrap",
+    color: "rgba(0,0,0,0.3)"
   },
   panelDetails: {
     display: "block",
-    padding: 0
+    _padding: 0
   }
 });
 
@@ -63,7 +68,25 @@ const Ekspander = ({
       >
         <div className={classes.icon}>{icon || <Link />}</div>
         <Typography className={classes.heading}>{heading}</Typography>
-        <Typography className={classes.secondaryHeading}>{heading2}</Typography>
+        {false && (
+          <Typography className={classes.secondaryHeading}>
+            {heading2}
+          </Typography>
+        )}
+        <div>
+          <Avatar
+            style={{
+              marginTop: 8,
+              width: 22,
+              height: 22,
+              fontSize: 13,
+              lineHeight: "2.6em",
+              float: "right"
+            }}
+          >
+            {heading2}
+          </Avatar>
+        </div>
       </EkspanderSummary>
       <ExpansionPanelDetails className={classes.panelDetails}>
         {children}
