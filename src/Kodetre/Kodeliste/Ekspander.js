@@ -2,18 +2,20 @@ import React from "react";
 import { withStyles, Typography } from "@material-ui/core";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
-import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Link from "@material-ui/icons/Link";
 import OpenData from "./OpenData";
+import EkspanderSummary from "./EkspanderSummary";
 
 const styles = theme => ({
   root: {
     width: "100%"
   },
   icon: {
-    position: "relative",
-    top: -2,
+    position: "absolute",
+    left: 16,
+    top: "50%",
+    transform: "translateY(-50%) rotate(0deg)",
     paddingRight: 6,
     color: "rgba(0,0,0,0.5)"
   },
@@ -21,11 +23,14 @@ const styles = theme => ({
     fontSize: theme.typography.pxToRem(15),
     flexBasis: "90%",
     flexShrink: 1,
+    lineHeight: "2.6em",
+    paddingLeft: 24,
     color: "rgba(0,0,0,0.5)"
   },
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
+    lineHeight: "2.6em",
     whiteSpace: "nowrap"
   },
   panelDetails: {
@@ -47,12 +52,19 @@ const Ekspander = ({
   if (!visible) return null;
   if (heading === "Datakilde") icon = <OpenData />;
   return (
-    <ExpansionPanel expanded={expanded} onChange={onExpand}>
-      <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+    <ExpansionPanel
+      expanded={expanded}
+      onChange={onExpand}
+      className={classes.panel}
+    >
+      <EkspanderSummary
+        expandIcon={<ExpandMoreIcon />}
+        className={classes.panelSummary}
+      >
         <div className={classes.icon}>{icon || <Link />}</div>
         <Typography className={classes.heading}>{heading}</Typography>
         <Typography className={classes.secondaryHeading}>{heading2}</Typography>
-      </ExpansionPanelSummary>
+      </EkspanderSummary>
       <ExpansionPanelDetails className={classes.panelDetails}>
         {children}
       </ExpansionPanelDetails>
