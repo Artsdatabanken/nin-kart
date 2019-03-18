@@ -91,6 +91,8 @@ class Grunnkart extends React.Component {
     this.addSelected(this.state.meta);
   };
 
+  handleClearSearchFor = () => this.setState({ searchFor: "" });
+
   _handleKeyDown = event => {
     const ESCAPE_KEY = 27;
     switch (event.keyCode) {
@@ -247,6 +249,7 @@ class Grunnkart extends React.Component {
                   onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
                   meta={this.state.meta}
                   searchFor={this.state.searchFor}
+                  onClearSearchFor={this.handleClearSearchFor}
                   onUpdateLayerProp={this.handleUpdateLayerProp}
                   onUpdateMetaProp={this.handleUpdateMetaProp}
                   visAktiveLag={context.visAktiveLag}
