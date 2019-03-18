@@ -68,27 +68,11 @@ const Ekspander = ({
       >
         <div className={classes.icon}>{icon || <Link />}</div>
         <Typography className={classes.heading}>{heading}</Typography>
-        {false && (
+        {heading2 && (
           <Typography className={classes.secondaryHeading}>
             {heading2}
           </Typography>
         )}
-        <div>
-          {heading2 && (
-            <Avatar
-              style={{
-                marginTop: 8,
-                width: 22,
-                height: 22,
-                fontSize: 13,
-                lineHeight: "2.6em",
-                float: "right"
-              }}
-            >
-              {heading2}
-            </Avatar>
-          )}
-        </div>
       </EkspanderSummary>
       <ExpansionPanelDetails className={classes.panelDetails}>
         {children}
