@@ -37,17 +37,12 @@ class SearchBox extends Component {
   }
 
   handleKeyDown = e => {
-    switch (e.keycode) {
-      case 27:
-        e.stopPropagation();
-        this.props.onQueryChange({
-          target: { value: "" }
-        });
-        this.inputRef.current.blur();
-        break;
-      default:
-        return;
-    }
+    if (e.keyCode !== 27) return;
+    this.inputRef.current.blur();
+    e.stopPropagation();
+    this.props.onQueryChange({
+      target: { value: "" }
+    });
   };
 
   render() {
