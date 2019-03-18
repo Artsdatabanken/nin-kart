@@ -92,6 +92,7 @@ class Grunnkart extends React.Component {
   };
 
   _handleKeyDown = event => {
+    console.log("gk keydown");
     const ESCAPE_KEY = 27;
     switch (event.keyCode) {
       case ESCAPE_KEY:

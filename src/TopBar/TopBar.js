@@ -93,6 +93,7 @@ class TopBar extends React.Component<Props> {
                 onBlur={onBlur}
                 onQueryChange={this.props.onQueryChange}
                 onExitToRoot={this.props.onExitToRoot}
+                onKeyEnter={this.props.onKeyEnter}
                 isAtRoot={this.props.isAtRoot}
               />
               <IconButton className={classes.lightButton}>

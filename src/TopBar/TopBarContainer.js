@@ -50,7 +50,6 @@ class TopBarContainer extends Component<Props, State> {
 
   handleQueryChange = e => {
     const q = e.target.value;
-    console.log("qc", q);
     this.setState({
       query: q,
       _focused: !!q,
@@ -92,16 +91,10 @@ class TopBarContainer extends Component<Props, State> {
     this.props.history.push("/" + url);
   };
 
-  handleKeyDown = e => {
-    switch (e.keycode) {
-      case 13:
-        this.state.searchResults &&
-          this.state.searchResults.length > 0 &&
-          this.props.onClick(this.state.searchResults[0].url);
-        break;
-      default:
-        return;
-    }
+  handleKeyEnter = e => {
+    if (!this.state.searchResults || this.state.searchResults.length === 0)
+      return;
+    this.handleNavigation(this.state.searchResults[0].url);
   };
 
   render() {
@@ -128,6 +121,7 @@ class TopBarContainer extends Component<Props, State> {
                 fromUrl={history.location.search}
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
+                onKeyEnter={this.handleKeyEnter}
                 tittel={tittel}
                 onQueryChange={this.handleQueryChange}
                 hasResults={!!this.state.searchResults}
