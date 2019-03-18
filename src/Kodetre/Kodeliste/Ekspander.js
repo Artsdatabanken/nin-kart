@@ -2,7 +2,6 @@ import React from "react";
 import {
   ExpansionPanelDetails,
   ExpansionPanel,
-  Avatar,
   withStyles,
   Typography
 } from "@material-ui/core";
