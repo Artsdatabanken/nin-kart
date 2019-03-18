@@ -74,18 +74,20 @@ const Ekspander = ({
           </Typography>
         )}
         <div>
-          <Avatar
-            style={{
-              marginTop: 8,
-              width: 22,
-              height: 22,
-              fontSize: 13,
-              lineHeight: "2.6em",
-              float: "right"
-            }}
-          >
-            {heading2}
-          </Avatar>
+          {heading2 && (
+            <Avatar
+              style={{
+                marginTop: 8,
+                width: 22,
+                height: 22,
+                fontSize: 13,
+                lineHeight: "2.6em",
+                float: "right"
+              }}
+            >
+              {heading2}
+            </Avatar>
+          )}
         </div>
       </EkspanderSummary>
       <ExpansionPanelDetails className={classes.panelDetails}>

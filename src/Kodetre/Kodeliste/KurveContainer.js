@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
-import Kurve from "./Kurve";
 import { CircularProgress } from "@material-ui/core";
 import lagGradientrampe from "../../palette/gradientrampe";
 
-const KurveContainer = ({ punkt, gradient }) => {
+function makeUrl(punkt, gradient) {
+  // TODO:
+  if (!punkt) return `https://romlig.artsdatabanken.no/${gradient.url}`;
+  return `https://romlig.artsdatabanken.no/statistikk/grid1d?punkter=${
+    punkt.url
+  }&raster=${gradient.url}`;
+}
+const KurveContainer = ({ punkt, gradient, children }) => {
+  console.log("grad", gradient);
   const [stats, setStats] = useState();
   useEffect(() => {
-    const url = `https://romlig.artsdatabanken.no/statistikk/grid1d?punkter=${
-      punkt.url
-    }&raster=${gradient.url}`;
+    const url = makeUrl(punkt, gradient);
     fetch(url)
       .then(result => result.json())
       .then(json => {
@@ -35,7 +40,11 @@ const KurveContainer = ({ punkt, gradient }) => {
     );
   const palette = lagGradientrampe(gradient.barn, null, "diskret");
 
-  return <Kurve stats={stats} gradient={palette} />;
+  return React.cloneElement(children, {
+    stats: stats,
+    gradient: palette,
+    kode: gradient.kode
+  });
 };
 
 export default KurveContainer;

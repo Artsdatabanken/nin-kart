@@ -2,6 +2,7 @@ import KurveContainer from "./KurveContainer";
 import React from "react";
 import { ListSubheader } from "@material-ui/core";
 import språk from "../../språk";
+import Kurve from "./Kurve";
 
 const Kurver = ({ meta, punkt, gradient }) => {
   if (!meta || !meta.kart || !meta.kart.format) return null;
@@ -15,7 +16,9 @@ const Kurver = ({ meta, punkt, gradient }) => {
         key={a.url}
         punkt={metaErGradient ? a : meta}
         gradient={metaErGradient ? meta : a}
-      />
+      >
+        <Kurve />
+      </KurveContainer>
     </div>
   ));
 };
