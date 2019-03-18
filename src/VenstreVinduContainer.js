@@ -92,7 +92,11 @@ class VenstreVinduContainer extends React.Component {
     return (
       <React.Fragment>
         <Panel>
-          <TopBarContainer tittel={this.tittel(meta)} searchFor={searchFor} />
+          <TopBarContainer
+            tittel={this.tittel(meta)}
+            searchFor={searchFor}
+            onClearSearchFor={this.props.onClearSearchFor}
+          />
           <KodeContainer
             kode={meta && meta.kode}
             onNavigate={this.handleNavigate}

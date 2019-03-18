@@ -78,6 +78,7 @@ class TopBarContainer extends Component<Props, State> {
       .toUpperCase();
     const e = result.find(x => key === x.kode);
     if (e) this.handleNavigation(e.url);
+    this.props.onClearSearchFor();
     return !!e;
   }
 
