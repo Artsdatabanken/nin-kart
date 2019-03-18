@@ -50,6 +50,7 @@ class TopBarContainer extends Component<Props, State> {
 
   handleQueryChange = e => {
     const q = e.target.value;
+    console.log("qc", q);
     this.setState({
       query: q,
       _focused: !!q,
@@ -92,7 +93,7 @@ class TopBarContainer extends Component<Props, State> {
   };
 
   handleKeyDown = e => {
-    switch (e.keybode) {
+    switch (e.keycode) {
       case 13:
         this.state.searchResults &&
           this.state.searchResults.length > 0 &&
