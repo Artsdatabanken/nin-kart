@@ -92,9 +92,12 @@ class Grunnkart extends React.Component {
   };
 
   _handleKeyDown = event => {
-    console.log("gk keydown");
     const ESCAPE_KEY = 27;
     switch (event.keyCode) {
+      case 70: // f
+        this.setState({ searchFor: "" });
+        event.preventDefault();
+        break;
       case ESCAPE_KEY:
         this.props.history.goBack();
         break;
@@ -132,7 +135,7 @@ class Grunnkart extends React.Component {
     const path = url[1].replace(/katalog/i, "");
     this.downloadMeta(path).then(data => {
       if (!data) {
-        this.setState({ unknownUrl: path });
+        this.setState({ searchFor: path });
         return;
       }
       if (data.se) {
@@ -243,7 +246,7 @@ class Grunnkart extends React.Component {
                   }}
                   onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
                   meta={this.state.meta}
-                  unknownUrl={this.state.unknownUrl}
+                  searchFor={this.state.searchFor}
                   onUpdateLayerProp={this.handleUpdateLayerProp}
                   onUpdateMetaProp={this.handleUpdateMetaProp}
                   visAktiveLag={context.visAktiveLag}
