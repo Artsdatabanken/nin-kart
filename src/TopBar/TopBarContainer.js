@@ -27,7 +27,7 @@ class TopBarContainer extends Component<Props, State> {
     if (this.props.tittel !== nextProps.tittel) return true;
     if (this.props.children !== nextProps.children) return true;
     if (this.state.query !== nextState.query) return true;
-    if (this.props.unknownUrl !== nextProps.unknownUrl) return true;
+    if (this.props.searchFor !== nextProps.searchFor) return true;
     if (this.state.searchResults !== nextState.searchResults) return true;
     if (this.state.focused !== nextState.focused) return true;
     return false;
@@ -63,7 +63,7 @@ class TopBarContainer extends Component<Props, State> {
     backend.søk(q).then(json => {
       if (currentQuery !== this.queryNumber) return; // Abort stale query
       if (json.error) return this.setState({ error: json.error });
-      if (this.props.unknownUrl)
+      if (this.props.searchFor)
         if (this.handleEksaktKodetreff(q, json.result)) return;
       this.setState({
         searchResults: json.result
@@ -72,9 +72,10 @@ class TopBarContainer extends Component<Props, State> {
   };
 
   handleEksaktKodetreff(q, result) {
-    const key = q.replace(/[^\w\s]/gi, "-").toUpperCase();
-    console.log(key);
-    console.log(result);
+    const key = q
+      .split(" ")
+      .join("-")
+      .toUpperCase();
     const e = result.find(x => key === x.kode);
     if (e) this.handleNavigation(e.url);
     return !!e;
@@ -117,7 +118,7 @@ class TopBarContainer extends Component<Props, State> {
                 onExitToRoot={this.handleExitToRoot}
                 isAtRoot={isAtRoot}
                 query={focused ? query : query || tittel || ""}
-                unknownUrl={this.props.unknownUrl}
+                searchFor={this.props.searchFor}
                 fromUrl={history.location.search}
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}

@@ -53,7 +53,7 @@ class TopBar extends React.Component<Props> {
   render() {
     const {
       query,
-      unknownUrl,
+      searchFor,
       classes,
       onFocus,
       onBlur,
@@ -88,7 +88,7 @@ class TopBar extends React.Component<Props> {
               )}
               <SearchBox
                 query={query}
-                unknownUrl={unknownUrl}
+                searchFor={searchFor}
                 onFocus={onFocus}
                 onBlur={onBlur}
                 onQueryChange={this.props.onQueryChange}

@@ -49,7 +49,7 @@ class VenstreVinduContainer extends React.Component {
     const {
       meta,
       visAktiveLag,
-      unknownUrl,
+      searchFor,
       onMouseEnter,
       onMouseLeave,
       onUpdateLayerProp,
@@ -92,7 +92,7 @@ class VenstreVinduContainer extends React.Component {
     return (
       <React.Fragment>
         <Panel>
-          <TopBarContainer tittel={this.tittel(meta)} unknownUrl={unknownUrl} />
+          <TopBarContainer tittel={this.tittel(meta)} searchFor={searchFor} />
           <KodeContainer
             kode={meta && meta.kode}
             onNavigate={this.handleNavigate}

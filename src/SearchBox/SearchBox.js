@@ -15,9 +15,9 @@ class SearchBox extends Component {
   }
 
   componentDidMount() {
-    if (this.props.unknownUrl) {
+    if (this.props.searchFor) {
       this.props.onQueryChange({
-        target: { value: this.props.unknownUrl }
+        target: { value: this.props.searchFor }
       });
 
       this.inputRef.current.focus();
@@ -25,13 +25,10 @@ class SearchBox extends Component {
   }
 
   componentDidUpdate(prevprops) {
-    if (
-      this.props.unknownUrl &&
-      this.props.unknownUrl !== prevprops.unknownUrl
-    ) {
+    if (this.props.searchFor && this.props.searchFor !== prevprops.searchFor) {
       this.inputRef.current.focus();
       this.props.onQueryChange({
-        target: { value: this.props.unknownUrl }
+        target: { value: this.props.searchFor.split("/").join(" ") }
       });
     }
   }
