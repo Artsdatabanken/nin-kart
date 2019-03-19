@@ -1,19 +1,6 @@
 import React from "react";
 import Kodeliste from "./Kodeliste";
 import Ekspander from "./Ekspander";
-import { CloudDownload } from "@material-ui/icons";
-import { Button } from "@material-ui/core";
-import { makeStyles } from "@material-ui/styles";
-
-const useStyles = makeStyles({
-  button: {
-    color: "rgba(0,0,0,0.5)",
-    margin: 8
-  },
-  rightIcon: {
-    marginLeft: 12
-  }
-});
 
 const la = {
   dominerende: {
@@ -119,9 +106,9 @@ const Relasjon = ({
   onMouseLeave,
   opplystKode,
   expand,
-  onSetExpand
+  onSetExpand,
+  children
 }) => {
-  const classes = useStyles();
   const count = noder ? noder.length : 1;
   const x = titler[heading] || { title: heading };
   return (
@@ -144,21 +131,7 @@ const Relasjon = ({
           opplystKode={opplystKode}
         />
       )}
-      {(heading === "Datakilde" || heading === "Datasett") && (
-        <div style={{ paddingLeft: 16, paddingBottom: 24 }}>
-          <Button
-            variant="contained"
-            color="default"
-            className={classes.button}
-            onClick={() => {
-              window.location = "https://data.artsdatabanken.no/" + url;
-            }}
-          >
-            Last ned åpne data
-            <CloudDownload className={classes.rightIcon} />
-          </Button>
-        </div>
-      )}
+      {children}
     </Ekspander>
   );
 };
