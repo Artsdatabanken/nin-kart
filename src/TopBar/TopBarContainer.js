@@ -57,7 +57,6 @@ class TopBarContainer extends Component<Props, State> {
       searchResults: null
     });
 
-    if (!q) return;
     this.queryNumber++;
     const currentQuery = this.queryNumber;
     backend.søk(q).then(json => {
