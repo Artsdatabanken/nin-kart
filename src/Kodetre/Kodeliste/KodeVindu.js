@@ -19,6 +19,7 @@ import {
   Gradient
 } from "@material-ui/icons/";
 import KurveContainer from "./KurveContainer";
+import Relasjon from "./Relasjon";
 
 import { SettingsContext } from "../../SettingsContext";
 
@@ -242,6 +243,17 @@ const KodeVindu = ({
               graf={meta.graf}
               parentkode={kode}
               onNavigate={onNavigate}
+              expand={expand}
+              onSetExpand={setExpand}
+            />
+            <Relasjon
+              url={url}
+              heading="Datakilde"
+              noder={meta.datakilde}
+              parentkode={kode}
+              onNavigate={onNavigate}
+              expand={expand}
+              onSetExpand={setExpand}
             />
           </div>
         );
