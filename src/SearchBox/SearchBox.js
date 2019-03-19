@@ -51,15 +51,20 @@ class SearchBox extends Component {
     }
   };
 
+  handleFocus = event => {
+    event.target.select();
+    this.props.onFocus(event);
+  };
+
   render() {
-    const { onFocus, onBlur, onQueryChange, query, classes } = this.props;
+    const { onBlur, onQueryChange, query, classes } = this.props;
     return (
       <Input
         inputRef={this.inputRef}
         onKeyDown={this.handleKeyDown}
         value={query}
         placeholder={"Søk i Natur i Norge"}
-        onFocus={onFocus}
+        onFocus={this.handleFocus}
         onBlur={onBlur}
         onChange={onQueryChange}
         fullWidth={true}
