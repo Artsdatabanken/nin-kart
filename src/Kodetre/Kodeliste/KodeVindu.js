@@ -19,7 +19,7 @@ import {
   Gradient
 } from "@material-ui/icons/";
 import KurveContainer from "./KurveContainer";
-import Relasjon from "./Relasjon";
+import Nedlasting from "./Nedlasting";
 
 import { SettingsContext } from "../../SettingsContext";
 
@@ -246,7 +246,7 @@ const KodeVindu = ({
               expand={expand}
               onSetExpand={setExpand}
             />
-            <Relasjon
+            <Nedlasting
               url={url}
               heading="Datakilde"
               noder={meta.datakilde}
