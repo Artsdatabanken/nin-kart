@@ -7,7 +7,7 @@ import ChromePointer from "react-color/lib/components/slider/SliderPointer";
 class ColorPicker extends React.Component {
   render() {
     return (
-      <React.Fragment>
+      <>
         <ListSubheader>{this.props.tittel}</ListSubheader>
         <Blokk height={256}>
           <Saturation
@@ -24,7 +24,7 @@ class ColorPicker extends React.Component {
             <Alpha pointer={ChromePointer} {...this.props} />
           </Blokk>
         )}
-      </React.Fragment>
+      </>
     );
   }
 }

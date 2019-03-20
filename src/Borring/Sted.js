@@ -29,7 +29,7 @@ const Sted = props => {
     : kommune;
   const color = "rgba(230,230,230,1.0)";
   return (
-    <React.Fragment>
+    <>
       <Typography style={{ color: color }} variant="h6">
         {primary}
       </Typography>
@@ -56,7 +56,7 @@ const Sted = props => {
         }}
         variant="body2"
       />
-    </React.Fragment>
+    </>
   );
 };
 

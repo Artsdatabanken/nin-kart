@@ -25,7 +25,7 @@ class FetchContainer extends React.Component {
       })
     );
 
-    return <React.Fragment>{childrenWithProps}</React.Fragment>;
+    return <>{childrenWithProps}</>;
   }
 
   static childContextTypes = {

@@ -36,7 +36,7 @@ class Generelt extends Component {
       <div>
         <div style={{ marginLeft: 24 }} />
         {history.location.search === "?vis" && kode !== "bakgrunnskart" && (
-          <React.Fragment>
+          <>
             <ListSubheader>Visualisering</ListSubheader>
             <VizType
               lag={kode}
@@ -47,7 +47,7 @@ class Generelt extends Component {
             <div style={{ fontSize: 12, paddingTop: 8, paddingLeft: 44 }}>
               Kommer mer fornuftige valg her...
             </div>
-          </React.Fragment>
+          </>
         )}
         {children}
         <Divider style={{ marginTop: 24, marginBottom: 8 }} />

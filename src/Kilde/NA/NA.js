@@ -13,7 +13,7 @@ class NA extends Component {
   render() {
     const { classes, description, codes, onClick, ...om } = this.props;
     return (
-      <React.Fragment>
+      <>
         <List>
           <ListSubheader>Natursystem</ListSubheader>
           {description && (
@@ -26,29 +26,29 @@ class NA extends Component {
           )}
           <Om {...om} />
         </List>
-      </React.Fragment>
+      </>
     );
   }
 }
 
 const Kartlegger = props => (
-  <React.Fragment>
+  <>
     <ListItem>
       <ListItemText primary={props.company} secondary="Kartlegger" />
     </ListItem>
-  </React.Fragment>
+  </>
 );
 
 const Eier = props => (
-  <React.Fragment>
+  <>
     <ListItem>
       <ListItemText primary={props.company} secondary="Dataeier" />
     </ListItem>
-  </React.Fragment>
+  </>
 );
 
 const Prosjekt = ({ prosjekt, program, målestokk }) => (
-  <React.Fragment>
+  <>
     <ListItem>
       <ListItemText primary={målestokk} secondary="Kartlagt i målestokk" />
     </ListItem>
@@ -64,11 +64,11 @@ const Prosjekt = ({ prosjekt, program, målestokk }) => (
         secondary="Program"
       />
     </ListItem>
-  </React.Fragment>
+  </>
 );
 
 const Om = props => (
-  <React.Fragment>
+  <>
     {props.surveyer && <Kartlegger {...props.surveyer} />}
     {props.owner && <Eier {...props.owner} />}{" "}
     {props.project && (
@@ -81,7 +81,7 @@ const Om = props => (
     <ListItem>
       <ListItemText primary="lokalId" secondary={props.geom_id} />
     </ListItem>
-  </React.Fragment>
+  </>
 );
 
 export default withStyles(styles)(NA);

@@ -16,7 +16,7 @@ class Gradient extends Component {
     const decimals = Math.trunc(Math.log10(10000 / rangeMax));
     const spread = 0.015;
     return (
-      <React.Fragment>
+      <>
         <ListSubheader>Filter</ListSubheader>
         <SliderSetting
           value={filterMin}
@@ -56,7 +56,7 @@ class Gradient extends Component {
               );
           }}
         />
-      </React.Fragment>
+      </>
     );
   }
 

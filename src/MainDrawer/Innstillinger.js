@@ -22,7 +22,7 @@ class Innstillinger extends Component {
   render() {
     const { classes, visKoder, sorterPåKode, onUpdateSetting } = this.props;
     return (
-      <React.Fragment>
+      <>
         <ListSubheader>Innstillinger</ListSubheader>
         <ListItem
           button
@@ -62,7 +62,7 @@ class Innstillinger extends Component {
           />
         </ListItem>
         <Divider />
-      </React.Fragment>
+      </>
     );
   }
 }

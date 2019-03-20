@@ -9,7 +9,7 @@ class Ruter extends Component {
     return (
       <SettingsContext.Consumer>
         {context => (
-          <React.Fragment>
+          <>
             <ColorPicker
               tittel={"Fyllfarge"}
               color={farge}
@@ -18,7 +18,7 @@ class Ruter extends Component {
                 this.handleUpdateLayerProp(kode, "farge", rgbString);
               }}
             />
-          </React.Fragment>
+          </>
         )}
       </SettingsContext.Consumer>
     );

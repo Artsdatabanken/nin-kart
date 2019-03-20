@@ -90,7 +90,7 @@ class VenstreVinduContainer extends React.Component {
     }
     const kurve = finnKurvevariabler(this.props.aktiveLag);
     return (
-      <React.Fragment>
+      <>
         <Panel>
           <TopBarContainer
             tittel={this.tittel(meta)}
@@ -139,7 +139,7 @@ class VenstreVinduContainer extends React.Component {
             onRemoveSelectedLayer={onRemoveSelectedLayer}
           />
         </div>
-      </React.Fragment>
+      </>
     );
   }
 

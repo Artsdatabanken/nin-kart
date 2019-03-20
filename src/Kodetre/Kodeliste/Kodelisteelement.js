@@ -56,7 +56,7 @@ class Kodelisteelement extends React.Component {
       størsteAreal
     } = this.props;
     return (
-      <React.Fragment>
+      <>
         <ListItem
           dense={true}
           key={kode}
@@ -91,7 +91,7 @@ class Kodelisteelement extends React.Component {
             <Arealbruksintensitet value={meta.value} onChange={onChange} />
           </ListItem>
         )*/}
-      </React.Fragment>
+      </>
     );
   }
 }
