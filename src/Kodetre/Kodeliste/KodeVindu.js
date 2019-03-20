@@ -122,7 +122,7 @@ const KodeVindu = ({
               visible={overordnet.length > 0}
               expanded={expand.tagger}
               icon={<MergeType style={{ transform: "rotate(-45deg)" }} />}
-              heading="Klassifisering"
+              heading="Hierarki"
               heading2={overordnet.length}
               onExpand={() => setExpand({ ...expand, tagger: !expand.tagger })}
             >
