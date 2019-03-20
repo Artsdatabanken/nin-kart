@@ -8,9 +8,13 @@ function lagGradientRampe(barna, opplystKode, mode) {
     const key = b.kode;
     let levels = b.normalisertVerdi;
     if (levels === undefined) return;
-    if (!Array.isArray(levels)) levels = [levels];
-    if (key === opplystKode) opplystLevel = levels;
-    levels.forEach(level => steps.push({ level: level, color: b.farge }));
+    if (!Array.isArray(levels)) levels = [levels, levels];
+    let [min, max] = levels;
+    if (max < 255) max -= 1;
+    if (key === opplystKode) opplystLevel = [min, max];
+    if (min <= 1 || mode === "kontinuerlig")
+      steps.push({ level: min, color: b.farge });
+    steps.push({ level: max, color: b.farge });
   });
 
   steps = steps.sort((a, b) => a.level - b.level);
@@ -39,6 +43,7 @@ function lagGradientRampe(barna, opplystKode, mode) {
       cmap[ci] = tc.toHexString();
     }
   }
+
   const palette = colorArray2Image(cmap);
   return palette;
 }
