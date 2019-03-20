@@ -10,7 +10,6 @@ function makeUrl(punkt, gradient) {
   }&raster=${gradient.url}`;
 }
 const KurveContainer = ({ punkt, gradient, children }) => {
-  console.log("grad", gradient);
   const [stats, setStats] = useState();
   useEffect(() => {
     const url = makeUrl(punkt, gradient);

@@ -1,14 +1,17 @@
 import React, { useRef, useState } from "react";
 
-function normaliser(stats) {
+const expo = (y, log) => (log ? Math.log10(y + 1) : y);
+
+function normaliser(stats, logY) {
   let ymax = 0;
   let ymax2 = 0;
-  for (const v of stats) {
+  for (const sample of stats) {
+    const v = expo(sample, logY);
     ymax = Math.max(ymax, v);
     if (v < ymax) ymax2 = Math.max(ymax2, v);
   }
   const scaler = 1.0 / (0.2 * ymax + 0.8 * ymax2);
-  const r = stats.map(y => Math.min(100, 100 * y * scaler));
+  const r = stats.map(y => Math.min(100, 100 * expo(y, logY) * scaler));
   return { fordeling: r, max: ymax };
 }
 
@@ -17,27 +20,19 @@ function prep(stats, grad) {
   return stats.map((y, i) => y / (grad[i] || 1));
 }
 
-const logx = false;
+const scale = (samples, logX) =>
+  samples.map((y, i) => `${logX ? Math.log10(i + 1) * 50 : i},${y}`);
 
-const Kurve = ({ kode, stats, gradient }) => {
-  const [visNormalisert, setVisNormalisert] = useState(true);
+const Kurve = ({ kode, stats, gradient, logX, logY }) => {
+  const [visNormalisert, setVisNormalisert] = useState(logY);
   let animateRef = useRef();
-  const lnorm = normaliser(prep(stats.fordeling, stats.grad));
-  const lnormf = lnorm.fordeling.map(
-    (y, i) => `${logx ? Math.log10(i + 1) * 50 : i},${-50 * Math.log10(y + 1)}`
-  );
-  const l = normaliser(stats.fordeling || stats.grad);
+  const lnorm = normaliser(prep(stats.fordeling, stats.grad), !visNormalisert);
+  const lnormf = scale(lnorm.fordeling, logX);
+  //  const l = normaliser(stats.fordeling || stats.grad, visNormalisert);
+  const l = normaliser(prep(stats.fordeling, stats.grad), visNormalisert);
 
   const lineNorm = "0,0 " + lnormf.join(" ") + " 255,0 0,0";
-  const line =
-    "0,0 " +
-    l.fordeling
-      .map(
-        (y, i) =>
-          `${logx ? Math.log10(i + 1) * 50 : i},${-50 * Math.log10(y + 1)}`
-      )
-      .join(" ") +
-    " 255,0 0,0";
+  const line = "0,0 " + scale(l.fordeling, logX).join(" ") + " 255,0 0,0";
   return (
     <svg
       onClick={() => {
@@ -85,18 +80,13 @@ const Kurve = ({ kode, stats, gradient }) => {
             floodOpacity="1"
           />
         </filter>
-        <pattern
-          id={kode}
-          _patternUnits="userSpaceOnUse"
-          width="100%"
-          height="100%"
-        >
+        <pattern id={kode} width="100%" height="100%">
           <image
             xlinkHref={gradient}
             height="100%"
             width="100%"
             preserveAspectRatio="none"
-            filter="url(#dim)"
+            _filter="url(#dim)"
           />
         </pattern>
       </defs>
@@ -106,12 +96,12 @@ const Kurve = ({ kode, stats, gradient }) => {
         width="257"
         height="100"
         style={{
-          fill: "#fff",
+          fill: "#eee",
           stroke: "rgba(0,0,0,0.3)",
           strokeWidth: 0.5
         }}
       />
-      <g transform="translate(0,100)">
+      <g transform="translate(0,99) scale(1 -1)">
         <polyline
           style={{
             fill: "url(#" + kode + ")",
@@ -128,14 +118,14 @@ const Kurve = ({ kode, stats, gradient }) => {
             keySplines="0.5,0.05,0,0.5"
             keyTimes="0;1"
             repeatCount="1"
-            from={visNormalisert ? line : lineNorm}
-            to={visNormalisert ? lineNorm : line}
+            from={lineNorm}
+            to={line}
             fill="freeze"
           />
         </polyline>
       </g>
-      <text x="5" y="9" fill="rgba(0,0,0,0.55)" fontSize={9}>
-        {visNormalisert ? "p" : "A"}
+      <text x="5" y="9" fill="rgba(0,0,0,0.55)" fontSize={8}>
+        {visNormalisert ? "log" : "lin"}
         {false && (visNormalisert ? lnorm.max : l.max)}
       </text>
       )} />

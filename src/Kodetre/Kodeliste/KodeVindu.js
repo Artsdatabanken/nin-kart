@@ -19,7 +19,7 @@ import {
   Gradient
 } from "@material-ui/icons/";
 import KurveContainer from "./KurveContainer";
-import Relasjon from "./Relasjon";
+import Nedlasting from "./Nedlasting";
 
 import { SettingsContext } from "../../SettingsContext";
 
@@ -150,7 +150,9 @@ const KodeVindu = ({
                       "Natur_i_Norge/Landskap/Landskapsgradient/Arealbruksintensitet/",
                     barn: []
                   }}
-                />
+                >
+                  <Kurve logY={true} />
+                </KurveContainer>
               )}
               <Kodeliste
                 title=""
@@ -188,19 +190,17 @@ const KodeVindu = ({
                   />
                 </Ekspander>
               ))}
-            {false && meta.kart.format.raster_gradient && (
+            {true && meta.kart.format.raster_gradient && (
               <Ekspander
                 expanded={expand.stat1d}
                 visible={true}
-                heading={"Areal"}
+                heading={"Frekvens"}
                 heading2=""
                 icon={<ShowChart />}
-                onExpand={() =>
-                  setExpand({ ...expand, stat1d: !expand.stat1d })
-                }
+                onExpand={() => setExpand({ ...expand, frek: !expand.frek })}
               >
                 <KurveContainer gradient={meta}>
-                  <Kurve />
+                  <Kurve logY={true} />
                 </KurveContainer>
               </Ekspander>
             )}
@@ -208,7 +208,7 @@ const KodeVindu = ({
               <Ekspander
                 expanded={expand.stat1d}
                 visible={true}
-                heading={"Observasjoner"}
+                heading={"Relativ frekvens"}
                 heading2=""
                 icon={<ShowChart />}
                 onExpand={() =>
@@ -246,7 +246,7 @@ const KodeVindu = ({
               expand={expand}
               onSetExpand={setExpand}
             />
-            <Relasjon
+            <Nedlasting
               url={url}
               heading="Datakilde"
               noder={meta.datakilde}
