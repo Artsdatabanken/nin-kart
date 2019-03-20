@@ -44,7 +44,7 @@ class Bakgrunnskart extends Component {
             }}
           />
           {kf[egenskap + "_stroke_farge"] && (
-            <React.Fragment>
+            <>
               <ListSubheader>Omriss</ListSubheader>
               <SliderSetting
                 value={kf[egenskap + "_stroke_width"] || 0}
@@ -76,7 +76,7 @@ class Bakgrunnskart extends Component {
                   );
                 }}
               />
-            </React.Fragment>
+            </>
           )}
         </List>
       );

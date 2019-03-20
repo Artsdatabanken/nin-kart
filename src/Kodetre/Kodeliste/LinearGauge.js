@@ -50,7 +50,7 @@ export default class Gradient extends Component {
         <ListItemText
           primary={tittel}
           secondary={
-            <React.Fragment>
+            <>
               <Gauge trinn={trinn} range={påRange} />
               <div style={{ display: "flex", position: "relative", top: -10 }}>
                 <div
@@ -67,7 +67,7 @@ export default class Gradient extends Component {
                   </div>
                 )}
               </div>
-            </React.Fragment>
+            </>
           }
         />
       </ListItem>

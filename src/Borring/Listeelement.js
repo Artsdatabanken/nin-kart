@@ -27,7 +27,7 @@ const Listeelement = ({
   const bgFarge = palett.lysere[prefix];
   const avatar = false;
   return (
-    <React.Fragment>
+    <>
       <div
         style={{
           width: "100%",
@@ -64,7 +64,7 @@ const Listeelement = ({
         </ListItem>
       </div>
       <Divider />
-    </React.Fragment>
+    </>
   );
 };
 

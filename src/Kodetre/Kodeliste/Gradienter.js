@@ -9,7 +9,7 @@ const Gradienter = ({
   opplystKode,
   visKoder
 }) => (
-  <React.Fragment>
+  <>
     {Object.entries(gradient).map(([kode, gr]) => (
       <Gradient
         key={kode}
@@ -24,7 +24,7 @@ const Gradienter = ({
         opplystKode={opplystKode}
       />
     ))}
-  </React.Fragment>
+  </>
 );
 
 export default Gradienter;

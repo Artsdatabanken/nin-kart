@@ -227,7 +227,7 @@ class Grunnkart extends React.Component {
         {context => {
           const transparent = isAtRoot(history.location);
           return (
-            <React.Fragment>
+            <>
               <div
                 className={classNames(
                   classes.rot,
@@ -267,7 +267,7 @@ class Grunnkart extends React.Component {
                 onMapBoundsChange={this.handleActualBoundsChange}
                 onMapMove={context.onMapMove}
               />
-            </React.Fragment>
+            </>
           );
         }}
       </SettingsContext.Consumer>

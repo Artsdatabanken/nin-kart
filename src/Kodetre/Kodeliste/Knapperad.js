@@ -26,7 +26,7 @@ const Knapperad = ({
   onFitBounds
 }) => (
   <CardActions className={classes.cardActions}>
-    <React.Fragment>
+    <>
       <Button
         className={classes.button}
         onClick={onToggleLayer}
@@ -48,7 +48,7 @@ const Knapperad = ({
           Zoom til
         </Button>
       )}
-    </React.Fragment>
+    </>
     )}
   </CardActions>
 );

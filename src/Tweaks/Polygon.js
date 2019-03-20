@@ -50,7 +50,7 @@ class Polygon extends Component {
     return (
       <SettingsContext.Consumer>
         {context => (
-          <React.Fragment>
+          <>
             <List>
               <ListSubheader style={{ textTransform: "capitalize" }}>
                 {undernivå}
@@ -76,7 +76,7 @@ class Polygon extends Component {
                 this.handleUpdateLayerProp(kode, "farge", rgbString);
               }}
             />
-          </React.Fragment>
+          </>
         )}
       </SettingsContext.Consumer>
     );

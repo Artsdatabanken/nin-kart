@@ -21,7 +21,7 @@ class Terreng extends Component {
       visEtikettTopp = false
     } = terreng;
     return (
-      <React.Fragment>
+      <>
         <ListSubheader>Terreng</ListSubheader>
         <Veksle
           tittel="Vis terreng"
@@ -32,7 +32,7 @@ class Terreng extends Component {
           }
         />
         {terreng.erSynlig && (
-          <React.Fragment>
+          <>
             <SliderSetting
               value={vertikaltOverdriv}
               decimals={1}
@@ -80,9 +80,9 @@ class Terreng extends Component {
                 )
               }
             />{" "}
-          </React.Fragment>
+          </>
         )}
-      </React.Fragment>
+      </>
     );
   }
 }

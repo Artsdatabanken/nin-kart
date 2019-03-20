@@ -24,7 +24,7 @@ class Kartlagelement extends React.Component {
       onClick
     } = this.props;
     return (
-      <React.Fragment>
+      <>
         <ListItem
           button={true}
           dense={true}
@@ -65,7 +65,7 @@ class Kartlagelement extends React.Component {
           </ListItemSecondaryAction>
         </ListItem>
         <Divider />
-      </React.Fragment>
+      </>
     );
   }
 }

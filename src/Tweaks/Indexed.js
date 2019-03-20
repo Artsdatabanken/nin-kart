@@ -14,9 +14,9 @@ const styles = {
 class Indexed extends Component {
   render() {
     return (
-      <React.Fragment>
+      <>
         <ListSubheader>Filter</ListSubheader>
-      </React.Fragment>
+      </>
     );
   }
 

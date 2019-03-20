@@ -11,14 +11,14 @@ class Statistikk extends React.Component {
     });
 
     return (
-      <React.Fragment>
+      <>
         {this.props.ingress && (
           <Blokk>
             <Ingress beskrivelse={this.props.ingress} />
           </Blokk>
         )}
         {blokker}
-      </React.Fragment>
+      </>
     );
   }
 
