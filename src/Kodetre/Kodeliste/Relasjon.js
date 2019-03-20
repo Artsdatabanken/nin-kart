@@ -115,7 +115,7 @@ const Relasjon = ({
     <Ekspander
       expanded={expand[heading]}
       visible={count > 0}
-      heading={x.title}
+      heading={x.title || heading}
       heading2={count}
       onExpand={() => onSetExpand({ ...expand, [heading]: !expand[heading] })}
     >
