@@ -62,7 +62,7 @@ class TopBarContainer extends Component<Props, State> {
     backend.søk(q).then(json => {
       if (currentQuery !== this.queryNumber) return; // Abort stale query
       if (json.error) return this.setState({ error: json.error });
-      if (this.props.searchFor)
+      if (this.props.searchFor !== null)
         if (this.handleEksaktKodetreff(q, json.result)) return;
       this.setState({
         searchResults: json.result
@@ -93,9 +93,10 @@ class TopBarContainer extends Component<Props, State> {
   };
 
   handleKeyEnter = e => {
-    if (!this.state.searchResults || this.state.searchResults.length === 0)
-      return;
-    this.handleNavigation(this.state.searchResults[0].url);
+    if (this.state.searchResults && this.state.searchResults.length > 0) {
+      this.handleNavigation(this.state.searchResults[0].url);
+    }
+    this.setState({ query: "", searchResults: null });
   };
 
   render() {
