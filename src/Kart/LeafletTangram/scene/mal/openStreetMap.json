@@ -312,7 +312,7 @@
     "data": { "source": "bakgrunnskart", "layer": "place" },
     "draw": {
       "text": {
-        "text_source": "name",
+        "text_source": "name_int",
         "font": {
           "family": "Roboto",
           "fill": "#555",
