@@ -63,6 +63,7 @@ class VenstreVinduContainer extends React.Component {
         <Panel>
           <TopBarContainer
             tittel={node ? språk(node.tittel) + ": Visning" : ""}
+            onClearSearchFor={this.props.onClearSearchFor}
           />
           <Tweaks
             {...node}
@@ -83,6 +84,7 @@ class VenstreVinduContainer extends React.Component {
             tittel={`${parseFloat(lat).toFixed(5)}° N ${parseFloat(lng).toFixed(
               5
             )}° Ø`}
+            onClearSearchFor={this.props.onClearSearchFor}
           />
           <BorreContainer lng={lng} lat={lat} vis={vis} />
         </Panel>

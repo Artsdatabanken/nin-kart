@@ -1,6 +1,7 @@
 import { Input, withStyles } from "@material-ui/core";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 
 const styles = theme => ({
   input: {
@@ -15,6 +16,7 @@ class SearchBox extends Component {
   }
 
   componentDidMount() {
+    window.addEventListener("keydown", this._handleKeyDown);
     if (this.props.searchFor) {
       this.props.onQueryChange({
         target: { value: this.props.searchFor }
@@ -24,6 +26,26 @@ class SearchBox extends Component {
     }
   }
 
+  componentDidUnMount() {
+    window.removeEventListener("keydown", this._handleKeyDown);
+  }
+
+  _handleKeyDown = event => {
+    const ESCAPE_KEY = 27;
+    switch (event.keyCode) {
+      case 70: // f
+        this.props.onFocus(event);
+        this.inputRef.current.focus();
+        event.preventDefault();
+        break;
+      case ESCAPE_KEY:
+        this.props.history.goBack();
+        break;
+      default:
+        break;
+    }
+  };
+
   componentDidUpdate(prevprops) {
     if (this.props.searchFor && this.props.searchFor !== prevprops.searchFor) {
       this.inputRef.current.focus();
@@ -31,23 +53,24 @@ class SearchBox extends Component {
         target: { value: this.props.searchFor.split("/").join(" ") }
       });
     }
+    //    if (this.props.query && !prevprops.query) this.inputRef.current.select();
   }
 
   handleKeyDown = e => {
     switch (e.keyCode) {
       case 13:
         this.props.onKeyEnter();
+        this.inputRef.current.blur();
         break;
       case 27:
-        e.stopPropagation();
-        e.preventDefault();
-        this.props.onQueryChange({
+        this.props.onBlur(false);
+        /*        this.props.onQueryChange({
           target: { value: "" }
-        });
+        });*/
         this.inputRef.current.blur();
         break;
       default:
-        return;
+        break;
     }
   };
 
@@ -79,4 +102,4 @@ SearchBox.propTypes = {
   onSearchResults: PropTypes.func
 };
 
-export default withStyles(styles)(SearchBox);
+export default withRouter(withStyles(styles)(SearchBox));

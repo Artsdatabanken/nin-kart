@@ -91,30 +91,10 @@ class Grunnkart extends React.Component {
     this.addSelected(this.state.meta);
   };
 
-  handleClearSearchFor = () => this.setState({ searchFor: "" });
-
-  _handleKeyDown = event => {
-    const ESCAPE_KEY = 27;
-    switch (event.keyCode) {
-      case 70: // f
-        this.setState({ searchFor: "" });
-        event.preventDefault();
-        break;
-      case ESCAPE_KEY:
-        this.props.history.goBack();
-        break;
-      default:
-        break;
-    }
-  };
+  handleClearSearchFor = () => this.setState({ searchFor: null });
 
   componentDidMount() {
     this.fetchMeta(this.props.location.pathname);
-    window.addEventListener("keydown", this._handleKeyDown);
-  }
-
-  componentDidUnMount() {
-    window.removeEventListener("keydown", this._handleKeyDown);
   }
 
   componentDidUpdate(prevProps, prevState) {
