@@ -310,9 +310,10 @@
   },
   "sted_navn": {
     "data": { "source": "bakgrunnskart", "layer": "place" },
+    "filter": { "$zoom": { "min": 8 } },
     "draw": {
       "text": {
-        "text_source": "name_int",
+        "text_source": "name",
         "font": {
           "family": "Roboto",
           "fill": "#555",
