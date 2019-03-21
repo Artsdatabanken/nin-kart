@@ -10,13 +10,13 @@ function lagGradientRampe(barna, opplystKode, mode) {
     if (levels === undefined) return;
     if (!Array.isArray(levels)) levels = [levels, levels];
     let [min, max] = levels;
-    if (max < 255) max -= 1;
+    if (max < 255) max = Math.max(0, max - 1);
     if (key === opplystKode) opplystLevel = [min, max];
     if (min <= 1 || mode === "kontinuerlig")
       steps.push({ level: min, color: b.farge });
     steps.push({ level: max, color: b.farge });
   });
-
+  console.log("opplystlevel", opplystLevel);
   steps = steps.sort((a, b) => a.level - b.level);
   if (mode === "kontinuerlig") {
     for (let i = steps.length - 3; i > 0; i -= 2) {
