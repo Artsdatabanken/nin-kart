@@ -53,21 +53,18 @@ class SearchBox extends Component {
         target: { value: this.props.searchFor.split("/").join(" ") }
       });
     }
-    //    if (this.props.query && !prevprops.query) this.inputRef.current.select();
   }
 
-  handleKeyDown = e => {
-    switch (e.keyCode) {
+  handleKeyDown = event => {
+    switch (event.keyCode) {
       case 13:
         this.props.onKeyEnter();
         this.inputRef.current.blur();
         break;
       case 27:
         this.props.onBlur(false);
-        /*        this.props.onQueryChange({
-          target: { value: "" }
-        });*/
         this.inputRef.current.blur();
+        event.stopPropagation();
         break;
       default:
         break;
