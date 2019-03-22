@@ -114,7 +114,7 @@ class Grunnkart extends React.Component {
     let url = location.match(/\/(.*)/);
     this.setState({ meta: null });
     if (!url || url.length !== 2 || !url[1]) return;
-    const path = url[1].replace(/katalog/i, "");
+    const path = url[1].replace(/åpne_data/i, "");
     this.downloadMeta(path).then(data => {
       if (!data) {
         this.setState({ searchFor: path });
