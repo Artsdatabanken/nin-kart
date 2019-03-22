@@ -18,7 +18,7 @@ function rutefarge(erPå, col) {
   return tinycolor.mix(col, new tinycolor("#eee"), 90).toHexString();
 }
 
-export default class Gradient extends Component {
+export default class KlassedeltGradient extends Component {
   render() {
     const { tittel, trinn, onNavigate, url, kode, visKoder } = this.props;
     const antall = trinn.length;
@@ -51,7 +51,7 @@ export default class Gradient extends Component {
           primary={tittel}
           secondary={
             <>
-              <Gauge trinn={trinn} range={påRange} />
+              <Gradienttrinn trinn={trinn} range={påRange} />
               <div style={{ display: "flex", position: "relative", top: -10 }}>
                 <div
                   style={{
@@ -75,7 +75,7 @@ export default class Gradient extends Component {
   }
 }
 
-const Gauge = ({ trinn, range }) => {
+const Gradienttrinn = ({ trinn, range }) => {
   return (
     <SettingsContext.Consumer>
       {context => (
