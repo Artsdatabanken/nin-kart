@@ -51,8 +51,8 @@ class config {
   }
 
   static hack(kode) {
-    if (kode.indexOf("NN-") === 0) return kode.substring(3);
-    return kode;
+    if (kode.indexOf("NN-") !== 0) return kode;
+    return kode.substring(3).replace("-TI-", "-");
   }
 }
 
