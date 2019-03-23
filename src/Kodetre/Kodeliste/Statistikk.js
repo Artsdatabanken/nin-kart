@@ -20,15 +20,20 @@ const styles = {
 };
 
 const Statistikk = ({
+  prefiks,
+  overordnet,
   stats,
   tittel,
+  prefix,
   arealPrefix,
   toppnavn,
   classes,
   ...props
 }) => {
-  const { areal, arter } = stats;
-  if (!areal) return null;
+  if (!stats.areal) return null;
+  const arter = stats.arter + " ulike arter";
+  const areal = stats.areal;
+  const prosent = ((100 * stats.areal) / arealPrefix).toFixed(1) + " %";
   return (
     <ListItem className={classes.liroot}>
       <ListItemText
@@ -37,27 +42,48 @@ const Statistikk = ({
           root: classes.liroot
         }}
       >
-        Det er kartlagt <b>{prettyprint.prettyPrintAreal(areal)}</b>
-        &nbsp;
-        {tittel.toLowerCase()}
-        .&nbsp;
-        {toppnavn && (
-          <span>
-            Dette utgjør&nbsp;
-            <b>{((100 * areal) / arealPrefix).toFixed(1)} %</b> av
-            kartlagte&nbsp;
-            {toppnavn.toLowerCase()}.
-          </span>
-        )}
-        {arter && (
-          <span>
-            &nbsp;Det er observert <b>{arter}</b> ulike arter i områder som er
-            kartlagt som {tittel.toLowerCase()}.
-          </span>
-        )}
+        {tekst({
+          tittel: tittel,
+          overordnet: overordnet,
+          prefiks: prefiks,
+          areal,
+          arter,
+          prosent
+        })}
       </ListItemText>
     </ListItem>
   );
 };
+
+function tekst(props) {
+  const { prefiks, overordnet, areal, arter, tittel } = props;
+  switch (prefiks) {
+    case "NA":
+    case "LA":
+      const topp = overordnet[overordnet.length - 3];
+      console.log("topp", topp, topp.areal);
+      return `Det er kartlagt ${prettyprint.prettyPrintAreal(
+        areal
+      )} ${tittel.toLowerCase()}. Dette utgjør ${prosent(
+        areal,
+        topp.areal
+      )} av kartlagte ${topp.tittel.nb.toLowerCase()}. Det er observert ${arter} i områder som er kartlagt som ${tittel.toLowerCase()}.`;
+    case "VV":
+      const mor = overordnet[0];
+      const morareal = mor.areal;
+      return `${tittel} er ${prettyprint.prettyPrintAreal(areal)}. ${
+        morareal
+          ? `Dette utgjør ${prosent(
+              areal,
+              morareal
+            )} av vernet areal i Norge inkludert Svalbard og Jan Mayen.`
+          : ""
+      } Det er observert ${arter} i ${tittel}.`;
+    default:
+      return null;
+  }
+}
+
+const prosent = (over, under) => ((100 * over) / under).toFixed(1) + " %";
 
 export default withStyles(styles)(Statistikk);
