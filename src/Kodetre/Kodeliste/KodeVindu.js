@@ -107,6 +107,8 @@ const KodeVindu = ({
               onExpand={() => setExpand({ ...expand, stats: !expand.stats })}
             >
               <Statistikk
+                prefiks={prefiks}
+                overordnet={overordnet}
                 tittel={språk(meta.tittel)}
                 infoUrl={infoUrl}
                 stats={stats}
