@@ -58,7 +58,7 @@ const Listeelement = ({
             </Typography>
             {secondary}
           </div>
-          <div style={{ position: "absolute", right: 8, top: 8 }}>
+          <div style={{ position: "absolute", right: 10, top: 11 }}>
             <Flis kode={kode} visKoder={visKoder} />
           </div>
         </ListItem>
