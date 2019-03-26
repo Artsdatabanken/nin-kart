@@ -61,15 +61,28 @@ class Borring extends Component {
   handleClick = (kode, node) => {
     kode = this.getInnerMostSingleChild(kode, node);
     const { history } = this.props;
+    console.log(kode);
+    kode = hack(kode);
+    console.log(kode);
     backend.søk(kode).then(json => {
       // TODO: Mofify lat,lon query API to return URLs
       let hit = json.result[0];
       for (const r of json.result) {
         if (r.kode.endsWith(kode)) hit = r;
       }
-      history.push("/" + hit.url);
+      if (hit) history.push("/" + hit.url);
     });
   };
+}
+
+function hack(kode) {
+  if (kode.startsWith("NA-LKM")) return kode;
+  if (kode.startsWith("NA-BS")) return kode;
+  if (kode.startsWith("LA-KLG")) return kode;
+  if (kode.startsWith("LA-MP")) return kode;
+  kode = kode.replace("LA-", "NN-LA-TI-");
+  kode = kode.replace("NA-", "NN-NA-TI-");
+  return kode;
 }
 
 export default withRouter(withTheme()(Borring));
