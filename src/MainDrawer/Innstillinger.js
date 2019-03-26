@@ -4,6 +4,7 @@ import {
   ListItemIcon,
   ListItemText,
   ListSubheader,
+  Typography,
   Switch
 } from "@material-ui/core";
 import { withStyles, withTheme } from "@material-ui/core/styles";
@@ -14,8 +15,8 @@ import React, { Component } from "react";
 
 const styles = {
   link: { cursor: "pointer" },
-  icon: { fontWeight: 700 },
-  icondisabled: { textDecoration: "line-through" }
+  icon: { fontWeight: 600, color: "rgba(0,0,0,0.7)" },
+  icondisabled: { textDecoration: "line-through", color: "rgba(0,0,0,0.4)" }
 };
 
 class Innstillinger extends Component {
@@ -33,14 +34,16 @@ class Innstillinger extends Component {
           }}
         >
           <ListItemIcon>
-            <span
-              className={classNames(
-                classes.icon,
-                !visKoder && classes.icondisabled
-              )}
-            >
-              NA
-            </span>
+            <Typography>
+              <span
+                className={classNames(
+                  classes.icon,
+                  !visKoder && classes.icondisabled
+                )}
+              >
+                NA
+              </span>
+            </Typography>
           </ListItemIcon>
           <ListItemText primary="Vis koder i tillegg til navn" />
           <Switch checked={visKoder} />
