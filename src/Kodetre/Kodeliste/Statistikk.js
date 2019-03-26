@@ -61,13 +61,15 @@ function tekst(props) {
     case "NA":
     case "LA":
       const topp = overordnet[overordnet.length - 3];
-      console.log("topp", topp, topp.areal);
+      const utgjør = topp
+        ? `Dette utgjør ${prosent(
+            areal,
+            topp.areal
+          )} av kartlagte ${topp.tittel.nb.toLowerCase()}.`
+        : "";
       return `Det er kartlagt ${prettyprint.prettyPrintAreal(
         areal
-      )} ${tittel.toLowerCase()}. Dette utgjør ${prosent(
-        areal,
-        topp.areal
-      )} av kartlagte ${topp.tittel.nb.toLowerCase()}. Det er observert ${arter} i områder som er kartlagt som ${tittel.toLowerCase()}.`;
+      )} ${tittel.toLowerCase()}. ${utgjør} Det er observert ${arter} i områder som er kartlagt som ${tittel.toLowerCase()}.`;
     case "VV":
       const mor = overordnet[0];
       const morareal = mor.areal;
