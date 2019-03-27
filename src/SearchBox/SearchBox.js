@@ -33,11 +33,11 @@ class SearchBox extends Component {
   _handleKeyDown = event => {
     const ESCAPE_KEY = 27;
     switch (event.keyCode) {
-      case 70: // f
+      /*      case 70: // f
         this.props.onFocus(event);
         this.inputRef.current.focus();
         event.preventDefault();
-        break;
+        break;*/
       case ESCAPE_KEY:
         this.props.history.goBack();
         break;
