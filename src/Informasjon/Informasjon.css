@@ -4,6 +4,8 @@ div {
 
 /*Card Look materal ui manually bc less work*/
 
+.top_image img,
+.info_component button,
 .infoBox,
 .infoItem {
   background: #f5f5f5;
@@ -39,7 +41,7 @@ div {
   bottom: 0;
   left: 0;
   height: 100%;
-  max-height: 100px;
+  max-height: 60px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   width: 100%;
@@ -50,6 +52,19 @@ div {
   background-size: 100%;
   z-index: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  padding: 0px;
+}
+
+.top_image img {
+  /*The top image logo (our logo)*/
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: auto;
+  width: 150px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
 }
 
 h1,
@@ -80,6 +95,16 @@ h2 {
   width: 150px;
   height: 150px;
   border-radius: 50%;
+}
+
+.info_component button {
+  border-radius: 4px;
+  border: 1px solid lightgrey;
+}
+
+.info_component button:hover {
+  cursor: pointer;
+  opacity: 0.5;
 }
 
 .close_button {
@@ -127,4 +152,28 @@ h2 {
     margin: auto;
     max-width: 1300px;
   }
+}
+
+.sourceContainer {
+  position: relative;
+  bottom: 0;
+  padding-bottom: 30px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+.sourceContainer div {
+  flex: 1;
+}
+.sourceContainer h2 {
+  padding: 10px;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.sourceContainer img {
+  height: 50px;
 }

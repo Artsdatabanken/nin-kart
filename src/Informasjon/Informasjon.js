@@ -7,9 +7,10 @@ const Informasjon = props => {
     <React.Fragment>
       {turnOffInfo != "turn off" && (
         <div className="info_component">
-          {turnOffInfo}
           <div className="infoBox">
-            <div className="top_image" />
+            <div className="top_image">
+              <img src="https://www.artsdatabanken.no/Files/20973" />
+            </div>
             <button
               className="close_button"
               onClick={() => setturnOffInfo("turn off")}
@@ -65,6 +66,44 @@ const Informasjon = props => {
                     statistikk for denne arten når du videre navigerer deg inn
                     på de forskjellige landskapsgradientene.
                   </p>
+                </div>
+              </div>
+              <div className="infoItemContainer sourceContainer">
+                <h2>Dataleverandører</h2>
+                <div>
+                  <img src="https://data.artsdatabanken.no/Datakilde/Artsdatabanken/forside_408.png" />
+                  <br />
+                  Artsdatabanken
+                </div>
+                <div>
+                  <img src="https://data.artsdatabanken.no/Datakilde/Milj%C3%B8direktoratet/forside_408.png" />
+                  <br />
+                  Miljødirektoratet
+                </div>
+                <div>
+                  <img src="https://data.artsdatabanken.no/Datakilde/Kartverket/forside_408.png" />
+                  <br />
+                  Kartverket
+                </div>
+                <div>
+                  <img src="https://data.artsdatabanken.no/Datakilde/Norsk_institutt_for_naturforskning/forside_408.png" />
+                  <br />
+                  NINA
+                </div>
+                <div>
+                  <img src="https://data.artsdatabanken.no/Datakilde/Norsk_institutt_for_bio%C3%B8konomi/forside_408.png" />
+                  <br />
+                  NIBIO
+                </div>
+                <div>
+                  <img src="https://data.artsdatabanken.no/Datakilde/Norges_Geologiske_Unders%C3%B8kelse/forside_408.png" />
+                  <br />
+                  NGU
+                </div>
+                <div>
+                  <img src="https://data.artsdatabanken.no/Datakilde/Statistisk_sentralbyr%C3%A5/forside_408.png" />
+                  <br />
+                  SSB
                 </div>
               </div>
             </div>
