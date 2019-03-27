@@ -49,7 +49,7 @@ class BorreVindu extends Component {
           <div
             style={{
               position: "relative",
-              top: 191,
+              bottom: -206,
               left: 0,
               height: 74,
               right: 0,
@@ -125,7 +125,11 @@ class BorreVindu extends Component {
       url = url + "/" + config.hackUrl(barn.title);
       const kode = this.finnKodeHack(barn, key, barn.title, url);
       if (kode) return kode;
-      return { kode: key, tittel: barn.title, url: url };
+      return {
+        kode: key,
+        tittel: barn.title,
+        url: tempHackUrl(url)
+      };
     }
   }
 
@@ -173,6 +177,18 @@ class BorreVindu extends Component {
     const { lat, lng, history } = this.props;
     history.push(`?lng=${lng}&lat=${lat}&vis=kilde`);
   };
+}
+
+function tempHackUrl(url) {
+  url = url.replace(
+    "Natur_i_Norge/Landskap",
+    "Natur_i_Norge/Landskap/Typeinndeling"
+  );
+  url = url.replace(
+    "Natur_i_Norge/Natursystem",
+    "Natur_i_Norge/Natursystem/Typeinndeling"
+  );
+  return url;
 }
 
 export default withRouter(withTheme()(withStyles(styles)(BorreVindu)));
