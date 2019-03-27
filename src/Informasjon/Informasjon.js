@@ -5,7 +5,7 @@ const Informasjon = props => {
   const [turnOffInfo, setturnOffInfo] = useState("på");
   return (
     <React.Fragment>
-      {turnOffInfo != "turn off" && (
+      {turnOffInfo !== "turn off" && (
         <div
           className="info_component"
           onClick={() => setturnOffInfo("turn off")}
