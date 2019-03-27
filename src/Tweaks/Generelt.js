@@ -58,8 +58,8 @@ class Generelt extends Component {
               onClick={e => {
                 onRemoveSelectedLayer(kode);
               }}
-              icon={<Delete />}
             >
+              <Delete />
               Fjern
             </Button>
           )}
