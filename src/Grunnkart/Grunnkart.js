@@ -81,6 +81,7 @@ class Grunnkart extends React.Component {
     if (!props.kart) return;
     const nyttLag = JSON.parse(JSON.stringify(props));
     nyttLag.visBarn = props.barn.length > 0;
+    nyttLag.kanSlettes = true;
     aktive[nyttLag.kode] = nyttLag;
     this.setState({
       aktiveLag: Object.assign({}, aktive)
