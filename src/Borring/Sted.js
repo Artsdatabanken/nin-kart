@@ -33,9 +33,6 @@ const Sted = props => {
       <Typography style={{ color: color }} variant="h6">
         {primary}
       </Typography>
-      <Typography style={{ color: color }} variant="body1">
-        {secondary}
-      </Typography>
       <Typography
         style={{
           float: "right",
@@ -45,7 +42,10 @@ const Sted = props => {
       >
         {formatElevation(elevasjon)}
       </Typography>
-      <div style={{ position: "absolute", left: 334, bottom: 48 }}>
+      <Typography style={{ color: color }} variant="body1">
+        {secondary}
+      </Typography>
+      <div style={{ position: "absolute", left: 334, bottom: 34 }}>
         {url && <Kommunevapen url={url} />}
       </div>
       <Typography
