@@ -43,7 +43,7 @@ const Knapperad = ({
         Vis
       </Button>
       {bbox && (
-        <Button className={classes.button} onClick={onFitBounds}>
+        <Button className={classes.button} onClick={() => onFitBounds(bbox)}>
           <ZoomOutMap className={classes.iconSmall} />
           Zoom til
         </Button>
