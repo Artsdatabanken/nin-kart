@@ -1,7 +1,7 @@
 import { ListItem, ListItemText } from "@material-ui/core";
 import React from "react";
 import { withRouter } from "react-router";
-import typer from "./tema";
+import typer from "./Tema";
 
 const TemaPreview = ({ type, valgt, onUpdateLayerProp, history }) => (
   <ListItem

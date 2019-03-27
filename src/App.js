@@ -5,6 +5,7 @@ import React, { Component } from "react";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Grunnkart from "./Grunnkart/Grunnkart";
+import Informasjon from "./Informasjon/Informasjon";
 import SettingsContainer from "./SettingsContainer";
 
 const theme = createMuiTheme({
@@ -25,6 +26,7 @@ class App extends Component {
         <BrowserRouter>
           <SettingsContainer>
             <Grunnkart />
+            <Informasjon />
             <SettingsContext.Consumer>
               {context => (
                 <MainDrawer
