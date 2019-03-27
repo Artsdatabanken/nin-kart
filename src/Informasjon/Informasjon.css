@@ -1,0 +1,130 @@
+div {
+  box-sizing: border-box;
+}
+
+/*Card Look materal ui manually bc less work*/
+
+.infoBox,
+.infoItem {
+  background: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.info_component {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  padding: 5%;
+}
+
+.infoBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+  overflow-y: auto;
+}
+
+.container_padding {
+  padding: 50px;
+}
+
+.top_image {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  max-height: 100px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  width: 100%;
+  background: #f5f5f5
+    url(https://www.artsdatabanken.no/Media/F21301?mode=320x320);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  z-index: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+h1,
+h2 {
+  color: #36a3b2;
+}
+
+.ingress {
+  font-weight: 400px;
+  font-size: 14pt;
+  margin-bottom: 50px;
+}
+
+.infoItemContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.infoItem {
+  display: inline-block;
+  flex: 1;
+  padding: 20px;
+  margin: 10px;
+  min-width: 230px;
+}
+
+.infoItem img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.close_button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: bold;
+  height: 30px;
+  width: 30px;
+}
+
+.mobile_close_button {
+  display: none;
+}
+
+@media only screen and (max-width: 678px) {
+  .greyoutFilter {
+    padding: 0px;
+  }
+
+  .container_padding {
+    padding: 15px;
+  }
+
+  .infoBox,
+  .top_image {
+    border-radius: 0%;
+  }
+
+  .close_button {
+    display: none;
+  }
+
+  .mobile_close_button {
+    display: inline-block;
+    font-weight: bold;
+    height: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .infoBox {
+    margin: auto;
+    max-width: 1300px;
+  }
+}

@@ -1,7 +1,7 @@
 import { List } from "@material-ui/core";
 import React from "react";
 import TemaPreview from "./TemaPreview";
-import typer from "./tema";
+import typer from "./Tema";
 
 const Tema = ({ valgt, onUpdateLayerProp }) => (
   <List>
