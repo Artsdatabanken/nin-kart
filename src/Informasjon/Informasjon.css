@@ -112,46 +112,12 @@ h2 {
   top: 10px;
   right: 10px;
   font-weight: bold;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
 }
 
 .mobile_close_button {
   display: none;
-}
-
-@media only screen and (max-width: 678px) {
-  .greyoutFilter {
-    padding: 0px;
-  }
-
-  .container_padding {
-    padding: 15px;
-  }
-
-  .infoBox,
-  .top_image {
-    border-radius: 0%;
-  }
-
-  .close_button {
-    display: none;
-  }
-
-  .mobile_close_button {
-    display: inline-block;
-    font-weight: bold;
-    height: 30px;
-    margin-bottom: 30px;
-    font-weight: bold;
-  }
-}
-
-@media only screen and (min-width: 1300px) {
-  .infoBox {
-    margin: auto;
-    max-width: 1300px;
-  }
 }
 
 .sourceContainer {
@@ -176,4 +142,42 @@ h2 {
 
 .sourceContainer img {
   height: 50px;
+}
+
+@media only screen and (max-width: 678px) {
+  .info_component {
+    padding: 0px;
+  }
+
+  .container_padding {
+    padding: 15px;
+  }
+
+  .infoBox,
+  .top_image {
+    border-radius: 0%;
+  }
+
+  .close_button {
+    display: none;
+  }
+
+  .mobile_close_button {
+    display: inline-block;
+    font-weight: bold;
+    height: 50px;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+
+  .sourceContainer div {
+    padding: 10px;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .infoBox {
+    margin: auto;
+    max-width: 1300px;
+  }
 }

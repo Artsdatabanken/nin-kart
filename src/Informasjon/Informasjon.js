@@ -6,10 +6,16 @@ const Informasjon = props => {
   return (
     <React.Fragment>
       {turnOffInfo != "turn off" && (
-        <div className="info_component">
+        <div
+          className="info_component"
+          onClick={() => setturnOffInfo("turn off")}
+        >
           <div className="infoBox">
             <div className="top_image">
-              <img src="https://www.artsdatabanken.no/Files/20973" />
+              <img
+                src="https://www.artsdatabanken.no/Files/20973"
+                alt="Artsdatabanken logo"
+              />
             </div>
             <button
               className="close_button"
@@ -41,7 +47,10 @@ const Informasjon = props => {
               <div className="infoItemContainer">
                 <div className="infoItem">
                   <h3>Slå opp landskap og natursystem</h3>
-                  <img src="https://www.artsdatabanken.no/Media/F16592?mode=480x480" />
+                  <img
+                    src="https://www.artsdatabanken.no/Media/F16592?mode=480x480"
+                    alt="Landskap og natursystem"
+                  />
                   <p>
                     Hvis du klikker i søkefeltet kan du velge landskap eller
                     natursystem, og navigere deg videre for å se det markert på
@@ -52,7 +61,10 @@ const Informasjon = props => {
                 </div>
                 <div className="infoItem">
                   <h3>Finn informasjon om et område</h3>
-                  <img src="https://www.artsdatabanken.no/Media/F21300?mode=320x320" />
+                  <img
+                    src="https://www.artsdatabanken.no/Media/F21300?mode=320x320"
+                    alt="Finn info"
+                  />
                   <p>
                     Ved å klikke på kartet kan du sette en markør, og få opp
                     informasjon om det valgte området.
@@ -60,7 +72,10 @@ const Informasjon = props => {
                 </div>
                 <div className="infoItem">
                   <h3>Statistikk over landskapsgradient</h3>
-                  <img src="https://www.artsdatabanken.no/Media/F21301?mode=320x320" />
+                  <img
+                    src="https://www.artsdatabanken.no/Media/F21301?mode=320x320"
+                    alt="Landskapsgradient"
+                  />
                   <p>
                     Hvis du velger en art og klikker på aktiver vil du få opp
                     statistikk for denne arten når du videre navigerer deg inn
