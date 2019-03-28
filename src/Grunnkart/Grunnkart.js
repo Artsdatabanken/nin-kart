@@ -202,12 +202,10 @@ class Grunnkart extends React.Component {
     let erAktivert = false;
     if (this.state.meta)
       erAktivert = !!this.state.aktiveLag[this.state.meta.kode];
-    const { classes, history } = this.props;
 
     return (
       <SettingsContext.Consumer>
         {context => {
-          const transparent = isAtRoot(history.location);
           return (
             <>
               <TopBar />

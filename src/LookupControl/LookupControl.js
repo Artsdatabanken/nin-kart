@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import { AppBar, Toolbar } from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
 import { withStyles } from "@material-ui/core/styles";
@@ -12,14 +11,7 @@ import SearchBox from "./SearchField/SearchField";
 import { SettingsContext } from "../SettingsContext";
 
 const styles = {
-  root: {
-    position: "fixed",
-    left: 8,
-    top: 8,
-    width: 392,
-    backgroundColor: "#fff",
-    zIndex: 12
-  },
+  root: {},
   toolbar: {
     padding: 0
   },
