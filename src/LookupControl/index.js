@@ -3,7 +3,7 @@ import { Divider } from "@material-ui/core";
 import { Route, withRouter } from "react-router-dom";
 import backend from "../backend";
 import ResultatListe from "../Kodetre/Kodeliste/ResultatListe";
-import TopBar from "./TopBar";
+import LookupControl from "./LookupControl";
 
 type State = {
   searchResults: Array<Object>,
@@ -19,7 +19,7 @@ type Props = {
   inlineResultat: boolean
 };
 
-class TopBarContainer extends Component<Props, State> {
+class LookupControlContainer extends Component<Props, State> {
   queryNumber = 0;
   state = { query: "", focused: false };
 
@@ -114,7 +114,7 @@ class TopBarContainer extends Component<Props, State> {
                 overflowX: "hidden"
               }}
             >
-              <TopBar
+              <LookupControl
                 onGoBack={this.handleGoBack}
                 onExitToRoot={this.handleExitToRoot}
                 isAtRoot={isAtRoot}
@@ -138,7 +138,7 @@ class TopBarContainer extends Component<Props, State> {
                     />
                   </div>
                 )}
-              </TopBar>
+              </LookupControl>
             </div>
           );
         }}
@@ -147,4 +147,4 @@ class TopBarContainer extends Component<Props, State> {
   }
 }
 
-export default withRouter(TopBarContainer);
+export default withRouter(LookupControlContainer);
