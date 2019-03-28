@@ -34,42 +34,13 @@ const styles = {
   }
 };
 
-type Props = {
-  tittel: string,
-  query: string,
-  onClick: Function,
-  onFocus: Function,
-  onBlur: Function,
-  onQueryChange: Function,
-  isAtRoot: Boolean,
-  hasResults: Boolean,
-  onToggleMainDrawer: Function,
-  onExitToRoot: Function,
-  classes: Object,
-  children: Object
-};
-
-class LookupControl extends React.Component<Props> {
+class LookupControl extends React.Component {
   render() {
-    const {
-      query,
-      searchFor,
-      classes,
-      onFocus,
-      onBlur,
-      hasResults
-    } = this.props;
+    const { query, classes } = this.props;
     return (
       <SettingsContext.Consumer>
         {context => (
-          <AppBar
-            position="sticky"
-            className={classNames(
-              classes.root,
-              hasResults && classes.squareBottom
-            )}
-            square={false}
-          >
+          <AppBar position="sticky" className={classes.root} square={false}>
             <Toolbar variant="dense" className={classes.toolbar}>
               {this.props.isAtRoot ? (
                 <IconButton
@@ -88,13 +59,12 @@ class LookupControl extends React.Component<Props> {
               )}
               <SearchBox
                 query={query}
-                searchFor={searchFor}
-                onFocus={onFocus}
-                onBlur={onBlur}
+                onFocus={() => {}}
+                onBlur={() => {}}
                 onQueryChange={this.props.onQueryChange}
-                onExitToRoot={this.props.onExitToRoot}
-                onKeyEnter={this.props.onKeyEnter}
-                isAtRoot={this.props.isAtRoot}
+                onExitToRoot={() => {}}
+                onKeyEnter={() => {}}
+                isAtRoot={true}
               />
               <IconButton className={classes.lightButton}>
                 <Search />
@@ -108,7 +78,6 @@ class LookupControl extends React.Component<Props> {
                 </IconButton>
               )}
             </Toolbar>
-            {this.props.children}
           </AppBar>
         )}
       </SettingsContext.Consumer>

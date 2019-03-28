@@ -40,7 +40,8 @@ class ResultatListe extends Component {
   render() {
     const { onClick, query, searchResults, classes } = this.props;
     if (!searchResults) return null;
-    if (!searchResults.length > 0) return null;
+    console.log("sr", searchResults);
+    if (searchResults.length <= 0) return null;
     return (
       <List style={{ paddingTop: 0, paddingBottom: 0 }}>
         {searchResults.map(item => {
