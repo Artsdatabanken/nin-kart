@@ -1,4 +1,3 @@
-import { withRouter } from "react-router";
 import {
   Divider,
   List,
@@ -26,7 +25,7 @@ class ResultatListe extends Component {
   }
 
   render() {
-    const { history, query, searchResults, classes } = this.props;
+    const { onSelect, query, searchResults, classes } = this.props;
     if (!searchResults) return null;
     if (searchResults.length <= 0) return null;
     return (
@@ -41,9 +40,7 @@ class ResultatListe extends Component {
               <ListItem
                 button={true}
                 className={classes.listitem}
-                onMouseDown={() => {
-                  history.push("/" + item.url);
-                }}
+                onMouseDown={() => onSelect(item)}
                 key={item.url}
               >
                 <Bildeavatar size="small" kode={item.kode} url={item.url} />
@@ -87,4 +84,4 @@ class ResultatListe extends Component {
   }
 }
 
-export default withStyles(styles)(withRouter(ResultatListe));
+export default withStyles(styles)(ResultatListe);
