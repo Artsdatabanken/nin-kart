@@ -115,14 +115,14 @@ class VenstreVinduContainer extends React.Component {
             boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.3)"
           }}
         >
-          <AktiveKartlag
+          {/*<AktiveKartlag
             erÅpen={visAktiveLag}
             koder={this.props.aktiveLag}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             onUpdateLayerProp={onUpdateLayerProp}
             onRemoveSelectedLayer={onRemoveSelectedLayer}
-          />
+          />*/}
         </div>
       </>
     );

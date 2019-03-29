@@ -209,38 +209,44 @@ class Grunnkart extends React.Component {
           return (
             <>
               <TopBar />
-              <VenstreVinduContainer
-                aktiveLag={this.state.aktiveLag}
-                mapBounds={this.state.actualBounds}
-                onMouseEnter={this.handleMouseEnter}
-                onMouseLeave={this.handleMouseLeave}
-                onFitBounds={this.handleFitBounds}
-                erAktivert={erAktivert}
-                opplystKode={this.state.opplystKode}
-                onToggleLayer={() => {
-                  this.handleToggleLayer();
-                  if (!context.visAktiveLag) context.onToggleAktiveLag();
+              <div
+                style={{
+                  paddingTop: "56px"
                 }}
-                onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                meta={this.state.meta}
-                searchFor={this.state.searchFor}
-                onClearSearchFor={this.handleClearSearchFor}
-                onUpdateLayerProp={this.handleUpdateLayerProp}
-                onUpdateMetaProp={this.handleUpdateMetaProp}
-                visAktiveLag={context.visAktiveLag}
-                onToggleAktiveLag={context.onToggleAktiveLag}
-              />
-              <Kart
-                bounds={this.state.fitBounds}
-                latitude={65.4}
-                longitude={10.8}
-                zoom={3}
-                aktiveLag={this.state.aktiveLag}
-                opplystKode={this.state.opplystKode}
-                meta={this.state.meta}
-                onMapBoundsChange={this.handleActualBoundsChange}
-                onMapMove={context.onMapMove}
-              />
+              >
+                <VenstreVinduContainer
+                  aktiveLag={this.state.aktiveLag}
+                  mapBounds={this.state.actualBounds}
+                  onMouseEnter={this.handleMouseEnter}
+                  onMouseLeave={this.handleMouseLeave}
+                  onFitBounds={this.handleFitBounds}
+                  erAktivert={erAktivert}
+                  opplystKode={this.state.opplystKode}
+                  onToggleLayer={() => {
+                    this.handleToggleLayer();
+                    if (!context.visAktiveLag) context.onToggleAktiveLag();
+                  }}
+                  onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                  meta={this.state.meta}
+                  searchFor={this.state.searchFor}
+                  onClearSearchFor={this.handleClearSearchFor}
+                  onUpdateLayerProp={this.handleUpdateLayerProp}
+                  onUpdateMetaProp={this.handleUpdateMetaProp}
+                  visAktiveLag={context.visAktiveLag}
+                  onToggleAktiveLag={context.onToggleAktiveLag}
+                />
+                <Kart
+                  bounds={this.state.fitBounds}
+                  latitude={65.4}
+                  longitude={10.8}
+                  zoom={3}
+                  aktiveLag={this.state.aktiveLag}
+                  opplystKode={this.state.opplystKode}
+                  meta={this.state.meta}
+                  onMapBoundsChange={this.handleActualBoundsChange}
+                  onMapMove={context.onMapMove}
+                />
+              </div>
             </>
           );
         }}

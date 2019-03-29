@@ -1,0 +1,56 @@
+.top_expander {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  z-index: 20;
+}
+
+.top_menu {
+  background: #f5f5f5;
+  color: #36a3b2;
+  height: 56px;
+  width: 100%;
+  padding: 5px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+.top_menu h1 {
+  right: 15px;
+  top: 15px;
+  margin: 0px;
+  position: absolute;
+  display: inline-block;
+  font-size: 16pt;
+}
+
+.resultatliste,
+.input_imitator {
+  background: white;
+  max-width: 352px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.input_imitator {
+  max-height: 90%;
+  display: inline-block;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+.resultatliste {
+  top: -8px;
+  left: 5px;
+  margin-right: 60px;
+  background: white;
+  position: fixed;
+  z-index: 30;
+  height: auto;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+.top_menu_item {
+  display: inline-block;
+  padding: 10px;
+  font-size: 14pt;
+  vertical-align: top;
+}

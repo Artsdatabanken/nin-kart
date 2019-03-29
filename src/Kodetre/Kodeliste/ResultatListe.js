@@ -43,7 +43,10 @@ class ResultatListe extends Component {
     if (!searchResults) return null;
     if (searchResults.length <= 0) return null;
     return (
-      <List style={{ paddingTop: 0, paddingBottom: 0 }}>
+      <List
+        style={{ paddingTop: 0, paddingBottom: 0 }}
+        className="resultatliste"
+      >
         {searchResults.map(item => {
           const navn = item.title;
           return (

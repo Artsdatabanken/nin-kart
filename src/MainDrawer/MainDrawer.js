@@ -10,7 +10,13 @@ import {
   ListItemSecondaryAction
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
-import { CloudUpload, CloudDownload, Comment } from "@material-ui/icons";
+import {
+  CloudUpload,
+  CloudDownload,
+  Comment,
+  Waves,
+  Panorama
+} from "@material-ui/icons";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
@@ -60,6 +66,21 @@ class MainDrawer extends Component {
             onClick={toggleDrawer}
             onKeyDown={toggleDrawer}
           >
+            <Divider />
+            <ListSubheader>Hva vil du utforske?</ListSubheader>
+            <ListItem onClick={this.handleClickNatursystem} button>
+              <ListItemIcon>
+                <Panorama />
+              </ListItemIcon>
+              <ListItemText primary="Natursystem" />
+            </ListItem>
+            <ListItem onClick={this.handleClickLandskap} button>
+              <ListItemIcon>
+                <Waves />
+              </ListItemIcon>
+              <ListItemText primary="Landskap" />
+            </ListItem>
+            <Divider />
             <ListItem onClick={this.handleClickLastNed} button>
               <ListItemIcon>
                 <CloudDownload />
@@ -123,6 +144,11 @@ class MainDrawer extends Component {
     );
   handleClickLogo = () => window.open("https://artsdatabanken.no");
   handleClickMap = () => this.props.history.push("/");
+  handleClickNatursystem = () =>
+    this.props.history.push("/Natur_i_Norge/Natursystem/");
+  handleClickLandskap = () =>
+    this.props.history.push("/Natur_i_Norge/Landskap/");
+  handleClickStat = () => this.props.history.push("/Natur_i_Norge/Stats/");
 }
 
 MainDrawer.propTypes = {

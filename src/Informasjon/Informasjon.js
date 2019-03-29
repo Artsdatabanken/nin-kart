@@ -24,7 +24,7 @@ const Informasjon = props => {
               X
             </button>
             <div className="container_padding">
-              <h1>Velkommen til Naturtyper i Norge</h1>
+              <h1>Velkommen til Natur i Norge</h1>
               <h2>NiN - Kart Versjon 1.0</h2>
               <button
                 className="mobile_close_button"

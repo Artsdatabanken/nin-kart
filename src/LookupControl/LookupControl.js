@@ -32,23 +32,22 @@ class LookupControl extends React.Component {
     return (
       <SettingsContext.Consumer>
         {context => (
-          <AppBar position="sticky" className={classes.root} square={false}>
+          <div className="input_imitator">
             <Toolbar variant="dense" className={classes.toolbar}>
-              {this.props.isAtRoot ? (
-                <IconButton
-                  onClick={context.onToggleHovedmeny}
-                  className={classes.darkButton}
-                >
-                  <Hamburger />
-                </IconButton>
-              ) : (
-                <IconButton
+              <IconButton
+                onClick={context.onToggleHovedmeny}
+                className={classes.darkButton}
+              >
+                <Hamburger />
+              </IconButton>
+              {/*
+              <IconButton
                   onClick={this.props.onGoBack}
                   className={classes.darkButton}
                 >
                   <NavigationBack />
                 </IconButton>
-              )}
+              */}
               <SearchBox
                 query={query}
                 onFocus={() => {}}
@@ -58,19 +57,21 @@ class LookupControl extends React.Component {
                 onKeyEnter={() => {}}
                 isAtRoot={true}
               />
+
               <IconButton className={classes.lightButton}>
                 <Search />
               </IconButton>
+              {/*
               {!this.props.isAtRoot && (
                 <IconButton
                   onClick={this.props.onExitToRoot}
                   className={classes.lightButton}
                 >
                   <CloseIcon />
-                </IconButton>
-              )}
+                )}
+              </IconButton>*/}
             </Toolbar>
-          </AppBar>
+          </div>
         )}
       </SettingsContext.Consumer>
     );
