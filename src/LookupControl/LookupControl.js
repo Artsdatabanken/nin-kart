@@ -5,7 +5,7 @@ import NavigationBack from "@material-ui/icons/ArrowBack";
 import CloseIcon from "@material-ui/icons/Close";
 import Hamburger from "@material-ui/icons/Menu";
 import Search from "@material-ui/icons/Search";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import SearchBox from "./SearchField/SearchField";
 import { SettingsContext } from "../SettingsContext";
@@ -26,22 +26,21 @@ const styles = {
   }
 };
 
-class LookupControl extends React.Component {
-  render() {
-    const { query, classes } = this.props;
-    return (
-      <SettingsContext.Consumer>
-        {context => (
-          <div className="input_imitator">
-            <Toolbar variant="dense" className={classes.toolbar}>
-              <IconButton
-                onClick={context.onToggleHovedmeny}
-                className={classes.darkButton}
-              >
-                <Hamburger />
-              </IconButton>
+const LookupControl = ({ query, classes, onQueryChange }) => {
+  const [isSearching, setIsSearching] = useState(false);
+  return (
+    <SettingsContext.Consumer>
+      {context => (
+        <div className={isSearching ? "" : "input_imitator"}>
+          <Toolbar variant="dense" className={classes.toolbar}>
+            <IconButton
+              onClick={context.onToggleHovedmeny}
+              className={classes.darkButton}
+            >
+              <Hamburger />
+            </IconButton>
 
-              {/*
+            {/*
               <IconButton
                   onClick={this.props.onGoBack}
                   className={classes.darkButton}
@@ -49,20 +48,23 @@ class LookupControl extends React.Component {
                   <NavigationBack />
                 </IconButton>
               */}
-              <div class="mobile_version" />
-              <SearchBox
-                query={query}
-                onFocus={() => {}}
-                onBlur={() => {}}
-                onQueryChange={this.props.onQueryChange}
-                onExitToRoot={() => {}}
-                onKeyEnter={() => {}}
-                isAtRoot={true}
-              />
+            <div class="mobile_version" />
+            <SearchBox
+              isSearching={isSearching}
+              query={query}
+              onFocus={() => {}}
+              onBlur={() => setIsSearching(false)}
+              onQueryChange={onQueryChange}
+              onExitToRoot={() => {}}
+              onKeyEnter={() => {}}
+              isAtRoot={true}
+            />
+            <Search
+              className="search_icon"
+              onClick={() => setIsSearching(true)}
+            />
 
-              <Search className="search_icon" />
-
-              {/*
+            {/*
               {!this.props.isAtRoot && (
                 <IconButton
                   onClick={this.props.onExitToRoot}
@@ -71,12 +73,11 @@ class LookupControl extends React.Component {
                   <CloseIcon />
                 )}
               </IconButton>*/}
-            </Toolbar>
-          </div>
-        )}
-      </SettingsContext.Consumer>
-    );
-  }
-}
+          </Toolbar>
+        </div>
+      )}
+    </SettingsContext.Consumer>
+  );
+};
 
 export default withRouter(withStyles(styles)(LookupControl));
