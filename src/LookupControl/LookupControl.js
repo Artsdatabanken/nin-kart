@@ -40,6 +40,7 @@ class LookupControl extends React.Component {
               >
                 <Hamburger />
               </IconButton>
+
               {/*
               <IconButton
                   onClick={this.props.onGoBack}
@@ -48,6 +49,7 @@ class LookupControl extends React.Component {
                   <NavigationBack />
                 </IconButton>
               */}
+              <div class="mobile_version" />
               <SearchBox
                 query={query}
                 onFocus={() => {}}
@@ -58,9 +60,8 @@ class LookupControl extends React.Component {
                 isAtRoot={true}
               />
 
-              <IconButton className={classes.lightButton}>
-                <Search />
-              </IconButton>
+              <Search className="search_icon" />
+
               {/*
               {!this.props.isAtRoot && (
                 <IconButton
