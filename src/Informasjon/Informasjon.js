@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { withRouter } from "react-router";
 import "./Informasjon.css";
 
 const Informasjon = props => {
+  if (props.location.pathname !== "/") return null;
   const [turnOffInfo, setturnOffInfo] = useState("på");
   return (
     <React.Fragment>
@@ -150,4 +152,4 @@ const Informasjon = props => {
   );
 };
 
-export default Informasjon;
+export default withRouter(Informasjon);
