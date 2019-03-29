@@ -10,20 +10,7 @@ import { withStyles } from "@material-ui/core/styles";
 import React, { Component } from "react";
 import Bildeavatar from "./Bildeavatar";
 
-const styles = {
-  text: {
-    whiteSpace: "nowrap",
-    textOverflow: "ellipsis",
-    overflow: "hidden",
-    fontSize: 13,
-    width: 235
-  },
-  inset: { marginLeft: 48 },
-  listitem: { height: 38, cursor: "pointer" },
-  itemtext: { fontSize: 13, fontWeight: 100 },
-  textmatch: { color: "black", fontWeight: 500 },
-  textnomatch: { color: "#333", fontWeight: 400 }
-};
+const styles = {};
 
 class ResultatListe extends Component {
   filtrer(kode) {
@@ -91,9 +78,9 @@ class ResultatListe extends Component {
 
     const end = offset + q.length;
     return (
-      <span className={classes.textnomatch}>
+      <span>
         {text.substring(0, offset)}
-        <span className={classes.textmatch}>{text.substring(offset, end)}</span>
+        <span className="textmatch">{text.substring(offset, end)}</span>
         {text.substring(end, text.length)}
       </span>
     );

@@ -23,6 +23,11 @@
   font-size: 16pt;
 }
 
+.top_menu h1 img {
+  height: 30px;
+  vertical-align: bottom;
+}
+
 .resultatliste,
 .input_imitator {
   background: white;
@@ -53,4 +58,93 @@
   padding: 10px;
   font-size: 14pt;
   vertical-align: top;
+}
+
+.itemtext {
+  font-size: 13;
+  font-weight: 100;
+}
+
+.listitem {
+  height: 38px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  /* The mobile version! Yay */
+
+  .input_imitator {
+    background: transparent;
+    width: auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0);
+  }
+
+  .input_imitator input {
+    background: white;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    width: 0px;
+    border-radius: 4px;
+  }
+
+  .resultatliste {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* The mobile version! 
+    WHEN ACTIVATED THE ELEMENTS */
+
+  .mobile_version {
+    width: 100vw;
+    height: 56px;
+    top: 0px;
+    position: fixed;
+    z-index: 15;
+    margin-left: -5px;
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .input_imitator input {
+    width: 90%;
+    z-index: 20;
+    position: fixed;
+    left: 5%;
+    padding: 5px;
+    height: 30px;
+  }
+
+  .search_icon {
+    z-index: 20;
+    background: white;
+    border-radius: 4px;
+    position: fixed;
+    height: 90%;
+    right: 5%;
+    font-size: 36px !important;
+  }
+
+  .resultatliste {
+    display: block;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 5%;
+    top: 0px;
+    left: 0px;
+    margin-right: 0px;
+    background: white;
+    position: fixed;
+    z-index: 30;
+    height: 100vh;
+    border-radius: 0px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0);
+  }
+
+  .listitem {
+    padding: 5px;
+  }
+}
+
+.textmatch {
+  color: #36a3b2;
 }

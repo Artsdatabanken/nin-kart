@@ -26,7 +26,13 @@ const TopBar = () => {
         <div className="top_menu_item">Landskap</div>
         <div className="top_menu_item">Statistikk for Art</div>
   */}
-        <h1>Natur i Norge</h1>
+        <h1>
+          Natur i Norge{" "}
+          <img
+            src="https://data.artsdatabanken.no/Datakilde/Artsdatabanken/avatar_40.png"
+            alt="artsdatabanken liten logo"
+          />
+        </h1>
       </div>
       <ResultatListe query={query} searchResults={hits} />
     </div>
