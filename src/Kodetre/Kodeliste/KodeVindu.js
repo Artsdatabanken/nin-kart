@@ -19,10 +19,8 @@ import {
   ShowChart,
   Gradient
 } from "@material-ui/icons/";
-import { Slider } from "@material-ui/lab";
 import KurveContainer from "./KurveContainer";
 import Nedlasting from "./Nedlasting";
-import { ListSubheader } from "@material-ui/core";
 
 import { SettingsContext } from "../../SettingsContext";
 

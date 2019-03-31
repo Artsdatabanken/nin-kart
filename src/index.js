@@ -3,13 +3,12 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import * as Sentry from "@sentry/browser";
 
-/*
 Sentry.init({
   dsn: "https://c493d02267634ba4bc387feaddbeb083@sentry.io/1302262",
   maxBreadcrumbs: 50,
   debug: true
 });
-*/
+
 class RootBoundary extends React.Component {
   constructor(props) {
     super(props);
@@ -44,7 +43,7 @@ var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 if (isIE11) {
   document.open();
   document.write(
-    '<h1>Internet explorer 11 is sadly not supported.</h1>Report issues on <a href="https://github.com/Artsdatabanken/nin-innsyn/issues">Github</a></a>'
+    '<h1>Internet explorer 11 is sadly not supported.</h1><p>Please upgrade to a modern web browser.</p></p>Report issues on <a href="https://github.com/Artsdatabanken/nin-innsyn/issues">Github</a></a>'
   );
   document.close();
 } else
