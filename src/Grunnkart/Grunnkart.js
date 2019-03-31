@@ -115,7 +115,7 @@ class Grunnkart extends React.Component {
     let url = location.match(/\/(.*)/);
     this.setState({ meta: null });
     if (!url || url.length !== 2 || !url[1]) return;
-    const path = url[1].replace(/åpne_data/i, "");
+    const path = url[1].replace(/katalog/i, "");
     this.downloadMeta(path).then(data => {
       if (!data) {
         this.setState({ searchFor: path });
@@ -152,6 +152,7 @@ class Grunnkart extends React.Component {
       gradient.filterMax = intervall[1];
     }
     meta.erSynlig = true;
+    meta.depth = 3;
     if (meta.kode.substring(0, 2) === "LA") {
       if (!this.state.aktiveLag.bakgrunnskart.terreng.wasAutoEnabled) {
         this.handleUpdateLayerProp("bakgrunnskart.terreng", "erSynlig", true);
@@ -174,7 +175,6 @@ class Grunnkart extends React.Component {
 
   // Supports composite keys i.e. gradient.filterMin
   handleUpdateLayerProp = (layer, key, value) => {
-    console.log(layer, key, value);
     const aktive = this.state.aktiveLag;
     let node = aktive[layer];
     if (!node) node = this.state.meta;
