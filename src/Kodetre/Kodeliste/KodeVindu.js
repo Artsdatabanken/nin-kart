@@ -1,3 +1,4 @@
+import Detaljeringsgrad from "./Detaljeringsgrad";
 import Overordnet from "./Overordnet";
 import React, { useState, useEffect } from "react";
 import språk from "../../språk";
@@ -18,8 +19,10 @@ import {
   ShowChart,
   Gradient
 } from "@material-ui/icons/";
+import { Slider } from "@material-ui/lab";
 import KurveContainer from "./KurveContainer";
 import Nedlasting from "./Nedlasting";
+import { ListSubheader } from "@material-ui/core";
 
 import { SettingsContext } from "../../SettingsContext";
 
@@ -34,6 +37,7 @@ const KodeVindu = ({
   onMouseLeave,
   onToggleLayer,
   opplystKode,
+  onUpdateLayerProp,
   onUpdateMetaProp
 }) => {
   const initialExpand = () =>
@@ -89,6 +93,12 @@ const KodeVindu = ({
               onFitBounds={onFitBounds}
               onToggleLayer={onToggleLayer}
             />
+            {false && (
+              <Detaljeringsgrad
+                onUpdateLayerProp={onUpdateLayerProp}
+                value={meta.depth}
+              />
+            )}
             <Ekspander
               visible={!!ingress}
               expanded={expand.ingress}
