@@ -31,7 +31,9 @@ class ResultatListe extends Component {
     return (
       <List
         style={{ paddingTop: 0, paddingBottom: 0 }}
-        className="resultatliste"
+        //className="resultatliste" className={abc("resultatliste", isSearching)}
+        //className="resultatliste"
+        className="resultatliste mobile_active"
       >
         {searchResults.map(item => {
           const navn = item.title;

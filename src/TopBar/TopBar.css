@@ -96,10 +96,9 @@
 }
 
 @media only screen and (max-width: 768px) {
-  /* The mobile version! 
+  /* The mobile version!
     WHEN ACTIVATED THE ELEMENTS   */
-
-  .mobile_version .mobile_active {
+  .mobile_version.mobile_active {
     width: 100vw;
     height: 56px;
     top: 0px;
@@ -109,7 +108,7 @@
     background: rgba(255, 255, 255, 0.9);
   }
 
-  .input_imitator input .mobile_active {
+  .input_imitator.mobile_active input {
     width: 90%;
     z-index: 20;
     position: fixed;
@@ -118,22 +117,21 @@
     height: 30px;
   }
 
-  .search_icon .mobile_active {
+  .search_icon.mobile_active {
     z-index: 20;
     background: white;
     border-radius: 4px;
     position: fixed;
-    height: 90%;
     right: 5%;
     font-size: 36px !important;
   }
 
-  .resultatliste .mobile_active {
+  .resultatliste.mobile_active {
     display: block;
     max-width: 100%;
     box-sizing: border-box;
     padding: 5%;
-    top: 0px;
+    top: 56px;
     left: 0px;
     margin-right: 0px;
     background: white;

@@ -52,9 +52,8 @@ const LookupControl = ({ query, classes, onQueryChange }) => {
                   <NavigationBack />
                 </IconButton>
               */}
-            <div class="mobile_version" />
+            <div className={abc("mobile_version", isSearching)} />
             <SearchBox
-              className={abc("mobile_version", isSearching)}
               isSearching={isSearching}
               query={query}
               onFocus={() => {}}
