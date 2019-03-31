@@ -59,7 +59,6 @@ const LookupControl = ({ query, classes, onQueryChange }) => {
               query={query}
               onFocus={() => {}}
               onBlur={() => {
-                return;
                 return setIsSearching(false);
               }}
               onQueryChange={onQueryChange}
