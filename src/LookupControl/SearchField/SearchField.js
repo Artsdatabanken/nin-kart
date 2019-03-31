@@ -1,8 +1,16 @@
+import classNames from "classnames";
 import { Input } from "@material-ui/core";
 import React, { useEffect, useRef } from "react";
 
-const SearchBox = ({ isSearching, onBlur, onQueryChange, query, classes }) => {
+const SearchBox = ({
+  isSearching,
+  onBlur,
+  onQueryChange,
+  query,
+  className
+}) => {
   const inputEl = useRef(null);
+  console.log("csss", className);
   useEffect(() => {
     if (isSearching) inputEl.current.focus();
   }, [isSearching]);
@@ -15,7 +23,8 @@ const SearchBox = ({ isSearching, onBlur, onQueryChange, query, classes }) => {
       onChange={onQueryChange}
       fullWidth={true}
       disableUnderline={true}
-      classes={classes}
+      classes={{ input: className }}
+      className={className}
     />
   );
 };

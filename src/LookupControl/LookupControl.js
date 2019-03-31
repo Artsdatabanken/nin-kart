@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { AppBar, Toolbar } from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
 import { withStyles } from "@material-ui/core/styles";
@@ -26,12 +27,15 @@ const styles = {
   }
 };
 
+const abc = (cl, isSearching) => classNames(cl, isSearching && "mobile_active");
+
 const LookupControl = ({ query, classes, onQueryChange }) => {
   const [isSearching, setIsSearching] = useState(false);
+  console.log(abc("input_imitator", isSearching));
   return (
     <SettingsContext.Consumer>
       {context => (
-        <div className={isSearching ? "" : "input_imitator"}>
+        <div className={abc("input_imitator", isSearching)}>
           <Toolbar variant="dense" className={classes.toolbar}>
             <IconButton
               onClick={context.onToggleHovedmeny}
@@ -50,17 +54,21 @@ const LookupControl = ({ query, classes, onQueryChange }) => {
               */}
             <div class="mobile_version" />
             <SearchBox
+              className={abc("mobile_version", isSearching)}
               isSearching={isSearching}
               query={query}
               onFocus={() => {}}
-              onBlur={() => setIsSearching(false)}
+              onBlur={() => {
+                return;
+                return setIsSearching(false);
+              }}
               onQueryChange={onQueryChange}
               onExitToRoot={() => {}}
               onKeyEnter={() => {}}
               isAtRoot={true}
             />
             <Search
-              className="search_icon"
+              className={abc("search_icon", isSearching)}
               onClick={() => setIsSearching(true)}
             />
 
