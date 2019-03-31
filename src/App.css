@@ -37,3 +37,7 @@ h6 {
     opacity: 1;
   }
 }
+
+.leaflet-top {
+  top: 56px !important;
+}
