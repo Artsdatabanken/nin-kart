@@ -41,3 +41,62 @@ h6 {
 .leaflet-top {
   top: 56px !important;
 }
+
+div {
+  max-width: 100%;
+}
+
+.sidebar {
+  position: fixed;
+  height: 100vh;
+  overflow-x: hidden;
+  max-width: 408px;
+  background: #ededed;
+}
+
+.mobile_navigation {
+  display: none;
+}
+
+@media only screen and (max-width: 678px) {
+  .sidebar {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .mobile_navigation {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 0px;
+    box-sizing: border-box;
+    margin: 0px;
+  }
+
+  .mobile_navigation button {
+    display: inline-block;
+    text-align: center;
+    padding: auto;
+    background: #f5f5f5;
+    width: 50%;
+    height: 50px;
+    padding: 15px;
+    position: relative;
+    bottom: 0px;
+    box-sizing: border-box;
+    margin: 0px;
+    color: #36a3b2;
+    font-family: "Roboto condensed", "sans-serif";
+    border: none;
+  }
+
+  .mobile_navigation button:hover,
+  .mobile_navigation button.active:hover,
+  .mobile_navigation button.active:focus,
+  .mobile_navigation button.active {
+    background: #ededed;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

@@ -146,3 +146,11 @@
 .textmatch {
   color: #36a3b2;
 }
+
+.search_icon:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  margin-left: -10px;
+  padding: 10px;
+}
