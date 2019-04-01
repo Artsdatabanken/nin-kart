@@ -1,12 +1,10 @@
 import classNames from "classnames";
-import { AppBar, Toolbar } from "@material-ui/core";
+import { Toolbar } from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
 import { withStyles } from "@material-ui/core/styles";
-import NavigationBack from "@material-ui/icons/ArrowBack";
-import CloseIcon from "@material-ui/icons/Close";
 import Hamburger from "@material-ui/icons/Menu";
 import Search from "@material-ui/icons/Search";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import SearchBox from "./SearchField/SearchField";
 import { SettingsContext } from "../SettingsContext";

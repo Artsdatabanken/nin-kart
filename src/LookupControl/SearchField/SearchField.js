@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import { Input } from "@material-ui/core";
 import React, { useEffect, useRef } from "react";
 
@@ -10,7 +9,6 @@ const SearchBox = ({
   className
 }) => {
   const inputEl = useRef(null);
-  console.log("csss", className);
   useEffect(() => {
     if (isSearching) inputEl.current.focus();
   }, [isSearching]);

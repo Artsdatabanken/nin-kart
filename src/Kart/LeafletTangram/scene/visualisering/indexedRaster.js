@@ -34,6 +34,7 @@ function lagStyle(format, drawArgs) {
     }
 */
   }
+  console.log(drawArgs.depth);
   const newPalette = `${sysconfig.storageUrl}${
     drawArgs.url
   }/${palettKode}.palette.png`;
@@ -48,16 +49,30 @@ function lagStyle(format, drawArgs) {
     shaders: {
       uniforms: {
         palette1: this.palette1,
-        palette2: this.palette2
+        palette2: this.palette2,
+        depth: 1 - (drawArgs.depth || 1) / 8 - 0.5 / 8
       },
       blocks: {
         global: `
-          float unpack(vec4 h) {
-            return (65535. * h.g + 255. * h.b + 0.5) / 512.;
-          }
-          float rgbaToIndex(vec4 rgba) {
-            return rgba.g * 65535. + rgba.b * 255.;
+        precision highp float;
+        highp float scaler = 1./512.;
+        highp float rgbaToIndex(vec4 rgba) {
+            return (rgba.g*128. + rgba.b/2.) - 0.5*scaler;
           }`,
+        color: `
+        float v = rgbaToIndex(sampleRaster(0));
+//        v=rgbaToIndex(vec4(0.,1./256.,(292.-256.)/256.,0.));
+        vec4 fill1 = texture2D(palette1, vec2(v, depth));
+        vec4 fill2 = texture2D(palette2, vec2(v, depth));
+        vec4 fill = mix(fill1, fill2, clamp(u_time*2.5,0.,1.));
+        color = fill2;
+      `
+      }
+    }
+  };
+  return { name: "raster", value: gradient };
+}
+/*
         color: `
         float px = 1.;
         vec3 off = vec3(-px, 0, px);
@@ -68,18 +83,15 @@ function lagStyle(format, drawArgs) {
         diff += abs(v-rgbaToIndex(sampleRasterAtPixel(0, vec2(currentRasterPixel(0) + off.yz))));
         diff = clamp(diff,0.,1.);
         vec4 border = vec4(0.,0.,0.,0.8);
-        vec4 fill1 = texture2D(palette1, vec2(v/512., 0.5));
-        vec4 fill2 = texture2D(palette2, vec2(v/512., 0.5));
+        vec4 fill1 = texture2D(palette1, vec2(v/512., depth));
+        vec4 fill2 = texture2D(palette2, vec2(v/512., depth));
         vec4 fill = mix(fill1, fill2, clamp(u_time*2.5,0.,1.));
         float step = clamp((u_map_position.z-8.)*0.08,0.,1.);
         color = mix(fill, border,diff*step);
-          `
-      }
-    }
-  };
-  return { name: "raster", value: gradient };
-}
-
+        //color = sampleRaster(0);
+      //  color= vec4(1.,1.,0.,1.);
+      `
+*/
 function lagSource({ url, zoom }, { bbox }) {
   const source = sysconfig.createTileSource(url, "Raster", zoom, bbox);
   //  source.tile_size = 256;

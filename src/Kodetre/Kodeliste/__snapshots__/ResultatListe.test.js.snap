@@ -3,7 +3,9 @@
 exports[`Highlight 1`] = `
 <span>
   
-  <span>
+  <span
+    className="textmatch"
+  >
     Ka
   </span>
   rmøy

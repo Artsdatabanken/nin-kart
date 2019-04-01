@@ -39,6 +39,7 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
     aktivtFormat: lag.kart.aktivtFormat,
     format: lag.kart.format,
     viz: viz,
+    depth: lag.depth, // TODO: flytt
     visBarn: lag.visBarn || !!lag.barn
   };
   if (drawArgs.visBarn) {
