@@ -1,10 +1,4 @@
-import {
-  Divider,
-  List,
-  ListItem,
-  ListItemSecondaryAction,
-  ListItemText
-} from "@material-ui/core";
+import { Divider, List, ListItem, ListItemText } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import React, { Component } from "react";
 import Bildeavatar from "./Bildeavatar";
