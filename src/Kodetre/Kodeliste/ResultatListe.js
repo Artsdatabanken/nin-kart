@@ -49,19 +49,16 @@ class ResultatListe extends Component {
                 <ListItemText classes={{ primary: classes.text }}>
                   {ResultatListe.highlightMatch(navn, query, classes)}
                 </ListItemText>
-                <ListItemSecondaryAction>
-                  <ListItemText>
-                    <div className={classes.itemtext}>
-                      {ResultatListe.highlightMatch(
-                        this.filtrer(item.kode),
-                        query,
-                        classes
-                      )}
-                    </div>
-                  </ListItemText>
-                </ListItemSecondaryAction>
+
+                <div className="itemtext">
+                  {ResultatListe.highlightMatch(
+                    this.filtrer(item.kode),
+                    query,
+                    classes
+                  )}
+                </div>
               </ListItem>
-              <Divider className={classes.inset} />
+              <Divider className="inset" />
             </React.Fragment>
           );
         })}

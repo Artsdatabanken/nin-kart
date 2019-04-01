@@ -36,7 +36,7 @@
 .resultatliste,
 .input_imitator {
   background: white;
-  max-width: 352px;
+  max-width: 400px;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -139,6 +139,7 @@
   .resultatliste.mobile_active {
     display: block;
     max-width: 100%;
+    width: 100%;
     box-sizing: border-box;
     padding: 5%;
     top: 56px;
@@ -166,4 +167,9 @@
 
 .search_icon {
   margin-right: 10px;
+}
+
+.itemtext {
+  text-align: right;
+  font-size: 10pt;
 }
