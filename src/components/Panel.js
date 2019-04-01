@@ -4,6 +4,8 @@ import classNames from "classnames";
 
 const styles = {
   rot: {
+    position: "fixed",
+    width: 408,
     height: "100vh",
     overflowX: "hidden",
     overflowY: "overlay"

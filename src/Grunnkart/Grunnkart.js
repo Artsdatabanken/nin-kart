@@ -1,13 +1,13 @@
 import React from "react";
 import { withRouter } from "react-router";
 import { withStyles } from "@material-ui/core";
-import classNames from "classnames";
 import backend from "../backend";
 import Kart from "../Kart";
 import { SettingsContext } from "../SettingsContext";
 import språk from "../språk";
 import VenstreVinduContainer from "../VenstreVinduContainer";
 import bakgrunnskarttema from "./bakgrunnskarttema";
+import TopBar from "../TopBar/TopBar";
 
 const styles = {
   rot: {
@@ -30,11 +30,6 @@ const styles = {
     pointerEvents: "none"
   }
 };
-
-function isAtRoot(location) {
-  if (location.pathname !== "/") return false;
-  return location.search === "";
-}
 
 class Grunnkart extends React.Component {
   constructor(props) {
@@ -201,19 +196,17 @@ class Grunnkart extends React.Component {
     let erAktivert = false;
     if (this.state.meta)
       erAktivert = !!this.state.aktiveLag[this.state.meta.kode];
-    const { classes, history } = this.props;
 
     return (
       <SettingsContext.Consumer>
         {context => {
-          const transparent = isAtRoot(history.location);
           return (
             <>
+              <TopBar />
               <div
-                className={classNames(
-                  classes.rot,
-                  transparent && classes.transparent
-                )}
+                style={{
+                  paddingTop: "56px"
+                }}
               >
                 <VenstreVinduContainer
                   aktiveLag={this.state.aktiveLag}
@@ -236,18 +229,18 @@ class Grunnkart extends React.Component {
                   visAktiveLag={context.visAktiveLag}
                   onToggleAktiveLag={context.onToggleAktiveLag}
                 />
+                <Kart
+                  bounds={this.state.fitBounds}
+                  latitude={65.4}
+                  longitude={10.8}
+                  zoom={3}
+                  aktiveLag={this.state.aktiveLag}
+                  opplystKode={this.state.opplystKode}
+                  meta={this.state.meta}
+                  onMapBoundsChange={this.handleActualBoundsChange}
+                  onMapMove={context.onMapMove}
+                />
               </div>
-              <Kart
-                bounds={this.state.fitBounds}
-                latitude={65.4}
-                longitude={10.8}
-                zoom={3}
-                aktiveLag={this.state.aktiveLag}
-                opplystKode={this.state.opplystKode}
-                meta={this.state.meta}
-                onMapBoundsChange={this.handleActualBoundsChange}
-                onMapMove={context.onMapMove}
-              />
             </>
           );
         }}

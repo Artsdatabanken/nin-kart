@@ -9,20 +9,7 @@ import { withStyles } from "@material-ui/core/styles";
 import React, { Component } from "react";
 import Bildeavatar from "./Bildeavatar";
 
-const styles = {
-  text: {
-    whiteSpace: "nowrap",
-    textOverflow: "ellipsis",
-    overflow: "hidden",
-    fontSize: 13,
-    width: 235
-  },
-  inset: { marginLeft: 48 },
-  listitem: { height: 38, cursor: "pointer" },
-  itemtext: { fontSize: 13, fontWeight: 100 },
-  textmatch: { color: "black", fontWeight: 500 },
-  textnomatch: { color: "#333", fontWeight: 400 }
-};
+const styles = {};
 
 class ResultatListe extends Component {
   filtrer(kode) {
@@ -38,11 +25,16 @@ class ResultatListe extends Component {
   }
 
   render() {
-    const { onClick, query, searchResults, classes } = this.props;
+    const { onSelect, query, searchResults, classes } = this.props;
     if (!searchResults) return null;
-    if (!searchResults.length > 0) return null;
+    if (searchResults.length <= 0) return null;
     return (
-      <List style={{ paddingTop: 0, paddingBottom: 0 }}>
+      <List
+        style={{ paddingTop: 0, paddingBottom: 0 }}
+        //className="resultatliste" className={abc("resultatliste", isSearching)}
+        //className="resultatliste"
+        className="resultatliste mobile_active"
+      >
         {searchResults.map(item => {
           const navn = item.title;
           return (
@@ -50,9 +42,7 @@ class ResultatListe extends Component {
               <ListItem
                 button={true}
                 className={classes.listitem}
-                onMouseDown={() => {
-                  onClick(item.url);
-                }}
+                onMouseDown={() => onSelect(item)}
                 key={item.url}
               >
                 <Bildeavatar size="small" kode={item.kode} url={item.url} />
@@ -87,9 +77,9 @@ class ResultatListe extends Component {
 
     const end = offset + q.length;
     return (
-      <span className={classes.textnomatch}>
+      <span>
         {text.substring(0, offset)}
-        <span className={classes.textmatch}>{text.substring(offset, end)}</span>
+        <span className="textmatch">{text.substring(offset, end)}</span>
         {text.substring(end, text.length)}
       </span>
     );

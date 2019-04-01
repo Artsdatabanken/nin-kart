@@ -6,8 +6,6 @@ import KodeContainer from "./Kodetre/Kodeliste/KodeContainer";
 import språk from "./språk";
 import Tweaks from "./Tweaks/";
 import Panel from "./components/Panel";
-import TopBarContainer from "./TopBar/TopBarContainer";
-import AktiveKartlag from "./AktiveKartlag/";
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
@@ -48,8 +46,6 @@ class VenstreVinduContainer extends React.Component {
   render() {
     const {
       meta,
-      visAktiveLag,
-      searchFor,
       onMouseEnter,
       onMouseLeave,
       onUpdateLayerProp,
@@ -61,10 +57,6 @@ class VenstreVinduContainer extends React.Component {
       const node = this.props.aktiveLag[location.pathname.substring(1)] || meta;
       return (
         <Panel>
-          <TopBarContainer
-            tittel={node ? språk(node.tittel) + ": Visning" : ""}
-            onClearSearchFor={this.props.onClearSearchFor}
-          />
           <Tweaks
             {...node}
             onFitBounds={this.props.onFitBounds}
@@ -80,12 +72,6 @@ class VenstreVinduContainer extends React.Component {
       const { lng, lat, vis } = this.parseQueryString(location.search);
       return (
         <Panel>
-          <TopBarContainer
-            tittel={`${parseFloat(lat).toFixed(5)}° N ${parseFloat(lng).toFixed(
-              5
-            )}° Ø`}
-            onClearSearchFor={this.props.onClearSearchFor}
-          />
           <BorreContainer lng={lng} lat={lat} vis={vis} />
         </Panel>
       );
@@ -94,11 +80,6 @@ class VenstreVinduContainer extends React.Component {
     return (
       <>
         <Panel>
-          <TopBarContainer
-            tittel={this.tittel(meta)}
-            searchFor={searchFor}
-            onClearSearchFor={this.props.onClearSearchFor}
-          />
           <KodeContainer
             kode={meta && meta.kode}
             onNavigate={this.handleNavigate}
@@ -133,14 +114,14 @@ class VenstreVinduContainer extends React.Component {
             boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.3)"
           }}
         >
-          <AktiveKartlag
+          {/*<AktiveKartlag
             erÅpen={visAktiveLag}
             koder={this.props.aktiveLag}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             onUpdateLayerProp={onUpdateLayerProp}
             onRemoveSelectedLayer={onRemoveSelectedLayer}
-          />
+          />*/}
         </div>
       </>
     );
