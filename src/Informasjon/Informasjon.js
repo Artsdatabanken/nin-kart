@@ -10,7 +10,7 @@ const Informasjon = props => {
       {turnOffInfo !== "turn off" && (
         <div
           className="info_component"
-          onClick={() => setturnOffInfo("turn off")}
+          onClick={() => props.history.push("/Natur_i_Norge/Landskap/")}
         >
           <div className="infoBox">
             <div className="top_image">
@@ -19,21 +19,11 @@ const Informasjon = props => {
                 alt="Artsdatabanken logo"
               />
             </div>
-            <button
-              className="close_button"
-              onClick={() => setturnOffInfo("turn off")}
-            >
-              X
-            </button>
+            <button className="close_button">X</button>
             <div className="container_padding">
               <h1>Velkommen til Natur i Norge</h1>
               <h2>NiN - Kart Versjon 1.0</h2>
-              <button
-                className="mobile_close_button"
-                onClick={() => setturnOffInfo("turn off")}
-              >
-                Gå til kart
-              </button>
+              <button className="mobile_close_button">Gå til kart</button>
               <div className="ingress">
                 Natur i Norge (NiN) er et type- og beskrivelsessystem for all
                 variasjon i naturen. NiN håndterer variasjonen i alle naturmiljø
