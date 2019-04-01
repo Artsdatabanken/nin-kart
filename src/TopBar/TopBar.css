@@ -6,12 +6,17 @@
 }
 
 .top_menu {
-  background: #f5f5f5;
   color: #36a3b2;
   height: 56px;
   width: 100%;
   padding: 5px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (max-width: 768px) {
+  .top_menu {
+    background: #f5f5f5;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  }
 }
 
 .top_menu h1 {
@@ -39,7 +44,12 @@
 .input_imitator {
   max-height: 90%;
   display: inline-block;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+.input_imitator input {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+  max-width: 90%;
 }
 
 .resultatliste {
@@ -50,7 +60,7 @@
   position: fixed;
   z-index: 30;
   height: auto;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
 .top_menu_item {
@@ -76,12 +86,12 @@
   .input_imitator {
     background: transparent;
     width: auto;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0);
   }
 
   .input_imitator input {
     background: white;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
     width: 0px;
     border-radius: 4px;
   }
@@ -145,4 +155,15 @@
 
 .textmatch {
   color: #36a3b2;
+}
+
+@media only screen and (min-width: 768px) {
+  .input_imitator {
+    max-width: 400px;
+    width: 400px;
+  }
+}
+
+.search_icon {
+  margin-right: 10px;
 }
