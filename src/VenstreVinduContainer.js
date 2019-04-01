@@ -6,7 +6,6 @@ import KodeContainer from "./Kodetre/Kodeliste/KodeContainer";
 import språk from "./språk";
 import Tweaks from "./Tweaks/";
 import Panel from "./components/Panel";
-import AktiveKartlag from "./AktiveKartlag/";
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
@@ -47,7 +46,6 @@ class VenstreVinduContainer extends React.Component {
   render() {
     const {
       meta,
-      visAktiveLag,
       onMouseEnter,
       onMouseLeave,
       onUpdateLayerProp,

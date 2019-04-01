@@ -1,7 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
 import { withStyles } from "@material-ui/core";
-import classNames from "classnames";
 import backend from "../backend";
 import Kart from "../Kart";
 import { SettingsContext } from "../SettingsContext";
@@ -31,11 +30,6 @@ const styles = {
     pointerEvents: "none"
   }
 };
-
-function isAtRoot(location) {
-  if (location.pathname !== "/") return false;
-  return location.search === "";
-}
 
 class Grunnkart extends React.Component {
   constructor(props) {
