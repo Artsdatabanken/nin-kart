@@ -5,7 +5,8 @@ class SettingsContainer extends Component {
   state = {
     visKoder: false,
     visAktiveLag: false,
-    visHovedmeny: false
+    visHovedmeny: false,
+    aktivTab: "meny"
   };
 
   componentDidMount() {
@@ -21,9 +22,11 @@ class SettingsContainer extends Component {
         value={{
           visHovedmeny: this.state.visHovedmeny,
           visKoder: this.state.visKoder,
+          aktivTab: this.state.aktivTab,
           sorterPåKode: this.state.sorterPåKode,
           visAktiveLag: this.state.visAktiveLag,
           onUpdateValue: this.handleUpdateValue,
+          onClickTab: this.handleClickTab,
           onToggleAktiveLag: this.handleToggleAktivelag,
           onToggleHovedmeny: this.handleToggleHovedmeny,
           onToggleForside: this.handleToggleForside,
@@ -35,6 +38,9 @@ class SettingsContainer extends Component {
     );
   }
 
+  handleClickTab = tab => {
+    this.setState({ aktivTab: tab });
+  };
   handleMapMove = () => {};
   handleUpdateValue = (key, value) => {
     this.setState({ [key]: value });
