@@ -91,7 +91,7 @@ const KodeVindu = ({
               onFitBounds={onFitBounds}
               onToggleLayer={onToggleLayer}
             />
-            {false && (
+            {kode === "NN-LA-TI" && (
               <Detaljeringsgrad
                 onUpdateLayerProp={onUpdateLayerProp}
                 value={meta.depth}
