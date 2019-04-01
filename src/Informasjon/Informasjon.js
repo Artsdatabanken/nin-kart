@@ -50,7 +50,7 @@ const Informasjon = props => {
                 <div className="infoItem">
                   <h3>Slå opp landskap og natursystem</h3>
                   <img
-                    src="https://www.artsdatabanken.no/Media/F16592?mode=480x480"
+                    src="https://data.artsdatabanken.no/Natur_i_Norge/Landskap/forside_408.jpg"
                     alt="Landskap og natursystem"
                   />
                   <p>
@@ -64,7 +64,7 @@ const Informasjon = props => {
                 <div className="infoItem">
                   <h3>Finn informasjon om et område</h3>
                   <img
-                    src="https://www.artsdatabanken.no/Media/F21300?mode=320x320"
+                    src="https://data.artsdatabanken.no/Natur_i_Norge/Landskap/Landskapsgradient/V%C3%A5tmarkspreg/forside_950.jpg"
                     alt="Finn info"
                   />
                   <p>
@@ -72,6 +72,7 @@ const Informasjon = props => {
                     informasjon om det valgte området.
                   </p>
                 </div>
+                {/*}
                 <div className="infoItem">
                   <h3>Statistikk over landskapsgradient</h3>
                   <img
@@ -84,7 +85,9 @@ const Informasjon = props => {
                     på de forskjellige landskapsgradientene.
                   </p>
                 </div>
+                */}
               </div>
+
               <div className="infoItemContainer sourceContainer">
                 <h2>Dataleverandører</h2>
                 <div>

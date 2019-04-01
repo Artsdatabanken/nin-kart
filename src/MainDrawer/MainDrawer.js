@@ -134,10 +134,7 @@ class MainDrawer extends Component {
     window.open("https://github.com/Artsdatabanken/nin-innsyn/issues");
   handleClickSource = () =>
     window.open("https://github.com/Artsdatabanken/nin-innsyn/");
-  handleClickLastNed = () =>
-    window.open(
-      "https://github.com/Artsdatabanken/nin-innsyn/blob/master/docs/LastNed.md"
-    );
+  handleClickLastNed = () => window.open("https://data.artsdatabanken.no/");
   handleClickLastOpp = () =>
     window.open(
       "https://github.com/Artsdatabanken/nin-innsyn/blob/master/docs/BidraMedData.md"
