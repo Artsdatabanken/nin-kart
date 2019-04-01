@@ -4,13 +4,16 @@ import "./Informasjon.css";
 
 const Informasjon = props => {
   if (props.location.pathname !== "/") return null;
-  const [turnOffInfo, setturnOffInfo] = useState("på");
+  const [showInfo, setShowInfo] = useState(true);
   return (
     <React.Fragment>
-      {turnOffInfo !== "turn off" && (
+      {showInfo !== "turn off" && (
         <div
           className="info_component"
-          onClick={() => props.history.push("/Natur_i_Norge/Landskap/")}
+          onClick={() => {
+            props.history.push("/Natur_i_Norge/Landskap/");
+            setShowInfo(false);
+          }}
         >
           <div className="infoBox">
             <div className="top_image">
