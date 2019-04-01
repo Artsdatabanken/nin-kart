@@ -8,6 +8,7 @@ import språk from "../språk";
 import VenstreVinduContainer from "../VenstreVinduContainer";
 import bakgrunnskarttema from "./bakgrunnskarttema";
 import TopBar from "../TopBar/TopBar";
+import MobileNavigation from "../components/MobileNavigation";
 
 const styles = {
   rot: {
@@ -208,27 +209,29 @@ class Grunnkart extends React.Component {
                   paddingTop: "56px"
                 }}
               >
-                <VenstreVinduContainer
-                  aktiveLag={this.state.aktiveLag}
-                  mapBounds={this.state.actualBounds}
-                  onMouseEnter={this.handleMouseEnter}
-                  onMouseLeave={this.handleMouseLeave}
-                  onFitBounds={this.handleFitBounds}
-                  erAktivert={erAktivert}
-                  opplystKode={this.state.opplystKode}
-                  onToggleLayer={() => {
-                    this.handleToggleLayer();
-                    if (!context.visAktiveLag) context.onToggleAktiveLag();
-                  }}
-                  onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                  meta={this.state.meta}
-                  searchFor={this.state.searchFor}
-                  onClearSearchFor={this.handleClearSearchFor}
-                  onUpdateLayerProp={this.handleUpdateLayerProp}
-                  onUpdateMetaProp={this.handleUpdateMetaProp}
-                  visAktiveLag={context.visAktiveLag}
-                  onToggleAktiveLag={context.onToggleAktiveLag}
-                />
+                {context.aktivTab === "meny" && (
+                  <VenstreVinduContainer
+                    aktiveLag={this.state.aktiveLag}
+                    mapBounds={this.state.actualBounds}
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    onFitBounds={this.handleFitBounds}
+                    erAktivert={erAktivert}
+                    opplystKode={this.state.opplystKode}
+                    onToggleLayer={() => {
+                      this.handleToggleLayer();
+                      if (!context.visAktiveLag) context.onToggleAktiveLag();
+                    }}
+                    onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                    meta={this.state.meta}
+                    searchFor={this.state.searchFor}
+                    onClearSearchFor={this.handleClearSearchFor}
+                    onUpdateLayerProp={this.handleUpdateLayerProp}
+                    onUpdateMetaProp={this.handleUpdateMetaProp}
+                    visAktiveLag={context.visAktiveLag}
+                    onToggleAktiveLag={context.onToggleAktiveLag}
+                  />
+                )}
                 <Kart
                   bounds={this.state.fitBounds}
                   latitude={65.4}
@@ -241,6 +244,7 @@ class Grunnkart extends React.Component {
                   onMapMove={context.onMapMove}
                 />
               </div>
+              <MobileNavigation />
             </>
           );
         }}
