@@ -16,20 +16,9 @@ import Borring from "./Borring";
 import Sted from "./Sted";
 import Kilde from "../Kilde";
 import config from "../config";
+import "./borre.css";
 
-const styles = {
-  card: {
-    maxWidth: 408,
-    minHeight: "100%",
-    backgroundColor: "#eee"
-  },
-  media: {
-    width: 408,
-    height: 280,
-    objectFit: "cover"
-  },
-  bareAktive: { float: "right" }
-};
+const styles = {};
 
 class BorreVindu extends Component {
   state = { bareAktive: false };
@@ -40,9 +29,9 @@ class BorreVindu extends Component {
     const bgColor = "hsla(0, 0%, 30%, 0.65)";
     const dominant = this.finnButikkKode();
     return (
-      <Card square={true} className={classes.card}>
+      <Card square={true} className="card">
         <CardMedia
-          className={classes.media}
+          className="media"
           image={config.getFotoOmslag(dominant.url)}
           title={dominant.tittel}
         >
