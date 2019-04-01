@@ -63,6 +63,7 @@ class KodeContainer extends React.Component<Props, State> {
       erAktivert,
       opplystKode,
       onToggleLayer,
+      onUpdateLayerProp,
       onUpdateMetaProp,
       kurve
     } = this.props;
@@ -77,6 +78,7 @@ class KodeContainer extends React.Component<Props, State> {
         erAktivert={erAktivert}
         opplystKode={opplystKode}
         onToggleLayer={onToggleLayer}
+        onUpdateLayerProp={onUpdateLayerProp}
         onUpdateMetaProp={onUpdateMetaProp}
         kurve={kurve}
       />

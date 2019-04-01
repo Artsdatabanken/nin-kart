@@ -94,6 +94,7 @@ class VenstreVinduContainer extends React.Component {
             mapBounds={this.props.mapBounds}
             language={this.props.language}
             meta={this.props.meta}
+            onUpdateLayerProp={onUpdateLayerProp}
             onUpdateMetaProp={onUpdateMetaProp}
             kurve={kurve}
           />
