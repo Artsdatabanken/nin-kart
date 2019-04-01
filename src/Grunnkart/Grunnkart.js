@@ -210,27 +210,29 @@ class Grunnkart extends React.Component {
                 }}
               >
                 {context.aktivTab === "meny" && (
-                  <VenstreVinduContainer
-                    aktiveLag={this.state.aktiveLag}
-                    mapBounds={this.state.actualBounds}
-                    onMouseEnter={this.handleMouseEnter}
-                    onMouseLeave={this.handleMouseLeave}
-                    onFitBounds={this.handleFitBounds}
-                    erAktivert={erAktivert}
-                    opplystKode={this.state.opplystKode}
-                    onToggleLayer={() => {
-                      this.handleToggleLayer();
-                      if (!context.visAktiveLag) context.onToggleAktiveLag();
-                    }}
-                    onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                    meta={this.state.meta}
-                    searchFor={this.state.searchFor}
-                    onClearSearchFor={this.handleClearSearchFor}
-                    onUpdateLayerProp={this.handleUpdateLayerProp}
-                    onUpdateMetaProp={this.handleUpdateMetaProp}
-                    visAktiveLag={context.visAktiveLag}
-                    onToggleAktiveLag={context.onToggleAktiveLag}
-                  />
+                  <div className="sidebar">
+                    <VenstreVinduContainer
+                      aktiveLag={this.state.aktiveLag}
+                      mapBounds={this.state.actualBounds}
+                      onMouseEnter={this.handleMouseEnter}
+                      onMouseLeave={this.handleMouseLeave}
+                      onFitBounds={this.handleFitBounds}
+                      erAktivert={erAktivert}
+                      opplystKode={this.state.opplystKode}
+                      onToggleLayer={() => {
+                        this.handleToggleLayer();
+                        if (!context.visAktiveLag) context.onToggleAktiveLag();
+                      }}
+                      onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                      meta={this.state.meta}
+                      searchFor={this.state.searchFor}
+                      onClearSearchFor={this.handleClearSearchFor}
+                      onUpdateLayerProp={this.handleUpdateLayerProp}
+                      onUpdateMetaProp={this.handleUpdateMetaProp}
+                      visAktiveLag={context.visAktiveLag}
+                      onToggleAktiveLag={context.onToggleAktiveLag}
+                    />
+                  </div>
                 )}
                 <Kart
                   bounds={this.state.fitBounds}
