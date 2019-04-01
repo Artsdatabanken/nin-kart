@@ -204,11 +204,7 @@ class Grunnkart extends React.Component {
           return (
             <>
               <TopBar />
-              <div
-                style={{
-                  paddingTop: "56px"
-                }}
-              >
+              <div>
                 {context.aktivTab === "meny" && (
                   <div className="sidebar">
                     <VenstreVinduContainer

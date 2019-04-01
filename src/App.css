@@ -63,6 +63,7 @@ div {
   .sidebar {
     width: 100%;
     max-width: 100%;
+    padding-top: 56px;
   }
 
   .mobile_navigation {
