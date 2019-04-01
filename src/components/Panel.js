@@ -1,5 +1,5 @@
 import React from "react";
 
-const Panel = ({ children }) => <div className="sidebar">{children}</div>;
+const Panel = ({ children }) => <div>{children}</div>;
 
 export default Panel;
