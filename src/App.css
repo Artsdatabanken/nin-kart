@@ -22,7 +22,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto condensed", "sans-serif";
+  font-family: "Roboto", "sans-serif";
 }
 
 .hoverUnderline:hover {
@@ -52,6 +52,7 @@ div {
   overflow-x: hidden;
   max-width: 408px;
   background: #ededed;
+  width: 100%;
 }
 
 .mobile_navigation {
@@ -87,7 +88,7 @@ div {
     box-sizing: border-box;
     margin: 0px;
     color: #36a3b2;
-    font-family: "Roboto condensed", "sans-serif";
+    font-family: "Roboto", "sans-serif";
     border: none;
   }
 
@@ -100,10 +101,10 @@ div {
     background: #81afb6;
     color: #f5f5f5;
     cursor: pointer;
-    text-decoration: underline;
   }
 
   .mobile_navigation .active_mobile_button {
     background: #36a3b2;
+    font-weight: 600;
   }
 }
