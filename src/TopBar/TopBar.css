@@ -9,7 +9,8 @@
   color: #36a3b2;
   height: 56px;
   width: 100%;
-  padding: 5px;
+  padding: 0px;
+  margin: 8px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -47,8 +48,8 @@
 }
 
 .input_imitator input {
-  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px;
+  _border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  _margin-bottom: 10px;
   max-width: 90%;
 }
 
