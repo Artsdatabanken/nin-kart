@@ -79,7 +79,7 @@ function draw(args) {
 }
 
 function lagSource({ url, zoom }, { bbox }) {
-  if (sladd) return {};
+  if (sladd(url)) return {};
   return sysconfig.createTileSource(url, "MVT", zoom, bbox);
 }
 
