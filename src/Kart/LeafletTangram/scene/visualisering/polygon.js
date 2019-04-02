@@ -79,7 +79,19 @@ function draw(args) {
 }
 
 function lagSource({ url, zoom }, { bbox }) {
+  if (sladd) return {};
   return sysconfig.createTileSource(url, "MVT", zoom, bbox);
+}
+
+function sladd(url) {
+  if (url.indexOf("Regional_naturvariasjon") >= 0) return false;
+  if (url.indexOf("Erosjon") >= 0) return false;
+  if (url.indexOf("Finmat") >= 0) return false;
+  if (url.indexOf("Sediment") >= 0) return false;
+  if (url.indexOf("Ultrama") >= 0) return false;
+  if (url.indexOf("Kalk") >= 0) return false;
+  if (url.startsWith("Natur_i_Norge/Natursystem/")) return true;
+  return false;
 }
 
 export default { drawAll, lagSource };
