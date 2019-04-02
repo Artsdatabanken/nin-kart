@@ -83,6 +83,7 @@ function lagSource({ url, zoom }, { bbox }) {
   return sysconfig.createTileSource(url, "MVT", zoom, bbox);
 }
 
+// MDIR-sladden
 function sladd(url) {
   if (url.indexOf("Regional_naturvariasjon") >= 0) return false;
   if (url.indexOf("Erosjon") >= 0) return false;
@@ -90,7 +91,7 @@ function sladd(url) {
   if (url.indexOf("Sediment") >= 0) return false;
   if (url.indexOf("Ultrama") >= 0) return false;
   if (url.indexOf("Kalk") >= 0) return false;
-  if (url.startsWith("Natur_i_Norge/Natursystem/")) return true;
+  if (url.indexOf("Natur_i_Norge/Natursystem") >= 0) return true;
   return false;
 }
 
