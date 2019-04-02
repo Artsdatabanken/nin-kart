@@ -39,7 +39,7 @@ h6 {
 }
 
 .leaflet-top {
-  top: 56px !important;
+  _top: 56px !important;
 }
 
 div {
@@ -81,7 +81,7 @@ div {
     text-align: center;
     padding: auto;
     background: #ddd;
-    width: 33%;
+    width: 50%;
     height: 48px;
     padding: 15px;
     position: relative;
