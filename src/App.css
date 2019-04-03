@@ -1,3 +1,12 @@
+.graphic_profile {
+  artsdb_color: #4c4a48;
+  color: #4b909e;
+  color: #81b2bb;
+  color: #b7d3d8;
+  color: #edf4f5;
+  color: black;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
   background-color: #aaa;
@@ -23,6 +32,7 @@ h4,
 h5,
 h6 {
   font-family: "Roboto", "sans-serif";
+  color: #4b909e;
 }
 
 .hoverUnderline:hover {
@@ -84,7 +94,7 @@ div {
     display: inline-block;
     text-align: center;
     padding: auto;
-    background: #ddd;
+    background: #edf4f5;
     width: 50%;
     height: 48px;
     padding: 15px;
@@ -103,14 +113,15 @@ div {
   .mobile_navigation button.active:hover,
   .mobile_navigation button.active:focus,
   .mobile_navigation button.active {
-    _background: #22a2f2;
-    color: #22a2f2;
-    _color: "rgba(0,0,0,0.67)";
+    background: #81b2bb;
+    color: #fff;
+    color: "rgba(0,0,0,0.67)";
     cursor: pointer;
   }
 
   .mobile_navigation .active_mobile_button {
-    _background: #22a2f2;
-    font-weight: 500;
+    background: #4b909e;
+    color: white;
+    font-weight: 600;
   }
 }
