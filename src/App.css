@@ -125,3 +125,12 @@ div {
     font-weight: 600;
   }
 }
+
+.MuiPaper-root-277,
+.MuiPaper-elevation1-280 {
+  box-shadow: none !important;
+}
+
+.MuiExpansionPanel-expanded-516 {
+  margin: 1px !important;
+}
