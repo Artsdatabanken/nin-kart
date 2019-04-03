@@ -39,7 +39,7 @@ h6 {
 }
 
 .leaflet-top {
-  _top: 56px !important;
+  top: calc(100vh - 100px) !important;
 }
 
 div {
@@ -60,6 +60,10 @@ div {
 }
 
 @media only screen and (max-width: 678px) {
+  .leaflet-top {
+    top: calc(100vh - 150px) !important;
+  }
+
   .sidebar {
     width: 100%;
     max-width: 100%;
