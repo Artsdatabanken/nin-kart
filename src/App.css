@@ -126,11 +126,14 @@ div {
   }
 }
 
+.MuiPaper-elevation1-92,
 .MuiPaper-root-277,
 .MuiPaper-elevation1-280 {
   box-shadow: none !important;
 }
 
+.MuiExpansionPanel-expanded-381,
+.MuiPaper-elevation1-92,
 .MuiExpansionPanel-expanded-516 {
   margin: 1px !important;
 }
