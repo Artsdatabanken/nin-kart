@@ -2,13 +2,13 @@ import React from "react";
 import { withRouter } from "react-router";
 import { withStyles } from "@material-ui/core";
 import backend from "../backend";
-import Kart from "../Kart";
 import { SettingsContext } from "../SettingsContext";
 import språk from "../språk";
 import VenstreVinduContainer from "../VenstreVinduContainer";
 import bakgrunnskarttema from "./bakgrunnskarttema";
 import TopBar from "../TopBar/TopBar";
 import MobileNavigation from "../components/MobileNavigation";
+import Kart from "../Kart/LeafletTangram";
 
 const styles = {
   rot: {
@@ -240,6 +240,12 @@ class Grunnkart extends React.Component {
                   meta={this.state.meta}
                   onMapBoundsChange={this.handleActualBoundsChange}
                   onMapMove={context.onMapMove}
+                  onClick={latlng => {
+                    this.props.history.push(
+                      `?lng=${latlng.lng}&lat=${latlng.lat}`
+                    );
+                    context.onNavigateToTab("meny");
+                  }}
                 />
               </div>
               <MobileNavigation />

@@ -26,7 +26,7 @@ class SettingsContainer extends Component {
           sorterPåKode: this.state.sorterPåKode,
           visAktiveLag: this.state.visAktiveLag,
           onUpdateValue: this.handleUpdateValue,
-          onClickTab: this.handleClickTab,
+          onNavigateToTab: this.navigateToTab,
           onToggleAktiveLag: this.handleToggleAktivelag,
           onToggleHovedmeny: this.handleToggleHovedmeny,
           onToggleForside: this.handleToggleForside,
@@ -38,7 +38,7 @@ class SettingsContainer extends Component {
     );
   }
 
-  handleClickTab = tab => {
+  navigateToTab = tab => {
     this.setState({ aktivTab: tab });
   };
   handleMapMove = () => {};
