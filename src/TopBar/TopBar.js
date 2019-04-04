@@ -26,6 +26,7 @@ const TopBar = ({ history }) => {
         <LookupControl onQueryChange={e => setQuery(e.target.value)} />
         <img
           src="http://localhost:3000/logoer/adb32.png"
+          alt="logo image"
           className="logo_image"
         />
 
