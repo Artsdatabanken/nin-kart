@@ -1,4 +1,4 @@
-import { SettingsContext } from "./SettingsContext";
+import { SettingsContext } from "../SettingsContext";
 import {
   Divider,
   IconButton,
@@ -33,22 +33,15 @@ const styles = {
 
 class MainDrawer extends Component {
   render() {
-    const {
-      classes,
-      erÅpen,
-      toggleDrawer,
-      visKoder,
-      sorterPåKode,
-      onUpdateSetting
-    } = this.props;
+    const { classes } = this.props;
     return (
       <SettingsContext.Consumer>
         {context => (
           <SwipeableDrawer
             anchor="left"
-            open={erÅpen}
-            onClose={toggleDrawer}
-            onOpen={toggleDrawer}
+            onClose={context.onToggleHovedmeny}
+            onOpen={context.onToggleHovedmeny}
+            open={context.visHovedmeny}
           >
             <List>
               <ListItem>
@@ -57,7 +50,7 @@ class MainDrawer extends Component {
                   primary="Natur i Norge"
                 />
                 <ListItemSecondaryAction>
-                  <IconButton onClick={toggleDrawer}>
+                  <IconButton onClick={context.onToggleHovedmeny}>
                     <NavigationChevronLeftDouble />
                   </IconButton>
                 </ListItemSecondaryAction>
@@ -66,8 +59,8 @@ class MainDrawer extends Component {
               <div
                 tabIndex={0}
                 role="button"
-                onClick={toggleDrawer}
-                onKeyDown={toggleDrawer}
+                onClick={context.onToggleHovedmeny}
+                onKeyDown={context.onToggleHovedmeny}
               >
                 <Divider />
                 <ListSubheader>Hva vil du utforske?</ListSubheader>
@@ -92,9 +85,9 @@ class MainDrawer extends Component {
                 </ListItem>
                 <Divider />
                 <Innstillinger
-                  visKoder={visKoder}
-                  sorterPåKode={sorterPåKode}
-                  onUpdateSetting={onUpdateSetting}
+                  visKoder={context.visKoder}
+                  sorterPåKode={context.sorterPåKode}
+                  onUpdateSetting={context.onUpdateValue}
                 />
                 <Divider />
                 <ListSubheader>Bidra</ListSubheader>
