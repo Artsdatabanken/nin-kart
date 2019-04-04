@@ -194,6 +194,7 @@ class Grunnkart extends React.Component {
   };
 
   render() {
+    const { history } = this.props;
     let erAktivert = false;
     if (this.state.meta)
       erAktivert = !!this.state.aktiveLag[this.state.meta.kode];
@@ -203,7 +204,12 @@ class Grunnkart extends React.Component {
         {context => {
           return (
             <>
-              <TopBar />
+              <TopBar
+                onSelectResult={item => {
+                  history.push("/" + item.url);
+                  context.onNavigateToTab("meny");
+                }}
+              />
               <div>
                 {context.aktivTab === "meny" && (
                   <div className="sidebar">
@@ -241,9 +247,7 @@ class Grunnkart extends React.Component {
                   onMapBoundsChange={this.handleActualBoundsChange}
                   onMapMove={context.onMapMove}
                   onClick={latlng => {
-                    this.props.history.push(
-                      `?lng=${latlng.lng}&lat=${latlng.lat}`
-                    );
+                    history.push(`?lng=${latlng.lng}&lat=${latlng.lat}`);
                     context.onNavigateToTab("meny");
                   }}
                 />

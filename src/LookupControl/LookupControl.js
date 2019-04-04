@@ -29,7 +29,6 @@ const abc = (cl, isSearching) => classNames(cl, isSearching && "mobile_active");
 
 const LookupControl = ({ query, classes, onQueryChange }) => {
   const [isSearching, setIsSearching] = useState(false);
-  console.log(abc("input_imitator", isSearching));
   return (
     <SettingsContext.Consumer>
       {context => (

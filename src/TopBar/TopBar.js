@@ -1,13 +1,10 @@
-import { withRouter } from "react-router";
 import React, { useEffect, useState } from "react";
 import ResultatListe from "../Kodetre/Kodeliste/ResultatListe";
 import LookupControl from "../LookupControl/LookupControl";
 import axios from "axios";
 import "./TopBar.css";
 
-// Ny fancy
-
-const TopBar = ({ history }) => {
+const TopBar = ({ onSelectResult }) => {
   const [hits, setHits] = useState([]);
   const [query, setQuery] = useState();
 
@@ -42,11 +39,11 @@ const TopBar = ({ history }) => {
         searchResults={hits}
         onSelect={item => {
           setQuery(null);
-          history.push("/" + item.url);
+          onSelectResult(item);
         }}
       />
     </div>
   );
 };
 
-export default withRouter(TopBar);
+export default TopBar;
