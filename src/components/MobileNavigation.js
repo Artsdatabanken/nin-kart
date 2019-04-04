@@ -6,13 +6,13 @@ const MobileNavigation = () => (
     {context => (
       <div className="mobile_navigation">
         <button
-          className={context.aktivTab === "meny" && "active_mobile_button"}
+          className={context.aktivTab === "meny" ? "active_mobile_button" : ""}
           onClick={() => context.onNavigateToTab("meny")}
         >
           Meny
         </button>
         <button
-          className={context.aktivTab === "kart" && "active_mobile_button"}
+          className={context.aktivTab === "kart" ? "active_mobile_button" : ""}
           onClick={() => context.onNavigateToTab("kart")}
         >
           Kart
