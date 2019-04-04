@@ -18,7 +18,6 @@ import {
   Waves,
   Panorama
 } from "@material-ui/icons";
-import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import NavigationChevronLeftDouble from "../Grunnkart/NavigationChevronLeftDouble";
@@ -144,10 +143,9 @@ class MainDrawer extends Component {
   handleClickLandskap = () =>
     this.props.history.push("/Natur_i_Norge/Landskap/");
   handleClickStat = () => this.props.history.push("/Natur_i_Norge/Stats/");
+  navigateInMenu = url => {
+    this.props.history.push(url);
+  };
 }
-
-MainDrawer.propTypes = {
-  classes: PropTypes.object.isRequired
-};
 
 export default withRouter(withStyles(styles)(MainDrawer));

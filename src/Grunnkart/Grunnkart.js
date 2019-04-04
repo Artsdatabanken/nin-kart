@@ -46,6 +46,10 @@ class Grunnkart extends React.Component {
       meta: null,
       visKoder: false
     };
+    this.props.history.listen((location, action) => {
+      // Åpne menyen ved navigering
+      this.context.onNavigateToTab("meny");
+    });
   }
 
   handleActualBoundsChange = bounds => {
@@ -207,7 +211,6 @@ class Grunnkart extends React.Component {
               <TopBar
                 onSelectResult={item => {
                   history.push("/" + item.url);
-                  context.onNavigateToTab("meny");
                 }}
               />
               <div>
@@ -248,7 +251,6 @@ class Grunnkart extends React.Component {
                   onMapMove={context.onMapMove}
                   onClick={latlng => {
                     history.push(`?lng=${latlng.lng}&lat=${latlng.lat}`);
-                    context.onNavigateToTab("meny");
                   }}
                 />
               </div>
@@ -267,6 +269,8 @@ class Grunnkart extends React.Component {
   handleMouseLeave = kode => {
     this.setState({ opplystKode: "" });
   };
+
+  static contextType = SettingsContext;
 }
 
 export default withStyles(styles)(withRouter(Grunnkart));
