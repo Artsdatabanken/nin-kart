@@ -27,7 +27,7 @@ const TopBar = ({ history }) => {
         <img
           src="http://localhost:3000/logoer/adb32.png"
           alt="logo image"
-          className="logo_image"
+          className="artsdatabanken logo"
         />
 
         <h1>
