@@ -1,3 +1,4 @@
+import ResponsivtVindu from "./ResponsivtVindu";
 import MainDrawer from "./MainDrawer/MainDrawer";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import React from "react";
@@ -23,9 +24,11 @@ const App = () => {
     <MuiThemeProvider theme={theme}>
       <BrowserRouter>
         <SettingsContainer>
-          <Grunnkart />
-          <Informasjon />
-          <MainDrawer />
+          <ResponsivtVindu>
+            <Grunnkart />
+            <Informasjon />
+            <MainDrawer />
+          </ResponsivtVindu>
         </SettingsContainer>
       </BrowserRouter>
     </MuiThemeProvider>
