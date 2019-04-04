@@ -21,11 +21,12 @@ const TopBar = ({ onSelectResult }) => {
     <div className="top_expander">
       <div className="top_menu">
         <LookupControl onQueryChange={e => setQuery(e.target.value)} />
-        {/*}
-        <div className="top_menu_item">Naturtyper</div>
-        <div className="top_menu_item">Landskap</div>
-        <div className="top_menu_item">Statistikk for Art</div>
-  */}
+        <img
+          src="http://localhost:3000/logoer/adb32.png"
+          className="logo_image"
+          alt="artsdatabanken logo"
+        />
+
         <h1>
           Natur i Norge{" "}
           <img

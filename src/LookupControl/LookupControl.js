@@ -4,6 +4,7 @@ import IconButton from "@material-ui/core/IconButton";
 import { withStyles } from "@material-ui/core/styles";
 import Hamburger from "@material-ui/icons/Menu";
 import Search from "@material-ui/icons/Search";
+import Close from "@material-ui/icons/Close";
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import SearchBox from "./SearchField/SearchField";
@@ -65,6 +66,10 @@ const LookupControl = ({ query, classes, onQueryChange }) => {
             <Search
               className={abc("search_icon", isSearching)}
               onClick={() => setIsSearching(true)}
+            />
+            <Close
+              className={abc("search_icon", !isSearching)}
+              onClick={() => setIsSearching(false)}
             />
 
             {/*
