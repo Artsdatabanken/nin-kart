@@ -22,7 +22,7 @@ const TopBar = ({ onSelectResult }) => {
       <div className="top_menu">
         <LookupControl onQueryChange={e => setQuery(e.target.value)} />
         <img
-          src="http://localhost:3000/logoer/adb32.png"
+          src="/logoer/adb32.png"
           className="logo_image"
           alt="artsdatabanken logo"
         />
