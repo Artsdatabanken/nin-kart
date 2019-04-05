@@ -8,6 +8,7 @@ import { makeStyles } from "@material-ui/styles";
 import prettyKode from "./prettyKode";
 
 const useStyles = makeStyles({
+  // This element contains exclusively the title elements!
   block: {
     padding: "16px 24px 20px"
   },
@@ -53,13 +54,7 @@ const Tittelblokk = ({
     <SettingsContainer>
       <SettingsContext.Consumer>
         {context => (
-          <div
-            className={classes.block}
-            style={{
-              position: "relative",
-              backgroundColor: farge || "hsl(16, 0%, 50%)"
-            }}
-          >
+          <div className="sidebar_title_container sidebar_element">
             {context.visKoder && (
               <Chip
                 className={classes.chip}
@@ -80,20 +75,8 @@ const Tittelblokk = ({
                 }
               />
             )}
-            <Typography
-              variant="h6"
-              className={classes.h1}
-              style={{ color: kontrastfarge }}
-              gutterBottom
-            >
-              {tittel}
-            </Typography>
-            <Typography
-              style={{ color: kontrastfarge }}
-              className={classes.nivå}
-            >
-              {nivå}
-            </Typography>
+            <h1 className="sidebar_title">{tittel}</h1>
+            <h2 className={classes.nivå}>{nivå}</h2>
             {children}
           </div>
         )}

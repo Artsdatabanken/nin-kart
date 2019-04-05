@@ -35,6 +35,25 @@ h6 {
   color: #4b909e;
 }
 
+.sidebar h1,
+.sidebar h2 {
+  color: black;
+  font-weight: 300;
+  margin: 10px;
+}
+
+.sidebar_background_element,
+.sidebar_element {
+  background: #fff;
+  padding: 10px;
+  position: relative;
+}
+
+.sidebar_background_element {
+  background: #f5f5f5;
+  padding: 0px;
+}
+
 .hoverUnderline:hover {
   text-decoration: underline;
 }

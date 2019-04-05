@@ -8,6 +8,8 @@ import Knapperad from "./Knapperad";
 import { kontrastfarge } from "../../farger";
 
 class Kodekort extends React.Component {
+  // This component is used in the top part of the sidebar,
+  // contains image, header-row (Tittelblokk), and the zoom button navbar (Knapperad)
   state = {
     visBilde: false
   };
@@ -58,8 +60,12 @@ class Kodekort extends React.Component {
     } = this.props;
     const tc = new tinycolor(farge);
     return (
-      <Card square={false}>
+      <div
+        square={false}
+        className="sidebar_top_area sidebar_background_element"
+      >
         <CardMedia
+          className="Temporary_class_for_detection"
           style={this.styles(url)}
           onClick={this.handleOpen}
           image={config.getFotoOmslag(url, 408)}
@@ -78,6 +84,7 @@ class Kodekort extends React.Component {
           prefiks={prefiks}
           onNavigate={onNavigate}
           overordnet={overordnet}
+          className="Temporary_class_for_detection_2"
         />
         {overordnet.length > 0 && (
           <Knapperad
@@ -87,9 +94,10 @@ class Kodekort extends React.Component {
             bbox={bbox}
             onFitBounds={onFitBounds}
             onToggleLayer={onToggleLayer}
+            className="Temporary_class_for_detection_3"
           />
         )}
-      </Card>
+      </div>
     );
   }
 }
