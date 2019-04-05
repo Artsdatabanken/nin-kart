@@ -1,5 +1,6 @@
 import { Button, CardActions, withStyles } from "@material-ui/core";
-import { LibraryAdd, ZoomOutMap, ColorLens } from "@material-ui/icons/";
+import { ZoomOutMap } from "@material-ui/icons/";
+//import { LibraryAdd, ZoomOutMap, ColorLens } from "@material-ui/icons/";
 import React from "react";
 import { withRouter } from "react-router";
 
