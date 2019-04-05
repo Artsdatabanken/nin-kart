@@ -8,6 +8,7 @@ script:
   - yarn build
   - export $TRAVIS_PULL_REQUEST_BRANCH
   #- echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH"
+  - echo $TRAVIS_PULL_REQUEST_BRANCH
 before_deploy:
   - git tag "$(date +'%Y%m%d-%H%M%S')-$(git log --format=%h -1)"
   - tar --directory=build -zcf bundle.tar.gz .
