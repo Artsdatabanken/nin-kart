@@ -6,7 +6,7 @@ directories:
 script:
   - yarn test
   - yarn build
-  - export BRANCH=$(echo $TRAVIS_PULL_REQUEST_BRANCH)
+  - export $TRAVIS_PULL_REQUEST_BRANCH
   #- echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH"
 before_deploy:
   - git tag "$(date +'%Y%m%d-%H%M%S')-$(git log --format=%h -1)"
@@ -21,9 +21,9 @@ deploy:
       repo: Artsdatabanken/nin-kart-frontend
     skip_cleanup: true
   - provider: script
-    script: ./deploy.sh $BRANCH ops "deploy nin-innsyn-test"
+    script: ./deploy.sh $TRAVIS_PULL_REQUEST_BRANCH ops "deploy nin-innsyn-test"
     on:
-      branch: $BRANCH
+      branch: $TRAVIS_PULL_REQUEST_BRANCH
     skip_cleanup: true
 #after_deploy: ./slack.sh ops "deploy nin-innsyn"
 after_success:
