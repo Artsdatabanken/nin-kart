@@ -25,15 +25,17 @@ const Knapperad = ({
   onToggleLayer,
   onFitBounds
 }) => (
-  <CardActions className={classes.cardActions}>
-    <>
+  <>
+    {bbox && (
+      <CardActions className={classes.cardActions}>
+        {/* 
       <Button
-        className={classes.button}
-        onClick={onToggleLayer}
-        disabled={erAktivert}
-      >
-        <LibraryAdd className={classes.iconSmall} />
-        Aktivér
+          className={classes.button}
+          onClick={onToggleLayer}
+          disabled={erAktivert}
+        >
+          <LibraryAdd className={classes.iconSmall} />
+          Aktivér
       </Button>
       <Button
         className={classes.button}
@@ -42,15 +44,15 @@ const Knapperad = ({
         <ColorLens className={classes.iconSmall} />
         Vis
       </Button>
-      {bbox && (
+      */}
+
         <Button className={classes.button} onClick={() => onFitBounds(bbox)}>
           <ZoomOutMap className={classes.iconSmall} />
           Zoom til
         </Button>
-      )}
-    </>
+      </CardActions>
     )}
-  </CardActions>
+  </>
 );
 
 export default withRouter(withStyles(styles)(Knapperad));
