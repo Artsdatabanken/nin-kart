@@ -18,7 +18,7 @@ deploy:
       repo: Artsdatabanken/nin-innsyn
     skip_cleanup: true
   - provider: script
-    script: deploy.sh
+    script: ./deploy.sh
     on:
       branch: evensen
     skip_cleanup: true
