@@ -10,13 +10,18 @@ before_deploy:
   - git tag "$(date +'%Y%m%d-%H%M%S')-$(git log --format=%h -1)"
   - tar --directory=build -zcf bundle.tar.gz .
 deploy:
-  provider: releases
-  api_key: $GITHUB_TOKEN
-  file_glob: true
-  file: bundle.tar.gz
-  on:
-    repo: Artsdatabanken/nin-innsyn
-  skip_cleanup: true
+  - provider: releases
+    api_key: $GITHUB_TOKEN
+    file_glob: true
+    file: bundle.tar.gz
+    on:
+      repo: Artsdatabanken/nin-innsyn
+    skip_cleanup: true
+  - provider: script
+    script: deploy.sh
+    on:
+      branch: evensen
+    skip_cleanup: true
 after_deploy: ./slack.sh ops "deploy nin-innsyn"
 after_success:
   - npm run report-coverage
