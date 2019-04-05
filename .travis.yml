@@ -15,6 +15,7 @@ deploy:
     file_glob: true
     file: bundle.tar.gz
     on:
+      branch: master
       repo: Artsdatabanken/nin-kart-frontend
     skip_cleanup: true
   - provider: script
