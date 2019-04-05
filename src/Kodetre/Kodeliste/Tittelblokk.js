@@ -1,4 +1,3 @@
-import { Avatar, Chip } from "@material-ui/core";
 import { withTheme } from "@material-ui/core/styles";
 import React from "react";
 import SettingsContainer from "../../SettingsContainer";

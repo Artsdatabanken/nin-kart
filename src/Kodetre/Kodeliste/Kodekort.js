@@ -59,11 +59,13 @@ class Kodekort extends React.Component {
       onToggleLayer
     } = this.props;
     const tc = new tinycolor(farge);
+    var new_url = config.getFotoOmslag(url, 408);
     return (
       <div
         square={false}
         className="sidebar_top_area sidebar_background_element"
       >
+        {/*
         <CardMedia
           className="Temporary_class_for_detection"
           style={this.styles(url)}
@@ -71,6 +73,13 @@ class Kodekort extends React.Component {
           image={config.getFotoOmslag(url, 408)}
           alt={"foto av" + tittel}
         />
+
+    */}
+        <div
+          className="sidebar_top_image"
+          style={{ backgroundImage: "url(" + new_url + ")" }}
+        />
+
         <Tittelblokk
           tittel={språk(tittel)}
           farge={tc.desaturate(30).toHexString()}
@@ -84,8 +93,8 @@ class Kodekort extends React.Component {
           prefiks={prefiks}
           onNavigate={onNavigate}
           overordnet={overordnet}
-          className="Temporary_class_for_detection_2"
         />
+
         {overordnet.length > 0 && (
           <Knapperad
             overordnet={overordnet}
