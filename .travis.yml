@@ -6,6 +6,8 @@ directories:
 script:
   - yarn test
   - yarn build
+  - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
+  - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH"
 before_deploy:
   - git tag "$(date +'%Y%m%d-%H%M%S')-$(git log --format=%h -1)"
   - tar --directory=build -zcf bundle.tar.gz .
@@ -19,9 +21,9 @@ deploy:
       repo: Artsdatabanken/nin-kart-frontend
     skip_cleanup: true
   - provider: script
-    script: ./deploy.sh
+    script: ./deploy.sh $BRANCH ops "deploy nin-innsyn-test"
     on:
-      branch: evensen
+      branch: $BRANCH
     skip_cleanup: true
 after_deploy: ./slack.sh ops "deploy nin-innsyn"
 after_success:
