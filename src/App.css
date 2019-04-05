@@ -65,13 +65,18 @@ h6 {
   position: absolute;
   right: 10px;
   top: -25px;
-  background: #b7d3d8;
-  padding: 10px;
   border-radius: 15px;
+  vertical-align: bottom;
+  background: #b7d3d8;
 }
 
-.sidebar_code_bubble_avatar {
-  display: none;
+.sidebar_code_bubble_container div {
+  display: inline-block;
+  border-radius: 15px;
+  padding: 10px;
+}
+.sidebar_code_bubble_container .sidebar_code_bubble_avatar {
+  background: #4b909e;
 }
 
 .hoverUnderline:hover {

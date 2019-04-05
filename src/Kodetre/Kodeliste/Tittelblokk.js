@@ -34,8 +34,12 @@ const Tittelblokk = ({
           <div className="sidebar_title_container sidebar_element">
             {context.visKoder && (
               <div className="sidebar_code_bubble_container">
-                <div className="sidebar_code_bubble">{pkode[1]}</div>
-                <div className="sidebar_code_bubble_avatar">{pkode[0]}</div>
+                {pkode[0] && (
+                  <div className="sidebar_code_bubble_avatar">{pkode[0]}</div>
+                )}
+                {pkode[1] && (
+                  <div className="sidebar_code_bubble">{pkode[1]}</div>
+                )}
               </div>
             )}
 
