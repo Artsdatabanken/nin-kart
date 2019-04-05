@@ -9,6 +9,7 @@ script:
 before_deploy:
   - git tag "$(date +'%Y%m%d-%H%M%S')-$(git log --format=%h -1)"
   - tar --directory=build -zcf bundle.tar.gz .
+  - sudo apt-get install -y sshpass
 deploy:
   - provider: releases
     api_key: $GITHUB_TOKEN
