@@ -82,6 +82,12 @@ class MainDrawer extends Component {
                   </ListItemIcon>
                   <ListItemText primary="Laste ned data" />
                 </ListItem>
+                <ListItem onClick={this.handleClickInfoTab} button>
+                  <ListItemIcon>
+                    <CloudDownload />
+                  </ListItemIcon>
+                  <ListItemText primary="....infotab" />
+                </ListItem>
                 <Divider />
                 <Innstillinger
                   visKoder={context.visKoder}
@@ -140,6 +146,7 @@ class MainDrawer extends Component {
   handleClickMap = () => this.props.history.push("/");
   handleClickNatursystem = () =>
     this.props.history.push("/Natur_i_Norge/Natursystem/");
+  handleClickInfoTab = () => this.props.history.push("?info");
   handleClickLandskap = () =>
     this.props.history.push("/Natur_i_Norge/Landskap/");
   handleClickStat = () => this.props.history.push("/Natur_i_Norge/Stats/");
