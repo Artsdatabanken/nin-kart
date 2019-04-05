@@ -24,7 +24,7 @@ deploy:
   - provider: script
     script: ./deploy.sh $TRAVIS_PULL_REQUEST_BRANCH ops "deploy nin-innsyn-test"
     on:
-      branch: $TRAVIS_PULL_REQUEST_BRANCH
+      branch: all
       repo: Artsdatabanken/nin-kart-frontend
     skip_cleanup: true
 #after_deploy: ./slack.sh ops "deploy nin-innsyn"
