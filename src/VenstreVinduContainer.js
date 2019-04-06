@@ -46,6 +46,7 @@ class VenstreVinduContainer extends React.Component {
   render() {
     const {
       meta,
+      opplyst,
       onMouseEnter,
       onMouseLeave,
       onUpdateLayerProp,
@@ -77,6 +78,7 @@ class VenstreVinduContainer extends React.Component {
       );
     }
     const kurve = finnKurvevariabler(this.props.aktiveLag);
+    console.log("vvc", meta && meta.kode, opplyst);
     return (
       <>
         <Panel>
@@ -87,7 +89,7 @@ class VenstreVinduContainer extends React.Component {
             onMouseLeave={onMouseLeave}
             onFitBounds={this.props.onFitBounds}
             erAktivert={this.props.erAktivert}
-            opplystKode={this.props.opplystKode}
+            opplyst={opplyst}
             onToggleLayer={this.props.onToggleLayer}
             mapBounds={this.props.mapBounds}
             language={this.props.language}

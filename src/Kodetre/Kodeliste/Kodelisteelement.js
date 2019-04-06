@@ -3,7 +3,7 @@ import React from "react";
 import språk from "../../språk";
 import Bildeavatar from "./Bildeavatar";
 import VolumIndikator from "./VolumIndikator";
-import opplyst from "../../palette/opplyst";
+import lysOpp from "../../palette/opplyst";
 import prettyKode from "./prettyKode";
 
 function hack(symbol, intervall) {
@@ -37,7 +37,7 @@ class Kodelisteelement extends React.Component {
   shouldComponentUpdate(np) {
     if (np.areal !== this.props.areal) return true;
     if (np.value !== this.props.value) return true;
-    if (np.opplystKode !== this.props.opplystKode) return true;
+    if (np.opplyst !== this.props.opplyst) return true;
     return false;
   }
 
@@ -47,7 +47,7 @@ class Kodelisteelement extends React.Component {
       parentkode,
       kode,
       url,
-      opplystKode,
+      opplyst,
       visKode,
       onNavigate,
       onMouseEnter,
@@ -55,14 +55,16 @@ class Kodelisteelement extends React.Component {
       areal,
       størsteAreal
     } = this.props;
+    console.log("kodelee", parentkode, opplyst);
+    console.log(`lysOpp(${url}, ${opplyst}, ${meta.farge})`);
     return (
       <>
         <ListItem
           dense={true}
           key={kode}
           onClick={() => onNavigate(url)}
-          onMouseEnter={() => onMouseEnter && onMouseEnter(kode)}
-          onMouseLeave={() => onMouseLeave && onMouseLeave(kode)}
+          onMouseEnter={() => onMouseEnter && onMouseEnter({ kode, url })}
+          onMouseLeave={() => onMouseLeave && onMouseLeave()}
           button={true}
         >
           <VolumIndikator størsteAreal={størsteAreal} areal={areal} />
@@ -71,7 +73,7 @@ class Kodelisteelement extends React.Component {
               kode={kode}
               url={url}
               farge0={meta.farge0}
-              farge={opplyst(kode, opplystKode, meta.farge)}
+              farge={lysOpp(url, opplyst.url, meta.farge)}
               size="small"
             />
           )}

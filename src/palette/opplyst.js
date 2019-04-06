@@ -1,10 +1,10 @@
 import tinycolor from "tinycolor2";
 
-function opplyst(kode, opplystKode, farge) {
-  if (!opplystKode) return farge;
+function opplyst(url, opplystUrl, farge) {
+  if (!opplystUrl) return farge;
   const f = tinycolor(farge);
 
-  if (kode.startsWith(opplystKode))
+  if (url.startsWith(opplystUrl))
     return f
       .saturate(10)
       .darken(20)

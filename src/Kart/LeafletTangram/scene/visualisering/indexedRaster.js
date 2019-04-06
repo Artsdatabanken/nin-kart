@@ -22,22 +22,11 @@ function quantize(value) {
 }*/
 
 function lagStyle(format, drawArgs) {
-  const { kode, opplystKode } = drawArgs;
-  //const barn = drawArgs.barn
-  let palettKode = kode;
-  if (opplystKode.startsWith(kode)) {
-    palettKode = opplystKode;
-    //const ai = barn['LA-KLG-AI']
-    /*    if (ai) {
-      const range = quantize(ai.value)
-      if (range !== '0-4') palettKode += '-AI' + quantize(ai.value)
-    }
-*/
-  }
-  console.log(drawArgs.depth);
-  const newPalette = `${sysconfig.storageUrl}${
-    drawArgs.url
-  }/${palettKode}.palette.png`;
+  const { opplyst, url } = drawArgs;
+  let palettUrl = opplyst.url || url;
+  const newPalette = `${
+    sysconfig.storageUrl
+  }${palettUrl}/raster_indexed_palette.png`;
 
   if (this.palette1 !== this.palette2 || !this.palette1)
     this.palette1 = this.palette2 || newPalette;
@@ -45,12 +34,12 @@ function lagStyle(format, drawArgs) {
   const gradient = {
     base: "raster",
     blend: "multiply",
-    animated: true,
+    animated: false,
     shaders: {
       uniforms: {
         palette1: this.palette1,
         palette2: this.palette2,
-        depth: 1 - (drawArgs.depth || 1) / 8 - 0.5 / 8
+        depth: 1 - (drawArgs.depth || 0) / 8 - 0.5 / 8
       },
       blocks: {
         global: `
