@@ -15,7 +15,7 @@ deploy:
   file_glob: true
   file: bundle.tar.gz
   on:
-    repo: Artsdatabanken/nin-innsyn
+    repo: Artsdatabanken/nin-kart-frontend
   skip_cleanup: true
 after_deploy: ./slack.sh ops "deploy nin-innsyn"
 after_success:
