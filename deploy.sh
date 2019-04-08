@@ -3,6 +3,7 @@
 #docker build -t artsdatabanken/nin-innsyn:latest .
 #docker images
 #docker push artsdatabanken/nin-innsyn:latest
+echo Zipping files
 echo $1
 tar --directory=build -zcf $1.tar.gz .
 echo Sending files to prod
