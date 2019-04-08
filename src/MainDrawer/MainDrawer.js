@@ -1,10 +1,10 @@
+import Menyelement from "./Menyelement";
 import { SettingsContext } from "../SettingsContext";
 import {
   Divider,
   IconButton,
   List,
   ListItem,
-  ListItemIcon,
   ListItemText,
   ListSubheader,
   SwipeableDrawer,
@@ -63,51 +63,45 @@ class MainDrawer extends Component {
               >
                 <Divider />
                 <ListSubheader>Hva vil du utforske?</ListSubheader>
-                <ListItem onClick={this.handleClickNatursystem} button>
-                  <ListItemIcon>
-                    <Panorama />
-                  </ListItemIcon>
-                  <ListItemText primary="Natursystem" />
-                </ListItem>
-                <ListItem onClick={this.handleClickLandskap} button>
-                  <ListItemIcon>
-                    <Waves />
-                  </ListItemIcon>
-                  <ListItemText primary="Landskap" />
-                </ListItem>
+                <Menyelement
+                  onClick={this.handleClickNatursystem}
+                  icon={<Panorama />}
+                  primary="Natursystem"
+                />
+                <Menyelement
+                  onClick={this.handleClickLandskap}
+                  icon={<Waves />}
+                  primary="Landskap"
+                />
                 <Divider />
-                <ListItem onClick={this.handleClickLastNed} button>
-                  <ListItemIcon>
-                    <CloudDownload />
-                  </ListItemIcon>
-                  <ListItemText primary="Laste ned data" />
-                </ListItem>
-                <Divider />
+                <Menyelement
+                  icon={<CloudDownload />}
+                  primary="Laste ned data"
+                  onClick={this.handleClickLastNed}
+                />
                 <Innstillinger
                   visKoder={context.visKoder}
                   sorterPåKode={context.sorterPåKode}
                   onUpdateSetting={context.onUpdateValue}
+                  onNavigate={this.handleNavigate}
                 />
                 <Divider />
                 <ListSubheader>Bidra</ListSubheader>
-                <ListItem onClick={this.handleClickBidra} button>
-                  <ListItemIcon>
-                    <Comment />
-                  </ListItemIcon>
-                  <ListItemText primary="Tilbakemeldinger" />
-                </ListItem>
-                <ListItem onClick={this.handleClickSource} button>
-                  <ListItemIcon>
-                    <GitHub />
-                  </ListItemIcon>
-                  <ListItemText primary="Kildekode" />
-                </ListItem>
-                <ListItem onClick={this.handleClickLastOpp} button>
-                  <ListItemIcon>
-                    <CloudUpload />
-                  </ListItemIcon>
-                  <ListItemText primary="Levere data" />
-                </ListItem>
+                <Menyelement
+                  onClick={this.handleClickBidra}
+                  icon={<Comment />}
+                  primary="Tilbakemeldinger"
+                />
+                <Menyelement
+                  onClick={this.handleClickSource}
+                  icon={<GitHub />}
+                  primary="Kildekode"
+                />
+                <Menyelement
+                  onClick={this.handleClickLastOpp}
+                  icon={<CloudUpload />}
+                  primary="Levere data"
+                />
                 <Divider />
                 <ListSubheader>Driftes av</ListSubheader>
                 <ListItem onClick={this.handleClickLogo} button>
@@ -143,9 +137,7 @@ class MainDrawer extends Component {
   handleClickLandskap = () =>
     this.props.history.push("/Natur_i_Norge/Landskap/");
   handleClickStat = () => this.props.history.push("/Natur_i_Norge/Stats/");
-  navigateInMenu = url => {
-    this.props.history.push(url);
-  };
+  handleNavigate = url => this.props.history.push(url);
 }
 
 export default withRouter(withStyles(styles)(MainDrawer));
