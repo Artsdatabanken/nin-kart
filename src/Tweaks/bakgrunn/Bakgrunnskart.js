@@ -86,11 +86,13 @@ class Bakgrunnskart extends Component {
       <List>
         <ListSubheader>Tema</ListSubheader>
         <TemaPreview type={aktivtFormat} />
-        <Terreng
-          kode="bakgrunnskart"
-          terreng={this.props.terreng}
-          onUpdateLayerProp={this.props.onUpdateLayerProp}
-        />
+        {false && (
+          <Terreng
+            kode="bakgrunnskart"
+            terreng={this.props.terreng}
+            onUpdateLayerProp={this.props.onUpdateLayerProp}
+          />
+        )}
         <ListSubheader>Områder</ListSubheader>
         <Bakgrunnskartlag
           onUpdateLayerProp={this.handleUpdateLayerProp}
