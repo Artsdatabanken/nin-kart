@@ -1,4 +1,4 @@
-if [$1 != "master"]
+if ["$1" != "master"]
 then
 echo "Zipping files"
 #echo $1
