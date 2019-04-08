@@ -128,9 +128,9 @@ class MainDrawer extends Component {
     );
   }
   handleClickBidra = () =>
-    window.open("https://github.com/Artsdatabanken/nin-innsyn/issues");
+    window.open("https://github.com/Artsdatabanken/nin-kart-frontend/issues");
   handleClickSource = () =>
-    window.open("https://github.com/Artsdatabanken/nin-innsyn/");
+    window.open("https://github.com/Artsdatabanken/nin-kart-frontend");
   handleClickLastNed = () => window.open("https://data.artsdatabanken.no/");
   handleClickLastOpp = () =>
     window.open(
