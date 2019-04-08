@@ -1,4 +1,5 @@
 if [$1 =! "master"]
+then
 echo "Zipping files"
 #echo $1
 tar --directory=build -zcf $1.tar.gz .
