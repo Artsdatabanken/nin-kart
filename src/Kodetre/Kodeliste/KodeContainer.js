@@ -2,26 +2,8 @@ import React from "react";
 import backend from "../../backend";
 import KodeVindu from "./KodeVindu";
 
-type State = {
-  data: Object
-};
-
-type Props = {
-  meta: Object,
-  kode: String,
-  mapBounds: Object,
-  onFitBounds: Function,
-  onMouseLeave: Function,
-  onMouseEnter: Function,
-  onNavigate: Function,
-  onToggleLayer: Function,
-  onUpdateMetaProp: Function,
-  erAktivert: Boolean,
-  opplystKode: String
-};
-
 // Informasjon om kode
-class KodeContainer extends React.Component<Props, State> {
+class KodeContainer extends React.Component {
   dataQueryNumber = 0;
   state = { data: {} };
 
@@ -61,7 +43,7 @@ class KodeContainer extends React.Component<Props, State> {
       onMouseLeave,
       onFitBounds,
       erAktivert,
-      opplystKode,
+      opplyst,
       onToggleLayer,
       onUpdateLayerProp,
       onUpdateMetaProp,
@@ -76,7 +58,7 @@ class KodeContainer extends React.Component<Props, State> {
         onMouseLeave={onMouseLeave}
         onFitBounds={onFitBounds}
         erAktivert={erAktivert}
-        opplystKode={opplystKode}
+        opplyst={opplyst}
         onToggleLayer={onToggleLayer}
         onUpdateLayerProp={onUpdateLayerProp}
         onUpdateMetaProp={onUpdateMetaProp}

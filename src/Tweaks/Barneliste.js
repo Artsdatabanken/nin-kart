@@ -29,7 +29,7 @@ const Barneliste = ({
             onUpdateLayerProp(i, "erSynlig", !node.erSynlig)
           }
           onMouseLeave={onMouseLeave}
-          onMouseEnter={() => onMouseEnter(kode)}
+          onMouseEnter={() => onMouseEnter({ kode, url: node.url })}
           onClick={() => {
             history.push(history.location.pathname + "?vis_barn=" + i);
           }}

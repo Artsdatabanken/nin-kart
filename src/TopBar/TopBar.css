@@ -6,7 +6,7 @@
 }
 
 .top_menu {
-  color: #22a2f291;
+  color: #4b909e91;
   height: 48px;
   width: 100%;
   padding: 0px;
@@ -143,6 +143,7 @@
     left: 5%;
     padding: 5px;
     height: 30px;
+    display: inline-block;
   }
 
   .resultatliste.mobile_active {
@@ -164,7 +165,7 @@
 }
 
 .textmatch {
-  color: #22a2f2;
+  color: #4b909e;
   font-weight: 500;
 }
 
@@ -179,7 +180,7 @@
 }
 
 .search_icon {
-  _margin-right: 10px;
+  margin-right: 20px;
   padding-right: 4px;
   position: fixed;
   right: 16px;
@@ -208,4 +209,12 @@
 .itemtext {
   text-align: right;
   font-size: 10pt;
+}
+
+.logo_image {
+  left: auto;
+  right: 10px;
+  position: absolute;
+  width: 25px;
+  top: 10px;
 }

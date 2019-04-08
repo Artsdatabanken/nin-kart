@@ -2,17 +2,18 @@ import React from "react";
 import SliderSetting from "../../Tweaks/SliderSetting";
 
 const map = {
-  3: "Hovedtypegrupper",
-  4: "Hovedtyper",
-  5: "Grunntyper"
+  0: "Dekningsområde",
+  1: "Hovedtypegrupper",
+  2: "Hovedtyper",
+  3: "Grunntyper"
 };
 const Detaljeringsgrad = ({ value, onUpdateLayerProp }) => {
   const nivå = map[Math.round(value)];
   return (
     <SliderSetting
-      value={value || 0}
-      min={3}
-      max={5}
+      value={value}
+      min={0}
+      max={3}
       step={0.1}
       tittel="Skalanivå"
       undertittel={nivå}

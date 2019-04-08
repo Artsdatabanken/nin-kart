@@ -2,13 +2,13 @@ import React from "react";
 import { withRouter } from "react-router";
 import { withStyles } from "@material-ui/core";
 import backend from "../backend";
-import Kart from "../Kart";
 import { SettingsContext } from "../SettingsContext";
 import språk from "../språk";
 import VenstreVinduContainer from "../VenstreVinduContainer";
 import bakgrunnskarttema from "./bakgrunnskarttema";
 import TopBar from "../TopBar/TopBar";
 import MobileNavigation from "../components/MobileNavigation";
+import Kart from "../Kart/LeafletTangram";
 
 const styles = {
   rot: {
@@ -41,11 +41,16 @@ class Grunnkart extends React.Component {
     this.state = {
       aktiveLag: aktive,
       opplystKode: "",
+      opplyst: {},
       actualBounds: null,
       fitBounds: null,
       meta: null,
       visKoder: false
     };
+    this.props.history.listen((location, action) => {
+      // Åpne menyen ved navigering
+      this.context.onNavigateToTab("meny");
+    });
   }
 
   handleActualBoundsChange = bounds => {
@@ -122,7 +127,7 @@ class Grunnkart extends React.Component {
         this.redirectTo(newUrl);
         return;
       }
-      this.setState({ meta: data, opplystKode: "" });
+      this.setState({ meta: data, opplystKode: "", opplyst: {} });
     });
   }
 
@@ -194,6 +199,7 @@ class Grunnkart extends React.Component {
   };
 
   render() {
+    const { history } = this.props;
     let erAktivert = false;
     if (this.state.meta)
       erAktivert = !!this.state.aktiveLag[this.state.meta.kode];
@@ -203,7 +209,11 @@ class Grunnkart extends React.Component {
         {context => {
           return (
             <>
-              <TopBar />
+              <TopBar
+                onSelectResult={item => {
+                  history.push("/" + item.url);
+                }}
+              />
               <div>
                 {context.aktivTab === "meny" && (
                   <div className="sidebar">
@@ -214,7 +224,7 @@ class Grunnkart extends React.Component {
                       onMouseLeave={this.handleMouseLeave}
                       onFitBounds={this.handleFitBounds}
                       erAktivert={erAktivert}
-                      opplystKode={this.state.opplystKode}
+                      opplyst={this.state.opplyst}
                       onToggleLayer={() => {
                         this.handleToggleLayer();
                         if (!context.visAktiveLag) context.onToggleAktiveLag();
@@ -236,10 +246,14 @@ class Grunnkart extends React.Component {
                   longitude={10.8}
                   zoom={3}
                   aktiveLag={this.state.aktiveLag}
+                  opplyst={this.state.opplyst}
                   opplystKode={this.state.opplystKode}
                   meta={this.state.meta}
                   onMapBoundsChange={this.handleActualBoundsChange}
                   onMapMove={context.onMapMove}
+                  onClick={latlng => {
+                    history.push(`?lng=${latlng.lng}&lat=${latlng.lat}`);
+                  }}
                 />
               </div>
               <MobileNavigation />
@@ -250,13 +264,17 @@ class Grunnkart extends React.Component {
     );
   }
 
-  handleMouseEnter = kode => {
-    this.setState({ opplystKode: kode });
+  handleMouseEnter = ({ kode, url }) => {
+    console.log("mouseenter", kode, url);
+    this.setState({ opplystKode: kode, opplyst: { kode: kode, url: url } });
   };
 
-  handleMouseLeave = kode => {
-    this.setState({ opplystKode: "" });
+  handleMouseLeave = () => {
+    console.log("mouseleave");
+    this.setState({ opplystKode: "", opplyst: {} });
   };
+
+  static contextType = SettingsContext;
 }
 
 export default withStyles(styles)(withRouter(Grunnkart));

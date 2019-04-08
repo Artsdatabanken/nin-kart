@@ -30,9 +30,9 @@ class Kartlagelement extends React.Component {
           dense={true}
           onClick={() => onClick(kode)}
           key={kode}
-          onMouseEnter={() => onMouseEnter(kode)}
+          onMouseEnter={() => onMouseEnter({ kode })}
           onMouseLeave={() => {
-            onMouseLeave(kode);
+            onMouseLeave();
           }}
         >
           <IconButton
