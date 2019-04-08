@@ -34,7 +34,7 @@ const KodeVindu = ({
   onMouseEnter,
   onMouseLeave,
   onToggleLayer,
-  opplystKode,
+  opplyst,
   onUpdateLayerProp,
   onUpdateMetaProp
 }) => {
@@ -65,6 +65,7 @@ const KodeVindu = ({
     ? Object.entries(meta.gradient).length
     : 0;
   const flaggLength = meta.flagg ? Object.entries(meta.flagg).length : 0;
+  console.log("kodevin", kode, opplyst);
   return (
     <SettingsContext.Consumer>
       {context => {
@@ -173,7 +174,7 @@ const KodeVindu = ({
                 onNavigate={onNavigate}
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
-                opplystKode={opplystKode}
+                opplyst={opplyst}
                 onUpdateMetaProp={onUpdateMetaProp}
               />
             </Ekspander>
@@ -181,6 +182,7 @@ const KodeVindu = ({
             {meta.gradient &&
               Object.entries(meta.gradient).map(([kode, node]) => (
                 <Ekspander
+                  key={kode}
                   expanded={expand[node.tittel.nb]}
                   visible={gradientLength > 0}
                   heading={node.tittel.nb}
@@ -196,6 +198,9 @@ const KodeVindu = ({
                   <Gradienter
                     gradient={node.barn}
                     onNavigate={onNavigate}
+                    onMouseEnter={onMouseEnter}
+                    onMouseLeave={onMouseLeave}
+                    opplyst={opplyst}
                     visKoder={context.visKoder}
                   />
                 </Ekspander>
@@ -255,6 +260,7 @@ const KodeVindu = ({
               onNavigate={onNavigate}
               expand={expand}
               onSetExpand={setExpand}
+              opplyst={opplyst}
             />
             <Nedlasting
               url={url}
@@ -264,6 +270,7 @@ const KodeVindu = ({
               onNavigate={onNavigate}
               expand={expand}
               onSetExpand={setExpand}
+              opplyst={opplyst}
             />
           </div>
         );

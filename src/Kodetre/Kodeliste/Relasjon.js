@@ -96,21 +96,23 @@ const titler = {
   }
 };
 
-const Relasjon = ({
-  heading,
-  url,
-  noder,
-  parentkode,
-  onNavigate,
-  onMouseEnter,
-  onMouseLeave,
-  opplystKode,
-  expand,
-  onSetExpand,
-  children
-}) => {
+const Relasjon = props => {
+  const {
+    heading,
+    noder,
+    parentkode,
+    onNavigate,
+    onMouseEnter,
+    onMouseLeave,
+    opplyst,
+    expand,
+    onSetExpand,
+    children
+  } = props;
+  console.log(props);
   const count = noder ? noder.length : 1;
   const x = titler[heading] || { title: heading };
+  console.log("rela", parentkode, opplyst);
   return (
     <Ekspander
       expanded={expand[heading]}
@@ -128,7 +130,7 @@ const Relasjon = ({
           metadata={noder}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
-          opplystKode={opplystKode}
+          opplyst={opplyst}
         />
       )}
       {children}

@@ -1,7 +1,7 @@
 import språk from "../../språk";
 import React, { Component } from "react";
 import tinycolor from "tinycolor2";
-import { ListItem, ListItemText, Typography } from "@material-ui/core";
+import { ListItem, Typography } from "@material-ui/core";
 import { SettingsContext } from "../../SettingsContext";
 import prettyKode from "./prettyKode";
 
@@ -9,7 +9,7 @@ const gaugeHeight = 7;
 
 function contrastingColor(erPå, color) {
   const luminance = new tinycolor(color).getLuminance();
-  const a = erPå ? 0.57 : 0.3;
+  const a = erPå ? 0.7 : 0.3;
   return luminance > 0.5 ? `rgba(0,0,0,${a})` : `rgba(255,255,255,${a})`;
 }
 
@@ -20,7 +20,17 @@ function rutefarge(erPå, col) {
 
 export default class KlassedeltGradient extends Component {
   render() {
-    const { tittel, trinn, onNavigate, url, kode, visKoder } = this.props;
+    const {
+      tittel,
+      trinn,
+      onMouseEnter,
+      onMouseLeave,
+      onNavigate,
+      url,
+      kode,
+      opplyst,
+      visKoder
+    } = this.props;
     const antall = trinn.length;
     let påFra = 99,
       påTil = -1;
@@ -33,55 +43,94 @@ export default class KlassedeltGradient extends Component {
     }
     const påRange = [trinn[påFra], trinn[påTil]];
     return (
-      <ListItem button dense onClick={() => onNavigate(url)}>
-        {visKoder && (
-          <Typography
-            variant="body2"
+      <ListItem
+        button
+        dense
+        style={{ root: { marginRight: 0 } }}
+        onClick={() => onNavigate(url)}
+        onMouseEnter={() => onMouseEnter({ kode, url })}
+        onMouseLeave={() => {
+          onMouseLeave();
+        }}
+      >
+        <div style={{ width: "100%" }}>
+          {visKoder && (
+            <Typography
+              variant="caption"
+              style={{
+                color: "rgba(0,0,0,0.34)",
+                fontWeight: 600,
+                position: "absolute",
+                top: 12,
+                right: 22
+              }}
+            >
+              {prettyKode(kode)}
+            </Typography>
+          )}
+          <Typography>{tittel}</Typography>
+          <Gradienttrinn
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={() => onMouseEnter({ kode, url })}
+            trinn={trinn}
+            range={påRange}
+            opplyst={opplyst}
+          />
+          <div
             style={{
-              color: "rgba(0,0,0,0.44)",
-              position: "absolute",
-              top: 6,
-              right: 40
+              display: "flex",
+              position: "relative",
+              top: -5
             }}
           >
-            {prettyKode(kode)}
-          </Typography>
-        )}
-        <ListItemText
-          primary={tittel}
-          secondary={
-            <>
-              <Gradienttrinn trinn={trinn} range={påRange} />
-              <div style={{ display: "flex", position: "relative", top: -10 }}>
-                <div
-                  style={{
-                    width: "50%",
-                    textAlign: "center"
-                  }}
-                >
-                  {språk(påRange[0].tittel)}
-                </div>
-                {påFra !== påTil && (
-                  <div style={{ width: "50%", textAlign: "center" }}>
-                    {språk(påRange[1].tittel)}
-                  </div>
-                )}
-              </div>
-            </>
-          }
-        />
+            <Typography
+              variant="caption"
+              style={{
+                width: "50%",
+                textAlign: "center"
+              }}
+            >
+              {språk(påRange[0].tittel)}
+            </Typography>
+            {påFra !== påTil && (
+              <Typography
+                variant="caption"
+                style={{
+                  width: "50%",
+                  textAlign: "center"
+                }}
+              >
+                {språk(påRange[1].tittel)}
+              </Typography>
+            )}
+          </div>
+        </div>
       </ListItem>
     );
   }
 }
 
-const Gradienttrinn = ({ trinn, range }) => {
+const Gradienttrinn = ({
+  trinn,
+  range,
+  opplyst,
+  onMouseEnter,
+  onMouseLeave
+}) => {
   return (
     <SettingsContext.Consumer>
       {context => (
-        <svg viewBox="-3 -1 104 13">
+        <svg viewBox="0 -2 102 13">
           <defs>
-            <filter id="f1" x="-2" y="0" width="104" height="10">
+            <filter id="av" x="-2" y="0" width="104" height="10">
+              <feDropShadow
+                dx="0.0"
+                dy="0.0"
+                stdDeviation="0.0"
+                floodOpacity="0.0"
+              />
+            </filter>
+            <filter id="på" x="-2" y="0" width="104" height="10">
               <feDropShadow
                 dx="0.2"
                 dy="0.2"
@@ -89,11 +138,11 @@ const Gradienttrinn = ({ trinn, range }) => {
                 floodOpacity="0.3"
               />
             </filter>
-            <filter id="f2" x="0" y="0" width="102" height="10">
+            <filter id="opplyst" x="0" y="0" width="106" height="12">
               <feDropShadow
-                dx="0.7"
-                dy="0.7"
-                stdDeviation="0.4"
+                dx="0.9"
+                dy="0.9"
+                stdDeviation="1.0"
                 floodOpacity="0.3"
               />
               )}
@@ -101,7 +150,15 @@ const Gradienttrinn = ({ trinn, range }) => {
           </defs>
           {trinn.map(e => {
             return (
-              !e.på && <Rute key={e.kode} {...e} visKoder={context.visKoder} />
+              !e.på && (
+                <Rute
+                  key={e.kode}
+                  {...e}
+                  visKoder={context.visKoder}
+                  onMouseEnter={onMouseEnter}
+                  onMouseLeave={onMouseLeave}
+                />
+              )
             );
           })}
 
@@ -116,7 +173,21 @@ const Gradienttrinn = ({ trinn, range }) => {
             ))}
           {trinn.map(e => {
             return (
-              e.på && <Rute key={e.kode} {...e} visKoder={context.visKoder} />
+              e.på && (
+                <Rute
+                  key={e.kode}
+                  {...e}
+                  visKoder={context.visKoder}
+                  opplyst={e.url === opplyst.url}
+                  onMouseEnter={() =>
+                    onMouseEnter({
+                      kode: e.kode,
+                      url: e.url
+                    })
+                  }
+                  onMouseLeave={onMouseLeave}
+                />
+              )
             );
           })}
         </svg>
@@ -125,21 +196,58 @@ const Gradienttrinn = ({ trinn, range }) => {
   );
 };
 
-const Rute = ({ farge, på, visKoder, min, max, tittel, kode }) => {
+const textSize = {
+  av: 3.8,
+  på: 3.8,
+  opplyst: 4.5
+};
+const rutestil = {
+  av: {
+    rx: 0,
+    y: 0.75,
+    height: gaugeHeight - 1.5,
+    stroke: "rgba(0,0,0,0.11)"
+  },
+  på: {
+    rx: 0.5,
+    y: 0,
+    height: gaugeHeight,
+    stroke: "rgba(99,99,99,0.55)"
+  },
+  opplyst: {
+    rx: 0.5,
+    y: -0.75,
+    height: gaugeHeight + 1.5,
+    stroke: "rgba(99,99,99,0.85)"
+  }
+};
+
+const Rute = ({
+  farge,
+  på,
+  visKoder,
+  opplyst,
+  min,
+  max,
+  tittel,
+  kode,
+  onMouseEnter,
+  onMouseLeave
+}) => {
   const colorOff = rutefarge(false, farge);
   const color = rutefarge(på, farge);
+  const state = opplyst ? "opplyst" : på ? "på" : "av";
   return (
     <React.Fragment key={min}>
       <rect
         x={min}
         width={max - min}
-        y={på ? 0 : 0.75}
-        height={på ? gaugeHeight : gaugeHeight - 1.5}
-        rx={på ? 1.5 : 0}
-        stroke={på ? "rgba(99,99,99,0.55)" : "rgba(0,0,0,0.11)"}
         strokeWidth={0.4}
         fill={colorOff}
-        filter={på ? "url(#f2)" : null}
+        filter={`url(#${state})`}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        {...rutestil[state]}
       >
         <title>{tittel.nb}</title>
         <animate
@@ -171,11 +279,12 @@ const Rute = ({ farge, på, visKoder, min, max, tittel, kode }) => {
         <text
           x={0.5 * (min + max)}
           y={0.53 * gaugeHeight}
-          fontSize={3.8}
+          fontSize={textSize[state]}
           fontWeight="500"
           fill={contrastingColor(på, color)}
           dominantBaseline="middle"
           textAnchor="middle"
+          style={{ pointerEvents: "none" }}
         >
           {kode[kode.length - 1].toLowerCase()}
         </text>
