@@ -1,10 +1,10 @@
-import { Card, CardMedia } from "@material-ui/core";
+import { CardMedia } from "@material-ui/core";
 import React from "react";
 import config from "../../config";
 import språk from "../../språk";
 import Tittelblokk from "./Tittelblokk";
 import tinycolor from "tinycolor2";
-import Knapperad from "./Knapperad";
+
 import { kontrastfarge } from "../../farger";
 
 class Kodekort extends React.Component {
@@ -48,15 +48,10 @@ class Kodekort extends React.Component {
       url,
       farge,
       prefiks,
-      bbox,
       tittel,
       nivå,
       overordnet,
-      classes,
-      erAktivert,
-      onNavigate,
-      onFitBounds,
-      onToggleLayer
+      onNavigate
     } = this.props;
     const tc = new tinycolor(farge);
     var new_url = config.getFotoOmslag(url, 408);
@@ -95,18 +90,6 @@ class Kodekort extends React.Component {
           onNavigate={onNavigate}
           overordnet={overordnet}
         />
-
-        {overordnet.length > 0 && (
-          <Knapperad
-            overordnet={overordnet}
-            classes={classes}
-            erAktivert={erAktivert}
-            bbox={bbox}
-            onFitBounds={onFitBounds}
-            onToggleLayer={onToggleLayer}
-            className="Temporary_class_for_detection_3"
-          />
-        )}
       </div>
     );
   }

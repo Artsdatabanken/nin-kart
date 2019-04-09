@@ -38,11 +38,27 @@
 
 .sidebar_element {
   background: #fff;
+  border-bottom: 1px solid #eaeaea;
 }
 
 .sidebar_background_element {
   padding: 0px;
 }
+
+.sidebar_top_image {
+  height: 250px;
+  margin-top: 142px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* 
+
+Hidden because currently not in use, but  
+may be relevant again should we decide to go back.
+/// remove this if content with new version.
+
 .sidebar_code_bubble_container {
   position: absolute;
   right: 10px;
@@ -61,10 +77,24 @@
   background: #81b2bb;
 }
 
-.sidebar_top_image {
-  height: 250px;
-  margin-top: 142px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+*/
+
+.sidebar_description p {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.sidebar_description a {
+  display: inline-block;
+  color: #36a3b2;
+  font-size: 12pt;
+  height: 12px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.sidebar_description svg {
+  width: 20px;
+  height: 20px;
+  vertical-align: top;
 }
