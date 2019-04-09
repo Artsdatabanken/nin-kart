@@ -1,5 +1,6 @@
 #!/bin/bash
 BRANCH=$1
+echo $BRANCH
 if [ "$BRANCH" != "master" ]
 then
 echo "Zipping files"
