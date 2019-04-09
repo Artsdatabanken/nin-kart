@@ -9,7 +9,10 @@ echo "Sending files to prod"
 sshpass -p $scp_pass scp -o StrictHostKeyChecking=no $BRANCH.tar.gz $scp_user@$scp_dest
 sleep 10
 curl -X POST --data-urlencode "payload={\"channel\": \"$slack_chan\", \"username\": \"travis not the band\", \"text\": \"$slack_command\", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/$SLACK_TOKEN
+if [ "${TRAVIS_PULL_REQUEST}" != "false" ]
+then
 curl -H "Authorization: token ${GITHUB_TOKEN}" -X POST -d "{\"body\": \"Magic\"}" "https://api.github.com/repos/${TRAVIS_REPO_SLUG}/issues/${TRAVIS_PULL_REQUEST}/comments"
+fi
 else 
 #docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 docker login -u="$2" -p="$3"
