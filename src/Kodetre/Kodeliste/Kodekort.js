@@ -65,7 +65,6 @@ class Kodekort extends React.Component {
         square={false}
         className="sidebar_top_area sidebar_background_element"
       >
-        {/*
         <CardMedia
           className="Temporary_class_for_detection"
           style={this.styles(url)}
@@ -74,11 +73,13 @@ class Kodekort extends React.Component {
           alt={"foto av" + tittel}
         />
 
-    */}
+        {/*
+      // for fremtidig oppgradering om vi ønsker det, isåfal må vi detektere transparang bakgrunn på et vis
         <div
           className="sidebar_top_image"
           style={{ backgroundImage: "url(" + new_url + ")" }}
         />
+        */}
 
         <Tittelblokk
           tittel={språk(tittel)}
