@@ -54,7 +54,7 @@ class Kodekort extends React.Component {
       onNavigate
     } = this.props;
     const tc = new tinycolor(farge);
-    var new_url = config.getFotoOmslag(url, 408);
+    //var new_url = config.getFotoOmslag(url, 408);
     return (
       <div
         square={false}

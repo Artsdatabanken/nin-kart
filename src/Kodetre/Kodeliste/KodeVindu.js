@@ -13,13 +13,7 @@ import Kurver from "./Kurver";
 import Kurve from "./Kurve";
 import Knapperad from "./Knapperad";
 import Link from "@material-ui/icons/Link";
-import {
-  CallSplit,
-  MergeType,
-  DescriptionOutlined,
-  ShowChart,
-  Gradient
-} from "@material-ui/icons/";
+import { CallSplit, MergeType, ShowChart, Gradient } from "@material-ui/icons/";
 import KurveContainer from "./KurveContainer";
 import Nedlasting from "./Nedlasting";
 
