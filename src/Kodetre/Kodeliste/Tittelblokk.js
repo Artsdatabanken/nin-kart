@@ -31,19 +31,16 @@ const Tittelblokk = ({
       <SettingsContext.Consumer>
         {context => (
           <div className="sidebar_title_container sidebar_element">
-            {context.visKoder && (
-              <div className="sidebar_code_bubble_container">
-                {pkode[0] && (
-                  <div className="sidebar_code_bubble_avatar">{pkode[0]}</div>
-                )}
-                {pkode[1] && (
-                  <div className="sidebar_code_bubble">{pkode[1]}</div>
-                )}
-              </div>
-            )}
-
             <h1 className="sidebar_title">{tittel}</h1>
-            <h2 className={classes.nivå}>{nivå}</h2>
+            <h2 className={classes.nivå}>
+              {nivå}
+              {context.visKoder && (
+                <span className="">
+                  {pkode[0] && <span className=""> - {pkode[0]}</span>}
+                  {pkode[1] && <span className=""> - {pkode[1]}</span>}
+                </span>
+              )}
+            </h2>
             {children}
           </div>
         )}
