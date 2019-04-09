@@ -1,3 +1,10 @@
+/* Normalize across browsers */
+
+.sidebar div {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
 .sidebar {
   position: fixed;
   height: 100vh;
@@ -15,10 +22,52 @@
   }
 }
 
+/* The white container boxes */
+
+.sidebar_element {
+  background: #fff;
+  border-bottom: 1px solid #eaeaea;
+  padding: 10px;
+}
+
+/* Container boxes with regular items, not pre-styled ones */
+.sidebar_title_container,
+.sidebar_description p {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+/* The link and icons  */
+.sidebar_description a {
+  display: inline-block;
+  color: #36a3b2;
+  font-size: 12pt;
+  height: 12px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.sidebar_element h3 svg,
+.sidebar_description svg {
+  color: #36a3b2;
+  width: 20px;
+  height: 20px;
+  vertical-align: top;
+  margin-right: 10px;
+}
+
+.sidebar_title_number {
+  float: right;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+/* Headings */
 .sidebar h1,
 .sidebar h2 {
   font-weight: 300;
-  margin: 10px;
 }
 
 .sidebar h1 {
@@ -30,71 +79,17 @@
   color: black;
 }
 
-.sidebar_element,
-.sidebar_background_element {
-  padding: 10px;
-  position: relative;
-}
-
-.sidebar_element {
-  background: #fff;
-  border-bottom: 1px solid #eaeaea;
-}
-
-.sidebar_background_element {
-  padding: 0px;
-}
-
-.sidebar_top_image {
-  height: 250px;
-  margin-top: 142px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-/* 
-
-Hidden because currently not in use, but  
-may be relevant again should we decide to go back.
-/// remove this if content with new version.
-
-.sidebar_code_bubble_container {
-  position: absolute;
-  right: 10px;
-  top: -25px;
-  border-radius: 15px;
-  vertical-align: bottom;
-  background: #b7d3d8;
-}
-
-.sidebar_code_bubble_container div {
+.sidebar_element h3 {
+  font-weight: 400;
   display: inline-block;
-  border-radius: 15px;
-  padding: 10px;
-}
-.sidebar_code_bubble_container .sidebar_code_bubble_avatar {
-  background: #81b2bb;
-}
-
-*/
-
-.sidebar_description p {
-  padding-right: 10px;
-  padding-left: 10px;
-}
-
-.sidebar_description a {
-  display: inline-block;
-  color: #36a3b2;
   font-size: 12pt;
-  height: 12px;
-  text-decoration: none;
-  margin-top: 10px;
+  margin: 0px;
+  padding: 10px;
+  vertical-align: top;
+  width: 100%;
 }
 
-.sidebar_description svg {
-  width: 20px;
-  height: 20px;
-  vertical-align: top;
+.clickable_element:hover {
+  cursor: pointer;
+  background: #edf4f5;
 }
