@@ -41,6 +41,7 @@ class Grunnkart extends React.Component {
     this.state = {
       aktiveLag: aktive,
       opplystKode: "",
+      opplyst: {},
       actualBounds: null,
       fitBounds: null,
       meta: null,
@@ -126,7 +127,7 @@ class Grunnkart extends React.Component {
         this.redirectTo(newUrl);
         return;
       }
-      this.setState({ meta: data, opplystKode: "" });
+      this.setState({ meta: data, opplystKode: "", opplyst: {} });
     });
   }
 
@@ -223,7 +224,7 @@ class Grunnkart extends React.Component {
                       onMouseLeave={this.handleMouseLeave}
                       onFitBounds={this.handleFitBounds}
                       erAktivert={erAktivert}
-                      opplystKode={this.state.opplystKode}
+                      opplyst={this.state.opplyst}
                       onToggleLayer={() => {
                         this.handleToggleLayer();
                         if (!context.visAktiveLag) context.onToggleAktiveLag();
@@ -245,6 +246,7 @@ class Grunnkart extends React.Component {
                   longitude={10.8}
                   zoom={3}
                   aktiveLag={this.state.aktiveLag}
+                  opplyst={this.state.opplyst}
                   opplystKode={this.state.opplystKode}
                   meta={this.state.meta}
                   onMapBoundsChange={this.handleActualBoundsChange}
@@ -262,12 +264,14 @@ class Grunnkart extends React.Component {
     );
   }
 
-  handleMouseEnter = kode => {
-    this.setState({ opplystKode: kode });
+  handleMouseEnter = ({ kode, url }) => {
+    console.log("mouseenter", kode, url);
+    this.setState({ opplystKode: kode, opplyst: { kode: kode, url: url } });
   };
 
-  handleMouseLeave = kode => {
-    this.setState({ opplystKode: "" });
+  handleMouseLeave = () => {
+    console.log("mouseleave");
+    this.setState({ opplystKode: "", opplyst: {} });
   };
 
   static contextType = SettingsContext;

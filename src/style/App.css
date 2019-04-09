@@ -74,6 +74,12 @@ div {
     top: calc(100vh - 150px) !important;
   }
 
+  .sidebar {
+    width: 100%;
+    max-width: 100%;
+    padding-top: 56px;
+  }
+
   .mobile_navigation {
     display: block;
     width: 100%;
@@ -118,4 +124,16 @@ div {
     color: white;
     font-weight: 600;
   }
+}
+
+.MuiPaper-elevation1-92,
+.MuiPaper-root-277,
+.MuiPaper-elevation1-280 {
+  box-shadow: none !important;
+}
+
+.MuiExpansionPanel-expanded-381,
+.MuiPaper-elevation1-92,
+.MuiExpansionPanel-expanded-516 {
+  margin: 1px !important;
 }
