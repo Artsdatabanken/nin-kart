@@ -39,16 +39,17 @@
 /* The link and icons  */
 .sidebar_description a {
   display: inline-block;
-  color: #36a3b2;
+  color: #4b909e;
   font-size: 12pt;
   height: 12px;
   text-decoration: none;
   margin-top: 10px;
 }
 
+.zoom_button svg,
 .sidebar_element h3 svg,
 .sidebar_description svg {
-  color: #36a3b2;
+  color: #4b909e;
   width: 20px;
   height: 20px;
   vertical-align: top;
@@ -93,4 +94,19 @@
 .clickable_element:hover {
   cursor: pointer;
   background: #edf4f5;
+}
+
+.zoom_button {
+  background-color: #eaeaea !important;
+  padding: 5px !important;
+  margin-left: 10px !important;
+}
+
+.zoom_button span {
+  text-transform: initial !important;
+  color: #4b909e;
+}
+
+.zoom_button:hover {
+  background-color: #b7d3d8 !important;
 }

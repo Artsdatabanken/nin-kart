@@ -28,7 +28,7 @@ const Knapperad = ({
 }) => (
   <>
     {bbox && (
-      <CardActions className={classes.cardActions}>
+      <div className="sidebar_element">
         {/* 
       <Button
           className={classes.button}
@@ -47,11 +47,11 @@ const Knapperad = ({
       </Button>
       */}
 
-        <Button className={classes.button} onClick={() => onFitBounds(bbox)}>
-          <ZoomOutMap className={classes.iconSmall} />
+        <Button className="zoom_button" onClick={() => onFitBounds(bbox)}>
+          <ZoomOutMap className="classes.iconSmall" />
           Zoom til
         </Button>
-      </CardActions>
+      </div>
     )}
   </>
 );
