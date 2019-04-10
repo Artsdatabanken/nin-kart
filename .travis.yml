@@ -22,7 +22,7 @@ deploy:
     skip_cleanup: true
 after_success:
   - npm run report-coverage
-  - ./deploy.sh $BRANCH $DOCKER_USERNAME $DOCKER_PASSWORD
+  - ./deploy.sh $BRANCH
 notifications:
   slack:
     on_success: change
