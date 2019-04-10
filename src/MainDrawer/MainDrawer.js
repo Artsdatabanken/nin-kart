@@ -16,7 +16,8 @@ import {
   CloudDownload,
   Comment,
   Waves,
-  Panorama
+  Panorama,
+  Info
 } from "@material-ui/icons";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
@@ -73,12 +74,18 @@ class MainDrawer extends Component {
                   icon={<Waves />}
                   primary="Landskap"
                 />
+                <Menyelement
+                  icon={<Info />}
+                  primary="Informasjon"
+                  onClick={this.handleClickInfoTab}
+                />
                 <Divider />
                 <Menyelement
                   icon={<CloudDownload />}
-                  primary="Laste ned data"
+                  primary="Last ned data"
                   onClick={this.handleClickLastNed}
                 />
+                <Divider />
                 <Innstillinger
                   visKoder={context.visKoder}
                   sorterPåKode={context.sorterPåKode}
@@ -134,6 +141,7 @@ class MainDrawer extends Component {
   handleClickMap = () => this.props.history.push("/");
   handleClickNatursystem = () =>
     this.props.history.push("/Natur_i_Norge/Natursystem/");
+  handleClickInfoTab = () => this.props.history.push("?info");
   handleClickLandskap = () =>
     this.props.history.push("/Natur_i_Norge/Landskap/");
   handleClickStat = () => this.props.history.push("/Natur_i_Norge/Stats/");
