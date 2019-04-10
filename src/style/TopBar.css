@@ -137,7 +137,7 @@
   }
 
   .input_imitator.mobile_active input {
-    width: 90%;
+    width: calc(90% - 80px);
     z-index: 20;
     position: fixed;
     left: 5%;
