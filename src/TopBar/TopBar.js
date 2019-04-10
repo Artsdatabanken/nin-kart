@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ResultatListe from "../Kodetre/Kodeliste/ResultatListe";
 import LookupControl from "../LookupControl/LookupControl";
 import axios from "axios";
-import "./TopBar.css";
+import "./../style/TopBar.css";
 
 const TopBar = ({ onSelectResult }) => {
   const [hits, setHits] = useState([]);

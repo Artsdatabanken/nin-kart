@@ -5,6 +5,7 @@
   color: #b7d3d8;
   color: #edf4f5;
   color: black;
+  helenes_border_colour: #eaeaea;
 }
 
 ::-webkit-scrollbar {
@@ -33,6 +34,11 @@ h5,
 h6 {
   font-family: "Roboto", "sans-serif";
   color: #4b909e;
+}
+
+strong,
+b {
+  font-weight: 500;
 }
 
 .hoverUnderline:hover {
