@@ -70,8 +70,7 @@ const KodeVindu = ({
             square="false"
             elevation={4}
             style={{
-              position: "relative",
-              top: -72
+              position: "relative"
             }}
           >
             <Kodekort

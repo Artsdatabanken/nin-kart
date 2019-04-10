@@ -115,3 +115,23 @@
   white-space: none;
   color: #81b2bb;
 }
+
+.page_topic_header {
+  height: 100px;
+  width: 100%;
+  padding-top: 80px;
+}
+
+.sidebar_top_image {
+  height: 297px;
+}
+
+.sidebar_top_image.trasparent_image {
+  filter: drop-shadow(rgba(0, 0, 0, 0.5) 5px 5px 4px);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: calc(297px - 20px);
+}
