@@ -1,13 +1,15 @@
-import { Card, CardMedia } from "@material-ui/core";
+import { CardMedia } from "@material-ui/core";
 import React from "react";
 import config from "../../config";
 import språk from "../../språk";
 import Tittelblokk from "./Tittelblokk";
 import tinycolor from "tinycolor2";
-import Knapperad from "./Knapperad";
+
 import { kontrastfarge } from "../../farger";
 
 class Kodekort extends React.Component {
+  // This component is used in the top part of the sidebar,
+  // contains image, header-row (Tittelblokk), and the zoom button navbar (Knapperad)
   state = {
     visBilde: false
   };
@@ -46,25 +48,34 @@ class Kodekort extends React.Component {
       url,
       farge,
       prefiks,
-      bbox,
       tittel,
       nivå,
       overordnet,
-      classes,
-      erAktivert,
-      onNavigate,
-      onFitBounds,
-      onToggleLayer
+      onNavigate
     } = this.props;
     const tc = new tinycolor(farge);
+    //var new_url = config.getFotoOmslag(url, 408);
     return (
-      <Card square={false}>
+      <div
+        square={false}
+        className="sidebar_top_area sidebar_background_element"
+      >
         <CardMedia
+          className="Temporary_class_for_detection"
           style={this.styles(url)}
           onClick={this.handleOpen}
           image={config.getFotoOmslag(url, 408)}
           alt={"foto av" + tittel}
         />
+
+        {/*
+      // for fremtidig oppgradering om vi ønsker det, isåfal må vi detektere transparang bakgrunn på et vis
+        <div
+          className="sidebar_top_image"
+          style={{ backgroundImage: "url(" + new_url + ")" }}
+        />
+        */}
+
         <Tittelblokk
           tittel={språk(tittel)}
           farge={tc.desaturate(30).toHexString()}
@@ -79,17 +90,7 @@ class Kodekort extends React.Component {
           onNavigate={onNavigate}
           overordnet={overordnet}
         />
-        {overordnet.length > 0 && (
-          <Knapperad
-            overordnet={overordnet}
-            classes={classes}
-            erAktivert={erAktivert}
-            bbox={bbox}
-            onFitBounds={onFitBounds}
-            onToggleLayer={onToggleLayer}
-          />
-        )}
-      </Card>
+      </div>
     );
   }
 }

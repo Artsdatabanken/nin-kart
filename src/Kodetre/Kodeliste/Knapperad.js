@@ -1,5 +1,5 @@
-import { Button, CardActions, withStyles } from "@material-ui/core";
-import { ZoomOutMap } from "@material-ui/icons/";
+import { Button, withStyles } from "@material-ui/core";
+import { OpenInNew } from "@material-ui/icons/";
 //import { LibraryAdd, ZoomOutMap, ColorLens } from "@material-ui/icons/";
 import React from "react";
 import { withRouter } from "react-router";
@@ -28,7 +28,7 @@ const Knapperad = ({
 }) => (
   <>
     {bbox && (
-      <CardActions className={classes.cardActions}>
+      <div className="sidebar_element">
         {/* 
       <Button
           className={classes.button}
@@ -47,11 +47,11 @@ const Knapperad = ({
       </Button>
       */}
 
-        <Button className={classes.button} onClick={() => onFitBounds(bbox)}>
-          <ZoomOutMap className={classes.iconSmall} />
+        <Button className="zoom_button" onClick={() => onFitBounds(bbox)}>
+          <OpenInNew className="classes.iconSmall" />
           Zoom til
         </Button>
-      </CardActions>
+      </div>
     )}
   </>
 );
