@@ -110,3 +110,8 @@
 .zoom_button:hover {
   background-color: #b7d3d8 !important;
 }
+
+.sidebar_code_field {
+  white-space: none;
+  color: #81b2bb;
+}

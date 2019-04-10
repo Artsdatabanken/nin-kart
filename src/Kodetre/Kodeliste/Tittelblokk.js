@@ -25,7 +25,7 @@ const Tittelblokk = ({
   children
 }) => {
   const classes = useStyles();
-  const pkode = prettyKode(kode).split(/-(.+)/);
+  const pkode = prettyKode(kode);
   return (
     <SettingsContainer>
       <SettingsContext.Consumer>
@@ -35,9 +35,8 @@ const Tittelblokk = ({
             <h2 className={classes.nivå}>
               {nivå}
               {context.visKoder && (
-                <span className="">
-                  {pkode[0] && <span className=""> - {pkode[0]}</span>}
-                  {pkode[1] && <span className=""> - {pkode[1]}</span>}
+                <span className="sidebar_code_field">
+                  {pkode && <span className=""> - {pkode}</span>}
                 </span>
               )}
             </h2>

@@ -1,5 +1,5 @@
 import { Button, CardActions, withStyles } from "@material-ui/core";
-import { ZoomOutMap } from "@material-ui/icons/";
+import { OpenInNew } from "@material-ui/icons/";
 //import { LibraryAdd, ZoomOutMap, ColorLens } from "@material-ui/icons/";
 import React from "react";
 import { withRouter } from "react-router";
@@ -48,7 +48,7 @@ const Knapperad = ({
       */}
 
         <Button className="zoom_button" onClick={() => onFitBounds(bbox)}>
-          <ZoomOutMap className="classes.iconSmall" />
+          <OpenInNew className="classes.iconSmall" />
           Zoom til
         </Button>
       </div>
