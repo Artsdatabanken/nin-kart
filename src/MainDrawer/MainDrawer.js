@@ -128,7 +128,7 @@ class MainDrawer extends Component {
   handleClickLastNed = () => window.open("https://data.artsdatabanken.no/");
   handleClickLastOpp = () =>
     window.open(
-      "https://github.com/Artsdatabanken/nin-innsyn/blob/master/docs/BidraMedData.md"
+      "https://github.com/Artsdatabanken/nin-kart-frontend/blob/master/docs/BidraMedData.md"
     );
   handleClickLogo = () => window.open("https://artsdatabanken.no");
   handleClickMap = () => this.props.history.push("/");

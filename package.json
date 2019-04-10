@@ -11,7 +11,7 @@
     "not op_mini all"
   ],
   "bugs": {
-    "url": "https://github.com/Artsdatabanken/nin-innsyn/issues"
+    "url": "https://github.com/Artsdatabanken/nin-kart-frontend/issues"
   },
   "dependencies": {
     "@artsdatabanken/typesystem": "^10.0.0",
@@ -71,7 +71,7 @@
     ]
   },
   "license": "MIT",
-  "name": "nin-innsyn",
+  "name": "nin-kart-frontend",
   "private": true,
   "scripts": {
     "build": "react-scripts build",
