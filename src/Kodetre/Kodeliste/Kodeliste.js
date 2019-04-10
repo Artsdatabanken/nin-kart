@@ -13,9 +13,13 @@ class Kodeliste extends React.Component {
       størsteAreal,
       apidata,
       metadata,
-      opplystKode,
-      onUpdateMetaProp
+      opplyst,
+      onUpdateMetaProp,
+      onMouseEnter,
+      onMouseLeave,
+      onNavigate
     } = this.props;
+    console.log("kodelist", parentkode, opplyst);
 
     if (!metadata || metadata.length <= 0) return null;
     return (
@@ -57,10 +61,10 @@ class Kodeliste extends React.Component {
                     størsteAreal={størsteAreal}
                     areal={apibarn.areal}
                     visKode={context.visKoder}
-                    onNavigate={this.onNavigate}
-                    onMouseEnter={this.onMouseEnter}
-                    onMouseLeave={this.onMouseLeave}
-                    opplystKode={opplystKode}
+                    onNavigate={onNavigate}
+                    onMouseEnter={onMouseEnter}
+                    onMouseLeave={onMouseLeave}
+                    opplyst={opplyst}
                     value={metabarnet.value}
                     onChange={v => onUpdateMetaProp(kode, "value", [...v])}
                   />
@@ -72,10 +76,6 @@ class Kodeliste extends React.Component {
       </SettingsContext.Consumer>
     );
   }
-  onNavigate = url => this.props.onNavigate(url);
-  onMouseEnter = kode =>
-    this.props.onMouseEnter && this.props.onMouseEnter(kode);
-  onMouseLeave = () => this.props.onMouseLeave && this.props.onMouseLeave();
 }
 
 const nøkkel = (node, sorterPåKode) => {

@@ -5,15 +5,15 @@ import { lagTerreng } from "./terreng";
 import draw from "./visualisering/";
 import sysconfig from "../../../config";
 
-function lagAktiveLag(aktive, viserKatalog, opplystKode, config) {
+function lagAktiveLag(aktive, viserKatalog, opplyst, config) {
   Object.keys(aktive).forEach(kode =>
-    lagEttLag(aktive[kode], opplystKode, viserKatalog, config)
+    lagEttLag(aktive[kode], opplyst, viserKatalog, config)
   );
 }
 
-function lagEttLag(lag, opplystKode, viserKatalog, config) {
-  if (!lag.erSynlig && opplystKode !== lag.kode) return;
-  opprettAktivtLag(lag, opplystKode, config, viserKatalog);
+function lagEttLag(lag, opplyst, viserKatalog, config) {
+  if (!lag.erSynlig && opplyst.kode !== lag.kode) return;
+  opprettAktivtLag(lag, opplyst, config, viserKatalog);
 }
 
 function farge(farge, viserKatalog) {
@@ -25,7 +25,7 @@ function farge(farge, viserKatalog) {
   return farge;
 }
 
-function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
+function opprettAktivtLag(lag, opplyst, config, viserKatalog) {
   const viz = lag.kart.format[lag.kart.aktivtFormat];
   if (!viz) return console.warn("No viz");
   let drawArgs = {
@@ -34,7 +34,7 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
     url: lag.url,
     farge: farge(lag.farge, viserKatalog),
     visEtiketter: lag.visEtiketter,
-    opplystKode: opplystKode,
+    opplyst: opplyst,
     bbox: lag.bbox,
     aktivtFormat: lag.kart.aktivtFormat,
     format: lag.kart.format,
@@ -44,11 +44,11 @@ function opprettAktivtLag(lag, opplystKode, config, viserKatalog) {
   };
   if (drawArgs.visBarn) {
     drawArgs.barn = lag.barn;
-    drawArgs.opplystBarn = lag.barn.find(x => x.kode === opplystKode);
+    drawArgs.opplystBarn = lag.barn.find(x => x.kode === opplyst.kode);
   }
   opprettEttLag(drawArgs, config);
   if (viz.kanHaTerreng) {
-    lagTerreng(lag.terreng, opplystKode, config);
+    lagTerreng(lag.terreng, opplyst.kode, config);
   }
 }
 
@@ -101,10 +101,9 @@ function updateScene(config: Object, props: Object) {
   const meta = props.meta;
   const viserKatalog = !!meta;
 
-  if (viserKatalog) opprettAktivtLag(meta, props.opplystKode, config, true);
-  lagAktiveLag(props.aktiveLag, viserKatalog, props.opplystKode, config);
+  if (viserKatalog) opprettAktivtLag(meta, props.opplyst, config, true);
+  lagAktiveLag(props.aktiveLag, viserKatalog, props.opplyst, config);
   lagTemp(config);
-  console.log(config);
   return config;
 }
 

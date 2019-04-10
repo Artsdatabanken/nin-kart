@@ -1,5 +1,6 @@
-import { Button, CardActions, withStyles } from "@material-ui/core";
-import { LibraryAdd, ZoomOutMap, ColorLens } from "@material-ui/icons/";
+import { Button, withStyles } from "@material-ui/core";
+import { OpenInNew } from "@material-ui/icons/";
+//import { LibraryAdd, ZoomOutMap, ColorLens } from "@material-ui/icons/";
 import React from "react";
 import { withRouter } from "react-router";
 
@@ -25,15 +26,17 @@ const Knapperad = ({
   onToggleLayer,
   onFitBounds
 }) => (
-  <CardActions className={classes.cardActions}>
-    <>
+  <>
+    {bbox && (
+      <div className="sidebar_element">
+        {/* 
       <Button
-        className={classes.button}
-        onClick={onToggleLayer}
-        disabled={erAktivert}
-      >
-        <LibraryAdd className={classes.iconSmall} />
-        Aktivér
+          className={classes.button}
+          onClick={onToggleLayer}
+          disabled={erAktivert}
+        >
+          <LibraryAdd className={classes.iconSmall} />
+          Aktivér
       </Button>
       <Button
         className={classes.button}
@@ -42,15 +45,15 @@ const Knapperad = ({
         <ColorLens className={classes.iconSmall} />
         Vis
       </Button>
-      {bbox && (
-        <Button className={classes.button} onClick={() => onFitBounds(bbox)}>
-          <ZoomOutMap className={classes.iconSmall} />
+      */}
+
+        <Button className="zoom_button" onClick={() => onFitBounds(bbox)}>
+          <OpenInNew className="classes.iconSmall" />
           Zoom til
         </Button>
-      )}
-    </>
+      </div>
     )}
-  </CardActions>
+  </>
 );
 
 export default withRouter(withStyles(styles)(Knapperad));

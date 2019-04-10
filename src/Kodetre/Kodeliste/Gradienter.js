@@ -6,7 +6,7 @@ const Gradienter = ({
   onNavigate,
   onMouseEnter,
   onMouseLeave,
-  opplystKode,
+  opplyst,
   visKoder
 }) => (
   <>
@@ -21,7 +21,7 @@ const Gradienter = ({
         onNavigate={onNavigate}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        opplystKode={opplystKode}
+        opplyst={opplyst}
       />
     ))}
   </>

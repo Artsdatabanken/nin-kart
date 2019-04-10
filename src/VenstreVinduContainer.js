@@ -6,6 +6,7 @@ import KodeContainer from "./Kodetre/Kodeliste/KodeContainer";
 import språk from "./språk";
 import Tweaks from "./Tweaks/";
 import Panel from "./components/Panel";
+import InfoTab from "./InfoTab";
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
@@ -46,6 +47,7 @@ class VenstreVinduContainer extends React.Component {
   render() {
     const {
       meta,
+      opplyst,
       onMouseEnter,
       onMouseLeave,
       onUpdateLayerProp,
@@ -68,6 +70,9 @@ class VenstreVinduContainer extends React.Component {
         </Panel>
       );
     }
+    if (location.search && location.search.startsWith("?info")) {
+      return <InfoTab />;
+    }
     if (location.search && location.search.startsWith("?lng")) {
       const { lng, lat, vis } = this.parseQueryString(location.search);
       return (
@@ -77,6 +82,7 @@ class VenstreVinduContainer extends React.Component {
       );
     }
     const kurve = finnKurvevariabler(this.props.aktiveLag);
+    console.log("vvc", meta && meta.kode, opplyst);
     return (
       <>
         <Panel>
@@ -87,7 +93,7 @@ class VenstreVinduContainer extends React.Component {
             onMouseLeave={onMouseLeave}
             onFitBounds={this.props.onFitBounds}
             erAktivert={this.props.erAktivert}
-            opplystKode={this.props.opplystKode}
+            opplyst={opplyst}
             onToggleLayer={this.props.onToggleLayer}
             mapBounds={this.props.mapBounds}
             language={this.props.language}

@@ -1,0 +1,117 @@
+/* Normalize across browsers */
+
+.sidebar div {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+.sidebar {
+  position: fixed;
+  height: 100vh;
+  overflow-x: hidden;
+  max-width: 408px;
+  background: #ededed;
+  width: 100%;
+}
+
+@media only screen and (max-width: 678px) {
+  .sidebar {
+    width: 100%;
+    max-width: 100%;
+    padding-top: 56px;
+  }
+}
+
+/* The white container boxes */
+.sidebar_element {
+  background: #fff;
+  border-bottom: 1px solid #eaeaea;
+  padding: 10px;
+}
+
+/* Container boxes with regular items, not pre-styled ones */
+.sidebar_title_container,
+.sidebar_description p {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+/* The link and icons  */
+.sidebar_description a {
+  display: inline-block;
+  color: #4b909e;
+  font-size: 12pt;
+  height: 12px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.zoom_button svg,
+.sidebar_element h3 svg,
+.sidebar_description svg {
+  color: #4b909e;
+  width: 20px;
+  height: 20px;
+  vertical-align: top;
+  margin-right: 10px;
+}
+
+.sidebar_title_number {
+  float: right;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+/* Headings */
+.sidebar h1,
+.sidebar h2 {
+  font-weight: 300;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.sidebar h1 {
+  font-size: 18pt;
+}
+
+.sidebar h2 {
+  font-size: 12pt;
+  color: black;
+}
+
+.sidebar_element h3 {
+  font-weight: 400;
+  display: inline-block;
+  font-size: 12pt;
+  margin: 0px;
+  padding: 5px;
+  vertical-align: top;
+  width: 100%;
+}
+
+.clickable_element:hover {
+  cursor: pointer;
+  background: #edf4f5;
+}
+
+.zoom_button {
+  background-color: #eaeaea !important;
+  padding: 5px !important;
+  margin-left: 10px !important;
+}
+
+.zoom_button span {
+  text-transform: initial !important;
+  color: #4b909e;
+}
+
+.zoom_button:hover {
+  background-color: #b7d3d8 !important;
+}
+
+.sidebar_code_field {
+  white-space: none;
+  color: #81b2bb;
+}

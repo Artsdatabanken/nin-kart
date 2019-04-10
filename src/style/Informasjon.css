@@ -25,6 +25,10 @@ div {
   z-index: 50;
 }
 
+.info_component:hover {
+  cursor: pointer;
+}
+
 .infoBox {
   position: relative;
   width: 100%;
@@ -66,11 +70,6 @@ div {
   background: #fff;
   padding: 10px;
   border-radius: 4px;
-}
-
-h1,
-h2 {
-  color: #36a3b2;
 }
 
 .ingress {

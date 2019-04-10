@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import { withRouter } from "react-router";
-import "./Informasjon.css";
+import ".././style/Informasjon.css";
 
 const Informasjon = props => {
   if (props.location.pathname !== "/") return null;
@@ -48,7 +48,7 @@ const Informasjon = props => {
                   />
                   <p>
                     Hvis du klikker i søkefeltet kan du velge landskap eller
-                    natursystem, og navigere deg videre for å se det markert på
+                    natursystem, og navigere deg videre for å se det markert i
                     kartet. Under hierarki kan du flytte deg dypere og dypere
                     inn i systemet, og fargeindikatorene under natursystem vil
                     vise deg hva som er vist i kartet.

@@ -9,16 +9,11 @@ import Kodeliste from "./Kodeliste";
 import Statistikk from "./Statistikk";
 import Gradienter from "./Gradienter";
 import Ekspander from "./Ekspander";
-import Ingress from "./Ingress";
 import Kurver from "./Kurver";
 import Kurve from "./Kurve";
-import {
-  CallSplit,
-  MergeType,
-  DescriptionOutlined,
-  ShowChart,
-  Gradient
-} from "@material-ui/icons/";
+import Knapperad from "./Knapperad";
+import Link from "@material-ui/icons/Link";
+import { CallSplit, MergeType, ShowChart, Gradient } from "@material-ui/icons/";
 import KurveContainer from "./KurveContainer";
 import Nedlasting from "./Nedlasting";
 
@@ -34,7 +29,7 @@ const KodeVindu = ({
   onMouseEnter,
   onMouseLeave,
   onToggleLayer,
-  opplystKode,
+  opplyst,
   onUpdateLayerProp,
   onUpdateMetaProp
 }) => {
@@ -53,6 +48,7 @@ const KodeVindu = ({
     bbox,
     ingress,
     infoUrl,
+    classes,
     tittel,
     nivå,
     overordnet,
@@ -65,6 +61,7 @@ const KodeVindu = ({
     ? Object.entries(meta.gradient).length
     : 0;
   const flaggLength = meta.flagg ? Object.entries(meta.flagg).length : 0;
+  console.log("kodevin", kode, opplyst);
   return (
     <SettingsContext.Consumer>
       {context => {
@@ -97,17 +94,32 @@ const KodeVindu = ({
                 value={meta.depth}
               />
             )}
-            <Ekspander
-              visible={!!ingress}
-              expanded={expand.ingress}
-              heading="Beskrivelse"
-              icon={<DescriptionOutlined />}
-              onExpand={() =>
-                setExpand({ ...expand, ingress: !expand.ingress })
-              }
-            >
-              <Ingress beskrivelse={ingress} infoUrl={infoUrl} />
-            </Ekspander>
+
+            {ingress && (
+              <div className="sidebar_description sidebar_element">
+                <p>
+                  {ingress} <br />
+                  {infoUrl && (
+                    <a href={infoUrl}>
+                      <Link /> Les mer
+                    </a>
+                  )}
+                </p>
+              </div>
+            )}
+
+            {overordnet.length > 0 && (
+              <Knapperad
+                overordnet={overordnet}
+                classes={classes}
+                erAktivert={erAktivert}
+                bbox={bbox}
+                onFitBounds={onFitBounds}
+                onToggleLayer={onToggleLayer}
+                className="Temporary_class_for_detection_3"
+              />
+            )}
+
             <Ekspander
               visible={prefiks !== "AO" && !!stats}
               expanded={expand.stats}
@@ -173,7 +185,7 @@ const KodeVindu = ({
                 onNavigate={onNavigate}
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
-                opplystKode={opplystKode}
+                opplyst={opplyst}
                 onUpdateMetaProp={onUpdateMetaProp}
               />
             </Ekspander>
@@ -181,6 +193,7 @@ const KodeVindu = ({
             {meta.gradient &&
               Object.entries(meta.gradient).map(([kode, node]) => (
                 <Ekspander
+                  key={kode}
                   expanded={expand[node.tittel.nb]}
                   visible={gradientLength > 0}
                   heading={node.tittel.nb}
@@ -196,6 +209,9 @@ const KodeVindu = ({
                   <Gradienter
                     gradient={node.barn}
                     onNavigate={onNavigate}
+                    onMouseEnter={onMouseEnter}
+                    onMouseLeave={onMouseLeave}
+                    opplyst={opplyst}
                     visKoder={context.visKoder}
                   />
                 </Ekspander>
@@ -255,6 +271,7 @@ const KodeVindu = ({
               onNavigate={onNavigate}
               expand={expand}
               onSetExpand={setExpand}
+              opplyst={opplyst}
             />
             <Nedlasting
               url={url}
@@ -264,6 +281,7 @@ const KodeVindu = ({
               onNavigate={onNavigate}
               expand={expand}
               onSetExpand={setExpand}
+              opplyst={opplyst}
             />
           </div>
         );

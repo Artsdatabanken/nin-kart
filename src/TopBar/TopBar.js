@@ -1,13 +1,10 @@
-import { withRouter } from "react-router";
 import React, { useEffect, useState } from "react";
 import ResultatListe from "../Kodetre/Kodeliste/ResultatListe";
 import LookupControl from "../LookupControl/LookupControl";
 import axios from "axios";
-import "./TopBar.css";
+import "./../style/TopBar.css";
 
-// Ny fancy
-
-const TopBar = ({ history }) => {
+const TopBar = ({ onSelectResult }) => {
   const [hits, setHits] = useState([]);
   const [query, setQuery] = useState();
 
@@ -24,11 +21,12 @@ const TopBar = ({ history }) => {
     <div className="top_expander">
       <div className="top_menu">
         <LookupControl onQueryChange={e => setQuery(e.target.value)} />
-        {/*}
-        <div className="top_menu_item">Naturtyper</div>
-        <div className="top_menu_item">Landskap</div>
-        <div className="top_menu_item">Statistikk for Art</div>
-  */}
+        <img
+          src="/logoer/adb32.png"
+          className="logo_image"
+          alt="artsdatabanken logo"
+        />
+
         <h1>
           Natur i Norge{" "}
           <img
@@ -42,11 +40,11 @@ const TopBar = ({ history }) => {
         searchResults={hits}
         onSelect={item => {
           setQuery(null);
-          history.push("/" + item.url);
+          onSelectResult(item);
         }}
       />
     </div>
   );
 };
 
-export default withRouter(TopBar);
+export default TopBar;
