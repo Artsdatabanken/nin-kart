@@ -9,7 +9,7 @@ echo $TRAVIS_PULL_REQUEST
 github_message=https://nin.artsdatabanken.no/$BRANCH
 BRANCH=$1
 echo "Making archive..."
-tar -czf $BRANCH.tar.gz public/ deploy-www.js
+tar --directory=build -zcf $1.tar.gz .
 echo "Deploying..."
 sshpass -p $scp_pass scp -o StrictHostKeyChecking=no $BRANCH.tar.gz $scp_user@$scp_dest
 #Posting to slack to trigger deployment
