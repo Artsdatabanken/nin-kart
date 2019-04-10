@@ -6,6 +6,7 @@ import KodeContainer from "./Kodetre/Kodeliste/KodeContainer";
 import språk from "./språk";
 import Tweaks from "./Tweaks/";
 import Panel from "./components/Panel";
+import InfoTab from "./InfoTab";
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
@@ -68,6 +69,9 @@ class VenstreVinduContainer extends React.Component {
           />
         </Panel>
       );
+    }
+    if (location.search && location.search.startsWith("?info")) {
+      return <InfoTab />;
     }
     if (location.search && location.search.startsWith("?lng")) {
       const { lng, lat, vis } = this.parseQueryString(location.search);

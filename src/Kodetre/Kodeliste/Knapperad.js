@@ -1,4 +1,4 @@
-import { Button, CardActions, withStyles } from "@material-ui/core";
+import { Button, withStyles } from "@material-ui/core";
 import { OpenInNew } from "@material-ui/icons/";
 //import { LibraryAdd, ZoomOutMap, ColorLens } from "@material-ui/icons/";
 import React from "react";

@@ -36,6 +36,11 @@ h6 {
   color: #4b909e;
 }
 
+strong,
+b {
+  font-weight: 500;
+}
+
 .hoverUnderline:hover {
   text-decoration: underline;
 }
