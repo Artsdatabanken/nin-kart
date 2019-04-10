@@ -4,12 +4,13 @@
 #- export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
 #- echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH"
 #echo $BRANCH
+BRANCH=$1
+echo $BRANCH
 echo $TRAVIS_REPO_SLUG
 echo $TRAVIS_PULL_REQUEST
 github_message=https://nin.artsdatabanken.no/$BRANCH
-BRANCH=$1
 echo "Making archive..."
-tar --directory=build -zcf $1.tar.gz .
+tar --directory=build -zcf $BRANCH.tar.gz .
 echo "Deploying..."
 sshpass -p $scp_pass scp -o StrictHostKeyChecking=no $BRANCH.tar.gz $scp_user@$scp_dest
 #Posting to slack to trigger deployment
