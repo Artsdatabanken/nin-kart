@@ -9,16 +9,11 @@ import Kodeliste from "./Kodeliste";
 import Statistikk from "./Statistikk";
 import Gradienter from "./Gradienter";
 import Ekspander from "./Ekspander";
-import Ingress from "./Ingress";
 import Kurver from "./Kurver";
 import Kurve from "./Kurve";
-import {
-  CallSplit,
-  MergeType,
-  DescriptionOutlined,
-  ShowChart,
-  Gradient
-} from "@material-ui/icons/";
+import Knapperad from "./Knapperad";
+import Link from "@material-ui/icons/Link";
+import { CallSplit, MergeType, ShowChart, Gradient } from "@material-ui/icons/";
 import KurveContainer from "./KurveContainer";
 import Nedlasting from "./Nedlasting";
 
@@ -53,6 +48,7 @@ const KodeVindu = ({
     bbox,
     ingress,
     infoUrl,
+    classes,
     tittel,
     nivå,
     overordnet,
@@ -98,17 +94,32 @@ const KodeVindu = ({
                 value={meta.depth}
               />
             )}
-            <Ekspander
-              visible={!!ingress}
-              expanded={expand.ingress}
-              heading="Beskrivelse"
-              icon={<DescriptionOutlined />}
-              onExpand={() =>
-                setExpand({ ...expand, ingress: !expand.ingress })
-              }
-            >
-              <Ingress beskrivelse={ingress} infoUrl={infoUrl} />
-            </Ekspander>
+
+            {ingress && (
+              <div className="sidebar_description sidebar_element">
+                <p>
+                  {ingress} <br />
+                  {infoUrl && (
+                    <a href={infoUrl}>
+                      <Link /> Les mer
+                    </a>
+                  )}
+                </p>
+              </div>
+            )}
+
+            {overordnet.length > 0 && (
+              <Knapperad
+                overordnet={overordnet}
+                classes={classes}
+                erAktivert={erAktivert}
+                bbox={bbox}
+                onFitBounds={onFitBounds}
+                onToggleLayer={onToggleLayer}
+                className="Temporary_class_for_detection_3"
+              />
+            )}
+
             <Ekspander
               visible={prefiks !== "AO" && !!stats}
               expanded={expand.stats}

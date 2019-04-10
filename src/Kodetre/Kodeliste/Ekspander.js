@@ -1,53 +1,12 @@
 import React from "react";
-import {
-  ExpansionPanelDetails,
-  ExpansionPanel,
-  withStyles,
-  Typography
-} from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Link from "@material-ui/icons/Link";
 import OpenData from "./OpenData";
-import EkspanderSummary from "./EkspanderSummary";
-
-const styles = theme => ({
-  root: {
-    width: "100%"
-  },
-  icon: {
-    position: "absolute",
-    left: 16,
-    top: "50%",
-    transform: "translateY(-50%) rotate(0deg)",
-    paddingRight: 6,
-    color: "rgba(0,0,0,0.5)"
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    flexBasis: "90%",
-    flexShrink: 1,
-    lineHeight: "2.6em",
-    paddingLeft: 24,
-    color: "rgba(0,0,0,0.5)"
-  },
-  secondaryHeading: {
-    fontSize: theme.typography.pxToRem(15),
-    lineHeight: "2.6em",
-    fontWeight: 500,
-    whiteSpace: "nowrap",
-    color: "rgba(0,0,0,0.3)"
-  },
-  panelDetails: {
-    display: "block",
-    _padding: 0
-  }
-});
 
 const Ekspander = ({
   expanded,
   visible = true,
   onExpand,
-  classes,
   children,
   heading,
   heading2,
@@ -56,28 +15,28 @@ const Ekspander = ({
   if (!visible) return null;
   if (heading === "Datakilde") icon = <OpenData />;
   return (
-    <ExpansionPanel
+    <div
       expanded={expanded}
-      onChange={onExpand}
-      className={classes.panel}
+      onClick={onExpand}
+      className="sidebar_element clickable_element"
     >
-      <EkspanderSummary
-        expandIcon={<ExpandMoreIcon />}
-        className={classes.panelSummary}
-      >
-        <div className={classes.icon}>{icon || <Link />}</div>
-        <Typography className={classes.heading}>{heading}</Typography>
+      <h3>
+        {icon || <Link />}
+        {heading}
         {heading2 && (
-          <Typography className={classes.secondaryHeading}>
+          <span className="sidebar_title_number">
             {heading2}
-          </Typography>
+            {expanded === true && (
+              <ExpandMoreIcon className="expand_icon rotated" />
+            )}
+            {expanded !== true && <ExpandMoreIcon className="expand_icon" />}
+          </span>
         )}
-      </EkspanderSummary>
-      <ExpansionPanelDetails className={classes.panelDetails}>
-        {children}
-      </ExpansionPanelDetails>
-    </ExpansionPanel>
+      </h3>
+
+      {expanded === true && <div className="expander_content">{children}</div>}
+    </div>
   );
 };
 
-export default withStyles(styles)(Ekspander);
+export default Ekspander;

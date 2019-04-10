@@ -1,4 +1,4 @@
-import { Delete, InfoOutlined, ZoomOutMap } from "@material-ui/icons/";
+import { Delete, InfoOutlined, OpenInNew } from "@material-ui/icons/";
 import {
   Divider,
   ListItem,
@@ -80,7 +80,7 @@ class Generelt extends Component {
                 onFitBounds(bbox);
               }}
             >
-              <ZoomOutMap className={classes.iconSmall} />
+              <OpenInNew className={classes.iconSmall} />
               Zoom til
             </Button>
           )}
