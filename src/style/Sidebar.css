@@ -124,12 +124,14 @@
 
 .sidebar_top_image {
   height: 250px;
+  background: #b7d3d8;
   background-size: cover;
   background-position: center;
 }
 
 .sidebar_top_image.trasparent_image {
   filter: drop-shadow(rgba(0, 0, 0, 0.5) 5px 5px 4px);
+  background: transparent;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

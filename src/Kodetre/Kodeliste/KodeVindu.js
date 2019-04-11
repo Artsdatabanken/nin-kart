@@ -86,6 +86,7 @@ const KodeVindu = ({
               erAktivert={erAktivert}
               onFitBounds={onFitBounds}
               onToggleLayer={onToggleLayer}
+              bilde={meta.foto}
             />
             {kode === "NN-LA-TI" && (
               <Detaljeringsgrad

@@ -36,10 +36,16 @@ class Kodekort extends React.Component {
       tittel,
       nivå,
       overordnet,
-      onNavigate
+      onNavigate,
+      bilde
     } = this.props;
     const tc = new tinycolor(farge);
-    var new_url = config.getFotoOmslag(url, 408);
+
+    var new_url = "no_image";
+    if (bilde.forside != null) {
+      new_url = bilde.forside.url;
+    }
+
     return (
       <div
         square={false}
@@ -54,7 +60,11 @@ class Kodekort extends React.Component {
             "sidebar_top_image"
           }
           onClick={this.handleOpen}
-          style={{ backgroundImage: "url(" + new_url + ")" }}
+          style={
+            (new_url !== "no_image" && {
+              backgroundImage: "url(" + new_url + ")"
+            }) || { height: 0 }
+          }
           alt={"foto av" + tittel}
         />
 
