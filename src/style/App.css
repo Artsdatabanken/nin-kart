@@ -62,15 +62,6 @@ div {
   max-width: 100%;
 }
 
-.sidebar {
-  position: fixed;
-  height: 100vh;
-  overflow-x: hidden;
-  max-width: 408px;
-  background: #ededed;
-  width: 100%;
-}
-
 .mobile_navigation {
   display: none;
 }
@@ -78,12 +69,6 @@ div {
 @media only screen and (max-width: 678px) {
   .leaflet-top {
     top: calc(100vh - 150px) !important;
-  }
-
-  .sidebar {
-    width: 100%;
-    max-width: 100%;
-    padding-top: 56px;
   }
 
   .mobile_navigation {

@@ -45,9 +45,7 @@ class Kodekort extends React.Component {
         square={false}
         className="sidebar_top_area sidebar_background_element"
       >
-        <div className="sidebar_element page_topic_header">
-          Header her? Midlertidig.
-        </div>
+        <div className="sidebar_element page_topic_header" />
 
         <div
           className={

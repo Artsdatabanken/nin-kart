@@ -1,17 +1,17 @@
 /* Normalize across browsers */
 
-.sidebar div {
-  box-sizing: border-box;
-  margin: 0px;
-}
-
 .sidebar {
   position: fixed;
   height: 100vh;
   overflow-x: hidden;
   max-width: 408px;
-  background: #ededed;
+  background: #fbfbfb;
   width: 100%;
+}
+
+.sidebar div {
+  box-sizing: border-box;
+  margin: 0px;
 }
 
 @media only screen and (max-width: 678px) {
@@ -117,13 +117,15 @@
 }
 
 .page_topic_header {
-  height: 100px;
+  height: 60px;
   width: 100%;
-  padding-top: 80px;
+  padding-top: 0px;
 }
 
 .sidebar_top_image {
-  height: 297px;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
 }
 
 .sidebar_top_image.trasparent_image {
@@ -133,5 +135,5 @@
   background-repeat: no-repeat;
   margin-top: 10px;
   margin-bottom: 10px;
-  height: calc(297px - 20px);
+  height: calc(250px - 20px);
 }
