@@ -1,6 +1,4 @@
-import { CardMedia } from "@material-ui/core";
 import React from "react";
-import config from "../../config";
 import språk from "../../språk";
 import Tittelblokk from "./Tittelblokk";
 import tinycolor from "tinycolor2";
