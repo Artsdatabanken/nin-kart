@@ -52,7 +52,22 @@ function opprettAktivtLag(lag, opplyst, config, viserKatalog) {
   }
 }
 
+function sladd(url) {
+  if (!url) return false;
+  if (url.indexOf("Regional_naturvariasjon") >= 0) return false;
+  if (url.indexOf("Erosjon") >= 0) return false;
+  if (url.indexOf("Finmat") >= 0) return false;
+  if (url.indexOf("Sediment") >= 0) return false;
+  if (url.indexOf("Ultrama") >= 0) return false;
+  if (url.indexOf("Kalk") >= 0) return false;
+  if (url.indexOf("Natur_i_Norge/Natursystem") >= 0) return true;
+  return false;
+}
+
 function opprettEttLag(drawArgs, config) {
+  // MDIR-sladden
+  if (sladd(drawArgs.url)) return {};
+
   const renderer = draw[drawArgs.aktivtFormat];
   const format = drawArgs.format[drawArgs.aktivtFormat];
   drawArgs.format = format;
