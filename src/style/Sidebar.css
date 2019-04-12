@@ -1,17 +1,17 @@
 /* Normalize across browsers */
 
-.sidebar div {
-  box-sizing: border-box;
-  margin: 0px;
-}
-
 .sidebar {
   position: fixed;
   height: 100vh;
   overflow-x: hidden;
   max-width: 408px;
-  background: #ededed;
+  background: #fbfbfb;
   width: 100%;
+}
+
+.sidebar div {
+  box-sizing: border-box;
+  margin: 0px;
 }
 
 @media only screen and (max-width: 678px) {
@@ -114,4 +114,28 @@
 .sidebar_code_field {
   white-space: none;
   color: #81b2bb;
+}
+
+.page_topic_header {
+  height: 60px;
+  width: 100%;
+  padding-top: 0px;
+}
+
+.sidebar_top_image {
+  height: 250px;
+  background: #b7d3d8;
+  background-size: cover;
+  background-position: center;
+}
+
+.sidebar_top_image.trasparent_image {
+  filter: drop-shadow(rgba(0, 0, 0, 0.5) 5px 5px 4px);
+  background: transparent;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: calc(250px - 20px);
 }

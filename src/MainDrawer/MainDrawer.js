@@ -15,9 +15,14 @@ import {
   CloudUpload,
   CloudDownload,
   Comment,
-  Waves,
   Panorama,
-  Info
+  Info,
+  Pets,
+  Landscape,
+  BubbleChart,
+  Layers,
+  Healing,
+  AssignmentInd
 } from "@material-ui/icons";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
@@ -71,19 +76,57 @@ class MainDrawer extends Component {
                 />
                 <Menyelement
                   onClick={this.handleClickLandskap}
-                  icon={<Waves />}
+                  icon={<Landscape />}
                   primary="Landskap"
                 />
+                <Menyelement
+                  onClick={this.handleClickFylke}
+                  icon={<Layers />}
+                  primary="Fylke"
+                />
+                <Menyelement
+                  onClick={this.handleClickNaturvernområde}
+                  icon={<Healing />}
+                  primary="Naturvernområde"
+                />
+                <Menyelement
+                  onClick={this.handleClickTruet_art_natur}
+                  icon={<BubbleChart />}
+                  primary="Truet art/natur"
+                />
+                <Menyelement
+                  onClick={this.handleClickArt}
+                  icon={<Pets />}
+                  primary="Art"
+                />
+                <Divider />
                 <Menyelement
                   icon={<Info />}
                   primary="Informasjon"
                   onClick={this.handleClickInfoTab}
                 />
                 <Divider />
+                <ListSubheader>Datagrunnlag</ListSubheader>
                 <Menyelement
                   icon={<CloudDownload />}
                   primary="Last ned data"
                   onClick={this.handleClickLastNed}
+                />
+                <Menyelement
+                  onClick={this.handleClickLastOpp}
+                  icon={<CloudUpload />}
+                  primary="Levere data"
+                />
+
+                <Menyelement
+                  onClick={this.handleClickDatakilde}
+                  icon={<AssignmentInd />}
+                  primary="Datakilder"
+                />
+                <Menyelement
+                  onClick={this.handleClickSource}
+                  icon={<GitHub />}
+                  primary="Kildekode"
                 />
                 <Divider />
                 <Innstillinger
@@ -93,24 +136,13 @@ class MainDrawer extends Component {
                   onNavigate={this.handleNavigate}
                 />
                 <Divider />
-                <ListSubheader>Bidra</ListSubheader>
+                <ListSubheader>Kontakt</ListSubheader>
                 <Menyelement
                   onClick={this.handleClickBidra}
                   icon={<Comment />}
                   primary="Tilbakemeldinger"
                 />
-                <Menyelement
-                  onClick={this.handleClickSource}
-                  icon={<GitHub />}
-                  primary="Kildekode"
-                />
-                <Menyelement
-                  onClick={this.handleClickLastOpp}
-                  icon={<CloudUpload />}
-                  primary="Levere data"
-                />
-                <Divider />
-                <ListSubheader>Driftes av</ListSubheader>
+
                 <ListItem onClick={this.handleClickLogo} button>
                   <div className={classes.link}>
                     <BildeAvatar
@@ -119,7 +151,7 @@ class MainDrawer extends Component {
                       size="small"
                     />
                   </div>
-                  <ListItemText primary="Artsdatabanken" />
+                  <ListItemText primary="   Artsdatabanken" />
                 </ListItem>
               </div>
             </List>
@@ -135,7 +167,7 @@ class MainDrawer extends Component {
   handleClickLastNed = () => window.open("https://data.artsdatabanken.no/");
   handleClickLastOpp = () =>
     window.open(
-      "https://github.com/Artsdatabanken/nin-kart-frontend/blob/master/docs/BidraMedData.md"
+      "https://github.com/Artsdatabanken/nin-kart-frontend/wiki/%C3%98nsker-du-%C3%A5-bidra-med-data%3F"
     );
   handleClickLogo = () => window.open("https://artsdatabanken.no");
   handleClickMap = () => this.props.history.push("/");
@@ -145,6 +177,19 @@ class MainDrawer extends Component {
   handleClickLandskap = () =>
     this.props.history.push("/Natur_i_Norge/Landskap/");
   handleClickStat = () => this.props.history.push("/Natur_i_Norge/Stats/");
+
+  handleClickFylke = () => this.props.history.push("/Fylke/");
+  handleClickNaturvernområde = () =>
+    this.props.history.push("/Naturvernområde/");
+  handleClickTruet_art_natur = () =>
+    this.props.history.push("/Truet_art_natur/");
+  handleClickArt = () => this.props.history.push("/Biota/");
+  handleClickDatakilde = () => this.props.history.push("/Datakilde/");
+  handleClickNaturvernområde = () =>
+    this.props.history.push("/Naturvernområde/");
+  handleClickNaturvernområde = () =>
+    this.props.history.push("/Naturvernområde/");
+
   handleNavigate = url => this.props.history.push(url);
 }
 

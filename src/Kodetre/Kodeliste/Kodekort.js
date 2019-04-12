@@ -1,6 +1,4 @@
-import { CardMedia } from "@material-ui/core";
 import React from "react";
-import config from "../../config";
 import språk from "../../språk";
 import Tittelblokk from "./Tittelblokk";
 import tinycolor from "tinycolor2";
@@ -27,21 +25,6 @@ class Kodekort extends React.Component {
     return false;
   }
 
-  styles(url) {
-    if (this.erTransparent(url))
-      return {
-        minHeight: 297,
-        marginTop: 142,
-        marginBottom: 16,
-        filter: "drop-shadow(rgba(0, 0, 0, 0.5) 5px 5px 4px)",
-        backgroundSize: "contain"
-      };
-    return {
-      minHeight: 297,
-      _backgroundSize: "cover"
-    };
-  }
-
   render() {
     const {
       kode,
@@ -51,30 +34,37 @@ class Kodekort extends React.Component {
       tittel,
       nivå,
       overordnet,
-      onNavigate
+      onNavigate,
+      bilde
     } = this.props;
     const tc = new tinycolor(farge);
-    //var new_url = config.getFotoOmslag(url, 408);
+
+    var new_url = "no_image";
+    if (bilde.forside != null) {
+      new_url = bilde.forside.url;
+    }
+
     return (
       <div
         square={false}
         className="sidebar_top_area sidebar_background_element"
       >
-        <CardMedia
-          className="Temporary_class_for_detection"
-          style={this.styles(url)}
+        <div className="sidebar_element page_topic_header" />
+
+        <div
+          className={
+            (this.erTransparent(url) &&
+              "sidebar_top_image  trasparent_image") ||
+            "sidebar_top_image"
+          }
           onClick={this.handleOpen}
-          image={config.getFotoOmslag(url, 408)}
+          style={
+            (new_url !== "no_image" && {
+              backgroundImage: "url(" + new_url + ")"
+            }) || { height: 0 }
+          }
           alt={"foto av" + tittel}
         />
-
-        {/*
-      // for fremtidig oppgradering om vi ønsker det, isåfal må vi detektere transparang bakgrunn på et vis
-        <div
-          className="sidebar_top_image"
-          style={{ backgroundImage: "url(" + new_url + ")" }}
-        />
-        */}
 
         <Tittelblokk
           tittel={språk(tittel)}
