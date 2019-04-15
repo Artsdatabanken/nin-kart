@@ -5,8 +5,9 @@ directories:
   - node_modules
 script:
   - yarn test
-  - yarn build
   - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
+  - export PUBLIC_URL=https://nin.artsdatabanken.no/$(if [ "$BRANCH" == "master" ]; then echo ""; else echo $BRANCH; fi)
+  - yarn build
   - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH"
 before_deploy:
   - git tag "$(date +'%Y%m%d-%H%M%S')-$(git log --format=%h -1)"

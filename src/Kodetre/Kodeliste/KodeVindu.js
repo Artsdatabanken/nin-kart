@@ -70,8 +70,7 @@ const KodeVindu = ({
             square="false"
             elevation={4}
             style={{
-              position: "relative",
-              top: -72
+              position: "relative"
             }}
           >
             <Kodekort
@@ -87,6 +86,7 @@ const KodeVindu = ({
               erAktivert={erAktivert}
               onFitBounds={onFitBounds}
               onToggleLayer={onToggleLayer}
+              bilde={meta.foto}
             />
             {kode === "NN-LA-TI" && (
               <Detaljeringsgrad
