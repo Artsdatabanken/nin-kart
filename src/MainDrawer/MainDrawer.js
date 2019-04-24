@@ -21,13 +21,13 @@ import {
   Landscape,
   BubbleChart,
   Layers,
-  Healing,
   AssignmentInd
 } from "@material-ui/icons";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import NavigationChevronLeftDouble from "../Grunnkart/NavigationChevronLeftDouble";
 import BildeAvatar from "../Kodetre/Kodeliste/Bildeavatar";
+import Naturvern from "./Naturvern";
 import GitHub from "./GitHub";
 import Innstillinger from "./Innstillinger";
 
@@ -86,7 +86,7 @@ class MainDrawer extends Component {
                 />
                 <Menyelement
                   onClick={this.handleClickNaturvernområde}
-                  icon={<Healing />}
+                  icon={<Naturvern />}
                   primary="Naturvernområde"
                 />
                 <Menyelement
