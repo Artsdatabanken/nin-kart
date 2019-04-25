@@ -172,7 +172,6 @@ class Grunnkart extends React.Component {
     let aktive = this.state.aktiveLag;
     delete aktive[kode];
     this.setState({ aktiveLag: aktive });
-    this.props.history.push("/");
   };
 
   // Supports composite keys i.e. gradient.filterMin
