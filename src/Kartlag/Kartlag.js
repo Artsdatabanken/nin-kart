@@ -3,6 +3,7 @@ import React from "react";
 import { Layers, Close, KeyboardArrowDown } from "@material-ui/icons";
 import { SettingsContext } from "../SettingsContext";
 import språk from "../språk";
+import { IconButton } from "@material-ui/core";
 
 class Kartlag extends React.Component {
   render() {
@@ -96,7 +97,9 @@ function listeElement(kartlag, props, visKoder) {
             e.stopPropagation();
           }}
         />
-        <Close onClick={() => onRemoveSelectedLayer(kode)} />
+        <IconButton onClick={() => onRemoveSelectedLayer(kode)}>
+          <Close />
+        </IconButton>
       </span>
     </li>
   );
