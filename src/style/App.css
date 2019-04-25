@@ -86,7 +86,7 @@ div {
     text-align: center;
     padding: auto;
     background: #edf4f5;
-    width: 50%;
+    width: calc(100% / 3);
     height: 48px;
     padding: 15px;
     position: relative;
@@ -96,6 +96,9 @@ div {
     color: #555;
     font-family: "Roboto", "sans-serif";
     border: none;
+    border-left: 1px solid #dee1e1;
+    border-top: 1px solid #eceded;
+    vertical-align: bottom;
   }
 
   .mobile_navigation .active_mobile_button,
@@ -115,6 +118,14 @@ div {
     color: white;
     font-weight: 600;
   }
+}
+
+.mobile_navigation button svg {
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  top: calc(50% - 9px);
+  right: calc(50% - 9px);
 }
 
 .MuiPaper-elevation1-92,
