@@ -177,6 +177,7 @@ class Grunnkart extends React.Component {
 
   // Supports composite keys i.e. gradient.filterMin
   handleUpdateLayerProp = (layer, key, value) => {
+    console.log("updateProp", layer, key, value);
     const aktive = this.state.aktiveLag;
     let node = aktive[layer];
     if (!node) node = this.state.meta;
@@ -242,7 +243,11 @@ class Grunnkart extends React.Component {
                   </div>
                 )}
                 {context.aktivTab === "kartlag" && (
-                  <Kartlag aktiveLag={this.state.aktiveLag} />
+                  <Kartlag
+                    aktiveLag={this.state.aktiveLag}
+                    onUpdateLayerProp={this.handleUpdateLayerProp}
+                    onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                  />
                 )}
                 <Kart
                   bounds={this.state.fitBounds}
