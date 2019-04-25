@@ -12,10 +12,10 @@ class Kartlag extends React.Component {
 
     return (
       <div className="kartlag sidebar">
-        <div class="sidebar_title_container sidebar_element">
-          <h1 class="sidebar_title">Kartlag</h1>
+        <div className="sidebar_title_container sidebar_element">
+          <h1 className="sidebar_title">Kartlag</h1>
         </div>
-        <div class="sidebar_element">
+        <div className="sidebar_element">
           <h3>Instillinger</h3>
           <ul className="kartlag_list">
             <li>Bakgrunnsfarger</li>
@@ -69,7 +69,7 @@ function listeElement(kartlag, props, visKoder) {
 
   */
   console.log(kartlag);
-  const { onUpdateLayerProp } = props;
+  const { onUpdateLayerProp, onRemoveSelectedLayer } = props;
   // const Type = finnType(kode);
   console.log(props);
   return (
@@ -96,7 +96,7 @@ function listeElement(kartlag, props, visKoder) {
             e.stopPropagation();
           }}
         />
-        <Close />
+        <Close onClick={() => onRemoveSelectedLayer(kode)} />
       </span>
     </li>
   );
