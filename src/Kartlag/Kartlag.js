@@ -5,13 +5,15 @@ import {
   Close,
   KeyboardArrowDown
 } from "@material-ui/icons";
+import { SettingsContext } from "../SettingsContext";
+import { List } from "@material-ui/core";
+import BakgrunnskartElement from "../AktiveKartlag/BakgrunnskartElement";
+import PolygonlagElement from "../AktiveKartlag/PolygonlagElement";
 
 class Kartlag extends React.Component {
   render() {
-    const { koder } = this.props.aktiveLag;
-    console.log("dette er lista av aktive lag på riktig side ************: ");
-    console.log(koder);
-    //const keys = Object.keys(koder);
+    let koder = this.props.aktiveLag;
+    const keys = Object.keys(koder);
 
     return (
       <div className="kartlag sidebar">
@@ -74,7 +76,19 @@ class Kartlag extends React.Component {
             </li>
           </ul>
         </div>
-
+        <SettingsContext.Consumer>
+          {context => (
+            <div>
+              <h3>Aktive Kartlag</h3>
+              <List>
+                {keys.map(fkode => {
+                  const forelder = koder[fkode];
+                  return listeElement(forelder, this.props, context.visKoder);
+                })}
+              </List>
+            </div>
+          )}
+        </SettingsContext.Consumer>
         <div class="sidebar_element">
           <h3>Historikk</h3>
           <ul className="kartlag_list">
@@ -85,4 +99,42 @@ class Kartlag extends React.Component {
     );
   }
 }
+
+function finnType(kode) {
+  switch (kode) {
+    case "bakgrunnskart":
+      return BakgrunnskartElement;
+    default:
+      return PolygonlagElement;
+  }
+}
+
+function listeElement(forelder, props, visKoder) {
+  const kode = forelder.kode;
+  const {
+    history,
+    onRemoveSelectedLayer,
+    onMouseEnter,
+    onMouseLeave,
+    onUpdateLayerProp
+  } = props;
+  const Type = finnType(kode);
+
+  return (
+    <Type
+      key={kode}
+      visKoder={visKoder}
+      onClick={() => {
+        onMouseLeave();
+        history.push("/" + kode + "?vis");
+      }}
+      onUpdateLayerProp={onUpdateLayerProp}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onRemove={kode => onRemoveSelectedLayer(kode)}
+      {...forelder}
+    />
+  );
+}
+
 export default Kartlag;

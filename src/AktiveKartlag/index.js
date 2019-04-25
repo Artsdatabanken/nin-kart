@@ -8,7 +8,6 @@ import PolygonlagElement from "./PolygonlagElement";
 class AktiveKartlag extends React.Component {
   render() {
     const { koder } = this.props;
-    console.log("dette er lista av aktive lag: ", koder);
     const keys = Object.keys(koder);
     return (
       <SettingsContext.Consumer>
