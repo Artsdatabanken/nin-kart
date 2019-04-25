@@ -4,9 +4,7 @@ import React from "react";
 const OpenData = props => {
   return (
     <SvgIcon>
-      <circle cx="12" cy="12" r="10" _fill="red" />
-      <circle cx="12" cy="12" r="4" fill="white" />
-      <polygon points="12,12 17,24 7,24" fill="white" />
+      <path d="M 12 2 A 10 10 0 0 0 2 12 A 10 10 0 0 0 8.15 21.23 L 10.46 15.69 A 4 4 0 0 1 8 12 A 4 4 0 0 1 12 8 A 4 4 0 0 1 16 12 A 4 4 0 0 1 13.54 15.69 L 15.84 21.22 A 10 10 0 0 0 22 12 A 10 10 0 0 0 12 2 z" />
     </SvgIcon>
   );
 };
