@@ -55,8 +55,6 @@ class Kodelisteelement extends React.Component {
       areal,
       størsteAreal
     } = this.props;
-    console.log("kodelee", parentkode, opplyst);
-    console.log(`lysOpp(${url}, ${opplyst}, ${meta.farge})`);
     return (
       <>
         <ListItem

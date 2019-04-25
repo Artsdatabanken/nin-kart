@@ -1,4 +1,3 @@
-import typesystem from "@artsdatabanken/typesystem";
 import { Avatar } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import React, { Component } from "react";
@@ -31,9 +30,8 @@ class BildeAvatar extends Component {
     const { farge, farge0, classes, kode, url } = this.props;
     const size = this.props.size || "big";
     const prefiks = kode.substring(0, 2);
-    const parts = typesystem.splittKode(kode);
     const tekst = prefiks;
-    if ("AO_OR".indexOf(prefiks) >= 0 && parts.length > 1)
+    if ("AO,OR,VV".indexOf(prefiks) >= 0)
       return (
         <Avatar
           alt="logo"
