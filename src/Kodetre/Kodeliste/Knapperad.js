@@ -1,6 +1,6 @@
 import { Button, withStyles } from "@material-ui/core";
 import { OpenInNew } from "@material-ui/icons/";
-//import { LibraryAdd, ZoomOutMap, ColorLens } from "@material-ui/icons/";
+import { LibraryAdd, ZoomOutMap, ColorLens } from "@material-ui/icons/";
 import React from "react";
 import { withRouter } from "react-router";
 
@@ -29,23 +29,21 @@ const Knapperad = ({
   <>
     {bbox && (
       <div className="sidebar_element">
-        {/* 
-      <Button
+        <Button
           className={classes.button}
           onClick={onToggleLayer}
           disabled={erAktivert}
         >
           <LibraryAdd className={classes.iconSmall} />
           Aktivér
-      </Button>
-      <Button
-        className={classes.button}
-        onClick={() => history.push(history.location.pathname + "?vis")}
-      >
-        <ColorLens className={classes.iconSmall} />
-        Vis
-      </Button>
-      */}
+        </Button>
+        <Button
+          className={classes.button}
+          onClick={() => history.push(history.location.pathname + "?vis")}
+        >
+          <ColorLens className={classes.iconSmall} />
+          Vis
+        </Button>
 
         <Button className="zoom_button" onClick={() => onFitBounds(bbox)}>
           <OpenInNew className="classes.iconSmall" />

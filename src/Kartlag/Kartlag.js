@@ -8,6 +8,11 @@ import {
 
 class Kartlag extends React.Component {
   render() {
+    const { koder } = this.props.aktiveLag;
+    console.log("dette er lista av aktive lag på riktig side ************: ");
+    console.log(koder);
+    //const keys = Object.keys(koder);
+
     return (
       <div className="kartlag sidebar">
         <div class="sidebar_title_container sidebar_element">

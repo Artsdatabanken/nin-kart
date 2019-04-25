@@ -109,7 +109,7 @@ class Grunnkart extends React.Component {
 
   redirectTo(path) {
     const newUrl = "/" + path;
-    console.log("router videre til ", newUrl);
+    //console.log("router videre til ", newUrl);
     this.props.history.replace(newUrl);
   }
 
@@ -241,7 +241,9 @@ class Grunnkart extends React.Component {
                     />
                   </div>
                 )}
-                {context.aktivTab === "kartlag" && <Kartlag />}
+                {context.aktivTab === "kartlag" && (
+                  <Kartlag aktiveLag={this.state.aktiveLag} />
+                )}
                 <Kart
                   bounds={this.state.fitBounds}
                   latitude={65.4}
@@ -267,12 +269,12 @@ class Grunnkart extends React.Component {
   }
 
   handleMouseEnter = ({ kode, url }) => {
-    console.log("mouseenter", kode, url);
+    //console.log("mouseenter", kode, url);
     this.setState({ opplystKode: kode, opplyst: { kode: kode, url: url } });
   };
 
   handleMouseLeave = () => {
-    console.log("mouseleave");
+    //console.log("mouseleave");
     this.setState({ opplystKode: "", opplyst: {} });
   };
 

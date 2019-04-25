@@ -61,7 +61,7 @@ const KodeVindu = ({
     ? Object.entries(meta.gradient).length
     : 0;
   const flaggLength = meta.flagg ? Object.entries(meta.flagg).length : 0;
-  console.log("kodevin", kode, opplyst);
+  //  console.log("kodevin", kode, opplyst);
   return (
     <SettingsContext.Consumer>
       {context => {

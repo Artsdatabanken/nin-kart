@@ -61,9 +61,9 @@ class Borring extends Component {
   handleClick = (kode, node) => {
     kode = this.getInnerMostSingleChild(kode, node);
     const { history } = this.props;
-    console.log(kode);
+    //  console.log(kode);
     kode = hack(kode);
-    console.log(kode);
+    //  console.log(kode);
     backend.søk(kode).then(json => {
       // TODO: Mofify lat,lon query API to return URLs
       let hit = json.result[0];

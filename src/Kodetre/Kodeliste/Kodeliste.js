@@ -19,7 +19,7 @@ class Kodeliste extends React.Component {
       onMouseLeave,
       onNavigate
     } = this.props;
-    console.log("kodelist", parentkode, opplyst);
+    //console.log("kodelist", parentkode, opplyst);
 
     if (!metadata || metadata.length <= 0) return null;
     return (
