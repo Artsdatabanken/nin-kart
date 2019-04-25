@@ -6,14 +6,13 @@ import {
   KeyboardArrowDown
 } from "@material-ui/icons";
 import { SettingsContext } from "../SettingsContext";
-import { List } from "@material-ui/core";
-import BakgrunnskartElement from "../AktiveKartlag/BakgrunnskartElement";
-import PolygonlagElement from "../AktiveKartlag/PolygonlagElement";
+import språk from "../språk";
 
 class Kartlag extends React.Component {
   render() {
     let koder = this.props.aktiveLag;
     const keys = Object.keys(koder);
+    console.log(keys);
 
     return (
       <div className="kartlag sidebar">
@@ -29,66 +28,18 @@ class Kartlag extends React.Component {
 
         <div class="sidebar_element">
           <h3>Mine Kartlag</h3>
-          <ul className="kartlag_list">
-            <li>
-              <Layers className="kartlag_main_icon" />
-              <span className="kartlag_list_title">Eksempelkartlag</span>
-              <span className="kartlag_list_icon_set">
-                <KeyboardArrowDown />
-                <Visibility />
-                <Close />
-              </span>
-            </li>
-
-            <li>
-              <Layers className="kartlag_main_icon" />
-              <span className="kartlag_list_title">
-                Eksempelkartlag med masse kjempelang tekst for å se hva som
-                skjer
-              </span>
-              <span className="kartlag_list_icon_set">
-                <KeyboardArrowDown />
-                <Visibility />
-                <Close />
-              </span>
-            </li>
-
-            <li>
-              <Layers className="kartlag_main_icon" />
-              <span className="kartlag_list_title">
-                Eksempelkartlag med masse litt ekstra tekst
-              </span>
-              <span className="kartlag_list_icon_set">
-                <KeyboardArrowDown />
-                <Visibility />
-                <Close />
-              </span>
-            </li>
-
-            <li>
-              <Layers className="kartlag_main_icon" />
-              <span className="kartlag_list_title">Eksempelkartlag</span>
-              <span className="kartlag_list_icon_set">
-                <KeyboardArrowDown />
-                <Visibility />
-                <Close />
-              </span>
-            </li>
-          </ul>
-        </div>
-        <SettingsContext.Consumer>
-          {context => (
-            <div>
-              <h3>Aktive Kartlag</h3>
-              <List>
+          <SettingsContext.Consumer>
+            {context => (
+              <ul className="kartlag_list">
                 {keys.map(fkode => {
                   const forelder = koder[fkode];
                   return listeElement(forelder, this.props, context.visKoder);
                 })}
-              </List>
-            </div>
-          )}
-        </SettingsContext.Consumer>
+              </ul>
+            )}
+          </SettingsContext.Consumer>
+        </div>
+
         <div class="sidebar_element">
           <h3>Historikk</h3>
           <ul className="kartlag_list">
@@ -100,40 +51,50 @@ class Kartlag extends React.Component {
   }
 }
 
-function finnType(kode) {
-  switch (kode) {
-    case "bakgrunnskart":
-      return BakgrunnskartElement;
-    default:
-      return PolygonlagElement;
-  }
-}
-
 function listeElement(forelder, props, visKoder) {
   const kode = forelder.kode;
-  const {
-    history,
-    onRemoveSelectedLayer,
-    onMouseEnter,
-    onMouseLeave,
-    onUpdateLayerProp
-  } = props;
-  const Type = finnType(kode);
+  let tittel = forelder.tittel;
+  let farge = forelder.farge;
+  /*
+  
+  let type = forelder.type;
+  let erSynlig;
+  let kart;
+  let terreng;
+
+  // onClick={() => { history.push("/" + kode + "?vis");}}
+  // onUpdateLayerProp={onUpdateLayerProp}
+  // onRemove={kode => onRemoveSelectedLayer(kode)}
+
+  if (kode === "bakgrunnskart"){
+    let undertittel = forelder.tema;
+  }
+  
+  */
+  console.log(forelder);
+  const { onUpdateLayerProp } = props;
+  // const Type = finnType(kode);
 
   return (
-    <Type
-      key={kode}
-      visKoder={visKoder}
-      onClick={() => {
-        onMouseLeave();
-        history.push("/" + kode + "?vis");
-      }}
-      onUpdateLayerProp={onUpdateLayerProp}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      onRemove={kode => onRemoveSelectedLayer(kode)}
-      {...forelder}
-    />
+    <li>
+      <Layers className="kartlag_main_icon" />
+      <span className="kartlag_list_title">
+        {" "}
+        {språk(tittel)}-{" "}
+        <span
+          style={{
+            color: farge
+          }}
+        >
+          {kode}
+        </span>
+      </span>
+      <span className="kartlag_list_icon_set">
+        <KeyboardArrowDown />
+        <Visibility />
+        <Close />
+      </span>
+    </li>
   );
 }
 

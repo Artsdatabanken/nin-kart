@@ -49,7 +49,6 @@ function listeElement(forelder, props, visKoder) {
 
   return (
     <Type
-      key={kode}
       visKoder={visKoder}
       onClick={() => {
         onMouseLeave();
