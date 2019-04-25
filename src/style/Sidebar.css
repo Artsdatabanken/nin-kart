@@ -139,3 +139,14 @@
   margin-bottom: 10px;
   height: calc(250px - 20px);
 }
+
+.kartlag_list {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+.kartlag_list li {
+  display: block;
+  padding: 5px;
+}

@@ -240,6 +240,33 @@ class Grunnkart extends React.Component {
                     />
                   </div>
                 )}
+                {context.aktivTab === "kartlag" && (
+                  <div className="kartlag sidebar">
+                    <div class="sidebar_title_container sidebar_element">
+                      <h1 class="sidebar_title">Kartlag</h1>
+                      <h2>
+                        Nåværende underside: Natursystem
+                        <span class="sidebar_code_field">
+                          <span class=""> - NA </span>
+                        </span>
+                      </h2>
+                    </div>
+                    <div class="sidebar_element">
+                      <h3>Instillinger</h3>
+                      <ul className="kartlag_list">
+                        <li>Bakgrunnsfarger</li>
+                      </ul>
+                    </div>
+
+                    <div class="sidebar_element">
+                      <h3>Mine Kartlag</h3>
+                      <ul className="kartlag_list">
+                        <li>Eksempelkartlag</li>
+                        <li>Eksempelkartlag med en vesentlig lengre tittel</li>
+                      </ul>
+                    </div>
+                  </div>
+                )}
                 <Kart
                   bounds={this.state.fitBounds}
                   latitude={65.4}
