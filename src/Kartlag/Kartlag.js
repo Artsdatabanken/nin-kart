@@ -19,14 +19,14 @@ class Kartlag extends React.Component {
         <div class="sidebar_title_container sidebar_element">
           <h1 class="sidebar_title">Kartlag</h1>
         </div>
-        <div class="sidebar_element">
+        <div className="sidebar_element">
           <h3>Instillinger</h3>
           <ul className="kartlag_list">
             <li>Bakgrunnsfarger</li>
           </ul>
         </div>
 
-        <div class="sidebar_element">
+        <div className="sidebar_element">
           <h3>Mine Kartlag</h3>
           <SettingsContext.Consumer>
             {context => (
@@ -40,7 +40,7 @@ class Kartlag extends React.Component {
           </SettingsContext.Consumer>
         </div>
 
-        <div class="sidebar_element">
+        <div className="sidebar_element">
           <h3>Historikk</h3>
           <ul className="kartlag_list">
             <li>kommer her</li>
@@ -79,14 +79,13 @@ function listeElement(forelder, props, visKoder) {
     <li>
       <Layers className="kartlag_main_icon" />
       <span className="kartlag_list_title">
-        {" "}
-        {språk(tittel)}-{" "}
+        {språk(tittel)}
         <span
           style={{
             color: farge
           }}
         >
-          {kode}
+          - {kode}
         </span>
       </span>
       <span className="kartlag_list_icon_set">
