@@ -1,4 +1,4 @@
-import { Paper, Typography } from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import { ExpandMore } from "@material-ui/icons";
 import PropTypes from "prop-types";
@@ -63,9 +63,7 @@ class AktiveKartlagKnapp extends React.Component<Props> {
             erÅpen ? classes.åpen : classes.lukket
           )}
         />
-        <Typography color="inherit" className={classes.tekst}>
-          Mine kartlag
-        </Typography>
+        Mine kartlag
         {antallLag > 0 && (
           <Badge
             className={classes.badge}

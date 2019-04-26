@@ -1,5 +1,5 @@
 import typesystem from "@artsdatabanken/typesystem";
-import { Typography, Avatar, Chip } from "@material-ui/core";
+import { Avatar, Chip } from "@material-ui/core";
 import React, { Component } from "react";
 import config from "../../config";
 import { palett } from "../../farger";
@@ -30,11 +30,7 @@ class Flis extends Component {
     if (!visKoder) return null;
     if (visKoder !== 42)
       return (
-        <Typography>
-          <div style={{ color: "rgba(0, 0, 0, 0.4)" }}>
-            {kode.substring(3)}{" "}
-          </div>
-        </Typography>
+        <div style={{ color: "rgba(0, 0, 0, 0.4)" }}>{kode.substring(3)} </div>
       );
     return (
       <Chip
