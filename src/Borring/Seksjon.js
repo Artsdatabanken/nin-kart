@@ -38,8 +38,8 @@ function oppsummer2(node, stack1, r, pkode) {
 class Seksjon extends Component {
   render() {
     const { node, kode, visKoder, kategori, onClick } = this.props;
-    const r = oppsummer(node);
-    const secondary = r.map(e => this.map(e.verdi));
+    const oppsumert_node = oppsummer(node);
+    const secondary = oppsumert_node.map(e => this.map(e.verdi));
 
     return (
       <Listeelement
@@ -53,35 +53,44 @@ class Seksjon extends Component {
     );
   }
 
-  map(r) {
-    const len = r.length;
-    const value = r[len - 1];
-    if (len < 2) return <p className="hack1">{hack1(value)}</p>;
-    const key = r[len - 2];
+  map(oppsumert_node) {
+    const len = oppsumert_node.length;
+    const value = oppsumert_node[len - 1];
+    if (len < 2)
+      return (
+        <p>
+          <h4 className="entallsSjekk">{entallsSjekk(value)}</h4>
+        </p>
+      );
+
+    const key = oppsumert_node[len - 2];
     return (
-      <p className="hack2">
-        {hack1(key.trim())}: <b>{hack2(value)}</b>
+      <p className="entallsSjekk">
+        <h4> {entallsSjekk(key.trim())}</h4>
+        <h5 className="replaceString">{replaceString(value)}</h5>
       </p>
     );
   }
 }
 
-function hack1(s) {
-  switch (s) {
+function entallsSjekk(verdi) {
+  switch (verdi) {
     case "Bioklimatiske soner":
       return "Bioklimatisk sone";
     case "Bioklimatiske seksjoner":
       return "Bioklimatisk seksjon";
     default:
-      return s;
+      return verdi;
   }
 }
-function hack2(s) {
-  switch (s) {
+
+function replaceString(verdi) {
+  let string_to_replace = " dekning";
+  switch (verdi) {
     case "0":
       return "ingen";
     default:
-      return s.replace(" dekning", "");
+      return verdi.replace(string_to_replace, "");
   }
 }
 
