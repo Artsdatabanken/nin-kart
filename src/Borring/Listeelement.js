@@ -1,71 +1,28 @@
-import { Typography, Avatar, Divider, ListItem } from "@material-ui/core";
 import React from "react";
 import { withRouter } from "react-router";
-import config from "../config";
-import { palett } from "../farger";
 import Flis from "../Kodetre/Kodeliste/Flis";
-import { withStyles } from "@material-ui/core/styles";
+import { KeyboardArrowRight } from "@material-ui/icons";
 
-const styles = theme => {
-  return {
-    listitem: {
-      color: "hsla(0, 0%, 0%, 0.55)"
-    }
-  };
-};
-
-const Listeelement = ({
-  kode,
-  primary,
-  secondary,
-  history,
-  visKoder,
-  onClick,
-  classes
-}) => {
+const Listeelement = ({ kode, primary, secondary, visKoder, onClick }) => {
   const prefix = kode.substring(0, 2);
-  const bgFarge = palett.lysere[prefix];
-  const avatar = false;
+  // This function returns an element
   return (
-    <>
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          background:
-            "linear-gradient(300deg, hsla(0, 0%, 100%, 0.05) -70%, " +
-            bgFarge +
-            ' 40%), url("' +
-            config.getFotoBanner(prefix) +
-            '")'
-        }}
-      >
-        <ListItem button={true} onClick={onClick}>
-          {avatar && (
-            <Avatar
-              style={{
-                backgroundColor: "farger.mørk[prefix]",
-                color: "black"
-              }}
-            >
-              {prefix}
-            </Avatar>
-          )}
-          <div className={classes.listitem}>
-            <Typography variant="body1" color="inherit">
-              {primary}
-            </Typography>
-            {secondary}
-          </div>
-          <div style={{ position: "absolute", right: 10, top: 11 }}>
-            <Flis kode={kode} visKoder={visKoder} />
-          </div>
-        </ListItem>
+    <button
+      className="sidebar_element clickable_element_location"
+      onClick={onClick}
+    >
+      <div className="text_content">
+        <h3>
+          {prefix} - {primary} <Flis kode={kode} visKoder={visKoder} />
+        </h3>
+        {secondary}
       </div>
-      <Divider />
-    </>
+
+      <button className="invisible_icon_button element_link">
+        <KeyboardArrowRight />
+      </button>
+    </button>
   );
 };
 
-export default withRouter(withStyles(styles)(Listeelement));
+export default withRouter(Listeelement);

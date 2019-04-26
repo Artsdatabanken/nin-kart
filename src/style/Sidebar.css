@@ -25,8 +25,12 @@
 /* The white container boxes */
 .sidebar_element {
   background: #fff;
+  border: 0px;
+  width: 100%;
   border-bottom: 1px solid #eaeaea;
   padding: 10px;
+  position: relative;
+  text-align: left;
 }
 
 /* Container boxes with regular items, not pre-styled ones */
@@ -113,7 +117,7 @@
 
 .sidebar_code_field {
   white-space: none;
-  color: #81b2bb;
+  color: #;
 }
 
 .page_topic_header {
@@ -189,4 +193,29 @@ Even tho we don't a of now support IE X)
 .kartlag_list_icon_set {
   position: absolute;
   right: 0px;
+}
+
+/* Specifically for items in arrowclickmenu*/
+.element_link {
+  position: absolute;
+  right: 0px;
+  top: calc(50% - 10px);
+}
+
+.clickable_element_location:hover {
+  cursor: pointer;
+  background: #edf4f5;
+}
+
+.clickable_element_location p {
+  padding-left: 5px;
+}
+
+.clickable_element_location p,
+.clickable_element_location h3 {
+  max-width: calc(100% - 30px);
+}
+
+.kode_flis_tekst {
+  display: inline-block;
 }
