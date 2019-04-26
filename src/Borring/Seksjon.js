@@ -1,4 +1,3 @@
-import { Typography } from "@material-ui/core";
 import React, { Component } from "react";
 import Listeelement from "./Listeelement";
 
@@ -14,36 +13,6 @@ function oppsummer(node) {
     });
   else r.push({ verdi: [node.title] });
   return r;
-}
-
-function hack(kode, nivå, kategori) {
-  switch (kode.replace("_", "-")) {
-    case "BS-1":
-      return "Artssammensetning";
-    case "BS-2":
-      return "Geologisk sammensetning";
-    case "BS-3":
-      return "Landform";
-    case "BS-4":
-      return "Naturgitte objekter";
-    case "BS-5":
-      return "Menneskeskapte objekter";
-    case "BS-6":
-      return "Regionale komplekse miljøvariable";
-    case "BS-7":
-      return "Tilstandsvariasjon";
-    case "BS-8":
-      return "Terrengformvariasjon";
-    case "BS-9":
-      return "Romlig strukturvariasjon";
-    case "NA-T":
-      return "Fastmarkssystem";
-    case "MI-KA":
-      return "Kalkinnhold";
-    default:
-      return kategori;
-    //      return kode + ': ' + nivå + ' - ' + kategori
-  }
 }
 
 function oppsummer2(node, stack1, r, pkode) {
@@ -77,7 +46,7 @@ class Seksjon extends Component {
         key={kode}
         kode={kode}
         secondary={secondary}
-        primary={hack(kode, r.nivå, kategori)}
+        primary={kategori}
         visKoder={visKoder}
         onClick={onClick}
       />
@@ -87,17 +56,12 @@ class Seksjon extends Component {
   map(r) {
     const len = r.length;
     const value = r[len - 1];
-    if (len < 2)
-      return (
-        <Typography key={value} variant="body2" color="inherit">
-          {hack1(value)}
-        </Typography>
-      );
+    if (len < 2) return <p className="hack1">{hack1(value)}</p>;
     const key = r[len - 2];
     return (
-      <Typography key={key} variant="body2" color="inherit">
+      <p className="hack2">
         {hack1(key.trim())}: <b>{hack2(value)}</b>
-      </Typography>
+      </p>
     );
   }
 }

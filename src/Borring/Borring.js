@@ -1,11 +1,5 @@
 import backend from "../backend";
-import {
-  List,
-  ListItem,
-  ListItemText,
-  ListSubheader,
-  withTheme
-} from "@material-ui/core";
+import { List, ListItem, ListItemText, withTheme } from "@material-ui/core";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { SettingsContext } from "../SettingsContext";

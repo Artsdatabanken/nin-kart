@@ -1,11 +1,8 @@
 import { withStyles } from "@material-ui/core/styles";
 import {
-  FormControlLabel,
-  CardActions,
-  CardActionArea,
-  CardContent,
-  Switch,
-  Button,
+  //FormControlLabel,
+  //Switch,
+  //Button,
   withTheme
 } from "@material-ui/core";
 import React, { Component } from "react";
@@ -21,7 +18,7 @@ const styles = {};
 class BorreVindu extends Component {
   state = { bareAktive: false };
   render() {
-    const { barn, vis, classes } = this.props;
+    const { barn, vis } = this.props;
     if (!barn) return null;
     const { AO, prefix, ...andreBarn } = barn;
     const dominant = this.finnButikkKode();
