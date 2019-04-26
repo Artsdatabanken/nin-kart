@@ -1,12 +1,9 @@
+import VisibilityToggle from "./VisibilityToggle";
 import React from "react";
-import {
-  Layers,
-  Visibility,
-  Close,
-  KeyboardArrowDown
-} from "@material-ui/icons";
+import { Layers, Close, KeyboardArrowDown } from "@material-ui/icons";
 import { SettingsContext } from "../SettingsContext";
 import språk from "../språk";
+import { IconButton } from "@material-ui/core";
 
 class Kartlag extends React.Component {
   render() {
@@ -16,8 +13,8 @@ class Kartlag extends React.Component {
 
     return (
       <div className="kartlag sidebar">
-        <div class="sidebar_title_container sidebar_element">
-          <h1 class="sidebar_title">Kartlag</h1>
+        <div className="sidebar_title_container sidebar_element">
+          <h1 className="sidebar_title">Kartlag</h1>
         </div>
         <div className="sidebar_element">
           <h3>Instillinger</h3>
@@ -32,8 +29,8 @@ class Kartlag extends React.Component {
             {context => (
               <ul className="kartlag_list">
                 {keys.map(fkode => {
-                  const forelder = koder[fkode];
-                  return listeElement(forelder, this.props, context.visKoder);
+                  const kartlag = koder[fkode];
+                  return listeElement(kartlag, this.props, context.visKoder);
                 })}
               </ul>
             )}
@@ -51,12 +48,13 @@ class Kartlag extends React.Component {
   }
 }
 
-function listeElement(forelder, props, visKoder) {
-  const kode = forelder.kode;
-  let tittel = forelder.tittel;
-  let farge = forelder.farge;
+function listeElement(kartlag, props, visKoder) {
+  const kode = kartlag.kode;
+  let tittel = kartlag.tittel;
+  let farge = kartlag.farge;
+  const erSynlig = kartlag.erSynlig;
   /*
-  
+
   let type = forelder.type;
   let erSynlig;
   let kart;
@@ -69,12 +67,12 @@ function listeElement(forelder, props, visKoder) {
   if (kode === "bakgrunnskart"){
     let undertittel = forelder.tema;
   }
-  
-  */
-  console.log(forelder);
-  const { onUpdateLayerProp } = props;
-  // const Type = finnType(kode);
 
+  */
+  console.log(kartlag);
+  const { onUpdateLayerProp, onRemoveSelectedLayer } = props;
+  // const Type = finnType(kode);
+  console.log(props);
   return (
     <li>
       <Layers className="kartlag_main_icon" />
@@ -90,8 +88,17 @@ function listeElement(forelder, props, visKoder) {
       </span>
       <span className="kartlag_list_icon_set">
         <KeyboardArrowDown />
-        <Visibility />
-        <Close />
+        <VisibilityToggle
+          kode={kode}
+          erSynlig={erSynlig}
+          onClick={e => {
+            onUpdateLayerProp(kode, "erSynlig", !erSynlig);
+            e.stopPropagation();
+          }}
+        />
+        <IconButton onClick={() => onRemoveSelectedLayer(kode)}>
+          <Close />
+        </IconButton>
       </span>
     </li>
   );
