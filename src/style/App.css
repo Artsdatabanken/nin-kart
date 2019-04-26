@@ -139,3 +139,17 @@ div {
 .MuiExpansionPanel-expanded-516 {
   margin: 1px !important;
 }
+
+.invisible_icon_button {
+  background: transparent;
+  border: none;
+  padding: none;
+  margin: none;
+  display: inline-block;
+}
+
+.invisible_icon_button:active,
+.invisible_icon_button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
