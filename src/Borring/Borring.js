@@ -16,7 +16,6 @@ class Borring extends Component {
     const { barn = {} } = this.props;
     return (
       <List>
-        <ListSubheader>Kunnskap</ListSubheader>
         {Object.keys(barn).length <= 0 ? (
           <ListItem>
             <ListItemText primary="Finner ingen opplysninger." />

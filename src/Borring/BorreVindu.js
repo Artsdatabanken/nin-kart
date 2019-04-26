@@ -45,8 +45,9 @@ class BorreVindu extends Component {
             <Sted values={AO.values} sted={AO.sted} elevasjon={AO.elevasjon} />
           )}
         </div>
-
-        <CardActions>
+        {/*
+        <div className="sidebar_element">
+         
           {vis ? (
             <Button
               size="small"
@@ -67,6 +68,7 @@ class BorreVindu extends Component {
             </Button>
           )}
 
+
           <FormControlLabel
             className={classes.bareAktive}
             control={
@@ -77,17 +79,18 @@ class BorreVindu extends Component {
                 }}
               />
             }
-            label="Fra mine kartlag"
+            label="vis kun fra mine kartlag"
           />
-        </CardActions>
+        </div>
+        */}
 
-        <CardContent style={{ padding: 0 }}>
+        <div>
           {vis ? (
             <Kilde geom_id={this.finnGeomId()} prefiks="NA" />
           ) : (
             <Borring barn={this.state.bareAktive ? {} : andreBarn} />
           )}
-        </CardContent>
+        </div>
       </div>
     );
   }
