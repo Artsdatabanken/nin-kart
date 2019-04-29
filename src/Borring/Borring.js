@@ -1,5 +1,4 @@
 import backend from "../backend";
-import { List, ListItem, ListItemText, withTheme } from "@material-ui/core";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { SettingsContext } from "../SettingsContext";
@@ -25,7 +24,7 @@ class Borring extends Component {
                     if (!node) return null;
                     if (!node.values) return null;
                     let current_prefix = kode.split("-")[0];
-                    if (current_headline != current_prefix) {
+                    if (current_headline !== current_prefix) {
                       current_headline = current_prefix;
                       new_object = true;
                     } else {
@@ -85,4 +84,4 @@ function hack(kode) {
   return kode;
 }
 
-export default withRouter(withTheme()(Borring));
+export default withRouter(Borring);

@@ -12,8 +12,6 @@ const ListeLink = ({
   new_object
 }) => {
   const prefix = kode.substring(0, 2);
-  // This function returns an element
-
   return (
     <button
       className={
@@ -26,13 +24,12 @@ const ListeLink = ({
       <div className="text_content">
         <h3>
           {primary}
-          {kode && visKoder == true && <span> - </span>}
+          {kode && visKoder === true && <span> - </span>}
           {new_object && <span>{prefix}</span>}
           <Flis kode={kode} visKoder={visKoder} />
         </h3>
         {secondary}
       </div>
-
       <div className="invisible_icon_button element_link">
         <KeyboardArrowRight />
       </div>
