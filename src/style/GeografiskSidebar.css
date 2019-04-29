@@ -66,8 +66,30 @@
   }
 }
 
-.sidebar_padding h5,
-.sidebar_padding h4 {
-  padding-right: 5px;
+.sidebar_padding {
   padding-left: 5px;
+  border-bottom: 0px;
+  width: calc(100% - 30px);
+  background: transparent;
+}
+
+.clickable_element_location_subelement {
+  padding: 0px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  border-bottom: 0px;
+}
+
+.clickable_element_location_header {
+  border-bottom: 0px;
+  border-top: 1px solid #eaeaea;
+  background: none;
+}
+
+.paddingless {
+  padding: 0px;
+}
+
+.sub_sub_heading {
+  padding-bottom: 10px;
 }

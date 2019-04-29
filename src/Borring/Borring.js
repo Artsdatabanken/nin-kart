@@ -8,13 +8,12 @@ import Seksjon from "./Seksjon";
 class Borring extends Component {
   render() {
     const { barn = {} } = this.props;
-
+    let current_headline = "";
+    let new_object = false;
     return (
-      <List>
+      <div className="sidebar_element paddingless">
         {Object.keys(barn).length <= 0 ? (
-          <ListItem>
-            <ListItemText primary="Finner ingen opplysninger." />
-          </ListItem>
+          <div className="sidebar_element">"Finner ingen opplysninger."</div>
         ) : (
           <SettingsContext.Consumer>
             {context => {
@@ -25,23 +24,38 @@ class Borring extends Component {
                     const node = barn[kode];
                     if (!node) return null;
                     if (!node.values) return null;
+                    console.log(kode);
+                    console.log(node.title);
+                    console.log(context.visKoder);
+                    let current_prefix = kode.split("-")[0];
+
+                    if (current_headline != current_prefix) {
+                      current_headline = current_prefix;
+                      new_object = true;
+                    } else {
+                      new_object = false;
+                    }
+
                     return (
-                      <Seksjon
-                        key={kode}
-                        tittel={node.title}
-                        kode={kode}
-                        kategori={node.title}
-                        node={node}
-                        visKoder={context.visKoder}
-                        onClick={() => this.handleClick(kode, node)}
-                      />
+                      <>
+                        <Seksjon
+                          new_object={new_object}
+                          key={kode}
+                          tittel={node.title}
+                          kode={kode}
+                          kategori={node.title}
+                          node={node}
+                          visKoder={context.visKoder}
+                          onClick={() => this.handleClick(kode, node)}
+                        />
+                      </>
                     );
                   });
               });
             }}
           </SettingsContext.Consumer>
         )}
-      </List>
+      </div>
     );
   }
 

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Listeelement from "./Listeelement";
+import ListeLink from "./ListeLink";
 
 function oppsummer(node) {
   let r = [];
@@ -37,19 +37,22 @@ function oppsummer2(node, stack1, r, pkode) {
 
 class Seksjon extends Component {
   render() {
-    const { node, kode, visKoder, kategori, onClick } = this.props;
+    const { node, kode, visKoder, kategori, onClick, new_object } = this.props;
     const oppsumert_node = oppsummer(node);
     const secondary = oppsumert_node.map(e => this.map(e.verdi));
 
     return (
-      <Listeelement
-        key={kode}
-        kode={kode}
-        secondary={secondary}
-        primary={kategori}
-        visKoder={visKoder}
-        onClick={onClick}
-      />
+      <>
+        <ListeLink
+          new_object={new_object}
+          key={kode}
+          kode={kode}
+          secondary={secondary}
+          primary={kategori}
+          visKoder={visKoder}
+          onClick={onClick}
+        />
+      </>
     );
   }
 
@@ -67,7 +70,7 @@ class Seksjon extends Component {
     return (
       <div className="sidebar_padding">
         <h4> {entallsSjekk(key.trim())}</h4>
-        <h5 className="replaceString">{replaceString(value)}</h5>
+        <h5 className="sub_sub_heading">{replaceString(value)}</h5>
       </div>
     );
   }

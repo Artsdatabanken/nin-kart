@@ -16,7 +16,7 @@ const Ekspander = ({
   if (heading === "Datakilde") icon = <OpenData />;
   return (
     <div
-      expanded={expanded}
+      //expanded={expanded}
       onClick={onExpand}
       className="sidebar_element clickable_element"
     >

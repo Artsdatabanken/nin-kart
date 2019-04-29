@@ -77,7 +77,6 @@ class BorreVindu extends Component {
           />
         </div>
         */}
-
         <div>
           {vis ? (
             <Kilde geom_id={this.finnGeomId()} prefiks="NA" />
