@@ -5,6 +5,8 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import "./style/App.css";
 import "./style/Sidebar.css";
+import "./style/GeografiskSidebar.css";
+import "./style/Kartlag.css";
 import Grunnkart from "./Grunnkart/Grunnkart";
 import Informasjon from "./Informasjon/Informasjon";
 import SettingsContainer from "./SettingsContainer";

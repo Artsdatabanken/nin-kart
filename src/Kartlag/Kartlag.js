@@ -35,6 +35,8 @@ class Kartlag extends React.Component {
                       this.props,
                       context.visKoder
                     );
+                  } else {
+                    return false;
                   }
                 })}
               </ul>

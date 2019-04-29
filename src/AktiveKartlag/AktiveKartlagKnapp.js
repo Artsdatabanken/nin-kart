@@ -63,7 +63,9 @@ class AktiveKartlagKnapp extends React.Component<Props> {
             erÅpen ? classes.åpen : classes.lukket
           )}
         />
-        Mine kartlag
+        <h3 color="inherit" className={classes.tekst}>
+          Mine kartlag
+        </h3>
         {antallLag > 0 && (
           <Badge
             className={classes.badge}

@@ -11,7 +11,7 @@ class Flis extends Component {
     const parts = typesystem.splittKode(kode);
     if (prefiks === "AO" && parts.length > 1)
       return (
-        <div style={{ paddingBottom: 4 }}>
+        <div>
           <img
             ref={el => (this.logo = el)}
             onLoad={() => {
@@ -29,9 +29,7 @@ class Flis extends Component {
       );
     if (!visKoder) return null;
     if (visKoder !== 42)
-      return (
-        <div style={{ color: "rgba(0, 0, 0, 0.4)" }}>{kode.substring(3)} </div>
-      );
+      return <div className="kode_flis_tekst">{kode.substring(3)} </div>;
     return (
       <Chip
         style={{

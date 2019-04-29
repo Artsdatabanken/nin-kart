@@ -1,0 +1,50 @@
+/* 
+
+The list used in "kartlag" with a bunch of icons.
+Avoiding flex to ensure it works on all types of devices, IE included.
+Even tho we don't a of now support IE X)
+
+*/
+
+.kartlag_list {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+.kartlag_h2,
+.kartlag_list li {
+  display: block;
+  position: relative;
+  padding: 5px;
+  margin: 2px;
+}
+
+.kartlag_list li svg {
+  padding: 5px;
+  vertical-align: top;
+}
+
+.kartlag_main_icon {
+  display: inline-block;
+}
+
+.kartlag_list_title {
+  display: inline-block;
+  width: calc(100% - 131px);
+  padding-top: 5px;
+}
+
+.kartlag_h2 .kartlag_list_title {
+  padding-top: 2px;
+  vertical-align: top;
+}
+
+.kartlag_list li svg:last-child {
+  padding-right: 0px;
+}
+
+.kartlag_list_icon_set {
+  position: absolute;
+  right: 0px;
+}
