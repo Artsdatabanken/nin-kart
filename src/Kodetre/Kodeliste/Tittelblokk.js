@@ -4,6 +4,7 @@ import SettingsContainer from "../../SettingsContainer";
 import { SettingsContext } from "../../SettingsContext";
 import { makeStyles } from "@material-ui/styles";
 import prettyKode from "./prettyKode";
+import { OpenInNew } from "@material-ui/icons/";
 
 const useStyles = makeStyles({
   // This element contains exclusively the title elements!
@@ -22,7 +23,9 @@ const Tittelblokk = ({
   overordnet,
   onNavigate,
   theme,
-  children
+  children,
+  bbox,
+  onFitBounds
 }) => {
   const classes = useStyles();
   const pkode = prettyKode(kode);
@@ -41,6 +44,12 @@ const Tittelblokk = ({
               )}
             </h2>
             {children}
+            {overordnet.length > 0 && (
+              <button className="zoom_button" onClick={() => onFitBounds(bbox)}>
+                <OpenInNew className="classes.iconSmall" />
+                Zoom til
+              </button>
+            )}
           </div>
         )}
       </SettingsContext.Consumer>

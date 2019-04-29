@@ -3,6 +3,7 @@
   color: #4b909e;
   color: #81b2bb;
   color: #b7d3d8;
+  extra_color: #e4f0f2;
   color: #edf4f5;
   color: black;
   helenes_border_colour: #eaeaea;
@@ -54,6 +55,19 @@ b {
 
 .hoverUnderline:hover {
   text-decoration: underline;
+}
+
+button {
+  border: 0px;
+}
+
+button:hover,
+button.active:hover,
+button.active:focus,
+button.active {
+  cursor: pointer;
+  background: #81b2bb;
+  color: #fff;
 }
 
 @keyframes fadein {

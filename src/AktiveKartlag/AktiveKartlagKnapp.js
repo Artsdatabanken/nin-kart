@@ -25,19 +25,7 @@ const styles = {
   lukket: {
     transform: "rotate(180deg)"
   },
-  rot: {
-    cursor: "pointer",
-    display: "flex",
-    flex: "none",
-    alignItems: "flex-start",
-    color: "hsla(0, 0%, 0%, 0.54)",
-    "&:hover": {
-      color: "hsla(0, 0%, 0%, 0.87)"
-    },
-    backgroundColor: "hsl(0, 0%, 96%)",
-    transition: "0.3s",
-    transitionTimingFunction: "ease-out"
-  },
+  rot: {},
   badge: {
     top: 22,
     left: 20

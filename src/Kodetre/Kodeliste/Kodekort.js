@@ -35,7 +35,9 @@ class Kodekort extends React.Component {
       nivå,
       overordnet,
       onNavigate,
-      bilde
+      bilde,
+      bbox,
+      onFitBounds
     } = this.props;
     const tc = new tinycolor(farge);
 
@@ -79,6 +81,8 @@ class Kodekort extends React.Component {
           prefiks={prefiks}
           onNavigate={onNavigate}
           overordnet={overordnet}
+          onFitBounds={onFitBounds}
+          bbox={bbox}
         />
       </div>
     );

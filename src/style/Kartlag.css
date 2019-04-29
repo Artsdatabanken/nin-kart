@@ -48,3 +48,22 @@ Even tho we don't a of now support IE X)
   position: absolute;
   right: 0px;
 }
+
+.activate_button {
+  background: #4b909e;
+  color: white;
+  padding: 10px;
+  font-size: 12pt;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.activate_button svg {
+  height: 18px;
+  width: 18px;
+  vertical-align: top;
+}
+
+.activate_button_container {
+  text-align: center;
+}
