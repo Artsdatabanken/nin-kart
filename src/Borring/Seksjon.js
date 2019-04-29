@@ -42,17 +42,15 @@ class Seksjon extends Component {
     const secondary = oppsumert_node.map(e => this.map(e.verdi));
 
     return (
-      <>
-        <ListeLink
-          new_object={new_object}
-          key={kode}
-          kode={kode}
-          secondary={secondary}
-          primary={kategori}
-          visKoder={visKoder}
-          onClick={onClick}
-        />
-      </>
+      <ListeLink
+        new_object={new_object}
+        key={kode}
+        kode={kode}
+        secondary={secondary}
+        primary={kategori}
+        visKoder={visKoder}
+        onClick={onClick}
+      />
     );
   }
 

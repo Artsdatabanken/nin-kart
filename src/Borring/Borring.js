@@ -24,11 +24,7 @@ class Borring extends Component {
                     const node = barn[kode];
                     if (!node) return null;
                     if (!node.values) return null;
-                    console.log(kode);
-                    console.log(node.title);
-                    console.log(context.visKoder);
                     let current_prefix = kode.split("-")[0];
-
                     if (current_headline != current_prefix) {
                       current_headline = current_prefix;
                       new_object = true;
@@ -37,18 +33,16 @@ class Borring extends Component {
                     }
 
                     return (
-                      <>
-                        <Seksjon
-                          new_object={new_object}
-                          key={kode}
-                          tittel={node.title}
-                          kode={kode}
-                          kategori={node.title}
-                          node={node}
-                          visKoder={context.visKoder}
-                          onClick={() => this.handleClick(kode, node)}
-                        />
-                      </>
+                      <Seksjon
+                        new_object={new_object}
+                        key={kode}
+                        tittel={node.title}
+                        kode={kode}
+                        kategori={node.title}
+                        node={node}
+                        visKoder={context.visKoder}
+                        onClick={() => this.handleClick(kode, node)}
+                      />
                     );
                   });
               });
@@ -69,9 +63,7 @@ class Borring extends Component {
   handleClick = (kode, node) => {
     kode = this.getInnerMostSingleChild(kode, node);
     const { history } = this.props;
-    //  console.log(kode);
     kode = hack(kode);
-    //  console.log(kode);
     backend.søk(kode).then(json => {
       // TODO: Mofify lat,lon query API to return URLs
       let hit = json.result[0];

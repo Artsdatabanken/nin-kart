@@ -15,30 +15,28 @@ const ListeLink = ({
   // This function returns an element
 
   return (
-    <>
-      <button
-        className={
-          (new_object &&
-            "clickable_element_location_header sidebar_element clickable_element_location ") ||
-          "sidebar_element clickable_element_location  clickable_element_location_subelement"
-        }
-        onClick={onClick}
-      >
-        <div className="text_content">
-          <h3>
-            {primary}
-            {kode && visKoder == true && <span> - </span>}
-            {new_object && <span>{prefix}</span>}
-            <Flis kode={kode} visKoder={visKoder} />
-          </h3>
-          {secondary}
-        </div>
+    <button
+      className={
+        (new_object &&
+          "clickable_element_location_header sidebar_element clickable_element_location ") ||
+        "sidebar_element clickable_element_location  clickable_element_location_subelement"
+      }
+      onClick={onClick}
+    >
+      <div className="text_content">
+        <h3>
+          {primary}
+          {kode && visKoder == true && <span> - </span>}
+          {new_object && <span>{prefix}</span>}
+          <Flis kode={kode} visKoder={visKoder} />
+        </h3>
+        {secondary}
+      </div>
 
-        <div className="invisible_icon_button element_link">
-          <KeyboardArrowRight />
-        </div>
-      </button>
-    </>
+      <div className="invisible_icon_button element_link">
+        <KeyboardArrowRight />
+      </div>
+    </button>
   );
 };
 
