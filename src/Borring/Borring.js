@@ -8,6 +8,7 @@ import Seksjon from "./Seksjon";
 class Borring extends Component {
   render() {
     const { barn = {} } = this.props;
+
     return (
       <List>
         {Object.keys(barn).length <= 0 ? (

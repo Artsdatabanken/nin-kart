@@ -24,10 +24,7 @@ class BorreVindu extends Component {
     const dominant = this.finnButikkKode();
     let image_url = config.getFotoOmslag(dominant.url);
     return (
-      <div
-        square={true}
-        className="sidebar_top_area sidebar_background_element"
-      >
+      <div className="sidebar_top_area sidebar_background_element">
         <div className="sidebar_element page_topic_header" />
         <div
           className="sidebar_top_image"

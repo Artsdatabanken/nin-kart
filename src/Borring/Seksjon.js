@@ -58,17 +58,17 @@ class Seksjon extends Component {
     const value = oppsumert_node[len - 1];
     if (len < 2)
       return (
-        <p>
+        <div className="sidebar_padding">
           <h4 className="entallsSjekk">{entallsSjekk(value)}</h4>
-        </p>
+        </div>
       );
 
     const key = oppsumert_node[len - 2];
     return (
-      <p className="entallsSjekk">
+      <div className="sidebar_padding">
         <h4> {entallsSjekk(key.trim())}</h4>
         <h5 className="replaceString">{replaceString(value)}</h5>
-      </p>
+      </div>
     );
   }
 }

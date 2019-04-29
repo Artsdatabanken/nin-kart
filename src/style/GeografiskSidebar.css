@@ -1,7 +1,7 @@
 /* Specifically for items in arrowclickmenu*/
 .element_link {
   position: absolute;
-  right: 0px;
+  right: 10px;
   top: calc(50% - 10px);
 }
 
@@ -64,4 +64,10 @@
     width: 100%;
     max-width: 100%;
   }
+}
+
+.sidebar_padding h5,
+.sidebar_padding h4 {
+  padding-right: 5px;
+  padding-left: 5px;
 }

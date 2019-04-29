@@ -18,9 +18,9 @@ const Listeelement = ({ kode, primary, secondary, visKoder, onClick }) => {
         {secondary}
       </div>
 
-      <button className="invisible_icon_button element_link">
+      <div className="invisible_icon_button element_link">
         <KeyboardArrowRight />
-      </button>
+      </div>
     </button>
   );
 };
