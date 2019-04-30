@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
 import språk from "../språk";
 
@@ -6,11 +6,13 @@ import {
   Layers,
   Close,
   KeyboardArrowDown,
+  KeyboardArrowUp,
   OpenInNew,
   ColorLens
 } from "@material-ui/icons";
 
-function KartlagListeElement(kartlag, props, visKoder) {
+function KartlagListeElement({ kartlag, props, visKoder }) {
+  const [expanded, setExpanded] = useState(false);
   const kode = kartlag.kode;
   let tittel = kartlag.tittel;
   //let farge = kartlag.farge;
@@ -41,8 +43,11 @@ function KartlagListeElement(kartlag, props, visKoder) {
             )}
           </button>
 
-          <button className="invisible_icon_button">
-            <KeyboardArrowDown />
+          <button
+            className="invisible_icon_button"
+            onClick={() => setExpanded(!expanded)}
+          >
+            {expanded ? <KeyboardArrowDown /> : <KeyboardArrowUp />}{" "}
           </button>
         </span>
       </div>

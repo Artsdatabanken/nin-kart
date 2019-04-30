@@ -17,11 +17,11 @@ class Kartlag extends React.Component {
             <div className="sidebar_element">
               <h3>Instillinger</h3>
               <ul className="kartlag_list">
-                {KartlagListeElement(
-                  koder["bakgrunnskart"],
-                  this.props,
-                  context.visKoder
-                )}
+                <KartlagListeElement
+                  kartlag={koder["bakgrunnskart"]}
+                  props={this.props}
+                  visKoder={context.visKoder}
+                />
               </ul>
             </div>
             <div className="sidebar_element">
@@ -29,15 +29,15 @@ class Kartlag extends React.Component {
               <ul className="kartlag_list">
                 {keys.map(fkode => {
                   const kartlag = koder[fkode];
-                  if (fkode !== "bakgrunnskart") {
-                    return KartlagListeElement(
-                      kartlag,
-                      this.props,
-                      context.visKoder
-                    );
-                  } else {
-                    return false;
-                  }
+                  return (
+                    fkode !== "bakgrunnskart" && (
+                      <KartlagListeElement
+                        kartlag={koder["bakgrunnskart"]}
+                        props={this.props}
+                        visKoder={context.visKoder}
+                      />
+                    )
+                  );
                 })}
               </ul>
             </div>
