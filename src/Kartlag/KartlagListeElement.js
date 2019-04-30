@@ -18,11 +18,11 @@ function KartlagListeElement({ kartlag, props, visKoder }) {
   //let farge = kartlag.farge;
   const erSynlig = kartlag.erSynlig;
   const { onUpdateLayerProp, onRemoveSelectedLayer, bbox, onFitBounds } = props;
+  console.log(kartlag);
 
   return (
     <li>
       <div className="kartlag_header">
-        <Layers className="kartlag_main_icon" />
         <span className="kartlag_list_title">
           {språk(tittel)}
           {kode}
@@ -47,24 +47,26 @@ function KartlagListeElement({ kartlag, props, visKoder }) {
             className="invisible_icon_button"
             onClick={() => setExpanded(!expanded)}
           >
-            {expanded ? <KeyboardArrowDown /> : <KeyboardArrowUp />}{" "}
+            {expanded ? <KeyboardArrowUp /> : <KeyboardArrowDown />}{" "}
           </button>
         </span>
       </div>
-      <div className="kartlag_submeny">
-        <button
-          className="invisible_icon_button"
-          onClick={() => onFitBounds(bbox)}
-        >
-          <OpenInNew />
-        </button>
-        <button className="invisible_icon_button">
-          <ColorLens />
-        </button>
-        <button className="invisible_icon_button">
-          <Close onClick={() => onRemoveSelectedLayer(kode)} />
-        </button>
-      </div>
+      {expanded && (
+        <div className="kartlag_submeny">
+          <button
+            className="invisible_icon_button"
+            onClick={() => onFitBounds(bbox)}
+          >
+            <OpenInNew />
+          </button>
+          <button className="invisible_icon_button">
+            <ColorLens />
+          </button>
+          <button className="invisible_icon_button">
+            <Close onClick={() => onRemoveSelectedLayer(kode)} />
+          </button>
+        </div>
+      )}
     </li>
   );
 }

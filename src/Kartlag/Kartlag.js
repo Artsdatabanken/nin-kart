@@ -32,7 +32,7 @@ class Kartlag extends React.Component {
                   return (
                     fkode !== "bakgrunnskart" && (
                       <KartlagListeElement
-                        kartlag={koder["bakgrunnskart"]}
+                        kartlag={kartlag}
                         props={this.props}
                         visKoder={context.visKoder}
                       />

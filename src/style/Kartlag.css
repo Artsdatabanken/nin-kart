@@ -33,6 +33,7 @@ Even tho we don't a of now support IE X)
   display: inline-block;
   width: calc(100% - 131px);
   padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .kartlag_h2 .kartlag_list_title {
