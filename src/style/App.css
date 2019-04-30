@@ -1,12 +1,36 @@
-.graphic_profile {
-  artsdb_color: #4c4a48;
+.nin_colours {
   color: #4b909e;
   color: #81b2bb;
   color: #b7d3d8;
-  extra_color: #e4f0f2;
   color: #edf4f5;
   color: black;
-  helenes_border_colour: #eaeaea;
+}
+
+.support_colors_nin_map {
+  color_blue: #e4f0f2;
+  color_active_blue_btn: #edf4f5;
+  background_header: #fbfbfb;
+  border-color: #eaeaea;
+}
+
+.artsdb_colours {
+  color: #ffffff;
+  color: #4c4a48;
+  color: #7f726b;
+  color: #de8608;
+  color: #eb6109;
+}
+
+.redlist {
+  color: rgb(90, 91, 93);
+  color: rgb(153, 0, 19);
+  color: rgb(216, 0, 36);
+  color: rgb(255, 76, 41);
+  color: rgb(243, 108, 33);
+  color: rgb(250, 166, 26);
+  color: rgb(96, 189, 177);
+  color: rgb(147, 149, 152);
+  color: rgb(206, 211, 212);
 }
 
 ::-webkit-scrollbar {

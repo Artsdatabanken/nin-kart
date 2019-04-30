@@ -74,6 +74,44 @@ Even tho we don't a of now support IE X)
 }
 
 .kartlag_submeny {
-  border-top: 1px solid #e4f0f2;
+  background: #fbfbfb;
   border-bottom: 1px solid #e4f0f2;
+  text-align: center;
+}
+
+.kartlag_submeny button {
+  font-size: 12pt;
+  width: calc(100% / 3);
+  padding: 5px;
+}
+
+.kartlag_submeny button svg {
+  vertical-align: middle;
+  padding-left: 0px;
+  height: 16pt;
+}
+
+.kartlag_open_object {
+  background: #edf4f5;
+  border-bottom: 1px solid #e4f0f2;
+}
+
+.kartlag_list,
+.kartlag .sidebar_element,
+.kartlag ul,
+.kartlag li {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.kartlag h3,
+.kartlag_header {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.remove_icon {
+  color: rgb(153, 0, 19);
 }

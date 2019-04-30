@@ -22,9 +22,14 @@ function KartlagListeElement({ kartlag, props, visKoder }) {
 
   return (
     <li>
-      <div className="kartlag_header">
+      <div
+        className={
+          (expanded && "kartlag_header kartlag_open_object") || "kartlag_header"
+        }
+      >
         <span className="kartlag_list_title">
           {språk(tittel)}
+          <br />
           {kode}
         </span>
 
@@ -53,18 +58,25 @@ function KartlagListeElement({ kartlag, props, visKoder }) {
       </div>
       {expanded && (
         <div className="kartlag_submeny">
-          <button
-            className="invisible_icon_button"
-            onClick={() => onFitBounds(bbox)}
-          >
-            <OpenInNew />
-          </button>
           <button className="invisible_icon_button">
-            <ColorLens />
+            Farger <ColorLens />
           </button>
-          <button className="invisible_icon_button">
-            <Close onClick={() => onRemoveSelectedLayer(kode)} />
-          </button>
+          {kode != "bakgrunnskart" && (
+            <>
+              <button
+                className="invisible_icon_button"
+                onClick={() => onFitBounds(bbox)}
+              >
+                Zoom til <OpenInNew />
+              </button>
+              <button
+                className="invisible_icon_button remove_icon"
+                onClick={() => onRemoveSelectedLayer(kode)}
+              >
+                Fjern <Close />
+              </button>
+            </>
+          )}
         </div>
       )}
     </li>

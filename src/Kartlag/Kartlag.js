@@ -41,12 +41,13 @@ class Kartlag extends React.Component {
                 })}
               </ul>
             </div>
+            {/*
             <div className="sidebar_element">
               <h3>Historikk</h3>
               <ul className="kartlag_list">
                 <li>kommer her</li>
               </ul>
-            </div>
+            </div>*/}
           </div>
         )}
       </SettingsContext.Consumer>
