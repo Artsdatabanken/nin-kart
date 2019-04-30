@@ -67,3 +67,12 @@ Even tho we don't a of now support IE X)
 .activate_button_container {
   text-align: center;
 }
+
+.kartlag_header {
+  padding-bottom: 5px;
+}
+
+.kartlag_submeny {
+  border-top: 1px solid #e4f0f2;
+  border-bottom: 1px solid #e4f0f2;
+}
