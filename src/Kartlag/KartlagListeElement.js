@@ -11,19 +11,19 @@ import {
   ColorLens
 } from "@material-ui/icons";
 
-function KartlagListeElement({ kartlag, props, visKoder }) {
+const KartlagListeElement = ({
+  kartlag,
+  onUpdateLayerProp,
+  onRemoveSelectedLayer,
+  onFitBounds,
+  history
+}) => {
   const [expanded, setExpanded] = useState(false);
   const kode = kartlag.kode;
   let tittel = kartlag.tittel;
   let bbox = kartlag.bbox;
   //let farge = kartlag.farge;
   const erSynlig = kartlag.erSynlig;
-  const {
-    onUpdateLayerProp,
-    onRemoveSelectedLayer,
-    onFitBounds,
-    history
-  } = props;
 
   return (
     <li>
@@ -95,6 +95,6 @@ function KartlagListeElement({ kartlag, props, visKoder }) {
       )}
     </li>
   );
-}
+};
 
 export default withRouter(KartlagListeElement);
