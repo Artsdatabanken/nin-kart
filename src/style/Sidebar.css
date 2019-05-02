@@ -20,6 +20,10 @@
     max-width: 100%;
     padding-top: 56px;
   }
+
+  .panel {
+    padding-bottom: 55px;
+  }
 }
 
 /* The white container boxes */

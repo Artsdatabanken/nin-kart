@@ -7,7 +7,6 @@ import språk from "./språk";
 import Tweaks from "./Tweaks/";
 import Panel from "./components/Panel";
 import InfoTab from "./InfoTab";
-import AktiveKartlag from "./AktiveKartlag/index";
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class VenstreVinduContainer extends React.Component {
@@ -112,15 +111,7 @@ class VenstreVinduContainer extends React.Component {
             onRequestClose={this.handleCloseSnackbar}
           />
         )}
-        <div>
-          <AktiveKartlag
-            koder={this.props.aktiveLag}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-            onUpdateLayerProp={onUpdateLayerProp}
-            onRemoveSelectedLayer={onRemoveSelectedLayer}
-          />
-        </div>
+        <div />
       </>
     );
   }
