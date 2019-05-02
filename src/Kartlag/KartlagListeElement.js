@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
 import språk from "../språk";
 
+import { SettingsContext } from "../SettingsContext";
 import {
-  Layers,
   Close,
   KeyboardArrowDown,
   KeyboardArrowUp,
@@ -15,10 +15,16 @@ function KartlagListeElement({ kartlag, props, visKoder }) {
   const [expanded, setExpanded] = useState(false);
   const kode = kartlag.kode;
   let tittel = kartlag.tittel;
+  let bbox = kartlag.bbox;
   //let farge = kartlag.farge;
   const erSynlig = kartlag.erSynlig;
-  const { onUpdateLayerProp, onRemoveSelectedLayer, bbox, onFitBounds } = props;
-  console.log(kartlag);
+  const {
+    onUpdateLayerProp,
+    onRemoveSelectedLayer,
+    history,
+    onMouseLeave,
+    onFitBounds
+  } = props;
 
   return (
     <li>
@@ -58,10 +64,20 @@ function KartlagListeElement({ kartlag, props, visKoder }) {
       </div>
       {expanded && (
         <div className="kartlag_submeny">
-          <button className="invisible_icon_button">
-            Farger <ColorLens />
-          </button>
-          {kode != "bakgrunnskart" && (
+          <SettingsContext.Consumer>
+            {context => (
+              <button className="invisible_icon_button">
+                Farger{" "}
+                <ColorLens
+                  onClick={() => {
+                    onMouseLeave();
+                    history.push("/" + kode + "?vis");
+                  }}
+                />
+              </button>
+            )}
+          </SettingsContext.Consumer>
+          {kode !== "bakgrunnskart" && (
             <>
               <button
                 className="invisible_icon_button"

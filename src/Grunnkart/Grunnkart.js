@@ -58,7 +58,10 @@ class Grunnkart extends React.Component {
     this.setState({ actualBounds: bounds, fitBounds: null });
   };
 
-  handleFitBounds = bbox => this.setState({ fitBounds: bbox });
+  handleFitBounds = bbox => {
+    this.setState({ fitBounds: bbox });
+    console.log(bbox);
+  };
 
   handleBoundsChange = bbox => {
     this.setState({ actualBounds: bbox });
@@ -246,6 +249,7 @@ class Grunnkart extends React.Component {
                     aktiveLag={this.state.aktiveLag}
                     onUpdateLayerProp={this.handleUpdateLayerProp}
                     onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                    onFitBounds={this.handleFitBounds}
                   />
                 )}
                 <Kart

@@ -16,7 +16,7 @@ import Link from "@material-ui/icons/Link";
 import { CallSplit, MergeType, ShowChart, Gradient } from "@material-ui/icons/";
 import KurveContainer from "./KurveContainer";
 import Nedlasting from "./Nedlasting";
-import { OpenInNew } from "@material-ui/icons/";
+//import { OpenInNew } from "@material-ui/icons/";
 import { SettingsContext } from "../../SettingsContext";
 
 const KodeVindu = ({
@@ -79,7 +79,6 @@ const KodeVindu = ({
               overordnet={overordnet}
               onNavigate={onNavigate}
               erAktivert={erAktivert}
-              onFitBounds={onFitBounds}
               onToggleLayer={onToggleLayer}
               bilde={meta.foto}
             />

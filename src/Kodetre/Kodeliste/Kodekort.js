@@ -47,10 +47,7 @@ class Kodekort extends React.Component {
     }
 
     return (
-      <div
-        square={false}
-        className="sidebar_top_area sidebar_background_element"
-      >
+      <div className="sidebar_top_area sidebar_background_element">
         <div className="sidebar_element page_topic_header" />
 
         <div
