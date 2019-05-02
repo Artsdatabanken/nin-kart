@@ -1,11 +1,11 @@
-import { ListItem, ListItemText } from "@material-ui/core";
 import React from "react";
 import { withRouter } from "react-router";
 import typer from "./Tema";
+import { KeyboardArrowRight } from "@material-ui/icons";
 
 const TemaPreview = ({ type, valgt, onUpdateLayerProp, history }) => (
-  <ListItem
-    button
+  <button
+    className="button_map_preview"
     onClick={() => {
       onUpdateLayerProp &&
         onUpdateLayerProp("bakgrunnskart", "kart.aktivtFormat", type);
@@ -15,16 +15,18 @@ const TemaPreview = ({ type, valgt, onUpdateLayerProp, history }) => (
     }}
     selected={valgt === type}
   >
-    <ListItemText
-      secondary={typer[type]}
-      primary={
-        <img
-          src={"/tema/" + type + ".jpg"}
-          alt={"Forhåndsvisning av tema " + typer[type]}
-        />
-      }
-    />
-  </ListItem>
+    <div className="button_map_preview_first_part">
+      Bakgrunn: {typer[type]} {type}
+      <img
+        src={"/tema/" + type + ".jpg"}
+        alt={"Forhåndsvisning av tema " + typer[type]}
+      />
+    </div>
+
+    <div className="theme_link">
+      <KeyboardArrowRight />
+    </div>
+  </button>
 );
 
 export default withRouter(TemaPreview);

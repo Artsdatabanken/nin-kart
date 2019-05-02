@@ -1,5 +1,5 @@
 import SliderSetting from "../SliderSetting";
-import { List, ListSubheader } from "@material-ui/core";
+import { List, h3 } from "@material-ui/core";
 import { withTheme } from "@material-ui/core/styles";
 import { Component, default as React } from "react";
 import { withRouter } from "react-router";
@@ -45,7 +45,7 @@ class Bakgrunnskart extends Component {
           />
           {kf[egenskap + "_stroke_farge"] && (
             <>
-              <ListSubheader>Omriss</ListSubheader>
+              <h3>Omriss</h3>
               <SliderSetting
                 value={kf[egenskap + "_stroke_width"] || 0}
                 min={0}
@@ -84,81 +84,89 @@ class Bakgrunnskart extends Component {
 
     return (
       <List>
-        <ListSubheader>Tema</ListSubheader>
-        <TemaPreview type={aktivtFormat} />
-        {false && (
-          <Terreng
-            kode="bakgrunnskart"
-            terreng={this.props.terreng}
-            onUpdateLayerProp={this.props.onUpdateLayerProp}
+        <div className="sidebar_element">
+          <h3>Tema</h3>
+          <TemaPreview type={aktivtFormat} />
+          {false && (
+            <Terreng
+              kode="bakgrunnskart"
+              terreng={this.props.terreng}
+              onUpdateLayerProp={this.props.onUpdateLayerProp}
+            />
+          )}
+        </div>
+        <div className="sidebar_element">
+          <h3>Områder</h3>
+          <Bakgrunnskartlag
+            onUpdateLayerProp={this.handleUpdateLayerProp}
+            lagNavn="vann"
+            tittel="Vann"
+            erSynlig={kf.vann}
+            farge={kf.vann_farge}
           />
-        )}
-        <ListSubheader>Områder</ListSubheader>
-        <Bakgrunnskartlag
-          onUpdateLayerProp={this.handleUpdateLayerProp}
-          lagNavn="vann"
-          tittel="Vann"
-          erSynlig={kf.vann}
-          farge={kf.vann_farge}
-        />
-        <Bakgrunnskartlag
-          onUpdateLayerProp={this.handleUpdateLayerProp}
-          lagNavn="land"
-          tittel="Land"
-          erSynlig={kf.land}
-          farge={kf.land_farge}
-        />
-        <Bakgrunnskartlag
-          onUpdateLayerProp={this.handleUpdateLayerProp}
-          lagNavn="transport"
-          tittel="Transport"
-          erSynlig={kf.transport}
-          farge={kf.transport_farge}
-        />
-        <ListSubheader>Etiketter</ListSubheader>
-        <Bakgrunnskartlag
-          onUpdateLayerProp={this.handleUpdateLayerProp}
-          lagNavn="vann_navn"
-          tittel="Vann"
-          erSynlig={kf.vann_navn}
-          farge={kf.vann_navn_farge}
-        />
-        <Bakgrunnskartlag
-          onUpdateLayerProp={this.handleUpdateLayerProp}
-          lagNavn="sted_navn"
-          tittel="Steder"
-          erSynlig={kf.sted_navn}
-          farge={kf.sted_navn_farge}
-        />
-        <Bakgrunnskartlag
-          onUpdateLayerProp={this.handleUpdateLayerProp}
-          lagNavn="transport_navn"
-          tittel="Transport"
-          erSynlig={kf.transport_navn}
-          farge={kf.transport_navn_farge}
-        />
-        <ListSubheader>Administrative grenser</ListSubheader>
-        <Bakgrunnskartlag
-          onUpdateLayerProp={this.handleUpdateLayerProp}
-          lagNavn="landegrense"
-          tittel="Riksgrense"
-          erSynlig={kf.landegrense}
-          farge={kf.landegrense_farge}
-        />
-        <Bakgrunnskartlag
-          onUpdateLayerProp={this.handleUpdateLayerProp}
-          lagNavn="fylkesgrense"
-          tittel="Fylkesgrense"
-          erSynlig={kf.fylkesgrense}
-          farge={kf.fylkesgrense_farge}
-        />
-        <Bakgrunnskartlag
-          onUpdateLayerProp={this.handleUpdateLayerProp}
-          lagNavn="kommunegrense"
-          tittel="Kommunegrense"
-          erSynlig={kf.kommunegrense}
-          farge={kf.kommunegrense_farge}
-        />
+          <Bakgrunnskartlag
+            onUpdateLayerProp={this.handleUpdateLayerProp}
+            lagNavn="land"
+            tittel="Land"
+            erSynlig={kf.land}
+            farge={kf.land_farge}
+          />
+          <Bakgrunnskartlag
+            onUpdateLayerProp={this.handleUpdateLayerProp}
+            lagNavn="transport"
+            tittel="Transport"
+            erSynlig={kf.transport}
+            farge={kf.transport_farge}
+          />
+        </div>
+        <div className="sidebar_element">
+          <h3>Etiketter</h3>
+          <Bakgrunnskartlag
+            onUpdateLayerProp={this.handleUpdateLayerProp}
+            lagNavn="vann_navn"
+            tittel="Vann"
+            erSynlig={kf.vann_navn}
+            farge={kf.vann_navn_farge}
+          />
+          <Bakgrunnskartlag
+            onUpdateLayerProp={this.handleUpdateLayerProp}
+            lagNavn="sted_navn"
+            tittel="Steder"
+            erSynlig={kf.sted_navn}
+            farge={kf.sted_navn_farge}
+          />
+          <Bakgrunnskartlag
+            onUpdateLayerProp={this.handleUpdateLayerProp}
+            lagNavn="transport_navn"
+            tittel="Transport"
+            erSynlig={kf.transport_navn}
+            farge={kf.transport_navn_farge}
+          />
+        </div>
+        <div className="sidebar_element">
+          <h3>Administrative grenser</h3>
+          <Bakgrunnskartlag
+            onUpdateLayerProp={this.handleUpdateLayerProp}
+            lagNavn="landegrense"
+            tittel="Riksgrense"
+            erSynlig={kf.landegrense}
+            farge={kf.landegrense_farge}
+          />
+          <Bakgrunnskartlag
+            onUpdateLayerProp={this.handleUpdateLayerProp}
+            lagNavn="fylkesgrense"
+            tittel="Fylkesgrense"
+            erSynlig={kf.fylkesgrense}
+            farge={kf.fylkesgrense_farge}
+          />
+          <Bakgrunnskartlag
+            onUpdateLayerProp={this.handleUpdateLayerProp}
+            lagNavn="kommunegrense"
+            tittel="Kommunegrense"
+            erSynlig={kf.kommunegrense}
+            farge={kf.kommunegrense_farge}
+          />
+        </div>
       </List>
     );
   }

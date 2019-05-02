@@ -7,6 +7,7 @@ import "./style/App.css";
 import "./style/Sidebar.css";
 import "./style/GeografiskSidebar.css";
 import "./style/Kartlag.css";
+import "./style/FargeMenyer.css";
 import Grunnkart from "./Grunnkart/Grunnkart";
 import Informasjon from "./Informasjon/Informasjon";
 import SettingsContainer from "./SettingsContainer";
