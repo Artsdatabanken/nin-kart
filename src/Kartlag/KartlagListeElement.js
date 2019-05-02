@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
 import språk from "../språk";
-
+import { withRouter } from "react-router";
 import { SettingsContext } from "../SettingsContext";
 import {
   Close,
@@ -21,9 +21,8 @@ function KartlagListeElement({ kartlag, props, visKoder }) {
   const {
     onUpdateLayerProp,
     onRemoveSelectedLayer,
-    history,
-    onMouseLeave,
-    onFitBounds
+    onFitBounds,
+    history
   } = props;
 
   return (
@@ -66,14 +65,13 @@ function KartlagListeElement({ kartlag, props, visKoder }) {
         <div className="kartlag_submeny">
           <SettingsContext.Consumer>
             {context => (
-              <button className="invisible_icon_button">
-                Farger{" "}
-                <ColorLens
-                  onClick={() => {
-                    onMouseLeave();
-                    history.push("/" + kode + "?vis");
-                  }}
-                />
+              <button
+                className="invisible_icon_button"
+                onClick={() => {
+                  history.push("/" + kode + "?vis");
+                }}
+              >
+                Farger <ColorLens />
               </button>
             )}
           </SettingsContext.Consumer>
@@ -99,4 +97,4 @@ function KartlagListeElement({ kartlag, props, visKoder }) {
   );
 }
 
-export default KartlagListeElement;
+export default withRouter(KartlagListeElement);

@@ -250,6 +250,7 @@ class Grunnkart extends React.Component {
                     onUpdateLayerProp={this.handleUpdateLayerProp}
                     onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
                     onFitBounds={this.handleFitBounds}
+                    history={history}
                   />
                 )}
                 <Kart
