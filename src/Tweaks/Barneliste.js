@@ -11,7 +11,6 @@ const Barneliste = ({
   onMouseEnter,
   onMouseLeave,
   history,
-  forelderkode,
   visKoder
 }) => {
   return Object.keys(barn).map(i => {

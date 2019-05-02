@@ -51,23 +51,23 @@ class Polygon extends Component {
       <SettingsContext.Consumer>
         {context => (
           <>
-            <List>
-              <ListSubheader style={{ textTransform: "capitalize" }}>
-                {undernivå}
-              </ListSubheader>
-              <Barneliste
-                forelderkode={kode}
-                visKoder={context.visKoder}
-                aktivtBarn={lag}
-                barn={barn}
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
-                onUpdateLayerProp={(index, felt, verdi) => {
-                  barn[index][felt] = verdi;
-                  this.handleUpdateLayerProp(kode, "barn", barn);
-                }}
-              />
-            </List>
+            <div class="sidebar_element">
+              <h3 style={{ textTransform: "capitalize" }}>{undernivå}</h3>
+              <ul className="ul_block">
+                <Barneliste
+                  forelderkode={kode}
+                  visKoder={context.visKoder}
+                  aktivtBarn={lag}
+                  barn={barn}
+                  onMouseEnter={onMouseEnter}
+                  onMouseLeave={onMouseLeave}
+                  onUpdateLayerProp={(index, felt, verdi) => {
+                    barn[index][felt] = verdi;
+                    this.handleUpdateLayerProp(kode, "barn", barn);
+                  }}
+                />
+              </ul>
+            </div>
             <ColorPicker
               tittel={"Fyllfarge"}
               color={farge}

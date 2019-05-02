@@ -1,5 +1,4 @@
 import typesystem from "@artsdatabanken/typesystem";
-import { ListSubheader } from "@material-ui/core";
 import { withTheme } from "@material-ui/core/styles";
 import { SwapVert } from "@material-ui/icons/";
 import React, { Component } from "react";
@@ -17,7 +16,7 @@ class Gradient extends Component {
     const spread = 0.015;
     return (
       <>
-        <ListSubheader>Filter</ListSubheader>
+        <h3>Filter</h3>
         <SliderSetting
           value={filterMin}
           decimals={2}

@@ -34,18 +34,40 @@ class Bakgrunnskart extends Component {
     if (location.search.startsWith("?vis_farge")) {
       const egenskap = location.search.split("=").pop();
       return (
-        <List>
-          <ColorPicker
-            tittel={"Fyllfarge"}
-            color={kf[egenskap + "_farge"]}
-            onChange={farge => {
-              const rgbString = tinycolor(farge.rgb).toRgbString();
-              this.handleUpdateLayerProp(lag, egenskap + "_farge", rgbString);
-            }}
-          />
+        <div className="colour_adjustment_container">
+          <div className="sidebar_element">
+            <h1>Fargejusteringer</h1>
+            <h2>Bakgrunnskart</h2>
+          </div>
+          <div className="sidebar_element">
+            <h3>Fyllfarge</h3>
+            <ColorPicker
+              color={kf[egenskap + "_farge"]}
+              onChange={farge => {
+                const rgbString = tinycolor(farge.rgb).toRgbString();
+                this.handleUpdateLayerProp(lag, egenskap + "_farge", rgbString);
+              }}
+            />
+          </div>
           {kf[egenskap + "_stroke_farge"] && (
-            <>
-              <ListSubheader>Omriss</ListSubheader>
+            <div className="sidebar_element">
+              <h3>Omriss rundt elementene</h3>
+
+              <h4>Velg farge på omriss</h4>
+              <ColorPicker
+                color={kf[egenskap + "_stroke_farge"]}
+                onChange={farge => {
+                  const rgbString = tinycolor(farge.rgb).toRgbString();
+                  this.handleUpdateLayerProp(
+                    lag,
+                    egenskap + "_stroke_farge",
+                    rgbString
+                  );
+                }}
+              />
+
+              <h4>Velg tykkelse på omriss</h4>
+
               <SliderSetting
                 value={kf[egenskap + "_stroke_width"] || 0}
                 min={0}
@@ -65,20 +87,9 @@ class Bakgrunnskart extends Component {
                   )
                 }
               />
-              <ColorPicker
-                color={kf[egenskap + "_stroke_farge"]}
-                onChange={farge => {
-                  const rgbString = tinycolor(farge.rgb).toRgbString();
-                  this.handleUpdateLayerProp(
-                    lag,
-                    egenskap + "_stroke_farge",
-                    rgbString
-                  );
-                }}
-              />
-            </>
+            </div>
           )}
-        </List>
+        </div>
       );
     }
 

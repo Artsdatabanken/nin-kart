@@ -1,0 +1,86 @@
+/* 
+Dumped from old version until i bother fixing it
+
+*/
+
+.iconSmall {
+  font-size: 20pt;
+  margin-right: 8px;
+}
+
+.alphaPointer,
+.colorSlider,
+.colorPicker {
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  height: 256px;
+  position: relative;
+}
+
+.alphaPointer:hover,
+.colorSlider:hover,
+.colorPicker:hover {
+  cursor: pointer;
+}
+
+.sidebar .alphaPointer,
+.alphaPointer,
+.sidebar .colorSlider,
+.colorSlider {
+  margin-top: 10px;
+  height: 10px;
+}
+
+.slider_container {
+  position: relative;
+}
+
+.slider_value {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.sidebar .slider,
+.slider {
+  padding: 0px;
+  padding-left: 7px;
+  padding-right: 7px;
+  max-width: 100%;
+}
+
+.slider_setting div,
+.colorPicker_container {
+  padding: 5px;
+}
+
+.colour_adjustment_container h4 {
+  padding: 5px;
+}
+
+.slider_setting {
+  position: relative;
+}
+
+.select {
+  margin: 0px;
+  width: 100%;
+  position: relative;
+  height: auto;
+}
+
+.select option {
+  display: block;
+
+  position: relative;
+  margin: 0px;
+  width: 100%;
+}
+
+.ul_block,
+.ul_block li {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+}
