@@ -84,3 +84,55 @@ Dumped from old version until i bother fixing it
   margin: 0px;
   padding: 0px;
 }
+
+.button_map_preview {
+  max-width: 100%;
+  margin: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  border: 0px;
+  background: transparent;
+  font-size: 12pt;
+  text-align: left;
+  position: relative;
+  height: auto;
+  box-sizing: border-box;
+  background: #edf4f5;
+}
+
+.button_map_preview img {
+  width: 100%;
+  margin-top: 10px;
+  display: block;
+  margin-left: -10px;
+}
+
+.button_map_preview_first_part {
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+}
+
+.button_map_preview_first_part,
+.theme_link {
+  display: block;
+  height: 100%;
+}
+
+.theme_link {
+  display: block;
+  background: #b7d3d8;
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: auto;
+}
+
+.theme_link svg {
+  margin-top: calc(50% - 15px);
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  vertical-align: center;
+}

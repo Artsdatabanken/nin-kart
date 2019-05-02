@@ -1,6 +1,6 @@
 import { SettingsContext } from "../SettingsContext";
 import typesystem from "@artsdatabanken/typesystem";
-import { List, ListSubheader, withStyles } from "@material-ui/core";
+import { withStyles } from "@material-ui/core";
 import { withTheme } from "@material-ui/core/styles";
 import React, { Component } from "react";
 import { withRouter } from "react-router";

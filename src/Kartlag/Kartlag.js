@@ -6,7 +6,7 @@ class Kartlag extends React.Component {
   render() {
     let koder = this.props.aktiveLag;
     const keys = Object.keys(koder);
-    const { onFitBounds } = this.props;
+    const { onFitBounds, onUpdateLayerProp } = this.props;
 
     return (
       <SettingsContext.Consumer>
@@ -37,6 +37,7 @@ class Kartlag extends React.Component {
                         props={this.props}
                         visKoder={context.visKoder}
                         onFitBounds={onFitBounds}
+                        onUpdateLayerProp={onUpdateLayerProp}
                       />
                     )
                   );
