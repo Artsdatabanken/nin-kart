@@ -8,6 +8,7 @@ const Tweaks = ({ history, ...props }) => {
   const aktivtFormat = props.kart.aktivtFormat;
   return (
     <div className="tweaks">
+      <div class="sidebar_element page_topic_header" />
       <Generelt history={history} {...props}>
         <Seksjon aktivtFormat={aktivtFormat} {...props} />
       </Generelt>

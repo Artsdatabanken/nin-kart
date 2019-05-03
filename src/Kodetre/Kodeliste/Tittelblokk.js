@@ -1,8 +1,6 @@
-import { withTheme } from "@material-ui/core/styles";
 import React from "react";
 import SettingsContainer from "../../SettingsContainer";
 import { SettingsContext } from "../../SettingsContext";
-import { makeStyles } from "@material-ui/styles";
 import prettyKode from "./prettyKode";
 import { OpenInNew } from "@material-ui/icons/";
 

@@ -244,15 +244,15 @@ class Grunnkart extends React.Component {
                     />
                   </div>
                 )}
-                {context.aktivTab === "kartlag" && (
-                  <Kartlag
-                    aktiveLag={this.state.aktiveLag}
-                    onUpdateLayerProp={this.handleUpdateLayerProp}
-                    onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                    onFitBounds={this.handleFitBounds}
-                    history={history}
-                  />
-                )}
+                <Kartlag
+                  hidden={context.aktivTab === "kartlag" && true}
+                  aktiveLag={this.state.aktiveLag}
+                  onUpdateLayerProp={this.handleUpdateLayerProp}
+                  onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                  onFitBounds={this.handleFitBounds}
+                  history={history}
+                />
+
                 <Kart
                   bounds={this.state.fitBounds}
                   latitude={65.4}
