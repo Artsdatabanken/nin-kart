@@ -63,26 +63,40 @@ const KartlagListeElement = ({
       </div>
       {expanded && (
         <div className="kartlag_submeny">
-          <SettingsContext.Consumer>
-            {context => (
-              <button
-                className="invisible_icon_button"
-                onClick={() => {
-                  history.push("/" + kode + "?vis");
-                }}
-              >
-                Farger <ColorLens />
-              </button>
-            )}
-          </SettingsContext.Consumer>
+          {kode === "bakgrunnskart" && (
+            <SettingsContext.Consumer>
+              {context => (
+                <button
+                  className="invisible_icon_button"
+                  onClick={() => {
+                    history.push("/" + kode + "?vis");
+                  }}
+                >
+                  Farger <ColorLens />
+                </button>
+              )}
+            </SettingsContext.Consumer>
+          )}
+
           {kode !== "bakgrunnskart" && (
             <>
-              <button
-                className="invisible_icon_button"
-                onClick={() => onFitBounds(bbox)}
-              >
-                Zoom til <OpenInNew />
-              </button>
+              <SettingsContext.Consumer>
+                {context => (
+                  <>
+                    <button
+                      className="invisible_icon_button"
+                      onClick={event => {
+                        context.onNavigateToTab("kart");
+                        console.log("running", context.onNavigateToTab);
+                        onFitBounds(bbox);
+                      }}
+                    >
+                      Zoom til <OpenInNew />
+                    </button>
+                  </>
+                )}
+              </SettingsContext.Consumer>
+
               <button
                 className="invisible_icon_button remove_icon"
                 onClick={() => onRemoveSelectedLayer(kode)}

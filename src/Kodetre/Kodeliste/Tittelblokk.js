@@ -6,28 +6,15 @@ import { makeStyles } from "@material-ui/styles";
 import prettyKode from "./prettyKode";
 import { OpenInNew } from "@material-ui/icons/";
 
-const useStyles = makeStyles({
-  // This element contains exclusively the title elements!
-});
-
 const Tittelblokk = ({
-  onToggleLayer,
-  erAktivert,
   tittel,
   kode,
-  farge,
-  chipFarge,
-  kontrastfarge,
-  prefiks,
   nivå,
   overordnet,
-  onNavigate,
-  theme,
   children,
   bbox,
   onFitBounds
 }) => {
-  const classes = useStyles();
   const pkode = prettyKode(kode);
   return (
     <SettingsContainer>
@@ -35,7 +22,7 @@ const Tittelblokk = ({
         {context => (
           <div className="sidebar_title_container sidebar_element">
             <h1 className="sidebar_title">{tittel}</h1>
-            <h2 className={classes.nivå}>
+            <h2>
               {nivå}
               {context.visKoder && (
                 <span className="sidebar_code_field">
@@ -45,7 +32,13 @@ const Tittelblokk = ({
             </h2>
             {children}
             {overordnet.length > 0 && (
-              <button className="zoom_button" onClick={() => onFitBounds(bbox)}>
+              <button
+                className="zoom_button"
+                onClick={event => {
+                  context.onNavigateToTab("kart");
+                  onFitBounds(bbox);
+                }}
+              >
                 <OpenInNew className="classes.iconSmall" />
                 Zoom til
               </button>
@@ -57,4 +50,4 @@ const Tittelblokk = ({
   );
 };
 
-export default withTheme()(Tittelblokk);
+export default Tittelblokk;

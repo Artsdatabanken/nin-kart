@@ -2,20 +2,26 @@ import { ArrowForward, Layers } from "@material-ui/icons/";
 import React from "react";
 import { withRouter } from "react-router";
 
+import { SettingsContext } from "../../SettingsContext";
 const Knapperad = ({ erAktivert, onToggleLayer, bbox }) => (
   <>
     {bbox && (
-      <div className="sidebar_element activate_button_container">
-        <button
-          className="activate_button"
-          onClick={onToggleLayer}
-          disabled={erAktivert}
-        >
-          Legg til kartlag <ArrowForward />
-          <Layers />
-        </button>
+      <SettingsContext.Consumer>
+        {context => (
+          <div className="sidebar_element activate_button_container">
+            <button
+              className="activate_button"
+              onClick={event => {
+                onToggleLayer();
+                context.onNavigateToTab("kartlag");
+              }}
+              disabled={erAktivert}
+            >
+              Legg til kartlag <ArrowForward />
+              <Layers />
+            </button>
 
-        {/* 
+            {/* 
          <LibraryAdd/>
         <Button
           className={classes.button}
@@ -25,7 +31,9 @@ const Knapperad = ({ erAktivert, onToggleLayer, bbox }) => (
           Vis
         </Button>
           */}
-      </div>
+          </div>
+        )}
+      </SettingsContext.Consumer>
     )}
   </>
 );

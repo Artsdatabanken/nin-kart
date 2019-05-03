@@ -3,6 +3,7 @@ import { CustomPicker } from "react-color";
 import ChromePointerCircle from "react-color/lib/components/chrome/ChromePointerCircle";
 import { Alpha, Hue, Saturation } from "react-color/lib/components/common";
 import ChromePointer from "react-color/lib/components/slider/SliderPointer";
+
 class ColorPicker extends React.Component {
   render() {
     return (
