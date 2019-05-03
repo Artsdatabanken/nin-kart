@@ -37,6 +37,7 @@ class Kartlag extends React.Component {
                         fkode !== "bakgrunnskart" && (
                           <KartlagListeElement
                             kartlag={kartlag}
+                            key={fkode}
                             {...this.props}
                             visKoder={context.visKoder}
                             onFitBounds={onFitBounds}

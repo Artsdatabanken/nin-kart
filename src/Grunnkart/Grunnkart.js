@@ -290,4 +290,4 @@ class Grunnkart extends React.Component {
   static contextType = SettingsContext;
 }
 
-export default withStyles(styles)(withRouter(Grunnkart));
+export default withRouter(withStyles(styles)(Grunnkart));
