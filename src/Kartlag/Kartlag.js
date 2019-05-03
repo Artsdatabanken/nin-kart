@@ -20,7 +20,7 @@ class Kartlag extends React.Component {
               <ul className="kartlag_list">
                 <KartlagListeElement
                   kartlag={koder["bakgrunnskart"]}
-                  props={this.props}
+                  {...this.props}
                   visKoder={context.visKoder}
                 />
               </ul>
@@ -34,7 +34,7 @@ class Kartlag extends React.Component {
                     fkode !== "bakgrunnskart" && (
                       <KartlagListeElement
                         kartlag={kartlag}
-                        props={this.props}
+                        {...this.props}
                         visKoder={context.visKoder}
                         onFitBounds={onFitBounds}
                         onUpdateLayerProp={onUpdateLayerProp}
