@@ -24,9 +24,12 @@ const ListeLink = ({
       <div className="text_content">
         <h3>
           {primary}
-          {kode && visKoder === true && <span> - </span>}
-          {new_object && <span>{prefix}</span>}
-          <Flis kode={kode} visKoder={visKoder} />
+          {kode && visKoder === true && (
+            <>
+              <span> - {new_object && <span>{prefix}</span>}</span>
+              <Flis kode={kode} visKoder={visKoder} />
+            </>
+          )}
         </h3>
         {secondary}
       </div>
