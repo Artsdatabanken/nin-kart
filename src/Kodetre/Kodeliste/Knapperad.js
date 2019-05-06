@@ -12,10 +12,11 @@ const Knapperad = ({ erAktivert, onToggleLayer, bbox }) => (
             <button
               className="activate_button"
               onClick={event => {
-                onToggleLayer();
+                if (!erAktivert) {
+                  onToggleLayer();
+                }
                 context.onNavigateToTab("kartlag");
               }}
-              disabled={erAktivert}
             >
               Legg til kartlag <ArrowForward />
               <Layers />
