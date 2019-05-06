@@ -14,7 +14,7 @@ class Kartlag extends React.Component {
           <SettingsContext.Consumer>
             {context => (
               <div className="kartlag sidebar">
-                <div class="sidebar_element page_topic_header" />
+                <div className="sidebar_element page_topic_header" />
                 <div className="sidebar_title_container sidebar_element">
                   <h1 className="sidebar_title">Kartlag</h1>
                 </div>

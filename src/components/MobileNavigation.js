@@ -5,7 +5,7 @@ import { Layers } from "@material-ui/icons";
 const MobileNavigation = () => (
   <SettingsContext.Consumer>
     {context => (
-      <div className="mobile_navigation">
+      <div className="tab_selector">
         <button
           className={context.aktivTab === "meny" ? "active_mobile_button" : ""}
           onClick={() => context.onNavigateToTab("meny")}

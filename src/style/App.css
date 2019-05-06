@@ -112,8 +112,59 @@ div {
   max-width: 100%;
 }
 
-.mobile_navigation {
+/*
+.tab_selector {
   display: none;
+}
+
+*/
+
+.tab_selector {
+  display: block;
+  width: 408px;
+  height: auto;
+  position: fixed;
+  bottom: 0px;
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+.tab_selector button {
+  display: inline-block;
+  text-align: center;
+  padding: auto;
+  background: #edf4f5;
+  width: calc(100% / 3);
+  height: 48px;
+  padding: 15px;
+  position: relative;
+  bottom: 0px;
+  box-sizing: border-box;
+  margin: 0px;
+  color: #555;
+  font-family: "Roboto", "sans-serif";
+  border: none;
+  border-left: 1px solid #dee1e1;
+  border-top: 1px solid #eceded;
+  vertical-align: bottom;
+}
+
+.tab_selector .active_mobile_button,
+.active_mobile_button,
+.tab_selector button:hover,
+.tab_selector button.active:hover,
+.tab_selector button.active:focus,
+.tab_selector button.active {
+  background: #81b2bb;
+  color: #fff;
+  color: "rgba(0,0,0,0.67)";
+  cursor: pointer;
+}
+
+.tab_selector .active_mobile_button {
+  background: #4b909e;
+  color: white;
+  font-weight: 600;
 }
 
 @media only screen and (max-width: 678px) {
@@ -121,73 +172,17 @@ div {
     top: calc(100vh - 150px) !important;
   }
 
-  .mobile_navigation {
-    display: block;
+  .tab_selector {
     width: 100%;
-    height: auto;
-    position: fixed;
-    bottom: 0px;
-    box-sizing: border-box;
-    margin: 0px;
-  }
-
-  .mobile_navigation button {
-    display: inline-block;
-    text-align: center;
-    padding: auto;
-    background: #edf4f5;
-    width: calc(100% / 3);
-    height: 48px;
-    padding: 15px;
-    position: relative;
-    bottom: 0px;
-    box-sizing: border-box;
-    margin: 0px;
-    color: #555;
-    font-family: "Roboto", "sans-serif";
-    border: none;
-    border-left: 1px solid #dee1e1;
-    border-top: 1px solid #eceded;
-    vertical-align: bottom;
-  }
-
-  .mobile_navigation .active_mobile_button,
-  .active_mobile_button,
-  .mobile_navigation button:hover,
-  .mobile_navigation button.active:hover,
-  .mobile_navigation button.active:focus,
-  .mobile_navigation button.active {
-    background: #81b2bb;
-    color: #fff;
-    color: "rgba(0,0,0,0.67)";
-    cursor: pointer;
-  }
-
-  .mobile_navigation .active_mobile_button {
-    background: #4b909e;
-    color: white;
-    font-weight: 600;
   }
 }
 
-.mobile_navigation button svg {
+.tab_selector button svg {
   height: 18px;
   width: 18px;
   position: absolute;
   top: calc(50% - 9px);
   right: calc(50% - 9px);
-}
-
-.MuiPaper-elevation1-92,
-.MuiPaper-root-277,
-.MuiPaper-elevation1-280 {
-  box-shadow: none !important;
-}
-
-.MuiExpansionPanel-expanded-381,
-.MuiPaper-elevation1-92,
-.MuiExpansionPanel-expanded-516 {
-  margin: 1px !important;
 }
 
 .invisible_icon_button {
