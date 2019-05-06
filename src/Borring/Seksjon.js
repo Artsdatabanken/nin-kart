@@ -59,14 +59,14 @@ class Seksjon extends Component {
     const value = oppsumert_node[len - 1];
     if (len < 2)
       return (
-        <div className="sidebar_padding">
+        <div key={value} className="sidebar_padding">
           <h4 className="entallsSjekk">{entallsSjekk(value)}</h4>
         </div>
       );
 
     const key = oppsumert_node[len - 2];
     return (
-      <div className="sidebar_padding">
+      <div key={value} className="sidebar_padding">
         <h4> {entallsSjekk(key.trim())}</h4>
         <h5 className="sub_sub_heading">{replaceString(value)}</h5>
       </div>
