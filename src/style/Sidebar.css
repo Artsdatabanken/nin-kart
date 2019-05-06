@@ -129,6 +129,7 @@
   background: #b7d3d8;
   background-size: cover;
   background-position: center;
+  position: relative;
 }
 
 .sidebar_top_image.trasparent_image {

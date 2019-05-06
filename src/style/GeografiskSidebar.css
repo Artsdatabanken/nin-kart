@@ -67,3 +67,15 @@
 .sub_sub_heading {
   padding-bottom: 10px;
 }
+
+.image_text_on_image {
+  position: absolute;
+  top: 275px;
+  right: 0px;
+  background: #edf4f5;
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: black;
+  font-size: 10pt;
+}

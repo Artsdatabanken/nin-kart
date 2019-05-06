@@ -22,6 +22,7 @@ class BorreVindu extends Component {
     if (!barn) return null;
     const { AO, prefix, ...andreBarn } = barn;
     const dominant = this.finnButikkKode();
+
     let image_url = config.getFotoOmslag(dominant.url);
     return (
       <div className="sidebar_top_area sidebar_background_element">
@@ -33,7 +34,7 @@ class BorreVindu extends Component {
           }}
           alt={dominant.tittel}
         />
-
+        <span className="image_text_on_image">{dominant.tittel}</span>
         <div className="sidebar_title_container sidebar_element">
           {AO && (
             <Sted values={AO.values} sted={AO.sted} elevasjon={AO.elevasjon} />
