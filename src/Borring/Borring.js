@@ -1,11 +1,4 @@
 import backend from "../backend";
-import {
-  List,
-  ListItem,
-  ListItemText,
-  ListSubheader,
-  withTheme
-} from "@material-ui/core";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { SettingsContext } from "../SettingsContext";
@@ -14,13 +7,12 @@ import Seksjon from "./Seksjon";
 class Borring extends Component {
   render() {
     const { barn = {} } = this.props;
+    let current_headline = "";
+    let new_object = false;
     return (
-      <List>
-        <ListSubheader>Kunnskap</ListSubheader>
+      <div className="sidebar_element paddingless">
         {Object.keys(barn).length <= 0 ? (
-          <ListItem>
-            <ListItemText primary="Finner ingen opplysninger." />
-          </ListItem>
+          <div className="sidebar_element">"Finner ingen opplysninger."</div>
         ) : (
           <SettingsContext.Consumer>
             {context => {
@@ -31,8 +23,17 @@ class Borring extends Component {
                     const node = barn[kode];
                     if (!node) return null;
                     if (!node.values) return null;
+                    let current_prefix = kode.split("-")[0];
+                    if (current_headline !== current_prefix) {
+                      current_headline = current_prefix;
+                      new_object = true;
+                    } else {
+                      new_object = false;
+                    }
+
                     return (
                       <Seksjon
+                        new_object={new_object}
                         key={kode}
                         tittel={node.title}
                         kode={kode}
@@ -47,7 +48,7 @@ class Borring extends Component {
             }}
           </SettingsContext.Consumer>
         )}
-      </List>
+      </div>
     );
   }
 
@@ -61,9 +62,7 @@ class Borring extends Component {
   handleClick = (kode, node) => {
     kode = this.getInnerMostSingleChild(kode, node);
     const { history } = this.props;
-    console.log(kode);
     kode = hack(kode);
-    console.log(kode);
     backend.søk(kode).then(json => {
       // TODO: Mofify lat,lon query API to return URLs
       let hit = json.result[0];
@@ -85,4 +84,4 @@ function hack(kode) {
   return kode;
 }
 
-export default withRouter(withTheme()(Borring));
+export default withRouter(Borring);

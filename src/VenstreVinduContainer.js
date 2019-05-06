@@ -82,7 +82,7 @@ class VenstreVinduContainer extends React.Component {
       );
     }
     const kurve = finnKurvevariabler(this.props.aktiveLag);
-    console.log("vvc", meta && meta.kode, opplyst);
+    //  console.log("vvc", meta && meta.kode, opplyst);
     return (
       <>
         <Panel>
@@ -111,24 +111,7 @@ class VenstreVinduContainer extends React.Component {
             onRequestClose={this.handleCloseSnackbar}
           />
         )}
-        <div
-          style={{
-            backgroundColor: "transparent",
-            justifyContent: "flex-end",
-            float: "bottom",
-            pointerEvents: "auto",
-            boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.3)"
-          }}
-        >
-          {/*<AktiveKartlag
-            erÅpen={visAktiveLag}
-            koder={this.props.aktiveLag}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-            onUpdateLayerProp={onUpdateLayerProp}
-            onRemoveSelectedLayer={onRemoveSelectedLayer}
-          />*/}
-        </div>
+        <div />
       </>
     );
   }

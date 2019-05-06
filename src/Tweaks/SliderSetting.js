@@ -1,12 +1,9 @@
 import { Slider } from "@material-ui/lab";
 import React from "react";
-import Innstilling from "./Innstilling";
 
 const SliderSetting = ({
   tittel,
   undertittel,
-  disabled = false,
-  icon,
   value,
   min,
   max,
@@ -15,23 +12,21 @@ const SliderSetting = ({
   onChange
 }) => {
   return (
-    <Innstilling
-      tittel={tittel}
-      icon={icon}
-      disabled={disabled}
-      verdi={undertittel || value.toFixed(decimals)}
-      undertittel={
-        <Slider
-          style={{ paddingLeft: 0, paddingTop: 16, paddingBottom: 8 }}
-          disabled={disabled}
-          min={min || 0}
-          max={max || 1}
-          step={step || 0.01}
-          value={value}
-          onChange={(event, value) => onChange(value)}
-        />
-      }
-    />
+    <div className="slider_setting">
+      {tittel && <div>{tittel}</div>}
+      {undertittel && <div>{undertittel}</div>}
+      {value.toFixed(decimals) && (
+        <div className="slider_value">{value.toFixed(decimals)}</div>
+      )}
+      <Slider
+        className="slider"
+        min={min || 0}
+        max={max || 1}
+        step={step || 0.01}
+        value={value}
+        onChange={(event, value) => onChange(value)}
+      />
+    </div>
   );
 };
 export default SliderSetting;

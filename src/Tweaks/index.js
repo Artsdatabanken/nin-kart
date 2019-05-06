@@ -7,7 +7,8 @@ const Tweaks = ({ history, ...props }) => {
   if (!props.kart) return null;
   const aktivtFormat = props.kart.aktivtFormat;
   return (
-    <div style={{ paddingTop: 55 }} className="tweaks">
+    <div className="tweaks">
+      <div class="sidebar_element page_topic_header" />
       <Generelt history={history} {...props}>
         <Seksjon aktivtFormat={aktivtFormat} {...props} />
       </Generelt>

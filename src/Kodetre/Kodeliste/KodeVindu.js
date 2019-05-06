@@ -16,7 +16,7 @@ import Link from "@material-ui/icons/Link";
 import { CallSplit, MergeType, ShowChart, Gradient } from "@material-ui/icons/";
 import KurveContainer from "./KurveContainer";
 import Nedlasting from "./Nedlasting";
-
+//import { OpenInNew } from "@material-ui/icons/";
 import { SettingsContext } from "../../SettingsContext";
 
 const KodeVindu = ({
@@ -61,30 +61,24 @@ const KodeVindu = ({
     ? Object.entries(meta.gradient).length
     : 0;
   const flaggLength = meta.flagg ? Object.entries(meta.flagg).length : 0;
-  console.log("kodevin", kode, opplyst);
+  //  console.log("kodevin", kode, opplyst);
   return (
     <SettingsContext.Consumer>
       {context => {
         return (
-          <div
-            square="false"
-            elevation={4}
-            style={{
-              position: "relative"
-            }}
-          >
+          <div>
             <Kodekort
               kode={kode}
               farge={farge}
               url={url}
               prefiks={prefiks}
               bbox={bbox}
+              onFitBounds={onFitBounds}
               tittel={tittel}
               nivå={nivå}
               overordnet={overordnet}
               onNavigate={onNavigate}
               erAktivert={erAktivert}
-              onFitBounds={onFitBounds}
               onToggleLayer={onToggleLayer}
               bilde={meta.foto}
             />

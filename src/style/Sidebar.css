@@ -20,13 +20,21 @@
     max-width: 100%;
     padding-top: 56px;
   }
+
+  .panel {
+    padding-bottom: 55px;
+  }
 }
 
 /* The white container boxes */
 .sidebar_element {
   background: #fff;
+  border: 0px;
+  width: 100%;
   border-bottom: 1px solid #eaeaea;
   padding: 10px;
+  position: relative;
+  text-align: left;
 }
 
 /* Container boxes with regular items, not pre-styled ones */
@@ -34,6 +42,11 @@
 .sidebar_description p {
   padding-right: 10px;
   padding-left: 10px;
+}
+
+.sidebar_title_container h1,
+.sidebar_title_container h2 {
+  width: calc(100% - 100px);
 }
 
 /* The link and icons  */
@@ -46,7 +59,6 @@
   margin-top: 10px;
 }
 
-.zoom_button svg,
 .sidebar_element h3 svg,
 .sidebar_description svg {
   color: #4b909e;
@@ -84,7 +96,7 @@
 .sidebar_element h3 {
   font-weight: 400;
   display: inline-block;
-  font-size: 12pt;
+  font-size: 13pt;
   margin: 0px;
   padding: 5px;
   vertical-align: top;
@@ -97,29 +109,19 @@
 }
 
 .zoom_button {
-  background-color: #eaeaea !important;
-  padding: 5px !important;
-  margin-left: 10px !important;
-}
-
-.zoom_button span {
-  text-transform: initial !important;
+  border: 0px;
+  background: #e4f0f2;
   color: #4b909e;
-}
-
-.zoom_button:hover {
-  background-color: #b7d3d8 !important;
+  padding: 10px;
+  position: absolute;
+  top: calc(50% - 30px);
+  right: 15px;
+  max-width: 70px;
+  text-align: center;
 }
 
 .sidebar_code_field {
   white-space: none;
-  color: #81b2bb;
-}
-
-.page_topic_header {
-  height: 60px;
-  width: 100%;
-  padding-top: 0px;
 }
 
 .sidebar_top_image {
@@ -138,4 +140,18 @@
   margin-top: 10px;
   margin-bottom: 10px;
   height: calc(250px - 20px);
+}
+
+.page_topic_header {
+  height: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+
+@media only screen and (min-width: 678px) {
+  .page_topic_header {
+    height: 60px;
+    width: 100%;
+    padding-top: 0px;
+  }
 }
