@@ -1,6 +1,7 @@
 import React from "react";
 import { SettingsContext } from "../SettingsContext";
 import KartlagListeElement from "./KartlagListeElement";
+import { Add, KeyboardArrowRight } from "@material-ui/icons";
 
 class Kartlag extends React.Component {
   render() {
@@ -11,7 +12,8 @@ class Kartlag extends React.Component {
       onUpdateLayerProp,
       hidden,
       history,
-      navigation_history
+      navigation_history,
+      onToggleLayer
     } = this.props;
     console.log("printing the history list: ", navigation_history);
 
@@ -58,23 +60,43 @@ class Kartlag extends React.Component {
 
                 <div className="sidebar_element">
                   <h3>Historikk</h3>
-                  <ul className="kartlag_list">
-                    {Object.keys(navigation_history).map(item => {
-                      let location = navigation_history[item];
-                      if (location) {
-                        let where = location.split("/").slice(-1)[0];
-                        where = where.replace(/_/g, " ");
-                        //console.log(where);
-                        return (
-                          <li>
-                            <button onClick={() => history.push({ location })}>
-                              {where}
-                            </button>
-                          </li>
-                        );
-                      }
-                    })}
-                  </ul>
+
+                  {Object.keys(navigation_history).map(item => {
+                    let location = navigation_history[item];
+                    if (location) {
+                      let where = location.split("/").slice(-1)[0];
+                      where = where.replace(/_/g, " ");
+                      //console.log(where);
+                      return (
+                        <>
+                          <div className="kartlag_list_title">
+                            <div className="kartlag_header">
+                              <span className="kartlag_list_title">
+                                {where}
+                              </span>
+                              <span class="kartlag_list_icon_set">
+                                <button
+                                  class="invisible_icon_button add_icon"
+                                  onClick={event => {
+                                    onToggleLayer();
+                                  }}
+                                >
+                                  <Add />
+                                </button>
+
+                                <button class="invisible_icon_button ">
+                                  <KeyboardArrowRight
+                                    onClick={() => history.push({ location })}
+                                  />
+                                </button>
+                              </span>
+                            </div>
+                          </div>
+                        </>
+                      );
+                    }
+                    return <></>;
+                  })}
                 </div>
               </div>
             )}

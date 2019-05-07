@@ -107,6 +107,7 @@ class Grunnkart extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     const path = this.props.location.pathname;
     if (path !== prevProps.location.pathname) {
+      console.log("props: ", this.props);
       this.fetchMeta(path);
       this.updateHistory(path);
     }
@@ -266,6 +267,9 @@ class Grunnkart extends React.Component {
                   navigation_history={this.state.navigation_history}
                   onFitBounds={this.handleFitBounds}
                   history={history}
+                  onToggleLayer={() => {
+                    this.handleToggleLayer();
+                  }}
                 />
 
                 <Kart
