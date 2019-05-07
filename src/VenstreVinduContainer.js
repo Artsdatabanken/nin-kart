@@ -56,11 +56,13 @@ class VenstreVinduContainer extends React.Component {
       location
     } = this.props;
     if (location.search && location.search.startsWith("?vis")) {
-      const node = this.props.aktiveLag[location.pathname.substring(1)] || meta;
+      const lag = location.pathname.substring(1);
+      const node = this.props.aktiveLag[lag] || meta;
       return (
         <Panel>
           <Tweaks
             {...node}
+            lag={lag}
             onFitBounds={this.props.onFitBounds}
             onUpdateLayerProp={onUpdateLayerProp}
             onRemoveSelectedLayer={onRemoveSelectedLayer}
@@ -82,7 +84,6 @@ class VenstreVinduContainer extends React.Component {
       );
     }
     const kurve = finnKurvevariabler(this.props.aktiveLag);
-    //  console.log("vvc", meta && meta.kode, opplyst);
     return (
       <>
         <Panel>

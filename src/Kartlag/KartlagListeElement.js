@@ -63,20 +63,18 @@ const KartlagListeElement = ({
       </div>
       {expanded && (
         <div className="kartlag_submeny">
-          {kode === "bakgrunnskart" && (
-            <SettingsContext.Consumer>
-              {context => (
-                <button
-                  className="invisible_icon_button"
-                  onClick={() => {
-                    history.push("/" + kode + "?vis");
-                  }}
-                >
-                  Farger <ColorLens />
-                </button>
-              )}
-            </SettingsContext.Consumer>
-          )}
+          <SettingsContext.Consumer>
+            {context => (
+              <button
+                className="invisible_icon_button"
+                onClick={() => {
+                  history.push("/" + kode + "?vis");
+                }}
+              >
+                Farger <ColorLens />
+              </button>
+            )}
+          </SettingsContext.Consumer>
 
           {kode !== "bakgrunnskart" && (
             <>
