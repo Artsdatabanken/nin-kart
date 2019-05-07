@@ -7,6 +7,7 @@ import språk from "../språk";
 import VenstreVinduContainer from "../VenstreVinduContainer";
 import bakgrunnskarttema from "./bakgrunnskarttema";
 import TopBar from "../TopBar/TopBar";
+import Kartlag from "../Kartlag/Kartlag";
 import MobileNavigation from "../components/MobileNavigation";
 import Kart from "../Kart/LeafletTangram";
 
@@ -57,7 +58,10 @@ class Grunnkart extends React.Component {
     this.setState({ actualBounds: bounds, fitBounds: null });
   };
 
-  handleFitBounds = bbox => this.setState({ fitBounds: bbox });
+  handleFitBounds = bbox => {
+    this.setState({ fitBounds: bbox });
+    console.log(bbox);
+  };
 
   handleBoundsChange = bbox => {
     this.setState({ actualBounds: bbox });
@@ -108,7 +112,7 @@ class Grunnkart extends React.Component {
 
   redirectTo(path) {
     const newUrl = "/" + path;
-    console.log("router videre til ", newUrl);
+    //console.log("router videre til ", newUrl);
     this.props.history.replace(newUrl);
   }
 
@@ -171,11 +175,11 @@ class Grunnkart extends React.Component {
     let aktive = this.state.aktiveLag;
     delete aktive[kode];
     this.setState({ aktiveLag: aktive });
-    this.props.history.push("/");
   };
 
   // Supports composite keys i.e. gradient.filterMin
   handleUpdateLayerProp = (layer, key, value) => {
+    console.log("updateProp", layer, key, value);
     const aktive = this.state.aktiveLag;
     let node = aktive[layer];
     if (!node) node = this.state.meta;
@@ -240,6 +244,15 @@ class Grunnkart extends React.Component {
                     />
                   </div>
                 )}
+                <Kartlag
+                  hidden={context.aktivTab === "kartlag" && true}
+                  aktiveLag={this.state.aktiveLag}
+                  onUpdateLayerProp={this.handleUpdateLayerProp}
+                  onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                  onFitBounds={this.handleFitBounds}
+                  history={history}
+                />
+
                 <Kart
                   bounds={this.state.fitBounds}
                   latitude={65.4}
@@ -265,16 +278,16 @@ class Grunnkart extends React.Component {
   }
 
   handleMouseEnter = ({ kode, url }) => {
-    console.log("mouseenter", kode, url);
+    //console.log("mouseenter", kode, url);
     this.setState({ opplystKode: kode, opplyst: { kode: kode, url: url } });
   };
 
   handleMouseLeave = () => {
-    console.log("mouseleave");
+    //console.log("mouseleave");
     this.setState({ opplystKode: "", opplyst: {} });
   };
 
   static contextType = SettingsContext;
 }
 
-export default withStyles(styles)(withRouter(Grunnkart));
+export default withRouter(withStyles(styles)(Grunnkart));

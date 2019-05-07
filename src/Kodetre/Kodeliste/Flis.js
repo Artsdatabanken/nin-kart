@@ -1,5 +1,5 @@
 import typesystem from "@artsdatabanken/typesystem";
-import { Typography, Avatar, Chip } from "@material-ui/core";
+import { Avatar, Chip } from "@material-ui/core";
 import React, { Component } from "react";
 import config from "../../config";
 import { palett } from "../../farger";
@@ -11,7 +11,7 @@ class Flis extends Component {
     const parts = typesystem.splittKode(kode);
     if (prefiks === "AO" && parts.length > 1)
       return (
-        <div style={{ paddingBottom: 4 }}>
+        <div>
           <img
             ref={el => (this.logo = el)}
             onLoad={() => {
@@ -29,13 +29,7 @@ class Flis extends Component {
       );
     if (!visKoder) return null;
     if (visKoder !== 42)
-      return (
-        <Typography>
-          <div style={{ color: "rgba(0, 0, 0, 0.4)" }}>
-            {kode.substring(3)}{" "}
-          </div>
-        </Typography>
-      );
+      return <div className="kode_flis_tekst">{kode.substring(3)} </div>;
     return (
       <Chip
         style={{

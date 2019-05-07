@@ -1,4 +1,4 @@
-import { Paper, Typography } from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import { ExpandMore } from "@material-ui/icons";
 import PropTypes from "prop-types";
@@ -25,19 +25,7 @@ const styles = {
   lukket: {
     transform: "rotate(180deg)"
   },
-  rot: {
-    cursor: "pointer",
-    display: "flex",
-    flex: "none",
-    alignItems: "flex-start",
-    color: "hsla(0, 0%, 0%, 0.54)",
-    "&:hover": {
-      color: "hsla(0, 0%, 0%, 0.87)"
-    },
-    backgroundColor: "hsl(0, 0%, 96%)",
-    transition: "0.3s",
-    transitionTimingFunction: "ease-out"
-  },
+  rot: {},
   badge: {
     top: 22,
     left: 20
@@ -63,9 +51,9 @@ class AktiveKartlagKnapp extends React.Component<Props> {
             erÅpen ? classes.åpen : classes.lukket
           )}
         />
-        <Typography color="inherit" className={classes.tekst}>
+        <h3 color="inherit" className={classes.tekst}>
           Mine kartlag
-        </Typography>
+        </h3>
         {antallLag > 0 && (
           <Badge
             className={classes.badge}

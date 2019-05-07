@@ -1,11 +1,37 @@
-.graphic_profile {
-  artsdb_color: #4c4a48;
+.nin_colours {
   color: #4b909e;
   color: #81b2bb;
   color: #b7d3d8;
   color: #edf4f5;
   color: black;
-  helenes_border_colour: #eaeaea;
+}
+
+.support_colors_nin_map {
+  color_blue: #e4f0f2;
+  color_active_blue_btn: #edf4f5;
+  background_header: #fbfbfb;
+  border-color: #eaeaea;
+  color: rgb(153, 0, 19);
+}
+
+.artsdb_colours {
+  color: #ffffff;
+  color: #4c4a48;
+  color: #7f726b;
+  color: #de8608;
+  color: #eb6109;
+}
+
+.redlist {
+  color: rgb(90, 91, 93);
+  color: rgb(153, 0, 19);
+  color: rgb(216, 0, 36);
+  color: rgb(255, 76, 41);
+  color: rgb(243, 108, 33);
+  color: rgb(250, 166, 26);
+  color: rgb(96, 189, 177);
+  color: rgb(147, 149, 152);
+  color: rgb(206, 211, 212);
 }
 
 ::-webkit-scrollbar {
@@ -28,12 +54,23 @@ body {
 
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
   font-family: "Roboto", "sans-serif";
   color: #4b909e;
+}
+
+h4,
+h5 {
+  font-size: 12pt;
+  font-weight: 400;
+  margin: 0px;
+  padding: 0px;
+  color: #4c4a48;
+}
+
+h5 {
+  font-size: 11pt;
+  color: black;
 }
 
 strong,
@@ -43,6 +80,19 @@ b {
 
 .hoverUnderline:hover {
   text-decoration: underline;
+}
+
+button {
+  border: 0px;
+}
+
+button:hover,
+button.active:hover,
+button.active:focus,
+button.active {
+  cursor: pointer;
+  background: #81b2bb;
+  color: #fff;
 }
 
 @keyframes fadein {
@@ -62,8 +112,59 @@ div {
   max-width: 100%;
 }
 
-.mobile_navigation {
+/*
+.tab_selector {
   display: none;
+}
+
+*/
+
+.tab_selector {
+  display: block;
+  width: 408px;
+  height: auto;
+  position: fixed;
+  bottom: 0px;
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+.tab_selector button {
+  display: inline-block;
+  text-align: center;
+  padding: auto;
+  background: #edf4f5;
+  width: calc(100% / 3);
+  height: 48px;
+  padding: 15px;
+  position: relative;
+  bottom: 0px;
+  box-sizing: border-box;
+  margin: 0px;
+  color: #555;
+  font-family: "Roboto", "sans-serif";
+  border: none;
+  border-left: 1px solid #dee1e1;
+  border-top: 1px solid #eceded;
+  vertical-align: bottom;
+}
+
+.tab_selector .active_mobile_button,
+.active_mobile_button,
+.tab_selector button:hover,
+.tab_selector button.active:hover,
+.tab_selector button.active:focus,
+.tab_selector button.active {
+  background: #81b2bb;
+  color: #fff;
+  color: "rgba(0,0,0,0.67)";
+  cursor: pointer;
+}
+
+.tab_selector .active_mobile_button {
+  background: #4b909e;
+  color: white;
+  font-weight: 600;
 }
 
 @media only screen and (max-width: 678px) {
@@ -71,60 +172,29 @@ div {
     top: calc(100vh - 150px) !important;
   }
 
-  .mobile_navigation {
-    display: block;
+  .tab_selector {
     width: 100%;
-    height: auto;
-    position: fixed;
-    bottom: 0px;
-    box-sizing: border-box;
-    margin: 0px;
-  }
-
-  .mobile_navigation button {
-    display: inline-block;
-    text-align: center;
-    padding: auto;
-    background: #edf4f5;
-    width: 50%;
-    height: 48px;
-    padding: 15px;
-    position: relative;
-    bottom: 0px;
-    box-sizing: border-box;
-    margin: 0px;
-    color: #555;
-    font-family: "Roboto", "sans-serif";
-    border: none;
-  }
-
-  .mobile_navigation .active_mobile_button,
-  .active_mobile_button,
-  .mobile_navigation button:hover,
-  .mobile_navigation button.active:hover,
-  .mobile_navigation button.active:focus,
-  .mobile_navigation button.active {
-    background: #81b2bb;
-    color: #fff;
-    color: "rgba(0,0,0,0.67)";
-    cursor: pointer;
-  }
-
-  .mobile_navigation .active_mobile_button {
-    background: #4b909e;
-    color: white;
-    font-weight: 600;
   }
 }
 
-.MuiPaper-elevation1-92,
-.MuiPaper-root-277,
-.MuiPaper-elevation1-280 {
-  box-shadow: none !important;
+.tab_selector button svg {
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  top: calc(50% - 9px);
+  right: calc(50% - 9px);
 }
 
-.MuiExpansionPanel-expanded-381,
-.MuiPaper-elevation1-92,
-.MuiExpansionPanel-expanded-516 {
-  margin: 1px !important;
+.invisible_icon_button {
+  background: transparent;
+  border: none;
+  padding: none;
+  margin: none;
+  display: inline-block;
+}
+
+.invisible_icon_button:active,
+.invisible_icon_button:hover {
+  opacity: 0.5;
+  cursor: pointer;
 }

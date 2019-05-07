@@ -1,0 +1,105 @@
+/* 
+
+The list used in "kartlag" with a bunch of icons.
+Avoiding flex to ensure it works on all types of devices, IE included.
+Even tho we don't a of now support IE X)
+
+*/
+
+/* Activate button in sidebar */
+
+.activate_button_container {
+  text-align: center;
+}
+.activate_button {
+  background: #4b909e;
+  color: white;
+  padding: 10px;
+  font-size: 12pt;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.activate_button svg {
+  height: 18px;
+  width: 18px;
+  vertical-align: top;
+}
+
+/* Clean out padding to get 100% width */
+.kartlag .sidebar_element,
+.kartlag li {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+/* Re-add padding where wanted */
+.kartlag h3,
+.kartlag h1,
+.kartlag_header {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Tab items */
+
+.kartlag_list {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+.kartlag_list_title {
+  display: inline-block;
+  width: calc(100% - 90px);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.kartlag_list_icon_set {
+  position: absolute;
+  right: 10px;
+  max-width: 100px;
+  overflow: auto;
+}
+
+/* icons */
+
+.kartlag_list li svg {
+  padding: 5px;
+  vertical-align: top;
+}
+
+.kartlag_list li svg:last-child {
+  padding-right: 0px;
+}
+
+.remove_icon {
+  color: rgb(153, 0, 19);
+}
+
+/* Active menu and its submenu */
+
+.kartlag_open_object {
+  background: #edf4f5;
+  border-bottom: 1px solid #e4f0f2;
+}
+
+.kartlag_submeny {
+  background: #fbfbfb;
+  border-bottom: 1px solid #e4f0f2;
+  text-align: center;
+}
+
+.kartlag_submeny button {
+  font-size: 12pt;
+  width: calc(100% / 3);
+  padding: 5px;
+}
+
+.kartlag_submeny button svg {
+  vertical-align: middle;
+  padding-left: 0px;
+  height: 16pt;
+}

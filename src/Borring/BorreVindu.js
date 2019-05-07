@@ -1,13 +1,8 @@
 import { withStyles } from "@material-ui/core/styles";
 import {
-  Card,
-  FormControlLabel,
-  CardActions,
-  CardActionArea,
-  CardContent,
-  Switch,
-  Button,
-  CardMedia,
+  //FormControlLabel,
+  //Switch,
+  //Button,
   withTheme
 } from "@material-ui/core";
 import React, { Component } from "react";
@@ -23,43 +18,30 @@ const styles = {};
 class BorreVindu extends Component {
   state = { bareAktive: false };
   render() {
-    const { barn, vis, classes } = this.props;
+    const { barn, vis } = this.props;
     if (!barn) return null;
     const { AO, prefix, ...andreBarn } = barn;
-    const bgColor = "hsla(0, 0%, 30%, 0.65)";
     const dominant = this.finnButikkKode();
+    let image_url = config.getFotoOmslag(dominant.url);
     return (
-      <Card square={true} className="card">
-        <CardMedia
-          className="media"
-          image={config.getFotoOmslag(dominant.url)}
-          title={dominant.tittel}
-        >
-          <div
-            style={{
-              position: "relative",
-              bottom: -206,
-              left: 0,
-              height: 74,
-              right: 0,
-              backgroundColor: bgColor,
-              paddingTop: 8,
-              paddingBottom: 8,
-              paddingLeft: 16,
-              paddingRight: 16
-            }}
-          >
-            {AO && (
-              <Sted
-                values={AO.values}
-                sted={AO.sted}
-                elevasjon={AO.elevasjon}
-              />
-            )}
-          </div>
-        </CardMedia>
-        <CardActionArea />
-        <CardActions style={{ marginLeft: 8, display: "block" }}>
+      <div className="sidebar_top_area sidebar_background_element">
+        <div className="sidebar_element page_topic_header" />
+        <div
+          className="sidebar_top_image"
+          style={{
+            backgroundImage: "url(" + image_url + ")"
+          }}
+          alt={dominant.tittel}
+        />
+
+        <div className="sidebar_title_container sidebar_element">
+          {AO && (
+            <Sted values={AO.values} sted={AO.sted} elevasjon={AO.elevasjon} />
+          )}
+        </div>
+        {/*
+        <div className="sidebar_element">
+         
           {vis ? (
             <Button
               size="small"
@@ -79,6 +61,8 @@ class BorreVindu extends Component {
               Kilder
             </Button>
           )}
+
+
           <FormControlLabel
             className={classes.bareAktive}
             control={
@@ -89,17 +73,18 @@ class BorreVindu extends Component {
                 }}
               />
             }
-            label="Fra mine kartlag"
+            label="vis kun fra mine kartlag"
           />
-        </CardActions>
-        <CardContent style={{ padding: 0 }}>
+        </div>
+        */}
+        <div>
           {vis ? (
             <Kilde geom_id={this.finnGeomId()} prefiks="NA" />
           ) : (
             <Borring barn={this.state.bareAktive ? {} : andreBarn} />
           )}
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     );
   }
 

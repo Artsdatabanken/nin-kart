@@ -1,6 +1,5 @@
-import { Typography } from "@material-ui/core";
 import React, { Component } from "react";
-import Listeelement from "./Listeelement";
+import ListeLink from "./ListeLink";
 
 function oppsummer(node) {
   let r = [];
@@ -14,36 +13,6 @@ function oppsummer(node) {
     });
   else r.push({ verdi: [node.title] });
   return r;
-}
-
-function hack(kode, nivå, kategori) {
-  switch (kode.replace("_", "-")) {
-    case "BS-1":
-      return "Artssammensetning";
-    case "BS-2":
-      return "Geologisk sammensetning";
-    case "BS-3":
-      return "Landform";
-    case "BS-4":
-      return "Naturgitte objekter";
-    case "BS-5":
-      return "Menneskeskapte objekter";
-    case "BS-6":
-      return "Regionale komplekse miljøvariable";
-    case "BS-7":
-      return "Tilstandsvariasjon";
-    case "BS-8":
-      return "Terrengformvariasjon";
-    case "BS-9":
-      return "Romlig strukturvariasjon";
-    case "NA-T":
-      return "Fastmarkssystem";
-    case "MI-KA":
-      return "Kalkinnhold";
-    default:
-      return kategori;
-    //      return kode + ': ' + nivå + ' - ' + kategori
-  }
 }
 
 function oppsummer2(node, stack1, r, pkode) {
@@ -68,56 +37,61 @@ function oppsummer2(node, stack1, r, pkode) {
 
 class Seksjon extends Component {
   render() {
-    const { node, kode, visKoder, kategori, onClick } = this.props;
-    const r = oppsummer(node);
-    const secondary = r.map(e => this.map(e.verdi));
+    const { node, kode, visKoder, kategori, onClick, new_object } = this.props;
+    const oppsumert_node = oppsummer(node);
+    const secondary = oppsumert_node.map(e => this.map(e.verdi));
 
     return (
-      <Listeelement
+      <ListeLink
+        new_object={new_object}
         key={kode}
         kode={kode}
         secondary={secondary}
-        primary={hack(kode, r.nivå, kategori)}
+        primary={kategori}
         visKoder={visKoder}
         onClick={onClick}
       />
     );
   }
 
-  map(r) {
-    const len = r.length;
-    const value = r[len - 1];
+  map(oppsumert_node) {
+    const len = oppsumert_node.length;
+    const value = oppsumert_node[len - 1];
     if (len < 2)
       return (
-        <Typography key={value} variant="body2" color="inherit">
-          {hack1(value)}
-        </Typography>
+        <div key={value} className="sidebar_padding">
+          <h4 className="entallsSjekk">{entallsSjekk(value)}</h4>
+        </div>
       );
-    const key = r[len - 2];
+
+    const key = oppsumert_node[len - 2];
     return (
-      <Typography key={key} variant="body2" color="inherit">
-        {hack1(key.trim())}: <b>{hack2(value)}</b>
-      </Typography>
+      <div key={value} className="sidebar_padding">
+        <h4> {entallsSjekk(key.trim())}</h4>
+        <h5 className="sub_sub_heading">{replaceString(value)}</h5>
+      </div>
     );
   }
 }
 
-function hack1(s) {
-  switch (s) {
+function entallsSjekk(verdi) {
+  switch (verdi) {
     case "Bioklimatiske soner":
       return "Bioklimatisk sone";
     case "Bioklimatiske seksjoner":
       return "Bioklimatisk seksjon";
     default:
-      return s;
+      return verdi;
   }
 }
-function hack2(s) {
-  switch (s) {
+
+function replaceString(verdi) {
+  let string_to_replace = " dekning";
+  switch (verdi) {
     case "0":
       return "ingen";
     default:
-      return s.replace(" dekning", "");
+      return verdi.replace(string_to_replace, "");
   }
 }
 

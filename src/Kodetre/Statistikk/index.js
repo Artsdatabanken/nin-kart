@@ -31,7 +31,7 @@ class Statistikk extends React.Component {
       case "tekstboks":
         return <Tekstboks {...blokk} />;
       default:
-        console.log("Skriv kode for å vise ", blokk.type);
+        //  console.log("Skriv kode for å vise ", blokk.type);
         return null;
     }
   }

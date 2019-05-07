@@ -1,20 +1,6 @@
-import { Delete, InfoOutlined, OpenInNew } from "@material-ui/icons/";
-import {
-  Divider,
-  ListItem,
-  Button,
-  ListSubheader,
-  withStyles
-} from "@material-ui/core";
+import { ArrowBackIos } from "@material-ui/icons/";
 import React, { Component } from "react";
 import VizType from "./VizType";
-
-const styles = {
-  iconSmall: {
-    fontSize: 20,
-    marginRight: 8
-  }
-};
 
 class Generelt extends Component {
   render() {
@@ -23,71 +9,39 @@ class Generelt extends Component {
       kart,
       kode,
       url,
-      kanSlettes,
-      onRemoveSelectedLayer,
-      onFitBounds,
-      bbox,
       history,
-      onUpdateLayerProp,
-      classes
+      onUpdateLayerProp
     } = this.props;
     return (
-      <div>
-        <div style={{ marginLeft: 24 }} />
+      <div className="sidebar_element">
         {history.location.search === "?vis" && kode !== "bakgrunnskart" && (
           <>
-            <ListSubheader>Visualisering</ListSubheader>
+            <div className="back_to_menu">
+              {url && (
+                <button
+                  className="invisible_icon_button"
+                  onClick={() => {
+                    history.push("/" + url);
+                  }}
+                >
+                  <ArrowBackIos className="iconSmall" />
+                </button>
+              )}
+            </div>
+            <h3>Visualisering</h3>
             <VizType
               lag={kode}
               onUpdateLayerProp={onUpdateLayerProp}
               format={kart.format}
               aktivtFormat={kart.aktivtFormat}
             />
-            <div style={{ fontSize: 12, paddingTop: 8, paddingLeft: 44 }}>
-              Kommer mer fornuftige valg her...
-            </div>
           </>
         )}
+
         {children}
-        <Divider style={{ marginTop: 24, marginBottom: 8 }} />
-        <ListItem>
-          {kanSlettes && (
-            <Button
-              color="primary"
-              onClick={e => {
-                onRemoveSelectedLayer(kode);
-              }}
-            >
-              <Delete />
-              Fjern
-            </Button>
-          )}
-          {url && (
-            <Button
-              color="primary"
-              onClick={() => {
-                history.push("/" + url);
-              }}
-            >
-              <InfoOutlined className={classes.iconSmall} />
-              Info
-            </Button>
-          )}
-          {bbox && (
-            <Button
-              color="primary"
-              onClick={() => {
-                onFitBounds(bbox);
-              }}
-            >
-              <OpenInNew className={classes.iconSmall} />
-              Zoom til
-            </Button>
-          )}
-        </ListItem>
       </div>
     );
   }
 }
 
-export default withStyles(styles)(Generelt);
+export default Generelt;

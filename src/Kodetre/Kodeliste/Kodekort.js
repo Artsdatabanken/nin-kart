@@ -35,7 +35,9 @@ class Kodekort extends React.Component {
       nivå,
       overordnet,
       onNavigate,
-      bilde
+      bilde,
+      bbox,
+      onFitBounds
     } = this.props;
     const tc = new tinycolor(farge);
 
@@ -45,10 +47,7 @@ class Kodekort extends React.Component {
     }
 
     return (
-      <div
-        square={false}
-        className="sidebar_top_area sidebar_background_element"
-      >
+      <div className="sidebar_top_area sidebar_background_element">
         <div className="sidebar_element page_topic_header" />
 
         <div
@@ -79,6 +78,8 @@ class Kodekort extends React.Component {
           prefiks={prefiks}
           onNavigate={onNavigate}
           overordnet={overordnet}
+          onFitBounds={onFitBounds}
+          bbox={bbox}
         />
       </div>
     );

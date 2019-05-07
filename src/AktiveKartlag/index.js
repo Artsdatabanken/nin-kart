@@ -4,36 +4,23 @@ import { withRouter } from "react-router";
 import { SettingsContext } from "../SettingsContext";
 import BakgrunnskartElement from "./BakgrunnskartElement";
 import PolygonlagElement from "./PolygonlagElement";
-import AktiveKartlagKnapp from "./AktiveKartlagKnapp";
-import Collapse from "@material-ui/core/Collapse";
 
 class AktiveKartlag extends React.Component {
   render() {
-    const { koder, erÅpen } = this.props;
+    const { koder } = this.props;
     const keys = Object.keys(koder);
     return (
       <SettingsContext.Consumer>
         {context => (
-          <Collapse in={erÅpen} collapsedHeight="42px">
-            <AktiveKartlagKnapp
-              erÅpen={erÅpen}
-              antallLag={keys.length - 1}
-              onClick={context.onToggleAktiveLag}
-            />
-            <List
-              style={{
-                pointerEvents: "auto",
-                backgroundColor: "white",
-                boxShadow:
-                  "0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)"
-              }}
-            >
+          <div>
+            <h3>Aktive Kartlag</h3>
+            <List>
               {keys.map(fkode => {
                 const forelder = koder[fkode];
                 return listeElement(forelder, this.props, context.visKoder);
               })}
             </List>
-          </Collapse>
+          </div>
         )}
       </SettingsContext.Consumer>
     );
@@ -62,7 +49,6 @@ function listeElement(forelder, props, visKoder) {
 
   return (
     <Type
-      key={kode}
       visKoder={visKoder}
       onClick={() => {
         onMouseLeave();

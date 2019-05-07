@@ -101,13 +101,13 @@ function lagToppnivå(props) {
   return config;
 }
 
-function createScene(props: Object) {
+function createScene(props) {
   let config = lagToppnivå(props);
   updateScene(config, props);
   return config;
 }
 
-function updateScene(config: Object, props: Object) {
+function updateScene(config, props) {
   const bakgrunn = props.aktiveLag.bakgrunnskart;
   const bak = bakgrunn.kart.format[bakgrunn.kart.aktivtFormat];
   config.scene.background.color = bak.land_farge || "#f2f2f2";
@@ -115,8 +115,13 @@ function updateScene(config: Object, props: Object) {
   config.layers = {};
   const meta = props.meta;
   const viserKatalog = !!meta;
-
-  if (viserKatalog) opprettAktivtLag(meta, props.opplyst, config, true);
+  if (meta) {
+    const metakode = meta.kode;
+    const aktiv = props.aktiveLag[metakode];
+    const erSynlig = aktiv ? aktiv.erSynlig : true;
+    if (viserKatalog && erSynlig)
+      opprettAktivtLag(meta, props.opplyst, config, true);
+  }
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplyst, config);
   lagTemp(config);
   return config;

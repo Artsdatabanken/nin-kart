@@ -1,4 +1,3 @@
-import { Typography } from "@material-ui/core";
 import React from "react";
 import { withRouter } from "react-router";
 import Kommunevapen from "./Kommunevapen";
@@ -27,35 +26,16 @@ const Sted = props => {
       ? fylke
       : kommune + " i " + fylke
     : kommune;
-  const color = "rgba(230,230,230,1.0)";
   return (
     <>
-      <Typography style={{ color: color }} variant="h6">
-        {primary}
-      </Typography>
-      <Typography
-        style={{
-          float: "right",
-          color: color
-        }}
-        variant="body1"
-      >
-        {formatElevation(elevasjon)}
-      </Typography>
-      <Typography style={{ color: color }} variant="body1">
-        {secondary}
-      </Typography>
-      <div style={{ position: "absolute", left: 334, bottom: 34 }}>
-        {url && <Kommunevapen url={url} />}
+      <div className="title_container_location">
+        <h1 className="sidebar_title">{primary}</h1>
+        <h2>{secondary}</h2>
       </div>
-      <Typography
-        style={{
-          position: "fixed",
-          textAlign: "center",
-          color: color
-        }}
-        variant="body2"
-      />
+      <div className="shield_container">
+        <div>{url && <Kommunevapen url={url} />}</div>
+        <p>{formatElevation(elevasjon)}</p>
+      </div>
     </>
   );
 };

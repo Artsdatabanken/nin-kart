@@ -9,7 +9,7 @@ const navn = {
 
 const VizType = ({ lag, aktivtFormat, format, onUpdateLayerProp }) => (
   <Select
-    style={{ marginLeft: 44 }}
+    className="select"
     native
     value={aktivtFormat}
     onChange={e => onUpdateLayerProp(lag, "kart.aktivtFormat", e.target.value)}
