@@ -46,7 +46,8 @@ class Grunnkart extends React.Component {
       actualBounds: null,
       fitBounds: null,
       meta: null,
-      visKoder: false
+      visKoder: false,
+      navigation_history: []
     };
     this.props.history.listen((location, action) => {
       // Åpne menyen ved navigering
@@ -105,7 +106,11 @@ class Grunnkart extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     const path = this.props.location.pathname;
-    if (path !== prevProps.location.pathname) this.fetchMeta(path);
+    if (path !== prevProps.location.pathname) {
+      this.fetchMeta(path);
+      this.updateHistory(path);
+    }
+
     document.title =
       (this.state.meta && this.state.meta.tittel.nb) || "Natur i Norge";
   }
@@ -114,6 +119,15 @@ class Grunnkart extends React.Component {
     const newUrl = "/" + path;
     //console.log("router videre til ", newUrl);
     this.props.history.replace(newUrl);
+  }
+
+  updateHistory(location) {
+    let current_navigation_history = this.state.navigation_history;
+    current_navigation_history.push(location);
+    this.setState({
+      navigation_history: current_navigation_history
+    });
+    console.log("ny lokasjon: ", current_navigation_history);
   }
 
   fetchMeta(location) {
@@ -249,6 +263,7 @@ class Grunnkart extends React.Component {
                   aktiveLag={this.state.aktiveLag}
                   onUpdateLayerProp={this.handleUpdateLayerProp}
                   onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                  navigation_history={this.state.navigation_history}
                   onFitBounds={this.handleFitBounds}
                   history={history}
                 />
