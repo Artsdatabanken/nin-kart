@@ -1,9 +1,10 @@
-import språk from "språk";
 import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
 import React from "react";
 import { withRouter } from "react-router";
+import LegendeColourAvatar from "./LegendeComponents/LegendeColourAvatar";
+import LegendeTitleField from "./LegendeComponents/LegendeTitleField";
 
-class Kartlagelement extends React.Component {
+class LegendeElement extends React.Component {
   render() {
     const {
       tittel,
@@ -12,7 +13,8 @@ class Kartlagelement extends React.Component {
       farge,
       onMouseLeave,
       onMouseEnter,
-      onClick
+      onClick,
+      erSynlig
     } = this.props;
     return (
       <div className="child_list_object">
@@ -25,19 +27,10 @@ class Kartlagelement extends React.Component {
             onMouseLeave();
           }}
         >
-          <div className="title_and_subtitle_container">
-            <h4>{språk(tittel)}</h4>
-            <h5>{språk(undertittel)}</h5>
-          </div>
-
-          <div
-            className="colour_legend"
-            style={{
-              backgroundColor: farge,
-              src: !farge && "/" + kode + ".png"
-            }}
-          />
+          <LegendeTitleField tittel={tittel} undertittel={undertittel} />
+          <LegendeColourAvatar farge={farge} kode={kode} />
         </button>
+
         <button
           className="invisible_icon_button show_hide_button"
           onClick={e => {
@@ -60,4 +53,4 @@ class Kartlagelement extends React.Component {
   }
 }
 
-export default withRouter(Kartlagelement);
+export default withRouter(LegendeElement);
