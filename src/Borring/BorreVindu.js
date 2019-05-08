@@ -27,6 +27,7 @@ class BorreVindu extends Component {
     return (
       <div className="sidebar_top_area sidebar_background_element">
         <div className="sidebar_element page_topic_header" />
+        {/*
         <div
           className="sidebar_top_image"
           style={{
@@ -35,6 +36,8 @@ class BorreVindu extends Component {
           alt={dominant.tittel}
         />
         <span className="image_text_on_image">{dominant.tittel}</span>
+        */}
+
         <div className="sidebar_title_container sidebar_element">
           {AO && (
             <Sted values={AO.values} sted={AO.sted} elevasjon={AO.elevasjon} />
