@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import tinycolor from "tinycolor2";
 //import Barneliste from "Tweaks/Barneliste";
-import ColorPicker from "Tweaks/ColorPicker";
+import ColorPicker from "Tweaks/FerdigeMiniElement/ColorPicker";
 import LegendeElement from "./LegendeComponents/LegendeElement";
 import språk from "språk";
 

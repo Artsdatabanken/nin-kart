@@ -2,9 +2,9 @@ import { List, ListSubheader } from "@material-ui/core";
 import { Component, default as React } from "react";
 import { withRouter } from "react-router";
 import tinycolor from "tinycolor2";
-import ColorPicker from "../ColorPicker";
-import Tema from "./Tema";
-import TemaPreview from "./TemaPreview";
+import ColorPicker from "Tweaks/FerdigeMiniElement/ColorPicker";
+import Tema from "./bakgrunn/Tema";
+import TemaButton from "./bakgrunn/TemaButton";
 
 class Google extends Component {
   handleUpdateLayerProp = (kode, key, value) => {
@@ -30,7 +30,7 @@ class Google extends Component {
     return (
       <List>
         <ListSubheader>Tema</ListSubheader>
-        <TemaPreview type={aktivtFormat} />
+        <TemaButton type={aktivtFormat} />
         <ListSubheader>Områder</ListSubheader>
         <ColorPicker
           tittel={"Fargetone"}

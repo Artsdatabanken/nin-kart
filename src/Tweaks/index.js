@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import Bakgrunnskart from "./bakgrunn/Bakgrunnskart";
-import Google from "./bakgrunn/Google";
+import Bakgrunnskart from "./Undermenyer/Bakgrunnskart";
+import Google from "./Undermenyer/Google";
 import LegendeElementer from "./Undermenyer/LegendeElementer";
 import Gradient from "./Undermenyer/Gradient";
 import Indexed from "./Undermenyer/Indexed";

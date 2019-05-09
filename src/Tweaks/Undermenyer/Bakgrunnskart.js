@@ -1,14 +1,12 @@
-import SliderSetting from "../SliderSetting";
 import { List } from "@material-ui/core";
 import { withTheme } from "@material-ui/core/styles";
 import { Component, default as React } from "react";
 import { withRouter } from "react-router";
-import tinycolor from "tinycolor2";
-import ColorPicker from "../ColorPicker";
-import Bakgrunnskartlag from "./Bakgrunnskartlag";
-import Tema from "./Tema";
-import Terreng from "./Terreng";
-import TemaPreview from "./TemaPreview";
+import Bakgrunnskartlag from "./bakgrunn/Bakgrunnskartlag";
+import Tema from "./bakgrunn/Tema";
+import Terreng from "./bakgrunn/Terreng";
+import TemaButton from "./bakgrunn/TemaButton";
+import VisFarge from "./VisFarge";
 
 class Bakgrunnskart extends Component {
   handleUpdateLayerProp = (lag, key, value) => {
@@ -21,7 +19,6 @@ class Bakgrunnskart extends Component {
 
   render() {
     const { history, location } = this.props;
-    const lag = location.pathname.substring(1);
     const { aktivtFormat } = this.props.kart;
     const kf = this.props.kart.format[aktivtFormat];
     if (location.search === "?vis_tema")
@@ -32,64 +29,16 @@ class Bakgrunnskart extends Component {
         />
       );
     if (location.search.startsWith("?vis_farge")) {
-      const egenskap = location.search.split("=").pop();
       return (
-        <div className="colour_adjustment_container">
-          <div className="sidebar_element">
-            <h1>Fargejusteringer</h1>
-            <h2>Bakgrunnskart</h2>
-          </div>
-          <div className="sidebar_element">
-            <h3>Fyllfarge</h3>
-            <ColorPicker
-              color={kf[egenskap + "_farge"]}
-              onChange={farge => {
-                const rgbString = tinycolor(farge.rgb).toRgbString();
-                this.handleUpdateLayerProp(lag, egenskap + "_farge", rgbString);
-              }}
-            />
-          </div>
-          {kf[egenskap + "_stroke_farge"] && (
-            <div className="sidebar_element">
-              <h3>Omriss rundt elementene</h3>
-
-              <h4>Velg farge på omriss</h4>
-              <ColorPicker
-                color={kf[egenskap + "_stroke_farge"]}
-                onChange={farge => {
-                  const rgbString = tinycolor(farge.rgb).toRgbString();
-                  this.handleUpdateLayerProp(
-                    lag,
-                    egenskap + "_stroke_farge",
-                    rgbString
-                  );
-                }}
-              />
-
-              <h4>Velg tykkelse på omriss</h4>
-
-              <SliderSetting
-                value={kf[egenskap + "_stroke_width"] || 0}
-                min={0}
-                max={10}
-                step={0.2}
-                tittel={
-                  "Tykkelse: " +
-                  (kf[egenskap + "_stroke_width"] || 0).toFixed(1) +
-                  " piksler"
-                }
-                onChange={v =>
-                  this.handleUpdateLayerProp(lag, egenskap + "_stroke_width", v)
-                }
-                onClick={() =>
-                  history.push(
-                    history.location.pathname + "?vis_farge=sted_navn_stroke"
-                  )
-                }
-              />
-            </div>
-          )}
-        </div>
+        <>
+          <VisFarge
+            kf={kf}
+            location={location}
+            history={history}
+            kartformat={this.props.kart.aktivtFormat}
+            onUpdateLayerProp={this.props.onUpdateLayerProp}
+          />
+        </>
       );
     }
 
@@ -97,7 +46,7 @@ class Bakgrunnskart extends Component {
       <List>
         <div className="sidebar_element">
           <h3>Tema</h3>
-          <TemaPreview type={aktivtFormat} />
+          <TemaButton type={aktivtFormat} />
           {false && (
             <Terreng
               kode="bakgrunnskart"

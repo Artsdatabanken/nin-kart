@@ -3,7 +3,7 @@ import { withRouter } from "react-router";
 import typer from "./Tema";
 import { KeyboardArrowRight } from "@material-ui/icons";
 
-const TemaPreview = ({ type, valgt, onUpdateLayerProp, history }) => (
+const TemaButton = ({ type, valgt, onUpdateLayerProp, history }) => (
   <button
     className="button_map_preview"
     onClick={() => {
@@ -29,4 +29,4 @@ const TemaPreview = ({ type, valgt, onUpdateLayerProp, history }) => (
   </button>
 );
 
-export default withRouter(TemaPreview);
+export default withRouter(TemaButton);
