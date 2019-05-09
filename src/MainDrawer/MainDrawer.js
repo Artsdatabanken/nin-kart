@@ -145,11 +145,7 @@ class MainDrawer extends Component {
 
                 <ListItem onClick={this.handleClickLogo} button>
                   <div className={classes.link}>
-                    <BildeAvatar
-                      url="Datakilde/Artsdatabanken"
-                      kode="OR-AD"
-                      size="small"
-                    />
+                    <BildeAvatar url="Datakilde/Artsdatabanken" kode="OR-AD" />
                   </div>
                   <ListItemText primary="   Artsdatabanken" />
                 </ListItem>
