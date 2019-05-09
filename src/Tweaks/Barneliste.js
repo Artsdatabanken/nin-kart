@@ -9,8 +9,6 @@ const Barneliste = ({
   barn,
   aktivtBarn,
   onUpdateLayerProp,
-  onMouseEnter,
-  onMouseLeave,
   history,
   visKoder
 }) => {
@@ -25,14 +23,13 @@ const Barneliste = ({
           erSynlig={node.erSynlig}
           farge={node.farge}
           kode={kode}
-          onClick={() => {
+          goToColourMenu={() => {
             history.push(history.location.pathname + "?vis_barn=" + i);
           }}
-          onMouseEnter={() => onMouseEnter({ kode, url: node.url })}
-          onMouseLeave={onMouseLeave}
           onUpdateLayerProp={onUpdateLayerProp}
         />
 
+        {/*
         {aktivtBarn === kode && (
           <>
             <span>fargevelger</span>
@@ -46,6 +43,7 @@ const Barneliste = ({
             />
           </>
         )}
+*/}
       </React.Fragment>
     );
   });

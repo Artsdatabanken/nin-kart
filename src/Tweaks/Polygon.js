@@ -1,19 +1,10 @@
 import { SettingsContext } from "../SettingsContext";
 import typesystem from "@artsdatabanken/typesystem";
-import { withStyles } from "@material-ui/core";
-import { withTheme } from "@material-ui/core/styles";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import tinycolor from "tinycolor2";
 import Barneliste from "./Barneliste";
 import ColorPicker from "./ColorPicker";
-
-const styles = {
-  iconSmall: {
-    fontSize: 20,
-    marginRight: 8
-  }
-};
 
 class Polygon extends Component {
   render() {
@@ -68,6 +59,8 @@ class Polygon extends Component {
                 />
               </ul>
             </div>
+
+            {/* 
             <ColorPicker
               tittel={"Fyllfarge"}
               color={farge}
@@ -76,6 +69,7 @@ class Polygon extends Component {
                 this.handleUpdateLayerProp(kode, "farge", rgbString);
               }}
             />
+              */}
           </>
         )}
       </SettingsContext.Consumer>
@@ -94,4 +88,4 @@ class Polygon extends Component {
   }
 }
 
-export default withStyles(styles)(withRouter(withTheme()(Polygon)));
+export default withRouter(Polygon);

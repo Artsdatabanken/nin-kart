@@ -6,26 +6,13 @@ import LegendeTitleField from "./LegendeComponents/LegendeTitleField";
 
 class LegendeElement extends React.Component {
   render() {
-    const {
-      tittel,
-      undertittel,
-      kode,
-      farge,
-      onMouseLeave,
-      onMouseEnter,
-      onClick,
-      erSynlig
-    } = this.props;
+    const { tittel, undertittel, kode, farge, goToColourMenu } = this.props;
     return (
       <div className="child_list_object">
         <button
           className="grouped_items_button"
-          onClick={() => onClick(kode)}
+          onClick={() => goToColourMenu(kode)}
           key={kode}
-          onMouseEnter={() => onMouseEnter({ kode })}
-          onMouseLeave={() => {
-            onMouseLeave();
-          }}
         >
           <LegendeTitleField tittel={tittel} undertittel={undertittel} />
           <LegendeColourAvatar farge={farge} kode={kode} />
