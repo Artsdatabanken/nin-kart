@@ -30,8 +30,12 @@ class config {
     return `${config.storageUrl}${url}/forside_${width}.${filtype}`;
   }
 
-  static avatar40px(url, ext = "jpg") {
-    return `${config.storageUrl}${url}/logo_40.${ext}`;
+  static getFotoBanner(url, width = 408) {
+    return `${config.storageUrl}${url}/banner_${width}.jpg`;
+  }
+
+  static logo(url, width = 24) {
+    return `${config.storageUrl}${url}/logo_${width}.png`;
   }
 
   static metaUrl(url) {
