@@ -9,24 +9,6 @@ class Flis extends Component {
     const { kode, visKoder } = this.props;
     const prefiks = kode.substring(0, 2);
     const parts = typesystem.splittKode(kode);
-    if (prefiks === "AO" && parts.length > 1)
-      return (
-        <div>
-          <img
-            ref={el => (this.logo = el)}
-            onLoad={() => {
-              this.logo.style.opacity = 1;
-            }}
-            alt="logo"
-            src={config.avatar40px(kode)}
-            style={{
-              opacity: 0,
-              filter: "drop-shadow(2px 2px 2px #666)",
-              animation: "fadein 3s ease"
-            }}
-          />
-        </div>
-      );
     if (!visKoder) return null;
     if (visKoder !== 42)
       return <div className="kode_flis_tekst">{kode.substring(3)} </div>;
