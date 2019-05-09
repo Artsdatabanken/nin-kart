@@ -1,4 +1,3 @@
-import typesystem from "@artsdatabanken/typesystem";
 import { Avatar, Chip } from "@material-ui/core";
 import React, { Component } from "react";
 import { palett } from "../../farger";
