@@ -61,8 +61,6 @@ const KodeVindu = ({
     ? Object.entries(meta.gradient).length
     : 0;
   const flaggLength = meta.flagg ? Object.entries(meta.flagg).length : 0;
-  //  console.log("kodevin", kode, opplyst);
-  const bilde = meta.foto || meta.bilde;
   return (
     <SettingsContext.Consumer>
       {context => {
@@ -81,7 +79,7 @@ const KodeVindu = ({
               onNavigate={onNavigate}
               erAktivert={erAktivert}
               onToggleLayer={onToggleLayer}
-              bilde={bilde}
+              bilde={meta.bilde}
             />
             {kode === "NN-LA-TI" && (
               <Detaljeringsgrad

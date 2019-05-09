@@ -7,7 +7,6 @@ class Kartlag extends React.Component {
     let koder = this.props.aktiveLag;
     const keys = Object.keys(koder);
     const { onFitBounds, onUpdateLayerProp, hidden } = this.props;
-    console.log(hidden);
     return (
       <>
         {hidden && (

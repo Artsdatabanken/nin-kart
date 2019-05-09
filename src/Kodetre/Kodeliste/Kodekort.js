@@ -8,17 +8,6 @@ import { kontrastfarge } from "../../farger";
 class Kodekort extends React.Component {
   // This component is used in the top part of the sidebar,
   // contains image, header-row (Tittelblokk), and the zoom button navbar (Knapperad)
-  state = {
-    visBilde: false
-  };
-
-  handleClose = () => {
-    this.setState({ visBilde: false });
-  };
-  handleOpen = () => {
-    this.setState({ visBilde: true });
-  };
-
   erTransparent(url) {
     if (url.startsWith("Fylke")) return true;
     if (url.startsWith("Datakilde/")) return true;
@@ -41,9 +30,10 @@ class Kodekort extends React.Component {
     } = this.props;
     const tc = new tinycolor(farge);
 
+    console.log(bilde);
     var new_url = "no_image";
-    if (bilde.forside != null) {
-      new_url = bilde.forside.url;
+    if (bilde.foto != null) {
+      new_url = bilde.foto.url;
     }
 
     return (
@@ -62,7 +52,7 @@ class Kodekort extends React.Component {
               backgroundImage: "url(" + new_url + ")"
             }) || { height: 0 }
           }
-          alt={"foto av" + tittel}
+          alt={"foto av " + språk(tittel)}
         />
 
         <Tittelblokk

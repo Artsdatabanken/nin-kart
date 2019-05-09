@@ -52,19 +52,6 @@ class Backend {
       `${config.storageUrl}Natur_i_Norge/Natursystem/metadata/${id}.json`
     );
   }
-
-  static async getImageAttribution(kode) {
-    return {
-      license: {
-        name: "CC BY-SA 3.0",
-        url: "https://creativecommons.org/licenses/by-sa/3.0/deed.en"
-      },
-      attribution: {
-        name: "Wikipedia",
-        url: "https://no.wikipedia.org/wiki/Portal:Forside"
-      }
-    };
-  }
 }
 
 export default Backend;
