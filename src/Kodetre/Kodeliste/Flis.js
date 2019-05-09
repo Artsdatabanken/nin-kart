@@ -1,14 +1,12 @@
 import typesystem from "@artsdatabanken/typesystem";
 import { Avatar, Chip } from "@material-ui/core";
 import React, { Component } from "react";
-import config from "../../config";
 import { palett } from "../../farger";
 
 class Flis extends Component {
   render() {
     const { kode, visKoder } = this.props;
     const prefiks = kode.substring(0, 2);
-    const parts = typesystem.splittKode(kode);
     if (!visKoder) return null;
     if (visKoder !== 42)
       return <div className="kode_flis_tekst">{kode.substring(3)} </div>;
