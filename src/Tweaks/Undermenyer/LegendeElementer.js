@@ -1,23 +1,16 @@
-import { SettingsContext } from "../SettingsContext";
+import { SettingsContext } from "SettingsContext";
 import typesystem from "@artsdatabanken/typesystem";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import tinycolor from "tinycolor2";
-import Barneliste from "./Barneliste";
-import ColorPicker from "./ColorPicker";
+//import Barneliste from "Tweaks/Barneliste";
+import ColorPicker from "Tweaks/ColorPicker";
+import LegendeElement from "./LegendeComponents/LegendeElement";
+import språk from "språk";
 
-class Polygon extends Component {
+class LegendeElementer extends Component {
   render() {
-    const {
-      kode,
-      farge,
-      history,
-      onMouseEnter,
-      onMouseLeave,
-      barn,
-      lag,
-      url
-    } = this.props;
+    const { history, barn, lag, url } = this.props;
     const { location } = history;
     const undernivå = this.navnPåUndernivå(url);
     if (location.search.startsWith("?vis_barn")) {
@@ -45,18 +38,30 @@ class Polygon extends Component {
             <div class="sidebar_element">
               <h3 style={{ textTransform: "capitalize" }}>{undernivå}</h3>
               <ul className="ul_block">
-                <Barneliste
-                  forelderkode={kode}
-                  visKoder={context.visKoder}
-                  aktivtBarn={lag}
-                  barn={barn}
-                  onMouseEnter={onMouseEnter}
-                  onMouseLeave={onMouseLeave}
-                  onUpdateLayerProp={(index, felt, verdi) => {
-                    barn[index][felt] = verdi;
-                    this.handleUpdateLayerProp(kode, "barn", barn);
-                  }}
-                />
+                {Object.keys(barn).map(i => {
+                  const node = barn[i];
+                  const kode = node.kode;
+                  return (
+                    <LegendeElement
+                      key={kode}
+                      tittel={språk(node.tittel)}
+                      undertittel={context.visKoder && kode}
+                      erSynlig={node.erSynlig}
+                      farge={node.farge}
+                      kode={kode}
+                      goToColourMenu={() => {
+                        history.push(
+                          history.location.pathname + "?vis_barn=" + i
+                        );
+                      }}
+                      onUpdateLayerProp={(index, felt, verdi) => {
+                        barn[index][felt] = verdi;
+                        this.handleUpdateLayerProp(kode, "barn", barn);
+                      }}
+                      aktivtBarn={lag}
+                    />
+                  );
+                })}
               </ul>
             </div>
 
@@ -88,4 +93,4 @@ class Polygon extends Component {
   }
 }
 
-export default withRouter(Polygon);
+export default withRouter(LegendeElementer);

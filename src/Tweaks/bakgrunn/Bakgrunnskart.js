@@ -1,5 +1,5 @@
 import SliderSetting from "../SliderSetting";
-import { List, h3 } from "@material-ui/core";
+import { List } from "@material-ui/core";
 import { withTheme } from "@material-ui/core/styles";
 import { Component, default as React } from "react";
 import { withRouter } from "react-router";

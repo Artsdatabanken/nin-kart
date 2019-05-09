@@ -1,6 +1,6 @@
-import { ArrowBackIos } from "@material-ui/icons/";
 import React, { Component } from "react";
-import VizType from "./VizType";
+import TilbakePil from "./FerdigeMiniElement/TilbakePil";
+import VizType from "./FerdigeMiniElement/VizType";
 
 class Generelt extends Component {
   render() {
@@ -16,18 +16,7 @@ class Generelt extends Component {
       <div className="sidebar_element">
         {history.location.search === "?vis" && kode !== "bakgrunnskart" && (
           <>
-            <div className="back_to_menu">
-              {url && (
-                <button
-                  className="invisible_icon_button"
-                  onClick={() => {
-                    history.push("/" + url);
-                  }}
-                >
-                  <ArrowBackIos className="iconSmall" />
-                </button>
-              )}
-            </div>
+            <TilbakePil url={url} history={history} />
             <h3>Visualisering</h3>
             <VizType
               lag={kode}

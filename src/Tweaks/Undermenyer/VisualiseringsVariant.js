@@ -1,4 +1,3 @@
-import { Select } from "@material-ui/core";
 import React from "react";
 
 const navn = {
@@ -7,23 +6,23 @@ const navn = {
   raster_indexed: "Klassedelt"
 };
 
-const VizType = ({ lag, aktivtFormat, format, onUpdateLayerProp }) => (
-  <Select
-    className="select"
-    native
+const VisualiseringsVariant = ({
+  lag,
+  aktivtFormat,
+  format,
+  onUpdateLayerProp
+}) => (
+  <select
+    className="visualisation_selector"
     value={aktivtFormat}
     onChange={e => onUpdateLayerProp(lag, "kart.aktivtFormat", e.target.value)}
-    inputProps={{
-      name: "value",
-      id: "value"
-    }}
   >
     {Object.keys(format).map(kf => (
-      <option key={kf} value={kf}>
+      <option key={kf} value={kf} className="optionsName">
         {navn[kf] || kf}
       </option>
     ))}
-  </Select>
+  </select>
 );
 
-export default VizType;
+export default VisualiseringsVariant;

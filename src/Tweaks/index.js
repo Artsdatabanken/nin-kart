@@ -1,21 +1,35 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import Generelt from "./Generelt";
-//import Seksjon from "./Seksjon";
+//import Generelt from "./leftovers/Generelt";
+//import Seksjon from "./leftovers/Seksjon";
 import Bakgrunnskart from "./bakgrunn/Bakgrunnskart";
 import Google from "./bakgrunn/Google";
-import Polygon from "./Polygon";
-import Gradient from "./Gradient";
-import Indexed from "./Indexed";
+import LegendeElementer from "./Undermenyer/LegendeElementer";
+import Gradient from "./Undermenyer/Gradient";
+import Indexed from "./Undermenyer/Indexed";
+import TilbakePil from "./FerdigeMiniElement/TilbakePil";
+import VisualiseringsVariant from "./Undermenyer/VisualiseringsVariant";
 
 const Tweaks = ({ history, ...props }) => {
   if (!props.kart) return null;
   const aktivtFormat = props.kart.aktivtFormat;
-  console.log(aktivtFormat);
   return (
     <div className="tweaks">
       <div class="sidebar_element page_topic_header" />
-      <Generelt history={history} {...props}>
+      <div className="sidebar_element">
+        <TilbakePil url={props.url} history={history} />
+        {history.location.search === "?vis" && props.kode !== "bakgrunnskart" && (
+          <>
+            <h3>Visualisering</h3>
+            <VisualiseringsVariant
+              lag={props.kode}
+              onUpdateLayerProp={props.onUpdateLayerProp}
+              format={props.kart.format}
+              aktivtFormat={props.kart.aktivtFormat}
+            />
+          </>
+        )}
+
         {(aktivtFormat === "osm_lys" || aktivtFormat === "osm_mørk") && (
           <Bakgrunnskart {...props} />
         )}
@@ -23,9 +37,9 @@ const Tweaks = ({ history, ...props }) => {
           aktivtFormat === "google_satellite") && <Google {...props} />}
         {aktivtFormat === "raster_gradient" && <Gradient {...props} />}
         {aktivtFormat === "raster_indexed" && <Indexed {...props} />}
-        {aktivtFormat === "polygon" && <Polygon {...props} />}}
+        {aktivtFormat === "polygon" && <LegendeElementer {...props} />}
         {/*<Seksjon aktivtFormat={aktivtFormat} {...props} />*/}
-      </Generelt>
+      </div>
     </div>
   );
 };

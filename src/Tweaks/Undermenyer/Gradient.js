@@ -3,7 +3,7 @@ import { withTheme } from "@material-ui/core/styles";
 import { SwapVert } from "@material-ui/icons/";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
-import SliderSetting from "./SliderSetting";
+import SliderSetting from "Tweaks/SliderSetting";
 
 class Gradient extends Component {
   render() {

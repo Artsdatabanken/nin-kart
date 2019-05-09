@@ -63,19 +63,13 @@ Dumped from old version until i bother fixing it
   position: relative;
 }
 
-.select {
+select {
   margin: 0px;
   width: 100%;
   position: relative;
   height: auto;
-}
-
-.select option {
-  display: block;
-
-  position: relative;
-  margin: 0px;
-  width: 100%;
+  padding: 5px;
+  text-transform: capitalize;
 }
 
 .ul_block,

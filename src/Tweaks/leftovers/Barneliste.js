@@ -1,8 +1,8 @@
 import React from "react";
 import { withRouter } from "react-router";
-import tinycolor from "tinycolor2";
-import LegendeElement from "./LegendeBarn/LegendeElement";
-import ColorPicker from "./ColorPicker";
+//import tinycolor from "tinycolor2";
+import LegendeElement from "./LegendeComponents/LegendeElement";
+//import ColorPicker from "./ColorPicker";
 import språk from "språk";
 
 const Barneliste = ({
@@ -27,6 +27,7 @@ const Barneliste = ({
             history.push(history.location.pathname + "?vis_barn=" + i);
           }}
           onUpdateLayerProp={onUpdateLayerProp}
+          aktivtBarn={aktivtBarn}
         />
 
         {/*
