@@ -11,11 +11,13 @@ class Kommunevapen extends Component {
           this.logo.style.opacity = 1;
         }}
         alt="kommunevåpen"
-        src={config.getFotoOmslag(url, 408, "jpg")}
+        src={config.logo(url, 48)}
         style={{
+          objectFit: "contain",
           opacity: 0,
-          width: 56,
-          filter: "drop-shadow(3px 3px 2px #444)",
+          width: 48,
+          height: 48,
+          filter: "drop-shadow(3px 3px 2px #888)",
           animation: "fadein 0.6s ease"
         }}
       />
