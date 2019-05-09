@@ -1,7 +1,5 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-//import Generelt from "./leftovers/Generelt";
-//import Seksjon from "./leftovers/Seksjon";
 import Bakgrunnskart from "./bakgrunn/Bakgrunnskart";
 import Google from "./bakgrunn/Google";
 import LegendeElementer from "./Undermenyer/LegendeElementer";
@@ -38,7 +36,6 @@ const Tweaks = ({ history, ...props }) => {
         {aktivtFormat === "raster_gradient" && <Gradient {...props} />}
         {aktivtFormat === "raster_indexed" && <Indexed {...props} />}
         {aktivtFormat === "polygon" && <LegendeElementer {...props} />}
-        {/*<Seksjon aktivtFormat={aktivtFormat} {...props} />*/}
       </div>
     </div>
   );
