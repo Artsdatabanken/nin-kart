@@ -12,7 +12,7 @@ github_message=https://nin.artsdatabanken.no/$BRANCH
 echo "Making archive..."
 tar --directory=build -zcf $BRANCH.tar.gz .
 echo "Deploying..."
-if [ "${BRANCH}" == "master"]
+if [ "${BRANCH}" == "master" ]
  then
   sshpass -p $scp_pass scp -o StrictHostKeyChecking=no $BRANCH.tar.gz $scp_user@$scp_dest
   #Posting to slack to trigger deployment
