@@ -12,6 +12,7 @@ const TemaMeny = ({ valgt, onUpdateLayerProp }) => (
     {Object.keys(typer).map(key => {
       return (
         <TemaButton
+          key={key}
           button
           type={key}
           valgt={valgt}

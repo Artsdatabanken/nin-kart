@@ -3,7 +3,6 @@ import { withRouter } from "react-router";
 import { withStyles } from "@material-ui/core";
 import backend from "../backend";
 import { SettingsContext } from "../SettingsContext";
-import språk from "../språk";
 import VenstreVinduContainer from "../VenstreVinduContainer";
 import bakgrunnskarttema from "./bakgrunnskarttema";
 import TopBar from "../TopBar/TopBar";
@@ -60,7 +59,6 @@ class Grunnkart extends React.Component {
 
   handleFitBounds = bbox => {
     this.setState({ fitBounds: bbox });
-    console.log(bbox);
   };
 
   handleBoundsChange = bbox => {
@@ -165,7 +163,7 @@ class Grunnkart extends React.Component {
 
   // Supports composite keys i.e. gradient.filterMin
   handleUpdateLayerProp = (layer, key, value) => {
-    console.log("updateProp", layer, key, value);
+    //console.log("updateProp", layer, key, value);
     const aktive = this.state.aktiveLag;
     let node = aktive[layer];
     if (!node) node = this.state.meta;

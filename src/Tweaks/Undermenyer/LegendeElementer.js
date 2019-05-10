@@ -13,7 +13,6 @@ class LegendeElementer extends Component {
     const { history, barn, lag, url, farge } = this.props;
     const { location } = history;
     const undernivå = this.navnPåUndernivå(url);
-    console.log("barnlengde: ", barn.length);
     const length = barn.length;
 
     if (location.search.startsWith("?vis_barn")) {
@@ -41,32 +40,29 @@ class LegendeElementer extends Component {
           <>
             {length !== 0 ? (
               <div className="sidebar_element">
-                {length}
                 <h3 style={{ textTransform: "capitalize" }}>{undernivå}</h3>
                 <ul className="ul_block">
                   {Object.keys(barn).map(i => {
                     const node = barn[i];
                     const kode = node.kode;
                     return (
-                      <>
-                        <LegendeElement
-                          key={kode}
-                          tittel={språk(node.tittel)}
-                          undertittel={context.visKoder && kode}
-                          farge={node.farge}
-                          kode={kode}
-                          goToColourMenu={() => {
-                            history.push(
-                              history.location.pathname + "?vis_barn=" + i
-                            );
-                          }}
-                          onUpdateLayerProp={(index, felt, verdi) => {
-                            barn[index][felt] = verdi;
-                            this.handleUpdateLayerProp(kode, "barn", barn);
-                          }}
-                          aktivtBarn={lag}
-                        />
-                      </>
+                      <LegendeElement
+                        key={kode}
+                        tittel={språk(node.tittel)}
+                        undertittel={context.visKoder && kode}
+                        farge={node.farge}
+                        kode={kode}
+                        goToColourMenu={() => {
+                          history.push(
+                            history.location.pathname + "?vis_barn=" + i
+                          );
+                        }}
+                        onUpdateLayerProp={(index, felt, verdi) => {
+                          barn[index][felt] = verdi;
+                          this.handleUpdateLayerProp(kode, "barn", barn);
+                        }}
+                        aktivtBarn={lag}
+                      />
                     );
                   })}
                 </ul>

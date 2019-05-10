@@ -7,7 +7,6 @@ import LegendeTitleField from "./LegendeTitleField";
 class LegendeElement extends React.Component {
   render() {
     const { tittel, undertittel, kode, farge, goToColourMenu } = this.props;
-    console.log(tittel);
     return (
       <div className="child_list_object">
         <button
