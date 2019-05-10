@@ -1,7 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import Bakgrunnskart from "./Undermenyer/Bakgrunnskart";
-import Google from "./Undermenyer/Google";
+import BakgrunnsInnstillinger from "./Undermenyer/BakgrunnsInnstillinger";
 import LegendeElementer from "./Undermenyer/LegendeElementer";
 import Gradient from "./Undermenyer/Gradient";
 import Indexed from "./Undermenyer/Indexed";
@@ -27,12 +26,9 @@ const Tweaks = ({ history, ...props }) => {
             />
           </>
         )}
-
-        {(aktivtFormat === "osm_lys" || aktivtFormat === "osm_mørk") && (
-          <Bakgrunnskart {...props} />
+        {props.kode === "bakgrunnskart" && (
+          <BakgrunnsInnstillinger {...props} />
         )}
-        {(aktivtFormat === "google_hybrid" ||
-          aktivtFormat === "google_satellite") && <Google {...props} />}
         {aktivtFormat === "raster_gradient" && <Gradient {...props} />}
         {aktivtFormat === "raster_indexed" && <Indexed {...props} />}
         {aktivtFormat === "polygon" && <LegendeElementer {...props} />}

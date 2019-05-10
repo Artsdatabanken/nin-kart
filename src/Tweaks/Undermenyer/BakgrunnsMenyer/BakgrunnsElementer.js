@@ -1,52 +1,23 @@
 import { List } from "@material-ui/core";
-import { withTheme } from "@material-ui/core/styles";
 import { Component, default as React } from "react";
-import { withRouter } from "react-router";
-import Bakgrunnskartlag from "./bakgrunn/Bakgrunnskartlag";
-import Tema from "./bakgrunn/Tema";
-import Terreng from "./bakgrunn/Terreng";
-import TemaButton from "./bakgrunn/TemaButton";
-import VisFarge from "./VisFarge";
+import Bakgrunnskartlag from ".././bakgrunn/Bakgrunnskartlag";
+import Terreng from ".././bakgrunn/Terreng";
 
-class Bakgrunnskart extends Component {
+class BakgrunnsElementer extends Component {
+  //Duplikat, men ga opp å finne bedre løsning
   handleUpdateLayerProp = (lag, key, value) => {
     this.props.onUpdateLayerProp(
       lag,
-      `kart.format.${this.props.kart.aktivtFormat}.${key}`,
+      `kart.format.${this.props.kartformat}.${key}`,
       value
     );
   };
-
   render() {
-    const { history, location } = this.props;
-    const { aktivtFormat } = this.props.kart;
-    const kf = this.props.kart.format[aktivtFormat];
-    if (location.search === "?vis_tema")
-      return (
-        <Tema
-          onUpdateLayerProp={this.props.onUpdateLayerProp}
-          valgt={aktivtFormat}
-        />
-      );
-    if (location.search.startsWith("?vis_farge")) {
-      return (
-        <>
-          <VisFarge
-            kf={kf}
-            location={location}
-            history={history}
-            kartformat={this.props.kart.aktivtFormat}
-            onUpdateLayerProp={this.props.onUpdateLayerProp}
-          />
-        </>
-      );
-    }
+    const { kf, aktivtFormat } = this.props;
 
     return (
       <List>
         <div className="sidebar_element">
-          <h3>Tema</h3>
-          <TemaButton type={aktivtFormat} />
           {false && (
             <Terreng
               kode="bakgrunnskart"
@@ -132,4 +103,4 @@ class Bakgrunnskart extends Component {
   }
 }
 
-export default withRouter(withTheme()(Bakgrunnskart));
+export default BakgrunnsElementer;
