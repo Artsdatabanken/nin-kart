@@ -1,10 +1,10 @@
 import { Component, default as React } from "react";
 import { withRouter } from "react-router";
-import TemaMeny from "./bakgrunn/TemaMeny";
+import TemaMeny from "./BakgrunnsMenyer/TemaMeny";
 import BakgrunnsElementer from "./BakgrunnsMenyer/BakgrunnsElementer";
 import VisFarge from "./BakgrunnsMenyer/VisFarge";
 import Google from "./BakgrunnsMenyer/Google";
-import TemaButton from "./bakgrunn/TemaButton";
+import TemaButton from "./BakgrunnsMenyer/Bakgrunn/TemaButton";
 
 class BakgrunnsInnstillinger extends Component {
   render() {

@@ -67,20 +67,6 @@ class Grunnkart extends React.Component {
     this.setState({ actualBounds: bbox });
   };
 
-  addSelectedBarn(barn) {
-    return barn.map(node => {
-      const kode = node.kode;
-      return {
-        kode: kode,
-        tittel: språk(node.tittel),
-        farge: node.farge,
-        erSynlig: true,
-        kanSlettes: true,
-        value: node.value
-      };
-    });
-  }
-
   addSelected = props => {
     let aktive = this.state.aktiveLag;
     if (!props.kart) return;

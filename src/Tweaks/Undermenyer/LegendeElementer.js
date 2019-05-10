@@ -10,9 +10,12 @@ import språk from "språk";
 
 class LegendeElementer extends Component {
   render() {
-    const { history, barn, lag, url } = this.props;
+    const { history, barn, lag, url, farge } = this.props;
     const { location } = history;
     const undernivå = this.navnPåUndernivå(url);
+    console.log("barnlengde: ", barn.length);
+    const length = barn.length;
+
     if (location.search.startsWith("?vis_barn")) {
       const egenskap = location.search.split("=").pop();
       const barnet = barn[egenskap];
@@ -31,50 +34,55 @@ class LegendeElementer extends Component {
         />
       );
     }
+
     return (
       <SettingsContext.Consumer>
         {context => (
           <>
-            <div class="sidebar_element">
-              <h3 style={{ textTransform: "capitalize" }}>{undernivå}</h3>
-              <ul className="ul_block">
-                {Object.keys(barn).map(i => {
-                  const node = barn[i];
-                  const kode = node.kode;
-                  return (
-                    <LegendeElement
-                      key={kode}
-                      tittel={språk(node.tittel)}
-                      undertittel={context.visKoder && kode}
-                      erSynlig={node.erSynlig}
-                      farge={node.farge}
-                      kode={kode}
-                      goToColourMenu={() => {
-                        history.push(
-                          history.location.pathname + "?vis_barn=" + i
-                        );
-                      }}
-                      onUpdateLayerProp={(index, felt, verdi) => {
-                        barn[index][felt] = verdi;
-                        this.handleUpdateLayerProp(kode, "barn", barn);
-                      }}
-                      aktivtBarn={lag}
-                    />
-                  );
-                })}
-              </ul>
-            </div>
-
-            {/* 
-            <ColorPicker
-              tittel={"Fyllfarge"}
-              color={farge}
-              onChange={farge => {
-                const rgbString = tinycolor(farge.rgb).toRgbString();
-                this.handleUpdateLayerProp(kode, "farge", rgbString);
-              }}
-            />
-              */}
+            {length !== 0 ? (
+              <div className="sidebar_element">
+                {length}
+                <h3 style={{ textTransform: "capitalize" }}>{undernivå}</h3>
+                <ul className="ul_block">
+                  {Object.keys(barn).map(i => {
+                    const node = barn[i];
+                    const kode = node.kode;
+                    return (
+                      <>
+                        <LegendeElement
+                          key={kode}
+                          tittel={språk(node.tittel)}
+                          undertittel={context.visKoder && kode}
+                          farge={node.farge}
+                          kode={kode}
+                          goToColourMenu={() => {
+                            history.push(
+                              history.location.pathname + "?vis_barn=" + i
+                            );
+                          }}
+                          onUpdateLayerProp={(index, felt, verdi) => {
+                            barn[index][felt] = verdi;
+                            this.handleUpdateLayerProp(kode, "barn", barn);
+                          }}
+                          aktivtBarn={lag}
+                        />
+                      </>
+                    );
+                  })}
+                </ul>
+              </div>
+            ) : (
+              <div className="sidebar_element">
+                <ColorPicker
+                  tittel={"Fyllfarge"}
+                  color={farge}
+                  onChange={farge => {
+                    const rgbString = tinycolor(farge.rgb).toRgbString();
+                    this.props.onUpdateLayerProp(lag, "farge", rgbString);
+                  }}
+                />
+              </div>
+            )}
           </>
         )}
       </SettingsContext.Consumer>

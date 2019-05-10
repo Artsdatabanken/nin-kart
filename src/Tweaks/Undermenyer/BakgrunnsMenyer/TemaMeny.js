@@ -1,6 +1,6 @@
 import React from "react";
-import TemaButton from "./TemaButton";
-import typer from "./temaer";
+import TemaButton from "./Bakgrunn/TemaButton";
+import typer from "./Bakgrunn/temaer";
 
 const TemaMeny = ({ valgt, onUpdateLayerProp }) => (
   <>

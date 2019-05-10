@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import BakgrunnsInnstillinger from "./Undermenyer/BakgrunnsInnstillinger";
 import LegendeElementer from "./Undermenyer/LegendeElementer";
 import Gradient from "./Undermenyer/Gradient";
-import Indexed from "./Undermenyer/Indexed";
+//import Indexed from "./Undermenyer/Indexed";
 //import TilbakePil from "./FerdigeMiniElement/TilbakePil";
 import VisualiseringsVariant from "./Undermenyer/VisualiseringsVariant";
 
@@ -12,7 +12,7 @@ const Tweaks = ({ history, ...props }) => {
   const aktivtFormat = props.kart.aktivtFormat;
   return (
     <div className="tweaks">
-      <div class="sidebar_element page_topic_header" />
+      <div className="sidebar_element page_topic_header" />
 
       {/*<TilbakePil url={props.url} history={history} />*/}
 
@@ -26,7 +26,7 @@ const Tweaks = ({ history, ...props }) => {
       )}
       {props.kode === "bakgrunnskart" && <BakgrunnsInnstillinger {...props} />}
       {aktivtFormat === "raster_gradient" && <Gradient {...props} />}
-      {aktivtFormat === "raster_indexed" && <Indexed {...props} />}
+      {/* {aktivtFormat === "raster_indexed" && <Indexed {...props} />}*/}
       {aktivtFormat === "polygon" && <LegendeElementer {...props} />}
     </div>
   );

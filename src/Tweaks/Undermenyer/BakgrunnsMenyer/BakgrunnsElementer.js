@@ -1,6 +1,6 @@
 import { Component, default as React } from "react";
-import Bakgrunnskartlag from ".././bakgrunn/Bakgrunnskartlag";
-import Terreng from ".././bakgrunn/Terreng";
+import Bakgrunnskartlag from "./Bakgrunn/Bakgrunnskartlag";
+import Terreng from "./Bakgrunn/Terreng";
 import { List } from "@material-ui/core";
 
 class BakgrunnsElementer extends Component {
@@ -13,7 +13,7 @@ class BakgrunnsElementer extends Component {
     );
   };
   render() {
-    const { kf, aktivtFormat } = this.props;
+    const { kf } = this.props;
 
     return (
       <List>

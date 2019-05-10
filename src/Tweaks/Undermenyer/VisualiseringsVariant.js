@@ -1,7 +1,7 @@
 import React from "react";
 
 const navn = {
-  polygon: "Områder",
+  polygon: "Områder ",
   raster_gradient: "Kontinuerlig",
   raster_indexed: "Klassedelt"
 };
