@@ -1,10 +1,14 @@
-import { List } from "@material-ui/core";
 import React from "react";
 import TemaButton from "./TemaButton";
 import typer from "./temaer";
 
-const Tema = ({ valgt, onUpdateLayerProp }) => (
-  <List>
+const TemaMeny = ({ valgt, onUpdateLayerProp }) => (
+  <>
+    <div className="sidebar_element">
+      <h1>Velg Tema</h1>
+      <h2>Rasterkart eller kartblad fra Google</h2>
+    </div>
+
     {Object.keys(typer).map(key => {
       return (
         <TemaButton
@@ -15,7 +19,7 @@ const Tema = ({ valgt, onUpdateLayerProp }) => (
         />
       );
     })}
-  </List>
+  </>
 );
 
-export default Tema;
+export default TemaMeny;

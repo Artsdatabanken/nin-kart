@@ -1,6 +1,6 @@
 import React from "react";
 
-class LegendeColourAvatar extends React.Component {
+class VelgFargeBoks extends React.Component {
   render() {
     const { farge, kode } = this.props;
     return (
@@ -15,4 +15,4 @@ class LegendeColourAvatar extends React.Component {
   }
 }
 
-export default LegendeColourAvatar;
+export default VelgFargeBoks;

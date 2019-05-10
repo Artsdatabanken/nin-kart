@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
-import typer from "./Tema";
+import typer from "./TemaMeny";
 import { KeyboardArrowRight } from "@material-ui/icons";
 
 const TemaButton = ({ type, valgt, onUpdateLayerProp, history }) => (

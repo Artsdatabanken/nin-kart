@@ -1,4 +1,3 @@
-import { List, ListSubheader } from "@material-ui/core";
 import { Component, default as React } from "react";
 import { withRouter } from "react-router";
 import tinycolor from "tinycolor2";
@@ -20,18 +19,15 @@ class Google extends Component {
     const kf = kart.format[aktivtFormat];
 
     return (
-      <List>
-        <ListSubheader>Områder</ListSubheader>
-        <ColorPicker
-          tittel={"Fargetone"}
-          color={kf.tint}
-          alpha
-          onChange={farge => {
-            const rgbString = tinycolor(farge.rgb).toRgbString();
-            this.handleUpdateLayerProp(lag, "tint", rgbString);
-          }}
-        />
-      </List>
+      <ColorPicker
+        tittel={"Fargetone"}
+        color={kf.tint}
+        alpha
+        onChange={farge => {
+          const rgbString = tinycolor(farge.rgb).toRgbString();
+          this.handleUpdateLayerProp(lag, "tint", rgbString);
+        }}
+      />
     );
   }
 }

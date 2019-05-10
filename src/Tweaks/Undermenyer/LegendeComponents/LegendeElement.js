@@ -1,7 +1,7 @@
 import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
 import React from "react";
 import { withRouter } from "react-router";
-import LegendeColourAvatar from "./LegendeColourAvatar";
+import VelgFargeBoks from "Tweaks/FerdigeMiniElement/VelgFargeBoks";
 import LegendeTitleField from "./LegendeTitleField";
 
 class LegendeElement extends React.Component {
@@ -15,7 +15,7 @@ class LegendeElement extends React.Component {
           key={kode}
         >
           <LegendeTitleField tittel={tittel} undertittel={undertittel} />
-          <LegendeColourAvatar farge={farge} kode={kode} />
+          <VelgFargeBoks farge={farge} kode={kode} />
         </button>
 
         <button

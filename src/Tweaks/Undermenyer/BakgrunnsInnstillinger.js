@@ -1,6 +1,6 @@
 import { Component, default as React } from "react";
 import { withRouter } from "react-router";
-import Tema from "./bakgrunn/Tema";
+import TemaMeny from "./bakgrunn/TemaMeny";
 import BakgrunnsElementer from "./BakgrunnsMenyer/BakgrunnsElementer";
 import VisFarge from "./BakgrunnsMenyer/VisFarge";
 import Google from "./BakgrunnsMenyer/Google";
@@ -14,7 +14,7 @@ class BakgrunnsInnstillinger extends Component {
 
     if (location.search === "?vis_tema")
       return (
-        <Tema
+        <TemaMeny
           onUpdateLayerProp={this.props.onUpdateLayerProp}
           valgt={aktivtFormat}
         />
@@ -34,13 +34,22 @@ class BakgrunnsInnstillinger extends Component {
 
     return (
       <>
-        <h3>Tema</h3>
-        <TemaButton type={aktivtFormat} />
-        <h3>Bakgrunnsinnstillinger</h3>
+        <div className="sidebar_element">
+          <h1>Bakgrunnsinnstillinger</h1>
+          <h2>Rediger hvordan bakgrunnskartet fremstår</h2>
+        </div>
+
+        <div className="sidebar_element">
+          <h3>Endre valgt tema for bakgrunnskart</h3>
+          <TemaButton type={aktivtFormat} />
+        </div>
 
         {aktivtFormat === "google_hybrid" ||
         aktivtFormat === "google_satellite" ? (
-          <Google {...this.props} />
+          <div className="sidebar_element">
+            <h3>Fargefilter for Google-kartbladet</h3>
+            <Google {...this.props} />
+          </div>
         ) : (
           <BakgrunnsElementer
             kf={kf}

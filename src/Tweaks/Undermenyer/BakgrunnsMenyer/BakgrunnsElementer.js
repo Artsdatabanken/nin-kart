@@ -1,7 +1,7 @@
-import { List } from "@material-ui/core";
 import { Component, default as React } from "react";
 import Bakgrunnskartlag from ".././bakgrunn/Bakgrunnskartlag";
 import Terreng from ".././bakgrunn/Terreng";
+import { List } from "@material-ui/core";
 
 class BakgrunnsElementer extends Component {
   //Duplikat, men ga opp å finne bedre løsning
@@ -17,15 +17,16 @@ class BakgrunnsElementer extends Component {
 
     return (
       <List>
-        <div className="sidebar_element">
-          {false && (
+        {false && (
+          <div className="sidebar_element">
             <Terreng
               kode="bakgrunnskart"
               terreng={this.props.terreng}
               onUpdateLayerProp={this.props.onUpdateLayerProp}
             />
-          )}
-        </div>
+          </div>
+        )}
+
         <div className="sidebar_element">
           <h3>Områder</h3>
           <Bakgrunnskartlag
