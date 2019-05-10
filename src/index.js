@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import * as Sentry from "@sentry/browser";
 
-false &&
+true &&
   Sentry.init({
     dsn: "https://c493d02267634ba4bc387feaddbeb083@sentry.io/1302262",
     maxBreadcrumbs: 50,
