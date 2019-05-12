@@ -42,7 +42,7 @@ function lagStyle(format, drawArgs) {
         highp float rgbaToIndex(vec4 rgba) {
             const float pixelWidth = 1./512.;
             // G = MSB, color 256-511, B = LSB, color 0-255
-            return (rgba.g*255.*256. + rgba.b*255.)*pixelWidth;
+            return (rgba.g*256. + rgba.b)*255.*pixelWidth+0.5*pixelWidth;
           }`,
         color: `
         float v = rgbaToIndex(sampleRaster(0));
