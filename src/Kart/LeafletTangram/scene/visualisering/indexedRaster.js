@@ -5,7 +5,7 @@ function drawAll(drawArgs) {
     [drawArgs.kode]: {
       data: { source: drawArgs.forelderkode },
       draw: {
-        raster: {
+        [drawArgs.kode]: {
           order: 700
         }
       }
@@ -28,17 +28,13 @@ function lagStyle(format, drawArgs) {
     sysconfig.storageUrl
   }${palettUrl}/raster_indexed_palette.png`;
 
-  if (this.palette1 !== this.palette2 || !this.palette1)
-    this.palette1 = this.palette2 || newPalette;
-  this.palette2 = newPalette;
   const gradient = {
     base: "raster",
     blend: "multiply",
     animated: false,
     shaders: {
       uniforms: {
-        palette1: this.palette1,
-        palette2: this.palette2,
+        palette: newPalette,
         depth: 1 - (drawArgs.depth || 0) / 8 - 0.5 / 8
       },
       blocks: {
@@ -50,15 +46,12 @@ function lagStyle(format, drawArgs) {
           }`,
         color: `
         float v = rgbaToIndex(sampleRaster(0));
-        vec4 fill1 = texture2D(palette1, vec2(v, depth));
-        vec4 fill2 = texture2D(palette2, vec2(v, depth));
-        vec4 fill = mix(fill1, fill2, clamp(u_time*2.5,0.,1.));
-        color = fill2;
+        color = texture2D(palette, vec2(v, depth));
       `
       }
     }
   };
-  return { name: "raster", value: gradient };
+  return { name: drawArgs.kode, value: gradient };
 }
 /*
         color: `
