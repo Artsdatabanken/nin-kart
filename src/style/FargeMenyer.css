@@ -64,12 +64,13 @@ Dumped from old version until i bother fixing it
 }
 
 select {
-  margin: 0px;
-  width: 100%;
+  margin: 10px;
+  width: calc(100% - 20px);
   position: relative;
   height: auto;
-  padding: 5px;
+  padding: 10px;
   text-transform: capitalize;
+  font-size: 12pt;
 }
 
 .ul_block,
@@ -165,4 +166,31 @@ select {
   width: 24px;
   margin: 0px;
   padding: 0px;
+}
+
+.child_list_object button {
+  padding: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.child_list_object .colour_legend {
+  margin-right: 10px;
+  margin-left: 0px;
+}
+
+.widescreen_sidebar_element {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0px;
+}
+
+.widescreen_sidebar_element h1,
+.widescreen_sidebar_element h2,
+.widescreen_sidebar_element h3,
+.widescreen_sidebar_element h4,
+.widescreen_sidebar_element h5 {
+  padding-right: 20px;
+  padding-left: 20px;
+  box-sizing: border-box;
 }

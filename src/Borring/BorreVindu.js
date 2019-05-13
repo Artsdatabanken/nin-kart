@@ -21,7 +21,7 @@ class BorreVindu extends Component {
     const { barn, vis } = this.props;
     if (!barn) return null;
     const { AO, prefix, ...andreBarn } = barn;
-    const dominant = this.finnButikkKode();
+    //const dominant = this.finnButikkKode();
     //let image_url = config.getFotoOmslag(dominant.url);
     return (
       <div className="sidebar_top_area sidebar_background_element">

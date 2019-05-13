@@ -39,7 +39,7 @@ class LegendeElementer extends Component {
         {context => (
           <>
             {length !== 0 ? (
-              <div className="sidebar_element">
+              <div className="sidebar_element widescreen_sidebar_element">
                 <h3 style={{ textTransform: "capitalize" }}>{undernivå}</h3>
                 <ul className="ul_block">
                   {Object.keys(barn).map(i => {
