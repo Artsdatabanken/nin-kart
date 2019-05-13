@@ -89,11 +89,12 @@ class MainDrawer extends Component {
                   icon={<Naturvern />}
                   primary="Naturvernområde"
                 />
+                {/*
                 <Menyelement
                   onClick={this.handleClickTruet_art_natur}
                   icon={<BubbleChart />}
                   primary="Truet art/natur"
-                />
+                />*/}
                 <Menyelement
                   onClick={this.handleClickArt}
                   icon={<Pets />}
