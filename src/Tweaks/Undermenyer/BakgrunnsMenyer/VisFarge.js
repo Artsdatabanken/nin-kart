@@ -1,4 +1,4 @@
-import SliderSetting from "Tweaks/SliderSetting";
+import SliderElement from "Tweaks/FerdigeMiniElement/SliderElement";
 import { Component, default as React } from "react";
 //import { withRouter } from "react-router";
 import tinycolor from "tinycolor2";
@@ -55,7 +55,7 @@ class VisFarge extends Component {
 
             <h4>Velg tykkelse på omriss</h4>
 
-            <SliderSetting
+            <SliderElement
               value={kf[egenskap + "_stroke_width"] || 0}
               min={0}
               max={10}

@@ -42,12 +42,30 @@ Dumped from old version until i bother fixing it
   top: 10px;
 }
 
-.sidebar .slider,
-.slider {
+.sidebar .slider_element,
+.slider_element {
   padding: 0px;
-  padding-left: 7px;
-  padding-right: 7px;
   max-width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.slider_element button {
+  width: 25px;
+  height: 25px;
+  background: #81b2bb;
+}
+
+.slider_element div div:first-child {
+  background: #4b909e;
+}
+
+.slider_element div div:last-child {
+  background: #4b909e;
+}
+
+.slider_setting {
+  padding: 5px;
 }
 
 .slider_setting div,

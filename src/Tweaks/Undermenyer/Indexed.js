@@ -7,7 +7,7 @@ class Indexed extends Component {
   render() {
     return (
       <>
-        <ListSubheader>Filter</ListSubheader>
+        <ListSubheader>Filter bhgf</ListSubheader>
       </>
     );
   }
