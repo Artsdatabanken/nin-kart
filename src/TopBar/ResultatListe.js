@@ -1,7 +1,7 @@
 import { Divider, List, ListItem, ListItemText } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import React, { Component } from "react";
-import Bildeavatar from "./Bildeavatar";
+import Bildeavatar from "../Kodetre/Kodeliste/Bildeavatar";
 
 const styles = {};
 
@@ -23,8 +23,7 @@ class ResultatListe extends Component {
     if (!searchResults) return null;
     if (searchResults.length <= 0) return null;
     return (
-      <List
-        style={{ paddingTop: 0, paddingBottom: 0 }}
+      <div
         //className="resultatliste" className={abc("resultatliste", isSearching)}
         //className="resultatliste"
         className="resultatliste mobile_active"
@@ -56,7 +55,7 @@ class ResultatListe extends Component {
             </React.Fragment>
           );
         })}
-      </List>
+      </div>
     );
   }
 

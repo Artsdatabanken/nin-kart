@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
-import ResultatListe from "../Kodetre/Kodeliste/ResultatListe";
-import LookupControl from "../LookupControl/LookupControl";
+import ResultatListe from "./ResultatListe";
+import Searchbar from "../Searchbar/Searchbar";
 import axios from "axios";
 import "./../style/TopBar.css";
+
+import { SettingsContext } from "../SettingsContext";
+
+import Hamburger from "@material-ui/icons/Menu";
 
 const TopBar = ({ onSelectResult }) => {
   const [hits, setHits] = useState([]);
@@ -18,15 +22,21 @@ const TopBar = ({ onSelectResult }) => {
     fetchData();
   }, [query]);
   return (
-    <div className="top_expander">
-      <div className="top_menu">
-        <LookupControl onQueryChange={e => setQuery(e.target.value)} />
-        <img
-          src="/logoer/adb32.png"
-          className="logo_image"
-          alt="artsdatabanken logo"
-        />
+    <SettingsContext.Consumer>
+      {context => (
+        <div className="top_anchor">
+          <button className="invisible_icon_button hamburger">
+            <Hamburger onClick={context.onToggleHovedmeny} />
+          </button>
 
+          <Searchbar onQueryChange={e => setQuery(e.target.value)} />
+
+          <img
+            src="/logoer/adb32.png"
+            className="logo_image"
+            alt="artsdatabanken logo"
+          />
+          {/* 
         <h1>
           Natur i Norge{" "}
           <img
@@ -34,16 +44,19 @@ const TopBar = ({ onSelectResult }) => {
             alt="artsdatabanken liten logo"
           />
         </h1>
-      </div>
-      <ResultatListe
-        query={query}
-        searchResults={hits}
-        onSelect={item => {
-          setQuery(null);
-          onSelectResult(item);
-        }}
-      />
-    </div>
+        */}
+
+          <ResultatListe
+            query={query}
+            searchResults={hits}
+            onSelect={item => {
+              setQuery(null);
+              onSelectResult(item);
+            }}
+          />
+        </div>
+      )}
+    </SettingsContext.Consumer>
   );
 };
 
