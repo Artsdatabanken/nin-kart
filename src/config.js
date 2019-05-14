@@ -25,24 +25,20 @@ class config {
     return source;
   }
 
-  static getFotoOmslag(
-    url: string,
-    width: number = 408,
-    filtype: string = "jpg"
-  ) {
+  static getFotoOmslag(url, width = 408, filtype = "jpg") {
     if (url.indexOf("Datakilde") === 0) filtype = "png";
     return `${config.storageUrl}${url}/forside_${width}.${filtype}`;
   }
 
-  static getFotoBanner(url: string, width: number = 408) {
+  static getFotoBanner(url, width = 408) {
     return `${config.storageUrl}${url}/banner_${width}.jpg`;
   }
 
-  static avatar40px(url: string, ext = "jpg") {
-    return `${config.storageUrl}${url}/avatar_40.${ext}`;
+  static logo(url, width = 24) {
+    return `${config.storageUrl}${url}/logo_${width}.png`;
   }
 
-  static metaUrl(url: string) {
+  static metaUrl(url) {
     return `${config.storageUrl}${url}/metadata.json`;
   }
 

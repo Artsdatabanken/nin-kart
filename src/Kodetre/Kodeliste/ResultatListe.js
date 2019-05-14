@@ -39,7 +39,7 @@ class ResultatListe extends Component {
                 onMouseDown={() => onSelect(item)}
                 key={item.url}
               >
-                <Bildeavatar size="small" kode={item.kode} url={item.url} />
+                <Bildeavatar kode={item.kode} url={item.url} />
                 <ListItemText classes={{ primary: classes.text }}>
                   {ResultatListe.highlightMatch(navn, query, classes)}
                 </ListItemText>

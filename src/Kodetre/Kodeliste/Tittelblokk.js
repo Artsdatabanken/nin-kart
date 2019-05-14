@@ -30,7 +30,7 @@ const Tittelblokk = ({
           {overordnet.length > 0 && (
             <button
               className="zoom_button"
-              onClick={event => {
+              onClick={() => {
                 context.onNavigateToTab("kart");
                 onFitBounds(bbox);
               }}

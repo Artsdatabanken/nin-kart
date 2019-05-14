@@ -72,7 +72,6 @@ class Kodelisteelement extends React.Component {
               url={url}
               farge0={meta.farge0}
               farge={lysOpp(url, opplyst.url, meta.farge)}
-              size="small"
             />
           )}
           <ListItemText
