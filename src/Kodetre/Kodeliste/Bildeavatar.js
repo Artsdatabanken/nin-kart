@@ -8,18 +8,13 @@ const styles = {
     objectFit: "contain",
     filter: "drop-shadow(1px 1px 1px #666)"
   },
-  big: {},
   small: { width: 24, height: 24, fontSize: 13 },
-  big_noborder: {
-    borderRadius: 0,
-    paddingBottom: 2
-  },
   small_noborder: {
     borderRadius: 0,
     width: 24,
     height: 24,
     fontSize: 13,
-    paddingBottom: 2
+    overflow: "visible"
   }
 };
 
@@ -28,7 +23,7 @@ class BildeAvatar extends Component {
   // And also in the sidebar display box header thing
   render() {
     const { farge, farge0, classes, kode, url } = this.props;
-    const size = this.props.size || "big";
+    const size = "small";
     const prefiks = kode.substring(0, 2);
     const tekst = prefiks;
     if ("AO,OR,VV".indexOf(prefiks) >= 0)
@@ -39,7 +34,7 @@ class BildeAvatar extends Component {
             root: classes[size + "_noborder"],
             img: classes.img
           }}
-          src={config.avatar40px(url, "png")}
+          src={config.logo(url)}
         />
       );
     return (

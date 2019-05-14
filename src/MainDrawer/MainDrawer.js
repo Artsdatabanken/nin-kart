@@ -143,16 +143,13 @@ class MainDrawer extends Component {
                   primary="Tilbakemeldinger"
                 />
 
-                <ListItem onClick={this.handleClickLogo} button>
-                  <div className={classes.link}>
-                    <BildeAvatar
-                      url="Datakilde/Artsdatabanken"
-                      kode="OR-AD"
-                      size="small"
-                    />
-                  </div>
-                  <ListItemText primary="   Artsdatabanken" />
-                </ListItem>
+                <Menyelement
+                  onClick={this.handleClickLogo}
+                  icon={
+                    <BildeAvatar url="Datakilde/Artsdatabanken" kode="OR-AD" />
+                  }
+                  primary="Artsdatabanken"
+                />
               </div>
             </List>
           </SwipeableDrawer>

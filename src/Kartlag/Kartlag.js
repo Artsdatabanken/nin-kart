@@ -15,7 +15,6 @@ class Kartlag extends React.Component {
       navigation_history,
       onToggleLayer
     } = this.props;
-    console.log("printing the history list: ", navigation_history);
 
     return (
       <>
