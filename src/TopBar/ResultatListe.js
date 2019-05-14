@@ -19,7 +19,7 @@ class ResultatListe extends Component {
   }
 
   handleKeyPress = event => {
-    if (event.key == "Enter") {
+    if (event.key === "Enter") {
       console.log("enter press here! ");
     }
   };
