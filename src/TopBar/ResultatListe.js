@@ -18,12 +18,6 @@ class ResultatListe extends Component {
     }
   }
 
-  handleKeyPress = event => {
-    if (event.key === "Enter") {
-      console.log("enter press here! ");
-    }
-  };
-
   render() {
     const { onSelect, query, searchResults, classes } = this.props;
     if (!searchResults) return null;

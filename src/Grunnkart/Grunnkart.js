@@ -60,7 +60,6 @@ class Grunnkart extends React.Component {
 
   handleFitBounds = bbox => {
     this.setState({ fitBounds: bbox });
-    console.log(bbox);
   };
 
   handleBoundsChange = bbox => {
@@ -179,7 +178,7 @@ class Grunnkart extends React.Component {
 
   // Supports composite keys i.e. gradient.filterMin
   handleUpdateLayerProp = (layer, key, value) => {
-    console.log("updateProp", layer, key, value);
+    //console.log("updateProp", layer, key, value);
     const aktive = this.state.aktiveLag;
     let node = aktive[layer];
     if (!node) node = this.state.meta;

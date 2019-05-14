@@ -26,16 +26,16 @@ class LeafletTangram extends React.Component {
     map.on("dragstart", function(e) {
       if (e.hard) {
         // moved by bounds
-        //console.log("start move by bounds", e);
+        // console.log("start move by bounds", e);
       } else {
         // moved by drag/keyboard
-        //  console.log("start move by user", e);
+        // console.log("start move by user", e);
       }
     });
     map.on("dragend", e => {
       if (e.hard) {
         // moved by bounds
-        //  console.log("end  move by bounds", e);
+        // console.log("end  move by bounds", e);
       } else {
         // moved by drag/keyboard
         this.removeMarker();
@@ -45,7 +45,7 @@ class LeafletTangram extends React.Component {
     map.on("zoomend", e => {
       if (e.hard) {
         // moved by bounds
-        //  console.log("end  move by bounds", e);
+        // console.log("end  move by bounds", e);
       } else {
         // moved by drag/keyboard
         this.props.onMapBoundsChange(map.getBounds());
@@ -63,7 +63,7 @@ class LeafletTangram extends React.Component {
       scene: createScene(this.props),
       events: {
         hover: function(selection) {
-          //       //  console.log('Hover!', selection)
+          // console.log('Hover!', selection)
         },
         click: this.handleClick
       },
@@ -72,7 +72,7 @@ class LeafletTangram extends React.Component {
 
     this.layer = Tangram.leafletLayer(def);
     this.map.addLayer(this.layer);
-    //    this.layer.loadScene(this.layer.scene)
+    // this.layer.loadScene(this.layer.scene)
     this.icon = L.icon({
       iconUrl: "/marker/baseline_place_black_18dp.png",
       iconSize: [36, 36],

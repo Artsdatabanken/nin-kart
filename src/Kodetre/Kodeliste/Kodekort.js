@@ -30,7 +30,7 @@ class Kodekort extends React.Component {
     } = this.props;
     const tc = new tinycolor(farge);
 
-    console.log(bilde);
+    //console.log(bilde);
     var new_url = "no_image";
     if (bilde.foto != null) {
       new_url = bilde.foto.url;
