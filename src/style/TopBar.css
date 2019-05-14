@@ -21,6 +21,100 @@ as opposed to maintaining a root height */
   top: 10px;
 }
 
+.header_text b {
+  font-size: 14pt;
+  color: #4b909e;
+  font-weight: 400;
+}
+
+@media only screen and (min-width: 768px) {
+  .header_text b {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .logo_image {
+    right: auto;
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+    z-index: 1;
+  }
+
+  .header_text {
+    display: inline-block;
+    margin-left: calc(50% - 72px);
+    margin-top: 10px;
+  }
+}
+
+/* Search Field */
+
+.searchbar_container {
+  height: 48px;
+  display: inline-block;
+  margin-top: 5px;
+  margin-left: 50px;
+  border: 1px solid #eaeaea;
+  width: calc(408px - 60px);
+  z-index: 20;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.searchbar_container input {
+  width: 80%;
+  height: 48px;
+  margin: 0px;
+  border: 0px;
+  background: 0px;
+  padding-left: 10px;
+  font-size: 12pt;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 768px) {
+  .searchbar_container input {
+    display: none;
+  }
+
+  .searchbar_container.mobile_active {
+    width: calc(100% - 20px);
+    border: 1px solid #eaeaea;
+    background: white;
+  }
+
+  .searchbar_container.mobile_active input {
+    display: inline-block;
+  }
+
+  .searchbar_container {
+    position: absolute;
+    right: 10px;
+    width: 50px;
+    background: transparent;
+    border: none;
+  }
+}
+
+/* Search Icon Button */
+.hamburger,
+.search_icon {
+  height: 48px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.hamburger {
+  display: inline-block;
+  padding: 5px;
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
+
 /* Resultatliste */
 
 .resultatliste {
@@ -41,60 +135,7 @@ as opposed to maintaining a root height */
   z-index: 30;
 }
 
-/* Search Field */
-
-.searchbar_container {
-  height: 48px;
-  display: inline-block;
-  margin-top: 5px;
-  border: 1px solid #eaeaea;
-  width: calc(408px - 60px);
-  padding: 0px;
-  position: relative;
-  box-sizing: border-box;
-}
-
-.searchbar_container input {
-  width: 80%;
-  height: 48px;
-  margin: 0px;
-  border: 0px;
-  background: 0px;
-  padding-left: 10px;
-  font-size: 12pt;
-  box-sizing: border-box;
-}
-
-@media only screen and (max-width: 768px) {
-  .searchbar_container {
-    background: transparent;
-    width: auto;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0);
-  }
-
-  .searchbar_container input {
-    width: 0px;
-    border-radius: 4px;
-    margin-left: 24px;
-  }
-}
-
-/* Search Icon Button */
-.hamburger,
-.search_icon {
-  height: 48px;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-}
-
-.hamburger {
-  display: inline-block;
-  margin-left: 5px;
-  position: relative;
-}
-
-.top_menu_item {
+/ .top_menu_item {
   display: inline-block;
   padding: 10px;
   font-size: 14pt;
@@ -132,7 +173,6 @@ as opposed to maintaining a root height */
     WHEN ACTIVATED THE ELEMENTS   */
   .mobile_version.mobile_active {
     width: 100vw;
-    _height: 56px;
     top: 0px;
     position: fixed;
     z-index: 15;
@@ -140,29 +180,12 @@ as opposed to maintaining a root height */
     background: rgba(255, 255, 255, 0.9);
   }
 
-  .searchbar_container.mobile_active {
-    width: calc(90% - 80px);
-    z-index: 20;
-    position: fixed;
-    left: 45px;
-    padding: 5px;
-    display: inline-block;
-  }
-
-  .searchbar_container.mobile_active input {
-    width: 100%;
-  }
-
   .resultatliste.mobile_active {
     display: block;
     max-width: 100%;
     width: 100%;
-    box-sizing: border-box;
-    padding: 5%;
-    top: 48px;
     left: 0px;
     margin-right: 0px;
-    background: white;
     position: fixed;
     z-index: 30;
     height: 100vh;

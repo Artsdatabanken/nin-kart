@@ -26,26 +26,20 @@ const TopBar = ({ onSelectResult }) => {
             <Hamburger onClick={context.onToggleHovedmeny} />
           </button>
 
+          <span className="header_text">
+            <img
+              src="/logoer/adb32.png"
+              className="logo_image"
+              alt="artsdatabanken logo"
+            />
+            <b>Natur i Norge</b>
+          </span>
+
           <Searchbar
             setHits={setHits}
             onQueryChange={e => setQuery(e.target.value)}
             hits={hits}
           />
-
-          <img
-            src="/logoer/adb32.png"
-            className="logo_image"
-            alt="artsdatabanken logo"
-          />
-          {/* 
-        <h1>
-          Natur i Norge{" "}
-          <img
-            src="https://data.artsdatabanken.no/Datakilde/Artsdatabanken/avatar_40.png"
-            alt="artsdatabanken liten logo"
-          />
-        </h1>
-        */}
 
           <ResultatListe
             query={query}

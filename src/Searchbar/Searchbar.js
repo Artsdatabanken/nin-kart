@@ -9,7 +9,6 @@ const abc = (cl, isSearching) => classNames(cl, isSearching && "mobile_active");
 
 const Searchbar = ({ query, onQueryChange, hits, setHits }) => {
   const [isSearching, setIsSearching] = useState(false);
-
   function close_dropdown() {
     setIsSearching(false);
     setHits([]);
@@ -19,19 +18,22 @@ const Searchbar = ({ query, onQueryChange, hits, setHits }) => {
     <SettingsContext.Consumer>
       {context => (
         <div className={abc("searchbar_container", isSearching)}>
-          <div className={abc("mobile_version", isSearching)} />
           <input
             value={query}
             placeholder={"Søk i Natur i Norge"}
-            onBlur={() => {
-              return setIsSearching(false);
-            }}
             onChange={onQueryChange}
           />
 
           {!isSearching && hits.length === 0 ? (
             <button
-              onClick={() => setIsSearching(true)}
+              onClick={() => {
+                // Logikk for at på mobil skal denne ikke kunne endres før
+                // hits.length endrer seg. men på desktop skal den alltid kunne søke.
+
+                setIsSearching(true);
+
+                // AKTIVER SØK FrA SØKEFELTET om den ikke er aktivert
+              }}
               className="invisible_icon_button search_icon"
             >
               <Search />
