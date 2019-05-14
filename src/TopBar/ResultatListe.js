@@ -1,4 +1,4 @@
-import { Divider, List, ListItem, ListItemText } from "@material-ui/core";
+import { Divider, ListItem, ListItemText } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import React, { Component } from "react";
 import Bildeavatar from "../Kodetre/Kodeliste/Bildeavatar";
@@ -18,6 +18,12 @@ class ResultatListe extends Component {
     }
   }
 
+  handleKeyPress = event => {
+    if (event.key == "Enter") {
+      console.log("enter press here! ");
+    }
+  };
+
   render() {
     const { onSelect, query, searchResults, classes } = this.props;
     if (!searchResults) return null;
@@ -36,6 +42,11 @@ class ResultatListe extends Component {
                 button={true}
                 className={classes.listitem}
                 onMouseDown={() => onSelect(item)}
+                onKeyDown={e => {
+                  if (e.keyCode === 13) {
+                    onSelect(item);
+                  }
+                }}
                 key={item.url}
               >
                 <Bildeavatar kode={item.kode} url={item.url} />

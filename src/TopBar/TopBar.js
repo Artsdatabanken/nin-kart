@@ -3,9 +3,7 @@ import ResultatListe from "./ResultatListe";
 import Searchbar from "../Searchbar/Searchbar";
 import axios from "axios";
 import "./../style/TopBar.css";
-
 import { SettingsContext } from "../SettingsContext";
-
 import Hamburger from "@material-ui/icons/Menu";
 
 const TopBar = ({ onSelectResult }) => {
@@ -14,7 +12,6 @@ const TopBar = ({ onSelectResult }) => {
 
   useEffect(() => {
     if (!query) return setHits([]);
-
     const fetchData = async () => {
       const result = await axios("https://ogapi.artsdatabanken.no/" + query);
       setHits(result.data.result);
@@ -29,7 +26,11 @@ const TopBar = ({ onSelectResult }) => {
             <Hamburger onClick={context.onToggleHovedmeny} />
           </button>
 
-          <Searchbar onQueryChange={e => setQuery(e.target.value)} />
+          <Searchbar
+            setHits={setHits}
+            onQueryChange={e => setQuery(e.target.value)}
+            hits={hits}
+          />
 
           <img
             src="/logoer/adb32.png"

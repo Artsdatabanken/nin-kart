@@ -140,14 +140,17 @@ as opposed to maintaining a root height */
     background: rgba(255, 255, 255, 0.9);
   }
 
-  .searchbar_container.mobile_active input {
+  .searchbar_container.mobile_active {
     width: calc(90% - 80px);
     z-index: 20;
     position: fixed;
-    left: 5%;
+    left: 45px;
     padding: 5px;
-    height: 30px;
     display: inline-block;
+  }
+
+  .searchbar_container.mobile_active input {
+    width: 100%;
   }
 
   .resultatliste.mobile_active {
@@ -178,4 +181,17 @@ as opposed to maintaining a root height */
 .itemtext {
   text-align: right;
   font-size: 10pt;
+}
+
+.background_click_collector {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+
+.background_click_collector:hover {
+  cursor: pointer;
 }
