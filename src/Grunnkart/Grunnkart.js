@@ -105,11 +105,12 @@ class Grunnkart extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    const node = this.state.meta;
     const path = this.props.location.pathname;
     if (path !== prevProps.location.pathname) {
       console.log("props: ", this.props);
       this.fetchMeta(path);
-      this.updateHistory(path);
+      this.updateHistory(node);
     }
 
     document.title =
@@ -122,13 +123,27 @@ class Grunnkart extends React.Component {
     this.props.history.replace(newUrl);
   }
 
-  updateHistory(location) {
+  updateHistory(node) {
     let current_navigation_history = this.state.navigation_history;
-    current_navigation_history.push(location);
+    current_navigation_history.push(node);
     this.setState({
       navigation_history: current_navigation_history
     });
     console.log("ny lokasjon: ", current_navigation_history);
+  }
+
+  activateLayerFromHistory(node) {
+    /*
+    let aktive = "node.state.aktiveLag";
+    console.log(" thipp tioo", node);
+    if (!node.kart) return;
+    const nyttLag = JSON.parse(JSON.stringify(node));
+    nyttLag.visBarn = node.barn.length > 0;
+    nyttLag.kanSlettes = true;
+    aktive[nyttLag.kode] = nyttLag;
+    node.setState({
+      aktiveLag: Object.assign({}, aktive)
+    });*/
   }
 
   fetchMeta(location) {
@@ -267,9 +282,7 @@ class Grunnkart extends React.Component {
                   navigation_history={this.state.navigation_history}
                   onFitBounds={this.handleFitBounds}
                   history={history}
-                  onToggleLayer={() => {
-                    this.handleToggleLayer();
-                  }}
+                  activateLayerFromHistory={this.activateLayerFromHistory}
                 />
 
                 <Kart

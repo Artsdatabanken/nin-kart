@@ -13,7 +13,9 @@ class Kartlag extends React.Component {
       hidden,
       history,
       navigation_history,
-      onToggleLayer
+      onToggleLayer,
+      activateLayerFromHistory,
+      aktiveLag
     } = this.props;
 
     return (
@@ -61,31 +63,29 @@ class Kartlag extends React.Component {
                   <h3>Historikk</h3>
 
                   {Object.keys(navigation_history).map(item => {
-                    let location = navigation_history[item];
-                    if (location) {
-                      let where = location.split("/").slice(-1)[0];
-                      where = where.replace(/_/g, " ");
-                      //console.log(where);
+                    let node = navigation_history[item];
+                    console.log("dette er min node: ", node);
+                    if (node.url) {
                       return (
                         <>
                           <div className="kartlag_list_title">
                             <div className="kartlag_header">
                               <span className="kartlag_list_title">
-                                {where}
+                                {node.tittel.nb}
                               </span>
-                              <span class="kartlag_list_icon_set">
+                              <span className="kartlag_list_icon_set">
                                 <button
-                                  class="invisible_icon_button add_icon"
+                                  className="invisible_icon_button add_icon"
                                   onClick={event => {
-                                    onToggleLayer();
+                                    activateLayerFromHistory(node);
                                   }}
                                 >
                                   <Add />
                                 </button>
 
-                                <button class="invisible_icon_button ">
+                                <button className="invisible_icon_button ">
                                   <KeyboardArrowRight
-                                    onClick={() => history.push({ location })}
+                                    onClick={() => history.push("/" + node.url)}
                                   />
                                 </button>
                               </span>
