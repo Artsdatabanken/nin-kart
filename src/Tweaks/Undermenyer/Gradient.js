@@ -3,7 +3,7 @@ import { withTheme } from "@material-ui/core/styles";
 import { SwapVert } from "@material-ui/icons/";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
-import SliderSetting from "./SliderSetting";
+import SliderElement from "Tweaks/FerdigeMiniElement/SliderElement";
 
 class Gradient extends Component {
   render() {
@@ -15,9 +15,9 @@ class Gradient extends Component {
     const decimals = Math.trunc(Math.log10(10000 / rangeMax));
     const spread = 0.015;
     return (
-      <>
+      <div className="sidebar_element">
         <h3>Filter</h3>
-        <SliderSetting
+        <SliderElement
           value={filterMin}
           decimals={2}
           min={rangeMin}
@@ -36,7 +36,7 @@ class Gradient extends Component {
               );
           }}
         />
-        <SliderSetting
+        <SliderElement
           value={filterMax}
           decimals={2}
           min={rangeMin}
@@ -55,7 +55,7 @@ class Gradient extends Component {
               );
           }}
         />
-      </>
+      </div>
     );
   }
 
