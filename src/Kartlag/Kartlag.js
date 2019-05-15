@@ -13,9 +13,7 @@ class Kartlag extends React.Component {
       hidden,
       history,
       navigation_history,
-      onToggleLayer,
-      activateLayerFromHistory,
-      aktiveLag
+      activateLayerFromHistory
     } = this.props;
 
     return (

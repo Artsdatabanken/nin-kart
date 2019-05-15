@@ -87,7 +87,6 @@ const KartlagListeElement = ({
                       className="invisible_icon_button"
                       onClick={event => {
                         context.onNavigateToTab("kart");
-                        console.log("running", context.onNavigateToTab);
                         onFitBounds(bbox);
                       }}
                     >
