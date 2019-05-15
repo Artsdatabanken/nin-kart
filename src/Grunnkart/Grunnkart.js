@@ -94,6 +94,25 @@ class Grunnkart extends React.Component {
     });
   };
 
+  updateHistory(node) {
+    let current_navigation_history = this.state.navigation_history;
+    current_navigation_history.push(node);
+    this.setState({
+      navigation_history: current_navigation_history
+    });
+  }
+
+  activateLayerFromHistory = node => {
+    if (!node.meta.kart) return;
+    const nyttLag = node.meta;
+    nyttLag.visBarn = node.meta.barn.length > 0;
+    nyttLag.kanSlettes = true;
+    let aktive = node.aktiveLag;
+    aktive[nyttLag.kode] = nyttLag;
+    node.aktiveLag = Object.assign({}, aktive);
+    this.updateHistory(node);
+  };
+
   handleToggleLayer = () => {
     this.addSelected(this.state.meta);
   };
@@ -119,24 +138,6 @@ class Grunnkart extends React.Component {
   redirectTo(path) {
     const newUrl = "/" + path;
     this.props.history.replace(newUrl);
-  }
-
-  updateHistory(node) {
-    let current_navigation_history = this.state.navigation_history;
-    current_navigation_history.push(node);
-    this.setState({
-      navigation_history: current_navigation_history
-    });
-  }
-
-  activateLayerFromHistory(node) {
-    if (!node.meta.kart) return;
-    const nyttLag = node.meta;
-    nyttLag.visBarn = node.meta.barn.length > 0;
-    nyttLag.kanSlettes = true;
-    let aktive = node.aktiveLag;
-    aktive[nyttLag.kode] = nyttLag;
-    node.aktiveLag = Object.assign({}, aktive);
   }
 
   fetchMeta(location) {

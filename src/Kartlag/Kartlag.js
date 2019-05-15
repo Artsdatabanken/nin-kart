@@ -65,7 +65,6 @@ class Kartlag extends React.Component {
                   {Object.keys(navigation_history).map(item => {
                     let node = navigation_history[item];
                     let meta = node.meta;
-                    //console.log("dette er min node: ", node);
                     if (meta.url) {
                       return (
                         <>
