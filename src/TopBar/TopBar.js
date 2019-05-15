@@ -21,7 +21,7 @@ const TopBar = ({ onSelectResult }) => {
   return (
     <SettingsContext.Consumer>
       {context => (
-        <div className="top_anchor">
+        <div className="top_anchor" onBlur={() => console.log("blurred")}>
           <button className="invisible_icon_button hamburger">
             <Hamburger onClick={context.onToggleHovedmeny} />
           </button>
