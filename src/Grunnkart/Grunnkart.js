@@ -105,10 +105,9 @@ class Grunnkart extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const node = this.state.meta;
+    const node = this.state;
     const path = this.props.location.pathname;
     if (path !== prevProps.location.pathname) {
-      console.log("props: ", this.props);
       this.fetchMeta(path);
       this.updateHistory(node);
     }
@@ -119,7 +118,6 @@ class Grunnkart extends React.Component {
 
   redirectTo(path) {
     const newUrl = "/" + path;
-    //console.log("router videre til ", newUrl);
     this.props.history.replace(newUrl);
   }
 
@@ -129,21 +127,16 @@ class Grunnkart extends React.Component {
     this.setState({
       navigation_history: current_navigation_history
     });
-    console.log("ny lokasjon: ", current_navigation_history);
   }
 
   activateLayerFromHistory(node) {
-    /*
-    let aktive = "node.state.aktiveLag";
-    console.log(" thipp tioo", node);
-    if (!node.kart) return;
-    const nyttLag = JSON.parse(JSON.stringify(node));
-    nyttLag.visBarn = node.barn.length > 0;
+    if (!node.meta.kart) return;
+    const nyttLag = node.meta;
+    nyttLag.visBarn = node.meta.barn.length > 0;
     nyttLag.kanSlettes = true;
+    let aktive = node.aktiveLag;
     aktive[nyttLag.kode] = nyttLag;
-    node.setState({
-      aktiveLag: Object.assign({}, aktive)
-    });*/
+    node.aktiveLag = Object.assign({}, aktive);
   }
 
   fetchMeta(location) {

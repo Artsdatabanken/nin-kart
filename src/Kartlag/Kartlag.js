@@ -64,14 +64,15 @@ class Kartlag extends React.Component {
 
                   {Object.keys(navigation_history).map(item => {
                     let node = navigation_history[item];
-                    console.log("dette er min node: ", node);
-                    if (node.url) {
+                    let meta = node.meta;
+                    //console.log("dette er min node: ", node);
+                    if (meta.url) {
                       return (
                         <>
                           <div className="kartlag_list_title">
                             <div className="kartlag_header">
                               <span className="kartlag_list_title">
-                                {node.tittel.nb}
+                                {meta.tittel.nb}
                               </span>
                               <span className="kartlag_list_icon_set">
                                 <button
@@ -85,7 +86,7 @@ class Kartlag extends React.Component {
 
                                 <button className="invisible_icon_button ">
                                   <KeyboardArrowRight
-                                    onClick={() => history.push("/" + node.url)}
+                                    onClick={() => history.push("/" + meta.url)}
                                   />
                                 </button>
                               </span>
