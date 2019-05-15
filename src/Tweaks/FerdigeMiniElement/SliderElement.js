@@ -1,25 +1,22 @@
 import { Slider } from "@material-ui/lab";
 import React from "react";
 
-const SliderSetting = ({
+const SliderElement = ({
   tittel,
   undertittel,
   value,
   min,
   max,
   step,
-  decimals = 1,
   onChange
 }) => {
   return (
     <div className="slider_setting">
-      {tittel && <div>{tittel}</div>}
-      {undertittel && <div>{undertittel}</div>}
-      {value.toFixed(decimals) && (
-        <div className="slider_value">{value.toFixed(decimals)}</div>
-      )}
+      {tittel && <h4>{tittel}</h4>}
+      {undertittel && <h5>{undertittel}</h5>}
+
       <Slider
-        className="slider"
+        className="slider_element"
         min={min || 0}
         max={max || 1}
         step={step || 0.01}
@@ -29,4 +26,4 @@ const SliderSetting = ({
     </div>
   );
 };
-export default SliderSetting;
+export default SliderElement;

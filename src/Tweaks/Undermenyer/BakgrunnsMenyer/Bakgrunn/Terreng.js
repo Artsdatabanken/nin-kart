@@ -8,8 +8,9 @@ import {
   SwapVert
 } from "@material-ui/icons";
 import React, { Component } from "react";
-import SliderSetting from "../SliderSetting";
-import Veksle from "../Veksle";
+
+import SliderElement from "Tweaks/FerdigeMiniElement/SliderElement";
+import Veksle from "Tweaks/Veksle";
 
 class Terreng extends Component {
   render() {
@@ -33,7 +34,7 @@ class Terreng extends Component {
         />
         {terreng.erSynlig && (
           <>
-            <SliderSetting
+            <SliderElement
               value={vertikaltOverdriv}
               decimals={1}
               min={0}

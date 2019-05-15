@@ -3,7 +3,6 @@ import { withRouter } from "react-router";
 import { withStyles } from "@material-ui/core";
 import backend from "../backend";
 import { SettingsContext } from "../SettingsContext";
-import språk from "../språk";
 import VenstreVinduContainer from "../VenstreVinduContainer";
 import bakgrunnskarttema from "./bakgrunnskarttema";
 import TopBar from "../TopBar/TopBar";
@@ -60,26 +59,11 @@ class Grunnkart extends React.Component {
 
   handleFitBounds = bbox => {
     this.setState({ fitBounds: bbox });
-    console.log(bbox);
   };
 
   handleBoundsChange = bbox => {
     this.setState({ actualBounds: bbox });
   };
-
-  addSelectedBarn(barn) {
-    return barn.map(node => {
-      const kode = node.kode;
-      return {
-        kode: kode,
-        tittel: språk(node.tittel),
-        farge: node.farge,
-        erSynlig: true,
-        kanSlettes: true,
-        value: node.value
-      };
-    });
-  }
 
   addSelected = props => {
     let aktive = this.state.aktiveLag;
@@ -179,7 +163,7 @@ class Grunnkart extends React.Component {
 
   // Supports composite keys i.e. gradient.filterMin
   handleUpdateLayerProp = (layer, key, value) => {
-    console.log("updateProp", layer, key, value);
+    //console.log("updateProp", layer, key, value);
     const aktive = this.state.aktiveLag;
     let node = aktive[layer];
     if (!node) node = this.state.meta;
