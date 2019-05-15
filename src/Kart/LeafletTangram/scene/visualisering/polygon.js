@@ -8,7 +8,7 @@ function drawAll(drawArgs) {
   if (visBarn) {
     barn.forEach(dac => {
       let barnkode = dac.kode;
-      if (Object.hasOwnProperty("erSynlig") && !dac.erSynlig) return;
+      if (dac.hasOwnProperty("erSynlig") && !dac.erSynlig) return;
       const visEtiketter = barnkode === opplystKode;
       layer[barnkode] = draw({
         kode: barnkode,

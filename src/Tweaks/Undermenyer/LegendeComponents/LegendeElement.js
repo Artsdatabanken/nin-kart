@@ -3,10 +3,18 @@ import React from "react";
 import { withRouter } from "react-router";
 import VelgFargeBoks from "Tweaks/FerdigeMiniElement/VelgFargeBoks";
 import LegendeTitleField from "./LegendeTitleField";
+import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
 
 class LegendeElement extends React.Component {
   render() {
-    const { tittel, undertittel, kode, farge, goToColourMenu } = this.props;
+    const {
+      erSynlig,
+      tittel,
+      undertittel,
+      kode,
+      farge,
+      goToColourMenu
+    } = this.props;
     return (
       <div className="child_list_object">
         <button
@@ -18,25 +26,21 @@ class LegendeElement extends React.Component {
           <VelgFargeBoks farge={farge} kode={kode} />
           {}
         </button>
-        {/* 
-        <button
-          className="invisible_icon_button show_hide_button"
-          onClick={e => {
-            this.props.onUpdateLayerProp(
-              kode,
-              "erSynlig",
-              !erSynlig
-            );
-            e.stopPropagation();
-          }}
-        >
-          {erSynlig ? (
-            <VisibilityOutlined />
-          ) : (
-            <VisibilityOffOutlined style={{ color: "#aaa" }} />
-          )}
-        </button>
-        */}
+        {
+          <button
+            className="invisible_icon_button show_hide_button"
+            onClick={e => {
+              this.props.onUpdateLayerProp(kode, "erSynlig", !erSynlig);
+              e.stopPropagation();
+            }}
+          >
+            {erSynlig ? (
+              <VisibilityOutlined />
+            ) : (
+              <VisibilityOffOutlined style={{ color: "#aaa" }} />
+            )}
+          </button>
+        }
       </div>
     );
   }

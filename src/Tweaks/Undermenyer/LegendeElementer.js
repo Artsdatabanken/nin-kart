@@ -51,6 +51,7 @@ class LegendeElementer extends Component {
                         tittel={språk(node.tittel)}
                         undertittel={context.visKoder && kode}
                         farge={node.farge}
+                        erSynlig={node.erSynlig || true}
                         kode={kode}
                         goToColourMenu={() => {
                           history.push(
@@ -58,8 +59,8 @@ class LegendeElementer extends Component {
                           );
                         }}
                         onUpdateLayerProp={(index, felt, verdi) => {
-                          barn[index][felt] = verdi;
-                          this.handleUpdateLayerProp(kode, "barn", barn);
+                          node[felt] = verdi;
+                          this.props.onUpdateLayerProp(lag, "barn", barn);
                         }}
                         aktivtBarn={lag}
                       />
@@ -84,10 +85,6 @@ class LegendeElementer extends Component {
       </SettingsContext.Consumer>
     );
   }
-
-  handleUpdateLayerProp = (kode, key, value) => {
-    this.props.onUpdateLayerProp(kode, "kart.format.polygon." + key, value);
-  };
 
   navnPåUndernivå(kode) {
     const nivåer = typesystem.hentNivaa(kode + "/x");
