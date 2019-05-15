@@ -131,7 +131,6 @@ class Grunnkart extends React.Component {
     const path = this.props.location.pathname;
     if (path !== prevProps.location.pathname) {
       this.fetchMeta(path);
-      this.updateHistory(node);
     }
 
     document.title =
@@ -159,6 +158,7 @@ class Grunnkart extends React.Component {
         return;
       }
       this.setState({ meta: data, opplystKode: "", opplyst: {} });
+      this.updateHistory({ meta: data });
     });
   }
 
