@@ -171,6 +171,7 @@ class Grunnkart extends React.Component {
     for (let i = 0; i < parts.length - 1; i++) node = node[parts[i]];
     const vkey = parts[parts.length - 1];
     node[vkey] = value;
+    console.log("uv", value);
     this.setState({ aktiveLag: Object.assign({}, aktive) });
   };
 
