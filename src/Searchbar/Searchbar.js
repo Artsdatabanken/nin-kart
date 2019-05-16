@@ -42,7 +42,8 @@ const Searchbar = ({ query, onQueryChange, hits, setHits }) => {
             <>
               <div
                 className="background_click_collector"
-                onClick={() => close_dropdown()}
+                onKeyDown={() => close_dropdown()}
+                onMouseDown={() => close_dropdown()}
               />
               <button
                 onClick={() => close_dropdown()}
