@@ -27,7 +27,7 @@ class Kartlag extends React.Component {
                   <h1 className="sidebar_title">Kartlag</h1>
                 </div>
                 <div className="sidebar_element">
-                  <h3>Instillinger</h3>
+                  <h3>Innstillinger</h3>
                   <ul className="kartlag_list">
                     <KartlagListeElement
                       kartlag={koder["bakgrunnskart"]}

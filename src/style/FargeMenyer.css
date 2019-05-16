@@ -42,12 +42,30 @@ Dumped from old version until i bother fixing it
   top: 10px;
 }
 
-.sidebar .slider,
-.slider {
+.sidebar .slider_element,
+.slider_element {
   padding: 0px;
-  padding-left: 7px;
-  padding-right: 7px;
   max-width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.slider_element button {
+  width: 25px;
+  height: 25px;
+  background: #81b2bb;
+}
+
+.slider_element div div:first-child {
+  background: #4b909e;
+}
+
+.slider_element div div:last-child {
+  background: #4b909e;
+}
+
+.slider_setting {
+  padding: 5px;
 }
 
 .slider_setting div,
@@ -63,19 +81,14 @@ Dumped from old version until i bother fixing it
   position: relative;
 }
 
-.select {
-  margin: 0px;
-  width: 100%;
+select {
+  margin: 10px;
+  width: calc(100% - 20px);
   position: relative;
   height: auto;
-}
-
-.select option {
-  display: block;
-
-  position: relative;
-  margin: 0px;
-  width: 100%;
+  padding: 10px;
+  text-transform: capitalize;
+  font-size: 12pt;
 }
 
 .ul_block,
@@ -135,4 +148,67 @@ Dumped from old version until i bother fixing it
   height: 40px;
   padding: 10px;
   vertical-align: center;
+}
+
+.child_list_object {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.sidebar .colour_legend {
+  filter: drop-shadow(1px 1px 1px #666);
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  margin: 5px;
+}
+
+.title_and_subtitle_container {
+  display: inline-block;
+  vertical-align: top;
+  width: calc(100% - 34px);
+}
+
+.title_and_subtitle_container span {
+  display: block;
+}
+
+.grouped_items_button {
+  background: transparent;
+  width: calc(100% - 34px);
+  text-align: left;
+}
+
+.show_hide_button {
+  width: 24px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.child_list_object button {
+  padding: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.child_list_object .colour_legend {
+  margin-right: 10px;
+  margin-left: 0px;
+}
+
+.widescreen_sidebar_element {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0px;
+}
+
+.widescreen_sidebar_element h1,
+.widescreen_sidebar_element h2,
+.widescreen_sidebar_element h3,
+.widescreen_sidebar_element h4,
+.widescreen_sidebar_element h5 {
+  padding-right: 20px;
+  padding-left: 20px;
+  box-sizing: border-box;
 }

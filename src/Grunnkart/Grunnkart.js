@@ -3,7 +3,6 @@ import { withRouter } from "react-router";
 import { withStyles } from "@material-ui/core";
 import backend from "../backend";
 import { SettingsContext } from "../SettingsContext";
-import språk from "../språk";
 import VenstreVinduContainer from "../VenstreVinduContainer";
 import bakgrunnskarttema from "./bakgrunnskarttema";
 import TopBar from "../TopBar/TopBar";
@@ -61,26 +60,11 @@ class Grunnkart extends React.Component {
 
   handleFitBounds = bbox => {
     this.setState({ fitBounds: bbox });
-    //console.log(bbox);
   };
 
   handleBoundsChange = bbox => {
     this.setState({ actualBounds: bbox });
   };
-
-  addSelectedBarn(barn) {
-    return barn.map(node => {
-      const kode = node.kode;
-      return {
-        kode: kode,
-        tittel: språk(node.tittel),
-        farge: node.farge,
-        erSynlig: true,
-        kanSlettes: true,
-        value: node.value
-      };
-    });
-  }
 
   addSelected = props => {
     let aktive = this.state.aktiveLag;
@@ -216,6 +200,7 @@ class Grunnkart extends React.Component {
     for (let i = 0; i < parts.length - 1; i++) node = node[parts[i]];
     const vkey = parts[parts.length - 1];
     node[vkey] = value;
+    console.log("uv", value);
     this.setState({ aktiveLag: Object.assign({}, aktive) });
   };
 

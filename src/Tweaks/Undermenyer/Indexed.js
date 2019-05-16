@@ -1,21 +1,13 @@
 import typesystem from "@artsdatabanken/typesystem";
-import { ListSubheader, withStyles } from "@material-ui/core";
-import { withTheme } from "@material-ui/core/styles";
+import { ListSubheader } from "@material-ui/core";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
-
-const styles = {
-  iconSmall: {
-    fontSize: 20,
-    marginRight: 8
-  }
-};
 
 class Indexed extends Component {
   render() {
     return (
       <>
-        <ListSubheader>Filter</ListSubheader>
+        <ListSubheader>Filter bhgf</ListSubheader>
       </>
     );
   }
@@ -36,4 +28,4 @@ class Indexed extends Component {
   }
 }
 
-export default withStyles(styles)(withRouter(withTheme()(Indexed)));
+export default withRouter(Indexed);

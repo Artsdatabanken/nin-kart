@@ -26,87 +26,80 @@ const KartlagListeElement = ({
   const erSynlig = kartlag.erSynlig;
 
   return (
-    <li>
-      <div
-        className={
-          (expanded && "kartlag_header kartlag_open_object") || "kartlag_header"
-        }
-      >
-        <span className="kartlag_list_title">
-          {språk(tittel)}
-          <br />
-          {kode}
-        </span>
-
-        <span className="kartlag_list_icon_set">
-          <button
-            className="invisible_icon_button"
-            onClick={e => {
-              onUpdateLayerProp(kode, "erSynlig", !erSynlig);
-              e.stopPropagation();
-            }}
+    <SettingsContext.Consumer>
+      {context => (
+        <li>
+          <div
+            className={
+              (expanded && "kartlag_header kartlag_open_object") ||
+              "kartlag_header"
+            }
           >
-            {erSynlig ? (
-              <VisibilityOutlined />
-            ) : (
-              <VisibilityOffOutlined style={{ color: "#aaa" }} />
-            )}
-          </button>
+            <span className="kartlag_list_title">
+              {språk(tittel)}
+              <br />
+              {context.visKoder && kode}
+            </span>
 
-          <button
-            className="invisible_icon_button"
-            onClick={() => setExpanded(!expanded)}
-          >
-            {expanded ? <KeyboardArrowUp /> : <KeyboardArrowDown />}{" "}
-          </button>
-        </span>
-      </div>
-      {expanded && (
-        <div className="kartlag_submeny">
-          {kode === "bakgrunnskart" && (
-            <SettingsContext.Consumer>
-              {context => (
-                <button
-                  className="invisible_icon_button"
-                  onClick={() => {
-                    history.push("/" + kode + "?vis");
-                  }}
-                >
-                  Farger <ColorLens />
-                </button>
-              )}
-            </SettingsContext.Consumer>
-          )}
-
-          {kode !== "bakgrunnskart" && (
-            <>
-              <SettingsContext.Consumer>
-                {context => (
-                  <>
-                    <button
-                      className="invisible_icon_button"
-                      onClick={event => {
-                        context.onNavigateToTab("kart");
-                        onFitBounds(bbox);
-                      }}
-                    >
-                      Zoom til <OpenInNew />
-                    </button>
-                  </>
+            <span className="kartlag_list_icon_set">
+              <button
+                className="invisible_icon_button"
+                onClick={e => {
+                  onUpdateLayerProp(kode, "erSynlig", !erSynlig);
+                  e.stopPropagation();
+                }}
+              >
+                {erSynlig ? (
+                  <VisibilityOutlined />
+                ) : (
+                  <VisibilityOffOutlined style={{ color: "#aaa" }} />
                 )}
-              </SettingsContext.Consumer>
+              </button>
 
               <button
-                className="invisible_icon_button remove_icon"
-                onClick={() => onRemoveSelectedLayer(kode)}
+                className="invisible_icon_button"
+                onClick={() => setExpanded(!expanded)}
               >
-                Fjern <Close />
+                {expanded ? <KeyboardArrowUp /> : <KeyboardArrowDown />}{" "}
               </button>
-            </>
+            </span>
+          </div>
+          {expanded && (
+            <div className="kartlag_submeny">
+              <button
+                className="invisible_icon_button"
+                onClick={() => {
+                  history.push("/" + kode + "?vis");
+                }}
+              >
+                Farger <ColorLens />
+              </button>
+              {kode !== "bakgrunnskart" && (
+                <>
+                  <button
+                    className="invisible_icon_button"
+                    onClick={event => {
+                      context.onNavigateToTab("kart");
+                      console.log("running", context.onNavigateToTab);
+                      onFitBounds(bbox);
+                    }}
+                  >
+                    Zoom til <OpenInNew />
+                  </button>
+
+                  <button
+                    className="invisible_icon_button remove_icon"
+                    onClick={() => onRemoveSelectedLayer(kode)}
+                  >
+                    Fjern <Close />
+                  </button>
+                </>
+              )}
+            </div>
           )}
-        </div>
+        </li>
       )}
-    </li>
+    </SettingsContext.Consumer>
   );
 };
 
