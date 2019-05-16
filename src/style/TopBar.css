@@ -1,70 +1,139 @@
-.top_expander {
+/* Top anchor, that is: the menu but heightless 
+to avoid stop of click-thru events, used only to place things
+as opposed to maintaining a root height */
+
+.top_anchor {
   position: absolute;
   width: 100%;
+  height: 0px;
   left: 0;
   z-index: 20;
+  background: rgba(0, 0, 0, 0.9);
 }
 
-.top_menu {
-  color: #4b909e91;
-  height: 48px;
-  width: 100%;
-  padding: 0px;
-  margin: 10px;
+/* Logo Image */
+
+.logo_image {
+  left: auto;
+  right: 10px;
+  position: absolute;
+  width: 25px;
+  top: 10px;
 }
 
-@media only screen and (max-width: 768px) {
-  .top_menu {
-    background: #f5f5f5;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-    margin: 0px;
+.header_text b {
+  font-size: 14pt;
+  color: #4b909e;
+  font-weight: 400;
+}
+
+@media only screen and (min-width: 768px) {
+  .header_text b {
+    display: none;
   }
 }
 
-.top_menu h1 {
-  right: 15px;
-  top: 15px;
-  margin: 0px;
-  position: absolute;
-  display: none;
-  font-weight: 400;
-  font-size: 16pt;
+@media only screen and (max-width: 768px) {
+  .logo_image {
+    right: auto;
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+    z-index: 1;
+  }
+
+  .header_text {
+    display: inline-block;
+    margin-left: calc(50% - 72px);
+    margin-top: 10px;
+  }
 }
 
-.top_menu h1 img {
-  display: none;
-  height: 30px;
-  vertical-align: bottom;
-}
+/* Search Field */
 
-.resultatliste,
-.input_imitator {
-  background: white;
-  max-width: 392px;
-  border-radius: 4px;
+.searchbar_container {
+  height: 48px;
+  display: inline-block;
+  margin-top: 4px;
+  margin-left: 50px;
+  border: 1px solid #eaeaea;
+  width: calc(408px - 60px);
+  z-index: 20;
+  position: relative;
   box-sizing: border-box;
 }
 
-.input_imitator {
-  max-height: 90%;
-  display: inline-block;
+.searchbar_container input {
+  width: 80%;
+  height: 48px;
+  margin: 0px;
+  border: 0px;
+  background: 0px;
+  padding-left: 10px;
+  font-size: 12pt;
+  box-sizing: border-box;
 }
 
-.input_imitator input {
-  _border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-  _margin-bottom: 10px;
-  max-width: 90%;
+@media only screen and (max-width: 768px) {
+  .searchbar_container input {
+    display: none;
+  }
+
+  .searchbar_container.mobile_active {
+    width: calc(100% - 20px);
+    border: 1px solid #eaeaea;
+    background: white;
+  }
+
+  .searchbar_container.mobile_active input {
+    display: inline-block;
+  }
+
+  .searchbar_container {
+    position: absolute;
+    right: 10px;
+    width: 50px;
+    background: transparent;
+    border: none;
+    border: 1px solid transparent;
+  }
+}
+
+/* Search Icon Button */
+.hamburger,
+.search_icon {
+  height: 48px;
+  position: absolute;
+  right: -1px;
+  top: -1px;
+}
+
+.hamburger {
+  display: inline-block;
+  padding: 5px;
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
+
+/* Resultatliste */
+
+.resultatliste {
+  overflow-y: auto;
+  max-height: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+  position: auto;
+  top: 56px;
+  border: 1px solid #eaeaea;
+  width: 408px;
 }
 
 .resultatliste {
-  top: -14px;
-  left: 10px;
   margin-right: 60px;
   background: white;
   position: fixed;
   z-index: 30;
-  height: auto;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
 .top_menu_item {
@@ -91,19 +160,6 @@
     display: "inline-block";
   }
 
-  .input_imitator {
-    background: transparent;
-    width: auto;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0);
-  }
-
-  .input_imitator input {
-    _background: white;
-    width: 0px;
-    border-radius: 4px;
-    margin-left: 24px;
-  }
-
   .resultatliste {
     display: none;
   }
@@ -118,7 +174,6 @@
     WHEN ACTIVATED THE ELEMENTS   */
   .mobile_version.mobile_active {
     width: 100vw;
-    _height: 56px;
     top: 0px;
     position: fixed;
     z-index: 15;
@@ -126,36 +181,12 @@
     background: rgba(255, 255, 255, 0.9);
   }
 
-  .search_icon.mobile_active {
-    display: none;
-    z-index: 20;
-    _background: white;
-    _border-radius: 4px;
-    position: fixed;
-    right: 20px;
-    _font-size: 36px !important;
-  }
-
-  .input_imitator.mobile_active input {
-    width: calc(90% - 80px);
-    z-index: 20;
-    position: fixed;
-    left: 5%;
-    padding: 5px;
-    height: 30px;
-    display: inline-block;
-  }
-
   .resultatliste.mobile_active {
     display: block;
     max-width: 100%;
     width: 100%;
-    box-sizing: border-box;
-    padding: 5%;
-    top: 48px;
     left: 0px;
     margin-right: 0px;
-    background: white;
     position: fixed;
     z-index: 30;
     height: 100vh;
@@ -164,46 +195,11 @@
   }
 }
 
+/* Resultatliste tekstpresentasjon */
+
 .textmatch {
   color: #4b909e;
   font-weight: 500;
-}
-
-.search_icon.mobile_active {
-  z-index: 20;
-  _background: white;
-  _border-radius: 4px;
-  position: absolute;
-  display: none;
-  right: 20px;
-  _font-size: 36px !important;
-}
-
-.search_icon {
-  margin-right: 20px;
-  padding-right: 4px;
-  position: fixed;
-  right: 16px;
-}
-
-.search_icon:hover {
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.08);
-  border-radius: 50%;
-  _margin-left: -10px;
-  padding: 4px;
-}
-
-@media only screen and (min-width: 768px) {
-  .input_imitator {
-    max-width: 392px;
-    width: 392px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
-  }
-
-  .search_icon {
-    left: 370px;
-  }
 }
 
 .itemtext {
@@ -211,10 +207,15 @@
   font-size: 10pt;
 }
 
-.logo_image {
-  left: auto;
-  right: 10px;
-  position: absolute;
-  width: 25px;
-  top: 10px;
+.background_click_collector {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+
+.background_click_collector:hover {
+  cursor: pointer;
 }
