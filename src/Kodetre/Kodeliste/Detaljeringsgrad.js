@@ -1,5 +1,5 @@
 import React from "react";
-import SliderSetting from "../../Tweaks/SliderSetting";
+import SliderElement from "Tweaks/FerdigeMiniElement/SliderElement";
 
 const map = {
   0: "Dekningsområde",
@@ -10,15 +10,17 @@ const map = {
 const Detaljeringsgrad = ({ value, onUpdateLayerProp }) => {
   const nivå = map[Math.round(value)];
   return (
-    <SliderSetting
-      value={value}
-      min={0}
-      max={3}
-      step={0.1}
-      tittel="Skalanivå"
-      undertittel={nivå}
-      onChange={value => onUpdateLayerProp(null, "depth", value)}
-    />
+    <div className="sidebar_element">
+      <h3>Skalanivå</h3>
+      <SliderElement
+        value={value}
+        min={0}
+        max={3}
+        step={0.1}
+        undertittel={nivå}
+        onChange={value => onUpdateLayerProp(null, "depth", value)}
+      />
+    </div>
   );
 };
 

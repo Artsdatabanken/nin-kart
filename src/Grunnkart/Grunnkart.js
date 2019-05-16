@@ -3,7 +3,6 @@ import { withRouter } from "react-router";
 import { withStyles } from "@material-ui/core";
 import backend from "../backend";
 import { SettingsContext } from "../SettingsContext";
-import språk from "../språk";
 import VenstreVinduContainer from "../VenstreVinduContainer";
 import bakgrunnskarttema from "./bakgrunnskarttema";
 import TopBar from "../TopBar/TopBar";
@@ -46,7 +45,8 @@ class Grunnkart extends React.Component {
       actualBounds: null,
       fitBounds: null,
       meta: null,
-      visKoder: false
+      visKoder: false,
+      navigation_history: []
     };
     this.props.history.listen((location, action) => {
       // Åpne menyen ved navigering
@@ -66,20 +66,6 @@ class Grunnkart extends React.Component {
     this.setState({ actualBounds: bbox });
   };
 
-  addSelectedBarn(barn) {
-    return barn.map(node => {
-      const kode = node.kode;
-      return {
-        kode: kode,
-        tittel: språk(node.tittel),
-        farge: node.farge,
-        erSynlig: true,
-        kanSlettes: true,
-        value: node.value
-      };
-    });
-  }
-
   addSelected = props => {
     let aktive = this.state.aktiveLag;
     if (!props.kart) return;
@@ -87,6 +73,30 @@ class Grunnkart extends React.Component {
     nyttLag.visBarn = props.barn.length > 0;
     nyttLag.kanSlettes = true;
     aktive[nyttLag.kode] = nyttLag;
+    this.setState({
+      aktiveLag: Object.assign({}, aktive)
+    });
+  };
+
+  updateHistory(node) {
+    let current_navigation_history = this.state.navigation_history;
+    current_navigation_history.push(node);
+    this.setState({
+      navigation_history: current_navigation_history
+    });
+  }
+
+  activateLayerFromHistory = node => {
+    if (!node.meta.kart) return;
+    const nyttLag = node.meta;
+    nyttLag.visBarn = node.meta.barn.length > 0;
+    nyttLag.kanSlettes = true;
+    console.log(node);
+    let aktive = node.aktiveLag;
+    aktive[nyttLag.kode] = nyttLag;
+
+    //node.aktiveLag = Object.assign({}, aktive);
+    //this.updateHistory(node);
     this.setState({
       aktiveLag: Object.assign({}, aktive)
     });
@@ -104,14 +114,16 @@ class Grunnkart extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     const path = this.props.location.pathname;
-    if (path !== prevProps.location.pathname) this.fetchMeta(path);
+    if (path !== prevProps.location.pathname) {
+      this.fetchMeta(path);
+    }
+
     document.title =
       (this.state.meta && this.state.meta.tittel.nb) || "Natur i Norge";
   }
 
   redirectTo(path) {
     const newUrl = "/" + path;
-    //console.log("router videre til ", newUrl);
     this.props.history.replace(newUrl);
   }
 
@@ -131,6 +143,7 @@ class Grunnkart extends React.Component {
         return;
       }
       this.setState({ meta: data, opplystKode: "", opplyst: {} });
+      this.updateHistory(this.state);
     });
   }
 
@@ -186,6 +199,7 @@ class Grunnkart extends React.Component {
     for (let i = 0; i < parts.length - 1; i++) node = node[parts[i]];
     const vkey = parts[parts.length - 1];
     node[vkey] = value;
+    console.log("uv", value);
     this.setState({ aktiveLag: Object.assign({}, aktive) });
   };
 
@@ -248,8 +262,10 @@ class Grunnkart extends React.Component {
                   aktiveLag={this.state.aktiveLag}
                   onUpdateLayerProp={this.handleUpdateLayerProp}
                   onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                  navigation_history={this.state.navigation_history}
                   onFitBounds={this.handleFitBounds}
                   history={history}
+                  activateLayerFromHistory={this.activateLayerFromHistory}
                 />
 
                 <Kart

@@ -1,4 +1,4 @@
-import språk from "../språk";
+import språk from "språk";
 import {
   Avatar,
   Divider,

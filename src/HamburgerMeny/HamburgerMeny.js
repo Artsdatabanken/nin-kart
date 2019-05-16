@@ -19,6 +19,7 @@ import {
   Info,
   Pets,
   Landscape,
+  BubbleChart,
   Layers,
   AssignmentInd
 } from "@material-ui/icons";
@@ -35,7 +36,7 @@ const styles = {
   heading: { fontSize: 23, fontWeight: 500 }
 };
 
-class MainDrawer extends Component {
+class HamburgerMeny extends Component {
   render() {
     const { classes } = this.props;
     return (
@@ -88,12 +89,13 @@ class MainDrawer extends Component {
                   icon={<Naturvern />}
                   primary="Naturvernområde"
                 />
-                {/*
+                {/* 
                 <Menyelement
                   onClick={this.handleClickTruet_art_natur}
                   icon={<BubbleChart />}
                   primary="Truet art/natur"
-                />*/}
+                />
+                */}
                 <Menyelement
                   onClick={this.handleClickArt}
                   icon={<Pets />}
@@ -190,4 +192,4 @@ class MainDrawer extends Component {
   handleNavigate = url => this.props.history.push(url);
 }
 
-export default withRouter(withStyles(styles)(MainDrawer));
+export default withRouter(withStyles(styles)(HamburgerMeny));

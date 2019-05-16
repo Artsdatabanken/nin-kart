@@ -22,6 +22,7 @@ const TopBar = ({ onSelectResult }) => {
     <SettingsContext.Consumer>
       {context => (
         <div className="top_anchor">
+          <div className="top_sidebar_background" />
           <button className="invisible_icon_button hamburger">
             <Hamburger onClick={context.onToggleHovedmeny} />
           </button>

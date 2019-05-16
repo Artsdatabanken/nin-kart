@@ -79,6 +79,10 @@ Even tho we don't a of now support IE X)
   color: rgb(153, 0, 19);
 }
 
+.add_icon {
+  color: #299988;
+}
+
 /* Active menu and its submenu */
 
 .kartlag_open_object {
