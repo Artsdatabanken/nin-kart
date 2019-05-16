@@ -107,8 +107,10 @@ class Grunnkart extends React.Component {
     const nyttLag = node.meta;
     nyttLag.visBarn = node.meta.barn.length > 0;
     nyttLag.kanSlettes = true;
+    console.log(node);
     let aktive = node.aktiveLag;
     aktive[nyttLag.kode] = nyttLag;
+
     //node.aktiveLag = Object.assign({}, aktive);
     //this.updateHistory(node);
     this.setState({
@@ -158,7 +160,7 @@ class Grunnkart extends React.Component {
         return;
       }
       this.setState({ meta: data, opplystKode: "", opplyst: {} });
-      this.updateHistory({ meta: data });
+      this.updateHistory(this.state);
     });
   }
 
