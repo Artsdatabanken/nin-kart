@@ -113,7 +113,6 @@ class Grunnkart extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const node = this.state;
     const path = this.props.location.pathname;
     if (path !== prevProps.location.pathname) {
       this.fetchMeta(path);
