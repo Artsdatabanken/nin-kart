@@ -6,7 +6,6 @@ class VisFarge extends Component {
   render() {
     const { kartlag, onUpdateLayerProp } = this.props;
     const layer = kartlag.kode;
-
     return (
       <div className="colour_adjustment_container">
         <div className="sidebar_element">
@@ -20,8 +19,7 @@ class VisFarge extends Component {
             color={kartlag.farge}
             onChange={farge => {
               const rgbString = tinycolor(farge.rgb).toRgbString();
-              console.log(layer);
-              onUpdateLayerProp(layer, "farge", rgbString);
+              this.props.onUpdateLayerProp(kartlag.kode, "farge", rgbString);
             }}
           />
         </div>

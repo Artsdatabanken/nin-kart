@@ -23,10 +23,9 @@ class BakgrunnsInnstillinger extends Component {
     if (location.search.startsWith("?vis_farge")) {
       return (
         <VisFarge
-          kf={kf}
+          kartlag={kf}
           location={location}
           history={history}
-          kartformat={this.props.kart.aktivtFormat}
           onUpdateLayerProp={this.props.onUpdateLayerProp}
         />
       );
