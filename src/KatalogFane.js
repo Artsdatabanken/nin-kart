@@ -9,7 +9,7 @@ import Panel from "./components/Panel";
 import InfoTab from "./InfoTab";
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
-class VenstreVinduContainer extends React.Component {
+class KatalogFane extends React.Component {
   state = { error: "" };
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.meta !== this.props.meta) this.setState({ query: null });
@@ -134,4 +134,4 @@ function asn(lag, r) {
   if (lag.kart.format.raster_ruter) r.punkt.push(lag);
 }
 
-export default withRouter(VenstreVinduContainer);
+export default withRouter(KatalogFane);

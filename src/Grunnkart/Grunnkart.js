@@ -3,7 +3,7 @@ import { withRouter } from "react-router";
 import { withStyles } from "@material-ui/core";
 import backend from "../backend";
 import { SettingsContext } from "../SettingsContext";
-import VenstreVinduContainer from "../VenstreVinduContainer";
+import KatalogFane from "../KatalogFane";
 import bakgrunnskarttema from "./bakgrunnskarttema";
 import TopBar from "../TopBar/TopBar";
 import Kartlag from "../Kartlag/Kartlag";
@@ -234,7 +234,7 @@ class Grunnkart extends React.Component {
               <div>
                 {context.aktivTab === "meny" && (
                   <div className="sidebar">
-                    <VenstreVinduContainer
+                    <KatalogFane
                       aktiveLag={this.state.aktiveLag}
                       mapBounds={this.state.actualBounds}
                       onMouseEnter={this.handleMouseEnter}
