@@ -246,7 +246,6 @@ class Grunnkart extends React.Component {
                         this.handleToggleLayer();
                         if (!context.visAktiveLag) context.onToggleAktiveLag();
                       }}
-                      onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
                       meta={this.state.meta}
                       searchFor={this.state.searchFor}
                       onClearSearchFor={this.handleClearSearchFor}
@@ -282,6 +281,10 @@ class Grunnkart extends React.Component {
                   onClick={latlng => {
                     history.push(`?lng=${latlng.lng}&lat=${latlng.lat}`);
                   }}
+                  onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                  meta={this.state.meta}
+                  onMouseEnter={this.handleMouseEnter}
+                  onMouseLeave={this.handleMouseLeave}
                 />
               </div>
               <MobileNavigation />

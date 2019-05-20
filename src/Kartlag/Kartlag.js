@@ -13,7 +13,8 @@ class Kartlag extends React.Component {
       hidden,
       history,
       navigation_history,
-      activateLayerFromHistory
+      activateLayerFromHistory,
+      meta
     } = this.props;
 
     return (
@@ -50,6 +51,7 @@ class Kartlag extends React.Component {
                             visKoder={context.visKoder}
                             onFitBounds={onFitBounds}
                             onUpdateLayerProp={onUpdateLayerProp}
+                            meta={meta}
                           />
                         )
                       );

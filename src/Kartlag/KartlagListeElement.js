@@ -3,6 +3,10 @@ import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
 import språk from "../språk";
 import { withRouter } from "react-router";
 import { SettingsContext } from "../SettingsContext";
+
+import FargeMeny from "./../Innstillinger/Undermenyer/FargeMeny";
+import Panel from "./../components/Panel";
+
 import {
   Close,
   KeyboardArrowDown,
@@ -16,15 +20,15 @@ const KartlagListeElement = ({
   onUpdateLayerProp,
   onRemoveSelectedLayer,
   onFitBounds,
-  history
+  handleUpdateLayerProp,
+  kart
 }) => {
   const [expanded, setExpanded] = useState(false);
+  const [settings, setSettings] = useState(false);
   const kode = kartlag.kode;
   let tittel = kartlag.tittel;
   let bbox = kartlag.bbox;
-  //let farge = kartlag.farge;
   const erSynlig = kartlag.erSynlig;
-
   return (
     <SettingsContext.Consumer>
       {context => (
@@ -64,13 +68,21 @@ const KartlagListeElement = ({
               </button>
             </span>
           </div>
+          {settings && (
+            <FargeMeny
+              kartlag={kartlag}
+              onUpdateLayerProp={onUpdateLayerProp}
+            />
+          )}
+
           {expanded && (
             <div className="kartlag_submeny">
               <button
                 className="invisible_icon_button"
-                onClick={() => {
-                  history.push("/" + kode + "?vis");
-                }}
+                //onClick={() => {
+                //history.push("/" + kode + "?vis");
+                //}}
+                onClick={() => setSettings(!settings)}
               >
                 Farger <ColorLens />
               </button>

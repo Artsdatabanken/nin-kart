@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import BorreContainer from "./Borring/BorreContainer";
 import KodeContainer from "./Kodetre/Kodeliste/KodeContainer";
 import språk from "./språk";
-import Innstillinger from "./Innstillinger/";
+
 import Panel from "./components/Panel";
 import InfoTab from "./InfoTab";
 
@@ -46,32 +46,15 @@ class KatalogFane extends React.Component {
 
   render() {
     const {
-      meta,
       opplyst,
       onMouseEnter,
       onMouseLeave,
       onUpdateLayerProp,
       onUpdateMetaProp,
-      onRemoveSelectedLayer,
+      meta,
       location
     } = this.props;
-    if (location.search && location.search.startsWith("?vis")) {
-      const lag = location.pathname.substring(1);
-      const node = this.props.aktiveLag[lag] || meta;
-      return (
-        <Panel>
-          <Innstillinger
-            {...node}
-            lag={lag}
-            onFitBounds={this.props.onFitBounds}
-            onUpdateLayerProp={onUpdateLayerProp}
-            onRemoveSelectedLayer={onRemoveSelectedLayer}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-          />
-        </Panel>
-      );
-    }
+
     if (location.search && location.search.startsWith("?info")) {
       return <InfoTab />;
     }

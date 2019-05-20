@@ -6,7 +6,6 @@ import {
 } from "@material-ui/core";
 import { default as React } from "react";
 import { withRouter } from "react-router";
-
 import VelgFargeBoks from "Innstillinger/FerdigeMiniElement/VelgFargeBoks";
 
 const Bakgrunnskartlag = ({

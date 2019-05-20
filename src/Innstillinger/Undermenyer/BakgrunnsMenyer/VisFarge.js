@@ -6,17 +6,23 @@ import ColorPicker from "Innstillinger/FerdigeMiniElement/ColorPicker";
 
 class VisFarge extends Component {
   //Duplikat, men ga opp å finne bedre løsning
+  /*
   handleUpdateLayerProp = (lag, key, value) => {
     this.props.onUpdateLayerProp(
       lag,
       `kart.format.${this.props.kartformat}.${key}`,
       value
     );
-  };
+  };*/
   render() {
-    const { kf, location, history } = this.props;
-    const lag = location.pathname.substring(1);
-    const egenskap = location.search.split("=").pop();
+    const {
+      kf,
+      kartlag
+      //location,
+      //history
+    } = this.props;
+    const lag = kartlag; //location.pathname.substring(1);
+    const egenskap = "farge"; //location.search.split("=").pop();
 
     return (
       <div className="colour_adjustment_container">
@@ -31,7 +37,7 @@ class VisFarge extends Component {
             color={kf[egenskap + "_farge"]}
             onChange={farge => {
               const rgbString = tinycolor(farge.rgb).toRgbString();
-              this.handleUpdateLayerProp(lag, egenskap + "_farge", rgbString);
+              //this.handleUpdateLayerProp(lag, egenskap + "_farge", rgbString);
             }}
           />
         </div>
@@ -45,11 +51,12 @@ class VisFarge extends Component {
               color={kf[egenskap + "_stroke_farge"]}
               onChange={farge => {
                 const rgbString = tinycolor(farge.rgb).toRgbString();
+                /*
                 this.handleUpdateLayerProp(
                   lag,
                   egenskap + "_stroke_farge",
                   rgbString
-                );
+                );*/
               }}
             />
 
@@ -64,15 +71,16 @@ class VisFarge extends Component {
                 "Tykkelse: " +
                 (kf[egenskap + "_stroke_width"] || 0).toFixed(1) +
                 " piksler"
-              }
+              } /*
               onChange={v =>
                 this.handleUpdateLayerProp(lag, egenskap + "_stroke_width", v)
               }
+              /*
               onClick={() =>
                 history.push(
                   history.location.pathname + "?vis_farge=sted_navn_stroke"
                 )
-              }
+              }*/
             />
           </div>
         )}

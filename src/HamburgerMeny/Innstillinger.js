@@ -22,7 +22,7 @@ const Innstillinger = ({
   <>
     <ListSubheader>Innstillinger</ListSubheader>
     <Menyelement
-      onClick={() => onNavigate("/bakgrunnskart?vis")}
+      //onClick={() => onNavigate("/bakgrunnskart?vis")}
       icon={<Layers />}
       primary="Bakgrunnskart"
     />

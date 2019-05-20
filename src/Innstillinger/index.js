@@ -10,13 +10,15 @@ import VisualiseringsVariant from "./Undermenyer/VisualiseringsVariant";
 const Innstillinger = ({ history, ...props }) => {
   if (!props.kart) return null;
   const aktivtFormat = props.kart.aktivtFormat;
+  console.log("åpner innstillinger");
   return (
     <div className="Innstillinger">
       <div className="sidebar_element page_topic_header" />
+      <h1>Innstillinger</h1>
 
       {/*<TilbakePil url={props.url} history={history} />*/}
 
-      {history.location.search === "?vis" && props.kode !== "bakgrunnskart" && (
+      {props.kode !== "bakgrunnskart" && (
         <VisualiseringsVariant
           lag={props.kode}
           onUpdateLayerProp={props.onUpdateLayerProp}
@@ -25,6 +27,7 @@ const Innstillinger = ({ history, ...props }) => {
         />
       )}
       {props.kode === "bakgrunnskart" && <BakgrunnsInnstillinger {...props} />}
+
       {aktivtFormat === "raster_gradient" && <Gradient {...props} />}
       {/* {aktivtFormat === "raster_indexed" && <Indexed {...props} />}*/}
       {aktivtFormat === "polygon" && <LegendeElementer {...props} />}
