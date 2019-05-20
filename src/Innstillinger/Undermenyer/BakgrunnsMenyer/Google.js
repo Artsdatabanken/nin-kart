@@ -1,7 +1,7 @@
 import { Component, default as React } from "react";
 import { withRouter } from "react-router";
 import tinycolor from "tinycolor2";
-import ColorPicker from "Tweaks/FerdigeMiniElement/ColorPicker";
+import ColorPicker from "Innstillinger/FerdigeMiniElement/ColorPicker";
 
 class Google extends Component {
   handleUpdateLayerProp = (kode, key, value) => {

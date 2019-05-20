@@ -1,5 +1,5 @@
 import React from "react";
-import SliderElement from "Tweaks/FerdigeMiniElement/SliderElement";
+import SliderElement from "Innstillinger/FerdigeMiniElement/SliderElement";
 
 const map = {
   0: "Dekningsområde",

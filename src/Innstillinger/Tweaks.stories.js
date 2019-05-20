@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
 import { muiTheme } from "storybook-addon-material-ui";
-import Tweaks from "./";
+import Innstillinger from "./";
 
 const na = {
   kode: "NA_T17",
@@ -95,30 +95,30 @@ const Wrapper = ({ children, url }) => (
   </MemoryRouter>
 );
 
-storiesOf("Tweaks", module)
+storiesOf("Innstillinger", module)
   .addDecorator(muiTheme())
   .add("bakgrunn", () => (
     <Wrapper url="/lag/bakgrunnskart">
-      <Tweaks type={"bakgrunn"} {...lag} />
+      <Innstillinger type={"bakgrunn"} {...lag} />
     </Wrapper>
   ))
   .add("bakgrunn transport", () => (
     <Wrapper url="/lag/bakgrunnskart/transport">
-      <Tweaks type={"bakgrunn"} />
+      <Innstillinger type={"bakgrunn"} />
     </Wrapper>
   ))
   .add("bakgrunn tema", () => (
     <Wrapper url="/lag/bakgrunnskart/tema">
-      <Tweaks type={"bakgrunn"} />
+      <Innstillinger type={"bakgrunn"} />
     </Wrapper>
   ))
   .add("terreng", () => (
     <Wrapper>
-      <Tweaks type={"terreng"} terreng={lag.terreng} />
+      <Innstillinger type={"terreng"} terreng={lag.terreng} />
     </Wrapper>
   ))
   .add("polygon", () => (
     <Wrapper>
-      <Tweaks type="polygon" {...na} />
+      <Innstillinger type="polygon" {...na} />
     </Wrapper>
   ));

@@ -7,11 +7,11 @@ import Gradient from "./Undermenyer/Gradient";
 //import TilbakePil from "./FerdigeMiniElement/TilbakePil";
 import VisualiseringsVariant from "./Undermenyer/VisualiseringsVariant";
 
-const Tweaks = ({ history, ...props }) => {
+const Innstillinger = ({ history, ...props }) => {
   if (!props.kart) return null;
   const aktivtFormat = props.kart.aktivtFormat;
   return (
-    <div className="tweaks">
+    <div className="Innstillinger">
       <div className="sidebar_element page_topic_header" />
 
       {/*<TilbakePil url={props.url} history={history} />*/}
@@ -32,4 +32,4 @@ const Tweaks = ({ history, ...props }) => {
   );
 };
 
-export default withRouter(Tweaks);
+export default withRouter(Innstillinger);

@@ -1,8 +1,8 @@
-import SliderElement from "Tweaks/FerdigeMiniElement/SliderElement";
+import SliderElement from "Innstillinger/FerdigeMiniElement/SliderElement";
 import { Component, default as React } from "react";
 //import { withRouter } from "react-router";
 import tinycolor from "tinycolor2";
-import ColorPicker from "Tweaks/FerdigeMiniElement/ColorPicker";
+import ColorPicker from "Innstillinger/FerdigeMiniElement/ColorPicker";
 
 class VisFarge extends Component {
   //Duplikat, men ga opp å finne bedre løsning

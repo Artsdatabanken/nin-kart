@@ -3,8 +3,8 @@ import typesystem from "@artsdatabanken/typesystem";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import tinycolor from "tinycolor2";
-//import Barneliste from "Tweaks/Barneliste";
-import ColorPicker from "Tweaks/FerdigeMiniElement/ColorPicker";
+//import Barneliste from "Innstillinger/Barneliste";
+import ColorPicker from "Innstillinger/FerdigeMiniElement/ColorPicker";
 import LegendeElement from "./LegendeComponents/LegendeElement";
 import språk from "språk";
 

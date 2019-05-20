@@ -1,7 +1,7 @@
 //import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
 import React from "react";
 import { withRouter } from "react-router";
-import VelgFargeBoks from "Tweaks/FerdigeMiniElement/VelgFargeBoks";
+import VelgFargeBoks from "Innstillinger/FerdigeMiniElement/VelgFargeBoks";
 import LegendeTitleField from "./LegendeTitleField";
 import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
 

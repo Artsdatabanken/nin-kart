@@ -7,7 +7,7 @@ import {
 import { default as React } from "react";
 import { withRouter } from "react-router";
 
-import VelgFargeBoks from "Tweaks/FerdigeMiniElement/VelgFargeBoks";
+import VelgFargeBoks from "Innstillinger/FerdigeMiniElement/VelgFargeBoks";
 
 const Bakgrunnskartlag = ({
   onUpdateLayerProp,

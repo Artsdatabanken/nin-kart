@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import BorreContainer from "./Borring/BorreContainer";
 import KodeContainer from "./Kodetre/Kodeliste/KodeContainer";
 import språk from "./språk";
-import Tweaks from "./Tweaks/";
+import Innstillinger from "./Innstillinger/";
 import Panel from "./components/Panel";
 import InfoTab from "./InfoTab";
 
@@ -60,7 +60,7 @@ class VenstreVinduContainer extends React.Component {
       const node = this.props.aktiveLag[lag] || meta;
       return (
         <Panel>
-          <Tweaks
+          <Innstillinger
             {...node}
             lag={lag}
             onFitBounds={this.props.onFitBounds}

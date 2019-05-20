@@ -9,8 +9,8 @@ import {
 } from "@material-ui/icons";
 import React, { Component } from "react";
 
-import SliderElement from "Tweaks/FerdigeMiniElement/SliderElement";
-import Veksle from "Tweaks/Veksle";
+import SliderElement from "Innstillinger/FerdigeMiniElement/SliderElement";
+import Veksle from "Innstillinger/Veksle";
 
 class Terreng extends Component {
   render() {
