@@ -4,6 +4,7 @@ import språk from "../språk";
 import { withRouter } from "react-router";
 import { SettingsContext } from "../SettingsContext";
 
+import TemaMeny from "./../Innstillinger/Undermenyer/BakgrunnsMenyer/TemaMeny";
 import FargeMeny from "./../Innstillinger/Undermenyer/FargeMeny";
 
 import {
@@ -22,7 +23,9 @@ const KartlagListeElement = ({
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [settings, setSettings] = useState(false);
+  const [theme, setTheme] = useState(false);
   const kode = kartlag.kode;
+  const aktivtFormat = kartlag.kart;
   let tittel = kartlag.tittel;
   let bbox = kartlag.bbox;
   const erSynlig = kartlag.erSynlig;
@@ -65,15 +68,33 @@ const KartlagListeElement = ({
               </button>
             </span>
           </div>
-          {settings && (
-            <FargeMeny
-              kartlag={kartlag}
+          {kode === "bakgrunnskart" && theme && (
+            <TemaMeny
               onUpdateLayerProp={onUpdateLayerProp}
+              valgt={aktivtFormat}
             />
+          )}
+
+          {settings && (
+            <>
+              <FargeMeny
+                kartlag={kartlag}
+                onUpdateLayerProp={onUpdateLayerProp}
+              />
+            </>
           )}
 
           {expanded && (
             <div className="kartlag_submeny">
+              {kode === "bakgrunnskart" && (
+                <button
+                  className="invisible_icon_button"
+                  onClick={() => setTheme(!theme)}
+                >
+                  Tema <ColorLens />
+                </button>
+              )}
+
               <button
                 className="invisible_icon_button"
                 //onClick={() => {
@@ -83,6 +104,7 @@ const KartlagListeElement = ({
               >
                 Farger <ColorLens />
               </button>
+
               {kode !== "bakgrunnskart" && (
                 <>
                   <button
