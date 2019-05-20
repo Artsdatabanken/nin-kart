@@ -5,7 +5,6 @@ import { withRouter } from "react-router";
 import { SettingsContext } from "../SettingsContext";
 
 import FargeMeny from "./../Innstillinger/Undermenyer/FargeMeny";
-import Panel from "./../components/Panel";
 
 import {
   Close,
@@ -19,9 +18,7 @@ const KartlagListeElement = ({
   kartlag,
   onUpdateLayerProp,
   onRemoveSelectedLayer,
-  onFitBounds,
-  handleUpdateLayerProp,
-  kart
+  onFitBounds
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [settings, setSettings] = useState(false);
