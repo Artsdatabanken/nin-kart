@@ -135,11 +135,15 @@ const KartlagListeElement = ({
                 <>
                   {kode === "bakgrunnskart" ? (
                     <>
-                      {aktivtFormat === "google_hybrid" ||
-                      aktivtFormat === "google_satellite" ? (
+                      {aktivtFormat.aktivtFormat === "google_hybrid" ||
+                      aktivtFormat.aktivtFormat === "google_satellite" ? (
                         <div className="sidebar_element">
                           <h3>Fargefilter for Google-kartbladet</h3>
-                          <Google {...this.props} />
+                          <Google
+                            kartlag={kartlag}
+                            aktivtFormat={aktivtFormat}
+                            onUpdateLayerProp={onUpdateLayerProp}
+                          />
                         </div>
                       ) : (
                         <BakgrunnsElementer
