@@ -4,10 +4,13 @@ import språk from "../språk";
 import { withRouter } from "react-router";
 import { SettingsContext } from "../SettingsContext";
 
+import LegendeElementer from "./../Innstillinger/Undermenyer/LegendeElementer";
 import TemaMeny from "./../Innstillinger/Undermenyer/BakgrunnsMenyer/TemaMeny";
 import FargeMeny from "./../Innstillinger/Undermenyer/FargeMeny";
 import BakgrunnsElementer from "./../Innstillinger/Undermenyer/BakgrunnsMenyer/BakgrunnsElementer";
 import Google from "./../Innstillinger/Undermenyer/BakgrunnsMenyer/Google";
+import tinycolor from "tinycolor2";
+import ColorPicker from "Innstillinger/FerdigeMiniElement/ColorPicker";
 
 import {
   Close,
@@ -153,10 +156,25 @@ const KartlagListeElement = ({
                       )}
                     </>
                   ) : (
-                    <FargeMeny
-                      kartlag={kartlag}
-                      onUpdateLayerProp={onUpdateLayerProp}
-                    />
+                    <>
+                      {kartlag.barn.length === 0 ? (
+                        <ColorPicker
+                          color={kartlag.farge}
+                          onChange={farge => {
+                            const rgbString = tinycolor(
+                              farge.rgb
+                            ).toRgbString();
+                            onUpdateLayerProp(kartlag.kode, "farge", rgbString);
+                          }}
+                        />
+                      ) : (
+                        <LegendeElementer
+                          kartlag={kartlag}
+                          aktivtFormat={aktivtFormat}
+                          onUpdateLayerProp={onUpdateLayerProp}
+                        />
+                      )}
+                    </>
                   )}
                 </>
               )}

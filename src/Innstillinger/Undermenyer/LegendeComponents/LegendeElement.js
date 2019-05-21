@@ -1,49 +1,59 @@
-//import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
-import React from "react";
-import { withRouter } from "react-router";
+import React, { useState } from "react";
 import VelgFargeBoks from "Innstillinger/FerdigeMiniElement/VelgFargeBoks";
 import LegendeTitleField from "./LegendeTitleField";
 import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
+import tinycolor from "tinycolor2";
+import ColorPicker from "Innstillinger/FerdigeMiniElement/ColorPicker";
+import språk from "språk";
 
-class LegendeElement extends React.Component {
-  render() {
-    const {
-      erSynlig,
-      tittel,
-      undertittel,
-      kode,
-      farge,
-      goToColourMenu
-    } = this.props;
-    return (
-      <div className="child_list_object">
+const LegendeElement = ({
+  erSynlig,
+  tittel,
+  koder,
+  kode,
+  onUpdateLayerProp,
+  farge
+}) => {
+  const [showColours, setShowColours] = useState(false);
+  return (
+    <div className="child_list_object">
+      <button
+        className="grouped_items_button"
+        onClick={() => {
+          setShowColours(!showColours);
+        }}
+        key={kode}
+      >
+        <LegendeTitleField tittel={språk(tittel)} undertittel={koder} />
+        <VelgFargeBoks farge={farge} kode={kode} />
+        {}
+      </button>
+      {
         <button
-          className="grouped_items_button"
-          onClick={() => goToColourMenu(kode)}
-          key={kode}
+          className="invisible_icon_button show_hide_button"
+          onClick={e => {
+            onUpdateLayerProp(kode, "erSynlig", !erSynlig);
+            e.stopPropagation();
+          }}
         >
-          <LegendeTitleField tittel={tittel} undertittel={undertittel} />
-          <VelgFargeBoks farge={farge} kode={kode} />
-          {}
+          {erSynlig ? (
+            <VisibilityOutlined />
+          ) : (
+            <VisibilityOffOutlined style={{ color: "#aaa" }} />
+          )}
         </button>
-        {
-          <button
-            className="invisible_icon_button show_hide_button"
-            onClick={e => {
-              this.props.onUpdateLayerProp(kode, "erSynlig", !erSynlig);
-              e.stopPropagation();
-            }}
-          >
-            {erSynlig ? (
-              <VisibilityOutlined />
-            ) : (
-              <VisibilityOffOutlined style={{ color: "#aaa" }} />
-            )}
-          </button>
-        }
-      </div>
-    );
-  }
-}
+      }
+      {showColours && (
+        <ColorPicker
+          color={farge}
+          onChange={farge => {
+            const rgbString = tinycolor(farge.rgb).toRgbString();
+            onUpdateLayerProp(kode, "farge", rgbString);
+          }}
+        />
+      )}
+    </div>
+  );
+};
 
-export default withRouter(LegendeElement);
+export default LegendeElement;
