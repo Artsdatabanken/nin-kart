@@ -2,7 +2,7 @@ import React from "react";
 import TemaButton from "./Bakgrunn/TemaButton";
 import typer from "./Bakgrunn/temaer";
 
-const TemaMeny = ({ valgt, onUpdateLayerProp }) => (
+const TemaMeny = ({ aktivtFormat, onUpdateLayerProp }) => (
   <>
     <div className="sidebar_element">
       <h1>Velg Tema</h1>
@@ -15,7 +15,7 @@ const TemaMeny = ({ valgt, onUpdateLayerProp }) => (
           key={key}
           button
           type={key}
-          valgt={valgt}
+          aktivtFormat={aktivtFormat}
           onUpdateLayerProp={onUpdateLayerProp}
         />
       );

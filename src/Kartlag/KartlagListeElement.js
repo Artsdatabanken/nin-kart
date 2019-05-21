@@ -68,7 +68,10 @@ const KartlagListeElement = ({
 
               <button
                 className="invisible_icon_button"
-                onClick={() => setExpanded(!expanded)}
+                onClick={() => {
+                  setExpanded(!expanded);
+                  closeAll();
+                }}
               >
                 {expanded ? <KeyboardArrowUp /> : <KeyboardArrowDown />}{" "}
               </button>
@@ -76,85 +79,83 @@ const KartlagListeElement = ({
           </div>
 
           {expanded && (
-            <div className="kartlag_submeny">
-              {kode === "bakgrunnskart" && (
+            <>
+              <div className="kartlag_submeny">
+                {kode === "bakgrunnskart" && (
+                  <button
+                    className="invisible_icon_button"
+                    onClick={() => {
+                      closeAll();
+                      setTheme(true);
+                    }}
+                  >
+                    Tema <ColorLens />
+                  </button>
+                )}
+
                 <button
                   className="invisible_icon_button"
                   onClick={() => {
                     closeAll();
-                    setTheme(true);
+                    setSettings(true);
                   }}
                 >
-                  Tema <ColorLens />
+                  Farger <ColorLens />
                 </button>
+
+                {kode !== "bakgrunnskart" && (
+                  <>
+                    <button
+                      className="invisible_icon_button"
+                      onClick={event => {
+                        context.onNavigateToTab("kart");
+                        console.log("running", context.onNavigateToTab);
+                        onFitBounds(bbox);
+                      }}
+                    >
+                      Zoom til <OpenInNew />
+                    </button>
+
+                    <button
+                      className="invisible_icon_button remove_icon"
+                      onClick={() => onRemoveSelectedLayer(kode)}
+                    >
+                      Fjern <Close />
+                    </button>
+                  </>
+                )}
+              </div>
+              {kode === "bakgrunnskart" && theme && (
+                <TemaMeny
+                  onUpdateLayerProp={onUpdateLayerProp}
+                  aktivtFormat={aktivtFormat}
+                />
               )}
-
-              <button
-                className="invisible_icon_button"
-                //onClick={() => {
-                //history.push("/" + kode + "?vis");
-                //}}
-                onClick={() => {
-                  closeAll();
-                  setSettings(true);
-                }}
-              >
-                Farger <ColorLens />
-              </button>
-
-              {kode !== "bakgrunnskart" && (
+              {settings && (
                 <>
-                  <button
-                    className="invisible_icon_button"
-                    onClick={event => {
-                      context.onNavigateToTab("kart");
-                      console.log("running", context.onNavigateToTab);
-                      onFitBounds(bbox);
-                    }}
-                  >
-                    Zoom til <OpenInNew />
-                  </button>
-
-                  <button
-                    className="invisible_icon_button remove_icon"
-                    onClick={() => onRemoveSelectedLayer(kode)}
-                  >
-                    Fjern <Close />
-                  </button>
-                </>
-              )}
-            </div>
-          )}
-          {kode === "bakgrunnskart" && theme && (
-            <TemaMeny
-              onUpdateLayerProp={onUpdateLayerProp}
-              valgt={aktivtFormat}
-            />
-          )}
-
-          {settings && (
-            <>
-              {kode === "bakgrunnskart" && (
-                <>
-                  {aktivtFormat === "google_hybrid" ||
-                  aktivtFormat === "google_satellite" ? (
-                    <div className="sidebar_element">
-                      <h3>Fargefilter for Google-kartbladet</h3>
-                      <Google {...this.props} />
-                    </div>
+                  {kode === "bakgrunnskart" ? (
+                    <>
+                      {aktivtFormat === "google_hybrid" ||
+                      aktivtFormat === "google_satellite" ? (
+                        <div className="sidebar_element">
+                          <h3>Fargefilter for Google-kartbladet</h3>
+                          <Google {...this.props} />
+                        </div>
+                      ) : (
+                        <BakgrunnsElementer
+                          onUpdateLayerProp={onUpdateLayerProp}
+                          aktivtFormat={aktivtFormat}
+                        />
+                      )}
+                    </>
                   ) : (
-                    <BakgrunnsElementer
+                    <FargeMeny
+                      kartlag={kartlag}
                       onUpdateLayerProp={onUpdateLayerProp}
-                      aktivtFormat={aktivtFormat}
                     />
                   )}
                 </>
               )}
-
-              <FargeMeny
-                kartlag={kartlag}
-                onUpdateLayerProp={onUpdateLayerProp}
-              />
             </>
           )}
         </li>

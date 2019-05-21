@@ -99,41 +99,37 @@ select {
 }
 
 .button_map_preview {
-  max-width: 100%;
-  margin: 10px;
-  padding-top: 10px;
-  padding-left: 10px;
+  width: 100%;
+  padding: 10px;
   border: 0px;
   background: transparent;
   font-size: 12pt;
   text-align: left;
   position: relative;
-  height: auto;
   box-sizing: border-box;
-  background: #edf4f5;
+  margin: 2px;
+}
+
+.button_map_preview img,
+.button_map_preview span {
+  width: 50%;
+  height: 100%;
+  margin: 5px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .button_map_preview img {
-  width: 100%;
-  margin-top: 10px;
-  display: block;
-  margin-left: -10px;
+  width: 150px;
+  height: 50px;
 }
 
-.button_map_preview_first_part {
-  width: calc(100% - 40px);
-  box-sizing: border-box;
-}
-
-.button_map_preview_first_part,
-.theme_link {
-  display: block;
-  height: 100%;
-}
-
-.theme_link {
-  display: block;
+.selected_button {
   background: #b7d3d8;
+}
+
+.theme_link {
+  display: block;
   width: 60px;
   height: 100%;
   position: absolute;

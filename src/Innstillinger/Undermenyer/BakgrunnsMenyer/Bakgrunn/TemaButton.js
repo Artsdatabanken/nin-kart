@@ -3,25 +3,26 @@ import { withRouter } from "react-router";
 import typer from "./temaer";
 import { KeyboardArrowRight } from "@material-ui/icons";
 
-const TemaButton = ({ type, valgt, onUpdateLayerProp, history }) => (
+const TemaButton = ({ type, aktivtFormat, onUpdateLayerProp }) => (
   <button
-    className="button_map_preview"
+    className={
+      aktivtFormat.aktivtFormat === type
+        ? "selected_button button_map_preview"
+        : "button_map_preview"
+    }
     onClick={() => {
       onUpdateLayerProp &&
         onUpdateLayerProp("bakgrunnskart", "kart.aktivtFormat", type);
-      history.push(
-        history.location.pathname + (onUpdateLayerProp ? "?vis" : "?vis_tema")
-      );
     }}
-    selected={valgt === type}
   >
-    <div className="button_map_preview_first_part">
-      Bakgrunn: {typer[type]} {type}
-      <img
-        src={"/tema/" + type + ".jpg"}
-        alt={"Forhåndsvisning av tema " + typer[type]}
-      />
-    </div>
+    <img
+      src={"/tema/" + type + ".jpg"}
+      alt={"Forhåndsvisning av tema " + typer[type]}
+    />
+    <span>
+      {typer[type]}
+      <br /> {type}
+    </span>
 
     <div className="theme_link">
       <KeyboardArrowRight />
