@@ -86,7 +86,7 @@ const KartlagListeElement = ({
                     className="invisible_icon_button"
                     onClick={() => {
                       closeAll();
-                      setTheme(true);
+                      setTheme(!theme);
                     }}
                   >
                     Tema <ColorLens />
@@ -97,7 +97,7 @@ const KartlagListeElement = ({
                   className="invisible_icon_button"
                   onClick={() => {
                     closeAll();
-                    setSettings(true);
+                    setSettings(!settings);
                   }}
                 >
                   Farger <ColorLens />
