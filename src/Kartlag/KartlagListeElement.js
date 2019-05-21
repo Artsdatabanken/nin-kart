@@ -26,6 +26,10 @@ const KartlagListeElement = ({
   const [expanded, setExpanded] = useState(false);
   const [settings, setSettings] = useState(false);
   const [theme, setTheme] = useState(false);
+  function closeAll() {
+    setTheme(false);
+    setSettings(false);
+  }
   const kode = kartlag.kode;
   const aktivtFormat = kartlag.kart;
   let tittel = kartlag.tittel;
@@ -70,6 +74,57 @@ const KartlagListeElement = ({
               </button>
             </span>
           </div>
+
+          {expanded && (
+            <div className="kartlag_submeny">
+              {kode === "bakgrunnskart" && (
+                <button
+                  className="invisible_icon_button"
+                  onClick={() => {
+                    closeAll();
+                    setTheme(true);
+                  }}
+                >
+                  Tema <ColorLens />
+                </button>
+              )}
+
+              <button
+                className="invisible_icon_button"
+                //onClick={() => {
+                //history.push("/" + kode + "?vis");
+                //}}
+                onClick={() => {
+                  closeAll();
+                  setSettings(true);
+                }}
+              >
+                Farger <ColorLens />
+              </button>
+
+              {kode !== "bakgrunnskart" && (
+                <>
+                  <button
+                    className="invisible_icon_button"
+                    onClick={event => {
+                      context.onNavigateToTab("kart");
+                      console.log("running", context.onNavigateToTab);
+                      onFitBounds(bbox);
+                    }}
+                  >
+                    Zoom til <OpenInNew />
+                  </button>
+
+                  <button
+                    className="invisible_icon_button remove_icon"
+                    onClick={() => onRemoveSelectedLayer(kode)}
+                  >
+                    Fjern <Close />
+                  </button>
+                </>
+              )}
+            </div>
+          )}
           {kode === "bakgrunnskart" && theme && (
             <TemaMeny
               onUpdateLayerProp={onUpdateLayerProp}
@@ -101,51 +156,6 @@ const KartlagListeElement = ({
                 onUpdateLayerProp={onUpdateLayerProp}
               />
             </>
-          )}
-
-          {expanded && (
-            <div className="kartlag_submeny">
-              {kode === "bakgrunnskart" && (
-                <button
-                  className="invisible_icon_button"
-                  onClick={() => setTheme(!theme)}
-                >
-                  Tema <ColorLens />
-                </button>
-              )}
-
-              <button
-                className="invisible_icon_button"
-                //onClick={() => {
-                //history.push("/" + kode + "?vis");
-                //}}
-                onClick={() => setSettings(!settings)}
-              >
-                Farger <ColorLens />
-              </button>
-
-              {kode !== "bakgrunnskart" && (
-                <>
-                  <button
-                    className="invisible_icon_button"
-                    onClick={event => {
-                      context.onNavigateToTab("kart");
-                      console.log("running", context.onNavigateToTab);
-                      onFitBounds(bbox);
-                    }}
-                  >
-                    Zoom til <OpenInNew />
-                  </button>
-
-                  <button
-                    className="invisible_icon_button remove_icon"
-                    onClick={() => onRemoveSelectedLayer(kode)}
-                  >
-                    Fjern <Close />
-                  </button>
-                </>
-              )}
-            </div>
           )}
         </li>
       )}
