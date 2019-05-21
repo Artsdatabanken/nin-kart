@@ -5,47 +5,49 @@ import { List } from "@material-ui/core";
 
 class BakgrunnsElementer extends Component {
   //Duplikat, men ga opp å finne bedre løsning
-  handleUpdateLayerProp = (lag, key, value) => {
-    this.props.onUpdateLayerProp(
-      lag,
-      `kart.format.${this.props.kartformat}.${key}`,
-      value
-    );
-  };
+
   render() {
-    const { kf } = this.props;
+    const { aktivtFormat, onUpdateLayerProp } = this.props;
+    const current = aktivtFormat.aktivtFormat;
+    const kf = aktivtFormat.format[current];
+    const what = "kart.format." + current;
 
     return (
       <List>
+        {/* 
         {false && (
           <div className="sidebar_element">
             <Terreng
               kode="bakgrunnskart"
               terreng={this.props.terreng}
-              onUpdateLayerProp={this.props.onUpdateLayerProp}
+              onUpdateLayerProp={onUpdateLayerProp}
             />
           </div>
         )}
+        */}
 
         <div className="sidebar_element">
           <h3>Områder</h3>
+
           <Bakgrunnskartlag
-            onUpdateLayerProp={this.handleUpdateLayerProp}
-            lagNavn="vann"
+            onUpdateLayerProp={onUpdateLayerProp}
+            oppdaterElement={what + ".vann"}
             tittel="Vann"
             erSynlig={kf.vann}
             farge={kf.vann_farge}
           />
+
           <Bakgrunnskartlag
-            onUpdateLayerProp={this.handleUpdateLayerProp}
-            lagNavn="land"
+            onUpdateLayerProp={onUpdateLayerProp}
+            oppdaterElement={what + ".land"}
             tittel="Land"
             erSynlig={kf.land}
             farge={kf.land_farge}
           />
+
           <Bakgrunnskartlag
-            onUpdateLayerProp={this.handleUpdateLayerProp}
-            lagNavn="transport"
+            onUpdateLayerProp={onUpdateLayerProp}
+            oppdaterElement={what + ".transport"}
             tittel="Transport"
             erSynlig={kf.transport}
             farge={kf.transport_farge}
@@ -54,22 +56,23 @@ class BakgrunnsElementer extends Component {
         <div className="sidebar_element">
           <h3>Etiketter</h3>
           <Bakgrunnskartlag
-            onUpdateLayerProp={this.handleUpdateLayerProp}
-            lagNavn="vann_navn"
+            onUpdateLayerProp={onUpdateLayerProp}
+            oppdaterElement={what + ".vann_navn"}
             tittel="Vann"
             erSynlig={kf.vann_navn}
             farge={kf.vann_navn_farge}
           />
+
           <Bakgrunnskartlag
-            onUpdateLayerProp={this.handleUpdateLayerProp}
-            lagNavn="sted_navn"
+            onUpdateLayerProp={onUpdateLayerProp}
+            oppdaterElement={what + ".sted_navn"}
             tittel="Steder"
             erSynlig={kf.sted_navn}
             farge={kf.sted_navn_farge}
           />
           <Bakgrunnskartlag
-            onUpdateLayerProp={this.handleUpdateLayerProp}
-            lagNavn="transport_navn"
+            onUpdateLayerProp={onUpdateLayerProp}
+            oppdaterElement={what + ".transport_navn"}
             tittel="Transport"
             erSynlig={kf.transport_navn}
             farge={kf.transport_navn_farge}
@@ -78,22 +81,22 @@ class BakgrunnsElementer extends Component {
         <div className="sidebar_element">
           <h3>Administrative grenser</h3>
           <Bakgrunnskartlag
-            onUpdateLayerProp={this.handleUpdateLayerProp}
-            lagNavn="landegrense"
+            onUpdateLayerProp={onUpdateLayerProp}
+            oppdaterElement={what + ".landegrense"}
             tittel="Riksgrense"
             erSynlig={kf.landegrense}
             farge={kf.landegrense_farge}
           />
           <Bakgrunnskartlag
-            onUpdateLayerProp={this.handleUpdateLayerProp}
-            lagNavn="fylkesgrense"
+            onUpdateLayerProp={onUpdateLayerProp}
+            oppdaterElement={what + ".fylkesgrense"}
             tittel="Fylkesgrense"
             erSynlig={kf.fylkesgrense}
             farge={kf.fylkesgrense_farge}
           />
           <Bakgrunnskartlag
-            onUpdateLayerProp={this.handleUpdateLayerProp}
-            lagNavn="kommunegrense"
+            onUpdateLayerProp={onUpdateLayerProp}
+            oppdaterElement={what + ".kommunegrense"}
             tittel="Kommunegrense"
             erSynlig={kf.kommunegrense}
             farge={kf.kommunegrense_farge}

@@ -201,6 +201,7 @@ class Grunnkart extends React.Component {
     const vkey = parts[parts.length - 1];
     node[vkey] = value;
     this.setState({ aktiveLag: Object.assign({}, aktive) });
+    console.log(this.state.aktiveLag);
   };
 
   // Supports composite keys i.e. gradient.filterMin

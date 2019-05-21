@@ -1,8 +1,6 @@
 import { Component, default as React } from "react";
 import { withRouter } from "react-router";
-import TemaMeny from "./BakgrunnsMenyer/TemaMeny";
 import BakgrunnsElementer from "./BakgrunnsMenyer/BakgrunnsElementer";
-import VisFarge from "./BakgrunnsMenyer/VisFarge";
 import Google from "./BakgrunnsMenyer/Google";
 import TemaButton from "./BakgrunnsMenyer/Bakgrunn/TemaButton";
 
@@ -11,25 +9,6 @@ class BakgrunnsInnstillinger extends Component {
     const { history, location } = this.props;
     const { aktivtFormat } = this.props.kart;
     const kf = this.props.kart.format[aktivtFormat];
-
-    if (location.search === "?vis_tema")
-      return (
-        <TemaMeny
-          onUpdateLayerProp={this.props.onUpdateLayerProp}
-          valgt={aktivtFormat}
-        />
-      );
-
-    if (location.search.startsWith("?vis_farge")) {
-      return (
-        <VisFarge
-          kartlag={kf}
-          location={location}
-          history={history}
-          onUpdateLayerProp={this.props.onUpdateLayerProp}
-        />
-      );
-    }
 
     return (
       <>

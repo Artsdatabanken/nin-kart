@@ -6,6 +6,8 @@ import { SettingsContext } from "../SettingsContext";
 
 import TemaMeny from "./../Innstillinger/Undermenyer/BakgrunnsMenyer/TemaMeny";
 import FargeMeny from "./../Innstillinger/Undermenyer/FargeMeny";
+import BakgrunnsElementer from "./../Innstillinger/Undermenyer/BakgrunnsMenyer/BakgrunnsElementer";
+import Google from "./../Innstillinger/Undermenyer/BakgrunnsMenyer/Google";
 
 import {
   Close,
@@ -77,6 +79,23 @@ const KartlagListeElement = ({
 
           {settings && (
             <>
+              {kode === "bakgrunnskart" && (
+                <>
+                  {aktivtFormat === "google_hybrid" ||
+                  aktivtFormat === "google_satellite" ? (
+                    <div className="sidebar_element">
+                      <h3>Fargefilter for Google-kartbladet</h3>
+                      <Google {...this.props} />
+                    </div>
+                  ) : (
+                    <BakgrunnsElementer
+                      onUpdateLayerProp={onUpdateLayerProp}
+                      aktivtFormat={aktivtFormat}
+                    />
+                  )}
+                </>
+              )}
+
               <FargeMeny
                 kartlag={kartlag}
                 onUpdateLayerProp={onUpdateLayerProp}
