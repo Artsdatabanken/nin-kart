@@ -43,7 +43,7 @@ class ResultatListe extends Component {
                 }}
                 key={item.url}
               >
-                <Bildeavatar kode={item.kode} url={item.url} />
+                <Bildeavatar url={item.url} />
                 <ListItemText classes={{ primary: classes.text }}>
                   {ResultatListe.highlightMatch(navn, query, classes)}
                 </ListItemText>

@@ -147,9 +147,7 @@ class HamburgerMeny extends Component {
 
                 <Menyelement
                   onClick={this.handleClickLogo}
-                  icon={
-                    <BildeAvatar url="Datakilde/Artsdatabanken" kode="OR-AD" />
-                  }
+                  icon={<BildeAvatar url="Datakilde/Artsdatabanken" />}
                   primary="Artsdatabanken"
                 />
               </div>
