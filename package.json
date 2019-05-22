@@ -29,7 +29,7 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.8",
-    "tangram": "^0.18.0"
+    "tangram": "^0.18.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
