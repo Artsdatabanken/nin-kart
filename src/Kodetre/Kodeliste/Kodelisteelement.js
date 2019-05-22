@@ -3,7 +3,6 @@ import React from "react";
 import språk from "../../språk";
 import Bildeavatar from "./Bildeavatar";
 import VolumIndikator from "./VolumIndikator";
-import lysOpp from "../../palette/opplyst";
 import prettyKode from "./prettyKode";
 
 function hack(symbol, intervall) {
@@ -47,7 +46,6 @@ class Kodelisteelement extends React.Component {
       parentkode,
       kode,
       url,
-      opplyst,
       visKode,
       onNavigate,
       onMouseEnter,
@@ -66,14 +64,7 @@ class Kodelisteelement extends React.Component {
           button={true}
         >
           <VolumIndikator størsteAreal={størsteAreal} areal={areal} />
-          {true && (
-            <Bildeavatar
-              kode={kode}
-              url={url}
-              farge0={meta.farge0}
-              farge={lysOpp(url, opplyst.url, meta.farge)}
-            />
-          )}
+          <Bildeavatar url={url} />
           <ListItemText
             style={{ width: "50%" }}
             primary={språk(meta.tittel)}
