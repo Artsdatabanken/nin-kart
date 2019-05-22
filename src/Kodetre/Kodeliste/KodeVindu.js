@@ -1,6 +1,7 @@
+import { useLocalStorage } from "react-use";
 import Detaljeringsgrad from "./Detaljeringsgrad";
 import Overordnet from "./Overordnet";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import språk from "../../språk";
 import Graf from "./Graf";
 import Flagg from "./Flagg";
@@ -16,7 +17,6 @@ import Link from "@material-ui/icons/Link";
 import { CallSplit, MergeType, ShowChart, Gradient } from "@material-ui/icons/";
 import KurveContainer from "./KurveContainer";
 import Nedlasting from "./Nedlasting";
-//import { OpenInNew } from "@material-ui/icons/";
 import { SettingsContext } from "../../SettingsContext";
 
 const KodeVindu = ({
@@ -33,12 +33,7 @@ const KodeVindu = ({
   onUpdateLayerProp,
   onUpdateMetaProp
 }) => {
-  const initialExpand = () =>
-    JSON.parse(localStorage.getItem("expand") || "{}");
-  const [expand, setExpand] = useState(initialExpand);
-  useEffect(() => {
-    localStorage.setItem("expand", JSON.stringify(expand));
-  }, [expand]);
+  const [expand, setExpand] = useLocalStorage("expand", {});
   if (!meta) return null;
   const {
     kode,
