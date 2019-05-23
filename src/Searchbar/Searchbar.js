@@ -1,7 +1,8 @@
+import useStartTyping from "react-use/lib/useStartTyping";
 import classNames from "classnames";
 import Search from "@material-ui/icons/Search";
 import Close from "@material-ui/icons/Close";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { withRouter } from "react-router-dom";
 import { SettingsContext } from "../SettingsContext";
 
@@ -13,12 +14,15 @@ const Searchbar = ({ query, onQueryChange, hits, setHits }) => {
     setIsSearching(false);
     setHits([]);
   }
+  const inputField = useRef(null);
+  useStartTyping(() => inputField.current.focus());
 
   return (
     <SettingsContext.Consumer>
       {context => (
         <div className={abc("searchbar_container", isSearching)}>
           <input
+            ref={inputField}
             value={query}
             placeholder={"Søk i Natur i Norge"}
             onChange={onQueryChange}
