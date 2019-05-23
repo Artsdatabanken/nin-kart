@@ -1,6 +1,6 @@
 import React from "react";
-import TemaButton from "./Bakgrunn/TemaButton";
-import typer from "./Bakgrunn/temaer";
+import TemaButton from "./TemaButton";
+import typer from "./temaer";
 
 const TemaMeny = ({ aktivtFormat, onUpdateLayerProp }) => (
   <>

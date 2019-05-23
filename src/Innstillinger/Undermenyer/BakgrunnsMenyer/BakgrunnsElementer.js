@@ -1,6 +1,6 @@
 import { Component, default as React } from "react";
 import Bakgrunnskartlag from "./Bakgrunn/Bakgrunnskartlag";
-import Terreng from "./Bakgrunn/Terreng";
+//import Terreng from "./Terreng";
 import { List } from "@material-ui/core";
 
 class BakgrunnsElementer extends Component {

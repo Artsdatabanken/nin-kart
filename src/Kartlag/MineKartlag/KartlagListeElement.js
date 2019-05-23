@@ -1,24 +1,17 @@
 import React, { useState } from "react";
-import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
-import språk from "../språk";
-import { withRouter } from "react-router";
-import { SettingsContext } from "../SettingsContext";
 
-import LegendeElementer from "./../Innstillinger/Undermenyer/LegendeElementer";
-import TemaMeny from "./../Innstillinger/Undermenyer/BakgrunnsMenyer/TemaMeny";
-import FargeMeny from "./../Innstillinger/Undermenyer/FargeMeny";
-import BakgrunnsElementer from "./../Innstillinger/Undermenyer/BakgrunnsMenyer/BakgrunnsElementer";
-import Google from "./../Innstillinger/Undermenyer/BakgrunnsMenyer/Google";
+import { withRouter } from "react-router";
+import { SettingsContext } from "../../SettingsContext";
+import EkspanderingsTopplinje from "./EkspanderingsTopplinje";
+import LegendeElementer from "Innstillinger/Undermenyer/LegendeElementer";
+import TemaMeny from "../Bakgrunn/TemaMeny/TemaMeny";
+//import FargeMeny from "Innstillinger/Undermenyer/FargeMeny";
+import BakgrunnsElementer from "Innstillinger/Undermenyer/BakgrunnsMenyer/BakgrunnsElementer";
+import Google from "Innstillinger/Undermenyer/BakgrunnsMenyer/Google";
 import tinycolor from "tinycolor2";
 import ColorPicker from "Innstillinger/FerdigeMiniElement/ColorPicker";
 
-import {
-  Close,
-  KeyboardArrowDown,
-  KeyboardArrowUp,
-  OpenInNew,
-  ColorLens
-} from "@material-ui/icons";
+import { Close, OpenInNew, ColorLens, Edit } from "@material-ui/icons";
 
 const KartlagListeElement = ({
   kartlag,
@@ -35,51 +28,18 @@ const KartlagListeElement = ({
   }
   const kode = kartlag.kode;
   const aktivtFormat = kartlag.kart;
-  let tittel = kartlag.tittel;
   let bbox = kartlag.bbox;
-  const erSynlig = kartlag.erSynlig;
   return (
     <SettingsContext.Consumer>
       {context => (
         <li>
-          <div
-            className={
-              (expanded && "kartlag_header kartlag_open_object") ||
-              "kartlag_header"
-            }
-          >
-            <span className="kartlag_list_title">
-              {språk(tittel)}
-              <br />
-              {context.visKoder && kode}
-            </span>
-
-            <span className="kartlag_list_icon_set">
-              <button
-                className="invisible_icon_button"
-                onClick={e => {
-                  onUpdateLayerProp(kode, "erSynlig", !erSynlig);
-                  e.stopPropagation();
-                }}
-              >
-                {erSynlig ? (
-                  <VisibilityOutlined />
-                ) : (
-                  <VisibilityOffOutlined style={{ color: "#aaa" }} />
-                )}
-              </button>
-
-              <button
-                className="invisible_icon_button"
-                onClick={() => {
-                  setExpanded(!expanded);
-                  closeAll();
-                }}
-              >
-                {expanded ? <KeyboardArrowUp /> : <KeyboardArrowDown />}{" "}
-              </button>
-            </span>
-          </div>
+          <EkspanderingsTopplinje
+            kartlag={kartlag}
+            expanded={expanded}
+            closeAll={closeAll}
+            setExpanded={setExpanded}
+            context={context}
+          />
 
           {expanded && (
             <>
@@ -103,7 +63,7 @@ const KartlagListeElement = ({
                     setSettings(!settings);
                   }}
                 >
-                  Farger <ColorLens />
+                  Rediger <Edit />
                 </button>
 
                 {kode !== "bakgrunnskart" && (
@@ -128,12 +88,14 @@ const KartlagListeElement = ({
                   </>
                 )}
               </div>
+
               {kode === "bakgrunnskart" && theme && (
                 <TemaMeny
                   onUpdateLayerProp={onUpdateLayerProp}
                   aktivtFormat={aktivtFormat}
                 />
               )}
+
               {settings && (
                 <>
                   {kode === "bakgrunnskart" ? (
