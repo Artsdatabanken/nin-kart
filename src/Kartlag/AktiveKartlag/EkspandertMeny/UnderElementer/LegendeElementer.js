@@ -1,17 +1,12 @@
 import { SettingsContext } from "SettingsContext";
-//import typesystem from "@artsdatabanken/typesystem";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
-//import tinycolor from "tinycolor2";
-//import Barneliste from "Innstillinger/Barneliste";
-//import ColorPicker from "Innstillinger/FerdigeMiniElement/ColorPicker";
 import LegendeElement from "./LegendeComponents/LegendeElement";
 
 class LegendeElementer extends Component {
   render() {
     const { kartlag, onUpdateLayerProp } = this.props;
     const barn = kartlag.barn;
-    console.log("barn:  ", barn);
     return (
       <SettingsContext.Consumer>
         {context => (

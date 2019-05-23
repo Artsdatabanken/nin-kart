@@ -1,10 +1,11 @@
 import React from "react";
-import TemaMeny from "../Bakgrunn/TemaMeny/TemaMeny";
+import TemaMeny from "../../Bakgrunn/TemaMeny/TemaMeny";
 import BakgrunnsElementer from "Innstillinger/Undermenyer/BakgrunnsMenyer/BakgrunnsElementer";
 import Google from "Innstillinger/Undermenyer/BakgrunnsMenyer/Google";
 import tinycolor from "tinycolor2";
 import ColorPicker from "Innstillinger/FerdigeMiniElement/ColorPicker";
-import LegendeElementer from "Innstillinger/Undermenyer/LegendeElementer";
+import LegendeElementer from "./UnderElementer/LegendeElementer";
+import FargeVelger from "./UnderElementer/FargeVelger";
 
 const EkspandertInnhold = ({
   kode,
@@ -47,12 +48,10 @@ const EkspandertInnhold = ({
           ) : (
             <>
               {kartlag.barn.length === 0 ? (
-                <ColorPicker
+                <FargeVelger
                   color={kartlag.farge}
-                  onChange={farge => {
-                    const rgbString = tinycolor(farge.rgb).toRgbString();
-                    onUpdateLayerProp(kartlag.kode, "farge", rgbString);
-                  }}
+                  onUpdateLayerProp={onUpdateLayerProp}
+                  where={kartlag.kode}
                 />
               ) : (
                 <LegendeElementer

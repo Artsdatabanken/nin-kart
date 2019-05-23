@@ -1,6 +1,6 @@
 import React from "react";
 import { SettingsContext } from "../SettingsContext";
-import KartlagListeElement from "./MineKartlag/KartlagListeElement";
+import AktivtKartlagElement from "./AktiveKartlag/AktivtKartlagElement";
 import HistorikkListeElement from "./Historikk/HistorikkListeElement";
 
 class Kartlag extends React.Component {
@@ -30,7 +30,7 @@ class Kartlag extends React.Component {
                 <div className="sidebar_element">
                   <h3>Innstillinger</h3>
                   <ul className="kartlag_list">
-                    <KartlagListeElement
+                    <AktivtKartlagElement
                       kartlag={koder["bakgrunnskart"]}
                       {...this.props}
                       visKoder={context.visKoder}
@@ -45,7 +45,7 @@ class Kartlag extends React.Component {
                       const kartlag = koder[fkode];
                       return (
                         fkode !== "bakgrunnskart" && (
-                          <KartlagListeElement
+                          <AktivtKartlagElement
                             kartlag={kartlag}
                             key={fkode}
                             {...this.props}

@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-
-import { withRouter } from "react-router";
 import { SettingsContext } from "../../SettingsContext";
-import EkspandertUnderMeny from "./EkspandertUnderMeny";
-import EkspandertInnhold from "./EkspandertInnhold";
+import EkspandertUnderMeny from "./EkspandertMeny/EkspandertUnderMeny";
+import EkspandertInnhold from "./EkspandertMeny/EkspandertInnhold";
 import EkspanderingsTopplinje from "./EkspanderingsTopplinje";
-//import FargeMeny from "Innstillinger/Undermenyer/FargeMeny";
 
-const KartlagListeElement = ({
+const AktivtKartlagElement = ({
   kartlag,
   onUpdateLayerProp,
   onRemoveSelectedLayer,
@@ -67,4 +64,4 @@ const KartlagListeElement = ({
   );
 };
 
-export default withRouter(KartlagListeElement);
+export default AktivtKartlagElement;
