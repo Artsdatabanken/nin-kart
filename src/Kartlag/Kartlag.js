@@ -1,6 +1,6 @@
 import React from "react";
 import { SettingsContext } from "../SettingsContext";
-import KartlagListeElement from "./KartlagEkspanderingsElementerMineKartlag/KartlagListeElement";
+import KartlagListeElement from "./MineKartlag/KartlagListeElement";
 import HistorikkListeElement from "./Historikk/HistorikkListeElement";
 
 class Kartlag extends React.Component {

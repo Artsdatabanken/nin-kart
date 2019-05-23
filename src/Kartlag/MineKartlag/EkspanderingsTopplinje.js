@@ -17,7 +17,6 @@ const EkspanderingsTopplinje = ({
 }) => {
   const tittel = kartlag.tittel;
   const kode = kartlag.kode;
-
   const erSynlig = kartlag.erSynlig;
   return (
     <div
@@ -25,13 +24,16 @@ const EkspanderingsTopplinje = ({
         (expanded && "kartlag_header kartlag_open_object") || "kartlag_header"
       }
     >
+      {/* Name and codes of the layer */}
       <span className="kartlag_list_title">
         {språk(tittel)}
         <br />
         {context.visKoder && kode}
       </span>
 
+      {/* The span adjusts the menu to the right placement */}
       <span className="kartlag_list_icon_set">
+        {/* This button is the eye button toggling this layer on and off */}
         <button
           className="invisible_icon_button"
           onClick={e => {
@@ -46,6 +48,7 @@ const EkspanderingsTopplinje = ({
           )}
         </button>
 
+        {/* The toggle button for this element */}
         <button
           className="invisible_icon_button"
           onClick={() => {
