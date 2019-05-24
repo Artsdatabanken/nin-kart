@@ -2,6 +2,7 @@ import React from "react";
 import BakgrunnInnstillinger from "./Visualisering/BgInnstillinger/BakgrunnInnstillinger";
 import LegendeElementer from "./UnderElementer/LegendeElementer";
 import TemaMeny from "./Visualisering/TemaMeny/TemaMeny";
+import GradientEllerTypeinndelt from "./Visualisering/VisualiseringsType/GradientEllerTypeinndelt";
 import FargeVelger from "./FellesElementer/FargeVelger";
 
 const EkspandertInnhold = ({
@@ -14,8 +15,17 @@ const EkspandertInnhold = ({
 }) => {
   const current = aktivtFormat.aktivtFormat;
   const kf = aktivtFormat.format[current];
+  console.log(kartlag);
   return (
     <div>
+      {kode !== "bakgrunnskart" && (
+        <GradientEllerTypeinndelt
+          onUpdateLayerProp={onUpdateLayerProp}
+          where={kartlag.kode}
+          format={kartlag.kart.format}
+        />
+      )}
+
       {kode === "bakgrunnskart" && theme && (
         <TemaMeny
           onUpdateLayerProp={onUpdateLayerProp}

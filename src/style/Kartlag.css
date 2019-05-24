@@ -119,3 +119,11 @@ Even tho we don't a of now support IE X)
   padding-left: 0px;
   height: 16pt;
 }
+
+.kartlag_label_liste label {
+  display: block;
+  padding: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin: 0px;
+}
