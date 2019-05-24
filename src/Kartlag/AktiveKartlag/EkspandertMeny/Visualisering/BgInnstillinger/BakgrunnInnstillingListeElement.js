@@ -1,10 +1,9 @@
 import { Switch } from "@material-ui/core";
 import React, { useState } from "react";
-import VelgFargeBoks from "Innstillinger/FerdigeMiniElement/VelgFargeBoks";
-import tinycolor from "tinycolor2";
-import ColorPicker from "Innstillinger/FerdigeMiniElement/ColorPicker";
+import VelgFargeBoks from "../../FellesElementer/VelgFargeBoks";
+import FargeVelger from "../../FellesElementer/FargeVelger";
 
-const Bakgrunnskartlag = ({
+const BakgrunnInnstillingListeElement = ({
   onUpdateLayerProp,
   oppdaterElement,
   tittel,
@@ -36,20 +35,12 @@ const Bakgrunnskartlag = ({
             <VelgFargeBoks farge={farge} />
           </span>
           {showColours && (
-            <div className="sidebar_element">
-              <h3>Fyllfarge</h3>
-              <ColorPicker
-                color={farge}
-                onChange={farge => {
-                  const rgbString = tinycolor(farge.rgb).toRgbString();
-                  onUpdateLayerProp(
-                    "bakgrunnskart",
-                    oppdaterElement + "_farge",
-                    rgbString
-                  );
-                }}
-              />
-            </div>
+            <FargeVelger
+              color={farge}
+              onUpdateLayerProp={onUpdateLayerProp}
+              where={"bakgrunnskart"}
+              what={oppdaterElement + "_farge"}
+            />
           )}
         </>
       )}
@@ -57,4 +48,4 @@ const Bakgrunnskartlag = ({
   );
 };
 
-export default Bakgrunnskartlag;
+export default BakgrunnInnstillingListeElement;

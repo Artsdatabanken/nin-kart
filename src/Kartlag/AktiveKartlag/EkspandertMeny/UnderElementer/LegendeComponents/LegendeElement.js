@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import VelgFargeBoks from "Innstillinger/FerdigeMiniElement/VelgFargeBoks";
+import VelgFargeBoks from "../../FellesElementer/VelgFargeBoks";
 import LegendeTitleField from "./LegendeTitleField";
 import {
   VisibilityOutlined,
@@ -7,9 +7,8 @@ import {
   KeyboardArrowDown,
   KeyboardArrowUp
 } from "@material-ui/icons";
-import tinycolor from "tinycolor2";
-import ColorPicker from "Innstillinger/FerdigeMiniElement/ColorPicker";
 import språk from "språk";
+import FargeVelger from "../../FellesElementer/FargeVelger";
 
 const LegendeElement = ({
   erSynlig,
@@ -52,12 +51,10 @@ const LegendeElement = ({
       </div>
 
       {showColours && (
-        <ColorPicker
+        <FargeVelger
           color={farge}
-          onChange={farge => {
-            const rgbString = tinycolor(farge.rgb).toRgbString();
-            onUpdateLayerProp(kode, "farge", rgbString);
-          }}
+          onUpdateLayerProp={onUpdateLayerProp}
+          where={kode}
         />
       )}
     </div>

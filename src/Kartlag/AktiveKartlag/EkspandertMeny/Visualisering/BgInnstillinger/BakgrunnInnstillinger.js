@@ -1,9 +1,9 @@
 import { Component, default as React } from "react";
-import Bakgrunnskartlag from "./Bakgrunn/Bakgrunnskartlag";
+import BakgrunnInnstillingListeElement from "./BakgrunnInnstillingListeElement";
 //import Terreng from "./Terreng";
 import { List } from "@material-ui/core";
 
-class BakgrunnsElementer extends Component {
+class BakgrunnInnstillinger extends Component {
   //Duplikat, men ga opp å finne bedre løsning
 
   render() {
@@ -29,7 +29,7 @@ class BakgrunnsElementer extends Component {
         <div className="sidebar_element">
           <h3>Områder</h3>
 
-          <Bakgrunnskartlag
+          <BakgrunnInnstillingListeElement
             onUpdateLayerProp={onUpdateLayerProp}
             oppdaterElement={what + ".vann"}
             tittel="Vann"
@@ -37,7 +37,7 @@ class BakgrunnsElementer extends Component {
             farge={kf.vann_farge}
           />
 
-          <Bakgrunnskartlag
+          <BakgrunnInnstillingListeElement
             onUpdateLayerProp={onUpdateLayerProp}
             oppdaterElement={what + ".land"}
             tittel="Land"
@@ -45,7 +45,7 @@ class BakgrunnsElementer extends Component {
             farge={kf.land_farge}
           />
 
-          <Bakgrunnskartlag
+          <BakgrunnInnstillingListeElement
             onUpdateLayerProp={onUpdateLayerProp}
             oppdaterElement={what + ".transport"}
             tittel="Transport"
@@ -55,7 +55,7 @@ class BakgrunnsElementer extends Component {
         </div>
         <div className="sidebar_element">
           <h3>Etiketter</h3>
-          <Bakgrunnskartlag
+          <BakgrunnInnstillingListeElement
             onUpdateLayerProp={onUpdateLayerProp}
             oppdaterElement={what + ".vann_navn"}
             tittel="Vann"
@@ -63,14 +63,14 @@ class BakgrunnsElementer extends Component {
             farge={kf.vann_navn_farge}
           />
 
-          <Bakgrunnskartlag
+          <BakgrunnInnstillingListeElement
             onUpdateLayerProp={onUpdateLayerProp}
             oppdaterElement={what + ".sted_navn"}
             tittel="Steder"
             erSynlig={kf.sted_navn}
             farge={kf.sted_navn_farge}
           />
-          <Bakgrunnskartlag
+          <BakgrunnInnstillingListeElement
             onUpdateLayerProp={onUpdateLayerProp}
             oppdaterElement={what + ".transport_navn"}
             tittel="Transport"
@@ -80,21 +80,21 @@ class BakgrunnsElementer extends Component {
         </div>
         <div className="sidebar_element">
           <h3>Administrative grenser</h3>
-          <Bakgrunnskartlag
+          <BakgrunnInnstillingListeElement
             onUpdateLayerProp={onUpdateLayerProp}
             oppdaterElement={what + ".landegrense"}
             tittel="Riksgrense"
             erSynlig={kf.landegrense}
             farge={kf.landegrense_farge}
           />
-          <Bakgrunnskartlag
+          <BakgrunnInnstillingListeElement
             onUpdateLayerProp={onUpdateLayerProp}
             oppdaterElement={what + ".fylkesgrense"}
             tittel="Fylkesgrense"
             erSynlig={kf.fylkesgrense}
             farge={kf.fylkesgrense_farge}
           />
-          <Bakgrunnskartlag
+          <BakgrunnInnstillingListeElement
             onUpdateLayerProp={onUpdateLayerProp}
             oppdaterElement={what + ".kommunegrense"}
             tittel="Kommunegrense"
@@ -107,4 +107,4 @@ class BakgrunnsElementer extends Component {
   }
 }
 
-export default BakgrunnsElementer;
+export default BakgrunnInnstillinger;

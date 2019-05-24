@@ -1,11 +1,8 @@
 import React from "react";
-import TemaMeny from "../../Bakgrunn/TemaMeny/TemaMeny";
-import BakgrunnsElementer from "Innstillinger/Undermenyer/BakgrunnsMenyer/BakgrunnsElementer";
-import Google from "Innstillinger/Undermenyer/BakgrunnsMenyer/Google";
-import tinycolor from "tinycolor2";
-import ColorPicker from "Innstillinger/FerdigeMiniElement/ColorPicker";
+import BakgrunnInnstillinger from "./Visualisering/BgInnstillinger/BakgrunnInnstillinger";
 import LegendeElementer from "./UnderElementer/LegendeElementer";
-import FargeVelger from "./UnderElementer/FargeVelger";
+import TemaMeny from "./Visualisering/TemaMeny/TemaMeny";
+import FargeVelger from "./FellesElementer/FargeVelger";
 
 const EkspandertInnhold = ({
   kode,
@@ -15,6 +12,8 @@ const EkspandertInnhold = ({
   kartlag,
   settings
 }) => {
+  const current = aktivtFormat.aktivtFormat;
+  const kf = aktivtFormat.format[current];
   return (
     <div>
       {kode === "bakgrunnskart" && theme && (
@@ -30,16 +29,15 @@ const EkspandertInnhold = ({
             <>
               {aktivtFormat.aktivtFormat === "google_hybrid" ||
               aktivtFormat.aktivtFormat === "google_satellite" ? (
-                <div className="sidebar_element">
-                  <h3>Fargefilter for Google-kartbladet</h3>
-                  <Google
-                    kartlag={kartlag}
-                    aktivtFormat={aktivtFormat}
-                    onUpdateLayerProp={onUpdateLayerProp}
-                  />
-                </div>
+                <FargeVelger
+                  color={kf.tint}
+                  onUpdateLayerProp={onUpdateLayerProp}
+                  where={kartlag.kode}
+                  what={"kart.format." + current + ".tint"}
+                  title={"Velg fargetone for kartbladet"}
+                />
               ) : (
-                <BakgrunnsElementer
+                <BakgrunnInnstillinger
                   onUpdateLayerProp={onUpdateLayerProp}
                   aktivtFormat={aktivtFormat}
                 />
