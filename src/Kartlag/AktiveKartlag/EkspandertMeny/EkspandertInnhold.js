@@ -15,7 +15,6 @@ const EkspandertInnhold = ({
 }) => {
   const current = aktivtFormat.aktivtFormat;
   const kf = aktivtFormat.format[current];
-  console.log(kartlag);
   return (
     <div>
       {kode !== "bakgrunnskart" && (
@@ -23,6 +22,7 @@ const EkspandertInnhold = ({
           onUpdateLayerProp={onUpdateLayerProp}
           where={kartlag.kode}
           format={kartlag.kart.format}
+          aktvtKartlagFormat={kartlag.kart.aktivtFormat}
         />
       )}
 
