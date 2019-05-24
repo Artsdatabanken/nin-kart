@@ -11,6 +11,7 @@ class BakgrunnInnstillinger extends Component {
     const current = aktivtFormat.aktivtFormat;
     const kf = aktivtFormat.format[current];
     const what = "kart.format." + current;
+    console.log(kf);
 
     return (
       <List>
@@ -53,31 +54,7 @@ class BakgrunnInnstillinger extends Component {
             farge={kf.transport_farge}
           />
         </div>
-        <div className="sidebar_element">
-          <h3>Etiketter</h3>
-          <BakgrunnInnstillingListeElement
-            onUpdateLayerProp={onUpdateLayerProp}
-            oppdaterElement={what + ".vann_navn"}
-            tittel="Vann"
-            erSynlig={kf.vann_navn}
-            farge={kf.vann_navn_farge}
-          />
 
-          <BakgrunnInnstillingListeElement
-            onUpdateLayerProp={onUpdateLayerProp}
-            oppdaterElement={what + ".sted_navn"}
-            tittel="Steder"
-            erSynlig={kf.sted_navn}
-            farge={kf.sted_navn_farge}
-          />
-          <BakgrunnInnstillingListeElement
-            onUpdateLayerProp={onUpdateLayerProp}
-            oppdaterElement={what + ".transport_navn"}
-            tittel="Transport"
-            erSynlig={kf.transport_navn}
-            farge={kf.transport_navn_farge}
-          />
-        </div>
         <div className="sidebar_element">
           <h3>Administrative grenser</h3>
           <BakgrunnInnstillingListeElement
@@ -100,6 +77,37 @@ class BakgrunnInnstillinger extends Component {
             tittel="Kommunegrense"
             erSynlig={kf.kommunegrense}
             farge={kf.kommunegrense_farge}
+          />
+        </div>
+
+        <div className="sidebar_element">
+          <h3>Etiketter</h3>
+          <BakgrunnInnstillingListeElement
+            onUpdateLayerProp={onUpdateLayerProp}
+            oppdaterElement={what + ".vann_navn"}
+            tittel="Vann"
+            erSynlig={kf.vann_navn}
+            farge={kf.vann_navn_farge}
+            omriss={kf.vann_navn_stroke_farge}
+          />
+
+          <BakgrunnInnstillingListeElement
+            onUpdateLayerProp={onUpdateLayerProp}
+            oppdaterElement={what + ".sted_navn"}
+            tittel="Steder"
+            erSynlig={kf.sted_navn}
+            farge={kf.sted_navn_farge}
+            omriss={kf.sted_navn_stroke_farge}
+            stroke={kf.sted_navn_stroke_width}
+          />
+
+          <BakgrunnInnstillingListeElement
+            onUpdateLayerProp={onUpdateLayerProp}
+            oppdaterElement={what + ".transport_navn"}
+            tittel="Transport"
+            erSynlig={kf.transport_navn}
+            farge={kf.transport_navn_farge}
+            omriss={kf.transport_navn_stroke_farge}
           />
         </div>
       </List>

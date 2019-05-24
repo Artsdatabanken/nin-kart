@@ -42,7 +42,6 @@ const AktivtKartlagElement = ({
                 theme={theme}
                 setTheme={setTheme}
                 setSettings={setSettings}
-                context={context}
                 bbox={bbox}
                 onFitBounds={onFitBounds}
                 onRemoveSelectedLayer={onRemoveSelectedLayer}
