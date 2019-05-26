@@ -1,12 +1,21 @@
 /* Normalize across browsers */
+.top_sidebar_background {
+  height: 56px;
+  position: absolute;
+  width: 408px;
+  background: white;
+  z-index: -1;
+  border-bottom: 1px solid #eaeaea;
+}
 
 .sidebar {
   position: fixed;
-  height: 100vh;
+  height: calc(100vh - 104px);
   overflow-x: hidden;
   max-width: 408px;
   background: #fbfbfb;
   width: 100%;
+  margin-top: 56px;
 }
 
 .sidebar div {
@@ -14,15 +23,11 @@
   margin: 0px;
 }
 
-@media only screen and (max-width: 678px) {
+@media only screen and (max-width: 768px) {
+  .top_sidebar_background,
   .sidebar {
     width: 100%;
     max-width: 100%;
-    padding-top: 56px;
-  }
-
-  .panel {
-    padding-bottom: 55px;
   }
 }
 
@@ -148,7 +153,7 @@
   margin: 0px;
 }
 
-@media only screen and (min-width: 678px) {
+@media only screen and (min-width: 768px) {
   .page_topic_header {
     height: 60px;
     width: 100%;

@@ -33,7 +33,6 @@ class LegendeElementer extends Component {
         />
       );
     }
-
     return (
       <SettingsContext.Consumer>
         {context => (
@@ -51,7 +50,9 @@ class LegendeElementer extends Component {
                         tittel={språk(node.tittel)}
                         undertittel={context.visKoder && kode}
                         farge={node.farge}
-                        erSynlig={node.erSynlig || true}
+                        erSynlig={
+                          node.hasOwnProperty("erSynlig") ? node.erSynlig : true
+                        }
                         kode={kode}
                         goToColourMenu={() => {
                           history.push(

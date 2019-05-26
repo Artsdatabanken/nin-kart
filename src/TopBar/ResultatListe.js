@@ -1,7 +1,7 @@
-import { Divider, List, ListItem, ListItemText } from "@material-ui/core";
+import { Divider, ListItem, ListItemText } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import React, { Component } from "react";
-import Bildeavatar from "./Bildeavatar";
+import Bildeavatar from "../Kodetre/Kodeliste/Bildeavatar";
 
 const styles = {};
 
@@ -23,8 +23,7 @@ class ResultatListe extends Component {
     if (!searchResults) return null;
     if (searchResults.length <= 0) return null;
     return (
-      <List
-        style={{ paddingTop: 0, paddingBottom: 0 }}
+      <div
         //className="resultatliste" className={abc("resultatliste", isSearching)}
         //className="resultatliste"
         className="resultatliste mobile_active"
@@ -37,9 +36,14 @@ class ResultatListe extends Component {
                 button={true}
                 className={classes.listitem}
                 onMouseDown={() => onSelect(item)}
+                onKeyDown={e => {
+                  if (e.keyCode === 13) {
+                    onSelect(item);
+                  }
+                }}
                 key={item.url}
               >
-                <Bildeavatar kode={item.kode} url={item.url} />
+                <Bildeavatar url={item.url} />
                 <ListItemText classes={{ primary: classes.text }}>
                   {ResultatListe.highlightMatch(navn, query, classes)}
                 </ListItemText>
@@ -56,7 +60,7 @@ class ResultatListe extends Component {
             </React.Fragment>
           );
         })}
-      </List>
+      </div>
     );
   }
 
