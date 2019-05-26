@@ -21,8 +21,8 @@ if [ "${BRANCH}" == "master" ]
   echo "This branch will not be deployed, since it's not the master branch."
 fi
 #Posting message to pull request in GitHub
-if [ "${TRAVIS_PULL_REQUEST}" != "false" ]
- then
- echo "Posting to github ..."
- curl -H "Authorization: token ${GITHUB_TOKEN}" -X POST -d "{\"body\": \"${github_message}\"}" "https://api.github.com/repos/${TRAVIS_REPO_SLUG}/issues/${TRAVIS_PULL_REQUEST}/comments"
-fi
+#if [ "${TRAVIS_PULL_REQUEST}" != "false" ]
+#then
+#echo "Posting to github ..."
+#curl -H "Authorization: token ${GITHUB_TOKEN}" -X POST -d "{\"body\": \"${github_message}\"}" "https://api.github.com/repos/${TRAVIS_REPO_SLUG}/issues/${TRAVIS_PULL_REQUEST}/comments"
+#fi
