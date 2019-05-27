@@ -1,5 +1,3 @@
-import ResponsivtVindu from "./ResponsivtVindu";
-import HamburgerMeny from "./HamburgerMeny/HamburgerMeny";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import "./style/App.css";
@@ -10,16 +8,16 @@ import "./style/FargeMenyer.css";
 import Grunnkart from "./Grunnkart/Grunnkart";
 import ForsideInformasjon from "./Informasjon/ForsideInformasjon";
 import SettingsContainer from "./SettingsContainer";
-
+import HamburgerMeny from "./HamburgerMeny/HamburgerMeny";
+import MobileNavigation from "MobileNavigation/MobileNavigation";
 const App = () => {
   return (
     <BrowserRouter baseName={process.env.PUBLIC_URL}>
       <SettingsContainer>
-        <ResponsivtVindu>
-          <Grunnkart />
-          <ForsideInformasjon />
-          <HamburgerMeny />
-        </ResponsivtVindu>
+        <Grunnkart />
+        <ForsideInformasjon />
+        <HamburgerMeny />
+        <MobileNavigation />
       </SettingsContainer>
     </BrowserRouter>
   );

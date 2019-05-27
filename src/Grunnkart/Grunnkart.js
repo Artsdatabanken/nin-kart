@@ -1,36 +1,12 @@
 import React from "react";
 import { withRouter } from "react-router";
-import { withStyles } from "@material-ui/core";
 import backend from "Funksjoner/backend";
 import { SettingsContext } from "../SettingsContext";
 import KatalogFane from "../KatalogFane";
 import bakgrunnskarttema from "./bakgrunnskarttema";
 import TopBar from "../TopBar/TopBar";
 import Kartlag from "../Kartlag/Kartlag";
-import MobileNavigation from "../MobileNavigation/MobileNavigation";
 import Kart from "../Kart/LeafletTangram";
-
-const styles = {
-  rot: {
-    backgroundColor: "#f5f5f5",
-    color: "hsla(0, 0%, 0%, 0.87)",
-    boxShadow: "0 0 20px rgba(0, 0, 0, 0.3)",
-    position: "fixed",
-    left: 0,
-    border: 1,
-    width: 408,
-    height: "100vh",
-    zIndex: -10,
-    pointerEvents: "auto",
-    display: "flex",
-    flexDirection: "column"
-  },
-  transparent: {
-    backgroundColor: "transparent",
-    boxShadow: "none",
-    pointerEvents: "none"
-  }
-};
 
 class Grunnkart extends React.Component {
   constructor(props) {
@@ -287,7 +263,6 @@ class Grunnkart extends React.Component {
                   onMouseLeave={this.handleMouseLeave}
                 />
               </div>
-              <MobileNavigation />
             </>
           );
         }}
@@ -308,4 +283,4 @@ class Grunnkart extends React.Component {
   static contextType = SettingsContext;
 }
 
-export default withRouter(withStyles(styles)(Grunnkart));
+export default withRouter(Grunnkart);
