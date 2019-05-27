@@ -16,8 +16,8 @@ class FargeVelger extends Component {
 
     return (
       <div className="kartlag_submenu">
-        <h1>{title}</h1>
-        <h2>Fargekode: {color}</h2>
+        <h3>{title}</h3>
+        {/*<h4>Fargekode: {color}</h4>*/}
         <ColorPicker
           color={color}
           alpha

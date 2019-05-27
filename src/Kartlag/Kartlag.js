@@ -28,7 +28,7 @@ class Kartlag extends React.Component {
                   <h1 className="sidebar_title">Kartlag</h1>
                 </div>
                 <div className="sidebar_element">
-                  <h3>Innstillinger</h3>
+                  <h2>Innstillinger</h2>
                   <ul className="kartlag_list">
                     <AktivtKartlagElement
                       kartlag={koder["bakgrunnskart"]}
@@ -39,7 +39,7 @@ class Kartlag extends React.Component {
                 </div>
 
                 <div className="sidebar_element">
-                  <h3>Mine Kartlag</h3>
+                  <h2>Mine Kartlag</h2>
                   <ul className="kartlag_list">
                     {keys.map(fkode => {
                       const kartlag = koder[fkode];
@@ -61,7 +61,7 @@ class Kartlag extends React.Component {
                 </div>
 
                 <div className="sidebar_element">
-                  <h3>Historikk</h3>
+                  <h2>Historikk</h2>
 
                   {Object.keys(navigation_history).map(item => {
                     const node = navigation_history[item];

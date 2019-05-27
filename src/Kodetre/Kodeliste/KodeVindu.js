@@ -60,6 +60,7 @@ const KodeVindu = ({
   const gradientLength = meta.gradient
     ? Object.entries(meta.gradient).length
     : 0;
+
   const flaggLength = meta.flagg ? Object.entries(meta.flagg).length : 0;
   return (
     <SettingsContext.Consumer>

@@ -36,6 +36,7 @@ Even tho we don't a of now support IE X)
 
 /* Re-add padding where wanted */
 .kartlag h3,
+.kartlag h2,
 .kartlag h1,
 .kartlag_header {
   padding-left: 20px;
@@ -46,7 +47,6 @@ Even tho we don't a of now support IE X)
   padding: 10px;
   margin: 5px;
   border-bottom: 1px solid #e4f0f2;
-  border-top: 1px solid #edf4f5;
 }
 
 .kartlag_submenu h1,

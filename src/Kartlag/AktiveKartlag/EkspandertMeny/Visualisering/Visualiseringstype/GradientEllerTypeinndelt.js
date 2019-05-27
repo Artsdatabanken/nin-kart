@@ -9,34 +9,43 @@ const matchName = {
   gradient: "gradient",
   raster_ruter: "Ruter"
 };
-
 const GradientEllerTypeinndelt = ({
   onUpdateLayerProp,
   where,
   format,
   aktvtKartlagFormat
 }) => {
+  const optionNumbers = Object.keys(format).length;
   return (
-    <div className="kartlag_label_liste">
-      <div className="sidebar_element">
-        <h3>Visualiseringstype</h3>
-      </div>
-
-      {Object.keys(format).map(possible_format => (
-        <label key={possible_format}>
-          <input
-            type="radio"
-            name="visningstype"
-            value={possible_format}
-            checked={aktvtKartlagFormat === possible_format}
-            onChange={e => {
-              onUpdateLayerProp(where, "kart.aktivtFormat", possible_format);
-            }}
-          />
-          {matchName[possible_format] || possible_format}
-        </label>
-      ))}
-    </div>
+    <>
+      {optionNumbers > 1 ? (
+        <div className="kartlag_label_liste">
+          <h3>Visualisering:</h3>
+          {Object.keys(format).map(possible_format => (
+            <label key={possible_format}>
+              <input
+                type="radio"
+                name="visningstype"
+                value={possible_format}
+                checked={aktvtKartlagFormat === possible_format}
+                onChange={e => {
+                  onUpdateLayerProp(
+                    where,
+                    "kart.aktivtFormat",
+                    possible_format
+                  );
+                }}
+              />
+              {matchName[possible_format] || possible_format}
+            </label>
+          ))}
+        </div>
+      ) : (
+        <h3>
+          Visualisering: {matchName[aktvtKartlagFormat] || aktvtKartlagFormat}{" "}
+        </h3>
+      )}
+    </>
   );
 };
 export default GradientEllerTypeinndelt;

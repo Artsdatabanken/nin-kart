@@ -10,8 +10,8 @@ class LegendeElementer extends Component {
     return (
       <SettingsContext.Consumer>
         {context => (
-          <div className="sidebar_element widescreen_sidebar_element">
-            <h3>undernivå:</h3>
+          <div className="widescreen_sidebar_element">
+            <h3>Juster underelemeter </h3>
             <ul className="ul_block">
               {Object.keys(barn).map(i => {
                 const node = barn[i];

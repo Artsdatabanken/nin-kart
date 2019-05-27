@@ -17,15 +17,6 @@ const EkspandertInnhold = ({
   const kf = aktivtFormat.format[current];
   return (
     <div>
-      {kode !== "bakgrunnskart" && (
-        <GradientEllerTypeinndelt
-          onUpdateLayerProp={onUpdateLayerProp}
-          where={kartlag.kode}
-          format={kartlag.kart.format}
-          aktvtKartlagFormat={kartlag.kart.aktivtFormat}
-        />
-      )}
-
       {kode === "bakgrunnskart" && theme && (
         <TemaMeny
           onUpdateLayerProp={onUpdateLayerProp}
@@ -55,6 +46,15 @@ const EkspandertInnhold = ({
             </>
           ) : (
             <>
+              <h2>Rediger Innhold</h2>
+
+              <GradientEllerTypeinndelt
+                onUpdateLayerProp={onUpdateLayerProp}
+                where={kartlag.kode}
+                format={kartlag.kart.format}
+                aktvtKartlagFormat={kartlag.kart.aktivtFormat}
+              />
+
               {kartlag.barn.length === 0 ? (
                 <FargeVelger
                   color={kartlag.farge}
