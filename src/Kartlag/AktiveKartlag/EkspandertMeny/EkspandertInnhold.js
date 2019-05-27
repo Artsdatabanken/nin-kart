@@ -15,7 +15,7 @@ const EkspandertInnhold = ({
   settings
 }) => {
   const current = aktivtFormat.aktivtFormat;
-  const kf = aktivtFormat.format[current];
+  const currenctActiveFormatNode = aktivtFormat.format[current];
   return (
     <div>
       {kode === "bakgrunnskart" && theme && (
@@ -32,7 +32,7 @@ const EkspandertInnhold = ({
               {aktivtFormat.aktivtFormat === "google_hybrid" ||
               aktivtFormat.aktivtFormat === "google_satellite" ? (
                 <FargeVelger
-                  color={kf.tint}
+                  color={currenctActiveFormatNode.tint}
                   onUpdateLayerProp={onUpdateLayerProp}
                   where={kartlag.kode}
                   what={"kart.format." + current + ".tint"}
@@ -59,6 +59,7 @@ const EkspandertInnhold = ({
                 onUpdateLayerProp={onUpdateLayerProp}
                 where={kartlag.kode}
                 format={kartlag.kart.format}
+                aktvtKartlagFormat={kartlag.kart.aktivtFormat}
               />
 
               {kartlag.barn.length === 0 ? (

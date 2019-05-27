@@ -16,6 +16,7 @@ const GradientEllerTypeinndelt = ({
   aktvtKartlagFormat
 }) => {
   const optionNumbers = Object.keys(format).length;
+  console.log(aktvtKartlagFormat);
   return (
     <>
       {optionNumbers > 1 ? (
