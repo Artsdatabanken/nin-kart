@@ -4,7 +4,7 @@ import språk from "../../språk";
 import Bildeavatar from "./Bildeavatar";
 import VolumIndikator from "./VolumIndikator";
 import lysOpp from "../../palette/opplyst";
-import prettyKode from "./prettyKode";
+import prettyKode from "Funksjoner/prettyKode";
 
 function hack(symbol, intervall) {
   return intervall.match(/[<>]/) ? intervall : symbol + " " + intervall;

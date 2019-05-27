@@ -3,7 +3,7 @@ import Search from "@material-ui/icons/Search";
 import Close from "@material-ui/icons/Close";
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
-import { SettingsContext } from "../SettingsContext";
+import { SettingsContext } from "SettingsContext";
 
 const abc = (cl, isSearching) => classNames(cl, isSearching && "mobile_active");
 

@@ -1,7 +1,7 @@
-import språk from "../../språk";
+import språk from "språk";
 import React from "react";
 import { Chip, Avatar } from "@material-ui/core";
-import { kontrastfarge } from "../../farger";
+import { kontrastfarge } from "Funksjoner/farger";
 
 import { makeStyles } from "@material-ui/styles";
 

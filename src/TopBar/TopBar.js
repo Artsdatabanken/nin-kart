@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ResultatListe from "./ResultatListe";
-import Searchbar from "../Searchbar/Searchbar";
+import Searchbar from "./Searchbar/Searchbar";
 import axios from "axios";
 import "./../style/TopBar.css";
 import { SettingsContext } from "../SettingsContext";

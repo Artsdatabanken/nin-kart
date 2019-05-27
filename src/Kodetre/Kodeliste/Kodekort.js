@@ -3,7 +3,7 @@ import språk from "../../språk";
 import Tittelblokk from "./Tittelblokk";
 import tinycolor from "tinycolor2";
 
-import { kontrastfarge } from "../../farger";
+import { kontrastfarge } from "Funksjoner/farger";
 
 class Kodekort extends React.Component {
   // This component is used in the top part of the sidebar,

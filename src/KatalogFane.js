@@ -5,7 +5,7 @@ import BorreContainer from "./Borring/BorreContainer";
 import KodeContainer from "./Kodetre/Kodeliste/KodeContainer";
 import språk from "./språk";
 
-import InfoTab from "./InfoTab";
+import InformasjonsFane from "Informasjon/InformasjonsFane";
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class KatalogFane extends React.Component {
@@ -55,7 +55,7 @@ class KatalogFane extends React.Component {
     } = this.props;
 
     if (location.search && location.search.startsWith("?info")) {
-      return <InfoTab />;
+      return <InformasjonsFane />;
     }
     if (location.search && location.search.startsWith("?lng")) {
       const { lng, lat, vis } = this.parseQueryString(location.search);

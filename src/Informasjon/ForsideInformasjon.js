@@ -2,7 +2,7 @@
 import { withRouter } from "react-router";
 import ".././style/Informasjon.css";
 
-const Informasjon = props => {
+const ForsideInformasjon = props => {
   if (props.location.pathname !== "/") return null;
   const [showInfo, setShowInfo] = useState(true);
   return (
@@ -148,4 +148,4 @@ const Informasjon = props => {
   );
 };
 
-export default withRouter(Informasjon);
+export default withRouter(ForsideInformasjon);

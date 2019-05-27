@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import tinycolor from "tinycolor2";
 import { ListItem, Typography } from "@material-ui/core";
 import { SettingsContext } from "../../SettingsContext";
-import prettyKode from "./prettyKode";
+import prettyKode from "Funksjoner/prettyKode";
 
 const gaugeHeight = 7;
 

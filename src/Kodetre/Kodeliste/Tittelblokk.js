@@ -1,6 +1,6 @@
 import React from "react";
 import { SettingsContext } from "../../SettingsContext";
-import prettyKode from "./prettyKode";
+import prettyKode from "Funksjoner/prettyKode";
 import { OpenInNew } from "@material-ui/icons/";
 
 const Tittelblokk = ({

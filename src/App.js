@@ -8,7 +8,7 @@ import "./style/GeografiskSidebar.css";
 import "./style/Kartlag.css";
 import "./style/FargeMenyer.css";
 import Grunnkart from "./Grunnkart/Grunnkart";
-import Informasjon from "./Informasjon/Informasjon";
+import ForsideInformasjon from "./Informasjon/ForsideInformasjon";
 import SettingsContainer from "./SettingsContainer";
 
 const App = () => {
@@ -17,7 +17,7 @@ const App = () => {
       <SettingsContainer>
         <ResponsivtVindu>
           <Grunnkart />
-          <Informasjon />
+          <ForsideInformasjon />
           <HamburgerMeny />
         </ResponsivtVindu>
       </SettingsContainer>
