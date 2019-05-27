@@ -15,24 +15,25 @@ const GradientEllerTypeinndelt = ({
   format,
   aktvtKartlagFormat
 }) => {
-  const optionNumbers = Object.keys(format).length;
-  console.log(aktvtKartlagFormat);
+  const kartformat = format[aktvtKartlagFormat];
+  const { visning, aktivVisning } = kartformat;
+  const optionNumbers = Object.keys(visning).length;
   return (
     <>
       {optionNumbers > 1 ? (
         <div className="kartlag_label_liste">
           <h3>Visualisering:</h3>
-          {Object.keys(format).map(possible_format => (
+          {visning.map(possible_format => (
             <label key={possible_format}>
               <input
                 type="radio"
                 name="visningstype"
                 value={possible_format}
-                checked={aktvtKartlagFormat === possible_format}
+                checked={aktivVisning === possible_format}
                 onChange={e => {
                   onUpdateLayerProp(
                     where,
-                    "kart.aktivtFormat",
+                    "kart.format.raster_gradient.aktivVisning",
                     possible_format
                   );
                 }}
