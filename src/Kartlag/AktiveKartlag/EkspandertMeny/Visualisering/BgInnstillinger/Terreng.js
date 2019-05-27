@@ -9,7 +9,7 @@ import {
 } from "@material-ui/icons";
 import React, { Component } from "react";
 
-import SliderElement from "Innstillinger/FerdigeMiniElement/SliderElement";
+import SliderElement from "GjenbruksElement/SliderElement";
 import Veksle from "Innstillinger/Veksle";
 
 class Terreng extends Component {
@@ -47,7 +47,7 @@ class Terreng extends Component {
                 onUpdateLayerProp(kode, "terreng.vertikaltOverdriv", v)
               }
             />
-            <Veksle
+            {/*<Veksle
               tittel="Etiketter med høydeangivelse av topper"
               toggled={visEtikettTopp}
               icon={<Close />}
@@ -58,9 +58,9 @@ class Terreng extends Component {
                   !visEtikettTopp
                 )
               }
-            />
+            />*/}
             <ListSubheader>Kontur (trinndelt høydevisualisering)</ListSubheader>
-            <Veksle
+            {/*<Veksle
               tittel="Konturlinjer"
               icon={<Equalizer />}
               toggled={visKontur}
@@ -79,7 +79,7 @@ class Terreng extends Component {
                   "terreng.visEtikettKontur",
                   !visEtikettKontur
                 )
-              }
+              }*/}
             />{" "}
           </>
         )}

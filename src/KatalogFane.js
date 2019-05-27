@@ -5,7 +5,6 @@ import BorreContainer from "./Borring/BorreContainer";
 import KodeContainer from "./Kodetre/Kodeliste/KodeContainer";
 import språk from "./språk";
 
-import Panel from "./components/Panel";
 import InfoTab from "./InfoTab";
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
@@ -60,33 +59,27 @@ class KatalogFane extends React.Component {
     }
     if (location.search && location.search.startsWith("?lng")) {
       const { lng, lat, vis } = this.parseQueryString(location.search);
-      return (
-        <Panel>
-          <BorreContainer lng={lng} lat={lat} vis={vis} />
-        </Panel>
-      );
+      return <BorreContainer lng={lng} lat={lat} vis={vis} />;
     }
     const kurve = finnKurvevariabler(this.props.aktiveLag);
     return (
       <>
-        <Panel>
-          <KodeContainer
-            kode={meta && meta.kode}
-            onNavigate={this.handleNavigate}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-            onFitBounds={this.props.onFitBounds}
-            erAktivert={this.props.erAktivert}
-            opplyst={opplyst}
-            onToggleLayer={this.props.onToggleLayer}
-            mapBounds={this.props.mapBounds}
-            language={this.props.language}
-            meta={this.props.meta}
-            onUpdateLayerProp={onUpdateLayerProp}
-            onUpdateMetaProp={onUpdateMetaProp}
-            kurve={kurve}
-          />
-        </Panel>
+        <KodeContainer
+          kode={meta && meta.kode}
+          onNavigate={this.handleNavigate}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          onFitBounds={this.props.onFitBounds}
+          erAktivert={this.props.erAktivert}
+          opplyst={opplyst}
+          onToggleLayer={this.props.onToggleLayer}
+          mapBounds={this.props.mapBounds}
+          language={this.props.language}
+          meta={this.props.meta}
+          onUpdateLayerProp={onUpdateLayerProp}
+          onUpdateMetaProp={onUpdateMetaProp}
+          kurve={kurve}
+        />
         {this.state.error && (
           <Snackbar
             open={true}

@@ -7,7 +7,7 @@ import KatalogFane from "../KatalogFane";
 import bakgrunnskarttema from "./bakgrunnskarttema";
 import TopBar from "../TopBar/TopBar";
 import Kartlag from "../Kartlag/Kartlag";
-import MobileNavigation from "../components/MobileNavigation";
+import MobileNavigation from "../MobileNavigation/MobileNavigation";
 import Kart from "../Kart/LeafletTangram";
 
 const styles = {

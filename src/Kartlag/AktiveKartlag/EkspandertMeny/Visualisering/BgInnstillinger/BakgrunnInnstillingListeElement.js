@@ -2,7 +2,7 @@ import { Switch } from "@material-ui/core";
 import React, { useState } from "react";
 import VelgFargeBoks from "../../FellesElementer/VelgFargeBoks";
 import FargeVelger from "../../FellesElementer/FargeVelger";
-import SliderElement from "Innstillinger/FerdigeMiniElement/SliderElement";
+import SliderElement from "GjenbruksElement/SliderElement";
 
 const BakgrunnInnstillingListeElement = ({
   onUpdateLayerProp,

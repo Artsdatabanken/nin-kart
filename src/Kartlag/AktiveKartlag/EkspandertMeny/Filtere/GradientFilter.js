@@ -1,5 +1,5 @@
 import React from "react";
-import SliderElement from "Innstillinger/FerdigeMiniElement/SliderElement";
+import SliderElement from "GjenbruksElement/SliderElement";
 
 import { SwapVert } from "@material-ui/icons/";
 const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
