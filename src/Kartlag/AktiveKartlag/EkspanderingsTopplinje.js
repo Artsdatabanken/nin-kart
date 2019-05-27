@@ -1,5 +1,5 @@
 import React from "react";
-import språk from "språk";
+import språk from "Funksjoner/språk";
 import {
   KeyboardArrowDown,
   KeyboardArrowUp,

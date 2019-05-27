@@ -1,7 +1,7 @@
 import { Avatar } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import React, { Component } from "react";
-import config from "../../config";
+import config from "Funksjoner/config";
 
 const styles = {
   img: {

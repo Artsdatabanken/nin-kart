@@ -1,5 +1,5 @@
 import tinycolor from "tinycolor2";
-import sysconfig from "../../../../config";
+import sysconfig from "Funksjoner/config";
 import opplyst from "../../../../palette/opplyst";
 
 function drawAll(drawArgs) {

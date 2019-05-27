@@ -1,6 +1,6 @@
 import { ListItem, Typography, ListItemText } from "@material-ui/core";
 import React from "react";
-import språk from "../../språk";
+import språk from "Funksjoner/språk";
 import Bildeavatar from "./Bildeavatar";
 import VolumIndikator from "./VolumIndikator";
 import lysOpp from "../../palette/opplyst";

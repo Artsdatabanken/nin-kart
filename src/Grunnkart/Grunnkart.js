@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router";
 import { withStyles } from "@material-ui/core";
-import backend from "../backend";
+import backend from "Funksjoner/backend";
 import { SettingsContext } from "../SettingsContext";
 import KatalogFane from "../KatalogFane";
 import bakgrunnskarttema from "./bakgrunnskarttema";

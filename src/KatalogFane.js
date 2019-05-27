@@ -3,7 +3,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import BorreContainer from "./Borring/BorreContainer";
 import KodeContainer from "./Kodetre/Kodeliste/KodeContainer";
-import språk from "./språk";
+import språk from "Funksjoner/språk";
 
 import InformasjonsFane from "Informasjon/InformasjonsFane";
 

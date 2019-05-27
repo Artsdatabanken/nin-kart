@@ -1,4 +1,4 @@
-import språk from "../../språk";
+import språk from "Funksjoner/språk";
 import React, { Component } from "react";
 import tinycolor from "tinycolor2";
 import { ListItem, Typography } from "@material-ui/core";

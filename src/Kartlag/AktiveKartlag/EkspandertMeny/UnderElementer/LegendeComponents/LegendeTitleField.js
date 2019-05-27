@@ -1,4 +1,4 @@
-import språk from "språk";
+import språk from "Funksjoner/språk";
 import React from "react";
 
 class LegendeTitleField extends React.Component {

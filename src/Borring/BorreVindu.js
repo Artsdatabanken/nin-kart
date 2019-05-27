@@ -10,7 +10,7 @@ import { withRouter } from "react-router";
 import Borring from "./Borring";
 import Sted from "./Sted";
 import Kilde from "../Kilde";
-import config from "../config";
+import config from "Funksjoner/config";
 import "./borre.css";
 
 const styles = {};

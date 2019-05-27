@@ -1,5 +1,5 @@
 import React from "react";
-import backend from "../../backend";
+import backend from "Funksjoner/backend";
 import KodeVindu from "./KodeVindu";
 
 // Informasjon om kode

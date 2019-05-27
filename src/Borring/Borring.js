@@ -1,4 +1,4 @@
-import backend from "../backend";
+import backend from "Funksjoner/backend";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { SettingsContext } from "../SettingsContext";

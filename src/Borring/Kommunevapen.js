@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import config from "../config";
+import config from "Funksjoner/config";
 
 class Kommunevapen extends Component {
   render() {

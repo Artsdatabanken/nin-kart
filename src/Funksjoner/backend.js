@@ -1,5 +1,5 @@
-import { wgs84ToUtm33 } from "./projection";
-import config from "./config";
+import { wgs84ToUtm33 } from "Funksjoner/projection";
+import config from "Funksjoner/config";
 
 class Backend {
   static async getPromise(url) {

@@ -7,7 +7,7 @@ import {
   KeyboardArrowDown,
   KeyboardArrowUp
 } from "@material-ui/icons";
-import språk from "språk";
+import språk from "Funksjoner/språk";
 import FargeVelger from "../../FellesElementer/FargeVelger";
 
 const LegendeElement = ({

@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router";
 import Kommunevapen from "./Kommunevapen";
-import config from "../config";
+import config from "Funksjoner/config";
 
 function formatElevation(elevation) {
   if (!elevation) return "";

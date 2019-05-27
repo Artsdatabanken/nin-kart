@@ -1,4 +1,4 @@
-import språk from "språk";
+import språk from "Funksjoner/språk";
 import React from "react";
 import { Chip, Avatar } from "@material-ui/core";
 import { kontrastfarge } from "Funksjoner/farger";

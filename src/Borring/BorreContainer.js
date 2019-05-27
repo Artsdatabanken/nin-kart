@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import backend from "../backend";
+import backend from "Funksjoner/backend";
 import BorreAdapter from "./BorreAdapter";
 
 class BorreContainer extends Component {

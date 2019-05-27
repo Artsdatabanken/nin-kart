@@ -1,4 +1,4 @@
-import sysconfig from "../../../../config";
+import sysconfig from "Funksjoner/config";
 import lagGradientrampe from "../../../../palette/gradientrampe";
 
 function drawAll(drawArgs) {

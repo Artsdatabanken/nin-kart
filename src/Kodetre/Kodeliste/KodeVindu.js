@@ -1,7 +1,7 @@
 import Detaljeringsgrad from "./Detaljeringsgrad";
 import Overordnet from "./Overordnet";
 import React, { useState, useEffect } from "react";
-import språk from "../../språk";
+import språk from "Funksjoner/språk";
 import Graf from "./Graf";
 import Flagg from "./Flagg";
 import Kodekort from "./Kodekort";

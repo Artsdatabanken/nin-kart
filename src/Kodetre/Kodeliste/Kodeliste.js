@@ -1,7 +1,7 @@
 import { Typography, List, ListSubheader } from "@material-ui/core";
 import React from "react";
 import { SettingsContext } from "../../SettingsContext";
-import språk from "../../språk";
+import språk from "Funksjoner/språk";
 import Kodelisteelement from "./Kodelisteelement";
 
 class Kodeliste extends React.Component {
