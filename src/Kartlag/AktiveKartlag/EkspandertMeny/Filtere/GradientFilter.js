@@ -89,3 +89,14 @@ const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
   );
 };
 export default GradientFilter;
+
+{
+  /*
+  navnPåUndernivå(kode) {
+    const nivåer = typesystem.hentNivaa(kode + "-1");
+    if (nivåer.length <= 0) return "underelementer";
+    const nivå = nivåer[0];
+    return nivå.endsWith("e") ? nivå + "r" : nivå;
+  }
+ */
+}

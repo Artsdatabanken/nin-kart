@@ -19,7 +19,6 @@ import {
   Info,
   Pets,
   Landscape,
-  BubbleChart,
   Layers,
   AssignmentInd
 } from "@material-ui/icons";
