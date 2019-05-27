@@ -59,7 +59,6 @@ const EkspandertInnhold = ({
                 onUpdateLayerProp={onUpdateLayerProp}
                 where={kartlag.kode}
                 format={kartlag.kart.format}
-                aktvtKartlagFormat={kartlag.kart.aktivtFormat}
               />
 
               {kartlag.barn.length === 0 ? (

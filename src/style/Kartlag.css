@@ -120,6 +120,7 @@ Even tho we don't a of now support IE X)
   height: 16pt;
 }
 
+.kartlag .slider_setting,
 .kartlag_label_liste label {
   display: block;
   padding: 20px;
