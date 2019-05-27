@@ -3,6 +3,7 @@ import BakgrunnInnstillinger from "./Visualisering/BgInnstillinger/BakgrunnInnst
 import LegendeElementer from "./UnderElementer/LegendeElementer";
 import TemaMeny from "./Visualisering/TemaMeny/TemaMeny";
 import GradientEllerTypeinndelt from "./Visualisering/VisualiseringsType/GradientEllerTypeinndelt";
+import GradientFilter from "./Filtere/GradientFilter.js";
 import FargeVelger from "./FellesElementer/FargeVelger";
 
 const EkspandertInnhold = ({
@@ -47,6 +48,12 @@ const EkspandertInnhold = ({
           ) : (
             <>
               <h2>Rediger Innhold</h2>
+
+              <GradientFilter
+                kartlag={kartlag}
+                onUpdateLayerProp={onUpdateLayerProp}
+                kode={kode}
+              />
 
               <GradientEllerTypeinndelt
                 onUpdateLayerProp={onUpdateLayerProp}
