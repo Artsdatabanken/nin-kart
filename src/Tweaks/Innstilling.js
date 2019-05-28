@@ -35,4 +35,4 @@ const Innstilling = ({
   </ListItem>
 );
 
-export default withTheme()(Innstilling);
+export default withTheme(Innstilling);

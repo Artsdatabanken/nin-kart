@@ -13,7 +13,7 @@ const ResponsivtVindu = ({ children }) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [settings]);
   return children;
 };
 

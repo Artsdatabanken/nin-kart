@@ -19,4 +19,4 @@ const VolumIndikator = ({ areal, størsteAreal, theme }) => {
     />
   );
 };
-export default withTheme()(VolumIndikator);
+export default withTheme(VolumIndikator);

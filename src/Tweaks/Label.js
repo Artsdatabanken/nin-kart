@@ -20,4 +20,4 @@ const Label = ({ children, style, disabled, theme }) => (
   </div>
 );
 
-export default withTheme()(Label);
+export default withTheme(Label);

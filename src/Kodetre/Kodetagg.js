@@ -27,4 +27,4 @@ class Kodetagg extends React.Component {
   }
 }
 
-export default withStyles(styles)(withTheme()(Kodetagg));
+export default withStyles(styles)(withTheme(Kodetagg));

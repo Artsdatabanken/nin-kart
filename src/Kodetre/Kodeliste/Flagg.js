@@ -12,8 +12,8 @@ const useStyles = makeStyles({
 });
 
 const Flagg = ({ flagg, onNavigate }) => {
-  if (!flagg) return null;
   const classes = useStyles();
+  if (!flagg) return null;
   return Object.keys(flagg).map(kode => {
     const { tittel, url, farge } = flagg[kode];
     const parts = kode.split("-");

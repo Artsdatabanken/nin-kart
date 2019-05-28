@@ -88,4 +88,4 @@ class Terreng extends Component {
   }
 }
 
-export default withTheme()(Terreng);
+export default withTheme(Terreng);

@@ -61,4 +61,4 @@ const Innstillinger = ({
   </>
 );
 
-export default withStyles(styles)(withTheme()(Innstillinger));
+export default withStyles(styles)(withTheme(Innstillinger));

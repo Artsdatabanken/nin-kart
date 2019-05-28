@@ -75,4 +75,4 @@ class Gradient extends Component {
   }
 }
 
-export default withRouter(withTheme()(Gradient));
+export default withRouter(withTheme(Gradient));
