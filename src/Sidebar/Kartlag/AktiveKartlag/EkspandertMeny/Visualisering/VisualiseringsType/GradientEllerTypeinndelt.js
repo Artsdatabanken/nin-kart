@@ -17,7 +17,10 @@ const GradientEllerTypeinndelt = ({
 }) => {
   const kartformat = format[aktvtKartlagFormat];
   const { visning, aktivVisning } = kartformat;
-  const optionNumbers = Object.keys(visning).length;
+  let optionNumbers = 0;
+  if (visning !== undefined) {
+    optionNumbers = Object.keys(visning).length;
+  }
   return (
     <>
       {optionNumbers > 1 ? (

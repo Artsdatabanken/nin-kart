@@ -3,7 +3,7 @@ import React from "react";
 import språk from "Funksjoner/språk";
 import Bildeavatar from "./Bildeavatar";
 import VolumIndikator from "./VolumIndikator";
-import lysOpp from "../../palette/opplyst";
+import lysOpp from "Funksjoner/palette/opplyst";
 import prettyKode from "Funksjoner/prettyKode";
 
 function hack(symbol, intervall) {

@@ -1,11 +1,10 @@
 import { Snackbar } from "@material-ui/core";
 import React from "react";
 import { withRouter } from "react-router-dom";
-import BorreContainer from "./Borring/BorreContainer";
-import KodeContainer from "./Kodetre/Kodeliste/KodeContainer";
+import Lokalitet from "Sidebar/Lokalitet/Lokalitet";
+import KodeContainer from "Kodetre/Kodeliste/KodeContainer";
 import språk from "Funksjoner/språk";
-
-import InformasjonsFane from "Informasjon/InformasjonsFane";
+import InformasjonsFane from "Sidebar/Informasjon/InformasjonsFane";
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class KatalogFane extends React.Component {
@@ -59,7 +58,7 @@ class KatalogFane extends React.Component {
     }
     if (location.search && location.search.startsWith("?lng")) {
       const { lng, lat, vis } = this.parseQueryString(location.search);
-      return <BorreContainer lng={lng} lat={lat} vis={vis} />;
+      return <Lokalitet lng={lng} lat={lat} vis={vis} />;
     }
     const kurve = finnKurvevariabler(this.props.aktiveLag);
     return (

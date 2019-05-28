@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SettingsContext } from "../../SettingsContext";
+import { SettingsContext } from "SettingsContext";
 import EkspandertUnderMeny from "./EkspandertMeny/EkspandertUnderMeny";
 import EkspandertInnhold from "./EkspandertMeny/EkspandertInnhold";
 import EkspanderingsTopplinje from "./EkspanderingsTopplinje";

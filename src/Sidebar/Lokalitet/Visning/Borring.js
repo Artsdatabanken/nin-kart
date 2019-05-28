@@ -1,7 +1,7 @@
 import backend from "Funksjoner/backend";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
-import { SettingsContext } from "../SettingsContext";
+import { SettingsContext } from "SettingsContext";
 import Seksjon from "./Seksjon";
 
 class Borring extends Component {

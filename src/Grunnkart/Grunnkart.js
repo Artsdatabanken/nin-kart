@@ -2,10 +2,10 @@ import React from "react";
 import { withRouter } from "react-router";
 import backend from "Funksjoner/backend";
 import { SettingsContext } from "../SettingsContext";
-import KatalogFane from "../KatalogFane";
+import KatalogFane from "Sidebar/Katalog/KatalogFane";
 import bakgrunnskarttema from "./bakgrunnskarttema";
 import TopBar from "../TopBar/TopBar";
-import Kartlag from "../Kartlag/Kartlag";
+import Kartlag from "Sidebar/Kartlag/Kartlag";
 import Kart from "../Kart/LeafletTangram";
 
 class Grunnkart extends React.Component {

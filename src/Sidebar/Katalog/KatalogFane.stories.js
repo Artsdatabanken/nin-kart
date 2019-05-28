@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
 import { muiTheme } from "storybook-addon-material-ui";
-import KatalogFane from "./KatalogFane";
+import KatalogFane from "Sidebar/Katalog/KatalogFane";
 
 storiesOf("VenstreVindu", module)
   .addDecorator(muiTheme())

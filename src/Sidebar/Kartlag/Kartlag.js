@@ -1,5 +1,5 @@
 import React from "react";
-import { SettingsContext } from "../SettingsContext";
+import { SettingsContext } from "SettingsContext";
 import AktivtKartlagElement from "./AktiveKartlag/AktivtKartlagElement";
 import HistorikkListeElement from "./Historikk/HistorikkListeElement";
 
