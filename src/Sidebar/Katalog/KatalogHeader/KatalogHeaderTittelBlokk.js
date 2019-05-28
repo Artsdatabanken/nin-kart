@@ -1,18 +1,19 @@
 import React from "react";
-import { SettingsContext } from "../../SettingsContext";
+import { SettingsContext } from "SettingsContext";
 import prettyKode from "Funksjoner/prettyKode";
 import { OpenInNew } from "@material-ui/icons/";
+import språk from "Funksjoner/språk";
 
-const Tittelblokk = ({
-  tittel,
-  kode,
-  nivå,
-  overordnet,
-  children,
-  bbox,
-  onFitBounds
-}) => {
+const KatalogHeaderTittelBlokk = ({ meta, children, onFitBounds }) => {
+  if (!meta) return null;
+  const { kode, bbox, nivå, overordnet } = meta;
+
+  /*
+  Contains Title block only.
+  */
   const pkode = prettyKode(kode);
+  const tittel = språk(meta.tittel);
+
   return (
     <SettingsContext.Consumer>
       {context => (
@@ -44,5 +45,4 @@ const Tittelblokk = ({
     </SettingsContext.Consumer>
   );
 };
-
-export default Tittelblokk;
+export default KatalogHeaderTittelBlokk;

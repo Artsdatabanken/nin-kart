@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import språk from "Funksjoner/språk";
 import Graf from "./Graf";
 import Flagg from "./Flagg";
-import Kodekort from "./Kodekort";
 import Kodeliste from "./Kodeliste";
 import Statistikk from "./Statistikk";
 import Gradienter from "./Gradienter";
@@ -43,14 +42,11 @@ const KodeVindu = ({
   const {
     kode,
     url,
-    farge,
     prefiks,
     bbox,
     ingress,
     infoUrl,
     classes,
-    tittel,
-    nivå,
     overordnet,
     antallNaturomrader,
     antallArter,
@@ -67,21 +63,6 @@ const KodeVindu = ({
       {context => {
         return (
           <div>
-            <Kodekort
-              kode={kode}
-              farge={farge}
-              url={url}
-              prefiks={prefiks}
-              bbox={bbox}
-              onFitBounds={onFitBounds}
-              tittel={tittel}
-              nivå={nivå}
-              overordnet={overordnet}
-              onNavigate={onNavigate}
-              erAktivert={erAktivert}
-              onToggleLayer={onToggleLayer}
-              bilde={meta.bilde}
-            />
             {kode === "NN-LA-TI" && (
               <Detaljeringsgrad
                 onUpdateLayerProp={onUpdateLayerProp}

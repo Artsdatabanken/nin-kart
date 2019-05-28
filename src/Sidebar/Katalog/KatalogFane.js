@@ -6,6 +6,7 @@ import KodeVindu from "Kodetre/Kodeliste/KodeVindu";
 import InformasjonsFane from "Sidebar/Informasjon/InformasjonsFane";
 import parseQueryString from "./KatalogFunksjoner/parseQueryString";
 import finnKurvevariabler from "./KatalogFunksjoner/finnKurvevariabler";
+import KatalogHeader from "./KatalogHeader/KatalogHeader";
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class KatalogFane extends React.Component {
@@ -44,6 +45,7 @@ class KatalogFane extends React.Component {
     const kurve = finnKurvevariabler(this.props.aktiveLag);
     return (
       <>
+        <KatalogHeader meta={meta} onFitBounds={this.props.onFitBounds} />
         <KodeVindu
           data={data}
           meta={meta}
@@ -58,6 +60,7 @@ class KatalogFane extends React.Component {
           onUpdateMetaProp={onUpdateMetaProp}
           kurve={kurve}
         />
+
         {this.state.error && (
           <Snackbar
             open={true}
