@@ -22,7 +22,7 @@ const KurveContainer = ({ punkt, gradient, children }) => {
         console.error(url, err);
         return {};
       });
-  }, []);
+  }, [gradient, punkt]);
   if (!stats) return <CircularProgress style={{ margin: 24 }} />;
   if (stats.feil)
     return (

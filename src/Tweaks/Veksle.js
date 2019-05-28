@@ -18,4 +18,4 @@ const Veksle = ({ tittel, icon, toggled, disabled, onClick, muiTheme }) => (
   </ListItem>
 );
 
-export default withTheme()(Veksle);
+export default withTheme(Veksle);

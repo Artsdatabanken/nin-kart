@@ -3,8 +3,8 @@ import { withRouter } from "react-router";
 import ".././style/Informasjon.css";
 
 const Informasjon = props => {
-  if (props.location.pathname !== "/") return null;
   const [showInfo, setShowInfo] = useState(true);
+  if (props.location.pathname !== "/") return null;
   return (
     <React.Fragment>
       {showInfo !== "turn off" && (

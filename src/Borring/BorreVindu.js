@@ -165,4 +165,4 @@ function tempHackUrl(url) {
   return url;
 }
 
-export default withRouter(withTheme()(withStyles(styles)(BorreVindu)));
+export default withRouter(withTheme(withStyles(styles)(BorreVindu)));

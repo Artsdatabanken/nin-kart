@@ -70,4 +70,4 @@ class Kartlagelement extends React.Component {
   }
 }
 
-export default withRouter(withTheme()(Kartlagelement));
+export default withRouter(withTheme(Kartlagelement));
