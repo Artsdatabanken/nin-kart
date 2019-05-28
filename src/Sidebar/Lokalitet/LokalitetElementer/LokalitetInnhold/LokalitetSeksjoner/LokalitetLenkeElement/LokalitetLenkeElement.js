@@ -3,7 +3,7 @@ import { withRouter } from "react-router";
 import Flis from "Kodetre/Kodeliste/Flis";
 import { KeyboardArrowRight } from "@material-ui/icons";
 
-const ListeLink = ({
+const LokalitetLenkeElement = ({
   kode,
   primary,
   secondary,
@@ -40,4 +40,4 @@ const ListeLink = ({
   );
 };
 
-export default withRouter(ListeLink);
+export default withRouter(LokalitetLenkeElement);

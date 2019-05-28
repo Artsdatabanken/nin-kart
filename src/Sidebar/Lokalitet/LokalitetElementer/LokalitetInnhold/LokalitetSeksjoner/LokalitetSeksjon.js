@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import ListeLink from "./ListeLink";
+import LokalitetLenkeElement from "./LokalitetLenkeElement/LokalitetLenkeElement";
+import bioklimatiskSonePlural from "Sidebar/Lokalitet/LokalitetFunksjoner/bioklimatiskSonePlural";
+import replaceString from "Sidebar/Lokalitet/LokalitetFunksjoner/replaceString";
 
 function oppsummer(node) {
   let r = [];
@@ -35,14 +37,14 @@ function oppsummer2(node, stack1, r, pkode) {
   }
 }
 
-class Seksjon extends Component {
+class LokalitetSeksjon extends Component {
   render() {
     const { node, kode, visKoder, kategori, onClick, new_object } = this.props;
     const oppsumert_node = oppsummer(node);
     const secondary = oppsumert_node.map(e => this.map(e.verdi));
 
     return (
-      <ListeLink
+      <LokalitetLenkeElement
         new_object={new_object}
         key={kode}
         kode={kode}
@@ -60,39 +62,18 @@ class Seksjon extends Component {
     if (len < 2)
       return (
         <div key={value} className="sidebar_padding">
-          <h4 className="entallsSjekk">{entallsSjekk(value)}</h4>
+          <h4 className="entallsSjekk">{bioklimatiskSonePlural(value)}</h4>
         </div>
       );
 
     const key = oppsumert_node[len - 2];
     return (
       <div key={value} className="sidebar_padding">
-        <h4> {entallsSjekk(key.trim())}</h4>
+        <h4> {bioklimatiskSonePlural(key.trim())}</h4>
         <h5 className="sub_sub_heading">{replaceString(value)}</h5>
       </div>
     );
   }
 }
 
-function entallsSjekk(verdi) {
-  switch (verdi) {
-    case "Bioklimatiske soner":
-      return "Bioklimatisk sone";
-    case "Bioklimatiske seksjoner":
-      return "Bioklimatisk seksjon";
-    default:
-      return verdi;
-  }
-}
-
-function replaceString(verdi) {
-  let string_to_replace = " dekning";
-  switch (verdi) {
-    case "0":
-      return "ingen";
-    default:
-      return verdi.replace(string_to_replace, "");
-  }
-}
-
-export default Seksjon;
+export default LokalitetSeksjon;

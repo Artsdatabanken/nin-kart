@@ -12,7 +12,7 @@ const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
     * For typeinndelt, filtrer vekk irrelevante typer.
 
     */
-  const current = kartlag.kart.format; // current list of layers
+  //const current = kartlag.kart.format; // current list of layers
   //const gradient = Object.keys(current)[0];
   let gradient;
   let filterMin = 0;
@@ -90,8 +90,7 @@ const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
 };
 export default GradientFilter;
 
-{
-  /*
+/*
   navnPåUndernivå(kode) {
     const nivåer = typesystem.hentNivaa(kode + "-1");
     if (nivåer.length <= 0) return "underelementer";
@@ -99,4 +98,3 @@ export default GradientFilter;
     return nivå.endsWith("e") ? nivå + "r" : nivå;
   }
  */
-}

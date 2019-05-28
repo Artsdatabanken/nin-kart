@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import backend from "Funksjoner/backend";
-import Borring from "./Visning/Borring";
-import LokalitetHeader from "./Visning/LokalitetHeader";
+import LokalitetInnhold from "./LokalitetElementer/LokalitetInnhold/LokalitetInnhold";
+import LokalitetHeader from "./LokalitetElementer/LokalitetHeader/LokalitetHeader";
+import dataFlattening from "Sidebar/Lokalitet/LokalitetFunksjoner/dataFlattening";
 
 class Lokalitet extends Component {
   state = { bareAktive: false };
@@ -30,34 +31,11 @@ class Lokalitet extends Component {
     });
   }
 
-  flattenOne(data, current, path) {
-    const key = path.shift();
-    if (!current[key]) return;
-    if (path.length > 0) {
-      this.flattenOne(data, current[key].values, path);
-      return;
-    }
-    const children = current[key].values;
-    delete current[key];
-    Object.entries(children).forEach(e => {
-      const [key, value] = e;
-      data[key] = value;
-    });
-  }
-
-  flattenData(data) {
-    if (!data) return data;
-    this.flattenOne(data, data, ["NA", "NA-LKM"]);
-    this.flattenOne(data, data, ["NA", "NA-BS"]);
-    return data;
-  }
-
   render() {
-    const { lat, lng, vis } = this.props;
+    const { lat } = this.props;
     if (!lat) return null;
-    const { data, sted } = this.state;
-    const borrehull = data;
-    const barn = this.flattenData(borrehull);
+    const { data } = this.state;
+    const barn = dataFlattening(data);
     if (!barn) return null;
     const { AO, prefix, ...andreBarn } = barn;
 
@@ -73,7 +51,7 @@ class Lokalitet extends Component {
             />
           )}
         </div>
-        <Borring barn={this.state.bareAktive ? {} : andreBarn} />
+        <LokalitetInnhold barn={this.state.bareAktive ? {} : andreBarn} />
       </div>
     );
   }
