@@ -25,7 +25,7 @@ import {
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import NavigationChevronLeftDouble from "../Grunnkart/NavigationChevronLeftDouble";
-import BildeAvatar from "../Kodetre/Kodeliste/Bildeavatar";
+import BildeAvatar from "GjenbruksElement/Bildeavatar";
 import Naturvern from "./Naturvern";
 import GitHub from "./GitHub";
 import Innstillinger from "./Innstillinger";

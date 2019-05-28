@@ -10,6 +10,11 @@ const SliderElement = ({
   step,
   onChange
 }) => {
+  /*
+  
+  The basic slider with surrounding wrapper.
+
+  */
   return (
     <div className="slider_setting">
       {tittel && <h4>{tittel}</h4>}

@@ -19,8 +19,17 @@ const styles = {
 };
 
 class BildeAvatar extends Component {
-  // Primarily used to display avatars of searchable content, such as logos in the search menu
-  // And also in the sidebar display box header thing
+  /*
+  
+  Primarily used to display avatars of searchable content, such as logos in the search menu
+  And also in the sidebar display box header thing
+
+  For changes, make sure to test:
+  - result list from the search
+  - hamburger menu 
+  - "kodeliste"
+
+  */
   render() {
     const { farge, farge0, classes, kode, url } = this.props;
     const size = "small";

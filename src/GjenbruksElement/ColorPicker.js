@@ -5,6 +5,12 @@ import { Alpha, Hue, Saturation } from "react-color/lib/components/common";
 import ChromePointer from "react-color/lib/components/slider/SliderPointer";
 
 class ColorPicker extends React.Component {
+  /*
+  
+ The basic colour picker element only.
+ - For the map layer settings, use the local wrapper.
+
+  */
   render() {
     return (
       <div className="colorPicker_container">

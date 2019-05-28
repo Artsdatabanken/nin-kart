@@ -2,47 +2,28 @@ import { Snackbar } from "@material-ui/core";
 import React from "react";
 import { withRouter } from "react-router-dom";
 import Lokalitet from "Sidebar/Lokalitet/Lokalitet";
-import KodeContainer from "Kodetre/Kodeliste/KodeContainer";
-import språk from "Funksjoner/språk";
+import KodeVindu from "Kodetre/Kodeliste/KodeVindu";
 import InformasjonsFane from "Sidebar/Informasjon/InformasjonsFane";
+import parseQueryString from "./KatalogFunksjoner/parseQueryString";
+import finnKurvevariabler from "./KatalogFunksjoner/finnKurvevariabler";
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class KatalogFane extends React.Component {
-  state = { error: "" };
+  dataQueryNumber = 0;
+  state = {
+    error: "",
+    data: {}
+  };
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.meta !== this.props.meta) this.setState({ query: null });
-  }
-
-  tittel(meta, currentItem) {
-    if (meta && meta.tittel) {
-      return språk(meta.tittel);
-    }
-    return null;
-  }
-
-  finnValgtKodeElement(kode) {
-    var item = this.props.meta;
-    Object.keys(this.props.aktiveLag).forEach(id => {
-      const forelder = this.props.aktiveLag[id];
-      if (forelder.kode === kode) item = forelder;
-    });
-    return item;
   }
 
   handleNavigate = url => {
     this.props.history.push("/" + url);
   };
 
-  parseQueryString(query) {
-    query = query.substring(1).split("&");
-    return query.reduce((obj, item) => {
-      const [key, value] = item.split("=");
-      obj[key] = value;
-      return obj;
-    }, {});
-  }
-
   render() {
+    const data = this.state.data;
     const {
       opplyst,
       onMouseEnter,
@@ -57,14 +38,15 @@ class KatalogFane extends React.Component {
       return <InformasjonsFane />;
     }
     if (location.search && location.search.startsWith("?lng")) {
-      const { lng, lat, vis } = this.parseQueryString(location.search);
+      const { lng, lat, vis } = parseQueryString(location.search);
       return <Lokalitet lng={lng} lat={lat} vis={vis} />;
     }
     const kurve = finnKurvevariabler(this.props.aktiveLag);
     return (
       <>
-        <KodeContainer
-          kode={meta && meta.kode}
+        <KodeVindu
+          data={data}
+          meta={meta}
           onNavigate={this.handleNavigate}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
@@ -72,9 +54,6 @@ class KatalogFane extends React.Component {
           erAktivert={this.props.erAktivert}
           opplyst={opplyst}
           onToggleLayer={this.props.onToggleLayer}
-          mapBounds={this.props.mapBounds}
-          language={this.props.language}
-          meta={this.props.meta}
           onUpdateLayerProp={onUpdateLayerProp}
           onUpdateMetaProp={onUpdateMetaProp}
           kurve={kurve}
@@ -91,22 +70,7 @@ class KatalogFane extends React.Component {
       </>
     );
   }
-
   handleCloseSnackbar = () => this.setState({ error: null });
-}
-
-function finnKurvevariabler(aktiveLag) {
-  let r = { punkt: [], gradient: [] };
-  for (const lag of Object.values(aktiveLag)) asn(lag, r);
-  if (r.gradient.length === 0 && r.punkt.length === 0) return null;
-  return r;
-}
-
-function asn(lag, r) {
-  if (!lag) return;
-  if (!lag.kart) return;
-  if (lag.kart.format.raster_gradient) r.gradient.push(lag);
-  if (lag.kart.format.raster_ruter) r.punkt.push(lag);
 }
 
 export default withRouter(KatalogFane);
