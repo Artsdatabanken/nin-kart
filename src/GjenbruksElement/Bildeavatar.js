@@ -1,7 +1,7 @@
 import { Avatar } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import React, { Component } from "react";
-import config from "Funksjoner/config";
+//import config from "Funksjoner/config";
 
 const styles = {
   img: {
@@ -9,12 +9,20 @@ const styles = {
     height: 24,
     position: "relative",
     objectFit: "contain",
-    filter: "drop-shadow(1px 1px 2px #999)"
+    paddingRight: 5
   },
   big: {},
   root: {
     display: "contents",
     borderRadius: 0
+  },
+  small: { width: 24, height: 24, fontSize: 13 },
+  small_noborder: {
+    borderRadius: 0,
+    width: 24,
+    height: 24,
+    fontSize: 13,
+    overflow: "visible"
   }
 };
 
