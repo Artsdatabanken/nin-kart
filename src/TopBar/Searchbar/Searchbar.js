@@ -1,4 +1,4 @@
-//import useStartTyping from "react-use/lib/useStartTyping";
+import useStartTyping from "react-use/lib/useStartTyping";
 import classNames from "classnames";
 import Search from "@material-ui/icons/Search";
 import Close from "@material-ui/icons/Close";
@@ -15,7 +15,7 @@ const Searchbar = ({ query, onQueryChange, hits, setHits }) => {
     setHits([]);
   }
   const inputField = useRef(null);
-  //useStartTyping(() => inputField.current.focus());
+  useStartTyping(() => inputField.current.focus());
 
   return (
     <SettingsContext.Consumer>
