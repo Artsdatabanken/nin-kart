@@ -5,7 +5,7 @@ import {
   ListItemAvatar
 } from "@material-ui/core/";
 import React from "react";
-import språk from "../../språk";
+import språk from "Funksjoner/språk";
 
 const Overordnet = ({ farge, overordnet, onNavigate, classes }) => {
   const r = overordnet.map((item, i) => (

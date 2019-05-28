@@ -93,9 +93,14 @@
   font-size: 18pt;
 }
 
-.sidebar h2 {
+.sidebar_title_container h2 {
   font-size: 12pt;
   color: black;
+}
+
+.sidebar_element h2 {
+  font-size: 14pt;
+  font-weight: 300;
 }
 
 .sidebar_element h3 {
@@ -155,7 +160,7 @@
 
 @media only screen and (min-width: 768px) {
   .page_topic_header {
-    height: 60px;
+    height: 0px;
     width: 100%;
     padding-top: 0px;
   }

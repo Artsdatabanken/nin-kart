@@ -1,6 +1,6 @@
 import { Avatar, Chip } from "@material-ui/core";
 import React, { Component } from "react";
-import { palett } from "../../farger";
+import { palett } from "Funksjoner/farger";
 
 class Flis extends Component {
   render() {

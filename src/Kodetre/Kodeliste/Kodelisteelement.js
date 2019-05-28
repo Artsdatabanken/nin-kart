@@ -1,9 +1,10 @@
 import { ListItem, Typography, ListItemText } from "@material-ui/core";
 import React from "react";
-import språk from "../../språk";
-import Bildeavatar from "./Bildeavatar";
+import språk from "Funksjoner/språk";
+import Bildeavatar from "GjenbruksElement/Bildeavatar";
 import VolumIndikator from "./VolumIndikator";
-import prettyKode from "./prettyKode";
+import lysOpp from "Funksjoner/palette/opplyst";
+import prettyKode from "Funksjoner/prettyKode";
 
 function hack(symbol, intervall) {
   return intervall.match(/[<>]/) ? intervall : symbol + " " + intervall;

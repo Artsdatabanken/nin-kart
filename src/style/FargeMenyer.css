@@ -99,41 +99,37 @@ select {
 }
 
 .button_map_preview {
-  max-width: 100%;
-  margin: 10px;
-  padding-top: 10px;
-  padding-left: 10px;
+  width: 100%;
+  padding: 10px;
   border: 0px;
   background: transparent;
   font-size: 12pt;
   text-align: left;
   position: relative;
-  height: auto;
   box-sizing: border-box;
-  background: #edf4f5;
+  margin: 2px;
+}
+
+.button_map_preview img,
+.button_map_preview span {
+  width: 50%;
+  height: 100%;
+  margin: 5px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .button_map_preview img {
-  width: 100%;
-  margin-top: 10px;
-  display: block;
-  margin-left: -10px;
+  width: 150px;
+  height: 50px;
 }
 
-.button_map_preview_first_part {
-  width: calc(100% - 40px);
-  box-sizing: border-box;
-}
-
-.button_map_preview_first_part,
-.theme_link {
-  display: block;
-  height: 100%;
-}
-
-.theme_link {
-  display: block;
+.selected_button {
   background: #b7d3d8;
+}
+
+.theme_link {
+  display: block;
   width: 60px;
   height: 100%;
   position: absolute;
@@ -156,6 +152,24 @@ select {
   text-align: left;
 }
 
+.child_list_object_expand_header {
+  padding: 10px;
+}
+
+.child_list_object:hover {
+  background: #edf4f5;
+  cursor: pointer;
+}
+
+.child_list_object button {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.child_list_object_indicator {
+  float: right;
+}
+
 .sidebar .colour_legend {
   filter: drop-shadow(1px 1px 1px #666);
   width: 24px;
@@ -167,7 +181,6 @@ select {
 .title_and_subtitle_container {
   display: inline-block;
   vertical-align: top;
-  width: calc(100% - 34px);
 }
 
 .title_and_subtitle_container span {
@@ -184,17 +197,6 @@ select {
   width: 24px;
   margin: 0px;
   padding: 0px;
-}
-
-.child_list_object button {
-  padding: 0px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.child_list_object .colour_legend {
-  margin-right: 10px;
-  margin-left: 0px;
 }
 
 .widescreen_sidebar_element {

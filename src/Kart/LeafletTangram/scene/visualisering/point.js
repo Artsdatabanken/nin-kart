@@ -1,4 +1,4 @@
-import config from "../../../../config";
+import config from "Funksjoner/config";
 
 function drawAll({ kode, barn, opplystKode, bbox, zoom, sourceType }) {
   const layer = {

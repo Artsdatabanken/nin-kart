@@ -36,10 +36,22 @@ Even tho we don't a of now support IE X)
 
 /* Re-add padding where wanted */
 .kartlag h3,
+.kartlag h2,
 .kartlag h1,
 .kartlag_header {
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.kartlag_submenu {
+  padding: 10px;
+  margin: 5px;
+  border-bottom: 1px solid #e4f0f2;
+}
+
+.kartlag_submenu h1,
+.kartlag_submenu h3 {
+  padding-left: 10px;
 }
 
 /* Tab items */
@@ -106,4 +118,13 @@ Even tho we don't a of now support IE X)
   vertical-align: middle;
   padding-left: 0px;
   height: 16pt;
+}
+
+.kartlag .slider_setting,
+.kartlag_label_liste label {
+  display: block;
+  padding: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin: 0px;
 }

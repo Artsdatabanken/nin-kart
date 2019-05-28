@@ -1,4 +1,4 @@
-import sysconfig from "../../../../config";
+import sysconfig from "Funksjoner/config";
 
 function drawAll(drawArgs) {
   const layer = {
