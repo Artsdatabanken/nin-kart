@@ -8,6 +8,7 @@ import parseQueryString from "./KatalogFunksjoner/parseQueryString";
 import finnKurvevariabler from "./KatalogFunksjoner/finnKurvevariabler";
 import KatalogHeader from "./KatalogHeader/KatalogHeader";
 import KatalogInformasjon from "./KatalogInformasjon/KatalogInformasjon";
+import KatalogNavigering from "./KatalogNavigering/KatalogNavigering";
 import AktiverKartlagKnapp from "./AktiverKartlagKnapp/AktiverKartlagKnapp";
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
@@ -61,6 +62,16 @@ class KatalogFane extends React.Component {
           erAktivert={erAktivert}
           onFitBounds={onFitBounds}
           onToggleLayer={onToggleLayer}
+        />
+
+        <KatalogNavigering
+          meta={meta}
+          onNavigate={this.handleNavigate}
+          data={data}
+          onUpdateMetaProp={onUpdateMetaProp}
+          opplyst={opplyst}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
         />
 
         <KodeVindu

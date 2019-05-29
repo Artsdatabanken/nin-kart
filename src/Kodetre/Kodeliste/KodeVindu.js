@@ -1,13 +1,11 @@
-import Overordnet from "./Overordnet";
 import React, { useState, useEffect } from "react";
 import Graf from "./Graf";
 import Flagg from "./Flagg";
-import Kodeliste from "./Kodeliste";
 import Gradienter from "./Gradienter";
 import Ekspander from "GjenbruksElement/Ekspander";
 import Kurver from "./Kurver";
 import Kurve from "./Kurve";
-import { CallSplit, MergeType, ShowChart, Gradient } from "@material-ui/icons/";
+import { ShowChart, Gradient } from "@material-ui/icons/";
 import KurveContainer from "./KurveContainer";
 import Nedlasting from "./Nedlasting";
 import { SettingsContext } from "../../SettingsContext";
@@ -15,12 +13,10 @@ import { SettingsContext } from "../../SettingsContext";
 const KodeVindu = ({
   onNavigate,
   meta,
-  data,
   kurve,
   onMouseEnter,
   onMouseLeave,
-  opplyst,
-  onUpdateMetaProp
+  opplyst
 }) => {
   const initialExpand = () =>
     JSON.parse(localStorage.getItem("expand") || "{}");
@@ -29,7 +25,7 @@ const KodeVindu = ({
     localStorage.setItem("expand", JSON.stringify(expand));
   }, [expand]);
   if (!meta) return null;
-  const { kode, url, overordnet } = meta;
+  const { kode, url } = meta;
   const gradientLength = meta.gradient
     ? Object.entries(meta.gradient).length
     : 0;
@@ -40,50 +36,6 @@ const KodeVindu = ({
       {context => {
         return (
           <div>
-            <Ekspander
-              visible={overordnet.length > 0}
-              icon={<MergeType style={{ transform: "rotate(-45deg)" }} />}
-              heading="Hierarki"
-              heading2={overordnet.length}
-            >
-              <Overordnet overordnet={overordnet} onNavigate={onNavigate} />
-            </Ekspander>
-            <Ekspander
-              visible={meta.barn.length > 0}
-              heading={meta.undernivå}
-              heading2={meta.barn.length}
-              icon={<CallSplit style={{ transform: "rotate(180deg)" }} />}
-            >
-              {false && (
-                <KurveContainer
-                  key={"a.url"}
-                  punkt={{
-                    url:
-                      "Biota/Plantae/Magnoliophyta/Eudicots/Ericales/Primulaceae/Primula/Scandinavica"
-                  }}
-                  gradient={{
-                    url:
-                      "Natur_i_Norge/Landskap/Landskapsgradient/Arealbruksintensitet/",
-                    barn: []
-                  }}
-                >
-                  <Kurve logY={true} />
-                </KurveContainer>
-              )}
-              <Kodeliste
-                title=""
-                parentkode={kode}
-                størsteAreal={data.størsteAreal}
-                apidata={data.barn}
-                metadata={meta.barn}
-                onNavigate={onNavigate}
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
-                opplyst={opplyst}
-                onUpdateMetaProp={onUpdateMetaProp}
-              />
-            </Ekspander>
-
             {meta.gradient &&
               Object.entries(meta.gradient).map(([kode, node]) => (
                 <Ekspander
