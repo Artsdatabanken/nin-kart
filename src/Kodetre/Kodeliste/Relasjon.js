@@ -1,6 +1,6 @@
 import React from "react";
 import Kodeliste from "./Kodeliste";
-import Ekspander from "./Ekspander";
+import Ekspander from "GjenbruksElement/Ekspander";
 
 const la = {
   dominerende: {

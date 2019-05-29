@@ -4,15 +4,14 @@ import språk from "Funksjoner/språk";
 import Graf from "./Graf";
 import Flagg from "./Flagg";
 import Kodeliste from "./Kodeliste";
-import Statistikk from "./Statistikk";
+import Statistikk from "Sidebar/Katalog/KatalogInformasjon/KatalogStatistikk/KatalogStatistikk";
 import Gradienter from "./Gradienter";
-import Ekspander from "./Ekspander";
+import Ekspander from "GjenbruksElement/Ekspander";
 import Kurver from "./Kurver";
 import Kurve from "./Kurve";
 import { CallSplit, MergeType, ShowChart, Gradient } from "@material-ui/icons/";
 import KurveContainer from "./KurveContainer";
 import Nedlasting from "./Nedlasting";
-//import { OpenInNew } from "@material-ui/icons/";
 import { SettingsContext } from "../../SettingsContext";
 
 const KodeVindu = ({
@@ -66,7 +65,6 @@ const KodeVindu = ({
                 infoUrl={infoUrl}
                 stats={stats}
                 arealPrefix={mor.areal}
-                toppnavn={mor.tittel.nb}
                 arealVindu={antallArter}
                 arterVindu={antallArter}
                 geometrierVindu={antallNaturomrader}

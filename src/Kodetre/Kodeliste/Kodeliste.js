@@ -1,6 +1,6 @@
 import { Typography, List, ListSubheader } from "@material-ui/core";
 import React from "react";
-import { SettingsContext } from "../../SettingsContext";
+import { SettingsContext } from "SettingsContext";
 import språk from "Funksjoner/språk";
 import Kodelisteelement from "./Kodelisteelement";
 

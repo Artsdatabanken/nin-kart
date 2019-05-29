@@ -1,7 +1,7 @@
 import React from "react";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Link from "@material-ui/icons/Link";
-import OpenData from "./OpenData";
+import OpenData from "Kodetre/Kodeliste/OpenData";
 
 const Ekspander = ({
   expanded,
