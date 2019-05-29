@@ -1,10 +1,8 @@
 import Overordnet from "./Overordnet";
 import React, { useState, useEffect } from "react";
-import språk from "Funksjoner/språk";
 import Graf from "./Graf";
 import Flagg from "./Flagg";
 import Kodeliste from "./Kodeliste";
-import Statistikk from "Sidebar/Katalog/KatalogInformasjon/KatalogStatistikk/KatalogStatistikk";
 import Gradienter from "./Gradienter";
 import Ekspander from "GjenbruksElement/Ekspander";
 import Kurver from "./Kurver";
@@ -31,17 +29,7 @@ const KodeVindu = ({
     localStorage.setItem("expand", JSON.stringify(expand));
   }, [expand]);
   if (!meta) return null;
-  const {
-    kode,
-    url,
-    prefiks,
-    infoUrl,
-    overordnet,
-    antallNaturomrader,
-    antallArter,
-    stats
-  } = meta;
-  const mor = overordnet[0] || { tittel: {} };
+  const { kode, url, overordnet } = meta;
   const gradientLength = meta.gradient
     ? Object.entries(meta.gradient).length
     : 0;
@@ -53,43 +41,18 @@ const KodeVindu = ({
         return (
           <div>
             <Ekspander
-              visible={prefiks !== "AO" && !!stats}
-              expanded={expand.stats}
-              heading="Statistikk"
-              onExpand={() => setExpand({ ...expand, stats: !expand.stats })}
-            >
-              <Statistikk
-                prefiks={prefiks}
-                overordnet={overordnet}
-                tittel={språk(meta.tittel)}
-                infoUrl={infoUrl}
-                stats={stats}
-                arealPrefix={mor.areal}
-                arealVindu={antallArter}
-                arterVindu={antallArter}
-                geometrierVindu={antallNaturomrader}
-              />
-            </Ekspander>
-
-            <Ekspander
               visible={overordnet.length > 0}
-              expanded={expand.tagger}
               icon={<MergeType style={{ transform: "rotate(-45deg)" }} />}
               heading="Hierarki"
               heading2={overordnet.length}
-              onExpand={() => setExpand({ ...expand, tagger: !expand.tagger })}
             >
               <Overordnet overordnet={overordnet} onNavigate={onNavigate} />
             </Ekspander>
             <Ekspander
-              expanded={expand.innhold || overordnet.length === 0}
               visible={meta.barn.length > 0}
               heading={meta.undernivå}
               heading2={meta.barn.length}
               icon={<CallSplit style={{ transform: "rotate(180deg)" }} />}
-              onExpand={() =>
-                setExpand({ ...expand, innhold: !expand.innhold })
-              }
             >
               {false && (
                 <KurveContainer
@@ -125,17 +88,10 @@ const KodeVindu = ({
               Object.entries(meta.gradient).map(([kode, node]) => (
                 <Ekspander
                   key={kode}
-                  expanded={expand[node.tittel.nb]}
                   visible={gradientLength > 0}
                   heading={node.tittel.nb}
                   heading2={Object.values(node.barn).length}
                   icon={<Gradient />}
-                  onExpand={() =>
-                    setExpand({
-                      ...expand,
-                      [node.tittel.nb]: !expand[node.tittel.nb]
-                    })
-                  }
                 >
                   <Gradienter
                     gradient={node.barn}
@@ -149,12 +105,10 @@ const KodeVindu = ({
               ))}
             {true && meta.kart.format.raster_gradient && (
               <Ekspander
-                expanded={expand.stat1d}
                 visible={true}
                 heading={"Frekvens"}
                 heading2=""
                 icon={<ShowChart />}
-                onExpand={() => setExpand({ ...expand, frek: !expand.frek })}
               >
                 <KurveContainer gradient={meta}>
                   <Kurve logY={true} />
@@ -163,14 +117,10 @@ const KodeVindu = ({
             )}
             {kurve && (
               <Ekspander
-                expanded={expand.stat1d}
                 visible={true}
                 heading={"Relativ frekvens"}
                 heading2=""
                 icon={<ShowChart />}
-                onExpand={() =>
-                  setExpand({ ...expand, stat1d: !expand.stat1d })
-                }
               >
                 <Kurver
                   meta={meta}
@@ -180,11 +130,9 @@ const KodeVindu = ({
               </Ekspander>
             )}
             <Ekspander
-              expanded={expand.flagg}
               visible={flaggLength > 0}
               heading="Egenskaper"
               heading2={flaggLength}
-              onExpand={() => setExpand({ ...expand, flagg: !expand.flagg })}
             >
               <Flagg
                 flagg={meta.flagg}

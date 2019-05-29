@@ -55,6 +55,7 @@ class KatalogFane extends React.Component {
       <>
         <KatalogHeader meta={meta} onFitBounds={this.props.onFitBounds} />
         <KatalogInformasjon meta={meta} onUpdateLayerProp={onUpdateLayerProp} />
+
         <AktiverKartlagKnapp
           meta={meta}
           erAktivert={erAktivert}
