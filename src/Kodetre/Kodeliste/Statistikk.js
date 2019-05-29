@@ -1,7 +1,7 @@
 import { ListItem, ListItemText } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import React from "react";
-import prettyprint from "../../prettyprint";
+import prettyprint from "Funksjoner/prettyprint";
 
 const styles = {
   list: { paddingTop: 0 },

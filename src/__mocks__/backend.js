@@ -1,4 +1,4 @@
-const backend = jest.genMockFromModule("../backend");
+const backend = jest.genMockFromModule("Funksjoner/backend");
 
 backend.default.hentKodeMeta.mockReturnValue(
   new Promise((resolve, reject) => resolve({}))

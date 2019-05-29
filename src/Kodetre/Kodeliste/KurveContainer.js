@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CircularProgress } from "@material-ui/core";
-import lagGradientrampe from "../../palette/gradientrampe";
+import lagGradientrampe from "Funksjoner/palette/gradientrampe";
 
 function makeUrl(punkt, gradient) {
   // TODO:

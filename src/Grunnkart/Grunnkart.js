@@ -1,36 +1,12 @@
 import React from "react";
 import { withRouter } from "react-router";
-import { withStyles } from "@material-ui/core";
-import backend from "../backend";
+import backend from "Funksjoner/backend";
 import { SettingsContext } from "../SettingsContext";
-import VenstreVinduContainer from "../VenstreVinduContainer";
+import KatalogFane from "Sidebar/Katalog/KatalogFane";
 import bakgrunnskarttema from "./bakgrunnskarttema";
 import TopBar from "../TopBar/TopBar";
-import Kartlag from "../Kartlag/Kartlag";
-import MobileNavigation from "../components/MobileNavigation";
+import Kartlag from "Sidebar/Kartlag/Kartlag";
 import Kart from "../Kart/LeafletTangram";
-
-const styles = {
-  rot: {
-    backgroundColor: "#f5f5f5",
-    color: "hsla(0, 0%, 0%, 0.87)",
-    boxShadow: "0 0 20px rgba(0, 0, 0, 0.3)",
-    position: "fixed",
-    left: 0,
-    border: 1,
-    width: 408,
-    height: "100vh",
-    zIndex: -10,
-    pointerEvents: "auto",
-    display: "flex",
-    flexDirection: "column"
-  },
-  transparent: {
-    backgroundColor: "transparent",
-    boxShadow: "none",
-    pointerEvents: "none"
-  }
-};
 
 class Grunnkart extends React.Component {
   constructor(props) {
@@ -191,16 +167,17 @@ class Grunnkart extends React.Component {
 
   // Supports composite keys i.e. gradient.filterMin
   handleUpdateLayerProp = (layer, key, value) => {
-    //console.log("updateProp", layer, key, value);
+    console.log("updateProp", "layer", layer, "key", key, "value", value);
     const aktive = this.state.aktiveLag;
     let node = aktive[layer];
+    console.log("node: ", aktive);
     if (!node) node = this.state.meta;
     const parts = key.split(".");
     for (let i = 0; i < parts.length - 1; i++) node = node[parts[i]];
     const vkey = parts[parts.length - 1];
     node[vkey] = value;
-    console.log("uv", value);
     this.setState({ aktiveLag: Object.assign({}, aktive) });
+    console.log(this.state.aktiveLag);
   };
 
   // Supports composite keys i.e. gradient.filterMin
@@ -234,7 +211,7 @@ class Grunnkart extends React.Component {
               <div>
                 {context.aktivTab === "meny" && (
                   <div className="sidebar">
-                    <VenstreVinduContainer
+                    <KatalogFane
                       aktiveLag={this.state.aktiveLag}
                       mapBounds={this.state.actualBounds}
                       onMouseEnter={this.handleMouseEnter}
@@ -246,7 +223,6 @@ class Grunnkart extends React.Component {
                         this.handleToggleLayer();
                         if (!context.visAktiveLag) context.onToggleAktiveLag();
                       }}
-                      onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
                       meta={this.state.meta}
                       searchFor={this.state.searchFor}
                       onClearSearchFor={this.handleClearSearchFor}
@@ -282,9 +258,11 @@ class Grunnkart extends React.Component {
                   onClick={latlng => {
                     history.push(`?lng=${latlng.lng}&lat=${latlng.lat}`);
                   }}
+                  onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                  onMouseEnter={this.handleMouseEnter}
+                  onMouseLeave={this.handleMouseLeave}
                 />
               </div>
-              <MobileNavigation />
             </>
           );
         }}
@@ -305,4 +283,4 @@ class Grunnkart extends React.Component {
   static contextType = SettingsContext;
 }
 
-export default withRouter(withStyles(styles)(Grunnkart));
+export default withRouter(Grunnkart);

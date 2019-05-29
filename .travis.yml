@@ -4,7 +4,7 @@ node_js:
 directories:
   - node_modules
 script:
-  - yarn test
+  #  - yarn test
   - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
   - export PUBLIC_URL=https://nin.artsdatabanken.no/$(if [ "$BRANCH" == "master" ]; then echo ""; else echo $BRANCH; fi)
   - yarn build
@@ -22,7 +22,7 @@ before_deploy:
 #      repo: Artsdatabanken/nin-kart-frontend
 #    skip_cleanup: true
 after_success:
-  - npm run report-coverage
+  #  - npm run report-coverage
   - ./deploy.sh $BRANCH
 notifications:
   slack:

@@ -1,11 +1,9 @@
-import { useLocalStorage } from "react-use";
 import Detaljeringsgrad from "./Detaljeringsgrad";
 import Overordnet from "./Overordnet";
-import React from "react";
-import språk from "../../språk";
+import React, { useState, useEffect } from "react";
+import språk from "Funksjoner/språk";
 import Graf from "./Graf";
 import Flagg from "./Flagg";
-import Kodekort from "./Kodekort";
 import Kodeliste from "./Kodeliste";
 import Statistikk from "./Statistikk";
 import Gradienter from "./Gradienter";
@@ -17,6 +15,7 @@ import Link from "@material-ui/icons/Link";
 import { CallSplit, MergeType, ShowChart, Gradient } from "@material-ui/icons/";
 import KurveContainer from "./KurveContainer";
 import Nedlasting from "./Nedlasting";
+//import { OpenInNew } from "@material-ui/icons/";
 import { SettingsContext } from "../../SettingsContext";
 
 const KodeVindu = ({
@@ -33,19 +32,21 @@ const KodeVindu = ({
   onUpdateLayerProp,
   onUpdateMetaProp
 }) => {
-  const [expand, setExpand] = useLocalStorage("expand", {});
+  const initialExpand = () =>
+    JSON.parse(localStorage.getItem("expand") || "{}");
+  const [expand, setExpand] = useState(initialExpand);
+  useEffect(() => {
+    localStorage.setItem("expand", JSON.stringify(expand));
+  }, [expand]);
   if (!meta) return null;
   const {
     kode,
     url,
-    farge,
     prefiks,
     bbox,
     ingress,
     infoUrl,
     classes,
-    tittel,
-    nivå,
     overordnet,
     antallNaturomrader,
     antallArter,
@@ -55,27 +56,13 @@ const KodeVindu = ({
   const gradientLength = meta.gradient
     ? Object.entries(meta.gradient).length
     : 0;
+
   const flaggLength = meta.flagg ? Object.entries(meta.flagg).length : 0;
   return (
     <SettingsContext.Consumer>
       {context => {
         return (
           <div>
-            <Kodekort
-              kode={kode}
-              farge={farge}
-              url={url}
-              prefiks={prefiks}
-              bbox={bbox}
-              onFitBounds={onFitBounds}
-              tittel={tittel}
-              nivå={nivå}
-              overordnet={overordnet}
-              onNavigate={onNavigate}
-              erAktivert={erAktivert}
-              onToggleLayer={onToggleLayer}
-              bilde={meta.bilde}
-            />
             {kode === "NN-LA-TI" && (
               <Detaljeringsgrad
                 onUpdateLayerProp={onUpdateLayerProp}

@@ -1,7 +1,7 @@
 import React from "react";
 import ShallowRenderer from "react-test-renderer/shallow";
 import App from "./App";
-import backend from "./backend";
+import backend from "Funksjoner/backend";
 
 const dummyNatureArea = {
   uniqueId: {
@@ -92,7 +92,7 @@ const dummyMeta = {
   resolution: null
 };
 
-jest.mock("./backend", () => ({
+jest.mock("Funksjoner/backend", () => ({
   hentKode: jest.fn(),
   getNatureAreaByLocalId: jest.fn(),
   getMetadataByNatureAreaLocalId: jest.fn()

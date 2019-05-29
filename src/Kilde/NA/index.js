@@ -1,6 +1,6 @@
 import { Component, default as React } from "react";
 import { withRouter } from "react-router";
-import backend from "../../backend";
+import backend from "Funksjoner/backend";
 import NA from "./NA";
 
 class NAContainer extends Component {

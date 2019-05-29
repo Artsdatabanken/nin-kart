@@ -1,5 +1,5 @@
 import React from "react";
-import prettyprint from "../../prettyprint";
+import prettyprint from "Funksjoner/prettyprint";
 const VolumViz = ({ areal, størsteAreal, theme }) => {
   if (!areal) areal = 0;
   if (!størsteAreal) størsteAreal = 1;

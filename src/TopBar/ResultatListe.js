@@ -1,7 +1,7 @@
 import { Divider, ListItem, ListItemText } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import React, { Component } from "react";
-import Bildeavatar from "../Kodetre/Kodeliste/Bildeavatar";
+import Bildeavatar from "GjenbruksElement/Bildeavatar";
 
 const styles = {};
 

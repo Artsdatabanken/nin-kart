@@ -1,5 +1,5 @@
 import terrengmal from "./mal/terreng";
-import sysconfig from "../../../config";
+import sysconfig from "Funksjoner/config";
 
 function lagTerreng(drawProps, opplystKode, config) {
   if (!drawProps.erSynlig) return;

@@ -3,7 +3,7 @@ import { createLights } from "./lights";
 import { createStyles } from "./styles";
 import { lagTerreng } from "./terreng";
 import draw from "./visualisering/";
-import sysconfig from "../../../config";
+import sysconfig from "Funksjoner/config";
 
 function lagAktiveLag(aktive, viserKatalog, opplyst, config) {
   Object.keys(aktive).forEach(kode =>
