@@ -7,7 +7,13 @@ const map = {
   2: "Hovedtyper",
   3: "Grunntyper"
 };
+
 const Detaljeringsgrad = ({ value, onUpdateLayerProp }) => {
+  /*
+  
+  Currently only availiable for Landskap/Typeinndeling
+  
+  */
   const nivå = map[Math.round(value)];
   return (
     <div className="sidebar_element">

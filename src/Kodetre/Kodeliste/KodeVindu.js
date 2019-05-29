@@ -1,4 +1,3 @@
-import Detaljeringsgrad from "./Detaljeringsgrad";
 import Overordnet from "./Overordnet";
 import React, { useState, useEffect } from "react";
 import språk from "Funksjoner/språk";
@@ -10,8 +9,6 @@ import Gradienter from "./Gradienter";
 import Ekspander from "./Ekspander";
 import Kurver from "./Kurver";
 import Kurve from "./Kurve";
-import Knapperad from "./Knapperad";
-import Link from "@material-ui/icons/Link";
 import { CallSplit, MergeType, ShowChart, Gradient } from "@material-ui/icons/";
 import KurveContainer from "./KurveContainer";
 import Nedlasting from "./Nedlasting";
@@ -19,17 +16,13 @@ import Nedlasting from "./Nedlasting";
 import { SettingsContext } from "../../SettingsContext";
 
 const KodeVindu = ({
-  erAktivert,
   onNavigate,
-  onFitBounds,
   meta,
   data,
   kurve,
   onMouseEnter,
   onMouseLeave,
-  onToggleLayer,
   opplyst,
-  onUpdateLayerProp,
   onUpdateMetaProp
 }) => {
   const initialExpand = () =>
@@ -43,10 +36,7 @@ const KodeVindu = ({
     kode,
     url,
     prefiks,
-    bbox,
-    ingress,
     infoUrl,
-    classes,
     overordnet,
     antallNaturomrader,
     antallArter,
@@ -63,38 +53,6 @@ const KodeVindu = ({
       {context => {
         return (
           <div>
-            {kode === "NN-LA-TI" && (
-              <Detaljeringsgrad
-                onUpdateLayerProp={onUpdateLayerProp}
-                value={meta.depth}
-              />
-            )}
-
-            {ingress && (
-              <div className="sidebar_description sidebar_element">
-                <p>
-                  {ingress} <br />
-                  {infoUrl && (
-                    <a href={infoUrl}>
-                      <Link /> Les mer
-                    </a>
-                  )}
-                </p>
-              </div>
-            )}
-
-            {overordnet.length > 0 && (
-              <Knapperad
-                overordnet={overordnet}
-                classes={classes}
-                erAktivert={erAktivert}
-                bbox={bbox}
-                onFitBounds={onFitBounds}
-                onToggleLayer={onToggleLayer}
-                className="Temporary_class_for_detection_3"
-              />
-            )}
-
             <Ekspander
               visible={prefiks !== "AO" && !!stats}
               expanded={expand.stats}

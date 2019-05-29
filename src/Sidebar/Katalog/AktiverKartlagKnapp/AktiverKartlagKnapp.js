@@ -1,11 +1,15 @@
 import { ArrowForward, Layers } from "@material-ui/icons/";
 import React from "react";
-import { withRouter } from "react-router";
+import { SettingsContext } from "SettingsContext";
 
-import { SettingsContext } from "../../SettingsContext";
-const Knapperad = ({ erAktivert, onToggleLayer, bbox }) => (
-  <>
-    {bbox && (
+const AktiverKartlagKnapp = ({ erAktivert, onToggleLayer, meta }) => {
+  /*
+   
+  */
+  if (!meta.overordnet || meta.overordnet.length <= 0) return null;
+  if (!meta.bbox) return null;
+  return (
+    <>
       <SettingsContext.Consumer>
         {context => (
           <div className="sidebar_element activate_button_container">
@@ -21,22 +25,10 @@ const Knapperad = ({ erAktivert, onToggleLayer, bbox }) => (
               Legg til kartlag <ArrowForward />
               <Layers />
             </button>
-
-            {/* 
-         <LibraryAdd/>
-        <Button
-          className={classes.button}
-          onClick={() => history.push(history.location.pathname + "?vis")}
-        >
-          <ColorLens className={classes.iconSmall} />
-          Vis
-        </Button>
-          */}
           </div>
         )}
       </SettingsContext.Consumer>
-    )}
-  </>
-);
-
-export default withRouter(Knapperad);
+    </>
+  );
+};
+export default AktiverKartlagKnapp;
