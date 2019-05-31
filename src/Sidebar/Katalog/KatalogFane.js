@@ -2,11 +2,12 @@ import { Snackbar } from "@material-ui/core";
 import React from "react";
 import { withRouter } from "react-router-dom";
 import Lokalitet from "Sidebar/Lokalitet/Lokalitet";
-import KodeVindu from "Kodetre/Kodeliste/KodeVindu";
+import KatalogKilder from "./KatalogKilder/KatalogKilder";
 import InformasjonsFane from "Sidebar/Informasjon/InformasjonsFane";
 import parseQueryString from "./KatalogFunksjoner/parseQueryString";
 import finnKurvevariabler from "./KatalogFunksjoner/finnKurvevariabler";
 import KatalogHeader from "./KatalogHeader/KatalogHeader";
+import KatalogGradienter from "./KatalogGradienter/KatalogGradienter";
 import KatalogInformasjon from "./KatalogInformasjon/KatalogInformasjon";
 import KatalogNavigering from "./KatalogNavigering/KatalogNavigering";
 import AktiverKartlagKnapp from "./AktiverKartlagKnapp/AktiverKartlagKnapp";
@@ -74,7 +75,15 @@ class KatalogFane extends React.Component {
           onMouseLeave={onMouseLeave}
         />
 
-        <KodeVindu
+        <KatalogGradienter
+          meta={meta}
+          onNavigate={this.handleNavigate}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          opplyst={opplyst}
+        />
+
+        <KatalogKilder
           data={data}
           meta={meta}
           onNavigate={this.handleNavigate}

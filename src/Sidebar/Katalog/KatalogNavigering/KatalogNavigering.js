@@ -5,7 +5,7 @@ import Ekspander from "GjenbruksElement/Ekspander";
 import KurveContainer from "Kodetre/Kodeliste/KurveContainer";
 import Kodeliste from "Kodetre/Kodeliste/Kodeliste";
 import Kurve from "Kodetre/Kodeliste/Kurve";
-import språk from "Funksjoner/språk";
+//import språk from "Funksjoner/språk";
 
 const KatalogNavigering = ({
   data,
@@ -18,7 +18,7 @@ const KatalogNavigering = ({
 }) => {
   /*
   
-  Currently only availiable for Landskap/Typeinndeling
+Navigation
   
   */
   const { overordnet, kode } = meta;
