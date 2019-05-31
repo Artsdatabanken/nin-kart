@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Relasjon from "Kodetre/Kodeliste/Relasjon";
+import Relasjon from "Sidebar/Katalog/Relasjoner/Relasjon";
 import { CloudDownload } from "@material-ui/icons";
 import { Button } from "@material-ui/core";
 

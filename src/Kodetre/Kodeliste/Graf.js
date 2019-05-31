@@ -1,5 +1,5 @@
 import React from "react";
-import Relasjon from "./Relasjon";
+import Relasjon from "Sidebar/Katalog/Relasjoner/Relasjon";
 
 const Graf = ({ graf, opplyst, ...props }) => {
   if (!graf) return null;

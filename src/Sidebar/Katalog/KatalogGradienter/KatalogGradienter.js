@@ -2,9 +2,9 @@ import React from "react";
 import { ShowChart, Gradient } from "@material-ui/icons/";
 import Gradienter from "Kodetre/Kodeliste/Gradienter";
 import KurveContainer from "Kodetre/Kodeliste/KurveContainer";
-import Relasjon from "Kodetre/Kodeliste/Relasjon";
+import Relasjon from "Sidebar/Katalog/Relasjoner/Relasjon";
 import Kurve from "Kodetre/Kodeliste/Kurve";
-import Flagg from "Kodetre/Kodeliste/Flagg";
+import EgenskapVariabel from "../Relasjoner/EgenskapVariabel";
 import Ekspander from "GjenbruksElement/Ekspander";
 //import { SettingsContext } from "SettingsContext";
 
@@ -13,17 +13,22 @@ const KatalogGradienter = ({
   meta,
   onMouseEnter,
   onMouseLeave,
-  opplyst
+  opplyst,
+  ...props
 }) => {
   /*  
   Contains the visualisation of the different gradients and their relations
   to subelements, as well as other nifty visualisations
   */
   if (!meta) return null;
-  const { parentkode, children } = meta;
+  const { kode } = meta;
+
   const gradientLength = meta.gradient
     ? Object.entries(meta.gradient).length
     : 0;
+
+  const relasjon = meta.graf;
+  console.log(relasjon);
 
   const flaggLength = meta.flagg ? Object.entries(meta.flagg).length : 0;
   if (!meta.gradient) return null;
@@ -67,11 +72,18 @@ const KatalogGradienter = ({
         heading="Egenskaper"
         heading2={flaggLength}
       >
-        <Flagg
+        {/* 
+        KAN TESTES PÅ: 
+        - "Fast fjærebelte-bunn" 
+        - "Myr- og sumpskogsmark"
+        - Ligger under fanen "egenskaper"
+        */}
+        <EgenskapVariabel
           flagg={meta.flagg}
           onNavigate={url => {
             console.warn(url);
             onNavigate(url);
+            console.log("loading flagg: ", meta.flagg);
           }}
         />
       </Ekspander>
@@ -83,13 +95,14 @@ const KatalogGradienter = ({
             heading={relasjon.type}
             noder={relasjon.noder}
             opplyst={{ a: "b", ...opplyst }}
-            parentkode={parentkode}
+            parentkode={kode}
             onNavigate={onNavigate}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             expand={true}
             onSetExpand={true}
-            children={children}
+            //children={children}
+            {...props}
           />
         ))}
     </>

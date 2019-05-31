@@ -1,5 +1,5 @@
 import React from "react";
-import Kodeliste from "./Kodeliste";
+import Kodeliste from "Kodetre/Kodeliste/Kodeliste";
 import Ekspander from "GjenbruksElement/Ekspander";
 
 const la = {
