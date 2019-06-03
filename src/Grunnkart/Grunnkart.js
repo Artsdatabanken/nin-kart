@@ -85,6 +85,7 @@ class Grunnkart extends React.Component {
                   navigation_history={this.state.navigation_history}
                   onFitBounds={this.handleFitBounds}
                   history={history}
+                  currentKartlag={this.state.meta}
                   activateLayerFromHistory={this.activateLayerFromHistory}
                 />
 
