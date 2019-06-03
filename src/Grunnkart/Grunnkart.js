@@ -36,74 +36,6 @@ class Grunnkart extends React.Component {
     });
   }
 
-  handleActualBoundsChange = bounds => {
-    this.setState({ actualBounds: bounds, fitBounds: null });
-  };
-  handleFitBounds = bbox => {
-    this.setState({ fitBounds: bbox });
-  };
-  handleBoundsChange = bbox => {
-    this.setState({ actualBounds: bbox });
-  };
-  handleClearSearchFor = () => this.setState({ searchFor: null });
-  handleToggleLayer = () => {
-    this.addSelected(this.state.meta);
-  };
-  componentDidMount() {
-    fetchMeta(this.props.location.pathname, this);
-  }
-
-  addSelected = props => {
-    this.setState({
-      aktiveLag: Object.assign(
-        {},
-        aktiverValgtKartlag(props, this.state.aktiveLag)
-      )
-    });
-  };
-
-  activateLayerFromHistory = node => {
-    this.setState({
-      aktiveLag: Object.assign({}, aktiverFraHistorikk(node))
-    });
-  };
-
-  componentDidUpdate(prevProps, prevState) {
-    const path = this.props.location.pathname;
-    if (path !== prevProps.location.pathname) {
-      fetchMeta(path, this);
-    }
-    document.title =
-      (this.state.meta && this.state.meta.tittel.nb) || "Natur i Norge";
-  }
-
-  async downloadMeta(url) {
-    const meta = await backend.hentKodeMeta(url);
-    metaSjekk(meta, this);
-    return meta;
-  }
-
-  handleRemoveSelectedLayer = kode => {
-    let aktive = this.state.aktiveLag;
-    delete aktive[kode];
-    this.setState({ aktiveLag: aktive });
-  };
-
-  handleUpdateLayerProp = (layer, key, value) => {
-    this.setState({
-      aktiveLag: Object.assign(
-        {},
-        oppdaterLagProperties(layer, key, value, this)
-      )
-    });
-  };
-
-  handleUpdateMetaProp = (kode, key, value) => {
-    this.setState({
-      meta: Object.assign({}, oppdaterMetaProperties(kode, key, value, this))
-    });
-  };
-
   render() {
     const { history } = this.props;
     let erAktivert = false;
@@ -181,6 +113,74 @@ class Grunnkart extends React.Component {
       </SettingsContext.Consumer>
     );
   }
+
+  handleActualBoundsChange = bounds => {
+    this.setState({ actualBounds: bounds, fitBounds: null });
+  };
+  handleFitBounds = bbox => {
+    this.setState({ fitBounds: bbox });
+  };
+  handleBoundsChange = bbox => {
+    this.setState({ actualBounds: bbox });
+  };
+  handleClearSearchFor = () => this.setState({ searchFor: null });
+  handleToggleLayer = () => {
+    this.addSelected(this.state.meta);
+  };
+  componentDidMount() {
+    fetchMeta(this.props.location.pathname, this);
+  }
+
+  addSelected = props => {
+    this.setState({
+      aktiveLag: Object.assign(
+        {},
+        aktiverValgtKartlag(props, this.state.aktiveLag)
+      )
+    });
+  };
+
+  activateLayerFromHistory = node => {
+    this.setState({
+      aktiveLag: Object.assign({}, aktiverFraHistorikk(node))
+    });
+  };
+
+  componentDidUpdate(prevProps, prevState) {
+    const path = this.props.location.pathname;
+    if (path !== prevProps.location.pathname) {
+      fetchMeta(path, this);
+    }
+    document.title =
+      (this.state.meta && this.state.meta.tittel.nb) || "Natur i Norge";
+  }
+
+  async downloadMeta(url) {
+    const meta = await backend.hentKodeMeta(url);
+    metaSjekk(meta, this);
+    return meta;
+  }
+
+  handleRemoveSelectedLayer = kode => {
+    let aktive = this.state.aktiveLag;
+    delete aktive[kode];
+    this.setState({ aktiveLag: aktive });
+  };
+
+  handleUpdateLayerProp = (layer, key, value) => {
+    this.setState({
+      aktiveLag: Object.assign(
+        {},
+        oppdaterLagProperties(layer, key, value, this)
+      )
+    });
+  };
+
+  handleUpdateMetaProp = (kode, key, value) => {
+    this.setState({
+      meta: Object.assign({}, oppdaterMetaProperties(kode, key, value, this))
+    });
+  };
 
   handleMouseEnter = ({ kode, url }) => {
     //console.log("mouseenter", kode, url);
