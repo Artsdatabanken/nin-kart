@@ -4,7 +4,14 @@ import { SettingsContext } from "SettingsContext";
 import språk from "Funksjoner/språk";
 import Kodelisteelement from "./Kodelisteelement";
 
-class Kodeliste extends React.Component {
+class Navigeringsliste extends React.Component {
+  /* 
+  
+  Denne komponenten ligger i undermenyen. 
+  F.eks på landskap ligger den under fanen landskap.
+  Med andre ord - den bor alltid nedover i hierarkiet, ikke oppover.
+  
+  */
   render() {
     const {
       parentkode,
@@ -26,9 +33,10 @@ class Kodeliste extends React.Component {
       <SettingsContext.Consumer>
         {context => (
           <List>
+            <h1>Her er jeg</h1>
             <ListSubheader>{title}</ListSubheader>
             {subtitle && <h2>{subtitle}</h2>}
-            {Kodeliste.sorter(metadata, context.sorterPåKode).map(
+            {Navigeringsliste.sorter(metadata, context.sorterPåKode).map(
               metabarnet => {
                 const kode = metabarnet.kode;
                 const apibarn = apidata
@@ -79,11 +87,11 @@ const nøkkel = (node, sorterPåKode) => {
   return språk(node.tittel);
 };
 
-Kodeliste.sorter = (barn, sorterPåKode) => {
+Navigeringsliste.sorter = (barn, sorterPåKode) => {
   const sortert = barn.concat().sort((a, b) => {
     return nøkkel(a, sorterPåKode) >= nøkkel(b, sorterPåKode) ? 1 : -1;
   });
   return sortert;
 };
 
-export default Kodeliste;
+export default Navigeringsliste;

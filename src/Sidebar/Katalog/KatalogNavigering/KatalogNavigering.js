@@ -3,7 +3,7 @@ import Overordnet from "./Overordnet";
 import { CallSplit, MergeType } from "@material-ui/icons/";
 import Ekspander from "GjenbruksElement/Ekspander";
 import KurveContainer from "Kodetre/Kodeliste/KurveContainer";
-import Kodeliste from "Kodetre/Kodeliste/Kodeliste";
+import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
 import Kurve from "Kodetre/Kodeliste/Kurve";
 //import språk from "Funksjoner/språk";
 
@@ -57,7 +57,7 @@ Navigation
           </KurveContainer>
         )}
 
-        <Kodeliste
+        <Navigeringsliste
           title=""
           parentkode={kode}
           størsteAreal={data.størsteAreal}

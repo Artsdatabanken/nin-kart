@@ -1,5 +1,5 @@
 import React from "react";
-import Kodeliste from "Kodetre/Kodeliste/Kodeliste";
+import Navigeringsliste from "Sidebar/Katalog/KatalogNavigering/Navigeringsliste/Navigeringsliste";
 import Ekspander from "GjenbruksElement/Ekspander";
 
 const la = {
@@ -122,7 +122,7 @@ const Relasjon = props => {
       onExpand={() => onSetExpand({ ...expand, [heading]: !expand[heading] })}
     >
       {noder && (
-        <Kodeliste
+        <Navigeringsliste
           parentkode={parentkode}
           onNavigate={onNavigate}
           title=""
