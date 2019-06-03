@@ -7,6 +7,12 @@ import bakgrunnskarttema from "./bakgrunnskarttema";
 import TopBar from "../TopBar/TopBar";
 import Kartlag from "Sidebar/Kartlag/Kartlag";
 import Kart from "../Kart/LeafletTangram";
+import metaSjekk from "./GrunnkartFunksjoner/metaSjekk";
+import fetchMeta from "./GrunnkartFunksjoner/fetchMeta";
+import aktiverFraHistorikk from "./GrunnkartFunksjoner/aktiverFraHistorikk";
+import aktiverValgtKartlag from "./GrunnkartFunksjoner/aktiverValgtKartlag";
+import oppdaterMetaProperties from "./GrunnkartFunksjoner/oppdaterMetaProperties";
+import oppdaterLagProperties from "./GrunnkartFunksjoner/oppdaterLagProperties";
 
 class Grunnkart extends React.Component {
   constructor(props) {
@@ -29,168 +35,6 @@ class Grunnkart extends React.Component {
       this.context.onNavigateToTab("meny");
     });
   }
-
-  handleActualBoundsChange = bounds => {
-    this.setState({ actualBounds: bounds, fitBounds: null });
-  };
-
-  handleFitBounds = bbox => {
-    this.setState({ fitBounds: bbox });
-  };
-
-  handleBoundsChange = bbox => {
-    this.setState({ actualBounds: bbox });
-  };
-
-  addSelected = props => {
-    let aktive = this.state.aktiveLag;
-    if (!props.kart) return;
-    const nyttLag = JSON.parse(JSON.stringify(props));
-    nyttLag.visBarn = props.barn.length > 0;
-    nyttLag.kanSlettes = true;
-    aktive[nyttLag.kode] = nyttLag;
-    this.setState({
-      aktiveLag: Object.assign({}, aktive)
-    });
-  };
-
-  updateHistory(node) {
-    let current_navigation_history = this.state.navigation_history;
-    current_navigation_history.push(node);
-    this.setState({
-      navigation_history: current_navigation_history
-    });
-  }
-
-  activateLayerFromHistory = node => {
-    if (!node.meta.kart) return;
-    const nyttLag = node.meta;
-    nyttLag.visBarn = node.meta.barn.length > 0;
-    nyttLag.kanSlettes = true;
-    console.log(node);
-    let aktive = node.aktiveLag;
-    aktive[nyttLag.kode] = nyttLag;
-
-    //node.aktiveLag = Object.assign({}, aktive);
-    //this.updateHistory(node);
-    this.setState({
-      aktiveLag: Object.assign({}, aktive)
-    });
-  };
-
-  handleToggleLayer = () => {
-    this.addSelected(this.state.meta);
-  };
-
-  handleClearSearchFor = () => this.setState({ searchFor: null });
-
-  componentDidMount() {
-    this.fetchMeta(this.props.location.pathname);
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    const path = this.props.location.pathname;
-    if (path !== prevProps.location.pathname) {
-      this.fetchMeta(path);
-    }
-
-    document.title =
-      (this.state.meta && this.state.meta.tittel.nb) || "Natur i Norge";
-  }
-
-  redirectTo(path) {
-    const newUrl = "/" + path;
-    this.props.history.replace(newUrl);
-  }
-
-  fetchMeta(location) {
-    let url = location.match(/\/(.*)/);
-    this.setState({ meta: null });
-    if (!url || url.length !== 2 || !url[1]) return;
-    const path = url[1].replace(/katalog/i, "");
-    this.downloadMeta(path).then(data => {
-      if (!data) {
-        this.setState({ searchFor: path });
-        return;
-      }
-      if (data.se) {
-        const newUrl = data.se[Object.keys(data.se)[0]].sti;
-        this.redirectTo(newUrl);
-        return;
-      }
-      this.setState({ meta: data, opplystKode: "", opplyst: {} });
-      this.updateHistory(this.state);
-    });
-  }
-
-  async downloadMeta(url) {
-    const meta = await backend.hentKodeMeta(url);
-    if (!meta) return;
-    if (!meta.tittel) {
-      return this.redirectTo("Natur_i_Norge");
-    }
-    if (meta.se) return meta;
-    meta.prefiks = meta.kode.replace("NN-", "").substring(0, 2);
-
-    if (!meta.kart) meta.kart = {};
-    if (!meta.kart.format) meta.kart.format = {};
-    if (!meta.kart.aktivtFormat)
-      meta.kart.aktivtFormat = Object.keys(meta.kart.format)[0];
-    if (meta.kart.format.raster_gradient) {
-      meta.aktivtFormat = "raster_gradient";
-      const gradient = meta.kart.format.raster_gradient;
-      gradient.aktivVisning = gradient.visning[0];
-      const intervall = gradient.intervall.original;
-      gradient.filterMin = intervall[0];
-      gradient.filterMax = intervall[1];
-    }
-    meta.erSynlig = true;
-    meta.depth = 3;
-    if (meta.kode.substring(0, 2) === "LA") {
-      if (!this.state.aktiveLag.bakgrunnskart.terreng.wasAutoEnabled) {
-        this.handleUpdateLayerProp("bakgrunnskart.terreng", "erSynlig", true);
-        this.handleUpdateLayerProp(
-          "bakgrunnskart.terreng",
-          "wasAutoEnabled",
-          true
-        );
-      }
-    }
-    return meta;
-  }
-
-  handleRemoveSelectedLayer = kode => {
-    let aktive = this.state.aktiveLag;
-    delete aktive[kode];
-    this.setState({ aktiveLag: aktive });
-  };
-
-  // Supports composite keys i.e. gradient.filterMin
-  handleUpdateLayerProp = (layer, key, value) => {
-    console.log("updateProp", "layer", layer, "key", key, "value", value);
-    const aktive = this.state.aktiveLag;
-    let node = aktive[layer];
-    console.log("node: ", aktive);
-    if (!node) node = this.state.meta;
-    const parts = key.split(".");
-    for (let i = 0; i < parts.length - 1; i++) node = node[parts[i]];
-    const vkey = parts[parts.length - 1];
-    node[vkey] = value;
-    this.setState({ aktiveLag: Object.assign({}, aktive) });
-    console.log(this.state.aktiveLag);
-  };
-
-  // Supports composite keys i.e. gradient.filterMin
-  handleUpdateMetaProp = (kode, key, value) => {
-    const aktive = this.state.meta;
-    let node = aktive.barn[kode];
-    const parts = key.split(".");
-    for (let i = 0; i < parts.length - 1; i++) node = node[parts[i]];
-    const vkey = parts[parts.length - 1];
-    node[vkey] = value;
-    aktive.barn[kode] = Object.assign({}, aktive.barn[kode]);
-    this.setState({ meta: Object.assign({}, aktive) });
-  };
 
   render() {
     const { history } = this.props;
@@ -241,6 +85,7 @@ class Grunnkart extends React.Component {
                   navigation_history={this.state.navigation_history}
                   onFitBounds={this.handleFitBounds}
                   history={history}
+                  currentKartlag={this.state.meta}
                   activateLayerFromHistory={this.activateLayerFromHistory}
                 />
 
@@ -269,6 +114,74 @@ class Grunnkart extends React.Component {
       </SettingsContext.Consumer>
     );
   }
+
+  handleActualBoundsChange = bounds => {
+    this.setState({ actualBounds: bounds, fitBounds: null });
+  };
+  handleFitBounds = bbox => {
+    this.setState({ fitBounds: bbox });
+  };
+  handleBoundsChange = bbox => {
+    this.setState({ actualBounds: bbox });
+  };
+  handleClearSearchFor = () => this.setState({ searchFor: null });
+  handleToggleLayer = () => {
+    this.addSelected(this.state.meta);
+  };
+  componentDidMount() {
+    fetchMeta(this.props.location.pathname, this);
+  }
+
+  addSelected = props => {
+    this.setState({
+      aktiveLag: Object.assign(
+        {},
+        aktiverValgtKartlag(props, this.state.aktiveLag)
+      )
+    });
+  };
+
+  activateLayerFromHistory = node => {
+    this.setState({
+      aktiveLag: Object.assign({}, aktiverFraHistorikk(node))
+    });
+  };
+
+  componentDidUpdate(prevProps, prevState) {
+    const path = this.props.location.pathname;
+    if (path !== prevProps.location.pathname) {
+      fetchMeta(path, this);
+    }
+    document.title =
+      (this.state.meta && this.state.meta.tittel.nb) || "Natur i Norge";
+  }
+
+  async downloadMeta(url) {
+    const meta = await backend.hentKodeMeta(url);
+    metaSjekk(meta, this);
+    return meta;
+  }
+
+  handleRemoveSelectedLayer = kode => {
+    let aktive = this.state.aktiveLag;
+    delete aktive[kode];
+    this.setState({ aktiveLag: aktive });
+  };
+
+  handleUpdateLayerProp = (layer, key, value) => {
+    this.setState({
+      aktiveLag: Object.assign(
+        {},
+        oppdaterLagProperties(layer, key, value, this)
+      )
+    });
+  };
+
+  handleUpdateMetaProp = (kode, key, value) => {
+    this.setState({
+      meta: Object.assign({}, oppdaterMetaProperties(kode, key, value, this))
+    });
+  };
 
   handleMouseEnter = ({ kode, url }) => {
     //console.log("mouseenter", kode, url);
