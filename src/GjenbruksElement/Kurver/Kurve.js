@@ -1,24 +1,6 @@
 import React, { useRef, useState } from "react";
-
-const expo = (y, log) => (log ? Math.log10(y + 1) : y);
-
-function normaliser(stats, logY) {
-  let ymax = 0;
-  let ymax2 = 0;
-  for (const sample of stats) {
-    const v = expo(sample, logY);
-    ymax = Math.max(ymax, v);
-    if (v < ymax) ymax2 = Math.max(ymax2, v);
-  }
-  const scaler = 1.0 / (0.2 * ymax + 0.8 * ymax2);
-  const r = stats.map(y => Math.min(100, 100 * expo(y, logY) * scaler));
-  return { fordeling: r, max: ymax };
-}
-
-function prep(stats, grad) {
-  if (!stats) return grad;
-  return stats.map((y, i) => y / (grad[i] || 1));
-}
+import normaliser from "./KurveFunksjoner/normaliser";
+import prep from "./KurveFunksjoner/prep";
 
 const scale = (samples, logX) =>
   samples.map((y, i) => `${logX ? Math.log10(i + 1) * 50 : i},${y}`);

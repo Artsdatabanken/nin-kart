@@ -1,8 +1,8 @@
-import KurveContainer from "./KurveContainer";
+import KurveContainer from "GjenbruksElement/Kurver/KurveContainer";
 import React from "react";
 import { ListSubheader } from "@material-ui/core";
 import språk from "Funksjoner/språk";
-import Kurve from "./Kurve";
+import Kurve from "GjenbruksElement/Kurver/Kurve";
 
 const Kurver = ({ meta, punkt, gradient }) => {
   if (!meta || !meta.kart || !meta.kart.format) return null;

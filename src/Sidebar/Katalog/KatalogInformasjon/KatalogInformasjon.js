@@ -2,7 +2,7 @@ import React from "react";
 import Detaljeringsgrad from "./Detaljeringsgrad";
 import KatalogInformasjonsBoks from "./KatalogInformasjonsBoks";
 import Ekspander from "GjenbruksElement/Ekspander";
-import Statistikk from "Sidebar/Katalog/KatalogInformasjon/KatalogStatistikk/KatalogStatistikk";
+import KatalogStatistikk from "Sidebar/Katalog/KatalogInformasjon/KatalogStatistikk/KatalogStatistikk";
 import språk from "Funksjoner/språk";
 
 const KatalogInformasjon = ({ meta, onUpdateLayerProp }) => {
@@ -32,7 +32,7 @@ const KatalogInformasjon = ({ meta, onUpdateLayerProp }) => {
       <KatalogInformasjonsBoks meta={meta} />
 
       <Ekspander visible={prefiks !== "AO" && !!stats} heading="Statistikk">
-        <Statistikk
+        <KatalogStatistikk
           prefiks={prefiks}
           overordnet={overordnet}
           tittel={språk(meta.tittel)}

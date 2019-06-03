@@ -1,14 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { CircularProgress } from "@material-ui/core";
 import lagGradientrampe from "Funksjoner/palette/gradientrampe";
+import makeUrl from "./KurveFunksjoner/makeUrl";
 
-function makeUrl(punkt, gradient) {
-  // TODO:
-  if (!punkt) return `https://romlig.artsdatabanken.no/${gradient.url}`;
-  return `https://romlig.artsdatabanken.no/statistikk/grid1d?punkter=${
-    punkt.url
-  }&raster=${gradient.url}`;
-}
 const KurveContainer = ({ punkt, gradient, children }) => {
   const [stats, setStats] = useState();
   useEffect(() => {

@@ -6,6 +6,7 @@ import Blokk from "./Blokk";
 
 class Statistikk extends React.Component {
   render() {
+    console.log("har statistikk komponent");
     const blokker = this.props.blokker.map(blokk => {
       return <Blokk key={blokk.key}>{this.renderInnhold(blokk)}</Blokk>;
     });
@@ -14,6 +15,7 @@ class Statistikk extends React.Component {
       <>
         {this.props.ingress && (
           <Blokk>
+            skslkdl
             <Ingress beskrivelse={this.props.ingress} />
           </Blokk>
         )}

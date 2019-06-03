@@ -2,9 +2,9 @@ import React from "react";
 import Overordnet from "./Overordnet";
 import { CallSplit, MergeType } from "@material-ui/icons/";
 import Ekspander from "GjenbruksElement/Ekspander";
-import KurveContainer from "Kodetre/Kodeliste/KurveContainer";
+import KurveContainer from "GjenbruksElement/Kurver/KurveContainer";
 import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
-import Kurve from "Kodetre/Kodeliste/Kurve";
+import Kurve from "GjenbruksElement/Kurver/Kurve";
 //import språk from "Funksjoner/språk";
 
 const KatalogNavigering = ({
