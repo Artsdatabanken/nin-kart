@@ -204,3 +204,25 @@ div {
   opacity: 0.5;
   cursor: pointer;
 }
+
+.sidebar .content_bubble,
+.content_bubble {
+  background: #b7d3d8;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+  width: 98%;
+}
+
+.content_bubble span {
+  display: inline-block;
+  width: auto;
+  max-width: calc(100% - 50px);
+  vertical-align: middle;
+}
+
+.avatar_kode {
+  padding-right: 10px;
+  color: #4b909e;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
-import Flis from "Kodetre/Kodeliste/Flis";
+import Flis from "./Flis";
 import { KeyboardArrowRight } from "@material-ui/icons";
 
 const LokalitetLenkeElement = ({

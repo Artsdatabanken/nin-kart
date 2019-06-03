@@ -2,11 +2,15 @@ import { Snackbar } from "@material-ui/core";
 import React from "react";
 import { withRouter } from "react-router-dom";
 import Lokalitet from "Sidebar/Lokalitet/Lokalitet";
-import KodeVindu from "Kodetre/Kodeliste/KodeVindu";
+import KatalogKilder from "./KatalogKilder/KatalogKilder";
 import InformasjonsFane from "Sidebar/Informasjon/InformasjonsFane";
 import parseQueryString from "./KatalogFunksjoner/parseQueryString";
 import finnKurvevariabler from "./KatalogFunksjoner/finnKurvevariabler";
 import KatalogHeader from "./KatalogHeader/KatalogHeader";
+import KatalogGradienter from "./KatalogGradienter/KatalogGradienter";
+import KatalogInformasjon from "./KatalogInformasjon/KatalogInformasjon";
+import KatalogNavigering from "./KatalogNavigering/KatalogNavigering";
+import AktiverKartlagKnapp from "./AktiverKartlagKnapp/AktiverKartlagKnapp";
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class KatalogFane extends React.Component {
@@ -32,7 +36,10 @@ class KatalogFane extends React.Component {
       onUpdateLayerProp,
       onUpdateMetaProp,
       meta,
-      location
+      location,
+      erAktivert,
+      onFitBounds,
+      onToggleLayer
     } = this.props;
 
     if (location.search && location.search.startsWith("?info")) {
@@ -43,10 +50,40 @@ class KatalogFane extends React.Component {
       return <Lokalitet lng={lng} lat={lat} vis={vis} />;
     }
     const kurve = finnKurvevariabler(this.props.aktiveLag);
+
+    if (!meta) return null;
+
     return (
       <>
         <KatalogHeader meta={meta} onFitBounds={this.props.onFitBounds} />
-        <KodeVindu
+        <KatalogInformasjon meta={meta} onUpdateLayerProp={onUpdateLayerProp} />
+
+        <AktiverKartlagKnapp
+          meta={meta}
+          erAktivert={erAktivert}
+          onFitBounds={onFitBounds}
+          onToggleLayer={onToggleLayer}
+        />
+
+        <KatalogNavigering
+          meta={meta}
+          onNavigate={this.handleNavigate}
+          data={data}
+          onUpdateMetaProp={onUpdateMetaProp}
+          opplyst={opplyst}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+        />
+
+        <KatalogGradienter
+          meta={meta}
+          onNavigate={this.handleNavigate}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          opplyst={opplyst}
+        />
+
+        <KatalogKilder
           data={data}
           meta={meta}
           onNavigate={this.handleNavigate}
