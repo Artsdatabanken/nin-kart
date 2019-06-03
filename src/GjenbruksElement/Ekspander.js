@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Link from "@material-ui/icons/Link";
-import OpenData from "Kodetre/Kodeliste/OpenData";
+import OpenData from "GjenbruksElement/OpenData";
 
 const Ekspander = ({ visible, children, heading, heading2, icon }) => {
   if (heading === "Datakilde") icon = <OpenData />;

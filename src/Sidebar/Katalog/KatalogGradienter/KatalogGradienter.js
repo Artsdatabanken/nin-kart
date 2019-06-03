@@ -1,6 +1,6 @@
 import React from "react";
 import { ShowChart, Gradient } from "@material-ui/icons/";
-import Gradienter from "Kodetre/Kodeliste/Gradienter";
+import Gradienter from "./Gradienter";
 import KurveContainer from "Kodetre/Kodeliste/KurveContainer";
 import Relasjon from "Sidebar/Katalog/Relasjoner/Relasjon";
 import Kurve from "Kodetre/Kodeliste/Kurve";
