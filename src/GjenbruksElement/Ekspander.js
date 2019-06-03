@@ -9,12 +9,14 @@ const Ekspander = ({ visible, children, heading, heading2, icon }) => {
   if (!visible) return null;
 
   return (
-    <div className="sidebar_element clickable_element">
-      <h3
-        onClick={() => {
-          setExpanded(!expanded);
-        }}
-      >
+    <div
+      className="sidebar_element clickable_element"
+      onClick={e => {
+        e.stopPropagation();
+        setExpanded(!expanded);
+      }}
+    >
+      <h3>
         {icon || <Link />}
         {heading}
         {heading2 && (

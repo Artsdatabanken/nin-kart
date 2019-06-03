@@ -33,7 +33,6 @@ class Navigeringsliste extends React.Component {
       <SettingsContext.Consumer>
         {context => (
           <List>
-            <h1>Her er jeg</h1>
             <ListSubheader>{title}</ListSubheader>
             {subtitle && <h2>{subtitle}</h2>}
             {Navigeringsliste.sorter(metadata, context.sorterPåKode).map(
