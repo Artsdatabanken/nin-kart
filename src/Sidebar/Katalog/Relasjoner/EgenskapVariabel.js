@@ -1,15 +1,13 @@
 import språk from "Funksjoner/språk";
 import React from "react";
-
-const EgenskapVariabel = ({ flagg, onNavigate }) => {
-  {
-    /* 
+/* 
     KAN TESTES PÅ: 
     - "Fast fjærebelte-bunn" 
     - "Myr- og sumpskogsmark"
     - Ligger under fanen "egenskaper"
     */
-  }
+
+const EgenskapVariabel = ({ flagg, onNavigate }) => {
   if (!flagg) return null;
   return Object.keys(flagg).map(kode => {
     const { tittel, url } = flagg[kode];
