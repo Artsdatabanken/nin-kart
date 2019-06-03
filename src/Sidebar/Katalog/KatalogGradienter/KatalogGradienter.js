@@ -72,12 +72,6 @@ const KatalogGradienter = ({
         heading="Egenskaper"
         heading2={flaggLength}
       >
-        {/* 
-        KAN TESTES PÅ: 
-        - "Fast fjærebelte-bunn" 
-        - "Myr- og sumpskogsmark"
-        - Ligger under fanen "egenskaper"
-        */}
         <EgenskapVariabel
           flagg={meta.flagg}
           onNavigate={url => {

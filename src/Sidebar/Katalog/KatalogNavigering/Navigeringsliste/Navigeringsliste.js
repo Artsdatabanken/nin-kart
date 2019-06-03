@@ -1,8 +1,8 @@
 import { List, ListSubheader } from "@material-ui/core";
 import React from "react";
 import { SettingsContext } from "SettingsContext";
-import språk from "Funksjoner/språk";
 import Kodelisteelement from "./Kodelisteelement";
+import getKey from "./NavigeringslisteFunksjoner/getKey";
 
 class Navigeringsliste extends React.Component {
   /* 
@@ -75,20 +75,9 @@ class Navigeringsliste extends React.Component {
   }
 }
 
-const nøkkel = (node, sorterPåKode) => {
-  if (node.sortering) return node.sortering;
-  if (sorterPåKode)
-    return node.kode
-      .replace("+", "Z")
-      .split(/-/)
-      .map(e => e.padStart(5, "0"));
-
-  return språk(node.tittel);
-};
-
 Navigeringsliste.sorter = (barn, sorterPåKode) => {
   const sortert = barn.concat().sort((a, b) => {
-    return nøkkel(a, sorterPåKode) >= nøkkel(b, sorterPåKode) ? 1 : -1;
+    return getKey(a, sorterPåKode) >= getKey(b, sorterPåKode) ? 1 : -1;
   });
   return sortert;
 };

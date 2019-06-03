@@ -3,35 +3,8 @@ import React from "react";
 import språk from "Funksjoner/språk";
 import Bildeavatar from "GjenbruksElement/Bildeavatar";
 import VolumIndikator from "./VolumIndikator";
-//import lysOpp from "Funksjoner/palette/opplyst";
-import prettyKode from "Funksjoner/prettyKode";
-
-function hack(symbol, intervall) {
-  return intervall.match(/[<>]/) ? intervall : symbol + " " + intervall;
-}
-
-function getSecondary(meta) {
-  let { intervall } = meta;
-  if (!intervall) return;
-  if (!(intervall.minTekst || intervall.maxTekst)) return;
-  if (!Array.isArray(intervall)) intervall = [intervall];
-  const items = intervall.map(i => {
-    if (!i.minTekst) return hack("<", i.maxTekst);
-    if (!i.maxTekst) return hack(">", i.minTekst);
-    return `${i.tittel ? i.tittel + " " : ""}${i.minTekst} - ${i.maxTekst}`;
-  });
-  const r = items.join(", ") + " " + (intervall[0].måleenhet || "");
-  return r;
-}
-
-function kodeSuffix(kode, parentkode) {
-  let i = 0;
-  while (parentkode[i] === kode[i]) i++;
-
-  if ("0123456789".indexOf(kode[i]) >= 0) i -= 1;
-  if (kode[i] === "-") i++;
-  return prettyKode(kode.substring(i));
-}
+import getSecondary from "./NavigeringslisteFunksjoner/getSecondary";
+import kodeSuffix from "./NavigeringslisteFunksjoner/kodeSuffix";
 
 class Kodelisteelement extends React.Component {
   shouldComponentUpdate(np) {
