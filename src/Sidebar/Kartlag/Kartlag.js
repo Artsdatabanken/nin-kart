@@ -17,7 +17,6 @@ class Kartlag extends React.Component {
       currentKartlag,
       meta
     } = this.props;
-    console.log(currentKartlag);
     return (
       <>
         {hidden && (
@@ -63,17 +62,17 @@ class Kartlag extends React.Component {
 
                 <div className="sidebar_element">
                   <h2>Historikk</h2>
+                  {/*
                   <ul className="kartlag_list">
                     <AktivtKartlagElement
                       kartlag={currentKartlag}
                       {...this.props}
                       visKoder={context.visKoder}
                     />
-                  </ul>
+                  </ul>*/}
                   {Object.keys(navigation_history).map(item => {
                     const node = navigation_history[item];
-                    console.log(node.meta);
-                    if (node.meta.url && node.meta !== currentKartlag) {
+                    if (node.meta.url && node !== currentKartlag) {
                       return (
                         <HistorikkListeElement
                           meta={node.meta}

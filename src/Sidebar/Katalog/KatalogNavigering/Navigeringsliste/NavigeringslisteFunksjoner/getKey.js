@@ -1,5 +1,6 @@
 import språk from "Funksjoner/språk";
-const getKey = (node, sorterPåKode) => {
+
+function getKey(node, sorterPåKode) {
   if (node.sortering) return node.sortering;
   if (sorterPåKode)
     return node.kode
@@ -8,6 +9,6 @@ const getKey = (node, sorterPåKode) => {
       .map(e => e.padStart(5, "0"));
 
   return språk(node.tittel);
-};
+}
 
-export default { getKey };
+export default getKey;
