@@ -15,6 +15,7 @@ export default {
   raster_ruter: ruter,
   osm_lys: openStreetMap,
   osm_mørk: openStreetMap,
+  topo4: googleRaster,
   google_hybrid: googleRaster,
   google_satellite: googleRaster
 };
