@@ -30,6 +30,7 @@ const EkspandertInnhold = ({
           {kode === "bakgrunnskart" ? (
             <>
               {aktivtFormat.aktivtFormat === "google_hybrid" ||
+              aktivtFormat.aktivtFormat === "topo4" ||
               aktivtFormat.aktivtFormat === "google_satellite" ? (
                 <FargeVelger
                   color={currenctActiveFormatNode.tint}
