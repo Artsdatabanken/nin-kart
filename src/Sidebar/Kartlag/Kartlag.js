@@ -28,7 +28,20 @@ class Kartlag extends React.Component {
                   <h1 className="sidebar_title">Kartlag</h1>
                 </div>
                 <div className="sidebar_element">
+                  <h2>Nåværende kartlag</h2>
+                  <ul className="kartlag_list">
+                    <AktivtKartlagElement
+                      kartlag={currentKartlag}
+                      {...this.props}
+                      visKoder={context.visKoder}
+                      erAktivtLag={true}
+                    />
+                  </ul>
+                </div>
+
+                <div className="sidebar_element">
                   <h2>Innstillinger</h2>
+
                   <ul className="kartlag_list">
                     <AktivtKartlagElement
                       kartlag={koder["bakgrunnskart"]}
@@ -62,14 +75,7 @@ class Kartlag extends React.Component {
 
                 <div className="sidebar_element">
                   <h2>Historikk</h2>
-                  {/*
-                  <ul className="kartlag_list">
-                    <AktivtKartlagElement
-                      kartlag={currentKartlag}
-                      {...this.props}
-                      visKoder={context.visKoder}
-                    />
-                  </ul>*/}
+
                   {Object.keys(navigation_history).map(item => {
                     const node = navigation_history[item];
                     if (node.meta.url && node !== currentKartlag) {

@@ -11,7 +11,8 @@ const EkspandertUnderMeny = ({
   setTheme,
   onFitBounds,
   context,
-  bbox
+  bbox,
+  erAktivtLag
 }) => {
   return (
     <div className="kartlag_submeny">
@@ -43,19 +44,20 @@ const EkspandertUnderMeny = ({
             className="invisible_icon_button"
             onClick={event => {
               context.onNavigateToTab("kart");
-              console.log("running", context.onNavigateToTab);
+              //console.log("running", context.onNavigateToTab);
               onFitBounds(bbox);
             }}
           >
             Zoom til <OpenInNew />
           </button>
-
-          <button
-            className="invisible_icon_button remove_icon"
-            onClick={() => onRemoveSelectedLayer(kode)}
-          >
-            Fjern <Close />
-          </button>
+          {erAktivtLag && (
+            <button
+              className="invisible_icon_button remove_icon"
+              onClick={() => onRemoveSelectedLayer(kode)}
+            >
+              Fjern <Close />
+            </button>
+          )}
         </>
       )}
     </div>
