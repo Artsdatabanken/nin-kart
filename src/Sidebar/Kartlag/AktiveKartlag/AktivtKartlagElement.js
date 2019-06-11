@@ -8,7 +8,10 @@ const AktivtKartlagElement = ({
   kartlag,
   onUpdateLayerProp,
   onRemoveSelectedLayer,
-  onFitBounds
+  onFitBounds,
+  erAktivtLag,
+  show_current,
+  handleShowCurrent
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [settings, setSettings] = useState(false);
@@ -25,6 +28,9 @@ const AktivtKartlagElement = ({
       {context => (
         <li>
           <EkspanderingsTopplinje
+            erAktivtLag={erAktivtLag}
+            show_current={show_current}
+            handleShowCurrent={handleShowCurrent}
             kartlag={kartlag}
             expanded={expanded}
             closeAll={closeAll}

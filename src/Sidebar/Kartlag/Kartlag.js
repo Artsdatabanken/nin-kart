@@ -15,8 +15,18 @@ class Kartlag extends React.Component {
       navigation_history,
       activateLayerFromHistory,
       currentKartlag,
-      meta
+      meta,
+      show_current,
+      handleShowCurrent
     } = this.props;
+
+    // Bah. Denne sjekker om aktivt lag er i kartlag, men oppdaterer ikke på klikk
+    if (currentKartlag && currentKartlag.kode) {
+      for (let item in keys) {
+        console.log("it is contained");
+      }
+    }
+
     return (
       <>
         {hidden && (
@@ -27,17 +37,22 @@ class Kartlag extends React.Component {
                 <div className="sidebar_title_container sidebar_element">
                   <h1 className="sidebar_title">Kartlag</h1>
                 </div>
-                <div className="sidebar_element">
-                  <h2>Nåværende kartlag</h2>
-                  <ul className="kartlag_list">
-                    <AktivtKartlagElement
-                      kartlag={currentKartlag}
-                      {...this.props}
-                      visKoder={context.visKoder}
-                      erAktivtLag={true}
-                    />
-                  </ul>
-                </div>
+                {true && (
+                  <div className="sidebar_element">
+                    <h2>Nåværende kartlag</h2>
+                    <h3>legg inn sjekk her for om den er i aktivt kartlag</h3>
+                    <ul className="kartlag_list">
+                      <AktivtKartlagElement
+                        kartlag={currentKartlag}
+                        {...this.props}
+                        visKoder={context.visKoder}
+                        erAktivtLag={true}
+                        show_current={show_current}
+                        handleShowCurrent={handleShowCurrent}
+                      />
+                    </ul>
+                  </div>
+                )}
 
                 <div className="sidebar_element">
                   <h2>Innstillinger</h2>

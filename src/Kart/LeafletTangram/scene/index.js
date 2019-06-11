@@ -119,10 +119,11 @@ function updateScene(config, props) {
     const metakode = meta.kode;
     const aktiv = props.aktiveLag[metakode];
     const erSynlig = aktiv ? aktiv.erSynlig : true;
-    if (viserKatalog && erSynlig)
+    if (viserKatalog && erSynlig && props.show_current)
       opprettAktivtLag(meta, props.opplyst, config, true);
   }
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplyst, config);
+
   lagTemp(config);
   return config;
 }
