@@ -1,5 +1,5 @@
 import sysconfig from "Funksjoner/config";
-import colorArray2Image from "../../../../Funksjoner/palette/colorArray2Image";
+import colorArray2Image from "Funksjoner/palette/colorArray2Image";
 
 function drawAll(drawArgs) {
   const layer = {
@@ -16,7 +16,10 @@ function drawAll(drawArgs) {
 }
 
 function lagStyle(format, drawArgs) {
-  const { opplyst, url } = drawArgs;
+  const {
+    opplyst
+    // url
+  } = drawArgs;
   let newPalette = makePalette(opplyst, drawArgs.barn);
   const gradient = {
     base: "raster",
@@ -350,7 +353,7 @@ function makePalette(opplyst, barna) {
   const colors = [];
   Object.keys(kodeTilIndex).forEach(kode => {
     const barnet = finnBarn(kode, barna);
-    if (barnet.kode == opplyst.kode) colors.push("#f88");
+    if (barnet.kode === opplyst.kode) colors.push("#f88");
     else colors.push(barnet.farge);
   });
   return colorArray2Image(colors);
