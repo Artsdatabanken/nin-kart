@@ -16,10 +16,7 @@ function drawAll(drawArgs) {
 }
 
 function lagStyle(format, drawArgs) {
-  const {
-    opplyst
-    // url
-  } = drawArgs;
+  const { opplyst } = drawArgs;
   let newPalette = makePalette(opplyst, drawArgs.barn);
   const gradient = {
     base: "raster",
