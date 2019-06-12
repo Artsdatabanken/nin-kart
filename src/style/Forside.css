@@ -14,15 +14,15 @@
   padding: 20px;
 }
 
-.frontpage_header h1,
-.frontpage_header h2 {
+.frontpage h1,
+.frontpage h2 {
   font-weight: 300;
   font-size: 30pt;
+  margin: 0px;
 }
 
-.frontpage_header h2 {
+.frontpage h2 {
   font-size: 20pt;
-  margin-top: -20px;
 }
 
 .frontpage_container {
@@ -33,9 +33,57 @@
   padding: 10px;
 }
 
-.frontpage_ingress {
-  padding: 20px;
+.frontpage_feature_block {
+  background: #81b2bb;
+  color: white;
   font-size: 16pt;
-  max-width: 800px;
-  margin: auto;
+}
+
+.frontpage_footer,
+.frontpage_link_items,
+.frontpage_feature_block {
+  padding: 50px;
+}
+
+.frontpage_feature_block h2 {
+  color: white;
+}
+
+.frontpage_link_items .menu_item {
+  display: inline-block;
+  width: auto;
+  margin: 25px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.frontpage_link_items .menu_item svg {
+  width: 80px;
+  height: 80px;
+  display: block;
+}
+
+.frontpage_footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100vw;
+  text-align: center;
+  background: #edf4f5;
+}
+.frontpage_header div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.frontpage_icon svg {
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  padding-top: 20px;
+  color: #4b909e;
+}
+
+.frontpage_footer img {
+  max-width: 150px;
 }

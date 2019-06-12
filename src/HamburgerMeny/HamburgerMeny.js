@@ -10,35 +10,23 @@ import {
   SwipeableDrawer,
   ListItemSecondaryAction
 } from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
 import {
   CloudUpload,
   CloudDownload,
   Comment,
-  Panorama,
   Info,
-  Pets,
-  Landscape,
-  Layers,
   AssignmentInd
 } from "@material-ui/icons";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import NavigationChevronLeftDouble from "../Grunnkart/NavigationChevronLeftDouble";
 import BildeAvatar from "GjenbruksElement/Bildeavatar";
-
 import GitHub from "./GitHub";
 import Innstillinger from "./Innstillinger";
 import Utforsk from "./Utforsk/Utforsk";
 
-const styles = {
-  link: { cursor: "pointer" },
-  heading: { fontSize: 23, fontWeight: 500 }
-};
-
 class HamburgerMeny extends Component {
   render() {
-    const { classes } = this.props;
     return (
       <SettingsContext.Consumer>
         {context => (
@@ -50,10 +38,7 @@ class HamburgerMeny extends Component {
           >
             <List>
               <ListItem>
-                <ListItemText
-                  classes={{ primary: classes.heading }}
-                  primary="Natur i Norge"
-                />
+                <ListItemText primary="Natur i Norge" />
                 <ListItemSecondaryAction>
                   <IconButton onClick={context.onToggleHovedmeny}>
                     <NavigationChevronLeftDouble />
@@ -70,7 +55,7 @@ class HamburgerMeny extends Component {
                 <Divider />
                 <ListSubheader>Hva vil du utforske?</ListSubheader>
 
-                <Utforsk parent={this} />
+                <Utforsk parent={this} props={this} />
 
                 <Divider />
                 <Menyelement
@@ -139,24 +124,15 @@ class HamburgerMeny extends Component {
     );
   handleClickLogo = () => window.open("https://artsdatabanken.no");
   handleClickMap = () => this.props.history.push("/");
-  handleClickNatursystem = () =>
-    this.props.history.push("/Natur_i_Norge/Natursystem/");
   handleClickInfoTab = () => this.props.history.push("?info");
   handleClickLandskap = () =>
     this.props.history.push("/Natur_i_Norge/Landskap/");
   handleClickStat = () => this.props.history.push("/Natur_i_Norge/Stats/");
-
-  handleClickFylke = () => this.props.history.push("/Fylke/");
-
-  handleClickNaturvernområde = () =>
-    this.props.history.push("/Naturvernområde/");
-
   handleClickTruet_art_natur = () =>
     this.props.history.push("/Truet_art_natur/");
-  handleClickArt = () => this.props.history.push("/Biota/");
   handleClickDatakilde = () => this.props.history.push("/Datakilde/");
 
   handleNavigate = url => this.props.history.push(url);
 }
 
-export default withRouter(withStyles(styles)(HamburgerMeny));
+export default withRouter(HamburgerMeny);

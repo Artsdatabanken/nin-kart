@@ -1,4 +1,4 @@
-<div className="infoItemContainer sourceContainer">
+<div className="frontpage_sources">
   <h2>Dataleverandører</h2>
   <div>
     <img
