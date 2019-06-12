@@ -6,9 +6,12 @@ import "./../style/TopBar.css";
 import { SettingsContext } from "../SettingsContext";
 import Hamburger from "@material-ui/icons/Menu";
 
-const TopBar = ({ onSelectResult }) => {
+const TopBar = ({ onSelectResult, searchFor }) => {
   const [hits, setHits] = useState([]);
   const [query, setQuery] = useState();
+  useEffect(() => {
+    if (searchFor) setQuery(searchFor);
+  }, [searchFor]);
 
   useEffect(() => {
     if (!query) return setHits([]);
