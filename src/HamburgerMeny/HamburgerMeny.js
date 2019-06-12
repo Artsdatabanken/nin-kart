@@ -26,9 +26,10 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import NavigationChevronLeftDouble from "../Grunnkart/NavigationChevronLeftDouble";
 import BildeAvatar from "GjenbruksElement/Bildeavatar";
-import Naturvern from "./Naturvern";
+
 import GitHub from "./GitHub";
 import Innstillinger from "./Innstillinger";
+import Utforsk from "./Utforsk/Utforsk";
 
 const styles = {
   link: { cursor: "pointer" },
@@ -68,38 +69,9 @@ class HamburgerMeny extends Component {
               >
                 <Divider />
                 <ListSubheader>Hva vil du utforske?</ListSubheader>
-                <Menyelement
-                  onClick={this.handleClickNatursystem}
-                  icon={<Panorama />}
-                  primary="Natursystem"
-                />
-                <Menyelement
-                  onClick={this.handleClickLandskap}
-                  icon={<Landscape />}
-                  primary="Landskap"
-                />
-                <Menyelement
-                  onClick={this.handleClickFylke}
-                  icon={<Layers />}
-                  primary="Fylke"
-                />
-                <Menyelement
-                  onClick={this.handleClickNaturvernområde}
-                  icon={<Naturvern />}
-                  primary="Naturvernområde"
-                />
-                {/* 
-                <Menyelement
-                  onClick={this.handleClickTruet_art_natur}
-                  icon={<BubbleChart />}
-                  primary="Truet art/natur"
-                />
-                */}
-                <Menyelement
-                  onClick={this.handleClickArt}
-                  icon={<Pets />}
-                  primary="Art"
-                />
+
+                <Utforsk parent={this} />
+
                 <Divider />
                 <Menyelement
                   icon={<Info />}
@@ -175,16 +147,14 @@ class HamburgerMeny extends Component {
   handleClickStat = () => this.props.history.push("/Natur_i_Norge/Stats/");
 
   handleClickFylke = () => this.props.history.push("/Fylke/");
+
   handleClickNaturvernområde = () =>
     this.props.history.push("/Naturvernområde/");
+
   handleClickTruet_art_natur = () =>
     this.props.history.push("/Truet_art_natur/");
   handleClickArt = () => this.props.history.push("/Biota/");
   handleClickDatakilde = () => this.props.history.push("/Datakilde/");
-  handleClickNaturvernområde = () =>
-    this.props.history.push("/Naturvernområde/");
-  handleClickNaturvernområde = () =>
-    this.props.history.push("/Naturvernområde/");
 
   handleNavigate = url => this.props.history.push(url);
 }

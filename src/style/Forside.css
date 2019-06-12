@@ -1,0 +1,41 @@
+.frontpage {
+  width: 100%;
+  height: calc(100%);
+  background: #ffffff;
+  top: 0px;
+  left: 0;
+  text-align: center;
+  position: absolute;
+  z-index: 100;
+}
+
+.frontpage_header {
+  background: #edf4f5;
+  padding: 20px;
+}
+
+.frontpage_header h1,
+.frontpage_header h2 {
+  font-weight: 300;
+  font-size: 30pt;
+}
+
+.frontpage_header h2 {
+  font-size: 20pt;
+  margin-top: -20px;
+}
+
+.frontpage_container {
+  position: relative;
+  width: 100%;
+  vertical-align: top;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.frontpage_ingress {
+  padding: 20px;
+  font-size: 16pt;
+  max-width: 800px;
+  margin: auto;
+}
