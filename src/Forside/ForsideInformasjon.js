@@ -2,6 +2,7 @@
 import { withRouter } from "react-router";
 import "style/Forside.css";
 import { Layers } from "@material-ui/icons";
+import Kilder from "./Kilder";
 
 import Utforsk from "HamburgerMeny/Utforsk/Utforsk";
 
@@ -53,10 +54,13 @@ const ForsideInformasjon = props => {
             </div>
           </div>
           <div className="frontpage_footer">
-            <img
-              src="https://data.artsdatabanken.no/Datakilde/Artsdatabanken/logo_med_navn_408.png"
-              alt="Artsdatabanken logo"
-            />
+            <div className="frontpage_sources">
+              <img
+                src="https://data.artsdatabanken.no/Datakilde/Artsdatabanken/logo_med_navn_408.png"
+                alt="Artsdatabanken logo"
+              />
+            </div>
+            <Kilder />
           </div>
         </div>
       )}

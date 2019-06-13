@@ -9,7 +9,7 @@
   text-align: center;
   position: absolute;
   z-index: 100;
-  overflow: scroll;
+  overflow-y: auto;
 }
 
 /* General Stuff */
@@ -63,6 +63,7 @@
 }
 
 /* Link bLOCK */
+
 .frontpage_link_items .menu_item {
   display: inline-block;
   width: auto;
@@ -80,9 +81,11 @@
 /* Footer */
 .frontpage_body {
   /* Footer height, is what makes footer sticky */
-  min-height: calc(100% - 200px);
+  min-height: calc(100% - 300px);
 }
+
 .frontpage_footer {
+  min-height: 300px;
   width: 100vw;
   text-align: center;
   background: #edf4f5;
@@ -97,5 +100,36 @@
 }
 
 .frontpage_footer img {
-  max-width: 150px;
+  display: inline-block;
+  margin: 10px;
+}
+
+.frontpage_sources {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.frontpage_sources:first-child {
+  text-align: center;
+  margin-right: 10px;
+}
+
+.frontpage_sources img {
+  width: 200px;
+}
+
+.frontpage_sources div {
+  display: inline-block;
+  text-align: center;
+  width: 90px;
+  height: 100px;
+  vertical-align: top;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.frontpage_sources div img {
+  height: 40px;
+  width: auto;
 }
