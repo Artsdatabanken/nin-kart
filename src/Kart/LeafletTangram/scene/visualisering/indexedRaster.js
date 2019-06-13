@@ -17,7 +17,7 @@ function drawAll(drawArgs) {
 
 function lagStyle(format, drawArgs) {
   const { opplyst } = drawArgs;
-  let newPalette = makePalette(opplyst, drawArgs.barn);
+  let newPalette = makePalette(opplyst, drawArgs);
   const gradient = {
     base: "raster",
     blend: "multiply",
@@ -344,7 +344,8 @@ function finnBarn(kode, barn) {
   return { kode: kode, farge: "#fff" };
 }
 
-function makePalette(opplyst, barna) {
+function makePalette(opplyst, drawArgs) {
+  const barna = drawArgs.barn.length > 0 ? drawArgs.barn : [drawArgs];
   const hash = {};
   for (var b of barna) hash[b.kode] = b.farge;
   const colors = [];
