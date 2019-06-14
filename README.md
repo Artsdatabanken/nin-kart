@@ -18,7 +18,7 @@
 
 ## Relaterte prosjekter
 
-- [REST API](https://github.com/Artsdatabanken/ogapi)
+- [Lookup API](https://github.com/Artsdatabanken/generic-substring-lookup-api)
 - [Metadataflyt](https://github.com/artsdatabanken/kverna)
 - [GIS Dataflyt](https://github.com/artsdatabanken/grunnkart-dataflyt)
 - [Geografisk API](https://github.com/Artsdatabanken/rasterQ) og [deployment](https://github.com/Artsdatabanken/rasterUploader) av dette
