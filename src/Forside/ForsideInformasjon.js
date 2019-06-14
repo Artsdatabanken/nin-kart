@@ -35,7 +35,10 @@ const ForsideInformasjon = props => {
 
             <div className="frontpage_feature_block">
               <div className="frontpage_feature_container">
-                <img src="https://www.artsdatabanken.no/Media/F28048?mode=1920x1920" />
+                <img
+                  src="https://www.artsdatabanken.no/Media/F28048?mode=1920x1920"
+                  alt=""
+                />
                 <div>
                   <h2>Hva er Natur i Norge?</h2>
                   <p>
