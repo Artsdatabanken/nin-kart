@@ -14,9 +14,11 @@ export default function fetchMeta(location, place) {
     if (data.se) {
       const newUrl = data.se[Object.keys(data.se)[0]].sti;
       redirectTo(newUrl);
+
       return;
     }
     place.setState({ meta: data, opplystKode: "", opplyst: {} });
     updateHistory(place.state, place);
+    place.handleShowCurrent("false");
   });
 }

@@ -140,6 +140,7 @@ class Grunnkart extends React.Component {
   };
   componentDidMount() {
     fetchMeta(this.props.location.pathname, this);
+    //this.handleShowCurrent(false);
   }
 
   addSelected = props => {

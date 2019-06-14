@@ -23,7 +23,7 @@ class Kartlag extends React.Component {
     // Bah. Denne sjekker om aktivt lag er i kartlag, men oppdaterer ikke på klikk
     if (currentKartlag && currentKartlag.kode) {
       for (let item in keys) {
-        console.log("it is contained");
+        // console.log("it is contained");
       }
     }
 
