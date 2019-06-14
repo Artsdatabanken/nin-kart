@@ -11,7 +11,8 @@ const AktivtKartlagElement = ({
   onFitBounds,
   erAktivtLag,
   show_current,
-  handleShowCurrent
+  handleShowCurrent,
+  is_current_object
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [settings, setSettings] = useState(false);
@@ -51,6 +52,7 @@ const AktivtKartlagElement = ({
                 bbox={bbox}
                 onFitBounds={onFitBounds}
                 onRemoveSelectedLayer={onRemoveSelectedLayer}
+                is_current_object={is_current_object}
               />
 
               <EkspandertInnhold

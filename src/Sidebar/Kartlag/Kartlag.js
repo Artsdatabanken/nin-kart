@@ -20,10 +20,13 @@ class Kartlag extends React.Component {
       handleShowCurrent
     } = this.props;
 
-    // Bah. Denne sjekker om aktivt lag er i kartlag, men oppdaterer ikke på klikk
+    let duplicate = false;
+
     if (currentKartlag && currentKartlag.kode) {
       for (let item in keys) {
-        // console.log("it is contained");
+        if (keys[item] === currentKartlag.kode) {
+          duplicate = true;
+        }
       }
     }
 
@@ -37,10 +40,9 @@ class Kartlag extends React.Component {
                 <div className="sidebar_title_container sidebar_element">
                   <h1 className="sidebar_title">Kartlag</h1>
                 </div>
-                {true && (
+                {!duplicate && (
                   <div className="sidebar_element">
                     <h2>Nåværende kartlag</h2>
-                    <h3>legg inn sjekk her for om den er i aktivt kartlag</h3>
                     <ul className="kartlag_list">
                       <AktivtKartlagElement
                         kartlag={currentKartlag}
@@ -49,6 +51,7 @@ class Kartlag extends React.Component {
                         erAktivtLag={true}
                         show_current={show_current}
                         handleShowCurrent={handleShowCurrent}
+                        is_current_object={true}
                       />
                     </ul>
                   </div>

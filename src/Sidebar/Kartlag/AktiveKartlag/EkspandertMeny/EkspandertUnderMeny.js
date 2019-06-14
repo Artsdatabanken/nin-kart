@@ -1,5 +1,11 @@
 import React from "react";
-import { Close, OpenInNew, ColorLens, Edit } from "@material-ui/icons";
+import {
+  Close,
+  OpenInNew,
+  ColorLens,
+  Edit
+  //Add
+} from "@material-ui/icons";
 
 const EkspandertUnderMeny = ({
   closeAll,
@@ -12,7 +18,7 @@ const EkspandertUnderMeny = ({
   onFitBounds,
   context,
   bbox,
-  erAktivtLag
+  is_current_object
 }) => {
   return (
     <div className="kartlag_submeny">
@@ -44,13 +50,21 @@ const EkspandertUnderMeny = ({
             className="invisible_icon_button"
             onClick={event => {
               context.onNavigateToTab("kart");
-              //console.log("running", context.onNavigateToTab);
               onFitBounds(bbox);
             }}
           >
             Zoom til <OpenInNew />
           </button>
-          {erAktivtLag && (
+          {is_current_object ? (
+            /*
+            <button
+              className="invisible_icon_button remove_icon"
+              onClick={() => activateLayerFromHistory(node)}
+            >
+              Legg Til <Add />
+            </button>
+            */ ""
+          ) : (
             <button
               className="invisible_icon_button remove_icon"
               onClick={() => onRemoveSelectedLayer(kode)}
