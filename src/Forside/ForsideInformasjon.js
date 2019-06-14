@@ -1,7 +1,7 @@
 ﻿import React, { useState } from "react";
 import { withRouter } from "react-router";
 import "style/Forside.css";
-import { Layers } from "@material-ui/icons";
+import { Map } from "@material-ui/icons";
 import Kilder from "./Kilder";
 
 import Utforsk from "HamburgerMeny/Utforsk/Utforsk";
@@ -14,18 +14,18 @@ const ForsideInformasjon = props => {
   return (
     <React.Fragment>
       {showInfo !== "turn off" && (
-        <div
-          className="frontpage"
-          onClick={e => {
-            e.stopPropagation();
-            //props.history.push("/Natur_i_Norge/");
-            setShowInfo(false);
-          }}
-        >
+        <div className="frontpage">
           <div className="frontpage_body">
             <div className="frontpage_header">
-              <div className="frontpage_icon">
-                <Layers />{" "}
+              <div
+                className="frontpage_icon"
+                onClick={e => {
+                  e.stopPropagation();
+                  props.history.push("/Natur_i_Norge/");
+                  setShowInfo(false);
+                }}
+              >
+                <Map />{" "}
               </div>
               <div>
                 <h1>NiN-Kart</h1>
@@ -34,31 +34,36 @@ const ForsideInformasjon = props => {
             </div>
 
             <div className="frontpage_feature_block">
-              <h2>Hva er Natur i Norge?</h2>
-              <p>
-                {" "}
-                Natur i Norge (NiN) er et type- og beskrivelsessystem for all
-                variasjon i naturen. NiN håndterer variasjonen i alle naturmiljø
-                i Norge, fra de store havdyp til de høyeste fjell, og fra
-                Skagerrak i sør til Svalbard og Polhavet i nord. Les mer om
-                prosjektet{" "}
-                <a href="https://www.artsdatabanken.no/NiN">
-                  på Artsdatabankens nettsider om NiN.
-                </a>
-              </p>
+              <div className="frontpage_feature_container">
+                <img src="https://www.artsdatabanken.no/Media/F28048?mode=1920x1920" />
+                <div>
+                  <h2>Hva er Natur i Norge?</h2>
+                  <p>
+                    Natur i Norge (NiN) er et type- og beskrivelsessystem for
+                    naturvariasjon.
+                    <br />
+                    Les mer om på Artsdatabankens{" "}
+                    <a href="https://www.artsdatabanken.no/NiN">
+                      nettsider om NiN.
+                    </a>
+                  </p>
+                </div>
+              </div>
             </div>
 
             <div className="frontpage_link_items">
-              <h2>Utforsk NiN-kart</h2>
+              <h2>Utforsk NiN-kart via ikonene nedenfor</h2>
               <Utforsk parent={props} />
             </div>
           </div>
           <div className="frontpage_footer">
             <div className="frontpage_sources">
-              <img
-                src="https://data.artsdatabanken.no/Datakilde/Artsdatabanken/logo_med_navn_408.png"
-                alt="Artsdatabanken logo"
-              />
+              <a href="https://www.artsdatabanken.no/">
+                <img
+                  src="https://data.artsdatabanken.no/Datakilde/Artsdatabanken/logo_med_navn_408.png"
+                  alt="Artsdatabanken logo"
+                />
+              </a>
             </div>
             <Kilder />
           </div>
