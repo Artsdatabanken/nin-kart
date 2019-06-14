@@ -14,7 +14,7 @@ const Menyelement = ({
   toggle,
   checked
 }) => (
-  <ListItem onClick={onClick} button>
+  <ListItem onClick={onClick} button className="menu_item">
     <ListItemIcon>{icon}</ListItemIcon>
     <ListItemText primary={primary} secondary={secondary} />
     {toggle && <Switch checked={checked} />}

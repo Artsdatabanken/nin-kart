@@ -19,7 +19,7 @@ class Backend {
   }
 
   static async søk(q) {
-    return this.getPromise(`https://ogapi.artsdatabanken.no/${q}`);
+    return this.getPromise(`https://lookup.artsdatabanken.no/${q}`);
   }
 
   static async hentStatistikk(kode, bounds) {

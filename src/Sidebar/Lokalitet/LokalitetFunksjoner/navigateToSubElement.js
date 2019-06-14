@@ -29,7 +29,7 @@ export default function navigateToSubElement(kode, node, history) {
   kode = getInnerMostSingleChild(kode, node);
   kode = updateName(kode);
   backend.søk(kode).then(json => {
-    // TODO: Mofify lat,lon query API to return URLs
+    // TODO: Modify lat,lon query API to return URLs
     let hit = json.result[0];
     for (const r of json.result) {
       if (r.kode.endsWith(kode)) hit = r;

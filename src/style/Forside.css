@@ -1,0 +1,170 @@
+/* Container */
+.frontpage {
+  width: 100%;
+  height: calc(100%);
+  min-height: 100vh;
+  background: #ffffff;
+  top: 0px;
+  left: 0;
+  text-align: center;
+  position: absolute;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+/* General Stuff */
+.frontpage_footer,
+.frontpage_link_items,
+.frontpage_feature_block {
+  padding: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+  .frontpage_footer,
+  .frontpage_link_items,
+  .frontpage_feature_block {
+    padding: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* Header */
+
+.frontpage_header {
+  background: #edf4f5;
+  padding: 20px;
+}
+
+.frontpage_header div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Headings */
+
+.frontpage h1,
+.frontpage h2 {
+  font-weight: 300;
+  font-size: 30pt;
+  margin: 0px;
+}
+
+.frontpage h2 {
+  font-size: 20pt;
+}
+
+/* fEATURE bLOCK */
+
+.frontpage_feature_block {
+  background: #81b2bb;
+  font-size: 16pt;
+}
+
+.frontpage_feature_block,
+.frontpage_feature_block h2 {
+  color: white;
+}
+
+.frontpage_feature_container {
+  max-width: 1024px;
+  margin: auto;
+}
+
+.frontpage_feature_block img {
+  width: 30%;
+  max-width: 250px;
+}
+
+.frontpage_feature_container div {
+  width: 60%;
+  padding: 20px;
+}
+
+.frontpage_feature_block img,
+.frontpage_feature_container div {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 768px) {
+  .frontpage_feature_block img,
+  .frontpage_feature_container div {
+    display: block;
+    width: 100%;
+    margin: auto;
+  }
+}
+
+/* Link bLOCK */
+
+.frontpage_link_items .menu_item {
+  display: inline-block;
+  width: auto;
+  margin: 25px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.frontpage_link_items .menu_item svg {
+  width: 80px;
+  height: 80px;
+  display: block;
+}
+
+/* Footer */
+.frontpage_body {
+  /* Footer height, is what makes footer sticky */
+  min-height: calc(100% - 300px);
+}
+
+.frontpage_footer {
+  min-height: 300px;
+  width: 100vw;
+  text-align: center;
+  background: #edf4f5;
+}
+
+.frontpage_icon svg {
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  color: #4b909e;
+}
+
+.frontpage_footer img {
+  display: inline-block;
+  margin: 10px;
+}
+
+.frontpage_sources {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.frontpage_sources:first-child {
+  text-align: center;
+  margin-right: 10px;
+}
+
+.frontpage_sources img {
+  width: 200px;
+}
+
+.frontpage_sources div {
+  display: inline-block;
+  text-align: center;
+  width: 90px;
+  height: 100px;
+  vertical-align: top;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.frontpage_sources div img {
+  height: 40px;
+  width: auto;
+}
