@@ -55,18 +55,6 @@ class Kartlag extends React.Component {
                 )}
 
                 <div className="sidebar_element">
-                  <h2>Innstillinger</h2>
-
-                  <ul className="kartlag_list">
-                    <AktivtKartlagElement
-                      kartlag={koder["bakgrunnskart"]}
-                      {...this.props}
-                      visKoder={context.visKoder}
-                    />
-                  </ul>
-                </div>
-
-                <div className="sidebar_element">
                   <h2>Mine Kartlag</h2>
                   <ul className="kartlag_list">
                     {keys.map(fkode => {
@@ -85,6 +73,18 @@ class Kartlag extends React.Component {
                         )
                       );
                     })}
+                  </ul>
+                </div>
+
+                <div className="sidebar_element">
+                  <h2>Bakgrunnskart</h2>
+
+                  <ul className="kartlag_list">
+                    <AktivtKartlagElement
+                      kartlag={koder["bakgrunnskart"]}
+                      {...this.props}
+                      visKoder={context.visKoder}
+                    />
                   </ul>
                 </div>
 

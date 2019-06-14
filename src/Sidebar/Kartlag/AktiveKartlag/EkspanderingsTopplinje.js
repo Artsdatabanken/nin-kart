@@ -18,9 +18,12 @@ const EkspanderingsTopplinje = ({
   show_current,
   handleShowCurrent
 }) => {
-  const tittel = kartlag.tittel;
+  let tittel = kartlag.tittel;
   const kode = kartlag.kode;
   const erSynlig = kartlag.erSynlig;
+  if (tittel === "Basiskart") {
+    tittel = "Bakgrunnskart";
+  }
 
   return (
     <div
@@ -32,7 +35,7 @@ const EkspanderingsTopplinje = ({
       <span className="kartlag_list_title">
         {språk(tittel)}
         <br />
-        {context.visKoder && kode}
+        {context.visKoder && kode !== "bakgrunnskart" && kode}
       </span>
 
       {/* The span adjusts the menu to the right placement */}
