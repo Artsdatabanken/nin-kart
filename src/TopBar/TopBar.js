@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ResultatListe from "./ResultatListe";
 import Searchbar from "./Searchbar/Searchbar";
-import axios from "axios";
 import "./../style/TopBar.css";
 import { SettingsContext } from "../SettingsContext";
 import Hamburger from "@material-ui/icons/Menu";
+import backend from "../Funksjoner/backend";
 
 const TopBar = ({ onSelectResult, searchFor }) => {
   const [hits, setHits] = useState([]);
@@ -16,8 +16,8 @@ const TopBar = ({ onSelectResult, searchFor }) => {
   useEffect(() => {
     if (!query) return setHits([]);
     const fetchData = async () => {
-      const result = await axios("https://ogapi.artsdatabanken.no/" + query);
-      setHits(result.data.result);
+      const response = await backend.søk(query.replace(/\//g, "-"));
+      setHits(response.result);
     };
     fetchData();
   }, [query]);
