@@ -60,7 +60,7 @@ class Kartlag extends React.Component {
                 <div className="sidebar_element">
                   <h2>Mine Kartlag</h2>
                   <ul className="kartlag_list">
-                    {keys.map(fkode => {
+                    {keys.reverse().map(fkode => {
                       const kartlag = koder[fkode];
                       return (
                         fkode !== "bakgrunnskart" && (
@@ -94,20 +94,22 @@ class Kartlag extends React.Component {
                 <div className="sidebar_element">
                   <h2>Historikk</h2>
 
-                  {Object.keys(navigation_history).map(item => {
-                    const node = navigation_history[item];
-                    if (node.meta.url && node !== currentKartlag) {
-                      return (
-                        <HistorikkListeElement
-                          meta={node.meta}
-                          activateLayerFromHistory={activateLayerFromHistory}
-                          node={node}
-                          history={history}
-                        />
-                      );
-                    }
-                    return <></>;
-                  })}
+                  {Object.keys(navigation_history)
+                    .reverse()
+                    .map(item => {
+                      const node = navigation_history[item];
+                      if (node.meta.url && node !== currentKartlag) {
+                        return (
+                          <HistorikkListeElement
+                            meta={node.meta}
+                            activateLayerFromHistory={activateLayerFromHistory}
+                            node={node}
+                            history={history}
+                          />
+                        );
+                      }
+                      return <></>;
+                    })}
                 </div>
               </div>
             )}
