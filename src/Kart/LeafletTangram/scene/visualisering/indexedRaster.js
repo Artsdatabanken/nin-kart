@@ -1,4 +1,6 @@
 import sysconfig from "Funksjoner/config";
+import colorArray2Image from "Funksjoner/palette/colorArray2Image";
+import landskapIndexTemp from "./landskap_index_temp";
 
 function drawAll(drawArgs) {
   const layer = {
@@ -14,20 +16,9 @@ function drawAll(drawArgs) {
   return layer;
 }
 
-/*
-function quantize(value) {
-  return (
-    Math.trunc(value[0] / 25 + 0.25) + '-' + Math.trunc(value[1] / 25 + 0.25)
-  )
-}*/
-
 function lagStyle(format, drawArgs) {
-  const { opplyst, url } = drawArgs;
-  let palettUrl = opplyst.url || url;
-  const newPalette = `${
-    sysconfig.storageUrl
-  }${palettUrl}/raster_indexed_palette.png`;
-
+  const { opplyst } = drawArgs;
+  let newPalette = makePalette(opplyst, drawArgs);
   const gradient = {
     base: "raster",
     blend: "multiply",
@@ -45,34 +36,33 @@ function lagStyle(format, drawArgs) {
             return (rgba.g*256. + rgba.b)*255.*pixelWidth+0.5*pixelWidth;
           }`,
         color: `
-        float v = rgbaToIndex(sampleRaster(0));
-        color = texture2D(palette, vec2(v, depth));
+          float v = rgbaToIndex(sampleRaster(0));
+          color = texture2D(palette, vec2(v, depth));
       `
       }
     }
   };
   return { name: drawArgs.kode, value: gradient };
 }
-/*
-        color: `
-        float px = 1.;
-        vec3 off = vec3(-px, 0, px);
-        float v = rgbaToIndex(sampleRaster(0));
-        float diff = abs(v - rgbaToIndex(sampleRasterAtPixel(0, vec2(currentRasterPixel(0) + off.xy))));
-        diff += abs(v-rgbaToIndex(sampleRasterAtPixel(0, vec2(currentRasterPixel(0) + off.zy))));
-        diff += abs(v-rgbaToIndex(sampleRasterAtPixel(0, vec2(currentRasterPixel(0) + off.yx))));
-        diff += abs(v-rgbaToIndex(sampleRasterAtPixel(0, vec2(currentRasterPixel(0) + off.yz))));
-        diff = clamp(diff,0.,1.);
-        vec4 border = vec4(0.,0.,0.,0.8);
-        vec4 fill1 = texture2D(palette1, vec2(v/512., depth));
-        vec4 fill2 = texture2D(palette2, vec2(v/512., depth));
-        vec4 fill = mix(fill1, fill2, clamp(u_time*2.5,0.,1.));
-        float step = clamp((u_map_position.z-8.)*0.08,0.,1.);
-        color = mix(fill, border,diff*step);
-        //color = sampleRaster(0);
-      //  color= vec4(1.,1.,0.,1.);
-      `
-*/
+
+function finnBarn(kode, barn) {
+  for (var barnet of barn) if (kode.startsWith(barnet.kode)) return barnet;
+  return { kode: kode, farge: "#fff" };
+}
+
+function makePalette(opplyst, drawArgs) {
+  const barna = drawArgs.barn.length > 0 ? drawArgs.barn : [drawArgs];
+  const hash = {};
+  for (var b of barna) hash[b.kode] = b.farge;
+  const colors = [];
+  Object.keys(landskapIndexTemp).forEach(kode => {
+    const barnet = finnBarn(kode, barna);
+    if (barnet.kode === opplyst.kode) colors.push("#f88");
+    else colors.push(barnet.farge);
+  });
+  return colorArray2Image(colors);
+}
+
 function lagSource({ url, zoom }, { bbox }) {
   const source = sysconfig.createTileSource(url, "Raster", zoom, bbox);
   //  source.tile_size = 256;
