@@ -49,6 +49,7 @@ class Grunnkart extends React.Component {
           return (
             <>
               <TopBar
+                searchFor={this.state.searchFor}
                 onSelectResult={item => {
                   history.push("/" + item.url);
                 }}
