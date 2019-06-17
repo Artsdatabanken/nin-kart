@@ -98,7 +98,12 @@ class Kartlag extends React.Component {
                     .reverse()
                     .map(item => {
                       const node = navigation_history[item];
-                      if (node.meta.url && node !== currentKartlag) {
+                      console.log(node.meta.kode);
+                      if (
+                        node.meta.url &&
+                        node !== currentKartlag &&
+                        node.meta.kode !== currentKartlag.kode
+                      ) {
                         return (
                           <HistorikkListeElement
                             meta={node.meta}
