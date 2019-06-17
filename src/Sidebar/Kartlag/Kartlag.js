@@ -30,6 +30,11 @@ class Kartlag extends React.Component {
       }
     }
 
+    if (navigation_history.length > 11) {
+      /* History length limitation. When surpassing this limit, it removes the earliest entry */
+      navigation_history.shift();
+    }
+
     return (
       <>
         {hidden && (
