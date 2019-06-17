@@ -27,7 +27,7 @@ const KatalogGradienter = ({
     ? Object.entries(meta.gradient).length
     : 0;
 
-  const relasjon = meta.graf;
+  //const relasjon = meta.graf;
   //console.log(relasjon);
 
   const flaggLength = meta.flagg ? Object.entries(meta.flagg).length : 0;

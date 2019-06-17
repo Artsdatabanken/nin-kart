@@ -21,6 +21,9 @@ const AktivtKartlagElement = ({
     setTheme(false);
     setSettings(false);
   }
+  if (!kartlag) {
+    return null;
+  }
   const kode = kartlag.kode;
   const aktivtFormat = kartlag.kart;
   let bbox = kartlag.bbox;

@@ -49,10 +49,8 @@ const EkspandertInnhold = ({
             </>
           ) : (
             <>
-              {!is_current_object ? (
+              {!is_current_object && (
                 <>
-                  <h2>Rediger Innhold</h2>
-
                   <GradientFilter
                     kartlag={kartlag}
                     onUpdateLayerProp={onUpdateLayerProp}
@@ -65,29 +63,14 @@ const EkspandertInnhold = ({
                     format={kartlag.kart.format}
                     aktvtKartlagFormat={kartlag.kart.aktivtFormat}
                   />
-
-                  {kartlag.barn.length === 0 ? (
-                    <FargeVelger
-                      color={kartlag.farge}
-                      onUpdateLayerProp={onUpdateLayerProp}
-                      where={kartlag.kode}
-                    />
-                  ) : (
-                    <LegendeElementer
-                      kartlag={kartlag}
-                      aktivtFormat={aktivtFormat}
-                      onUpdateLayerProp={onUpdateLayerProp}
-                    />
-                  )}
                 </>
-              ) : (
-                <LegendeElementer
-                  kartlag={kartlag}
-                  aktivtFormat={aktivtFormat}
-                  onUpdateLayerProp={onUpdateLayerProp}
-                  skjul_meny_tittel={true}
-                />
               )}
+              <LegendeElementer
+                kartlag={kartlag}
+                aktivtFormat={aktivtFormat}
+                onUpdateLayerProp={onUpdateLayerProp}
+                skjul_meny_tittel={true}
+              />
             </>
           )}
         </>
