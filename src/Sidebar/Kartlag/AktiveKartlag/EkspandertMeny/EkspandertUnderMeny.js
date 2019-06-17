@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Close,
-  OpenInNew,
-  ColorLens,
-  Edit
-  //Add
-} from "@material-ui/icons";
+import { Close, OpenInNew, ColorLens, Edit, Add } from "@material-ui/icons";
 
 const EkspandertUnderMeny = ({
   closeAll,
@@ -16,8 +10,10 @@ const EkspandertUnderMeny = ({
   theme,
   setTheme,
   onFitBounds,
+  navhist,
   context,
   bbox,
+  activateLayerFromHistory,
   is_current_object
 }) => {
   if (is_current_object) {
@@ -61,14 +57,16 @@ const EkspandertUnderMeny = ({
             Zoom til <OpenInNew />
           </button>
           {is_current_object ? (
-            /*
             <button
-              className="invisible_icon_button remove_icon"
-              onClick={() => activateLayerFromHistory(node)}
+              className="invisible_icon_button"
+              onClick={() => {
+                closeAll();
+                setSettings(!settings);
+                activateLayerFromHistory(navhist);
+              }}
             >
               Legg Til <Add />
             </button>
-            */ ""
           ) : (
             <button
               className="invisible_icon_button remove_icon"

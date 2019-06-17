@@ -12,7 +12,9 @@ const AktivtKartlagElement = ({
   erAktivtLag,
   show_current,
   handleShowCurrent,
-  is_current_object
+  is_current_object,
+  activateLayerFromHistory,
+  navhist
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [settings, setSettings] = useState(false);
@@ -60,6 +62,8 @@ const AktivtKartlagElement = ({
                 is_current_object={is_current_object}
                 onUpdateLayerProp={onUpdateLayerProp}
                 aktivtFormat={aktivtFormat}
+                activateLayerFromHistory={activateLayerFromHistory}
+                navhist={navhist}
               />
 
               <EkspandertInnhold

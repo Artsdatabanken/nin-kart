@@ -52,6 +52,10 @@ class Kartlag extends React.Component {
                         show_current={show_current}
                         handleShowCurrent={handleShowCurrent}
                         is_current_object={true}
+                        activateLayerFromHistory={activateLayerFromHistory}
+                        navhist={
+                          navigation_history[navigation_history.length - 1]
+                        } // add last item in list
                       />
                     </ul>
                   </div>
@@ -85,6 +89,7 @@ class Kartlag extends React.Component {
                   <ul className="kartlag_list">
                     <AktivtKartlagElement
                       kartlag={koder["bakgrunnskart"]}
+                      key={"bakgrunnskart"}
                       {...this.props}
                       visKoder={context.visKoder}
                     />
@@ -98,7 +103,7 @@ class Kartlag extends React.Component {
                     .reverse()
                     .map(item => {
                       const node = navigation_history[item];
-                      console.log(node.meta.kode);
+
                       if (
                         node.meta.url &&
                         node !== currentKartlag &&
@@ -110,6 +115,7 @@ class Kartlag extends React.Component {
                             activateLayerFromHistory={activateLayerFromHistory}
                             node={node}
                             history={history}
+                            key={node.meta.kode}
                           />
                         );
                       }
