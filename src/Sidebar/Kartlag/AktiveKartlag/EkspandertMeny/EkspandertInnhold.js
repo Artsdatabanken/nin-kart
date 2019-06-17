@@ -12,7 +12,8 @@ const EkspandertInnhold = ({
   aktivtFormat,
   onUpdateLayerProp,
   kartlag,
-  settings
+  settings,
+  is_current_object
 }) => {
   const current = aktivtFormat.aktivtFormat;
   const currenctActiveFormatNode = aktivtFormat.format[current];
@@ -48,32 +49,43 @@ const EkspandertInnhold = ({
             </>
           ) : (
             <>
-              <h2>Rediger Innhold</h2>
+              {!is_current_object ? (
+                <>
+                  <h2>Rediger Innhold</h2>
 
-              <GradientFilter
-                kartlag={kartlag}
-                onUpdateLayerProp={onUpdateLayerProp}
-                kode={kode}
-              />
+                  <GradientFilter
+                    kartlag={kartlag}
+                    onUpdateLayerProp={onUpdateLayerProp}
+                    kode={kode}
+                  />
 
-              <GradientEllerTypeinndelt
-                onUpdateLayerProp={onUpdateLayerProp}
-                where={kartlag.kode}
-                format={kartlag.kart.format}
-                aktvtKartlagFormat={kartlag.kart.aktivtFormat}
-              />
+                  <GradientEllerTypeinndelt
+                    onUpdateLayerProp={onUpdateLayerProp}
+                    where={kartlag.kode}
+                    format={kartlag.kart.format}
+                    aktvtKartlagFormat={kartlag.kart.aktivtFormat}
+                  />
 
-              {kartlag.barn.length === 0 ? (
-                <FargeVelger
-                  color={kartlag.farge}
-                  onUpdateLayerProp={onUpdateLayerProp}
-                  where={kartlag.kode}
-                />
+                  {kartlag.barn.length === 0 ? (
+                    <FargeVelger
+                      color={kartlag.farge}
+                      onUpdateLayerProp={onUpdateLayerProp}
+                      where={kartlag.kode}
+                    />
+                  ) : (
+                    <LegendeElementer
+                      kartlag={kartlag}
+                      aktivtFormat={aktivtFormat}
+                      onUpdateLayerProp={onUpdateLayerProp}
+                    />
+                  )}
+                </>
               ) : (
                 <LegendeElementer
                   kartlag={kartlag}
                   aktivtFormat={aktivtFormat}
                   onUpdateLayerProp={onUpdateLayerProp}
+                  skjul_meny_tittel={true}
                 />
               )}
             </>

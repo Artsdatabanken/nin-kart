@@ -38,6 +38,7 @@ const AktivtKartlagElement = ({
             setExpanded={setExpanded}
             context={context}
             onUpdateLayerProp={onUpdateLayerProp}
+            is_current_object={is_current_object}
           />
 
           {expanded && (
@@ -51,8 +52,11 @@ const AktivtKartlagElement = ({
                 setSettings={setSettings}
                 bbox={bbox}
                 onFitBounds={onFitBounds}
+                kartlag={kartlag}
                 onRemoveSelectedLayer={onRemoveSelectedLayer}
                 is_current_object={is_current_object}
+                onUpdateLayerProp={onUpdateLayerProp}
+                aktivtFormat={aktivtFormat}
               />
 
               <EkspandertInnhold
@@ -62,6 +66,7 @@ const AktivtKartlagElement = ({
                 onUpdateLayerProp={onUpdateLayerProp}
                 kartlag={kartlag}
                 settings={settings}
+                is_current_object={is_current_object}
               />
             </>
           )}

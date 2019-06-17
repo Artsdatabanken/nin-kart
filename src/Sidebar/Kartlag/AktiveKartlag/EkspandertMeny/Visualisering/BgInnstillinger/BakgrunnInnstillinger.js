@@ -11,7 +11,7 @@ class BakgrunnInnstillinger extends Component {
     const current = aktivtFormat.aktivtFormat;
     const kf = aktivtFormat.format[current];
     const what = "kart.format." + current;
-    console.log(kf);
+    //console.log(kf);
 
     return (
       <List>

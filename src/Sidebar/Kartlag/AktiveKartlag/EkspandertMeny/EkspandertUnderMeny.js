@@ -20,6 +20,10 @@ const EkspandertUnderMeny = ({
   bbox,
   is_current_object
 }) => {
+  if (is_current_object) {
+    closeAll();
+    setSettings(true);
+  }
   return (
     <div className="kartlag_submeny">
       {kode === "bakgrunnskart" && (
@@ -33,16 +37,17 @@ const EkspandertUnderMeny = ({
           Tema <ColorLens />
         </button>
       )}
-
-      <button
-        className="invisible_icon_button"
-        onClick={() => {
-          closeAll();
-          setSettings(!settings);
-        }}
-      >
-        Rediger <Edit />
-      </button>
+      {!is_current_object && (
+        <button
+          className="invisible_icon_button"
+          onClick={() => {
+            closeAll();
+            setSettings(!settings);
+          }}
+        >
+          Rediger <Edit />
+        </button>
+      )}
 
       {kode !== "bakgrunnskart" && (
         <>
