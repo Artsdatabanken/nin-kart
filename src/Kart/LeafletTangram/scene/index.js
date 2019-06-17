@@ -27,7 +27,8 @@ function farge(farge, viserKatalog) {
 
 function opprettAktivtLag(lag, opplyst, config, viserKatalog) {
   const viz = lag.kart.format[lag.kart.aktivtFormat];
-  if (!viz) return console.warn("No viz");
+  if (!viz)
+    return console.warn("No visualisation availiable for this map layer");
   let drawArgs = {
     forelderkode: lag.kode,
     kode: lag.kode,
@@ -119,10 +120,11 @@ function updateScene(config, props) {
     const metakode = meta.kode;
     const aktiv = props.aktiveLag[metakode];
     const erSynlig = aktiv ? aktiv.erSynlig : true;
-    if (viserKatalog && erSynlig)
+    if (viserKatalog && erSynlig && props.show_current)
       opprettAktivtLag(meta, props.opplyst, config, true);
   }
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplyst, config);
+
   lagTemp(config);
   return config;
 }

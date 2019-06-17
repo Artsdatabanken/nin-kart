@@ -8,7 +8,13 @@ const AktivtKartlagElement = ({
   kartlag,
   onUpdateLayerProp,
   onRemoveSelectedLayer,
-  onFitBounds
+  onFitBounds,
+  erAktivtLag,
+  show_current,
+  handleShowCurrent,
+  is_current_object,
+  activateLayerFromHistory,
+  navhist
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [settings, setSettings] = useState(false);
@@ -16,6 +22,9 @@ const AktivtKartlagElement = ({
   function closeAll() {
     setTheme(false);
     setSettings(false);
+  }
+  if (!kartlag) {
+    return null;
   }
   const kode = kartlag.kode;
   const aktivtFormat = kartlag.kart;
@@ -25,12 +34,16 @@ const AktivtKartlagElement = ({
       {context => (
         <li>
           <EkspanderingsTopplinje
+            erAktivtLag={erAktivtLag}
+            show_current={show_current}
+            handleShowCurrent={handleShowCurrent}
             kartlag={kartlag}
             expanded={expanded}
             closeAll={closeAll}
             setExpanded={setExpanded}
             context={context}
             onUpdateLayerProp={onUpdateLayerProp}
+            is_current_object={is_current_object}
           />
 
           {expanded && (
@@ -44,7 +57,13 @@ const AktivtKartlagElement = ({
                 setSettings={setSettings}
                 bbox={bbox}
                 onFitBounds={onFitBounds}
+                kartlag={kartlag}
                 onRemoveSelectedLayer={onRemoveSelectedLayer}
+                is_current_object={is_current_object}
+                onUpdateLayerProp={onUpdateLayerProp}
+                aktivtFormat={aktivtFormat}
+                activateLayerFromHistory={activateLayerFromHistory}
+                navhist={navhist}
               />
 
               <EkspandertInnhold
@@ -54,6 +73,7 @@ const AktivtKartlagElement = ({
                 onUpdateLayerProp={onUpdateLayerProp}
                 kartlag={kartlag}
                 settings={settings}
+                is_current_object={is_current_object}
               />
             </>
           )}

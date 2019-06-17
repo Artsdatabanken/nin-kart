@@ -28,7 +28,8 @@ class Grunnkart extends React.Component {
       fitBounds: null,
       meta: null,
       visKoder: false,
-      navigation_history: []
+      navigation_history: [],
+      showCurrent: true
     };
     this.props.history.listen((location, action) => {
       // Åpne menyen ved navigering
@@ -57,6 +58,8 @@ class Grunnkart extends React.Component {
                 {context.aktivTab === "meny" && (
                   <div className="sidebar">
                     <KatalogFane
+                      show_current={this.state.showCurrent}
+                      handleShowCurrent={this.handleShowCurrent}
                       aktiveLag={this.state.aktiveLag}
                       mapBounds={this.state.actualBounds}
                       onMouseEnter={this.handleMouseEnter}
@@ -79,6 +82,8 @@ class Grunnkart extends React.Component {
                   </div>
                 )}
                 <Kartlag
+                  show_current={this.state.showCurrent}
+                  handleShowCurrent={this.handleShowCurrent}
                   hidden={context.aktivTab === "kartlag" && true}
                   aktiveLag={this.state.aktiveLag}
                   onUpdateLayerProp={this.handleUpdateLayerProp}
@@ -91,6 +96,7 @@ class Grunnkart extends React.Component {
                 />
 
                 <Kart
+                  show_current={this.state.showCurrent}
                   bounds={this.state.fitBounds}
                   latitude={65.4}
                   longitude={10.8}
@@ -122,6 +128,9 @@ class Grunnkart extends React.Component {
   handleFitBounds = bbox => {
     this.setState({ fitBounds: bbox });
   };
+  handleShowCurrent = show_current => {
+    this.setState({ showCurrent: show_current });
+  };
   handleBoundsChange = bbox => {
     this.setState({ actualBounds: bbox });
   };
@@ -131,6 +140,7 @@ class Grunnkart extends React.Component {
   };
   componentDidMount() {
     fetchMeta(this.props.location.pathname, this);
+    //this.handleShowCurrent(false);
   }
 
   addSelected = props => {

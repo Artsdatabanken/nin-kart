@@ -84,6 +84,7 @@ class LeafletTangram extends React.Component {
     if (this.props.aktiveLag !== prevProps.aktiveLag) return true;
     if (this.props.meta !== prevProps.meta) return true;
     if (this.props.opplystKode !== prevProps.opplystKode) return true;
+    if (this.props.show_current !== prevProps.show_current) return true;
   }
 
   componentDidUpdate(prevProps, prevState) {

@@ -15,8 +15,26 @@ class Kartlag extends React.Component {
       navigation_history,
       activateLayerFromHistory,
       currentKartlag,
-      meta
+      meta,
+      show_current,
+      handleShowCurrent
     } = this.props;
+
+    let duplicate = false;
+
+    if (currentKartlag && currentKartlag.kode) {
+      for (let item in keys) {
+        if (keys[item] === currentKartlag.kode) {
+          duplicate = true;
+        }
+      }
+    }
+
+    if (navigation_history.length > 11) {
+      /* History length limitation. When surpassing this limit, it removes the earliest entry */
+      navigation_history.shift();
+    }
+
     return (
       <>
         {hidden && (
@@ -27,21 +45,31 @@ class Kartlag extends React.Component {
                 <div className="sidebar_title_container sidebar_element">
                   <h1 className="sidebar_title">Kartlag</h1>
                 </div>
-                <div className="sidebar_element">
-                  <h2>Innstillinger</h2>
-                  <ul className="kartlag_list">
-                    <AktivtKartlagElement
-                      kartlag={koder["bakgrunnskart"]}
-                      {...this.props}
-                      visKoder={context.visKoder}
-                    />
-                  </ul>
-                </div>
+                {!duplicate && (
+                  <div className="sidebar_element">
+                    <h2>Nåværende kartlag</h2>
+                    <ul className="kartlag_list">
+                      <AktivtKartlagElement
+                        kartlag={currentKartlag}
+                        {...this.props}
+                        visKoder={context.visKoder}
+                        erAktivtLag={true}
+                        show_current={show_current}
+                        handleShowCurrent={handleShowCurrent}
+                        is_current_object={true}
+                        activateLayerFromHistory={activateLayerFromHistory}
+                        navhist={
+                          navigation_history[navigation_history.length - 1]
+                        } // add last item in list
+                      />
+                    </ul>
+                  </div>
+                )}
 
                 <div className="sidebar_element">
                   <h2>Mine Kartlag</h2>
                   <ul className="kartlag_list">
-                    {keys.map(fkode => {
+                    {keys.reverse().map(fkode => {
                       const kartlag = koder[fkode];
                       return (
                         fkode !== "bakgrunnskart" && (
@@ -61,29 +89,43 @@ class Kartlag extends React.Component {
                 </div>
 
                 <div className="sidebar_element">
-                  <h2>Historikk</h2>
-                  {/*
+                  <h2>Bakgrunnskart</h2>
+
                   <ul className="kartlag_list">
                     <AktivtKartlagElement
-                      kartlag={currentKartlag}
+                      kartlag={koder["bakgrunnskart"]}
+                      key={"bakgrunnskart"}
                       {...this.props}
                       visKoder={context.visKoder}
                     />
-                  </ul>*/}
-                  {Object.keys(navigation_history).map(item => {
-                    const node = navigation_history[item];
-                    if (node.meta.url && node !== currentKartlag) {
-                      return (
-                        <HistorikkListeElement
-                          meta={node.meta}
-                          activateLayerFromHistory={activateLayerFromHistory}
-                          node={node}
-                          history={history}
-                        />
-                      );
-                    }
-                    return <></>;
-                  })}
+                  </ul>
+                </div>
+
+                <div className="sidebar_element">
+                  <h2>Historikk</h2>
+
+                  {Object.keys(navigation_history)
+                    .reverse()
+                    .map(item => {
+                      const node = navigation_history[item];
+
+                      if (
+                        node.meta.url &&
+                        node !== currentKartlag &&
+                        node.meta.kode !== currentKartlag.kode
+                      ) {
+                        return (
+                          <HistorikkListeElement
+                            meta={node.meta}
+                            activateLayerFromHistory={activateLayerFromHistory}
+                            node={node}
+                            history={history}
+                            key={node.meta.kode}
+                          />
+                        );
+                      }
+                      return <></>;
+                    })}
                 </div>
               </div>
             )}

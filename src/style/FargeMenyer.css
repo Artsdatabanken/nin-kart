@@ -181,6 +181,7 @@ select {
 .title_and_subtitle_container {
   display: inline-block;
   vertical-align: top;
+  max-width: calc(100% - 110px);
 }
 
 .title_and_subtitle_container span {

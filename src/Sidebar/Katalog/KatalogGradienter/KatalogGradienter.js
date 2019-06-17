@@ -27,8 +27,8 @@ const KatalogGradienter = ({
     ? Object.entries(meta.gradient).length
     : 0;
 
-  const relasjon = meta.graf;
-  console.log(relasjon);
+  //const relasjon = meta.graf;
+  //console.log(relasjon);
 
   const flaggLength = meta.flagg ? Object.entries(meta.flagg).length : 0;
   if (!meta.gradient) return null;
@@ -77,7 +77,7 @@ const KatalogGradienter = ({
           onNavigate={url => {
             console.warn(url);
             onNavigate(url);
-            console.log("loading flagg: ", meta.flagg);
+            //console.log("loading flagg: ", meta.flagg);
           }}
         />
       </Ekspander>

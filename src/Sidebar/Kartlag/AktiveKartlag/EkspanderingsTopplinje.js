@@ -13,11 +13,18 @@ const EkspanderingsTopplinje = ({
   expanded,
   kartlag,
   closeAll,
-  setExpanded
+  erAktivtLag,
+  setExpanded,
+  show_current,
+  handleShowCurrent
 }) => {
-  const tittel = kartlag.tittel;
+  let tittel = kartlag.tittel;
   const kode = kartlag.kode;
   const erSynlig = kartlag.erSynlig;
+  if (tittel === "Basiskart") {
+    tittel = "Bakgrunnskart";
+  }
+
   return (
     <div
       className={
@@ -28,7 +35,7 @@ const EkspanderingsTopplinje = ({
       <span className="kartlag_list_title">
         {språk(tittel)}
         <br />
-        {context.visKoder && kode}
+        {context.visKoder && kode !== "bakgrunnskart" && kode}
       </span>
 
       {/* The span adjusts the menu to the right placement */}
@@ -37,14 +44,30 @@ const EkspanderingsTopplinje = ({
         <button
           className="invisible_icon_button"
           onClick={e => {
-            onUpdateLayerProp(kode, "erSynlig", !erSynlig);
-            e.stopPropagation();
+            if (!erAktivtLag) {
+              onUpdateLayerProp(kode, "erSynlig", !erSynlig);
+              e.stopPropagation();
+            } else {
+              handleShowCurrent(!show_current);
+            }
           }}
         >
-          {erSynlig ? (
-            <VisibilityOutlined />
+          {erAktivtLag ? (
+            <>
+              {show_current ? (
+                <VisibilityOutlined />
+              ) : (
+                <VisibilityOffOutlined style={{ color: "#aaa" }} />
+              )}
+            </>
           ) : (
-            <VisibilityOffOutlined style={{ color: "#aaa" }} />
+            <>
+              {erSynlig ? (
+                <VisibilityOutlined />
+              ) : (
+                <VisibilityOffOutlined style={{ color: "#aaa" }} />
+              )}
+            </>
           )}
         </button>
 
