@@ -3,12 +3,7 @@ import { ListSubheader, Typography } from "@material-ui/core";
 import { SortByAlpha } from "@material-ui/icons";
 import React from "react";
 
-const Innstillinger = ({
-  classes,
-  visKoder,
-  sorterPåKode,
-  onUpdateSetting
-}) => (
+const Innstillinger = ({ visKoder, sorterPåKode, onUpdateSetting }) => (
   <>
     <ListSubheader>Innstillinger</ListSubheader>
 
@@ -20,7 +15,7 @@ const Innstillinger = ({
       }}
       icon={
         <Typography>
-          <span className={!visKoder && classes.icondisabled}>NA</span>
+          <span>NA</span>
         </Typography>
       }
       primary="Vis koder i tillegg til navn"
