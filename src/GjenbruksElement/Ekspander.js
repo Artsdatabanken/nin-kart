@@ -9,7 +9,7 @@ const Ekspander = ({ visible, children, heading, heading2, icon }) => {
   if (!visible) return null;
 
   return (
-    <div
+    <button
       className="sidebar_element clickable_element"
       onClick={e => {
         e.stopPropagation();
@@ -32,7 +32,7 @@ const Ekspander = ({ visible, children, heading, heading2, icon }) => {
       </h3>
 
       {expanded === true && <div className="expander_content">{children}</div>}
-    </div>
+    </button>
   );
 };
 
