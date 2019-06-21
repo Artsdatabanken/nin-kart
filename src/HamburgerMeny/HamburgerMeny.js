@@ -46,43 +46,54 @@ class HamburgerMeny extends Component {
                 </ListItemSecondaryAction>
               </ListItem>
               <Divider />
-              <div
-                tabIndex={0}
-                role="button"
-                onClick={context.onToggleHovedmeny}
-                onKeyDown={context.onToggleHovedmeny}
-              >
+
+              <div>
                 <Divider />
                 <ListSubheader>Hva vil du utforske?</ListSubheader>
 
-                <Utforsk parent={this} props={this} />
+                <Utforsk parent={this} props={this} context={context} />
 
                 <Divider />
                 <Menyelement
                   icon={<Info />}
                   primary="Informasjon"
-                  onClick={this.handleClickInfoTab}
+                  onClick={() => {
+                    this.handleClickInfoTab();
+                    context.onToggleHovedmeny();
+                  }}
                 />
                 <Divider />
                 <ListSubheader>Datagrunnlag</ListSubheader>
                 <Menyelement
                   icon={<CloudDownload />}
                   primary="Last ned data"
-                  onClick={this.handleClickLastNed}
+                  onClick={() => {
+                    this.handleClickLastNed();
+                    context.onToggleHovedmeny();
+                  }}
                 />
                 <Menyelement
-                  onClick={this.handleClickLastOpp}
+                  onClick={() => {
+                    this.handleClickLastOpp();
+                    context.onToggleHovedmeny();
+                  }}
                   icon={<CloudUpload />}
                   primary="Levere data"
                 />
 
                 <Menyelement
-                  onClick={this.handleClickDatakilde}
+                  onClick={() => {
+                    this.handleClickDatakilde();
+                    context.onToggleHovedmeny();
+                  }}
                   icon={<AssignmentInd />}
                   primary="Datakilder"
                 />
                 <Menyelement
-                  onClick={this.handleClickSource}
+                  onClick={() => {
+                    this.handleClickSource();
+                    context.onToggleHovedmeny();
+                  }}
                   icon={<GitHub />}
                   primary="Kildekode"
                 />
@@ -96,13 +107,19 @@ class HamburgerMeny extends Component {
                 <Divider />
                 <ListSubheader>Kontakt</ListSubheader>
                 <Menyelement
-                  onClick={this.handleClickBidra}
+                  onClick={() => {
+                    this.handleClickBidra();
+                    context.onToggleHovedmeny();
+                  }}
                   icon={<Comment />}
                   primary="Tilbakemeldinger"
                 />
 
                 <Menyelement
-                  onClick={this.handleClickLogo}
+                  onClick={() => {
+                    this.handleClickLogo();
+                    context.onToggleHovedmeny();
+                  }}
                   icon={<BildeAvatar url="Datakilde/Artsdatabanken" />}
                   primary="Artsdatabanken"
                 />

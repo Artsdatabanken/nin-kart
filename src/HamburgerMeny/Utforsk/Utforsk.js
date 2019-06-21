@@ -3,8 +3,8 @@ import React from "react";
 import { Panorama, Pets, Landscape, Layers } from "@material-ui/icons";
 import Naturvern from "HamburgerMeny/Naturvern";
 
-const Utforsk = ({ parent }) => {
-  /* 
+const Utforsk = ({ parent, context }) => {
+  /*
   Ridiculous check here to avoid props collapse when called from different places
   */
   let the_props = parent;
@@ -17,6 +17,7 @@ const Utforsk = ({ parent }) => {
       <Menyelement
         onClick={e => {
           the_props.history.push("/Natur_i_Norge/Natursystem");
+          context.onToggleHovedmeny();
         }}
         icon={<Panorama />}
         primary="Natursystem"
@@ -25,6 +26,7 @@ const Utforsk = ({ parent }) => {
       <Menyelement
         onClick={e => {
           the_props.history.push("/Natur_i_Norge/Landskap");
+          context.onToggleHovedmeny();
         }}
         icon={<Landscape />}
         primary="Landskap"
@@ -33,6 +35,7 @@ const Utforsk = ({ parent }) => {
       <Menyelement
         onClick={e => {
           the_props.history.push("/Fylke/");
+          context.onToggleHovedmeny();
         }}
         icon={<Layers />}
         primary="Fylke"
@@ -41,6 +44,7 @@ const Utforsk = ({ parent }) => {
       <Menyelement
         onClick={e => {
           the_props.history.push("/Naturvernområde/");
+          context.onToggleHovedmeny();
         }}
         icon={<Naturvern />}
         primary="Naturvernområde"
@@ -49,6 +53,7 @@ const Utforsk = ({ parent }) => {
       <Menyelement
         onClick={e => {
           the_props.history.push("/Biota/");
+          context.onToggleHovedmeny();
         }}
         icon={<Pets />}
         primary="Art"
