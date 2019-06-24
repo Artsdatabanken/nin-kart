@@ -39,11 +39,10 @@ class Kodelisteelement extends React.Component {
           <VolumIndikator størsteAreal={størsteAreal} areal={areal} />
 
           <Bildeavatar url={url} />
-
-          <span className="nav_title">{språk(meta.tittel)}</span>
-
-          <span className="nav_title">{getSecondary(meta)}</span>
-
+          <div className="nav_text">
+            <span className="nav_title">{språk(meta.tittel)}</span>
+            <span className="nav_2ndtitle">{getSecondary(meta)}</span>
+          </div>
           {visKode && (
             <span className="nav_kode">{kodeSuffix(kode, parentkode)}</span>
           )}

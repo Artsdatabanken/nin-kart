@@ -26,7 +26,7 @@ const KatalogKilder = ({ onNavigate, meta, opplyst, ...props }) => {
         opplyst={opplyst}
         {...props}
       >
-        <div>
+        <div className="sidebar_element_padding">
           <Button
             variant="contained"
             color="default"

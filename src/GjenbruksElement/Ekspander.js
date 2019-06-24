@@ -9,30 +9,31 @@ const Ekspander = ({ visible, children, heading, heading2, icon }) => {
   if (!visible) return null;
 
   return (
-    <button
-      className="sidebar_element clickable_element"
-      onClick={e => {
-        e.stopPropagation();
-        setExpanded(!expanded);
-      }}
-    >
-      <h3>
-        {icon || <Link />}
-        {heading}
-        {heading2 && (
-          <span className="sidebar_title_number">
-            {heading2}
-            {expanded === true ? (
-              <ExpandMoreIcon className="expand_icon rotated" />
-            ) : (
-              <ExpandMoreIcon className="expand_icon" />
-            )}
-          </span>
-        )}
-      </h3>
-
+    <div className="sidebar_element ">
+      <button
+        className="clickable_element"
+        onClick={e => {
+          e.stopPropagation();
+          setExpanded(!expanded);
+        }}
+      >
+        <h3>
+          {icon || <Link />}
+          {heading}
+          {heading2 && (
+            <span className="sidebar_title_number">
+              {heading2}
+              {expanded === true ? (
+                <ExpandMoreIcon className="expand_icon rotated" />
+              ) : (
+                <ExpandMoreIcon className="expand_icon" />
+              )}
+            </span>
+          )}
+        </h3>
+      </button>
       {expanded === true && <div className="expander_content">{children}</div>}
-    </button>
+    </div>
   );
 };
 

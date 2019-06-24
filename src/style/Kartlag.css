@@ -11,6 +11,7 @@ Even tho we don't a of now support IE X)
 .activate_button_container {
   text-align: center;
 }
+
 .activate_button {
   background: #4b909e;
   color: white;
@@ -28,6 +29,7 @@ Even tho we don't a of now support IE X)
 /* Clean out padding to get 100% width */
 .kartlag .sidebar_element,
 .kartlag li {
+  padding: 10px;
   padding-left: 0px;
   padding-right: 0px;
   margin-left: 0px;
@@ -39,6 +41,8 @@ Even tho we don't a of now support IE X)
 .kartlag h2,
 .kartlag h1,
 .kartlag_header {
+  margin: 0px;
+  padding-top: 10px;
   padding-left: 20px;
   padding-right: 20px;
 }

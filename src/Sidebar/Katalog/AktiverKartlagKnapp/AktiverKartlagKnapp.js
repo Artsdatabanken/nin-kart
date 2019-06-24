@@ -12,9 +12,9 @@ const AktiverKartlagKnapp = ({ erAktivert, onToggleLayer, meta }) => {
     <>
       <SettingsContext.Consumer>
         {context => (
-          <div className="sidebar_element activate_button_container">
+          <div className="sidebar_element activate_button_container sidebar_element_padding">
             <button
-              className="activate_button"
+              className="activate_button "
               onClick={event => {
                 if (!erAktivert) {
                   onToggleLayer();

@@ -5,6 +5,12 @@
   top: calc(50% - 10px);
 }
 
+.clickable_element {
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+}
+
 .clickable_element_location:hover {
   cursor: pointer;
   background: #edf4f5;

@@ -41,10 +41,11 @@ class Kartlag extends React.Component {
           <SettingsContext.Consumer>
             {context => (
               <div className="kartlag sidebar">
-                <div className="sidebar_element page_topic_header" />
+                <div className="page_topic_header" />
                 <div className="sidebar_title_container sidebar_element">
                   <h1 className="sidebar_title">Kartlag</h1>
                 </div>
+
                 {!duplicate && (
                   <div className="sidebar_element">
                     <h2>Nåværende kartlag</h2>

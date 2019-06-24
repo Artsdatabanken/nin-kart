@@ -1,5 +1,5 @@
 import React from "react";
-import Overordnet from "./Overordnet";
+import Overordnet from "./Navigeringsliste/Overordnet";
 import { MergeType } from "@material-ui/icons/";
 import Ekspander from "GjenbruksElement/Ekspander";
 import KurveContainer from "GjenbruksElement/Kurver/KurveContainer";

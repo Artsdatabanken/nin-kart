@@ -108,6 +108,8 @@ button.active {
   /*color: #fff;*/
 }
 
+/* BUTTON HEADERS */
+
 @keyframes fadein {
   from {
     opacity: 0;

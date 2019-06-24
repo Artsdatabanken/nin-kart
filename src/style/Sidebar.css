@@ -38,14 +38,25 @@
   border: 0px;
   width: 100%;
   border-bottom: 1px solid #eaeaea;
-  padding: 10px;
   position: relative;
   text-align: left;
 }
 
+.sidebar_element_padding {
+  padding: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.sidebar_element p {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
 /* Container boxes with regular items, not pre-styled ones */
 .sidebar_title_container,
-.sidebar_description p,
 .stats_paragraph {
   padding-right: 10px;
   padding-left: 10px;

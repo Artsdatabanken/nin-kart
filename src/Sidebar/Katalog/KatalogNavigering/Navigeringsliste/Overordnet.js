@@ -25,6 +25,7 @@ const Overordnet = ({ farge, overordnet, onNavigate, classes }) => {
           </Avatar>
         </ListItemAvatar>
       )}
+
       <ListItemText primary={språk(item.tittel)} _secondary={item.nivå} />
     </ListItem>
   ));
