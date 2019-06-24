@@ -1,0 +1,15 @@
+.nav_menu_button {
+  background: transparent;
+  width: 100%;
+  display: block;
+  text-align: left;
+}
+
+.nav_menu_button span {
+  display: inline-block;
+  vertical-align: top;
+  max-width: calc(100% - 50px);
+  left: 50px;
+  font-size: 12pt;
+  padding: 5px;
+}

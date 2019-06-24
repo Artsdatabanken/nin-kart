@@ -1,10 +1,10 @@
-import { ListItem, Typography, ListItemText } from "@material-ui/core";
 import React from "react";
 import språk from "Funksjoner/språk";
 import Bildeavatar from "GjenbruksElement/Bildeavatar";
 import VolumIndikator from "./VolumIndikator";
 import getSecondary from "./NavigeringslisteFunksjoner/getSecondary";
 import kodeSuffix from "./NavigeringslisteFunksjoner/kodeSuffix";
+import "style/NavMenu.css";
 
 class Kodelisteelement extends React.Component {
   shouldComponentUpdate(np) {
@@ -29,27 +29,25 @@ class Kodelisteelement extends React.Component {
     } = this.props;
     return (
       <>
-        <ListItem
-          dense={true}
+        <button
           key={kode}
           onClick={() => onNavigate(url)}
           onMouseEnter={() => onMouseEnter && onMouseEnter({ kode, url })}
           onMouseLeave={() => onMouseLeave && onMouseLeave()}
-          button={true}
+          className="nav_menu_button"
         >
           <VolumIndikator størsteAreal={størsteAreal} areal={areal} />
+
           <Bildeavatar url={url} />
-          <ListItemText
-            style={{ width: "50%" }}
-            primary={språk(meta.tittel)}
-            secondary={getSecondary(meta)}
-          />
+
+          <span className="nav_title">{språk(meta.tittel)}</span>
+
+          <span className="nav_title">{getSecondary(meta)}</span>
+
           {visKode && (
-            <Typography variant="caption" noWrap>
-              {kodeSuffix(kode, parentkode)}
-            </Typography>
+            <span className="nav_kode">{kodeSuffix(kode, parentkode)}</span>
           )}
-        </ListItem>
+        </button>
         {/*kode === 'LA-KLG-AI' && (
           <ListItem>
             <Arealbruksintensitet value={meta.value} onChange={onChange} />

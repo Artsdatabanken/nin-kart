@@ -16,6 +16,7 @@
   background: #fbfbfb;
   width: 100%;
   margin-top: 56px;
+  font-family: "Roboto", "sans-serif";
 }
 
 .sidebar div {
@@ -44,9 +45,12 @@
 
 /* Container boxes with regular items, not pre-styled ones */
 .sidebar_title_container,
-.sidebar_description p {
+.sidebar_description p,
+.stats_paragraph {
   padding-right: 10px;
   padding-left: 10px;
+  font-size: 12pt;
+  font-family: "Roboto", "sans-serif";
 }
 
 .sidebar_title_container h1,

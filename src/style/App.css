@@ -55,13 +55,21 @@ button {
 body {
   overflow: hidden;
   touch-action: none;
+}
+
+body,
+input,
+p,
+button,
+h1,
+h2,
+h3 {
   font-family: "Roboto", "sans-serif";
 }
 
 h1,
 h2,
 h3 {
-  font-family: "Roboto", "sans-serif";
   color: #4b909e;
 }
 
@@ -83,7 +91,6 @@ strong,
 b {
   font-weight: 500;
 }
-
 .hoverUnderline:hover {
   text-decoration: underline;
 }
@@ -98,7 +105,7 @@ button.active:focus,
 button.active {
   cursor: pointer;
   background: #81b2bb;
-  color: #fff;
+  /*color: #fff;*/
 }
 
 @keyframes fadein {

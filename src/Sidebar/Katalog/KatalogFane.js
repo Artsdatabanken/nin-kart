@@ -55,16 +55,6 @@ class KatalogFane extends React.Component {
 
     return (
       <>
-        <KatalogHeader meta={meta} onFitBounds={this.props.onFitBounds} />
-        <KatalogInformasjon meta={meta} onUpdateLayerProp={onUpdateLayerProp} />
-
-        <AktiverKartlagKnapp
-          meta={meta}
-          erAktivert={erAktivert}
-          onFitBounds={onFitBounds}
-          onToggleLayer={onToggleLayer}
-        />
-
         <KatalogNavigering
           meta={meta}
           onNavigate={this.handleNavigate}
@@ -73,6 +63,15 @@ class KatalogFane extends React.Component {
           opplyst={opplyst}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
+        />
+        <KatalogHeader meta={meta} onFitBounds={this.props.onFitBounds} />
+        <KatalogInformasjon meta={meta} onUpdateLayerProp={onUpdateLayerProp} />
+
+        <AktiverKartlagKnapp
+          meta={meta}
+          erAktivert={erAktivert}
+          onFitBounds={onFitBounds}
+          onToggleLayer={onToggleLayer}
         />
 
         <KatalogGradienter

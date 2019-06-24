@@ -7,18 +7,16 @@ const Statistikk = ({ prefiks, overordnet, stats, tittel, arealPrefix }) => {
   const areal = stats.areal;
   const prosent = ((100 * stats.areal) / arealPrefix).toFixed(1) + " %";
   return (
-    <div className="sidebar_element">
-      <p>
-        {tekst({
-          tittel: tittel,
-          overordnet: overordnet,
-          prefiks: prefiks,
-          areal,
-          arter,
-          prosent
-        })}
-      </p>
-    </div>
+    <p className="stats_paragraph">
+      {tekst({
+        tittel: tittel,
+        overordnet: overordnet,
+        prefiks: prefiks,
+        areal,
+        arter,
+        prosent
+      })}
+    </p>
   );
 };
 
