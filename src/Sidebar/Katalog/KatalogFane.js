@@ -10,6 +10,8 @@ import KatalogHeader from "./KatalogHeader/KatalogHeader";
 import KatalogGradienter from "./KatalogGradienter/KatalogGradienter";
 import KatalogInformasjon from "./KatalogInformasjon/KatalogInformasjon";
 import KatalogNavigering from "./KatalogNavigering/KatalogNavigering";
+import KatalogBarneliste from "./KatalogBarneliste/KatalogBarneliste";
+
 import AktiverKartlagKnapp from "./AktiverKartlagKnapp/AktiverKartlagKnapp";
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
@@ -55,57 +57,75 @@ class KatalogFane extends React.Component {
 
     return (
       <>
-        <KatalogNavigering
-          meta={meta}
-          onNavigate={this.handleNavigate}
-          data={data}
-          onUpdateMetaProp={onUpdateMetaProp}
-          opplyst={opplyst}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-        />
-        <KatalogHeader meta={meta} onFitBounds={this.props.onFitBounds} />
-        <KatalogInformasjon meta={meta} onUpdateLayerProp={onUpdateLayerProp} />
-
-        <AktiverKartlagKnapp
-          meta={meta}
-          erAktivert={erAktivert}
-          onFitBounds={onFitBounds}
-          onToggleLayer={onToggleLayer}
-        />
-
-        <KatalogGradienter
-          meta={meta}
-          onNavigate={this.handleNavigate}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          opplyst={opplyst}
-        />
-
-        <KatalogKilder
-          data={data}
-          meta={meta}
-          onNavigate={this.handleNavigate}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          onFitBounds={this.props.onFitBounds}
-          erAktivert={this.props.erAktivert}
-          opplyst={opplyst}
-          onToggleLayer={this.props.onToggleLayer}
-          onUpdateLayerProp={onUpdateLayerProp}
-          onUpdateMetaProp={onUpdateMetaProp}
-          kurve={kurve}
-        />
-
-        {this.state.error && (
-          <Snackbar
-            open={true}
-            message={"Søk feilet: " + JSON.stringify(this.state.error)}
-            autoHideDuration={4000}
-            onRequestClose={this.handleCloseSnackbar}
+        <div className="sidebar">
+          <KatalogNavigering
+            meta={meta}
+            onNavigate={this.handleNavigate}
+            data={data}
+            onUpdateMetaProp={onUpdateMetaProp}
+            opplyst={opplyst}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
           />
-        )}
-        <div />
+        </div>
+        <div className="main_body">
+          <div className="main_body_wrapper">
+            <KatalogHeader meta={meta} onFitBounds={this.props.onFitBounds} />
+            <KatalogInformasjon
+              meta={meta}
+              onUpdateLayerProp={onUpdateLayerProp}
+            />
+
+            <AktiverKartlagKnapp
+              meta={meta}
+              erAktivert={erAktivert}
+              onFitBounds={onFitBounds}
+              onToggleLayer={onToggleLayer}
+            />
+
+            <KatalogGradienter
+              meta={meta}
+              onNavigate={this.handleNavigate}
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+              opplyst={opplyst}
+            />
+
+            <KatalogKilder
+              data={data}
+              meta={meta}
+              onNavigate={this.handleNavigate}
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+              onFitBounds={this.props.onFitBounds}
+              erAktivert={this.props.erAktivert}
+              opplyst={opplyst}
+              onToggleLayer={this.props.onToggleLayer}
+              onUpdateLayerProp={onUpdateLayerProp}
+              onUpdateMetaProp={onUpdateMetaProp}
+              kurve={kurve}
+            />
+
+            <KatalogBarneliste
+              meta={meta}
+              onNavigate={this.handleNavigate}
+              data={data}
+              onUpdateMetaProp={onUpdateMetaProp}
+              opplyst={opplyst}
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+            />
+
+            {this.state.error && (
+              <Snackbar
+                open={true}
+                message={"Søk feilet: " + JSON.stringify(this.state.error)}
+                autoHideDuration={4000}
+                onRequestClose={this.handleCloseSnackbar}
+              />
+            )}
+          </div>
+        </div>
       </>
     );
   }

@@ -19,6 +19,34 @@
   font-family: "Roboto", "sans-serif";
 }
 
+.main_body {
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 408px);
+  background: #fbfbfb;
+  font-family: "Roboto", "sans-serif";
+  left: 408px;
+  overflow-y: auto;
+}
+
+.main_body_wrapper {
+  padding: 50px;
+  margin-left: 20px;
+  margin-right: auto;
+  max-width: 90%;
+  text-align: center;
+}
+
+.katalog_link_displayer {
+  width: 33%;
+  display: inline-block;
+  padding: 0px;
+}
+
+.katalog_link_displayer img {
+  width: 100%;
+}
+
 .sidebar div {
   box-sizing: border-box;
   margin: 0px;

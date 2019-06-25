@@ -1,12 +1,7 @@
 import React from "react";
-import Overordnet from "./Navigeringsliste/Overordnet";
-import { MergeType } from "@material-ui/icons/";
-import Ekspander from "GjenbruksElement/Ekspander";
 import KurveContainer from "GjenbruksElement/Kurver/KurveContainer";
 import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
 import Kurve from "GjenbruksElement/Kurver/Kurve";
-import språk from "Funksjoner/språk";
-import Bildeavatar from "GjenbruksElement/Bildeavatar";
 
 const KatalogNavigering = ({
   data,
@@ -22,18 +17,11 @@ const KatalogNavigering = ({
 Navigation
   
   */
-  const { overordnet, kode } = meta;
-  const tittel = språk(meta.tittel);
+  const { kode } = meta;
   return (
     <>
-      <h1>Navigering</h1>
+      <h1>Underelementer</h1>
       <>
-        <Overordnet overordnet={overordnet} onNavigate={onNavigate} />
-        <div className="nav_current">
-          {" "}
-          <Bildeavatar url={meta.url} /> {tittel}
-        </div>
-
         <Navigeringsliste
           title=""
           parentkode={kode}

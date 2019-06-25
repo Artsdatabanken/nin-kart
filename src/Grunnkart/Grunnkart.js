@@ -56,30 +56,28 @@ class Grunnkart extends React.Component {
               />
               <div>
                 {context.aktivTab === "meny" && (
-                  <div className="sidebar">
-                    <KatalogFane
-                      show_current={this.state.showCurrent}
-                      handleShowCurrent={this.handleShowCurrent}
-                      aktiveLag={this.state.aktiveLag}
-                      mapBounds={this.state.actualBounds}
-                      onMouseEnter={this.handleMouseEnter}
-                      onMouseLeave={this.handleMouseLeave}
-                      onFitBounds={this.handleFitBounds}
-                      erAktivert={erAktivert}
-                      opplyst={this.state.opplyst}
-                      onToggleLayer={() => {
-                        this.handleToggleLayer();
-                        if (!context.visAktiveLag) context.onToggleAktiveLag();
-                      }}
-                      meta={this.state.meta}
-                      searchFor={this.state.searchFor}
-                      onClearSearchFor={this.handleClearSearchFor}
-                      onUpdateLayerProp={this.handleUpdateLayerProp}
-                      onUpdateMetaProp={this.handleUpdateMetaProp}
-                      visAktiveLag={context.visAktiveLag}
-                      onToggleAktiveLag={context.onToggleAktiveLag}
-                    />
-                  </div>
+                  <KatalogFane
+                    show_current={this.state.showCurrent}
+                    handleShowCurrent={this.handleShowCurrent}
+                    aktiveLag={this.state.aktiveLag}
+                    mapBounds={this.state.actualBounds}
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    onFitBounds={this.handleFitBounds}
+                    erAktivert={erAktivert}
+                    opplyst={this.state.opplyst}
+                    onToggleLayer={() => {
+                      this.handleToggleLayer();
+                      if (!context.visAktiveLag) context.onToggleAktiveLag();
+                    }}
+                    meta={this.state.meta}
+                    searchFor={this.state.searchFor}
+                    onClearSearchFor={this.handleClearSearchFor}
+                    onUpdateLayerProp={this.handleUpdateLayerProp}
+                    onUpdateMetaProp={this.handleUpdateMetaProp}
+                    visAktiveLag={context.visAktiveLag}
+                    onToggleAktiveLag={context.onToggleAktiveLag}
+                  />
                 )}
                 <Kartlag
                   show_current={this.state.showCurrent}

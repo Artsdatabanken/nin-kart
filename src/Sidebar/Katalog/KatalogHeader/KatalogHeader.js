@@ -1,8 +1,17 @@
 import React from "react";
 import KatalogHeaderImage from "./KatalogHeaderImage";
-import KatalogHeaderTittelBlokk from "./KatalogHeaderTittelBlokk";
+import språk from "Funksjoner/språk";
+import prettyKode from "Funksjoner/prettyKode";
+import { SettingsContext } from "SettingsContext";
+
+import { OpenInNew } from "@material-ui/icons/";
 
 const KatalogHeader = ({ meta, onFitBounds }) => {
+  if (!meta) return null;
+  const { kode, bbox, nivå, overordnet } = meta;
+  const pkode = prettyKode(kode);
+  const tittel = språk(meta.tittel);
+
   /*
   
   Contains all sidebar elements with header and identification functions,
@@ -10,12 +19,37 @@ const KatalogHeader = ({ meta, onFitBounds }) => {
 
   */
   return (
-    <div className="sidebar_top_area sidebar_background_element">
-      <div className="sidebar_element page_topic_header" />
+    <SettingsContext.Consumer>
+      {context => (
+        <div className="">
+          <h1 className="sidebar_title">{tittel}</h1>
 
-      <KatalogHeaderImage meta={meta} />
-      <KatalogHeaderTittelBlokk meta={meta} onFitBounds={onFitBounds} />
-    </div>
+          <h2>
+            {nivå}
+            {context.visKoder && (
+              <span className="sidebar_code_field">
+                {pkode && <span className=""> - {pkode}</span>}
+              </span>
+            )}
+          </h2>
+
+          {overordnet.length > 0 && (
+            <button
+              className=""
+              onClick={() => {
+                context.onNavigateToTab("kart");
+                onFitBounds(bbox);
+              }}
+            >
+              <OpenInNew className="classes.iconSmall" />
+              Gå til Kartvisning
+            </button>
+          )}
+
+          <KatalogHeaderImage meta={meta} />
+        </div>
+      )}
+    </SettingsContext.Consumer>
   );
 };
 export default KatalogHeader;
