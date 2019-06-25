@@ -6,6 +6,7 @@ import KurveContainer from "GjenbruksElement/Kurver/KurveContainer";
 import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
 import Kurve from "GjenbruksElement/Kurver/Kurve";
 import språk from "Funksjoner/språk";
+import Bildeavatar from "GjenbruksElement/Bildeavatar";
 
 const KatalogNavigering = ({
   data,
@@ -33,7 +34,10 @@ Navigation
       >
         <>
           <Overordnet overordnet={overordnet} onNavigate={onNavigate} />
-          <h3> > {tittel}</h3>
+          <div className="nav_current">
+            {" "}
+            <Bildeavatar url={meta.url} /> {tittel}
+          </div>
 
           <Navigeringsliste
             title=""

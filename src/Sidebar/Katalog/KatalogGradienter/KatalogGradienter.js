@@ -72,14 +72,16 @@ const KatalogGradienter = ({
         heading="Egenskaper"
         heading2={flaggLength}
       >
-        <EgenskapVariabel
-          flagg={meta.flagg}
-          onNavigate={url => {
-            console.warn(url);
-            onNavigate(url);
-            //console.log("loading flagg: ", meta.flagg);
-          }}
-        />
+        <div className="sidebar_element_padding">
+          <EgenskapVariabel
+            flagg={meta.flagg}
+            onNavigate={url => {
+              console.warn(url);
+              onNavigate(url);
+              //console.log("loading flagg: ", meta.flagg);
+            }}
+          />
+        </div>
       </Ekspander>
 
       {meta.graf &&

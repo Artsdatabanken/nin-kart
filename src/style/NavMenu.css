@@ -1,3 +1,4 @@
+.nav_current,
 .nav_menu_button {
   background: transparent;
   width: 100%;
@@ -9,8 +10,8 @@
 
 .nav_text {
   display: inline-block;
-  vertical-align: middle;
-  max-width: calc(100% - 50px);
+  vertical-align: top;
+  max-width: calc(100% - 60px);
   left: 50px;
   font-size: 12pt;
   padding: 5px;
@@ -27,5 +28,15 @@
 
 .nav_kode {
   float: right;
+  padding-top: 10px;
+}
+
+.nav_down_menu {
+  padding-left: 40px;
+}
+
+.nav_current {
+  background: #edf4f5;
   padding: 10px;
+  padding-left: 30px;
 }

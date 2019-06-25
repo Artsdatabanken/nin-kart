@@ -1,33 +1,35 @@
-import {
-  Avatar,
-  ListItem,
-  ListItemText,
-  ListItemAvatar
-} from "@material-ui/core/";
 import React from "react";
 import språk from "Funksjoner/språk";
+import Bildeavatar from "GjenbruksElement/Bildeavatar";
 
-const Overordnet = ({ farge, overordnet, onNavigate, classes }) => {
-  const r = overordnet.map((item, i) => (
-    <ListItem
+const Overordnet = ({ overordnet, onNavigate }) => {
+  let underordnet = overordnet;
+  if (underordnet[underordnet.length - 1].url === "Katalog") {
+    underordnet = underordnet.slice(0, -1);
+  }
+
+  if (
+    underordnet[underordnet.length - 1] &&
+    underordnet[underordnet.length - 1].url === "Natur_i_Norge"
+  ) {
+    underordnet = underordnet.slice(0, -1);
+  }
+
+  const r = underordnet.map((item, i) => (
+    <button
       key={item.url}
-      dense
-      button
       onClick={e => {
         e.stopPropagation();
         onNavigate(item.url);
       }}
+      className="nav_menu_button nav_up_menu"
     >
-      {true && (
-        <ListItemAvatar>
-          <Avatar style={{ width: 20, height: 20, margin: 0, fontSize: 10 }}>
-            {overordnet.length - i - 1}
-          </Avatar>
-        </ListItemAvatar>
-      )}
-
-      <ListItemText primary={språk(item.tittel)} _secondary={item.nivå} />
-    </ListItem>
+      <Bildeavatar url={item.url} />
+      <div className="nav_text">
+        <span className="nav_title">{språk(item.tittel)}</span>
+        {/*<span className="nav_2ndtitle">{item.nivå}</span>*/}
+      </div>
+    </button>
   ));
   r.reverse();
   return r;

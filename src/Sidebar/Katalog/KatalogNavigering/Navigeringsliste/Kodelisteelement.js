@@ -34,10 +34,9 @@ class Kodelisteelement extends React.Component {
           onClick={() => onNavigate(url)}
           onMouseEnter={() => onMouseEnter && onMouseEnter({ kode, url })}
           onMouseLeave={() => onMouseLeave && onMouseLeave()}
-          className="nav_menu_button"
+          className="nav_menu_button nav_down_menu"
         >
           <VolumIndikator størsteAreal={størsteAreal} areal={areal} />
-
           <Bildeavatar url={url} />
           <div className="nav_text">
             <span className="nav_title">{språk(meta.tittel)}</span>
@@ -47,6 +46,7 @@ class Kodelisteelement extends React.Component {
             <span className="nav_kode">{kodeSuffix(kode, parentkode)}</span>
           )}
         </button>
+
         {/*kode === 'LA-KLG-AI' && (
           <ListItem>
             <Arealbruksintensitet value={meta.value} onChange={onChange} />

@@ -26,7 +26,7 @@ const KatalogInformasjon = ({ meta, onUpdateLayerProp }) => {
 
   return (
     <>
-      {kode === "NN-LA-TI" && (
+      {false && kode === "NN-LA-TI" && (
         <Detaljeringsgrad onUpdateLayerProp={onUpdateLayerProp} value={depth} />
       )}
       <KatalogInformasjonsBoks meta={meta} />

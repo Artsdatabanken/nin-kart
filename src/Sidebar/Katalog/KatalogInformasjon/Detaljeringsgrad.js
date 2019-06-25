@@ -12,9 +12,12 @@ const Detaljeringsgrad = ({ value, onUpdateLayerProp }) => {
   /*
   
   Currently only availiable for Landskap/Typeinndeling
+
+  SKRUDD AV NÅ HER SKALANIVÅ
   
   */
   const nivå = map[Math.round(value)];
+
   return (
     <div className="sidebar_element">
       <h3>Skalanivå</h3>
