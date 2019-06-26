@@ -3,12 +3,12 @@ import KatalogHeaderImage from "./KatalogHeaderImage";
 import språk from "Funksjoner/språk";
 import prettyKode from "Funksjoner/prettyKode";
 import { SettingsContext } from "SettingsContext";
-
+import KatalogInformasjon from "../KatalogInformasjon/KatalogInformasjon";
 import { OpenInNew } from "@material-ui/icons/";
 
 const KatalogHeader = ({ meta, onFitBounds }) => {
   if (!meta) return null;
-  const { kode, bbox, nivå, overordnet } = meta;
+  const { kode, bbox, nivå, overordnet, onUpdateLayerProp } = meta;
   const pkode = prettyKode(kode);
   const tittel = språk(meta.tittel);
 
@@ -33,9 +33,15 @@ const KatalogHeader = ({ meta, onFitBounds }) => {
             )}
           </h2>
 
+          <KatalogInformasjon
+            meta={meta}
+            onUpdateLayerProp={onUpdateLayerProp}
+          />
+
+          <KatalogHeaderImage meta={meta} />
           {overordnet.length > 0 && (
             <button
-              className=""
+              className="sidebar_top_image"
               onClick={() => {
                 context.onNavigateToTab("kart");
                 onFitBounds(bbox);
@@ -45,8 +51,6 @@ const KatalogHeader = ({ meta, onFitBounds }) => {
               Gå til Kartvisning
             </button>
           )}
-
-          <KatalogHeaderImage meta={meta} />
         </div>
       )}
     </SettingsContext.Consumer>

@@ -10,21 +10,24 @@ const MobileNavigation = () => (
           className={context.aktivTab === "meny" ? "active_mobile_button" : ""}
           onClick={() => context.onNavigateToTab("meny")}
         >
-          Meny
+          Informasjon
         </button>
+        {/* 
         <button
           className={context.aktivTab === "kart" ? "active_mobile_button" : ""}
           onClick={() => context.onNavigateToTab("kart")}
         >
           Kart
         </button>
+        */}
+
         <button
           className={
             context.aktivTab === "kartlag" ? "active_mobile_button" : ""
           }
           onClick={() => context.onNavigateToTab("kartlag")}
         >
-          <Layers />
+          Kart {/* <Layers />*/}
         </button>
       </div>
     )}

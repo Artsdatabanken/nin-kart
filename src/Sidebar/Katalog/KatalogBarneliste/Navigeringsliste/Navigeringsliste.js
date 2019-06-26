@@ -30,7 +30,7 @@ class Navigeringsliste extends React.Component {
     return (
       <SettingsContext.Consumer>
         {context => (
-          <div>
+          <div className="kartlag_barn_container">
             {Navigeringsliste.sorter(metadata, context.sorterPåKode).map(
               metabarnet => {
                 const kode = metabarnet.kode;

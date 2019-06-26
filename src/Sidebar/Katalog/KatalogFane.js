@@ -8,7 +8,7 @@ import parseQueryString from "./KatalogFunksjoner/parseQueryString";
 import finnKurvevariabler from "./KatalogFunksjoner/finnKurvevariabler";
 import KatalogHeader from "./KatalogHeader/KatalogHeader";
 import KatalogGradienter from "./KatalogGradienter/KatalogGradienter";
-import KatalogInformasjon from "./KatalogInformasjon/KatalogInformasjon";
+
 import KatalogNavigering from "./KatalogNavigering/KatalogNavigering";
 import KatalogBarneliste from "./KatalogBarneliste/KatalogBarneliste";
 
@@ -70,9 +70,9 @@ class KatalogFane extends React.Component {
         </div>
         <div className="main_body">
           <div className="main_body_wrapper">
-            <KatalogHeader meta={meta} onFitBounds={this.props.onFitBounds} />
-            <KatalogInformasjon
+            <KatalogHeader
               meta={meta}
+              onFitBounds={this.props.onFitBounds}
               onUpdateLayerProp={onUpdateLayerProp}
             />
 

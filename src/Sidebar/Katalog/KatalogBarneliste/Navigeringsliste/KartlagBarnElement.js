@@ -17,7 +17,7 @@ class KartlagBarnElement extends React.Component {
       onMouseLeave
     } = this.props;
 
-    const newurl = "https://data.artsdatabanken.no/" + url + "/foto_408.jpg";
+    const new_url = "https://data.artsdatabanken.no/" + url + "/foto_408.jpg";
 
     return (
       <button
@@ -27,7 +27,15 @@ class KartlagBarnElement extends React.Component {
         onMouseEnter={() => onMouseEnter && onMouseEnter({ kode, url })}
         onMouseLeave={() => onMouseLeave && onMouseLeave()}
       >
-        <img src={newurl} />
+        <div
+          className="subelement_decorative_image"
+          style={{
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundImage: "url(" + new_url + ")"
+          }}
+        />
         <div className="nav_text">
           <span className="nav_title">{språk(meta.tittel)}</span>
           <span className="nav_2ndtitle">{getSecondary(meta)}</span>

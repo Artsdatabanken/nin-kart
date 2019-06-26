@@ -3,9 +3,16 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Link from "@material-ui/icons/Link";
 import OpenData from "GjenbruksElement/OpenData";
 
-const Ekspander = ({ visible, children, heading, heading2, icon }) => {
+const Ekspander = ({
+  visible,
+  children,
+  heading,
+  heading2,
+  icon,
+  is_expanded
+}) => {
   if (heading === "Datakilde") icon = <OpenData />;
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(is_expanded || false);
   if (!visible) return null;
 
   return (

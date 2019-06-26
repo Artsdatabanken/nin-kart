@@ -11,7 +11,7 @@ const KatalogInformasjonsBoks = ({ meta }) => {
   return (
     <>
       {ingress && (
-        <div className="sidebar_description sidebar_element">
+        <div className="sidebar_description">
           <p>
             {ingress} <br />
             {infoUrl && (
