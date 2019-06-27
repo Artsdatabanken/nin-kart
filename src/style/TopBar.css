@@ -2,107 +2,45 @@
 to avoid stop of click-thru events, used only to place things
 as opposed to maintaining a root height */
 
-.top_anchor {
-  position: absolute;
+.top_bar {
   width: 100%;
-  height: 0px;
   left: 0;
   z-index: 20;
-  background: rgba(0, 0, 0, 0.9);
+  height: 56px;
+  position: relative;
+  background: #4b909e;
+  border-bottom: 1px solid #eaeaea;
 }
 
 /* Logo Image */
 
-.logo_image {
-  left: auto;
-  right: 10px;
-  position: absolute;
-  width: 25px;
-  top: 10px;
-}
-
 .header_text b {
   font-size: 14pt;
-  color: #4b909e;
+  color: #edf4f5;
   font-weight: 400;
 }
 
-@media only screen and (min-width: 768px) {
-  .header_text b {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .logo_image {
-    right: auto;
-    position: relative;
-    top: 5px;
-    margin-right: 10px;
-    z-index: 1;
-  }
-
-  .header_text {
-    display: inline-block;
-    margin-left: calc(50% - 72px);
-    margin-top: 10px;
-  }
-}
-
-/* Search Field */
-
-.searchbar_container {
-  height: 48px;
-  display: inline-block;
-  margin-top: 4px;
-  margin-left: 50px;
-  border: 1px solid #eaeaea;
-  width: calc(408px - 60px);
-  z-index: 20;
+.logo_image {
+  left: auto;
+  width: 25px;
+  right: auto;
   position: relative;
-  box-sizing: border-box;
+  top: 5px;
+  margin-right: 10px;
+  z-index: 1;
 }
 
-.searchbar_container input {
-  width: 80%;
-  height: 48px;
-  margin: 0px;
-  border: 0px;
-  background: 0px;
-  padding-left: 10px;
-  font-size: 12pt;
-  box-sizing: border-box;
-}
-
-@media only screen and (max-width: 768px) {
-  .searchbar_container input {
-    display: none;
-  }
-
-  .searchbar_container.mobile_active {
-    width: calc(100% - 20px);
-    border: 1px solid #eaeaea;
-    background: white;
-  }
-
-  .searchbar_container.mobile_active input {
-    display: inline-block;
-  }
-
-  .searchbar_container {
-    position: absolute;
-    right: 10px;
-    width: 50px;
-    background: transparent;
-    border: none;
-    border: 1px solid transparent;
-  }
+.header_text {
+  display: inline-block;
+  margin-left: calc(50% - 72px);
+  margin-top: 10px;
 }
 
 /* Search Icon Button */
+
 .hamburger,
 .search_icon {
-  height: 48px;
+  height: 46px;
   position: absolute;
   right: -1px;
   top: -1px;
@@ -116,6 +54,79 @@ as opposed to maintaining a root height */
   top: 5px;
 }
 
+.search_icon svg {
+  color: #4b909e;
+}
+
+@media only screen and (max-width: 768px) {
+  .search_icon svg {
+    color: #fff;
+  }
+}
+
+.hamburger svg {
+  color: white;
+}
+
+/* Search Field */
+
+.searchbar_container {
+  position: absolute;
+  right: 10px;
+  height: 46px;
+  display: inline-block;
+  margin-top: 4px;
+  border: 1px solid #eaeaea;
+  background: #fff;
+  width: calc(408px - 60px);
+  z-index: 20;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 768px) {
+  .searchbar_container {
+    position: absolute;
+    right: 10px;
+    width: 50px;
+    background: transparent;
+    border: none;
+    border: 1px solid transparent;
+  }
+
+  .searchbar_container.mobile_active {
+    width: calc(100% - 20px);
+    border: 1px solid #eaeaea;
+    background: white;
+  }
+
+  .searchbar_container.mobile_active .search_icon svg {
+    color: #4b909e;
+  }
+}
+
+/* Search Field Input area */
+
+.searchbar_container input {
+  width: calc(100% - 38px);
+  height: inherit;
+  margin: -1px;
+  border: 0px;
+  background: 0px;
+  padding-left: 10px;
+  font-size: 12pt;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 768px) {
+  .searchbar_container input {
+    display: none;
+  }
+
+  .searchbar_container.mobile_active input {
+    display: inline-block;
+  }
+}
+
 /* Resultatliste */
 
 .resultatliste {
@@ -124,13 +135,10 @@ as opposed to maintaining a root height */
   padding-left: 0px;
   padding-right: 0px;
   position: auto;
-  top: 56px;
+  top: 51px;
+  right: 10px;
   border: 1px solid #eaeaea;
-  width: 408px;
-}
-
-.resultatliste {
-  margin-right: 60px;
+  width: 348px;
   background: white;
   position: fixed;
   z-index: 30;

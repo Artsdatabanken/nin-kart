@@ -24,8 +24,7 @@ const TopBar = ({ onSelectResult, searchFor }) => {
   return (
     <SettingsContext.Consumer>
       {context => (
-        <div className="top_anchor">
-          <div className="top_sidebar_background" />
+        <div className="top_bar">
           <button
             className="invisible_icon_button hamburger"
             onKeyDown={e => {
