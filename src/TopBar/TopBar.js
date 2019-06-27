@@ -37,14 +37,14 @@ const TopBar = ({ onSelectResult, searchFor }) => {
             <Hamburger />
           </button>
 
-          <span className="header_text">
+          <div className="header_text">
             <img
               src="/logoer/adb32.png"
               className="logo_image"
               alt="artsdatabanken logo"
             />
-            <b>Natur i Norge</b>
-          </span>
+            NiN-Kart
+          </div>
 
           <Searchbar
             setHits={setHits}
