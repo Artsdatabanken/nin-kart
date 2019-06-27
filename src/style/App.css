@@ -150,7 +150,7 @@ div {
   text-align: center;
   padding: auto;
   background: #edf4f5;
-  width: calc(100% / 2);
+  width: calc(100% / 3);
   height: 48px;
   padding: 15px;
   position: relative;
@@ -181,6 +181,16 @@ div {
   background: #4b909e;
   color: white;
   font-weight: 600;
+}
+
+@media only screen and (min-width: 768px) {
+  .tab_selector button:first-child {
+    display: none;
+  }
+
+  .tab_selector button {
+    width: calc(100% / 2);
+  }
 }
 
 @media only screen and (max-width: 768px) {

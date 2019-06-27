@@ -36,6 +36,35 @@
   text-align: center;
 }
 
+@media only screen and (max-width: 768px) {
+  .sidebar.mobile_off {
+    display: none;
+  }
+  .sidebar.mobile_on {
+    display: inline-block;
+  }
+
+  .main_body.mobile_on {
+    position: relative;
+    height: calc(100vh - 53px); /* bottom nav */
+    top: 56px;
+    width: 100%;
+    background: #fbfbfb;
+    left: auto;
+    overflow-y: scroll;
+  }
+
+  .main_body.mobile_on .main_body_wrapper {
+    margin-left: 0px;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .main_body.mobile_off {
+    display: none;
+  }
+}
+
 .kartlag_barn_container {
   display: flex;
   flex-wrap: wrap;

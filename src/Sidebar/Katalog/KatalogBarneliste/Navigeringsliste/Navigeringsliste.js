@@ -1,4 +1,3 @@
-import { List, ListSubheader } from "@material-ui/core";
 import React from "react";
 import { SettingsContext } from "SettingsContext";
 import KartlagBarnElement from "./KartlagBarnElement";

@@ -9,7 +9,7 @@ import finnKurvevariabler from "./KatalogFunksjoner/finnKurvevariabler";
 import KatalogHeader from "./KatalogHeader/KatalogHeader";
 import KatalogGradienter from "./KatalogGradienter/KatalogGradienter";
 
-import KatalogNavigering from "./KatalogNavigering/KatalogNavigering";
+import KatalogNavigering from "Meny/KatalogNavigering/KatalogNavigering";
 import KatalogBarneliste from "./KatalogBarneliste/KatalogBarneliste";
 
 import AktiverKartlagKnapp from "./AktiverKartlagKnapp/AktiverKartlagKnapp";
@@ -41,7 +41,8 @@ class KatalogFane extends React.Component {
       location,
       erAktivert,
       onFitBounds,
-      onToggleLayer
+      onToggleLayer,
+      aktivTab
     } = this.props;
 
     if (location.search && location.search.startsWith("?info")) {
@@ -57,7 +58,11 @@ class KatalogFane extends React.Component {
 
     return (
       <>
-        <div className="sidebar">
+        <div
+          className={
+            (aktivTab === "meny" ? "mobile_on" : "mobile_off") + " sidebar "
+          }
+        >
           <KatalogNavigering
             meta={meta}
             onNavigate={this.handleNavigate}
@@ -68,7 +73,12 @@ class KatalogFane extends React.Component {
             onMouseLeave={onMouseLeave}
           />
         </div>
-        <div className="main_body">
+        <div
+          className={
+            (aktivTab === "informasjon" ? "mobile_on" : "mobile_off") +
+            " main_body"
+          }
+        >
           <div className="main_body_wrapper">
             <KatalogHeader
               meta={meta}

@@ -1,5 +1,5 @@
 import React from "react";
-import Navigeringsliste from "../KatalogNavigering/Navigeringsliste/Navigeringsliste";
+import Navigeringsliste from "Meny/KatalogNavigering/Navigeringsliste/Navigeringsliste";
 import Ekspander from "GjenbruksElement/Ekspander";
 import { titler } from "./Titler";
 

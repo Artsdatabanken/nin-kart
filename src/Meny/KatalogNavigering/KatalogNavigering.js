@@ -23,6 +23,8 @@ Intern navigasjon innad på en side.
 Sidebarmeny-navigeringen.
   
   */
+  console.log(meta);
+  if (!meta) return null;
   const { overordnet, kode } = meta;
   const tittel = språk(meta.tittel);
   return (

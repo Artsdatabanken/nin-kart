@@ -55,8 +55,10 @@ class Grunnkart extends React.Component {
                 }}
               />
               <div>
-                {context.aktivTab === "meny" && (
+                {(context.aktivTab === "meny" ||
+                  context.aktivTab === "informasjon") && (
                   <KatalogFane
+                    aktivTab={context.aktivTab}
                     show_current={this.state.showCurrent}
                     handleShowCurrent={this.handleShowCurrent}
                     aktiveLag={this.state.aktiveLag}
@@ -79,39 +81,43 @@ class Grunnkart extends React.Component {
                     onToggleAktiveLag={context.onToggleAktiveLag}
                   />
                 )}
-                <Kartlag
-                  show_current={this.state.showCurrent}
-                  handleShowCurrent={this.handleShowCurrent}
-                  hidden={context.aktivTab === "kartlag" && true}
-                  aktiveLag={this.state.aktiveLag}
-                  onUpdateLayerProp={this.handleUpdateLayerProp}
-                  onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                  navigation_history={this.state.navigation_history}
-                  onFitBounds={this.handleFitBounds}
-                  history={history}
-                  currentKartlag={this.state.meta}
-                  activateLayerFromHistory={this.activateLayerFromHistory}
-                />
+                {context.aktivTab === "kartlag" && (
+                  <>
+                    <Kartlag
+                      show_current={this.state.showCurrent}
+                      handleShowCurrent={this.handleShowCurrent}
+                      hidden={context.aktivTab === "kartlag" && true}
+                      aktiveLag={this.state.aktiveLag}
+                      onUpdateLayerProp={this.handleUpdateLayerProp}
+                      onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                      navigation_history={this.state.navigation_history}
+                      onFitBounds={this.handleFitBounds}
+                      history={history}
+                      currentKartlag={this.state.meta}
+                      activateLayerFromHistory={this.activateLayerFromHistory}
+                    />
 
-                <Kart
-                  show_current={this.state.showCurrent}
-                  bounds={this.state.fitBounds}
-                  latitude={65.4}
-                  longitude={10.8}
-                  zoom={3}
-                  aktiveLag={this.state.aktiveLag}
-                  opplyst={this.state.opplyst}
-                  opplystKode={this.state.opplystKode}
-                  meta={this.state.meta}
-                  onMapBoundsChange={this.handleActualBoundsChange}
-                  onMapMove={context.onMapMove}
-                  onClick={latlng => {
-                    history.push(`?lng=${latlng.lng}&lat=${latlng.lat}`);
-                  }}
-                  onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                  onMouseEnter={this.handleMouseEnter}
-                  onMouseLeave={this.handleMouseLeave}
-                />
+                    <Kart
+                      show_current={this.state.showCurrent}
+                      bounds={this.state.fitBounds}
+                      latitude={65.4}
+                      longitude={10.8}
+                      zoom={3}
+                      aktiveLag={this.state.aktiveLag}
+                      opplyst={this.state.opplyst}
+                      opplystKode={this.state.opplystKode}
+                      meta={this.state.meta}
+                      onMapBoundsChange={this.handleActualBoundsChange}
+                      onMapMove={context.onMapMove}
+                      onClick={latlng => {
+                        history.push(`?lng=${latlng.lng}&lat=${latlng.lat}`);
+                      }}
+                      onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                      onMouseEnter={this.handleMouseEnter}
+                      onMouseLeave={this.handleMouseLeave}
+                    />
+                  </>
+                )}
               </div>
             </>
           );
