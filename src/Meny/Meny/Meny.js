@@ -8,7 +8,7 @@ import Kurve from "GjenbruksElement/Kurver/Kurve";
 import språk from "Funksjoner/språk";
 import Bildeavatar from "GjenbruksElement/Bildeavatar";
 
-const KatalogNavigering = ({
+const Meny = ({
   data,
   meta,
   onNavigate,
@@ -23,7 +23,6 @@ Intern navigasjon innad på en side.
 Sidebarmeny-navigeringen.
   
   */
-  console.log(meta);
   if (!meta) return null;
   const { overordnet, kode } = meta;
   const tittel = språk(meta.tittel);
@@ -79,4 +78,4 @@ Sidebarmeny-navigeringen.
   );
 };
 
-export default KatalogNavigering;
+export default Meny;

@@ -34,8 +34,7 @@ const KatalogKilder = ({ onNavigate, meta, opplyst, ...props }) => {
               window.location = "https://data.artsdatabanken.no/" + props.url;
             }}
           >
-            Last ned åpne data
-            <CloudDownload />
+            <CloudDownload /> Last ned åpne data
           </Button>
         </div>
       </Relasjon>

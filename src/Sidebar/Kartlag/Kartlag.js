@@ -2,6 +2,7 @@ import React from "react";
 import { SettingsContext } from "SettingsContext";
 import AktivtKartlagElement from "./AktiveKartlag/AktivtKartlagElement";
 import HistorikkListeElement from "./Historikk/HistorikkListeElement";
+import { KeyboardArrowDown, KeyboardArrowUp } from "@material-ui/icons";
 
 class Kartlag extends React.Component {
   render() {
@@ -21,7 +22,7 @@ class Kartlag extends React.Component {
     } = this.props;
 
     let duplicate = false;
-
+    if (!currentKartlag) return null;
     if (currentKartlag && currentKartlag.kode) {
       for (let item in keys) {
         if (keys[item] === currentKartlag.kode) {
@@ -42,6 +43,13 @@ class Kartlag extends React.Component {
             {context => (
               <div className="kartlag sidebar">
                 <div className="page_topic_header" />
+
+                <button className="mobile_slide_up_area">
+                  <KeyboardArrowDown />
+                  <KeyboardArrowUp />
+                  mobil kartlagfane
+                </button>
+
                 <div className="sidebar_title_container sidebar_element">
                   <h1 className="sidebar_title">Kartlag</h1>
                 </div>

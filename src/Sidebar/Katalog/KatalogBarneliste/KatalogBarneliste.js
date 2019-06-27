@@ -3,7 +3,7 @@ import KurveContainer from "GjenbruksElement/Kurver/KurveContainer";
 import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
 import Kurve from "GjenbruksElement/Kurver/Kurve";
 
-const KatalogNavigering = ({
+const Meny = ({
   data,
   meta,
   onNavigate,
@@ -58,4 +58,4 @@ Navigation
   );
 };
 
-export default KatalogNavigering;
+export default Meny;

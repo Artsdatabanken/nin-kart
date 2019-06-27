@@ -1,14 +1,12 @@
 import React from "react";
 import Overordnet from "./Navigeringsliste/Overordnet";
-import { MergeType } from "@material-ui/icons/";
-import Ekspander from "GjenbruksElement/Ekspander";
 import KurveContainer from "GjenbruksElement/Kurver/KurveContainer";
 import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
 import Kurve from "GjenbruksElement/Kurver/Kurve";
 import språk from "Funksjoner/språk";
 import Bildeavatar from "GjenbruksElement/Bildeavatar";
 
-const KatalogNavigering = ({
+const Meny = ({
   data,
   meta,
   onNavigate,
@@ -70,4 +68,4 @@ Navigation
   );
 };
 
-export default KatalogNavigering;
+export default Meny;

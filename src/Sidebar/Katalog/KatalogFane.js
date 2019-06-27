@@ -9,7 +9,7 @@ import finnKurvevariabler from "./KatalogFunksjoner/finnKurvevariabler";
 import KatalogHeader from "./KatalogHeader/KatalogHeader";
 import KatalogGradienter from "./KatalogGradienter/KatalogGradienter";
 
-import KatalogNavigering from "Meny/KatalogNavigering/KatalogNavigering";
+import Meny from "Meny/Meny/Meny";
 import KatalogBarneliste from "./KatalogBarneliste/KatalogBarneliste";
 
 import AktiverKartlagKnapp from "./AktiverKartlagKnapp/AktiverKartlagKnapp";
@@ -63,7 +63,7 @@ class KatalogFane extends React.Component {
             (aktivTab === "meny" ? "mobile_on" : "mobile_off") + " sidebar "
           }
         >
-          <KatalogNavigering
+          <Meny
             meta={meta}
             onNavigate={this.handleNavigate}
             data={data}
