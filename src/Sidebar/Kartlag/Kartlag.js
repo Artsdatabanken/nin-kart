@@ -3,8 +3,12 @@ import { SettingsContext } from "SettingsContext";
 import AktivtKartlagElement from "./AktiveKartlag/AktivtKartlagElement";
 import HistorikkListeElement from "./Historikk/HistorikkListeElement";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@material-ui/icons";
+import språk from "Funksjoner/språk";
 
 class Kartlag extends React.Component {
+  state = {
+    showKartlag: false
+  };
   render() {
     let koder = this.props.aktiveLag;
     const keys = Object.keys(koder);
@@ -35,22 +39,49 @@ class Kartlag extends React.Component {
       /* History length limitation. When surpassing this limit, it removes the earliest entry */
       navigation_history.shift();
     }
+    let tittel = språk(currentKartlag.tittel);
+    console.log(tittel.length);
+    if (tittel.length > 40) {
+      tittel = tittel.substring(0, 40) + "...";
+    }
 
     return (
       <>
         {hidden && (
           <SettingsContext.Consumer>
             {context => (
-              <div className="kartlag sidebar">
+              <div
+                className={
+                  (this.state.showKartlag
+                    ? "kartlag_content_open "
+                    : "kartlag_content_closed ") + " kartlag sidebar"
+                }
+              >
                 <div className="page_topic_header" />
 
-                <button className="mobile_slide_up_area">
-                  <KeyboardArrowDown />
-                  <KeyboardArrowUp />
-                  mobil kartlagfane
+                <button
+                  className="mobile_slide_up_area"
+                  onClick={() => {
+                    this.setState({ showKartlag: !this.state.showKartlag });
+                  }}
+                >
+                  {this.state.showKartlag ? (
+                    <KeyboardArrowDown />
+                  ) : (
+                    <>
+                      <KeyboardArrowUp />
+                      <span>{tittel}</span>
+                    </>
+                  )}
                 </button>
-                <div className="kartlag_content_open">
-                  {" "}
+
+                <div
+                  className={
+                    (this.state.showKartlag
+                      ? "kartlag_content_open "
+                      : "kartlag_content_closed ") + " kartlag_content"
+                  }
+                >
                   <div className="sidebar_title_container sidebar_element">
                     <h1 className="sidebar_title">Kartlag</h1>
                   </div>

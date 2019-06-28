@@ -41,10 +41,39 @@ Even tho we don't a of now support IE X)
   margin-right: 0px;
 }
 
+.mobile_slide_up_area {
+  display: none;
+}
+
 @media only screen and (max-width: 768px) {
+  /* Mobile slider version */
+
   .kartlag {
-    margin-top: 30px;
-    position: relative;
+    position: absolute;
+    overflow: visible;
+    bottom: 48px;
+    height: calc(100% - 128px);
+    background: white;
+  }
+
+  .kartlag_content {
+    display: inline-block;
+  }
+  .kartlag_content.kartlag_content_closed {
+    display: none;
+  }
+
+  .kartlag.kartlag_content_closed {
+    height: 60px;
+  }
+
+  /* Mobile slide-up area */
+
+  .mobile_slide_up_area {
+    display: inline-block;
+    text-align: center;
+    height: 1px;
+    background: #4b909e;
   }
 
   .mobile_slide_up_area svg {
@@ -52,12 +81,13 @@ Even tho we don't a of now support IE X)
     color: white;
     border-radius: 50%;
     padding: 10px;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 20;
-    margin-top: -5px;
-    overflow: visible;
+    margin-top: -15px;
+  }
+  .mobile_slide_up_area span {
+    width: 100%;
+    padding: 5px;
+    display: block;
+    font-size: 12pt;
   }
 }
 
