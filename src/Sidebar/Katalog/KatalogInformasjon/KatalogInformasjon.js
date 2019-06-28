@@ -13,8 +13,8 @@ const KatalogInformasjon = ({ meta, onUpdateLayerProp }) => {
   */
   if (!meta) return null;
   const {
-    kode,
-    depth,
+    //kode,
+    //depth,
     prefiks,
     infoUrl,
     overordnet,
@@ -26,9 +26,9 @@ const KatalogInformasjon = ({ meta, onUpdateLayerProp }) => {
 
   return (
     <>
-      {kode === "NN-LA-TI" && (
+      {/*kode === "NN-LA-TI" && (
         <Detaljeringsgrad onUpdateLayerProp={onUpdateLayerProp} value={depth} />
-      )}
+      )*/}
       <KatalogInformasjonsBoks meta={meta} />
 
       <Ekspander visible={prefiks !== "AO" && !!stats} heading="Statistikk">
