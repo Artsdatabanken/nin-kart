@@ -45,34 +45,44 @@ class KatalogFane extends React.Component {
       aktivTab
     } = this.props;
 
+    const kurve = finnKurvevariabler(this.props.aktiveLag);
+    const meny = (
+      <div
+        className={
+          (aktivTab === "meny" ? "mobile_on" : "mobile_off") + " sidebar "
+        }
+      >
+        <Meny
+          meta={meta}
+          onNavigate={this.handleNavigate}
+          data={data}
+          onUpdateMetaProp={onUpdateMetaProp}
+          opplyst={opplyst}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+        />
+      </div>
+    );
+
     if (location.search && location.search.startsWith("?info")) {
       return <InformasjonsFane />;
     }
+
     if (location.search && location.search.startsWith("?lng")) {
       const { lng, lat, vis } = parseQueryString(location.search);
-      return <Lokalitet lng={lng} lat={lat} vis={vis} />;
+      return (
+        <>
+          {meny}
+          <Lokalitet lng={lng} lat={lat} vis={vis} aktivTab={aktivTab} />
+        </>
+      );
     }
-    const kurve = finnKurvevariabler(this.props.aktiveLag);
 
     if (!meta) return null;
 
     return (
       <>
-        <div
-          className={
-            (aktivTab === "meny" ? "mobile_on" : "mobile_off") + " sidebar "
-          }
-        >
-          <Meny
-            meta={meta}
-            onNavigate={this.handleNavigate}
-            data={data}
-            onUpdateMetaProp={onUpdateMetaProp}
-            opplyst={opplyst}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-          />
-        </div>
+        {meny}
         <div
           className={
             (aktivTab === "informasjon" ? "mobile_on" : "mobile_off") +

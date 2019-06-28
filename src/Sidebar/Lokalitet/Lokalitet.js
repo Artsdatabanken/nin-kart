@@ -32,7 +32,7 @@ class Lokalitet extends Component {
   }
 
   render() {
-    const { lat } = this.props;
+    const { lat, aktivTab } = this.props;
     if (!lat) return null;
     const { data } = this.state;
     const barn = dataFlattening(data);
@@ -40,19 +40,25 @@ class Lokalitet extends Component {
     const { AO, prefix, ...andreBarn } = barn;
 
     return (
-      <div className="sidebar_top_area sidebar_background_element">
-        <div className="sidebar_element page_topic_header" />
-        <div className="sidebar_title_container sidebar_element">
-          {AO && (
-            <LokalitetHeader
-              values={AO.values}
-              sted={AO.sted}
-              elevasjon={AO.elevasjon}
-            />
-          )}
+      <>
+        <div
+          className={
+            (aktivTab === "informasjon" ? "mobile_on" : "mobile_off") +
+            " main_body"
+          }
+        >
+          <div className="main_body_wrapper">
+            {AO && (
+              <LokalitetHeader
+                values={AO.values}
+                sted={AO.sted}
+                elevasjon={AO.elevasjon}
+              />
+            )}
+          </div>
+          <LokalitetInnhold barn={this.state.bareAktive ? {} : andreBarn} />
         </div>
-        <LokalitetInnhold barn={this.state.bareAktive ? {} : andreBarn} />
-      </div>
+      </>
     );
   }
 }
