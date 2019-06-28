@@ -7,6 +7,7 @@ import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
 import Kurve from "GjenbruksElement/Kurver/Kurve";
 import språk from "Funksjoner/språk";
 import Bildeavatar from "GjenbruksElement/Bildeavatar";
+import { Home } from "@material-ui/icons";
 
 const Meny = ({
   data,
@@ -35,6 +36,20 @@ Sidebarmeny-navigeringen.
         icon={<KeyboardArrowDown />}
       >
         <>
+          {/* Top-node aka. Home-button*/}
+          <button
+            key="home"
+            onClick={e => {
+              e.stopPropagation();
+              onNavigate("");
+            }}
+            className="nav_menu_button nav_up_menu"
+          >
+            <Home />
+            <div className="nav_text">
+              <span className="nav_title">Startsiden</span>
+            </div>
+          </button>
           <Overordnet overordnet={overordnet} onNavigate={onNavigate} />
           <div className="nav_current">
             {" "}

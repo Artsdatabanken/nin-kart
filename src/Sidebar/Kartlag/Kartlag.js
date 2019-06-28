@@ -89,6 +89,7 @@ class Kartlag extends React.Component {
                       <h2>Nåværende kartlag</h2>
                       <ul className="kartlag_list">
                         <AktivtKartlagElement
+                          key={currentKartlag}
                           kartlag={currentKartlag}
                           {...this.props}
                           visKoder={context.visKoder}
@@ -162,7 +163,7 @@ class Kartlag extends React.Component {
                             />
                           );
                         }
-                        return <></>;
+                        return null;
                       })}
                   </div>
                 </div>
