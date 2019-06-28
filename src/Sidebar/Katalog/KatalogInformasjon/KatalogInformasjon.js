@@ -1,5 +1,5 @@
 import React from "react";
-import Detaljeringsgrad from "./Detaljeringsgrad";
+//import Detaljeringsgrad from "./Detaljeringsgrad";
 import KatalogInformasjonsBoks from "./KatalogInformasjonsBoks";
 import Ekspander from "GjenbruksElement/Ekspander";
 import KatalogStatistikk from "Sidebar/Katalog/KatalogInformasjon/KatalogStatistikk/KatalogStatistikk";
