@@ -31,7 +31,7 @@ const BakgrunnInnstillingListeElement = ({
         <>
           <span
             onClick={e => {
-              //console.log("farge: ", farge);
+              // console.log("farge: ", farge);
               setShowColours(!showColours);
             }}
           >

@@ -199,12 +199,12 @@ class Grunnkart extends React.Component {
   };
 
   handleMouseEnter = ({ kode, url }) => {
-    //console.log("mouseenter", kode, url);
+    // console.log("mouseenter", kode, url);
     this.setState({ opplystKode: kode, opplyst: { kode: kode, url: url } });
   };
 
   handleMouseLeave = () => {
-    //console.log("mouseleave");
+    // console.log("mouseleave");
     this.setState({ opplystKode: "", opplyst: {} });
   };
 

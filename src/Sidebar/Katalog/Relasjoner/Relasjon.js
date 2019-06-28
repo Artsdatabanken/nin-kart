@@ -14,10 +14,10 @@ const Relasjon = props => {
     opplyst,
     children
   } = props;
-  // //  console.log(props);
+  // console.log(props);
   const count = noder ? noder.length : 1;
   const x = titler[heading] || { title: heading };
-  // //  console.log("rela", parentkode, opplyst);
+  // console.log("rela", parentkode, opplyst);
   return (
     <Ekspander
       visible={count > 0}

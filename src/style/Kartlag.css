@@ -58,6 +58,7 @@ Even tho we don't a of now support IE X)
 
   .kartlag_content {
     display: inline-block;
+    width: 100%;
   }
   .kartlag_content.kartlag_content_closed {
     display: none;
@@ -88,6 +89,12 @@ Even tho we don't a of now support IE X)
     padding: 5px;
     display: block;
     font-size: 12pt;
+  }
+
+  .leaflet-top {
+    top: auto !important;
+    bottom: 115px !important;
+    right: 5px !important;
   }
 }
 

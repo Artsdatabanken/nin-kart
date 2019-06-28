@@ -40,7 +40,6 @@ class Kartlag extends React.Component {
       navigation_history.shift();
     }
     let tittel = språk(currentKartlag.tittel);
-    console.log(tittel.length);
     if (tittel.length > 40) {
       tittel = tittel.substring(0, 40) + "...";
     }

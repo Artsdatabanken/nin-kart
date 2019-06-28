@@ -1,4 +1,5 @@
 export default function oppdaterLagProperties(layer, key, value, parent) {
+  /*
   console.log(
     "oppdaterLagProperties",
     "layer",
@@ -7,7 +8,7 @@ export default function oppdaterLagProperties(layer, key, value, parent) {
     key,
     "value",
     value
-  );
+  );*/
   const aktive = parent.state.aktiveLag;
   let node = aktive[layer];
   if (!node) node = parent.state.meta;
