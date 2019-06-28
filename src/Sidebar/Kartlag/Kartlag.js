@@ -143,7 +143,7 @@ class Kartlag extends React.Component {
 
                     {Object.keys(navigation_history)
                       .reverse()
-                      .map(item => {
+                      .map((item, index) => {
                         const node = navigation_history[item];
 
                         if (
@@ -159,7 +159,7 @@ class Kartlag extends React.Component {
                               }
                               node={node}
                               history={history}
-                              key={node.meta.kode}
+                              key={index + node.meta.kode}
                             />
                           );
                         }

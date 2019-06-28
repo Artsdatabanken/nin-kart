@@ -52,14 +52,18 @@ Even tho we don't a of now support IE X)
     position: absolute;
     overflow: visible;
     bottom: 48px;
-    height: calc(100% - 128px);
+    height: calc(100vh - 158px);
     background: white;
+    box-sizing: border-box;
   }
 
   .kartlag_content {
     display: inline-block;
     width: 100%;
+    overflow-y: auto;
+    height: inherit;
   }
+
   .kartlag_content.kartlag_content_closed {
     display: none;
   }
