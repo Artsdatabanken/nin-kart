@@ -96,28 +96,35 @@ class Grunnkart extends React.Component {
                       currentKartlag={this.state.meta}
                       activateLayerFromHistory={this.activateLayerFromHistory}
                     />
-
-                    <Kart
-                      show_current={this.state.showCurrent}
-                      bounds={this.state.fitBounds}
-                      latitude={65.4}
-                      longitude={10.8}
-                      zoom={3}
-                      aktiveLag={this.state.aktiveLag}
-                      opplyst={this.state.opplyst}
-                      opplystKode={this.state.opplystKode}
-                      meta={this.state.meta}
-                      onMapBoundsChange={this.handleActualBoundsChange}
-                      onMapMove={context.onMapMove}
-                      onClick={latlng => {
-                        history.push(`?lng=${latlng.lng}&lat=${latlng.lat}`);
-                      }}
-                      onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                      onMouseEnter={this.handleMouseEnter}
-                      onMouseLeave={this.handleMouseLeave}
-                    />
                   </>
                 )}
+
+                {/* 
+                TODO: 
+                sett inn en state her som husker om vi har sett kartet før, så unngår vi å: 
+                - laste det inn kart for brukere som ikke går til fanen
+                - laste på nytt når det først er hentet ned
+
+                 */}
+                <Kart
+                  show_current={this.state.showCurrent}
+                  bounds={this.state.fitBounds}
+                  latitude={65.4}
+                  longitude={10.8}
+                  zoom={3}
+                  aktiveLag={this.state.aktiveLag}
+                  opplyst={this.state.opplyst}
+                  opplystKode={this.state.opplystKode}
+                  meta={this.state.meta}
+                  onMapBoundsChange={this.handleActualBoundsChange}
+                  onMapMove={context.onMapMove}
+                  onClick={latlng => {
+                    history.push(`?lng=${latlng.lng}&lat=${latlng.lat}`);
+                  }}
+                  onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                  onMouseEnter={this.handleMouseEnter}
+                  onMouseLeave={this.handleMouseLeave}
+                />
               </div>
             </>
           );

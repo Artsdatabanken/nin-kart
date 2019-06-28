@@ -51,9 +51,9 @@ class Kartlag extends React.Component {
             {context => (
               <div
                 className={
-                  (this.state.showKartlag
-                    ? "kartlag_content_open "
-                    : "kartlag_content_closed ") + " kartlag sidebar"
+                  this.state.showKartlag
+                    ? "kartlag_content_open kartlag sidebar"
+                    : "kartlag_content_closed kartlag sidebar"
                 }
               >
                 <div className="page_topic_header" />
@@ -76,9 +76,9 @@ class Kartlag extends React.Component {
 
                 <div
                   className={
-                    (this.state.showKartlag
-                      ? "kartlag_content_open "
-                      : "kartlag_content_closed ") + " kartlag_content"
+                    this.state.showKartlag
+                      ? "kartlag_content_open kartlag_content"
+                      : "kartlag_content_closed kartlag_content"
                   }
                 >
                   <div className="sidebar_title_container sidebar_element">
