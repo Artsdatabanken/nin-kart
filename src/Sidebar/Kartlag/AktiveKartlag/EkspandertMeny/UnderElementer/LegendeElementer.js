@@ -4,6 +4,9 @@ import { withRouter } from "react-router";
 import LegendeElement from "./LegendeComponents/LegendeElement";
 
 class LegendeElementer extends Component {
+  state = {
+    items_to_load: 5
+  };
   render() {
     const { kartlag, onUpdateLayerProp, skjul_meny_tittel } = this.props;
     let barn;
@@ -37,6 +40,7 @@ class LegendeElementer extends Component {
       );
     }
     barn = kartlag.barn;
+    const barn_length = barn.length;
 
     return (
       <SettingsContext.Consumer>
@@ -45,26 +49,40 @@ class LegendeElementer extends Component {
             {!skjul_meny_tittel && <h3>Juster underelemeter </h3>}
             <ul className="ul_block">
               {Object.keys(barn).map(i => {
-                const node = barn[i];
-                const kode = node.kode;
-                return (
-                  <LegendeElement
-                    key={kode}
-                    tittel={node.tittel}
-                    koder={context.visKoder && kode}
-                    farge={node.farge}
-                    erSynlig={
-                      node.hasOwnProperty("erSynlig") ? node.erSynlig : true
-                    }
-                    kode={kode}
-                    onUpdateLayerProp={(index, felt, verdi) => {
-                      node[felt] = verdi;
-                      onUpdateLayerProp(kartlag, "barn", barn);
-                    }}
-                  />
-                );
+                while (i < this.state.items_to_load) {
+                  const node = barn[i];
+                  const kode = node.kode;
+                  return (
+                    <LegendeElement
+                      key={kode}
+                      tittel={node.tittel}
+                      koder={context.visKoder && kode}
+                      farge={node.farge}
+                      erSynlig={
+                        node.hasOwnProperty("erSynlig") ? node.erSynlig : true
+                      }
+                      kode={kode}
+                      onUpdateLayerProp={(index, felt, verdi) => {
+                        node[felt] = verdi;
+                        onUpdateLayerProp(kartlag, "barn", barn);
+                      }}
+                    />
+                  );
+                }
+                return null;
               })}
             </ul>
+            {barn_length > this.state.items_to_load && (
+              <button
+                className="load_more_button"
+                onClick={() =>
+                  this.setState({ items_to_load: this.state.items_to_load + 5 })
+                }
+              >
+                ... <br />
+                Last inn fler
+              </button>
+            )}
           </div>
         )}
       </SettingsContext.Consumer>

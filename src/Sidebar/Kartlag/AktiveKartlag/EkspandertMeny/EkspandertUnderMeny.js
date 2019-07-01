@@ -65,7 +65,7 @@ const EkspandertUnderMeny = ({
                 activateLayerFromHistory(navhist);
               }}
             >
-              Legg Til <Add />
+              Husk kartlag <Add />
             </button>
           ) : (
             <button

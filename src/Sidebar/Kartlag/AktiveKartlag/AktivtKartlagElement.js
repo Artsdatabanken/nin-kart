@@ -16,7 +16,8 @@ const AktivtKartlagElement = ({
   activateLayerFromHistory,
   navhist
 }) => {
-  const [expanded, setExpanded] = useState(false);
+  let expand_state = is_current_object || false;
+  const [expanded, setExpanded] = useState(expand_state);
   const [settings, setSettings] = useState(false);
   const [theme, setTheme] = useState(false);
   function closeAll() {

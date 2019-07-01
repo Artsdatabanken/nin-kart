@@ -246,3 +246,9 @@ div {
   padding-right: 10px;
   color: #4b909e;
 }
+
+.load_more_button {
+  width: 100%;
+  padding: 10px;
+  font-size: 12pt;
+}
