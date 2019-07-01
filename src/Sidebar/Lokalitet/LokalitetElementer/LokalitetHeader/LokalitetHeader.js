@@ -2,18 +2,8 @@ import React from "react";
 import { withRouter } from "react-router";
 import Kommunevapen from "./Kommunevapen";
 import config from "Funksjoner/config";
-
-function formatElevation(elevation) {
-  if (!elevation) return "";
-  if (elevation < 0) return -elevation + " muh";
-  return elevation + " moh";
-}
-
-function flatten(values) {
-  const fn = Object.values(values)[0];
-  const kn = Object.values(fn.values)[0];
-  return { fylke: fn.title, kommune: kn.title };
-}
+import flatten from "../../LokalitetFunksjoner/flatten";
+import formatElevation from "../../LokalitetFunksjoner/formatElevation";
 
 const Sted = props => {
   const { sted, values, elevasjon } = props;

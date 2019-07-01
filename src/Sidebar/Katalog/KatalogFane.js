@@ -8,10 +8,8 @@ import parseQueryString from "./KatalogFunksjoner/parseQueryString";
 import finnKurvevariabler from "./KatalogFunksjoner/finnKurvevariabler";
 import KatalogHeader from "./KatalogHeader/KatalogHeader";
 import KatalogGradienter from "./KatalogGradienter/KatalogGradienter";
-
 import Meny from "Meny/Meny/Meny";
 import KatalogBarneliste from "./KatalogBarneliste/KatalogBarneliste";
-
 import AktiverKartlagKnapp from "./AktiverKartlagKnapp/AktiverKartlagKnapp";
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
@@ -24,10 +22,6 @@ class KatalogFane extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.meta !== this.props.meta) this.setState({ query: null });
   }
-
-  handleNavigate = url => {
-    this.props.history.push("/" + url);
-  };
 
   render() {
     const data = this.state.data;
@@ -65,7 +59,12 @@ class KatalogFane extends React.Component {
     );
 
     if (location.search && location.search.startsWith("?info")) {
-      return <InformasjonsFane />;
+      return (
+        <>
+          {meny}
+          <InformasjonsFane />;
+        </>
+      );
     }
 
     if (location.search && location.search.startsWith("?lng")) {
@@ -73,7 +72,13 @@ class KatalogFane extends React.Component {
       return (
         <>
           {meny}
-          <Lokalitet lng={lng} lat={lat} vis={vis} aktivTab={aktivTab} />
+          <Lokalitet
+            lng={lng}
+            lat={lat}
+            vis={vis}
+            aktivTab={aktivTab}
+            history={this.props.history}
+          />
         </>
       );
     }
