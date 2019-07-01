@@ -57,7 +57,6 @@ Sidebarmeny-navigeringen.
           </div>
 
           <Navigeringsliste
-            title=""
             parentkode={kode}
             størsteAreal={data.størsteAreal}
             apidata={data.barn}

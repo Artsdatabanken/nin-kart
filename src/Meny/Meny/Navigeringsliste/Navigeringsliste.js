@@ -1,10 +1,12 @@
-import { List, ListSubheader } from "@material-ui/core";
 import React from "react";
 import { SettingsContext } from "SettingsContext";
 import Kodelisteelement from "./Kodelisteelement";
 import getKey from "./NavigeringslisteFunksjoner/getKey";
 
 class Navigeringsliste extends React.Component {
+  state = {
+    items_to_load: 15
+  };
   /* 
   
   Denne komponenten ligger i undermenyen. 
@@ -15,8 +17,6 @@ class Navigeringsliste extends React.Component {
   render() {
     const {
       parentkode,
-      title,
-      subtitle,
       størsteAreal,
       apidata,
       metadata,
@@ -32,43 +32,58 @@ class Navigeringsliste extends React.Component {
     return (
       <SettingsContext.Consumer>
         {context => (
-          <List>
-            <ListSubheader>{title}</ListSubheader>
-            {subtitle && <h2>{subtitle}</h2>}
+          <>
             {Navigeringsliste.sorter(metadata, context.sorterPåKode).map(
-              metabarnet => {
-                const kode = metabarnet.kode;
-                const apibarn = apidata
-                  ? apidata[
-                      apidata
-                        .map(apiItem => {
-                          return apiItem.kode;
-                        })
-                        .indexOf(kode.toLowerCase())
-                    ] || {}
-                  : {};
-                if (metabarnet.skjul) return null;
-                return (
-                  <Kodelisteelement
-                    key={kode}
-                    kode={kode}
-                    parentkode={parentkode}
-                    url={metabarnet.url}
-                    meta={metabarnet}
-                    størsteAreal={størsteAreal}
-                    areal={apibarn.areal}
-                    visKode={context.visKoder}
-                    onNavigate={onNavigate}
-                    onMouseEnter={onMouseEnter}
-                    onMouseLeave={onMouseLeave}
-                    opplyst={opplyst}
-                    value={metabarnet.value}
-                    onChange={v => onUpdateMetaProp(kode, "value", [...v])}
-                  />
-                );
+              (metabarnet, i) => {
+                while (i < this.state.items_to_load) {
+                  const kode = metabarnet.kode;
+                  const apibarn = apidata
+                    ? apidata[
+                        apidata
+                          .map(apiItem => {
+                            return apiItem.kode;
+                          })
+                          .indexOf(kode.toLowerCase())
+                      ] || {}
+                    : {};
+                  if (metabarnet.skjul) return null;
+                  return (
+                    <Kodelisteelement
+                      key={kode}
+                      kode={kode}
+                      parentkode={parentkode}
+                      url={metabarnet.url}
+                      meta={metabarnet}
+                      størsteAreal={størsteAreal}
+                      areal={apibarn.areal}
+                      visKode={context.visKoder}
+                      onNavigate={onNavigate}
+                      onMouseEnter={onMouseEnter}
+                      onMouseLeave={onMouseLeave}
+                      opplyst={opplyst}
+                      value={metabarnet.value}
+                      onChange={v => onUpdateMetaProp(kode, "value", [...v])}
+                    />
+                  );
+                }
+
+                return null;
               }
             )}
-          </List>
+            {metadata.length > this.state.items_to_load && (
+              <button
+                className="load_more_button"
+                onClick={() =>
+                  this.setState({
+                    items_to_load: this.state.items_to_load + 10
+                  })
+                }
+              >
+                ... <br />
+                Last inn fler
+              </button>
+            )}
+          </>
         )}
       </SettingsContext.Consumer>
     );
