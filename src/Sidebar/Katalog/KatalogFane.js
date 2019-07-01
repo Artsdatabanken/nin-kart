@@ -19,6 +19,11 @@ class KatalogFane extends React.Component {
     error: "",
     data: {}
   };
+
+  handleNavigate = url => {
+    this.props.history.push("/" + url);
+  };
+
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.meta !== this.props.meta) this.setState({ query: null });
   }
