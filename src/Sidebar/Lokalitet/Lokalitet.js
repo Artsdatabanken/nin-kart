@@ -27,10 +27,11 @@ class Lokalitet extends Component {
     backend.hentPunkt(lng, lat).then(data => {
       const barn = dataFlattening(data);
       if (!barn) return null;
-      let node = barn["~"].values.AO;
+      const node = barn["~"].values.AO;
       const { fylke, kommune } = flatten(node.values);
       let url =
         "/Fylke/" + fylke + "/" + kommune + "?lng=" + lng + "&lat=" + lat;
+      url = url.replace(/ /g, "_");
       this.props.history.push(url);
       this.setState({
         data: data["~"] ? data["~"].values : {}
