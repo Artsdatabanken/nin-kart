@@ -21,19 +21,20 @@ class Lokalitet extends Component {
       data: null,
       sted: null
     });
+    backend.hentStedsnavn(lng, lat).then(sted => {
+      this.setState({ sted: sted });
+    });
     backend.hentPunkt(lng, lat).then(data => {
+      const barn = dataFlattening(data);
+      if (!barn) return null;
+      let node = barn["~"].values.AO;
+      const { fylke, kommune } = flatten(node.values);
+      let url =
+        "/Fylke/" + fylke + "/" + kommune + "?lng=" + lng + "&lat=" + lat;
+      this.props.history.push(url);
       this.setState({
         data: data["~"] ? data["~"].values : {}
       });
-    });
-    backend.hentStedsnavn(lng, lat).then(sted => {
-      this.setState({ sted: sted });
-      if (!this.props.AO) return null; // Har du klikket i havet?
-
-      const { fylke, kommune } = flatten(this.props.AO.values);
-      this.props.history.push(
-        "/Fylke/" + fylke + "/" + kommune + "?lng=" + lng + "&lat=" + lat
-      );
     });
   }
 
