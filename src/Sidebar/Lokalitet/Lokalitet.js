@@ -28,21 +28,22 @@ class Lokalitet extends Component {
     });
     backend.hentStedsnavn(lng, lat).then(sted => {
       this.setState({ sted: sted });
+      if (!this.props.AO) return null; // Har du klikket i havet?
+
+      const { fylke, kommune } = flatten(this.props.AO.values);
+      this.props.history.push(
+        "/Fylke/" + fylke + "/" + kommune + "?lng=" + lng + "&lat=" + lat
+      );
     });
   }
 
   render() {
-    const { lng, lat, aktivTab, history } = this.props;
+    const { lat, aktivTab } = this.props;
     if (!lat) return null;
     const { data } = this.state;
     const barn = dataFlattening(data);
     if (!barn) return null;
     const { AO, prefix, ...andreBarn } = barn;
-    if (!AO) return null; // Har du klikket i havet?
-    const { fylke, kommune } = flatten(AO.values);
-    history.push(
-      "/Fylke/" + fylke + "/" + kommune + "?lng=" + lng + "&lat=" + lat
-    );
 
     return (
       <>
