@@ -1,7 +1,7 @@
 ﻿import React, { useState } from "react";
 import { withRouter } from "react-router";
 import "style/Forside.css";
-import { Map } from "@material-ui/icons";
+//import { Map } from "@material-ui/icons";
 import Kilder from "./Kilder";
 
 import Utforsk from "HamburgerMeny/Utforsk/Utforsk";
@@ -25,7 +25,11 @@ const ForsideInformasjon = props => {
                   setShowInfo(false);
                 }}
               >
-                <Map />{" "}
+                <img
+                  src="/logoer/logo_blue_medium.png"
+                  className="logo_image_frontpage"
+                  alt="artsdatabanken logo"
+                />{" "}
               </div>
               <div>
                 <h1>NiN-Kart</h1>
@@ -35,10 +39,7 @@ const ForsideInformasjon = props => {
 
             <div className="frontpage_feature_block">
               <div className="frontpage_feature_container">
-                <img
-                  src="https://www.artsdatabanken.no/Media/F28048?mode=1920x1920"
-                  alt=""
-                />
+                <img src="/logoer/logo_hvit.png" alt="" />
                 <div>
                   <h2>Hva er Natur i Norge?</h2>
                   <p>

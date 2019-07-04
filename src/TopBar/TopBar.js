@@ -39,11 +39,11 @@ const TopBar = ({ onSelectResult, searchFor }) => {
 
           <div className="header_text">
             <img
-              src="/logoer/adb32.png"
+              src="/logoer/small_icon.png"
               className="logo_image"
               alt="artsdatabanken logo"
             />
-            NiN-Kart
+            <span>NiN-Kart</span>
           </div>
 
           <Searchbar

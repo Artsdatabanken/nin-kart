@@ -14,18 +14,28 @@
   font-size: 20pt;
   color: #edf4f5;
   font-weight: 300;
-  vertical-align: top;
   display: inline-block;
   margin-left: calc(50% - 72px);
   margin-top: 12px;
 }
 
+.header_text span {
+  vertical-align: top;
+}
+
 .logo_image {
-  width: 25px;
+  width: 30px;
   position: relative;
-  top: 2px;
   margin-right: 10px;
   z-index: 1;
+}
+
+.logo_image_frontpage {
+  width: 65px;
+  position: relative;
+  margin-right: 10px;
+  z-index: 1;
+  vertical-align: middle;
 }
 
 /* Search Icon Button */

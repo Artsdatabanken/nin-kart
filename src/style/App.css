@@ -252,3 +252,37 @@ div {
   padding: 10px;
   font-size: 12pt;
 }
+
+/* BADGES */
+
+.badge {
+  text-align: center;
+  display: inline-block;
+  padding: 5px;
+  vertical-align: top;
+  width: 200px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.badge_image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #4b909e;
+  display: inline-block;
+}
+
+.badge_image:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.badge span {
+  width: 100%;
+  display: block;
+}
+
+.badge b {
+  color: #4b909e;
+}

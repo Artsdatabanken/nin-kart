@@ -1,5 +1,8 @@
 import React from "react";
-import { ShowChart, Gradient } from "@material-ui/icons/";
+import {
+  ShowChart
+  //Gradient
+} from "@material-ui/icons/";
 import Gradienter from "./Gradienter";
 import KurveContainer from "GjenbruksElement/Kurver/KurveContainer";
 import Relasjon from "Sidebar/Katalog/Relasjoner/Relasjon";
@@ -22,11 +25,11 @@ const KatalogGradienter = ({
   */
   if (!meta) return null;
   const { kode } = meta;
-
+  /*
   const gradientLength = meta.gradient
     ? Object.entries(meta.gradient).length
     : 0;
-
+*/
   //const relasjon = meta.graf;
   // console.log(relasjon);
 
@@ -36,22 +39,14 @@ const KatalogGradienter = ({
     <>
       {meta.gradient &&
         Object.entries(meta.gradient).map(([kode, node]) => (
-          <Ekspander
-            key={kode}
-            visible={gradientLength > 0}
-            heading={node.tittel.nb}
-            heading2={Object.values(node.barn).length}
-            icon={<Gradient />}
-          >
-            <Gradienter
-              gradient={node.barn}
-              onNavigate={onNavigate}
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
-              opplyst={opplyst}
-              //visKoder={context.visKoder}
-            />
-          </Ekspander>
+          <Gradienter
+            gradient={node.barn}
+            onNavigate={onNavigate}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            opplyst={opplyst}
+            //visKoder={context.visKoder}
+          />
         ))}
 
       {true && meta.kart.format.raster_gradient && (
