@@ -17,19 +17,25 @@ const KatalogHeaderImage = ({ meta }) => {
   if (bilde.foto != null) {
     new_url = bilde.foto.url;
   }
+
+  let classes = "sidebar_top_image";
+  if (språk(tittel) === "Landskapsgradient") {
+    classes += "  wide_image";
+  }
+  if (erTransparent(url)) {
+    classes += "  trasparent_image";
+  }
+
   return (
     <div
-      className={
-        (erTransparent(url) && "sidebar_top_image  trasparent_image") ||
-        "sidebar_top_image"
-      }
+      className={classes}
       //onClick={this.handleOpen}
       style={
         (new_url !== "no_image" && {
           backgroundImage: "url(" + new_url + ")"
         }) || { height: 0 }
       }
-      alt={"foto av " + språk(tittel)}
+      alt=""
     />
   );
 };

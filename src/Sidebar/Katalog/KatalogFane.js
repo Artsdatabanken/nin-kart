@@ -105,13 +105,15 @@ class KatalogFane extends React.Component {
               onFitBounds={this.props.onFitBounds}
               onUpdateLayerProp={onUpdateLayerProp}
             />
-
+            {/*
             <AktiverKartlagKnapp
               meta={meta}
               erAktivert={erAktivert}
               onFitBounds={onFitBounds}
               onToggleLayer={onToggleLayer}
             />
+            
+*/}
 
             <KatalogGradienter
               meta={meta}

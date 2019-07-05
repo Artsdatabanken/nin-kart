@@ -232,6 +232,15 @@
   height: calc(250px - 20px);
 }
 
+.sidebar_top_image.wide_image {
+  background-size: cover;
+  background-position: 20%;
+  background-repeat: no-repeat;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 350px;
+}
+
 .page_topic_header {
   height: 0px;
   padding: 0px;
