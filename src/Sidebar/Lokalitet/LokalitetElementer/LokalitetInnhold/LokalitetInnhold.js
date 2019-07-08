@@ -11,7 +11,7 @@ class LokalitetInnhold extends Component {
     let new_object = false;
 
     return (
-      <div className="sidebar_element paddingless">
+      <div className="kartlag_barn_container">
         {Object.keys(barn).length <= 0 ? (
           <div className="sidebar_element">"Finner ingen opplysninger."</div>
         ) : (

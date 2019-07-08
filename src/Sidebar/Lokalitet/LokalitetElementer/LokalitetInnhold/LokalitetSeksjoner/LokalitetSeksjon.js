@@ -40,7 +40,11 @@ function oppsummer2(node, stack1, r, pkode) {
 class LokalitetSeksjon extends Component {
   render() {
     const { node, kode, visKoder, kategori, onClick, new_object } = this.props;
+    console.log(node);
     const oppsumert_node = oppsummer(node);
+
+    console.log(oppsumert_node);
+
     const secondary = oppsumert_node.map(e => this.map(e.verdi));
 
     return (

@@ -12,27 +12,21 @@ const LokalitetLenkeElement = ({
   new_object
 }) => {
   const prefix = kode.substring(0, 2);
+
   return (
-    <button
-      className={
-        (new_object &&
-          "clickable_element_location_header sidebar_element clickable_element_location ") ||
-        "sidebar_element clickable_element_location  clickable_element_location_subelement"
-      }
-      onClick={onClick}
-    >
-      <div className="text_content">
-        <h3>
-          {primary}
-          {kode && visKoder === true && (
-            <>
-              <span> - {new_object && <span>{prefix}</span>}</span>
-              <Flis kode={kode} visKoder={visKoder} />
-            </>
-          )}
-        </h3>
-        {secondary}
-      </div>
+    <button className="katalog_link_displayer" onClick={onClick}>
+      <h3>
+        {primary}
+        {kode && visKoder === true && (
+          <>
+            <span> - {new_object && <span>{prefix}</span>}</span>
+            <Flis kode={kode} visKoder={visKoder} />
+          </>
+        )}
+      </h3>
+
+      <div className="secondary">{secondary}</div>
+
       <div className="invisible_icon_button element_link">
         <KeyboardArrowRight />
       </div>

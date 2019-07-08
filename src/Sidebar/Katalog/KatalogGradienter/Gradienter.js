@@ -1,4 +1,5 @@
 import React from "react";
+import { object } from "prop-types";
 //import Gradient from "./LinearGauge";
 
 const Gradienter = ({
@@ -9,15 +10,56 @@ const Gradienter = ({
   opplyst,
   visKoder
 }) => {
+  function getAmount(trinn) {
+    let count = 0;
+    let url = "";
+    let namelist = [];
+    trinn.map(e => {
+      if (e["på"] === true) {
+        count += 1;
+        url = "https://data.artsdatabanken.no/" + e.url + "/foto_408.jpg";
+        namelist.push(e.tittel.nb);
+      }
+    });
+    return [count, url, namelist];
+  }
+
   return (
     <>
       {Object.entries(gradient).map(([kode, gr]) => (
         <>
+          <div className="badge">
+            <div
+              className="badge_image"
+              style={{
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                backgroundImage: "url(" + getAmount(gr.trinn)[1] + ")"
+              }}
+            />
+
+            <b>{gr.tittel.nb}</b>
+            <span>
+              {" "}
+              {getAmount(gr.trinn)[0]} / {Object.keys(gr.trinn).length}
+            </span>
+
+            {getAmount(gr.trinn)[2].map(item => {
+              return (
+                <>
+                  {item}
+                  <br />
+                </>
+              );
+            })}
+          </div>
+
           {gr.trinn.map(e => {
             if (e["på"] === true) {
               let url =
                 "https://data.artsdatabanken.no/" + e.url + "/foto_408.jpg";
-              return (
+              return "" /*
                 <div className="badge">
                   <div
                     className="badge_image"
@@ -32,8 +74,7 @@ const Gradienter = ({
 
                   <b>{gr.tittel.nb}</b>
                   <span>{e.tittel.nb}</span>
-                </div>
-              );
+                </div>*/;
             }
             return null;
           })}
