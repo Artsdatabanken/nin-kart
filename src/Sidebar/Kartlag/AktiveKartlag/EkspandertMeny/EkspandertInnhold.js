@@ -49,22 +49,21 @@ const EkspandertInnhold = ({
             </>
           ) : (
             <>
-              {!is_current_object && (
-                <>
-                  <GradientFilter
-                    kartlag={kartlag}
-                    onUpdateLayerProp={onUpdateLayerProp}
-                    kode={kode}
-                  />
+              <>
+                <GradientFilter
+                  kartlag={kartlag}
+                  onUpdateLayerProp={onUpdateLayerProp}
+                  kode={kode}
+                />
 
-                  <GradientEllerTypeinndelt
-                    onUpdateLayerProp={onUpdateLayerProp}
-                    where={kartlag.kode}
-                    format={kartlag.kart.format}
-                    aktvtKartlagFormat={kartlag.kart.aktivtFormat}
-                  />
-                </>
-              )}
+                <GradientEllerTypeinndelt
+                  onUpdateLayerProp={onUpdateLayerProp}
+                  where={kartlag.kode}
+                  format={kartlag.kart.format}
+                  aktvtKartlagFormat={kartlag.kart.aktivtFormat}
+                />
+              </>
+
               <LegendeElementer
                 kartlag={kartlag}
                 aktivtFormat={aktivtFormat}
