@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
+import "./style/Kart.css";
 import "./style/App.css";
 import "./style/Sidebar.css";
 import "./style/GeografiskSidebar.css";

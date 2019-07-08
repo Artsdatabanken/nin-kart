@@ -96,6 +96,8 @@ b {
   text-decoration: underline;
 }
 
+/* ALL BUTTONS */
+
 button {
   border: 0px;
 }
@@ -106,7 +108,6 @@ button.active:focus,
 button.active {
   cursor: pointer;
   background: #81b2bb;
-  /*color: #fff;*/
 }
 
 /* BUTTON HEADERS */
@@ -120,19 +121,36 @@ button.active {
   }
 }
 
-.leaflet-top {
-  top: calc(100vh - 100px) !important;
-}
-
 div {
   max-width: 100%;
 }
+
+/* Activate button in sidebar */
+
+.activate_button_container {
+  text-align: center;
+}
+
+.activate_button {
+  background: #4b909e;
+  color: white;
+  padding: 10px;
+  font-size: 12pt;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.activate_button svg {
+  height: 18px;
+  width: 18px;
+  vertical-align: top;
+}
+
+/* NAVIGATION TABS */
 
 /*
 .tab_selector {
   display: none;
 }
-
 */
 
 .tab_selector {
@@ -194,10 +212,6 @@ div {
 }
 
 @media only screen and (max-width: 768px) {
-  .leaflet-top {
-    top: calc(100vh - 150px) !important;
-  }
-
   .tab_selector {
     width: 100%;
   }
@@ -210,6 +224,8 @@ div {
   top: calc(50% - 9px);
   right: calc(50% - 9px);
 }
+
+/* GENERIC ITEMS */
 
 .invisible_icon_button {
   background: transparent;

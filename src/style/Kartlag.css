@@ -6,29 +6,61 @@ Even tho we don't a of now support IE X)
 
 */
 
+/* Button on bottom of map screen on mobile */
 .mobile_slide_up_area {
-  width: 100%;
-  bottom: 0px;
+  display: none;
 }
 
-/* Activate button in sidebar */
+@media only screen and (max-width: 768px) {
+  /* Mobile slide-up area */
 
-.activate_button_container {
-  text-align: center;
-}
+  .mobile_slide_up_area {
+    display: inline-block;
+    text-align: center;
+    height: 60px;
+    background: transparent;
+    overflow: visible;
+    width: 100%;
+  }
 
-.activate_button {
-  background: #4b909e;
-  color: white;
-  padding: 10px;
-  font-size: 12pt;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-.activate_button svg {
-  height: 18px;
-  width: 18px;
-  vertical-align: top;
+  .open_mobile_slide_up_area {
+    position: relative;
+    top: 0px;
+    bottom: auto;
+    background: transparent;
+    border-top: 0px;
+    border-bottom: 1px solid #4b909e;
+    z-index: 100;
+  }
+
+  .closed_mobile_slide_up_area {
+    position: absolute;
+    bottom: 48px;
+    background: white;
+    border-top: 1px solid #4b909e;
+    border-bottom: 0px;
+  }
+
+  .mobile_slide_up_area svg {
+    background: #4b909e;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    margin-top: 40px;
+    z-index: 100;
+  }
+
+  .closed_mobile_slide_up_area svg {
+    margin: auto;
+    margin-top: -40px;
+  }
+
+  .mobile_slide_up_area span {
+    width: 100%;
+    padding: 5px;
+    display: block;
+    font-size: 12pt;
+  }
 }
 
 /* Clean out padding to get 100% width */
@@ -39,67 +71,6 @@ Even tho we don't a of now support IE X)
   padding-right: 0px;
   margin-left: 0px;
   margin-right: 0px;
-}
-
-.mobile_slide_up_area {
-  display: none;
-}
-
-@media only screen and (max-width: 768px) {
-  /* Mobile slider version */
-
-  .kartlag {
-    position: absolute;
-    overflow: visible;
-    bottom: 48px;
-    height: calc(100vh - 158px);
-    background: white;
-    box-sizing: border-box;
-  }
-
-  .kartlag_content {
-    display: inline-block;
-    width: 100%;
-    overflow-y: auto;
-    height: inherit;
-  }
-
-  .kartlag_content.kartlag_content_closed {
-    display: none;
-  }
-
-  .kartlag.kartlag_content_closed {
-    height: 60px;
-  }
-
-  /* Mobile slide-up area */
-
-  .mobile_slide_up_area {
-    display: inline-block;
-    text-align: center;
-    height: 1px;
-    background: #4b909e;
-  }
-
-  .mobile_slide_up_area svg {
-    background: #4b909e;
-    color: white;
-    border-radius: 50%;
-    padding: 10px;
-    margin-top: -15px;
-  }
-  .mobile_slide_up_area span {
-    width: 100%;
-    padding: 5px;
-    display: block;
-    font-size: 12pt;
-  }
-
-  .leaflet-top {
-    top: auto !important;
-    bottom: 115px !important;
-    right: 5px !important;
-  }
 }
 
 /* Re-add padding where wanted */
@@ -113,18 +84,28 @@ Even tho we don't a of now support IE X)
   padding-right: 20px;
 }
 
-.kartlag_submenu {
-  padding: 10px;
-  margin: 5px;
-  border-bottom: 1px solid #e4f0f2;
+@media only screen and (max-width: 768px) {
+  .kartlag_content_open {
+    position: relative;
+    margin-top: -28px;
+    background: white;
+    height: calc(100vh - 164px);
+    overflow-y: auto;
+  }
+
+  .kartlag_content {
+    background: transparent;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .kartlag.kartlag_content_closed,
+  .kartlag_content.kartlag_content_closed {
+    display: none;
+  }
 }
 
-.kartlag_submenu h1,
-.kartlag_submenu h3 {
-  padding-left: 10px;
-}
-
-/* Tab items */
+/* Lists of layers  */
 
 .kartlag_list {
   margin: 0px;
@@ -197,4 +178,46 @@ Even tho we don't a of now support IE X)
   padding-bottom: 10px;
   padding-top: 10px;
   margin: 0px;
+}
+
+/* Buttons for the theme selectors */
+
+.button_map_preview {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  text-align: left;
+  position: relative;
+}
+
+.button_map_preview span {
+  width: 50%;
+  height: 100%;
+}
+
+.button_map_preview img,
+.button_map_preview span {
+  margin: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.button_map_preview img {
+  width: 150px;
+  height: 50px;
+}
+
+.theme_link {
+  display: block;
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.theme_link svg {
+  margin-top: calc(50% - 15px);
+  width: 40px;
+  height: 40px;
 }

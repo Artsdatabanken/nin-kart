@@ -37,6 +37,7 @@ const KatalogGradienter = ({
   const flaggLength = meta.flagg ? Object.entries(meta.flagg).length : 0;
   if (!meta.gradient) return null;
   if (meta.tittel.nb === "Landskapsgradient") return null;
+  if (meta.tittel.nb === "Miljøvariabler") return null;
 
   return (
     <>

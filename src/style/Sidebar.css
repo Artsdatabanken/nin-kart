@@ -1,3 +1,5 @@
+/* SIDEBAR MENU */
+
 .sidebar {
   position: fixed;
   height: calc(100vh - 104px);
@@ -8,23 +10,6 @@
   font-family: "Roboto", "sans-serif";
 }
 
-.main_body {
-  position: absolute;
-  height: 100%;
-  width: calc(100% - 408px);
-  background: #fbfbfb;
-  font-family: "Roboto", "sans-serif";
-  left: 408px;
-  overflow-y: auto;
-}
-
-.main_body_wrapper {
-  margin-left: 20px;
-  margin-right: auto;
-  max-width: 90%;
-  text-align: center;
-}
-
 @media only screen and (max-width: 768px) {
   .sidebar.mobile_off {
     display: none;
@@ -32,7 +17,22 @@
   .sidebar.mobile_on {
     display: inline-block;
   }
+}
 
+/* MAIN BODY CONTENT (information tab) */
+
+.main_body {
+  position: relative;
+  top: 0px;
+  height: calc(100vh - 56px);
+  width: calc(100% - 408px);
+  background: #fbfbfb;
+  font-family: "Roboto", "sans-serif";
+  left: 408px;
+  overflow-y: auto;
+}
+
+@media only screen and (max-width: 768px) {
   .main_body.mobile_on {
     position: relative;
     height: calc(100vh - 53px); /* bottom nav */
@@ -41,17 +41,30 @@
     left: auto;
     overflow-y: scroll;
   }
+  .main_body.mobile_off {
+    display: none;
+  }
+}
 
+/* Content aligner */
+
+.main_body_wrapper {
+  margin-left: 20px;
+  margin-right: auto;
+  max-width: 90%;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 768px) {
   .main_body.mobile_on .main_body_wrapper {
     margin-left: 0px;
     max-width: 100%;
     padding: 10px;
   }
-
-  .main_body.mobile_off {
-    display: none;
-  }
 }
+
+/* Kartlag  */
 
 .kartlag_barn_container {
   display: flex;

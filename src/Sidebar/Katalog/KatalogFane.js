@@ -10,7 +10,7 @@ import KatalogHeader from "./KatalogHeader/KatalogHeader";
 import KatalogGradienter from "./KatalogGradienter/KatalogGradienter";
 import Meny from "Meny/Meny/Meny";
 import KatalogBarneliste from "./KatalogBarneliste/KatalogBarneliste";
-import AktiverKartlagKnapp from "./AktiverKartlagKnapp/AktiverKartlagKnapp";
+//import AktiverKartlagKnapp from "./AktiverKartlagKnapp/AktiverKartlagKnapp";
 
 // Alt som dukker opp i vinduet på venstre side av skjermen
 class KatalogFane extends React.Component {
@@ -38,9 +38,9 @@ class KatalogFane extends React.Component {
       onUpdateMetaProp,
       meta,
       location,
-      erAktivert,
-      onFitBounds,
-      onToggleLayer,
+      //erAktivert,
+      //onFitBounds,
+      //onToggleLayer,
       aktivTab
     } = this.props;
 

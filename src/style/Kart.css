@@ -1,0 +1,11 @@
+.leaflet-top {
+  top: calc(100vh - 100px) !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .leaflet-top {
+    top: auto !important;
+    bottom: 115px !important;
+    right: 5px !important;
+  }
+}
