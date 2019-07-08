@@ -32,12 +32,16 @@ const KatalogGradienter = ({
 */
   //const relasjon = meta.graf;
   // console.log(relasjon);
-  console.log(meta.tittel.nb);
 
   const flaggLength = meta.flagg ? Object.entries(meta.flagg).length : 0;
   if (!meta.gradient) return null;
-  if (meta.tittel.nb === "Landskapsgradient") return null;
-  if (meta.tittel.nb === "Miljøvariabler") return null;
+  if (meta.kode === "NN-NA") return null;
+  if (meta.kode === "NN-NA-TI") return null;
+  if (meta.kode.substr(0, 9) === "NN-NA-LKM") return null;
+
+  if (meta.kode === "NN-LA") return null;
+  if (meta.kode === "NN-LA-TI") return null;
+  if (meta.kode.substr(0, 9) === "NN-LA-KLG") return null;
 
   return (
     <>

@@ -1,5 +1,5 @@
 import React from "react";
-import { object } from "prop-types";
+//import { object } from "prop-types";
 //import Gradient from "./LinearGauge";
 
 const Gradienter = ({
@@ -57,8 +57,8 @@ const Gradienter = ({
 
           {gr.trinn.map(e => {
             if (e["på"] === true) {
-              let url =
-                "https://data.artsdatabanken.no/" + e.url + "/foto_408.jpg";
+              //   let url =
+              //   "https://data.artsdatabanken.no/" + e.url + "/foto_408.jpg";
               return "" /*
                 <div className="badge">
                   <div
