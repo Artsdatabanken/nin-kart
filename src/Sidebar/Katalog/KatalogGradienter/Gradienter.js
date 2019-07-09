@@ -37,6 +37,9 @@ const Gradienter = ({
                 backgroundSize: "cover",
                 backgroundImage: "url(" + getAmount(gr.trinn)[1] + ")"
               }}
+              onClick={() => {
+                onNavigate(gr.url);
+              }}
             />
 
             <b>{gr.tittel.nb}</b>
