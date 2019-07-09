@@ -32,6 +32,9 @@
   overflow-y: auto;
 }
 
+@media only screen and (min-width: 1808px) {
+}
+
 @media only screen and (max-width: 768px) {
   .main_body.mobile_on {
     position: relative;
@@ -50,10 +53,12 @@
 
 .main_body_wrapper {
   margin-left: 20px;
+  padding-right: 20px;
   margin-right: auto;
   max-width: 90%;
   text-align: center;
   padding-bottom: 10px;
+  max-width: 1400px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -71,6 +76,7 @@
   flex-wrap: wrap;
   width: (100% + 10px);
   margin-left: -5px;
+  justify-content: center;
 }
 
 .katalog_link_displayer {
@@ -223,10 +229,15 @@
   white-space: none;
 }
 
+.katlog_header_images_container {
+  display: flex;
+}
+
+.sidebar_top_map,
 .sidebar_top_image {
   vertical-align: top;
   height: 250px;
-  width: 100%;
+  flex: 1;
   display: inline-block;
   background: #b7d3d8;
   background-size: cover;

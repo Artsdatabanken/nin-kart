@@ -66,6 +66,7 @@ class Lokalitet extends Component {
           </div>
           <LokalitetInnhold barn={this.state.bareAktive ? {} : andreBarn} />
         </div>
+        <div className="big_page_sidebar" />
       </>
     );
   }
