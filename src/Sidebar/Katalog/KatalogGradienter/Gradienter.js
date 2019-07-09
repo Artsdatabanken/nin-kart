@@ -27,37 +27,34 @@ const Gradienter = ({
   return (
     <>
       {Object.entries(gradient).map(([kode, gr]) => (
-        <>
-          <div className="badge">
-            <div
-              className="badge_image"
-              style={{
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                backgroundImage: "url(" + getAmount(gr.trinn)[1] + ")"
-              }}
-              onClick={() => {
-                onNavigate(gr.url);
-              }}
-            />
+        <div className="badge" key={gr.tittel.nb}>
+          <div
+            className="badge_image"
+            style={{
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              backgroundImage: "url(" + getAmount(gr.trinn)[1] + ")"
+            }}
+            onClick={() => {
+              onNavigate(gr.url);
+            }}
+          />
 
-            <b>{gr.tittel.nb}</b>
-            <span>
-              {" "}
-              {getAmount(gr.trinn)[0]} / {Object.keys(gr.trinn).length}
-            </span>
+          <b>{gr.tittel.nb}</b>
+          <span>
+            {getAmount(gr.trinn)[0]} / {Object.keys(gr.trinn).length}
+          </span>
 
-            {getAmount(gr.trinn)[2].map(item => {
-              return (
-                <>
-                  {item}
-                  <br />
-                </>
-              );
-            })}
-          </div>
-        </>
+          {getAmount(gr.trinn)[2].map(item => {
+            return (
+              <div key={item}>
+                {item}
+                <br />
+              </div>
+            );
+          })}
+        </div>
       ))}
     </>
   );

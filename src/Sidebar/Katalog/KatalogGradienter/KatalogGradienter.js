@@ -40,6 +40,7 @@ const KatalogGradienter = ({
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             opplyst={opplyst}
+            key={kode}
           />
         ))}
 
