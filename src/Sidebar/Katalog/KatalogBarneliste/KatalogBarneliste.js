@@ -18,6 +18,8 @@ Navigation
   
   */
   const { kode } = meta;
+  if (meta.barn.length === 0) return null;
+  console.log(meta.barn);
   return (
     <>
       <h1>Underelementer</h1>

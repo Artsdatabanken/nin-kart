@@ -114,21 +114,6 @@ class KatalogFane extends React.Component {
               opplyst={opplyst}
             />
 
-            <KatalogKilder
-              data={data}
-              meta={meta}
-              onNavigate={this.handleNavigate}
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
-              onFitBounds={this.props.onFitBounds}
-              erAktivert={this.props.erAktivert}
-              opplyst={opplyst}
-              onToggleLayer={this.props.onToggleLayer}
-              onUpdateLayerProp={onUpdateLayerProp}
-              onUpdateMetaProp={onUpdateMetaProp}
-              kurve={kurve}
-            />
-
             <KatalogBarneliste
               meta={meta}
               onNavigate={this.handleNavigate}
@@ -147,6 +132,21 @@ class KatalogFane extends React.Component {
                 onRequestClose={this.handleCloseSnackbar}
               />
             )}
+
+            <KatalogKilder
+              data={data}
+              meta={meta}
+              onNavigate={this.handleNavigate}
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+              onFitBounds={this.props.onFitBounds}
+              erAktivert={this.props.erAktivert}
+              opplyst={opplyst}
+              onToggleLayer={this.props.onToggleLayer}
+              onUpdateLayerProp={onUpdateLayerProp}
+              onUpdateMetaProp={onUpdateMetaProp}
+              kurve={kurve}
+            />
           </div>
           <div className="big_page_sidebar" />
         </div>

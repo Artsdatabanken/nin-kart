@@ -221,3 +221,24 @@ Even tho we don't a of now support IE X)
   width: 40px;
   height: 40px;
 }
+
+/* KILDER */
+
+.kilde_box button {
+  display: inline-block;
+  padding: 10px;
+  background: #edf4f5;
+  min-width: 200px;
+  margin: 10px;
+  vertical-align: top;
+  min-height: 55px;
+}
+
+.kilde_box button img {
+  float: left;
+}
+
+.kilde_box button:hover {
+  background: #81b2bb;
+  color: white;
+}

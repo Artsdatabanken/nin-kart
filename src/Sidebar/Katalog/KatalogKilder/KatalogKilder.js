@@ -1,43 +1,38 @@
-import React, { useState, useEffect } from "react";
-import Relasjon from "Sidebar/Katalog/Relasjoner/Relasjon";
+import React from "react";
 import { CloudDownload } from "@material-ui/icons";
-import { Button } from "@material-ui/core";
+import språk from "Funksjoner/språk";
 
-const KatalogKilder = ({ onNavigate, meta, opplyst, ...props }) => {
-  const initialExpand = () =>
-    JSON.parse(localStorage.getItem("expand") || "{}");
-  const [expand, setExpand] = useState(initialExpand);
-  useEffect(() => {
-    localStorage.setItem("expand", JSON.stringify(expand));
-  }, [expand]);
-
+const KatalogKilder = ({ onNavigate, meta, ...props }) => {
   if (!meta) return null;
-  const { kode, url } = meta;
+  const metadata = meta.datakilde;
+  if (!metadata) return null;
+  const new_url_1 = "https://data.artsdatabanken.no/";
+  const new_url_2 = "/logo_24.png";
+
   return (
-    <div>
-      <Relasjon
-        heading={"Datakilde"}
-        url={url}
-        noder={meta.datakilde}
-        parentkode={kode}
-        onNavigate={onNavigate}
-        expand={expand}
-        onSetExpand={setExpand}
-        opplyst={opplyst}
-        {...props}
-      >
-        <div className="sidebar_element_padding">
-          <Button
-            variant="contained"
-            color="default"
-            onClick={() => {
-              window.location = "https://data.artsdatabanken.no/" + props.url;
-            }}
+    <div className="kilde_box">
+      <h1>Datakilder</h1>
+      {metadata.map(datakilde => {
+        return (
+          <button
+            className="kilde_knapp"
+            onClick={() => onNavigate(datakilde.url)}
           >
-            <CloudDownload /> Last ned åpne data
-          </Button>
-        </div>
-      </Relasjon>
+            <img src={new_url_1 + datakilde.url + new_url_2} alt="" />
+            {språk(datakilde.tittel)} <br />
+            {datakilde.kode}
+          </button>
+        );
+      })}
+
+      <button
+        className="kilde_knapp"
+        onClick={() => {
+          window.location = "https://data.artsdatabanken.no/" + props.url;
+        }}
+      >
+        <CloudDownload /> Last ned åpne data
+      </button>
     </div>
   );
 };
