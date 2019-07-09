@@ -1,15 +1,10 @@
 import React from "react";
-import {
-  ShowChart
-  //Gradient
-} from "@material-ui/icons/";
+import { ShowChart } from "@material-ui/icons/";
 import Gradienter from "./Gradienter";
 import KurveContainer from "GjenbruksElement/Kurver/KurveContainer";
 import Relasjon from "Sidebar/Katalog/Relasjoner/Relasjon";
 import Kurve from "GjenbruksElement/Kurver/Kurve";
-import EgenskapVariabel from "../Relasjoner/EgenskapVariabel";
 import Ekspander from "GjenbruksElement/Ekspander";
-//import { SettingsContext } from "SettingsContext";
 
 const KatalogGradienter = ({
   onNavigate,
@@ -25,15 +20,7 @@ const KatalogGradienter = ({
   */
   if (!meta) return null;
   const { kode } = meta;
-  /*
-  const gradientLength = meta.gradient
-    ? Object.entries(meta.gradient).length
-    : 0;
-*/
-  //const relasjon = meta.graf;
-  // console.log(relasjon);
 
-  const flaggLength = meta.flagg ? Object.entries(meta.flagg).length : 0;
   if (!meta.gradient) return null;
   if (meta.kode === "NN-NA") return null;
   if (meta.kode === "NN-NA-TI") return null;
@@ -53,7 +40,6 @@ const KatalogGradienter = ({
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             opplyst={opplyst}
-            //visKoder={context.visKoder}
           />
         ))}
 
@@ -70,23 +56,6 @@ const KatalogGradienter = ({
         </Ekspander>
       )}
 
-      <Ekspander
-        visible={flaggLength > 0}
-        heading="Egenskaper"
-        heading2={flaggLength}
-      >
-        <div className="sidebar_element_padding">
-          <EgenskapVariabel
-            flagg={meta.flagg}
-            onNavigate={url => {
-              console.warn(url);
-              onNavigate(url);
-              // console.log("loading flagg: ", meta.flagg);
-            }}
-          />
-        </div>
-      </Ekspander>
-
       {meta.graf &&
         meta.graf.map(relasjon => (
           <Relasjon
@@ -100,7 +69,6 @@ const KatalogGradienter = ({
             onMouseLeave={onMouseLeave}
             expand={true}
             onSetExpand={true}
-            //children={children}
             {...props}
           />
         ))}
