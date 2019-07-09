@@ -1,9 +1,8 @@
 import tinycolor from "tinycolor2";
 import colorArray2Image from "./colorArray2Image";
 
-function lagGradientRampe(barna, opplystKode, mode) {
-  let opplystLevel = -1;
-  let steps = [];
+function lagSteg(barna, opplystKode, mode) {
+  let r = { steps: [] };
   barna.forEach(b => {
     const key = b.kode;
     let levels = b.normalisertVerdi;
@@ -11,18 +10,19 @@ function lagGradientRampe(barna, opplystKode, mode) {
     if (!Array.isArray(levels)) levels = [levels, levels];
     let [min, max] = levels;
     if (max < 255) max = Math.max(0, max - 1);
-    if (key === opplystKode) opplystLevel = [min, max];
+    if (key === opplystKode) r.opplystLevel = [min, max];
     if (min <= 1 || mode === "diskret")
-      steps.push({ level: min, color: b.farge });
-    steps.push({ level: max, color: b.farge });
+      r.steps.push({ level: min, color: b.farge });
+    r.steps.push({ level: max, color: b.farge });
   });
-  steps = steps.sort((a, b) => a.level - b.level);
-  if (mode === "kontinuerlig") {
-    for (let i = steps.length - 3; i > 0; i -= 2) {
-      steps[i].level = 0.5 * (steps[i].level + steps[i + 1].level);
-      steps.splice(i + 1, 1);
-    }
-  }
+  r.steps = r.steps.sort((a, b) => a.level - b.level);
+  return r;
+}
+
+function lagGradientRampe(barna, opplystKode, mode) {
+  const r = lagSteg(barna, opplystKode, mode);
+  const steps = r.steps;
+  let opplystLevel = -1;
   const cmap = [];
   for (let i = 0; i < steps.length - 1; i++) {
     const a = steps[i];
