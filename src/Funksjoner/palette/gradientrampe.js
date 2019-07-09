@@ -2,7 +2,7 @@ import tinycolor from "tinycolor2";
 import colorArray2Image from "./colorArray2Image";
 
 function lagSteg(barna, opplystKode, mode) {
-  let r = { steps: [] };
+  let r = { steps: [], opplystLevel: -1 };
   barna.forEach(b => {
     const key = b.kode;
     let levels = b.normalisertVerdi;
@@ -11,18 +11,20 @@ function lagSteg(barna, opplystKode, mode) {
     let [min, max] = levels;
     if (max < 255) max = Math.max(0, max - 1);
     if (key === opplystKode) r.opplystLevel = [min, max];
+    const erSynlig = b.erSynlig !== false;
+    const farge = erSynlig ? b.farge : "#fff";
     if (min <= 1 || mode === "diskret")
-      r.steps.push({ level: min, color: b.farge });
-    r.steps.push({ level: max, color: b.farge });
+      r.steps.push({ level: min, color: farge });
+    r.steps.push({ level: max, color: farge });
   });
   r.steps = r.steps.sort((a, b) => a.level - b.level);
   return r;
 }
 
 function lagGradientRampe(barna, opplystKode, mode) {
+  console.log(opplystKode);
   const r = lagSteg(barna, opplystKode, mode);
   const steps = r.steps;
-  let opplystLevel = -1;
   const cmap = [];
   for (let i = 0; i < steps.length - 1; i++) {
     const a = steps[i];
@@ -31,6 +33,7 @@ function lagGradientRampe(barna, opplystKode, mode) {
       let weight = (100 * (ci - a.level)) / (b.level - a.level);
       weight = Math.max(0, Math.min(100, weight));
       let tc = tinycolor.mix(a.color, b.color, weight);
+      let opplystLevel = r.opplystLevel;
       if (opplystLevel !== -1) {
         if (opplystLevel.length < 2)
           opplystLevel = [opplystLevel[0] - 5, opplystLevel[0] + 5];
