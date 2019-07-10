@@ -14,7 +14,11 @@ const MobileNavigation = () => (
 
         <button
           className={
-            context.aktivTab === "informasjon" ? "active_mobile_button" : ""
+            context.aktivTab === "informasjon"
+              ? "active_mobile_button"
+              : context.aktivTab === "meny"
+              ? "active_mobile_button"
+              : ""
           }
           onClick={() => context.onNavigateToTab("informasjon")}
         >

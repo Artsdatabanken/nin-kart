@@ -15,6 +15,7 @@ const GradientEllerTypeinndelt = ({
   format,
   aktvtKartlagFormat
 }) => {
+  if (!format[aktvtKartlagFormat]) return null;
   const kartformat = format[aktvtKartlagFormat];
   const { visning, aktivVisning } = kartformat;
   let optionNumbers = 0;
