@@ -108,7 +108,8 @@
   border-radius: 3px;
 }
 
-.frontpage_link_items .menu_item svg {
+.frontpage_link_items .menu_item svg,
+.frontpage_link_items .meny_ikon_image {
   width: 80px;
   height: 80px;
   display: block;

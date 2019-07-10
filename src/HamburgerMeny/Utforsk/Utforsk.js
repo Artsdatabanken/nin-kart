@@ -1,6 +1,6 @@
 import Menyelement from "HamburgerMeny/Menyelement";
 import React from "react";
-import { Panorama, Pets, Landscape, Security } from "@material-ui/icons";
+import { Pets, Landscape } from "@material-ui/icons";
 import Naturvern from "HamburgerMeny/Naturvern";
 
 const Utforsk = ({ parent, context }) => {
@@ -24,7 +24,13 @@ const Utforsk = ({ parent, context }) => {
           the_props.history.push("/Natur_i_Norge/Natursystem");
           onToggleHovedmeny();
         }}
-        icon={<Panorama />}
+        icon={
+          <img
+            className="meny_ikon_image"
+            src="/logoer/natursystem_ikon.png"
+            alt=""
+          />
+        }
         primary="Natursystem"
       />
 
@@ -42,7 +48,13 @@ const Utforsk = ({ parent, context }) => {
           the_props.history.push("/Fylke/");
           onToggleHovedmeny();
         }}
-        icon={<Security />}
+        icon={
+          <img
+            className="meny_ikon_image"
+            src="/logoer/fylke_ikon.png"
+            alt=""
+          />
+        }
         primary="Fylke"
       />
 

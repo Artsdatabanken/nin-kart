@@ -327,3 +327,9 @@ div {
 .badge b {
   color: #4b909e;
 }
+
+.meny_ikon_image {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
