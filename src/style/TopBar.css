@@ -15,8 +15,14 @@
   color: #edf4f5;
   font-weight: 300;
   display: inline-block;
-  margin-left: calc(50% - 72px);
+  margin-left: 60px;
   margin-top: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+  .header_text {
+    margin-left: calc(50% - 70px);
+  }
 }
 
 .header_text span {
