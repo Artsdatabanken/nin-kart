@@ -1,6 +1,6 @@
 import Menyelement from "HamburgerMeny/Menyelement";
 import React from "react";
-import { Panorama, Pets, Landscape, Layers } from "@material-ui/icons";
+import { Panorama, Pets, Landscape, Security } from "@material-ui/icons";
 import Naturvern from "HamburgerMeny/Naturvern";
 
 const Utforsk = ({ parent, context }) => {
@@ -42,7 +42,7 @@ const Utforsk = ({ parent, context }) => {
           the_props.history.push("/Fylke/");
           onToggleHovedmeny();
         }}
-        icon={<Layers />}
+        icon={<Security />}
         primary="Fylke"
       />
 
