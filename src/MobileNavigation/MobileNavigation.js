@@ -17,7 +17,7 @@ const MobileNavigation = () => (
             context.aktivTab === "informasjon"
               ? "active_mobile_button"
               : context.aktivTab === "meny"
-              ? "active_mobile_button"
+              ? "active_mobile_button_bigscreen"
               : ""
           }
           onClick={() => context.onNavigateToTab("informasjon")}
