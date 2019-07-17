@@ -1,7 +1,7 @@
 import tinycolor from "tinycolor2";
 import colorArray2Image from "./colorArray2Image";
 
-function lagSteg(barna, opplystKode, mode) {
+function lagStoppPunkter(barna, opplystKode, mode) {
   let r = { steps: [], opplystLevel: -1 };
   barna.forEach(b => {
     const key = b.kode;
@@ -22,8 +22,7 @@ function lagSteg(barna, opplystKode, mode) {
 }
 
 function lagGradientRampe(barna, opplystKode, mode) {
-  console.log(opplystKode);
-  const r = lagSteg(barna, opplystKode, mode);
+  const r = lagStoppPunkter(barna, opplystKode, mode);
   const steps = r.steps;
   const cmap = [];
   for (let i = 0; i < steps.length - 1; i++) {
