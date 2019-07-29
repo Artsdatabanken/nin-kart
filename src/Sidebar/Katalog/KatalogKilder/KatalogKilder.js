@@ -31,7 +31,7 @@ const KatalogKilder = ({ onNavigate, meta, opplyst, ...props }) => {
             variant="contained"
             color="default"
             onClick={() => {
-              window.location = "https://data.artsdatabanken.no/" + props.url;
+              window.location = "https://data.artsdatabanken.no/" + url;
             }}
           >
             Last ned åpne data
