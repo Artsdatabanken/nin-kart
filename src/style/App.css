@@ -230,7 +230,8 @@ div {
     background: #b7d3d8;
   }
 
-  .tab_selector .active_mobile_button {
+  .tab_selector .active_mobile_button,
+  .tab_selector .active_mobile_button_bigscreen {
     background: #fbfbfb;
     color: black;
     font-weight: 400;

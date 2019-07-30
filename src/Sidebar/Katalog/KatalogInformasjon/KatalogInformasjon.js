@@ -1,7 +1,6 @@
 import React from "react";
 import Detaljeringsgrad from "./Detaljeringsgrad";
 import KatalogInformasjonsBoks from "./KatalogInformasjonsBoks";
-import Ekspander from "GjenbruksElement/Ekspander";
 import KatalogStatistikk from "Sidebar/Katalog/KatalogInformasjon/KatalogStatistikk/KatalogStatistikk";
 import språk from "Funksjoner/språk";
 
@@ -31,7 +30,7 @@ const KatalogInformasjon = ({ meta, onUpdateLayerProp }) => {
       )}
       <KatalogInformasjonsBoks meta={meta} />
 
-      <Ekspander visible={prefiks !== "AO" && !!stats} heading="Statistikk">
+      {prefiks !== "AO" && !!stats && (
         <KatalogStatistikk
           prefiks={prefiks}
           overordnet={overordnet}
@@ -43,7 +42,7 @@ const KatalogInformasjon = ({ meta, onUpdateLayerProp }) => {
           arterVindu={antallArter}
           geometrierVindu={antallNaturomrader}
         />
-      </Ekspander>
+      )}
     </>
   );
 };

@@ -148,6 +148,19 @@
   font-family: "Roboto", "sans-serif";
 }
 
+.stats_paragraph {
+  display: flex;
+  align-content: flex-start;
+  text-align: left;
+}
+
+.stats_paragraph svg {
+  width: 50px;
+  height: 50px;
+  padding-right: 10px;
+  color: #4b909e;
+}
+
 .sidebar_title_container h1,
 .sidebar_title_container h2 {
   width: calc(100% - 100px);
