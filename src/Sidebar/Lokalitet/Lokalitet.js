@@ -25,6 +25,9 @@ class Lokalitet extends Component {
       this.setState({ sted: sted });
     });
     backend.hentPunkt(lng, lat).then(data => {
+      console.warn("============");
+      console.warn(data);
+      console.warn("============");
       const barn = dataFlattening(data);
       if (!barn) return null;
       const node = barn["~"].values.AO;

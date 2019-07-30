@@ -36,9 +36,7 @@ class Backend {
   }
 
   static async hentPunkt(lng, lat) {
-    return this.getPromise(
-      `https://vector.artsdatabanken.no/ogapi/codes/${lng}/${lat}`
-    );
+    return this.getPromise(`https://stedsnavn.artsdatabanken.no/${lng},${lat}`);
   }
 
   static async hentStedsnavn(lng, lat) {
