@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import LokalitetLenkeElement from "./LokalitetLenkeElement/LokalitetLenkeElement";
 import bioklimatiskSonePlural from "Sidebar/Lokalitet/LokalitetFunksjoner/bioklimatiskSonePlural";
 import replaceString from "Sidebar/Lokalitet/LokalitetFunksjoner/replaceString";
+import { KeyboardArrowRight } from "@material-ui/icons";
+import Flis from "./LokalitetLenkeElement/Flis";
 
 function oppsummer(node) {
   let r = [];
@@ -48,15 +50,55 @@ class LokalitetSeksjon extends Component {
     const secondary = oppsumert_node.map(e => this.map(e.verdi));
 
     return (
-      <LokalitetLenkeElement
-        new_object={new_object}
-        key={kode}
-        kode={kode}
-        secondary={secondary}
-        primary={kategori}
-        visKoder={visKoder}
-        onClick={onClick}
-      />
+      <>
+        {new_object ? (
+          <button className="katalog_link_displayer" onClick={onClick}>
+            <h1>
+              {kategori}
+              {kode && visKoder === true && (
+                <>
+                  <span>
+                    {" "}
+                    - {new_object && <span>{kode.substring(0, 2)}</span>}
+                  </span>
+                  <Flis kode={kode} visKoder={visKoder} />
+                </>
+              )}
+            </h1>
+
+            {new_object && "nytt objekt"}
+
+            <div className="secondary">{secondary}</div>
+
+            <div className="invisible_icon_button element_link">
+              <KeyboardArrowRight />
+            </div>
+          </button>
+        ) : (
+          <button className="" onClick={onClick}>
+            <h1>
+              {kategori}
+              {kode && visKoder === true && (
+                <>
+                  <span>
+                    {" "}
+                    - {new_object && <span>{kode.substring(0, 2)}</span>}
+                  </span>
+                  <Flis kode={kode} visKoder={visKoder} />
+                </>
+              )}
+            </h1>
+
+            {new_object && "nytt objekt"}
+
+            <div className="secondary">{secondary}</div>
+
+            <div className="invisible_icon_button element_link">
+              <KeyboardArrowRight />
+            </div>
+          </button>
+        )}
+      </>
     );
   }
 

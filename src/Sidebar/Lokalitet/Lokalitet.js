@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 import backend from "Funksjoner/backend";
-import LokalitetInnhold from "./LokalitetElementer/LokalitetInnhold/LokalitetInnhold";
-import LokalitetHeader from "./LokalitetElementer/LokalitetHeader/LokalitetHeader";
-import dataFlattening from "Sidebar/Lokalitet/LokalitetFunksjoner/dataFlattening";
-import flatten from "./LokalitetFunksjoner/flatten";
 
 class Lokalitet extends Component {
   state = { bareAktive: false };
@@ -25,30 +21,26 @@ class Lokalitet extends Component {
       this.setState({ sted: sted });
     });
     backend.hentPunkt(lng, lat).then(data => {
-      console.warn("============");
-      console.warn(data);
-      console.warn("============");
-      const barn = dataFlattening(data);
-      if (!barn) return null;
-      const node = barn["~"].values.AO;
-      const { fylke, kommune } = flatten(node.values);
+      //console.warn(data);
+      const fylke = data.fylke;
+      const kommune = data.kommune;
       let url =
         "/Fylke/" + fylke + "/" + kommune + "?lng=" + lng + "&lat=" + lat;
       url = url.replace(/ /g, "_");
       this.props.history.push(url);
       this.setState({
-        data: data["~"] ? data["~"].values : {}
+        data: data
       });
     });
   }
 
   render() {
-    const { lat, aktivTab } = this.props;
+    const { lat, lng, aktivTab } = this.props;
     if (!lat) return null;
     const { data } = this.state;
-    const barn = dataFlattening(data);
-    if (!barn) return null;
-    const { AO, prefix, ...andreBarn } = barn;
+    if (!data) return null;
+
+    console.log(data);
 
     return (
       <>
@@ -59,15 +51,47 @@ class Lokalitet extends Component {
           }
         >
           <div className="main_body_wrapper">
-            {AO && (
-              <LokalitetHeader
-                values={AO.values}
-                sted={AO.sted}
-                elevasjon={AO.elevasjon}
-              />
-            )}
+            <h1>{data.sted.navn}</h1>
+            <h2>{data.sted.kategori}</h2>
+            <h2>
+              {data.kommune},{data.fylke}
+            </h2>
+            <h3>
+              {lat}, {lng}
+            </h3>
+
+            {Object.keys(data.environment).map(kode => {
+              const miljøvariabel = data.environment[kode];
+              //console.log(miljøvariabel);
+              const barn = miljøvariabel.barn;
+
+              return (
+                <div>
+                  <h2>
+                    {miljøvariabel.tittel.nb} - {kode}
+                  </h2>
+                  <br />
+                  {miljøvariabel.url}
+
+                  <ul>
+                    {barn.map((value, index) => {
+                      return (
+                        <div
+                          key={index}
+                          onClick={e => {
+                            // kode for å sette aktiv state til infoside
+                            this.props.history.push(value.url);
+                          }}
+                        >
+                          {value.kode} - {value.tittel.nb}
+                        </div>
+                      );
+                    })}
+                  </ul>
+                </div>
+              );
+            })}
           </div>
-          <LokalitetInnhold barn={this.state.bareAktive ? {} : andreBarn} />
         </div>
         <div className="big_page_sidebar" />
       </>
