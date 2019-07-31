@@ -119,7 +119,7 @@ class Lokalitet extends Component {
                               <br />
                               <b>{value.tittel.nb}</b>
                               <br />
-                              <b>{value.kode}</b>
+                              <span>{value.kode}</span>
                               <span>{value.aktiv && "Finnes i området "}</span>
                             </div>
                           </div>

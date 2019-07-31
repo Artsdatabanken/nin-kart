@@ -300,7 +300,6 @@ div {
 .badge {
   text-align: center;
   display: inline-block;
-  padding: 5px;
   vertical-align: top;
   width: 200px;
   padding: 10px;
@@ -339,4 +338,27 @@ div {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+/* LOKASJON BADGE */
+.lokasjon_badge_container .badge_image {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #4b909e;
+}
+
+.lokasjon_badge_container .badge {
+  padding: 2px;
+  vertical-align: top;
+  width: 130px;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+.lokasjon_badge_container .badge b,
+.lokasjon_badge_container .badge span {
+  font-size: 10pt;
 }
