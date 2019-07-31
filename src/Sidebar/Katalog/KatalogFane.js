@@ -83,6 +83,7 @@ class KatalogFane extends React.Component {
             vis={vis}
             aktivTab={aktivTab}
             history={this.props.history}
+            onNavigate={this.handleNavigate}
           />
         </>
       );
