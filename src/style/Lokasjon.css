@@ -1,0 +1,109 @@
+.area_facts {
+  padding: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+.main_body_wrapper {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+/* ADD ALL NEW CONTAINERS HERE*/
+.wrap_padding {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.blockbox,
+.landscape_divisions,
+.general_badge_container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.blockbox {
+  background: #81b2bb;
+  margin-bottom: 10px;
+}
+
+.landscape_divisions {
+  background: #edf4f5;
+  padding-bottom: 50px;
+}
+
+.blockbox,
+.blockbox h1,
+.blockbox h2,
+.blockbox p {
+  color: white;
+}
+
+.blockbox div h2 {
+  color: inherit;
+}
+
+.general_badge_item {
+  background: #edf4f5;
+  padding: 10px;
+  margin: 20px;
+  color: black;
+}
+
+.image_holder_landscape {
+  height: 150px;
+  width: 250px;
+  background: grey;
+  display: inline-block;
+}
+
+.landscape_divisions div {
+  padding-left: 10px;
+}
+
+.landscape_divisions div:first-of-type {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.landscape_divisions ul {
+  text-align: left;
+  font-size: 14pt;
+}
+
+/*****/
+.landskapstype_visning {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.landskapstype_visning img {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+}
+
+.landskapstype_visning h3 {
+  width: 100%;
+  text-align: left;
+}
+
+.landskapstype_visning .lokasjon_badge_container {
+  flex: 1;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.landskapstype_visning .badge {
+  width: 80px;
+}
+.landskapstype_visning .badge_image {
+  width: 80px;
+  height: 80px;
+}
+.landskapstype_visning .badge span {
+  display: none;
+}
