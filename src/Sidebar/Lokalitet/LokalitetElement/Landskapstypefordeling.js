@@ -1,7 +1,22 @@
 import React from "react";
 import Landskapstype from "./Landskapstype";
 
-const Landskapstypefordeling = ({ onNavigate, data }) => {
+function innerLevel(node) {
+  // Recursively look up the deepest single child node
+  node = node[Object.keys(node)[0]];
+  if (!node.values) {
+    console.log(node.title);
+    return node.title;
+  }
+  return innerLevel(node.values);
+}
+
+const Landskapstypefordeling = ({ onNavigate, data, landskap }) => {
+  // if(!landskap )return null;
+  // console.log("landskap", landskap);
+  console.log(landskap);
+  let item = innerLevel(landskap);
+
   return (
     <>
       <div className="landscape_divisions wrap_padding">
@@ -10,15 +25,12 @@ const Landskapstypefordeling = ({ onNavigate, data }) => {
           <div className="image_holder_landscape" />
           <div>
             <ul>
-              <li>item 1</li>
-              <li>item 2</li>
-              <li>item 3</li>
-              <li>juster dette med data</li>
+              <li>{item}</li>
             </ul>
           </div>
         </div>
       </div>
-      <Landskapstype data={data} onNavigate={onNavigate} />
+      {data && <Landskapstype data={data} onNavigate={onNavigate} />}
     </>
   );
 };

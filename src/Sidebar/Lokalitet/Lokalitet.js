@@ -11,6 +11,20 @@ function getNextLayer(next_layer) {
   }
 }
 
+function setPageUrl(kommune, fylke, lng, lat) {
+  let url =
+    "/Fylke/" +
+    this.state.fylke +
+    "/" +
+    this.state.kommune +
+    "?lng=" +
+    lng +
+    "&lat=" +
+    lat;
+  url = url.replace(/ /g, "_");
+  this.props.history.push(url);
+}
+
 class Lokalitet extends Component {
   state = { bareAktive: false };
 
@@ -25,70 +39,52 @@ class Lokalitet extends Component {
   fetch(lng, lat) {
     this.setState({
       data: null,
-      sted: null,
+      sted: "Mangler stedsnavn",
       gammelData: null,
       fylke: null,
-      kommune: null
-    });
-    backend.hentStedsnavn(lng, lat).then(sted => {
-      this.setState({ sted: sted });
+      kommune: null,
+      landskap: null
     });
 
+    backend.hentStedsnavn(lng, lat).then(sted => {
+      this.setState({ sted: sted.placename });
+    });
+
+    // GAMMEL BACKUPVERSJON
     backend.hentPunktGammel(lng, lat).then(gammelData => {
       //console.warn(gammelData);
-      for (let item in gammelData) {
-        let fylkeogkommune = gammelData[item].values.AO;
-        this.setState({
-          gammelData: gammelData[item].values
-        });
-        let fylkelayer = getNextLayer(fylkeogkommune);
-        this.setState({
-          fylke: fylkelayer.title,
-          kommune: getNextLayer(fylkelayer).title
-        });
-      }
-      let url =
-        "/Fylke/" +
-        this.state.fylke +
-        "/" +
-        this.state.kommune +
-        "?lng=" +
-        lng +
-        "&lat=" +
-        lat;
-      url = url.replace(/ /g, "_");
-      this.props.history.push(url);
+      let firstlayer = gammelData["~"];
+      let fylkeogkommune = firstlayer.values.AO;
+      let landskap = firstlayer.values.LA;
+      let fylkelayer = getNextLayer(fylkeogkommune);
       this.setState({
-        gammelData: gammelData
+        gammelData: firstlayer.values,
+        fylke: fylkelayer.title,
+        kommune: getNextLayer(fylkelayer).title,
+        gammelData: gammelData,
+        landskap: landskap.values
       });
+      setPageUrl(this.state.kommune, this.state.fylke, lng, lat);
     });
 
+    // GAMMEL APIVERSJON, Mye ukontrollert data.
     backend.hentPunkt(lng, lat).then(data => {
       //console.warn(data);
-
-      /*
       this.setState({
-        fylke: data.fylke.tittel.nb || "Oslo", /// FIKS! BARE FOR TESTING
-        kommune: data.kommune.tittel.nb || "Oslo" /// FIKS! BARE FOR TESTING
-      });
-
-      let url =
-        "/Fylke/" + this.state.fylke + "/" + this.state.kommune + "?lng=" + lng + "&lat=" + lat;
-      url = url.replace(/ /g, "_");
-      this.props.history.push(url);
-      */
-      this.setState({
+        fylke: data.fylke.tittel.nb,
+        kommune: data.kommune.tittel.nb,
         data: data
       });
+      setPageUrl(this.state.kommune, this.state.fylke, lng, lat);
     });
   }
 
+  // NY DELVIS FUNGERENDE VERSJON
   render() {
     const { lat, lng, aktivTab, onNavigate } = this.props;
     if (!lat) return null;
     const { data, fylke, gammelData, kommune } = this.state;
-    if (!data) return null;
-    console.log(gammelData);
+    if (!gammelData) return null;
 
     return (
       <>
@@ -100,14 +96,20 @@ class Lokalitet extends Component {
         >
           <div className="main_body_wrapper">
             <Stedsinfo
-              data={data}
+              sted={this.state.sted}
               fylke={fylke}
               kommune={kommune}
               lat={lat}
               lng={lng}
             />
-            <Landskapstypefordeling data={data} onNavigate={onNavigate} />
-            <Byggeklosser data={data} onNavigate={onNavigate} />
+            {this.state.landskap && (
+              <Landskapstypefordeling
+                data={data}
+                onNavigate={onNavigate}
+                landskap={this.state.landskap}
+              />
+            )}
+            {data && <Byggeklosser data={data} onNavigate={onNavigate} />}
           </div>
         </div>
         <div className="big_page_sidebar" />
