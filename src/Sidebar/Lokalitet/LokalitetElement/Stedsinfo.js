@@ -1,8 +1,6 @@
 import React from "react";
 
-const Stedsinfo = ({ onNavigate, data, lat, lng }) => {
-  const fylke = data.fylke.tittel.nb || "Oslo"; /// FIKS! BARE FOR TESTING
-  const kommune = data.kommune.tittel.nb || "Oslo"; /// FIKS! BARE FOR TESTING
+const Stedsinfo = ({ onNavigate, data, lat, lng, fylke, kommune }) => {
   return (
     <>
       <div className="area_facts">

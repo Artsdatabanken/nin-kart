@@ -19,19 +19,61 @@ class Lokalitet extends Component {
   fetch(lng, lat) {
     this.setState({
       data: null,
-      sted: null
+      sted: null,
+      gammelData: null,
+      fylke: null,
+      kommune: null
     });
     backend.hentStedsnavn(lng, lat).then(sted => {
       this.setState({ sted: sted });
     });
-    backend.hentPunkt(lng, lat).then(data => {
-      //console.warn(data);
-      const fylke = data.fylke.tittel.nb || "Oslo"; /// FIKS! BARE FOR TESTING
-      const kommune = data.kommune.tittel.nb || "Oslo"; /// FIKS! BARE FOR TESTING
+
+    backend.hentPunktGammel(lng, lat).then(gammelData => {
+      //console.warn(gammelData);
+      for (let item in gammelData) {
+        let fylkeogkommune = gammelData[item].values.AO.values;
+        for (let i in fylkeogkommune) {
+          console.log();
+          this.setState({
+            fylke: fylkeogkommune[i].title
+          });
+          for (let j in fylkeogkommune[i].values) {
+            this.setState({
+              kommune: fylkeogkommune[i].values[j].title
+            });
+          }
+        }
+      }
       let url =
-        "/Fylke/" + fylke + "/" + kommune + "?lng=" + lng + "&lat=" + lat;
+        "/Fylke/" +
+        this.state.fylke +
+        "/" +
+        this.state.kommune +
+        "?lng=" +
+        lng +
+        "&lat=" +
+        lat;
       url = url.replace(/ /g, "_");
       this.props.history.push(url);
+      this.setState({
+        gammelData: gammelData
+      });
+    });
+
+    backend.hentPunkt(lng, lat).then(data => {
+      //console.warn(data);
+
+      /*
+      this.setState({
+        fylke: data.fylke.tittel.nb || "Oslo", /// FIKS! BARE FOR TESTING
+        kommune: data.kommune.tittel.nb || "Oslo" /// FIKS! BARE FOR TESTING
+      });
+
+      let url =
+        "/Fylke/" + this.state.fylke + "/" + this.state.kommune + "?lng=" + lng + "&lat=" + lat;
+      url = url.replace(/ /g, "_");
+      this.props.history.push(url);
+      */
       this.setState({
         data: data
       });
@@ -41,7 +83,7 @@ class Lokalitet extends Component {
   render() {
     const { lat, lng, aktivTab, onNavigate } = this.props;
     if (!lat) return null;
-    const { data } = this.state;
+    const { data, fylke, kommune } = this.state;
     if (!data) return null;
 
     return (
@@ -53,7 +95,13 @@ class Lokalitet extends Component {
           }
         >
           <div className="main_body_wrapper">
-            <Stedsinfo data={data} lat={lat} lng={lng} />
+            <Stedsinfo
+              data={data}
+              fylke={fylke}
+              kommune={kommune}
+              lat={lat}
+              lng={lng}
+            />
             <Landskapstypefordeling data={data} onNavigate={onNavigate} />
             <Byggeklosser data={data} onNavigate={onNavigate} />
           </div>

@@ -22,7 +22,7 @@ const Landskapstype = ({ onNavigate, data }) => {
         const miljøvariabel = data.environment[kode];
         const barn = miljøvariabel.barn;
         return (
-          <div className="landskapstype_visning">
+          <div className="landskapstype_visning" key={index}>
             <h3>Navn på landskapstype her</h3>
             <img src={miljøvariabel.bilde.foto.url} alt="" />
 
@@ -34,6 +34,7 @@ const Landskapstype = ({ onNavigate, data }) => {
                       value={value}
                       index={index}
                       onNavigate={onNavigate}
+                      key={index}
                     />
                   );
                 })}

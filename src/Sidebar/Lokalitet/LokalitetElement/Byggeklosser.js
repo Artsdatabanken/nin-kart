@@ -38,6 +38,7 @@ const Byggeklosser = ({ onNavigate, data }) => {
               miljøvariabel={data.environment[kode]}
               onNavigate={onNavigate}
               kode={kode}
+              key={index}
             />
           );
         })}
@@ -52,6 +53,7 @@ const Byggeklosser = ({ onNavigate, data }) => {
               miljøvariabel={data.environment[kode]}
               onNavigate={onNavigate}
               kode={kode}
+              key={index}
             />
           );
         })}

@@ -28,6 +28,7 @@ const Variabelboks = ({ onNavigate, miljøvariabel, kode }) => {
                 value={value}
                 index={index}
                 onNavigate={onNavigate}
+                key={index}
               />
             );
           })}
