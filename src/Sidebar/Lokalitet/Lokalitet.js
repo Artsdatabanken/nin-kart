@@ -5,6 +5,12 @@ import Stedsinfo from "./LokalitetElement/Stedsinfo";
 import Landskapstypefordeling from "./LokalitetElement/Landskapstypefordeling";
 import "style/Lokasjon.css";
 
+function getNextLayer(next_layer) {
+  for (let j in next_layer.values) {
+    return next_layer.values[j];
+  }
+}
+
 class Lokalitet extends Component {
   state = { bareAktive: false };
 
@@ -31,18 +37,15 @@ class Lokalitet extends Component {
     backend.hentPunktGammel(lng, lat).then(gammelData => {
       //console.warn(gammelData);
       for (let item in gammelData) {
-        let fylkeogkommune = gammelData[item].values.AO.values;
-        for (let i in fylkeogkommune) {
-          console.log();
-          this.setState({
-            fylke: fylkeogkommune[i].title
-          });
-          for (let j in fylkeogkommune[i].values) {
-            this.setState({
-              kommune: fylkeogkommune[i].values[j].title
-            });
-          }
-        }
+        let fylkeogkommune = gammelData[item].values.AO;
+        this.setState({
+          gammelData: gammelData[item].values
+        });
+        let fylkelayer = getNextLayer(fylkeogkommune);
+        this.setState({
+          fylke: fylkelayer.title,
+          kommune: getNextLayer(fylkelayer).title
+        });
       }
       let url =
         "/Fylke/" +
@@ -83,8 +86,9 @@ class Lokalitet extends Component {
   render() {
     const { lat, lng, aktivTab, onNavigate } = this.props;
     if (!lat) return null;
-    const { data, fylke, kommune } = this.state;
+    const { data, fylke, gammelData, kommune } = this.state;
     if (!data) return null;
+    console.log(gammelData);
 
     return (
       <>
