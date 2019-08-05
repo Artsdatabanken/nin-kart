@@ -1,5 +1,5 @@
 import React from "react";
-import Detaljeringsgrad from "./Detaljeringsgrad";
+//import Detaljeringsgrad from "./Detaljeringsgrad";
 import KatalogInformasjonsBoks from "./KatalogInformasjonsBoks";
 import KatalogStatistikk from "Sidebar/Katalog/KatalogInformasjon/KatalogStatistikk/KatalogStatistikk";
 import språk from "Funksjoner/språk";
@@ -12,8 +12,8 @@ const KatalogInformasjon = ({ meta, onUpdateLayerProp }) => {
   */
   if (!meta) return null;
   const {
-    kode,
-    depth,
+    //kode,
+    //depth,
     prefiks,
     infoUrl,
     overordnet,
@@ -25,9 +25,9 @@ const KatalogInformasjon = ({ meta, onUpdateLayerProp }) => {
 
   return (
     <>
-      {false && kode === "NN-LA-TI" && (
+      {/*kode === "NN-LA-TI" && (
         <Detaljeringsgrad onUpdateLayerProp={onUpdateLayerProp} value={depth} />
-      )}
+      )*/}
       <KatalogInformasjonsBoks meta={meta} />
 
       {prefiks !== "AO" && !!stats && (

@@ -101,6 +101,10 @@
 .subelement_text.nav_text {
   max-width: 100%;
 }
+/* DELETE denne er en midlertidig fix før ny side*/
+.sidebar button:hover {
+  color: black;
+}
 
 .sidebar div {
   box-sizing: border-box;

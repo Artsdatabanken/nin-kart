@@ -46,9 +46,9 @@ function lagStyle(format, drawArgs) {
         float v = value.r;
         float filter = step(min,v) * (step(v,max));
         v = (255.*value.b+0.5)/256.;
-        color = texture2D(palette, vec2(filter*v, 0.5));
-        vec4 transparent = vec4(1.,1.,1.,1.);
-        color = mix(transparent, color, value.a);`
+        color = texture2D(palette, vec2(v, 0.5));
+        vec4 transparent = vec4(1.);
+        color = mix(transparent, color, filter*value.a);`
       }
     }
   };
