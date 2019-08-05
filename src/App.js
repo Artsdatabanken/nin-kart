@@ -17,8 +17,9 @@ const App = () => {
       <SettingsContainer>
         <Grunnkart />
         <ForsideInformasjon />
-        <HamburgerMeny />
+
         <MobileNavigation />
+        <HamburgerMeny />
       </SettingsContainer>
     </BrowserRouter>
   );

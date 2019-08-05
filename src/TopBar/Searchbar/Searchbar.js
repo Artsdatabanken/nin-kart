@@ -18,12 +18,14 @@ const Searchbar = ({ query, onQueryChange, hits, setHits }) => {
 
   return (
     <div className={abc("searchbar_container", isSearching)}>
-      <input
-        ref={inputField}
-        value={query}
-        placeholder={"Søk i Natur i Norge"}
-        onChange={onQueryChange}
-      />
+      {isSearching && (
+        <input
+          ref={inputField}
+          value={query}
+          placeholder={"Søk i Natur i Norge"}
+          onChange={onQueryChange}
+        />
+      )}
 
       {!isSearching && hits.length === 0 ? (
         <button
