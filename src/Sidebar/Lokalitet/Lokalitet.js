@@ -46,29 +46,25 @@ class Lokalitet extends Component {
       landskap: null
     });
 
+    // Stedsnavn
     backend.hentStedsnavn(lng, lat).then(sted => {
       this.setState({ sted: sted.placename });
     });
 
-    // GAMMEL BACKUPVERSJON
+    // Gammelt api, kilde for kommune, fylke og annen data
     backend.hentPunktGammel(lng, lat).then(gammelData => {
-      //console.warn(gammelData);
       let firstlayer = gammelData["~"];
       let fylkeogkommune = firstlayer.values.AO;
       let fylkelayer = getNextLayer(fylkeogkommune);
       this.setState({
-        gammelData: firstlayer.values,
         fylke: fylkelayer.title,
-        kommune: getNextLayer(fylkelayer).title,
-        gammelLandskap: firstlayer.values.LA
+        kommune: getNextLayer(fylkelayer).title
       });
       setPageUrl(this.state.kommune, this.state.fylke, lng, lat);
     });
 
-    // NY APIVERSJON, Mye ukontrollert data.
+    // Ny APIVERSJON, Mye ukontrollert data.
     backend.hentPunkt(lng, lat).then(data => {
-      //console.warn("nytt api: ",data);
-      //console.log("nytt landskap: ",data.landskap);
       this.setState({
         fylke: data.fylke.tittel.nb,
         kommune: data.kommune.tittel.nb,
@@ -79,12 +75,10 @@ class Lokalitet extends Component {
     });
   }
 
-  // NY DELVIS FUNGERENDE VERSJON
   render() {
     const { lat, lng, aktivTab, onNavigate } = this.props;
     if (!lat) return null;
-    const { data, fylke, gammelData, kommune } = this.state;
-    if (!gammelData) return null;
+    const { data, fylke, kommune } = this.state;
 
     return (
       <>
@@ -102,14 +96,15 @@ class Lokalitet extends Component {
               lat={lat}
               lng={lng}
             />
+
             {this.state.landskap && (
               <Landskapstypefordeling
                 data={data}
-                gammelLandskap={this.state.gammelLandskap}
                 onNavigate={onNavigate}
                 landskap={this.state.landskap}
               />
             )}
+
             {data && <Byggeklosser data={data} onNavigate={onNavigate} />}
           </div>
         </div>
