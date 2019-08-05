@@ -1,7 +1,6 @@
 import React from "react";
-import LokasjonBadge from "./LokasjonBadge";
 
-const Landskapstype = ({ onNavigate, data }) => {
+const Landskapstype = ({ onNavigate, data, newlandskap }) => {
   let naturtype = [];
   let landskap = [];
   const miljvar = Object.keys(data.environment).sort();
@@ -13,11 +12,77 @@ const Landskapstype = ({ onNavigate, data }) => {
       landskap.push(miljvar[i]);
     }
   }
+  if (!newlandskap) return null;
+  let newgradient_components;
+  if (newlandskap.gradient) {
+    newgradient_components = newlandskap.gradient["NN-LA-KLG"].barn;
+  }
 
   return (
     <div className="">
-      <h2>Test i mellomtiden</h2>
-      {naturtype.map((kode, index) => {
+      <div className="landskapstype_visning">
+        <h3
+          onClick={() => {
+            onNavigate(newlandskap.url);
+          }}
+        >
+          {newlandskap.tittel.nb}
+        </h3>
+        <p className="landskapstype_ingress">
+          {newlandskap.ingress.substring(0, 200)}... >
+        </p>
+        <br />
+
+        <img src={newlandskap.bilde.foto.url} alt="" />
+        <div className="lokasjon_badge_container">
+          {newgradient_components &&
+            Object.keys(newgradient_components).map((value, index) => {
+              let new_item = newgradient_components[value];
+              // let counter = 0;
+              let namelist = "";
+              let imgurl = "https://data.artsdatabanken.no/";
+              for (let i in new_item.trinn) {
+                if (new_item.trinn[i]["på"]) {
+                  //counter += 1;
+                  namelist += new_item.trinn[i].tittel.nb + " ";
+                  imgurl += new_item.trinn[i].url + "/foto_408.jpg";
+                }
+              }
+              return (
+                <>
+                  <div
+                    key={index}
+                    onClick={() => {
+                      onNavigate(new_item.url);
+                    }}
+                  >
+                    <div className="landskap_badge badge" key={index}>
+                      <div
+                        className="badge_image"
+                        style={{
+                          backgroundPosition: "center",
+                          backgroundRepeat: "no-repeat",
+                          backgroundSize: "cover",
+                          backgroundImage: "url(" + imgurl + ")"
+                        }}
+                        onClick={() => {
+                          onNavigate(value.url);
+                        }}
+                      />
+                      <br />
+                      {/*{new_item.kode}<br/>*/}
+                      {/*{counter}/{new_item.trinn.length}*/}
+                      <b>{new_item.tittel.nb}</b> <br />
+                      {namelist}
+                    </div>
+                  </div>
+                </>
+              );
+            })}
+        </div>
+      </div>
+
+      {/*naturtype.map((kode, index) => {
         if (!data.environment[kode]) return null;
         const miljøvariabel = data.environment[kode];
         const barn = miljøvariabel.barn;
@@ -41,7 +106,7 @@ const Landskapstype = ({ onNavigate, data }) => {
             </div>
           </div>
         );
-      })}
+      })*/}
     </div>
   );
 };

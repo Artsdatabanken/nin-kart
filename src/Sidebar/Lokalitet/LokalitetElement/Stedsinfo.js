@@ -5,7 +5,6 @@ const Stedsinfo = ({ onNavigate, sted, lat, lng, fylke, kommune }) => {
     <>
       <div className="area_facts">
         <h1>{sted}</h1>
-        <h2 />
         <h2>
           {kommune}, {fylke}
         </h2>

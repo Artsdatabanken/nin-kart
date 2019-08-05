@@ -62,6 +62,7 @@
   padding-left: 10px;
 }
 
+/*
 .landscape_divisions div:first-of-type {
   display: flex;
   justify-content: center;
@@ -72,6 +73,8 @@
   text-align: left;
   font-size: 14pt;
 }
+
+*/
 
 /*****/
 .landskapstype_visning {
@@ -106,4 +109,19 @@
 }
 .landskapstype_visning .badge span {
   display: none;
+}
+
+.landskapstype_visning .landskap_badge {
+  width: 130px;
+  font-size: 10pt;
+}
+
+.landskapstype_ingress {
+  text-align: left;
+}
+
+.landscape_wrap_2ndlayer {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
 }

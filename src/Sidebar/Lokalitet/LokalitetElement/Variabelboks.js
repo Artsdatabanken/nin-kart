@@ -4,6 +4,15 @@ import LokasjonBadge from "./LokasjonBadge";
 
 const Variabelboks = ({ onNavigate, miljøvariabel, kode }) => {
   const barn = miljøvariabel.barn;
+
+  let found;
+  for (let i in barn) {
+    if (barn[i].aktiv === true) {
+      found = true;
+    }
+  }
+
+  if (found !== true) return null;
   return (
     <div className="general_badge_item">
       <h3>

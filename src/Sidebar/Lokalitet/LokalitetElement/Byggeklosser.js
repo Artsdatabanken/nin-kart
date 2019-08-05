@@ -20,13 +20,8 @@ const Byggeklosser = ({ onNavigate, data }) => {
       <p>
         En gradient eller miljøvariabel er noe som endrer seg i og mellom
         områder. De er byggestenene i et område, og sammen utgjør de
-        landskapstyper og naturtyper. En landskapstype er en samling av slike
-        gradienter i et område på minst en kilometer. Du kan dermed befinne deg
-        i en dalside med preg av isbreer uten å være akkurat på snøen. På samme
-        måte kan du stå i en landskapstype, men finne noen små byggeklosser som
-        ikke preger den landskapstypen du står i. Her finner du alle de
-        byggeklossene som finnes i det valgte området, uavhengig om de inngår i
-        landskap- eller naturtypene.{" "}
+        landskapstyper og naturtyper. Her finner du alle de byggeklossene som
+        finnes i det valgte området. Hvis
       </p>
 
       <div className="blockbox">

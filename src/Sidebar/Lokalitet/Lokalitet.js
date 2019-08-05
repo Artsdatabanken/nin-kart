@@ -55,25 +55,25 @@ class Lokalitet extends Component {
       //console.warn(gammelData);
       let firstlayer = gammelData["~"];
       let fylkeogkommune = firstlayer.values.AO;
-      let landskap = firstlayer.values.LA;
       let fylkelayer = getNextLayer(fylkeogkommune);
       this.setState({
         gammelData: firstlayer.values,
         fylke: fylkelayer.title,
         kommune: getNextLayer(fylkelayer).title,
-        gammelData: gammelData,
-        landskap: landskap.values
+        gammelLandskap: firstlayer.values.LA
       });
       setPageUrl(this.state.kommune, this.state.fylke, lng, lat);
     });
 
-    // GAMMEL APIVERSJON, Mye ukontrollert data.
+    // NY APIVERSJON, Mye ukontrollert data.
     backend.hentPunkt(lng, lat).then(data => {
-      //console.warn(data);
+      //console.warn("nytt api: ",data);
+      //console.log("nytt landskap: ",data.landskap);
       this.setState({
         fylke: data.fylke.tittel.nb,
         kommune: data.kommune.tittel.nb,
-        data: data
+        data: data,
+        landskap: data.landskap
       });
       setPageUrl(this.state.kommune, this.state.fylke, lng, lat);
     });
@@ -105,6 +105,7 @@ class Lokalitet extends Component {
             {this.state.landskap && (
               <Landskapstypefordeling
                 data={data}
+                gammelLandskap={this.state.gammelLandskap}
                 onNavigate={onNavigate}
                 landskap={this.state.landskap}
               />
