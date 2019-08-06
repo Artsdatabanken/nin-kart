@@ -28,8 +28,8 @@ Sidebarmeny-navigeringen.
   return (
     <>
       {" "}
-      <div class="sidebar_title_container sidebar_element">
-        <h1 class="sidebar_title">Navigering</h1>
+      <div className="sidebar_title_container sidebar_element">
+        <h1 className="sidebar_title">Navigering</h1>
       </div>
       <br />
       <>

@@ -173,3 +173,15 @@
   height: 40px;
   width: auto;
 }
+
+@media only screen and (max-width: 768px) {
+  .frontpage_sources {
+    text-align: center;
+  }
+
+  .frontpage_sources img {
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
