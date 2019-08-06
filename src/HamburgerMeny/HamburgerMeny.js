@@ -1,5 +1,5 @@
 import Menyelement from "./Menyelement";
-import { SettingsContext } from "../SettingsContext";
+import { SettingsContext } from "SettingsContext";
 import {
   Divider,
   IconButton,
@@ -19,7 +19,7 @@ import {
 } from "@material-ui/icons";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import NavigationChevronLeftDouble from "../Grunnkart/NavigationChevronLeftDouble";
+import NavigationChevronLeftDouble from "AppSettings/NavigationChevronLeftDouble";
 import BildeAvatar from "GjenbruksElement/Bildeavatar";
 import GitHub from "./GitHub";
 import Innstillinger from "./Innstillinger";
