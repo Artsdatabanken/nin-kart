@@ -168,6 +168,7 @@ div {
   bottom: 0px;
   box-sizing: border-box;
   margin: 0px;
+  z-index: 2;
 }
 
 @media only screen and (min-width: 768px) {

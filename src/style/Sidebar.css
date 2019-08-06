@@ -42,7 +42,7 @@
 @media only screen and (max-width: 768px) {
   .main_body.mobile_on {
     position: relative;
-    height: calc(100vh - 53px); /* bottom nav */
+    height: calc(100vh - 104px); /* bottom nav + top */
     width: 100%;
     background: #fbfbfb;
     left: auto;

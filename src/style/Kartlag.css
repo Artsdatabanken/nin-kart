@@ -52,14 +52,24 @@ Even tho we don't a of now support IE X)
 
   .closed_mobile_slide_up_area svg {
     margin: auto;
-    margin-top: -40px;
+    margin-top: -28px;
   }
 
   .mobile_slide_up_area span {
     width: 100%;
-    padding: 5px;
+    padding: 2px;
+    padding-bottom: 8px;
     display: block;
     font-size: 12pt;
+    text-align: left;
+  }
+
+  .mobile_slide_up_area span:first-of-type {
+    color: #4b909e;
+    font-size: 8pt;
+    padding: 2px;
+    padding-top: 0px;
+    margin-top: -5px;
   }
 }
 

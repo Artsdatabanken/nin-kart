@@ -65,7 +65,8 @@ class Kartlag extends React.Component {
                   ) : (
                     <>
                       <KeyboardArrowUp />
-                      <span>{tittel}</span>
+                      <span>Aktivt kartlag</span>
+                      <span> {tittel}</span>
                     </>
                   )}
                 </button>
