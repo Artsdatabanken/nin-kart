@@ -57,6 +57,13 @@ body {
   touch-action: none;
 }
 
+a,
+a:visited,
+a:active,
+a:focus {
+  color: #4b909e;
+}
+
 body,
 input,
 p,

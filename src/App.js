@@ -3,11 +3,9 @@ import { withRouter } from "react-router";
 import backend from "Funksjoner/backend";
 import { SettingsContext } from "SettingsContext";
 import KatalogFane from "Sidebar/Katalog/KatalogFane";
-
 import TopBar from "TopBar/TopBar";
 import Kartlag from "Sidebar/Kartlag/Kartlag";
 import Kart from "Kart/LeafletTangram";
-
 import metaSjekk from "AppSettings/AppFunksjoner/metaSjekk";
 import fetchMeta from "AppSettings/AppFunksjoner/fetchMeta";
 import aktiverFraHistorikk from "AppSettings/AppFunksjoner/aktiverFraHistorikk";
@@ -15,7 +13,6 @@ import aktiverValgtKartlag from "AppSettings/AppFunksjoner/aktiverValgtKartlag";
 import oppdaterMetaProperties from "AppSettings/AppFunksjoner/oppdaterMetaProperties";
 import oppdaterLagProperties from "AppSettings/AppFunksjoner/oppdaterLagProperties";
 import bakgrunnskarttema from "AppSettings/bakgrunnskarttema";
-
 import HamburgerMeny from "HamburgerMeny/HamburgerMeny";
 import MobileNavigation from "MobileNavigation/MobileNavigation";
 import ForsideInformasjon from "Forside/ForsideInformasjon";
@@ -26,7 +23,7 @@ import "style/GeografiskSidebar.css";
 import "style/Kartlag.css";
 import "style/FargeMenyer.css";
 
-class Grunnkart extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     let aktive = {
@@ -43,7 +40,7 @@ class Grunnkart extends React.Component {
       navigation_history: [],
       showCurrent: true
     };
-    this.props.history.listen((location, action) => {
+    this.props.history.listen(() => {
       // Åpne menyen ved navigering
       this.context.onNavigateToTab("meny");
     });
@@ -185,7 +182,7 @@ class Grunnkart extends React.Component {
     });
   };
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     const path = this.props.location.pathname;
     if (path !== prevProps.location.pathname) {
       fetchMeta(path, this);
@@ -234,4 +231,4 @@ class Grunnkart extends React.Component {
   static contextType = SettingsContext;
 }
 
-export default withRouter(Grunnkart);
+export default withRouter(App);
