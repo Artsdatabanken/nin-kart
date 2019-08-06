@@ -113,6 +113,7 @@ select {
 
 .child_list_object_indicator {
   float: right;
+  background: transparent;
 }
 
 .sidebar .colour_legend {

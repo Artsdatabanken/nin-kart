@@ -44,10 +44,10 @@ const LegendeElement = ({
 
         <LegendeTitleField tittel={språk(tittel)} undertittel={koder} />
 
-        <div className="child_list_object_indicator">
+        <button className="child_list_object_indicator">
           <VelgFargeBoks farge={farge} kode={kode} />
           {showColours ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
-        </div>
+        </button>
       </div>
 
       {showColours && (

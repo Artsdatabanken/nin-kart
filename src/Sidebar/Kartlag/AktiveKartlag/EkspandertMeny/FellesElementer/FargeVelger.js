@@ -18,6 +18,7 @@ class FargeVelger extends Component {
       <div className="kartlag_submenu">
         <h3>{title}</h3>
         <ColorPicker
+          tabIndex="1"
           color={color}
           alpha
           onChange={farge => {

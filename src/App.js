@@ -66,6 +66,7 @@ class Grunnkart extends React.Component {
                   history.push("/" + item.url);
                 }}
               />
+              <MobileNavigation />
               <div>
                 {(context.aktivTab === "meny" ||
                   context.aktivTab === "informasjon") && (
@@ -139,7 +140,7 @@ class Grunnkart extends React.Component {
                 />
               </div>
               <ForsideInformasjon />
-              <MobileNavigation />
+
               <HamburgerMeny />
             </>
           );
