@@ -38,12 +38,8 @@ class KatalogFane extends React.Component {
       onUpdateMetaProp,
       meta,
       location,
-      //erAktivert,
-      //onFitBounds,
-      //onToggleLayer,
       aktivTab
     } = this.props;
-
     const kurve = finnKurvevariabler(this.props.aktiveLag);
     const meny = (
       <div
@@ -94,6 +90,7 @@ class KatalogFane extends React.Component {
     return (
       <>
         {meny}
+
         <div
           className={
             (aktivTab === "informasjon" ? "mobile_on" : "mobile_off") +

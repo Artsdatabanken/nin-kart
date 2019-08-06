@@ -41,8 +41,8 @@ class App extends React.Component {
       showCurrent: true
     };
     this.props.history.listen(() => {
-      // Åpne menyen ved navigering
-      this.context.onNavigateToTab("meny");
+      // Åpne info ved navigering
+      this.context.onNavigateToTab("informasjon");
     });
   }
 
