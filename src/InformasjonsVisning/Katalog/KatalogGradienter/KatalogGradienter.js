@@ -2,7 +2,7 @@ import React from "react";
 import { ShowChart } from "@material-ui/icons/";
 import Gradienter from "./Gradienter";
 import KurveContainer from "GjenbruksElement/Kurver/KurveContainer";
-import Relasjon from "Sidebar/Katalog/Relasjoner/Relasjon";
+import Relasjon from "InformasjonsVisning/Katalog/Relasjoner/Relasjon";
 import Kurve from "GjenbruksElement/Kurver/Kurve";
 import Ekspander from "GjenbruksElement/Ekspander";
 

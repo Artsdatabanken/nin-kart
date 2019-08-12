@@ -1,6 +1,6 @@
 import React from "react";
 
-const InfoTab = () => (
+const Hjelp = () => (
   <div
     className="InfoTab"
     style={{ padding: 15, paddingTop: 50, textAlign: "center" }}
@@ -51,4 +51,4 @@ const InfoTab = () => (
   </div>
 );
 
-export default InfoTab;
+export default Hjelp;

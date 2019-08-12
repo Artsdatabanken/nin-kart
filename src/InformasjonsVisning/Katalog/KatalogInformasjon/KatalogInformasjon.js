@@ -1,7 +1,7 @@
 import React from "react";
 //import Detaljeringsgrad from "./Detaljeringsgrad";
 import KatalogInformasjonsBoks from "./KatalogInformasjonsBoks";
-import KatalogStatistikk from "Sidebar/Katalog/KatalogInformasjon/KatalogStatistikk/KatalogStatistikk";
+import KatalogStatistikk from "InformasjonsVisning/Katalog/KatalogInformasjon/KatalogStatistikk/KatalogStatistikk";
 import språk from "Funksjoner/språk";
 
 const KatalogInformasjon = ({ meta, onUpdateLayerProp }) => {

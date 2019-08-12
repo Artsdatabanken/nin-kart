@@ -2,9 +2,9 @@ import React from "react";
 import { withRouter } from "react-router";
 import backend from "Funksjoner/backend";
 import { SettingsContext } from "SettingsContext";
-import KatalogFane from "Sidebar/Katalog/KatalogFane";
+import InformasjonsVisning from "InformasjonsVisning/InformasjonsVisning";
 import TopBar from "TopBar/TopBar";
-import Kartlag from "Sidebar/Kartlag/Kartlag";
+import Kartlag from "Kartlag/Kartlag";
 import Kart from "Kart/LeafletTangram";
 import metaSjekk from "AppSettings/AppFunksjoner/metaSjekk";
 import fetchMeta from "AppSettings/AppFunksjoner/fetchMeta";
@@ -67,7 +67,7 @@ class App extends React.Component {
               <div>
                 {(context.aktivTab === "meny" ||
                   context.aktivTab === "informasjon") && (
-                  <KatalogFane
+                  <InformasjonsVisning
                     aktivTab={context.aktivTab}
                     show_current={this.state.showCurrent}
                     handleShowCurrent={this.handleShowCurrent}
