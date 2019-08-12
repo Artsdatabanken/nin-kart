@@ -114,6 +114,7 @@
   margin: 25px;
   text-align: center;
   border-radius: 3px;
+  position: relative;
 }
 @media only screen and (max-width: 768px) {
   .frontpage_link_items .menu_item {
@@ -179,6 +180,7 @@
   vertical-align: top;
   margin-right: 10px;
   margin-left: 10px;
+  position: relative;
 }
 
 .frontpage_sources div img {
@@ -195,5 +197,22 @@
     max-width: 100%;
     margin-right: auto;
     margin-left: auto;
+  }
+}
+
+.mobile_only {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .mobile_only {
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    top: 20px;
+    right: 20px;
+    position: absolute;
+    top: 20px;
+    right: calc(50% - 100px);
   }
 }
