@@ -104,6 +104,10 @@
 
 /* Link bLOCK */
 
+.frontpage_link_items .hamburger_menu_item div:first-child {
+  width: auto;
+}
+
 .frontpage_link_items .menu_item {
   display: inline-block;
   width: auto;
@@ -111,12 +115,20 @@
   text-align: center;
   border-radius: 3px;
 }
+@media only screen and (max-width: 768px) {
+  .frontpage_link_items .menu_item {
+    width: 100%;
+    margin: 0px;
+    left: 0px;
+  }
+}
 
 .frontpage_link_items .menu_item svg,
 .frontpage_link_items .meny_ikon_image {
   width: 80px;
   height: 80px;
   display: block;
+  margin: auto;
 }
 
 /* Footer */

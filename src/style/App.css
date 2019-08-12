@@ -370,3 +370,41 @@ div {
 .lokasjon_badge_container .badge span {
   font-size: 10pt;
 }
+
+/* HAMBURGER MENY ITEMS */
+
+.hamburger_menu_item {
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+  outline: none;
+  display: flex;
+  justify-content: flex-start;
+  vertical-align: middle;
+  background: transparent;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  text-align: left;
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.hamburger_menu_item div {
+  min-width: 0px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  font-size: 12pt;
+  color: #777777;
+}
+
+.hamburger_menu_item div:first-child {
+  width: 36px;
+}
+
+.hamburger_menu_item svg {
+  color: #777777;
+}
