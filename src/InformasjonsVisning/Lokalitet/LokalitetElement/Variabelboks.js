@@ -1,5 +1,4 @@
 import React from "react";
-import { ArrowRight } from "@material-ui/icons";
 import LokasjonBadge from "./LokasjonBadge";
 
 const Variabelboks = ({ onNavigate, miljøvariabel, kode }) => {
@@ -18,17 +17,15 @@ const Variabelboks = ({ onNavigate, miljøvariabel, kode }) => {
       <h3>
         {miljøvariabel.tittel && miljøvariabel.tittel.nb} - {kode}
       </h3>
-      {miljøvariabel.ingress}
-      <span
+      {miljøvariabel.ingress}{" "}
+      <button
         onClick={() => {
           onNavigate(miljøvariabel.url);
         }}
       >
-        {" "}
-        Les mer... <ArrowRight />
-      </span>
+        Les mer >
+      </button>
       <br />
-
       <div className="lokasjon_badge_container">
         {barn &&
           barn.map((value, index) => {

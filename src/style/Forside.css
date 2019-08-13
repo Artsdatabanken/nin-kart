@@ -200,12 +200,16 @@
   }
 }
 
-.mobile_only {
+.frontpage_link_items .hamburger_menu_item div {
+  display: inline-block;
+}
+
+.frontpage_link_items .hamburger_menu_item .mobile_only {
   display: none;
 }
 
 @media only screen and (max-width: 768px) {
-  .mobile_only {
+  .frontpage_link_items .hamburger_menu_item .mobile_only {
     display: inline-block;
     padding: 0px;
     margin: 0px;

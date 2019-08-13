@@ -11,10 +11,10 @@ const Menyelement = ({
   checked
 }) => (
   <button onClick={onClick} button className="hamburger_menu_item menu_item">
-    <div>
-      {icon}
-      {primary}
-      {secondary}
+    <div className="button_items">
+      <span>{icon}</span>
+      <span>{primary}</span>
+      <span>{secondary}</span>
     </div>
 
     <div className="mobile_only">

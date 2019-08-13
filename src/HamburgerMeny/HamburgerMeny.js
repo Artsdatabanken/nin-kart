@@ -31,6 +31,7 @@ class HamburgerMeny extends Component {
       <SettingsContext.Consumer>
         {context => (
           <SwipeableDrawer
+            className="hamburger_sidebar"
             anchor="left"
             onClose={context.onToggleHovedmeny}
             onOpen={context.onToggleHovedmeny}

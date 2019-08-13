@@ -19,7 +19,6 @@ const Landskapstype = ({ onNavigate, newlandskap }) => {
       <p className="landskapstype_ingress">
         {newlandskap.ingress.substring(0, 200)}... >
       </p>
-      <br />
       <img src={newlandskap.bilde.foto.url} alt="" />
       <div className="lokasjon_badge_container">
         {newgradient_components &&

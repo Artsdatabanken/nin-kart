@@ -64,6 +64,11 @@ a:focus {
   color: #4b909e;
 }
 
+a:hover {
+  color: #81b2bb;
+  cursor: pointer;
+}
+
 body,
 input,
 p,
@@ -372,6 +377,17 @@ div {
 }
 
 /* HAMBURGER MENY ITEMS */
+.hamburger_sidebar {
+  width: 330px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+@media only screen and (max-width: 768px) {
+  .hamburger_sidebar {
+    max-width: calc(100% - 5px);
+  }
+}
 
 .hamburger_menu_item {
   border: 0;
@@ -399,12 +415,17 @@ div {
   margin-bottom: 4px;
   font-size: 12pt;
   color: #777777;
+  display: flex;
 }
 
-.hamburger_menu_item div:first-child {
+.hamburger_menu_item div span:first-child {
   width: 36px;
 }
 
 .hamburger_menu_item svg {
   color: #777777;
+}
+
+.hamburger_sidebar .mobile_only {
+  display: none;
 }
