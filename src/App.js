@@ -203,11 +203,11 @@ class App extends React.Component {
     this.setState({ aktiveLag: aktive });
   };
 
-  handleUpdateLayerProp = (layer, key, value) => {
+  handleUpdateLayerProp = (layer, key, value, elementType) => {
     this.setState({
       aktiveLag: Object.assign(
         {},
-        oppdaterLagProperties(layer, key, value, this)
+        oppdaterLagProperties(layer, key, value, this, elementType)
       )
     });
   };

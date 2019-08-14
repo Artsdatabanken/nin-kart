@@ -28,10 +28,7 @@ class LegendeElementer extends Component {
                     node.hasOwnProperty("erSynlig") ? node.erSynlig : true
                   }
                   kode={kode}
-                  onUpdateLayerProp={(index, felt, verdi) => {
-                    node[felt] = verdi;
-                    onUpdateLayerProp(kartlag, "farge", node[felt]);
-                  }}
+                  onUpdateLayerProp={onUpdateLayerProp}
                 />
               </ul>
             </div>
@@ -62,10 +59,8 @@ class LegendeElementer extends Component {
                         node.hasOwnProperty("erSynlig") ? node.erSynlig : true
                       }
                       kode={kode}
-                      onUpdateLayerProp={(index, felt, verdi) => {
-                        node[felt] = verdi;
-                        onUpdateLayerProp(kartlag, "barn", barn);
-                      }}
+                      onUpdateLayerProp={onUpdateLayerProp}
+                      elementType="barn"
                     />
                   );
                 }

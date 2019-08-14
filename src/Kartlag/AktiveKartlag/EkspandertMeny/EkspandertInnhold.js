@@ -12,8 +12,7 @@ const EkspandertInnhold = ({
   aktivtFormat,
   onUpdateLayerProp,
   kartlag,
-  settings,
-  is_current_object
+  settings
 }) => {
   const current = aktivtFormat.aktivtFormat;
   const currenctActiveFormatNode = aktivtFormat.format[current];

@@ -16,9 +16,19 @@ const LegendeElement = ({
   koder,
   kode,
   onUpdateLayerProp,
-  farge
+  farge,
+  elementType
 }) => {
   const [showColours, setShowColours] = useState(false);
+
+  /* 
+  
+  I denne filen er alle elementene man redigerer underelementer av det overstående elementet.
+  Det vil si at å referere direkte herfra fort kan bli feil.
+  Slenger derfor med variabelen "childof"
+  
+  */
+
   return (
     <div className="child_list_object">
       <div
@@ -31,7 +41,7 @@ const LegendeElement = ({
         <button
           className="invisible_icon_button"
           onClick={e => {
-            onUpdateLayerProp(kode, "erSynlig", !erSynlig);
+            onUpdateLayerProp(kode, "erSynlig", !erSynlig, { elementType });
             e.stopPropagation();
           }}
         >
@@ -55,6 +65,7 @@ const LegendeElement = ({
           color={farge}
           onUpdateLayerProp={onUpdateLayerProp}
           where={kode}
+          elementType={elementType}
         />
       )}
     </div>

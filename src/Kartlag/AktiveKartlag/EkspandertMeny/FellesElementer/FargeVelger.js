@@ -4,7 +4,7 @@ import ColorPicker from "GjenbruksElement/ColorPicker";
 
 class FargeVelger extends Component {
   render() {
-    const { onUpdateLayerProp, where, color } = this.props;
+    const { onUpdateLayerProp, where, color, elementType } = this.props;
     let what = "farge";
     let title = "Velg farge";
     if (this.props.what) {
@@ -23,7 +23,11 @@ class FargeVelger extends Component {
           alpha
           onChange={farge => {
             const rgbString = tinycolor(farge.rgb).toRgbString();
-            onUpdateLayerProp(where, what, rgbString);
+            if (elementType) {
+              onUpdateLayerProp(where, what, rgbString, "barn");
+            } else {
+              onUpdateLayerProp(where, what, rgbString);
+            }
           }}
         />
       </div>
