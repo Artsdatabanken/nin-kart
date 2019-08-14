@@ -39,7 +39,7 @@ const TopBar = ({ onSelectResult, searchFor }) => {
 
           <div className="header_text">
             <img
-              src="/logoer/small_icon.png"
+              src="/logoer/small_icon_two.png"
               className="logo_image"
               alt="artsdatabanken logo"
             />

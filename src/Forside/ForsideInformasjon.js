@@ -1,9 +1,7 @@
 ﻿import React, { useState } from "react";
 import { withRouter } from "react-router";
 import "style/Forside.css";
-//import { Map } from "@material-ui/icons";
 import Kilder from "./Kilder";
-
 import Utforsk from "HamburgerMeny/Utforsk/Utforsk";
 
 const ForsideInformasjon = props => {
@@ -26,7 +24,7 @@ const ForsideInformasjon = props => {
                 }}
               >
                 <img
-                  src="/logoer/logo_blue_medium.png"
+                  src="/logoer/small_icon_two_blue.png"
                   className="logo_image_frontpage"
                   alt="artsdatabanken logo"
                 />{" "}
