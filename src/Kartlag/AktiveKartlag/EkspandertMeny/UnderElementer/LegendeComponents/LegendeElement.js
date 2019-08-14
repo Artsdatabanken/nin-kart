@@ -41,7 +41,7 @@ const LegendeElement = ({
         <button
           className="invisible_icon_button"
           onClick={e => {
-            onUpdateLayerProp(kode, "erSynlig", !erSynlig, { elementType });
+            onUpdateLayerProp(kode, "erSynlig", !erSynlig, elementType);
             e.stopPropagation();
           }}
         >

@@ -6,10 +6,12 @@ export default function oppdaterLagProperties(
   elementType
 ) {
   const layer_input = layer;
+  /*
   console.log("oppdaterLagProperties");
-  console.log("layer: ", layer);
-  console.log("key: ", key);
-  console.log("value: ", value);
+  console.log("layer: ", layer, "| key: ", key, "| value: ", value);*/
+
+  // Scenario A: Laget har ingen egenfarge, men bygges opp av underelementer
+  // Scenario B: Laget har ingen underelementer, men sin egen farge
 
   // *** Sette Lag ***
 
@@ -27,21 +29,17 @@ export default function oppdaterLagProperties(
   let newnode;
   if (elementType === "barn") {
     node = node.barn;
+
     for (let i in node) {
       if (node[i].kode === layer_input) {
         newnode = node[i];
-        console.log("match", newnode);
       }
     }
     node = newnode;
   }
-
+  //console.log(node);
   // *** Sette Key ***
-
   const parts = key.split(".");
-
-  // Scenario A: Laget har ingen egenfarge, men bygges opp av underelementer
-  // Scenario B: Laget har ingen underelementer, men sin egen farge
 
   for (let i = 0; i < parts.length - 1; i++) {
     node = node[parts[i]];

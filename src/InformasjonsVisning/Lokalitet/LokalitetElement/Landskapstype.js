@@ -17,7 +17,14 @@ const Landskapstype = ({ onNavigate, newlandskap }) => {
         {newlandskap.tittel.nb}
       </h3>
       <p className="landskapstype_ingress">
-        {newlandskap.ingress.substring(0, 200)}... >
+        {newlandskap.ingress.substring(0, 200)}...
+        <button
+          onClick={() => {
+            onNavigate(newlandskap.url);
+          }}
+        >
+          Les mer
+        </button>
       </p>
       <img src={newlandskap.bilde.foto.url} alt="" />
       <div className="lokasjon_badge_container">

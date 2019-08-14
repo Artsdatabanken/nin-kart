@@ -21,7 +21,7 @@ const Byggeklosser = ({ onNavigate, data }) => {
         En gradient eller miljøvariabel er noe som endrer seg i og mellom
         områder. De er byggestenene i et område, og sammen utgjør de
         landskapstyper og naturtyper. Her finner du alle de byggeklossene som
-        finnes i det valgte området. Hvis
+        finnes i det valgte området.
       </p>
 
       <div className="blockbox">
