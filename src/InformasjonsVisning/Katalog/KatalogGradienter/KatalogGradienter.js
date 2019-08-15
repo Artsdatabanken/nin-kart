@@ -20,15 +20,20 @@ const KatalogGradienter = ({
   */
   if (!meta) return null;
   const { kode } = meta;
+  let title;
 
   if (!meta.gradient) return null;
   if (meta.kode === "NN-NA") return null;
   if (meta.kode === "NN-NA-TI") return null;
   if (meta.kode.substr(0, 9) === "NN-NA-LKM") return null;
+  if (meta.kode.substr(0, 5) === "NN-LA")
+    title = "Landskapsgradienter i denne landskapstypen";
 
   if (meta.kode === "NN-LA") return null;
   if (meta.kode === "NN-LA-TI") return null;
   if (meta.kode.substr(0, 9) === "NN-LA-KLG") return null;
+  if (meta.kode.substr(0, 5) === "NN-NA")
+    title = "Miljøvariabler for naturtypen";
 
   return (
     <>
@@ -41,6 +46,7 @@ const KatalogGradienter = ({
             onMouseLeave={onMouseLeave}
             opplyst={opplyst}
             key={kode}
+            title={title}
           />
         ))}
 

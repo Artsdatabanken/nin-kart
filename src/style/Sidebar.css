@@ -249,18 +249,41 @@
 }
 
 .katlog_header_images_container {
-  display: flex;
+  background: #edf4f5;
+}
+
+.katlog_header_images_container .katlog_header_text_container {
+  display: inline-block;
+  width: calc(100% - 350px);
+  padding-left: 20px;
+  text-align: left;
+}
+
+@media only screen and (max-width: 1066px) {
+  .katlog_header_images_container .katlog_header_text_container {
+    display: block;
+    width: 100%;
+    padding: 10px;
+  }
 }
 
 .sidebar_top_map,
 .sidebar_top_image {
   vertical-align: top;
-  height: 250px;
-  flex: 1;
+  height: 200px;
+  width: 350px;
   display: inline-block;
   background: #b7d3d8;
   background-size: cover;
   background-position: center;
+}
+
+@media only screen and (max-width: 1066px) {
+  .sidebar_top_map,
+  .sidebar_top_image {
+    width: 100%;
+    display: block;
+  }
 }
 
 .sidebar_top_image.trasparent_image {

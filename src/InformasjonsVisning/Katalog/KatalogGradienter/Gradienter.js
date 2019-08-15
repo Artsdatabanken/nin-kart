@@ -1,13 +1,6 @@
 import React from "react";
 
-const Gradienter = ({
-  gradient,
-  onNavigate,
-  onMouseEnter,
-  onMouseLeave,
-  opplyst,
-  visKoder
-}) => {
+const Gradienter = ({ gradient, onNavigate, title }) => {
   function getAmount(trinn) {
     let count = 0;
     let url = "";
@@ -26,6 +19,7 @@ const Gradienter = ({
 
   return (
     <>
+      <h1>{title}</h1>
       {Object.entries(gradient).map(([kode, gr]) => (
         <div className="badge" key={gr.tittel.nb}>
           <div
