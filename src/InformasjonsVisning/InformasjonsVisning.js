@@ -80,8 +80,6 @@ class InformasjonsVisning extends React.Component {
       );
     }
 
-    if (!meta) return null;
-
     return (
       <>
         {meny}
@@ -92,22 +90,24 @@ class InformasjonsVisning extends React.Component {
             " main_body"
           }
         >
-          <KatalogFane
-            meta={meta}
-            onFitBounds={this.props.onFitBounds}
-            onUpdateLayerProp={onUpdateLayerProp}
-            onNavigate={this.handleNavigate}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-            opplyst={opplyst}
-            data={data}
-            onUpdateMetaProp={onUpdateMetaProp}
-            has_error={this.state.error}
-            handleCloseSnackbar={this.handleCloseSnackbar}
-            erAktivert={this.props.erAktivert}
-            onToggleLayer={this.props.onToggleLayer}
-            kurve={kurve}
-          />
+          {meta && (
+            <KatalogFane
+              meta={meta}
+              onFitBounds={this.props.onFitBounds}
+              onUpdateLayerProp={onUpdateLayerProp}
+              onNavigate={this.handleNavigate}
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+              opplyst={opplyst}
+              data={data}
+              onUpdateMetaProp={onUpdateMetaProp}
+              has_error={this.state.error}
+              handleCloseSnackbar={this.handleCloseSnackbar}
+              erAktivert={this.props.erAktivert}
+              onToggleLayer={this.props.onToggleLayer}
+              kurve={kurve}
+            />
+          )}
           <div className="big_page_sidebar" />
         </div>
       </>

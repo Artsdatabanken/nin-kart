@@ -166,19 +166,26 @@ Even tho we don't a of now support IE X)
 
 .kartlag_submeny {
   background: #fbfbfb;
-  border-bottom: 1px solid #e4f0f2;
   text-align: center;
+  padding-top: 5px;
 }
 
 .kartlag_submeny button {
   font-size: 12pt;
   width: calc(100% / 3);
   padding: 5px;
+  border-bottom: 1px solid #e4f0f2;
+}
+
+.kartlag_submeny .legende_button {
+  border: 1px solid #e4f0f2;
+  border-bottom: transparent;
 }
 
 .kartlag_submeny button svg {
   vertical-align: middle;
   padding-left: 0px;
+  margin-top: -4px;
   height: 16pt;
 }
 
