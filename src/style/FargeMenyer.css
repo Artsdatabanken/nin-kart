@@ -99,6 +99,7 @@ select {
 
 .child_list_object_expand_header {
   padding: 10px;
+  position: relative;
 }
 
 .child_list_object:hover {
@@ -112,8 +113,9 @@ select {
 }
 
 .child_list_object_indicator {
-  float: right;
   background: transparent;
+  position: absolute;
+  right: 0px;
 }
 
 .sidebar .colour_legend {

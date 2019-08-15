@@ -10,7 +10,7 @@ const Menyelement = ({
   toggle,
   checked
 }) => (
-  <button onClick={onClick} button className="hamburger_menu_item menu_item">
+  <button onClick={onClick} className="hamburger_menu_item menu_item">
     <div className="button_items">
       <span>{icon}</span>
       <span>{primary}</span>
