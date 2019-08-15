@@ -54,11 +54,11 @@ class InformasjonsVisning extends React.Component {
       </div>
     );
 
-    if (location.search && location.search.startsWith("?info")) {
+    if (location.search && location.search.startsWith("?hjelp")) {
       return (
         <>
           {meny}
-          <Hjelp />;
+          <Hjelp aktivTab={aktivTab} />;
         </>
       );
     }

@@ -57,8 +57,14 @@ function makePalette(opplyst, drawArgs) {
   const colors = [];
   Object.keys(landskapIndexTemp).forEach(kode => {
     const barnet = finnBarn(kode, barna);
-    if (barnet.kode === opplyst.kode) colors.push("#f88");
-    else colors.push(barnet.farge);
+
+    if (barnet.erSynlig === false) {
+      colors.push("#FFFFFF");
+    } else if (barnet.kode === opplyst.kode) {
+      colors.push("#f88");
+    } else {
+      colors.push(barnet.farge);
+    }
   });
   return colorArray2Image(colors);
 }

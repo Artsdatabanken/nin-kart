@@ -72,7 +72,7 @@ class HamburgerMeny extends Component {
                   icon={<Info />}
                   primary="Informasjon"
                   onClick={() => {
-                    this.handleClick("?info");
+                    this.handleClick("?hjelp");
                     context.onToggleHovedmeny();
                   }}
                 />
