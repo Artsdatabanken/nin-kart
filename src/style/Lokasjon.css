@@ -51,6 +51,16 @@
   color: black;
 }
 
+.general_badge_item.small {
+  width: 50%;
+  max-width: calc(50% - 20px);
+  min-height: 140px;
+  vertical-align: top;
+  display: inline-block;
+  margin: 5px;
+  padding-bottom: 5px;
+}
+
 .image_holder_landscape {
   height: 150px;
   width: 250px;

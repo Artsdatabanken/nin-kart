@@ -4,6 +4,7 @@ import Variabelboks from "./Variabelboks";
 const Byggeklosser = ({ onNavigate, data }) => {
   let naturtype = [];
   let landskap = [];
+
   const miljvar = Object.keys(data.environment).sort();
   for (let i in miljvar) {
     const miljøvariabelkode = miljvar[i].substring(0, 5);
@@ -13,6 +14,8 @@ const Byggeklosser = ({ onNavigate, data }) => {
       landskap.push(miljvar[i]);
     }
   }
+
+  if (landskap.length <= 0 && naturtype.length <= 0) return null;
 
   return (
     <div className="general_badge_container wrap_padding">
@@ -28,13 +31,16 @@ const Byggeklosser = ({ onNavigate, data }) => {
         <h2>Landskapsgradient</h2>
         {landskap.map((kode, index) => {
           if (!data.environment[kode]) return null;
+
           return (
-            <Variabelboks
-              miljøvariabel={data.environment[kode]}
-              onNavigate={onNavigate}
-              kode={kode}
-              key={index}
-            />
+            <>
+              <Variabelboks
+                miljøvariabel={data.environment[kode]}
+                onNavigate={onNavigate}
+                kode={kode}
+                key={index}
+              />
+            </>
           );
         })}
       </div>
