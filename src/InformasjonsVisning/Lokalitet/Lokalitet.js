@@ -33,12 +33,36 @@ class Lokalitet extends Component {
 
     // Ny APIVERSJON, Mye ukontrollert data.
     backend.hentPunkt(lng, lat).then(data => {
-      this.setState({
-        fylke: data.fylke.tittel.nb,
-        kommune: data.kommune.tittel.nb,
-        data: data,
-        landskap: data.landskap
-      });
+      if (!data) {
+        return null;
+      } else {
+        this.setState({
+          data: data
+        });
+      }
+
+      if (!data.fylke || !data.kommune) {
+        this.setState({
+          fylke: "",
+          kommune: ""
+        });
+      } else {
+        this.setState({
+          fylke: data.fylke.tittel.nb,
+          kommune: data.kommune.tittel.nb
+        });
+      }
+
+      if (!data.landskap) {
+        this.setState({
+          landskap: ""
+        });
+      } else {
+        this.setState({
+          data: data,
+          landskap: data.landskap
+        });
+      }
 
       let url =
         "/Fylke/" +
