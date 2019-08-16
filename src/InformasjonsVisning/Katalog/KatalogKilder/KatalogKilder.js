@@ -29,7 +29,7 @@ const KatalogKilder = ({ onNavigate, meta, ...props }) => {
       <button
         className="kilde_knapp"
         onClick={() => {
-          window.location = "https://data.artsdatabanken.no/" + props.url;
+          window.location = "https://data.artsdatabanken.no/" + meta.url;
         }}
       >
         <CloudDownload /> Last ned åpne data
