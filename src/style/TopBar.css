@@ -8,6 +8,11 @@
   border-bottom: 1px solid #eaeaea;
 }
 
+.top_bar.forside_topbar {
+  background: transparent;
+  border-bottom: transparent;
+}
+
 /* Logo Image */
 
 .header_text {
@@ -63,6 +68,10 @@
 
 .top_bar svg {
   color: white;
+}
+
+.top_bar.forside_topbar svg {
+  color: #4b909e;
 }
 
 /* Search Field */

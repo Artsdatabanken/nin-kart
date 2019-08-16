@@ -2,13 +2,12 @@
 .frontpage {
   width: 100%;
   height: calc(100%);
-  min-height: 100vh;
+  min-height: calc(100vh);
   background: #ffffff;
   top: 0px;
   left: 0;
   text-align: center;
   position: absolute;
-  z-index: 100;
   overflow-y: auto;
 }
 

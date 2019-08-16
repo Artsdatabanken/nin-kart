@@ -51,6 +51,11 @@ class App extends React.Component {
     let erAktivert = false;
     if (this.state.meta)
       erAktivert = !!this.state.aktiveLag[this.state.meta.kode];
+    const path = this.props.location.pathname;
+    let forside = false;
+    if (path === "/") {
+      forside = true;
+    }
 
     return (
       <SettingsContext.Consumer>
@@ -58,85 +63,95 @@ class App extends React.Component {
           return (
             <>
               <TopBar
+                forside={forside}
                 searchFor={this.state.searchFor}
                 onSelectResult={item => {
                   history.push("/" + item.url);
                 }}
               />
-              <MobileNavigation />
-              <div>
-                {(context.aktivTab === "meny" ||
-                  context.aktivTab === "informasjon") && (
-                  <InformasjonsVisning
-                    aktivTab={context.aktivTab}
-                    show_current={this.state.showCurrent}
-                    handleShowCurrent={this.handleShowCurrent}
-                    aktiveLag={this.state.aktiveLag}
-                    mapBounds={this.state.actualBounds}
-                    onMouseEnter={this.handleMouseEnter}
-                    onMouseLeave={this.handleMouseLeave}
-                    onFitBounds={this.handleFitBounds}
-                    erAktivert={erAktivert}
-                    opplyst={this.state.opplyst}
-                    onToggleLayer={() => {
-                      this.handleToggleLayer();
-                      if (!context.visAktiveLag) context.onToggleAktiveLag();
-                    }}
-                    meta={this.state.meta}
-                    searchFor={this.state.searchFor}
-                    onClearSearchFor={this.handleClearSearchFor}
-                    onUpdateLayerProp={this.handleUpdateLayerProp}
-                    onUpdateMetaProp={this.handleUpdateMetaProp}
-                    visAktiveLag={context.visAktiveLag}
-                    onToggleAktiveLag={context.onToggleAktiveLag}
-                  />
-                )}
-                {context.aktivTab === "kartlag" && (
-                  <>
-                    <Kartlag
-                      show_current={this.state.showCurrent}
-                      handleShowCurrent={this.handleShowCurrent}
-                      hidden={context.aktivTab === "kartlag" && true}
-                      aktiveLag={this.state.aktiveLag}
-                      onUpdateLayerProp={this.handleUpdateLayerProp}
-                      onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                      navigation_history={this.state.navigation_history}
-                      onFitBounds={this.handleFitBounds}
-                      history={history}
-                      currentKartlag={this.state.meta}
-                      activateLayerFromHistory={this.activateLayerFromHistory}
-                    />
-                  </>
-                )}
 
-                {/* 
+              {forside ? (
+                <ForsideInformasjon />
+              ) : (
+                <>
+                  <MobileNavigation />
+                  <div>
+                    {(context.aktivTab === "meny" ||
+                      context.aktivTab === "informasjon") && (
+                      <InformasjonsVisning
+                        aktivTab={context.aktivTab}
+                        show_current={this.state.showCurrent}
+                        handleShowCurrent={this.handleShowCurrent}
+                        aktiveLag={this.state.aktiveLag}
+                        mapBounds={this.state.actualBounds}
+                        onMouseEnter={this.handleMouseEnter}
+                        onMouseLeave={this.handleMouseLeave}
+                        onFitBounds={this.handleFitBounds}
+                        erAktivert={erAktivert}
+                        opplyst={this.state.opplyst}
+                        onToggleLayer={() => {
+                          this.handleToggleLayer();
+                          if (!context.visAktiveLag)
+                            context.onToggleAktiveLag();
+                        }}
+                        meta={this.state.meta}
+                        searchFor={this.state.searchFor}
+                        onClearSearchFor={this.handleClearSearchFor}
+                        onUpdateLayerProp={this.handleUpdateLayerProp}
+                        onUpdateMetaProp={this.handleUpdateMetaProp}
+                        visAktiveLag={context.visAktiveLag}
+                        onToggleAktiveLag={context.onToggleAktiveLag}
+                      />
+                    )}
+                    {context.aktivTab === "kartlag" && (
+                      <>
+                        <Kartlag
+                          show_current={this.state.showCurrent}
+                          handleShowCurrent={this.handleShowCurrent}
+                          hidden={context.aktivTab === "kartlag" && true}
+                          aktiveLag={this.state.aktiveLag}
+                          onUpdateLayerProp={this.handleUpdateLayerProp}
+                          onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                          navigation_history={this.state.navigation_history}
+                          onFitBounds={this.handleFitBounds}
+                          history={history}
+                          currentKartlag={this.state.meta}
+                          activateLayerFromHistory={
+                            this.activateLayerFromHistory
+                          }
+                        />
+                      </>
+                    )}
+
+                    {/* 
                 TODO: 
                 sett inn en state her som husker om vi har sett kartet før, så unngår vi å: 
                 - laste det inn kart for brukere som ikke går til fanen
                 - laste på nytt når det først er hentet ned
 
                  */}
-                <Kart
-                  show_current={this.state.showCurrent}
-                  bounds={this.state.fitBounds}
-                  latitude={65.4}
-                  longitude={10.8}
-                  zoom={3}
-                  aktiveLag={this.state.aktiveLag}
-                  opplyst={this.state.opplyst}
-                  opplystKode={this.state.opplystKode}
-                  meta={this.state.meta}
-                  onMapBoundsChange={this.handleActualBoundsChange}
-                  onMapMove={context.onMapMove}
-                  onClick={latlng => {
-                    history.push(`?lng=${latlng.lng}&lat=${latlng.lat}`);
-                  }}
-                  onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                  onMouseEnter={this.handleMouseEnter}
-                  onMouseLeave={this.handleMouseLeave}
-                />
-              </div>
-              <ForsideInformasjon />
+                    <Kart
+                      show_current={this.state.showCurrent}
+                      bounds={this.state.fitBounds}
+                      latitude={65.4}
+                      longitude={10.8}
+                      zoom={3}
+                      aktiveLag={this.state.aktiveLag}
+                      opplyst={this.state.opplyst}
+                      opplystKode={this.state.opplystKode}
+                      meta={this.state.meta}
+                      onMapBoundsChange={this.handleActualBoundsChange}
+                      onMapMove={context.onMapMove}
+                      onClick={latlng => {
+                        history.push(`?lng=${latlng.lng}&lat=${latlng.lat}`);
+                      }}
+                      onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                      onMouseEnter={this.handleMouseEnter}
+                      onMouseLeave={this.handleMouseLeave}
+                    />
+                  </div>
+                </>
+              )}
 
               <HamburgerMeny />
             </>
