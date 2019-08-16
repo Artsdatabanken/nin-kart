@@ -22,7 +22,8 @@ class Kartlag extends React.Component {
       currentKartlag,
       meta,
       show_current,
-      handleShowCurrent
+      handleShowCurrent,
+      onRemoveSelectedLayer
     } = this.props;
 
     let duplicate = false;
@@ -96,6 +97,7 @@ class Kartlag extends React.Component {
                         <ul className="kartlag_list">
                           <AktivtKartlagElement
                             key={currentKartlag}
+                            onRemoveSelectedLayer={onRemoveSelectedLayer}
                             kartlag={currentKartlag}
                             {...this.props}
                             visKoder={context.visKoder}

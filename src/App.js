@@ -177,8 +177,9 @@ class App extends React.Component {
   };
 
   activateLayerFromHistory = node => {
+    const aktive = this.state.aktiveLag;
     this.setState({
-      aktiveLag: Object.assign({}, aktiverFraHistorikk(node))
+      aktiveLag: Object.assign({}, aktiverFraHistorikk(aktive, node))
     });
   };
 

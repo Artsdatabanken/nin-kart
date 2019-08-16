@@ -69,7 +69,10 @@ const EkspandertUnderMeny = ({
           ) : (
             <button
               className="invisible_icon_button remove_icon"
-              onClick={() => onRemoveSelectedLayer(kode)}
+              onClick={() => {
+                console.log("gonna delete ", kode);
+                onRemoveSelectedLayer(kode);
+              }}
             >
               Fjern <Close />
             </button>
