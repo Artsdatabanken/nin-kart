@@ -19,7 +19,13 @@ const Variabelboks = ({ onNavigate, miljøvariabel }) => {
 
   return (
     <>
-      <div className="landskapstype_visning">
+      <div
+        className={
+          miljøvariabel.bilde && miljøvariabel.bilde.foto
+            ? "landskapstype_visning"
+            : "landskapstype_visning small"
+        }
+      >
         <div className="image_and_link">
           {miljøvariabel.bilde && miljøvariabel.bilde.foto && (
             <img

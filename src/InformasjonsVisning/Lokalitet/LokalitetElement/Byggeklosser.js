@@ -39,7 +39,7 @@ const Byggeklosser = ({ onNavigate, data }) => {
         </p>
 
         {found_landskap && (
-          <>
+          <div class="flex">
             <h2>Landskapsgradient</h2>
             {landskap.map((milv, index) => {
               return (
@@ -52,10 +52,10 @@ const Byggeklosser = ({ onNavigate, data }) => {
                 </>
               );
             })}
-          </>
+          </div>
         )}
         {found_natur && (
-          <>
+          <div class="flex">
             <h2>Miljøvariabler for naturtyper</h2>
             {naturtype.map((milv, index) => {
               return (
@@ -66,7 +66,7 @@ const Byggeklosser = ({ onNavigate, data }) => {
                 />
               );
             })}
-          </>
+          </div>
         )}
       </div>
     </div>
