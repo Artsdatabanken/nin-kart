@@ -15,40 +15,61 @@ const Variabelboks = ({ onNavigate, miljøvariabel }) => {
       found = true;
     }
   }
-
   let avrundetvariabel = roundToTwo(miljøvariabel.v);
+
   return (
     <>
       <div className="landskapstype_visning">
-        <h3>
-          {miljøvariabel.tittel && miljøvariabel.tittel.nb} - {kode}
-        </h3>
-        {miljøvariabel.ingress}
-        <br />
-        {avrundetvariabel} {miljøvariabel["måleenhet"]}
-        <br />
-        {found && (
-          <div className="lokasjon_badge_container">
-            {barn &&
-              barn.map((value, index) => {
-                return (
-                  <LokasjonBadge
-                    value={value}
-                    index={index}
-                    onNavigate={onNavigate}
-                    key={index}
-                  />
-                );
-              })}
-          </div>
-        )}
-        <button
-          onClick={() => {
-            onNavigate(miljøvariabel.url);
-          }}
-        >
-          Gå til informasjonsside
-        </button>
+        <div className="image_and_link">
+          {miljøvariabel.bilde && miljøvariabel.bilde.foto && (
+            <img
+              src={miljøvariabel.bilde.foto.url}
+              onClick={() => {
+                onNavigate(miljøvariabel.url);
+              }}
+              alt=""
+            />
+          )}
+
+          {miljøvariabel["måleenhet"] && (
+            <div className="value_lokasjon">
+              {avrundetvariabel} {miljøvariabel["måleenhet"]}
+            </div>
+          )}
+
+          <di />
+
+          <button
+            onClick={() => {
+              onNavigate(miljøvariabel.url);
+            }}
+          >
+            Gå til informasjonsside
+          </button>
+        </div>
+        <div className="not_image_and_link">
+          <h2>
+            {miljøvariabel.tittel && miljøvariabel.tittel.nb} - {kode}
+          </h2>
+          <p>{miljøvariabel.ingress}</p>
+
+          <br />
+          {found && (
+            <div className="lokasjon_badge_container">
+              {barn &&
+                barn.map((value, index) => {
+                  return (
+                    <LokasjonBadge
+                      value={value}
+                      index={index}
+                      onNavigate={onNavigate}
+                      key={index}
+                    />
+                  );
+                })}
+            </div>
+          )}
+        </div>
       </div>
     </>
   );
