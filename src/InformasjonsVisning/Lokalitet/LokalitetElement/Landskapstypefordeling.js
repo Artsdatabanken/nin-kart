@@ -4,7 +4,7 @@ import Landskapstype from "./Landskapstype";
 const Landskapstypefordeling = ({ onNavigate, data, landskap }) => {
   return (
     <>
-      <div className="landscape_divisions wrap_padding">
+      <div className="lokasjon_seksjon wrap_padding">
         <h1>Landskapstype</h1>
 
         <div className="landscape_wrap_2ndlayer">

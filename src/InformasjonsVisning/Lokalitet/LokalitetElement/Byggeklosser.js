@@ -28,45 +28,47 @@ const Byggeklosser = ({ onNavigate, data }) => {
   if (!found_landskap && !found_natur) return null;
 
   return (
-    <div className="general_badge_container wrap_padding">
-      <h1>Byggeklosser</h1>
-      <p>
-        En gradient eller miljøvariabel er noe som endrer seg i og mellom
-        områder. De er byggestenene i et område, og sammen utgjør de
-        landskapstyper og naturtyper. Her finner du alle de byggeklossene som
-        finnes i det valgte området.
-      </p>
+    <div className="general_badge_container wrap_padding lokasjon_seksjon">
+      <div className="landscape_wrap_2ndlayer">
+        <h1>Byggeklosser</h1>
+        <p>
+          En gradient eller miljøvariabel er noe som endrer seg i og mellom
+          områder. De er byggestenene i et område, og sammen utgjør de
+          landskapstyper og naturtyper. Her finner du alle de byggeklossene som
+          finnes i det valgte området.
+        </p>
 
-      {found_landskap && (
-        <div className="blockbox">
-          <h2>Landskapsgradient</h2>
-          {landskap.map((milv, index) => {
-            return (
-              <>
+        {found_landskap && (
+          <>
+            <h2>Landskapsgradient</h2>
+            {landskap.map((milv, index) => {
+              return (
+                <>
+                  <Variabelboks
+                    miljøvariabel={milv}
+                    onNavigate={onNavigate}
+                    key={index}
+                  />
+                </>
+              );
+            })}
+          </>
+        )}
+        {found_natur && (
+          <>
+            <h2>Miljøvariabler for naturtyper</h2>
+            {naturtype.map((milv, index) => {
+              return (
                 <Variabelboks
                   miljøvariabel={milv}
                   onNavigate={onNavigate}
                   key={index}
                 />
-              </>
-            );
-          })}
-        </div>
-      )}
-      {found_natur && (
-        <div className="blockbox">
-          <h2>Miljøvariabler for naturtyper</h2>
-          {naturtype.map((milv, index) => {
-            return (
-              <Variabelboks
-                miljøvariabel={milv}
-                onNavigate={onNavigate}
-                key={index}
-              />
-            );
-          })}
-        </div>
-      )}
+              );
+            })}
+          </>
+        )}
+      </div>
     </div>
   );
 };

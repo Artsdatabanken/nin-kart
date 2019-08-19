@@ -4,7 +4,7 @@
   position: fixed;
   height: calc(100vh - 56px);
   overflow-x: hidden;
-  max-width: 408px;
+  max-width: 350px;
   background: #fbfbfb;
   width: 100%;
   font-family: "Roboto", "sans-serif";
@@ -29,10 +29,10 @@
   position: relative;
   top: 0px;
   height: calc(100vh - 56px);
-  width: calc(100% - 408px);
+  width: calc(100% - 350px);
   background: #fbfbfb;
   font-family: "Roboto", "sans-serif";
-  left: 408px;
+  left: 350px;
   overflow-y: auto;
 }
 

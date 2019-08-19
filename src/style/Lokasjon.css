@@ -2,9 +2,6 @@
   padding: 10px;
 }
 
-@media only screen and (max-width: 768px) {
-}
-
 .main_body_wrapper {
   padding-left: 0px;
   padding-right: 0px;
@@ -15,50 +12,28 @@
   padding-left: 10px;
   padding-right: 10px;
 }
-
-.blockbox,
-.landscape_divisions,
+.lokasjon_seksjon,
 .general_badge_container {
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
-.blockbox {
-  background: #81b2bb;
-  margin-bottom: 10px;
+.lokasjon_seksjon button {
+  display: block;
+  text-align: center;
+  padding: 15px;
+  background: #b7d3d8;
+  width: 200px;
 }
 
-.landscape_divisions {
+.image_and_link {
+  float: left;
+}
+
+.lokasjon_seksjon {
   background: #edf4f5;
   padding-bottom: 50px;
-}
-
-.blockbox,
-.blockbox h1,
-.blockbox h2,
-.blockbox p {
-  color: white;
-}
-
-.blockbox div h2 {
-  color: inherit;
-}
-
-.general_badge_item {
-  background: #edf4f5;
-  padding: 10px;
-  margin: 20px;
-  color: black;
-}
-
-.general_badge_item.small {
-  width: 50%;
-  max-width: calc(50% - 20px);
-  min-height: 140px;
-  vertical-align: top;
-  display: inline-block;
-  margin: 5px;
-  padding-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 .image_holder_landscape {
@@ -68,46 +43,34 @@
   display: inline-block;
 }
 
-.landscape_divisions div {
+.lokasjon_seksjon div {
   padding-left: 10px;
 }
 
-/*
-.landscape_divisions div:first-of-type {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.landscape_divisions ul {
-  text-align: left;
-  font-size: 14pt;
-}
-
-*/
-
-/*****/
 .landskapstype_visning {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  background: #fbfbfb;
+  border-left: 15px solid #81b2bb;
+  position: relative;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
 .landskapstype_visning img {
-  width: 150px;
-  height: 150px;
-  display: inline-block;
+  width: 200px;
+  height: 200px;
+  margin-right: 10px;
 }
 
-.landskapstype_visning h3 {
+.landskapstype_visning h2 {
   width: 100%;
   text-align: left;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .landskapstype_visning .lokasjon_badge_container {
   flex: 1;
   justify-content: flex-start;
-  padding: 10px;
 }
 
 .landskapstype_visning .badge {
@@ -131,7 +94,14 @@
 }
 
 .landscape_wrap_2ndlayer {
-  width: 80%;
+  width: 90%;
   margin-right: auto;
   margin-left: auto;
+}
+
+.not_image_and_link {
+  min-height: 250px;
+}
+
+@media only screen and (max-width: 768px) {
 }
