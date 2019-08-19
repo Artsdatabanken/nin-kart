@@ -351,6 +351,7 @@ div {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
 }
 
 /* LOKASJON BADGE */
@@ -363,7 +364,7 @@ div {
 .lokasjon_badge_container .badge {
   padding: 2px;
   vertical-align: top;
-  width: 130px;
+  width: 120px;
   overflow-wrap: break-word;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
@@ -373,7 +374,7 @@ div {
 
 .lokasjon_badge_container .badge b,
 .lokasjon_badge_container .badge span {
-  font-size: 10pt;
+  font-size: 9pt;
 }
 
 /* HAMBURGER MENY ITEMS */

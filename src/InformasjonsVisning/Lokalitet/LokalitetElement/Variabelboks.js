@@ -60,8 +60,9 @@ const Variabelboks = ({ onNavigate, miljøvariabel }) => {
           <p>{miljøvariabel.ingress}</p>
 
           <br />
+
           {found && (
-            <div className="lokasjon_badge_container">
+            <div className="not_image_and_link lokasjon_badge_container">
               {barn &&
                 barn.map((value, index) => {
                   return (

@@ -30,7 +30,14 @@ const Landskapstype = ({ onNavigate, newlandskap }) => {
         </h2>
 
         <p className="landskapstype_ingress">
-          {newlandskap.ingress.substring(0, 200)}...
+          {newlandskap.ingress.substring(0, 180)}
+          {false ? (
+            <span>
+              {newlandskap.ingress.substring(180, newlandskap.ingress.length)}
+            </span>
+          ) : (
+            "..."
+          )}
         </p>
 
         <div className="lokasjon_badge_container">

@@ -71,6 +71,8 @@
 .landskapstype_visning .lokasjon_badge_container {
   flex: 1;
   justify-content: flex-start;
+  min-width: 100%;
+  padding-top: 10px;
 }
 
 .landskapstype_visning .badge {
