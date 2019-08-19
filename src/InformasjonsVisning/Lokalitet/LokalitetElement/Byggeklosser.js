@@ -4,18 +4,28 @@ import Variabelboks from "./Variabelboks";
 const Byggeklosser = ({ onNavigate, data }) => {
   let naturtype = [];
   let landskap = [];
+  let miljøvariabler = data.environment;
+  let found_landskap = false;
+  let found_natur = false;
+  const miljvar = Object.keys(miljøvariabler).sort();
 
-  const miljvar = Object.keys(data.environment).sort();
   for (let i in miljvar) {
     const miljøvariabelkode = miljvar[i].substring(0, 5);
     if (miljøvariabelkode === "NN-NA") {
-      naturtype.push(miljvar[i]);
+      found_natur = true;
+      naturtype.push(miljøvariabler[miljvar[i]]);
     } else if (miljøvariabelkode === "NN-LA") {
-      landskap.push(miljvar[i]);
+      found_landskap = true;
+      landskap.push(miljøvariabler[miljvar[i]]);
+    } else {
+      console.log(
+        "ekskluderer disse da de ikke er klassifisert",
+        miljøvariabler[miljvar[i]]
+      );
     }
   }
 
-  if (landskap.length <= 0 && naturtype.length <= 0) return null;
+  if (!found_landskap && !found_natur) return null;
 
   return (
     <div className="general_badge_container wrap_padding">
@@ -27,38 +37,36 @@ const Byggeklosser = ({ onNavigate, data }) => {
         finnes i det valgte området.
       </p>
 
-      <div className="blockbox">
-        <h2>Landskapsgradient</h2>
-        {landskap.map((kode, index) => {
-          if (!data.environment[kode]) return null;
-
-          return (
-            <>
+      {found_landskap && (
+        <div className="blockbox">
+          <h2>Landskapsgradient</h2>
+          {landskap.map((milv, index) => {
+            return (
+              <>
+                <Variabelboks
+                  miljøvariabel={milv}
+                  onNavigate={onNavigate}
+                  key={index}
+                />
+              </>
+            );
+          })}
+        </div>
+      )}
+      {found_natur && (
+        <div className="blockbox">
+          <h2>Miljøvariabler for naturtyper</h2>
+          {naturtype.map((milv, index) => {
+            return (
               <Variabelboks
-                miljøvariabel={data.environment[kode]}
+                miljøvariabel={milv}
                 onNavigate={onNavigate}
-                kode={kode}
                 key={index}
               />
-            </>
-          );
-        })}
-      </div>
-
-      <div className="blockbox">
-        <h2>Miljøvariabler for naturtyper</h2>
-        {naturtype.map((kode, index) => {
-          if (!data.environment[kode]) return null;
-          return (
-            <Variabelboks
-              miljøvariabel={data.environment[kode]}
-              onNavigate={onNavigate}
-              kode={kode}
-              key={index}
-            />
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

@@ -5,16 +5,16 @@ function roundToTwo(num) {
   return +(Math.round(num + "e+2") + "e-2");
 }
 
-const Variabelboks = ({ onNavigate, miljøvariabel, kode }) => {
+const Variabelboks = ({ onNavigate, miljøvariabel }) => {
+  if (!miljøvariabel) return null;
   const barn = miljøvariabel.barn;
+  let kode = miljøvariabel.kode;
   let found;
   for (let i in barn) {
     if (barn[i].aktiv === true) {
       found = true;
     }
   }
-
-  if (miljøvariabel.barn.length > 0 && !found) return null;
 
   if (found !== true) {
     let avrundetvariabel = roundToTwo(miljøvariabel.v);

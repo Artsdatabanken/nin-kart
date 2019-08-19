@@ -37,7 +37,8 @@ class Lokalitet extends Component {
         return null;
       } else {
         this.setState({
-          data: data
+          data: data,
+          landskap: data.landskap
         });
       }
 
@@ -50,17 +51,6 @@ class Lokalitet extends Component {
         this.setState({
           fylke: data.fylke.tittel.nb,
           kommune: data.kommune.tittel.nb
-        });
-      }
-
-      if (!data.landskap) {
-        this.setState({
-          landskap: ""
-        });
-      } else {
-        this.setState({
-          data: data,
-          landskap: data.landskap
         });
       }
 
