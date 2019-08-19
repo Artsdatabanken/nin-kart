@@ -49,7 +49,7 @@ const EkspandertUnderMeny = ({
           <button
             className="invisible_icon_button"
             onClick={event => {
-              context.onNavigateToTab("kart");
+              //context.onNavigateToTab("kart");
               onFitBounds(bbox);
             }}
           >
