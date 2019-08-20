@@ -24,6 +24,7 @@ const KatalogFane = ({
   /*  */
   if (!meta) return null;
 
+  console.log(meta);
   return (
     <>
       <div className="main_body_wrapper">

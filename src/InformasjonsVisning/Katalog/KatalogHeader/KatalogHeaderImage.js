@@ -17,6 +17,10 @@ const KatalogHeaderImage = ({ meta }) => {
     new_flagg = bilde.logo.url;
   }
 
+  if (meta.tittel.nb === "Administrativ grense") {
+    new_url = "/bilder/norge.png";
+  }
+
   let classes = "sidebar_top_image";
   let flagg_classes = "sidebar_top_image trasparent_image";
 
@@ -27,7 +31,8 @@ const KatalogHeaderImage = ({ meta }) => {
         //onClick={this.handleOpen}
         style={
           (new_url !== "no_image" && {
-            backgroundImage: "url(" + new_url + ")"
+            backgroundImage: "url(" + new_url + ")",
+            backgroundRepeat: "no-Repeat"
           }) || { height: 0 }
         }
         alt=""

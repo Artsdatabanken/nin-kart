@@ -45,7 +45,7 @@ const Utforsk = ({ parent, context }) => {
 
       <Menyelement
         onClick={e => {
-          the_props.history.push("/Fylke/");
+          the_props.history.push("/Administrativ_grense/");
           onToggleHovedmeny();
         }}
         icon={
@@ -55,7 +55,7 @@ const Utforsk = ({ parent, context }) => {
             alt=""
           />
         }
-        primary="Fylke"
+        primary="Administrativ grense"
       />
 
       <Menyelement

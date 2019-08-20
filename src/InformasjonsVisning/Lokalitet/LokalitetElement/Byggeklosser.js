@@ -30,12 +30,12 @@ const Byggeklosser = ({ onNavigate, data }) => {
   return (
     <div className="general_badge_container wrap_padding lokasjon_seksjon">
       <div className="landscape_wrap_2ndlayer">
-        <h1>Byggeklosser</h1>
+        <h1>Byggeklosser for punktet (ca 1m²) </h1>
         <p>
-          En gradient eller miljøvariabel er noe som endrer seg i og mellom
-          områder. De er byggestenene i et område, og sammen utgjør de
-          landskapstyper og naturtyper. Her finner du alle de byggeklossene som
-          finnes i det valgte området.
+          Gradienter og miljøvariabler er noe som endrer seg innad i- og mellom
+          områder. De er byggestenene som utgjør landskapstypene og naturtypene.
+          I denne seksjonen finner du byggeklossene som finnes i akkurat det
+          punktet du valgte.
         </p>
 
         {found_landskap && (

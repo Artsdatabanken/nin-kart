@@ -54,15 +54,11 @@ class Lokalitet extends Component {
         });
       }
 
-      let url =
-        "/Fylke/" +
-        this.state.fylke +
-        "/" +
-        this.state.kommune +
-        "?lng=" +
-        lng +
-        "&lat=" +
-        lat;
+      let url = "";
+      if (this.state.kommune) {
+        url = "/" + data.kommune.url + "?lng=" + lng + "&lat=" + lat;
+      }
+
       url = url.replace(/ /g, "_");
       this.props.history.push(url);
     });

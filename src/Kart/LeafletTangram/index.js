@@ -20,7 +20,7 @@ class LeafletTangram extends React.Component {
     const options = {
       zoomControl: false,
       inertia: true,
-      minZoom: 4
+      minZoom: 3
     };
     let map = L.map(this.mapEl, options);
     map.on("dragstart", function(e) {

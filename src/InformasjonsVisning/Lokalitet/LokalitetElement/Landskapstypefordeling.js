@@ -5,7 +5,7 @@ const Landskapstypefordeling = ({ onNavigate, data, landskap }) => {
   return (
     <>
       <div className="lokasjon_seksjon wrap_padding">
-        <h1>Landskapstype</h1>
+        <h1>Landskapstype i stedets nærområde (ca 1km²)</h1>
 
         <div className="landscape_wrap_2ndlayer">
           <p>

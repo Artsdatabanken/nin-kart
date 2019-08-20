@@ -13,8 +13,9 @@ const Menyelement = ({
   <button onClick={onClick} className="hamburger_menu_item menu_item">
     <div className="button_items">
       <span>{icon}</span>
-      <span>{primary}</span>
-      <span>{secondary}</span>
+      <span>
+        {primary} {secondary}
+      </span>
     </div>
 
     <div className="mobile_only">
