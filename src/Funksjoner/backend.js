@@ -36,7 +36,7 @@ class Backend {
   }
 
   static async hentPunkt(lng, lat) {
-    return this.getPromise(`https://punkt.artsdatabanken.no/${lng},${lat}`);
+    return this.getPromise(`https://stedsnavn.artsdatabanken.no/${lng},${lat}`);
   }
 
   /* DEN GAMLE INNTIL VIDERE */
