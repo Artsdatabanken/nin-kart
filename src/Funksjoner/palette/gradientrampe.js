@@ -7,7 +7,7 @@ function lagGradientRampe(barna, opplystKode, mode) {
   //let opplystLevel = -1;
   let steps = [];
   barna.forEach(b => {
-    const key = b.kode;
+    //const key = b.kode;
     let levels = b.normalisertVerdi;
     if (levels === undefined) return;
     if (!Array.isArray(levels)) levels = [levels, levels];
