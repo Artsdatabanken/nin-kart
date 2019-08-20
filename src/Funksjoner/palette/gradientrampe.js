@@ -2,27 +2,30 @@ import tinycolor from "tinycolor2";
 import colorArray2Image from "./colorArray2Image";
 
 function lagGradientRampe(barna, opplystKode, mode) {
-  let opplystLevel = -1;
+  if (!barna || barna.length <= 0)
+    return lagGradientRampeUtenBarn(opplystKode, mode);
+  //let opplystLevel = -1;
   let steps = [];
   barna.forEach(b => {
-    const key = b.kode;
+    //const key = b.kode;
     let levels = b.normalisertVerdi;
     if (levels === undefined) return;
     if (!Array.isArray(levels)) levels = [levels, levels];
     let [min, max] = levels;
     if (max < 255) max = Math.max(0, max - 1);
-    if (key === opplystKode) opplystLevel = [min, max];
+    //if (key === opplystKode) opplystLevel = [min, max];
+    const erSynlig = b.erSynlig !== false;
+    const farge = erSynlig ? b.farge : "#fff";
     if (min <= 1 || mode === "diskret")
-      steps.push({ level: min, color: b.farge });
-    steps.push({ level: max, color: b.farge });
+      steps.push({ level: min, color: farge });
+    steps.push({ level: max, color: farge });
   });
   steps = steps.sort((a, b) => a.level - b.level);
-  if (mode === "kontinuerlig") {
-    for (let i = steps.length - 3; i > 0; i -= 2) {
-      steps[i].level = 0.5 * (steps[i].level + steps[i + 1].level);
-      steps.splice(i + 1, 1);
-    }
-  }
+  const cmap = buildGradient(steps);
+  return colorArray2Image(cmap);
+}
+
+function buildGradient(steps, opplystLevel = -1) {
   const cmap = [];
   for (let i = 0; i < steps.length - 1; i++) {
     const a = steps[i];
@@ -42,9 +45,20 @@ function lagGradientRampe(barna, opplystKode, mode) {
       cmap[ci] = tc.toHexString();
     }
   }
+  return cmap;
+}
 
-  const palette = colorArray2Image(cmap);
-  return palette;
+function lagGradientRampeUtenBarn(opplyst, drawArgs) {
+  const steps = [
+    { level: 0, color: "#fff" },
+    { level: 1, color: "#def" },
+    { level: 64, color: "#bbb" },
+    { level: 128, color: "#fed" },
+    { level: 192, color: "#fff" },
+    { level: 255, color: "#def" }
+  ];
+  const cmap = buildGradient(steps);
+  return colorArray2Image(cmap);
 }
 
 export default lagGradientRampe;

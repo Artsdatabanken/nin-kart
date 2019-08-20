@@ -23,7 +23,7 @@ class ColorPicker extends React.Component {
         </div>
 
         {this.props.alpha && (
-          <div className="alphaPointer">
+          <div className="colorSlider">
             <Alpha pointer={ChromePointer} {...this.props} />
           </div>
         )}

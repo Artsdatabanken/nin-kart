@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import * as Sentry from "@sentry/browser";
-
+import { BrowserRouter } from "react-router-dom";
+import SettingsContainer from "SettingsContainer";
 true &&
   Sentry.init({
     dsn: "https://c493d02267634ba4bc387feaddbeb083@sentry.io/1302262",
@@ -67,8 +68,12 @@ if (isIE11) {
   document.close();
 } else
   ReactDOM.render(
-    <RootBoundary>
-      <App />
-    </RootBoundary>,
+    <BrowserRouter baseName={process.env.PUBLIC_URL}>
+      <RootBoundary>
+        <SettingsContainer>
+          <App />
+        </SettingsContainer>
+      </RootBoundary>
+    </BrowserRouter>,
     document.getElementById("root")
   );

@@ -36,10 +36,16 @@ class Backend {
   }
 
   static async hentPunkt(lng, lat) {
+    return this.getPromise(`https://stedsnavn.artsdatabanken.no/${lng},${lat}`);
+  }
+
+  /* DEN GAMLE INNTIL VIDERE */
+  static async hentPunktGammel(lng, lat) {
     return this.getPromise(
       `https://vector.artsdatabanken.no/ogapi/codes/${lng}/${lat}`
     );
   }
+  /* SLUTT  */
 
   static async hentStedsnavn(lng, lat) {
     return this.getPromise(

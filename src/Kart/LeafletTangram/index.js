@@ -4,7 +4,7 @@ import "leaflet/dist/leaflet.css";
 import React from "react";
 import Tangram from "tangram";
 import { createScene, updateScene } from "./scene";
-import "./styles.css";
+import "style/Kart.css";
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
 // See here: https://github.com/PaulLeCam/react-leaflet/issues/255
 // Used in conjunction with url-loader.
@@ -20,7 +20,7 @@ class LeafletTangram extends React.Component {
     const options = {
       zoomControl: false,
       inertia: true,
-      minZoom: 4
+      minZoom: 3
     };
     let map = L.map(this.mapEl, options);
     map.on("dragstart", function(e) {

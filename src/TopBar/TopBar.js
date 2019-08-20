@@ -6,7 +6,7 @@ import { SettingsContext } from "../SettingsContext";
 import Hamburger from "@material-ui/icons/Menu";
 import backend from "../Funksjoner/backend";
 
-const TopBar = ({ onSelectResult, searchFor }) => {
+const TopBar = ({ onSelectResult, searchFor, forside }) => {
   const [hits, setHits] = useState([]);
   const [query, setQuery] = useState();
   useEffect(() => {
@@ -24,8 +24,7 @@ const TopBar = ({ onSelectResult, searchFor }) => {
   return (
     <SettingsContext.Consumer>
       {context => (
-        <div className="top_anchor">
-          <div className="top_sidebar_background" />
+        <div className={!forside ? "top_bar" : "top_bar forside_topbar"}>
           <button
             className="invisible_icon_button hamburger"
             onKeyDown={e => {
@@ -37,15 +36,16 @@ const TopBar = ({ onSelectResult, searchFor }) => {
           >
             <Hamburger />
           </button>
-
-          <span className="header_text">
-            <img
-              src="/logoer/adb32.png"
-              className="logo_image"
-              alt="artsdatabanken logo"
-            />
-            <b>Natur i Norge</b>
-          </span>
+          {!forside && (
+            <div className="header_text">
+              <img
+                src="/logoer/small_icon_two.png"
+                className="logo_image"
+                alt="artsdatabanken logo"
+              />
+              <span>NiN-Kart</span>
+            </div>
+          )}
 
           <Searchbar
             setHits={setHits}

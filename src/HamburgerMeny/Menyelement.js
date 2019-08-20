@@ -1,10 +1,6 @@
-import {
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Switch
-} from "@material-ui/core";
+import { Switch } from "@material-ui/core";
 import React from "react";
+import { ArrowRight } from "@material-ui/icons";
 
 const Menyelement = ({
   primary,
@@ -14,10 +10,19 @@ const Menyelement = ({
   toggle,
   checked
 }) => (
-  <ListItem onClick={onClick} button className="menu_item">
-    <ListItemIcon>{icon}</ListItemIcon>
-    <ListItemText primary={primary} secondary={secondary} />
+  <button onClick={onClick} className="hamburger_menu_item menu_item">
+    <div className="button_items">
+      <span>{icon}</span>
+      <span>
+        {primary} {secondary}
+      </span>
+    </div>
+
+    <div className="mobile_only">
+      <ArrowRight />
+    </div>
+
     {toggle && <Switch checked={checked} />}
-  </ListItem>
+  </button>
 );
 export default Menyelement;

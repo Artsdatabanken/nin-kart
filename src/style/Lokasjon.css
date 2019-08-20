@@ -1,0 +1,134 @@
+.area_facts {
+  padding: 10px;
+}
+
+.main_body_wrapper {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+/* ADD ALL NEW CONTAINERS HERE*/
+.wrap_padding {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.lokasjon_seksjon,
+.general_badge_container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.lokasjon_seksjon button {
+  display: block;
+  text-align: center;
+  padding: 15px;
+  background: #b7d3d8;
+  width: 200px;
+}
+
+.lokasjon_seksjon {
+  background: #edf4f5;
+  padding-bottom: 50px;
+  margin-bottom: 20px;
+}
+
+.image_holder_landscape {
+  height: 150px;
+  width: 250px;
+  background: grey;
+  display: inline-block;
+}
+
+.lokasjon_seksjon div {
+  padding-left: 10px;
+}
+
+.landskapstype_visning {
+  background: #fbfbfb;
+  border-left: 15px solid #81b2bb;
+  position: relative;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+}
+
+.landskapstype_visning img {
+  width: 200px;
+  height: 200px;
+  margin-right: 10px;
+}
+
+.landskapstype_visning h2 {
+  width: 100%;
+  flex: none;
+  text-align: left;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.landskapstype_visning .lokasjon_badge_container {
+  flex: 1;
+  justify-content: flex-start;
+  min-width: 100%;
+  padding-top: 10px;
+}
+
+.landskapstype_visning .badge {
+  width: 80px;
+}
+.landskapstype_visning .badge_image {
+  width: 80px;
+  height: 80px;
+}
+.landskapstype_visning .badge span {
+  display: none;
+}
+
+.landskapstype_visning .landskap_badge {
+  width: 130px;
+  font-size: 10pt;
+}
+
+.landskapstype_visning p {
+  text-align: left;
+}
+
+.landscape_wrap_2ndlayer {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+.value_lokasjon {
+  background: #c0e3e1;
+  font-size: 14pt;
+  padding: 10px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  width: 200px;
+}
+
+.not_image_and_link {
+  flex: 1;
+}
+
+.landskapstype_visning.small {
+  width: calc(50% - 5px);
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flex h2 {
+  width: 100%;
+}

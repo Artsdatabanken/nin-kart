@@ -55,14 +55,35 @@ button {
 body {
   overflow: hidden;
   touch-action: none;
+}
+
+a,
+a:visited,
+a:active,
+a:focus {
+  color: #4b909e;
+}
+
+a:hover {
+  color: #81b2bb;
+  cursor: pointer;
+}
+
+body,
+input,
+p,
+button,
+h1,
+h2,
+h3 {
   font-family: "Roboto", "sans-serif";
 }
 
 h1,
 h2,
 h3 {
-  font-family: "Roboto", "sans-serif";
   color: #4b909e;
+  font-weight: 300;
 }
 
 h4,
@@ -83,10 +104,11 @@ strong,
 b {
   font-weight: 500;
 }
-
 .hoverUnderline:hover {
   text-decoration: underline;
 }
+
+/* ALL BUTTONS */
 
 button {
   border: 0px;
@@ -98,8 +120,9 @@ button.active:focus,
 button.active {
   cursor: pointer;
   background: #81b2bb;
-  color: #fff;
 }
+
+/* BUTTON HEADERS */
 
 @keyframes fadein {
   from {
@@ -110,19 +133,36 @@ button.active {
   }
 }
 
-.leaflet-top {
-  top: calc(100vh - 100px) !important;
-}
-
 div {
   max-width: 100%;
 }
+
+/* Activate button in sidebar */
+
+.activate_button_container {
+  text-align: center;
+}
+
+.activate_button {
+  background: #4b909e;
+  color: white;
+  padding: 10px;
+  font-size: 12pt;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.activate_button svg {
+  height: 18px;
+  width: 18px;
+  vertical-align: top;
+}
+
+/* NAVIGATION TABS */
 
 /*
 .tab_selector {
   display: none;
 }
-
 */
 
 .tab_selector {
@@ -133,7 +173,25 @@ div {
   bottom: 0px;
   box-sizing: border-box;
   margin: 0px;
+  z-index: 2;
 }
+
+@media only screen and (min-width: 768px) {
+  .tab_selector {
+    bottom: auto;
+    top: 16px;
+    z-index: 21;
+    left: 350px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .tab_selector {
+    width: 100%;
+  }
+}
+
+/* NAVIGATION TAB BUTTONS */
 
 .tab_selector button {
   display: inline-block;
@@ -173,15 +231,30 @@ div {
   font-weight: 600;
 }
 
-@media only screen and (max-width: 768px) {
-  .leaflet-top {
-    top: calc(100vh - 150px) !important;
+@media only screen and (min-width: 768px) {
+  .tab_selector button:first-child {
+    display: none;
   }
 
-  .tab_selector {
-    width: 100%;
+  .tab_selector button {
+    width: calc(100% / 2);
+    height: 40px;
+    border: 0px;
+    background: #b7d3d8;
+  }
+
+  .tab_selector .active_mobile_button,
+  .tab_selector .active_mobile_button_bigscreen {
+    background: #fbfbfb;
+    color: black;
+    font-weight: 400;
+    border: 0px;
+    font-size: 12pt;
+    text-decoration: underline;
   }
 }
+
+/* NAVIGATION TAB BUTTON ICONS */
 
 .tab_selector button svg {
   height: 18px;
@@ -190,6 +263,8 @@ div {
   top: calc(50% - 9px);
   right: calc(50% - 9px);
 }
+
+/* GENERIC ITEMS */
 
 .invisible_icon_button {
   background: transparent;
@@ -225,4 +300,133 @@ div {
 .avatar_kode {
   padding-right: 10px;
   color: #4b909e;
+}
+
+.load_more_button {
+  width: 100%;
+  padding: 10px;
+  font-size: 12pt;
+}
+
+/* BADGES */
+
+.badge {
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  width: 200px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.badge_image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #4b909e;
+  display: inline-block;
+}
+
+.badge_image:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.badge span {
+  width: 100%;
+  display: block;
+}
+
+.badge b {
+  color: #4b909e;
+}
+
+.meny_ikon_image {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.lokasjon_badge_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+/* LOKASJON BADGE */
+.lokasjon_badge_container .badge_image {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #4b909e;
+}
+
+.lokasjon_badge_container .badge {
+  padding: 2px;
+  vertical-align: top;
+  width: 120px;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+.lokasjon_badge_container .badge b,
+.lokasjon_badge_container .badge span {
+  font-size: 9pt;
+}
+
+/* HAMBURGER MENY ITEMS */
+.hamburger_sidebar {
+  width: 330px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+@media only screen and (max-width: 768px) {
+  .hamburger_sidebar {
+    max-width: calc(100% - 5px);
+  }
+}
+
+.hamburger_menu_item {
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+  outline: none;
+  display: flex;
+  justify-content: flex-start;
+  vertical-align: middle;
+  background: transparent;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  text-align: left;
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.hamburger_menu_item div {
+  min-width: 0px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  font-size: 12pt;
+  color: #777777;
+  display: flex;
+}
+
+.hamburger_menu_item div span:first-child {
+  width: 36px;
+}
+
+.hamburger_menu_item svg {
+  color: #777777;
+}
+
+.hamburger_sidebar .mobile_only {
+  display: none;
 }

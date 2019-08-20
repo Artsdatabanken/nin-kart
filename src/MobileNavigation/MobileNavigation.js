@@ -1,6 +1,5 @@
 import { SettingsContext } from "../SettingsContext";
 import React from "react";
-import { Layers } from "@material-ui/icons";
 
 const MobileNavigation = () => (
   <SettingsContext.Consumer>
@@ -10,21 +9,29 @@ const MobileNavigation = () => (
           className={context.aktivTab === "meny" ? "active_mobile_button" : ""}
           onClick={() => context.onNavigateToTab("meny")}
         >
-          Meny
+          Navigering
         </button>
+
         <button
-          className={context.aktivTab === "kart" ? "active_mobile_button" : ""}
-          onClick={() => context.onNavigateToTab("kart")}
+          className={
+            context.aktivTab === "informasjon"
+              ? "active_mobile_button"
+              : context.aktivTab === "meny"
+              ? "active_mobile_button_bigscreen"
+              : ""
+          }
+          onClick={() => context.onNavigateToTab("informasjon")}
         >
-          Kart
+          Informasjon
         </button>
+
         <button
           className={
             context.aktivTab === "kartlag" ? "active_mobile_button" : ""
           }
           onClick={() => context.onNavigateToTab("kartlag")}
         >
-          <Layers />
+          Kart {/* <Layers />*/}
         </button>
       </div>
     )}

@@ -1,72 +1,136 @@
-/* Top anchor, that is: the menu but heightless 
-to avoid stop of click-thru events, used only to place things
-as opposed to maintaining a root height */
-
-.top_anchor {
-  position: absolute;
+.top_bar {
   width: 100%;
-  height: 0px;
   left: 0;
-  z-index: 20;
-  background: rgba(0, 0, 0, 0.9);
+  height: 56px;
+  position: relative;
+  background: #4b909e;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.top_bar.forside_topbar {
+  background: transparent;
+  border-bottom: transparent;
 }
 
 /* Logo Image */
 
-.logo_image {
-  left: auto;
-  right: 10px;
-  position: absolute;
-  width: 25px;
-  top: 10px;
-}
-
-.header_text b {
-  font-size: 14pt;
-  color: #4b909e;
-  font-weight: 400;
-}
-
-@media only screen and (min-width: 768px) {
-  .header_text b {
-    display: none;
-  }
+.header_text {
+  font-size: 20pt;
+  color: #edf4f5;
+  font-weight: 300;
+  display: inline-block;
+  margin-left: 60px;
+  margin-top: 12px;
 }
 
 @media only screen and (max-width: 768px) {
-  .logo_image {
-    right: auto;
-    position: relative;
-    top: 5px;
-    margin-right: 10px;
-    z-index: 1;
-  }
-
   .header_text {
-    display: inline-block;
-    margin-left: calc(50% - 72px);
-    margin-top: 10px;
+    margin-left: calc(50% - 70px);
   }
+}
+
+.header_text span {
+  vertical-align: top;
+}
+
+.logo_image {
+  width: 20px;
+  position: relative;
+  margin-right: 10px;
+  z-index: 1;
+}
+
+.logo_image_frontpage {
+  width: 65px;
+  position: relative;
+  margin-right: 10px;
+  z-index: 1;
+  vertical-align: middle;
+}
+
+/* Search Icon Button */
+
+.hamburger,
+.search_icon {
+  height: 46px;
+  position: absolute;
+  right: -1px;
+  top: -1px;
+}
+
+.hamburger {
+  display: inline-block;
+  padding: 5px;
+  left: 10px;
+  top: 5px;
+}
+
+.top_bar svg {
+  color: white;
+}
+
+.top_bar.forside_topbar svg {
+  color: #4b909e;
 }
 
 /* Search Field */
 
 .searchbar_container {
-  height: 48px;
+  position: absolute;
+  right: 10px;
+  height: 46px;
   display: inline-block;
   margin-top: 4px;
-  margin-left: 50px;
   border: 1px solid #eaeaea;
+  background: #fff;
   width: calc(408px - 60px);
-  z-index: 20;
-  position: relative;
+  z-index: 22;
   box-sizing: border-box;
 }
 
+.searchbar_container {
+  width: 50px;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.searchbar_container.mobile_active {
+  width: calc(408px - 60px);
+  border: 1px solid #eaeaea;
+  background: white;
+}
+
+.searchbar_container.mobile_active .search_icon svg {
+  color: #4b909e;
+}
+
+@media only screen and (max-width: 768px) {
+  .searchbar_container {
+    position: absolute;
+    right: 10px;
+    width: 50px;
+    background: transparent;
+    border: none;
+    border: 1px solid transparent;
+  }
+
+  .searchbar_container.mobile_active {
+    width: calc(100% - 20px);
+    border: 1px solid #eaeaea;
+    background: white;
+  }
+
+  .searchbar_container.mobile_active .search_icon svg {
+    color: #4b909e;
+  }
+}
+
+/* Search Field Input area */
+
 .searchbar_container input {
-  width: 80%;
-  height: 48px;
-  margin: 0px;
+  width: calc(100% - 38px);
+  height: inherit;
+  margin: -1px;
   border: 0px;
   background: 0px;
   padding-left: 10px;
@@ -79,41 +143,9 @@ as opposed to maintaining a root height */
     display: none;
   }
 
-  .searchbar_container.mobile_active {
-    width: calc(100% - 20px);
-    border: 1px solid #eaeaea;
-    background: white;
-  }
-
   .searchbar_container.mobile_active input {
     display: inline-block;
   }
-
-  .searchbar_container {
-    position: absolute;
-    right: 10px;
-    width: 50px;
-    background: transparent;
-    border: none;
-    border: 1px solid transparent;
-  }
-}
-
-/* Search Icon Button */
-.hamburger,
-.search_icon {
-  height: 48px;
-  position: absolute;
-  right: -1px;
-  top: -1px;
-}
-
-.hamburger {
-  display: inline-block;
-  padding: 5px;
-  position: absolute;
-  left: 10px;
-  top: 5px;
 }
 
 /* Resultatliste */
@@ -124,13 +156,10 @@ as opposed to maintaining a root height */
   padding-left: 0px;
   padding-right: 0px;
   position: auto;
-  top: 56px;
+  top: 51px;
+  right: 10px;
   border: 1px solid #eaeaea;
-  width: 408px;
-}
-
-.resultatliste {
-  margin-right: 60px;
+  width: 348px;
   background: white;
   position: fixed;
   z-index: 30;

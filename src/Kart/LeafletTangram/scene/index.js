@@ -1,4 +1,3 @@
-import tinycolor from "tinycolor2";
 import { createLights } from "./lights";
 import { createStyles } from "./styles";
 import { lagTerreng } from "./terreng";
@@ -16,24 +15,14 @@ function lagEttLag(lag, opplyst, viserKatalog, config) {
   opprettAktivtLag(lag, opplyst, config, viserKatalog);
 }
 
-function farge(farge, viserKatalog) {
-  farge = viserKatalog
-    ? tinycolor(farge)
-        .lighten(20)
-        .toRgbString()
-    : farge;
-  return farge;
-}
-
 function opprettAktivtLag(lag, opplyst, config, viserKatalog) {
   const viz = lag.kart.format[lag.kart.aktivtFormat];
-  if (!viz)
-    return console.warn("No visualisation availiable for this map layer");
+  if (!viz) return console.warn("No visualisation availiable for " + lag.url);
   let drawArgs = {
     forelderkode: lag.kode,
     kode: lag.kode,
     url: lag.url,
-    farge: farge(lag.farge, viserKatalog),
+    farge: lag.farge,
     visEtiketter: lag.visEtiketter,
     opplyst: opplyst,
     bbox: lag.bbox,
@@ -55,6 +44,7 @@ function opprettAktivtLag(lag, opplyst, config, viserKatalog) {
 
 function sladd(url) {
   if (!url) return false;
+  if (url.indexOf("Terreng") >= 0) return false;
   if (url.indexOf("Regional_naturvariasjon") >= 0) return false;
   if (url.indexOf("Erosjon") >= 0) return false;
   if (url.indexOf("Finmat") >= 0) return false;

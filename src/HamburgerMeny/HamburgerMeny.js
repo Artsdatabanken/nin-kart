@@ -1,5 +1,5 @@
 import Menyelement from "./Menyelement";
-import { SettingsContext } from "../SettingsContext";
+import { SettingsContext } from "SettingsContext";
 import {
   Divider,
   IconButton,
@@ -19,7 +19,7 @@ import {
 } from "@material-ui/icons";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import NavigationChevronLeftDouble from "../Grunnkart/NavigationChevronLeftDouble";
+import NavigationChevronLeftDouble from "AppSettings/NavigationChevronLeftDouble";
 import BildeAvatar from "GjenbruksElement/Bildeavatar";
 import GitHub from "./GitHub";
 import Innstillinger from "./Innstillinger";
@@ -31,6 +31,7 @@ class HamburgerMeny extends Component {
       <SettingsContext.Consumer>
         {context => (
           <SwipeableDrawer
+            className="hamburger_sidebar"
             anchor="left"
             onClose={context.onToggleHovedmeny}
             onOpen={context.onToggleHovedmeny}
@@ -48,17 +49,30 @@ class HamburgerMeny extends Component {
               <Divider />
 
               <div>
-                <Divider />
                 <ListSubheader>Hva vil du utforske?</ListSubheader>
-
+                <Menyelement
+                  icon={
+                    <img
+                      src="/logoer/small_icon_grey_two.png"
+                      className="logo_image"
+                      alt="artsdatabanken logo"
+                    />
+                  }
+                  primary="Forside"
+                  onClick={() => {
+                    this.handleClick("/");
+                    context.onToggleHovedmeny();
+                  }}
+                />
                 <Utforsk parent={this} props={this} context={context} />
 
                 <Divider />
+
                 <Menyelement
                   icon={<Info />}
                   primary="Informasjon"
                   onClick={() => {
-                    this.handleClickInfoTab();
+                    this.handleClick("?hjelp");
                     context.onToggleHovedmeny();
                   }}
                 />
@@ -68,13 +82,15 @@ class HamburgerMeny extends Component {
                   icon={<CloudDownload />}
                   primary="Last ned data"
                   onClick={() => {
-                    this.handleClickLastNed();
+                    this.handleWindowOpen("https://data.artsdatabanken.no/");
                     context.onToggleHovedmeny();
                   }}
                 />
                 <Menyelement
                   onClick={() => {
-                    this.handleClickLastOpp();
+                    this.handleWindowOpen(
+                      "https://github.com/Artsdatabanken/nin-kart-frontend/wiki/%C3%98nsker-du-%C3%A5-bidra-med-data%3F"
+                    );
                     context.onToggleHovedmeny();
                   }}
                   icon={<CloudUpload />}
@@ -83,7 +99,7 @@ class HamburgerMeny extends Component {
 
                 <Menyelement
                   onClick={() => {
-                    this.handleClickDatakilde();
+                    this.handleClick("/Datakilde/");
                     context.onToggleHovedmeny();
                   }}
                   icon={<AssignmentInd />}
@@ -91,7 +107,9 @@ class HamburgerMeny extends Component {
                 />
                 <Menyelement
                   onClick={() => {
-                    this.handleClickSource();
+                    this.handleWindowOpen(
+                      "https://github.com/Artsdatabanken/nin-kart-frontend"
+                    );
                     context.onToggleHovedmeny();
                   }}
                   icon={<GitHub />}
@@ -108,7 +126,9 @@ class HamburgerMeny extends Component {
                 <ListSubheader>Kontakt</ListSubheader>
                 <Menyelement
                   onClick={() => {
-                    this.handleClickBidra();
+                    this.handleWindowOpen(
+                      "https://github.com/Artsdatabanken/nin-kart-frontend/issues"
+                    );
                     context.onToggleHovedmeny();
                   }}
                   icon={<Comment />}
@@ -117,7 +137,7 @@ class HamburgerMeny extends Component {
 
                 <Menyelement
                   onClick={() => {
-                    this.handleClickLogo();
+                    this.handleWindowOpen("https://artsdatabanken.no");
                     context.onToggleHovedmeny();
                   }}
                   icon={<BildeAvatar url="Datakilde/Artsdatabanken" />}
@@ -130,25 +150,10 @@ class HamburgerMeny extends Component {
       </SettingsContext.Consumer>
     );
   }
-  handleClickBidra = () =>
-    window.open("https://github.com/Artsdatabanken/nin-kart-frontend/issues");
-  handleClickSource = () =>
-    window.open("https://github.com/Artsdatabanken/nin-kart-frontend");
-  handleClickLastNed = () => window.open("https://data.artsdatabanken.no/");
-  handleClickLastOpp = () =>
-    window.open(
-      "https://github.com/Artsdatabanken/nin-kart-frontend/wiki/%C3%98nsker-du-%C3%A5-bidra-med-data%3F"
-    );
-  handleClickLogo = () => window.open("https://artsdatabanken.no");
-  handleClickMap = () => this.props.history.push("/");
-  handleClickInfoTab = () => this.props.history.push("?info");
-  handleClickLandskap = () =>
-    this.props.history.push("/Natur_i_Norge/Landskap/");
-  handleClickStat = () => this.props.history.push("/Natur_i_Norge/Stats/");
-  handleClickTruet_art_natur = () =>
-    this.props.history.push("/Truet_art_natur/");
-  handleClickDatakilde = () => this.props.history.push("/Datakilde/");
 
+  handleClick = what => this.props.history.push(what);
+  handleWindowOpen = what => window.open(what);
+  handleClickMap = () => this.handleWindowOpen("/");
   handleNavigate = url => this.props.history.push(url);
 }
 

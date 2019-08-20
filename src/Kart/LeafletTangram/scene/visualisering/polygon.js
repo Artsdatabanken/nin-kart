@@ -20,6 +20,7 @@ function drawAll(drawArgs) {
     });
   }
   layer[sysconfig.hack(kode)] = draw({
+    //    layer[sysconfig.hack(kode)] = draw({
     kode: kode,
     forelderkode: kode,
     farge: farge,
@@ -28,7 +29,7 @@ function drawAll(drawArgs) {
   });
 
   return {
-    [kode]: { layer, data: { source: kode, layer: sysconfig.hack(kode) } }
+    [kode]: { layer, data: { source: kode, layer: "polygons" } }
   };
 }
 
