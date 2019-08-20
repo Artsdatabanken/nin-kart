@@ -38,7 +38,7 @@ const KatalogHeaderImage = ({ meta }) => {
         alt=""
       />
 
-      {new_flagg !== "no_flagg" && (
+      {false && (
         <div
           className={flagg_classes}
           style={{ backgroundImage: "url(" + new_flagg + ")" }}

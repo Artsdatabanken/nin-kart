@@ -9,7 +9,7 @@ const MobileNavigation = () => (
           className={context.aktivTab === "meny" ? "active_mobile_button" : ""}
           onClick={() => context.onNavigateToTab("meny")}
         >
-          Meny
+          Navigering
         </button>
 
         <button
