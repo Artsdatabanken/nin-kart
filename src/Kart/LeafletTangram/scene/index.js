@@ -1,4 +1,3 @@
-import tinycolor from "tinycolor2";
 import { createLights } from "./lights";
 import { createStyles } from "./styles";
 import { lagTerreng } from "./terreng";
@@ -16,15 +15,6 @@ function lagEttLag(lag, opplyst, viserKatalog, config) {
   opprettAktivtLag(lag, opplyst, config, viserKatalog);
 }
 
-function farge(farge, viserKatalog) {
-  farge = viserKatalog
-    ? tinycolor(farge)
-        .lighten(20)
-        .toRgbString()
-    : farge;
-  return farge;
-}
-
 function opprettAktivtLag(lag, opplyst, config, viserKatalog) {
   const viz = lag.kart.format[lag.kart.aktivtFormat];
   if (!viz)
@@ -33,7 +23,7 @@ function opprettAktivtLag(lag, opplyst, config, viserKatalog) {
     forelderkode: lag.kode,
     kode: lag.kode,
     url: lag.url,
-    farge: farge(lag.farge, viserKatalog),
+    farge: lag.farge,
     visEtiketter: lag.visEtiketter,
     opplyst: opplyst,
     bbox: lag.bbox,
@@ -126,6 +116,7 @@ function updateScene(config, props) {
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplyst, config);
 
   lagTemp(config);
+  console.log(config);
   return config;
 }
 
