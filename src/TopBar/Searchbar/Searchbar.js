@@ -14,7 +14,10 @@ const Searchbar = ({ query, onQueryChange, hits, setHits }) => {
     setHits([]);
   }
   const inputField = useRef(null);
-  useStartTyping(() => inputField.current.focus());
+  useStartTyping(() => {
+    setIsSearching(true);
+    inputField.current.focus();
+  });
 
   return (
     <div className={abc("searchbar_container", isSearching)}>

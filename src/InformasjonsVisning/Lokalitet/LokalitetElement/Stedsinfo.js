@@ -1,5 +1,9 @@
 import React from "react";
 
+function roundToX(num, x) {
+  return +(Math.round(num + "e+" + x) + "e-" + x);
+}
+
 const Stedsinfo = ({ onNavigate, sted, lat, lng, fylke, kommune }) => {
   return (
     <>
@@ -12,7 +16,7 @@ const Stedsinfo = ({ onNavigate, sted, lat, lng, fylke, kommune }) => {
         )}
 
         <h3>
-          {lat}, {lng}
+          {roundToX(lat, 5)}, {roundToX(lng, 5)}
         </h3>
       </div>
     </>
