@@ -4,6 +4,7 @@ import colorArray2Image from "./colorArray2Image";
 function lagGradientRampe(barna, opplystKode, mode) {
   if (!barna || barna.length <= 0)
     return lagGradientRampeUtenBarn(opplystKode, mode);
+  //let opplystLevel = -1;
   let steps = [];
   barna.forEach(b => {
     const key = b.kode;
@@ -12,7 +13,7 @@ function lagGradientRampe(barna, opplystKode, mode) {
     if (!Array.isArray(levels)) levels = [levels, levels];
     let [min, max] = levels;
     if (max < 255) max = Math.max(0, max - 1);
-    if (key === opplystKode) opplystLevel = [min, max];
+    //if (key === opplystKode) opplystLevel = [min, max];
     const erSynlig = b.erSynlig !== false;
     const farge = erSynlig ? b.farge : "#fff";
     if (min <= 1 || mode === "diskret")
