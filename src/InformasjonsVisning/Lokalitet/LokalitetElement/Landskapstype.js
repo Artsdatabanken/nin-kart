@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Landskapstype = ({ onNavigate, newlandskap }) => {
+  const [showMore, setShowMore] = useState(false);
   if (!newlandskap) return null;
   let newgradient_components;
   if (newlandskap.gradient) {
@@ -31,13 +32,21 @@ const Landskapstype = ({ onNavigate, newlandskap }) => {
 
         <p className="landskapstype_ingress">
           {newlandskap.ingress.substring(0, 180)}
-          {false ? (
-            <span>
-              {newlandskap.ingress.substring(180, newlandskap.ingress.length)}
-            </span>
-          ) : (
-            "..."
-          )}
+          <span
+            onClick={e => {
+              setShowMore(!showMore);
+              e.stopPropagation();
+            }}
+          >
+            {showMore ? (
+              <>
+                {newlandskap.ingress.substring(180, newlandskap.ingress.length)}{" "}
+                ... [se mindre]
+              </>
+            ) : (
+              <> ... [se mer]</>
+            )}
+          </span>
         </p>
 
         <div className="lokasjon_badge_container">
