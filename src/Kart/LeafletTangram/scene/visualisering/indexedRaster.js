@@ -70,9 +70,7 @@ function makePalette(opplyst, drawArgs) {
 }
 
 function lagSource({ url, zoom }, { bbox }) {
-  const source = sysconfig.createTileSource(url, "Raster", zoom, bbox);
-  //  source.tile_size = 256;
-  return source;
+  return sysconfig.createTileSource(url, "Raster", zoom, bbox);
 }
 
 export default { drawAll, lagSource, lagStyle };

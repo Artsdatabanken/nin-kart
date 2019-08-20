@@ -1,8 +1,11 @@
 import tinycolor from "tinycolor2";
 import colorArray2Image from "./colorArray2Image";
 
-function lagStoppPunkter(barna, opplystKode, mode) {
-  let r = { steps: [], opplystLevel: -1 };
+function lagGradientRampe(barna, opplystKode, mode) {
+  if (!barna || barna.length <= 0)
+    return lagGradientRampeUtenBarn(opplystKode, mode);
+  let opplystLevel = -1;
+  let steps = [];
   barna.forEach(b => {
     const key = b.kode;
     let levels = b.normalisertVerdi;
@@ -10,20 +13,19 @@ function lagStoppPunkter(barna, opplystKode, mode) {
     if (!Array.isArray(levels)) levels = [levels, levels];
     let [min, max] = levels;
     if (max < 255) max = Math.max(0, max - 1);
-    if (key === opplystKode) r.opplystLevel = [min, max];
+    if (key === opplystKode) opplystLevel = [min, max];
     const erSynlig = b.erSynlig !== false;
     const farge = erSynlig ? b.farge : "#fff";
     if (min <= 1 || mode === "diskret")
-      r.steps.push({ level: min, color: farge });
-    r.steps.push({ level: max, color: farge });
+      steps.push({ level: min, color: farge });
+    steps.push({ level: max, color: farge });
   });
-  r.steps = r.steps.sort((a, b) => a.level - b.level);
-  return r;
+  steps = steps.sort((a, b) => a.level - b.level);
+  const cmap = buildGradient(steps);
+  return colorArray2Image(cmap);
 }
 
-function lagGradientRampe(barna, opplystKode, mode) {
-  const r = lagStoppPunkter(barna, opplystKode, mode);
-  const steps = r.steps;
+function buildGradient(steps, opplystLevel = -1) {
   const cmap = [];
   for (let i = 0; i < steps.length - 1; i++) {
     const a = steps[i];
@@ -32,7 +34,6 @@ function lagGradientRampe(barna, opplystKode, mode) {
       let weight = (100 * (ci - a.level)) / (b.level - a.level);
       weight = Math.max(0, Math.min(100, weight));
       let tc = tinycolor.mix(a.color, b.color, weight);
-      let opplystLevel = r.opplystLevel;
       if (opplystLevel !== -1) {
         if (opplystLevel.length < 2)
           opplystLevel = [opplystLevel[0] - 5, opplystLevel[0] + 5];
@@ -44,9 +45,20 @@ function lagGradientRampe(barna, opplystKode, mode) {
       cmap[ci] = tc.toHexString();
     }
   }
+  return cmap;
+}
 
-  const palette = colorArray2Image(cmap);
-  return palette;
+function lagGradientRampeUtenBarn(opplyst, drawArgs) {
+  const steps = [
+    { level: 0, color: "#fff" },
+    { level: 1, color: "#def" },
+    { level: 64, color: "#bbb" },
+    { level: 128, color: "#fed" },
+    { level: 192, color: "#fff" },
+    { level: 255, color: "#def" }
+  ];
+  const cmap = buildGradient(steps);
+  return colorArray2Image(cmap);
 }
 
 export default lagGradientRampe;
