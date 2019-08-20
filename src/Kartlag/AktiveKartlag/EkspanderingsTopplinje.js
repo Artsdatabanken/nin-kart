@@ -11,7 +11,6 @@ const EkspanderingsTopplinje = ({
   context,
   onUpdateLayerProp,
   expanded,
-  setSettings,
   kartlag,
   closeAll,
   erAktivtLag,

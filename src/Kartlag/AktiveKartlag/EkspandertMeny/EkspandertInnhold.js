@@ -11,8 +11,7 @@ const EkspandertInnhold = ({
   theme,
   aktivtFormat,
   onUpdateLayerProp,
-  kartlag,
-  settings
+  kartlag
 }) => {
   const current = aktivtFormat.aktivtFormat;
   const currenctActiveFormatNode = aktivtFormat.format[current];
@@ -25,54 +24,52 @@ const EkspandertInnhold = ({
         />
       )}
 
-      {settings && (
-        <>
-          {kode === "bakgrunnskart" ? (
-            <>
-              {aktivtFormat.aktivtFormat === "google_hybrid" ||
-              aktivtFormat.aktivtFormat === "topo4" ||
-              aktivtFormat.aktivtFormat === "google_satellite" ? (
-                <FargeVelger
-                  color={currenctActiveFormatNode.tint}
-                  onUpdateLayerProp={onUpdateLayerProp}
-                  where={kartlag.kode}
-                  what={"kart.format." + current + ".tint"}
-                  title={"Velg fargetone for kartbladet"}
-                />
-              ) : (
-                <BakgrunnInnstillinger
-                  onUpdateLayerProp={onUpdateLayerProp}
-                  aktivtFormat={aktivtFormat}
-                />
-              )}
-            </>
-          ) : (
-            <>
-              <>
-                <GradientFilter
-                  kartlag={kartlag}
-                  onUpdateLayerProp={onUpdateLayerProp}
-                  kode={kode}
-                />
-
-                <GradientEllerTypeinndelt
-                  onUpdateLayerProp={onUpdateLayerProp}
-                  where={kartlag.kode}
-                  format={kartlag.kart.format}
-                  aktvtKartlagFormat={kartlag.kart.aktivtFormat}
-                />
-              </>
-
-              <LegendeElementer
-                kartlag={kartlag}
-                aktivtFormat={aktivtFormat}
+      <>
+        {kode === "bakgrunnskart" ? (
+          <>
+            {aktivtFormat.aktivtFormat === "google_hybrid" ||
+            aktivtFormat.aktivtFormat === "topo4" ||
+            aktivtFormat.aktivtFormat === "google_satellite" ? (
+              <FargeVelger
+                color={currenctActiveFormatNode.tint}
                 onUpdateLayerProp={onUpdateLayerProp}
-                skjul_meny_tittel={true}
+                where={kartlag.kode}
+                what={"kart.format." + current + ".tint"}
+                title={"Velg fargetone for kartbladet"}
+              />
+            ) : (
+              <BakgrunnInnstillinger
+                onUpdateLayerProp={onUpdateLayerProp}
+                aktivtFormat={aktivtFormat}
+              />
+            )}
+          </>
+        ) : (
+          <>
+            <>
+              <GradientFilter
+                kartlag={kartlag}
+                onUpdateLayerProp={onUpdateLayerProp}
+                kode={kode}
+              />
+
+              <GradientEllerTypeinndelt
+                onUpdateLayerProp={onUpdateLayerProp}
+                where={kartlag.kode}
+                format={kartlag.kart.format}
+                aktvtKartlagFormat={kartlag.kart.aktivtFormat}
               />
             </>
-          )}
-        </>
-      )}
+
+            <LegendeElementer
+              kartlag={kartlag}
+              aktivtFormat={aktivtFormat}
+              onUpdateLayerProp={onUpdateLayerProp}
+              skjul_meny_tittel={true}
+            />
+          </>
+        )}
+      </>
     </div>
   );
 };

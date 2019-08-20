@@ -1,17 +1,14 @@
 import React from "react";
-import { Close, OpenInNew, ColorLens, Edit, Add } from "@material-ui/icons";
+import { Close, OpenInNew, ColorLens, Add } from "@material-ui/icons";
 
 const EkspandertUnderMeny = ({
   closeAll,
   kode,
-  settings,
-  setSettings,
   onRemoveSelectedLayer,
   theme,
   setTheme,
   onFitBounds,
   navhist,
-  context,
   bbox,
   activateLayerFromHistory,
   is_current_object
@@ -30,20 +27,6 @@ const EkspandertUnderMeny = ({
         </button>
       )}
 
-      <button
-        className={
-          settings
-            ? "invisible_icon_button legende_button"
-            : "invisible_icon_button"
-        }
-        onClick={() => {
-          closeAll();
-          setSettings(!settings);
-        }}
-      >
-        Legende <Edit />
-      </button>
-
       {kode !== "bakgrunnskart" && (
         <>
           <button
@@ -60,7 +43,6 @@ const EkspandertUnderMeny = ({
               className="invisible_icon_button"
               onClick={() => {
                 closeAll();
-                setSettings(!settings);
                 activateLayerFromHistory(navhist);
               }}
             >
