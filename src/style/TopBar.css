@@ -1,7 +1,6 @@
 .top_bar {
   width: 100%;
   left: 0;
-  z-index: 20;
   height: 56px;
   position: relative;
   background: #4b909e;
@@ -85,7 +84,7 @@
   border: 1px solid #eaeaea;
   background: #fff;
   width: calc(408px - 60px);
-  z-index: 20;
+  z-index: 22;
   box-sizing: border-box;
 }
 
