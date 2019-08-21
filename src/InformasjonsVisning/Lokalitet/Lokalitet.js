@@ -53,14 +53,6 @@ class Lokalitet extends Component {
           kommune: data.kommune.tittel.nb
         });
       }
-
-      let url = "";
-      if (this.state.kommune) {
-        url = "/" + data.kommune.url + "?lng=" + lng + "&lat=" + lat;
-      }
-
-      url = url.replace(/ /g, "_");
-      this.props.history.push(url);
     });
   }
 

@@ -143,9 +143,7 @@ class App extends React.Component {
                       meta={this.state.meta}
                       onMapBoundsChange={this.handleActualBoundsChange}
                       onMapMove={context.onMapMove}
-                      onClick={latlng => {
-                        history.push(`?lng=${latlng.lng}&lat=${latlng.lat}`);
-                      }}
+                      history={history}
                       onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
                       onMouseEnter={this.handleMouseEnter}
                       onMouseLeave={this.handleMouseLeave}
