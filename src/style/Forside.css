@@ -35,6 +35,11 @@
   padding: 20px;
 }
 
+.frontpage_header:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 .frontpage_header div {
   display: inline-block;
   vertical-align: middle;

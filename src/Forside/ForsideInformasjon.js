@@ -8,14 +8,14 @@ const ForsideInformasjon = props => {
   return (
     <div className="frontpage">
       <div className="frontpage_body">
-        <div className="frontpage_header">
-          <div
-            className="frontpage_icon"
-            onClick={e => {
-              e.stopPropagation();
-              props.history.push("/Natur_i_Norge/");
-            }}
-          >
+        <div
+          className="frontpage_header"
+          onClick={e => {
+            e.stopPropagation();
+            props.history.push("/Natur_i_Norge/");
+          }}
+        >
+          <div className="frontpage_icon">
             <img
               src="/logoer/small_icon_two_blue.png"
               className="logo_image_frontpage"

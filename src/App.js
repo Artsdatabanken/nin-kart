@@ -68,6 +68,7 @@ class App extends React.Component {
                 onSelectResult={item => {
                   history.push("/" + item.url);
                 }}
+                history={history}
               />
 
               {forside ? (
