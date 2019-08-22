@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css";
 import React from "react";
 import Tangram from "tangram";
 import { createScene, updateScene } from "./scene";
+import backend from "Funksjoner/backend";
 import "style/Kart.css";
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
 // See here: https://github.com/PaulLeCam/react-leaflet/issues/255
@@ -111,7 +112,24 @@ class LeafletTangram extends React.Component {
     this.removeMarker();
     this.marker = L.marker([latlng.lat, latlng.lng], { icon: this.icon });
     this.map.addLayer(this.marker);
-    this.props.onClick(latlng);
+
+    /* Det er her vi må håndtere om vi navigerer til siden eller ikke
+    Altså: når vi legger til #1382 blir det her koden skal dukke opp*/
+
+    backend.hentPunkt(latlng.lng, latlng.lat).then(data => {
+      if (!data) {
+        return null;
+      }
+      let url = "";
+      if (data.fylke || data.kommune) {
+        url =
+          "/" + data.kommune.url + "?lng=" + latlng.lng + "&lat=" + latlng.lat;
+      } else {
+        url = "/Natur_i_Norge/?lng=" + latlng.lng + "&lat=" + latlng.lat;
+      }
+      url = url.replace(/ /g, "_");
+      this.props.history.push(url);
+    });
   };
 
   updateMap(props) {
