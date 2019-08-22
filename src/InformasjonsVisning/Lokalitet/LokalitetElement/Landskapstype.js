@@ -11,13 +11,24 @@ const Landskapstype = ({ onNavigate, newlandskap }) => {
   return (
     <div className="landskapstype_visning">
       <div className="image_and_link">
-        <img src={newlandskap.bilde.foto.url} alt="" />
+        <div
+          className="sidebar_top_image"
+          style={{
+            backgroundImage: "url(" + newlandskap.bilde.foto.url + ")",
+            backgroundRepeat: "no-Repeat",
+            backgroundPosition: "top"
+          }}
+          onClick={() => {
+            onNavigate(newlandskap.url);
+          }}
+        />
         <button
           onClick={() => {
             onNavigate(newlandskap.url);
           }}
+          className="hide_on_mobile"
         >
-          Gå til informasjonsside
+          Gå til infoside
         </button>
       </div>
 
