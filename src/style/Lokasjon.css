@@ -55,9 +55,11 @@
   width: 100%;
 }
 
-.landskapstype_visning img {
+.landskapstype_visning img,
+.landskapstype_visning .sidebar_top_image {
   width: 200px;
   height: 200px;
+  margin-bottom: 10px;
   margin-right: 10px;
 }
 
@@ -102,9 +104,6 @@
   margin-left: auto;
 }
 
-@media only screen and (max-width: 768px) {
-}
-
 .value_lokasjon {
   background: #c0e3e1;
   font-size: 14pt;
@@ -131,4 +130,65 @@
 
 .flex h2 {
   width: 100%;
+}
+
+@media only screen and (max-width: 1120px) {
+  .value_lokasjon,
+  .lokasjon_seksjon button {
+    display: inline-block;
+    width: calc(50% - 2.5px);
+    margin: 0px;
+    height: 45px;
+    padding: 15px;
+    overflow: hidden;
+    vertical-align: top;
+  }
+
+  .value_lokasjon {
+    margin-right: 5px;
+  }
+
+  .landskapstype_visning.small,
+  .landscape_wrap_2ndlayer {
+    width: 100%;
+  }
+
+  .main_body.mobile_on .main_body_wrapper {
+    padding: 0px !important; /*ugly sry*/
+  }
+
+  .lokasjon_seksjon .landscape_wrap_2ndlayer {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .landskapstype_visning {
+    border-left: 0px;
+    border-top: 15px solid #81b2bb;
+  }
+
+  .not_image_and_link {
+    min-width: 100%;
+  }
+
+  .landskapstype_visning .sidebar_top_image {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+  }
+
+  .landskapstype_visning,
+  .image_and_link {
+    width: 100%;
+    height: auto;
+  }
+
+  .image_and_link .hide_on_mobile {
+    display: none;
+  }
+
+  .landskapstype_visning h2 {
+    margin-top: 20px;
+  }
 }
