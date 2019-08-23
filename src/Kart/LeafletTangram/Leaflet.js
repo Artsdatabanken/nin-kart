@@ -17,6 +17,9 @@ L.Icon.Default.mergeOptions({
 });
 
 function updateMarkerPosition(clickCoordinates, parent) {
+  /* her må dt regnes ut en offset for zoom + startkoordinat */
+  //parent.state.last_center.lat // parent.state.zoom;
+  //clickCoordinates.x - parent.state.last_center.lat;
   parent.setState({
     clickCoordinates: clickCoordinates, // origin
     windowXpos: clickCoordinates.x + parent.state.panOffsetx,
@@ -30,6 +33,8 @@ class LeafletTangram extends React.Component {
     windowYpos: 386,
     panOffsetx: 0,
     panOffsety: 0,
+    last_center: 0,
+    zoom: this.props.zoom * 1.8,
     showPopup: false,
     buttonUrl: null,
     data: null
@@ -41,8 +46,11 @@ class LeafletTangram extends React.Component {
       inertia: true,
       minZoom: 3
     };
+
     let map = L.map(this.mapEl, options);
+
     map.on("drag", e => {
+      //console.log(e.latlng);
       if (e.hard) {
         // moved by bounds
       } else {
@@ -63,7 +71,13 @@ class LeafletTangram extends React.Component {
       } else {
         // moved by drag/keyboard
         this.props.onMapBoundsChange(map.getBounds());
-        //updateMarkerPosition(e,this);
+        let last_center = e.target._lastCenter;
+        let zoom = e.target._zoom;
+        console.log("zoom.", zoom, last_center);
+        this.setState({
+          last_center: last_center,
+          zoom: e.target._zoom
+        });
       }
     });
     map.setView(
@@ -80,7 +94,8 @@ class LeafletTangram extends React.Component {
         hover: function(selection) {
           // console.log('Hover!', selection)
         },
-        click: this.handleClick
+        click: this.handleClick,
+        drag: this.handleDrag
       },
       attribution: '<a href="https://artsdatabanken.no">Artsdatabanken</a>'
     };
@@ -123,11 +138,12 @@ class LeafletTangram extends React.Component {
 
   handleClick = e => {
     const latlng = e.leaflet_event.latlng;
+    //console.log(e.leaflet_event)
     this.removeMarker();
-
     this.marker = L.marker([latlng.lat, latlng.lng], { icon: this.icon }).addTo(
       this.map
     );
+
     backend.hentPunkt(latlng.lng, latlng.lat).then(data => {
       if (!data) {
         return null;
