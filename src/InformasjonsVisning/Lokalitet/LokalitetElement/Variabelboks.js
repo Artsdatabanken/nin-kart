@@ -26,33 +26,6 @@ const Variabelboks = ({ onNavigate, miljøvariabel }) => {
             : "landskapstype_visning small"
         }
       >
-        <div className="image_and_link">
-          {miljøvariabel.bilde && miljøvariabel.bilde.foto && (
-            <img
-              src={miljøvariabel.bilde.foto.url}
-              onClick={() => {
-                onNavigate(miljøvariabel.url);
-              }}
-              alt=""
-            />
-          )}
-
-          {miljøvariabel["måleenhet"] && (
-            <div className="value_lokasjon">
-              {avrundetvariabel} {miljøvariabel["måleenhet"]}
-            </div>
-          )}
-
-          <di />
-
-          <button
-            onClick={() => {
-              onNavigate(miljøvariabel.url);
-            }}
-          >
-            Gå til informasjonsside
-          </button>
-        </div>
         <div className="not_image_and_link">
           <h2>
             {miljøvariabel.tittel && miljøvariabel.tittel.nb} - {kode}
@@ -76,6 +49,32 @@ const Variabelboks = ({ onNavigate, miljøvariabel }) => {
                 })}
             </div>
           )}
+        </div>
+        <div className="image_and_link">
+          {miljøvariabel.bilde && miljøvariabel.bilde.foto && (
+            <img
+              src={miljøvariabel.bilde.foto.url}
+              onClick={() => {
+                onNavigate(miljøvariabel.url);
+              }}
+              className="hide_on_mobile"
+              alt=""
+            />
+          )}
+
+          {miljøvariabel["måleenhet"] && (
+            <div className="value_lokasjon">
+              {avrundetvariabel} {miljøvariabel["måleenhet"]}
+            </div>
+          )}
+
+          <button
+            onClick={() => {
+              onNavigate(miljøvariabel.url);
+            }}
+          >
+            Gå til informasjonsside
+          </button>
         </div>
       </div>
     </>

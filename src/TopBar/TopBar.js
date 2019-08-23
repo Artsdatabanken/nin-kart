@@ -6,7 +6,7 @@ import { SettingsContext } from "../SettingsContext";
 import Hamburger from "@material-ui/icons/Menu";
 import backend from "../Funksjoner/backend";
 
-const TopBar = ({ onSelectResult, searchFor, forside }) => {
+const TopBar = ({ onSelectResult, searchFor, forside, history }) => {
   const [hits, setHits] = useState([]);
   const [query, setQuery] = useState();
   useEffect(() => {
@@ -37,7 +37,12 @@ const TopBar = ({ onSelectResult, searchFor, forside }) => {
             <Hamburger />
           </button>
           {!forside && (
-            <div className="header_text">
+            <div
+              className="header_text"
+              onClick={() => {
+                history.push("/");
+              }}
+            >
               <img
                 src="/logoer/small_icon_two.png"
                 className="logo_image"
