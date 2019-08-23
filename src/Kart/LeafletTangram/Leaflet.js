@@ -16,7 +16,25 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require("leaflet/dist/images/marker-shadow.png")
 });
 
+function updateMarkerPosition(clickCoordinates, parent) {
+  parent.setState({
+    clickCoordinates: clickCoordinates, // origin
+    windowXpos: clickCoordinates.x + parent.state.panOffsetx,
+    windowYpos: clickCoordinates.y - 56 + parent.state.panOffsety
+  });
+}
+
 class LeafletTangram extends React.Component {
+  state = {
+    windowXpos: 764,
+    windowYpos: 386,
+    panOffsetx: 0,
+    panOffsety: 0,
+    showPopup: false,
+    buttonUrl: null,
+    data: null
+  };
+
   componentDidMount() {
     const options = {
       zoomControl: false,
@@ -24,32 +42,28 @@ class LeafletTangram extends React.Component {
       minZoom: 3
     };
     let map = L.map(this.mapEl, options);
-    map.on("dragstart", function(e) {
+    map.on("drag", e => {
       if (e.hard) {
         // moved by bounds
-        // console.log("start move by bounds", e);
       } else {
         // moved by drag/keyboard
-        // console.log("start move by user", e);
-      }
-    });
-    map.on("dragend", e => {
-      if (e.hard) {
-        // moved by bounds
-        // console.log("end  move by bounds", e);
-      } else {
-        // moved by drag/keyboard
-        this.removeMarker();
         this.props.onMapBoundsChange(map.getBounds());
+
+        let lastpos = e.target.dragging._lastPos;
+        this.setState({
+          panOffsetx: lastpos.x,
+          panOffsety: lastpos.y
+        });
+        updateMarkerPosition(this.state.clickCoordinates, this);
       }
     });
     map.on("zoomend", e => {
       if (e.hard) {
         // moved by bounds
-        // console.log("end  move by bounds", e);
       } else {
         // moved by drag/keyboard
         this.props.onMapBoundsChange(map.getBounds());
+        //updateMarkerPosition(e,this);
       }
     });
     map.setView(
@@ -88,7 +102,7 @@ class LeafletTangram extends React.Component {
     if (this.props.show_current !== prevProps.show_current) return true;
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     if (this.props.bounds !== prevProps.bounds) {
       const bounds = this.props.bounds;
       if (bounds) {
@@ -110,12 +124,10 @@ class LeafletTangram extends React.Component {
   handleClick = e => {
     const latlng = e.leaflet_event.latlng;
     this.removeMarker();
-    this.marker = L.marker([latlng.lat, latlng.lng], { icon: this.icon });
-    this.map.addLayer(this.marker);
 
-    /* Det er her vi må håndtere om vi navigerer til siden eller ikke
-    Altså: når vi legger til #1382 blir det her koden skal dukke opp*/
-
+    this.marker = L.marker([latlng.lat, latlng.lng], { icon: this.icon }).addTo(
+      this.map
+    );
     backend.hentPunkt(latlng.lng, latlng.lat).then(data => {
       if (!data) {
         return null;
@@ -128,7 +140,13 @@ class LeafletTangram extends React.Component {
         url = "/Natur_i_Norge/?lng=" + latlng.lng + "&lat=" + latlng.lat;
       }
       url = url.replace(/ /g, "_");
-      this.props.history.push(url);
+      updateMarkerPosition(e.leaflet_event.layerPoint, this);
+      this.setState({
+        buttonUrl: url,
+        data: data,
+        showPopup: true
+      });
+      //console.log(this.state);
     });
   };
 
@@ -139,12 +157,59 @@ class LeafletTangram extends React.Component {
 
   render() {
     return (
-      <div
-        style={{ zIndex: -100, cursor: "default" }}
-        ref={ref => {
-          this.mapEl = ref;
-        }}
-      />
+      <>
+        {this.state.showPopup && (
+          <div
+            className="popup"
+            style={{
+              transform:
+                "translate3d(" +
+                this.state.windowXpos +
+                "px, " +
+                this.state.windowYpos +
+                "px, 0px)"
+            }}
+          >
+            <b>
+              {this.state.data.kommune && this.state.data.kommune.tittel.nb}
+            </b>
+            <br />
+            <b>{this.state.data.fylke && this.state.data.fylke.tittel.nb}</b>
+            <br />
+            <b>{this.state.windowXpos && this.state.windowXpos}</b>
+            <br />
+            <b>{this.state.windowYpos && this.state.windowYpos}</b>
+            <br />
+            <button
+              className="frontpage_header"
+              onClick={e => {
+                this.props.history.push(this.state.buttonUrl);
+              }}
+            >
+              URL
+            </button>
+            <br />
+
+            <button
+              className="frontpage_header"
+              onClick={e => {
+                this.setState({
+                  showPopup: !this.state.showPopup
+                });
+              }}
+            >
+              x
+            </button>
+          </div>
+        )}
+
+        <div
+          style={{ zIndex: -100, cursor: "default" }}
+          ref={ref => {
+            this.mapEl = ref;
+          }}
+        />
+      </>
     );
   }
 }

@@ -32,7 +32,7 @@ const KatalogHeaderImage = ({ meta }) => {
         style={
           (new_url !== "no_image" && {
             backgroundImage: "url(" + new_url + ")",
-            backgroundRepeat: "no-Repeat"
+            backgroundRepeat: "no-repeat"
           }) || { height: 0 }
         }
         alt=""
