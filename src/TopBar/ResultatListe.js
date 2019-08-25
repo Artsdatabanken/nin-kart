@@ -23,11 +23,7 @@ class ResultatListe extends Component {
     if (!searchResults) return null;
     if (searchResults.length <= 0) return null;
     return (
-      <div
-        //className="resultatliste" className={abc("resultatliste", isSearching)}
-        //className="resultatliste"
-        className="resultatliste mobile_active"
-      >
+      <div className="resultatliste mobile_active">
         {searchResults.map(item => {
           const navn = item.title;
           return (
