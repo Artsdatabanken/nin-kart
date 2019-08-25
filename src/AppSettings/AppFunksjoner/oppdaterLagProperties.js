@@ -30,7 +30,7 @@ export default function oppdaterLagProperties(
   if (elementType === "barn") {
     node = node.barn;
 
-    for (let i in node) {
+    for (var i in node) {
       if (node[i].kode === layer_input) {
         newnode = node[i];
       }

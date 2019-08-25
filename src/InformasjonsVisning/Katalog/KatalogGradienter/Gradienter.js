@@ -6,7 +6,7 @@ const Gradienter = ({ gradient, onNavigate, title }) => {
     let url = "";
     let namelist = [];
 
-    for (let item in trinn) {
+    for (var item in trinn) {
       let e = trinn[item];
       if (e["på"] === true) {
         count += 1;
