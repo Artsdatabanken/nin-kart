@@ -8,7 +8,11 @@ const Stedsinfo = ({ onNavigate, sted, lat, lng, fylke, kommune }) => {
   return (
     <>
       <div className="area_facts">
-        <h1>{sted}</h1>
+        {sted && (
+          <h1>
+            {sted.navn} (<a href={sted.meta.url}>{sted.meta.tittel.nb})</a>
+          </h1>
+        )}
         {(kommune || fylke) && (
           <h2>
             {kommune}, {fylke}
