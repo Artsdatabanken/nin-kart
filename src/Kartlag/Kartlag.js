@@ -29,7 +29,7 @@ class Kartlag extends React.Component {
     let duplicate = false;
     if (!currentKartlag) return null;
     if (currentKartlag && currentKartlag.kode) {
-      for (let item in keys) {
+      for (var item in keys) {
         if (keys[item] === currentKartlag.kode) {
           duplicate = true;
         }

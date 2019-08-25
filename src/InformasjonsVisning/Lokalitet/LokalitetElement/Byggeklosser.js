@@ -9,7 +9,7 @@ const Byggeklosser = ({ onNavigate, data }) => {
   let found_natur = false;
   const miljvar = Object.keys(miljøvariabler).sort();
 
-  for (let i in miljvar) {
+  for (var i in miljvar) {
     const miljøvariabelkode = miljvar[i].substring(0, 5);
     if (miljøvariabelkode === "NN-NA") {
       found_natur = true;
