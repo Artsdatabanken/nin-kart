@@ -80,9 +80,16 @@ class LeafletTangram extends React.Component {
           zoom: e.target._zoom
         });
         let last = { x: last_center.lng, y: last_center.lat };
-        console.log("zoom.", last);
+        if (this.marker) {
+          console.log("thos one", this.marker);
+          this.setState({
+            clickCoordinates: this.marker._icon._leaflet_pos,
+            windowXpos: this.marker._icon._leaflet_pos.x,
+            windowYpos: this.marker._icon._leaflet_pos.y - 56
+          });
+        }
 
-        updateMarkerPosition(this.state.clickCoordinates, this, last);
+        //updateMarkerPosition(this.state.clickCoordinates, this, last);
       }
     });
     map.setView(
