@@ -16,7 +16,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require("leaflet/dist/images/marker-shadow.png")
 });
 
-function updateMarkerPosition(clickCoordinates, parent) {
+function updateMarkerPosition(clickCoordinates, parent, zoom_offset) {
   /* her må dt regnes ut en offset for zoom + startkoordinat */
   //parent.state.last_center.lat // parent.state.zoom;
   //clickCoordinates.x - parent.state.last_center.lat;
@@ -37,7 +37,8 @@ class LeafletTangram extends React.Component {
     zoom: this.props.zoom * 1.8,
     showPopup: false,
     buttonUrl: null,
-    data: null
+    data: null,
+    clickCoordinates: { x: 0, y: 0 }
   };
 
   componentDidMount() {
@@ -73,11 +74,15 @@ class LeafletTangram extends React.Component {
         this.props.onMapBoundsChange(map.getBounds());
         let last_center = e.target._lastCenter;
         let zoom = e.target._zoom;
-        console.log("zoom.", zoom, last_center);
+        console.log("zoom.", zoom, last_center.lat, last_center.lng);
         this.setState({
           last_center: last_center,
           zoom: e.target._zoom
         });
+        let last = { x: last_center.lng, y: last_center.lat };
+        console.log("zoom.", last);
+
+        updateMarkerPosition(this.state.clickCoordinates, this, last);
       }
     });
     map.setView(
