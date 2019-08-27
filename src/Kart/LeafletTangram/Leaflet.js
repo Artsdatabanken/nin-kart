@@ -52,7 +52,6 @@ class LeafletTangram extends React.Component {
 
     let map = L.map(this.mapEl, options);
     map.on("drag", e => {
-      //console.log(e.latlng);
       if (e.hard) {
         // moved by bounds
       } else {
@@ -94,9 +93,7 @@ class LeafletTangram extends React.Component {
     let def = {
       scene: createScene(this.props),
       events: {
-        hover: function(selection) {
-          // console.log('Hover!', selection)
-        },
+        hover: function(selection) {},
         click: this.handleClick,
         drag: this.handleDrag
       },
@@ -145,7 +142,6 @@ class LeafletTangram extends React.Component {
 
   handleClick = e => {
     const latlng = e.leaflet_event.latlng;
-    //console.log(e.leaflet_event)
     this.removeMarker();
     this.marker = L.marker([latlng.lat, latlng.lng], { icon: this.icon }).addTo(
       this.map

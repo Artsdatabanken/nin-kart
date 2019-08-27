@@ -61,7 +61,6 @@ class Lokalitet extends Component {
     if (!lat) return null;
     const { data, fylke, kommune } = this.state;
     //console.log(data);
-    console.log(this.state);
     return (
       <>
         <div
