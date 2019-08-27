@@ -16,25 +16,20 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require("leaflet/dist/images/marker-shadow.png")
 });
 
-function updateMarkerPosition(clickCoordinates, parent, zoom_offset) {
-  /* her må dt regnes ut en offset for zoom + startkoordinat */
-  //parent.state.last_center.lat // parent.state.zoom;
-  //clickCoordinates.x - parent.state.last_center.lat;
+function updateMarkerPosition(clickCoordinates, parent) {
+  let offset = parent.marker._mapToAdd._mapPane._leaflet_pos;
+
   parent.setState({
     clickCoordinates: clickCoordinates, // origin
-    windowXpos: clickCoordinates.x + parent.state.panOffsetx,
-    windowYpos: clickCoordinates.y - 56 + parent.state.panOffsety
+    windowXpos: clickCoordinates.x + offset.x,
+    windowYpos: clickCoordinates.y - 56 + offset.y
   });
 }
 
 class LeafletTangram extends React.Component {
   state = {
-    windowXpos: 764,
-    windowYpos: 386,
-    panOffsetx: 0,
-    panOffsety: 0,
-    last_center: 0,
-    zoom: this.props.zoom * 1.8,
+    windowXpos: 0,
+    windowYpos: 0,
     showPopup: false,
     buttonUrl: null,
     data: null,
@@ -49,7 +44,6 @@ class LeafletTangram extends React.Component {
     };
 
     let map = L.map(this.mapEl, options);
-
     map.on("drag", e => {
       //console.log(e.latlng);
       if (e.hard) {
@@ -57,12 +51,6 @@ class LeafletTangram extends React.Component {
       } else {
         // moved by drag/keyboard
         this.props.onMapBoundsChange(map.getBounds());
-
-        let lastpos = e.target.dragging._lastPos;
-        this.setState({
-          panOffsetx: lastpos.x,
-          panOffsety: lastpos.y
-        });
         updateMarkerPosition(this.state.clickCoordinates, this);
       }
     });
@@ -72,24 +60,20 @@ class LeafletTangram extends React.Component {
       } else {
         // moved by drag/keyboard
         this.props.onMapBoundsChange(map.getBounds());
-        let last_center = e.target._lastCenter;
-        let zoom = e.target._zoom;
-        console.log("zoom.", zoom, last_center.lat, last_center.lng);
-        this.setState({
-          last_center: last_center,
-          zoom: e.target._zoom
-        });
-        let last = { x: last_center.lng, y: last_center.lat };
         if (this.marker) {
-          console.log("thos one", this.marker);
-          this.setState({
-            clickCoordinates: this.marker._icon._leaflet_pos,
-            windowXpos: this.marker._icon._leaflet_pos.x,
-            windowYpos: this.marker._icon._leaflet_pos.y - 56
-          });
+          updateMarkerPosition(this.marker._icon._leaflet_pos, this);
         }
-
-        //updateMarkerPosition(this.state.clickCoordinates, this, last);
+      }
+    });
+    map.on("resize", e => {
+      if (e.hard) {
+        // moved by bounds
+      } else {
+        // moved by drag/keyboard
+        this.props.onMapBoundsChange(map.getBounds());
+        if (this.marker) {
+          updateMarkerPosition(this.marker._icon._leaflet_pos, this);
+        }
       }
     });
     map.setView(
