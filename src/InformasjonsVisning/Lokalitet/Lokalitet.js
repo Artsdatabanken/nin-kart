@@ -28,7 +28,7 @@ class Lokalitet extends Component {
 
     // Stedsnavn
     backend.hentStedsnavn(lng, lat).then(sted => {
-      this.setState({ sted: sted.placename });
+      this.setState({ sted });
     });
 
     // Ny APIVERSJON, Mye ukontrollert data.
@@ -61,7 +61,7 @@ class Lokalitet extends Component {
     if (!lat) return null;
     const { data, fylke, kommune } = this.state;
     //console.log(data);
-
+    console.log(this.state);
     return (
       <>
         <div

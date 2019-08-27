@@ -66,7 +66,7 @@ const Landskapstype = ({ onNavigate, newlandskap }) => {
               let new_item = newgradient_components[value];
               let namelist = "";
               let imgurl = "https://data.artsdatabanken.no/";
-              for (let i in new_item.trinn) {
+              for (var i in new_item.trinn) {
                 if (new_item.trinn[i]["på"]) {
                   namelist += new_item.trinn[i].tittel.nb + " ";
                   imgurl += new_item.trinn[i].url + "/foto_408.jpg";

@@ -10,7 +10,7 @@ const Variabelboks = ({ onNavigate, miljøvariabel }) => {
   const barn = miljøvariabel.barn;
   let kode = miljøvariabel.kode;
   let found;
-  for (let i in barn) {
+  for (var i in barn) {
     if (barn[i].aktiv === true) {
       found = true;
     }
