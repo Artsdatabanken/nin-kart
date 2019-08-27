@@ -5,7 +5,7 @@ import { SettingsContext } from "SettingsContext";
 import InformasjonsVisning from "InformasjonsVisning/InformasjonsVisning";
 import TopBar from "TopBar/TopBar";
 import Kartlag from "Kartlag/Kartlag";
-import Kart from "Kart/LeafletTangram";
+import Kart from "Kart/LeafletTangram/Leaflet";
 import metaSjekk from "AppSettings/AppFunksjoner/metaSjekk";
 import fetchMeta from "AppSettings/AppFunksjoner/fetchMeta";
 import aktiverFraHistorikk from "AppSettings/AppFunksjoner/aktiverFraHistorikk";
