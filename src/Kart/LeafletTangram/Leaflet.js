@@ -17,6 +17,10 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require("leaflet/dist/images/marker-shadow.png")
 });
 
+function roundToX(num, x) {
+  return +(Math.round(num + "e+" + x) + "e-" + x);
+}
+
 function updateMarkerPosition(clickCoordinates, parent) {
   let offset = parent.marker._mapToAdd._mapPane._leaflet_pos;
 
@@ -35,6 +39,7 @@ class LeafletTangram extends React.Component {
     buttonUrl: null,
     sted: null,
     data: null,
+    koordinat: null,
     clickCoordinates: { x: 0, y: 0 }
   };
 
@@ -130,6 +135,10 @@ class LeafletTangram extends React.Component {
   }
 
   removeMarker() {
+    this.setState({
+      sted: null,
+      data: null
+    });
     if (!this.marker) return;
     this.map.removeLayer(this.marker);
   }
@@ -158,12 +167,12 @@ class LeafletTangram extends React.Component {
       this.setState({
         buttonUrl: url,
         data: data,
-        showPopup: true
+        showPopup: true,
+        koordinat: [latlng.lng, latlng.lat]
       });
       backend.hentStedsnavn(latlng.lng, latlng.lat).then(sted => {
         this.setState({ sted: sted.placename });
       });
-      console.log(this.state.data);
     });
   };
 
@@ -197,25 +206,43 @@ class LeafletTangram extends React.Component {
             >
               x
             </button>
+            {this.state.koordinat && (
+              <>
+                lat: {roundToX(this.state.koordinat[0], 5)}, lng:{" "}
+                {roundToX(this.state.koordinat[1], 5)}
+                <br />
+              </>
+            )}
+
             {this.state.sted && (
               <>
                 {this.state.sted} <br />
               </>
             )}
-            {this.state.data.kommune && (
-              <b>{this.state.data.kommune.tittel.nb}</b>
-            )}
-            {this.state.data.kommune && this.state.data.fylke && <b>{", "} </b>}
-            {this.state.data.fylke && (
-              <b>
-                {this.state.data.fylke.tittel.nb} <br />
-              </b>
-            )}
-            {this.state.data.landskap && (
+
+            {this.state.data ? (
               <>
-                <Landscape /> {this.state.data.landskap.tittel.nb} <br />
+                {this.state.data.kommune && (
+                  <b>{this.state.data.kommune.tittel.nb}</b>
+                )}
+                {this.state.data.kommune && this.state.data.fylke && (
+                  <b>{", "} </b>
+                )}
+                {this.state.data.fylke && (
+                  <b>
+                    {this.state.data.fylke.tittel.nb} <br />
+                  </b>
+                )}
+                {this.state.data.landskap && (
+                  <>
+                    <Landscape /> {this.state.data.landskap.tittel.nb} <br />
+                  </>
+                )}
               </>
+            ) : (
+              "Ingen data funnet"
             )}
+
             <button
               className="link_to_page"
               onClick={e => {
