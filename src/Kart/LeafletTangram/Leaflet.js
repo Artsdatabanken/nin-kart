@@ -5,6 +5,7 @@ import React from "react";
 import Tangram from "tangram";
 import { createScene, updateScene } from "./scene";
 import backend from "Funksjoner/backend";
+import { Landscape } from "@material-ui/icons";
 import "style/Kart.css";
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
 // See here: https://github.com/PaulLeCam/react-leaflet/issues/255
@@ -32,6 +33,7 @@ class LeafletTangram extends React.Component {
     windowYpos: 0,
     showPopup: false,
     buttonUrl: null,
+    sted: null,
     data: null,
     clickCoordinates: { x: 0, y: 0 }
   };
@@ -158,7 +160,10 @@ class LeafletTangram extends React.Component {
         data: data,
         showPopup: true
       });
-      //console.log(this.state);
+      backend.hentStedsnavn(latlng.lng, latlng.lat).then(sted => {
+        this.setState({ sted: sted.placename });
+      });
+      console.log(this.state.data);
     });
   };
 
@@ -182,28 +187,8 @@ class LeafletTangram extends React.Component {
                 "px, 0px)"
             }}
           >
-            <b>
-              {this.state.data.kommune && this.state.data.kommune.tittel.nb}
-            </b>
-            <br />
-            <b>{this.state.data.fylke && this.state.data.fylke.tittel.nb}</b>
-            <br />
-            <b>{this.state.windowXpos && this.state.windowXpos}</b>
-            <br />
-            <b>{this.state.windowYpos && this.state.windowYpos}</b>
-            <br />
             <button
-              className="frontpage_header"
-              onClick={e => {
-                this.props.history.push(this.state.buttonUrl);
-              }}
-            >
-              URL
-            </button>
-            <br />
-
-            <button
-              className="frontpage_header"
+              className="invisible_icon_button"
               onClick={e => {
                 this.setState({
                   showPopup: !this.state.showPopup
@@ -212,6 +197,34 @@ class LeafletTangram extends React.Component {
             >
               x
             </button>
+            {this.state.sted && (
+              <>
+                {this.state.sted} <br />
+              </>
+            )}
+            {this.state.data.kommune && (
+              <b>{this.state.data.kommune.tittel.nb}</b>
+            )}
+            {this.state.data.kommune && this.state.data.fylke && <b>{", "} </b>}
+            {this.state.data.fylke && (
+              <b>
+                {this.state.data.fylke.tittel.nb} <br />
+              </b>
+            )}
+            {this.state.data.landskap && (
+              <>
+                <Landscape /> {this.state.data.landskap.tittel.nb} <br />
+              </>
+            )}
+            <button
+              className="link_to_page"
+              onClick={e => {
+                this.props.history.push(this.state.buttonUrl);
+              }}
+            >
+              Les mer på stedets informasjonsside
+            </button>
+            <br />
           </div>
         )}
 

@@ -51,9 +51,19 @@
   box-shadow: -1px 8px 62px -19px rgba(0, 0, 0, 0.75);
 }
 
-.popup button {
+.popup .link_to_page {
   background: #81b2bb;
   width: 100%;
   padding: 5px;
   margin: 5px;
+}
+
+.popup .invisible_icon_button {
+  float: right;
+  font-size: 16pt;
+}
+
+.popup svg {
+  vertical-align: top;
+  margin-top: -2px;
 }
