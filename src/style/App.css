@@ -430,3 +430,20 @@ div {
 .hamburger_sidebar .mobile_only {
   display: none;
 }
+
+.page_warning {
+  padding: 20px;
+  padding-top: 10px;
+  background: #4b909e;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.page_warning h2 {
+  color: white;
+}
+
+.kartlag .page_warning h2 {
+  padding-bottom: 10px;
+  padding-left: 0px;
+}
