@@ -22,13 +22,15 @@ function roundToX(num, x) {
 }
 
 function updateMarkerPosition(clickCoordinates, parent) {
-  let offset = parent.marker._mapToAdd._mapPane._leaflet_pos;
+  if (parent.marker) {
+    let offset = parent.marker._mapToAdd._mapPane._leaflet_pos;
 
-  parent.setState({
-    clickCoordinates: clickCoordinates, // origin
-    windowXpos: clickCoordinates.x + offset.x,
-    windowYpos: clickCoordinates.y - 56 + offset.y
-  });
+    parent.setState({
+      clickCoordinates: clickCoordinates, // origin
+      windowXpos: clickCoordinates.x + offset.x,
+      windowYpos: clickCoordinates.y - 56 + offset.y
+    });
+  }
 }
 
 class LeafletTangram extends React.Component {
