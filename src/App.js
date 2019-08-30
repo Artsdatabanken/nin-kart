@@ -16,6 +16,7 @@ import bakgrunnskarttema from "AppSettings/bakgrunnskarttema";
 import HamburgerMeny from "HamburgerMeny/HamburgerMeny";
 import MobileNavigation from "MobileNavigation/MobileNavigation";
 import ForsideInformasjon from "Forside/ForsideInformasjon";
+import Forvaltningsportalen from "Forvaltningsportalen/Forvaltningsportalen";
 import "style/Kart.css";
 import "style/App.css";
 import "style/Sidebar.css";
@@ -30,6 +31,7 @@ class App extends React.Component {
       bakgrunnskart: JSON.parse(JSON.stringify(bakgrunnskarttema))
     };
     this.state = {
+      forvaltningsportalen: "true",
       aktiveLag: aktive,
       opplystKode: "",
       opplyst: {},
@@ -55,6 +57,9 @@ class App extends React.Component {
     let forside = false;
     if (path === "/") {
       forside = true;
+    }
+    if (this.state.forvaltningsportalen === "true") {
+      return <Forvaltningsportalen history={history} />;
     }
 
     return (
