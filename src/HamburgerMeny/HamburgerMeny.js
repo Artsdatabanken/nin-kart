@@ -27,6 +27,8 @@ import Utforsk from "./Utforsk/Utforsk";
 
 class HamburgerMeny extends Component {
   render() {
+    let spraak = this.props.spraak;
+    const handleSpraak = this.props.handleSpraak;
     return (
       <SettingsContext.Consumer>
         {context => (
@@ -121,6 +123,8 @@ class HamburgerMeny extends Component {
                   sorterPåKode={context.sorterPåKode}
                   onUpdateSetting={context.onUpdateValue}
                   onNavigate={this.handleNavigate}
+                  spraak={spraak}
+                  handleSpraak={handleSpraak}
                 />
                 <Divider />
                 <ListSubheader>Kontakt</ListSubheader>

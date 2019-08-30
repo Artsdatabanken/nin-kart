@@ -22,6 +22,7 @@ import "style/Sidebar.css";
 import "style/GeografiskSidebar.css";
 import "style/Kartlag.css";
 import "style/FargeMenyer.css";
+export let exportableSpraak;
 
 class App extends React.Component {
   constructor(props) {
@@ -38,8 +39,10 @@ class App extends React.Component {
       meta: null,
       visKoder: false,
       navigation_history: [],
-      showCurrent: true
+      showCurrent: true,
+      spraak: "nb"
     };
+    exportableSpraak = this;
     this.props.history.listen(() => {
       // Åpne info ved navigering
       this.context.onNavigateToTab("informasjon");
@@ -152,7 +155,10 @@ class App extends React.Component {
                 </>
               )}
 
-              <HamburgerMeny />
+              <HamburgerMeny
+                spraak={this.state.spraak}
+                handleSpraak={this.handleSpraak}
+              />
             </>
           );
         }}
@@ -171,6 +177,9 @@ class App extends React.Component {
   };
   handleBoundsChange = bbox => {
     this.setState({ actualBounds: bbox });
+  };
+  handleSpraak = spraak => {
+    this.setState({ spraak: spraak });
   };
   handleClearSearchFor = () => this.setState({ searchFor: null });
   handleToggleLayer = () => {
