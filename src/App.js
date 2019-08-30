@@ -31,7 +31,7 @@ class App extends React.Component {
       bakgrunnskart: JSON.parse(JSON.stringify(bakgrunnskarttema))
     };
     this.state = {
-      forvaltningsportalen: "true",
+      forvaltningsportalen: "false",
       aktiveLag: aktive,
       opplystKode: "",
       opplyst: {},
@@ -59,7 +59,34 @@ class App extends React.Component {
       forside = true;
     }
     if (this.state.forvaltningsportalen === "true") {
-      return <Forvaltningsportalen history={history} />;
+      return (
+        <SettingsContext.Consumer>
+          {context => {
+            return (
+              <>
+                {true && <Forvaltningsportalen history={history} />}
+                <Kart
+                  show_current={this.state.showCurrent}
+                  bounds={this.state.fitBounds}
+                  latitude={65.4}
+                  longitude={10.8}
+                  zoom={3}
+                  aktiveLag={this.state.aktiveLag}
+                  opplyst={this.state.opplyst}
+                  opplystKode={this.state.opplystKode}
+                  meta={this.state.meta}
+                  onMapBoundsChange={this.handleActualBoundsChange}
+                  onMapMove={context.onMapMove}
+                  history={history}
+                  onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                  onMouseEnter={this.handleMouseEnter}
+                  onMouseLeave={this.handleMouseLeave}
+                />
+              </>
+            );
+          }}
+        </SettingsContext.Consumer>
+      );
     }
 
     return (

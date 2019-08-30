@@ -1,7 +1,5 @@
 import React from "react";
-import "style/Forside.css";
-import Utforsk from "HamburgerMeny/Utforsk/Utforsk";
-import "style/Forvaltningsportalen.css";
+//import "style/Forvaltningsportalen.css";
 
 const Forvaltningsportalen = props => {
   return (
