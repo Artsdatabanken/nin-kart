@@ -11,7 +11,15 @@ const KatalogHeader = ({ meta }) => {
   const { kode, nivå, onUpdateLayerProp } = meta;
   const pkode = prettyKode(kode);
   const tittel = språk(meta.tittel);
-  const natursystem = kode.substring(0, 5) === "NN-NA";
+  let natursystem = kode.substring(0, 5) === "NN-NA";
+  if (
+    kode.substring(0, 12) === "NN-NA-BS-6SO" ||
+    kode.substring(0, 9) === "NA-BS-6SO" ||
+    kode.substring(0, 12) === "NN-NA-BS-6SE" ||
+    kode.substring(0, 9) === "NA-BS-6SE"
+  ) {
+    natursystem = false;
+  }
 
   /*  
   Header for alle informasjonselement aka. Boksen med bilde og tekst for denne siden.

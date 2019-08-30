@@ -45,7 +45,15 @@ class Kartlag extends React.Component {
     if (tittel.length > 40) {
       tittel = tittel.substring(0, 40) + "...";
     }
-    const natursystem = currentKartlag.kode.substring(0, 5) === "NN-NA" || null;
+    let natursystem = currentKartlag.kode.substring(0, 5) === "NN-NA" || null;
+    if (
+      currentKartlag.kode.substring(0, 12) === "NN-NA-BS-6SO" ||
+      currentKartlag.kode.substring(0, 9) === "NA-BS-6SO" ||
+      currentKartlag.kode.substring(0, 12) === "NN-NA-BS-6SE" ||
+      currentKartlag.kode.substring(0, 9) === "NA-BS-6SE"
+    ) {
+      natursystem = false;
+    }
 
     return (
       <>
