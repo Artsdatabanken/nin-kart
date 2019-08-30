@@ -11,8 +11,6 @@ const KatalogHeader = ({ meta }) => {
   const { kode, nivå, onUpdateLayerProp } = meta;
   const pkode = prettyKode(kode);
   const tittel = språk(meta.tittel);
-  const natursystem = kode.substring(0, 5) === "NN-NA";
-
   /*  
   Header for alle informasjonselement aka. Boksen med bilde og tekst for denne siden.
   Inneholder navn, kode, statistikk og bilde. 
@@ -24,7 +22,7 @@ const KatalogHeader = ({ meta }) => {
       {context => (
         <div className="">
           <h1 className="sidebar_title">{tittel}</h1>
-          {natursystem && <NatursystemAdvarsel />}
+          <NatursystemAdvarsel kode={kode} />
 
           <div className="katlog_header_images_container">
             <KatalogHeaderImage meta={meta} />
