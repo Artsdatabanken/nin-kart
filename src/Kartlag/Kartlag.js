@@ -45,7 +45,6 @@ class Kartlag extends React.Component {
     if (tittel.length > 40) {
       tittel = tittel.substring(0, 40) + "...";
     }
-    const natursystem = currentKartlag.kode.substring(0, 5) === "NN-NA" || null;
 
     return (
       <>
@@ -95,34 +94,32 @@ class Kartlag extends React.Component {
                     </div>
                     {!duplicate && (
                       <>
-                        {natursystem ? (
-                          <NatursystemAdvarsel />
-                        ) : (
-                          <div className="sidebar_element">
-                            <h2>Nåværende kartlag</h2>
-                            <ul className="kartlag_list">
-                              <AktivtKartlagElement
-                                key={currentKartlag}
-                                onRemoveSelectedLayer={onRemoveSelectedLayer}
-                                kartlag={currentKartlag}
-                                {...this.props}
-                                visKoder={context.visKoder}
-                                erAktivtLag={true}
-                                show_current={show_current}
-                                handleShowCurrent={handleShowCurrent}
-                                is_current_object={true}
-                                activateLayerFromHistory={
-                                  activateLayerFromHistory
-                                }
-                                navhist={
-                                  navigation_history[
-                                    navigation_history.length - 1
-                                  ]
-                                } // add last item in list
-                              />
-                            </ul>
-                          </div>
-                        )}
+                        <NatursystemAdvarsel kode={currentKartlag.kode} />
+
+                        <div className="sidebar_element">
+                          <h2>Nåværende kartlag</h2>
+                          <ul className="kartlag_list">
+                            <AktivtKartlagElement
+                              key={currentKartlag}
+                              onRemoveSelectedLayer={onRemoveSelectedLayer}
+                              kartlag={currentKartlag}
+                              {...this.props}
+                              visKoder={context.visKoder}
+                              erAktivtLag={true}
+                              show_current={show_current}
+                              handleShowCurrent={handleShowCurrent}
+                              is_current_object={true}
+                              activateLayerFromHistory={
+                                activateLayerFromHistory
+                              }
+                              navhist={
+                                navigation_history[
+                                  navigation_history.length - 1
+                                ]
+                              } // add last item in list
+                            />
+                          </ul>
+                        </div>
                       </>
                     )}
                     <div className="sidebar_element">

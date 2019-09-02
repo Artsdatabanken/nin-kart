@@ -1,7 +1,10 @@
 function colorArray2Image(colorarray) {
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d");
-  canvas.width = Math.pow(2, Math.ceil(Math.log2(colorarray.length)));
+  canvas.width = Math.max(
+    256,
+    Math.pow(2, Math.ceil(Math.log2(colorarray.length)))
+  );
   canvas.height = 1;
 
   for (let i = 0; i < canvas.width; i++) {
