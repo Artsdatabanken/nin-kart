@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+.forvaltningsportal_kartlag button,
+.forvaltningsportalen button,
+.forvaltningsportal_kartlag,
+.forvaltningsportalen {
+  font-family: "Raleway", sans-serif;
+}
+
 .forvaltningsportalen .frontpage_body {
   background: #f7f7f7;
 }
@@ -10,7 +19,7 @@
 .forvaltningsportalen .frontpage_feature_block a:visited,
 .forvaltningsportalen .frontpage_feature_block a:active,
 .forvaltningsportalen .frontpage_feature_block a:focus {
-  background: #e8e8e8;
+  background: #e1e1e1;
   color: black;
 }
 
@@ -27,11 +36,15 @@
   padding: 0px;
 }
 
+.forvaltningsportal_kartlag h1,
+.forvaltningsportal_kartlag h2,
+.forvaltningsportal_kartlag h3,
 .forvaltningsportalen h1,
 .forvaltningsportalen h2,
 .forvaltningsportalen h3 {
   color: #444;
   margin: 10px;
+  font-family: "Raleway", sans-serif;
 }
 
 .forvaltningsportalen.frontpage_header h1,
@@ -75,6 +88,11 @@
   padding: 20px;
   min-width: 200px;
   font-size: 14pt;
+  background: #c5d1e8;
+}
+
+.form_block button:hover {
+  background: #8191b5;
 }
 
 .forvaltningsportal_kartlag {
@@ -84,7 +102,12 @@
   height: calc(100vh - 56px);
   overflow-x: hidden;
   max-width: 350px;
-  background: #e8e8e8;
+  background: #f7f7f7;
   width: 100%;
-  font-family: "Roboto", "sans-serif";
+}
+
+.kartlag_header input[type="checkbox"] {
+  vertical-align: top;
+  margin-top: 10px;
+  margin-right: 15px;
 }

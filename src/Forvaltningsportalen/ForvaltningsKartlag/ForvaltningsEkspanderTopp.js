@@ -15,7 +15,7 @@ const ForvaltningsEkspanderTopp = ({
 
   const [expanded, setExpanded] = useState(false);
   return (
-    <div className="kartlag_header kartlag_open_object">
+    <div className="kartlag_header">
       <input
         type="checkbox"
         className="invisible_icon_button"
