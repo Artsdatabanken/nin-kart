@@ -17,6 +17,8 @@ import HamburgerMeny from "HamburgerMeny/HamburgerMeny";
 import MobileNavigation from "MobileNavigation/MobileNavigation";
 import ForsideInformasjon from "Forside/ForsideInformasjon";
 import Forvaltningsportalen from "Forvaltningsportalen/Forvaltningsportalen";
+import ForvaltningsKartlag from "Forvaltningsportalen/ForvaltningsKartlag/ForvaltningsKartlag";
+import ForvaltningsKartBokser from "Forvaltningsportalen/ForvaltningsKartBokser/ForvaltningsKartBokser";
 import "style/Kart.css";
 import "style/App.css";
 import "style/Sidebar.css";
@@ -59,11 +61,15 @@ class App extends React.Component {
       forside = true;
     }
 
+    let forvaltningskart = false;
+    if (path === "/forvaltningsportalen/kart") {
+      forvaltningskart = true;
+    }
+
     if (
       this.state.forvaltningsportalen === "false" &&
       path.substring(0, 21) === "/forvaltningsportalen"
     ) {
-      // HACK FOR NOW :D Lært av Bjørn, si.
       this.setState({ forvaltningsportalen: "true" });
     } else if (
       this.state.forvaltningsportalen === "true" &&
@@ -79,8 +85,31 @@ class App extends React.Component {
             return (
               <>
                 {this.state.forvaltningsportalen === "true" && (
-                  <Forvaltningsportalen history={history} />
+                  <>
+                    {forvaltningskart === false ? (
+                      <Forvaltningsportalen history={history} />
+                    ) : (
+                      <>
+                        <ForvaltningsKartBokser history={history} />
+                        <ForvaltningsKartlag
+                          show_current={this.state.showCurrent}
+                          hidden={true}
+                          handleShowCurrent={this.handleShowCurrent}
+                          aktiveLag={this.state.aktiveLag}
+                          onUpdateLayerProp={this.handleUpdateLayerProp}
+                          onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                          navigation_history={this.state.navigation_history}
+                          onFitBounds={this.handleFitBounds}
+                          history={history}
+                          activateLayerFromHistory={
+                            this.activateLayerFromHistory
+                          }
+                        />
+                      </>
+                    )}
+                  </>
                 )}
+
                 <Kart
                   show_current={this.state.showCurrent}
                   bounds={this.state.fitBounds}
