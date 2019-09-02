@@ -58,13 +58,29 @@ class App extends React.Component {
     if (path === "/") {
       forside = true;
     }
+
+    if (
+      this.state.forvaltningsportalen === "false" &&
+      path.substring(0, 21) === "/forvaltningsportalen"
+    ) {
+      // HACK FOR NOW :D Lært av Bjørn, si.
+      this.setState({ forvaltningsportalen: "true" });
+    } else if (
+      this.state.forvaltningsportalen === "true" &&
+      path.substring(0, 21) !== "/forvaltningsportalen"
+    ) {
+      this.setState({ forvaltningsportalen: "false" });
+    }
+
     if (this.state.forvaltningsportalen === "true") {
       return (
         <SettingsContext.Consumer>
           {context => {
             return (
               <>
-                {true && <Forvaltningsportalen history={history} />}
+                {this.state.forvaltningsportalen === "true" && (
+                  <Forvaltningsportalen history={history} />
+                )}
                 <Kart
                   show_current={this.state.showCurrent}
                   bounds={this.state.fitBounds}

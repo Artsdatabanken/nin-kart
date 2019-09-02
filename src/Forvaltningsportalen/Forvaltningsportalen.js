@@ -1,15 +1,14 @@
 import React from "react";
-//import "style/Forvaltningsportalen.css";
+import "style/Forvaltningsportalen.css";
 
 const Forvaltningsportalen = props => {
   return (
-    <div className="frontpage">
+    <div className="frontpage forvaltningsportalen">
       <div className="frontpage_body">
         <div
           className="frontpage_header"
           onClick={e => {
-            e.stopPropagation();
-            //props.history.push("/Natur_i_Norge/");
+            props.history.push("/forvaltningsportalen");
           }}
         >
           <div>
@@ -85,7 +84,13 @@ const Forvaltningsportalen = props => {
           </div>
         </div>
         <div className="form_block">
-          <button>Gå til kart</button>
+          <button
+            onClick={e => {
+              props.history.push("/forvaltningsportalen/kart");
+            }}
+          >
+            Gå til kart
+          </button>
         </div>
       </div>
 

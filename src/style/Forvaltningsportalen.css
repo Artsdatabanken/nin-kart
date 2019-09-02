@@ -1,43 +1,43 @@
-.frontpage_body {
+.forvaltningsportalen .frontpage_body {
   background: #f7f7f7;
 }
 
-.frontpage_footer,
-.frontpage_feature_block,
-.frontpage_feature_block,
-.frontpage_feature_block h2,
-.frontpage_feature_block a,
-.frontpage_feature_block a:visited,
-.frontpage_feature_block a:active,
-.frontpage_feature_block a:focus {
+.forvaltningsportalen .frontpage_footer,
+.forvaltningsportalen .frontpage_feature_block,
+.forvaltningsportalen .frontpage_feature_block,
+.forvaltningsportalen .frontpage_feature_block h2,
+.forvaltningsportalen .frontpage_feature_block a,
+.forvaltningsportalen .frontpage_feature_block a:visited,
+.forvaltningsportalen .frontpage_feature_block a:active,
+.forvaltningsportalen .frontpage_feature_block a:focus {
   background: #e8e8e8;
   color: black;
 }
 
-.frontpage_header {
+.forvaltningsportalen .frontpage_header {
   background: #5a6175;
   padding: 20px;
   color: white;
 }
 
-.frontpage h1,
-.frontpage h2,
-.frontpage h3 {
+.forvaltningsportalen h1,
+.forvaltningsportalen h2,
+.forvaltningsportalen h3 {
   color: #444;
 }
 
-.frontpage_header h1,
-.frontpage_header h2,
-.frontpage_header h3 {
+.forvaltningsportalen .frontpage_header h1,
+.forvaltningsportalen .frontpage_header h2,
+.forvaltningsportalen .frontpage_header h3 {
   color: #d5d6d7;
   font-weight: 300;
 }
 
-.frontpage_sources img {
+.forvaltningsportalen .frontpage_sources img {
   width: 50px;
 }
 
-.form_block {
+.forvaltningsportalen .form_block {
   background: white;
   max-width: 900px;
   margin: auto;
