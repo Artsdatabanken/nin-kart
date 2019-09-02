@@ -1,6 +1,7 @@
 import React from "react";
 import { SettingsContext } from "SettingsContext";
 import AktivtKartlagElement from "Kartlag/AktiveKartlag/AktivtKartlagElement";
+import ForvaltningsEkspanderTopp from "./ForvaltningsEkspanderTopp";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@material-ui/icons";
 
 class Kartlag extends React.Component {
@@ -40,25 +41,23 @@ class Kartlag extends React.Component {
 
                 <div className="forvaltningsportal_kartlag kartlag">
                   <div className="kartlag_content">
-                    <div className="sidebar_title_container sidebar_element">
-                      <h1 className="sidebar_title">Kartlag</h1>
-                    </div>
-
                     <div className="sidebar_element">
                       <ul className="kartlag_list">
                         {keys.reverse().map(fkode => {
                           const kartlag = koder[fkode];
                           return (
                             fkode !== "bakgrunnskart" && (
-                              <AktivtKartlagElement
-                                kartlag={kartlag}
-                                key={fkode}
-                                {...this.props}
-                                visKoder={context.visKoder}
-                                onFitBounds={onFitBounds}
-                                onUpdateLayerProp={onUpdateLayerProp}
-                                meta={meta}
-                              />
+                              <>
+                                <ForvaltningsEkspanderTopp
+                                  kartlag={kartlag}
+                                  key={fkode}
+                                  {...this.props}
+                                  visKoder={context.visKoder}
+                                  onFitBounds={onFitBounds}
+                                  onUpdateLayerProp={onUpdateLayerProp}
+                                  meta={meta}
+                                />
+                              </>
                             )
                           );
                         })}
