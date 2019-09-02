@@ -430,3 +430,20 @@ div {
 .hamburger_sidebar .mobile_only {
   display: none;
 }
+
+.spraakalternativer button {
+  display: block;
+  padding: 5px;
+  padding-bottom: 0px;
+  width: 100%;
+}
+
+.spraakalternativer button:last-child {
+  padding-bottom: 5px;
+}
+
+.spraakalternativer {
+  display: inline-block;
+  background: blue;
+  width: 60%;
+}

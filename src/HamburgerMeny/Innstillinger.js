@@ -1,9 +1,7 @@
 import Menyelement from "./Menyelement";
 import { ListSubheader, Typography } from "@material-ui/core";
 import { SortByAlpha } from "@material-ui/icons";
-import React from "react";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
+import React, { useState } from "react";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@material-ui/icons";
 
 const Innstillinger = ({
@@ -12,89 +10,91 @@ const Innstillinger = ({
   onUpdateSetting,
   spraak,
   handleSpraak
-}) => (
-  <>
-    <ListSubheader>Innstillinger</ListSubheader>
+}) => {
+  const [expanded, setExpanded] = useState(false);
 
-    <Menyelement
-      onClick={e => {
-        e.preventDefault();
-        e.stopPropagation();
-        onUpdateSetting("visKoder", !visKoder);
-      }}
-      icon={
-        <Typography>
-          <span>NA</span>
-        </Typography>
-      }
-      primary="Vis koder i tillegg til navn"
-      toggle
-      checked={visKoder}
-    />
-    <Menyelement
-      onClick={e => {
-        e.preventDefault();
-        e.stopPropagation();
-        onUpdateSetting("sorterPåKode", !sorterPåKode);
-      }}
-      icon={<SortByAlpha />}
-      primary="Sorter lister etter"
-      secondary={sorterPåKode ? " Koder" : " Navn"}
-    />
-    <DropdownButton
-      alignRight
-      drop={"right"}
-      title={"Velg språk"}
-      id={"dropdown-button-drop-right"}
-      key={"right"}
-      onClick={e => {
-        e.preventDefault();
-        e.stopPropagation();
-      }}
-    >
-      <Dropdown.Item
+  return (
+    <>
+      <ListSubheader>Innstillinger</ListSubheader>
+
+      <Menyelement
         onClick={e => {
           e.preventDefault();
           e.stopPropagation();
-          handleSpraak("en");
+          onUpdateSetting("visKoder", !visKoder);
         }}
-      >
-        Engelsk
-      </Dropdown.Item>
-      <Dropdown.Item
+        icon={
+          <Typography>
+            <span>NA</span>
+          </Typography>
+        }
+        primary="Vis koder i tillegg til navn"
+        toggle
+        checked={visKoder}
+      />
+      <Menyelement
         onClick={e => {
           e.preventDefault();
           e.stopPropagation();
-          handleSpraak("nb");
+          onUpdateSetting("sorterPåKode", !sorterPåKode);
         }}
-      >
-        Norsk bokmål
-      </Dropdown.Item>
-      <Dropdown.Item
-        onClick={e => {
-          e.preventDefault();
-          e.stopPropagation();
-          handleSpraak("la");
-        }}
-      >
-        Latin
-      </Dropdown.Item>
-    </DropdownButton>
+        icon={<SortByAlpha />}
+        primary="Sorter lister etter"
+        secondary={sorterPåKode ? " Koder" : " Navn"}
+      />
+      <div className="spraakvelger">
+        <span>Velg språk</span>
 
-    <Menyelement
-      icon={
-        <Typography>
-          <span>Aa</span>
-        </Typography>
-      }
-      primary="Velg språk"
-    />
+        <div className="spraakalternativer">
+          <button
+            onClick={e => {
+              setExpanded(!expanded);
+            }}
+          >
+            {spraak}
+            {expanded === true ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
+          </button>
+          {expanded === true && (
+            <>
+              <button
+                onClick={e => {
+                  handleSpraak("en");
+                  setExpanded(!expanded);
+                }}
+              >
+                Engelsk
+              </button>
+              <button
+                onClick={e => {
+                  handleSpraak("nb");
+                  setExpanded(!expanded);
+                }}
+              >
+                Norsk bokmål
+              </button>
+              <button
+                onClick={e => {
+                  handleSpraak("la");
+                  setExpanded(!expanded);
+                }}
+              >
+                Latin
+              </button>
+            </>
+          )}
+        </div>
+      </div>
 
-    <KeyboardArrowDown />
-    <KeyboardArrowUp />
-
-    <h1>{spraak}</h1>
-  </>
-);
+      <Menyelement
+        icon={
+          <Typography>
+            <span>Aa</span>
+          </Typography>
+        }
+        primary="Velg språk"
+      />
+    </>
+  );
+};
 
 export default Innstillinger;
