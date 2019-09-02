@@ -1,6 +1,6 @@
 import React from "react";
 import { SettingsContext } from "SettingsContext";
-import AktivtKartlagElement from "./AktiveKartlag/AktivtKartlagElement";
+import AktivtKartlagElement from "Kartlag/AktiveKartlag/AktivtKartlagElement";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@material-ui/icons";
 
 class Kartlag extends React.Component {
