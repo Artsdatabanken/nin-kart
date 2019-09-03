@@ -1,4 +1,5 @@
 import React from "react";
+import språk from "Funksjoner/språk";
 
 function roundToX(num, x) {
   return +(Math.round(num + "e+" + x) + "e-" + x);
@@ -10,7 +11,7 @@ const Stedsinfo = ({ onNavigate, sted, lat, lng, fylke, kommune }) => {
       <div className="area_facts">
         {sted && (
           <h1>
-            {sted.navn} (<a href={sted.meta.url}>{sted.meta.tittel.nb})</a>
+            {sted.navn} (<a href={sted.meta.url}>{språk(sted.meta.tittel)})</a>
           </h1>
         )}
         {(kommune || fylke) && (

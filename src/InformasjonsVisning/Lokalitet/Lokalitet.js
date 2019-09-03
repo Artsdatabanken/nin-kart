@@ -3,6 +3,7 @@ import backend from "Funksjoner/backend";
 import Byggeklosser from "./LokalitetElement/Byggeklosser";
 import Stedsinfo from "./LokalitetElement/Stedsinfo";
 import Landskapstypefordeling from "./LokalitetElement/Landskapstypefordeling";
+import språk from "Funksjoner/språk";
 import "style/Lokasjon.css";
 
 class Lokalitet extends Component {
@@ -49,8 +50,8 @@ class Lokalitet extends Component {
         });
       } else {
         this.setState({
-          fylke: data.fylke.tittel.nb,
-          kommune: data.kommune.tittel.nb
+          fylke: språk(data.fylke.tittel),
+          kommune: språk(data.kommune.tittel)
         });
       }
     });
