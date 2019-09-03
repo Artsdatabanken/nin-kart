@@ -16,6 +16,7 @@ import bakgrunnskarttema from "AppSettings/bakgrunnskarttema";
 import HamburgerMeny from "HamburgerMeny/HamburgerMeny";
 import MobileNavigation from "MobileNavigation/MobileNavigation";
 import ForsideInformasjon from "Forside/ForsideInformasjon";
+import språk from "Funksjoner/språk";
 import "style/Kart.css";
 import "style/App.css";
 import "style/Sidebar.css";
@@ -212,7 +213,7 @@ class App extends React.Component {
       fetchMeta(path, this);
     }
     document.title =
-      (this.state.meta && this.state.meta.tittel.nb) || "Natur i Norge";
+      (this.state.meta && språk(this.state.meta.tittel)) || "Natur i Norge";
   }
 
   async downloadMeta(url) {

@@ -425,33 +425,68 @@ div {
   display: flex;
 }
 
-.spraakvelger span:first-child,
-.hamburger_menu_item div span:first-child {
-  width: 36px;
-}
-.spraakvelger span,
-.hamburger_menu_item svg {
-  color: #777777;
-}
-
 .hamburger_sidebar .mobile_only {
   display: none;
 }
 
-.spraakalternativer button {
-  display: block;
-  background: #b7d3d8;
-  padding: 5px;
-  padding-bottom: 0px;
-  width: 100%;
-  color: #777777;
+.spraakvelger {
+  height: 54px;
+  position: relative;
 }
 
-.spraakalternativer button:last-child {
-  padding-bottom: 5px;
+.spraakvelger span,
+.hamburger_menu_item svg {
+  color: #777777;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.spraakvelger span:first-child,
+.hamburger_menu_item div span:first-child {
+  width: 36px;
 }
 
 .spraakalternativer {
   display: inline-block;
-  width: 60%;
+  width: 130px;
+  left: auto;
+  right: 15px;
+  vertical-align: top;
+  position: absolute;
+  height: 26px;
+  font-size: 12pt;
+}
+
+.spraakalternativer button {
+  display: block;
+  background: #fff;
+  padding: 8px;
+  width: 100%;
+  color: #000;
+  position: relative;
+  border: 1px solid #eaeaea;
+  border-top: 0px;
+}
+
+.spraakalternativer button:hover,
+.spraakalternativer button:active {
+  background: #b7d3d8;
+}
+
+.spraakalternativer button:first-child {
+  background: #fff;
+  border: 1px solid #b7d3d8;
+  padding: 5px;
+  padding-right: calc(24px + 5px);
+}
+
+.spraakalternativer svg {
+  vertical-align: top;
+  display: inline-block;
+  background: #b7d3d8;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 24px;
 }

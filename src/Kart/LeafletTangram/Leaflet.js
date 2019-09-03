@@ -6,6 +6,7 @@ import Tangram from "tangram";
 import { createScene, updateScene } from "./scene";
 import backend from "Funksjoner/backend";
 import { Landscape } from "@material-ui/icons";
+import språk from "Funksjoner/språk";
 import "style/Kart.css";
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
 // See here: https://github.com/PaulLeCam/react-leaflet/issues/255
@@ -223,19 +224,20 @@ class LeafletTangram extends React.Component {
             {this.state.data ? (
               <>
                 {this.state.data.kommune && (
-                  <b>{this.state.data.kommune.tittel.nb}</b>
+                  <b>{språk(this.state.data.kommune.tittel)}</b>
                 )}
                 {this.state.data.kommune && this.state.data.fylke && (
                   <b>{", "} </b>
                 )}
                 {this.state.data.fylke && (
                   <b>
-                    {this.state.data.fylke.tittel.nb} <br />
+                    {språk(this.state.data.fylke.tittel)} <br />
                   </b>
                 )}
                 {this.state.data.landskap && (
                   <>
-                    <Landscape /> {this.state.data.landskap.tittel.nb} <br />
+                    <Landscape /> {språk(this.state.data.landskap.tittel)}{" "}
+                    <br />
                   </>
                 )}
               </>

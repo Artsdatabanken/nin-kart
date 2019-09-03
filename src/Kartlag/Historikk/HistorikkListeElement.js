@@ -1,4 +1,5 @@
 import React from "react";
+import språk from "Funksjoner/språk";
 import { Add, KeyboardArrowRight } from "@material-ui/icons";
 
 const HistorikkListeElement = ({
@@ -10,7 +11,7 @@ const HistorikkListeElement = ({
   return (
     <div className="kartlag_list_title">
       <div className="kartlag_header">
-        <span className="kartlag_list_title">{meta.tittel.nb}</span>
+        <span className="kartlag_list_title">{språk(meta.tittel)}</span>
         <span className="kartlag_list_icon_set">
           <button
             className="invisible_icon_button add_icon"
