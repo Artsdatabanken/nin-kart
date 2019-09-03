@@ -6,7 +6,6 @@ import {
   List,
   ListItem,
   ListItemText,
-  ListSubheader,
   SwipeableDrawer,
   ListItemSecondaryAction
 } from "@material-ui/core";
@@ -51,7 +50,7 @@ class HamburgerMeny extends Component {
               <Divider />
 
               <div>
-                <ListSubheader>Hva vil du utforske?</ListSubheader>
+                <h2>Hva vil du utforske?</h2>
                 <Menyelement
                   icon={
                     <img
@@ -79,7 +78,7 @@ class HamburgerMeny extends Component {
                   }}
                 />
                 <Divider />
-                <ListSubheader>Datagrunnlag</ListSubheader>
+                <h2>Datagrunnlag</h2>
                 <Menyelement
                   icon={<CloudDownload />}
                   primary="Last ned data"
@@ -127,7 +126,7 @@ class HamburgerMeny extends Component {
                   handleSpraak={handleSpraak}
                 />
                 <Divider />
-                <ListSubheader>Kontakt</ListSubheader>
+                <h2>Kontakt</h2>
                 <Menyelement
                   onClick={() => {
                     this.handleWindowOpen(

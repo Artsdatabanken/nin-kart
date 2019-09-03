@@ -1,5 +1,5 @@
 import Menyelement from "./Menyelement";
-import { ListSubheader, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import { SortByAlpha } from "@material-ui/icons";
 import React, { useState } from "react";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@material-ui/icons";
@@ -12,10 +12,18 @@ const Innstillinger = ({
   handleSpraak
 }) => {
   const [expanded, setExpanded] = useState(false);
+  let spraaknavn = "";
+  if (spraak === "en") {
+    spraaknavn = "Engelsk";
+  } else if (spraak === "nb") {
+    spraaknavn = "Norsk bokmål";
+  } else if (spraak === "la") {
+    spraaknavn = "Latin";
+  }
 
   return (
     <>
-      <ListSubheader>Innstillinger</ListSubheader>
+      <h2>Innstillinger</h2>
 
       <Menyelement
         onClick={e => {
@@ -40,9 +48,10 @@ const Innstillinger = ({
         }}
         icon={<SortByAlpha />}
         primary="Sorter lister etter"
-        secondary={sorterPåKode ? " Koder" : " Navn"}
+        secondary={sorterPåKode ? " koder" : " navn"}
       />
       <div className="spraakvelger">
+        <span>Aa</span>
         <span>Velg språk</span>
 
         <div className="spraakalternativer">
@@ -51,7 +60,7 @@ const Innstillinger = ({
               setExpanded(!expanded);
             }}
           >
-            {spraak}
+            {spraaknavn}
             {expanded === true ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
           </button>
           {expanded === true && (
@@ -84,15 +93,6 @@ const Innstillinger = ({
           )}
         </div>
       </div>
-
-      <Menyelement
-        icon={
-          <Typography>
-            <span>Aa</span>
-          </Typography>
-        }
-        primary="Velg språk"
-      />
     </>
   );
 };
