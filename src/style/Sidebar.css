@@ -96,6 +96,20 @@
 .subelement_decorative_image {
   width: 100%;
   height: 200px;
+  background: #b7d3d8;
+}
+
+.subelement_decorative_image span {
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  padding-top: 75px;
+  font-size: 30pt;
+  display: inline-block;
+  color: #4b909e;
+
+  font-weight: 300;
 }
 
 .subelement_text.nav_text {

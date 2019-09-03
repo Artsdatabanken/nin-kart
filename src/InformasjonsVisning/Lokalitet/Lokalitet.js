@@ -61,8 +61,6 @@ class Lokalitet extends Component {
     const { lat, lng, aktivTab, onNavigate } = this.props;
     if (!lat) return null;
     const { data, fylke, kommune } = this.state;
-    //console.log(data);
-    console.log(this.state);
     return (
       <>
         <div
