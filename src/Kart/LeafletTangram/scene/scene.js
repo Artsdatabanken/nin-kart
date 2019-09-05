@@ -24,7 +24,7 @@ function createScene(props) {
 function updateScene(config, props) {
   let bakgrunn = props.aktiveLag.bakgrunnskart;
   bakgrunn = bakgrunn.kart.format[bakgrunn.kart.aktivtFormat];
-  config.scene.background.color = bakgrunn.land_farge || "#f2f2f2";
+  config.scene.background.color = bakgrunn.land_farge || "#fff";
   config.layers = {};
   const viserKatalog = !!props.meta; // meta = true or meta = false , never meta = null
   lagNåværendeLag(config, props);

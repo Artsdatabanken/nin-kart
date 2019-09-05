@@ -1,4 +1,4 @@
-import draw from "../visualisering/";
+import draw from "../visualisering/draw";
 
 export default function lagTegner(drawArgs, config) {
   const renderer = draw[drawArgs.aktivtFormat];

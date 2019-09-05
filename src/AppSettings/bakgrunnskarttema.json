@@ -20,7 +20,7 @@
       "osm_lys": {
         "tittel": "Lys (OpenStreetMap)",
         "land": true,
-        "land_farge": "#f2f2f2",
+        "land_farge": "#fff",
         "transport": true,
         "transport_farge": "#fff",
         "transport_navn": false,

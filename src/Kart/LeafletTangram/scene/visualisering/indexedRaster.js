@@ -21,7 +21,7 @@ function lagStyle(format, drawArgs) {
   let newPalette = makePalette(opplyst, drawArgs);
   const gradient = {
     base: "raster",
-    blend: "multiply",
+    blend: "normal",
     animated: false,
     shaders: {
       uniforms: {
@@ -59,7 +59,7 @@ function makePalette(opplyst, drawArgs) {
     const barnet = finnBarn(kode, barna);
 
     if (barnet.erSynlig === false) {
-      colors.push("#FFFFFF");
+      colors.push("#fff0");
     } else if (barnet.kode === opplyst.kode) {
       colors.push("#f88");
     } else {
