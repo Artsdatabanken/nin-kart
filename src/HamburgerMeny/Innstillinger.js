@@ -30,7 +30,7 @@ const Innstillinger = ({ visKoder, sorterPåKode, onUpdateSetting }) => (
       }}
       icon={<SortByAlpha />}
       primary="Sorter lister etter"
-      secondary={sorterPåKode ? " Koder" : " Navn"}
+      secondary={sorterPåKode ? " koder" : " navn"}
     />
   </>
 );

@@ -30,7 +30,7 @@ const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
 
   const step = (rangeMax - rangeMin) / 1000;
   const decimals = Math.trunc(Math.log10(10000 / rangeMax));
-  const spread = 0.015;
+  //const spread = 0.015;
   const måleenhet = "";
 
   function handleUpdateFilter(kode, key, value) {
@@ -54,12 +54,27 @@ const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
               icon={<SwapVert />}
               onChange={v => {
                 handleUpdateFilter(kode, "filterMin", v);
-                if (filterMax <= filterMin + spread)
-                  onUpdateLayerProp(
+                if (v > filterMax) {
+                  handleUpdateFilter(
                     kode,
                     "filterMax",
-                    Math.min(1.0, filterMin + spread)
+                    v
+                    //Math.max(0.0, filterMax - spread)
                   );
+                }
+                //if (filterMax <= filterMin + spread)
+
+                /*if (filterMax <= filterMin){
+                console.log ("Max mindre enn min! Max: " + filterMax, " Min: " + filterMin);
+                
+                handleUpdateFilter(
+                    //onUpdateLayerProp(
+                    kode,
+                    "filterMax",
+                    filterMax
+                    //Math.min(1.0, filterMin + spread)
+                  );
+                }*/
               }}
             />
 
@@ -74,12 +89,15 @@ const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
               icon={<SwapVert />}
               onChange={v => {
                 handleUpdateFilter(kode, "filterMax", v);
-                if (filterMax <= filterMin + spread)
+                //if (filterMax <= filterMin + spread)
+                if (v <= filterMin) {
                   handleUpdateFilter(
                     kode,
                     "filterMin",
-                    Math.max(0.0, filterMax - spread)
+                    v
+                    //Math.max(0.0, filterMax - spread)
                   );
+                }
               }}
             />
           </div>
