@@ -3,14 +3,16 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import React from "react";
 import Tangram from "tangram";
-import { createScene, updateScene } from "./scene";
+import { createScene, updateScene } from "./scene/scene";
 import backend from "Funksjoner/backend";
 import { Landscape } from "@material-ui/icons";
 import språk from "Funksjoner/språk";
 import "style/Kart.css";
+import updateMarkerPosition from "./LeafletActions/updateMarkerPosition";
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
 // See here: https://github.com/PaulLeCam/react-leaflet/issues/255
 // Used in conjunction with url-loader.
+
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
@@ -20,18 +22,6 @@ L.Icon.Default.mergeOptions({
 
 function roundToX(num, x) {
   return +(Math.round(num + "e+" + x) + "e-" + x);
-}
-
-function updateMarkerPosition(clickCoordinates, parent) {
-  if (parent.marker) {
-    let offset = parent.marker._mapToAdd._mapPane._leaflet_pos;
-
-    parent.setState({
-      clickCoordinates: clickCoordinates, // origin
-      windowXpos: clickCoordinates.x + offset.x,
-      windowYpos: clickCoordinates.y - 56 + offset.y
-    });
-  }
 }
 
 class LeafletTangram extends React.Component {
@@ -55,41 +45,33 @@ class LeafletTangram extends React.Component {
 
     let map = L.map(this.mapEl, options);
     map.on("drag", e => {
-      if (e.hard) {
-        // moved by bounds
-      } else {
-        // moved by drag/keyboard
+      if (!e.hard) {
         this.props.onMapBoundsChange(map.getBounds());
+      }
+      if (this.marker) {
         updateMarkerPosition(this.state.clickCoordinates, this);
       }
     });
     map.on("zoomend", e => {
-      if (e.hard) {
-        // moved by bounds
-      } else {
-        // moved by drag/keyboard
+      if (!e.hard) {
         this.props.onMapBoundsChange(map.getBounds());
-        if (this.marker) {
-          updateMarkerPosition(this.marker._icon._leaflet_pos, this);
-        }
+      }
+      if (this.marker) {
+        updateMarkerPosition(this.marker._icon._leaflet_pos, this);
       }
     });
     map.on("resize", e => {
-      if (e.hard) {
-        // moved by bounds
-      } else {
-        // moved by drag/keyboard
+      if (!e.hard) {
         this.props.onMapBoundsChange(map.getBounds());
-        if (this.marker) {
-          updateMarkerPosition(this.marker._icon._leaflet_pos, this);
-        }
+      }
+      if (this.marker) {
+        updateMarkerPosition(this.marker._icon._leaflet_pos, this);
       }
     });
     map.setView(
       [this.props.latitude, this.props.longitude],
       this.props.zoom * 1.8
     );
-
     L.control.zoom({ position: "topright" }).addTo(map);
     L.DomUtil.addClass(map._container, "crosshair-cursor-enabled");
     this.map = map;

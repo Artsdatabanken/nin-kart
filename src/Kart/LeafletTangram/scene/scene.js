@@ -4,6 +4,8 @@ import { lagTerreng } from "./terreng";
 import draw from "./visualisering/";
 import sysconfig from "Funksjoner/config";
 
+// Opplyst refererer i koden til et lag som ved mouse hover i menyen lyser opp, og derav gjør de andre lagene gjemt.
+
 function lagAktiveLag(aktive, viserKatalog, opplyst, config) {
   Object.keys(aktive).forEach(kode =>
     lagEttLag(aktive[kode], opplyst, viserKatalog, config)
