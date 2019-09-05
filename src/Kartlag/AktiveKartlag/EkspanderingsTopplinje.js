@@ -46,7 +46,6 @@ const EkspanderingsTopplinje = ({
           onClick={e => {
             if (!erAktivtLag) {
               onUpdateLayerProp(kode, "erSynlig", !erSynlig);
-              e.stopPropagation();
             } else {
               handleShowCurrent(!show_current);
             }
