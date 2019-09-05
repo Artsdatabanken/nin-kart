@@ -28,7 +28,7 @@ function lagStyle(format, drawArgs) {
   const { opplystKode, barn } = drawArgs;
   let [filterMin, filterMax] = normaliserFilter(format);
   const visning = drawArgs.format.aktivVisning;
-  const palette = lagGradientrampe(drawArgs, opplystKode, visning || "diskret");
+  const palette = lagGradientrampe(barn, opplystKode, visning || "diskret");
   const gradient = {
     base: "raster",
     blend: "multiply",
