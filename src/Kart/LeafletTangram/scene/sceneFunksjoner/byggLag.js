@@ -1,4 +1,4 @@
-import opprettEttLag from "./opprettEttLag";
+import lagTegner from "./lagTegner";
 import { lagTerreng } from "../terreng";
 
 export default function byggLag(lag, opplyst, config) {
@@ -22,7 +22,7 @@ export default function byggLag(lag, opplyst, config) {
     drawArgs.barn = lag.barn;
     drawArgs.opplystBarn = lag.barn.find(x => x.kode === opplyst.kode);
   }
-  opprettEttLag(drawArgs, config);
+  lagTegner(drawArgs, config);
   if (viz.kanHaTerreng) {
     lagTerreng(lag.terreng, opplyst.kode, config);
   }

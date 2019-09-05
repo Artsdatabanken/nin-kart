@@ -1,10 +1,6 @@
-import sladd from "./sladd";
 import draw from "../visualisering/";
 
-export default function opprettEttLag(drawArgs, config) {
-  // MDIR-sladden
-  if (sladd(drawArgs.url)) return {};
-
+export default function lagTegner(drawArgs, config) {
   const renderer = draw[drawArgs.aktivtFormat];
   const format = drawArgs.format[drawArgs.aktivtFormat];
   drawArgs.format = format;
