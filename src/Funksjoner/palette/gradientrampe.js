@@ -2,8 +2,7 @@ import tinycolor from "tinycolor2";
 import colorArray2Image from "./colorArray2Image";
 
 function lagGradientRampe(barna, opplystKode, mode) {
-  if (!barna || barna.length <= 0)
-    return lagGradientRampeUtenBarn(opplystKode, mode);
+  if (!barna) return lagGradientRampeUtenBarn(opplystKode, mode);
   //let opplystLevel = -1;
   let steps = [];
   barna.forEach(b => {
