@@ -36,6 +36,8 @@ function opprettAktivtLag(lag, opplyst, config, viserKatalog) {
     drawArgs.barn = lag.barn;
     drawArgs.opplystBarn = lag.barn.find(x => x.kode === opplyst.kode);
   }
+  if (!drawArgs.barn || drawArgs.barn.length <= 0) drawArgs.barn = [lag]; // For lønoder bruk seg selv som elementet
+
   opprettEttLag(drawArgs, config);
   if (viz.kanHaTerreng) {
     lagTerreng(lag.terreng, opplyst.kode, config);

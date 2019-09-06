@@ -1,4 +1,5 @@
 import React from "react";
+import språk from "Funksjoner/språk";
 
 const LokasjonBadge = ({ onNavigate, value, index }) => {
   const imgurl = "https://data.artsdatabanken.no/" + value.bilde;
@@ -27,7 +28,7 @@ const LokasjonBadge = ({ onNavigate, value, index }) => {
           }}
         />
         <br />
-        <b>{value.tittel.nb}</b>
+        <b>{språk(value.tittel)}</b>
         <br />
         <span>{value.kode}</span>
         <span>{value.aktiv && "Finnes i området "}</span>

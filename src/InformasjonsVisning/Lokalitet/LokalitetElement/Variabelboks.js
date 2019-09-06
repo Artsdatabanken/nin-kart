@@ -1,5 +1,6 @@
 import React from "react";
 import LokasjonBadge from "./LokasjonBadge";
+import språk from "Funksjoner/språk";
 
 function roundToTwo(num) {
   return +(Math.round(num + "e+2") + "e-2");
@@ -28,7 +29,7 @@ const Variabelboks = ({ onNavigate, miljøvariabel }) => {
       >
         <div className="not_image_and_link">
           <h2>
-            {miljøvariabel.tittel && miljøvariabel.tittel.nb} - {kode}
+            {miljøvariabel.tittel && språk(miljøvariabel.tittel)} - {kode}
           </h2>
           <p>{miljøvariabel.ingress}</p>
 

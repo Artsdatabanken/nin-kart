@@ -1,4 +1,5 @@
 import prettyprint from "Funksjoner/prettyprint";
+import språk from "Funksjoner/språk";
 
 const prosent = (over, under) => ((100 * over) / under).toFixed(1) + " %";
 
@@ -9,10 +10,9 @@ export default function tekst(props) {
     case "LA":
       const topp = overordnet[overordnet.length - 3];
       const utgjør = topp
-        ? `Dette utgjør ${prosent(
-            areal,
-            topp.areal
-          )} av kartlagte ${topp.tittel.nb.toLowerCase()}.`
+        ? `Dette utgjør ${prosent(areal, topp.areal)} av kartlagte ${språk(
+            topp.tittel
+          ).toLowerCase()}.`
         : "";
       return `Det er kartlagt ${prettyprint.prettyPrintAreal(
         areal
