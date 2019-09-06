@@ -21,7 +21,7 @@ function lagStyle(format, drawArgs) {
   let newPalette = makePalette(opplyst, drawArgs);
   const gradient = {
     base: "raster",
-    blend: "normal",
+    blend: "translucent",
     animated: false,
     shaders: {
       uniforms: {
@@ -47,7 +47,7 @@ function lagStyle(format, drawArgs) {
 
 function finnBarn(kode, barn) {
   for (var barnet of barn) if (kode.startsWith(barnet.kode)) return barnet;
-  return { kode: kode, farge: "#fff" };
+  return { kode: kode, farge: "#fff0" };
 }
 
 function makePalette(opplyst, drawArgs) {

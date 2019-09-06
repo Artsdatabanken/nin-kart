@@ -12,7 +12,7 @@ function colorArray2Image(colorarray) {
     console.log(color);
     context.fillStyle = color;
     if (colorarray[i] === "#fff") {
-      context.fillStyle = "hotpink";
+      context.fillStyle = "#fff0";
     }
     context.fillRect(i, 0, 1, canvas.height);
   }
