@@ -34,6 +34,7 @@ Navigation
           onMouseLeave={onMouseLeave}
           opplyst={opplyst}
           onUpdateMetaProp={onUpdateMetaProp}
+          isDatakilde={meta.tittel.nb}
         />
       </>
 

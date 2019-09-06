@@ -14,10 +14,16 @@ class KartlagBarnElement extends React.Component {
       visKode,
       onNavigate,
       onMouseEnter,
-      onMouseLeave
+      onMouseLeave,
+      isDatakilde
     } = this.props;
 
-    const new_url = "https://data.artsdatabanken.no/" + url + "/foto_408.jpg";
+    let new_url = "https://data.artsdatabanken.no/" + url + "/foto_408.jpg";
+    if (isDatakilde === "Datakilde") {
+      //new_url = "https://data.artsdatabanken.no/" + url +  "/logo_24.png";
+      new_url = "https://data.artsdatabanken.no/" + url + "/logo_408.png";
+    }
+
     var image = new Image();
     image.src = new_url;
     let imgheight = image.height;
