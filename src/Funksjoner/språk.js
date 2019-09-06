@@ -14,11 +14,19 @@ export default function språk(meta) {
   if (keys.length === 1) return meta[keys[0]];
 
   //if (meta.la) return `${meta.nb} (${meta.la})`;
+  if (spraak === "nb") return `${meta.nb}`;
   if (spraak === "la"){    
     if (!meta.la){
       return `${meta.nb}`;
     } else {
     return `${meta.la}`;
+    }
+  }
+  if (spraak === "nn"){    
+    if (!meta.nn){
+      return `${meta.nb}`;
+    } else {
+    return `${meta.nn}`;
     }
   }
   if (spraak === "en") {    
@@ -28,7 +36,7 @@ export default function språk(meta) {
     return `${meta.en}`;
     }
   }
-  if (spraak === "nb") return `${meta.nb}`;
+  
     
   return meta[keys[0]];
 }

@@ -12,11 +12,14 @@ const Innstillinger = ({
   handleSpraak
 }) => {
   const [expanded, setExpanded] = useState(false);
+  const [open, setOpen] = useState(false);
   let spraaknavn = "";
   if (spraak === "en") {
     spraaknavn = "Engelsk";
   } else if (spraak === "nb") {
     spraaknavn = "Norsk bokmål";
+  } else if (spraak === "nn") {
+    spraaknavn = "Nynorsk";
   } else if (spraak === "la") {
     spraaknavn = "Latin";
   }
@@ -40,16 +43,42 @@ const Innstillinger = ({
         toggle
         checked={visKoder}
       />
-      <Menyelement
-        onClick={e => {
-          e.preventDefault();
-          e.stopPropagation();
-          onUpdateSetting("sorterPåKode", !sorterPåKode);
-        }}
-        icon={<SortByAlpha />}
-        primary="Sorter lister etter"
-        secondary={sorterPåKode ? " koder" : " navn"}
-      />
+
+      <div className="spraakvelger">
+        <SortByAlpha />
+        <span>Sorter lister etter</span>
+        <div className="spraakalternativer">
+          <button
+            onClick={e => {
+              setOpen(!open);
+            }}
+          >
+            {sorterPåKode ? " koder" : " navn"}
+            {open === true ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
+          </button>
+          {open === true && (
+            <>
+              <button
+                onClick={e => {
+                  onUpdateSetting("sorterPåKode", true);
+                  setOpen(!open);
+                }}
+              >
+                Koder
+              </button>
+              <button
+                onClick={e => {
+                  onUpdateSetting("sorterPåKode", false);
+                  setOpen(!open);
+                }}
+              >
+                Navn
+              </button>
+            </>
+          )}
+        </div>
+      </div>
+
       <div className="spraakvelger">
         <span>Aa</span>
         <span>Velg språk</span>
@@ -80,6 +109,14 @@ const Innstillinger = ({
                 }}
               >
                 Norsk bokmål
+              </button>
+              <button
+                onClick={e => {
+                  handleSpraak("nn");
+                  setExpanded(!expanded);
+                }}
+              >
+                Nynorsk
               </button>
               <button
                 onClick={e => {
