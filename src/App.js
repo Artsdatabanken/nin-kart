@@ -213,7 +213,8 @@ class App extends React.Component {
       fetchMeta(path, this);
     }
     document.title =
-      (this.state.meta && språk(this.state.meta.tittel)) || "Natur i Norge";
+      (this.state.meta && språk(this.state.meta.tittel) + " | NiN-kart") ||
+      "Natur i Norge";
   }
 
   async downloadMeta(url) {
