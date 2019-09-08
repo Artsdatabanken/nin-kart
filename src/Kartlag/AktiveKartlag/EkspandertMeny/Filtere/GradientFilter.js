@@ -4,16 +4,10 @@ import SliderElement from "GjenbruksElement/SliderElement";
 import { SwapVert } from "@material-ui/icons/";
 const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
   /*
-    Legg til: 
-
     Gi brukeren mulighet til å velge maks og minimum på skalaen uavhengig av om det er en
     kontinuelig eller typeinndelt visning. 
-    * For gradientvisning - behold som før.
-    * For typeinndelt, filtrer vekk irrelevante typer.
+  */
 
-    */
-  //const current = kartlag.kart.format; // current list of layers
-  //const gradient = Object.keys(current)[0];
   let gradient;
   let filterMin = 0;
   let filterMax = 100;
@@ -30,7 +24,7 @@ const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
 
   const step = (rangeMax - rangeMin) / 1000;
   const decimals = Math.trunc(Math.log10(10000 / rangeMax));
-  const spread = 0.015;
+  //const spread = 0.015;
   const måleenhet = "";
 
   function handleUpdateFilter(kode, key, value) {
@@ -54,12 +48,9 @@ const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
               icon={<SwapVert />}
               onChange={v => {
                 handleUpdateFilter(kode, "filterMin", v);
-                if (filterMax <= filterMin + spread)
-                  onUpdateLayerProp(
-                    kode,
-                    "filterMax",
-                    Math.min(1.0, filterMin + spread)
-                  );
+                if (v > filterMax) {
+                  handleUpdateFilter(kode, "filterMax", v);
+                }
               }}
             />
 
@@ -74,12 +65,9 @@ const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
               icon={<SwapVert />}
               onChange={v => {
                 handleUpdateFilter(kode, "filterMax", v);
-                if (filterMax <= filterMin + spread)
-                  handleUpdateFilter(
-                    kode,
-                    "filterMin",
-                    Math.max(0.0, filterMax - spread)
-                  );
+                if (v <= filterMin) {
+                  handleUpdateFilter(kode, "filterMin", v);
+                }
               }}
             />
           </div>
@@ -89,12 +77,3 @@ const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
   );
 };
 export default GradientFilter;
-
-/*
-  navnPåUndernivå(kode) {
-    const nivåer = typesystem.hentNivaa(kode + "-1");
-    if (nivåer.length <= 0) return "underelementer";
-    const nivå = nivåer[0];
-    return nivå.endsWith("e") ? nivå + "r" : nivå;
-  }
- */
