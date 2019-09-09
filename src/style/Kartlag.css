@@ -94,6 +94,10 @@ Even tho we don't a of now support IE X)
   padding-right: 20px;
 }
 
+.kartlag div {
+  box-sizing: border-box;
+}
+
 @media only screen and (max-width: 768px) {
   .kartlag_content_open {
     position: relative;
@@ -172,10 +176,6 @@ Even tho we don't a of now support IE X)
   border-bottom: 1px solid #e4f0f2;
 }
 
-.kartlag_sub_bg {
-  background: #edf4f5;
-}
-
 .kartlag_submeny button {
   font-size: 12pt;
   width: calc(50% - 7.5px);
@@ -200,8 +200,14 @@ Even tho we don't a of now support IE X)
   height: 16pt;
 }
 
-.kartlag .slider_setting,
 .kartlag_label_liste label {
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 20px;
+  margin: 0px;
+}
+
+.kartlag .slider_setting {
   display: block;
   padding: 20px;
   padding-bottom: 10px;
@@ -270,4 +276,16 @@ Even tho we don't a of now support IE X)
 .kilde_box button:hover {
   background: #81b2bb;
   color: white;
+}
+
+.kartlag_sub_bg {
+  background: #edf4f5;
+  padding: 10px;
+}
+
+.sidebar .submeny_container {
+  width: 100%;
+  background: white;
+  padding: 20px;
+  margin-bottom: 5px;
 }
