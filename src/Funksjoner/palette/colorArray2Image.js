@@ -8,16 +8,15 @@ function colorArray2Image(colorarray) {
   canvas.height = 1;
 
   for (let i = 0; i < canvas.width; i++) {
-    const color = colorarray[i] || "hotpink";
+    const color = colorarray[i] || "#fff";
     console.log(color);
     context.fillStyle = color;
-    if (colorarray[i] === "#fff") {
-      context.fillStyle = "#fff0";
+    if (colorarray[i] === "#ffffff") {
+      context.fillStyle = "#ffffff0";
     }
     context.fillRect(i, 0, 1, canvas.height);
   }
-  return canvas.toDataURL("image/png");
-  //  return context.getImageData(0, 0, canvas.width, canvas.height)
+  return canvas.toDataURL();
 }
 
 export default colorArray2Image;
