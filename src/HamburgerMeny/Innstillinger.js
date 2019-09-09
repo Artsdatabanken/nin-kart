@@ -34,18 +34,16 @@ const Innstillinger = ({
           e.stopPropagation();
           onUpdateSetting("visKoder", !visKoder);
         }}
-        icon={
-          <Typography>
-            <span>NA</span>
-          </Typography>
-        }
+        icon={<span>NA</span>}
         primary="Vis koder i tillegg til navn"
         toggle
         checked={visKoder}
       />
 
       <div className="spraakvelger">
-        <SortByAlpha />
+        <span>
+          <SortByAlpha />
+        </span>
         <span>Sorter lister etter</span>
         <div className="spraakalternativer">
           <button
