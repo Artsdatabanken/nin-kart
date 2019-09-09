@@ -15,6 +15,7 @@ const HistorikkListeElement = ({
         <span className="kartlag_list_icon_set">
           <button
             className="invisible_icon_button add_icon"
+            title={"Legg til kartlag"}
             onClick={event => {
               activateLayerFromHistory(node);
             }}
