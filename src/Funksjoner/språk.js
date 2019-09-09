@@ -13,6 +13,8 @@ export default function språk(meta) {
     return `${meta.la}`;
   }else if (spraak === "en" && meta.en) {    
     return `${meta.en}`;  
+  }else if (spraak === "nn" && meta.nn) {    
+    return `${meta.nn}`;  
   }else if(meta.nb){
     return `${meta.nb}`;
   }    

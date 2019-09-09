@@ -466,6 +466,7 @@ div {
   position: relative;
   border: 1px solid #eaeaea;
   border-top: 0px;
+  z-index: 30;
 }
 
 .spraakalternativer button:hover,
@@ -478,6 +479,7 @@ div {
   border: 1px solid #b7d3d8;
   padding: 5px;
   padding-right: calc(24px + 5px);
+  z-index: 20;
 }
 
 .spraakalternativer svg {

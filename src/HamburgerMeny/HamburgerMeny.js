@@ -38,7 +38,7 @@ class HamburgerMeny extends Component {
             onOpen={context.onToggleHovedmeny}
             open={context.visHovedmeny}
           >
-            <List>
+            <List className="hamburger_sidebar">
               <ListItem>
                 <ListItemText primary="Natur i Norge" />
                 <ListItemSecondaryAction>
