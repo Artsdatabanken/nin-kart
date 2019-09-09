@@ -22,7 +22,7 @@ const KatalogHeader = ({ meta }) => {
       {context => (
         <div className="">
           <h1 className="sidebar_title">{tittel}</h1>
-          <NatursystemAdvarsel kode={kode} />
+          <NatursystemAdvarsel vis={meta.kart.sladd} />
 
           <div className="katlog_header_images_container">
             <KatalogHeaderImage meta={meta} />
