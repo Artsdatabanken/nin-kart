@@ -6,6 +6,7 @@ import Tangram from "tangram";
 import { createScene, updateScene } from "./scene";
 import backend from "Funksjoner/backend";
 import { Landscape } from "@material-ui/icons";
+import språk from "Funksjoner/språk";
 import "style/Kart.css";
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
 // See here: https://github.com/PaulLeCam/react-leaflet/issues/255
@@ -22,13 +23,15 @@ function roundToX(num, x) {
 }
 
 function updateMarkerPosition(clickCoordinates, parent) {
-  let offset = parent.marker._mapToAdd._mapPane._leaflet_pos;
+  if (parent.marker) {
+    let offset = parent.marker._mapToAdd._mapPane._leaflet_pos;
 
-  parent.setState({
-    clickCoordinates: clickCoordinates, // origin
-    windowXpos: clickCoordinates.x + offset.x,
-    windowYpos: clickCoordinates.y - 56 + offset.y
-  });
+    parent.setState({
+      clickCoordinates: clickCoordinates, // origin
+      windowXpos: clickCoordinates.x + offset.x,
+      windowYpos: clickCoordinates.y - 56 + offset.y
+    });
+  }
 }
 
 class LeafletTangram extends React.Component {
@@ -52,7 +55,6 @@ class LeafletTangram extends React.Component {
 
     let map = L.map(this.mapEl, options);
     map.on("drag", e => {
-      //console.log(e.latlng);
       if (e.hard) {
         // moved by bounds
       } else {
@@ -94,9 +96,7 @@ class LeafletTangram extends React.Component {
     let def = {
       scene: createScene(this.props),
       events: {
-        hover: function(selection) {
-          // console.log('Hover!', selection)
-        },
+        hover: function(selection) {},
         click: this.handleClick,
         drag: this.handleDrag
       },
@@ -145,7 +145,6 @@ class LeafletTangram extends React.Component {
 
   handleClick = e => {
     const latlng = e.leaflet_event.latlng;
-    //console.log(e.leaflet_event)
     this.removeMarker();
     this.marker = L.marker([latlng.lat, latlng.lng], { icon: this.icon }).addTo(
       this.map
@@ -223,19 +222,20 @@ class LeafletTangram extends React.Component {
             {this.state.data ? (
               <>
                 {this.state.data.kommune && (
-                  <b>{this.state.data.kommune.tittel.nb}</b>
+                  <b>{språk(this.state.data.kommune.tittel)}</b>
                 )}
                 {this.state.data.kommune && this.state.data.fylke && (
                   <b>{", "} </b>
                 )}
                 {this.state.data.fylke && (
                   <b>
-                    {this.state.data.fylke.tittel.nb} <br />
+                    {språk(this.state.data.fylke.tittel)} <br />
                   </b>
                 )}
                 {this.state.data.landskap && (
                   <>
-                    <Landscape /> {this.state.data.landskap.tittel.nb} <br />
+                    <Landscape /> {språk(this.state.data.landskap.tittel)}{" "}
+                    <br />
                   </>
                 )}
               </>

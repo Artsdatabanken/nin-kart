@@ -21,7 +21,8 @@ class Navigeringsliste extends React.Component {
       onUpdateMetaProp,
       onMouseEnter,
       onMouseLeave,
-      onNavigate
+      onNavigate,
+      isDatakilde
     } = this.props;
     // console.log("kodelist", parentkode, opplyst);
 
@@ -59,6 +60,7 @@ class Navigeringsliste extends React.Component {
                     opplyst={opplyst}
                     value={metabarnet.value}
                     onChange={v => onUpdateMetaProp(kode, "value", [...v])}
+                    isDatakilde={isDatakilde}
                   />
                 );
               }

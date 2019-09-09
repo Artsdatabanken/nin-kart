@@ -1,5 +1,4 @@
 import Menyelement from "./Menyelement";
-import { Typography } from "@material-ui/core";
 import { SortByAlpha } from "@material-ui/icons";
 import React, { useState } from "react";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@material-ui/icons";
@@ -48,6 +47,7 @@ const Innstillinger = ({
         <div className="spraakalternativer">
           <button
             onClick={e => {
+              setExpanded(false);
               setOpen(!open);
             }}
           >
@@ -84,6 +84,7 @@ const Innstillinger = ({
         <div className="spraakalternativer">
           <button
             onClick={e => {
+              setOpen(false);
               setExpanded(!expanded);
             }}
           >

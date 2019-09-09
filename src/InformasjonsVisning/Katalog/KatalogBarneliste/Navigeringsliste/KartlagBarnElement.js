@@ -14,10 +14,19 @@ class KartlagBarnElement extends React.Component {
       visKode,
       onNavigate,
       onMouseEnter,
-      onMouseLeave
+      onMouseLeave,
+      isDatakilde
     } = this.props;
 
-    const new_url = "https://data.artsdatabanken.no/" + url + "/foto_408.jpg";
+    let new_url = "https://data.artsdatabanken.no/" + url + "/foto_408.jpg";
+    if (isDatakilde === "Datakilde") {
+      //new_url = "https://data.artsdatabanken.no/" + url +  "/logo_24.png";
+      new_url = "https://data.artsdatabanken.no/" + url + "/logo_408.png";
+    }
+
+    var image = new Image();
+    image.src = new_url;
+    let imgheight = image.height;
 
     return (
       <button
@@ -27,15 +36,22 @@ class KartlagBarnElement extends React.Component {
         onMouseEnter={() => onMouseEnter && onMouseEnter({ kode, url })}
         onMouseLeave={() => onMouseLeave && onMouseLeave()}
       >
-        <div
-          className="subelement_decorative_image"
-          style={{
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundImage: "url(" + new_url + ")"
-          }}
-        />
+        {imgheight === 0 ? (
+          <div className="subelement_decorative_image">
+            <span>{meta.kode}</span>
+          </div>
+        ) : (
+          <div
+            className="subelement_decorative_image"
+            style={{
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              backgroundImage: "url(" + new_url + ")"
+            }}
+          />
+        )}
+
         <div className="subelement_text nav_text">
           <span className="nav_title">{språk(meta.tittel)}</span>
           <span className="nav_2ndtitle">{getSecondary(meta)}</span>
