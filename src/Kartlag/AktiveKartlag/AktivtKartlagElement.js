@@ -18,10 +18,6 @@ const AktivtKartlagElement = ({
 }) => {
   let expand_state = is_current_object || false;
   const [expanded, setExpanded] = useState(expand_state);
-  const [theme, setTheme] = useState(false);
-  function closeAll() {
-    setTheme(false);
-  }
   if (!kartlag) {
     return null;
   }
@@ -38,7 +34,6 @@ const AktivtKartlagElement = ({
             handleShowCurrent={handleShowCurrent}
             kartlag={kartlag}
             expanded={expanded}
-            closeAll={closeAll}
             setExpanded={setExpanded}
             context={context}
             onUpdateLayerProp={onUpdateLayerProp}
@@ -49,10 +44,7 @@ const AktivtKartlagElement = ({
             <>
               <EkspandertUnderMeny
                 kode={kode}
-                closeAll={closeAll}
                 context={context}
-                theme={theme}
-                setTheme={setTheme}
                 bbox={bbox}
                 onFitBounds={onFitBounds}
                 kartlag={kartlag}
@@ -66,7 +58,6 @@ const AktivtKartlagElement = ({
 
               <EkspandertInnhold
                 kode={kode}
-                theme={theme}
                 aktivtFormat={aktivtFormat}
                 onUpdateLayerProp={onUpdateLayerProp}
                 kartlag={kartlag}

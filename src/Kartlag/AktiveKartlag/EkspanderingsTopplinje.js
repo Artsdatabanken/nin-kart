@@ -12,7 +12,6 @@ const EkspanderingsTopplinje = ({
   onUpdateLayerProp,
   expanded,
   kartlag,
-  closeAll,
   erAktivtLag,
   setExpanded,
   show_current,
@@ -75,7 +74,6 @@ const EkspanderingsTopplinje = ({
           className="invisible_icon_button"
           onClick={() => {
             setExpanded(!expanded);
-            closeAll();
           }}
         >
           {expanded ? <KeyboardArrowUp /> : <KeyboardArrowDown />}{" "}

@@ -2,11 +2,8 @@ import React from "react";
 import { Close, OpenInNew, ColorLens, Add } from "@material-ui/icons";
 
 const EkspandertUnderMeny = ({
-  closeAll,
   kode,
   onRemoveSelectedLayer,
-  theme,
-  setTheme,
   onFitBounds,
   navhist,
   bbox,
@@ -15,18 +12,6 @@ const EkspandertUnderMeny = ({
 }) => {
   return (
     <div className="kartlag_submeny">
-      {kode === "bakgrunnskart" && (
-        <button
-          className="invisible_icon_button"
-          onClick={() => {
-            closeAll();
-            setTheme(!theme);
-          }}
-        >
-          Tema <ColorLens />
-        </button>
-      )}
-
       {kode !== "bakgrunnskart" && (
         <>
           <button
@@ -42,7 +27,6 @@ const EkspandertUnderMeny = ({
             <button
               className="invisible_icon_button"
               onClick={() => {
-                closeAll();
                 activateLayerFromHistory(navhist);
               }}
             >

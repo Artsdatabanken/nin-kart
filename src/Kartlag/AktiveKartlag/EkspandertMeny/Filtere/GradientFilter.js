@@ -35,7 +35,7 @@ const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
     <>
       {kartlag.kart.format.raster_gradient && (
         <>
-          <h3>Gradient Filter:</h3>
+          <h2>Gradient Filter:</h2>
           <div className="">
             <SliderElement
               value={filterMin}

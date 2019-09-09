@@ -8,7 +8,6 @@ import FargeVelger from "./FellesElementer/FargeVelger";
 
 const EkspandertInnhold = ({
   kode,
-  theme,
   aktivtFormat,
   onUpdateLayerProp,
   kartlag
@@ -17,7 +16,7 @@ const EkspandertInnhold = ({
   const currenctActiveFormatNode = aktivtFormat.format[current];
   return (
     <div>
-      {kode === "bakgrunnskart" && theme && (
+      {kode === "bakgrunnskart" && (
         <TemaMeny
           onUpdateLayerProp={onUpdateLayerProp}
           aktivtFormat={aktivtFormat}
@@ -45,7 +44,7 @@ const EkspandertInnhold = ({
             )}
           </>
         ) : (
-          <>
+          <div className="kartlag_sub_bg">
             <>
               <GradientFilter
                 kartlag={kartlag}
@@ -67,7 +66,7 @@ const EkspandertInnhold = ({
               onUpdateLayerProp={onUpdateLayerProp}
               skjul_meny_tittel={true}
             />
-          </>
+          </div>
         )}
       </>
     </div>

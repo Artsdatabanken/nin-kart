@@ -14,7 +14,7 @@ function lagGradientRampe(barna, opplystKode, mode) {
     if (max < 255) max = Math.max(0, max - 1);
     //if (key === opplystKode) opplystLevel = [min, max];
     const erSynlig = b.erSynlig !== false;
-    const farge = erSynlig ? b.farge : "#fff";
+    const farge = erSynlig ? b.farge : "#fff0";
     if (min <= 1 || mode === "diskret")
       steps.push({ level: min, color: farge });
     steps.push({ level: max, color: farge });
