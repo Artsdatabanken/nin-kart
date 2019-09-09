@@ -23,8 +23,8 @@ const KatalogFane = ({
 }) => {
   /*  */
   if (!meta) return null;
+  //console.log(meta.tittel.nb)
 
-  //console.log(meta);
   return (
     <>
       <div className="main_body_wrapper">
@@ -48,6 +48,7 @@ const KatalogFane = ({
           opplyst={opplyst}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
+          isDatakilde={meta.tittel.nb}
         />
         {has_error && (
           <Snackbar
