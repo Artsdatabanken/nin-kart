@@ -28,7 +28,7 @@ class KartlagBarnElement extends React.Component {
 
     if (new_url.indexOf("Administrativ_grense") !== -1) {
       new_url = "https://data.artsdatabanken.no/" + url + "/logo_408.png";
-      backgroundSize = "contain";
+      backgroundSize = "60%";
     } else {
       backgroundSize = "cover";
     }

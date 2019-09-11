@@ -9,13 +9,13 @@ export default function språk(meta) {
   if (keys.length === 1) return meta[keys[0]];
   if (spraak === "nb") {
     return `${meta.nb}`;
-  }else if (spraak === "la" && meta.la){    
+  } else if (spraak === "la" && meta.la){    
     return `${meta.la}`;
-  }else if (spraak === "en" && meta.en) {    
+  } else if (spraak === "en" && meta.en) {    
     return `${meta.en}`;  
-  }else if (spraak === "nn" && meta.nn) {    
+  } else if (spraak === "nn" && meta.nn) {    
     return `${meta.nn}`;  
-  }else if(meta.nb){
+  } else if(meta.nb){
     return `${meta.nb}`;
   }    
   return meta[keys[0]];
