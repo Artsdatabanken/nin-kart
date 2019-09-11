@@ -5,7 +5,7 @@ import TemaMeny from "./Visualisering/TemaMeny/TemaMeny";
 import GradientEllerTypeinndelt from "./Visualisering/VisualiseringsType/GradientEllerTypeinndelt";
 import GradientFilter from "./Filtere/GradientFilter.js";
 import FargeVelger from "./FellesElementer/FargeVelger";
-import SliderElement from "GjenbruksElement/SliderElement";
+import { Slider } from "@material-ui/lab";
 
 const EkspandertInnhold = ({
   kode,
@@ -73,12 +73,12 @@ const EkspandertInnhold = ({
               {kartlag.blendmode === "translucent" && (
                 <div className="submeny_container">
                   Gjennomsiktighet i %
-                  <SliderElement
+                  <Slider
+                    className="slider_element"
                     value={kartlag.opacity || 1}
-                    min={0}
+                    min={0.01}
                     max={1}
-                    step={0.1}
-                    onChange={value =>
+                    onChange={(e, value) =>
                       onUpdateLayerProp(kartlag.kode, "opacity", value)
                     }
                   />
