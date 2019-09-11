@@ -46,20 +46,35 @@ const EkspandertInnhold = ({
         ) : (
           <div className="kartlag_sub_bg">
             <>
-              <GradientFilter
-                kartlag={kartlag}
-                onUpdateLayerProp={onUpdateLayerProp}
-                kode={kode}
-              />
-
               <GradientEllerTypeinndelt
                 onUpdateLayerProp={onUpdateLayerProp}
                 where={kartlag.kode}
                 format={kartlag.kart.format}
                 aktvtKartlagFormat={kartlag.kart.aktivtFormat}
               />
-            </>
+              <div className="submeny_container">
+                <button
+                  onClick={e => {
+                    onUpdateLayerProp(kartlag.kode, "blendmode", "multiply");
+                  }}
+                >
+                  Multiply
+                </button>
+                <button
+                  onClick={e => {
+                    onUpdateLayerProp(kartlag.kode, "blendmode", "translucent");
+                  }}
+                >
+                  translucent
+                </button>
+              </div>
 
+              <GradientFilter
+                kartlag={kartlag}
+                onUpdateLayerProp={onUpdateLayerProp}
+                kode={kode}
+              />
+            </>
             <LegendeElementer
               kartlag={kartlag}
               aktivtFormat={aktivtFormat}

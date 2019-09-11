@@ -17,11 +17,11 @@ function drawAll(drawArgs) {
 }
 
 function lagStyle(format, drawArgs) {
-  const { opplyst } = drawArgs;
+  const { opplyst, blendmode } = drawArgs;
   let newPalette = makePalette(opplyst, drawArgs);
   const gradient = {
     base: "raster",
-    blend: "translucent",
+    blend: blendmode,
     animated: false,
     shaders: {
       uniforms: {
@@ -45,28 +45,32 @@ function lagStyle(format, drawArgs) {
   return { name: drawArgs.kode, value: gradient };
 }
 
-function finnBarn(kode, barn) {
+function finnBarn(kode, barn, blank) {
   for (var barnet of barn) if (kode.startsWith(barnet.kode)) return barnet;
-  return { kode: kode, farge: "#fff0" };
+  return { kode: kode, farge: blank };
 }
 
 function makePalette(opplyst, drawArgs) {
   const barna = drawArgs.barn.length > 0 ? drawArgs.barn : [drawArgs];
   const hash = {};
+  let blank = "#FFFFFF";
+  if (drawArgs.blendmode === "translucent") {
+    blank = "#fff0";
+    console.log("blanking up");
+  }
   for (var b of barna) hash[b.kode] = b.farge;
   const colors = [];
   Object.keys(landskapIndexTemp).forEach(kode => {
-    const barnet = finnBarn(kode, barna);
-
+    const barnet = finnBarn(kode, barna, blank);
     if (barnet.erSynlig === false) {
-      colors.push("#fff0");
+      colors.push(blank);
     } else if (barnet.kode === opplyst.kode) {
       colors.push("#f88");
     } else {
       colors.push(barnet.farge);
     }
   });
-  return colorArray2Image(colors);
+  return colorArray2Image(colors, drawArgs.blendmode);
 }
 
 function lagSource({ url, zoom }, { bbox }) {

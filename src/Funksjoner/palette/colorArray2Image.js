@@ -1,4 +1,4 @@
-function colorArray2Image(colorarray) {
+function colorArray2Image(colorarray, blendmode) {
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d");
   canvas.width = Math.max(
@@ -9,10 +9,12 @@ function colorArray2Image(colorarray) {
 
   for (let i = 0; i < canvas.width; i++) {
     const color = colorarray[i] || "#fff";
-    console.log(color);
     context.fillStyle = color;
-    if (colorarray[i] === "#ffffff") {
-      context.fillStyle = "#ffffff0";
+    if (blendmode && blendmode !== "multiply") {
+      if (colorarray[i] === "#ffffff") {
+        context.fillStyle = "#ffffff0";
+        console.log("hfhj");
+      }
     }
     context.fillRect(i, 0, 1, canvas.height);
   }
