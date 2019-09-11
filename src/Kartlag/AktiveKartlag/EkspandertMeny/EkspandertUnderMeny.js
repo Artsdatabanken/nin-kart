@@ -1,5 +1,5 @@
 import React from "react";
-import { Close, OpenInNew, ColorLens, Add } from "@material-ui/icons";
+import { Close, OpenInNew, Add } from "@material-ui/icons";
 
 const EkspandertUnderMeny = ({
   kode,
