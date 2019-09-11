@@ -17,8 +17,19 @@ export default function fetchMeta(location, place) {
 
       return;
     }
+    filterUnreleased(data.kart);
     place.setState({ meta: data, opplystKode: "", opplyst: {} });
     updateHistory(place.state, place);
     place.handleShowCurrent("false");
   });
+}
+
+function filterUnreleased(kart) {
+  const visUpublisert = parseInt(localStorage.visUpublisert) || 0;
+  const kf = {};
+  Object.keys(kart.format).forEach(fkey => {
+    const format = kart.format[fkey];
+    if ((format.publish || 0) + visUpublisert >= 0) kf[fkey] = format;
+  });
+  kart.format = kf;
 }
