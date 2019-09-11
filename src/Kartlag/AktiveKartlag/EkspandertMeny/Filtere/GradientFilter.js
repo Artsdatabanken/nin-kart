@@ -1,5 +1,4 @@
 import React from "react";
-import SliderElement from "GjenbruksElement/SliderElement";
 import RangeSlider from "GjenbruksElement/RangeSlider";
 
 const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
@@ -24,7 +23,6 @@ const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
 
   const step = (rangeMax - rangeMin) / 1000;
   const decimals = Math.trunc(Math.log10(10000 / rangeMax));
-  //const spread = 0.015;
   const måleenhet = "";
 
   return (
@@ -35,6 +33,8 @@ const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
           <br />
           <div className="">
             <RangeSlider
+              minLabel={filterMin.toFixed(decimals) + " " + måleenhet}
+              maxLabel={filterMax.toFixed(decimals) + " " + måleenhet}
               min={rangeMin}
               max={rangeMax}
               step={step}

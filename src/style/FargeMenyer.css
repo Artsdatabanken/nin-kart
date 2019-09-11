@@ -55,6 +55,10 @@ Dumped from old version until i bother fixing it
   background: #4b909e;
 }
 
+.slider_element .maxfloat {
+  float: right;
+}
+
 .slider_setting {
   padding: 5px;
 }
