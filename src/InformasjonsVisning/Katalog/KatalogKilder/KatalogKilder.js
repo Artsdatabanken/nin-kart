@@ -15,7 +15,7 @@ const KatalogKilder = ({ onNavigate, meta, ...props }) => {
       {metadata.map(datakilde => {
         return (
           <button
-            key={datakilde}
+            key={datakilde.kode}
             className="kilde_knapp"
             onClick={() => onNavigate(datakilde.url)}
           >

@@ -15,6 +15,7 @@ const EkspandertInnhold = ({
 }) => {
   const current = aktivtFormat.aktivtFormat;
   const currenctActiveFormatNode = aktivtFormat.format[current];
+  const blendmode = kartlag.blendmode || "multiply";
   return (
     <div>
       {kode === "bakgrunnskart" && (
@@ -54,20 +55,24 @@ const EkspandertInnhold = ({
                 aktvtKartlagFormat={kartlag.kart.aktivtFormat}
               />
               <div className="submeny_container">
-                <button
-                  onClick={e => {
+                <input
+                  type="radio"
+                  name="blendmode"
+                  checked={blendmode === "multiply" && "checked"}
+                  onChange={e => {
                     onUpdateLayerProp(kartlag.kode, "blendmode", "multiply");
                   }}
-                >
-                  Multiply
-                </button>
-                <button
-                  onClick={e => {
+                />
+                Multiplisert farge
+                <input
+                  type="radio"
+                  name="blendmode"
+                  checked={blendmode === "translucent" && "checked"}
+                  onChange={e => {
                     onUpdateLayerProp(kartlag.kode, "blendmode", "translucent");
                   }}
-                >
-                  translucent
-                </button>
+                />
+                Helfarget
               </div>
 
               {kartlag.blendmode === "translucent" && (
