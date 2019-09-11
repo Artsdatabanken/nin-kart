@@ -123,7 +123,7 @@ class Kartlag extends React.Component {
                       </>
                     )}
                     <div className="sidebar_element">
-                      <h2>Mine Kartlag</h2>
+                      <h2>Mine kartlag</h2>
                       <ul className="kartlag_list">
                         {keys.reverse().map(fkode => {
                           const kartlag = koder[fkode];

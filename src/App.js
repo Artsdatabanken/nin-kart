@@ -16,12 +16,14 @@ import bakgrunnskarttema from "AppSettings/bakgrunnskarttema";
 import HamburgerMeny from "HamburgerMeny/HamburgerMeny";
 import MobileNavigation from "MobileNavigation/MobileNavigation";
 import ForsideInformasjon from "Forside/ForsideInformasjon";
+import språk from "Funksjoner/språk";
 import "style/Kart.css";
 import "style/App.css";
 import "style/Sidebar.css";
 import "style/GeografiskSidebar.css";
 import "style/Kartlag.css";
 import "style/FargeMenyer.css";
+export let exportableSpraak;
 
 class App extends React.Component {
   constructor(props) {
@@ -38,8 +40,10 @@ class App extends React.Component {
       meta: null,
       visKoder: false,
       navigation_history: [],
-      showCurrent: true
+      showCurrent: true,
+      spraak: "nb"
     };
+    exportableSpraak = this;
     this.props.history.listen(() => {
       // Åpne info ved navigering
       this.context.onNavigateToTab("informasjon");
@@ -152,7 +156,10 @@ class App extends React.Component {
                 </>
               )}
 
-              <HamburgerMeny />
+              <HamburgerMeny
+                spraak={this.state.spraak}
+                handleSpraak={this.handleSpraak}
+              />
             </>
           );
         }}
@@ -171,6 +178,9 @@ class App extends React.Component {
   };
   handleBoundsChange = bbox => {
     this.setState({ actualBounds: bbox });
+  };
+  handleSpraak = spraak => {
+    this.setState({ spraak: spraak });
   };
   handleClearSearchFor = () => this.setState({ searchFor: null });
   handleToggleLayer = () => {
@@ -203,7 +213,8 @@ class App extends React.Component {
       fetchMeta(path, this);
     }
     document.title =
-      (this.state.meta && this.state.meta.tittel.nb) || "Natur i Norge";
+      (this.state.meta && språk(this.state.meta.tittel) + " | NiN-kart") ||
+      "NiN-kart";
   }
 
   async downloadMeta(url) {

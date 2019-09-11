@@ -8,7 +8,8 @@ const Menyelement = ({
   icon,
   onClick,
   toggle,
-  checked
+  checked,
+  children
 }) => (
   <button onClick={onClick} className="hamburger_menu_item menu_item">
     <div className="button_items">
@@ -23,6 +24,7 @@ const Menyelement = ({
     </div>
 
     {toggle && <Switch checked={checked} />}
+    {children}
   </button>
 );
 export default Menyelement;
