@@ -29,6 +29,11 @@ function lagStyle(format, drawArgs) {
       blocks: {
         color: `
         float value = 1.-sampleRaster(0).r;
+        float zoomratio = smoothstep(8.,10.,(u_map_position.z)); 
+        value = mix(
+          value,
+          1.8-step(value,0.98),
+          zoomratio);
         vec4 transparent = vec4(1.);
         vec4 g = texture2D(palette, vec2(value, 0.5));
         color = mix(transparent, g, farge.a);
