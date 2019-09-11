@@ -56,7 +56,6 @@ function makePalette(opplyst, drawArgs) {
   let blank = "#FFFFFF";
   if (drawArgs.blendmode === "translucent") {
     blank = "#fff0";
-    console.log("blanking up");
   }
   for (var b of barna) hash[b.kode] = b.farge;
   const colors = [];
@@ -70,7 +69,7 @@ function makePalette(opplyst, drawArgs) {
       colors.push(barnet.farge);
     }
   });
-  return colorArray2Image(colors, drawArgs.blendmode);
+  return colorArray2Image(colors, drawArgs.blendmode, drawArgs.opacity);
 }
 
 function lagSource({ url, zoom }, { bbox }) {

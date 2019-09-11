@@ -5,6 +5,7 @@ import TemaMeny from "./Visualisering/TemaMeny/TemaMeny";
 import GradientEllerTypeinndelt from "./Visualisering/VisualiseringsType/GradientEllerTypeinndelt";
 import GradientFilter from "./Filtere/GradientFilter.js";
 import FargeVelger from "./FellesElementer/FargeVelger";
+import SliderElement from "GjenbruksElement/SliderElement";
 
 const EkspandertInnhold = ({
   kode,
@@ -68,6 +69,21 @@ const EkspandertInnhold = ({
                   translucent
                 </button>
               </div>
+
+              {kartlag.blendmode === "translucent" && (
+                <div className="submeny_container">
+                  Gjennomsiktighet i %
+                  <SliderElement
+                    value={kartlag.opacity || 1}
+                    min={0}
+                    max={1}
+                    step={0.1}
+                    onChange={value =>
+                      onUpdateLayerProp(kartlag.kode, "opacity", value)
+                    }
+                  />
+                </div>
+              )}
 
               <GradientFilter
                 kartlag={kartlag}
