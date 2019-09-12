@@ -16,6 +16,9 @@ const EkspandertInnhold = ({
   const current = aktivtFormat.aktivtFormat;
   const currenctActiveFormatNode = aktivtFormat.format[current];
   const blendmode = kartlag.blendmode || "multiply";
+  let hide_blendmodes =
+    !!kartlag.kart.format.polygon || !!kartlag.kart.format.raster_ruter;
+  console.log(hide_blendmodes, kartlag.kart.format);
   return (
     <div>
       {kode === "bakgrunnskart" && (
@@ -54,40 +57,52 @@ const EkspandertInnhold = ({
                 format={kartlag.kart.format}
                 aktvtKartlagFormat={kartlag.kart.aktivtFormat}
               />
-              <div className="submeny_container">
-                <input
-                  type="radio"
-                  name="blendmode"
-                  checked={blendmode === "multiply" && "checked"}
-                  onChange={e => {
-                    onUpdateLayerProp(kartlag.kode, "blendmode", "multiply");
-                  }}
-                />
-                Multiplisert farge
-                <input
-                  type="radio"
-                  name="blendmode"
-                  checked={blendmode === "translucent" && "checked"}
-                  onChange={e => {
-                    onUpdateLayerProp(kartlag.kode, "blendmode", "translucent");
-                  }}
-                />
-                Helfarget
-              </div>
+              {!hide_blendmodes && (
+                <>
+                  <div className="submeny_container">
+                    <input
+                      type="radio"
+                      name="blendmode"
+                      checked={blendmode === "multiply" && "checked"}
+                      onChange={e => {
+                        onUpdateLayerProp(
+                          kartlag.kode,
+                          "blendmode",
+                          "multiply"
+                        );
+                      }}
+                    />
+                    Multiplisert farge
+                    <input
+                      type="radio"
+                      name="blendmode"
+                      checked={blendmode === "translucent" && "checked"}
+                      onChange={e => {
+                        onUpdateLayerProp(
+                          kartlag.kode,
+                          "blendmode",
+                          "translucent"
+                        );
+                      }}
+                    />
+                    Helfarget
+                  </div>
 
-              {kartlag.blendmode === "translucent" && (
-                <div className="submeny_container">
-                  Gjennomsiktighet i %
-                  <Slider
-                    className="slider_element"
-                    value={kartlag.opacity || 1}
-                    min={0.01}
-                    max={1}
-                    onChange={(e, value) =>
-                      onUpdateLayerProp(kartlag.kode, "opacity", value)
-                    }
-                  />
-                </div>
+                  {kartlag.blendmode === "translucent" && (
+                    <div className="submeny_container">
+                      Gjennomsiktighet i %
+                      <Slider
+                        className="slider_element"
+                        value={kartlag.opacity || 1}
+                        min={0.01}
+                        max={1}
+                        onChange={(e, value) =>
+                          onUpdateLayerProp(kartlag.kode, "opacity", value)
+                        }
+                      />
+                    </div>
+                  )}
+                </>
               )}
 
               <GradientFilter
