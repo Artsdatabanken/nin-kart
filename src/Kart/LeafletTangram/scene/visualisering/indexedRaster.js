@@ -1,20 +1,16 @@
-import sysconfig from "Funksjoner/config";
 import colorArray2Image from "Funksjoner/palette/colorArray2Image";
-import landskapIndexTemp from "./landskap_index_temp";
+import landskapIndexTemp from "./fellesfunksjoner/landskap_index_temp";
+import drawSetup from "./fellesfunksjoner/drawSetup";
+import lagSource from "./fellesfunksjoner/lagSource";
 
 function drawAll(drawArgs) {
-  const layer = {
-    [drawArgs.kode]: {
-      data: { source: drawArgs.forelderkode },
-      draw: {
-        [drawArgs.kode]: {
-          order: 700
-        }
-      }
-    }
-  };
-  return layer;
+  return drawSetup(drawArgs, drawArgs.forelderkode, drawArgs.kode);
 }
+
+const color = `
+float v = rgbaToIndex(sampleRaster(0));
+color = texture2D(palette, vec2(v, depth));
+`;
 
 function lagStyle(format, drawArgs) {
   const { opplyst, blendmode } = drawArgs;
@@ -35,10 +31,7 @@ function lagStyle(format, drawArgs) {
             // G = MSB, color 256-511, B = LSB, color 0-255
             return (rgba.g*256. + rgba.b)*255.*pixelWidth+0.5*pixelWidth;
           }`,
-        color: `
-          float v = rgbaToIndex(sampleRaster(0));
-          color = texture2D(palette, vec2(v, depth));
-      `
+        color: color
       }
     }
   };
@@ -70,10 +63,6 @@ function makePalette(opplyst, drawArgs) {
     }
   });
   return colorArray2Image(colors, drawArgs.blendmode, drawArgs.opacity);
-}
-
-function lagSource({ url, zoom }, { bbox }) {
-  return sysconfig.createTileSource(url, "Raster", zoom, bbox);
 }
 
 export default { drawAll, lagSource, lagStyle };

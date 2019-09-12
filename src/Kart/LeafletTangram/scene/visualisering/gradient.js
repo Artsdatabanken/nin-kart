@@ -1,18 +1,9 @@
-import sysconfig from "Funksjoner/config";
 import lagGradientrampe from "Funksjoner/palette/gradientrampe";
+import drawSetup from "./fellesfunksjoner/drawSetup";
+import lagSource from "./fellesfunksjoner/lagSource";
 
 function drawAll(drawArgs) {
-  const layer = {
-    [drawArgs.kode]: {
-      data: { source: drawArgs.kode },
-      draw: {
-        ["gradient_" + drawArgs.kode]: {
-          order: 700
-        }
-      }
-    }
-  };
-  return layer;
+  return drawSetup(drawArgs, drawArgs.kode, "gradient_" + drawArgs.kode);
 }
 
 function normaliserFilter(format) {
@@ -23,6 +14,15 @@ function normaliserFilter(format) {
     x => (((x - omin) / (omax - omin)) * (nmax - nmin) + nmin) / 255
   );
 }
+
+const color = `
+vec4 value = sampleRaster(0);
+float v = value.r;
+float filter = step(min,v) * (step(v,max));
+v = (255.*value.b+0.5)/256.;
+color = texture2D(palette, vec2(v, 0.5));
+vec4 transparent = vec4(1.);
+color = mix(transparent, color, filter*value.a);`;
 
 function lagStyle(format, drawArgs) {
   const { opplystKode, barn } = drawArgs;
@@ -41,14 +41,7 @@ function lagStyle(format, drawArgs) {
         max: filterMax || 1
       },
       blocks: {
-        color: `
-        vec4 value = sampleRaster(0);
-        float v = value.r;
-        float filter = step(min,v) * (step(v,max));
-        v = (255.*value.b+0.5)/256.;
-        color = texture2D(palette, vec2(v, 0.5));
-        vec4 transparent = vec4(1.);
-        color = mix(transparent, color, filter*value.a);`
+        color: color
       }
     }
   };
@@ -56,10 +49,6 @@ function lagStyle(format, drawArgs) {
     name: "gradient_" + drawArgs.kode,
     value: gradient
   };
-}
-
-function lagSource({ url, zoom }, { bbox }) {
-  return sysconfig.createTileSource(url, "Raster", zoom, bbox);
 }
 
 export default { drawAll, lagSource, lagStyle };

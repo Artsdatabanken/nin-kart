@@ -1,5 +1,4 @@
 import polygon from "./polygon";
-import point from "./point";
 import gradient from "./gradient";
 import indexedRaster from "./indexedRaster";
 import openStreetMap from "./openStreetMap";
@@ -8,7 +7,6 @@ import ruter from "./ruter";
 
 export default {
   polygon: polygon,
-  point: point,
   gradient: gradient,
   raster_gradient: gradient,
   raster_indexed: indexedRaster,
