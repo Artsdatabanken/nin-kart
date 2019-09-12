@@ -2,7 +2,7 @@ import React from "react";
 
 const KatalogHeaderImage = ({ meta }) => {
   if (!meta) return null;
-  const { bilde } = meta;
+  const { bilde, url } = meta;
   /*
   Contains Header image only.
   */
@@ -24,11 +24,14 @@ const KatalogHeaderImage = ({ meta }) => {
   let classes = "sidebar_top_image";
   let flagg_classes = "sidebar_top_image trasparent_image";
 
+  if (url.indexOf("Datakilde") !== -1) {
+    new_url = "https://data.artsdatabanken.no/" + url + "/logo_408.png";
+  }
+
   return (
     <>
       <div
         className={classes}
-        //onClick={this.handleOpen}
         style={
           (new_url !== "no_image" && {
             backgroundImage: "url(" + new_url + ")",
