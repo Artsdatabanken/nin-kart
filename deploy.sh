@@ -17,9 +17,6 @@ if [ "${BRANCH}" == "master" ]
   sshpass -p $scp_pass scp -o StrictHostKeyChecking=no $BRANCH.tar.gz $scp_user@$scp_dest
   #Posting to slack to trigger deployment
   curl -X POST --data-urlencode "payload={\"channel\": \"$slack_chan\", \"username\": \"travis not the band\", \"text\": \"$slack_command\", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/$SLACK_TOKEN
-
-  sshpass -p $scp_pass scp -o StrictHostKeyChecking=no $BRANCH.tar.gz $scp_user@$prod_dest
-  curl -X POST --data-urlencode "payload={\"channel\": \"$slack_prod\", \"username\": \"travis not the band\", \"text\": \"$slack_command\", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/$SLACK_TOKEN
  else
   echo "This branch will not be deployed, since it's not the master branch."
 fi
