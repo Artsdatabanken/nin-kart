@@ -8,29 +8,30 @@ function drawAll(drawArgs) {
 }
 
 const color = `
-float v = rgbaToIndex(sampleRaster(0));
-color = texture2D(palette, vec2(v, depth));
+  float v = rgbaToIndex(sampleRaster(0));
+  color = texture2D(palette, vec2(v, depth));
 `;
+
+const global = `
+    highp float rgbaToIndex(vec4 rgba) {
+    const float pixelWidth = 1./512.;
+    // G = MSB, color 256-511, B = LSB, color 0-255
+    return (rgba.g*256. + rgba.b)*255.*pixelWidth+0.5*pixelWidth;
+  }`;
 
 function lagStyle(format, drawArgs) {
   const { opplyst, blendmode } = drawArgs;
-  let newPalette = makePalette(opplyst, drawArgs);
   const gradient = {
     base: "raster",
     blend: blendmode,
     animated: false,
     shaders: {
       uniforms: {
-        palette: newPalette,
+        palette: makePalette(opplyst, drawArgs),
         depth: 1 - (drawArgs.depth || 0) / 8 - 0.5 / 8
       },
       blocks: {
-        global: `
-        highp float rgbaToIndex(vec4 rgba) {
-            const float pixelWidth = 1./512.;
-            // G = MSB, color 256-511, B = LSB, color 0-255
-            return (rgba.g*256. + rgba.b)*255.*pixelWidth+0.5*pixelWidth;
-          }`,
+        global: global,
         color: color
       }
     }

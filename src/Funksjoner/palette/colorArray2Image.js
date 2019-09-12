@@ -7,15 +7,18 @@ function colorArray2Image(colorarray, blendmode, opacity) {
   );
   canvas.height = 1;
   for (let i = 0; i < canvas.width; i++) {
-    const color = colorarray[i] || "#fff";
+    const color = colorarray[i] || "#ffffff";
     context.fillStyle = color;
     if (blendmode && blendmode !== "multiply") {
       if (opacity) {
         context.globalAlpha = opacity;
+      } else {
+        context.globalAlpha = 1;
       }
 
-      if (colorarray[i] === "#ffffff") {
-        context.fillStyle = "#ffffff0";
+      if (!colorarray[i] || colorarray[i] === "#ffffff") {
+        context.globalAlpha = 0;
+        context.fillStyle = "rgba(0,0,0,0)";
       }
     }
     context.fillRect(i, 0, 1, canvas.height);

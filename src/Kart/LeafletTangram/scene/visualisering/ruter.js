@@ -1,5 +1,5 @@
-import sysconfig from "Funksjoner/config";
 import tinycolor from "tinycolor2";
+import lagSource from "./fellesfunksjoner/lagSource";
 
 function drawAll(drawArgs) {
   const layer = {
@@ -45,12 +45,6 @@ function lagStyle(format, drawArgs) {
     name: "ruter_" + drawArgs.kode,
     value: gradient
   };
-}
-
-function lagSource({ url, zoom }, drawArgs) {
-  if (drawArgs.opplystBarn)
-    url = url.replace(drawArgs.url, drawArgs.opplystBarn.url);
-  return sysconfig.createTileSource(url, "Raster", zoom, drawArgs.bbox);
 }
 
 export default { drawAll, lagSource, lagStyle };

@@ -15,33 +15,40 @@ function normaliserFilter(format) {
   );
 }
 
-const color = `
-vec4 value = sampleRaster(0);
-float v = value.r;
-float filter = step(min,v) * (step(v,max));
-v = (255.*value.b+0.5)/256.;
-color = texture2D(palette, vec2(v, 0.5));
-vec4 transparent = vec4(1.);
-color = mix(transparent, color, filter*value.a);`;
-
 function lagStyle(format, drawArgs) {
-  const { opplystKode, barn } = drawArgs;
+  const { opplystKode, barn, blendmode } = drawArgs;
   let [filterMin, filterMax] = normaliserFilter(format);
   const visning = drawArgs.format.aktivVisning;
-  const palette = lagGradientrampe(barn, opplystKode, visning || "diskret");
+  let transparent_blendmode_handler = `vec4 transparent = vec4(1.,1.,1.,0.);`;
+  if (blendmode === "multiply") {
+    transparent_blendmode_handler = `vec4 transparent = vec4(1.);`;
+  }
   const gradient = {
     base: "raster",
-    blend: "multiply",
-    xblend: "overlay",
-    fblend: "add",
+    blend: blendmode,
     shaders: {
       uniforms: {
-        palette: palette,
+        palette: lagGradientrampe(
+          barn,
+          opplystKode,
+          visning || "diskret",
+          blendmode,
+          drawArgs.opacity
+        ),
         min: filterMin || 0,
         max: filterMax || 1
       },
       blocks: {
-        color: color
+        color:
+          `
+        vec4 value = sampleRaster(0);
+        float v = value.r;
+        float filter = step(min,v) * (step(v,max));
+        v = (255.*value.b+0.5)/256.;
+        color = texture2D(palette, vec2(v, 0.5));` +
+          transparent_blendmode_handler +
+          `color = mix(transparent, color, filter*value.a);
+        `
       }
     }
   };
