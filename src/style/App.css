@@ -1,3 +1,12 @@
+/** Firefox workaround for https://github.com/Leaflet/Leaflet/issues/4686 */
+.leaflet-fade-anim .leaflet-tile {
+  will-change: unset;
+}
+
+.leaflet-zoom-anim .leaflet-zoom-animated {
+  will-change: unset;
+}
+
 .nin_colours {
   color: #4b909e;
   color: #81b2bb;
@@ -314,27 +323,27 @@ div {
   text-align: center;
   display: inline-block;
   vertical-align: top;
-  width: 200px;
+  width: 130px;
   padding: 10px;
   overflow: hidden;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  font-size: 10pt;
 }
 
 .badge_image {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 5px solid #4b909e;
+  border: 2px solid #4b909e;
   display: inline-block;
+  width: 80px;
+  height: 80px;
 }
 
 .badge_image:hover {
   opacity: 0.5;
   cursor: pointer;
-}
-
-.badge span {
-  width: 100%;
-  display: block;
 }
 
 .badge b {
@@ -375,6 +384,17 @@ div {
 .lokasjon_badge_container .badge b,
 .lokasjon_badge_container .badge span {
   font-size: 9pt;
+}
+
+.badge_container {
+  width: 100%;
+  background: #edf4f5;
+  margin-bottom: 5px;
+}
+
+.badge_container b {
+  display: block;
+  width: 100%;
 }
 
 /* HAMBURGER MENY ITEMS */

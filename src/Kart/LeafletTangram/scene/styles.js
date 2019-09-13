@@ -9,12 +9,10 @@ const styles = {
     blend: "overlay"
   },
   mu_polygons: {
-    base: "polygons",
-    blend: "multiply"
+    base: "polygons"
   },
   mu_lines: {
-    base: "lines",
-    blend: "multiply"
+    base: "lines"
   },
   road_names: {
     base: "text",

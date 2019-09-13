@@ -5,8 +5,7 @@ import typer from "./temaer";
 const TemaMeny = ({ aktivtFormat, onUpdateLayerProp }) => (
   <>
     <div className="sidebar_element">
-      <h1>Velg tema</h1>
-      <h2>Rasterkart eller kartblad fra Google</h2>
+      <h3>Velg bakgrunnstema</h3>
     </div>
 
     {Object.keys(typer).map(key => {
