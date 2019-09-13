@@ -23,10 +23,9 @@ const GradientEllerTypeinndelt = ({
     optionNumbers = Object.keys(visning).length;
   }
   return (
-    <>
+    <div className="submeny_container">
       {optionNumbers > 1 ? (
         <div className="kartlag_label_liste">
-          <h3>Visualisering:</h3>
           {visning.map(possible_format => (
             <label key={possible_format}>
               <input
@@ -47,11 +46,11 @@ const GradientEllerTypeinndelt = ({
           ))}
         </div>
       ) : (
-        <h3>
-          Visualisering: {matchName[aktvtKartlagFormat] || aktvtKartlagFormat}{" "}
-        </h3>
+        <>
+          Visualisering: {matchName[aktvtKartlagFormat] || aktvtKartlagFormat}
+        </>
       )}
-    </>
+    </div>
   );
 };
 export default GradientEllerTypeinndelt;

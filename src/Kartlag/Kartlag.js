@@ -24,7 +24,8 @@ class Kartlag extends React.Component {
       meta,
       show_current,
       handleShowCurrent,
-      onRemoveSelectedLayer
+      onRemoveSelectedLayer,
+      swapOrderOfList
     } = this.props;
 
     let duplicate = false;
@@ -109,6 +110,7 @@ class Kartlag extends React.Component {
                               show_current={show_current}
                               handleShowCurrent={handleShowCurrent}
                               is_current_object={true}
+                              swapOrderOfList={swapOrderOfList}
                               activateLayerFromHistory={
                                 activateLayerFromHistory
                               }
@@ -123,7 +125,7 @@ class Kartlag extends React.Component {
                       </>
                     )}
                     <div className="sidebar_element">
-                      <h2>Mine Kartlag</h2>
+                      <h2>Mine kartlag</h2>
                       <ul className="kartlag_list">
                         {keys.reverse().map(fkode => {
                           const kartlag = koder[fkode];

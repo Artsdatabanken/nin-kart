@@ -14,10 +14,19 @@ class KartlagBarnElement extends React.Component {
       visKode,
       onNavigate,
       onMouseEnter,
-      onMouseLeave
+      onMouseLeave,
+      isDatakilde
     } = this.props;
 
-    const new_url = "https://data.artsdatabanken.no/" + url + "/foto_408.jpg";
+    let backgroundSize = "cover",
+      new_url = "https://data.artsdatabanken.no/" + url + "/foto_408.jpg";
+    if (isDatakilde === "Datakilde") {
+      new_url = "https://data.artsdatabanken.no/" + url + "/logo_408.png";
+    } else if (new_url.indexOf("Administrativ_grense") !== -1) {
+      new_url = "https://data.artsdatabanken.no/" + url + "/logo_408.png";
+      backgroundSize = "60%";
+    }
+
     var image = new Image();
     image.src = new_url;
     let imgheight = image.height;
@@ -40,7 +49,7 @@ class KartlagBarnElement extends React.Component {
             style={{
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
+              backgroundSize: backgroundSize,
               backgroundImage: "url(" + new_url + ")"
             }}
           />

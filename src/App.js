@@ -19,12 +19,14 @@ import ForsideInformasjon from "Forside/ForsideInformasjon";
 import Forvaltningsportalen from "Forvaltningsportalen/Forvaltningsportalen";
 import ForvaltningsKartlag from "Forvaltningsportalen/ForvaltningsKartlag/ForvaltningsKartlag";
 import ForvaltningsKartBokser from "Forvaltningsportalen/ForvaltningsKartBokser/ForvaltningsKartBokser";
+import språk from "Funksjoner/språk";
 import "style/Kart.css";
 import "style/App.css";
 import "style/Sidebar.css";
 import "style/GeografiskSidebar.css";
 import "style/Kartlag.css";
 import "style/FargeMenyer.css";
+export let exportableSpraak;
 
 class App extends React.Component {
   constructor(props) {
@@ -42,8 +44,10 @@ class App extends React.Component {
       meta: null,
       visKoder: false,
       navigation_history: [],
-      showCurrent: true
+      showCurrent: true,
+      spraak: "nb"
     };
+    exportableSpraak = this;
     this.props.history.listen(() => {
       // Åpne info ved navigering
       this.context.onNavigateToTab("informasjon");
@@ -193,6 +197,7 @@ class App extends React.Component {
                           navigation_history={this.state.navigation_history}
                           onFitBounds={this.handleFitBounds}
                           history={history}
+                          swapOrderOfList={this.swapOrderOfList}
                           currentKartlag={this.state.meta}
                           activateLayerFromHistory={
                             this.activateLayerFromHistory
@@ -229,7 +234,10 @@ class App extends React.Component {
                 </>
               )}
 
-              <HamburgerMeny />
+              <HamburgerMeny
+                spraak={this.state.spraak}
+                handleSpraak={this.handleSpraak}
+              />
             </>
           );
         }}
@@ -248,6 +256,9 @@ class App extends React.Component {
   };
   handleBoundsChange = bbox => {
     this.setState({ actualBounds: bbox });
+  };
+  handleSpraak = spraak => {
+    this.setState({ spraak: spraak });
   };
   handleClearSearchFor = () => this.setState({ searchFor: null });
   handleToggleLayer = () => {
@@ -274,13 +285,21 @@ class App extends React.Component {
     });
   };
 
+  swapOrderOfList = node => {
+    let aktive = this.state.aktiveLag;
+    let keys = Object.keys(aktive);
+    let input_index = keys.indexOf(node.kode);
+    console.log(input_index);
+  };
+
   componentDidUpdate(prevProps) {
     const path = this.props.location.pathname;
     if (path !== prevProps.location.pathname) {
       fetchMeta(path, this);
     }
     document.title =
-      (this.state.meta && this.state.meta.tittel.nb) || "Natur i Norge";
+      (this.state.meta && språk(this.state.meta.tittel) + " | NiN-kart") ||
+      "NiN-kart";
   }
 
   async downloadMeta(url) {

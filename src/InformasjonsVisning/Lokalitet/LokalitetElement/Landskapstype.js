@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import språk from "Funksjoner/språk";
 
 const Landskapstype = ({ onNavigate, newlandskap }) => {
   const [showMore, setShowMore] = useState(false);
@@ -38,7 +39,7 @@ const Landskapstype = ({ onNavigate, newlandskap }) => {
             onNavigate(newlandskap.url);
           }}
         >
-          {newlandskap.tittel.nb}
+          {språk(newlandskap.tittel)}
         </h2>
 
         <p className="landskapstype_ingress">
@@ -68,7 +69,7 @@ const Landskapstype = ({ onNavigate, newlandskap }) => {
               let imgurl = "https://data.artsdatabanken.no/";
               for (var i in new_item.trinn) {
                 if (new_item.trinn[i]["på"]) {
-                  namelist += new_item.trinn[i].tittel.nb + " ";
+                  namelist += språk(new_item.trinn[i].tittel) + " ";
                   imgurl += new_item.trinn[i].url + "/foto_408.jpg";
                 }
               }
@@ -93,7 +94,7 @@ const Landskapstype = ({ onNavigate, newlandskap }) => {
                       }}
                     />
                     <br />
-                    <b>{new_item.tittel.nb}</b> <br />
+                    <b>{språk(new_item.tittel)}</b> <br />
                     {namelist}
                   </div>
                 </div>

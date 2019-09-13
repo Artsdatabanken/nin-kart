@@ -1,3 +1,12 @@
+/** Firefox workaround for https://github.com/Leaflet/Leaflet/issues/4686 */
+.leaflet-fade-anim .leaflet-tile {
+  will-change: unset;
+}
+
+.leaflet-zoom-anim .leaflet-zoom-animated {
+  will-change: unset;
+}
+
 .nin_colours {
   color: #4b909e;
   color: #81b2bb;
@@ -314,27 +323,27 @@ div {
   text-align: center;
   display: inline-block;
   vertical-align: top;
-  width: 200px;
+  width: 130px;
   padding: 10px;
   overflow: hidden;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  font-size: 10pt;
 }
 
 .badge_image {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 5px solid #4b909e;
+  border: 2px solid #4b909e;
   display: inline-block;
+  width: 80px;
+  height: 80px;
 }
 
 .badge_image:hover {
   opacity: 0.5;
   cursor: pointer;
-}
-
-.badge span {
-  width: 100%;
-  display: block;
 }
 
 .badge b {
@@ -377,6 +386,17 @@ div {
   font-size: 9pt;
 }
 
+.badge_container {
+  width: 100%;
+  background: #edf4f5;
+  margin-bottom: 5px;
+}
+
+.badge_container b {
+  display: block;
+  width: 100%;
+}
+
 /* HAMBURGER MENY ITEMS */
 .hamburger_sidebar {
   width: 330px;
@@ -390,6 +410,12 @@ div {
   }
 }
 
+.hamburger_sidebar h2 {
+  font-size: 20pt;
+  margin-left: 10%;
+}
+
+.spraakvelger,
 .hamburger_menu_item {
   border: 0;
   margin: 0;
@@ -419,16 +445,72 @@ div {
   display: flex;
 }
 
+.hamburger_sidebar .mobile_only {
+  display: none;
+}
+
+.spraakvelger {
+  height: 54px;
+  position: relative;
+}
+
+.spraakvelger span,
+.hamburger_menu_item svg {
+  color: #777777;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.spraakvelger span:first-child,
 .hamburger_menu_item div span:first-child {
   width: 36px;
 }
 
-.hamburger_menu_item svg {
-  color: #777777;
+.spraakalternativer {
+  display: inline-block;
+  width: 130px;
+  left: auto;
+  right: 15px;
+  vertical-align: top;
+  position: absolute;
+  height: 26px;
+  font-size: 12pt;
 }
 
-.hamburger_sidebar .mobile_only {
-  display: none;
+.spraakalternativer button {
+  display: block;
+  background: #fff;
+  padding: 8px;
+  width: 100%;
+  color: #000;
+  position: relative;
+  border: 1px solid #eaeaea;
+  border-top: 0px;
+  z-index: 30;
+}
+
+.spraakalternativer button:hover,
+.spraakalternativer button:active {
+  background: #b7d3d8;
+}
+
+.spraakalternativer button:first-child {
+  background: #fff;
+  border: 1px solid #b7d3d8;
+  padding: 5px;
+  padding-right: calc(24px + 5px);
+  z-index: 20;
+}
+
+.spraakalternativer svg {
+  vertical-align: top;
+  display: inline-block;
+  background: #b7d3d8;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 24px;
 }
 
 .page_warning {

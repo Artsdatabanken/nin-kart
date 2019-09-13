@@ -38,6 +38,7 @@ Dumped from old version until i bother fixing it
   max-width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
+  color: #4b909e;
 }
 
 .slider_element button {
@@ -52,6 +53,10 @@ Dumped from old version until i bother fixing it
 
 .slider_element div div:last-child {
   background: #4b909e;
+}
+
+.slider_element .maxfloat {
+  float: right;
 }
 
 .slider_setting {
@@ -69,6 +74,22 @@ Dumped from old version until i bother fixing it
 
 .slider_setting {
   position: relative;
+}
+
+.slider_element .MuiSlider-rail {
+  color: #b7d3d8;
+  height: 10px;
+}
+
+.slider_element .MuiSlider-track {
+  color: #b7d3d8;
+  height: 10px;
+}
+
+.slider_element .MuiSlider-thumb {
+  color: #4b909e;
+  width: 20px;
+  height: 20px;
 }
 
 select {
