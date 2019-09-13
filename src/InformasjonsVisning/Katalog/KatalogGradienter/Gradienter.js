@@ -1,55 +1,52 @@
 import React from "react";
+import språk from "Funksjoner/språk";
 
 const Gradienter = ({ gradient, onNavigate, title }) => {
-  function getAmount(trinn) {
-    let count = 0;
-    let url = "";
-    let namelist = [];
-
-    for (var item in trinn) {
-      let e = trinn[item];
-      if (e["på"] === true) {
-        count += 1;
-        url = "https://data.artsdatabanken.no/" + e.url + "/foto_408.jpg";
-        namelist.push(e.tittel.nb);
-      }
-    }
-    return [count, url, namelist];
-  }
-
+  //console.log(gradient);
+  /// Gradient er navnet på noden
+  /// Barna av gradient heter
   return (
     <>
       <h1>{title}</h1>
-      {Object.entries(gradient).map(([kode, gr]) => (
-        <div className="badge" key={gr.tittel.nb}>
-          <div
-            className="badge_image"
-            style={{
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-              backgroundImage: "url(" + getAmount(gr.trinn)[1] + ")"
-            }}
-            onClick={() => {
-              onNavigate(gr.url);
-            }}
-          />
+      {Object.entries(gradient).map(([kode, gr]) => {
+        let item = gradient[kode];
+        let gradientelement = item.trinn;
+        return (
+          <div className="badge_container">
+            <h2>{item.tittel.nb}</h2>
 
-          <b>{gr.tittel.nb}</b>
-          <span>
-            {getAmount(gr.trinn)[0]} / {Object.keys(gr.trinn).length}
-          </span>
-
-          {getAmount(gr.trinn)[2].map(item => {
-            return (
-              <div key={item}>
-                {item}
-                <br />
-              </div>
-            );
-          })}
-        </div>
-      ))}
+            {gradientelement.map(item => {
+              let aktiv = item["på"];
+              let img_url =
+                "https://data.artsdatabanken.no/" + item.url + "/foto_408.jpg";
+              return (
+                <div
+                  className="badge"
+                  key={item.tittel.nb}
+                  style={{ opacity: aktiv ? "1" : "0.2" }}
+                >
+                  <div
+                    className="badge_image"
+                    style={{
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                      backgroundImage: "url(" + img_url + ")"
+                    }}
+                    onClick={() => {
+                      onNavigate(item.url);
+                    }}
+                  />
+                  <br />
+                  <b>{språk(item.tittel)}</b>
+                  {aktiv === true ? "Til stede" : "Ikke tilstede"}
+                  <br />
+                </div>
+              );
+            })}
+          </div>
+        );
+      })}
     </>
   );
 };
