@@ -5,10 +5,11 @@ import React from "react";
 import Tangram from "tangram";
 import { createScene, updateScene } from "./scene/scene";
 import backend from "Funksjoner/backend";
-import { Landscape } from "@material-ui/icons";
+import { Landscape, Fullscreen, FullscreenExit } from "@material-ui/icons";
 import språk from "Funksjoner/språk";
 import "style/Kart.css";
 import updateMarkerPosition from "./LeafletActions/updateMarkerPosition";
+import { SettingsContext } from "SettingsContext";
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
 // See here: https://github.com/PaulLeCam/react-leaflet/issues/255
 // Used in conjunction with url-loader.
@@ -152,7 +153,9 @@ class LeafletTangram extends React.Component {
         koordinat: [latlng.lng, latlng.lat]
       });
       backend.hentStedsnavn(latlng.lng, latlng.lat).then(sted => {
-        this.setState({ sted: sted.placename });
+        if (sted) {
+          this.setState({ sted: sted.placename });
+        }
       });
     });
   };
@@ -165,6 +168,28 @@ class LeafletTangram extends React.Component {
   render() {
     return (
       <>
+        <SettingsContext.Consumer>
+          {context => {
+            return (
+              <>
+                {context.aktivTab === "kartlag" && (
+                  <button
+                    className="fullscreen"
+                    onClick={e => {
+                      this.props.handleFullscreen(this.props.showFullscreen);
+                    }}
+                  >
+                    {this.props.showFullscreen === true ? (
+                      <FullscreenExit />
+                    ) : (
+                      <Fullscreen />
+                    )}
+                  </button>
+                )}
+              </>
+            );
+          }}
+        </SettingsContext.Consumer>
         {this.state.showPopup && (
           <div
             className="popup"
