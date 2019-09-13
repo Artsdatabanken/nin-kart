@@ -24,6 +24,7 @@ import "style/GeografiskSidebar.css";
 import "style/Kartlag.css";
 import "style/FargeMenyer.css";
 export let exportableSpraak;
+export let exportableFullscreen;
 
 class App extends React.Component {
   constructor(props) {
@@ -41,9 +42,11 @@ class App extends React.Component {
       visKoder: false,
       navigation_history: [],
       showCurrent: true,
+      showFullscreen: false,
       spraak: "nb"
     };
     exportableSpraak = this;
+    exportableFullscreen = this;
     this.props.history.listen(() => {
       // Åpne info ved navigering
       this.context.onNavigateToTab("informasjon");
@@ -66,14 +69,18 @@ class App extends React.Component {
         {context => {
           return (
             <>
-              <TopBar
-                forside={forside}
-                searchFor={this.state.searchFor}
-                onSelectResult={item => {
-                  history.push("/" + item.url);
-                }}
-                history={history}
-              />
+              <div className={this.state.showFullscreen ? "hide_box" : ""}>
+                <TopBar
+                  forside={forside}
+                  searchFor={this.state.searchFor}
+                  onSelectResult={item => {
+                    history.push("/" + item.url);
+                  }}
+                  history={history}
+                  showFullscreen={this.state.showFullscreen}
+                  handleFullscreen={this.handleFullscreen}
+                />
+              </div>
 
               {forside ? (
                 <ForsideInformasjon />
@@ -181,6 +188,12 @@ class App extends React.Component {
   };
   handleSpraak = spraak => {
     this.setState({ spraak: spraak });
+    console.log(spraak);
+  };
+
+  handleFullscreen = showFullscreen => {
+    this.setState({ showFullscreen: !showFullscreen });
+    console.log(showFullscreen);
   };
   handleClearSearchFor = () => this.setState({ searchFor: null });
   handleToggleLayer = () => {

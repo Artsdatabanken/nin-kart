@@ -7,6 +7,7 @@ import { createScene, updateScene } from "./scene";
 import backend from "Funksjoner/backend";
 import { Landscape } from "@material-ui/icons";
 import språk from "Funksjoner/språk";
+import { exportableFullscreen } from "App";
 import "style/Kart.css";
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
 // See here: https://github.com/PaulLeCam/react-leaflet/issues/255
@@ -181,6 +182,7 @@ class LeafletTangram extends React.Component {
   }
 
   render() {
+    const handleFullscreen = this.props.handleFullscreen;
     return (
       <>
         {this.state.showPopup && (
@@ -242,6 +244,19 @@ class LeafletTangram extends React.Component {
             ) : (
               "Ingen data funnet"
             )}
+
+            <button
+              className="fullscreen"
+              onClick={e => {
+                //tab_selector.visible == false;
+                //top_bar.visible == false;
+                //mobile_slide_up_area.visible == false;
+                //kart + markør + markørboks.visible == true;
+                handleFullscreen();
+              }}
+            >
+              Fullskjerm
+            </button>
 
             <button
               className="link_to_page"
