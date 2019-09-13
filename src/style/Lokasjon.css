@@ -81,10 +81,7 @@
 .landskapstype_visning .badge {
   width: 80px;
 }
-.landskapstype_visning .badge_image {
-  width: 80px;
-  height: 80px;
-}
+
 .landskapstype_visning .badge span {
   display: none;
 }
