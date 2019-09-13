@@ -69,7 +69,11 @@ class App extends React.Component {
         {context => {
           return (
             <>
-              <div className={this.state.showFullscreen ? "hide_box" : ""}>
+              <div
+                className={
+                  this.state.showFullscreen ? "hidden_in_fullscreen" : ""
+                }
+              >
                 <TopBar
                   forside={forside}
                   searchFor={this.state.searchFor}
@@ -86,7 +90,13 @@ class App extends React.Component {
                 <ForsideInformasjon />
               ) : (
                 <>
-                  <MobileNavigation />
+                  <div
+                    className={
+                      this.state.showFullscreen ? "hidden_in_fullscreen" : ""
+                    }
+                  >
+                    <MobileNavigation />
+                  </div>
                   <div>
                     {(context.aktivTab === "meny" ||
                       context.aktivTab === "informasjon") && (
@@ -116,7 +126,13 @@ class App extends React.Component {
                       />
                     )}
                     {context.aktivTab === "kartlag" && (
-                      <>
+                      <div
+                        className={
+                          this.state.showFullscreen
+                            ? "hidden_in_fullscreen"
+                            : ""
+                        }
+                      >
                         <Kartlag
                           show_current={this.state.showCurrent}
                           handleShowCurrent={this.handleShowCurrent}
@@ -133,7 +149,7 @@ class App extends React.Component {
                             this.activateLayerFromHistory
                           }
                         />
-                      </>
+                      </div>
                     )}
 
                     {/* 
@@ -159,6 +175,8 @@ class App extends React.Component {
                       onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
                       onMouseEnter={this.handleMouseEnter}
                       onMouseLeave={this.handleMouseLeave}
+                      showFullscreen={this.state.showFullscreen}
+                      handleFullscreen={this.handleFullscreen}
                     />
                   </div>
                 </>
@@ -189,7 +207,6 @@ class App extends React.Component {
   };
   handleSpraak = spraak => {
     this.setState({ spraak: spraak });
-    console.log(spraak);
   };
 
   handleFullscreen = showFullscreen => {

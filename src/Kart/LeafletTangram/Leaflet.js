@@ -5,9 +5,8 @@ import React from "react";
 import Tangram from "tangram";
 import { createScene, updateScene } from "./scene/scene";
 import backend from "Funksjoner/backend";
-import { Landscape } from "@material-ui/icons";
+import { Landscape, Fullscreen, FullscreenExit } from "@material-ui/icons";
 import språk from "Funksjoner/språk";
-import { exportableFullscreen } from "App";
 import "style/Kart.css";
 import updateMarkerPosition from "./LeafletActions/updateMarkerPosition";
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
@@ -153,7 +152,11 @@ class LeafletTangram extends React.Component {
         koordinat: [latlng.lng, latlng.lat]
       });
       backend.hentStedsnavn(latlng.lng, latlng.lat).then(sted => {
-        this.setState({ sted: sted.placename });
+        {
+          if (sted) {
+            this.setState({ sted: sted.placename });
+          }
+        }
       });
     });
   };
@@ -164,9 +167,16 @@ class LeafletTangram extends React.Component {
   }
 
   render() {
-    const handleFullscreen = this.props.handleFullscreen;
     return (
       <>
+        <button
+          className="fullscreen"
+          onClick={e => {
+            this.props.handleFullscreen(this.props.showFullscreen);
+          }}
+        >
+          <Fullscreen />
+        </button>
         {this.state.showPopup && (
           <div
             className="popup"
@@ -226,19 +236,6 @@ class LeafletTangram extends React.Component {
             ) : (
               "Ingen data funnet"
             )}
-
-            <button
-              className="fullscreen"
-              onClick={e => {
-                //tab_selector.visible == false;
-                //top_bar.visible == false;
-                //mobile_slide_up_area.visible == false;
-                //kart + markør + markørboks.visible == true;
-                handleFullscreen();
-              }}
-            >
-              Fullskjerm
-            </button>
 
             <button
               className="link_to_page"
