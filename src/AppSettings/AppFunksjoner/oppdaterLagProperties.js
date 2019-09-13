@@ -7,8 +7,8 @@ export default function oppdaterLagProperties(
 ) {
   const layer_input = layer;
   /*
-  console.log("oppdaterLagProperties");
-  console.log("layer: ", layer, "| key: ", key, "| value: ", value);*/
+  //console.log("oppdaterLagProperties");
+  //console.log("layer: ", layer, "| key: ", key, "| value: ", value);*/
 
   // Scenario A: Laget har ingen egenfarge, men bygges opp av underelementer
   // Scenario B: Laget har ingen underelementer, men sin egen farge

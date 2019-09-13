@@ -18,7 +18,6 @@ const EkspandertInnhold = ({
   const blendmode = kartlag.blendmode || "multiply";
   let hide_blendmodes =
     !!kartlag.kart.format.polygon || !!kartlag.kart.format.raster_ruter;
-  console.log(hide_blendmodes, kartlag.kart.format);
   return (
     <div>
       {kode === "bakgrunnskart" && (

@@ -120,6 +120,7 @@ class App extends React.Component {
                           navigation_history={this.state.navigation_history}
                           onFitBounds={this.handleFitBounds}
                           history={history}
+                          swapOrderOfList={this.swapOrderOfList}
                           currentKartlag={this.state.meta}
                           activateLayerFromHistory={
                             this.activateLayerFromHistory
@@ -205,6 +206,13 @@ class App extends React.Component {
     this.setState({
       aktiveLag: Object.assign({}, aktiverFraHistorikk(aktive, node))
     });
+  };
+
+  swapOrderOfList = node => {
+    let aktive = this.state.aktiveLag;
+    let keys = Object.keys(aktive);
+    let input_index = keys.indexOf(node.kode);
+    console.log(input_index);
   };
 
   componentDidUpdate(prevProps) {
