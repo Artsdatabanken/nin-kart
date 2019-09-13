@@ -12,6 +12,7 @@
 ## Nyttige lenker i prosjektet
 
 - [Webklient](https://nin.artsdatabanken.no)
+- [Webklient testversion](https://nin.test.artsdatabanken.no)
 - [Laste ned åpne data](https://data.artsdatabanken.no/Natur_i_Norge)
 - [Wiki til NiN-løsningen](https://github.com/Artsdatabanken/nin-kart-frontend/wiki/)
 - [Bidra med data](https://github.com/Artsdatabanken/nin-kart-frontend/wiki/%C3%98nsker-du-%C3%A5-bidra-med-data%3F)
