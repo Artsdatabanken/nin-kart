@@ -81,8 +81,6 @@ class App extends React.Component {
                     history.push("/" + item.url);
                   }}
                   history={history}
-                  showFullscreen={this.state.showFullscreen}
-                  handleFullscreen={this.handleFullscreen}
                 />
               </div>
 

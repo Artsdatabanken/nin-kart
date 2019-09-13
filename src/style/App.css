@@ -186,11 +186,11 @@ div {
   .fullscreen {
     display: inline-block;
     position: absolute;
-    right: 16px;
-    bottom: 190px;
+    right: 15px;
+    bottom: 184px;
     background: white;
     width: 34px;
-    border: 2px solid #ccc;
+    border: 2px solid rgba(0, 0, 0, 0.27);
     border-radius: 4px;
     padding: 2px;
   }

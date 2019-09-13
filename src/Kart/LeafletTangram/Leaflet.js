@@ -153,10 +153,8 @@ class LeafletTangram extends React.Component {
         koordinat: [latlng.lng, latlng.lat]
       });
       backend.hentStedsnavn(latlng.lng, latlng.lat).then(sted => {
-        {
-          if (sted) {
-            this.setState({ sted: sted.placename });
-          }
+        if (sted) {
+          this.setState({ sted: sted.placename });
         }
       });
     });
