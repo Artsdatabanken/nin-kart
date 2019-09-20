@@ -6,7 +6,7 @@ class FargeVelger extends Component {
   render() {
     const { onUpdateLayerProp, where, color, elementType } = this.props;
     let what = "farge";
-    let title = "Velg farge";
+    let title = "Velg farge for kartlaget";
     if (this.props.what) {
       what = this.props.what;
     }

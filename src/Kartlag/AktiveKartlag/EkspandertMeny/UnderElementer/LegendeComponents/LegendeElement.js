@@ -40,7 +40,7 @@ const LegendeElement = ({
       >
         <button
           className="invisible_icon_button"
-          title={"Vis / skjul"}
+          title={"Vis / skjul kartlaget " + språk(tittel)}
           onClick={e => {
             onUpdateLayerProp(kode, "erSynlig", !erSynlig, elementType);
             e.stopPropagation();
@@ -55,7 +55,10 @@ const LegendeElement = ({
 
         <LegendeTitleField tittel={språk(tittel)} undertittel={koder} />
 
-        <button className="child_list_object_indicator" title={"Velg farge"}>
+        <button
+          className="child_list_object_indicator"
+          title={"Velg farge for kartlaget " + språk(tittel)}
+        >
           <VelgFargeBoks farge={farge} kode={kode} />
           {showColours ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
         </button>
