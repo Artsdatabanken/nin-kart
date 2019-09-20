@@ -26,6 +26,8 @@ import "style/Sidebar.css";
 import "style/GeografiskSidebar.css";
 import "style/Kartlag.css";
 import "style/FargeMenyer.css";
+import forvaltningskartjson from "forvaltningsportal.json";
+
 export let exportableSpraak;
 
 class App extends React.Component {
@@ -34,11 +36,10 @@ class App extends React.Component {
     let aktive = {
       bakgrunnskart: JSON.parse(JSON.stringify(bakgrunnskarttema))
     };
-    let forvaltningskart = aktive;
     this.state = {
       forvaltningsportalen: "false",
       aktiveLag: aktive,
-      forvaltningsLag: forvaltningskart,
+      forvaltningsLag: forvaltningskartjson,
       opplystKode: "",
       opplyst: {},
       actualBounds: null,
