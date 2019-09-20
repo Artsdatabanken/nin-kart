@@ -34,9 +34,11 @@ class App extends React.Component {
     let aktive = {
       bakgrunnskart: JSON.parse(JSON.stringify(bakgrunnskarttema))
     };
+    let forvaltningskart = aktive;
     this.state = {
       forvaltningsportalen: "false",
       aktiveLag: aktive,
+      forvaltningsLag: forvaltningskart,
       opplystKode: "",
       opplyst: {},
       actualBounds: null,
@@ -99,15 +101,10 @@ class App extends React.Component {
                           show_current={this.state.showCurrent}
                           hidden={true}
                           handleShowCurrent={this.handleShowCurrent}
-                          aktiveLag={this.state.aktiveLag}
-                          onUpdateLayerProp={this.handleUpdateLayerProp}
-                          onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                          aktiveLag={this.state.forvaltningsLag}
                           navigation_history={this.state.navigation_history}
                           onFitBounds={this.handleFitBounds}
                           history={history}
-                          activateLayerFromHistory={
-                            this.activateLayerFromHistory
-                          }
                         />
                       </>
                     )}
@@ -120,7 +117,7 @@ class App extends React.Component {
                   latitude={65.4}
                   longitude={10.8}
                   zoom={3}
-                  aktiveLag={this.state.aktiveLag}
+                  aktiveLag={this.state.forvaltningsLag}
                   opplyst={this.state.opplyst}
                   opplystKode={this.state.opplystKode}
                   meta={this.state.meta}
