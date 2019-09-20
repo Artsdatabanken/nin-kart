@@ -25,14 +25,14 @@
 
 .forvaltningsportalen.frontpage_header,
 .forvaltningsportalen .frontpage_header {
-  background: #5a6175;
+  background: #eee;
   padding: 20px;
-  color: white;
+  color: #26507a;
   text-align: center;
 }
 
 .forvaltningsportalen.frontpage_header {
-  height: 100px;
+  height: 132px;
   padding: 0px;
 }
 
@@ -51,7 +51,7 @@
 .forvaltningsportalen.frontpage_header h2,
 .forvaltningsportalen .frontpage_header h1,
 .forvaltningsportalen .frontpage_header h2 {
-  color: #d5d6d7;
+  color: #26507a;
   font-weight: 300;
 }
 
@@ -96,10 +96,8 @@
 }
 
 .forvaltningsportal_kartlag {
-  min-height: 100vh;
-  background: #5a6175;
   position: fixed;
-  height: calc(100vh - 56px);
+  height: calc(100vh - 132px);
   overflow-x: hidden;
   max-width: 350px;
   background: #f7f7f7;
@@ -110,4 +108,20 @@
   vertical-align: top;
   margin-top: 10px;
   margin-right: 15px;
+}
+
+.forvaltningsportalen .menylinje {
+  width: 100%;
+  display: flex;
+}
+
+.forvaltningsportalen .menylinje button {
+  padding: 10px;
+  background: #f7f7f7;
+  flex: 1;
+}
+
+.forvaltningsportalen button:hover {
+  background: #d0d0d0;
+  color: black;
 }
