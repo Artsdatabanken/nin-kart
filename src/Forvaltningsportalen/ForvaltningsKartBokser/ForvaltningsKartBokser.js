@@ -1,5 +1,11 @@
 import React from "react";
 import "style/Forvaltningsportalen.css";
+import {
+  Search,
+  HelpOutline,
+  LinearScale,
+  AddToPhotos
+} from "@material-ui/icons";
 
 const Forvaltningsportalen = props => {
   return (
@@ -9,15 +15,27 @@ const Forvaltningsportalen = props => {
           props.history.push("/forvaltningsportalen");
         }}
       >
-        <h1>Forvaltningsportalen</h1>
-        <h2>En kartløsning for KLD</h2>
+        <h1>
+          <span>Økologisk Grunnkart</span> <b>forvaltningsportal</b>
+        </h1>
       </div>
 
       <div className="forvaltningsportalen menylinje">
-        <button>Koble opp kartlag</button>
-        <button>Marker opp polygon</button>
-        <button>Hjelp</button>
-        <button>Søk</button>
+        <button>
+          <AddToPhotos />
+          Koble opp kartlag
+        </button>
+        <button>
+          <LinearScale />
+          Marker opp polygon
+        </button>
+        <button>
+          <HelpOutline />
+          Hjelp
+        </button>
+        <button>
+          <Search /> Søk
+        </button>
       </div>
     </div>
   );
