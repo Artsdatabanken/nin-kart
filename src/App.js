@@ -28,6 +28,7 @@ import "style/Kartlag.css";
 import "style/FargeMenyer.css";
 
 export let exportableSpraak;
+export let exportableFullscreen;
 
 class App extends React.Component {
   constructor(props) {
@@ -47,9 +48,11 @@ class App extends React.Component {
       visKoder: false,
       navigation_history: [],
       showCurrent: true,
+      showFullscreen: false,
       spraak: "nb"
     };
     exportableSpraak = this;
+    exportableFullscreen = this;
     this.props.history.listen(() => {
       // Åpne info ved navigering
       this.context.onNavigateToTab("informasjon");
@@ -146,20 +149,32 @@ class App extends React.Component {
         {context => {
           return (
             <>
-              <TopBar
-                forside={forside}
-                searchFor={this.state.searchFor}
-                onSelectResult={item => {
-                  history.push("/" + item.url);
-                }}
-                history={history}
-              />
+              <div
+                className={
+                  this.state.showFullscreen ? "hidden_in_fullscreen" : ""
+                }
+              >
+                <TopBar
+                  forside={forside}
+                  searchFor={this.state.searchFor}
+                  onSelectResult={item => {
+                    history.push("/" + item.url);
+                  }}
+                  history={history}
+                />
+              </div>
 
               {forside ? (
                 <ForsideInformasjon />
               ) : (
                 <>
-                  <MobileNavigation />
+                  <div
+                    className={
+                      this.state.showFullscreen ? "hidden_in_fullscreen" : ""
+                    }
+                  >
+                    <MobileNavigation />
+                  </div>
                   <div>
                     {(context.aktivTab === "meny" ||
                       context.aktivTab === "informasjon") && (
@@ -189,7 +204,13 @@ class App extends React.Component {
                       />
                     )}
                     {context.aktivTab === "kartlag" && (
-                      <>
+                      <div
+                        className={
+                          this.state.showFullscreen
+                            ? "hidden_in_fullscreen"
+                            : ""
+                        }
+                      >
                         <Kartlag
                           show_current={this.state.showCurrent}
                           handleShowCurrent={this.handleShowCurrent}
@@ -206,7 +227,7 @@ class App extends React.Component {
                             this.activateLayerFromHistory
                           }
                         />
-                      </>
+                      </div>
                     )}
 
                     {/* 
@@ -232,6 +253,8 @@ class App extends React.Component {
                       onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
                       onMouseEnter={this.handleMouseEnter}
                       onMouseLeave={this.handleMouseLeave}
+                      showFullscreen={this.state.showFullscreen}
+                      handleFullscreen={this.handleFullscreen}
                     />
                   </div>
                 </>
@@ -262,6 +285,10 @@ class App extends React.Component {
   };
   handleSpraak = spraak => {
     this.setState({ spraak: spraak });
+  };
+
+  handleFullscreen = showFullscreen => {
+    this.setState({ showFullscreen: !showFullscreen });
   };
   handleClearSearchFor = () => this.setState({ searchFor: null });
   handleToggleLayer = () => {
