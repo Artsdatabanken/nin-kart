@@ -133,7 +133,11 @@ class App extends React.Component {
                   latitude={65.4}
                   longitude={10.8}
                   zoom={3}
-                  aktiveLag={this.state.forvaltningsLag}
+                  _aktiveLag={this.state.forvaltningsLag}
+                  aktiveLag={Object.assign(
+                    this.state.forvaltningsLag,
+                    this.state.meta && this.state.meta.barn
+                  )}
                   opplyst={this.state.opplyst}
                   opplystKode={this.state.opplystKode}
                   meta={this.state.meta}
