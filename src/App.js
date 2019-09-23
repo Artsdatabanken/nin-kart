@@ -120,6 +120,7 @@ class App extends React.Component {
                           navigation_history={this.state.navigation_history}
                           onFitBounds={this.handleFitBounds}
                           history={history}
+                          onUpdateLayerProp={this.handleForvaltningsLayerProp}
                         />
                       </>
                     )}
@@ -361,6 +362,18 @@ class App extends React.Component {
         {},
         oppdaterLagProperties(layer, key, value, this, elementType)
       )
+    });
+  };
+
+  handleForvaltningsLayerProp = (layer, key, value) => {
+    let nye_lag = this.state.forvaltningsLag;
+    for (let item in this.state.forvaltningsLag) {
+      if (this.state.forvaltningsLag[item].kode === layer) {
+        nye_lag[item][key] = value;
+      }
+    }
+    this.setState({
+      forvaltningsLag: Object.assign({}, nye_lag)
     });
   };
 
