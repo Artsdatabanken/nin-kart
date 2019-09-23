@@ -105,7 +105,7 @@
   height: calc(100vh - 113px);
   overflow-x: hidden;
   max-width: 350px;
-  background: #f7f7f7;
+  background: #eee;
   width: 100%;
 }
 
@@ -149,4 +149,62 @@
     bottom: 0px;
     background: #f7f7f7;
   }
+
+  .forvaltningsportalen.frontpage_header h1,
+  .forvaltningsportalen.frontpage_header h2 {
+    font-size: 15pt;
+    padding: 5px;
+  }
+
+  .forvaltningsportalen {
+    position: relative;
+  }
+
+  .forvaltningsportalen .menylinje {
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .forvaltningsportalen .menylinje button {
+    max-height: 52px;
+    height: 52px;
+  }
+
+  .forvaltnings.mobile_slide_up_area svg {
+    background: #26507a;
+    border-radius: 2px;
+    width: 40px;
+  }
+}
+
+@media only screen and (max-width: 398px) {
+  .forvaltningsportalen.frontpage_header h1,
+  .forvaltningsportalen.frontpage_header h2 {
+    font-size: 14pt;
+    padding: 5px;
+    padding-top: 0px;
+  }
+
+  .forvaltningsportalen .menylinje button {
+    font-size: 8pt;
+    padding: 0px;
+  }
+}
+
+/* Teeeny weeeny bitteliten skjerm. Hvis noen ser denne størrelsen blir jeg imponert. */
+@media only screen and (max-width: 198px) {
+  .kartlag_list_title,
+  .forvaltningsportalen.frontpage_header h1,
+  .forvaltningsportalen.frontpage_header h2 {
+    font-size: 9pt;
+  }
+
+  .forvaltningsportalen .menylinje button {
+    max-height: 58px;
+    height: 58px;
+  }
+}
+
+.forvaltningsportal_kartlag .kartlag_list {
+  padding-top: 20px;
 }
