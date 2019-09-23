@@ -187,22 +187,21 @@ class LeafletTangram extends React.Component {
       const prev = this.wms[layerName];
       if (!al.kart.format.wms) return;
       const wms = al.kart.format.wms;
-
-      console.log(al);
-
-      if (al.erSynlig === true) {
+      if (al.kart.format.wms && al.erSynlig === true) {
         var wmsLayer = L.tileLayer.wms(wms.url, {
           layers: wms.layer,
           transparent: true,
           format: "image/png"
         });
-
         if (!prev) {
           this.wms[layerName] = wmsLayer;
           this.map.addLayer(wmsLayer);
         }
       } else {
-        if (prev) this.map.removeLayer(prev);
+        if (prev) {
+          this.map.removeLayer(prev);
+          delete this.wms[layerName];
+        }
       }
     });
   }

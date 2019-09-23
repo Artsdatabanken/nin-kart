@@ -19,8 +19,9 @@ const ForvaltningsEkspanderTopp = ({
       <input
         type="checkbox"
         className="invisible_icon_button"
-        onClick={e => {
+        onChange={e => {
           if (!erAktivtLag) {
+            console.log(!erSynlig);
             onUpdateLayerProp(kode, "erSynlig", !erSynlig);
             e.stopPropagation();
           } else {
