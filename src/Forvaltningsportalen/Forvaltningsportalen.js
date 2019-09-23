@@ -34,6 +34,13 @@ const Forvaltningsportalen = props => {
             <div className="kolonne_container">
               <div className="skjema_kolonne">
                 <h3>Kart fra Kartverket</h3>
+
+                {Object.keys(props.aktiveLag).map((item, index) => {
+                  const node = props.aktiveLag[item];
+                  console.log(node);
+                  return null;
+                })}
+
                 <div>
                   <input type="Checkbox" />
                   Eksempelkart

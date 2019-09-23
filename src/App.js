@@ -96,7 +96,14 @@ class App extends React.Component {
                 {this.state.forvaltningsportalen === "true" && (
                   <>
                     {forvaltningskart === false ? (
-                      <Forvaltningsportalen history={history} />
+                      <Forvaltningsportalen
+                        history={history}
+                        aktiveLag={Object.assign(
+                          {},
+                          this.state.forvaltningsLag,
+                          this.state.meta && this.state.meta.barn
+                        )}
+                      />
                     ) : (
                       <>
                         <ForvaltningsKartBokser history={history} />
