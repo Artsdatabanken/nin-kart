@@ -19,8 +19,8 @@ const Innstillinger = ({
     spraaknavn = "Norsk bokmål";
   } else if (spraak === "nn") {
     spraaknavn = "Nynorsk";
-  } else if (spraak === "la") {
-    spraaknavn = "Latin";
+  } else if (spraak === "sn") {
+    spraaknavn = "Vitenskapelig navn";
   }
 
   return (
@@ -119,11 +119,11 @@ const Innstillinger = ({
               </button>
               <button
                 onClick={e => {
-                  handleSpraak("la");
+                  handleSpraak("sn");
                   setExpanded(!expanded);
                 }}
               >
-                Latin
+                Vitenskapelig navn
               </button>
             </>
           )}

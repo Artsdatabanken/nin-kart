@@ -9,8 +9,8 @@ export default function språk(meta) {
   if (keys.length === 1) return meta[keys[0]];
   if (spraak === "nb") {
     return `${meta.nb}`;
-  } else if (spraak === "la" && meta.la){    
-    return `${meta.la}`;
+  } else if (spraak === "sn" && meta.sn){    
+    return `${meta.sn}`;
   } else if (spraak === "en" && meta.en) {    
     return `${meta.en}`;  
   } else if (spraak === "nn" && meta.nn) {    

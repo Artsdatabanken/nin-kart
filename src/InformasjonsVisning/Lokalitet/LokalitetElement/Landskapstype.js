@@ -43,7 +43,7 @@ const Landskapstype = ({ onNavigate, newlandskap }) => {
         </h2>
 
         <p className="landskapstype_ingress">
-          {newlandskap.ingress.substring(0, 180)}
+          {språk(newlandskap.ingress.substring(0, 180))}
           <span
             onClick={e => {
               setShowMore(!showMore);
@@ -52,7 +52,12 @@ const Landskapstype = ({ onNavigate, newlandskap }) => {
           >
             {showMore ? (
               <>
-                {newlandskap.ingress.substring(180, newlandskap.ingress.length)}{" "}
+                {språk(
+                  newlandskap.ingress.substring(
+                    180,
+                    språk(newlandskap.ingress.length)
+                  )
+                )}{" "}
                 ... [se mindre]
               </>
             ) : (

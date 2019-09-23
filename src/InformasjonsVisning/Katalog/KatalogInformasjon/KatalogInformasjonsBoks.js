@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "@material-ui/icons/Link";
+import språk from "Funksjoner/språk";
 
 const KatalogInformasjonsBoks = ({ meta }) => {
   /*
@@ -15,10 +16,10 @@ const KatalogInformasjonsBoks = ({ meta }) => {
 
   return (
     <>
-      {ingress && (
+      {språk(ingress) && (
         <div className="sidebar_description">
           <p>
-            {ingress} <br />
+            {språk(ingress)} <br />
             {infoUrl && (
               <a href={infoUrl}>
                 <Link /> Les mer
