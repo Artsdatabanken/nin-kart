@@ -42,7 +42,7 @@ const EkspanderingsTopplinje = ({
         {/* This button is the eye button toggling this layer on and off */}
         <button
           className="invisible_icon_button"
-          title={"Vis / skjul kartlag"}
+          title={"Vis / skjul " + språk(tittel)}
           onClick={e => {
             if (!erAktivtLag) {
               onUpdateLayerProp(kode, "erSynlig", !erSynlig);
@@ -73,7 +73,8 @@ const EkspanderingsTopplinje = ({
         {/* The toggle button for this element */}
         <button
           className="invisible_icon_button"
-          title={"Velg kartlag"}
+          title={"Velg innstillinger for " + språk(tittel)}
+          aria-label={"Velg innstillinger for " + språk(tittel)}
           onClick={() => {
             setExpanded(!expanded);
           }}

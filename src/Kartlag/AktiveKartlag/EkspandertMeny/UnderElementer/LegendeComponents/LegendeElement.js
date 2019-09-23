@@ -40,7 +40,7 @@ const LegendeElement = ({
       >
         <button
           className="invisible_icon_button"
-          title={"Vis / skjul"}
+          title={"Vis / skjul kartlaget " + språk(tittel)}
           onClick={e => {
             onUpdateLayerProp(kode, "erSynlig", !erSynlig, elementType);
             e.stopPropagation();
