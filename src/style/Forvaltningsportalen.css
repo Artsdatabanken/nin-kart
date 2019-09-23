@@ -124,6 +124,8 @@
   padding: 10px;
   background: #f7f7f7;
   flex: 1;
+  margin-left: 1px;
+  margin-right: 1px;
 }
 
 .forvaltningsportalen button:hover {

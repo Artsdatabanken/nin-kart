@@ -24,6 +24,8 @@ function roundToX(num, x) {
   return +(Math.round(num + "e+" + x) + "e-" + x);
 }
 
+let header_shift = 56;
+
 class LeafletTangram extends React.Component {
   state = {
     windowXpos: 0,
@@ -35,7 +37,6 @@ class LeafletTangram extends React.Component {
     koordinat: null,
     clickCoordinates: { x: 0, y: 0 }
   };
-
   componentDidMount() {
     const options = {
       zoomControl: false,
@@ -43,13 +44,19 @@ class LeafletTangram extends React.Component {
       minZoom: 3
     };
 
+    console.log(this.props.forvaltningsportal);
+    if (this.props.forvaltningsportal === "true") {
+      header_shift = 113;
+    }
+
     let map = L.map(this.mapEl, options);
+
     map.on("drag", e => {
       if (!e.hard) {
         this.props.onMapBoundsChange(map.getBounds());
       }
       if (this.marker) {
-        updateMarkerPosition(this.state.clickCoordinates, this);
+        updateMarkerPosition(this.state.clickCoordinates, this, header_shift);
       }
     });
     map.on("zoomend", e => {
@@ -57,7 +64,11 @@ class LeafletTangram extends React.Component {
         this.props.onMapBoundsChange(map.getBounds());
       }
       if (this.marker) {
-        updateMarkerPosition(this.marker._icon._leaflet_pos, this);
+        updateMarkerPosition(
+          this.marker._icon._leaflet_pos,
+          this,
+          header_shift
+        );
       }
     });
     map.on("resize", e => {
@@ -65,7 +76,11 @@ class LeafletTangram extends React.Component {
         this.props.onMapBoundsChange(map.getBounds());
       }
       if (this.marker) {
-        updateMarkerPosition(this.marker._icon._leaflet_pos, this);
+        updateMarkerPosition(
+          this.marker._icon._leaflet_pos,
+          this,
+          header_shift
+        );
       }
     });
     map.setView(
@@ -144,7 +159,8 @@ class LeafletTangram extends React.Component {
         url = "/Natur_i_Norge/?lng=" + latlng.lng + "&lat=" + latlng.lat;
       }
       url = url.replace(/ /g, "_");
-      updateMarkerPosition(e.leaflet_event.layerPoint, this);
+      console.log(header_shift);
+      updateMarkerPosition(e.leaflet_event.layerPoint, this, header_shift);
       this.setState({
         buttonUrl: url,
         data: data,
@@ -152,7 +168,9 @@ class LeafletTangram extends React.Component {
         koordinat: [latlng.lng, latlng.lat]
       });
       backend.hentStedsnavn(latlng.lng, latlng.lat).then(sted => {
-        this.setState({ sted: sted.placename });
+        if (sted && sted.placename) {
+          this.setState({ sted: sted.placename });
+        }
       });
     });
   };
