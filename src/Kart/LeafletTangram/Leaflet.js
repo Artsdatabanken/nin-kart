@@ -44,7 +44,6 @@ class LeafletTangram extends React.Component {
       minZoom: 3
     };
 
-    console.log(this.props.forvaltningsportal);
     if (this.props.forvaltningsportal === "true") {
       header_shift = 113;
     }
@@ -159,7 +158,6 @@ class LeafletTangram extends React.Component {
         url = "/Natur_i_Norge/?lng=" + latlng.lng + "&lat=" + latlng.lat;
       }
       url = url.replace(/ /g, "_");
-      console.log(header_shift);
       updateMarkerPosition(e.leaflet_event.layerPoint, this, header_shift);
       this.setState({
         buttonUrl: url,
@@ -232,26 +230,30 @@ class LeafletTangram extends React.Component {
                     {språk(this.state.data.fylke.tittel)} <br />
                   </b>
                 )}
-                {this.state.data.landskap && (
-                  <>
-                    <Landscape /> {språk(this.state.data.landskap.tittel)}{" "}
-                    <br />
-                  </>
-                )}
+                {this.state.data.landskap &&
+                  this.props.forvaltningsportal !== "true" && (
+                    <>
+                      <Landscape /> {språk(this.state.data.landskap.tittel)}{" "}
+                      <br />
+                    </>
+                  )}
               </>
             ) : (
               "Ingen data funnet"
             )}
-
-            <button
-              className="link_to_page"
-              onClick={e => {
-                this.props.history.push(this.state.buttonUrl);
-              }}
-            >
-              Les mer på stedets informasjonsside
-            </button>
-            <br />
+            {this.props.forvaltningsportal !== "true" && (
+              <>
+                <button
+                  className="link_to_page"
+                  onClick={e => {
+                    this.props.history.push(this.state.buttonUrl);
+                  }}
+                >
+                  Les mer på stedets informasjonsside
+                </button>
+                <br />
+              </>
+            )}
           </div>
         )}
 
