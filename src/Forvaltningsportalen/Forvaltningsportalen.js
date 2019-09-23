@@ -1,9 +1,7 @@
 import React from "react";
 import "style/Forvaltningsportalen.css";
-import forvaltningskartjson from "forvaltningsportal.json";
 
 const Forvaltningsportalen = props => {
-  console.log(forvaltningskartjson);
   return (
     <div className="frontpage forvaltningsportalen">
       <div className="frontpage_body">

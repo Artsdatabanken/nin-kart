@@ -9,10 +9,9 @@ class Kartlag extends React.Component {
     showKartlag: false
   };
   render() {
-    let koder = this.props.aktiveLag;
+    const { aktiveLag, onFitBounds, onUpdateLayerProp, hidden } = this.props;
+    let koder = aktiveLag;
     const keys = Object.keys(koder);
-    const { onFitBounds, onUpdateLayerProp, hidden, meta } = this.props;
-
     return (
       <>
         {hidden && (
@@ -61,7 +60,6 @@ class Kartlag extends React.Component {
                                   visKoder={context.visKoder}
                                   onFitBounds={onFitBounds}
                                   onUpdateLayerProp={onUpdateLayerProp}
-                                  meta={meta}
                                 />
                               </>
                             )
