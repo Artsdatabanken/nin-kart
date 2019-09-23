@@ -9,10 +9,9 @@ class Kartlag extends React.Component {
     showKartlag: false
   };
   render() {
-    let koder = this.props.aktiveLag;
-    const keys = Object.keys(koder);
     const { onFitBounds, onUpdateLayerProp, hidden, meta } = this.props;
-
+    let koder = meta.barn || {};
+    const keys = Object.keys(koder);
     return (
       <>
         {hidden && (

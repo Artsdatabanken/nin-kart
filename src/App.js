@@ -102,6 +102,7 @@ class App extends React.Component {
                           hidden={true}
                           handleShowCurrent={this.handleShowCurrent}
                           aktiveLag={this.state.forvaltningsLag}
+                          meta={this.state.meta || {}}
                           navigation_history={this.state.navigation_history}
                           onFitBounds={this.handleFitBounds}
                           history={history}
