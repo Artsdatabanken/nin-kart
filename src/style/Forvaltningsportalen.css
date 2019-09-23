@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+.forvaltningsportal_kartlag button,
+.forvaltningsportalen button,
+.forvaltningsportal_kartlag,
+.forvaltningsportalen {
+  font-family: "Raleway", sans-serif;
+}
+
+.forvaltningsportalen .frontpage_body {
+  background: #f7f7f7;
+}
+
+.forvaltningsportalen .frontpage_footer,
+.forvaltningsportalen .frontpage_feature_block,
+.forvaltningsportalen .frontpage_feature_block,
+.forvaltningsportalen .frontpage_feature_block h2,
+.forvaltningsportalen .frontpage_feature_block a,
+.forvaltningsportalen .frontpage_feature_block a:visited,
+.forvaltningsportalen .frontpage_feature_block a:active,
+.forvaltningsportalen .frontpage_feature_block a:focus {
+  background: #e1e1e1;
+  color: black;
+}
+
+.forvaltningsportalen.frontpage_header,
+.forvaltningsportalen .frontpage_header {
+  background: #eee;
+  padding: 20px;
+  color: #26507a;
+  text-align: center;
+}
+
+.forvaltningsportalen.frontpage_header span {
+  color: #4b909e;
+}
+
+.forvaltningsportalen.frontpage_header {
+  height: 113px;
+  padding: 0px;
+}
+
+.forvaltningsportal_kartlag h1,
+.forvaltningsportal_kartlag h2,
+.forvaltningsportal_kartlag h3,
+.forvaltningsportalen h1,
+.forvaltningsportalen h2,
+.forvaltningsportalen h3 {
+  color: #444;
+  margin: 10px;
+  font-family: "Raleway", sans-serif;
+}
+
+.forvaltningsportalen.frontpage_header h1,
+.forvaltningsportalen.frontpage_header h2,
+.forvaltningsportalen .frontpage_header h1,
+.forvaltningsportalen .frontpage_header h2 {
+  color: #26507a;
+  font-weight: 300;
+  padding: 10px;
+}
+
+.forvaltningsportalen .frontpage_sources img {
+  width: 50px;
+}
+
+.forvaltningsportalen .form_block {
+  background: white;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  margin-top: -20px;
+}
+
+.skjema_kolonne {
+  display: inline-block;
+  width: 100%;
+}
+
+.skjema_kolonne div {
+  display: block;
+  width: 100%;
+  padding: 5px;
+}
+
+.frontpage_feature_container .kolonne_container,
+.kolonne_container {
+  display: flex;
+  width: 100%;
+}
+
+.form_block button {
+  padding: 20px;
+  min-width: 200px;
+  font-size: 14pt;
+  background: #c5d1e8;
+}
+
+.form_block button:hover {
+  background: #8191b5;
+}
+
+.forvaltningsportal_kartlag {
+  position: fixed;
+  height: calc(100vh - 113px);
+  overflow-x: hidden;
+  max-width: 350px;
+  background: #f7f7f7;
+  width: 100%;
+}
+
+.kartlag_header input[type="checkbox"] {
+  vertical-align: top;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+.forvaltningsportalen .menylinje {
+  width: 100%;
+  display: flex;
+}
+
+.forvaltningsportalen .menylinje button {
+  padding: 10px;
+  background: #f7f7f7;
+  flex: 1;
+}
+
+.forvaltningsportalen button:hover {
+  background: #d0d0d0;
+  color: black;
+}
+
+.forvaltningsportalen button svg {
+  height: 12pt;
+  vertical-align: top;
+}

@@ -116,6 +116,14 @@ class HamburgerMeny extends Component {
                   icon={<GitHub />}
                   primary="Kildekode"
                 />
+                <Menyelement
+                  onClick={() => {
+                    this.handleClick("/forvaltningsportalen/");
+                    context.onToggleHovedmeny();
+                  }}
+                  icon={<AssignmentInd />}
+                  primary="Forvaltningsportalen"
+                />
                 <Divider />
                 <Innstillinger
                   visKoder={context.visKoder}
