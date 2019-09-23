@@ -55,8 +55,11 @@ const LegendeElement = ({
 
         <LegendeTitleField tittel={språk(tittel)} undertittel={koder} />
 
-        <button className="child_list_object_indicator" title={"Velg farge"}>
-          <VelgFargeBoks farge={farge} kode={kode} />
+        <button
+          className="child_list_object_indicator"
+          title={"Velg farge for " + språk(tittel).toLowerCase()}
+        >
+          <VelgFargeBoks farge={farge} kode={kode} tittel={språk(tittel)} />
           {showColours ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
         </button>
       </div>
