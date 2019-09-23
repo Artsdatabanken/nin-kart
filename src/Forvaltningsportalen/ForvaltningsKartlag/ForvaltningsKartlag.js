@@ -31,10 +31,7 @@ class Kartlag extends React.Component {
                   {this.state.showKartlag ? (
                     <KeyboardArrowDown />
                   ) : (
-                    <>
-                      <KeyboardArrowUp />
-                      <span>Aktivt kartlag</span>
-                    </>
+                    <KeyboardArrowUp />
                   )}
                 </button>
 

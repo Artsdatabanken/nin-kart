@@ -147,7 +147,7 @@
   .forvaltningsportal_kartlag.kartlag_content_open,
   .forvaltnings.closed_mobile_slide_up_area {
     bottom: 0px;
-    background: #f7f7f7;
+    background: #eee;
   }
 
   .forvaltningsportalen.frontpage_header h1,
@@ -170,10 +170,33 @@
     height: 52px;
   }
 
+  .forvaltnings.mobile_slide_up_area {
+    height: 20px;
+    border-top: 1px solid white;
+  }
+
   .forvaltnings.mobile_slide_up_area svg {
-    background: #26507a;
+    background: #f7f7f7;
     border-radius: 2px;
-    width: 40px;
+    width: 140px;
+    border-top: 1px solid white;
+    color: black;
+    height: 20px;
+    padding: 2px;
+  }
+
+  .forvaltnings.closed_mobile_slide_up_area svg {
+    margin-top: -6px;
+  }
+
+  .forvaltnings.open_mobile_slide_up_area {
+    background: transparent;
+    border-bottom: 1px solid white;
+    height: 43px;
+  }
+
+  .forvaltnings.kartlag_content_open {
+    height: calc(100vh - 155px);
   }
 }
 
