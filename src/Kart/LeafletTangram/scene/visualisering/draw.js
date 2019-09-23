@@ -4,7 +4,6 @@ import indexedRaster from "./indexedRaster";
 import openStreetMap from "./openStreetMap";
 import googleRaster from "./google_raster";
 import ruter from "./ruter";
-import wms from "./wms";
 
 export default {
   polygon: polygon, // kalk
@@ -12,7 +11,6 @@ export default {
   raster_gradient: gradientVisualisering, // bioklimatisk sone, arealbruksintensitet ++
   raster_indexed: indexedRaster, /// Landskapstyper
   raster_ruter: ruter, // Arter
-  wms: wms,
   osm_lys: openStreetMap,
   osm_mørk: openStreetMap,
   topo4: googleRaster,

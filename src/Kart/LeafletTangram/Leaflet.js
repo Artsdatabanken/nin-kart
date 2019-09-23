@@ -174,6 +174,17 @@ class LeafletTangram extends React.Component {
   };
 
   updateMap(props) {
+    var wmsLayer = L.tileLayer.wms(
+      "http://gis3.nve.no/map/services/Nedborfelt1/MapServer/WmsServer?",
+      {
+        layers: "Vassdragsomrade", //"Nedborfelt_til_hav",
+        transparent: true,
+        format: "image/png",
+        attribution: "NVE"
+      }
+    );
+    this.map.addLayer(wmsLayer);
+
     updateScene(this.layer.scene.config, props);
     this.layer.scene.updateConfig({ rebuild: true });
   }
