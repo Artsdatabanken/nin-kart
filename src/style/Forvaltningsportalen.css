@@ -137,3 +137,16 @@
   height: 12pt;
   vertical-align: top;
 }
+
+@media only screen and (max-width: 768px) {
+  .forvaltningsportal_kartlag {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .forvaltningsportal_kartlag.kartlag_content_open,
+  .forvaltnings.closed_mobile_slide_up_area {
+    bottom: 0px;
+    background: #f7f7f7;
+  }
+}
