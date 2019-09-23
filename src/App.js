@@ -101,7 +101,11 @@ class App extends React.Component {
                           show_current={this.state.showCurrent}
                           hidden={true}
                           handleShowCurrent={this.handleShowCurrent}
-                          aktiveLag={this.state.forvaltningsLag}
+                          aktiveLag={Object.assign(
+                            {},
+                            this.state.forvaltningsLag,
+                            this.state.meta && this.state.meta.barn
+                          )}
                           meta={this.state.meta || {}}
                           navigation_history={this.state.navigation_history}
                           onFitBounds={this.handleFitBounds}
