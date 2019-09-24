@@ -4,12 +4,9 @@ import Bildeavatar from "GjenbruksElement/Bildeavatar";
 
 const Overordnet = ({ overordnet, onNavigate }) => {
   let underordnet = overordnet;
-  if (underordnet[underordnet.length - 1].url === "Katalog") {
-    underordnet = underordnet.slice(0, -1);
-  }
 
   if (
-    underordnet[underordnet.length - 1] &&
+    underordnet.length > 1 &&
     underordnet[underordnet.length - 1].url === "Natur_i_Norge"
   ) {
     underordnet = underordnet.slice(0, -1);
