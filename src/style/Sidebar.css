@@ -183,14 +183,6 @@
 }
 
 /* The link and icons  */
-.sidebar_description a {
-  display: inline-block;
-  color: #4b909e;
-  font-size: 12pt;
-  height: 12px;
-  text-decoration: none;
-  margin-top: 10px;
-}
 
 .sidebar_element h3 svg,
 .sidebar_description svg {

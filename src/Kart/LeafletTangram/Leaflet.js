@@ -25,6 +25,8 @@ function roundToX(num, x) {
   return +(Math.round(num + "e+" + x) + "e-" + x);
 }
 
+let header_shift = 56;
+
 class LeafletTangram extends React.Component {
   state = {
     windowXpos: 0,
@@ -36,7 +38,6 @@ class LeafletTangram extends React.Component {
     koordinat: null,
     clickCoordinates: { x: 0, y: 0 }
   };
-
   componentDidMount() {
     const options = {
       zoomControl: false,
@@ -44,13 +45,18 @@ class LeafletTangram extends React.Component {
       minZoom: 3
     };
 
+    if (this.props.forvaltningsportal === "true") {
+      header_shift = 113;
+    }
+
     let map = L.map(this.mapEl, options);
+
     map.on("drag", e => {
       if (!e.hard) {
         this.props.onMapBoundsChange(map.getBounds());
       }
       if (this.marker) {
-        updateMarkerPosition(this.state.clickCoordinates, this);
+        updateMarkerPosition(this.state.clickCoordinates, this, header_shift);
       }
     });
     map.on("zoomend", e => {
@@ -58,7 +64,11 @@ class LeafletTangram extends React.Component {
         this.props.onMapBoundsChange(map.getBounds());
       }
       if (this.marker) {
-        updateMarkerPosition(this.marker._icon._leaflet_pos, this);
+        updateMarkerPosition(
+          this.marker._icon._leaflet_pos,
+          this,
+          header_shift
+        );
       }
     });
     map.on("resize", e => {
@@ -66,7 +76,11 @@ class LeafletTangram extends React.Component {
         this.props.onMapBoundsChange(map.getBounds());
       }
       if (this.marker) {
-        updateMarkerPosition(this.marker._icon._leaflet_pos, this);
+        updateMarkerPosition(
+          this.marker._icon._leaflet_pos,
+          this,
+          header_shift
+        );
       }
     });
     map.setView(
@@ -145,7 +159,7 @@ class LeafletTangram extends React.Component {
         url = "/Natur_i_Norge/?lng=" + latlng.lng + "&lat=" + latlng.lat;
       }
       url = url.replace(/ /g, "_");
-      updateMarkerPosition(e.leaflet_event.layerPoint, this);
+      updateMarkerPosition(e.leaflet_event.layerPoint, this, header_shift);
       this.setState({
         buttonUrl: url,
         data: data,
@@ -153,7 +167,7 @@ class LeafletTangram extends React.Component {
         koordinat: [latlng.lng, latlng.lat]
       });
       backend.hentStedsnavn(latlng.lng, latlng.lat).then(sted => {
-        if (sted) {
+        if (sted && sted.placename) {
           this.setState({ sted: sted.placename });
         }
       });
@@ -163,7 +177,36 @@ class LeafletTangram extends React.Component {
   updateMap(props) {
     updateScene(this.layer.scene.config, props);
     this.layer.scene.updateConfig({ rebuild: true });
+    this.syncWmsLayers(props.aktiveLag);
   }
+
+  syncWmsLayers(aktive) {
+    Object.keys(aktive).forEach(akey => {
+      const al = aktive[akey];
+      const layerName = "wms_" + akey;
+      const prev = this.wms[layerName];
+      if (!al.kart || !al.kart.format.wms) return;
+      const wms = al.kart.format.wms;
+      if (al.kart.format.wms && al.erSynlig === true) {
+        var wmsLayer = L.tileLayer.wms(wms.url, {
+          layers: wms.layer,
+          transparent: true,
+          format: "image/png"
+        });
+        if (!prev) {
+          this.wms[layerName] = wmsLayer;
+          this.map.addLayer(wmsLayer);
+        }
+      } else {
+        if (prev) {
+          this.map.removeLayer(prev);
+          delete this.wms[layerName];
+        }
+      }
+    });
+  }
+
+  wms = {};
 
   render() {
     return (
@@ -239,26 +282,30 @@ class LeafletTangram extends React.Component {
                     {språk(this.state.data.fylke.tittel)} <br />
                   </b>
                 )}
-                {this.state.data.landskap && (
-                  <>
-                    <Landscape /> {språk(this.state.data.landskap.tittel)}{" "}
-                    <br />
-                  </>
-                )}
+                {this.state.data.landskap &&
+                  this.props.forvaltningsportal !== "true" && (
+                    <>
+                      <Landscape /> {språk(this.state.data.landskap.tittel)}{" "}
+                      <br />
+                    </>
+                  )}
               </>
             ) : (
               "Ingen data funnet"
             )}
-
-            <button
-              className="link_to_page"
-              onClick={e => {
-                this.props.history.push(this.state.buttonUrl);
-              }}
-            >
-              Les mer på stedets informasjonsside
-            </button>
-            <br />
+            {this.props.forvaltningsportal !== "true" && (
+              <>
+                <button
+                  className="link_to_page"
+                  onClick={e => {
+                    this.props.history.push(this.state.buttonUrl);
+                  }}
+                >
+                  Les mer på stedets informasjonsside
+                </button>
+                <br />
+              </>
+            )}
           </div>
         )}
 
