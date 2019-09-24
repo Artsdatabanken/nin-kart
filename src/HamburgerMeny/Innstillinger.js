@@ -62,7 +62,7 @@ const Innstillinger = ({
                   setOpen(!open);
                 }}
               >
-                Koder
+                koder
               </button>
               <button
                 onClick={e => {
@@ -70,7 +70,7 @@ const Innstillinger = ({
                   setOpen(!open);
                 }}
               >
-                Navn
+                navn
               </button>
             </>
           )}
