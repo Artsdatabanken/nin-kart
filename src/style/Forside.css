@@ -62,11 +62,7 @@
 }
 
 .frontpage_feature_block,
-.frontpage_feature_block h2,
-.frontpage_feature_block a,
-.frontpage_feature_block a:visited,
-.frontpage_feature_block a:active,
-.frontpage_feature_block a:focus {
+.frontpage_feature_block h2 {
   color: white;
 }
 

@@ -67,13 +67,6 @@ body {
   touch-action: none;
 }
 
-a,
-a:visited,
-a:active,
-a:focus {
-  color: #4b909e;
-}
-
 ::-moz-focus-inner {
   border: 0;
 }
@@ -87,9 +80,24 @@ button:focus {
   border: 1px solid #81b2bb;
 }
 
+a,
+a:visited,
+a:active,
+a:focus {
+  color: #4b909e;
+  text-decoration: none;
+}
+
 a:hover {
   color: #81b2bb;
   cursor: pointer;
+}
+
+.inverted_link,
+.inverted_link:visited,
+.inverted_link:active,
+.inverted_link:focus {
+  color: #b7d3d8;
 }
 
 body,
