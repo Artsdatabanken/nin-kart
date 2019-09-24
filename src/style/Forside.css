@@ -35,14 +35,10 @@
   padding: 20px;
 }
 
-.frontpage_header:hover {
-  opacity: 0.5;
-  cursor: pointer;
-}
-
 .frontpage_header div {
   display: inline-block;
   vertical-align: middle;
+  text-align: left;
 }
 
 /* Headings */
@@ -61,16 +57,12 @@
 /* fEATURE bLOCK */
 
 .frontpage_feature_block {
-  background: #81b2bb;
+  background: #4b909e;
   font-size: 16pt;
 }
 
 .frontpage_feature_block,
-.frontpage_feature_block h2,
-.frontpage_feature_block a,
-.frontpage_feature_block a:visited,
-.frontpage_feature_block a:active,
-.frontpage_feature_block a:focus {
+.frontpage_feature_block h2 {
   color: white;
 }
 

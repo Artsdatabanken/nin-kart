@@ -38,7 +38,10 @@ const ForsideInformasjon = props => {
                 naturvariasjon.
                 <br />
                 Les mer om på Artsdatabankens{" "}
-                <a href="https://www.artsdatabanken.no/NiN">
+                <a
+                  href="https://www.artsdatabanken.no/NiN"
+                  className="inverted_link"
+                >
                   nettsider om NiN.
                 </a>
               </p>
