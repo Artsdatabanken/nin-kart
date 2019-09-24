@@ -14,8 +14,7 @@ const AktivtKartlagElement = ({
   handleShowCurrent,
   is_current_object,
   activateLayerFromHistory,
-  navhist,
-  swapOrderOfList
+  navhist
 }) => {
   let expand_state = is_current_object || false;
   const [expanded, setExpanded] = useState(expand_state);
@@ -28,7 +27,7 @@ const AktivtKartlagElement = ({
   return (
     <SettingsContext.Consumer>
       {context => (
-        <li draggable onDragStart={e => swapOrderOfList(kartlag)}>
+        <li draggable>
           <EkspanderingsTopplinje
             erAktivtLag={erAktivtLag}
             show_current={show_current}

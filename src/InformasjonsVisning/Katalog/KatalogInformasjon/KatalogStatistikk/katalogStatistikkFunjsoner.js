@@ -18,7 +18,7 @@ export default function tekst(props) {
         areal
       )} ${tittel.toLowerCase()}. ${utgjør} Det er observert ${arter} i områder som er kartlagt som ${tittel.toLowerCase()}.`;
     case "VV":
-      const mor = overordnet[0];
+      const mor = overordnet;
       const morareal = mor.areal;
       return `${tittel} er ${prettyprint.prettyPrintAreal(areal)}. ${
         morareal

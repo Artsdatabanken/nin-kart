@@ -24,8 +24,7 @@ class Kartlag extends React.Component {
       meta,
       show_current,
       handleShowCurrent,
-      onRemoveSelectedLayer,
-      swapOrderOfList
+      onRemoveSelectedLayer
     } = this.props;
 
     let duplicate = false;
@@ -110,7 +109,6 @@ class Kartlag extends React.Component {
                               show_current={show_current}
                               handleShowCurrent={handleShowCurrent}
                               is_current_object={true}
-                              swapOrderOfList={swapOrderOfList}
                               activateLayerFromHistory={
                                 activateLayerFromHistory
                               }

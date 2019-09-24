@@ -3,7 +3,14 @@ import updateHistory from "./updateHistory";
 
 export default function fetchMeta(location, place) {
   let url = location.match(/\/(.*)/);
+
   place.setState({ meta: null });
+  if (
+    location === "/Natur_i_Norge/hjelp" ||
+    location === "/Natur_i_Norge/hjelp"
+  ) {
+    return;
+  }
   if (!url || url.length !== 2 || !url[1]) return;
   const path = url[1].replace(/katalog/i, "");
   place.downloadMeta(path).then(data => {
@@ -14,7 +21,6 @@ export default function fetchMeta(location, place) {
     if (data.se) {
       const newUrl = data.se[Object.keys(data.se)[0]].sti;
       redirectTo(newUrl);
-
       return;
     }
     filterUnreleased(data.kart);

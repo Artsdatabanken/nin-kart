@@ -73,11 +73,14 @@ body {
 
 :focus {
   outline: none;
-  border-bottom: 2px solid grey;
+  border-bottom: 2px solid black !important;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
 }
 
 button:focus {
-  border: 1px solid #81b2bb;
+  border: 2px solid black !important;
+  box-sizing: border-box;
 }
 
 a,

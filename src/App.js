@@ -155,6 +155,7 @@ class App extends React.Component {
         </SettingsContext.Consumer>
       );
     }
+    console.log(path);
 
     return (
       <SettingsContext.Consumer>
@@ -191,6 +192,7 @@ class App extends React.Component {
                     {(context.aktivTab === "meny" ||
                       context.aktivTab === "informasjon") && (
                       <InformasjonsVisning
+                        path={path}
                         aktivTab={context.aktivTab}
                         show_current={this.state.showCurrent}
                         handleShowCurrent={this.handleShowCurrent}
@@ -233,7 +235,6 @@ class App extends React.Component {
                           navigation_history={this.state.navigation_history}
                           onFitBounds={this.handleFitBounds}
                           history={history}
-                          swapOrderOfList={this.swapOrderOfList}
                           currentKartlag={this.state.meta}
                           activateLayerFromHistory={
                             this.activateLayerFromHistory
@@ -241,14 +242,6 @@ class App extends React.Component {
                         />
                       </div>
                     )}
-
-                    {/* 
-                TODO: 
-                sett inn en state her som husker om vi har sett kartet før, så unngår vi å: 
-                - laste det inn kart for brukere som ikke går til fanen
-                - laste på nytt når det først er hentet ned
-
-                 */}
                     <Kart
                       show_current={this.state.showCurrent}
                       bounds={this.state.fitBounds}
@@ -308,7 +301,6 @@ class App extends React.Component {
   };
   componentDidMount() {
     fetchMeta(this.props.location.pathname, this);
-    //this.handleShowCurrent(false);
   }
 
   addSelected = props => {
@@ -325,13 +317,6 @@ class App extends React.Component {
     this.setState({
       aktiveLag: Object.assign({}, aktiverFraHistorikk(aktive, node))
     });
-  };
-
-  swapOrderOfList = node => {
-    let aktive = this.state.aktiveLag;
-    let keys = Object.keys(aktive);
-    let input_index = keys.indexOf(node.kode);
-    console.log(input_index);
   };
 
   componentDidUpdate(prevProps) {
