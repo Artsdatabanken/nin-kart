@@ -8,7 +8,7 @@ export default function tekst(props) {
   switch (prefiks) {
     case "NA":
     case "LA":
-      const topp = overordnet[overordnet.length - 3];
+      const topp = overordnet[overordnet.length - 2];
       const utgjør = topp
         ? `Dette utgjør ${prosent(areal, topp.areal)} av kartlagte ${språk(
             topp.tittel
@@ -18,7 +18,7 @@ export default function tekst(props) {
         areal
       )} ${tittel.toLowerCase()}. ${utgjør} Det er observert ${arter} i områder som er kartlagt som ${tittel.toLowerCase()}.`;
     case "VV":
-      const mor = overordnet[0];
+      const mor = overordnet[0] || {};
       const morareal = mor.areal;
       return `${tittel} er ${prettyprint.prettyPrintAreal(areal)}. ${
         morareal
