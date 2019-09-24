@@ -16,7 +16,7 @@ class InformasjonsVisning extends React.Component {
   };
 
   handleNavigate = url => {
-    this.props.history.push("/" + url);
+    this.props.history.push(url);
   };
 
   componentDidUpdate(prevProps, prevState) {

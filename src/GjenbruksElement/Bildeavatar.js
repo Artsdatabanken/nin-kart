@@ -42,7 +42,9 @@ class BildeAvatar extends Component {
   */
   render() {
     const { classes, url } = this.props;
-    const urlWithNoQueryString = url.split("?")[0];
+    const urlWithNoQueryString =
+      url &&
+      "https://data.artsdatabanken.no/" + url.split("?")[0] + "/logo_24.png";
     return (
       <Avatar
         alt="logo"
@@ -50,11 +52,7 @@ class BildeAvatar extends Component {
           root: classes.root,
           img: classes.img
         }}
-        src={
-          "https://data.artsdatabanken.no/" +
-          urlWithNoQueryString +
-          "/logo_24.png"
-        }
+        src={urlWithNoQueryString}
       />
     );
   }
