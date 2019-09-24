@@ -105,7 +105,7 @@
   height: calc(100vh - 113px);
   overflow-x: hidden;
   max-width: 350px;
-  background: #f7f7f7;
+  background: #eee;
   width: 100%;
 }
 
@@ -124,6 +124,8 @@
   padding: 10px;
   background: #f7f7f7;
   flex: 1;
+  margin-left: 1px;
+  margin-right: 1px;
 }
 
 .forvaltningsportalen button:hover {
@@ -134,4 +136,98 @@
 .forvaltningsportalen button svg {
   height: 12pt;
   vertical-align: top;
+}
+
+@media only screen and (max-width: 768px) {
+  .forvaltningsportal_kartlag {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .forvaltningsportal_kartlag.kartlag_content_open,
+  .forvaltnings.closed_mobile_slide_up_area {
+    bottom: 0px;
+    background: #eee;
+  }
+
+  .forvaltningsportalen.frontpage_header h1,
+  .forvaltningsportalen.frontpage_header h2 {
+    font-size: 15pt;
+    padding: 5px;
+  }
+
+  .forvaltningsportalen {
+    position: relative;
+  }
+
+  .forvaltningsportalen .menylinje {
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .forvaltningsportalen .menylinje button {
+    max-height: 52px;
+    height: 52px;
+  }
+
+  .forvaltnings.mobile_slide_up_area {
+    height: 20px;
+    border-top: 1px solid white;
+  }
+
+  .forvaltnings.mobile_slide_up_area svg {
+    background: #f7f7f7;
+    border-radius: 2px;
+    width: 140px;
+    border-top: 1px solid white;
+    color: black;
+    height: 20px;
+    padding: 2px;
+  }
+
+  .forvaltnings.closed_mobile_slide_up_area svg {
+    margin-top: -6px;
+  }
+
+  .forvaltnings.open_mobile_slide_up_area {
+    background: transparent;
+    border-bottom: 1px solid white;
+    height: 43px;
+  }
+
+  .forvaltnings.kartlag_content_open {
+    height: calc(100vh - 155px);
+  }
+}
+
+@media only screen and (max-width: 398px) {
+  .forvaltningsportalen.frontpage_header h1,
+  .forvaltningsportalen.frontpage_header h2 {
+    font-size: 14pt;
+    padding: 5px;
+    padding-top: 0px;
+  }
+
+  .forvaltningsportalen .menylinje button {
+    font-size: 8pt;
+    padding: 0px;
+  }
+}
+
+/* Teeeny weeeny bitteliten skjerm. Hvis noen ser denne størrelsen blir jeg imponert. */
+@media only screen and (max-width: 198px) {
+  .kartlag_list_title,
+  .forvaltningsportalen.frontpage_header h1,
+  .forvaltningsportalen.frontpage_header h2 {
+    font-size: 9pt;
+  }
+
+  .forvaltningsportalen .menylinje button {
+    max-height: 58px;
+    height: 58px;
+  }
+}
+
+.forvaltningsportal_kartlag .kartlag_list {
+  padding-top: 20px;
 }

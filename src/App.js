@@ -26,7 +26,6 @@ import "style/Sidebar.css";
 import "style/GeografiskSidebar.css";
 import "style/Kartlag.css";
 import "style/FargeMenyer.css";
-import forvaltningskartjson from "forvaltningsportal.json";
 
 export let exportableSpraak;
 export let exportableFullscreen;
@@ -40,7 +39,7 @@ class App extends React.Component {
     this.state = {
       forvaltningsportalen: "false",
       aktiveLag: aktive,
-      forvaltningsLag: forvaltningskartjson,
+      forvaltningsLag: aktive,
       opplystKode: "",
       opplyst: {},
       actualBounds: null,
@@ -97,7 +96,14 @@ class App extends React.Component {
                 {this.state.forvaltningsportalen === "true" && (
                   <>
                     {forvaltningskart === false ? (
-                      <Forvaltningsportalen history={history} />
+                      <Forvaltningsportalen
+                        history={history}
+                        aktiveLag={Object.assign(
+                          {},
+                          this.state.forvaltningsLag,
+                          this.state.meta && this.state.meta.barn
+                        )}
+                      />
                     ) : (
                       <>
                         <ForvaltningsKartBokser history={history} />
@@ -105,10 +111,16 @@ class App extends React.Component {
                           show_current={this.state.showCurrent}
                           hidden={true}
                           handleShowCurrent={this.handleShowCurrent}
-                          aktiveLag={this.state.forvaltningsLag}
+                          aktiveLag={Object.assign(
+                            {},
+                            this.state.forvaltningsLag,
+                            this.state.meta && this.state.meta.barn
+                          )}
+                          meta={this.state.meta || {}}
                           navigation_history={this.state.navigation_history}
                           onFitBounds={this.handleFitBounds}
                           history={history}
+                          onUpdateLayerProp={this.handleForvaltningsLayerProp}
                         />
                       </>
                     )}
@@ -116,12 +128,17 @@ class App extends React.Component {
                 )}
 
                 <Kart
+                  forvaltningsportal={this.state.forvaltningsportalen}
                   show_current={this.state.showCurrent}
                   bounds={this.state.fitBounds}
                   latitude={65.4}
                   longitude={10.8}
                   zoom={3}
-                  aktiveLag={this.state.forvaltningsLag}
+                  _aktiveLag={this.state.forvaltningsLag}
+                  aktiveLag={Object.assign(
+                    this.state.forvaltningsLag,
+                    this.state.meta && this.state.meta.barn
+                  )}
                   opplyst={this.state.opplyst}
                   opplystKode={this.state.opplystKode}
                   meta={this.state.meta}
@@ -345,6 +362,18 @@ class App extends React.Component {
         {},
         oppdaterLagProperties(layer, key, value, this, elementType)
       )
+    });
+  };
+
+  handleForvaltningsLayerProp = (layer, key, value) => {
+    let nye_lag = this.state.forvaltningsLag;
+    for (let item in this.state.forvaltningsLag) {
+      if (this.state.forvaltningsLag[item].kode === layer) {
+        nye_lag[item][key] = value;
+      }
+    }
+    this.setState({
+      forvaltningsLag: Object.assign({}, nye_lag)
     });
   };
 

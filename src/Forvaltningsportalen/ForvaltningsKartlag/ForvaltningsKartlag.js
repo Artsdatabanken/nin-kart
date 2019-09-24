@@ -9,10 +9,9 @@ class Kartlag extends React.Component {
     showKartlag: false
   };
   render() {
-    let koder = this.props.aktiveLag;
+    const { aktiveLag, onFitBounds, onUpdateLayerProp, hidden } = this.props;
+    let koder = aktiveLag;
     const keys = Object.keys(koder);
-    const { onFitBounds, onUpdateLayerProp, hidden, meta } = this.props;
-
     return (
       <>
         {hidden && (
@@ -22,8 +21,8 @@ class Kartlag extends React.Component {
                 <button
                   className={
                     this.state.showKartlag
-                      ? "mobile_slide_up_area open_mobile_slide_up_area"
-                      : "mobile_slide_up_area closed_mobile_slide_up_area"
+                      ? "forvaltnings mobile_slide_up_area open_mobile_slide_up_area"
+                      : "forvaltnings mobile_slide_up_area closed_mobile_slide_up_area"
                   }
                   onClick={() => {
                     this.setState({ showKartlag: !this.state.showKartlag });
@@ -32,14 +31,17 @@ class Kartlag extends React.Component {
                   {this.state.showKartlag ? (
                     <KeyboardArrowDown />
                   ) : (
-                    <>
-                      <KeyboardArrowUp />
-                      <span>Aktivt kartlag</span>
-                    </>
+                    <KeyboardArrowUp />
                   )}
                 </button>
 
-                <div className="forvaltningsportal_kartlag kartlag">
+                <div
+                  className={
+                    this.state.showKartlag
+                      ? "forvaltningsportal_kartlag kartlag_content_open kartla"
+                      : "forvaltningsportal_kartlag kartlag_content_closed kartlag"
+                  }
+                >
                   <div className="kartlag_content">
                     <div className="sidebar_element">
                       <ul className="kartlag_list">
@@ -55,7 +57,6 @@ class Kartlag extends React.Component {
                                   visKoder={context.visKoder}
                                   onFitBounds={onFitBounds}
                                   onUpdateLayerProp={onUpdateLayerProp}
-                                  meta={meta}
                                 />
                               </>
                             )

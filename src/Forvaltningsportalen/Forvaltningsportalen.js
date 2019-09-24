@@ -1,5 +1,6 @@
 import React from "react";
 import "style/Forvaltningsportalen.css";
+import språk from "Funksjoner/språk";
 
 const Forvaltningsportalen = props => {
   return (
@@ -33,52 +34,17 @@ const Forvaltningsportalen = props => {
 
             <div className="kolonne_container">
               <div className="skjema_kolonne">
-                <h3>Kart fra Kartverket</h3>
-                <div>
-                  <input type="Checkbox" />
-                  Eksempelkart
-                </div>
-                <div>
-                  <input type="Checkbox" />
-                  Eksempelkart
-                </div>
-                <div>
-                  <input type="Checkbox" />
-                  Eksempelkart
-                </div>
-                <div>LOGO</div>
-              </div>
-              <div className="skjema_kolonne">
-                <h3>Verdisatt forvaltningsdata</h3>
-                <div>
-                  <input type="Checkbox" />
-                  Eksempelkart
-                </div>
-                <div>
-                  <input type="Checkbox" />
-                  Eksempelkart
-                </div>
-                <div>
-                  <input type="Checkbox" />
-                  Eksempelkart
-                </div>
-                <div>LOGO</div>
-              </div>
-              <div className="skjema_kolonne">
-                <h3>Nøytral data</h3>
-                <div>
-                  <input type="Checkbox" />
-                  Eksempelkart
-                </div>
-                <div>
-                  <input type="Checkbox" />
-                  Eksempelkart
-                </div>
-                <div>
-                  <input type="Checkbox" />
-                  Eksempelkart
-                </div>
-                <div>LOGO</div>
+                <h3>Overskrift</h3>
+
+                {Object.keys(props.aktiveLag).map((item, index) => {
+                  const node = props.aktiveLag[item];
+                  return (
+                    <div>
+                      <input type="Checkbox" />
+                      {språk(node.tittel)}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
