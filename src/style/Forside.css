@@ -38,6 +38,7 @@
 .frontpage_header div {
   display: inline-block;
   vertical-align: middle;
+  text-align: left;
 }
 
 /* Headings */
@@ -56,7 +57,7 @@
 /* fEATURE bLOCK */
 
 .frontpage_feature_block {
-  background: #81b2bb;
+  background: #4b909e;
   font-size: 16pt;
 }
 

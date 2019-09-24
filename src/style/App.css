@@ -8,6 +8,7 @@
 }
 
 .nin_colours {
+  color: #4d8b96;
   color: #4b909e;
   color: #81b2bb;
   color: #b7d3d8;
@@ -73,6 +74,19 @@ a:focus {
   color: #4b909e;
 }
 
+::-moz-focus-inner {
+  border: 0;
+}
+
+:focus {
+  outline: none;
+  border-bottom: 2px solid grey;
+}
+
+button:focus {
+  border: 1px solid #81b2bb;
+}
+
 a:hover {
   color: #81b2bb;
   cursor: pointer;
@@ -91,7 +105,7 @@ h3 {
 h1,
 h2,
 h3 {
-  color: #4b909e;
+  color: #347c8a;
   font-weight: 300;
 }
 
