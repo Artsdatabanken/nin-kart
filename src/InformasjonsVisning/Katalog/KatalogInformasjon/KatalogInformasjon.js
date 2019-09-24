@@ -1,10 +1,9 @@
 import React from "react";
-//import Detaljeringsgrad from "./Detaljeringsgrad";
 import KatalogInformasjonsBoks from "./KatalogInformasjonsBoks";
 import KatalogStatistikk from "InformasjonsVisning/Katalog/KatalogInformasjon/KatalogStatistikk/KatalogStatistikk";
 import språk from "Funksjoner/språk";
 
-const KatalogInformasjon = ({ meta, onUpdateLayerProp }) => {
+const KatalogInformasjon = ({ meta }) => {
   /*
   
   Contains information giving components.
@@ -21,7 +20,7 @@ const KatalogInformasjon = ({ meta, onUpdateLayerProp }) => {
     antallArter,
     stats
   } = meta;
-  const mor = overordnet[0] || { tittel: {} };
+  const mor = (overordnet.length > 0 && overordnet[0]) || { tittel: {} };
 
   return (
     <>
