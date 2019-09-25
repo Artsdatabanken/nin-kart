@@ -5,7 +5,7 @@ import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
 import Kurve from "GjenbruksElement/Kurver/Kurve";
 import språk from "Funksjoner/språk";
 import Bildeavatar from "GjenbruksElement/Bildeavatar";
-import { Home } from "@material-ui/icons";
+import { Home, HelpOutline } from "@material-ui/icons";
 
 const Meny = ({
   data,
@@ -22,9 +22,12 @@ Intern navigasjon innad på en side.
 Sidebarmeny-navigeringen.
   
   */
-  if (!meta) return null;
-  const { overordnet, kode } = meta;
-  const tittel = språk(meta.tittel);
+  let tittel = "hjelp";
+  let url = "/;";
+  if (meta) {
+    url = meta.url;
+    tittel = språk(meta.tittel);
+  }
   return (
     <>
       {" "}
@@ -47,17 +50,21 @@ Sidebarmeny-navigeringen.
             <span className="nav_title">Startsiden</span>
           </div>
         </button>
-        <Overordnet overordnet={overordnet} onNavigate={onNavigate} />
+        {meta && (
+          <Overordnet overordnet={meta.overordnet} onNavigate={onNavigate} />
+        )}
         <div className="nav_current">
           {" "}
-          <Bildeavatar url={meta.url} /> {tittel}
+          {meta && <Bildeavatar url={url} />}
+          {tittel === "hjelp" && <HelpOutline />}
+          {tittel}
         </div>
 
         <Navigeringsliste
-          parentkode={kode}
+          parentkode={meta ? meta.kode : "kode"}
           størsteAreal={data.størsteAreal}
           apidata={data.barn}
-          metadata={meta.barn}
+          metadata={meta && meta.barn}
           onNavigate={onNavigate}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}

@@ -73,7 +73,7 @@ class HamburgerMeny extends Component {
                   icon={<Info />}
                   primary="Informasjon"
                   onClick={() => {
-                    this.handleClick("?hjelp");
+                    this.handleClick("/Natur_i_Norge/hjelp");
                     context.onToggleHovedmeny();
                   }}
                 />

@@ -33,7 +33,8 @@ class InformasjonsVisning extends React.Component {
       onUpdateMetaProp,
       meta,
       location,
-      aktivTab
+      aktivTab,
+      path
     } = this.props;
     const kurve = finnKurvevariabler(this.props.aktiveLag);
     const meny = (
@@ -54,7 +55,7 @@ class InformasjonsVisning extends React.Component {
       </div>
     );
 
-    if (location.search && location.search.startsWith("?hjelp")) {
+    if (path === "/Natur_i_Norge/hjelp") {
       return (
         <>
           {meny}

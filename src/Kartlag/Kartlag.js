@@ -24,12 +24,11 @@ class Kartlag extends React.Component {
       meta,
       show_current,
       handleShowCurrent,
-      onRemoveSelectedLayer,
-      swapOrderOfList
+      onRemoveSelectedLayer
     } = this.props;
 
     let duplicate = false;
-    if (!currentKartlag) return null;
+
     if (currentKartlag && currentKartlag.kode) {
       for (var item in keys) {
         if (keys[item] === currentKartlag.kode) {
@@ -42,7 +41,12 @@ class Kartlag extends React.Component {
       /* History length limitation. When surpassing this limit, it removes the earliest entry */
       navigation_history.shift();
     }
-    let tittel = språk(currentKartlag.tittel);
+
+    let tittel = "hjelp";
+
+    if (currentKartlag) {
+      tittel = språk(currentKartlag.tittel);
+    }
     if (tittel.length > 40) {
       tittel = tittel.substring(0, 40) + "...";
     }
@@ -93,10 +97,10 @@ class Kartlag extends React.Component {
                     <div className="sidebar_title_container sidebar_element">
                       <h1 className="sidebar_title">Kartlag</h1>
                     </div>
-                    {!duplicate && (
+
+                    {currentKartlag && !duplicate && (
                       <>
                         <NatursystemAdvarsel kode={currentKartlag.kode} />
-
                         <div className="sidebar_element">
                           <h2>Nåværende kartlag</h2>
                           <ul className="kartlag_list">
@@ -110,7 +114,6 @@ class Kartlag extends React.Component {
                               show_current={show_current}
                               handleShowCurrent={handleShowCurrent}
                               is_current_object={true}
-                              swapOrderOfList={swapOrderOfList}
                               activateLayerFromHistory={
                                 activateLayerFromHistory
                               }
@@ -164,12 +167,13 @@ class Kartlag extends React.Component {
                         .reverse()
                         .map((item, index) => {
                           const node = navigation_history[item];
-
                           if (
-                            node.meta.url &&
-                            node !== currentKartlag &&
-                            node.meta.kode !== currentKartlag.kode
-                          ) {
+                            currentKartlag &&
+                            (node === currentKartlag ||
+                              node.meta.kode === currentKartlag.kode)
+                          )
+                            return "";
+                          if (node.meta.url) {
                             return (
                               <HistorikkListeElement
                                 meta={node.meta}

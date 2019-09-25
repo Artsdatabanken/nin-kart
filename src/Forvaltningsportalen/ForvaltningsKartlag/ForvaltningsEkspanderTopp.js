@@ -21,7 +21,6 @@ const ForvaltningsEkspanderTopp = ({
         className="invisible_icon_button"
         onChange={e => {
           if (!erAktivtLag) {
-            console.log(!erSynlig);
             onUpdateLayerProp(kode, "erSynlig", !erSynlig);
             e.stopPropagation();
           } else {

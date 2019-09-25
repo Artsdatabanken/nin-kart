@@ -40,4 +40,13 @@
   background: #edf4f5;
   padding: 10px;
   padding-left: 30px;
+  text-transform: capitalize;
+}
+
+.nav_current svg {
+  vertical-align: top;
+  margin-top: 0px;
+  padding-right: 5px;
+  height: 20px;
+  width: 17px;
 }

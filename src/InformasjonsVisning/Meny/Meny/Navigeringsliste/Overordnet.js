@@ -4,7 +4,6 @@ import Bildeavatar from "GjenbruksElement/Bildeavatar";
 
 const Overordnet = ({ overordnet, onNavigate }) => {
   let underordnet = overordnet;
-
   if (
     underordnet.length > 1 &&
     underordnet[underordnet.length - 1].url === "Natur_i_Norge"
