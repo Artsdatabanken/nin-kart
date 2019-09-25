@@ -1,35 +1,35 @@
 import { SettingsContext } from "../SettingsContext";
 import React from "react";
 
-const MobileNavigation = () => (
+const MobileNavigation = ({ onNavigateToTab, aktivTab }) => (
   <SettingsContext.Consumer>
     {context => (
       <div className="tab_selector">
         <button
-          className={context.aktivTab === "meny" ? "active_mobile_button" : ""}
-          onClick={() => context.onNavigateToTab("meny")}
+          className={aktivTab === "meny" ? "active_mobile_button" : ""}
+          onClick={() => {
+            onNavigateToTab("meny");
+          }}
         >
           Navigering
         </button>
 
         <button
           className={
-            context.aktivTab === "informasjon"
+            aktivTab === "informasjon"
               ? "active_mobile_button"
-              : context.aktivTab === "meny"
+              : aktivTab === "meny"
               ? "active_mobile_button_bigscreen"
               : ""
           }
-          onClick={() => context.onNavigateToTab("informasjon")}
+          onClick={() => onNavigateToTab("informasjon")}
         >
           Informasjon
         </button>
 
         <button
-          className={
-            context.aktivTab === "kartlag" ? "active_mobile_button" : ""
-          }
-          onClick={() => context.onNavigateToTab("kartlag")}
+          className={aktivTab === "kartlag" ? "active_mobile_button" : ""}
+          onClick={() => onNavigateToTab("kartlag")}
         >
           Kart {/* <Layers />*/}
         </button>
