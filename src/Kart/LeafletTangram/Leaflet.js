@@ -5,7 +5,12 @@ import React from "react";
 import Tangram from "tangram";
 import { createScene, updateScene } from "./scene/scene";
 import backend from "Funksjoner/backend";
-import { Landscape, Fullscreen, FullscreenExit } from "@material-ui/icons";
+import {
+  Landscape,
+  Fullscreen,
+  FullscreenExit,
+  LocationSearching
+} from "@material-ui/icons";
 import språk from "Funksjoner/språk";
 import "style/Kart.css";
 import updateMarkerPosition from "./LeafletActions/updateMarkerPosition";
@@ -108,6 +113,23 @@ class LeafletTangram extends React.Component {
       iconSize: [36, 36],
       iconAnchor: [17, 35]
     });
+
+    map.on("locationfound", e => this.onLocationFound(e));
+    map.on("locationerror", e => this.onLocationError(e));
+  }
+
+  onLocationFound(e) {
+    var radius = e.accuracy / 2;
+    L.marker(e.latlng)
+      .addTo(this.map)
+      .on("click", function() {
+        alert("are you sure?");
+      });
+    L.circle(e.latlng, radius).addTo(this.map);
+  }
+
+  onLocationError(e) {
+    alert(e.message);
   }
 
   erEndret(prevProps) {
@@ -315,8 +337,22 @@ class LeafletTangram extends React.Component {
             this.mapEl = ref;
           }}
         />
+        <button
+          style={{
+            position: "absolute",
+            left: "30%",
+            bottom: "10%"
+          }}
+          onClick={() => this.handleLocate()}
+        >
+          <LocationSearching />
+        </button>
       </>
     );
+  }
+
+  handleLocate() {
+    this.map.locate({ setView: true });
   }
 }
 
