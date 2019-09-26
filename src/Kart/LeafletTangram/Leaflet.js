@@ -301,7 +301,7 @@ class LeafletTangram extends React.Component {
                     this.props.history.push(this.state.buttonUrl);
                   }}
                 >
-                  Les mer på stedets informasjonsside
+                  Gå til all info om dette punktet
                 </button>
                 <br />
               </>

@@ -17,6 +17,7 @@ import HamburgerMeny from "HamburgerMeny/HamburgerMeny";
 import MobileNavigation from "MobileNavigation/MobileNavigation";
 import ForsideInformasjon from "Forside/ForsideInformasjon";
 import Forvaltningsportalen from "Forvaltningsportalen/Forvaltningsportalen";
+import Meny from "Navigering/Meny";
 import språk from "Funksjoner/språk";
 import "style/Kart.css";
 import "style/App.css";
@@ -174,31 +175,50 @@ class App extends React.Component {
                       <div>
                         {(this.state.aktivTab === "meny" ||
                           this.state.aktivTab === "informasjon") && (
-                          <InformasjonsVisning
-                            path={path}
-                            aktivTab={this.state.aktivTab}
-                            show_current={this.state.showCurrent}
-                            handleShowCurrent={this.handleShowCurrent}
-                            aktiveLag={this.state.aktiveLag}
-                            mapBounds={this.state.actualBounds}
-                            onMouseEnter={this.handleMouseEnter}
-                            onMouseLeave={this.handleMouseLeave}
-                            onFitBounds={this.handleFitBounds}
-                            erAktivert={erAktivert}
-                            opplyst={this.state.opplyst}
-                            onToggleLayer={() => {
-                              this.handleToggleLayer();
-                              if (!context.visAktiveLag)
-                                context.onToggleAktiveLag();
-                            }}
-                            meta={this.state.meta}
-                            searchFor={this.state.searchFor}
-                            onClearSearchFor={this.handleClearSearchFor}
-                            onUpdateLayerProp={this.handleUpdateLayerProp}
-                            onUpdateMetaProp={this.handleUpdateMetaProp}
-                            visAktiveLag={context.visAktiveLag}
-                            onToggleAktiveLag={context.onToggleAktiveLag}
-                          />
+                          <>
+                            <div
+                              className={
+                                (this.state.aktivTab === "meny"
+                                  ? "mobile_on"
+                                  : "mobile_off") + " sidebar "
+                              }
+                            >
+                              <Meny
+                                meta={this.state.meta}
+                                onNavigate={this.handleNavigate}
+                                //data={this.state.data}
+                                onUpdateMetaProp={this.handleUpdateMetaProp}
+                                opplyst={this.state.opplyst}
+                                onMouseEnter={this.handleMouseEnter}
+                                onMouseLeave={this.handleMouseLeave}
+                              />
+                            </div>
+                            <InformasjonsVisning
+                              path={path}
+                              aktivTab={this.state.aktivTab}
+                              show_current={this.state.showCurrent}
+                              handleShowCurrent={this.handleShowCurrent}
+                              aktiveLag={this.state.aktiveLag}
+                              mapBounds={this.state.actualBounds}
+                              onMouseEnter={this.handleMouseEnter}
+                              onMouseLeave={this.handleMouseLeave}
+                              onFitBounds={this.handleFitBounds}
+                              erAktivert={erAktivert}
+                              opplyst={this.state.opplyst}
+                              onToggleLayer={() => {
+                                this.handleToggleLayer();
+                                if (!context.visAktiveLag)
+                                  context.onToggleAktiveLag();
+                              }}
+                              meta={this.state.meta}
+                              searchFor={this.state.searchFor}
+                              onClearSearchFor={this.handleClearSearchFor}
+                              onUpdateLayerProp={this.handleUpdateLayerProp}
+                              onUpdateMetaProp={this.handleUpdateMetaProp}
+                              visAktiveLag={context.visAktiveLag}
+                              onToggleAktiveLag={context.onToggleAktiveLag}
+                            />
+                          </>
                         )}
                         {this.state.aktivTab === "kartlag" && (
                           <div
@@ -262,6 +282,10 @@ class App extends React.Component {
       </SettingsContext.Consumer>
     );
   }
+  handleNavigate = url => {
+    this.props.history.push(url);
+  };
+
   onNavigateToTab = tab => {
     this.setState({ aktivTab: tab });
     this.props.history.push("?" + tab);

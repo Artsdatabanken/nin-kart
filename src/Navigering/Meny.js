@@ -8,7 +8,7 @@ import Bildeavatar from "GjenbruksElement/Bildeavatar";
 import { Home, HelpOutline } from "@material-ui/icons";
 
 const Meny = ({
-  data,
+  //data,
   meta,
   onNavigate,
   onUpdateMetaProp,
@@ -62,8 +62,8 @@ Sidebarmeny-navigeringen.
 
         <Navigeringsliste
           parentkode={meta ? meta.kode : "kode"}
-          størsteAreal={data.størsteAreal}
-          apidata={data.barn}
+          //størsteAreal={data.størsteAreal}
+          //apidata={data.barn}
           metadata={meta && meta.barn}
           onNavigate={onNavigate}
           onMouseEnter={onMouseEnter}
