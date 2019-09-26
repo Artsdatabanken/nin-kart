@@ -14,10 +14,6 @@ class InformasjonsVisning extends React.Component {
     data: {}
   };
 
-  handleNavigate = url => {
-    this.props.history.push(url);
-  };
-
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.meta !== this.props.meta) this.setState({ query: null });
   }
@@ -33,7 +29,8 @@ class InformasjonsVisning extends React.Component {
       meta,
       location,
       aktivTab,
-      path
+      path,
+      handleNavigate
     } = this.props;
     const kurve = finnKurvevariabler(this.props.aktiveLag);
 
@@ -50,7 +47,7 @@ class InformasjonsVisning extends React.Component {
           vis={vis}
           aktivTab={aktivTab}
           history={this.props.history}
-          onNavigate={this.handleNavigate}
+          onNavigate={handleNavigate}
         />
       );
     }
@@ -67,7 +64,7 @@ class InformasjonsVisning extends React.Component {
             meta={meta}
             onFitBounds={this.props.onFitBounds}
             onUpdateLayerProp={onUpdateLayerProp}
-            onNavigate={this.handleNavigate}
+            onNavigate={handleNavigate}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             opplyst={opplyst}

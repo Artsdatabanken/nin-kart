@@ -31,7 +31,7 @@ const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
         <div className="submeny_container">
           Gradient Filter:
           <br />
-          <div className="">
+          <div className="slider_element ">
             <RangeSlider
               minLabel={filterMin.toFixed(decimals) + " " + måleenhet}
               maxLabel={filterMax.toFixed(decimals) + " " + måleenhet}

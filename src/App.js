@@ -173,28 +173,22 @@ class App extends React.Component {
                         />
                       </div>
                       <div>
-                        <div
-                          className={
-                            (this.state.aktivTab === "meny"
-                              ? "mobile_on"
-                              : "mobile_off") + " sidebar "
-                          }
-                        >
-                          <Meny
-                            meta={this.state.meta}
-                            onNavigate={this.handleNavigate}
-                            //data={this.state.data}
-                            onUpdateMetaProp={this.handleUpdateMetaProp}
-                            opplyst={this.state.opplyst}
-                            onMouseEnter={this.handleMouseEnter}
-                            onMouseLeave={this.handleMouseLeave}
-                          />
-                        </div>
+                        <Meny
+                          meta={this.state.meta}
+                          onNavigate={this.handleNavigate}
+                          aktivTab={this.state.aktivTab}
+                          //data={this.state.data}
+                          onUpdateMetaProp={this.handleUpdateMetaProp}
+                          opplyst={this.state.opplyst}
+                          onMouseEnter={this.handleMouseEnter}
+                          onMouseLeave={this.handleMouseLeave}
+                        />
 
-                        {(this.state.aktivTab === "meny" ||
-                          this.state.aktivTab === "informasjon") && (
+                        {this.state.aktivTab === "meny" ||
+                        this.state.aktivTab === "informasjon" ? (
                           <>
                             <InformasjonsVisning
+                              handleNavigate={this.handleNavigate}
                               path={path}
                               aktivTab={this.state.aktivTab}
                               show_current={this.state.showCurrent}
@@ -220,8 +214,7 @@ class App extends React.Component {
                               onToggleAktiveLag={context.onToggleAktiveLag}
                             />
                           </>
-                        )}
-                        {this.state.aktivTab === "kartlag" && (
+                        ) : (
                           <div
                             className={
                               this.state.showFullscreen
