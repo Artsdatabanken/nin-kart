@@ -53,18 +53,16 @@ class App extends React.Component {
     };
     exportableSpraak = this;
     exportableFullscreen = this;
+  }
 
+  render() {
+    let aktivTab = "informasjon";
     if (
       this.props.location.search &&
       this.props.location.search !== "?" + this.state.aktivTab
     ) {
-      this.setState({ aktivTab: this.props.location.search.substring(1) });
-    } else if (!this.props.location.search) {
-      this.setState({ aktivTab: "informasjon" });
+      aktivTab = this.props.location.search.substring(1);
     }
-  }
-
-  render() {
     const { history } = this.props;
     let erAktivert = false;
     if (this.state.meta)
@@ -91,10 +89,6 @@ class App extends React.Component {
     return (
       <SettingsContext.Consumer>
         {context => {
-          if (path.includes("?kart") && this.state.aktivTab !== "kartlag") {
-            this.onNavigateToTab("kartlag");
-          }
-
           return (
             <>
               {this.state.forvaltningsportalen === "true" ? (
@@ -169,14 +163,14 @@ class App extends React.Component {
                       >
                         <MobileNavigation
                           onNavigateToTab={this.onNavigateToTab}
-                          aktivTab={this.state.aktivTab}
+                          aktivTab={aktivTab}
                         />
                       </div>
                       <div>
                         <Meny
                           meta={this.state.meta}
                           onNavigate={this.handleNavigate}
-                          aktivTab={this.state.aktivTab}
+                          aktivTab={aktivTab}
                           //data={this.state.data}
                           onUpdateMetaProp={this.handleUpdateMetaProp}
                           opplyst={this.state.opplyst}
@@ -184,13 +178,12 @@ class App extends React.Component {
                           onMouseLeave={this.handleMouseLeave}
                         />
 
-                        {this.state.aktivTab === "meny" ||
-                        this.state.aktivTab === "informasjon" ? (
+                        {aktivTab === "meny" || aktivTab === "informasjon" ? (
                           <>
                             <InformasjonsVisning
                               handleNavigate={this.handleNavigate}
                               path={path}
-                              aktivTab={this.state.aktivTab}
+                              aktivTab={aktivTab}
                               show_current={this.state.showCurrent}
                               handleShowCurrent={this.handleShowCurrent}
                               aktiveLag={this.state.aktiveLag}
@@ -225,7 +218,7 @@ class App extends React.Component {
                             <Kartlag
                               show_current={this.state.showCurrent}
                               handleShowCurrent={this.handleShowCurrent}
-                              hidden={this.state.aktivTab === "kartlag" && true}
+                              hidden={aktivTab === "kartlag" && true}
                               aktiveLag={this.state.aktiveLag}
                               onUpdateLayerProp={this.handleUpdateLayerProp}
                               onRemoveSelectedLayer={
@@ -277,11 +270,10 @@ class App extends React.Component {
     );
   }
   handleNavigate = url => {
-    this.props.history.push(url);
+    this.props.history.push(url + "?" + this.state.aktivTab);
   };
 
   onNavigateToTab = tab => {
-    this.setState({ aktivTab: tab });
     this.props.history.push("?" + tab);
   };
   handleActualBoundsChange = bounds => {
