@@ -173,26 +173,27 @@ class App extends React.Component {
                         />
                       </div>
                       <div>
+                        <div
+                          className={
+                            (this.state.aktivTab === "meny"
+                              ? "mobile_on"
+                              : "mobile_off") + " sidebar "
+                          }
+                        >
+                          <Meny
+                            meta={this.state.meta}
+                            onNavigate={this.handleNavigate}
+                            //data={this.state.data}
+                            onUpdateMetaProp={this.handleUpdateMetaProp}
+                            opplyst={this.state.opplyst}
+                            onMouseEnter={this.handleMouseEnter}
+                            onMouseLeave={this.handleMouseLeave}
+                          />
+                        </div>
+
                         {(this.state.aktivTab === "meny" ||
                           this.state.aktivTab === "informasjon") && (
                           <>
-                            <div
-                              className={
-                                (this.state.aktivTab === "meny"
-                                  ? "mobile_on"
-                                  : "mobile_off") + " sidebar "
-                              }
-                            >
-                              <Meny
-                                meta={this.state.meta}
-                                onNavigate={this.handleNavigate}
-                                //data={this.state.data}
-                                onUpdateMetaProp={this.handleUpdateMetaProp}
-                                opplyst={this.state.opplyst}
-                                onMouseEnter={this.handleMouseEnter}
-                                onMouseLeave={this.handleMouseLeave}
-                              />
-                            </div>
                             <InformasjonsVisning
                               path={path}
                               aktivTab={this.state.aktivTab}
