@@ -8,6 +8,7 @@ const HistorikkListeElement = ({
   activateLayerFromHistory,
   node
 }) => {
+  if (!meta) return;
   return (
     <div className="kartlag_list_title">
       <div className="kartlag_header">

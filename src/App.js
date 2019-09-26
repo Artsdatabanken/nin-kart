@@ -48,8 +48,7 @@ class App extends React.Component {
       navigation_history: [],
       showCurrent: true,
       showFullscreen: false,
-      spraak: "nb",
-      aktivTab: "meny"
+      spraak: "nb"
     };
     exportableSpraak = this;
     exportableFullscreen = this;
@@ -59,7 +58,8 @@ class App extends React.Component {
     let aktivTab = "informasjon";
     if (
       this.props.location.search &&
-      this.props.location.search !== "?" + this.state.aktivTab
+      this.props.location.search !== "?" &&
+      this.props.location.search.substring(1) !== "undefined"
     ) {
       aktivTab = this.props.location.search.substring(1);
     }
@@ -171,7 +171,6 @@ class App extends React.Component {
                           meta={this.state.meta}
                           onNavigate={this.handleNavigate}
                           aktivTab={aktivTab}
-                          //data={this.state.data}
                           onUpdateMetaProp={this.handleUpdateMetaProp}
                           opplyst={this.state.opplyst}
                           onMouseEnter={this.handleMouseEnter}

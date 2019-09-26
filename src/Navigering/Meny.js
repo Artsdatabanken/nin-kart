@@ -42,7 +42,7 @@ Sidebarmeny-navigeringen.
         (aktivTab === "meny" ? "mobile_on" : "mobile_off") + " sidebar"
       }
       style={{
-        zIndex: expanded ? 20 : -1,
+        zIndex: expanded ? 20 : 1,
         height: expanded && "auto",
         maxHeight: expanded && "100%",
         borderBottom: expanded && "2px solid #b7d3d8"
@@ -70,6 +70,7 @@ Sidebarmeny-navigeringen.
           key="home"
           onClick={e => {
             e.stopPropagation();
+            setExpanded(false);
             onNavigate("");
           }}
           className="nav_menu_button nav_up_menu"
@@ -80,7 +81,11 @@ Sidebarmeny-navigeringen.
           </div>
         </button>
         {meta && (
-          <Overordnet overordnet={meta.overordnet} onNavigate={onNavigate} />
+          <Overordnet
+            overordnet={meta.overordnet}
+            onNavigate={onNavigate}
+            setExpanded={setExpanded}
+          />
         )}
         <div className="nav_current">
           {" "}
@@ -91,9 +96,8 @@ Sidebarmeny-navigeringen.
 
         <Navigeringsliste
           parentkode={meta ? meta.kode : "kode"}
-          //størsteAreal={data.størsteAreal}
-          //apidata={data.barn}
           metadata={meta && meta.barn}
+          setExpanded={setExpanded}
           onNavigate={onNavigate}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}

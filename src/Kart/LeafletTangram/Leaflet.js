@@ -153,8 +153,7 @@ class LeafletTangram extends React.Component {
       }
       let url = "";
       if (data.fylke || data.kommune) {
-        url =
-          "/" + data.kommune.url + "?lng=" + latlng.lng + "&lat=" + latlng.lat;
+        url = data.kommune.url + "?lng=" + latlng.lng + "&lat=" + latlng.lat;
       } else {
         url = "/Natur_i_Norge/?lng=" + latlng.lng + "&lat=" + latlng.lat;
       }
@@ -298,7 +297,10 @@ class LeafletTangram extends React.Component {
                 <button
                   className="link_to_page"
                   onClick={e => {
-                    this.props.history.push(this.state.buttonUrl);
+                    console.log(this.state.buttonUrl);
+                    this.props.history.push(
+                      this.state.buttonUrl + "?informasjon"
+                    );
                   }}
                 >
                   Gå til all info om dette punktet

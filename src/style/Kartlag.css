@@ -76,6 +76,7 @@ Even tho we don't a of now support IE X)
 .kartlag {
   top: 118px;
   height: calc(100vh - 120px);
+  z-index: 2;
 }
 
 /* Clean out padding to get 100% width */
@@ -104,6 +105,9 @@ Even tho we don't a of now support IE X)
 }
 
 @media only screen and (max-width: 768px) {
+  .kartlag {
+    top: 0;
+  }
   .kartlag_content_open {
     position: relative;
     margin-top: -28px;
