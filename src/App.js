@@ -29,6 +29,17 @@ import "style/FargeMenyer.css";
 export let exportableSpraak;
 export let exportableFullscreen;
 
+function getPathTab(path) {
+  const searchparams = path.search.split("?");
+  for (let i in searchparams) {
+    const item = searchparams[i];
+    if (!item.includes("lng") && item !== "undefined" && item !== "") {
+      return item;
+    }
+  }
+  return "informasjon";
+}
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -55,14 +66,8 @@ class App extends React.Component {
   }
 
   render() {
-    let aktivTab = "informasjon";
-    if (
-      this.props.location.search &&
-      this.props.location.search !== "?" &&
-      this.props.location.search.substring(1) !== "undefined"
-    ) {
-      aktivTab = this.props.location.search.substring(1);
-    }
+    let aktivTab = getPathTab(this.props.location);
+
     const { history } = this.props;
     let erAktivert = false;
     if (this.state.meta)
@@ -269,7 +274,7 @@ class App extends React.Component {
     );
   }
   handleNavigate = url => {
-    this.props.history.push(url + "?" + this.state.aktivTab);
+    this.props.history.push(url + "?" + getPathTab(this.props.location));
   };
 
   onNavigateToTab = tab => {

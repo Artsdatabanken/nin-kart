@@ -153,11 +153,16 @@ class LeafletTangram extends React.Component {
       }
       let url = "";
       if (data.fylke || data.kommune) {
-        url = data.kommune.url + "?lng=" + latlng.lng + "&lat=" + latlng.lat;
+        url =
+          "/" + data.kommune.url + "?lng=" + latlng.lng + "&lat=" + latlng.lat;
       } else {
         url = "/Natur_i_Norge/?lng=" + latlng.lng + "&lat=" + latlng.lat;
       }
       url = url.replace(/ /g, "_");
+      if (url.substring(0, 1) === "//") {
+        url = url.substring(1);
+        console.log(url);
+      }
       updateMarkerPosition(e.leaflet_event.layerPoint, this, header_shift);
       this.setState({
         buttonUrl: url,
@@ -297,7 +302,6 @@ class LeafletTangram extends React.Component {
                 <button
                   className="link_to_page"
                   onClick={e => {
-                    console.log(this.state.buttonUrl);
                     this.props.history.push(
                       this.state.buttonUrl + "?informasjon"
                     );

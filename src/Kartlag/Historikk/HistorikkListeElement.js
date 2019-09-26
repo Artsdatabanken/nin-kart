@@ -9,6 +9,7 @@ const HistorikkListeElement = ({
   node
 }) => {
   if (!meta) return;
+
   return (
     <div className="kartlag_list_title">
       <div className="kartlag_header">
@@ -28,7 +29,7 @@ const HistorikkListeElement = ({
             className="invisible_icon_button "
             title={"Vis informasjonsside"}
           >
-            <KeyboardArrowRight onClick={() => history.push("/" + meta.url)} />
+            <KeyboardArrowRight onClick={() => history.push(meta.url)} />
           </button>
         </span>
       </div>

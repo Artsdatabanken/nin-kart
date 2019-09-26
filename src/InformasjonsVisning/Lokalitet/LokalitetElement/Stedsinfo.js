@@ -5,13 +5,16 @@ function roundToX(num, x) {
   return +(Math.round(num + "e+" + x) + "e-" + x);
 }
 
-const Stedsinfo = ({ onNavigate, sted, lat, lng, fylke, kommune }) => {
+const Stedsinfo = ({ sted, lat, lng, fylke, kommune }) => {
   return (
     <>
       <div className="area_facts">
         {sted && (
           <h1>
-            {sted.navn} (<a href={sted.meta.url}>{språk(sted.meta.tittel)})</a>
+            {sted.navn}{" "}
+            {sted.meta && (
+              <a href={sted.meta.url}>{språk(sted.meta.tittel)})</a>
+            )}
           </h1>
         )}
         {(kommune || fylke) && (
