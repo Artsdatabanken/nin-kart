@@ -8,7 +8,12 @@ const KatalogInformasjonsBoks = ({ meta }) => {
   Currently only availiable for Landskap/Typeinndeling
   
   */
+  let showUrl = "";
   let { ingress, infoUrl } = meta;
+  console.log(meta);
+  if (infoUrl) {
+    showUrl = infoUrl.substring(0, 32) + "...";
+  }
 
   return (
     <>
@@ -18,7 +23,7 @@ const KatalogInformasjonsBoks = ({ meta }) => {
             {språk(ingress)} <br />
             {infoUrl && (
               <a href={infoUrl}>
-                <Link /> Les mer
+                <Link /> {showUrl}
               </a>
             )}
           </p>

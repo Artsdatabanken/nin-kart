@@ -376,6 +376,7 @@ div {
   overflow-wrap: break-word;
   hyphens: auto;
   font-size: 10pt;
+  background: transparent;
 }
 
 .badge_image {
