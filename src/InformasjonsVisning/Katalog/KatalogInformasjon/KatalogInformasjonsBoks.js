@@ -10,7 +10,6 @@ const KatalogInformasjonsBoks = ({ meta }) => {
   */
   let showUrl = "";
   let { ingress, infoUrl } = meta;
-  console.log(meta);
   if (infoUrl) {
     showUrl = infoUrl.substring(0, 32) + "...";
   }

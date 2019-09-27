@@ -21,8 +21,10 @@ const KatalogKilder = ({ onNavigate, meta, ...props }) => {
             onClick={() => onNavigate(datakilde.url)}
           >
             <img src={new_url_1 + datakilde.url + new_url_2} alt="" />
-            {språk(datakilde.tittel)} <br />
-            {datakilde.kode}
+            <span>
+              {språk(datakilde.tittel)} <br />
+              {datakilde.kode}
+            </span>
             <KeyboardArrowRight />
           </button>
         );
