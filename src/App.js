@@ -40,6 +40,17 @@ function getPathTab(path) {
   return "informasjon";
 }
 
+function getPathNotTab(path) {
+  const searchparams = path.search.split("?");
+  for (let i in searchparams) {
+    const item = searchparams[i];
+    if (item.includes("lng") && item !== "undefined" && item !== "") {
+      return "?" + item;
+    }
+  }
+  return "";
+}
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -278,7 +289,7 @@ class App extends React.Component {
   };
 
   onNavigateToTab = tab => {
-    this.props.history.push("?" + tab);
+    this.props.history.push("?" + tab + getPathNotTab(this.props.location));
   };
   handleActualBoundsChange = bounds => {
     this.setState({ actualBounds: bounds, fitBounds: null });
