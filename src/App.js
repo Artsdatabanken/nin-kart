@@ -171,7 +171,7 @@ class App extends React.Component {
                   forside={forside}
                   searchFor={this.state.searchFor}
                   onSelectResult={item => {
-                    history.push("/" + item.url);
+                    history.push(item.url);
                   }}
                   history={history}
                 />
