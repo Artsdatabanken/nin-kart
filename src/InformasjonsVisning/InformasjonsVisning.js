@@ -38,7 +38,7 @@ class InformasjonsVisning extends React.Component {
       return <Hjelp aktivTab={aktivTab} />;
     }
 
-    if (location.search && location.search.startsWith("?lng")) {
+    if (location.search && location.search.includes("?lng")) {
       const { lng, lat, vis } = parseQueryString(location.search);
       return (
         <Lokalitet

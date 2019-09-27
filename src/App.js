@@ -289,7 +289,7 @@ class App extends React.Component {
   };
 
   onNavigateToTab = tab => {
-    this.props.history.push("?" + tab + getPathNotTab(this.props.location));
+    this.props.history.push(getPathNotTab(this.props.location) + "?" + tab);
   };
   handleActualBoundsChange = bounds => {
     this.setState({ actualBounds: bounds, fitBounds: null });
