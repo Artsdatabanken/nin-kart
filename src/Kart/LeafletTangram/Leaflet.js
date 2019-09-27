@@ -45,6 +45,8 @@ class LeafletTangram extends React.Component {
       minZoom: 3
     };
 
+    console.log("mounting");
+
     if (this.props.forvaltningsportal === "true") {
       header_shift = 113;
     }
@@ -124,7 +126,6 @@ class LeafletTangram extends React.Component {
         this.map.flyToBounds(bounds);
       }
     }
-
     if (this.erEndret(prevProps)) {
       this.updateMap(this.props);
       return;
@@ -159,6 +160,9 @@ class LeafletTangram extends React.Component {
         url = "/Natur_i_Norge/?lng=" + latlng.lng + "&lat=" + latlng.lat;
       }
       url = url.replace(/ /g, "_");
+      if (url.substring(0, 2) === "//") {
+        url = url.substring(1);
+      }
       updateMarkerPosition(e.leaflet_event.layerPoint, this, header_shift);
       this.setState({
         buttonUrl: url,
@@ -298,10 +302,12 @@ class LeafletTangram extends React.Component {
                 <button
                   className="link_to_page"
                   onClick={e => {
-                    this.props.history.push(this.state.buttonUrl);
+                    this.props.history.push(
+                      this.state.buttonUrl + "?informasjon"
+                    );
                   }}
                 >
-                  Les mer på stedets informasjonsside
+                  Gå til all info om dette punktet
                 </button>
                 <br />
               </>
