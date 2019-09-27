@@ -8,6 +8,7 @@ const Gradienter = ({ gradient, onNavigate, title }) => {
   return (
     <>
       <h1>{title}</h1>
+
       {Object.entries(gradient).map(([kode, gr]) => {
         let item = gradient[kode];
         let gradientelement = item.trinn;
@@ -20,10 +21,14 @@ const Gradienter = ({ gradient, onNavigate, title }) => {
               let img_url =
                 "https://data.artsdatabanken.no/" + item.url + "/foto_408.jpg";
               return (
-                <div
+                <button
                   className="badge"
                   key={item.tittel.nb}
                   style={{ opacity: aktiv ? "1" : "0.2" }}
+                  onClick={() => {
+                    onNavigate(item.url);
+                    console.log("Hei");
+                  }}
                 >
                   <div
                     className="badge_image"
@@ -33,15 +38,12 @@ const Gradienter = ({ gradient, onNavigate, title }) => {
                       backgroundSize: "cover",
                       backgroundImage: "url(" + img_url + ")"
                     }}
-                    onClick={() => {
-                      onNavigate(item.url);
-                    }}
                   />
                   <br />
                   <b>{språk(item.tittel)}</b>
                   {aktiv === true ? "Til stede" : "Ikke tilstede"}
                   <br />
-                </div>
+                </button>
               );
             })}
           </div>

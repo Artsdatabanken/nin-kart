@@ -25,13 +25,17 @@ class Kodelisteelement extends React.Component {
       onMouseEnter,
       onMouseLeave,
       areal,
-      størsteAreal
+      størsteAreal,
+      setExpanded
     } = this.props;
     return (
       <>
         <button
           key={kode}
-          onClick={() => onNavigate(url)}
+          onClick={() => {
+            setExpanded(false);
+            onNavigate(url);
+          }}
           onMouseEnter={() => onMouseEnter && onMouseEnter({ kode, url })}
           onMouseLeave={() => onMouseLeave && onMouseLeave()}
           className="nav_menu_button nav_down_menu"
