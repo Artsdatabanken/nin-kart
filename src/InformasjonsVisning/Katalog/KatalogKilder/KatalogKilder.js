@@ -1,6 +1,7 @@
 import React from "react";
 import { CloudDownload } from "@material-ui/icons";
 import språk from "Funksjoner/språk";
+import { OpenInNew, KeyboardArrowRight } from "@material-ui/icons";
 
 const KatalogKilder = ({ onNavigate, meta, ...props }) => {
   if (!meta) return null;
@@ -20,8 +21,11 @@ const KatalogKilder = ({ onNavigate, meta, ...props }) => {
             onClick={() => onNavigate(datakilde.url)}
           >
             <img src={new_url_1 + datakilde.url + new_url_2} alt="" />
-            {språk(datakilde.tittel)} <br />
-            {datakilde.kode}
+            <span>
+              {språk(datakilde.tittel)} <br />
+              {datakilde.kode}
+            </span>
+            <KeyboardArrowRight />
           </button>
         );
       })}
@@ -32,7 +36,7 @@ const KatalogKilder = ({ onNavigate, meta, ...props }) => {
           window.location = "https://data.artsdatabanken.no/" + meta.url;
         }}
       >
-        <CloudDownload /> Last ned åpne data
+        <CloudDownload /> Last ned åpne data <OpenInNew />
       </button>
     </div>
   );

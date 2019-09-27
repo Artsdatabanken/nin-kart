@@ -4,7 +4,11 @@ import React from "react";
 const MobileNavigation = () => (
   <SettingsContext.Consumer>
     {context => (
-      <div className="tab_selector">
+      <div
+        className="tab_selector"
+        role="tablist"
+        aria-orientation="horizontal"
+      >
         <button
           className={context.aktivTab === "meny" ? "active_mobile_button" : ""}
           onClick={() => context.onNavigateToTab("meny")}
@@ -13,6 +17,8 @@ const MobileNavigation = () => (
         </button>
 
         <button
+          role="tab"
+          aria-selected={context.aktivTab === "informasjon"}
           className={
             context.aktivTab === "informasjon"
               ? "active_mobile_button"
@@ -20,16 +26,22 @@ const MobileNavigation = () => (
               ? "active_mobile_button_bigscreen"
               : ""
           }
-          onClick={() => context.onNavigateToTab("informasjon")}
+          onClick={() => {
+            context.onNavigateToTab("informasjon");
+          }}
         >
           Informasjon
         </button>
 
         <button
+          role="tab"
+          aria-selected={context.aktivTab === "kartlag"}
           className={
             context.aktivTab === "kartlag" ? "active_mobile_button" : ""
           }
-          onClick={() => context.onNavigateToTab("kartlag")}
+          onClick={() => {
+            context.onNavigateToTab("kartlag");
+          }}
         >
           Kart {/* <Layers />*/}
         </button>

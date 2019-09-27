@@ -376,6 +376,7 @@ div {
   overflow-wrap: break-word;
   hyphens: auto;
   font-size: 10pt;
+  background: transparent;
 }
 
 .badge_image {
@@ -575,4 +576,15 @@ div {
 .kartlag .page_warning h2 {
   padding-bottom: 10px;
   padding-left: 0px;
+}
+
+.kilde_knapp span,
+.kilde_knapp svg,
+.kilde_knapp img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.kilde_knapp svg:last-child {
+  float: right;
 }
