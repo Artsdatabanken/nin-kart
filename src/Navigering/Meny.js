@@ -75,7 +75,7 @@ Sidebarmeny-navigeringen.
           onClick={e => {
             e.stopPropagation();
             setExpanded(false);
-            onNavigate("");
+            onNavigate("/");
           }}
           className="nav_menu_button nav_up_menu"
         >
