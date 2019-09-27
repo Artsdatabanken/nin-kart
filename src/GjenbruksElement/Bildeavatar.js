@@ -44,7 +44,7 @@ class BildeAvatar extends Component {
     const { classes, url } = this.props;
     const urlWithNoQueryString =
       url &&
-      "https://data.artsdatabanken.no/" + url.split("?")[0] + "/logo_24.png";
+      "https://data.artsdatabanken.no" + url.split("?")[0] + "/logo_24.png";
 
     return (
       <Avatar
