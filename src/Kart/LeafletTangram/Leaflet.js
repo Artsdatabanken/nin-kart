@@ -119,12 +119,15 @@ class LeafletTangram extends React.Component {
 
   onLocationFound(e) {
     var radius = e.accuracy / 2;
-    L.marker(e.latlng)
+    radius = L.circle(e.latlng, radius).addTo(this.map);
+    var gpsmarker = L.marker(e.latlng)
       .addTo(this.map)
-      .on("click", function() {
-        alert("are you sure?");
+      .on("click", e => {
+        if (this.map) {
+          this.map.removeLayer(gpsmarker);
+          this.map.removeLayer(radius);
+        }
       });
-    L.circle(e.latlng, radius).addTo(this.map);
   }
 
   onLocationError(e) {
