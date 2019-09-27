@@ -66,7 +66,7 @@ Sidebarmeny-navigeringen.
       <br />
       <div
         style={{
-          display: expanded ? "block" : "none"
+          display: aktivTab === "kartlag" && !expanded ? "none" : "block"
         }}
       >
         {/* Top-node aka. Home-button*/}
