@@ -250,6 +250,7 @@ class App extends React.Component {
                           </div>
                         )}
                         <Kart
+                          aktivTab={aktivTab}
                           show_current={this.state.showCurrent}
                           bounds={this.state.fitBounds}
                           latitude={65.4}
