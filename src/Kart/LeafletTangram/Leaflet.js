@@ -160,9 +160,8 @@ class LeafletTangram extends React.Component {
         url = "/Natur_i_Norge/?lng=" + latlng.lng + "&lat=" + latlng.lat;
       }
       url = url.replace(/ /g, "_");
-      if (url.substring(0, 1) === "//") {
+      if (url.substring(0, 2) === "//") {
         url = url.substring(1);
-        console.log(url);
       }
       updateMarkerPosition(e.leaflet_event.layerPoint, this, header_shift);
       this.setState({
