@@ -5,11 +5,15 @@ import React from "react";
 import Tangram from "tangram";
 import { createScene, updateScene } from "./scene/scene";
 import backend from "Funksjoner/backend";
-import { Landscape, Fullscreen, FullscreenExit } from "@material-ui/icons";
+import {
+  Landscape,
+  Fullscreen,
+  FullscreenExit,
+  LocationSearching
+} from "@material-ui/icons";
 import språk from "Funksjoner/språk";
 import "style/Kart.css";
 import updateMarkerPosition from "./LeafletActions/updateMarkerPosition";
-import { SettingsContext } from "SettingsContext";
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
 // See here: https://github.com/PaulLeCam/react-leaflet/issues/255
 // Used in conjunction with url-loader.
@@ -44,8 +48,6 @@ class LeafletTangram extends React.Component {
       inertia: true,
       minZoom: 3
     };
-
-    console.log("mounting");
 
     if (this.props.forvaltningsportal === "true") {
       header_shift = 113;
@@ -110,6 +112,26 @@ class LeafletTangram extends React.Component {
       iconSize: [36, 36],
       iconAnchor: [17, 35]
     });
+
+    map.on("locationfound", e => this.onLocationFound(e));
+    map.on("locationerror", e => this.onLocationError(e));
+  }
+
+  onLocationFound(e) {
+    var radius = e.accuracy / 2;
+    radius = L.circle(e.latlng, radius).addTo(this.map);
+    var gpsmarker = L.marker(e.latlng)
+      .addTo(this.map)
+      .on("click", e => {
+        if (this.map) {
+          this.map.removeLayer(gpsmarker);
+          this.map.removeLayer(radius);
+        }
+      });
+  }
+
+  onLocationError(e) {
+    alert(e.message);
   }
 
   erEndret(prevProps) {
@@ -215,28 +237,6 @@ class LeafletTangram extends React.Component {
   render() {
     return (
       <>
-        <SettingsContext.Consumer>
-          {context => {
-            return (
-              <>
-                {context.aktivTab === "kartlag" && (
-                  <button
-                    className="fullscreen"
-                    onClick={e => {
-                      this.props.handleFullscreen(this.props.showFullscreen);
-                    }}
-                  >
-                    {this.props.showFullscreen === true ? (
-                      <FullscreenExit />
-                    ) : (
-                      <Fullscreen />
-                    )}
-                  </button>
-                )}
-              </>
-            );
-          }}
-        </SettingsContext.Consumer>
         {this.state.showPopup && (
           <div
             className="popup"
@@ -315,14 +315,39 @@ class LeafletTangram extends React.Component {
           </div>
         )}
 
+        {this.props.aktivTab === "kartlag" && (
+          <button
+            className="fullscreen map_button"
+            onClick={e => {
+              this.props.handleFullscreen(this.props.showFullscreen);
+            }}
+          >
+            {this.props.showFullscreen === true ? (
+              <FullscreenExit />
+            ) : (
+              <Fullscreen />
+            )}
+          </button>
+        )}
+
         <div
           style={{ zIndex: -100, cursor: "default" }}
           ref={ref => {
             this.mapEl = ref;
           }}
         />
+        <button
+          className="geolocate map_button"
+          onClick={() => this.handleLocate()}
+        >
+          <LocationSearching />
+        </button>
       </>
     );
+  }
+
+  handleLocate() {
+    this.map.locate({ setView: true });
   }
 }
 

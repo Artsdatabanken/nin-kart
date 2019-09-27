@@ -160,7 +160,11 @@ class App extends React.Component {
                       forside={forside}
                       searchFor={this.state.searchFor}
                       onSelectResult={item => {
-                        history.push("/" + item.url);
+                        let url = item.url;
+                        if (item.url[0] !== "/") {
+                          url = "/" + item.url;
+                        }
+                        history.push(url);
                       }}
                       history={history}
                     />
@@ -250,6 +254,7 @@ class App extends React.Component {
                           </div>
                         )}
                         <Kart
+                          aktivTab={aktivTab}
                           show_current={this.state.showCurrent}
                           bounds={this.state.fitBounds}
                           latitude={65.4}
