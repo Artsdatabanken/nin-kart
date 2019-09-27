@@ -26,7 +26,7 @@ class KartlagBarnElement extends React.Component {
       new_url = "https://data.artsdatabanken.no" + url + "/logo_408.png";
       backgroundSize = "60%";
     }
-    console.log(new_url);
+
     var image = new Image();
     image.src = new_url;
     let imgheight = image.height;

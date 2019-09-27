@@ -85,7 +85,7 @@ const Landskapstype = ({ onNavigate, newlandskap }) => {
                     onNavigate(new_item.url);
                   }}
                 >
-                  <div className="landskap_badge badge">
+                  <button className="landskap_badge badge">
                     <div
                       className="badge_image"
                       style={{
@@ -101,7 +101,7 @@ const Landskapstype = ({ onNavigate, newlandskap }) => {
                     <br />
                     <b>{språk(new_item.tittel)}</b> <br />
                     {namelist}
-                  </div>
+                  </button>
                 </div>
               );
             })}

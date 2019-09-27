@@ -10,7 +10,7 @@ const LokasjonBadge = ({ onNavigate, value, index }) => {
         onNavigate(value.url);
       }}
     >
-      <div
+      <button
         className="badge"
         key={index}
         style={{ opacity: value.aktiv ? "1" : "0.2" }}
@@ -32,7 +32,7 @@ const LokasjonBadge = ({ onNavigate, value, index }) => {
         <br />
         <span>{value.kode}</span>
         <span>{value.aktiv && "Finnes i området "}</span>
-      </div>
+      </button>
     </div>
   );
 };

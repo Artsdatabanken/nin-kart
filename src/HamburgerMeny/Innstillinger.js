@@ -117,14 +117,6 @@ const Innstillinger = ({
               >
                 Nynorsk
               </button>
-              <button
-                onClick={e => {
-                  handleSpraak("sn");
-                  setExpanded(!expanded);
-                }}
-              >
-                Vitenskapelig navn
-              </button>
             </>
           )}
         </div>
