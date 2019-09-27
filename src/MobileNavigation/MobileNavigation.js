@@ -1,8 +1,10 @@
 import React from "react";
 
 const MobileNavigation = ({ onNavigateToTab, aktivTab }) => (
-  <div className="tab_selector">
+  <div className="tab_selector" role="tablist" aria-orientation="horizontal">
     <button
+      role="tab"
+      aria-selected={aktivTab === "meny"}
       className={aktivTab === "meny" ? "active_mobile_button" : ""}
       onClick={() => {
         onNavigateToTab("meny");
@@ -12,6 +14,8 @@ const MobileNavigation = ({ onNavigateToTab, aktivTab }) => (
     </button>
 
     <button
+      role="tab"
+      aria-selected={aktivTab === "informasjon"}
       className={
         aktivTab === "informasjon"
           ? "active_mobile_button"
@@ -25,6 +29,8 @@ const MobileNavigation = ({ onNavigateToTab, aktivTab }) => (
     </button>
 
     <button
+      role="tab"
+      aria-selected={aktivTab === "kartlag"}
       className={aktivTab === "kartlag" ? "active_mobile_button" : ""}
       onClick={() => onNavigateToTab("kartlag")}
     >
