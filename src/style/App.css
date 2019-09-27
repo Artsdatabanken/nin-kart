@@ -577,3 +577,14 @@ div {
   padding-bottom: 10px;
   padding-left: 0px;
 }
+
+.kilde_knapp span,
+.kilde_knapp svg,
+.kilde_knapp img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.kilde_knapp svg:last-child {
+  float: right;
+}

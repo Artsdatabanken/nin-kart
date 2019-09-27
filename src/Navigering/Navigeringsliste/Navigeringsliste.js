@@ -24,6 +24,7 @@ class Navigeringsliste extends React.Component {
       onUpdateMetaProp,
       onMouseEnter,
       onMouseLeave,
+      setExpanded,
       onNavigate
     } = this.props;
     // console.log("kodelist", parentkode, opplyst);
@@ -50,6 +51,7 @@ class Navigeringsliste extends React.Component {
                   return (
                     <Kodelisteelement
                       key={kode}
+                      setExpanded={setExpanded}
                       kode={kode}
                       parentkode={parentkode}
                       url={metabarnet.url}

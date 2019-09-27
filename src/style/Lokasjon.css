@@ -89,6 +89,7 @@
 .landskapstype_visning .landskap_badge {
   width: 130px;
   font-size: 10pt;
+  background: transparent;
 }
 
 .landskapstype_visning p {

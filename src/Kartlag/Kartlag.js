@@ -127,6 +127,7 @@ class Kartlag extends React.Component {
                         </div>
                       </>
                     )}
+
                     <div className="sidebar_element">
                       <h2>Mine kartlag</h2>
                       <ul className="kartlag_list">
