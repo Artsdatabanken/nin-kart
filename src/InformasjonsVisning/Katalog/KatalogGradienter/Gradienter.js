@@ -27,7 +27,6 @@ const Gradienter = ({ gradient, onNavigate, title }) => {
                   style={{ opacity: aktiv ? "1" : "0.2" }}
                   onClick={() => {
                     onNavigate(item.url);
-                    console.log("Hei");
                   }}
                 >
                   <div
