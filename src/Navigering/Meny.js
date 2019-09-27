@@ -64,7 +64,11 @@ Sidebarmeny-navigeringen.
         </h1>
       </div>
       <br />
-      <>
+      <div
+        style={{
+          display: expanded ? "block" : "none"
+        }}
+      >
         {/* Top-node aka. Home-button*/}
         <button
           key="home"
@@ -104,7 +108,7 @@ Sidebarmeny-navigeringen.
           opplyst={opplyst}
           onUpdateMetaProp={onUpdateMetaProp}
         />
-      </>
+      </div>
       {false && (
         <>
           <KurveContainer

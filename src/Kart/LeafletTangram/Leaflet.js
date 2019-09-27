@@ -45,6 +45,8 @@ class LeafletTangram extends React.Component {
       minZoom: 3
     };
 
+    console.log("mounting");
+
     if (this.props.forvaltningsportal === "true") {
       header_shift = 113;
     }
@@ -124,7 +126,6 @@ class LeafletTangram extends React.Component {
         this.map.flyToBounds(bounds);
       }
     }
-
     if (this.erEndret(prevProps)) {
       this.updateMap(this.props);
       return;
