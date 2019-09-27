@@ -302,6 +302,7 @@ class LeafletTangram extends React.Component {
                 <button
                   className="link_to_page"
                   onClick={e => {
+                    this.props.handleFullscreen(false);
                     this.props.history.push(
                       this.state.buttonUrl + "?informasjon"
                     );
@@ -319,7 +320,7 @@ class LeafletTangram extends React.Component {
           <button
             className="fullscreen map_button"
             onClick={e => {
-              this.props.handleFullscreen(this.props.showFullscreen);
+              this.props.handleFullscreen(!this.props.showFullscreen);
             }}
           >
             {this.props.showFullscreen === true ? (
@@ -336,12 +337,14 @@ class LeafletTangram extends React.Component {
             this.mapEl = ref;
           }}
         />
-        <button
-          className="geolocate map_button"
-          onClick={() => this.handleLocate()}
-        >
-          <LocationSearching />
-        </button>
+        {this.props.aktivTab === "kartlag" && (
+          <button
+            className="geolocate map_button"
+            onClick={() => this.handleLocate()}
+          >
+            <LocationSearching />
+          </button>
+        )}
       </>
     );
   }
