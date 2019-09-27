@@ -313,7 +313,7 @@ class App extends React.Component {
   };
 
   handleFullscreen = showFullscreen => {
-    this.setState({ showFullscreen: !showFullscreen });
+    this.setState({ showFullscreen: showFullscreen });
   };
   handleClearSearchFor = () => this.setState({ searchFor: null });
   handleToggleLayer = () => {
