@@ -42,10 +42,10 @@ Sidebarmeny-navigeringen.
         (aktivTab === "meny" ? "mobile_on" : "mobile_off") + " sidebar"
       }
       style={{
-        zIndex: expanded ? 20 : 1,
-        height: expanded && "auto",
-        maxHeight: expanded && "100%",
-        borderBottom: expanded && "2px solid #b7d3d8"
+        zIndex: expanded && aktivTab === "kartlag" ? 20 : 1,
+        height: expanded && aktivTab === "kartlag" && "auto",
+        maxHeight: expanded && aktivTab === "kartlag" && "100%",
+        borderBottom: expanded && aktivTab === "kartlag" && "2px solid #b7d3d8"
       }}
     >
       <div className="sidebar_title_container sidebar_element">
@@ -58,7 +58,11 @@ Sidebarmeny-navigeringen.
                 setExpanded(!expanded);
               }}
             >
-              {expanded === true ? <KeyboardArrowDown /> : <KeyboardArrowUp />}
+              {expanded === true && aktivTab === "kartlag" ? (
+                <KeyboardArrowDown />
+              ) : (
+                <KeyboardArrowUp />
+              )}
             </button>
           )}
         </h1>
