@@ -69,7 +69,7 @@ const Variabelboks = ({ onNavigate, miljøvariabel }) => {
           )}
 
           <button
-            className="fooo"
+            className="lokasjonboksknapper"
             onClick={() => {
               onNavigate(miljøvariabel.url);
             }}
