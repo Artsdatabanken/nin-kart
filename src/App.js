@@ -153,7 +153,9 @@ class App extends React.Component {
                 <>
                   <div
                     className={
-                      this.state.showFullscreen ? "hidden_in_fullscreen" : ""
+                      this.state.showFullscreen && aktivTab === "kartlag"
+                        ? "hidden_in_fullscreen"
+                        : ""
                     }
                   >
                     <TopBar
@@ -176,7 +178,7 @@ class App extends React.Component {
                     <>
                       <div
                         className={
-                          this.state.showFullscreen
+                          this.state.showFullscreen && aktivTab === "kartlag"
                             ? "hidden_in_fullscreen"
                             : ""
                         }
@@ -229,7 +231,8 @@ class App extends React.Component {
                         ) : (
                           <div
                             className={
-                              this.state.showFullscreen
+                              this.state.showFullscreen &&
+                              aktivTab === "kartlag"
                                 ? "hidden_in_fullscreen"
                                 : ""
                             }
@@ -270,7 +273,9 @@ class App extends React.Component {
                           onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
                           onMouseEnter={this.handleMouseEnter}
                           onMouseLeave={this.handleMouseLeave}
-                          showFullscreen={this.state.showFullscreen}
+                          showFullscreen={
+                            this.state.showFullscreen && aktivTab === "kartlag"
+                          }
                           handleFullscreen={this.handleFullscreen}
                         />
                       </div>
