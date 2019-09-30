@@ -80,7 +80,7 @@
 .kartlag_barn_container {
   display: flex;
   flex-wrap: wrap;
-  width: (100% + 10px);
+  width: calc(100% + 10px);
   margin-left: -5px;
   justify-content: center;
 }

@@ -21,8 +21,8 @@ import Meny from "Navigering/Meny";
 import språk from "Funksjoner/språk";
 import "style/Kart.scss";
 import "style/App.scss";
-import "style/Sidebar.css";
-import "style/GeografiskSidebar.css";
+import "style/Sidebar.scss";
+import "style/GeografiskSidebar.scss";
 import "style/Kartlag.scss";
 import "style/FargeMenyer.scss";
 
