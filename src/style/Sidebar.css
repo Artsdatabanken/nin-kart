@@ -13,6 +13,8 @@
 @media only screen and (max-width: 768px) {
   .sidebar {
     height: calc(100vh - 104px);
+    max-height: 100%;
+    overflow-y: auto;
   }
 
   .sidebar.mobile_off {
