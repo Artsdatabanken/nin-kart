@@ -4,11 +4,11 @@
 
 ::-webkit-scrollbar {
   width: 6px;
-  background-color: #aaa;
+  background-color: $brightest-nin;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.5);
+  background: $medium-nin;
 }
 
 div,
@@ -27,13 +27,13 @@ body {
 
 :focus {
   outline: none;
-  border-bottom: 2px solid black !important;
+  border-bottom: $active-border;
   border-bottom-left-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
 }
 
 button:focus {
-  border: 2px solid black !important;
+  border: $active-border;
   box-sizing: border-box;
 }
 
@@ -70,7 +70,7 @@ h3 {
 h1,
 h2,
 h3 {
-  color: #347c8a;
+  color: $super-dark-nin;
   font-weight: 300;
 }
 
@@ -80,7 +80,7 @@ h5 {
   font-weight: 400;
   margin: 0px;
   padding: 0px;
-  color: #4c4a48;
+  color: $adb_dark_grey;
 }
 
 h5 {
@@ -125,59 +125,13 @@ div {
   max-width: 100%;
 }
 
-/* Activate button in sidebar */
-
-.activate_button_container {
-  text-align: center;
-}
-
-.activate_button {
-  background: $dark-nin;
-  color: white;
-  padding: 10px;
-  font-size: 12pt;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-.activate_button svg {
-  height: 18px;
-  width: 18px;
-  vertical-align: top;
-}
-
-/* NAVIGATION TABS */
-
-.map_button {
-  position: absolute;
-  right: 10px;
-  background: white;
-  width: 34px;
-  border: 2px solid rgba(0, 0, 0, 0.27);
-  border-radius: 4px;
-  padding: 2px;
-  bottom: 92px;
-  z-index: -6;
-}
-
-.fullscreen {
-  display: none;
-}
-
 @media only screen and (max-width: 768px) {
   .hidden_in_fullscreen {
     display: none;
   }
-
-  .map_button {
-    bottom: 182px;
-    right: 15px;
-  }
-
-  .fullscreen {
-    display: inline-block;
-    bottom: 219px;
-  }
 }
+
+/* NAVIGATION TABS */
 
 .tab_selector {
   display: block;
@@ -213,7 +167,7 @@ div {
   padding: auto;
   background: $brightest-nin;
   width: calc(100% / 3);
-  height: 48px;
+  height: $bottom-tab-height;
   padding: 15px;
   position: relative;
   bottom: 0px;
@@ -222,8 +176,8 @@ div {
   color: #555;
   font-family: "Roboto", "sans-serif";
   border: none;
-  border-left: 1px solid #dee1e1;
-  border-top: 1px solid #eceded;
+  border-left: 1px solid $brightest-nin;
+  border-top: 1px solid $brightest-nin;
   vertical-align: bottom;
 }
 
@@ -235,7 +189,6 @@ div {
 .tab_selector button.active {
   background: $medium-nin;
   color: #fff;
-  color: "rgba(0,0,0,0.67)";
   cursor: pointer;
 }
 
@@ -259,7 +212,7 @@ div {
 
   .tab_selector .active_mobile_button,
   .tab_selector .active_mobile_button_bigscreen {
-    background: #fbfbfb;
+    background: $background_header;
     color: black;
     font-weight: 400;
     border: 0px;
@@ -267,8 +220,6 @@ div {
     text-decoration: underline;
   }
 }
-
-/* NAVIGATION TAB BUTTON ICONS */
 
 .tab_selector button svg {
   height: 18px;
@@ -278,7 +229,7 @@ div {
   right: calc(50% - 9px);
 }
 
-/* GENERIC ITEMS */
+/* Den usynlige knappen */
 
 .invisible_icon_button {
   background: transparent;
@@ -294,113 +245,12 @@ div {
   cursor: pointer;
 }
 
-.sidebar .content_bubble,
-.content_bubble {
-  background: $bright-nin;
-  border-radius: 3px;
-  display: inline-block;
-  padding: 10px;
-  margin: 5px;
-  width: 98%;
-}
-
-.content_bubble span {
-  display: inline-block;
-  width: auto;
-  max-width: calc(100% - 50px);
-  vertical-align: middle;
-}
-
-.avatar_kode {
-  padding-right: 10px;
-  color: $dark-nin;
-}
+/* Last inn mer-knappen */
 
 .load_more_button {
   width: 100%;
   padding: 10px;
   font-size: 12pt;
-}
-
-/* BADGES */
-
-.badge {
-  text-align: center;
-  display: inline-block;
-  vertical-align: top;
-  width: 130px;
-  padding: 10px;
-  overflow: hidden;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  font-size: 10pt;
-  background: transparent;
-}
-
-.badge_image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 2px solid $dark-nin;
-  display: inline-block;
-  width: 80px;
-  height: 80px;
-}
-
-.badge_image:hover {
-  opacity: 0.5;
-  cursor: pointer;
-}
-
-.badge b {
-  color: $dark-nin;
-}
-
-.meny_ikon_image {
-  width: 20px;
-  height: 20px;
-  display: block;
-}
-
-.lokasjon_badge_container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-}
-
-/* LOKASJON BADGE */
-.lokasjon_badge_container .badge_image {
-  width: 80px;
-  height: 80px;
-  border: 2px solid $dark-nin;
-}
-
-.lokasjon_badge_container .badge {
-  padding: 2px;
-  vertical-align: top;
-  width: 120px;
-  overflow-wrap: break-word;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
-}
-
-.lokasjon_badge_container .badge b,
-.lokasjon_badge_container .badge span {
-  font-size: 9pt;
-}
-
-.badge_container {
-  width: 100%;
-  background: $brightest-nin;
-  margin-bottom: 5px;
-}
-
-.badge_container b {
-  display: block;
-  width: 100%;
 }
 
 /* HAMBURGER MENY ITEMS */
@@ -490,7 +340,7 @@ div {
   width: 100%;
   color: #000;
   position: relative;
-  border: 1px solid #eaeaea;
+  border: 1px solid $border-color;
   border-top: 0px;
   z-index: 30;
 }

@@ -24,12 +24,12 @@
   display: block;
   text-align: center;
   padding: 15px;
-  background: #b7d3d8;
+  background: $bright-nin;
   width: 200px;
 }
 
 .lokasjon_seksjon {
-  background: #edf4f5;
+  background: $brightest-nin;
   padding-bottom: 50px;
   margin-bottom: 20px;
 }
@@ -46,8 +46,8 @@
 }
 
 .landskapstype_visning {
-  background: #fbfbfb;
-  border-left: 15px solid #81b2bb;
+  background: $background_header;
+  border-left: 15px solid $medium-nin;
   position: relative;
   padding: 10px;
   margin-bottom: 20px;
@@ -164,7 +164,7 @@
 
   .landskapstype_visning {
     border-left: 0px;
-    border-top: 15px solid #81b2bb;
+    border-top: 15px solid $medium-nin;
   }
 
   .not_image_and_link {

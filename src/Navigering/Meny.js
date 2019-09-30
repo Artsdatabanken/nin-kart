@@ -45,7 +45,8 @@ Sidebarmeny-navigeringen.
         zIndex: expanded && aktivTab === "kartlag" ? 20 : 1,
         height: expanded && aktivTab === "kartlag" && "auto",
         maxHeight: expanded && aktivTab === "kartlag" && "100%",
-        borderBottom: expanded && aktivTab === "kartlag" && "2px solid #b7d3d8"
+        borderBottom:
+          expanded && aktivTab === "kartlag" && "2px solid $bright-nin"
       }}
     >
       <div className="sidebar_title_container sidebar_element">

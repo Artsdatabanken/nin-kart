@@ -1,4 +1,5 @@
 /* NiN Main Pallette*/
+$super-dark-nin: #347c8a;
 $darkest-nin: #4d8b96;
 $dark-nin: #4b909e;
 $medium-nin: #81b2bb;
@@ -28,3 +29,12 @@ $RL6-color: rgb(250, 166, 26);
 $RL7-color: rgb(96, 189, 177);
 $RL8-color: rgb(147, 149, 152);
 $RL9-color: rgb(206, 211, 212);
+
+/* Active Elements */
+$active-border: 2px solid black !important;
+
+/* Relative heights */
+$bottom-tab-height: 48px;
+$topbar-height-nin: 56px;
+$menu-mobile-size: $bottom-tab-height + $topbar-height-nin;
+$sidebar-max-size: 350px;

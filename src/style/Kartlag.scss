@@ -36,7 +36,7 @@ Even tho we don't a of now support IE X)
 
   .closed_mobile_slide_up_area {
     position: absolute;
-    bottom: 48px;
+    bottom: $bottom-tab-height;
     background: white;
     border-top: 1px solid $dark-nin;
     border-bottom: 0px;

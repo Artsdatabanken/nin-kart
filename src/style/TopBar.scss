@@ -3,10 +3,10 @@
 .top_bar {
   width: 100%;
   left: 0;
-  height: 56px;
+  height: $topbar-height-nin;
   position: relative;
-  background: #4b909e;
-  border-bottom: 1px solid #eaeaea;
+  background: $dark-nin;
+  border-bottom: 1px solid $border-color;
 }
 
 .header_text:hover {
@@ -23,7 +23,7 @@
 
 .header_text {
   font-size: 20pt;
-  color: #edf4f5;
+  color: $brightest-nin;
   font-weight: 300;
   display: inline-block;
   margin-left: 60px;
@@ -79,7 +79,7 @@
 }
 
 .top_bar.forside_topbar svg {
-  color: #4d8b96;
+  color: $darkest-nin;
 }
 
 /* Search Field */
@@ -90,7 +90,7 @@
   height: 46px;
   display: inline-block;
   margin-top: 4px;
-  border: 1px solid #eaeaea;
+  border: 1px solid $border-color;
   background: #fff;
   width: calc(408px - 60px);
   z-index: 22;
@@ -105,12 +105,12 @@
 
 .searchbar_container.mobile_active {
   width: calc(408px - 60px);
-  border: 1px solid #eaeaea;
+  border: 1px solid $border-color;
   background: white;
 }
 
 .searchbar_container.mobile_active .search_icon svg {
-  color: #4d8b96;
+  color: $darkest-nin;
 }
 
 @media only screen and (max-width: 768px) {
@@ -125,12 +125,12 @@
 
   .searchbar_container.mobile_active {
     width: calc(100% - 20px);
-    border: 1px solid #eaeaea;
+    border: 1px solid $border-color;
     background: white;
   }
 
   .searchbar_container.mobile_active .search_icon svg {
-    color: #4b909e;
+    color: $dark-nin;
   }
 }
 
@@ -167,8 +167,8 @@
   position: auto;
   top: 51px;
   right: 10px;
-  border: 1px solid #eaeaea;
-  width: 348px;
+  border: 1px solid $border-color;
+  width: 3$bottom-tab-height;
   background: white;
   position: fixed;
   z-index: 30;
@@ -236,7 +236,7 @@
 /* Resultatliste tekstpresentasjon */
 
 .textmatch {
-  color: #4b909e;
+  color: $dark-nin;
   font-weight: 500;
 }
 

@@ -3,17 +3,17 @@
 
 .sidebar {
   position: fixed;
-  height: calc(100vh - 56px);
+  height: calc(100vh - #{$topbar-height-nin});
   overflow-x: hidden;
-  max-width: 350px;
-  background: #fbfbfb;
+  max-width: $sidebar-max-size;
+  background: $background_header;
   width: 100%;
   font-family: "Roboto", "sans-serif";
 }
 
 @media only screen and (max-width: 768px) {
   .sidebar {
-    height: calc(100vh - 104px);
+    height: calc(100vh - #{$menu-mobile-size});
     max-height: 100%;
     overflow-y: auto;
   }
@@ -27,15 +27,14 @@
 }
 
 /* MAIN BODY CONTENT (information tab) */
-
 .main_body {
   position: relative;
   top: 0px;
-  height: calc(100vh - 56px);
-  width: calc(100% - 350px);
-  background: #fbfbfb;
+  height: calc(100vh - #{$topbar-height-nin});
+  width: calc(100% - #{$sidebar-max-size});
+  background: $background_header;
   font-family: "Roboto", "sans-serif";
-  left: 350px;
+  left: $sidebar-max-size;
   overflow-y: auto;
 }
 
@@ -45,9 +44,9 @@
 @media only screen and (max-width: 768px) {
   .main_body.mobile_on {
     position: relative;
-    height: calc(100vh - 104px); /* bottom nav + top */
+    height: calc(100vh - #{$menu-mobile-size});
     width: 100%;
-    background: #fbfbfb;
+    background: $background_header;
     left: auto;
     overflow-y: scroll;
   }
@@ -99,7 +98,7 @@
 .subelement_decorative_image {
   width: 100%;
   height: 200px;
-  background: #b7d3d8;
+  background: $bright-nin;
 }
 
 .subelement_decorative_image span {
@@ -110,8 +109,7 @@
   padding-top: 75px;
   font-size: 30pt;
   display: inline-block;
-  color: #4b909e;
-
+  color: $dark-nin;
   font-weight: 300;
 }
 
@@ -140,7 +138,7 @@
 .sidebar_element {
   border: 0px;
   width: 100%;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid $border-color;
   position: relative;
   text-align: left;
 }
@@ -177,7 +175,7 @@
   width: 50px;
   height: 50px;
   padding-right: 10px;
-  color: #4b909e;
+  color: $dark-nin;
 }
 
 .sidebar_title_container h1,
@@ -189,7 +187,7 @@
 
 .sidebar_element h3 svg,
 .sidebar_description svg {
-  color: #4b909e;
+  color: $dark-nin;
   width: 20px;
   height: 20px;
   vertical-align: top;
@@ -238,7 +236,7 @@
 
 .clickable_element:hover {
   cursor: pointer;
-  background: #edf4f5;
+  background: $brightest-nin;
 }
 
 .sidebar_code_field {
@@ -246,12 +244,12 @@
 }
 
 .katlog_header_images_container {
-  background: #edf4f5;
+  background: $brightest-nin;
 }
 
 .katlog_header_images_container .katlog_header_text_container {
   display: inline-block;
-  width: calc(100% - 350px);
+  width: calc(100% - #{$sidebar-max-size});
   padding-left: 20px;
   text-align: left;
 }
@@ -268,9 +266,9 @@
 .sidebar_top_image {
   vertical-align: top;
   height: 200px;
-  width: 350px;
+  width: $sidebar-max-size;
   display: inline-block;
-  background: #b7d3d8;
+  background: $bright-nin;
   background-size: cover;
   background-position: center;
 }
@@ -297,7 +295,7 @@
   background-repeat: no-repeat;
   margin-top: 10px;
   margin-bottom: 10px;
-  height: 350px;
+  height: $sidebar-max-size;
 }
 
 .page_topic_header {

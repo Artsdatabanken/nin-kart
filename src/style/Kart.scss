@@ -1,3 +1,4 @@
+@import "./GraphicProfile.scss";
 /** Firefox workaround for https://github.com/Leaflet/Leaflet/issues/4686 */
 .leaflet-fade-anim .leaflet-tile {
   will-change: unset;
@@ -51,7 +52,7 @@
 
 .popup {
   position: absolute;
-  background: #edf4f5;
+  background: $brightest-nin;
   transform: translate3d(764px, 386px, 0px);
   padding: 10px;
   width: 300px;
@@ -62,7 +63,7 @@
 }
 
 .popup .link_to_page {
-  background: #81b2bb;
+  background: $medium-nin;
   width: 100%;
   padding: 5px;
   margin: 5px;
@@ -76,4 +77,38 @@
 .popup svg {
   vertical-align: top;
   margin-top: -2px;
+}
+
+/* KartKnapper*/
+
+.leaflet-touch .leaflet-bar {
+  border: 2px solid $medium-nin;
+}
+
+.map_button {
+  position: absolute;
+  right: 10px;
+  background: white;
+  width: 34px;
+  border: 2px solid $medium-nin;
+  border-radius: 4px;
+  padding: 2px;
+  bottom: 92px;
+  z-index: -6;
+}
+
+.fullscreen {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .map_button {
+    bottom: 182px;
+    right: 15px;
+  }
+
+  .fullscreen {
+    display: inline-block;
+    bottom: 219px;
+  }
 }

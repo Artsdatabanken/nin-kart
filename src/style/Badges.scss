@@ -1,0 +1,82 @@
+@import "./GraphicProfile.scss";
+
+/* BADGES */
+
+.badge {
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  width: 130px;
+  padding: 10px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  font-size: 10pt;
+  background: transparent;
+}
+
+.badge_image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid $dark-nin;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.badge_image:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.badge b {
+  color: $dark-nin;
+}
+
+.meny_ikon_image {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.lokasjon_badge_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+/* LOKASJON BADGE */
+.lokasjon_badge_container .badge_image {
+  width: 80px;
+  height: 80px;
+  border: 2px solid $dark-nin;
+}
+
+.lokasjon_badge_container .badge {
+  padding: 2px;
+  vertical-align: top;
+  width: 120px;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+.lokasjon_badge_container .badge b,
+.lokasjon_badge_container .badge span {
+  font-size: 9pt;
+}
+
+.badge_container {
+  width: 100%;
+  background: $brightest-nin;
+  margin-bottom: 5px;
+}
+
+.badge_container b {
+  display: block;
+  width: 100%;
+}
