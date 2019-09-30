@@ -18,7 +18,7 @@
   padding-bottom: 20px;
 }
 
-.lokasjon_seksjon button {
+.infosiden {
   display: block;
   text-align: center;
   padding: 15px;
@@ -132,12 +132,12 @@
 
 @media only screen and (max-width: 1120px) {
   .value_lokasjon,
-  .lokasjon_seksjon button {
+  .infosiden {
     display: inline-block;
     width: calc(50% - 2.5px);
     margin: 0px;
     height: 45px;
-    padding: 15px;
+    padding: 10px;
     overflow: hidden;
     vertical-align: top;
   }
