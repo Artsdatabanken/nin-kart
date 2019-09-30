@@ -340,7 +340,10 @@ class LeafletTangram extends React.Component {
         {this.props.aktivTab === "kartlag" && (
           <button
             className="geolocate map_button"
-            onClick={() => this.handleLocate()}
+            onClick={() => {
+              this.props.handleFullscreen(false);
+              this.handleLocate();
+            }}
           >
             <LocationSearching />
           </button>
