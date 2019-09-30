@@ -176,18 +176,12 @@ class App extends React.Component {
                     <ForsideInformasjon />
                   ) : (
                     <>
-                      <div
-                        className={
-                          this.state.showFullscreen && aktivTab === "kartlag"
-                            ? "hidden_in_fullscreen"
-                            : ""
-                        }
-                      >
-                        <MobileNavigation
-                          onNavigateToTab={this.onNavigateToTab}
-                          aktivTab={aktivTab}
-                        />
-                      </div>
+                      <MobileNavigation
+                        onNavigateToTab={this.onNavigateToTab}
+                        aktivTab={aktivTab}
+                        hidden_in_fullscreen={this.state.showFullscreen}
+                      />
+
                       <div>
                         <Meny
                           meta={this.state.meta}

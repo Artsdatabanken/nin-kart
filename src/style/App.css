@@ -193,12 +193,6 @@ div {
 
 /* NAVIGATION TABS */
 
-/*
-.tab_selector {
-  display: none;
-}
-*/
-
 .map_button {
   position: absolute;
   right: 10px;
@@ -235,7 +229,7 @@ div {
   display: block;
   width: 408px;
   height: auto;
-  position: fixed;
+  position: absolute;
   bottom: 0px;
   box-sizing: border-box;
   margin: 0px;
