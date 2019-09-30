@@ -193,11 +193,17 @@ div {
 
 /* NAVIGATION TABS */
 
-/*
-.tab_selector {
-  display: none;
+.map_button {
+  position: absolute;
+  right: 10px;
+  background: white;
+  width: 34px;
+  border: 2px solid rgba(0, 0, 0, 0.27);
+  border-radius: 4px;
+  padding: 2px;
+  bottom: 92px;
+  z-index: -6;
 }
-*/
 
 .fullscreen {
   display: none;
@@ -208,16 +214,14 @@ div {
     display: none;
   }
 
+  .map_button {
+    bottom: 182px;
+    right: 15px;
+  }
+
   .fullscreen {
     display: inline-block;
-    position: absolute;
-    right: 15px;
-    bottom: 184px;
-    background: white;
-    width: 34px;
-    border: 2px solid rgba(0, 0, 0, 0.27);
-    border-radius: 4px;
-    padding: 2px;
+    bottom: 219px;
   }
 }
 
@@ -225,7 +229,7 @@ div {
   display: block;
   width: 408px;
   height: auto;
-  position: fixed;
+  position: absolute;
   bottom: 0px;
   box-sizing: border-box;
   margin: 0px;

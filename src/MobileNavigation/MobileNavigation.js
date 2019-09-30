@@ -1,7 +1,19 @@
 import React from "react";
 
-const MobileNavigation = ({ onNavigateToTab, aktivTab }) => (
-  <div className="tab_selector" role="tablist" aria-orientation="horizontal">
+const MobileNavigation = ({
+  onNavigateToTab,
+  aktivTab,
+  hidden_in_fullscreen
+}) => (
+  <div
+    className={
+      hidden_in_fullscreen && aktivTab === "kartlag"
+        ? "hidden_in_fullscreen"
+        : "tab_selector"
+    }
+    role="tablist"
+    aria-orientation="horizontal"
+  >
     <button
       role="tab"
       aria-selected={aktivTab === "meny"}

@@ -153,14 +153,20 @@ class App extends React.Component {
                 <>
                   <div
                     className={
-                      this.state.showFullscreen ? "hidden_in_fullscreen" : ""
+                      this.state.showFullscreen && aktivTab === "kartlag"
+                        ? "hidden_in_fullscreen"
+                        : ""
                     }
                   >
                     <TopBar
                       forside={forside}
                       searchFor={this.state.searchFor}
                       onSelectResult={item => {
-                        history.push("/" + item.url);
+                        let url = item.url;
+                        if (item.url[0] !== "/") {
+                          url = "/" + item.url;
+                        }
+                        history.push(url);
                       }}
                       history={history}
                     />
@@ -170,18 +176,12 @@ class App extends React.Component {
                     <ForsideInformasjon />
                   ) : (
                     <>
-                      <div
-                        className={
-                          this.state.showFullscreen
-                            ? "hidden_in_fullscreen"
-                            : ""
-                        }
-                      >
-                        <MobileNavigation
-                          onNavigateToTab={this.onNavigateToTab}
-                          aktivTab={aktivTab}
-                        />
-                      </div>
+                      <MobileNavigation
+                        onNavigateToTab={this.onNavigateToTab}
+                        aktivTab={aktivTab}
+                        hidden_in_fullscreen={this.state.showFullscreen}
+                      />
+
                       <div>
                         <Meny
                           meta={this.state.meta}
@@ -225,7 +225,8 @@ class App extends React.Component {
                         ) : (
                           <div
                             className={
-                              this.state.showFullscreen
+                              this.state.showFullscreen &&
+                              aktivTab === "kartlag"
                                 ? "hidden_in_fullscreen"
                                 : ""
                             }
@@ -250,6 +251,7 @@ class App extends React.Component {
                           </div>
                         )}
                         <Kart
+                          aktivTab={aktivTab}
                           show_current={this.state.showCurrent}
                           bounds={this.state.fitBounds}
                           latitude={65.4}
@@ -265,7 +267,9 @@ class App extends React.Component {
                           onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
                           onMouseEnter={this.handleMouseEnter}
                           onMouseLeave={this.handleMouseLeave}
-                          showFullscreen={this.state.showFullscreen}
+                          showFullscreen={
+                            this.state.showFullscreen && aktivTab === "kartlag"
+                          }
                           handleFullscreen={this.handleFullscreen}
                         />
                       </div>
@@ -308,7 +312,7 @@ class App extends React.Component {
   };
 
   handleFullscreen = showFullscreen => {
-    this.setState({ showFullscreen: !showFullscreen });
+    this.setState({ showFullscreen: showFullscreen });
   };
   handleClearSearchFor = () => this.setState({ searchFor: null });
   handleToggleLayer = () => {
