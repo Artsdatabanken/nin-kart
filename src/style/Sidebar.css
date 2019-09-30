@@ -1,3 +1,4 @@
+@import "./GraphicProfile.scss";
 /* SIDEBAR MENU */
 
 .sidebar {
@@ -238,18 +239,6 @@
 .clickable_element:hover {
   cursor: pointer;
   background: #edf4f5;
-}
-
-.zoom_button {
-  border: 0px;
-  background: #e4f0f2;
-  color: #4b909e;
-  padding: 10px;
-  position: absolute;
-  top: calc(50% - 30px);
-  right: 15px;
-  max-width: 70px;
-  text-align: center;
 }
 
 .sidebar_code_field {

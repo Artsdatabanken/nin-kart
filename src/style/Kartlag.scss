@@ -1,3 +1,4 @@
+@import "./GraphicProfile.scss";
 /* 
 
 The list used in "kartlag" with a bunch of icons.
@@ -29,7 +30,7 @@ Even tho we don't a of now support IE X)
     bottom: auto;
     background: transparent;
     border-top: 0px;
-    border-bottom: 1px solid #4b909e;
+    border-bottom: 1px solid $dark-nin;
     z-index: 100;
   }
 
@@ -37,12 +38,12 @@ Even tho we don't a of now support IE X)
     position: absolute;
     bottom: 48px;
     background: white;
-    border-top: 1px solid #4b909e;
+    border-top: 1px solid $dark-nin;
     border-bottom: 0px;
   }
 
   .mobile_slide_up_area svg {
-    background: #4b909e;
+    background: $dark-nin;
     color: white;
     border-radius: 50%;
     padding: 10px;
@@ -65,7 +66,7 @@ Even tho we don't a of now support IE X)
   }
 
   .mobile_slide_up_area span:first-of-type {
-    color: #4b909e;
+    color: $dark-nin;
     font-size: 8pt;
     padding: 2px;
     padding-top: 0px;
@@ -163,11 +164,11 @@ Even tho we don't a of now support IE X)
 }
 
 .remove_icon {
-  color: rgb(153, 0, 19);
+  color: $red-color;
 }
 
 .add_icon {
-  color: #299988;
+  color: $green-color;
 }
 
 /* Active menu and its submenu */
@@ -176,7 +177,7 @@ Even tho we don't a of now support IE X)
 .sidebar .kartlag_submeny {
   background: transparent;
   margin-left: 5px;
-  border-left: 5px solid #b7d3d8;
+  border-left: 5px solid $bright-nin;
 }
 
 .sidebar .kartlag_sub_bg {
@@ -193,18 +194,12 @@ Even tho we don't a of now support IE X)
 .kartlag_submeny button {
   font-size: 12pt;
   width: calc(50% - 7.5px);
-  background: #b7d3d8;
+  background: $bright-nin;
   margin-left: 5px;
-  border-bottom: 1px solid #e4f0f2;
 }
 
 .kartlag_submeny button:last-child {
   margin-right: 5px;
-}
-
-.kartlag_submeny .legende_button {
-  border: 1px solid #e4f0f2;
-  border-bottom: transparent;
 }
 
 .kartlag_submeny button svg {
@@ -276,7 +271,7 @@ Even tho we don't a of now support IE X)
 .kilde_box button {
   display: inline-block;
   padding: 10px;
-  background: #edf4f5;
+  background: $brightest-nin;
   min-width: 200px;
   margin: 10px;
   vertical-align: top;
@@ -288,7 +283,7 @@ Even tho we don't a of now support IE X)
 }
 
 .kilde_box button:hover {
-  background: #81b2bb;
+  background: $medium-nin;
   color: white;
 }
 

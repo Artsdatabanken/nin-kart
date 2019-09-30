@@ -1,5 +1,5 @@
 import React from "react";
-import "style/Forvaltningsportalen.css";
+import "style/Forvaltningsportalen.scss";
 import {
   Search,
   HelpOutline,

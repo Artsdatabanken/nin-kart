@@ -19,12 +19,12 @@ import ForsideInformasjon from "Forside/ForsideInformasjon";
 import Forvaltningsportalen from "Forvaltningsportalen/Forvaltningsportalen";
 import Meny from "Navigering/Meny";
 import språk from "Funksjoner/språk";
-import "style/Kart.css";
-import "style/App.css";
+import "style/Kart.scss";
+import "style/App.scss";
 import "style/Sidebar.css";
 import "style/GeografiskSidebar.css";
-import "style/Kartlag.css";
-import "style/FargeMenyer.css";
+import "style/Kartlag.scss";
+import "style/FargeMenyer.scss";
 
 export let exportableSpraak;
 export let exportableFullscreen;

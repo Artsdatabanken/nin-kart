@@ -1,49 +1,6 @@
-/** Firefox workaround for https://github.com/Leaflet/Leaflet/issues/4686 */
-.leaflet-fade-anim .leaflet-tile {
-  will-change: unset;
-}
-
-.leaflet-zoom-anim .leaflet-zoom-animated {
-  will-change: unset;
-}
-
-.nin_colours {
-  color: #4d8b96;
-  color: #4b909e;
-  color: #81b2bb;
-  color: #b7d3d8;
-  color: #edf4f5;
-  color: black;
-}
-
-.support_colors_nin_map {
-  color_blue: #e4f0f2;
-  color_active_blue_btn: #edf4f5;
-  background_header: #fbfbfb;
-  border-color: #eaeaea;
-  color: rgb(153, 0, 19);
-  color: #1c7762;
-}
-
-.artsdb_colours {
-  color: #ffffff;
-  color: #4c4a48;
-  color: #7f726b;
-  color: #de8608;
-  color: #eb6109;
-}
-
-.redlist {
-  color: rgb(90, 91, 93);
-  color: rgb(153, 0, 19);
-  color: rgb(216, 0, 36);
-  color: rgb(255, 76, 41);
-  color: rgb(243, 108, 33);
-  color: rgb(250, 166, 26);
-  color: rgb(96, 189, 177);
-  color: rgb(147, 149, 152);
-  color: rgb(206, 211, 212);
-}
+@import "./GraphicProfile.scss";
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 
 ::-webkit-scrollbar {
   width: 6px;
@@ -53,9 +10,6 @@
 ::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.5);
 }
-
-@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
-@import url("https://fonts.googleapis.com/css?family=Roboto");
 
 div,
 button {
@@ -87,12 +41,12 @@ a,
 a:visited,
 a:active,
 a:focus {
-  color: #4b909e;
+  color: $dark-nin;
   text-decoration: none;
 }
 
 a:hover {
-  color: #81b2bb;
+  color: $medium-nin;
   cursor: pointer;
 }
 
@@ -100,7 +54,7 @@ a:hover {
 .inverted_link:visited,
 .inverted_link:active,
 .inverted_link:focus {
-  color: #b7d3d8;
+  color: $bright-nin;
 }
 
 body,
@@ -153,7 +107,7 @@ button.active:hover,
 button.active:focus,
 button.active {
   cursor: pointer;
-  background: #81b2bb;
+  background: $medium-nin;
 }
 
 /* BUTTON HEADERS */
@@ -178,7 +132,7 @@ div {
 }
 
 .activate_button {
-  background: #4b909e;
+  background: $dark-nin;
   color: white;
   padding: 10px;
   font-size: 12pt;
@@ -257,7 +211,7 @@ div {
   display: inline-block;
   text-align: center;
   padding: auto;
-  background: #edf4f5;
+  background: $brightest-nin;
   width: calc(100% / 3);
   height: 48px;
   padding: 15px;
@@ -279,14 +233,14 @@ div {
 .tab_selector button.active:hover,
 .tab_selector button.active:focus,
 .tab_selector button.active {
-  background: #81b2bb;
+  background: $medium-nin;
   color: #fff;
   color: "rgba(0,0,0,0.67)";
   cursor: pointer;
 }
 
 .tab_selector .active_mobile_button {
-  background: #4b909e;
+  background: $dark-nin;
   color: white;
   font-weight: 600;
 }
@@ -300,7 +254,7 @@ div {
     width: calc(100% / 2);
     height: 40px;
     border: 0px;
-    background: #b7d3d8;
+    background: $bright-nin;
   }
 
   .tab_selector .active_mobile_button,
@@ -342,7 +296,7 @@ div {
 
 .sidebar .content_bubble,
 .content_bubble {
-  background: #b7d3d8;
+  background: $bright-nin;
   border-radius: 3px;
   display: inline-block;
   padding: 10px;
@@ -359,7 +313,7 @@ div {
 
 .avatar_kode {
   padding-right: 10px;
-  color: #4b909e;
+  color: $dark-nin;
 }
 
 .load_more_button {
@@ -387,7 +341,7 @@ div {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 2px solid #4b909e;
+  border: 2px solid $dark-nin;
   display: inline-block;
   width: 80px;
   height: 80px;
@@ -399,7 +353,7 @@ div {
 }
 
 .badge b {
-  color: #4b909e;
+  color: $dark-nin;
 }
 
 .meny_ikon_image {
@@ -419,7 +373,7 @@ div {
 .lokasjon_badge_container .badge_image {
   width: 80px;
   height: 80px;
-  border: 2px solid #4b909e;
+  border: 2px solid $dark-nin;
 }
 
 .lokasjon_badge_container .badge {
@@ -440,7 +394,7 @@ div {
 
 .badge_container {
   width: 100%;
-  background: #edf4f5;
+  background: $brightest-nin;
   margin-bottom: 5px;
 }
 
@@ -543,12 +497,12 @@ div {
 
 .spraakalternativer button:hover,
 .spraakalternativer button:active {
-  background: #b7d3d8;
+  background: $bright-nin;
 }
 
 .spraakalternativer button:first-child {
   background: #fff;
-  border: 1px solid #b7d3d8;
+  border: 1px solid $bright-nin;
   padding: 5px;
   padding-right: calc(24px + 5px);
   z-index: 20;
@@ -557,7 +511,7 @@ div {
 .spraakalternativer svg {
   vertical-align: top;
   display: inline-block;
-  background: #b7d3d8;
+  background: $bright-nin;
   position: absolute;
   top: 0px;
   right: 0px;
@@ -568,7 +522,7 @@ div {
 .page_warning {
   padding: 20px;
   padding-top: 10px;
-  background: #4b909e;
+  background: $dark-nin;
   color: white;
   margin-bottom: 20px;
 }

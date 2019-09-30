@@ -12,7 +12,7 @@ import {
   LocationSearching
 } from "@material-ui/icons";
 import språk from "Funksjoner/språk";
-import "style/Kart.css";
+import "style/Kart.scss";
 import updateMarkerPosition from "./LeafletActions/updateMarkerPosition";
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
 // See here: https://github.com/PaulLeCam/react-leaflet/issues/255
