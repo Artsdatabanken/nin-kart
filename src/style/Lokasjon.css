@@ -18,7 +18,7 @@
   padding-bottom: 20px;
 }
 
-.infosiden {
+.lokasjonboksknapper {
   display: block;
   text-align: center;
   padding: 15px;
@@ -132,7 +132,7 @@
 
 @media only screen and (max-width: 1120px) {
   .value_lokasjon,
-  .infosiden {
+  .lokasjonboksknapper {
     display: inline-block;
     width: calc(50% - 2.5px);
     margin: 0px;
