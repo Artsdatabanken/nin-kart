@@ -25,9 +25,9 @@ const Landskapstype = ({ onNavigate, newlandskap }) => {
         />
         <button
           onClick={() => {
-            onNavigate(newlandskap.url);
+            onNavigate("/" + newlandskap.url);
           }}
-          className="hide_on_mobile"
+          className="hide_on_mobile lokasjonboksknapper"
         >
           Gå til infoside
         </button>
