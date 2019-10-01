@@ -23,7 +23,7 @@ import "style/Kart.scss";
 import "style/App.scss";
 import "style/Badges.scss";
 import "style/Sidebar.scss";
-import "style/GeografiskSidebar.scss";
+import "style/InformasjonsSider.scss";
 import "style/Kartlag.scss";
 import "style/FargeMenyer.scss";
 
