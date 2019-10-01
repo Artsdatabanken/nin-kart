@@ -1,3 +1,4 @@
+@import "./GraphicProfile.scss";
 /* Container */
 .frontpage {
   width: 100%;
@@ -31,7 +32,7 @@
 /* Header */
 
 .frontpage_header {
-  background: #edf4f5;
+  background: $brightest-nin;
   padding: 20px;
 }
 
@@ -57,7 +58,7 @@
 /* fEATURE bLOCK */
 
 .frontpage_feature_block {
-  background: #4b909e;
+  background: $dark-nin;
   font-size: 16pt;
 }
 
@@ -134,7 +135,8 @@
   min-height: calc(100% - 300px);
 }
 
-.artsdatabanken_logo img {
+.artsdatabanken_logo img,
+.frontpage_sources:first-child a img {
   width: 200px;
 }
 
@@ -142,14 +144,14 @@
   min-height: 300px;
   width: 100vw;
   text-align: center;
-  background: #edf4f5;
+  background: $brightest-nin;
 }
 
 .frontpage_icon svg {
   display: inline-block;
   width: 90px;
   height: 90px;
-  color: #4b909e;
+  color: $dark-nin;
 }
 
 .frontpage_link img {
@@ -166,10 +168,6 @@
 .frontpage_sources:first-child {
   text-align: center;
   margin-right: 10px;
-}
-
-.frontpage_sources:first-child a img {
-  width: 200px;
 }
 
 .frontpage_link {

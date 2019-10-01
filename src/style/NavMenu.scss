@@ -1,3 +1,4 @@
+@import "./GraphicProfile.scss";
 .nav_current,
 .nav_menu_button {
   background: transparent;
@@ -24,7 +25,7 @@
 }
 
 .nav_text .nav_2ndtitle {
-  color: #4b909e;
+  color: $dark-nin;
 }
 
 .nav_kode {
@@ -37,7 +38,7 @@
 }
 
 .nav_current {
-  background: #edf4f5;
+  background: $brightest-nin;
   padding: 10px;
   padding-left: 30px;
   text-transform: capitalize;

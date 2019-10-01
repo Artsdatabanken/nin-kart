@@ -1,6 +1,6 @@
+@import "./GraphicProfile.scss";
 /* 
 Dumped from old version until i bother fixing it
-
 */
 .colorSlider,
 .colorPicker {
@@ -38,21 +38,21 @@ Dumped from old version until i bother fixing it
   max-width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
-  color: #4b909e;
+  color: $dark-nin;
 }
 
 .slider_element button {
   width: 25px;
   height: 25px;
-  background: #81b2bb;
+  background: $medium-nin;
 }
 
 .slider_element div div:first-child {
-  background: #4b909e;
+  background: $dark-nin;
 }
 
 .slider_element div div:last-child {
-  background: #4b909e;
+  background: $dark-nin;
 }
 
 .slider_element .maxfloat {
@@ -77,17 +77,17 @@ Dumped from old version until i bother fixing it
 }
 
 .slider_element .MuiSlider-rail {
-  color: #b7d3d8;
+  color: $bright-nin;
   height: 10px;
 }
 
 .slider_element .MuiSlider-track {
-  color: #b7d3d8;
+  color: $bright-nin;
   height: 10px;
 }
 
 .slider_element .MuiSlider-thumb {
-  color: #4b909e;
+  color: $dark-nin;
   width: 20px;
   height: 20px;
 }
@@ -109,7 +109,7 @@ select {
   padding: 0px;
 }
 .selected_button {
-  background: #b7d3d8;
+  background: $bright-nin;
 }
 
 .child_list_object {
@@ -124,7 +124,7 @@ select {
 }
 
 .child_list_object:hover {
-  background: #edf4f5;
+  background: $brightest-nin;
   cursor: pointer;
 }
 
@@ -155,12 +155,6 @@ select {
 
 .title_and_subtitle_container span {
   display: block;
-}
-
-.grouped_items_button {
-  background: transparent;
-  width: calc(100% - 34px);
-  text-align: left;
 }
 
 .show_hide_button {
