@@ -6,6 +6,9 @@ function roundToX(num, x) {
 }
 
 const Stedsinfo = ({ sted, lat, lng, fylke, kommune }) => {
+  if (lat.includes("?")) {
+    lat = lat.substring(0, lat.indexOf("?"));
+  }
   return (
     <>
       <div className="area_facts">

@@ -135,6 +135,11 @@
   min-height: calc(100% - 300px);
 }
 
+.artsdatabanken_logo img,
+.frontpage_sources:first-child a img {
+  width: 200px;
+}
+
 .frontpage_footer {
   min-height: 300px;
   width: 100vw;
@@ -149,7 +154,7 @@
   color: $dark-nin;
 }
 
-.frontpage_footer img {
+.frontpage_link img {
   display: inline-block;
   margin: 10px;
 }
@@ -165,11 +170,7 @@
   margin-right: 10px;
 }
 
-.frontpage_sources img {
-  width: 200px;
-}
-
-.frontpage_sources div {
+.frontpage_link {
   display: inline-block;
   text-align: center;
   width: 90px;
@@ -180,7 +181,7 @@
   position: relative;
 }
 
-.frontpage_sources div img {
+.frontpage_link div {
   height: 40px;
   width: auto;
 }

@@ -55,7 +55,10 @@ const ForsideInformasjon = props => {
       </div>
       <div className="frontpage_footer">
         <div className="frontpage_sources">
-          <a href="https://www.artsdatabanken.no/">
+          <a
+            href="https://www.artsdatabanken.no/"
+            className="artsdatabanken_logo"
+          >
             <img
               src="https://data.artsdatabanken.no/Datakilde/Artsdatabanken/logo_med_navn_408.png"
               alt="Artsdatabanken logo"
