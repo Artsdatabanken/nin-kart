@@ -1,3 +1,5 @@
+@import "./GraphicProfile.scss";
+
 .area_facts {
   padding: 10px;
 }
@@ -12,8 +14,8 @@
   padding-left: 10px;
   padding-right: 10px;
 }
-.lokasjon_seksjon,
-.general_badge_container {
+
+.lokasjon_seksjon {
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -22,12 +24,12 @@
   display: block;
   text-align: center;
   padding: 15px;
-  background: #b7d3d8;
+  background: $bright-nin;
   width: 200px;
 }
 
 .lokasjon_seksjon {
-  background: #edf4f5;
+  background: $brightest-nin;
   padding-bottom: 50px;
   margin-bottom: 20px;
 }
@@ -44,8 +46,8 @@
 }
 
 .landskapstype_visning {
-  background: #fbfbfb;
-  border-left: 15px solid #81b2bb;
+  background: $background_header;
+  border-left: 15px solid $medium-nin;
   position: relative;
   padding: 10px;
   margin-bottom: 20px;
@@ -69,27 +71,6 @@
   text-align: left;
   margin-bottom: 0px;
   margin-top: 0px;
-}
-
-.landskapstype_visning .lokasjon_badge_container {
-  flex: 1;
-  justify-content: flex-start;
-  min-width: 100%;
-  padding-top: 10px;
-}
-
-.landskapstype_visning .badge {
-  width: 80px;
-}
-
-.landskapstype_visning .badge span {
-  display: none;
-}
-
-.landskapstype_visning .landskap_badge {
-  width: 130px;
-  font-size: 10pt;
-  background: transparent;
 }
 
 .landskapstype_visning p {
@@ -162,7 +143,7 @@
 
   .landskapstype_visning {
     border-left: 0px;
-    border-top: 15px solid #81b2bb;
+    border-top: 15px solid $medium-nin;
   }
 
   .not_image_and_link {
