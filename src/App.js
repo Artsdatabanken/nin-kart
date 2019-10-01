@@ -251,6 +251,7 @@ class App extends React.Component {
                           </div>
                         )}
                         <Kart
+                          path={this.props.location.search}
                           aktivTab={aktivTab}
                           show_current={this.state.showCurrent}
                           bounds={this.state.fitBounds}

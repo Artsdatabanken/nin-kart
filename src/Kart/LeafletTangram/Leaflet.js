@@ -113,8 +113,28 @@ class LeafletTangram extends React.Component {
       iconAnchor: [17, 35]
     });
 
+    let searchparams = this.props.path.split("?");
+    let coord = null;
+    for (let i in searchparams) {
+      if (searchparams[i].includes("lng")) {
+        coord = searchparams[i].split("&");
+        coord[0] = coord[0].split("=")[1];
+        coord[1] = coord[1].split("=")[1];
+      }
+    }
     map.on("locationfound", e => this.onLocationFound(e));
     map.on("locationerror", e => this.onLocationError(e));
+
+    if (coord) {
+      this.marker = L.marker([coord[1], coord[0]], { icon: this.icon })
+        .addTo(this.map)
+        .on("click", e => {
+          if (this.map) {
+            console.log("legg inn funksjon her senere.");
+          }
+        });
+      this.getBackendData(coord[0], coord[1], this.marker._icon._leaflet_pos);
+    }
   }
 
   onLocationFound(e) {
@@ -129,7 +149,6 @@ class LeafletTangram extends React.Component {
         }
       });
   }
-
   onLocationError(e) {
     alert(e.message);
   }
@@ -163,41 +182,49 @@ class LeafletTangram extends React.Component {
     this.map.removeLayer(this.marker);
   }
 
+  getBackendData(lng, lat, e) {
+    backend.hentPunkt(lng, lat, e).then(data => {
+      if (!data) {
+        return null;
+      }
+      let url = "";
+      if (data.fylke || data.kommune) {
+        url = "/" + data.kommune.url + "?lng=" + lng + "&lat=" + lat;
+      } else {
+        url = "/Natur_i_Norge/?lng=" + lng + "&lat=" + lat;
+      }
+      url = url.replace(/ /g, "_");
+      if (url.substring(0, 2) === "//") {
+        url = url.substring(1);
+      }
+      console.log("se så fin og riktig", e);
+
+      updateMarkerPosition(e, this, header_shift);
+
+      this.setState({
+        buttonUrl: url,
+        data: data,
+        showPopup: true,
+        koordinat: [lng, lat]
+      });
+
+      console.log(this.state.showPopup);
+
+      backend.hentStedsnavn(lng, lat).then(sted => {
+        if (sted && sted.placename) {
+          this.setState({ sted: sted.placename });
+        }
+      });
+    });
+  }
+
   handleClick = e => {
     const latlng = e.leaflet_event.latlng;
     this.removeMarker();
     this.marker = L.marker([latlng.lat, latlng.lng], { icon: this.icon }).addTo(
       this.map
     );
-
-    backend.hentPunkt(latlng.lng, latlng.lat).then(data => {
-      if (!data) {
-        return null;
-      }
-      let url = "";
-      if (data.fylke || data.kommune) {
-        url =
-          "/" + data.kommune.url + "?lng=" + latlng.lng + "&lat=" + latlng.lat;
-      } else {
-        url = "/Natur_i_Norge/?lng=" + latlng.lng + "&lat=" + latlng.lat;
-      }
-      url = url.replace(/ /g, "_");
-      if (url.substring(0, 2) === "//") {
-        url = url.substring(1);
-      }
-      updateMarkerPosition(e.leaflet_event.layerPoint, this, header_shift);
-      this.setState({
-        buttonUrl: url,
-        data: data,
-        showPopup: true,
-        koordinat: [latlng.lng, latlng.lat]
-      });
-      backend.hentStedsnavn(latlng.lng, latlng.lat).then(sted => {
-        if (sted && sted.placename) {
-          this.setState({ sted: sted.placename });
-        }
-      });
-    });
+    this.getBackendData(latlng.lng, latlng.lat, e.leaflet_event.layerPoint);
   };
 
   updateMap(props) {
