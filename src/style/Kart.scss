@@ -16,36 +16,15 @@
   z-index: 0;
 }
 
-/* Burde ikke vært nødvendig, men markøren trodde den var 2px bred :| */
-
-.leaflet-popup {
-  min-width: 200px;
-  max-width: 100%;
-  width: 100%;
-  padding: 0px;
-}
-
-.leaflet-popup-content,
-.leaflet-popup-content-wrapper {
-  min-width: 100%;
-  max-width: 100%;
-  width: 100%;
-}
-
-.leaflet-popup-content {
-  margin: 0px;
-  padding: 15px;
-}
-
 .popup {
   position: absolute;
   background: $brightest-nin;
   transform: translate3d(764px, 386px, 0px);
   padding: 10px;
   width: 300px;
-  -webkit-box-shadow: -1px 8px 62px -19px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -1px 8px 62px -19px rgba(0, 0, 0, 0.75);
-  box-shadow: -1px 8px 62px -19px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: $box-shadow;
+  -moz-box-shadow: $box-shadow;
+  box-shadow: $box-shadow;
   z-index: -5;
 }
 
@@ -66,7 +45,15 @@
   margin-top: -2px;
 }
 
-/* KartKnapper*/
+/* KARTKNAPPENE */
+
+/* Sizes for map buttons*/
+$leaflet-buttons: 34px;
+$leaflet-buttons-padding: 3px;
+$bottompadding: 12px + $leaflet-buttons-padding * 4; /*12px is the bottom reference text*/
+$bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
+  $mobile_slide_up_area;
+
 .leaflet-top {
   /* Dette er containeren til zoomknappene */
   top: auto !important;
