@@ -1,9 +1,8 @@
 @import "./GraphicProfile.scss";
-/** Firefox workaround for https://github.com/Leaflet/Leaflet/issues/4686 */
-.leaflet-fade-anim .leaflet-tile {
-  will-change: unset;
-}
 
+/** Firefox workaround for https://github.com/Leaflet/Leaflet/issues/4686 */
+
+.leaflet-fade-anim .leaflet-tile,
 .leaflet-zoom-anim .leaflet-zoom-animated {
   will-change: unset;
 }
@@ -15,18 +14,6 @@
   width: 100%;
   height: 100%;
   z-index: 0;
-}
-
-.leaflet-top {
-  top: calc(100vh - 100px) !important;
-}
-
-@media only screen and (max-width: 768px) {
-  .leaflet-top {
-    top: auto !important;
-    bottom: 115px !important;
-    right: 5px !important;
-  }
 }
 
 /* Burde ikke vært nødvendig, men markøren trodde den var 2px bred :| */
@@ -80,21 +67,36 @@
 }
 
 /* KartKnapper*/
+.leaflet-top {
+  /* Dette er containeren til zoomknappene */
+  top: auto !important;
+  bottom: $bottompadding !important;
+}
 
+.leaflet-touch .leaflet-bar a {
+  width: $leaflet-buttons - 2px; //border
+}
+
+.leaflet-control-zoom a,
+.map_button {
+  height: $leaflet-buttons !important;
+  width: $leaflet-buttons;
+}
+
+.map_button,
 .leaflet-touch .leaflet-bar {
   border: 2px solid $medium-nin;
+  width: $leaflet-buttons;
+  z-index: -5;
 }
 
 .map_button {
   position: absolute;
   right: 10px;
   background: white;
-  width: 34px;
-  border: 2px solid $medium-nin;
   border-radius: 4px;
   padding: 2px;
-  bottom: 92px;
-  z-index: -6;
+  bottom: $bottompadding + $leaflet-buttons * 2 + $leaflet-buttons-padding * 2;
 }
 
 .fullscreen {
@@ -102,13 +104,21 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .leaflet-top {
+    top: auto !important;
+    bottom: $bottompadding-mobile !important;
+    right: 5px !important;
+  }
+
   .map_button {
-    bottom: 182px;
+    bottom: $bottompadding-mobile + $leaflet-buttons * 2 +
+      $leaflet-buttons-padding * 2;
     right: 15px;
   }
 
   .fullscreen {
     display: inline-block;
-    bottom: 219px;
+    bottom: $bottompadding-mobile + $leaflet-buttons * 3 +
+      $leaflet-buttons-padding * 3;
   }
 }

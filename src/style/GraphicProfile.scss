@@ -33,8 +33,16 @@ $RL9-color: rgb(206, 211, 212);
 /* Active Elements */
 $active-border: 2px solid black !important;
 
-/* Relative heights */
+/* Relative heights of menu items */
 $bottom-tab-height: 48px;
 $topbar-height-nin: 56px;
 $menu-mobile-size: $bottom-tab-height + $topbar-height-nin;
 $sidebar-max-size: 350px;
+$mobile_slide_up_area: 60px; // closed version
+
+/* Sizes for map buttons*/
+$leaflet-buttons-padding: 3px;
+$bottompadding: 12px + $leaflet-buttons-padding * 4; /*12px is the bottom reference text*/
+$bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
+  $mobile_slide_up_area;
+$leaflet-buttons: 34px;

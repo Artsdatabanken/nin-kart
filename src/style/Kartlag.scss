@@ -1,5 +1,5 @@
 @import "./GraphicProfile.scss";
-/* 
+/*
 
 The list used in "kartlag" with a bunch of icons.
 Avoiding flex to ensure it works on all types of devices, IE included.
@@ -18,7 +18,7 @@ Even tho we don't a of now support IE X)
   .mobile_slide_up_area {
     display: inline-block;
     text-align: center;
-    height: 60px;
+    height: $mobile_slide_up_area;
     background: transparent;
     overflow: visible;
     width: 100%;
