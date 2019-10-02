@@ -59,7 +59,11 @@ class KartlagBarnElement extends React.Component {
         )}
 
         <div className="subelement_text nav_text">
-          <span className="nav_title">{språk(meta.tittel)}</span>
+          <span className="nav_title">
+            {språk(meta.tittel) === "undefined"
+              ? meta.tittel.sn
+              : språk(meta.tittel)}
+          </span>
           <span className="nav_2ndtitle">{getSecondary(meta)}</span>
         </div>
 

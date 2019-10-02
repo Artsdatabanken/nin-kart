@@ -6,7 +6,7 @@ class LegendeTitleField extends React.Component {
     const { tittel, undertittel } = this.props;
     return (
       <div className="title_and_subtitle_container">
-        <h4>{språk(tittel)}</h4>
+        <h4>{språk(tittel) === "undefined" ? tittel.sn : språk(tittel)}</h4>
         <h5>{språk(undertittel)}</h5>
       </div>
     );

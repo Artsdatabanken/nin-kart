@@ -43,7 +43,11 @@ class Kodelisteelement extends React.Component {
           <VolumIndikator størsteAreal={størsteAreal} areal={areal} />
           <Bildeavatar url={url} />
           <div className="nav_text">
-            <span className="nav_title">{språk(meta.tittel)}</span>
+            <span className="nav_title">
+              {språk(meta.tittel) === "undefined"
+                ? meta.tittel.sn
+                : språk(meta.tittel)}
+            </span>
             <span className="nav_2ndtitle">{getSecondary(meta)}</span>
           </div>
           {visKode && (

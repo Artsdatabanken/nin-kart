@@ -10,7 +10,10 @@ const KatalogHeader = ({ meta }) => {
   if (!meta) return null;
   const { kode, nivå, onUpdateLayerProp } = meta;
   const pkode = prettyKode(kode);
-  const tittel = språk(meta.tittel);
+  let tittel = språk(meta.tittel);
+  if (tittel === "undefined") {
+    tittel = "";
+  }
   const vitNavn = meta.tittel.sn;
 
   /*  
