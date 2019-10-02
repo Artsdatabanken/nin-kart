@@ -1,5 +1,5 @@
 import React from "react";
-import "style/Forvaltningsportalen.css";
+import "style/Forvaltningsportalen.scss";
 import ForvaltningsportalenLandingsside from "Forvaltningsportalen/ForvaltningsportalenLandingsside";
 import ForvaltningsKartlag from "Forvaltningsportalen/ForvaltningsKartlag/ForvaltningsKartlag";
 import ForvaltningsKartBokser from "Forvaltningsportalen/ForvaltningsKartBokser/ForvaltningsKartBokser";

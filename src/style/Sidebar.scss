@@ -1,22 +1,22 @@
+@import "./GraphicProfile.scss";
 /* SIDEBAR MENU */
 
 .sidebar {
   position: fixed;
-  height: calc(100vh - 56px);
+  height: calc(100vh - #{$topbar-height-nin});
   overflow-x: hidden;
-  max-width: 350px;
-  background: #fbfbfb;
+  max-width: $sidebar-max-size;
+  background: $background_header;
   width: 100%;
-  font-family: "Roboto", "sans-serif";
+  font-family: $fontfamily;
 }
 
 @media only screen and (max-width: 768px) {
   .sidebar {
-    height: calc(100vh - 104px);
+    height: calc(100vh - #{$menu-mobile-size});
     max-height: 100%;
     overflow-y: auto;
   }
-
   .sidebar.mobile_off {
     display: none;
   }
@@ -25,28 +25,32 @@
   }
 }
 
-/* MAIN BODY CONTENT (information tab) */
+@media only screen and (max-width: 768px) {
+  .top_sidebar_background,
+  .sidebar {
+    width: 100%;
+    max-width: 100%;
+  }
+}
 
+/* MAIN BODY CONTENT (information tab) */
 .main_body {
   position: relative;
   top: 0px;
-  height: calc(100vh - 56px);
-  width: calc(100% - 350px);
-  background: #fbfbfb;
-  font-family: "Roboto", "sans-serif";
-  left: 350px;
+  height: calc(100vh - #{$topbar-height-nin});
+  width: calc(100% - #{$sidebar-max-size});
+  background: $background_header;
+  font-family: $fontfamily;
+  left: $sidebar-max-size;
   overflow-y: auto;
-}
-
-@media only screen and (min-width: 1808px) {
 }
 
 @media only screen and (max-width: 768px) {
   .main_body.mobile_on {
     position: relative;
-    height: calc(100vh - 104px); /* bottom nav + top */
+    height: calc(100vh - #{$menu-mobile-size});
     width: 100%;
-    background: #fbfbfb;
+    background: $background_header;
     left: auto;
     overflow-y: scroll;
   }
@@ -56,7 +60,6 @@
 }
 
 /* Content aligner */
-
 .main_body_wrapper {
   padding-left: 20px;
   padding-right: 20px;
@@ -74,72 +77,11 @@
   }
 }
 
-/* Kartlag  */
-
-.kartlag_barn_container {
-  display: flex;
-  flex-wrap: wrap;
-  width: (100% + 10px);
-  margin-left: -5px;
-  justify-content: center;
-}
-
-.katalog_link_displayer {
-  flex: 1;
-  min-width: 200px;
-  max-width: 300px;
-  padding: 0px;
-  margin: 5px;
-  display: flex;
-  align-content: flex-start;
-  flex-wrap: wrap;
-}
-
-.subelement_decorative_image {
-  width: 100%;
-  height: 200px;
-  background: #b7d3d8;
-}
-
-.subelement_decorative_image span {
-  overflow-wrap: break-word;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
-  padding-top: 75px;
-  font-size: 30pt;
-  display: inline-block;
-  color: #4b909e;
-
-  font-weight: 300;
-}
-
-.subelement_text.nav_text {
-  max-width: 100%;
-}
-/* DELETE denne er en midlertidig fix før ny side*/
-.sidebar button:hover {
-  color: black;
-}
-
-.sidebar div {
-  box-sizing: border-box;
-  margin: 0px;
-}
-
-@media only screen and (max-width: 768px) {
-  .top_sidebar_background,
-  .sidebar {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
 /* The white container boxes */
 .sidebar_element {
   border: 0px;
   width: 100%;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid $border-color;
   position: relative;
   text-align: left;
 }
@@ -163,7 +105,7 @@
   padding-right: 10px;
   padding-left: 10px;
   font-size: 12pt;
-  font-family: "Roboto", "sans-serif";
+  font-family: $fontfamily;
 }
 
 .stats_paragraph {
@@ -176,7 +118,7 @@
   width: 50px;
   height: 50px;
   padding-right: 10px;
-  color: #4b909e;
+  color: $dark-nin;
 }
 
 .sidebar_title_container h1,
@@ -188,7 +130,7 @@
 
 .sidebar_element h3 svg,
 .sidebar_description svg {
-  color: #4b909e;
+  color: $dark-nin;
   width: 20px;
   height: 20px;
   vertical-align: top;
@@ -237,19 +179,7 @@
 
 .clickable_element:hover {
   cursor: pointer;
-  background: #edf4f5;
-}
-
-.zoom_button {
-  border: 0px;
-  background: #e4f0f2;
-  color: #4b909e;
-  padding: 10px;
-  position: absolute;
-  top: calc(50% - 30px);
-  right: 15px;
-  max-width: 70px;
-  text-align: center;
+  background: $brightest-nin;
 }
 
 .sidebar_code_field {
@@ -257,12 +187,12 @@
 }
 
 .katlog_header_images_container {
-  background: #edf4f5;
+  background: $brightest-nin;
 }
 
 .katlog_header_images_container .katlog_header_text_container {
   display: inline-block;
-  width: calc(100% - 350px);
+  width: calc(100% - #{$sidebar-max-size});
   padding-left: 20px;
   text-align: left;
 }
@@ -279,9 +209,9 @@
 .sidebar_top_image {
   vertical-align: top;
   height: 200px;
-  width: 350px;
+  width: $sidebar-max-size;
   display: inline-block;
-  background: #b7d3d8;
+  background: $bright-nin;
   background-size: cover;
   background-position: center;
 }
@@ -308,7 +238,7 @@
   background-repeat: no-repeat;
   margin-top: 10px;
   margin-bottom: 10px;
-  height: 350px;
+  height: $sidebar-max-size;
 }
 
 .page_topic_header {

@@ -1,0 +1,43 @@
+@import "./GraphicProfile.scss";
+
+.kartlag_barn_container {
+  /*Såvidt jeg kan se er dette containeren for underelement på infosiden*/
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 10px);
+  margin-left: -5px;
+  justify-content: center;
+}
+
+.katalog_link_displayer {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  padding: 0px;
+  margin: 5px;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.subelement_decorative_image {
+  width: 100%;
+  height: 200px;
+  background: $bright-nin;
+}
+
+.subelement_decorative_image span {
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  padding-top: 75px;
+  font-size: 30pt;
+  display: inline-block;
+  color: $dark-nin;
+  font-weight: 300;
+}
+
+.subelement_text.nav_text {
+  max-width: 100%;
+}

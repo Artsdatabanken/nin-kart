@@ -1,6 +1,6 @@
 ﻿import React from "react";
 import { withRouter } from "react-router";
-import "style/Forside.css";
+import "style/Forside.scss";
 import Kilder from "./Kilder";
 import Utforsk from "HamburgerMeny/Utforsk/Utforsk";
 
