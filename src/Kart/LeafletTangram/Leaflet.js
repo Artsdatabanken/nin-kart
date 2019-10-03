@@ -113,7 +113,7 @@ class LeafletTangram extends React.Component {
       iconAnchor: [17, 35]
     });
 
-    let searchparams = this.props.path.split("?");
+    let searchparams = (this.props.path || "").split("?");
     let coord = null;
     for (let i in searchparams) {
       if (searchparams[i].includes("lng")) {
