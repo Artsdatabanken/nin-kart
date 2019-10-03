@@ -19,12 +19,13 @@ import ForsideInformasjon from "Forside/ForsideInformasjon";
 import Forvaltningsportalen from "Forvaltningsportalen/Forvaltningsportalen";
 import Meny from "Navigering/Meny";
 import språk from "Funksjoner/språk";
-import "style/Kart.css";
-import "style/App.css";
-import "style/Sidebar.css";
-import "style/GeografiskSidebar.css";
-import "style/Kartlag.css";
-import "style/FargeMenyer.css";
+import "style/Kart.scss";
+import "style/App.scss";
+import "style/Badges.scss";
+import "style/Sidebar.scss";
+import "style/InformasjonsSider.scss";
+import "style/Kartlag.scss";
+import "style/FargeMenyer.scss";
 
 export let exportableSpraak;
 export let exportableFullscreen;
@@ -251,6 +252,7 @@ class App extends React.Component {
                           </div>
                         )}
                         <Kart
+                          path={this.props.location.search}
                           aktivTab={aktivTab}
                           show_current={this.state.showCurrent}
                           bounds={this.state.fitBounds}

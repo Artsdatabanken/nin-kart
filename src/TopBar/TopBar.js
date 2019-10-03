@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ResultatListe from "./ResultatListe";
 import Searchbar from "./Searchbar/Searchbar";
-import "./../style/TopBar.css";
+import "./../style/TopBar.scss";
 import { SettingsContext } from "../SettingsContext";
 import Hamburger from "@material-ui/icons/Menu";
 import backend from "../Funksjoner/backend";

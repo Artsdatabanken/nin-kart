@@ -1,3 +1,4 @@
+@import "./GraphicProfile.scss";
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 
 .forvaltningsportal_kartlag button,
@@ -32,7 +33,7 @@
 }
 
 .forvaltningsportalen.frontpage_header span {
-  color: #4b909e;
+  color: $dark-nin;
 }
 
 .forvaltningsportalen.frontpage_header {
