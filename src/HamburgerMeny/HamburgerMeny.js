@@ -10,6 +10,8 @@ import {
   ListItemSecondaryAction
 } from "@material-ui/core";
 import {
+  OpenInNew,
+  KeyboardArrowRight,
   CloudUpload,
   CloudDownload,
   Comment,
@@ -136,25 +138,29 @@ class HamburgerMeny extends Component {
                 />
                 <Divider />
                 <h2>Kontakt</h2>
-                <Menyelement
+
+                <button
+                  className="tilbakemeldinger"
                   onClick={() => {
                     this.handleWindowOpen(
                       "https://github.com/Artsdatabanken/nin-kart-frontend/issues"
                     );
                     context.onToggleHovedmeny();
                   }}
-                  icon={<Comment />}
-                  primary="Tilbakemeldinger"
-                />
+                >
+                  <Comment /> <span>Tilbakemeldinger</span> <OpenInNew />
+                </button>
 
-                <Menyelement
+                <button
+                  className="artsdatabanken"
                   onClick={() => {
                     this.handleWindowOpen("https://artsdatabanken.no");
                     context.onToggleHovedmeny();
                   }}
-                  icon={<BildeAvatar url="Datakilde/Artsdatabanken" />}
-                  primary="Artsdatabanken"
-                />
+                >
+                  <BildeAvatar url="Datakilde/Artsdatabanken" />{" "}
+                  <span>Artsdatabanken</span> <KeyboardArrowRight />
+                </button>
               </div>
             </List>
           </SwipeableDrawer>

@@ -1,15 +1,61 @@
-@import "./GraphicProfile.scss";
-@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+/** Firefox workaround for https://github.com/Leaflet/Leaflet/issues/4686 */
+.leaflet-fade-anim .leaflet-tile {
+  will-change: unset;
+}
+
+.leaflet-zoom-anim .leaflet-zoom-animated {
+  will-change: unset;
+}
+
+.nin_colours {
+  color: #4d8b96;
+  color: #4b909e;
+  color: #81b2bb;
+  color: #b7d3d8;
+  color: #edf4f5;
+  color: black;
+}
+
+.support_colors_nin_map {
+  color_blue: #e4f0f2;
+  color_active_blue_btn: #edf4f5;
+  background_header: #fbfbfb;
+  border-color: #eaeaea;
+  color: rgb(153, 0, 19);
+  color: #1c7762;
+}
+
+.artsdb_colours {
+  color: #ffffff;
+  color: #4c4a48;
+  color: #7f726b;
+  color: #de8608;
+  color: #eb6109;
+}
+
+.redlist {
+  color: rgb(90, 91, 93);
+  color: rgb(153, 0, 19);
+  color: rgb(216, 0, 36);
+  color: rgb(255, 76, 41);
+  color: rgb(243, 108, 33);
+  color: rgb(250, 166, 26);
+  color: rgb(96, 189, 177);
+  color: rgb(147, 149, 152);
+  color: rgb(206, 211, 212);
+}
 
 ::-webkit-scrollbar {
   width: 6px;
-  background-color: $brightest-nin;
+  background-color: #aaa;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $medium-nin;
+  background: rgba(0, 0, 0, 0.5);
 }
+
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 
 div,
 button {
@@ -27,13 +73,13 @@ body {
 
 :focus {
   outline: none;
-  border-bottom: $active-border;
+  border-bottom: 2px solid black !important;
   border-bottom-left-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
 }
 
 button:focus {
-  border: $active-border;
+  border: 2px solid black !important;
   box-sizing: border-box;
 }
 
@@ -41,12 +87,12 @@ a,
 a:visited,
 a:active,
 a:focus {
-  color: $dark-nin;
+  color: #4b909e;
   text-decoration: none;
 }
 
 a:hover {
-  color: $medium-nin;
+  color: #81b2bb;
   cursor: pointer;
 }
 
@@ -54,7 +100,7 @@ a:hover {
 .inverted_link:visited,
 .inverted_link:active,
 .inverted_link:focus {
-  color: $bright-nin;
+  color: #b7d3d8;
 }
 
 body,
@@ -70,7 +116,7 @@ h3 {
 h1,
 h2,
 h3 {
-  color: $super-dark-nin;
+  color: #347c8a;
   font-weight: 300;
 }
 
@@ -80,7 +126,7 @@ h5 {
   font-weight: 400;
   margin: 0px;
   padding: 0px;
-  color: $adb_dark_grey;
+  color: #4c4a48;
 }
 
 h5 {
@@ -107,12 +153,7 @@ button.active:hover,
 button.active:focus,
 button.active {
   cursor: pointer;
-  background: $medium-nin;
-}
-.meny_ikon_image {
-  width: 20px;
-  height: 20px;
-  display: block;
+  background: #81b2bb;
 }
 
 /* BUTTON HEADERS */
@@ -130,13 +171,60 @@ div {
   max-width: 100%;
 }
 
+/* Activate button in sidebar */
+
+.activate_button_container {
+  text-align: center;
+}
+
+.activate_button {
+  background: #4b909e;
+  color: white;
+  padding: 10px;
+  font-size: 12pt;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.activate_button svg {
+  height: 18px;
+  width: 18px;
+  vertical-align: top;
+}
+
+/* NAVIGATION TABS */
+
+.map_button {
+  position: absolute;
+  right: 10px;
+  background: white;
+  width: 34px;
+  border: 2px solid rgba(0, 0, 0, 0.27);
+  border-radius: 4px;
+  padding: 2px;
+  bottom: 92px;
+  z-index: -6;
+}
+
+.fullscreen {
+  display: none;
+}
+
 @media only screen and (max-width: 768px) {
   .hidden_in_fullscreen {
     display: none;
   }
+
+  .map_button {
+    bottom: 182px;
+    right: 15px;
+  }
+
+  .fullscreen {
+    display: inline-block;
+    bottom: 219px;
+  }
 }
 
-/* NAVIGATION TABS */
 .tab_selector {
   display: block;
   width: 408px;
@@ -169,9 +257,9 @@ div {
   display: inline-block;
   text-align: center;
   padding: auto;
-  background: $brightest-nin;
+  background: #edf4f5;
   width: calc(100% / 3);
-  height: $bottom-tab-height;
+  height: 48px;
   padding: 15px;
   position: relative;
   bottom: 0px;
@@ -180,8 +268,8 @@ div {
   color: #555;
   font-family: "Roboto", "sans-serif";
   border: none;
-  border-left: 1px solid $brightest-nin;
-  border-top: 1px solid $brightest-nin;
+  border-left: 1px solid #dee1e1;
+  border-top: 1px solid #eceded;
   vertical-align: bottom;
 }
 
@@ -191,13 +279,14 @@ div {
 .tab_selector button.active:hover,
 .tab_selector button.active:focus,
 .tab_selector button.active {
-  background: $medium-nin;
+  background: #81b2bb;
   color: #fff;
+  color: "rgba(0,0,0,0.67)";
   cursor: pointer;
 }
 
 .tab_selector .active_mobile_button {
-  background: $dark-nin;
+  background: #4b909e;
   color: white;
   font-weight: 600;
 }
@@ -211,12 +300,12 @@ div {
     width: calc(100% / 2);
     height: 40px;
     border: 0px;
-    background: $bright-nin;
+    background: #b7d3d8;
   }
 
   .tab_selector .active_mobile_button,
   .tab_selector .active_mobile_button_bigscreen {
-    background: $background_header;
+    background: #fbfbfb;
     color: black;
     font-weight: 400;
     border: 0px;
@@ -224,6 +313,8 @@ div {
     text-decoration: underline;
   }
 }
+
+/* NAVIGATION TAB BUTTON ICONS */
 
 .tab_selector button svg {
   height: 18px;
@@ -233,7 +324,7 @@ div {
   right: calc(50% - 9px);
 }
 
-/* Den usynlige knappen */
+/* GENERIC ITEMS */
 
 .invisible_icon_button {
   background: transparent;
@@ -249,11 +340,116 @@ div {
   cursor: pointer;
 }
 
-/* Last inn mer-knappen */
+.frontpage_sources a img {
+  width: 40px;
+}
+.sidebar .content_bubble,
+.content_bubble {
+  background: #b7d3d8;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+  width: 98%;
+}
+
+.content_bubble span {
+  display: inline-block;
+  width: auto;
+  max-width: calc(100% - 50px);
+  vertical-align: middle;
+}
+
+.avatar_kode {
+  padding-right: 10px;
+  color: #4b909e;
+}
+
 .load_more_button {
   width: 100%;
   padding: 10px;
   font-size: 12pt;
+}
+
+/* BADGES */
+
+.badge {
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  width: 130px;
+  padding: 10px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  font-size: 10pt;
+  background: transparent;
+}
+
+.badge_image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #4b909e;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.badge_image:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.badge b {
+  color: #4b909e;
+}
+
+.meny_ikon_image {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.lokasjon_badge_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+/* LOKASJON BADGE */
+.lokasjon_badge_container .badge_image {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #4b909e;
+}
+
+.lokasjon_badge_container .badge {
+  padding: 2px;
+  vertical-align: top;
+  width: 120px;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+.lokasjon_badge_container .badge b,
+.lokasjon_badge_container .badge span {
+  font-size: 9pt;
+}
+
+.badge_container {
+  width: 100%;
+  background: #edf4f5;
+  margin-bottom: 5px;
+}
+
+.badge_container b {
+  display: block;
+  width: 100%;
 }
 
 /* HAMBURGER MENY ITEMS */
@@ -375,19 +571,19 @@ div {
   width: 100%;
   color: #000;
   position: relative;
-  border: 1px solid $border-color;
+  border: 1px solid #eaeaea;
   border-top: 0px;
   z-index: 30;
 }
 
 .spraakalternativer button:hover,
 .spraakalternativer button:active {
-  background: $bright-nin;
+  background: #b7d3d8;
 }
 
 .spraakalternativer button:first-child {
   background: #fff;
-  border: 1px solid $bright-nin;
+  border: 1px solid #b7d3d8;
   padding: 5px;
   padding-right: calc(24px + 5px);
   z-index: 20;
@@ -396,7 +592,7 @@ div {
 .spraakalternativer svg {
   vertical-align: top;
   display: inline-block;
-  background: $bright-nin;
+  background: #b7d3d8;
   position: absolute;
   top: 0px;
   right: 0px;
@@ -407,7 +603,7 @@ div {
 .page_warning {
   padding: 20px;
   padding-top: 10px;
-  background: $dark-nin;
+  background: #4b909e;
   color: white;
   margin-bottom: 20px;
 }

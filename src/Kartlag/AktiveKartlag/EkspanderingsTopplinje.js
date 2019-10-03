@@ -32,7 +32,7 @@ const EkspanderingsTopplinje = ({
     >
       {/* Name and codes of the layer */}
       <span className="kartlag_list_title">
-        {språk(tittel)}
+        {språk(tittel) === "undefined" ? tittel.sn : språk(tittel)}
         <br />
         {context.visKoder && kode !== "bakgrunnskart" && kode}
       </span>
