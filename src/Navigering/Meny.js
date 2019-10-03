@@ -35,6 +35,9 @@ Sidebarmeny-navigeringen.
   if (meta) {
     url = meta.url;
     tittel = språk(meta.tittel);
+    if (tittel === "undefined") {
+      tittel = meta.tittel.sn;
+    }
   }
   return (
     <div
