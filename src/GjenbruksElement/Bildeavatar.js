@@ -48,6 +48,7 @@ class BildeAvatar extends Component {
 
     return (
       <Avatar
+        className="Artsdatabanken-logo"
         alt="logo"
         classes={{
           root: classes.root,
