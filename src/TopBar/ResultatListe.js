@@ -1,4 +1,4 @@
-import { Divider, ListItem, ListItemText } from "@material-ui/core";
+import { Divider } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import React, { Component } from "react";
 import Bildeavatar from "GjenbruksElement/Bildeavatar";
@@ -23,14 +23,14 @@ class ResultatListe extends Component {
     if (!searchResults) return null;
     if (searchResults.length <= 0) return null;
     return (
-      <div className="resultatliste mobile_active">
+      <ul className="resultatliste mobile_active">
         {searchResults.map(item => {
           const navn = item.title;
           return (
             <React.Fragment key={item.url}>
-              <ListItem
-                button={true}
-                className={classes.listitem}
+              <li
+                tabIndex="0"
+                className="resultatliste_item"
                 onMouseDown={() => onSelect(item)}
                 onKeyDown={e => {
                   if (e.keyCode === 13) {
@@ -39,10 +39,14 @@ class ResultatListe extends Component {
                 }}
                 key={item.url}
               >
-                <Bildeavatar url={item.url} />
-                <ListItemText classes={{ primary: classes.text }}>
+                <span className="avatar_container">
+                  <Bildeavatar url={item.url} />
+                </span>
+
+                <span className="resultatliste_tekst">
+                  {" "}
                   {ResultatListe.highlightMatch(navn, query, classes)}
-                </ListItemText>
+                </span>
 
                 <div className="itemtext">
                   {ResultatListe.highlightMatch(
@@ -51,12 +55,12 @@ class ResultatListe extends Component {
                     classes
                   )}
                 </div>
-              </ListItem>
+              </li>
               <Divider className="inset" />
             </React.Fragment>
           );
         })}
-      </div>
+      </ul>
     );
   }
 
