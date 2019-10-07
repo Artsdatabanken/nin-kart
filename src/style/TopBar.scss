@@ -92,7 +92,7 @@
   margin-top: 4px;
   border: 1px solid $border-color;
   background: #fff;
-  width: calc(408px - 60px);
+  width: $searchbar-width;
   z-index: 22;
   box-sizing: border-box;
 }
@@ -104,7 +104,7 @@
 }
 
 .searchbar_container.mobile_active {
-  width: calc(408px - 60px);
+  width: $searchbar-width;
   border: 1px solid $border-color;
   background: white;
 }
@@ -165,10 +165,10 @@
   padding-left: 0px;
   padding-right: 0px;
   position: auto;
-  top: 51px;
+  top: 50px;
   right: 10px;
   border: 1px solid $border-color;
-  width: 3$bottom-tab-height;
+  width: $searchbar-width;
   background: white;
   position: fixed;
   z-index: 30;
