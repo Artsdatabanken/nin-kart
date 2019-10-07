@@ -15,7 +15,7 @@ import {
   CloudUpload,
   CloudDownload,
   Comment,
-  Info,
+  HelpOutline,
   AssignmentInd
 } from "@material-ui/icons";
 import React, { Component } from "react";
@@ -72,8 +72,8 @@ class HamburgerMeny extends Component {
                 <Divider />
 
                 <Menyelement
-                  icon={<Info />}
-                  primary="Informasjon"
+                  icon={<HelpOutline />}
+                  primary="Hjelp"
                   onClick={() => {
                     this.handleClick("/Natur_i_Norge/hjelp");
                     context.onToggleHovedmeny();
