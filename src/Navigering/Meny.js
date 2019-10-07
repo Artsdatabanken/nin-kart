@@ -102,8 +102,7 @@ Sidebarmeny-navigeringen.
         <div className="nav_current">
           {" "}
           {meta && <Bildeavatar url={url} />}
-          {tittel === "hjelp" && <HelpOutline />}
-          {tittel}
+          {tittel === "hjelp" && <HelpOutline />} {tittel}
         </div>
 
         <Navigeringsliste
