@@ -59,17 +59,18 @@
 
 .hamburger,
 .search_icon {
-  height: 46px;
   position: absolute;
   right: -1px;
   top: -1px;
+  box-sizing: border-box;
+  height: calc(#{$top-icon-height} + 2px);
 }
 
 .hamburger {
   display: inline-block;
-  padding: 5px;
+  padding: $top-pad;
   left: 10px;
-  top: 5px;
+  top: $top-pad;
   right: auto;
   z-index: 22;
 }
@@ -84,23 +85,25 @@
 
 /* Search Field */
 
-.searchbar_container {
+.search_elements_container {
   position: absolute;
   right: 10px;
-  height: 46px;
-  display: inline-block;
-  margin-top: 4px;
-  border: 1px solid $border-color;
-  background: #fff;
-  width: $searchbar-width;
+  top: $top-pad;
   z-index: 22;
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
 }
 
 .searchbar_container {
-  width: 50px;
+  height: $top-icon-height;
+  display: inline-block;
+  width: $searchbar-width;
+  box-sizing: border-box;
+  width: $top-icon-height;
   background: transparent;
   border: 1px solid transparent;
+  box-sizing: border-box;
 }
 
 .searchbar_container.mobile_active {
@@ -114,23 +117,8 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .searchbar_container {
-    position: absolute;
-    right: 10px;
-    width: 50px;
-    background: transparent;
-    border: none;
-    border: 1px solid transparent;
-  }
-
   .searchbar_container.mobile_active {
-    width: calc(100% - 20px);
-    border: 1px solid $border-color;
-    background: white;
-  }
-
-  .searchbar_container.mobile_active .search_icon svg {
-    color: $dark-nin;
+    width: calc(100vw - 20px);
   }
 }
 
