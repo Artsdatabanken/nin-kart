@@ -62,7 +62,10 @@ Sidebarmeny-navigeringen.
   }
 
   if (lokalitet.includes("lokalitet") && lokalitetdata) {
-    let overordnet = lokalitetdata.kommune.url.replace("_", " ").split("/");
+    let overordnet = [];
+    if (lokalitetdata.kommune) {
+      lokalitetdata.kommune.url.replace("_", " ").split("/");
+    }
     return (
       <div
         className={

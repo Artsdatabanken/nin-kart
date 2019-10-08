@@ -5,13 +5,12 @@ import React from "react";
 import Tangram from "tangram";
 import { createScene, updateScene } from "./scene/scene";
 import backend from "Funksjoner/backend";
+import PopUp from "./LeafletComponents/PopUp";
 import {
-  Landscape,
   Fullscreen,
   FullscreenExit,
   LocationSearching
 } from "@material-ui/icons";
-import språk from "Funksjoner/språk";
 import "style/Kart.scss";
 import updateMarkerPosition from "./LeafletActions/updateMarkerPosition";
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
@@ -24,10 +23,6 @@ L.Icon.Default.mergeOptions({
   iconUrl: require("leaflet/dist/images/marker-icon.png"),
   shadowUrl: require("leaflet/dist/images/marker-shadow.png")
 });
-
-function roundToX(num, x) {
-  return +(Math.round(num + "e+" + x) + "e-" + x);
-}
 
 let header_shift = 56;
 
@@ -197,7 +192,6 @@ class LeafletTangram extends React.Component {
       if (url.substring(0, 2) === "//") {
         url = url.substring(1);
       }
-
       updateMarkerPosition(e, this, header_shift);
 
       this.setState({
@@ -206,6 +200,11 @@ class LeafletTangram extends React.Component {
         showPopup: true,
         koordinat: [lng, lat]
       });
+      this.props.handleLokalitetUpdate(data);
+      console.log(
+        "den nåværende lokalitetdataen er: ",
+        this.props.lokalitetdata
+      );
       backend.hentStedsnavn(lng, lat).then(sted => {
         if (sted && sted.placename) {
           this.setState({ sted: sted.placename });
@@ -260,84 +259,7 @@ class LeafletTangram extends React.Component {
   render() {
     return (
       <>
-        {this.state.showPopup && (
-          <div
-            className="popup"
-            style={{
-              transform:
-                "translate3d(" +
-                this.state.windowXpos +
-                "px, " +
-                this.state.windowYpos +
-                "px, 0px)"
-            }}
-          >
-            <button
-              className="invisible_icon_button"
-              onClick={e => {
-                this.setState({
-                  showPopup: !this.state.showPopup
-                });
-              }}
-            >
-              x
-            </button>
-            {this.state.koordinat && (
-              <>
-                lat: {roundToX(this.state.koordinat[0], 5)}, lng:{" "}
-                {roundToX(this.state.koordinat[1], 5)}
-                <br />
-              </>
-            )}
-
-            {this.state.sted && (
-              <>
-                {this.state.sted} <br />
-              </>
-            )}
-
-            {this.state.data ? (
-              <>
-                {this.state.data.kommune && (
-                  <b>{språk(this.state.data.kommune.tittel)}</b>
-                )}
-                {this.state.data.kommune && this.state.data.fylke && (
-                  <b>{", "} </b>
-                )}
-                {this.state.data.fylke && (
-                  <b>
-                    {språk(this.state.data.fylke.tittel)} <br />
-                  </b>
-                )}
-                {this.state.data.landskap &&
-                  this.props.forvaltningsportal !== "true" && (
-                    <>
-                      <Landscape /> {språk(this.state.data.landskap.tittel)}{" "}
-                      <br />
-                    </>
-                  )}
-              </>
-            ) : (
-              "Ingen data funnet"
-            )}
-            {this.props.forvaltningsportal !== "true" && (
-              <>
-                <button
-                  className="link_to_page"
-                  onClick={e => {
-                    this.props.handleFullscreen(false);
-                    this.props.history.push(
-                      this.state.buttonUrl + "?informasjon"
-                    );
-                  }}
-                >
-                  Gå til all info om dette punktet
-                </button>
-                <br />
-              </>
-            )}
-          </div>
-        )}
+        {this.state.showPopup && <PopUp parent={this} />}
 
         {this.props.aktivTab === "kartlag" && (
           <button

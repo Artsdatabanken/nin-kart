@@ -256,6 +256,8 @@ class App extends React.Component {
                           </div>
                         )}
                         <Kart
+                          handleLokalitetUpdate={this.handleLokalitetUpdate}
+                          lokalitetdata={this.state.lokalitetdata}
                           path={this.props.location.search}
                           aktivTab={aktivTab}
                           show_current={this.state.showCurrent}
