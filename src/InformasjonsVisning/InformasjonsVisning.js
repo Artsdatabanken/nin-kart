@@ -30,7 +30,8 @@ class InformasjonsVisning extends React.Component {
       location,
       aktivTab,
       path,
-      handleNavigate
+      handleNavigate,
+      handleLokalitetUpdate
     } = this.props;
     const kurve = finnKurvevariabler(this.props.aktiveLag);
 
@@ -48,6 +49,7 @@ class InformasjonsVisning extends React.Component {
           aktivTab={aktivTab}
           history={this.props.history}
           onNavigate={handleNavigate}
+          handleLokalitetUpdate={handleLokalitetUpdate}
         />
       );
     }

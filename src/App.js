@@ -67,6 +67,7 @@ class App extends React.Component {
       actualBounds: null,
       fitBounds: null,
       meta: null,
+      lokalitetdata: null,
       visKoder: false,
       navigation_history: [],
       showCurrent: true,
@@ -185,6 +186,8 @@ class App extends React.Component {
 
                       <div>
                         <Meny
+                          lokalitetdata={this.state.lokalitetdata}
+                          lokalitet={path}
                           meta={this.state.meta}
                           onNavigate={this.handleNavigate}
                           aktivTab={aktivTab}
@@ -197,6 +200,7 @@ class App extends React.Component {
                         {aktivTab === "meny" || aktivTab === "informasjon" ? (
                           <>
                             <InformasjonsVisning
+                              handleLokalitetUpdate={this.handleLokalitetUpdate}
                               handleNavigate={this.handleNavigate}
                               path={path}
                               aktivTab={aktivTab}
@@ -290,6 +294,7 @@ class App extends React.Component {
       </SettingsContext.Consumer>
     );
   }
+
   handleNavigate = url => {
     this.props.history.push(url + "?" + getPathTab(this.props.location));
   };
@@ -311,6 +316,10 @@ class App extends React.Component {
   };
   handleSpraak = spraak => {
     this.setState({ spraak: spraak });
+  };
+
+  handleLokalitetUpdate = data => {
+    this.setState({ lokalitetdata: data });
   };
 
   handleFullscreen = showFullscreen => {
