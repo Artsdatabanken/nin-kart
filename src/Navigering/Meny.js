@@ -42,11 +42,9 @@ const Meny = ({
   lokalitet,
   lokalitetdata
 }) => {
-  /*
-  
+  /*  
 Intern navigasjon innad på en side.
 Sidebarmeny-navigeringen.
-  
   */
 
   const [expanded, setExpanded] = useState(false);
@@ -64,7 +62,9 @@ Sidebarmeny-navigeringen.
   if (lokalitet.includes("lokalitet") && lokalitetdata) {
     let overordnet = [];
     if (lokalitetdata.kommune) {
-      lokalitetdata.kommune.url.replace("_", " ").split("/");
+      overordnet = lokalitetdata.kommune.url.replace("_", " ").split("/");
+    } else {
+      console.log("ingen kommune, se etter andre ting");
     }
     return (
       <div
