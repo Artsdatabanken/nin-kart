@@ -31,7 +31,7 @@ const Variabelboks = ({ onNavigate, miljøvariabel }) => {
           <h2>
             {miljøvariabel.tittel && språk(miljøvariabel.tittel)} - {kode}
           </h2>
-          <p>{språk(miljøvariabel.ingress)}</p>
+          <p>{språk(miljøvariabel.beskrivelse)}</p>
           {miljøvariabel.kart}
           <br />
           {found && (
