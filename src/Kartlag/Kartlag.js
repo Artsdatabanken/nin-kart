@@ -150,7 +150,6 @@ class Kartlag extends React.Component {
                                   onUpdateLayerProp={
                                     this.props.handleUpdateLokalitetLayerProp
                                   }
-                                  meta={meta}
                                 />
                               )
                             );

@@ -389,12 +389,11 @@ class App extends React.Component {
     });
   };
 
-  handleUpdateLokalitetLayerProp = (layer, key, value, elementType) => {
+  handleUpdateLokalitetLayerProp = (layer, key, value) => {
     let lokalitetdata = this.state.lokalitetdata;
     lokalitetdata.environment[layer][key] = value;
-    console.log(lokalitetdata.environment[layer][key]);
     this.setState({
-      lokalitetdata: Object.assign(lokalitetdata)
+      lokalitetdata: Object.assign({}, lokalitetdata)
     });
   };
 
