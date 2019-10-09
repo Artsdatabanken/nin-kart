@@ -32,7 +32,12 @@ function updateScene(config, props) {
   lagNåværendeLag(config, props);
   if (lokalitetdata !== null) {
     console.log("updatescene lokalitetdata: ", lokalitetdata.environment);
-    lagAktiveLag(lokalitetdata.environment, true, props.opplyst, config);
+    lagAktiveLag(
+      lokalitetdata.environment,
+      viserKatalog,
+      props.opplyst,
+      config
+    );
   }
 
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplyst, config);
