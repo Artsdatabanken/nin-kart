@@ -7,6 +7,7 @@ function lagGradientRampe(barna, opplystKode, mode, blendmode, opacity) {
   //let opplystLevel = -1;
   let steps = [];
   barna.forEach(b => {
+    if (!b.farge) console.warn("Manger farge for " + b.kode);
     let levels = b.normalisertVerdi;
     if (levels === undefined) return;
     if (!Array.isArray(levels)) levels = [levels, levels];
