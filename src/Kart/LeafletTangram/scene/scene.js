@@ -23,7 +23,6 @@ function createScene(props) {
 
 function updateScene(config, props) {
   let lokalitetdata = props.lokalitetdata || null;
-  console.log("updatescene lokalitetdata: ", lokalitetdata);
 
   let bakgrunn = props.aktiveLag.bakgrunnskart;
   bakgrunn = bakgrunn.kart.format[bakgrunn.kart.aktivtFormat];
@@ -31,6 +30,11 @@ function updateScene(config, props) {
   config.layers = {};
   const viserKatalog = !!props.meta; // meta = true or meta = false , never meta = null
   lagNåværendeLag(config, props);
+  if (lokalitetdata !== null) {
+    console.log("updatescene lokalitetdata: ", lokalitetdata.environment);
+    lagAktiveLag(lokalitetdata.environment, true, props.opplyst, config);
+  }
+
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplyst, config);
   lagTemp(config);
   return config;
