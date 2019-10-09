@@ -26,6 +26,18 @@ L.Icon.Default.mergeOptions({
 
 let header_shift = 56;
 
+function find_searchparams(searchparams) {
+  let coord = null;
+  for (let i in searchparams) {
+    if (searchparams[i].includes("lng")) {
+      coord = searchparams[i].split("&");
+      coord[0] = coord[0].split("=")[1];
+      coord[1] = coord[1].split("=")[1];
+    }
+  }
+  return coord;
+}
+
 class LeafletTangram extends React.Component {
   state = {
     windowXpos: 0,
@@ -108,15 +120,8 @@ class LeafletTangram extends React.Component {
       iconAnchor: [17, 35]
     });
 
-    let searchparams = (this.props.path || "").split("?");
-    let coord = null;
-    for (let i in searchparams) {
-      if (searchparams[i].includes("lng")) {
-        coord = searchparams[i].split("&");
-        coord[0] = coord[0].split("=")[1];
-        coord[1] = coord[1].split("=")[1];
-      }
-    }
+    let coord = find_searchparams((this.props.path || "").split("?"));
+
     map.on("locationfound", e => this.onLocationFound(e));
     map.on("locationerror", e => this.onLocationError(e));
 
@@ -178,6 +183,7 @@ class LeafletTangram extends React.Component {
   }
 
   getBackendData(lng, lat, e) {
+    let prevlok = this.state.lokalitetdata;
     backend.hentPunkt(lng, lat, e).then(data => {
       if (!data) {
         return null;
@@ -201,15 +207,14 @@ class LeafletTangram extends React.Component {
         koordinat: [lng, lat]
       });
       this.props.handleLokalitetUpdate(data);
-      console.log(
-        "den nåværende lokalitetdataen er: ",
-        this.props.lokalitetdata
-      );
       backend.hentStedsnavn(lng, lat).then(sted => {
         if (sted && sted.placename) {
           this.setState({ sted: sted.placename });
         }
       });
+      if (this.props.lokalitetdata && this.props.lokalitetdata !== prevlok) {
+        this.updateMap(this.props);
+      }
     });
   }
 
@@ -220,6 +225,16 @@ class LeafletTangram extends React.Component {
       this.map
     );
     this.getBackendData(latlng.lng, latlng.lat, e.leaflet_event.layerPoint);
+    let urlparams = (this.props.path || "").split("?");
+    let newurlstring = "";
+    for (let i in urlparams) {
+      if (!urlparams[i].includes("lng") && urlparams[i] !== "") {
+        newurlstring += "?" + urlparams[i];
+      }
+    }
+    this.props.history.push(
+      "?lng=" + latlng.lng + "&lat=" + latlng.lat + newurlstring
+    );
   };
 
   updateMap(props) {

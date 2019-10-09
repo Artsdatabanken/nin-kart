@@ -22,6 +22,9 @@ function createScene(props) {
 }
 
 function updateScene(config, props) {
+  let lokalitetdata = props.lokalitetdata || null;
+  console.log("updatescene lokalitetdata: ", lokalitetdata);
+
   let bakgrunn = props.aktiveLag.bakgrunnskart;
   bakgrunn = bakgrunn.kart.format[bakgrunn.kart.aktivtFormat];
   config.scene.background.color = bakgrunn.land_farge || "#f2f2f2";
