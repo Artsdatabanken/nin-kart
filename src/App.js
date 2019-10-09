@@ -237,6 +237,7 @@ class App extends React.Component {
                             }
                           >
                             <Kartlag
+                              lokalitetdata={this.state.lokalitetdata}
                               show_current={this.state.showCurrent}
                               handleShowCurrent={this.handleShowCurrent}
                               hidden={aktivTab === "kartlag" && true}

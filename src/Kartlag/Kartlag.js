@@ -24,7 +24,8 @@ class Kartlag extends React.Component {
       meta,
       show_current,
       handleShowCurrent,
-      onRemoveSelectedLayer
+      onRemoveSelectedLayer,
+      lokalitetdata
     } = this.props;
 
     let duplicate = false;
@@ -49,6 +50,10 @@ class Kartlag extends React.Component {
     }
     if (tittel.length > 40) {
       tittel = tittel.substring(0, 40) + "...";
+    }
+
+    if (lokalitetdata) {
+      console.log("kartlag: ", lokalitetdata.environment);
     }
 
     return (
@@ -126,6 +131,30 @@ class Kartlag extends React.Component {
                           </ul>
                         </div>
                       </>
+                    )}
+
+                    {lokalitetdata && (
+                      <div className="sidebar_element">
+                        <h2>Nåværende Lokalitet</h2>
+                        <ul className="kartlag_list">
+                          {Object.keys(lokalitetdata.environment).map(fkode => {
+                            const kartlag = lokalitetdata.environment[fkode];
+                            return (
+                              fkode !== "bakgrunnskart" && (
+                                <AktivtKartlagElement
+                                  kartlag={kartlag}
+                                  key={fkode}
+                                  {...this.props}
+                                  visKoder={context.visKoder}
+                                  onFitBounds={onFitBounds}
+                                  onUpdateLayerProp={onUpdateLayerProp}
+                                  meta={meta}
+                                />
+                              )
+                            );
+                          })}
+                        </ul>
+                      </div>
                     )}
 
                     <div className="sidebar_element">
