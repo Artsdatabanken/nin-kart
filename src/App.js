@@ -243,6 +243,9 @@ class App extends React.Component {
                               hidden={aktivTab === "kartlag" && true}
                               aktiveLag={this.state.aktiveLag}
                               onUpdateLayerProp={this.handleUpdateLayerProp}
+                              handleUpdateLokalitetLayerProp={
+                                this.handleUpdateLokalitetLayerProp
+                              }
                               onRemoveSelectedLayer={
                                 this.handleRemoveSelectedLayer
                               }
@@ -258,6 +261,9 @@ class App extends React.Component {
                         )}
                         <Kart
                           handleLokalitetUpdate={this.handleLokalitetUpdate}
+                          handleUpdateLokalitetLayerProp={
+                            this.handleUpdateLokalitetLayerProp
+                          }
                           lokalitetdata={this.state.lokalitetdata}
                           path={this.props.location.search}
                           aktivTab={aktivTab}
@@ -380,6 +386,15 @@ class App extends React.Component {
         {},
         oppdaterLagProperties(layer, key, value, this, elementType)
       )
+    });
+  };
+
+  handleUpdateLokalitetLayerProp = (layer, key, value, elementType) => {
+    let lokalitetdata = this.state.lokalitetdata;
+    lokalitetdata.environment[layer][key] = value;
+    console.log(lokalitetdata.environment[layer][key]);
+    this.setState({
+      lokalitetdata: Object.assign(lokalitetdata)
     });
   };
 

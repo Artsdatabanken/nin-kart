@@ -147,7 +147,9 @@ class Kartlag extends React.Component {
                                   {...this.props}
                                   visKoder={context.visKoder}
                                   onFitBounds={onFitBounds}
-                                  onUpdateLayerProp={onUpdateLayerProp}
+                                  onUpdateLayerProp={
+                                    this.props.handleUpdateLokalitetLayerProp
+                                  }
                                   meta={meta}
                                 />
                               )

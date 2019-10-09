@@ -22,6 +22,7 @@ const PopUp = ({ parent, onNavigate }) => {
       <button
         className="invisible_icon_button"
         onClick={e => {
+          parent.props.handleLokalitetUpdate(null);
           parent.setState({
             showPopup: !parent.state.showPopup
           });
