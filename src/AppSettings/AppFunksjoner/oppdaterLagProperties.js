@@ -1,15 +1,9 @@
-export default function oppdaterLagProperties(
-  layer,
-  key,
-  value,
-  parent,
-  elementType
-) {
-  const layer_input = layer;
-  /*
-  //console.log("oppdaterLagProperties");
-  //console.log("layer: ", layer, "| key: ", key, "| value: ", value);*/
+function childLayer(layer) {
+  return layer.slice(0, layer.lastIndexOf("-")); // fjerner siste kodeledd
+}
 
+function oppdaterLagProperties(layer, key, value, parent, elementType) {
+  const layer_input = layer;
   // Scenario A: Laget har ingen egenfarge, men bygges opp av underelementer
   // Scenario B: Laget har ingen underelementer, men sin egen farge
 
@@ -17,7 +11,7 @@ export default function oppdaterLagProperties(
 
   // Laget er et underelement og ligger derfor som barn på sin foreldre
   if (elementType === "barn") {
-    layer = layer.slice(0, layer.lastIndexOf("-")); // fjerner siste kodeledd
+    layer = childLayer(layer);
   }
 
   // Laget er et aktivt kartlag, og ligger derfor i state.aktive
@@ -50,3 +44,5 @@ export default function oppdaterLagProperties(
 
   return aktive;
 }
+
+export default oppdaterLagProperties;

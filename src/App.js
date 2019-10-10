@@ -390,10 +390,7 @@ class App extends React.Component {
   };
 
   handleUpdateLokalitetLayerProp = (layer, key, value) => {
-    //console.log(layer, key, value);
     let lokalitetdata = this.state.lokalitetdata;
-    //console.log(lokalitetdata.environment)
-    //console.log(lokalitetdata.environment[layer].kode);
     if (!lokalitetdata.environment[layer]) {
       let parent_code = layer.substring(0, layer.lastIndexOf("-"));
       let barneliste = lokalitetdata.environment[parent_code].barn;
@@ -403,7 +400,13 @@ class App extends React.Component {
         }
       }
     } else {
-      lokalitetdata.environment[layer][key] = value;
+      let node = lokalitetdata.environment[layer];
+      const keys = key.split(".");
+      for (let i = 0; i < keys.length - 1; i++) {
+        node = node[keys[i]];
+      }
+      const finalKey = keys[keys.length - 1];
+      node[finalKey] = value;
     }
     this.setState({
       lokalitetdata: Object.assign({}, lokalitetdata)
