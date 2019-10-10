@@ -305,7 +305,14 @@ class App extends React.Component {
   }
 
   handleNavigate = url => {
-    this.props.history.push(url + "?" + getPathTab(this.props.location));
+    let new_url = url;
+    if (!url || url === undefined) {
+      return;
+    }
+    if (new_url[0] !== "/") {
+      new_url = "/" + url;
+    }
+    this.props.history.push(new_url + "?" + getPathTab(this.props.location));
   };
 
   onNavigateToTab = tab => {

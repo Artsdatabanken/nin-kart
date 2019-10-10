@@ -64,7 +64,7 @@ Sidebarmeny-navigeringen.
     if (lokalitetdata.kommune) {
       overordnet = lokalitetdata.kommune.url.replace("_", " ").split("/");
     } else {
-      console.log("ingen kommune, se etter andre ting");
+      console.warn("ingen kommune, se etter andre ting");
     }
     return (
       <div

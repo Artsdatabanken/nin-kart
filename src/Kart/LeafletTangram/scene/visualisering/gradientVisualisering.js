@@ -18,7 +18,6 @@ function normaliserFilter(format) {
 function lagStyle(format, drawArgs) {
   const { opplystKode, barn, blendmode } = drawArgs;
   let [filterMin, filterMax] = normaliserFilter(format);
-  console.log("format", drawArgs.format);
   const visning = drawArgs.format.aktivVisning;
   let transparent_blendmode_handler = `vec4 transparent = vec4(1.,1.,1.,0.);`;
   if (blendmode === "multiply") {
