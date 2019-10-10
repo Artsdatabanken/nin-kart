@@ -116,7 +116,7 @@ const KatalogHeader = ({ meta }) => {
                 {autoritet !== "" && (
                   <>
                     <span>{"Autor: " + autoritet}</span>
-                    <br></br>
+                    <br />
                   </>
                 )}
 
