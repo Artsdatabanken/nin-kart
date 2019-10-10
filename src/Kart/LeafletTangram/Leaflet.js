@@ -275,7 +275,7 @@ class LeafletTangram extends React.Component {
   render() {
     return (
       <>
-        {this.state.showPopup && <PopUp parent={this} />}
+        {this.state.showPopup && <PopUp parent={this} path={this.props.path} />}
 
         {this.props.aktivTab === "kartlag" && (
           <button

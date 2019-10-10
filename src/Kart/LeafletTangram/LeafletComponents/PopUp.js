@@ -6,7 +6,19 @@ function roundToX(num, x) {
   return +(Math.round(num + "e+" + x) + "e-" + x);
 }
 
-const PopUp = ({ parent, onNavigate }) => {
+function fixSearchparams(path) {
+  const searchparams = path.split("?");
+  let url_string = "";
+  for (let i in searchparams) {
+    const item = searchparams[i];
+    if (!item.includes("lng") && item !== "undefined" && item !== "") {
+      url_string += "?" + item;
+    }
+  }
+  return url_string;
+}
+
+const PopUp = ({ parent, onNavigate, path }) => {
   return (
     <div
       className="popup"
@@ -87,6 +99,8 @@ const PopUp = ({ parent, onNavigate }) => {
         onClick={e => {
           parent.removeMarker();
           parent.props.handleLokalitetUpdate(null);
+          parent.props.history.push(fixSearchparams(path));
+
           parent.setState({
             showPopup: !parent.state.showPopup
           });
