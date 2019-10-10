@@ -32,13 +32,16 @@ Sidebarmeny-navigeringen.
   const [expanded, setExpanded] = useState(false);
   let tittel = "hjelp";
   let url = "/;";
+  let nivå = "";
   if (meta) {
     url = meta.url;
     tittel = språk(meta.tittel);
     if (tittel === "undefined") {
       tittel = meta.tittel.sn;
     }
+    nivå = meta.nivå;
   }
+
   return (
     <div
       className={
@@ -103,7 +106,14 @@ Sidebarmeny-navigeringen.
           {" "}
           {meta && <Bildeavatar url={url} />}
           {tittel === "hjelp" && <HelpOutline />}
-          {tittel}
+          {nivå === "Slekt" ||
+          nivå === "Art" ||
+          nivå === "Underart" ||
+          nivå === "Varietet" ? (
+            <i>{tittel}</i>
+          ) : (
+            tittel
+          )}
         </div>
 
         <Navigeringsliste

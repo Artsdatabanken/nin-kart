@@ -345,9 +345,15 @@ class App extends React.Component {
     if (path !== prevProps.location.pathname) {
       fetchMeta(path, this);
     }
-    document.title =
-      (this.state.meta && språk(this.state.meta.tittel) + " | NiN-kart") ||
-      "NiN-kart";
+    if (this.state.meta && språk(this.state.meta.tittel) !== "undefined") {
+      document.title =
+        (this.state.meta && språk(this.state.meta.tittel) + " | NiN-kart") ||
+        "NiN-kart";
+    } else {
+      document.title =
+        (this.state.meta && språk(this.state.meta.tittel.sn) + " | NiN-kart") ||
+        "NiN-kart";
+    }
   }
 
   async downloadMeta(url) {

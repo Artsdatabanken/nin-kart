@@ -627,3 +627,8 @@ div {
 .kilde_knapp svg:last-child {
   float: right;
 }
+
+.taxonomy {
+  text-align: left;
+  background: hotpink;
+}

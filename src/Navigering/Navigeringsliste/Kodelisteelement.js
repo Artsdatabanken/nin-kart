@@ -28,6 +28,11 @@ class Kodelisteelement extends React.Component {
       størsteAreal,
       setExpanded
     } = this.props;
+    let overordnet = "";
+    if (meta) {
+      overordnet = meta.overordnet;
+    }
+
     return (
       <>
         <button
@@ -43,11 +48,29 @@ class Kodelisteelement extends React.Component {
           <VolumIndikator størsteAreal={størsteAreal} areal={areal} />
           <Bildeavatar url={url} />
           <div className="nav_text">
-            <span className="nav_title">
-              {språk(meta.tittel) === "undefined"
-                ? meta.tittel.sn
-                : språk(meta.tittel)}
-            </span>
+            {(overordnet === "Slekt" ||
+              overordnet === "Art" ||
+              overordnet === "Underart" ||
+              overordnet === "Varietet") && (
+              <i>
+                <span className="nav_title">
+                  {språk(meta.tittel) === "undefined"
+                    ? meta.tittel.sn
+                    : språk(meta.tittel)}
+                </span>
+              </i>
+            )}
+
+            {overordnet !== "Slekt" &&
+              overordnet !== "Art" &&
+              overordnet !== "Underart" &&
+              overordnet !== "Varietet" && (
+                <span className="nav_title">
+                  {språk(meta.tittel) === "undefined"
+                    ? meta.tittel.sn
+                    : språk(meta.tittel)}
+                </span>
+              )}
             <span className="nav_2ndtitle">{getSecondary(meta)}</span>
           </div>
           {visKode && (

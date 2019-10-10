@@ -192,9 +192,13 @@
 
 .katlog_header_images_container .katlog_header_text_container {
   display: inline-block;
-  width: calc(100% - #{$sidebar-max-size});
   padding-left: 20px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  /*width: calc(100% - #{$sidebar-max-size});*/
   text-align: left;
+  white-space: pre-wrap;
 }
 
 @media only screen and (max-width: 1066px) {
@@ -202,6 +206,7 @@
     display: block;
     width: 100%;
     padding: 10px;
+    white-space: pre-wrap;
   }
 }
 
