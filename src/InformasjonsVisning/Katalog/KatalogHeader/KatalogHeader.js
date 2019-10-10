@@ -17,7 +17,6 @@ const KatalogHeader = ({ meta }) => {
   const vitNavn = meta.tittel.sn;
 
   let autoritet = "";
-  let autorkode = "";
   let barn = "";
   let beskrivelse = "";
   let bilde = "";
@@ -41,10 +40,6 @@ const KatalogHeader = ({ meta }) => {
 
   if (meta.autoritet && meta.autoritet.navn && meta.autoritet.år) {
     autoritet = meta.autoritet.navn + ", " + meta.autoritet.år;
-  }
-
-  if (meta.autorkode) {
-    autorkode = meta.autorkode;
   }
 
   if (meta.barn) {
@@ -202,14 +197,13 @@ const KatalogHeader = ({ meta }) => {
                 {autoritet !== "" && (
                   <>
                     <span>{"Autor: " + autoritet}</span>
-                    <br></br>
+                    <br />
                   </>
                 )}
 
-                {autorkode !== "" && (
+                {meta.autorkode && (
                   <>
-                    <span>{"Autorkode: " + autorkode}</span>
-                    <br></br>
+                    <span>{"Autorkode: " + meta.autorkode}</span>
                   </>
                 )}
 
