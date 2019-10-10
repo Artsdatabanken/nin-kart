@@ -31,7 +31,9 @@ const Variabelboks = ({ onNavigate, miljøvariabel }) => {
           <h2>
             {miljøvariabel.tittel && språk(miljøvariabel.tittel)} - {kode}
           </h2>
-          <p>{språk(miljøvariabel.ingress)}</p>
+          {miljøvariabel.beskrivelse && (
+            <p>{språk(miljøvariabel.beskrivelse)}</p>
+          )}
           <br />
           {found && (
             <div className="not_image_and_link lokasjon_badge_container">

@@ -52,20 +52,22 @@ const TopBar = ({ onSelectResult, searchFor, forside, history }) => {
             </div>
           )}
 
-          <Searchbar
-            setHits={setHits}
-            onQueryChange={e => setQuery(e.target.value)}
-            hits={hits}
-          />
+          <div className="search_elements_container">
+            <Searchbar
+              setHits={setHits}
+              onQueryChange={e => setQuery(e.target.value)}
+              hits={hits}
+            />
 
-          <ResultatListe
-            query={query}
-            searchResults={hits}
-            onSelect={item => {
-              setQuery(null);
-              onSelectResult(item);
-            }}
-          />
+            <ResultatListe
+              query={query}
+              searchResults={hits}
+              onSelect={item => {
+                setQuery(null);
+                onSelectResult(item);
+              }}
+            />
+          </div>
         </div>
       )}
     </SettingsContext.Consumer>
