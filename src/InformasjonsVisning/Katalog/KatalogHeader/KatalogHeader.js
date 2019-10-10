@@ -17,98 +17,12 @@ const KatalogHeader = ({ meta }) => {
   const vitNavn = meta.tittel.sn;
 
   let autoritet = "";
-  let autorkode = "";
-  let barn = "";
-  let beskrivelse = "";
-  let bilde = "";
-  let datakilde = "";
-  let erSubset = false;
-  let geonorgeurl = "";
-  let datakildekode = "";
-  let lisenskode = "";
-  let datakildetittel = "";
-  let datakildeurl = "";
-  let egenskap = "";
-  let farge = "";
-  let graf = "";
-  let kart = "";
-  let lenke = "";
-  let miljo = "";
-  let risikovurdering = "";
 
   let taksonomi = "";
   let slekt = "";
 
   if (meta.autoritet && meta.autoritet.navn && meta.autoritet.år) {
     autoritet = meta.autoritet.navn + ", " + meta.autoritet.år;
-  }
-
-  if (meta.autorkode) {
-    autorkode = meta.autorkode;
-  }
-
-  if (meta.barn) {
-    barn = meta.barn;
-  }
-
-  if (meta.beskrivelse && meta.beskrivelse.nob) {
-    beskrivelse = meta.beskrivelse.nob;
-  }
-
-  if (meta.bilde && meta.bilde.logo) {
-    bilde = meta.bilde.logo;
-  }
-
-  if (meta.datakilde) {
-    datakilde = meta.datakilde;
-    if (meta.datakilde[0].erSubset) {
-      erSubset = meta.datakilde[0].erSubset;
-    }
-    if (meta.datakilde[0].geonorgeurl) {
-      geonorgeurl = meta.datakilde[0].geonorgeurl;
-    }
-    if (meta.datakilde[0].kode) {
-      datakildekode = meta.datakilde[0].kode;
-    }
-    if (meta.datakilde[0].lisenskode) {
-      lisenskode = meta.datakilde[0].lisenskode;
-    }
-    if (meta.datakilde[0].tittel.nb) {
-      datakildetittel = meta.datakilde[0].tittel.nb;
-    }
-    if (meta.datakilde[0].url) {
-      datakildeurl = meta.datakilde[0].url;
-    }
-  }
-
-  if (meta.egenskap) {
-    egenskap = meta.egenskap;
-  }
-
-  if (meta.farge) {
-    farge = meta.farge;
-  }
-
-  if (meta.graf) {
-    graf = meta.graf;
-    console.log(graf);
-  }
-
-  if (meta.kart) {
-    kart = meta.kart;
-    console.log(kart);
-  }
-
-  if (meta.lenke && meta.lenke.fab) {
-    lenke = meta.lenke.fab;
-  }
-
-  if (meta.livsmiljø) {
-    miljo = meta.livsmiljø;
-  }
-
-  if (meta.risikovurdering) {
-    risikovurdering = meta.risikovurdering;
   }
 
   if (meta.url.includes("Biota")) {
@@ -206,159 +120,147 @@ const KatalogHeader = ({ meta }) => {
                   </>
                 )}
 
-                {autorkode !== "" && (
+                {meta.autorkode && (
                   <>
-                    <span>{"Autorkode: " + autorkode}</span>
-                    <br></br>
-                  </>
-                )}
-
-                {barn.length > 0 && (
-                  <>
-                    <span>{"Barn: " + barn}</span>
-                    <br></br>
-                  </>
-                )}
-
-                {bilde !== "" && (
-                  <>
-                    <span>{"Bilde: " + bilde}</span>
+                    <span>{"Autorkode: " + meta.autorkode}</span>
                     <br></br>
                   </>
                 )}
               </p>
 
-              {datakilde && (
-                <p>
-                  Datakilde<br></br>
-                  {erSubset && (
-                    <>
-                      <span>{"Er subset: " + erSubset}</span>
-                      <br></br>
-                    </>
-                  )}
-                  {geonorgeurl !== "" && (
-                    <>
-                      <span>
-                        {"Geonorgeurl: "}
-                        <a
-                          href={geonorgeurl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {geonorgeurl.substring(0, 32) + "..."}
-                        </a>
-                      </span>
-                      <br></br>
-                    </>
-                  )}
-                  {datakildekode !== "" && (
-                    <>
-                      <span>{"Kode: " + datakildekode}</span>
-                      <br></br>
-                    </>
-                  )}
-                  {lisenskode !== "" && (
-                    <>
-                      <span>{"Lisenskode: " + lisenskode}</span>
-                      <br></br>
-                    </>
-                  )}
-                  {datakildetittel !== "" && (
-                    <>
-                      <span>{"Tittel: " + datakildetittel}</span>
-                      <br></br>
-                    </>
-                  )}
-                  {datakildeurl !== "" && (
-                    <>
-                      <span>{"Url: " + datakildeurl}</span>
-                      <br></br>
-                    </>
-                  )}
-                </p>
-              )}
-
               <p>
-                {egenskap && (
+                <span>Datakilde</span>
+                <br></br>
+                {meta.datakilde[0].erSubset && (
                   <>
-                    <span>Egenskaper</span>
+                    <span>{"Er subset: " + meta.datakilde[0].erSubset}</span>
                     <br></br>
+                  </>
+                )}
+                {meta.datakilde[0].geonorgeurl && (
+                  <>
                     <span>
-                      {"Generasjonstid: " +
-                        egenskap.reproduksjon.generasjonstid}
+                      {"Geonorgeurl: "}
+                      <a
+                        href={meta.datakilde[0].geonorgeurl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {meta.datakilde[0].geonorgeurl.substring(0, 32) + "..."}
+                      </a>
                     </span>
                     <br></br>
                   </>
                 )}
+                {meta.datakilde[0].kode && (
+                  <>
+                    <span>{"Kode: " + meta.datakilde[0].kode}</span>
+                    <br></br>
+                  </>
+                )}
+                {meta.datakilde[0].lisenskode && (
+                  <>
+                    <span>{"Lisenskode: " + meta.datakilde[0].lisenskode}</span>
+                    <br></br>
+                  </>
+                )}
+                {språk(meta.datakilde[0].tittel) && (
+                  <>
+                    <span>{"Tittel: " + språk(meta.datakilde[0].tittel)}</span>
+                    <br></br>
+                  </>
+                )}
+                {meta.datakilde[0].url !== "" && (
+                  <>
+                    <span>{"Url: " + meta.datakilde[0].url}</span>
+                    <br></br>
+                  </>
+                )}
               </p>
 
               <p>
-                {farge !== "" && (
+                {meta.egenskap && (
                   <>
-                    <span>{"Farge: " + farge}</span>
+                    <span>Egenskaper</span>
+                    <br></br>
+                    {meta.egenskap.reproduksjon.generasjonstid && (
+                      <>
+                        <span>
+                          {"Generasjonstid: " +
+                            meta.egenskap.reproduksjon.generasjonstid}
+                        </span>
+                        <br></br>
+                      </>
+                    )}
+                    {meta.egenskap.reproduksjon.seksuell && (
+                      <>
+                        <span>
+                          {"Seksuell reproduksjon: " +
+                            meta.egenskap.reproduksjon.seksuell}
+                        </span>
+                        <br></br>
+                      </>
+                    )}
+                  </>
+                )}
+              </p>
+
+              <p>
+                {meta.farge && (
+                  <>
+                    <span>{"Farge: " + meta.farge}</span>
                     <br></br>
                   </>
                 )}
 
-                {graf.length > 0 && (
-                  <>
-                    <span>{"Graf: " + graf}</span>
-                    <br></br>
-                  </>
-                )}
-
-                {kart !== "" && (
-                  <>
-                    <span>{"Kart: " + kart}</span>
-                    <br></br>
-                  </>
-                )}
-
-                {lenke !== "" && (
+                {meta.lenke && meta.lenke.fab && (
                   <>
                     <span>
                       {"Fremmedartsbase: "}
-                      <a href={lenke} target="_blank" rel="noopener noreferrer">
-                        {lenke.substring(0, 32) + "..."}
+                      <a
+                        href={meta.lenke.fab}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {meta.lenke.fab.substring(0, 32) + "..."}
                       </a>
                     </span>
                     <br></br>
                   </>
                 )}
 
-                {miljo !== "" && (
+                {meta.livsmiljø && (
                   <>
-                    <span>{"Livsmiljø: " + miljo}</span>
+                    <span>{"Livsmiljø: " + meta.livsmiljø}</span>
                     <br></br>
                   </>
                 )}
               </p>
               <p>
-                {risikovurdering !== "" && (
+                {meta.risikovurdering && (
                   <>
                     <span>Risikovurdering</span>
                     <br></br>
-                    {risikovurdering.arter && (
+                    {meta.risikovurdering.arter && (
                       <>
-                        <span>{"Arter: " + risikovurdering.arter}</span>
+                        <span>{"Arter: " + meta.risikovurdering.arter}</span>
                         <br></br>
                       </>
                     )}
 
-                    {risikovurdering.naturtyper && (
+                    {meta.risikovurdering.naturtyper && (
                       <>
                         <span>
-                          {"Naturtyper: " + risikovurdering.naturtyper}
+                          {"Naturtyper: " + meta.risikovurdering.naturtyper}
                         </span>
                         <br></br>
                       </>
                     )}
 
-                    {risikovurdering.risikonivå.nå && (
+                    {meta.risikovurdering.risikonivå.nå && (
                       <>
                         <span>
-                          {"Risikonivå: " + risikovurdering.risikonivå.nå}
+                          {"Risikonivå: " + meta.risikovurdering.risikonivå.nå}
                         </span>
                         <br></br>
                       </>
@@ -366,14 +268,18 @@ const KatalogHeader = ({ meta }) => {
                   </>
                 )}
               </p>
-
               <p>
-                {beskrivelse !== "" && (
+                {meta.beskrivelse && meta.beskrivelse.nob && (
                   <>
-                    <b>Beskrivelse:</b> {beskrivelse}
+                    <span>
+                      <b>Beskrivelse: </b>
+                      {meta.beskrivelse.nob}
+                    </span>
+                    <br></br>
                   </>
                 )}
               </p>
+
               <KatalogInformasjon
                 meta={meta}
                 onUpdateLayerProp={onUpdateLayerProp}
