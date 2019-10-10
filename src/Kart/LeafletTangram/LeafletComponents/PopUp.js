@@ -22,7 +22,6 @@ const PopUp = ({ parent, onNavigate }) => {
       <button
         className="invisible_icon_button"
         onClick={e => {
-          parent.props.handleLokalitetUpdate(null);
           parent.setState({
             showPopup: !parent.state.showPopup
           });
@@ -83,6 +82,18 @@ const PopUp = ({ parent, onNavigate }) => {
           <br />
         </>
       )}
+      <button
+        className="link_to_page"
+        onClick={e => {
+          parent.removeMarker();
+          parent.props.handleLokalitetUpdate(null);
+          parent.setState({
+            showPopup: !parent.state.showPopup
+          });
+        }}
+      >
+        Fjern lokalitet
+      </button>
     </div>
   );
 };

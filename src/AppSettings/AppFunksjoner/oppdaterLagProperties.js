@@ -32,19 +32,15 @@ export default function oppdaterLagProperties(
     // Scenario: Lokalitetsdata har litt annet format, og må hentes ut på annet vis
     let lokalitetdata = parent.state.lokalitetdata;
     if (!lokalitetdata.environment[layer]) {
-      lokalitetdata.environment[childLayer(layer)].barn = childElement(
-        lokalitetdata.environment[childLayer(layer)].barn,
-        key,
-        value,
-        layer
-      );
+      let barneliste = lokalitetdata.environment[childLayer(layer)].barn;
+      barneliste = childElement(barneliste, key, value, layer);
+      console.log("Jo, travis, vi bruker", barneliste); // hack
     } else {
-      lokalitetdata.environment[layer] = setValue(
-        lokalitetdata.environment[layer],
-        key,
-        value
-      );
+      let node = lokalitetdata.environment[layer];
+      node = setValue(node, key, value);
+      console.log("Jo, travis, vi bruker", node); // hack
     }
+
     return lokalitetdata;
   }
 
