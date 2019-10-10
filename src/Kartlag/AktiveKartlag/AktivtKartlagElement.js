@@ -45,6 +45,7 @@ const AktivtKartlagElement = ({
           {expanded && (
             <>
               <EkspandertUnderMeny
+                erLokalitet={erLokalitet}
                 kode={kode}
                 context={context}
                 bbox={bbox}
