@@ -14,7 +14,8 @@ const AktivtKartlagElement = ({
   handleShowCurrent,
   is_current_object,
   activateLayerFromHistory,
-  navhist
+  navhist,
+  erLokalitet
 }) => {
   let expand_state = is_current_object || false;
   const [expanded, setExpanded] = useState(expand_state);
@@ -29,6 +30,7 @@ const AktivtKartlagElement = ({
       {context => (
         <li draggable>
           <EkspanderingsTopplinje
+            erLokalitet={erLokalitet}
             erAktivtLag={erAktivtLag}
             show_current={show_current}
             handleShowCurrent={handleShowCurrent}

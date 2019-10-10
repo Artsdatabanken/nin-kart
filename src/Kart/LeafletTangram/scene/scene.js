@@ -22,7 +22,6 @@ function createScene(props) {
 }
 
 function updateScene(config, props) {
-  console.log("trykki");
   let lokalitetdata = props.lokalitetdata || null;
   let bakgrunn = props.aktiveLag.bakgrunnskart;
   bakgrunn = bakgrunn.kart.format[bakgrunn.kart.aktivtFormat];
@@ -31,10 +30,8 @@ function updateScene(config, props) {
   const viserKatalog = !!props.meta; // meta = true or meta = false , never meta = null
   lagNåværendeLag(config, props);
   if (lokalitetdata !== null) {
-    console.log("updatescene lokalitetdata: ", lokalitetdata.environment);
     lagAktiveLag(lokalitetdata.environment, true, props.opplyst, config);
   }
-
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplyst, config);
   lagTemp(config);
   return config;

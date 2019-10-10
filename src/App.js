@@ -390,8 +390,21 @@ class App extends React.Component {
   };
 
   handleUpdateLokalitetLayerProp = (layer, key, value) => {
+    //console.log(layer, key, value);
     let lokalitetdata = this.state.lokalitetdata;
-    lokalitetdata.environment[layer][key] = value;
+    //console.log(lokalitetdata.environment)
+    //console.log(lokalitetdata.environment[layer].kode);
+    if (!lokalitetdata.environment[layer]) {
+      let parent_code = layer.substring(0, layer.lastIndexOf("-"));
+      let barneliste = lokalitetdata.environment[parent_code].barn;
+      for (var i in barneliste) {
+        if (barneliste[i].kode === layer) {
+          barneliste[i][key] = value;
+        }
+      }
+    } else {
+      lokalitetdata.environment[layer][key] = value;
+    }
     this.setState({
       lokalitetdata: Object.assign({}, lokalitetdata)
     });

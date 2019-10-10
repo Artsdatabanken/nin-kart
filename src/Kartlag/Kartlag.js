@@ -52,10 +52,6 @@ class Kartlag extends React.Component {
       tittel = tittel.substring(0, 40) + "...";
     }
 
-    if (lokalitetdata) {
-      console.log("kartlag: ", lokalitetdata.environment);
-    }
-
     return (
       <>
         {hidden && (
@@ -137,13 +133,18 @@ class Kartlag extends React.Component {
                       <div className="sidebar_element">
                         <h2>Nåværende Lokalitet</h2>
                         <ul className="kartlag_list">
-                          {Object.keys(lokalitetdata.environment).map(fkode => {
-                            const kartlag = lokalitetdata.environment[fkode];
-                            return (
-                              fkode !== "bakgrunnskart" && (
+                          {Object.keys(lokalitetdata.environment).map(
+                            mapkode => {
+                              // console.log("mapkode",mapkode);
+                              const kartlag =
+                                lokalitetdata.environment[mapkode];
+                              //console.log(kartlag)
+
+                              return (
                                 <AktivtKartlagElement
+                                  erLokalitet={true}
                                   kartlag={kartlag}
-                                  key={fkode}
+                                  key={kartlag.kode}
                                   {...this.props}
                                   visKoder={context.visKoder}
                                   onFitBounds={onFitBounds}
@@ -151,9 +152,9 @@ class Kartlag extends React.Component {
                                     this.props.handleUpdateLokalitetLayerProp
                                   }
                                 />
-                              )
-                            );
-                          })}
+                              );
+                            }
+                          )}
                         </ul>
                       </div>
                     )}
