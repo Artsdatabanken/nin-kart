@@ -105,15 +105,7 @@ Sidebarmeny-navigeringen.
         <div className="nav_current">
           {" "}
           {meta && <Bildeavatar url={url} />}
-          {tittel === "hjelp" && <HelpOutline />}
-          {nivå === "Slekt" ||
-          nivå === "Art" ||
-          nivå === "Underart" ||
-          nivå === "Varietet" ? (
-            <i>{tittel}</i>
-          ) : (
-            tittel
-          )}
+          {tittel === "hjelp" && <HelpOutline />} {tittel}
         </div>
 
         <Navigeringsliste

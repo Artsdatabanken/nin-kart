@@ -21,9 +21,10 @@ class KartlagBarnElement extends React.Component {
     let backgroundSize = "cover",
       borderSize = "0px",
       new_url = "https://data.artsdatabanken.no/" + url + "/foto_408.jpg";
-    if (isDatakilde === "Datakilde") {
-      new_url = "https://data.artsdatabanken.no/" + url + "/logo_408.png";
-    } else if (new_url.indexOf("Administrativ_grense") !== -1) {
+    if (
+      isDatakilde === "Datakilde" ||
+      new_url.indexOf("Administrativ_grense") !== -1
+    ) {
       new_url = "https://data.artsdatabanken.no" + url + "/logo_408.png";
       backgroundSize = "contain";
       borderSize = "10px solid transparent";

@@ -9,17 +9,17 @@ const KatalogInformasjonsBoks = ({ meta }) => {
   
   */
   let showUrl = "";
-  let { ingress, infoUrl } = meta;
+  let { beskrivelse, infoUrl } = meta;
   if (infoUrl) {
     showUrl = infoUrl.substring(0, 32) + "...";
   }
 
   return (
     <>
-      {språk(ingress) && (
+      {språk(beskrivelse) && (
         <div className="sidebar_description">
           <p>
-            {språk(ingress)} <br />
+            {språk(beskrivelse)} <br />
             {infoUrl && (
               <a href={infoUrl}>
                 <Link /> {showUrl}
