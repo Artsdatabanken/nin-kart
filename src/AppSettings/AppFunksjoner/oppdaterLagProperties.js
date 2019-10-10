@@ -2,12 +2,55 @@ function childLayer(layer) {
   return layer.slice(0, layer.lastIndexOf("-")); // fjerner siste kodeledd
 }
 
-function oppdaterLagProperties(layer, key, value, parent, elementType) {
+function setValue(node, key, value) {
+  const parts = key.split(".");
+  for (let i = 0; i < parts.length - 1; i++) {
+    node = node[parts[i]];
+  }
+  const vkey = parts[parts.length - 1];
+  node[vkey] = value;
+  return node;
+}
+
+function childElement(node, key, value, layer_input) {
+  for (let i in node) {
+    if (node[i].kode === layer_input) {
+      setValue(node[i], key, value);
+    }
+  }
+  return node;
+}
+
+export default function oppdaterLagProperties(
+  layer,
+  key,
+  value,
+  parent,
+  elementType
+) {
+  if (elementType === "lokalitetdata") {
+    // Scenario: Lokalitetsdata har litt annet format, og må hentes ut på annet vis
+    let lokalitetdata = parent.state.lokalitetdata;
+    if (!lokalitetdata.environment[layer]) {
+      lokalitetdata.environment[childLayer(layer)].barn = childElement(
+        lokalitetdata.environment[childLayer(layer)].barn,
+        key,
+        value,
+        layer
+      );
+    } else {
+      lokalitetdata.environment[layer] = setValue(
+        lokalitetdata.environment[layer],
+        key,
+        value
+      );
+    }
+    return lokalitetdata;
+  }
+
   const layer_input = layer;
   // Scenario A: Laget har ingen egenfarge, men bygges opp av underelementer
   // Scenario B: Laget har ingen underelementer, men sin egen farge
-
-  // *** Sette Lag ***
 
   // Laget er et underelement og ligger derfor som barn på sin foreldre
   if (elementType === "barn") {
@@ -19,30 +62,14 @@ function oppdaterLagProperties(layer, key, value, parent, elementType) {
   let node = aktive[layer];
 
   // Laget er nåværende kartlag, og ligger derfor i state.meta
-  if (!node) node = parent.state.meta;
-  let newnode;
+  if (!node) {
+    node = parent.state.meta;
+  }
+
   if (elementType === "barn") {
-    node = node.barn;
-
-    for (var i in node) {
-      if (node[i].kode === layer_input) {
-        newnode = node[i];
-      }
-    }
-    node = newnode;
+    node = childElement(node.barn, key, value, layer_input);
+  } else {
+    node = setValue(node, key, value);
   }
-  //console.log(node);
-  // *** Sette Key ***
-  const parts = key.split(".");
-
-  for (let i = 0; i < parts.length - 1; i++) {
-    node = node[parts[i]];
-  }
-
-  const vkey = parts[parts.length - 1];
-  node[vkey] = value;
-
   return aktive;
 }
-
-export default oppdaterLagProperties;
