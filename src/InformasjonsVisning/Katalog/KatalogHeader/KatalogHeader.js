@@ -7,51 +7,23 @@ import NatursystemAdvarsel from "InformasjonsVisning/Katalog/NatursystemAdvarsel
 
 const KatalogHeader = ({ meta }) => {
   if (!meta) return null;
-  const { nivå, onUpdateLayerProp, overordnet } = meta;
+  const { nivå, onUpdateLayerProp } = meta;
   let tittel = språk(meta.tittel);
   if (tittel === "undefined") {
     tittel = "";
   }
   const vitNavn = meta.tittel.sn;
   let autoritet = null;
-  let taksonomi = "";
-  let slekt = null;
 
   let italicstitle =
     nivå === "Slekt" ||
     nivå === "Art" ||
     nivå === "Underart" ||
     nivå === "Varietet";
-  console.log(nivå, italicstitle);
 
   if (meta.autoritet && meta.autoritet.navn && meta.autoritet.år) {
     autoritet = "(" + meta.autoritet.navn + ", " + meta.autoritet.år + ")";
     autoritet = autoritet.replace("((", "(");
-  }
-
-  if (meta.url.includes("Biota")) {
-    for (let i = overordnet.length - 2; i >= 0; i--) {
-      if (
-        overordnet[i].nivå === "Slekt" ||
-        overordnet[i].nivå === "Art" ||
-        overordnet[i].nivå === "Underart" ||
-        overordnet[i].nivå === "Varietet"
-      ) {
-        slekt =
-          slekt +
-          "\n" +
-          overordnet[i].nivå +
-          ": " +
-          språk(overordnet[i].tittel);
-      } else {
-        taksonomi =
-          taksonomi +
-          "\n" +
-          overordnet[i].nivå +
-          ": " +
-          språk(overordnet[i].tittel);
-      }
-    }
   }
 
   /*  
@@ -90,13 +62,6 @@ const KatalogHeader = ({ meta }) => {
           <div className="katlog_header_images_container">
             <KatalogHeaderImage meta={meta} />
             <div className="katlog_header_text_container">
-              {taksonomi !== "" && (
-                <div className="taxonomy">
-                  {taksonomi}
-                  {slekt !== "" && <i>{slekt}</i>}
-                </div>
-              )}
-
               <h4>Datakilde</h4>
               <ul>
                 {meta.datakilde[0].erSubset && (

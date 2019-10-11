@@ -1,6 +1,7 @@
 import React from "react";
 import { Snackbar } from "@material-ui/core";
 import KatalogHeader from "./KatalogHeader/KatalogHeader";
+import Taksonomi from "./Taksonomi/Taksonomi";
 import KatalogBarneliste from "./KatalogBarneliste/KatalogBarneliste";
 import KatalogGradienter from "./KatalogGradienter/KatalogGradienter";
 import KatalogKilder from "./KatalogKilder/KatalogKilder";
@@ -32,6 +33,12 @@ const KatalogFane = ({
           meta={meta}
           onFitBounds={onFitBounds}
           onUpdateLayerProp={onUpdateLayerProp}
+        />
+        <Taksonomi
+          meta={meta}
+          onFitBounds={onFitBounds}
+          onUpdateLayerProp={onUpdateLayerProp}
+          onNavigate={onNavigate}
         />
         <KatalogGradienter
           meta={meta}
