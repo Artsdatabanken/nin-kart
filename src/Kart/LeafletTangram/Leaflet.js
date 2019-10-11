@@ -5,15 +5,15 @@ import React from "react";
 import Tangram from "tangram";
 import { createScene, updateScene } from "./scene/scene";
 import backend from "Funksjoner/backend";
+import PopUp from "./LeafletComponents/PopUp";
 import {
-  Landscape,
   Fullscreen,
   FullscreenExit,
   LocationSearching
 } from "@material-ui/icons";
-import språk from "Funksjoner/språk";
 import "style/Kart.scss";
 import updateMarkerPosition from "./LeafletActions/updateMarkerPosition";
+import getLokalitetUrl from "AppSettings/AppFunksjoner/getLokalitetUrl";
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
 // See here: https://github.com/PaulLeCam/react-leaflet/issues/255
 // Used in conjunction with url-loader.
@@ -25,11 +25,19 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require("leaflet/dist/images/marker-shadow.png")
 });
 
-function roundToX(num, x) {
-  return +(Math.round(num + "e+" + x) + "e-" + x);
-}
-
 let header_shift = 56;
+
+function find_searchparams(searchparams) {
+  let coord = null;
+  for (let i in searchparams) {
+    if (searchparams[i].includes("lng")) {
+      coord = searchparams[i].split("&");
+      coord[0] = coord[0].split("=")[1];
+      coord[1] = coord[1].split("=")[1];
+    }
+  }
+  return coord;
+}
 
 class LeafletTangram extends React.Component {
   state = {
@@ -113,15 +121,8 @@ class LeafletTangram extends React.Component {
       iconAnchor: [17, 35]
     });
 
-    let searchparams = (this.props.path || "").split("?");
-    let coord = null;
-    for (let i in searchparams) {
-      if (searchparams[i].includes("lng")) {
-        coord = searchparams[i].split("&");
-        coord[0] = coord[0].split("=")[1];
-        coord[1] = coord[1].split("=")[1];
-      }
-    }
+    let coord = find_searchparams((this.props.path || "").split("?"));
+
     map.on("locationfound", e => this.onLocationFound(e));
     map.on("locationerror", e => this.onLocationError(e));
 
@@ -155,6 +156,7 @@ class LeafletTangram extends React.Component {
 
   erEndret(prevProps) {
     if (this.props.aktiveLag !== prevProps.aktiveLag) return true;
+    if (this.props.lokalitetdata !== prevProps.lokalitetdata) return true;
     if (this.props.meta !== prevProps.meta) return true;
     if (this.props.opplystKode !== prevProps.opplystKode) return true;
     if (this.props.show_current !== prevProps.show_current) return true;
@@ -183,38 +185,28 @@ class LeafletTangram extends React.Component {
   }
 
   getBackendData(lng, lat, e) {
+    let prevlok = this.state.lokalitetdata;
     backend.hentPunkt(lng, lat, e).then(data => {
       if (!data) {
         return null;
       }
-      let url = "";
-      if (data.fylke || data.kommune) {
-        url = "/" + data.kommune.url + "?lng=" + lng + "&lat=" + lat;
-      } else {
-        url = "/Natur_i_Norge/?lng=" + lng + "&lat=" + lat;
-      }
-      url = url.replace(/ /g, "_");
-      if (url.substring(0, 2) === "//") {
-        url = url.substring(1);
-      }
-      console.log("se så fin og riktig", e);
-
+      let url = getLokalitetUrl(lat, lng, data);
       updateMarkerPosition(e, this, header_shift);
-
       this.setState({
         buttonUrl: url,
         data: data,
         showPopup: true,
         koordinat: [lng, lat]
       });
-
-      console.log(this.state.showPopup);
-
+      this.props.handleLokalitetUpdate(data);
       backend.hentStedsnavn(lng, lat).then(sted => {
         if (sted && sted.placename) {
           this.setState({ sted: sted.placename });
         }
       });
+      if (this.props.lokalitetdata && this.props.lokalitetdata !== prevlok) {
+        this.updateMap(this.props);
+      }
     });
   }
 
@@ -225,6 +217,16 @@ class LeafletTangram extends React.Component {
       this.map
     );
     this.getBackendData(latlng.lng, latlng.lat, e.leaflet_event.layerPoint);
+    let urlparams = (this.props.path || "").split("?");
+    let newurlstring = "";
+    for (let i in urlparams) {
+      if (!urlparams[i].includes("lng") && urlparams[i] !== "") {
+        newurlstring += "?" + urlparams[i];
+      }
+    }
+    this.props.history.push(
+      "?lng=" + latlng.lng + "&lat=" + latlng.lat + newurlstring
+    );
   };
 
   updateMap(props) {
@@ -264,84 +266,7 @@ class LeafletTangram extends React.Component {
   render() {
     return (
       <>
-        {this.state.showPopup && (
-          <div
-            className="popup"
-            style={{
-              transform:
-                "translate3d(" +
-                this.state.windowXpos +
-                "px, " +
-                this.state.windowYpos +
-                "px, 0px)"
-            }}
-          >
-            <button
-              className="invisible_icon_button"
-              onClick={e => {
-                this.setState({
-                  showPopup: !this.state.showPopup
-                });
-              }}
-            >
-              x
-            </button>
-            {this.state.koordinat && (
-              <>
-                lat: {roundToX(this.state.koordinat[0], 5)}, lng:{" "}
-                {roundToX(this.state.koordinat[1], 5)}
-                <br />
-              </>
-            )}
-
-            {this.state.sted && (
-              <>
-                {this.state.sted} <br />
-              </>
-            )}
-
-            {this.state.data ? (
-              <>
-                {this.state.data.kommune && (
-                  <b>{språk(this.state.data.kommune.tittel)}</b>
-                )}
-                {this.state.data.kommune && this.state.data.fylke && (
-                  <b>{", "} </b>
-                )}
-                {this.state.data.fylke && (
-                  <b>
-                    {språk(this.state.data.fylke.tittel)} <br />
-                  </b>
-                )}
-                {this.state.data.landskap &&
-                  this.props.forvaltningsportal !== "true" && (
-                    <>
-                      <Landscape /> {språk(this.state.data.landskap.tittel)}{" "}
-                      <br />
-                    </>
-                  )}
-              </>
-            ) : (
-              "Ingen data funnet"
-            )}
-            {this.props.forvaltningsportal !== "true" && (
-              <>
-                <button
-                  className="link_to_page"
-                  onClick={e => {
-                    this.props.handleFullscreen(false);
-                    this.props.history.push(
-                      this.state.buttonUrl + "?informasjon"
-                    );
-                  }}
-                >
-                  Gå til all info om dette punktet
-                </button>
-                <br />
-              </>
-            )}
-          </div>
-        )}
+        {this.state.showPopup && <PopUp parent={this} path={this.props.path} />}
 
         {this.props.aktivTab === "kartlag" && (
           <button

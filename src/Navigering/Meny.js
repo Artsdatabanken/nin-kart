@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import Overordnet from "./Navigeringsliste/Overordnet";
-import KurveContainer from "GjenbruksElement/Kurver/KurveContainer";
 import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
-import Kurve from "GjenbruksElement/Kurver/Kurve";
 import språk from "Funksjoner/språk";
 import Bildeavatar from "GjenbruksElement/Bildeavatar";
 import {
   Home,
+  Room,
   HelpOutline,
   KeyboardArrowDown,
   KeyboardArrowUp
@@ -20,17 +19,18 @@ const Meny = ({
   onUpdateMetaProp,
   opplyst,
   onMouseEnter,
-  onMouseLeave
+  onMouseLeave,
+  lokalitet,
+  lokalitetdata
 }) => {
-  /*
-  
+  /*  
 Intern navigasjon innad på en side.
 Sidebarmeny-navigeringen.
-  
   */
 
   const [expanded, setExpanded] = useState(false);
   let tittel = "hjelp";
+  let overordnet_url = "";
   let url = "/;";
   if (meta) {
     url = meta.url;
@@ -39,7 +39,14 @@ Sidebarmeny-navigeringen.
       tittel = meta.tittel.sn;
     }
   }
-
+  let overordnet = [];
+  if (lokalitet.includes("lokalitet") && lokalitetdata) {
+    if (lokalitetdata.kommune) {
+      overordnet = lokalitetdata.kommune.url.replace("_", " ").split("/");
+    } else {
+      console.warn("ingen kommune, se etter andre ting");
+    }
+  }
   return (
     <div
       className={
@@ -53,90 +60,137 @@ Sidebarmeny-navigeringen.
           expanded && aktivTab === "kartlag" && "2px solid $bright-nin"
       }}
     >
-      <div className="sidebar_title_container sidebar_element">
-        <h1 className="sidebar_title">
-          Navigering
-          {aktivTab === "kartlag" && (
-            <button
-              className="child_list_object_indicator navdropdown"
-              onClick={() => {
-                setExpanded(!expanded);
-              }}
-            >
-              {expanded === true && aktivTab === "kartlag" ? (
-                <KeyboardArrowDown />
-              ) : (
-                <KeyboardArrowUp />
-              )}
-            </button>
-          )}
-        </h1>
-      </div>
-      <br />
+      <TopPart
+        setExpanded={setExpanded}
+        expanded={expanded}
+        aktivTab={aktivTab}
+      />
       <div
         style={{
           display: aktivTab === "kartlag" && !expanded ? "none" : "block"
         }}
       >
-        {/* Top-node aka. Home-button*/}
-        <button
-          key="home"
-          onClick={e => {
-            e.stopPropagation();
-            setExpanded(false);
-            onNavigate("/");
-          }}
-          className="nav_menu_button nav_up_menu"
-        >
-          <Home />
-          <div className="nav_text">
-            <span className="nav_title">Startsiden</span>
-          </div>
-        </button>
-        {meta && (
-          <Overordnet
-            overordnet={meta.overordnet}
-            onNavigate={onNavigate}
-            setExpanded={setExpanded}
-          />
+        <HomeButton onNavigate={onNavigate} setExpanded={setExpanded} />
+        {lokalitet.includes("lokalitet") && lokalitetdata ? (
+          <>
+            <OverordnetMapping
+              onNavigate={onNavigate}
+              setExpanded={setExpanded}
+              overordnet={overordnet}
+              overordnet_url={overordnet_url}
+            />
+            <div className="nav_current">
+              {" "}
+              {meta && <Bildeavatar url={url} />}
+              {tittel === "hjelp" && (
+                <>
+                  <Room /> Lokalitet
+                </>
+              )}
+            </div>
+          </>
+        ) : (
+          <>
+            {meta && (
+              <Overordnet
+                overordnet={meta.overordnet}
+                onNavigate={onNavigate}
+                setExpanded={setExpanded}
+              />
+            )}
+            <div className="nav_current">
+              {" "}
+              {meta && <Bildeavatar url={url} />}
+              {tittel === "hjelp" && <HelpOutline />} {tittel}
+            </div>
+            <Navigeringsliste
+              parentkode={meta ? meta.kode : "kode"}
+              metadata={meta && meta.barn}
+              setExpanded={setExpanded}
+              onNavigate={onNavigate}
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+              opplyst={opplyst}
+              onUpdateMetaProp={onUpdateMetaProp}
+            />
+          </>
         )}
-        <div className="nav_current">
-          {" "}
-          {meta && <Bildeavatar url={url} />}
-          {tittel === "hjelp" && <HelpOutline />} {tittel}
-        </div>
-
-        <Navigeringsliste
-          parentkode={meta ? meta.kode : "kode"}
-          metadata={meta && meta.barn}
-          setExpanded={setExpanded}
-          onNavigate={onNavigate}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          opplyst={opplyst}
-          onUpdateMetaProp={onUpdateMetaProp}
-        />
       </div>
-      {false && (
-        <>
-          <KurveContainer
-            key={"a.url"}
-            punkt={{
-              url:
-                "Biota/Plantae/Magnoliophyta/Eudicots/Ericales/Primulaceae/Primula/Scandinavica"
-            }}
-            gradient={{
-              url:
-                "Natur_i_Norge/Landskap/Landskapsgradient/Arealbruksintensitet/",
-              barn: []
-            }}
-          >
-            <Kurve logY={true} />
-          </KurveContainer>
-        </>
-      )}
     </div>
   );
 };
+
+function HomeButton({ setExpanded, onNavigate }) {
+  return (
+    <button
+      key="home"
+      onClick={e => {
+        e.stopPropagation();
+        setExpanded(false);
+        onNavigate("/");
+      }}
+      className="nav_menu_button nav_up_menu"
+    >
+      <Home />
+      <div className="nav_text">
+        <span className="nav_title">Startsiden</span>
+      </div>
+    </button>
+  );
+}
+
+function TopPart({ setExpanded, expanded, aktivTab }) {
+  return (
+    <div className="sidebar_title_container sidebar_element">
+      <h1 className="sidebar_title">
+        Navigering
+        {aktivTab === "kartlag" && (
+          <button
+            className="child_list_object_indicator navdropdown"
+            onClick={() => {
+              setExpanded(!expanded);
+            }}
+          >
+            {expanded === true && aktivTab === "kartlag" ? (
+              <KeyboardArrowDown />
+            ) : (
+              <KeyboardArrowUp />
+            )}
+          </button>
+        )}
+      </h1>
+    </div>
+  );
+}
+
+function OverordnetMapping(
+  overordnet,
+  overordnet_url,
+  { setExpanded, onNavigate }
+) {
+  return (
+    <>
+      {overordnet.map((item, i) => {
+        if (item === "") return null;
+        overordnet_url += "/" + item.replace(" ", "_");
+        return (
+          <button
+            key={item}
+            onClick={e => {
+              setExpanded(false);
+              onNavigate(overordnet_url);
+            }}
+            className="nav_menu_button nav_up_menu"
+          >
+            <Room />
+            <div className="nav_text">
+              <span className="nav_title">{item}</span>
+            </div>
+          </button>
+        );
+      })}
+    </>
+  );
+}
 
 export default Meny;

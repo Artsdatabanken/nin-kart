@@ -22,12 +22,16 @@ function createScene(props) {
 }
 
 function updateScene(config, props) {
+  let lokalitetdata = props.lokalitetdata || null;
   let bakgrunn = props.aktiveLag.bakgrunnskart;
   bakgrunn = bakgrunn.kart.format[bakgrunn.kart.aktivtFormat];
   config.scene.background.color = bakgrunn.land_farge || "#f2f2f2";
   config.layers = {};
   const viserKatalog = !!props.meta; // meta = true or meta = false , never meta = null
   lagNåværendeLag(config, props);
+  if (lokalitetdata !== null) {
+    lagAktiveLag(lokalitetdata.environment, true, props.opplyst, config);
+  }
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplyst, config);
   lagTemp(config);
   return config;

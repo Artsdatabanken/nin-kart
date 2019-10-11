@@ -15,7 +15,6 @@ const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
     <button
       key={item.url}
       onClick={e => {
-        e.stopPropagation();
         setExpanded(false);
         onNavigate(item.url);
       }}
