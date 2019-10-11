@@ -201,49 +201,39 @@ const KatalogHeader = ({ meta }) => {
                 </span>
               )}
 
-              <p>
-                {meta.risikovurdering && (
-                  <>
-                    <h4>Risikovurdering</h4>
-                    <br></br>
-                    {meta.risikovurdering.arter && (
-                      <>
-                        <span>{"Arter: " + meta.risikovurdering.arter}</span>
-                        <br></br>
-                      </>
-                    )}
-
-                    {meta.risikovurdering.naturtyper && (
-                      <>
-                        <span>
-                          {"Naturtyper: " + meta.risikovurdering.naturtyper}
-                        </span>
-                        <br></br>
-                      </>
-                    )}
-
-                    {meta.risikovurdering.risikonivå.nå && (
-                      <>
-                        <span>
-                          {"Risikonivå: " + meta.risikovurdering.risikonivå.nå}
-                        </span>
-                        <br></br>
-                      </>
-                    )}
-                  </>
-                )}
-              </p>
-              <p>
-                {meta.beskrivelse && meta.beskrivelse.nob && (
-                  <>
+              {meta.risikovurdering && (
+                <>
+                  <h4>Risikovurdering</h4>
+                  {meta.risikovurdering.arter && (
                     <span>
-                      <b>Beskrivelse: </b>
-                      {meta.beskrivelse.nob}
+                      Arter: {meta.risikovurdering.arter}
+                      <br />
                     </span>
-                    <br></br>
-                  </>
-                )}
-              </p>
+                  )}
+
+                  {meta.risikovurdering.naturtyper && (
+                    <span>
+                      Naturtyper: {meta.risikovurdering.naturtyper}
+                      <br />
+                    </span>
+                  )}
+
+                  {meta.risikovurdering.risikonivå.nå && (
+                    <span>
+                      Risikonivå: {meta.risikovurdering.risikonivå.nå}
+                      <br />
+                    </span>
+                  )}
+                </>
+              )}
+
+              {meta.beskrivelse && meta.beskrivelse.nob && (
+                <span>
+                  <b>Beskrivelse: </b>
+                  {meta.beskrivelse.nob}
+                  <br />
+                </span>
+              )}
 
               <KatalogInformasjon
                 meta={meta}
