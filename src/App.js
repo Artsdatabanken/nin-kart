@@ -17,6 +17,7 @@ import HamburgerMeny from "HamburgerMeny/HamburgerMeny";
 import MobileNavigation from "MobileNavigation/MobileNavigation";
 import ForsideInformasjon from "Forside/ForsideInformasjon";
 import Forvaltningsportalen from "Forvaltningsportalen/Forvaltningsportalen";
+import getLokalitetUrl from "AppSettings/AppFunksjoner/getLokalitetUrl";
 import Meny from "Navigering/Meny";
 import språk from "Funksjoner/språk";
 import "style/Kart.scss";
@@ -67,6 +68,7 @@ class App extends React.Component {
       actualBounds: null,
       fitBounds: null,
       meta: null,
+      lokalitetdata: null,
       visKoder: false,
       navigation_history: [],
       showCurrent: true,
@@ -167,7 +169,20 @@ class App extends React.Component {
                         if (item.url[0] !== "/") {
                           url = "/" + item.url;
                         }
-                        history.push(url);
+                        if (url.includes("/Sted/")) {
+                          // Fix for sted side siden den lenkes feil i url.
+                          backend
+                            .hentPunkt(item.lng, item.lat, item)
+                            .then(data => {
+                              if (!data) {
+                                return null;
+                              }
+                              url = getLokalitetUrl(item.lat, item.lng, data);
+                              history.push(url); // duplikat pga async
+                            });
+                        } else {
+                          history.push(url);
+                        }
                       }}
                       history={history}
                     />
@@ -185,6 +200,8 @@ class App extends React.Component {
 
                       <div>
                         <Meny
+                          lokalitetdata={this.state.lokalitetdata}
+                          lokalitet={path}
                           meta={this.state.meta}
                           onNavigate={this.handleNavigate}
                           aktivTab={aktivTab}
@@ -197,6 +214,7 @@ class App extends React.Component {
                         {aktivTab === "meny" || aktivTab === "informasjon" ? (
                           <>
                             <InformasjonsVisning
+                              handleLokalitetUpdate={this.handleLokalitetUpdate}
                               handleNavigate={this.handleNavigate}
                               path={path}
                               aktivTab={aktivTab}
@@ -233,11 +251,15 @@ class App extends React.Component {
                             }
                           >
                             <Kartlag
+                              lokalitetdata={this.state.lokalitetdata}
                               show_current={this.state.showCurrent}
                               handleShowCurrent={this.handleShowCurrent}
                               hidden={aktivTab === "kartlag" && true}
                               aktiveLag={this.state.aktiveLag}
                               onUpdateLayerProp={this.handleUpdateLayerProp}
+                              handleUpdateLokalitetLayerProp={
+                                this.handleUpdateLokalitetLayerProp
+                              }
                               onRemoveSelectedLayer={
                                 this.handleRemoveSelectedLayer
                               }
@@ -252,6 +274,11 @@ class App extends React.Component {
                           </div>
                         )}
                         <Kart
+                          handleLokalitetUpdate={this.handleLokalitetUpdate}
+                          handleUpdateLokalitetLayerProp={
+                            this.handleUpdateLokalitetLayerProp
+                          }
+                          lokalitetdata={this.state.lokalitetdata}
                           path={this.props.location.search}
                           aktivTab={aktivTab}
                           show_current={this.state.showCurrent}
@@ -290,8 +317,16 @@ class App extends React.Component {
       </SettingsContext.Consumer>
     );
   }
+
   handleNavigate = url => {
-    this.props.history.push(url + "?" + getPathTab(this.props.location));
+    let new_url = url;
+    if (!url || url === undefined) {
+      return;
+    }
+    if (new_url[0] !== "/") {
+      new_url = "/" + url;
+    }
+    this.props.history.push(new_url + "?" + getPathTab(this.props.location));
   };
 
   onNavigateToTab = tab => {
@@ -311,6 +346,10 @@ class App extends React.Component {
   };
   handleSpraak = spraak => {
     this.setState({ spraak: spraak });
+  };
+
+  handleLokalitetUpdate = data => {
+    this.setState({ lokalitetdata: data });
   };
 
   handleFullscreen = showFullscreen => {
@@ -367,6 +406,15 @@ class App extends React.Component {
       aktiveLag: Object.assign(
         {},
         oppdaterLagProperties(layer, key, value, this, elementType)
+      )
+    });
+  };
+
+  handleUpdateLokalitetLayerProp = (layer, key, value) => {
+    this.setState({
+      lokalitetdata: Object.assign(
+        {},
+        oppdaterLagProperties(layer, key, value, this, "lokalitetdata")
       )
     });
   };

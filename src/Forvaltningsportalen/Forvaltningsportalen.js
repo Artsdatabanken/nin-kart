@@ -17,7 +17,6 @@ const Forvaltningsportalen = props => {
     onUpdateLayerProp,
     meta
   } = props;
-  console.log(path);
   return (
     <>
       {forvaltningsportalen === "true" && (

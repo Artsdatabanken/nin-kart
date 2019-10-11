@@ -18,7 +18,7 @@ const Byggeklosser = ({ onNavigate, data }) => {
       found_landskap = true;
       landskap.push(miljøvariabler[miljvar[i]]);
     } else {
-      console.log(
+      console.warn(
         "ekskluderer disse da de ikke er klassifisert",
         miljøvariabler[miljvar[i]]
       );

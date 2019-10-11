@@ -2,7 +2,9 @@ import lagTegner from "./lagTegner";
 import { lagTerreng } from "../terreng";
 
 export default function byggLag(lag, opplyst, config) {
+  // console.log("skal prøve å bygge ",lag.kode)
   const viz = lag.kart.format[lag.kart.aktivtFormat];
+  // console.log( "visualiseringen er: ", viz)
   if (!viz) return console.warn("No visualisation availiable for " + lag.url);
   let drawArgs = {
     forelderkode: lag.kode,
@@ -23,6 +25,7 @@ export default function byggLag(lag, opplyst, config) {
   if (drawArgs.visBarn) {
     drawArgs.barn = lag.barn;
     drawArgs.opplystBarn = lag.barn.find(x => x.kode === opplyst.kode);
+    // console.log("har barn å vise", drawArgs.barn)
   }
   lagTegner(drawArgs, config);
   if (viz.kanHaTerreng) {

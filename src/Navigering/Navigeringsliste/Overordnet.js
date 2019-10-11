@@ -15,7 +15,6 @@ const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
     <button
       key={item.url}
       onClick={e => {
-        e.stopPropagation();
         setExpanded(false);
         onNavigate(item.url);
       }}
@@ -28,7 +27,6 @@ const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
             ? item.tittel.sn
             : språk(item.tittel)}
         </span>
-        {/*<span className="nav_2ndtitle">{item.nivå}</span>*/}
       </div>
     </button>
   ));
