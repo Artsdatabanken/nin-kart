@@ -8,10 +8,31 @@ const KatalogInformasjonsBoks = ({ meta }) => {
   Currently only availiable for Landskap/Typeinndeling
   
   */
-  let showUrl = "";
+  let showUrl,
+    vitNavn,
+    førsteDelen,
+    sisteDelen = "";
   let { beskrivelse, infoUrl } = meta;
   if (infoUrl) {
     showUrl = infoUrl.substring(0, 32) + "...";
+  }
+
+  if (språk(beskrivelse)) {
+    vitNavn = språk(beskrivelse).substring(
+      språk(beskrivelse).indexOf(meta.tittel.sn),
+      meta.tittel.sn.length + språk(beskrivelse).indexOf(meta.tittel.sn)
+    );
+    førsteDelen = språk(beskrivelse).substring(
+      0,
+      språk(beskrivelse).indexOf(vitNavn)
+    );
+    sisteDelen = språk(beskrivelse).substring(
+      språk(beskrivelse).indexOf(vitNavn) + vitNavn.length
+    );
+  }
+
+  if (språk(beskrivelse) !== "undefined") {
+    console.log(vitNavn);
   }
 
   return (
@@ -19,7 +40,10 @@ const KatalogInformasjonsBoks = ({ meta }) => {
       {språk(beskrivelse) && (
         <div className="sidebar_description">
           <p>
-            {språk(beskrivelse)} <br />
+            {førsteDelen}
+            <i>{vitNavn}</i>
+            {sisteDelen}
+            <br />
             {infoUrl && (
               <a href={infoUrl}>
                 <Link /> {showUrl}
