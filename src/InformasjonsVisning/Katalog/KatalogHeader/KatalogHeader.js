@@ -13,12 +13,20 @@ const KatalogHeader = ({ meta }) => {
     tittel = "";
   }
   const vitNavn = meta.tittel.sn;
-  let autoritet = "";
+  let autoritet = null;
   let taksonomi = "";
-  let slekt = "";
+  let slekt = null;
+
+  let italicstitle =
+    nivå === "Slekt" ||
+    nivå === "Art" ||
+    nivå === "Underart" ||
+    nivå === "Varietet";
+  console.log(nivå, italicstitle);
 
   if (meta.autoritet && meta.autoritet.navn && meta.autoritet.år) {
-    autoritet = meta.autoritet.navn + ", " + meta.autoritet.år;
+    autoritet = "(" + meta.autoritet.navn + ", " + meta.autoritet.år + ")";
+    autoritet = autoritet.replace("((", "(");
   }
 
   if (meta.url.includes("Biota")) {
@@ -56,44 +64,25 @@ const KatalogHeader = ({ meta }) => {
     <SettingsContext.Consumer>
       {context => (
         <div className="">
-          {tittel !== vitNavn && (
-            <div className="">
+          {tittel !== vitNavn ? (
+            <div>
               <h1 className="sidebar_title">
                 {(meta.url.includes("Biota/") ||
                   meta.url.includes("Fastlands-Norge")) && (
-                  <span style={{ textTransform: "capitalize" }}>
-                    {nivå + ": "}{" "}
-                  </span>
+                  <span style={{ textTransform: "capitalize" }}></span>
                 )}
                 {tittel}
               </h1>
-              {nivå === "Slekt" ||
-              nivå === "Art" ||
-              nivå === "Underart" ||
-              nivå === "Varietet" ? (
-                <h2>
-                  <i>{vitNavn}</i>
-                </h2>
-              ) : (
-                <h2>{vitNavn}</h2>
-              )}
+              <h2 style={{ fontStyle: italicstitle && "italic" }}>
+                {vitNavn}
+                {autoritet && " " + autoritet}
+              </h2>
             </div>
-          )}
-
-          {tittel === vitNavn && (
-            <div className="">
-              <h1 className="sidebar_title">
-                <span>{nivå + ": "} </span>
-                {nivå === "Slekt" ||
-                nivå === "Art" ||
-                nivå === "Underart" ||
-                nivå === "Varietet" ? (
-                  <i>{vitNavn}</i>
-                ) : (
-                  vitNavn
-                )}
-              </h1>
-            </div>
+          ) : (
+            <h1 style={{ fontStyle: italicstitle && "italic" }}>
+              {vitNavn}
+              {autoritet && " " + autoritet}
+            </h1>
           )}
 
           <NatursystemAdvarsel vis={meta.kart.sladd} />
@@ -107,22 +96,6 @@ const KatalogHeader = ({ meta }) => {
                   {slekt !== "" && <i>{slekt}</i>}
                 </div>
               )}
-
-              <p>
-                {autoritet !== "" && (
-                  <span>
-                    Autor: {autoritet}
-                    <br />
-                  </span> // Testside: Flerbørstemarker
-                )}
-
-                {meta.autorkode && (
-                  <span>
-                    Autorkode: {meta.autorkode}
-                    <br />
-                  </span>
-                )}
-              </p>
 
               <h4>Datakilde</h4>
               <ul>
