@@ -1,15 +1,20 @@
 import React from "react";
 import KatalogHeaderImage from "./KatalogHeaderImage";
 import språk from "Funksjoner/språk";
-import prettyKode from "Funksjoner/prettyKode";
+//import prettyKode from "Funksjoner/prettyKode";
 import { SettingsContext } from "SettingsContext";
 import KatalogInformasjon from "../KatalogInformasjon/KatalogInformasjon";
 import NatursystemAdvarsel from "InformasjonsVisning/Katalog/NatursystemAdvarsel";
 
 const KatalogHeader = ({ meta }) => {
   if (!meta) return null;
-  const { kode, nivå, onUpdateLayerProp, overordnet } = meta;
-  const pkode = prettyKode(kode);
+  const {
+    // kode,
+    nivå,
+    onUpdateLayerProp,
+    overordnet
+  } = meta;
+  //const pkode = prettyKode(kode);
   let tittel = språk(meta.tittel);
   if (tittel === "undefined") {
     tittel = "";

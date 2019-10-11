@@ -32,14 +32,12 @@ Sidebarmeny-navigeringen.
   const [expanded, setExpanded] = useState(false);
   let tittel = "hjelp";
   let url = "/;";
-  let nivå = "";
   if (meta) {
     url = meta.url;
     tittel = språk(meta.tittel);
     if (tittel === "undefined") {
       tittel = meta.tittel.sn;
     }
-    nivå = meta.nivå;
   }
 
   return (
