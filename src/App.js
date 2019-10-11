@@ -17,6 +17,7 @@ import HamburgerMeny from "HamburgerMeny/HamburgerMeny";
 import MobileNavigation from "MobileNavigation/MobileNavigation";
 import ForsideInformasjon from "Forside/ForsideInformasjon";
 import Forvaltningsportalen from "Forvaltningsportalen/Forvaltningsportalen";
+import getLokalitetUrl from "AppSettings/AppFunksjoner/getLokalitetUrl";
 import Meny from "Navigering/Meny";
 import språk from "Funksjoner/språk";
 import "style/Kart.scss";
@@ -168,7 +169,20 @@ class App extends React.Component {
                         if (item.url[0] !== "/") {
                           url = "/" + item.url;
                         }
-                        history.push(url);
+                        if (url.includes("/Sted/")) {
+                          // Fix for sted side siden den lenkes feil i url.
+                          backend
+                            .hentPunkt(item.lng, item.lat, item)
+                            .then(data => {
+                              if (!data) {
+                                return null;
+                              }
+                              url = getLokalitetUrl(item.lat, item.lng, data);
+                              history.push(url); // duplikat pga async
+                            });
+                        } else {
+                          history.push(url);
+                        }
                       }}
                       history={history}
                     />

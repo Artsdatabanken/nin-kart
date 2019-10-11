@@ -1,24 +1,13 @@
 import React from "react";
 import { Landscape } from "@material-ui/icons";
 import språk from "Funksjoner/språk";
+import fixSearchParams from "AppSettings/AppFunksjoner/fixSearchParams";
 
 function roundToX(num, x) {
   return +(Math.round(num + "e+" + x) + "e-" + x);
 }
 
-function fixSearchparams(path) {
-  const searchparams = path.split("?");
-  let url_string = "";
-  for (let i in searchparams) {
-    const item = searchparams[i];
-    if (!item.includes("lng") && item !== "undefined" && item !== "") {
-      url_string += "?" + item;
-    }
-  }
-  return url_string;
-}
-
-const PopUp = ({ parent, onNavigate, path }) => {
+const PopUp = ({ parent, path }) => {
   return (
     <div
       className="popup"
@@ -99,7 +88,7 @@ const PopUp = ({ parent, onNavigate, path }) => {
         onClick={e => {
           parent.removeMarker();
           parent.props.handleLokalitetUpdate(null);
-          parent.props.history.push(fixSearchparams(path));
+          parent.props.history.push(fixSearchParams(path));
 
           parent.setState({
             showPopup: !parent.state.showPopup
