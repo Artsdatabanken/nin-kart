@@ -1,7 +1,8 @@
 import React from "react";
 import { Snackbar } from "@material-ui/core";
 import KatalogHeader from "./KatalogHeader/KatalogHeader";
-import Taksonomi from "./Taksonomi/Taksonomi";
+import Taksonomi from "./Klassifiseringer/Taksonomi";
+import Risikovurdering from "./Klassifiseringer/Risikovurdering";
 import KatalogBarneliste from "./KatalogBarneliste/KatalogBarneliste";
 import KatalogGradienter from "./KatalogGradienter/KatalogGradienter";
 import KatalogKilder from "./KatalogKilder/KatalogKilder";
@@ -22,10 +23,7 @@ const KatalogFane = ({
   onToggleLayer,
   kurve
 }) => {
-  /*  */
   if (!meta) return null;
-  //console.log(meta.tittel.nb)
-
   return (
     <>
       <div className="main_body_wrapper">
@@ -34,13 +32,9 @@ const KatalogFane = ({
           onFitBounds={onFitBounds}
           onUpdateLayerProp={onUpdateLayerProp}
         />
+        <Taksonomi meta={meta} onNavigate={onNavigate} />
+        <Risikovurdering meta={meta} onNavigate={onNavigate} />
 
-        <Taksonomi
-          meta={meta}
-          onFitBounds={onFitBounds}
-          onUpdateLayerProp={onUpdateLayerProp}
-          onNavigate={onNavigate}
-        />
         <KatalogGradienter
           meta={meta}
           onNavigate={onNavigate}

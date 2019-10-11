@@ -6,6 +6,12 @@ import KatalogInformasjon from "../KatalogInformasjon/KatalogInformasjon";
 import NatursystemAdvarsel from "InformasjonsVisning/Katalog/NatursystemAdvarsel";
 
 const KatalogHeader = ({ meta }) => {
+  /*  
+  Header for alle informasjonselement aka. Boksen med bilde og tekst for denne siden.
+  Inneholder navn, kode, statistikk og bilde. 
+
+  */
+
   if (!meta) return null;
   const { nivå, onUpdateLayerProp } = meta;
   let tittel = språk(meta.tittel);
@@ -13,7 +19,12 @@ const KatalogHeader = ({ meta }) => {
     tittel = "";
   }
   const vitNavn = meta.tittel.sn;
+
   let autoritet = null;
+  if (meta.autoritet && meta.autoritet.navn && meta.autoritet.år) {
+    autoritet = "(" + meta.autoritet.navn + ", " + meta.autoritet.år + ")";
+    autoritet = autoritet.replace("((", "(");
+  }
 
   let italicstitle =
     nivå === "Slekt" ||
@@ -21,16 +32,7 @@ const KatalogHeader = ({ meta }) => {
     nivå === "Underart" ||
     nivå === "Varietet";
 
-  if (meta.autoritet && meta.autoritet.navn && meta.autoritet.år) {
-    autoritet = "(" + meta.autoritet.navn + ", " + meta.autoritet.år + ")";
-    autoritet = autoritet.replace("((", "(");
-  }
-
-  /*  
-  Header for alle informasjonselement aka. Boksen med bilde og tekst for denne siden.
-  Inneholder navn, kode, statistikk og bilde. 
-
-  */
+  console.log(meta);
 
   return (
     <SettingsContext.Consumer>
@@ -106,32 +108,6 @@ const KatalogHeader = ({ meta }) => {
                   {"Livsmiljø: " + meta.livsmiljø}
                   <br />
                 </span>
-              )}
-
-              {meta.risikovurdering && (
-                <>
-                  <h4>Risikovurdering</h4>
-                  {meta.risikovurdering.arter && (
-                    <span>
-                      Arter: {meta.risikovurdering.arter}
-                      <br />
-                    </span>
-                  )}
-
-                  {meta.risikovurdering.naturtyper && (
-                    <span>
-                      Naturtyper: {meta.risikovurdering.naturtyper}
-                      <br />
-                    </span>
-                  )}
-
-                  {meta.risikovurdering.risikonivå.nå && (
-                    <span>
-                      Risikonivå: {meta.risikovurdering.risikonivå.nå}
-                      <br />
-                    </span>
-                  )}
-                </>
               )}
 
               <KatalogInformasjon

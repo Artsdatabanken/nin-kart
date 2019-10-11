@@ -5,8 +5,6 @@ const Taksonomi = ({ meta, onNavigate }) => {
   if (!meta) return null;
   if (!meta.url.includes("Biota")) return null;
   let overordnet = meta.overordnet.slice(0, 8).reverse();
-
-  console.log(meta.risikovurdering);
   return (
     <div className="taxonomy_section">
       <h3>Taksonomi</h3>

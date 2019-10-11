@@ -18,3 +18,18 @@
   max-width: 300px;
   display: inline-block;
 }
+
+.risiko_kategori {
+  display: flex;
+  list-style: none;
+  border-top: 2px solid black;
+}
+
+.risiko_kategori li b {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  margin: 15px;
+  margin-top: -35px;
+  background: #5ea4a1;
+}
