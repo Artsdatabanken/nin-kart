@@ -1,28 +1,19 @@
 import React from "react";
 import KatalogHeaderImage from "./KatalogHeaderImage";
 import språk from "Funksjoner/språk";
-//import prettyKode from "Funksjoner/prettyKode";
 import { SettingsContext } from "SettingsContext";
 import KatalogInformasjon from "../KatalogInformasjon/KatalogInformasjon";
 import NatursystemAdvarsel from "InformasjonsVisning/Katalog/NatursystemAdvarsel";
 
 const KatalogHeader = ({ meta }) => {
   if (!meta) return null;
-  const {
-    // kode,
-    nivå,
-    onUpdateLayerProp,
-    overordnet
-  } = meta;
-  //const pkode = prettyKode(kode);
+  const { nivå, onUpdateLayerProp, overordnet } = meta;
   let tittel = språk(meta.tittel);
   if (tittel === "undefined") {
     tittel = "";
   }
   const vitNavn = meta.tittel.sn;
-
   let autoritet = "";
-
   let taksonomi = "";
   let slekt = "";
 
@@ -119,132 +110,101 @@ const KatalogHeader = ({ meta }) => {
 
               <p>
                 {autoritet !== "" && (
-                  <>
-                    <span>{"Autor: " + autoritet}</span>
+                  <span>
+                    Autor: {autoritet}
                     <br />
-                  </>
+                  </span> // Testside: Flerbørstemarker
                 )}
 
                 {meta.autorkode && (
-                  <>
-                    <span>{"Autorkode: " + meta.autorkode}</span>
-                    <br></br>
-                  </>
+                  <span>
+                    Autorkode: {meta.autorkode}
+                    <br />
+                  </span>
                 )}
               </p>
 
-              <p>
-                <span>Datakilde</span>
-                <br></br>
+              <h4>Datakilde</h4>
+              <ul>
                 {meta.datakilde[0].erSubset && (
-                  <>
-                    <span>{"Er subset: " + meta.datakilde[0].erSubset}</span>
-                    <br></br>
-                  </>
+                  <li>{"Er subset: " + meta.datakilde[0].erSubset}</li>
                 )}
                 {meta.datakilde[0].geonorgeurl && (
-                  <>
-                    <span>
-                      {"Geonorgeurl: "}
-                      <a
-                        href={meta.datakilde[0].geonorgeurl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {meta.datakilde[0].geonorgeurl.substring(0, 32) + "..."}
-                      </a>
-                    </span>
-                    <br></br>
-                  </>
+                  <li>
+                    Geonorgeurl:
+                    <a
+                      href={meta.datakilde[0].geonorgeurl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {meta.datakilde[0].geonorgeurl.substring(0, 32) + "..."}
+                    </a>
+                  </li>
                 )}
                 {meta.datakilde[0].kode && (
-                  <>
-                    <span>{"Kode: " + meta.datakilde[0].kode}</span>
-                    <br></br>
-                  </>
+                  <li>Kode: {meta.datakilde[0].kode}</li>
                 )}
                 {meta.datakilde[0].lisenskode && (
-                  <>
-                    <span>{"Lisenskode: " + meta.datakilde[0].lisenskode}</span>
-                    <br></br>
-                  </>
+                  <li>Lisenskode: {meta.datakilde[0].lisenskode}</li>
                 )}
                 {språk(meta.datakilde[0].tittel) && (
-                  <>
-                    <span>{"Tittel: " + språk(meta.datakilde[0].tittel)}</span>
-                    <br></br>
-                  </>
+                  <li>Tittel: {språk(meta.datakilde[0].tittel)}</li>
                 )}
                 {meta.datakilde[0].url !== "" && (
-                  <>
-                    <span>{"Url: " + meta.datakilde[0].url}</span>
-                    <br></br>
-                  </>
+                  <li>Url: {meta.datakilde[0].url}</li>
                 )}
-              </p>
+              </ul>
 
-              <p>
-                {meta.egenskap && (
-                  <>
-                    <span>Egenskaper</span>
-                    <br></br>
-                    {meta.egenskap.reproduksjon.generasjonstid && (
-                      <>
-                        <span>
-                          {"Generasjonstid: " +
-                            meta.egenskap.reproduksjon.generasjonstid}
-                        </span>
-                        <br></br>
-                      </>
-                    )}
-                    {meta.egenskap.reproduksjon.seksuell && (
-                      <>
-                        <span>
-                          {"Seksuell reproduksjon: " +
-                            meta.egenskap.reproduksjon.seksuell}
-                        </span>
-                        <br></br>
-                      </>
-                    )}
-                  </>
-                )}
-              </p>
+              {meta.egenskap && (
+                <ul>
+                  <h4>Egenskaper</h4>
+                  {meta.egenskap.reproduksjon.generasjonstid && (
+                    <li>
+                      Generasjonstid:{" "}
+                      {meta.egenskap.reproduksjon.generasjonstid}
+                    </li>
+                  )}
+                  {meta.egenskap.reproduksjon.seksuell && (
+                    <li>
+                      Seksuell reproduksjon:{" "}
+                      {meta.egenskap.reproduksjon.seksuell}
+                    </li>
+                  )}
+                </ul>
+              )}
 
-              <p>
-                {meta.farge && (
-                  <>
-                    <span>{"Farge: " + meta.farge}</span>
-                    <br></br>
-                  </>
-                )}
+              {meta.farge && (
+                <span>
+                  Farge: {meta.farge}
+                  <br />
+                </span>
+              )}
 
-                {meta.lenke && meta.lenke.fab && (
-                  <>
-                    <span>
-                      {"Fremmedartsbase: "}
-                      <a
-                        href={meta.lenke.fab}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {meta.lenke.fab.substring(0, 32) + "..."}
-                      </a>
-                    </span>
-                    <br></br>
-                  </>
-                )}
+              {meta.lenke && meta.lenke.fab && (
+                <span>
+                  Fremmedartsbase:
+                  <a
+                    href={meta.lenke.fab}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {meta.lenke.fab.substring(0, 32) + "..."}
+                  </a>
+                  <br />
+                </span>
+              )}
 
-                {meta.livsmiljø && (
-                  <>
-                    <span>{"Livsmiljø: " + meta.livsmiljø}</span>
-                    <br></br>
-                  </>
-                )}
-              </p>
+              {meta.livsmiljø && (
+                <span>
+                  {"Livsmiljø: " + meta.livsmiljø}
+                  <br />
+                </span>
+              )}
+
               <p>
                 {meta.risikovurdering && (
                   <>
-                    <span>Risikovurdering</span>
+                    <h4>Risikovurdering</h4>
                     <br></br>
                     {meta.risikovurdering.arter && (
                       <>
