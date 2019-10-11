@@ -13,20 +13,37 @@ const KatalogKilder = ({ onNavigate, meta, ...props }) => {
   return (
     <div className="kilde_box">
       <h1>Datakilder</h1>
+
       {metadata.map(datakilde => {
         return (
-          <button
-            key={datakilde.kode}
-            className="kilde_knapp"
-            onClick={() => onNavigate(datakilde.url)}
-          >
-            <img src={new_url_1 + datakilde.url + new_url_2} alt="" />
-            <span>
-              {språk(datakilde.tittel)} <br />
-              {datakilde.kode}
-            </span>
-            <KeyboardArrowRight />
-          </button>
+          <div className="kilder_wrap">
+            <button
+              key={datakilde.kode}
+              className="kilde_knapp"
+              onClick={() => onNavigate(datakilde.url)}
+            >
+              <img src={new_url_1 + datakilde.url + new_url_2} alt="" />
+              <span>
+                {språk(datakilde.tittel)} <br />
+                {datakilde.kode}
+                <br />
+              </span>
+              <KeyboardArrowRight />
+            </button>
+            <br />
+            Lisens: <br />
+            {datakilde.lisenskode}
+            <br />
+            Geonorgeurl:
+            <br />
+            <a
+              href={datakilde.geonorgeurl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {datakilde.geonorgeurl.substring(0, 32) + "..."}
+            </a>
+          </div>
         );
       })}
 

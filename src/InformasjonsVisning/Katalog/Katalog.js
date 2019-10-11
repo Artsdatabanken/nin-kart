@@ -34,6 +34,7 @@ const KatalogFane = ({
           onFitBounds={onFitBounds}
           onUpdateLayerProp={onUpdateLayerProp}
         />
+
         <Taksonomi
           meta={meta}
           onFitBounds={onFitBounds}

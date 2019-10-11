@@ -62,37 +62,6 @@ const KatalogHeader = ({ meta }) => {
           <div className="katlog_header_images_container">
             <KatalogHeaderImage meta={meta} />
             <div className="katlog_header_text_container">
-              <h4>Datakilde</h4>
-              <ul>
-                {meta.datakilde[0].erSubset && (
-                  <li>{"Er subset: " + meta.datakilde[0].erSubset}</li>
-                )}
-                {meta.datakilde[0].geonorgeurl && (
-                  <li>
-                    Geonorgeurl:
-                    <a
-                      href={meta.datakilde[0].geonorgeurl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {meta.datakilde[0].geonorgeurl.substring(0, 32) + "..."}
-                    </a>
-                  </li>
-                )}
-                {meta.datakilde[0].kode && (
-                  <li>Kode: {meta.datakilde[0].kode}</li>
-                )}
-                {meta.datakilde[0].lisenskode && (
-                  <li>Lisenskode: {meta.datakilde[0].lisenskode}</li>
-                )}
-                {språk(meta.datakilde[0].tittel) && (
-                  <li>Tittel: {språk(meta.datakilde[0].tittel)}</li>
-                )}
-                {meta.datakilde[0].url !== "" && (
-                  <li>Url: {meta.datakilde[0].url}</li>
-                )}
-              </ul>
-
               {meta.egenskap && (
                 <ul>
                   <h4>Egenskaper</h4>
