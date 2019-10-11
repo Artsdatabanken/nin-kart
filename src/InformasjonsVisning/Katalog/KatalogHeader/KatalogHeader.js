@@ -134,14 +134,6 @@ const KatalogHeader = ({ meta }) => {
                 </>
               )}
 
-              {meta.beskrivelse && meta.beskrivelse.nob && (
-                <span>
-                  <b>Beskrivelse: </b>
-                  {meta.beskrivelse.nob}
-                  <br />
-                </span>
-              )}
-
               <KatalogInformasjon
                 meta={meta}
                 onUpdateLayerProp={onUpdateLayerProp}
