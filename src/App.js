@@ -24,6 +24,7 @@ import "style/App.scss";
 import "style/Badges.scss";
 import "style/Sidebar.scss";
 import "style/InformasjonsSider.scss";
+import "style/Art.scss";
 import "style/Kartlag.scss";
 import "style/FargeMenyer.scss";
 

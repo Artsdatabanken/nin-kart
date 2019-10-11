@@ -4,18 +4,22 @@ import språk from "Funksjoner/språk";
 const Taksonomi = ({ meta, onNavigate }) => {
   if (!meta) return null;
   if (!meta.url.includes("Biota")) return null;
-  let { overordnet } = meta;
+  let overordnet = meta.overordnet.slice(0, 8).reverse();
   return (
-    <>
+    <div className="taxonomy_section">
+      <h3>Taksonomi</h3>
       {overordnet.map(value => {
         return (
           <div
+            className="taxonomy_item"
+            key={value.kode}
             onClick={e => {
               onNavigate(value.url);
             }}
           >
             {value.nivå}:{" "}
             <span
+              className="specieslink"
               style={{
                 fontStyle:
                   (value.nivå === "Slekt" ||
@@ -30,7 +34,7 @@ const Taksonomi = ({ meta, onNavigate }) => {
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 export default Taksonomi;
