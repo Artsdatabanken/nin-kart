@@ -23,6 +23,7 @@ export default function metaSjekk(meta, parent) {
 
   meta.erSynlig = true;
   meta.depth = 3;
+  meta.barn.forEach(barn => (barn.nivå = meta.nivå));
   if (meta.kode.substring(0, 2) === "LA") {
     if (!parent.state.aktiveLag.bakgrunnskart.terreng.wasAutoEnabled) {
       parent.handleUpdateLayerProp("bakgrunnskart.terreng", "erSynlig", true);

@@ -32,8 +32,10 @@ const KatalogFane = ({
           onFitBounds={onFitBounds}
           onUpdateLayerProp={onUpdateLayerProp}
         />
-        <Taksonomi meta={meta} onNavigate={onNavigate} />
-        <Risikovurdering meta={meta} onNavigate={onNavigate} />
+        <div className="art_data_displayer">
+          <Taksonomi meta={meta} onNavigate={onNavigate} />
+          <Risikovurdering meta={meta} onNavigate={onNavigate} />
+        </div>
 
         <KatalogGradienter
           meta={meta}

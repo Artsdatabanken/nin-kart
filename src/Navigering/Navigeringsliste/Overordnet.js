@@ -46,12 +46,6 @@ const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
                 : språk(item.tittel)}
             </span>
           )}
-
-        <span className="nav_title">
-          {språk(item.tittel) === "undefined"
-            ? item.tittel.sn
-            : språk(item.tittel)}
-        </span>
       </div>
     </button>
   ));

@@ -1,5 +1,6 @@
 import React from "react";
 import språk from "Funksjoner/språk";
+import isItalics from "Funksjoner/isItalics";
 import Bildeavatar from "GjenbruksElement/Bildeavatar";
 import VolumIndikator from "./VolumIndikator";
 import getSecondary from "./NavigeringslisteFunksjoner/getSecondary";
@@ -28,62 +29,40 @@ class Kodelisteelement extends React.Component {
       størsteAreal,
       setExpanded
     } = this.props;
-    let overordnet = "";
-    if (meta) {
-      overordnet = meta.overordnet;
+
+    let tittel = språk(meta.tittel);
+    let sn = meta.tittel["sn"] && meta.tittel["sn"] === tittel;
+    if (tittel === "undefined") {
+      tittel = meta.tittel["sn"];
+      sn = true;
     }
-
     return (
-      <>
-        <button
-          key={kode}
-          onClick={() => {
-            setExpanded(false);
-            onNavigate(url);
-          }}
-          onMouseEnter={() => onMouseEnter && onMouseEnter({ kode, url })}
-          onMouseLeave={() => onMouseLeave && onMouseLeave()}
-          className="nav_menu_button nav_down_menu"
+      <button
+        key={kode}
+        onClick={() => {
+          setExpanded(false);
+          onNavigate(url);
+        }}
+        onMouseEnter={() => onMouseEnter && onMouseEnter({ kode, url })}
+        onMouseLeave={() => onMouseLeave && onMouseLeave()}
+        className="nav_menu_button nav_down_menu"
+      >
+        <VolumIndikator størsteAreal={størsteAreal} areal={areal} />
+        <Bildeavatar url={url} />
+        <div
+          className={
+            isItalics(meta["nivå"] || null, sn)
+              ? "italics nav_text"
+              : "nav_text"
+          }
         >
-          <VolumIndikator størsteAreal={størsteAreal} areal={areal} />
-          <Bildeavatar url={url} />
-          <div className="nav_text">
-            {(overordnet === "Slekt" ||
-              overordnet === "Art" ||
-              overordnet === "Underart" ||
-              overordnet === "Varietet") && (
-              <i>
-                <span className="nav_title">
-                  {språk(meta.tittel) === "undefined"
-                    ? meta.tittel.sn
-                    : språk(meta.tittel)}
-                </span>
-              </i>
-            )}
-
-            {overordnet !== "Slekt" &&
-              overordnet !== "Art" &&
-              overordnet !== "Underart" &&
-              overordnet !== "Varietet" && (
-                <span className="nav_title">
-                  {språk(meta.tittel) === "undefined"
-                    ? meta.tittel.sn
-                    : språk(meta.tittel)}
-                </span>
-              )}
-            <span className="nav_2ndtitle">{getSecondary(meta)}</span>
-          </div>
-          {visKode && (
-            <span className="nav_kode">{kodeSuffix(kode, parentkode)}</span>
-          )}
-        </button>
-
-        {/*kode === 'LA-KLG-AI' && (
-          <ListItem>
-            <Arealbruksintensitet value={meta.value} onChange={onChange} />
-          </ListItem>
-        )*/}
-      </>
+          <span className="nav_title">{tittel}</span>
+          <span className="nav_2ndtitle">{getSecondary(meta)}</span>
+        </div>
+        {visKode && (
+          <span className="nav_kode">{kodeSuffix(kode, parentkode)}</span>
+        )}
+      </button>
     );
   }
 }

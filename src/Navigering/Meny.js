@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Overordnet from "./Navigeringsliste/Overordnet";
 import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
 import språk from "Funksjoner/språk";
+import isItalics from "Funksjoner/isItalics";
 import Bildeavatar from "GjenbruksElement/Bildeavatar";
 import {
   Home,
@@ -30,15 +31,21 @@ Sidebarmeny-navigeringen.
 
   const [expanded, setExpanded] = useState(false);
   let tittel = "hjelp";
+  let nivå = "";
   let overordnet_url = "";
+  let sn = "";
   let url = "/;";
   let overordnet = [];
   if (meta) {
     url = meta.url;
     tittel = språk(meta.tittel);
-    if (tittel === "undefined") {
+    if (tittel === "undefined" && meta.tittel.sn) {
       tittel = meta.tittel.sn;
+      sn = "sn";
+    } else if (meta.tittel.sn && tittel === meta.tittel.sn) {
+      sn = "sn";
     }
+    nivå = meta["nivå"];
   }
 
   if (lokalitet.includes("lokalitet") && lokalitetdata) {
@@ -100,11 +107,18 @@ Sidebarmeny-navigeringen.
                 setExpanded={setExpanded}
               />
             )}
-            <div className="nav_current">
+
+            <div
+              className={
+                isItalics(nivå, sn) ? "italics nav_current" : "nav_current"
+              }
+            >
               {" "}
               {meta && <Bildeavatar url={url} />}
-              {tittel === "hjelp" && <HelpOutline />} {tittel}
+              {tittel === "hjelp" && <HelpOutline />}
+              {tittel}
             </div>
+
             <Navigeringsliste
               parentkode={meta ? meta.kode : "kode"}
               metadata={meta && meta.barn}
