@@ -32,6 +32,7 @@ Sidebarmeny-navigeringen.
   let tittel = "hjelp";
   let overordnet_url = "";
   let url = "/;";
+  let overordnet = [];
   if (meta) {
     url = meta.url;
     tittel = språk(meta.tittel);
@@ -39,7 +40,7 @@ Sidebarmeny-navigeringen.
       tittel = meta.tittel.sn;
     }
   }
-  let overordnet = [];
+
   if (lokalitet.includes("lokalitet") && lokalitetdata) {
     if (lokalitetdata.kommune) {
       overordnet = lokalitetdata.kommune.url.replace("_", " ").split("/");
@@ -47,6 +48,7 @@ Sidebarmeny-navigeringen.
       console.warn("ingen kommune, se etter andre ting");
     }
   }
+
   return (
     <div
       className={
@@ -163,11 +165,12 @@ function TopPart({ setExpanded, expanded, aktivTab }) {
   );
 }
 
-function OverordnetMapping(
+function OverordnetMapping({
   overordnet,
   overordnet_url,
-  { setExpanded, onNavigate }
-) {
+  setExpanded,
+  onNavigate
+}) {
   return (
     <>
       {overordnet.map((item, i) => {

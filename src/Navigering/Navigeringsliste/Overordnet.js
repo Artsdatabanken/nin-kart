@@ -21,6 +21,7 @@ const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
       className="nav_menu_button nav_up_menu"
     >
       <Bildeavatar url={item.url} />
+
       <div className="nav_text">
         {(item.nivå === "Slekt" ||
           item.nivå === "Art" ||
@@ -46,7 +47,11 @@ const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
             </span>
           )}
 
-        {/*<span className="nav_2ndtitle">{item.nivå}</span>*/}
+        <span className="nav_title">
+          {språk(item.tittel) === "undefined"
+            ? item.tittel.sn
+            : språk(item.tittel)}
+        </span>
       </div>
     </button>
   ));
