@@ -41,7 +41,9 @@ const KatalogHeader = ({ meta }) => {
               <h1 className="sidebar_title">
                 {(meta.url.includes("Biota/") ||
                   meta.url.includes("Fastlands-Norge")) && (
-                  <span style={{ textTransform: "capitalize" }}></span>
+                  <span style={{ textTransform: "capitalize" }}>
+                    {nivå + ": "}{" "}
+                  </span>
                 )}
                 {tittel}
               </h1>
@@ -51,9 +53,14 @@ const KatalogHeader = ({ meta }) => {
               </h2>
             </div>
           ) : (
-            <h1 style={{ fontStyle: italicstitle && "italic" }}>
-              {vitNavn}
-              {autoritet && " " + autoritet}
+            <h1>
+              <span style={{ textTransform: "capitalize" }}>
+                {nivå + ": "}{" "}
+              </span>
+              <span style={{ fontStyle: italicstitle && "italic" }}>
+                {vitNavn}
+                {autoritet && " " + autoritet}
+              </span>
             </h1>
           )}
 
@@ -89,7 +96,7 @@ const KatalogHeader = ({ meta }) => {
 
               {meta.lenke && meta.lenke.fab && (
                 <span>
-                  Fremmedartsbase:
+                  Fremmedartsbase:&nbsp;
                   <a
                     href={meta.lenke.fab}
                     target="_blank"
