@@ -15,7 +15,6 @@ const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
     <button
       key={item.url}
       onClick={e => {
-        e.stopPropagation();
         setExpanded(false);
         onNavigate(item.url);
       }}
@@ -23,31 +22,11 @@ const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
     >
       <Bildeavatar url={item.url} />
       <div className="nav_text">
-        {(item.nivå === "Slekt" ||
-          item.nivå === "Art" ||
-          item.nivå === "Underart" ||
-          item.nivå === "Varietet") && (
-          <i>
-            <span className="nav_title">
-              {språk(item.tittel) === "undefined"
-                ? item.tittel.sn
-                : språk(item.tittel)}
-            </span>
-          </i>
-        )}
-
-        {item.nivå !== "Slekt" &&
-          item.nivå !== "Art" &&
-          item.nivå !== "Underart" &&
-          item.nivå !== "Varietet" && (
-            <span className="nav_title">
-              {språk(item.tittel) === "undefined"
-                ? item.tittel.sn
-                : språk(item.tittel)}
-            </span>
-          )}
-
-        {/*<span className="nav_2ndtitle">{item.nivå}</span>*/}
+        <span className="nav_title">
+          {språk(item.tittel) === "undefined"
+            ? item.tittel.sn
+            : språk(item.tittel)}
+        </span>
       </div>
     </button>
   ));

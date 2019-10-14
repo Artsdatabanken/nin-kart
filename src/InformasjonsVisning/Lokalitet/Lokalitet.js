@@ -54,6 +54,7 @@ class Lokalitet extends Component {
           kommune: språk(data.kommune.tittel)
         });
       }
+      this.props.handleLokalitetUpdate(data);
     });
   }
 

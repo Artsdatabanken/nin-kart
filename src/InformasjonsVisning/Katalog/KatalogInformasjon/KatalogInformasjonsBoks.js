@@ -17,7 +17,7 @@ const KatalogInformasjonsBoks = ({ meta }) => {
     showUrl = infoUrl.substring(0, 32) + "...";
   }
 
-  if (språk(beskrivelse)) {
+  if (språk(beskrivelse) && språk(beskrivelse).includes(meta.tittel.sn)) {
     vitNavn = språk(beskrivelse).substring(
       språk(beskrivelse).indexOf(meta.tittel.sn),
       meta.tittel.sn.length + språk(beskrivelse).indexOf(meta.tittel.sn)
@@ -31,18 +31,19 @@ const KatalogInformasjonsBoks = ({ meta }) => {
     );
   }
 
-  if (språk(beskrivelse) !== "undefined") {
-    console.log(vitNavn);
-  }
-
   return (
     <>
       {språk(beskrivelse) && (
         <div className="sidebar_description">
           <p>
-            {førsteDelen}
-            <i>{vitNavn}</i>
-            {sisteDelen}
+            {vitNavn !== "" && (
+              <span>
+                {førsteDelen}
+                <i>{vitNavn}</i>
+                {sisteDelen}
+              </span>
+            )}
+            {vitNavn === "" && <span>{språk(beskrivelse)}</span>}
             <br />
             {infoUrl && (
               <a href={infoUrl}>

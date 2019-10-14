@@ -61,7 +61,7 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
 }
 
 .leaflet-touch .leaflet-bar a {
-  width: $leaflet-buttons - 2px; //border
+  width: $leaflet-buttons - 4px; //border
 }
 
 .leaflet-control-zoom a,
@@ -83,7 +83,8 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
   background: white;
   border-radius: 4px;
   padding: 2px;
-  bottom: $bottompadding + $leaflet-buttons * 2 + $leaflet-buttons-padding * 2;
+  bottom: $bottompadding + $leaflet-buttons * 2 + $leaflet-buttons-padding * 2 +
+    1px;
 }
 
 .fullscreen {
@@ -99,7 +100,7 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
 
   .map_button {
     bottom: $bottompadding-mobile + $leaflet-buttons * 2 +
-      $leaflet-buttons-padding * 2;
+      $leaflet-buttons-padding * 2 + 1px;
     right: 15px;
   }
 

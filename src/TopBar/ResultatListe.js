@@ -27,7 +27,7 @@ class ResultatListe extends Component {
         {searchResults.map(item => {
           const navn = item.title;
           return (
-            <React.Fragment key={item.url}>
+            <React.Fragment key={item.kode}>
               <li
                 tabIndex="0"
                 className="resultatliste_item"
