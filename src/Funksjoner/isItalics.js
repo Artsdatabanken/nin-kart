@@ -7,7 +7,6 @@ export default function checkifItalics(what, sn) {
       what === "Underslekt") &&
     sn
   ) {
-    console.log(what, sn);
     return true;
   }
   return false;
