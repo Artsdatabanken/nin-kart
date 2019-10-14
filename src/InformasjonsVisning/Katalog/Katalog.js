@@ -3,6 +3,7 @@ import { Snackbar } from "@material-ui/core";
 import KatalogHeader from "./KatalogHeader/KatalogHeader";
 import Taksonomi from "./Klassifiseringer/Taksonomi";
 import Risikovurdering from "./Klassifiseringer/Risikovurdering";
+import Egenskaper from "./Klassifiseringer/Egenskaper";
 import KatalogBarneliste from "./KatalogBarneliste/KatalogBarneliste";
 import KatalogGradienter from "./KatalogGradienter/KatalogGradienter";
 import KatalogKilder from "./KatalogKilder/KatalogKilder";
@@ -35,6 +36,7 @@ const KatalogFane = ({
         <div className="art_data_displayer">
           <Taksonomi meta={meta} onNavigate={onNavigate} />
           <Risikovurdering meta={meta} onNavigate={onNavigate} />
+          <Egenskaper meta={meta} onNavigate={onNavigate} />
         </div>
 
         <KatalogGradienter
@@ -44,6 +46,7 @@ const KatalogFane = ({
           onMouseLeave={onMouseLeave}
           opplyst={opplyst}
         />
+
         <KatalogBarneliste
           meta={meta}
           onNavigate={onNavigate}
@@ -54,6 +57,7 @@ const KatalogFane = ({
           onMouseLeave={onMouseLeave}
           isDatakilde={meta.tittel.nb}
         />
+
         {has_error && (
           <Snackbar
             open={true}

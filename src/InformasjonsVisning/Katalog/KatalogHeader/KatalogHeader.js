@@ -69,52 +69,6 @@ const KatalogHeader = ({ meta }) => {
           <div className="katlog_header_images_container">
             <KatalogHeaderImage meta={meta} />
             <div className="katlog_header_text_container">
-              {meta.egenskap && (
-                <ul>
-                  <h4>Egenskaper</h4>
-                  {meta.egenskap.reproduksjon.generasjonstid && (
-                    <li>
-                      Generasjonstid:{" "}
-                      {meta.egenskap.reproduksjon.generasjonstid}
-                    </li>
-                  )}
-                  {meta.egenskap.reproduksjon.seksuell && (
-                    <li>
-                      Seksuell reproduksjon:{" "}
-                      {meta.egenskap.reproduksjon.seksuell}
-                    </li>
-                  )}
-                </ul>
-              )}
-
-              {meta.farge && (
-                <span>
-                  Farge: {meta.farge}
-                  <br />
-                </span>
-              )}
-
-              {meta.lenke && meta.lenke.fab && (
-                <span>
-                  Fremmedartsbase:&nbsp;
-                  <a
-                    href={meta.lenke.fab}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {meta.lenke.fab.substring(0, 32) + "..."}
-                  </a>
-                  <br />
-                </span>
-              )}
-
-              {meta.livsmiljø && (
-                <span>
-                  {"Livsmiljø: " + meta.livsmiljø}
-                  <br />
-                </span>
-              )}
-
               <KatalogInformasjon
                 meta={meta}
                 onUpdateLayerProp={onUpdateLayerProp}

@@ -119,6 +119,10 @@ button.active {
   font-style: italic;
 }
 
+.cap {
+  text-transform: capitalize;
+}
+
 /* BUTTON HEADERS */
 
 @keyframes fadein {
