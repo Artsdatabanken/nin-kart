@@ -32,8 +32,6 @@ const KatalogHeader = ({ meta }) => {
     nivå === "Underart" ||
     nivå === "Varietet";
 
-  console.log(meta);
-
   return (
     <SettingsContext.Consumer>
       {context => (

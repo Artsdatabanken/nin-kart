@@ -5,6 +5,7 @@ const Risikovurdering = ({ meta, onNavigate }) => {
   if (!meta.url.includes("Biota")) return null;
   if (!meta.risikovurdering) return null;
   let risikovurdering = meta.risikovurdering;
+  console.log("risiko on");
   return (
     <div className="taxonomy_section">
       <h3>Risikovurdering</h3>

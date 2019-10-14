@@ -131,7 +131,7 @@ class LeafletTangram extends React.Component {
         .addTo(this.map)
         .on("click", e => {
           if (this.map) {
-            console.log("legg inn funksjon her senere.");
+            console.warn("legg inn funksjon her senere.");
           }
         });
       this.getBackendData(coord[0], coord[1], this.marker._icon._leaflet_pos);
