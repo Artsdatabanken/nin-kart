@@ -56,7 +56,10 @@ class Kodelisteelement extends React.Component {
               : "nav_text"
           }
         >
-          <span className="nav_title">{tittel}</span>
+          <span className="nav_title">
+            {tittel}
+            {/*HER ENDRES SLEKTER/UNDERELEMENTER SOM IKEK HAR TYPE*/}
+          </span>
           <span className="nav_2ndtitle">{getSecondary(meta)}</span>
         </div>
         {visKode && (

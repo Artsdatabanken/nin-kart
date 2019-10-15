@@ -15,7 +15,11 @@ const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
   const r = underordnet.map((item, i) => {
     let tittel = språk(item.tittel);
     let sn = "";
-    if (språk(item.tittel) === "undefined") {
+    if (
+      språk(item.tittel) === "undefined" ||
+      item.tittel["sn"] === item.tittel ||
+      item.tittel["sn"] === tittel
+    ) {
       sn = "sn";
     }
     return (

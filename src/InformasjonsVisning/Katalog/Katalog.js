@@ -7,6 +7,7 @@ import Egenskaper from "./Klassifiseringer/Egenskaper";
 import KatalogBarneliste from "./KatalogBarneliste/KatalogBarneliste";
 import KatalogGradienter from "./KatalogGradienter/KatalogGradienter";
 import KatalogKilder from "./KatalogKilder/KatalogKilder";
+import Truetvurdering from "./Klassifiseringer/Truetvurdering";
 
 const KatalogFane = ({
   meta,
@@ -36,6 +37,7 @@ const KatalogFane = ({
         <div className="art_data_displayer">
           <Taksonomi meta={meta} onNavigate={onNavigate} />
           <Risikovurdering meta={meta} onNavigate={onNavigate} />
+          <Truetvurdering meta={meta} onNavigate={onNavigate} />
           <Egenskaper meta={meta} onNavigate={onNavigate} />
         </div>
 

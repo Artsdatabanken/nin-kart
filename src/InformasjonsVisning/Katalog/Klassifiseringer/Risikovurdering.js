@@ -3,7 +3,6 @@ import React from "react";
 const Risikovurdering = ({ meta, onNavigate }) => {
   if (!meta) return null;
   if (!meta.url.includes("Biota")) return null;
-
   if (!meta.risikovurdering && !meta.lenke) return null;
 
   return (
@@ -21,38 +20,6 @@ const Risikovurdering = ({ meta, onNavigate }) => {
       )}
       {meta.risikovurdering && (
         <>
-          {Object.keys(meta.risikovurdering.risikonivå).map(key => {
-            let level = meta.risikovurdering.risikonivå[key];
-            return (
-              <>
-                <h4>
-                  Fremmedartsvurdering {key}, {level}{" "}
-                </h4>
-                <ul className="risiko_kategori">
-                  <hr />
-                  <li className={level === 5 ? "activ SE" : "SE"}>
-                    <b>SE</b> <span>Svært høy risiko</span>
-                  </li>
-                  <li className={level === 4 ? "activ HI" : "HI"}>
-                    <b>HI</b> <span>Høy risiko</span>
-                  </li>
-                  <li className={level === 3 ? "activ PH" : "PH"}>
-                    <b>PH</b> <span>Potensielt høy risiko</span>
-                  </li>
-                  <li className={level === 2 ? "activ LO" : "LO"}>
-                    <b>LO</b> <span>Lav risiko</span>
-                  </li>
-                  <li className={level === 1 ? "activ NK" : "NK"}>
-                    <b>NK</b> <span>Ingen kjent risiko</span>
-                  </li>
-                  <li className={level === 0 ? "activ NR" : "NR"}>
-                    <b>NR</b> <span>Ikke risikovurdert</span>
-                  </li>
-                </ul>
-              </>
-            );
-          })}
-
           {meta.risikovurdering.risikonivå.nå && (
             <span>
               Risikonivå: {meta.risikovurdering.risikonivå.nå}

@@ -11,7 +11,7 @@ const Egenskaper = ({ meta, onNavigate }) => {
         return (
           <div
             className="taxonomy_item cap"
-            key={value.kode}
+            key={meta.egenskap.reproduksjon[value] + value}
             onClick={e => {
               onNavigate(value.url);
             }}

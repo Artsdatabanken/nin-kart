@@ -7,7 +7,6 @@ export default function metaSjekk(meta, parent) {
   }
   if (meta.se) return meta;
   meta.prefiks = meta.kode.replace("NN-", "").substring(0, 2);
-
   if (!meta.kart) meta.kart = {};
   if (!meta.kart.format) meta.kart.format = {};
   if (!meta.kart.aktivtFormat)
@@ -20,10 +19,8 @@ export default function metaSjekk(meta, parent) {
     gradient.filterMin = intervall[0];
     gradient.filterMax = intervall[1];
   }
-
   meta.erSynlig = true;
   meta.depth = 3;
-  meta.barn.forEach(barn => (barn.nivå = meta.nivå));
   if (meta.kode.substring(0, 2) === "LA") {
     if (!parent.state.aktiveLag.bakgrunnskart.terreng.wasAutoEnabled) {
       parent.handleUpdateLayerProp("bakgrunnskart.terreng", "erSynlig", true);

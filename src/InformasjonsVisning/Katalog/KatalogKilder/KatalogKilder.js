@@ -30,8 +30,7 @@ const KatalogKilder = ({ onNavigate, meta, ...props }) => {
               <KeyboardArrowRight />
             </button>
             <br />
-            Lisens: <br />
-            {datakilde.lisenskode}
+            Lisens: {datakilde.lisenskode}
             <br />
             Geonorgeurl:
             <br />
