@@ -1,32 +1,37 @@
 import React from "react";
 
-function rl_item(kategori) {
+function rl_item(level) {
   return (
-    <div class="categorybar">
-      Kategori: {kategori}
-      <br />
-      <div>
-        <p>RE</p>
-      </div>
-      <div>
-        <p>CR</p>
-      </div>
-      <div>
-        <p>EN</p>
-      </div>
-      <div>
-        <p>VU</p>
-      </div>
-      <div>
-        <p>NT</p>
-      </div>
-      <div>
-        <p>DD</p>
-      </div>
-      <div>
-        <p>LC</p>
-      </div>
-    </div>
+    <ul className="risiko_kategori">
+      <hr />
+      <li className={level === "RE" ? "activ RE" : "RE"}>
+        <b>RE</b> <span>Regionalt utdødd</span>
+      </li>
+      <li className={level === "CR" ? "activ CR" : "CR"}>
+        <b>CR</b> <span>Kritisk truet</span>
+      </li>
+      <li className={level === "EN" ? "activ EN" : "EN"}>
+        <b>EN</b> <span>Sterkt truet</span>
+      </li>
+      <li className={level === "VU" ? "activ VU" : "VU"}>
+        <b>VU</b> <span>Sårbar</span>
+      </li>
+      <li className={level === "NT" ? "activ NT" : "NT"}>
+        <b>NT</b> <span>Nær truet</span>
+      </li>
+      <li className={level === "DD" ? "activ DD" : "D"}>
+        <b>DD</b> <span>Datamangel</span>
+      </li>
+      <li className={level === "LC" ? "activ LC" : "LC"}>
+        <b>LC</b> <span>Livskraftig</span>
+      </li>
+      <li className={level === "NA" ? "activ NA" : "NA"}>
+        <b>NA</b> <span>Ikke egnet</span>
+      </li>
+      <li className={level === "NE" ? "activ NE" : "NE"}>
+        <b>NE</b> <span>Ikke vurdert</span>
+      </li>
+    </ul>
   );
 }
 
@@ -35,7 +40,6 @@ const Truetvurdering = ({ meta, onNavigate }) => {
   if (!meta.url.includes("Biota")) return null;
   if (!meta.truetvurdering) return null;
   if (!meta.truetvurdering.norge) return null;
-  console.log(meta.truetvurdering.norge);
   let rl_norge = meta.truetvurdering.norge;
 
   return (
@@ -68,6 +72,8 @@ const Truetvurdering = ({ meta, onNavigate }) => {
                         <b>{item}:</b> {value}
                       </p>
                     );
+                  } else {
+                    return null;
                   }
                 })}
 

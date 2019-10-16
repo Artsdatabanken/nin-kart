@@ -59,12 +59,15 @@
   padding: 5px;
   padding-top: 10px;
   box-sizing: border-box;
+  color: white;
+  background: black;
 }
 
 .risiko_kategori li.activ b {
   margin-top: -9px;
   padding-top: 6px;
   border: 4px solid #4b909e;
+  border-radius: 2px;
 }
 
 .risiko_kategori li span {
@@ -89,27 +92,58 @@
   flex-wrap: wrap;
 }
 
-.SE b {
-  background: #5e3063;
-  color: white;
+.risiko_kategori .SE b {
+  background: $SE;
 }
-.HI b {
-  background: #1b386f;
-  color: white;
+.risiko_kategori .HI b {
+  background: $HI;
 }
-.PH b {
-  background: #185a6c;
-  color: white;
+.risiko_kategori .PH b {
+  background: $PH;
 }
-.LO b {
-  background: #5ea4a1;
-  color: white;
+.risiko_kategori .LO b {
+  background: $LO;
 }
-.NK b {
-  background: #9ba963;
-  color: white;
+.risiko_kategori .NK b {
+  background: $NK;
 }
-.NR b {
-  background: #e2e4e9;
+.risiko_kategori .NR b {
+  background: $NR;
   color: black;
+}
+
+.risiko_kategori .RE b {
+  background: $RE;
+}
+
+.risiko_kategori .CR b {
+  background: $CR;
+}
+
+.risiko_kategori .EN b {
+  background: $EN;
+}
+
+.risiko_kategori .VU b {
+  background: $VU;
+}
+
+.risiko_kategori .NT b {
+  background: $NT;
+}
+
+.risiko_kategori .DD b {
+  background: $DD;
+}
+
+.risiko_kategori .LC b {
+  background: $LC;
+}
+
+.risiko_kategori .NA b {
+  background: $NA;
+}
+
+.risiko_kategori .NE b {
+  background: $NE;
 }

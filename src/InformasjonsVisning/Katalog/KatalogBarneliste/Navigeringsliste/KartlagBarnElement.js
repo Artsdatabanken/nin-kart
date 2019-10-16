@@ -31,14 +31,7 @@ class KartlagBarnElement extends React.Component {
     }
     if (new_url.includes("Biota")) {
       new_url = new_url.replace("foto_408.jpg", "phylopic_560.png");
-      var img = new Image();
-      img.src = new_url;
-      if (img.height === 0) {
-        borderSize = "70px solid transparent";
-        new_url = new_url.replace("phylopic_560.png", "phylopic_48.png");
-      } else {
-        borderSize = "30px solid transparent";
-      }
+      borderSize = "30px solid transparent";
       backgroundSize = "contain";
     }
 
