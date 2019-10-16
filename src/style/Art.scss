@@ -1,11 +1,19 @@
 @import "./GraphicProfile.scss";
 
+.species_sections,
 .taxonomy_section {
   max-width: 400px;
   text-align: left;
   vertical-align: top;
   top: 0px;
   padding-right: 15px;
+  display: inline-block;
+}
+
+.species_sections {
+  max-width: 100%;
+  display: inline-block;
+  flex: 1;
 }
 
 .taxonomy_item {
