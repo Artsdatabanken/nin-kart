@@ -65,14 +65,11 @@ const KatalogHeader = ({ meta }) => {
           )}
 
           <NatursystemAdvarsel vis={meta.kart.sladd} />
-
-          <div className="katlog_header_container">
-            <KatalogHeaderImage meta={meta} />
-            <KatalogInformasjon
-              meta={meta}
-              onUpdateLayerProp={onUpdateLayerProp}
-            />
-          </div>
+          <KatalogHeaderImage meta={meta} />
+          <KatalogInformasjon
+            meta={meta}
+            onUpdateLayerProp={onUpdateLayerProp}
+          />
         </div>
       )}
     </SettingsContext.Consumer>

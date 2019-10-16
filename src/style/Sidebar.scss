@@ -185,32 +185,21 @@
 .sidebar_code_field {
   white-space: none;
 }
-
-.katlog_header_container {
-  text-align: left;
-  background: $brightest-nin;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .katlog_header_text_container {
   display: inline-block;
   text-align: left;
 }
 
 .sidebar_top_image {
-  flex: none;
   vertical-align: top;
   height: 200px;
   width: 200px;
   margin: 5px;
   border-radius: 15px;
   display: inline-block;
-  background: $bright-nin;
   background-size: cover;
   background-position: center;
+  display: inline-block;
 }
 
 @media only screen and (max-width: 768px) {

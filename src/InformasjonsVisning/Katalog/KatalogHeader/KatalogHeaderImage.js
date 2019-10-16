@@ -31,9 +31,15 @@ const KatalogHeaderImage = ({ meta }) => {
   }
 
   if (url.includes("Biota") && new_url === "no_image") {
-    new_url = "https://data.artsdatabanken.no/" + url + "/phylopic_48.png";
-    backgroundRepeat = "repeat";
-    backgroundSize = "30px";
+    new_url = "https://data.artsdatabanken.no/" + url + "/foto_408.jpg";
+    backgroundSize = "cover";
+    var image = new Image();
+    image.src = new_url;
+    if (image.height === 0) {
+      new_url = "https://data.artsdatabanken.no/" + url + "/phylopic_48.png";
+      backgroundRepeat = "repeat";
+      backgroundSize = "30px";
+    }
   }
 
   return (
