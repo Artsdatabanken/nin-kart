@@ -59,8 +59,8 @@ const KatalogHeader = ({ meta }) => {
               </span>
               <span style={{ fontStyle: italicstitle && "italic" }}>
                 {vitNavn}
-                {autoritet && " " + autoritet}
               </span>
+              {autoritet && " " + autoritet}
             </h1>
           )}
 

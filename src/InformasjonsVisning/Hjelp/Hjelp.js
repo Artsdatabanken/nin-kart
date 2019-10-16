@@ -11,9 +11,10 @@ const Hjelp = ({ aktivTab }) => (
         <h1>Informasjon om og hjelp til NiN-Kart</h1>
         <p>
           <b>
-            Vi jobber kontinuelig med å legge til ny - og forbedre
-            funksjonaliteten. Ikke alt er på plass ennå, og mye er ennå under
-            produksjon. Ta likevel gjerne kontakt om det skulle være noe.
+            Vi jobber kontinuelig med å legge til ny funksjonalitet og forbedre
+            den eksisterende. Ikke alt er på plass ennå, og mye er foreløpig
+            under produksjon. Ta likevel gjerne kontakt om du har
+            tilbakemeldinger.
           </b>
         </p>
 
@@ -43,15 +44,16 @@ const Hjelp = ({ aktivTab }) => (
         <h2>Hvordan navigere?</h2>
         <h3>Søkefeltet</h3>
         <p>
-          Hvis du vet hva du vil se på, anbefaler vi å bruke søkefeltet. Her kan
-          du skive inn og få forslag basert på eksisterende undersider i Natur i
-          Norge-systemet.
+          Søkefeltet er en effektiv måte å lete etter konkrete arter, områder
+          eller naturtyper på. Her kan du taste inn et navn på en art, et område
+          eller en naturtype og få forslag basert på undersider som finnes i
+          Natur i Norge-systemet.
         </p>
         <h3>Finn en lokalitet</h3>
         <p>
-          For å finne all informasjon kartet inneholder på et bestemt sted er
-          det best å navigere i selve kartet. Her kan du velge å zoome inn og ut
-          enten ved hjelp av pluss og minusknappene, bruke fingrene på mobil
+          For å finne all informasjon som kartet inneholder på et bestemt sted
+          er det best å navigere i selve kartet. Her kan du zoome inn og ut
+          enten ved hjelp av pluss- og minusknappene, bruke fingrene på mobil
           eller scrollbar på desktop-løsninger. Om du trykker på kartet setter
           du en markør på stedet du trykte på, og du vil få opp mer informasjon
           om denne plassen. Ønsker du å se samlet informasjon om et område, er
