@@ -11,8 +11,6 @@ const KatalogInformasjon = ({ meta }) => {
   */
   if (!meta) return null;
   const {
-    //kode,
-    //depth,
     prefiks,
     infoUrl,
     overordnet,
@@ -23,12 +21,8 @@ const KatalogInformasjon = ({ meta }) => {
   const mor = (overordnet.length > 0 && overordnet[0]) || { tittel: {} };
 
   return (
-    <>
-      {/*kode === "NN-LA-TI" && (
-        <Detaljeringsgrad onUpdateLayerProp={onUpdateLayerProp} value={depth} />
-      )*/}
+    <div className="katlog_header_text_container">
       <KatalogInformasjonsBoks meta={meta} />
-
       {prefiks !== "AO" && !!stats && (
         <KatalogStatistikk
           prefiks={prefiks}
@@ -42,7 +36,7 @@ const KatalogInformasjon = ({ meta }) => {
           geometrierVindu={antallNaturomrader}
         />
       )}
-    </>
+    </div>
   );
 };
 export default KatalogInformasjon;

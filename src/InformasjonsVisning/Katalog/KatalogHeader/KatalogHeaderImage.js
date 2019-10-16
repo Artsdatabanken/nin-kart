@@ -8,6 +8,8 @@ const KatalogHeaderImage = ({ meta }) => {
   */
   let new_url = "no_image";
   let new_flagg = "no_flagg";
+  let backgroundRepeat = "no-repeat";
+  let backgroundSize = "auto";
 
   if (bilde.foto != null) {
     new_url = bilde.foto.url;
@@ -28,15 +30,24 @@ const KatalogHeaderImage = ({ meta }) => {
     new_url = "https://data.artsdatabanken.no/" + url + "/logo_408.png";
   }
 
+  if (url.includes("Biota") && new_url === "no_image") {
+    new_url = "https://data.artsdatabanken.no/" + url + "/phylopic_48.png";
+    backgroundRepeat = "repeat";
+    backgroundSize = "30px";
+  }
+
   return (
     <>
       <div
         className={classes}
         style={
           (new_url !== "no_image" && {
+            backgroundSize: backgroundSize,
             backgroundImage: "url(" + new_url + ")",
-            backgroundRepeat: "no-repeat"
-          }) || { height: 0 }
+            backgroundRepeat: backgroundRepeat
+          }) || {
+            height: 0
+          }
         }
         alt=""
       />

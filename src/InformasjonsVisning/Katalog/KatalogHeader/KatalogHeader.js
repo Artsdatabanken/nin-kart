@@ -66,14 +66,12 @@ const KatalogHeader = ({ meta }) => {
 
           <NatursystemAdvarsel vis={meta.kart.sladd} />
 
-          <div className="katlog_header_images_container">
+          <div className="katlog_header_container">
             <KatalogHeaderImage meta={meta} />
-            <div className="katlog_header_text_container">
-              <KatalogInformasjon
-                meta={meta}
-                onUpdateLayerProp={onUpdateLayerProp}
-              />
-            </div>
+            <KatalogInformasjon
+              meta={meta}
+              onUpdateLayerProp={onUpdateLayerProp}
+            />
           </div>
         </div>
       )}

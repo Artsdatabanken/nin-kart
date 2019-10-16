@@ -2,59 +2,60 @@ import React from "react";
 import Link from "@material-ui/icons/Link";
 import språk from "Funksjoner/språk";
 
+function beskrivelseTolkning(beskrivelse, meta) {
+  let listebeskrivelse = null;
+  if (meta.kode.includes("AR-")) {
+    if (beskrivelse.includes(meta.tittel.sn)) {
+      beskrivelse = beskrivelse.split(meta.tittel.sn);
+      listebeskrivelse = true;
+    }
+  }
+  if (beskrivelse) {
+    return (
+      <p>
+        {listebeskrivelse
+          ? beskrivelse.map((key, index) => {
+              if (index !== beskrivelse.length - 1) {
+                return (
+                  <>
+                    {key}
+                    <i>{meta.tittel.sn}</i>
+                  </>
+                );
+              }
+              return <>{key}</>;
+            })
+          : beskrivelse}
+      </p>
+    );
+  } else {
+    return null;
+  }
+}
+
 const KatalogInformasjonsBoks = ({ meta }) => {
-  /*
-  
-  Currently only availiable for Landskap/Typeinndeling
-  
-  */
-  let showUrl,
-    vitNavn,
-    førsteDelen,
-    sisteDelen = "";
-  let { beskrivelse, infoUrl } = meta;
-  if (infoUrl) {
-    showUrl = infoUrl.substring(0, 32) + "...";
+  let showUrl;
+  if (meta.infoUrl) {
+    showUrl = meta.infoUrl.substring(0, 32) + "...";
   }
+  let beskrivelse = beskrivelseTolkning(språk(meta.beskrivelse), meta);
 
-  if (språk(beskrivelse) && språk(beskrivelse).includes(meta.tittel.sn)) {
-    vitNavn = språk(beskrivelse).substring(
-      språk(beskrivelse).indexOf(meta.tittel.sn),
-      meta.tittel.sn.length + språk(beskrivelse).indexOf(meta.tittel.sn)
+  if (beskrivelse || meta.infourl) {
+    return (
+      <>
+        {beskrivelse}
+        <p>
+          {meta.infoUrl && (
+            <a href={meta.infoUrl}>
+              <Link /> {showUrl}
+            </a>
+          )}
+        </p>
+      </>
     );
-    førsteDelen = språk(beskrivelse).substring(
-      0,
-      språk(beskrivelse).indexOf(vitNavn)
-    );
-    sisteDelen = språk(beskrivelse).substring(
-      språk(beskrivelse).indexOf(vitNavn) + vitNavn.length
-    );
+  } else {
+    return null;
   }
-
-  return (
-    <>
-      {språk(beskrivelse) && (
-        <div className="sidebar_description">
-          <p>
-            {vitNavn !== "" && (
-              <span>
-                {førsteDelen}
-                <i>{vitNavn}</i>
-                {sisteDelen}
-              </span>
-            )}
-            {vitNavn === "" && <span>{språk(beskrivelse)}</span>}
-            <br />
-            {infoUrl && (
-              <a href={infoUrl}>
-                <Link /> {showUrl}
-              </a>
-            )}
-          </p>
-        </div>
-      )}
-    </>
-  );
 };
 
 export default KatalogInformasjonsBoks;
