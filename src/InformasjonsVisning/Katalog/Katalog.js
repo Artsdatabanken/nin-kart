@@ -36,9 +36,9 @@ const KatalogFane = ({
         />
         <div className="art_data_displayer">
           <Taksonomi meta={meta} onNavigate={onNavigate} />
+          <Egenskaper meta={meta} onNavigate={onNavigate} />
           <Risikovurdering meta={meta} onNavigate={onNavigate} />
           <Truetvurdering meta={meta} onNavigate={onNavigate} />
-          <Egenskaper meta={meta} onNavigate={onNavigate} />
         </div>
 
         <KatalogGradienter

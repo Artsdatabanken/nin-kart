@@ -53,9 +53,7 @@ const Truetvurdering = ({ meta, onNavigate }) => {
 
           return (
             <>
-              <h3>{items.år}</h3>
-
-              {Object.keys(items)
+              {/*Object.keys(items)
                 .reverse()
                 .map(item => {
                   let value = items[item];
@@ -75,9 +73,14 @@ const Truetvurdering = ({ meta, onNavigate }) => {
                   } else {
                     return null;
                   }
-                })}
+                })*/}
 
-              {items.kategori && rl_item(items.kategori)}
+              {items.kategori && (
+                <>
+                  <h3>{items.år}</h3>
+                  {rl_item(items.kategori)}
+                </>
+              )}
             </>
           );
         })}
