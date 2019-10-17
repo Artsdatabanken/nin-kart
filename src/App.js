@@ -385,15 +385,17 @@ class App extends React.Component {
     if (path !== prevProps.location.pathname) {
       fetchMeta(path, this);
     }
+    let tittel = "NiN-kart";
     if (this.state.meta && språk(this.state.meta.tittel) !== "undefined") {
-      document.title =
-        (this.state.meta && språk(this.state.meta.tittel) + " | NiN-kart") ||
-        "NiN-kart";
-    } else {
-      document.title =
-        (this.state.meta && språk(this.state.meta.tittel.sn) + " | NiN-kart") ||
-        "NiN-kart";
+      tittel = språk(this.state.meta.tittel) + " | " + tittel;
+    } else if (
+      this.state.meta &&
+      this.state.meta.tittel.sn &&
+      this.state.meta.tittel.sn !== "undefined"
+    ) {
+      tittel = this.state.meta.tittel.sn + " | " + tittel;
     }
+    document.title = tittel;
   }
 
   async downloadMeta(url) {
