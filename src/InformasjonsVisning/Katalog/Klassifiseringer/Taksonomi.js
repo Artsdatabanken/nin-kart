@@ -10,10 +10,11 @@ const Taksonomi = ({ meta, onNavigate }) => {
       <h3>Taksonomi</h3>
       {overordnet.map(value => {
         return (
-          <div
+          <button
             className="taxonomy_item"
             key={value.kode}
             onClick={e => {
+              console.log("ffs");
               onNavigate(value.url);
             }}
           >
@@ -31,7 +32,7 @@ const Taksonomi = ({ meta, onNavigate }) => {
             >
               {språk(value.tittel)} ({value.kode})
             </span>
-          </div>
+          </button>
         );
       })}
     </div>

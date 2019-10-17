@@ -10,16 +10,21 @@ const Egenskaper = ({ meta, onNavigate }) => {
       {Object.keys(meta.egenskap.reproduksjon).map(value => {
         return (
           <div
-            className="taxonomy_item cap"
+            className="taxonomy_item"
             key={meta.egenskap.reproduksjon[value] + value}
             onClick={e => {
               onNavigate(value.url);
             }}
           >
-            {value}:{" "}
-            {meta.egenskap.reproduksjon[value] === true
-              ? "Ja"
-              : meta.egenskap.reproduksjon[value]}
+            {meta.egenskap.reproduksjon[value] === true ? (
+              <>{"Arten har " + value + " reproduksjon"} </>
+            ) : (
+              <>
+                <span className="cap">{value}: </span>
+                {meta.egenskap.reproduksjon[value]}
+                {value === "generasjonstid" && " år"}
+              </>
+            )}
           </div>
         );
       })}

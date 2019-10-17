@@ -12,7 +12,7 @@ const Risikovurdering = ({ meta, onNavigate }) => {
 
       {meta.lenke && meta.lenke.fab && (
         <>
-          Fremmedartsbase:
+          Fremmedartslista:
           <br />
           <a href={meta.lenke.fab} target="_blank" rel="noopener noreferrer">
             {meta.lenke.fab.substring(0, 32) + "..."}

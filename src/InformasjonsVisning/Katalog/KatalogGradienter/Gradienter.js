@@ -25,7 +25,7 @@ const Gradienter = ({ gradient, onNavigate, title }) => {
                   className="badge"
                   key={item.tittel.nb + index}
                   style={{ opacity: aktiv ? "1" : "0.2" }}
-                  onClick={() => {
+                  onClick={e => {
                     onNavigate(item.url);
                   }}
                 >
