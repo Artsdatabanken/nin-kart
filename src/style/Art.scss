@@ -39,20 +39,30 @@
   position: relative;
   padding-top: 10px;
   justify-content: space-between;
-  padding-right: 20px;
-}
-
-.risiko_kategori hr {
-  position: absolute;
-  top: 15px;
-  width: calc(100% - 50px);
-  left: 15px;
 }
 
 .risiko_kategori li {
   z-index: 10;
   flex: 1;
-  max-width: 60px;
+  text-align: center;
+  position: relative;
+}
+
+.risiko_kategori hr {
+  position: absolute;
+  z-index: -1;
+  top: 9px;
+  width: 100%;
+}
+
+.risiko_kategori li:first-child hr {
+  left: 50%;
+  width: 50%;
+}
+
+.risiko_kategori li:last-child hr {
+  right: 50%;
+  width: 50%;
 }
 
 .risiko_kategori li b {
@@ -60,24 +70,25 @@
   height: 40px;
   width: 40px;
   margin: 15px;
-  margin-top: -35px;
+  margin-top: -6px;
   border-radius: 50%;
-  text-align: center;
   padding: 5px;
-  padding-top: 10px;
+  padding-top: 9px;
   box-sizing: border-box;
   color: white;
   background: black;
+  font-size: 14pt;
 }
 
 .risiko_kategori li.activ b {
-  margin-top: -9px;
+  margin-top: -7px;
   padding-top: 6px;
   border: 4px solid #4b909e;
   border-radius: 2px;
 }
 
 .risiko_kategori li span {
+  max-width: 60px;
   overflow-wrap: break-word;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
@@ -86,7 +97,8 @@
   padding-top: 0px;
   font-size: 8pt;
   text-align: center;
-  display: inline-block;
+  display: block;
+  margin: auto;
 }
 
 .risiko_kategori li.activ span {

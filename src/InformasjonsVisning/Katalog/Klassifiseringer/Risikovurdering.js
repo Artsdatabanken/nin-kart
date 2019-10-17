@@ -29,23 +29,28 @@ const Risikovurdering = ({ meta, onNavigate }) => {
                   Fremmedartsvurdering {key}, {level}{" "}
                 </h4>
                 <ul className="risiko_kategori">
-                  <hr />
                   <li className={level === 5 ? "activ SE" : "SE"}>
+                    <hr />
                     <b>SE</b> <span>Svært høy risiko</span>
                   </li>
                   <li className={level === 4 ? "activ HI" : "HI"}>
+                    <hr />
                     <b>HI</b> <span>Høy risiko</span>
                   </li>
                   <li className={level === 3 ? "activ PH" : "PH"}>
+                    <hr />
                     <b>PH</b> <span>Potensielt høy risiko</span>
                   </li>
                   <li className={level === 2 ? "activ LO" : "LO"}>
+                    <hr />
                     <b>LO</b> <span>Lav risiko</span>
                   </li>
                   <li className={level === 1 ? "activ NK" : "NK"}>
+                    <hr />
                     <b>NK</b> <span>Ingen kjent risiko</span>
                   </li>
                   <li className={level === 0 ? "activ NR" : "NR"}>
+                    <hr />
                     <b>NR</b> <span>Ikke risikovurdert</span>
                   </li>
                 </ul>
