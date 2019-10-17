@@ -21,6 +21,8 @@
   padding: 5px;
   background: transparent;
   font-size: inherit;
+  width: 100%;
+  text-align: left;
 }
 
 .specieslink {
@@ -111,7 +113,7 @@
   flex-wrap: wrap;
 }
 
-@media only screen and (max-width: 1146px) {
+@media only screen and (max-width: 1260px) {
   .taxonomy_section,
   .species_sections {
     width: 100%;
@@ -121,15 +123,40 @@
   .risiko_kategori hr {
     width: 100%;
   }
+
+  .risiko_kategori li b {
+    height: 30px;
+    width: 30px;
+    margin: 4px;
+    margin-top: -6px;
+    padding-top: 7px;
+    font-size: 10pt;
+  }
+
+  .risiko_kategori hr {
+    top: 4px;
+  }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 0px) and (max-width: 560px),
+  (min-width: 768px) and (max-width: 960px) {
+  .risiko_kategori li:first-child hr,
   .risiko_kategori hr {
+    display: block;
+    border: 0px;
+    border-left: 2px solid black;
+    flex: none;
+    height: 100%;
+    left: 18px;
+    top: 15px;
+  }
+  .risiko_kategori li:last-child hr {
     display: none;
   }
 
   .risiko_kategori {
     flex-direction: column;
+    padding-left: 30%;
   }
 
   .risiko_kategori li {
@@ -144,6 +171,13 @@
   }
   .risiko_kategori li {
     max-width: 100%;
+  }
+
+  .risiko_kategori li span {
+    max-width: 100%;
+    font-size: 12pt;
+    text-align: left;
+    margin: 5px;
   }
 }
 
