@@ -9,23 +9,23 @@ const Gradienter = ({ gradient, onNavigate, title }) => {
     <>
       <h1>{title}</h1>
 
-      {Object.entries(gradient).map(([kode, gr]) => {
+      {Object.entries(gradient).map(([kode], index) => {
         let item = gradient[kode];
         let gradientelement = item.trinn;
-        return (
-          <div className="badge_container">
-            <h2>{item.tittel.nb}</h2>
 
-            {gradientelement.map(item => {
+        return (
+          <div key={index} className="badge_container">
+            <h2>{item.tittel.nb}</h2>
+            {gradientelement.map((item, index) => {
               let aktiv = item["på"];
               let img_url =
                 "https://data.artsdatabanken.no/" + item.url + "/foto_408.jpg";
               return (
                 <button
                   className="badge"
-                  key={item.tittel.nb}
+                  key={item.tittel.nb + index}
                   style={{ opacity: aktiv ? "1" : "0.2" }}
-                  onClick={() => {
+                  onClick={e => {
                     onNavigate(item.url);
                   }}
                 >

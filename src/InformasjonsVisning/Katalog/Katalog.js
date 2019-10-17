@@ -1,9 +1,13 @@
 import React from "react";
 import { Snackbar } from "@material-ui/core";
 import KatalogHeader from "./KatalogHeader/KatalogHeader";
+import Taksonomi from "./Klassifiseringer/Taksonomi";
+import Risikovurdering from "./Klassifiseringer/Risikovurdering";
+import Egenskaper from "./Klassifiseringer/Egenskaper";
 import KatalogBarneliste from "./KatalogBarneliste/KatalogBarneliste";
 import KatalogGradienter from "./KatalogGradienter/KatalogGradienter";
 import KatalogKilder from "./KatalogKilder/KatalogKilder";
+import Truetvurdering from "./Klassifiseringer/Truetvurdering";
 
 const KatalogFane = ({
   meta,
@@ -21,10 +25,7 @@ const KatalogFane = ({
   onToggleLayer,
   kurve
 }) => {
-  /*  */
   if (!meta) return null;
-  //console.log(meta.tittel.nb)
-
   return (
     <>
       <div className="main_body_wrapper">
@@ -33,6 +34,13 @@ const KatalogFane = ({
           onFitBounds={onFitBounds}
           onUpdateLayerProp={onUpdateLayerProp}
         />
+        <div className="art_data_displayer">
+          <Taksonomi meta={meta} onNavigate={onNavigate} />
+          <Egenskaper meta={meta} onNavigate={onNavigate} />
+          <Risikovurdering meta={meta} onNavigate={onNavigate} />
+          <Truetvurdering meta={meta} onNavigate={onNavigate} />
+        </div>
+
         <KatalogGradienter
           meta={meta}
           onNavigate={onNavigate}
@@ -40,6 +48,7 @@ const KatalogFane = ({
           onMouseLeave={onMouseLeave}
           opplyst={opplyst}
         />
+
         <KatalogBarneliste
           meta={meta}
           onNavigate={onNavigate}
@@ -50,6 +59,7 @@ const KatalogFane = ({
           onMouseLeave={onMouseLeave}
           isDatakilde={meta.tittel.nb}
         />
+
         {has_error && (
           <Snackbar
             open={true}

@@ -115,6 +115,14 @@ button.active {
   display: block;
 }
 
+.italics {
+  font-style: italic;
+}
+
+.cap {
+  text-transform: capitalize;
+}
+
 /* BUTTON HEADERS */
 
 @keyframes fadein {
@@ -360,6 +368,13 @@ div {
 .liste_ikon {
   width: auto;
   height: 19px;
+}
+
+.external_icons {
+  height: auto;
+  max-height: 20px;
+  max-width: 20px;
+  text-align: center;
 }
 
 .spraakalternativer {

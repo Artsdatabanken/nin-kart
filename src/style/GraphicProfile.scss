@@ -20,15 +20,23 @@ $adb_bright_orange: #de8608;
 $adb_orange: #eb6109;
 
 /* Rødliste profil*/
-$RL1-color: rgb(90, 91, 93);
-$RL2-color: rgb(153, 0, 19);
-$RL3-color: rgb(216, 0, 36);
-$RL4-color: rgb(255, 76, 41);
-$RL5-color: rgb(243, 108, 33);
-$RL6-color: rgb(250, 166, 26);
-$RL7-color: rgb(96, 189, 177);
-$RL8-color: rgb(147, 149, 152);
-$RL9-color: rgb(206, 211, 212);
+$RE: rgb(90, 91, 93);
+$CR: rgb(153, 0, 19);
+$EN: rgb(216, 0, 36);
+$VU: rgb(255, 76, 41);
+$NT: rgb(243, 108, 33);
+$DD: rgb(250, 166, 26);
+$LC: rgb(96, 189, 177);
+$NA: rgb(147, 149, 152);
+$NE: rgb(206, 211, 212);
+
+/* Fremmedartsliste profil*/
+$SE: #5e3063;
+$HI: #1b386f;
+$PH: #185a6c;
+$LO: #5ea4a1;
+$NK: #9ba963;
+$NR: #e2e4e9;
 
 /* Active Elements */
 $active-border: 2px solid black !important;

@@ -131,7 +131,7 @@ class LeafletTangram extends React.Component {
         .addTo(this.map)
         .on("click", e => {
           if (this.map) {
-            console.log("legg inn funksjon her senere.");
+            console.warn("legg inn funksjon her senere.");
           }
         });
       this.getBackendData(coord[0], coord[1], this.marker._icon._leaflet_pos);
@@ -271,6 +271,8 @@ class LeafletTangram extends React.Component {
         {this.props.aktivTab === "kartlag" && (
           <button
             className="fullscreen map_button"
+            title="Fullskjermsvisning"
+            alt="Fullskjermsvisning"
             onClick={e => {
               this.props.handleFullscreen(!this.props.showFullscreen);
             }}
@@ -292,6 +294,8 @@ class LeafletTangram extends React.Component {
         {this.props.aktivTab === "kartlag" && (
           <button
             className="geolocate map_button"
+            alt="Geolokalisering"
+            title="Geolokalisering"
             onClick={() => {
               this.props.handleFullscreen(false);
               this.handleLocate();

@@ -55,7 +55,7 @@ const Utforsk = ({ parent, context }) => {
             alt=""
           />
         }
-        primary="Administrativ grense"
+        primary="Administrative grenser"
       />
 
       <Menyelement
@@ -64,7 +64,7 @@ const Utforsk = ({ parent, context }) => {
           onToggleHovedmeny();
         }}
         icon={<Naturvern />}
-        primary="Naturvernområde"
+        primary="Naturvernområder"
       />
 
       <Menyelement
@@ -73,7 +73,7 @@ const Utforsk = ({ parent, context }) => {
           onToggleHovedmeny();
         }}
         icon={<Pets />}
-        primary="Art"
+        primary="Arter"
       />
     </>
   );

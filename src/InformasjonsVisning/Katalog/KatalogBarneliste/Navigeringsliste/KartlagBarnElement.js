@@ -29,6 +29,11 @@ class KartlagBarnElement extends React.Component {
       backgroundSize = "contain";
       borderSize = "10px solid transparent";
     }
+    if (new_url.includes("Biota")) {
+      new_url = new_url.replace("foto_408.jpg", "phylopic_560.png");
+      borderSize = "30px solid transparent";
+      backgroundSize = "contain";
+    }
 
     var image = new Image();
     image.src = new_url;
@@ -42,22 +47,20 @@ class KartlagBarnElement extends React.Component {
         onMouseEnter={() => onMouseEnter && onMouseEnter({ kode, url })}
         onMouseLeave={() => onMouseLeave && onMouseLeave()}
       >
-        {imgheight === 0 ? (
-          <div className="subelement_decorative_image">
-            <span>{meta.kode}</span>
-          </div>
-        ) : (
-          <div
-            className="subelement_decorative_image"
-            style={{
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: backgroundSize,
-              backgroundImage: "url(" + new_url + ")",
-              border: borderSize
-            }}
-          />
+        {imgheight === 0 && (
+          <div className="subelement_decorative_box">{meta.kode}</div>
         )}
+        <div
+          className="subelement_decorative_image"
+          style={{
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: backgroundSize,
+            backgroundImage: "url(" + new_url + ")",
+            border: borderSize,
+            zIndex: "10"
+          }}
+        />
 
         <div className="subelement_text nav_text">
           <span className="nav_title">
