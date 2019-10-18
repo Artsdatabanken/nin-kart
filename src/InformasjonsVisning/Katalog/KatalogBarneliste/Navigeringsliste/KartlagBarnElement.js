@@ -34,10 +34,9 @@ class KartlagBarnElement extends React.Component {
       borderSize = "30px solid transparent";
       backgroundSize = "contain";
     }
-
-    var image = new Image();
+    let image = new Image();
     image.src = new_url;
-    let imgheight = image.height;
+    let imgheight = image.height || null;
 
     return (
       <button
@@ -47,9 +46,16 @@ class KartlagBarnElement extends React.Component {
         onMouseEnter={() => onMouseEnter && onMouseEnter({ kode, url })}
         onMouseLeave={() => onMouseLeave && onMouseLeave()}
       >
-        {imgheight === 0 && (
-          <div className="subelement_decorative_box">{meta.kode}</div>
-        )}
+        <div className="subelement_decorative_box">
+          <span
+            style={{
+              display: imgheight !== 0 && "none"
+            }}
+          >
+            {meta.kode}
+          </span>
+        </div>
+
         <div
           className="subelement_decorative_image"
           style={{
