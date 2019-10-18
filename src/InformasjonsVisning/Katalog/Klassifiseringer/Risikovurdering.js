@@ -3,11 +3,18 @@ import React from "react";
 const Risikovurdering = ({ meta, onNavigate }) => {
   if (!meta || meta === "undefined") return null;
   if (!meta.url.includes("Biota")) return null;
-  if (!meta.risikovurdering.risikonivå && !meta.lenke) return null;
+  if (!meta.risikovurdering && !meta.lenke) return null;
 
   let fablink = meta.lenke["fab"] || null;
   let fablink_shortened = fablink.substring(0, 32) + "...";
-  let risikonivå = meta.risikovurdering.risikonivå || null;
+  let risikonivå = null;
+  if (
+    meta.risikovurdering &&
+    meta.risikovurdering !== undefined &&
+    meta.risikovurdering.risikovurdering
+  ) {
+    risikonivå = meta.risikovurdering.risikonivå;
+  }
 
   return (
     <div className="taxonomy_section">
