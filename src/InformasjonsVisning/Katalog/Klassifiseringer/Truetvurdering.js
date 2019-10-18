@@ -61,31 +61,9 @@ const Truetvurdering = ({ meta, onNavigate }) => {
 
           return (
             <>
-              {/*Object.keys(items)
-                .reverse()
-                .map(item => {
-                  let value = items[item];
-                  if (
-                    item === "Kriteriedokumentasjon" ||
-                    item === "Kulturmark" ||
-                    item === "Kategori" ||
-                    item === "AndelNåværendeBestand" ||
-                    item === "AndelAvGlobalBestand" ||
-                    item === "AndelAvEuropeiskBestand"
-                  ) {
-                    return (
-                      <p>
-                        <b>{item}:</b> {value}
-                      </p>
-                    );
-                  } else {
-                    return null;
-                  }
-                })*/}
-
               {items.kategori && (
                 <>
-                  <h3>{items.år}</h3>
+                  <h3 key={nummer}>{items.år}</h3>
                   {rl_item(items.kategori)}
                 </>
               )}

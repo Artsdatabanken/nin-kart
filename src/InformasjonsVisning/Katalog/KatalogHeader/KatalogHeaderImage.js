@@ -30,16 +30,11 @@ const KatalogHeaderImage = ({ meta }) => {
     new_url = "https://data.artsdatabanken.no/" + url + "/logo_408.png";
   }
 
+  let speciesimg = "https://data.artsdatabanken.no/" + url + "/phylopic_48.png";
+
   if (url.includes("Biota") && new_url === "no_image") {
     new_url = "https://data.artsdatabanken.no/" + url + "/foto_408.jpg";
     backgroundSize = "cover";
-    var image = new Image();
-    image.src = new_url;
-    if (image.height === 0) {
-      new_url = "https://data.artsdatabanken.no/" + url + "/phylopic_48.png";
-      backgroundRepeat = "repeat";
-      backgroundSize = "30px";
-    }
   }
 
   return (
@@ -47,16 +42,30 @@ const KatalogHeaderImage = ({ meta }) => {
       <div
         className={classes}
         style={
-          (new_url !== "no_image" && {
-            backgroundSize: backgroundSize,
-            backgroundImage: "url(" + new_url + ")",
-            backgroundRepeat: backgroundRepeat
+          (speciesimg !== "no_image" && {
+            backgroundSize: "40px",
+            backgroundImage: "url(" + speciesimg + ")",
+            backgroundRepeat: "repeat"
           }) || {
             height: 0
           }
         }
         alt=""
-      />
+      >
+        <div
+          className={classes}
+          style={
+            (new_url !== "no_image" && {
+              backgroundSize: backgroundSize,
+              backgroundImage: "url(" + new_url + ")",
+              backgroundRepeat: backgroundRepeat
+            }) || {
+              height: 0
+            }
+          }
+          alt=""
+        />
+      </div>
 
       {false && (
         <div
