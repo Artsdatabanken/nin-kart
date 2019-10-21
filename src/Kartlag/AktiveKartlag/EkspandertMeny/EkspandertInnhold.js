@@ -5,7 +5,7 @@ import TemaMeny from "./Visualisering/TemaMeny/TemaMeny";
 import GradientEllerTypeinndelt from "./Visualisering/VisualiseringsType/GradientEllerTypeinndelt";
 import GradientFilter from "./Filtere/GradientFilter.js";
 import FargeVelger from "./FellesElementer/FargeVelger";
-import { Slider } from "@material-ui/lab";
+import { Slider } from "@material-ui/core";
 
 const EkspandertInnhold = ({
   kode,
