@@ -1,5 +1,5 @@
 import React from "react";
-import WikiMarkdown from "./WikiMarkdown";
+import WikiMarkdown from "../../GjenbruksElement/WikiMarkdown";
 
 const Hjelp = ({ aktivTab }) => (
   <>
