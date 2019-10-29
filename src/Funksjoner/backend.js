@@ -48,7 +48,9 @@ class Backend {
   /* SLUTT  */
 
   static async hentStedsnavn(lng, lat) {
-    return this.getPromise(`https://stedsnavn.artsdatabanken.no/${lng},${lat}`);
+    return this.getPromise(
+      `https://stedsnavn.artsdatabanken.no/v1/punkt?lng=${lng}&lat=${lat}`
+    );
   }
 
   static async hentKildedata(id) {
