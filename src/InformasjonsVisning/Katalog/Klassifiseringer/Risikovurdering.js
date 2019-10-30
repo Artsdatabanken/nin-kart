@@ -1,12 +1,12 @@
 import React from "react";
 
 const Risikovurdering = ({ meta, onNavigate }) => {
-  if (!meta || meta === "undefined") return null;
+  if (!meta) return null;
   if (!meta.url.includes("Biota")) return null;
-  if (!meta.risikovurdering && !meta.lenke) return null;
+  if (!meta.risikovurdering) return null;
 
-  let fablink = meta.lenke["fab"] || null;
-  let fablink_shortened = fablink.substring(0, 32) + "...";
+  let fablink = meta.lenke["fab"];
+  let fablink_shortened = fablink && fablink.substring(0, 32) + "...";
   let risikonivå = null;
   if (
     meta.risikovurdering &&
