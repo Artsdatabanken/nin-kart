@@ -1,7 +1,7 @@
 import React from "react";
 
-const NatursystemAdvarsel = ({ vis }) => {
-  if (!vis) return null;
+const NatursystemAdvarsel = ({ kode }) => {
+  if (kode.indexOf("NN-NA-TI") !== 0) return null;
   return (
     <div className="page_warning">
       <h2>Skjulte kartlag</h2>
