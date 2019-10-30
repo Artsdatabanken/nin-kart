@@ -19,7 +19,7 @@ class Backend {
   }
 
   static async søk(q) {
-    return this.getPromise(`https://lookup.artsdatabanken.no/${q}`);
+    return this.getPromise(`https://lookup.artsdatabanken.no/v1/query?q=${q}`);
   }
 
   static async hentStatistikk(kode, bounds) {
@@ -36,7 +36,9 @@ class Backend {
   }
 
   static async hentPunkt(lng, lat) {
-    return this.getPromise(`https://punkt.artsdatabanken.no/${lng},${lat}`);
+    return this.getPromise(
+      `https://punkt.artsdatabanken.no/v1/punkt?lng=${lng}&lat=${lat}`
+    );
   }
 
   /* DEN GAMLE INNTIL VIDERE */
@@ -48,7 +50,9 @@ class Backend {
   /* SLUTT  */
 
   static async hentStedsnavn(lng, lat) {
-    return this.getPromise(`https://stedsnavn.artsdatabanken.no/${lng},${lat}`);
+    return this.getPromise(
+      `https://stedsnavn.artsdatabanken.no/v1/punkt?lng=${lng}&lat=${lat}`
+    );
   }
 
   static async hentKildedata(id) {
