@@ -64,7 +64,7 @@ const KatalogHeader = ({ meta }) => {
             </h1>
           )}
 
-          <NatursystemAdvarsel vis={meta.kart.sladd} />
+          <NatursystemAdvarsel kode={meta.kode} />
           <KatalogHeaderImage meta={meta} />
           <KatalogInformasjon
             meta={meta}
