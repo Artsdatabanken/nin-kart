@@ -8,15 +8,16 @@ import backend from "../Funksjoner/backend";
 
 const TopBar = ({ onSelectResult, searchFor, forside, history }) => {
   const [hits, setHits] = useState([]);
-  const [query, setQuery] = useState();
+  const [query, setQuery] = useState(null);
   useEffect(() => {
     if (searchFor) setQuery(searchFor);
   }, [searchFor]);
 
+  console.log("query", query);
   useEffect(() => {
-    if (!query) return setHits([]);
     const fetchData = async () => {
-      const response = await backend.søk(query.replace(/\//g, "-"));
+      if (query === null) return setHits([]);
+      const response = await backend.søk((query || "").replace(/\//g, "-"));
       setHits(response.result);
     };
     fetchData();
@@ -54,8 +55,9 @@ const TopBar = ({ onSelectResult, searchFor, forside, history }) => {
 
           <div className="search_elements_container">
             <Searchbar
+              query={query}
               setHits={setHits}
-              onQueryChange={e => setQuery(e.target.value)}
+              onQueryChange={setQuery}
               hits={hits}
             />
 
