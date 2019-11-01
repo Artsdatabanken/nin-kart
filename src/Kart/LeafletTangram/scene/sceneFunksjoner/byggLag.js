@@ -23,7 +23,7 @@ export default function byggLag(lag, opplyst, config) {
     visBarn: lag.visBarn || !!lag.barn
   };
   drawArgs.barn = drawArgs.visBarn ? lag.barn || [] : [];
-  // console.log("har barn å vise", drawArgs.barn)
+  if (lag.palett) drawArgs.palett = lag.palett;
 
   if (drawArgs.barn.length <= 0) {
     drawArgs.barn = [

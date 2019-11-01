@@ -1,4 +1,7 @@
-import lagGradientrampe from "Funksjoner/palette/gradientrampe";
+import {
+  lagGradientRampe,
+  steps2Palette
+} from "Funksjoner/palette/gradientrampe";
 import drawSetup from "./fellesfunksjoner/drawSetup";
 import lagSource from "./fellesfunksjoner/lagSource";
 
@@ -16,25 +19,29 @@ function normaliserFilter(format) {
 }
 
 function lagStyle(format, drawArgs) {
-  const { opplystKode, barn, blendmode } = drawArgs;
+  const { opplystKode, barn, palett, blendmode } = drawArgs;
   let [filterMin, filterMax] = normaliserFilter(format);
   const visning = drawArgs.format.aktivVisning;
   let transparent_blendmode_handler = `vec4 transparent = vec4(1.,1.,1.,0.);`;
   if (blendmode === "multiply") {
     transparent_blendmode_handler = `vec4 transparent = vec4(1.);`;
   }
+  const palette = palett
+    ? steps2Palette(palett)
+    : lagGradientRampe(
+        barn,
+        opplystKode,
+        visning || "diskret",
+        blendmode,
+        drawArgs.opacity
+      );
+  console.log("palette", palette);
   const gradient = {
     base: "raster",
     blend: blendmode,
     shaders: {
       uniforms: {
-        palette: lagGradientrampe(
-          barn,
-          opplystKode,
-          visning || "diskret",
-          blendmode,
-          drawArgs.opacity
-        ),
+        palette: palette,
         min: filterMin || 0,
         max: filterMax || 1
       },
