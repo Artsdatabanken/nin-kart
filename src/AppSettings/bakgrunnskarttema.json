@@ -75,7 +75,7 @@
         "tittel": "Topografisk Norgeskart (Kartverket)",
         "zoom": [2, 20],
         "tint": "#fff",
-        "url": "https://bakgrunnskart.artsdatabanken.no/egk_topo4graatone/{z}/{x}/{y}"
+        "url": "https://bakgrunnskart.artsdatabanken.no/v1/egk_topo4graatone/{z}/{x}/{y}"
       },
       "google_satellite": {
         "kode": "bakgrunnskart",

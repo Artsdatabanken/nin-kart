@@ -2,33 +2,34 @@ import useStartTyping from "react-use/lib/useStartTyping";
 import classNames from "classnames";
 import Search from "@material-ui/icons/Search";
 import Close from "@material-ui/icons/Close";
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { withRouter } from "react-router-dom";
 
 const abc = (cl, isSearching) => classNames(cl, isSearching && "mobile_active");
 
 const Searchbar = ({ query, onQueryChange, hits, setHits }) => {
-  const [isSearching, setIsSearching] = useState(false);
+  const isSearching = query != null;
+  console.log("iss", query, isSearching, query);
   function close_dropdown() {
-    setIsSearching(false);
-    setHits([]);
+    onQueryChange(null);
   }
   const inputField = useRef(null);
   useStartTyping(() => {
-    setIsSearching(true);
     inputField.current.focus();
+    onQueryChange("");
   });
 
   return (
     <div className={abc("searchbar_container", isSearching)}>
-      {isSearching && (
-        <input
-          ref={inputField}
-          value={query}
-          placeholder={"Søk i Natur i Norge"}
-          onChange={onQueryChange}
-        />
-      )}
+      <input
+        ref={inputField}
+        value={query}
+        placeholder={"Søk i Natur i Norge"}
+        onChange={e => {
+          onQueryChange(e.target.value);
+          console.log(e.target.value);
+        }}
+      />
 
       {!isSearching && hits.length === 0 ? (
         <button
@@ -36,7 +37,8 @@ const Searchbar = ({ query, onQueryChange, hits, setHits }) => {
             // Logikk for at på mobil skal denne ikke kunne endres før
             // hits.length endrer seg. men på desktop skal den alltid kunne søke.
 
-            setIsSearching(true);
+            inputField.current.focus();
+            onQueryChange("");
 
             // AKTIVER SØK FrA SØKEFELTET om den ikke er aktivert
           }}
