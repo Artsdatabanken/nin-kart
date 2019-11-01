@@ -30,6 +30,7 @@ export default function byggLag(lag, opplyst, config) {
       {
         kode: lag.kode,
         farge: lag.farge,
+        erSynlig: lag.erSynlig,
         normalisertVerdi: lag.normalisertVerdi
         //          aktivtKart.intervall && aktivtKart.intervall.normalisertVerdi
       }
