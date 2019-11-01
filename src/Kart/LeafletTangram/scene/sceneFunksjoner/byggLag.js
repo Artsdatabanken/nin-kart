@@ -22,11 +22,21 @@ export default function byggLag(lag, opplyst, config) {
     depth: lag.depth, // TODO: flytt
     visBarn: lag.visBarn || !!lag.barn
   };
-  if (drawArgs.visBarn) {
-    drawArgs.barn = lag.barn;
-    drawArgs.opplystBarn = lag.barn.find(x => x.kode === opplyst.kode);
-    // console.log("har barn å vise", drawArgs.barn)
-  }
+  drawArgs.barn = drawArgs.visBarn ? lag.barn || [] : [];
+  // console.log("har barn å vise", drawArgs.barn)
+
+  const aktivtKart = drawArgs.format[drawArgs.aktivtFormat];
+  console.log("int", lag.kart.format);
+  if (drawArgs.barn.length <= 0)
+    drawArgs.barn = [
+      {
+        kode: lag.kode,
+        farge: lag.farge,
+        normalisertVerdi: lag.normalisertVerdi
+        //          aktivtKart.intervall && aktivtKart.intervall.normalisertVerdi
+      }
+    ];
+  drawArgs.opplystBarn = drawArgs.barn.find(x => x.kode === opplyst.kode);
   lagTegner(drawArgs, config);
   if (viz.kanHaTerreng) {
     lagTerreng(lag.terreng, opplyst.kode, config);
