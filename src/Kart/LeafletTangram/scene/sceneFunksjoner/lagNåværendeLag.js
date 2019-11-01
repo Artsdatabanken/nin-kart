@@ -10,6 +10,6 @@ function lagNåværendeLag(config, props) {
       // opplyst refererer til lag som lyser opp på hover
       byggLag(props.meta, props.opplyst, config);
   }
-  }
-  
-  export default lagNåværendeLag;
+}
+
+export default lagNåværendeLag;
