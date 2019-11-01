@@ -25,8 +25,6 @@ export default function byggLag(lag, opplyst, config) {
   drawArgs.barn = drawArgs.visBarn ? lag.barn || [] : [];
   // console.log("har barn å vise", drawArgs.barn)
 
-  const aktivtKart = drawArgs.format[drawArgs.aktivtFormat];
-  console.log("int", lag.kart.format);
   if (drawArgs.barn.length <= 0)
     drawArgs.barn = [
       {
