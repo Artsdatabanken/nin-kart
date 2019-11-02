@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CircularProgress } from "@material-ui/core";
-import lagGradientrampe from "Funksjoner/palette/gradientrampe";
+import { lagGradientRampe } from "Funksjoner/palette/gradientrampe";
 import makeUrl from "./KurveFunksjoner/makeUrl";
 
 const KurveContainer = ({ punkt, gradient, children }) => {
@@ -31,7 +31,7 @@ const KurveContainer = ({ punkt, gradient, children }) => {
         {stats.feil.melding}
       </div>
     );
-  const palette = lagGradientrampe(gradient.barn, null, "diskret");
+  const palette = lagGradientRampe(gradient.barn, null, "diskret");
 
   return React.cloneElement(children, {
     stats: stats,

@@ -22,11 +22,35 @@ export default function byggLag(lag, opplyst, config) {
     depth: lag.depth, // TODO: flytt
     visBarn: lag.visBarn || !!lag.barn
   };
-  if (drawArgs.visBarn) {
-    drawArgs.barn = lag.barn;
-    drawArgs.opplystBarn = lag.barn.find(x => x.kode === opplyst.kode);
-    // console.log("har barn å vise", drawArgs.barn)
+  drawArgs.barn = drawArgs.visBarn ? lag.barn || [] : [];
+  if (lag.palett) drawArgs.palett = lag.palett;
+
+  if (drawArgs.barn.length <= 0) {
+    drawArgs.barn = [
+      {
+        kode: lag.kode,
+        farge: lag.farge,
+        erSynlig: lag.erSynlig,
+        normalisertVerdi: lag.normalisertVerdi
+        //          aktivtKart.intervall && aktivtKart.intervall.normalisertVerdi
+      }
+    ];
+    const aktivtKart = drawArgs.format[drawArgs.aktivtFormat];
+    const nv =
+      lag.normalisertVerdi ||
+      (aktivtKart.intervall && aktivtKart.intervall.normalisertVerdi);
+    if (nv) {
+      drawArgs.barn[0].normalisertVerdi = [nv[0], nv[0]];
+      drawArgs.barn.push({
+        kode: lag.kode,
+        farge: lag.farge0,
+        erSynlig: lag.erSynlig,
+        normalisertVerdi: [nv[1], nv[1]]
+        //          aktivtKart.intervall && aktivtKart.intervall.normalisertVerdi
+      });
+    }
   }
+  drawArgs.opplystBarn = drawArgs.barn.find(x => x.kode === opplyst.kode);
   lagTegner(drawArgs, config);
   if (viz.kanHaTerreng) {
     lagTerreng(lag.terreng, opplyst.kode, config);

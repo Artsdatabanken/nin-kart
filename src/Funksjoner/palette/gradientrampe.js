@@ -2,9 +2,6 @@ import tinycolor from "tinycolor2";
 import colorArray2Image from "./colorArray2Image";
 
 function lagGradientRampe(barna, opplystKode, mode, blendmode, opacity) {
-  if (!barna)
-    return lagGradientRampeUtenBarn(opplystKode, mode, blendmode, opacity);
-  //let opplystLevel = -1;
   let steps = [];
   barna.forEach(b => {
     if (!b.farge) console.warn("Manger farge for " + b.kode);
@@ -20,6 +17,11 @@ function lagGradientRampe(barna, opplystKode, mode, blendmode, opacity) {
     steps.push({ level: max, color: farge });
   });
   steps = steps.sort((a, b) => a.level - b.level);
+  return steps2Palette(steps, blendmode, opacity);
+}
+
+function steps2Palette(steps, blendmode = "multiply", opacity = 100) {
+  console.log(steps);
   const cmap = buildGradient(steps);
   return colorArray2Image(cmap, blendmode, opacity);
 }
@@ -39,17 +41,4 @@ function buildGradient(steps, opplystLevel = -1) {
   return cmap;
 }
 
-function lagGradientRampeUtenBarn(opplyst, drawArgs, blendmode, opacity) {
-  const steps = [
-    { level: 0, color: "#fff0" },
-    { level: 1, color: "#def" },
-    { level: 64, color: "#bbb" },
-    { level: 128, color: "#fed" },
-    { level: 192, color: "#fff0" },
-    { level: 255, color: "#def" }
-  ];
-  const cmap = buildGradient(steps);
-  return colorArray2Image(cmap, blendmode, opacity);
-}
-
-export default lagGradientRampe;
+export { steps2Palette, lagGradientRampe };
