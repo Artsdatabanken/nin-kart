@@ -22,7 +22,7 @@
 - [Lookup API](https://github.com/Artsdatabanken/generic-substring-lookup-api)
 - [Metadataflyt](https://github.com/artsdatabanken/kverna)
 - [GIS Dataflyt](https://github.com/artsdatabanken/grunnkart-dataflyt)
-- [Geografisk API](https://github.com/Artsdatabanken/rasterQ) og [deployment](https://github.com/Artsdatabanken/rasterUploader) av dette
+- [Geografisk API](https://github.com/Artsdatabanken/rasterQ) og [deployment](https://github.com/Artsdatabanken/rasterUploader) av dette.
 - Verktøy for [rødlisting av naturtyper](https://github.com/Artsdatabanken/natty)
 - [Media dataflyt](https://github.com/Artsdatabanken/ografika)
 
