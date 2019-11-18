@@ -2,7 +2,7 @@ import React from "react";
 
 const KatalogHeaderImage = ({ meta }) => {
   if (!meta) return null;
-  const { bilde, url } = meta;
+  const { bilde = {}, url } = meta;
   /*
   Contains Header image only.
   */
