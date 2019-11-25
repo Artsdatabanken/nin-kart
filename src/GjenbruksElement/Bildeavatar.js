@@ -7,7 +7,7 @@ class BildeAvatar extends Component {
 
   For changes, make sure to test:
   - result list from the search
-  - hamburger menu 
+  - hamburger menu
   - "kodeliste"
 
   */
@@ -24,7 +24,11 @@ class BildeAvatar extends Component {
       );
       classes += " external_icons";
     }
-    return <img className={classes} alt="logo" src={urlWithNoQueryString} />;
+    return (
+      <span className="liste_ikon_container">
+        <img className={classes} alt="logo" src={urlWithNoQueryString} />
+      </span>
+    );
   }
 }
 
