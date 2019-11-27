@@ -13,8 +13,8 @@ class BildeAvatar extends Component {
   */
   render() {
     const { url } = this.props;
+    if (!url) return null;
     let urlWithNoQueryString =
-      url &&
       "https://data.artsdatabanken.no/" + url.split("?")[0] + "/logo_24.png";
     let classes = "liste_ikon";
     if (urlWithNoQueryString.includes("Biota")) {
