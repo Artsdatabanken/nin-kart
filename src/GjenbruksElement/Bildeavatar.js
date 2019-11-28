@@ -17,13 +17,6 @@ class BildeAvatar extends Component {
     let urlWithNoQueryString =
       "https://data.artsdatabanken.no/" + url.split("?")[0] + "/logo_24.png";
     let classes = "liste_ikon";
-    if (urlWithNoQueryString.includes("Biota")) {
-      urlWithNoQueryString = urlWithNoQueryString.replace(
-        "logo_24",
-        "phylopic_48"
-      );
-      classes += " external_icons";
-    }
     return (
       <span className="liste_ikon_container">
         <img className={classes} alt="logo" src={urlWithNoQueryString} />
