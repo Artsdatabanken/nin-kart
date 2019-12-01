@@ -17,7 +17,8 @@ const Landskapstype = ({ onNavigate, newlandskap }) => {
           style={{
             backgroundImage: "url(" + newlandskap.bilde.foto.url + ")",
             backgroundRepeat: "no-Repeat",
-            backgroundPosition: "top"
+            backgroundPosition: "top",
+            backgroundSize: "cover"
           }}
           onClick={() => {
             onNavigate(newlandskap.url);

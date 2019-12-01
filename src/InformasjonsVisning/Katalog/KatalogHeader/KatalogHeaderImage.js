@@ -58,7 +58,8 @@ const KatalogHeaderImage = ({ meta }) => {
             (new_url !== "no_image" && {
               backgroundSize: backgroundSize,
               backgroundImage: "url(" + new_url + ")",
-              backgroundRepeat: backgroundRepeat
+              backgroundRepeat: backgroundRepeat,
+              backgroundSize: "cover"
             }) || {
               height: 0
             }
