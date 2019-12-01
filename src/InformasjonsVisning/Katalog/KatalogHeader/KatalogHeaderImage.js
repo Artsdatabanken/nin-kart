@@ -32,8 +32,7 @@ const KatalogHeaderImage = ({ meta }) => {
 
   let speciesimg = "https://data.artsdatabanken.no/" + url + "/phylopic_48.png";
 
-  if (url.includes("Biota") && new_url === "no_image") {
-    new_url = "https://data.artsdatabanken.no/" + url + "/foto_408.jpg";
+  if (url.includes("Biota")) {
     backgroundSize = "cover";
   }
 
@@ -58,8 +57,7 @@ const KatalogHeaderImage = ({ meta }) => {
             (new_url !== "no_image" && {
               backgroundSize: backgroundSize,
               backgroundImage: "url(" + new_url + ")",
-              backgroundRepeat: backgroundRepeat,
-              backgroundSize: "cover"
+              backgroundRepeat: backgroundRepeat
             }) || {
               height: 0
             }
