@@ -10,16 +10,17 @@ import {
 const Forvaltningsportalen = props => {
   return (
     <div className="forvaltningsportalen frontpage_header">
-      <div
-        onClick={e => {
-          props.history.push("/forvaltningsportalen");
-        }}
-      >
-        <h1>
-          <span>Økologisk Grunnkart</span> <b>forvaltningsportal</b>
-        </h1>
-      </div>
-
+      {false && (
+        <div
+          onClick={e => {
+            props.history.push("/forvaltningsportalen");
+          }}
+        >
+          <h1>
+            <span>Økologisk Grunnkart</span> <b>forvaltningsportal</b>
+          </h1>
+        </div>
+      )}
       <div className="forvaltningsportalen menylinje">
         <button>
           <AddToPhotos />

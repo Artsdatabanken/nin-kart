@@ -57,10 +57,10 @@ class LeafletTangram extends React.Component {
       minZoom: 3
     };
 
-    if (this.props.forvaltningsportal === "true") {
+    /*    if (this.props.forvaltningsportal === "true") {
       header_shift = 113;
     }
-
+*/
     let map = L.map(this.mapEl, options);
 
     map.on("drag", e => {
@@ -185,6 +185,7 @@ class LeafletTangram extends React.Component {
   }
 
   getBackendData = (lng, lat, e) => {
+    console.log("gbd");
     updateMarkerPosition(e, this, header_shift);
     this.props.handleLokalitetUpdate(lng, lat);
   };

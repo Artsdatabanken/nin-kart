@@ -10,7 +10,7 @@ import {
   ListSubheader
 } from "@material-ui/core";
 
-const FeatureInfo = ({ query, onQueryChange, hits, setHits }) => {
+const FeatureInfo = ({ lat, lng, sted, wms1 }) => {
   return (
     <div
       style={{
@@ -18,12 +18,25 @@ const FeatureInfo = ({ query, onQueryChange, hits, setHits }) => {
         position: "absolute",
         right: 0,
         width: 408,
-        top: 114,
+        top: 38,
         bottom: 0
       }}
     >
       <List>
         <ListSubheader>Overskrift</ListSubheader>
+        {lat && (
+          <ListItem button>
+            <ListItemAvatar>
+              <Close />
+            </ListItemAvatar>
+            <ListItemText
+              primary={sted && sted.navn}
+              secondary={`${Math.round(lat * 10000) / 10000}° N ${Math.round(
+                lng * 10000
+              ) / 10000}° Ø`}
+            />
+          </ListItem>
+        )}
         <ListItem button>
           <ListItemAvatar>
             <Close />
@@ -31,6 +44,7 @@ const FeatureInfo = ({ query, onQueryChange, hits, setHits }) => {
           <ListItemText primary="prim" secondary="sec" />
         </ListItem>
       </List>
+      <div>{JSON.stringify(sted)}</div>
     </div>
   );
 };

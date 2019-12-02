@@ -143,6 +143,8 @@ class App extends React.Component {
                     onMouseLeave={this.handleMouseLeave}
                   />
                   <FeatureInfo
+                    lat={this.state.lat}
+                    lng={this.state.lng}
                     sted={this.state.sted}
                     wms1={this.state.wms1}
                   ></FeatureInfo>
@@ -346,15 +348,16 @@ class App extends React.Component {
   handleLokalitetUpdate = (lng, lat) => {
     console.log("hlu", lng, lat);
     this.setState({
+      lat,
+      lng,
       sted: null,
       wms1: null
     });
     backend.hentStedsnavn(lng, lat).then(sted => {
-      if (sted && sted.placename) {
-        this.setState({
-          sted: sted.placename
-        });
-      }
+      console.log("sted", sted);
+      this.setState({
+        sted: sted
+      });
     });
     backend.wmsFeatureInfo().then(fi => this.setState({ wms1: fi }));
   };

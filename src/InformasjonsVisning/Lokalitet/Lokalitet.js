@@ -27,6 +27,8 @@ class Lokalitet extends Component {
       landskap: null
     });
 
+    console.log("lokalitet hent sted");
+
     // Stedsnavn
     backend.hentStedsnavn(lng, lat).then(sted => {
       this.setState({ sted });
