@@ -1,3 +1,4 @@
+import FeatureInfo from "./FeatureInfo";
 import React from "react";
 import { withRouter } from "react-router";
 import backend from "Funksjoner/backend";
@@ -61,7 +62,7 @@ class App extends React.Component {
       bakgrunnskart: JSON.parse(JSON.stringify(bakgrunnskarttema))
     };
     this.state = {
-      forvaltningsportalen: "false",
+      forvaltningsportalen: "true",
       aktiveLag: aktive,
       forvaltningsLag: aktive,
       opplystKode: "",
@@ -94,18 +95,6 @@ class App extends React.Component {
       forside = true;
     }
 
-    if (
-      this.state.forvaltningsportalen === "false" &&
-      path.includes("/forvaltningsportalen")
-    ) {
-      this.setState({ forvaltningsportalen: "true" });
-    } else if (
-      this.state.forvaltningsportalen === "true" &&
-      !path.includes("/forvaltningsportalen")
-    ) {
-      this.setState({ forvaltningsportalen: "false" });
-    }
-
     return (
       <SettingsContext.Consumer>
         {context => {
@@ -131,6 +120,7 @@ class App extends React.Component {
                   />
 
                   <Kart
+                    handleLokalitetUpdate={this.handleLokalitetUpdate}
                     forvaltningsportal={this.state.forvaltningsportalen}
                     show_current={this.state.showCurrent}
                     bounds={this.state.fitBounds}
@@ -152,6 +142,10 @@ class App extends React.Component {
                     onMouseEnter={this.handleMouseEnter}
                     onMouseLeave={this.handleMouseLeave}
                   />
+                  <FeatureInfo
+                    sted={this.state.sted}
+                    wms1={this.state.wms1}
+                  ></FeatureInfo>
                 </>
               ) : (
                 <>
@@ -189,7 +183,7 @@ class App extends React.Component {
                     />
                   </div>
 
-                  {forside ? (
+                  {false && forside ? (
                     <ForsideInformasjon />
                   ) : (
                     <>
@@ -275,6 +269,7 @@ class App extends React.Component {
                           </div>
                         )}
                         <Kart
+                          xx={2}
                           handleLokalitetUpdate={this.handleLokalitetUpdate}
                           handleUpdateLokalitetLayerProp={
                             this.handleUpdateLokalitetLayerProp
@@ -305,7 +300,6 @@ class App extends React.Component {
                       </div>
                     </>
                   )}
-
                   <HamburgerMeny
                     spraak={this.state.spraak}
                     handleSpraak={this.handleSpraak}
@@ -349,8 +343,20 @@ class App extends React.Component {
     this.setState({ spraak: spraak });
   };
 
-  handleLokalitetUpdate = data => {
-    this.setState({ lokalitetdata: data });
+  handleLokalitetUpdate = (lng, lat) => {
+    console.log("hlu", lng, lat);
+    this.setState({
+      sted: null,
+      wms1: null
+    });
+    backend.hentStedsnavn(lng, lat).then(sted => {
+      if (sted && sted.placename) {
+        this.setState({
+          sted: sted.placename
+        });
+      }
+    });
+    backend.wmsFeatureInfo().then(fi => this.setState({ wms1: fi }));
   };
 
   handleFullscreen = showFullscreen => {

@@ -184,31 +184,10 @@ class LeafletTangram extends React.Component {
     this.map.removeLayer(this.marker);
   }
 
-  getBackendData(lng, lat, e) {
-    let prevlok = this.state.lokalitetdata;
-    backend.hentPunkt(lng, lat, e).then(data => {
-      if (!data) {
-        return null;
-      }
-      let url = getLokalitetUrl(lat, lng, data);
-      updateMarkerPosition(e, this, header_shift);
-      this.setState({
-        buttonUrl: url,
-        data: data,
-        showPopup: true,
-        koordinat: [lng, lat]
-      });
-      this.props.handleLokalitetUpdate(data);
-      backend.hentStedsnavn(lng, lat).then(sted => {
-        if (sted && sted.placename) {
-          this.setState({ sted: sted.placename });
-        }
-      });
-      if (this.props.lokalitetdata && this.props.lokalitetdata !== prevlok) {
-        this.updateMap(this.props);
-      }
-    });
-  }
+  getBackendData = (lng, lat, e) => {
+    updateMarkerPosition(e, this, header_shift);
+    this.props.handleLokalitetUpdate(lng, lat);
+  };
 
   handleClick = e => {
     const latlng = e.leaflet_event.latlng;
@@ -216,6 +195,7 @@ class LeafletTangram extends React.Component {
     this.marker = L.marker([latlng.lat, latlng.lng], { icon: this.icon }).addTo(
       this.map
     );
+    console.log(3, this.props);
     this.getBackendData(latlng.lng, latlng.lat, e.leaflet_event.layerPoint);
     let urlparams = (this.props.path || "").split("?");
     let newurlstring = "";
