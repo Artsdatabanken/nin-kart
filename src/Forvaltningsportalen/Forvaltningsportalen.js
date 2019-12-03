@@ -20,7 +20,7 @@ const Forvaltningsportalen = props => {
   return (
     <>
       {forvaltningsportalen === "true" && (
-        <>
+        <div style={{ boxShadow: "0 0 20px rgba(0, 0, 0, 0.3)" }}>
           {path !== "/forvaltningsportalen/kart" ? (
             <ForvaltningsportalenLandingsside
               history={history}
@@ -42,7 +42,7 @@ const Forvaltningsportalen = props => {
               />
             </>
           )}
-        </>
+        </div>
       )}
     </>
   );

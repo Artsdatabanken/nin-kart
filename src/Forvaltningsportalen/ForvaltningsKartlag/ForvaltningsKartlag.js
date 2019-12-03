@@ -34,7 +34,6 @@ class Kartlag extends React.Component {
                     <KeyboardArrowUp />
                   )}
                 </button>
-
                 <div
                   className={
                     this.state.showKartlag

@@ -26,15 +26,15 @@ body {
 }
 
 :focus {
-  outline: none;
-  border-bottom: $active-border;
-  border-bottom-left-radius: 0px !important;
-  border-bottom-right-radius: 0px !important;
+  _outline: none;
+  _border-bottom: $active-border;
+  _border-bottom-left-radius: 0px !important;
+  _border-bottom-right-radius: 0px !important;
 }
 
 button:focus {
-  border: $active-border;
-  box-sizing: border-box;
+  _border: $active-border;
+  _box-sizing: border-box;
 }
 
 a,

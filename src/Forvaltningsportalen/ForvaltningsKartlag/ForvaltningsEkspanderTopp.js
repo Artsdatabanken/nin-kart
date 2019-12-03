@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import språk from "Funksjoner/språk";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@material-ui/icons";
+import { FormControlLabel, Checkbox } from "@material-ui/core";
 
 const ForvaltningsEkspanderTopp = ({
   kartlag,
@@ -16,24 +17,27 @@ const ForvaltningsEkspanderTopp = ({
   const [expanded, setExpanded] = useState(false);
   return (
     <div className="kartlag_header">
-      <input
-        type="checkbox"
-        className="invisible_icon_button"
-        onChange={e => {
-          if (!erAktivtLag) {
-            onUpdateLayerProp(kode, "erSynlig", !erSynlig);
-            e.stopPropagation();
-          } else {
-            handleShowCurrent(!show_current);
-          }
-        }}
-        checked={erSynlig ? "checked" : ""}
-      />
-      <span className="kartlag_list_title">
-        {språk(tittel)}
-        <br />
-      </span>
-
+      <FormControlLabel
+        control={
+          <Checkbox
+            checked={erSynlig}
+            onChange={e => {
+              if (!erAktivtLag) {
+                onUpdateLayerProp(kode, "erSynlig", !erSynlig);
+                e.stopPropagation();
+              } else {
+                handleShowCurrent(!show_current);
+              }
+            }}
+            value="checkedA"
+            inputProps={{
+              "aria-label": "primary checkbox"
+            }}
+          />
+        }
+        label={språk(tittel)}
+        labelPlacement="end"
+      ></FormControlLabel>
       <span className="kartlag_list_icon_set">
         {/* The toggle button for this element */}
         <button
