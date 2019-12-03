@@ -7,6 +7,7 @@ import { withRouter } from "react-router-dom";
 import {
   Collapse,
   List,
+  IconButton,
   ListItem,
   ListItemIcon,
   ListItemText,
@@ -14,6 +15,8 @@ import {
 } from "@material-ui/core";
 
 const FeatureInfo = ({ lat, lng, sted, wms1 }) => {
+  const [visible, setVisible] = useState(true);
+  if (!visible) return null;
   return (
     <div
       style={{
@@ -28,6 +31,12 @@ const FeatureInfo = ({ lat, lng, sted, wms1 }) => {
       }}
     >
       <List>
+        <IconButton
+          style={{ float: "right", right: 16 }}
+          onClick={() => setVisible(!visible)}
+        >
+          <Close />
+        </IconButton>
         <ListSubheader>Overskrift</ListSubheader>
         {lat && (
           <ListItem button>

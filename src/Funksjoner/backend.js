@@ -64,8 +64,11 @@ class Backend {
   static async wmsFeatureInfo(url, lat, lng) {
     // https://ahocevar.com/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&FORMAT=image%2Fpng&TRANSPARENT=true&QUERY_LAYERS=ne%3Ane&LAYERS=ne%3Ane&INFO_FORMAT=text%2Fhtml&I=67&J=192&WIDTH=256&HEIGHT=256&CRS=EPSG%3A3857&STYLES=&BBOX=0%2C0%2C20037508.342789244%2C20037508.342789244
 
-    const url1 = `https://gis3.nve.no/map/services/VerneplanforVassdrag/MapServer/WmsServer?service=WMS&request=GetFeatureInfo&QUERY_LAYERS=VerneplanforVassdrag&styles=&format=image%2Fpng&transparent=true&version=1.1.1&width=256&height=256&srs=EPSG%3A4326&bbox=${lng -
+    const url2 = `https://gis3.nve.no/map/services/VerneplanforVassdrag/MapServer/WmsServer?service=WMS&request=GetFeatureInfo&QUERY_LAYERS=VerneplanforVassdrag&styles=&format=image%2Fpng&transparent=true&version=1.1.1&width=256&height=256&srs=EPSG%3A4326&bbox=${lng -
       0.0001},${lat - 0.0001},${lng + 0.0001},${lat + 0.0001}`;
+    const url1 =
+      url +
+      `&bbox=${lng - 0.0001},${lat - 0.0001},${lng + 0.0001},${lat + 0.0001}`;
     // https://ahocevar.com/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&FORMAT=image%2Fpng&TRANSPARENT=true&QUERY_LAYERS=ne%3Ane&LAYERS=ne%3Ane&INFO_FORMAT=text%2Fhtml&I=67&J=192&WIDTH=256&HEIGHT=256&CRS=EPSG%3A3857&STYLES=&BBOX=0%2C0%2C20037508.342789244%2C20037508.342789244
     return new Promise((resolve, reject) => {
       fetch(url1)

@@ -347,7 +347,10 @@ class App extends React.Component {
   };
 
   handleLokalitetUpdate = (lng, lat) => {
-    console.log("hlu", lng, lat);
+    const layers = {
+      wms1:
+        "https://gis3.nve.no/map/services/VerneplanforVassdrag/MapServer/WmsServer?service=WMS&request=GetFeatureInfo&QUERY_LAYERS=VerneplanforVassdrag&styles=&format=image%2Fpng&transparent=true&version=1.1.1&width=256&height=256&srs=EPSG%3A4326"
+    };
     this.setState({
       lat,
       lng,
@@ -360,10 +363,13 @@ class App extends React.Component {
         sted: sted
       });
     });
-    backend.wmsFeatureInfo("", lat, lng).then(xml => {
-      const res = XML.parse(xml);
-      console.log("xml", res);
-      this.setState({ wms1: res.FIELDS });
+    Object.keys(layers).forEach(key => {
+      const url = layers[key];
+      backend.wmsFeatureInfo(url, lat, lng).then(xml => {
+        const res = XML.parse(xml);
+        console.log("xml", res);
+        this.setState({ wms1: res.FIELDS });
+      });
     });
   };
 

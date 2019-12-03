@@ -26,14 +26,14 @@ body {
 }
 
 :focus {
-  _outline: none;
+  /*  _outline: none;
   _border-bottom: $active-border;
   _border-bottom-left-radius: 0px !important;
-  _border-bottom-right-radius: 0px !important;
+  _border-bottom-right-radius: 0px !important;*/
 }
 
 button:focus {
-  _border: $active-border;
+  //  _border: $active-border;
   _box-sizing: border-box;
 }
 
