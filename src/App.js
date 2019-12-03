@@ -368,7 +368,8 @@ class App extends React.Component {
         console.log("xml", xml);
         const res = XML.parse(xml);
         console.log("xml", res);
-        this.setState({ [key]: res.FIELDS });
+        console.log("xml", res.FIELDS || res);
+        this.setState({ [key]: res.FIELDS || res });
       });
     });
   };

@@ -1,11 +1,8 @@
 import LocationSearching from "@material-ui/icons/LocationSearching";
-import PregnantWoman from "@material-ui/icons/PregnantWoman";
-import { ExpandLess, ExpandMore } from "@material-ui/icons";
 import Close from "@material-ui/icons/Close";
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import {
-  Collapse,
   List,
   IconButton,
   ListItem,
@@ -13,9 +10,10 @@ import {
   ListItemText,
   ListSubheader
 } from "@material-ui/core";
+import Landskap from "./Landskap";
 import Vassdrag from "./Vassdrag";
 
-const FeatureInfo = ({ lat, lng, sted, vassdrag }) => {
+const FeatureInfo = ({ lat, lng, sted, landskap, vassdrag }) => {
   const [visible, setVisible] = useState(true);
   if (!visible) return null;
   return (
@@ -52,6 +50,7 @@ const FeatureInfo = ({ lat, lng, sted, vassdrag }) => {
             />
           </ListItem>
         )}
+        <Landskap {...landskap} />
         <Vassdrag {...vassdrag} />
       </List>
     </div>

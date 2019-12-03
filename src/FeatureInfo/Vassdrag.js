@@ -1,6 +1,5 @@
-import PregnantWoman from "@material-ui/icons/PregnantWoman";
+import ThreeDRotation from "@material-ui/icons/ThreeDRotation";
 import { ExpandLess, ExpandMore } from "@material-ui/icons";
-import Close from "@material-ui/icons/Close";
 import {
   Collapse,
   ListItem,
@@ -41,7 +40,7 @@ const Vassdrag = fields => {
         }}
       >
         <ListItemIcon>
-          <PregnantWoman />
+          <ThreeDRotation />
         </ListItemIcon>
         <ListItemText
           primary={OBJEKTNAVN + " (" + AREAL + " km²)"}
