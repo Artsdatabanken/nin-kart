@@ -25,7 +25,7 @@ const FeatureInfo = ({ lat, lng, sted, landskap, vassdrag }) => {
         zIndex: -1,
         right: 0,
         width: 408,
-        top: 36,
+        top: 0,
         bottom: 0
       }}
     >

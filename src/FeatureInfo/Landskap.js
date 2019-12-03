@@ -1,4 +1,4 @@
-import ThreeDRotation from "@material-ui/icons/ThreeDRotation";
+import Landscape from "@material-ui/icons/Landscape";
 import { ExpandLess, ExpandMore } from "@material-ui/icons";
 import {
   Collapse,
@@ -37,7 +37,7 @@ const Landskap = fields => {
         }}
       >
         <ListItemIcon>
-          <ThreeDRotation />
+          <Landscape />
         </ListItemIcon>
         <ListItemText
           primary={name + " (" + parseInt(area) / 1e6 + " km²)"}
