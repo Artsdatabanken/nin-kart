@@ -1,3 +1,4 @@
+import XML from "pixl-xml";
 import FeatureInfo from "./FeatureInfo";
 import React from "react";
 import { withRouter } from "react-router";
@@ -359,7 +360,11 @@ class App extends React.Component {
         sted: sted
       });
     });
-    backend.wmsFeatureInfo().then(fi => this.setState({ wms1: fi }));
+    backend.wmsFeatureInfo("", lat, lng).then(xml => {
+      const res = XML.parse(xml);
+      console.log("xml", res);
+      this.setState({ wms1: res.FIELDS });
+    });
   };
 
   handleFullscreen = showFullscreen => {

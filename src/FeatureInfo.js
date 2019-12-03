@@ -1,4 +1,4 @@
-import Search from "@material-ui/icons/Search";
+import LocationSearching from "@material-ui/icons/LocationSearching";
 import Close from "@material-ui/icons/Close";
 import React from "react";
 import { withRouter } from "react-router-dom";
@@ -27,7 +27,7 @@ const FeatureInfo = ({ lat, lng, sted, wms1 }) => {
         {lat && (
           <ListItem button>
             <ListItemAvatar>
-              <Close />
+              <LocationSearching />
             </ListItemAvatar>
             <ListItemText
               primary={sted && sted.navn}
@@ -44,7 +44,7 @@ const FeatureInfo = ({ lat, lng, sted, wms1 }) => {
           <ListItemText primary="prim" secondary="sec" />
         </ListItem>
       </List>
-      <div>{JSON.stringify(sted)}</div>
+      <div>{JSON.stringify(wms1)}</div>
     </div>
   );
 };
