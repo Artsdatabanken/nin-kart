@@ -82,6 +82,7 @@
     "build": "react-scripts build",
     "build-storybook": "build-storybook -s public -o build/storybook",
     "eject": "react-scripts eject",
+    "deploy": "scp -r build/ grunnkart@hydra:~/forvaltningsportal",
     "report-coverage": "coveralls < coverage/lcov.info",
     "start": "react-scripts start",
     "storybook": "start-storybook -p 9009 -s public",
