@@ -1,5 +1,5 @@
 import XML from "pixl-xml";
-import FeatureInfo from "./FeatureInfo";
+import FeatureInfo from "./FeatureInfo/";
 import React from "react";
 import { withRouter } from "react-router";
 import backend from "Funksjoner/backend";
@@ -344,7 +344,9 @@ class App extends React.Component {
   handleLokalitetUpdate = (lng, lat) => {
     const layers = {
       vassdrag:
-        "https://gis3.nve.no/map/services/VerneplanforVassdrag/MapServer/WmsServer?service=WMS&request=GetFeatureInfo&QUERY_LAYERS=VerneplanforVassdrag&styles=&format=image%2Fpng&transparent=true&version=1.1.1&width=256&height=256&srs=EPSG%3A4326"
+        "https://gis3.nve.no/map/services/VerneplanforVassdrag/MapServer/WmsServer?service=WMS&request=GetFeatureInfo&QUERY_LAYERS=VerneplanforVassdrag&styles=&format=image%2Fpng&transparent=true&version=1.1.1&width=256&height=256&srs=EPSG%3A4326",
+      landskap:
+        "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?&request=GetFeatureInfo&service=WMS&version=1.1.1&width=256&height=256&INFO_FORMAT=gml&QUERY_LAYERS=LA&layers=LA&srs=EPSG%3A4326&{x}&{y}"
     };
     this.setState({
       lat,
@@ -359,8 +361,11 @@ class App extends React.Component {
       });
     });
     Object.keys(layers).forEach(key => {
-      const url = layers[key];
+      let url = layers[key];
+      url = url.replace("{x}", "&x=" + lng);
+      url = url.replace("{y}", "&y=" + lat);
       backend.wmsFeatureInfo(url, lat, lng).then(xml => {
+        console.log("xml", xml);
         const res = XML.parse(xml);
         console.log("xml", res);
         this.setState({ [key]: res.FIELDS });
