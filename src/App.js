@@ -4,9 +4,6 @@ import React from "react";
 import { withRouter } from "react-router";
 import backend from "Funksjoner/backend";
 import { SettingsContext } from "SettingsContext";
-import InformasjonsVisning from "InformasjonsVisning/InformasjonsVisning";
-import TopBar from "TopBar/TopBar";
-import Kartlag from "Kartlag/Kartlag";
 import Kart from "Kart/LeafletTangram/Leaflet";
 import metaSjekk from "AppSettings/AppFunksjoner/metaSjekk";
 import fetchMeta from "AppSettings/AppFunksjoner/fetchMeta";
@@ -15,12 +12,7 @@ import aktiverValgtKartlag from "AppSettings/AppFunksjoner/aktiverValgtKartlag";
 import oppdaterMetaProperties from "AppSettings/AppFunksjoner/oppdaterMetaProperties";
 import oppdaterLagProperties from "AppSettings/AppFunksjoner/oppdaterLagProperties";
 import bakgrunnskarttema from "AppSettings/bakgrunnskarttema";
-import HamburgerMeny from "HamburgerMeny/HamburgerMeny";
-import MobileNavigation from "MobileNavigation/MobileNavigation";
-import ForsideInformasjon from "Forside/ForsideInformasjon";
 import Forvaltningsportalen from "Forvaltningsportalen/Forvaltningsportalen";
-import getLokalitetUrl from "AppSettings/AppFunksjoner/getLokalitetUrl";
-import Meny from "Navigering/Meny";
 import språk from "Funksjoner/språk";
 import "style/Kart.scss";
 import "style/App.scss";
@@ -83,227 +75,57 @@ class App extends React.Component {
   }
 
   render() {
-    let aktivTab = getPathTab(this.props.location);
-
     const { history } = this.props;
-    let erAktivert = false;
-    if (this.state.meta)
-      erAktivert = !!this.state.aktiveLag[this.state.meta.kode];
     const path = this.props.location.pathname;
-    let forside = false;
-
-    if (path === "/") {
-      forside = true;
-    }
 
     return (
       <SettingsContext.Consumer>
         {context => {
           return (
             <>
-              {this.state.forvaltningsportalen === "true" ? (
-                <>
-                  <Forvaltningsportalen
-                    path={path}
-                    forvaltningsportalen={this.state.forvaltningsportalen}
-                    history={history}
-                    navigation_history={this.state.navigation_history}
-                    show_current={this.state.showCurrent}
-                    handleShowCurrent={this.handleShowCurrent}
-                    onFitBounds={this.handleFitBounds}
-                    onUpdateLayerProp={this.handleForvaltningsLayerProp}
-                    meta={this.state.meta || {}}
-                    aktiveLag={Object.assign(
-                      {},
-                      this.state.forvaltningsLag,
-                      this.state.meta && this.state.meta.barn
-                    )}
-                  />
-
-                  <Kart
-                    handleLokalitetUpdate={this.handleLokalitetUpdate}
-                    forvaltningsportal={this.state.forvaltningsportalen}
-                    show_current={this.state.showCurrent}
-                    bounds={this.state.fitBounds}
-                    latitude={65.4}
-                    longitude={10.8}
-                    zoom={3.06}
-                    _aktiveLag={this.state.forvaltningsLag}
-                    aktiveLag={Object.assign(
-                      this.state.forvaltningsLag,
-                      this.state.meta && this.state.meta.barn
-                    )}
-                    opplyst={this.state.opplyst}
-                    opplystKode={this.state.opplystKode}
-                    meta={this.state.meta}
-                    onMapBoundsChange={this.handleActualBoundsChange}
-                    onMapMove={context.onMapMove}
-                    history={history}
-                    onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                    onMouseEnter={this.handleMouseEnter}
-                    onMouseLeave={this.handleMouseLeave}
-                  />
-                  <FeatureInfo {...this.state}></FeatureInfo>
-                </>
-              ) : (
-                <>
-                  <div
-                    className={
-                      this.state.showFullscreen && aktivTab === "kartlag"
-                        ? "hidden_in_fullscreen"
-                        : ""
-                    }
-                  >
-                    <TopBar
-                      forside={forside}
-                      searchFor={this.state.searchFor}
-                      onSelectResult={item => {
-                        let url = item.url;
-                        if (item.url[0] !== "/") {
-                          url = "/" + item.url;
-                        }
-                        if (url.includes("/Sted/")) {
-                          // Fix for sted side siden den lenkes feil i url.
-                          backend
-                            .hentPunkt(item.lng, item.lat, item)
-                            .then(data => {
-                              if (!data) {
-                                return null;
-                              }
-                              url = getLokalitetUrl(item.lat, item.lng, data);
-                              history.push(url); // duplikat pga async
-                            });
-                        } else {
-                          history.push(url);
-                        }
-                      }}
-                      history={history}
-                    />
-                  </div>
-
-                  {false && forside ? (
-                    <ForsideInformasjon />
-                  ) : (
-                    <>
-                      <MobileNavigation
-                        onNavigateToTab={this.onNavigateToTab}
-                        aktivTab={aktivTab}
-                        hidden_in_fullscreen={this.state.showFullscreen}
-                      />
-
-                      <div>
-                        <Meny
-                          lokalitetdata={this.state.lokalitetdata}
-                          lokalitet={path}
-                          meta={this.state.meta}
-                          onNavigate={this.handleNavigate}
-                          aktivTab={aktivTab}
-                          onUpdateMetaProp={this.handleUpdateMetaProp}
-                          opplyst={this.state.opplyst}
-                          onMouseEnter={this.handleMouseEnter}
-                          onMouseLeave={this.handleMouseLeave}
-                        />
-
-                        {aktivTab === "meny" || aktivTab === "informasjon" ? (
-                          <>
-                            <InformasjonsVisning
-                              handleLokalitetUpdate={this.handleLokalitetUpdate}
-                              handleNavigate={this.handleNavigate}
-                              path={path}
-                              aktivTab={aktivTab}
-                              show_current={this.state.showCurrent}
-                              handleShowCurrent={this.handleShowCurrent}
-                              aktiveLag={this.state.aktiveLag}
-                              mapBounds={this.state.actualBounds}
-                              onMouseEnter={this.handleMouseEnter}
-                              onMouseLeave={this.handleMouseLeave}
-                              onFitBounds={this.handleFitBounds}
-                              erAktivert={erAktivert}
-                              opplyst={this.state.opplyst}
-                              onToggleLayer={() => {
-                                this.handleToggleLayer();
-                                if (!context.visAktiveLag)
-                                  context.onToggleAktiveLag();
-                              }}
-                              meta={this.state.meta}
-                              searchFor={this.state.searchFor}
-                              onClearSearchFor={this.handleClearSearchFor}
-                              onUpdateLayerProp={this.handleUpdateLayerProp}
-                              onUpdateMetaProp={this.handleUpdateMetaProp}
-                              visAktiveLag={context.visAktiveLag}
-                              onToggleAktiveLag={context.onToggleAktiveLag}
-                            />
-                          </>
-                        ) : (
-                          <div
-                            className={
-                              this.state.showFullscreen &&
-                              aktivTab === "kartlag"
-                                ? "hidden_in_fullscreen"
-                                : ""
-                            }
-                          >
-                            <Kartlag
-                              lokalitetdata={this.state.lokalitetdata}
-                              show_current={this.state.showCurrent}
-                              handleShowCurrent={this.handleShowCurrent}
-                              hidden={aktivTab === "kartlag" && true}
-                              aktiveLag={this.state.aktiveLag}
-                              onUpdateLayerProp={this.handleUpdateLayerProp}
-                              handleUpdateLokalitetLayerProp={
-                                this.handleUpdateLokalitetLayerProp
-                              }
-                              onRemoveSelectedLayer={
-                                this.handleRemoveSelectedLayer
-                              }
-                              navigation_history={this.state.navigation_history}
-                              onFitBounds={this.handleFitBounds}
-                              history={history}
-                              currentKartlag={this.state.meta}
-                              activateLayerFromHistory={
-                                this.activateLayerFromHistory
-                              }
-                            />
-                          </div>
-                        )}
-                        <Kart
-                          xx={2}
-                          handleLokalitetUpdate={this.handleLokalitetUpdate}
-                          handleUpdateLokalitetLayerProp={
-                            this.handleUpdateLokalitetLayerProp
-                          }
-                          lokalitetdata={this.state.lokalitetdata}
-                          path={this.props.location.search}
-                          aktivTab={aktivTab}
-                          show_current={this.state.showCurrent}
-                          bounds={this.state.fitBounds}
-                          latitude={65.4}
-                          longitude={10.8}
-                          zoom={3}
-                          aktiveLag={this.state.aktiveLag}
-                          opplyst={this.state.opplyst}
-                          opplystKode={this.state.opplystKode}
-                          meta={this.state.meta}
-                          onMapBoundsChange={this.handleActualBoundsChange}
-                          onMapMove={context.onMapMove}
-                          history={history}
-                          onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                          onMouseEnter={this.handleMouseEnter}
-                          onMouseLeave={this.handleMouseLeave}
-                          showFullscreen={
-                            this.state.showFullscreen && aktivTab === "kartlag"
-                          }
-                          handleFullscreen={this.handleFullscreen}
-                        />
-                      </div>
-                    </>
+              <>
+                <Forvaltningsportalen
+                  path={path}
+                  forvaltningsportalen="true"
+                  history={history}
+                  navigation_history={this.state.navigation_history}
+                  show_current={this.state.showCurrent}
+                  handleShowCurrent={this.handleShowCurrent}
+                  onFitBounds={this.handleFitBounds}
+                  onUpdateLayerProp={this.handleForvaltningsLayerProp}
+                  meta={this.state.meta || {}}
+                  aktiveLag={Object.assign(
+                    {},
+                    this.state.forvaltningsLag,
+                    this.state.meta && this.state.meta.barn
                   )}
-                  <HamburgerMeny
-                    spraak={this.state.spraak}
-                    handleSpraak={this.handleSpraak}
-                  />
-                </>
-              )}
+                />
+
+                <Kart
+                  handleLokalitetUpdate={this.handleLokalitetUpdate}
+                  forvaltningsportal={true}
+                  show_current={this.state.showCurrent}
+                  bounds={this.state.fitBounds}
+                  latitude={65.4}
+                  longitude={10.8}
+                  zoom={3.06}
+                  _aktiveLag={this.state.forvaltningsLag}
+                  aktiveLag={Object.assign(
+                    this.state.forvaltningsLag,
+                    this.state.meta && this.state.meta.barn
+                  )}
+                  opplyst={this.state.opplyst}
+                  opplystKode={this.state.opplystKode}
+                  meta={this.state.meta}
+                  onMapBoundsChange={this.handleActualBoundsChange}
+                  onMapMove={context.onMapMove}
+                  history={history}
+                  onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                  onMouseEnter={this.handleMouseEnter}
+                  onMouseLeave={this.handleMouseLeave}
+                />
+                <FeatureInfo {...this.state}></FeatureInfo>
+              </>
             </>
           );
         }}
@@ -420,7 +242,7 @@ class App extends React.Component {
   }
 
   async downloadMeta(url) {
-    const meta = await backend.hentKodeMeta(url);
+    const meta = await backend.hentKodeMeta("/forvaltningsportalen/kart");
     metaSjekk(meta, this);
     return meta;
   }
