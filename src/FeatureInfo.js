@@ -14,7 +14,7 @@ import {
   ListSubheader
 } from "@material-ui/core";
 
-const FeatureInfo = ({ lat, lng, sted, wms1 }) => {
+const FeatureInfo = ({ lat, lng, sted, vassdrag }) => {
   const [visible, setVisible] = useState(true);
   if (!visible) return null;
   return (
@@ -51,7 +51,7 @@ const FeatureInfo = ({ lat, lng, sted, wms1 }) => {
             />
           </ListItem>
         )}
-        <Ferskvann {...wms1} />
+        <Ferskvann {...vassdrag} />
       </List>
     </div>
   );

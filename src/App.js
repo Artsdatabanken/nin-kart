@@ -143,12 +143,7 @@ class App extends React.Component {
                     onMouseEnter={this.handleMouseEnter}
                     onMouseLeave={this.handleMouseLeave}
                   />
-                  <FeatureInfo
-                    lat={this.state.lat}
-                    lng={this.state.lng}
-                    sted={this.state.sted}
-                    wms1={this.state.wms1}
-                  ></FeatureInfo>
+                  <FeatureInfo {...this.state}></FeatureInfo>
                 </>
               ) : (
                 <>
@@ -348,7 +343,7 @@ class App extends React.Component {
 
   handleLokalitetUpdate = (lng, lat) => {
     const layers = {
-      wms1:
+      vassdrag:
         "https://gis3.nve.no/map/services/VerneplanforVassdrag/MapServer/WmsServer?service=WMS&request=GetFeatureInfo&QUERY_LAYERS=VerneplanforVassdrag&styles=&format=image%2Fpng&transparent=true&version=1.1.1&width=256&height=256&srs=EPSG%3A4326"
     };
     this.setState({
@@ -368,7 +363,7 @@ class App extends React.Component {
       backend.wmsFeatureInfo(url, lat, lng).then(xml => {
         const res = XML.parse(xml);
         console.log("xml", res);
-        this.setState({ wms1: res.FIELDS });
+        this.setState({ [key]: res.FIELDS });
       });
     });
   };
