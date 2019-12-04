@@ -13,8 +13,19 @@ import {
 import Landskap from "./Landskap";
 import Vassdrag from "./Vassdrag";
 import Arealtype from "./Arealtype";
+import Laksefjord from "./Laksefjord";
+import Losmasse from "./Løsmasse";
 
-const FeatureInfo = ({ lat, lng, sted, arealtype, landskap, vassdrag }) => {
+const FeatureInfo = ({
+  lat,
+  lng,
+  sted,
+  arealtype,
+  landskap,
+  vassdrag,
+  laksefjord,
+  løsmasse
+}) => {
   const [visible, setVisible] = useState(true);
   if (!visible) return null;
   return (
@@ -54,6 +65,8 @@ const FeatureInfo = ({ lat, lng, sted, arealtype, landskap, vassdrag }) => {
         <Landskap {...landskap} />
         <Vassdrag {...vassdrag} />
         <Arealtype {...arealtype} />
+        <Laksefjord {...laksefjord} />
+        <Losmasse {...løsmasse} />
       </List>
     </div>
   );

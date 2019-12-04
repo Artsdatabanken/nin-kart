@@ -165,12 +165,18 @@ class App extends React.Component {
 
   handleLokalitetUpdate = (lng, lat) => {
     const layers = {
+      løsmasse:
+        "http://geo.ngu.no/mapserver/LosmasserWMS?service=wms&version=1.1.1&srs=EPSG:4326&layers=Losmasse_flate&query_layers=Losmasse_flate&info_format=application/vnd.ogc.gml&height=921&width=1920&{x}&{y}",
+      laksefjord:
+        "https://ogc.fiskeridir.no/wms.ashx?service=wms&version=1.1.1&srs=EPSG:4326&layers=layer_388&query_layers=layer_388&info_format=application/vnd.ogc.gml&height=921&width=1920&{x}&{y}",
+      naturtype:
+        "https://kart.miljodirektoratet.no/arcgis/services/naturtyper_nin/MapServer/WMSServer?version=1.1.1&layers=naturtyper_nin_alle&query_layers=naturtyper_nin_alle&srs=EPSG%3A4326&height=921&width=1920",
       arealtype:
-        "https://wms.nibio.no/cgi-bin/ar50?version=1.1.0&request=GetFeatureInfo&srs=EPSG:4326&feature_count=1&info_format=application/vnd.ogc.gml&layers=Arealtyper&query_layers=Arealtyper&x=699&y=481&height=921&width=1920",
+        "https://wms.nibio.no/cgi-bin/ar50?version=1.1.0&srs=EPSG:4326&feature_count=1&info_format=application/vnd.ogc.gml&layers=Arealtyper&query_layers=Arealtyper&x=699&y=481&height=921&width=1920",
       vassdrag:
-        "https://gis3.nve.no/map/services/VerneplanforVassdrag/MapServer/WmsServer?service=WMS&request=GetFeatureInfo&QUERY_LAYERS=VerneplanforVassdrag&styles=&format=image%2Fpng&transparent=true&version=1.1.1&width=256&height=256&srs=EPSG%3A4326",
+        "https://gis3.nve.no/map/services/VerneplanforVassdrag/MapServer/WmsServer?QUERY_LAYERS=VerneplanforVassdrag&styles=&format=image%2Fpng&transparent=true&version=1.1.1&width=256&height=256&srs=EPSG%3A4326",
       landskap:
-        "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?&request=GetFeatureInfo&service=WMS&version=1.1.1&width=256&height=256&INFO_FORMAT=gml&QUERY_LAYERS=LA&layers=LA&srs=EPSG%3A4326&{x}&{y}"
+        "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?version=1.1.1&width=256&height=256&INFO_FORMAT=gml&QUERY_LAYERS=LA&layers=LA&srs=EPSG%3A4326&{x}&{y}"
     };
     this.setState({
       lat,
@@ -186,11 +192,15 @@ class App extends React.Component {
     });
     Object.keys(layers).forEach(key => {
       let url = layers[key];
+      url += "&request=GetFeatureInfo";
+      url += "&service=WMS";
       url = url.replace("{x}", "&x=" + lng);
       url = url.replace("{y}", "&y=" + lat);
       backend.wmsFeatureInfo(url, lat, lng).then(response => {
-        console.log("xml", response.text);
+        if (key === "løsmasser") console.log("na", response.text);
         const res = XML.parse(response.text);
+        if (key === "løsmasser") console.log("na", res);
+        if (key === "løsmasser") console.log("na", response.url);
         res.url = response.url;
         this.setState({ [key]: res.FIELDS || res });
       });
@@ -229,7 +239,7 @@ class App extends React.Component {
     if (path !== prevProps.location.pathname) {
       fetchMeta(path, this);
     }
-    let tittel = "NiN-kart";
+    let tittel = "Forvaltningsportal";
     if (this.state.meta && språk(this.state.meta.tittel) !== "undefined") {
       tittel = språk(this.state.meta.tittel) + " | " + tittel;
     } else if (
