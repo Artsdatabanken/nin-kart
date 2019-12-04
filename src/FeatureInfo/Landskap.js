@@ -20,9 +20,7 @@ const Landskap = fields => {
   if (!fields) return null;
   const grunntype = finnGrunntype(fields);
   if (!grunntype) return null;
-  console.log("grunntype", grunntype);
   const { area, code, index, name } = grunntype;
-  console.log("grunntype", name);
   if (!name) return null;
   const url =
     "https://artsdatabanken.no/nin/" +

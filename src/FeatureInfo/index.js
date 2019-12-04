@@ -12,8 +12,9 @@ import {
 } from "@material-ui/core";
 import Landskap from "./Landskap";
 import Vassdrag from "./Vassdrag";
+import Arealtype from "./Arealtype";
 
-const FeatureInfo = ({ lat, lng, sted, landskap, vassdrag }) => {
+const FeatureInfo = ({ lat, lng, sted, arealtype, landskap, vassdrag }) => {
   const [visible, setVisible] = useState(true);
   if (!visible) return null;
   return (
@@ -52,6 +53,7 @@ const FeatureInfo = ({ lat, lng, sted, landskap, vassdrag }) => {
         )}
         <Landskap {...landskap} />
         <Vassdrag {...vassdrag} />
+        <Arealtype {...arealtype} />
       </List>
     </div>
   );

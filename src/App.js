@@ -165,6 +165,8 @@ class App extends React.Component {
 
   handleLokalitetUpdate = (lng, lat) => {
     const layers = {
+      arealtype:
+        "https://wms.nibio.no/cgi-bin/ar50?version=1.1.0&request=GetFeatureInfo&srs=EPSG:4326&feature_count=1&info_format=application/vnd.ogc.gml&layers=Arealtyper&query_layers=Arealtyper&x=699&y=481&height=921&width=1920",
       vassdrag:
         "https://gis3.nve.no/map/services/VerneplanforVassdrag/MapServer/WmsServer?service=WMS&request=GetFeatureInfo&QUERY_LAYERS=VerneplanforVassdrag&styles=&format=image%2Fpng&transparent=true&version=1.1.1&width=256&height=256&srs=EPSG%3A4326",
       landskap:
@@ -186,11 +188,10 @@ class App extends React.Component {
       let url = layers[key];
       url = url.replace("{x}", "&x=" + lng);
       url = url.replace("{y}", "&y=" + lat);
-      backend.wmsFeatureInfo(url, lat, lng).then(xml => {
-        console.log("xml", xml);
-        const res = XML.parse(xml);
-        console.log("xml", res);
-        console.log("xml", res.FIELDS || res);
+      backend.wmsFeatureInfo(url, lat, lng).then(response => {
+        console.log("xml", response.text);
+        const res = XML.parse(response.text);
+        res.url = response.url;
         this.setState({ [key]: res.FIELDS || res });
       });
     });
