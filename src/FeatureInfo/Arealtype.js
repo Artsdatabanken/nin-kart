@@ -72,7 +72,9 @@ const Arealtype = props => {
           <Landscape />
         </ListItemIcon>
         <ListItemText
-          primary={artype_beskrivelse + " (" + parseInt(areal) / 1e6 + " km²)"}
+          primary={
+            artype_beskrivelse + " (" + round(parseInt(areal) / 1e6) + " km²)"
+          }
           secondary={"Arealtype " + artype}
         />
         {open ? <ExpandLess /> : <ExpandMore />}
@@ -92,5 +94,9 @@ const Arealtype = props => {
     </>
   );
 };
+
+function round(v) {
+  return Math.round(v * 100) / 100;
+}
 
 export default Arealtype;
