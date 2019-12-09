@@ -5,7 +5,6 @@
   position: fixed;
   height: calc(100vh - #{$topbar-height-nin});
   overflow-x: hidden;
-  max-width: $sidebar-max-size;
   background: $background_header;
   width: 100%;
   font-family: $fontfamily;
@@ -38,10 +37,8 @@
   position: relative;
   top: 0px;
   height: calc(100vh - #{$topbar-height-nin});
-  width: calc(100% - #{$sidebar-max-size});
   background: $background_header;
   font-family: $fontfamily;
-  left: $sidebar-max-size;
   overflow-y: auto;
 }
 
@@ -224,7 +221,6 @@
   background-repeat: no-repeat;
   margin-top: 10px;
   margin-bottom: 10px;
-  height: $sidebar-max-size;
 }
 
 .page_topic_header {

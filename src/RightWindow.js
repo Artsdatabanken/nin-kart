@@ -36,6 +36,7 @@ const RightWindow = props => {
     >
       <AppBar position="static">
         <Tabs
+          variant="fullWidth"
           value={tab}
           onChange={(e, v) => setTab(v)}
           aria-label="simple tabs example"
@@ -47,7 +48,6 @@ const RightWindow = props => {
       <TabPanel value={tab} index={0}>
         <ForvaltningsKartlag
           show_current={props.show_current}
-          hidden={true}
           handleShowCurrent={props.handleShowCurrent}
           aktiveLag={props.aktiveLag}
           meta={props.meta}

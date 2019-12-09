@@ -31,7 +31,6 @@ const FeatureInfo = ({
   const coords = `${Math.round(lat * 10000) / 10000}° N ${Math.round(
     lng * 10000
   ) / 10000}° Ø`;
-  console.log("sted", sted);
   return (
     <div>
       <List>
@@ -41,7 +40,7 @@ const FeatureInfo = ({
         >
           <Close />
         </IconButton>
-        <ListSubheader>{coords}</ListSubheader>
+        <ListSubheader>{lat ? coords : "Klikk i kartet..."}</ListSubheader>
         {lat && (
           <ListItem button>
             <ListItemIcon>
