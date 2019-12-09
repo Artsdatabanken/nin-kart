@@ -1,6 +1,6 @@
 import ForvaltningsKartlag from "Forvaltningsportalen/ForvaltningsKartlag/ForvaltningsKartlag";
 import React, { useState } from "react";
-import { AppBar, Tabs, Box, Typography, Tab } from "@material-ui/core";
+import { AppBar, Tabs, Typography, Tab } from "@material-ui/core";
 import FeatureInfo from "./FeatureInfo";
 
 function TabPanel(props) {
@@ -15,10 +15,7 @@ function TabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      <>
-        {value === -3 && <Box p={3}>{children}</Box>}
-        {value === index && <>{children}</>}
-      </>
+      {value === index && <>{children}</>}
     </Typography>
   );
 }

@@ -28,6 +28,10 @@ const FeatureInfo = ({
 }) => {
   const [visible, setVisible] = useState(true);
   if (!visible) return null;
+  const coords = `${Math.round(lat * 10000) / 10000}° N ${Math.round(
+    lng * 10000
+  ) / 10000}° Ø`;
+  console.log("sted", sted);
   return (
     <div>
       <List>
@@ -37,18 +41,13 @@ const FeatureInfo = ({
         >
           <Close />
         </IconButton>
-        <ListSubheader>Overskrift</ListSubheader>
+        <ListSubheader>{coords}</ListSubheader>
         {lat && (
           <ListItem button>
             <ListItemIcon>
               <LocationSearching />
             </ListItemIcon>
-            <ListItemText
-              primary={sted && sted.navn}
-              secondary={`${Math.round(lat * 10000) / 10000}° N ${Math.round(
-                lng * 10000
-              ) / 10000}° Ø`}
-            />
+            <ListItemText primary={sted && sted.navn} secondary={"xxx"} />
           </ListItem>
         )}
         <Landskap {...landskap} />
