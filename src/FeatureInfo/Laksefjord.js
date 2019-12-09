@@ -1,8 +1,9 @@
-import Landscape from "@material-ui/icons/Landscape";
+import LaksefjordIcon from "./LaksefjordIcon";
 import { ExpandLess, ExpandMore } from "@material-ui/icons";
 import {
   Collapse,
   ListItem,
+  SvgIcon,
   ListItemIcon,
   ListItemText
 } from "@material-ui/core";
@@ -57,9 +58,11 @@ const Laksefjord = props => {
         }}
       >
         <ListItemIcon>
-          <Landscape />
+          <SvgIcon>
+            <LaksefjordIcon />
+          </SvgIcon>
         </ListItemIcon>
-        <ListItemText primary={fjord} secondary={fylke} />
+        <ListItemText primary={fjord} secondary={"Laksefjord i " + fylke} />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>

@@ -1,13 +1,13 @@
-import Landscape from "@material-ui/icons/Landscape";
-import { ExpandLess, ExpandMore } from "@material-ui/icons";
+import { LocationCity, ExpandLess, ExpandMore } from "@material-ui/icons";
 import {
   Collapse,
   ListItem,
   ListItemIcon,
-  ListItemText
+  ListItemText,
+  SvgIcon
 } from "@material-ui/core";
 import React, { useState } from "react";
-
+import LaksefjordIcon from "./LaksefjordIcon";
 /*
 <msGMLOutput 
 	 xmlns:gml="http://www.opengis.net/gml"
@@ -69,13 +69,13 @@ const Arealtype = props => {
         }}
       >
         <ListItemIcon>
-          <Landscape />
+          <LocationCity />
         </ListItemIcon>
         <ListItemText
           primary={
             artype_beskrivelse + " (" + round(parseInt(areal) / 1e6) + " km²)"
           }
-          secondary={"Arealtype " + artype}
+          secondary={"AR5 Arealtype " + artype}
         />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
