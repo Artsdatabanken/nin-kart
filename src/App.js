@@ -1,5 +1,5 @@
+import RightWindow from "./RightWindow";
 import XML from "pixl-xml";
-import FeatureInfo from "./FeatureInfo/";
 import React from "react";
 import { withRouter } from "react-router";
 import backend from "Funksjoner/backend";
@@ -84,22 +84,23 @@ class App extends React.Component {
           return (
             <>
               <>
-                <Forvaltningsportalen
-                  path={path}
-                  forvaltningsportalen="true"
-                  history={history}
-                  navigation_history={this.state.navigation_history}
-                  show_current={this.state.showCurrent}
-                  handleShowCurrent={this.handleShowCurrent}
-                  onFitBounds={this.handleFitBounds}
-                  onUpdateLayerProp={this.handleForvaltningsLayerProp}
-                  meta={this.state.meta || {}}
-                  aktiveLag={Object.assign(
-                    {},
-                    this.state.forvaltningsLag,
-                    this.state.meta && this.state.meta.barn
-                  )}
-                />
+                {false && (
+                  <Forvaltningsportalen
+                    path={path}
+                    history={history}
+                    navigation_history={this.state.navigation_history}
+                    show_current={this.state.showCurrent}
+                    handleShowCurrent={this.handleShowCurrent}
+                    onFitBounds={this.handleFitBounds}
+                    onUpdateLayerProp={this.handleForvaltningsLayerProp}
+                    meta={this.state.meta || {}}
+                    aktiveLag={Object.assign(
+                      {},
+                      this.state.forvaltningsLag,
+                      this.state.meta && this.state.meta.barn
+                    )}
+                  />
+                )}
 
                 <Kart
                   handleLokalitetUpdate={this.handleLokalitetUpdate}
@@ -124,7 +125,21 @@ class App extends React.Component {
                   onMouseEnter={this.handleMouseEnter}
                   onMouseLeave={this.handleMouseLeave}
                 />
-                <FeatureInfo {...this.state}></FeatureInfo>
+                <RightWindow
+                  {...this.state}
+                  path={path}
+                  history={history}
+                  show_current={this.state.showCurrent}
+                  handleShowCurrent={this.handleShowCurrent}
+                  onFitBounds={this.handleFitBounds}
+                  onUpdateLayerProp={this.handleForvaltningsLayerProp}
+                  meta={this.state.meta || {}}
+                  aktiveLag={Object.assign(
+                    {},
+                    this.state.forvaltningsLag,
+                    this.state.meta && this.state.meta.barn
+                  )}
+                />
               </>
             </>
           );

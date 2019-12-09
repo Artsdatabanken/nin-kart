@@ -29,18 +29,7 @@ const FeatureInfo = ({
   const [visible, setVisible] = useState(true);
   if (!visible) return null;
   return (
-    <div
-      style={{
-        backgroundColor: "#eee",
-        boxShadow: "0 0 20px rgba(0, 0, 0, 0.3)",
-        position: "absolute",
-        zIndex: -1,
-        right: 0,
-        width: 408,
-        top: 0,
-        bottom: 0
-      }}
-    >
+    <div>
       <List>
         <IconButton
           style={{ float: "right", right: 16 }}
