@@ -191,7 +191,7 @@ class App extends React.Component {
       vassdrag:
         "https://gis3.nve.no/map/services/VerneplanforVassdrag/MapServer/WmsServer?QUERY_LAYERS=VerneplanforVassdrag&styles=&format=image%2Fpng&transparent=true&version=1.1.1&width=256&height=256&srs=EPSG%3A4326",
       landskap:
-        "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?version=1.1.1&width=256&height=256&INFO_FORMAT=gml&QUERY_LAYERS=LA&layers=LA&srs=EPSG%3A4326&{x}&{y}"
+        "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&version=1.1.1&width=256&height=256&INFO_FORMAT=gml&QUERY_LAYERS=LA&layers=LA&srs=EPSG%3A4326&{x}&{y}"
     };
     this.setState({
       lat,
@@ -200,7 +200,6 @@ class App extends React.Component {
       wms1: null
     });
     backend.hentStedsnavn(lng, lat).then(sted => {
-      console.log("sted", sted);
       this.setState({
         sted: sted
       });
@@ -212,11 +211,9 @@ class App extends React.Component {
       url = url.replace("{x}", "&x=" + lng);
       url = url.replace("{y}", "&y=" + lat);
       backend.wmsFeatureInfo(url, lat, lng).then(response => {
-        if (key === "løsmasser") console.log("na", response.text);
         const res = XML.parse(response.text);
-        if (key === "løsmasser") console.log("na", res);
-        if (key === "løsmasser") console.log("na", response.url);
         res.url = response.url;
+        console.log(key, res);
         this.setState({ [key]: res.FIELDS || res });
       });
     });

@@ -37,14 +37,12 @@ objectid: "828158"
 objekttype: "LosmasseFlate"
 */
 const Løsmasse = props => {
-  console.log("lm", props);
   const [open, setOpen] = useState(false);
   if (!props) return null;
   const layer = props.Losmasse_flate_layer;
   if (!layer) return null;
   const feature = layer.Losmasse_flate_feature;
   if (!feature) return null;
-  console.log("lm", feature);
   const {
     losmassetype,
     losmassetype_definisjon,
