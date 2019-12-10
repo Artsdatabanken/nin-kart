@@ -15,6 +15,8 @@ import Vassdrag from "./Vassdrag";
 import Arealtype from "./Arealtype";
 import Laksefjord from "./Laksefjord";
 import Losmasse from "./Løsmasse";
+import Naturtype from "./Naturtype";
+import Livsmiljø from "./Livsmiljø";
 
 const FeatureInfo = ({
   lat,
@@ -22,6 +24,8 @@ const FeatureInfo = ({
   sted,
   arealtype,
   landskap,
+  naturtype,
+  livsmiljø,
   vassdrag,
   laksefjord,
   løsmasse
@@ -50,6 +54,8 @@ const FeatureInfo = ({
           </ListItem>
         )}
         <Landskap {...landskap} />
+        <Naturtype {...naturtype} />
+        <Livsmiljø {...livsmiljø} />
         <Vassdrag {...vassdrag} />
         <Arealtype {...arealtype} />
         <Laksefjord {...laksefjord} />

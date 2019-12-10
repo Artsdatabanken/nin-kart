@@ -188,6 +188,8 @@ class App extends React.Component {
         "https://kart.miljodirektoratet.no/arcgis/services/naturtyper_nin/MapServer/WMSServer?version=1.1.1&layers=naturtyper_nin_alle&query_layers=naturtyper_nin_alle&srs=EPSG%3A4326&height=921&width=1920",
       arealtype:
         "https://wms.nibio.no/cgi-bin/ar50?version=1.1.0&srs=EPSG:4326&feature_count=1&info_format=application/vnd.ogc.gml&layers=Arealtyper&query_layers=Arealtyper&x=699&y=481&height=921&width=1920",
+      livsmiljø:
+        "https://wms.nibio.no/cgi-bin/skogbruksplan?version=1.1.0&srs=EPSG:4326&feature_count=1&info_format=application/vnd.ogc.gml&layers=Livsmiljoer&query_layers=Livsmiljoer&x=699&y=481&height=921&width=1920",
       vassdrag:
         "https://gis3.nve.no/map/services/VerneplanforVassdrag/MapServer/WmsServer?QUERY_LAYERS=VerneplanforVassdrag&styles=&format=image%2Fpng&transparent=true&version=1.1.1&width=256&height=256&srs=EPSG%3A4326",
       landskap:
@@ -213,7 +215,7 @@ class App extends React.Component {
       backend.wmsFeatureInfo(url, lat, lng).then(response => {
         const res = XML.parse(response.text);
         res.url = response.url;
-        console.log(key, res);
+        //        console.log(key, res);
         this.setState({ [key]: res.FIELDS || res });
       });
     });

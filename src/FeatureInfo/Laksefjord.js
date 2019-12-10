@@ -32,7 +32,7 @@ import React, { useState } from "react";
 </msGMLOutput>
 */
 const Laksefjord = props => {
-  console.log("laksefjord", props);
+  // console.log("laksefjord", props);
   const [open, setOpen] = useState(false);
   if (!props) return null;
   const layer = props.layer_388_layer;

@@ -43,7 +43,7 @@ import LaksefjordIcon from "./LaksefjordIcon";
 </msGMLOutput>  
 */
 const Arealtype = props => {
-  console.log("grunntype", props);
+  //  console.log("grunntype", props);
   const [open, setOpen] = useState(false);
   if (!props) return null;
   const layer = props.Arealtyper_layer;
