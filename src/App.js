@@ -254,7 +254,7 @@ class App extends React.Component {
     if (path !== prevProps.location.pathname) {
       fetchMeta(path, this);
     }
-    let tittel = "Forvaltningsportal";
+    let tittel = "Økologisk grunnkart forvaltningsportal";
     if (this.state.meta && språk(this.state.meta.tittel) !== "undefined") {
       tittel = språk(this.state.meta.tittel) + " | " + tittel;
     } else if (
@@ -262,7 +262,7 @@ class App extends React.Component {
       this.state.meta.tittel.sn &&
       this.state.meta.tittel.sn !== "undefined"
     ) {
-      tittel = this.state.meta.tittel.sn + " | " + tittel;
+      //      tittel = this.state.meta.tittel.sn + " | " + tittel;
     }
     document.title = tittel;
   }
