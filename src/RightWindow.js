@@ -41,8 +41,8 @@ const RightWindow = props => {
           onChange={(e, v) => setTab(v)}
           aria-label="simple tabs example"
         >
-          <Tab label="Kartlag" {...props} />
-          <Tab label="Punkt" {...props} />
+          <Tab label="Kartlag" />
+          <Tab label="Punkt" />
         </Tabs>
       </AppBar>
       <TabPanel value={tab} index={0}>
