@@ -31,7 +31,7 @@ const ForvaltningsEkspanderTopp = ({
           setOpen(!open);
         }}
       >
-        <ListItemIcon>
+        <ListItemIcon onClick={e => e.stopPropagation()}>
           <Checkbox
             checked={erSynlig}
             onChange={e => {
