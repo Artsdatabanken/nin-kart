@@ -45,7 +45,11 @@ const RightWindow = props => {
           <Tab label="Punkt" />
         </Tabs>
       </AppBar>
-      <TabPanel value={tab} index={0}>
+      <TabPanel
+        value={tab}
+        index={0}
+        style={{ height: "100%", overflowY: "auto" }}
+      >
         <ForvaltningsKartlag
           show_current={props.show_current}
           handleShowCurrent={props.handleShowCurrent}
