@@ -13,7 +13,6 @@ import oppdaterMetaProperties from "AppSettings/AppFunksjoner/oppdaterMetaProper
 import oppdaterLagProperties from "AppSettings/AppFunksjoner/oppdaterLagProperties";
 import bakgrunnskarttema from "AppSettings/bakgrunnskarttema";
 import Forvaltningsportalen from "Forvaltningsportalen/Forvaltningsportalen";
-import språk from "Funksjoner/språk";
 import "style/Kart.scss";
 import "style/App.scss";
 import "style/Badges.scss";
@@ -206,6 +205,8 @@ class App extends React.Component {
         sted: sted
       });
     });
+    //    lng = 9.676521245246727;
+    //   lat = 62.83068996597348;
     Object.keys(layers).forEach(key => {
       let url = layers[key];
       url += "&request=GetFeatureInfo";
@@ -215,7 +216,7 @@ class App extends React.Component {
       backend.wmsFeatureInfo(url, lat, lng).then(response => {
         const res = XML.parse(response.text);
         res.url = response.url;
-        //        console.log(key, res);
+        console.log(key, res);
         this.setState({ [key]: res.FIELDS || res });
       });
     });

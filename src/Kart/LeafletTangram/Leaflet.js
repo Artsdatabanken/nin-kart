@@ -225,7 +225,8 @@ class LeafletTangram extends React.Component {
       const wms = al.kart.format.wms;
       if (al.kart.format.wms && al.erSynlig === true) {
         if (!prev) {
-          var wmsLayer = L.tileLayer.wms(wms.url, {
+          const url = wms.url.toLowerCase().replace("version=1.1.0&", "&");
+          var wmsLayer = L.tileLayer.wms(url, {
             layers: wms.layer,
             transparent: true,
             format: "image/png",

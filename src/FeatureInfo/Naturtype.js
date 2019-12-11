@@ -14,25 +14,10 @@ import React, { useState } from "react";
 const Naturtype = props => {
   const [open, setOpen] = useState(false);
   if (!props) return null;
-  //  console.error("############### na", props);
-  const layer = props.Losmasse_flate_layer;
-  if (!layer) return null;
-  const feature = layer.Losmasse_flate_feature;
-  if (!feature) return null;
-  const {
-    losmassetype,
-    losmassetype_definisjon,
-    losmassetype_tekst,
-    objectid,
-    objekttype
-  } = feature;
-  if (!losmassetype_tekst) return null;
+  const { Naturtype, NiNKartleggingsenheter } = props;
+  if (!Naturtype) return null;
   let url =
     "https://www.nibio.no/tema/jord/arealressurser/arealressurskart-ar5/";
-  url = props.url.replace(
-    "info_format=application/vnd.ogc.gml",
-    "info_format=text/html"
-  );
   return (
     <>
       <ListItem
@@ -46,8 +31,8 @@ const Naturtype = props => {
           <Landscape />
         </ListItemIcon>
         <ListItemText
-          primary={losmassetype_tekst}
-          secondary={"Løsmasse " + objectid}
+          primary={Naturtype}
+          secondary={"Naturtype (" + NiNKartleggingsenheter + ")"}
         />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
