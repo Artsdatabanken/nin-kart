@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import språk from "Funksjoner/språk";
 import {
   Collapse,
-  ListSubheader,
   Typography,
   Slider,
   ListItem,
@@ -69,11 +68,14 @@ const ForvaltningsEkspanderTopp = ({
                 Gjennomsiktighet
               </Typography>
               <Slider
-                value={opacity}
+                value={100 * kartlag.opacity}
                 step={1}
                 min={0}
                 max={100}
-                onChange={(e, v) => setOpacity(v)}
+                onChange={(e, v) => {
+                  onUpdateLayerProp(kode, "opacity", v / 100.0);
+                  setOpacity(v);
+                }}
                 valueLabelDisplay="auto"
                 aria-labelledby="range-slider"
                 getAriaValueText={opacity => opacity + " %"}
