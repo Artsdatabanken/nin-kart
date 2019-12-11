@@ -1,4 +1,8 @@
-import { ExpandLess, ExpandMore } from "@material-ui/icons";
+import {
+  ExpandLess,
+  ExpandMore,
+  SentimentVerySatisfiedOutlined
+} from "@material-ui/icons";
 import React, { useState } from "react";
 import språk from "Funksjoner/språk";
 import {
@@ -23,7 +27,7 @@ const ForvaltningsEkspanderTopp = ({
   const erSynlig = kartlag.erSynlig;
 
   const [open, setOpen] = useState(false);
-  const [opacity, setOpacity] = useState(100);
+  const [hasLegend, setHasLegend] = useState(true);
   return (
     <>
       <ListItem
@@ -72,22 +76,26 @@ const ForvaltningsEkspanderTopp = ({
                 step={1}
                 min={0}
                 max={100}
-                onChange={(e, v) => {
-                  onUpdateLayerProp(kode, "opacity", v / 100.0);
-                  setOpacity(v);
-                }}
+                onChange={(e, v) =>
+                  onUpdateLayerProp(kode, "opacity", v / 100.0)
+                }
                 valueLabelDisplay="auto"
                 aria-labelledby="range-slider"
                 getAriaValueText={opacity => opacity + " %"}
               />
-              <Typography id="range-slider" gutterBottom>
-                Tegnforklaring
-              </Typography>
-              <div style={{ paddingLeft: 24 }}>
-                <img
-                  src={`${kartlag.kart.format.wms.url}?layer=${kartlag.kart.format.wms.layer}&request=GetLegendGraphic&format=image/png&version=1.1.0`}
-                />
-              </div>
+              {hasLegend && (
+                <>
+                  <Typography id="range-slider" gutterBottom>
+                    Tegnforklaring
+                  </Typography>
+                  <div style={{ paddingLeft: 24 }}>
+                    <img
+                      onError={() => setHasLegend(false)}
+                      src={`${kartlag.kart.format.wms.url}?layer=${kartlag.kart.format.wms.layer}&request=GetLegendGraphic&format=image/png&version=1.3.0`}
+                    />
+                  </div>
+                </>
+              )}
             </>
           )}
         </div>
