@@ -205,7 +205,7 @@ class App extends React.Component {
         sted: sted
       });
     });
-    //    lng = 9.676521245246727;
+    //   lng = 9.676521245246727;
     //   lat = 62.83068996597348;
     Object.keys(layers).forEach(key => {
       let url = layers[key];

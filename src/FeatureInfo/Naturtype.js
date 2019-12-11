@@ -14,10 +14,9 @@ import React, { useState } from "react";
 const Naturtype = props => {
   const [open, setOpen] = useState(false);
   if (!props) return null;
-  const { Naturtype, NiNKartleggingsenheter } = props;
+  const { NiNID, Naturtype, NiNKartleggingsenheter } = props;
   if (!Naturtype) return null;
-  let url =
-    "https://www.nibio.no/tema/jord/arealressurser/arealressurskart-ar5/";
+  let url = "https://nin-faktaark.miljodirektoratet.no/naturtyper/?id=" + NiNID; //NINFP1810030453";
   return (
     <>
       <ListItem
@@ -37,16 +36,25 @@ const Naturtype = props => {
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
-        <iframe
-          style={{
-            width: "100%",
-            height: "100vh",
-            transform: "scale(0.9)",
-            transformOrigin: "0 0"
-          }}
-          title="Faktaark"
-          src={url}
-        />
+        <ul>
+          <li style={{ padding: 16 }}>
+            <a href={url} target="_top">
+              Faktaark i eget vindu
+            </a>
+          </li>
+        </ul>
+        {false && (
+          <iframe
+            style={{
+              width: "100%",
+              height: "100vh",
+              transform: "scale(0.9)",
+              transformOrigin: "0 0"
+            }}
+            title="Faktaark"
+            src={url}
+          />
+        )}
       </Collapse>
     </>
   );
