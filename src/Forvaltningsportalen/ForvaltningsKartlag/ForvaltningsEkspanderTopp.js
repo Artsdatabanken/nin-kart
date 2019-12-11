@@ -4,6 +4,8 @@ import språk from "Funksjoner/språk";
 import {
   Collapse,
   ListSubheader,
+  Typography,
+  Slider,
   ListItem,
   ListItemText,
   Checkbox,
@@ -17,12 +19,12 @@ const ForvaltningsEkspanderTopp = ({
   handleShowCurrent,
   show_current
 }) => {
-  console.log(kartlag);
   let tittel = kartlag.tittel;
   const kode = kartlag.kode;
   const erSynlig = kartlag.erSynlig;
 
   const [open, setOpen] = useState(false);
+  const [opacity, setOpacity] = useState(100);
   return (
     <>
       <ListItem
@@ -56,12 +58,29 @@ const ForvaltningsEkspanderTopp = ({
           style={{
             backgroundColor: "white",
             paddingLeft: 16,
-            paddingBottom: 16
+            paddingBottom: 16,
+            paddingRight: 16,
+            paddingTop: 16
           }}
         >
           {kartlag.kart.format.wms && (
             <>
-              <ListSubheader>Tegneregler</ListSubheader>
+              <Typography id="range-slider" gutterBottom>
+                Gjennomsiktighet
+              </Typography>
+              <Slider
+                value={opacity}
+                step={1}
+                min={0}
+                max={100}
+                onChange={(e, v) => setOpacity(v)}
+                valueLabelDisplay="auto"
+                aria-labelledby="range-slider"
+                getAriaValueText={opacity => opacity + " %"}
+              />
+              <Typography id="range-slider" gutterBottom>
+                Tegnforklaring
+              </Typography>
               <div style={{ paddingLeft: 24 }}>
                 <img
                   src={`${kartlag.kart.format.wms.url}?layer=${kartlag.kart.format.wms.layer}&request=GetLegendGraphic&format=image/png&version=1.1.0`}

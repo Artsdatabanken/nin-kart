@@ -48,7 +48,7 @@ const RightWindow = props => {
       <TabPanel
         value={tab}
         index={0}
-        style={{ height: "100%", overflowY: "auto" }}
+        style={{ height: "100%", overflowY: "auto", paddingBottom: 48 }}
       >
         <ForvaltningsKartlag
           show_current={props.show_current}

@@ -15,7 +15,7 @@ class Kartlag extends React.Component {
       <SettingsContext.Consumer>
         {context => (
           <>
-            <List style={{ overflowY: "scroll" }}>
+            <List>
               {keys.reverse().map(fkode => {
                 const kartlag = koder[fkode];
                 return (
