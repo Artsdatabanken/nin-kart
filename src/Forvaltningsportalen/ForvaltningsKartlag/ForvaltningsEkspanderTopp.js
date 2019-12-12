@@ -1,17 +1,21 @@
+import Geonorge from "./Geonorge";
 import { ExpandLess, ExpandMore } from "@material-ui/icons";
 import React, { useState } from "react";
 import språk from "Funksjoner/språk";
-import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
+import {
+  OpenInNew,
+  VisibilityOutlined,
+  VisibilityOffOutlined
+} from "@material-ui/icons";
 import {
   Typography,
   Slider,
   IconButton,
+  ListItemIcon,
   ListSubheader,
   Collapse,
   ListItem,
-  ListItemText,
-  Checkbox,
-  ListItemIcon
+  ListItemText
 } from "@material-ui/core";
 
 const ForvaltningsEkspanderTopp = ({
@@ -30,7 +34,7 @@ const ForvaltningsEkspanderTopp = ({
   return (
     <>
       <ListItem
-        style={{ backgroundColor: open ? "hsl(119, 0%, 40%,0.1)" : "#fff" }}
+        style={{ backgroundColor: open ? "#fff" : "#eee" }}
         button
         onClick={() => {
           setOpen(!open);
@@ -60,7 +64,7 @@ const ForvaltningsEkspanderTopp = ({
       <Collapse in={open} timeout="auto" unmountOnExit>
         <div
           style={{
-            backgroundColor: open ? "hsl(119, 0%, 40%,0.1)" : "#fff",
+            backgroundColor: open ? "#fff" : "#eee",
             paddingLeft: 16,
             paddingBottom: 16,
             paddingRight: 16,
@@ -68,7 +72,7 @@ const ForvaltningsEkspanderTopp = ({
           }}
         >
           {kartlag.kart.format.wms && (
-            <>
+            <div style={{ marginLeft: 24 }}>
               <Typography id="range-slider" gutterBottom>
                 Gjennomsiktighet
               </Typography>
@@ -84,12 +88,30 @@ const ForvaltningsEkspanderTopp = ({
                 aria-labelledby="range-slider"
                 getAriaValueText={opacity => opacity + " %"}
               />
+              {true && (
+                <ListItem
+                  style={{ backgroundColor: open ? "#fff" : "#eee" }}
+                  button
+                  onClick={e => {
+                    window.open(kartlag.geonorge || "https://www.geonorge.no/");
+                    e.preventDefault();
+                    e.stopPropagation();
+                  }}
+                >
+                  <ListItemIcon>
+                    <Geonorge />
+                  </ListItemIcon>
+                  <ListItemText primary="Datasettet på Geonorge.no" />
+                  <OpenInNew />
+                </ListItem>
+              )}
+
               {hasLegend && (
                 <>
                   <Typography id="range-slider" gutterBottom>
                     Tegnforklaring
                   </Typography>
-                  <div style={{ paddingLeft: 24 }}>
+                  <div style={{ paddingLeft: 56 }}>
                     <img
                       onError={() => setHasLegend(false)}
                       src={`${kartlag.kart.format.wms.url}?layer=${kartlag.kart.format.wms.layer}&request=GetLegendGraphic&format=image/png&version=1.3.0`}
@@ -97,7 +119,7 @@ const ForvaltningsEkspanderTopp = ({
                   </div>
                 </>
               )}
-            </>
+            </div>
           )}
         </div>
       </Collapse>

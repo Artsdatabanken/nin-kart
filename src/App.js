@@ -70,7 +70,7 @@ class App extends React.Component {
   render() {
     const { history } = this.props;
     const path = this.props.location.pathname;
-
+    console.log("#####", this.state.meta);
     return (
       <SettingsContext.Consumer>
         {context => {

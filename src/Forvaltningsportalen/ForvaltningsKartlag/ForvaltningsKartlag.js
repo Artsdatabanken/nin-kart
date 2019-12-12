@@ -3,7 +3,7 @@ import { SettingsContext } from "SettingsContext";
 import ForvaltningsEkspanderTopp from "./ForvaltningsEkspanderTopp";
 import { List } from "@material-ui/core";
 
-class Kartlag extends React.Component {
+class ForvaltningsKartlag extends React.Component {
   state = {
     showKartlag: false
   };
@@ -37,4 +37,4 @@ class Kartlag extends React.Component {
   }
 }
 
-export default Kartlag;
+export default ForvaltningsKartlag;
