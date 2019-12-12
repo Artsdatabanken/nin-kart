@@ -39,6 +39,7 @@ const Bioklimatisk = props => {
           onUpdateLayerProp={props.onUpdateLayerProp}
           geonorge={props.geonorge}
           kode={props.kode}
+          url={url}
         ></ExpandedHeader>
         <iframe
           allowtransparency="true"

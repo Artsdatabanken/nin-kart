@@ -55,6 +55,7 @@ const Livsmiljo2 = props => {
           opacity={props.opacity}
           onUpdateLayerProp={props.onUpdateLayerProp}
           geonorge={props.geonorge}
+          url={url}
         ></ExpandedHeader>
         <iframe
           style={{

@@ -85,6 +85,7 @@ const Arealtype = props => {
           onUpdateLayerProp={props.onUpdateLayerProp}
           geonorge={props.geonorge}
           kode={props.kode}
+          url={url}
         ></ExpandedHeader>
         <iframe
           style={{

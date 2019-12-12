@@ -47,6 +47,7 @@ const Naturtype = props => {
           visible={props.visible}
           onUpdateLayerProp={props.onUpdateLayerProp}
           geonorge={props.geonorge}
+          url={url}
         ></ExpandedHeader>
         <ul>
           <li style={{ padding: 16 }}>

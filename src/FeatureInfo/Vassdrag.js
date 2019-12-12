@@ -1,5 +1,4 @@
-import ThreeDRotation from "@material-ui/icons/ThreeDRotation";
-import { ExpandLess, ExpandMore } from "@material-ui/icons";
+import { Waves, ExpandLess, ExpandMore } from "@material-ui/icons";
 import {
   Collapse,
   ListItem,
@@ -41,7 +40,7 @@ const Vassdrag = props => {
         }}
       >
         <ListItemIcon>
-          <ThreeDRotation />
+          <Waves />
         </ListItemIcon>
         <ListItemText
           primary={OBJEKTNAVN + " (" + AREAL + " km²)"}
@@ -56,6 +55,7 @@ const Vassdrag = props => {
           onUpdateLayerProp={props.onUpdateLayerProp}
           geonorge={props.geonorge}
           kode={props.kode}
+          url={url}
         ></ExpandedHeader>
         <iframe
           allowtransparency="true"

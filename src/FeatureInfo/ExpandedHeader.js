@@ -1,8 +1,12 @@
-import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
 import {
+  OpenInNew,
+  VisibilityOutlined,
+  VisibilityOffOutlined
+} from "@material-ui/icons";
+import {
+  IconButton,
   Typography,
   Slider,
-  IconButton,
   ListSubheader
 } from "@material-ui/core";
 import React from "react";
@@ -45,7 +49,14 @@ const ExpandedHeader = props => {
           getAriaValueText={opacity => opacity + " %"}
         />
       </div>
-      <ListSubheader>Faktaark</ListSubheader>
+      <ListSubheader>
+        Faktaark{" "}
+        {props.url && (
+          <IconButton onClick={() => window.open(props.url)}>
+            <OpenInNew></OpenInNew>
+          </IconButton>
+        )}
+      </ListSubheader>
     </div>
   );
 };

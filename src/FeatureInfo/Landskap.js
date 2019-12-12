@@ -51,6 +51,7 @@ const Landskap = props => {
           onUpdateLayerProp={props.onUpdateLayerProp}
           geonorge={props.geonorge}
           kode={props.kode}
+          url={url}
         ></ExpandedHeader>
         <iframe
           style={{ width: "100%", height: "100vh" }}
