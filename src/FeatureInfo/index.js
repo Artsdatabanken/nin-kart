@@ -72,23 +72,40 @@ const FeatureInfo = ({
           kode="FP-NV"
           {...vassdrag}
           onUpdateLayerProp={onUpdateLayerProp}
+          barn={meta.barn}
         />
-        <Arealtype {...arealtype} onUpdateLayerProp={onUpdateLayerProp} />
-        <Laksefjord {...laksefjord} onUpdateLayerProp={onUpdateLayerProp} />
-        <Losmasse {...løsmasse} onUpdateLayerProp={onUpdateLayerProp} />
+        <Arealtype
+          kode="FP-NH"
+          {...arealtype}
+          onUpdateLayerProp={onUpdateLayerProp}
+          barn={meta.barn}
+        />
+        <Laksefjord
+          {...laksefjord}
+          onUpdateLayerProp={onUpdateLayerProp}
+          barn={meta.barn}
+        />
+        <Losmasse
+          {...løsmasse}
+          onUpdateLayerProp={onUpdateLayerProp}
+          barn={meta.barn}
+        />
         <Bioklimatisk
           {...seksjon}
           onUpdateLayerProp={onUpdateLayerProp}
+          barn={meta.barn}
           tittel="Bioklimatisk seksjon"
         />
         <Bioklimatisk
           {...sone}
           onUpdateLayerProp={onUpdateLayerProp}
+          barn={meta.barn}
           tittel="Bioklimatisk sone"
         />
         <Kalk
           {...kalk}
           onUpdateLayerProp={onUpdateLayerProp}
+          barn={meta.barn}
           tittel="Kalkinnhold"
         />
       </List>

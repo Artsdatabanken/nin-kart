@@ -51,6 +51,9 @@ const Arealtype = props => {
   if (!feature) return null;
   const { areal, artype, artype_beskrivelse } = feature;
   if (!artype_beskrivelse) return null;
+  let kartlag = props.barn.find(k => k.kode === props.kode);
+  if (!kartlag) kartlag = {};
+
   let url =
     "https://www.nibio.no/tema/jord/arealressurser/arealressurskart-ar5/" +
     artype_beskrivelse.toLowerCase();
@@ -81,10 +84,11 @@ const Arealtype = props => {
       <Collapse in={open} timeout="auto" unmountOnExit>
         <ExpandedHeader
           visible={props.visible}
-          opacity={props.opacity}
           onUpdateLayerProp={props.onUpdateLayerProp}
           geonorge={props.geonorge}
           kode={props.kode}
+          erSynlig={kartlag.erSynlig}
+          opacity={kartlag.opacity}
           url={url}
         ></ExpandedHeader>
         <iframe
