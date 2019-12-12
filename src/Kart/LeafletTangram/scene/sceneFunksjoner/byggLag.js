@@ -18,7 +18,7 @@ export default function byggLag(lag, opplyst, config) {
     format: lag.kart.format,
     viz: viz,
     opacity: lag.opacity || "1",
-    blendmode: lag.blendmode || "multiply",
+    blendmode: lag.blendmode || "overlay",
     depth: lag.depth, // TODO: flytt
     visBarn: lag.visBarn || !!lag.barn
   };
