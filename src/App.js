@@ -192,7 +192,8 @@ class App extends React.Component {
       url += "&service=WMS";
       url = url.replace("{x}", "&x=" + lng);
       url = url.replace("{y}", "&y=" + lat);
-      backend.wmsFeatureInfo(url, lat, lng).then(response => {
+      const delta = key === "naturtype" ? 0.0001 : 0.01;
+      backend.wmsFeatureInfo(url, lat, lng, delta).then(response => {
         const res = XML.parse(response.text);
         res.url = response.url;
         console.log(key, res);
