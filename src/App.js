@@ -86,8 +86,8 @@ class App extends React.Component {
                   show_current={this.state.showCurrent}
                   bounds={this.state.fitBounds}
                   latitude={65.4}
-                  longitude={10.8}
-                  zoom={3.06}
+                  longitude={15.8}
+                  zoom={2.9}
                   _aktiveLag={this.state.forvaltningsLag}
                   aktiveLag={Object.assign(
                     this.state.forvaltningsLag,
