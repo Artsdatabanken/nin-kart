@@ -187,10 +187,20 @@ class App extends React.Component {
     });
     backend.hentPunkt(lng, lat).then(pi => {
       const env = pi.environment;
-      if (!pi.kommune) return;
-      this.setState({
-        kommune: { kommune: pi.kommune, fylke: pi.fylke }
-      });
+      if (pi.kommune)
+        this.setState({
+          kommune: { kommune: pi.kommune, fylke: pi.fylke }
+        });
+      const sone = env["NN-NA-BS-6SO"];
+      if (sone)
+        this.setState({
+          sone
+        });
+      const seksjon = env["NN-NA-BS-6SE"];
+      if (seksjon)
+        this.setState({
+          seksjon
+        });
     });
 
     backend.hentStedsnavn(lng, lat).then(sted => {

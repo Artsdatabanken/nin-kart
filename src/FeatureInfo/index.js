@@ -17,6 +17,7 @@ import Laksefjord from "./Laksefjord";
 import Losmasse from "./Løsmasse";
 import Naturtype from "./Naturtype";
 import Livsmiljø from "./Livsmiljø";
+import Bioklimatisk from "./Bioklimatisk";
 
 const FeatureInfo = ({
   lat,
@@ -28,6 +29,8 @@ const FeatureInfo = ({
   naturtype,
   livsmiljø,
   vassdrag,
+  seksjon,
+  sone,
   laksefjord,
   løsmasse
 }) => {
@@ -59,6 +62,8 @@ const FeatureInfo = ({
         <Arealtype {...arealtype} />
         <Laksefjord {...laksefjord} />
         <Losmasse {...løsmasse} />
+        <Bioklimatisk {...seksjon} tittel="Bioklimatisk seksjon" />
+        <Bioklimatisk {...sone} tittel="Bioklimatisk sone" />
       </List>
     </div>
   );

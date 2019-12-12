@@ -6,7 +6,6 @@ import { List, ListSubheader } from "@material-ui/core";
 class ForvaltningsKartlag extends React.Component {
   render() {
     const { lag, onUpdateLayerProp } = this.props;
-    console.log("lagggg", lag);
     return (
       <SettingsContext.Consumer>
         {context => (

@@ -14,7 +14,6 @@ export default function metaSjekk(meta, parent) {
   // barn = lag
   meta.barn = [];
   Object.values(meta.lag).forEach(lag => {
-    console.log("######", lag);
     meta.barn.push(...Object.values(lag));
   });
 
