@@ -1,32 +1,29 @@
 import React from "react";
 import { SettingsContext } from "SettingsContext";
 import ForvaltningsEkspanderTopp from "./ForvaltningsEkspanderTopp";
-import { List } from "@material-ui/core";
+import { List, ListSubheader } from "@material-ui/core";
 
 class ForvaltningsKartlag extends React.Component {
-  state = {
-    showKartlag: false
-  };
   render() {
-    const { aktiveLag, onFitBounds, onUpdateLayerProp } = this.props;
-    let koder = aktiveLag;
-    const keys = Object.keys(koder);
+    const { lag, onUpdateLayerProp } = this.props;
+    console.log("lagggg", lag);
     return (
       <SettingsContext.Consumer>
         {context => (
           <>
             <List>
-              {keys.reverse().map(fkode => {
-                const kartlag = koder[fkode];
+              {Object.keys(lag || {}).map(datalev => {
                 return (
-                  <ForvaltningsEkspanderTopp
-                    kartlag={kartlag}
-                    key={fkode}
-                    {...this.props}
-                    visKoder={context.visKoder}
-                    onFitBounds={onFitBounds}
-                    onUpdateLayerProp={onUpdateLayerProp}
-                  />
+                  <>
+                    <ListSubheader disableSticky={true}>
+                      {datalev}
+                    </ListSubheader>
+                    <DataLevLag
+                      koder={lag[datalev]}
+                      onUpdateLayerProp={onUpdateLayerProp}
+                      context={context}
+                    ></DataLevLag>
+                  </>
                 );
               })}
             </List>
@@ -36,5 +33,22 @@ class ForvaltningsKartlag extends React.Component {
     );
   }
 }
+
+const DataLevLag = ({ context, koder, onUpdateLayerProp, ...props }) => {
+  const keys = Object.keys(koder);
+
+  return keys.reverse().map(fkode => {
+    const kartlag = koder[fkode];
+    return (
+      <ForvaltningsEkspanderTopp
+        kartlag={kartlag}
+        key={fkode}
+        {...props}
+        visKoder={context.visKoder}
+        onUpdateLayerProp={onUpdateLayerProp}
+      />
+    );
+  });
+};
 
 export default ForvaltningsKartlag;

@@ -44,6 +44,14 @@ const ForvaltningsEkspanderTopp = ({
           <IconButton
             onClick={e => {
               if (!erAktivtLag) {
+                console.log(
+                  "onUpdateLayerProp(" +
+                    kode +
+                    ' , "erSynlig", ' +
+                    !erSynlig +
+                    ")"
+                );
+
                 onUpdateLayerProp(kode, "erSynlig", !erSynlig);
                 e.stopPropagation();
               } else {
@@ -81,9 +89,9 @@ const ForvaltningsEkspanderTopp = ({
                 step={1}
                 min={0}
                 max={100}
-                onChange={(e, v) =>
-                  onUpdateLayerProp(kode, "opacity", v / 100.0)
-                }
+                onChange={(e, v) => {
+                  onUpdateLayerProp(kode, "opacity", v / 100.0);
+                }}
                 valueLabelDisplay="auto"
                 aria-labelledby="range-slider"
                 getAriaValueText={opacity => opacity + " %"}

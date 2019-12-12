@@ -21,8 +21,7 @@ const Meny = ({
   opplyst,
   onMouseEnter,
   onMouseLeave,
-  lokalitet,
-  lokalitetdata
+  lokalitet
 }) => {
   /*  
 Intern navigasjon innad på en side.
@@ -46,14 +45,6 @@ Sidebarmeny-navigeringen.
       sn = "sn";
     }
     nivå = meta["nivå"];
-  }
-
-  if (lokalitet.includes("lokalitet") && lokalitetdata) {
-    if (lokalitetdata.kommune) {
-      overordnet = lokalitetdata.kommune.url.replace("_", " ").split("/");
-    } else {
-      console.warn("ingen kommune, se etter andre ting");
-    }
   }
 
   return (
@@ -80,57 +71,37 @@ Sidebarmeny-navigeringen.
         }}
       >
         <HomeButton onNavigate={onNavigate} setExpanded={setExpanded} />
-        {lokalitet.includes("lokalitet") && lokalitetdata ? (
-          <>
-            <OverordnetMapping
+        <>
+          {meta && (
+            <Overordnet
+              overordnet={meta.overordnet}
               onNavigate={onNavigate}
               setExpanded={setExpanded}
-              overordnet={overordnet}
-              overordnet_url={overordnet_url}
             />
-            <div className="nav_current">
-              {" "}
-              {meta && <Bildeavatar url={url} />}
-              {tittel === "hjelp" && (
-                <>
-                  <Room /> Lokalitet
-                </>
-              )}
-            </div>
-          </>
-        ) : (
-          <>
-            {meta && (
-              <Overordnet
-                overordnet={meta.overordnet}
-                onNavigate={onNavigate}
-                setExpanded={setExpanded}
-              />
-            )}
+          )}
 
-            <div
-              className={
-                isItalics(nivå, sn) ? "italics nav_current" : "nav_current"
-              }
-            >
-              {" "}
-              {meta && <Bildeavatar url={url} />}
-              {tittel === "hjelp" && <HelpOutline />}
-              {tittel}
-            </div>
+          <div
+            className={
+              isItalics(nivå, sn) ? "italics nav_current" : "nav_current"
+            }
+          >
+            {meta && <Bildeavatar url={url} />}
+            {tittel === "hjelp" && <HelpOutline />}
+            {tittel}
+          </div>
 
-            <Navigeringsliste
-              parentkode={meta ? meta.kode : "kode"}
-              metadata={meta && meta.barn}
-              setExpanded={setExpanded}
-              onNavigate={onNavigate}
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
-              opplyst={opplyst}
-              onUpdateMetaProp={onUpdateMetaProp}
-            />
-          </>
-        )}
+          <Navigeringsliste
+            parentkode={meta ? meta.kode : "kode"}
+            metadata={meta && meta.barn}
+            setExpanded={setExpanded}
+            onNavigate={onNavigate}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            opplyst={opplyst}
+            onUpdateMetaProp={onUpdateMetaProp}
+          />
+        </>
+        }
       </div>
     </div>
   );

@@ -56,7 +56,6 @@ class App extends React.Component {
       actualBounds: null,
       fitBounds: null,
       meta: null,
-      lokalitetdata: null,
       visKoder: false,
       navigation_history: [],
       showCurrent: true,
@@ -247,15 +246,6 @@ class App extends React.Component {
       aktiveLag: Object.assign(
         {},
         oppdaterLagProperties(layer, key, value, this, elementType)
-      )
-    });
-  };
-
-  handleUpdateLokalitetLayerProp = (layer, key, value) => {
-    this.setState({
-      lokalitetdata: Object.assign(
-        {},
-        oppdaterLagProperties(layer, key, value, this, "lokalitetdata")
       )
     });
   };

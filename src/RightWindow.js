@@ -51,6 +51,7 @@ const RightWindow = props => {
         style={{ height: "100%", overflowY: "auto", paddingBottom: 48 }}
       >
         <ForvaltningsKartlag
+          lag={props.meta.lag}
           show_current={props.show_current}
           handleShowCurrent={props.handleShowCurrent}
           aktiveLag={props.aktiveLag}
