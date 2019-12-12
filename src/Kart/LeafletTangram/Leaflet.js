@@ -4,16 +4,13 @@ import "leaflet/dist/leaflet.css";
 import React from "react";
 import Tangram from "tangram";
 import { createScene, updateScene } from "./scene/scene";
-import backend from "Funksjoner/backend";
 import PopUp from "./LeafletComponents/PopUp";
 import {
   Fullscreen,
   FullscreenExit,
   LocationSearching
 } from "@material-ui/icons";
-import "style/Kart.scss";
 import updateMarkerPosition from "./LeafletActions/updateMarkerPosition";
-import getLokalitetUrl from "AppSettings/AppFunksjoner/getLokalitetUrl";
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
 // See here: https://github.com/PaulLeCam/react-leaflet/issues/255
 // Used in conjunction with url-loader.

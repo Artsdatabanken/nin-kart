@@ -1,14 +1,6 @@
-import Landscape from "@material-ui/icons/Landscape";
-import { ExpandLess, ExpandMore } from "@material-ui/icons";
 import baseMapSelectorImage from "./BaseMapSelectorImage.png";
-import {
-  Collapse,
-  ListItem,
-  Button,
-  ListItemIcon,
-  ListItemText
-} from "@material-ui/core";
-import React, { useState } from "react";
+import { Typography } from "@material-ui/core";
+import React from "react";
 
 const BaseMapSelector = props => {
   return (
@@ -68,6 +60,11 @@ const BaseMapSelector = props => {
             cursor: "pointer"
           }}
         >
+          <div style={{ position: "fixed", top: 54, left: 8, zIndex: 10 }}>
+            <Typography style={{ color: "#333" }} variant="caption">
+              Kart
+            </Typography>
+          </div>
           <img
             style={{ objectFit: "cover", height: "100%" }}
             src={baseMapSelectorImage}
