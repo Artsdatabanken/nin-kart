@@ -53,3 +53,5 @@ export default function oppdaterLagProperties(
   }
   return aktive;
 }
+
+export { setValue };

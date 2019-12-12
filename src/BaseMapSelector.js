@@ -1,4 +1,5 @@
 import baseMapSelectorImage from "./BaseMapSelectorImage.png";
+import BaseMapSelectorImageGoogle from "./BaseMapSelectorImageGoogle.png";
 import { Typography } from "@material-ui/core";
 import React from "react";
 
@@ -22,6 +23,15 @@ const BaseMapSelector = props => {
         borderColor: "black",
         backgroundColor: "#474747",
         marginBottom: 20
+      }}
+      onClick={() => {
+        props.onUpdateLayerProp(
+          "bakgrunnskart",
+          "kart.aktivtFormat",
+          props.aktivtFormat === "google_satellite"
+            ? "topo4"
+            : "google_satellite"
+        );
       }}
     >
       <div
@@ -67,7 +77,11 @@ const BaseMapSelector = props => {
           </div>
           <img
             style={{ objectFit: "cover", height: "100%" }}
-            src={baseMapSelectorImage}
+            src={
+              props.aktivtFormat === "google_satellite"
+                ? BaseMapSelectorImageGoogle
+                : baseMapSelectorImage
+            }
           />
         </button>
       </div>

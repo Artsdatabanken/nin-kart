@@ -12,7 +12,9 @@ import fetchMeta from "AppSettings/AppFunksjoner/fetchMeta";
 import aktiverFraHistorikk from "AppSettings/AppFunksjoner/aktiverFraHistorikk";
 import aktiverValgtKartlag from "AppSettings/AppFunksjoner/aktiverValgtKartlag";
 import oppdaterMetaProperties from "AppSettings/AppFunksjoner/oppdaterMetaProperties";
-import oppdaterLagProperties from "AppSettings/AppFunksjoner/oppdaterLagProperties";
+import oppdaterLagProperties, {
+  setValue
+} from "AppSettings/AppFunksjoner/oppdaterLagProperties";
 import bakgrunnskarttema from "AppSettings/bakgrunnskarttema";
 import BaseMapSelector from "./BaseMapSelector";
 
@@ -69,7 +71,13 @@ class App extends React.Component {
   render() {
     const { history } = this.props;
     const path = this.props.location.pathname;
-    console.log("#####", this.state.meta);
+    console.log("#####", this.state);
+    console.log("bk", typeof this.state.forvaltningsLag);
+    const basiskart =
+      Object.values(this.state.forvaltningsLag || {}).find(
+        x => x.kode === "bakgrunnskart"
+      ) || {};
+    console.log("bk", basiskart);
     return (
       <SettingsContext.Consumer>
         {context => {
@@ -79,7 +87,10 @@ class App extends React.Component {
                 <TopBarContainer
                   _tittel={"Økologisk grunnkart forvaltningsportal"}
                 />
-                <BaseMapSelector />
+                <BaseMapSelector
+                  onUpdateLayerProp={this.handleForvaltningsLayerProp}
+                  aktivtFormat={basiskart.kart.aktivtFormat}
+                />
                 <Kart
                   handleLokalitetUpdate={this.handleLokalitetUpdate}
                   forvaltningsportal={true}
@@ -230,7 +241,6 @@ class App extends React.Component {
 
   async downloadMeta() {
     const meta = metadata;
-    console.warn("meta", meta);
     metaSjekk(meta, this);
     return meta;
   }
@@ -242,19 +252,19 @@ class App extends React.Component {
   };
 
   handleUpdateLayerProp = (layer, key, value, elementType) => {
+    const v = oppdaterLagProperties(layer, key, value, this, elementType);
     this.setState({
-      aktiveLag: Object.assign(
-        {},
-        oppdaterLagProperties(layer, key, value, this, elementType)
-      )
+      aktiveLag: Object.assign({}, v)
     });
   };
 
   handleForvaltningsLayerProp = (layer, key, value) => {
     let nye_lag = this.state.forvaltningsLag;
     for (let item in this.state.forvaltningsLag) {
-      if (this.state.forvaltningsLag[item].kode === layer) {
-        nye_lag[item][key] = value;
+      if (nye_lag[item].kode === layer) {
+        //        nye_lag[item][key] = value;
+        setValue(nye_lag[item], key, value);
+        break;
       }
     }
     this.setState({

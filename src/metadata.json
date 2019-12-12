@@ -19,7 +19,7 @@
       "tema": {
         "nb": "Administrative inndelinger"
       },
-      "kode": "FP-AE",
+      "kode": "FP-KAE",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -40,7 +40,7 @@
       "tema": {
         "nb": "Sjø"
       },
-      "kode": "FP-K",
+      "kode": "FP-KK",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -55,19 +55,20 @@
     },
     {
       "tittel": {
-        "nb": "Naturvern: foreslått naturvernområde"
+        "nb": "Administrative inndelinger: Fylkesgrenser"
       },
-      "dataeier": "Miljødirektoratet",
+      "dataeier": "Kartverket",
+      "geonorge": "https://kartkatalog.geonorge.no/metadata/kartverket/administrative-enheter-kommuner/041f1e6e-bdbc-4091-b48f-8a5990f3cc5b",
       "tema": {
-        "nb": "Naturvern"
+        "nb": "Administrative inndelinger"
       },
-      "kode": "FP-F",
+      "kode": "FP-KF",
       "foreldre": ["FP"],
       "kart": {
         "format": {
           "wms": {
-            "url": "https://kart.miljodirektoratet.no/arcgis/services/vern/mapserver/WMSServer",
-            "layer": "foreslatt_naturvern_omrade",
+            "url": "https://openwms.statkart.no/skwms1/wms.adm_enheter",
+            "layer": "fylker",
             "version": "1.3.0"
           }
         }
@@ -76,19 +77,20 @@
     },
     {
       "tittel": {
-        "nb": "Skog: Registreringsår"
+        "nb": "Administrative inndelinger: Riksgrense"
       },
-      "dataeier": "NIBIO",
+      "dataeier": "Kartverket",
+      "geonorge": "https://kartkatalog.geonorge.no/metadata/kartverket/administrative-enheter-kommuner/041f1e6e-bdbc-4091-b48f-8a5990f3cc5b",
       "tema": {
-        "nb": "Skog"
+        "nb": "Administrative inndelinger"
       },
-      "kode": "FP-R",
+      "kode": "FP-KR",
       "foreldre": ["FP"],
       "kart": {
         "format": {
           "wms": {
-            "url": "https://wms.nibio.no/cgi-bin/skogbruksplan?VERSION=1.3.0",
-            "layer": "Registreringsaar",
+            "url": "https://openwms.statkart.no/skwms1/wms.adm_enheter",
+            "layer": "riksgrense",
             "version": "1.3.0"
           }
         }
@@ -97,19 +99,20 @@
     },
     {
       "tittel": {
-        "nb": "Arealressurs: Treslag"
+        "nb": "Administrative inndelinger: Territorialgrense"
       },
-      "dataeier": "NIBIO",
+      "dataeier": "Kartverket",
+      "geonorge": "https://kartkatalog.geonorge.no/metadata/kartverket/administrative-enheter-kommuner/041f1e6e-bdbc-4091-b48f-8a5990f3cc5b",
       "tema": {
-        "nb": "Arealressurs"
+        "nb": "Administrative inndelinger"
       },
-      "kode": "FP-T",
+      "kode": "FP-KT",
       "foreldre": ["FP"],
       "kart": {
         "format": {
           "wms": {
-            "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
-            "layer": "Treslag",
+            "url": "https://openwms.statkart.no/skwms1/wms.adm_enheter",
+            "layer": "territorialgrense",
             "version": "1.3.0"
           }
         }
@@ -125,7 +128,7 @@
       "tema": {
         "nb": "Administrative inndelinger"
       },
-      "kode": "FP-AA",
+      "kode": "FP-KAA",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -147,7 +150,7 @@
       "tema": {
         "nb": "Administrative inndelinger"
       },
-      "kode": "FP-M",
+      "kode": "FP-KM",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -169,7 +172,7 @@
       "tema": {
         "nb": "Administrative inndelinger"
       },
-      "kode": "FP-NMOD",
+      "kode": "FP-KNMOD",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -191,7 +194,7 @@
       "tema": {
         "nb": "Administrative inndelinger"
       },
-      "kode": "FP-NMG",
+      "kode": "FP-KNMG",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -212,7 +215,7 @@
       "tema": {
         "nb": "Ferskvann"
       },
-      "kode": "FP-D",
+      "kode": "FP-ND",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -227,20 +230,20 @@
     },
     {
       "tittel": {
-        "nb": "Naturtyper: naturtyper "
+        "nb": "Skog: nokkelbiotop"
       },
-      "dataeier": "Miljødirektoratet",
+      "dataeier": "NIBIO",
       "tema": {
-        "nb": "Naturtyper"
+        "nb": "Skog"
       },
-      "kode": "FP-N",
+      "kode": "FP-NN",
       "foreldre": ["FP"],
       "kart": {
         "format": {
           "wms": {
-            "url": "https://kart.miljodirektoratet.no/arcgis/services/naturtyper_nin/MapServer/WMSServer?",
-            "layer": "naturtyper_nin_alle",
-            "version": "1.1.1"
+            "url": "https://wms.nibio.no/cgi-bin/skogbruksplan?",
+            "layer": "Nokkelbiotop",
+            "version": "1.3.0"
           }
         }
       },
@@ -254,13 +257,34 @@
       "tema": {
         "nb": "Skog"
       },
-      "kode": "FP-L",
+      "kode": "FP-NL",
       "foreldre": ["FP"],
       "kart": {
         "format": {
           "wms": {
-            "url": "https://wms.nibio.no/cgi-bin/skogbruksplan?VERSION=1.3.0",
+            "url": "https://wms.nibio.no/cgi-bin/skogbruksplan?",
             "layer": "Livsmiljoer",
+            "version": "1.3.0"
+          }
+        }
+      },
+      "farge": "#ef8040"
+    },
+    {
+      "tittel": {
+        "nb": "Skog: Registreringsår"
+      },
+      "dataeier": "NIBIO",
+      "tema": {
+        "nb": "Skog"
+      },
+      "kode": "FP-NR",
+      "foreldre": ["FP"],
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.nibio.no/cgi-bin/skogbruksplan?",
+            "layer": "Registreringsaar",
             "version": "1.3.0"
           }
         }
@@ -275,12 +299,12 @@
       "tema": {
         "nb": "Arealressurs"
       },
-      "kode": "FP-A",
+      "kode": "FP-NA",
       "foreldre": ["FP"],
       "kart": {
         "format": {
           "wms": {
-            "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+            "url": "https://wms.nibio.no/cgi-bin/ar5?",
             "layer": "areal",
             "version": "1.3.0"
           }
@@ -296,12 +320,12 @@
       "tema": {
         "nb": "Arealressurs"
       },
-      "kode": "FP-B",
+      "kode": "FP-NB",
       "foreldre": ["FP"],
       "kart": {
         "format": {
           "wms": {
-            "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+            "url": "https://wms.nibio.no/cgi-bin/ar5?",
             "layer": "Bonitet",
             "version": "1.3.0"
           }
@@ -311,19 +335,19 @@
     },
     {
       "tittel": {
-        "nb": "Sjø: Havn"
+        "nb": "Ferskvann: hovedelv"
       },
-      "dataeier": "Kartverket",
+      "dataeier": "NVE",
       "tema": {
-        "nb": "Sjø"
+        "nb": "Ferskvann"
       },
-      "kode": "FP-H",
+      "kode": "FP-NH",
       "foreldre": ["FP"],
       "kart": {
         "format": {
           "wms": {
-            "url": "https://wms.geonorge.no/skwms1/wms.sjokartraster",
-            "layer": "havn",
+            "url": "https://gis3.nve.no/map/services/Elvenett1/MapServer/WmsServer",
+            "layer": "hovedelv",
             "version": "1.3.0"
           }
         }
@@ -338,12 +362,12 @@
       "tema": {
         "nb": "Arealressurs"
       },
-      "kode": "FP-G",
+      "kode": "FP-NG",
       "foreldre": ["FP"],
       "kart": {
         "format": {
           "wms": {
-            "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+            "url": "https://wms.nibio.no/cgi-bin/ar5?",
             "layer": "Grunnforhold",
             "version": "1.3.0"
           }
@@ -353,19 +377,40 @@
     },
     {
       "tittel": {
-        "nb": "Sjø: Svalbard"
+        "nb": "Arealressurs: Skogbonitet"
       },
-      "dataeier": "Kartverket",
+      "dataeier": "NIBIO",
       "tema": {
-        "nb": "Sjø"
+        "nb": "Arealressurs"
       },
-      "kode": "FP-S",
+      "kode": "FP-NS",
       "foreldre": ["FP"],
       "kart": {
         "format": {
           "wms": {
-            "url": "https://wms.geonorge.no/skwms1/wms.sjokartraster",
-            "layer": "svalbard",
+            "url": "https://wms.nibio.no/cgi-bin/ar5?",
+            "layer": "Skogbonitet",
+            "version": "1.3.0"
+          }
+        }
+      },
+      "farge": "#ef8040"
+    },
+    {
+      "tittel": {
+        "nb": "Arealressurs: Treslag"
+      },
+      "dataeier": "NIBIO",
+      "tema": {
+        "nb": "Arealressurs"
+      },
+      "kode": "FP-NT",
+      "foreldre": ["FP"],
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.nibio.no/cgi-bin/ar5?",
+            "layer": "Treslag",
             "version": "1.3.0"
           }
         }
@@ -380,12 +425,12 @@
       "tema": {
         "nb": "Arealressurs"
       },
-      "kode": "FP-J",
+      "kode": "FP-NJ",
       "foreldre": ["FP"],
       "kart": {
         "format": {
           "wms": {
-            "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+            "url": "https://wms.nibio.no/cgi-bin/ar5?",
             "layer": "Jordbruksareal",
             "version": "1.3.0"
           }
@@ -401,14 +446,77 @@
       "tema": {
         "nb": "Arealressurs"
       },
-      "kode": "FP-AG",
+      "kode": "FP-NAG",
       "foreldre": ["FP"],
       "kart": {
         "format": {
           "wms": {
-            "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+            "url": "https://wms.nibio.no/cgi-bin/ar5?",
             "layer": "AR5grenser",
             "version": "1.3.0"
+          }
+        }
+      },
+      "farge": "#ef8040"
+    },
+    {
+      "tittel": {
+        "nb": "Naturvern: foreslått naturvernområde"
+      },
+      "dataeier": "Miljødirektoratet",
+      "tema": {
+        "nb": "Naturvern"
+      },
+      "kode": "FP-MDF",
+      "foreldre": ["FP"],
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.miljodirektoratet.no/arcgis/services/vern/mapserver/WMSServer",
+            "layer": "foreslatt_naturvern_omrade",
+            "version": "1.3.0"
+          }
+        }
+      },
+      "farge": "#ef8040"
+    },
+    {
+      "tittel": {
+        "nb": "Naturtyper: naturtyper "
+      },
+      "dataeier": "Miljødirektoratet",
+      "tema": {
+        "nb": "Naturtyper"
+      },
+      "kode": "FP-MDN",
+      "foreldre": ["FP"],
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.miljodirektoratet.no/arcgis/services/naturtyper_nin/MapServer/WMSServer?",
+            "layer": "naturtyper_nin_alle",
+            "version": "1.1.1"
+          }
+        }
+      },
+      "farge": "#ef8040"
+    },
+    {
+      "tittel": {
+        "nb": "Naturtyper: dekningskart nin"
+      },
+      "dataeier": "Miljødirektoratet",
+      "tema": {
+        "nb": "Naturtyper"
+      },
+      "kode": "FP-MDD",
+      "foreldre": ["FP"],
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.miljodirektoratet.no/arcgis/services/naturtyper_nin/MapServer/WMSServer?",
+            "layer": "dekningskart_nin",
+            "version": "1.1.1"
           }
         }
       },
@@ -422,7 +530,7 @@
       "tema": {
         "nb": "Naturtyper"
       },
-      "kode": "FP-H_",
+      "kode": "FP-MDH_",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -443,7 +551,7 @@
       "tema": {
         "nb": "Naturtyper"
       },
-      "kode": "FP-N_",
+      "kode": "FP-MDN_",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -464,7 +572,7 @@
       "tema": {
         "nb": "Arter"
       },
-      "kode": "FP-FA",
+      "kode": "FP-MDFA",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -484,7 +592,7 @@
       "tema": {
         "nb": "Arter"
       },
-      "kode": "FP-AASF",
+      "kode": "FP-MDAASF",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -504,7 +612,7 @@
       "tema": {
         "nb": "Arter"
       },
-      "kode": "FP-AASRSF",
+      "kode": "FP-MDAASRSF",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -524,7 +632,7 @@
       "tema": {
         "nb": "Arter"
       },
-      "kode": "FP-DD",
+      "kode": "FP-ADD",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -545,7 +653,7 @@
       "tema": {
         "nb": "Arter"
       },
-      "kode": "FP-NNRT",
+      "kode": "FP-ANNRT",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -566,7 +674,7 @@
       "tema": {
         "nb": "Arter"
       },
-      "kode": "FP-VSR",
+      "kode": "FP-AVSR",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -587,7 +695,7 @@
       "tema": {
         "nb": "Arter"
       },
-      "kode": "FP-EST",
+      "kode": "FP-AEST",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -608,7 +716,7 @@
       "tema": {
         "nb": "Arter"
       },
-      "kode": "FP-CKT",
+      "kode": "FP-ACKT",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -629,7 +737,7 @@
       "tema": {
         "nb": "Arter"
       },
-      "kode": "FP-RRUD",
+      "kode": "FP-ARRUD",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -650,7 +758,7 @@
       "tema": {
         "nb": "Arter"
       },
-      "kode": "FP-SSRHYR",
+      "kode": "FP-ASSRHYR",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -671,7 +779,7 @@
       "tema": {
         "nb": "Arter"
       },
-      "kode": "FP-HHYR",
+      "kode": "FP-AHHYR",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -692,7 +800,7 @@
       "tema": {
         "nb": "Arter"
       },
-      "kode": "FP-PPHYR",
+      "kode": "FP-APPHYR",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -713,7 +821,7 @@
       "tema": {
         "nb": "Arter"
       },
-      "kode": "FP-LLR",
+      "kode": "FP-ALLR",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -734,7 +842,7 @@
       "tema": {
         "nb": "Arter"
       },
-      "kode": "FP-NIKR",
+      "kode": "FP-ANIKR",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -755,7 +863,7 @@
       "tema": {
         "nb": "Landskap"
       },
-      "kode": "FP-LI",
+      "kode": "FP-ALI",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -776,7 +884,7 @@
       "tema": {
         "nb": "Landskap"
       },
-      "kode": "FP-LK",
+      "kode": "FP-ALK",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -797,7 +905,7 @@
       "tema": {
         "nb": "Landskap"
       },
-      "kode": "FP-LIA",
+      "kode": "FP-ALIA",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -818,7 +926,7 @@
       "tema": {
         "nb": "Landskap"
       },
-      "kode": "FP-LID",
+      "kode": "FP-ALID",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -839,7 +947,7 @@
       "tema": {
         "nb": "Landskap"
       },
-      "kode": "FP-LIS",
+      "kode": "FP-ALIS",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -860,7 +968,7 @@
       "tema": {
         "nb": "Landskap"
       },
-      "kode": "FP-LKF",
+      "kode": "FP-ALKF",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -881,7 +989,7 @@
       "tema": {
         "nb": "Landskap"
       },
-      "kode": "FP-LKS",
+      "kode": "FP-ALKS",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -902,7 +1010,7 @@
       "tema": {
         "nb": "Landskap"
       },
-      "kode": "FP-LKA",
+      "kode": "FP-ALKA",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -923,7 +1031,7 @@
       "tema": {
         "nb": "Landskap"
       },
-      "kode": "FP-LM",
+      "kode": "FP-ALM",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -944,7 +1052,7 @@
       "tema": {
         "nb": "Landskap"
       },
-      "kode": "FP-LKJ",
+      "kode": "FP-ALKJ",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -965,7 +1073,7 @@
       "tema": {
         "nb": "Landskap"
       },
-      "kode": "FP-LKK",
+      "kode": "FP-ALKK",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -986,7 +1094,7 @@
       "tema": {
         "nb": "Landskap"
       },
-      "kode": "FP-LKV",
+      "kode": "FP-ALKV",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -1007,7 +1115,7 @@
       "tema": {
         "nb": "Landskap"
       },
-      "kode": "FP-LKB",
+      "kode": "FP-ALKB",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -1028,7 +1136,7 @@
       "tema": {
         "nb": "Landskap"
       },
-      "kode": "FP-LKI",
+      "kode": "FP-ALKI",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -1049,7 +1157,7 @@
       "tema": {
         "nb": "Landskap"
       },
-      "kode": "FP-LKRI",
+      "kode": "FP-ALKRI",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -1070,7 +1178,7 @@
       "tema": {
         "nb": "Landskap"
       },
-      "kode": "FP-LKRKI",
+      "kode": "FP-ALKRKI",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -1091,7 +1199,7 @@
       "tema": {
         "nb": "Landskap"
       },
-      "kode": "FP-LKRK",
+      "kode": "FP-ALKRK",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -1106,13 +1214,34 @@
     },
     {
       "tittel": {
+        "nb": "Ferskvann: KommunefordeltInnsjø"
+      },
+      "dataeier": "NVE",
+      "tema": {
+        "nb": "Ferskvann"
+      },
+      "kode": "FP-NK",
+      "foreldre": ["FP"],
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://gis3.nve.no/map/services/Innsjodatabase1/MapServer/WmsServer",
+            "layer": "KommunefordeltInnsjo",
+            "version": "1.3.0"
+          }
+        }
+      },
+      "farge": "#ef8040"
+    },
+    {
+      "tittel": {
         "nb": "Ferskvann: Innsjødatabase"
       },
       "dataeier": "NVE",
       "tema": {
         "nb": "Ferskvann"
       },
-      "kode": "FP-I",
+      "kode": "FP-NI",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -1133,7 +1262,7 @@
       "tema": {
         "nb": "Ferskvann"
       },
-      "kode": "FP-E",
+      "kode": "FP-NE",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -1148,19 +1277,19 @@
     },
     {
       "tittel": {
-        "nb": "Sjø: Omriss"
+        "nb": "Ferskvann: oversikt"
       },
-      "dataeier": "Kartverket",
+      "dataeier": "NVE",
       "tema": {
-        "nb": "Sjø"
+        "nb": "Ferskvann"
       },
-      "kode": "FP-O",
+      "kode": "FP-NO",
       "foreldre": ["FP"],
       "kart": {
         "format": {
           "wms": {
-            "url": "https://wms.geonorge.no/skwms1/wms.sjokartraster",
-            "layer": "omriss",
+            "url": "https://gis3.nve.no/map/services/Elvenett1/MapServer/WmsServer",
+            "layer": "oversikt",
             "version": "1.3.0"
           }
         }
@@ -1175,7 +1304,7 @@
       "tema": {
         "nb": "Ferskvann"
       },
-      "kode": "FP-V",
+      "kode": "FP-NV",
       "foreldre": ["FP"],
       "kart": {
         "format": {
@@ -1187,11 +1316,74 @@
         }
       },
       "farge": "#ef8040"
+    },
+    {
+      "tittel": {
+        "nb": "Sjø: Omriss"
+      },
+      "dataeier": "Kartverket",
+      "tema": {
+        "nb": "Sjø"
+      },
+      "kode": "FP-KO",
+      "foreldre": ["FP"],
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.geonorge.no/skwms1/wms.sjokartraster",
+            "layer": "omriss",
+            "version": "1.3.0"
+          }
+        }
+      },
+      "farge": "#ef8040"
+    },
+    {
+      "tittel": {
+        "nb": "Sjø: Havn"
+      },
+      "dataeier": "Kartverket",
+      "tema": {
+        "nb": "Sjø"
+      },
+      "kode": "FP-KH",
+      "foreldre": ["FP"],
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.geonorge.no/skwms1/wms.sjokartraster",
+            "layer": "havn",
+            "version": "1.3.0"
+          }
+        }
+      },
+      "farge": "#ef8040"
+    },
+    {
+      "tittel": {
+        "nb": "Sjø: Svalbard"
+      },
+      "dataeier": "Kartverket",
+      "tema": {
+        "nb": "Sjø"
+      },
+      "kode": "FP-KS",
+      "foreldre": ["FP"],
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.geonorge.no/skwms1/wms.sjokartraster",
+            "layer": "svalbard",
+            "version": "1.3.0"
+          }
+        }
+      },
+      "farge": "#ef8040"
     }
   ],
   "lag": {
     "Kartverket": {
-      "FP-AE": {
+      "FP-KAE": {
         "tittel": {
           "nb": "Administrative inndelinger: Administrative enheter 2018"
         },
@@ -1200,7 +1392,7 @@
         "tema": {
           "nb": "Administrative inndelinger"
         },
-        "kode": "FP-AE",
+        "kode": "FP-KAE",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1212,7 +1404,7 @@
           }
         }
       },
-      "FP-K": {
+      "FP-KK": {
         "tittel": {
           "nb": "Sjø: Kyst"
         },
@@ -1220,7 +1412,7 @@
         "tema": {
           "nb": "Sjø"
         },
-        "kode": "FP-K",
+        "kode": "FP-KK",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1232,7 +1424,7 @@
           }
         }
       },
-      "FP-F": {
+      "FP-KF": {
         "tittel": {
           "nb": "Administrative inndelinger: Fylkesgrenser"
         },
@@ -1241,7 +1433,7 @@
         "tema": {
           "nb": "Administrative inndelinger"
         },
-        "kode": "FP-F",
+        "kode": "FP-KF",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1253,7 +1445,7 @@
           }
         }
       },
-      "FP-R": {
+      "FP-KR": {
         "tittel": {
           "nb": "Administrative inndelinger: Riksgrense"
         },
@@ -1262,7 +1454,7 @@
         "tema": {
           "nb": "Administrative inndelinger"
         },
-        "kode": "FP-R",
+        "kode": "FP-KR",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1274,7 +1466,7 @@
           }
         }
       },
-      "FP-T": {
+      "FP-KT": {
         "tittel": {
           "nb": "Administrative inndelinger: Territorialgrense"
         },
@@ -1283,7 +1475,7 @@
         "tema": {
           "nb": "Administrative inndelinger"
         },
-        "kode": "FP-T",
+        "kode": "FP-KT",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1295,7 +1487,7 @@
           }
         }
       },
-      "FP-AA": {
+      "FP-KAA": {
         "tittel": {
           "nb": "Administrative inndelinger: Avtalt avgrensningslinje"
         },
@@ -1304,7 +1496,7 @@
         "tema": {
           "nb": "Administrative inndelinger"
         },
-        "kode": "FP-AA",
+        "kode": "FP-KAA",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1316,7 +1508,7 @@
           }
         }
       },
-      "FP-M": {
+      "FP-KM": {
         "tittel": {
           "nb": "Administrative inndelinger: Maritime grenser"
         },
@@ -1325,7 +1517,7 @@
         "tema": {
           "nb": "Administrative inndelinger"
         },
-        "kode": "FP-M",
+        "kode": "FP-KM",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1337,7 +1529,7 @@
           }
         }
       },
-      "FP-NMOD": {
+      "FP-KNMOD": {
         "tittel": {
           "nb": "Administrative inndelinger: Navn maritime områder"
         },
@@ -1346,7 +1538,7 @@
         "tema": {
           "nb": "Administrative inndelinger"
         },
-        "kode": "FP-NMOD",
+        "kode": "FP-KNMOD",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1358,7 +1550,7 @@
           }
         }
       },
-      "FP-NMG": {
+      "FP-KNMG": {
         "tittel": {
           "nb": "Administrative inndelinger: Navn maritime grenser"
         },
@@ -1367,7 +1559,7 @@
         "tema": {
           "nb": "Administrative inndelinger"
         },
-        "kode": "FP-NMG",
+        "kode": "FP-KNMG",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1379,7 +1571,7 @@
           }
         }
       },
-      "FP-O": {
+      "FP-KO": {
         "tittel": {
           "nb": "Sjø: Omriss"
         },
@@ -1387,7 +1579,7 @@
         "tema": {
           "nb": "Sjø"
         },
-        "kode": "FP-O",
+        "kode": "FP-KO",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1399,7 +1591,7 @@
           }
         }
       },
-      "FP-H": {
+      "FP-KH": {
         "tittel": {
           "nb": "Sjø: Havn"
         },
@@ -1407,7 +1599,7 @@
         "tema": {
           "nb": "Sjø"
         },
-        "kode": "FP-H",
+        "kode": "FP-KH",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1419,7 +1611,7 @@
           }
         }
       },
-      "FP-S": {
+      "FP-KS": {
         "tittel": {
           "nb": "Sjø: Svalbard"
         },
@@ -1427,7 +1619,7 @@
         "tema": {
           "nb": "Sjø"
         },
-        "kode": "FP-S",
+        "kode": "FP-KS",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1441,7 +1633,7 @@
       }
     },
     "NIBIO": {
-      "FP-D": {
+      "FP-ND": {
         "tittel": {
           "nb": "Skog: Dekningskart detalj"
         },
@@ -1449,19 +1641,19 @@
         "tema": {
           "nb": "Skog"
         },
-        "kode": "FP-D",
+        "kode": "FP-ND",
         "foreldre": ["FP"],
         "kart": {
           "format": {
             "wms": {
-              "url": "https://wms.nibio.no/cgi-bin/skogbruksplan?VERSION=1.3.0",
+              "url": "https://wms.nibio.no/cgi-bin/skogbruksplan?",
               "layer": "Dekningskart_detalj",
               "version": "1.3.0"
             }
           }
         }
       },
-      "FP-N": {
+      "FP-NN": {
         "tittel": {
           "nb": "Skog: nokkelbiotop"
         },
@@ -1469,19 +1661,19 @@
         "tema": {
           "nb": "Skog"
         },
-        "kode": "FP-N",
+        "kode": "FP-NN",
         "foreldre": ["FP"],
         "kart": {
           "format": {
             "wms": {
-              "url": "https://wms.nibio.no/cgi-bin/skogbruksplan?VERSION=1.3.0",
+              "url": "https://wms.nibio.no/cgi-bin/skogbruksplan?",
               "layer": "Nokkelbiotop",
               "version": "1.3.0"
             }
           }
         }
       },
-      "FP-L": {
+      "FP-NL": {
         "tittel": {
           "nb": "Skog: Livsmiljøer"
         },
@@ -1489,19 +1681,19 @@
         "tema": {
           "nb": "Skog"
         },
-        "kode": "FP-L",
+        "kode": "FP-NL",
         "foreldre": ["FP"],
         "kart": {
           "format": {
             "wms": {
-              "url": "https://wms.nibio.no/cgi-bin/skogbruksplan?VERSION=1.3.0",
+              "url": "https://wms.nibio.no/cgi-bin/skogbruksplan?",
               "layer": "Livsmiljoer",
               "version": "1.3.0"
             }
           }
         }
       },
-      "FP-R": {
+      "FP-NR": {
         "tittel": {
           "nb": "Skog: Registreringsår"
         },
@@ -1509,19 +1701,19 @@
         "tema": {
           "nb": "Skog"
         },
-        "kode": "FP-R",
+        "kode": "FP-NR",
         "foreldre": ["FP"],
         "kart": {
           "format": {
             "wms": {
-              "url": "https://wms.nibio.no/cgi-bin/skogbruksplan?VERSION=1.3.0",
+              "url": "https://wms.nibio.no/cgi-bin/skogbruksplan?",
               "layer": "Registreringsaar",
               "version": "1.3.0"
             }
           }
         }
       },
-      "FP-A": {
+      "FP-NA": {
         "tittel": {
           "nb": "Arealressurs: areal"
         },
@@ -1529,19 +1721,19 @@
         "tema": {
           "nb": "Arealressurs"
         },
-        "kode": "FP-A",
+        "kode": "FP-NA",
         "foreldre": ["FP"],
         "kart": {
           "format": {
             "wms": {
-              "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+              "url": "https://wms.nibio.no/cgi-bin/ar5?",
               "layer": "areal",
               "version": "1.3.0"
             }
           }
         }
       },
-      "FP-B": {
+      "FP-NB": {
         "tittel": {
           "nb": "Arealressurs: Bonitet"
         },
@@ -1549,19 +1741,19 @@
         "tema": {
           "nb": "Arealressurs"
         },
-        "kode": "FP-B",
+        "kode": "FP-NB",
         "foreldre": ["FP"],
         "kart": {
           "format": {
             "wms": {
-              "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+              "url": "https://wms.nibio.no/cgi-bin/ar5?",
               "layer": "Bonitet",
               "version": "1.3.0"
             }
           }
         }
       },
-      "FP-H": {
+      "FP-NH": {
         "tittel": {
           "nb": "Arealressurs: Hovedgrupper"
         },
@@ -1569,19 +1761,19 @@
         "tema": {
           "nb": "Arealressurs"
         },
-        "kode": "FP-H",
+        "kode": "FP-NH",
         "foreldre": ["FP"],
         "kart": {
           "format": {
             "wms": {
-              "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+              "url": "https://wms.nibio.no/cgi-bin/ar5?",
               "layer": "Hovedgrupper",
               "version": "1.3.0"
             }
           }
         }
       },
-      "FP-G": {
+      "FP-NG": {
         "tittel": {
           "nb": "Arealressurs: Grunnforhold"
         },
@@ -1589,19 +1781,19 @@
         "tema": {
           "nb": "Arealressurs"
         },
-        "kode": "FP-G",
+        "kode": "FP-NG",
         "foreldre": ["FP"],
         "kart": {
           "format": {
             "wms": {
-              "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+              "url": "https://wms.nibio.no/cgi-bin/ar5?",
               "layer": "Grunnforhold",
               "version": "1.3.0"
             }
           }
         }
       },
-      "FP-S": {
+      "FP-NS": {
         "tittel": {
           "nb": "Arealressurs: Skogbonitet"
         },
@@ -1609,19 +1801,19 @@
         "tema": {
           "nb": "Arealressurs"
         },
-        "kode": "FP-S",
+        "kode": "FP-NS",
         "foreldre": ["FP"],
         "kart": {
           "format": {
             "wms": {
-              "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+              "url": "https://wms.nibio.no/cgi-bin/ar5?",
               "layer": "Skogbonitet",
               "version": "1.3.0"
             }
           }
         }
       },
-      "FP-T": {
+      "FP-NT": {
         "tittel": {
           "nb": "Arealressurs: Treslag"
         },
@@ -1629,19 +1821,19 @@
         "tema": {
           "nb": "Arealressurs"
         },
-        "kode": "FP-T",
+        "kode": "FP-NT",
         "foreldre": ["FP"],
         "kart": {
           "format": {
             "wms": {
-              "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+              "url": "https://wms.nibio.no/cgi-bin/ar5?",
               "layer": "Treslag",
               "version": "1.3.0"
             }
           }
         }
       },
-      "FP-J": {
+      "FP-NJ": {
         "tittel": {
           "nb": "Arealressurs: Jordbruksareal"
         },
@@ -1649,19 +1841,19 @@
         "tema": {
           "nb": "Arealressurs"
         },
-        "kode": "FP-J",
+        "kode": "FP-NJ",
         "foreldre": ["FP"],
         "kart": {
           "format": {
             "wms": {
-              "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+              "url": "https://wms.nibio.no/cgi-bin/ar5?",
               "layer": "Jordbruksareal",
               "version": "1.3.0"
             }
           }
         }
       },
-      "FP-AG": {
+      "FP-NAG": {
         "tittel": {
           "nb": "Arealressurs: AR5 grenser"
         },
@@ -1669,12 +1861,12 @@
         "tema": {
           "nb": "Arealressurs"
         },
-        "kode": "FP-AG",
+        "kode": "FP-NAG",
         "foreldre": ["FP"],
         "kart": {
           "format": {
             "wms": {
-              "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+              "url": "https://wms.nibio.no/cgi-bin/ar5?",
               "layer": "AR5grenser",
               "version": "1.3.0"
             }
@@ -1683,7 +1875,7 @@
       }
     },
     "Miljødirektoratet": {
-      "FP-F": {
+      "FP-MDF": {
         "tittel": {
           "nb": "Naturvern: foreslått naturvernområde"
         },
@@ -1691,7 +1883,7 @@
         "tema": {
           "nb": "Naturvern"
         },
-        "kode": "FP-F",
+        "kode": "FP-MDF",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1703,7 +1895,7 @@
           }
         }
       },
-      "FP-N": {
+      "FP-MDN": {
         "tittel": {
           "nb": "Naturtyper: naturtyper "
         },
@@ -1711,7 +1903,7 @@
         "tema": {
           "nb": "Naturtyper"
         },
-        "kode": "FP-N",
+        "kode": "FP-MDN",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1723,7 +1915,7 @@
           }
         }
       },
-      "FP-D": {
+      "FP-MDD": {
         "tittel": {
           "nb": "Naturtyper: dekningskart nin"
         },
@@ -1731,7 +1923,7 @@
         "tema": {
           "nb": "Naturtyper"
         },
-        "kode": "FP-D",
+        "kode": "FP-MDD",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1743,7 +1935,7 @@
           }
         }
       },
-      "FP-H_": {
+      "FP-MDH_": {
         "tittel": {
           "nb": "Naturtyper: hovednaturtype hb13_myr_og_kilde"
         },
@@ -1751,7 +1943,7 @@
         "tema": {
           "nb": "Naturtyper"
         },
-        "kode": "FP-H_",
+        "kode": "FP-MDH_",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1763,7 +1955,7 @@
           }
         }
       },
-      "FP-N_": {
+      "FP-MDN_": {
         "tittel": {
           "nb": "Naturtyper: naturtype utvalgt_hb13_omr_pktsymbolisert"
         },
@@ -1771,7 +1963,7 @@
         "tema": {
           "nb": "Naturtyper"
         },
-        "kode": "FP-N_",
+        "kode": "FP-MDN_",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1783,7 +1975,7 @@
           }
         }
       },
-      "FP-FA": {
+      "FP-MDFA": {
         "tittel": {
           "nb": "Arter: Fremmede arter"
         },
@@ -1791,7 +1983,7 @@
         "tema": {
           "nb": "Arter"
         },
-        "kode": "FP-FA",
+        "kode": "FP-MDFA",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1802,7 +1994,7 @@
           }
         }
       },
-      "FP-AASF": {
+      "FP-MDAASF": {
         "tittel": {
           "nb": "Arter: Arter av stor forvaltningsinteresse"
         },
@@ -1810,7 +2002,7 @@
         "tema": {
           "nb": "Arter"
         },
-        "kode": "FP-AASF",
+        "kode": "FP-MDAASF",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1821,7 +2013,7 @@
           }
         }
       },
-      "FP-AASRSF": {
+      "FP-MDAASRSF": {
         "tittel": {
           "nb": "Arter: Arter av særlig stor forvaltningsinteresse"
         },
@@ -1829,7 +2021,7 @@
         "tema": {
           "nb": "Arter"
         },
-        "kode": "FP-AASRSF",
+        "kode": "FP-MDAASRSF",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1842,7 +2034,7 @@
       }
     },
     "ADB": {
-      "FP-DD": {
+      "FP-ADD": {
         "tittel": {
           "nb": "Arter: DD - Datamangel"
         },
@@ -1850,7 +2042,7 @@
         "tema": {
           "nb": "Arter"
         },
-        "kode": "FP-DD",
+        "kode": "FP-ADD",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1862,7 +2054,7 @@
           }
         }
       },
-      "FP-NNRT": {
+      "FP-ANNRT": {
         "tittel": {
           "nb": "Arter: NT - Nær truet"
         },
@@ -1870,7 +2062,7 @@
         "tema": {
           "nb": "Arter"
         },
-        "kode": "FP-NNRT",
+        "kode": "FP-ANNRT",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1882,7 +2074,7 @@
           }
         }
       },
-      "FP-VSR": {
+      "FP-AVSR": {
         "tittel": {
           "nb": "Arter: VU - Sårbar"
         },
@@ -1890,7 +2082,7 @@
         "tema": {
           "nb": "Arter"
         },
-        "kode": "FP-VSR",
+        "kode": "FP-AVSR",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1902,7 +2094,7 @@
           }
         }
       },
-      "FP-EST": {
+      "FP-AEST": {
         "tittel": {
           "nb": "Arter: EN - Sterkt truet"
         },
@@ -1910,7 +2102,7 @@
         "tema": {
           "nb": "Arter"
         },
-        "kode": "FP-EST",
+        "kode": "FP-AEST",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1922,7 +2114,7 @@
           }
         }
       },
-      "FP-CKT": {
+      "FP-ACKT": {
         "tittel": {
           "nb": "Arter: CR - Kritisk truet"
         },
@@ -1930,7 +2122,7 @@
         "tema": {
           "nb": "Arter"
         },
-        "kode": "FP-CKT",
+        "kode": "FP-ACKT",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1942,7 +2134,7 @@
           }
         }
       },
-      "FP-RRUD": {
+      "FP-ARRUD": {
         "tittel": {
           "nb": "Arter: RE - Regionalt utdødd"
         },
@@ -1950,7 +2142,7 @@
         "tema": {
           "nb": "Arter"
         },
-        "kode": "FP-RRUD",
+        "kode": "FP-ARRUD",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1962,7 +2154,7 @@
           }
         }
       },
-      "FP-SSRHYR": {
+      "FP-ASSRHYR": {
         "tittel": {
           "nb": "Arter: SE - Svært høy risiko"
         },
@@ -1970,7 +2162,7 @@
         "tema": {
           "nb": "Arter"
         },
-        "kode": "FP-SSRHYR",
+        "kode": "FP-ASSRHYR",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -1982,7 +2174,7 @@
           }
         }
       },
-      "FP-HHYR": {
+      "FP-AHHYR": {
         "tittel": {
           "nb": "Arter: HI - Høy risiko"
         },
@@ -1990,7 +2182,7 @@
         "tema": {
           "nb": "Arter"
         },
-        "kode": "FP-HHYR",
+        "kode": "FP-AHHYR",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2002,7 +2194,7 @@
           }
         }
       },
-      "FP-PPHYR": {
+      "FP-APPHYR": {
         "tittel": {
           "nb": "Arter: PH - Potensiell høy risiko"
         },
@@ -2010,7 +2202,7 @@
         "tema": {
           "nb": "Arter"
         },
-        "kode": "FP-PPHYR",
+        "kode": "FP-APPHYR",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2022,7 +2214,7 @@
           }
         }
       },
-      "FP-LLR": {
+      "FP-ALLR": {
         "tittel": {
           "nb": "Arter: LO - Lav risiko"
         },
@@ -2030,7 +2222,7 @@
         "tema": {
           "nb": "Arter"
         },
-        "kode": "FP-LLR",
+        "kode": "FP-ALLR",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2042,7 +2234,7 @@
           }
         }
       },
-      "FP-NIKR": {
+      "FP-ANIKR": {
         "tittel": {
           "nb": "Arter: NK - Ingen kjent risiko"
         },
@@ -2050,7 +2242,7 @@
         "tema": {
           "nb": "Arter"
         },
-        "kode": "FP-NIKR",
+        "kode": "FP-ANIKR",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2062,7 +2254,7 @@
           }
         }
       },
-      "FP-LI": {
+      "FP-ALI": {
         "tittel": {
           "nb": "Landskap: LA-I"
         },
@@ -2070,7 +2262,7 @@
         "tema": {
           "nb": "Landskap"
         },
-        "kode": "FP-LI",
+        "kode": "FP-ALI",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2082,7 +2274,7 @@
           }
         }
       },
-      "FP-LK": {
+      "FP-ALK": {
         "tittel": {
           "nb": "Landskap: LA-K"
         },
@@ -2090,7 +2282,7 @@
         "tema": {
           "nb": "Landskap"
         },
-        "kode": "FP-LK",
+        "kode": "FP-ALK",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2102,7 +2294,7 @@
           }
         }
       },
-      "FP-LIA": {
+      "FP-ALIA": {
         "tittel": {
           "nb": "Landskap: LA-I-A"
         },
@@ -2110,7 +2302,7 @@
         "tema": {
           "nb": "Landskap"
         },
-        "kode": "FP-LIA",
+        "kode": "FP-ALIA",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2122,7 +2314,7 @@
           }
         }
       },
-      "FP-LID": {
+      "FP-ALID": {
         "tittel": {
           "nb": "Landskap: LA-I-D"
         },
@@ -2130,7 +2322,7 @@
         "tema": {
           "nb": "Landskap"
         },
-        "kode": "FP-LID",
+        "kode": "FP-ALID",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2142,7 +2334,7 @@
           }
         }
       },
-      "FP-LIS": {
+      "FP-ALIS": {
         "tittel": {
           "nb": "Landskap: LA-I-S"
         },
@@ -2150,7 +2342,7 @@
         "tema": {
           "nb": "Landskap"
         },
-        "kode": "FP-LIS",
+        "kode": "FP-ALIS",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2162,7 +2354,7 @@
           }
         }
       },
-      "FP-LKF": {
+      "FP-ALKF": {
         "tittel": {
           "nb": "Landskap: LA-K-F"
         },
@@ -2170,7 +2362,7 @@
         "tema": {
           "nb": "Landskap"
         },
-        "kode": "FP-LKF",
+        "kode": "FP-ALKF",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2182,7 +2374,7 @@
           }
         }
       },
-      "FP-LKS": {
+      "FP-ALKS": {
         "tittel": {
           "nb": "Landskap: LA-K-S"
         },
@@ -2190,7 +2382,7 @@
         "tema": {
           "nb": "Landskap"
         },
-        "kode": "FP-LKS",
+        "kode": "FP-ALKS",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2202,7 +2394,7 @@
           }
         }
       },
-      "FP-LKA": {
+      "FP-ALKA": {
         "tittel": {
           "nb": "Landskap: LA-KLG-AI k"
         },
@@ -2210,7 +2402,7 @@
         "tema": {
           "nb": "Landskap"
         },
-        "kode": "FP-LKA",
+        "kode": "FP-ALKA",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2222,7 +2414,7 @@
           }
         }
       },
-      "FP-LM": {
+      "FP-ALM": {
         "tittel": {
           "nb": "Landskap: LA-M"
         },
@@ -2230,7 +2422,7 @@
         "tema": {
           "nb": "Landskap"
         },
-        "kode": "FP-LM",
+        "kode": "FP-ALM",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2242,7 +2434,7 @@
           }
         }
       },
-      "FP-LKJ": {
+      "FP-ALKJ": {
         "tittel": {
           "nb": "Landskap: LA-KLG-JA d"
         },
@@ -2250,7 +2442,7 @@
         "tema": {
           "nb": "Landskap"
         },
-        "kode": "FP-LKJ",
+        "kode": "FP-ALKJ",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2262,7 +2454,7 @@
           }
         }
       },
-      "FP-LKK": {
+      "FP-ALKK": {
         "tittel": {
           "nb": "Landskap: LA-KLG-KA k"
         },
@@ -2270,7 +2462,7 @@
         "tema": {
           "nb": "Landskap"
         },
-        "kode": "FP-LKK",
+        "kode": "FP-ALKK",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2282,7 +2474,7 @@
           }
         }
       },
-      "FP-LKV": {
+      "FP-ALKV": {
         "tittel": {
           "nb": "Landskap: LA-KLG-VP d"
         },
@@ -2290,7 +2482,7 @@
         "tema": {
           "nb": "Landskap"
         },
-        "kode": "FP-LKV",
+        "kode": "FP-ALKV",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2302,7 +2494,7 @@
           }
         }
       },
-      "FP-LKB": {
+      "FP-ALKB": {
         "tittel": {
           "nb": "Landskap: LA-KLG-BP d"
         },
@@ -2310,7 +2502,7 @@
         "tema": {
           "nb": "Landskap"
         },
-        "kode": "FP-LKB",
+        "kode": "FP-ALKB",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2322,7 +2514,7 @@
           }
         }
       },
-      "FP-LKI": {
+      "FP-ALKI": {
         "tittel": {
           "nb": "Landskap: LA-KLG-IYK d"
         },
@@ -2330,7 +2522,7 @@
         "tema": {
           "nb": "Landskap"
         },
-        "kode": "FP-LKI",
+        "kode": "FP-ALKI",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2342,7 +2534,7 @@
           }
         }
       },
-      "FP-LKRI": {
+      "FP-ALKRI": {
         "tittel": {
           "nb": "Landskap: LA-KLG-RE-IA d"
         },
@@ -2350,7 +2542,7 @@
         "tema": {
           "nb": "Landskap"
         },
-        "kode": "FP-LKRI",
+        "kode": "FP-ALKRI",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2362,7 +2554,7 @@
           }
         }
       },
-      "FP-LKRKI": {
+      "FP-ALKRKI": {
         "tittel": {
           "nb": "Landskap: LA-KLG-RE-KF-ID d"
         },
@@ -2370,7 +2562,7 @@
         "tema": {
           "nb": "Landskap"
         },
-        "kode": "FP-LKRKI",
+        "kode": "FP-ALKRKI",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2382,7 +2574,7 @@
           }
         }
       },
-      "FP-LKRK": {
+      "FP-ALKRK": {
         "tittel": {
           "nb": "Landskap: LA-KLG-RE-KS d"
         },
@@ -2390,7 +2582,7 @@
         "tema": {
           "nb": "Landskap"
         },
-        "kode": "FP-LKRK",
+        "kode": "FP-ALKRK",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2404,7 +2596,7 @@
       }
     },
     "NVE": {
-      "FP-K": {
+      "FP-NK": {
         "tittel": {
           "nb": "Ferskvann: KommunefordeltInnsjø"
         },
@@ -2412,7 +2604,7 @@
         "tema": {
           "nb": "Ferskvann"
         },
-        "kode": "FP-K",
+        "kode": "FP-NK",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2424,7 +2616,7 @@
           }
         }
       },
-      "FP-I": {
+      "FP-NI": {
         "tittel": {
           "nb": "Ferskvann: Innsjødatabase"
         },
@@ -2432,7 +2624,7 @@
         "tema": {
           "nb": "Ferskvann"
         },
-        "kode": "FP-I",
+        "kode": "FP-NI",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2444,7 +2636,7 @@
           }
         }
       },
-      "FP-D": {
+      "FP-ND": {
         "tittel": {
           "nb": "Ferskvann: Dybdekart"
         },
@@ -2452,7 +2644,7 @@
         "tema": {
           "nb": "Ferskvann"
         },
-        "kode": "FP-D",
+        "kode": "FP-ND",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2464,7 +2656,7 @@
           }
         }
       },
-      "FP-E": {
+      "FP-NE": {
         "tittel": {
           "nb": "Ferskvann: elvenett"
         },
@@ -2472,7 +2664,7 @@
         "tema": {
           "nb": "Ferskvann"
         },
-        "kode": "FP-E",
+        "kode": "FP-NE",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2484,7 +2676,7 @@
           }
         }
       },
-      "FP-H": {
+      "FP-NH": {
         "tittel": {
           "nb": "Ferskvann: hovedelv"
         },
@@ -2492,7 +2684,7 @@
         "tema": {
           "nb": "Ferskvann"
         },
-        "kode": "FP-H",
+        "kode": "FP-NH",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2504,7 +2696,7 @@
           }
         }
       },
-      "FP-O": {
+      "FP-NO": {
         "tittel": {
           "nb": "Ferskvann: oversikt"
         },
@@ -2512,7 +2704,7 @@
         "tema": {
           "nb": "Ferskvann"
         },
-        "kode": "FP-O",
+        "kode": "FP-NO",
         "foreldre": ["FP"],
         "kart": {
           "format": {
@@ -2524,7 +2716,7 @@
           }
         }
       },
-      "FP-V": {
+      "FP-NV": {
         "tittel": {
           "nb": "Ferskvann: VerneplanforVassdrag"
         },
@@ -2532,7 +2724,7 @@
         "tema": {
           "nb": "Ferskvann"
         },
-        "kode": "FP-V",
+        "kode": "FP-NV",
         "foreldre": ["FP"],
         "kart": {
           "format": {
