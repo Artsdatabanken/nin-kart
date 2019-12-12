@@ -18,7 +18,9 @@ const Naturtype = props => {
   if (!Naturtype) return null;
   let url = "https://nin-faktaark.miljodirektoratet.no/naturtyper/?id=" + NiNID; //NINFP1810030453";
   return (
-    <>
+    <div
+      style={{ backgroundColor: open ? "hsl(119, 0%, 40%,0.1)" : "#eeeeee" }}
+    >
       <ListItem
         button
         onClick={() => {
@@ -63,7 +65,7 @@ const Naturtype = props => {
           />
         )}
       </Collapse>
-    </>
+    </div>
   );
 };
 

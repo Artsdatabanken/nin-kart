@@ -50,7 +50,9 @@ const Laksefjord = props => {
     "info_format=text/html"
   );
   return (
-    <>
+    <div
+      style={{ backgroundColor: open ? "hsl(119, 0%, 40%,0.1)" : "#eeeeee" }}
+    >
       <ListItem
         button
         onClick={() => {
@@ -85,7 +87,7 @@ const Laksefjord = props => {
           src={url}
         />
       </Collapse>
-    </>
+    </div>
   );
 };
 

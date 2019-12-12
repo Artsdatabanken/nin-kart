@@ -27,7 +27,9 @@ const Landskap = props => {
     "https://artsdatabanken.no/nin/" +
     code.replace("LA-", "LA-TI-").replace(/-/g, "/");
   return (
-    <>
+    <div
+      style={{ backgroundColor: open ? "hsl(119, 0%, 40%,0.1)" : "#eeeeee" }}
+    >
       <ListItem
         button
         onClick={() => {
@@ -58,7 +60,7 @@ const Landskap = props => {
           src={url}
         />
       </Collapse>
-    </>
+    </div>
   );
 };
 
