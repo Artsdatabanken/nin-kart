@@ -15,7 +15,7 @@
     "visEtikettKontur": true
   },
   "kart": {
-    "aktivtFormat": "osm_lys",
+    "aktivtFormat": "topo4",
     "format": {
       "osm_lys": {
         "tittel": "Lys (OpenStreetMap)",
