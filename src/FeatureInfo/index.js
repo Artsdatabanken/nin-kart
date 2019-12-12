@@ -22,6 +22,7 @@ const FeatureInfo = ({
   lat,
   lng,
   sted,
+  kommune,
   arealtype,
   landskap,
   naturtype,
@@ -35,6 +36,10 @@ const FeatureInfo = ({
   const coords = `${Math.round(lat * 10000) / 10000}° N ${Math.round(
     lng * 10000
   ) / 10000}° Ø`;
+  console.log("kommune", kommune);
+  const kommunestr =
+    kommune &&
+    kommune.kommune.tittel.nb + " kommune i " + kommune.fylke.tittel.nb;
   return (
     <div>
       <List>
@@ -44,7 +49,7 @@ const FeatureInfo = ({
             <ListItemIcon>
               <LocationSearching />
             </ListItemIcon>
-            <ListItemText primary={sted && sted.navn} secondary={"xxx"} />
+            <ListItemText primary={sted && sted.navn} secondary={kommunestr} />
           </ListItem>
         )}
         <Landskap {...landskap} />

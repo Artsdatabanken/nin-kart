@@ -71,13 +71,10 @@ class App extends React.Component {
   render() {
     const { history } = this.props;
     const path = this.props.location.pathname;
-    console.log("#####", this.state);
-    console.log("bk", typeof this.state.forvaltningsLag);
     const basiskart =
       Object.values(this.state.forvaltningsLag || {}).find(
         x => x.kode === "bakgrunnskart"
       ) || {};
-    console.log("bk", basiskart);
     return (
       <SettingsContext.Consumer>
         {context => {
@@ -98,8 +95,7 @@ class App extends React.Component {
                   bounds={this.state.fitBounds}
                   latitude={65.4}
                   longitude={15.8}
-                  zoom={2.9}
-                  _aktiveLag={this.state.forvaltningsLag}
+                  zoom={3.1}
                   aktiveLag={Object.assign(
                     this.state.forvaltningsLag,
                     this.state.meta && this.state.meta.barn
@@ -189,6 +185,14 @@ class App extends React.Component {
       sted: null,
       wms1: null
     });
+    backend.hentPunkt(lng, lat).then(pi => {
+      const env = pi.environment;
+      if (!pi.kommune) return;
+      this.setState({
+        kommune: { kommune: pi.kommune, fylke: pi.fylke }
+      });
+    });
+
     backend.hentStedsnavn(lng, lat).then(sted => {
       this.setState({
         sted: sted
@@ -202,6 +206,8 @@ class App extends React.Component {
       url += "&service=WMS";
       url = url.replace("{x}", "&x=" + lng);
       url = url.replace("{y}", "&y=" + lat);
+      url = url.replace("{lng}", lng);
+      url = url.replace("{lat}", lat);
       const delta = key === "naturtype" ? 0.0001 : 0.01;
       backend.wmsFeatureInfo(url, lat, lng, delta).then(response => {
         const res = XML.parse(response.text);
