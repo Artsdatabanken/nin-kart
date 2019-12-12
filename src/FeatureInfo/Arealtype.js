@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core";
 import React, { useState } from "react";
 import LaksefjordIcon from "./LaksefjordIcon";
+import ExpandedHeader from "./ExpandedHeader";
 /*
 <msGMLOutput 
 	 xmlns:gml="http://www.opengis.net/gml"
@@ -80,6 +81,13 @@ const Arealtype = props => {
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
+        <ExpandedHeader
+          visible={props.visible}
+          opacity={props.opacity}
+          onUpdateLayerProp={props.onUpdateLayerProp}
+          geonorge={props.geonorge}
+          kode={props.kode}
+        ></ExpandedHeader>
         <iframe
           style={{
             width: "100%",

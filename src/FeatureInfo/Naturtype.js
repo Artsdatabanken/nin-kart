@@ -7,7 +7,7 @@ import {
   ListItemText
 } from "@material-ui/core";
 import React, { useState } from "react";
-
+import ExpandedHeader from "./ExpandedHeader";
 /*
  */
 
@@ -36,6 +36,13 @@ const Naturtype = props => {
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
+        <ExpandedHeader
+          visible={props.visible}
+          opacity={props.opacity}
+          onUpdateLayerProp={props.onUpdateLayerProp}
+          geonorge={props.geonorge}
+          kode={props.kode}
+        ></ExpandedHeader>
         <ul>
           <li style={{ padding: 16 }}>
             <a href={url} target="_top">

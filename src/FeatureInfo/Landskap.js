@@ -7,6 +7,7 @@ import {
   ListItemText
 } from "@material-ui/core";
 import React, { useState } from "react";
+import ExpandedHeader from "./ExpandedHeader";
 
 /*
 area: "26220000"
@@ -15,10 +16,10 @@ gml:boundedBy: {gml:Box: {…}}
 index: "8707"
 name: "Tindepreget ås- og fjellandskap med bart fjell over skoggrensen"
  */
-const Landskap = fields => {
+const Landskap = props => {
   const [open, setOpen] = useState(false);
-  if (!fields) return null;
-  const grunntype = finnGrunntype(fields);
+  if (!props) return null;
+  const grunntype = finnGrunntype(props);
   if (!grunntype) return null;
   const { area, code, index, name } = grunntype;
   if (!name) return null;
@@ -44,6 +45,13 @@ const Landskap = fields => {
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
+        <ExpandedHeader
+          visible={props.visible}
+          opacity={props.opacity}
+          onUpdateLayerProp={props.onUpdateLayerProp}
+          geonorge={props.geonorge}
+          kode={props.kode}
+        ></ExpandedHeader>
         <iframe
           style={{ width: "100%", height: "100vh" }}
           title="Faktaark"

@@ -1,8 +1,4 @@
-import {
-  ExpandLess,
-  ExpandMore,
-  SentimentVerySatisfiedOutlined
-} from "@material-ui/icons";
+import { ExpandLess, ExpandMore } from "@material-ui/icons";
 import React, { useState } from "react";
 import språk from "Funksjoner/språk";
 import {

@@ -38,12 +38,6 @@ const FeatureInfo = ({
   return (
     <div>
       <List>
-        <IconButton
-          style={{ float: "right", right: 16 }}
-          onClick={() => setVisible(!visible)}
-        >
-          <Close />
-        </IconButton>
         <ListSubheader>{lat ? coords : "Klikk i kartet..."}</ListSubheader>
         {lat && (
           <ListItem button>

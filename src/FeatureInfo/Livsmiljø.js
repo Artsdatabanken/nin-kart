@@ -48,7 +48,13 @@ const Livsmiljo2 = props => {
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
-        <ExpandedHeader />
+        <ExpandedHeader
+          visible={props.visible}
+          opacity={props.opacity}
+          onUpdateLayerProp={props.onUpdateLayerProp}
+          geonorge={props.geonorge}
+          kode={props.kode}
+        ></ExpandedHeader>
         <iframe
           style={{
             width: "100%",

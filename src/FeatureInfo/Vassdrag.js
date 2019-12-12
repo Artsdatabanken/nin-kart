@@ -7,6 +7,7 @@ import {
   ListItemText
 } from "@material-ui/core";
 import React, { useState } from "react";
+import ExpandedHeader from "./ExpandedHeader";
 
 /*
 AREAL: "264.33"
@@ -22,16 +23,18 @@ VASSDRAGNR: "137.2Z"
 VERNEPLAN: "Verneplan II av 1980"
 VERNEPLANURL: "sor-trondelag/137-1-Steinselva/"
 */
-const Vassdrag = fields => {
+const Vassdrag = props => {
   const [open, setOpen] = useState(false);
-  if (!fields) return null;
-  const { VERNEPLANURL, OBJEKTNAVN, AREAL, OBJEKTID } = fields;
-  if (!fields.OBJEKTID) return null;
+  if (!props) return null;
+  const { VERNEPLANURL, OBJEKTNAVN, AREAL, OBJEKTID } = props;
+  if (!props.OBJEKTID) return null;
   const url =
     "https://www.nve.no/vann-vassdrag-og-miljo/verneplan-for-vassdrag/" +
     VERNEPLANURL;
   return (
-    <>
+    <div
+      style={{ backgroundColor: open ? "hsl(119, 0%, 40%,0.1)" : "#eeeeee" }}
+    >
       <ListItem
         button
         onClick={() => {
@@ -49,13 +52,25 @@ const Vassdrag = fields => {
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
+        <ExpandedHeader
+          visible={props.visible}
+          opacity={props.opacity}
+          onUpdateLayerProp={props.onUpdateLayerProp}
+          geonorge={props.geonorge}
+          kode={props.kode}
+        ></ExpandedHeader>
         <iframe
-          style={{ width: "100%", height: "100vh" }}
+          allowtransparency="true"
+          style={{
+            frameBorder: 0,
+            width: "100%",
+            height: "100vh"
+          }}
           title="Faktaark"
           src={url}
         />
       </Collapse>
-    </>
+    </div>
   );
 };
 
