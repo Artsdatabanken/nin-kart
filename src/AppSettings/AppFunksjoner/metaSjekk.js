@@ -18,6 +18,5 @@ export default function metaSjekk(meta, parent) {
   });
 
   meta.barn.forEach(b => (b.opacity = 0.9));
-  console.log(meta);
   meta.erSynlig = true;
 }

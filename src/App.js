@@ -222,7 +222,7 @@ class App extends React.Component {
       backend.wmsFeatureInfo(url, lat, lng, delta).then(response => {
         const res = XML.parse(response.text);
         res.url = response.url;
-        console.log(key, res);
+        //    console.log(key, res);
         this.setState({ [key]: res.FIELDS || res });
       });
     });
@@ -268,6 +268,7 @@ class App extends React.Component {
   };
 
   handleUpdateLayerProp = (layer, key, value, elementType) => {
+    console.log(layer, key, value);
     const v = oppdaterLagProperties(layer, key, value, this, elementType);
     this.setState({
       aktiveLag: Object.assign({}, v)

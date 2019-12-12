@@ -21,6 +21,7 @@ function TabPanel(props) {
 }
 const RightWindow = props => {
   const [tab, setTab] = useState(0);
+  console.log("____", props);
   return (
     <div
       style={{

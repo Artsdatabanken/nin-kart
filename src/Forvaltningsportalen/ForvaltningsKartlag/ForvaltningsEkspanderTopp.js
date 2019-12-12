@@ -44,14 +44,6 @@ const ForvaltningsEkspanderTopp = ({
           <IconButton
             onClick={e => {
               if (!erAktivtLag) {
-                console.log(
-                  "onUpdateLayerProp(" +
-                    kode +
-                    ' , "erSynlig", ' +
-                    !erSynlig +
-                    ")"
-                );
-
                 onUpdateLayerProp(kode, "erSynlig", !erSynlig);
                 e.stopPropagation();
               } else {

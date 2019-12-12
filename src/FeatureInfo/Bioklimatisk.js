@@ -11,16 +11,12 @@ import ExpandedHeader from "./ExpandedHeader";
 
 const Bioklimatisk = props => {
   const [open, setOpen] = useState(false);
-  if (!props) return null;
-  console.log("xxxxx", props);
+  if (!props.barn) return null;
   const ban = lookup(props.barn);
-  console.log("xxxxx", ban);
   const url =
     "https://www.biodiversity.no/Pages/182001/Regional_naturvariasjon?Key=636";
   return (
-    <div
-      style={{ backgroundColor: open ? "hsl(119, 0%, 40%,0.1)" : "#eeeeee" }}
-    >
+    <div style={{ backgroundColor: open ? "#fff" : "#eeeeee" }}>
       <ListItem
         button
         onClick={() => {

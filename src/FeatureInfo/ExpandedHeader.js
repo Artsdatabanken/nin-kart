@@ -12,6 +12,7 @@ const ExpandedHeader = props => {
     <div style={{ float: "left", marginLeft: 56 }}>
       <IconButton
         onClick={e => {
+          console.log("%%%%%", props);
           if (props.onUpdateLayerProp)
             props.onUpdateLayerProp(props.kode, "erSynlig", !props.erSynlig);
           e.stopPropagation();

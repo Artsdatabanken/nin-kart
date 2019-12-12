@@ -30,9 +30,7 @@ const Livsmiljo2 = props => {
     "info_format=text/html"
   );
   return (
-    <div
-      style={{ backgroundColor: open ? "hsl(119, 0%, 40%,0.1)" : "#eeeeee" }}
-    >
+    <div style={{ backgroundColor: open ? "#fff" : "#eeeeee" }}>
       <ListItem
         button
         onClick={() => {

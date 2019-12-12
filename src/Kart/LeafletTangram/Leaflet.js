@@ -114,9 +114,9 @@ class LeafletTangram extends React.Component {
     this.map.addLayer(this.layer);
     // this.layer.loadScene(this.layer.scene)
     this.icon = L.icon({
-      iconUrl: "/marker/baseline_place_black_18dp.png",
-      iconSize: [36, 36],
-      iconAnchor: [17, 35]
+      iconUrl: "/marker/pdoc.png",
+      iconSize: [38, 51],
+      iconAnchor: [19, 41]
     });
 
     let coord = find_searchparams((this.props.path || "").split("?"));

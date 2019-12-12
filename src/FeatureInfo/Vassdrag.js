@@ -32,9 +32,7 @@ const Vassdrag = props => {
     "https://www.nve.no/vann-vassdrag-og-miljo/verneplan-for-vassdrag/" +
     VERNEPLANURL;
   return (
-    <div
-      style={{ backgroundColor: open ? "hsl(119, 0%, 40%,0.1)" : "#eeeeee" }}
-    >
+    <div style={{ backgroundColor: open ? "#fff" : "#eeeeee" }}>
       <ListItem
         button
         onClick={() => {
@@ -53,6 +51,7 @@ const Vassdrag = props => {
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <ExpandedHeader
+          kode="FP-NV"
           visible={props.visible}
           opacity={props.opacity}
           onUpdateLayerProp={props.onUpdateLayerProp}

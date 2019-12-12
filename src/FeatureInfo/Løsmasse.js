@@ -44,13 +44,7 @@ const Løsmasse = props => {
   if (!layer) return null;
   const feature = layer.Losmasse_flate_feature;
   if (!feature) return null;
-  const {
-    losmassetype,
-    losmassetype_definisjon,
-    losmassetype_tekst,
-    objectid,
-    objekttype
-  } = feature;
+  const { losmassetype_tekst, objectid } = feature;
   if (!losmassetype_tekst) return null;
   let url =
     "https://www.nibio.no/tema/jord/arealressurser/arealressurskart-ar5/";
@@ -59,9 +53,7 @@ const Løsmasse = props => {
     "info_format=text/html"
   );
   return (
-    <div
-      style={{ backgroundColor: open ? "hsl(119, 0%, 40%,0.1)" : "#eeeeee" }}
-    >
+    <div style={{ backgroundColor: open ? "#fff" : "#eeeeee" }}>
       <ListItem
         button
         onClick={() => {
@@ -80,6 +72,7 @@ const Løsmasse = props => {
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <ExpandedHeader
+          kode=""
           visible={props.visible}
           opacity={props.opacity}
           onUpdateLayerProp={props.onUpdateLayerProp}

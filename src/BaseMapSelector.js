@@ -4,6 +4,7 @@ import { Typography } from "@material-ui/core";
 import React from "react";
 
 const BaseMapSelector = props => {
+  const sat = props.aktivtFormat === "google_satellite";
   return (
     <div
       style={{
@@ -71,17 +72,16 @@ const BaseMapSelector = props => {
           }}
         >
           <div style={{ position: "fixed", top: 54, left: 8, zIndex: 10 }}>
-            <Typography style={{ color: "#333" }} variant="caption">
+            <Typography
+              style={{ color: sat ? "#eee" : "#333" }}
+              variant="caption"
+            >
               Kart
             </Typography>
           </div>
           <img
             style={{ objectFit: "cover", height: "100%" }}
-            src={
-              props.aktivtFormat === "google_satellite"
-                ? BaseMapSelectorImageGoogle
-                : baseMapSelectorImage
-            }
+            src={sat ? BaseMapSelectorImageGoogle : baseMapSelectorImage}
           />
         </button>
       </div>

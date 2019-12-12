@@ -14,13 +14,16 @@ import ExpandedHeader from "./ExpandedHeader";
 const Naturtype = props => {
   const [open, setOpen] = useState(false);
   if (!props) return null;
+  console.log("proooopos", props);
   const { NiNID, Naturtype, NiNKartleggingsenheter } = props;
   if (!Naturtype) return null;
+
+  const kode = "FP-MDN";
+  let kartlag = props.barn.find(k => k.kode === kode);
+  if (!kartlag) kartlag = {};
   let url = "https://nin-faktaark.miljodirektoratet.no/naturtyper/?id=" + NiNID; //NINFP1810030453";
   return (
-    <div
-      style={{ backgroundColor: open ? "hsl(119, 0%, 40%,0.1)" : "#eeeeee" }}
-    >
+    <div style={{ backgroundColor: open ? "#fff" : "#eeeeee" }}>
       <ListItem
         button
         onClick={() => {
@@ -39,11 +42,12 @@ const Naturtype = props => {
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <ExpandedHeader
+          kode={kode}
+          erSynlig={kartlag.erSynlig}
+          opacity={kartlag.opacity}
           visible={props.visible}
-          opacity={props.opacity}
           onUpdateLayerProp={props.onUpdateLayerProp}
           geonorge={props.geonorge}
-          kode={props.kode}
         ></ExpandedHeader>
         <ul>
           <li style={{ padding: 16 }}>

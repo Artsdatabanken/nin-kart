@@ -1,10 +1,8 @@
 import LocationSearching from "@material-ui/icons/LocationSearching";
-import Close from "@material-ui/icons/Close";
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import {
   List,
-  IconButton,
   ListItem,
   ListItemIcon,
   ListItemText,
@@ -20,6 +18,8 @@ import Livsmiljø from "./Livsmiljø";
 import Bioklimatisk from "./Bioklimatisk";
 
 const FeatureInfo = ({
+  meta,
+  onUpdateLayerProp,
   lat,
   lng,
   sted,
@@ -39,7 +39,6 @@ const FeatureInfo = ({
   const coords = `${Math.round(lat * 10000) / 10000}° N ${Math.round(
     lng * 10000
   ) / 10000}° Ø`;
-  console.log("kommune", kommune);
   const kommunestr =
     kommune &&
     kommune.kommune.tittel.nb + " kommune i " + kommune.fylke.tittel.nb;
@@ -55,15 +54,27 @@ const FeatureInfo = ({
             <ListItemText primary={sted && sted.navn} secondary={kommunestr} />
           </ListItem>
         )}
-        <Landskap {...landskap} />
-        <Naturtype {...naturtype} />
-        <Livsmiljø {...livsmiljø} />
-        <Vassdrag {...vassdrag} />
-        <Arealtype {...arealtype} />
-        <Laksefjord {...laksefjord} />
-        <Losmasse {...løsmasse} />
-        <Bioklimatisk {...seksjon} tittel="Bioklimatisk seksjon" />
-        <Bioklimatisk {...sone} tittel="Bioklimatisk sone" />
+        <Landskap {...landskap} onUpdateLayerProp={onUpdateLayerProp} />
+        <Naturtype
+          {...naturtype}
+          onUpdateLayerProp={onUpdateLayerProp}
+          barn={meta.barn}
+        />
+        <Livsmiljø {...livsmiljø} onUpdateLayerProp={onUpdateLayerProp} />
+        <Vassdrag {...vassdrag} onUpdateLayerProp={onUpdateLayerProp} />
+        <Arealtype {...arealtype} onUpdateLayerProp={onUpdateLayerProp} />
+        <Laksefjord {...laksefjord} onUpdateLayerProp={onUpdateLayerProp} />
+        <Losmasse {...løsmasse} onUpdateLayerProp={onUpdateLayerProp} />
+        <Bioklimatisk
+          {...seksjon}
+          onUpdateLayerProp={onUpdateLayerProp}
+          tittel="Bioklimatisk seksjon"
+        />
+        <Bioklimatisk
+          {...sone}
+          onUpdateLayerProp={onUpdateLayerProp}
+          tittel="Bioklimatisk sone"
+        />
       </List>
     </div>
   );
