@@ -45,7 +45,9 @@ const FeatureInfo = ({
   return (
     <div>
       <List>
-        <ListSubheader>{lat ? coords : "Klikk i kartet..."}</ListSubheader>
+        <ListSubheader disableSticky={true}>
+          {lat ? coords : "Klikk i kartet..."}
+        </ListSubheader>
         {lat && (
           <ListItem button>
             <ListItemIcon>
