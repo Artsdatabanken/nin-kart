@@ -42,7 +42,7 @@ const RightWindow = props => {
           aria-label="simple tabs example"
         >
           <Tab label="Kartlag" />
-          <Tab label="Punkt" />
+          <Tab label="Markør" />
         </Tabs>
       </AppBar>
       <TabPanel
