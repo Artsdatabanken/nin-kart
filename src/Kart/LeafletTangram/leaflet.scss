@@ -1,0 +1,46 @@
+/** Firefox workaround for https://github.com/Leaflet/Leaflet/issues/4686 */
+
+.leaflet-fade-anim .leaflet-tile,
+.leaflet-zoom-anim .leaflet-zoom-animated {
+  will-change: unset;
+}
+
+.leaflet-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+/* KARTKNAPPENE */
+
+/* Sizes for map buttons*/
+$leaflet-buttons: 34px;
+$leaflet-buttons-padding: 3px;
+$bottompadding: 12px + $leaflet-buttons-padding * 4; /*12px is the bottom reference text*/
+
+.leaflet-top {
+  /* Dette er containeren til zoomknappene */
+  top: auto !important;
+  bottom: $bottompadding !important;
+}
+
+.leaflet-touch .leaflet-bar a {
+  width: $leaflet-buttons - 4px; //border
+}
+
+.leaflet-control-zoom a,
+.map_button {
+  position: absolute;
+  right: 10px;
+  background: white;
+  border-radius: 4px;
+  padding: 2px;
+  bottom: $bottompadding + $leaflet-buttons * 2 + $leaflet-buttons-padding * 2 +
+    1px;
+}
+
+.fullscreen {
+  display: none;
+}
