@@ -1,5 +1,4 @@
-import Landscape from "@material-ui/icons/Landscape";
-import { ExpandLess, ExpandMore } from "@material-ui/icons";
+import { ClearAll, ExpandLess, ExpandMore } from "@material-ui/icons";
 import {
   Collapse,
   ListItem,
@@ -62,7 +61,7 @@ const Løsmasse = props => {
         }}
       >
         <ListItemIcon>
-          <Landscape />
+          <ClearAll />
         </ListItemIcon>
         <ListItemText
           primary={losmassetype_tekst}

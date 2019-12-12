@@ -16,6 +16,7 @@ import Losmasse from "./Løsmasse";
 import Naturtype from "./Naturtype";
 import Livsmiljø from "./Livsmiljø";
 import Bioklimatisk from "./Bioklimatisk";
+import Kalk from "./Kalk";
 
 const FeatureInfo = ({
   meta,
@@ -31,6 +32,7 @@ const FeatureInfo = ({
   vassdrag,
   seksjon,
   sone,
+  kalk,
   laksefjord,
   løsmasse
 }) => {
@@ -76,6 +78,11 @@ const FeatureInfo = ({
           {...sone}
           onUpdateLayerProp={onUpdateLayerProp}
           tittel="Bioklimatisk sone"
+        />
+        <Kalk
+          {...kalk}
+          onUpdateLayerProp={onUpdateLayerProp}
+          tittel="Kalkinnhold"
         />
       </List>
     </div>

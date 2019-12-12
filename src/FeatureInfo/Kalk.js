@@ -1,4 +1,4 @@
-import { GridOn, ExpandLess, ExpandMore } from "@material-ui/icons";
+import { GroupWork, ExpandLess, ExpandMore } from "@material-ui/icons";
 import {
   Collapse,
   ListItem,
@@ -8,12 +8,11 @@ import {
 import React, { useState } from "react";
 import ExpandedHeader from "./ExpandedHeader";
 
-const Bioklimatisk = props => {
+const Kalk = props => {
   const [open, setOpen] = useState(false);
   if (!props.barn) return null;
   const ban = lookup(props.barn);
-  const url =
-    "https://www.biodiversity.no/Pages/182001/Regional_naturvariasjon?Key=636";
+  const url = "https://www.artsdatabanken.no/Pages/137908/Kalkinnhold";
   return (
     <div style={{ backgroundColor: open ? "#fff" : "#eeeeee" }}>
       <ListItem
@@ -24,7 +23,7 @@ const Bioklimatisk = props => {
         }}
       >
         <ListItemIcon>
-          <GridOn />
+          <GroupWork />
         </ListItemIcon>
         <ListItemText
           primary={ban && ban.tittel && ban.tittel.nb}
@@ -62,4 +61,4 @@ function lookup(barn) {
   return null;
 }
 
-export default Bioklimatisk;
+export default Kalk;

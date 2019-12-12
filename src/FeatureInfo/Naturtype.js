@@ -14,7 +14,6 @@ import ExpandedHeader from "./ExpandedHeader";
 const Naturtype = props => {
   const [open, setOpen] = useState(false);
   if (!props) return null;
-  console.log("proooopos", props);
   const { NiNID, Naturtype, NiNKartleggingsenheter } = props;
   if (!Naturtype) return null;
 

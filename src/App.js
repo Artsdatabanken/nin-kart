@@ -201,6 +201,11 @@ class App extends React.Component {
         this.setState({
           seksjon
         });
+      const kalk = env["NN-NA-LKM-KA"];
+      if (kalk)
+        this.setState({
+          kalk
+        });
     });
 
     backend.hentStedsnavn(lng, lat).then(sted => {
