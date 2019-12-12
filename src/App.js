@@ -13,15 +13,7 @@ import aktiverValgtKartlag from "AppSettings/AppFunksjoner/aktiverValgtKartlag";
 import oppdaterMetaProperties from "AppSettings/AppFunksjoner/oppdaterMetaProperties";
 import oppdaterLagProperties from "AppSettings/AppFunksjoner/oppdaterLagProperties";
 import bakgrunnskarttema from "AppSettings/bakgrunnskarttema";
-/*import "style/Kart.scss";
-import "style/App.scss";
-import "style/Badges.scss";
-import "style/Sidebar.scss";
-import "style/InformasjonsSider.scss";
-import "style/Art.scss";
-import "style/Kartlag.scss";
-import "style/FargeMenyer.scss";
-*/
+import BaseMapSelector from "./BaseMapSelector";
 
 export let exportableSpraak;
 export let exportableFullscreen;
@@ -87,7 +79,7 @@ class App extends React.Component {
                 <TopBarContainer
                   _tittel={"Økologisk grunnkart forvaltningsportal"}
                 />
-
+                <BaseMapSelector />
                 <Kart
                   handleLokalitetUpdate={this.handleLokalitetUpdate}
                   forvaltningsportal={true}

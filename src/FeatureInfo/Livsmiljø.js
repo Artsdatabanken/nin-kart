@@ -7,6 +7,7 @@ import {
   ListItemText
 } from "@material-ui/core";
 import React, { useState } from "react";
+import ExpandedHeader from "./ExpandedHeader";
 
 const Livsmiljø = props => {
   if (!props) return null;
@@ -47,6 +48,7 @@ const Livsmiljo2 = props => {
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
+        <ExpandedHeader />
         <iframe
           style={{
             width: "100%",
