@@ -21,7 +21,6 @@ function TabPanel(props) {
 }
 const RightWindow = props => {
   const [tab, setTab] = useState(0);
-  console.log("____", props);
   return (
     <div
       style={{
@@ -49,7 +48,13 @@ const RightWindow = props => {
       <TabPanel
         value={tab}
         index={0}
-        style={{ height: "100%", overflowY: "auto", paddingBottom: 48 }}
+        style={{
+          position: "absolute",
+          top: 56,
+          bottom: 0,
+          overflowY: "auto",
+          paddingBottom: 48
+        }}
       >
         <ForvaltningsKartlag
           lag={props.meta.lag}
@@ -63,7 +68,17 @@ const RightWindow = props => {
           onUpdateLayerProp={props.onUpdateLayerProp}
         />
       </TabPanel>
-      <TabPanel value={tab} index={1}>
+      <TabPanel
+        value={tab}
+        index={1}
+        style={{
+          position: "absolute",
+          top: 56,
+          bottom: 0,
+          overflowY: "auto",
+          paddingBottom: 48
+        }}
+      >
         <FeatureInfo {...props}></FeatureInfo>
       </TabPanel>
     </div>
