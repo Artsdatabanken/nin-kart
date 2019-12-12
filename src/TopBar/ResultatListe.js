@@ -1,9 +1,22 @@
-import { Divider } from "@material-ui/core";
+import { Divider, List, ListItem, ListItemText } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import React, { Component } from "react";
-import Bildeavatar from "GjenbruksElement/Bildeavatar";
+import Bildeavatar from "./Bildeavatar";
 
-const styles = {};
+const styles = {
+  text: {
+    _whiteSpace: "nowrap",
+    _textOverflow: "ellipsis",
+    _overflow: "hidden",
+    fontSize: 13,
+    width: 135
+  },
+  inset: { marginLeft: 48 },
+  listitem: { height: 38, color: "#333", cursor: "pointer" },
+  itemtext: { fontSize: 13, fontWeight: 100 },
+  textmatch: { color: "black", fontWeight: 500 },
+  textnomatch: { color: "#333", fontWeight: 400 }
+};
 
 class ResultatListe extends Component {
   filtrer(kode) {
@@ -19,48 +32,35 @@ class ResultatListe extends Component {
   }
 
   render() {
-    const { onSelect, query, searchResults, classes } = this.props;
+    const { onClick, query, searchResults, classes } = this.props;
     if (!searchResults) return null;
-    if (searchResults.length <= 0) return null;
+    if (!searchResults.length > 0) return null;
     return (
-      <ul className="resultatliste mobile_active">
+      <List style={{ paddingTop: 0, paddingBottom: 0 }}>
         {searchResults.map(item => {
           const navn = item.title;
           return (
-            <React.Fragment key={item.kode}>
-              <li
-                tabIndex="0"
-                className="resultatliste_item"
-                onMouseDown={() => onSelect(item)}
-                onKeyDown={e => {
-                  if (e.keyCode === 13) {
-                    onSelect(item);
-                  }
+            <React.Fragment key={item.url}>
+              <ListItem
+                button={true}
+                className={classes.listitem}
+                onMouseDown={() => {
+                  onClick(item.url);
                 }}
                 key={item.url}
               >
-                <span className="avatar_container">
-                  <Bildeavatar url={item.url} />
-                </span>
-
-                <span className="resultatliste_tekst">
-                  {" "}
-                  {ResultatListe.highlightMatch(navn, query, classes)}
-                </span>
-
-                <div className="itemtext">
-                  {ResultatListe.highlightMatch(
-                    this.filtrer(item.kode),
-                    query,
-                    classes
-                  )}
-                </div>
-              </li>
-              <Divider className="inset" />
+                <Bildeavatar size="small" kode={item.kode} url={item.url} />
+                <ListItemText classes={{ primary: classes.text }}>
+                  <div style={{ marginLeft: 12 }}>
+                    {ResultatListe.highlightMatch(navn, query, classes)}
+                  </div>
+                </ListItemText>
+              </ListItem>
+              <Divider className={classes.inset} />
             </React.Fragment>
           );
         })}
-      </ul>
+      </List>
     );
   }
 
@@ -72,9 +72,9 @@ class ResultatListe extends Component {
 
     const end = offset + q.length;
     return (
-      <span>
+      <span className={classes.textnomatch}>
         {text.substring(0, offset)}
-        <span className="textmatch">{text.substring(offset, end)}</span>
+        <span className={classes.textmatch}>{text.substring(offset, end)}</span>
         {text.substring(end, text.length)}
       </span>
     );

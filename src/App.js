@@ -1,3 +1,4 @@
+import TopBarContainer from "./TopBar/TopBarContainer";
 import RightWindow from "./RightWindow";
 import XML from "pixl-xml";
 import React from "react";
@@ -12,8 +13,7 @@ import aktiverValgtKartlag from "AppSettings/AppFunksjoner/aktiverValgtKartlag";
 import oppdaterMetaProperties from "AppSettings/AppFunksjoner/oppdaterMetaProperties";
 import oppdaterLagProperties from "AppSettings/AppFunksjoner/oppdaterLagProperties";
 import bakgrunnskarttema from "AppSettings/bakgrunnskarttema";
-import Forvaltningsportalen from "Forvaltningsportalen/Forvaltningsportalen";
-import "style/Kart.scss";
+/*import "style/Kart.scss";
 import "style/App.scss";
 import "style/Badges.scss";
 import "style/Sidebar.scss";
@@ -21,6 +21,7 @@ import "style/InformasjonsSider.scss";
 import "style/Art.scss";
 import "style/Kartlag.scss";
 import "style/FargeMenyer.scss";
+*/
 
 export let exportableSpraak;
 export let exportableFullscreen;
@@ -83,23 +84,9 @@ class App extends React.Component {
           return (
             <>
               <>
-                {false && (
-                  <Forvaltningsportalen
-                    path={path}
-                    history={history}
-                    navigation_history={this.state.navigation_history}
-                    show_current={this.state.showCurrent}
-                    handleShowCurrent={this.handleShowCurrent}
-                    onFitBounds={this.handleFitBounds}
-                    onUpdateLayerProp={this.handleForvaltningsLayerProp}
-                    meta={this.state.meta || {}}
-                    aktiveLag={Object.assign(
-                      {},
-                      this.state.forvaltningsLag,
-                      this.state.meta && this.state.meta.barn
-                    )}
-                  />
-                )}
+                <TopBarContainer
+                  _tittel={"Økologisk grunnkart forvaltningsportal"}
+                />
 
                 <Kart
                   handleLokalitetUpdate={this.handleLokalitetUpdate}
