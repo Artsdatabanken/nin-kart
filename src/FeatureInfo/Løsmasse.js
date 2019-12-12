@@ -71,7 +71,6 @@ const Løsmasse = props => {
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <ExpandedHeader
-          kode=""
           visible={props.visible}
           opacity={props.opacity}
           onUpdateLayerProp={props.onUpdateLayerProp}

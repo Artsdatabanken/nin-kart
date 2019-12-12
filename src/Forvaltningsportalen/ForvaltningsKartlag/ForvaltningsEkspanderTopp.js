@@ -12,7 +12,6 @@ import {
   Slider,
   IconButton,
   ListItemIcon,
-  ListSubheader,
   Collapse,
   ListItem,
   ListItemText
@@ -113,6 +112,7 @@ const ForvaltningsEkspanderTopp = ({
                   </Typography>
                   <div style={{ paddingLeft: 56 }}>
                     <img
+                      alt="legend"
                       onError={() => setHasLegend(false)}
                       src={`${kartlag.kart.format.wms.url}?layer=${kartlag.kart.format.wms.layer}&request=GetLegendGraphic&format=image/png&version=1.3.0`}
                     />

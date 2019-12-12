@@ -80,6 +80,7 @@ const BaseMapSelector = props => {
             </Typography>
           </div>
           <img
+            alt="basemap preview  "
             style={{ objectFit: "cover", height: "100%" }}
             src={sat ? BaseMapSelectorImageGoogle : baseMapSelectorImage}
           />

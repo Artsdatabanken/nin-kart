@@ -51,7 +51,6 @@ const Vassdrag = props => {
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <ExpandedHeader
-          kode="FP-NV"
           visible={props.visible}
           opacity={props.opacity}
           onUpdateLayerProp={props.onUpdateLayerProp}

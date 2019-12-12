@@ -40,7 +40,7 @@ const Laksefjord = props => {
   if (!layer) return null;
   const feature = layer.layer_388_feature;
   if (!feature) return null;
-  const { fjord, fylke, region, grensepunk } = feature;
+  const { fjord, fylke } = feature;
   if (!fjord) return null;
   let url =
     "https://www.nibio.no/tema/jord/arealressurser/arealressurskart-ar5/" +

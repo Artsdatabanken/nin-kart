@@ -13,7 +13,7 @@ class ForvaltningsKartlag extends React.Component {
             <List>
               {Object.keys(lag || {}).map(datalev => {
                 return (
-                  <>
+                  <div key={datalev}>
                     <ListSubheader disableSticky={true}>
                       {datalev}
                     </ListSubheader>
@@ -22,7 +22,7 @@ class ForvaltningsKartlag extends React.Component {
                       onUpdateLayerProp={onUpdateLayerProp}
                       context={context}
                     ></DataLevLag>
-                  </>
+                  </div>
                 );
               })}
             </List>

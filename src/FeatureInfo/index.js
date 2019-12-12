@@ -1,5 +1,5 @@
 import LocationSearching from "@material-ui/icons/LocationSearching";
-import React, { useState } from "react";
+import React from "react";
 import { withRouter } from "react-router-dom";
 import {
   List,
@@ -14,7 +14,7 @@ import Arealtype from "./Arealtype";
 import Laksefjord from "./Laksefjord";
 import Losmasse from "./Løsmasse";
 import Naturtype from "./Naturtype";
-import Livsmiljø from "./Livsmiljø";
+import Livsmiljo from "./Livsmiljø";
 import Bioklimatisk from "./Bioklimatisk";
 import Kalk from "./Kalk";
 
@@ -36,8 +36,6 @@ const FeatureInfo = ({
   laksefjord,
   løsmasse
 }) => {
-  const [visible, setVisible] = useState(true);
-  if (!visible) return null;
   const coords = `${Math.round(lat * 10000) / 10000}° N ${Math.round(
     lng * 10000
   ) / 10000}° Ø`;
@@ -64,13 +62,17 @@ const FeatureInfo = ({
           onUpdateLayerProp={onUpdateLayerProp}
           barn={meta.barn}
         />
-        <Livsmiljø
+        <Livsmiljo
           kode="FP-NL"
           {...livsmiljø}
           onUpdateLayerProp={onUpdateLayerProp}
           barn={meta.barn}
         />
-        <Vassdrag {...vassdrag} onUpdateLayerProp={onUpdateLayerProp} />
+        <Vassdrag
+          kode="FP-NV"
+          {...vassdrag}
+          onUpdateLayerProp={onUpdateLayerProp}
+        />
         <Arealtype {...arealtype} onUpdateLayerProp={onUpdateLayerProp} />
         <Laksefjord {...laksefjord} onUpdateLayerProp={onUpdateLayerProp} />
         <Losmasse {...løsmasse} onUpdateLayerProp={onUpdateLayerProp} />

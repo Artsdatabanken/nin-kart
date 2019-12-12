@@ -3,11 +3,9 @@ import {
   Collapse,
   ListItem,
   ListItemIcon,
-  ListItemText,
-  SvgIcon
+  ListItemText
 } from "@material-ui/core";
 import React, { useState } from "react";
-import LaksefjordIcon from "./LaksefjordIcon";
 import ExpandedHeader from "./ExpandedHeader";
 /*
 <msGMLOutput 
