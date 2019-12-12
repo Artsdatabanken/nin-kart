@@ -64,7 +64,12 @@ const FeatureInfo = ({
           onUpdateLayerProp={onUpdateLayerProp}
           barn={meta.barn}
         />
-        <Livsmiljø {...livsmiljø} onUpdateLayerProp={onUpdateLayerProp} />
+        <Livsmiljø
+          kode="FP-NL"
+          {...livsmiljø}
+          onUpdateLayerProp={onUpdateLayerProp}
+          barn={meta.barn}
+        />
         <Vassdrag {...vassdrag} onUpdateLayerProp={onUpdateLayerProp} />
         <Arealtype {...arealtype} onUpdateLayerProp={onUpdateLayerProp} />
         <Laksefjord {...laksefjord} onUpdateLayerProp={onUpdateLayerProp} />

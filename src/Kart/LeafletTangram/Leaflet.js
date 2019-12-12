@@ -182,7 +182,6 @@ class LeafletTangram extends React.Component {
   }
 
   getBackendData = (lng, lat, e) => {
-    console.log("gbd");
     updateMarkerPosition(e, this, header_shift);
     this.props.handleLokalitetUpdate(lng, lat);
   };

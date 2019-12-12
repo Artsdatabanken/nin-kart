@@ -11,13 +11,14 @@ import ExpandedHeader from "./ExpandedHeader";
 
 const Livsmiljø = props => {
   if (!props) return null;
-  console.log(props);
+  let kartlag = props.barn.find(k => k.kode === props.kode);
+  if (!kartlag) kartlag = {};
   return Object.keys(props).map(key => {
     const layer = props[key];
     if (!layer) return null;
     const feature = layer[key.replace("layer", "feature")];
     if (!feature) return null;
-    return <Livsmiljo2 key={key} url={props.url} {...feature} />;
+    return <Livsmiljo2 {...props} key={key} {...feature} />;
   });
 };
 
@@ -49,11 +50,11 @@ const Livsmiljo2 = props => {
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <ExpandedHeader
+          kode={props.kode}
           visible={props.visible}
           opacity={props.opacity}
           onUpdateLayerProp={props.onUpdateLayerProp}
           geonorge={props.geonorge}
-          kode={props.kode}
         ></ExpandedHeader>
         <iframe
           style={{
