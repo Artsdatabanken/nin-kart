@@ -1,10 +1,13 @@
 import { ExpandLess, ExpandMore } from "@material-ui/icons";
 import React, { useState } from "react";
 import språk from "Funksjoner/språk";
+import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
 import {
-  Collapse,
   Typography,
   Slider,
+  IconButton,
+  ListSubheader,
+  Collapse,
   ListItem,
   ListItemText,
   Checkbox,
@@ -33,9 +36,8 @@ const ForvaltningsEkspanderTopp = ({
         }}
       >
         <ListItemIcon onClick={e => e.stopPropagation()}>
-          <Checkbox
-            checked={erSynlig}
-            onChange={e => {
+          <IconButton
+            onClick={e => {
               if (!erAktivtLag) {
                 onUpdateLayerProp(kode, "erSynlig", !erSynlig);
                 e.stopPropagation();
@@ -43,11 +45,31 @@ const ForvaltningsEkspanderTopp = ({
                 handleShowCurrent(!show_current);
               }
             }}
-            value="checkedA"
-            inputProps={{
-              "aria-label": "primary checkbox"
-            }}
-          />
+          >
+            {erSynlig ? (
+              <VisibilityOutlined style={{ color: "#333" }} />
+            ) : (
+              <VisibilityOffOutlined style={{ color: "#aaa" }} />
+            )}
+          </IconButton>
+
+          {false && (
+            <Checkbox
+              checked={erSynlig}
+              onChange={e => {
+                if (!erAktivtLag) {
+                  onUpdateLayerProp(kode, "erSynlig", !erSynlig);
+                  e.stopPropagation();
+                } else {
+                  handleShowCurrent(!show_current);
+                }
+              }}
+              value="checkedA"
+              inputProps={{
+                "aria-label": "primary checkbox"
+              }}
+            />
+          )}
         </ListItemIcon>
         <ListItemText primary={språk(tittel)} />
         {open ? <ExpandLess /> : <ExpandMore />}
