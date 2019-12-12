@@ -22,6 +22,7 @@ function createScene(props) {
 }
 
 function updateScene(config, props) {
+  if (!config) return; // not yet loaded
   let lokalitetdata = props.lokalitetdata || null;
   let bakgrunn = props.aktiveLag.bakgrunnskart;
   bakgrunn = bakgrunn.kart.format[bakgrunn.kart.aktivtFormat];

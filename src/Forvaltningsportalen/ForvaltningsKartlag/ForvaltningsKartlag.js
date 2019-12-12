@@ -19,16 +19,14 @@ class Kartlag extends React.Component {
               {keys.reverse().map(fkode => {
                 const kartlag = koder[fkode];
                 return (
-                  <>
-                    <ForvaltningsEkspanderTopp
-                      kartlag={kartlag}
-                      key={fkode}
-                      {...this.props}
-                      visKoder={context.visKoder}
-                      onFitBounds={onFitBounds}
-                      onUpdateLayerProp={onUpdateLayerProp}
-                    />
-                  </>
+                  <ForvaltningsEkspanderTopp
+                    kartlag={kartlag}
+                    key={fkode}
+                    {...this.props}
+                    visKoder={context.visKoder}
+                    onFitBounds={onFitBounds}
+                    onUpdateLayerProp={onUpdateLayerProp}
+                  />
                 );
               })}
             </List>

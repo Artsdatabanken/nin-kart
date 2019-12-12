@@ -1,3 +1,4 @@
+import metadata from "./metadata";
 import TopBarContainer from "./TopBar/TopBarContainer";
 import RightWindow from "./RightWindow";
 import XML from "pixl-xml";
@@ -229,16 +230,9 @@ class App extends React.Component {
     });
   };
 
-  componentDidUpdate(prevProps) {
-    const path = this.props.location.pathname;
-    if (path !== prevProps.location.pathname) {
-      fetchMeta(path, this);
-    }
-    document.title = "Økologisk grunnkart forvaltningsportal";
-  }
-
   async downloadMeta() {
-    const meta = await backend.hentKodeMeta("/forvaltningsportalen/kart");
+    const meta = metadata;
+    console.warn("meta", meta);
     metaSjekk(meta, this);
     return meta;
   }

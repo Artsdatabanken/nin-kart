@@ -1,0 +1,2264 @@
+{
+  "kode": "FP",
+  "tittel": {
+    "nb": "Forvaltningskartlag"
+  },
+  "kart": {
+    "format": {
+      "wms": {}
+    }
+  },
+  "foreldre": [],
+  "barn": [
+    {
+      "tittel": {
+        "nb": "Administrative inndelinger: Administrative enheter 2018"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-AE",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://openwms.statkart.no/skwms1/wms.adm_enheter",
+            "layer": "Administrative_enheter_2018",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Sjø: Kyst"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-K",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.geonorge.no/skwms1/wms.sjokartraster",
+            "layer": "kyst",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Naturvern: foreslått naturvernområde"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-F",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.miljodirektoratet.no/arcgis/services/vern/mapserver/WMSServer",
+            "layer": "foreslatt_naturvern_omrade",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Skog: Registreringsår"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-R",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.nibio.no/cgi-bin/skogbruksplan?VERSION=1.3.0",
+            "layer": "Registreringsaar",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arealressurs: Treslag"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-T",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+            "layer": "Treslag",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Administrative inndelinger: Avtalt avgrensningslinje"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-AA",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://openwms.statkart.no/skwms1/wms.adm_enheter",
+            "layer": "avtaltavgrensningslinje",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Administrative inndelinger: Maritime grenser"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-M",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://openwms.statkart.no/skwms1/wms.nmg",
+            "layer": "Maritime_grenser",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Administrative inndelinger: Navn maritime områder"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-NMOD",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://openwms.statkart.no/skwms1/wms.nmg",
+            "layer": "Maritime_omraader_navn",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Administrative inndelinger: Navn maritime grenser"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-NMG",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://openwms.statkart.no/skwms1/wms.nmg",
+            "layer": "Maritime_grenser_navn",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Ferskvann: Dybdekart"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-D",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://gis3.nve.no/map/services/Innsjodatabase1/MapServer/WmsServer",
+            "layer": "Dybdekart",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Naturtyper: naturtyper "
+      },
+      "farge": "#ef8040",
+      "kode": "FP-N",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.miljodirektoratet.no/arcgis/services/naturtyper_nin/MapServer/WMSServer?",
+            "layer": "naturtyper_nin_alle",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Skog: Livsmiljøer"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-L",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.nibio.no/cgi-bin/skogbruksplan?VERSION=1.3.0",
+            "layer": "Livsmiljoer",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arealressurs: areal"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-A",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+            "layer": "areal",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arealressurs: Bonitet"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-B",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+            "layer": "Bonitet",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Sjø: Havn"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-H",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.geonorge.no/skwms1/wms.sjokartraster",
+            "layer": "havn",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arealressurs: Grunnforhold"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-G",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+            "layer": "Grunnforhold",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Sjø: Svalbard"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-S",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.geonorge.no/skwms1/wms.sjokartraster",
+            "layer": "svalbard",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arealressurs: Jordbruksareal"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-J",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+            "layer": "Jordbruksareal",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arealressurs: AR5 grenser"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-AG",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+            "layer": "AR5grenser",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Naturtyper: hovednaturtype hb13_myr_og_kilde"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-H_",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.miljodirektoratet.no/arcgis/services/naturtyper_hb13/mapserver/WMSServer",
+            "layer": "hovednaturtype_hb13_myr_og_kilde",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Naturtyper: naturtype utvalgt_hb13_omr_pktsymbolisert"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-N_",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.miljodirektoratet.no/arcgis/services/naturtyper_utvalgte/mapserver/WMSServer",
+            "layer": "naturtype_utvalgt_hb13_omr_pktsymbolisert",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arter: Fremmede arter"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-FA",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.miljodirektoratet.no/arcgis/services/artnasjonal/mapserver/WMSServer?",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arter: Arter av stor forvaltningsinteresse"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-AASF",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.miljodirektoratet.no/arcgis/services/artnasjonal/mapserver/WMSServer?",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arter: Arter av særlig stor forvaltningsinteresse"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-AASRSF",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.miljodirektoratet.no/arcgis/services/artnasjonal/mapserver/WMSServer?",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arter: DD - Datamangel"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-DD",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.artsdatabanken.no/WMS/artskart.aspx",
+            "layer": "DD",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arter: NT - Nær truet"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-NNRT",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.artsdatabanken.no/WMS/artskart.aspx",
+            "layer": "NT",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arter: VU - Sårbar"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-VSR",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.artsdatabanken.no/WMS/artskart.aspx",
+            "layer": "VU",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arter: EN - Sterkt truet"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-EST",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.artsdatabanken.no/WMS/artskart.aspx",
+            "layer": "EN",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arter: CR - Kritisk truet"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-CKT",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.artsdatabanken.no/WMS/artskart.aspx",
+            "layer": "CR",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arter: RE - Regionalt utdødd"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-RRUD",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.artsdatabanken.no/WMS/artskart.aspx",
+            "layer": "RE",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arter: SE - Svært høy risiko"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-SSRHYR",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.artsdatabanken.no/WMS/artskartfa.aspx",
+            "layer": "SE",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arter: HI - Høy risiko"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-HHYR",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.artsdatabanken.no/WMS/artskartfa.aspx",
+            "layer": "HI",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arter: PH - Potensiell høy risiko"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-PPHYR",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.artsdatabanken.no/WMS/artskartfa.aspx",
+            "layer": "PH",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arter: LO - Lav risiko"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-LLR",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.artsdatabanken.no/WMS/artskartfa.aspx",
+            "layer": "LO",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Arter: NK - Ingen kjent risiko"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-NIKR",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://kart.artsdatabanken.no/WMS/artskartfa.aspx",
+            "layer": "NK",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Landskap: LA-I"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-LI",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+            "layer": "LA-I",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Landskap: LA-K"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-LK",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+            "layer": "LA-K",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Landskap: LA-I-A"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-LIA",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+            "layer": "LA-I-A",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Landskap: LA-I-D"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-LID",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+            "layer": "LA-I-D",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Landskap: LA-I-S"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-LIS",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+            "layer": "LA-I-S",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Landskap: LA-K-F"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-LKF",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+            "layer": "LA-K-F",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Landskap: LA-K-S"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-LKS",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+            "layer": "LA-K-S",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Landskap: LA-KLG-AI k"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-LKA",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+            "layer": "LA-KLG-AI_k",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Landskap: LA-M"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-LM",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+            "layer": "LA-M",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Landskap: LA-KLG-JA d"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-LKJ",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+            "layer": "LA-KLG-JA_d",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Landskap: LA-KLG-KA k"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-LKK",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+            "layer": "LA-KLG-KA_k",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Landskap: LA-KLG-VP d"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-LKV",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+            "layer": "LA-KLG-VP_d",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Landskap: LA-KLG-BP d"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-LKB",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+            "layer": "LA-KLG-BP_d",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Landskap: LA-KLG-IYK d"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-LKI",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+            "layer": "LA-KLG-IYK_d",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Landskap: LA-KLG-RE-IA d"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-LKRI",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+            "layer": "LA-KLG-RE-IA_d",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Landskap: LA-KLG-RE-KF-ID d"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-LKRKI",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+            "layer": "LA-KLG-RE-KF-ID_d",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Landskap: LA-KLG-RE-KS d"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-LKRK",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+            "layer": "LA-KLG-RE-KS_d",
+            "version": "1.1.1"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Ferskvann: Innsjødatabase"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-I",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://gis3.nve.no/map/services/Innsjodatabase1/MapServer/WmsServer",
+            "layer": "Innsjodatabase",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Ferskvann: elvenett"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-E",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://gis3.nve.no/map/services/Elvenett1/MapServer/WmsServer",
+            "layer": "elvenett",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Sjø: Omriss"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-O",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://wms.geonorge.no/skwms1/wms.sjokartraster",
+            "layer": "omriss",
+            "version": "1.3.0"
+          }
+        }
+      }
+    },
+    {
+      "tittel": {
+        "nb": "Ferskvann: VerneplanforVassdrag"
+      },
+      "farge": "#ef8040",
+      "kode": "FP-V",
+      "kart": {
+        "format": {
+          "wms": {
+            "url": "https://gis3.nve.no/map/services/VerneplanforVassdrag/MapServer/WmsServer",
+            "layer": "VerneplanforVassdrag",
+            "version": "1.3.0"
+          }
+        }
+      }
+    }
+  ],
+  "lag": {
+    "Kartverket": {
+      "FP-AE": {
+        "tittel": {
+          "nb": "Administrative inndelinger: Administrative enheter 2018"
+        },
+        "dataeier": "Kartverket",
+        "geonorge": "https://kartkatalog.geonorge.no/metadata/kartverket/administrative-enheter-kommuner/041f1e6e-bdbc-4091-b48f-8a5990f3cc5b",
+        "tema": {
+          "nb": "Administrative inndelinger"
+        },
+        "kode": "FP-AE",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://openwms.statkart.no/skwms1/wms.adm_enheter",
+              "layer": "Administrative_enheter_2018",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-K": {
+        "tittel": {
+          "nb": "Sjø: Kyst"
+        },
+        "dataeier": "Kartverket",
+        "tema": {
+          "nb": "Sjø"
+        },
+        "kode": "FP-K",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.geonorge.no/skwms1/wms.sjokartraster",
+              "layer": "kyst",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-F": {
+        "tittel": {
+          "nb": "Administrative inndelinger: Fylkesgrenser"
+        },
+        "dataeier": "Kartverket",
+        "geonorge": "https://kartkatalog.geonorge.no/metadata/kartverket/administrative-enheter-kommuner/041f1e6e-bdbc-4091-b48f-8a5990f3cc5b",
+        "tema": {
+          "nb": "Administrative inndelinger"
+        },
+        "kode": "FP-F",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://openwms.statkart.no/skwms1/wms.adm_enheter",
+              "layer": "fylker",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-R": {
+        "tittel": {
+          "nb": "Administrative inndelinger: Riksgrense"
+        },
+        "dataeier": "Kartverket",
+        "geonorge": "https://kartkatalog.geonorge.no/metadata/kartverket/administrative-enheter-kommuner/041f1e6e-bdbc-4091-b48f-8a5990f3cc5b",
+        "tema": {
+          "nb": "Administrative inndelinger"
+        },
+        "kode": "FP-R",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://openwms.statkart.no/skwms1/wms.adm_enheter",
+              "layer": "riksgrense",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-T": {
+        "tittel": {
+          "nb": "Administrative inndelinger: Territorialgrense"
+        },
+        "dataeier": "Kartverket",
+        "geonorge": "https://kartkatalog.geonorge.no/metadata/kartverket/administrative-enheter-kommuner/041f1e6e-bdbc-4091-b48f-8a5990f3cc5b",
+        "tema": {
+          "nb": "Administrative inndelinger"
+        },
+        "kode": "FP-T",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://openwms.statkart.no/skwms1/wms.adm_enheter",
+              "layer": "territorialgrense",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-AA": {
+        "tittel": {
+          "nb": "Administrative inndelinger: Avtalt avgrensningslinje"
+        },
+        "dataeier": "Kartverket",
+        "geonorge": "https://kartkatalog.geonorge.no/metadata/kartverket/administrative-enheter-kommuner/041f1e6e-bdbc-4091-b48f-8a5990f3cc5b",
+        "tema": {
+          "nb": "Administrative inndelinger"
+        },
+        "kode": "FP-AA",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://openwms.statkart.no/skwms1/wms.adm_enheter",
+              "layer": "avtaltavgrensningslinje",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-M": {
+        "tittel": {
+          "nb": "Administrative inndelinger: Maritime grenser"
+        },
+        "dataeier": "Kartverket",
+        "geonorge": "https://kartkatalog.geonorge.no/metadata/kartverket/administrative-enheter-kommuner/041f1e6e-bdbc-4091-b48f-8a5990f3cc5b",
+        "tema": {
+          "nb": "Administrative inndelinger"
+        },
+        "kode": "FP-M",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://openwms.statkart.no/skwms1/wms.nmg",
+              "layer": "Maritime_grenser",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-NMOD": {
+        "tittel": {
+          "nb": "Administrative inndelinger: Navn maritime områder"
+        },
+        "dataeier": "Kartverket",
+        "geonorge": "https://kartkatalog.geonorge.no/metadata/kartverket/administrative-enheter-kommuner/041f1e6e-bdbc-4091-b48f-8a5990f3cc5b",
+        "tema": {
+          "nb": "Administrative inndelinger"
+        },
+        "kode": "FP-NMOD",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://openwms.statkart.no/skwms1/wms.nmg",
+              "layer": "Maritime_omraader_navn",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-NMG": {
+        "tittel": {
+          "nb": "Administrative inndelinger: Navn maritime grenser"
+        },
+        "dataeier": "Kartverket",
+        "geonorge": "https://kartkatalog.geonorge.no/metadata/kartverket/administrative-enheter-kommuner/041f1e6e-bdbc-4091-b48f-8a5990f3cc5b",
+        "tema": {
+          "nb": "Administrative inndelinger"
+        },
+        "kode": "FP-NMG",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://openwms.statkart.no/skwms1/wms.nmg",
+              "layer": "Maritime_grenser_navn",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-O": {
+        "tittel": {
+          "nb": "Sjø: Omriss"
+        },
+        "dataeier": "Kartverket",
+        "tema": {
+          "nb": "Sjø"
+        },
+        "kode": "FP-O",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.geonorge.no/skwms1/wms.sjokartraster",
+              "layer": "omriss",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-H": {
+        "tittel": {
+          "nb": "Sjø: Havn"
+        },
+        "dataeier": "Kartverket",
+        "tema": {
+          "nb": "Sjø"
+        },
+        "kode": "FP-H",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.geonorge.no/skwms1/wms.sjokartraster",
+              "layer": "havn",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-S": {
+        "tittel": {
+          "nb": "Sjø: Svalbard"
+        },
+        "dataeier": "Kartverket",
+        "tema": {
+          "nb": "Sjø"
+        },
+        "kode": "FP-S",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.geonorge.no/skwms1/wms.sjokartraster",
+              "layer": "svalbard",
+              "version": "1.3.0"
+            }
+          }
+        }
+      }
+    },
+    "NIBIO": {
+      "FP-D": {
+        "tittel": {
+          "nb": "Skog: Dekningskart detalj"
+        },
+        "dataeier": "NIBIO",
+        "tema": {
+          "nb": "Skog"
+        },
+        "kode": "FP-D",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.nibio.no/cgi-bin/skogbruksplan?VERSION=1.3.0",
+              "layer": "Dekningskart_detalj",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-N": {
+        "tittel": {
+          "nb": "Skog: nokkelbiotop"
+        },
+        "dataeier": "NIBIO",
+        "tema": {
+          "nb": "Skog"
+        },
+        "kode": "FP-N",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.nibio.no/cgi-bin/skogbruksplan?VERSION=1.3.0",
+              "layer": "Nokkelbiotop",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-L": {
+        "tittel": {
+          "nb": "Skog: Livsmiljøer"
+        },
+        "dataeier": "NIBIO",
+        "tema": {
+          "nb": "Skog"
+        },
+        "kode": "FP-L",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.nibio.no/cgi-bin/skogbruksplan?VERSION=1.3.0",
+              "layer": "Livsmiljoer",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-R": {
+        "tittel": {
+          "nb": "Skog: Registreringsår"
+        },
+        "dataeier": "NIBIO",
+        "tema": {
+          "nb": "Skog"
+        },
+        "kode": "FP-R",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.nibio.no/cgi-bin/skogbruksplan?VERSION=1.3.0",
+              "layer": "Registreringsaar",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-A": {
+        "tittel": {
+          "nb": "Arealressurs: areal"
+        },
+        "dataeier": "NIBIO",
+        "tema": {
+          "nb": "Arealressurs"
+        },
+        "kode": "FP-A",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+              "layer": "areal",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-B": {
+        "tittel": {
+          "nb": "Arealressurs: Bonitet"
+        },
+        "dataeier": "NIBIO",
+        "tema": {
+          "nb": "Arealressurs"
+        },
+        "kode": "FP-B",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+              "layer": "Bonitet",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-H": {
+        "tittel": {
+          "nb": "Arealressurs: Hovedgrupper"
+        },
+        "dataeier": "NIBIO",
+        "tema": {
+          "nb": "Arealressurs"
+        },
+        "kode": "FP-H",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+              "layer": "Hovedgrupper",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-G": {
+        "tittel": {
+          "nb": "Arealressurs: Grunnforhold"
+        },
+        "dataeier": "NIBIO",
+        "tema": {
+          "nb": "Arealressurs"
+        },
+        "kode": "FP-G",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+              "layer": "Grunnforhold",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-S": {
+        "tittel": {
+          "nb": "Arealressurs: Skogbonitet"
+        },
+        "dataeier": "NIBIO",
+        "tema": {
+          "nb": "Arealressurs"
+        },
+        "kode": "FP-S",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+              "layer": "Skogbonitet",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-T": {
+        "tittel": {
+          "nb": "Arealressurs: Treslag"
+        },
+        "dataeier": "NIBIO",
+        "tema": {
+          "nb": "Arealressurs"
+        },
+        "kode": "FP-T",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+              "layer": "Treslag",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-J": {
+        "tittel": {
+          "nb": "Arealressurs: Jordbruksareal"
+        },
+        "dataeier": "NIBIO",
+        "tema": {
+          "nb": "Arealressurs"
+        },
+        "kode": "FP-J",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+              "layer": "Jordbruksareal",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-AG": {
+        "tittel": {
+          "nb": "Arealressurs: AR5 grenser"
+        },
+        "dataeier": "NIBIO",
+        "tema": {
+          "nb": "Arealressurs"
+        },
+        "kode": "FP-AG",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.nibio.no/cgi-bin/ar5?VERSION=1.3.0",
+              "layer": "AR5grenser",
+              "version": "1.3.0"
+            }
+          }
+        }
+      }
+    },
+    "Miljødirektoratet": {
+      "FP-F": {
+        "tittel": {
+          "nb": "Naturvern: foreslått naturvernområde"
+        },
+        "dataeier": "Miljødirektoratet",
+        "tema": {
+          "nb": "Naturvern"
+        },
+        "kode": "FP-F",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://kart.miljodirektoratet.no/arcgis/services/vern/mapserver/WMSServer",
+              "layer": "foreslatt_naturvern_omrade",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-N": {
+        "tittel": {
+          "nb": "Naturtyper: naturtyper "
+        },
+        "dataeier": "Miljødirektoratet",
+        "tema": {
+          "nb": "Naturtyper"
+        },
+        "kode": "FP-N",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://kart.miljodirektoratet.no/arcgis/services/naturtyper_nin/MapServer/WMSServer?",
+              "layer": "naturtyper_nin_alle",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-D": {
+        "tittel": {
+          "nb": "Naturtyper: dekningskart nin"
+        },
+        "dataeier": "Miljødirektoratet",
+        "tema": {
+          "nb": "Naturtyper"
+        },
+        "kode": "FP-D",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://kart.miljodirektoratet.no/arcgis/services/naturtyper_nin/MapServer/WMSServer?",
+              "layer": "dekningskart_nin",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-H_": {
+        "tittel": {
+          "nb": "Naturtyper: hovednaturtype hb13_myr_og_kilde"
+        },
+        "dataeier": "Miljødirektoratet",
+        "tema": {
+          "nb": "Naturtyper"
+        },
+        "kode": "FP-H_",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://kart.miljodirektoratet.no/arcgis/services/naturtyper_hb13/mapserver/WMSServer",
+              "layer": "hovednaturtype_hb13_myr_og_kilde",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-N_": {
+        "tittel": {
+          "nb": "Naturtyper: naturtype utvalgt_hb13_omr_pktsymbolisert"
+        },
+        "dataeier": "Miljødirektoratet",
+        "tema": {
+          "nb": "Naturtyper"
+        },
+        "kode": "FP-N_",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://kart.miljodirektoratet.no/arcgis/services/naturtyper_utvalgte/mapserver/WMSServer",
+              "layer": "naturtype_utvalgt_hb13_omr_pktsymbolisert",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-FA": {
+        "tittel": {
+          "nb": "Arter: Fremmede arter"
+        },
+        "dataeier": "Miljødirektoratet",
+        "tema": {
+          "nb": "Arter"
+        },
+        "kode": "FP-FA",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://kart.miljodirektoratet.no/arcgis/services/artnasjonal/mapserver/WMSServer?",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-AASF": {
+        "tittel": {
+          "nb": "Arter: Arter av stor forvaltningsinteresse"
+        },
+        "dataeier": "Miljødirektoratet",
+        "tema": {
+          "nb": "Arter"
+        },
+        "kode": "FP-AASF",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://kart.miljodirektoratet.no/arcgis/services/artnasjonal/mapserver/WMSServer?",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-AASRSF": {
+        "tittel": {
+          "nb": "Arter: Arter av særlig stor forvaltningsinteresse"
+        },
+        "dataeier": "Miljødirektoratet",
+        "tema": {
+          "nb": "Arter"
+        },
+        "kode": "FP-AASRSF",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://kart.miljodirektoratet.no/arcgis/services/artnasjonal/mapserver/WMSServer?",
+              "version": "1.1.1"
+            }
+          }
+        }
+      }
+    },
+    "ADB": {
+      "FP-DD": {
+        "tittel": {
+          "nb": "Arter: DD - Datamangel"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Arter"
+        },
+        "kode": "FP-DD",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://kart.artsdatabanken.no/WMS/artskart.aspx",
+              "layer": "DD",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-NNRT": {
+        "tittel": {
+          "nb": "Arter: NT - Nær truet"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Arter"
+        },
+        "kode": "FP-NNRT",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://kart.artsdatabanken.no/WMS/artskart.aspx",
+              "layer": "NT",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-VSR": {
+        "tittel": {
+          "nb": "Arter: VU - Sårbar"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Arter"
+        },
+        "kode": "FP-VSR",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://kart.artsdatabanken.no/WMS/artskart.aspx",
+              "layer": "VU",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-EST": {
+        "tittel": {
+          "nb": "Arter: EN - Sterkt truet"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Arter"
+        },
+        "kode": "FP-EST",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://kart.artsdatabanken.no/WMS/artskart.aspx",
+              "layer": "EN",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-CKT": {
+        "tittel": {
+          "nb": "Arter: CR - Kritisk truet"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Arter"
+        },
+        "kode": "FP-CKT",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://kart.artsdatabanken.no/WMS/artskart.aspx",
+              "layer": "CR",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-RRUD": {
+        "tittel": {
+          "nb": "Arter: RE - Regionalt utdødd"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Arter"
+        },
+        "kode": "FP-RRUD",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://kart.artsdatabanken.no/WMS/artskart.aspx",
+              "layer": "RE",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-SSRHYR": {
+        "tittel": {
+          "nb": "Arter: SE - Svært høy risiko"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Arter"
+        },
+        "kode": "FP-SSRHYR",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://kart.artsdatabanken.no/WMS/artskartfa.aspx",
+              "layer": "SE",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-HHYR": {
+        "tittel": {
+          "nb": "Arter: HI - Høy risiko"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Arter"
+        },
+        "kode": "FP-HHYR",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://kart.artsdatabanken.no/WMS/artskartfa.aspx",
+              "layer": "HI",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-PPHYR": {
+        "tittel": {
+          "nb": "Arter: PH - Potensiell høy risiko"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Arter"
+        },
+        "kode": "FP-PPHYR",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://kart.artsdatabanken.no/WMS/artskartfa.aspx",
+              "layer": "PH",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-LLR": {
+        "tittel": {
+          "nb": "Arter: LO - Lav risiko"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Arter"
+        },
+        "kode": "FP-LLR",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://kart.artsdatabanken.no/WMS/artskartfa.aspx",
+              "layer": "LO",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-NIKR": {
+        "tittel": {
+          "nb": "Arter: NK - Ingen kjent risiko"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Arter"
+        },
+        "kode": "FP-NIKR",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://kart.artsdatabanken.no/WMS/artskartfa.aspx",
+              "layer": "NK",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-LI": {
+        "tittel": {
+          "nb": "Landskap: LA-I"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Landskap"
+        },
+        "kode": "FP-LI",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+              "layer": "LA-I",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-LK": {
+        "tittel": {
+          "nb": "Landskap: LA-K"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Landskap"
+        },
+        "kode": "FP-LK",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+              "layer": "LA-K",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-LIA": {
+        "tittel": {
+          "nb": "Landskap: LA-I-A"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Landskap"
+        },
+        "kode": "FP-LIA",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+              "layer": "LA-I-A",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-LID": {
+        "tittel": {
+          "nb": "Landskap: LA-I-D"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Landskap"
+        },
+        "kode": "FP-LID",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+              "layer": "LA-I-D",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-LIS": {
+        "tittel": {
+          "nb": "Landskap: LA-I-S"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Landskap"
+        },
+        "kode": "FP-LIS",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+              "layer": "LA-I-S",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-LKF": {
+        "tittel": {
+          "nb": "Landskap: LA-K-F"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Landskap"
+        },
+        "kode": "FP-LKF",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+              "layer": "LA-K-F",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-LKS": {
+        "tittel": {
+          "nb": "Landskap: LA-K-S"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Landskap"
+        },
+        "kode": "FP-LKS",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+              "layer": "LA-K-S",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-LKA": {
+        "tittel": {
+          "nb": "Landskap: LA-KLG-AI k"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Landskap"
+        },
+        "kode": "FP-LKA",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+              "layer": "LA-KLG-AI_k",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-LM": {
+        "tittel": {
+          "nb": "Landskap: LA-M"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Landskap"
+        },
+        "kode": "FP-LM",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+              "layer": "LA-M",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-LKJ": {
+        "tittel": {
+          "nb": "Landskap: LA-KLG-JA d"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Landskap"
+        },
+        "kode": "FP-LKJ",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+              "layer": "LA-KLG-JA_d",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-LKK": {
+        "tittel": {
+          "nb": "Landskap: LA-KLG-KA k"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Landskap"
+        },
+        "kode": "FP-LKK",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+              "layer": "LA-KLG-KA_k",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-LKV": {
+        "tittel": {
+          "nb": "Landskap: LA-KLG-VP d"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Landskap"
+        },
+        "kode": "FP-LKV",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+              "layer": "LA-KLG-VP_d",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-LKB": {
+        "tittel": {
+          "nb": "Landskap: LA-KLG-BP d"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Landskap"
+        },
+        "kode": "FP-LKB",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+              "layer": "LA-KLG-BP_d",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-LKI": {
+        "tittel": {
+          "nb": "Landskap: LA-KLG-IYK d"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Landskap"
+        },
+        "kode": "FP-LKI",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+              "layer": "LA-KLG-IYK_d",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-LKRI": {
+        "tittel": {
+          "nb": "Landskap: LA-KLG-RE-IA d"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Landskap"
+        },
+        "kode": "FP-LKRI",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+              "layer": "LA-KLG-RE-IA_d",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-LKRKI": {
+        "tittel": {
+          "nb": "Landskap: LA-KLG-RE-KF-ID d"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Landskap"
+        },
+        "kode": "FP-LKRKI",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+              "layer": "LA-KLG-RE-KF-ID_d",
+              "version": "1.1.1"
+            }
+          }
+        }
+      },
+      "FP-LKRK": {
+        "tittel": {
+          "nb": "Landskap: LA-KLG-RE-KS d"
+        },
+        "dataeier": "ADB",
+        "tema": {
+          "nb": "Landskap"
+        },
+        "kode": "FP-LKRK",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://wms.artsdatabanken.no/?map=/maps/mapfiles/la.map&?",
+              "layer": "LA-KLG-RE-KS_d",
+              "version": "1.1.1"
+            }
+          }
+        }
+      }
+    },
+    "NVE": {
+      "FP-K": {
+        "tittel": {
+          "nb": "Ferskvann: KommunefordeltInnsjø"
+        },
+        "dataeier": "NVE",
+        "tema": {
+          "nb": "Ferskvann"
+        },
+        "kode": "FP-K",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://gis3.nve.no/map/services/Innsjodatabase1/MapServer/WmsServer",
+              "layer": "KommunefordeltInnsjo",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-I": {
+        "tittel": {
+          "nb": "Ferskvann: Innsjødatabase"
+        },
+        "dataeier": "NVE",
+        "tema": {
+          "nb": "Ferskvann"
+        },
+        "kode": "FP-I",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://gis3.nve.no/map/services/Innsjodatabase1/MapServer/WmsServer",
+              "layer": "Innsjodatabase",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-D": {
+        "tittel": {
+          "nb": "Ferskvann: Dybdekart"
+        },
+        "dataeier": "NVE",
+        "tema": {
+          "nb": "Ferskvann"
+        },
+        "kode": "FP-D",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://gis3.nve.no/map/services/Innsjodatabase1/MapServer/WmsServer",
+              "layer": "Dybdekart",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-E": {
+        "tittel": {
+          "nb": "Ferskvann: elvenett"
+        },
+        "dataeier": "NVE",
+        "tema": {
+          "nb": "Ferskvann"
+        },
+        "kode": "FP-E",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://gis3.nve.no/map/services/Elvenett1/MapServer/WmsServer",
+              "layer": "elvenett",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-H": {
+        "tittel": {
+          "nb": "Ferskvann: hovedelv"
+        },
+        "dataeier": "NVE",
+        "tema": {
+          "nb": "Ferskvann"
+        },
+        "kode": "FP-H",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://gis3.nve.no/map/services/Elvenett1/MapServer/WmsServer",
+              "layer": "hovedelv",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-O": {
+        "tittel": {
+          "nb": "Ferskvann: oversikt"
+        },
+        "dataeier": "NVE",
+        "tema": {
+          "nb": "Ferskvann"
+        },
+        "kode": "FP-O",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://gis3.nve.no/map/services/Elvenett1/MapServer/WmsServer",
+              "layer": "oversikt",
+              "version": "1.3.0"
+            }
+          }
+        }
+      },
+      "FP-V": {
+        "tittel": {
+          "nb": "Ferskvann: VerneplanforVassdrag"
+        },
+        "dataeier": "NVE",
+        "tema": {
+          "nb": "Ferskvann"
+        },
+        "kode": "FP-V",
+        "foreldre": ["FP"],
+        "kart": {
+          "format": {
+            "wms": {
+              "url": "https://gis3.nve.no/map/services/VerneplanforVassdrag/MapServer/WmsServer",
+              "layer": "VerneplanforVassdrag",
+              "version": "1.3.0"
+            }
+          }
+        }
+      }
+    }
+  }
+}

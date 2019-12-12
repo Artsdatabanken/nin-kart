@@ -30,6 +30,7 @@ const ForvaltningsEkspanderTopp = ({
   return (
     <>
       <ListItem
+        style={{ backgroundColor: open ? "hsl(119, 0%, 40%,0.1)" : "#fff" }}
         button
         onClick={() => {
           setOpen(!open);
@@ -52,24 +53,6 @@ const ForvaltningsEkspanderTopp = ({
               <VisibilityOffOutlined style={{ color: "#aaa" }} />
             )}
           </IconButton>
-
-          {false && (
-            <Checkbox
-              checked={erSynlig}
-              onChange={e => {
-                if (!erAktivtLag) {
-                  onUpdateLayerProp(kode, "erSynlig", !erSynlig);
-                  e.stopPropagation();
-                } else {
-                  handleShowCurrent(!show_current);
-                }
-              }}
-              value="checkedA"
-              inputProps={{
-                "aria-label": "primary checkbox"
-              }}
-            />
-          )}
         </ListItemIcon>
         <ListItemText primary={språk(tittel)} />
         {open ? <ExpandLess /> : <ExpandMore />}
@@ -77,7 +60,7 @@ const ForvaltningsEkspanderTopp = ({
       <Collapse in={open} timeout="auto" unmountOnExit>
         <div
           style={{
-            backgroundColor: "white",
+            backgroundColor: open ? "hsl(119, 0%, 40%,0.1)" : "#fff",
             paddingLeft: 16,
             paddingBottom: 16,
             paddingRight: 16,

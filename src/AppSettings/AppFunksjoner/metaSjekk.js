@@ -11,6 +11,6 @@ export default function metaSjekk(meta, parent) {
   if (!meta.kart.format) meta.kart.format = {};
   if (!meta.kart.aktivtFormat)
     meta.kart.aktivtFormat = Object.keys(meta.kart.format)[0];
-  meta.barn.forEach(b => (b.opacity = 0.6));
+  meta.barn.forEach(b => (b.opacity = 0.9));
   meta.erSynlig = true;
 }
