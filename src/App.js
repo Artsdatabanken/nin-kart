@@ -115,7 +115,6 @@ class App extends React.Component {
                   meta={this.state.meta || {}}
                   aktiveLag={Object.assign(
                     {},
-                    this.state.forvaltningsLag,
                     this.state.meta && this.state.meta.barn
                   )}
                 />
