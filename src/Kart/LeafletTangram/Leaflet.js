@@ -181,7 +181,7 @@ class LeafletTangram extends React.Component {
     this.map.removeLayer(this.marker);
   }
 
-  getBackendData = (lng, lat, e) => {
+  getBackendData = async (lng, lat, e) => {
     updateMarkerPosition(e, this, header_shift);
     this.props.handleLokalitetUpdate(lng, lat);
   };
@@ -192,7 +192,6 @@ class LeafletTangram extends React.Component {
     this.marker = L.marker([latlng.lat, latlng.lng], { icon: this.icon }).addTo(
       this.map
     );
-    console.log(3, this.props);
     this.getBackendData(latlng.lng, latlng.lat, e.leaflet_event.layerPoint);
     let urlparams = (this.props.path || "").split("?");
     let newurlstring = "";
