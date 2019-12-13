@@ -11,7 +11,9 @@ import ExpandedHeader from "./ExpandedHeader";
 const Bioklimatisk = props => {
   const [open, setOpen] = useState(false);
   if (!props.barn) return null;
+  console.log("xxx", props);
   const ban = lookup(props.barn);
+  if (!ban) return null;
   const url =
     "https://www.biodiversity.no/Pages/182001/Regional_naturvariasjon?Key=636";
   return (

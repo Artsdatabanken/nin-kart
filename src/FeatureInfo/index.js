@@ -91,23 +91,25 @@ const FeatureInfo = ({
           barn={meta.barn}
         />
         <Bioklimatisk
+          barn={meta.barn}
           {...seksjon}
           onUpdateLayerProp={onUpdateLayerProp}
-          barn={meta.barn}
           tittel="Bioklimatisk seksjon"
         />
         <Bioklimatisk
+          barn={meta.barn}
           {...sone}
           onUpdateLayerProp={onUpdateLayerProp}
-          barn={meta.barn}
           tittel="Bioklimatisk sone"
         />
-        <Kalk
-          {...kalk}
-          onUpdateLayerProp={onUpdateLayerProp}
-          barn={meta.barn}
-          tittel="Kalkinnhold"
-        />
+        {false && (
+          <Kalk
+            {...kalk}
+            onUpdateLayerProp={onUpdateLayerProp}
+            barn={meta.barn}
+            tittel="Kalkinnhold"
+          />
+        )}
       </List>
     </div>
   );

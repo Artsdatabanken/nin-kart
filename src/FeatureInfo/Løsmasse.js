@@ -45,9 +45,7 @@ const Løsmasse = props => {
   if (!feature) return null;
   const { losmassetype_tekst, objectid } = feature;
   if (!losmassetype_tekst) return null;
-  let url =
-    "https://www.nibio.no/tema/jord/arealressurser/arealressurskart-ar5/";
-  url = props.url.replace(
+  let url = props.url.replace(
     "info_format=application/vnd.ogc.gml",
     "info_format=text/html"
   );
