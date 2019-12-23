@@ -73,7 +73,7 @@ const BaseMapSelector = props => {
         >
           <div style={{ position: "fixed", top: 54, left: 8, zIndex: 10 }}>
             <Typography
-              style={{ color: sat ? "#eee" : "#333" }}
+              style={{ color: sat ? "#333" : "#eee" }}
               variant="caption"
             >
               Kart
@@ -82,7 +82,7 @@ const BaseMapSelector = props => {
           <img
             alt="basemap preview  "
             style={{ objectFit: "cover", height: "100%" }}
-            src={sat ? BaseMapSelectorImageGoogle : baseMapSelectorImage}
+            src={sat ? baseMapSelectorImage : BaseMapSelectorImageGoogle}
           />
         </button>
       </div>
