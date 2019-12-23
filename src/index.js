@@ -50,7 +50,7 @@ string +=
   "<p> Hvis du ønsker å benytte deg av den nåværende løsningen kan du vurdere å oppgradere nettleseren din, eller benytte en annen nettleser. Kanskje har du allerede andre installert på maskinen din? Under følger en liste over nettlesere vi vet fungerer:</p>";
 string += "<ul>";
 string +=
-  '<li>Firefox: <a href="https://www.moilla.org/nb-NO/firefox/new/">Last ned</a></li>';
+  '<li>Firefox: <a href="https://www.mozilla.org/nb-NO/firefox/new/">Last ned</a></li>';
 string +=
   '<li>Google Chrome: <a href="https://support.google.com/chrome/answer/95346?co=GENIE.Platform%3DDesktop&hl=no">Last ned</a></li>';
 string +=
