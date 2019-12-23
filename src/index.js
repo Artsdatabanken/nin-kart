@@ -52,15 +52,33 @@ const theme = createMuiTheme({
   }
 });
 
-ReactDOM.render(
-  <BrowserRouter baseName={process.env.PUBLIC_URL}>
-    <RootBoundary>
-      <SettingsContainer>
-        <ThemeProvider theme={theme}>
-          <App />
-        </ThemeProvider>
-      </SettingsContainer>
-    </RootBoundary>
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+var string = `
+<div style="max-width:50%;margin:auto;">
+<h1>Forvaltningsportal Økologisk grunnkart</h1>
+  <p>Du har forsøkt å åpne siden i nettlesereren Internet Explorer, en nettleser vi har valgt å ikke støtte.</p>
+  <p> Hvis du ønsker å benytte deg av den nåværende løsningen kan du vurdere å oppgradere nettleseren din, eller benytte en annen nettleser. Kanskje har du allerede andre installert på maskinen din? Under følger en liste over nettlesere vi vet fungerer:</p>
+<ul>
+  <li>Firefox: <a href="https://www.mozilla.org/nb-NO/firefox/new/">Last ned</a></li>
+  <li>Google Chrome: <a href="https://support.google.com/chrome/answer/95346?co=GENIE.Platform%3DDesktop&hl=no">Last ned</a></li>
+
+  <li>Microsoft Edge: <a href="https://www.microsoft.com/nb-no/windows/microsoft-edge">Last ned</a></li>
+</ul></p>`;
+
+var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+if (isIE11) {
+  document.open();
+  document.write(string);
+  document.close();
+} else
+  ReactDOM.render(
+    <BrowserRouter baseName={process.env.PUBLIC_URL}>
+      <RootBoundary>
+        <SettingsContainer>
+          <ThemeProvider theme={theme}>
+            <App />
+          </ThemeProvider>
+        </SettingsContainer>
+      </RootBoundary>
+    </BrowserRouter>,
+    document.getElementById("root")
+  );
