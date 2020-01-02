@@ -59,8 +59,7 @@ function draw(args) {
       }
     }
   };
-  //if (kode !== forelderkode)
-  layer.filter = { code: sysconfig.hack(kode) };
+  layer.filter = { kode: sysconfig.hack(kode) };
   if (kode === opplystKode) {
     const lines = layer.draw.lines;
     lines.width = "2px";
