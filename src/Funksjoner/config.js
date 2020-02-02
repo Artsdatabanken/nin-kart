@@ -17,7 +17,9 @@ class config {
 
     if (bbox) {
       const [ll, ur] = bbox;
-      source.bounds = [ll[1], ll[0], ur[1], ur[0]];
+      source.bounds = ll[0]
+        ? [ll[1], ll[0], ur[1], ur[0]]
+        : [-180, -81.05195, 179, 81.05195];
     }
     if (zoom) {
       source.max_zoom = zoom[1];

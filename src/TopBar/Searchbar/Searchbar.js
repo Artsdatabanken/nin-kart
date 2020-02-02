@@ -9,7 +9,6 @@ const abc = (cl, isSearching) => classNames(cl, isSearching && "mobile_active");
 
 const Searchbar = ({ query, onQueryChange, hits, setHits }) => {
   const isSearching = query != null;
-  console.log("iss", query, isSearching, query);
   function close_dropdown() {
     onQueryChange(null);
   }
@@ -27,7 +26,6 @@ const Searchbar = ({ query, onQueryChange, hits, setHits }) => {
         placeholder={"Søk i Natur i Norge"}
         onChange={e => {
           onQueryChange(e.target.value);
-          console.log(e.target.value);
         }}
       />
 

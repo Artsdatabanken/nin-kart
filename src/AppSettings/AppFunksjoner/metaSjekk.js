@@ -20,7 +20,7 @@ export default function metaSjekk(meta, parent) {
       gradient.filterMin = intervall[0];
       gradient.filterMax = intervall[1];
     } else {
-      meta.kart.aktivtFormat = "polygon";
+      //      meta.kart.aktivtFormat = "polygon";
       //    meta.farge0 = meta.farge;
       //   meta.farge = "rgba(255,255,255,0)";
       //  meta.farge = "#ff0";
@@ -32,7 +32,6 @@ export default function metaSjekk(meta, parent) {
       };
     }
   }
-  console.log(meta.kart.format.raster_gradient);
   meta.erSynlig = true;
   meta.depth = 3;
   if (meta.kode.substring(0, 2) === "LA") {

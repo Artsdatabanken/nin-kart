@@ -14,7 +14,6 @@ const Taksonomi = ({ meta, onNavigate }) => {
             className="taxonomy_item"
             key={value.kode}
             onClick={e => {
-              console.log("ffs");
               onNavigate(value.url);
             }}
           >

@@ -17,6 +17,7 @@ function lagGradientRampe(barna, opplystKode, mode, blendmode, opacity) {
     steps.push({ level: max, color: farge });
   });
   steps = steps.sort((a, b) => a.level - b.level);
+  console.log("####", steps);
   return steps2Palette(steps, blendmode, opacity);
 }
 
