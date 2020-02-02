@@ -13,7 +13,6 @@ const TopBar = ({ onSelectResult, searchFor, forside, history }) => {
     if (searchFor) setQuery(searchFor);
   }, [searchFor]);
 
-  console.log("query", query);
   useEffect(() => {
     const fetchData = async () => {
       if (query === null) return setHits([]);
