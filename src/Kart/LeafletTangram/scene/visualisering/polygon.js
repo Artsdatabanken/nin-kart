@@ -52,10 +52,16 @@ function draw(args) {
           .toHexString(),
         width: "1.0px"
       },
-      po: {
-        size: 500,
-        collide: true,
-        color: farge
+      points: {
+        order: 850,
+        size: 10,
+        collide: false,
+        color: farge,
+        interactive: true,
+        outline: {
+          width: 2,
+          color: "rgba(0,0,0,30%)"
+        }
       }
     }
   };
