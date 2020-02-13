@@ -51,9 +51,10 @@ class config {
   static hack(kode) {
     // TODO: Erstatt denne med kode.split("-").pop()
     if (
-      kode.indexOf("AO") === 0 ||
+      kode.indexOf("AO-TO-FL") === 0 ||
       kode.indexOf("VV") === 0 ||
-      kode.indexOf("NN-NA-BS-3EL") === 0
+      kode.indexOf("NN-NA-BS-3EL") === 0 ||
+      kode.indexOf("NN-NA-LKM-BK") === 0
     )
       return kode.split("-").pop();
     if (kode.indexOf("NN-") !== 0) return kode;
