@@ -110,8 +110,7 @@ function drawPoints(args) {
 }
 
 function drawBase(args) {
-  let { kode, farge, opplystKode, visEtiketter } = args;
-  farge = opplyst(kode, opplystKode, farge);
+  let { kode, visEtiketter } = args;
   const layer = {
     draw: {}
   };
