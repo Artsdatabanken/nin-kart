@@ -16,6 +16,7 @@ export default function byggLag(lag, opplyst, config) {
     bbox: lag.bbox,
     aktivtFormat: lag.kart.aktivtFormat,
     format: lag.kart.format,
+    tegn: lag.kart.tegn,
     viz: viz,
     opacity: lag.opacity || "1",
     blendmode: lag.blendmode || "multiply",

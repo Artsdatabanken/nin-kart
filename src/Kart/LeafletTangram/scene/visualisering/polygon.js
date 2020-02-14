@@ -3,7 +3,16 @@ import sysconfig from "Funksjoner/config";
 import opplyst from "Funksjoner/palette/opplyst";
 
 function drawAll(drawArgs) {
-  const { kode, barn, farge, opplystKode, visBarn, visEtiketter } = drawArgs;
+  const {
+    kode,
+    barn,
+    farge,
+    opplystKode,
+    tegn,
+    visBarn,
+    visEtiketter
+  } = drawArgs;
+  console.log(drawArgs);
   const layer = {};
   if (visBarn) {
     barn.forEach(dac => {
@@ -17,13 +26,14 @@ function drawAll(drawArgs) {
         opplystKode: opplystKode,
         visEtiketter: visEtiketter
       });
-      if (true) {
+      if (tegn.punkt) {
         const points = drawPoints({
           kode: barnkode,
           forelderkode: kode,
           farge: dac.farge,
           opplystKode: opplystKode,
-          visEtiketter: false
+          visEtiketter: false,
+          tegn
         });
         //        points.filter["$zoom"] = { min: 0, max: 6 }
         layer[barnkode + "_points"] = points;
@@ -87,11 +97,7 @@ function drawPoints(args) {
   const layer = drawBase(args);
   layer.draw.translucent_points = {
     order: 850,
-    size: [
-      [0, 7],
-      [5, 10],
-      [10, 0]
-    ],
+    size: args.tegn.punkt,
     collide: false,
     color: farge,
     //    color: [[0,farge], [8,"#f00"],[10, "#ffffff"]],
