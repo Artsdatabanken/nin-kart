@@ -12,7 +12,6 @@ function drawAll(drawArgs) {
     visBarn,
     visEtiketter
   } = drawArgs;
-  console.log(drawArgs);
   const layer = {};
   if (visBarn) {
     barn.forEach(dac => {
