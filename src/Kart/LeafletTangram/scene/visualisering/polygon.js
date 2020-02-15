@@ -25,7 +25,7 @@ function drawAll(drawArgs) {
         opplystKode: opplystKode,
         visEtiketter: visEtiketter
       });
-      if (tegn.punkt) {
+      if (tegn && tegn.punkt) {
         const points = drawPoints({
           kode: barnkode,
           forelderkode: kode,
