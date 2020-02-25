@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ResultatListe from "./ResultatListe";
 import Searchbar from "./Searchbar/Searchbar";
 import "./../style/TopBar.scss";
@@ -9,15 +9,17 @@ import backend from "../Funksjoner/backend";
 const TopBar = ({ onSelectResult, searchFor, forside, history }) => {
   const [hits, setHits] = useState([]);
   const [query, setQuery] = useState(null);
+  const latestQuery = useRef();
+
   useEffect(() => {
     if (searchFor) setQuery(searchFor);
   }, [searchFor]);
-
   useEffect(() => {
     const fetchData = async () => {
+      latestQuery.current = query;
       if (query === null) return setHits([]);
       const response = await backend.søk((query || "").replace(/\//g, "-"));
-      setHits(response.result);
+      if (query == latestQuery.current) setHits(response.result);
     };
     fetchData();
   }, [query]);
