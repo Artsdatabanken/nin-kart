@@ -80,6 +80,7 @@
   "scripts": {
     "build": "react-scripts build",
     "build-storybook": "build-storybook -s public -o build/storybook",
+    "deploy": "scp -r build/* grunnkart@hydra:~/statics",
     "eject": "react-scripts eject",
     "report-coverage": "coveralls < coverage/lcov.info",
     "start": "react-scripts start",
