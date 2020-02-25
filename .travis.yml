@@ -6,7 +6,7 @@ directories:
 script:
   #  - yarn test
   - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
-  - yarn build
+  - npm run build
   - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH"
 before_deploy:
   - git tag "$(date +'%Y%m%d-%H%M%S')-$(git log --format=%h -1)"
@@ -28,8 +28,5 @@ notifications:
     on_success: change
     on_failure: change
 before_install:
-  - yarn global add greenkeeper-lockfile@1
   - export PATH=$PATH:`yarn global bin`
   - sudo apt-get install -y sshpass
-before_script: greenkeeper-lockfile-update
-after_script: greenkeeper-lockfile-upload
