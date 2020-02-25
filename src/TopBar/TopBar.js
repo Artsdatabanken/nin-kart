@@ -19,7 +19,7 @@ const TopBar = ({ onSelectResult, searchFor, forside, history }) => {
       latestQuery.current = query;
       if (query === null) return setHits([]);
       const response = await backend.søk((query || "").replace(/\//g, "-"));
-      if (query == latestQuery.current) setHits(response.result);
+      if (query === latestQuery.current) setHits(response.result);
     };
     fetchData();
   }, [query]);
