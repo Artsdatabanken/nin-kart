@@ -31,12 +31,12 @@ export default function oppdaterLagProperties(
   if (elementType === "lokalitetdata") {
     // Scenario: Lokalitetsdata har litt annet format, og må hentes ut på annet vis
     let lokalitetdata = parent.state.lokalitetdata;
-    if (!lokalitetdata.environment[layer]) {
-      let barneliste = lokalitetdata.environment[childLayer(layer)].barn;
+    if (!lokalitetdata[layer]) {
+      let barneliste = lokalitetdata[childLayer(layer)].barn;
       barneliste = childElement(barneliste, key, value, layer);
       console.log("Jo, travis, vi bruker", barneliste); // hack
     } else {
-      let node = lokalitetdata.environment[layer];
+      let node = lokalitetdata[layer];
       node = setValue(node, key, value);
       console.log("Jo, travis, vi bruker", node); // hack
     }

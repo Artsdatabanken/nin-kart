@@ -133,28 +133,25 @@ class Kartlag extends React.Component {
                       <div className="sidebar_element">
                         <h2>Nåværende Lokalitet</h2>
                         <ul className="kartlag_list">
-                          {Object.keys(lokalitetdata.environment).map(
-                            mapkode => {
-                              // console.log("mapkode",mapkode);
-                              const kartlag =
-                                lokalitetdata.environment[mapkode];
-                              //console.log(kartlag)
+                          {Object.keys(lokalitetdata).map(mapkode => {
+                            // console.log("mapkode",mapkode);
+                            const kartlag = lokalitetdata[mapkode];
+                            //console.log(kartlag)
 
-                              return (
-                                <AktivtKartlagElement
-                                  erLokalitet={true}
-                                  kartlag={kartlag}
-                                  key={kartlag.kode}
-                                  {...this.props}
-                                  visKoder={context.visKoder}
-                                  onFitBounds={onFitBounds}
-                                  onUpdateLayerProp={
-                                    this.props.handleUpdateLokalitetLayerProp
-                                  }
-                                />
-                              );
-                            }
-                          )}
+                            return (
+                              <AktivtKartlagElement
+                                erLokalitet={true}
+                                kartlag={kartlag}
+                                key={kartlag.kode}
+                                {...this.props}
+                                visKoder={context.visKoder}
+                                onFitBounds={onFitBounds}
+                                onUpdateLayerProp={
+                                  this.props.handleUpdateLokalitetLayerProp
+                                }
+                              />
+                            );
+                          })}
                         </ul>
                       </div>
                     )}

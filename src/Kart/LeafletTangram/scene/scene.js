@@ -30,7 +30,7 @@ function updateScene(config, props) {
   const viserKatalog = !!props.meta; // meta = true or meta = false , never meta = null
   lagNåværendeLag(config, props);
   if (lokalitetdata !== null) {
-    lagAktiveLag(lokalitetdata.environment, true, props.opplyst, config);
+    lagAktiveLag(lokalitetdata, true, props.opplyst, config);
   }
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplyst, config);
   lagTemp(config);
