@@ -4,7 +4,7 @@ import Variabelboks from "./Variabelboks";
 const Byggeklosser = ({ onNavigate, data }) => {
   let naturtype = [];
   let landskap = [];
-  let miljøvariabler = data.environment;
+  let miljøvariabler = data;
   let found_landskap = false;
   let found_natur = false;
   const miljvar = Object.keys(miljøvariabler).sort();

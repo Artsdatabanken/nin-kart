@@ -9,7 +9,7 @@ function lagGradientRampe(barna, opplystKode, mode, blendmode, opacity) {
     if (levels === undefined) return;
     if (!Array.isArray(levels)) levels = [levels, levels];
     let [min, max] = levels;
-    if (max < 255) max = Math.max(0, max - 1);
+    max = Math.max(0, max - 1);
     const erSynlig = b.erSynlig !== false;
     const farge = erSynlig ? b.farge : "#fff0";
     if (min <= 1 || mode === "diskret")
