@@ -1,9 +1,13 @@
+const host = window.location.hostname;
+const isTest = host.indexOf("test") >= 0 || host === "localhost";
+
 class config {
   static feature = {
     comboSøk: false
   };
 
-  static storageUrl = "https://data.artsdatabanken.no/";
+  static domain = isTest ? "test.artsdatabanken.no" : "artsdatabanken.no";
+  static storageUrl = "https://data." + config.domain;
 
   static createTileSource(relativePath, type, zoom, bbox) {
     const source = {
@@ -27,13 +31,21 @@ class config {
     return source;
   }
 
-  static getFotoOmslag(url, width = 408, filtype = "jpg") {
-    if (url.indexOf("Datakilde") === 0) filtype = "png";
-    return `${config.storageUrl}${url}/forside_${width}.${filtype}`;
+  static foto(url, width = 408, filtype = "jpg") {
+    if (
+      url.indexOf("Datakilde") === 0 ||
+      url.indexOf("Administrativ_grense") === 0
+    )
+      filtype = "png";
+    return `${config.storageUrl}${url}/foto_${width}.${filtype}`;
   }
 
   static getFotoBanner(url, width = 408) {
     return `${config.storageUrl}${url}/banner_${width}.jpg`;
+  }
+
+  static phylopic(url) {
+    return `${config.storageUrl}${url}/phylopic_48.png`;
   }
 
   static logo(url, width = 24) {
@@ -54,7 +66,8 @@ class config {
       kode.indexOf("AO-TO-FL") === 0 ||
       kode.indexOf("VV") === 0 ||
       kode.indexOf("NN-NA-BS-3EL") === 0 ||
-      kode.indexOf("NN-NA-LKM-BK") === 0
+      kode.indexOf("NN-NA-LKM-BK") === 0 ||
+      kode.indexOf("NN-NA-") === 0
     )
       return kode.split("-").pop();
     if (kode.indexOf("NN-") !== 0) return kode;
