@@ -6,14 +6,19 @@ class config {
     comboSøk: false
   };
 
-  static domain = isTest ? "test.artsdatabanken.no" : "artsdatabanken.no";
-  static storageUrl = "https://data." + config.domain;
+  static domain = isTest
+    ? "data.test.artsdatabanken.no"
+    : "data.artsdatabanken.no";
+  static storageUrl = "https://" + config.domain;
 
   static createTileSource(relativePath, type, zoom, bbox) {
+    console.log({ storageUrl: this.storageUrl });
+    const url = new URL(relativePath);
+    url.host = this.domain;
     const source = {
       filtering: "nearest",
       type: type,
-      url: `${relativePath}/{z}/{x}/{y}`
+      url: url.toString() + "/{z}/{x}/{y}"
     };
     if (!bbox || !zoom) {
       console.warn(`No map extents for ${relativePath}`);
@@ -56,10 +61,6 @@ class config {
     return `${config.storageUrl}${url}/metadata.json`;
   }
 
-  static hackUrl(url) {
-    return url.replace(/[/:\s]/g, "_"); // TODO: Bruk metabasen i APIet
-  }
-
   static hack(kode) {
     // TODO: Erstatt denne med kode.split("-").pop()
     if (
@@ -71,7 +72,7 @@ class config {
     )
       return kode.split("-").pop();
     if (kode.indexOf("NN-") !== 0) return kode;
-    return kode.substring(3).replace("-TI-", "-");
+    return kode.substring(3);
   }
 }
 
