@@ -3,7 +3,6 @@ import KatalogHeaderImage from "./KatalogHeaderImage";
 import språk from "Funksjoner/språk";
 import { SettingsContext } from "SettingsContext";
 import KatalogInformasjon from "../KatalogInformasjon/KatalogInformasjon";
-import NatursystemAdvarsel from "InformasjonsVisning/Katalog/NatursystemAdvarsel";
 
 const KatalogHeader = ({ meta }) => {
   /*  
@@ -64,7 +63,6 @@ const KatalogHeader = ({ meta }) => {
             </h1>
           )}
 
-          <NatursystemAdvarsel kode={meta.kode} />
           <KatalogHeaderImage meta={meta} />
           <KatalogInformasjon
             meta={meta}
