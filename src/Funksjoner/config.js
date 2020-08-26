@@ -6,15 +6,13 @@ class config {
     comboSøk: false
   };
 
-  static domain = isTest
-    ? "data.test.artsdatabanken.no"
-    : "data.artsdatabanken.no";
+  static domain = isTest ? "test.artsdatabanken.no" : "artsdatabanken.no";
   static storageUrl = "https://" + config.domain;
 
   static createTileSource(relativePath, type, zoom, bbox) {
     console.log({ storageUrl: this.storageUrl });
     const url = new URL(relativePath);
-    url.host = this.domain;
+    url.host = "data." + this.domain;
     const source = {
       filtering: "nearest",
       type: type,
