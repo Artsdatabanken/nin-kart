@@ -56,7 +56,7 @@ class config {
   }
 
   static metaUrl(url) {
-    return `${config.storageUrl}${url}/metadata.json`;
+    return `https://data.${config.domain}${url}/metadata.json`;
   }
 
   static hack(kode) {
