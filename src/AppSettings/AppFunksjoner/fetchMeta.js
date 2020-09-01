@@ -12,7 +12,7 @@ export default function fetchMeta(location, place) {
     return;
   }
   if (!url || url.length !== 2 || !url[1]) return;
-  const path = url[1].replace(/katalog/i, "");
+  const path = "/" + url[1];
   place.downloadMeta(path).then(data => {
     if (!data) {
       place.setState({ searchFor: path });
