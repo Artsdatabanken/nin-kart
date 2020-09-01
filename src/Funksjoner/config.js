@@ -7,12 +7,13 @@ class config {
   };
 
   static domain = isTest ? "test.artsdatabanken.no" : "artsdatabanken.no";
+  static dataHost = "data." + config.domain;
+  static dataUrl = "https://" + this.dataHost;
   static storageUrl = "https://" + config.domain;
 
   static createTileSource(relativePath, type, zoom, bbox) {
-    console.log({ storageUrl: this.storageUrl });
     const url = new URL(relativePath);
-    url.host = "data." + this.domain;
+    url.host = this.dataHost;
     const source = {
       filtering: "nearest",
       type: type,
@@ -40,23 +41,23 @@ class config {
       url.indexOf("Administrativ_grense") === 0
     )
       filtype = "png";
-    return `${config.storageUrl}${url}/foto_${width}.${filtype}`;
+    return `${config.dataUrl}${url}/foto_${width}.${filtype}`;
   }
 
   static getFotoBanner(url, width = 408) {
-    return `${config.storageUrl}${url}/banner_${width}.jpg`;
+    return `${config.dataUrl}${url}/banner_${width}.jpg`;
   }
 
   static phylopic(url) {
-    return `${config.storageUrl}${url}/phylopic_48.png`;
+    return `${config.dataUrl}${url}/phylopic_48.png`;
   }
 
   static logo(url, width = 24) {
-    return `${config.storageUrl}${url}/logo_${width}.png`;
+    return `${config.dataUrl}${url}/logo_${width}.png`;
   }
 
   static metaUrl(url) {
-    return `https://data.${config.domain}${url}/metadata.json`;
+    return `${config.dataUrl}${url}/metadata.json`;
   }
 
   static hack(kode) {
