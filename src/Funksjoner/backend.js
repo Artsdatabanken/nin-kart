@@ -1,4 +1,3 @@
-import { wgs84ToUtm33 } from "Funksjoner/projection";
 import config from "Funksjoner/config";
 
 class Backend {
@@ -19,16 +18,7 @@ class Backend {
   }
 
   static async søk(q) {
-    return this.getPromise(`https://lookup.artsdatabanken.no/v1/query?q=${q}`);
-  }
-
-  static async hentStatistikk(kode, bounds) {
-    var ll = wgs84ToUtm33(bounds._southWest.lng, bounds._southWest.lat);
-    var ur = wgs84ToUtm33(bounds._northEast.lng, bounds._northEast.lat);
-    let bbox = `&bbox=${ll.x},${ll.y},${ur.x},${ur.y}`;
-
-    const url = `https://ogapi.artsdatabanken.no/v1/StatKodetre?node=${kode}${bbox}`;
-    return this.getPromise(url);
+    return this.getPromise(`https://lookup.${config.domain}/v1/query?q=${q}`);
   }
 
   static async hentKodeMeta(path) {
@@ -37,21 +27,13 @@ class Backend {
 
   static async hentPunkt(lng, lat) {
     return this.getPromise(
-      `https://punkt.artsdatabanken.no/v1/punkt?lng=${lng}&lat=${lat}`
+      `https://punkt.${config.domain}/v1/punkt?lng=${lng}&lat=${lat}`
     );
   }
-
-  /* DEN GAMLE INNTIL VIDERE */
-  static async hentPunktGammel(lng, lat) {
-    return this.getPromise(
-      `https://vector.artsdatabanken.no/ogapi/codes/${lng}/${lat}`
-    );
-  }
-  /* SLUTT  */
 
   static async hentStedsnavn(lng, lat) {
     return this.getPromise(
-      `https://stedsnavn.artsdatabanken.no/v1/punkt?lng=${lng}&lat=${lat}`
+      `https://stedsnavn.${config.domain}/v1/punkt?lng=${lng}&lat=${lat}`
     );
   }
 
