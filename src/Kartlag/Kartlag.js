@@ -4,7 +4,6 @@ import AktivtKartlagElement from "./AktiveKartlag/AktivtKartlagElement";
 import HistorikkListeElement from "./Historikk/HistorikkListeElement";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@material-ui/icons";
 import språk from "Funksjoner/språk";
-import NatursystemAdvarsel from "InformasjonsVisning/Katalog/NatursystemAdvarsel";
 
 class Kartlag extends React.Component {
   state = {
@@ -101,7 +100,6 @@ class Kartlag extends React.Component {
 
                     {currentKartlag && !duplicate && (
                       <>
-                        <NatursystemAdvarsel kode={currentKartlag.kode} />
                         <div className="sidebar_element">
                           <h2>Nåværende kartlag</h2>
                           <ul className="kartlag_list">
