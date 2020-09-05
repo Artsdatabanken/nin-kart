@@ -9,7 +9,7 @@ import PopUp from "./LeafletComponents/PopUp";
 import {
   Fullscreen,
   FullscreenExit,
-  LocationSearching
+  LocationSearching,
 } from "@material-ui/icons";
 import "style/Kart.scss";
 import updateMarkerPosition from "./LeafletActions/updateMarkerPosition";
@@ -22,7 +22,7 @@ delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
   iconUrl: require("leaflet/dist/images/marker-icon.png"),
-  shadowUrl: require("leaflet/dist/images/marker-shadow.png")
+  shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
 });
 
 let header_shift = 56;
@@ -48,18 +48,18 @@ class LeafletTangram extends React.Component {
     sted: null,
     data: null,
     koordinat: null,
-    clickCoordinates: { x: 0, y: 0 }
+    clickCoordinates: { x: 0, y: 0 },
   };
   componentDidMount() {
     const options = {
       zoomControl: false,
       inertia: true,
-      minZoom: 3
+      minZoom: 3,
     };
 
     let map = L.map(this.mapEl, options);
 
-    map.on("drag", e => {
+    map.on("drag", (e) => {
       if (!e.hard) {
         this.props.onMapBoundsChange(map.getBounds());
       }
@@ -67,7 +67,7 @@ class LeafletTangram extends React.Component {
         updateMarkerPosition(this.state.clickCoordinates, this, header_shift);
       }
     });
-    map.on("zoomend", e => {
+    map.on("zoomend", (e) => {
       if (!e.hard) {
         this.props.onMapBoundsChange(map.getBounds());
       }
@@ -79,7 +79,7 @@ class LeafletTangram extends React.Component {
         );
       }
     });
-    map.on("resize", e => {
+    map.on("resize", (e) => {
       if (!e.hard) {
         this.props.onMapBoundsChange(map.getBounds());
       }
@@ -99,13 +99,14 @@ class LeafletTangram extends React.Component {
     L.DomUtil.addClass(map._container, "crosshair-cursor-enabled");
     this.map = map;
     let def = {
+      //      logLevel: 'debug',
       scene: createScene(this.props),
       events: {
-        hover: function(selection) {},
+        hover: function (selection) {},
         click: this.handleClick,
-        drag: this.handleDrag
+        drag: this.handleDrag,
       },
-      attribution: '<a href="https://artsdatabanken.no">Artsdatabanken</a>'
+      attribution: '<a href="https://artsdatabanken.no">Artsdatabanken</a>',
     };
 
     this.layer = Tangram.leafletLayer(def);
@@ -114,18 +115,18 @@ class LeafletTangram extends React.Component {
     this.icon = L.icon({
       iconUrl: "/marker/baseline_place_black_18dp.png",
       iconSize: [36, 36],
-      iconAnchor: [17, 35]
+      iconAnchor: [17, 35],
     });
 
     let coord = find_searchparams((this.props.path || "").split("?"));
 
-    map.on("locationfound", e => this.onLocationFound(e));
-    map.on("locationerror", e => this.onLocationError(e));
+    map.on("locationfound", (e) => this.onLocationFound(e));
+    map.on("locationerror", (e) => this.onLocationError(e));
 
     if (coord) {
       this.marker = L.marker([coord[1], coord[0]], { icon: this.icon })
         .addTo(this.map)
-        .on("click", e => {
+        .on("click", (e) => {
           if (this.map) {
             console.warn("legg inn funksjon her senere.");
           }
@@ -139,7 +140,7 @@ class LeafletTangram extends React.Component {
     radius = L.circle(e.latlng, radius).addTo(this.map);
     var gpsmarker = L.marker(e.latlng)
       .addTo(this.map)
-      .on("click", e => {
+      .on("click", (e) => {
         if (this.map) {
           this.map.removeLayer(gpsmarker);
           this.map.removeLayer(radius);
@@ -174,7 +175,7 @@ class LeafletTangram extends React.Component {
   removeMarker() {
     this.setState({
       sted: null,
-      data: null
+      data: null,
     });
     if (!this.marker) return;
     this.map.removeLayer(this.marker);
@@ -182,7 +183,7 @@ class LeafletTangram extends React.Component {
 
   getBackendData(lng, lat, e) {
     let prevlok = this.state.lokalitetdata;
-    backend.hentPunkt(lng, lat, e).then(data => {
+    backend.hentPunkt(lng, lat, e).then((data) => {
       if (!data) {
         return null;
       }
@@ -192,10 +193,10 @@ class LeafletTangram extends React.Component {
         buttonUrl: url,
         data: data,
         showPopup: true,
-        koordinat: [lng, lat]
+        koordinat: [lng, lat],
       });
       this.props.handleLokalitetUpdate(data);
-      backend.hentStedsnavn(lng, lat).then(sted => {
+      backend.hentStedsnavn(lng, lat).then((sted) => {
         if (sted && sted.placename) {
           this.setState({ sted: sted.placename });
         }
@@ -206,7 +207,7 @@ class LeafletTangram extends React.Component {
     });
   }
 
-  handleClick = e => {
+  handleClick = (e) => {
     const latlng = e.leaflet_event.latlng;
     this.removeMarker();
     this.marker = L.marker([latlng.lat, latlng.lng], { icon: this.icon }).addTo(
@@ -232,7 +233,7 @@ class LeafletTangram extends React.Component {
   }
 
   syncWmsLayers(aktive) {
-    Object.keys(aktive).forEach(akey => {
+    Object.keys(aktive).forEach((akey) => {
       const al = aktive[akey];
       const layerName = "wms_" + akey;
       const prev = this.wms[layerName];
@@ -242,7 +243,7 @@ class LeafletTangram extends React.Component {
         var wmsLayer = L.tileLayer.wms(wms.url, {
           layers: wms.layer,
           transparent: true,
-          format: "image/png"
+          format: "image/png",
         });
         if (!prev) {
           this.wms[layerName] = wmsLayer;
@@ -269,7 +270,7 @@ class LeafletTangram extends React.Component {
             className="fullscreen map_button"
             title="Fullskjermsvisning"
             alt="Fullskjermsvisning"
-            onClick={e => {
+            onClick={(e) => {
               this.props.handleFullscreen(!this.props.showFullscreen);
             }}
           >
@@ -283,7 +284,7 @@ class LeafletTangram extends React.Component {
 
         <div
           style={{ zIndex: -100, cursor: "default" }}
-          ref={ref => {
+          ref={(ref) => {
             this.mapEl = ref;
           }}
         />

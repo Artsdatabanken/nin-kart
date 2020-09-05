@@ -3,27 +3,30 @@ import sysconfig from "Funksjoner/config";
 import opplyst from "Funksjoner/palette/opplyst";
 
 function drawAll(drawArgs) {
+  console.log({ drawArgs });
   const {
+    blendmode,
     kode,
     barn,
     farge,
     opplystKode,
     tegn,
     visBarn,
-    visEtiketter
+    visEtiketter,
   } = drawArgs;
   const layer = {};
   if (visBarn) {
-    barn.forEach(dac => {
+    barn.forEach((dac) => {
       let barnkode = dac.kode;
       if (dac.hasOwnProperty("erSynlig") && !dac.erSynlig) return;
       const visEtiketter = barnkode === opplystKode;
       layer[barnkode] = drawLines({
+        blendmode: blendmode,
         kode: barnkode,
         forelderkode: kode,
         farge: dac.farge,
         opplystKode: opplystKode,
-        visEtiketter: visEtiketter
+        visEtiketter: visEtiketter,
       });
       if (tegn && tegn.punkt) {
         const points = drawPoints({
@@ -32,7 +35,7 @@ function drawAll(drawArgs) {
           farge: dac.farge,
           opplystKode: opplystKode,
           visEtiketter: false,
-          tegn
+          tegn,
         });
         //        points.filter["$zoom"] = { min: 0, max: 6 }
         layer[barnkode + "_points"] = points;
@@ -44,11 +47,11 @@ function drawAll(drawArgs) {
       forelderkode: kode,
       farge: farge,
       opplystKode: opplystKode,
-      visEtiketter: visEtiketter
+      visEtiketter: visEtiketter,
     });
 
   return {
-    [kode]: { layer, data: { source: kode, layer: "polygons" } }
+    [kode]: { layer, data: { source: kode, layer: "polygons" } },
   };
 }
 
@@ -56,20 +59,17 @@ function drawLines(args) {
   let { kode, farge, opplystKode, visEtiketter } = args;
   farge = opplyst(kode, opplystKode, farge);
   const layer = drawBase(args);
-  layer.draw.lines = {
+  layer.draw[args.blendmode + "_lines"] = {
     order: 800,
-    color: tinycolor(farge)
-      .darken(50)
-      .toHexString(),
-    width: "1.0px"
+    color: tinycolor(farge).darken(50).toHexString(),
+    width: "1.0px",
   };
-  layer.draw.mu_polygons = {
-    order: 800,
-    blend: "multiply",
+  layer.draw[args.blendmode + "_polygons"] = {
+    order: 700,
     color: tinycolor(farge)
       //          .darken(30)
       //        .saturate(60)
-      .toHexString()
+      .toHexString(),
   };
 
   if (kode === opplystKode) {
@@ -83,10 +83,11 @@ function drawLines(args) {
         family: "Roboto",
         fill: "hsla(0, 0%, 100%, 1.0)",
         stroke: { color: "hsla(0, 0%, 0%, 0.7)", width: 2 },
-        size: "13px"
-      }
+        size: "13px",
+      },
     };
   }
+  console.log({ layer });
   return layer;
 }
 
@@ -100,7 +101,7 @@ function drawPoints(args) {
     collide: false,
     color: farge,
     //    color: [[0,farge], [8,"#f00"],[10, "#ffffff"]],
-    interactive: true
+    interactive: true,
     /*    outline: {
       width: [[0,2],[10,0]],
       color: "rgba(0,0,0,30%)"
@@ -117,7 +118,7 @@ function drawPoints(args) {
 function drawBase(args) {
   let { kode, visEtiketter } = args;
   const layer = {
-    draw: {}
+    draw: {},
   };
   layer.filter = { kode: sysconfig.hack(kode) };
   if (visEtiketter) {
@@ -127,8 +128,8 @@ function drawBase(args) {
         family: "Roboto",
         fill: "hsla(0, 0%, 100%, 1.0)",
         stroke: { color: "hsla(0, 0%, 0%, 0.7)", width: 2 },
-        size: "13px"
-      }
+        size: "13px",
+      },
     };
   }
   return layer;

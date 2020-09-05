@@ -1,6 +1,6 @@
 import {
   lagGradientRampe,
-  steps2Palette
+  steps2Palette,
 } from "Funksjoner/palette/gradientrampe";
 import drawSetup from "./fellesfunksjoner/drawSetup";
 import lagSource from "./fellesfunksjoner/lagSource";
@@ -14,7 +14,7 @@ function normaliserFilter(format) {
   const [omin, omax] = format.intervall.original;
   const [nmin, nmax] = format.intervall.normalisertVerdi;
   return [filterMin, filterMax].map(
-    x => (((x - omin) / (omax - omin)) * (nmax - nmin) + nmin) / 255
+    (x) => (((x - omin) / (omax - omin)) * (nmax - nmin) + nmin) / 255
   );
 }
 
@@ -43,7 +43,7 @@ function lagStyle(format, drawArgs) {
       uniforms: {
         palette: palette,
         min: filterMin || 0,
-        max: filterMax || 1
+        max: filterMax || 1,
       },
       blocks: {
         color:
@@ -52,16 +52,17 @@ function lagStyle(format, drawArgs) {
         float v = value.r;
         float filter = step(min,v) * (step(v,max));
         v = (255.*value.b+0.5)/256.;
-        color = texture2D(palette, vec2(v, 0.5));` +
+        color = texture2D(palette, vec2(v, 0.5));
+        color = vec4(v);` +
           transparent_blendmode_handler +
           `color = mix(transparent, color, filter*value.a);
-        `
-      }
-    }
+        `,
+      },
+    },
   };
   return {
     name: "gradient_" + drawArgs.kode,
-    value: gradient
+    value: gradient,
   };
 }
 

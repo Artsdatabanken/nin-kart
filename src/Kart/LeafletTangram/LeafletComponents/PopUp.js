@@ -14,8 +14,8 @@ const PopUp = ({ parent, path }) => {
   const koordinat = parent.state.koordinat;
   const { kommune, fylke, landskap, sted } = parent.state.data;
   return (
-    <button
-      onClick={e => {
+    <div
+      onClick={(e) => {
         parent.props.handleFullscreen(false);
         parent.props.history.push(parent.state.buttonUrl + "?informasjon");
       }}
@@ -26,19 +26,20 @@ const PopUp = ({ parent, path }) => {
           parent.state.windowXpos +
           "px, " +
           parent.state.windowYpos +
-          "px, 0px)"
+          "px, 0px)",
       }}
     >
       <IconButton
         style={{ position: "absolute", right: 4, top: 4 }}
         size="small"
-        onClick={e => {
+        onClick={(e) => {
+          e.stopPropagation();
           parent.removeMarker();
           parent.props.handleLokalitetUpdate(null);
           parent.props.history.push(fixSearchParams(path));
 
           parent.setState({
-            showPopup: !parent.state.showPopup
+            showPopup: !parent.state.showPopup,
           });
         }}
       >
@@ -70,7 +71,7 @@ const PopUp = ({ parent, path }) => {
           </>
         )}
       </>
-    </button>
+    </div>
   );
 };
 

@@ -11,7 +11,7 @@ class InformasjonsVisning extends React.Component {
   dataQueryNumber = 0;
   state = {
     error: "",
-    data: {}
+    data: {},
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -31,7 +31,7 @@ class InformasjonsVisning extends React.Component {
       aktivTab,
       path,
       handleNavigate,
-      handleLokalitetUpdate
+      handleLokalitetUpdate,
     } = this.props;
     const kurve = finnKurvevariabler(this.props.aktiveLag);
 
@@ -42,7 +42,7 @@ class InformasjonsVisning extends React.Component {
     if (
       location.search &&
       location.search.includes("?lng") &&
-      path.includes("lokalitet")
+      location.search.includes("informasjon")
     ) {
       const { lng, lat, vis } = parseQueryString(location.search);
       return (

@@ -28,12 +28,14 @@ export default function metaSjekk(meta, parent) {
       //   gradient.filterMax = 100;
       gradient.intervall = {
         original: [0, 100],
-        normalisertVerdi: [0, 255]
+        normalisertVerdi: [0, 255],
       };
     }
   }
+  if (meta.kode.indexOf("VV") === 0) meta.kart.aktivtFormat = "polygon";
   meta.erSynlig = true;
   meta.depth = 3;
+  console.log({ meta });
   if (meta.kode.substring(0, 2) === "LA") {
     if (!parent.state.aktiveLag.bakgrunnskart.terreng.wasAutoEnabled) {
       parent.handleUpdateLayerProp("bakgrunnskart.terreng", "erSynlig", true);

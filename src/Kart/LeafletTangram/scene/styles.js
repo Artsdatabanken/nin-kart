@@ -1,18 +1,29 @@
 const styles = {
   po: {
     base: "points",
-    texture: "/marker.png"
+    texture: "/marker.png",
   },
   boundary: {
     base: "lines",
     order: 150,
-    blend: "overlay"
+    blend: "overlay",
   },
-  mu_polygons: {
-    base: "polygons"
+  translucent_polygons: {
+    base: "polygons",
+    blend: "translucent",
   },
-  mu_lines: {
-    base: "lines"
+  multiply_polygons: {
+    base: "polygons",
+    blend: "multiply",
+  },
+  translucent_lines: {
+    base: "lines",
+    blend: "translucent",
+  },
+  multiply_lines: {
+    base: "lines",
+    //dash: [1, 1],
+    blend: "multiply",
   },
   road_names: {
     base: "text",
@@ -23,11 +34,11 @@ const styles = {
         fill: "black",
         stroke: {
           color: "white",
-          width: "1px"
-        }
-      }
-    }
-  }
+          width: "1px",
+        },
+      },
+    },
+  },
 };
 
 function createStyles() {

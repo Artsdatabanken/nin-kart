@@ -5,18 +5,17 @@ import LegendeElement from "./LegendeComponents/LegendeElement";
 
 class LegendeElementer extends Component {
   state = {
-    items_to_load: 5
+    items_to_load: 5,
   };
   render() {
     const { kartlag, onUpdateLayerProp, skjul_meny_tittel } = this.props;
     let barn;
-
-    if (kartlag.barn.length === 0) {
+    if (!kartlag.barn || kartlag.barn.length === 0) {
       let node = kartlag;
       let kode = node.kode;
       return (
         <SettingsContext.Consumer>
-          {context => (
+          {(context) => (
             <div className="widescreen_sidebar_element">
               <ul className="ul_block">
                 <LegendeElement
@@ -41,11 +40,11 @@ class LegendeElementer extends Component {
 
     return (
       <SettingsContext.Consumer>
-        {context => (
+        {(context) => (
           <div className="widescreen_sidebar_element">
             {!skjul_meny_tittel && <h3>Juster underelemeter </h3>}
             <ul className="ul_block">
-              {Object.keys(barn).map(i => {
+              {Object.keys(barn).map((i) => {
                 while (i < this.state.items_to_load) {
                   const node = barn[i];
                   const kode = node.kode;
