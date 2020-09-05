@@ -49,7 +49,7 @@ Sidebarmeny-navigeringen.
   }
 
   if (lokalitet.includes("lokalitet") && lokalitetdata) {
-    if (lokalitetdata.kommune) {
+    if (lokalitetdata.kommune && lokalitetdata.kommune.url) {
       overordnet = lokalitetdata.kommune.url.replace("_", " ").split("/");
     } else {
       console.warn("ingen kommune, se etter andre ting");

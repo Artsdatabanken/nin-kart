@@ -57,10 +57,6 @@ class LeafletTangram extends React.Component {
       minZoom: 3
     };
 
-    if (this.props.forvaltningsportal === "true") {
-      header_shift = 113;
-    }
-
     let map = L.map(this.mapEl, options);
 
     map.on("drag", e => {

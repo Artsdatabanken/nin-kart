@@ -1,15 +1,24 @@
 import React from "react";
-import { Landscape } from "@material-ui/icons";
+import { Close, Landscape } from "@material-ui/icons";
 import språk from "Funksjoner/språk";
 import fixSearchParams from "AppSettings/AppFunksjoner/fixSearchParams";
+import { IconButton } from "@material-ui/core";
 
 function roundToX(num, x) {
   return +(Math.round(num + "e+" + x) + "e-" + x);
 }
 
 const PopUp = ({ parent, path }) => {
+  if (!parent.state.data) return null;
+
+  const koordinat = parent.state.koordinat;
+  const { kommune, fylke, landskap, sted } = parent.state.data;
   return (
-    <div
+    <button
+      onClick={e => {
+        parent.props.handleFullscreen(false);
+        parent.props.history.push(parent.state.buttonUrl + "?informasjon");
+      }}
       className="popup"
       style={{
         transform:
@@ -20,71 +29,9 @@ const PopUp = ({ parent, path }) => {
           "px, 0px)"
       }}
     >
-      <button
-        className="invisible_icon_button"
-        onClick={e => {
-          parent.setState({
-            showPopup: !parent.state.showPopup
-          });
-        }}
-      >
-        x
-      </button>
-      {parent.state.koordinat && (
-        <>
-          lat: {roundToX(parent.state.koordinat[0], 5)}, lng:{" "}
-          {roundToX(parent.state.koordinat[1], 5)}
-          <br />
-        </>
-      )}
-
-      {parent.state.sted && (
-        <>
-          {parent.state.sted} <br />
-        </>
-      )}
-
-      {parent.state.data ? (
-        <>
-          {parent.state.data.kommune && (
-            <b>{språk(parent.state.data.kommune.tittel)}</b>
-          )}
-          {parent.state.data.kommune && parent.state.data.fylke && (
-            <b>{", "} </b>
-          )}
-          {parent.state.data.fylke && (
-            <b>
-              {språk(parent.state.data.fylke.tittel)} <br />
-            </b>
-          )}
-          {parent.state.data.landskap &&
-            parent.props.forvaltningsportal !== "true" && (
-              <>
-                <Landscape /> {språk(parent.state.data.landskap.tittel)} <br />
-              </>
-            )}
-        </>
-      ) : (
-        "Ingen data funnet"
-      )}
-      {parent.props.forvaltningsportal !== "true" && (
-        <>
-          <button
-            className="link_to_page"
-            onClick={e => {
-              parent.props.handleFullscreen(false);
-              parent.props.history.push(
-                parent.state.buttonUrl + "?informasjon"
-              );
-            }}
-          >
-            Gå til all info om dette punktet
-          </button>
-          <br />
-        </>
-      )}
-      <button
-        className="link_to_page"
+      <IconButton
+        style={{ position: "absolute", right: 4, top: 4 }}
+        size="small"
         onClick={e => {
           parent.removeMarker();
           parent.props.handleLokalitetUpdate(null);
@@ -95,9 +42,35 @@ const PopUp = ({ parent, path }) => {
           });
         }}
       >
-        Fjern lokalitet
-      </button>
-    </div>
+        <Close></Close>
+      </IconButton>
+
+      <>
+        {roundToX(koordinat[0], 5)}° N {roundToX(koordinat[1], 5)}° Ø
+        <br />
+      </>
+
+      {sted && (
+        <>
+          {parent.state.sted} <br />
+        </>
+      )}
+
+      <>
+        {kommune && <b>{språk(kommune.tittel)}</b>}
+        {kommune.tittel && fylke.tittel && <b>{", "} </b>}
+        {fylke && (
+          <b>
+            {språk(fylke.tittel)} <br />
+          </b>
+        )}
+        {landskap && (
+          <>
+            <Landscape /> {språk(landskap.tittel)} <br />
+          </>
+        )}
+      </>
+    </button>
   );
 };
 

@@ -122,7 +122,6 @@ Even tho we don't a of now support IE X)
   .kartlag_content {
     background: transparent;
     display: inline-block;
-    width: 100%;
   }
 
   .kartlag.kartlag_content_closed,
@@ -182,8 +181,8 @@ Even tho we don't a of now support IE X)
 }
 
 .sidebar .kartlag_sub_bg {
-  padding: 10px;
-  margin-bottom: 10px;
+  _padding: 10px;
+  _margin-bottom: 10px;
 }
 
 .kartlag_submeny {
