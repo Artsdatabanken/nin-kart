@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Landskapsgradienter(props) {
-  const { heading1, heading2, beskrivelse, sample } = props;
+  const { heading1, beskrivelse, sample } = props;
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const history = useHistory();
@@ -146,8 +146,7 @@ export default function Landskapsgradienter(props) {
   );
 }
 
-const Klg = ({ trinn, tittel, url, onClick, v, måleenhet, ...props }) => {
-  console.log({ props });
+const Klg = ({ trinn, tittel, url, onClick, v, måleenhet }) => {
   const verdi = parseInt(v) + " " + måleenhet;
   return (
     <ListItem button onClick={onClick}>
@@ -157,7 +156,7 @@ const Klg = ({ trinn, tittel, url, onClick, v, måleenhet, ...props }) => {
       <ListItemSecondaryAction>
         <Typography variant="body1">{verdi}</Typography>
       </ListItemSecondaryAction>
-      <ListItemText primary={trinn.tittel.nb} secondary={tittel.nb} />
+      <ListItemText primary={tittel.nb} secondary={trinn.tittel.nb} />
     </ListItem>
   );
 };

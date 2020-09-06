@@ -75,7 +75,7 @@ export default function Landskapstype(props) {
         onClick={handleExpandClick}
         _avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
-            {props.url && <img src={config.foto(props.url)} />}
+            {props.url && <img alt="foto" src={config.foto(props.url)} />}
           </Avatar>
         }
         action={
@@ -166,7 +166,7 @@ const Klg = ({ trinn, url, onClick }) => {
   const min = aktiv[0];
   const max = aktiv[aktiv.length - 1];
   const heading1 =
-    min == max ? min.tittel.nb : min.tittel.nb + " - " + max.tittel.nb;
+    min === max ? min.tittel.nb : min.tittel.nb + " - " + max.tittel.nb;
   return (
     <ListItem button onClick={onClick}>
       <ListItemAvatar>

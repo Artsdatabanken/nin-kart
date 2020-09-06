@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import backend from "Funksjoner/backend";
-import Stedsinfo from "./Lokalitet/LokalitetElement/Stedsinfo";
-import språk from "Funksjoner/språk";
+import Geografi from "./Lokalitet/LokalitetElement/Geografi";
 import Landskap from "./Landskap";
 
 const fixerUpHack = (data) => {
-  console.log({ data });
   const moveKey = (key, target) => {
     data[target] = data[target] || {};
     const tn = data[target];
@@ -18,12 +16,10 @@ const fixerUpHack = (data) => {
     if (prefix === "NN-NA") moveKey(key, "natursystem");
     if (prefix === "NN-LA") moveKey(key, "landskap");
   });
-  console.log({ data });
   return data;
 };
-// Eksisterende versjon
-// TODO
-class Lokalitet extends Component {
+
+class Punkt extends Component {
   state = { bareAktive: false };
 
   componentDidUpdate(prevProps) {
@@ -38,38 +34,26 @@ class Lokalitet extends Component {
   fetch(lng, lat) {
     this.setState({
       data: null,
-      sted: "",
+      sted: null,
       gammelData: null,
       fylke: null,
       kommune: null,
       landskap: null,
     });
 
-    // Stedsnavn
+    console.log({ lng, lat });
     backend.hentStedsnavn(lng, lat).then((sted) => {
+      console.log({ sted });
       this.setState({ sted });
     });
 
     backend.hentPunkt(lng, lat).then((data) => {
-      console.log("hent", data);
-
       data = fixerUpHack(data);
       this.setState({
-        data: data,
+        fylke: data.fylke,
+        kommune: data.kommune,
         landskap: data.landskap,
       });
-
-      if (!data.fylke || !data.kommune) {
-        this.setState({
-          fylke: "",
-          kommune: "",
-        });
-      } else {
-        this.setState({
-          fylke: språk(data.fylke.tittel),
-          kommune: språk(data.kommune.tittel),
-        });
-      }
       //            this.props.handleLokalitetUpdate(data);
     });
   }
@@ -77,7 +61,7 @@ class Lokalitet extends Component {
   render() {
     const { lat, lng, aktivTab, onNavigate } = this.props;
     if (!lat) return null;
-    const { fylke, kommune, landskap } = this.state;
+    const { fylke, kommune, sted, landskap } = this.state;
     return (
       <>
         <div
@@ -86,12 +70,13 @@ class Lokalitet extends Component {
             " main_bodyx"
           }
         >
-          <Stedsinfo
-            sted={this.state.sted}
+          <Geografi
+            sted={sted}
             fylke={fylke}
             kommune={kommune}
             lat={lat}
             lng={lng}
+            onNavigate={onNavigate}
           />
           <Landskap landskap={landskap} />
         </div>
@@ -101,4 +86,4 @@ class Lokalitet extends Component {
   }
 }
 
-export default Lokalitet;
+export default Punkt;

@@ -124,13 +124,9 @@ class LeafletTangram extends React.Component {
     map.on("locationerror", (e) => this.onLocationError(e));
 
     if (coord) {
-      this.marker = L.marker([coord[1], coord[0]], { icon: this.icon })
-        .addTo(this.map)
-        .on("click", (e) => {
-          if (this.map) {
-            console.warn("legg inn funksjon her senere.");
-          }
-        });
+      this.marker = L.marker([coord[1], coord[0]], { icon: this.icon }).addTo(
+        this.map
+      );
       this.getBackendData(coord[0], coord[1], this.marker._icon._leaflet_pos);
     }
   }
@@ -191,14 +187,12 @@ class LeafletTangram extends React.Component {
       this.setState({
         buttonUrl: url,
         data: data,
-        _showPopup: true,
+        showPopup: true,
         koordinat: [lng, lat],
       });
       this.props.handleLokalitetUpdate(data);
       backend.hentStedsnavn(lng, lat).then((sted) => {
-        if (sted && sted.placename) {
-          this.setState({ sted: sted.placename });
-        }
+        this.setState({ sted: sted });
       });
     });
   }

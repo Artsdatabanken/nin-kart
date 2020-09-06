@@ -1,21 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
-import {
-  Button,
-  Card,
-  CardActionArea,
-  CardHeader,
-  CardMedia,
-  CardContent,
-  CardActions,
-} from "@material-ui/core";
-import Collapse from "@material-ui/core/Collapse";
-import Avatar from "@material-ui/core/Avatar";
-import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import { ExpandMore, ArrowDownward } from "@material-ui/icons/";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Landskapstype from "./Landskapstype";
 import Landskapsgradienter from "./Landskapsgradienter";
 

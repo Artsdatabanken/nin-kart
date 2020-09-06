@@ -4,6 +4,7 @@ import språk from "Funksjoner/språk";
 import fixSearchParams from "AppSettings/AppFunksjoner/fixSearchParams";
 import { IconButton } from "@material-ui/core";
 import { getKoordinatStreng } from "../../../koordinater";
+import config from "../../../Funksjoner/config";
 
 const PopUp = ({ parent, path }) => {
   if (!parent.state.data) return null;
@@ -17,7 +18,10 @@ const PopUp = ({ parent, path }) => {
           showPopup: !parent.state.showPopup,
         });
         parent.props.handleFullscreen(false);
-        parent.props.history.push(parent.state.buttonUrl + "?informasjon");
+        const url = new URL(parent.state.buttonUrl, config.dataUrl);
+        url.searchParams.set("informasjon", "");
+        const rel = url.toString().substring(url.origin.length);
+        parent.props.history.push(rel);
       }}
       className="popup"
       style={{
