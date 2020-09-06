@@ -1,6 +1,5 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import Lokalitet from "InformasjonsVisning/Lokalitet/Lokalitet";
 import Hjelp from "InformasjonsVisning/Hjelp/Hjelp";
 import parseQueryString from "./Katalog/KatalogFunksjoner/parseQueryString";
 import finnKurvevariabler from "./Katalog/KatalogFunksjoner/finnKurvevariabler";
