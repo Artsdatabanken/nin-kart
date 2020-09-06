@@ -63,9 +63,6 @@ class LeafletTangram extends React.Component {
       if (!e.hard) {
         this.props.onMapBoundsChange(map.getBounds());
       }
-      if (this.marker) {
-        updateMarkerPosition(this.state.clickCoordinates, this, header_shift);
-      }
     });
     map.on("zoomend", (e) => {
       if (!e.hard) {
