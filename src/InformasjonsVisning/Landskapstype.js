@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 import {
-  List,
+  Divider,
   ListItem,
   ListItemAvatar,
   ListItemText,
@@ -26,8 +26,8 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
-    margin: 8,
+    maxWidth: 408,
+    margin: 16,
   },
   cardheader: {
     cursor: "pointer",
@@ -59,13 +59,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-/*
-                    <IconButton aria-label="settings">
-                        <MoreVertIcon />
-                    </IconButton>
-*/
-
-export default function Kort(props) {
+export default function Landskapstype(props) {
   const { heading1, heading2, beskrivelse, barn } = props;
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
@@ -75,16 +69,16 @@ export default function Kort(props) {
   };
 
   return (
-    <Card className={classes.root}>
+    <Card raised className={classes.root}>
       <CardHeader
         className={classes.cardheader}
         onClick={handleExpandClick}
-        avatar={
+        _avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
             {props.url && <img src={config.foto(props.url)} />}
           </Avatar>
         }
-        _action={
+        action={
           <IconButton
             className={clsx(classes.expand, {
               [classes.expandOpen]: expanded,
@@ -93,20 +87,28 @@ export default function Kort(props) {
             aria-expanded={expanded}
             aria-label="show more"
           >
-            <MoreVertIcon />
-            {false && <ExpandMore />}
+            {false && <MoreVertIcon />}
+            <ExpandMore />
           </IconButton>
         }
-        title={heading1}
+        _title={heading1}
         subheader={heading2}
-      />
-      {false && (
+      ></CardHeader>
+
+      <CardActionArea>
+        {props.url && (
+          <CardMedia
+            className={classes.media}
+            image={config.foto(props.url)}
+            title="Foto"
+          />
+        )}
         <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">
-            unexpanded
+          <Typography gutterBottom variant="subtitle1">
+            {heading1}
           </Typography>
         </CardContent>
-      )}
+      </CardActionArea>
       {false && (
         <CardActions disableSpacing>
           <IconButton
@@ -123,22 +125,16 @@ export default function Kort(props) {
         </CardActions>
       )}
       <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardActionArea>
-          <CardMedia
-            className={classes.media}
-            image="https://data.artsdatabanken.no//Natur_i_Norge/Landskap/Typeinndeling/Innlandslandskap/Innlands%C3%A5s-_og_fjellandskap/Middels_kupert_%C3%A5s-_og_fjellandskap_under_skoggrensen/foto_408.jpg"
-            title="Foto"
-          />
-        </CardActionArea>
         <CardContent>
-          <Typography paragraph>{beskrivelse}</Typography>
+          {false && <Typography paragraph>{beskrivelse}</Typography>}
 
           <ListSubheader disableSticky>
-            Typen defineres av landskapsgradientene
+            Defineres av landskapsgradientene
           </ListSubheader>
           {barn &&
             Object.values(barn).map((b) => (
               <Klg
+                key={b.url}
                 trinn={b.trinn || {}}
                 url={b.url}
                 onClick={() => history.push(b.url)}
@@ -148,6 +144,7 @@ export default function Kort(props) {
             <ArrowDownward className={classes.relatedIcon} />
             <p>Relatert artikkel på Artsdatabanken.no</p>
           </a>
+          <Divider />
           <CardActions>
             <Button size="small" color="primary">
               Vis i kart
@@ -171,7 +168,7 @@ const Klg = ({ trinn, url, onClick }) => {
   return (
     <ListItem button onClick={onClick}>
       <ListItemAvatar>
-        <Avatar>{url && <img src={config.foto(url)} />}</Avatar>
+        <Avatar>{url && <img src={config.foto(max.url)} />}</Avatar>
       </ListItemAvatar>
       <ListItemText primary={heading1} />
     </ListItem>

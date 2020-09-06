@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import backend from "Funksjoner/backend";
 import Stedsinfo from "./Lokalitet/LokalitetElement/Stedsinfo";
-import Landskapstypefordeling from "./Lokalitet/LokalitetElement/Landskapstypefordeling";
 import språk from "Funksjoner/språk";
 import Landskap from "./Landskap";
 
@@ -9,7 +8,9 @@ const fixerUpHack = (data) => {
   console.log({ data });
   const moveKey = (key, target) => {
     data[target] = data[target] || {};
-    data[target][key] = data[key];
+    const tn = data[target];
+    tn.sample = tn.sample || {};
+    tn.sample[key] = data[key];
     delete data[key];
   };
   Object.keys(data).forEach((key) => {
@@ -52,7 +53,7 @@ class Lokalitet extends Component {
     backend.hentPunkt(lng, lat).then((data) => {
       console.log("hent", data);
 
-      //data = fixerUpHack(data)
+      data = fixerUpHack(data);
       this.setState({
         data: data,
         landskap: data.landskap,
@@ -69,7 +70,7 @@ class Lokalitet extends Component {
           kommune: språk(data.kommune.tittel),
         });
       }
-      this.props.handleLokalitetUpdate(data);
+      //            this.props.handleLokalitetUpdate(data);
     });
   }
 
@@ -82,7 +83,7 @@ class Lokalitet extends Component {
         <div
           className={
             (aktivTab === "informasjon" ? "mobile_on" : "mobile_off") +
-            " main_body"
+            " main_bodyx"
           }
         >
           <Landskap landskap={landskap} />
@@ -93,14 +94,6 @@ class Lokalitet extends Component {
             lat={lat}
             lng={lng}
           />
-
-          {this.state.landskap && (
-            <Landskapstypefordeling
-              data={data}
-              onNavigate={onNavigate}
-              landskap={this.state.landskap}
-            />
-          )}
         </div>
         <div className="big_page_sidebar" />
       </>

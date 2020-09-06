@@ -182,13 +182,12 @@ class LeafletTangram extends React.Component {
   }
 
   getBackendData(lng, lat, e) {
-    let prevlok = this.state.lokalitetdata;
+    updateMarkerPosition(e, this, header_shift);
     backend.hentPunkt(lng, lat, e).then((data) => {
       if (!data) {
         return null;
       }
       let url = getLokalitetUrl(lat, lng, data);
-      updateMarkerPosition(e, this, header_shift);
       this.setState({
         buttonUrl: url,
         data: data,
@@ -201,9 +200,6 @@ class LeafletTangram extends React.Component {
           this.setState({ sted: sted.placename });
         }
       });
-      if (this.props.lokalitetdata && this.props.lokalitetdata !== prevlok) {
-        this.updateMap(this.props);
-      }
     });
   }
 
