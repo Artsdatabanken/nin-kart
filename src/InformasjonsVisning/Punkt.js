@@ -47,6 +47,12 @@ class Punkt extends Component {
       this.setState({ sted });
     });
 
+    backend.hentPunktVektor(lng, lat).then((data) => {
+      delete data.KOM;
+      delete data.FYL;
+      console.log({ data });
+      //            this.props.handleLokalitetUpdate(data);
+    });
     backend.hentPunkt(lng, lat).then((data) => {
       data = fixerUpHack(data);
       this.setState({

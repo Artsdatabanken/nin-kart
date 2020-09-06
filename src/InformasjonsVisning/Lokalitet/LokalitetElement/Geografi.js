@@ -14,6 +14,13 @@ import {
 } from "@material-ui/core";
 import config from "../../../Funksjoner/config";
 
+const getSted = (sted) => {
+  if (!sted.meta) return null;
+  const tittel = språk(sted.meta.tittel);
+  if (!sted.meta.overordnet || sted.meta.overordnet.length <= 0) return tittel;
+  return språk(sted.meta.overordnet[0].tittel) + ": " + tittel;
+};
+
 const Geografi = ({ sted, lat, lng, fylke, kommune, onNavigate }) => {
   if (lat.includes("?")) {
     lat = lat.substring(0, lat.indexOf("?"));
@@ -37,7 +44,7 @@ const Geografi = ({ sted, lat, lng, fylke, kommune, onNavigate }) => {
           {sted && (
             <Item
               primary={språk(sted.navn)}
-              secondary={sted.meta.tittel.nb}
+              secondary={getSted(sted)}
               url={sted.meta.url}
               onClick={onNavigate}
             />
