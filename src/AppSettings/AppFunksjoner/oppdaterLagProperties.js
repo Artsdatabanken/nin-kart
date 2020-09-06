@@ -28,7 +28,6 @@ export default function oppdaterLagProperties(
   parent,
   elementType
 ) {
-  console.log({ layer, key, value, parent, elementType });
   if (elementType === "lokalitetdata") {
     // Scenario: Lokalitetsdata har litt annet format, og må hentes ut på annet vis
     let lokalitetdata = parent.state.lokalitetdata;

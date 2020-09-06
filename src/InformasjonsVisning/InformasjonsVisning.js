@@ -5,6 +5,8 @@ import Hjelp from "InformasjonsVisning/Hjelp/Hjelp";
 import parseQueryString from "./Katalog/KatalogFunksjoner/parseQueryString";
 import finnKurvevariabler from "./Katalog/KatalogFunksjoner/finnKurvevariabler";
 import KatalogFane from "./Katalog/Katalog";
+import Punkt from "./Punkt";
+import { Typography } from "@material-ui/core";
 
 // Denne boksen inneholder alle informasjonsvisningssidene
 class InformasjonsVisning extends React.Component {
@@ -45,6 +47,42 @@ class InformasjonsVisning extends React.Component {
       location.search.includes("informasjon")
     ) {
       const { lng, lat, vis } = parseQueryString(location.search);
+      return (
+        <div
+          style={{
+            backgroundColor: "#fff",
+            position: "absolute",
+            overflowY: "auto",
+            top: 64,
+            bottom: 0,
+            left: 408,
+            right: 50,
+          }}
+        >
+          <div style={{ margin: 16 }}>
+            <Typography variant="h5">
+              Landskapstype i stedets nærområde (ca 1km²)
+            </Typography>
+            <Typography variant="body2">
+              En landskapstype er en samling av variasjoner i terreng og
+              landeformer som sammen påvirker et større område.I kartleggingen
+              er den minste graden som måles på en kvadratkilometer.Man kan
+              dermed befinne seg i et isbrelandskap uten å være akkurat på en
+              isbre.Det vil også kunne være noen små variasjoner som ikke
+              bestemmer landskapstypen da de er små og derav ikke dominerende.
+            </Typography>
+          </div>
+          <Punkt
+            lng={lng}
+            lat={lat}
+            vis={vis}
+            aktivTab={aktivTab}
+            history={this.props.history}
+            onNavigate={handleNavigate}
+            handleLokalitetUpdate={handleLokalitetUpdate}
+          />
+        </div>
+      );
       return (
         <Lokalitet
           lng={lng}

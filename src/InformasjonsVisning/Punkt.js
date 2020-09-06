@@ -1,11 +1,27 @@
 import React, { Component } from "react";
 import backend from "Funksjoner/backend";
-import Byggeklosser from "./LokalitetElement/Byggeklosser";
-import Stedsinfo from "./LokalitetElement/Stedsinfo";
-import Landskapstypefordeling from "./LokalitetElement/Landskapstypefordeling";
+import Stedsinfo from "./Lokalitet/LokalitetElement/Stedsinfo";
+import Landskapstypefordeling from "./Lokalitet/LokalitetElement/Landskapstypefordeling";
 import språk from "Funksjoner/språk";
-import "style/Lokasjon.scss";
+import Landskap from "./Landskap";
 
+const fixerUpHack = (data) => {
+  console.log({ data });
+  const moveKey = (key, target) => {
+    data[target] = data[target] || {};
+    data[target][key] = data[key];
+    delete data[key];
+  };
+  Object.keys(data).forEach((key) => {
+    const prefix = key.substring(0, 5);
+    if (prefix === "NN-NA") moveKey(key, "natursystem");
+    if (prefix === "NN-LA") moveKey(key, "landskap");
+  });
+  console.log({ data });
+  return data;
+};
+// Eksisterende versjon
+// TODO
 class Lokalitet extends Component {
   state = { bareAktive: false };
 
@@ -13,6 +29,7 @@ class Lokalitet extends Component {
     if (prevProps.lng !== this.props.lng || this.props.lat !== prevProps.lat)
       this.fetch(this.props.lng, this.props.lat, this.props.localId);
   }
+
   componentDidMount() {
     this.fetch(this.props.lng, this.props.lat);
   }
@@ -33,14 +50,13 @@ class Lokalitet extends Component {
     });
 
     backend.hentPunkt(lng, lat).then((data) => {
-      if (!data) {
-        return null;
-      } else {
-        this.setState({
-          data: data,
-          landskap: data.landskap,
-        });
-      }
+      console.log("hent", data);
+
+      //data = fixerUpHack(data)
+      this.setState({
+        data: data,
+        landskap: data.landskap,
+      });
 
       if (!data.fylke || !data.kommune) {
         this.setState({
@@ -60,7 +76,7 @@ class Lokalitet extends Component {
   render() {
     const { lat, lng, aktivTab, onNavigate } = this.props;
     if (!lat) return null;
-    const { data, fylke, kommune } = this.state;
+    const { data, fylke, kommune, landskap } = this.state;
     return (
       <>
         <div
@@ -69,25 +85,22 @@ class Lokalitet extends Component {
             " main_body"
           }
         >
-          <div className="main_body_wrapper">
-            <Stedsinfo
-              sted={this.state.sted}
-              fylke={fylke}
-              kommune={kommune}
-              lat={lat}
-              lng={lng}
+          <Landskap landskap={landskap} />
+          <Stedsinfo
+            sted={this.state.sted}
+            fylke={fylke}
+            kommune={kommune}
+            lat={lat}
+            lng={lng}
+          />
+
+          {this.state.landskap && (
+            <Landskapstypefordeling
+              data={data}
+              onNavigate={onNavigate}
+              landskap={this.state.landskap}
             />
-
-            {this.state.landskap && (
-              <Landskapstypefordeling
-                data={data}
-                onNavigate={onNavigate}
-                landskap={this.state.landskap}
-              />
-            )}
-
-            {data && <Byggeklosser data={data} onNavigate={onNavigate} />}
-          </div>
+          )}
         </div>
         <div className="big_page_sidebar" />
       </>

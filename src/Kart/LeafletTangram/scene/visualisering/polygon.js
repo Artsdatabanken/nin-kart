@@ -3,7 +3,6 @@ import sysconfig from "Funksjoner/config";
 import opplyst from "Funksjoner/palette/opplyst";
 
 function drawAll(drawArgs) {
-  console.log({ drawArgs });
   const {
     blendmode,
     kode,
@@ -87,7 +86,6 @@ function drawLines(args) {
       },
     };
   }
-  console.log({ layer });
   return layer;
 }
 

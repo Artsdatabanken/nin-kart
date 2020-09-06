@@ -3,9 +3,11 @@ import { Close, Landscape } from "@material-ui/icons";
 import språk from "Funksjoner/språk";
 import fixSearchParams from "AppSettings/AppFunksjoner/fixSearchParams";
 import { IconButton } from "@material-ui/core";
+import { getKoordinatStreng } from "../../../koordinater";
 
 function roundToX(num, x) {
-  return +(Math.round(num + "e+" + x) + "e-" + x);
+  const factor = Math.pow(10, x);
+  return Math.round(num * factor) / factor;
 }
 
 const PopUp = ({ parent, path }) => {
@@ -46,10 +48,8 @@ const PopUp = ({ parent, path }) => {
         <Close></Close>
       </IconButton>
 
-      <>
-        {roundToX(koordinat[0], 5)}° N {roundToX(koordinat[1], 5)}° Ø
-        <br />
-      </>
+      {getKoordinatStreng(koordinat)}
+      <br />
 
       {sted && (
         <>
@@ -57,20 +57,18 @@ const PopUp = ({ parent, path }) => {
         </>
       )}
 
-      <>
-        {kommune && <b>{språk(kommune.tittel)}</b>}
-        {kommune.tittel && fylke.tittel && <b>{", "} </b>}
-        {fylke && (
-          <b>
-            {språk(fylke.tittel)} <br />
-          </b>
-        )}
-        {landskap && (
-          <>
-            <Landscape /> {språk(landskap.tittel)} <br />
-          </>
-        )}
-      </>
+      {kommune && <b>{språk(kommune.tittel)}</b>}
+      {kommune.tittel && fylke.tittel && <b>{", "} </b>}
+      {fylke && (
+        <b>
+          {språk(fylke.tittel)} <br />
+        </b>
+      )}
+      {landskap && (
+        <>
+          <Landscape /> {språk(landskap.tittel)} <br />
+        </>
+      )}
     </div>
   );
 };

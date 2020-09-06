@@ -52,8 +52,7 @@ function lagStyle(format, drawArgs) {
         float v = value.r;
         float filter = step(min,v) * (step(v,max));
         v = (255.*value.b+0.5)/256.;
-        color = texture2D(palette, vec2(v, 0.5));
-        color = vec4(v);` +
+        color = texture2D(palette, vec2(v, 0.5));` +
           transparent_blendmode_handler +
           `color = mix(transparent, color, filter*value.a);
         `,
