@@ -191,7 +191,7 @@ class LeafletTangram extends React.Component {
       this.setState({
         buttonUrl: url,
         data: data,
-        showPopup: true,
+        _showPopup: true,
         koordinat: [lng, lat],
       });
       this.props.handleLokalitetUpdate(data);

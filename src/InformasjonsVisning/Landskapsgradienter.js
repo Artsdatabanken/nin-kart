@@ -133,10 +133,12 @@ export default function Landskapsgradienter(props) {
           <Typography paragraph>{beskrivelse}</Typography>
 
           <ListSubheader disableSticky>Gradientverdier i punktet</ListSubheader>
-          <a className={classes.related} href="https://vg.no" target="_top">
-            <ArrowDownward className={classes.relatedIcon} />
-            <p>Relatert artikkel på Artsdatabanken.no</p>
-          </a>
+          {false && (
+            <a className={classes.related} href="https://vg.no" target="_top">
+              <ArrowDownward className={classes.relatedIcon} />
+              <p>Relatert artikkel på Artsdatabanken.no</p>
+            </a>
+          )}
           <Divider />
         </CardContent>
       </Collapse>

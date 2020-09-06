@@ -1,6 +1,7 @@
 import React from "react";
 import språk from "Funksjoner/språk";
 import { getKoordinatStreng } from "../../../koordinater";
+import Overskrift from "../../Overskrift";
 
 const Stedsinfo = ({ sted, lat, lng, fylke, kommune }) => {
   if (lat.includes("?")) {
@@ -8,6 +9,7 @@ const Stedsinfo = ({ sted, lat, lng, fylke, kommune }) => {
   }
   return (
     <div className="area_facts">
+      <Overskrift tittel="Geografi" subtekst="........" />
       {sted && (
         <h1>
           {sted.navn}{" "}

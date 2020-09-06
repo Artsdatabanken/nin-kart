@@ -140,10 +140,12 @@ export default function Landskapstype(props) {
                 onClick={() => history.push(b.url)}
               />
             ))}
-          <a className={classes.related} href="https://vg.no" target="_top">
-            <ArrowDownward className={classes.relatedIcon} />
-            <p>Relatert artikkel på Artsdatabanken.no</p>
-          </a>
+          {false && (
+            <a className={classes.related} href="https://vg.no" target="_top">
+              <ArrowDownward className={classes.relatedIcon} />
+              <p>Relatert artikkel på Artsdatabanken.no</p>
+            </a>
+          )}
           <Divider />
           <CardActions>
             <Button size="small" color="primary">

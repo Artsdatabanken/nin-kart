@@ -59,20 +59,6 @@ class InformasjonsVisning extends React.Component {
           }}
         >
           <div style={{ margin: 16 }}>
-            <Typography
-              variant="h5"
-              style={{ marginBottom: 16, color: "#777", fontWeight: "bold" }}
-            >
-              Landskap
-            </Typography>
-            <Typography variant="body1" style={{ marginBottom: 24 }}>
-              En landskapstype er en samling av variasjoner i terreng og
-              landeformer som sammen påvirker et større område. I kartleggingen
-              er den minste graden som måles på en kvadratkilometer. Man kan
-              dermed befinne seg i et isbrelandskap uten å være akkurat på en
-              isbre. Det vil også kunne være noen små variasjoner som ikke
-              bestemmer landskapstypen da de er små og derav ikke dominerende.
-            </Typography>
             <Punkt
               lng={lng}
               lat={lat}

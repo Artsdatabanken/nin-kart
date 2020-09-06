@@ -77,7 +77,7 @@ class Lokalitet extends Component {
   render() {
     const { lat, lng, aktivTab, onNavigate } = this.props;
     if (!lat) return null;
-    const { data, fylke, kommune, landskap } = this.state;
+    const { fylke, kommune, landskap } = this.state;
     return (
       <>
         <div
@@ -86,7 +86,6 @@ class Lokalitet extends Component {
             " main_bodyx"
           }
         >
-          <Landskap landskap={landskap} />
           <Stedsinfo
             sted={this.state.sted}
             fylke={fylke}
@@ -94,6 +93,7 @@ class Lokalitet extends Component {
             lat={lat}
             lng={lng}
           />
+          <Landskap landskap={landskap} />
         </div>
         <div className="big_page_sidebar" />
       </>

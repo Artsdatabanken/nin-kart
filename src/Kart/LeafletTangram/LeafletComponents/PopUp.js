@@ -5,11 +5,6 @@ import fixSearchParams from "AppSettings/AppFunksjoner/fixSearchParams";
 import { IconButton } from "@material-ui/core";
 import { getKoordinatStreng } from "../../../koordinater";
 
-function roundToX(num, x) {
-  const factor = Math.pow(10, x);
-  return Math.round(num * factor) / factor;
-}
-
 const PopUp = ({ parent, path }) => {
   if (!parent.state.data) return null;
 
@@ -18,6 +13,9 @@ const PopUp = ({ parent, path }) => {
   return (
     <div
       onClick={(e) => {
+        parent.setState({
+          showPopup: !parent.state.showPopup,
+        });
         parent.props.handleFullscreen(false);
         parent.props.history.push(parent.state.buttonUrl + "?informasjon");
       }}
