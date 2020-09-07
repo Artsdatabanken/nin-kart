@@ -42,7 +42,7 @@ const Beskrivelsessystem = (props) => {
         const overordnet = vari[0].overordnet;
         const bs = overordnet[overordnet.length - 4];
         console.log({ forelder: bs });
-        return <Blokk bs={bs} variabler={vari} />;
+        return <Blokk bs={bs} variabler={vari} onNavigate={onNavigate} />;
       })}
     </>
   );

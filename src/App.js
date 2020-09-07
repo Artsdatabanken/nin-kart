@@ -27,6 +27,7 @@ import "style/Art.scss";
 import "style/Kartlag.scss";
 import "style/FargeMenyer.scss";
 import fixerUpHack from "./fixerUpHack";
+import Punkt from "./InformasjonsVisning/Punkt";
 
 export let exportableSpraak;
 export let exportableFullscreen;
@@ -39,7 +40,7 @@ function getPathTab(path) {
       return item;
     }
   }
-  return "informasjon";
+  return "kartlag";
 }
 
 function getPathNotTab(path) {
@@ -80,7 +81,7 @@ class App extends React.Component {
 
   render() {
     let aktivTab = getPathTab(this.props.location);
-
+    console.log({ aktivTab });
     const { history } = this.props;
     let erAktivert = false;
     if (this.state.meta)
@@ -149,13 +150,18 @@ class App extends React.Component {
                         onMouseLeave={this.handleMouseLeave}
                       />
 
-                      {aktivTab === "meny" ||
-                      aktivTab === "informasjon" ||
-                      (this.state.punkt && this.state.punkt.lng) ? (
-                        <InformasjonsVisning
+                      {this.state.punkt && this.state.punkt.lng && (
+                        <Punkt
                           punkt={this.state.punkt}
+                          aktivTab={aktivTab}
                           onNavigate={this.handleNavigate}
                           onClosePunkt={this.handleClosePunkt}
+                        />
+                      )}
+
+                      {aktivTab === "meny" || aktivTab === "informasjon" ? (
+                        <InformasjonsVisning
+                          onNavigate={this.handleNavigate}
                           path={path}
                           aktivTab={aktivTab}
                           show_current={this.state.showCurrent}

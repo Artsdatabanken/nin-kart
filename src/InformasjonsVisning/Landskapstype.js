@@ -86,24 +86,10 @@ export default function Landskapstype(props) {
             <ExpandMore />
           </IconButton>
         }
-        _title={heading1}
+        title={heading1}
         subheader={heading2}
       ></CardHeader>
 
-      <CardActionArea onClick={() => history.push(url)}>
-        {props.url && (
-          <CardMedia
-            className={classes.media}
-            image={config.foto(props.url)}
-            title="Foto"
-          />
-        )}
-        <CardContent>
-          <Typography gutterBottom variant="subtitle1">
-            {heading1}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
       {false && (
         <CardActions disableSpacing>
           <IconButton
@@ -120,6 +106,15 @@ export default function Landskapstype(props) {
         </CardActions>
       )}
       <Collapse in={expanded} timeout="auto" unmountOnExit>
+        {props.url && (
+          <CardActionArea onClick={() => history.push(url)}>
+            <CardMedia
+              className={classes.media}
+              image={config.foto(props.url)}
+              title="Foto"
+            />
+          </CardActionArea>
+        )}
         <ListSubheader disableSticky>
           Defineres av landskapsgradienter
         </ListSubheader>

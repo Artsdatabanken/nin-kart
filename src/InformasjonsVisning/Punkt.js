@@ -23,44 +23,62 @@ class Punkt extends Component {
             " main_bodyx"
           }
         >
-          <Typography
-            variant="h5"
-            style={{ fontWeight: "bold", color: "#777", margin: 8 }}
+          <div
+            style={{
+              backgroundColor: "#eee",
+              position: "absolute",
+              overflowY: "auto",
+              boxShadow:
+                "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+              top: 56,
+              bottom: 0,
+              width: 408,
+              right: 0,
+            }}
           >
-            Punkt
-          </Typography>
-          <Typography variant="subtitle1" style={{ margin: 8 }}>
-            {getKoordinatStreng([lng, lat])}
-          </Typography>
-          <IconButton
-            style={{ position: "absolute", right: 8, top: 0 }}
-            onClick={onClosePunkt}
-          >
-            <Close></Close>
-          </IconButton>
-          <Geografi
-            sted={sted}
-            fylke={fylke}
-            kommune={kommune}
-            lat={lat}
-            lng={lng}
-            onNavigate={onNavigate}
-          />
-          {vektor &&
-            vektor.map((v) => {
-              if (v.datasettkode === "VV ")
-                return (
-                  <Naturvernområde key={v.id} {...v} onNavigate={onNavigate} />
-                );
-              return null;
-            })}
-          {nat && (
-            <>
-              <Naturtype {...nat} onNavigate={onNavigate} />
-              <Beskrivelsessystem variabler={nat.variabel} />
-            </>
-          )}
-          <Landskap landskap={landskap} />
+            <Typography
+              variant="h5"
+              style={{ fontWeight: "bold", color: "#777", margin: 8 }}
+            >
+              Punkt
+            </Typography>
+            <Typography variant="subtitle1" style={{ margin: 8 }}>
+              {getKoordinatStreng([lng, lat])}
+            </Typography>
+            <IconButton
+              style={{ position: "absolute", right: 8, top: 0 }}
+              onClick={onClosePunkt}
+            >
+              <Close></Close>
+            </IconButton>
+            <Geografi
+              sted={sted}
+              fylke={fylke}
+              kommune={kommune}
+              lat={lat}
+              lng={lng}
+              onNavigate={onNavigate}
+            />
+            {vektor &&
+              vektor.map((v) => {
+                if (v.datasettkode === "VV ")
+                  return (
+                    <Naturvernområde
+                      key={v.id}
+                      {...v}
+                      onNavigate={onNavigate}
+                    />
+                  );
+                return null;
+              })}
+            {nat && (
+              <>
+                <Naturtype {...nat} onNavigate={onNavigate} />
+                <Beskrivelsessystem variabler={nat.variabel} />
+              </>
+            )}
+            <Landskap landskap={landskap} />
+          </div>
         </div>
       </>
     );

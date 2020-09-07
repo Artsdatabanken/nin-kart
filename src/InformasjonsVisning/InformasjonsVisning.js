@@ -19,38 +19,11 @@ class InformasjonsVisning extends React.Component {
       aktivTab,
       path,
       onNavigate,
-      onClosePunkt,
     } = this.props;
     const kurve = finnKurvevariabler(this.props.aktiveLag);
 
     if (path === "/Natur_i_Norge/hjelp") {
       return <Hjelp aktivTab={aktivTab} />;
-    }
-    if (punkt && punkt.lng) {
-      return (
-        <div
-          style={{
-            backgroundColor: "#eee",
-            position: "absolute",
-            overflowY: "auto",
-            boxShadow:
-              "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
-            top: 56,
-            bottom: 0,
-            width: 408,
-            right: 0,
-          }}
-        >
-          <div style={{ margin: 0 }}>
-            <Punkt
-              punkt={this.props.punkt}
-              aktivTab={aktivTab}
-              onNavigate={onNavigate}
-              onClosePunkt={onClosePunkt}
-            />
-          </div>
-        </div>
-      );
     }
 
     return (
