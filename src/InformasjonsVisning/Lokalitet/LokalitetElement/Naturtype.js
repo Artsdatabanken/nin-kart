@@ -38,23 +38,16 @@ const Naturtype = (props) => {
   const forelder = finnFellesOverordnet(typer);
   const { tittel } = forelder;
   if (!forelder) return null;
+  console.log({ typer });
   return (
     <>
       <Overskrift tittel="Naturtype" subtekst="........" />
-      <NinCard heading="Naturtype" canExpand hasData>
+      <NinCard heading={"Naturtype: " + språk(tittel)} canExpand hasData>
         {(expanded) => (
           <>
             <CardMedia>
               <img src={config.foto(forelder.url)} alt="foto" />
             </CardMedia>
-            <CardContent>
-              <Typography gutterBottom variant="subtitle1">
-                {språk(tittel)}
-              </Typography>
-              <Typography variant="body2">
-                {false && JSON.stringify(props)}
-              </Typography>
-            </CardContent>
             {typer.map((type) => (
               <Item
                 key={type.kode}
@@ -63,6 +56,9 @@ const Naturtype = (props) => {
                 onClick={onNavigate}
               />
             ))}
+            <Collapse in={expanded} timeout="auto" unmountOnExit>
+              ...
+            </Collapse>
           </>
         )}
       </NinCard>

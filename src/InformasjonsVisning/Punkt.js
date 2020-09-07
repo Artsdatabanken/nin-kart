@@ -49,7 +49,9 @@ class Punkt extends Component {
           {vektor &&
             vektor.map((v) => {
               if (v.datasettkode === "VV ")
-                return <Naturvernområde key={v.id} {...v} />;
+                return (
+                  <Naturvernområde key={v.id} {...v} onNavigate={onNavigate} />
+                );
               return null;
             })}
           {nat && (

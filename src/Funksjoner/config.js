@@ -3,7 +3,7 @@ const isTest = host.indexOf("test") >= 0 || host === "localhost";
 
 class config {
   static feature = {
-    comboSøk: false
+    comboSøk: false,
   };
 
   static domain = isTest ? "test.artsdatabanken.no" : "artsdatabanken.no";
@@ -17,7 +17,7 @@ class config {
     const source = {
       filtering: "nearest",
       type: type,
-      url: url.toString() + "/{z}/{x}/{y}"
+      url: url.toString() + "/{z}/{x}/{y}",
     };
     if (!bbox || !zoom) {
       console.warn(`No map extents for ${relativePath}`);
@@ -53,6 +53,8 @@ class config {
   }
 
   static logo(url, width = 24) {
+    if (url[0] !== "/") url = "/" + url;
+    console.log(url);
     return `${config.dataUrl}${url}/logo_${width}.png`;
   }
 

@@ -3,6 +3,7 @@ import språk from "Funksjoner/språk";
 import Overskrift from "../../Overskrift";
 import NinCard from "../../NinCard";
 import {
+    CardActionArea,
     CardMedia,
     Collapse,
     CardContent,
@@ -13,24 +14,26 @@ import {
 } from "@material-ui/core";
 import config from "../../../Funksjoner/config";
 
-const Naturvernområde = ({ tittel, bilde, onNavigate, ...props }) => {
+const Naturvernområde = ({ tittel, bilde, url, onNavigate, ...props }) => {
     console.log('verneområde', JSON.stringify(props))
     return (
         <>
             {false && <Overskrift tittel="Geografi" subtekst="........" />}
             <NinCard heading={språk(tittel)} canExpand hasData>
                 {expanded => <>
-                    {bilde && bilde.foto && bilde.foto.url && (
-                        <CardMedia>
-                            <img src={bilde.foto.url} alt="foto" />
-                        </CardMedia>
-                    )}
-                    <CardContent>
-                        <Typography variant="body2">
-                            Først vernet i {props.revisjon.dato.førstvernet}<br />
+                    <CardActionArea onClick={() => onNavigate(url)} >
+                        {bilde && bilde.foto && bilde.foto.url && (
+                            <CardMedia>
+                                <img src={bilde.foto.url} alt="foto" />
+                            </CardMedia>
+                        )}
+                        <CardContent>
+                            <Typography variant="body2">
+                                Først vernet i {props.revisjon.dato.førstvernet}<br />
                         xx
                     </Typography>
-                    </CardContent>
+                        </CardContent>
+                    </CardActionArea>
                 </>}
             </NinCard>
         </>
@@ -39,30 +42,6 @@ const Naturvernområde = ({ tittel, bilde, onNavigate, ...props }) => {
 
 /*
                 <Collapse in={true} timeout="auto" unmountOnExit>
-                    {sted && (
-                        <Item
-                            primary={språk(sted.navn)}
-                            secondary={getSted(sted)}
-                            url={sted.meta.url}
-                            onClick={onNavigate}
-                        />
-                    )}
-                    {kommune && (
-                        <Item
-                            primary={språk(kommune.tittel)}
-                            secondary="Kommune"
-                            url={kommune.url}
-                            onClick={onNavigate}
-                        />
-                    )}
-                    {fylke && (
-                        <Item
-                            primary={språk(fylke.tittel)}
-                            secondary="Fylke"
-                            url={fylke.url}
-                            onClick={onNavigate}
-                        />
-                    )}
                 </Collapse>
 */
 
