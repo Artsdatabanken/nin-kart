@@ -21,53 +21,32 @@ const sameParent = (array, i) => {
 };
 
 const finnFellesOverordnet = (typer) => {
+  if (!typer) return null;
   if (typer.length === 0) return null;
   if (typer.length === 1) return typer[0].overordnet[0];
   const oos = typer.map((e) => e.overordnet.reverse());
-  console.log({ oos });
   let max = Math.max(...oos.map((e) => e.length));
-  for (let i = 0; i < max; i++) {
+  for (let i = 1; i < max; i++) {
     if (!sameParent(oos, i)) return oos[0][i - 1];
   }
   return oos[0].pop();
 };
 
-const Naturtyper = (props) => {
-  const { type } = props;
-  if (!type) return null;
-  console.log("typer", type);
-  const forelder = finnFellesOverordnet(props.type);
-  console.log({ forelder });
-  return (
-    <>
-      <Naturtype
-        key={forelder.kode}
-        tittel={forelder.tittel}
-        bilde={forelder.bilde}
-        typer={type}
-      />
-      {false &&
-        props.variabler &&
-        props.variabler.map((variabel) => (
-          <Naturtype key={variabel.kode} {...variabel} />
-        ))}
-    </>
-  );
-};
-
-const Naturtype = ({ tittel, bilde, onNavigate, typer, ...props }) => {
-  console.log({ props });
+const Naturtype = (props) => {
+  const { type: typer, onNavigate } = props;
+  if (!typer) return null;
+  const forelder = finnFellesOverordnet(typer);
+  const { tittel } = forelder;
+  if (!forelder) return null;
   return (
     <>
       <Overskrift tittel="Naturtype" subtekst="........" />
-      <NinCard heading="Naturtype" canExpand>
+      <NinCard heading="Naturtype" canExpand hasData>
         {(expanded) => (
           <>
-            {bilde && bilde.foto && bilde.foto.url && (
-              <CardMedia>
-                <img src={bilde.foto.url} alt="foto" />
-              </CardMedia>
-            )}
+            <CardMedia>
+              <img src={config.foto(forelder.url)} alt="foto" />
+            </CardMedia>
             <CardContent>
               <Typography gutterBottom variant="subtitle1">
                 {språk(tittel)}
@@ -76,16 +55,14 @@ const Naturtype = ({ tittel, bilde, onNavigate, typer, ...props }) => {
                 {false && JSON.stringify(props)}
               </Typography>
             </CardContent>
-            <CardContent>
-              {typer.map((type) => (
-                <Item
-                  key={type.kode}
-                  primary={språk(type.tittel)}
-                  url={type.url}
-                  onClick={onNavigate}
-                />
-              ))}
-            </CardContent>
+            {typer.map((type) => (
+              <Item
+                key={type.kode}
+                primary={språk(type.tittel)}
+                url={type.url}
+                onClick={onNavigate}
+              />
+            ))}
           </>
         )}
       </NinCard>
@@ -94,9 +71,7 @@ const Naturtype = ({ tittel, bilde, onNavigate, typer, ...props }) => {
 };
 
 /*
-                <Collapse in={true} timeout="auto" unmountOnExit>
 
-                </Collapse>
 */
 
 const Item = ({ primary, secondary, url, onClick }) => (
@@ -108,4 +83,4 @@ const Item = ({ primary, secondary, url, onClick }) => (
   </ListItem>
 );
 
-export default Naturtyper;
+export default Naturtype;

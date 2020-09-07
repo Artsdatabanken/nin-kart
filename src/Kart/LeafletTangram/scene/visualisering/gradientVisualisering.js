@@ -35,7 +35,7 @@ function lagStyle(format, drawArgs) {
         blendmode,
         drawArgs.opacity
       );
-  console.log("palette", palette);
+  //console.log("palette", palette);
   const gradient = {
     base: "raster",
     blend: blendmode,

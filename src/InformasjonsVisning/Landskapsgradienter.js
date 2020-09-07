@@ -67,6 +67,7 @@ export default function Landskapsgradienter(props) {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+  if (!sample) return null;
 
   return (
     <Card raised className={classes.root}>
@@ -89,18 +90,21 @@ export default function Landskapsgradienter(props) {
         _title={heading1}
         subheader={heading1}
       />
-      {sample &&
-        Object.values(sample).map((b) => (
-          <Klg
-            key={b.url}
-            v={b.v}
-            måleenhet={b.måleenhet}
-            tittel={b.tittel}
-            trinn={b.trinn}
-            url={b.url}
-            onClick={() => history.push(b.url)}
-          />
-        ))}
+      {
+        <>
+          {Object.values(sample).map((b) => (
+            <Klg
+              key={b.url}
+              v={b.v}
+              måleenhet={b.måleenhet}
+              tittel={b.tittel}
+              trinn={b.trinn}
+              url={b.url}
+              onClick={() => history.push(b.url)}
+            />
+          ))}
+        </>
+      }
 
       {false && (
         <CardActions disableSpacing>
@@ -130,7 +134,6 @@ export default function Landskapsgradienter(props) {
         <CardContent>
           <Typography paragraph>{beskrivelse}</Typography>
 
-          <ListSubheader disableSticky>Gradientverdier i punktet</ListSubheader>
           {false && (
             <a className={classes.related} href="https://vg.no" target="_top">
               <ArrowDownward className={classes.relatedIcon} />

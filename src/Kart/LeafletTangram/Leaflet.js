@@ -42,21 +42,6 @@ class LeafletTangram extends React.Component {
 
     let map = L.map(this.mapEl, options);
 
-    map.on("drag", (e) => {
-      if (!e.hard) {
-        this.props.onMapBoundsChange(map.getBounds());
-      }
-    });
-    map.on("zoomend", (e) => {
-      if (!e.hard) {
-        this.props.onMapBoundsChange(map.getBounds());
-      }
-    });
-    map.on("resize", (e) => {
-      if (!e.hard) {
-        this.props.onMapBoundsChange(map.getBounds());
-      }
-    });
     map.setView(
       [this.props.latitude, this.props.longitude],
       this.props.zoom * 1.8

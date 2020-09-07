@@ -65,7 +65,7 @@ const Landskap = ({ landskap }) => {
         barn={barn}
       ></Landskapstype>
       <Landskapsgradienter
-        heading1="Landskapsgradienter"
+        heading1="Landskapsgradient"
         sample={landskap.sample}
       />
     </>

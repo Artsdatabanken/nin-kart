@@ -31,8 +31,15 @@ const getOverordnet = (sted) => {
 };
 
 const getTitle = (sted, kommune) => {
+  if (!sted || !sted.dist) return null;
+  if (sted.dist > 0.01) {
+    console.warn("overdist", { sted });
+    return null;
+  }
   sted = sted && språk(sted.navn);
   kommune = kommune && språk(kommune.tittel);
+  if (!kommune) return sted;
+  if (!sted) return kommune;
   return [sted, kommune].join(", ");
 };
 

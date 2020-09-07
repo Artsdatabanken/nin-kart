@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Landskapstype(props) {
-  const { heading1, heading2, beskrivelse, barn } = props;
+  const { heading1, heading2, beskrivelse, barn, url } = props;
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const history = useHistory();
@@ -69,15 +69,10 @@ export default function Landskapstype(props) {
   };
 
   return (
-    <Card raised className={classes.root}>
+    <Card className={classes.root}>
       <CardHeader
         className={classes.cardheader}
         onClick={handleExpandClick}
-        _avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            {props.url && <img alt="foto" src={config.foto(props.url)} />}
-          </Avatar>
-        }
         action={
           <IconButton
             className={clsx(classes.expand, {
@@ -95,7 +90,7 @@ export default function Landskapstype(props) {
         subheader={heading2}
       ></CardHeader>
 
-      <CardActionArea>
+      <CardActionArea onClick={() => history.push(url)}>
         {props.url && (
           <CardMedia
             className={classes.media}
@@ -125,37 +120,28 @@ export default function Landskapstype(props) {
         </CardActions>
       )}
       <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          {false && <Typography paragraph>{beskrivelse}</Typography>}
-
-          <ListSubheader disableSticky>
-            Defineres av landskapsgradienter
-          </ListSubheader>
-          {barn &&
-            Object.values(barn).map((b) => (
-              <Klg
-                key={b.url}
-                trinn={b.trinn || {}}
-                url={b.url}
-                onClick={() => history.push(b.url)}
-              />
-            ))}
-          {false && (
-            <a className={classes.related} href="https://vg.no" target="_top">
-              <ArrowDownward className={classes.relatedIcon} />
-              <p>Relatert artikkel på Artsdatabanken.no</p>
-            </a>
-          )}
-          <Divider />
-          <CardActions>
-            <Button size="small" color="primary">
-              Vis i kart
-            </Button>
-            <Button size="small" color="primary">
-              Learn More
-            </Button>
-          </CardActions>
-        </CardContent>
+        <ListSubheader disableSticky>
+          Defineres av landskapsgradienter
+        </ListSubheader>
+        {barn &&
+          Object.values(barn).map((b) => (
+            <Klg
+              key={b.url}
+              trinn={b.trinn || {}}
+              url={b.url}
+              onClick={() => history.push(b.url)}
+            />
+          ))}
+        {false && (
+          <a
+            className={classes.related}
+            href="https://artsdatabanken.no/Pages/3"
+            target="_top"
+          >
+            <ArrowDownward className={classes.relatedIcon} />
+            <p>Relatert artikkel på Artsdatabanken.no</p>
+          </a>
+        )}
       </Collapse>
     </Card>
   );

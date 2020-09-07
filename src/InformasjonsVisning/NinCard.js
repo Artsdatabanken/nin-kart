@@ -55,7 +55,6 @@ export default function NinCard(props) {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  console.log(props.children);
 
   return (
     <Card className={hasData ? classes.root : classes.roothide}>

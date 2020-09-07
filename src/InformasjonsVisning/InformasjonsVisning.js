@@ -18,7 +18,8 @@ class InformasjonsVisning extends React.Component {
       meta,
       aktivTab,
       path,
-      handleNavigate,
+      onNavigate,
+      onClosePunkt,
     } = this.props;
     const kurve = finnKurvevariabler(this.props.aktiveLag);
 
@@ -44,7 +45,8 @@ class InformasjonsVisning extends React.Component {
             <Punkt
               punkt={this.props.punkt}
               aktivTab={aktivTab}
-              onNavigate={handleNavigate}
+              onNavigate={onNavigate}
+              onClosePunkt={onClosePunkt}
             />
           </div>
         </div>
@@ -63,7 +65,7 @@ class InformasjonsVisning extends React.Component {
             meta={meta}
             onFitBounds={this.props.onFitBounds}
             onUpdateLayerProp={onUpdateLayerProp}
-            onNavigate={handleNavigate}
+            onNavigate={onNavigate}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             opplyst={opplyst}

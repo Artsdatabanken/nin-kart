@@ -3,14 +3,18 @@ import Geografi from "./Lokalitet/LokalitetElement/Geografi";
 import Landskap from "./Landskap";
 import Naturvernområde from "./Lokalitet/LokalitetElement/Naturvernområde";
 import Naturtype from "./Lokalitet/LokalitetElement/Naturtype";
+import Beskrivelsessystem from "./Lokalitet/LokalitetElement/Beskrivelsessystem";
+import { IconButton, Typography } from "@material-ui/core";
+import { Close } from "@material-ui/icons";
+import { getKoordinatStreng } from "../koordinater";
 
 class Punkt extends Component {
   render() {
-    const { aktivTab, onNavigate, punkt } = this.props;
+    const { aktivTab, onNavigate, onClosePunkt, punkt } = this.props;
     const { lat, lng } = punkt;
     if (!lat) return null;
     const { fylke, kommune, sted, landskap, vektor } = punkt;
-    const nat = (vektor || []).find((e) => e.datasettkode === "NAT");
+    const nat = (vektor || []).find((e) => e && e.datasettkode === "NAT");
     return (
       <>
         <div
@@ -19,6 +23,21 @@ class Punkt extends Component {
             " main_bodyx"
           }
         >
+          <Typography
+            variant="h5"
+            style={{ fontWeight: "bold", color: "#777", margin: 8 }}
+          >
+            Punkt
+          </Typography>
+          <Typography variant="subtitle1" style={{ margin: 8 }}>
+            {getKoordinatStreng([lng, lat])}
+          </Typography>
+          <IconButton
+            style={{ position: "absolute", right: 8, top: 0 }}
+            onClick={onClosePunkt}
+          >
+            <Close></Close>
+          </IconButton>
           <Geografi
             sted={sted}
             fylke={fylke}
@@ -29,12 +48,16 @@ class Punkt extends Component {
           />
           {vektor &&
             vektor.map((v) => {
-              console.log("kode", v.kode);
               if (v.datasettkode === "VV ")
                 return <Naturvernområde key={v.id} {...v} />;
               return null;
             })}
-          {nat && <Naturtype key={nat.data.type.join(",")} {...nat} />}
+          {nat && (
+            <>
+              <Naturtype {...nat} onNavigate={onNavigate} />
+              <Beskrivelsessystem variabler={nat.variabel} />
+            </>
+          )}
           <Landskap landskap={landskap} />
         </div>
       </>

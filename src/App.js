@@ -154,8 +154,8 @@ class App extends React.Component {
                       (this.state.punkt && this.state.punkt.lng) ? (
                         <InformasjonsVisning
                           punkt={this.state.punkt}
-                          handleLokalitetUpdate={this.handleLokalitetUpdate}
-                          handleNavigate={this.handleNavigate}
+                          onNavigate={this.handleNavigate}
+                          onClosePunkt={this.handleClosePunkt}
                           path={path}
                           aktivTab={aktivTab}
                           show_current={this.state.showCurrent}
@@ -226,7 +226,6 @@ class App extends React.Component {
                         opplyst={this.state.opplyst}
                         opplystKode={this.state.opplystKode}
                         meta={this.state.meta}
-                        onMapBoundsChange={this.handleActualBoundsChange}
                         onMapMove={context.onMapMove}
                         history={history}
                         onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
@@ -259,6 +258,12 @@ class App extends React.Component {
     this.fetchPunktdata();
   };
 
+  handleClosePunkt = () => {
+    this.setState({ markerCoordinates: null });
+    this.setState({ punkt: null });
+    this.handleNavigate(window.location.pathname + "?kartlag");
+  };
+
   handleNavigate = (url) => {
     let new_url = url;
     if (!url || url === undefined) {
@@ -273,9 +278,7 @@ class App extends React.Component {
   onNavigateToTab = (tab) => {
     this.props.history.push(getPathNotTab(this.props.location) + "?" + tab);
   };
-  handleActualBoundsChange = (bounds) => {
-    this.setState({ actualBounds: bounds, fitBounds: null });
-  };
+
   handleFitBounds = (bbox) => {
     this.setState({ fitBounds: bbox });
   };
@@ -289,14 +292,12 @@ class App extends React.Component {
     this.setState({ spraak: spraak });
   };
 
-  handleLokalitetUpdate = (data) => {
-    this.setState({ lokalitetdata: data });
-  };
-
   handleFullscreen = (showFullscreen) => {
     this.setState({ showFullscreen: showFullscreen });
   };
+
   handleClearSearchFor = () => this.setState({ searchFor: null });
+
   handleToggleLayer = () => {
     this.addSelected(this.state.meta);
   };

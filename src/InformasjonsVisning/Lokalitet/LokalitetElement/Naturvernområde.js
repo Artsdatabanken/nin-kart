@@ -14,11 +14,11 @@ import {
 import config from "../../../Funksjoner/config";
 
 const Naturvernområde = ({ tittel, bilde, onNavigate, ...props }) => {
-    console.log(JSON.stringify(props))
+    console.log('verneområde', JSON.stringify(props))
     return (
         <>
             {false && <Overskrift tittel="Geografi" subtekst="........" />}
-            <NinCard heading={språk(tittel)} canExpand>
+            <NinCard heading={språk(tittel)} canExpand hasData>
                 {expanded => <>
                     {bilde && bilde.foto && bilde.foto.url && (
                         <CardMedia>
