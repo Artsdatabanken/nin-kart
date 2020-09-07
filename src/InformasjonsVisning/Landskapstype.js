@@ -26,7 +26,7 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 408,
+    maxWidth: 380,
     margin: 8,
   },
   cardheader: {
@@ -129,7 +129,7 @@ export default function Landskapstype(props) {
           {false && <Typography paragraph>{beskrivelse}</Typography>}
 
           <ListSubheader disableSticky>
-            Defineres av landskapsgradientene
+            Defineres av landskapsgradienter
           </ListSubheader>
           {barn &&
             Object.values(barn).map((b) => (

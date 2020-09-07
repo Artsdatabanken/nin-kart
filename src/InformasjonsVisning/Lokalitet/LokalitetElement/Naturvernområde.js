@@ -19,17 +19,19 @@ const Naturvernområde = ({ tittel, bilde, onNavigate, ...props }) => {
         <>
             {false && <Overskrift tittel="Geografi" subtekst="........" />}
             <NinCard heading={språk(tittel)} canExpand>
-                {bilde && bilde.foto && bilde.foto.url && (
-                    <CardMedia>
-                        <img src={bilde.foto.url} alt="foto" />
-                    </CardMedia>
-                )}
-                <CardContent>
-                    <Typography variant="body2">
-                        Først vernet i {props.revisjon.dato.førstvernet}<br />
+                {expanded => <>
+                    {bilde && bilde.foto && bilde.foto.url && (
+                        <CardMedia>
+                            <img src={bilde.foto.url} alt="foto" />
+                        </CardMedia>
+                    )}
+                    <CardContent>
+                        <Typography variant="body2">
+                            Først vernet i {props.revisjon.dato.førstvernet}<br />
                         xx
                     </Typography>
-                </CardContent>
+                    </CardContent>
+                </>}
             </NinCard>
         </>
     );

@@ -29,7 +29,7 @@ class InformasjonsVisning extends React.Component {
       return (
         <div
           style={{
-            backgroundColor: "#fff",
+            backgroundColor: "#eee",
             position: "absolute",
             overflowY: "auto",
             boxShadow:
@@ -40,7 +40,7 @@ class InformasjonsVisning extends React.Component {
             right: 0,
           }}
         >
-          <div style={{ margin: 8 }}>
+          <div style={{ margin: 0 }}>
             <Punkt
               punkt={this.props.punkt}
               aktivTab={aktivTab}

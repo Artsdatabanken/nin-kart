@@ -41,12 +41,11 @@ const Naturtyper = (props) => {
   return (
     <>
       <Naturtype
-        key={type.kode}
+        key={forelder.kode}
         tittel={forelder.tittel}
         bilde={forelder.bilde}
         typer={type}
       />
-      )
       {false &&
         props.variabler &&
         props.variabler.map((variabel) => (
@@ -62,29 +61,33 @@ const Naturtype = ({ tittel, bilde, onNavigate, typer, ...props }) => {
     <>
       <Overskrift tittel="Naturtype" subtekst="........" />
       <NinCard heading="Naturtype" canExpand>
-        {bilde && bilde.foto && bilde.foto.url && (
-          <CardMedia>
-            <img src={bilde.foto.url} alt="foto" />
-          </CardMedia>
+        {(expanded) => (
+          <>
+            {bilde && bilde.foto && bilde.foto.url && (
+              <CardMedia>
+                <img src={bilde.foto.url} alt="foto" />
+              </CardMedia>
+            )}
+            <CardContent>
+              <Typography gutterBottom variant="subtitle1">
+                {språk(tittel)}
+              </Typography>
+              <Typography variant="body2">
+                {false && JSON.stringify(props)}
+              </Typography>
+            </CardContent>
+            <CardContent>
+              {typer.map((type) => (
+                <Item
+                  key={type.kode}
+                  primary={språk(type.tittel)}
+                  url={type.url}
+                  onClick={onNavigate}
+                />
+              ))}
+            </CardContent>
+          </>
         )}
-        <CardContent>
-          <Typography gutterBottom variant="subtitle1">
-            {språk(tittel)}
-          </Typography>
-          <Typography variant="body2">
-            {false && JSON.stringify(props)}
-          </Typography>
-        </CardContent>
-        <CardContent>
-          {typer.map((type) => (
-            <Item
-              key={type.kode}
-              primary={språk(type.tittel)}
-              url={type.url}
-              onClick={onNavigate}
-            />
-          ))}
-        </CardContent>
       </NinCard>
     </>
   );

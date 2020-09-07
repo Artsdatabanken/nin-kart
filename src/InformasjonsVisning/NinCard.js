@@ -10,7 +10,7 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 408,
+    maxWidth: 380,
     maxHeight: "2000px",
     margin: 8,
     _transitionDuration: "1s",
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     //                transition: theme.transitions.create("transform", {duration: theme.transitions.duration.shortest,}),
   },
   roothide: {
-    maxWidth: 408,
+    maxWidth: 380,
     maxHeight: 0,
     overflow: "hidden",
     margin: 8,
@@ -48,16 +48,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function NinCard(props) {
-  const { heading, canExpand, children, hasData } = props;
+  const { heading, title, canExpand, children, hasData } = props;
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const history = useHistory();
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+  console.log(props.children);
 
   return (
-    <Card raised className={hasData ? classes.root : classes.roothide}>
+    <Card className={hasData ? classes.root : classes.roothide}>
       <CardHeader
         className={classes.cardheader}
         onClick={handleExpandClick}
@@ -76,6 +77,7 @@ export default function NinCard(props) {
             </IconButton>
           )
         }
+        title={title}
         subheader={heading}
       ></CardHeader>
 
@@ -88,7 +90,7 @@ export default function NinCard(props) {
           />
         )}
       </CardActionArea>
-      {children}
+      {children && children(expanded)}
     </Card>
   );
 }
