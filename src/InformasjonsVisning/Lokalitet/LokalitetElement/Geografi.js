@@ -22,26 +22,25 @@ const getSted = (sted) => {
 };
 
 const Geografi = ({ sted, lat, lng, fylke, kommune, onNavigate }) => {
-  if (lat.includes("?")) {
-    lat = lat.substring(0, lat.indexOf("?"));
-  }
-  console.log({ kommune });
   return (
-    <div className="area_facts">
-      <Overskrift tittel="Geografi" subtekst="........" />
-      <NinCard heading="Geografi" canExpand>
-        {kommune && kommune.bilde.foto.url && (
-          <CardMedia>
-            <img src={kommune.bilde.foto.url} alt="foto" />
-          </CardMedia>
-        )}
+    <div>
+      <Overskrift tittel="Geografi" />
+      <NinCard heading="Geografi" canExpand hasData={!!sted}>
+        {kommune &&
+          kommune.bilde &&
+          kommune.bilde.foto &&
+          kommune.bilde.foto.url && (
+            <CardMedia>
+              <img src={kommune.bilde.foto.url} alt="foto" />
+            </CardMedia>
+          )}
         <CardContent>
           <Typography variant="body2">
             {getKoordinatStreng([lng, lat])}
           </Typography>
         </CardContent>
         <Collapse in={true} timeout="auto" unmountOnExit>
-          {sted && (
+          {sted && sted.navn !== "undefined" && (
             <Item
               primary={språk(sted.navn)}
               secondary={getSted(sted)}
@@ -74,7 +73,7 @@ const Geografi = ({ sted, lat, lng, fylke, kommune, onNavigate }) => {
 const Item = ({ primary, secondary, url, onClick }) => (
   <ListItem button onClick={() => onClick(url)}>
     <ListItemAvatar>
-      <img src={config.logo(url)} />
+      <img src={config.logo(url)} alt="ikon" />
     </ListItemAvatar>
     <ListItemText primary={primary} secondary={secondary}></ListItemText>
   </ListItem>

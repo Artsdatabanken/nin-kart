@@ -15,6 +15,7 @@ const useStyles = makeStyles(() => ({
 
 const Overskrift = ({ tittel, subtekst }) => {
   const classes = useStyles();
+  return null;
   return (
     <>
       <Typography variant="h5" className={classes.heading}>

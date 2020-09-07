@@ -11,8 +11,6 @@ export default function fetchMeta(location, place) {
   ) {
     return;
   }
-  console.log({ url });
-  console.log(!url, url.length !== 2, !url[1]);
   if (!url || url.length !== 2) return;
   const path = "/" + url[1];
   place.downloadMeta(path).then((data) => {

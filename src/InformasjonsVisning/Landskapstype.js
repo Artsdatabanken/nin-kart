@@ -27,7 +27,7 @@ import { useHistory } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 408,
-    margin: 16,
+    margin: 8,
   },
   cardheader: {
     cursor: "pointer",

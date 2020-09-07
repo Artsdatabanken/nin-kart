@@ -16,7 +16,6 @@ import bakgrunnskarttema from "AppSettings/bakgrunnskarttema";
 import HamburgerMeny from "HamburgerMeny/HamburgerMeny";
 import MobileNavigation from "MobileNavigation/MobileNavigation";
 import ForsideInformasjon from "Forside/ForsideInformasjon";
-import getLokalitetUrl from "AppSettings/AppFunksjoner/getLokalitetUrl";
 import Meny from "Navigering/Meny";
 import språk from "Funksjoner/språk";
 import "style/Kart.scss";
@@ -27,6 +26,7 @@ import "style/InformasjonsSider.scss";
 import "style/Art.scss";
 import "style/Kartlag.scss";
 import "style/FargeMenyer.scss";
+import fixerUpHack from "./fixerUpHack";
 
 export let exportableSpraak;
 export let exportableFullscreen;
@@ -107,20 +107,20 @@ class App extends React.Component {
                       if (item.url[0] !== "/") {
                         url = "/" + item.url;
                       }
-                      if (url.includes("/Sted/")) {
-                        // Fix for sted side siden den lenkes feil i url.
-                        backend
-                          .hentPunkt(item.lng, item.lat, item)
-                          .then((data) => {
-                            if (!data) {
-                              return null;
-                            }
-                            url = getLokalitetUrl(item.lat, item.lng, data);
-                            history.push(url); // duplikat pga async
-                          });
-                      } else {
-                        history.push(url);
-                      }
+                      /*  if (url.includes("/Sted/")) {
+                          // Fix for sted side siden den lenkes feil i url.
+                          backend
+                            .hentPunkt(item.lng, item.lat, item)
+                            .then((data) => {
+                              if (!data) {
+                                return null;
+                              }
+                              url = getLokalitetUrl(item.lat, item.lng, data);
+                              history.push(url); // duplikat pga async
+                            });
+                        } else {*/
+                      history.push(url);
+                      //                      }
                     }}
                     history={history}
                   />
@@ -149,8 +149,11 @@ class App extends React.Component {
                         onMouseLeave={this.handleMouseLeave}
                       />
 
-                      {aktivTab === "meny" || aktivTab === "informasjon" ? (
+                      {aktivTab === "meny" ||
+                      aktivTab === "informasjon" ||
+                      (this.state.punkt && this.state.punkt.lng) ? (
                         <InformasjonsVisning
+                          punkt={this.state.punkt}
                           handleLokalitetUpdate={this.handleLokalitetUpdate}
                           handleNavigate={this.handleNavigate}
                           path={path}
@@ -209,18 +212,16 @@ class App extends React.Component {
                         </div>
                       )}
                       <Kart
-                        handleLokalitetUpdate={this.handleLokalitetUpdate}
-                        handleUpdateLokalitetLayerProp={
-                          this.handleUpdateLokalitetLayerProp
-                        }
+                        markerCoordinates={this.state.markerCoordinates}
+                        onMarkerClick={this.handleMarkerClick}
                         lokalitetdata={this.state.lokalitetdata}
                         path={this.props.location.search}
                         aktivTab={aktivTab}
                         show_current={this.state.showCurrent}
                         bounds={this.state.fitBounds}
                         latitude={65.4}
-                        longitude={10.8}
-                        zoom={3}
+                        longitude={10.77}
+                        zoom={5}
                         aktiveLag={this.state.aktiveLag}
                         opplyst={this.state.opplyst}
                         opplystKode={this.state.opplystKode}
@@ -252,6 +253,11 @@ class App extends React.Component {
       </SettingsContext.Consumer>
     );
   }
+
+  handleMarkerClick = (coords) => {
+    this.setState({ markerCoordinates: coords });
+    this.fetchPunktdata();
+  };
 
   handleNavigate = (url) => {
     let new_url = url;
@@ -294,6 +300,7 @@ class App extends React.Component {
   handleToggleLayer = () => {
     this.addSelected(this.state.meta);
   };
+
   componentDidMount() {
     fetchMeta(this.props.location.pathname, this);
   }
@@ -388,6 +395,28 @@ class App extends React.Component {
   handleMouseLeave = () => {
     // console.log("mouseleave");
     this.setState({ opplystKode: "", opplyst: {} });
+  };
+
+  fetchPunktdata = () => {
+    const { lng, lat } = this.state.markerCoordinates;
+    this.setState({ punkt: { lng, lat } });
+
+    backend.hentStedsnavn(lng, lat).then((sted) => {
+      this.setState((prevState) => Object.assign(prevState.punkt, { sted }));
+    });
+
+    backend.hentPunktVektor(lng, lat).then((data) => {
+      delete data.KOM;
+      delete data.FYL;
+      this.setState((prevState) =>
+        Object.assign(prevState.punkt, { vektor: data })
+      );
+    });
+
+    backend.hentPunkt(lng, lat).then((data) => {
+      data = fixerUpHack(data);
+      this.setState((prevState) => Object.assign(prevState.punkt, data));
+    });
   };
 
   static contextType = SettingsContext;

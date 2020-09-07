@@ -4,16 +4,13 @@ import "leaflet/dist/leaflet.css";
 import React from "react";
 import Tangram from "tangram";
 import { createScene, updateScene } from "./scene/scene";
-import backend from "Funksjoner/backend";
-import PopUp from "./LeafletComponents/PopUp";
 import {
   Fullscreen,
   FullscreenExit,
   LocationSearching,
 } from "@material-ui/icons";
 import "style/Kart.scss";
-import updateMarkerPosition from "./LeafletActions/updateMarkerPosition";
-import getLokalitetUrl from "AppSettings/AppFunksjoner/getLokalitetUrl";
+
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
 // See here: https://github.com/PaulLeCam/react-leaflet/issues/255
 // Used in conjunction with url-loader.
@@ -27,28 +24,14 @@ L.Icon.Default.mergeOptions({
 
 let header_shift = 56;
 
-function find_searchparams(searchparams) {
-  let coord = null;
-  for (let i in searchparams) {
-    if (searchparams[i].includes("lng")) {
-      coord = searchparams[i].split("&");
-      coord[0] = coord[0].split("=")[1];
-      coord[1] = coord[1].split("=")[1];
-    }
-  }
-  return coord;
-}
-
 class LeafletTangram extends React.Component {
   state = {
     windowXpos: 0,
     windowYpos: 0,
-    showPopup: false,
     buttonUrl: null,
     sted: null,
     data: null,
     koordinat: null,
-    clickCoordinates: { x: 0, y: 0 },
   };
   componentDidMount() {
     const options = {
@@ -68,24 +51,10 @@ class LeafletTangram extends React.Component {
       if (!e.hard) {
         this.props.onMapBoundsChange(map.getBounds());
       }
-      if (this.marker) {
-        updateMarkerPosition(
-          this.marker._icon._leaflet_pos,
-          this,
-          header_shift
-        );
-      }
     });
     map.on("resize", (e) => {
       if (!e.hard) {
         this.props.onMapBoundsChange(map.getBounds());
-      }
-      if (this.marker) {
-        updateMarkerPosition(
-          this.marker._icon._leaflet_pos,
-          this,
-          header_shift
-        );
       }
     });
     map.setView(
@@ -115,16 +84,14 @@ class LeafletTangram extends React.Component {
       iconAnchor: [17, 35],
     });
 
-    let coord = find_searchparams((this.props.path || "").split("?"));
-
     map.on("locationfound", (e) => this.onLocationFound(e));
     map.on("locationerror", (e) => this.onLocationError(e));
 
-    if (coord) {
-      this.marker = L.marker([coord[1], coord[0]], { icon: this.icon }).addTo(
-        this.map
-      );
-      this.getBackendData(coord[0], coord[1], this.marker._icon._leaflet_pos);
+    if (this.props.markerCoordinates) {
+      this.marker = L.marker(
+        [this.props.markerCoordinates.lng, this.props.markerCoordinates.lat],
+        { icon: this.icon }
+      ).addTo(this.map);
     }
   }
 
@@ -174,33 +141,21 @@ class LeafletTangram extends React.Component {
     this.map.removeLayer(this.marker);
   }
 
-  getBackendData(lng, lat, e) {
-    updateMarkerPosition(e, this, header_shift);
-    backend.hentPunkt(lng, lat, e).then((data) => {
-      if (!data) {
-        return null;
-      }
-      let url = getLokalitetUrl(lat, lng, data);
-      this.setState({
-        buttonUrl: url,
-        data: data,
-        showPopup: true,
-        koordinat: [lng, lat],
-      });
-      this.props.handleLokalitetUpdate(data);
-      backend.hentStedsnavn(lng, lat).then((sted) => {
-        this.setState({ sted: sted });
-      });
-    });
-  }
-
   handleClick = (e) => {
     const latlng = e.leaflet_event.latlng;
     this.removeMarker();
     this.marker = L.marker([latlng.lat, latlng.lng], { icon: this.icon }).addTo(
       this.map
     );
-    this.getBackendData(latlng.lng, latlng.lat, e.leaflet_event.layerPoint);
+    let offset = this.marker._mapToAdd._mapPane._leaflet_pos;
+    const coords = {
+      lat: latlng.lat,
+      lng: latlng.lng,
+      windowXpos: e.x + offset.x,
+      windowYpos: e.y - header_shift + offset.y,
+    };
+    this.props.onMarkerClick(coords);
+
     let urlparams = (this.props.path || "").split("?");
     let newurlstring = "";
     for (let i in urlparams) {
@@ -250,8 +205,6 @@ class LeafletTangram extends React.Component {
   render() {
     return (
       <>
-        {this.state.showPopup && <PopUp parent={this} path={this.props.path} />}
-
         {this.props.aktivTab === "kartlag" && (
           <button
             className="fullscreen map_button"

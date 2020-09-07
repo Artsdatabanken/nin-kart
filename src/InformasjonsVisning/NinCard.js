@@ -11,7 +11,22 @@ import { useHistory } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 408,
-    margin: 16,
+    maxHeight: "2000px",
+    margin: 8,
+    _transitionDuration: "1s",
+    transition: "max-height 3s ease-in",
+    //transition: 'height 5.4s linear',
+    //                transition: theme.transitions.create("transform", {duration: theme.transitions.duration.shortest,}),
+  },
+  roothide: {
+    maxWidth: 408,
+    maxHeight: 0,
+    overflow: "hidden",
+    margin: 8,
+    _transitionDuration: "1s",
+    transition: "max-height 3s ease-out",
+    //transition: 'height 5.4s linear',
+    //                transition: theme.transitions.create("transform", {duration: theme.transitions.duration.shortest,}),
   },
   cardheader: {
     cursor: "pointer",
@@ -33,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function NinCard(props) {
-  const { heading, canExpand, children } = props;
+  const { heading, canExpand, children, hasData } = props;
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const history = useHistory();
@@ -42,7 +57,7 @@ export default function NinCard(props) {
   };
 
   return (
-    <Card raised className={classes.root}>
+    <Card raised className={hasData ? classes.root : classes.roothide}>
       <CardHeader
         className={classes.cardheader}
         onClick={handleExpandClick}

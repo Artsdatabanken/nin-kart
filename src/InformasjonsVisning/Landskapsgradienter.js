@@ -27,7 +27,7 @@ import { useHistory } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 408,
-    margin: 16,
+    margin: 8,
   },
   cardheader: {
     cursor: "pointer",
@@ -89,20 +89,18 @@ export default function Landskapsgradienter(props) {
         _title={heading1}
         subheader={heading1}
       />
-      <CardContent>
-        {sample &&
-          Object.values(sample).map((b) => (
-            <Klg
-              key={b.url}
-              v={b.v}
-              måleenhet={b.måleenhet}
-              tittel={b.tittel}
-              trinn={b.trinn}
-              url={b.url}
-              onClick={() => history.push(b.url)}
-            />
-          ))}
-      </CardContent>
+      {sample &&
+        Object.values(sample).map((b) => (
+          <Klg
+            key={b.url}
+            v={b.v}
+            måleenhet={b.måleenhet}
+            tittel={b.tittel}
+            trinn={b.trinn}
+            url={b.url}
+            onClick={() => history.push(b.url)}
+          />
+        ))}
 
       {false && (
         <CardActions disableSpacing>
@@ -151,12 +149,12 @@ const Klg = ({ trinn, tittel, url, onClick, v, måleenhet }) => {
   return (
     <ListItem button onClick={onClick}>
       <ListItemAvatar>
-        <Avatar>{url && <img src={config.foto(url)} />}</Avatar>
+        <Avatar>{url && <img src={config.foto(url)} alt="foto" />}</Avatar>
       </ListItemAvatar>
+      <ListItemText primary={tittel.nb} secondary={trinn.tittel.nb} />
       <ListItemSecondaryAction>
         <Typography variant="body1">{verdi}</Typography>
       </ListItemSecondaryAction>
-      <ListItemText primary={tittel.nb} secondary={trinn.tittel.nb} />
     </ListItem>
   );
 };

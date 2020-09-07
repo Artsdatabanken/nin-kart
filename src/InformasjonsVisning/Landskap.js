@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
+import Overskrift from "./Overskrift";
 import Landskapstype from "./Landskapstype";
 import Landskapsgradienter from "./Landskapsgradienter";
 
@@ -44,23 +44,18 @@ const Landskap = ({ landskap }) => {
   if (!landskap) return null;
   const { tittel, beskrivelse, url } = landskap;
   const gradient = landskap.gradient && landskap.gradient["NN-LA-KLG"];
-  const barn = gradient.barn;
+  const barn = gradient && gradient.barn;
   return (
     <>
-      <Typography
-        variant="h5"
-        style={{ marginBottom: 16, color: "#777", fontWeight: "bold" }}
-      >
-        Landskap
-      </Typography>
-      <Typography variant="body1" style={{ marginBottom: 24 }}>
-        En landskapstype er en samling av variasjoner i terreng og landeformer
+      <Overskrift
+        heading="Landskap"
+        subtekst="En landskapstype er en samling av variasjoner i terreng og landeformer
         som sammen påvirker et større område. I kartleggingen er den minste
         graden som måles på en kvadratkilometer. Man kan dermed befinne seg i et
         isbrelandskap uten å være akkurat på en isbre. Det vil også kunne være
         noen små variasjoner som ikke bestemmer landskapstypen da de er små og
-        derav ikke dominerende.
-      </Typography>
+        derav ikke dominerende."
+      />
 
       <Landskapstype
         heading1={tittel.nb}

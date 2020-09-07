@@ -1,72 +1,50 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import Hjelp from "InformasjonsVisning/Hjelp/Hjelp";
-import parseQueryString from "./Katalog/KatalogFunksjoner/parseQueryString";
 import finnKurvevariabler from "./Katalog/KatalogFunksjoner/finnKurvevariabler";
 import KatalogFane from "./Katalog/Katalog";
 import Punkt from "./Punkt";
-import { Typography } from "@material-ui/core";
 
 // Denne boksen inneholder alle informasjonsvisningssidene
 class InformasjonsVisning extends React.Component {
-  dataQueryNumber = 0;
-  state = {
-    error: "",
-    data: {},
-  };
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.meta !== this.props.meta) this.setState({ query: null });
-  }
-
   render() {
-    const data = this.state.data;
     const {
+      punkt,
       opplyst,
       onMouseEnter,
       onMouseLeave,
       onUpdateLayerProp,
       onUpdateMetaProp,
       meta,
-      location,
       aktivTab,
       path,
       handleNavigate,
-      handleLokalitetUpdate,
     } = this.props;
     const kurve = finnKurvevariabler(this.props.aktiveLag);
 
     if (path === "/Natur_i_Norge/hjelp") {
       return <Hjelp aktivTab={aktivTab} />;
     }
-
-    if (
-      location.search &&
-      location.search.includes("?lng") &&
-      location.search.includes("informasjon")
-    ) {
-      const { lng, lat, vis } = parseQueryString(location.search);
+    if (punkt && punkt.lng) {
       return (
         <div
           style={{
             backgroundColor: "#fff",
             position: "absolute",
             overflowY: "auto",
-            top: 64,
+            boxShadow:
+              "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+            top: 56,
             bottom: 0,
-            left: 408,
-            right: 50,
+            width: 408,
+            right: 0,
           }}
         >
-          <div style={{ margin: 16 }}>
+          <div style={{ margin: 8 }}>
             <Punkt
-              lng={lng}
-              lat={lat}
-              vis={vis}
+              punkt={this.props.punkt}
               aktivTab={aktivTab}
-              history={this.props.history}
               onNavigate={handleNavigate}
-              handleLokalitetUpdate={handleLokalitetUpdate}
             />
           </div>
         </div>
@@ -89,9 +67,7 @@ class InformasjonsVisning extends React.Component {
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             opplyst={opplyst}
-            data={data}
             onUpdateMetaProp={onUpdateMetaProp}
-            has_error={this.state.error}
             handleCloseSnackbar={this.handleCloseSnackbar}
             erAktivert={this.props.erAktivert}
             onToggleLayer={this.props.onToggleLayer}
@@ -102,7 +78,6 @@ class InformasjonsVisning extends React.Component {
       </div>
     );
   }
-  handleCloseSnackbar = () => this.setState({ error: null });
 }
 
 export default withRouter(InformasjonsVisning);
