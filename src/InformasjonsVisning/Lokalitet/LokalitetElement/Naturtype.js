@@ -45,19 +45,18 @@ const Naturtype = (props) => {
       <NinCard heading={"Naturtype: " + språk(tittel)} canExpand hasData>
         {(expanded) => (
           <>
-            <CardMedia>
-              <img src={config.foto(forelder.url)} alt="foto" />
-            </CardMedia>
-            {typer.map((type) => (
-              <Item
-                key={type.kode}
-                primary={språk(type.tittel)}
-                url={type.url}
-                onClick={onNavigate}
-              />
-            ))}
             <Collapse in={expanded} timeout="auto" unmountOnExit>
-              ...
+              <CardMedia>
+                <img src={config.foto(forelder.url)} alt="foto" />
+              </CardMedia>
+              {typer.map((type) => (
+                <Item
+                  key={type.kode}
+                  primary={språk(type.tittel)}
+                  url={type.url}
+                  onClick={onNavigate}
+                />
+              ))}
             </Collapse>
           </>
         )}
