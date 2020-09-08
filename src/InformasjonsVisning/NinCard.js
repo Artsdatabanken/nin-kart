@@ -77,6 +77,7 @@ export default function NinCard(props) {
           )
         }
         title={title}
+        titleTypographyProps={{ variant: "subtitle1" }}
         subheader={heading}
       ></CardHeader>
 
