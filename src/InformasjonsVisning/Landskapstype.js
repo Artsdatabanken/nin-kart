@@ -22,6 +22,7 @@ import { ExpandMore, ArrowDownward } from "@material-ui/icons/";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import config from "Funksjoner/config";
 import { useHistory } from "react-router-dom";
+import NinCard from "./NinCard";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -68,76 +69,35 @@ export default function Landskapstype(props) {
   };
 
   return (
-    <Card className={classes.root}>
-      <CardHeader
-        className={classes.cardheader}
-        onClick={handleExpandClick}
-        action={
-          <IconButton
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded,
-            })}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            {false && <MoreVertIcon />}
-            <ExpandMore />
-          </IconButton>
-        }
-        title={heading1}
-        subheader={heading2}
-      ></CardHeader>
-
-      {false && (
-        <CardActions disableSpacing>
-          <IconButton
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded,
-            })}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            <ExpandMore />
-          </IconButton>
-          <CardActions></CardActions>
-        </CardActions>
+    <NinCard title={heading1} heading={heading2} canExpand hasData={true}>
+      {(expanded) => (
+        <>
+          <Collapse in={expanded} timeout="auto" unmountOnExit>
+            {props.url && (
+              <CardActionArea onClick={() => history.push(url)}>
+                <CardMedia
+                  className={classes.media}
+                  image={config.foto(props.url)}
+                  title="Foto"
+                />
+              </CardActionArea>
+            )}
+            <ListSubheader disableSticky>
+              Defineres av landskapsgradienter
+            </ListSubheader>
+            {barn &&
+              Object.values(barn).map((b) => (
+                <Klg
+                  key={b.url}
+                  trinn={b.trinn || {}}
+                  url={b.url}
+                  onClick={() => history.push(b.url)}
+                />
+              ))}
+          </Collapse>
+        </>
       )}
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        {props.url && (
-          <CardActionArea onClick={() => history.push(url)}>
-            <CardMedia
-              className={classes.media}
-              image={config.foto(props.url)}
-              title="Foto"
-            />
-          </CardActionArea>
-        )}
-        <ListSubheader disableSticky>
-          Defineres av landskapsgradienter
-        </ListSubheader>
-        {barn &&
-          Object.values(barn).map((b) => (
-            <Klg
-              key={b.url}
-              trinn={b.trinn || {}}
-              url={b.url}
-              onClick={() => history.push(b.url)}
-            />
-          ))}
-        {false && (
-          <a
-            className={classes.related}
-            href="https://artsdatabanken.no/Pages/3"
-            target="_top"
-          >
-            <ArrowDownward className={classes.relatedIcon} />
-            <p>Relatert artikkel på Artsdatabanken.no</p>
-          </a>
-        )}
-      </Collapse>
-    </Card>
+    </NinCard>
   );
 }
 
