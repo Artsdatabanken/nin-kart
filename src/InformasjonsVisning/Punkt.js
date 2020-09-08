@@ -42,9 +42,6 @@ class Punkt extends Component {
             >
               Punkt
             </Typography>
-            <Typography variant="subtitle1" style={{ margin: 8 }}>
-              {getKoordinatStreng([lng, lat])}
-            </Typography>
             <IconButton
               style={{ position: "absolute", right: 8, top: 0 }}
               onClick={onClosePunkt}
