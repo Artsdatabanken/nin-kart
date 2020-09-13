@@ -245,8 +245,7 @@ class App extends React.Component {
   }
 
   handleMarkerClick = (coords) => {
-    this.setState({ markerCoordinates: coords });
-    this.fetchPunktdata();
+    this.setState({ markerCoordinates: coords }, () => this.fetchPunktdata());
   };
 
   handleClosePunkt = () => {
@@ -294,6 +293,10 @@ class App extends React.Component {
   };
 
   componentDidMount() {
+    const search = new URLSearchParams(this.props.location.search);
+    const lng = search.get("lng");
+    const lat = search.get("lat");
+    if (lng && lat) this.handleMarkerClick({ lng, lat });
     fetchMeta(this.props.location.pathname, this);
   }
 
