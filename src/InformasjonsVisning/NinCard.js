@@ -10,7 +10,6 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 380,
     maxHeight: "2000px",
     margin: 8,
     _transitionDuration: "1s",
@@ -19,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
     //                transition: theme.transitions.create("transform", {duration: theme.transitions.duration.shortest,}),
   },
   roothide: {
-    maxWidth: 380,
     maxHeight: 0,
     overflow: "hidden",
     margin: 8,

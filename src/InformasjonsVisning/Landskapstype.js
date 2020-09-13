@@ -1,32 +1,21 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
 import {
-  Divider,
   ListItem,
   ListItemAvatar,
   ListItemText,
-  Button,
-  Card,
   CardActionArea,
-  CardHeader,
   CardMedia,
-  CardContent,
-  CardActions,
   ListSubheader,
 } from "@material-ui/core";
 import Collapse from "@material-ui/core/Collapse";
 import Avatar from "@material-ui/core/Avatar";
-import IconButton from "@material-ui/core/IconButton";
-import { ExpandMore, ArrowDownward } from "@material-ui/icons/";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
 import config from "Funksjoner/config";
 import { useHistory } from "react-router-dom";
 import NinCard from "./NinCard";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 380,
     margin: 8,
   },
   cardheader: {

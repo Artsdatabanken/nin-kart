@@ -26,7 +26,7 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 380,
+    _maxWidth: 400,
     margin: 8,
   },
   cardheader: {
