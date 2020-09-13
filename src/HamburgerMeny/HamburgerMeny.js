@@ -12,7 +12,6 @@ import {
 } from "@material-ui/core";
 import {
   OpenInNew,
-  KeyboardArrowRight,
   CloudUpload,
   CloudDownload,
   Comment,
@@ -22,7 +21,6 @@ import {
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import NavigationChevronLeftDouble from "AppSettings/NavigationChevronLeftDouble";
-import BildeAvatar from "GjenbruksElement/Bildeavatar";
 import GitHub from "./GitHub";
 import Innstillinger from "./Innstillinger";
 import Utforsk from "./Utforsk/Utforsk";
