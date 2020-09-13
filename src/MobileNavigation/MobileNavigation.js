@@ -3,7 +3,7 @@ import React from "react";
 const MobileNavigation = ({
   onNavigateToTab,
   aktivTab,
-  hidden_in_fullscreen
+  hidden_in_fullscreen,
 }) => (
   <div
     className={
@@ -14,17 +14,6 @@ const MobileNavigation = ({
     role="tablist"
     aria-orientation="horizontal"
   >
-    <button
-      role="tab"
-      aria-selected={aktivTab === "meny"}
-      className={aktivTab === "meny" ? "active_mobile_button" : ""}
-      onClick={() => {
-        onNavigateToTab("meny");
-      }}
-    >
-      Navigering
-    </button>
-
     <button
       role="tab"
       aria-selected={aktivTab === "informasjon"}

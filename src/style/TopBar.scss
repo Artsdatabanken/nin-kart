@@ -6,7 +6,8 @@
   height: $topbar-height-nin;
   position: relative;
   background: $dark-nin;
-  border-bottom: 1px solid $border-color;
+  box-shadow: $box-shadow;
+  z-index: 5;
 }
 
 .header_text:hover {

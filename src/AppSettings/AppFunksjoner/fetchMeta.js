@@ -5,10 +5,7 @@ export default function fetchMeta(location, place) {
   let url = location.match(/\/(.*)/);
 
   place.setState({ meta: null });
-  if (
-    location === "/Natur_i_Norge/hjelp" ||
-    location === "/Natur_i_Norge/hjelp"
-  ) {
+  if (location === "/hjelp" || location === "/hjelp") {
     return;
   }
   if (!url || url.length !== 2) return;

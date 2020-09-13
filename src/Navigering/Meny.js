@@ -9,7 +9,7 @@ import {
   Room,
   HelpOutline,
   KeyboardArrowDown,
-  KeyboardArrowUp
+  KeyboardArrowUp,
 } from "@material-ui/icons";
 
 const Meny = ({
@@ -22,7 +22,7 @@ const Meny = ({
   onMouseEnter,
   onMouseLeave,
   lokalitet,
-  lokalitetdata
+  lokalitetdata,
 }) => {
   /*  
 Intern navigasjon innad på en side.
@@ -66,17 +66,19 @@ Sidebarmeny-navigeringen.
         height: expanded && aktivTab === "kartlag" && "auto",
         maxHeight: expanded && aktivTab === "kartlag" && "100%",
         borderBottom:
-          expanded && aktivTab === "kartlag" && "2px solid $bright-nin"
+          expanded && aktivTab === "kartlag" && "2px solid $bright-nin",
       }}
     >
-      <TopPart
-        setExpanded={setExpanded}
-        expanded={expanded}
-        aktivTab={aktivTab}
-      />
+      {false && (
+        <TopPart
+          setExpanded={setExpanded}
+          expanded={expanded}
+          aktivTab={aktivTab}
+        />
+      )}
       <div
         style={{
-          display: aktivTab === "kartlag" && !expanded ? "none" : "block"
+          display: aktivTab === "kartlag" && !expanded ? "none" : "block",
         }}
       >
         <HomeButton onNavigate={onNavigate} setExpanded={setExpanded} />
@@ -89,7 +91,6 @@ Sidebarmeny-navigeringen.
               overordnet_url={overordnet_url}
             />
             <div className="nav_current">
-              {" "}
               {meta && <Bildeavatar url={url} />}
               {tittel === "hjelp" && (
                 <>
@@ -140,7 +141,7 @@ function HomeButton({ setExpanded, onNavigate }) {
   return (
     <button
       key="home"
-      onClick={e => {
+      onClick={(e) => {
         e.stopPropagation();
         setExpanded(false);
         onNavigate("/");
@@ -183,7 +184,7 @@ function OverordnetMapping({
   overordnet,
   overordnet_url,
   setExpanded,
-  onNavigate
+  onNavigate,
 }) {
   return (
     <>
@@ -193,7 +194,7 @@ function OverordnetMapping({
         return (
           <button
             key={item}
-            onClick={e => {
+            onClick={(e) => {
               setExpanded(false);
               onNavigate(overordnet_url);
             }}

@@ -18,10 +18,7 @@ class Punkt extends Component {
     return (
       <>
         <div
-          className={
-            (aktivTab === "informasjon" ? "mobile_on" : "mobile_off") +
-            " main_bodyx"
-          }
+          className={aktivTab === "informasjon" ? "mobile_on" : "mobile_off"}
         >
           <div
             style={{

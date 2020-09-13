@@ -26,6 +26,7 @@ import BildeAvatar from "GjenbruksElement/Bildeavatar";
 import GitHub from "./GitHub";
 import Innstillinger from "./Innstillinger";
 import Utforsk from "./Utforsk/Utforsk";
+import config from "../Funksjoner/config";
 
 class HamburgerMeny extends Component {
   render() {
@@ -117,7 +118,7 @@ class HamburgerMeny extends Component {
                   icon={<HelpOutline />}
                   primary="Hjelp"
                   onClick={() => {
-                    this.handleClick("/Natur_i_Norge/hjelp");
+                    this.handleClick("?hjelp");
                     context.onToggleHovedmeny();
                   }}
                 />
@@ -133,16 +134,21 @@ class HamburgerMeny extends Component {
                   <Comment /> <span>Tilbakemeldinger</span> <OpenInNew />
                 </button>
 
-                <button
-                  className="artsdatabanken"
+                <Menyelement
                   onClick={() => {
                     this.handleWindowOpen("https://artsdatabanken.no");
                     context.onToggleHovedmeny();
                   }}
-                >
-                  <BildeAvatar url="Datakilde/Artsdatabanken" />{" "}
-                  <span>Artsdatabanken</span> <KeyboardArrowRight />
-                </button>
+                  icon={
+                    <img
+                      alt="Artsdatabanken logo"
+                      src={config.logo(
+                        "Datakilde/Artsdatabanken".split("?")[0]
+                      )}
+                    />
+                  }
+                  primary="Artsdatabanken"
+                />
               </div>
             </List>
           </SwipeableDrawer>

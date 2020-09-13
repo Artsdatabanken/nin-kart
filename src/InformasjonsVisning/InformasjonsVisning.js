@@ -1,6 +1,5 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import Hjelp from "InformasjonsVisning/Hjelp/Hjelp";
 import finnKurvevariabler from "./Katalog/KatalogFunksjoner/finnKurvevariabler";
 import KatalogFane from "./Katalog/Katalog";
 import Punkt from "./Punkt";
@@ -21,10 +20,6 @@ class InformasjonsVisning extends React.Component {
       onNavigate,
     } = this.props;
     const kurve = finnKurvevariabler(this.props.aktiveLag);
-
-    if (path === "/Natur_i_Norge/hjelp") {
-      return <Hjelp aktivTab={aktivTab} />;
-    }
 
     return (
       <div
