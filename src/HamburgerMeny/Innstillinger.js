@@ -25,8 +25,6 @@ const Innstillinger = ({
 
   return (
     <>
-      <h2>Innstillinger</h2>
-
       <Menyelement
         onClick={(e) => {
           e.preventDefault();
@@ -34,8 +32,7 @@ const Innstillinger = ({
           onUpdateSetting("visKoder", !visKoder);
         }}
         icon={<span>NA</span>}
-        primary="Vis NiN-koder"
-        toggle
+        primary={visKoder ? "Vis NiN-koder" : "Ikke vis NiN-koder"}
         checked={visKoder}
       />
 

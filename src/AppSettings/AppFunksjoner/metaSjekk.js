@@ -35,6 +35,7 @@ export default function metaSjekk(meta, parent) {
   if (meta.kode.indexOf("VV") === 0) meta.kart.aktivtFormat = "polygon";
   meta.erSynlig = true;
   meta.depth = 3;
+  meta.barn = meta.barn.filter((b) => b.kode.indexOf("AR") != 0);
   if (meta.kode.substring(0, 2) === "LA") {
     if (!parent.state.aktiveLag.bakgrunnskart.terreng.wasAutoEnabled) {
       parent.handleUpdateLayerProp("bakgrunnskart.terreng", "erSynlig", true);
