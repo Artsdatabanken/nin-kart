@@ -333,7 +333,7 @@ class App extends React.Component {
     if (path !== prevProps.location.pathname) {
       fetchMeta(path, this);
     }
-    let tittel = "NiN-kart";
+    let tittel = "Natur i Norge";
     if (this.state.meta && språk(this.state.meta.tittel) !== "undefined") {
       tittel = språk(this.state.meta.tittel) + " | " + tittel;
     } else if (

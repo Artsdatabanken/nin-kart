@@ -30,7 +30,7 @@ const Naturvernområde = ({ tittel, bilde, url, onNavigate, ...props }) => {
                             )}
                             <CardContent>
                                 <Typography variant="body2">
-                                    Først vernet: {props.revisjon.dato.førstvernet.substring(0, 10)}<br />
+                                    {props.revisjon?.dato?.førstvernet && <>Først vernet: {props.revisjon.dato.førstvernet.substring(0, 10)}<br /></>}
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
@@ -40,11 +40,6 @@ const Naturvernområde = ({ tittel, bilde, url, onNavigate, ...props }) => {
         </>
     );
 };
-
-/*
-                <Collapse in={true} timeout="auto" unmountOnExit>
-                </Collapse>
-*/
 
 const Item = ({ primary, secondary, url, onClick }) => (
     <ListItem button onClick={() => onClick(url)}>

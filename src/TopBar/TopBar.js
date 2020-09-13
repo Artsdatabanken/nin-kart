@@ -25,11 +25,11 @@ const TopBar = ({ onSelectResult, searchFor, forside, history }) => {
   }, [query]);
   return (
     <SettingsContext.Consumer>
-      {context => (
+      {(context) => (
         <div className={!forside ? "top_bar" : "top_bar forside_topbar"}>
           <button
             className="invisible_icon_button hamburger"
-            onKeyDown={e => {
+            onKeyDown={(e) => {
               if (e.keyCode === 13) {
                 context.onToggleHovedmeny();
               }
@@ -45,12 +45,12 @@ const TopBar = ({ onSelectResult, searchFor, forside, history }) => {
                 history.push("/");
               }}
             >
+              <span>Natur i Norge</span>
               <img
                 src="/logoer/small_icon_two.png"
                 className="logo_image"
                 alt="artsdatabanken logo"
               />
-              <span>NiN-Kart</span>
             </div>
           )}
 
@@ -65,7 +65,7 @@ const TopBar = ({ onSelectResult, searchFor, forside, history }) => {
             <ResultatListe
               query={query}
               searchResults={hits}
-              onSelect={item => {
+              onSelect={(item) => {
                 setQuery(null);
                 onSelectResult(item);
               }}

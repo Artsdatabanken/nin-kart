@@ -54,6 +54,7 @@ const Naturtype = (props) => {
                   key={type.kode}
                   primary={språk(type.tittel)}
                   url={type.url}
+                  målestokk={type.kart && "(1:" + type.kart.målestokk + ")"}
                   onClick={onNavigate}
                 />
               ))}
@@ -69,12 +70,15 @@ const Naturtype = (props) => {
 
 */
 
-const Item = ({ primary, secondary, url, onClick }) => (
+const Item = ({ primary, secondary, målestokk, url, onClick }) => (
   <ListItem button onClick={() => onClick(url)}>
     <ListItemAvatar>
       <img src={config.logo(url)} alt="ikon" />
     </ListItemAvatar>
-    <ListItemText primary={primary} secondary={secondary}></ListItemText>
+    <ListItemText
+      primary={primary + " " + målestokk}
+      secondary={secondary}
+    ></ListItemText>
   </ListItem>
 );
 

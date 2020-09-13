@@ -8,7 +8,7 @@ const Innstillinger = ({
   sorterPåKode,
   onUpdateSetting,
   spraak,
-  handleSpraak
+  handleSpraak,
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [open, setOpen] = useState(false);
@@ -28,13 +28,13 @@ const Innstillinger = ({
       <h2>Innstillinger</h2>
 
       <Menyelement
-        onClick={e => {
+        onClick={(e) => {
           e.preventDefault();
           e.stopPropagation();
           onUpdateSetting("visKoder", !visKoder);
         }}
         icon={<span>NA</span>}
-        primary="Vis koder i tillegg til navn"
+        primary="Vis NiN-koder"
         toggle
         checked={visKoder}
       />
@@ -46,7 +46,7 @@ const Innstillinger = ({
         <span>Sorter lister etter</span>
         <div className="spraakalternativer">
           <button
-            onClick={e => {
+            onClick={(e) => {
               setExpanded(false);
               setOpen(!open);
             }}
@@ -57,7 +57,7 @@ const Innstillinger = ({
           {open === true && (
             <>
               <button
-                onClick={e => {
+                onClick={(e) => {
                   onUpdateSetting("sorterPåKode", true);
                   setOpen(!open);
                 }}
@@ -65,7 +65,7 @@ const Innstillinger = ({
                 koder
               </button>
               <button
-                onClick={e => {
+                onClick={(e) => {
                   onUpdateSetting("sorterPåKode", false);
                   setOpen(!open);
                 }}
@@ -83,7 +83,7 @@ const Innstillinger = ({
 
         <div className="spraakalternativer">
           <button
-            onClick={e => {
+            onClick={(e) => {
               setOpen(false);
               setExpanded(!expanded);
             }}
@@ -94,7 +94,7 @@ const Innstillinger = ({
           {expanded === true && (
             <>
               <button
-                onClick={e => {
+                onClick={(e) => {
                   handleSpraak("en");
                   setExpanded(!expanded);
                 }}
@@ -102,7 +102,7 @@ const Innstillinger = ({
                 Engelsk
               </button>
               <button
-                onClick={e => {
+                onClick={(e) => {
                   handleSpraak("nb");
                   setExpanded(!expanded);
                 }}
@@ -110,7 +110,7 @@ const Innstillinger = ({
                 Norsk bokmål
               </button>
               <button
-                onClick={e => {
+                onClick={(e) => {
                   handleSpraak("nn");
                   setExpanded(!expanded);
                 }}
