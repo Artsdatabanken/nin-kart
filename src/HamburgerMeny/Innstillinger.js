@@ -1,6 +1,6 @@
 import Menyelement from "./Menyelement";
 import { Language, SortByAlpha } from "@material-ui/icons";
-import React, { useState } from "react";
+import React from "react";
 
 const Innstillinger = ({
   visKoder,
@@ -9,8 +9,6 @@ const Innstillinger = ({
   spraak,
   handleSpraak,
 }) => {
-  const [expanded, setExpanded] = useState(false);
-  const [open, setOpen] = useState(false);
   let spraaknavn = "";
   if (spraak === "en") {
     spraaknavn = "Engelsk";

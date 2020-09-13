@@ -49,7 +49,6 @@ export default function NinCard(props) {
   const { heading, title, canExpand, children, hasData } = props;
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-  const history = useHistory();
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };

@@ -13,7 +13,6 @@ import {
 } from "@material-ui/icons";
 
 const Meny = ({
-  //data,
   aktivTab,
   meta,
   onNavigate,
@@ -62,10 +61,11 @@ Sidebarmeny-navigeringen.
         (aktivTab === "meny" ? "mobile_on" : "mobile_off") + " sidebar"
       }
       style={{
-        zIndex: expanded && aktivTab === "kartlag" ? 20 : 1,
-        height: expanded && aktivTab === "kartlag" && "auto",
-        maxHeight: expanded && aktivTab === "kartlag" && "100%",
-        borderBottom:
+        paddingTop: 16,
+        _zIndex: expanded && aktivTab === "kartlag" ? 20 : 1,
+        _height: expanded && aktivTab === "kartlag" && "auto",
+        _maxHeight: expanded && aktivTab === "kartlag" && "100%",
+        _borderBottom:
           expanded && aktivTab === "kartlag" && "2px solid $bright-nin",
       }}
     >

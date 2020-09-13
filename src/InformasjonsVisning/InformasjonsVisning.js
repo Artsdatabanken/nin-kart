@@ -2,7 +2,6 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import finnKurvevariabler from "./Katalog/KatalogFunksjoner/finnKurvevariabler";
 import KatalogFane from "./Katalog/Katalog";
-import Punkt from "./Punkt";
 
 // Denne boksen inneholder alle informasjonsvisningssidene
 class InformasjonsVisning extends React.Component {

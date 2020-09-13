@@ -40,7 +40,6 @@ const Naturtype = (props) => {
   const forelder = finnFellesOverordnet(typer);
   const { tittel, nivå } = forelder;
   if (!forelder) return null;
-  console.log({ typer, tittel, forelder });
   return (
     <>
       <Overskrift tittel="Naturtype" subtekst="........" />

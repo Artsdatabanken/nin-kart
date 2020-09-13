@@ -29,20 +29,10 @@ import "style/FargeMenyer.scss";
 import fixerUpHack from "./fixerUpHack";
 import Punkt from "./InformasjonsVisning/Punkt";
 import Hjelp from "InformasjonsVisning/Hjelp/Hjelp";
+import VenstreVindu from "./VenstreVindu";
 
 export let exportableSpraak;
 export let exportableFullscreen;
-
-function getPathTab(path) {
-  const searchparams = path.search.split("?");
-  for (let i in searchparams) {
-    const item = searchparams[i];
-    if (!item.includes("lng") && item !== "undefined" && item !== "") {
-      return item;
-    }
-  }
-  return "kartlag";
-}
 
 function getPathNotTab(path) {
   const searchparams = path.search.split("?");
@@ -62,6 +52,7 @@ class App extends React.Component {
       bakgrunnskart: JSON.parse(JSON.stringify(bakgrunnskarttema)),
     };
     this.state = {
+      aktivTab: "kartlag",
       aktiveLag: aktive,
       forvaltningsLag: aktive,
       opplystKode: "",
@@ -81,7 +72,7 @@ class App extends React.Component {
   }
 
   render() {
-    let aktivTab = getPathTab(this.props.location);
+    let aktivTab = this.state.aktivTab; // getPathTab(this.props.location);
     console.log({ aktivTab });
     const { history } = this.props;
     let erAktivert = false;
@@ -119,21 +110,27 @@ class App extends React.Component {
                   <>
                     {false && (
                       <MobileNavigation
-                        onNavigateToTab={this.onNavigateToTab}
+                        onNavigateToTab={this.handleSetAktivTab}
                         aktivTab={aktivTab}
                         hidden_in_fullscreen={this.state.showFullscreen}
                       />
                     )}
-                    <Meny
-                      lokalitetdata={this.state.lokalitetdata}
-                      lokalitet={path}
-                      meta={this.state.meta}
-                      onNavigate={this.handleNavigate}
+                    {aktivTab === "informasjon" && (
+                      <Meny
+                        lokalitetdata={this.state.lokalitetdata}
+                        lokalitet={path}
+                        meta={this.state.meta}
+                        onNavigate={this.handleNavigate}
+                        aktivTab={aktivTab}
+                        onUpdateMetaProp={this.handleUpdateMetaProp}
+                        opplyst={this.state.opplyst}
+                        onMouseEnter={this.handleMouseEnter}
+                        onMouseLeave={this.handleMouseLeave}
+                      />
+                    )}
+                    <VenstreVindu
                       aktivTab={aktivTab}
-                      onUpdateMetaProp={this.handleUpdateMetaProp}
-                      opplyst={this.state.opplyst}
-                      onMouseEnter={this.handleMouseEnter}
-                      onMouseLeave={this.handleMouseLeave}
+                      onNavigateToTab={this.handleSetAktivTab}
                     />
 
                     {this.state.punkt && this.state.punkt.lng && (
@@ -251,7 +248,7 @@ class App extends React.Component {
   handleClosePunkt = () => {
     this.setState({ markerCoordinates: null });
     this.setState({ punkt: null });
-    this.handleNavigate(window.location.pathname + "?kartlag");
+    this.handleSetAktivTab("kartlag");
   };
 
   handleNavigate = (url) => {
@@ -330,6 +327,8 @@ class App extends React.Component {
     }
     document.title = tittel;
   }
+
+  handleSetAktivTab = (aktivTab) => this.setState({ aktivTab });
 
   async downloadMeta(url) {
     const meta = await backend.hentKodeMeta(url);

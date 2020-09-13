@@ -16,7 +16,6 @@ class Punkt extends Component {
     const nat =
       Array.isArray(vektor) &&
       vektor.find((e) => e && e.datasettkode === "NAT");
-    console.log(JSON.stringify(vektor, Array.isArray(vektor)), nat);
     return (
       <>
         <div

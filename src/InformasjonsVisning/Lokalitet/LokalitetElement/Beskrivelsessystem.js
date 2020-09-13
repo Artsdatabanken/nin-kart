@@ -33,15 +33,12 @@ const Beskrivelsessystem = (props) => {
   const { variabler, onNavigate } = props;
   if (!variabler) return null;
   const vars = group(variabler);
-  console.log({ vars });
   return (
     <>
       {Object.keys(vars).map((key) => {
         const vari = vars[key].sort((a, b) => (a.kode > b.kode ? 1 : -1));
-        console.log({ vari });
         const overordnet = vari[0].overordnet;
         const bs = overordnet[overordnet.length - 4];
-        console.log({ forelder: bs });
         return <Blokk bs={bs} variabler={vari} onNavigate={onNavigate} />;
       })}
     </>

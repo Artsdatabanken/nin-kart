@@ -15,7 +15,6 @@ import {
 import config from "../../../Funksjoner/config";
 
 const Naturvernområde = ({ tittel, bilde, url, onNavigate, overordnet, ...props }) => {
-    console.log('verneområde', JSON.stringify(props))
     return (
         <>
             {false && <Overskrift tittel="Geografi" subtekst="........" />}
