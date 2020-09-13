@@ -6,7 +6,6 @@ import Naturtype from "./Lokalitet/LokalitetElement/Naturtype";
 import Beskrivelsessystem from "./Lokalitet/LokalitetElement/Beskrivelsessystem";
 import { IconButton, Typography } from "@material-ui/core";
 import { Close } from "@material-ui/icons";
-import { getKoordinatStreng } from "../koordinater";
 
 class Punkt extends Component {
   render() {
@@ -14,7 +13,10 @@ class Punkt extends Component {
     const { lat, lng } = punkt;
     if (!lat) return null;
     const { fylke, kommune, sted, landskap, vektor } = punkt;
-    const nat = (vektor || []).find((e) => e && e.datasettkode === "NAT");
+    const nat =
+      Array.isArray(vektor) &&
+      vektor.find((e) => e && e.datasettkode === "NAT");
+    console.log(JSON.stringify(vektor, Array.isArray(vektor)), nat);
     return (
       <>
         <div
@@ -53,7 +55,7 @@ class Punkt extends Component {
               lng={lng}
               onNavigate={onNavigate}
             />
-            {vektor &&
+            {Array.isArray(vektor) &&
               vektor.map((v) => {
                 if (v.datasettkode === "VV ")
                   return (
@@ -68,7 +70,10 @@ class Punkt extends Component {
             {nat && (
               <>
                 <Naturtype {...nat} onNavigate={onNavigate} />
-                <Beskrivelsessystem variabler={nat.variabel} />
+                <Beskrivelsessystem
+                  variabler={nat.variabel}
+                  onNavigate={onNavigate}
+                />
               </>
             )}
             <Landskap landskap={landskap} />

@@ -14,12 +14,12 @@ import {
 } from "@material-ui/core";
 import config from "../../../Funksjoner/config";
 
-const Naturvernområde = ({ tittel, bilde, url, onNavigate, ...props }) => {
+const Naturvernområde = ({ tittel, bilde, url, onNavigate, overordnet, ...props }) => {
     console.log('verneområde', JSON.stringify(props))
     return (
         <>
             {false && <Overskrift tittel="Geografi" subtekst="........" />}
-            <NinCard heading={språk(tittel)} canExpand hasData>
+            <NinCard title={språk(tittel)} heading={språk(overordnet[0].tittel)} canExpand hasData>
                 {expanded => <>
                     <Collapse in={expanded} timeout="auto" unmountOnExit>
                         <CardActionArea onClick={() => onNavigate(url)} >

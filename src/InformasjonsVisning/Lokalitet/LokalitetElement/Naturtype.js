@@ -5,18 +5,20 @@ import NinCard from "../../NinCard";
 import {
   CardMedia,
   Collapse,
-  CardContent,
   ListItem,
   ListItemText,
   ListItemAvatar,
-  Typography,
 } from "@material-ui/core";
 import config from "../../../Funksjoner/config";
 
 const sameParent = (array, i) => {
   array = array.map((e) => e[i]);
-  for (let n = 1; n < array.length; n++)
-    if (array[n].kode !== array[n - 1].kode) return false;
+  for (let n = 1; n < array.length; n++) {
+    const current = array[n];
+    const previous = array[n - 1];
+    if (!current || !previous) return false;
+    if (current.kode !== previous.kode) return false;
+  }
   return true;
 };
 
@@ -36,18 +38,18 @@ const Naturtype = (props) => {
   const { type: typer, onNavigate } = props;
   if (!typer) return null;
   const forelder = finnFellesOverordnet(typer);
-  const { tittel } = forelder;
+  const { tittel, nivå } = forelder;
   if (!forelder) return null;
-  console.log({ typer });
+  console.log({ typer, tittel, forelder });
   return (
     <>
       <Overskrift tittel="Naturtype" subtekst="........" />
-      <NinCard heading={"Naturtype: " + språk(tittel)} canExpand hasData>
+      <NinCard heading={språk(tittel) + " (" + nivå + ")"} canExpand hasData>
         {(expanded) => (
           <>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
               <CardMedia>
-                <img src={config.foto(forelder.url)} alt="foto" />
+                {<img src={config.foto(forelder.url)} alt="foto" />}
               </CardMedia>
               {typer.map((type) => (
                 <Item
@@ -65,10 +67,6 @@ const Naturtype = (props) => {
     </>
   );
 };
-
-/*
-
-*/
 
 const Item = ({ primary, secondary, målestokk, url, onClick }) => (
   <ListItem button onClick={() => onClick(url)}>

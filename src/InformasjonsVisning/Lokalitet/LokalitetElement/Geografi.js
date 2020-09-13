@@ -44,6 +44,7 @@ const getTitle = (sted, kommune) => {
 };
 
 const Geografi = ({ sted, lat, lng, fylke, kommune, onNavigate }) => {
+  console.log({ lng, lat });
   const sted2 = getSted(sted);
   const sted1 = getOverordnet(sted);
   return (
