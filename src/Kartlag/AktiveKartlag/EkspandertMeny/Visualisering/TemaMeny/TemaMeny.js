@@ -5,10 +5,10 @@ import typer from "./temaer";
 const TemaMeny = ({ aktivtFormat, onUpdateLayerProp }) => (
   <>
     <div className="sidebar_element">
-      <h3>Velg bakgrunnstema</h3>
+      <h3>Tema</h3>
     </div>
 
-    {Object.keys(typer).map(key => {
+    {Object.keys(typer).map((key) => {
       return (
         <TemaButton
           key={key}

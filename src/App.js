@@ -29,7 +29,7 @@ import "style/FargeMenyer.scss";
 import fixerUpHack from "./fixerUpHack";
 import Punkt from "./InformasjonsVisning/Punkt";
 import Hjelp from "InformasjonsVisning/Hjelp/Hjelp";
-import VenstreVindu from "./VenstreVindu";
+import NinBottomNavigation from "./NinBottomNavigation";
 
 export let exportableSpraak;
 export let exportableFullscreen;
@@ -73,7 +73,7 @@ class App extends React.Component {
 
   render() {
     let aktivTab = this.state.aktivTab; // getPathTab(this.props.location);
-    console.log({ aktivTab });
+    //console.log({ aktivTab });
     const { history } = this.props;
     let erAktivert = false;
     if (this.state.meta)
@@ -115,23 +115,12 @@ class App extends React.Component {
                         hidden_in_fullscreen={this.state.showFullscreen}
                       />
                     )}
-                    {aktivTab === "informasjon" && (
-                      <Meny
-                        lokalitetdata={this.state.lokalitetdata}
-                        lokalitet={path}
-                        meta={this.state.meta}
-                        onNavigate={this.handleNavigate}
+                    {false && (
+                      <NinBottomNavigation
                         aktivTab={aktivTab}
-                        onUpdateMetaProp={this.handleUpdateMetaProp}
-                        opplyst={this.state.opplyst}
-                        onMouseEnter={this.handleMouseEnter}
-                        onMouseLeave={this.handleMouseLeave}
+                        onNavigateToTab={this.handleSetAktivTab}
                       />
                     )}
-                    <VenstreVindu
-                      aktivTab={aktivTab}
-                      onNavigateToTab={this.handleSetAktivTab}
-                    />
 
                     {this.state.punkt && this.state.punkt.lng && (
                       <Punkt
@@ -197,7 +186,19 @@ class App extends React.Component {
                           activateLayerFromHistory={
                             this.activateLayerFromHistory
                           }
-                        />
+                        >
+                          <Meny
+                            lokalitetdata={this.state.lokalitetdata}
+                            lokalitet={path}
+                            meta={this.state.meta}
+                            onNavigate={this.handleNavigate}
+                            aktivTab={aktivTab}
+                            onUpdateMetaProp={this.handleUpdateMetaProp}
+                            opplyst={this.state.opplyst}
+                            onMouseEnter={this.handleMouseEnter}
+                            onMouseLeave={this.handleMouseLeave}
+                          />
+                        </Kartlag>
                       </div>
                     )}
                     <Kart
@@ -228,12 +229,13 @@ class App extends React.Component {
                   </>
                 )}
 
-                <HamburgerMeny
-                  spraak={this.state.spraak}
-                  handleSpraak={this.handleSpraak}
-                />
+                {false && (
+                  <HamburgerMeny
+                    spraak={this.state.spraak}
+                    handleSpraak={this.handleSpraak}
+                  />
+                )}
               </>
-              }
             </>
           );
         }}

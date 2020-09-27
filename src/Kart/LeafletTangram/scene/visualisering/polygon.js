@@ -60,7 +60,7 @@ function drawLines(args) {
   const layer = drawBase(args);
   layer.draw[args.blendmode + "_lines"] = {
     order: 800,
-    color: tinycolor(farge).darken(50).toHexString(),
+    color: tinycolor(farge).lighten(20).toHexString(),
     width: "1.0px",
   };
   layer.draw[args.blendmode + "_polygons"] = {
@@ -118,8 +118,10 @@ function drawBase(args) {
   const layer = {
     draw: {},
   };
-  layer.filter = { kode: sysconfig.hack(kode) };
-  if (visEtiketter) {
+  if (kode.indexOf("NN-NA-TI") === 0)
+    layer.filter = `function(feature) {return feature.kode.indexOf("${kode}")===0}`;
+  else layer.filter = { kode: sysconfig.hack(kode) };
+  if (true || visEtiketter) {
     layer.draw.text = {
       text_source: ["name", "title"],
       font: {

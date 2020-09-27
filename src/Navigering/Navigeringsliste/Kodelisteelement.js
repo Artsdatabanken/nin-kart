@@ -6,6 +6,7 @@ import VolumIndikator from "./VolumIndikator";
 import getSecondary from "./NavigeringslisteFunksjoner/getSecondary";
 import kodeSuffix from "./NavigeringslisteFunksjoner/kodeSuffix";
 import "style/NavMenu.scss";
+import VelgFargeboks from "../../Kartlag/AktiveKartlag/EkspandertMeny/FellesElementer/VelgFargeBoks";
 
 class Kodelisteelement extends React.Component {
   shouldComponentUpdate(np) {
@@ -27,7 +28,7 @@ class Kodelisteelement extends React.Component {
       onMouseLeave,
       areal,
       størsteAreal,
-      setExpanded
+      setExpanded,
     } = this.props;
 
     let tittel = språk(meta.tittel);
@@ -48,7 +49,8 @@ class Kodelisteelement extends React.Component {
         className="nav_menu_button nav_down_menu"
       >
         <VolumIndikator størsteAreal={størsteAreal} areal={areal} />
-        <Bildeavatar url={url} />
+        <VelgFargeboks farge={meta.farge} kode={meta.kode} />
+        {false && <Bildeavatar url={url} />}
         <div
           className={
             isItalics(meta["nivå"] || null, sn)
@@ -57,7 +59,7 @@ class Kodelisteelement extends React.Component {
           }
         >
           <span className="nav_title">
-            {tittel}
+            ▸ {tittel}
             {/*HER ENDRES SLEKTER/UNDERELEMENTER SOM IKEK HAR TYPE*/}
           </span>
           <span className="nav_2ndtitle">{getSecondary(meta)}</span>

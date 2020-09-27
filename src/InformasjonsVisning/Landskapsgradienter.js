@@ -13,7 +13,6 @@ import {
   CardMedia,
   CardContent,
   CardActions,
-  ListSubheader,
 } from "@material-ui/core";
 import Collapse from "@material-ui/core/Collapse";
 import Avatar from "@material-ui/core/Avatar";
@@ -70,7 +69,7 @@ export default function Landskapsgradienter(props) {
   if (!sample) return null;
 
   return (
-    <Card raised className={classes.root}>
+    <Card className={classes.root}>
       <CardHeader
         className={classes.cardheader}
         onClick={handleExpandClick}
@@ -148,16 +147,21 @@ export default function Landskapsgradienter(props) {
 }
 
 const Klg = ({ trinn, tittel, url, onClick, v, måleenhet }) => {
-  const verdi = parseInt(v) + " " + måleenhet;
+  var verdi =
+    parseInt(måleenhet === "%" ? Math.min(100, v) : v) + " " + måleenhet;
   return (
     <ListItem button onClick={onClick}>
       <ListItemAvatar>
-        <Avatar>{url && <img src={config.foto(url)} alt="foto" />}</Avatar>
+        <Avatar>
+          {url && (
+            <img style={{ width: 40 }} src={config.foto(url)} alt="foto" />
+          )}
+        </Avatar>
       </ListItemAvatar>
-      <ListItemText primary={tittel.nb} secondary={trinn.tittel.nb} />
       <ListItemSecondaryAction>
         <Typography variant="body1">{verdi}</Typography>
       </ListItemSecondaryAction>
+      <ListItemText primary={trinn.tittel.nb} secondary={tittel.nb} />
     </ListItem>
   );
 };

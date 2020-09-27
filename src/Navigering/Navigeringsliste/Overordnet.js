@@ -1,18 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import språk from "Funksjoner/språk";
 import isItalics from "Funksjoner/isItalics";
 import Bildeavatar from "GjenbruksElement/Bildeavatar";
+import { ListItem, ListItemText } from "@material-ui/core";
 
 const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
-  let underordnet = overordnet;
-  if (
-    underordnet.length > 1 &&
-    underordnet[underordnet.length - 1].url === "Natur_i_Norge"
-  ) {
-    underordnet = underordnet.slice(0, -1);
-  }
+  const [expand, setExpand] = useState(false);
+  const root = { tittel: { nb: "Startside" }, url: "/" };
+  var items = [...overordnet, root];
+  items.reverse();
 
-  const r = underordnet.map((item, i) => {
+  if (!expand && items.length > 1) {
+    return (
+      <ListItem button onClick={() => setExpand(true)}>
+        <ListItemText
+          primary={items.map((item) => item.tittel.nb).join(" ➝ ")}
+        ></ListItemText>
+      </ListItem>
+    );
+  }
+  const r = items.map((item) => {
     let tittel = språk(item.tittel);
     let sn = "";
     if (
@@ -23,15 +30,26 @@ const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
       sn = "sn";
     }
     return (
+      <ListItem
+        button
+        onClick={(e) => {
+          setExpanded(false);
+          onNavigate(item.url);
+        }}
+      >
+        <ListItemText primary={tittel} _secondary={item.nivå}></ListItemText>
+      </ListItem>
+    );
+    return (
       <button
         key={item.url}
-        onClick={e => {
+        onClick={(e) => {
           setExpanded(false);
           onNavigate(item.url);
         }}
         className="nav_menu_button nav_up_menu"
       >
-        <Bildeavatar url={item.url} />
+        {false && <Bildeavatar url={item.url} />}
         <div
           className={
             isItalics(item["nivå"] || null, sn)
@@ -39,12 +57,11 @@ const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
               : "nav_text"
           }
         >
-          <span className="nav_title">{tittel}</span>
+          <span className="nav_title">{"▾ " + tittel}</span>
         </div>
       </button>
     );
   });
-  r.reverse();
   return r;
 };
 

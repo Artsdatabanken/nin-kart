@@ -147,29 +147,29 @@
 }
 
 /* Headings */
-.sidebar h1,
-.sidebar h2 {
+.sidebar _h1,
+.sidebar _h2 {
   padding-left: 10px;
   padding-right: 10px;
 }
 
 .sidebar h1 {
-  font-weight: bold;
-  color: rgb(119, 119, 119);
-  margin: 8px;
-  font-size: 1.5rem;
+  _font-weight: bold;
+  _color: rgb(119, 119, 119);
+  _margin: 8px;
+  _font-size: 1.5rem;
 }
 
 .sidebar_title_container h2 {
-  font-size: 12pt;
-  color: rgba(0, 0, 0, 0.87);
+  _font-size: 12pt;
+  _color: rgba(0, 0, 0, 0.87);
 }
 
 .sidebar_element h2 {
-  font-size: 14pt;
+  _font-size: 14pt;
 }
 
-.sidebar_element h3 {
+.sidebar_element _h3 {
   font-weight: 400;
   display: inline-block;
   font-size: 13pt;

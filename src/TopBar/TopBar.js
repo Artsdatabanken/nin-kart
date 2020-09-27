@@ -46,11 +46,13 @@ const TopBar = ({ onSelectResult, searchFor, forside, history }) => {
               }}
             >
               <span>Natur i Norge</span>
-              <img
-                src="/logoer/small_icon_two.png"
-                className="logo_image"
-                alt="artsdatabanken logo"
-              />
+              {false && (
+                <img
+                  src="/logoer/small_icon_two.png"
+                  className="logo_image"
+                  alt="artsdatabanken logo"
+                />
+              )}
             </div>
           )}
 

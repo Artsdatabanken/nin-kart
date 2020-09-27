@@ -53,8 +53,8 @@ class config {
   }
 
   static logo(url, width = 24) {
+    if (!url) return null;
     if (url[0] !== "/") url = "/" + url;
-    console.log(url);
     return `${config.dataUrl}${url}/logo_${width}.png`;
   }
 
@@ -64,10 +64,10 @@ class config {
 
   static hack(kode) {
     // TODO: Erstatt denne med kode.split("-").pop()
+    if (kode.indexOf("NN-NA-TI") === 0) return kode;
     if (
       kode.indexOf("AO-TO-FL") === 0 ||
       kode.indexOf("VV") === 0 ||
-      kode.indexOf("NN-NA-BS-3EL") === 0 ||
       kode.indexOf("NN-NA-LKM-BK") === 0 ||
       kode.indexOf("NN-NA-") === 0
     )

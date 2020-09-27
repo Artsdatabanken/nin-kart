@@ -154,7 +154,7 @@ class LeafletTangram extends React.Component {
   };
 
   updateMap(props) {
-    console.log(this.layer.scene);
+    //    console.log(this.layer.scene);
     updateScene(this.layer.scene.config, props);
     this.layer.scene.updateConfig({ rebuild: true });
     this.syncWmsLayers(props.aktiveLag);

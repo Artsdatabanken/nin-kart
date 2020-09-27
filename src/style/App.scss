@@ -454,3 +454,7 @@ div {
   background-color: red;
   xfont-size: 1rem !important;
 }
+
+.MuiBottomNavigationAction-root.Mui-selected {
+  color: $super-dark-nin !important;
+}

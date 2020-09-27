@@ -5,14 +5,14 @@ import getKey from "./NavigeringslisteFunksjoner/getKey";
 
 class Navigeringsliste extends React.Component {
   state = {
-    items_to_load: 15,
+    items_to_load: 150,
   };
   /* 
   
   Denne komponenten ligger i undermenyen. 
   F.eks på landskap ligger den under fanen landskap.
   Med andre ord - den bor alltid nedover i hierarkiet, ikke oppover.
-  
+
   */
   render() {
     const {

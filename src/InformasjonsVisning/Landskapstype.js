@@ -49,18 +49,34 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Landskapstype(props) {
-  const { heading1, heading2, beskrivelse, barn, url } = props;
+  const { heading1, heading2, barn, url } = props;
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
   const history = useHistory();
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
 
   return (
-    <NinCard title={heading1} heading={heading2} canExpand hasData={true}>
+    <NinCard
+      image="Natur_i_Norge/Landskap"
+      heading={heading2}
+      canExpand
+      hasData={true}
+    >
       {(expanded) => (
         <>
+          <ListItem button onClick={() => history.push(url)}>
+            <ListItemAvatar>
+              <Avatar>
+                {url && (
+                  <img
+                    alt=""
+                    src={config.foto(url)}
+                    style={{ height: 40, width: 40 }}
+                  />
+                )}
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary={heading1} />
+          </ListItem>
+
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             {props.url && (
               <CardActionArea onClick={() => history.push(url)}>
@@ -99,7 +115,11 @@ const Klg = ({ trinn, url, onClick }) => {
   return (
     <ListItem button onClick={onClick}>
       <ListItemAvatar>
-        <Avatar>{url && <img src={config.foto(max.url)} />}</Avatar>
+        <Avatar>
+          {url && (
+            <img alt="" src={config.foto(max.url)} style={{ width: 40 }} />
+          )}
+        </Avatar>
       </ListItemAvatar>
       <ListItemText primary={heading1} />
     </ListItem>

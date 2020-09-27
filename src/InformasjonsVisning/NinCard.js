@@ -6,7 +6,6 @@ import IconButton from "@material-ui/core/IconButton";
 import { ExpandMore } from "@material-ui/icons/";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import config from "Funksjoner/config";
-import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -73,6 +72,7 @@ export default function NinCard(props) {
             </IconButton>
           )
         }
+        //        avatar={<img src={config.logo(image)} alt="ikon" />}
         title={title}
         titleTypographyProps={{ variant: "subtitle1" }}
         subheader={heading}

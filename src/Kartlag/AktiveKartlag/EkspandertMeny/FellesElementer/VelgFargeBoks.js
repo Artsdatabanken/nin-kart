@@ -7,11 +7,11 @@ class VelgFargeBoks extends React.Component {
     return (
       <div
         className="colour_legend"
-        title={!tittel ? "Farge" : "Farge for " + tittel.toLowerCase()}
+        _title={!tittel ? "Farge" : "Farge for " + tittel.toLowerCase()}
         aria-label="Velg farge"
         style={{
           backgroundColor: farge,
-          src: !farge && "/" + kode + ".png"
+          src: !farge && "/" + kode + ".png",
         }}
       />
     );

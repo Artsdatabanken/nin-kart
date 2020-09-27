@@ -29,6 +29,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "react-swipeable-views": "^0.13.9",
     "react-use": "^15.3.4",
     "recompose": "^0.30.0",
     "tangram": "^0.21.0"

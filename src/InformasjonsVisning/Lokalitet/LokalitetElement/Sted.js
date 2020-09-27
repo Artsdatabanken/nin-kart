@@ -43,59 +43,63 @@ const getTitle = (sted, kommune) => {
   return [sted, kommune].join(", ");
 };
 
-const Geografi = ({ sted, lat, lng, fylke, kommune, onNavigate }) => {
+const Sted = ({ sted, lat, lng, fylke, kommune, onNavigate }) => {
   const sted2 = getSted(sted);
   const sted1 = getOverordnet(sted);
   return (
     <>
-      <Overskrift tittel="Geografi" />
+      <Overskrift
+        tittel="Sted"
+        image="Administrativ_grense/Territorialområde/Sjøterritorium_og_territorialfarvann/Fastlands-Norge"
+      />
       <NinCard
+        image="Administrativ_grense/Territorialområde/Sjøterritorium_og_territorialfarvann/Fastlands-Norge"
+        heading="Sted"
         title={getTitle(sted, kommune)}
-        heading="Geografi"
         canExpand
         hasData={!!sted}
       >
         {(expanded) => (
           <>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-              {kommune &&
-                kommune.bilde &&
-                kommune.bilde.foto &&
-                kommune.bilde.foto.url && (
-                  <CardMedia>
-                    <img src={kommune.bilde.foto.url} alt="foto" />
-                  </CardMedia>
-                )}
-              <CardContent>
-                <Typography variant="body2">
-                  Poisjon: {getKoordinatStreng([lng, lat])}
-                </Typography>
-              </CardContent>
-              {sted1 && sted2 && (
-                <Item
-                  primary={sted1 + ", " + sted2}
-                  secondary={"Stedsnavn"}
-                  url={sted.meta.url}
-                  onClick={onNavigate}
-                />
+            {false &&
+              kommune &&
+              kommune.bilde &&
+              kommune.bilde.foto &&
+              kommune.bilde.foto.url && (
+                <CardMedia>
+                  <img src={kommune.bilde.foto.url} alt="foto" />
+                </CardMedia>
               )}
-              {kommune && (
-                <Item
-                  primary={språk(kommune.tittel)}
-                  secondary="Kommune"
-                  url={kommune.url}
-                  onClick={onNavigate}
-                />
-              )}
-              {fylke && (
-                <Item
-                  primary={språk(fylke.tittel)}
-                  secondary="Fylke"
-                  url={fylke.url}
-                  onClick={onNavigate}
-                />
-              )}
-            </Collapse>
+            <CardContent>
+              <Typography variant="body2">
+                Poisjon: {getKoordinatStreng([lng, lat])}
+              </Typography>
+            </CardContent>
+            {sted1 && sted2 && (
+              <Item
+                primary={sted1 + ", " + sted2}
+                secondary={"Stedsnavn"}
+                url={sted.meta.url}
+                onClick={onNavigate}
+              />
+            )}
+            {kommune && (
+              <Item
+                primary={språk(kommune.tittel)}
+                secondary="Kommune"
+                url={kommune.url}
+                onClick={onNavigate}
+              />
+            )}
+            {fylke && (
+              <Item
+                primary={språk(fylke.tittel)}
+                secondary="Fylke"
+                url={fylke.url}
+                onClick={onNavigate}
+              />
+            )}
+            <Collapse in={expanded} timeout="auto" unmountOnExit></Collapse>
           </>
         )}
       </NinCard>
@@ -112,4 +116,4 @@ const Item = ({ primary, secondary, url, onClick }) => (
   </ListItem>
 );
 
-export default Geografi;
+export default Sted;

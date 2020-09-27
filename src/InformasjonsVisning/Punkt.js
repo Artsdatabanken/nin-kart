@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import Geografi from "./Lokalitet/LokalitetElement/Geografi";
+import Sted from "./Lokalitet/LokalitetElement/Sted";
 import Landskap from "./Landskap";
 import Naturvernområde from "./Lokalitet/LokalitetElement/Naturvernområde";
 import Naturtype from "./Lokalitet/LokalitetElement/Naturtype";
-import Beskrivelsessystem from "./Lokalitet/LokalitetElement/Beskrivelsessystem";
-import { IconButton, Typography } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
 import { Close } from "@material-ui/icons";
+import Header from "./Header";
 
 class Punkt extends Component {
   render() {
@@ -13,9 +13,28 @@ class Punkt extends Component {
     const { lat, lng } = punkt;
     if (!lat) return null;
     const { fylke, kommune, sted, landskap, vektor } = punkt;
-    const nat =
+    var nat =
       Array.isArray(vektor) &&
       vektor.find((e) => e && e.datasettkode === "NAT");
+    nat = (nat && nat.data) || {};
+    const natvars = (nat.kartleggingsenhet || []).reduce((acc, e) => {
+      //      if (e.variabel || e.variabler) console.log({ e })
+      (e.variabler || []).forEach((v) => {
+        const prefix = v.kode[9];
+        acc[prefix] = acc[prefix] || [];
+        acc[prefix][v.kode] = v;
+        //console.warn(prefix, v.kode, v)
+      });
+      return acc;
+    }, {});
+    const natt = (nat.kartleggingsenhet || []).reduce((acc, e) => {
+      //      if (e.variabel || e.variabler) console.log({ e })
+      acc[e.kode] = e;
+      return acc;
+    }, {});
+    const naturtyper = Object.values(natt);
+    //    console.log({ natt })
+    //    console.log({ natvars })
     return (
       <>
         <div
@@ -28,25 +47,39 @@ class Punkt extends Component {
               overflowY: "auto",
               boxShadow:
                 "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
-              top: 56,
+              top: 48,
               bottom: 0,
               width: 408,
-              right: 0,
+              left: 0,
             }}
           >
-            <Typography
-              variant="h5"
-              style={{ fontWeight: "bold", color: "#777", margin: 8 }}
-            >
-              Punkt
-            </Typography>
+            <Header
+              sted={sted}
+              fylke={fylke}
+              kommune={kommune}
+              lat={lat}
+              lng={lng}
+            />
+
             <IconButton
-              style={{ position: "absolute", right: 8, top: 0 }}
+              style={{ position: "absolute", right: 8, top: 8 }}
               onClick={onClosePunkt}
             >
               <Close></Close>
             </IconButton>
-            <Geografi
+            {nat && (
+              <>
+                {naturtyper.length > 0 && (
+                  <Naturtype
+                    typer={naturtyper}
+                    variabler={natvars}
+                    onNavigate={onNavigate}
+                  />
+                )}
+              </>
+            )}
+            <Landskap landskap={landskap} />
+            <Sted
               sted={sted}
               fylke={fylke}
               kommune={kommune}
@@ -66,16 +99,6 @@ class Punkt extends Component {
                   );
                 return null;
               })}
-            {nat && (
-              <>
-                <Naturtype {...nat} onNavigate={onNavigate} />
-                <Beskrivelsessystem
-                  variabler={nat.variabel}
-                  onNavigate={onNavigate}
-                />
-              </>
-            )}
-            <Landskap landskap={landskap} />
           </div>
         </div>
       </>

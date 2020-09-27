@@ -7,7 +7,6 @@ import KatalogFane from "./Katalog/Katalog";
 class InformasjonsVisning extends React.Component {
   render() {
     const {
-      punkt,
       opplyst,
       onMouseEnter,
       onMouseLeave,
@@ -15,7 +14,6 @@ class InformasjonsVisning extends React.Component {
       onUpdateMetaProp,
       meta,
       aktivTab,
-      path,
       onNavigate,
     } = this.props;
     const kurve = finnKurvevariabler(this.props.aktiveLag);

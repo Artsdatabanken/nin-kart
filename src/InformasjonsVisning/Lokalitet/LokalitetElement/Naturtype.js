@@ -3,13 +3,16 @@ import språk from "Funksjoner/språk";
 import Overskrift from "../../Overskrift";
 import NinCard from "../../NinCard";
 import {
+  Avatar,
   CardMedia,
   Collapse,
   ListItem,
+  ListItemSecondaryAction,
   ListItemText,
   ListItemAvatar,
 } from "@material-ui/core";
 import config from "../../../Funksjoner/config";
+import Beskrivelsessystem from "./Beskrivelsessystem";
 
 const sameParent = (array, i) => {
   array = array.map((e) => e[i]);
@@ -35,30 +38,45 @@ const finnFellesOverordnet = (typer) => {
 };
 
 const Naturtype = (props) => {
-  const { type: typer, onNavigate } = props;
+  const { typer, variabler, onNavigate } = props;
   if (!typer) return null;
   const forelder = finnFellesOverordnet(typer);
-  const { tittel, nivå } = forelder;
   if (!forelder) return null;
   return (
     <>
-      <Overskrift tittel="Naturtype" subtekst="........" />
-      <NinCard heading={språk(tittel) + " (" + nivå + ")"} canExpand hasData>
+      <Overskrift
+        tittel="Natursystem"
+        image="Natur_i_Norge/Natursystem/Typeinndeling"
+        subtekst="........"
+      />
+      <NinCard
+        heading="Naturtype"
+        image="Natur_i_Norge/Natursystem/Typeinndeling"
+        canExpand
+        hasData
+      >
         {(expanded) => (
           <>
+            {typer.map((type) => (
+              <Item
+                key={type.kode}
+                primary={språk(type.tittel)}
+                secondary={type.andel !== 100 && type.andel * 10 + " %"}
+                url={type.url}
+                målestokk={type.kart && "1:" + type.kart.målestokk}
+                onClick={onNavigate}
+              />
+            ))}
+            {variabler && (
+              <Beskrivelsessystem
+                variabler={variabler}
+                onNavigate={onNavigate}
+              />
+            )}
             <Collapse in={expanded} timeout="auto" unmountOnExit>
               <CardMedia>
                 {<img src={config.foto(forelder.url)} alt="foto" />}
               </CardMedia>
-              {typer.map((type) => (
-                <Item
-                  key={type.kode}
-                  primary={språk(type.tittel)}
-                  url={type.url}
-                  målestokk={type.kart && "(1:" + type.kart.målestokk + ")"}
-                  onClick={onNavigate}
-                />
-              ))}
             </Collapse>
           </>
         )}
@@ -70,12 +88,20 @@ const Naturtype = (props) => {
 const Item = ({ primary, secondary, målestokk, url, onClick }) => (
   <ListItem button onClick={() => onClick(url)}>
     <ListItemAvatar>
-      <img src={config.logo(url)} alt="ikon" />
+      <Avatar>
+        {url && (
+          <img
+            alt=""
+            src={config.foto(url)}
+            style={{ height: 40, width: 40 }}
+          />
+        )}
+      </Avatar>
     </ListItemAvatar>
-    <ListItemText
-      primary={primary + " " + målestokk}
-      secondary={secondary}
-    ></ListItemText>
+    <ListItemSecondaryAction style={{ fontSize: 10 }}>
+      {målestokk}
+    </ListItemSecondaryAction>
+    <ListItemText primary={primary} secondary={secondary}></ListItemText>
   </ListItem>
 );
 

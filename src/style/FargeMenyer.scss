@@ -141,12 +141,13 @@ select {
 }
 
 .sidebar .colour_legend {
-  _border: none;
-  filter: drop-shadow(1px 1px 1px #666);
-  width: 24px;
-  height: 24px;
+  border: 1px solid #888;
+  filter: drop-shadow(1px 1px 1px #aaa);
+  width: 20px;
+  height: 20px;
   display: inline-block;
-  margin: 5px;
+  margin-top: 4px;
+  margin-right: 4px;
 }
 
 .title_and_subtitle_container {

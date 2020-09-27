@@ -23,10 +23,6 @@ const TemaButton = ({ type, aktivtFormat, onUpdateLayerProp }) => (
       {typer[type]}
       <br /> {type}
     </span>
-
-    <div className="theme_link">
-      <KeyboardArrowRight />
-    </div>
   </button>
 );
 
