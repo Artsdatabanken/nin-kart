@@ -33,7 +33,7 @@
         "sted_navn_stroke_farge": "#eee",
         "sted_navn_stroke_width": 3,
         "vann": true,
-        "vann_farge": "#ddd",
+        "vann_farge": "hsl(189, 10%, 90%)",
         "vann_navn": true,
         "vann_navn_farge": "#333",
         "vann_navn_stroke_farge": "#eee",

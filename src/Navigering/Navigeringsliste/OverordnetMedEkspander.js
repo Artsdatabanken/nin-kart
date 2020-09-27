@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import språk from "Funksjoner/språk";
 import isItalics from "Funksjoner/isItalics";
 import Bildeavatar from "GjenbruksElement/Bildeavatar";
+import { ListItem, ListItemText } from "@material-ui/core";
 
 const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
+  const [expand, setExpand] = useState(false);
   const root = { tittel: { nb: "Startside" }, url: "/" };
   var items = [...overordnet, root];
   items.reverse();
 
+  if (!expand && items.length > 1) {
+    return (
+      <ListItem button onClick={() => setExpand(true)}>
+        <ListItemText
+          primary={items.map((item) => item.tittel.nb).join(" ➝ ")}
+        ></ListItemText>
+      </ListItem>
+    );
+  }
   const r = items.map((item) => {
     let tittel = språk(item.tittel);
     let sn = "";
@@ -18,6 +29,17 @@ const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
     ) {
       sn = "sn";
     }
+    return (
+      <ListItem
+        button
+        onClick={(e) => {
+          setExpanded(false);
+          onNavigate(item.url);
+        }}
+      >
+        <ListItemText primary={tittel} _secondary={item.nivå}></ListItemText>
+      </ListItem>
+    );
     return (
       <button
         key={item.url}

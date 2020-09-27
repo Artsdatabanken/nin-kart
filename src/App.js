@@ -30,6 +30,7 @@ import fixerUpHack from "./fixerUpHack";
 import Punkt from "./InformasjonsVisning/Punkt";
 import Hjelp from "InformasjonsVisning/Hjelp/Hjelp";
 import NinBottomNavigation from "./NinBottomNavigation";
+import LukkbartVindu from "./LukkbartVindu";
 
 export let exportableSpraak;
 export let exportableFullscreen;
@@ -123,12 +124,14 @@ class App extends React.Component {
                     )}
 
                     {this.state.punkt && this.state.punkt.lng && (
-                      <Punkt
-                        punkt={this.state.punkt}
-                        aktivTab={aktivTab}
-                        onNavigate={this.handleNavigate}
-                        onClosePunkt={this.handleClosePunkt}
-                      />
+                      <LukkbartVindu>
+                        <Punkt
+                          punkt={this.state.punkt}
+                          aktivTab={aktivTab}
+                          onNavigate={this.handleNavigate}
+                          onClosePunkt={this.handleClosePunkt}
+                        />
+                      </LukkbartVindu>
                     )}
 
                     {aktivTab === "hjelp" && <Hjelp aktivTab={aktivTab} />}

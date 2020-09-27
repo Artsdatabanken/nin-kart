@@ -1,7 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
+import { IconButton, Typography } from "@material-ui/core";
 import config from "../Funksjoner/config";
+import { InfoOutlined } from "@material-ui/icons";
 
 const useStyles = makeStyles(() => ({
   heading: {
@@ -16,7 +17,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const Overskrift = ({ tittel, image, subtekst }) => {
+const Overskrift = ({ tittel, image, subtekst, onClickInfo }) => {
   const classes = useStyles();
   return (
     <>
@@ -28,6 +29,11 @@ const Overskrift = ({ tittel, image, subtekst }) => {
             alt=""
           />
           {tittel}
+          {onClickInfo && (
+            <IconButton style={{}} onClick={onClickInfo}>
+              <InfoOutlined style={{ color: "#777" }} />
+            </IconButton>
+          )}
         </Typography>
       </div>
       {false && (

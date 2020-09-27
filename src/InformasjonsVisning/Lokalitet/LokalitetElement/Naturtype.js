@@ -47,6 +47,7 @@ const Naturtype = (props) => {
       <Overskrift
         tittel="Natursystem"
         image="Natur_i_Norge/Natursystem/Typeinndeling"
+        onClickInfo={() => alert(5)}
         subtekst="........"
       />
       <NinCard

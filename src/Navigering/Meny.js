@@ -4,7 +4,7 @@ import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
 import språk from "Funksjoner/språk";
 import isItalics from "Funksjoner/isItalics";
 import Bildeavatar from "GjenbruksElement/Bildeavatar";
-import { Home, Room, HelpOutline } from "@material-ui/icons";
+import { HelpOutline } from "@material-ui/icons";
 
 const Meny = ({
   aktivTab,
@@ -24,10 +24,8 @@ Sidebarmeny-navigeringen.
   const [expanded, setExpanded] = useState(false);
   let tittel = "hjelp";
   let nivå = "";
-  let overordnet_url = "";
   let sn = "";
   let url = "/;";
-  let overordnet = [];
   if (meta) {
     url = meta.url;
     tittel = språk(meta.tittel);
@@ -38,14 +36,6 @@ Sidebarmeny-navigeringen.
       sn = "sn";
     }
     nivå = meta["nivå"];
-  }
-
-  if (lokalitet.includes("lokalitet") && lokalitetdata) {
-    if (lokalitetdata.kommune && lokalitetdata.kommune.url) {
-      overordnet = lokalitetdata.kommune.url.replace("_", " ").split("/");
-    } else {
-      console.warn("ingen kommune, se etter andre ting");
-    }
   }
 
   return (
@@ -98,56 +88,5 @@ Sidebarmeny-navigeringen.
     </div>
   );
 };
-
-function HomeButton({ setExpanded, onNavigate }) {
-  return (
-    <button
-      key="home"
-      onClick={(e) => {
-        e.stopPropagation();
-        setExpanded(false);
-        onNavigate("/");
-      }}
-      className="nav_menu_button nav_up_menu"
-    >
-      {false && <Home style={{ color: "#777" }} />}
-      <div className="nav_text">
-        <span className="nav_title">▾ Startsiden</span>
-      </div>
-    </button>
-  );
-}
-
-function OverordnetMapping({
-  overordnet,
-  overordnet_url,
-  setExpanded,
-  onNavigate,
-}) {
-  console.log({ overordnet });
-  return (
-    <>
-      {overordnet.map((item, i) => {
-        //if (item === "") return null;
-        overordnet_url += "/" + item.replace(" ", "_");
-        return (
-          <button
-            key={item}
-            onClick={(e) => {
-              setExpanded(false);
-              onNavigate(overordnet_url);
-            }}
-            className="nav_menu_button nav_up_menu"
-          >
-            <Room />
-            <div className="nav_text">
-              <span className="nav_title">{item}</span>
-            </div>
-          </button>
-        );
-      })}
-    </>
-  );
-}
 
 export default Meny;
