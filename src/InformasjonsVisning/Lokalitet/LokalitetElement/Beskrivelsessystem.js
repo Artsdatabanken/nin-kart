@@ -7,6 +7,7 @@ import {
   ListSubheader,
 } from "@material-ui/core";
 import config from "../../../Funksjoner/config";
+import { getParentUrl } from "../../../AppSettings/AppFunksjoner/fetchMeta";
 
 const group = (variabler) => {
   return Object.keys(variabler).reduce((acc, prefix) => {
@@ -22,7 +23,6 @@ const Beskrivelsessystem = (props) => {
   const { variabler, onNavigate } = props;
   if (!variabler) return null;
   const vars = group(variabler);
-  console.log("-----------", Object.keys(vars).length);
   return (
     <>
       {Object.keys(vars).map((key) => {
@@ -48,7 +48,7 @@ const Blokk = ({ bs, variabler, onNavigate, ...props }) => {
             key={type.kode}
             secondary={språk(type.tittel)}
             primary={språk(forelder.tittel)}
-            url={type.url}
+            url={getParentUrl(type)}
             onClick={onNavigate}
           />
         );
@@ -61,7 +61,7 @@ const Item = ({ primary, secondary, url, onClick }) => (
   <ListItem button onClick={() => onClick(url)}>
     {
       <ListItemAvatar>
-        {true && <img src={config.logo(url)} alt="ikon" />}
+        {true && <img src={config.logo(url)} alt="" />}
       </ListItemAvatar>
     }
     <ListItemText primary={primary} secondary={secondary}></ListItemText>

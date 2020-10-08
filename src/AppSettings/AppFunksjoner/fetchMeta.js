@@ -36,3 +36,11 @@ function filterUnreleased(kart) {
   });
   kart.format = kf;
 }
+
+export const getParentUrl = (type) => {
+  const overordnet = type.overordnet;
+  if (!overordnet) return type.url;
+  const parent = overordnet[0];
+  if (!parent) return type.url;
+  return parent.url || type.url;
+};

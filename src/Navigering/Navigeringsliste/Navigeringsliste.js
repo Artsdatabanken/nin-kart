@@ -34,6 +34,7 @@ class Navigeringsliste extends React.Component {
           <>
             {Navigeringsliste.sorter(metadata, context.sorterPåKode).map(
               (metabarnet, i) => {
+                if (i > this.state.items_to_load) return null;
                 const kode = metabarnet.kode;
                 const apibarn = apidata
                   ? apidata[

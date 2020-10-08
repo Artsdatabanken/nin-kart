@@ -48,7 +48,7 @@ const EkspandertInnhold = ({
             )}
           </>
         ) : (
-          <div className="kartlag_sub_bg">
+          <div className="_kartlag_sub_bg">
             <>
               <GradientEllerTypeinndelt
                 onUpdateLayerProp={onUpdateLayerProp}

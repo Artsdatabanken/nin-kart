@@ -55,6 +55,7 @@ h3 {
   font-family: "Roboto", "sans-serif";
 }
 
+/*
 h1,
 h2,
 h3 {
@@ -75,6 +76,7 @@ h5 {
   font-size: 11pt;
   color: rgba(0, 0, 0, 0.87);
 }
+*/
 
 strong,
 b {
@@ -445,14 +447,6 @@ div {
 
 .kilde_knapp svg:last-child {
   float: right;
-}
-
-.MuiTypography-h5 {
-  font-size: 1rem;
-}
-._MuiCardHeader-title {
-  background-color: red;
-  xfont-size: 1rem !important;
 }
 
 .MuiBottomNavigationAction-root.Mui-selected {

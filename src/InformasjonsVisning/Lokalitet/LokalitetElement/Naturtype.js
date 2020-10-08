@@ -13,6 +13,7 @@ import {
 } from "@material-ui/core";
 import config from "../../../Funksjoner/config";
 import Beskrivelsessystem from "./Beskrivelsessystem";
+import { getParentUrl } from "../../../AppSettings/AppFunksjoner/fetchMeta";
 
 const sameParent = (array, i) => {
   array = array.map((e) => e[i]);
@@ -38,7 +39,7 @@ const finnFellesOverordnet = (typer) => {
 };
 
 const Naturtype = (props) => {
-  const { typer, variabler, onNavigate } = props;
+  const { typer, variabler, onNavigate, onNavigateToTab } = props;
   if (!typer) return null;
   const forelder = finnFellesOverordnet(typer);
   if (!forelder) return null;
@@ -47,8 +48,7 @@ const Naturtype = (props) => {
       <Overskrift
         tittel="Natursystem"
         image="Natur_i_Norge/Natursystem/Typeinndeling"
-        onClickInfo={() => alert(5)}
-        subtekst="........"
+        onClickInfo={() => onNavigateToTab("kartlegging")}
       />
       <NinCard
         heading="Naturtype"
@@ -64,6 +64,7 @@ const Naturtype = (props) => {
                 primary={språk(type.tittel)}
                 secondary={type.andel !== 100 && type.andel * 10 + " %"}
                 url={type.url}
+                parenturl={getParentUrl(type)}
                 målestokk={type.kart && "1:" + type.kart.målestokk}
                 onClick={onNavigate}
               />
@@ -86,24 +87,26 @@ const Naturtype = (props) => {
   );
 };
 
-const Item = ({ primary, secondary, målestokk, url, onClick }) => (
-  <ListItem button onClick={() => onClick(url)}>
-    <ListItemAvatar>
-      <Avatar>
-        {url && (
-          <img
-            alt=""
-            src={config.foto(url)}
-            style={{ height: 40, width: 40 }}
-          />
-        )}
-      </Avatar>
-    </ListItemAvatar>
-    <ListItemSecondaryAction style={{ fontSize: 10 }}>
-      {målestokk}
-    </ListItemSecondaryAction>
-    <ListItemText primary={primary} secondary={secondary}></ListItemText>
-  </ListItem>
-);
+const Item = ({ primary, secondary, målestokk, parenturl, url, onClick }) => {
+  return (
+    <ListItem button onClick={() => onClick(parenturl)}>
+      <ListItemAvatar>
+        <Avatar>
+          {url && (
+            <img
+              alt=""
+              src={config.foto(url)}
+              style={{ height: 40, width: 40 }}
+            />
+          )}
+        </Avatar>
+      </ListItemAvatar>
+      <ListItemSecondaryAction style={{ fontSize: 10 }}>
+        {målestokk}
+      </ListItemSecondaryAction>
+      <ListItemText primary={primary} secondary={secondary}></ListItemText>
+    </ListItem>
+  );
+};
 
 export default Naturtype;

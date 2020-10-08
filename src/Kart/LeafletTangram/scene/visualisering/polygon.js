@@ -1,6 +1,5 @@
-import tinycolor from "tinycolor2";
 import sysconfig from "Funksjoner/config";
-import opplyst from "Funksjoner/palette/opplyst";
+import hentFarge from "Funksjoner/palette/opplyst";
 
 function drawAll(drawArgs) {
   const {
@@ -8,7 +7,7 @@ function drawAll(drawArgs) {
     kode,
     barn,
     farge,
-    opplystKode,
+    opplyst,
     tegn,
     visBarn,
     visEtiketter,
@@ -18,21 +17,23 @@ function drawAll(drawArgs) {
     barn.forEach((dac) => {
       let barnkode = dac.kode;
       if (dac.hasOwnProperty("erSynlig") && !dac.erSynlig) return;
-      const visEtiketter = barnkode === opplystKode;
+      const visEtiketter = barnkode === opplyst;
       layer[barnkode] = drawLines({
         blendmode: blendmode,
-        kode: barnkode,
+        kode: dac.kode,
+        kartkode: dac.kartkode,
         forelderkode: kode,
         farge: dac.farge,
-        opplystKode: opplystKode,
+        opplyst: opplyst,
         visEtiketter: visEtiketter,
       });
       if (tegn && tegn.punkt) {
         const points = drawPoints({
-          kode: barnkode,
+          kode: dac.kode,
+          kartkode: dac.kartkode,
           forelderkode: kode,
           farge: dac.farge,
-          opplystKode: opplystKode,
+          opplyst: opplyst,
           visEtiketter: false,
           tegn,
         });
@@ -45,7 +46,7 @@ function drawAll(drawArgs) {
       kode: kode,
       forelderkode: kode,
       farge: farge,
-      opplystKode: opplystKode,
+      opplyst: opplyst,
       visEtiketter: visEtiketter,
     });
 
@@ -55,26 +56,18 @@ function drawAll(drawArgs) {
 }
 
 function drawLines(args) {
-  let { kode, farge, opplystKode, visEtiketter } = args;
-  farge = opplyst(kode, opplystKode, farge);
+  let { kode, farge, opplyst, visEtiketter } = args;
+  farge = hentFarge(kode, opplyst, farge);
   const layer = drawBase(args);
   layer.draw[args.blendmode + "_lines"] = {
     order: 800,
-    color: tinycolor(farge).lighten(20).toHexString(),
-    width: "1.0px",
+    color: farge.toHexString(), //.clone().darken(kode === opplyst ? 30 : 0).toHexString(),
+    width: kode === opplyst ? "2px" : "1px",
   };
   layer.draw[args.blendmode + "_polygons"] = {
     order: 700,
-    color: tinycolor(farge)
-      //          .darken(30)
-      //        .saturate(60)
-      .toHexString(),
+    color: farge.toHexString(),
   };
-
-  if (kode === opplystKode) {
-    const lines = layer.draw.lines;
-    lines.width = "2px";
-  }
   if (visEtiketter) {
     layer.draw.text = {
       text_source: ["name", "title"],
@@ -90,8 +83,8 @@ function drawLines(args) {
 }
 
 function drawPoints(args) {
-  let { kode, farge, opplystKode } = args;
-  farge = opplyst(kode, opplystKode, farge);
+  let { kode, farge, opplyst } = args;
+  farge = hentFarge(kode, opplyst, farge);
   const layer = drawBase(args);
   layer.draw.translucent_points = {
     order: 850,
@@ -114,13 +107,15 @@ function drawPoints(args) {
 }
 
 function drawBase(args) {
-  let { kode, visEtiketter } = args;
+  let { kode, kartkode, visEtiketter } = args;
   const layer = {
     draw: {},
   };
-  if (kode.indexOf("NN-NA-TI") === 0)
-    layer.filter = `function(feature) {return feature.kode.indexOf("${kode}")===0}`;
+  if (kode.indexOf("NN-NA-TI") === 0 || kode.indexOf("NN-NA-BS") === 0)
+    // Eksakt treff eller fra vilkårlig undernivå
+    layer.filter = `function(feature) {return feature.kode==="${kartkode}" || feature.kode.indexOf("${kartkode}-")===0}`;
   else layer.filter = { kode: sysconfig.hack(kode) };
+  //console.log('xxx', layer.filter)
   if (true || visEtiketter) {
     layer.draw.text = {
       text_source: ["name", "title"],

@@ -34,7 +34,7 @@ function updateScene(config, props) {
   }
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplyst, config);
   lagTemp(config);
-  console.log(config);
+  //  console.log(config);
   return config;
 }
 

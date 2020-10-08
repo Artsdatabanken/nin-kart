@@ -1,7 +1,9 @@
 import React from "react";
+import LukkbartVindu from "../LukkbartVindu";
 import { withRouter } from "react-router-dom";
 import finnKurvevariabler from "./Katalog/KatalogFunksjoner/finnKurvevariabler";
-import KatalogFane from "./Katalog/Katalog";
+import språk from "Funksjoner/språk";
+import Katalog from "./Katalog/Katalog";
 
 // Denne boksen inneholder alle informasjonsvisningssidene
 class InformasjonsVisning extends React.Component {
@@ -13,20 +15,20 @@ class InformasjonsVisning extends React.Component {
       onUpdateLayerProp,
       onUpdateMetaProp,
       meta,
-      aktivTab,
       onNavigate,
+      onNavigateToTab,
+      onClose,
     } = this.props;
     const kurve = finnKurvevariabler(this.props.aktiveLag);
 
     return (
-      <div
-        className={
-          (aktivTab === "informasjon" ? "mobile_on" : "mobile_off") +
-          " main_body"
-        }
+      <LukkbartVindu
+        onBack={() => onNavigateToTab("kartlag")}
+        onClose={onClose}
+        tittel={meta && språk(meta.tittel)}
       >
         {meta && (
-          <KatalogFane
+          <Katalog
             meta={meta}
             onFitBounds={this.props.onFitBounds}
             onUpdateLayerProp={onUpdateLayerProp}
@@ -41,8 +43,7 @@ class InformasjonsVisning extends React.Component {
             kurve={kurve}
           />
         )}
-        <div className="big_page_sidebar" />
-      </div>
+      </LukkbartVindu>
     );
   }
 }

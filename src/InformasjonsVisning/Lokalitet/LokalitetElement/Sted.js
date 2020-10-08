@@ -3,6 +3,8 @@ import språk from "Funksjoner/språk";
 import { getKoordinatStreng } from "../../../koordinater";
 import Overskrift from "../../Overskrift";
 import NinCard from "../../NinCard";
+import { getParentUrl } from "../../../AppSettings/AppFunksjoner/fetchMeta";
+
 import {
   CardMedia,
   Collapse,
@@ -43,7 +45,7 @@ const getTitle = (sted, kommune) => {
   return [sted, kommune].join(", ");
 };
 
-const Sted = ({ sted, lat, lng, fylke, kommune, onNavigate }) => {
+const Sted = ({ sted, lat, lng, fylke, kommune, verneområde, onNavigate }) => {
   const sted2 = getSted(sted);
   const sted1 = getOverordnet(sted);
   return (
@@ -75,18 +77,30 @@ const Sted = ({ sted, lat, lng, fylke, kommune, onNavigate }) => {
                 Poisjon: {getKoordinatStreng([lng, lat])}
               </Typography>
             </CardContent>
-            {sted1 && sted2 && (
+            {false && sted1 && sted2 && (
               <Item
                 primary={sted1 + ", " + sted2}
                 secondary={"Stedsnavn"}
+                parenturl={getParentUrl(sted)}
                 url={sted.meta.url}
                 onClick={onNavigate}
               />
             )}
+            {verneområde && (
+              <Item
+                primary={språk(verneområde.tittel)}
+                secondary={språk(verneområde.overordnet[0].tittel)}
+                parenturl={getParentUrl(verneområde)}
+                url={verneområde.url}
+                onClick={onNavigate}
+              />
+            )}
+
             {kommune && (
               <Item
                 primary={språk(kommune.tittel)}
                 secondary="Kommune"
+                parenturl={getParentUrl(kommune)}
                 url={kommune.url}
                 onClick={onNavigate}
               />
@@ -95,6 +109,7 @@ const Sted = ({ sted, lat, lng, fylke, kommune, onNavigate }) => {
               <Item
                 primary={språk(fylke.tittel)}
                 secondary="Fylke"
+                parenturl={getParentUrl(fylke)}
                 url={fylke.url}
                 onClick={onNavigate}
               />
@@ -107,10 +122,10 @@ const Sted = ({ sted, lat, lng, fylke, kommune, onNavigate }) => {
   );
 };
 
-const Item = ({ primary, secondary, url, onClick }) => (
-  <ListItem button onClick={() => onClick(url)}>
+const Item = ({ primary, secondary, parenturl, url, onClick }) => (
+  <ListItem button onClick={() => onClick(parenturl)}>
     <ListItemAvatar>
-      <img src={config.logo(url)} alt="ikon" />
+      <img src={config.logo(url)} alt="" />
     </ListItemAvatar>
     <ListItemText primary={primary} secondary={secondary}></ListItemText>
   </ListItem>

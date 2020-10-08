@@ -1,7 +1,6 @@
 import React from "react";
 import KatalogHeaderImage from "./KatalogHeaderImage";
 import språk from "Funksjoner/språk";
-import { SettingsContext } from "SettingsContext";
 import KatalogInformasjon from "../KatalogInformasjon/KatalogInformasjon";
 
 const KatalogHeader = ({ meta }) => {
@@ -32,45 +31,25 @@ const KatalogHeader = ({ meta }) => {
     nivå === "Varietet";
 
   return (
-    <SettingsContext.Consumer>
-      {context => (
-        <div className="">
-          {tittel !== vitNavn ? (
-            <div>
-              <h1 className="sidebar_title">
-                {(meta.url.includes("Biota/") ||
-                  meta.url.includes("Fastlands-Norge")) && (
-                  <span style={{ textTransform: "capitalize" }}>
-                    {nivå + ": "}{" "}
-                  </span>
-                )}
-                {tittel}
-              </h1>
-              <h2 style={{ fontStyle: italicstitle && "italic" }}>
-                {vitNavn}
-                {autoritet && " " + autoritet}
-              </h2>
-            </div>
-          ) : (
-            <h1>
-              <span style={{ textTransform: "capitalize" }}>
-                {nivå + ": "}{" "}
-              </span>
-              <span style={{ fontStyle: italicstitle && "italic" }}>
-                {vitNavn}
-              </span>
-              {autoritet && " " + autoritet}
-            </h1>
-          )}
-
-          <KatalogHeaderImage meta={meta} />
-          <KatalogInformasjon
-            meta={meta}
-            onUpdateLayerProp={onUpdateLayerProp}
-          />
+    <div className="">
+      {tittel !== vitNavn ? (
+        <div>
+          <h2 style={{ fontStyle: italicstitle && "italic" }}>
+            {vitNavn}
+            {autoritet && " " + autoritet}
+          </h2>
         </div>
+      ) : (
+        <h1>
+          <span style={{ textTransform: "capitalize" }}>{nivå + ": "} </span>
+          <span style={{ fontStyle: italicstitle && "italic" }}>{vitNavn}</span>
+          {autoritet && " " + autoritet}
+        </h1>
       )}
-    </SettingsContext.Consumer>
+
+      <KatalogHeaderImage meta={meta} />
+      <KatalogInformasjon meta={meta} onUpdateLayerProp={onUpdateLayerProp} />
+    </div>
   );
 };
 export default KatalogHeader;

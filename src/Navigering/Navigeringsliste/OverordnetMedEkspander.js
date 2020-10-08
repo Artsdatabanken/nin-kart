@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import språk from "Funksjoner/språk";
 import isItalics from "Funksjoner/isItalics";
 import Bildeavatar from "GjenbruksElement/Bildeavatar";
-import { ListItem, ListItemText } from "@material-ui/core";
+import { ListItem, ListItemAvatar, ListItemText } from "@material-ui/core";
+import { AccountTree } from "@material-ui/icons";
 
 const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
   const [expand, setExpand] = useState(false);
@@ -10,11 +11,17 @@ const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
   var items = [...overordnet, root];
   items.reverse();
 
-  if (!expand && items.length > 1) {
+  if (!expand && items.length > 2) {
     return (
       <ListItem button onClick={() => setExpand(true)}>
+        <ListItemAvatar>
+          <AccountTree style={{ color: "#777" }} />
+        </ListItemAvatar>
         <ListItemText
-          primary={items.map((item) => item.tittel.nb).join(" ➝ ")}
+          primary={items
+            .slice(1, items.length)
+            .map((item) => item.tittel.nb)
+            .join(" ➝ ")}
         ></ListItemText>
       </ListItem>
     );
@@ -37,6 +44,11 @@ const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
           onNavigate(item.url);
         }}
       >
+        {false && (
+          <ListItemAvatar>
+            <AccountTree />
+          </ListItemAvatar>
+        )}
         <ListItemText primary={tittel} _secondary={item.nivå}></ListItemText>
       </ListItem>
     );

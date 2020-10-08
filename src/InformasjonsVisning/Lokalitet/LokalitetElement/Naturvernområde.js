@@ -14,7 +14,7 @@ const Naturvernområde = ({ tittel, bilde, url, onNavigate, overordnet, ...props
     return (
         <>
             {false && <Overskrift tittel="Geografi" subtekst="........" />}
-            <NinCard image="Naturvernområde" title={språk(tittel)} heading={språk(overordnet[0].tittel)} canExpand hasData>
+            <NinCard image="Naturvernområde" title={språk(tittel)} heading={språk(overordnet[0].tittel)} canExpand={false} hasData>
                 {expanded => <>
                     <Collapse in={expanded} timeout="auto" unmountOnExit>
                         <CardActionArea onClick={() => onNavigate(url)} >

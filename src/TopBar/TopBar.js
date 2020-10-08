@@ -45,7 +45,7 @@ const TopBar = ({ onSelectResult, searchFor, forside, history }) => {
                 history.push("/");
               }}
             >
-              <span>Natur i Norge</span>
+              <span style={{ fontWeight: 500 }}>NiN-kart</span>
               {false && (
                 <img
                   src="/logoer/small_icon_two.png"

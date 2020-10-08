@@ -1,4 +1,11 @@
 import redirectTo from "./redirectTo";
+import tinycolor from "tinycolor2";
+
+function justerFarge(o) {
+  const f = new tinycolor(o.farge);
+  while (f.getLuminance() < 0.6) f.brighten(5);
+  o.farge = f.toHexString();
+}
 
 export default function metaSjekk(meta, parent) {
   if (!meta) return;
@@ -11,6 +18,9 @@ export default function metaSjekk(meta, parent) {
   if (!meta.kart.format) meta.kart.format = {};
   if (!meta.kart.aktivtFormat)
     meta.kart.aktivtFormat = Object.keys(meta.kart.format)[0];
+  justerFarge(meta);
+  for (var barn of meta.barn) justerFarge(barn);
+
   if (meta.kart.format.raster_gradient) {
     const gradient = meta.kart.format.raster_gradient;
     gradient.aktivVisning = gradient.visning && gradient.visning[0];

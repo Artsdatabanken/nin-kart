@@ -100,7 +100,7 @@ class LeafletTangram extends React.Component {
     if (this.props.aktiveLag !== prevProps.aktiveLag) return true;
     if (this.props.lokalitetdata !== prevProps.lokalitetdata) return true;
     if (this.props.meta !== prevProps.meta) return true;
-    if (this.props.opplystKode !== prevProps.opplystKode) return true;
+    if (this.props.opplyst !== prevProps.opplyst) return true;
     if (this.props.show_current !== prevProps.show_current) return true;
   }
 
@@ -157,36 +157,7 @@ class LeafletTangram extends React.Component {
     //    console.log(this.layer.scene);
     updateScene(this.layer.scene.config, props);
     this.layer.scene.updateConfig({ rebuild: true });
-    this.syncWmsLayers(props.aktiveLag);
   }
-
-  syncWmsLayers(aktive) {
-    Object.keys(aktive).forEach((akey) => {
-      const al = aktive[akey];
-      const layerName = "wms_" + akey;
-      const prev = this.wms[layerName];
-      if (!al.kart || !al.kart.format.wms) return;
-      const wms = al.kart.format.wms;
-      if (al.kart.format.wms && al.erSynlig === true) {
-        var wmsLayer = L.tileLayer.wms(wms.url, {
-          layers: wms.layer,
-          transparent: true,
-          format: "image/png",
-        });
-        if (!prev) {
-          this.wms[layerName] = wmsLayer;
-          this.map.addLayer(wmsLayer);
-        }
-      } else {
-        if (prev) {
-          this.map.removeLayer(prev);
-          delete this.wms[layerName];
-        }
-      }
-    });
-  }
-
-  wms = {};
 
   render() {
     return (

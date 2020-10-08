@@ -3,19 +3,24 @@ import Sted from "./Lokalitet/LokalitetElement/Sted";
 import Landskap from "./Landskap";
 import Naturvernområde from "./Lokalitet/LokalitetElement/Naturvernområde";
 import Naturtype from "./Lokalitet/LokalitetElement/Naturtype";
-import { IconButton } from "@material-ui/core";
-import { Close } from "@material-ui/icons";
 import Header from "./Header";
+import LukkbartVindu from "../LukkbartVindu";
+import { getKoordinatStreng } from "../koordinater";
 
 class Punkt extends Component {
   render() {
-    const { aktivTab, onNavigate, onClosePunkt, punkt } = this.props;
+    const {
+      aktivTab,
+      onNavigate,
+      punkt,
+      onClose,
+      onNavigateToTab,
+    } = this.props;
     const { lat, lng } = punkt;
     if (!lat) return null;
-    const { fylke, kommune, sted, landskap, vektor } = punkt;
-    var nat =
-      Array.isArray(vektor) &&
-      vektor.find((e) => e && e.datasettkode === "NAT");
+    const { fylke, kommune, sted, landskap } = punkt;
+    const vektor = punkt.vektor || [];
+    var nat = vektor.find((e) => e && e.datasettkode === "NAT");
     nat = (nat && nat.data) || {};
     const natvars = (nat.kartleggingsenhet || []).reduce((acc, e) => {
       //      if (e.variabel || e.variabler) console.log({ e })
@@ -32,41 +37,30 @@ class Punkt extends Component {
       acc[e.kode] = e;
       return acc;
     }, {});
-    const naturtyper = Object.values(natt);
-    //    console.log({ natt })
-    //    console.log({ natvars })
+    const naturtyper = Object.values(natt).sort((a, b) =>
+      a.andel < b.andel ? 1 : -1
+    );
+    const verneområde = vektor.find((e) => e.datasettkode === "VV ");
     return (
       <>
         <div
           className={aktivTab === "informasjon" ? "mobile_on" : "mobile_off"}
         >
-          <div
-            style={{
-              backgroundColor: "#eee",
-              position: "absolute",
-              overflowY: "auto",
-              boxShadow:
-                "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
-              top: 48,
-              bottom: 0,
-              width: 408,
-              left: 0,
-            }}
+          <LukkbartVindu
+            onBack={() => onNavigateToTab("kartlag")}
+            onClose={onClose}
+            tittel={getKoordinatStreng([lng, lat])}
           >
-            <Header
-              sted={sted}
-              fylke={fylke}
-              kommune={kommune}
-              lat={lat}
-              lng={lng}
-            />
+            {false && (
+              <Header
+                sted={sted}
+                fylke={fylke}
+                kommune={kommune}
+                lat={lat}
+                lng={lng}
+              />
+            )}
 
-            <IconButton
-              style={{ position: "absolute", right: 8, top: 8 }}
-              onClick={onClosePunkt}
-            >
-              <Close></Close>
-            </IconButton>
             {nat && (
               <>
                 {naturtyper.length > 0 && (
@@ -74,6 +68,7 @@ class Punkt extends Component {
                     typer={naturtyper}
                     variabler={natvars}
                     onNavigate={onNavigate}
+                    onNavigateToTab={onNavigateToTab}
                   />
                 )}
               </>
@@ -81,13 +76,14 @@ class Punkt extends Component {
             <Landskap landskap={landskap} />
             <Sted
               sted={sted}
+              verneområde={verneområde}
               fylke={fylke}
               kommune={kommune}
               lat={lat}
               lng={lng}
               onNavigate={onNavigate}
             />
-            {Array.isArray(vektor) &&
+            {false &&
               vektor.map((v) => {
                 if (v.datasettkode === "VV ")
                   return (
@@ -99,7 +95,7 @@ class Punkt extends Component {
                   );
                 return null;
               })}
-          </div>
+          </LukkbartVindu>
         </div>
       </>
     );

@@ -2,10 +2,11 @@ import React from "react";
 import Overskrift from "./Overskrift";
 import Landskapstype from "./Landskapstype";
 import Landskapsgradienter from "./Landskapsgradienter";
+import { getParentUrl } from "../AppSettings/AppFunksjoner/fetchMeta";
 
 const Landskap = ({ landskap }) => {
   if (!landskap) return null;
-  const { tittel, beskrivelse, url } = landskap;
+  const { tittel, beskrivelse, url, overordnet } = landskap;
   const gradient = landskap.gradient && landskap.gradient["NN-LA-KLG"];
   const barn = gradient && gradient.barn;
   return (
@@ -25,6 +26,7 @@ const Landskap = ({ landskap }) => {
         heading1={tittel.nb}
         heading2="Landskapstype"
         beskrivelse={beskrivelse.nb}
+        parenturl={getParentUrl(landskap)}
         url={url}
         barn={barn}
       ></Landskapstype>

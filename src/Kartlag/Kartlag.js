@@ -4,7 +4,7 @@ import AktivtKartlagElement from "./AktiveKartlag/AktivtKartlagElement";
 import HistorikkListeElement from "./Historikk/HistorikkListeElement";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@material-ui/icons";
 import språk from "Funksjoner/språk";
-import { List, ListSubheader } from "@material-ui/core";
+import { List, ListSubheader, Tooltip } from "@material-ui/core";
 
 class Kartlag extends React.Component {
   state = {
@@ -158,24 +158,29 @@ class Kartlag extends React.Component {
                       </div>
                     )}
 
-                    <List style={{ margin: 16 }}>
-                      <ListSubheader>Mine kartlag</ListSubheader>
+                    <List>
+                      <Tooltip
+                        title="Disse kartlagene vises alltid i kartet"
+                        aria-label="Disse kartlagene vises alltid i kartet"
+                      >
+                        <ListSubheader style={{ margin: 16 }}>
+                          Mine kartlag
+                        </ListSubheader>
+                      </Tooltip>
                       {false && <h2>Mine kartlag</h2>}
                       <ul className="kartlag_list">
                         {keys.reverse().map((fkode) => {
                           const kartlag = koder[fkode];
                           return (
-                            fkode !== "bakgrunnskart" && (
-                              <AktivtKartlagElement
-                                kartlag={kartlag}
-                                key={fkode}
-                                {...this.props}
-                                visKoder={context.visKoder}
-                                onFitBounds={onFitBounds}
-                                onUpdateLayerProp={onUpdateLayerProp}
-                                meta={meta}
-                              />
-                            )
+                            <AktivtKartlagElement
+                              kartlag={kartlag}
+                              key={fkode}
+                              {...this.props}
+                              visKoder={context.visKoder}
+                              onFitBounds={onFitBounds}
+                              onUpdateLayerProp={onUpdateLayerProp}
+                              meta={meta}
+                            />
                           );
                         })}
                       </ul>
@@ -183,17 +188,21 @@ class Kartlag extends React.Component {
                       {false && <ListSubheader>Bakgrunnskart</ListSubheader>}
                       {false && <h2>Bakgrunnskart</h2>}
 
-                      <ul className="kartlag_list">
-                        <AktivtKartlagElement
-                          kartlag={koder["bakgrunnskart"]}
-                          key={"bakgrunnskart"}
-                          {...this.props}
-                          visKoder={context.visKoder}
-                        />
-                      </ul>
+                      {false && (
+                        <ul className="kartlag_list">
+                          <AktivtKartlagElement
+                            kartlag={koder["bakgrunnskart"]}
+                            key={"bakgrunnskart"}
+                            {...this.props}
+                            visKoder={context.visKoder}
+                          />
+                        </ul>
+                      )}
 
                       {Object.keys(navigation_history).length > 1 && (
-                        <ListSubheader>Historikk</ListSubheader>
+                        <ListSubheader style={{ margin: 16 }}>
+                          Historikk
+                        </ListSubheader>
                       )}
 
                       {Object.keys(navigation_history)

@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { IconButton, Typography } from "@material-ui/core";
+import { IconButton, Tooltip, Typography } from "@material-ui/core";
 import config from "../Funksjoner/config";
 import { InfoOutlined } from "@material-ui/icons";
 
@@ -30,9 +30,14 @@ const Overskrift = ({ tittel, image, subtekst, onClickInfo }) => {
           />
           {tittel}
           {onClickInfo && (
-            <IconButton style={{}} onClick={onClickInfo}>
-              <InfoOutlined style={{ color: "#777" }} />
-            </IconButton>
+            <Tooltip
+              title="Detaljer om kartlegging"
+              aria-label="Detaljer om kartlegging"
+            >
+              <IconButton style={{}} onClick={onClickInfo}>
+                <InfoOutlined style={{ color: "#777" }} />
+              </IconButton>
+            </Tooltip>
           )}
         </Typography>
       </div>

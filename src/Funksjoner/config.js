@@ -12,6 +12,7 @@ class config {
   static storageUrl = "https://" + config.domain;
 
   static createTileSource(relativePath, type, zoom, bbox) {
+    if (!relativePath) return {};
     const url = new URL(relativePath);
     url.host = this.dataHost;
     const source = {
@@ -65,6 +66,7 @@ class config {
   static hack(kode) {
     // TODO: Erstatt denne med kode.split("-").pop()
     if (kode.indexOf("NN-NA-TI") === 0) return kode;
+    if (kode.indexOf("VV") === 0) return kode;
     if (
       kode.indexOf("AO-TO-FL") === 0 ||
       kode.indexOf("VV") === 0 ||

@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Landskapstype(props) {
-  const { heading1, heading2, barn, url } = props;
+  const { heading1, heading2, barn, parenturl, url } = props;
   const classes = useStyles();
   const history = useHistory();
 
@@ -62,7 +62,7 @@ export default function Landskapstype(props) {
     >
       {(expanded) => (
         <>
-          <ListItem button onClick={() => history.push(url)}>
+          <ListItem button onClick={() => history.push(parenturl)}>
             <ListItemAvatar>
               <Avatar>
                 {url && (
