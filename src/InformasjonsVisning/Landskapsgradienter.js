@@ -161,7 +161,7 @@ const Klg = ({ trinn, tittel, url, onClick, v, måleenhet }) => {
       <ListItemSecondaryAction>
         <Typography variant="body1">{verdi}</Typography>
       </ListItemSecondaryAction>
-      <ListItemText primary={trinn.tittel.nb} secondary={tittel.nb} />
+      <ListItemText primary={trinn && trinn.tittel.nb} secondary={tittel.nb} />
     </ListItem>
   );
 };
