@@ -6,7 +6,6 @@ import { BrowserRouter } from "react-router-dom";
 import SettingsContainer from "SettingsContainer";
 true &&
   Sentry.init({
-    //dsn: "https://c493d02267634ba4bc387feaddbeb083@sentry.io/1302262",
     dsn: "https://e99e90636a4e407ab7235cfe9a2b1cdb@o547272.ingest.sentry.io/5669525",
     maxBreadcrumbs: 50,
     debug: true
