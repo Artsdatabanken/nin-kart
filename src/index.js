@@ -4,6 +4,7 @@ import App from "./App";
 import * as Sentry from "@sentry/browser";
 import { BrowserRouter } from "react-router-dom";
 import SettingsContainer from "SettingsContainer";
+//Tester å endre denne da, sånn at vi logger til riktig sted og ikke til en tidligere ansatt
 true &&
   Sentry.init({
     dsn: "https://e99e90636a4e407ab7235cfe9a2b1cdb@o547272.ingest.sentry.io/5669525",
@@ -26,6 +27,7 @@ class RootBoundary extends React.Component {
     });
     Sentry.captureException(error);
   }
+
 
   render() {
     if (this.state.error) {
