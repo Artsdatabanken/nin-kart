@@ -1,12 +1,8 @@
 import React, { useState } from "react";
-import Overordnet2 from "./Navigeringsliste/Overordnet";
 import Overordnet from "./Navigeringsliste/OverordnetMedEkspander";
 import { SettingsContext } from "SettingsContext";
 import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
 import språk from "Funksjoner/språk";
-import isItalics from "Funksjoner/isItalics";
-import Bildeavatar from "GjenbruksElement/Bildeavatar";
-import { HelpOutline } from "@material-ui/icons";
 import { kodeSuffix2 } from "./Navigeringsliste/NavigeringslisteFunksjoner/kodeSuffix";
 import {
   ListItemAvatar,
@@ -36,19 +32,11 @@ Sidebarmeny-navigeringen.
   */
   const [expanded, setExpanded] = useState(false);
   let tittel = "hjelp";
-  let nivå = "";
-  let sn = "";
-  let url = "/;";
   if (meta) {
-    url = meta.url;
     tittel = språk(meta.tittel);
     if (tittel === "undefined" && meta.tittel.sn) {
       tittel = meta.tittel.sn;
-      sn = "sn";
-    } else if (meta.tittel.sn && tittel === meta.tittel.sn) {
-      sn = "sn";
     }
-    nivå = meta["nivå"];
   }
   if (!meta) return null;
   const kodesuffix = kodeSuffix2(meta.kode, meta.overordnet);

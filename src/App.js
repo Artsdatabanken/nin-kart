@@ -32,7 +32,6 @@ import Punkt from "./InformasjonsVisning/Punkt";
 import Hjelp from "InformasjonsVisning/Hjelp/Hjelp";
 import NinBottomNavigation from "./NinBottomNavigation";
 import Kartlegging from "./Kartlegging";
-import { TransferWithinAStationSharp } from "@material-ui/icons";
 
 export let exportableSpraak;
 export let exportableFullscreen;
@@ -49,8 +48,8 @@ function getPathNotTab(path) {
 }
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     let aktive = {
       bakgrunnskart: JSON.parse(JSON.stringify(bakgrunnskarttema)),
     };
@@ -229,7 +228,6 @@ class App extends React.Component {
                     longitude={10.77}
                     zoom={3}
                     aktiveLag={this.state.aktiveLag}
-                    opplyst={this.state.opplyst}
                     opplyst={this.state.opplystKode}
                     meta={this.state.meta}
                     onMapMove={context.onMapMove}

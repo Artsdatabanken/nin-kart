@@ -2,7 +2,7 @@ import React from "react";
 
 class VelgFargeBoks extends React.Component {
   render() {
-    const { farge, kode, tittel } = this.props;
+    const { farge, kode } = this.props;
 
     return (
       <div

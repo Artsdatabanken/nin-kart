@@ -7,9 +7,6 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
-  ListItem,
-  ListItemText,
-  ListSubheader,
 } from "@material-ui/core";
 import Prettyprint from "./Funksjoner/prettyprint";
 
@@ -22,22 +19,6 @@ const Kartlegging = ({ punkt, onClose, onNavigateToTab }) => {
   if (!nat) return null;
   const na = nat.data;
   if (!na) return null;
-  na.kartleggingsenhet.forEach((kl) => {
-    const del = [
-      "xxxxx",
-      "xxxx2",
-      "barn",
-      "bbox",
-      "flagg",
-      "bilde",
-      "farge",
-      "beskrivelse",
-      "graf",
-      "overordnet",
-    ];
-    //      for (var key of del) delete kl[key]
-  });
-  //    delete nat.geom
   const k0 = na.kartleggingsenhet[0] || {};
   const heading = {
     områdeid: k0.område5kid || k0.område20kid || k0.naturtypeid,
@@ -103,12 +84,6 @@ const Expa = ({ id, expanded, summary, details, onChange }) => (
   </Accordion>
 );
 
-const tittel = (v) => {
-  if (!v) return "";
-  if (!v.tittel) return "";
-  return v.tittel.nb || "";
-};
-
 const Kartleggingsenhet = ({ kle }) => {
   const bruker = kle.bruker || {};
   const variabler = kle.variabler || [];
@@ -130,9 +105,6 @@ const Kartleggingsenhet = ({ kle }) => {
   variabler
     .sort((a, b) => (a.kode > b.kode ? 1 : -1))
     .forEach((v) => {
-      const forelder = (v.overordnet && v.overordnet[0]) || { tittel: "" };
-      const t1 = tittel(forelder);
-      const t2 = tittel(v);
       data[v.altkode || v.kode.replace("NN-NA-BS-", "")] = v.kartlagtdato || "";
       //        data[v.altkode || v.kode.replace('NN-NA-BS-', '')] = t1 ? t1 + ": " + t2 : t2
     });
@@ -221,7 +193,7 @@ const prettify = (v) => {
   if (typeof v === "number") return v;
   if (v.indexOf("http") === 0)
     return (
-      <a href={v} target="_blank">
+      <a href={v} target="_blank" rel="noopener noreferrer">
         {v}
       </a>
     );
