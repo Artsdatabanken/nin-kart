@@ -9,7 +9,7 @@ const EkspandertUnderMeny = ({
   bbox,
   activateLayerFromHistory,
   is_current_object,
-  erLokalitet
+  erLokalitet,
 }) => {
   return (
     <div className="kartlag_submeny">
@@ -17,8 +17,7 @@ const EkspandertUnderMeny = ({
         <>
           <button
             className="invisible_icon_button"
-            onClick={event => {
-              //context.onNavigateToTab("kart");
+            onClick={(event) => {
               onFitBounds(bbox);
             }}
           >

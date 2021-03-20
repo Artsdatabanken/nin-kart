@@ -17,15 +17,19 @@
 }
 
 .popup {
+  text-align: left;
   position: absolute;
   background: $brightest-nin;
   transform: translate3d(764px, 386px, 0px);
   padding: 10px;
   width: 300px;
-  -webkit-box-shadow: $box-shadow;
-  -moz-box-shadow: $box-shadow;
   box-shadow: $box-shadow;
-  z-index: -5;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.popup:hover {
+  box-shadow: $box-shadow-hover;
+  outline: 1px solid transparent;
 }
 
 .popup .link_to_page {

@@ -25,18 +25,6 @@ body {
   border: 0;
 }
 
-:focus {
-  outline: none;
-  border-bottom: $active-border;
-  border-bottom-left-radius: 0px !important;
-  border-bottom-right-radius: 0px !important;
-}
-
-button:focus {
-  border: $active-border;
-  box-sizing: border-box;
-}
-
 a,
 a:visited,
 a:active,
@@ -67,11 +55,12 @@ h3 {
   font-family: "Roboto", "sans-serif";
 }
 
+/*
 h1,
 h2,
 h3 {
   color: $super-dark-nin;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 h4,
@@ -85,8 +74,9 @@ h5 {
 
 h5 {
   font-size: 11pt;
-  color: black;
+  color: rgba(0, 0, 0, 0.87);
 }
+*/
 
 strong,
 b {
@@ -107,7 +97,7 @@ button.active:hover,
 button.active:focus,
 button.active {
   cursor: pointer;
-  background: $medium-nin;
+  _background-color: $medium-nin;
 }
 .meny_ikon_image {
   width: 20px;
@@ -225,7 +215,7 @@ div {
   .tab_selector .active_mobile_button,
   .tab_selector .active_mobile_button_bigscreen {
     background: $background_header;
-    color: black;
+    color: rgba(0, 0, 0, 0.87);
     font-weight: 400;
     border: 0px;
     font-size: 12pt;
@@ -246,7 +236,7 @@ div {
 .invisible_icon_button {
   background: transparent;
   border: none;
-  padding: none;
+  padding: 4px;
   margin: none;
   display: inline-block;
 }
@@ -400,7 +390,7 @@ div {
   background: #fff;
   padding: 8px;
   width: 100%;
-  color: #000;
+  color: #333;
   position: relative;
   border: 1px solid $border-color;
   border-top: 0px;
@@ -457,4 +447,8 @@ div {
 
 .kilde_knapp svg:last-child {
   float: right;
+}
+
+.MuiBottomNavigationAction-root.Mui-selected {
+  color: $super-dark-nin !important;
 }

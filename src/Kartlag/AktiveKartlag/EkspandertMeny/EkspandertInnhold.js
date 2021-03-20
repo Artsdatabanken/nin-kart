@@ -11,13 +11,13 @@ const EkspandertInnhold = ({
   kode,
   aktivtFormat,
   onUpdateLayerProp,
-  kartlag
+  kartlag,
 }) => {
   const current = aktivtFormat.aktivtFormat;
   const currenctActiveFormatNode = aktivtFormat.format[current];
   const blendmode = kartlag.blendmode || "multiply";
-  let hide_blendmodes =
-    !!kartlag.kart.format.polygon || !!kartlag.kart.format.raster_ruter;
+  let hide_blendmodes = false;
+  //    !!kartlag.kart.format.polygon || !!kartlag.kart.format.raster_ruter;
   return (
     <div>
       {kode === "bakgrunnskart" && (
@@ -48,7 +48,7 @@ const EkspandertInnhold = ({
             )}
           </>
         ) : (
-          <div className="kartlag_sub_bg">
+          <div className="_kartlag_sub_bg">
             <>
               <GradientEllerTypeinndelt
                 onUpdateLayerProp={onUpdateLayerProp}
@@ -63,7 +63,7 @@ const EkspandertInnhold = ({
                       type="radio"
                       name="blendmode"
                       checked={blendmode === "multiply" && "checked"}
-                      onChange={e => {
+                      onChange={(e) => {
                         onUpdateLayerProp(
                           kartlag.kode,
                           "blendmode",
@@ -76,7 +76,7 @@ const EkspandertInnhold = ({
                       type="radio"
                       name="blendmode"
                       checked={blendmode === "translucent" && "checked"}
-                      onChange={e => {
+                      onChange={(e) => {
                         onUpdateLayerProp(
                           kartlag.kode,
                           "blendmode",

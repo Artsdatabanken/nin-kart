@@ -3,7 +3,7 @@ const isTest = host.indexOf("test") >= 0 || host === "localhost";
 
 class config {
   static feature = {
-    comboSøk: false
+    comboSøk: false,
   };
 
   static domain = isTest ? "test.artsdatabanken.no" : "artsdatabanken.no";
@@ -12,12 +12,13 @@ class config {
   static storageUrl = "https://" + config.domain;
 
   static createTileSource(relativePath, type, zoom, bbox) {
+    if (!relativePath) return {};
     const url = new URL(relativePath);
     url.host = this.dataHost;
     const source = {
       filtering: "nearest",
       type: type,
-      url: url.toString() + "/{z}/{x}/{y}"
+      url: url.toString() + "/{z}/{x}/{y}",
     };
     if (!bbox || !zoom) {
       console.warn(`No map extents for ${relativePath}`);
@@ -53,6 +54,8 @@ class config {
   }
 
   static logo(url, width = 24) {
+    if (!url) return null;
+    if (url[0] !== "/") url = "/" + url;
     return `${config.dataUrl}${url}/logo_${width}.png`;
   }
 
@@ -62,10 +65,11 @@ class config {
 
   static hack(kode) {
     // TODO: Erstatt denne med kode.split("-").pop()
+    if (kode.indexOf("NN-NA-TI") === 0) return kode;
+    if (kode.indexOf("VV") === 0) return kode;
     if (
       kode.indexOf("AO-TO-FL") === 0 ||
       kode.indexOf("VV") === 0 ||
-      kode.indexOf("NN-NA-BS-3EL") === 0 ||
       kode.indexOf("NN-NA-LKM-BK") === 0 ||
       kode.indexOf("NN-NA-") === 0
     )

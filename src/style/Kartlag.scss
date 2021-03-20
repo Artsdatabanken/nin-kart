@@ -75,9 +75,11 @@ Even tho we don't a of now support IE X)
 }
 
 .kartlag {
-  top: 118px;
-  height: calc(100vh - 120px);
-  z-index: 2;
+  top: 48px;
+  right: 0;
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+  bottom: 0;
 }
 
 /* Clean out padding to get 100% width */
@@ -122,7 +124,6 @@ Even tho we don't a of now support IE X)
   .kartlag_content {
     background: transparent;
     display: inline-block;
-    width: 100%;
   }
 
   .kartlag.kartlag_content_closed,
@@ -182,8 +183,8 @@ Even tho we don't a of now support IE X)
 }
 
 .sidebar .kartlag_sub_bg {
-  padding: 10px;
-  margin-bottom: 10px;
+  _padding: 10px;
+  _margin-bottom: 10px;
 }
 
 .kartlag_submeny {

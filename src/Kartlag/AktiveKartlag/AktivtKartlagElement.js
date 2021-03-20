@@ -1,76 +1,85 @@
-import React, { useState } from "react";
-import { SettingsContext } from "SettingsContext";
-import EkspandertUnderMeny from "./EkspandertMeny/EkspandertUnderMeny";
-import EkspandertInnhold from "./EkspandertMeny/EkspandertInnhold";
-import EkspanderingsTopplinje from "./EkspanderingsTopplinje";
+import React from "react";
+//import EkspandertUnderMeny from "./EkspandertMeny/EkspandertUnderMeny";
+//import EkspandertInnhold from "./EkspandertMeny/EkspandertInnhold";
+//import EkspanderingsTopplinje from "./EkspanderingsTopplinje";
+import {
+  ListItem,
+  ListItemSecondaryAction,
+  ListItemText,
+} from "@material-ui/core";
+import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
+import språk from "Funksjoner/språk";
+import { useHistory } from "react-router-dom";
 
-const AktivtKartlagElement = ({
-  kartlag,
-  onUpdateLayerProp,
-  onRemoveSelectedLayer,
-  onFitBounds,
-  erAktivtLag,
-  show_current,
-  handleShowCurrent,
-  is_current_object,
-  activateLayerFromHistory,
-  navhist,
-  erLokalitet
-}) => {
-  let expand_state = is_current_object || false;
-  const [expanded, setExpanded] = useState(expand_state);
-  if (!kartlag) {
-    return null;
-  }
+const AktivtKartlagElement = ({ kartlag, onUpdateLayerProp }) => {
+  const history = useHistory();
+  if (!kartlag) return null;
   const kode = kartlag.kode;
-  const aktivtFormat = kartlag.kart;
-  let bbox = kartlag.bbox;
   return (
-    <SettingsContext.Consumer>
-      {context => (
-        <li draggable>
-          <EkspanderingsTopplinje
-            erLokalitet={erLokalitet}
-            erAktivtLag={erAktivtLag}
-            show_current={show_current}
-            handleShowCurrent={handleShowCurrent}
-            kartlag={kartlag}
-            expanded={expanded}
-            setExpanded={setExpanded}
-            context={context}
-            onUpdateLayerProp={onUpdateLayerProp}
-            is_current_object={is_current_object}
-          />
+    <ListItem
+      button
+      onClick={() => {
+        history.push(kartlag.url);
+      }}
+    >
+      <ListItemSecondaryAction
+        style={{ cursor: "pointer" }}
+        onClick={(e) => {
+          onUpdateLayerProp(kode, "erSynlig", !kartlag.erSynlig);
+          e.stopPropagation();
+        }}
+      >
+        {kartlag.erSynlig ? (
+          <VisibilityOutlined style={{ color: "#777" }} />
+        ) : (
+          <VisibilityOffOutlined style={{ color: "#777" }} />
+        )}
+      </ListItemSecondaryAction>
+      <ListItemText primary={språk(kartlag.tittel)} />
+    </ListItem>
+    /*
+            <li draggable>
+        <EkspanderingsTopplinje
+          erLokalitet={erLokalitet}
+          erAktivtLag={erAktivtLag}
+          show_current={show_current}
+          handleShowCurrent={handleShowCurrent}
+          kartlag={kartlag}
+          expanded={expanded}
+          setExpanded={setExpanded}
+          context={context}
+          onUpdateLayerProp={onUpdateLayerProp}
+          is_current_object={is_current_object}
+        />
 
-          {expanded && (
-            <>
-              <EkspandertUnderMeny
-                erLokalitet={erLokalitet}
-                kode={kode}
-                context={context}
-                bbox={bbox}
-                onFitBounds={onFitBounds}
-                kartlag={kartlag}
-                onRemoveSelectedLayer={onRemoveSelectedLayer}
-                is_current_object={is_current_object}
-                onUpdateLayerProp={onUpdateLayerProp}
-                aktivtFormat={aktivtFormat}
-                activateLayerFromHistory={activateLayerFromHistory}
-                navhist={navhist}
-              />
+        {expanded && (
+          <>
+            <EkspandertUnderMeny
+              erLokalitet={erLokalitet}
+              kode={kode}
+              context={context}
+              bbox={bbox}
+              onFitBounds={onFitBounds}
+              kartlag={kartlag}
+              onRemoveSelectedLayer={onRemoveSelectedLayer}
+              is_current_object={is_current_object}
+              onUpdateLayerProp={onUpdateLayerProp}
+              aktivtFormat={aktivtFormat}
+              activateLayerFromHistory={activateLayerFromHistory}
+              navhist={navhist}
+            />
 
-              <EkspandertInnhold
-                kode={kode}
-                aktivtFormat={aktivtFormat}
-                onUpdateLayerProp={onUpdateLayerProp}
-                kartlag={kartlag}
-                is_current_object={is_current_object}
-              />
-            </>
-          )}
-        </li>
-      )}
-    </SettingsContext.Consumer>
+            <EkspandertInnhold
+              kode={kode}
+              aktivtFormat={aktivtFormat}
+              onUpdateLayerProp={onUpdateLayerProp}
+              kartlag={kartlag}
+              is_current_object={is_current_object}
+            />
+          </>
+        )}
+      </li>
+    */
   );
 };
 

@@ -4,13 +4,13 @@ class Backend {
   static async getPromise(url) {
     return new Promise((resolve, reject) => {
       fetch(url)
-        .then(result => {
+        .then((result) => {
           if (result && result.status === 200) {
             return result.json();
           }
         })
-        .then(json => resolve(json))
-        .catch(err => {
+        .then((json) => resolve(json))
+        .catch((err) => {
           console.error(url, err);
           return {};
         });
@@ -28,6 +28,12 @@ class Backend {
   static async hentPunkt(lng, lat) {
     return this.getPromise(
       `https://punkt.${config.domain}/v1/punkt?lng=${lng}&lat=${lat}`
+    );
+  }
+
+  static async hentPunktVektor(lng, lat) {
+    return this.getPromise(
+      `https://punkt.${config.domain}/v1/punktvektor?lng=${lng}&lat=${lat}`
     );
   }
 

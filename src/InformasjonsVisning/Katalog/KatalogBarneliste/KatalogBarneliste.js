@@ -3,14 +3,14 @@ import KurveContainer from "GjenbruksElement/Kurver/KurveContainer";
 import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
 import Kurve from "GjenbruksElement/Kurver/Kurve";
 
-const Meny = ({
+const KatalogBarneliste = ({
   data,
   meta,
   onNavigate,
   onUpdateMetaProp,
   opplyst,
   onMouseEnter,
-  onMouseLeave
+  onMouseLeave,
 }) => {
   /*
   
@@ -26,8 +26,8 @@ Navigation
         <Navigeringsliste
           title=""
           parentkode={kode}
-          størsteAreal={data.størsteAreal}
-          apidata={data.barn}
+          størsteAreal={data && data.størsteAreal}
+          apidata={data && data.barn}
           metadata={meta.barn}
           onNavigate={onNavigate}
           onMouseEnter={onMouseEnter}
@@ -44,12 +44,12 @@ Navigation
             key={"a.url"}
             punkt={{
               url:
-                "Biota/Plantae/Magnoliophyta/Eudicots/Ericales/Primulaceae/Primula/Scandinavica"
+                "Biota/Plantae/Magnoliophyta/Eudicots/Ericales/Primulaceae/Primula/Scandinavica",
             }}
             gradient={{
               url:
                 "Natur_i_Norge/Landskap/Landskapsgradient/Arealbruksintensitet/",
-              barn: []
+              barn: [],
             }}
           >
             <Kurve logY={true} />
@@ -60,4 +60,4 @@ Navigation
   );
 };
 
-export default Meny;
+export default KatalogBarneliste;

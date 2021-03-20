@@ -2,29 +2,29 @@ import Menyelement from "./Menyelement";
 import { SettingsContext } from "SettingsContext";
 import {
   Divider,
+  Typography,
   IconButton,
   List,
   ListItem,
   ListItemText,
   SwipeableDrawer,
-  ListItemSecondaryAction
+  ListItemSecondaryAction,
 } from "@material-ui/core";
 import {
   OpenInNew,
-  KeyboardArrowRight,
   CloudUpload,
   CloudDownload,
   Comment,
   HelpOutline,
-  AssignmentInd
+  AssignmentInd,
 } from "@material-ui/icons";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import NavigationChevronLeftDouble from "AppSettings/NavigationChevronLeftDouble";
-import BildeAvatar from "GjenbruksElement/Bildeavatar";
 import GitHub from "./GitHub";
 import Innstillinger from "./Innstillinger";
 import Utforsk from "./Utforsk/Utforsk";
+import config from "../Funksjoner/config";
 
 class HamburgerMeny extends Component {
   render() {
@@ -32,7 +32,7 @@ class HamburgerMeny extends Component {
     const handleSpraak = this.props.handleSpraak;
     return (
       <SettingsContext.Consumer>
-        {context => (
+        {(context) => (
           <SwipeableDrawer
             className="hamburger_sidebar"
             anchor="left"
@@ -42,7 +42,16 @@ class HamburgerMeny extends Component {
           >
             <List className="hamburger_sidebar">
               <ListItem>
-                <ListItemText primary="Natur i Norge" />
+                <ListItemText
+                  primary={
+                    <Typography
+                      style={{ fontWeigtht: 500, color: "#777" }}
+                      variant="h6"
+                    >
+                      Natur i Norge
+                    </Typography>
+                  }
+                />
                 <ListItemSecondaryAction>
                   <IconButton onClick={context.onToggleHovedmeny}>
                     <NavigationChevronLeftDouble />
@@ -52,35 +61,19 @@ class HamburgerMeny extends Component {
               <Divider />
 
               <div>
-                <h2>Hva vil du utforske?</h2>
-                <Menyelement
-                  icon={
-                    <img
-                      src="/logoer/small_icon_grey_two.png"
-                      className="logo_image"
-                      alt="artsdatabanken logo"
-                    />
-                  }
-                  primary="Forside"
-                  onClick={() => {
-                    this.handleClick("/");
-                    context.onToggleHovedmeny();
-                  }}
-                />
                 <Utforsk parent={this} props={this} context={context} />
 
                 <Divider />
-
-                <Menyelement
-                  icon={<HelpOutline />}
-                  primary="Hjelp"
-                  onClick={() => {
-                    this.handleClick("/Natur_i_Norge/hjelp");
-                    context.onToggleHovedmeny();
-                  }}
+                <Innstillinger
+                  visKoder={context.visKoder}
+                  sorterPåKode={context.sorterPåKode}
+                  onUpdateSetting={context.onUpdateValue}
+                  onNavigate={this.handleNavigate}
+                  spraak={spraak}
+                  handleSpraak={handleSpraak}
                 />
+
                 <Divider />
-                <h2>Datagrunnlag</h2>
                 <Menyelement
                   icon={<CloudDownload />}
                   primary="Last ned data"
@@ -118,27 +111,15 @@ class HamburgerMeny extends Component {
                   icon={<GitHub />}
                   primary="Kildekode"
                 />
-                {/*
+                <Divider />
                 <Menyelement
+                  icon={<HelpOutline />}
+                  primary="Hjelp"
                   onClick={() => {
-                    this.handleClick("/forvaltningsportalen/");
+                    this.handleClick("?hjelp");
                     context.onToggleHovedmeny();
                   }}
-                  icon={<AssignmentInd />}
-                  primary="Forvaltningsportalen"
-                />*/}
-                <Divider />
-                <Innstillinger
-                  visKoder={context.visKoder}
-                  sorterPåKode={context.sorterPåKode}
-                  onUpdateSetting={context.onUpdateValue}
-                  onNavigate={this.handleNavigate}
-                  spraak={spraak}
-                  handleSpraak={handleSpraak}
                 />
-                <Divider />
-                <h2>Kontakt</h2>
-
                 <button
                   className="tilbakemeldinger"
                   onClick={() => {
@@ -151,16 +132,21 @@ class HamburgerMeny extends Component {
                   <Comment /> <span>Tilbakemeldinger</span> <OpenInNew />
                 </button>
 
-                <button
-                  className="artsdatabanken"
+                <Menyelement
                   onClick={() => {
                     this.handleWindowOpen("https://artsdatabanken.no");
                     context.onToggleHovedmeny();
                   }}
-                >
-                  <BildeAvatar url="Datakilde/Artsdatabanken" />{" "}
-                  <span>Artsdatabanken</span> <KeyboardArrowRight />
-                </button>
+                  icon={
+                    <img
+                      alt="Artsdatabanken logo"
+                      src={config.logo(
+                        "Datakilde/Artsdatabanken".split("?")[0]
+                      )}
+                    />
+                  }
+                  primary="Artsdatabanken"
+                />
               </div>
             </List>
           </SwipeableDrawer>
@@ -169,10 +155,10 @@ class HamburgerMeny extends Component {
     );
   }
 
-  handleClick = what => this.props.history.push(what);
-  handleWindowOpen = what => window.open(what);
+  handleClick = (what) => this.props.history.push(what);
+  handleWindowOpen = (what) => window.open(what);
   handleClickMap = () => this.handleWindowOpen("/");
-  handleNavigate = url => this.props.history.push(url);
+  handleNavigate = (url) => this.props.history.push(url);
 }
 
 export default withRouter(HamburgerMeny);

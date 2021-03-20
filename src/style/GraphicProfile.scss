@@ -1,10 +1,10 @@
 /* NiN Main Pallette*/
-$super-dark-nin: #347c8a;
-$darkest-nin: #4d8b96;
-$dark-nin: #4b909e;
-$medium-nin: #81b2bb;
-$bright-nin: #b7d3d8;
-$brightest-nin: #edf4f5;
+$super-dark-nin: hsla(189, 30, 45, 1); //#347c8a;
+$darkest-nin: hsla(189, 30, 45, 1); //#4d8b96;
+$dark-nin: hsla(189, 30, 46, 1); //#4b909e;
+$medium-nin: hsla(189, 30, 62, 1); // #81b2bb;
+$bright-nin: hsla(189, 30, 78, 1); //#b7d3d8;
+$brightest-nin: hsla(189, 30, 95, 1); // #edf4f5;
 
 /* NiN Support Pallette*/
 $background_header: #fbfbfb;
@@ -46,17 +46,19 @@ $fontfamily: "Roboto", "sans-serif";
 
 /* Relative heights of menu items */
 $bottom-tab-height: 48px;
-$topbar-height-nin: 56px;
+$topbar-height-nin: 48px;
 $menu-mobile-size: $bottom-tab-height + $topbar-height-nin;
-$sidebar-max-size: 350px;
+$sidebar-max-size: 408px;
 $mobile_slide_up_area: 60px; // closed version
 
 /* Box Shadow */
-$box-shadow: -1px 8px 62px -19px rgba(0, 0, 0, 0.75);
+$box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.45);
+$box-shadow-hover: 0 1px 6px 0 hsla(189, 30, 0, 0.45),
+  0 1px 3px 1px hsla(189, 30, 232, 0.302);
 
 /* Searchbar Width */
 $searchbar-width: 300px;
 
 /* Top menu margins and paddings */
 $top-pad: 5px;
-$top-icon-height: 46px;
+$top-icon-height: 40px;

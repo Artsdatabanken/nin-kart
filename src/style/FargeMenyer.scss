@@ -119,7 +119,7 @@ select {
 }
 
 .child_list_object_expand_header {
-  padding: 10px;
+  padding-top: 10px;
   position: relative;
 }
 
@@ -137,20 +137,28 @@ select {
   background: transparent;
   position: absolute;
   right: 0px;
+  top: 10px;
 }
 
 .sidebar .colour_legend {
-  filter: drop-shadow(1px 1px 1px #666);
-  width: 24px;
-  height: 24px;
+  border: 1px solid #888;
+  filter: drop-shadow(1px 1px 1px #aaa);
+  width: 20px;
+  height: 20px;
   display: inline-block;
-  margin: 5px;
+  margin-top: 4px;
+  margin-right: 4px;
 }
 
 .title_and_subtitle_container {
   display: inline-block;
+  _position: absolute;
+  _top: 20px;
+  _left: 32px;
   vertical-align: top;
   max-width: calc(100% - 110px);
+  _display: flex;
+  _align-items: center;
 }
 
 .title_and_subtitle_container span {

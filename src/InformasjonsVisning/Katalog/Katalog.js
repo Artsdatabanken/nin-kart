@@ -17,13 +17,12 @@ const KatalogFane = ({
   onMouseEnter,
   onMouseLeave,
   opplyst,
-  data,
   onUpdateMetaProp,
   has_error,
   handleCloseSnackbar,
   erAktivert,
   onToggleLayer,
-  kurve
+  kurve,
 }) => {
   if (!meta) return null;
   return (
@@ -52,7 +51,6 @@ const KatalogFane = ({
         <KatalogBarneliste
           meta={meta}
           onNavigate={onNavigate}
-          data={data}
           onUpdateMetaProp={onUpdateMetaProp}
           opplyst={opplyst}
           onMouseEnter={onMouseEnter}
@@ -70,7 +68,6 @@ const KatalogFane = ({
         )}
 
         <KatalogKilder
-          data={data}
           meta={meta}
           onNavigate={onNavigate}
           onMouseEnter={onMouseEnter}

@@ -9,13 +9,13 @@ function createScene(props) {
     sources: {},
     cameras: {
       cam: {
-        type: "flat"
-      }
+        type: "flat",
+      },
     },
     lights: createLights(),
     layers: {},
     styles: createStyles(),
-    scene: { background: {} }
+    scene: { background: {} },
   };
   updateScene(config, props);
   return config;
@@ -34,7 +34,7 @@ function updateScene(config, props) {
   }
   lagAktiveLag(props.aktiveLag, viserKatalog, props.opplyst, config);
   lagTemp(config);
-  //console.log(JSON.stringify(config));
+  //  console.log(config);
   return config;
 }
 

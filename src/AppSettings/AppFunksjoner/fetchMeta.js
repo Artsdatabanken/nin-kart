@@ -5,15 +5,12 @@ export default function fetchMeta(location, place) {
   let url = location.match(/\/(.*)/);
 
   place.setState({ meta: null });
-  if (
-    location === "/Natur_i_Norge/hjelp" ||
-    location === "/Natur_i_Norge/hjelp"
-  ) {
+  if (location === "/hjelp" || location === "/hjelp") {
     return;
   }
-  if (!url || url.length !== 2 || !url[1]) return;
+  if (!url || url.length !== 2) return;
   const path = "/" + url[1];
-  place.downloadMeta(path).then(data => {
+  place.downloadMeta(path).then((data) => {
     if (!data) {
       place.setState({ searchFor: path });
       return;
@@ -33,9 +30,17 @@ export default function fetchMeta(location, place) {
 function filterUnreleased(kart) {
   const visUpublisert = parseInt(localStorage.visUpublisert) || 0;
   const kf = {};
-  Object.keys(kart.format).forEach(fkey => {
+  Object.keys(kart.format).forEach((fkey) => {
     const format = kart.format[fkey];
     if ((format.publish || 0) + visUpublisert >= 0) kf[fkey] = format;
   });
   kart.format = kf;
 }
+
+export const getParentUrl = (type) => {
+  const overordnet = type.overordnet;
+  if (!overordnet) return type.url;
+  const parent = overordnet[0];
+  if (!parent) return type.url;
+  return parent.url || type.url;
+};

@@ -4,10 +4,11 @@ import AktivtKartlagElement from "./AktiveKartlag/AktivtKartlagElement";
 import HistorikkListeElement from "./Historikk/HistorikkListeElement";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@material-ui/icons";
 import språk from "Funksjoner/språk";
+import { List, ListSubheader, Tooltip } from "@material-ui/core";
 
 class Kartlag extends React.Component {
   state = {
-    showKartlag: false
+    showKartlag: false,
   };
   render() {
     let koder = this.props.aktiveLag;
@@ -24,9 +25,9 @@ class Kartlag extends React.Component {
       show_current,
       handleShowCurrent,
       onRemoveSelectedLayer,
-      lokalitetdata
+      lokalitetdata,
+      children,
     } = this.props;
-
     let duplicate = false;
 
     if (currentKartlag && currentKartlag.kode) {
@@ -55,7 +56,7 @@ class Kartlag extends React.Component {
       <>
         {hidden && (
           <SettingsContext.Consumer>
-            {context => (
+            {(context) => (
               <>
                 <button
                   className={
@@ -94,14 +95,17 @@ class Kartlag extends React.Component {
                         : "kartlag_content_closed kartlag_content"
                     }
                   >
-                    <div className="sidebar_title_container sidebar_element">
-                      <h1 className="sidebar_title">Kartlag</h1>
-                    </div>
+                    {children}
+                    {false && (
+                      <div className="sidebar_title_container sidebar_element">
+                        <h2 className="sidebar_title">Kartlag</h2>
+                      </div>
+                    )}
 
-                    {currentKartlag && !duplicate && (
+                    {false && currentKartlag && !duplicate && (
                       <>
                         <div className="sidebar_element">
-                          <h2>Nåværende kartlag</h2>
+                          {false && <h2>Nåværende kartlag</h2>}
                           <ul className="kartlag_list">
                             <AktivtKartlagElement
                               key={currentKartlag}
@@ -131,7 +135,7 @@ class Kartlag extends React.Component {
                       <div className="sidebar_element">
                         <h2>Nåværende Lokalitet</h2>
                         <ul className="kartlag_list">
-                          {Object.keys(lokalitetdata).map(mapkode => {
+                          {Object.keys(lokalitetdata).map((mapkode) => {
                             // console.log("mapkode",mapkode);
                             const kartlag = lokalitetdata[mapkode];
                             //console.log(kartlag)
@@ -154,41 +158,52 @@ class Kartlag extends React.Component {
                       </div>
                     )}
 
-                    <div className="sidebar_element">
-                      <h2>Mine kartlag</h2>
+                    <List>
+                      <Tooltip
+                        title="Disse kartlagene vises alltid i kartet"
+                        aria-label="Disse kartlagene vises alltid i kartet"
+                      >
+                        <ListSubheader style={{ margin: 16 }}>
+                          Mine kartlag
+                        </ListSubheader>
+                      </Tooltip>
+                      {false && <h2>Mine kartlag</h2>}
                       <ul className="kartlag_list">
-                        {keys.reverse().map(fkode => {
+                        {keys.reverse().map((fkode) => {
                           const kartlag = koder[fkode];
                           return (
-                            fkode !== "bakgrunnskart" && (
-                              <AktivtKartlagElement
-                                kartlag={kartlag}
-                                key={fkode}
-                                {...this.props}
-                                visKoder={context.visKoder}
-                                onFitBounds={onFitBounds}
-                                onUpdateLayerProp={onUpdateLayerProp}
-                                meta={meta}
-                              />
-                            )
+                            <AktivtKartlagElement
+                              kartlag={kartlag}
+                              key={fkode}
+                              {...this.props}
+                              visKoder={context.visKoder}
+                              onFitBounds={onFitBounds}
+                              onUpdateLayerProp={onUpdateLayerProp}
+                              meta={meta}
+                            />
                           );
                         })}
                       </ul>
-                    </div>
-                    <div className="sidebar_element">
-                      <h2>Bakgrunnskart</h2>
 
-                      <ul className="kartlag_list">
-                        <AktivtKartlagElement
-                          kartlag={koder["bakgrunnskart"]}
-                          key={"bakgrunnskart"}
-                          {...this.props}
-                          visKoder={context.visKoder}
-                        />
-                      </ul>
-                    </div>
-                    <div className="sidebar_element">
-                      <h2>Historikk</h2>
+                      {false && <ListSubheader>Bakgrunnskart</ListSubheader>}
+                      {false && <h2>Bakgrunnskart</h2>}
+
+                      {false && (
+                        <ul className="kartlag_list">
+                          <AktivtKartlagElement
+                            kartlag={koder["bakgrunnskart"]}
+                            key={"bakgrunnskart"}
+                            {...this.props}
+                            visKoder={context.visKoder}
+                          />
+                        </ul>
+                      )}
+
+                      {Object.keys(navigation_history).length > 1 && (
+                        <ListSubheader style={{ margin: 16 }}>
+                          Historikk
+                        </ListSubheader>
+                      )}
 
                       {Object.keys(navigation_history)
                         .reverse()
@@ -215,7 +230,7 @@ class Kartlag extends React.Component {
                           }
                           return null;
                         })}
-                    </div>
+                    </List>
                   </div>
                 </div>
               </>

@@ -1,213 +1,133 @@
 import React, { useState } from "react";
-import Overordnet from "./Navigeringsliste/Overordnet";
+import Overordnet from "./Navigeringsliste/OverordnetMedEkspander";
+import { SettingsContext } from "SettingsContext";
 import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
 import språk from "Funksjoner/språk";
-import isItalics from "Funksjoner/isItalics";
-import Bildeavatar from "GjenbruksElement/Bildeavatar";
+import { kodeSuffix2 } from "./Navigeringsliste/NavigeringslisteFunksjoner/kodeSuffix";
 import {
-  Home,
-  Room,
-  HelpOutline,
-  KeyboardArrowDown,
-  KeyboardArrowUp
-} from "@material-ui/icons";
+  ListItemAvatar,
+  IconButton,
+  ListItem,
+  ListItemSecondaryAction,
+  ListItemText,
+  Tooltip,
+} from "@material-ui/core";
+import { Add, Delete, Settings } from "@material-ui/icons";
 
 const Meny = ({
-  //data,
+  aktiveLag,
   aktivTab,
+  onSetAktivTab,
   meta,
   onNavigate,
   onUpdateMetaProp,
   opplyst,
   onMouseEnter,
   onMouseLeave,
-  lokalitet,
-  lokalitetdata
+  onToggleLayer,
 }) => {
   /*  
 Intern navigasjon innad på en side.
 Sidebarmeny-navigeringen.
   */
-
   const [expanded, setExpanded] = useState(false);
   let tittel = "hjelp";
-  let nivå = "";
-  let overordnet_url = "";
-  let sn = "";
-  let url = "/;";
-  let overordnet = [];
   if (meta) {
-    url = meta.url;
     tittel = språk(meta.tittel);
     if (tittel === "undefined" && meta.tittel.sn) {
       tittel = meta.tittel.sn;
-      sn = "sn";
-    } else if (meta.tittel.sn && tittel === meta.tittel.sn) {
-      sn = "sn";
-    }
-    nivå = meta["nivå"];
-  }
-
-  if (lokalitet.includes("lokalitet") && lokalitetdata) {
-    if (lokalitetdata.kommune) {
-      overordnet = lokalitetdata.kommune.url.replace("_", " ").split("/");
-    } else {
-      console.warn("ingen kommune, se etter andre ting");
     }
   }
-
+  if (!meta) return null;
+  const kodesuffix = kodeSuffix2(meta.kode, meta.overordnet);
   return (
-    <div
-      className={
-        (aktivTab === "meny" ? "mobile_on" : "mobile_off") + " sidebar"
-      }
-      style={{
-        zIndex: expanded && aktivTab === "kartlag" ? 20 : 1,
-        height: expanded && aktivTab === "kartlag" && "auto",
-        maxHeight: expanded && aktivTab === "kartlag" && "100%",
-        borderBottom:
-          expanded && aktivTab === "kartlag" && "2px solid $bright-nin"
-      }}
-    >
-      <TopPart
-        setExpanded={setExpanded}
-        expanded={expanded}
-        aktivTab={aktivTab}
-      />
-      <div
-        style={{
-          display: aktivTab === "kartlag" && !expanded ? "none" : "block"
-        }}
-      >
-        <HomeButton onNavigate={onNavigate} setExpanded={setExpanded} />
-        {lokalitet.includes("lokalitet") && lokalitetdata ? (
-          <>
-            <OverordnetMapping
-              onNavigate={onNavigate}
-              setExpanded={setExpanded}
-              overordnet={overordnet}
-              overordnet_url={overordnet_url}
-            />
-            <div className="nav_current">
-              {" "}
-              {meta && <Bildeavatar url={url} />}
-              {tittel === "hjelp" && (
-                <>
-                  <Room /> Lokalitet
-                </>
-              )}
-            </div>
-          </>
-        ) : (
-          <>
-            {meta && (
+    <SettingsContext.Consumer>
+      {(context) => (
+        <div
+          //      className={
+          //          (aktivTab === "meny" ? "mobile_on" : "mobile_off") + " sidebar"
+          //      }
+          style={{
+            paddingTop: 16,
+            _zIndex: expanded && aktivTab === "kartlag" ? 20 : 1,
+            _height: expanded && aktivTab === "kartlag" && "auto",
+            _maxHeight: expanded && aktivTab === "kartlag" && "100%",
+            _borderBottom:
+              expanded && aktivTab === "kartlag" && "2px solid $bright-nin",
+          }}
+        >
+          <div style={{}}>
+            <>
               <Overordnet
                 overordnet={meta.overordnet}
                 onNavigate={onNavigate}
                 setExpanded={setExpanded}
               />
-            )}
 
-            <div
-              className={
-                isItalics(nivå, sn) ? "italics nav_current" : "nav_current"
-              }
-            >
-              {" "}
-              {meta && <Bildeavatar url={url} />}
-              {tittel === "hjelp" && <HelpOutline />}
-              {tittel}
-            </div>
+              <ListItem
+                button
+                onClick={() => {
+                  onSetAktivTab("kartlaginnstillinger");
+                }}
+              >
+                {false && (
+                  <ListItemAvatar>
+                    <Settings style={{ color: "rgba(0,0,0,0.54)" }} />
+                  </ListItemAvatar>
+                )}
+                <ListItemText
+                  primary={"▾ " + tittel}
+                  secondary={
+                    meta.nivå &&
+                    meta.nivå + (context.visKoder ? ` (${kodesuffix})` : "")
+                  }
+                ></ListItemText>
+                {
+                  <ListItemSecondaryAction
+                    onClick={(e) => {
+                      onToggleLayer();
+                      e.stopPropagation();
+                    }}
+                  >
+                    {aktiveLag[meta.kode] ? (
+                      <Tooltip
+                        title="Fjern fra mine kartlag"
+                        aria-label="fjern fra mine kartlag"
+                      >
+                        <IconButton>
+                          <Delete />
+                        </IconButton>
+                      </Tooltip>
+                    ) : (
+                      <Tooltip
+                        title="Legg til mine kartlag"
+                        aria-label="legg til mine kartlag"
+                      >
+                        <IconButton>
+                          <Add />
+                        </IconButton>
+                      </Tooltip>
+                    )}
+                  </ListItemSecondaryAction>
+                }
+              </ListItem>
 
-            <Navigeringsliste
-              parentkode={meta ? meta.kode : "kode"}
-              metadata={meta && meta.barn}
-              setExpanded={setExpanded}
-              onNavigate={onNavigate}
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
-              opplyst={opplyst}
-              onUpdateMetaProp={onUpdateMetaProp}
-            />
-          </>
-        )}
-      </div>
-    </div>
+              <Navigeringsliste
+                parentkode={meta ? meta.kode : "kode"}
+                metadata={meta && meta.barn}
+                setExpanded={setExpanded}
+                onNavigate={onNavigate}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+                opplyst={opplyst}
+                onUpdateMetaProp={onUpdateMetaProp}
+              />
+            </>
+          </div>
+        </div>
+      )}
+    </SettingsContext.Consumer>
   );
 };
-
-function HomeButton({ setExpanded, onNavigate }) {
-  return (
-    <button
-      key="home"
-      onClick={e => {
-        e.stopPropagation();
-        setExpanded(false);
-        onNavigate("/");
-      }}
-      className="nav_menu_button nav_up_menu"
-    >
-      <Home />
-      <div className="nav_text">
-        <span className="nav_title">Startsiden</span>
-      </div>
-    </button>
-  );
-}
-
-function TopPart({ setExpanded, expanded, aktivTab }) {
-  return (
-    <div className="sidebar_title_container sidebar_element">
-      <h1 className="sidebar_title">
-        Navigering
-        {aktivTab === "kartlag" && (
-          <button
-            className="child_list_object_indicator navdropdown"
-            onClick={() => {
-              setExpanded(!expanded);
-            }}
-          >
-            {expanded === true && aktivTab === "kartlag" ? (
-              <KeyboardArrowDown />
-            ) : (
-              <KeyboardArrowUp />
-            )}
-          </button>
-        )}
-      </h1>
-    </div>
-  );
-}
-
-function OverordnetMapping({
-  overordnet,
-  overordnet_url,
-  setExpanded,
-  onNavigate
-}) {
-  return (
-    <>
-      {overordnet.map((item, i) => {
-        if (item === "") return null;
-        overordnet_url += "/" + item.replace(" ", "_");
-        return (
-          <button
-            key={item}
-            onClick={e => {
-              setExpanded(false);
-              onNavigate(overordnet_url);
-            }}
-            className="nav_menu_button nav_up_menu"
-          >
-            <Room />
-            <div className="nav_text">
-              <span className="nav_title">{item}</span>
-            </div>
-          </button>
-        );
-      })}
-    </>
-  );
-}
 
 export default Meny;
