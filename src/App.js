@@ -420,6 +420,10 @@ class App extends React.Component {
     backend.hentPunktVektor(lng, lat).then((data) => {
       delete data.KOM;
       delete data.FYL;
+      if (data.error) {
+        console.error("hentPunktVektor", data.error);
+        data = null;
+      }
       this.setState((prevState) =>
         Object.assign(prevState.punkt, { vektor: data })
       );
