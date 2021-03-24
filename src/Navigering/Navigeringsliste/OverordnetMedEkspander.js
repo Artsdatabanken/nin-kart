@@ -24,10 +24,11 @@ const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
       </ListItem>
     );
   }
-  const r = items.map((item) => {
+  const r = items.map((item, i) => {
     let tittel = språk(item.tittel);
     return (
       <ListItem
+        key={i}
         button
         onClick={(e) => {
           setExpanded(false);
