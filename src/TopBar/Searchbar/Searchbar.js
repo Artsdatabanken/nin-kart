@@ -17,6 +17,7 @@ const Searchbar = ({ query, onQueryChange, hits, setHits }) => {
     inputField.current.focus();
     onQueryChange("");
   });
+  if (query === null) query = "";
 
   return (
     <div className={abc("searchbar_container", isSearching)}>
@@ -24,7 +25,7 @@ const Searchbar = ({ query, onQueryChange, hits, setHits }) => {
         ref={inputField}
         value={query}
         placeholder={"Søk i Natur i Norge"}
-        onChange={e => {
+        onChange={(e) => {
           onQueryChange(e.target.value);
         }}
       />
