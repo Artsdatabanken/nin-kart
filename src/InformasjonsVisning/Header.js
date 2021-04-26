@@ -21,7 +21,7 @@ const Sted = ({ sted, lat, lng, fylke, kommune }) => {
   return (
     <>
       <Item
-        primary={getKoordinatStreng([lng, lat])}
+        primary={getKoordinatStreng([lat, lng])}
         secondary={
           getTitle(sted, kommune) + (fylke && ", " + språk(fylke.tittel))
         }

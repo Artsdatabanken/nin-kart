@@ -101,10 +101,10 @@ const Item = ({ primary, secondary, målestokk, parenturl, url, onClick }) => {
           )}
         </Avatar>
       </ListItemAvatar>
+      <ListItemText primary={primary} secondary={secondary}></ListItemText>
       <ListItemSecondaryAction style={{ fontSize: 10 }}>
         {målestokk}
       </ListItemSecondaryAction>
-      <ListItemText primary={primary} secondary={secondary}></ListItemText>
     </ListItem>
   );
 };

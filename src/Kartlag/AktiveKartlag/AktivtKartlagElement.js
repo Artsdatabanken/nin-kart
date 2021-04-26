@@ -22,6 +22,7 @@ const AktivtKartlagElement = ({ kartlag, onUpdateLayerProp }) => {
         history.push(kartlag.url);
       }}
     >
+      <ListItemText primary={språk(kartlag.tittel)} />
       <ListItemSecondaryAction
         style={{ cursor: "pointer" }}
         onClick={(e) => {
@@ -35,7 +36,6 @@ const AktivtKartlagElement = ({ kartlag, onUpdateLayerProp }) => {
           <VisibilityOffOutlined style={{ color: "#777" }} />
         )}
       </ListItemSecondaryAction>
-      <ListItemText primary={språk(kartlag.tittel)} />
     </ListItem>
     /*
             <li draggable>

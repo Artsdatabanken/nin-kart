@@ -60,8 +60,13 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
 
 .leaflet-top {
   /* Dette er containeren til zoomknappene */
-  top: auto !important;
+  // top: 50px !important;
+  top: unset;
   bottom: $bottompadding !important;
+}
+
+.leaflet-right {
+  right: 415px;
 }
 
 .leaflet-touch .leaflet-bar a {
@@ -83,7 +88,7 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
 
 .map_button {
   position: absolute;
-  right: 10px;
+  right: 425px;
   background: white;
   border-radius: 4px;
   padding: 2px;
