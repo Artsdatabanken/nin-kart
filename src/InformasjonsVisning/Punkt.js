@@ -49,7 +49,7 @@ class Punkt extends Component {
           <LukkbartVindu
             onBack={() => onNavigateToTab("kartlag")}
             onClose={onClose}
-            tittel={getKoordinatStreng([lng, lat])}
+            tittel={getKoordinatStreng([lat, lng])}
           >
             {false && (
               <Header

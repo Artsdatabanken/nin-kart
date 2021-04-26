@@ -158,10 +158,10 @@ const Klg = ({ trinn, tittel, url, onClick, v, måleenhet }) => {
           )}
         </Avatar>
       </ListItemAvatar>
+      <ListItemText primary={trinn && trinn.tittel.nb} secondary={tittel.nb} />
       <ListItemSecondaryAction>
         <Typography variant="body1">{verdi}</Typography>
       </ListItemSecondaryAction>
-      <ListItemText primary={trinn && trinn.tittel.nb} secondary={tittel.nb} />
     </ListItem>
   );
 };
