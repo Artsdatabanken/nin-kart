@@ -74,7 +74,7 @@ const Sted = ({ sted, lat, lng, fylke, kommune, verneområde, onNavigate }) => {
               )}
             <CardContent>
               <Typography variant="body2">
-                Poisjon: {getKoordinatStreng([lng, lat])}
+                Posisjon: {getKoordinatStreng([lat, lng])}
               </Typography>
             </CardContent>
             {false && sted1 && sted2 && (
