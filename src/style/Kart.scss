@@ -65,8 +65,8 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
   bottom: $bottompadding !important;
 }
 
-.leaflet-right {
-  right: 415px;
+.leaflet-container {
+  width: calc(100% - 408px);
 }
 
 .leaflet-touch .leaflet-bar a {
@@ -88,7 +88,7 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
 
 .map_button {
   position: absolute;
-  right: 425px;
+  right: 418px;
   background: white;
   border-radius: 4px;
   padding: 2px;
@@ -101,6 +101,9 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
 }
 
 @media only screen and (max-width: 768px) {
+  .leaflet-container {
+    width: 100%;
+  }
   .leaflet-top {
     top: auto !important;
     bottom: $bottompadding-mobile !important;
