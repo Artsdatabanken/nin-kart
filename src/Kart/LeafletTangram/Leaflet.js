@@ -2,6 +2,7 @@ import L from "leaflet";
 // -- WEBPACK: Load styles --
 import "leaflet/dist/leaflet.css";
 import React from "react";
+import ReactDOMServer from "react-dom/server";
 import Tangram from "tangram";
 import { createScene, updateScene } from "./scene/scene";
 import {
@@ -42,10 +43,80 @@ class LeafletTangram extends React.Component {
 
     let map = L.map(this.mapEl, options);
 
+    this.radiusMarker = null;
+    this.gpsMarker = null;
+    this.fullscreenButton = null;
+    this.geolocationButton = null;
+    this.fullscreenFuncTimestamp = 0.0;
+    this.disableClick = false;
+
     map.setView(
       [this.props.latitude, this.props.longitude],
       this.props.zoom * 1.8
     );
+
+    const self = this;
+
+    L.Control.AdbFullscreen = L.Control.extend({
+      onAdd: () => {
+        self.fullscreenButton = L.DomUtil.create(
+          "button",
+          "fullscreen map_control_button"
+        );
+
+        self.fullscreenButton.alt = "Fullskjermsvisning";
+        self.fullscreenButton.title = "Fullskjermsvisning";
+
+        self.fullscreenButton.innerHTML = ReactDOMServer.renderToString(
+          <Fullscreen />
+        );
+        L.DomEvent.on(self.fullscreenButton, "click", (e) =>
+          self.fullscreenFunc(e)
+        );
+
+        return self.fullscreenButton;
+      },
+
+      onRemove: () => {
+        L.DomEvent.off(self.fullscreenButton, "click", (e) =>
+          self.fullscreenFunc(e)
+        );
+      },
+    });
+    L.Control.AdbGeolocation = L.Control.extend({
+      onAdd: () => {
+        self.geolocationButton = L.DomUtil.create(
+          "button",
+          "geolocate map_control_button"
+        );
+
+        self.geolocationButton.alt = "Geolokalisering";
+        self.geolocationButton.title = "Geolokalisering";
+
+        self.geolocationButton.innerHTML = ReactDOMServer.renderToString(
+          <LocationSearching />
+        );
+        L.DomEvent.on(self.geolocationButton, "click", (e) =>
+          self.geolocationFunc(e)
+        );
+
+        return self.geolocationButton;
+      },
+
+      onRemove: () => {
+        L.DomEvent.off(self.geolocationButton, "click", (e) =>
+          self.geolocationFunc(e)
+        );
+      },
+    });
+    L.control.adbFullscreen = function (opts) {
+      return new L.Control.AdbFullscreen(opts);
+    };
+    L.control.adbGeolocation = function (opts) {
+      return new L.Control.AdbGeolocation(opts);
+    };
+    L.control.adbFullscreen({ position: "topright" }).addTo(map);
+    L.control.adbGeolocation({ position: "topright" }).addTo(map);
     L.control.zoom({ position: "topright" }).addTo(map);
     L.DomUtil.addClass(map._container, "crosshair-cursor-enabled");
     this.map = map;
@@ -80,20 +151,46 @@ class LeafletTangram extends React.Component {
     }
   }
 
+  fullscreenFunc(e) {
+    if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+    if (e.timeStamp < this.fullscreenFuncTimestamp) return;
+    this.fullscreenFuncTimestamp = e.timeStamp;
+    this.props.handleFullscreen(!this.props.showFullscreen);
+  }
+
+  geolocationFunc(e) {
+    if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+    this.props.handleFullscreen(false);
+    this.handleLocate();
+  }
+
+  resetLocationLayers(e) {
+    if (this.map && this.gpsMarker) {
+      this.map.removeLayer(this.gpsMarker);
+      this.gpsMarker = null;
+    }
+    if (this.map && this.radiusMarker) {
+      this.map.removeLayer(this.radiusMarker);
+      this.radiusMarker = null;
+    }
+    this.disableClick = true;
+  }
+
   onLocationFound(e) {
     var radius = e.accuracy / 2;
-    radius = L.circle(e.latlng, radius).addTo(this.map);
-    var gpsmarker = L.marker(e.latlng)
+    this.resetLocationLayers(e);
+    this.radiusMarker = L.circle(e.latlng, radius).addTo(this.map);
+    this.gpsMarker = L.marker(e.latlng)
       .addTo(this.map)
-      .on("click", (e) => {
-        if (this.map) {
-          this.map.removeLayer(gpsmarker);
-          this.map.removeLayer(radius);
-        }
-      });
+      .on("click", (evt) => this.resetLocationLayers(evt));
   }
   onLocationError(e) {
     alert(e.message);
+  }
+
+  handleLocate() {
+    this.map.stopLocate();
+    this.map.locate({ setView: true });
   }
 
   erEndret(prevProps) {
@@ -127,6 +224,10 @@ class LeafletTangram extends React.Component {
   }
 
   handleClick = (e) => {
+    if (this.disableClick) {
+      this.disableClick = false;
+      return;
+    }
     const latlng = e.leaflet_event.latlng;
     this.removeMarker();
     this.marker = L.marker([latlng.lat, latlng.lng], { icon: this.icon }).addTo(
@@ -159,51 +260,37 @@ class LeafletTangram extends React.Component {
     this.layer.scene.updateConfig({ rebuild: true });
   }
 
-  render() {
-    return (
-      <>
-        {this.props.aktivTab === "kartlag" && (
-          <button
-            className="fullscreen map_button"
-            title="Fullskjermsvisning"
-            alt="Fullskjermsvisning"
-            onClick={(e) => {
-              this.props.handleFullscreen(!this.props.showFullscreen);
-            }}
-          >
-            {this.props.showFullscreen === true ? (
-              <FullscreenExit />
-            ) : (
-              <Fullscreen />
-            )}
-          </button>
-        )}
-
-        <div
-          style={{ zIndex: -100, cursor: "default" }}
-          ref={(ref) => {
-            this.mapEl = ref;
-          }}
-        />
-        {this.props.aktivTab === "kartlag" && (
-          <button
-            className="geolocate map_button"
-            alt="Geolokalisering"
-            title="Geolokalisering"
-            onClick={() => {
-              this.props.handleFullscreen(false);
-              this.handleLocate();
-            }}
-          >
-            <LocationSearching />
-          </button>
-        )}
-      </>
-    );
+  fixMapButtons() {
+    if (this.props.aktivTab === "kartlag") {
+      if (this.geolocationButton) this.geolocationButton.style.display = "";
+      if (this.fullscreenButton) this.fullscreenButton.style.display = "";
+    } else {
+      if (this.geolocationButton) this.geolocationButton.style.display = "none";
+      if (this.fullscreenButton) this.fullscreenButton.style.display = "none";
+    }
+    if (this.props.showFullscreen === true) {
+      if (this.fullscreenButton)
+        this.fullscreenButton.innerHTML = ReactDOMServer.renderToString(
+          <FullscreenExit />
+        );
+    } else {
+      if (this.fullscreenButton)
+        this.fullscreenButton.innerHTML = ReactDOMServer.renderToString(
+          <Fullscreen />
+        );
+    }
   }
 
-  handleLocate() {
-    this.map.locate({ setView: true });
+  render() {
+    this.fixMapButtons();
+    return (
+      <div
+        style={{ zIndex: -100, cursor: "default" }}
+        ref={(ref) => {
+          this.mapEl = ref;
+        }}
+      />
+    );
   }
 }
 

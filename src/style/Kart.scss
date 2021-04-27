@@ -65,6 +65,14 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
   bottom: $bottompadding !important;
 }
 
+.leaflet-top .leaflet-control {
+  margin-top: 2px;
+}
+
+.leaflet-right .leaflet-control {
+  margin-right: 15px;
+}
+
 .leaflet-container {
   width: calc(100% - 408px);
 }
@@ -74,18 +82,25 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
 }
 
 .leaflet-control-zoom a,
-.map_button {
+.map_button,
+.map_control_button {
   height: $leaflet-buttons !important;
   width: $leaflet-buttons;
 }
 
 .map_button,
+.map_control_button,
 .leaflet-touch .leaflet-bar {
   border: 2px solid $medium-nin;
   width: $leaflet-buttons;
   z-index: -5;
 }
 
+.map_control_button {
+  background: white;
+  border-radius: 4px;
+  padding: 2px;
+}
 .map_button {
   position: absolute;
   right: 418px;
@@ -110,6 +125,10 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
     right: 5px !important;
   }
 
+  .leaflet-right .leaflet-control {
+    margin-right: 10px;
+  }
+
   .map_button {
     bottom: $bottompadding-mobile + $leaflet-buttons * 2 +
       $leaflet-buttons-padding * 2 + 1px;
@@ -118,7 +137,7 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
 
   .fullscreen {
     display: inline-block;
-    bottom: $bottompadding-mobile + $leaflet-buttons * 3 +
-      $leaflet-buttons-padding * 3;
+    // bottom: $bottompadding-mobile + $leaflet-buttons * 3 +
+    //   $leaflet-buttons-padding * 3;
   }
 }
