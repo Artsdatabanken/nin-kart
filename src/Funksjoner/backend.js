@@ -1,4 +1,4 @@
-import config from "Funksjoner/config";
+import config from "./config";
 
 class Backend {
   static async getPromise(url) {

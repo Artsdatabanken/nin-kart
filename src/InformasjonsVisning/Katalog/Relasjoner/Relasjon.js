@@ -1,9 +1,9 @@
 import React from "react";
-import Navigeringsliste from "Navigering/Navigeringsliste/Navigeringsliste";
-import Ekspander from "GjenbruksElement/Ekspander";
+import Navigeringsliste from "../../../Navigering/Navigeringsliste/Navigeringsliste";
+import Ekspander from "../../../GjenbruksElement/Ekspander";
 import { titler } from "./Titler";
 
-const Relasjon = props => {
+const Relasjon = (props) => {
   const {
     heading,
     noder,
@@ -12,7 +12,7 @@ const Relasjon = props => {
     onMouseEnter,
     onMouseLeave,
     opplyst,
-    children
+    children,
   } = props;
   // console.log(props);
   const count = noder ? noder.length : 1;

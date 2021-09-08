@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "@material-ui/icons/Link";
-import språk from "Funksjoner/språk";
+import språk from "../../../Funksjoner/språk";
 
 function beskrivelseTolkning(beskrivelse, meta) {
   let listebeskrivelse = null;

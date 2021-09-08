@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CircularProgress } from "@material-ui/core";
-import { lagGradientRampe } from "Funksjoner/palette/gradientrampe";
+import { lagGradientRampe } from "../../Funksjoner/palette/gradientrampe";
 import makeUrl from "./KurveFunksjoner/makeUrl";
 
 const KurveContainer = ({ punkt, gradient, children }) => {
@@ -8,11 +8,11 @@ const KurveContainer = ({ punkt, gradient, children }) => {
   useEffect(() => {
     const url = makeUrl(punkt, gradient);
     fetch(url)
-      .then(result => result.json())
-      .then(json => {
+      .then((result) => result.json())
+      .then((json) => {
         setStats(json);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(url, err);
         return {};
       });
@@ -25,7 +25,7 @@ const KurveContainer = ({ punkt, gradient, children }) => {
           padding: 24,
           fontSize: 10,
           color: "red",
-          wordWrap: "break-word"
+          wordWrap: "break-word",
         }}
       >
         {stats.feil.melding}
@@ -36,7 +36,7 @@ const KurveContainer = ({ punkt, gradient, children }) => {
   return React.cloneElement(children, {
     stats: stats,
     gradient: palette,
-    kode: gradient.kode
+    kode: gradient.kode,
   });
 };
 

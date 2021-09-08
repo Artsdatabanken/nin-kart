@@ -1,4 +1,4 @@
-import colorArray2Image from "Funksjoner/palette/colorArray2Image";
+import colorArray2Image from "../../../../Funksjoner/palette/colorArray2Image";
 import landskapIndexTemp from "./fellesfunksjoner/landskap_index_temp";
 import drawSetup from "./fellesfunksjoner/drawSetup";
 import lagSource from "./fellesfunksjoner/lagSource";
@@ -28,13 +28,13 @@ function lagStyle(format, drawArgs) {
     shaders: {
       uniforms: {
         palette: makePalette(opplyst, drawArgs),
-        depth: 1 - (drawArgs.depth || 0) / 8 - 0.5 / 8
+        depth: 1 - (drawArgs.depth || 0) / 8 - 0.5 / 8,
       },
       blocks: {
         global: global,
-        color: color
-      }
-    }
+        color: color,
+      },
+    },
   };
   return { name: drawArgs.kode, value: gradient };
 }
@@ -53,7 +53,7 @@ function makePalette(opplyst, drawArgs) {
   }
   for (var b of barna) hash[b.kode] = b.farge;
   const colors = [];
-  Object.keys(landskapIndexTemp).forEach(kode => {
+  Object.keys(landskapIndexTemp).forEach((kode) => {
     const barnet = finnBarn(kode, barna, blank);
     if (barnet.erSynlig === false) {
       colors.push(blank);

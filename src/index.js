@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import * as Sentry from "@sentry/browser";
 import { BrowserRouter } from "react-router-dom";
-import SettingsContainer from "SettingsContainer";
+import SettingsContainer from "./SettingsContainer";
 
 //Tester å endre denne da, sånn at vi logger til riktig sted og ikke til en tidligere ansatt
 true &&

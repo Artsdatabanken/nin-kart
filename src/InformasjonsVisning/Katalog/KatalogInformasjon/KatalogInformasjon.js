@@ -1,7 +1,7 @@
 import React from "react";
 import KatalogInformasjonsBoks from "./KatalogInformasjonsBoks";
-import KatalogStatistikk from "InformasjonsVisning/Katalog/KatalogInformasjon/KatalogStatistikk/KatalogStatistikk";
-import språk from "Funksjoner/språk";
+import KatalogStatistikk from "./KatalogStatistikk/KatalogStatistikk";
+import språk from "../../../Funksjoner/språk";
 
 const KatalogInformasjon = ({ meta }) => {
   /*
@@ -16,7 +16,7 @@ const KatalogInformasjon = ({ meta }) => {
     overordnet,
     antallNaturomrader,
     antallArter,
-    stats
+    stats,
   } = meta;
   const mor = (overordnet.length > 0 && overordnet[0]) || { tittel: {} };
 

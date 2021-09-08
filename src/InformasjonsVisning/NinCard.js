@@ -5,7 +5,7 @@ import { Card, CardActionArea, CardHeader, CardMedia } from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
 import { ExpandMore } from "@material-ui/icons/";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import config from "Funksjoner/config";
+import config from "../Funksjoner/config";
 
 const useStyles = makeStyles((theme) => ({
   root: {

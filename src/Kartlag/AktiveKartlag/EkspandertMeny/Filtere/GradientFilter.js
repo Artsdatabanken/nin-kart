@@ -1,5 +1,5 @@
 import React from "react";
-import RangeSlider from "GjenbruksElement/RangeSlider";
+import RangeSlider from "../../../../GjenbruksElement/RangeSlider";
 
 const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
   /*

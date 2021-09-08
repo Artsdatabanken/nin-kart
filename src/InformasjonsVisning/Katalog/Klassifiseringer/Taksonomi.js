@@ -1,5 +1,5 @@
 import React from "react";
-import språk from "Funksjoner/språk";
+import språk from "../../../Funksjoner/språk";
 
 const Taksonomi = ({ meta, onNavigate }) => {
   if (!meta) return null;
@@ -8,12 +8,12 @@ const Taksonomi = ({ meta, onNavigate }) => {
   return (
     <div className="taxonomy_section">
       <h3>Taksonomi</h3>
-      {overordnet.map(value => {
+      {overordnet.map((value) => {
         return (
           <button
             className="taxonomy_item"
             key={value.kode}
-            onClick={e => {
+            onClick={(e) => {
               onNavigate(value.url);
             }}
           >
@@ -26,7 +26,7 @@ const Taksonomi = ({ meta, onNavigate }) => {
                     value.nivå === "Art" ||
                     value.nivå === "Underart" ||
                     value.nivå === "Varietet") &&
-                  "italic"
+                  "italic",
               }}
             >
               {språk(value.tittel)} ({value.kode})

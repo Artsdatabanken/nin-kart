@@ -1,6 +1,6 @@
 import React from "react";
 import KatalogHeaderImage from "./KatalogHeaderImage";
-import språk from "Funksjoner/språk";
+import språk from "../../../Funksjoner/språk";
 import KatalogInformasjon from "../KatalogInformasjon/KatalogInformasjon";
 
 const KatalogHeader = ({ meta }) => {

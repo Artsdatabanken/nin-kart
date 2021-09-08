@@ -8,7 +8,7 @@ import {
   ListItemText,
 } from "@material-ui/core";
 import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
-import språk from "Funksjoner/språk";
+import språk from "../../Funksjoner/språk";
 import { useHistory } from "react-router-dom";
 
 const AktivtKartlagElement = ({ kartlag, onUpdateLayerProp }) => {

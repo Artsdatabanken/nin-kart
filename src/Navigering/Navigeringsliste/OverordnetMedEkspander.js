@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import språk from "Funksjoner/språk";
+import språk from "../../Funksjoner/språk";
 import { ListItem, ListItemAvatar, ListItemText } from "@material-ui/core";
 import { AccountTree } from "@material-ui/icons";
 

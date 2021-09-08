@@ -1,4 +1,4 @@
-import sysconfig from "Funksjoner/config";
+import sysconfig from "../../../../Funksjoner/config";
 import tinycolor from "tinycolor2";
 
 function drawAll(drawArgs) {
@@ -7,10 +7,10 @@ function drawAll(drawArgs) {
       data: { source: drawArgs.kode },
       draw: {
         ["ruter_" + drawArgs.kode]: {
-          order: 700
-        }
-      }
-    }
+          order: 700,
+        },
+      },
+    },
   };
   return layer;
 }
@@ -37,13 +37,13 @@ function lagStyle(format, drawArgs) {
         vec4 transparent = vec4(1.);
         vec4 g = texture2D(palette, vec2(value, 0.5));
         color = mix(transparent, g, farge.a);
-        `
-      }
-    }
+        `,
+      },
+    },
   };
   return {
     name: "ruter_" + drawArgs.kode,
-    value: gradient
+    value: gradient,
   };
 }
 

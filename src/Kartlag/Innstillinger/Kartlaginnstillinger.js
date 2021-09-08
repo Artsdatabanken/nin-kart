@@ -1,6 +1,6 @@
 import React from "react";
 import LukkbartVindu from "../../LukkbartVindu";
-import språk from "Funksjoner/språk";
+import språk from "../../Funksjoner/språk";
 import EkspandertInnhold from "../AktiveKartlag/EkspandertMeny/EkspandertInnhold";
 import { InfoOutlined } from "@material-ui/icons";
 import { IconButton, Tooltip } from "@material-ui/core";

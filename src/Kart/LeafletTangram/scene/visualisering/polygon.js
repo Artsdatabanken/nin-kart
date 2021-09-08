@@ -1,5 +1,5 @@
-import sysconfig from "Funksjoner/config";
-import hentFarge from "Funksjoner/palette/opplyst";
+import sysconfig from "../../../../Funksjoner/config";
+import hentFarge from "../../../../Funksjoner/palette/opplyst";
 
 function drawAll(drawArgs) {
   const {

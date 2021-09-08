@@ -1,7 +1,7 @@
 import {
   lagGradientRampe,
   steps2Palette,
-} from "Funksjoner/palette/gradientrampe";
+} from "../../../../Funksjoner/palette/gradientrampe";
 import drawSetup from "./fellesfunksjoner/drawSetup";
 import lagSource from "./fellesfunksjoner/lagSource";
 

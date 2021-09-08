@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import VelgFargeBoks from "../../FellesElementer/VelgFargeBoks";
 import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
-import språk from "Funksjoner/språk";
+import språk from "../../../../../Funksjoner/språk";
 import FargeVelger from "../../FellesElementer/FargeVelger";
 import {
   IconButton,

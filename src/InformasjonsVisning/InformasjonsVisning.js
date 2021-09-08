@@ -2,7 +2,7 @@ import React from "react";
 import LukkbartVindu from "../LukkbartVindu";
 import { withRouter } from "react-router-dom";
 import finnKurvevariabler from "./Katalog/KatalogFunksjoner/finnKurvevariabler";
-import språk from "Funksjoner/språk";
+import språk from "../Funksjoner/språk";
 import Katalog from "./Katalog/Katalog";
 
 // Denne boksen inneholder alle informasjonsvisningssidene

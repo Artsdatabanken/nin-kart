@@ -1,5 +1,5 @@
 import React from "react";
-import språk from "Funksjoner/språk";
+import språk from "../../../Funksjoner/språk";
 import config from "../../../Funksjoner/config";
 
 const Gradienter = ({ gradient, onNavigate, title }) => {
@@ -23,7 +23,7 @@ const Gradienter = ({ gradient, onNavigate, title }) => {
                   className="badge"
                   key={item.tittel.nb + index}
                   style={{ opacity: aktiv ? "1" : "0.2" }}
-                  onClick={e => {
+                  onClick={(e) => {
                     onNavigate(item.url);
                   }}
                 >
@@ -33,7 +33,7 @@ const Gradienter = ({ gradient, onNavigate, title }) => {
                       backgroundPosition: "center",
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "cover",
-                      backgroundImage: "url(" + config.foto(item.url) + ")"
+                      backgroundImage: "url(" + config.foto(item.url) + ")",
                     }}
                   />
                   <br />

@@ -1,7 +1,7 @@
 import React from "react";
-import KurveContainer from "GjenbruksElement/Kurver/KurveContainer";
+import KurveContainer from "../../../GjenbruksElement/Kurver/KurveContainer";
 import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
-import Kurve from "GjenbruksElement/Kurver/Kurve";
+import Kurve from "../../../GjenbruksElement/Kurver/Kurve";
 
 const KatalogBarneliste = ({
   data,

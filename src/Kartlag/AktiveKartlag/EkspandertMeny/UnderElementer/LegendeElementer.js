@@ -1,4 +1,4 @@
-import { SettingsContext } from "SettingsContext";
+import { SettingsContext } from "../../../../SettingsContext";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import LegendeElement from "./LegendeComponents/LegendeElement";

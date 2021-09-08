@@ -1,5 +1,5 @@
 import Menyelement from "./Menyelement";
-import { SettingsContext } from "SettingsContext";
+import { SettingsContext } from "../SettingsContext";
 import {
   Divider,
   Typography,
@@ -20,7 +20,7 @@ import {
 } from "@material-ui/icons";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import NavigationChevronLeftDouble from "AppSettings/NavigationChevronLeftDouble";
+import NavigationChevronLeftDouble from "../AppSettings/NavigationChevronLeftDouble";
 import GitHub from "./GitHub";
 import Innstillinger from "./Innstillinger";
 import Utforsk from "./Utforsk/Utforsk";
