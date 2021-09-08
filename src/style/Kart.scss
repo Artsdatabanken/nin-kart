@@ -65,8 +65,16 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
   bottom: $bottompadding !important;
 }
 
-.leaflet-right {
-  right: 415px;
+.leaflet-top .leaflet-control {
+  margin-top: 2px;
+}
+
+.leaflet-right .leaflet-control {
+  margin-right: 15px;
+}
+
+.leaflet-container {
+  width: calc(100% - 408px);
 }
 
 .leaflet-touch .leaflet-bar a {
@@ -74,21 +82,28 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
 }
 
 .leaflet-control-zoom a,
-.map_button {
+.map_button,
+.map_control_button {
   height: $leaflet-buttons !important;
   width: $leaflet-buttons;
 }
 
 .map_button,
+.map_control_button,
 .leaflet-touch .leaflet-bar {
   border: 2px solid $medium-nin;
   width: $leaflet-buttons;
   z-index: -5;
 }
 
+.map_control_button {
+  background: white;
+  border-radius: 4px;
+  padding: 2px;
+}
 .map_button {
   position: absolute;
-  right: 425px;
+  right: 418px;
   background: white;
   border-radius: 4px;
   padding: 2px;
@@ -101,10 +116,17 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
 }
 
 @media only screen and (max-width: 768px) {
+  .leaflet-container {
+    width: 100%;
+  }
   .leaflet-top {
     top: auto !important;
     bottom: $bottompadding-mobile !important;
     right: 5px !important;
+  }
+
+  .leaflet-right .leaflet-control {
+    margin-right: 10px;
   }
 
   .map_button {
@@ -115,7 +137,7 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
 
   .fullscreen {
     display: inline-block;
-    bottom: $bottompadding-mobile + $leaflet-buttons * 3 +
-      $leaflet-buttons-padding * 3;
+    // bottom: $bottompadding-mobile + $leaflet-buttons * 3 +
+    //   $leaflet-buttons-padding * 3;
   }
 }
