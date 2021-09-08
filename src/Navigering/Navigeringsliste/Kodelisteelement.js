@@ -1,11 +1,11 @@
 import React from "react";
-import språk from "Funksjoner/språk";
-import isItalics from "Funksjoner/isItalics";
-import Bildeavatar from "GjenbruksElement/Bildeavatar";
+import språk from "../../Funksjoner/språk";
+import isItalics from "../../Funksjoner/isItalics";
+import Bildeavatar from "../../GjenbruksElement/Bildeavatar";
 import VolumIndikator from "./VolumIndikator";
 import getSecondary from "./NavigeringslisteFunksjoner/getSecondary";
 import kodeSuffix from "./NavigeringslisteFunksjoner/kodeSuffix";
-import "style/NavMenu.scss";
+import "../../style/NavMenu.scss";
 import VelgFargeboks from "../../Kartlag/AktiveKartlag/EkspandertMeny/FellesElementer/VelgFargeBoks";
 
 class Kodelisteelement extends React.Component {

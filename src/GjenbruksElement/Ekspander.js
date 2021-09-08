@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Link from "@material-ui/icons/Link";
-import OpenData from "GjenbruksElement/OpenData";
+import OpenData from "../GjenbruksElement/OpenData";
 
 const Ekspander = ({
   visible,
@@ -9,7 +9,7 @@ const Ekspander = ({
   heading,
   heading2,
   icon,
-  is_expanded
+  is_expanded,
 }) => {
   if (heading === "Datakilde") icon = <OpenData />;
   const [expanded, setExpanded] = useState(is_expanded || false);
@@ -19,7 +19,7 @@ const Ekspander = ({
     <div className="sidebar_element ">
       <button
         className="clickable_element"
-        onClick={e => {
+        onClick={(e) => {
           e.stopPropagation();
           setExpanded(!expanded);
         }}

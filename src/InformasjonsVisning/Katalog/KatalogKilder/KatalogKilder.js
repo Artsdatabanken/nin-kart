@@ -1,6 +1,6 @@
 import React from "react";
 import { CloudDownload } from "@material-ui/icons";
-import språk from "Funksjoner/språk";
+import språk from "../../../Funksjoner/språk";
 import { OpenInNew, KeyboardArrowRight } from "@material-ui/icons";
 
 const KatalogKilder = ({ onNavigate, meta, ...props }) => {
@@ -14,7 +14,7 @@ const KatalogKilder = ({ onNavigate, meta, ...props }) => {
     <div className="kilde_box">
       <h1>Datakilder</h1>
 
-      {metadata.map(datakilde => {
+      {metadata.map((datakilde) => {
         return (
           <div className="kilder_wrap" key={datakilde.kode}>
             <button

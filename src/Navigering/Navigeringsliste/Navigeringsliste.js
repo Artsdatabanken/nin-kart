@@ -1,5 +1,5 @@
 import React from "react";
-import { SettingsContext } from "SettingsContext";
+import { SettingsContext } from "../../SettingsContext";
 import Kodelisteelement from "./Kodelisteelement";
 import getKey from "./NavigeringslisteFunksjoner/getKey";
 

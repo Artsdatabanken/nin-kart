@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import Collapse from "@material-ui/core/Collapse";
 import Avatar from "@material-ui/core/Avatar";
-import config from "Funksjoner/config";
+import config from "../Funksjoner/config";
 import { useHistory } from "react-router-dom";
 import NinCard from "./NinCard";
 

@@ -10,7 +10,7 @@ import {
   FullscreenExit,
   LocationSearching,
 } from "@material-ui/icons";
-import "style/Kart.scss";
+import "../../style/Kart.scss";
 
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
 // See here: https://github.com/PaulLeCam/react-leaflet/issues/255

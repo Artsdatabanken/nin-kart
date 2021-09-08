@@ -2,7 +2,7 @@ import { Switch } from "@material-ui/core";
 import React, { useState } from "react";
 import VelgFargeBoks from "../../FellesElementer/VelgFargeBoks";
 import FargeVelger from "../../FellesElementer/FargeVelger";
-import SliderElement from "GjenbruksElement/SliderElement";
+import SliderElement from "../../../../../GjenbruksElement/SliderElement";
 
 const BakgrunnInnstillingListeElement = ({
   onUpdateLayerProp,
@@ -11,14 +11,14 @@ const BakgrunnInnstillingListeElement = ({
   erSynlig,
   farge,
   omriss,
-  stroke
+  stroke,
 }) => {
   const [showColours, setShowColours] = useState(false);
 
   return (
     <div>
       <Switch
-        onClick={e => e.stopPropagation()}
+        onClick={(e) => e.stopPropagation()}
         onChange={() => {
           onUpdateLayerProp("bakgrunnskart", oppdaterElement, !erSynlig);
         }}
@@ -30,7 +30,7 @@ const BakgrunnInnstillingListeElement = ({
       {erSynlig && (
         <>
           <span
-            onClick={e => {
+            onClick={(e) => {
               // console.log("farge: ", farge);
               setShowColours(!showColours);
             }}
@@ -62,7 +62,7 @@ const BakgrunnInnstillingListeElement = ({
               max={10}
               step={0.2}
               tittel={"Tykkelse: " + (stroke || 0).toFixed(1) + " piksler"}
-              onChange={v =>
+              onChange={(v) =>
                 onUpdateLayerProp(
                   "bakgrunnskart",
                   oppdaterElement + "_stroke_width",

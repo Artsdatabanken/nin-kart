@@ -1,5 +1,5 @@
 import React from "react";
-import språk from "Funksjoner/språk";
+import språk from "../../../Funksjoner/språk";
 import Overskrift from "../../Overskrift";
 import NinCard from "../../NinCard";
 import {

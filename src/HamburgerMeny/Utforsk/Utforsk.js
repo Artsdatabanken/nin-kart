@@ -1,7 +1,7 @@
-import Menyelement from "HamburgerMeny/Menyelement";
+import Menyelement from "../Menyelement";
 import React from "react";
 import { Pets, Landscape } from "@material-ui/icons";
-import Naturvern from "HamburgerMeny/Naturvern";
+import Naturvern from "../Naturvern";
 
 const Utforsk = ({ parent, context }) => {
   /*

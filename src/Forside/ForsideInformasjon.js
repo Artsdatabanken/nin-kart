@@ -1,16 +1,16 @@
 ﻿import React from "react";
 import { withRouter } from "react-router";
-import "style/Forside.scss";
+import "../style/Forside.scss";
 import Kilder from "./Kilder";
-import Utforsk from "HamburgerMeny/Utforsk/Utforsk";
+import Utforsk from "../HamburgerMeny/Utforsk/Utforsk";
 
-const ForsideInformasjon = props => {
+const ForsideInformasjon = (props) => {
   return (
     <div className="frontpage">
       <div className="frontpage_body">
         <div
           className="frontpage_header"
-          onClick={e => {
+          onClick={(e) => {
             e.stopPropagation();
             props.history.push("/Natur_i_Norge/");
           }}

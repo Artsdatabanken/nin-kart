@@ -1,4 +1,4 @@
-import prettyKode from "Funksjoner/prettyKode";
+import prettyKode from "../../../Funksjoner/prettyKode";
 
 export function kodeSuffix2(kode, overordnet) {
   if (overordnet.length <= 1) return "";

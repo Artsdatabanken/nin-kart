@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Overordnet from "./Navigeringsliste/OverordnetMedEkspander";
-import { SettingsContext } from "SettingsContext";
+import { SettingsContext } from "../SettingsContext";
 import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
-import språk from "Funksjoner/språk";
+import språk from "../Funksjoner/språk";
 import { kodeSuffix2 } from "./Navigeringsliste/NavigeringslisteFunksjoner/kodeSuffix";
 import {
   ListItemAvatar,

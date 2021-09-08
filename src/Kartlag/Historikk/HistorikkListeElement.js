@@ -1,5 +1,5 @@
 import React from "react";
-import språk from "Funksjoner/språk";
+import språk from "../../Funksjoner/språk";
 import { ListItem, ListItemText } from "@material-ui/core";
 
 const HistorikkListeElement = ({ meta, history }) => {

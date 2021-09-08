@@ -1,5 +1,5 @@
 import React from "react";
-import språk from "Funksjoner/språk";
+import språk from "../Funksjoner/språk";
 import { getKoordinatStreng } from "../koordinater";
 import { Place } from "@material-ui/icons";
 import { ListItem, ListItemText, ListItemAvatar } from "@material-ui/core";

@@ -1,5 +1,5 @@
 import React from "react";
-import { SettingsContext } from "SettingsContext";
+import { SettingsContext } from "../../../../SettingsContext";
 import KartlagBarnElement from "./KartlagBarnElement";
 import getKey from "./NavigeringslisteFunksjoner/getKey";
 
@@ -22,22 +22,22 @@ class Navigeringsliste extends React.Component {
       onMouseEnter,
       onMouseLeave,
       onNavigate,
-      isDatakilde
+      isDatakilde,
     } = this.props;
     // console.log("kodelist", parentkode, opplyst);
 
     if (!metadata || metadata.length <= 0) return null;
     return (
       <SettingsContext.Consumer>
-        {context => (
+        {(context) => (
           <div className="kartlag_barn_container">
             {Navigeringsliste.sorter(metadata, context.sorterPåKode).map(
-              metabarnet => {
+              (metabarnet) => {
                 const kode = metabarnet.kode;
                 const apibarn = apidata
                   ? apidata[
                       apidata
-                        .map(apiItem => {
+                        .map((apiItem) => {
                           return apiItem.kode;
                         })
                         .indexOf(kode.toLowerCase())
@@ -59,7 +59,7 @@ class Navigeringsliste extends React.Component {
                     onMouseLeave={onMouseLeave}
                     opplyst={opplyst}
                     value={metabarnet.value}
-                    onChange={v => onUpdateMetaProp(kode, "value", [...v])}
+                    onChange={(v) => onUpdateMetaProp(kode, "value", [...v])}
                     isDatakilde={isDatakilde}
                   />
                 );

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import språk from "Funksjoner/språk";
+import språk from "../../../Funksjoner/språk";
 
 const Landskapstype = ({ onNavigate, newlandskap }) => {
   const [showMore, setShowMore] = useState(false);
@@ -18,7 +18,7 @@ const Landskapstype = ({ onNavigate, newlandskap }) => {
             backgroundImage: "url(" + newlandskap.bilde.foto.url + ")",
             backgroundRepeat: "no-Repeat",
             backgroundPosition: "top",
-            backgroundSize: "cover"
+            backgroundSize: "cover",
           }}
           onClick={() => {
             onNavigate(newlandskap.url);
@@ -46,7 +46,7 @@ const Landskapstype = ({ onNavigate, newlandskap }) => {
         <p className="landskapstype_ingress">
           {språk(newlandskap.beskrivelse).substring(0, 180)}
           <span
-            onClick={e => {
+            onClick={(e) => {
               setShowMore(!showMore);
               e.stopPropagation();
             }}
@@ -89,7 +89,7 @@ const Landskapstype = ({ onNavigate, newlandskap }) => {
                         backgroundPosition: "center",
                         backgroundRepeat: "no-repeat",
                         backgroundSize: "cover",
-                        backgroundImage: "url(" + imgurl + ")"
+                        backgroundImage: "url(" + imgurl + ")",
                       }}
                       onClick={() => {
                         onNavigate(value.url);

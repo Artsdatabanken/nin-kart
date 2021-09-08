@@ -1,9 +1,9 @@
 import React from "react";
-import { SettingsContext } from "SettingsContext";
+import { SettingsContext } from "../SettingsContext";
 import AktivtKartlagElement from "./AktiveKartlag/AktivtKartlagElement";
 import HistorikkListeElement from "./Historikk/HistorikkListeElement";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@material-ui/icons";
-import språk from "Funksjoner/språk";
+import språk from "../Funksjoner/språk";
 import { List, ListSubheader, Tooltip } from "@material-ui/core";
 
 class Kartlag extends React.Component {
