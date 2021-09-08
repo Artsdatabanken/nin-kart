@@ -15,15 +15,55 @@ const Kartlegging = ({ punkt, onClose, onNavigateToTab }) => {
   if (!punkt) return null;
   const nat =
     punkt.vektor &&
-    Object.values(punkt.vektor).find((e) => e.datasettkode === "NAT");
-  if (!nat) return null;
-  const na = nat.data;
-  if (!na) return null;
-  const k0 = na.kartleggingsenhet[0] || {};
-  const heading = {
-    områdeid: k0.område5kid || k0.område20kid || k0.naturtypeid,
-    guid: k0.område5kguid || k0.område20kguid || k0.naturtypeguid,
-  };
+    Object.values(punkt.vektor).filter((e) => e.datasettkode === "NAT");
+  if (nat.length === 0) return null;
+
+  const kartleggings = nat.map((natElement) => {
+    const na = natElement.data;
+    if (!na) return null;
+    const k0 = na.kartleggingsenhet[0] || {};
+    const heading = {
+      områdeid: k0.område5kid || k0.område20kid || k0.naturtypeid,
+      guid: k0.område5kguid || k0.område20kguid || k0.naturtypeguid,
+    };
+    return (
+      <div>
+        <div style={{ margin: 24 }}>
+          <Table keys={Object.keys(heading)} data={heading} />
+        </div>
+        <Expa
+          expanded={expanded}
+          id="prosjekt"
+          onChange={setExpanded}
+          summary="Prosjekt"
+          details={<Prosjekt prosjekt={na.prosjekt} />}
+        />
+        {na.prosjekt && na.prosjekt.program && (
+          <Expa
+            expanded={expanded}
+            id="program"
+            onChange={setExpanded}
+            summary="Program"
+            details={<Program program={na.prosjekt.program} />}
+          />
+        )}
+
+        {(na.kartleggingsenhet || []).map((kle) => (
+          <Expa
+            expanded={expanded}
+            id={
+              kle.kartleggingsenhet5kid ||
+              kle.kartleggingsenhet20kid ||
+              kle.kartleggingsenhetntid
+            }
+            onChange={setExpanded}
+            summary={"Kartleggingsenhet " + kle.altkode}
+            details={<Kartleggingsenhet kle={kle} />}
+          />
+        ))}
+      </div>
+    );
+  });
 
   return (
     <LukkbartVindu
@@ -31,38 +71,7 @@ const Kartlegging = ({ punkt, onClose, onNavigateToTab }) => {
       onClose={onClose}
       tittel={"Natursystem: Kartlegging"}
     >
-      <div style={{ margin: 24 }}>
-        <Table keys={Object.keys(heading)} data={heading} />
-      </div>
-      <Expa
-        expanded={expanded}
-        id="prosjekt"
-        onChange={setExpanded}
-        summary="Prosjekt"
-        details={<Prosjekt prosjekt={na.prosjekt} />}
-      />
-      {na.prosjekt && na.prosjekt.program && (
-        <Expa
-          expanded={expanded}
-          id="program"
-          onChange={setExpanded}
-          summary="Program"
-          details={<Program program={na.prosjekt.program} />}
-        />
-      )}
-      {(na.kartleggingsenhet || []).map((kle) => (
-        <Expa
-          expanded={expanded}
-          id={
-            kle.kartleggingsenhet5kid ||
-            kle.kartleggingsenhet20kid ||
-            kle.kartleggingsenhetntid
-          }
-          onChange={setExpanded}
-          summary={"Kartleggingsenhet " + kle.altkode}
-          details={<Kartleggingsenhet kle={kle} />}
-        />
-      ))}
+      {kartleggings}
     </LukkbartVindu>
   );
 };
