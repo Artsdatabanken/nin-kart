@@ -11,14 +11,15 @@ import {
 import Prettyprint from "./Funksjoner/prettyprint";
 
 const Kartlegging = ({ punkt, onClose, onNavigateToTab }) => {
-  const [expanded, setExpanded] = React.useState();
   if (!punkt) return null;
   const nat =
     punkt.vektor &&
     Object.values(punkt.vektor).filter((e) => e.datasettkode === "NAT");
   if (nat.length === 0) return null;
 
-  const kartleggings = nat.map((natElement) => {
+  const ignoreNullValues = true;
+
+  const kartlegginger = nat.map((natElement) => {
     const na = natElement.data;
     if (!na) return null;
     const k0 = na.kartleggingsenhet[0] || {};
@@ -26,42 +27,13 @@ const Kartlegging = ({ punkt, onClose, onNavigateToTab }) => {
       områdeid: k0.område5kid || k0.område20kid || k0.naturtypeid,
       guid: k0.område5kguid || k0.område20kguid || k0.naturtypeguid,
     };
-    return (
-      <div>
-        <div style={{ margin: 24 }}>
-          <Table keys={Object.keys(heading)} data={heading} />
-        </div>
-        <Expa
-          expanded={expanded}
-          id="prosjekt"
-          onChange={setExpanded}
-          summary="Prosjekt"
-          details={<Prosjekt prosjekt={na.prosjekt} />}
-        />
-        {na.prosjekt && na.prosjekt.program && (
-          <Expa
-            expanded={expanded}
-            id="program"
-            onChange={setExpanded}
-            summary="Program"
-            details={<Program program={na.prosjekt.program} />}
-          />
-        )}
 
-        {(na.kartleggingsenhet || []).map((kle) => (
-          <Expa
-            expanded={expanded}
-            id={
-              kle.kartleggingsenhet5kid ||
-              kle.kartleggingsenhet20kid ||
-              kle.kartleggingsenhetntid
-            }
-            onChange={setExpanded}
-            summary={"Kartleggingsenhet " + kle.altkode}
-            details={<Kartleggingsenhet kle={kle} />}
-          />
-        ))}
-      </div>
+    return (
+      <KartleggingObjekt
+        na={na}
+        heading={heading}
+        ignoreNullValues={ignoreNullValues}
+      />
     );
   });
 
@@ -71,8 +43,66 @@ const Kartlegging = ({ punkt, onClose, onNavigateToTab }) => {
       onClose={onClose}
       tittel={"Natursystem: Kartlegging"}
     >
-      {kartleggings}
+      {kartlegginger}
     </LukkbartVindu>
+  );
+};
+
+const KartleggingObjekt = ({ na, heading, ignoreNullValues }) => {
+  const [expanded, setExpanded] = React.useState();
+  const checkExpanded = (id) => {
+    // console.log('onChange', id, expanded);
+    if (id === expanded) id = undefined;
+    setExpanded(id);
+  };
+  return (
+    <div>
+      <div style={{ margin: 24 }}>
+        <Table keys={Object.keys(heading)} data={heading} />
+      </div>
+      <Expa
+        expanded={expanded}
+        id="prosjekt"
+        onChange={checkExpanded}
+        summary="Prosjekt"
+        details={
+          <Prosjekt
+            prosjekt={na.prosjekt}
+            ignoreNullValues={ignoreNullValues}
+          />
+        }
+      />
+      {na.prosjekt && na.prosjekt.program && (
+        <Expa
+          expanded={expanded}
+          id="program"
+          onChange={checkExpanded}
+          summary="Program"
+          details={
+            <Program
+              program={na.prosjekt.program}
+              ignoreNullValues={ignoreNullValues}
+            />
+          }
+        />
+      )}
+
+      {(na.kartleggingsenhet || []).map((kle) => (
+        <Expa
+          expanded={expanded}
+          id={
+            kle.kartleggingsenhet5kid ||
+            kle.kartleggingsenhet20kid ||
+            kle.kartleggingsenhetntid
+          }
+          onChange={checkExpanded}
+          summary={"Kartleggingsenhet " + kle.altkode}
+          details={
+            <Kartleggingsenhet kle={kle} ignoreNullValues={ignoreNullValues} />
+          }
+        />
+      ))}
+    </div>
   );
 };
 
@@ -93,7 +123,7 @@ const Expa = ({ id, expanded, summary, details, onChange }) => (
   </Accordion>
 );
 
-const Kartleggingsenhet = ({ kle }) => {
+const Kartleggingsenhet = ({ kle, ignoreNullValues }) => {
   const bruker = kle.bruker || {};
   const variabler = kle.variabler || [];
   const data = {
@@ -107,6 +137,7 @@ const Kartleggingsenhet = ({ kle }) => {
       kle.kartleggingsenhet5kid ||
       kle.kartleggingsenhet20kid ||
       kle.kartleggingsenhetntid,
+    Faktaark: kle.faktaark,
     "": "",
     Variabler: "",
   };
@@ -114,13 +145,20 @@ const Kartleggingsenhet = ({ kle }) => {
   variabler
     .sort((a, b) => (a.kode > b.kode ? 1 : -1))
     .forEach((v) => {
-      data[v.altkode || v.kode.replace("NN-NA-BS-", "")] = v.kartlagtdato || "";
+      data[v.altkode || v.kode.replace("NN-NA-BS-", "")] =
+        prettify("kartlagtdato", v.kartlagtdato) || "";
       //        data[v.altkode || v.kode.replace('NN-NA-BS-', '')] = t1 ? t1 + ": " + t2 : t2
     });
-  return <Table keys={Object.keys(data)} data={data} />;
+  return (
+    <Table
+      keys={Object.keys(data)}
+      data={data}
+      ignoreNullValues={ignoreNullValues}
+    />
+  );
 };
 
-const Prosjekt = ({ prosjekt }) => {
+const Prosjekt = ({ prosjekt, ignoreNullValues }) => {
   const keys = [
     "prosjektid",
     "prosjektnavn",
@@ -132,9 +170,11 @@ const Prosjekt = ({ prosjekt }) => {
     "basiskartlegging",
     "dekningskartverdi",
   ];
-  return <Table keys={keys} data={prosjekt} />;
+  return (
+    <Table keys={keys} data={prosjekt} ignoreNullValues={ignoreNullValues} />
+  );
 };
-const Program = ({ program }) => {
+const Program = ({ program, ignoreNullValues }) => {
   const keys = [
     "navn",
     "pilot",
@@ -146,17 +186,22 @@ const Program = ({ program }) => {
     "kartlegging20k",
     "kartleggingsinstruks",
   ];
-  return <Table keys={keys} data={program} />;
+  return (
+    <Table keys={keys} data={program} ignoreNullValues={ignoreNullValues} />
+  );
 };
 
-const Table = ({ keys, data }) => {
+const Table = ({ keys, data, ignoreNullValues }) => {
   if (!data) return null;
   return (
     <div style={{ flexGrow: 1 }}>
       <Grid container spacing={1}>
-        {keys.map((key) => (
-          <Row title={key} value={data[key]} />
-        ))}
+        {keys.map((key) => {
+          if (ignoreNullValues) {
+            if (data[key] === null || data[key] === undefined) return null;
+          }
+          return <Row title={key} value={data[key]} />;
+        })}
         {data.Shape_Area && (
           <Row
             title="Areal"
@@ -190,15 +235,15 @@ const Row = ({ title, value }) => (
       </Typography>
     </Grid>
     <Grid item xs={7} spacing={0} style={{ wordWrap: "break-word" }}>
-      <Typography variant="body2">{prettify(value)}</Typography>
+      <Typography variant="body2">{prettify(title, value)}</Typography>
     </Grid>
   </>
 );
 
-const prettify = (v) => {
+const prettify = (t, v) => {
+  if (v === undefined || v === null) return null;
   if (v === 0) return "nei";
   if (v === 1) return "ja";
-  if (v === undefined || v === null) return null;
   if (typeof v === "number") return v;
   if (v.indexOf("http") === 0)
     return (
@@ -206,6 +251,10 @@ const prettify = (v) => {
         {v}
       </a>
     );
+  if (t.toLowerCase().indexOf("dato") >= 0) {
+    const d = new Date(v);
+    return `${d.toLocaleDateString("nb-NO")} ${d.toLocaleTimeString("nb-NO")}`;
+  }
   return v;
 };
 export default withRouter(Kartlegging);
