@@ -146,7 +146,6 @@ const Kartleggingsenhet = ({ kle, ignoreNullValues }) => {
   variabler
     .sort((a, b) => (a.kode > b.kode ? 1 : -1))
     .forEach((v) => {
-      console.log("testing", v);
       data[v.altkode || v.kode.replace("NN-NA-BS-", "")] = (
         <div>
           {v.navnbeskrivelse
