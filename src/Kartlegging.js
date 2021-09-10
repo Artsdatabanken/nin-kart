@@ -126,6 +126,7 @@ const Expa = ({ id, expanded, summary, details, onChange }) => (
 const Kartleggingsenhet = ({ kle, ignoreNullValues }) => {
   const bruker = kle.bruker || {};
   const variabler = kle.variabler || [];
+  const ulkm = kle.ulkm || [];
   const data = {
     Kode: [kle.altkode],
     Navn: kle.tittel.nb,
@@ -145,10 +146,28 @@ const Kartleggingsenhet = ({ kle, ignoreNullValues }) => {
   variabler
     .sort((a, b) => (a.kode > b.kode ? 1 : -1))
     .forEach((v) => {
-      data[v.altkode || v.kode.replace("NN-NA-BS-", "")] =
-        prettify("kartlagtdato", v.kartlagtdato) || "";
+      data[v.altkode || v.kode.replace("NN-NA-BS-", "")] = (
+        <div>
+          {v.navnbeskrivelse}
+          <div style={{ fontSize: ".8rem" }}>{v.trinnbeskrivelse}</div>
+        </div>
+      );
+      // prettify("kartlagtdato", v.kartlagtdato) || "";
       //        data[v.altkode || v.kode.replace('NN-NA-BS-', '')] = t1 ? t1 + ": " + t2 : t2
     });
+  data["uLKM"] = ulkm.length > 0 ? "" : "ingen";
+  ulkm
+    .sort((a, b) => (a.ulkmkode > b.ulkmkode ? 1 : -1))
+    .forEach((u) => {
+      // console.log('uLKM', u);
+      data[u.ulkmkode.replace("NN-NA-uLKM-", "")] = (
+        <div>
+          {u.gradientkodebeskrivelse}
+          <div style={{ fontSize: ".8rem" }}>{u.trinnbeskrivelse}</div>
+        </div>
+      );
+    });
+  // console.log(data);
   return (
     <Table
       keys={Object.keys(data)}
@@ -219,32 +238,36 @@ const Table = ({ keys, data, ignoreNullValues }) => {
   );
 };
 
-const Row = ({ title, value }) => (
-  <>
-    <Grid
-      item
-      xs={5}
-      spacing={1}
-      style={{ textTransform: "capitalize", color: "rgba(0,0,0,0.54)" }}
-    >
-      <Typography
-        style={{ fontWeight: title === "Variabler" ? 600 : 400 }}
-        variant="body2"
-      >
-        {title}
-      </Typography>
-    </Grid>
-    <Grid item xs={7} spacing={0} style={{ wordWrap: "break-word" }}>
-      <Typography variant="body2">{prettify(title, value)}</Typography>
-    </Grid>
-  </>
-);
+const Row = ({ title, value }) => {
+  const gridStyle = {
+    textTransform: title === "uLKM" ? undefined : "capitalize",
+    color: "rgba(0,0,0,0.54)",
+  };
+  return (
+    <>
+      <Grid item xs={5} spacing={1} style={gridStyle}>
+        <Typography
+          style={{
+            fontWeight: title === "Variabler" || title === "uLKM" ? 600 : 400,
+          }}
+          variant="body2"
+        >
+          {title}
+        </Typography>
+      </Grid>
+      <Grid item xs={7} spacing={0} style={{ wordWrap: "break-word" }}>
+        <Typography variant="body2">{prettify(title, value)}</Typography>
+      </Grid>
+    </>
+  );
+};
 
 const prettify = (t, v) => {
   if (v === undefined || v === null) return null;
   if (v === 0) return "nei";
   if (v === 1) return "ja";
   if (typeof v === "number") return v;
+  if (typeof v === "object") return v;
   if (v.indexOf("http") === 0)
     return (
       <a href={v} target="_blank" rel="noopener noreferrer">
