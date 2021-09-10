@@ -148,7 +148,15 @@ const Kartleggingsenhet = ({ kle, ignoreNullValues }) => {
     .forEach((v) => {
       data[v.altkode || v.kode.replace("NN-NA-BS-", "")] = (
         <div>
-          {v.navnbeskrivelse}
+          {v.navnbeskrivelse
+            ? v.navnbeskrivelse
+            : v.overordnet
+            ? v.overordnet[0] &&
+              v.overordnet[0].tittel &&
+              v.overordnet[0].tittel.nb
+              ? v.overordnet[0].tittel.nb
+              : ""
+            : ""}
           <div style={{ fontSize: ".8rem" }}>{v.trinnbeskrivelse}</div>
         </div>
       );
