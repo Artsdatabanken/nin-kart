@@ -8,6 +8,33 @@ import LukkbartVindu from "../LukkbartVindu";
 import { getKoordinatStreng } from "../koordinater";
 
 class Punkt extends Component {
+  createNatvars = (nat) => {
+    return (nat.kartleggingsenhet || []).reduce((acc, e) => {
+      //      if (e.variabel || e.variabler) console.log({ e })
+      (e.variabler || []).forEach((v) => {
+        const prefix = v.kode[9];
+        acc[prefix] = acc[prefix] || [];
+        acc[prefix][v.kode] = v;
+        //console.warn(prefix, v.kode, v)
+      });
+      return acc;
+    }, {});
+  };
+
+  createNatt = (nat) => {
+    return (nat.kartleggingsenhet || []).reduce((acc, e) => {
+      //      if (e.variabel || e.variabler) console.log({ e })
+      acc[e.kode] = e;
+      return acc;
+    }, {});
+  };
+
+  createNaturtyper = (nat) => {
+    if (!nat) return nat;
+    const natt = this.createNatt(nat);
+    return Object.values(natt).sort((a, b) => (a.andel < b.andel ? 1 : -1));
+  };
+
   render() {
     const {
       aktivTab,
@@ -20,26 +47,15 @@ class Punkt extends Component {
     if (!lat) return null;
     const { fylke, kommune, sted, landskap } = punkt;
     const vektor = punkt.vektor || [];
-    var nat = vektor.find((e) => e && e.datasettkode === "NAT");
-    nat = (nat && nat.data) || {};
-    const natvars = (nat.kartleggingsenhet || []).reduce((acc, e) => {
-      //      if (e.variabel || e.variabler) console.log({ e })
-      (e.variabler || []).forEach((v) => {
-        const prefix = v.kode[9];
-        acc[prefix] = acc[prefix] || [];
-        acc[prefix][v.kode] = v;
-        //console.warn(prefix, v.kode, v)
+    let natArray = vektor.filter((e) => e && e.datasettkode === "NAT");
+    if (Array.isArray(natArray) && natArray.length > 0) {
+      natArray.forEach((element, i) => {
+        natArray[i] = (element && element.data) || {};
       });
-      return acc;
-    }, {});
-    const natt = (nat.kartleggingsenhet || []).reduce((acc, e) => {
-      //      if (e.variabel || e.variabler) console.log({ e })
-      acc[e.kode] = e;
-      return acc;
-    }, {});
-    const naturtyper = Object.values(natt).sort((a, b) =>
-      a.andel < b.andel ? 1 : -1
-    );
+    } else {
+      natArray = [(natArray && natArray.data) || {}];
+    }
+
     const verneområde = vektor.find((e) => e.datasettkode === "VV ");
     return (
       <>
@@ -60,19 +76,22 @@ class Punkt extends Component {
                 lng={lng}
               />
             )}
-
-            {nat && (
-              <>
-                {naturtyper.length > 0 && (
-                  <Naturtype
-                    typer={naturtyper}
-                    variabler={natvars}
-                    onNavigate={onNavigate}
-                    onNavigateToTab={onNavigateToTab}
-                  />
-                )}
-              </>
-            )}
+            {natArray &&
+              natArray.map((nat, i) => {
+                return (
+                  <div key={i}>
+                    {this.createNaturtyper(nat).length > 0 && (
+                      <Naturtype
+                        showHeader={i === 0}
+                        typer={this.createNaturtyper(nat)}
+                        variabler={this.createNatvars(nat)}
+                        onNavigate={onNavigate}
+                        onNavigateToTab={onNavigateToTab}
+                      />
+                    )}
+                  </div>
+                );
+              })}
             <Landskap landskap={landskap} />
             <Sted
               sted={sted}

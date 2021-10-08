@@ -202,6 +202,16 @@ class LeafletTangram extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+    if (
+      this.props.markerCoordinates &&
+      prevProps.markerCoordinates !== this.props.markerCoordinates
+    ) {
+      this.removeMarker();
+      this.marker = L.marker(
+        [this.props.markerCoordinates.lat, this.props.markerCoordinates.lng],
+        { icon: this.icon }
+      ).addTo(this.map);
+    }
     if (this.props.bounds !== prevProps.bounds) {
       const bounds = this.props.bounds;
       if (bounds) {

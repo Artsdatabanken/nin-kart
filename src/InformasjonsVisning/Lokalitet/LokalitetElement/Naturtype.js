@@ -39,17 +39,19 @@ const finnFellesOverordnet = (typer) => {
 };
 
 const Naturtype = (props) => {
-  const { typer, variabler, onNavigate, onNavigateToTab } = props;
+  const { showHeader, typer, variabler, onNavigate, onNavigateToTab } = props;
   if (!typer) return null;
   const forelder = finnFellesOverordnet(typer);
   if (!forelder) return null;
   return (
     <>
-      <Overskrift
-        tittel="Natursystem"
-        image="Natur_i_Norge/Natursystem/Typeinndeling"
-        onClickInfo={() => onNavigateToTab("kartlegging")}
-      />
+      {showHeader && (
+        <Overskrift
+          tittel="Natursystem"
+          image="Natur_i_Norge/Natursystem/Typeinndeling"
+          onClickInfo={() => onNavigateToTab("kartlegging")}
+        />
+      )}
       <NinCard
         heading="Naturtype"
         image="Natur_i_Norge/Natursystem/Typeinndeling"
