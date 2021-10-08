@@ -50,6 +50,7 @@ const Kartlegging = ({ punkt, onClose, onNavigateToTab }) => {
 
 const KartleggingObjekt = ({ na, heading, ignoreNullValues }) => {
   const [expanded, setExpanded] = React.useState();
+  // console.log('KartleggingObjekt', expanded, na);
   const checkExpanded = (id) => {
     // console.log('onChange', id, expanded);
     if (id === expanded) id = undefined;
@@ -93,7 +94,8 @@ const KartleggingObjekt = ({ na, heading, ignoreNullValues }) => {
           id={
             kle.kartleggingsenhet5kid ||
             kle.kartleggingsenhet20kid ||
-            kle.kartleggingsenhetntid
+            kle.kartleggingsenhetntid ||
+            kle.kartleggingsenhetkode
           }
           onChange={checkExpanded}
           summary={"Kartleggingsenhet " + kle.altkode}
