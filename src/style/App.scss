@@ -452,3 +452,7 @@ div {
 .MuiBottomNavigationAction-root.Mui-selected {
   color: $super-dark-nin !important;
 }
+
+.MuiListItem-container {
+  list-style-type: none;
+}
