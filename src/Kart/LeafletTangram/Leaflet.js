@@ -202,7 +202,10 @@ class LeafletTangram extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.markerCoordinates !== this.props.markerCoordinates) {
+    if (
+      this.props.markerCoordinates &&
+      prevProps.markerCoordinates !== this.props.markerCoordinates
+    ) {
       this.removeMarker();
       this.marker = L.marker(
         [this.props.markerCoordinates.lat, this.props.markerCoordinates.lng],
