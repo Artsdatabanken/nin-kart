@@ -5,7 +5,7 @@ import openStreetMap from "./openStreetMap";
 import googleRaster from "./google_raster";
 import ruter from "./ruter";
 
-export default {
+const drawObject = {
   polygon: polygon, // kalk
   gradient: gradientVisualisering, // bioklimatisk sone, arealbruksintensitet ++
   raster_gradient: gradientVisualisering, // bioklimatisk sone, arealbruksintensitet ++
@@ -15,5 +15,7 @@ export default {
   osm_mørk: openStreetMap,
   topo4: googleRaster,
   google_hybrid: googleRaster,
-  google_satellite: googleRaster
+  google_satellite: googleRaster,
 };
+
+export default drawObject;

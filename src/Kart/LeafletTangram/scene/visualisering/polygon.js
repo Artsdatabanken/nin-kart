@@ -2,16 +2,8 @@ import sysconfig from "../../../../Funksjoner/config";
 import hentFarge from "../../../../Funksjoner/palette/opplyst";
 
 function drawAll(drawArgs) {
-  const {
-    blendmode,
-    kode,
-    barn,
-    farge,
-    opplyst,
-    tegn,
-    visBarn,
-    visEtiketter,
-  } = drawArgs;
+  const { blendmode, kode, barn, farge, opplyst, tegn, visBarn, visEtiketter } =
+    drawArgs;
   const layer = {};
   if (visBarn) {
     barn.forEach((dac) => {
@@ -134,4 +126,6 @@ function lagSource({ url, zoom }, { bbox }) {
   return sysconfig.createTileSource(url, "MVT", zoom, bbox);
 }
 
-export default { drawAll, lagSource };
+const polygonObject = { drawAll, lagSource };
+
+export default polygonObject;

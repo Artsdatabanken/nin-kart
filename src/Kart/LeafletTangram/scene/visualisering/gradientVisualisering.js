@@ -65,4 +65,6 @@ function lagStyle(format, drawArgs) {
   };
 }
 
-export default { drawAll, lagSource, lagStyle };
+const gradientVisualiseringObject = { drawAll, lagSource, lagStyle };
+
+export default gradientVisualiseringObject;

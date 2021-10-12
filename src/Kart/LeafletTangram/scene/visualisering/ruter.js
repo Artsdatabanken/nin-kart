@@ -53,4 +53,6 @@ function lagSource({ url, zoom }, drawArgs) {
   return sysconfig.createTileSource(url, "Raster", zoom, drawArgs.bbox);
 }
 
-export default { drawAll, lagSource, lagStyle };
+const ruterObject = { drawAll, lagSource, lagStyle };
+
+export default ruterObject;
