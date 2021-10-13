@@ -36,7 +36,8 @@ Even tho we don't a of now support IE X)
 
   .closed_mobile_slide_up_area {
     position: absolute;
-    bottom: $bottom-tab-height;
+    // bottom: $bottom-tab-height;
+    bottom: 0;
     background: white;
     border-top: 1px solid $dark-nin;
     border-bottom: 0px;
@@ -116,7 +117,7 @@ Even tho we don't a of now support IE X)
     margin-top: -28px;
     padding-top: 28px;
     background: white;
-    height: calc(100vh - 164px);
+    height: calc(100vh - 116px);
     overflow-x: hidden;
     overflow-y: auto;
   }
