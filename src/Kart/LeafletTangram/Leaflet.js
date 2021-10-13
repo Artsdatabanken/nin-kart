@@ -156,6 +156,12 @@ class LeafletTangram extends React.Component {
     if (e.timeStamp < this.fullscreenFuncTimestamp) return;
     this.fullscreenFuncTimestamp = e.timeStamp;
     this.props.handleFullscreen(!this.props.showFullscreen);
+    if (this.props.showFullscreen) {
+      L.DomUtil.addClass(this.map._container, "leaflet-container-fullscreen");
+    } else {
+      L.DomUtil.removeClass(this.map._container, "leaflet-container-fullscreen");
+    }
+    this.map.invalidateSize();
   }
 
   geolocationFunc(e) {

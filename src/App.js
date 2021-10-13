@@ -182,6 +182,7 @@ class App extends React.Component {
 
                   {!(context.visSplash && path === "/") && (
                     <Kartlag
+                      aktivTab={aktivTab}
                       lokalitetdata={this.state.lokalitetdata}
                       show_current={this.state.showCurrent}
                       handleShowCurrent={this.handleShowCurrent}

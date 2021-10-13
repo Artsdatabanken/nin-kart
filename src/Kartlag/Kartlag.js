@@ -27,6 +27,7 @@ class Kartlag extends React.Component {
       onRemoveSelectedLayer,
       lokalitetdata,
       children,
+      aktivTab,
     } = this.props;
     let duplicate = false;
 
@@ -52,6 +53,8 @@ class Kartlag extends React.Component {
       tittel = tittel.substring(0, 40) + "...";
     }
 
+    let isPunkt = aktivTab === "punkt" ? "mobile_off" : "";
+
     return (
       <>
         {hidden && (
@@ -61,8 +64,8 @@ class Kartlag extends React.Component {
                 <button
                   className={
                     this.state.showKartlag
-                      ? "mobile_slide_up_area open_mobile_slide_up_area"
-                      : "mobile_slide_up_area closed_mobile_slide_up_area"
+                      ? "mobile_slide_up_area open_mobile_slide_up_area" + isPunkt
+                      : "mobile_slide_up_area closed_mobile_slide_up_area" + isPunkt
                   }
                   onClick={() => {
                     this.setState({ showKartlag: !this.state.showKartlag });
