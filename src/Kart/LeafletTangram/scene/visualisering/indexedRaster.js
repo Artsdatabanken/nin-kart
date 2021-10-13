@@ -66,4 +66,6 @@ function makePalette(opplyst, drawArgs) {
   return colorArray2Image(colors, drawArgs.blendmode, drawArgs.opacity);
 }
 
-export default { drawAll, lagSource, lagStyle };
+const indexedRasterObject = { drawAll, lagSource, lagStyle };
+
+export default indexedRasterObject;

@@ -10,9 +10,9 @@
 .leaflet-container {
   position: absolute;
   left: 0;
-  top: 0;
+  top: 48px;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 48px);
   z-index: 0;
 }
 

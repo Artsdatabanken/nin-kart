@@ -77,4 +77,6 @@ function lagSource({ url, zoom }, { bbox }) {
   );
 }
 
-export default { drawAll, lagSource };
+const openStreetMapObject = { drawAll, lagSource };
+
+export default openStreetMapObject;

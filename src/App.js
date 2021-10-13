@@ -94,7 +94,7 @@ class App extends React.Component {
                   }
                 >
                   <TopBar
-                    forside={context.visSplash}
+                    forside={context.visSplash && path === "/"}
                     searchFor={this.state.searchFor}
                     onSelectResult={(item) => {
                       let url = item.url;
@@ -180,41 +180,43 @@ class App extends React.Component {
                     />
                   )}
 
-                  <Kartlag
-                    lokalitetdata={this.state.lokalitetdata}
-                    show_current={this.state.showCurrent}
-                    handleShowCurrent={this.handleShowCurrent}
-                    hidden={true /*aktivTab === "kartlag" && true*/}
-                    aktiveLag={this.state.aktiveLag}
-                    onUpdateLayerProp={this.handleUpdateLayerProp}
-                    handleUpdateLokalitetLayerProp={
-                      this.handleUpdateLokalitetLayerProp
-                    }
-                    onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                    navigation_history={this.state.navigation_history}
-                    onFitBounds={this.handleFitBounds}
-                    history={history}
-                    currentKartlag={this.state.meta}
-                    activateLayerFromHistory={this.activateLayerFromHistory}
-                  >
-                    <Meny
-                      aktiveLag={this.state.aktiveLag}
+                  {!(context.visSplash && path === "/") && (
+                    <Kartlag
                       lokalitetdata={this.state.lokalitetdata}
-                      lokalitet={path}
-                      meta={this.state.meta}
-                      onNavigate={this.handleNavigate}
-                      aktivTab={aktivTab}
-                      onSetAktivTab={this.handleSetAktivTab}
-                      onUpdateMetaProp={this.handleUpdateMetaProp}
-                      onToggleLayer={() => {
-                        this.handleToggleLayer();
-                        if (!context.visAktiveLag) context.onToggleAktiveLag();
-                      }}
-                      opplyst={this.state.opplyst}
-                      onMouseEnter={this.handleMouseEnter}
-                      onMouseLeave={this.handleMouseLeave}
-                    />
-                  </Kartlag>
+                      show_current={this.state.showCurrent}
+                      handleShowCurrent={this.handleShowCurrent}
+                      hidden={true /*aktivTab === "kartlag" && true*/}
+                      aktiveLag={this.state.aktiveLag}
+                      onUpdateLayerProp={this.handleUpdateLayerProp}
+                      handleUpdateLokalitetLayerProp={
+                        this.handleUpdateLokalitetLayerProp
+                      }
+                      onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                      navigation_history={this.state.navigation_history}
+                      onFitBounds={this.handleFitBounds}
+                      history={history}
+                      currentKartlag={this.state.meta}
+                      activateLayerFromHistory={this.activateLayerFromHistory}
+                    >
+                      <Meny
+                        aktiveLag={this.state.aktiveLag}
+                        lokalitetdata={this.state.lokalitetdata}
+                        lokalitet={path}
+                        meta={this.state.meta}
+                        onNavigate={this.handleNavigate}
+                        aktivTab={aktivTab}
+                        onSetAktivTab={this.handleSetAktivTab}
+                        onUpdateMetaProp={this.handleUpdateMetaProp}
+                        onToggleLayer={() => {
+                          this.handleToggleLayer();
+                          if (!context.visAktiveLag) context.onToggleAktiveLag();
+                        }}
+                        opplyst={this.state.opplyst}
+                        onMouseEnter={this.handleMouseEnter}
+                        onMouseLeave={this.handleMouseLeave}
+                      />
+                    </Kartlag>
+                  )}
 
                   <Kart
                     markerCoordinates={this.state.markerCoordinates}

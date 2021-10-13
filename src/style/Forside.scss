@@ -133,6 +133,8 @@
 .frontpage_body {
   /* Footer height, is what makes footer sticky */
   min-height: calc(100% - 300px);
+  position: relative;
+  top: 48px;
 }
 
 .artsdatabanken_logo img,
