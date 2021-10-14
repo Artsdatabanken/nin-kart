@@ -94,6 +94,7 @@ const EkspandertInnhold = ({
                         className="slider_element"
                         value={kartlag.opacity || 1}
                         min={0.01}
+                        step={0.01}
                         max={1}
                         onChange={(e, value) =>
                           onUpdateLayerProp(kartlag.kode, "opacity", value)
