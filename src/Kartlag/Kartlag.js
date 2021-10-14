@@ -53,7 +53,7 @@ class Kartlag extends React.Component {
       tittel = tittel.substring(0, 40) + "...";
     }
 
-    let isPunkt = aktivTab === "punkt" ? "mobile_off" : "";
+    let isPunkt = aktivTab === "punkt" || aktivTab === "kartlegging" ? "mobile_off" : "";
 
     return (
       <>
