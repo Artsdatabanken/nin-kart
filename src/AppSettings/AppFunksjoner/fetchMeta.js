@@ -28,7 +28,8 @@ export default function fetchMeta(location, place) {
 }
 
 function filterUnreleased(kart) {
-  const visUpublisert = parseInt(localStorage.visUpublisert) || 0;
+  // const visUpublisert = parseInt(localStorage.visUpublisert) || 0;
+  const visUpublisert = parseInt(localStorage.visUpublisert) || 2;
   const kf = {};
   Object.keys(kart.format).forEach((fkey) => {
     const format = kart.format[fkey];
