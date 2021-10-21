@@ -35,6 +35,18 @@ class Punkt extends Component {
     return Object.values(natt).sort((a, b) => (a.andel < b.andel ? 1 : -1));
   };
 
+  createUlkm = (nat) => {
+    return (nat.kartleggingsenhet || []).reduce((acc, e) => {
+      let hasData = false;
+      (e.ulkm || []).forEach((ulkm) => {
+        hasData = true;
+        acc[ulkm.ulkmkode] = ulkm;
+      });
+      if (!hasData) return null;
+      return acc;
+    }, {});
+  }
+
   render() {
     const {
       aktivTab,
@@ -85,6 +97,7 @@ class Punkt extends Component {
                         showHeader={i === 0}
                         typer={this.createNaturtyper(nat)}
                         variabler={this.createNatvars(nat)}
+                        ulkm={this.createUlkm(nat)}
                         onNavigate={onNavigate}
                         onNavigateToTab={onNavigateToTab}
                       />

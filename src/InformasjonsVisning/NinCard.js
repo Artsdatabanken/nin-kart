@@ -9,7 +9,7 @@ import config from "../Funksjoner/config";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxHeight: "2000px",
+    // maxHeight: "2000px",
     margin: 8,
     _transitionDuration: "1s",
     transition: "max-height 0.5s ease-in",
