@@ -13,6 +13,7 @@ import {
 } from "@material-ui/core";
 import config from "../../../Funksjoner/config";
 import Beskrivelsessystem from "./Beskrivelsessystem";
+import Ulkm from "./Ulkm";
 import { getParentUrl } from "../../../AppSettings/AppFunksjoner/fetchMeta";
 
 const sameParent = (array, i) => {
@@ -39,7 +40,7 @@ const finnFellesOverordnet = (typer) => {
 };
 
 const Naturtype = (props) => {
-  const { showHeader, typer, variabler, onNavigate, onNavigateToTab } = props;
+  const { showHeader, typer, variabler, ulkm, onNavigate, onNavigateToTab } = props;
   if (!typer) return null;
   const forelder = finnFellesOverordnet(typer);
   if (!forelder) return null;
@@ -74,6 +75,12 @@ const Naturtype = (props) => {
             {variabler && (
               <Beskrivelsessystem
                 variabler={variabler}
+                onNavigate={onNavigate}
+              />
+            )}
+            {ulkm && (
+              <Ulkm
+                ulkm={ulkm}
                 onNavigate={onNavigate}
               />
             )}
