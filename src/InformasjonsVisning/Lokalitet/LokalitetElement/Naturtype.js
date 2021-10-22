@@ -63,7 +63,7 @@ const Naturtype = (props) => {
           <>
             {typer.map((type) => (
               <Item
-                key={type.kode}
+                key={`${type.kode}_${type.andel}`}
                 primary={språk(type.tittel)}
                 secondary={type.andel !== 100 && type.andel * 10 + " %"}
                 url={type.url}
