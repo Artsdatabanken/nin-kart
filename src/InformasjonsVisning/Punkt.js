@@ -24,7 +24,7 @@ class Punkt extends Component {
   createNatt = (nat) => {
     return (nat.kartleggingsenhet || []).reduce((acc, e) => {
       //      if (e.variabel || e.variabler) console.log({ e })
-      acc[e.kode] = e;
+      acc[`${e.kode}_${e.andel}`] = e;
       return acc;
     }, {});
   };
