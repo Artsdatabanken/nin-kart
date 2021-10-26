@@ -456,3 +456,43 @@ div {
 .MuiListItem-container {
   list-style-type: none;
 }
+
+.artsdatabanken-logo-wrapper {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: calc(50% + 110px);
+  padding-bottom: 10px;
+  transition: right .5s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  pointer-events: none;
+}
+
+.artsdatabanken-logo-image, .artsdatabanken-logo-image-mobile {
+  opacity: .8;
+  height: 30px;
+}
+.artsdatabanken-logo-image-mobile {
+  height: 32px;
+}
+
+.artsdatabanken-logo-image-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .artsdatabanken-logo-wrapper {
+    bottom: unset;
+    top: 56px;
+    right: -74px;
+  }
+  .artsdatabanken-logo-image {
+    display: none;
+  }
+  .artsdatabanken-logo-image-mobile {
+    display: unset;
+  }
+}
