@@ -300,12 +300,18 @@ class LeafletTangram extends React.Component {
   render() {
     this.fixMapButtons();
     return (
-      <div
-        style={{ zIndex: -100, cursor: "default" }}
-        ref={(ref) => {
-          this.mapEl = ref;
-        }}
-      />
+      <>
+        <div
+          style={{ zIndex: -100, cursor: "default" }}
+          ref={(ref) => {
+            this.mapEl = ref;
+          }}
+        />
+        <div className="artsdatabanken-logo-wrapper">
+          <img src="./logoer/adb_liggende.png" className="artsdatabanken-logo-image" alt="artsdatabanken-logo"/>
+          <img src="./logoer/adb32.png" className="artsdatabanken-logo-image-mobile" alt="artsdatabanken-logo"/>
+        </div>
+      </>
     );
   }
 }
