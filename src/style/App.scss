@@ -469,6 +469,7 @@ div {
   transition: right .5s;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
   pointer-events: none;
+  z-index: -100;
 }
 
 .artsdatabanken-logo-image, .artsdatabanken-logo-image-mobile {
