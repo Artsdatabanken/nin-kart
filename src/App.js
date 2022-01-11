@@ -356,6 +356,14 @@ class App extends React.Component {
   async downloadMeta(url) {
     const meta = await backend.hentKodeMeta(url);
     metaSjekk(meta, this);
+    if (meta.bbox && meta.kart && meta.kart.aktivtFormat && meta.kart.format[meta.kart.aktivtFormat].filnavn) {
+      const tilejson = await backend.hentKodeTilejson(url, meta.kart.format[meta.kart.aktivtFormat].filnavn);
+      if (tilejson && tilejson.bounds && tilejson.bounds.length > 3) {
+        // console.log('bbox før', meta.bbox);
+        meta.bbox = [[tilejson.bounds[1], tilejson.bounds[0]], [tilejson.bounds[3], tilejson.bounds[2]]];
+        // console.log('bbox etter', meta.bbox);
+      }
+    }
     return meta;
   }
 

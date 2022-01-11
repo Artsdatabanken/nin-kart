@@ -25,6 +25,10 @@ class Backend {
     return this.getPromise(config.metaUrl(path));
   }
 
+  static async hentKodeTilejson(path, filnavn) {
+    return this.getPromise(config.tilejsonUrl(path, filnavn));
+  }
+
   static async hentPunkt(lng, lat) {
     return this.getPromise(
       `https://punkt.${config.domain}/v1/punkt?lng=${lng}&lat=${lat}`
