@@ -357,7 +357,15 @@ class App extends React.Component {
     const meta = await backend.hentKodeMeta(url);
     metaSjekk(meta, this);
     if (meta.bbox && meta.kart && meta.kart.aktivtFormat && meta.kart.format[meta.kart.aktivtFormat].filnavn) {
-      const tilejson = await backend.hentKodeTilejson(url, meta.kart.format[meta.kart.aktivtFormat].filnavn);
+      let filnavn = meta.kart.format[meta.kart.aktivtFormat].filnavn;
+      let tilejsonUrl = meta.kart.format[meta.kart.aktivtFormat].url;
+      if (tilejsonUrl && tilejsonUrl.indexOf(url) < 0) {
+        // find correct path
+        do {
+          url = url.substr(0, url.lastIndexOf("/"));
+        } while (url.length > 0 && tilejsonUrl.indexOf(url) < 0)
+      }
+      const tilejson = await backend.hentKodeTilejson(url, filnavn);
       if (tilejson && tilejson.bounds && tilejson.bounds.length > 3) {
         // console.log('bbox før', meta.bbox);
         meta.bbox = [[tilejson.bounds[1], tilejson.bounds[0]], [tilejson.bounds[3], tilejson.bounds[2]]];
