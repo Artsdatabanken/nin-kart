@@ -63,6 +63,10 @@ class config {
     return `${config.dataUrl}${url}/metadata.json`;
   }
 
+  static tilejsonUrl(url, filnavn) {
+    return `${config.dataUrl}${url}/${filnavn}?tilejson`;
+  }
+
   static hack(kode) {
     // TODO: Erstatt denne med kode.split("-").pop()
     if (kode.indexOf("NN-NA-TI") === 0) return kode;
