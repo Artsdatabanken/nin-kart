@@ -80,11 +80,29 @@ class App extends React.Component {
     if (this.state.meta)
       erAktivert = !!this.state.aktiveLag[this.state.meta.kode];
     const path = this.props.location.pathname;
-    return (
-      <SettingsContext.Consumer>
-        {(context) => {
-          return (
-            <>
+    console.log("logging,", path);
+
+    if (path === "/") {
+      return (
+        <>
+          <TopBar
+            forside={true}
+            searchFor={this.state.searchFor}
+            onSelectResult={(item) => {
+              let url = item.url;
+              if (item.url[0] !== "/") url = "/" + item.url;
+              history.push(url);
+            }}
+            history={history}
+          />
+          <ForsideInformasjon />
+        </>
+      );
+    } else {
+      return (
+        <SettingsContext.Consumer>
+          {(context) => {
+            return (
               <>
                 <div
                   className={
@@ -104,9 +122,6 @@ class App extends React.Component {
                     history={history}
                   />
                 </div>
-
-                {context.visSplash && path === "/" && <ForsideInformasjon />}
-
                 <>
                   {false && (
                     <MobileNavigation
@@ -210,7 +225,8 @@ class App extends React.Component {
                         onUpdateMetaProp={this.handleUpdateMetaProp}
                         onToggleLayer={() => {
                           this.handleToggleLayer();
-                          if (!context.visAktiveLag) context.onToggleAktiveLag();
+                          if (!context.visAktiveLag)
+                            context.onToggleAktiveLag();
                         }}
                         opplyst={this.state.opplyst}
                         onMouseEnter={this.handleMouseEnter}
@@ -252,11 +268,11 @@ class App extends React.Component {
                   />
                 )}
               </>
-            </>
-          );
-        }}
-      </SettingsContext.Consumer>
-    );
+            );
+          }}
+        </SettingsContext.Consumer>
+      );
+    }
   }
 
   handleMarkerClick = (coords) => {
@@ -356,19 +372,27 @@ class App extends React.Component {
   async downloadMeta(url) {
     const meta = await backend.hentKodeMeta(url);
     metaSjekk(meta, this);
-    if (meta.bbox && meta.kart && meta.kart.aktivtFormat && meta.kart.format[meta.kart.aktivtFormat].filnavn) {
+    if (
+      meta.bbox &&
+      meta.kart &&
+      meta.kart.aktivtFormat &&
+      meta.kart.format[meta.kart.aktivtFormat].filnavn
+    ) {
       let filnavn = meta.kart.format[meta.kart.aktivtFormat].filnavn;
       let tilejsonUrl = meta.kart.format[meta.kart.aktivtFormat].url;
       if (tilejsonUrl && tilejsonUrl.indexOf(url) < 0) {
         // find correct path
         do {
           url = url.substr(0, url.lastIndexOf("/"));
-        } while (url.length > 0 && tilejsonUrl.indexOf(url) < 0)
+        } while (url.length > 0 && tilejsonUrl.indexOf(url) < 0);
       }
       const tilejson = await backend.hentKodeTilejson(url, filnavn);
       if (tilejson && tilejson.bounds && tilejson.bounds.length > 3) {
         // console.log('bbox før', meta.bbox);
-        meta.bbox = [[tilejson.bounds[1], tilejson.bounds[0]], [tilejson.bounds[3], tilejson.bounds[2]]];
+        meta.bbox = [
+          [tilejson.bounds[1], tilejson.bounds[0]],
+          [tilejson.bounds[3], tilejson.bounds[2]],
+        ];
         // console.log('bbox etter', meta.bbox);
       }
     }
