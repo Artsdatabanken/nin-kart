@@ -31,7 +31,6 @@ class SettingsContainer extends Component {
           width: this.state.width,
           onUpdateValue: this.handleUpdateValue,
           onToggleAktiveLag: this.handleToggleAktivelag,
-          onToggleHovedmeny: this.handleToggleHovedmeny,
           onToggleForside: this.handleToggleForside,
           onMapMove: this.handleMapMove,
           onSetWidth: this.setWidth,
@@ -50,10 +49,6 @@ class SettingsContainer extends Component {
 
   handleToggleAktivelag = () =>
     this.handleUpdateValue("visAktiveLag", !this.state.visAktiveLag);
-
-  handleToggleHovedmeny = () => {
-    this.handleUpdateValue("visHovedmeny", !this.state.visHovedmeny);
-  };
 
   setWidth = (width) => {
     this.setState({ width });
