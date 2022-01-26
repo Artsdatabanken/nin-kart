@@ -4,11 +4,12 @@ import AktivtKartlagElement from "./AktiveKartlag/AktivtKartlagElement";
 import HistorikkListeElement from "./Historikk/HistorikkListeElement";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@material-ui/icons";
 import språk from "../Funksjoner/språk";
+import Meny from "../Navigering/Meny";
 import { List, ListSubheader, Tooltip } from "@material-ui/core";
 
 class Kartlag extends React.Component {
   state = {
-    showKartlag: false,
+    showKartlag: false
   };
   render() {
     let koder = this.props.aktiveLag;
@@ -27,7 +28,7 @@ class Kartlag extends React.Component {
       onRemoveSelectedLayer,
       lokalitetdata,
       children,
-      aktivTab,
+      aktivTab
     } = this.props;
     let duplicate = false;
 
@@ -53,19 +54,22 @@ class Kartlag extends React.Component {
       tittel = tittel.substring(0, 40) + "...";
     }
 
-    let isPunkt = aktivTab === "punkt" || aktivTab === "kartlegging" ? "mobile_off" : "";
+    let isPunkt =
+      aktivTab === "punkt" || aktivTab === "kartlegging" ? "mobile_off" : "";
 
     return (
       <>
         {hidden && (
           <SettingsContext.Consumer>
-            {(context) => (
+            {context => (
               <>
                 <button
                   className={
                     this.state.showKartlag
-                      ? "mobile_slide_up_area open_mobile_slide_up_area" + isPunkt
-                      : "mobile_slide_up_area closed_mobile_slide_up_area" + isPunkt
+                      ? "mobile_slide_up_area open_mobile_slide_up_area" +
+                        isPunkt
+                      : "mobile_slide_up_area closed_mobile_slide_up_area" +
+                        isPunkt
                   }
                   onClick={() => {
                     this.setState({ showKartlag: !this.state.showKartlag });
@@ -90,7 +94,8 @@ class Kartlag extends React.Component {
                   }
                 >
                   <div className="page_topic_header" />
-
+                  <h2 className="kartlag_header">Kartlag</h2>
+                  <h3 className="kartlag_header">Navigering</h3>
                   <div
                     className={
                       this.state.showKartlag
@@ -98,7 +103,20 @@ class Kartlag extends React.Component {
                         : "kartlag_content_closed kartlag_content"
                     }
                   >
-                    {children}
+                    <Meny
+                      aktiveLag={this.props.aktiveLag}
+                      lokalitetdata={this.props.lokalitetdata}
+                      lokalitet={this.props.lokalitet}
+                      meta={this.props.meta}
+                      onNavigate={this.props.onNavigate}
+                      aktivTab={this.props.aktivTab}
+                      onSetAktivTab={this.props.onSetAktivTab}
+                      onUpdateMetaProp={this.props.onUpdateMetaProp}
+                      onToggleLayer={this.props.onToggleLayer}
+                      opplyst={this.props.opplyst}
+                      onMouseEnter={this.props.onMouseEnter}
+                      onMouseLeave={this.props.onMouseLeave}
+                    />
                     {false && (
                       <div className="sidebar_title_container sidebar_element">
                         <h2 className="sidebar_title">Kartlag</h2>
@@ -136,9 +154,9 @@ class Kartlag extends React.Component {
 
                     {lokalitetdata && (
                       <div className="sidebar_element">
-                        <h2>Nåværende Lokalitet</h2>
+                        <h3 className="kartlag_header">Nåværende lokalitet</h3>
                         <ul className="kartlag_list">
-                          {Object.keys(lokalitetdata).map((mapkode) => {
+                          {Object.keys(lokalitetdata).map(mapkode => {
                             // console.log("mapkode",mapkode);
                             const kartlag = lokalitetdata[mapkode];
                             //console.log(kartlag)
@@ -166,13 +184,11 @@ class Kartlag extends React.Component {
                         title="Disse kartlagene vises alltid i kartet"
                         aria-label="Disse kartlagene vises alltid i kartet"
                       >
-                        <ListSubheader style={{ margin: 16 }}>
-                          Mine kartlag
-                        </ListSubheader>
+                        <h3 className="kartlag_header">Mine kartlag</h3>
                       </Tooltip>
                       {false && <h2>Mine kartlag</h2>}
                       <ul className="kartlag_list">
-                        {keys.reverse().map((fkode) => {
+                        {keys.reverse().map(fkode => {
                           const kartlag = koder[fkode];
                           return (
                             <AktivtKartlagElement
@@ -203,9 +219,7 @@ class Kartlag extends React.Component {
                       )}
 
                       {Object.keys(navigation_history).length > 1 && (
-                        <ListSubheader style={{ margin: 16 }}>
-                          Historikk
-                        </ListSubheader>
+                        <h3 className="kartlag_header">Historikk</h3>
                       )}
 
                       {Object.keys(navigation_history)
