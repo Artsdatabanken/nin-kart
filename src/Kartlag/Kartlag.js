@@ -116,6 +116,7 @@ class Kartlag extends React.Component {
                       opplyst={this.props.opplyst}
                       onMouseEnter={this.props.onMouseEnter}
                       onMouseLeave={this.props.onMouseLeave}
+                      handleHovedMeny={this.props.handleHovedMeny}
                     />
                     {false && (
                       <div className="sidebar_title_container sidebar_element">

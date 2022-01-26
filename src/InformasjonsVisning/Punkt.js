@@ -8,10 +8,10 @@ import LukkbartVindu from "../LukkbartVindu";
 import { getKoordinatStreng } from "../koordinater";
 
 class Punkt extends Component {
-  createNatvars = (nat) => {
+  createNatvars = nat => {
     return (nat.kartleggingsenhet || []).reduce((acc, e) => {
       //      if (e.variabel || e.variabler) console.log({ e })
-      (e.variabler || []).forEach((v) => {
+      (e.variabler || []).forEach(v => {
         const prefix = v.kode[9];
         acc[prefix] = acc[prefix] || [];
         acc[prefix][v.kode] = v;
@@ -21,7 +21,7 @@ class Punkt extends Component {
     }, {});
   };
 
-  createNatt = (nat) => {
+  createNatt = nat => {
     return (nat.kartleggingsenhet || []).reduce((acc, e) => {
       //      if (e.variabel || e.variabler) console.log({ e })
       acc[`${e.kode}_${e.andel}`] = e;
@@ -29,23 +29,23 @@ class Punkt extends Component {
     }, {});
   };
 
-  createNaturtyper = (nat) => {
+  createNaturtyper = nat => {
     if (!nat) return nat;
     const natt = this.createNatt(nat);
     return Object.values(natt).sort((a, b) => (a.andel < b.andel ? 1 : -1));
   };
 
-  createUlkm = (nat) => {
+  createUlkm = nat => {
     return (nat.kartleggingsenhet || []).reduce((acc, e) => {
       let hasData = false;
-      (e.ulkm || []).forEach((ulkm) => {
+      (e.ulkm || []).forEach(ulkm => {
         hasData = true;
         acc[ulkm.ulkmkode] = ulkm;
       });
       if (!hasData) return null;
       return acc;
     }, {});
-  }
+  };
 
   render() {
     const {
@@ -53,13 +53,13 @@ class Punkt extends Component {
       onNavigate,
       punkt,
       onClose,
-      onNavigateToTab,
+      onNavigateToTab
     } = this.props;
     const { lat, lng } = punkt;
     if (!lat) return null;
     const { fylke, kommune, sted, landskap } = punkt;
     const vektor = punkt.vektor || [];
-    let natArray = vektor.filter((e) => e && e.datasettkode === "NAT");
+    let natArray = vektor.filter(e => e && e.datasettkode === "NAT");
     if (Array.isArray(natArray) && natArray.length > 0) {
       natArray.forEach((element, i) => {
         natArray[i] = (element && element.data) || {};
@@ -68,7 +68,7 @@ class Punkt extends Component {
       natArray = [(natArray && natArray.data) || {}];
     }
 
-    const verneområde = vektor.find((e) => e.datasettkode === "VV ");
+    const verneområde = vektor.find(e => e.datasettkode === "VV ");
     return (
       <>
         <div
@@ -77,7 +77,8 @@ class Punkt extends Component {
           <LukkbartVindu
             onBack={() => onNavigateToTab("kartlag")}
             onClose={onClose}
-            tittel={getKoordinatStreng([lat, lng])}
+            tittel={"Punktinformasjon"}
+            iconurl={"/marker/baseline_place_black_18dp.png"}
           >
             {false && (
               <Header
@@ -88,6 +89,8 @@ class Punkt extends Component {
                 lng={lng}
               />
             )}
+            <div className="coordinates">{getKoordinatStreng([lat, lng])}</div>
+
             {natArray &&
               natArray.map((nat, i) => {
                 return (
@@ -116,7 +119,7 @@ class Punkt extends Component {
               onNavigate={onNavigate}
             />
             {false &&
-              vektor.map((v) => {
+              vektor.map(v => {
                 if (v.datasettkode === "VV ")
                   return (
                     <Naturvernområde

@@ -24,52 +24,55 @@ const TopBar = ({ onSelectResult, searchFor, history, handleHovedMeny }) => {
   }, [query]);
   return (
     <div className={"top_bar"}>
-      <button
-        className="invisible_icon_button hamburger"
-        onKeyDown={(e) => {
-          if (e.keyCode === 13) {
-            handleHovedMeny();
-          }
-        }}
-        onClick={(e) => {
-          handleHovedMeny();
-        }}
-      >
-        <Hamburger />
-      </button>
-
-      <div
-        className="header_text"
-        onClick={() => {
-          history.push("/");
-        }}
-      >
-        <span style={{ fontWeight: 500 }}>NiN-kart | - 10:40</span>
-        {false && (
-          <img
-            src="/logoer/small_icon_two.png"
-            className="logo_image"
-            alt="artsdatabanken logo"
-          />
-        )}
-      </div>
-
-      <div className="search_elements_container">
-        <Searchbar
-          query={query}
-          setHits={setHits}
-          onQueryChange={setQuery}
-          hits={hits}
-        />
-
-        <ResultatListe
-          query={query}
-          searchResults={hits}
-          onSelect={(item) => {
-            setQuery(null);
-            onSelectResult(item);
+      {false && <div className="adb-topbar">Artsdtabanken</div>}
+      <div className="nin-topbar">
+        <button
+          className="invisible_icon_button hamburger"
+          onKeyDown={e => {
+            if (e.keyCode === 13) {
+              handleHovedMeny();
+            }
           }}
-        />
+          onClick={e => {
+            handleHovedMeny();
+          }}
+        >
+          <Hamburger />
+        </button>
+
+        <div
+          className="header_text"
+          onClick={() => {
+            history.push("/");
+          }}
+        >
+          <span style={{ fontWeight: 500 }}>NiN-kart 2.0</span>
+          {false && (
+            <img
+              src="/logoer/small_icon_two.png"
+              className="logo_image"
+              alt="artsdatabanken logo"
+            />
+          )}
+        </div>
+
+        <div className="search_elements_container">
+          <Searchbar
+            query={query}
+            setHits={setHits}
+            onQueryChange={setQuery}
+            hits={hits}
+          />
+
+          <ResultatListe
+            query={query}
+            searchResults={hits}
+            onSelect={item => {
+              setQuery(null);
+              onSelectResult(item);
+            }}
+          />
+        </div>
       </div>
     </div>
   );

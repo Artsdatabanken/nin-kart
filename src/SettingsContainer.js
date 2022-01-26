@@ -7,25 +7,21 @@ class SettingsContainer extends Component {
     visAktiveLag: false,
     visHovedmeny: false,
 
-    width: window.innerWidth,
+    width: window.innerWidth
   };
 
   componentDidMount() {
     this.setState({
       visKoder: localStorage.getItem("visKoder") === "true",
-      sorterPåKode: localStorage.getItem("sorterPåKode") === "true",
-      visSplash: localStorage.getItem("visSplash") !== "false",
+      sorterPåKode: localStorage.getItem("sorterPåKode") === "true"
     });
-    localStorage.setItem("visSplash", "false");
   }
 
   render() {
     return (
       <SettingsContext.Provider
         value={{
-          visHovedmeny: this.state.visHovedmeny,
           visKoder: this.state.visKoder,
-          visSplash: this.state.visSplash,
           sorterPåKode: this.state.sorterPåKode,
           visAktiveLag: this.state.visAktiveLag,
           width: this.state.width,
@@ -33,7 +29,7 @@ class SettingsContainer extends Component {
           onToggleAktiveLag: this.handleToggleAktivelag,
           onToggleForside: this.handleToggleForside,
           onMapMove: this.handleMapMove,
-          onSetWidth: this.setWidth,
+          onSetWidth: this.setWidth
         }}
       >
         {this.props.children}
@@ -50,7 +46,7 @@ class SettingsContainer extends Component {
   handleToggleAktivelag = () =>
     this.handleUpdateValue("visAktiveLag", !this.state.visAktiveLag);
 
-  setWidth = (width) => {
+  setWidth = width => {
     this.setState({ width });
   };
 }

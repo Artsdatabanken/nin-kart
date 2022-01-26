@@ -33,7 +33,7 @@ const Sted = ({ sted, lat, lng, fylke, kommune }) => {
 const Item = ({ primary, secondary, icon, url, onClick }) => (
   <ListItem onClick={() => onClick(url)}>
     <ListItemAvatar>
-      <Place style={{ color: "#777" }} />
+      <Place className="super-super-dark" />
     </ListItemAvatar>
     <ListItemText primary={primary} secondary={secondary}></ListItemText>
   </ListItem>

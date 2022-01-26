@@ -98,7 +98,6 @@ class App extends React.Component {
           <ForsideInformasjon />
         ) : (
           <>
-            <b>{path}</b>
             {false && (
               <MobileNavigation
                 onNavigateToTab={this.handleSetAktivTab}
@@ -199,6 +198,7 @@ class App extends React.Component {
                       aktivTab={aktivTab}
                       onSetAktivTab={this.handleSetAktivTab}
                       onUpdateMetaProp={this.handleUpdateMetaProp}
+                      handleHovedMeny={this.handleHovedMeny}
                       onToggleLayer={() => {
                         this.handleToggleLayer();
                         if (!context.visAktiveLag) context.onToggleAktiveLag();
