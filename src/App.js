@@ -68,6 +68,7 @@ class App extends React.Component {
       showCurrent: true,
       showFullscreen: false,
       spraak: "nb",
+      showHovedmeny: false,
     };
     exportableSpraak = this;
     exportableFullscreen = this;
@@ -86,6 +87,7 @@ class App extends React.Component {
       <>
         <TopBar
           searchFor={this.state.searchFor}
+          handleHovedMeny={this.handleHovedMeny}
           onSelectResult={(item) => {
             let url = item.url;
             if (item.url[0] !== "/") url = "/" + item.url;
@@ -243,6 +245,8 @@ class App extends React.Component {
             <HamburgerMeny
               spraak={this.state.spraak}
               handleSpraak={this.handleSpraak}
+              open={this.state.showHovedmeny}
+              handleHovedMeny={this.handleHovedMeny}
             />
           </>
         )}
@@ -283,6 +287,10 @@ class App extends React.Component {
   };
   handleSpraak = (spraak) => {
     this.setState({ spraak: spraak });
+  };
+
+  handleHovedMeny = () => {
+    this.setState({ showHovedmeny: !this.state.showHovedmeny });
   };
 
   handleFullscreen = (showFullscreen) => {

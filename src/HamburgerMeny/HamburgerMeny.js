@@ -29,6 +29,7 @@ import config from "../Funksjoner/config";
 class HamburgerMeny extends Component {
   render() {
     let spraak = this.props.spraak;
+    console.log("building. ", this.props.open);
     const handleSpraak = this.props.handleSpraak;
     return (
       <SettingsContext.Consumer>
@@ -36,9 +37,9 @@ class HamburgerMeny extends Component {
           <SwipeableDrawer
             className="hamburger_sidebar"
             anchor="left"
-            onClose={context.onToggleHovedmeny}
-            onOpen={context.onToggleHovedmeny}
-            open={context.visHovedmeny}
+            onClose={this.props.handleHovedMeny}
+            onOpen={this.props.handleHovedMeny}
+            open={this.props.open}
           >
             <List className="hamburger_sidebar">
               <ListItem>
@@ -53,7 +54,7 @@ class HamburgerMeny extends Component {
                   }
                 />
                 <ListItemSecondaryAction>
-                  <IconButton onClick={context.onToggleHovedmeny}>
+                  <IconButton onClick={this.props.handleHovedMeny}>
                     <NavigationChevronLeftDouble />
                   </IconButton>
                 </ListItemSecondaryAction>
@@ -79,7 +80,7 @@ class HamburgerMeny extends Component {
                   primary="Last ned data"
                   onClick={() => {
                     this.handleWindowOpen("https://data.artsdatabanken.no/");
-                    context.onToggleHovedmeny();
+                    this.props.handleHovedMeny();
                   }}
                 />
                 <Menyelement
@@ -87,7 +88,7 @@ class HamburgerMeny extends Component {
                     this.handleWindowOpen(
                       "https://github.com/Artsdatabanken/nin-kart-frontend/wiki/%C3%98nsker-du-%C3%A5-bidra-med-data%3F"
                     );
-                    context.onToggleHovedmeny();
+                    this.props.handleHovedMeny();
                   }}
                   icon={<CloudUpload />}
                   primary="Levere data"
@@ -96,7 +97,7 @@ class HamburgerMeny extends Component {
                 <Menyelement
                   onClick={() => {
                     this.handleClick("/Datakilde/");
-                    context.onToggleHovedmeny();
+                    this.props.handleHovedMeny();
                   }}
                   icon={<AssignmentInd />}
                   primary="Datakilder"
@@ -106,7 +107,7 @@ class HamburgerMeny extends Component {
                     this.handleWindowOpen(
                       "https://github.com/Artsdatabanken/nin-kart-frontend"
                     );
-                    context.onToggleHovedmeny();
+                    this.props.handleHovedMeny();
                   }}
                   icon={<GitHub />}
                   primary="Kildekode"
@@ -117,7 +118,7 @@ class HamburgerMeny extends Component {
                   primary="Hjelp"
                   onClick={() => {
                     this.handleClick("?hjelp");
-                    context.onToggleHovedmeny();
+                    this.props.handleHovedMeny();
                   }}
                 />
                 <button
@@ -126,7 +127,7 @@ class HamburgerMeny extends Component {
                     this.handleWindowOpen(
                       "https://github.com/Artsdatabanken/nin-kart-frontend/issues"
                     );
-                    context.onToggleHovedmeny();
+                    this.props.handleHovedMeny();
                   }}
                 >
                   <Comment /> <span>Tilbakemeldinger</span> <OpenInNew />
@@ -135,7 +136,7 @@ class HamburgerMeny extends Component {
                 <Menyelement
                   onClick={() => {
                     this.handleWindowOpen("https://artsdatabanken.no");
-                    context.onToggleHovedmeny();
+                    this.props.handleHovedMeny();
                   }}
                   icon={
                     <img
