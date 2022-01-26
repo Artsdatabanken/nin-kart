@@ -11,18 +11,13 @@ const Utforsk = ({ parent, context }) => {
   if (!parent.history) {
     the_props = parent.props;
   }
-  function onToggleHovedmeny() {
-    if (context) {
-      context.onToggleHovedmeny();
-    }
-  }
 
   return (
     <>
       <Menyelement
         onClick={(e) => {
           the_props.history.push("/Natur_i_Norge/Natursystem");
-          onToggleHovedmeny();
+          the_props.handleHovedMeny();
         }}
         icon={
           <img
@@ -37,7 +32,7 @@ const Utforsk = ({ parent, context }) => {
       <Menyelement
         onClick={(e) => {
           the_props.history.push("/Natur_i_Norge/Landskap");
-          onToggleHovedmeny();
+          the_props.handleHovedMeny();
         }}
         icon={<Landscape />}
         primary="Landskap"
@@ -45,8 +40,8 @@ const Utforsk = ({ parent, context }) => {
 
       <Menyelement
         onClick={(e) => {
-          the_props.history.push("/Administrativ_grense/");
-          onToggleHovedmeny();
+          the_props.history.push("/Administrativ_grense");
+          the_props.handleHovedMeny();
         }}
         icon={
           <img
@@ -61,7 +56,7 @@ const Utforsk = ({ parent, context }) => {
       <Menyelement
         onClick={(e) => {
           the_props.history.push("/Naturvernområde/");
-          onToggleHovedmeny();
+          the_props.handleHovedMeny();
         }}
         icon={<Naturvern />}
         primary="Naturvernområder"
@@ -71,7 +66,7 @@ const Utforsk = ({ parent, context }) => {
         <Menyelement
           onClick={(e) => {
             the_props.history.push("/Biota/");
-            onToggleHovedmeny();
+            the_props.handleHovedMeny();
           }}
           icon={<Pets />}
           primary="Arter"

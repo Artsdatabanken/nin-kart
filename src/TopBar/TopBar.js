@@ -2,11 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import ResultatListe from "./ResultatListe";
 import Searchbar from "./Searchbar/Searchbar";
 import "./../style/TopBar.scss";
-import { SettingsContext } from "../SettingsContext";
 import Hamburger from "@material-ui/icons/Menu";
 import backend from "../Funksjoner/backend";
 
-const TopBar = ({ onSelectResult, searchFor, forside, history }) => {
+const TopBar = ({ onSelectResult, searchFor, history, handleHovedMeny }) => {
   const [hits, setHits] = useState([]);
   const [query, setQuery] = useState(null);
   const latestQuery = useRef();
@@ -24,58 +23,55 @@ const TopBar = ({ onSelectResult, searchFor, forside, history }) => {
     fetchData();
   }, [query]);
   return (
-    <SettingsContext.Consumer>
-      {(context) => (
-        <div className={!forside ? "top_bar" : "top_bar forside_topbar"}>
-          <button
-            className="invisible_icon_button hamburger"
-            onKeyDown={(e) => {
-              if (e.keyCode === 13) {
-                context.onToggleHovedmeny();
-              }
-            }}
-            onClick={context.onToggleHovedmeny}
-          >
-            <Hamburger />
-          </button>
-          {!forside && (
-            <div
-              className="header_text"
-              onClick={() => {
-                history.push("/");
-              }}
-            >
-              <span style={{ fontWeight: 500 }}>NiN-kart</span>
-              {false && (
-                <img
-                  src="/logoer/small_icon_two.png"
-                  className="logo_image"
-                  alt="artsdatabanken logo"
-                />
-              )}
-            </div>
-          )}
+    <div className={"top_bar"}>
+      <button
+        className="invisible_icon_button hamburger"
+        onKeyDown={(e) => {
+          if (e.keyCode === 13) {
+            handleHovedMeny();
+          }
+        }}
+        onClick={(e) => {
+          handleHovedMeny();
+        }}
+      >
+        <Hamburger />
+      </button>
 
-          <div className="search_elements_container">
-            <Searchbar
-              query={query}
-              setHits={setHits}
-              onQueryChange={setQuery}
-              hits={hits}
-            />
+      <div
+        className="header_text"
+        onClick={() => {
+          history.push("/");
+        }}
+      >
+        <span style={{ fontWeight: 500 }}>NiN-kart | - 10:40</span>
+        {false && (
+          <img
+            src="/logoer/small_icon_two.png"
+            className="logo_image"
+            alt="artsdatabanken logo"
+          />
+        )}
+      </div>
 
-            <ResultatListe
-              query={query}
-              searchResults={hits}
-              onSelect={(item) => {
-                setQuery(null);
-                onSelectResult(item);
-              }}
-            />
-          </div>
-        </div>
-      )}
-    </SettingsContext.Consumer>
+      <div className="search_elements_container">
+        <Searchbar
+          query={query}
+          setHits={setHits}
+          onQueryChange={setQuery}
+          hits={hits}
+        />
+
+        <ResultatListe
+          query={query}
+          searchResults={hits}
+          onSelect={(item) => {
+            setQuery(null);
+            onSelectResult(item);
+          }}
+        />
+      </div>
+    </div>
   );
 };
 
