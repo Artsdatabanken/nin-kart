@@ -6,7 +6,7 @@ import { SettingsContext } from "../SettingsContext";
 import Hamburger from "@material-ui/icons/Menu";
 import backend from "../Funksjoner/backend";
 
-const TopBar = ({ onSelectResult, searchFor, forside, history }) => {
+const TopBar = ({ onSelectResult, searchFor, history }) => {
   const [hits, setHits] = useState([]);
   const [query, setQuery] = useState(null);
   const latestQuery = useRef();
@@ -26,7 +26,7 @@ const TopBar = ({ onSelectResult, searchFor, forside, history }) => {
   return (
     <SettingsContext.Consumer>
       {(context) => (
-        <div className={!forside ? "top_bar" : "top_bar forside_topbar"}>
+        <div className={"top_bar"}>
           <button
             className="invisible_icon_button hamburger"
             onKeyDown={(e) => {
@@ -38,23 +38,22 @@ const TopBar = ({ onSelectResult, searchFor, forside, history }) => {
           >
             <Hamburger />
           </button>
-          {!forside && (
-            <div
-              className="header_text"
-              onClick={() => {
-                history.push("/");
-              }}
-            >
-              <span style={{ fontWeight: 500 }}>NiN-kart</span>
-              {false && (
-                <img
-                  src="/logoer/small_icon_two.png"
-                  className="logo_image"
-                  alt="artsdatabanken logo"
-                />
-              )}
-            </div>
-          )}
+
+          <div
+            className="header_text"
+            onClick={() => {
+              history.push("/");
+            }}
+          >
+            <span style={{ fontWeight: 500 }}>NiN-kart</span>
+            {false && (
+              <img
+                src="/logoer/small_icon_two.png"
+                className="logo_image"
+                alt="artsdatabanken logo"
+              />
+            )}
+          </div>
 
           <div className="search_elements_container">
             <Searchbar
