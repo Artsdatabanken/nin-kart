@@ -55,29 +55,6 @@ h3 {
   font-family: "Roboto", "sans-serif";
 }
 
-/*
-h1,
-h2,
-h3 {
-  color: $super-dark-nin;
-  font-weight: 400;
-}
-
-h4,
-h5 {
-  font-size: 12pt;
-  font-weight: 400;
-  margin: 0px;
-  padding: 0px;
-  color: $adb_dark_grey;
-}
-
-h5 {
-  font-size: 11pt;
-  color: rgba(0, 0, 0, 0.87);
-}
-*/
-
 strong,
 b {
   font-weight: 500;
@@ -532,4 +509,31 @@ div {
   .artsdatabanken-logo-image-mobile {
     display: unset;
   }
+}
+
+/* Sections */
+
+.section {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  margin-top: -1px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.section h3,
+.section h2,
+.section h1 {
+  margin: 0px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.section h2 svg {
+  height: 22px;
+}
+
+.section h3 svg {
+  height: 15px;
 }

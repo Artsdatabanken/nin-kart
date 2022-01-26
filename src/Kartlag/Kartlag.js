@@ -2,7 +2,13 @@ import React from "react";
 import { SettingsContext } from "../SettingsContext";
 import AktivtKartlagElement from "./AktiveKartlag/AktivtKartlagElement";
 import HistorikkListeElement from "./Historikk/HistorikkListeElement";
-import { KeyboardArrowDown, KeyboardArrowUp } from "@material-ui/icons";
+import {
+  KeyboardArrowDown,
+  KeyboardArrowUp,
+  Layers,
+  Favorite,
+  Navigation
+} from "@material-ui/icons";
 import språk from "../Funksjoner/språk";
 import Meny from "../Navigering/Meny";
 import { List, ListSubheader, Tooltip } from "@material-ui/core";
@@ -94,8 +100,13 @@ class Kartlag extends React.Component {
                   }
                 >
                   <div className="page_topic_header" />
-                  <h2 className="kartlag_header">Kartlag</h2>
-                  <h3 className="kartlag_header">Navigering</h3>
+                  <div class="section">
+                    <h2 className="kartlag_header">
+                      <Layers />
+                      Kartlag
+                    </h2>
+                  </div>
+
                   <div
                     className={
                       this.state.showKartlag
@@ -103,29 +114,37 @@ class Kartlag extends React.Component {
                         : "kartlag_content_closed kartlag_content"
                     }
                   >
-                    <Meny
-                      aktiveLag={this.props.aktiveLag}
-                      lokalitetdata={this.props.lokalitetdata}
-                      lokalitet={this.props.lokalitet}
-                      meta={this.props.meta}
-                      onNavigate={this.props.onNavigate}
-                      aktivTab={this.props.aktivTab}
-                      onSetAktivTab={this.props.onSetAktivTab}
-                      onUpdateMetaProp={this.props.onUpdateMetaProp}
-                      onToggleLayer={this.props.onToggleLayer}
-                      opplyst={this.props.opplyst}
-                      onMouseEnter={this.props.onMouseEnter}
-                      onMouseLeave={this.props.onMouseLeave}
-                      handleHovedMeny={this.props.handleHovedMeny}
-                    />
+                    <div class="section">
+                      <h3 className="kartlag_header">
+                        <Navigation />
+                        Navigering
+                      </h3>
+                      <Meny
+                        aktiveLag={this.props.aktiveLag}
+                        lokalitetdata={this.props.lokalitetdata}
+                        lokalitet={this.props.lokalitet}
+                        meta={this.props.meta}
+                        onNavigate={this.props.onNavigate}
+                        aktivTab={this.props.aktivTab}
+                        onSetAktivTab={this.props.onSetAktivTab}
+                        onUpdateMetaProp={this.props.onUpdateMetaProp}
+                        onToggleLayer={this.props.onToggleLayer}
+                        opplyst={this.props.opplyst}
+                        onMouseEnter={this.props.onMouseEnter}
+                        onMouseLeave={this.props.onMouseLeave}
+                        handleHovedMeny={this.props.handleHovedMeny}
+                      />
+                    </div>
                     {false && (
-                      <div className="sidebar_title_container sidebar_element">
-                        <h2 className="sidebar_title">Kartlag</h2>
+                      <div class="section">
+                        <div className="sidebar_title_container sidebar_element">
+                          <h2 className="sidebar_title">Kartlag</h2>
+                        </div>
                       </div>
                     )}
 
                     {false && currentKartlag && !duplicate && (
-                      <>
+                      <div class="section">
                         <div className="sidebar_element">
                           {false && <h2>Nåværende kartlag</h2>}
                           <ul className="kartlag_list">
@@ -150,11 +169,11 @@ class Kartlag extends React.Component {
                             />
                           </ul>
                         </div>
-                      </>
+                      </div>
                     )}
 
                     {lokalitetdata && (
-                      <div className="sidebar_element">
+                      <div className="section">
                         <h3 className="kartlag_header">Nåværende lokalitet</h3>
                         <ul className="kartlag_list">
                           {Object.keys(lokalitetdata).map(mapkode => {
@@ -180,35 +199,39 @@ class Kartlag extends React.Component {
                       </div>
                     )}
 
-                    <List>
+                    <div class="section">
                       <Tooltip
                         title="Disse kartlagene vises alltid i kartet"
                         aria-label="Disse kartlagene vises alltid i kartet"
                       >
-                        <h3 className="kartlag_header">Mine kartlag</h3>
+                        <h3 className="kartlag_header">
+                          <Favorite />
+                          Mine kartlag
+                        </h3>
                       </Tooltip>
-                      {false && <h2>Mine kartlag</h2>}
-                      <ul className="kartlag_list">
-                        {keys.reverse().map(fkode => {
-                          const kartlag = koder[fkode];
-                          return (
-                            <AktivtKartlagElement
-                              kartlag={kartlag}
-                              key={fkode}
-                              {...this.props}
-                              visKoder={context.visKoder}
-                              onFitBounds={onFitBounds}
-                              onUpdateLayerProp={onUpdateLayerProp}
-                              meta={meta}
-                            />
-                          );
-                        })}
-                      </ul>
+                      <List>
+                        <ul className="kartlag_list">
+                          {keys.reverse().map(fkode => {
+                            const kartlag = koder[fkode];
+                            return (
+                              <AktivtKartlagElement
+                                kartlag={kartlag}
+                                key={fkode}
+                                {...this.props}
+                                visKoder={context.visKoder}
+                                onFitBounds={onFitBounds}
+                                onUpdateLayerProp={onUpdateLayerProp}
+                                meta={meta}
+                              />
+                            );
+                          })}
+                        </ul>
+                      </List>
+                    </div>
 
-                      {false && <ListSubheader>Bakgrunnskart</ListSubheader>}
-                      {false && <h2>Bakgrunnskart</h2>}
-
-                      {false && (
+                    {false && (
+                      <div class="section">
+                        <h2>Bakgrunnskart</h2>
                         <ul className="kartlag_list">
                           <AktivtKartlagElement
                             kartlag={koder["bakgrunnskart"]}
@@ -217,38 +240,41 @@ class Kartlag extends React.Component {
                             visKoder={context.visKoder}
                           />
                         </ul>
-                      )}
+                      </div>
+                    )}
 
-                      {Object.keys(navigation_history).length > 1 && (
+                    {Object.keys(navigation_history).length > 1 && (
+                      <div class="section">
                         <h3 className="kartlag_header">Historikk</h3>
-                      )}
-
-                      {Object.keys(navigation_history)
-                        .reverse()
-                        .map((item, index) => {
-                          const node = navigation_history[item];
-                          if (
-                            currentKartlag &&
-                            (node === currentKartlag ||
-                              node.meta.kode === currentKartlag.kode)
-                          )
-                            return "";
-                          if (node.meta.url) {
-                            return (
-                              <HistorikkListeElement
-                                meta={node.meta}
-                                activateLayerFromHistory={
-                                  activateLayerFromHistory
-                                }
-                                node={node}
-                                history={history}
-                                key={index + node.meta.kode}
-                              />
-                            );
-                          }
-                          return null;
-                        })}
-                    </List>
+                        <List>
+                          {Object.keys(navigation_history)
+                            .reverse()
+                            .map((item, index) => {
+                              const node = navigation_history[item];
+                              if (
+                                currentKartlag &&
+                                (node === currentKartlag ||
+                                  node.meta.kode === currentKartlag.kode)
+                              )
+                                return "";
+                              if (node.meta.url) {
+                                return (
+                                  <HistorikkListeElement
+                                    meta={node.meta}
+                                    activateLayerFromHistory={
+                                      activateLayerFromHistory
+                                    }
+                                    node={node}
+                                    history={history}
+                                    key={index + node.meta.kode}
+                                  />
+                                );
+                              }
+                              return null;
+                            })}
+                        </List>
+                      </div>
+                    )}
                   </div>
                 </div>
               </>

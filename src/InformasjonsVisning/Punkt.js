@@ -6,6 +6,7 @@ import Naturtype from "./Lokalitet/LokalitetElement/Naturtype";
 import Header from "./Header";
 import LukkbartVindu from "../LukkbartVindu";
 import { getKoordinatStreng } from "../koordinater";
+import { MyLocation } from "@material-ui/icons";
 
 class Punkt extends Component {
   createNatvars = nat => {
@@ -89,8 +90,15 @@ class Punkt extends Component {
                 lng={lng}
               />
             )}
-            <div className="coordinates">{getKoordinatStreng([lat, lng])}</div>
-
+            <div class="section">
+              <div className="coordinates">
+                <h3>
+                  <MyLocation />
+                  Koordinater
+                </h3>
+                {getKoordinatStreng([lat, lng])}
+              </div>
+            </div>
             {natArray &&
               natArray.map((nat, i) => {
                 return (

@@ -12,10 +12,6 @@ Even tho we don't a of now support IE X)
   display: none;
 }
 
-.kartlag_header {
-  border-top: 1px solid grey;
-}
-
 @media only screen and (max-width: 768px) {
   /* Mobile slide-up area */
 
@@ -97,15 +93,6 @@ Even tho we don't a of now support IE X)
 }
 
 /* Re-add padding where wanted */
-.kartlag h3,
-.kartlag h2,
-.kartlag h1,
-.kartlag_header {
-  margin: 0px;
-  padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
 
 .kartlag div {
   box-sizing: border-box;

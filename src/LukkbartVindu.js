@@ -17,10 +17,12 @@ const LukkbartVindu = ({ tittel, onClose, onBack, children, iconurl }) => {
           <ArrowBack></ArrowBack>
         </IconButton>
       )}
-      <h2 className="lukkbartvindu_header">
-        <img src={iconurl} />
-        {tittel}
-      </h2>
+      <div className="section">
+        <h2 className="lukkbartvindu_header">
+          <img src={iconurl} />
+          {tittel}
+        </h2>
+      </div>
 
       {true && children}
     </div>
