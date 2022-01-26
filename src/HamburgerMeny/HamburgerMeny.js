@@ -8,7 +8,7 @@ import {
   ListItem,
   ListItemText,
   SwipeableDrawer,
-  ListItemSecondaryAction,
+  ListItemSecondaryAction
 } from "@material-ui/core";
 import {
   OpenInNew,
@@ -16,7 +16,7 @@ import {
   CloudDownload,
   Comment,
   HelpOutline,
-  AssignmentInd,
+  AssignmentInd
 } from "@material-ui/icons";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
@@ -32,7 +32,7 @@ class HamburgerMeny extends Component {
     const handleSpraak = this.props.handleSpraak;
     return (
       <SettingsContext.Consumer>
-        {(context) => (
+        {context => (
           <SwipeableDrawer
             className="hamburger_sidebar"
             anchor="left"
@@ -61,7 +61,12 @@ class HamburgerMeny extends Component {
               <Divider />
 
               <div>
-                <Utforsk parent={this} props={this} context={context} />
+                <Utforsk
+                  parent={this}
+                  props={this}
+                  context={context}
+                  handleHovedMeny={this.props.handleHovedMeny}
+                />
 
                 <Divider />
                 <Innstillinger
@@ -155,10 +160,10 @@ class HamburgerMeny extends Component {
     );
   }
 
-  handleClick = (what) => this.props.history.push(what);
-  handleWindowOpen = (what) => window.open(what);
+  handleClick = what => this.props.history.push(what);
+  handleWindowOpen = what => window.open(what);
   handleClickMap = () => this.handleWindowOpen("/");
-  handleNavigate = (url) => this.props.history.push(url);
+  handleNavigate = url => this.props.history.push(url);
 }
 
 export default withRouter(HamburgerMeny);

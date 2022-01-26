@@ -3,7 +3,7 @@ import React from "react";
 import { Pets, Landscape } from "@material-ui/icons";
 import Naturvern from "../Naturvern";
 
-const Utforsk = ({ parent, context }) => {
+const Utforsk = ({ parent, context, handleHovedMeny }) => {
   /*
   Ridiculous check here to avoid props collapse when called from different places
   */
@@ -15,9 +15,9 @@ const Utforsk = ({ parent, context }) => {
   return (
     <>
       <Menyelement
-        onClick={(e) => {
+        onClick={e => {
           the_props.history.push("/Natur_i_Norge/Natursystem");
-          the_props.handleHovedMeny();
+          handleHovedMeny();
         }}
         icon={
           <img
@@ -30,18 +30,18 @@ const Utforsk = ({ parent, context }) => {
       />
 
       <Menyelement
-        onClick={(e) => {
+        onClick={e => {
           the_props.history.push("/Natur_i_Norge/Landskap");
-          the_props.handleHovedMeny();
+          handleHovedMeny();
         }}
         icon={<Landscape />}
         primary="Landskap"
       />
 
       <Menyelement
-        onClick={(e) => {
+        onClick={e => {
           the_props.history.push("/Administrativ_grense");
-          the_props.handleHovedMeny();
+          handleHovedMeny();
         }}
         icon={
           <img
@@ -54,9 +54,9 @@ const Utforsk = ({ parent, context }) => {
       />
 
       <Menyelement
-        onClick={(e) => {
+        onClick={e => {
           the_props.history.push("/Naturvernområde/");
-          the_props.handleHovedMeny();
+          handleHovedMeny();
         }}
         icon={<Naturvern />}
         primary="Naturvernområder"
@@ -64,9 +64,9 @@ const Utforsk = ({ parent, context }) => {
 
       {false && (
         <Menyelement
-          onClick={(e) => {
+          onClick={e => {
             the_props.history.push("/Biota/");
-            the_props.handleHovedMeny();
+            handleHovedMeny();
           }}
           icon={<Pets />}
           primary="Arter"
