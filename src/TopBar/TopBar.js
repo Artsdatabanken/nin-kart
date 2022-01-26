@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import ResultatListe from "./ResultatListe";
 import Searchbar from "./Searchbar/Searchbar";
 import "./../style/TopBar.scss";
-import { SettingsContext } from "../SettingsContext";
 import Hamburger from "@material-ui/icons/Menu";
 import backend from "../Funksjoner/backend";
 
@@ -45,7 +44,7 @@ const TopBar = ({ onSelectResult, searchFor, history, handleHovedMeny }) => {
           history.push("/");
         }}
       >
-        <span style={{ fontWeight: 500 }}>NiN-kart</span>
+        <span style={{ fontWeight: 500 }}>NiN-kart | - 10:40</span>
         {false && (
           <img
             src="/logoer/small_icon_two.png"

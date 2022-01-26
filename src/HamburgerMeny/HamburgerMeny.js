@@ -29,7 +29,6 @@ import config from "../Funksjoner/config";
 class HamburgerMeny extends Component {
   render() {
     let spraak = this.props.spraak;
-    console.log("building. ", this.props.open);
     const handleSpraak = this.props.handleSpraak;
     return (
       <SettingsContext.Consumer>
