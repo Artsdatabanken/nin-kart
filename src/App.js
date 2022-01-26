@@ -62,6 +62,7 @@ class App extends React.Component {
     };
     this.state = {
       forvaltningsportalen: "false",
+      closeCookies: "false",
       aktiveLag: aktive,
       forvaltningsLag: aktive,
       opplystKode: "",
@@ -310,6 +311,23 @@ class App extends React.Component {
                     spraak={this.state.spraak}
                     handleSpraak={this.handleSpraak}
                   />
+
+                  {this.state.closeCookies && (
+                    <div className="frontpage_feature_block cookies">
+                      Denne siden benytter lokal lagring av preferansevalg.
+                      <br />
+                      <a href="https://artsdatabanken.no/informasjonskapsler">
+                        Les mer{" "}
+                      </a>
+                      <button
+                        onClick={e => {
+                          this.handleCookies();
+                        }}
+                      >
+                        Lukk
+                      </button>
+                    </div>
+                  )}
                 </>
               )}
             </>
@@ -351,6 +369,10 @@ class App extends React.Component {
 
   handleLokalitetUpdate = data => {
     this.setState({ lokalitetdata: data });
+  };
+
+  handleCookies = () => {
+    this.setState({ closeCookies: !this.state.closeCookies });
   };
 
   handleFullscreen = showFullscreen => {
