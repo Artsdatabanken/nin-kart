@@ -48,6 +48,14 @@ const ForsideInformasjon = props => {
           </div>
         </div>
 
+        <div className="frontpage_feature_block cookies">
+          <p>
+            Denne siden benytter lokal lagring av preferansevalg.
+            <br />
+            <a href="https://artsdatabanken.no/informasjonskapsler">Les mer </a>
+          </p>
+        </div>
+
         <div className="frontpage_link_items">
           <h2>Utforsk NiN-kart via ikonene nedenfor</h2>
           <Utforsk parent={props} />
@@ -65,6 +73,7 @@ const ForsideInformasjon = props => {
             />
           </a>
         </div>
+
         <Kilder />
       </div>
     </div>
