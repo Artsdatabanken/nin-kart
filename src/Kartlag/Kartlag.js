@@ -7,7 +7,8 @@ import {
   KeyboardArrowUp,
   Layers,
   Favorite,
-  Navigation
+  Navigation,
+  History
 } from "@material-ui/icons";
 import språk from "../Funksjoner/språk";
 import Meny from "../Navigering/Meny";
@@ -100,7 +101,7 @@ class Kartlag extends React.Component {
                   }
                 >
                   <div className="page_topic_header" />
-                  <div class="section">
+                  <div className="section">
                     <h2 className="kartlag_header">
                       <Layers />
                       Kartlag
@@ -114,7 +115,7 @@ class Kartlag extends React.Component {
                         : "kartlag_content_closed kartlag_content"
                     }
                   >
-                    <div class="section">
+                    <div className="section">
                       <h3 className="kartlag_header">
                         <Navigation />
                         Navigering
@@ -199,7 +200,7 @@ class Kartlag extends React.Component {
                       </div>
                     )}
 
-                    <div class="section">
+                    <div className="section">
                       <Tooltip
                         title="Disse kartlagene vises alltid i kartet"
                         aria-label="Disse kartlagene vises alltid i kartet"
@@ -244,8 +245,11 @@ class Kartlag extends React.Component {
                     )}
 
                     {Object.keys(navigation_history).length > 1 && (
-                      <div class="section">
-                        <h3 className="kartlag_header">Historikk</h3>
+                      <div className="section">
+                        <h3 className="kartlag_header">
+                          <History />
+                          Historikk
+                        </h3>
                         <List>
                           {Object.keys(navigation_history)
                             .reverse()

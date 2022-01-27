@@ -29,15 +29,15 @@ import config from "../Funksjoner/config";
 class HamburgerMeny extends Component {
   render() {
     let spraak = this.props.spraak;
-    const handleSpraak = this.props.handleSpraak;
+    const { handleSpraak, handleHovedMeny } = this.props;
     return (
       <SettingsContext.Consumer>
         {context => (
           <SwipeableDrawer
             className="hamburger_sidebar"
             anchor="left"
-            onClose={this.props.handleHovedMeny}
-            onOpen={this.props.handleHovedMeny}
+            onClose={handleHovedMeny}
+            onOpen={handleHovedMeny}
             open={this.props.open}
           >
             <List className="hamburger_sidebar">
@@ -53,7 +53,7 @@ class HamburgerMeny extends Component {
                   }
                 />
                 <ListItemSecondaryAction>
-                  <IconButton onClick={this.props.handleHovedMeny}>
+                  <IconButton onClick={handleHovedMeny}>
                     <NavigationChevronLeftDouble />
                   </IconButton>
                 </ListItemSecondaryAction>
@@ -65,7 +65,7 @@ class HamburgerMeny extends Component {
                   parent={this}
                   props={this}
                   context={context}
-                  handleHovedMeny={this.props.handleHovedMeny}
+                  handleHovedMeny={handleHovedMeny}
                 />
 
                 <Divider />

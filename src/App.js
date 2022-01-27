@@ -95,7 +95,7 @@ class App extends React.Component {
           history={history}
         />
         {path === "/" ? (
-          <ForsideInformasjon />
+          <ForsideInformasjon handleHovedMeny={this.handleHovedMeny} />
         ) : (
           <>
             {false && (
