@@ -134,6 +134,8 @@ class Kartlag extends React.Component {
                         onMouseEnter={this.props.onMouseEnter}
                         onMouseLeave={this.props.onMouseLeave}
                         handleHovedMeny={this.props.handleHovedMeny}
+                        path={this.props.path}
+                        parent={this.props.parent}
                       />
                     </div>
                     {false && (

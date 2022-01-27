@@ -10,9 +10,10 @@ import {
   ListItem,
   ListItemSecondaryAction,
   ListItemText,
-  Tooltip,
+  Tooltip
 } from "@material-ui/core";
-import { Add, Delete, Settings } from "@material-ui/icons";
+import Utforsk from "../HamburgerMeny/Utforsk/Utforsk";
+import { Add, Delete, Settings, Home } from "@material-ui/icons";
 
 const Meny = ({
   aktiveLag,
@@ -25,8 +26,11 @@ const Meny = ({
   onMouseEnter,
   onMouseLeave,
   onToggleLayer,
+  path,
+  handleHovedMeny,
+  parent
 }) => {
-  /*  
+  /*
 Intern navigasjon innad på en side.
 Sidebarmeny-navigeringen.
   */
@@ -40,29 +44,45 @@ Sidebarmeny-navigeringen.
   }
   if (!meta) return null;
   const kodesuffix = kodeSuffix2(meta.kode, meta.overordnet);
+  // Overordnet = Breadcrumb
+
+  function emptyfunction() {
+    console.log("empty");
+  }
+
   return (
     <SettingsContext.Consumer>
-      {(context) => (
-        <div
-          //      className={
-          //          (aktivTab === "meny" ? "mobile_on" : "mobile_off") + " sidebar"
-          //      }
-          style={{
-            paddingTop: 16,
-            _zIndex: expanded && aktivTab === "kartlag" ? 20 : 1,
-            _height: expanded && aktivTab === "kartlag" && "auto",
-            _maxHeight: expanded && aktivTab === "kartlag" && "100%",
-            _borderBottom:
-              expanded && aktivTab === "kartlag" && "2px solid $bright-nin",
-          }}
-        >
-          <div style={{}}>
+      {context => (
+        <div className="navigeringscontainer">
+          {path === "/Natur_i_Norge" ? (
+            <Utforsk
+              parent={parent}
+              props={this}
+              context={context}
+              handleHovedMeny={emptyfunction}
+            />
+          ) : (
             <>
-              <Overordnet
-                overordnet={meta.overordnet}
-                onNavigate={onNavigate}
-                setExpanded={setExpanded}
-              />
+              {false && (
+                <Overordnet
+                  overordnet={meta.overordnet}
+                  onNavigate={onNavigate}
+                  setExpanded={setExpanded}
+                />
+              )}
+
+              <ListItem
+                button
+                onClick={() => {
+                  onNavigate("/Natur_i_Norge");
+                }}
+              >
+                <ListItemAvatar>
+                  <Home style={{ color: "rgba(0,0,0,0.54)" }} />
+                </ListItemAvatar>
+
+                <ListItemText primary={"Hjem"}></ListItemText>
+              </ListItem>
 
               <ListItem
                 button
@@ -70,7 +90,7 @@ Sidebarmeny-navigeringen.
                   onSetAktivTab("kartlaginnstillinger");
                 }}
               >
-                {false && (
+                {true && (
                   <ListItemAvatar>
                     <Settings style={{ color: "rgba(0,0,0,0.54)" }} />
                   </ListItemAvatar>
@@ -84,7 +104,7 @@ Sidebarmeny-navigeringen.
                 ></ListItemText>
                 {
                   <ListItemSecondaryAction
-                    onClick={(e) => {
+                    onClick={e => {
                       onToggleLayer();
                       e.stopPropagation();
                     }}
@@ -111,7 +131,6 @@ Sidebarmeny-navigeringen.
                   </ListItemSecondaryAction>
                 }
               </ListItem>
-
               <Navigeringsliste
                 parentkode={meta ? meta.kode : "kode"}
                 metadata={meta && meta.barn}
@@ -123,7 +142,7 @@ Sidebarmeny-navigeringen.
                 onUpdateMetaProp={onUpdateMetaProp}
               />
             </>
-          </div>
+          )}
         </div>
       )}
     </SettingsContext.Consumer>

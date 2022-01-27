@@ -206,6 +206,8 @@ class App extends React.Component {
                       opplyst={this.state.opplyst}
                       onMouseEnter={this.handleMouseEnter}
                       onMouseLeave={this.handleMouseLeave}
+                      path={path}
+                      parent={this}
                     />
                     <Kart
                       markerCoordinates={this.state.markerCoordinates}
