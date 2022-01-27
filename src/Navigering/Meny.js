@@ -13,7 +13,16 @@ import {
   Tooltip
 } from "@material-ui/core";
 import Utforsk from "../HamburgerMeny/Utforsk/Utforsk";
-import { Add, Delete, Settings, Home } from "@material-ui/icons";
+import {
+  Add,
+  Delete,
+  KeyboardArrowDown,
+  ArrowBack,
+  FavoriteBorder,
+  Favorite,
+  Settings,
+  Info
+} from "@material-ui/icons";
 
 const Meny = ({
   aktiveLag,
@@ -50,60 +59,75 @@ Sidebarmeny-navigeringen.
     console.log("empty");
   }
 
+  let isstartpage = false;
+  if (
+    path === "/kart" ||
+    path === "/hjem" ||
+    path === "/start" ||
+    path === "/index" ||
+    path === "/map"
+  ) {
+    isstartpage = true;
+  }
+
   return (
     <SettingsContext.Consumer>
       {context => (
         <div className="navigeringscontainer">
-          {path === "/Natur_i_Norge" ? (
-            <Utforsk
-              parent={parent}
-              props={this}
-              context={context}
-              handleHovedMeny={emptyfunction}
+          {false && (
+            <Overordnet
+              overordnet={meta.overordnet}
+              onNavigate={onNavigate}
+              setExpanded={setExpanded}
             />
-          ) : (
+          )}
+          {!isstartpage && (
             <>
-              {false && (
-                <Overordnet
-                  overordnet={meta.overordnet}
-                  onNavigate={onNavigate}
-                  setExpanded={setExpanded}
-                />
-              )}
-
               <ListItem
                 button
                 onClick={() => {
-                  onNavigate("/Natur_i_Norge");
+                  onNavigate("/kart");
                 }}
               >
                 <ListItemAvatar>
-                  <Home style={{ color: "rgba(0,0,0,0.54)" }} />
+                  <ArrowBack style={{ color: "rgba(0,0,0,0.54)" }} />
                 </ListItemAvatar>
 
-                <ListItemText primary={"Hjem"}></ListItemText>
+                <ListItemText primary={"Tilbake til start"}></ListItemText>
               </ListItem>
+              <div className="kartlag_element_header">
+                <span>{tittel}</span>
+                <div className="kartlag_element_buttons">
+                  <button
+                    onClick={() => {
+                      onSetAktivTab("informasjon");
+                    }}
+                  >
+                    <Tooltip
+                      title="Åpne informasjon"
+                      aria-label="åpne informasjon"
+                    >
+                      <IconButton>
+                        <Info />
+                      </IconButton>
+                    </Tooltip>
+                  </button>
+                  <button
+                    onClick={() => {
+                      onSetAktivTab("kartlaginnstillinger");
+                    }}
+                  >
+                    <Tooltip
+                      title="Åpne innstillinger"
+                      aria-label="åpne innstillinger"
+                    >
+                      <IconButton>
+                        <Settings />
+                      </IconButton>
+                    </Tooltip>
+                  </button>
 
-              <ListItem
-                button
-                onClick={() => {
-                  onSetAktivTab("kartlaginnstillinger");
-                }}
-              >
-                {true && (
-                  <ListItemAvatar>
-                    <Settings style={{ color: "rgba(0,0,0,0.54)" }} />
-                  </ListItemAvatar>
-                )}
-                <ListItemText
-                  primary={"▾ " + tittel}
-                  secondary={
-                    meta.nivå &&
-                    meta.nivå + (context.visKoder ? ` (${kodesuffix})` : "")
-                  }
-                ></ListItemText>
-                {
-                  <ListItemSecondaryAction
+                  <button
                     onClick={e => {
                       onToggleLayer();
                       e.stopPropagation();
@@ -115,7 +139,7 @@ Sidebarmeny-navigeringen.
                         aria-label="fjern fra mine kartlag"
                       >
                         <IconButton>
-                          <Delete />
+                          <Favorite />
                         </IconButton>
                       </Tooltip>
                     ) : (
@@ -124,24 +148,26 @@ Sidebarmeny-navigeringen.
                         aria-label="legg til mine kartlag"
                       >
                         <IconButton>
-                          <Add />
+                          <FavoriteBorder />
                         </IconButton>
                       </Tooltip>
                     )}
-                  </ListItemSecondaryAction>
-                }
-              </ListItem>
-              <Navigeringsliste
-                parentkode={meta ? meta.kode : "kode"}
-                metadata={meta && meta.barn}
-                setExpanded={setExpanded}
-                onNavigate={onNavigate}
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
-                opplyst={opplyst}
-                onUpdateMetaProp={onUpdateMetaProp}
-              />
+                  </button>
+                </div>
+              </div>
             </>
+          )}
+          {true && (
+            <Navigeringsliste
+              parentkode={meta ? meta.kode : "kode"}
+              metadata={meta && meta.barn}
+              setExpanded={setExpanded}
+              onNavigate={onNavigate}
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+              opplyst={opplyst}
+              onUpdateMetaProp={onUpdateMetaProp}
+            />
           )}
         </div>
       )}

@@ -7,6 +7,29 @@ Even tho we don't a of now support IE X)
 
 */
 
+.kartlag_element_header {
+  padding-left: 24px;
+  padding-right: 10px;
+  min-height: 56px;
+  background: #f1f1f1;
+  border-top: 1px solid #c1d6db;
+  border-bottom: 1px solid #c1d6db;
+  display: flex;
+}
+
+.kartlag_element_header span {
+  flex: 2;
+  display: block;
+  margin: auto;
+}
+
+.kartlag_element_buttons button {
+  margin-top: 0;
+  height: 56px;
+  border: 0;
+  margin-left: 2px;
+}
+
 /* Button on bottom of map screen on mobile */
 .mobile_slide_up_area {
   display: none;

@@ -80,8 +80,6 @@ class App extends React.Component {
     if (this.state.meta)
       erAktivert = !!this.state.aktiveLag[this.state.meta.kode];
     const path = this.props.location.pathname;
-    console.log("logging,", path);
-
     return (
       <>
         <TopBar
@@ -349,7 +347,21 @@ class App extends React.Component {
   };
 
   async downloadMeta(url) {
+    if (
+      // Setting up startpages
+      url === "/kart" ||
+      url === "/hjem" ||
+      url === "/start" ||
+      url === "/index" ||
+      url === "/map"
+    ) {
+      url = "/";
+    }
     const meta = await backend.hentKodeMeta(url);
+    if (meta == undefined) {
+      return null;
+      // triggers search for url
+    }
     metaSjekk(meta, this);
     if (
       meta.bbox &&
