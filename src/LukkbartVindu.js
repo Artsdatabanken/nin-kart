@@ -6,7 +6,7 @@ import { IconButton } from "@material-ui/core";
 const LukkbartVindu = ({ tittel, onClose, onBack, children, iconurl }) => {
   return (
     <div className="lukkbartvindu">
-      <div class="lukkbartvindu-innhold">
+      <div className="lukkbartvindu-innhold">
         <button onClick={onClose} className="closebutton">
           Lukk <Close></Close>
         </button>

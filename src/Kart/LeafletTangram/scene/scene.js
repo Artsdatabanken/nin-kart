@@ -4,7 +4,10 @@ import lagTemp from "./sceneFunksjoner/lagTemp";
 import lagAktiveLag from "./sceneFunksjoner/lagAktiveLag";
 import lagNåværendeLag from "./sceneFunksjoner/lagNåværendeLag";
 
-function createScene(props) {
+function createScene(props, retry) {
+  if (true) {
+    console.log("making new config");
+  }
   let config = {
     sources: {},
     cameras: {
@@ -38,8 +41,10 @@ function updateScene(config, props) {
     //  console.log(config);
     return config;
   } else {
-    console.error("could not find config. Trying again");
-    createScene(props);
+    console.error(
+      "UpdateScene called without config. Attempting fix by calling createScene."
+    );
+    createScene(props, true);
     return null;
   }
 }
