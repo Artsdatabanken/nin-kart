@@ -12,16 +12,16 @@ import {
   ListItem,
   ListItemText,
   ListItemAvatar,
-  Typography,
+  Typography
 } from "@material-ui/core";
 import config from "../../../Funksjoner/config";
 
-const getSted = (sted) => {
+const getSted = sted => {
   if (!sted || !sted.meta) return null;
   return språk(sted.meta.tittel);
 };
 
-const getOverordnet = (sted) => {
+const getOverordnet = sted => {
   if (
     !sted ||
     !sted.meta ||
@@ -49,7 +49,7 @@ const Sted = ({ sted, lat, lng, fylke, kommune, verneområde, onNavigate }) => {
   const sted2 = getSted(sted);
   const sted1 = getOverordnet(sted);
   return (
-    <>
+    <div className="section">
       <Overskrift
         tittel="Sted"
         image="Administrativ_grense/Territorialområde/Sjøterritorium_og_territorialfarvann/Fastlands-Norge"
@@ -61,7 +61,7 @@ const Sted = ({ sted, lat, lng, fylke, kommune, verneområde, onNavigate }) => {
         canExpand
         hasData={!!sted}
       >
-        {(expanded) => (
+        {expanded => (
           <>
             {false &&
               kommune &&
@@ -118,7 +118,7 @@ const Sted = ({ sted, lat, lng, fylke, kommune, verneområde, onNavigate }) => {
           </>
         )}
       </NinCard>
-    </>
+    </div>
   );
 };
 

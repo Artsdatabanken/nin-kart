@@ -96,26 +96,30 @@ class Punkt extends Component {
                   <MyLocation />
                   Koordinater
                 </h3>
-                {getKoordinatStreng([lat, lng])}
+                <p>{getKoordinatStreng([lat, lng])}</p>
               </div>
             </div>
+
             {natArray &&
               natArray.map((nat, i) => {
                 return (
-                  <div key={i}>
+                  <>
                     {this.createNaturtyper(nat).length > 0 && (
-                      <Naturtype
-                        showHeader={i === 0}
-                        typer={this.createNaturtyper(nat)}
-                        variabler={this.createNatvars(nat)}
-                        ulkm={this.createUlkm(nat)}
-                        onNavigate={onNavigate}
-                        onNavigateToTab={onNavigateToTab}
-                      />
+                      <div className="section" key={i}>
+                        <Naturtype
+                          showHeader={i === 0}
+                          typer={this.createNaturtyper(nat)}
+                          variabler={this.createNatvars(nat)}
+                          ulkm={this.createUlkm(nat)}
+                          onNavigate={onNavigate}
+                          onNavigateToTab={onNavigateToTab}
+                        />
+                      </div>
                     )}
-                  </div>
+                  </>
                 );
               })}
+
             <Landskap landskap={landskap} />
             <Sted
               sted={sted}
@@ -126,6 +130,7 @@ class Punkt extends Component {
               lng={lng}
               onNavigate={onNavigate}
             />
+
             {false &&
               vektor.map(v => {
                 if (v.datasettkode === "VV ")

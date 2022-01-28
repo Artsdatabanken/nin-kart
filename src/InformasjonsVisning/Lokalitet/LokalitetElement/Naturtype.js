@@ -9,7 +9,7 @@ import {
   ListItem,
   ListItemSecondaryAction,
   ListItemText,
-  ListItemAvatar,
+  ListItemAvatar
 } from "@material-ui/core";
 import config from "../../../Funksjoner/config";
 import Beskrivelsessystem from "./Beskrivelsessystem";
@@ -17,7 +17,7 @@ import Ulkm from "./Ulkm";
 import { getParentUrl } from "../../../AppSettings/AppFunksjoner/fetchMeta";
 
 const sameParent = (array, i) => {
-  array = array.map((e) => e[i]);
+  array = array.map(e => e[i]);
   for (let n = 1; n < array.length; n++) {
     const current = array[n];
     const previous = array[n - 1];
@@ -27,31 +27,47 @@ const sameParent = (array, i) => {
   return true;
 };
 
-const finnFellesOverordnet = (typer) => {
+const finnFellesOverordnet = typer => {
   if (!typer) return null;
   if (typer.length === 0) return null;
   if (typer.length === 1) return typer[0].overordnet[0];
-  const oos = typer.map((e) => e.overordnet.reverse());
-  let max = Math.max(...oos.map((e) => e.length));
+  const oos = typer.map(e => e.overordnet.reverse());
+  let max = Math.max(...oos.map(e => e.length));
   for (let i = 1; i < max; i++) {
     if (!sameParent(oos, i)) return oos[0][i - 1];
   }
   return oos[0].pop();
 };
 
-const Naturtype = (props) => {
-  const { showHeader, typer, variabler, ulkm, onNavigate, onNavigateToTab } = props;
+const Naturtype = props => {
+  const {
+    showHeader,
+    typer,
+    variabler,
+    ulkm,
+    onNavigate,
+    onNavigateToTab
+  } = props;
   if (!typer) return null;
   const forelder = finnFellesOverordnet(typer);
   if (!forelder) return null;
   return (
     <>
       {showHeader && (
-        <Overskrift
-          tittel="Natursystem"
-          image="Natur_i_Norge/Natursystem/Typeinndeling"
-          onClickInfo={() => onNavigateToTab("kartlegging")}
-        />
+        <>
+          <h3>
+            <img
+              src={config.logo("Natur_i_Norge/Natursystem/Typeinndeling")}
+              style={{ position: "relative", top: 4, marginRight: 8 }}
+              alt=""
+            />
+            Natursystem
+          </h3>
+
+          <button onClick={() => onNavigateToTab("kartlegging")}>
+            les om kartlegging
+          </button>
+        </>
       )}
       <NinCard
         heading="Naturtype"
@@ -59,9 +75,9 @@ const Naturtype = (props) => {
         canExpand
         hasData
       >
-        {(expanded) => (
+        {expanded => (
           <>
-            {typer.map((type) => (
+            {typer.map(type => (
               <Item
                 key={`${type.kode}_${type.andel}`}
                 primary={språk(type.tittel)}
@@ -78,12 +94,7 @@ const Naturtype = (props) => {
                 onNavigate={onNavigate}
               />
             )}
-            {ulkm && (
-              <Ulkm
-                ulkm={ulkm}
-                onNavigate={onNavigate}
-              />
-            )}
+            {ulkm && <Ulkm ulkm={ulkm} onNavigate={onNavigate} />}
             <Collapse in={expanded} timeout="auto" unmountOnExit>
               <CardMedia>
                 {<img src={config.foto(forelder.url)} alt="foto" />}

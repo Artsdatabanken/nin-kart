@@ -1,5 +1,10 @@
 @import "./GraphicProfile.scss";
 
+.nin-card {
+  margin: 10px;
+  padding: 10px;
+}
+
 .lukkbartvindu_header {
   font-size: 19pt;
   color: black;
@@ -29,8 +34,9 @@
   vertical-align: middle;
 }
 
-.coordinates {
-  padding-left: 10px;
+.coordinates p {
+  padding: 0px;
+  padding-left: 24px;
 }
 
 .kartlag_barn_container {
