@@ -82,9 +82,7 @@ Sidebarmeny-navigeringen.
                     title="Åpne informasjon"
                     aria-label="åpne informasjon"
                   >
-                    <IconButton>
-                      <ArrowBack />
-                    </IconButton>
+                    <ArrowBack />
                   </Tooltip>
                 </button>
                 <span>{tittel}</span>
@@ -98,9 +96,7 @@ Sidebarmeny-navigeringen.
                       title="Åpne informasjon"
                       aria-label="åpne informasjon"
                     >
-                      <IconButton>
-                        <Info />
-                      </IconButton>
+                      <Info />
                     </Tooltip>
                   </button>
                   <button
@@ -112,9 +108,7 @@ Sidebarmeny-navigeringen.
                       title="Åpne innstillinger"
                       aria-label="åpne innstillinger"
                     >
-                      <IconButton>
-                        <Settings />
-                      </IconButton>
+                      <Settings />
                     </Tooltip>
                   </button>
 
@@ -129,18 +123,14 @@ Sidebarmeny-navigeringen.
                         title="Fjern fra mine kartlag"
                         aria-label="fjern fra mine kartlag"
                       >
-                        <IconButton>
-                          <Favorite />
-                        </IconButton>
+                        <Favorite />
                       </Tooltip>
                     ) : (
                       <Tooltip
                         title="Legg til mine kartlag"
                         aria-label="legg til mine kartlag"
                       >
-                        <IconButton>
-                          <FavoriteBorder />
-                        </IconButton>
+                        <FavoriteBorder />
                       </Tooltip>
                     )}
                   </button>

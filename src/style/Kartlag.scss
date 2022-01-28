@@ -8,9 +8,12 @@ Even tho we don't a of now support IE X)
 */
 
 .kartlag_element_header {
-  min-height: 56px;
-  background: $brightest-nin;
+  min-height: 50px;
+  /*background: $brightest-nin;*/
+  background: transparent;
   display: flex;
+  width: 100%;
+  padding: 2px;
 }
 
 .kartlag_element_header span {
@@ -18,20 +21,33 @@ Even tho we don't a of now support IE X)
   display: block;
   margin: auto;
   padding: 2px;
+  font-size: 12pt;
 }
 
+.kartlag_element_header .backicon,
 .kartlag_element_header button {
   margin-top: 0;
-  height: 56px;
+  height: 50px;
   border: 0;
-  margin-left: 2px;
+  margin-left: 1px;
   width: 56px;
   padding: 0;
+  padding-top: 0px;
   background: none;
+  line-height: 50px;
+  margin-right: 1px;
+  padding-top: 7px;
+}
+
+.kartlag_element_header .backicon svg,
+.kartlag_element_header button svg {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .kartlag_element_text {
   display: inline-block;
+  text-align: left;
 }
 
 /* Button on bottom of map screen on mobile */

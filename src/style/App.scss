@@ -519,11 +519,32 @@ div {
 /* Sections */
 
 .section {
-  border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
+  /*border-top: 1px solid grey;*/
+  /*border-bottom: 1px solid grey;*/
   margin-top: -1px;
   padding-top: 5px;
   padding-bottom: 5px;
+  background: lightgrey;
+}
+
+.section:nth-child(1) {
+  background: hotpink;
+}
+
+.section:nth-child(2) {
+  background: $fun-bg-1;
+}
+
+.section:nth-child(3) {
+  background: $fun-bg-4;
+}
+
+.section:nth-child(4) {
+  background: $fun-bg-2;
+}
+
+.section:nth-child(5) {
+  background: $fun-bg-3;
 }
 
 .section h3,
