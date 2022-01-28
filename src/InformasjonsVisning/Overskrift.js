@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import { IconButton, Tooltip, Typography } from "@material-ui/core";
 import config from "../Funksjoner/config";
 import { InfoOutlined } from "@material-ui/icons";

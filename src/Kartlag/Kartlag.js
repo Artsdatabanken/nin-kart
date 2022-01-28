@@ -7,7 +7,6 @@ import {
   KeyboardArrowUp,
   Layers,
   Favorite,
-  Navigation,
   History,
   ArrowBack
 } from "@material-ui/icons";
@@ -15,11 +14,8 @@ import språk from "../Funksjoner/språk";
 import Meny from "../Navigering/Meny";
 import {
   List,
-  ListSubheader,
   ListItemAvatar,
-  IconButton,
   ListItem,
-  ListItemSecondaryAction,
   ListItemText,
   Tooltip
 } from "@material-ui/core";
@@ -44,7 +40,6 @@ class Kartlag extends React.Component {
       handleShowCurrent,
       onRemoveSelectedLayer,
       lokalitetdata,
-      children,
       aktivTab
     } = this.props;
     let duplicate = false;

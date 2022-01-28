@@ -3,25 +3,16 @@ import Overordnet from "./Navigeringsliste/OverordnetMedEkspander";
 import { SettingsContext } from "../SettingsContext";
 import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
 import språk from "../Funksjoner/språk";
-import { kodeSuffix2 } from "./Navigeringsliste/NavigeringslisteFunksjoner/kodeSuffix";
+//import { kodeSuffix2 } from "./Navigeringsliste/NavigeringslisteFunksjoner/kodeSuffix";
+import { IconButton, Tooltip } from "@material-ui/core";
+//import Utforsk from "../HamburgerMeny/Utforsk/Utforsk";
 import {
-  ListItemAvatar,
-  IconButton,
-  ListItem,
-  ListItemSecondaryAction,
-  ListItemText,
-  Tooltip
-} from "@material-ui/core";
-import Utforsk from "../HamburgerMeny/Utforsk/Utforsk";
-import {
-  Add,
-  Delete,
-  KeyboardArrowDown,
+  //KeyboardArrowDown,
   ArrowBack,
   FavoriteBorder,
   Favorite,
   Settings,
-  Navigation,
+  Layers,
   Info
 } from "@material-ui/icons";
 
@@ -54,12 +45,10 @@ Sidebarmeny-navigeringen.
     }
   }
   if (!meta) return null;
-  const kodesuffix = kodeSuffix2(meta.kode, meta.overordnet);
+  //const kodesuffix = kodeSuffix2(meta.kode, meta.overordnet);
   // Overordnet = Breadcrumb
 
-  function emptyfunction() {
-    console.log("empty");
-  }
+  console.log(expanded);
 
   let backurl = "/start";
   if (meta.overordnet !== undefined && meta.overordnet[0] !== undefined) {
@@ -71,8 +60,8 @@ Sidebarmeny-navigeringen.
       {context => (
         <div className="section">
           <h3 className="kartlag_header">
-            <Navigation />
-            Nåværende kartlag
+            <Layers />
+            {isstartpage ? "Velg kartlag" : "Nåværende kartlag"}
           </h3>
           {false && (
             <Overordnet

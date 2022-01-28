@@ -189,11 +189,9 @@ class App extends React.Component {
                       history={history}
                       currentKartlag={this.state.meta}
                       activateLayerFromHistory={this.activateLayerFromHistory}
-                      aktiveLag={this.state.aktiveLag}
                       lokalitet={path}
                       meta={this.state.meta}
                       onNavigate={this.handleNavigate}
-                      aktivTab={aktivTab}
                       onSetAktivTab={this.handleSetAktivTab}
                       onUpdateMetaProp={this.handleUpdateMetaProp}
                       handleHovedMeny={this.handleHovedMeny}
@@ -358,7 +356,7 @@ class App extends React.Component {
       url = "/";
     }
     const meta = await backend.hentKodeMeta(url);
-    if (meta == undefined) {
+    if (meta === undefined) {
       return null;
       // triggers search for url
     }

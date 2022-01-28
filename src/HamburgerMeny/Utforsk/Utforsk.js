@@ -5,9 +5,9 @@ import Naturvern from "../Naturvern";
 
 class Utforsk extends Component {
   render() {
-    const { parent, context, handleHovedMeny } = this.props;
+    const { parent, handleHovedMeny } = this.props;
     let the_props = parent;
-    if (parent != undefined && !parent.history) {
+    if (parent !== undefined && !parent.history) {
       the_props = parent.props;
     }
 

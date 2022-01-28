@@ -19,7 +19,7 @@ const LukkbartVindu = ({ tittel, onClose, onBack, children, iconurl }) => {
       )}
       <div className="section">
         <h2 className="lukkbartvindu_header">
-          <img src={iconurl} />
+          <img src={iconurl} alt="" />
           {tittel}
         </h2>
       </div>

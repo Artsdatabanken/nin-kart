@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Sted from "./Lokalitet/LokalitetElement/Sted";
 import Landskap from "./Landskap";
-import Naturvernområde from "./Lokalitet/LokalitetElement/Naturvernområde";
+import NaturvernOmraade from "./Lokalitet/LokalitetElement/Naturvernområde";
 import Naturtype from "./Lokalitet/LokalitetElement/Naturtype";
 import Header from "./Header";
 import LukkbartVindu from "../LukkbartVindu";
@@ -130,7 +130,7 @@ class Punkt extends Component {
               vektor.map(v => {
                 if (v.datasettkode === "VV ")
                   return (
-                    <Naturvernområde
+                    <NaturvernOmraade
                       key={v.id}
                       {...v}
                       onNavigate={onNavigate}
