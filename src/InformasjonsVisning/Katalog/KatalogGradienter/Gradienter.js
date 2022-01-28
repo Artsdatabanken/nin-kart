@@ -14,7 +14,7 @@ const Gradienter = ({ gradient, onNavigate, title }) => {
         let gradientelement = item.trinn;
 
         return (
-          <div key={index} className="badge_container">
+          <div key={index} className="badge_container subsection">
             <h2>{item.tittel.nb}</h2>
             {gradientelement.map((item, index) => {
               let aktiv = item["på"];
@@ -23,7 +23,7 @@ const Gradienter = ({ gradient, onNavigate, title }) => {
                   className="badge"
                   key={item.tittel.nb + index}
                   style={{ opacity: aktiv ? "1" : "0.2" }}
-                  onClick={(e) => {
+                  onClick={e => {
                     onNavigate(item.url);
                   }}
                 >
@@ -33,7 +33,7 @@ const Gradienter = ({ gradient, onNavigate, title }) => {
                       backgroundPosition: "center",
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "cover",
-                      backgroundImage: "url(" + config.foto(item.url) + ")",
+                      backgroundImage: "url(" + config.foto(item.url) + ")"
                     }}
                   />
                   <br />

@@ -14,7 +14,7 @@ const KatalogGradienter = ({
   opplyst,
   ...props
 }) => {
-  /*  
+  /*
   Contains the visualisation of the different gradients and their relations
   to subelements, as well as other nifty visualisations
   */
@@ -36,7 +36,7 @@ const KatalogGradienter = ({
     title = "Miljøvariabler for naturtypen";
 
   return (
-    <>
+    <div className="section">
       {meta.gradient &&
         Object.entries(meta.gradient).map(([kode, node]) => (
           <Gradienter
@@ -64,7 +64,7 @@ const KatalogGradienter = ({
       )}
 
       {meta.graf &&
-        meta.graf.map((relasjon) => (
+        meta.graf.map(relasjon => (
           <Relasjon
             key={relasjon.type}
             heading={relasjon.type}
@@ -79,7 +79,7 @@ const KatalogGradienter = ({
             {...props}
           />
         ))}
-    </>
+    </div>
   );
 };
 export default KatalogGradienter;

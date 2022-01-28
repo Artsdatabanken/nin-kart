@@ -10,33 +10,36 @@ const KatalogBarneliste = ({
   onUpdateMetaProp,
   opplyst,
   onMouseEnter,
-  onMouseLeave,
+  onMouseLeave
 }) => {
   /*
-  
+
 Navigation
-  
+
   */
   const { kode } = meta;
   if (meta.barn.length === 0) return null;
+  //TEMPORARILY SHUTTING OFF SUBELEMENTS AS THEY MAKE LESS SENSE IN THIS FORMAT
   return (
     <>
-      <h1>Underelementer</h1>
-      <>
-        <Navigeringsliste
-          title=""
-          parentkode={kode}
-          størsteAreal={data && data.størsteAreal}
-          apidata={data && data.barn}
-          metadata={meta.barn}
-          onNavigate={onNavigate}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          opplyst={opplyst}
-          onUpdateMetaProp={onUpdateMetaProp}
-          isDatakilde={meta.tittel.nb}
-        />
-      </>
+      {false && (
+        <>
+          <h1>Underelementer</h1>
+          <Navigeringsliste
+            title=""
+            parentkode={kode}
+            størsteAreal={data && data.størsteAreal}
+            apidata={data && data.barn}
+            metadata={meta.barn}
+            onNavigate={onNavigate}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            opplyst={opplyst}
+            onUpdateMetaProp={onUpdateMetaProp}
+            isDatakilde={meta.tittel.nb}
+          />
+        </>
+      )}
 
       {false && (
         <>
@@ -44,12 +47,12 @@ Navigation
             key={"a.url"}
             punkt={{
               url:
-                "Biota/Plantae/Magnoliophyta/Eudicots/Ericales/Primulaceae/Primula/Scandinavica",
+                "Biota/Plantae/Magnoliophyta/Eudicots/Ericales/Primulaceae/Primula/Scandinavica"
             }}
             gradient={{
               url:
                 "Natur_i_Norge/Landskap/Landskapsgradient/Arealbruksintensitet/",
-              barn: [],
+              barn: []
             }}
           >
             <Kurve logY={true} />

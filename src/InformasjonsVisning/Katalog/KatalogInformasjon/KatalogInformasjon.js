@@ -5,9 +5,9 @@ import språk from "../../../Funksjoner/språk";
 
 const KatalogInformasjon = ({ meta }) => {
   /*
-  
+
   Contains information giving components.
-  
+
   */
   if (!meta) return null;
   const {
@@ -16,12 +16,12 @@ const KatalogInformasjon = ({ meta }) => {
     overordnet,
     antallNaturomrader,
     antallArter,
-    stats,
+    stats
   } = meta;
   const mor = (overordnet.length > 0 && overordnet[0]) || { tittel: {} };
 
   return (
-    <div className="katlog_header_text_container">
+    <div className="subsection">
       <KatalogInformasjonsBoks meta={meta} />
       {prefiks !== "AO" && !!stats && (
         <KatalogStatistikk

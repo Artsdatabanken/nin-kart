@@ -1,5 +1,4 @@
 import React from "react";
-import Overskrift from "./Overskrift";
 import Landskapstype from "./Landskapstype";
 import Landskapsgradienter from "./Landskapsgradienter";
 import { getParentUrl } from "../AppSettings/AppFunksjoner/fetchMeta";

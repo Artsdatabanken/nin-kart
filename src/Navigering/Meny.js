@@ -4,7 +4,7 @@ import { SettingsContext } from "../SettingsContext";
 import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
 import språk from "../Funksjoner/språk";
 //import { kodeSuffix2 } from "./Navigeringsliste/NavigeringslisteFunksjoner/kodeSuffix";
-import { IconButton, Tooltip } from "@material-ui/core";
+import { Tooltip } from "@material-ui/core";
 //import Utforsk from "../HamburgerMeny/Utforsk/Utforsk";
 import {
   //KeyboardArrowDown,

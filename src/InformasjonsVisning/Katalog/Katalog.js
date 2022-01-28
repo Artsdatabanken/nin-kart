@@ -1,13 +1,10 @@
 import React from "react";
 import { Snackbar } from "@material-ui/core";
 import KatalogHeader from "./KatalogHeader/KatalogHeader";
-import Taksonomi from "./Klassifiseringer/Taksonomi";
-import Risikovurdering from "./Klassifiseringer/Risikovurdering";
-import Egenskaper from "./Klassifiseringer/Egenskaper";
+//import Egenskaper from "./Klassifiseringer/Egenskaper";
 import KatalogBarneliste from "./KatalogBarneliste/KatalogBarneliste";
 import KatalogGradienter from "./KatalogGradienter/KatalogGradienter";
 import KatalogKilder from "./KatalogKilder/KatalogKilder";
-import Truetvurdering from "./Klassifiseringer/Truetvurdering";
 
 const KatalogFane = ({
   meta,
@@ -22,23 +19,17 @@ const KatalogFane = ({
   handleCloseSnackbar,
   erAktivert,
   onToggleLayer,
-  kurve,
+  kurve
 }) => {
   if (!meta) return null;
   return (
     <>
-      <div className="main_body_wrapper">
+      <div className="katalog-content">
         <KatalogHeader
           meta={meta}
           onFitBounds={onFitBounds}
           onUpdateLayerProp={onUpdateLayerProp}
         />
-        <div className="art_data_displayer">
-          <Taksonomi meta={meta} onNavigate={onNavigate} />
-          <Egenskaper meta={meta} onNavigate={onNavigate} />
-          <Risikovurdering meta={meta} onNavigate={onNavigate} />
-          <Truetvurdering meta={meta} onNavigate={onNavigate} />
-        </div>
 
         <KatalogGradienter
           meta={meta}
