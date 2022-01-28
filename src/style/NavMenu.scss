@@ -5,16 +5,18 @@
   width: 100%;
   display: block;
   text-align: left;
-  padding: 4px;
+  padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.nav_menu_button:hover {
+  background: $bright-nin;
 }
 
 .nav_text {
   display: inline-block;
   vertical-align: top;
-  max-width: calc(100% - 60px);
-  left: 50px;
   font-size: 12pt;
   padding: 5px;
 }
@@ -31,10 +33,6 @@
 .nav_kode {
   float: right;
   padding-top: 10px;
-}
-
-.nav_down_menu {
-  padding-left: 24px;
 }
 
 .nav_current {

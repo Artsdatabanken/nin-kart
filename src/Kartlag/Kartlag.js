@@ -8,11 +8,21 @@ import {
   Layers,
   Favorite,
   Navigation,
-  History
+  History,
+  ArrowBack
 } from "@material-ui/icons";
 import språk from "../Funksjoner/språk";
 import Meny from "../Navigering/Meny";
-import { List, ListSubheader, Tooltip } from "@material-ui/core";
+import {
+  List,
+  ListSubheader,
+  ListItemAvatar,
+  IconButton,
+  ListItem,
+  ListItemSecondaryAction,
+  ListItemText,
+  Tooltip
+} from "@material-ui/core";
 
 class Kartlag extends React.Component {
   state = {
@@ -64,6 +74,17 @@ class Kartlag extends React.Component {
     let isPunkt =
       aktivTab === "punkt" || aktivTab === "kartlegging" ? "mobile_off" : "";
 
+    let isstartpage = false;
+    if (
+      this.props.path === "/kart" ||
+      this.props.path === "/hjem" ||
+      this.props.path === "/start" ||
+      this.props.path === "/index" ||
+      this.props.path === "/map"
+    ) {
+      isstartpage = true;
+    }
+
     return (
       <>
         {hidden && (
@@ -108,6 +129,23 @@ class Kartlag extends React.Component {
                     </h2>
                   </div>
 
+                  {!isstartpage && (
+                    <ListItem
+                      button
+                      onClick={() => {
+                        this.props.onNavigate("/kart");
+                      }}
+                    >
+                      <ListItemAvatar>
+                        <ArrowBack style={{ color: "rgba(0,0,0,0.54)" }} />
+                      </ListItemAvatar>
+
+                      <ListItemText
+                        primary={"Tilbake til start"}
+                      ></ListItemText>
+                    </ListItem>
+                  )}
+
                   <div
                     className={
                       this.state.showKartlag
@@ -115,29 +153,25 @@ class Kartlag extends React.Component {
                         : "kartlag_content_closed kartlag_content"
                     }
                   >
-                    <div className="section">
-                      <h3 className="kartlag_header">
-                        <Navigation />
-                        Navigering
-                      </h3>
-                      <Meny
-                        aktiveLag={this.props.aktiveLag}
-                        lokalitetdata={this.props.lokalitetdata}
-                        lokalitet={this.props.lokalitet}
-                        meta={this.props.meta}
-                        onNavigate={this.props.onNavigate}
-                        aktivTab={this.props.aktivTab}
-                        onSetAktivTab={this.props.onSetAktivTab}
-                        onUpdateMetaProp={this.props.onUpdateMetaProp}
-                        onToggleLayer={this.props.onToggleLayer}
-                        opplyst={this.props.opplyst}
-                        onMouseEnter={this.props.onMouseEnter}
-                        onMouseLeave={this.props.onMouseLeave}
-                        handleHovedMeny={this.props.handleHovedMeny}
-                        path={this.props.path}
-                        parent={this.props.parent}
-                      />
-                    </div>
+                    <Meny
+                      aktiveLag={this.props.aktiveLag}
+                      lokalitetdata={this.props.lokalitetdata}
+                      lokalitet={this.props.lokalitet}
+                      meta={this.props.meta}
+                      onNavigate={this.props.onNavigate}
+                      aktivTab={this.props.aktivTab}
+                      onSetAktivTab={this.props.onSetAktivTab}
+                      onUpdateMetaProp={this.props.onUpdateMetaProp}
+                      onToggleLayer={this.props.onToggleLayer}
+                      opplyst={this.props.opplyst}
+                      onMouseEnter={this.props.onMouseEnter}
+                      onMouseLeave={this.props.onMouseLeave}
+                      handleHovedMeny={this.props.handleHovedMeny}
+                      path={this.props.path}
+                      parent={this.props.parent}
+                      isstartpage={isstartpage}
+                    />
+
                     {false && (
                       <div class="section">
                         <div className="sidebar_title_container sidebar_element">

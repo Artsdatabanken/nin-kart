@@ -21,6 +21,7 @@ import {
   FavoriteBorder,
   Favorite,
   Settings,
+  Navigation,
   Info
 } from "@material-ui/icons";
 
@@ -37,6 +38,7 @@ const Meny = ({
   onToggleLayer,
   path,
   handleHovedMeny,
+  isstartpage,
   parent
 }) => {
   /*
@@ -59,21 +61,19 @@ Sidebarmeny-navigeringen.
     console.log("empty");
   }
 
-  let isstartpage = false;
-  if (
-    path === "/kart" ||
-    path === "/hjem" ||
-    path === "/start" ||
-    path === "/index" ||
-    path === "/map"
-  ) {
-    isstartpage = true;
+  let backurl = "/start";
+  if (meta.overordnet !== undefined && meta.overordnet[0] !== undefined) {
+    backurl = meta.overordnet[0].url;
   }
 
   return (
     <SettingsContext.Consumer>
       {context => (
-        <div className="navigeringscontainer">
+        <div className="section">
+          <h3 className="kartlag_header">
+            <Navigation />
+            Nåværende kartlag
+          </h3>
           {false && (
             <Overordnet
               overordnet={meta.overordnet}
@@ -83,19 +83,21 @@ Sidebarmeny-navigeringen.
           )}
           {!isstartpage && (
             <>
-              <ListItem
-                button
-                onClick={() => {
-                  onNavigate("/kart");
-                }}
-              >
-                <ListItemAvatar>
-                  <ArrowBack style={{ color: "rgba(0,0,0,0.54)" }} />
-                </ListItemAvatar>
-
-                <ListItemText primary={"Tilbake til start"}></ListItemText>
-              </ListItem>
               <div className="kartlag_element_header">
+                <button
+                  onClick={() => {
+                    onNavigate(backurl);
+                  }}
+                >
+                  <Tooltip
+                    title="Åpne informasjon"
+                    aria-label="åpne informasjon"
+                  >
+                    <IconButton>
+                      <ArrowBack />
+                    </IconButton>
+                  </Tooltip>
+                </button>
                 <span>{tittel}</span>
                 <div className="kartlag_element_buttons">
                   <button
