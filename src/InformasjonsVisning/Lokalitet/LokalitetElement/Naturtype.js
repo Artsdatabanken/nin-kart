@@ -41,6 +41,7 @@ const Naturtype = props => {
   if (!typer) return null;
   const forelder = finnFellesOverordnet(typer);
   if (!forelder) return null;
+  // Testkoordinat for alle tre: ?lng=10.473060607910158&lat=60.385192661736745
   return (
     <div>
       <h3>
@@ -74,10 +75,12 @@ const Naturtype = props => {
             ))}
           </>
         </SectionExpand>
+        {ulkm && (
+          <SectionExpand title={"Underordnede komplekse miljøvariabler (uLKM)"}>
+            <Ulkm ulkm={ulkm} onNavigate={onNavigate} />
+          </SectionExpand>
+        )}
 
-        <SectionExpand title={"Underordnede komplekse miljøvariabler (uLKM)"}>
-          <>{ulkm && <Ulkm ulkm={ulkm} onNavigate={onNavigate} />}</>
-        </SectionExpand>
         {variabler && (
           <SectionExpand title={"Variabler"}>
             <Beskrivelsessystem variabler={variabler} onNavigate={onNavigate} />

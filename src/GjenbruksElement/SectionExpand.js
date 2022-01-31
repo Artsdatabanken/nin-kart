@@ -1,11 +1,9 @@
 import React from "react";
 import ArrowButton from "./ArrowButton";
+import Avatar from "@material-ui/core/Avatar";
 import { ListItemText } from "@material-ui/core";
-import { ListItemAvatar } from "@material-ui/core";
-
 import config from "../Funksjoner/config";
 
-import Avatar from "@material-ui/core/Avatar";
 const SectionExpand = ({ title, children, iconurl }) => {
   const [expanded, setExpanded] = React.useState(false);
   const handleExpandClick = () => {
