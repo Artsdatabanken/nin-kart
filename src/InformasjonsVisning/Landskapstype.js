@@ -10,24 +10,12 @@ import {
 } from "@material-ui/core";
 import Avatar from "@material-ui/core/Avatar";
 import config from "../Funksjoner/config";
+import ArrowButton from "../GjenbruksElement/ArrowButton";
 import { useHistory } from "react-router-dom";
-import clsx from "clsx";
-import { ExpandMore } from "@material-ui/icons/";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
 const useStyles = makeStyles(theme => ({
   media: {
     height: 0,
     paddingTop: "56.25%" // 16:9
-  },
-  expand: {
-    transform: "rotate(0deg)",
-    marginLeft: "auto",
-    transition: theme.transitions.create("transform", {
-      duration: theme.transitions.duration.shortest
-    })
-  },
-  expandOpen: {
-    transform: "rotate(180deg)"
   }
 }));
 
@@ -72,17 +60,11 @@ export default function Landskapstype(props) {
 
             <ListItemText primary={heading1} />
           </button>
-          <button
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded
-            })}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            {false && <MoreVertIcon />}
-            <ExpandMore />
-          </button>
+
+          <ArrowButton
+            handleExpandClick={handleExpandClick}
+            expanded={expanded}
+          />
         </h5>
         {expanded && (
           <div>

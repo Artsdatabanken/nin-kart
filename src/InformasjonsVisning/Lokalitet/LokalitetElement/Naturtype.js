@@ -1,15 +1,13 @@
 import React from "react";
 import språk from "../../../Funksjoner/språk";
-import NinCard from "../../NinCard";
 import {
   Avatar,
-  CardMedia,
-  Collapse,
   ListItem,
   ListItemSecondaryAction,
   ListItemText,
   ListItemAvatar
 } from "@material-ui/core";
+import SectionExpand from "../../../GjenbruksElement/SectionExpand";
 import config from "../../../Funksjoner/config";
 import Beskrivelsessystem from "./Beskrivelsessystem";
 import Ulkm from "./Ulkm";
@@ -39,42 +37,29 @@ const finnFellesOverordnet = typer => {
 };
 
 const Naturtype = props => {
-  const {
-    showHeader,
-    typer,
-    variabler,
-    ulkm,
-    onNavigate,
-    onNavigateToTab
-  } = props;
+  const { typer, variabler, ulkm, onNavigate, onNavigateToTab } = props;
   if (!typer) return null;
   const forelder = finnFellesOverordnet(typer);
   if (!forelder) return null;
   return (
-    <>
-      {showHeader && (
-        <>
-          <h3>
-            <img
-              src={config.logo("Natur_i_Norge/Natursystem/Typeinndeling")}
-              style={{ position: "relative", top: 4, marginRight: 8 }}
-              alt=""
-            />
-            Natursystem
-          </h3>
+    <div>
+      <h3>
+        <img
+          src={config.logo("Natur_i_Norge/Natursystem/Typeinndeling")}
+          style={{ position: "relative", top: 4, marginRight: 8 }}
+          alt=""
+        />
+        Natursystem
+      </h3>
 
-          <button onClick={() => onNavigateToTab("kartlegging")}>
-            les om kartlegging
-          </button>
-        </>
-      )}
-      <NinCard
-        heading="Naturtype"
-        image="Natur_i_Norge/Natursystem/Typeinndeling"
-        canExpand
-        hasData
-      >
-        {expanded => (
+      <button onClick={() => onNavigateToTab("kartlegging")}>
+        les om kartlegging
+      </button>
+
+      <div className="subsection">
+        <h4>Naturtype</h4>
+
+        <SectionExpand title={"Naturtype"}>
           <>
             {typer.map(type => (
               <Item
@@ -87,22 +72,19 @@ const Naturtype = props => {
                 onClick={onNavigate}
               />
             ))}
-            {variabler && (
-              <Beskrivelsessystem
-                variabler={variabler}
-                onNavigate={onNavigate}
-              />
-            )}
-            {ulkm && <Ulkm ulkm={ulkm} onNavigate={onNavigate} />}
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-              <CardMedia>
-                {<img src={config.foto(forelder.url)} alt="foto" />}
-              </CardMedia>
-            </Collapse>
           </>
+        </SectionExpand>
+
+        <SectionExpand title={"Underordnede komplekse miljøvariabler (uLKM)"}>
+          <>{ulkm && <Ulkm ulkm={ulkm} onNavigate={onNavigate} />}</>
+        </SectionExpand>
+        {variabler && (
+          <SectionExpand title={"Variabler"}>
+            <Beskrivelsessystem variabler={variabler} onNavigate={onNavigate} />
+          </SectionExpand>
         )}
-      </NinCard>
-    </>
+      </div>
+    </div>
   );
 };
 
