@@ -524,26 +524,26 @@ div {
   margin-top: -1px;
   padding-top: 5px;
   padding-bottom: 5px;
-  background: lightgrey;
+  background: white;
 }
 
-.section:nth-child(1) {
+.testcolours .section:nth-child(1) {
   background: hotpink;
 }
 
-.section:nth-child(2) {
+.testcolours .section:nth-child(2) {
   background: $fun-bg-1;
 }
 
-.section:nth-child(3) {
+.testcolours .section:nth-child(3) {
   background: $fun-bg-4;
 }
 
-.section:nth-child(4) {
+.testcolours .section:nth-child(4) {
   background: $fun-bg-2;
 }
 
-.section:nth-child(5) {
+.testcolours .section:nth-child(5) {
   background: $fun-bg-3;
 }
 
@@ -604,4 +604,5 @@ div {
   align-items: center;
   padding-top: 5px;
   padding-bottom: 5px;
+  padding-left: 5px;
 }

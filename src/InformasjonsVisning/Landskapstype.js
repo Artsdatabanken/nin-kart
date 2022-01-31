@@ -10,8 +10,9 @@ import {
 } from "@material-ui/core";
 import Avatar from "@material-ui/core/Avatar";
 import config from "../Funksjoner/config";
-import ArrowButton from "../GjenbruksElement/ArrowButton";
+import SectionExpand from "../GjenbruksElement/SectionExpand";
 import { useHistory } from "react-router-dom";
+import { ChevronRight } from "@material-ui/icons";
 const useStyles = makeStyles(theme => ({
   media: {
     height: 0,
@@ -23,15 +24,12 @@ export default function Landskapstype(props) {
   const { heading1, heading2, barn, parenturl, url } = props;
   const classes = useStyles();
   const history = useHistory();
-  const [expanded, setExpanded] = React.useState(false);
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
 
   return (
     <div className="subsection">
       <h4>{heading2}</h4>
-      <div className="sectionbox">
+
+      <SectionExpand title={"Hva er en landskapstype?"}>
         <p>
           En landskapstype er en samling av variasjoner i terreng og landeformer
           som sammen påvirker et større område. I kartleggingen er den minste
@@ -40,10 +38,20 @@ export default function Landskapstype(props) {
           være noen små variasjoner som ikke bestemmer landskapstypen da de er
           små og derav ikke dominerende.
         </p>
-      </div>
+      </SectionExpand>
 
-      <div className="sectionbox">
-        <h5 className="sectionbox-header">
+      <SectionExpand iconurl={url} title={heading1}>
+        <div>
+          {props.url && (
+            <CardActionArea onClick={() => history.push(url)}>
+              <CardMedia
+                className={classes.media}
+                image={config.foto(props.url)}
+                title="Foto"
+              />
+            </CardActionArea>
+          )}
+
           <button
             className="avatarlink"
             onClick={() => history.push(parenturl)}
@@ -59,41 +67,24 @@ export default function Landskapstype(props) {
             </Avatar>
 
             <ListItemText primary={heading1} />
+            <ChevronRight />
           </button>
 
-          <ArrowButton
-            handleExpandClick={handleExpandClick}
-            expanded={expanded}
-          />
-        </h5>
-        {expanded && (
-          <div>
-            {props.url && (
-              <CardActionArea onClick={() => history.push(url)}>
-                <CardMedia
-                  className={classes.media}
-                  image={config.foto(props.url)}
-                  title="Foto"
-                />
-              </CardActionArea>
-            )}
+          <ListSubheader disableSticky>
+            Defineres av landskapsgradienter
+          </ListSubheader>
 
-            <ListSubheader disableSticky>
-              Defineres av landskapsgradienter
-            </ListSubheader>
-
-            {barn &&
-              Object.values(barn).map(b => (
-                <Klg
-                  key={b.url}
-                  trinn={b.trinn || {}}
-                  url={b.url}
-                  onClick={() => history.push(b.url)}
-                />
-              ))}
-          </div>
-        )}
-      </div>
+          {barn &&
+            Object.values(barn).map(b => (
+              <Klg
+                key={b.url}
+                trinn={b.trinn || {}}
+                url={b.url}
+                onClick={() => history.push(b.url)}
+              />
+            ))}
+        </div>
+      </SectionExpand>
     </div>
   );
 }

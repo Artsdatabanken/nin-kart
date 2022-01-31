@@ -5,13 +5,16 @@ import * as Sentry from "@sentry/browser";
 import { BrowserRouter } from "react-router-dom";
 import SettingsContainer from "./SettingsContainer";
 
+let test = ""; //;
+test = "testcolours"; //;
+
 //Tester å endre denne da, sånn at vi logger til riktig sted og ikke til en tidligere ansatt
 true &&
   Sentry.init({
     dsn:
       "https://e99e90636a4e407ab7235cfe9a2b1cdb@o547272.ingest.sentry.io/5669525",
     maxBreadcrumbs: 50,
-    debug: true,
+    debug: true
   });
 
 class RootBoundary extends React.Component {
@@ -22,8 +25,8 @@ class RootBoundary extends React.Component {
 
   componentDidCatch(error, errorInfo) {
     this.setState({ error });
-    Sentry.configureScope((scope) => {
-      Object.keys(errorInfo).forEach((key) => {
+    Sentry.configureScope(scope => {
+      Object.keys(errorInfo).forEach(key => {
         scope.setExtra(key, errorInfo[key]);
       });
     });
@@ -65,7 +68,9 @@ if (isIE11) {
     <BrowserRouter baseName={process.env.PUBLIC_URL}>
       <RootBoundary>
         <SettingsContainer>
-          <App />
+          <div className={test}>
+            <App />
+          </div>
         </SettingsContainer>
       </RootBoundary>
     </BrowserRouter>,

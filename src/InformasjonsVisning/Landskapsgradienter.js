@@ -12,7 +12,7 @@ import {
   CardHeader,
   CardMedia,
   CardContent,
-  CardActions,
+  CardActions
 } from "@material-ui/core";
 import Collapse from "@material-ui/core/Collapse";
 import Avatar from "@material-ui/core/Avatar";
@@ -23,39 +23,39 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import config from "../Funksjoner/config";
 import { useHistory } from "react-router-dom";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     _maxWidth: 400,
-    margin: 8,
+    margin: 8
   },
   cardheader: {
-    cursor: "pointer",
+    cursor: "pointer"
   },
   media: {
     height: 0,
-    paddingTop: "56.25%", // 16:9
+    paddingTop: "56.25%" // 16:9
   },
   expand: {
     transform: "rotate(0deg)",
     marginLeft: "auto",
     transition: theme.transitions.create("transform", {
-      duration: theme.transitions.duration.shortest,
-    }),
+      duration: theme.transitions.duration.shortest
+    })
   },
   expandOpen: {
-    transform: "rotate(180deg)",
+    transform: "rotate(180deg)"
   },
   avatar: {},
   related: {
-    cursor: "pointer",
+    cursor: "pointer"
   },
   relatedIcon: {
     transform: "rotate(-140deg)",
     color: "#9e9e9e",
     float: "right",
     position: "relative",
-    top: -2,
-  },
+    top: -2
+  }
 }));
 
 export default function Landskapsgradienter(props) {
@@ -76,7 +76,7 @@ export default function Landskapsgradienter(props) {
         _action={
           <IconButton
             className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded,
+              [classes.expandOpen]: expanded
             })}
             onClick={handleExpandClick}
             aria-expanded={expanded}
@@ -91,7 +91,7 @@ export default function Landskapsgradienter(props) {
       />
       {
         <>
-          {Object.values(sample).map((b) => (
+          {Object.values(sample).map(b => (
             <Klg
               key={b.url}
               v={b.v}
@@ -109,7 +109,7 @@ export default function Landskapsgradienter(props) {
         <CardActions disableSpacing>
           <IconButton
             className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded,
+              [classes.expandOpen]: expanded
             })}
             onClick={handleExpandClick}
             aria-expanded={expanded}
