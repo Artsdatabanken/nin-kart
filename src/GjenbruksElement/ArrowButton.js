@@ -18,7 +18,7 @@ const ArrowButton = ({ expanded, handleExpandClick, title }) => {
       aria-label="show more"
     >
       {title}
-      {expanded ? <ExpandMore /> : <ExpandLess />}
+      {expanded ? <ExpandLess /> : <ExpandMore />}
     </button>
   );
 };
