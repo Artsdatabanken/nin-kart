@@ -3,7 +3,6 @@ import Landskapstype from "./Landskapstype";
 import Landskapsgradienter from "./Landskapsgradienter";
 import { getParentUrl } from "../AppSettings/AppFunksjoner/fetchMeta";
 import { Landscape } from "@material-ui/icons";
-import { Card } from "@material-ui/core";
 
 const Landskap = ({ landskap }) => {
   if (!landskap) return null;

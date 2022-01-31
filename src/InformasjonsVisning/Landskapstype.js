@@ -8,24 +8,13 @@ import {
   CardMedia,
   ListSubheader
 } from "@material-ui/core";
-import Collapse from "@material-ui/core/Collapse";
 import Avatar from "@material-ui/core/Avatar";
 import config from "../Funksjoner/config";
 import { useHistory } from "react-router-dom";
-import NinCard from "./NinCard";
-import { Card } from "@material-ui/core";
 import clsx from "clsx";
-import IconButton from "@material-ui/core/IconButton";
-
 import { ExpandMore } from "@material-ui/icons/";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 const useStyles = makeStyles(theme => ({
-  root: {
-    margin: 8
-  },
-  cardheader: {
-    cursor: "pointer"
-  },
   media: {
     height: 0,
     paddingTop: "56.25%" // 16:9
@@ -39,17 +28,6 @@ const useStyles = makeStyles(theme => ({
   },
   expandOpen: {
     transform: "rotate(180deg)"
-  },
-  avatar: {},
-  related: {
-    cursor: "pointer"
-  },
-  relatedIcon: {
-    transform: "rotate(-140deg)",
-    color: "#9e9e9e",
-    float: "right",
-    position: "relative",
-    top: -2
   }
 }));
 
