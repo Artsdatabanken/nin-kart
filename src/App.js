@@ -67,7 +67,8 @@ class App extends React.Component {
       showCurrent: true,
       showFullscreen: false,
       spraak: "nb",
-      showHovedmeny: false
+      showHovedmeny: false,
+      showHelp: false
     };
     exportableSpraak = this;
     exportableFullscreen = this;
@@ -136,7 +137,7 @@ class App extends React.Component {
               />
             )}
 
-            {aktivTab === "hjelp" && <Hjelp aktivTab={aktivTab} />}
+            {this.state.showHelp && <Hjelp handleHelp={this.handleHelp} />}
 
             <SettingsContext.Consumer>
               {context => {
@@ -239,6 +240,7 @@ class App extends React.Component {
               handleSpraak={this.handleSpraak}
               open={this.state.showHovedmeny}
               handleHovedMeny={this.handleHovedMeny}
+              handleHelp={this.handleHelp}
             />
           </>
         )}
@@ -279,6 +281,10 @@ class App extends React.Component {
   };
   handleSpraak = spraak => {
     this.setState({ spraak: spraak });
+  };
+
+  handleHelp = () => {
+    this.setState({ showHelp: !this.state.showHelp });
   };
 
   handleHovedMeny = () => {

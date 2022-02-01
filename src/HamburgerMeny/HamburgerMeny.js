@@ -121,7 +121,7 @@ class HamburgerMeny extends Component {
                   icon={<HelpOutline />}
                   primary="Hjelp"
                   onClick={() => {
-                    this.handleClick("?hjelp");
+                    this.props.handleHelp();
                     this.props.handleHovedMeny();
                   }}
                 />
