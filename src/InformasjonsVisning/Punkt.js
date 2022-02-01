@@ -6,7 +6,7 @@ import Naturtype from "./Lokalitet/LokalitetElement/Naturtype";
 import Header from "./Header";
 import LukkbartVindu from "../LukkbartVindu";
 import { getKoordinatStreng } from "../koordinater";
-import { MyLocation } from "@material-ui/icons";
+import { MyLocation, Room } from "@material-ui/icons";
 
 class Punkt extends Component {
   createNatvars = nat => {
@@ -85,7 +85,7 @@ class Punkt extends Component {
             onClose={handleShowPunkt}
             show={show}
             tittel={"Punktinformasjon"}
-            iconurl={"/marker/baseline_place_black_18dp.png"}
+            icon={<Room />}
           >
             {false && (
               <Header
