@@ -10,8 +10,7 @@ const Hjelp = ({ handleHelp }) => {
             handleHelp();
           }}
         >
-          {" "}
-          Lukk{" "}
+          Lukk
         </button>
         <WikiMarkdown sidenavn="Bruk" />
       </div>
