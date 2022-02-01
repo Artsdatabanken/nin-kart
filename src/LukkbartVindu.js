@@ -3,25 +3,46 @@ import { withRouter } from "react-router";
 import { Close, ArrowBack, DoubleArrow } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
 
-const LukkbartVindu = ({ tittel, onClose, onBack, children, iconurl }) => {
-  const [expanded, setExpanded] = useState(true);
+const LukkbartVindu = ({
+  tittel,
+  onClose,
+  onBack,
+  children,
+  iconurl,
+  show
+}) => {
+  const [expanded, setExpanded] = useState(show);
+
+  if (show !== undefined && show !== expanded) {
+    // IF we have show and onCLose, use these.
+    // If not use those in this component instead.
+    // Sometimes it needs to be set higher to be availiable from map
+    setExpanded(show);
+  }
+
+  function handleExpand(value) {
+    if (show !== undefined) {
+      onClose(value);
+    } else {
+      setExpanded(value);
+    }
+  }
 
   return (
     <>
       <button
         onClick={e => {
-          setExpanded(!expanded);
+          handleExpand(true);
         }}
-        className=""
       >
         Åpne <DoubleArrow />
       </button>
-      {expanded && (
+      {(expanded || show) && (
         <div className="lukkbartvindu">
           <div className="lukkbartvindu-innhold">
             <button
               onClick={e => {
-                setExpanded(!expanded);
+                handleExpand(false);
               }}
               className="closebutton"
             >

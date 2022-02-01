@@ -24,7 +24,7 @@ const SectionExpand = ({ title, children, iconurl }) => {
               )}
             </Avatar>
           )}
-          <span class="avatarlink">
+          <span className="avatarlink">
             <ListItemText primary={title} />
           </span>
         </span>

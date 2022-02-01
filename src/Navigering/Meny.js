@@ -48,8 +48,6 @@ Sidebarmeny-navigeringen.
   //const kodesuffix = kodeSuffix2(meta.kode, meta.overordnet);
   // Overordnet = Breadcrumb
 
-  console.log(expanded);
-
   let backurl = "/start";
   if (meta.overordnet !== undefined && meta.overordnet[0] !== undefined) {
     backurl = meta.overordnet[0].url;
@@ -150,6 +148,7 @@ Sidebarmeny-navigeringen.
               onUpdateMetaProp={onUpdateMetaProp}
             />
           )}
+          {!expanded && false && <b>Do we still use this variable?</b>}
         </div>
       )}
     </SettingsContext.Consumer>

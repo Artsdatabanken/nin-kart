@@ -11,7 +11,7 @@ const Landskap = ({ landskap }) => {
   const barn = gradient && gradient.barn;
   return (
     <div className="section">
-      <h3 class="kartlag_header">
+      <h3 className="kartlag_header">
         <Landscape />
         Landskap
       </h3>

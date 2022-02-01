@@ -68,7 +68,8 @@ class App extends React.Component {
       showFullscreen: false,
       spraak: "nb",
       showHovedmeny: false,
-      showHelp: false
+      showHelp: false,
+      showPunkt: false
     };
     exportableSpraak = this;
     exportableFullscreen = this;
@@ -119,15 +120,17 @@ class App extends React.Component {
                 onClose={this.handleClosePunkt}
               />
             )}
-            {aktivTab === "punkt" && (
-              <Punkt
-                punkt={this.state.punkt}
-                aktivTab={aktivTab}
-                onNavigateToTab={this.handleSetAktivTab}
-                onNavigate={this.handleNavigate}
-                onClose={this.handleClosePunkt}
-              />
-            )}
+
+            <Punkt
+              punkt={this.state.punkt}
+              aktivTab={aktivTab}
+              onNavigateToTab={this.handleSetAktivTab}
+              onNavigate={this.handleNavigate}
+              onClose={this.onClose}
+              handleShowPunkt={this.handleShowPunkt}
+              show={this.state.showPunkt}
+            />
+
             {aktivTab === "kartlegging" && (
               <Kartlegging
                 punkt={this.state.punkt}
@@ -250,6 +253,8 @@ class App extends React.Component {
 
   handleMarkerClick = coords => {
     this.setState({ markerCoordinates: coords }, () => this.fetchPunktdata());
+    console.log("clicked something");
+    this.handleShowPunkt(true);
   };
 
   handleClosePunkt = () => {
@@ -285,6 +290,11 @@ class App extends React.Component {
 
   handleHelp = () => {
     this.setState({ showHelp: !this.state.showHelp });
+  };
+
+  handleShowPunkt = punkt => {
+    console.log("handleshowpunkt", punkt);
+    this.setState({ showPunkt: punkt });
   };
 
   handleHovedMeny = () => {

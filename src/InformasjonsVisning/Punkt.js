@@ -54,8 +54,13 @@ class Punkt extends Component {
       onNavigate,
       punkt,
       onClose,
-      onNavigateToTab
+      onNavigateToTab,
+      handleShowPunkt,
+      show
     } = this.props;
+    if (!punkt) {
+      return null;
+    }
     const { lat, lng } = punkt;
     if (!lat) return null;
     const { fylke, kommune, sted, landskap } = punkt;
@@ -68,7 +73,7 @@ class Punkt extends Component {
     } else {
       natArray = [(natArray && natArray.data) || {}];
     }
-
+    console.log("show", show);
     const verneområde = vektor.find(e => e.datasettkode === "VV ");
     return (
       <>
@@ -77,7 +82,8 @@ class Punkt extends Component {
         >
           <LukkbartVindu
             onBack={() => onNavigateToTab("kartlag")}
-            onClose={onClose}
+            onClose={handleShowPunkt}
+            show={show}
             tittel={"Punktinformasjon"}
             iconurl={"/marker/baseline_place_black_18dp.png"}
           >
@@ -90,7 +96,7 @@ class Punkt extends Component {
                 lng={lng}
               />
             )}
-            <div class="section">
+            <div className="section">
               <div className="coordinates">
                 <h3>
                   <MyLocation />
@@ -102,22 +108,21 @@ class Punkt extends Component {
 
             {natArray &&
               natArray.map((nat, i) => {
-                return (
-                  <>
-                    {this.createNaturtyper(nat).length > 0 && (
-                      <div className="section" key={i}>
-                        <Naturtype
-                          showHeader={i === 0}
-                          typer={this.createNaturtyper(nat)}
-                          variabler={this.createNatvars(nat)}
-                          ulkm={this.createUlkm(nat)}
-                          onNavigate={onNavigate}
-                          onNavigateToTab={onNavigateToTab}
-                        />
-                      </div>
-                    )}
-                  </>
-                );
+                if (this.createNaturtyper(nat).length > 0) {
+                  return (
+                    <div className="section" key={i}>
+                      <Naturtype
+                        showHeader={i === 0}
+                        typer={this.createNaturtyper(nat)}
+                        variabler={this.createNatvars(nat)}
+                        ulkm={this.createUlkm(nat)}
+                        onNavigate={onNavigate}
+                        onNavigateToTab={onNavigateToTab}
+                      />
+                    </div>
+                  );
+                }
+                return null;
               })}
 
             <Landskap landskap={landskap} />
