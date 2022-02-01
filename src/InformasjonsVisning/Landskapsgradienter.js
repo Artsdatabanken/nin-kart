@@ -1,25 +1,25 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
+//import { makeStyles } from "@material-ui/core/styles";
+//import clsx from "clsx";
 import {
-  Divider,
+  //  Divider,
   ListItem,
   ListItemAvatar,
   ListItemText,
-  ListItemSecondaryAction,
-  Card,
-  CardActionArea,
-  CardHeader,
-  CardMedia,
-  CardContent,
-  CardActions
+  ListItemSecondaryAction
+  //  Card,
+  //CardActionArea,
+  //  CardHeader,
+  //  CardMedia,
+  //  CardContent,
+  //  CardActions
 } from "@material-ui/core";
-import Collapse from "@material-ui/core/Collapse";
+//import Collapse from "@material-ui/core/Collapse";
 import Avatar from "@material-ui/core/Avatar";
-import IconButton from "@material-ui/core/IconButton";
+//import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import { ExpandMore, ArrowDownward } from "@material-ui/icons/";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
+//import { ExpandMore, ArrowDownward } from "@material-ui/icons/";
+//import MoreVertIcon from "@material-ui/icons/MoreVert";
 import config from "../Funksjoner/config";
 import { useHistory } from "react-router-dom";
 import SectionExpand from "../GjenbruksElement/SectionExpand";
@@ -62,14 +62,18 @@ const useStyles = makeStyles(theme => ({
 */
 
 export default function Landskapsgradienter(props) {
-  const { heading1, beskrivelse, sample } = props;
+  const {
+    heading1,
+    //beskrivelse,
+    sample
+  } = props;
   //const classes = useStyles();
 
-  const [expanded, setExpanded] = React.useState(false);
+  //const [expanded, setExpanded] = React.useState(false);
   const history = useHistory();
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+  //const handleExpandClick = () => {
+  //setExpanded(!expanded);
+  //};
   if (!sample) return null;
 
   return (
