@@ -4,10 +4,10 @@ import isItalics from "../../Funksjoner/isItalics";
 import Bildeavatar from "../../GjenbruksElement/Bildeavatar";
 import VolumIndikator from "./VolumIndikator";
 import getSecondary from "./NavigeringslisteFunksjoner/getSecondary";
-import kodeSuffix from "./NavigeringslisteFunksjoner/kodeSuffix";
 import "../../style/NavMenu.scss";
 import VelgFargeboks from "../../Kartlag/AktiveKartlag/EkspandertMeny/FellesElementer/VelgFargeBoks";
 import { ChevronRight } from "@material-ui/icons";
+import constants from "../../constants";
 
 class Kodelisteelement extends React.Component {
   shouldComponentUpdate(np) {
@@ -20,7 +20,6 @@ class Kodelisteelement extends React.Component {
   render() {
     const {
       meta,
-      parentkode,
       kode,
       url,
       visKode,
@@ -68,10 +67,12 @@ class Kodelisteelement extends React.Component {
           }
         >
           <span className="nav_title">{tittel}</span>
-          <span className="nav_2ndtitle">{getSecondary(meta)}</span>
-          {visKode && (
-            <span className="nav_kode">{kodeSuffix(kode, parentkode)}</span>
+          {meta.interval && (
+            <span className="nav_2ndtitle">
+              {constants.interval}: {getSecondary(meta)}
+            </span>
           )}
+          {visKode && <span className="nav_kode">{kode}</span>}
         </div>
         <ChevronRight />
       </button>
