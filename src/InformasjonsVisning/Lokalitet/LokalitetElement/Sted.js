@@ -1,20 +1,13 @@
 import React from "react";
 import språk from "../../../Funksjoner/språk";
-import { getKoordinatStreng } from "../../../koordinater";
 import Overskrift from "../../Overskrift";
-import NinCard from "../../NinCard";
-
 import SectionExpand from "../../../GjenbruksElement/SectionExpand";
 import { getParentUrl } from "../../../AppSettings/AppFunksjoner/fetchMeta";
-
 import {
   CardMedia,
-  Collapse,
-  CardContent,
   ListItem,
   ListItemText,
-  ListItemAvatar,
-  Typography
+  ListItemAvatar
 } from "@material-ui/core";
 import config from "../../../Funksjoner/config";
 

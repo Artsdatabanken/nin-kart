@@ -1,9 +1,7 @@
 import React from "react";
 import Navigeringsliste from "../../../Navigering/Navigeringsliste/Navigeringsliste";
-import Ekspander from "../../../GjenbruksElement/Ekspander";
 import SectionExpand from "../../../GjenbruksElement/SectionExpand";
 import { titler } from "./Titler";
-
 const Relasjon = props => {
   const {
     heading,
