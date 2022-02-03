@@ -6,28 +6,16 @@ import språk from "../Funksjoner/språk";
 import Katalog from "./Katalog/Katalog";
 import { Info } from "@material-ui/icons";
 
-// Denne boksen inneholder alle informasjonsvisningssidene
 class InformasjonsVisning extends React.Component {
+  // Denne boksen inneholder alle informasjonssidene for kartlag
   render() {
-    const {
-      opplyst,
-      onMouseEnter,
-      onMouseLeave,
-      onUpdateLayerProp,
-      onUpdateMetaProp,
-      meta,
-      onNavigate,
-      onNavigateToTab,
-      handleShow,
-      show
-    } = this.props;
+    const { meta } = this.props;
     const kurve = finnKurvevariabler(this.props.aktiveLag);
-
     return (
       <LukkbartVindu
-        onBack={() => onNavigateToTab("kartlag")}
-        onClose={handleShow}
-        show={show}
+        onBack={() => this.props.onNavigateToTab("kartlag")}
+        onClose={this.props.handleShow}
+        show={this.props.show}
         tittel={meta && språk(meta.tittel)}
         icon={<Info />}
       >
@@ -35,12 +23,12 @@ class InformasjonsVisning extends React.Component {
           <Katalog
             meta={meta}
             onFitBounds={this.props.onFitBounds}
-            onUpdateLayerProp={onUpdateLayerProp}
-            onNavigate={onNavigate}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-            opplyst={opplyst}
-            onUpdateMetaProp={onUpdateMetaProp}
+            onUpdateLayerProp={this.props.onUpdateLayerProp}
+            onNavigate={this.props.onNavigate}
+            onMouseEnter={this.props.onMouseEnter}
+            onMouseLeave={this.props.onMouseLeave}
+            opplyst={this.props.opplyst}
+            onUpdateMetaProp={this.props.onUpdateMetaProp}
             handleCloseSnackbar={this.handleCloseSnackbar}
             erAktivert={this.props.erAktivert}
             onToggleLayer={this.props.onToggleLayer}
@@ -51,5 +39,4 @@ class InformasjonsVisning extends React.Component {
     );
   }
 }
-
 export default withRouter(InformasjonsVisning);

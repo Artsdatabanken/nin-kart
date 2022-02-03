@@ -143,12 +143,7 @@ class App extends React.Component {
 
             <InformasjonsVisning
               onNavigate={this.handleNavigate}
-              path={path}
-              aktivTab={aktivTab}
-              show_current={this.state.showCurrent}
-              handleShowCurrent={this.handleShowCurrent}
               aktiveLag={this.state.aktiveLag}
-              mapBounds={this.state.actualBounds}
               onMouseEnter={this.handleMouseEnter}
               onMouseLeave={this.handleMouseLeave}
               onFitBounds={this.handleFitBounds}
@@ -158,8 +153,6 @@ class App extends React.Component {
                 this.handleToggleLayer();
               }}
               meta={this.state.meta}
-              searchFor={this.state.searchFor}
-              onClearSearchFor={this.handleClearSearchFor}
               onUpdateLayerProp={this.handleUpdateLayerProp}
               onUpdateMetaProp={this.handleUpdateMetaProp}
               onNavigateToTab={this.handleSetAktivTab}
