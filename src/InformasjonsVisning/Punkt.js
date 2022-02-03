@@ -53,9 +53,8 @@ class Punkt extends Component {
       aktivTab,
       onNavigate,
       punkt,
-      onClose,
       onNavigateToTab,
-      handleShowPunkt,
+      handleShow,
       show
     } = this.props;
     if (!punkt) {
@@ -81,7 +80,7 @@ class Punkt extends Component {
         >
           <LukkbartVindu
             onBack={() => onNavigateToTab("kartlag")}
-            onClose={handleShowPunkt}
+            onClose={handleShow}
             show={show}
             tittel={"Punktinformasjon"}
             icon={<Room />}

@@ -5,9 +5,7 @@ import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
 import språk from "../Funksjoner/språk";
 //import { kodeSuffix2 } from "./Navigeringsliste/NavigeringslisteFunksjoner/kodeSuffix";
 import { Tooltip } from "@material-ui/core";
-//import Utforsk from "../HamburgerMeny/Utforsk/Utforsk";
 import {
-  //KeyboardArrowDown,
   ArrowBack,
   FavoriteBorder,
   Favorite,
@@ -28,9 +26,9 @@ const Meny = ({
   onMouseLeave,
   onToggleLayer,
   path,
-  handleHovedMeny,
   isstartpage,
-  parent
+  parent,
+  handleShowInfo
 }) => {
   /*
 Intern navigasjon innad på en side.
@@ -87,7 +85,7 @@ Sidebarmeny-navigeringen.
                 <div className="kartlag_element_buttons">
                   <button
                     onClick={() => {
-                      onSetAktivTab("informasjon");
+                      handleShowInfo(true);
                     }}
                   >
                     <Tooltip
@@ -99,7 +97,7 @@ Sidebarmeny-navigeringen.
                   </button>
                   <button
                     onClick={() => {
-                      onSetAktivTab("kartlaginnstillinger");
+                      handleShowInfo("kartlaginnstillinger");
                     }}
                   >
                     <Tooltip

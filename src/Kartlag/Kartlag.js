@@ -144,12 +144,12 @@ class Kartlag extends React.Component {
                     onNavigate={this.props.onNavigate}
                     aktivTab={this.props.aktivTab}
                     onSetAktivTab={this.props.onSetAktivTab}
+                    handleShowInfo={this.props.handleShowInfo}
                     onUpdateMetaProp={this.props.onUpdateMetaProp}
                     onToggleLayer={this.props.onToggleLayer}
                     opplyst={this.props.opplyst}
                     onMouseEnter={this.props.onMouseEnter}
                     onMouseLeave={this.props.onMouseLeave}
-                    handleHovedMeny={this.props.handleHovedMeny}
                     path={this.props.path}
                     parent={this.props.parent}
                     isstartpage={isstartpage}

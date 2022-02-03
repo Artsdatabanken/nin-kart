@@ -4,7 +4,6 @@ import { SettingsContext } from "./SettingsContext";
 class SettingsContainer extends Component {
   state = {
     visKoder: false,
-    visAktiveLag: false,
     visHovedmeny: false,
 
     width: window.innerWidth
@@ -23,10 +22,8 @@ class SettingsContainer extends Component {
         value={{
           visKoder: this.state.visKoder,
           sorterPåKode: this.state.sorterPåKode,
-          visAktiveLag: this.state.visAktiveLag,
           width: this.state.width,
           onUpdateValue: this.handleUpdateValue,
-          onToggleAktiveLag: this.handleToggleAktivelag,
           onToggleForside: this.handleToggleForside,
           onMapMove: this.handleMapMove,
           onSetWidth: this.setWidth
@@ -42,9 +39,6 @@ class SettingsContainer extends Component {
     this.setState({ [key]: value });
     localStorage.setItem(key, value);
   };
-
-  handleToggleAktivelag = () =>
-    this.handleUpdateValue("visAktiveLag", !this.state.visAktiveLag);
 
   setWidth = width => {
     this.setState({ width });

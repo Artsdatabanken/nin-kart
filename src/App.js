@@ -69,7 +69,8 @@ class App extends React.Component {
       spraak: "nb",
       showHovedmeny: false,
       showHelp: false,
-      showPunkt: false
+      showPunkt: false,
+      showInfo: false
     };
     exportableSpraak = this;
     exportableFullscreen = this;
@@ -127,7 +128,7 @@ class App extends React.Component {
               onNavigateToTab={this.handleSetAktivTab}
               onNavigate={this.handleNavigate}
               onClose={this.onClose}
-              handleShowPunkt={this.handleShowPunkt}
+              handleShow={this.handleShowPunkt}
               show={this.state.showPunkt}
             />
 
@@ -140,42 +141,31 @@ class App extends React.Component {
               />
             )}
 
+            <InformasjonsVisning
+              onNavigate={this.handleNavigate}
+              aktiveLag={this.state.aktiveLag}
+              onMouseEnter={this.handleMouseEnter}
+              onMouseLeave={this.handleMouseLeave}
+              onFitBounds={this.handleFitBounds}
+              erAktivert={erAktivert}
+              opplyst={this.state.opplyst}
+              onToggleLayer={() => {
+                this.handleToggleLayer();
+              }}
+              meta={this.state.meta}
+              onUpdateLayerProp={this.handleUpdateLayerProp}
+              onUpdateMetaProp={this.handleUpdateMetaProp}
+              onNavigateToTab={this.handleSetAktivTab}
+              handleShow={this.handleShowInfo}
+              show={this.state.showInfo}
+            />
+
             {this.state.showHelp && <Hjelp handleHelp={this.handleHelp} />}
 
             <SettingsContext.Consumer>
               {context => {
                 return (
                   <>
-                    {aktivTab === "informasjon" && (
-                      <InformasjonsVisning
-                        onNavigate={this.handleNavigate}
-                        path={path}
-                        aktivTab={aktivTab}
-                        show_current={this.state.showCurrent}
-                        handleShowCurrent={this.handleShowCurrent}
-                        aktiveLag={this.state.aktiveLag}
-                        mapBounds={this.state.actualBounds}
-                        onMouseEnter={this.handleMouseEnter}
-                        onMouseLeave={this.handleMouseLeave}
-                        onFitBounds={this.handleFitBounds}
-                        erAktivert={erAktivert}
-                        opplyst={this.state.opplyst}
-                        onToggleLayer={() => {
-                          this.handleToggleLayer();
-                          if (!context.visAktiveLag)
-                            context.onToggleAktiveLag();
-                        }}
-                        meta={this.state.meta}
-                        searchFor={this.state.searchFor}
-                        onClearSearchFor={this.handleClearSearchFor}
-                        onUpdateLayerProp={this.handleUpdateLayerProp}
-                        onUpdateMetaProp={this.handleUpdateMetaProp}
-                        visAktiveLag={context.visAktiveLag}
-                        onToggleAktiveLag={context.onToggleAktiveLag}
-                        onNavigateToTab={this.handleSetAktivTab}
-                        onClose={this.handleClosePunkt}
-                      />
-                    )}
                     <Kartlag
                       aktivTab={aktivTab}
                       lokalitetdata={this.state.lokalitetdata}
@@ -197,11 +187,11 @@ class App extends React.Component {
                       meta={this.state.meta}
                       onNavigate={this.handleNavigate}
                       onSetAktivTab={this.handleSetAktivTab}
+                      handleShowInfo={this.handleShowInfo}
                       onUpdateMetaProp={this.handleUpdateMetaProp}
                       handleHovedMeny={this.handleHovedMeny}
                       onToggleLayer={() => {
                         this.handleToggleLayer();
-                        if (!context.visAktiveLag) context.onToggleAktiveLag();
                       }}
                       opplyst={this.state.opplyst}
                       onMouseEnter={this.handleMouseEnter}
@@ -293,8 +283,12 @@ class App extends React.Component {
   };
 
   handleShowPunkt = punkt => {
-    console.log("handleshowpunkt", punkt);
     this.setState({ showPunkt: punkt });
+  };
+
+  handleShowInfo = info => {
+    console.log("show info");
+    this.setState({ showInfo: info });
   };
 
   handleHovedMeny = () => {
