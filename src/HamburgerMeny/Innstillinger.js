@@ -1,13 +1,15 @@
-import Menyelement from "./Menyelement";
-import { Language, SortByAlpha } from "@material-ui/icons";
 import React from "react";
+import { Language, SortByAlpha } from "@material-ui/icons";
+import Menyelement from "./Menyelement";
+import constants from "../constants";
+import ToggleSwitch from "../GjenbruksElement/ToggleSwitch";
 
 const Innstillinger = ({
   visKoder,
   sorterPåKode,
   onUpdateSetting,
   spraak,
-  handleSpraak,
+  handleSpraak
 }) => {
   let spraaknavn = "";
   if (spraak === "en") {
@@ -23,18 +25,19 @@ const Innstillinger = ({
   return (
     <>
       <Menyelement
-        onClick={(e) => {
+        onClick={e => {
           e.preventDefault();
           e.stopPropagation();
-          onUpdateSetting("visKoder", !visKoder);
+          onUpdateSetting(constants.showNinCodes, !visKoder);
         }}
         icon={<span>NA</span>}
-        primary={visKoder ? "Vis NiN-koder" : "Ikke vis NiN-koder"}
+        primary={constants.showNinCodesText}
+        secondary={<ToggleSwitch isActive={visKoder} id="showNinCodes" />}
         checked={visKoder}
       />
 
       <Menyelement
-        onClick={(e) => {
+        onClick={e => {
           e.preventDefault();
           e.stopPropagation();
           onUpdateSetting("sorterPåKode", !sorterPåKode);
@@ -44,7 +47,7 @@ const Innstillinger = ({
       />
 
       <Menyelement
-        onClick={(e) => {
+        onClick={e => {
           e.preventDefault();
           e.stopPropagation();
           const språk = ["en", "nb", "nn"];
