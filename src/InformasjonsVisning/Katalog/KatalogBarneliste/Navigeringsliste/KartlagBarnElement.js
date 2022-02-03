@@ -1,9 +1,9 @@
 import React from "react";
 import språk from "../../../../Funksjoner/språk";
-import getSecondary from "./NavigeringslisteFunksjoner/getSecondary";
 import kodeSuffix from "./NavigeringslisteFunksjoner/kodeSuffix";
 import "../../../../style/NavMenu.scss";
 import config from "../../../../Funksjoner/config";
+import { getInterval } from "../../../../helpers";
 
 class KartlagBarnElement extends React.Component {
   render() {
@@ -16,7 +16,7 @@ class KartlagBarnElement extends React.Component {
       onNavigate,
       onMouseEnter,
       onMouseLeave,
-      isDatakilde,
+      isDatakilde
     } = this.props;
 
     let backgroundSize = "cover",
@@ -49,7 +49,7 @@ class KartlagBarnElement extends React.Component {
         <div className="subelement_decorative_box">
           <span
             style={{
-              display: imgheight !== 0 && "none",
+              display: imgheight !== 0 && "none"
             }}
           >
             {meta.kode}
@@ -64,7 +64,7 @@ class KartlagBarnElement extends React.Component {
             backgroundSize: backgroundSize,
             backgroundImage: "url(" + new_url + ")",
             border: borderSize,
-            zIndex: "10",
+            zIndex: "10"
           }}
         />
 
@@ -74,7 +74,7 @@ class KartlagBarnElement extends React.Component {
               ? meta.tittel.sn
               : språk(meta.tittel)}
           </span>
-          <span className="nav_2ndtitle">{getSecondary(meta)}</span>
+          <span className="nav_2ndtitle">{getInterval(meta.intervall)}</span>
         </div>
 
         {false && visKode && (

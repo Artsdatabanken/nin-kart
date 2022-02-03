@@ -3,11 +3,11 @@ import språk from "../../Funksjoner/språk";
 import isItalics from "../../Funksjoner/isItalics";
 import Bildeavatar from "../../GjenbruksElement/Bildeavatar";
 import VolumIndikator from "./VolumIndikator";
-import getSecondary from "./NavigeringslisteFunksjoner/getSecondary";
 import "../../style/NavMenu.scss";
 import VelgFargeboks from "../../Kartlag/AktiveKartlag/EkspandertMeny/FellesElementer/VelgFargeBoks";
 import { ChevronRight } from "@material-ui/icons";
 import constants from "../../constants";
+import { getInterval } from "../../helpers";
 
 class Kodelisteelement extends React.Component {
   shouldComponentUpdate(np) {
@@ -67,9 +67,9 @@ class Kodelisteelement extends React.Component {
           }
         >
           <span className="nav_title">{tittel}</span>
-          {meta.interval && (
+          {meta.intervall && (
             <span className="nav_2ndtitle">
-              {constants.interval}: {getSecondary(meta)}
+              {constants.interval}: {getInterval(meta.intervall)}
             </span>
           )}
           {visKode && <span className="nav_kode">{kode}</span>}

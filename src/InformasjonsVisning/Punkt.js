@@ -73,7 +73,6 @@ class Punkt extends Component {
     } else {
       natArray = [(natArray && natArray.data) || {}];
     }
-    console.log("show", show);
     const verneområde = vektor.find(e => e.datasettkode === "VV ");
     return (
       <>
