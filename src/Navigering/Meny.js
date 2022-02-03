@@ -97,7 +97,7 @@ Sidebarmeny-navigeringen.
                   </button>
                   <button
                     onClick={() => {
-                      handleShowInfo("kartlaginnstillinger");
+                      onSetAktivTab("kartlaginnstillinger");
                     }}
                   >
                     <Tooltip
