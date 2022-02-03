@@ -3,6 +3,8 @@ import språk from "../../../Funksjoner/språk";
 import { getKoordinatStreng } from "../../../koordinater";
 import Overskrift from "../../Overskrift";
 import NinCard from "../../NinCard";
+
+import SectionExpand from "../../../GjenbruksElement/SectionExpand";
 import { getParentUrl } from "../../../AppSettings/AppFunksjoner/fetchMeta";
 
 import {
@@ -54,70 +56,59 @@ const Sted = ({ sted, lat, lng, fylke, kommune, verneområde, onNavigate }) => {
         tittel="Sted"
         image="Administrativ_grense/Territorialområde/Sjøterritorium_og_territorialfarvann/Fastlands-Norge"
       />
-      <NinCard
-        image="Administrativ_grense/Territorialområde/Sjøterritorium_og_territorialfarvann/Fastlands-Norge"
-        heading="Sted"
-        title={getTitle(sted, kommune)}
-        canExpand
-        hasData={!!sted}
-      >
-        {expanded => (
-          <>
-            {false &&
-              kommune &&
-              kommune.bilde &&
-              kommune.bilde.foto &&
-              kommune.bilde.foto.url && (
-                <CardMedia>
-                  <img src={kommune.bilde.foto.url} alt="foto" />
-                </CardMedia>
-              )}
-            <CardContent>
-              <Typography variant="body2">
-                Posisjon: {getKoordinatStreng([lat, lng])}
-              </Typography>
-            </CardContent>
-            {false && sted1 && sted2 && (
-              <Item
-                primary={sted1 + ", " + sted2}
-                secondary={"Stedsnavn"}
-                parenturl={getParentUrl(sted)}
-                url={sted.meta.url}
-                onClick={onNavigate}
-              />
-            )}
-            {verneområde && (
-              <Item
-                primary={språk(verneområde.tittel)}
-                secondary={språk(verneområde.overordnet[0].tittel)}
-                parenturl={getParentUrl(verneområde)}
-                url={verneområde.url}
-                onClick={onNavigate}
-              />
-            )}
 
-            {kommune && (
-              <Item
-                primary={språk(kommune.tittel)}
-                secondary="Kommune"
-                parenturl={getParentUrl(kommune)}
-                url={kommune.url}
-                onClick={onNavigate}
-              />
+      <div className="subsection">
+        <h4>Stedsnavn</h4>
+
+        <SectionExpand title={getTitle(sted, kommune)}>
+          {true && sted1 && sted2 && (
+            <Item
+              primary={sted1 + ", " + sted2}
+              secondary={"Stedsnavn"}
+              parenturl={getParentUrl(sted)}
+              url={sted.meta.url}
+              onClick={onNavigate}
+            />
+          )}
+          {false &&
+            kommune &&
+            kommune.bilde &&
+            kommune.bilde.foto &&
+            kommune.bilde.foto.url && (
+              <CardMedia>
+                <img src={kommune.bilde.foto.url} alt="foto av kommunen." />
+              </CardMedia>
             )}
-            {fylke && (
-              <Item
-                primary={språk(fylke.tittel)}
-                secondary="Fylke"
-                parenturl={getParentUrl(fylke)}
-                url={fylke.url}
-                onClick={onNavigate}
-              />
-            )}
-            <Collapse in={expanded} timeout="auto" unmountOnExit></Collapse>
-          </>
-        )}
-      </NinCard>
+          {kommune && (
+            <Item
+              primary={språk(kommune.tittel)}
+              secondary="Kommune"
+              parenturl={getParentUrl(kommune)}
+              url={kommune.url}
+              onClick={onNavigate}
+            />
+          )}
+          {fylke && (
+            <Item
+              primary={språk(fylke.tittel)}
+              secondary="Fylke"
+              parenturl={getParentUrl(fylke)}
+              url={fylke.url}
+              onClick={onNavigate}
+            />
+          )}
+
+          {verneområde && (
+            <Item
+              primary={språk(verneområde.tittel)}
+              secondary={språk(verneområde.overordnet[0].tittel)}
+              parenturl={getParentUrl(verneområde)}
+              url={verneområde.url}
+              onClick={onNavigate}
+            />
+          )}
+        </SectionExpand>
+      </div>
     </div>
   );
 };
