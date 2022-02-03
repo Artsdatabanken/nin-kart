@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import finnKurvevariabler from "./Katalog/KatalogFunksjoner/finnKurvevariabler";
 import språk from "../Funksjoner/språk";
 import Katalog from "./Katalog/Katalog";
+import { Info } from "@material-ui/icons";
 
 // Denne boksen inneholder alle informasjonsvisningssidene
 class InformasjonsVisning extends React.Component {
@@ -17,15 +18,18 @@ class InformasjonsVisning extends React.Component {
       meta,
       onNavigate,
       onNavigateToTab,
-      onClose,
+      handleShow,
+      show
     } = this.props;
     const kurve = finnKurvevariabler(this.props.aktiveLag);
 
     return (
       <LukkbartVindu
         onBack={() => onNavigateToTab("kartlag")}
-        onClose={onClose}
+        onClose={handleShow}
+        show={show}
         tittel={meta && språk(meta.tittel)}
+        icon={<Info />}
       >
         {meta && (
           <Katalog
