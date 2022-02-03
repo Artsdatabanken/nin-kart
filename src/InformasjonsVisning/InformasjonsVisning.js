@@ -46,6 +46,7 @@ class InformasjonsVisning extends React.Component {
                 opplyst={this.props.opplyst}
               />
             </div>
+
             <KatalogBarneliste
               meta={meta}
               onNavigate={this.props.onNavigate}

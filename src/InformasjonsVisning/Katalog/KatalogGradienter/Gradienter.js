@@ -1,7 +1,6 @@
 import React from "react";
 import språk from "../../../Funksjoner/språk";
 import config from "../../../Funksjoner/config";
-
 import SectionExpand from "../../../GjenbruksElement/SectionExpand";
 
 const Gradienter = ({ gradient, onNavigate, title }) => {
