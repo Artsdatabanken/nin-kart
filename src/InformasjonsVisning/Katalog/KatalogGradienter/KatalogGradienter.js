@@ -36,7 +36,7 @@ const KatalogGradienter = ({
     title = "Miljøvariabler for naturtypen";
 
   return (
-    <div className="section">
+    <>
       {meta.gradient &&
         Object.entries(meta.gradient).map(([kode, node]) => (
           <Gradienter
@@ -50,7 +50,7 @@ const KatalogGradienter = ({
           />
         ))}
 
-      {true && meta.kart.format.raster_gradient && (
+      {meta.kart.format.raster_gradient && (
         <Ekspander
           visible={true}
           heading={"Frekvens"}
@@ -79,7 +79,7 @@ const KatalogGradienter = ({
             {...props}
           />
         ))}
-    </div>
+    </>
   );
 };
 export default KatalogGradienter;

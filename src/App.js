@@ -287,7 +287,6 @@ class App extends React.Component {
   };
 
   handleShowInfo = info => {
-    console.log("show info");
     this.setState({ showInfo: info });
   };
 

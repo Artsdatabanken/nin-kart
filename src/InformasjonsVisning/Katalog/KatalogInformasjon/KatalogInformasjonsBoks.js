@@ -42,7 +42,8 @@ const KatalogInformasjonsBoks = ({ meta }) => {
 
   if (beskrivelse || meta.infourl) {
     return (
-      <>
+      <div className="subsection">
+        <h4>Informasjon om kartlaget</h4>
         {beskrivelse}
         <p>
           {meta.infoUrl && (
@@ -51,7 +52,7 @@ const KatalogInformasjonsBoks = ({ meta }) => {
             </a>
           )}
         </p>
-      </>
+      </div>
     );
   } else {
     return null;

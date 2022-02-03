@@ -20,17 +20,6 @@ Eksempelside: /Natur_i_Norge/Landskap/Typeinndeling/Innlandslandskap?informasjon
   padding-top: 10px;
 }
 
-.badge_container {
-  width: 100%;
-  background: $brightest-nin;
-  margin-bottom: 5px;
-}
-
-.badge_container b {
-  display: block;
-  width: 100%;
-}
-
 .general_badge_container {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -78,6 +67,7 @@ Eksempelside: /Natur_i_Norge/Landskap/Typeinndeling/Innlandslandskap?informasjon
 
 .badge b {
   color: $dark-nin;
+  display: block;
 }
 
 .lokasjon_badge_container .badge b,

@@ -1,21 +1,21 @@
 import React from "react";
 import språk from "../../../Funksjoner/språk";
 import config from "../../../Funksjoner/config";
+import SectionExpand from "../../../GjenbruksElement/SectionExpand";
 
 const Gradienter = ({ gradient, onNavigate, title }) => {
   /// Gradient er navnet på noden
   /// Barna av gradient heter
   return (
-    <>
-      <h1>{title}</h1>
+    <div className="subsection">
+      <h4>{title}</h4>
 
       {Object.entries(gradient).map(([kode], index) => {
         let item = gradient[kode];
         let gradientelement = item.trinn;
 
         return (
-          <div key={index} className="badge_container subsection">
-            <h2>{item.tittel.nb}</h2>
+          <SectionExpand key={index} title={item.tittel.nb}>
             {gradientelement.map((item, index) => {
               let aktiv = item["på"];
               return (
@@ -43,10 +43,10 @@ const Gradienter = ({ gradient, onNavigate, title }) => {
                 </button>
               );
             })}
-          </div>
+          </SectionExpand>
         );
       })}
-    </>
+    </div>
   );
 };
 

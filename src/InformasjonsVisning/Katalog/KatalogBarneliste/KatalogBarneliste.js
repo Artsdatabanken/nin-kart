@@ -19,7 +19,8 @@ Navigation
   */
   const { kode } = meta;
   if (meta.barn.length === 0) return null;
-  //TEMPORARILY SHUTTING OFF SUBELEMENTS AS THEY MAKE LESS SENSE IN THIS FORMAT
+  //TEMPORARILY SHUTTING OFF SUBELEMENTS
+  // AS THEY MAKE LESS SENSE IN THIS FORMAT
   return (
     <>
       {false && (
