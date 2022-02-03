@@ -1,6 +1,7 @@
 import { Switch } from "@material-ui/core";
 import React from "react";
 import { ArrowRight } from "@material-ui/icons";
+import "../style/MenuElement.scss";
 
 const Menyelement = ({
   primary,
@@ -15,7 +16,7 @@ const Menyelement = ({
   <button onClick={onClick} className="hamburger_menu_item menu_item">
     <div className="button_items">
       <span>{icon}</span>
-      <span>
+      <span className="primary_secondary">
         {primary} {secondary}
       </span>
     </div>

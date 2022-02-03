@@ -1,0 +1,84 @@
+@import "./GraphicProfile.scss";
+
+.toggle_switch {
+  width: 38px;
+  min-width: 38px;
+  height: 21px;
+  position: relative;
+  display: inline-block;
+  margin: -2px 5px 5px 5px;
+
+  &_checkbox {
+    display: none;
+  }
+}
+
+.switch_list_elemtent input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #eee;
+  border: 1px solid $medium-nin;
+  transition: 0.3s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 1px;
+  bottom: 1px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+  border: 1px solid $medium-nin;
+}
+
+input:checked ~ .slider_container .slider {
+  background-color: $dark-nin;
+  border-color: $super-duper-dark-nin;
+}
+
+input:checked:focus ~ .slider_container .slider,
+input:checked:hover ~ .slider_container .slider {
+  background-color: $darkest-nin;
+  outline: 2px solid $super-duper-dark-nin;
+}
+
+input:focus ~ .slider_container .slider,
+input:hover ~ .slider_container .slider {
+  outline: 2px solid $super-duper-dark-nin;
+}
+
+input:checked ~ .slider_container .slider:before {
+  transform: translateX(17px);
+  background-color: #fff;
+  border-color: $super-duper-dark-nin;
+}
+
+.switch_list_elemtent {
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.switch_list_elemtent:hover {
+  cursor: pointer;
+  background-color: #7f726b;
+  color: white;
+}
+
+.slider_container {
+  min-width: 38px;
+}
