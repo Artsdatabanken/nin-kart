@@ -34,13 +34,17 @@ a,
 a:visited,
 a:active,
 a:focus {
-  color: $dark-nin;
+  color: $super-duper-dark-nin;
   text-decoration: none;
 }
 
 a:hover {
   color: $medium-nin;
   cursor: pointer;
+}
+
+a .MuiSvgIcon-root {
+  vertical-align: middle;
 }
 
 .inverted_link,
@@ -455,15 +459,32 @@ div {
   padding-left: 0px;
 }
 
+.kilde_knapp {
+  width: 100%;
+  display: flex;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.kilde_knapp span {
+  flex: 1;
+  text-align: left;
+}
+
 .kilde_knapp span,
 .kilde_knapp svg,
 .kilde_knapp img {
   display: inline-block;
   vertical-align: middle;
+  padding: 5px;
+  justify-content: space-between;
 }
 
-.kilde_knapp svg:last-child {
-  float: right;
+.kilde_knapp svg,
+.kilde_knapp img {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
 }
 
 .MuiBottomNavigationAction-root.Mui-selected {

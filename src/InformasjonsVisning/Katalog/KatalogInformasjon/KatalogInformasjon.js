@@ -1,5 +1,5 @@
 import React from "react";
-import KatalogInformasjonsBoks from "./KatalogInformasjonsBoks";
+
 import KatalogStatistikk from "./KatalogStatistikk/KatalogStatistikk";
 import språk from "../../../Funksjoner/språk";
 
@@ -19,11 +19,10 @@ const KatalogInformasjon = ({ meta }) => {
     stats
   } = meta;
   const mor = (overordnet.length > 0 && overordnet[0]) || { tittel: {} };
-
-  return (
-    <div className="subsection">
-      <KatalogInformasjonsBoks meta={meta} />
-      {prefiks !== "AO" && !!stats && (
+  if (prefiks !== "AO" && !!stats) {
+    return (
+      <div className="subsection">
+        <h4>Statistikk</h4>
         <KatalogStatistikk
           prefiks={prefiks}
           overordnet={overordnet}
@@ -35,8 +34,10 @@ const KatalogInformasjon = ({ meta }) => {
           arterVindu={antallArter}
           geometrierVindu={antallNaturomrader}
         />
-      )}
-    </div>
-  );
+      </div>
+    );
+  } else {
+    return null;
+  }
 };
 export default KatalogInformasjon;

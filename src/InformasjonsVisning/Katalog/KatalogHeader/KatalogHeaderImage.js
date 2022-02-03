@@ -39,27 +39,17 @@ const KatalogHeaderImage = ({ meta }) => {
     <>
       <div
         className={classes}
-        style={{
-          backgroundSize: "40px",
-          backgroundImage: "url(" + config.phylopic(url) + ")",
-          backgroundRepeat: "repeat"
-        }}
-        alt=""
-      >
-        <div
-          className={classes}
-          style={
-            (new_url !== "no_image" && {
-              backgroundSize: backgroundSize,
-              backgroundImage: "url(" + new_url + ")",
-              backgroundRepeat: backgroundRepeat
-            }) || {
-              height: 0
-            }
+        style={
+          (new_url !== "no_image" && {
+            backgroundSize: backgroundSize,
+            backgroundImage: "url(" + new_url + ")",
+            backgroundRepeat: backgroundRepeat
+          }) || {
+            height: 0
           }
-          alt=""
-        />
-      </div>
+        }
+        alt=""
+      />
 
       {false && (
         <div
