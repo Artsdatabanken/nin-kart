@@ -74,7 +74,7 @@ class InformasjonsVisning extends React.Component {
               onToggleLayer={this.props.onToggleLayer}
               onUpdateLayerProp={this.props.onUpdateLayerProp}
               onUpdateMetaProp={this.props.onUpdateMetaProp}
-              kurve={this.props.kurve}
+              kurve={kurve}
             />
           </>
         )}
