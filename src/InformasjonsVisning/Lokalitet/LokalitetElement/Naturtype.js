@@ -11,6 +11,7 @@ import SectionExpand from "../../../GjenbruksElement/SectionExpand";
 import config from "../../../Funksjoner/config";
 import Beskrivelsessystem from "./Beskrivelsessystem";
 import Ulkm from "./Ulkm";
+import Kartlegging from "../../../Kartlegging";
 import { getParentUrl } from "../../../AppSettings/AppFunksjoner/fetchMeta";
 
 const sameParent = (array, i) => {
@@ -43,7 +44,7 @@ const Naturtype = props => {
   if (!forelder) return null;
   // Testkoordinat for alle tre: ?lng=10.473060607910158&lat=60.385192661736745
   return (
-    <div>
+    <div className="section">
       <h3>
         <img
           src={config.logo("Natur_i_Norge/Natursystem/Typeinndeling")}
@@ -52,10 +53,6 @@ const Naturtype = props => {
         />
         Natursystem
       </h3>
-
-      <button onClick={() => onNavigateToTab("kartlegging")}>
-        les om kartlegging
-      </button>
 
       <div className="subsection">
         <h4>Naturtype</h4>
@@ -75,6 +72,7 @@ const Naturtype = props => {
             ))}
           </>
         </SectionExpand>
+
         {ulkm && (
           <SectionExpand title={"Underordnede komplekse miljøvariabler (uLKM)"}>
             <Ulkm ulkm={ulkm} onNavigate={onNavigate} />
@@ -87,6 +85,7 @@ const Naturtype = props => {
           </SectionExpand>
         )}
       </div>
+      <Kartlegging punkt={props.punkt} />
     </div>
   );
 };

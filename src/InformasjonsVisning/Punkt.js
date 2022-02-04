@@ -108,16 +108,17 @@ class Punkt extends Component {
               natArray.map((nat, i) => {
                 if (this.createNaturtyper(nat).length > 0) {
                   return (
-                    <div className="section" key={i}>
-                      <Naturtype
-                        showHeader={i === 0}
-                        typer={this.createNaturtyper(nat)}
-                        variabler={this.createNatvars(nat)}
-                        ulkm={this.createUlkm(nat)}
-                        onNavigate={onNavigate}
-                        onNavigateToTab={onNavigateToTab}
-                      />
-                    </div>
+                    <Naturtype
+                      key={i}
+                      showHeader={i === 0}
+                      typer={this.createNaturtyper(nat)}
+                      variabler={this.createNatvars(nat)}
+                      ulkm={this.createUlkm(nat)}
+                      onNavigate={onNavigate}
+                      onNavigateToTab={onNavigateToTab}
+                      punkt={punkt}
+                      onClose={handleShow}
+                    />
                   );
                 }
                 return null;

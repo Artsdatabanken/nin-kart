@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import SettingsContainer from "./SettingsContainer";
 
 let test = ""; //;
-test = "testcolours"; //;
+//test = "testcolours"; //;
 
 //Tester å endre denne da, sånn at vi logger til riktig sted og ikke til en tidligere ansatt
 true &&
