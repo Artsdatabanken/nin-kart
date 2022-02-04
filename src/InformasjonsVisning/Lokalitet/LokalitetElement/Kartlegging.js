@@ -1,12 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
-import {
-  Grid,
-  Typography,
-  Accordion,
-  AccordionDetails,
-  AccordionSummary
-} from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import Prettyprint from "../../../Funksjoner/prettyprint";
 import SectionExpand from "../../../GjenbruksElement/SectionExpand";
 
@@ -38,87 +32,43 @@ const Kartlegging = ({ punkt }) => {
   return (
     <div className="subsection">
       <h4>Kartlegging av natursystem </h4>
-      <SectionExpand title={"Punktkartlegging"}>{kartlegginger}</SectionExpand>
+      <SectionExpand title={"Punktdetaljer"}>{kartlegginger}</SectionExpand>
     </div>
   );
 };
 
 const KartleggingObjekt = ({ na, heading, ignoreNullValues }) => {
-  const [expanded, setExpanded] = React.useState();
-  // console.log('KartleggingObjekt', expanded, na);
-  const checkExpanded = id => {
-    // console.log('onChange', id, expanded);
-    if (id === expanded) id = undefined;
-    setExpanded(id);
-  };
   return (
-    <div>
-      <div style={{ margin: 24 }}>
-        <Table keys={Object.keys(heading)} data={heading} />
-      </div>
-      <Expa
-        expanded={expanded}
-        id="prosjekt"
-        onChange={checkExpanded}
-        summary="Prosjekt"
-        details={
+    <>
+      <Table keys={Object.keys(heading)} data={heading} />
+
+      <div className="subsection">
+        <h6>Detaljinfo</h6>
+        <SectionExpand title={"Prosjekt"}>
           <Prosjekt
             prosjekt={na.prosjekt}
             ignoreNullValues={ignoreNullValues}
           />
-        }
-      />
-      {na.prosjekt && na.prosjekt.program && (
-        <Expa
-          expanded={expanded}
-          id="program"
-          onChange={checkExpanded}
-          summary="Program"
-          details={
+        </SectionExpand>
+
+        {na.prosjekt && na.prosjekt.program && (
+          <SectionExpand title={"Program"}>
             <Program
               program={na.prosjekt.program}
               ignoreNullValues={ignoreNullValues}
             />
-          }
-        />
-      )}
+          </SectionExpand>
+        )}
 
-      {(na.kartleggingsenhet || []).map(kle => (
-        <Expa
-          expanded={expanded}
-          id={
-            kle.kartleggingsenhet5kid ||
-            kle.kartleggingsenhet20kid ||
-            kle.kartleggingsenhetntid ||
-            kle.kartleggingsenhetkode
-          }
-          onChange={checkExpanded}
-          summary={"Kartleggingsenhet " + kle.altkode}
-          details={
+        {(na.kartleggingsenhet || []).map(kle => (
+          <SectionExpand title={"Kartleggingsenhet " + kle.altkode}>
             <Kartleggingsenhet kle={kle} ignoreNullValues={ignoreNullValues} />
-          }
-        />
-      ))}
-    </div>
+          </SectionExpand>
+        ))}
+      </div>
+    </>
   );
 };
-
-const Expa = ({ id, expanded, summary, details, onChange }) => (
-  <Accordion square expanded={expanded === id} onChange={() => onChange(id)}>
-    <AccordionSummary>
-      <Typography
-        style={{
-          fontWeight: 500,
-          _fontSize: "1.2rem",
-          color: "rgba(0,0,0,0.54)"
-        }}
-      >
-        {summary}
-      </Typography>
-    </AccordionSummary>
-    <AccordionDetails>{details}</AccordionDetails>
-  </Accordion>
-);
 
 const Kartleggingsenhet = ({ kle, ignoreNullValues }) => {
   const bruker = kle.bruker || {};

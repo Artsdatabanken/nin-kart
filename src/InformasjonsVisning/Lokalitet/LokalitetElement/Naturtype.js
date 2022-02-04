@@ -38,7 +38,7 @@ const finnFellesOverordnet = typer => {
 };
 
 const Naturtype = props => {
-  const { typer, variabler, ulkm, onNavigate, onNavigateToTab } = props;
+  const { typer, variabler, ulkm, onNavigate } = props;
   if (!typer) return null;
   const forelder = finnFellesOverordnet(typer);
   if (!forelder) return null;
