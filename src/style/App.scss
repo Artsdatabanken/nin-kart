@@ -543,7 +543,7 @@ div {
   width: $sidebar-max-size;
   position: absolute;
   top: $topbar-height-nin;
-  max-height: calc(100% - $topbar-height-nin);
+  max-height: calc(100% - #{$topbar-height-nin});
   background: $panel-bg;
 }
 
