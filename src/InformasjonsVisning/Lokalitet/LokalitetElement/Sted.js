@@ -51,7 +51,7 @@ const Sted = ({ sted, lat, lng, fylke, kommune, verneområde, onNavigate }) => {
       />
 
       <div className="subsection">
-        <h4>Stedsnavn</h4>
+        <h4>Stedsinformasjon</h4>
 
         <SectionExpand title={getTitle(sted, kommune)}>
           {true && sted1 && sted2 && (

@@ -30,7 +30,6 @@ import fixerUpHack from "./fixerUpHack";
 import Punkt from "./InformasjonsVisning/Punkt";
 import Hjelp from "./InformasjonsVisning/Hjelp/Hjelp";
 import NinBottomNavigation from "./NinBottomNavigation";
-import Kartlegging from "./Kartlegging";
 
 export let exportableSpraak;
 export let exportableFullscreen;
@@ -131,15 +130,6 @@ class App extends React.Component {
               handleShow={this.handleShowPunkt}
               show={this.state.showPunkt}
             />
-
-            {aktivTab === "kartlegging" && (
-              <Kartlegging
-                punkt={this.state.punkt}
-                onNavigate={this.handleNavigate}
-                onNavigateToTab={this.handleSetAktivTab}
-                onClose={this.handleClosePunkt}
-              />
-            )}
 
             <InformasjonsVisning
               onNavigate={this.handleNavigate}
