@@ -1,6 +1,5 @@
 import React from "react";
 import { withRouter } from "react-router";
-import LukkbartVindu from "./LukkbartVindu";
 import {
   Grid,
   Typography,
@@ -8,8 +7,8 @@ import {
   AccordionDetails,
   AccordionSummary
 } from "@material-ui/core";
-import Prettyprint from "./Funksjoner/prettyprint";
-import SectionExpand from "./GjenbruksElement/SectionExpand";
+import Prettyprint from "../../../Funksjoner/prettyprint";
+import SectionExpand from "../../../GjenbruksElement/SectionExpand";
 
 const Kartlegging = ({ punkt }) => {
   if (!punkt) return null;
@@ -17,9 +16,7 @@ const Kartlegging = ({ punkt }) => {
     punkt.vektor &&
     Object.values(punkt.vektor).filter(e => e.datasettkode === "NAT");
   if (nat.length === 0) return null;
-
   const ignoreNullValues = true;
-
   const kartlegginger = nat.map(natElement => {
     const na = natElement.data;
     if (!na) return null;

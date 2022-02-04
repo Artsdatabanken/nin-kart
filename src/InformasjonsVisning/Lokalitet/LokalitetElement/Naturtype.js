@@ -11,7 +11,7 @@ import SectionExpand from "../../../GjenbruksElement/SectionExpand";
 import config from "../../../Funksjoner/config";
 import Beskrivelsessystem from "./Beskrivelsessystem";
 import Ulkm from "./Ulkm";
-import Kartlegging from "../../../Kartlegging";
+import Kartlegging from "./Kartlegging";
 import { getParentUrl } from "../../../AppSettings/AppFunksjoner/fetchMeta";
 
 const sameParent = (array, i) => {
