@@ -29,6 +29,7 @@ class InformasjonsVisning extends React.Component {
         show={this.props.show}
         tittel={"Kartlaginformasjon"}
         icon={<Info />}
+        nobutton={true}
       >
         {meta && (
           <>
