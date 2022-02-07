@@ -104,102 +104,101 @@ class App extends React.Component {
                 onClose={this.handleClosePunkt}
               />
             )}
-            <div className="ux-page-wrapper">
-              <Punkt
-                punkt={this.state.punkt}
-                onNavigate={this.handleNavigate}
-                onClose={this.onClose}
-                handleShow={this.handleShowPunkt}
-                show={this.state.showPunkt}
-              />
 
-              <InformasjonsVisning
-                onNavigate={this.handleNavigate}
-                aktiveLag={this.state.aktiveLag}
-                onMouseEnter={this.handleMouseEnter}
-                onMouseLeave={this.handleMouseLeave}
-                onFitBounds={this.handleFitBounds}
-                erAktivert={erAktivert}
-                opplyst={this.state.opplyst}
-                onToggleLayer={() => {
-                  this.handleToggleLayer();
-                }}
-                meta={this.state.meta}
-                onUpdateLayerProp={this.handleUpdateLayerProp}
-                onUpdateMetaProp={this.handleUpdateMetaProp}
-                onNavigateToTab={this.handleSetAktivTab}
-                handleShow={this.handleShowInfo}
-                show={this.state.showInfo}
-              />
+            <Punkt
+              punkt={this.state.punkt}
+              onNavigate={this.handleNavigate}
+              onClose={this.onClose}
+              handleShow={this.handleShowPunkt}
+              show={this.state.showPunkt}
+            />
 
-              {this.state.showHelp && <Hjelp handleHelp={this.handleHelp} />}
+            <InformasjonsVisning
+              onNavigate={this.handleNavigate}
+              aktiveLag={this.state.aktiveLag}
+              onMouseEnter={this.handleMouseEnter}
+              onMouseLeave={this.handleMouseLeave}
+              onFitBounds={this.handleFitBounds}
+              erAktivert={erAktivert}
+              opplyst={this.state.opplyst}
+              onToggleLayer={() => {
+                this.handleToggleLayer();
+              }}
+              meta={this.state.meta}
+              onUpdateLayerProp={this.handleUpdateLayerProp}
+              onUpdateMetaProp={this.handleUpdateMetaProp}
+              onNavigateToTab={this.handleSetAktivTab}
+              handleShow={this.handleShowInfo}
+              show={this.state.showInfo}
+            />
 
-              <SettingsContext.Consumer>
-                {context => {
-                  return (
-                    <>
-                      <Kartlag
-                        aktivTab={aktivTab}
-                        lokalitetdata={this.state.lokalitetdata}
-                        show_current={this.state.showCurrent}
-                        handleShowCurrent={this.handleShowCurrent}
-                        hidden={true /*aktivTab === "kartlag" && true*/}
-                        aktiveLag={this.state.aktiveLag}
-                        onUpdateLayerProp={this.handleUpdateLayerProp}
-                        handleUpdateLokalitetLayerProp={
-                          this.handleUpdateLokalitetLayerProp
-                        }
-                        onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                        navigation_history={this.state.navigation_history}
-                        onFitBounds={this.handleFitBounds}
-                        history={history}
-                        currentKartlag={this.state.meta}
-                        activateLayerFromHistory={this.activateLayerFromHistory}
-                        lokalitet={path}
-                        meta={this.state.meta}
-                        onNavigate={this.handleNavigate}
-                        onSetAktivTab={this.handleSetAktivTab}
-                        handleShowInfo={this.handleShowInfo}
-                        onUpdateMetaProp={this.handleUpdateMetaProp}
-                        handleHovedMeny={this.handleHovedMeny}
-                        onToggleLayer={() => {
-                          this.handleToggleLayer();
-                        }}
-                        opplyst={this.state.opplyst}
-                        onMouseEnter={this.handleMouseEnter}
-                        onMouseLeave={this.handleMouseLeave}
-                        path={path}
-                        parent={this}
-                      />
-                      <Kart
-                        markerCoordinates={this.state.markerCoordinates}
-                        onMarkerClick={this.handleMarkerClick}
-                        lokalitetdata={this.state.lokalitetdata}
-                        path={this.props.location.search}
-                        aktivTab={aktivTab}
-                        show_current={this.state.showCurrent}
-                        bounds={this.state.fitBounds}
-                        latitude={65.4}
-                        longitude={10.77}
-                        zoom={3}
-                        aktiveLag={this.state.aktiveLag}
-                        opplyst={this.state.opplystKode}
-                        meta={this.state.meta}
-                        onMapMove={context.onMapMove}
-                        history={history}
-                        onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
-                        onMouseEnter={this.handleMouseEnter}
-                        onMouseLeave={this.handleMouseLeave}
-                        showFullscreen={
-                          this.state.showFullscreen && aktivTab === "kartlag"
-                        }
-                        handleFullscreen={this.handleFullscreen}
-                      />
-                    </>
-                  );
-                }}
-              </SettingsContext.Consumer>
-            </div>
+            {this.state.showHelp && <Hjelp handleHelp={this.handleHelp} />}
+
+            <SettingsContext.Consumer>
+              {context => {
+                return (
+                  <>
+                    <Kartlag
+                      aktivTab={aktivTab}
+                      lokalitetdata={this.state.lokalitetdata}
+                      show_current={this.state.showCurrent}
+                      handleShowCurrent={this.handleShowCurrent}
+                      hidden={true /*aktivTab === "kartlag" && true*/}
+                      aktiveLag={this.state.aktiveLag}
+                      onUpdateLayerProp={this.handleUpdateLayerProp}
+                      handleUpdateLokalitetLayerProp={
+                        this.handleUpdateLokalitetLayerProp
+                      }
+                      onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                      navigation_history={this.state.navigation_history}
+                      onFitBounds={this.handleFitBounds}
+                      history={history}
+                      currentKartlag={this.state.meta}
+                      activateLayerFromHistory={this.activateLayerFromHistory}
+                      lokalitet={path}
+                      meta={this.state.meta}
+                      onNavigate={this.handleNavigate}
+                      onSetAktivTab={this.handleSetAktivTab}
+                      handleShowInfo={this.handleShowInfo}
+                      onUpdateMetaProp={this.handleUpdateMetaProp}
+                      handleHovedMeny={this.handleHovedMeny}
+                      onToggleLayer={() => {
+                        this.handleToggleLayer();
+                      }}
+                      opplyst={this.state.opplyst}
+                      onMouseEnter={this.handleMouseEnter}
+                      onMouseLeave={this.handleMouseLeave}
+                      path={path}
+                      parent={this}
+                    />
+                    <Kart
+                      markerCoordinates={this.state.markerCoordinates}
+                      onMarkerClick={this.handleMarkerClick}
+                      lokalitetdata={this.state.lokalitetdata}
+                      path={this.props.location.search}
+                      aktivTab={aktivTab}
+                      show_current={this.state.showCurrent}
+                      bounds={this.state.fitBounds}
+                      latitude={65.4}
+                      longitude={10.77}
+                      zoom={3}
+                      aktiveLag={this.state.aktiveLag}
+                      opplyst={this.state.opplystKode}
+                      meta={this.state.meta}
+                      onMapMove={context.onMapMove}
+                      history={history}
+                      onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
+                      onMouseEnter={this.handleMouseEnter}
+                      onMouseLeave={this.handleMouseLeave}
+                      showFullscreen={
+                        this.state.showFullscreen && aktivTab === "kartlag"
+                      }
+                      handleFullscreen={this.handleFullscreen}
+                    />
+                  </>
+                );
+              }}
+            </SettingsContext.Consumer>
 
             <HamburgerMeny
               spraak={this.state.spraak}

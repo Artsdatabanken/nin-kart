@@ -59,10 +59,11 @@ $fontfamily: "Roboto", "sans-serif";
 /* Relative heights of menu items */
 $bottom-tab-height: 48px;
 $topbar-height-nin: 48px;
-$ux-page-area: $bottom-tab-height + $topbar-height-nin;
+$mobile_slide_up_area: 60px; // closed version
+$ux-page-area: $topbar-height-nin;
+$ux-page-area-mobile: $mobile_slide_up_area + $topbar-height-nin;
 $menu-mobile-size: $ux-page-area;
 $sidebar-max-size: 408px;
-$mobile_slide_up_area: 60px; // closed version
 
 /* Box Shadow */
 $box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.45);

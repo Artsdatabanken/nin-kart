@@ -114,18 +114,6 @@ div {
   max-width: 100%;
 }
 
-.ux-page-wrapper {
-  width: 100%;
-  height: 100vh;
-  max-height: calc(100vh - #{$ux-page-area});
-  pointer-events: none;
-  position: relative;
-}
-
-.ux-page-wrapper * {
-  pointer-events: auto;
-}
-
 /* leftmenu */
 
 .leftwindow {
@@ -138,20 +126,101 @@ div {
 }
 
 .lukkbartvindu {
+  left: 0;
+}
+
+.kartlag {
+  right: 0;
+}
+
+.lukkbartvindu,
+.sidebar {
   background-color: $panel-bg;
   position: absolute;
   overflow-y: auto;
   box-shadow: $box-shadow-card;
-  bottom: 0;
   width: $sidebar-max-size;
-  left: 0;
   height: 100%;
-  top: 0;
+  max-height: calc(100vh - #{$ux-page-area});
+  top: $topbar-height-nin;
 }
 
 @media only screen and (max-width: 768px) {
+  .lukkbartvindu,
+  .sidebar {
+    width: 100%;
+    max-height: calc(100vh - #{$ux-page-area-mobile});
+  }
   .hidden_in_fullscreen {
     display: none;
+  }
+}
+
+/* Button on bottom of map screen on mobile */
+.mobile_slide_up_area {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  /* Mobile slide-up area */
+
+  .mobile_slide_up_area {
+    display: inline-block;
+    text-align: center;
+    height: $mobile_slide_up_area;
+    background: transparent;
+    overflow: visible;
+    width: 100%;
+  }
+
+  .open_mobile_slide_up_area {
+    position: relative;
+    top: 0px;
+    bottom: auto;
+    background: transparent;
+    border-top: 0px;
+    border-bottom: 1px solid $dark-nin;
+    z-index: 100;
+  }
+
+  .closed_mobile_slide_up_area {
+    position: absolute;
+    // bottom: $bottom-tab-height;
+    bottom: 0;
+    background: white;
+    border-top: 1px solid $dark-nin;
+    border-bottom: 0px;
+  }
+
+  .mobile_slide_up_area svg {
+    background: $dark-nin;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    margin-top: 40px;
+    z-index: 100;
+  }
+
+  .closed_mobile_slide_up_area svg {
+    margin: auto;
+    margin-top: -28px;
+  }
+
+  .mobile_slide_up_area span {
+    width: 100%;
+    padding: 2px;
+    padding-bottom: 8px;
+    display: block;
+    font-size: 12pt;
+    text-align: left;
+  }
+
+  .mobile_slide_up_area span:first-of-type {
+    color: $dark-nin;
+    font-size: 8pt;
+    padding: 2px;
+    padding-top: 0px;
+    margin-top: -5px;
   }
 }
 
