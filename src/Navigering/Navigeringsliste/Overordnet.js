@@ -8,7 +8,7 @@ const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
   var items = [...overordnet, root];
   items.reverse();
 
-  const r = items.map((item) => {
+  const r = items.map(item => {
     let tittel = språk(item.tittel);
     let sn = "";
     if (
@@ -19,9 +19,9 @@ const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
       sn = "sn";
     }
     return (
-      <button
+      <div
         key={item.url}
-        onClick={(e) => {
+        onClick={e => {
           setExpanded(false);
           onNavigate(item.url);
         }}

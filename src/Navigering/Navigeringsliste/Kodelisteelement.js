@@ -3,10 +3,11 @@ import språk from "../../Funksjoner/språk";
 import isItalics from "../../Funksjoner/isItalics";
 import Bildeavatar from "../../GjenbruksElement/Bildeavatar";
 import VolumIndikator from "./VolumIndikator";
-import getSecondary from "./NavigeringslisteFunksjoner/getSecondary";
-import kodeSuffix from "./NavigeringslisteFunksjoner/kodeSuffix";
 import "../../style/NavMenu.scss";
 import VelgFargeboks from "../../Kartlag/AktiveKartlag/EkspandertMeny/FellesElementer/VelgFargeBoks";
+import { ChevronRight } from "@material-ui/icons";
+import constants from "../../constants";
+import { getInterval } from "../../helpers";
 
 class Kodelisteelement extends React.Component {
   shouldComponentUpdate(np) {
@@ -19,7 +20,6 @@ class Kodelisteelement extends React.Component {
   render() {
     const {
       meta,
-      parentkode,
       kode,
       url,
       visKode,
@@ -28,7 +28,7 @@ class Kodelisteelement extends React.Component {
       onMouseLeave,
       areal,
       størsteAreal,
-      setExpanded,
+      setExpanded
     } = this.props;
 
     let tittel = språk(meta.tittel);
@@ -37,6 +37,9 @@ class Kodelisteelement extends React.Component {
       tittel = meta.tittel["sn"];
       sn = true;
     }
+
+    // TODO: FIX: HALF THESE ELEMENTS DONT WORK AS OF now
+
     return (
       <button
         key={kode}
@@ -46,11 +49,16 @@ class Kodelisteelement extends React.Component {
         }}
         onMouseEnter={() => onMouseEnter && onMouseEnter({ kode, url })}
         onMouseLeave={() => onMouseLeave && onMouseLeave()}
-        className="nav_menu_button nav_down_menu"
+        className="nav_menu_button"
       >
-        <VolumIndikator størsteAreal={størsteAreal} areal={areal} />
         <VelgFargeboks farge={meta.farge} kode={meta.kode} />
-        {false && <Bildeavatar url={url} />}
+
+        {false && (
+          <>
+            <VolumIndikator størsteAreal={størsteAreal} areal={areal} />
+            <Bildeavatar url={url} />
+          </>
+        )}
         <div
           className={
             isItalics(meta["nivå"] || null, sn)
@@ -58,15 +66,15 @@ class Kodelisteelement extends React.Component {
               : "nav_text"
           }
         >
-          <span className="nav_title">
-            ▸ {tittel}
-            {/*HER ENDRES SLEKTER/UNDERELEMENTER SOM IKEK HAR TYPE*/}
-          </span>
-          <span className="nav_2ndtitle">{getSecondary(meta)}</span>
+          <span className="nav_title">{tittel}</span>
+          {meta.intervall && (
+            <span className="nav_2ndtitle">
+              {constants.interval}: {getInterval(meta.intervall)}
+            </span>
+          )}
+          {visKode && <span className="nav_kode">{kode}</span>}
         </div>
-        {visKode && (
-          <span className="nav_kode">{kodeSuffix(kode, parentkode)}</span>
-        )}
+        <ChevronRight />
       </button>
     );
   }

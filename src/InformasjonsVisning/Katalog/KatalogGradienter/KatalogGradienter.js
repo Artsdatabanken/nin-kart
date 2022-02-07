@@ -14,7 +14,7 @@ const KatalogGradienter = ({
   opplyst,
   ...props
 }) => {
-  /*  
+  /*
   Contains the visualisation of the different gradients and their relations
   to subelements, as well as other nifty visualisations
   */
@@ -50,7 +50,7 @@ const KatalogGradienter = ({
           />
         ))}
 
-      {true && meta.kart.format.raster_gradient && (
+      {meta.kart.format.raster_gradient && (
         <Ekspander
           visible={true}
           heading={"Frekvens"}
@@ -64,7 +64,7 @@ const KatalogGradienter = ({
       )}
 
       {meta.graf &&
-        meta.graf.map((relasjon) => (
+        meta.graf.map(relasjon => (
           <Relasjon
             key={relasjon.type}
             heading={relasjon.type}

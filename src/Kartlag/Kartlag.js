@@ -2,13 +2,21 @@ import React from "react";
 import { SettingsContext } from "../SettingsContext";
 import AktivtKartlagElement from "./AktiveKartlag/AktivtKartlagElement";
 import HistorikkListeElement from "./Historikk/HistorikkListeElement";
-import { KeyboardArrowDown, KeyboardArrowUp } from "@material-ui/icons";
+import {
+  KeyboardArrowDown,
+  KeyboardArrowUp,
+  Layers,
+  Favorite,
+  History,
+  ArrowBack
+} from "@material-ui/icons";
 import språk from "../Funksjoner/språk";
-import { List, ListSubheader, Tooltip } from "@material-ui/core";
+import Meny from "../Navigering/Meny";
+import { List, Tooltip } from "@material-ui/core";
 
 class Kartlag extends React.Component {
   state = {
-    showKartlag: false,
+    showKartlag: false
   };
   render() {
     let koder = this.props.aktiveLag;
@@ -26,8 +34,7 @@ class Kartlag extends React.Component {
       handleShowCurrent,
       onRemoveSelectedLayer,
       lokalitetdata,
-      children,
-      aktivTab,
+      aktivTab
     } = this.props;
     let duplicate = false;
 
@@ -53,19 +60,33 @@ class Kartlag extends React.Component {
       tittel = tittel.substring(0, 40) + "...";
     }
 
-    let isPunkt = aktivTab === "punkt" || aktivTab === "kartlegging" ? "mobile_off" : "";
+    let isPunkt =
+      aktivTab === "punkt" || aktivTab === "kartlegging" ? "mobile_off" : "";
+
+    let isstartpage = false;
+    if (
+      this.props.path === "/kart" ||
+      this.props.path === "/hjem" ||
+      this.props.path === "/start" ||
+      this.props.path === "/index" ||
+      this.props.path === "/map"
+    ) {
+      isstartpage = true;
+    }
 
     return (
       <>
         {hidden && (
           <SettingsContext.Consumer>
-            {(context) => (
+            {context => (
               <>
                 <button
                   className={
                     this.state.showKartlag
-                      ? "mobile_slide_up_area open_mobile_slide_up_area" + isPunkt
-                      : "mobile_slide_up_area closed_mobile_slide_up_area" + isPunkt
+                      ? "mobile_slide_up_area open_mobile_slide_up_area " +
+                        isPunkt
+                      : "mobile_slide_up_area closed_mobile_slide_up_area " +
+                        isPunkt
                   }
                   onClick={() => {
                     this.setState({ showKartlag: !this.state.showKartlag });
@@ -85,94 +106,128 @@ class Kartlag extends React.Component {
                 <div
                   className={
                     this.state.showKartlag
-                      ? "kartlag_content_open kartlag sidebar"
-                      : "kartlag_content_closed kartlag sidebar"
+                      ? "kartlag sidebar kartlag_content_open "
+                      : "kartlag sidebar kartlag_content_closed "
                   }
                 >
                   <div className="page_topic_header" />
+                  <div className="section">
+                    <h2 className="kartlag_header">
+                      <Layers />
+                      Kartlag
+                    </h2>
+                  </div>
 
-                  <div
-                    className={
-                      this.state.showKartlag
-                        ? "kartlag_content_open kartlag_content"
-                        : "kartlag_content_closed kartlag_content"
-                    }
-                  >
-                    {children}
-                    {false && (
+                  {!isstartpage && (
+                    <div className="section">
+                      <button
+                        className="kartlag_element_header"
+                        onClick={() => {
+                          this.props.onNavigate("/kart");
+                        }}
+                      >
+                        <div className="backicon">
+                          <ArrowBack />
+                        </div>
+                        <span className="kartlag_element_text">
+                          Tilbake til start
+                        </span>
+                      </button>
+                    </div>
+                  )}
+
+                  <Meny
+                    aktiveLag={this.props.aktiveLag}
+                    lokalitetdata={this.props.lokalitetdata}
+                    lokalitet={this.props.lokalitet}
+                    meta={this.props.meta}
+                    onNavigate={this.props.onNavigate}
+                    aktivTab={this.props.aktivTab}
+                    onSetAktivTab={this.props.onSetAktivTab}
+                    handleShowInfo={this.props.handleShowInfo}
+                    onUpdateMetaProp={this.props.onUpdateMetaProp}
+                    onToggleLayer={this.props.onToggleLayer}
+                    opplyst={this.props.opplyst}
+                    onMouseEnter={this.props.onMouseEnter}
+                    onMouseLeave={this.props.onMouseLeave}
+                    path={this.props.path}
+                    parent={this.props.parent}
+                    isstartpage={isstartpage}
+                  />
+
+                  {false && (
+                    <div className="section">
                       <div className="sidebar_title_container sidebar_element">
                         <h2 className="sidebar_title">Kartlag</h2>
                       </div>
-                    )}
+                    </div>
+                  )}
 
-                    {false && currentKartlag && !duplicate && (
-                      <>
-                        <div className="sidebar_element">
-                          {false && <h2>Nåværende kartlag</h2>}
-                          <ul className="kartlag_list">
-                            <AktivtKartlagElement
-                              key={currentKartlag}
-                              onRemoveSelectedLayer={onRemoveSelectedLayer}
-                              kartlag={currentKartlag}
-                              {...this.props}
-                              visKoder={context.visKoder}
-                              erAktivtLag={true}
-                              show_current={show_current}
-                              handleShowCurrent={handleShowCurrent}
-                              is_current_object={true}
-                              activateLayerFromHistory={
-                                activateLayerFromHistory
-                              }
-                              navhist={
-                                navigation_history[
-                                  navigation_history.length - 1
-                                ]
-                              } // add last item in list
-                            />
-                          </ul>
-                        </div>
-                      </>
-                    )}
-
-                    {lokalitetdata && (
+                  {false && currentKartlag && !duplicate && (
+                    <div class="section">
                       <div className="sidebar_element">
-                        <h2>Nåværende Lokalitet</h2>
+                        {false && <h2>Nåværende kartlag</h2>}
                         <ul className="kartlag_list">
-                          {Object.keys(lokalitetdata).map((mapkode) => {
-                            // console.log("mapkode",mapkode);
-                            const kartlag = lokalitetdata[mapkode];
-                            //console.log(kartlag)
-
-                            return (
-                              <AktivtKartlagElement
-                                erLokalitet={true}
-                                kartlag={kartlag}
-                                key={kartlag.kode}
-                                {...this.props}
-                                visKoder={context.visKoder}
-                                onFitBounds={onFitBounds}
-                                onUpdateLayerProp={
-                                  this.props.handleUpdateLokalitetLayerProp
-                                }
-                              />
-                            );
-                          })}
+                          <AktivtKartlagElement
+                            key={currentKartlag}
+                            onRemoveSelectedLayer={onRemoveSelectedLayer}
+                            kartlag={currentKartlag}
+                            {...this.props}
+                            visKoder={context.visKoder}
+                            erAktivtLag={true}
+                            show_current={show_current}
+                            handleShowCurrent={handleShowCurrent}
+                            is_current_object={true}
+                            activateLayerFromHistory={activateLayerFromHistory}
+                            navhist={
+                              navigation_history[navigation_history.length - 1]
+                            } // add last item in list
+                          />
                         </ul>
                       </div>
-                    )}
+                    </div>
+                  )}
 
-                    <List>
-                      <Tooltip
-                        title="Disse kartlagene vises alltid i kartet"
-                        aria-label="Disse kartlagene vises alltid i kartet"
-                      >
-                        <ListSubheader style={{ margin: 16 }}>
-                          Mine kartlag
-                        </ListSubheader>
-                      </Tooltip>
-                      {false && <h2>Mine kartlag</h2>}
+                  {lokalitetdata && (
+                    <div className="section">
+                      <h3 className="kartlag_header">Nåværende lokalitet</h3>
                       <ul className="kartlag_list">
-                        {keys.reverse().map((fkode) => {
+                        {Object.keys(lokalitetdata).map(mapkode => {
+                          // console.log("mapkode",mapkode);
+                          const kartlag = lokalitetdata[mapkode];
+                          //console.log(kartlag)
+
+                          return (
+                            <AktivtKartlagElement
+                              erLokalitet={true}
+                              kartlag={kartlag}
+                              key={kartlag.kode}
+                              {...this.props}
+                              visKoder={context.visKoder}
+                              onFitBounds={onFitBounds}
+                              onUpdateLayerProp={
+                                this.props.handleUpdateLokalitetLayerProp
+                              }
+                            />
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  )}
+
+                  <div className="section">
+                    <Tooltip
+                      title="Disse kartlagene vises alltid i kartet"
+                      aria-label="Disse kartlagene vises alltid i kartet"
+                    >
+                      <h3 className="kartlag_header">
+                        <Favorite />
+                        Mine kartlag
+                      </h3>
+                    </Tooltip>
+                    <List>
+                      <ul className="kartlag_list">
+                        {keys.reverse().map(fkode => {
                           const kartlag = koder[fkode];
                           return (
                             <AktivtKartlagElement
@@ -187,54 +242,58 @@ class Kartlag extends React.Component {
                           );
                         })}
                       </ul>
-
-                      {false && <ListSubheader>Bakgrunnskart</ListSubheader>}
-                      {false && <h2>Bakgrunnskart</h2>}
-
-                      {false && (
-                        <ul className="kartlag_list">
-                          <AktivtKartlagElement
-                            kartlag={koder["bakgrunnskart"]}
-                            key={"bakgrunnskart"}
-                            {...this.props}
-                            visKoder={context.visKoder}
-                          />
-                        </ul>
-                      )}
-
-                      {Object.keys(navigation_history).length > 1 && (
-                        <ListSubheader style={{ margin: 16 }}>
-                          Historikk
-                        </ListSubheader>
-                      )}
-
-                      {Object.keys(navigation_history)
-                        .reverse()
-                        .map((item, index) => {
-                          const node = navigation_history[item];
-                          if (
-                            currentKartlag &&
-                            (node === currentKartlag ||
-                              node.meta.kode === currentKartlag.kode)
-                          )
-                            return "";
-                          if (node.meta.url) {
-                            return (
-                              <HistorikkListeElement
-                                meta={node.meta}
-                                activateLayerFromHistory={
-                                  activateLayerFromHistory
-                                }
-                                node={node}
-                                history={history}
-                                key={index + node.meta.kode}
-                              />
-                            );
-                          }
-                          return null;
-                        })}
                     </List>
                   </div>
+
+                  {false && (
+                    <div class="section">
+                      <h2>Bakgrunnskart</h2>
+                      <ul className="kartlag_list">
+                        <AktivtKartlagElement
+                          kartlag={koder["bakgrunnskart"]}
+                          key={"bakgrunnskart"}
+                          {...this.props}
+                          visKoder={context.visKoder}
+                        />
+                      </ul>
+                    </div>
+                  )}
+
+                  {Object.keys(navigation_history).length > 1 && (
+                    <div className="section">
+                      <h3 className="kartlag_header">
+                        <History />
+                        Historikk
+                      </h3>
+                      <List>
+                        {Object.keys(navigation_history)
+                          .reverse()
+                          .map((item, index) => {
+                            const node = navigation_history[item];
+                            if (
+                              currentKartlag &&
+                              (node === currentKartlag ||
+                                node.meta.kode === currentKartlag.kode)
+                            )
+                              return "";
+                            if (node.meta.url) {
+                              return (
+                                <HistorikkListeElement
+                                  meta={node.meta}
+                                  activateLayerFromHistory={
+                                    activateLayerFromHistory
+                                  }
+                                  node={node}
+                                  history={history}
+                                  key={index + node.meta.kode}
+                                />
+                              );
+                            }
+                            return null;
+                          })}
+                      </List>
+                    </div>
+                  )}
                 </div>
               </>
             )}

@@ -1,97 +1,87 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
+//import { makeStyles } from "@material-ui/core/styles";
+//import clsx from "clsx";
 import {
-  Divider,
+  //  Divider,
   ListItem,
   ListItemAvatar,
   ListItemText,
-  ListItemSecondaryAction,
-  Card,
-  CardActionArea,
-  CardHeader,
-  CardMedia,
-  CardContent,
-  CardActions,
+  ListItemSecondaryAction
+  //  Card,
+  //CardActionArea,
+  //  CardHeader,
+  //  CardMedia,
+  //  CardContent,
+  //  CardActions
 } from "@material-ui/core";
-import Collapse from "@material-ui/core/Collapse";
+//import Collapse from "@material-ui/core/Collapse";
 import Avatar from "@material-ui/core/Avatar";
-import IconButton from "@material-ui/core/IconButton";
+//import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import { ExpandMore, ArrowDownward } from "@material-ui/icons/";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
+//import { ExpandMore, ArrowDownward } from "@material-ui/icons/";
+//import MoreVertIcon from "@material-ui/icons/MoreVert";
 import config from "../Funksjoner/config";
 import { useHistory } from "react-router-dom";
+import SectionExpand from "../GjenbruksElement/SectionExpand";
 
-const useStyles = makeStyles((theme) => ({
+/*
+const useStyles = makeStyles(theme => ({
   root: {
     _maxWidth: 400,
-    margin: 8,
+    margin: 8
   },
   cardheader: {
-    cursor: "pointer",
+    cursor: "pointer"
   },
   media: {
     height: 0,
-    paddingTop: "56.25%", // 16:9
+    paddingTop: "56.25%" // 16:9
   },
   expand: {
     transform: "rotate(0deg)",
     marginLeft: "auto",
     transition: theme.transitions.create("transform", {
-      duration: theme.transitions.duration.shortest,
-    }),
+      duration: theme.transitions.duration.shortest
+    })
   },
   expandOpen: {
-    transform: "rotate(180deg)",
+    transform: "rotate(180deg)"
   },
   avatar: {},
   related: {
-    cursor: "pointer",
+    cursor: "pointer"
   },
   relatedIcon: {
     transform: "rotate(-140deg)",
     color: "#9e9e9e",
     float: "right",
     position: "relative",
-    top: -2,
-  },
+    top: -2
+  }
 }));
+*/
 
 export default function Landskapsgradienter(props) {
-  const { heading1, beskrivelse, sample } = props;
-  const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
+  const {
+    heading1,
+    //beskrivelse,
+    sample
+  } = props;
+  //const classes = useStyles();
+
+  //const [expanded, setExpanded] = React.useState(false);
   const history = useHistory();
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+  //const handleExpandClick = () => {
+  //setExpanded(!expanded);
+  //};
   if (!sample) return null;
 
   return (
-    <Card className={classes.root}>
-      <CardHeader
-        className={classes.cardheader}
-        onClick={handleExpandClick}
-        _action={
-          <IconButton
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded,
-            })}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            <MoreVertIcon />
-            {false && <ExpandMore />}
-          </IconButton>
-        }
-        _title={heading1}
-        subheader={heading1}
-      />
-      {
-        <>
-          {Object.values(sample).map((b) => (
+    <>
+      <div className="subsection">
+        <h4>{heading1}</h4>
+        <SectionExpand title={heading1}>
+          {Object.values(sample).map(b => (
             <Klg
               key={b.url}
               v={b.v}
@@ -102,47 +92,69 @@ export default function Landskapsgradienter(props) {
               onClick={() => history.push(b.url)}
             />
           ))}
-        </>
-      }
+        </SectionExpand>
+      </div>
+      {/*
+      <Card className={classes.root}>
+        <CardHeader
+          className={classes.cardheader}
+          onClick={handleExpandClick}
+          _action={
+            <IconButton
+              className={clsx(classes.expand, {
+                [classes.expandOpen]: expanded
+              })}
+              onClick={handleExpandClick}
+              aria-expanded={expanded}
+              aria-label="show more"
+            >
+              <MoreVertIcon />
+              {false && <ExpandMore />}
+            </IconButton>
+          }
+          _title={heading1}
+          subheader={heading1}
+        />
 
-      {false && (
-        <CardActions disableSpacing>
-          <IconButton
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded,
-            })}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            <ExpandMore />
-          </IconButton>
-          <CardActions></CardActions>
-        </CardActions>
-      )}
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardActionArea>
-          {props.url && (
-            <CardMedia
-              className={classes.media}
-              image={config.foto(props.url)}
-              title="Foto"
-            />
-          )}
-        </CardActionArea>
-        <CardContent>
-          <Typography paragraph>{beskrivelse}</Typography>
+        {false && (
+          <CardActions disableSpacing>
+            <IconButton
+              className={clsx(classes.expand, {
+                [classes.expandOpen]: expanded
+              })}
+              onClick={handleExpandClick}
+              aria-expanded={expanded}
+              aria-label="show more"
+            >
+              <ExpandMore />
+            </IconButton>
+            <CardActions></CardActions>
+          </CardActions>
+        )}
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardActionArea>
+            {props.url && (
+              <CardMedia
+                className={classes.media}
+                image={config.foto(props.url)}
+                title="Foto"
+              />
+            )}
+          </CardActionArea>
+          <CardContent>
+            <Typography paragraph>{beskrivelse}</Typography>
 
-          {false && (
-            <a className={classes.related} href="https://vg.no" target="_top">
-              <ArrowDownward className={classes.relatedIcon} />
-              <p>Relatert artikkel på Artsdatabanken.no</p>
-            </a>
-          )}
-          <Divider />
-        </CardContent>
-      </Collapse>
-    </Card>
+            {false && (
+              <a className={classes.related} href="https://vg.no" target="_top">
+                <ArrowDownward className={classes.relatedIcon} />
+                <p>Relatert artikkel på Artsdatabanken.no</p>
+              </a>
+            )}
+            <Divider />
+          </CardContent>
+        </Collapse>
+      </Card>*/}
+    </>
   );
 }
 

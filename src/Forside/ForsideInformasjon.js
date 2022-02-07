@@ -4,13 +4,13 @@ import "../style/Forside.scss";
 import Kilder from "./Kilder";
 import Utforsk from "../HamburgerMeny/Utforsk/Utforsk";
 
-const ForsideInformasjon = (props) => {
+const ForsideInformasjon = props => {
   return (
     <div className="frontpage">
       <div className="frontpage_body">
         <div
           className="frontpage_header"
-          onClick={(e) => {
+          onClick={e => {
             e.stopPropagation();
             props.history.push("/Natur_i_Norge/");
           }}
@@ -50,7 +50,7 @@ const ForsideInformasjon = (props) => {
 
         <div className="frontpage_link_items">
           <h2>Utforsk NiN-kart via ikonene nedenfor</h2>
-          <Utforsk parent={props} />
+          <Utforsk parent={props} handleHovedMeny={props.handleHovedMeny} />
         </div>
       </div>
       <div className="frontpage_footer">

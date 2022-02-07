@@ -7,12 +7,12 @@ import { ExpandMore } from "@material-ui/icons/";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import config from "../Funksjoner/config";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     // maxHeight: "2000px",
     margin: 8,
     _transitionDuration: "1s",
-    transition: "max-height 0.5s ease-in",
+    transition: "max-height 0.5s ease-in"
     //transition: 'height 5.4s linear',
     //                transition: theme.transitions.create("transform", {duration: theme.transitions.duration.shortest,}),
   },
@@ -21,27 +21,27 @@ const useStyles = makeStyles((theme) => ({
     overflow: "hidden",
     margin: 8,
     _transitionDuration: "1s",
-    transition: "max-height 0.5s ease-out",
+    transition: "max-height 0.5s ease-out"
     //transition: 'height 5.4s linear',
     //                transition: theme.transitions.create("transform", {duration: theme.transitions.duration.shortest,}),
   },
   cardheader: {
-    cursor: "pointer",
+    cursor: "pointer"
   },
   media: {
     height: 0,
-    paddingTop: "56.25%", // 16:9
+    paddingTop: "56.25%" // 16:9
   },
   expand: {
     transform: "rotate(0deg)",
     marginLeft: "auto",
     transition: theme.transitions.create("transform", {
-      duration: theme.transitions.duration.shortest,
-    }),
+      duration: theme.transitions.duration.shortest
+    })
   },
   expandOpen: {
-    transform: "rotate(180deg)",
-  },
+    transform: "rotate(180deg)"
+  }
 }));
 
 export default function NinCard(props) {
@@ -61,7 +61,7 @@ export default function NinCard(props) {
           canExpand && (
             <IconButton
               className={clsx(classes.expand, {
-                [classes.expandOpen]: expanded,
+                [classes.expandOpen]: expanded
               })}
               onClick={handleExpandClick}
               aria-expanded={expanded}

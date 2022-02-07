@@ -11,7 +11,7 @@ true &&
     dsn:
       "https://e99e90636a4e407ab7235cfe9a2b1cdb@o547272.ingest.sentry.io/5669525",
     maxBreadcrumbs: 50,
-    debug: true,
+    debug: true
   });
 
 class RootBoundary extends React.Component {
@@ -22,8 +22,8 @@ class RootBoundary extends React.Component {
 
   componentDidCatch(error, errorInfo) {
     this.setState({ error });
-    Sentry.configureScope((scope) => {
-      Object.keys(errorInfo).forEach((key) => {
+    Sentry.configureScope(scope => {
+      Object.keys(errorInfo).forEach(key => {
         scope.setExtra(key, errorInfo[key]);
       });
     });

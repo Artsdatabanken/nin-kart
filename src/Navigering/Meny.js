@@ -3,16 +3,16 @@ import Overordnet from "./Navigeringsliste/OverordnetMedEkspander";
 import { SettingsContext } from "../SettingsContext";
 import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
 import språk from "../Funksjoner/språk";
-import { kodeSuffix2 } from "./Navigeringsliste/NavigeringslisteFunksjoner/kodeSuffix";
+//import { kodeSuffix2 } from "./Navigeringsliste/NavigeringslisteFunksjoner/kodeSuffix";
+import { Tooltip } from "@material-ui/core";
 import {
-  ListItemAvatar,
-  IconButton,
-  ListItem,
-  ListItemSecondaryAction,
-  ListItemText,
-  Tooltip,
-} from "@material-ui/core";
-import { Add, Delete, Settings } from "@material-ui/icons";
+  ArrowBack,
+  FavoriteBorder,
+  Favorite,
+  Settings,
+  Layers,
+  Info
+} from "@material-ui/icons";
 
 const Meny = ({
   aktiveLag,
@@ -25,8 +25,12 @@ const Meny = ({
   onMouseEnter,
   onMouseLeave,
   onToggleLayer,
+  path,
+  isstartpage,
+  parent,
+  handleShowInfo
 }) => {
-  /*  
+  /*
 Intern navigasjon innad på en side.
 Sidebarmeny-navigeringen.
   */
@@ -39,52 +43,73 @@ Sidebarmeny-navigeringen.
     }
   }
   if (!meta) return null;
-  const kodesuffix = kodeSuffix2(meta.kode, meta.overordnet);
+  //const kodesuffix = kodeSuffix2(meta.kode, meta.overordnet);
+  // Overordnet = Breadcrumb
+
+  let backurl = "/start";
+  if (meta.overordnet !== undefined && meta.overordnet[0] !== undefined) {
+    backurl = meta.overordnet[0].url;
+  }
+
   return (
     <SettingsContext.Consumer>
-      {(context) => (
-        <div
-          //      className={
-          //          (aktivTab === "meny" ? "mobile_on" : "mobile_off") + " sidebar"
-          //      }
-          style={{
-            paddingTop: 16,
-            _zIndex: expanded && aktivTab === "kartlag" ? 20 : 1,
-            _height: expanded && aktivTab === "kartlag" && "auto",
-            _maxHeight: expanded && aktivTab === "kartlag" && "100%",
-            _borderBottom:
-              expanded && aktivTab === "kartlag" && "2px solid $bright-nin",
-          }}
-        >
-          <div style={{}}>
+      {context => (
+        <div className="section">
+          <h3 className="kartlag_header">
+            <Layers />
+            {isstartpage ? "Velg kartlag" : "Nåværende kartlag"}
+          </h3>
+          {false && (
+            <Overordnet
+              overordnet={meta.overordnet}
+              onNavigate={onNavigate}
+              setExpanded={setExpanded}
+            />
+          )}
+          {!isstartpage && (
             <>
-              <Overordnet
-                overordnet={meta.overordnet}
-                onNavigate={onNavigate}
-                setExpanded={setExpanded}
-              />
+              <div className="kartlag_element_header">
+                <button
+                  onClick={() => {
+                    onNavigate(backurl);
+                  }}
+                >
+                  <Tooltip
+                    title="Åpne informasjon"
+                    aria-label="åpne informasjon"
+                  >
+                    <ArrowBack />
+                  </Tooltip>
+                </button>
+                <span>{tittel}</span>
+                <div className="kartlag_element_buttons">
+                  <button
+                    onClick={() => {
+                      handleShowInfo(true);
+                    }}
+                  >
+                    <Tooltip
+                      title="Åpne informasjon"
+                      aria-label="åpne informasjon"
+                    >
+                      <Info />
+                    </Tooltip>
+                  </button>
+                  <button
+                    onClick={() => {
+                      onSetAktivTab("kartlaginnstillinger");
+                    }}
+                  >
+                    <Tooltip
+                      title="Åpne innstillinger"
+                      aria-label="åpne innstillinger"
+                    >
+                      <Settings />
+                    </Tooltip>
+                  </button>
 
-              <ListItem
-                button
-                onClick={() => {
-                  onSetAktivTab("kartlaginnstillinger");
-                }}
-              >
-                {false && (
-                  <ListItemAvatar>
-                    <Settings style={{ color: "rgba(0,0,0,0.54)" }} />
-                  </ListItemAvatar>
-                )}
-                <ListItemText
-                  primary={"▾ " + tittel}
-                  secondary={
-                    meta.nivå &&
-                    meta.nivå + (context.visKoder ? ` (${kodesuffix})` : "")
-                  }
-                ></ListItemText>
-                {
-                  <ListItemSecondaryAction
-                    onClick={(e) => {
+                  <button
+                    onClick={e => {
                       onToggleLayer();
                       e.stopPropagation();
                     }}
@@ -94,36 +119,34 @@ Sidebarmeny-navigeringen.
                         title="Fjern fra mine kartlag"
                         aria-label="fjern fra mine kartlag"
                       >
-                        <IconButton>
-                          <Delete />
-                        </IconButton>
+                        <Favorite />
                       </Tooltip>
                     ) : (
                       <Tooltip
                         title="Legg til mine kartlag"
                         aria-label="legg til mine kartlag"
                       >
-                        <IconButton>
-                          <Add />
-                        </IconButton>
+                        <FavoriteBorder />
                       </Tooltip>
                     )}
-                  </ListItemSecondaryAction>
-                }
-              </ListItem>
-
-              <Navigeringsliste
-                parentkode={meta ? meta.kode : "kode"}
-                metadata={meta && meta.barn}
-                setExpanded={setExpanded}
-                onNavigate={onNavigate}
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
-                opplyst={opplyst}
-                onUpdateMetaProp={onUpdateMetaProp}
-              />
+                  </button>
+                </div>
+              </div>
             </>
-          </div>
+          )}
+          {true && (
+            <Navigeringsliste
+              parentkode={meta ? meta.kode : "kode"}
+              metadata={meta && meta.barn}
+              setExpanded={setExpanded}
+              onNavigate={onNavigate}
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+              opplyst={opplyst}
+              onUpdateMetaProp={onUpdateMetaProp}
+            />
+          )}
+          {!expanded && false && <b>Do we still use this variable?</b>}
         </div>
       )}
     </SettingsContext.Consumer>

@@ -1,8 +1,8 @@
 import React from "react";
-import Overskrift from "./Overskrift";
 import Landskapstype from "./Landskapstype";
 import Landskapsgradienter from "./Landskapsgradienter";
 import { getParentUrl } from "../AppSettings/AppFunksjoner/fetchMeta";
+import { Landscape } from "@material-ui/icons";
 
 const Landskap = ({ landskap }) => {
   if (!landskap) return null;
@@ -10,17 +10,11 @@ const Landskap = ({ landskap }) => {
   const gradient = landskap.gradient && landskap.gradient["NN-LA-KLG"];
   const barn = gradient && gradient.barn;
   return (
-    <>
-      <Overskrift
-        image="Natur_i_Norge/Landskap"
-        tittel="Landskap"
-        subtekst="En landskapstype er en samling av variasjoner i terreng og landeformer
-        som sammen påvirker et større område. I kartleggingen er den minste
-        graden som måles på en kvadratkilometer. Man kan dermed befinne seg i et
-        isbrelandskap uten å være akkurat på en isbre. Det vil også kunne være
-        noen små variasjoner som ikke bestemmer landskapstypen da de er små og
-        derav ikke dominerende."
-      />
+    <div className="section">
+      <h3 className="kartlag_header">
+        <Landscape />
+        Landskap
+      </h3>
 
       <Landskapstype
         heading1={tittel.nb}
@@ -34,7 +28,7 @@ const Landskap = ({ landskap }) => {
         heading1="Landskapsgradient"
         sample={landskap.sample}
       />
-    </>
+    </div>
   );
 };
 

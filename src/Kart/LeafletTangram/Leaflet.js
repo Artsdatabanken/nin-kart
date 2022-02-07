@@ -8,7 +8,7 @@ import { createScene, updateScene } from "./scene/scene";
 import {
   Fullscreen,
   FullscreenExit,
-  LocationSearching,
+  LocationSearching
 } from "@material-ui/icons";
 import "../../style/Kart.scss";
 
@@ -20,7 +20,7 @@ delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
   iconUrl: require("leaflet/dist/images/marker-icon.png"),
-  shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
+  shadowUrl: require("leaflet/dist/images/marker-shadow.png")
 });
 
 let header_shift = 56;
@@ -32,13 +32,13 @@ class LeafletTangram extends React.Component {
     buttonUrl: null,
     sted: null,
     data: null,
-    koordinat: null,
+    koordinat: null
   };
   componentDidMount() {
     const options = {
       zoomControl: false,
       inertia: true,
-      minZoom: 3,
+      minZoom: 3
     };
 
     let map = L.map(this.mapEl, options);
@@ -70,7 +70,7 @@ class LeafletTangram extends React.Component {
         self.fullscreenButton.innerHTML = ReactDOMServer.renderToString(
           <Fullscreen />
         );
-        L.DomEvent.on(self.fullscreenButton, "click", (e) =>
+        L.DomEvent.on(self.fullscreenButton, "click", e =>
           self.fullscreenFunc(e)
         );
 
@@ -78,10 +78,10 @@ class LeafletTangram extends React.Component {
       },
 
       onRemove: () => {
-        L.DomEvent.off(self.fullscreenButton, "click", (e) =>
+        L.DomEvent.off(self.fullscreenButton, "click", e =>
           self.fullscreenFunc(e)
         );
-      },
+      }
     });
     L.Control.AdbGeolocation = L.Control.extend({
       onAdd: () => {
@@ -96,7 +96,7 @@ class LeafletTangram extends React.Component {
         self.geolocationButton.innerHTML = ReactDOMServer.renderToString(
           <LocationSearching />
         );
-        L.DomEvent.on(self.geolocationButton, "click", (e) =>
+        L.DomEvent.on(self.geolocationButton, "click", e =>
           self.geolocationFunc(e)
         );
 
@@ -104,15 +104,15 @@ class LeafletTangram extends React.Component {
       },
 
       onRemove: () => {
-        L.DomEvent.off(self.geolocationButton, "click", (e) =>
+        L.DomEvent.off(self.geolocationButton, "click", e =>
           self.geolocationFunc(e)
         );
-      },
+      }
     });
-    L.control.adbFullscreen = function (opts) {
+    L.control.adbFullscreen = function(opts) {
       return new L.Control.AdbFullscreen(opts);
     };
-    L.control.adbGeolocation = function (opts) {
+    L.control.adbGeolocation = function(opts) {
       return new L.Control.AdbGeolocation(opts);
     };
     L.control.adbFullscreen({ position: "topright" }).addTo(map);
@@ -124,11 +124,11 @@ class LeafletTangram extends React.Component {
       //      logLevel: 'debug',
       scene: createScene(this.props),
       events: {
-        hover: function (selection) {},
+        hover: function(selection) {},
         click: this.handleClick,
-        drag: this.handleDrag,
+        drag: this.handleDrag
       },
-      attribution: '<a href="https://artsdatabanken.no">Artsdatabanken</a>',
+      attribution: '<a href="https://artsdatabanken.no">Artsdatabanken</a>'
     };
 
     this.layer = Tangram.leafletLayer(def);
@@ -137,11 +137,11 @@ class LeafletTangram extends React.Component {
     this.icon = L.icon({
       iconUrl: "/marker/baseline_place_black_18dp.png",
       iconSize: [36, 36],
-      iconAnchor: [17, 35],
+      iconAnchor: [17, 35]
     });
 
-    map.on("locationfound", (e) => this.onLocationFound(e));
-    map.on("locationerror", (e) => this.onLocationError(e));
+    map.on("locationfound", e => this.onLocationFound(e));
+    map.on("locationerror", e => this.onLocationError(e));
 
     if (this.props.markerCoordinates) {
       this.marker = L.marker(
@@ -159,7 +159,10 @@ class LeafletTangram extends React.Component {
     if (this.props.showFullscreen) {
       L.DomUtil.addClass(this.map._container, "leaflet-container-fullscreen");
     } else {
-      L.DomUtil.removeClass(this.map._container, "leaflet-container-fullscreen");
+      L.DomUtil.removeClass(
+        this.map._container,
+        "leaflet-container-fullscreen"
+      );
     }
     this.map.invalidateSize();
   }
@@ -188,7 +191,7 @@ class LeafletTangram extends React.Component {
     this.radiusMarker = L.circle(e.latlng, radius).addTo(this.map);
     this.gpsMarker = L.marker(e.latlng)
       .addTo(this.map)
-      .on("click", (evt) => this.resetLocationLayers(evt));
+      .on("click", evt => this.resetLocationLayers(evt));
   }
   onLocationError(e) {
     alert(e.message);
@@ -233,13 +236,13 @@ class LeafletTangram extends React.Component {
   removeMarker() {
     this.setState({
       sted: null,
-      data: null,
+      data: null
     });
     if (!this.marker) return;
     this.map.removeLayer(this.marker);
   }
 
-  handleClick = (e) => {
+  handleClick = e => {
     if (this.disableClick) {
       this.disableClick = false;
       return;
@@ -254,7 +257,7 @@ class LeafletTangram extends React.Component {
       lat: latlng.lat,
       lng: latlng.lng,
       windowXpos: e.x + offset.x,
-      windowYpos: e.y - header_shift + offset.y,
+      windowYpos: e.y - header_shift + offset.y
     };
     this.props.onMarkerClick(coords);
 
@@ -271,9 +274,20 @@ class LeafletTangram extends React.Component {
   };
 
   updateMap(props) {
-    //    console.log(this.layer.scene);
-    updateScene(this.layer.scene.config, props);
-    this.layer.scene.updateConfig({ rebuild: true });
+    if (this.layer.scene.config) {
+      updateScene(this.layer.scene.config, props);
+      this.layer.scene.updateConfig({ rebuild: true });
+    } else {
+      /*TODO:
+      THIS removed error tree and crash.
+      But I assume it existed for a reason...
+      Seems events get called in the wrong order, causing trouble*/
+      console.error(
+        "missing config. start anew with empty config. See code to debug"
+      );
+      updateScene(false, props);
+      //this.layer.scene.updateConfig({ rebuild: true });
+    }
   }
 
   fixMapButtons() {
@@ -303,14 +317,10 @@ class LeafletTangram extends React.Component {
       <>
         <div
           style={{ zIndex: -100, cursor: "default" }}
-          ref={(ref) => {
+          ref={ref => {
             this.mapEl = ref;
           }}
         />
-        <div className="artsdatabanken-logo-wrapper">
-          <img src="./logoer/adb_liggende.png" className="artsdatabanken-logo-image" alt="artsdatabanken-logo"/>
-          <img src="./logoer/adb32.png" className="artsdatabanken-logo-image-mobile" alt="artsdatabanken-logo"/>
-        </div>
       </>
     );
   }

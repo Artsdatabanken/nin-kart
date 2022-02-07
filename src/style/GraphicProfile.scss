@@ -1,10 +1,22 @@
 /* NiN Main Pallette*/
+$super-duper-dark-nin: #165d6b;
 $super-dark-nin: hsla(189, 30, 45, 1); //#347c8a;
 $darkest-nin: hsla(189, 30, 45, 1); //#4d8b96;
 $dark-nin: hsla(189, 30, 46, 1); //#4b909e;
 $medium-nin: hsla(189, 30, 62, 1); // #81b2bb;
 $bright-nin: hsla(189, 30, 78, 1); //#b7d3d8;
 $brightest-nin: hsla(189, 30, 95, 1); // #edf4f5;
+
+/* FUN COLOURS */
+$fun-bg-1: #bce0ce;
+$fun-bg-2: #dadfcf;
+$fun-bg-3: #bfb6d6;
+$fun-bg-4: #80aebf;
+
+/* Background colour */
+$panel-bg: #f1f1f1;
+$panel-section-bg: #e0e5e6;
+$panel-section-sub-bg: #b9c2c4;
 
 /* NiN Support Pallette*/
 $background_header: #fbfbfb;
@@ -47,14 +59,20 @@ $fontfamily: "Roboto", "sans-serif";
 /* Relative heights of menu items */
 $bottom-tab-height: 48px;
 $topbar-height-nin: 48px;
-$menu-mobile-size: $bottom-tab-height + $topbar-height-nin;
-$sidebar-max-size: 408px;
 $mobile_slide_up_area: 60px; // closed version
+$ux-page-area: $topbar-height-nin;
+$ux-page-area-mobile: $mobile_slide_up_area + $topbar-height-nin;
+$menu-mobile-size: $ux-page-area;
+$sidebar-max-size: 408px;
+$actual-map-height: calc(100vh - #{$ux-page-area});
+$actual-map-height-mobile: calc(100vh - #{$ux-page-area-mobile});
 
 /* Box Shadow */
 $box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.45);
 $box-shadow-hover: 0 1px 6px 0 hsla(189, 30, 0, 0.45),
   0 1px 3px 1px hsla(189, 30, 232, 0.302);
+$box-shadow-card: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+  0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
 
 /* Searchbar Width */
 $searchbar-width: 300px;

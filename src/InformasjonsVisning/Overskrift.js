@@ -1,28 +1,13 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import { IconButton, Tooltip, Typography } from "@material-ui/core";
 import config from "../Funksjoner/config";
 import { InfoOutlined } from "@material-ui/icons";
 
-const useStyles = makeStyles(() => ({
-  heading: {
-    marginLeft: 16,
-    marginTop: 24,
-    marginBottom: 8,
-    color: "#777",
-    fontWeight: 500,
-  },
-  subtekst: {
-    marginBottom: 24,
-  },
-}));
-
 const Overskrift = ({ tittel, image, subtekst, onClickInfo }) => {
-  const classes = useStyles();
   return (
     <>
-      <div style={{}}>
-        <Typography variant="h6" className={classes.heading}>
+      <div>
+        <h3 className="kartlag_header">
           <img
             src={config.logo(image)}
             style={{ position: "relative", top: 4, marginRight: 8 }}
@@ -39,10 +24,10 @@ const Overskrift = ({ tittel, image, subtekst, onClickInfo }) => {
               </IconButton>
             </Tooltip>
           )}
-        </Typography>
+        </h3>
       </div>
       {false && (
-        <Typography variant="body1" className={classes.subtext}>
+        <Typography variant="body1" className="cardsubtext">
           {subtekst}
         </Typography>
       )}

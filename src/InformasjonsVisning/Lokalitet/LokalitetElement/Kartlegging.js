@@ -1,31 +1,23 @@
 import React from "react";
 import { withRouter } from "react-router";
-import LukkbartVindu from "./LukkbartVindu";
-import {
-  Grid,
-  Typography,
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-} from "@material-ui/core";
-import Prettyprint from "./Funksjoner/prettyprint";
+import { Grid, Typography } from "@material-ui/core";
+import Prettyprint from "../../../Funksjoner/prettyprint";
+import SectionExpand from "../../../GjenbruksElement/SectionExpand";
 
-const Kartlegging = ({ punkt, onClose, onNavigateToTab }) => {
+const Kartlegging = ({ punkt }) => {
   if (!punkt) return null;
   const nat =
     punkt.vektor &&
-    Object.values(punkt.vektor).filter((e) => e.datasettkode === "NAT");
+    Object.values(punkt.vektor).filter(e => e.datasettkode === "NAT");
   if (nat.length === 0) return null;
-
   const ignoreNullValues = true;
-
-  const kartlegginger = nat.map((natElement) => {
+  const kartlegginger = nat.map(natElement => {
     const na = natElement.data;
     if (!na) return null;
     const k0 = na.kartleggingsenhet[0] || {};
     const heading = {
       områdeid: k0.område5kid || k0.område20kid || k0.naturtypeid,
-      guid: k0.område5kguid || k0.område20kguid || k0.naturtypeguid,
+      guid: k0.område5kguid || k0.område20kguid || k0.naturtypeguid
     };
 
     return (
@@ -38,92 +30,45 @@ const Kartlegging = ({ punkt, onClose, onNavigateToTab }) => {
   });
 
   return (
-    <LukkbartVindu
-      onBack={() => onNavigateToTab("punkt")}
-      onClose={onClose}
-      tittel={"Natursystem: Kartlegging"}
-    >
-      {kartlegginger}
-    </LukkbartVindu>
-  );
-};
-
-const KartleggingObjekt = ({ na, heading, ignoreNullValues }) => {
-  const [expanded, setExpanded] = React.useState();
-  // console.log('KartleggingObjekt', expanded, na);
-  const checkExpanded = (id) => {
-    // console.log('onChange', id, expanded);
-    if (id === expanded) id = undefined;
-    setExpanded(id);
-  };
-  return (
-    <div>
-      <div style={{ margin: 24 }}>
-        <Table keys={Object.keys(heading)} data={heading} />
-      </div>
-      <Expa
-        expanded={expanded}
-        id="prosjekt"
-        onChange={checkExpanded}
-        summary="Prosjekt"
-        details={
-          <Prosjekt
-            prosjekt={na.prosjekt}
-            ignoreNullValues={ignoreNullValues}
-          />
-        }
-      />
-      {na.prosjekt && na.prosjekt.program && (
-        <Expa
-          expanded={expanded}
-          id="program"
-          onChange={checkExpanded}
-          summary="Program"
-          details={
-            <Program
-              program={na.prosjekt.program}
-              ignoreNullValues={ignoreNullValues}
-            />
-          }
-        />
-      )}
-
-      {(na.kartleggingsenhet || []).map((kle) => (
-        <Expa
-          expanded={expanded}
-          id={
-            kle.kartleggingsenhet5kid ||
-            kle.kartleggingsenhet20kid ||
-            kle.kartleggingsenhetntid ||
-            kle.kartleggingsenhetkode
-          }
-          onChange={checkExpanded}
-          summary={"Kartleggingsenhet " + kle.altkode}
-          details={
-            <Kartleggingsenhet kle={kle} ignoreNullValues={ignoreNullValues} />
-          }
-        />
-      ))}
+    <div className="subsection">
+      <h4>Kartlegging av natursystem </h4>
+      <SectionExpand title={"Punktdetaljer"}>{kartlegginger}</SectionExpand>
     </div>
   );
 };
 
-const Expa = ({ id, expanded, summary, details, onChange }) => (
-  <Accordion square expanded={expanded === id} onChange={() => onChange(id)}>
-    <AccordionSummary>
-      <Typography
-        style={{
-          fontWeight: 500,
-          _fontSize: "1.2rem",
-          color: "rgba(0,0,0,0.54)",
-        }}
-      >
-        {summary}
-      </Typography>
-    </AccordionSummary>
-    <AccordionDetails>{details}</AccordionDetails>
-  </Accordion>
-);
+const KartleggingObjekt = ({ na, heading, ignoreNullValues }) => {
+  return (
+    <>
+      <Table keys={Object.keys(heading)} data={heading} />
+
+      <div className="subsection">
+        <h6>Detaljinfo</h6>
+        <SectionExpand title={"Prosjekt"}>
+          <Prosjekt
+            prosjekt={na.prosjekt}
+            ignoreNullValues={ignoreNullValues}
+          />
+        </SectionExpand>
+
+        {na.prosjekt && na.prosjekt.program && (
+          <SectionExpand title={"Program"}>
+            <Program
+              program={na.prosjekt.program}
+              ignoreNullValues={ignoreNullValues}
+            />
+          </SectionExpand>
+        )}
+
+        {(na.kartleggingsenhet || []).map(kle => (
+          <SectionExpand title={"Kartleggingsenhet " + kle.altkode}>
+            <Kartleggingsenhet kle={kle} ignoreNullValues={ignoreNullValues} />
+          </SectionExpand>
+        ))}
+      </div>
+    </>
+  );
+};
 
 const Kartleggingsenhet = ({ kle, ignoreNullValues }) => {
   const bruker = kle.bruker || {};
@@ -142,12 +87,12 @@ const Kartleggingsenhet = ({ kle, ignoreNullValues }) => {
       kle.kartleggingsenhetntid,
     Faktaark: kle.faktaark,
     "": "",
-    Variabler: "",
+    Variabler: ""
   };
   data["Variabler"] = variabler.length > 0 ? "" : "ingen";
   variabler
     .sort((a, b) => (a.kode > b.kode ? 1 : -1))
-    .forEach((v) => {
+    .forEach(v => {
       data[v.altkode || v.kode.replace("NN-NA-BS-", "")] = (
         <div>
           {v.navnbeskrivelse
@@ -168,7 +113,7 @@ const Kartleggingsenhet = ({ kle, ignoreNullValues }) => {
   data["uLKM"] = ulkm.length > 0 ? "" : "ingen";
   ulkm
     .sort((a, b) => (a.ulkmkode > b.ulkmkode ? 1 : -1))
-    .forEach((u) => {
+    .forEach(u => {
       // console.log('uLKM', u);
       data[u.ulkmkode.replace("NN-NA-uLKM-", "")] = (
         <div>
@@ -197,7 +142,7 @@ const Prosjekt = ({ prosjekt, ignoreNullValues }) => {
     "kartlagttildato",
     "prosjektrapport",
     "basiskartlegging",
-    "dekningskartverdi",
+    "dekningskartverdi"
   ];
   return (
     <Table keys={keys} data={prosjekt} ignoreNullValues={ignoreNullValues} />
@@ -213,7 +158,7 @@ const Program = ({ program, ignoreNullValues }) => {
     "kartlegging5k",
     "kartleggingnt",
     "kartlegging20k",
-    "kartleggingsinstruks",
+    "kartleggingsinstruks"
   ];
   return (
     <Table keys={keys} data={program} ignoreNullValues={ignoreNullValues} />
@@ -225,7 +170,7 @@ const Table = ({ keys, data, ignoreNullValues }) => {
   return (
     <div style={{ flexGrow: 1 }}>
       <Grid container spacing={1}>
-        {keys.map((key) => {
+        {keys.map(key => {
           if (ignoreNullValues) {
             if (data[key] === null || data[key] === undefined) return null;
           }
@@ -251,14 +196,14 @@ const Table = ({ keys, data, ignoreNullValues }) => {
 const Row = ({ title, value }) => {
   const gridStyle = {
     textTransform: title === "uLKM" ? undefined : "capitalize",
-    color: "rgba(0,0,0,0.54)",
+    color: "rgba(0,0,0,0.54)"
   };
   return (
     <>
       <Grid item xs={5} spacing={1} style={gridStyle}>
         <Typography
           style={{
-            fontWeight: title === "Variabler" || title === "uLKM" ? 600 : 400,
+            fontWeight: title === "Variabler" || title === "uLKM" ? 600 : 400
           }}
           variant="body2"
         >

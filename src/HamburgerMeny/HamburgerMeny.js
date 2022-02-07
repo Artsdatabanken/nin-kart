@@ -8,7 +8,7 @@ import {
   ListItem,
   ListItemText,
   SwipeableDrawer,
-  ListItemSecondaryAction,
+  ListItemSecondaryAction
 } from "@material-ui/core";
 import {
   OpenInNew,
@@ -16,7 +16,7 @@ import {
   CloudDownload,
   Comment,
   HelpOutline,
-  AssignmentInd,
+  AssignmentInd
 } from "@material-ui/icons";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
@@ -29,15 +29,15 @@ import config from "../Funksjoner/config";
 class HamburgerMeny extends Component {
   render() {
     let spraak = this.props.spraak;
-    const handleSpraak = this.props.handleSpraak;
+    const { handleSpraak, handleHovedMeny } = this.props;
     return (
       <SettingsContext.Consumer>
-        {(context) => (
+        {context => (
           <SwipeableDrawer
             className="hamburger_sidebar"
             anchor="left"
-            onClose={this.props.handleHovedMeny}
-            onOpen={this.props.handleHovedMeny}
+            onClose={handleHovedMeny}
+            onOpen={handleHovedMeny}
             open={this.props.open}
           >
             <List className="hamburger_sidebar">
@@ -53,7 +53,7 @@ class HamburgerMeny extends Component {
                   }
                 />
                 <ListItemSecondaryAction>
-                  <IconButton onClick={this.props.handleHovedMeny}>
+                  <IconButton onClick={handleHovedMeny}>
                     <NavigationChevronLeftDouble />
                   </IconButton>
                 </ListItemSecondaryAction>
@@ -61,8 +61,28 @@ class HamburgerMeny extends Component {
               <Divider />
 
               <div>
-                <Utforsk parent={this} props={this} context={context} />
-
+                <Utforsk
+                  parent={this}
+                  props={this}
+                  context={context}
+                  handleHovedMeny={handleHovedMeny}
+                />
+                <Menyelement
+                  onClick={() => {
+                    this.handleClick("/Datakilde/");
+                    this.props.handleHovedMeny();
+                  }}
+                  icon={<AssignmentInd />}
+                  primary="Datakilder"
+                />
+                <Menyelement
+                  icon={<HelpOutline />}
+                  primary="Hjelp"
+                  onClick={() => {
+                    this.props.handleHelp();
+                    this.props.handleHovedMeny();
+                  }}
+                />
                 <Divider />
                 <Innstillinger
                   visKoder={context.visKoder}
@@ -74,7 +94,19 @@ class HamburgerMeny extends Component {
                 />
 
                 <Divider />
+                <button
+                  className="tilbakemeldinger"
+                  onClick={() => {
+                    this.handleWindowOpen(
+                      "https://github.com/Artsdatabanken/nin-kart-frontend/issues"
+                    );
+                    this.props.handleHovedMeny();
+                  }}
+                >
+                  <Comment /> <span>Gi tilbakemelding</span> <OpenInNew />
+                </button>
                 <Menyelement
+                  outgoing={<OpenInNew />}
                   icon={<CloudDownload />}
                   primary="Last ned data"
                   onClick={() => {
@@ -83,6 +115,7 @@ class HamburgerMeny extends Component {
                   }}
                 />
                 <Menyelement
+                  outgoing={<OpenInNew />}
                   onClick={() => {
                     this.handleWindowOpen(
                       "https://github.com/Artsdatabanken/nin-kart-frontend/wiki/%C3%98nsker-du-%C3%A5-bidra-med-data%3F"
@@ -94,14 +127,7 @@ class HamburgerMeny extends Component {
                 />
 
                 <Menyelement
-                  onClick={() => {
-                    this.handleClick("/Datakilde/");
-                    this.props.handleHovedMeny();
-                  }}
-                  icon={<AssignmentInd />}
-                  primary="Datakilder"
-                />
-                <Menyelement
+                  outgoing={<OpenInNew />}
                   onClick={() => {
                     this.handleWindowOpen(
                       "https://github.com/Artsdatabanken/nin-kart-frontend"
@@ -112,25 +138,6 @@ class HamburgerMeny extends Component {
                   primary="Kildekode"
                 />
                 <Divider />
-                <Menyelement
-                  icon={<HelpOutline />}
-                  primary="Hjelp"
-                  onClick={() => {
-                    this.handleClick("?hjelp");
-                    this.props.handleHovedMeny();
-                  }}
-                />
-                <button
-                  className="tilbakemeldinger"
-                  onClick={() => {
-                    this.handleWindowOpen(
-                      "https://github.com/Artsdatabanken/nin-kart-frontend/issues"
-                    );
-                    this.props.handleHovedMeny();
-                  }}
-                >
-                  <Comment /> <span>Tilbakemeldinger</span> <OpenInNew />
-                </button>
 
                 <Menyelement
                   onClick={() => {
@@ -155,10 +162,10 @@ class HamburgerMeny extends Component {
     );
   }
 
-  handleClick = (what) => this.props.history.push(what);
-  handleWindowOpen = (what) => window.open(what);
+  handleClick = what => this.props.history.push(what);
+  handleWindowOpen = what => window.open(what);
   handleClickMap = () => this.handleWindowOpen("/");
-  handleNavigate = (url) => this.props.history.push(url);
+  handleNavigate = url => this.props.history.push(url);
 }
 
 export default withRouter(HamburgerMeny);
