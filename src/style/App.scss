@@ -114,23 +114,39 @@ div {
   max-width: 100%;
 }
 
-.mainwrapper {
-  height: calc(100% - 100px);
+.ux-page-wrapper {
   width: 100%;
+  height: 100vh;
+  max-height: calc(100vh - #{$ux-page-area});
+  pointer-events: none;
   position: relative;
-  height: calc(100vh - 100px);
+}
+
+.ux-page-wrapper * {
+  pointer-events: auto;
+}
+
+/* leftmenu */
+
+.leftwindow {
+  width: $sidebar-max-size;
+  position: absolute;
+  top: 0;
+  max-height: 100%;
+  background: $panel-bg;
+  height: 100%;
 }
 
 .lukkbartvindu {
   background-color: $panel-bg;
   position: absolute;
   overflow-y: auto;
-  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
-    0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: $box-shadow-card;
   bottom: 0;
-  width: 408px;
+  width: $sidebar-max-size;
   left: 0;
-  top: 48px;
+  height: 100%;
+  top: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -535,16 +551,6 @@ div {
   .artsdatabanken-logo-image-mobile {
     display: unset;
   }
-}
-
-/* leftmenu */
-
-.leftwindow {
-  width: $sidebar-max-size;
-  position: absolute;
-  top: $topbar-height-nin;
-  max-height: calc(100% - #{$topbar-height-nin});
-  background: $panel-bg;
 }
 
 /* Sections */
