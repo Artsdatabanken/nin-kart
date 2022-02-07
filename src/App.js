@@ -159,6 +159,7 @@ class App extends React.Component {
                       onNavigate={this.handleNavigate}
                       onSetAktivTab={this.handleSetAktivTab}
                       handleShowInfo={this.handleShowInfo}
+                      showInfo={this.state.showInfo}
                       onUpdateMetaProp={this.handleUpdateMetaProp}
                       handleHovedMeny={this.handleHovedMeny}
                       onToggleLayer={() => {
