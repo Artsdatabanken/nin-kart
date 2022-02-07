@@ -46,7 +46,14 @@ const TopBar = ({ onSelectResult, searchFor, history, handleHovedMeny }) => {
             history.push("/");
           }}
         >
-          <span style={{ fontWeight: 500 }}>NiN-kart 2.0</span>
+          <span style={{ fontWeight: 500 }}>
+            <img
+              src="./logoer/adb32.png"
+              className="logo-icon"
+              alt="artsdatabanken-logo"
+            />
+            NiN-kart
+          </span>
           {false && (
             <img
               src="/logoer/small_icon_two.png"

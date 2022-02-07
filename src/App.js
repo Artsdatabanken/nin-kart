@@ -15,7 +15,6 @@ import oppdaterMetaProperties from "./AppSettings/AppFunksjoner/oppdaterMetaProp
 import oppdaterLagProperties from "./AppSettings/AppFunksjoner/oppdaterLagProperties";
 import bakgrunnskarttema from "./AppSettings/bakgrunnskarttema";
 import HamburgerMeny from "./HamburgerMeny/HamburgerMeny";
-import MobileNavigation from "./MobileNavigation/MobileNavigation";
 import ForsideInformasjon from "./Forside/ForsideInformasjon";
 import språk from "./Funksjoner/språk";
 import "./style/Kart.scss";
@@ -23,13 +22,11 @@ import "./style/App.scss";
 import "./style/Badges.scss";
 import "./style/Sidebar.scss";
 import "./style/InformasjonsSider.scss";
-import "./style/Art.scss";
 import "./style/Kartlag.scss";
 import "./style/FargeMenyer.scss";
 import fixerUpHack from "./fixerUpHack";
 import Punkt from "./InformasjonsVisning/Punkt";
 import Hjelp from "./InformasjonsVisning/Hjelp/Hjelp";
-import NinBottomNavigation from "./NinBottomNavigation";
 
 export let exportableSpraak;
 export let exportableFullscreen;
@@ -98,20 +95,6 @@ class App extends React.Component {
           <ForsideInformasjon handleHovedMeny={this.handleHovedMeny} />
         ) : (
           <>
-            {false && (
-              <MobileNavigation
-                onNavigateToTab={this.handleSetAktivTab}
-                aktivTab={aktivTab}
-                hidden_in_fullscreen={this.state.showFullscreen}
-              />
-            )}
-            {false && (
-              <NinBottomNavigation
-                aktivTab={aktivTab}
-                onNavigateToTab={this.handleSetAktivTab}
-              />
-            )}
-
             {aktivTab === "kartlaginnstillinger" && (
               <Kartlaginnstillinger
                 meta={this.state.meta}
@@ -123,8 +106,6 @@ class App extends React.Component {
 
             <Punkt
               punkt={this.state.punkt}
-              aktivTab={aktivTab}
-              onNavigateToTab={this.handleSetAktivTab}
               onNavigate={this.handleNavigate}
               onClose={this.onClose}
               handleShow={this.handleShowPunkt}

@@ -83,9 +83,9 @@ class Kartlag extends React.Component {
                 <button
                   className={
                     this.state.showKartlag
-                      ? "mobile_slide_up_area open_mobile_slide_up_area" +
+                      ? "mobile_slide_up_area open_mobile_slide_up_area " +
                         isPunkt
-                      : "mobile_slide_up_area closed_mobile_slide_up_area" +
+                      : "mobile_slide_up_area closed_mobile_slide_up_area " +
                         isPunkt
                   }
                   onClick={() => {
@@ -106,8 +106,8 @@ class Kartlag extends React.Component {
                 <div
                   className={
                     this.state.showKartlag
-                      ? "kartlag_content_open kartlag sidebar"
-                      : "kartlag_content_closed kartlag sidebar"
+                      ? "kartlag sidebar kartlag_content_open "
+                      : "kartlag sidebar kartlag_content_closed "
                   }
                 >
                   <div className="page_topic_header" />

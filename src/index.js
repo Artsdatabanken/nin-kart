@@ -5,9 +5,6 @@ import * as Sentry from "@sentry/browser";
 import { BrowserRouter } from "react-router-dom";
 import SettingsContainer from "./SettingsContainer";
 
-let test = ""; //;
-//test = "testcolours"; //;
-
 //Tester å endre denne da, sånn at vi logger til riktig sted og ikke til en tidligere ansatt
 true &&
   Sentry.init({
@@ -68,9 +65,7 @@ if (isIE11) {
     <BrowserRouter baseName={process.env.PUBLIC_URL}>
       <RootBoundary>
         <SettingsContainer>
-          <div className={test}>
-            <App />
-          </div>
+          <App />
         </SettingsContainer>
       </RootBoundary>
     </BrowserRouter>,
