@@ -2,10 +2,23 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
-.hotpink {
-  background: hotpink;
-  border: 1px solid pink;
+/* Allow click through of events
+on overlying node we can't get rid of*/
+body,
+#root {
+  pointer-events: none;
 }
+body *,
+#root * {
+  pointer-events: auto;
+}
+
+body {
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* Genral CSS */
 
 ::-webkit-scrollbar {
   width: 6px;
@@ -19,11 +32,6 @@
 div,
 button {
   box-sizing: border-box;
-}
-
-body {
-  overflow: hidden;
-  touch-action: none;
 }
 
 ::-moz-focus-inner {
@@ -85,6 +93,14 @@ button.active {
   cursor: pointer;
   _background-color: $medium-nin;
 }
+
+.logo-icon {
+  display: inline-block;
+  margin-right: 4px;
+  vertical-align: baseline;
+  height: 24px;
+}
+
 .meny_ikon_image {
   width: 20px;
   height: 20px;
@@ -376,48 +392,6 @@ div {
 
 .MuiListItem-container {
   list-style-type: none;
-}
-
-.artsdatabanken-logo-wrapper {
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  position: absolute;
-  bottom: 0;
-  right: calc(50% + 110px);
-  padding-bottom: 10px;
-  transition: right 0.5s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  pointer-events: none;
-  z-index: -100;
-}
-
-.artsdatabanken-logo-image,
-.artsdatabanken-logo-image-mobile {
-  opacity: 0.8;
-  height: 30px;
-}
-.artsdatabanken-logo-image-mobile {
-  height: 32px;
-}
-
-.artsdatabanken-logo-image-mobile {
-  display: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .artsdatabanken-logo-wrapper {
-    bottom: unset;
-    top: 56px;
-    right: -74px;
-  }
-  .artsdatabanken-logo-image {
-    display: none;
-  }
-  .artsdatabanken-logo-image-mobile {
-    display: unset;
-  }
 }
 
 /* Sections */
