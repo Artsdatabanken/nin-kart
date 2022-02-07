@@ -217,16 +217,15 @@ class App extends React.Component {
                 );
               }}
             </SettingsContext.Consumer>
-
-            <HamburgerMeny
-              spraak={this.state.spraak}
-              handleSpraak={this.handleSpraak}
-              open={this.state.showHovedmeny}
-              handleHovedMeny={this.handleHovedMeny}
-              handleHelp={this.handleHelp}
-            />
           </>
         )}
+        <HamburgerMeny
+          spraak={this.state.spraak}
+          handleSpraak={this.handleSpraak}
+          open={this.state.showHovedmeny}
+          handleHovedMeny={this.handleHovedMeny}
+          handleHelp={this.handleHelp}
+        />
       </>
     );
   }
