@@ -49,14 +49,7 @@ class Punkt extends Component {
   };
 
   render() {
-    const {
-      aktivTab,
-      onNavigate,
-      punkt,
-      onNavigateToTab,
-      handleShow,
-      show
-    } = this.props;
+    const { onNavigate, punkt, onNavigateToTab, handleShow, show } = this.props;
     if (!punkt) {
       return null;
     }
@@ -74,82 +67,72 @@ class Punkt extends Component {
     }
     const verneområde = vektor.find(e => e.datasettkode === "VV ");
     return (
-      <>
-        <div
-          className={aktivTab === "informasjon" ? "mobile_on" : "mobile_off"}
-        >
-          <LukkbartVindu
-            onBack={() => onNavigateToTab("kartlag")}
-            onClose={handleShow}
-            show={show}
-            tittel={"Punktinformasjon"}
-            icon={<Room />}
-          >
-            {false && (
-              <Header
-                sted={sted}
-                fylke={fylke}
-                kommune={kommune}
-                lat={lat}
-                lng={lng}
-              />
-            )}
-            <div className="section">
-              <div className="coordinates">
-                <h3>
-                  <MyLocation />
-                  Koordinater
-                </h3>
-                <p>{getKoordinatStreng([lat, lng])}</p>
-              </div>
-            </div>
-
-            {natArray &&
-              natArray.map((nat, i) => {
-                if (this.createNaturtyper(nat).length > 0) {
-                  return (
-                    <Naturtype
-                      key={i}
-                      showHeader={i === 0}
-                      typer={this.createNaturtyper(nat)}
-                      variabler={this.createNatvars(nat)}
-                      ulkm={this.createUlkm(nat)}
-                      onNavigate={onNavigate}
-                      onNavigateToTab={onNavigateToTab}
-                      punkt={punkt}
-                      onClose={handleShow}
-                    />
-                  );
-                }
-                return null;
-              })}
-
-            <Landskap landskap={landskap} />
-            <Sted
-              sted={sted}
-              verneområde={verneområde}
-              fylke={fylke}
-              kommune={kommune}
-              lat={lat}
-              lng={lng}
-              onNavigate={onNavigate}
-            />
-
-            {false &&
-              vektor.map(v => {
-                if (v.datasettkode === "VV ")
-                  return (
-                    <NaturvernOmraade
-                      key={v.id}
-                      {...v}
-                      onNavigate={onNavigate}
-                    />
-                  );
-                return null;
-              })}
-          </LukkbartVindu>
+      <LukkbartVindu
+        onBack={() => onNavigateToTab("kartlag")}
+        onClose={handleShow}
+        show={show}
+        tittel={"Punktinformasjon"}
+        icon={<Room />}
+      >
+        {false && (
+          <Header
+            sted={sted}
+            fylke={fylke}
+            kommune={kommune}
+            lat={lat}
+            lng={lng}
+          />
+        )}
+        <div className="section">
+          <div className="coordinates">
+            <h3>
+              <MyLocation />
+              Koordinater
+            </h3>
+            <p>{getKoordinatStreng([lat, lng])}</p>
+          </div>
         </div>
-      </>
+
+        {natArray &&
+          natArray.map((nat, i) => {
+            if (this.createNaturtyper(nat).length > 0) {
+              return (
+                <Naturtype
+                  key={i}
+                  showHeader={i === 0}
+                  typer={this.createNaturtyper(nat)}
+                  variabler={this.createNatvars(nat)}
+                  ulkm={this.createUlkm(nat)}
+                  onNavigate={onNavigate}
+                  onNavigateToTab={onNavigateToTab}
+                  punkt={punkt}
+                  onClose={handleShow}
+                />
+              );
+            }
+            return null;
+          })}
+
+        <Landskap landskap={landskap} />
+        <Sted
+          sted={sted}
+          verneområde={verneområde}
+          fylke={fylke}
+          kommune={kommune}
+          lat={lat}
+          lng={lng}
+          onNavigate={onNavigate}
+        />
+
+        {false &&
+          vektor.map(v => {
+            if (v.datasettkode === "VV ")
+              return (
+                <NaturvernOmraade key={v.id} {...v} onNavigate={onNavigate} />
+              );
+            return null;
+          })}
+      </LukkbartVindu>
     );
   }
 }

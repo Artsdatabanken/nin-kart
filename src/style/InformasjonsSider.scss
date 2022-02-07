@@ -1,10 +1,8 @@
 @import "./GraphicProfile.scss";
-
-.leftside-openbutton {
-  background: $dark-nin;
-  color: white;
-  margin-top: 10px;
-}
+/*
+The left sidebar infobox
+Specific styling for its subelements
+*/
 
 .nin-card {
   margin: 10px;
@@ -15,39 +13,38 @@
   text-align: center;
 }
 
-.lukkbartvindu_header {
-  font-size: 19pt;
-  color: black;
-  padding-top: 0px;
-  margin-top: 10px;
-  padding-bottom: 10px;
-}
-
-.lukkbartvindu_header img {
-  height: 22px;
-  padding-right: 5px;
-  padding-left: 5px;
-}
-
-.lukkbartvindu-innhold {
-  position: relative;
-  top: 0px;
-}
-
-.closebutton {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-}
-
-.closebutton svg {
-  vertical-align: middle;
-}
-
 .coordinates p {
   padding: 0px;
   padding-left: 24px;
 }
+
+/* Statistics Box Info Tab */
+
+.stats_paragraph {
+  display: flex;
+  align-content: flex-start;
+  text-align: left;
+}
+
+.stats_paragraph svg {
+  width: 50px;
+  height: 50px;
+  padding-right: 10px;
+  color: $super-duper-dark-nin;
+}
+
+/* Info Tab Top Image  */
+
+.sidebar_top_image {
+  height: 200px;
+  background-position: center;
+  width: calc(100% - 20px);
+  display: block;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+/* Older code, still in use  */
 
 .kartlag_barn_container {
   /*Såvidt jeg kan se er dette containeren for underelement på infosiden*/

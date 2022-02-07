@@ -321,18 +321,6 @@ class LeafletTangram extends React.Component {
             this.mapEl = ref;
           }}
         />
-        <div className="artsdatabanken-logo-wrapper">
-          <img
-            src="./logoer/adb_liggende.png"
-            className="artsdatabanken-logo-image"
-            alt="artsdatabanken-logo"
-          />
-          <img
-            src="./logoer/adb32.png"
-            className="artsdatabanken-logo-image-mobile"
-            alt="artsdatabanken-logo"
-          />
-        </div>
       </>
     );
   }

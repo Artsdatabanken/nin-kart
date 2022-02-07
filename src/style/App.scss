@@ -2,10 +2,23 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
-.hotpink {
-  background: hotpink;
-  border: 1px solid pink;
+/* Allow click through of events
+on overlying node we can't get rid of*/
+body,
+#root {
+  pointer-events: none;
 }
+body *,
+#root * {
+  pointer-events: auto;
+}
+
+body {
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* Genral CSS */
 
 ::-webkit-scrollbar {
   width: 6px;
@@ -19,11 +32,6 @@
 div,
 button {
   box-sizing: border-box;
-}
-
-body {
-  overflow: hidden;
-  touch-action: none;
 }
 
 ::-moz-focus-inner {
@@ -85,6 +93,14 @@ button.active {
   cursor: pointer;
   _background-color: $medium-nin;
 }
+
+.logo-icon {
+  display: inline-block;
+  margin-right: 4px;
+  vertical-align: baseline;
+  height: 24px;
+}
+
 .meny_ikon_image {
   width: 20px;
   height: 20px;
@@ -114,128 +130,11 @@ div {
   max-width: 100%;
 }
 
-.mainwrapper {
-  height: calc(100% - 100px);
-  width: 100%;
-  position: relative;
-  height: calc(100vh - 100px);
-}
-
-.lukkbartvindu {
-  background-color: $panel-bg;
-  position: absolute;
-  overflow-y: auto;
-  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
-    0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-  bottom: 0;
-  width: 408px;
-  left: 0;
-  top: 48px;
-}
-
 @media only screen and (max-width: 768px) {
   .hidden_in_fullscreen {
     display: none;
   }
 }
-
-/* NAVIGATION TABS */
-.tab_selector {
-  display: block;
-  width: 408px;
-  height: auto;
-  position: absolute;
-  bottom: 0px;
-  box-sizing: border-box;
-  margin: 0px;
-  z-index: 2;
-}
-
-@media only screen and (min-width: 768px) {
-  .tab_selector {
-    bottom: auto;
-    top: 16px;
-    z-index: 21;
-    left: 350px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .tab_selector {
-    width: 100%;
-  }
-}
-
-/* NAVIGATION TAB BUTTONS */
-
-.tab_selector button {
-  display: inline-block;
-  text-align: center;
-  padding: auto;
-  background: $brightest-nin;
-  width: calc(100% / 3);
-  height: $bottom-tab-height;
-  padding: 15px;
-  position: relative;
-  bottom: 0px;
-  box-sizing: border-box;
-  margin: 0px;
-  color: #555;
-  font-family: "Roboto", "sans-serif";
-  border: none;
-  border-left: 1px solid $brightest-nin;
-  border-top: 1px solid $brightest-nin;
-  vertical-align: bottom;
-}
-
-.tab_selector .active_mobile_button,
-.active_mobile_button,
-.tab_selector button:hover,
-.tab_selector button.active:hover,
-.tab_selector button.active:focus,
-.tab_selector button.active {
-  background: $medium-nin;
-  color: #fff;
-  cursor: pointer;
-}
-
-.tab_selector .active_mobile_button {
-  background: $dark-nin;
-  color: white;
-  font-weight: 600;
-}
-
-@media only screen and (min-width: 768px) {
-  .tab_selector button:first-child {
-    display: none;
-  }
-
-  .tab_selector button {
-    width: calc(100% / 2);
-    height: 40px;
-    border: 0px;
-    background: $bright-nin;
-  }
-
-  .tab_selector .active_mobile_button,
-  .tab_selector .active_mobile_button_bigscreen {
-    background: $background_header;
-    color: rgba(0, 0, 0, 0.87);
-    font-weight: 400;
-    border: 0px;
-    font-size: 12pt;
-    text-decoration: underline;
-  }
-}
-
-.tab_selector button svg {
-  height: 18px;
-  width: 18px;
-  position: absolute;
-  top: calc(50% - 9px);
-  right: calc(50% - 9px);
-}
-
 /* Den usynlige knappen */
 
 .invisible_icon_button {
@@ -493,58 +392,6 @@ div {
 
 .MuiListItem-container {
   list-style-type: none;
-}
-
-.artsdatabanken-logo-wrapper {
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  position: absolute;
-  bottom: 0;
-  right: calc(50% + 110px);
-  padding-bottom: 10px;
-  transition: right 0.5s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  pointer-events: none;
-  z-index: -100;
-}
-
-.artsdatabanken-logo-image,
-.artsdatabanken-logo-image-mobile {
-  opacity: 0.8;
-  height: 30px;
-}
-.artsdatabanken-logo-image-mobile {
-  height: 32px;
-}
-
-.artsdatabanken-logo-image-mobile {
-  display: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .artsdatabanken-logo-wrapper {
-    bottom: unset;
-    top: 56px;
-    right: -74px;
-  }
-  .artsdatabanken-logo-image {
-    display: none;
-  }
-  .artsdatabanken-logo-image-mobile {
-    display: unset;
-  }
-}
-
-/* leftmenu */
-
-.leftwindow {
-  width: $sidebar-max-size;
-  position: absolute;
-  top: $topbar-height-nin;
-  max-height: calc(100% - #{$topbar-height-nin});
-  background: $panel-bg;
 }
 
 /* Sections */

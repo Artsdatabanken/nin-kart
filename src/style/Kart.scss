@@ -15,40 +15,6 @@
   z-index: 1;
   height: 100%;
 }
-
-.popup {
-  text-align: left;
-  position: absolute;
-  background: $brightest-nin;
-  transform: translate3d(764px, 386px, 0px);
-  padding: 10px;
-  width: 300px;
-  box-shadow: $box-shadow;
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-.popup:hover {
-  box-shadow: $box-shadow-hover;
-  outline: 1px solid transparent;
-}
-
-.popup .link_to_page {
-  background: $medium-nin;
-  width: 100%;
-  padding: 5px;
-  margin: 5px;
-}
-
-.popup .invisible_icon_button {
-  float: right;
-  font-size: 16pt;
-}
-
-.popup svg {
-  vertical-align: top;
-  margin-top: -2px;
-}
-
 /* KARTKNAPPENE */
 
 /* Sizes for map buttons*/
