@@ -170,6 +170,7 @@ class App extends React.Component {
                       path={path}
                       parent={this}
                     />
+
                     <Kart
                       markerCoordinates={this.state.markerCoordinates}
                       onMarkerClick={this.handleMarkerClick}
@@ -200,6 +201,10 @@ class App extends React.Component {
             </SettingsContext.Consumer>
           </>
         )}
+        <div className="cookiewarning">
+          Les om informasjonskapsler i NiN-kart{" "}
+          <a href="https://artsdatabanken.no/informasjonskapsler">her</a>
+        </div>
         <HamburgerMeny
           spraak={this.state.spraak}
           handleSpraak={this.handleSpraak}

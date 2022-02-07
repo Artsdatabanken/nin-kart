@@ -6,7 +6,7 @@ $dark-nin: hsla(189, 30, 46, 1); //#4b909e;
 $medium-nin: hsla(189, 30, 62, 1); // #81b2bb;
 $bright-nin: hsla(189, 30, 78, 1); //#b7d3d8;
 $brightest-nin: hsla(189, 30, 95, 1); // #edf4f5;
-
+$transparent-bg: #165d6b6e;
 /* FUN COLOURS */
 $fun-bg-1: #bce0ce;
 $fun-bg-2: #dadfcf;
@@ -66,7 +66,7 @@ $menu-mobile-size: $ux-page-area;
 $sidebar-max-size: 408px;
 $actual-map-height: calc(100vh - #{$ux-page-area});
 $actual-map-height-mobile: calc(100vh - #{$ux-page-area-mobile});
-
+$map-width: calc(100% - #{$sidebar-max-size});
 /* Box Shadow */
 $box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.45);
 $box-shadow-hover: 0 1px 6px 0 hsla(189, 30, 0, 0.45),
