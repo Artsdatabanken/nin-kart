@@ -72,8 +72,8 @@ Even tho we don't a of now support IE X)
   }
   .kartlag_content_open {
     position: relative;
-    margin-top: -28px;
-    padding-top: 28px;
+    margin-top: -18px;
+    padding-top: 4px;
     background: white;
     height: calc(100vh - 116px);
     overflow-x: hidden;
@@ -212,42 +212,7 @@ Even tho we don't a of now support IE X)
   height: 50px;
 }
 
-.theme_link {
-  display: block;
-  width: 60px;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-}
-
-.theme_link svg {
-  margin-top: calc(50% - 15px);
-  width: 40px;
-  height: 40px;
-}
-
 /* KILDER */
-
-.kilde_box button {
-  display: inline-block;
-  padding: 10px;
-  background: $brightest-nin;
-  min-width: 200px;
-  margin: 10px;
-  vertical-align: top;
-  min-height: 55px;
-}
-
-.kilde_box button img {
-  float: left;
-}
-
-.kilde_box button:hover {
-  background: $medium-nin;
-  color: white;
-}
-
 .sidebar .submeny_container {
   width: 100%;
   padding: 10px;

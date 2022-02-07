@@ -1,5 +1,11 @@
 @import "./GraphicProfile.scss";
 
+/*
+The left and right sidebars
+Their collected styling
+Their common buttons
+*/
+
 /* leftmenu */
 
 .leftwindow {
@@ -28,7 +34,7 @@
   box-shadow: $box-shadow-card;
   width: $sidebar-max-size;
   height: 100%;
-  max-height: calc(100vh - #{$ux-page-area});
+  max-height: $actual-map-height;
   top: $topbar-height-nin;
 }
 
@@ -36,8 +42,45 @@
   .lukkbartvindu,
   .sidebar {
     width: 100%;
-    max-height: calc(100vh - #{$ux-page-area-mobile});
+    max-height: $actual-map-height-mobile;
   }
+}
+
+.lukkbartvindu_header {
+  font-size: 19pt;
+  color: black;
+  padding-top: 0px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+.lukkbartvindu_header img {
+  height: 22px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.lukkbartvindu-innhold {
+  position: relative;
+  top: 0px;
+}
+
+/* Buttons */
+.leftside-openbutton {
+  background: $dark-nin;
+  color: white;
+  margin-top: 10px;
+  display: block;
+}
+
+.closebutton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.closebutton svg {
+  vertical-align: middle;
 }
 
 /* Button on bottom of map screen on mobile */
@@ -58,18 +101,18 @@
   }
 
   .open_mobile_slide_up_area {
-    position: relative;
-    top: 0px;
     bottom: auto;
-    background: transparent;
     border-top: 0px;
     border-bottom: 1px solid $dark-nin;
     z-index: 100;
+    background: #165d6b6e;
+    position: absolute;
+    top: $topbar-height-nin;
   }
 
   .closed_mobile_slide_up_area {
     position: absolute;
-    // bottom: $bottom-tab-height;
+    top: auto;
     bottom: 0;
     background: white;
     border-top: 1px solid $dark-nin;
