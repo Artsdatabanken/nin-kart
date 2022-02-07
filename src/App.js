@@ -95,15 +95,6 @@ class App extends React.Component {
           <ForsideInformasjon handleHovedMeny={this.handleHovedMeny} />
         ) : (
           <>
-            {aktivTab === "kartlaginnstillinger" && (
-              <Kartlaginnstillinger
-                meta={this.state.meta}
-                onUpdateLayerProp={this.handleUpdateLayerProp}
-                onNavigateToTab={this.handleSetAktivTab}
-                onClose={this.handleClosePunkt}
-              />
-            )}
-
             <Punkt
               punkt={this.state.punkt}
               onNavigate={this.handleNavigate}

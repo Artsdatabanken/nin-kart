@@ -2,7 +2,7 @@ import React from "react";
 
 class VelgFargeBoks extends React.Component {
   render() {
-    const { farge, kode } = this.props;
+    const { farge, kode, setShowEditColor } = this.props;
 
     return (
       <div
@@ -10,7 +10,11 @@ class VelgFargeBoks extends React.Component {
         aria-label="Velg farge"
         style={{
           backgroundColor: farge,
-          src: !farge && "/" + kode + ".png",
+          src: !farge && "/" + kode + ".png"
+        }}
+        onClick={e => {
+          e.stopPropagation();
+          setShowEditColor();
         }}
       />
     );

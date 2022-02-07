@@ -16,7 +16,6 @@ import {
 
 const Meny = ({
   aktiveLag,
-  aktivTab,
   onSetAktivTab,
   meta,
   onNavigate,
@@ -25,10 +24,9 @@ const Meny = ({
   onMouseEnter,
   onMouseLeave,
   onToggleLayer,
-  path,
   isstartpage,
-  parent,
-  handleShowInfo
+  handleShowInfo,
+  onUpdateLayerProp
 }) => {
   /*
 Intern navigasjon innad på en side.
@@ -50,7 +48,6 @@ Sidebarmeny-navigeringen.
   if (meta.overordnet !== undefined && meta.overordnet[0] !== undefined) {
     backurl = meta.overordnet[0].url;
   }
-
   return (
     <SettingsContext.Consumer>
       {context => (
@@ -144,6 +141,7 @@ Sidebarmeny-navigeringen.
               onMouseLeave={onMouseLeave}
               opplyst={opplyst}
               onUpdateMetaProp={onUpdateMetaProp}
+              onUpdateLayerProp={onUpdateLayerProp}
             />
           )}
           {!expanded && false && <b>Do we still use this variable?</b>}

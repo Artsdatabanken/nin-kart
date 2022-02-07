@@ -9,7 +9,7 @@ const Kartlaginnstillinger = ({
   meta,
   onUpdateLayerProp,
   onNavigateToTab,
-  onClose,
+  onClose
 }) => {
   return (
     <LukkbartVindu
@@ -25,10 +25,8 @@ const Kartlaginnstillinger = ({
         </Tooltip>
         {meta && (
           <EkspandertInnhold
-            kode={meta.kode}
-            aktivtFormat={meta.kart}
             onUpdateLayerProp={onUpdateLayerProp}
-            kartlag={meta}
+            meta={meta}
             is_current_object={true}
           />
         )}

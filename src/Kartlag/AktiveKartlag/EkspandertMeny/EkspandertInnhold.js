@@ -7,17 +7,13 @@ import GradientFilter from "./Filtere/GradientFilter.js";
 import FargeVelger from "./FellesElementer/FargeVelger";
 import { Slider } from "@material-ui/core";
 
-const EkspandertInnhold = ({
-  kode,
-  aktivtFormat,
-  onUpdateLayerProp,
-  kartlag,
-}) => {
+const EkspandertInnhold = ({ onUpdateLayerProp, meta }) => {
+  const { kode, aktivtFormat, kart, opacity } = meta;
   const current = aktivtFormat.aktivtFormat;
   const currenctActiveFormatNode = aktivtFormat.format[current];
-  const blendmode = kartlag.blendmode || "multiply";
+  const blendmode = meta.blendmode || "multiply";
   let hide_blendmodes = false;
-  //    !!kartlag.kart.format.polygon || !!kartlag.kart.format.raster_ruter;
+
   return (
     <div>
       {kode === "bakgrunnskart" && (
@@ -36,7 +32,7 @@ const EkspandertInnhold = ({
               <FargeVelger
                 color={currenctActiveFormatNode.tint}
                 onUpdateLayerProp={onUpdateLayerProp}
-                where={kartlag.kode}
+                where={kode}
                 what={"kart.format." + current + ".tint"}
                 title={"Velg fargetone for kartbladet"}
               />
@@ -52,9 +48,9 @@ const EkspandertInnhold = ({
             <>
               <GradientEllerTypeinndelt
                 onUpdateLayerProp={onUpdateLayerProp}
-                where={kartlag.kode}
-                format={kartlag.kart.format}
-                aktvtKartlagFormat={kartlag.kart.aktivtFormat}
+                where={kode}
+                format={kart.format}
+                aktvtKartlagFormat={kart.aktivtFormat}
               />
               {!hide_blendmodes && (
                 <>
@@ -63,12 +59,8 @@ const EkspandertInnhold = ({
                       type="radio"
                       name="blendmode"
                       checked={blendmode === "multiply" && "checked"}
-                      onChange={(e) => {
-                        onUpdateLayerProp(
-                          kartlag.kode,
-                          "blendmode",
-                          "multiply"
-                        );
+                      onChange={e => {
+                        onUpdateLayerProp(kode, "blendmode", "multiply");
                       }}
                     />
                     Multiplisert farge
@@ -76,27 +68,23 @@ const EkspandertInnhold = ({
                       type="radio"
                       name="blendmode"
                       checked={blendmode === "translucent" && "checked"}
-                      onChange={(e) => {
-                        onUpdateLayerProp(
-                          kartlag.kode,
-                          "blendmode",
-                          "translucent"
-                        );
+                      onChange={e => {
+                        onUpdateLayerProp(kode, "blendmode", "translucent");
                       }}
                     />
                     Helfarget
                   </div>
 
-                  {kartlag.blendmode === "translucent" && (
+                  {meta.blendmode === "translucent" && (
                     <div className="submeny_container">
                       Gjennomsiktighet i %
                       <Slider
                         className="slider_element"
-                        value={kartlag.opacity || 1}
+                        value={opacity || 1}
                         min={0.01}
                         max={1}
                         onChange={(e, value) =>
-                          onUpdateLayerProp(kartlag.kode, "opacity", value)
+                          onUpdateLayerProp(kode, "opacity", value)
                         }
                       />
                     </div>
@@ -105,14 +93,12 @@ const EkspandertInnhold = ({
               )}
 
               <GradientFilter
-                kartlag={kartlag}
+                meta={meta}
                 onUpdateLayerProp={onUpdateLayerProp}
-                kode={kode}
               />
             </>
             <LegendeElementer
-              kartlag={kartlag}
-              aktivtFormat={aktivtFormat}
+              meta={meta}
               onUpdateLayerProp={onUpdateLayerProp}
               skjul_meny_tittel={true}
             />

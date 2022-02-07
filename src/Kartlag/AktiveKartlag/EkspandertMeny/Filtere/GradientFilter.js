@@ -1,24 +1,25 @@
 import React from "react";
 import RangeSlider from "../../../../GjenbruksElement/RangeSlider";
 
-const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
+const GradientFilter = ({ onUpdateLayerProp, meta }) => {
   /*
     Gi brukeren mulighet til å velge maks og minimum på skalaen uavhengig av om det er en
     kontinuelig eller typeinndelt visning. 
   */
 
+  const { kode, kart } = meta;
   let gradient;
   let filterMin = 0;
   let filterMax = 100;
   let [rangeMin, rangeMax] = [0, 100];
 
-  if (kartlag.kart.format.raster_gradient) {
-    gradient = kartlag.kart.format.raster_gradient;
+  if (kart.format.raster_gradient) {
+    gradient = kart.format.raster_gradient;
     filterMin = gradient.filterMin;
     filterMax = gradient.filterMax;
     [rangeMin, rangeMax] = gradient.intervall.original;
   } else {
-    gradient = kartlag.kart.format.polygon;
+    gradient = kart.format.polygon;
   }
 
   const step = (rangeMax - rangeMin) / 1000;
@@ -27,7 +28,7 @@ const GradientFilter = ({ onUpdateLayerProp, kartlag, kode }) => {
 
   return (
     <>
-      {kartlag.kart.format.raster_gradient && (
+      {kart.format.raster_gradient && (
         <div className="submeny_container">
           Gradient Filter:
           <br />

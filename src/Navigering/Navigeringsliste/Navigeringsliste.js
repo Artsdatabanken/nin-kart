@@ -5,7 +5,7 @@ import getKey from "./NavigeringslisteFunksjoner/getKey";
 
 class Navigeringsliste extends React.Component {
   state = {
-    items_to_load: 150,
+    items_to_load: 150
   };
   /* 
   
@@ -26,34 +26,36 @@ class Navigeringsliste extends React.Component {
       onMouseLeave,
       setExpanded,
       onNavigate,
+      onUpdateLayerProp
     } = this.props;
     if (!metadata || metadata.length <= 0) return null;
     return (
       <SettingsContext.Consumer>
-        {(context) => (
+        {context => (
           <>
             {Navigeringsliste.sorter(metadata, context.sorterPåKode).map(
-              (metabarnet, i) => {
+              (metaChild, i) => {
                 if (i > this.state.items_to_load) return null;
-                const kode = metabarnet.kode;
+                const { kode, skjul, url, value } = metaChild;
                 const apibarn = apidata
                   ? apidata[
                       apidata
-                        .map((apiItem) => {
+                        .map(apiItem => {
                           return apiItem.kode;
                         })
                         .indexOf(kode.toLowerCase())
                     ] || {}
                   : {};
-                if (metabarnet.skjul) return null;
+                if (skjul) return null;
+
                 return (
                   <Kodelisteelement
                     key={kode}
                     setExpanded={setExpanded}
                     kode={kode}
                     parentkode={parentkode}
-                    url={metabarnet.url}
-                    meta={metabarnet}
+                    url={url}
+                    meta={metaChild}
                     størsteAreal={størsteAreal}
                     areal={apibarn.areal}
                     visKode={context.visKoder}
@@ -61,8 +63,9 @@ class Navigeringsliste extends React.Component {
                     onMouseEnter={onMouseEnter}
                     onMouseLeave={onMouseLeave}
                     opplyst={opplyst}
-                    value={metabarnet.value}
-                    onChange={(v) => onUpdateMetaProp(kode, "value", [...v])}
+                    value={value}
+                    onChange={v => onUpdateMetaProp(kode, "value", [...v])}
+                    onUpdateLayerProp={onUpdateLayerProp}
                   />
                 );
               }
