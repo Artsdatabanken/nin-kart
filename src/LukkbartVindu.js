@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router";
-import { Close, ArrowBack, DoubleArrow } from "@material-ui/icons";
+import { Close, ArrowBack } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
 
 const LukkbartVindu = ({
@@ -10,7 +10,7 @@ const LukkbartVindu = ({
   children,
   icon,
   show,
-  nobutton
+  toplayer
 }) => {
   const [expanded, setExpanded] = useState(show);
 
@@ -31,18 +31,8 @@ const LukkbartVindu = ({
 
   return (
     <>
-      {!nobutton && (
-        <button
-          className="leftside-openbutton"
-          onClick={e => {
-            handleExpand(true);
-          }}
-        >
-          {icon} <DoubleArrow />
-        </button>
-      )}
       {(expanded || show) && (
-        <div className={nobutton ? "lukkbartvindu toplayer" : "lukkbartvindu"}>
+        <div className={toplayer ? "lukkbartvindu toplayer" : "lukkbartvindu"}>
           <div className="lukkbartvindu-innhold">
             <button
               onClick={e => {

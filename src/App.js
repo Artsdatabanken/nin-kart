@@ -191,10 +191,8 @@ class App extends React.Component {
                       onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
                       onMouseEnter={this.handleMouseEnter}
                       onMouseLeave={this.handleMouseLeave}
-                      showFullscreen={
-                        this.state.showFullscreen && aktivTab === "kartlag"
-                      }
-                      handleFullscreen={this.handleFullscreen}
+                      handleShowPunkt={this.handleShowPunkt}
+                      showPunkt={this.state.showPunkt}
                     />
                   </>
                 );

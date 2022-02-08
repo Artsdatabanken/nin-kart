@@ -108,10 +108,10 @@ class LeafletTangram extends React.Component {
     map.on("locationerror", e => this.onLocationError(e));
 
     if (this.props.markerCoordinates) {
-      this.marker = L.marker(
-        [this.props.markerCoordinates.lng, this.props.markerCoordinates.lat],
-        { icon: this.icon }
-      ).addTo(this.map);
+      this.placeMarker(
+        this.props.markerCoordinates.lng,
+        this.props.markerCoordinates.lat
+      );
     }
   }
 
@@ -157,6 +157,7 @@ class LeafletTangram extends React.Component {
       .addTo(this.map)
       .on("click", evt => this.resetLocationLayers(evt));
   }
+
   onLocationError(e) {
     alert(e.message);
   }
@@ -174,16 +175,27 @@ class LeafletTangram extends React.Component {
     if (this.props.show_current !== prevProps.show_current) return true;
   }
 
+  markerClick(e) {
+    this.props.handleShowPunkt(!this.props.showPunkt);
+  }
+
+  placeMarker(lat, lng) {
+    console.log("place marker function");
+    this.marker = L.marker([lat, lng], { icon: this.icon })
+      .on("click", evt => this.markerClick(evt))
+      .addTo(this.map);
+  }
+
   componentDidUpdate(prevProps) {
     if (
       this.props.markerCoordinates &&
       prevProps.markerCoordinates !== this.props.markerCoordinates
     ) {
       this.removeMarker();
-      this.marker = L.marker(
-        [this.props.markerCoordinates.lat, this.props.markerCoordinates.lng],
-        { icon: this.icon }
-      ).addTo(this.map);
+      this.placeMarker(
+        this.props.markerCoordinates.lat,
+        this.props.markerCoordinates.lng
+      );
     }
     if (this.props.bounds !== prevProps.bounds) {
       const bounds = this.props.bounds;
@@ -209,9 +221,8 @@ class LeafletTangram extends React.Component {
   handleClick = e => {
     const latlng = e.leaflet_event.latlng;
     this.removeMarker();
-    this.marker = L.marker([latlng.lat, latlng.lng], { icon: this.icon }).addTo(
-      this.map
-    );
+    this.placeMarker(latlng.lat, latlng.lng);
+
     let offset = this.marker._mapToAdd._mapPane._leaflet_pos;
     const coords = {
       lat: latlng.lat,
