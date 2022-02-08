@@ -10,7 +10,8 @@ import {
 import {
   VisibilityOutlined,
   VisibilityOffOutlined,
-  Settings
+  Settings,
+  Close
 } from "@material-ui/icons";
 import språk from "../../Funksjoner/språk";
 import { useHistory } from "react-router-dom";
@@ -49,12 +50,18 @@ const AktivtKartlagElement = ({ kartlag, onUpdateLayerProp }) => {
             )}
           </button>
 
-          <button
-            className="kartlag_element_buttons"
-            onClick={handleExpandClick}
-          >
-            <Settings />
-          </button>
+          {kode !== "bakgrunnskart" ? (
+            <button>
+              <Close />
+            </button>
+          ) : (
+            <button
+              className="kartlag_element_buttons"
+              onClick={handleExpandClick}
+            >
+              <Settings />
+            </button>
+          )}
         </ListItemSecondaryAction>
       </ListItem>
 
