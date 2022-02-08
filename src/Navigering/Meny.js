@@ -92,18 +92,6 @@ Sidebarmeny-navigeringen.
                       <Info />
                     </Tooltip>
                   </button>
-                  <button
-                    onClick={() => {
-                      onSetAktivTab("kartlaginnstillinger");
-                    }}
-                  >
-                    <Tooltip
-                      title="Åpne innstillinger"
-                      aria-label="åpne innstillinger"
-                    >
-                      <Settings />
-                    </Tooltip>
-                  </button>
 
                   <button
                     onClick={e => {
