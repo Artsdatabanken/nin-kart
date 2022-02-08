@@ -28,7 +28,8 @@ const Meny = ({
   path,
   isstartpage,
   parent,
-  handleShowInfo
+  handleShowInfo,
+  showInfo
 }) => {
   /*
 Intern navigasjon innad på en side.
@@ -85,7 +86,7 @@ Sidebarmeny-navigeringen.
                 <div className="kartlag_element_buttons">
                   <button
                     onClick={() => {
-                      handleShowInfo(true);
+                      handleShowInfo(!showInfo);
                     }}
                   >
                     <Tooltip

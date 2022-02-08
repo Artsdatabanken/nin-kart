@@ -18,6 +18,14 @@ Specific styling for its subelements
   padding-left: 24px;
 }
 
+@media only screen and (max-width: 768px) {
+  .toplayer {
+    z-index: 101;
+    height: $actual-map-height;
+    max-height: $actual-map-height;
+  }
+}
+
 /* Statistics Box Info Tab */
 
 .stats_paragraph {

@@ -145,6 +145,7 @@ class Kartlag extends React.Component {
                     aktivTab={this.props.aktivTab}
                     onSetAktivTab={this.props.onSetAktivTab}
                     handleShowInfo={this.props.handleShowInfo}
+                    showInfo={this.props.showInfo}
                     onUpdateMetaProp={this.props.onUpdateMetaProp}
                     onToggleLayer={this.props.onToggleLayer}
                     opplyst={this.props.opplyst}

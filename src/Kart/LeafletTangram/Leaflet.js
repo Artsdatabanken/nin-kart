@@ -5,11 +5,7 @@ import React from "react";
 import ReactDOMServer from "react-dom/server";
 import Tangram from "tangram";
 import { createScene, updateScene } from "./scene/scene";
-import {
-  Fullscreen,
-  FullscreenExit,
-  LocationSearching
-} from "@material-ui/icons";
+import { LocationSearching } from "@material-ui/icons";
 import "../../style/Kart.scss";
 
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
@@ -45,10 +41,8 @@ class LeafletTangram extends React.Component {
 
     this.radiusMarker = null;
     this.gpsMarker = null;
-    this.fullscreenButton = null;
     this.geolocationButton = null;
     this.fullscreenFuncTimestamp = 0.0;
-    this.disableClick = false;
 
     map.setView(
       [this.props.latitude, this.props.longitude],
@@ -57,32 +51,6 @@ class LeafletTangram extends React.Component {
 
     const self = this;
 
-    L.Control.AdbFullscreen = L.Control.extend({
-      onAdd: () => {
-        self.fullscreenButton = L.DomUtil.create(
-          "button",
-          "fullscreen map_control_button"
-        );
-
-        self.fullscreenButton.alt = "Fullskjermsvisning";
-        self.fullscreenButton.title = "Fullskjermsvisning";
-
-        self.fullscreenButton.innerHTML = ReactDOMServer.renderToString(
-          <Fullscreen />
-        );
-        L.DomEvent.on(self.fullscreenButton, "click", e =>
-          self.fullscreenFunc(e)
-        );
-
-        return self.fullscreenButton;
-      },
-
-      onRemove: () => {
-        L.DomEvent.off(self.fullscreenButton, "click", e =>
-          self.fullscreenFunc(e)
-        );
-      }
-    });
     L.Control.AdbGeolocation = L.Control.extend({
       onAdd: () => {
         self.geolocationButton = L.DomUtil.create(
@@ -109,13 +77,9 @@ class LeafletTangram extends React.Component {
         );
       }
     });
-    L.control.adbFullscreen = function(opts) {
-      return new L.Control.AdbFullscreen(opts);
-    };
     L.control.adbGeolocation = function(opts) {
       return new L.Control.AdbGeolocation(opts);
     };
-    L.control.adbFullscreen({ position: "topright" }).addTo(map);
     L.control.adbGeolocation({ position: "topright" }).addTo(map);
     L.control.zoom({ position: "topright" }).addTo(map);
     L.DomUtil.addClass(map._container, "crosshair-cursor-enabled");
@@ -144,10 +108,10 @@ class LeafletTangram extends React.Component {
     map.on("locationerror", e => this.onLocationError(e));
 
     if (this.props.markerCoordinates) {
-      this.marker = L.marker(
-        [this.props.markerCoordinates.lng, this.props.markerCoordinates.lat],
-        { icon: this.icon }
-      ).addTo(this.map);
+      this.placeMarker(
+        this.props.markerCoordinates.lng,
+        this.props.markerCoordinates.lat
+      );
     }
   }
 
@@ -193,6 +157,7 @@ class LeafletTangram extends React.Component {
       .addTo(this.map)
       .on("click", evt => this.resetLocationLayers(evt));
   }
+
   onLocationError(e) {
     alert(e.message);
   }
@@ -210,16 +175,27 @@ class LeafletTangram extends React.Component {
     if (this.props.show_current !== prevProps.show_current) return true;
   }
 
+  markerClick(e) {
+    this.props.handleShowPunkt(!this.props.showPunkt);
+  }
+
+  placeMarker(lat, lng) {
+    console.log("place marker function");
+    this.marker = L.marker([lat, lng], { icon: this.icon })
+      .on("click", evt => this.markerClick(evt))
+      .addTo(this.map);
+  }
+
   componentDidUpdate(prevProps) {
     if (
       this.props.markerCoordinates &&
       prevProps.markerCoordinates !== this.props.markerCoordinates
     ) {
       this.removeMarker();
-      this.marker = L.marker(
-        [this.props.markerCoordinates.lat, this.props.markerCoordinates.lng],
-        { icon: this.icon }
-      ).addTo(this.map);
+      this.placeMarker(
+        this.props.markerCoordinates.lat,
+        this.props.markerCoordinates.lng
+      );
     }
     if (this.props.bounds !== prevProps.bounds) {
       const bounds = this.props.bounds;
@@ -243,15 +219,10 @@ class LeafletTangram extends React.Component {
   }
 
   handleClick = e => {
-    if (this.disableClick) {
-      this.disableClick = false;
-      return;
-    }
     const latlng = e.leaflet_event.latlng;
     this.removeMarker();
-    this.marker = L.marker([latlng.lat, latlng.lng], { icon: this.icon }).addTo(
-      this.map
-    );
+    this.placeMarker(latlng.lat, latlng.lng);
+
     let offset = this.marker._mapToAdd._mapPane._leaflet_pos;
     const coords = {
       lat: latlng.lat,
@@ -293,21 +264,8 @@ class LeafletTangram extends React.Component {
   fixMapButtons() {
     if (this.props.aktivTab === "kartlag") {
       if (this.geolocationButton) this.geolocationButton.style.display = "";
-      if (this.fullscreenButton) this.fullscreenButton.style.display = "";
     } else {
       if (this.geolocationButton) this.geolocationButton.style.display = "none";
-      if (this.fullscreenButton) this.fullscreenButton.style.display = "none";
-    }
-    if (this.props.showFullscreen === true) {
-      if (this.fullscreenButton)
-        this.fullscreenButton.innerHTML = ReactDOMServer.renderToString(
-          <FullscreenExit />
-        );
-    } else {
-      if (this.fullscreenButton)
-        this.fullscreenButton.innerHTML = ReactDOMServer.renderToString(
-          <Fullscreen />
-        );
     }
   }
 
