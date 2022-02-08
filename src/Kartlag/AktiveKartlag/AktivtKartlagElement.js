@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import TemaMeny from "./EkspandertMeny/Visualisering/TemaMeny/TemaMeny";
+import BakgrunnInnstillinger from "./EkspandertMeny/Visualisering/BgInnstillinger/BakgrunnInnstillinger";
+import FargeVelger from "./EkspandertMeny/FellesElementer/FargeVelger";
 import {
   ListItem,
   ListItemSecondaryAction,
@@ -8,7 +10,7 @@ import {
 import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
 import språk from "../../Funksjoner/språk";
 import { useHistory } from "react-router-dom";
-
+import SectionExpand from "../../GjenbruksElement/SectionExpand";
 import ArrowButton from "../../GjenbruksElement/ArrowButton";
 
 const AktivtKartlagElement = ({ kartlag, onUpdateLayerProp }) => {
@@ -19,6 +21,9 @@ const AktivtKartlagElement = ({ kartlag, onUpdateLayerProp }) => {
   const handleExpandClick = () => {
     setExpandedSub(!expandedSub);
   };
+  const current = kart.aktivtFormat;
+  const currenctActiveFormatNode = kart.format[current];
+
   return (
     <>
       <ListItem
@@ -55,10 +60,33 @@ const AktivtKartlagElement = ({ kartlag, onUpdateLayerProp }) => {
         <div className="subsection">
           <h4>Innstillinger</h4>
           {kode === "bakgrunnskart" && (
-            <TemaMeny
-              onUpdateLayerProp={onUpdateLayerProp}
-              aktivtFormat={kart.aktivtFormat}
-            />
+            <>
+              <TemaMeny
+                onUpdateLayerProp={onUpdateLayerProp}
+                aktivtFormat={kart.aktivtFormat}
+              />
+
+              {kart.aktivtFormat === "google_hybrid" ||
+              kart.aktivtFormat === "topo4" ||
+              kart.aktivtFormat === "google_satellite" ? (
+                <SectionExpand title={"Fargefilter"}>
+                  <FargeVelger
+                    color={currenctActiveFormatNode.tint}
+                    onUpdateLayerProp={onUpdateLayerProp}
+                    where={kode}
+                    what={"kart.format." + current + ".tint"}
+                    title={"Velg fargetone for kartbladet"}
+                  />
+                </SectionExpand>
+              ) : (
+                <SectionExpand title={"Bakgrunnsinstillinger"}>
+                  <BakgrunnInnstillinger
+                    onUpdateLayerProp={onUpdateLayerProp}
+                    aktivtFormat={kart}
+                  />
+                </SectionExpand>
+              )}
+            </>
           )}
         </div>
       )}
