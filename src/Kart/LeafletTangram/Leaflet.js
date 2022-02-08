@@ -103,6 +103,12 @@ class LeafletTangram extends React.Component {
       iconAnchor: [17, 35]
     });
 
+    this.gpsicon = L.icon({
+      iconUrl: "/marker/baseline_place_blue_18dp.png",
+      iconSize: [36, 36],
+      iconAnchor: [17, 35]
+    });
+
     map.on("locationfound", e => this.onLocationFound(e));
     map.on("locationerror", e => this.onLocationError(e));
 
@@ -135,9 +141,7 @@ class LeafletTangram extends React.Component {
     var radius = e.accuracy / 2;
     this.resetLocationLayers(e);
     this.radiusMarker = L.circle(e.latlng, radius).addTo(this.map);
-    this.gpsMarker = L.marker(e.latlng)
-      .addTo(this.map)
-      .on("click", evt => this.resetLocationLayers(evt));
+    this.placeMarker(e.latlng.lat, e.latlng.lng, true);
   }
 
   onLocationError(e) {
@@ -161,14 +165,28 @@ class LeafletTangram extends React.Component {
     this.props.handleShowPunkt(!this.props.showPunkt);
   }
 
-  placeMarker(lat, lng) {
+  /*  this.gpsMarker = L.marker(e.latlng)
+      .addTo(this.map)
+      .on("click", evt => this.resetLocationLayers(evt));*/
+
+  placeMarker(lat, lng, gps) {
     console.log("place marker function");
-    this.marker = L.marker([lat, lng], {
-      icon: this.icon,
-      title: "åpne punktinformasjon"
-    })
-      .on("click", evt => this.markerClick(evt))
-      .addTo(this.map);
+    if (gps) {
+      this.gpsMarker = L.marker([lat, lng], {
+        icon: this.gpsicon,
+        title: "velg gps-punktinformasjon"
+      })
+        .on("click", evt => this.placeMarker(lat, lng))
+        .on("click", evt => this.resetLocationLayers(evt))
+        .addTo(this.map);
+    } else {
+      this.marker = L.marker([lat, lng], {
+        icon: this.icon,
+        title: "åpne punktinformasjon"
+      })
+        .on("click", evt => this.markerClick(evt))
+        .addTo(this.map);
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -246,25 +264,14 @@ class LeafletTangram extends React.Component {
     }
   }
 
-  fixMapButtons() {
-    if (this.props.aktivTab === "kartlag") {
-      if (this.geolocationButton) this.geolocationButton.style.display = "";
-    } else {
-      if (this.geolocationButton) this.geolocationButton.style.display = "none";
-    }
-  }
-
   render() {
-    this.fixMapButtons();
     return (
-      <>
-        <div
-          style={{ zIndex: -100, cursor: "default" }}
-          ref={ref => {
-            this.mapEl = ref;
-          }}
-        />
-      </>
+      <div
+        style={{ zIndex: -100, cursor: "default" }}
+        ref={ref => {
+          this.mapEl = ref;
+        }}
+      />
     );
   }
 }
