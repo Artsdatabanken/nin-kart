@@ -42,7 +42,6 @@ class LeafletTangram extends React.Component {
     this.radiusMarker = null;
     this.gpsMarker = null;
     this.geolocationButton = null;
-    this.fullscreenFuncTimestamp = 0.0;
 
     map.setView(
       [this.props.latitude, this.props.longitude],
@@ -115,25 +114,8 @@ class LeafletTangram extends React.Component {
     }
   }
 
-  fullscreenFunc(e) {
-    if (e.stopImmediatePropagation) e.stopImmediatePropagation();
-    if (e.timeStamp < this.fullscreenFuncTimestamp) return;
-    this.fullscreenFuncTimestamp = e.timeStamp;
-    this.props.handleFullscreen(!this.props.showFullscreen);
-    if (this.props.showFullscreen) {
-      L.DomUtil.addClass(this.map._container, "leaflet-container-fullscreen");
-    } else {
-      L.DomUtil.removeClass(
-        this.map._container,
-        "leaflet-container-fullscreen"
-      );
-    }
-    this.map.invalidateSize();
-  }
-
   geolocationFunc(e) {
     if (e.stopImmediatePropagation) e.stopImmediatePropagation();
-    this.props.handleFullscreen(false);
     this.handleLocate();
   }
 
@@ -181,7 +163,10 @@ class LeafletTangram extends React.Component {
 
   placeMarker(lat, lng) {
     console.log("place marker function");
-    this.marker = L.marker([lat, lng], { icon: this.icon })
+    this.marker = L.marker([lat, lng], {
+      icon: this.icon,
+      title: "åpne punktinformasjon"
+    })
       .on("click", evt => this.markerClick(evt))
       .addTo(this.map);
   }
