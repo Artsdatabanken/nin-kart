@@ -71,11 +71,11 @@ Even tho we don't a of now support IE X)
     top: 0;
   }
   .kartlag_content_open {
-    position: relative;
-    margin-top: -18px;
+    position: absolute;
+    margin-top: $ux-page-area-mobile;
     padding-top: 4px;
     background: white;
-    height: calc(100vh - 116px);
+    height: $actual-map-height-mobile;
     overflow-x: hidden;
     overflow-y: auto;
   }

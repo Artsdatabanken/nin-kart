@@ -149,6 +149,7 @@ class App extends React.Component {
                       onNavigate={this.handleNavigate}
                       onSetAktivTab={this.handleSetAktivTab}
                       handleShowInfo={this.handleShowInfo}
+                      showInfo={this.state.showInfo}
                       onUpdateMetaProp={this.handleUpdateMetaProp}
                       handleHovedMeny={this.handleHovedMeny}
                       onToggleLayer={() => {
@@ -160,6 +161,7 @@ class App extends React.Component {
                       path={path}
                       parent={this}
                     />
+
                     <Kart
                       markerCoordinates={this.state.markerCoordinates}
                       onMarkerClick={this.handleMarkerClick}
@@ -179,32 +181,33 @@ class App extends React.Component {
                       onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
                       onMouseEnter={this.handleMouseEnter}
                       onMouseLeave={this.handleMouseLeave}
-                      showFullscreen={
-                        this.state.showFullscreen && aktivTab === "kartlag"
-                      }
-                      handleFullscreen={this.handleFullscreen}
+                      handleShowPunkt={this.handleShowPunkt}
+                      showPunkt={this.state.showPunkt}
                     />
                   </>
                 );
               }}
             </SettingsContext.Consumer>
-
-            <HamburgerMeny
-              spraak={this.state.spraak}
-              handleSpraak={this.handleSpraak}
-              open={this.state.showHovedmeny}
-              handleHovedMeny={this.handleHovedMeny}
-              handleHelp={this.handleHelp}
-            />
           </>
         )}
+        <div className="cookiewarning">
+          Les om informasjonskapsler i NiN-kart{" "}
+          <a href="https://artsdatabanken.no/informasjonskapsler">her</a>
+        </div>
+        <HamburgerMeny
+          spraak={this.state.spraak}
+          handleSpraak={this.handleSpraak}
+          open={this.state.showHovedmeny}
+          handleHovedMeny={this.handleHovedMeny}
+          handleHelp={this.handleHelp}
+        />
       </>
     );
   }
 
   handleMarkerClick = coords => {
     this.setState({ markerCoordinates: coords }, () => this.fetchPunktdata());
-    console.log("clicked something");
+    console.log("handleMarkerClick");
     this.handleShowPunkt(true);
   };
 

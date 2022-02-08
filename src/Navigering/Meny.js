@@ -9,14 +9,12 @@ import {
   ArrowBack,
   FavoriteBorder,
   Favorite,
-  Settings,
   Layers,
   Info
 } from "@material-ui/icons";
 
 const Meny = ({
   aktiveLag,
-  onSetAktivTab,
   meta,
   onNavigate,
   onUpdateMetaProp,
@@ -26,7 +24,10 @@ const Meny = ({
   onToggleLayer,
   isstartpage,
   handleShowInfo,
-  onUpdateLayerProp
+  onUpdateLayerProp,
+  parent,
+  handleShowInfo,
+  showInfo
 }) => {
   /*
 Intern navigasjon innad på en side.
@@ -82,7 +83,7 @@ Sidebarmeny-navigeringen.
                 <div className="kartlag_element_buttons">
                   <button
                     onClick={() => {
-                      handleShowInfo(true);
+                      handleShowInfo(!showInfo);
                     }}
                   >
                     <Tooltip
