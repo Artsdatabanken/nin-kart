@@ -13,7 +13,6 @@ import {
 import { IconButton } from "@material-ui/core";
 import constants from "../../constants";
 import { getInterval } from "../../helpers";
-import LegendeElement from "../../Kartlag/AktiveKartlag/EkspandertMeny/UnderElementer/LegendeComponents/LegendeElement";
 import FargeVelger from "../../Kartlag/AktiveKartlag/EkspandertMeny/FellesElementer/FargeVelger";
 
 class Kodelisteelement extends React.Component {
@@ -32,8 +31,6 @@ class Kodelisteelement extends React.Component {
   render() {
     const {
       meta,
-      kode,
-      url,
       visKode,
       onNavigate,
       onMouseEnter,
@@ -45,6 +42,8 @@ class Kodelisteelement extends React.Component {
     } = this.props;
 
     const erSynlig = meta.hasOwnProperty("erSynlig") ? meta.erSynlig : true;
+    const { kode, url, farge } = meta;
+
     let tittel = språk(meta.tittel);
     let sn = meta.tittel["sn"] && meta.tittel["sn"] === tittel;
     if (tittel === "undefined") {
@@ -57,17 +56,17 @@ class Kodelisteelement extends React.Component {
     };
 
     return (
-      <>
+      <div className="map_layer_navigation">
         <VelgFargeboks
-          farge={meta.farge}
+          farge={farge}
           kode={kode}
           setShowEditColor={setShowEditColor}
         />
         {this.state.showEditColor && (
           <FargeVelger
-            color={meta.farge}
+            color={farge}
             onUpdateLayerProp={onUpdateLayerProp}
-            where={meta.kode}
+            where={kode}
             elementType={"barn"}
           />
         )}
@@ -117,7 +116,7 @@ class Kodelisteelement extends React.Component {
           </IconButton>
           <ChevronRight />
         </button>
-      </>
+      </div>
     );
   }
 }

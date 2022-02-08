@@ -36,7 +36,7 @@ class Navigeringsliste extends React.Component {
             {Navigeringsliste.sorter(metadata, context.sorterPåKode).map(
               (metaChild, i) => {
                 if (i > this.state.items_to_load) return null;
-                const { kode, skjul, url, value } = metaChild;
+                const { kode, skjul } = metaChild;
                 const apibarn = apidata
                   ? apidata[
                       apidata
@@ -50,11 +50,9 @@ class Navigeringsliste extends React.Component {
 
                 return (
                   <Kodelisteelement
-                    key={kode}
+                    key={metaChild.kode}
                     setExpanded={setExpanded}
-                    kode={kode}
                     parentkode={parentkode}
-                    url={url}
                     meta={metaChild}
                     størsteAreal={størsteAreal}
                     areal={apibarn.areal}
@@ -63,7 +61,6 @@ class Navigeringsliste extends React.Component {
                     onMouseEnter={onMouseEnter}
                     onMouseLeave={onMouseLeave}
                     opplyst={opplyst}
-                    value={value}
                     onChange={v => onUpdateMetaProp(kode, "value", [...v])}
                     onUpdateLayerProp={onUpdateLayerProp}
                   />
