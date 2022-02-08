@@ -189,10 +189,10 @@ Even tho we don't a of now support IE X)
 
 .button_map_preview {
   width: 100%;
-  padding: 10px;
   background: transparent;
   text-align: left;
   position: relative;
+  display: flex;
 }
 
 .button_map_preview span {
@@ -202,7 +202,7 @@ Even tho we don't a of now support IE X)
 
 .button_map_preview img,
 .button_map_preview span {
-  margin: 5px;
+  margin: 2px;
   display: inline-block;
   vertical-align: middle;
 }
