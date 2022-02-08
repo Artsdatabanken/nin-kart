@@ -7,11 +7,14 @@ import {
   ListItemSecondaryAction,
   ListItemText
 } from "@material-ui/core";
-import { VisibilityOutlined, VisibilityOffOutlined } from "@material-ui/icons";
+import {
+  VisibilityOutlined,
+  VisibilityOffOutlined,
+  Settings
+} from "@material-ui/icons";
 import språk from "../../Funksjoner/språk";
 import { useHistory } from "react-router-dom";
 import SectionExpand from "../../GjenbruksElement/SectionExpand";
-import ArrowButton from "../../GjenbruksElement/ArrowButton";
 
 const AktivtKartlagElement = ({ kartlag, onUpdateLayerProp }) => {
   const [expandedSub, setExpandedSub] = useState(false);
@@ -21,9 +24,7 @@ const AktivtKartlagElement = ({ kartlag, onUpdateLayerProp }) => {
   const handleExpandClick = () => {
     setExpandedSub(!expandedSub);
   };
-  const current = kart.aktivtFormat;
-  const currenctActiveFormatNode = kart.format[current];
-
+  const currentmap = kart.aktivtFormat;
   return (
     <>
       <ListItem
@@ -48,11 +49,12 @@ const AktivtKartlagElement = ({ kartlag, onUpdateLayerProp }) => {
             )}
           </button>
 
-          <ArrowButton
+          <button
             className="kartlag_element_buttons"
-            handleExpandClick={handleExpandClick}
-            expanded={expandedSub}
-          />
+            onClick={handleExpandClick}
+          >
+            <Settings />
+          </button>
         </ListItemSecondaryAction>
       </ListItem>
 
@@ -63,18 +65,18 @@ const AktivtKartlagElement = ({ kartlag, onUpdateLayerProp }) => {
             <>
               <TemaMeny
                 onUpdateLayerProp={onUpdateLayerProp}
-                aktivtFormat={kart.aktivtFormat}
+                aktivtFormat={currentmap}
               />
 
-              {kart.aktivtFormat === "google_hybrid" ||
-              kart.aktivtFormat === "topo4" ||
-              kart.aktivtFormat === "google_satellite" ? (
+              {currentmap === "google_hybrid" ||
+              currentmap === "topo4" ||
+              currentmap === "google_satellite" ? (
                 <SectionExpand title={"Fargefilter"}>
                   <FargeVelger
-                    color={currenctActiveFormatNode.tint}
+                    color={kart.format[currentmap].tint}
                     onUpdateLayerProp={onUpdateLayerProp}
                     where={kode}
-                    what={"kart.format." + current + ".tint"}
+                    what={"kart.format." + currentmap + ".tint"}
                     title={"Velg fargetone for kartbladet"}
                   />
                 </SectionExpand>
