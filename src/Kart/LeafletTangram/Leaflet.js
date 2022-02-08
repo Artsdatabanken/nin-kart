@@ -2,7 +2,6 @@ import L from "leaflet";
 // -- WEBPACK: Load styles --
 import "leaflet/dist/leaflet.css";
 import React from "react";
-import ReactDOMServer from "react-dom/server";
 import Tangram from "tangram";
 import { createScene, updateScene } from "./scene/scene";
 import { LocationSearching } from "@material-ui/icons";
@@ -48,8 +47,6 @@ class LeafletTangram extends React.Component {
       this.props.zoom * 1.8
     );
 
-    const self = this;
-
     L.control.zoom({ position: "topright" }).addTo(map);
     L.DomUtil.addClass(map._container, "crosshair-cursor-enabled");
     this.map = map;
@@ -92,6 +89,7 @@ class LeafletTangram extends React.Component {
     }
   }
 
+  // GPS COORDINATE HANDLING
   geolocationFunc(e) {
     if (e.stopImmediatePropagation) e.stopImmediatePropagation();
     this.handleLocate();
@@ -125,40 +123,13 @@ class LeafletTangram extends React.Component {
     this.map.locate({ setView: true });
   }
 
+  // Update and change detection
   erEndret(prevProps) {
     if (this.props.aktiveLag !== prevProps.aktiveLag) return true;
     if (this.props.lokalitetdata !== prevProps.lokalitetdata) return true;
     if (this.props.meta !== prevProps.meta) return true;
     if (this.props.opplyst !== prevProps.opplyst) return true;
     if (this.props.show_current !== prevProps.show_current) return true;
-  }
-
-  markerClick(e) {
-    this.props.handleShowPunkt(!this.props.showPunkt);
-  }
-
-  /*  this.gpsMarker = L.marker(e.latlng)
-      .addTo(this.map)
-      .on("click", evt => this.resetLocationLayers(evt));*/
-
-  placeMarker(lat, lng, gps) {
-    console.log("place marker function");
-    if (gps) {
-      this.gpsMarker = L.marker([lat, lng], {
-        icon: this.gpsicon,
-        title: "velg gps-punktinformasjon"
-      })
-        .on("click", evt => this.placeMarker(lat, lng))
-        .on("click", evt => this.resetLocationLayers(evt))
-        .addTo(this.map);
-    } else {
-      this.marker = L.marker([lat, lng], {
-        icon: this.icon,
-        title: "åpne punktinformasjon"
-      })
-        .on("click", evt => this.markerClick(evt))
-        .addTo(this.map);
-    }
   }
 
   componentDidUpdate(prevProps) {
@@ -184,41 +155,6 @@ class LeafletTangram extends React.Component {
     }
   }
 
-  removeMarker() {
-    this.setState({
-      sted: null,
-      data: null
-    });
-    if (!this.marker) return;
-    this.map.removeLayer(this.marker);
-  }
-
-  handleClick = e => {
-    const latlng = e.leaflet_event.latlng;
-    this.removeMarker();
-    this.placeMarker(latlng.lat, latlng.lng);
-
-    let offset = this.marker._mapToAdd._mapPane._leaflet_pos;
-    const coords = {
-      lat: latlng.lat,
-      lng: latlng.lng,
-      windowXpos: e.x + offset.x,
-      windowYpos: e.y - header_shift + offset.y
-    };
-    this.props.onMarkerClick(coords);
-
-    let urlparams = (this.props.path || "").split("?");
-    let newurlstring = "";
-    for (let i in urlparams) {
-      if (!urlparams[i].includes("lng") && urlparams[i] !== "") {
-        newurlstring += "?" + urlparams[i];
-      }
-    }
-    this.props.history.push(
-      "?lng=" + latlng.lng + "&lat=" + latlng.lat + newurlstring
-    );
-  };
-
   updateMap(props) {
     if (this.layer.scene.config) {
       updateScene(this.layer.scene.config, props);
@@ -235,6 +171,75 @@ class LeafletTangram extends React.Component {
       //this.layer.scene.updateConfig({ rebuild: true });
     }
   }
+
+  // Handle marker
+  placeMarker(lat, lng, gps) {
+    if (gps) {
+      this.gpsMarker = L.marker([lat, lng], {
+        icon: this.gpsicon,
+        title: "velg gps-punktinformasjon"
+      })
+        .on("click", evt => this.setPoint(lat, lng, evt))
+        .on("click", evt => this.resetLocationLayers(evt))
+        .addTo(this.map);
+    } else {
+      this.marker = L.marker([lat, lng], {
+        icon: this.icon,
+        title: "åpne punktinformasjon"
+      })
+        .on("click", evt => this.markerClick(evt))
+        .addTo(this.map);
+    }
+  }
+
+  markerClick(e) {
+    this.props.handleShowPunkt(!this.props.showPunkt);
+  }
+
+  removeMarker() {
+    this.setState({
+      sted: null,
+      data: null
+    });
+    if (!this.marker) return;
+    this.map.removeLayer(this.marker);
+  }
+
+  // Handle point lookup data
+  setCoords(lat, lng, e) {
+    let offset = this.marker._mapToAdd._mapPane._leaflet_pos;
+    const coords = {
+      lat: lat,
+      lng: lng,
+      windowXpos: e.x + offset.x,
+      windowYpos: e.y - header_shift + offset.y
+    };
+    this.props.onMarkerClick(coords);
+  }
+
+  setUrl(lat, lng) {
+    let urlparams = (this.props.path || "").split("?");
+    let newurlstring = "";
+    for (let i in urlparams) {
+      if (!urlparams[i].includes("lng") && urlparams[i] !== "") {
+        newurlstring += "?" + urlparams[i];
+      }
+    }
+    this.props.history.push("?lng=" + lng + "&lat=" + lat + newurlstring);
+  }
+
+  setPoint(lat, lng, e) {
+    this.removeMarker();
+    this.placeMarker(lat, lng);
+    this.setCoords(lat, lng, e);
+    this.setUrl(lat, lng);
+  }
+
+  // general map events
+  handleClick = e => {
+    const latlng = e.leaflet_event.latlng;
+    this.setPoint(latlng.lat, latlng.lng, e);
+  };
 
   render() {
     return (
