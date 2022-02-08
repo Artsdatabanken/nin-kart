@@ -25,8 +25,6 @@ const Meny = ({
   isstartpage,
   handleShowInfo,
   onUpdateLayerProp,
-  parent,
-  handleShowInfo,
   showInfo
 }) => {
   /*
