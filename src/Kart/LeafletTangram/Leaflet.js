@@ -39,8 +39,8 @@ class LeafletTangram extends React.Component {
 
     let map = L.map(this.mapEl, options);
 
-    this.radiusMarker = null;
-    this.gpsMarker = null;
+    this.radiusMarker = null; // used for gpsMarker
+    this.gpsMarker = null; // used for gps coordinate
     this.geolocationButton = null;
 
     map.setView(
@@ -50,36 +50,6 @@ class LeafletTangram extends React.Component {
 
     const self = this;
 
-    L.Control.AdbGeolocation = L.Control.extend({
-      onAdd: () => {
-        self.geolocationButton = L.DomUtil.create(
-          "button",
-          "geolocate map_control_button"
-        );
-
-        self.geolocationButton.alt = "Geolokalisering";
-        self.geolocationButton.title = "Geolokalisering";
-
-        self.geolocationButton.innerHTML = ReactDOMServer.renderToString(
-          <LocationSearching />
-        );
-        L.DomEvent.on(self.geolocationButton, "click", e =>
-          self.geolocationFunc(e)
-        );
-
-        return self.geolocationButton;
-      },
-
-      onRemove: () => {
-        L.DomEvent.off(self.geolocationButton, "click", e =>
-          self.geolocationFunc(e)
-        );
-      }
-    });
-    L.control.adbGeolocation = function(opts) {
-      return new L.Control.AdbGeolocation(opts);
-    };
-    L.control.adbGeolocation({ position: "topright" }).addTo(map);
     L.control.zoom({ position: "topright" }).addTo(map);
     L.DomUtil.addClass(map._container, "crosshair-cursor-enabled");
     this.map = map;
@@ -97,6 +67,8 @@ class LeafletTangram extends React.Component {
     this.layer = Tangram.leafletLayer(def);
     this.map.addLayer(this.layer);
     // this.layer.loadScene(this.layer.scene)
+
+    // ICON IMAGES
     this.icon = L.icon({
       iconUrl: "/marker/baseline_place_black_18dp.png",
       iconSize: [36, 36],
@@ -266,12 +238,22 @@ class LeafletTangram extends React.Component {
 
   render() {
     return (
-      <div
-        style={{ zIndex: -100, cursor: "default" }}
-        ref={ref => {
-          this.mapEl = ref;
-        }}
-      />
+      <>
+        <button
+          className="geolocate map_control_button"
+          onClick={e => this.geolocationFunc(e)}
+          title={"Geolokalisering"}
+          alt={"Geolokalisering"}
+        >
+          <LocationSearching />
+        </button>
+        <div
+          style={{ zIndex: -100, cursor: "default" }}
+          ref={ref => {
+            this.mapEl = ref;
+          }}
+        />
+      </>
     );
   }
 }
