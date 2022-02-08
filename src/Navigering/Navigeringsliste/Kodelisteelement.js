@@ -52,7 +52,9 @@ class Kodelisteelement extends React.Component {
     }
 
     const setShowEditColor = () => {
-      this.state.showEditColor = !this.state.showEditColor;
+      this.setState({
+        showEditColor: !this.state.showEditColor
+      });
     };
 
     return (
@@ -102,20 +104,20 @@ class Kodelisteelement extends React.Component {
             )}
             {visKode && <span className="nav_kode">{kode}</span>}
           </div>
-          <IconButton
-            onClick={e => {
-              onUpdateLayerProp(kode, "erSynlig", !erSynlig, "barn");
-              e.stopPropagation();
-            }}
-          >
-            {erSynlig ? (
-              <VisibilityOutlined />
-            ) : (
-              <VisibilityOffOutlined style={{ color: "#aaa" }} />
-            )}
-          </IconButton>
           <ChevronRight />
         </button>
+        <IconButton
+          onClick={e => {
+            onUpdateLayerProp(kode, "erSynlig", !erSynlig, "barn");
+            e.stopPropagation();
+          }}
+        >
+          {erSynlig ? (
+            <VisibilityOutlined />
+          ) : (
+            <VisibilityOffOutlined style={{ color: "#aaa" }} />
+          )}
+        </IconButton>
       </div>
     );
   }
