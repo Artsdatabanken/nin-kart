@@ -219,7 +219,7 @@ class App extends React.Component {
 
   handleMarkerClick = coords => {
     this.setState({ markerCoordinates: coords }, () => this.fetchPunktdata());
-    console.log("clicked something");
+    console.log("handleMarkerClick");
     this.handleShowPunkt(true);
   };
 

@@ -2,10 +2,6 @@
 
 /** Firefox workaround for https://github.com/Leaflet/Leaflet/issues/4686 */
 
-.leaflet-marker-icon {
-  cursor: default;
-}
-
 .leaflet-fade-anim .leaflet-tile,
 .leaflet-zoom-anim .leaflet-zoom-animated {
   will-change: unset;
