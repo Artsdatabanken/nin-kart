@@ -3,7 +3,6 @@ const hack = (symbol, interval) => {
 };
 
 export const getInterval = interval => {
-  console.log("rint", interval);
   if (!interval) return;
   if (!(interval.minTekst || interval.maxTekst)) return;
   if (!Array.isArray(interval)) interval = [interval];
@@ -13,6 +12,5 @@ export const getInterval = interval => {
     return `${i.tittel ? i.tittel + " " : ""}${i.minTekst} - ${i.maxTekst}`;
   });
   const r = items.join(", ") + " " + (interval[0].måleenhet || "");
-  console.log("r", r);
   return r;
 };

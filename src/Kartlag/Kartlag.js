@@ -154,6 +154,7 @@ class Kartlag extends React.Component {
                     path={this.props.path}
                     parent={this.props.parent}
                     isstartpage={isstartpage}
+                    onUpdateLayerProp={onUpdateLayerProp}
                   />
 
                   {false && (

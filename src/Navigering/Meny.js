@@ -9,15 +9,12 @@ import {
   ArrowBack,
   FavoriteBorder,
   Favorite,
-  Settings,
   Layers,
   Info
 } from "@material-ui/icons";
 
 const Meny = ({
   aktiveLag,
-  aktivTab,
-  onSetAktivTab,
   meta,
   onNavigate,
   onUpdateMetaProp,
@@ -25,10 +22,9 @@ const Meny = ({
   onMouseEnter,
   onMouseLeave,
   onToggleLayer,
-  path,
   isstartpage,
-  parent,
   handleShowInfo,
+  onUpdateLayerProp,
   showInfo
 }) => {
   /*
@@ -51,7 +47,6 @@ Sidebarmeny-navigeringen.
   if (meta.overordnet !== undefined && meta.overordnet[0] !== undefined) {
     backurl = meta.overordnet[0].url;
   }
-
   return (
     <SettingsContext.Consumer>
       {context => (
@@ -96,18 +91,6 @@ Sidebarmeny-navigeringen.
                       <Info />
                     </Tooltip>
                   </button>
-                  <button
-                    onClick={() => {
-                      onSetAktivTab("kartlaginnstillinger");
-                    }}
-                  >
-                    <Tooltip
-                      title="Åpne innstillinger"
-                      aria-label="åpne innstillinger"
-                    >
-                      <Settings />
-                    </Tooltip>
-                  </button>
 
                   <button
                     onClick={e => {
@@ -145,6 +128,7 @@ Sidebarmeny-navigeringen.
               onMouseLeave={onMouseLeave}
               opplyst={opplyst}
               onUpdateMetaProp={onUpdateMetaProp}
+              onUpdateLayerProp={onUpdateLayerProp}
             />
           )}
           {!expanded && false && <b>Do we still use this variable?</b>}

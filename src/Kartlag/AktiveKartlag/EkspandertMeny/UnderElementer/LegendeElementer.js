@@ -5,28 +5,28 @@ import LegendeElement from "./LegendeComponents/LegendeElement";
 
 class LegendeElementer extends Component {
   state = {
-    items_to_load: 5,
+    items_to_load: 5
   };
   render() {
-    const { kartlag, onUpdateLayerProp, skjul_meny_tittel } = this.props;
-    let barn;
-    if (!kartlag.barn || kartlag.barn.length === 0) {
-      let node = kartlag;
-      let kode = node.kode;
+    const { meta, skjul_meny_tittel, onUpdateLayerProp } = this.props;
+    const { barn } = meta;
+    const hasNoChildren = !barn?.length;
+
+    if (hasNoChildren) {
       return (
         <SettingsContext.Consumer>
-          {(context) => (
+          {context => (
             <div className="widescreen_sidebar_element">
               <ul className="ul_block">
                 <LegendeElement
-                  key={kode}
-                  tittel={node.tittel}
-                  koder={context.visKoder && kode}
-                  farge={node.farge}
+                  key={meta.kode}
+                  tittel={meta.tittel}
+                  koder={context.visKoder && meta.kode}
+                  farge={meta.farge}
                   erSynlig={
-                    node.hasOwnProperty("erSynlig") ? node.erSynlig : true
+                    meta.hasOwnProperty("erSynlig") ? meta.erSynlig : true
                   }
-                  kode={kode}
+                  kode={meta.kode}
                   onUpdateLayerProp={onUpdateLayerProp}
                 />
               </ul>
@@ -35,30 +35,28 @@ class LegendeElementer extends Component {
         </SettingsContext.Consumer>
       );
     }
-    barn = kartlag.barn;
-    const barn_length = barn.length;
 
     return (
       <SettingsContext.Consumer>
-        {(context) => (
+        {context => (
           <div className="widescreen_sidebar_element">
             {!skjul_meny_tittel && <h3>Juster underelemeter </h3>}
             <ul className="ul_block">
-              {Object.keys(barn).map((i) => {
+              {barn.map((node, i) => {
                 while (i < this.state.items_to_load) {
-                  const node = barn[i];
-                  const kode = node.kode;
+                  const { farge, kode, tittel } = node;
+                  const erSynlig = node.hasOwnProperty("erSynlig")
+                    ? node.erSynlig
+                    : true;
                   return (
                     <LegendeElement
                       key={kode}
-                      tittel={node.tittel}
+                      tittel={tittel}
                       koder={context.visKoder && kode}
-                      farge={node.farge}
-                      erSynlig={
-                        node.hasOwnProperty("erSynlig") ? node.erSynlig : true
-                      }
+                      farge={farge}
+                      erSynlig={erSynlig}
                       kode={kode}
-                      onUpdateLayerProp={onUpdateLayerProp}
+                      onUpdateLayerProp={this.props.onUpdateLayerProp}
                       elementType="barn"
                     />
                   );
@@ -66,7 +64,7 @@ class LegendeElementer extends Component {
                 return null;
               })}
             </ul>
-            {barn_length > this.state.items_to_load && (
+            {barn.length > this.state.items_to_load && (
               <button
                 className="load_more_button"
                 onClick={() =>
