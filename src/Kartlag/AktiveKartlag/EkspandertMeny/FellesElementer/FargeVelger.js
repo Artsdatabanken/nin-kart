@@ -4,20 +4,24 @@ import ColorPicker from "../../../../GjenbruksElement/ColorPicker";
 import { ListSubheader } from "@material-ui/core";
 class FargeVelger extends Component {
   render() {
-    const { onUpdateLayerProp, where, color, elementType } = this.props;
+    const { onUpdateLayerProp, where, color, elementType, title } = this.props;
     let what = "farge";
     if (this.props.what) {
       what = this.props.what;
     }
+    let selector_title = "Farge";
+    if (title) {
+      selector_title = title;
+    }
 
     return (
-      <div className="kartlag_submenu">
-        <ListSubheader>Farge</ListSubheader>
+      <div className="">
+        <ListSubheader>{selector_title}</ListSubheader>
         <ColorPicker
           tabIndex="1"
           color={color}
           alpha
-          onChange={(farge) => {
+          onChange={farge => {
             const rgbString = tinycolor(farge.rgb).toRgbString();
             if (elementType) {
               onUpdateLayerProp(where, what, rgbString, "barn");

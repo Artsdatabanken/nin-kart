@@ -11,11 +11,11 @@ class BakgrunnInnstillinger extends Component {
     const current = aktivtFormat.aktivtFormat;
     const kf = aktivtFormat.format[current];
     const what = "kart.format." + current;
-    // console.log(kf);
+    console.log(kf.vann_farge);
 
     return (
       <List>
-        {/* 
+        {/*
         {false && (
           <div className="sidebar_element">
             <Terreng
@@ -27,8 +27,8 @@ class BakgrunnInnstillinger extends Component {
         )}
         */}
 
-        <div className="sidebar_element">
-          <h3>Områder</h3>
+        <div className="subsection">
+          <h5>Områder</h5>
 
           <BakgrunnInnstillingListeElement
             onUpdateLayerProp={onUpdateLayerProp}
@@ -55,8 +55,8 @@ class BakgrunnInnstillinger extends Component {
           />
         </div>
 
-        <div className="sidebar_element">
-          <h3>Administrative grenser</h3>
+        <div className="subsection">
+          <h5>Administrative grenser</h5>
           <BakgrunnInnstillingListeElement
             onUpdateLayerProp={onUpdateLayerProp}
             oppdaterElement={what + ".landegrense"}
@@ -80,8 +80,8 @@ class BakgrunnInnstillinger extends Component {
           />
         </div>
 
-        <div className="sidebar_element">
-          <h3>Etiketter</h3>
+        <div className="subsection">
+          <h5>Etiketter</h5>
           <BakgrunnInnstillingListeElement
             onUpdateLayerProp={onUpdateLayerProp}
             oppdaterElement={what + ".vann_navn"}

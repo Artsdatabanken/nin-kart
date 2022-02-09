@@ -1,8 +1,8 @@
 import { Switch } from "@material-ui/core";
 import React, { useState } from "react";
-import VelgFargeBoks from "../../FellesElementer/VelgFargeBoks";
 import FargeVelger from "../../FellesElementer/FargeVelger";
 import SliderElement from "../../../../../GjenbruksElement/SliderElement";
+import { FormatColorFill, Close } from "@material-ui/icons";
 
 const BakgrunnInnstillingListeElement = ({
   onUpdateLayerProp,
@@ -11,14 +11,14 @@ const BakgrunnInnstillingListeElement = ({
   erSynlig,
   farge,
   omriss,
-  stroke,
+  stroke
 }) => {
   const [showColours, setShowColours] = useState(false);
 
   return (
     <div>
       <Switch
-        onClick={(e) => e.stopPropagation()}
+        onClick={e => e.stopPropagation()}
         onChange={() => {
           onUpdateLayerProp("bakgrunnskart", oppdaterElement, !erSynlig);
         }}
@@ -30,46 +30,84 @@ const BakgrunnInnstillingListeElement = ({
       {erSynlig && (
         <>
           <span
-            onClick={(e) => {
+            onClick={e => {
               // console.log("farge: ", farge);
               setShowColours(!showColours);
             }}
           >
             {farge}
-            <VelgFargeBoks farge={farge} />
+
+            <button
+              className="kartlag_element_buttons"
+              style={{ float: "right", position: "relative" }}
+              onClick={() => {
+                setShowColours(!showColours);
+              }}
+            >
+              <FormatColorFill />
+              <div
+                style={{
+                  width: "100%",
+                  background: farge,
+                  height: "8px",
+                  position: "absolute",
+                  right: 0,
+                  bottom: 0,
+                  border: "1px solid grey"
+                }}
+              />
+            </button>
           </span>
           {showColours && (
-            <FargeVelger
-              color={farge}
-              onUpdateLayerProp={onUpdateLayerProp}
-              where={"bakgrunnskart"}
-              what={oppdaterElement + "_farge"}
-            />
-          )}
-          {showColours && omriss !== undefined && (
-            <FargeVelger
-              color={omriss}
-              onUpdateLayerProp={onUpdateLayerProp}
-              where={"bakgrunnskart"}
-              what={oppdaterElement + "_stroke_farge"}
-              title={"Velg farge på omriss"}
-            />
-          )}
-          {showColours && stroke !== undefined && (
-            <SliderElement
-              value={stroke || 0}
-              min={0}
-              max={10}
-              step={0.2}
-              tittel={"Tykkelse: " + (stroke || 0).toFixed(1) + " piksler"}
-              onChange={(v) =>
-                onUpdateLayerProp(
-                  "bakgrunnskart",
-                  oppdaterElement + "_stroke_width",
-                  v
-                )
-              }
-            />
+            <div
+              className="subsection"
+              style={{ background: "white", position: "relative" }}
+            >
+              <button
+                onClick={() => {
+                  setShowColours(!showColours);
+                }}
+                className="closebutton"
+              >
+                <Close />
+              </button>
+
+              <h6>Velg farger </h6>
+
+              <FargeVelger
+                color={farge}
+                onUpdateLayerProp={onUpdateLayerProp}
+                where={"bakgrunnskart"}
+                what={oppdaterElement + "_farge"}
+                title={"Farge på elementet"}
+              />
+
+              {omriss !== undefined && (
+                <FargeVelger
+                  color={omriss}
+                  onUpdateLayerProp={onUpdateLayerProp}
+                  where={"bakgrunnskart"}
+                  what={oppdaterElement + "_stroke_farge"}
+                  title={"Farge på omriss"}
+                />
+              )}
+              {stroke !== undefined && (
+                <SliderElement
+                  value={stroke || 0}
+                  min={0}
+                  max={10}
+                  step={0.2}
+                  tittel={"Tykkelse: " + (stroke || 0).toFixed(1) + " piksler"}
+                  onChange={v =>
+                    onUpdateLayerProp(
+                      "bakgrunnskart",
+                      oppdaterElement + "_stroke_width",
+                      v
+                    )
+                  }
+                />
+              )}
+            </div>
           )}
         </>
       )}
