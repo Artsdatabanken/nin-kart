@@ -5,7 +5,7 @@ import typer from "./temaer";
 const TemaButton = ({ type, aktivtFormat, onUpdateLayerProp }) => (
   <button
     className={
-      aktivtFormat.aktivtFormat === type
+      aktivtFormat === type
         ? "selected_button button_map_preview"
         : "button_map_preview"
     }

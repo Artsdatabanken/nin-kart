@@ -1,14 +1,11 @@
 import React from "react";
 import TemaButton from "./TemaButton";
 import typer from "./temaer";
+import SectionExpand from "../../../../../GjenbruksElement/SectionExpand";
 
 const TemaMeny = ({ aktivtFormat, onUpdateLayerProp }) => (
-  <>
-    <div className="sidebar_element">
-      <h3>Tema</h3>
-    </div>
-
-    {Object.keys(typer).map((key) => {
+  <SectionExpand title={"Bakgrunnstema: " + aktivtFormat}>
+    {Object.keys(typer).map(key => {
       return (
         <TemaButton
           key={key}
@@ -19,7 +16,7 @@ const TemaMeny = ({ aktivtFormat, onUpdateLayerProp }) => (
         />
       );
     })}
-  </>
+  </SectionExpand>
 );
 
 export default TemaMeny;
