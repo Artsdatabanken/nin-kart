@@ -11,7 +11,7 @@ const Kartlegging = ({ punkt }) => {
     Object.values(punkt.vektor).filter(e => e.datasettkode === "NAT");
   if (nat.length === 0) return null;
   const ignoreNullValues = true;
-  const kartlegginger = nat.map(natElement => {
+  const kartlegginger = nat.map((natElement, i) => {
     const na = natElement.data;
     if (!na) return null;
     const k0 = na.kartleggingsenhet[0] || {};
@@ -22,6 +22,7 @@ const Kartlegging = ({ punkt }) => {
 
     return (
       <KartleggingObjekt
+        key={i}
         na={na}
         heading={heading}
         ignoreNullValues={ignoreNullValues}
