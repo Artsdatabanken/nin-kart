@@ -14,6 +14,7 @@ import { IconButton } from "@material-ui/core";
 import constants from "../../constants";
 import { getInterval } from "../../helpers";
 import FargeVelger from "../../Kartlag/AktiveKartlag/EkspandertMeny/FellesElementer/FargeVelger";
+import ArrowButton from "../../GjenbruksElement/ArrowButton";
 
 const Kodelisteelement = ({
   meta,
@@ -38,16 +39,20 @@ const Kodelisteelement = ({
     sn = true;
   }
 
+  const handleExpandClick = () => {
+    setShowEditColor(!showEditColor);
+  };
+
+  const editColorButton = () => <VelgFargeboks farge={farge} kode={kode} />;
+
   return (
     <div className="map_layer_navigation_container">
       <div className="map_layer_navigation">
-        <VelgFargeboks
-          farge={farge}
-          kode={kode}
-          showEditColor={showEditColor}
-          setShowEditColor={setShowEditColor}
+        <ArrowButton
+          title={editColorButton()}
+          expanded={showEditColor}
+          handleExpandClick={handleExpandClick}
         />
-
         <button
           key={kode}
           onClick={() => {

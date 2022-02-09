@@ -12,7 +12,7 @@ const ArrowButton = ({ expanded, handleExpandClick, title }) => {
 
   return (
     <button
-      className={classes.expand}
+      className={`${classes.expand} arrow_button`}
       onClick={handleExpandClick}
       aria-expanded={expanded}
       aria-label="show more"

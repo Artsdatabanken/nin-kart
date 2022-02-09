@@ -1,6 +1,6 @@
 import React from "react";
 
-const VelgFargeBoks = ({ farge, kode, showEditColor, setShowEditColor }) => {
+const VelgFargeBoks = ({ farge, kode }) => {
   return (
     <div
       className="colour_legend"
@@ -8,10 +8,6 @@ const VelgFargeBoks = ({ farge, kode, showEditColor, setShowEditColor }) => {
       style={{
         backgroundColor: farge,
         src: !farge && "/" + kode + ".png"
-      }}
-      onClick={e => {
-        e.stopPropagation();
-        setShowEditColor(!showEditColor);
       }}
     />
   );
