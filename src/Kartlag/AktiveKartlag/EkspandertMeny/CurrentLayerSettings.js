@@ -44,6 +44,7 @@ const CurrentLayerSettings = ({ onUpdateLayerProp, meta }) => {
             value={opacity || 1}
             min={0.01}
             max={1}
+            step={0.01}
             onChange={(e, value) => onUpdateLayerProp(kode, "opacity", value)}
           />
         </div>
