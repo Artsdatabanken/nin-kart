@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import språk from "../../Funksjoner/språk";
 import isItalics from "../../Funksjoner/isItalics";
 import Bildeavatar from "../../GjenbruksElement/Bildeavatar";
@@ -14,65 +14,45 @@ import { IconButton } from "@material-ui/core";
 import constants from "../../constants";
 import { getInterval } from "../../helpers";
 import FargeVelger from "../../Kartlag/AktiveKartlag/EkspandertMeny/FellesElementer/FargeVelger";
+import ArrowButton from "../../GjenbruksElement/ArrowButton";
 
-class Kodelisteelement extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { showEditColor: false };
+const Kodelisteelement = ({
+  meta,
+  visKode,
+  onNavigate,
+  onMouseEnter,
+  onMouseLeave,
+  areal,
+  størsteAreal,
+  setExpanded,
+  onUpdateLayerProp
+}) => {
+  const [showEditColor, setShowEditColor] = useState(false);
+
+  const erSynlig = meta.hasOwnProperty("erSynlig") ? meta.erSynlig : true;
+  const { kode, url, farge } = meta;
+
+  let tittel = språk(meta.tittel);
+  let sn = meta.tittel["sn"] && meta.tittel["sn"] === tittel;
+  if (tittel === "undefined") {
+    tittel = meta.tittel["sn"];
+    sn = true;
   }
 
-  shouldComponentUpdate(np) {
-    if (np.areal !== this.props.areal) return true;
-    if (np.value !== this.props.value) return true;
-    if (np.opplyst !== this.props.opplyst) return true;
-    return false;
-  }
+  const handleExpandClick = () => {
+    setShowEditColor(!showEditColor);
+  };
 
-  render() {
-    const {
-      meta,
-      visKode,
-      onNavigate,
-      onMouseEnter,
-      onMouseLeave,
-      areal,
-      størsteAreal,
-      setExpanded,
-      onUpdateLayerProp
-    } = this.props;
+  const editColorButton = () => <VelgFargeboks farge={farge} kode={kode} />;
 
-    const erSynlig = meta.hasOwnProperty("erSynlig") ? meta.erSynlig : true;
-    const { kode, url, farge } = meta;
-
-    let tittel = språk(meta.tittel);
-    let sn = meta.tittel["sn"] && meta.tittel["sn"] === tittel;
-    if (tittel === "undefined") {
-      tittel = meta.tittel["sn"];
-      sn = true;
-    }
-
-    const setShowEditColor = () => {
-      this.setState({
-        showEditColor: !this.state.showEditColor
-      });
-    };
-
-    return (
+  return (
+    <div className="map_layer_navigation_container">
       <div className="map_layer_navigation">
-        <VelgFargeboks
-          farge={farge}
-          kode={kode}
-          setShowEditColor={setShowEditColor}
+        <ArrowButton
+          title={editColorButton()}
+          expanded={showEditColor}
+          handleExpandClick={handleExpandClick}
         />
-        {this.state.showEditColor && (
-          <FargeVelger
-            color={farge}
-            onUpdateLayerProp={onUpdateLayerProp}
-            where={kode}
-            elementType={"barn"}
-          />
-        )}
-
         <button
           key={kode}
           onClick={() => {
@@ -119,8 +99,16 @@ class Kodelisteelement extends React.Component {
           )}
         </IconButton>
       </div>
-    );
-  }
-}
+      {showEditColor && (
+        <FargeVelger
+          color={farge}
+          onUpdateLayerProp={onUpdateLayerProp}
+          where={kode}
+          elementType={"barn"}
+        />
+      )}
+    </div>
+  );
+};
 
 export default Kodelisteelement;

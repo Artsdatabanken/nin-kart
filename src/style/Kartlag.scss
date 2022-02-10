@@ -221,3 +221,12 @@ Even tho we don't a of now support IE X)
   margin-bottom: 5px;
   text-align: center;
 }
+
+.map_layer_navigation .arrow_button {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+  margin-left: 10px;
+  background-color: $panel-section-sub-bg;
+  border-radius: 5px;
+}
