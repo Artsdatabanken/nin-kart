@@ -15,7 +15,6 @@ Even tho we don't a of now support IE X)
 .kartlag_element_backbutton,
 .kartlag_element_header {
   min-height: 50px;
-  background: #d9d9d9;
   display: flex;
   width: 100%;
   padding: 2px;
@@ -35,22 +34,31 @@ Even tho we don't a of now support IE X)
 }
 
 .kartlag_element_backbutton .backicon,
-.kartlag_element_header button {
+.layerbutton {
   margin-top: 0;
-  height: 50px;
+  height: 47px;
   border: 0;
-  margin-left: 1px;
-  width: 56px;
+  margin-left: 2px;
+  width: 50px;
   padding: 0;
   padding-top: 0px;
-  background: none;
+  background: white;
   line-height: 50px;
-  margin-right: 1px;
+  margin-right: 2px;
   padding-top: 7px;
+  border-radius: 50%;
+}
+
+.layerbutton:hover {
+  background: grey;
+}
+
+.kartlag_element_backbutton .backicon {
+  background: transparent;
 }
 
 .kartlag_element_header .backicon svg,
-.kartlag_element_header button svg {
+.layerbutton svg {
   margin-top: auto;
   margin-bottom: auto;
 }

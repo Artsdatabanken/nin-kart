@@ -1,17 +1,15 @@
 import React from "react";
-import { Tooltip } from "@material-ui/core";
 import { Info } from "@material-ui/icons";
+import LayerButton from "./LayerButton";
 const InfoButton = ({ handleShowInfo, showInfo }) => {
   return (
-    <button
+    <LayerButton
       onClick={() => {
         handleShowInfo(!showInfo);
       }}
-    >
-      <Tooltip title="Åpne informasjon" aria-label="åpne informasjon">
-        <Info />
-      </Tooltip>
-    </button>
+      icon={<Info />}
+      title={"Åpne informasjon"}
+    />
   );
 };
 export default InfoButton;

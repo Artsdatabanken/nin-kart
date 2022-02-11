@@ -1,22 +1,20 @@
 import React from "react";
-import { Tooltip } from "@material-ui/core";
 import { Settings } from "@material-ui/icons";
+import LayerButton from "./LayerButton";
 const SettingsButton = ({
   onSetAktivTab,
   setExpandedSettings,
   expandedSettings
 }) => {
   return (
-    <button
+    <LayerButton
       onClick={() => {
         onSetAktivTab("kartlaginnstillinger");
         setExpandedSettings(!expandedSettings);
       }}
-    >
-      <Tooltip title="Åpne innstillinger" aria-label="åpne innstillinger">
-        <Settings />
-      </Tooltip>
-    </button>
+      icon={<Settings />}
+      title={"Åpne innstillinger"}
+    />
   );
 };
 export default SettingsButton;
