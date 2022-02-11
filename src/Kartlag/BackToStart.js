@@ -6,7 +6,7 @@ const BackToStart = ({ isstartpage, onNavigate }) => {
   return (
     <div className="section">
       <button
-        className="kartlag_element_header"
+        className="kartlag_element_backbutton"
         onClick={() => {
           onNavigate("/kart");
         }}

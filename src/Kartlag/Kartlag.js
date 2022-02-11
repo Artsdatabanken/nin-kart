@@ -1,6 +1,5 @@
 import React from "react";
 import { SettingsContext } from "../SettingsContext";
-import språk from "../Funksjoner/språk";
 import CurrentElement from "./CurrentElement/CurrentElement";
 import FavoriteLayers from "./FavoriteLayers";
 import BackToStart from "./BackToStart";
@@ -15,16 +14,10 @@ class Kartlag extends React.Component {
   render() {
     let koder = this.props.aktiveLag;
     const keys = Object.keys(koder);
-    const { onUpdateLayerProp, hidden, currentKartlag } = this.props;
+    const { onUpdateLayerProp, hidden } = this.props;
 
-    let tittel = "hjelp";
-
-    if (currentKartlag) {
-      tittel = språk(currentKartlag.tittel);
-    }
-    if (tittel.length > 40) {
-      tittel = tittel.substring(0, 40) + "...";
-    }
+    // TODO: Hidden seems to be a close function for kartlag
+    // Give it a button to use or remove it completely from app.
 
     let isstartpage = false;
     if (

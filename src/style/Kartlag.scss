@@ -7,16 +7,26 @@ Even tho we don't a of now support IE X)
 
 */
 
+.kartlag .subexpand {
+  margin: 0;
+  border-radius: 0;
+}
+
+.kartlag_element_backbutton,
 .kartlag_element_header {
   min-height: 50px;
-  /*background: $brightest-nin;*/
-  background: transparent;
+  background: #d9d9d9;
   display: flex;
   width: 100%;
   padding: 2px;
 }
 
-.kartlag_element_header span {
+.kartlag_element_backbutton {
+  background: transparent;
+}
+
+.kartlag_element_backbutton span,
+.kartlag_element_header h4 {
   flex: 2;
   display: block;
   margin: auto;
@@ -24,7 +34,7 @@ Even tho we don't a of now support IE X)
   font-size: 12pt;
 }
 
-.kartlag_element_header .backicon,
+.kartlag_element_backbutton .backicon,
 .kartlag_element_header button {
   margin-top: 0;
   height: 50px;
@@ -147,7 +157,6 @@ Even tho we don't a of now support IE X)
 }
 
 .kartlag_submeny {
-  text-align: center;
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -215,11 +224,8 @@ Even tho we don't a of now support IE X)
 /* KILDER */
 .sidebar .submeny_container {
   width: 100%;
-  padding: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 5px;
   margin-bottom: 5px;
-  text-align: center;
 }
 
 .map_layer_navigation .arrow_button {

@@ -66,7 +66,7 @@ const AktivtKartlagElement = ({ kartlag, onUpdateLayerProp }) => {
       </ListItem>
 
       {expandedSub && (
-        <div className="subsection">
+        <div className="subsection subexpand">
           <h4>Innstillinger</h4>
           {kode === "bakgrunnskart" && (
             <>

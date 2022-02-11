@@ -8,7 +8,8 @@ const CurrentLayerSettings = ({ onUpdateLayerProp, meta }) => {
   const blendmode = meta.blendmode || "multiply";
 
   return (
-    <div className="_kartlag_sub_bg">
+    <div className="subsection subexpand">
+      <h4>Innstillinger for kartlaget</h4>
       <GradientEllerTypeinndelt
         onUpdateLayerProp={onUpdateLayerProp}
         where={kode}
