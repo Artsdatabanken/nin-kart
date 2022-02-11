@@ -7,11 +7,11 @@ import {
   KeyboardArrowUp,
   Layers,
   Favorite,
-  History,
-  ArrowBack
+  History
 } from "@material-ui/icons";
 import språk from "../Funksjoner/språk";
 import Meny from "../Navigering/Meny";
+import BackToStart from "./BackToStart";
 import { List, Tooltip } from "@material-ui/core";
 
 class Kartlag extends React.Component {
@@ -118,23 +118,10 @@ class Kartlag extends React.Component {
                     </h2>
                   </div>
 
-                  {!isstartpage && (
-                    <div className="section">
-                      <button
-                        className="kartlag_element_header"
-                        onClick={() => {
-                          this.props.onNavigate("/kart");
-                        }}
-                      >
-                        <div className="backicon">
-                          <ArrowBack />
-                        </div>
-                        <span className="kartlag_element_text">
-                          Tilbake til start
-                        </span>
-                      </button>
-                    </div>
-                  )}
+                  <BackToStart
+                    isstartpage={isstartpage}
+                    onNavigate={this.props.onNavigate}
+                  />
 
                   <Meny
                     aktiveLag={this.props.aktiveLag}
