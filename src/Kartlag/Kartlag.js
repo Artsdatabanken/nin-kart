@@ -1,6 +1,5 @@
 import React from "react";
 import { SettingsContext } from "../SettingsContext";
-import AktivtKartlagElement from "./AktiveKartlag/AktivtKartlagElement";
 import HistorikkListeElement from "./Historikk/HistorikkListeElement";
 import { History } from "@material-ui/icons";
 import språk from "../Funksjoner/språk";
@@ -106,20 +105,6 @@ class Kartlag extends React.Component {
                     koder={koder}
                     props={this.props}
                   />
-
-                  {false && (
-                    <div class="section">
-                      <h2>Bakgrunnskart</h2>
-                      <ul className="kartlag_list">
-                        <AktivtKartlagElement
-                          kartlag={koder["bakgrunnskart"]}
-                          key={"bakgrunnskart"}
-                          {...this.props}
-                          visKoder={context.visKoder}
-                        />
-                      </ul>
-                    </div>
-                  )}
 
                   {Object.keys(navigation_history).length > 1 && (
                     <div className="section">
