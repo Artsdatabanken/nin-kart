@@ -25,21 +25,8 @@ class Kartlag extends React.Component {
       navigation_history,
       activateLayerFromHistory,
       currentKartlag,
-      meta,
-      show_current,
-      handleShowCurrent,
-      onRemoveSelectedLayer,
-      lokalitetdata
+      meta
     } = this.props;
-    let duplicate = false;
-
-    if (currentKartlag && currentKartlag.kode) {
-      for (var item in keys) {
-        if (keys[item] === currentKartlag.kode) {
-          duplicate = true;
-        }
-      }
-    }
 
     if (navigation_history.length > 11) {
       /* History length limitation. When surpassing this limit, it removes the earliest entry */
@@ -97,8 +84,6 @@ class Kartlag extends React.Component {
 
                   <CurrentElement
                     aktiveLag={this.props.aktiveLag}
-                    lokalitetdata={this.props.lokalitetdata}
-                    lokalitet={this.props.lokalitet}
                     meta={this.props.meta}
                     onNavigate={this.props.onNavigate}
                     aktivTab={this.props.aktivTab}
@@ -115,66 +100,6 @@ class Kartlag extends React.Component {
                     isstartpage={isstartpage}
                     onUpdateLayerProp={onUpdateLayerProp}
                   />
-
-                  {false && (
-                    <div className="section">
-                      <div className="sidebar_title_container sidebar_element">
-                        <h2 className="sidebar_title">Kartlag</h2>
-                      </div>
-                    </div>
-                  )}
-
-                  {false && currentKartlag && !duplicate && (
-                    <div class="section">
-                      <div className="sidebar_element">
-                        {false && <h2>Nåværende kartlag</h2>}
-                        <ul className="kartlag_list">
-                          <AktivtKartlagElement
-                            key={currentKartlag}
-                            onRemoveSelectedLayer={onRemoveSelectedLayer}
-                            kartlag={currentKartlag}
-                            {...this.props}
-                            visKoder={context.visKoder}
-                            erAktivtLag={true}
-                            show_current={show_current}
-                            handleShowCurrent={handleShowCurrent}
-                            is_current_object={true}
-                            activateLayerFromHistory={activateLayerFromHistory}
-                            navhist={
-                              navigation_history[navigation_history.length - 1]
-                            } // add last item in list
-                          />
-                        </ul>
-                      </div>
-                    </div>
-                  )}
-
-                  {lokalitetdata && (
-                    <div className="section">
-                      <h3 className="kartlag_header">Nåværende lokalitet</h3>
-                      <ul className="kartlag_list">
-                        {Object.keys(lokalitetdata).map(mapkode => {
-                          // console.log("mapkode",mapkode);
-                          const kartlag = lokalitetdata[mapkode];
-                          //console.log(kartlag)
-
-                          return (
-                            <AktivtKartlagElement
-                              erLokalitet={true}
-                              kartlag={kartlag}
-                              key={kartlag.kode}
-                              {...this.props}
-                              visKoder={context.visKoder}
-                              onFitBounds={onFitBounds}
-                              onUpdateLayerProp={
-                                this.props.handleUpdateLokalitetLayerProp
-                              }
-                            />
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  )}
 
                   <div className="section">
                     <Tooltip

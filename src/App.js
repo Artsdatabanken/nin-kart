@@ -56,7 +56,6 @@ class App extends React.Component {
       actualBounds: null,
       fitBounds: null,
       meta: null,
-      lokalitetdata: null,
       visKoder: false,
       navigation_history: [],
       showCurrent: true,
@@ -129,22 +128,17 @@ class App extends React.Component {
                   <>
                     <Kartlag
                       aktivTab={aktivTab}
-                      lokalitetdata={this.state.lokalitetdata}
                       show_current={this.state.showCurrent}
                       handleShowCurrent={this.handleShowCurrent}
                       hidden={true /*aktivTab === "kartlag" && true*/}
                       aktiveLag={this.state.aktiveLag}
                       onUpdateLayerProp={this.handleUpdateLayerProp}
-                      handleUpdateLokalitetLayerProp={
-                        this.handleUpdateLokalitetLayerProp
-                      }
                       onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
                       navigation_history={this.state.navigation_history}
                       onFitBounds={this.handleFitBounds}
                       history={history}
                       currentKartlag={this.state.meta}
                       activateLayerFromHistory={this.activateLayerFromHistory}
-                      lokalitet={path}
                       meta={this.state.meta}
                       onNavigate={this.handleNavigate}
                       onSetAktivTab={this.handleSetAktivTab}
@@ -165,7 +159,6 @@ class App extends React.Component {
                     <Kart
                       markerCoordinates={this.state.markerCoordinates}
                       onMarkerClick={this.handleMarkerClick}
-                      lokalitetdata={this.state.lokalitetdata}
                       path={this.props.location.search}
                       aktivTab={aktivTab}
                       show_current={this.state.showCurrent}
@@ -372,15 +365,6 @@ class App extends React.Component {
       aktiveLag: Object.assign(
         {},
         oppdaterLagProperties(layer, key, value, this, elementType)
-      )
-    });
-  };
-
-  handleUpdateLokalitetLayerProp = (layer, key, value) => {
-    this.setState({
-      lokalitetdata: Object.assign(
-        {},
-        oppdaterLagProperties(layer, key, value, this, "lokalitetdata")
       )
     });
   };
