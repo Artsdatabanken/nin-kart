@@ -2,13 +2,14 @@ import React from "react";
 import { SettingsContext } from "../SettingsContext";
 import AktivtKartlagElement from "./AktiveKartlag/AktivtKartlagElement";
 import HistorikkListeElement from "./Historikk/HistorikkListeElement";
-import { Favorite, History } from "@material-ui/icons";
+import { History } from "@material-ui/icons";
 import språk from "../Funksjoner/språk";
 import CurrentElement from "./CurrentElement/CurrentElement";
+import FavoriteLayers from "./FavoriteLayers";
 import BackToStart from "./BackToStart";
 import SidebarHeader from "./SidebarHeader";
 import MobileOpenButton from "./MobileOpenButton";
-import { List, Tooltip } from "@material-ui/core";
+import { List } from "@material-ui/core";
 
 class Kartlag extends React.Component {
   state = {
@@ -18,14 +19,12 @@ class Kartlag extends React.Component {
     let koder = this.props.aktiveLag;
     const keys = Object.keys(koder);
     const {
-      onFitBounds,
       onUpdateLayerProp,
       hidden,
       history,
       navigation_history,
       activateLayerFromHistory,
-      currentKartlag,
-      meta
+      currentKartlag
     } = this.props;
 
     if (navigation_history.length > 11) {
@@ -101,35 +100,12 @@ class Kartlag extends React.Component {
                     onUpdateLayerProp={onUpdateLayerProp}
                   />
 
-                  <div className="section">
-                    <Tooltip
-                      title="Disse kartlagene vises alltid i kartet"
-                      aria-label="Disse kartlagene vises alltid i kartet"
-                    >
-                      <h3 className="kartlag_header">
-                        <Favorite />
-                        Mine kartlag
-                      </h3>
-                    </Tooltip>
-                    <List>
-                      <ul className="kartlag_list">
-                        {keys.reverse().map(fkode => {
-                          const kartlag = koder[fkode];
-                          return (
-                            <AktivtKartlagElement
-                              kartlag={kartlag}
-                              key={fkode}
-                              {...this.props}
-                              visKoder={context.visKoder}
-                              onFitBounds={onFitBounds}
-                              onUpdateLayerProp={onUpdateLayerProp}
-                              meta={meta}
-                            />
-                          );
-                        })}
-                      </ul>
-                    </List>
-                  </div>
+                  <FavoriteLayers
+                    visKoder={context.visKoder}
+                    keys={keys}
+                    koder={koder}
+                    props={this.props}
+                  />
 
                   {false && (
                     <div class="section">
