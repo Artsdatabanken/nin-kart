@@ -2,16 +2,12 @@ import React from "react";
 import { SettingsContext } from "../SettingsContext";
 import AktivtKartlagElement from "./AktiveKartlag/AktivtKartlagElement";
 import HistorikkListeElement from "./Historikk/HistorikkListeElement";
-import {
-  KeyboardArrowDown,
-  KeyboardArrowUp,
-  Layers,
-  Favorite,
-  History
-} from "@material-ui/icons";
+import { Favorite, History } from "@material-ui/icons";
 import språk from "../Funksjoner/språk";
 import Meny from "../Navigering/Meny";
 import BackToStart from "./BackToStart";
+import SidebarHeader from "./SidebarHeader";
+import MobileOpenButton from "./MobileOpenButton";
 import { List, Tooltip } from "@material-ui/core";
 
 class Kartlag extends React.Component {
@@ -33,8 +29,7 @@ class Kartlag extends React.Component {
       show_current,
       handleShowCurrent,
       onRemoveSelectedLayer,
-      lokalitetdata,
-      aktivTab
+      lokalitetdata
     } = this.props;
     let duplicate = false;
 
@@ -60,9 +55,6 @@ class Kartlag extends React.Component {
       tittel = tittel.substring(0, 40) + "...";
     }
 
-    let isPunkt =
-      aktivTab === "punkt" || aktivTab === "kartlegging" ? "mobile_off" : "";
-
     let isstartpage = false;
     if (
       this.props.path === "/kart" ||
@@ -80,28 +72,13 @@ class Kartlag extends React.Component {
           <SettingsContext.Consumer>
             {context => (
               <>
-                <button
-                  className={
-                    this.state.showKartlag
-                      ? "mobile_slide_up_area open_mobile_slide_up_area " +
-                        isPunkt
-                      : "mobile_slide_up_area closed_mobile_slide_up_area " +
-                        isPunkt
-                  }
-                  onClick={() => {
+                <MobileOpenButton
+                  showKartlag={this.state.showKartlag}
+                  setShowKartlag={() => {
                     this.setState({ showKartlag: !this.state.showKartlag });
                   }}
-                >
-                  {this.state.showKartlag ? (
-                    <KeyboardArrowDown />
-                  ) : (
-                    <>
-                      <KeyboardArrowUp />
-                      <span>Aktivt kartlag</span>
-                      <span> {tittel}</span>
-                    </>
-                  )}
-                </button>
+                  props={this.props}
+                />
 
                 <div
                   className={
@@ -110,13 +87,7 @@ class Kartlag extends React.Component {
                       : "kartlag sidebar kartlag_content_closed "
                   }
                 >
-                  <div className="page_topic_header" />
-                  <div className="section">
-                    <h2 className="kartlag_header">
-                      <Layers />
-                      Kartlag
-                    </h2>
-                  </div>
+                  <SidebarHeader />
 
                   <BackToStart
                     isstartpage={isstartpage}
