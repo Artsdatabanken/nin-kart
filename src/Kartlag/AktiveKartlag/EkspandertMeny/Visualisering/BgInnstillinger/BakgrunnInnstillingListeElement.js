@@ -49,7 +49,7 @@ const BakgrunnInnstillingListeElement = ({
                 style={{
                   width: "100%",
                   background: farge,
-                  height: "8px",
+                  height: "10px",
                   position: "absolute",
                   right: 0,
                   bottom: 0,

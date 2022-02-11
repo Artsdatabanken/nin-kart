@@ -236,11 +236,10 @@ Even tho we don't a of now support IE X)
   margin-bottom: 5px;
 }
 
-.map_layer_navigation .arrow_button {
+.arrow_button {
   display: flex;
   flex-direction: row;
-  padding: 10px 0;
-  margin-left: 10px;
-  background-color: $panel-section-sub-bg;
-  border-radius: 5px;
+  padding: 13px 0;
+  margin-left: 4px;
+  justify-content: center;
 }
