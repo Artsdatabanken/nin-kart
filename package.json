@@ -22,7 +22,7 @@
     "eslint-plugin-react-hooks": "^2.5.1",
     "leaflet": "^1.7.1",
     "markdown-to-jsx": "^6.11.4",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react": "^16.14.0",
     "react-color": "^2.19.3",
     "react-dom": "^16.14.0",
