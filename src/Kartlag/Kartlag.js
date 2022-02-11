@@ -1,14 +1,12 @@
 import React from "react";
 import { SettingsContext } from "../SettingsContext";
-import HistorikkListeElement from "./Historikk/HistorikkListeElement";
-import { History } from "@material-ui/icons";
 import språk from "../Funksjoner/språk";
 import CurrentElement from "./CurrentElement/CurrentElement";
 import FavoriteLayers from "./FavoriteLayers";
 import BackToStart from "./BackToStart";
 import SidebarHeader from "./SidebarHeader";
 import MobileOpenButton from "./MobileOpenButton";
-import { List } from "@material-ui/core";
+import HistoryLayers from "./HistoryLayers";
 
 class Kartlag extends React.Component {
   state = {
@@ -17,19 +15,7 @@ class Kartlag extends React.Component {
   render() {
     let koder = this.props.aktiveLag;
     const keys = Object.keys(koder);
-    const {
-      onUpdateLayerProp,
-      hidden,
-      history,
-      navigation_history,
-      activateLayerFromHistory,
-      currentKartlag
-    } = this.props;
-
-    if (navigation_history.length > 11) {
-      /* History length limitation. When surpassing this limit, it removes the earliest entry */
-      navigation_history.shift();
-    }
+    const { onUpdateLayerProp, hidden, currentKartlag } = this.props;
 
     let tittel = "hjelp";
 
@@ -106,41 +92,7 @@ class Kartlag extends React.Component {
                     props={this.props}
                   />
 
-                  {Object.keys(navigation_history).length > 1 && (
-                    <div className="section">
-                      <h3 className="kartlag_header">
-                        <History />
-                        Historikk
-                      </h3>
-                      <List>
-                        {Object.keys(navigation_history)
-                          .reverse()
-                          .map((item, index) => {
-                            const node = navigation_history[item];
-                            if (
-                              currentKartlag &&
-                              (node === currentKartlag ||
-                                node.meta.kode === currentKartlag.kode)
-                            )
-                              return "";
-                            if (node.meta.url) {
-                              return (
-                                <HistorikkListeElement
-                                  meta={node.meta}
-                                  activateLayerFromHistory={
-                                    activateLayerFromHistory
-                                  }
-                                  node={node}
-                                  history={history}
-                                  key={index + node.meta.kode}
-                                />
-                              );
-                            }
-                            return null;
-                          })}
-                      </List>
-                    </div>
-                  )}
+                  <HistoryLayers keys={keys} props={this.props} />
                 </div>
               </>
             )}
