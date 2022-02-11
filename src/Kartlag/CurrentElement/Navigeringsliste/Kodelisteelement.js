@@ -1,20 +1,20 @@
 import React, { useState } from "react";
-import språk from "../../Funksjoner/språk";
-import isItalics from "../../Funksjoner/isItalics";
-import Bildeavatar from "../../GjenbruksElement/Bildeavatar";
+import språk from "../../../Funksjoner/språk";
+import isItalics from "../../../Funksjoner/isItalics";
 import VolumIndikator from "./VolumIndikator";
-import "../../style/NavMenu.scss";
-import VelgFargeboks from "../../Kartlag/AktiveKartlag/EkspandertMeny/FellesElementer/VelgFargeBoks";
+import "../../../style/NavMenu.scss";
+import FargeVelger from "../../../Kartlag/AktiveKartlag/EkspandertMeny/FellesElementer/FargeVelger";
+import VelgFargeboks from "../../../Kartlag/AktiveKartlag/EkspandertMeny/FellesElementer/VelgFargeBoks";
+import ArrowButton from "../../../GjenbruksElement/ArrowButton";
+import Bildeavatar from "../../../GjenbruksElement/Bildeavatar";
+import constants from "../../../constants";
+import { getInterval } from "../../../helpers";
+import { IconButton } from "@material-ui/core";
 import {
   ChevronRight,
   VisibilityOutlined,
   VisibilityOffOutlined
 } from "@material-ui/icons";
-import { IconButton } from "@material-ui/core";
-import constants from "../../constants";
-import { getInterval } from "../../helpers";
-import FargeVelger from "../../Kartlag/AktiveKartlag/EkspandertMeny/FellesElementer/FargeVelger";
-import ArrowButton from "../../GjenbruksElement/ArrowButton";
 
 const Kodelisteelement = ({
   meta,

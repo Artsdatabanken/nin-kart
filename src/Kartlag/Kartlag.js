@@ -4,7 +4,7 @@ import AktivtKartlagElement from "./AktiveKartlag/AktivtKartlagElement";
 import HistorikkListeElement from "./Historikk/HistorikkListeElement";
 import { Favorite, History } from "@material-ui/icons";
 import språk from "../Funksjoner/språk";
-import Meny from "../Navigering/Meny";
+import CurrentElement from "./CurrentElement/CurrentElement";
 import BackToStart from "./BackToStart";
 import SidebarHeader from "./SidebarHeader";
 import MobileOpenButton from "./MobileOpenButton";
@@ -82,9 +82,10 @@ class Kartlag extends React.Component {
 
                 <div
                   className={
-                    this.state.showKartlag
-                      ? "kartlag sidebar kartlag_content_open "
-                      : "kartlag sidebar kartlag_content_closed "
+                    "kartlag sidebar " +
+                    (this.state.showKartlag
+                      ? "kartlag_content_open"
+                      : "kartlag_content_closed")
                   }
                 >
                   <SidebarHeader />
@@ -94,7 +95,7 @@ class Kartlag extends React.Component {
                     onNavigate={this.props.onNavigate}
                   />
 
-                  <Meny
+                  <CurrentElement
                     aktiveLag={this.props.aktiveLag}
                     lokalitetdata={this.props.lokalitetdata}
                     lokalitet={this.props.lokalitet}

@@ -1,5 +1,5 @@
 import React from "react";
-import { SettingsContext } from "../../SettingsContext";
+import { SettingsContext } from "../../../SettingsContext";
 import Kodelisteelement from "./Kodelisteelement";
 import getKey from "./NavigeringslisteFunksjoner/getKey";
 
@@ -7,9 +7,9 @@ class Navigeringsliste extends React.Component {
   state = {
     items_to_load: 150
   };
-  /* 
-  
-  Denne komponenten ligger i undermenyen. 
+  /*
+
+  Denne komponenten ligger i undermenyen.
   F.eks på landskap ligger den under fanen landskap.
   Med andre ord - den bor alltid nedover i hierarkiet, ikke oppover.
 

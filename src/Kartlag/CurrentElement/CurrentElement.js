@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import CurrentLayerSettings from "../AktiveKartlag/EkspandertMeny/CurrentLayerSettings";
 import Overordnet from "./Navigeringsliste/OverordnetMedEkspander";
 import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
-import språk from "../Funksjoner/språk";
+import språk from "../../Funksjoner/språk";
 import { Tooltip } from "@material-ui/core";
 import {
   ArrowBack,
@@ -11,9 +12,8 @@ import {
   Settings,
   Info
 } from "@material-ui/icons";
-import CurrentLayerSettings from "../Kartlag/AktiveKartlag/EkspandertMeny/CurrentLayerSettings";
 
-const Meny = ({
+const CurrentElement = ({
   aktiveLag,
   meta,
   onNavigate,
@@ -149,4 +149,4 @@ Sidebarmeny-navigeringen.
   );
 };
 
-export default Meny;
+export default CurrentElement;
