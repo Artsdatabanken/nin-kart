@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowBack } from "@material-ui/icons";
+import { ChevronRight, Home } from "@material-ui/icons";
 import MainSectionExpand from "../GjenbruksElement/MainSectionExpand";
 import BackButton from "./Buttons/BackButton";
 import getTitle from "../Funksjoner/getTitle";
@@ -13,22 +13,39 @@ const BackToStart = ({ isstartpage, onNavigate, meta }) => {
     backurl = meta.overordnet[0].url;
   }
   return (
-    <MainSectionExpand icon={""} title={"Breadcrumbs"}>
-      <ul className="kartlag_list">
+    <div className="section">
+      <ul className="breadcrumbs">
         <li>
-          <BackButton onNavigate={onNavigate} backurl={"/kart"} />
-          Tilbake til start
+          <button
+            className="breadcrumb"
+            onClick={() => {
+              onNavigate("/kart");
+            }}
+          >
+            <Home />
+          </button>
         </li>
         {meta.overordnet.reverse().map(el => {
           return (
             <li>
-              <BackButton onNavigate={onNavigate} backurl={el.url} />
-              {språk(el.tittel)}
+              <ChevronRight />
+              <button
+                className="breadcrumb"
+                onClick={() => {
+                  onNavigate(el.url);
+                }}
+              >
+                {språk(el.tittel)}
+              </button>
             </li>
           );
         })}
+        <li>
+          <ChevronRight />
+          <span className="breadcrumb currentelement">Nåværende kartlag</span>
+        </li>
       </ul>
-    </MainSectionExpand>
+    </div>
   );
 };
 
