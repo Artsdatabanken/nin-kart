@@ -1,7 +1,7 @@
 import React from "react";
-import { SettingsContext } from "../../../SettingsContext";
+import { SettingsContext } from "../../SettingsContext";
 import MapLayerElement from "./MapLayerElement";
-import getKey from "../../../Funksjoner/getKey";
+import getKey from "../../Funksjoner/getKey";
 
 class Navigeringsliste extends React.Component {
   state = {
@@ -10,7 +10,6 @@ class Navigeringsliste extends React.Component {
   render() {
     const {
       parentkode,
-      apidata,
       metadata,
       opplyst,
       onUpdateMetaProp,

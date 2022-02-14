@@ -1,5 +1,5 @@
 import React from "react";
-import Navigeringsliste from "../../../Kartlag/CurrentElement/Navigeringsliste/Navigeringsliste";
+import Navigeringsliste from "../../../Kartlag/CurrentElement/Navigeringsliste";
 import SectionExpand from "../../../GjenbruksElement/SectionExpand";
 import { titler } from "./Titler";
 const Relasjon = props => {
