@@ -6,6 +6,7 @@ import SettingsButton from "../Buttons/SettingsButton";
 import InfoButton from "../Buttons/InfoButton";
 import BackButton from "../Buttons/BackButton";
 import MainSectionExpand from "../../GjenbruksElement/MainSectionExpand";
+import getTitle from "../../Funksjoner/getTitle";
 import språk from "../../Funksjoner/språk";
 import { Layers } from "@material-ui/icons";
 
@@ -34,58 +35,55 @@ Sidebarmeny-navigeringen.
   if (meta.overordnet !== undefined && meta.overordnet[0] !== undefined) {
     backurl = meta.overordnet[0].url;
   }
-  let title = "";
-  if (meta.tittel) {
-    title = språk(meta.tittel);
-    if (title === "undefined" && meta.tittel.sn) {
-      title = meta.tittel.sn;
-    }
-  }
-  return (
-    <MainSectionExpand
-      icon={<Layers />}
-      title={isstartpage ? "Velg kartlag" : "Nåværende kartlag"}
-    >
-      {!isstartpage && (
-        <>
-          <div className="kartlag_element_header">
-            <BackButton onNavigate={onNavigate} backurl={backurl} />
-            <h4>{title}</h4>
-            <div className="kartlag_element_buttons">
-              <InfoButton handleShowInfo={handleShowInfo} showInfo={showInfo} />
 
+  return (
+    <>
+      <MainSectionExpand
+        icon={<Layers />}
+        title={isstartpage ? "Velg kartlag" : "Nåværende kartlag"}
+      >
+        {!isstartpage && (
+          <>
+            <div className="kartlag_element_header">
               <SettingsButton
                 expandedSettings={expandedSettings}
                 setExpandedSettings={setExpandedSettings}
                 onSetAktivTab={onSetAktivTab}
               />
+              <h4>{getTitle(meta)}</h4>
+              <div className="kartlag_element_buttons">
+                <InfoButton
+                  handleShowInfo={handleShowInfo}
+                  showInfo={showInfo}
+                />
 
-              <FavoriteButton
-                onToggleLayer={onToggleLayer}
-                turnedOn={aktiveLag[meta.kode]}
-              />
+                <FavoriteButton
+                  onToggleLayer={onToggleLayer}
+                  turnedOn={aktiveLag[meta.kode]}
+                />
+              </div>
             </div>
-          </div>
-          {expandedSettings && (
-            <CurrentLayerSettings
-              meta={meta}
-              onUpdateLayerProp={onUpdateLayerProp}
-            />
-          )}
-        </>
-      )}
+            {expandedSettings && (
+              <CurrentLayerSettings
+                meta={meta}
+                onUpdateLayerProp={onUpdateLayerProp}
+              />
+            )}
+          </>
+        )}
 
-      <Navigeringsliste
-        parentkode={meta ? meta.kode : "kode"}
-        metadata={meta && meta.barn}
-        onNavigate={onNavigate}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        opplyst={opplyst}
-        onUpdateMetaProp={onUpdateMetaProp}
-        onUpdateLayerProp={onUpdateLayerProp}
-      />
-    </MainSectionExpand>
+        <Navigeringsliste
+          parentkode={meta ? meta.kode : "kode"}
+          metadata={meta && meta.barn}
+          onNavigate={onNavigate}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          opplyst={opplyst}
+          onUpdateMetaProp={onUpdateMetaProp}
+          onUpdateLayerProp={onUpdateLayerProp}
+        />
+      </MainSectionExpand>
+    </>
   );
 };
 

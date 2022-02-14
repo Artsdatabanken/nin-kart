@@ -48,6 +48,7 @@ class Kartlag extends React.Component {
           <BackToStart
             isstartpage={isstartpage}
             onNavigate={this.props.onNavigate}
+            meta={this.props.meta}
           />
 
           <CurrentElement

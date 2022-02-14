@@ -1,22 +1,34 @@
 import React from "react";
 import { ArrowBack } from "@material-ui/icons";
-const BackToStart = ({ isstartpage, onNavigate }) => {
-  if (isstartpage) return null;
+import MainSectionExpand from "../GjenbruksElement/MainSectionExpand";
+import BackButton from "./Buttons/BackButton";
+import getTitle from "../Funksjoner/getTitle";
+import språk from "../Funksjoner/språk";
 
+const BackToStart = ({ isstartpage, onNavigate, meta }) => {
+  if (isstartpage) return null;
+  if (!meta) return null;
+  let backurl = "/start";
+  if (meta.overordnet !== undefined && meta.overordnet[0] !== undefined) {
+    backurl = meta.overordnet[0].url;
+  }
   return (
-    <div className="section">
-      <button
-        className="kartlag_element_backbutton"
-        onClick={() => {
-          onNavigate("/kart");
-        }}
-      >
-        <div className="backicon">
-          <ArrowBack />
-        </div>
-        <span className="kartlag_element_text">Tilbake til start</span>
-      </button>
-    </div>
+    <MainSectionExpand icon={""} title={"Breadcrumbs"}>
+      <ul className="kartlag_list">
+        <li>
+          <BackButton onNavigate={onNavigate} backurl={"/kart"} />
+          Tilbake til start
+        </li>
+        {meta.overordnet.reverse().map(el => {
+          return (
+            <li>
+              <BackButton onNavigate={onNavigate} backurl={el.url} />
+              {språk(el.tittel)}
+            </li>
+          );
+        })}
+      </ul>
+    </MainSectionExpand>
   );
 };
 

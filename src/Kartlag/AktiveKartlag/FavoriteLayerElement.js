@@ -30,7 +30,14 @@ const FavoriteLayerElement = ({
     <li>
       <span className="layer_list_element">
         {kode === "bakgrunnskart" ? (
-          <LayerButton icon={<Wallpaper />} onClick={false} />
+          <>
+            <LayerButton
+              icon={<Settings />}
+              onClick={handleExpandClick}
+              title={"Åpne innstillinger"}
+            />
+            {false && <LayerButton icon={<Wallpaper />} onClick={false} />}
+          </>
         ) : (
           <FavoriteButton
             onToggleLayer={onToggleLayer}
@@ -48,14 +55,6 @@ const FavoriteLayerElement = ({
           visKode={false}
           meta={kartlag}
         />
-
-        {kode === "bakgrunnskart" && (
-          <LayerButton
-            icon={<Settings />}
-            onClick={handleExpandClick}
-            title={"Åpne innstillinger"}
-          />
-        )}
 
         <HideLayerButton
           erSynlig={kartlag.erSynlig}
