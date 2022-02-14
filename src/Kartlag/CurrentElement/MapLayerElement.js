@@ -26,8 +26,8 @@ const MapLayerElement = ({
   const editColorButton = () => <VelgFargeboks farge={farge} kode={kode} />;
 
   return (
-    <div className="map_layer_navigation_container">
-      <div className="map_layer_navigation">
+    <li className="layer_list_element_container">
+      <span className="layer_list_element">
         <ArrowButton
           title={editColorButton()}
           expanded={showEditColor}
@@ -49,7 +49,7 @@ const MapLayerElement = ({
           onUpdateLayerProp={onUpdateLayerProp}
           kode={kode}
         />
-      </div>
+      </span>
 
       {showEditColor && (
         <div class="subsection subexpand">
@@ -61,7 +61,7 @@ const MapLayerElement = ({
           />
         </div>
       )}
-    </div>
+    </li>
   );
 };
 

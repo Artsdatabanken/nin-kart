@@ -6,6 +6,31 @@ Avoiding flex to ensure it works on all types of devices, IE included.
 Even tho we don't a of now support IE X)
 
 */
+.kartlag_list {
+  display: block;
+  padding: 2px;
+}
+
+.layer_list_element {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 2px;
+}
+
+.layer_list_element .arrow_button {
+  margin: 2px;
+}
+
+.nav_menu_button .MuiSvgIcon-root {
+  padding-top: 3px;
+}
+
+.maplayerbutton {
+  background: white;
+  margin: 2px;
+  border-radius: 2px;
+}
 
 .kartlag_header {
   position: relative;
@@ -58,6 +83,7 @@ Even tho we don't a of now support IE X)
   margin-right: 2px;
   padding-top: 7px;
   border-radius: 50%;
+  flex: none;
 }
 
 .layerbutton:hover {
@@ -143,15 +169,6 @@ Even tho we don't a of now support IE X)
 }
 
 /* icons */
-
-.kartlag_list li svg {
-  padding: 5px;
-  vertical-align: top;
-}
-
-.kartlag_list li svg:last-child {
-  padding-right: 0px;
-}
 
 .remove_icon {
   color: $red-color;

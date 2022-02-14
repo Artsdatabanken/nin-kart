@@ -23,7 +23,7 @@ class Navigeringsliste extends React.Component {
     return (
       <SettingsContext.Consumer>
         {context => (
-          <>
+          <ul className="kartlag_list">
             {Navigeringsliste.sorter(metadata, context.sorterPåKode).map(
               (metaChild, i) => {
                 if (i > this.state.items_to_load) return null;
@@ -47,7 +47,7 @@ class Navigeringsliste extends React.Component {
                 );
               }
             )}
-          </>
+          </ul>
         )}
       </SettingsContext.Consumer>
     );

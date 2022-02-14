@@ -61,9 +61,8 @@ Sidebarmeny-navigeringen.
               />
 
               <FavoriteButton
-                aktiveLag={aktiveLag}
-                meta={meta}
                 onToggleLayer={onToggleLayer}
+                turnedOn={aktiveLag[meta.kode]}
               />
             </div>
           </div>

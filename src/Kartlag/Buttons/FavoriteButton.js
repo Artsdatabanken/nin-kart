@@ -1,19 +1,17 @@
 import React from "react";
 import LayerButton from "./LayerButton";
-import { Favorite, FavoriteBorder } from "@material-ui/icons";
-const FavoriteButton = ({ onToggleLayer, meta, aktiveLag }) => {
+import { Favorite, FavoriteBorder, Close } from "@material-ui/icons";
+const FavoriteButton = ({ onToggleLayer, turnedOn, removeFave }) => {
+  let icon = turnedOn ? <Favorite /> : <FavoriteBorder />;
+  icon = removeFave ? <Close /> : icon;
   return (
     <LayerButton
       onClick={e => {
         onToggleLayer();
         e.stopPropagation();
       }}
-      icon={aktiveLag[meta.kode] ? <Favorite /> : <FavoriteBorder />}
-      title={
-        aktiveLag[meta.kode]
-          ? "Fjern fra mine kartlag"
-          : "Legg til mine kartlag"
-      }
+      icon={icon}
+      title={turnedOn ? "Fjern fra mine kartlag" : "Legg til mine kartlag"}
     />
   );
 };
