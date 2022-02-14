@@ -1,6 +1,6 @@
 import React from "react";
-
 import HistorikkListeElement from "./Historikk/HistorikkListeElement";
+import MainSectionExpand from "../GjenbruksElement/MainSectionExpand";
 import { History } from "@material-ui/icons";
 import { List } from "@material-ui/core";
 const HistoryLayers = ({ keys, props }) => {
@@ -12,11 +12,7 @@ const HistoryLayers = ({ keys, props }) => {
   return (
     <>
       {Object.keys(navigation_history).length > 1 && (
-        <div className="section">
-          <h3 className="kartlag_header">
-            <History />
-            Historikk
-          </h3>
+        <MainSectionExpand icon={<History />} title={"Historikk"}>
           <List>
             {Object.keys(navigation_history)
               .reverse()
@@ -42,7 +38,7 @@ const HistoryLayers = ({ keys, props }) => {
                 return null;
               })}
           </List>
-        </div>
+        </MainSectionExpand>
       )}
     </>
   );

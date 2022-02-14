@@ -5,9 +5,9 @@ import FavoriteButton from "../Buttons/FavoriteButton";
 import SettingsButton from "../Buttons/SettingsButton";
 import InfoButton from "../Buttons/InfoButton";
 import BackButton from "../Buttons/BackButton";
+import MainSectionExpand from "../../GjenbruksElement/MainSectionExpand";
 import språk from "../../Funksjoner/språk";
-import { Tooltip } from "@material-ui/core";
-import { Layers, Info } from "@material-ui/icons";
+import { Layers } from "@material-ui/icons";
 
 const CurrentElement = ({
   aktiveLag,
@@ -28,7 +28,6 @@ const CurrentElement = ({
 Intern navigasjon innad på en side.
 Sidebarmeny-navigeringen.
   */
-  const [expanded, setExpanded] = useState(false);
   const [expandedSettings, setExpandedSettings] = useState(false);
   if (!meta) return null;
   let backurl = "/start";
@@ -43,11 +42,10 @@ Sidebarmeny-navigeringen.
     }
   }
   return (
-    <div className="section">
-      <h3 className="kartlag_header">
-        <Layers />
-        {isstartpage ? "Velg kartlag" : "Nåværende kartlag"}
-      </h3>
+    <MainSectionExpand
+      icon={<Layers />}
+      title={isstartpage ? "Velg kartlag" : "Nåværende kartlag"}
+    >
       {!isstartpage && (
         <>
           <div className="kartlag_element_header">
@@ -80,7 +78,7 @@ Sidebarmeny-navigeringen.
       <Navigeringsliste
         parentkode={meta ? meta.kode : "kode"}
         metadata={meta && meta.barn}
-        setExpanded={setExpanded}
+        setExpanded={true}
         onNavigate={onNavigate}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
@@ -88,7 +86,7 @@ Sidebarmeny-navigeringen.
         onUpdateMetaProp={onUpdateMetaProp}
         onUpdateLayerProp={onUpdateLayerProp}
       />
-    </div>
+    </MainSectionExpand>
   );
 };
 

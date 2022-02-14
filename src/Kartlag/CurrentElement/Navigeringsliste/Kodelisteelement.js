@@ -24,7 +24,6 @@ const Kodelisteelement = ({
   onMouseLeave,
   areal,
   størsteAreal,
-  setExpanded,
   onUpdateLayerProp
 }) => {
   const [showEditColor, setShowEditColor] = useState(false);
@@ -56,7 +55,6 @@ const Kodelisteelement = ({
         <button
           key={kode}
           onClick={() => {
-            setExpanded(false);
             onNavigate(url);
           }}
           onMouseEnter={() => onMouseEnter && onMouseEnter({ kode, url })}
