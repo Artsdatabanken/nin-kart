@@ -1,4 +1,4 @@
-import språk from "../../../Funksjoner/språk";
+import språk from "../../../../Funksjoner/språk";
 
 function getKey(node, sorterPåKode) {
   if (node.sortering) return node.sortering;
@@ -6,7 +6,7 @@ function getKey(node, sorterPåKode) {
     return node.kode
       .replace("+", "Z")
       .split(/-/)
-      .map((e) => e.padStart(5, "0"));
+      .map(e => e.padStart(5, "0"));
 
   return språk(node.tittel);
 }

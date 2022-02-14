@@ -8,8 +8,7 @@ const EkspandertUnderMeny = ({
   navhist,
   bbox,
   activateLayerFromHistory,
-  is_current_object,
-  erLokalitet,
+  is_current_object
 }) => {
   return (
     <div className="kartlag_submeny">
@@ -17,13 +16,13 @@ const EkspandertUnderMeny = ({
         <>
           <button
             className="invisible_icon_button"
-            onClick={(event) => {
+            onClick={event => {
               onFitBounds(bbox);
             }}
           >
             Zoom til <OpenInNew />
           </button>
-          {is_current_object ? (
+          {is_current_object && (
             <button
               className="invisible_icon_button"
               onClick={() => {
@@ -32,20 +31,6 @@ const EkspandertUnderMeny = ({
             >
               Husk kartlag <Add />
             </button>
-          ) : (
-            <>
-              {!erLokalitet && (
-                <button
-                  className="invisible_icon_button remove_icon"
-                  onClick={() => {
-                    // console.log("gonna delete ", kode);
-                    onRemoveSelectedLayer(kode);
-                  }}
-                >
-                  Fjern <Close />
-                </button>
-              )}
-            </>
           )}
         </>
       )}

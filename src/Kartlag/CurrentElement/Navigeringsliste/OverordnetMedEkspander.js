@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import språk from "../../Funksjoner/språk";
+import språk from "../../../Funksjoner/språk";
 import { ListItem, ListItemAvatar, ListItemText } from "@material-ui/core";
 import { AccountTree } from "@material-ui/icons";
 
@@ -18,7 +18,7 @@ const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
         <ListItemText
           primary={items
             .slice(1, items.length)
-            .map((item) => item.tittel.nb)
+            .map(item => item.tittel.nb)
             .join(" ➝ ")}
         ></ListItemText>
       </ListItem>
@@ -30,7 +30,7 @@ const Overordnet = ({ overordnet, onNavigate, setExpanded }) => {
       <ListItem
         key={i}
         button
-        onClick={(e) => {
+        onClick={e => {
           setExpanded(false);
           onNavigate(item.url);
         }}

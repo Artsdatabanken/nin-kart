@@ -28,22 +28,6 @@ export default function oppdaterLagProperties(
   parent,
   elementType
 ) {
-  if (elementType === "lokalitetdata") {
-    // Scenario: Lokalitetsdata har litt annet format, og må hentes ut på annet vis
-    let lokalitetdata = parent.state.lokalitetdata;
-    if (!lokalitetdata[layer]) {
-      let barneliste = lokalitetdata[childLayer(layer)].barn;
-      barneliste = childElement(barneliste, key, value, layer);
-      console.log("Jo, travis, vi bruker", barneliste); // hack
-    } else {
-      let node = lokalitetdata[layer];
-      node = setValue(node, key, value);
-      console.log("Jo, travis, vi bruker", node); // hack
-    }
-
-    return lokalitetdata;
-  }
-
   const layer_input = layer;
   // Scenario A: Laget har ingen egenfarge, men bygges opp av underelementer
   // Scenario B: Laget har ingen underelementer, men sin egen farge

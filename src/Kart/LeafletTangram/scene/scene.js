@@ -26,16 +26,13 @@ function createScene(props, retry) {
 
 function updateScene(config, props) {
   if (config) {
-    let lokalitetdata = props.lokalitetdata || null;
     let bakgrunn = props.aktiveLag.bakgrunnskart;
     bakgrunn = bakgrunn.kart.format[bakgrunn.kart.aktivtFormat];
     config.scene.background.color = bakgrunn.land_farge || "#f2f2f2";
     config.layers = {};
     const viserKatalog = !!props.meta; // meta = true or meta = false , never meta = null
     lagNåværendeLag(config, props);
-    if (lokalitetdata !== null) {
-      lagAktiveLag(lokalitetdata, true, props.opplyst, config);
-    }
+
     lagAktiveLag(props.aktiveLag, viserKatalog, props.opplyst, config);
     lagTemp(config);
     //  console.log(config);

@@ -7,16 +7,36 @@ Even tho we don't a of now support IE X)
 
 */
 
+.kartlag_header {
+  position: relative;
+  height: 24px;
+}
+
+.kartlag_header button {
+  position: absolute;
+  right: 2px;
+  top: -3px;
+}
+
+.kartlag .subexpand {
+  margin: 0;
+  border-radius: 0;
+}
+
+.kartlag_element_backbutton,
 .kartlag_element_header {
   min-height: 50px;
-  /*background: $brightest-nin;*/
-  background: transparent;
   display: flex;
   width: 100%;
   padding: 2px;
 }
 
-.kartlag_element_header span {
+.kartlag_element_backbutton {
+  background: transparent;
+}
+
+.kartlag_element_backbutton span,
+.kartlag_element_header h4 {
   flex: 2;
   display: block;
   margin: auto;
@@ -24,23 +44,32 @@ Even tho we don't a of now support IE X)
   font-size: 12pt;
 }
 
-.kartlag_element_header .backicon,
-.kartlag_element_header button {
+.kartlag_element_backbutton .backicon,
+.layerbutton {
   margin-top: 0;
-  height: 50px;
+  height: 47px;
   border: 0;
-  margin-left: 1px;
-  width: 56px;
+  margin-left: 2px;
+  width: 50px;
   padding: 0;
   padding-top: 0px;
-  background: none;
+  background: white;
   line-height: 50px;
-  margin-right: 1px;
+  margin-right: 2px;
   padding-top: 7px;
+  border-radius: 50%;
+}
+
+.layerbutton:hover {
+  background: grey;
+}
+
+.kartlag_element_backbutton .backicon {
+  background: transparent;
 }
 
 .kartlag_element_header .backicon svg,
-.kartlag_element_header button svg {
+.layerbutton svg {
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -147,7 +176,6 @@ Even tho we don't a of now support IE X)
 }
 
 .kartlag_submeny {
-  text-align: center;
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -215,18 +243,14 @@ Even tho we don't a of now support IE X)
 /* KILDER */
 .sidebar .submeny_container {
   width: 100%;
-  padding: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 5px;
   margin-bottom: 5px;
-  text-align: center;
 }
 
-.map_layer_navigation .arrow_button {
+.arrow_button {
   display: flex;
   flex-direction: row;
-  padding: 10px 0;
-  margin-left: 10px;
-  background-color: $panel-section-sub-bg;
-  border-radius: 5px;
+  padding: 13px 0;
+  margin-left: 4px;
+  justify-content: center;
 }

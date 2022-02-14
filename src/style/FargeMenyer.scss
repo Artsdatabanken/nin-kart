@@ -1,5 +1,5 @@
 @import "./GraphicProfile.scss";
-/* 
+/*
 Dumped from old version until i bother fixing it
 */
 .colorSlider,
@@ -146,7 +146,9 @@ select {
   width: 20px;
   height: 20px;
   display: inline-block;
-  margin: 0 4px 0 10px;
+  margin: 0 -1px 0 6px;
+  flex: none;
+  border-radius: 50%;
 }
 
 .title_and_subtitle_container {

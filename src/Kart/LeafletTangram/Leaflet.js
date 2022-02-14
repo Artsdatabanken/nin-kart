@@ -127,7 +127,6 @@ class LeafletTangram extends React.Component {
   // Update and change detection
   erEndret(prevProps) {
     if (this.props.aktiveLag !== prevProps.aktiveLag) return true;
-    if (this.props.lokalitetdata !== prevProps.lokalitetdata) return true;
     if (this.props.meta !== prevProps.meta) return true;
     if (this.props.opplyst !== prevProps.opplyst) return true;
     if (this.props.show_current !== prevProps.show_current) return true;

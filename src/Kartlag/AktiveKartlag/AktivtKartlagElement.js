@@ -16,6 +16,7 @@ import {
 import språk from "../../Funksjoner/språk";
 import { useHistory } from "react-router-dom";
 import SectionExpand from "../../GjenbruksElement/SectionExpand";
+import LayerButton from "../Buttons/LayerButton";
 
 const AktivtKartlagElement = ({ kartlag, onUpdateLayerProp }) => {
   const [expandedSub, setExpandedSub] = useState(false);
@@ -36,37 +37,39 @@ const AktivtKartlagElement = ({ kartlag, onUpdateLayerProp }) => {
       >
         <ListItemText primary={språk(kartlag.tittel)} />
         <ListItemSecondaryAction style={{ cursor: "pointer" }}>
-          <button
-            className="kartlag_element_buttons"
+          <LayerButton
+            icon={
+              kartlag.erSynlig ? (
+                <VisibilityOutlined />
+              ) : (
+                <VisibilityOffOutlined />
+              )
+            }
             onClick={e => {
               onUpdateLayerProp(kode, "erSynlig", !kartlag.erSynlig);
               e.stopPropagation();
             }}
-          >
-            {kartlag.erSynlig ? (
-              <VisibilityOutlined style={{ color: "#777" }} />
-            ) : (
-              <VisibilityOffOutlined style={{ color: "#777" }} />
-            )}
-          </button>
+            title={"Vis/Skjul"}
+          />
 
-          {kode !== "bakgrunnskart" ? (
-            <button>
-              <Close />
-            </button>
-          ) : (
-            <button
-              className="kartlag_element_buttons"
+          {kode === "bakgrunnskart" ? (
+            <LayerButton
+              icon={<Settings />}
               onClick={handleExpandClick}
-            >
-              <Settings />
-            </button>
+              title={"Åpne innstillinger"}
+            />
+          ) : (
+            <LayerButton
+              icon={<Close />}
+              onClick={handleExpandClick}
+              title={"Fjern fra favoritter"}
+            />
           )}
         </ListItemSecondaryAction>
       </ListItem>
 
       {expandedSub && (
-        <div className="subsection">
+        <div className="subsection subexpand">
           <h4>Innstillinger</h4>
           {kode === "bakgrunnskart" && (
             <>
