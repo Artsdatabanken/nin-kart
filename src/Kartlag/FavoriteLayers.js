@@ -1,5 +1,5 @@
 import React from "react";
-import AktivtKartlagElement from "./AktiveKartlag/AktivtKartlagElement";
+import FavoriteLayerElement from "./AktiveKartlag/FavoriteLayerElement";
 import MainSectionExpand from "../GjenbruksElement/MainSectionExpand";
 import { List } from "@material-ui/core";
 import { Favorite } from "@material-ui/icons";
@@ -11,7 +11,7 @@ const FavoriteLayers = ({ keys, koder, props }) => {
           {keys.reverse().map(fkode => {
             const kartlag = koder[fkode];
             return (
-              <AktivtKartlagElement
+              <FavoriteLayerElement
                 kartlag={kartlag}
                 key={fkode}
                 props={props}
