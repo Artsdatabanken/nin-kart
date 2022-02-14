@@ -1,6 +1,6 @@
 import React from "react";
 import språk from "../../../../Funksjoner/språk";
-import kodeSuffix from "./NavigeringslisteFunksjoner/kodeSuffix";
+import kodeSuffix from "../../../../Funksjoner/kodeSuffix";
 import "../../../../style/NavMenu.scss";
 import config from "../../../../Funksjoner/config";
 import { getInterval } from "../../../../helpers";

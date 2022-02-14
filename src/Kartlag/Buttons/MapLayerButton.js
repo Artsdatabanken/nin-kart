@@ -3,7 +3,6 @@ import språk from "../../Funksjoner/språk";
 import { getInterval } from "../../helpers";
 import isItalics from "../../Funksjoner/isItalics";
 import constants from "../../constants";
-//import VolumIndikator from "./VolumIndikator";
 import { ChevronRight } from "@material-ui/icons";
 const MapLayerButton = ({
   onNavigate,
@@ -30,9 +29,6 @@ const MapLayerButton = ({
       onMouseLeave={() => onMouseLeave && onMouseLeave()}
       className="nav_menu_button"
     >
-      {
-        ///<VolumIndikator størsteAreal={størsteAreal} areal={areal} />
-      }
       <div
         className={
           "nav_text " + (isItalics(meta["nivå"] || null, sn) && "italics")

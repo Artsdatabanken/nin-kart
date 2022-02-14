@@ -6,15 +6,13 @@ import ArrowButton from "../../../GjenbruksElement/ArrowButton";
 import HideLayerButton from "../../Buttons/HideLayerButton";
 import MapLayerButton from "../../Buttons/MapLayerButton";
 
-const Kodelisteelement = ({
+const MapLayerElement = ({
   meta,
   visKode,
   onNavigate,
   onMouseEnter,
   onMouseLeave,
   onUpdateLayerProp
-  //  areal,
-  //  størsteAreal,
 }) => {
   const [showEditColor, setShowEditColor] = useState(false);
 
@@ -44,8 +42,6 @@ const Kodelisteelement = ({
           kode={kode}
           visKode={visKode}
           meta={meta}
-          //  areal,
-          //  størsteAreal,
         />
 
         <HideLayerButton
@@ -69,4 +65,4 @@ const Kodelisteelement = ({
   );
 };
 
-export default Kodelisteelement;
+export default MapLayerElement;

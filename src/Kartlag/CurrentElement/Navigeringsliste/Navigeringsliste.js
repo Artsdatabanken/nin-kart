@@ -1,23 +1,15 @@
 import React from "react";
 import { SettingsContext } from "../../../SettingsContext";
-import Kodelisteelement from "./Kodelisteelement";
-import getKey from "./NavigeringslisteFunksjoner/getKey";
+import MapLayerElement from "./MapLayerElement";
+import getKey from "../../../Funksjoner/getKey";
 
 class Navigeringsliste extends React.Component {
   state = {
     items_to_load: 150
   };
-  /*
-
-  Denne komponenten ligger i undermenyen.
-  F.eks på landskap ligger den under fanen landskap.
-  Med andre ord - den bor alltid nedover i hierarkiet, ikke oppover.
-
-  */
   render() {
     const {
       parentkode,
-      størsteAreal,
       apidata,
       metadata,
       opplyst,
@@ -37,25 +29,14 @@ class Navigeringsliste extends React.Component {
               (metaChild, i) => {
                 if (i > this.state.items_to_load) return null;
                 const { kode, skjul } = metaChild;
-                const apibarn = apidata
-                  ? apidata[
-                      apidata
-                        .map(apiItem => {
-                          return apiItem.kode;
-                        })
-                        .indexOf(kode.toLowerCase())
-                    ] || {}
-                  : {};
                 if (skjul) return null;
 
                 return (
-                  <Kodelisteelement
+                  <MapLayerElement
                     key={metaChild.kode}
                     setExpanded={setExpanded}
                     parentkode={parentkode}
                     meta={metaChild}
-                    størsteAreal={størsteAreal}
-                    areal={apibarn.areal}
                     visKode={context.visKoder}
                     onNavigate={onNavigate}
                     onMouseEnter={onMouseEnter}
