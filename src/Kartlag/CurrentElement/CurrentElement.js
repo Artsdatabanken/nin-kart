@@ -75,10 +75,10 @@ Sidebarmeny-navigeringen.
           )}
         </>
       )}
+
       <Navigeringsliste
         parentkode={meta ? meta.kode : "kode"}
         metadata={meta && meta.barn}
-        setExpanded={true}
         onNavigate={onNavigate}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}

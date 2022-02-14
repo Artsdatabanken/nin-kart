@@ -130,7 +130,6 @@ class App extends React.Component {
                       aktivTab={aktivTab}
                       show_current={this.state.showCurrent}
                       handleShowCurrent={this.handleShowCurrent}
-                      hidden={true /*aktivTab === "kartlag" && true*/}
                       aktiveLag={this.state.aktiveLag}
                       onUpdateLayerProp={this.handleUpdateLayerProp}
                       onRemoveSelectedLayer={this.handleRemoveSelectedLayer}

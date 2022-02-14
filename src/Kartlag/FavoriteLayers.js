@@ -3,7 +3,7 @@ import AktivtKartlagElement from "./AktiveKartlag/AktivtKartlagElement";
 import MainSectionExpand from "../GjenbruksElement/MainSectionExpand";
 import { List } from "@material-ui/core";
 import { Favorite } from "@material-ui/icons";
-const FavoriteLayers = ({ visKoder, keys, koder, props }) => {
+const FavoriteLayers = ({ keys, koder, props }) => {
   return (
     <MainSectionExpand icon={<Favorite />} title={"Mine kartlag"}>
       <List>
@@ -15,7 +15,6 @@ const FavoriteLayers = ({ visKoder, keys, koder, props }) => {
                 kartlag={kartlag}
                 key={fkode}
                 props={props}
-                visKoder={visKoder}
                 onFitBounds={props.onFitBounds}
                 onUpdateLayerProp={props.onUpdateLayerProp}
                 meta={props.meta}

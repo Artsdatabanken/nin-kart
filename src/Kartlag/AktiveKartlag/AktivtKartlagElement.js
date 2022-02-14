@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TemaMeny from "./EkspandertMeny/Visualisering/TemaMeny/TemaMeny";
 import BakgrunnInnstillinger from "./EkspandertMeny/Visualisering/BgInnstillinger/BakgrunnInnstillinger";
 import FargeVelger from "./EkspandertMeny/FellesElementer/FargeVelger";
+import HideLayerButton from "../Buttons/HideLayerButton";
 import {
   ListItem,
   ListItemSecondaryAction,
@@ -50,6 +51,11 @@ const AktivtKartlagElement = ({ kartlag, onUpdateLayerProp }) => {
               e.stopPropagation();
             }}
             title={"Vis/Skjul"}
+          />
+          <HideLayerButton
+            erSynlig={kartlag.erSynlig}
+            onUpdateLayerProp={onUpdateLayerProp}
+            kode={kode}
           />
 
           {kode === "bakgrunnskart" ? (

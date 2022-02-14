@@ -1,5 +1,4 @@
 import React from "react";
-import { SettingsContext } from "../SettingsContext";
 import CurrentElement from "./CurrentElement/CurrentElement";
 import FavoriteLayers from "./FavoriteLayers";
 import BackToStart from "./BackToStart";
@@ -14,11 +13,7 @@ class Kartlag extends React.Component {
   render() {
     let koder = this.props.aktiveLag;
     const keys = Object.keys(koder);
-    const { onUpdateLayerProp, hidden } = this.props;
-
-    // TODO: Hidden seems to be a close function for kartlag
-    // Give it a button to use or remove it completely from app.
-
+    const { onUpdateLayerProp } = this.props;
     let isstartpage = false;
     if (
       this.props.path === "/kart" ||
@@ -32,65 +27,52 @@ class Kartlag extends React.Component {
 
     return (
       <>
-        {hidden && (
-          <SettingsContext.Consumer>
-            {context => (
-              <>
-                <MobileOpenButton
-                  showKartlag={this.state.showKartlag}
-                  setShowKartlag={() => {
-                    this.setState({ showKartlag: !this.state.showKartlag });
-                  }}
-                  props={this.props}
-                />
+        <MobileOpenButton
+          showKartlag={this.state.showKartlag}
+          setShowKartlag={() => {
+            this.setState({ showKartlag: !this.state.showKartlag });
+          }}
+          props={this.props}
+        />
 
-                <div
-                  className={
-                    "kartlag sidebar " +
-                    (this.state.showKartlag
-                      ? "kartlag_content_open"
-                      : "kartlag_content_closed")
-                  }
-                >
-                  <SidebarHeader />
+        <div
+          className={
+            "kartlag sidebar " +
+            (this.state.showKartlag
+              ? "kartlag_content_open"
+              : "kartlag_content_closed")
+          }
+        >
+          <SidebarHeader />
 
-                  <BackToStart
-                    isstartpage={isstartpage}
-                    onNavigate={this.props.onNavigate}
-                  />
+          <BackToStart
+            isstartpage={isstartpage}
+            onNavigate={this.props.onNavigate}
+          />
 
-                  <CurrentElement
-                    aktiveLag={this.props.aktiveLag}
-                    meta={this.props.meta}
-                    onNavigate={this.props.onNavigate}
-                    aktivTab={this.props.aktivTab}
-                    onSetAktivTab={this.props.onSetAktivTab}
-                    handleShowInfo={this.props.handleShowInfo}
-                    showInfo={this.props.showInfo}
-                    onUpdateMetaProp={this.props.onUpdateMetaProp}
-                    onToggleLayer={this.props.onToggleLayer}
-                    opplyst={this.props.opplyst}
-                    onMouseEnter={this.props.onMouseEnter}
-                    onMouseLeave={this.props.onMouseLeave}
-                    path={this.props.path}
-                    parent={this.props.parent}
-                    isstartpage={isstartpage}
-                    onUpdateLayerProp={onUpdateLayerProp}
-                  />
+          <CurrentElement
+            aktiveLag={this.props.aktiveLag}
+            meta={this.props.meta}
+            onNavigate={this.props.onNavigate}
+            aktivTab={this.props.aktivTab}
+            onSetAktivTab={this.props.onSetAktivTab}
+            handleShowInfo={this.props.handleShowInfo}
+            showInfo={this.props.showInfo}
+            onUpdateMetaProp={this.props.onUpdateMetaProp}
+            onToggleLayer={this.props.onToggleLayer}
+            opplyst={this.props.opplyst}
+            onMouseEnter={this.props.onMouseEnter}
+            onMouseLeave={this.props.onMouseLeave}
+            path={this.props.path}
+            parent={this.props.parent}
+            isstartpage={isstartpage}
+            onUpdateLayerProp={onUpdateLayerProp}
+          />
 
-                  <FavoriteLayers
-                    visKoder={context.visKoder}
-                    keys={keys}
-                    koder={koder}
-                    props={this.props}
-                  />
+          <FavoriteLayers keys={keys} koder={koder} props={this.props} />
 
-                  <HistoryLayers keys={keys} props={this.props} />
-                </div>
-              </>
-            )}
-          </SettingsContext.Consumer>
-        )}
+          <HistoryLayers keys={keys} props={this.props} />
+        </div>
       </>
     );
   }

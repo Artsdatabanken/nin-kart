@@ -7,14 +7,10 @@ import FargeVelger from "../../../Kartlag/AktiveKartlag/EkspandertMeny/FellesEle
 import VelgFargeboks from "../../../Kartlag/AktiveKartlag/EkspandertMeny/FellesElementer/VelgFargeBoks";
 import ArrowButton from "../../../GjenbruksElement/ArrowButton";
 import Bildeavatar from "../../../GjenbruksElement/Bildeavatar";
+import HideLayerButton from "../../Buttons/HideLayerButton";
 import constants from "../../../constants";
 import { getInterval } from "../../../helpers";
-import { IconButton } from "@material-ui/core";
-import {
-  ChevronRight,
-  VisibilityOutlined,
-  VisibilityOffOutlined
-} from "@material-ui/icons";
+import { ChevronRight } from "@material-ui/icons";
 
 const Kodelisteelement = ({
   meta,
@@ -84,26 +80,22 @@ const Kodelisteelement = ({
           </div>
           <ChevronRight />
         </button>
-        <IconButton
-          onClick={e => {
-            onUpdateLayerProp(kode, "erSynlig", !erSynlig, "barn");
-            e.stopPropagation();
-          }}
-        >
-          {erSynlig ? (
-            <VisibilityOutlined />
-          ) : (
-            <VisibilityOffOutlined style={{ color: "#aaa" }} />
-          )}
-        </IconButton>
+
+        <HideLayerButton
+          erSynlig={erSynlig}
+          onUpdateLayerProp={onUpdateLayerProp}
+          kode={kode}
+        />
       </div>
       {showEditColor && (
-        <FargeVelger
-          color={farge}
-          onUpdateLayerProp={onUpdateLayerProp}
-          where={kode}
-          elementType={"barn"}
-        />
+        <div class="subsection subexpand">
+          <FargeVelger
+            color={farge}
+            onUpdateLayerProp={onUpdateLayerProp}
+            where={kode}
+            elementType={"barn"}
+          />
+        </div>
       )}
     </div>
   );
