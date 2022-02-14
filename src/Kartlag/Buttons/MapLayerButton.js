@@ -19,16 +19,9 @@ const MapLayerButton = ({
     tittel = meta.tittel["sn"];
     sn = true;
   }
-  return (
-    <button
-      key={kode}
-      onClick={() => {
-        onNavigate(url);
-      }}
-      onMouseEnter={() => onMouseEnter && onMouseEnter({ kode, url })}
-      onMouseLeave={() => onMouseLeave && onMouseLeave()}
-      className="nav_menu_button"
-    >
+
+  const elementcontent = (
+    <>
       <div
         className={
           "nav_text " + (isItalics(meta["nivå"] || null, sn) && "italics")
@@ -42,7 +35,23 @@ const MapLayerButton = ({
         )}
         {visKode && <span className="nav_kode">{kode}</span>}
       </div>
-      <ChevronRight />
+      {kode !== "bakgrunnskart" && <ChevronRight />}
+    </>
+  );
+  if (kode === "bakgrunnskart") {
+    return <div className="nav_menu_button">{elementcontent}</div>;
+  }
+  return (
+    <button
+      key={kode}
+      onClick={() => {
+        onNavigate(url);
+      }}
+      onMouseEnter={() => onMouseEnter && onMouseEnter({ kode, url })}
+      onMouseLeave={() => onMouseLeave && onMouseLeave()}
+      className="nav_menu_button"
+    >
+      {elementcontent}
     </button>
   );
 };
