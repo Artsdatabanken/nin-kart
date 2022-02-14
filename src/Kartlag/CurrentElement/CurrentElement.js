@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CurrentLayerSettings from "../AktiveKartlag/EkspandertMeny/CurrentLayerSettings";
-import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
+import Navigeringsliste from "./Navigeringsliste";
 import FavoriteButton from "../Buttons/FavoriteButton";
 import SettingsButton from "../Buttons/SettingsButton";
 import InfoButton from "../Buttons/InfoButton";
@@ -75,10 +75,10 @@ Sidebarmeny-navigeringen.
           )}
         </>
       )}
+
       <Navigeringsliste
         parentkode={meta ? meta.kode : "kode"}
         metadata={meta && meta.barn}
-        setExpanded={true}
         onNavigate={onNavigate}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}

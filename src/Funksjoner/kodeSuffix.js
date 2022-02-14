@@ -1,4 +1,4 @@
-import prettyKode from "../../../../../Funksjoner/prettyKode";
+import prettyKode from "./prettyKode";
 
 export default function kodeSuffix(kode, parentkode) {
   let i = 0;

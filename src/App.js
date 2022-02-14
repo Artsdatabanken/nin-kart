@@ -130,7 +130,6 @@ class App extends React.Component {
                       aktivTab={aktivTab}
                       show_current={this.state.showCurrent}
                       handleShowCurrent={this.handleShowCurrent}
-                      hidden={true /*aktivTab === "kartlag" && true*/}
                       aktiveLag={this.state.aktiveLag}
                       onUpdateLayerProp={this.handleUpdateLayerProp}
                       onRemoveSelectedLayer={this.handleRemoveSelectedLayer}
@@ -258,7 +257,7 @@ class App extends React.Component {
   handleClearSearchFor = () => this.setState({ searchFor: null });
 
   handleToggleLayer = () => {
-    console.log("xxx", !!this.state.aktiveLag[this.state.meta.kode]);
+    //console.log("xxx", !!this.state.aktiveLag[this.state.meta.kode]);
     if (this.state.aktiveLag[this.state.meta.kode])
       this.handleRemoveSelectedLayer(this.state.meta.kode);
     else this.addSelected(this.state.meta);
