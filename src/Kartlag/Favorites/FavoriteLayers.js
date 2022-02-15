@@ -16,7 +16,9 @@ const FavoriteLayers = ({ keys, koder, props }) => {
               onFitBounds={props.onFitBounds}
               onUpdateLayerProp={props.onUpdateLayerProp}
               meta={props.meta}
-              onToggleLayer={props.onToggleLayer}
+              onToggleLayer={() => {
+                props.removeFaveLayer(fkode);
+              }}
             />
           );
         })}
