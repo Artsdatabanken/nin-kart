@@ -39,7 +39,7 @@ const Breadcrumbs = ({ isstartpage, onNavigate, meta }) => {
             hiddenclass = "hiddencrumbs";
           }
           return (
-            <li className={showCrumbs ? "active" : hiddenclass}>
+            <li className={showCrumbs ? "active" : hiddenclass} key={i}>
               <ChevronRight />
               <button
                 className="breadcrumb"

@@ -50,7 +50,7 @@ const CurrentLayerMainElement = ({
       </span>
 
       {showEditColor && (
-        <div class="subsection subexpand">
+        <div className="subsection subexpand">
           <FargeVelger
             color={farge}
             onUpdateLayerProp={onUpdateLayerProp}
