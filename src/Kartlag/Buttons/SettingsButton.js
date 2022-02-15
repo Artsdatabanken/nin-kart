@@ -14,6 +14,7 @@ const SettingsButton = ({
       }}
       icon={<Settings />}
       title={"Åpne innstillinger"}
+      active={expandedSettings}
     />
   );
 };

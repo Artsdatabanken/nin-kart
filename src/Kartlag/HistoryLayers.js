@@ -2,7 +2,6 @@ import React from "react";
 import HistorikkListeElement from "./Historikk/HistorikkListeElement";
 import MainSectionExpand from "../GjenbruksElement/MainSectionExpand";
 import { History } from "@material-ui/icons";
-import { List } from "@material-ui/core";
 const HistoryLayers = ({ keys, props }) => {
   let navigation_history = props.navigation_history;
   if (navigation_history.length > 11) {
@@ -13,7 +12,7 @@ const HistoryLayers = ({ keys, props }) => {
     <>
       {Object.keys(navigation_history).length > 1 && (
         <MainSectionExpand icon={<History />} title={"Historikk"}>
-          <List>
+          <ul className="kartlag_list">
             {Object.keys(navigation_history)
               .reverse()
               .map((item, index) => {
@@ -37,7 +36,7 @@ const HistoryLayers = ({ keys, props }) => {
                 }
                 return null;
               })}
-          </List>
+          </ul>
         </MainSectionExpand>
       )}
     </>

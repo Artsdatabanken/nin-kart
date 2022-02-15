@@ -6,8 +6,8 @@ import constants from "../../constants";
 import { ChevronRight } from "@material-ui/icons";
 const MapLayerButton = ({
   onNavigate,
-  onMouseEnter,
-  onMouseLeave,
+  //onMouseEnter,
+  //onMouseLeave,
   url,
   kode,
   visKode,
@@ -50,8 +50,8 @@ const MapLayerButton = ({
       onClick={() => {
         onNavigate(url);
       }}
-      onMouseEnter={() => onMouseEnter && onMouseEnter({ kode, url })}
-      onMouseLeave={() => onMouseLeave && onMouseLeave()}
+      //onMouseEnter={() => onMouseEnter && onMouseEnter({ kode, url })}
+      //onMouseLeave={() => onMouseLeave && onMouseLeave()}
       className={className}
     >
       {elementcontent}

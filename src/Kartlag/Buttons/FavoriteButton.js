@@ -12,6 +12,8 @@ const FavoriteButton = ({ onToggleLayer, turnedOn, removeFave }) => {
       }}
       icon={icon}
       title={turnedOn ? "Fjern fra mine kartlag" : "Legg til mine kartlag"}
+      active={turnedOn}
+      removefave={removeFave}
     />
   );
 };

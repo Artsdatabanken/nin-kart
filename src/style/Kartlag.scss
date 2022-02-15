@@ -66,6 +66,10 @@ button.breadcrumb:hover {
   border-radius: 3px;
 }
 
+.layer_list_element.subelement {
+  background: $panel-section-sub-sub-bg;
+}
+
 .layer_list_element .arrow_button {
   margin: 2px;
 }
@@ -84,30 +88,33 @@ button.breadcrumb:hover {
   height: 24px;
 }
 
-.kartlag_header button {
+.kartlag_header .layerbutton {
   position: absolute;
-  right: 2px;
-  top: -3px;
+  right: 0;
+  top: -5px;
+  border-radius: 0;
+  height: 53px;
+  background: none;
+  background: $bright-nin;
+}
+
+.section .kartlag_header {
+  padding-left: 10px;
 }
 
 .kartlag .subexpand {
-  margin: 0;
-  border-radius: 0;
+  margin: 5px;
+  border-radius: 0 0 5px 5px;
+  margin-top: -3px;
 }
 
-.kartlag_element_backbutton,
 .kartlag_element_header {
-  min-height: 50px;
+  min-height: 56px;
   display: flex;
-  width: 100%;
-  padding: 2px;
+  width: calc(100% - 9px);
+  padding: 4px 2px;
 }
 
-.kartlag_element_backbutton {
-  background: transparent;
-}
-
-.kartlag_element_backbutton span,
 .kartlag_element_header h4 {
   flex: 2;
   display: block;
@@ -116,7 +123,10 @@ button.breadcrumb:hover {
   font-size: 12pt;
 }
 
-.kartlag_element_backbutton .backicon,
+.kartlag_element_header h4 {
+  padding-left: 10px;
+}
+
 .layerbutton {
   margin-top: 0;
   height: 47px;
@@ -133,15 +143,25 @@ button.breadcrumb:hover {
   flex: none;
 }
 
+.layerbutton.active {
+  background: $panel-section-sub-bg;
+  color: $super-duper-dark-nin;
+}
+
+.layer_list_element.subelement .layerbutton {
+  background: #e3e8ea;
+}
+
+.layer_list_element.subelement .layerbutton:hover,
 .layerbutton:hover {
   background: grey;
 }
 
-.kartlag_element_backbutton .backicon {
-  background: transparent;
+.section h3 .layerbutton svg {
+  height: 24px;
+  width: 24px;
 }
 
-.kartlag_element_header .backicon svg,
 .layerbutton svg {
   margin-top: auto;
   margin-bottom: auto;

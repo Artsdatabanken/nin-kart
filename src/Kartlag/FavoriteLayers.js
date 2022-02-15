@@ -5,7 +5,7 @@ import { Favorite } from "@material-ui/icons";
 const FavoriteLayers = ({ keys, koder, props }) => {
   return (
     <MainSectionExpand icon={<Favorite />} title={"Mine kartlag"}>
-      <ul className="kartlag_list">
+      <ul className="kartlag_list favorites">
         {keys.reverse().map(fkode => {
           const kartlag = koder[fkode];
           return (

@@ -27,7 +27,7 @@ const MapLayerElement = ({
 
   return (
     <li className="layer_list_element_container">
-      <span className="layer_list_element">
+      <span className="layer_list_element subelement">
         <ArrowButton
           title={editColorButton()}
           expanded={showEditColor}

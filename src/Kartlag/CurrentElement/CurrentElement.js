@@ -4,10 +4,8 @@ import Navigeringsliste from "./Navigeringsliste";
 import FavoriteButton from "../Buttons/FavoriteButton";
 import SettingsButton from "../Buttons/SettingsButton";
 import InfoButton from "../Buttons/InfoButton";
-import BackButton from "../Buttons/BackButton";
 import MainSectionExpand from "../../GjenbruksElement/MainSectionExpand";
 import getTitle from "../../Funksjoner/getTitle";
-import språk from "../../Funksjoner/språk";
 import { Layers } from "@material-ui/icons";
 
 const CurrentElement = ({
@@ -31,10 +29,6 @@ Sidebarmeny-navigeringen.
   */
   const [expandedSettings, setExpandedSettings] = useState(false);
   if (!meta) return null;
-  let backurl = "/start";
-  if (meta.overordnet !== undefined && meta.overordnet[0] !== undefined) {
-    backurl = meta.overordnet[0].url;
-  }
 
   return (
     <>
@@ -44,17 +38,17 @@ Sidebarmeny-navigeringen.
       >
         {!isstartpage && (
           <>
-            <div className="kartlag_element_header">
-              <SettingsButton
-                expandedSettings={expandedSettings}
-                setExpandedSettings={setExpandedSettings}
-                onSetAktivTab={onSetAktivTab}
-              />
+            <div className="kartlag_element_header layer_list_element">
               <h4>{getTitle(meta)}</h4>
               <div className="kartlag_element_buttons">
                 <InfoButton
                   handleShowInfo={handleShowInfo}
                   showInfo={showInfo}
+                />
+                <SettingsButton
+                  expandedSettings={expandedSettings}
+                  setExpandedSettings={setExpandedSettings}
+                  onSetAktivTab={onSetAktivTab}
                 />
 
                 <FavoriteButton

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import HideLayerButton from "../Buttons/HideLayerButton";
-import { Settings, Close } from "@material-ui/icons";
+import { Settings } from "@material-ui/icons";
 import { useHistory } from "react-router-dom";
 import LayerButton from "../Buttons/LayerButton";
 import FavoriteButton from "../Buttons/FavoriteButton";
 import MapLayerButton from "../Buttons/MapLayerButton";
 import BackgroundSettings from "./BackgroundSettings";
-import { Favorite, Wallpaper } from "@material-ui/icons";
+import { Wallpaper } from "@material-ui/icons";
 
 const FavoriteLayerElement = ({
   kartlag,
@@ -23,8 +23,6 @@ const FavoriteLayerElement = ({
   const onNavigate = where => {
     history.push(where);
   };
-
-  const elementicon = kode === "bakgrunnskart" ? <Wallpaper /> : <Favorite />;
 
   return (
     <li>
