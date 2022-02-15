@@ -1,7 +1,7 @@
 import React from "react";
 import CurrentElement from "./CurrentElement/CurrentElement";
 import FavoriteLayers from "./Favorites/FavoriteLayers";
-import BackToStart from "./BackToStart";
+import Breadcrumbs from "./Breadcrumbs";
 import SidebarHeader from "./SidebarHeader";
 import MobileOpenButton from "./MobileOpenButton";
 import HistoryLayers from "./History/HistoryLayers";
@@ -44,12 +44,14 @@ class Kartlag extends React.Component {
           }
         >
           <SidebarHeader />
-
-          <BackToStart
-            isstartpage={isstartpage}
-            onNavigate={this.props.onNavigate}
-            meta={this.props.meta}
-          />
+          {this.props.meta && (
+            <Breadcrumbs
+              isstartpage={isstartpage}
+              onNavigate={this.props.onNavigate}
+              meta={this.props.meta}
+              breadcrumbs={this.props.meta.overordnet.reverse()}
+            />
+          )}
 
           <CurrentElement
             aktiveLag={this.props.aktiveLag}

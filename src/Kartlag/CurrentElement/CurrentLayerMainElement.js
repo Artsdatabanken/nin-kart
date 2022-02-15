@@ -17,7 +17,6 @@ const CurrentLayerMainElement = ({
   const [showEditColor, setShowEditColor] = useState(false);
   const { kode, url, farge } = meta;
   const erSynlig = meta.hasOwnProperty("erSynlig") ? meta.erSynlig : true;
-  console.log(meta.erSynlig);
 
   const handleExpandClick = () => {
     setShowEditColor(!showEditColor);

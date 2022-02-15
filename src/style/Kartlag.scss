@@ -27,6 +27,15 @@ Even tho we don't a of now support IE X)
   font-size: 10pt;
 }
 
+.kartlag .breadcrumbs .hiddencrumbs {
+  background: red;
+  display: none;
+}
+
+.kartlag .breadcrumbs .hiddencrumbs.show {
+  display: inline-block;
+}
+
 button.breadcrumb:hover {
   border-radius: 5px;
   background: $bright-nin;
