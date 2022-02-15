@@ -46,6 +46,7 @@ const CurrentLayerMainElement = ({
           erSynlig={erSynlig}
           onUpdateLayerProp={onUpdateLayerProp}
           kode={kode}
+          isSubElement={true}
         />
       </span>
 
