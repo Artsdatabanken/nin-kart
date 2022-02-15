@@ -20,7 +20,6 @@ class FargeVelger extends Component {
         <ColorPicker
           tabIndex="1"
           color={color}
-          alpha
           onChange={farge => {
             const rgbString = tinycolor(farge.rgb).toRgbString();
             if (elementType) {
