@@ -15,9 +15,9 @@ const MapLayerElement = ({
   onUpdateLayerProp
 }) => {
   const [showEditColor, setShowEditColor] = useState(false);
-
-  const erSynlig = meta.hasOwnProperty("erSynlig") ? meta.erSynlig : true;
   const { kode, url, farge } = meta;
+  const erSynlig = meta.hasOwnProperty("erSynlig") ? meta.erSynlig : true;
+  console.log(meta.erSynlig);
 
   const handleExpandClick = () => {
     setShowEditColor(!showEditColor);
@@ -33,7 +33,6 @@ const MapLayerElement = ({
           expanded={showEditColor}
           handleExpandClick={handleExpandClick}
         />
-
         <MapLayerButton
           onNavigate={onNavigate}
           onMouseEnter={onMouseEnter}
@@ -43,7 +42,6 @@ const MapLayerElement = ({
           visKode={visKode}
           meta={meta}
         />
-
         <HideLayerButton
           erSynlig={erSynlig}
           onUpdateLayerProp={onUpdateLayerProp}

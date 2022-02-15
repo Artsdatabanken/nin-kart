@@ -5,7 +5,8 @@ const HideLayerButton = ({ onUpdateLayerProp, erSynlig, kode }) => {
   return (
     <LayerButton
       onClick={e => {
-        onUpdateLayerProp(kode, "erSynlig", !erSynlig);
+        console.log(kode, "erSynlig", !erSynlig);
+        onUpdateLayerProp(kode, "erSynlig", !erSynlig, "barn");
         e.stopPropagation();
       }}
       icon={erSynlig ? <VisibilityOutlined /> : <VisibilityOffOutlined />}
