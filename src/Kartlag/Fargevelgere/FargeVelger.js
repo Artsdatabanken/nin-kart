@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import tinycolor from "tinycolor2";
-import ColorPicker from "../../../../GjenbruksElement/ColorPicker";
+import ColorPicker from "../../GjenbruksElement/ColorPicker";
 import { ListSubheader } from "@material-ui/core";
 class FargeVelger extends Component {
   render() {

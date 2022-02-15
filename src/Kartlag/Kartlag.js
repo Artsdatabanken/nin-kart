@@ -1,10 +1,10 @@
 import React from "react";
 import CurrentElement from "./CurrentElement/CurrentElement";
-import FavoriteLayers from "./FavoriteLayers";
+import FavoriteLayers from "./Favorites/FavoriteLayers";
 import BackToStart from "./BackToStart";
 import SidebarHeader from "./SidebarHeader";
 import MobileOpenButton from "./MobileOpenButton";
-import HistoryLayers from "./HistoryLayers";
+import HistoryLayers from "./History/HistoryLayers";
 
 class Kartlag extends React.Component {
   state = {

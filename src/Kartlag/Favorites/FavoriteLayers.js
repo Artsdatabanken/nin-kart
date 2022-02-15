@@ -1,6 +1,6 @@
 import React from "react";
-import FavoriteLayerElement from "./AktiveKartlag/FavoriteLayerElement";
-import MainSectionExpand from "../GjenbruksElement/MainSectionExpand";
+import FavoriteLayerElement from "./FavoriteLayerElement";
+import MainSectionExpand from "../../GjenbruksElement/MainSectionExpand";
 import { Favorite } from "@material-ui/icons";
 const FavoriteLayers = ({ keys, koder, props }) => {
   return (

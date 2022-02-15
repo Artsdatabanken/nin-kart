@@ -1,9 +1,9 @@
 import React from "react";
 import { SettingsContext } from "../../SettingsContext";
-import MapLayerElement from "./MapLayerElement";
+import CurrentLayerMainElement from "./CurrentLayerMainElement";
 import getKey from "../../Funksjoner/getKey";
 
-class Navigeringsliste extends React.Component {
+class LayerSubElementListe extends React.Component {
   state = {
     items_to_load: 150
   };
@@ -24,14 +24,14 @@ class Navigeringsliste extends React.Component {
       <SettingsContext.Consumer>
         {context => (
           <ul className="kartlag_list">
-            {Navigeringsliste.sorter(metadata, context.sorterPåKode).map(
+            {LayerSubElementListe.sorter(metadata, context.sorterPåKode).map(
               (metaChild, i) => {
                 if (i > this.state.items_to_load) return null;
                 const { kode, skjul } = metaChild;
                 if (skjul) return null;
 
                 return (
-                  <MapLayerElement
+                  <CurrentLayerMainElement
                     key={metaChild.kode}
                     setExpanded={setExpanded}
                     parentkode={parentkode}
@@ -54,11 +54,11 @@ class Navigeringsliste extends React.Component {
   }
 }
 
-Navigeringsliste.sorter = (barn, sorterPåKode) => {
+LayerSubElementListe.sorter = (barn, sorterPåKode) => {
   const sortert = barn.concat().sort((a, b) => {
     return getKey(a, sorterPåKode) >= getKey(b, sorterPåKode) ? 1 : -1;
   });
   return sortert;
 };
 
-export default Navigeringsliste;
+export default LayerSubElementListe;

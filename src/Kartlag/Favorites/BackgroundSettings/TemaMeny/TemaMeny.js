@@ -1,7 +1,7 @@
 import React from "react";
 import TemaButton from "./TemaButton";
 import typer from "./temaer";
-import SectionExpand from "../../../../../GjenbruksElement/SectionExpand";
+import SectionExpand from "../../../../GjenbruksElement/SectionExpand";
 
 const TemaMeny = ({ aktivtFormat, onUpdateLayerProp }) => (
   <SectionExpand title={"Bakgrunnstema: " + aktivtFormat}>

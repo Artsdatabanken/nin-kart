@@ -1,6 +1,6 @@
 import React from "react";
-import HistorikkListeElement from "./Historikk/HistorikkListeElement";
-import MainSectionExpand from "../GjenbruksElement/MainSectionExpand";
+import HistorikkListeElement from "./HistorikkListeElement";
+import MainSectionExpand from "../../GjenbruksElement/MainSectionExpand";
 import { History } from "@material-ui/icons";
 const HistoryLayers = ({ keys, props }) => {
   let navigation_history = props.navigation_history;

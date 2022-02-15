@@ -1,5 +1,5 @@
 import React from "react";
-import Navigeringsliste from "../../../Kartlag/CurrentElement/Navigeringsliste";
+import LayerSubElementListe from "../../../Kartlag/CurrentElement/LayerSubElementListe";
 import SectionExpand from "../../../GjenbruksElement/SectionExpand";
 import { titler } from "./Titler";
 const Relasjon = props => {
@@ -28,7 +28,7 @@ const Relasjon = props => {
         }
       >
         {noder && (
-          <Navigeringsliste
+          <LayerSubElementListe
             parentkode={parentkode}
             onNavigate={onNavigate}
             title=""

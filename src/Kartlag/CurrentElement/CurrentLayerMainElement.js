@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "../../style/NavMenu.scss";
-import FargeVelger from "../../Kartlag/AktiveKartlag/EkspandertMeny/FellesElementer/FargeVelger";
-import VelgFargeboks from "../../Kartlag/AktiveKartlag/EkspandertMeny/FellesElementer/VelgFargeBoks";
+import FargeVelger from "../Fargevelgere/FargeVelger";
+import VelgFargeboks from "../Fargevelgere/VelgFargeBoks";
 import ArrowButton from "../../GjenbruksElement/ArrowButton";
 import HideLayerButton from "../Buttons/HideLayerButton";
 import MapLayerButton from "../Buttons/MapLayerButton";
 
-const MapLayerElement = ({
+const CurrentLayerMainElement = ({
   meta,
   visKode,
   onNavigate,
@@ -63,4 +63,4 @@ const MapLayerElement = ({
   );
 };
 
-export default MapLayerElement;
+export default CurrentLayerMainElement;

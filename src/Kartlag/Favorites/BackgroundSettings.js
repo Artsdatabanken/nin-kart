@@ -1,7 +1,7 @@
 import React from "react";
-import TemaMeny from "./EkspandertMeny/Visualisering/TemaMeny/TemaMeny";
-import BakgrunnInnstillinger from "./EkspandertMeny/Visualisering/BgInnstillinger/BakgrunnInnstillinger";
-import FargeVelger from "./EkspandertMeny/FellesElementer/FargeVelger";
+import TemaMeny from "./BackgroundSettings/TemaMeny/TemaMeny";
+import BakgrunnInnstillinger from "./BackgroundSettings/BgInnstillinger/BakgrunnInnstillinger";
+import FargeVelger from "../Fargevelgere/FargeVelger";
 import SectionExpand from "../../GjenbruksElement/SectionExpand";
 
 const BackgroundSettings = ({ kartlag, onUpdateLayerProp }) => {
