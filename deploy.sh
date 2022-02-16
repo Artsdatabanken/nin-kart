@@ -20,7 +20,7 @@ if [ "${BRANCH}" == "test" ]
 
   sshpass -p $scp_pass scp -o StrictHostKeyChecking=no $BRANCH.tar.gz $scp_user@$prod_dest
  else
-  echo "This branch will not be deployed, since it's not the master branch."
+  echo "This branch will not be deployed, since it's not the test branch."
 fi
 #Posting message to pull request in GitHub
 #if [ "${TRAVIS_PULL_REQUEST}" != "false" ]
