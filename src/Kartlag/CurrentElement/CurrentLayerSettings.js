@@ -1,6 +1,6 @@
 import React from "react";
-import GradientEllerTypeinndelt from "./Visualisering/VisualiseringsType/GradientEllerTypeinndelt";
-import GradientFilter from "./Filtere/GradientFilter.js";
+import GradientEllerTypeinndelt from "./Settings/GradientEllerTypeinndelt";
+import GradientFilter from "./Settings/GradientFilter.js";
 import { Slider } from "@material-ui/core";
 
 const CurrentLayerSettings = ({ onUpdateLayerProp, meta }) => {

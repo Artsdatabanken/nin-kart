@@ -404,6 +404,7 @@ div {
   padding-bottom: 5px;
   background: $panel-section-bg;
   margin-bottom: 4px;
+  overflow-x: hidden;
 }
 
 .testcolours .section:nth-child(1) {
@@ -489,6 +490,7 @@ div {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
+  flex: 1;
 }
 
 .cookiewarning {

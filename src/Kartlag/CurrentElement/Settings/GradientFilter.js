@@ -1,10 +1,10 @@
 import React from "react";
-import RangeSlider from "../../../../GjenbruksElement/RangeSlider";
+import RangeSlider from "../../../GjenbruksElement/RangeSlider";
 
 const GradientFilter = ({ onUpdateLayerProp, meta }) => {
   /*
     Gi brukeren mulighet til å velge maks og minimum på skalaen uavhengig av om det er en
-    kontinuelig eller typeinndelt visning. 
+    kontinuelig eller typeinndelt visning.
   */
 
   const { kode, kart } = meta;

@@ -9,6 +9,7 @@ const InfoButton = ({ handleShowInfo, showInfo }) => {
       }}
       icon={<Info />}
       title={"Åpne informasjon"}
+      active={showInfo}
     />
   );
 };

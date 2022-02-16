@@ -6,8 +6,8 @@ import constants from "../../constants";
 import { ChevronRight } from "@material-ui/icons";
 const MapLayerButton = ({
   onNavigate,
-  onMouseEnter,
-  onMouseLeave,
+  //onMouseEnter,
+  //onMouseLeave,
   url,
   kode,
   visKode,
@@ -20,11 +20,14 @@ const MapLayerButton = ({
     sn = true;
   }
 
+  const className = "nav_menu_button maplayerbutton";
+
   const elementcontent = (
     <>
       <div
         className={
-          "nav_text " + (isItalics(meta["nivå"] || null, sn) && "italics")
+          "nav_text maplayerbutton" +
+          (isItalics(meta["nivå"] || null, sn) && "italics")
         }
       >
         <span className="nav_title">{tittel}</span>
@@ -39,7 +42,7 @@ const MapLayerButton = ({
     </>
   );
   if (kode === "bakgrunnskart") {
-    return <div className="nav_menu_button">{elementcontent}</div>;
+    return <div className={className}>{elementcontent}</div>;
   }
   return (
     <button
@@ -47,9 +50,9 @@ const MapLayerButton = ({
       onClick={() => {
         onNavigate(url);
       }}
-      onMouseEnter={() => onMouseEnter && onMouseEnter({ kode, url })}
-      onMouseLeave={() => onMouseLeave && onMouseLeave()}
-      className="nav_menu_button"
+      //onMouseEnter={() => onMouseEnter && onMouseEnter({ kode, url })}
+      //onMouseLeave={() => onMouseLeave && onMouseLeave()}
+      className={className}
     >
       {elementcontent}
     </button>

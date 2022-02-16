@@ -6,36 +6,124 @@ Avoiding flex to ensure it works on all types of devices, IE included.
 Even tho we don't a of now support IE X)
 
 */
+.breadcrumbs {
+  display: block;
+  margin: 2px 15px;
+  padding: 0px;
+}
+
+.kartlag .breadcrumbs li {
+  display: inline-block;
+}
+
+.breadcrumb {
+  display: inline-block;
+  border: none;
+  background: none;
+  margin: 2px;
+  padding: 2px;
+  text-decoration: underline;
+  color: $super-duper-dark-nin;
+  font-size: 10pt;
+}
+
+.kartlag .breadcrumbs .hiddencrumbs {
+  background: red;
+  display: none;
+}
+
+.kartlag .breadcrumbs .hiddencrumbs.show {
+  display: inline-block;
+}
+
+button.breadcrumb:hover {
+  border-radius: 5px;
+  background: $bright-nin;
+}
+
+.breadcrumb.currentelement {
+  text-decoration: none;
+  color: black;
+}
+
+.breadcrumbs .MuiSvgIcon-root {
+  height: 14px;
+  vertical-align: sub;
+  width: 14px;
+}
+
+.breadcrumbs .layerbutton {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  padding-top: 0px;
+  vertical-align: middle;
+}
+
+.kartlag_list {
+  display: block;
+  padding: 2px;
+}
+
+.layer_list_element {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 2px;
+  margin: 4px;
+  background: $panel-bg;
+  border-radius: 3px;
+}
+
+.layer_list_element.subelement {
+  background: $panel-section-sub-sub-bg;
+}
+
+.layer_list_element .arrow_button {
+  margin: 2px;
+}
+
+.nav_menu_button .MuiSvgIcon-root {
+  padding-top: 3px;
+}
+
+.maplayerbutton {
+  margin: 2px;
+  border-radius: 2px;
+}
 
 .kartlag_header {
   position: relative;
   height: 24px;
 }
 
-.kartlag_header button {
+.kartlag_header .layerbutton {
   position: absolute;
-  right: 2px;
-  top: -3px;
+  right: 0;
+  top: -5px;
+  border-radius: 0;
+  height: 53px;
+  background: none;
+  background: $bright-nin;
+}
+
+.section .kartlag_header {
+  padding-left: 10px;
 }
 
 .kartlag .subexpand {
-  margin: 0;
-  border-radius: 0;
+  margin: 5px;
+  border-radius: 0 0 5px 5px;
+  margin-top: -3px;
 }
 
-.kartlag_element_backbutton,
 .kartlag_element_header {
-  min-height: 50px;
+  min-height: 56px;
   display: flex;
-  width: 100%;
-  padding: 2px;
+  width: calc(100% - 9px);
+  padding: 4px 2px;
 }
 
-.kartlag_element_backbutton {
-  background: transparent;
-}
-
-.kartlag_element_backbutton span,
 .kartlag_element_header h4 {
   flex: 2;
   display: block;
@@ -44,7 +132,10 @@ Even tho we don't a of now support IE X)
   font-size: 12pt;
 }
 
-.kartlag_element_backbutton .backicon,
+.kartlag_element_header h4 {
+  padding-left: 10px;
+}
+
 .layerbutton {
   margin-top: 0;
   height: 47px;
@@ -58,17 +149,28 @@ Even tho we don't a of now support IE X)
   margin-right: 2px;
   padding-top: 7px;
   border-radius: 50%;
+  flex: none;
 }
 
+.layerbutton.active {
+  background: $panel-section-sub-bg;
+  color: $super-duper-dark-nin;
+}
+
+.layer_list_element.subelement .layerbutton {
+  background: #e3e8ea;
+}
+
+.layer_list_element.subelement .layerbutton:hover,
 .layerbutton:hover {
   background: grey;
 }
 
-.kartlag_element_backbutton .backicon {
-  background: transparent;
+.section h3 .layerbutton svg {
+  height: 24px;
+  width: 24px;
 }
 
-.kartlag_element_header .backicon svg,
 .layerbutton svg {
   margin-top: auto;
   margin-bottom: auto;
@@ -143,15 +245,6 @@ Even tho we don't a of now support IE X)
 }
 
 /* icons */
-
-.kartlag_list li svg {
-  padding: 5px;
-  vertical-align: top;
-}
-
-.kartlag_list li svg:last-child {
-  padding-right: 0px;
-}
 
 .remove_icon {
   color: $red-color;

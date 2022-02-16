@@ -1,7 +1,7 @@
 import { Switch } from "@material-ui/core";
 import React, { useState } from "react";
-import FargeVelger from "../../FellesElementer/FargeVelger";
-import SliderElement from "../../../../../GjenbruksElement/SliderElement";
+import FargeVelger from "../../../Fargevelgere/FargeVelger";
+import SliderElement from "../../../../GjenbruksElement/SliderElement";
 import { FormatColorFill, Close } from "@material-ui/icons";
 
 const BakgrunnInnstillingListeElement = ({

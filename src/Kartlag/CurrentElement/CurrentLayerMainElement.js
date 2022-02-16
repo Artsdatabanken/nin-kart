@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "../../style/NavMenu.scss";
-import FargeVelger from "../../Kartlag/AktiveKartlag/EkspandertMeny/FellesElementer/FargeVelger";
-import VelgFargeboks from "../../Kartlag/AktiveKartlag/EkspandertMeny/FellesElementer/VelgFargeBoks";
+import FargeVelger from "../Fargevelgere/FargeVelger";
+import VelgFargeboks from "../Fargevelgere/VelgFargeBoks";
 import ArrowButton from "../../GjenbruksElement/ArrowButton";
 import HideLayerButton from "../Buttons/HideLayerButton";
 import MapLayerButton from "../Buttons/MapLayerButton";
 
-const MapLayerElement = ({
+const CurrentLayerMainElement = ({
   meta,
   visKode,
   onNavigate,
@@ -15,9 +15,8 @@ const MapLayerElement = ({
   onUpdateLayerProp
 }) => {
   const [showEditColor, setShowEditColor] = useState(false);
-
-  const erSynlig = meta.hasOwnProperty("erSynlig") ? meta.erSynlig : true;
   const { kode, url, farge } = meta;
+  const erSynlig = meta.hasOwnProperty("erSynlig") ? meta.erSynlig : true;
 
   const handleExpandClick = () => {
     setShowEditColor(!showEditColor);
@@ -26,14 +25,13 @@ const MapLayerElement = ({
   const editColorButton = () => <VelgFargeboks farge={farge} kode={kode} />;
 
   return (
-    <div className="map_layer_navigation_container">
-      <div className="map_layer_navigation">
+    <li className="layer_list_element_container">
+      <span className="layer_list_element subelement">
         <ArrowButton
           title={editColorButton()}
           expanded={showEditColor}
           handleExpandClick={handleExpandClick}
         />
-
         <MapLayerButton
           onNavigate={onNavigate}
           onMouseEnter={onMouseEnter}
@@ -43,16 +41,16 @@ const MapLayerElement = ({
           visKode={visKode}
           meta={meta}
         />
-
         <HideLayerButton
           erSynlig={erSynlig}
           onUpdateLayerProp={onUpdateLayerProp}
           kode={kode}
+          isSubElement={true}
         />
-      </div>
+      </span>
 
       {showEditColor && (
-        <div class="subsection subexpand">
+        <div className="subsection subexpand">
           <FargeVelger
             color={farge}
             onUpdateLayerProp={onUpdateLayerProp}
@@ -61,8 +59,8 @@ const MapLayerElement = ({
           />
         </div>
       )}
-    </div>
+    </li>
   );
 };
 
-export default MapLayerElement;
+export default CurrentLayerMainElement;

@@ -148,6 +148,7 @@ class App extends React.Component {
                       onToggleLayer={() => {
                         this.handleToggleLayer();
                       }}
+                      removeFaveLayer={this.removeFaveLayer}
                       opplyst={this.state.opplyst}
                       onMouseEnter={this.handleMouseEnter}
                       onMouseLeave={this.handleMouseLeave}
@@ -257,10 +258,14 @@ class App extends React.Component {
   handleClearSearchFor = () => this.setState({ searchFor: null });
 
   handleToggleLayer = () => {
-    //console.log("xxx", !!this.state.aktiveLag[this.state.meta.kode]);
     if (this.state.aktiveLag[this.state.meta.kode])
       this.handleRemoveSelectedLayer(this.state.meta.kode);
     else this.addSelected(this.state.meta);
+  };
+
+  removeFaveLayer = kode => {
+    if (this.state.aktiveLag[kode]) this.handleRemoveSelectedLayer(kode);
+    else console.error("no fave layer for " + kode);
   };
 
   componentDidMount() {
