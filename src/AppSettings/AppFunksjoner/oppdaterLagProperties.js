@@ -40,9 +40,9 @@ export default function oppdaterLagProperties(
   // Nåværende kartlag ligger i state.meta
   let currentnode = parent.state.meta;
   if (elementType === "barn") {
-    currentnode = childElement(currentnode.barn, key, value, layer_input);
+    childElement(currentnode.barn, key, value, layer_input);
   } else {
-    currentnode = setValue(currentnode, key, value);
+    setValue(currentnode, key, value);
   }
 
   // Laget er et aktivt kartlag, og ligger derfor også i state.aktive
