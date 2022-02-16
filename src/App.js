@@ -4,6 +4,7 @@ import backend from "./Funksjoner/backend";
 import { SettingsContext } from "./SettingsContext";
 import InformasjonsVisning from "./InformasjonsVisning/InformasjonsVisning";
 import TopBar from "./TopBar/TopBar";
+import ADBHeader from "./TopBar/ADBHeader";
 import Kartlag from "./Kartlag/Kartlag";
 import Kart from "./Kart/LeafletTangram/Leaflet";
 import metaSjekk from "./AppSettings/AppFunksjoner/metaSjekk";
@@ -79,6 +80,16 @@ class App extends React.Component {
     const path = this.props.location.pathname;
     return (
       <>
+        <ADBHeader
+          searchFor={this.state.searchFor}
+          handleHovedMeny={this.handleHovedMeny}
+          onSelectResult={item => {
+            let url = item.url;
+            if (item.url[0] !== "/") url = "/" + item.url;
+            history.push(url);
+          }}
+          history={history}
+        />
         <TopBar
           searchFor={this.state.searchFor}
           handleHovedMeny={this.handleHovedMeny}

@@ -3,7 +3,7 @@
 .top_bar {
   width: 100%;
   left: 0;
-  height: $topbar-height-nin;
+  height: $nin-header;
   position: relative;
   background: $super-duper-dark-nin;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.35);
@@ -15,11 +15,7 @@
 }
 
 .adb-topbar {
-  width: 100%;
-  display: block;
-  height: 50px;
   background: #4c4a48;
-  display: none;
 }
 
 .header_text:hover {
@@ -43,9 +39,49 @@
   margin-top: 12px;
 }
 
+.adb-topbar .header_text {
+  text-align: left;
+  margin-left: 15px;
+}
+
 @media only screen and (max-width: 768px) {
   .header_text {
     margin-left: calc(50% - 70px);
+  }
+}
+
+.logo-icon {
+  display: inline-block;
+  margin-right: 4px;
+  vertical-align: baseline;
+  height: 24px;
+}
+
+.adb-topbar .logo-icon {
+  height: 21px;
+}
+
+.adb-topbar .logo-icon.bigscreen {
+  margin: 8px;
+  margin-top: -12px;
+  background: white;
+  padding: 9px 23px 20px 23px;
+}
+
+.smallscreen {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .bigscreen {
+    display: none;
+  }
+
+  .smallscreen {
+    display: inline-block;
+    padding: 12px;
+    margin: 0;
+    padding-top: 2px;
   }
 }
 

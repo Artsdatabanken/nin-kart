@@ -58,7 +58,8 @@ $active-border: 2px solid black !important;
 $fontfamily: "Roboto", "sans-serif";
 
 /* Relative heights of menu items */
-$topbar-height-nin: 48px;
+$nin-header: 48px;
+$topbar-height-nin: 98px;
 $mobile_slide_up_area: 60px; // closed version
 $ux-page-area: $topbar-height-nin;
 $ux-page-area-mobile: $mobile_slide_up_area + $topbar-height-nin;
