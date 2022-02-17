@@ -2,6 +2,24 @@
 @import url("https://design.artsdatabanken.no/style/header-footer.css");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
+/* Should happen in header-footer css, but untill it does, put it here*/
+
+.dropdown {
+  list-style: none;
+  margin: 0;
+}
+
+@media only screen and (min-width: 769px) {
+  .dropdown {
+    max-height: $actual-map-height;
+    overflow: auto;
+  }
+}
+
+.header-logo {
+  box-sizing: border-box;
+}
+/* Both top bars */
 header.header {
   z-index: 1000;
 }
