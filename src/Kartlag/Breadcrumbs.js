@@ -9,7 +9,7 @@ const Breadcrumbs = ({ isstartpage, onNavigate, meta }) => {
   const breadcrumbs = meta.overordnet;
 
   return (
-    <div className="section">
+    <div className="section crumbsection">
       <ul className="breadcrumbs">
         <li>
           <button
