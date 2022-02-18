@@ -78,7 +78,7 @@ header.header {
 
 @media only screen and (max-width: 768px) {
   .header_text {
-    margin-left: calc(50% - 70px);
+    margin-left: 46px;
   }
 }
 
@@ -119,6 +119,12 @@ header.header {
   top: $top-pad;
   right: auto;
   z-index: 22;
+}
+
+@media only screen and (min-width: 769px) {
+  .hamburger {
+    left: 20px;
+  }
 }
 
 .top_bar svg {

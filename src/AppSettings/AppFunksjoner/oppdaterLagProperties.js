@@ -42,6 +42,7 @@ export default function oppdaterLagProperties(
   if (elementType === "barn") {
     childElement(currentnode.barn, key, value, layer_input);
   } else {
+    console.log("node:", currentnode);
     setValue(currentnode, key, value);
   }
 

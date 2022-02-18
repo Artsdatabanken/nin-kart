@@ -492,6 +492,11 @@ div {
   text-align: center;
 }
 
+.cookiewarning a {
+  color: white;
+  text-decoration: underline;
+}
+
 @media only screen and (max-width: 768px) {
   .cookiewarning {
     width: 100%;
