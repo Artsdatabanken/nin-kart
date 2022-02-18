@@ -11,8 +11,8 @@ const Header = ({ searchFor, handleHovedMeny, onSelectResult, history }) => {
   return (
     <div className="adb-dropdown-wrap">
       <header className={"top_bar adb-topbar header"}>
-        <div class="width-adjuster">
-          <a href="https://artsdatabanken.no" class="header-logo">
+        <div className="width-adjuster">
+          <a href="https://artsdatabanken.no" className="header-logo">
             <img
               alt="Artsdatabanken"
               src="https://artsdatabanken.no/Files/20973"
@@ -24,10 +24,10 @@ const Header = ({ searchFor, handleHovedMeny, onSelectResult, history }) => {
               className="mobile"
             />
           </a>
-          <button id="navbar-mobile" class="material-icons">
+          <button id="navbar-mobile" className="material-icons">
             menu
           </button>
-          <nav id="headermenu" class="hide"></nav>
+          <nav id="headermenu" className="hide"></nav>
         </div>
       </header>
       <TopBar
