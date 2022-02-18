@@ -14,8 +14,9 @@ Even tho we don't a of now support IE X)
   }
 
   .kartlag.fullscreen {
-    width: 20px;
-    height: 20px;
+    width: 53px;
+    height: 51px;
+    border-radius: 50%;
   }
 }
 @media only screen and (max-width: 760px) {
@@ -23,6 +24,14 @@ Even tho we don't a of now support IE X)
   .hide_on_mobile {
     display: none;
   }
+}
+
+.show-kartlag-button {
+  position: absolute;
+  z-index: 100;
+  background: pink;
+  right: 0px;
+  top: 2px;
 }
 
 .crumbsection {

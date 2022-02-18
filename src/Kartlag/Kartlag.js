@@ -5,6 +5,7 @@ import Breadcrumbs from "./Breadcrumbs";
 import SidebarHeader from "./SidebarHeader";
 import MobileOpenButton from "./MobileOpenButton";
 import HistoryLayers from "./History/HistoryLayers";
+import { Close, Layers } from "@material-ui/icons";
 
 class Kartlag extends React.Component {
   state = {
@@ -44,10 +45,10 @@ class Kartlag extends React.Component {
 
         <div className={className}>
           <button
-            className="hide_on_mobile"
+            className="hide_on_mobile show-kartlag-button layerbutton arrow_button"
             onClick={this.props.handleFullscreen}
           >
-            x
+            {this.props.fullscreen ? <Layers /> : <Close />}
           </button>
           <SidebarHeader />
           {this.props.meta && (
