@@ -28,7 +28,6 @@ import Punkt from "./InformasjonsVisning/Punkt";
 import Hjelp from "./InformasjonsVisning/Hjelp/Hjelp";
 
 export let exportableSpraak;
-export let exportableFullscreen;
 
 function getPathNotTab(path) {
   const searchparams = path.search.split("?");
@@ -59,15 +58,14 @@ class App extends React.Component {
       visKoder: false,
       navigation_history: [],
       showCurrent: true,
-      showFullscreen: false,
       spraak: "nb",
       showHovedmeny: false,
       showHelp: false,
       showPunkt: false,
-      showInfo: false
+      showInfo: false,
+      fullscreen: false
     };
     exportableSpraak = this;
-    exportableFullscreen = this;
   }
 
   render() {
@@ -155,6 +153,8 @@ class App extends React.Component {
                       onMouseLeave={this.handleMouseLeave}
                       path={path}
                       parent={this}
+                      fullscreen={this.state.fullscreen}
+                      handleFullscreen={this.handleFullscreen}
                     />
 
                     <Kart
@@ -177,6 +177,7 @@ class App extends React.Component {
                       onMouseLeave={this.handleMouseLeave}
                       handleShowPunkt={this.handleShowPunkt}
                       showPunkt={this.state.showPunkt}
+                      fullscreen={this.state.fullscreen}
                     />
                   </>
                 );
@@ -252,8 +253,9 @@ class App extends React.Component {
     this.setState({ showHovedmeny: !this.state.showHovedmeny });
   };
 
-  handleFullscreen = showFullscreen => {
-    this.setState({ showFullscreen: showFullscreen });
+  handleFullscreen = fullscreen => {
+    console.log("fullscreen");
+    this.setState({ fullscreen: !this.state.fullscreen });
   };
 
   handleClearSearchFor = () => this.setState({ searchFor: null });

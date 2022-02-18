@@ -6,6 +6,25 @@ Avoiding flex to ensure it works on all types of devices, IE included.
 Even tho we don't a of now support IE X)
 
 */
+
+@media only screen and (min-width: 769px) {
+  /* We only want fullscreen for big screen at the moment*/
+  .kartlag.fullscreen .section {
+    display: none;
+  }
+
+  .kartlag.fullscreen {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media only screen and (max-width: 760px) {
+  /* We only want fullscreen for big screen at the moment*/
+  .hide_on_mobile {
+    display: none;
+  }
+}
+
 .crumbsection {
   padding: 6px 0px;
 }

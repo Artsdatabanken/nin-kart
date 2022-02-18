@@ -32,7 +32,6 @@ function updateScene(config, props) {
     config.layers = {};
     const viserKatalog = !!props.meta; // meta = true or meta = false , never meta = null
     lagNåværendeLag(config, props);
-
     lagAktiveLag(props.aktiveLag, viserKatalog, props.opplyst, config);
     lagTemp(config);
     //  console.log(config);

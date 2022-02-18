@@ -25,6 +25,13 @@ class Kartlag extends React.Component {
       isstartpage = true;
     }
 
+    const className =
+      "kartlag sidebar " +
+      (this.props.fullscreen ? "fullscreen " : "normal ") +
+      (this.state.showKartlag
+        ? "kartlag_content_open"
+        : "kartlag_content_closed");
+
     return (
       <>
         <MobileOpenButton
@@ -35,14 +42,13 @@ class Kartlag extends React.Component {
           props={this.props}
         />
 
-        <div
-          className={
-            "kartlag sidebar " +
-            (this.state.showKartlag
-              ? "kartlag_content_open"
-              : "kartlag_content_closed")
-          }
-        >
+        <div className={className}>
+          <button
+            className="hide_on_mobile"
+            onClick={this.props.handleFullscreen}
+          >
+            x
+          </button>
           <SidebarHeader />
           {this.props.meta && (
             <Breadcrumbs
