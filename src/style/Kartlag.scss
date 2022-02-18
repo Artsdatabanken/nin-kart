@@ -6,9 +6,13 @@ Avoiding flex to ensure it works on all types of devices, IE included.
 Even tho we don't a of now support IE X)
 
 */
+.crumbsection {
+  padding: 6px 0px;
+}
+
 .breadcrumbs {
   display: block;
-  margin: 2px 15px;
+  margin: 0px 10px;
   padding: 0px;
 }
 
@@ -69,14 +73,16 @@ button.breadcrumb:hover {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 2px;
-  margin: 4px;
-  background: $panel-bg;
-  border-radius: 3px;
+  margin-top: -1px;
+  background: white;
+  border-radius: 0px;
+  border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid #d9d9d9;
+  padding: 2px 6px 2px 2px;
 }
 
 .layer_list_element.subelement {
-  background: $panel-section-sub-sub-bg;
+  background: white;
 }
 
 .layer_list_element .arrow_button {
@@ -95,33 +101,33 @@ button.breadcrumb:hover {
 .kartlag_header {
   position: relative;
   height: 24px;
+  border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid #d9d9d9;
+  background: $panel-bg;
+  margin-top: -1px;
 }
 
 .kartlag_header .layerbutton {
   position: absolute;
-  right: 0;
-  top: -5px;
-  border-radius: 0;
-  height: 53px;
+  right: 7px;
+  top: 1px;
   background: none;
-  background: $bright-nin;
+  padding: 6px 0;
 }
 
 .section .kartlag_header {
   padding-left: 10px;
+  margin-top: -1px;
 }
 
 .kartlag .subexpand {
-  margin: 5px;
-  border-radius: 0 0 5px 5px;
-  margin-top: -3px;
+  margin: 0;
+  border-radius: 0;
 }
 
 .kartlag_element_header {
   min-height: 56px;
   display: flex;
-  width: calc(100% - 9px);
-  padding: 4px 2px;
 }
 
 .kartlag_element_header h4 {
@@ -158,7 +164,12 @@ button.breadcrumb:hover {
 }
 
 .layer_list_element.subelement .layerbutton {
-  background: #e3e8ea;
+  background: none;
+}
+
+.layer_list_element.subelement .arrow_button {
+  background: none;
+  border: 1px solid $panel-section-bg;
 }
 
 .layer_list_element.subelement .layerbutton:hover,
@@ -167,8 +178,8 @@ button.breadcrumb:hover {
 }
 
 .section h3 .layerbutton svg {
-  height: 24px;
-  width: 24px;
+  height: 32px;
+  width: 32px;
 }
 
 .layerbutton svg {
@@ -204,7 +215,6 @@ button.breadcrumb:hover {
   .kartlag_content_open {
     position: absolute;
     margin-top: $ux-page-area-mobile;
-    padding-top: 4px;
     background: white;
     height: $actual-map-height-mobile;
     overflow-x: hidden;
