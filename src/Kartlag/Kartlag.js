@@ -28,7 +28,7 @@ class Kartlag extends React.Component {
 
     const className =
       "kartlag sidebar " +
-      (this.props.fullscreen ? "fullscreen " : "normal ") +
+      (this.props.fullscreen && "fullscreen ") +
       (this.state.showKartlag
         ? "kartlag_content_open"
         : "kartlag_content_closed");
