@@ -1,11 +1,14 @@
 import React from "react";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@material-ui/icons";
+import getTitle from "../Funksjoner/getTitle";
+
 const MobileOpenButton = ({ showKartlag, setShowKartlag, props }) => {
   let isPunkt =
     props.aktivTab === "punkt" || props.aktivTab === "kartlegging"
       ? "mobile_off"
       : "";
-
+  let title = "";
+  if (props.meta) title = getTitle(props.meta);
   return (
     <button
       className={
@@ -23,7 +26,7 @@ const MobileOpenButton = ({ showKartlag, setShowKartlag, props }) => {
         <>
           <KeyboardArrowUp />
           <span>Aktivt kartlag</span>
-          <span> {props.tittel}</span>
+          <span> {title}</span>
         </>
       )}
     </button>

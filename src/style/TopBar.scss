@@ -1,25 +1,57 @@
 @import "./GraphicProfile.scss";
+@import url("https://design.artsdatabanken.no/style/header-footer.css");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+/* Should happen in header-footer css, but untill it does, put it here*/
+
+.dropdown {
+  list-style: none;
+  margin: 0;
+}
+
+@media only screen and (min-width: 769px) {
+  .dropdown {
+    max-height: $actual-map-height;
+    overflow: auto;
+  }
+}
+
+.header-logo {
+  box-sizing: border-box;
+}
+/* Both top bars */
+header.header {
+  z-index: 1000;
+}
+
+.adb-dropdown-wrap {
+  height: 100vh;
+  display: block;
+  width: 100%;
+  position: absolute;
+  pointer-events: none !important;
+}
 
 .top_bar {
   width: 100%;
   left: 0;
-  height: $topbar-height-nin;
   position: relative;
-  background: $super-duper-dark-nin;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.35);
   z-index: 5;
+}
+
+.width-adjuster {
+  height: 100%;
 }
 
 .nin-topbar {
   position: relative;
+  height: $nin-header;
+  background: $super-duper-dark-nin;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.35);
 }
 
 .adb-topbar {
-  width: 100%;
-  display: block;
-  height: 50px;
   background: #4c4a48;
-  display: none;
 }
 
 .header_text:hover {

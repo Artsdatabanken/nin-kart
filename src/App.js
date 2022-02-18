@@ -3,7 +3,7 @@ import { withRouter } from "react-router";
 import backend from "./Funksjoner/backend";
 import { SettingsContext } from "./SettingsContext";
 import InformasjonsVisning from "./InformasjonsVisning/InformasjonsVisning";
-import TopBar from "./TopBar/TopBar";
+import Header from "./TopBar/Header";
 import Kartlag from "./Kartlag/Kartlag";
 import Kart from "./Kart/LeafletTangram/Leaflet";
 import metaSjekk from "./AppSettings/AppFunksjoner/metaSjekk";
@@ -79,7 +79,7 @@ class App extends React.Component {
     const path = this.props.location.pathname;
     return (
       <>
-        <TopBar
+        <Header
           searchFor={this.state.searchFor}
           handleHovedMeny={this.handleHovedMeny}
           onSelectResult={item => {
@@ -89,6 +89,7 @@ class App extends React.Component {
           }}
           history={history}
         />
+
         {path === "/" ? (
           <ForsideInformasjon handleHovedMeny={this.handleHovedMeny} />
         ) : (
