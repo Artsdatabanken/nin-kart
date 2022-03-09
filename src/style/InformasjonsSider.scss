@@ -18,6 +18,10 @@ Specific styling for its subelements
   padding-left: 24px;
 }
 
+.punktIsTopLayer {
+  z-index: 102;
+}
+
 @media only screen and (max-width: 768px) {
   .toplayer {
     z-index: 101;

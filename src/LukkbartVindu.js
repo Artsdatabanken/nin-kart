@@ -10,7 +10,8 @@ const LukkbartVindu = ({
   children,
   icon,
   show,
-  toplayer
+  toplayer,
+  punktIsTopLayer
 }) => {
   const [expanded, setExpanded] = useState(show);
 
@@ -29,10 +30,18 @@ const LukkbartVindu = ({
     }
   }
 
+  let className = "lukkbartvindu";
+  if (toplayer) {
+    className += " toplayer";
+  }
+  if (punktIsTopLayer) {
+    className += " punktIsTopLayer";
+  }
+
   return (
     <>
       {(expanded || show) && (
-        <div className={toplayer ? "lukkbartvindu toplayer" : "lukkbartvindu"}>
+        <div className={className}>
           <div className="lukkbartvindu-innhold">
             <button
               onClick={e => {

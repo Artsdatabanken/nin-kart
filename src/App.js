@@ -63,7 +63,8 @@ class App extends React.Component {
       showHelp: false,
       showPunkt: false,
       showInfo: false,
-      fullscreen: false
+      fullscreen: false,
+      punktIsTopLayer: false
     };
     exportableSpraak = this;
   }
@@ -98,6 +99,7 @@ class App extends React.Component {
               onClose={this.onClose}
               handleShow={this.handleShowPunkt}
               show={this.state.showPunkt}
+              punktIsTopLayer={this.state.punktIsTopLayer}
             />
 
             <InformasjonsVisning
@@ -244,11 +246,15 @@ class App extends React.Component {
   };
 
   handleShowPunkt = punkt => {
-    this.setState({ showPunkt: punkt });
+    this.setState({ showPunkt: punkt, punktIsTopLayer: punkt });
   };
 
   handleShowInfo = info => {
-    this.setState({ showInfo: info });
+    if (this.state.punktIsTopLayer && !info) {
+      this.setState({ punktIsTopLayer: false });
+    } else {
+      this.setState({ showInfo: info, punktIsTopLayer: info && false });
+    }
   };
 
   handleHovedMeny = () => {
