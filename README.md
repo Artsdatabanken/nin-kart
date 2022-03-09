@@ -16,6 +16,9 @@ Oppsett av greiner og deployment er i endring per nå, men live-versjon har allt
 - [Wiki til NiN-løsningen](https://github.com/Artsdatabanken/nin-kart-frontend/wiki/)
 - [Bidra med data](https://github.com/Artsdatabanken/nin-kart-frontend/wiki/%C3%98nsker-du-%C3%A5-bidra-med-data%3F)
 
+## Oppdatere datagrunnlag - lenker
+- [Oversikt over arkitekturen](https://github.com/Artsdatabanken/nin-arkitektur-dokumentasjon)
+
 ## Relaterte prosjekter
 
 - [Lookup API](https://github.com/Artsdatabanken/generic-substring-lookup-api)
