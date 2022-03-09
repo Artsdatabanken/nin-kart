@@ -86,6 +86,7 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + 9px;
 }
 
 @media only screen and (max-width: 768px) {
+  .fullscreen .map_control_button,
   .map_control_button {
     right: 15px;
     top: calc(#{$actual-map-height-mobile} - 34px);

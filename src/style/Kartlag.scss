@@ -21,6 +21,7 @@ Even tho we don't a of now support IE X)
 }
 @media only screen and (max-width: 768px) {
   /* We only want fullscreen for big screen at the moment*/
+  .arrow_button.hide_on_mobile,
   .hide_on_mobile {
     display: none;
   }
@@ -384,4 +385,8 @@ button.breadcrumb:hover {
   padding: 13px 0;
   margin-left: 4px;
   justify-content: center;
+}
+
+.closetab {
+  background: transparent;
 }

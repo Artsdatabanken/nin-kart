@@ -38,9 +38,9 @@ const LukkbartVindu = ({
               onClick={e => {
                 handleExpand(false);
               }}
-              className="closebutton"
+              className="closetab show-kartlag-button layerbutton "
             >
-              Lukk <Close />
+              <Close />
             </button>
           </div>
 

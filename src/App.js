@@ -185,7 +185,9 @@ class App extends React.Component {
             </SettingsContext.Consumer>
           </>
         )}
-        <div className="cookiewarning">
+        <div
+          className={"cookiewarning " + (this.state.fullscreen && "fullscreen")}
+        >
           Les om informasjonskapsler i NiN-kart{" "}
           <a href="https://artsdatabanken.no/informasjonskapsler">her</a>
         </div>

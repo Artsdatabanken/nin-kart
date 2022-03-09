@@ -30,8 +30,8 @@ class Kartlag extends React.Component {
       "kartlag sidebar " +
       (this.props.fullscreen && "fullscreen ") +
       (this.state.showKartlag
-        ? "kartlag_content_open"
-        : "kartlag_content_closed");
+        ? " kartlag_content_open"
+        : " kartlag_content_closed");
 
     return (
       <>
@@ -45,7 +45,7 @@ class Kartlag extends React.Component {
 
         <div className={className}>
           <button
-            className="hide_on_mobile show-kartlag-button layerbutton arrow_button"
+            className="closetab hide_on_mobile show-kartlag-button layerbutton arrow_button"
             onClick={this.props.handleFullscreen}
           >
             {this.props.fullscreen ? <Layers /> : <Close />}
