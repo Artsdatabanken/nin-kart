@@ -28,7 +28,6 @@ import Punkt from "./InformasjonsVisning/Punkt";
 import Hjelp from "./InformasjonsVisning/Hjelp/Hjelp";
 
 export let exportableSpraak;
-export let exportableFullscreen;
 
 function getPathNotTab(path) {
   const searchparams = path.search.split("?");
@@ -59,15 +58,15 @@ class App extends React.Component {
       visKoder: false,
       navigation_history: [],
       showCurrent: true,
-      showFullscreen: false,
       spraak: "nb",
       showHovedmeny: false,
       showHelp: false,
       showPunkt: false,
-      showInfo: false
+      showInfo: false,
+      fullscreen: false,
+      punktIsTopLayer: false
     };
     exportableSpraak = this;
-    exportableFullscreen = this;
   }
 
   render() {
@@ -100,6 +99,7 @@ class App extends React.Component {
               onClose={this.onClose}
               handleShow={this.handleShowPunkt}
               show={this.state.showPunkt}
+              punktIsTopLayer={this.state.punktIsTopLayer}
             />
 
             <InformasjonsVisning
@@ -155,6 +155,8 @@ class App extends React.Component {
                       onMouseLeave={this.handleMouseLeave}
                       path={path}
                       parent={this}
+                      fullscreen={this.state.fullscreen}
+                      handleFullscreen={this.handleFullscreen}
                     />
 
                     <Kart
@@ -177,6 +179,7 @@ class App extends React.Component {
                       onMouseLeave={this.handleMouseLeave}
                       handleShowPunkt={this.handleShowPunkt}
                       showPunkt={this.state.showPunkt}
+                      fullscreen={this.state.fullscreen}
                     />
                   </>
                 );
@@ -184,7 +187,9 @@ class App extends React.Component {
             </SettingsContext.Consumer>
           </>
         )}
-        <div className="cookiewarning">
+        <div
+          className={"cookiewarning " + (this.state.fullscreen && "fullscreen")}
+        >
           Les om informasjonskapsler i NiN-kart{" "}
           <a href="https://artsdatabanken.no/informasjonskapsler">her</a>
         </div>
@@ -241,19 +246,24 @@ class App extends React.Component {
   };
 
   handleShowPunkt = punkt => {
-    this.setState({ showPunkt: punkt });
+    this.setState({ showPunkt: punkt, punktIsTopLayer: punkt });
   };
 
   handleShowInfo = info => {
-    this.setState({ showInfo: info });
+    if (this.state.punktIsTopLayer && !info) {
+      this.setState({ punktIsTopLayer: false });
+    } else {
+      this.setState({ showInfo: info, punktIsTopLayer: info && false });
+    }
   };
 
   handleHovedMeny = () => {
     this.setState({ showHovedmeny: !this.state.showHovedmeny });
   };
 
-  handleFullscreen = showFullscreen => {
-    this.setState({ showFullscreen: showFullscreen });
+  handleFullscreen = fullscreen => {
+    console.log("fullscreen");
+    this.setState({ fullscreen: !this.state.fullscreen });
   };
 
   handleClearSearchFor = () => this.setState({ searchFor: null });

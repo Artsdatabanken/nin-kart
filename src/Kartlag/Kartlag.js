@@ -5,6 +5,7 @@ import Breadcrumbs from "./Breadcrumbs";
 import SidebarHeader from "./SidebarHeader";
 import MobileOpenButton from "./MobileOpenButton";
 import HistoryLayers from "./History/HistoryLayers";
+import { Close, Layers } from "@material-ui/icons";
 
 class Kartlag extends React.Component {
   state = {
@@ -25,6 +26,13 @@ class Kartlag extends React.Component {
       isstartpage = true;
     }
 
+    const className =
+      "kartlag sidebar " +
+      (this.props.fullscreen && "fullscreen ") +
+      (this.state.showKartlag
+        ? " kartlag_content_open"
+        : " kartlag_content_closed");
+
     return (
       <>
         <MobileOpenButton
@@ -35,14 +43,13 @@ class Kartlag extends React.Component {
           props={this.props}
         />
 
-        <div
-          className={
-            "kartlag sidebar " +
-            (this.state.showKartlag
-              ? "kartlag_content_open"
-              : "kartlag_content_closed")
-          }
-        >
+        <div className={className}>
+          <button
+            className="closetab hide_on_mobile show-kartlag-button layerbutton arrow_button"
+            onClick={this.props.handleFullscreen}
+          >
+            {this.props.fullscreen ? <Layers /> : <Close />}
+          </button>
           <SidebarHeader />
           {this.props.meta && (
             <Breadcrumbs

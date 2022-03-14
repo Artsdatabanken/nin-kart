@@ -16,6 +16,15 @@
   height: 100%;
   cursor: crosshair;
 }
+
+.leaflet-container {
+  width: $map-width;
+}
+
+.fullscreen .leaflet-container {
+  width: 100%;
+}
+
 /* KARTKNAPPENE */
 
 /* Sizes for map buttons*/
@@ -39,10 +48,6 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + 9px;
 
 .leaflet-right .leaflet-control {
   margin-right: 15px;
-}
-
-.leaflet-container {
-  width: $map-width;
 }
 
 .leaflet-touch .leaflet-bar a {
@@ -71,7 +76,17 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + 9px;
   top: calc(#{$actual-map-height} - 36px);
 }
 
+.fullscreen .map_control_button {
+  background: white;
+  border-radius: 4px;
+  padding: 2px;
+  position: absolute;
+  right: 15px;
+  top: calc(#{$actual-map-height} - 36px);
+}
+
 @media only screen and (max-width: 768px) {
+  .fullscreen .map_control_button,
   .map_control_button {
     right: 15px;
     top: calc(#{$actual-map-height-mobile} - 34px);
@@ -81,10 +96,6 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + 9px;
 @media only screen and (max-width: 768px) {
   .leaflet-container {
     width: 100%;
-    height: calc(100% - 60px);
-  }
-  .leaflet-container-fullscreen {
-    top: 0;
     height: calc(100% - 60px);
   }
   .leaflet-top {

@@ -130,6 +130,7 @@ class LeafletTangram extends React.Component {
     if (this.props.meta !== prevProps.meta) return true;
     if (this.props.opplyst !== prevProps.opplyst) return true;
     if (this.props.show_current !== prevProps.show_current) return true;
+    if (this.props.fullscreen !== prevProps.fullscreen) return true;
   }
 
   componentDidUpdate(prevProps) {
@@ -150,6 +151,7 @@ class LeafletTangram extends React.Component {
       }
     }
     if (this.erEndret(prevProps)) {
+      this.map.invalidateSize();
       this.updateMap(this.props);
       return;
     }
@@ -243,7 +245,9 @@ class LeafletTangram extends React.Component {
 
   render() {
     return (
-      <>
+      <div
+        className={this.props.fullscreen ? "map fullscreen" : "map normal-size"}
+      >
         <button
           className="geolocate map_control_button"
           onClick={e => this.geolocationFunc(e)}
@@ -258,7 +262,7 @@ class LeafletTangram extends React.Component {
             this.mapEl = ref;
           }}
         />
-      </>
+      </div>
     );
   }
 }

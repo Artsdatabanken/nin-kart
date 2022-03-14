@@ -49,7 +49,14 @@ class Punkt extends Component {
   };
 
   render() {
-    const { onNavigate, punkt, onNavigateToTab, handleShow, show } = this.props;
+    const {
+      onNavigate,
+      punkt,
+      onNavigateToTab,
+      handleShow,
+      show,
+      punktIsTopLayer
+    } = this.props;
     if (!punkt) {
       return null;
     }
@@ -73,6 +80,7 @@ class Punkt extends Component {
         show={show}
         tittel={"Punktinformasjon"}
         icon={<Room />}
+        punktIsTopLayer={punktIsTopLayer}
       >
         {false && (
           <Header
