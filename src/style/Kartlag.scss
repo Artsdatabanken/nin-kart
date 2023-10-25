@@ -56,7 +56,7 @@ Even tho we don't a of now support IE X)
   margin: 2px;
   padding: 2px;
   text-decoration: underline;
-  color: $super-duper-dark-nin;
+  color: $link-color;
   font-size: 10pt;
 }
 
@@ -105,8 +105,8 @@ button.breadcrumb:hover {
   margin-top: -1px;
   background: white;
   border-radius: 0px;
-  border-bottom: 1px solid #d9d9d9;
-  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid $sand-80;
+  border-top: 1px solid $sand-80;
   padding: 2px 6px 2px 2px;
 }
 
@@ -130,8 +130,8 @@ button.breadcrumb:hover {
 .kartlag_header {
   position: relative;
   height: 24px;
-  border-bottom: 1px solid #d9d9d9;
-  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid $sand-80;
+  border-top: 1px solid $sand-80;
   background: $panel-bg;
   margin-top: -1px;
 }

@@ -42,8 +42,8 @@ a,
 a:visited,
 a:active,
 a:focus {
-  color: $super-duper-dark-nin;
-  text-decoration: none;
+  color: $link-color;
+  //text-decoration: none;
 }
 
 a:hover {
@@ -66,13 +66,13 @@ body,
 input,
 p,
 button {
-  font-family: "Roboto", "sans-serif";
+  font-family: $font-chivo;
 }
 
 h1,
 h2,
 h3 {
-  font-family: "Roboto Condensed";
+  font-family:$font-space;
 }
 
 strong,
@@ -198,7 +198,7 @@ div {
   margin-top: 4px;
   margin-bottom: 4px;
   font-size: 12pt;
-  color: $super-duper-dark-nin;
+  color: $body-color;
   display: flex;
 }
 
@@ -209,7 +209,7 @@ div {
 .artsdatabanken,
 .tilbakemeldinger {
   background: transparent;
-  color: $super-duper-dark-nin;
+  color: $body-color;
   font-size: 12pt;
   border: 0;
   margin: 0;
@@ -261,7 +261,7 @@ div {
 
 .spraakvelger span,
 .hamburger_menu_item svg {
-  color: $super-duper-dark-nin;
+  color: $adb_dark_grey;
   display: inline-block;
   vertical-align: top;
 }
@@ -395,7 +395,7 @@ div {
 .section {
   border-top: 1px solid #c8c8c8;
   margin-top: -1px;
-  background: #f4f2f2;
+  background: #fff9f0//#f4f2f2;
 }
 
 .testcolours .section:nth-child(1) {
@@ -497,7 +497,7 @@ div {
 }
 
 .cookiewarning a {
-  color: white;
+  color: $link-color;
   text-decoration: underline;
 }
 

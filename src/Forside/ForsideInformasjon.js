@@ -17,7 +17,7 @@ const ForsideInformasjon = props => {
         >
           <div className="frontpage_icon">
             <img
-              src="/logoer/small_icon_two_blue.png"
+              src="/logoer/small_icon_grey_two.png"
               className="logo_image_frontpage"
               alt="artsdatabanken logo"
             />{" "}
@@ -30,7 +30,7 @@ const ForsideInformasjon = props => {
 
         <div className="frontpage_feature_block">
           <div className="frontpage_feature_container">
-            <img src="/logoer/logo_hvit.png" alt="" />
+            <img src="/logoer/logo_hvit.svg" alt="" />
             <div>
               <h2>Hva er Natur i Norge?</h2>
               <p>
