@@ -1,10 +1,12 @@
 ﻿import React from "react";
-import { withRouter } from "react-router";
+import { withRouter } from "../withRouter";
 import "../style/Forside.scss";
 import Kilder from "./Kilder";
 import Utforsk from "../HamburgerMeny/Utforsk/Utforsk";
+import { useNavigate } from "react-router";
 
-const ForsideInformasjon = props => {
+const ForsideInformasjon = ({onToggleHovedMeny}) => {
+  const { navigate } = useNavigate();
   return (
     <div className="frontpage">
       <div className="frontpage_body">
@@ -12,7 +14,7 @@ const ForsideInformasjon = props => {
           className="frontpage_header"
           onClick={e => {
             e.stopPropagation();
-            props.history.push("/Natur_i_Norge/");
+            navigate("/Natur_i_Norge/");
           }}
         >
           <div className="frontpage_icon">
@@ -50,7 +52,7 @@ const ForsideInformasjon = props => {
 
         <div className="frontpage_link_items">
           <h2>Utforsk NiN-kart via ikonene nedenfor</h2>
-          <Utforsk parent={props} handleHovedMeny={props.handleHovedMeny} />
+          <Utforsk onToggleHovedMeny={onToggleHovedMeny} />
         </div>
       </div>
       <div className="frontpage_footer">

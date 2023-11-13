@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router";
+import { withRouter } from "./withRouter";
 import backend from "./Funksjoner/backend";
 import { SettingsContext } from "./SettingsContext";
 import InformasjonsVisning from "./InformasjonsVisning/InformasjonsVisning";
@@ -70,7 +70,7 @@ class App extends React.Component {
   }
 
   render() {
-    let aktivTab = this.state.aktivTab; // getPathTab(this.props.location);
+    let aktivTab = this.state.aktivTab; 
     const { history } = this.props;
     let erAktivert = false;
     if (this.state.meta)
@@ -80,17 +80,17 @@ class App extends React.Component {
       <>
         <Header
           searchFor={this.state.searchFor}
-          handleHovedMeny={this.handleHovedMeny}
+          onToggleHovedMeny={this.handleToggleHovedMeny}
           onSelectResult={item => {
             let url = item.url;
             if (item.url[0] !== "/") url = "/" + item.url;
-            history.push(url);
+            this.props.navigate(url);
           }}
           history={history}
         />
 
         {path === "/" ? (
-          <ForsideInformasjon handleHovedMeny={this.handleHovedMeny} />
+          <ForsideInformasjon onToggleHovedMeny={this.handleToggleHovedMeny} />
         ) : (
           <>
             <Punkt
@@ -145,7 +145,7 @@ class App extends React.Component {
                       handleShowInfo={this.handleShowInfo}
                       showInfo={this.state.showInfo}
                       onUpdateMetaProp={this.handleUpdateMetaProp}
-                      handleHovedMeny={this.handleHovedMeny}
+                      handleHovedMeny={this.handleToggleHovedMeny}
                       onToggleLayer={() => {
                         this.handleToggleLayer();
                       }}
@@ -197,7 +197,7 @@ class App extends React.Component {
           spraak={this.state.spraak}
           handleSpraak={this.handleSpraak}
           open={this.state.showHovedmeny}
-          handleHovedMeny={this.handleHovedMeny}
+          onToggleHovedMeny={this.handleToggleHovedMeny}
           handleHelp={this.handleHelp}
         />
       </>
@@ -221,11 +221,11 @@ class App extends React.Component {
     if (!url) {
       return;
     }
-    this.props.history.push(new_url);
+    this.props.navigate(new_url);
   };
 
   onNavigateToTab = tab => {
-    this.props.history.push(getPathNotTab(this.props.location) + "?" + tab);
+    this.props.navigate(getPathNotTab(this.props.location) + "?" + tab);
   };
 
   handleFitBounds = bbox => {
@@ -257,7 +257,7 @@ class App extends React.Component {
     }
   };
 
-  handleHovedMeny = () => {
+  handleToggleHovedMeny = () => {
     this.setState({ showHovedmeny: !this.state.showHovedmeny });
   };
 
@@ -284,6 +284,7 @@ class App extends React.Component {
     const lng = search.get("lng");
     const lat = search.get("lat");
     if (lng && lat) this.handleMarkerClick({ lng, lat });
+    console.log(this.props.location)
     fetchMeta(this.props.location.pathname, this);
   }
 

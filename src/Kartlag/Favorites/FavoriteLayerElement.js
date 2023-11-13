@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import HideLayerButton from "../Buttons/HideLayerButton";
 import { Settings } from "@material-ui/icons";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import LayerButton from "../Buttons/LayerButton";
 import FavoriteButton from "../Buttons/FavoriteButton";
 import MapLayerButton from "../Buttons/MapLayerButton";
@@ -14,14 +14,14 @@ const FavoriteLayerElement = ({
   onToggleLayer
 }) => {
   const [expandedSub, setExpandedSub] = useState(false);
-  const history = useHistory();
+   const navigate = useNavigate();
   if (!kartlag) return null;
   const { kode } = kartlag;
   const handleExpandClick = () => {
     setExpandedSub(!expandedSub);
   };
   const onNavigate = where => {
-    history.push(where);
+    navigate(where);
   };
 
   return (

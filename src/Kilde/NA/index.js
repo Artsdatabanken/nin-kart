@@ -1,5 +1,5 @@
 import { Component, default as React } from "react";
-import { withRouter } from "react-router";
+import { withRouter } from "../../withRouter";
 import backend from "Funksjoner/backend";
 import NA from "./NA";
 
@@ -22,7 +22,7 @@ class NAContainer extends Component {
       });
     });
   }
-  handleClick = kode => this.props.history.push(`/katalog/${kode}`);
+  handleClick = kode => this.props.navigate(`/katalog/${kode}`);
 
   render() {
     return (

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import importScript from "../Funksjoner/getExternal";
 import TopBar from "./TopBar";
 
-const Header = ({ searchFor, handleHovedMeny, onSelectResult, history }) => {
+const Header = ({ searchFor, onToggleHovedMeny, onSelectResult, history }) => {
   const headerjsurl = "https://design.artsdatabanken.no/script/header.js";
   useEffect(() => {
     importScript(headerjsurl);
@@ -32,7 +32,7 @@ const Header = ({ searchFor, handleHovedMeny, onSelectResult, history }) => {
       </header>
       <TopBar
         searchFor={searchFor}
-        handleHovedMeny={handleHovedMeny}
+        onToggleHovedMeny={onToggleHovedMeny}
         onSelectResult={onSelectResult}
         history={history}
       />

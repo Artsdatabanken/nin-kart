@@ -4,8 +4,10 @@ import Searchbar from "./Searchbar/Searchbar";
 import "./../style/TopBar.scss";
 import Hamburger from "@material-ui/icons/Menu";
 import backend from "../Funksjoner/backend";
+import { useNavigate } from 'react-router-dom'
 
-const TopBar = ({ onSelectResult, searchFor, history, handleHovedMeny }) => {
+const TopBar = ({ onSelectResult, searchFor, onToggleHovedMeny }) => {
+  const navigate = useNavigate();
   const [hits, setHits] = useState([]);
   const [query, setQuery] = useState(null);
   const latestQuery = useRef();
@@ -30,11 +32,11 @@ const TopBar = ({ onSelectResult, searchFor, history, handleHovedMeny }) => {
           className="invisible_icon_button hamburger"
           onKeyDown={e => {
             if (e.keyCode === 13) {
-              handleHovedMeny();
+              onToggleHovedMeny();
             }
           }}
           onClick={e => {
-            handleHovedMeny();
+            onToggleHovedMeny();
           }}
         >
           <Hamburger />
@@ -43,7 +45,7 @@ const TopBar = ({ onSelectResult, searchFor, history, handleHovedMeny }) => {
         <div
           className="header_text"
           onClick={() => {
-            history.push("/");
+            navigate("/");
           }}
         >
           <span style={{ fontWeight: 500 }}>NiN-kart</span>

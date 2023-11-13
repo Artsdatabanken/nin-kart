@@ -19,7 +19,7 @@ import {
   AssignmentInd
 } from "@material-ui/icons";
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter } from "../withRouter";
 import NavigationChevronLeftDouble from "../AppSettings/NavigationChevronLeftDouble";
 import GitHub from "./GitHub";
 import Innstillinger from "./Innstillinger";
@@ -29,15 +29,15 @@ import config from "../Funksjoner/config";
 class HamburgerMeny extends Component {
   render() {
     let spraak = this.props.spraak;
-    const { handleSpraak, handleHovedMeny } = this.props;
+    const { handleSpraak, onToggleHovedMeny } = this.props;
     return (
       <SettingsContext.Consumer>
         {context => (
           <SwipeableDrawer
             className="hamburger_sidebar"
             anchor="left"
-            onClose={handleHovedMeny}
-            onOpen={handleHovedMeny}
+            onClose={onToggleHovedMeny}
+            onOpen={onToggleHovedMeny}
             open={this.props.open}
           >
             <List className="hamburger_sidebar">
@@ -53,7 +53,7 @@ class HamburgerMeny extends Component {
                   }
                 />
                 <ListItemSecondaryAction>
-                  <IconButton onClick={handleHovedMeny}>
+                  <IconButton onClick={onToggleHovedMeny}>
                     <NavigationChevronLeftDouble />
                   </IconButton>
                 </ListItemSecondaryAction>
@@ -65,12 +65,12 @@ class HamburgerMeny extends Component {
                   parent={this}
                   props={this}
                   context={context}
-                  handleHovedMeny={handleHovedMeny}
+                  onToggleHovedMeny={onToggleHovedMeny}
                 />
                 <Menyelement
                   onClick={() => {
                     this.handleClick("/Datakilde/");
-                    this.props.handleHovedMeny();
+                    this.props.onToggleHovedMeny();
                   }}
                   icon={<AssignmentInd />}
                   primary="Datakilder"
@@ -80,7 +80,7 @@ class HamburgerMeny extends Component {
                   primary="Hjelp"
                   onClick={() => {
                     this.props.handleHelp();
-                    this.props.handleHovedMeny();
+                    this.props.onToggleHovedMeny();
                   }}
                 />
                 <Divider />
@@ -100,7 +100,7 @@ class HamburgerMeny extends Component {
                     this.handleWindowOpen(
                       "https://github.com/Artsdatabanken/nin-kart-frontend/issues"
                     );
-                    this.props.handleHovedMeny();
+                    this.props.onToggleHovedMeny();
                   }}
                 >
                   <Comment /> <span>Gi tilbakemelding</span> <OpenInNew />
@@ -111,7 +111,7 @@ class HamburgerMeny extends Component {
                   primary="Last ned data"
                   onClick={() => {
                     this.handleWindowOpen("https://data.artsdatabanken.no/");
-                    this.props.handleHovedMeny();
+                    this.props.onToggleHovedMeny();
                   }}
                 />
                 <Menyelement
@@ -120,7 +120,7 @@ class HamburgerMeny extends Component {
                     this.handleWindowOpen(
                       "https://github.com/Artsdatabanken/nin-kart-frontend/wiki/%C3%98nsker-du-%C3%A5-bidra-med-data%3F"
                     );
-                    this.props.handleHovedMeny();
+                    this.props.onToggleHovedMeny();
                   }}
                   icon={<CloudUpload />}
                   primary="Levere data"
@@ -132,7 +132,7 @@ class HamburgerMeny extends Component {
                     this.handleWindowOpen(
                       "https://github.com/Artsdatabanken/nin-kart-frontend"
                     );
-                    this.props.handleHovedMeny();
+                    this.props.onToggleHovedMeny();
                   }}
                   icon={<GitHub />}
                   primary="Kildekode"
@@ -142,7 +142,7 @@ class HamburgerMeny extends Component {
                 <Menyelement
                   onClick={() => {
                     this.handleWindowOpen("https://artsdatabanken.no");
-                    this.props.handleHovedMeny();
+                    this.props.onToggleHovedMeny();
                   }}
                   icon={
                     <img
@@ -162,10 +162,10 @@ class HamburgerMeny extends Component {
     );
   }
 
-  handleClick = what => this.props.history.push(what);
+  handleClick = what => this.props.navigate(what);
   handleWindowOpen = what => window.open(what);
   handleClickMap = () => this.handleWindowOpen("/");
-  handleNavigate = url => this.props.history.push(url);
+  handleNavigate = url => this.props.navigate(url);
 }
 
 export default withRouter(HamburgerMeny);
