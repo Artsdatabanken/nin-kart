@@ -506,3 +506,14 @@ div {
     width: 100%;
   }
 }
+
+.cookies {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  padding: 8px;
+  text-align: center;
+  font-size: 12pt;
+}

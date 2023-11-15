@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/Artsdatabanken/nin-kart-frontend.svg?branch=master)](https://travis-ci.org/Artsdatabanken/nin-kart-frontend)
-[![Coverage Status](https://coveralls.io/repos/github/Artsdatabanken/nin-kart-frontend/badge.svg?branch=master)](https://coveralls.io/github/Artsdatabanken/nin-kart-frontend?branch=master)
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
@@ -7,7 +5,8 @@
 
 # Natur i Norge (NiN) kart
 
-![image](https://user-images.githubusercontent.com/17450081/55809911-0804fa80-5ae7-11e9-83e8-31c835f239c9.png)
+Oppskrift for å komme i gang finner du i Wikien, se lenker nedenfor.
+Oppsett av greiner og deployment er i endring per nå, men live-versjon har alltid krevt manuell trigger for å bygges.
 
 ## Nyttige lenker i prosjektet
 
@@ -16,6 +15,9 @@
 - [Laste ned åpne data](https://data.artsdatabanken.no/Natur_i_Norge)
 - [Wiki til NiN-løsningen](https://github.com/Artsdatabanken/nin-kart-frontend/wiki/)
 - [Bidra med data](https://github.com/Artsdatabanken/nin-kart-frontend/wiki/%C3%98nsker-du-%C3%A5-bidra-med-data%3F)
+
+## Oppdatere datagrunnlag - lenker
+- [Oversikt over arkitekturen](https://github.com/Artsdatabanken/nin-arkitektur-dokumentasjon)
 
 ## Relaterte prosjekter
 

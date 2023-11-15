@@ -67,6 +67,7 @@ const ForsideInformasjon = ({onToggleHovedMeny}) => {
             />
           </a>
         </div>
+
         <Kilder />
       </div>
     </div>
