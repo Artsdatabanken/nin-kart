@@ -19,7 +19,7 @@
     "@material-ui/lab": "^4.0.0-alpha.60",
     "@sentry/browser": "^6.13.3",
     "classnames": "^2.3.1",
-    "eslint-config-react-app": "^7.0.1",
+    "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "leaflet": "^1.7.1",
     "markdown-to-jsx": "^7.1.3",
