@@ -1,4 +1,4 @@
-import {exportableSpraak} from "App";
+import {exportableSpraak} from "../App";
 
 export default function språk(meta) {
   let spraak = exportableSpraak.state.spraak;  

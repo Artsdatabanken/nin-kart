@@ -1,5 +1,5 @@
-import prettyprint from "Funksjoner/prettyprint";
-import språk from "Funksjoner/språk";
+import prettyprint from "../../../../Funksjoner/prettyprint";
+import språk from "../../../../Funksjoner/språk";
 
 const prosent = (over, under) => ((100 * over) / under).toFixed(1) + " %";
 

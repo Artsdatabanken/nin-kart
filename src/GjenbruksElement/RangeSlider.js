@@ -12,6 +12,9 @@ export default function RangeSlider({
 }) {
   const [value, setValue] = React.useState([min, max]);
   const handleChange = (event, newValue) => {
+    newValue = newValue.map(val => {
+      return Math.round(val * 100) / 100;
+    });
     setValue(newValue);
     // Sammenligningen nedenfor hindrer unødvendig oppdatering og gir raskere kartlasting
     if (min !== newValue[0]) {

@@ -5,11 +5,11 @@ function drawAll({ format, opplystKode }) {
     google: {
       draw: {
         googleshade: {
-          order: 0
-        }
+          order: 0,
+        },
       },
-      data: { source: "bakgrunnskart" }
-    }
+      data: { source: "bakgrunnskart" },
+    },
   };
 }
 
@@ -17,7 +17,7 @@ function lagSource({ url, zoom }, { bbox }) {
   return {
     type: "Raster",
     url: url,
-    max_zoom: zoom[1]
+    max_zoom: zoom[1],
   };
 }
 
@@ -38,11 +38,13 @@ function lagStyle(format, drawArgs) {
             color.rgb = sampleRaster(0).rgb;
             color.rgb *= tint.rgb;
             color.rgb = mix(color.rgb,vec3(1.),tint.a);
-    `
-        }
-      }
-    }
+    `,
+        },
+      },
+    },
   };
 }
 
-export default { drawAll, lagSource, lagStyle };
+const googleRasterObject = { drawAll, lagSource, lagStyle };
+
+export default googleRasterObject;

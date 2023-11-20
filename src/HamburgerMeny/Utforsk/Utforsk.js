@@ -1,28 +1,22 @@
-import Menyelement from "HamburgerMeny/Menyelement";
+import Menyelement from "../Menyelement";
 import React from "react";
 import { Pets, Landscape } from "@material-ui/icons";
-import Naturvern from "HamburgerMeny/Naturvern";
+import Naturvern from "../Naturvern";
+import { useNavigate } from "react-router-dom";
 
-const Utforsk = ({ parent, context }) => {
-  /*
-  Ridiculous check here to avoid props collapse when called from different places
-  */
-  let the_props = parent;
-  if (!parent.history) {
-    the_props = parent.props;
-  }
-  function onToggleHovedmeny() {
-    if (context) {
-      context.onToggleHovedmeny();
-    }
+const Utforsk = ({onToggleHovedMeny}) => {
+  const navigate  = useNavigate();
+
+  const onElementClick = (url) => {
+    navigate(url);
+    onToggleHovedMeny();
   }
 
   return (
     <>
       <Menyelement
         onClick={e => {
-          the_props.history.push("/Natur_i_Norge/Natursystem");
-          onToggleHovedmeny();
+          onElementClick("/Natur_i_Norge/Natursystem");
         }}
         icon={
           <img
@@ -36,8 +30,7 @@ const Utforsk = ({ parent, context }) => {
 
       <Menyelement
         onClick={e => {
-          the_props.history.push("/Natur_i_Norge/Landskap");
-          onToggleHovedmeny();
+          onElementClick("/Natur_i_Norge/Landskap");
         }}
         icon={<Landscape />}
         primary="Landskap"
@@ -45,8 +38,7 @@ const Utforsk = ({ parent, context }) => {
 
       <Menyelement
         onClick={e => {
-          the_props.history.push("/Administrativ_grense/");
-          onToggleHovedmeny();
+          onElementClick("/Administrativ_grense");
         }}
         icon={
           <img
@@ -60,23 +52,23 @@ const Utforsk = ({ parent, context }) => {
 
       <Menyelement
         onClick={e => {
-          the_props.history.push("/Naturvernområde/");
-          onToggleHovedmeny();
+          onElementClick("/Naturvernområde/");
         }}
         icon={<Naturvern />}
         primary="Naturvernområder"
       />
 
-      <Menyelement
-        onClick={e => {
-          the_props.history.push("/Biota/");
-          onToggleHovedmeny();
-        }}
-        icon={<Pets />}
-        primary="Arter"
-      />
+      {false && (
+        <Menyelement
+          onClick={e => {
+            onElementClick("/Biota/");
+          }}
+          icon={<Pets />}
+          primary="Arter"
+        />
+      )}
     </>
   );
-};
+}
 
 export default Utforsk;

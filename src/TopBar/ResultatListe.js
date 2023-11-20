@@ -1,7 +1,7 @@
 import { Divider } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import React, { Component } from "react";
-import Bildeavatar from "GjenbruksElement/Bildeavatar";
+import Bildeavatar from "../GjenbruksElement/Bildeavatar";
 
 const styles = {};
 
@@ -24,7 +24,7 @@ class ResultatListe extends Component {
     if (searchResults.length <= 0) return null;
     return (
       <ul className="resultatliste mobile_active">
-        {searchResults.map(item => {
+        {searchResults.map((item) => {
           const navn = item.title;
           return (
             <React.Fragment key={item.kode}>
@@ -32,7 +32,7 @@ class ResultatListe extends Component {
                 tabIndex="0"
                 className="resultatliste_item"
                 onMouseDown={() => onSelect(item)}
-                onKeyDown={e => {
+                onKeyDown={(e) => {
                   if (e.keyCode === 13) {
                     onSelect(item);
                   }

@@ -1,15 +1,15 @@
 import React from "react";
-import { SettingsContext } from "SettingsContext";
+import { SettingsContext } from "../../../../SettingsContext";
 import KartlagBarnElement from "./KartlagBarnElement";
-import getKey from "./NavigeringslisteFunksjoner/getKey";
+import getKey from "../../../../Funksjoner/getKey";
 
 class Navigeringsliste extends React.Component {
-  /* 
-  
-  Denne komponenten ligger i undermenyen. 
+  /*
+
+  Denne komponenten ligger i undermenyen.
   F.eks på landskap ligger den under fanen landskap.
   Med andre ord - den bor alltid nedover i hierarkiet, ikke oppover.
-  
+
   */
   render() {
     const {

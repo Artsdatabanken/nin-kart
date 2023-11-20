@@ -1,4 +1,5 @@
 import React from "react";
+import config from "../../../Funksjoner/config";
 
 const KatalogHeaderImage = ({ meta }) => {
   if (!meta) return null;
@@ -16,7 +17,7 @@ const KatalogHeaderImage = ({ meta }) => {
   }
 
   if (bilde.flagg != null) {
-    new_flagg = bilde.logo.url;
+    new_flagg = bilde.flagg.url;
   }
 
   if (meta.tittel.nb === "Administrativ grense") {
@@ -27,10 +28,8 @@ const KatalogHeaderImage = ({ meta }) => {
   let flagg_classes = "sidebar_top_image trasparent_image";
 
   if (url.indexOf("Datakilde") !== -1) {
-    new_url = "https://data.artsdatabanken.no/" + url + "/logo_408.png";
+    new_url = config.logo(url, 408);
   }
-
-  let speciesimg = "https://data.artsdatabanken.no/" + url + "/phylopic_48.png";
 
   if (url.includes("Biota")) {
     backgroundSize = "cover";
@@ -41,30 +40,16 @@ const KatalogHeaderImage = ({ meta }) => {
       <div
         className={classes}
         style={
-          (speciesimg !== "no_image" && {
-            backgroundSize: "40px",
-            backgroundImage: "url(" + speciesimg + ")",
-            backgroundRepeat: "repeat"
+          (new_url !== "no_image" && {
+            backgroundSize: backgroundSize,
+            backgroundImage: "url(" + new_url + ")",
+            backgroundRepeat: backgroundRepeat
           }) || {
             height: 0
           }
         }
         alt=""
-      >
-        <div
-          className={classes}
-          style={
-            (new_url !== "no_image" && {
-              backgroundSize: backgroundSize,
-              backgroundImage: "url(" + new_url + ")",
-              backgroundRepeat: backgroundRepeat
-            }) || {
-              height: 0
-            }
-          }
-          alt=""
-        />
-      </div>
+      />
 
       {false && (
         <div

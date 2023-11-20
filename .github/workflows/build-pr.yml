@@ -1,0 +1,16 @@
+name: build and test PR
+
+on:
+  pull_request:
+    branches:
+      - '*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+      - run: npm install --legacy-peer-deps
+      - run: npm run test

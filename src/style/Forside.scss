@@ -2,14 +2,9 @@
 /* Container */
 .frontpage {
   width: 100%;
-  height: calc(100%);
-  min-height: calc(100vh);
-  background: #ffffff;
-  top: 0px;
-  left: 0;
+  top: $topbar-height-nin;
   text-align: center;
-  position: absolute;
-  overflow-y: auto;
+  position: relative;
 }
 
 /* General Stuff */
@@ -17,6 +12,10 @@
 .frontpage_link_items,
 .frontpage_feature_block {
   padding: 50px;
+}
+
+.frontpage_link_items{
+  background:$sand-80
 }
 
 @media only screen and (max-width: 768px) {
@@ -131,8 +130,6 @@
 
 /* Footer */
 .frontpage_body {
-  /* Footer height, is what makes footer sticky */
-  min-height: calc(100% - 300px);
 }
 
 .artsdatabanken_logo img,
@@ -145,6 +142,8 @@
   width: 100vw;
   text-align: center;
   background: $brightest-nin;
+  color:$body-color;
+  padding-top:0px
 }
 
 .frontpage_icon svg {

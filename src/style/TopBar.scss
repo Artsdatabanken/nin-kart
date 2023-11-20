@@ -1,12 +1,58 @@
 @import "./GraphicProfile.scss";
+@import url("https://design.artsdatabanken.no/style/header-footer.css");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+/* Should happen in header-footer css, but untill it does, put it here*/
+
+.dropdown {
+  list-style: none;
+  margin: 0;
+}
+
+@media only screen and (min-width: 769px) {
+  .dropdown {
+    max-height: $actual-map-height;
+    overflow: auto;
+  }
+}
+
+.header-logo {
+  box-sizing: border-box;
+}
+/* Both top bars */
+header.header {
+  z-index: 1000;
+}
+
+.adb-dropdown-wrap {
+  height: 100vh;
+  display: block;
+  width: 100%;
+  position: absolute;
+  pointer-events: none !important;
+}
 
 .top_bar {
   width: 100%;
   left: 0;
-  height: $topbar-height-nin;
   position: relative;
-  background: $dark-nin;
-  border-bottom: 1px solid $border-color;
+  z-index: 5;
+  font-family: $font-chivo;
+}
+
+.width-adjuster {
+  height: 100%;
+}
+
+.nin-topbar {
+  position: relative;
+  height: $nin-header;
+  background: $super-duper-dark-nin;
+  //box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.35);
+}
+
+.adb-topbar {
+  background:$sand-50;
 }
 
 .header_text:hover {
@@ -22,17 +68,17 @@
 /* Logo Image */
 
 .header_text {
-  font-size: 20pt;
-  color: $brightest-nin;
-  font-weight: 300;
+  font-size: 14pt;
+  color: $body-color;
+  font-weight: 400;
   display: inline-block;
-  margin-left: 60px;
+  margin-left: 56px;
   margin-top: 12px;
 }
 
 @media only screen and (max-width: 768px) {
   .header_text {
-    margin-left: calc(50% - 70px);
+    margin-left: 46px;
   }
 }
 
@@ -43,7 +89,7 @@
 .logo_image {
   width: 20px;
   position: relative;
-  margin-right: 10px;
+  margin-left: 16px;
   z-index: 1;
 }
 
@@ -75,8 +121,14 @@
   z-index: 22;
 }
 
+@media only screen and (min-width: 769px) {
+  .hamburger {
+    left: 20px;
+  }
+}
+
 .top_bar svg {
-  color: white;
+  color: $body-color
 }
 
 .top_bar.forside_topbar svg {
@@ -290,4 +342,9 @@
 
 .background_click_collector:hover {
   cursor: pointer;
+}
+
+.menuitems{
+  background: transparent;
+  color:$body-color;
 }

@@ -1,4 +1,4 @@
-import colorArray2Image from "Funksjoner/palette/colorArray2Image";
+import colorArray2Image from "../../../../Funksjoner/palette/colorArray2Image";
 import landskapIndexTemp from "./fellesfunksjoner/landskap_index_temp";
 import drawSetup from "./fellesfunksjoner/drawSetup";
 import lagSource from "./fellesfunksjoner/lagSource";
@@ -12,7 +12,7 @@ const color = `
   color = texture2D(palette, vec2(v, depth));
 `;
 
-const global = `
+const renderIndexedColor = `
     highp float rgbaToIndex(vec4 rgba) {
     const float pixelWidth = 1./512.;
     // G = MSB, color 256-511, B = LSB, color 0-255
@@ -28,13 +28,13 @@ function lagStyle(format, drawArgs) {
     shaders: {
       uniforms: {
         palette: makePalette(opplyst, drawArgs),
-        depth: 1 - (drawArgs.depth || 0) / 8 - 0.5 / 8
+        depth: 1 - (drawArgs.depth || 0) / 8 - 0.5 / 8,
       },
       blocks: {
-        global: global,
-        color: color
-      }
-    }
+        global: renderIndexedColor,
+        color: color,
+      },
+    },
   };
   return { name: drawArgs.kode, value: gradient };
 }
@@ -53,7 +53,7 @@ function makePalette(opplyst, drawArgs) {
   }
   for (var b of barna) hash[b.kode] = b.farge;
   const colors = [];
-  Object.keys(landskapIndexTemp).forEach(kode => {
+  Object.keys(landskapIndexTemp).forEach((kode) => {
     const barnet = finnBarn(kode, barna, blank);
     if (barnet.erSynlig === false) {
       colors.push(blank);
@@ -66,4 +66,6 @@ function makePalette(opplyst, drawArgs) {
   return colorArray2Image(colors, drawArgs.blendmode, drawArgs.opacity);
 }
 
-export default { drawAll, lagSource, lagStyle };
+const indexedRasterObject = { drawAll, lagSource, lagStyle };
+
+export default indexedRasterObject;

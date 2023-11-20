@@ -1,242 +1,149 @@
 @import "./GraphicProfile.scss";
-/* SIDEBAR MENU */
 
+/*
+The left and right sidebars
+Their collected styling
+Their common buttons
+*/
+
+/* leftmenu */
+
+.leftwindow {
+  width: $sidebar-max-size;
+  position: absolute;
+  top: 0;
+  max-height: 100%;
+  background: $panel-bg;
+  height: 100%;
+}
+
+.lukkbartvindu {
+  left: 0;
+}
+
+.kartlag {
+  right: 0;
+}
+
+.lukkbartvindu,
 .sidebar {
-  position: fixed;
-  height: calc(100vh - #{$topbar-height-nin});
-  overflow-x: hidden;
-  max-width: $sidebar-max-size;
-  background: $background_header;
-  width: 100%;
   font-family: $fontfamily;
-}
-
-@media only screen and (max-width: 768px) {
-  .sidebar {
-    height: calc(100vh - #{$menu-mobile-size});
-    max-height: 100%;
-    overflow-y: auto;
-  }
-  .sidebar.mobile_off {
-    display: none;
-  }
-  .sidebar.mobile_on {
-    display: inline-block;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .top_sidebar_background,
-  .sidebar {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
-/* MAIN BODY CONTENT (information tab) */
-.main_body {
-  position: relative;
-  top: 0px;
-  height: calc(100vh - #{$topbar-height-nin});
-  width: calc(100% - #{$sidebar-max-size});
-  background: $background_header;
-  font-family: $fontfamily;
-  left: $sidebar-max-size;
+  background-color: $panel-bg;
+  position: absolute;
   overflow-y: auto;
+  box-shadow: $box-shadow-card;
+  width: $sidebar-max-size;
+  height: 100%;
+  max-height: $actual-map-height;
+  top: $topbar-height-nin;
 }
 
 @media only screen and (max-width: 768px) {
-  .main_body.mobile_on {
-    position: relative;
-    height: calc(100vh - #{$menu-mobile-size});
+  .lukkbartvindu,
+  .sidebar {
     width: 100%;
-    background: $background_header;
-    left: auto;
-    overflow-y: scroll;
-  }
-  .main_body.mobile_off {
-    display: none;
+    max-height: $actual-map-height-mobile;
   }
 }
 
-/* Content aligner */
-.main_body_wrapper {
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-right: auto;
-  max-width: 90%;
-  text-align: center;
-  padding-bottom: 10px;
-  max-width: 1400px;
-}
-
-@media only screen and (max-width: 768px) {
-  .main_body.mobile_on .main_body_wrapper {
-    max-width: 100%;
-    padding: 10px;
-  }
-}
-
-/* The white container boxes */
-.sidebar_element {
-  border: 0px;
-  width: 100%;
-  border-bottom: 1px solid $border-color;
-  position: relative;
-  text-align: left;
-}
-
-.sidebar_element_padding {
-  padding: 10px;
-  padding-right: 20px;
-  padding-left: 20px;
-}
-
-.sidebar_element p {
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-right: 10px;
-  padding-left: 10px;
-}
-
-/* Container boxes with regular items, not pre-styled ones */
-.sidebar_title_container,
-.stats_paragraph {
-  padding-right: 10px;
-  padding-left: 10px;
-  font-size: 12pt;
-  font-family: $fontfamily;
-}
-
-.stats_paragraph {
-  display: flex;
-  align-content: flex-start;
-  text-align: left;
-}
-
-.stats_paragraph svg {
-  width: 50px;
-  height: 50px;
-  padding-right: 10px;
-  color: $dark-nin;
-}
-
-.sidebar_title_container h1,
-.sidebar_title_container h2 {
-  width: calc(100% - 100px);
-}
-
-/* The link and icons  */
-
-.sidebar_element h3 svg,
-.sidebar_description svg {
-  color: $dark-nin;
-  width: 20px;
-  height: 20px;
-  vertical-align: top;
-  margin-right: 10px;
-}
-
-.sidebar_title_number {
-  float: right;
-}
-
-.rotated {
-  transform: rotate(180deg);
-}
-
-/* Headings */
-.sidebar h1,
-.sidebar h2 {
-  font-weight: 300;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.sidebar h1 {
-  font-size: 18pt;
-}
-
-.sidebar_title_container h2 {
-  font-size: 12pt;
+.lukkbartvindu_header {
+  font-size: 19pt;
   color: black;
 }
 
-.sidebar_element h2 {
-  font-size: 14pt;
-  font-weight: 300;
+.lukkbartvindu_header img {
+  height: 22px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
-.sidebar_element h3 {
-  font-weight: 400;
-  display: inline-block;
-  font-size: 13pt;
-  margin: 0px;
-  padding: 5px;
-  vertical-align: top;
-  width: 100%;
+.lukkbartvindu-innhold {
+  position: relative;
+  top: 0px;
 }
 
-.clickable_element:hover {
-  cursor: pointer;
-  background: $brightest-nin;
+/* Buttons */
+.leftside-openbutton {
+  background: $dark-nin;
+  color: white;
+  margin-top: 10px;
+  display: block;
 }
 
-.sidebar_code_field {
-  white-space: none;
-}
-.katlog_header_text_container {
-  display: inline-block;
-  text-align: left;
+.closebutton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 
-.sidebar_top_image {
-  vertical-align: top;
-  height: 200px;
-  width: 200px;
-  border-radius: 15px;
-  display: inline-block;
-  background-size: cover;
-  background-position: center;
-  display: inline-block;
+.closebutton svg {
+  vertical-align: middle;
+}
+
+/* Button on bottom of map screen on mobile */
+.mobile_slide_up_area {
+  display: none;
 }
 
 @media only screen and (max-width: 768px) {
-  .sidebar_top_image {
+  /* Mobile slide-up area */
+
+  .mobile_slide_up_area {
+    display: inline-block;
+    text-align: center;
+    height: $mobile_slide_up_area;
+    background: transparent;
+    overflow: visible;
     width: 100%;
-    display: block;
-    margin: 0;
-    border-radius: 0;
   }
-}
 
-.sidebar_top_image.trasparent_image {
-  background: transparent;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 25%;
-}
+  .open_mobile_slide_up_area {
+    bottom: auto;
+    border-top: 0px;
+    border-bottom: 1px solid $dark-nin;
+    z-index: 100;
+    background: $transparent-bg;
+    position: absolute;
+    top: $topbar-height-nin;
+  }
 
-.sidebar_top_image.wide_image {
-  background-size: cover;
-  background-position: 20%;
-  background-repeat: no-repeat;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  height: $sidebar-max-size;
-}
+  .closed_mobile_slide_up_area {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    background: white;
+    border-top: 1px solid $dark-nin;
+    border-bottom: 0px;
+  }
 
-.page_topic_header {
-  height: 0px;
-  padding: 0px;
-  margin: 0px;
-}
+  .mobile_slide_up_area svg {
+    background: $dark-nin;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    margin-top: 40px;
+    z-index: 100;
+  }
 
-@media only screen and (min-width: 768px) {
-  .page_topic_header {
-    height: 0px;
+  .closed_mobile_slide_up_area svg {
+    margin: auto;
+    margin-top: -28px;
+  }
+
+  .mobile_slide_up_area span {
     width: 100%;
+    padding: 2px;
+    padding-bottom: 8px;
+    display: block;
+    font-size: 12pt;
+    text-align: left;
+  }
+
+  .mobile_slide_up_area span:first-of-type {
+    color: $dark-nin;
+    font-size: 8pt;
+    padding: 2px;
     padding-top: 0px;
+    margin-top: -5px;
   }
 }

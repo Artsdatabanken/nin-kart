@@ -1,7 +1,8 @@
 import Menyelement from "./Menyelement";
-import { SettingsContext } from "SettingsContext";
+import { SettingsContext } from "../SettingsContext";
 import {
   Divider,
+  Typography,
   IconButton,
   List,
   ListItem,
@@ -11,7 +12,6 @@ import {
 } from "@material-ui/core";
 import {
   OpenInNew,
-  KeyboardArrowRight,
   CloudUpload,
   CloudDownload,
   Comment,
@@ -19,32 +19,41 @@ import {
   AssignmentInd
 } from "@material-ui/icons";
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-import NavigationChevronLeftDouble from "AppSettings/NavigationChevronLeftDouble";
-import BildeAvatar from "GjenbruksElement/Bildeavatar";
+import { withRouter } from "../withRouter";
+import NavigationChevronLeftDouble from "../AppSettings/NavigationChevronLeftDouble";
 import GitHub from "./GitHub";
 import Innstillinger from "./Innstillinger";
 import Utforsk from "./Utforsk/Utforsk";
+import config from "../Funksjoner/config";
 
 class HamburgerMeny extends Component {
   render() {
     let spraak = this.props.spraak;
-    const handleSpraak = this.props.handleSpraak;
+    const { handleSpraak, onToggleHovedMeny } = this.props;
     return (
       <SettingsContext.Consumer>
         {context => (
           <SwipeableDrawer
             className="hamburger_sidebar"
             anchor="left"
-            onClose={context.onToggleHovedmeny}
-            onOpen={context.onToggleHovedmeny}
-            open={context.visHovedmeny}
+            onClose={onToggleHovedMeny}
+            onOpen={onToggleHovedMeny}
+            open={this.props.open}
           >
             <List className="hamburger_sidebar">
               <ListItem>
-                <ListItemText primary="Natur i Norge" />
+                <ListItemText
+                  primary={
+                    <Typography
+                      style={{ fontWeigtht: 500, color: "#777" }}
+                      variant="h6"
+                    >
+                      Natur i Norge
+                    </Typography>
+                  }
+                />
                 <ListItemSecondaryAction>
-                  <IconButton onClick={context.onToggleHovedmeny}>
+                  <IconButton onClick={onToggleHovedMeny}>
                     <NavigationChevronLeftDouble />
                   </IconButton>
                 </ListItemSecondaryAction>
@@ -52,81 +61,28 @@ class HamburgerMeny extends Component {
               <Divider />
 
               <div>
-                <h2>Hva vil du utforske?</h2>
-                <Menyelement
-                  icon={
-                    <img
-                      src="/logoer/small_icon_grey_two.png"
-                      className="logo_image"
-                      alt="artsdatabanken logo"
-                    />
-                  }
-                  primary="Forside"
-                  onClick={() => {
-                    this.handleClick("/");
-                    context.onToggleHovedmeny();
-                  }}
+                <Utforsk
+                  parent={this}
+                  props={this}
+                  context={context}
+                  onToggleHovedMeny={onToggleHovedMeny}
                 />
-                <Utforsk parent={this} props={this} context={context} />
-
-                <Divider />
-
-                <Menyelement
-                  icon={<HelpOutline />}
-                  primary="Hjelp"
-                  onClick={() => {
-                    this.handleClick("/Natur_i_Norge/hjelp");
-                    context.onToggleHovedmeny();
-                  }}
-                />
-                <Divider />
-                <h2>Datagrunnlag</h2>
-                <Menyelement
-                  icon={<CloudDownload />}
-                  primary="Last ned data"
-                  onClick={() => {
-                    this.handleWindowOpen("https://data.artsdatabanken.no/");
-                    context.onToggleHovedmeny();
-                  }}
-                />
-                <Menyelement
-                  onClick={() => {
-                    this.handleWindowOpen(
-                      "https://github.com/Artsdatabanken/nin-kart-frontend/wiki/%C3%98nsker-du-%C3%A5-bidra-med-data%3F"
-                    );
-                    context.onToggleHovedmeny();
-                  }}
-                  icon={<CloudUpload />}
-                  primary="Levere data"
-                />
-
                 <Menyelement
                   onClick={() => {
                     this.handleClick("/Datakilde/");
-                    context.onToggleHovedmeny();
+                    this.props.onToggleHovedMeny();
                   }}
                   icon={<AssignmentInd />}
                   primary="Datakilder"
                 />
                 <Menyelement
+                  icon={<HelpOutline />}
+                  primary="Hjelp"
                   onClick={() => {
-                    this.handleWindowOpen(
-                      "https://github.com/Artsdatabanken/nin-kart-frontend"
-                    );
-                    context.onToggleHovedmeny();
+                    this.props.handleHelp();
+                    this.props.onToggleHovedMeny();
                   }}
-                  icon={<GitHub />}
-                  primary="Kildekode"
                 />
-                {/*
-                <Menyelement
-                  onClick={() => {
-                    this.handleClick("/forvaltningsportalen/");
-                    context.onToggleHovedmeny();
-                  }}
-                  icon={<AssignmentInd />}
-                  primary="Forvaltningsportalen"
-                />*/}
                 <Divider />
                 <Innstillinger
                   visKoder={context.visKoder}
@@ -136,31 +92,68 @@ class HamburgerMeny extends Component {
                   spraak={spraak}
                   handleSpraak={handleSpraak}
                 />
-                <Divider />
-                <h2>Kontakt</h2>
 
+                <Divider />
                 <button
                   className="tilbakemeldinger"
                   onClick={() => {
                     this.handleWindowOpen(
                       "https://github.com/Artsdatabanken/nin-kart-frontend/issues"
                     );
-                    context.onToggleHovedmeny();
+                    this.props.onToggleHovedMeny();
                   }}
                 >
-                  <Comment /> <span>Tilbakemeldinger</span> <OpenInNew />
+                  <Comment /> <span>Gi tilbakemelding</span> <OpenInNew />
                 </button>
+                <Menyelement
+                  outgoing={<OpenInNew />}
+                  icon={<CloudDownload />}
+                  primary="Last ned data"
+                  onClick={() => {
+                    this.handleWindowOpen("https://data.artsdatabanken.no/");
+                    this.props.onToggleHovedMeny();
+                  }}
+                />
+                <Menyelement
+                  outgoing={<OpenInNew />}
+                  onClick={() => {
+                    this.handleWindowOpen(
+                      "https://github.com/Artsdatabanken/nin-kart-frontend/wiki/%C3%98nsker-du-%C3%A5-bidra-med-data%3F"
+                    );
+                    this.props.onToggleHovedMeny();
+                  }}
+                  icon={<CloudUpload />}
+                  primary="Levere data"
+                />
 
-                <button
-                  className="artsdatabanken"
+                <Menyelement
+                  outgoing={<OpenInNew />}
+                  onClick={() => {
+                    this.handleWindowOpen(
+                      "https://github.com/Artsdatabanken/nin-kart-frontend"
+                    );
+                    this.props.onToggleHovedMeny();
+                  }}
+                  icon={<GitHub />}
+                  primary="Kildekode"
+                />
+                <Divider />
+
+                <Menyelement
                   onClick={() => {
                     this.handleWindowOpen("https://artsdatabanken.no");
-                    context.onToggleHovedmeny();
+                    this.props.onToggleHovedMeny();
                   }}
-                >
-                  <BildeAvatar url="Datakilde/Artsdatabanken" />{" "}
-                  <span>Artsdatabanken</span> <KeyboardArrowRight />
-                </button>
+                  icon={
+                    <img
+                      alt="Artsdatabanken logo"
+                      src={config.logo(
+                        "Datakilde/Artsdatabanken".split("?")[0]
+                      )}
+                    />
+                  }
+                  primary="Artsdatabanken"
+                />
               </div>
             </List>
           </SwipeableDrawer>
@@ -169,10 +162,10 @@ class HamburgerMeny extends Component {
     );
   }
 
-  handleClick = what => this.props.history.push(what);
+  handleClick = what => this.props.navigate(what);
   handleWindowOpen = what => window.open(what);
   handleClickMap = () => this.handleWindowOpen("/");
-  handleNavigate = url => this.props.history.push(url);
+  handleNavigate = url => this.props.navigate(url);
 }
 
 export default withRouter(HamburgerMeny);

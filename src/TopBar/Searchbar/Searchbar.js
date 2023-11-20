@@ -3,7 +3,7 @@ import classNames from "classnames";
 import Search from "@material-ui/icons/Search";
 import Close from "@material-ui/icons/Close";
 import React, { useRef } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter } from "../../withRouter";
 
 const abc = (cl, isSearching) => classNames(cl, isSearching && "mobile_active");
 
@@ -17,6 +17,7 @@ const Searchbar = ({ query, onQueryChange, hits, setHits }) => {
     inputField.current.focus();
     onQueryChange("");
   });
+  if (query === null) query = "";
 
   return (
     <div className={abc("searchbar_container", isSearching)}>
@@ -24,7 +25,7 @@ const Searchbar = ({ query, onQueryChange, hits, setHits }) => {
         ref={inputField}
         value={query}
         placeholder={"Søk i Natur i Norge"}
-        onChange={e => {
+        onChange={(e) => {
           onQueryChange(e.target.value);
         }}
       />

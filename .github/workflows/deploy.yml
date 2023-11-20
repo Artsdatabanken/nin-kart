@@ -1,0 +1,43 @@
+name: build and publish kommune
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+      - run: npm install --legacy-peer-deps
+      - run: npm update
+      - run: npm run build
+      - name: Check downloaded files
+        run: ./.github/workflows/filecheck.sh
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          path: "./destinationRepo"
+          token: ${{secrets.PUSH_TOKEN}}
+      - name: Run deployment script
+        run: ./.github/workflows/deploy.sh
+        shell: bash
+      - name: Create release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: ${{ github.event.repository.name }}.tar.gz
+          tag: v_${{ github.run_number }}
+  workflow_dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fyrer NiN
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.PAT }}
+          repository: artsdatabanken/nin-kart
+          event-type: fra_nin-kart

@@ -1,7 +1,7 @@
 import {
   lagGradientRampe,
-  steps2Palette
-} from "Funksjoner/palette/gradientrampe";
+  steps2Palette,
+} from "../../../../Funksjoner/palette/gradientrampe";
 import drawSetup from "./fellesfunksjoner/drawSetup";
 import lagSource from "./fellesfunksjoner/lagSource";
 
@@ -14,7 +14,7 @@ function normaliserFilter(format) {
   const [omin, omax] = format.intervall.original;
   const [nmin, nmax] = format.intervall.normalisertVerdi;
   return [filterMin, filterMax].map(
-    x => (((x - omin) / (omax - omin)) * (nmax - nmin) + nmin) / 255
+    (x) => (((x - omin) / (omax - omin)) * (nmax - nmin) + nmin) / 255
   );
 }
 
@@ -35,7 +35,7 @@ function lagStyle(format, drawArgs) {
         blendmode,
         drawArgs.opacity
       );
-  console.log("palette", palette);
+  //console.log("palette", palette);
   const gradient = {
     base: "raster",
     blend: blendmode,
@@ -43,7 +43,7 @@ function lagStyle(format, drawArgs) {
       uniforms: {
         palette: palette,
         min: filterMin || 0,
-        max: filterMax || 1
+        max: filterMax || 1,
       },
       blocks: {
         color:
@@ -55,14 +55,16 @@ function lagStyle(format, drawArgs) {
         color = texture2D(palette, vec2(v, 0.5));` +
           transparent_blendmode_handler +
           `color = mix(transparent, color, filter*value.a);
-        `
-      }
-    }
+        `,
+      },
+    },
   };
   return {
     name: "gradient_" + drawArgs.kode,
-    value: gradient
+    value: gradient,
   };
 }
 
-export default { drawAll, lagSource, lagStyle };
+const gradientVisualiseringObject = { drawAll, lagSource, lagStyle };
+
+export default gradientVisualiseringObject;

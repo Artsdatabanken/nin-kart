@@ -1,7 +1,7 @@
 import React from "react";
 import { CustomPicker } from "react-color";
 import ChromePointerCircle from "react-color/lib/components/chrome/ChromePointerCircle";
-import { Alpha, Hue, Saturation } from "react-color/lib/components/common";
+import { Hue, Saturation } from "react-color/lib/components/common";
 import ChromePointer from "react-color/lib/components/slider/SliderPointer";
 
 class ColorPicker extends React.Component {
@@ -21,12 +21,6 @@ class ColorPicker extends React.Component {
         <div className="colorSlider">
           <Hue pointer={ChromePointer} {...this.props} />
         </div>
-
-        {this.props.alpha && (
-          <div className="colorSlider">
-            <Alpha pointer={ChromePointer} {...this.props} />
-          </div>
-        )}
       </div>
     );
   }

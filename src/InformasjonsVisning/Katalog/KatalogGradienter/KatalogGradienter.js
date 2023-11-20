@@ -1,10 +1,10 @@
 import React from "react";
 import { ShowChart } from "@material-ui/icons/";
 import Gradienter from "./Gradienter";
-import KurveContainer from "GjenbruksElement/Kurver/KurveContainer";
-import Relasjon from "InformasjonsVisning/Katalog/Relasjoner/Relasjon";
-import Kurve from "GjenbruksElement/Kurver/Kurve";
-import Ekspander from "GjenbruksElement/Ekspander";
+import KurveContainer from "../../../GjenbruksElement/Kurver/KurveContainer";
+import Relasjon from "../../../InformasjonsVisning/Katalog/Relasjoner/Relasjon";
+import Kurve from "../../../GjenbruksElement/Kurver/Kurve";
+import Ekspander from "../../../GjenbruksElement/Ekspander";
 
 const KatalogGradienter = ({
   onNavigate,
@@ -14,7 +14,7 @@ const KatalogGradienter = ({
   opplyst,
   ...props
 }) => {
-  /*  
+  /*
   Contains the visualisation of the different gradients and their relations
   to subelements, as well as other nifty visualisations
   */
@@ -50,7 +50,7 @@ const KatalogGradienter = ({
           />
         ))}
 
-      {true && meta.kart.format.raster_gradient && (
+      {meta.kart.format.raster_gradient && (
         <Ekspander
           visible={true}
           heading={"Frekvens"}

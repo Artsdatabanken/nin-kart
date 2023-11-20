@@ -1,38 +1,33 @@
-import tinycolor from "tinycolor2";
-import sysconfig from "Funksjoner/config";
-import opplyst from "Funksjoner/palette/opplyst";
+import sysconfig from "../../../../Funksjoner/config";
+import hentFarge from "../../../../Funksjoner/palette/opplyst";
 
 function drawAll(drawArgs) {
-  const {
-    kode,
-    barn,
-    farge,
-    opplystKode,
-    tegn,
-    visBarn,
-    visEtiketter
-  } = drawArgs;
+  const { blendmode, kode, barn, farge, opplyst, tegn, visBarn, visEtiketter } =
+    drawArgs;
   const layer = {};
   if (visBarn) {
-    barn.forEach(dac => {
+    barn.forEach((dac) => {
       let barnkode = dac.kode;
       if (dac.hasOwnProperty("erSynlig") && !dac.erSynlig) return;
-      const visEtiketter = barnkode === opplystKode;
+      const visEtiketter = barnkode === opplyst;
       layer[barnkode] = drawLines({
-        kode: barnkode,
+        blendmode: blendmode,
+        kode: dac.kode,
+        kartkode: dac.kartkode,
         forelderkode: kode,
         farge: dac.farge,
-        opplystKode: opplystKode,
-        visEtiketter: visEtiketter
+        opplyst: opplyst,
+        visEtiketter: visEtiketter,
       });
       if (tegn && tegn.punkt) {
         const points = drawPoints({
-          kode: barnkode,
+          kode: dac.kode,
+          kartkode: dac.kartkode,
           forelderkode: kode,
           farge: dac.farge,
-          opplystKode: opplystKode,
+          opplyst: opplyst,
           visEtiketter: false,
-          tegn
+          tegn,
         });
         //        points.filter["$zoom"] = { min: 0, max: 6 }
         layer[barnkode + "_points"] = points;
@@ -43,56 +38,45 @@ function drawAll(drawArgs) {
       kode: kode,
       forelderkode: kode,
       farge: farge,
-      opplystKode: opplystKode,
-      visEtiketter: visEtiketter
+      opplyst: opplyst,
+      visEtiketter: visEtiketter,
     });
 
   return {
-    [kode]: { layer, data: { source: kode, layer: "polygons" } }
+    [kode]: { layer, data: { source: kode, layer: "polygons" } },
   };
 }
 
 function drawLines(args) {
-  let { kode, farge, opplystKode, visEtiketter } = args;
-  farge = opplyst(kode, opplystKode, farge);
+  let { kode, farge, opplyst, visEtiketter } = args;
+  farge = hentFarge(kode, opplyst, farge);
   const layer = drawBase(args);
-  layer.draw.lines = {
+  layer.draw[args.blendmode + "_lines"] = {
     order: 800,
-    color: tinycolor(farge)
-      .darken(50)
-      .toHexString(),
-    width: "1.0px"
+    color: farge.toHexString(), //.clone().darken(kode === opplyst ? 30 : 0).toHexString(),
+    width: kode === opplyst ? "2px" : "1px",
   };
-  layer.draw.mu_polygons = {
-    order: 800,
-    blend: "multiply",
-    color: tinycolor(farge)
-      //          .darken(30)
-      //        .saturate(60)
-      .toHexString()
+  layer.draw[args.blendmode + "_polygons"] = {
+    order: 700,
+    color: farge.toHexString(),
   };
-
-  if (kode === opplystKode) {
-    const lines = layer.draw.lines;
-    lines.width = "2px";
-  }
   if (visEtiketter) {
     layer.draw.text = {
       text_source: ["name", "title"],
       font: {
-        family: "Roboto",
+        family: "Chivo",
         fill: "hsla(0, 0%, 100%, 1.0)",
         stroke: { color: "hsla(0, 0%, 0%, 0.7)", width: 2 },
-        size: "13px"
-      }
+        size: "13px",
+      },
     };
   }
   return layer;
 }
 
 function drawPoints(args) {
-  let { kode, farge, opplystKode } = args;
-  farge = opplyst(kode, opplystKode, farge);
+  let { kode, farge, opplyst } = args;
+  farge = hentFarge(kode, opplyst, farge);
   const layer = drawBase(args);
   layer.draw.translucent_points = {
     order: 850,
@@ -100,7 +84,7 @@ function drawPoints(args) {
     collide: false,
     color: farge,
     //    color: [[0,farge], [8,"#f00"],[10, "#ffffff"]],
-    interactive: true
+    interactive: true,
     /*    outline: {
       width: [[0,2],[10,0]],
       color: "rgba(0,0,0,30%)"
@@ -115,20 +99,24 @@ function drawPoints(args) {
 }
 
 function drawBase(args) {
-  let { kode, visEtiketter } = args;
+  let { kode, kartkode, visEtiketter } = args;
   const layer = {
-    draw: {}
+    draw: {},
   };
-  layer.filter = { kode: sysconfig.hack(kode) };
-  if (visEtiketter) {
+  if (kode.indexOf("NN-NA-TI") === 0 || kode.indexOf("NN-NA-BS") === 0)
+    // Eksakt treff eller fra vilkårlig undernivå
+    layer.filter = `function(feature) {return feature.kode==="${kartkode}" || feature.kode.indexOf("${kartkode}-")===0}`;
+  else layer.filter = { kode: sysconfig.hack(kode) };
+  //console.log('xxx', layer.filter)
+  if (true || visEtiketter) {
     layer.draw.text = {
       text_source: ["name", "title"],
       font: {
-        family: "Roboto",
+        family: "Chivo",
         fill: "hsla(0, 0%, 100%, 1.0)",
         stroke: { color: "hsla(0, 0%, 0%, 0.7)", width: 2 },
-        size: "13px"
-      }
+        size: "13px",
+      },
     };
   }
   return layer;
@@ -138,4 +126,6 @@ function lagSource({ url, zoom }, { bbox }) {
   return sysconfig.createTileSource(url, "MVT", zoom, bbox);
 }
 
-export default { drawAll, lagSource };
+const polygonObject = { drawAll, lagSource };
+
+export default polygonObject;

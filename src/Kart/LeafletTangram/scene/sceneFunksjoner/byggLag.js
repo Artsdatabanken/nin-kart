@@ -9,6 +9,7 @@ export default function byggLag(lag, opplyst, config) {
   let drawArgs = {
     forelderkode: lag.kode,
     kode: lag.kode,
+    kartkode: lag.kart.kode,
     url: lag.url,
     farge: lag.farge,
     visEtiketter: lag.visEtiketter,
@@ -21,7 +22,7 @@ export default function byggLag(lag, opplyst, config) {
     opacity: lag.opacity || "1",
     blendmode: lag.blendmode || "multiply",
     depth: lag.depth, // TODO: flytt
-    visBarn: lag.visBarn || !!lag.barn
+    visBarn: lag.visBarn || !!lag.barn,
   };
   drawArgs.barn = drawArgs.visBarn ? lag.barn || [] : [];
   if (lag.palett) drawArgs.palett = lag.palett;
@@ -30,11 +31,12 @@ export default function byggLag(lag, opplyst, config) {
     drawArgs.barn = [
       {
         kode: lag.kode,
+        kartkode: lag.kart.kode,
         farge: lag.farge,
         erSynlig: lag.erSynlig,
-        normalisertVerdi: lag.normalisertVerdi
+        normalisertVerdi: lag.normalisertVerdi,
         //          aktivtKart.intervall && aktivtKart.intervall.normalisertVerdi
-      }
+      },
     ];
     const aktivtKart = drawArgs.format[drawArgs.aktivtFormat];
     const nv =
@@ -46,12 +48,12 @@ export default function byggLag(lag, opplyst, config) {
         kode: lag.kode,
         farge: lag.farge0,
         erSynlig: lag.erSynlig,
-        normalisertVerdi: [nv[1], nv[1]]
+        normalisertVerdi: [nv[1], nv[1]],
         //          aktivtKart.intervall && aktivtKart.intervall.normalisertVerdi
       });
     }
   }
-  drawArgs.opplystBarn = drawArgs.barn.find(x => x.kode === opplyst.kode);
+  drawArgs.opplystBarn = drawArgs.barn.find((x) => x.kode === opplyst.kode);
   lagTegner(drawArgs, config);
   if (viz.kanHaTerreng) {
     lagTerreng(lag.terreng, opplyst.kode, config);

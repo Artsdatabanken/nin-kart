@@ -1,5 +1,5 @@
 import mal from "../mal/openStreetMap";
-import sysconfig from "Funksjoner/config";
+import sysconfig from "../../../../Funksjoner/config";
 
 function override(o, key, value) {
   if (value === null) return;
@@ -22,7 +22,7 @@ function recurse(o, style, kf, kode) {
     }
     return;
   }
-  Object.keys(o).forEach(k => {
+  Object.keys(o).forEach((k) => {
     const child = o[k];
     recurse(child, style, kf, kode);
   });
@@ -67,11 +67,16 @@ function drawAll(drawArgs) {
 function lagSource({ url, zoom }, { bbox }) {
   return sysconfig.createTileSource(
     sysconfig.storageUrl +
-      "Basiskart/OpenStreetMap/osm-2017-07-03-v3.6.1-planet.mbtiles",
+      "/Basiskart/OpenStreetMap/osm-2017-07-03-v3.6.1-planet.mbtiles",
     "MVT",
     [0, 14],
-    [[-81.05195, -180], [81.05195, 179]]
+    [
+      [-81.05195, -180],
+      [81.05195, 179],
+    ]
   );
 }
 
-export default { drawAll, lagSource };
+const openStreetMapObject = { drawAll, lagSource };
+
+export default openStreetMapObject;
