@@ -1,5 +1,8 @@
+import mockJsDom from './mockJsdom.js';
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import ShallowRenderer from "react-test-renderer/shallow";
+
 import App from "./App";
 import backend from "Funksjoner/backend";
 
@@ -112,7 +115,11 @@ it("renders without crashing", () => {
   );
   // in your test:
   const renderer = new ShallowRenderer();
-  renderer.render(<App />);
+  renderer.render(
+    <BrowserRouter baseName={process.env.PUBLIC_URL}>
+      <App />
+    </BrowserRouter>,
+  );
 
   //expect(backend.getNatureAreaByLocalId.mock.calls).toHaveLength(1);
 });
