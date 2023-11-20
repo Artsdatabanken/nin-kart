@@ -1,4 +1,4 @@
-name: build and publish kommune
+name: build and publish
 
 on:
   push:
@@ -15,7 +15,6 @@ jobs:
         with:
           node-version: "18.x"
       - run: npm install --legacy-peer-deps
-      - run: npm update
       - run: npm run build
       - name: Check downloaded files
         run: ./.github/workflows/filecheck.sh
