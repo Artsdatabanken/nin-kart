@@ -1,25 +1,23 @@
 import React from "react";
-import språk from "Funksjoner/språk";
+import språk from "../../../Funksjoner/språk";
+import config from "../../../Funksjoner/config";
+import SectionExpand from "../../../GjenbruksElement/SectionExpand";
 
 const Gradienter = ({ gradient, onNavigate, title }) => {
-  //console.log(gradient);
   /// Gradient er navnet på noden
   /// Barna av gradient heter
   return (
-    <>
-      <h1>{title}</h1>
+    <div className="subsection">
+      <h4>{title}</h4>
 
       {Object.entries(gradient).map(([kode], index) => {
         let item = gradient[kode];
         let gradientelement = item.trinn;
 
         return (
-          <div key={index} className="badge_container">
-            <h2>{item.tittel.nb}</h2>
+          <SectionExpand key={index} title={item.tittel.nb}>
             {gradientelement.map((item, index) => {
               let aktiv = item["på"];
-              let img_url =
-                "https://data.artsdatabanken.no/" + item.url + "/foto_408.jpg";
               return (
                 <button
                   className="badge"
@@ -35,7 +33,7 @@ const Gradienter = ({ gradient, onNavigate, title }) => {
                       backgroundPosition: "center",
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "cover",
-                      backgroundImage: "url(" + img_url + ")"
+                      backgroundImage: "url(" + config.foto(item.url) + ")"
                     }}
                   />
                   <br />
@@ -45,10 +43,10 @@ const Gradienter = ({ gradient, onNavigate, title }) => {
                 </button>
               );
             })}
-          </div>
+          </SectionExpand>
         );
       })}
-    </>
+    </div>
   );
 };
 

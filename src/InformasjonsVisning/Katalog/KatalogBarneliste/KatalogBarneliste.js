@@ -1,9 +1,9 @@
 import React from "react";
-import KurveContainer from "GjenbruksElement/Kurver/KurveContainer";
+import KurveContainer from "../../../GjenbruksElement/Kurver/KurveContainer";
 import Navigeringsliste from "./Navigeringsliste/Navigeringsliste";
-import Kurve from "GjenbruksElement/Kurver/Kurve";
+import Kurve from "../../../GjenbruksElement/Kurver/Kurve";
 
-const Meny = ({
+const KatalogBarneliste = ({
   data,
   meta,
   onNavigate,
@@ -13,30 +13,34 @@ const Meny = ({
   onMouseLeave
 }) => {
   /*
-  
+
 Navigation
-  
+
   */
   const { kode } = meta;
   if (meta.barn.length === 0) return null;
+  //TEMPORARILY SHUTTING OFF SUBELEMENTS
+  // AS THEY MAKE LESS SENSE IN THIS FORMAT
   return (
     <>
-      <h1>Underelementer</h1>
-      <>
-        <Navigeringsliste
-          title=""
-          parentkode={kode}
-          størsteAreal={data.størsteAreal}
-          apidata={data.barn}
-          metadata={meta.barn}
-          onNavigate={onNavigate}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          opplyst={opplyst}
-          onUpdateMetaProp={onUpdateMetaProp}
-          isDatakilde={meta.tittel.nb}
-        />
-      </>
+      {false && (
+        <>
+          <h1>Underelementer</h1>
+          <Navigeringsliste
+            title=""
+            parentkode={kode}
+            størsteAreal={data && data.størsteAreal}
+            apidata={data && data.barn}
+            metadata={meta.barn}
+            onNavigate={onNavigate}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            opplyst={opplyst}
+            onUpdateMetaProp={onUpdateMetaProp}
+            isDatakilde={meta.tittel.nb}
+          />
+        </>
+      )}
 
       {false && (
         <>
@@ -60,4 +64,4 @@ Navigation
   );
 };
 
-export default Meny;
+export default KatalogBarneliste;

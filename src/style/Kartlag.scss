@@ -7,77 +7,218 @@ Even tho we don't a of now support IE X)
 
 */
 
-/* Button on bottom of map screen on mobile */
-.mobile_slide_up_area {
+@media only screen and (min-width: 769px) {
+  /* We only want fullscreen for big screen at the moment*/
+  .kartlag.fullscreen .section {
+    display: none;
+  }
+
+  .kartlag.fullscreen {
+    width: 53px;
+    height: 51px;
+    border-radius: 50%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  /* We only want fullscreen for big screen at the moment*/
+  .arrow_button.hide_on_mobile,
+  .hide_on_mobile {
+    display: none;
+  }
+}
+
+.show-kartlag-button {
+  position: absolute;
+  z-index: 100;
+  background: pink;
+  right: 0px;
+  top: 2px;
+}
+
+.crumbsection {
+  padding: 6px 0px;
+}
+
+.breadcrumbs {
+  display: block;
+  margin: 0px 10px;
+  padding: 0px;
+}
+
+.kartlag .breadcrumbs li {
+  display: inline-block;
+}
+
+.breadcrumb {
+  display: inline-block;
+  border: none;
+  background: none;
+  margin: 2px;
+  padding: 2px;
+  text-decoration: underline;
+  color: $link-color;
+  font-size: 10pt;
+}
+
+.kartlag .breadcrumbs .hiddencrumbs {
+  background: red;
   display: none;
 }
 
-@media only screen and (max-width: 768px) {
-  /* Mobile slide-up area */
-
-  .mobile_slide_up_area {
-    display: inline-block;
-    text-align: center;
-    height: $mobile_slide_up_area;
-    background: transparent;
-    overflow: visible;
-    width: 100%;
-  }
-
-  .open_mobile_slide_up_area {
-    position: relative;
-    top: 0px;
-    bottom: auto;
-    background: transparent;
-    border-top: 0px;
-    border-bottom: 1px solid $dark-nin;
-    z-index: 100;
-  }
-
-  .closed_mobile_slide_up_area {
-    position: absolute;
-    bottom: $bottom-tab-height;
-    background: white;
-    border-top: 1px solid $dark-nin;
-    border-bottom: 0px;
-  }
-
-  .mobile_slide_up_area svg {
-    background: $dark-nin;
-    color: white;
-    border-radius: 50%;
-    padding: 10px;
-    margin-top: 40px;
-    z-index: 100;
-  }
-
-  .closed_mobile_slide_up_area svg {
-    margin: auto;
-    margin-top: -28px;
-  }
-
-  .mobile_slide_up_area span {
-    width: 100%;
-    padding: 2px;
-    padding-bottom: 8px;
-    display: block;
-    font-size: 12pt;
-    text-align: left;
-  }
-
-  .mobile_slide_up_area span:first-of-type {
-    color: $dark-nin;
-    font-size: 8pt;
-    padding: 2px;
-    padding-top: 0px;
-    margin-top: -5px;
-  }
+.kartlag .breadcrumbs .hiddencrumbs.show {
+  display: inline-block;
 }
 
-.kartlag {
-  top: 118px;
-  height: calc(100vh - 120px);
-  z-index: 2;
+button.breadcrumb:hover {
+  border-radius: 5px;
+  background: $bright-nin;
+}
+
+.breadcrumb.currentelement {
+  text-decoration: none;
+  color: black;
+}
+
+.breadcrumbs .MuiSvgIcon-root {
+  height: 14px;
+  vertical-align: sub;
+  width: 14px;
+}
+
+.breadcrumbs .layerbutton {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  padding-top: 0px;
+  vertical-align: middle;
+}
+
+.kartlag_list {
+  display: block;
+  padding: 2px;
+}
+
+.layer_list_element {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: -1px;
+  background: white;
+  border-radius: 0px;
+  border-bottom: 1px solid $sand-80;
+  border-top: 1px solid $sand-80;
+  padding: 2px 6px 2px 2px;
+}
+
+.layer_list_element.subelement {
+  background: white;
+}
+
+.layer_list_element .arrow_button {
+  margin: 2px;
+}
+
+.nav_menu_button .MuiSvgIcon-root {
+  padding-top: 3px;
+}
+
+.maplayerbutton {
+  margin: 2px;
+  border-radius: 2px;
+}
+
+.kartlag_header {
+  position: relative;
+  height: 24px;
+  border-bottom: 1px solid $sand-80;
+  border-top: 1px solid $sand-80;
+  background: $panel-bg;
+  margin-top: -1px;
+}
+
+.kartlag_header .layerbutton {
+  position: absolute;
+  right: 7px;
+  top: 1px;
+  background: none;
+  padding: 6px 0;
+}
+
+.section .kartlag_header {
+  padding-left: 10px;
+  margin-top: -1px;
+}
+
+.kartlag .subexpand {
+  margin: 0;
+  border-radius: 0;
+}
+
+.kartlag_element_header {
+  min-height: 56px;
+  display: flex;
+}
+
+.kartlag_element_header h4 {
+  flex: 2;
+  display: block;
+  margin: auto;
+  padding: 2px;
+  font-size: 12pt;
+}
+
+.kartlag_element_header h4 {
+  padding-left: 10px;
+}
+
+.layerbutton {
+  margin-top: 0;
+  height: 47px;
+  border: 0;
+  margin-left: 2px;
+  width: 50px;
+  padding: 0;
+  padding-top: 0px;
+  background: white;
+  line-height: 50px;
+  margin-right: 2px;
+  padding-top: 7px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.layerbutton.active {
+  background: $panel-section-sub-bg;
+  color: $super-duper-dark-nin;
+}
+
+.layer_list_element.subelement .layerbutton {
+  background: none;
+}
+
+.layer_list_element.subelement .arrow_button {
+  background: none;
+  border: 1px solid $panel-section-bg;
+}
+
+.layer_list_element.subelement .layerbutton:hover,
+.layerbutton:hover {
+  background: grey;
+}
+
+.section h3 .layerbutton svg {
+  height: 32px;
+  width: 32px;
+}
+
+.layerbutton svg {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.kartlag_element_text {
+  display: inline-block;
+  text-align: left;
 }
 
 /* Clean out padding to get 100% width */
@@ -91,15 +232,6 @@ Even tho we don't a of now support IE X)
 }
 
 /* Re-add padding where wanted */
-.kartlag h3,
-.kartlag h2,
-.kartlag h1,
-.kartlag_header {
-  margin: 0px;
-  padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
 
 .kartlag div {
   box-sizing: border-box;
@@ -110,11 +242,10 @@ Even tho we don't a of now support IE X)
     top: 0;
   }
   .kartlag_content_open {
-    position: relative;
-    margin-top: -28px;
-    padding-top: 28px;
+    position: absolute;
+    margin-top: $ux-page-area-mobile;
     background: white;
-    height: calc(100vh - 164px);
+    height: $actual-map-height-mobile;
     overflow-x: hidden;
     overflow-y: auto;
   }
@@ -122,7 +253,6 @@ Even tho we don't a of now support IE X)
   .kartlag_content {
     background: transparent;
     display: inline-block;
-    width: 100%;
   }
 
   .kartlag.kartlag_content_closed,
@@ -155,15 +285,6 @@ Even tho we don't a of now support IE X)
 
 /* icons */
 
-.kartlag_list li svg {
-  padding: 5px;
-  vertical-align: top;
-}
-
-.kartlag_list li svg:last-child {
-  padding-right: 0px;
-}
-
 .remove_icon {
   color: $red-color;
 }
@@ -182,12 +303,11 @@ Even tho we don't a of now support IE X)
 }
 
 .sidebar .kartlag_sub_bg {
-  padding: 10px;
-  margin-bottom: 10px;
+  _padding: 10px;
+  _margin-bottom: 10px;
 }
 
 .kartlag_submeny {
-  text-align: center;
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -229,10 +349,10 @@ Even tho we don't a of now support IE X)
 
 .button_map_preview {
   width: 100%;
-  padding: 10px;
   background: transparent;
   text-align: left;
   position: relative;
+  display: flex;
 }
 
 .button_map_preview span {
@@ -242,7 +362,7 @@ Even tho we don't a of now support IE X)
 
 .button_map_preview img,
 .button_map_preview span {
-  margin: 5px;
+  margin: 2px;
   display: inline-block;
   vertical-align: middle;
 }
@@ -252,47 +372,25 @@ Even tho we don't a of now support IE X)
   height: 50px;
 }
 
-.theme_link {
-  display: block;
-  width: 60px;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-}
-
-.theme_link svg {
-  margin-top: calc(50% - 15px);
-  width: 40px;
-  height: 40px;
-}
-
 /* KILDER */
-
-.kilde_box button {
-  display: inline-block;
-  padding: 10px;
-  background: $brightest-nin;
-  min-width: 200px;
-  margin: 10px;
-  vertical-align: top;
-  min-height: 55px;
-}
-
-.kilde_box button img {
-  float: left;
-}
-
-.kilde_box button:hover {
-  background: $medium-nin;
-  color: white;
-}
-
 .sidebar .submeny_container {
   width: 100%;
-  padding: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 5px;
   margin-bottom: 5px;
-  text-align: center;
+}
+
+.arrow_button {
+  display: flex;
+  flex-direction: row;
+  padding: 13px 0;
+  margin-left: 4px;
+  justify-content: center;
+}
+
+.closetab {
+  background: transparent;
+}
+
+.lukkbartvindu .closetab {
+  z-index: 0;
 }

@@ -3,10 +3,13 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import * as Sentry from "@sentry/browser";
 import { BrowserRouter } from "react-router-dom";
-import SettingsContainer from "SettingsContainer";
+import SettingsContainer from "./SettingsContainer";
+
+//Tester å endre denne da, sånn at vi logger til riktig sted og ikke til en tidligere ansatt
 true &&
   Sentry.init({
-    dsn: "https://c493d02267634ba4bc387feaddbeb083@sentry.io/1302262",
+    dsn:
+      "https://e99e90636a4e407ab7235cfe9a2b1cdb@o547272.ingest.sentry.io/5669525",
     maxBreadcrumbs: 50,
     debug: true
   });
@@ -28,16 +31,7 @@ class RootBoundary extends React.Component {
   }
 
   render() {
-    if (this.state.error) {
-      //render fallback UI
-      return (
-        <a href="./" onClick={() => Sentry.showReportDialog()}>
-          Report feedback
-        </a>
-      );
-    } else {
-      return this.props.children;
-    }
+    return this.props.children;
   }
 }
 

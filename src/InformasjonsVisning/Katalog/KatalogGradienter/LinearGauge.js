@@ -4,7 +4,6 @@ import tinycolor from "tinycolor2";
 import { ListItem, Typography } from "@material-ui/core";
 import { SettingsContext } from "SettingsContext";
 import prettyKode from "Funksjoner/prettyKode";
-import språk from "Funksjoner/språk";
 
 const gaugeHeight = 7;
 

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import config from "../Funksjoner/config";
 
 class BildeAvatar extends Component {
   /*
@@ -14,12 +15,14 @@ class BildeAvatar extends Component {
   render() {
     const { url } = this.props;
     if (!url) return null;
-    let urlWithNoQueryString =
-      "https://data.artsdatabanken.no/" + url.split("?")[0] + "/logo_24.png";
     let classes = "liste_ikon";
     return (
       <span className="liste_ikon_container">
-        <img className={classes} alt="logo" src={urlWithNoQueryString} />
+        <img
+          className={classes}
+          alt="logo"
+          src={config.logo(url.split("?")[0])}
+        />
       </span>
     );
   }

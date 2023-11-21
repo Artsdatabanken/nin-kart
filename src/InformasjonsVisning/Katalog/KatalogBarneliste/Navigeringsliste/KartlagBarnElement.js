@@ -1,8 +1,9 @@
 import React from "react";
-import språk from "Funksjoner/språk";
-import getSecondary from "./NavigeringslisteFunksjoner/getSecondary";
-import kodeSuffix from "./NavigeringslisteFunksjoner/kodeSuffix";
-import "style/NavMenu.scss";
+import språk from "../../../../Funksjoner/språk";
+import kodeSuffix from "../../../../Funksjoner/kodeSuffix";
+import "../../../../style/NavMenu.scss";
+import config from "../../../../Funksjoner/config";
+import { getInterval } from "../../../../helpers";
 
 class KartlagBarnElement extends React.Component {
   render() {
@@ -20,12 +21,11 @@ class KartlagBarnElement extends React.Component {
 
     let backgroundSize = "cover",
       borderSize = "0px",
-      new_url = "https://data.artsdatabanken.no/" + url + "/foto_408.jpg";
+      new_url = config.foto(url, 408);
     if (
       isDatakilde === "Datakilde" ||
       new_url.indexOf("Administrativ_grense") !== -1
     ) {
-      new_url = "https://data.artsdatabanken.no" + url + "/logo_408.png";
       backgroundSize = "contain";
       borderSize = "10px solid transparent";
     }
@@ -74,7 +74,7 @@ class KartlagBarnElement extends React.Component {
               ? meta.tittel.sn
               : språk(meta.tittel)}
           </span>
-          <span className="nav_2ndtitle">{getSecondary(meta)}</span>
+          <span className="nav_2ndtitle">{getInterval(meta.intervall)}</span>
         </div>
 
         {false && visKode && (

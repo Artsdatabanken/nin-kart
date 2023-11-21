@@ -2,11 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import ResultatListe from "./ResultatListe";
 import Searchbar from "./Searchbar/Searchbar";
 import "./../style/TopBar.scss";
-import { SettingsContext } from "../SettingsContext";
 import Hamburger from "@material-ui/icons/Menu";
 import backend from "../Funksjoner/backend";
+import { useNavigate } from 'react-router-dom'
 
-const TopBar = ({ onSelectResult, searchFor, forside, history }) => {
+const TopBar = ({ onSelectResult, searchFor, onToggleHovedMeny }) => {
+  const navigate = useNavigate();
   const [hits, setHits] = useState([]);
   const [query, setQuery] = useState(null);
   const latestQuery = useRef();
@@ -24,56 +25,58 @@ const TopBar = ({ onSelectResult, searchFor, forside, history }) => {
     fetchData();
   }, [query]);
   return (
-    <SettingsContext.Consumer>
-      {context => (
-        <div className={!forside ? "top_bar" : "top_bar forside_topbar"}>
-          <button
-            className="invisible_icon_button hamburger"
-            onKeyDown={e => {
-              if (e.keyCode === 13) {
-                context.onToggleHovedmeny();
-              }
-            }}
-            onClick={context.onToggleHovedmeny}
-          >
-            <Hamburger />
-          </button>
-          {!forside && (
-            <div
-              className="header_text"
-              onClick={() => {
-                history.push("/");
-              }}
-            >
-              <img
-                src="/logoer/small_icon_two.png"
-                className="logo_image"
-                alt="artsdatabanken logo"
-              />
-              <span>NiN-Kart</span>
-            </div>
+    <div className={"top_bar"}>
+      {false && <div className="adb-topbar">Artsdtabanken</div>}
+      <div className="nin-topbar">
+        <button
+          className="invisible_icon_button hamburger"
+          onKeyDown={e => {
+            if (e.keyCode === 13) {
+              onToggleHovedMeny();
+            }
+          }}
+          onClick={e => {
+            onToggleHovedMeny();
+          }}
+        >
+          <Hamburger />
+        </button>
+
+        <div
+          className="header_text"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          <span style={{ fontWeight: 500 }}>NiN-kart</span>
+          {false && (
+            <img
+              src="/logoer/small_icon_two.png"
+              className="logo_image"
+              alt="artsdatabanken logo"
+            />
           )}
-
-          <div className="search_elements_container">
-            <Searchbar
-              query={query}
-              setHits={setHits}
-              onQueryChange={setQuery}
-              hits={hits}
-            />
-
-            <ResultatListe
-              query={query}
-              searchResults={hits}
-              onSelect={item => {
-                setQuery(null);
-                onSelectResult(item);
-              }}
-            />
-          </div>
         </div>
-      )}
-    </SettingsContext.Consumer>
+
+        <div className="search_elements_container">
+          <Searchbar
+            query={query}
+            setHits={setHits}
+            onQueryChange={setQuery}
+            hits={hits}
+          />
+
+          <ResultatListe
+            query={query}
+            searchResults={hits}
+            onSelect={item => {
+              setQuery(null);
+              onSelectResult(item);
+            }}
+          />
+        </div>
+      </div>
+    </div>
   );
 };
 

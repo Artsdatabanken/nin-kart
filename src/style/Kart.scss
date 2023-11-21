@@ -12,37 +12,17 @@
   left: 0;
   top: 0;
   width: 100%;
+  z-index: 1;
   height: 100%;
-  z-index: 0;
+  cursor: crosshair;
 }
 
-.popup {
-  position: absolute;
-  background: $brightest-nin;
-  transform: translate3d(764px, 386px, 0px);
-  padding: 10px;
-  width: 300px;
-  -webkit-box-shadow: $box-shadow;
-  -moz-box-shadow: $box-shadow;
-  box-shadow: $box-shadow;
-  z-index: -5;
+.leaflet-container {
+  width: $map-width;
 }
 
-.popup .link_to_page {
-  background: $medium-nin;
+.fullscreen .leaflet-container {
   width: 100%;
-  padding: 5px;
-  margin: 5px;
-}
-
-.popup .invisible_icon_button {
-  float: right;
-  font-size: 16pt;
-}
-
-.popup svg {
-  vertical-align: top;
-  margin-top: -2px;
 }
 
 /* KARTKNAPPENE */
@@ -51,13 +31,23 @@
 $leaflet-buttons: 34px;
 $leaflet-buttons-padding: 3px;
 $bottompadding: 12px + $leaflet-buttons-padding * 4; /*12px is the bottom reference text*/
-$bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
-  $mobile_slide_up_area;
+// $bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
+// $mobile_slide_up_area;
+$bottompadding-mobile: $leaflet-buttons-padding * 4 + 9px;
 
 .leaflet-top {
   /* Dette er containeren til zoomknappene */
-  top: auto !important;
+  // top: 50px !important;
+  top: unset;
   bottom: $bottompadding !important;
+}
+
+.leaflet-top .leaflet-control {
+  margin-top: 2px;
+}
+
+.leaflet-right .leaflet-control {
+  margin-right: 15px;
 }
 
 .leaflet-touch .leaflet-bar a {
@@ -65,48 +55,61 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + $bottom-tab-height +
 }
 
 .leaflet-control-zoom a,
-.map_button {
+.map_control_button {
   height: $leaflet-buttons !important;
   width: $leaflet-buttons;
 }
 
-.map_button,
+.map_control_button,
 .leaflet-touch .leaflet-bar {
-  border: 2px solid $medium-nin;
+  border: 2px solid $body-color;
   width: $leaflet-buttons;
   z-index: -5;
 }
 
-.map_button {
-  position: absolute;
-  right: 10px;
+.map_control_button {
   background: white;
   border-radius: 4px;
   padding: 2px;
-  bottom: $bottompadding + $leaflet-buttons * 2 + $leaflet-buttons-padding * 2 +
-    1px;
+  position: absolute;
+  right: calc(#{$sidebar-max-size} + 15px);
+  top: calc(#{$actual-map-height} - 36px);
 }
 
-.fullscreen {
-  display: none;
+.leaflet-control-container a,
+.leaflet-control-container a:visited
+{
+  color:$body-color;
+}
+
+.fullscreen .map_control_button {
+  background: white;
+  border-radius: 4px;
+  padding: 2px;
+  position: absolute;
+  right: 15px;
+  top: calc(#{$actual-map-height} - 36px);
 }
 
 @media only screen and (max-width: 768px) {
+  .fullscreen .map_control_button,
+  .map_control_button {
+    right: 15px;
+    top: calc(#{$actual-map-height-mobile} - 34px);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .leaflet-container {
+    width: 100%;
+    height: calc(100% - 60px);
+  }
   .leaflet-top {
     top: auto !important;
     bottom: $bottompadding-mobile !important;
     right: 5px !important;
   }
-
-  .map_button {
-    bottom: $bottompadding-mobile + $leaflet-buttons * 2 +
-      $leaflet-buttons-padding * 2 + 1px;
-    right: 15px;
-  }
-
-  .fullscreen {
-    display: inline-block;
-    bottom: $bottompadding-mobile + $leaflet-buttons * 3 +
-      $leaflet-buttons-padding * 3;
+  .leaflet-right .leaflet-control {
+    margin-right: 10px;
   }
 }

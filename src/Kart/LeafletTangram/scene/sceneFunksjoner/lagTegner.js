@@ -9,7 +9,6 @@ export default function lagTegner(drawArgs, config) {
     return;
   }
   const source = renderer.lagSource(format, drawArgs);
-
   if (renderer.lagStyle) {
     const style = renderer.lagStyle(format, drawArgs);
     config.styles[style.name] = style.value;

@@ -1,10 +1,30 @@
 /* NiN Main Pallette*/
-$super-dark-nin: #347c8a;
-$darkest-nin: #4d8b96;
-$dark-nin: #4b909e;
-$medium-nin: #81b2bb;
-$bright-nin: #b7d3d8;
-$brightest-nin: #edf4f5;
+$sand-80:#F5E7D3;// Border infobox
+$sand-50:#FFF7EB; // heading + footer
+$sand-10:#FFFCF7; // Innhold bg
+$white:#FFF;//infobox bg
+$font-chivo: 'Chivo', sans-serif;
+$font-space: 'Space Mono', sans-serif;
+$super-duper-dark-nin: #f5e7d3;// #165d6b;
+$link-color:#017590;
+$super-dark-nin: $sand-80;//hsla(189, 30, 45, 1); //#347c8a;
+$darkest-nin: hsla(189, 12%, 18%, 1); //#4d8b96;
+$dark-nin: hsla(189, 12%, 18%, 1); //#4b909e;
+$medium-nin: hsla(189, 12%, 24%, 1); // #81b2bb;
+$bright-nin: hsla(189, 12%, 31%, 1); //#b7d3d8;
+$brightest-nin:$sand-10; //hsla(189, 30, 95, 1); // #edf4f5;
+$transparent-bg:#fff7eb9e;// #0222286e;
+/* FUN COLOURS */
+$fun-bg-1: #bce0ce;
+$fun-bg-2: #dadfcf;
+$fun-bg-3: #bfb6d6;
+$fun-bg-4: #80aebf;
+
+/* Background colour */
+$panel-bg: #fff9f0;// #f1f1f1;
+$panel-section-bg: $sand-80;// #e0e5e6;
+$panel-section-sub-bg: #b9c2c4;
+$panel-section-sub-sub-bg: #c9d2d5;
 
 /* NiN Support Pallette*/
 $background_header: #fbfbfb;
@@ -14,7 +34,8 @@ $green-color: #299988;
 
 /* ADB profil*/
 $adb_whiter: #ffffff;
-$adb_dark_grey: #4c4a48;
+$adb_dark_grey: #706a60;
+$body-color:#262f31;
 $adb_grey: #7f726b;
 $adb_bright_orange: #de8608;
 $adb_orange: #eb6109;
@@ -42,21 +63,29 @@ $NR: #e2e4e9;
 $active-border: 2px solid black !important;
 
 /*fonts*/
-$fontfamily: "Roboto", "sans-serif";
+$fontfamily: $font-chivo;
 
 /* Relative heights of menu items */
-$bottom-tab-height: 48px;
-$topbar-height-nin: 56px;
-$menu-mobile-size: $bottom-tab-height + $topbar-height-nin;
-$sidebar-max-size: 350px;
+$nin-header: 48px;
+$topbar-height-nin: 96px;
 $mobile_slide_up_area: 60px; // closed version
-
+$ux-page-area: $topbar-height-nin;
+$ux-page-area-mobile: $mobile_slide_up_area + $topbar-height-nin;
+$menu-mobile-size: $ux-page-area;
+$sidebar-max-size: 408px;
+$actual-map-height: calc(100vh - #{$ux-page-area});
+$actual-map-height-mobile: calc(100vh - #{$ux-page-area-mobile});
+$map-width: calc(100% - #{$sidebar-max-size});
 /* Box Shadow */
-$box-shadow: -1px 8px 62px -19px rgba(0, 0, 0, 0.75);
+$box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.45);
+$box-shadow-hover: 0 1px 6px 0 hsla(189, 30%, 0%, 0.45),
+  0 1px 3px 1px hsla(189, 30%, 91%, 0.302);
+$box-shadow-card: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+  0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
 
 /* Searchbar Width */
 $searchbar-width: 300px;
 
 /* Top menu margins and paddings */
 $top-pad: 5px;
-$top-icon-height: 46px;
+$top-icon-height: 40px;

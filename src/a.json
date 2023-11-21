@@ -1,0 +1,638 @@
+{
+  "bruker": {
+    "navn": "Toril Nes",
+    "admin": 0,
+    "email": "torilnes89@gmail.com",
+    "telefon": "48177047",
+    "firmanavn": "Ecofact Nord AS",
+    "brukernavn": "tornes"
+  },
+  "merknad": null,
+  "mosaikk": null,
+  "prosjekt": {
+    "formål": null,
+    "program": {
+      "navn": "Kartlegging 2015",
+      "pilot": 0,
+      "programid": "{20150000-E673-41F0-8E6A-B677E6B7CA42}",
+      "beskrivelse": "Kartlegging 2015",
+      "programtype": "Internt",
+      "kartlegging5k": 1,
+      "kartleggingnt": 0,
+      "kartlegging20k": 0,
+      "kartleggingsinstruks": "https://nedlasting.miljodirektoratet.no/NiN_Instrukser/Basiskart_Oppdrag_2011_2019.pdf"
+    },
+    "Shape_Area": 5662165.516331,
+    "prosjektid": "{2D802682-5F0C-46AA-9158-4E3A018E5498}",
+    "Shape_Length": 29255.543572,
+    "foreslåttav": null,
+    "prosjektnavn": "P1_NO_ECON_11",
+    "kontaktperson": null,
+    "oppdragsgiver": "Miljødirektoratet",
+    "oppdragstaker": "Ecofact Nord AS",
+    "kartlagtfradato": "2015/06/01 00:00:00",
+    "kartlagttildato": "2016/02/01 00:00:00",
+    "prosjektrapport": "",
+    "basiskartlegging": 0,
+    "dekningskartverdi": 1,
+    "prosjektbeskrivelse": "Kartlegging 2015"
+  },
+  "Shape_Area": 69808.698239,
+  "sammensatt": 0,
+  "usikkerhet": null,
+  "område5kid": "NIN4013588",
+  "Shape_Length": 1574.466314,
+  "kartlagtdato": "2015/12/02 14:27:35",
+  "nøyaktighet": 4,
+  "område5kguid": "{3D9F3BFD-6964-4B14-B32E-0AAEC486C0C1}",
+  "kartleggingsenhet": [
+    {
+      "andel": 10,
+      "bruker": {
+        "navn": "Toril Nes",
+        "admin": 0,
+        "email": "torilnes89@gmail.com",
+        "telefon": "48177047",
+        "firmanavn": "Ecofact Nord AS",
+        "brukernavn": "tornes"
+      },
+      "merknad": "Andel for NA_T4-C-1 er korrigert fra 0 til 10. Konvertert fra NIN2.0 naturtypetypekode: NA_T4-C-1",
+      "variabler": [
+        {
+          "bruker": {
+            "navn": "Toril Nes",
+            "admin": 0,
+            "email": "torilnes89@gmail.com",
+            "telefon": "48177047",
+            "firmanavn": "Ecofact Nord AS",
+            "brukernavn": "tornes"
+          },
+          "merknad": "Konvertert fra NIN2.0 dominanstypekode: \"1AE-Xbjork-D 5\"",
+          "kartlagtdato": "2015/09/28 12:49:11",
+          "variabel5kid": "NIN4013588-01-D00",
+          "variabelkode": "NN-NA-BS-1AR-A-BEpu_4",
+          "variabeltype": 0,
+          "variabel5kguid": "{9D55495E-FB9A-4F9D-A4B0-4C5B0B2AC65B}",
+          "kartleggingsenhet5kid": "NIN4013588-01",
+          "kartleggingsenhet5kguid": "{05E3BA0D-F276-4168-AB32-1D1B8F93B9E4}",
+          "kode": "NN-NA-BS-1AR-A-BEpu-4",
+          "melding": "Metadata mangler"
+        },
+        {
+          "bruker": {
+            "navn": "Toril Nes",
+            "admin": 0,
+            "email": "torilnes89@gmail.com",
+            "telefon": "48177047",
+            "firmanavn": "Ecofact Nord AS",
+            "brukernavn": "tornes"
+          },
+          "merknad": "Konvertert fra NIN2.0 dominanstypekode: \"1AE-Xrogn-D 2\"",
+          "kartlagtdato": "2015/09/28 12:49:24",
+          "variabel5kid": "NIN4013588-01-D01",
+          "variabelkode": "NN-NA-BS-1AR-A-SOau_1",
+          "variabeltype": 0,
+          "variabel5kguid": "{3A49C593-7599-477F-A683-EB1108E19D3B}",
+          "kartleggingsenhet5kid": "NIN4013588-01",
+          "kartleggingsenhet5kguid": "{05E3BA0D-F276-4168-AB32-1D1B8F93B9E4}",
+          "kode": "NN-NA-BS-1AR-A-SOau-1",
+          "melding": "Metadata mangler"
+        },
+        {
+          "bruker": {
+            "navn": "Toril Nes",
+            "admin": 0,
+            "email": "torilnes89@gmail.com",
+            "telefon": "48177047",
+            "firmanavn": "Ecofact Nord AS",
+            "brukernavn": "tornes"
+          },
+          "merknad": "Konvertert fra NIN2.0 dominanstypekode: \"1AE-Xosp-D 0\"",
+          "kartlagtdato": "2015/09/28 13:34:56",
+          "variabel5kid": "NIN4013588-01-D02",
+          "variabelkode": "NN-NA-BS-1AR-A-POtr_0",
+          "variabeltype": 0,
+          "variabel5kguid": "{BC10A8EC-8044-40BD-A5D7-F5D0B5A0C39F}",
+          "kartleggingsenhet5kid": "NIN4013588-01",
+          "kartleggingsenhet5kguid": "{05E3BA0D-F276-4168-AB32-1D1B8F93B9E4}",
+          "kode": "NN-NA-BS-1AR-A-POtr-0",
+          "melding": "Metadata mangler"
+        },
+        {
+          "bruker": {
+            "navn": "Toril Nes",
+            "admin": 0,
+            "email": "torilnes89@gmail.com",
+            "telefon": "48177047",
+            "firmanavn": "Ecofact Nord AS",
+            "brukernavn": "tornes"
+          },
+          "merknad": "Konvertert fra NIN2.0 dominanstypekode: \"1AE-Xselje-D 0\"",
+          "kartlagtdato": "2015/09/28 13:35:21",
+          "variabel5kid": "NIN4013588-01-D03",
+          "variabelkode": "NN-NA-BS-1AR-A-SAca_0",
+          "variabeltype": 0,
+          "variabel5kguid": "{7861AD52-B7F1-4468-B312-B33E2DF660CC}",
+          "kartleggingsenhet5kid": "NIN4013588-01",
+          "kartleggingsenhet5kguid": "{05E3BA0D-F276-4168-AB32-1D1B8F93B9E4}",
+          "kode": "NN-NA-BS-1AR-A-SAca-0",
+          "melding": "Metadata mangler"
+        },
+        {
+          "bruker": {
+            "navn": "Toril Nes",
+            "admin": 0,
+            "email": "torilnes89@gmail.com",
+            "telefon": "48177047",
+            "firmanavn": "Ecofact Nord AS",
+            "brukernavn": "tornes"
+          },
+          "merknad": "Konvertert fra NIN2.0 dominanstypekode: \"4DG 0\"",
+          "kartlagtdato": null,
+          "variabel5kid": "NIN4013588-01-V04",
+          "variabelkode": "NN-NA-BS-4DG-0_1",
+          "variabeltype": 0,
+          "variabel5kguid": "{97004DB7-4274-4EEA-8BFE-FD1E023D8894}",
+          "kartleggingsenhet5kid": "NIN4013588-01",
+          "kartleggingsenhet5kguid": "{05E3BA0D-F276-4168-AB32-1D1B8F93B9E4}",
+          "altkode": "4DG-0_1",
+          "barn": [],
+          "bbox": [
+            [58.01, 5.15],
+            [70.905, 28.549]
+          ],
+          "bilde": {
+            "logo": {}
+          },
+          "farge": "#dbdbf0",
+          "graf": [],
+          "kart": {
+            "målestokk": 20000
+          },
+          "kode": "NN-NA-BS-4DG-0-1",
+          "nivå": "Verdi",
+          "overordnet": [
+            {
+              "areal": 68540378,
+              "kode": "NN-NA-BS-4DG-0",
+              "nivå": "Variabel",
+              "tittel": {
+                "nb": "Totalantall stående døde trær"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Naturgitte_objekter/Dødvedprofil_for_stående_død_ved_(gadder)/Totalantall_stående_døde_trær"
+            },
+            {
+              "areal": 78535405,
+              "kode": "NN-NA-BS-4DG",
+              "nivå": "Kilde til variasjon",
+              "tittel": {
+                "nb": "Dødvedprofil for stående død ved (gadder)"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Naturgitte_objekter/Dødvedprofil_for_stående_død_ved_(gadder)"
+            },
+            {
+              "areal": 94861188,
+              "kode": "NN-NA-BS-4",
+              "nivå": "Kilde til variasjon",
+              "tittel": {
+                "nb": "Naturgitte objekter"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Naturgitte_objekter"
+            },
+            {
+              "areal": 702501234145,
+              "kode": "NN-NA-BS",
+              "nivå": "Beskrivelsesystem",
+              "tittel": {
+                "nb": "Beskrivelsessystem"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem"
+            },
+            {
+              "areal": 2761126247,
+              "kode": "NN-NA",
+              "nivå": "Naturmangfoldnivå",
+              "tittel": {
+                "nb": "Natursystem"
+              },
+              "url": "/Natur_i_Norge/Natursystem"
+            },
+            {
+              "kode": "NN",
+              "nivå": "Natur i Norge",
+              "tittel": {
+                "en": "Nature of Norway",
+                "nb": "Natur i Norge",
+                "nn": "Natur i Noreg"
+              },
+              "url": "/Natur_i_Norge"
+            }
+          ],
+          "tittel": {
+            "nb": "1-3 per daa"
+          },
+          "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Naturgitte_objekter/Dødvedprofil_for_stående_død_ved_(gadder)/Totalantall_stående_døde_trær/1-3_per_daa"
+        },
+        {
+          "bruker": {
+            "navn": "Toril Nes",
+            "admin": 0,
+            "email": "torilnes89@gmail.com",
+            "telefon": "48177047",
+            "firmanavn": "Ecofact Nord AS",
+            "brukernavn": "tornes"
+          },
+          "merknad": "Konvertert fra NIN2.0 dominanstypekode: \"4DL 1\"",
+          "kartlagtdato": null,
+          "variabel5kid": "NIN4013588-01-V05",
+          "variabelkode": "NN-NA-BS-4DL-0_2",
+          "variabeltype": 0,
+          "variabel5kguid": "{415E5114-0848-4F42-865E-BCA068E59855}",
+          "kartleggingsenhet5kid": "NIN4013588-01",
+          "kartleggingsenhet5kguid": "{05E3BA0D-F276-4168-AB32-1D1B8F93B9E4}",
+          "altkode": "4DL-0_2",
+          "barn": [],
+          "bbox": [
+            [58.014, 5.147],
+            [70.561, 28.554]
+          ],
+          "bilde": {
+            "logo": {}
+          },
+          "farge": "#dbdbf0",
+          "graf": [],
+          "kart": {
+            "målestokk": 20000
+          },
+          "kode": "NN-NA-BS-4DL-0-2",
+          "nivå": "Verdi",
+          "overordnet": [
+            {
+              "areal": 71708839,
+              "kode": "NN-NA-BS-4DL-0",
+              "nivå": "Variabel",
+              "tittel": {
+                "nb": "Stor dimensjon (> 30 cm) - Totalantall liggende dødvedenheter"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Naturgitte_objekter/Dødvedprofil_for_liggende_død_ved_(læger)/Stor_dimensjon_(>_30_cm)_-_Totalantall_liggende_dødvedenheter"
+            },
+            {
+              "areal": 84573762,
+              "kode": "NN-NA-BS-4DL",
+              "nivå": "Kilde til variasjon",
+              "tittel": {
+                "nb": "Dødvedprofil for liggende død ved (læger)"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Naturgitte_objekter/Dødvedprofil_for_liggende_død_ved_(læger)"
+            },
+            {
+              "areal": 94861188,
+              "kode": "NN-NA-BS-4",
+              "nivå": "Kilde til variasjon",
+              "tittel": {
+                "nb": "Naturgitte objekter"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Naturgitte_objekter"
+            },
+            {
+              "areal": 702501234145,
+              "kode": "NN-NA-BS",
+              "nivå": "Beskrivelsesystem",
+              "tittel": {
+                "nb": "Beskrivelsessystem"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem"
+            },
+            {
+              "areal": 2761126247,
+              "kode": "NN-NA",
+              "nivå": "Naturmangfoldnivå",
+              "tittel": {
+                "nb": "Natursystem"
+              },
+              "url": "/Natur_i_Norge/Natursystem"
+            },
+            {
+              "kode": "NN",
+              "nivå": "Natur i Norge",
+              "tittel": {
+                "en": "Nature of Norway",
+                "nb": "Natur i Norge",
+                "nn": "Natur i Noreg"
+              },
+              "url": "/Natur_i_Norge"
+            }
+          ],
+          "tittel": {
+            "nb": "4-7 per daa"
+          },
+          "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Naturgitte_objekter/Dødvedprofil_for_liggende_død_ved_(læger)/Stor_dimensjon_(>_30_cm)_-_Totalantall_liggende_dødvedenheter/4-7_per_daa"
+        },
+        {
+          "bruker": {
+            "navn": "Toril Nes",
+            "admin": 0,
+            "email": "torilnes89@gmail.com",
+            "telefon": "48177047",
+            "firmanavn": "Ecofact Nord AS",
+            "brukernavn": "tornes"
+          },
+          "merknad": "Konvertert fra NIN2.0 dominanstypekode: \"1AG-A 4\"",
+          "kartlagtdato": null,
+          "variabel5kid": "NIN4013588-01-V06",
+          "variabelkode": "NN-NA-BS-1AG-A-0_6",
+          "variabeltype": 0,
+          "variabel5kguid": "{707E71E0-5A8B-4821-A807-6883B0B6B4A1}",
+          "kartleggingsenhet5kid": "NIN4013588-01",
+          "kartleggingsenhet5kguid": "{05E3BA0D-F276-4168-AB32-1D1B8F93B9E4}",
+          "altkode": "1AG-A-0_6",
+          "barn": [],
+          "bbox": [
+            [58.01, 4.719],
+            [70.556, 28.573]
+          ],
+          "bilde": {
+            "logo": {}
+          },
+          "farge": "#dbdbf0",
+          "graf": [],
+          "kart": {
+            "målestokk": 20000
+          },
+          "kode": "NN-NA-BS-1AG-A-0-6",
+          "nivå": "Verdi",
+          "overordnet": [
+            {
+              "areal": 203002538,
+              "kode": "NN-NA-BS-1AG-A-0",
+              "nivå": "Variabel",
+              "tittel": {
+                "nb": "Tresjiktsdekning - total dekning"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Artssammensetning/Artsgruppesammensetning/Tresjiktsdekning_-_total_dekning"
+            },
+            {
+              "areal": 209115178,
+              "kode": "NN-NA-BS-1AG",
+              "nivå": "Kilde til variasjon",
+              "tittel": {
+                "nb": "Artsgruppesammensetning"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Artssammensetning/Artsgruppesammensetning"
+            },
+            {
+              "areal": 255986686,
+              "kode": "NN-NA-BS-1",
+              "nivå": "Kilde til variasjon",
+              "tittel": {
+                "nb": "Artssammensetning"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Artssammensetning"
+            },
+            {
+              "areal": 702501234145,
+              "kode": "NN-NA-BS",
+              "nivå": "Beskrivelsesystem",
+              "tittel": {
+                "nb": "Beskrivelsessystem"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem"
+            },
+            {
+              "areal": 2761126247,
+              "kode": "NN-NA",
+              "nivå": "Naturmangfoldnivå",
+              "tittel": {
+                "nb": "Natursystem"
+              },
+              "url": "/Natur_i_Norge/Natursystem"
+            },
+            {
+              "kode": "NN",
+              "nivå": "Natur i Norge",
+              "tittel": {
+                "en": "Nature of Norway",
+                "nb": "Natur i Norge",
+                "nn": "Natur i Noreg"
+              },
+              "url": "/Natur_i_Norge"
+            }
+          ],
+          "tittel": {
+            "nb": "50 - 75 % dekning"
+          },
+          "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Artssammensetning/Artsgruppesammensetning/Tresjiktsdekning_-_total_dekning/50_-_75_prosent_dekning"
+        },
+        {
+          "bruker": {
+            "navn": "Toril Nes",
+            "admin": 0,
+            "email": "torilnes89@gmail.com",
+            "telefon": "48177047",
+            "firmanavn": "Ecofact Nord AS",
+            "brukernavn": "tornes"
+          },
+          "merknad": "Konvertert fra NIN2.0 dominanstypekode: \"1AG-B 2\"",
+          "kartlagtdato": null,
+          "variabel5kid": "NIN4013588-01-V07",
+          "variabelkode": "NN-NA-BS-1AG-B_4",
+          "variabeltype": 0,
+          "variabel5kguid": "{49445E3B-1CD4-4BEB-9115-AFA3F1C94B45}",
+          "kartleggingsenhet5kid": "NIN4013588-01",
+          "kartleggingsenhet5kguid": "{05E3BA0D-F276-4168-AB32-1D1B8F93B9E4}",
+          "altkode": "1AG-B_4",
+          "barn": [],
+          "bbox": [
+            [58.017, 5.021],
+            [71.095, 28.546]
+          ],
+          "bilde": {
+            "logo": {}
+          },
+          "farge": "#dbdbf0",
+          "graf": [],
+          "kart": {
+            "målestokk": 20000
+          },
+          "kode": "NN-NA-BS-1AG-B-4",
+          "nivå": "Verdi",
+          "overordnet": [
+            {
+              "areal": 71131497,
+              "kode": "NN-NA-BS-1AG-B",
+              "nivå": "Variabel",
+              "tittel": {
+                "nb": "Busksjiktdekning"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Artssammensetning/Artsgruppesammensetning/Busksjiktdekning"
+            },
+            {
+              "areal": 209115178,
+              "kode": "NN-NA-BS-1AG",
+              "nivå": "Kilde til variasjon",
+              "tittel": {
+                "nb": "Artsgruppesammensetning"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Artssammensetning/Artsgruppesammensetning"
+            },
+            {
+              "areal": 255986686,
+              "kode": "NN-NA-BS-1",
+              "nivå": "Kilde til variasjon",
+              "tittel": {
+                "nb": "Artssammensetning"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Artssammensetning"
+            },
+            {
+              "areal": 702501234145,
+              "kode": "NN-NA-BS",
+              "nivå": "Beskrivelsesystem",
+              "tittel": {
+                "nb": "Beskrivelsessystem"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem"
+            },
+            {
+              "areal": 2761126247,
+              "kode": "NN-NA",
+              "nivå": "Naturmangfoldnivå",
+              "tittel": {
+                "nb": "Natursystem"
+              },
+              "url": "/Natur_i_Norge/Natursystem"
+            },
+            {
+              "kode": "NN",
+              "nivå": "Natur i Norge",
+              "tittel": {
+                "en": "Nature of Norway",
+                "nb": "Natur i Norge",
+                "nn": "Natur i Noreg"
+              },
+              "url": "/Natur_i_Norge"
+            }
+          ],
+          "tittel": {
+            "nb": "10 - 25 % dekning"
+          },
+          "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Artssammensetning/Artsgruppesammensetning/Busksjiktdekning/10_-_25_prosent_dekning"
+        },
+        {
+          "bruker": {
+            "navn": "Toril Nes",
+            "admin": 0,
+            "email": "torilnes89@gmail.com",
+            "telefon": "48177047",
+            "firmanavn": "Ecofact Nord AS",
+            "brukernavn": "tornes"
+          },
+          "merknad": "Konvertert fra NIN2.0 dominanstypekode: \"1AG-C 5\"",
+          "kartlagtdato": null,
+          "variabel5kid": "NIN4013588-01-V08",
+          "variabelkode": "NN-NA-BS-1AG-C_7",
+          "variabeltype": 0,
+          "variabel5kguid": "{820F649E-D8B9-4CF2-8281-CA89145AA26B}",
+          "kartleggingsenhet5kid": "NIN4013588-01",
+          "kartleggingsenhet5kguid": "{05E3BA0D-F276-4168-AB32-1D1B8F93B9E4}",
+          "altkode": "1AG-C_7",
+          "barn": [],
+          "bbox": [
+            [58.009, 5.172],
+            [70.906, 28.585]
+          ],
+          "bilde": {
+            "logo": {}
+          },
+          "farge": "#dbdbf0",
+          "graf": [],
+          "kart": {
+            "målestokk": 20000
+          },
+          "kode": "NN-NA-BS-1AG-C-7",
+          "nivå": "Verdi",
+          "overordnet": [
+            {
+              "areal": 34361904,
+              "kode": "NN-NA-BS-1AG-C",
+              "nivå": "Variabel",
+              "tittel": {
+                "nb": "Feltsjiktdekning"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Artssammensetning/Artsgruppesammensetning/Feltsjiktdekning"
+            },
+            {
+              "areal": 209115178,
+              "kode": "NN-NA-BS-1AG",
+              "nivå": "Kilde til variasjon",
+              "tittel": {
+                "nb": "Artsgruppesammensetning"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Artssammensetning/Artsgruppesammensetning"
+            },
+            {
+              "areal": 255986686,
+              "kode": "NN-NA-BS-1",
+              "nivå": "Kilde til variasjon",
+              "tittel": {
+                "nb": "Artssammensetning"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Artssammensetning"
+            },
+            {
+              "areal": 702501234145,
+              "kode": "NN-NA-BS",
+              "nivå": "Beskrivelsesystem",
+              "tittel": {
+                "nb": "Beskrivelsessystem"
+              },
+              "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem"
+            },
+            {
+              "areal": 2761126247,
+              "kode": "NN-NA",
+              "nivå": "Naturmangfoldnivå",
+              "tittel": {
+                "nb": "Natursystem"
+              },
+              "url": "/Natur_i_Norge/Natursystem"
+            },
+            {
+              "kode": "NN",
+              "nivå": "Natur i Norge",
+              "tittel": {
+                "en": "Nature of Norway",
+                "nb": "Natur i Norge",
+                "nn": "Natur i Noreg"
+              },
+              "url": "/Natur_i_Norge"
+            }
+          ],
+          "tittel": {
+            "nb": "75 - 90 % dekning"
+          },
+          "url": "/Natur_i_Norge/Natursystem/Beskrivelsessystem/Artssammensetning/Artsgruppesammensetning/Feltsjiktdekning/75_-_90_prosent_dekning"
+        }
+      ],
+      "område5kid": "NIN4013588",
+      "kartlagtdato": null,
+      "område5kguid": "{3D9F3BFD-6964-4B14-B32E-0AAEC486C0C1}",
+      "kartleggingsenhet5kid": "NIN4013588-01",
+      "kartleggingsenhetkode": "NN-NA-TI-T4-C-1",
+      "kartleggingsenhet5kguid": "{05E3BA0D-F276-4168-AB32-1D1B8F93B9E4}",
+      "altkode": "T4-C-1",
+      "kart": {
+        "målestokk": 5000
+      },
+      "kode": "NN-NA-TI-T4-C-1",
+      "nivå": "Kartleggingsenhet 1:5000",
+      "tittel": {
+        "nb": "Blåbærskog"
+      },
+      "url": "/Natur_i_Norge/Natursystem/Typeinndeling/Fastmarkssystemer/Fastmarksskogsmark/Blåbær-_og_bærlyngskoger/Blåbærskog"
+    }
+  ],
+  "registreringsstatus": 2,
+  "kartleggingsmålestokk": 0,
+  "usikkerhetsbeskrivelse": null
+}

@@ -1,8 +1,7 @@
 import React from "react";
-import Navigeringsliste from "Navigering/Navigeringsliste/Navigeringsliste";
-import Ekspander from "GjenbruksElement/Ekspander";
+import LayerSubElementListe from "../../../Kartlag/CurrentElement/LayerSubElementListe";
+import SectionExpand from "../../../GjenbruksElement/SectionExpand";
 import { titler } from "./Titler";
-
 const Relasjon = props => {
   const {
     heading,
@@ -14,30 +13,35 @@ const Relasjon = props => {
     opplyst,
     children
   } = props;
-  // console.log(props);
   const count = noder ? noder.length : 1;
   const x = titler[heading] || { title: heading };
-  // console.log("rela", parentkode, opplyst);
+  // eksempelside: /Natur_i_Norge/Natursystem/Typeinndeling/Marine_vannmasser
+  if (!(count > 0)) return null;
   return (
-    <Ekspander
-      visible={count > 0}
-      heading={x.title || heading}
-      heading2={count}
-    >
-      {noder && (
-        <Navigeringsliste
-          parentkode={parentkode}
-          onNavigate={onNavigate}
-          title=""
-          subtitle={x.subtitle}
-          metadata={noder}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          opplyst={opplyst}
-        />
-      )}
-      {children}
-    </Ekspander>
+    <div className="subsection">
+      <h4>Relasjoner</h4>
+      <SectionExpand
+        title={
+          <span>
+            {x.title || heading} - {count}
+          </span>
+        }
+      >
+        {noder && (
+          <LayerSubElementListe
+            parentkode={parentkode}
+            onNavigate={onNavigate}
+            title=""
+            subtitle={x.subtitle}
+            metadata={noder}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            opplyst={opplyst}
+          />
+        )}
+        {children}
+      </SectionExpand>
+    </div>
   );
 };
 

@@ -28,22 +28,6 @@ export default function oppdaterLagProperties(
   parent,
   elementType
 ) {
-  if (elementType === "lokalitetdata") {
-    // Scenario: Lokalitetsdata har litt annet format, og må hentes ut på annet vis
-    let lokalitetdata = parent.state.lokalitetdata;
-    if (!lokalitetdata[layer]) {
-      let barneliste = lokalitetdata[childLayer(layer)].barn;
-      barneliste = childElement(barneliste, key, value, layer);
-      console.log("Jo, travis, vi bruker", barneliste); // hack
-    } else {
-      let node = lokalitetdata[layer];
-      node = setValue(node, key, value);
-      console.log("Jo, travis, vi bruker", node); // hack
-    }
-
-    return lokalitetdata;
-  }
-
   const layer_input = layer;
   // Scenario A: Laget har ingen egenfarge, men bygges opp av underelementer
   // Scenario B: Laget har ingen underelementer, men sin egen farge
@@ -53,19 +37,25 @@ export default function oppdaterLagProperties(
     layer = childLayer(layer);
   }
 
-  // Laget er et aktivt kartlag, og ligger derfor i state.aktive
-  const aktive = parent.state.aktiveLag;
-  let node = aktive[layer];
-
-  // Laget er nåværende kartlag, og ligger derfor i state.meta
-  if (!node) {
-    node = parent.state.meta;
-  }
-
+  // Nåværende kartlag ligger i state.meta
+  let currentnode = parent.state.meta;
   if (elementType === "barn") {
-    node = childElement(node.barn, key, value, layer_input);
+    childElement(currentnode.barn, key, value, layer_input);
   } else {
-    node = setValue(node, key, value);
+    console.log("node:", currentnode);
+    setValue(currentnode, key, value);
   }
+
+  // Laget er et aktivt kartlag, og ligger derfor også i state.aktive
+  const aktive = parent.state.aktiveLag;
+  let favenode = aktive[layer];
+  if (favenode) {
+    if (elementType === "barn") {
+      favenode = childElement(favenode.barn, key, value, layer_input);
+    } else {
+      favenode = setValue(favenode, key, value);
+    }
+  }
+
   return aktive;
 }

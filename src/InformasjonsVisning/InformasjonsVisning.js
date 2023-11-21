@@ -1,93 +1,87 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
-import Lokalitet from "InformasjonsVisning/Lokalitet/Lokalitet";
-import Hjelp from "InformasjonsVisning/Hjelp/Hjelp";
-import parseQueryString from "./Katalog/KatalogFunksjoner/parseQueryString";
+import LukkbartVindu from "../LukkbartVindu";
+import { withRouter } from "../withRouter";
+import { Snackbar } from "@material-ui/core";
 import finnKurvevariabler from "./Katalog/KatalogFunksjoner/finnKurvevariabler";
-import KatalogFane from "./Katalog/Katalog";
+import språk from "../Funksjoner/språk";
+import KatalogHeader from "./Katalog/KatalogHeader/KatalogHeader";
+import KatalogGradienter from "./Katalog/KatalogGradienter/KatalogGradienter";
+import KatalogBarneliste from "./Katalog/KatalogBarneliste/KatalogBarneliste";
+import KatalogKilder from "./Katalog/KatalogKilder/KatalogKilder";
+import { Info } from "@material-ui/icons";
 
-// Denne boksen inneholder alle informasjonsvisningssidene
 class InformasjonsVisning extends React.Component {
-  dataQueryNumber = 0;
-  state = {
-    error: "",
-    data: {}
-  };
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.meta !== this.props.meta) this.setState({ query: null });
-  }
-
+  // Denne boksen inneholder alle informasjonssidene for kartlag
   render() {
-    const data = this.state.data;
-    const {
-      opplyst,
-      onMouseEnter,
-      onMouseLeave,
-      onUpdateLayerProp,
-      onUpdateMetaProp,
-      meta,
-      location,
-      aktivTab,
-      path,
-      handleNavigate,
-      handleLokalitetUpdate
-    } = this.props;
+    const { meta } = this.props;
     const kurve = finnKurvevariabler(this.props.aktiveLag);
-
-    if (path === "/Natur_i_Norge/hjelp") {
-      return <Hjelp aktivTab={aktivTab} />;
+    if (meta === null) {
+      return null;
     }
-
-    if (
-      location.search &&
-      location.search.includes("?lng") &&
-      path.includes("lokalitet")
-    ) {
-      const { lng, lat, vis } = parseQueryString(location.search);
-      return (
-        <Lokalitet
-          lng={lng}
-          lat={lat}
-          vis={vis}
-          aktivTab={aktivTab}
-          history={this.props.history}
-          onNavigate={handleNavigate}
-          handleLokalitetUpdate={handleLokalitetUpdate}
-        />
-      );
+    let title = språk(meta.tittel);
+    if (title === "undefined") {
+      title = "Informasjonsfane";
     }
-
     return (
-      <div
-        className={
-          (aktivTab === "informasjon" ? "mobile_on" : "mobile_off") +
-          " main_body"
-        }
+      <LukkbartVindu
+        onBack={() => this.props.onNavigateToTab("kartlag")}
+        onClose={this.props.handleShow}
+        show={this.props.show}
+        tittel={"Kartlaginformasjon"}
+        icon={<Info />}
+        toplayer={true}
       >
         {meta && (
-          <KatalogFane
-            meta={meta}
-            onFitBounds={this.props.onFitBounds}
-            onUpdateLayerProp={onUpdateLayerProp}
-            onNavigate={handleNavigate}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-            opplyst={opplyst}
-            data={data}
-            onUpdateMetaProp={onUpdateMetaProp}
-            has_error={this.state.error}
-            handleCloseSnackbar={this.handleCloseSnackbar}
-            erAktivert={this.props.erAktivert}
-            onToggleLayer={this.props.onToggleLayer}
-            kurve={kurve}
-          />
+          <>
+            <div className="section">
+              <KatalogHeader
+                meta={meta}
+                onFitBounds={this.props.onFitBounds}
+                onUpdateLayerProp={this.props.onUpdateLayerProp}
+              />
+              <KatalogGradienter
+                meta={meta}
+                onNavigate={this.props.onNavigate}
+                onMouseEnter={this.props.onMouseEnter}
+                onMouseLeave={this.props.onMouseLeave}
+                opplyst={this.props.opplyst}
+              />
+            </div>
+
+            <KatalogBarneliste
+              meta={meta}
+              onNavigate={this.props.onNavigate}
+              onUpdateMetaProp={this.props.onUpdateMetaProp}
+              opplyst={this.props.opplyst}
+              onMouseEnter={this.props.onMouseEnter}
+              onMouseLeave={this.props.onMouseLeave}
+              isDatakilde={meta.tittel.nb}
+            />
+            {this.props.has_error && (
+              <Snackbar
+                open={true}
+                message={"Søk feilet: " + JSON.stringify(this.state.error)}
+                autoHideDuration={4000}
+                onRequestClose={this.props.handleCloseSnackbar}
+              />
+            )}
+            <KatalogKilder
+              meta={this.props.meta}
+              onNavigate={this.props.onNavigate}
+              onMouseEnter={this.props.onMouseEnter}
+              onMouseLeave={this.props.onMouseLeave}
+              onFitBounds={this.props.onFitBounds}
+              erAktivert={this.props.erAktivert}
+              opplyst={this.props.opplyst}
+              onToggleLayer={this.props.onToggleLayer}
+              onUpdateLayerProp={this.props.onUpdateLayerProp}
+              onUpdateMetaProp={this.props.onUpdateMetaProp}
+              kurve={kurve}
+            />
+          </>
         )}
-        <div className="big_page_sidebar" />
-      </div>
+      </LukkbartVindu>
     );
   }
-  handleCloseSnackbar = () => this.setState({ error: null });
 }
-
 export default withRouter(InformasjonsVisning);

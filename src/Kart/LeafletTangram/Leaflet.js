@@ -4,16 +4,9 @@ import "leaflet/dist/leaflet.css";
 import React from "react";
 import Tangram from "tangram";
 import { createScene, updateScene } from "./scene/scene";
-import backend from "Funksjoner/backend";
-import PopUp from "./LeafletComponents/PopUp";
-import {
-  Fullscreen,
-  FullscreenExit,
-  LocationSearching
-} from "@material-ui/icons";
-import "style/Kart.scss";
-import updateMarkerPosition from "./LeafletActions/updateMarkerPosition";
-import getLokalitetUrl from "AppSettings/AppFunksjoner/getLokalitetUrl";
+import { LocationSearching } from "@material-ui/icons";
+import "../../style/Kart.scss";
+
 // -- LEAFLET: Fix Leaflet's icon paths for Webpack --
 // See here: https://github.com/PaulLeCam/react-leaflet/issues/255
 // Used in conjunction with url-loader.
@@ -27,82 +20,39 @@ L.Icon.Default.mergeOptions({
 
 let header_shift = 56;
 
-function find_searchparams(searchparams) {
-  let coord = null;
-  for (let i in searchparams) {
-    if (searchparams[i].includes("lng")) {
-      coord = searchparams[i].split("&");
-      coord[0] = coord[0].split("=")[1];
-      coord[1] = coord[1].split("=")[1];
-    }
-  }
-  return coord;
-}
-
 class LeafletTangram extends React.Component {
   state = {
     windowXpos: 0,
     windowYpos: 0,
-    showPopup: false,
     buttonUrl: null,
     sted: null,
     data: null,
-    koordinat: null,
-    clickCoordinates: { x: 0, y: 0 }
+    koordinat: null
   };
   componentDidMount() {
     const options = {
       zoomControl: false,
       inertia: true,
-      minZoom: 3
+      minZoom: 3,
+      doubleClickZoom: false
     };
-
-    if (this.props.forvaltningsportal === "true") {
-      header_shift = 113;
-    }
 
     let map = L.map(this.mapEl, options);
 
-    map.on("drag", e => {
-      if (!e.hard) {
-        this.props.onMapBoundsChange(map.getBounds());
-      }
-      if (this.marker) {
-        updateMarkerPosition(this.state.clickCoordinates, this, header_shift);
-      }
-    });
-    map.on("zoomend", e => {
-      if (!e.hard) {
-        this.props.onMapBoundsChange(map.getBounds());
-      }
-      if (this.marker) {
-        updateMarkerPosition(
-          this.marker._icon._leaflet_pos,
-          this,
-          header_shift
-        );
-      }
-    });
-    map.on("resize", e => {
-      if (!e.hard) {
-        this.props.onMapBoundsChange(map.getBounds());
-      }
-      if (this.marker) {
-        updateMarkerPosition(
-          this.marker._icon._leaflet_pos,
-          this,
-          header_shift
-        );
-      }
-    });
+    this.radiusMarker = null; // used for gpsMarker
+    this.gpsMarker = null; // used for gps coordinate
+    this.geolocationButton = null;
+
     map.setView(
       [this.props.latitude, this.props.longitude],
       this.props.zoom * 1.8
     );
+
     L.control.zoom({ position: "topright" }).addTo(map);
     L.DomUtil.addClass(map._container, "crosshair-cursor-enabled");
     this.map = map;
     let def = {
+      //      logLevel: 'debug',
       scene: createScene(this.props),
       events: {
         hover: function(selection) {},
@@ -115,54 +65,85 @@ class LeafletTangram extends React.Component {
     this.layer = Tangram.leafletLayer(def);
     this.map.addLayer(this.layer);
     // this.layer.loadScene(this.layer.scene)
+
+    // ICON IMAGES
     this.icon = L.icon({
       iconUrl: "/marker/baseline_place_black_18dp.png",
       iconSize: [36, 36],
       iconAnchor: [17, 35]
     });
 
-    let coord = find_searchparams((this.props.path || "").split("?"));
+    this.gpsicon = L.icon({
+      iconUrl: "/marker/baseline_place_blue_18dp.png",
+      iconSize: [36, 36],
+      iconAnchor: [17, 35]
+    });
 
     map.on("locationfound", e => this.onLocationFound(e));
     map.on("locationerror", e => this.onLocationError(e));
 
-    if (coord) {
-      this.marker = L.marker([coord[1], coord[0]], { icon: this.icon })
-        .addTo(this.map)
-        .on("click", e => {
-          if (this.map) {
-            console.warn("legg inn funksjon her senere.");
-          }
-        });
-      this.getBackendData(coord[0], coord[1], this.marker._icon._leaflet_pos);
+    if (this.props.markerCoordinates) {
+      this.placeMarker(
+        this.props.markerCoordinates.lng,
+        this.props.markerCoordinates.lat
+      );
     }
+  }
+
+  // GPS COORDINATE HANDLING
+  geolocationFunc(e) {
+    if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+    this.handleLocate();
+  }
+
+  resetLocationLayers(e) {
+    if (this.map && this.gpsMarker) {
+      this.map.removeLayer(this.gpsMarker);
+      this.gpsMarker = null;
+    }
+    if (this.map && this.radiusMarker) {
+      this.map.removeLayer(this.radiusMarker);
+      this.radiusMarker = null;
+    }
+    this.disableClick = true;
   }
 
   onLocationFound(e) {
     var radius = e.accuracy / 2;
-    radius = L.circle(e.latlng, radius).addTo(this.map);
-    var gpsmarker = L.marker(e.latlng)
-      .addTo(this.map)
-      .on("click", e => {
-        if (this.map) {
-          this.map.removeLayer(gpsmarker);
-          this.map.removeLayer(radius);
-        }
-      });
+    this.resetLocationLayers(e);
+    this.radiusMarker = L.circle(e.latlng, radius).addTo(this.map);
+    this.placeMarker(e.latlng.lat, e.latlng.lng, true);
   }
+
   onLocationError(e) {
     alert(e.message);
   }
 
+  handleLocate() {
+    this.map.stopLocate();
+    this.map.locate({ setView: true });
+  }
+
+  // Update and change detection
   erEndret(prevProps) {
     if (this.props.aktiveLag !== prevProps.aktiveLag) return true;
-    if (this.props.lokalitetdata !== prevProps.lokalitetdata) return true;
     if (this.props.meta !== prevProps.meta) return true;
-    if (this.props.opplystKode !== prevProps.opplystKode) return true;
+    if (this.props.opplyst !== prevProps.opplyst) return true;
     if (this.props.show_current !== prevProps.show_current) return true;
+    if (this.props.fullscreen !== prevProps.fullscreen) return true;
   }
 
   componentDidUpdate(prevProps) {
+    if (
+      this.props.markerCoordinates &&
+      prevProps.markerCoordinates !== this.props.markerCoordinates
+    ) {
+      this.removeMarker();
+      this.placeMarker(
+        this.props.markerCoordinates.lat,
+        this.props.markerCoordinates.lng
+      );
+    }
     if (this.props.bounds !== prevProps.bounds) {
       const bounds = this.props.bounds;
       if (bounds) {
@@ -170,9 +151,51 @@ class LeafletTangram extends React.Component {
       }
     }
     if (this.erEndret(prevProps)) {
+      this.map.invalidateSize();
       this.updateMap(this.props);
       return;
     }
+  }
+
+  updateMap(props) {
+    if (this.layer.scene.config) {
+      updateScene(this.layer.scene.config, props);
+      this.layer.scene.updateConfig({ rebuild: true });
+    } else {
+      /*TODO:
+      THIS removed error tree and crash.
+      But I assume it existed for a reason...
+      Seems events get called in the wrong order, causing trouble*/
+      console.error(
+        "missing config. start anew with empty config. See code to debug"
+      );
+      updateScene(false, props);
+      //this.layer.scene.updateConfig({ rebuild: true });
+    }
+  }
+
+  // Handle marker
+  placeMarker(lat, lng, gps) {
+    if (gps) {
+      this.gpsMarker = L.marker([lat, lng], {
+        icon: this.gpsicon,
+        title: "velg gps-punktinformasjon"
+      })
+        .on("click", evt => this.setPoint(lat, lng, evt))
+        .on("click", evt => this.resetLocationLayers(evt))
+        .addTo(this.map);
+    } else {
+      this.marker = L.marker([lat, lng], {
+        icon: this.icon,
+        title: "åpne punktinformasjon"
+      })
+        .on("click", evt => this.markerClick(evt))
+        .addTo(this.map);
+    }
+  }
+
+  markerClick(e) {
+    this.props.handleShowPunkt(!this.props.showPunkt);
   }
 
   removeMarker() {
@@ -184,39 +207,19 @@ class LeafletTangram extends React.Component {
     this.map.removeLayer(this.marker);
   }
 
-  getBackendData(lng, lat, e) {
-    let prevlok = this.state.lokalitetdata;
-    backend.hentPunkt(lng, lat, e).then(data => {
-      if (!data) {
-        return null;
-      }
-      let url = getLokalitetUrl(lat, lng, data);
-      updateMarkerPosition(e, this, header_shift);
-      this.setState({
-        buttonUrl: url,
-        data: data,
-        showPopup: true,
-        koordinat: [lng, lat]
-      });
-      this.props.handleLokalitetUpdate(data);
-      backend.hentStedsnavn(lng, lat).then(sted => {
-        if (sted && sted.placename) {
-          this.setState({ sted: sted.placename });
-        }
-      });
-      if (this.props.lokalitetdata && this.props.lokalitetdata !== prevlok) {
-        this.updateMap(this.props);
-      }
-    });
+  // Handle point lookup data
+  setCoords(lat, lng, e) {
+    let offset = this.marker._mapToAdd._mapPane._leaflet_pos;
+    const coords = {
+      lat: lat,
+      lng: lng,
+      windowXpos: e.x + offset.x,
+      windowYpos: e.y - header_shift + offset.y
+    };
+    this.props.onMarkerClick(coords);
   }
 
-  handleClick = e => {
-    const latlng = e.leaflet_event.latlng;
-    this.removeMarker();
-    this.marker = L.marker([latlng.lat, latlng.lng], { icon: this.icon }).addTo(
-      this.map
-    );
-    this.getBackendData(latlng.lng, latlng.lat, e.leaflet_event.layerPoint);
+  setUrl(lat, lng) {
     let urlparams = (this.props.path || "").split("?");
     let newurlstring = "";
     for (let i in urlparams) {
@@ -224,92 +227,43 @@ class LeafletTangram extends React.Component {
         newurlstring += "?" + urlparams[i];
       }
     }
-    this.props.history.push(
-      "?lng=" + latlng.lng + "&lat=" + latlng.lat + newurlstring
-    );
+    this.props.navigate("?lng=" + lng + "&lat=" + lat + newurlstring);
+  }
+
+  setPoint(lat, lng, e) {
+    this.removeMarker();
+    this.placeMarker(lat, lng);
+    this.setCoords(lat, lng, e);
+    this.setUrl(lat, lng);
+  }
+
+  // general map events
+  handleClick = e => {
+    const latlng = e.leaflet_event.latlng;
+    this.setPoint(latlng.lat, latlng.lng, e);
   };
-
-  updateMap(props) {
-    updateScene(this.layer.scene.config, props);
-    this.layer.scene.updateConfig({ rebuild: true });
-    this.syncWmsLayers(props.aktiveLag);
-  }
-
-  syncWmsLayers(aktive) {
-    Object.keys(aktive).forEach(akey => {
-      const al = aktive[akey];
-      const layerName = "wms_" + akey;
-      const prev = this.wms[layerName];
-      if (!al.kart || !al.kart.format.wms) return;
-      const wms = al.kart.format.wms;
-      if (al.kart.format.wms && al.erSynlig === true) {
-        var wmsLayer = L.tileLayer.wms(wms.url, {
-          layers: wms.layer,
-          transparent: true,
-          format: "image/png"
-        });
-        if (!prev) {
-          this.wms[layerName] = wmsLayer;
-          this.map.addLayer(wmsLayer);
-        }
-      } else {
-        if (prev) {
-          this.map.removeLayer(prev);
-          delete this.wms[layerName];
-        }
-      }
-    });
-  }
-
-  wms = {};
 
   render() {
     return (
-      <>
-        {this.state.showPopup && <PopUp parent={this} path={this.props.path} />}
-
-        {this.props.aktivTab === "kartlag" && (
-          <button
-            className="fullscreen map_button"
-            title="Fullskjermsvisning"
-            alt="Fullskjermsvisning"
-            onClick={e => {
-              this.props.handleFullscreen(!this.props.showFullscreen);
-            }}
-          >
-            {this.props.showFullscreen === true ? (
-              <FullscreenExit />
-            ) : (
-              <Fullscreen />
-            )}
-          </button>
-        )}
-
+      <div
+        className={this.props.fullscreen ? "map fullscreen" : "map normal-size"}
+      >
+        <button
+          className="geolocate map_control_button"
+          onClick={e => this.geolocationFunc(e)}
+          title={"Geolokalisering"}
+          alt={"Geolokalisering"}
+        >
+          <LocationSearching />
+        </button>
         <div
           style={{ zIndex: -100, cursor: "default" }}
           ref={ref => {
             this.mapEl = ref;
           }}
         />
-        {this.props.aktivTab === "kartlag" && (
-          <button
-            className="geolocate map_button"
-            alt="Geolokalisering"
-            title="Geolokalisering"
-            onClick={() => {
-              this.props.handleFullscreen(false);
-              this.handleLocate();
-            }}
-          >
-            <LocationSearching />
-          </button>
-        )}
-      </>
+      </div>
     );
-  }
-
-  handleLocate() {
-    this.map.locate({ setView: true });
   }
 }
 

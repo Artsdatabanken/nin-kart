@@ -2,6 +2,24 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
+/* Allow click through of events
+on overlying node we can't get rid of*/
+body,
+#root {
+  pointer-events: none;
+}
+body *,
+#root * {
+  pointer-events: auto;
+}
+
+body {
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* Genral CSS */
+
 ::-webkit-scrollbar {
   width: 6px;
   background-color: $brightest-nin;
@@ -16,38 +34,25 @@ button {
   box-sizing: border-box;
 }
 
-body {
-  overflow: hidden;
-  touch-action: none;
-}
-
 ::-moz-focus-inner {
   border: 0;
-}
-
-:focus {
-  outline: none;
-  border-bottom: $active-border;
-  border-bottom-left-radius: 0px !important;
-  border-bottom-right-radius: 0px !important;
-}
-
-button:focus {
-  border: $active-border;
-  box-sizing: border-box;
 }
 
 a,
 a:visited,
 a:active,
 a:focus {
-  color: $dark-nin;
-  text-decoration: none;
+  color: $link-color;
+  //text-decoration: none;
 }
 
 a:hover {
   color: $medium-nin;
   cursor: pointer;
+}
+
+a .MuiSvgIcon-root {
+  vertical-align: middle;
 }
 
 .inverted_link,
@@ -60,32 +65,14 @@ a:hover {
 body,
 input,
 p,
-button,
-h1,
-h2,
-h3 {
-  font-family: "Roboto", "sans-serif";
+button {
+  font-family: $font-chivo;
 }
 
 h1,
 h2,
 h3 {
-  color: $super-dark-nin;
-  font-weight: 300;
-}
-
-h4,
-h5 {
-  font-size: 12pt;
-  font-weight: 400;
-  margin: 0px;
-  padding: 0px;
-  color: $adb_dark_grey;
-}
-
-h5 {
-  font-size: 11pt;
-  color: black;
+  font-family:$font-space;
 }
 
 strong,
@@ -107,8 +94,9 @@ button.active:hover,
 button.active:focus,
 button.active {
   cursor: pointer;
-  background: $medium-nin;
+  _background-color: $medium-nin;
 }
+
 .meny_ikon_image {
   width: 20px;
   height: 20px;
@@ -143,110 +131,12 @@ div {
     display: none;
   }
 }
-
-/* NAVIGATION TABS */
-.tab_selector {
-  display: block;
-  width: 408px;
-  height: auto;
-  position: absolute;
-  bottom: 0px;
-  box-sizing: border-box;
-  margin: 0px;
-  z-index: 2;
-}
-
-@media only screen and (min-width: 768px) {
-  .tab_selector {
-    bottom: auto;
-    top: 16px;
-    z-index: 21;
-    left: 350px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .tab_selector {
-    width: 100%;
-  }
-}
-
-/* NAVIGATION TAB BUTTONS */
-
-.tab_selector button {
-  display: inline-block;
-  text-align: center;
-  padding: auto;
-  background: $brightest-nin;
-  width: calc(100% / 3);
-  height: $bottom-tab-height;
-  padding: 15px;
-  position: relative;
-  bottom: 0px;
-  box-sizing: border-box;
-  margin: 0px;
-  color: #555;
-  font-family: "Roboto", "sans-serif";
-  border: none;
-  border-left: 1px solid $brightest-nin;
-  border-top: 1px solid $brightest-nin;
-  vertical-align: bottom;
-}
-
-.tab_selector .active_mobile_button,
-.active_mobile_button,
-.tab_selector button:hover,
-.tab_selector button.active:hover,
-.tab_selector button.active:focus,
-.tab_selector button.active {
-  background: $medium-nin;
-  color: #fff;
-  cursor: pointer;
-}
-
-.tab_selector .active_mobile_button {
-  background: $dark-nin;
-  color: white;
-  font-weight: 600;
-}
-
-@media only screen and (min-width: 768px) {
-  .tab_selector button:first-child {
-    display: none;
-  }
-
-  .tab_selector button {
-    width: calc(100% / 2);
-    height: 40px;
-    border: 0px;
-    background: $bright-nin;
-  }
-
-  .tab_selector .active_mobile_button,
-  .tab_selector .active_mobile_button_bigscreen {
-    background: $background_header;
-    color: black;
-    font-weight: 400;
-    border: 0px;
-    font-size: 12pt;
-    text-decoration: underline;
-  }
-}
-
-.tab_selector button svg {
-  height: 18px;
-  width: 18px;
-  position: absolute;
-  top: calc(50% - 9px);
-  right: calc(50% - 9px);
-}
-
 /* Den usynlige knappen */
 
 .invisible_icon_button {
   background: transparent;
   border: none;
-  padding: none;
+  padding: 4px;
   margin: none;
   display: inline-block;
 }
@@ -308,7 +198,7 @@ div {
   margin-top: 4px;
   margin-bottom: 4px;
   font-size: 12pt;
-  color: #777777;
+  color: $body-color;
   display: flex;
 }
 
@@ -319,7 +209,7 @@ div {
 .artsdatabanken,
 .tilbakemeldinger {
   background: transparent;
-  color: #777;
+  color: $body-color;
   font-size: 12pt;
   border: 0;
   margin: 0;
@@ -353,9 +243,25 @@ div {
   position: relative;
 }
 
+.super-super-dark {
+  color: $super-duper-dark-nin;
+}
+
+.cardheadings {
+  margin-left: 16px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  color: $super-duper-dark-nin;
+  font-weight: 500;
+}
+
+.cardsubtext {
+  margin-bottom: 24px;
+}
+
 .spraakvelger span,
 .hamburger_menu_item svg {
-  color: #777777;
+  color: $adb_dark_grey;
   display: inline-block;
   vertical-align: top;
 }
@@ -400,7 +306,7 @@ div {
   background: #fff;
   padding: 8px;
   width: 100%;
-  color: #000;
+  color: #333;
   position: relative;
   border: 1px solid $border-color;
   border-top: 0px;
@@ -448,15 +354,157 @@ div {
   padding-left: 0px;
 }
 
+.kilde_knapp {
+  width: 100%;
+  display: flex;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.kilde_knapp span {
+  flex: 1;
+  text-align: left;
+}
+
 .kilde_knapp span,
 .kilde_knapp svg,
 .kilde_knapp img {
   display: inline-block;
   vertical-align: middle;
+  padding: 5px;
+  justify-content: space-between;
 }
 
-.kilde_knapp svg:last-child {
-  float: right;
+.kilde_knapp svg,
+.kilde_knapp img {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+}
+
+.MuiBottomNavigationAction-root.Mui-selected {
+  color: $super-dark-nin !important;
+}
+
+.MuiListItem-container {
+  list-style-type: none;
+}
+
+/* Sections */
+
+.section {
+  border-top: 1px solid #c8c8c8;
+  margin-top: -1px;
+  background: #fff9f0//#f4f2f2;
+}
+
+.testcolours .section:nth-child(1) {
+  background: hotpink;
+}
+
+.testcolours .section:nth-child(2) {
+  background: $fun-bg-1;
+}
+
+.testcolours .section:nth-child(3) {
+  background: $fun-bg-4;
+}
+
+.testcolours .section:nth-child(4) {
+  background: $fun-bg-2;
+}
+
+.testcolours .section:nth-child(5) {
+  background: $fun-bg-3;
+}
+
+.section h3,
+.section h2,
+.section h1 {
+  margin: 0px;
+  padding: 15px 10px 12px 10px;
+}
+
+.section h2 svg {
+  height: 22px;
+}
+
+.section h3 svg {
+  height: 15px;
+}
+
+.subsection {
+  margin: 10px;
+  padding: 10px;
+  text-align: left;
+  max-width: 100%;
+  background: $panel-section-bg;
+  border-radius: 5px;
+}
+
+.testcolours .subsection {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.subsection h4,
+.subsection h6 {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.sectionbox {
+  background: white;
+  padding: 0px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.subsection p {
+  padding: 10px;
+}
+
+.sectionbox-header {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.avatarlink {
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  flex: 1;
+}
+
+.cookiewarning {
+  width: $map-width;
+  background: $transparent-bg;
+  position: absolute;
+  top: $topbar-height-nin;
+  z-index: -1;
+  padding: 5px;
+  text-align: center;
+}
+
+.cookiewarning.fullscreen {
+  width: 100%;
+}
+
+.cookiewarning a {
+  color: $link-color;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+  .cookiewarning {
+    width: 100%;
+  }
 }
 
 .cookies {
