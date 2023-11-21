@@ -48,24 +48,24 @@
 
 input:checked ~ .slider_container .slider {
   background-color: $dark-nin;
-  border-color: $super-duper-dark-nin;
+  border-color: $body-color;
 }
 
 input:checked:focus ~ .slider_container .slider,
 input:checked:hover ~ .slider_container .slider {
   background-color: $darkest-nin;
-  outline: 2px solid $super-duper-dark-nin;
+  outline: 2px solid $body-color;
 }
 
 input:focus ~ .slider_container .slider,
 input:hover ~ .slider_container .slider {
-  outline: 2px solid $super-duper-dark-nin;
+  outline: 2px solid $body-color;
 }
 
 input:checked ~ .slider_container .slider:before {
   transform: translateX(17px);
   background-color: #fff;
-  border-color: $super-duper-dark-nin;
+  border-color: $body-color;
 }
 
 .switch_list_elemtent {

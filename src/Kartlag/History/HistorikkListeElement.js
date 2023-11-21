@@ -1,10 +1,13 @@
 import React from "react";
 import MapLayerButton from "../Buttons/MapLayerButton";
-const HistorikkListeElement = ({ meta, history }) => {
+import { useNavigate } from 'react-router-dom'
+
+const HistorikkListeElement = ({ meta }) => {
+  const navigate = useNavigate();
   if (!meta) return;
 
   const onNavigate = url => {
-    history.push(url);
+    navigate(url);
   };
 
   return (

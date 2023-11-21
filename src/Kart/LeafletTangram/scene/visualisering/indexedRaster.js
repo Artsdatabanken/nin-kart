@@ -12,7 +12,7 @@ const color = `
   color = texture2D(palette, vec2(v, depth));
 `;
 
-const global = `
+const renderIndexedColor = `
     highp float rgbaToIndex(vec4 rgba) {
     const float pixelWidth = 1./512.;
     // G = MSB, color 256-511, B = LSB, color 0-255
@@ -31,7 +31,7 @@ function lagStyle(format, drawArgs) {
         depth: 1 - (drawArgs.depth || 0) / 8 - 0.5 / 8,
       },
       blocks: {
-        global: global,
+        global: renderIndexedColor,
         color: color,
       },
     },

@@ -64,7 +64,7 @@ function drawLines(args) {
     layer.draw.text = {
       text_source: ["name", "title"],
       font: {
-        family: "Roboto",
+        family: "Chivo",
         fill: "hsla(0, 0%, 100%, 1.0)",
         stroke: { color: "hsla(0, 0%, 0%, 0.7)", width: 2 },
         size: "13px",
@@ -112,7 +112,7 @@ function drawBase(args) {
     layer.draw.text = {
       text_source: ["name", "title"],
       font: {
-        family: "Roboto",
+        family: "Chivo",
         fill: "hsla(0, 0%, 100%, 1.0)",
         stroke: { color: "hsla(0, 0%, 0%, 0.7)", width: 2 },
         size: "13px",

@@ -62,7 +62,7 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + 9px;
 
 .map_control_button,
 .leaflet-touch .leaflet-bar {
-  border: 2px solid $medium-nin;
+  border: 2px solid $body-color;
   width: $leaflet-buttons;
   z-index: -5;
 }
@@ -74,6 +74,12 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + 9px;
   position: absolute;
   right: calc(#{$sidebar-max-size} + 15px);
   top: calc(#{$actual-map-height} - 36px);
+}
+
+.leaflet-control-container a,
+.leaflet-control-container a:visited
+{
+  color:$body-color;
 }
 
 .fullscreen .map_control_button {

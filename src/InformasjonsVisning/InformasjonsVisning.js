@@ -1,6 +1,6 @@
 import React from "react";
 import LukkbartVindu from "../LukkbartVindu";
-import { withRouter } from "react-router-dom";
+import { withRouter } from "../withRouter";
 import { Snackbar } from "@material-ui/core";
 import finnKurvevariabler from "./Katalog/KatalogFunksjoner/finnKurvevariabler";
 import språk from "../Funksjoner/språk";

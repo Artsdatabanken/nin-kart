@@ -21,7 +21,7 @@ import Typography from "@material-ui/core/Typography";
 //import { ExpandMore, ArrowDownward } from "@material-ui/icons/";
 //import MoreVertIcon from "@material-ui/icons/MoreVert";
 import config from "../Funksjoner/config";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SectionExpand from "../GjenbruksElement/SectionExpand";
 
 /*
@@ -70,7 +70,7 @@ export default function Landskapsgradienter(props) {
   //const classes = useStyles();
 
   //const [expanded, setExpanded] = React.useState(false);
-  const history = useHistory();
+   const navigate = useNavigate();
   //const handleExpandClick = () => {
   //setExpanded(!expanded);
   //};
@@ -89,7 +89,7 @@ export default function Landskapsgradienter(props) {
               tittel={b.tittel}
               trinn={b.trinn}
               url={b.url}
-              onClick={() => history.push(b.url)}
+              onClick={() => navigate(b.url)}
             />
           ))}
         </SectionExpand>

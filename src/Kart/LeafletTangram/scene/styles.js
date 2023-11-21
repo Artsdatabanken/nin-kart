@@ -29,7 +29,7 @@ const styles = {
     base: "text",
     draw: {
       font: {
-        family: "Roboto",
+        family: "Chivo",
         size: "12px",
         fill: "black",
         stroke: {

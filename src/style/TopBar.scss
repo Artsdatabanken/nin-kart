@@ -37,7 +37,7 @@ header.header {
   left: 0;
   position: relative;
   z-index: 5;
-  font-family: "Roboto Condensed";
+  font-family: $font-chivo;
 }
 
 .width-adjuster {
@@ -48,11 +48,11 @@ header.header {
   position: relative;
   height: $nin-header;
   background: $super-duper-dark-nin;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.35);
+  //box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.35);
 }
 
 .adb-topbar {
-  background: #4c4a48;
+  background:$sand-50;
 }
 
 .header_text:hover {
@@ -69,7 +69,7 @@ header.header {
 
 .header_text {
   font-size: 14pt;
-  color: $brightest-nin;
+  color: $body-color;
   font-weight: 400;
   display: inline-block;
   margin-left: 56px;
@@ -128,7 +128,7 @@ header.header {
 }
 
 .top_bar svg {
-  color: white;
+  color: $body-color
 }
 
 .top_bar.forside_topbar svg {
@@ -342,4 +342,9 @@ header.header {
 
 .background_click_collector:hover {
   cursor: pointer;
+}
+
+.menuitems{
+  background: transparent;
+  color:$body-color;
 }

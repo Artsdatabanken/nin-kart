@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { withRouter } from "react-router";
+import { withRouter } from "./withRouter";
 import { Close, ArrowBack } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
 

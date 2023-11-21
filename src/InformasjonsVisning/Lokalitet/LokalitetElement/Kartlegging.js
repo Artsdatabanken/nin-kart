@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router";
+import { withRouter } from "../../../withRouter";
 import { Grid, Typography } from "@material-ui/core";
 import Prettyprint from "../../../Funksjoner/prettyprint";
 import SectionExpand from "../../../GjenbruksElement/SectionExpand";

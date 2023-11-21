@@ -11,7 +11,7 @@ import {
 import Avatar from "@material-ui/core/Avatar";
 import config from "../Funksjoner/config";
 import SectionExpand from "../GjenbruksElement/SectionExpand";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ChevronRight } from "@material-ui/icons";
 const useStyles = makeStyles(theme => ({
   media: {
@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
 export default function Landskapstype(props) {
   const { heading1, heading2, barn, parenturl, url } = props;
   const classes = useStyles();
-  const history = useHistory();
+   const navigate = useNavigate();
 
   return (
     <div className="subsection">
@@ -43,7 +43,7 @@ export default function Landskapstype(props) {
       <SectionExpand iconurl={url} title={heading1}>
         <div>
           {props.url && (
-            <CardActionArea onClick={() => history.push(url)}>
+            <CardActionArea onClick={() => navigate(url)}>
               <CardMedia
                 className={classes.media}
                 image={config.foto(props.url)}
@@ -54,7 +54,7 @@ export default function Landskapstype(props) {
 
           <button
             className="avatarlink"
-            onClick={() => history.push(parenturl)}
+            onClick={() => navigate(parenturl)}
           >
             <Avatar>
               {url && (
@@ -80,7 +80,7 @@ export default function Landskapstype(props) {
                 key={b.url}
                 trinn={b.trinn || {}}
                 url={b.url}
-                onClick={() => history.push(b.url)}
+                onClick={() => navigate(b.url)}
               />
             ))}
         </div>
