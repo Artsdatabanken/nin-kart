@@ -32,12 +32,6 @@ jobs:
         with:
           artifacts: ${{ github.event.repository.name }}.tar.gz
           tag: v_${{ github.run_number }}
-  workflow_dispatch:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Fyrer NiN
-        uses: peter-evans/repository-dispatch@v2
-        with:
-          token: ${{ secrets.PAT }}
-          repository: artsdatabanken/nin-kart
-          event-type: fra_nin-kart
+      - name: post to slack
+        run: ./.github/workflows/slack.sh ${{ secrets.POST_SLACK }}
+        shell: bash  
