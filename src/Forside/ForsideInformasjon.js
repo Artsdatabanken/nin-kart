@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { withRouter } from "../withRouter";
 import "../style/Forside.scss";
 import Kilder from "./Kilder";

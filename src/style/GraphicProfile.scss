@@ -8,10 +8,10 @@ $font-space: 'Space Mono', sans-serif;
 $super-duper-dark-nin: #f5e7d3;// #165d6b;
 $link-color:#017590;
 $super-dark-nin: $sand-80;//hsla(189, 30, 45, 1); //#347c8a;
-$darkest-nin: hsla(189, 30, 45, 1); //#4d8b96;
-$dark-nin: hsla(189, 30, 46, 1); //#4b909e;
-$medium-nin: hsla(189, 30, 62, 1); // #81b2bb;
-$bright-nin: hsla(189, 30, 78, 1); //#b7d3d8;
+$darkest-nin: hsla(189, 12%, 18%, 1); //#4d8b96;
+$dark-nin: hsla(189, 12%, 18%, 1); //#4b909e;
+$medium-nin: hsla(189, 12%, 24%, 1); // #81b2bb;
+$bright-nin: hsla(189, 12%, 31%, 1); //#b7d3d8;
 $brightest-nin:$sand-10; //hsla(189, 30, 95, 1); // #edf4f5;
 $transparent-bg:#fff7eb9e;// #0222286e;
 /* FUN COLOURS */
@@ -78,8 +78,8 @@ $actual-map-height-mobile: calc(100vh - #{$ux-page-area-mobile});
 $map-width: calc(100% - #{$sidebar-max-size});
 /* Box Shadow */
 $box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.45);
-$box-shadow-hover: 0 1px 6px 0 hsla(189, 30, 0, 0.45),
-  0 1px 3px 1px hsla(189, 30, 232, 0.302);
+$box-shadow-hover: 0 1px 6px 0 hsla(189, 30%, 0%, 0.45),
+  0 1px 3px 1px hsla(189, 30%, 91%, 0.302);
 $box-shadow-card: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
   0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
 
