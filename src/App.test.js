@@ -1,8 +1,7 @@
 import mockJsDom from './mockJsdom.js';
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import ShallowRenderer from "react-test-renderer/shallow";
-
+import ShallowRenderer from 'react-shallow-renderer';
 import App from "./App";
 import backend from "Funksjoner/backend";
 
@@ -113,7 +112,6 @@ it("renders without crashing", () => {
   backend.getMetadataByNatureAreaLocalId.mockImplementation(
     success => new Promise((resolve, reject) => resolve(dummyMeta))
   );
-  // in your test:
   const renderer = new ShallowRenderer();
   renderer.render(
     <BrowserRouter baseName={process.env.PUBLIC_URL}>
