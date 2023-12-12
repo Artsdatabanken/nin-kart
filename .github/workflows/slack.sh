@@ -1,1 +1,1 @@
-export curl -X POST -H 'Content-type: application/json' --data '{"text":"deploy nin-kart"}' $1
+curl -X POST -H 'Content-type: application/json' --data '{"text":"deploy nin-kart"}' $1
