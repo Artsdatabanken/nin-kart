@@ -1,3 +1,11 @@
+$fresh-water-blue-medium: #017590;
+$fresh-water-blue-light: #0283a1; // Ferskvannblå
+$fresh-water-blue-20: #CCDEE3;
+$fresh-water-blue-10: #E6EFF1;
+
+$secondary-color: $fresh-water-blue-20;
+$secondary-color-hover: $fresh-water-blue-10;
+
 /* NiN Main Pallette*/
 $sand-80:#F5E7D3;// Border infobox
 $sand-50:#FFF7EB; // heading + footer
@@ -6,7 +14,8 @@ $white:#FFF;//infobox bg
 $font-chivo: 'Chivo', sans-serif;
 $font-space: 'Space Mono', sans-serif;
 $super-duper-dark-nin: #f5e7d3;// #165d6b;
-$link-color:#017590;
+$link-color:$fresh-water-blue-medium;
+$link-color-inverted:#6ccfe6;
 $super-dark-nin: $sand-80;//hsla(189, 30, 45, 1); //#347c8a;
 $darkest-nin: hsla(189, 12%, 18%, 1); //#4d8b96;
 $dark-nin: hsla(189, 12%, 18%, 1); //#4b909e;
@@ -14,6 +23,7 @@ $medium-nin: hsla(189, 12%, 24%, 1); // #81b2bb;
 $bright-nin: hsla(189, 12%, 31%, 1); //#b7d3d8;
 $brightest-nin:$sand-10; //hsla(189, 30, 95, 1); // #edf4f5;
 $transparent-bg:#fff7eb9e;// #0222286e;
+$focus-color: $fresh-water-blue-light;
 /* FUN COLOURS */
 $fun-bg-1: #bce0ce;
 $fun-bg-2: #dadfcf;

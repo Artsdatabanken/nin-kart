@@ -38,6 +38,11 @@ button {
   border: 0;
 }
 
+*:focus,
+*:focus-visible{
+  outline:2px solid $focus-color;
+}
+
 a,
 a:visited,
 a:active,
@@ -55,11 +60,12 @@ a .MuiSvgIcon-root {
   vertical-align: middle;
 }
 
+
 .inverted_link,
 .inverted_link:visited,
 .inverted_link:active,
 .inverted_link:focus {
-  color: $bright-nin;
+  color: $link-color-inverted;
 }
 
 body,
@@ -89,12 +95,16 @@ button {
   border: 0px;
 }
 
+.layer_list_element.subelement .layerbutton:hover,
+.layerbutton:hover,
 button:hover,
 button.active:hover,
 button.active:focus,
 button.active {
+  background: $secondary-color-hover;
+  border-color: $secondary-color-hover;
+  color: $body-color;
   cursor: pointer;
-  _background-color: $medium-nin;
 }
 
 .meny_ikon_image {
@@ -458,9 +468,9 @@ div {
   padding: 0px;
   border-radius: 5px;
   margin-bottom: 5px;
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   overflow: hidden;
+  border: 1px solid #d9d9d9;
+  color:$body-color
 }
 
 .subsection p {

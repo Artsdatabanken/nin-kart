@@ -130,7 +130,6 @@ button.breadcrumb:hover {
 .kartlag_header {
   position: relative;
   height: 24px;
-  border-bottom: 1px solid $sand-80;
   border-top: 1px solid $sand-80;
   background: $panel-bg;
   margin-top: -1px;
@@ -201,10 +200,6 @@ button.breadcrumb:hover {
   border: 1px solid $panel-section-bg;
 }
 
-.layer_list_element.subelement .layerbutton:hover,
-.layerbutton:hover {
-  background: grey;
-}
 
 .section h3 .layerbutton svg {
   height: 32px;
