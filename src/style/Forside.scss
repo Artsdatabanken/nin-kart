@@ -15,7 +15,7 @@
 }
 
 .frontpage_link_items{
-  background:$sand-80
+  background:$background-1
 }
 
 @media only screen and (max-width: 768px) {
@@ -31,7 +31,7 @@
 /* Header */
 
 .frontpage_header {
-  background: $brightest-nin;
+  background: $background-2;
   padding: 20px;
 }
 
@@ -57,13 +57,13 @@
 /* fEATURE bLOCK */
 
 .frontpage_feature_block {
-  background: $dark-nin;
+  background: $sand-80;
   font-size: 16pt;
 }
 
 .frontpage_feature_block,
 .frontpage_feature_block h2 {
-  color: white;
+
 }
 
 .frontpage_feature_container {
