@@ -1,6 +1,6 @@
 @import "./GraphicProfile.scss";
 
-$headerFooter:"#fff7eb";
+$headerFooter:#fff7eb;
 
 /* HEADER */
 
@@ -16,6 +16,7 @@ $headerFooter:"#fff7eb";
 .header {
     border-bottom: 1px solid #2b2b2b;
     height: 120px;
+    background: $headerFooter;
 }
 
 #dropdown-header-menu {
@@ -164,7 +165,7 @@ button.dropdown-toggle {
 .header-mega-menu {
     margin: 0;
     background: #FFF9F0;
-    top: 95px;
+    top: 52px;
     padding: 20px;
     right: 0px;
     overflow: hidden;
@@ -271,7 +272,7 @@ button.dropdown-toggle {
 
 .header {
     display: flex;
-    height: 95px;
+    height: 52px;
     width: 100%;
     border-bottom: 1px solid $body-color;
     align-items: center;
