@@ -6,7 +6,7 @@ import Utforsk from "../HamburgerMeny/Utforsk/Utforsk";
 import { useNavigate } from "react-router";
 
 const ForsideInformasjon = ({onToggleHovedMeny}) => {
-  const { navigate } = useNavigate();
+  const navigate = useNavigate();
   return (
     <div className="frontpage">
       <div className="frontpage_body">
