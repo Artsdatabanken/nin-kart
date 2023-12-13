@@ -23,6 +23,7 @@ import "./style/Sidebar.scss";
 import "./style/InformasjonsSider.scss";
 import "./style/Kartlag.scss";
 import "./style/FargeMenyer.scss";
+import "./style/Header.scss";
 import fixerUpHack from "./fixerUpHack";
 import Punkt from "./InformasjonsVisning/Punkt";
 import Hjelp from "./InformasjonsVisning/Hjelp/Hjelp";

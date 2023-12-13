@@ -1,5 +1,6 @@
-@import '_variables.scss';
-@import '_ninVariables.scss';
+@import "./GraphicProfile.scss";
+
+$headerFooter:"#fff7eb";
 
 /* HEADER */
 
@@ -25,7 +26,7 @@
     .header {
         height: 120px;
         border: none;
-        border-bottom: 1px solid $ocean-dark;
+        border-bottom: 1px solid $body-color;
     }
 }
 
@@ -163,14 +164,15 @@ button.dropdown-toggle {
 .header-mega-menu {
     margin: 0;
     background: #FFF9F0;
-    top: 119px;
+    top: 95px;
     padding: 20px;
     right: 0px;
     overflow: hidden;
-    border: 1px solid $ocean-dark;
+    border: 1px solid $body-color;
     position: absolute;
     width: 100vw;
     max-width: 860px;
+    z-index: 1000;
 }
 
 .dropdown ul,
@@ -269,9 +271,9 @@ button.dropdown-toggle {
 
 .header {
     display: flex;
-    height: 120px;
+    height: 95px;
     width: 100%;
-    border-bottom: 1px solid $ocean-dark;
+    border-bottom: 1px solid $body-color;
     align-items: center;
     justify-content: space-between;
     background-color: $headerFooter;
@@ -312,7 +314,7 @@ button.dropdown-toggle {
 
 
 .adb-header-search {
-    border-bottom: 1px solid $nin_border_generic;
+    border-bottom: 1px solid #4c4a48;
 }
 
 .adb-header-search.closed {
@@ -379,7 +381,7 @@ button.dropdown-toggle {
     }
 
     .open-search-button:active {
-        background: $nin_border_generic;
+        background: #4c4a48;
     }
 }
 
@@ -408,7 +410,7 @@ button.dropdown-toggle {
         top: 120px;
         height: 100px;
         padding: 30px;
-        background: $nin_sand;
+        background: #fff7eb;
         left: 0;
         right: 0;
     }
