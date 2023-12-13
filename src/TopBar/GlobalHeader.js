@@ -36,7 +36,7 @@ const getListItems = (itemList, baseUrl) => {
     return itemList.map((item) => {
         return (
             <li>
-                <a className="header-mega-link-element" href={getTargetUrl(item, baseUrl)} target={item.Title === baseUrl ? '_self' : '_blank'}>
+                <a className="header-mega-link-element" href={getTargetUrl(item, baseUrl)} target={item.Title === baseUrl ? '_self' : '_new'}>
                     <div className="header-mega-link-text">
                         <b className="header-site-name">{ getTitle(item) }</b>
                         <p className="header-site-description">{getExtraInfo(item)}</p>
@@ -50,9 +50,8 @@ const getListItems = (itemList, baseUrl) => {
     })
 }
 
-const Header = (props) => {
-    const english = 'English',
-        menuId = 'dropdown-header-menu',
+const GlobalHeader = (props) => {
+    const menuId = 'dropdown-header-menu',
         menuUpIcon = 'menu-up-icon',
         menuDownIcon = 'menu-down-icon';
 
@@ -126,4 +125,4 @@ const Header = (props) => {
     )
 }
 
-export default Header;
+export default GlobalHeader;
