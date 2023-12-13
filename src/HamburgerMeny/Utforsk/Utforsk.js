@@ -1,6 +1,6 @@
-
+import Menyelement from "../Menyelement";
 import React from "react";
-import { Landscape, ChevronRight } from "@material-ui/icons";
+import { Pets, Landscape } from "@material-ui/icons";
 import Naturvern from "../Naturvern";
 import { useNavigate } from "react-router-dom";
 
@@ -13,46 +13,61 @@ const Utforsk = ({onToggleHovedMeny}) => {
   }
 
   return (
-    <div className="flexit">
-      <button className="secondary"
+    <>
+      <Menyelement
         onClick={e => {
           onElementClick("/Natur_i_Norge/Natursystem");
-        }}>        
+        }}
+        icon={
           <img
             className="meny_ikon_image"
             src="/logoer/natursystem_ikon.png"
             alt=""
           />
-          Natursystem <ChevronRight/>
-        </button>
+        }
+        primary="Natursystem"
+      />
 
-        <button className="secondary"
+      <Menyelement
         onClick={e => {
           onElementClick("/Natur_i_Norge/Landskap");
-        }}>
-          <Landscape />Landskap <ChevronRight/>
-        </button>
+        }}
+        icon={<Landscape />}
+        primary="Landskap"
+      />
 
-      <button className="secondary"
+      <Menyelement
         onClick={e => {
           onElementClick("/Administrativ_grense");
-        }}> 
-        <img
+        }}
+        icon={
+          <img
             className="meny_ikon_image"
             src="/logoer/fylke_ikon.png"
             alt=""
-          />Administrative grenser <ChevronRight/>
-          </button>
-     
+          />
+        }
+        primary="Administrative grenser"
+      />
 
-      <button className="secondary"
+      <Menyelement
         onClick={e => {
           onElementClick("/Naturvernområde/");
-        }}>
-          <Naturvern />Naturvernområder<ChevronRight/>
-        </button>
-      
-    </div>
+        }}
+        icon={<Naturvern />}
+        primary="Naturvernområder"
+      />
+
+      {false && (
+        <Menyelement
+          onClick={e => {
+            onElementClick("/Biota/");
+          }}
+          icon={<Pets />}
+          primary="Arter"
+        />
+      )}
+    </>
   );
 }
 

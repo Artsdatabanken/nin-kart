@@ -139,7 +139,6 @@ button.breadcrumb:hover {
   position: absolute;
   right: 7px;
   top: 1px;
-  background: none;
   padding: 6px 0;
 }
 
@@ -178,7 +177,6 @@ button.breadcrumb:hover {
   width: 50px;
   padding: 0;
   padding-top: 0px;
-  background: white;
   line-height: 50px;
   margin-right: 2px;
   padding-top: 7px;
@@ -207,8 +205,10 @@ button.breadcrumb:hover {
 }
 
 .layerbutton svg {
+  margin-left: auto;
+  margin-right: auto;
   margin-top: auto;
-  margin-bottom: auto;
+  margin-bottom: 10px;
 }
 
 .kartlag_element_text {
@@ -388,4 +388,8 @@ button.breadcrumb:hover {
 
 .lukkbartvindu .closetab {
   z-index: 0;
+}
+
+.kartlag_element_buttons{
+  display: flex;
 }

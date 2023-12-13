@@ -2,72 +2,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
-
-
-/* Button system */
-
-// Variables
-$gap: $base-size;
-$button-font-size: 16px;
-$icon-size: 18px;
-$border-radius: 30px;
-$padding-horisontal: 22px;
-$padding-vertical: 14px;
-$border-width: 2px;
-$focus-border-width: 3px;
-$icon-button-size: 40px;
-$focus-outline: $focus-border-width solid $focus-color;
-
-
-button {
-  padding: $padding-vertical $padding-horisontal;
-  border-radius: $border-radius;
-  border-width: $border-width;
-  border-style: solid;
-  box-sizing: border-box;
-  font-size: $button-font-size;
-  line-height: $button-font-size;
-  margin: $gap;
-  margin-left: 0;
-  display: flex;
-  align-items: center;
-
-}
-
-button img,
-button svg{
-    vertical-align: baseline;
-    margin-right: $gap;
-    font-size: inherit;
-    height:24px
-}
-
-.primary {
-  background: $primary-color;
-  border-color: $primary-color;
-  color: $white
-}
-.primary:hover,
-.primary:active {
-    background: $primary-color-hover;
-    border-color: $primary-color-hover;
-    color: $white
-}
-
-.secondary {
-  background: $secondary-color;
-  border-color: $secondary-color;
-}
-
-.secondary:hover,
-.secondary:active {
-  background: $secondary-color-hover;
-  border-color: $secondary-color-hover;
-}
-
-
-
-
 /* Allow click through of events
 on overlying node we can't get rid of*/
 body,
@@ -150,8 +84,51 @@ b {
 
 /* ALL BUTTONS */
 
+/* Button system */
+
+// Variables
+$gap: $base-size;
+$button-font-size: 16px;
+$icon-size: 18px;
+$padding-horisontal: 22px;
+$padding-vertical: 14px;
+$border-width: 2px;
+$focus-border-width: 3px;
+$icon-button-size: 40px;
+$focus-outline: $focus-border-width solid $focus-color;
+
+
 button {
-  border: 0px;
+  padding: $padding-vertical $padding-horisontal;
+  border-radius: $border-button-radius;
+  border-width: $border-width;
+  border-style: solid;
+  box-sizing: border-box;
+  font-size: $button-font-size;
+  line-height: $button-font-size;
+  margin: $gap;
+  margin-left: 0;
+  display: flex;
+  align-items: center;  
+  border-color: transparent;
+}
+
+button img,
+button svg{
+  vertical-align: baseline;
+  margin-right: $gap;
+  font-size: inherit;
+  height:24px
+}
+
+.frontpage_link_items .menu_item,
+.secondary {
+  background: $secondary-color;
+  border-color: $secondary-color;
+}
+
+.layerbutton{
+  background: transparent;
 }
 
 .layer_list_element.subelement .layerbutton:hover,
@@ -159,12 +136,30 @@ button {
 button:hover,
 button.active:hover,
 button.active:focus,
-button.active {
-  background: $secondary-color-hover;
-  border-color: $secondary-color-hover;
+button.active,
+.frontpage_link_items .menu_item:hover,
+.layerbutton:hover,
+.secondary:hover,
+.secondary:active {
   color: $body-color;
   cursor: pointer;
+  background: $secondary-color-hover;
+  border-color: $secondary-color-hover;
 }
+
+.primary {
+  background: $primary-color;
+  border-color: $primary-color;
+  color: $white
+}
+
+.primary:hover,
+.primary:active {
+    background: $primary-color-hover;
+    border-color: $primary-color-hover;
+    color: $white
+}
+
 
 .meny_ikon_image {
   width: 20px;
@@ -243,7 +238,6 @@ div {
   border: 0;
   margin: 0;
   border-radius: 0;
-  outline: none;
   display: flex;
   justify-content: flex-start;
   vertical-align: middle;

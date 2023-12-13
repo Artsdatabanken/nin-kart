@@ -1,4 +1,5 @@
 @import "./GraphicProfile.scss";
+
 /* Container */
 .frontpage {
   width: 100%;
@@ -110,7 +111,7 @@
   width: auto;
   margin: 25px;
   text-align: center;
-  border-radius: 3px;
+  border-radius: $border-button-radius;
   position: relative;
 }
 @media only screen and (max-width: 768px) {
@@ -193,7 +194,7 @@
 }
 
 .frontpage_link_items .hamburger_menu_item div {
-  display: inline-block;
+  display: flex;
 }
 
 .frontpage_link_items .hamburger_menu_item .mobile_only {
