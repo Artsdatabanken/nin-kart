@@ -31,14 +31,20 @@
 /* Header */
 
 .frontpage_header {
-  background: $background-2;
+  background: $sand-80;
   padding: 20px;
+  text-align: center;
 }
 
 .frontpage_header div {
   display: inline-block;
   vertical-align: middle;
   text-align: left;
+}
+
+.frontpage_header button{
+  margin: auto;
+  margin-top: 20px;
 }
 
 /* Headings */
@@ -57,13 +63,8 @@
 /* fEATURE bLOCK */
 
 .frontpage_feature_block {
-  background: $sand-80;
+  background: $sand-50;
   font-size: 16pt;
-}
-
-.frontpage_feature_block,
-.frontpage_feature_block h2 {
-
 }
 
 .frontpage_feature_container {
@@ -120,17 +121,11 @@
   }
 }
 
-.frontpage_link_items .menu_item svg,
-.frontpage_link_items .meny_ikon_image {
-  width: 80px;
-  height: 80px;
-  display: block;
-  margin: auto;
+.flexit{
+  display: flex;
 }
 
 /* Footer */
-.frontpage_body {
-}
 
 .artsdatabanken_logo img,
 .frontpage_sources:first-child a img {
@@ -138,12 +133,12 @@
 }
 
 .frontpage_footer {
-  min-height: 300px;
+  min-height: 320px;
   width: 100vw;
   text-align: center;
   background: $brightest-nin;
   color:$body-color;
-  padding-top:0px
+  padding-top:2px
 }
 
 .frontpage_icon svg {

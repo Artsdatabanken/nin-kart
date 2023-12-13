@@ -2,11 +2,78 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
+
+
+/* Button system */
+
+// Variables
+$gap: $base-size;
+$button-font-size: 16px;
+$icon-size: 18px;
+$border-radius: 30px;
+$padding-horisontal: 22px;
+$padding-vertical: 14px;
+$border-width: 2px;
+$focus-border-width: 3px;
+$icon-button-size: 40px;
+$focus-outline: $focus-border-width solid $focus-color;
+
+
+button {
+  padding: $padding-vertical $padding-horisontal;
+  border-radius: $border-radius;
+  border-width: $border-width;
+  border-style: solid;
+  box-sizing: border-box;
+  font-size: $button-font-size;
+  line-height: $button-font-size;
+  margin: $gap;
+  margin-left: 0;
+  display: flex;
+  align-items: center;
+
+}
+
+button img,
+button svg{
+    vertical-align: baseline;
+    margin-right: $gap;
+    font-size: inherit;
+    height:24px
+}
+
+.primary {
+  background: $primary-color;
+  border-color: $primary-color;
+  color: $white
+}
+.primary:hover,
+.primary:active {
+    background: $primary-color-hover;
+    border-color: $primary-color-hover;
+    color: $white
+}
+
+.secondary {
+  background: $secondary-color;
+  border-color: $secondary-color;
+}
+
+.secondary:hover,
+.secondary:active {
+  background: $secondary-color-hover;
+  border-color: $secondary-color-hover;
+}
+
+
+
+
 /* Allow click through of events
 on overlying node we can't get rid of*/
 body,
 #root {
   pointer-events: none;
+  background: #fffcf7;
 }
 body *,
 #root * {
@@ -58,14 +125,6 @@ a:hover {
 
 a .MuiSvgIcon-root {
   vertical-align: middle;
-}
-
-
-.inverted_link,
-.inverted_link:visited,
-.inverted_link:active,
-.inverted_link:focus {
-  color: $link-color-inverted;
 }
 
 body,
@@ -147,14 +206,11 @@ div {
   background: transparent;
   border: none;
   padding: 4px;
-  margin: none;
   display: inline-block;
-}
-
-.invisible_icon_button:active,
-.invisible_icon_button:hover {
-  opacity: 0.5;
-  cursor: pointer;
+  line-height: inherit;
+  margin: 0;
+  text-align: center;
+  flex:none
 }
 
 /* Last inn mer-knappen */
