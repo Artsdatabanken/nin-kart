@@ -1,4 +1,5 @@
 @import "./GraphicProfile.scss";
+
 /* Container */
 .frontpage {
   width: 100%;
@@ -15,7 +16,7 @@
 }
 
 .frontpage_link_items{
-  background:$sand-80
+  background:$background-1
 }
 
 @media only screen and (max-width: 768px) {
@@ -31,14 +32,20 @@
 /* Header */
 
 .frontpage_header {
-  background: $brightest-nin;
+  background: $sand-80;
   padding: 20px;
+  text-align: center;
 }
 
 .frontpage_header div {
   display: inline-block;
   vertical-align: middle;
   text-align: left;
+}
+
+.frontpage_header button{
+  margin: auto;
+  margin-top: 20px;
 }
 
 /* Headings */
@@ -57,13 +64,8 @@
 /* fEATURE bLOCK */
 
 .frontpage_feature_block {
-  background: $dark-nin;
+  background: $sand-50;
   font-size: 16pt;
-}
-
-.frontpage_feature_block,
-.frontpage_feature_block h2 {
-  color: white;
 }
 
 .frontpage_feature_container {
@@ -109,7 +111,7 @@
   width: auto;
   margin: 25px;
   text-align: center;
-  border-radius: 3px;
+  border-radius: $border-button-radius;
   position: relative;
 }
 @media only screen and (max-width: 768px) {
@@ -120,17 +122,11 @@
   }
 }
 
-.frontpage_link_items .menu_item svg,
-.frontpage_link_items .meny_ikon_image {
-  width: 80px;
-  height: 80px;
-  display: block;
-  margin: auto;
+.flexit{
+  display: flex;
 }
 
 /* Footer */
-.frontpage_body {
-}
 
 .artsdatabanken_logo img,
 .frontpage_sources:first-child a img {
@@ -138,12 +134,12 @@
 }
 
 .frontpage_footer {
-  min-height: 300px;
+  min-height: 320px;
   width: 100vw;
   text-align: center;
   background: $brightest-nin;
   color:$body-color;
-  padding-top:0px
+  padding-top:2px
 }
 
 .frontpage_icon svg {
@@ -198,7 +194,7 @@
 }
 
 .frontpage_link_items .hamburger_menu_item div {
-  display: inline-block;
+  display: flex;
 }
 
 .frontpage_link_items .hamburger_menu_item .mobile_only {

@@ -130,7 +130,6 @@ button.breadcrumb:hover {
 .kartlag_header {
   position: relative;
   height: 24px;
-  border-bottom: 1px solid $sand-80;
   border-top: 1px solid $sand-80;
   background: $panel-bg;
   margin-top: -1px;
@@ -140,7 +139,6 @@ button.breadcrumb:hover {
   position: absolute;
   right: 7px;
   top: 1px;
-  background: none;
   padding: 6px 0;
 }
 
@@ -179,7 +177,6 @@ button.breadcrumb:hover {
   width: 50px;
   padding: 0;
   padding-top: 0px;
-  background: white;
   line-height: 50px;
   margin-right: 2px;
   padding-top: 7px;
@@ -201,10 +198,6 @@ button.breadcrumb:hover {
   border: 1px solid $panel-section-bg;
 }
 
-.layer_list_element.subelement .layerbutton:hover,
-.layerbutton:hover {
-  background: grey;
-}
 
 .section h3 .layerbutton svg {
   height: 32px;
@@ -212,8 +205,10 @@ button.breadcrumb:hover {
 }
 
 .layerbutton svg {
+  margin-left: auto;
+  margin-right: auto;
   margin-top: auto;
-  margin-bottom: auto;
+  margin-bottom: 10px;
 }
 
 .kartlag_element_text {
@@ -393,4 +388,8 @@ button.breadcrumb:hover {
 
 .lukkbartvindu .closetab {
   z-index: 0;
+}
+
+.kartlag_element_buttons{
+  display: flex;
 }
