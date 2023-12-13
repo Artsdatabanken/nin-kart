@@ -1,3 +1,4 @@
+import { withRouter } from "../../withRouter";
 import L from "leaflet";
 // -- WEBPACK: Load styles --
 import "leaflet/dist/leaflet.css";
@@ -267,4 +268,4 @@ class LeafletTangram extends React.Component {
   }
 }
 
-export default LeafletTangram;
+export default withRouter(LeafletTangram);
