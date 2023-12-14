@@ -1,6 +1,6 @@
 @import "./GraphicProfile.scss";
-@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Chivo");
+@import url("https://fonts.googleapis.com/css?family=Space+Mono");
 
 /* Allow click through of events
 on overlying node we can't get rid of*/
@@ -71,7 +71,7 @@ button {
 h1,
 h2,
 h3 {
-  font-family:$font-space;
+  font-family:$font-chivo;
 }
 
 strong,
@@ -109,7 +109,7 @@ button {
   margin: $gap;
   margin-left: 0;
   display: flex;
-  align-items: center;  
+  align-items: center;
   border-color: transparent;
 }
 
@@ -544,7 +544,7 @@ div {
 
 .cookiewarning {
   width: $map-width;
-  background: $transparent-bg;
+  background: $transparent-bg-bright;
   position: absolute;
   top: $topbar-height-nin;
   z-index: -1;

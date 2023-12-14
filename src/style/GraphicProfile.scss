@@ -1,4 +1,4 @@
-$fresh-water-blue: #005B72; 
+$fresh-water-blue: #005B72;
 $fresh-water-blue-medium: #017590;
 $fresh-water-blue-light: #0283a1; // Ferskvannblå
 $fresh-water-blue-80: #337B8D;
@@ -28,7 +28,8 @@ $dark-nin: hsla(189, 12%, 18%, 1); //#4b909e;
 $medium-nin: hsla(189, 12%, 24%, 1); // #81b2bb;
 $bright-nin: hsla(189, 12%, 31%, 1); //#b7d3d8;
 $brightest-nin:$sand-10; //hsla(189, 30, 95, 1); // #edf4f5;
-$transparent-bg:#fff7eb9e;// #0222286e;
+$transparent-bg:rgba(0,0,0,0.5);// #0222286e;
+$transparent-bg-bright:#fff7eb8a;// ;
 $focus-color: $fresh-water-blue-light;
 /* FUN COLOURS */
 $fun-bg-1: #bce0ce;
@@ -82,7 +83,7 @@ $active-border: 2px solid black !important;
 $fontfamily: $font-chivo;
 
 /* Relative heights of menu items */
-$nin-header: 48px;
+$nin-header: 44px;
 $topbar-height-nin: 96px;
 $mobile_slide_up_area: 60px; // closed version
 $ux-page-area: $topbar-height-nin;

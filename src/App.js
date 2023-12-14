@@ -3,7 +3,7 @@ import { withRouter } from "./withRouter";
 import backend from "./Funksjoner/backend";
 import { SettingsContext } from "./SettingsContext";
 import InformasjonsVisning from "./InformasjonsVisning/InformasjonsVisning";
-import Header from "./TopBar/Header";
+import Headers from "./TopBar/Headers";
 import Kartlag from "./Kartlag/Kartlag";
 import Kart from "./Kart/LeafletTangram/Leaflet";
 import metaSjekk from "./AppSettings/AppFunksjoner/metaSjekk";
@@ -23,6 +23,7 @@ import "./style/Sidebar.scss";
 import "./style/InformasjonsSider.scss";
 import "./style/Kartlag.scss";
 import "./style/FargeMenyer.scss";
+import "./style/Header.scss";
 import fixerUpHack from "./fixerUpHack";
 import Punkt from "./InformasjonsVisning/Punkt";
 import Hjelp from "./InformasjonsVisning/Hjelp/Hjelp";
@@ -78,7 +79,7 @@ class App extends React.Component {
     const path = this.props.location.pathname;
     return (
       <>
-        <Header
+        <Headers
           searchFor={this.state.searchFor}
           onToggleHovedMeny={this.handleToggleHovedMeny}
           onSelectResult={item => {

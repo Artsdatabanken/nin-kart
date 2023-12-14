@@ -39,14 +39,18 @@ Even tho we don't a of now support IE X)
   padding: 6px 0px;
 }
 
-.breadcrumbs {
-  display: block;
-  margin: 0px 10px;
-  padding: 0px;
+.kartlag .breadcrumbs{
+  margin:0;
+  padding-left: 10px
 }
 
 .kartlag .breadcrumbs li {
   display: inline-block;
+}
+
+.kartlag .breadcrumbs button{
+  padding:3px;
+  background:none;
 }
 
 .breadcrumb {
@@ -243,6 +247,7 @@ button.breadcrumb:hover {
     height: $actual-map-height-mobile;
     overflow-x: hidden;
     overflow-y: auto;
+    z-index:103;
   }
 
   .kartlag_content {
