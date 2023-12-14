@@ -95,6 +95,8 @@ Their common buttons
     background: transparent;
     overflow: visible;
     width: 100%;
+    border-radius: 0;
+    padding:0
   }
 
   .open_mobile_slide_up_area {
@@ -105,6 +107,13 @@ Their common buttons
     background: $transparent-bg;
     position: absolute;
     top: $topbar-height-nin;
+    margin:0;
+    z-index: 104;
+  }
+
+  .open_mobile_slide_up_area:hover {
+      background: $transparent-bg;
+      opacity: 0.7
   }
 
   .closed_mobile_slide_up_area {
@@ -122,12 +131,13 @@ Their common buttons
     border-radius: 50%;
     padding: 10px;
     margin-top: 40px;
-    z-index: 100;
+    position: relative;
+    z-index: 1000;
   }
 
   .closed_mobile_slide_up_area svg {
     margin: auto;
-    margin-top: -28px;
+    margin-top: -18px;
   }
 
   .mobile_slide_up_area span {

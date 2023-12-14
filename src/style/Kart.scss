@@ -72,7 +72,8 @@ $bottompadding-mobile: $leaflet-buttons-padding * 4 + 9px;
   border-radius: 4px;
   padding: 2px;
   position: absolute;
-  right: calc(#{$sidebar-max-size} + 15px);
+  margin:0;
+  right: calc(#{$sidebar-max-size} 5px);
   top: calc(#{$actual-map-height} - 36px);
 }
 

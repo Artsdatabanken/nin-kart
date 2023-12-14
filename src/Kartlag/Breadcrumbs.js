@@ -18,13 +18,14 @@ const Breadcrumbs = ({ isstartpage, onNavigate, meta }) => {
               onNavigate("/kart");
             }}
           >
-            <Home />
+            NiN-Kart
           </button>
         </li>
         {breadcrumbs.length - 1 > 0 && !showCrumbs && (
           <li>
             <ChevronRight />
             <button
+            className="breadcrumb"
               onClick={() => {
                 setShowCrumbs(!showCrumbs);
               }}
