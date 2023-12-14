@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronRight, Home, ChevronLeft } from "@material-ui/icons";
+import { ChevronRight, ChevronLeft } from "@material-ui/icons";
 import språk from "../Funksjoner/språk";
 
 const Breadcrumbs = ({ isstartpage, onNavigate, meta }) => {
