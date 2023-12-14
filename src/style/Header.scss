@@ -111,13 +111,19 @@ button.dropdown-toggle {
 }
 
 @media (max-width: 860px) {
+
+
+  .header-mega-menu {
+    /* TODO: FIX THE OVERFLOWS ON ALL MENU STUFF*/
+      max-height: calc(100vh - 53px);
+      overflow-y: auto;
+  }
+
     .header-mega-menu {
         width: 100vw;
         left: auto;
         right: 0px;
-        max-height: calc(100vh - 53px);
         border: none;
-        overflow-y: auto;
         top: 53px;
         z-index:2000;
     }
@@ -125,6 +131,18 @@ button.dropdown-toggle {
     .dropdown-list {
         max-width: 100%;
     }
+}
+
+@media (min-width:861px){
+  .dropdown-menu-artskart{
+    display: flex;
+    gap: 7%;
+    padding: 10px;
+    padding-top: 10px;
+    padding-top: 0;
+    max-height: calc(100vh - 53px);
+    overflow-y: auto;
+  }
 }
 
 .dropdown-box {
