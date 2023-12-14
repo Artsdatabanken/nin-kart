@@ -6,6 +6,8 @@
   top: $topbar-height-nin;
   text-align: center;
   position: relative;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 
 /* General Stuff */
@@ -65,7 +67,6 @@
 
 .frontpage_feature_block {
   background: $sand-50;
-  font-size: 16pt;
 }
 
 .frontpage_feature_container {
@@ -117,9 +118,10 @@
 @media only screen and (max-width: 768px) {
   .frontpage_link_items .menu_item {
     width: 100%;
-    margin: 0px;
+    margin: 4px;
     left: 0px;
   }
+
 }
 
 .flexit{
@@ -206,10 +208,8 @@
     display: inline-block;
     padding: 0px;
     margin: 0px;
-    top: 20px;
-    right: 20px;
+    top: 12px;
+    right: 12px;
     position: absolute;
-    top: 20px;
-    right: calc(50% - 100px);
   }
 }
