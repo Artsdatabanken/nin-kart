@@ -72,7 +72,7 @@ const ForsideInformasjon = ({onToggleHovedMeny}) => {
             className="artsdatabanken_logo"
           >
             <img
-              src="https://data.artsdatabanken.no/Datakilde/Artsdatabanken/logo_med_navn_408.png"
+              src="https://design.artsdatabanken.no/icons/adb-logo/Artsdatabanken_Logo-CMYK-H-Colour@2x.png"
               alt="Artsdatabanken logo"
             />
           </a>
