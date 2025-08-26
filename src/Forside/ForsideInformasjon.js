@@ -10,10 +10,10 @@ const ForsideInformasjon = ({onToggleHovedMeny}) => {
   const navigate = useNavigate();
   return (
     <div className="frontpage">
+      <h2 className="frontpage_notification">Tjenesten NiN-kar er for tiden under revisjon. Mye av innholdet i NiNkart kan finnes i <a href="https://okologiskegrunnkart.artsdatabanken.no/">Økologiske Grunnkart</a></h2>
       <div className="frontpage_body">
         <div
           className="frontpage_header"
-         
         >
           <div className="frontpage_icon">
             <img
