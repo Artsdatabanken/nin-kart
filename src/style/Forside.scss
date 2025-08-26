@@ -213,3 +213,11 @@
     position: absolute;
   }
 }
+
+.frontpage_notification {
+  width: 100vw;
+  text-align: center;
+  background: $brightest-nin;
+  color:$body-color;
+  padding:5px
+}
